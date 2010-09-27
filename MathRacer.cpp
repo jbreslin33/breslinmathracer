@@ -1,7 +1,7 @@
 #include "MathRacer.h"
  
 //-------------------------------------------------------------------------------------
-MathRacer::MathRacer(void)
+MathRacer::MathRacer(void) 
 {
 }
 //-------------------------------------------------------------------------------------
@@ -56,6 +56,7 @@ void MathRacer::createFrameListener(void){
     // Set default values for variables
     mWalkSpeed = 35.0f;
     mDirection = Ogre::Vector3::ZERO;
+   
 }   
 bool MathRacer::nextLocation(void){
     if (mWalkList.empty()) return false;
@@ -67,6 +68,10 @@ bool MathRacer::nextLocation(void){
 }
  
 bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
+
+      //mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+            
+            
     	if (mDirection == Ogre::Vector3::ZERO) {
 		if (nextLocation()) {
 			// Set walking animation
