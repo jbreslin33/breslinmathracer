@@ -61,6 +61,8 @@ void MathRacer::createFrameListener(void){
     // create a params panel for displaying sample details
     Ogre::StringVector scoreItems;
     scoreItems.push_back("Time");
+    scoreItems.push_back("Question");
+    scoreItems.push_back("Answer");
 
     mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
     mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPRIGHT, 0);
@@ -78,10 +80,7 @@ bool MathRacer::nextLocation(void){
  
 bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
 
-      //mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
-            
-            
-    	if (mDirection == Ogre::Vector3::ZERO) {
+   	if (mDirection == Ogre::Vector3::ZERO) {
 		if (nextLocation()) {
 			// Set walking animation
 			mAnimationState = mEntity->getAnimationState("Walk");
@@ -116,11 +115,10 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
 	} // if
 	mAnimationState->addTime(evt.timeSinceLastFrame);
 	
-        if (mScoreDetailsPanel->isVisible())   // if details panel is visible, then update its contents
-        {
-            mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
-
-        }	
+   if (mScoreDetailsPanel->isVisible())   // if details panel is visible, then update its contents
+   {
+   	mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+   }	
 	
 	return BaseApplication::frameRenderingQueued(evt);
 }
