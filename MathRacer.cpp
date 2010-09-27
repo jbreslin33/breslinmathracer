@@ -1,7 +1,7 @@
 #include "MathRacer.h"
  
 //-------------------------------------------------------------------------------------
-MathRacer::MathRacer(void) 
+MathRacer::MathRacer(void) :  mScoreDetailsPanel(0)
 {
 }
 //-------------------------------------------------------------------------------------
@@ -56,6 +56,15 @@ void MathRacer::createFrameListener(void){
     // Set default values for variables
     mWalkSpeed = 35.0f;
     mDirection = Ogre::Vector3::ZERO;
+    
+    
+    // create a params panel for displaying sample details
+    Ogre::StringVector scoreItems;
+    scoreItems.push_back("Time");
+
+    mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
+    mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPRIGHT, 0);
+    mScoreDetailsPanel->show();
    
 }   
 bool MathRacer::nextLocation(void){
@@ -106,6 +115,13 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
 		} // else
 	} // if
 	mAnimationState->addTime(evt.timeSinceLastFrame);
+	
+        if (mScoreDetailsPanel->isVisible())   // if details panel is visible, then update its contents
+        {
+            mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+
+        }	
+	
 	return BaseApplication::frameRenderingQueued(evt);
 }
  

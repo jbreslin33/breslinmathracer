@@ -27,7 +27,6 @@ BaseApplication::BaseApplication(void)
     mTrayMgr(0),
     mCameraMan(0),
     mDetailsPanel(0),
-    mScoreDetailsPanel(0),
     mCursorWasVisible(false),
     mShutDown(false),
     mInputManager(0),
@@ -137,15 +136,6 @@ void BaseApplication::createFrameListener(void)
     mDetailsPanel->setParamValue(10, "Solid");
     mDetailsPanel->hide();
 
-    
-    // create a params panel for displaying sample details
-    Ogre::StringVector scoreItems;
-    scoreItems.push_back("Time");
-
-    mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
-    mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPRIGHT, 0);
-    mScoreDetailsPanel->show();
-
     mRoot->addFrameListener(this);
 }
 //-------------------------------------------------------------------------------------
@@ -249,8 +239,6 @@ bool BaseApplication::setup(void)
 //-------------------------------------------------------------------------------------
 bool BaseApplication::frameRenderingQueued(const Ogre::FrameEvent& evt)
 {
-
-
     if(mWindow->isClosed())
         return false;
 
@@ -276,15 +264,7 @@ bool BaseApplication::frameRenderingQueued(const Ogre::FrameEvent& evt)
             mDetailsPanel->setParamValue(6, Ogre::StringConverter::toString(mCamera->getDerivedOrientation().y));
             mDetailsPanel->setParamValue(7, Ogre::StringConverter::toString(mCamera->getDerivedOrientation().z));
         }
-        
-        if (mScoreDetailsPanel->isVisible())   // if details panel is visible, then update its contents
-        {
-            mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
-
-        }
     }
-    
-    
 
     return true;
 }
