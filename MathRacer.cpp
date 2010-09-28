@@ -118,6 +118,26 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
    if (mScoreDetailsPanel->isVisible())   // if details panel is visible, then update its contents
    {
    	mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+   	
+   int num1, num2, num3;
+
+   /* initialize random seed: */
+   srand ( time(NULL) );
+
+   /* generate secret number: */
+   num1 = rand() % 10 + 1;
+   num2 = rand() % 10 + 1;
+   num3 = num1 + num2;
+    
+   	   	
+ 	std::string my_string1 = Ogre::StringConverter::toString(num1);
+ 	std::string my_string2 = " + ";
+  	std::string my_string3 = Ogre::StringConverter::toString(num2);
+
+   std::string my_string4 = my_string1 + my_string2 + my_string3;
+
+   mScoreDetailsPanel->setParamValue(1, my_string4);
+   	
    }	
 	
 	return BaseApplication::frameRenderingQueued(evt);
