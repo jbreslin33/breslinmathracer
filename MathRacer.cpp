@@ -1,7 +1,7 @@
 #include "MathRacer.h"
  
 //-------------------------------------------------------------------------------------
-MathRacer::MathRacer(void) :  mScoreDetailsPanel(0)
+MathRacer::MathRacer(void) : mScoreDetailsPanel(0),mNumber1(0),mNumber2(0),mCorrectAnswer(0),mPlayerAnswer(0)
 {
 }
 //-------------------------------------------------------------------------------------
@@ -119,29 +119,40 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
    {
    	mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
    	
-   int num1, num2, num3;
 
-   /* initialize random seed: */
-   srand ( time(NULL) );
-
-   /* generate secret number: */
-   num1 = rand() % 10 + 1;
-   num2 = rand() % 10 + 1;
-   num3 = num1 + num2;
-    
-   	   	
- 	std::string my_string1 = Ogre::StringConverter::toString(num1);
- 	std::string my_string2 = " + ";
-  	std::string my_string3 = Ogre::StringConverter::toString(num2);
-
-   std::string my_string4 = my_string1 + my_string2 + my_string3;
-
-   mScoreDetailsPanel->setParamValue(1, my_string4);
+   mScoreDetailsPanel->setParamValue(2, Ogre::StringConverter::toString(mPlayerAnswer));
    	
    }	
 	
 	return BaseApplication::frameRenderingQueued(evt);
 }
+
+void MathRacer::getNewQuestion()
+{
+
+} 
+ 
+void MathRacer::processAnswer()
+{
+   /* initialize random seed: */
+   srand ( time(NULL) );
+
+   /* generate numbers: */
+   mNumber1 = rand() % 10 + 1;
+   mNumber2 = rand() % 10 + 1;
+   mCorrectAnswer = mNumber1 + mNumber2;
+   	   	
+   /*conver numbers to strings */
+ 	std::string my_string1 = Ogre::StringConverter::toString(mNumber1);
+ 	std::string my_string2 = " + ";
+  	std::string my_string3 = Ogre::StringConverter::toString(mNumber2);
+
+   std::string my_string4 = my_string1 + my_string2 + my_string3;
+
+   /*display question */
+   mScoreDetailsPanel->setParamValue(1, my_string4);
+
+} 
  
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
 #define WIN32_LEAN_AND_MEAN

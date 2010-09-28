@@ -16,7 +16,7 @@ protected:
  
     virtual bool frameRenderingQueued(const Ogre::FrameEvent &evt);
     virtual bool nextLocation(void);
- 
+     
     Ogre::Real mDistance;                  // The distance the object has left to travel
     Ogre::Vector3 mDirection;              // The direction the object is moving
     Ogre::Vector3 mDestination;            // The destination the object is moving towards
@@ -30,6 +30,17 @@ protected:
     Ogre::Real mWalkSpeed;                 // The speed at which the object is moving
     
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // score details panel
+    
+    Ogre::Real mNumber1;
+    Ogre::Real mNumber2;
+    Ogre::Real mCorrectAnswer;
+    Ogre::Real mPlayerAnswer;
+    
+    void getNewQuestion();  
+    void processAnswer();
+  
+    
+
 };
  
 #endif // #ifndef __MathRacer_h_
