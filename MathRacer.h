@@ -38,7 +38,9 @@ protected:
     
     void getNewQuestion();  
     void processAnswer();
-  
+    void keyNumberHit(const OIS::KeyEvent &arg); 
+    
+    virtual bool keyPressed( const OIS::KeyEvent &arg );
     
 
 };
