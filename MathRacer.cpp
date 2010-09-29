@@ -65,6 +65,7 @@ void MathRacer::createFrameListener(void){
     scoreItems.push_back("Question");
     scoreItems.push_back("Answer");
     scoreItems.push_back("Correct Answer");
+    scoreItems.push_back("Speed");
 
     mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
     mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPRIGHT, 0);
@@ -131,6 +132,13 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
 
 void MathRacer::getNewQuestion()
 {
+
+   //let's clear answers.....questions etc....
+   mCorrectAnswer = NULL;
+   mPlayerAnswer = NULL;
+   mScoreDetailsPanel->setParamValue(2, "");
+   mScoreDetailsPanel->setParamValue(3, "");
+
   //mScoreDetailsPanel->setParamValue(2, Ogre::StringConverter::toString(mPlayerAnswer));
     /* initialize random seed: */
    srand ( time(NULL) );
@@ -159,7 +167,11 @@ void MathRacer::processAnswer()
 	{
 		mWalkSpeed += 1.0;
 	}
-
+	else
+	{
+		mWalkSpeed -= 1.0;
+	}
+   mScoreDetailsPanel->setParamValue(4, Ogre::StringConverter::toString(mWalkSpeed));
 } 
 
 void MathRacer::keyNumberHit(const OIS::KeyEvent &arg) 
@@ -227,6 +239,7 @@ bool MathRacer::keyPressed( const OIS::KeyEvent &arg )
 	else if(arg.key == OIS::KC_RETURN)
 	{
 		processAnswer();
+		getNewQuestion();
 	}
 
 BaseApplication::keyPressed(arg);
