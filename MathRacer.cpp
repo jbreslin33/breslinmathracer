@@ -16,7 +16,7 @@ void MathRacer::createScene(void)
     // Set the default lighting.
     mSceneMgr->setAmbientLight(Ogre::ColourValue(1.0f, 1.0f, 1.0f));
     // Create the entity
-    mEntity = mSceneMgr->createEntity("Robot", "robot.mesh");
+    mEntity = mSceneMgr->createEntity("Robot", "Sinbad.mesh");
  
     // Create the scene node
     mNode = mSceneMgr->getRootSceneNode()->createChildSceneNode("RobotNode", Ogre::Vector3(0.0f, 0.0f, 25.0f));
@@ -50,6 +50,7 @@ void MathRacer::createScene(void)
 }
 void MathRacer::createFrameListener(void){
     BaseApplication::createFrameListener();
+    /*
     // Set idle animation
     mAnimationState = mEntity->getAnimationState("Idle");
     mAnimationState->setLoop(true);
@@ -57,7 +58,7 @@ void MathRacer::createFrameListener(void){
     // Set default values for variables
     mWalkSpeed = 0.0f;
     mDirection = Ogre::Vector3::ZERO;
-    
+    */
     
     // create a params panel for displaying score details
     Ogre::StringVector scoreItems;
@@ -72,6 +73,7 @@ void MathRacer::createFrameListener(void){
     mScoreDetailsPanel->show();
     
     getNewQuestion();
+    
    
 }   
 bool MathRacer::nextLocation(void){
@@ -88,9 +90,11 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
    	if (mDirection == Ogre::Vector3::ZERO) {
 		if (nextLocation()) {
 			// Set walking animation
+			/*
 			mAnimationState = mEntity->getAnimationState("Walk");
 			mAnimationState->setLoop(true);
 			mAnimationState->setEnabled(true);				
+			*/
 		}//if
 	}else{
 		Ogre::Real move = mWalkSpeed * evt.timeSinceLastFrame;
@@ -100,10 +104,12 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
 			mDirection = Ogre::Vector3::ZERO;				
 			// Set animation based on if the robot has another point to walk to. 
 			if (!nextLocation()){
-				// Set Idle animation                     
+				// Set Idle animation      
+				/*               
 				mAnimationState = mEntity->getAnimationState("Idle");
 				mAnimationState->setLoop(true);
 				mAnimationState->setEnabled(true);
+				*/
 			}else{
 				// Rotation Code will go here later
 				Ogre::Vector3 src = mNode->getOrientation() * Ogre::Vector3::UNIT_X;
@@ -118,7 +124,7 @@ bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
 			mNode->translate(mDirection * move);
 		} // else
 	} // if
-	mAnimationState->addTime(evt.timeSinceLastFrame);
+	//mAnimationState->addTime(evt.timeSinceLastFrame);
 	
    //update timer as this function runs on a timer and we don't want to update time thru user input like
    //I will with questions and answers 
