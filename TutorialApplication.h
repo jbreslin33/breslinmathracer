@@ -35,8 +35,16 @@ protected:
     virtual bool frameRenderingQueued(const Ogre::FrameEvent& evt);
 
     // OIS::KeyListener
-    virtual bool keyPressed( const OIS::KeyEvent &arg );
-    virtual bool keyReleased( const OIS::KeyEvent &arg );
+    virtual bool keyPressed  (const OIS::KeyEvent &arg );
+    virtual bool keyReleased (const OIS::KeyEvent &arg );
+    
+    //virtual bool touchPressed(const OIS::MultiTouchEvent& evt);
+	 //virtual bool touchMoved  (const OIS::MultiTouchEvent& evt); 
+    
+     // OIS::MouseListener
+    virtual bool mouseMoved  (const OIS::MouseEvent &arg );
+    virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id );
+
 
 
 };

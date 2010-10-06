@@ -238,7 +238,7 @@ private:
 
 		// our model is quite small, so reduce the clipping planes
 		cam->setNearClipDistance(0.1);
-		cam->setFarClipDistance(100);
+		cam->setFarClipDistance(200);
 		mCameraNode->attachObject(cam);
 
 		mPivotPitch = 0;

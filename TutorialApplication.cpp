@@ -44,7 +44,7 @@ void TutorialApplication::createScene(void)
     
 	// create a floor mesh resource
 	MeshManager::getSingleton().createPlane("floor", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
-	Plane(Vector3::UNIT_Y, 0), 100, 100, 10, 10, true, 1, 10, 10, Vector3::UNIT_Z);
+	Plane(Vector3::UNIT_Y, 0), 500, 500, 10, 10, true, 1, 10, 10, Vector3::UNIT_Z);
 
 	// create a floor entity, give it a material, and place it at the origin
    Entity* floor = mSceneMgr->createEntity("Floor", "floor");
@@ -52,34 +52,48 @@ void TutorialApplication::createScene(void)
 	floor->setCastShadows(false);
    mSceneMgr->getRootSceneNode()->attachObject(floor);
    
-		// disable default camera control so the character can do its own
-		mCameraMan->setStyle(CS_MANUAL);   
+	// disable default camera control so the character can do its own
+	mCameraMan->setStyle(CS_MANUAL);   
    
 	// create our character controller
 	mChara = new SinbadCharacterController(mCamera);
 
 }
 
-	bool TutorialApplication::frameRenderingQueued(const FrameEvent& evt)
-	{
-		// let character update animations and camera
-		mChara->addTime(evt.timeSinceLastFrame);
-		return BaseApplication::frameRenderingQueued(evt);
-	}
+bool TutorialApplication::frameRenderingQueued(const FrameEvent& evt)
+{
+	// let character update animations and camera
+	mChara->addTime(evt.timeSinceLastFrame);
+	return BaseApplication::frameRenderingQueued(evt);
+}
 	
-	bool TutorialApplication::keyPressed(const OIS::KeyEvent& evt)
-	{
-		// relay input events to character controller
-		if (!mTrayMgr->isDialogVisible()) mChara->injectKeyDown(evt);
-		return BaseApplication::keyPressed(evt);
-	}
+bool TutorialApplication::keyPressed(const OIS::KeyEvent& evt)
+{
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectKeyDown(evt);
+	return BaseApplication::keyPressed(evt);
+}
 	
-	bool TutorialApplication::keyReleased(const OIS::KeyEvent& evt)
-	{
-		// relay input events to character controller
-		if (!mTrayMgr->isDialogVisible()) mChara->injectKeyUp(evt);
-		return BaseApplication::keyReleased(evt);
-	}
+bool TutorialApplication::keyReleased(const OIS::KeyEvent& evt)
+{
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectKeyUp(evt);
+	return BaseApplication::keyReleased(evt);
+}
+
+bool TutorialApplication::mouseMoved(const OIS::MouseEvent& evt)
+{
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectMouseMove(evt);
+	return BaseApplication::mouseMoved(evt);
+}
+
+bool TutorialApplication::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
+{
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectMouseDown(evt, id);
+	return BaseApplication::mousePressed(evt, id);
+}
 
 
 
