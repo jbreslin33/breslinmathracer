@@ -87,13 +87,16 @@ endif()
  
 set(HDRS
 	./BaseApplication.h
-	./MathRacer.h
+	#./MathRacer.h
+	./TutorialApplication.h
+	./SinbadCharacterController.h
 
 )
  
 set(SRCS
 	./BaseApplication.cpp
-	./MathRacer.cpp
+	#./MathRacer.cpp
+	./TutorialApplication.cpp
 
 )
  
