@@ -500,6 +500,11 @@ private:
 		}
 	}
 
+	void setRunSpeed(Real runSpeed)
+	{
+		mRunSpeed = runSpeed;	
+	}
+
 	Camera* mCamera;
 	SceneNode* mBodyNode;
 	SceneNode* mCameraPivot;
@@ -520,6 +525,7 @@ private:
 	Vector3 mGoalDirection;     // actual intended direction in world-space
 	Real mVerticalVelocity;     // for jumping
 	Real mTimer;                // general timer to see how long animations have been playing
+	Real mRunSpeed;
 };
 
 #endif

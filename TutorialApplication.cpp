@@ -4,17 +4,18 @@ Filename:    TutorialApplication.cpp
 -----------------------------------------------------------------------------
 
 This source file is part of the
-   ___                 __    __ _ _    _ 
+   ___                 __    __ _ _    _
   /___\__ _ _ __ ___  / / /\ \ (_) | _(_)
  //  // _` | '__/ _ \ \ \/  \/ / | |/ / |
 / \_// (_| | | |  __/  \  /\  /| |   <| |
 \___/ \__, |_|  \___|   \/  \/ |_|_|\_\_|
-      |___/                              
+      |___/
       Tutorial Framework
       http://www.ogre3d.org/tikiwiki/
 -----------------------------------------------------------------------------
 */
 #include "TutorialApplication.h"
+#include "MathInput.h"
 
 using namespace Ogre;
 using namespace OgreBites;
@@ -31,32 +32,30 @@ TutorialApplication::~TutorialApplication(void)
 //-------------------------------------------------------------------------------------
 void TutorialApplication::createScene(void)
 {
-    // create your scene here :)
-    
-
 	mSceneMgr->setAmbientLight(ColourValue(0.3, 0.3, 0.3));
 
 	// add a bright light above the scene
 	Light* light = mSceneMgr->createLight();
 	light->setType(Light::LT_POINT);
 	light->setPosition(-10, 40, 20);
-	light->setSpecularColour(ColourValue::White); 
-    
+	light->setSpecularColour(ColourValue::White);
+
 	// create a floor mesh resource
 	MeshManager::getSingleton().createPlane("floor", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
 	Plane(Vector3::UNIT_Y, 0), 500, 500, 10, 10, true, 1, 10, 10, Vector3::UNIT_Z);
 
 	// create a floor entity, give it a material, and place it at the origin
-   Entity* floor = mSceneMgr->createEntity("Floor", "floor");
-   floor->setMaterialName("Examples/Rockwall");
-	floor->setCastShadows(false);
-   mSceneMgr->getRootSceneNode()->attachObject(floor);
-   
+    Entity* floor = mSceneMgr->createEntity("Floor", "floor");
+    floor->setMaterialName("Examples/Rockwall");
+    floor->setCastShadows(false);
+    mSceneMgr->getRootSceneNode()->attachObject(floor);
+
 	// disable default camera control so the character can do its own
-	mCameraMan->setStyle(CS_MANUAL);   
-   
+	mCameraMan->setStyle(CS_MANUAL);
+
 	// create our character controller
 	mChara = new SinbadCharacterController(mCamera);
+	mMathInput = new MathInput(this);
 
 }
 
@@ -66,14 +65,18 @@ bool TutorialApplication::frameRenderingQueued(const FrameEvent& evt)
 	mChara->addTime(evt.timeSinceLastFrame);
 	return BaseApplication::frameRenderingQueued(evt);
 }
-	
+
 bool TutorialApplication::keyPressed(const OIS::KeyEvent& evt)
 {
 	// relay input events to character controller
-	if (!mTrayMgr->isDialogVisible()) mChara->injectKeyDown(evt);
+	if (!mTrayMgr->isDialogVisible())
+	{
+	 mChara->injectKeyDown(evt);
+	 mMathInput->injectKeyDown(evt);
+	}
 	return BaseApplication::keyPressed(evt);
 }
-	
+
 bool TutorialApplication::keyReleased(const OIS::KeyEvent& evt)
 {
 	// relay input events to character controller

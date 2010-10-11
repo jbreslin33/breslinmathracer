@@ -1,21 +1,27 @@
 #ifndef __MathRacer_h_
 #define __MathRacer_h_
  
-#include "BaseApplication.h"
 #include <deque>
  
-class MathRacer : public BaseApplication
+#include "Ogre.h"
+#include <OISEvents.h>
+#include <OISInputManager.h>
+#include <OISKeyboard.h>
+#include <OISMouse.h>
+//using namespace Ogre;
+//using namespace OgreBites;
+ 
+class MathRacer
 {
 public:
     MathRacer(void);
     virtual ~MathRacer(void);
  
 protected:
-    virtual void createScene(void);
-    virtual void createFrameListener(void);
+    void createFrameListener(void);
  
-    virtual bool frameRenderingQueued(const Ogre::FrameEvent &evt);
-    virtual bool nextLocation(void);
+    bool frameRenderingQueued(const Ogre::FrameEvent &evt);
+    bool nextLocation(void);
      
     Ogre::Real mDistance;                  // The distance the object has left to travel
     Ogre::Vector3 mDirection;              // The direction the object is moving
