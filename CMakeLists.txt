@@ -91,6 +91,7 @@ set(HDRS
 	./TutorialApplication.h
 	./SinbadCharacterController.h
 	./MathProblems.h
+	./MathRacer.h
 
 )
 
@@ -99,6 +100,7 @@ set(SRCS
 	./MathInput.cpp
 	./TutorialApplication.cpp
 	./MathProblems.cpp
+	./MathRacer.cpp
 )
 
 include_directories( ${OIS_INCLUDE_DIRS}

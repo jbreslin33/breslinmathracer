@@ -20,6 +20,7 @@ void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
     std::string tempString   = Ogre::StringConverter::toString(arg.key);
 
     mPlayerAnswer.append(tempString);
+
     /*
     std::string playerAnswer = Ogre::StringConverter::toString(mPlayerAnswer); //set current real player answer to string
     std::string tempString   = Ogre::StringConverter::toString(arg.key);
@@ -41,7 +42,7 @@ void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
 
 void MathInput::injectKeyDown(const OIS::KeyEvent& evt)
 {
-
+std::cout << "hit a number";
     if (evt.key == OIS::KC_0)
     {
         keyNumberHit(evt);

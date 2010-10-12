@@ -21,6 +21,7 @@ This source file is part of the
 #include "SinbadCharacterController.h"
 
 class MathInput;
+class MathRacer;
 
 class TutorialApplication : public BaseApplication
 {
@@ -30,6 +31,7 @@ public:
 
 	SinbadCharacterController* mChara;
 	MathInput* mMathInput;
+	MathRacer* mMathRacer;
 
 protected:
     virtual void createScene(void);

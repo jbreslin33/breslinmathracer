@@ -16,6 +16,7 @@ This source file is part of the
 */
 #include "TutorialApplication.h"
 #include "MathInput.h"
+#include "MathRacer.h"
 
 using namespace Ogre;
 using namespace OgreBites;
@@ -56,6 +57,7 @@ void TutorialApplication::createScene(void)
 	// create our character controller
 	mChara = new SinbadCharacterController(mCamera);
 	mMathInput = new MathInput(this);
+	mMathRacer = new MathRacer(this);
 
 }
 
