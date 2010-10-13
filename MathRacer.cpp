@@ -17,6 +17,7 @@ This source file is part of the
 #include "MathRacer.h"
 #include "MathInput.h"
 #include "MathProblems.h"
+#include "MathRacerController.h"
 
 #include <time.h>
 
@@ -77,7 +78,7 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our character controller
-	mChara        = new SinbadCharacterController(mCamera);
+	mChara        = new MathRacerController(mCamera);
 	mMathProblems = new MathProblems();
 	mMathInput    = new MathInput(this);
 
@@ -102,8 +103,8 @@ bool MathRacer::keyPressed(const OIS::KeyEvent& evt)
 	// relay input events to character controller
 	if (!mTrayMgr->isDialogVisible())
 	{
-	 mChara->injectKeyDown(evt);
-	 mMathInput->injectKeyDown(evt);
+        mChara->injectKeyDown(evt);
+        mMathInput->injectKeyDown(evt);
 	}
 	return BaseApplication::keyPressed(evt);
 }

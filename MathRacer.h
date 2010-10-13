@@ -18,11 +18,12 @@ This source file is part of the
 #define __MATHRACER_h_
 
 #include "BaseApplication.h"
-#include "SinbadCharacterController.h"
+//#include "SinbadCharacterController.h"
 
 
 class MathInput;
 class MathProblems;
+class MathRacerController;
 
 class MathRacer : public BaseApplication
 {
@@ -30,7 +31,7 @@ public:
     MathRacer(void);
     virtual ~MathRacer(void);
 
-	SinbadCharacterController* mChara;
+	MathRacerController* mChara;
 	MathInput*                 mMathInput;
 	MathProblems*              mMathProblems;
 

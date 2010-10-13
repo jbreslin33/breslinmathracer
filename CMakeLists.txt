@@ -93,6 +93,7 @@ set(HDRS
 	./MathProblems.h
 	./MathRacer.h
 	#./MathRacerGui.h
+	./MathRacerController.h
 
 )
 
