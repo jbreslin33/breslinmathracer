@@ -1,10 +1,27 @@
+/*
+-----------------------------------------------------------------------------
+Filename:    MathRacer.cpp
+-----------------------------------------------------------------------------
+
+This source file is part of the
+   ___                 __    __ _ _    _
+  /___\__ _ _ __ ___  / / /\ \ (_) | _(_)
+ //  // _` | '__/ _ \ \ \/  \/ / | |/ / |
+/ \_// (_| | | |  __/  \  /\  /| |   <| |
+\___/ \__, |_|  \___|   \/  \/ |_|_|\_\_|
+      |___/
+      Tutorial Framework
+      http://www.ogre3d.org/tikiwiki/
+-----------------------------------------------------------------------------
+*/
 #include "MathRacer.h"
+#include "MathInput.h"
 
 using namespace Ogre;
-//using namespace OgreBites;
+using namespace OgreBites;
 
 //-------------------------------------------------------------------------------------
-MathRacer::MathRacer(BaseApplication* baseApplication) : mScoreDetailsPanel(0),mNumber1(0),mNumber2(0),mCorrectAnswer(NULL),mPlayerAnswer(NULL)
+MathRacer::MathRacer(void)
 {
 }
 //-------------------------------------------------------------------------------------
@@ -13,11 +30,10 @@ MathRacer::~MathRacer(void)
 }
 
 //-------------------------------------------------------------------------------------
+void MathRacer::createFrameListener(void)
+{
+    BaseApplication::createFrameListener();
 
-void MathRacer::createFrameListener(OgreBites::SdkTrayManager* mTrayMgr){
-
-
-    // create a params panel for displaying score details
     Ogre::StringVector scoreItems;
     scoreItems.push_back("Time");
     scoreItems.push_back("Question");
@@ -26,177 +42,117 @@ void MathRacer::createFrameListener(OgreBites::SdkTrayManager* mTrayMgr){
     scoreItems.push_back("Speed");
 
     mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
-    mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPRIGHT, 0);
+    mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPLEFT, 0);
     mScoreDetailsPanel->show();
 
-    getNewQuestion();
+    //mRoot->addFrameListener(this);
+}
+//-------------------------------------------------------------------------------------
+void MathRacer::createScene(void)
+{
+	mSceneMgr->setAmbientLight(ColourValue(0.3, 0.3, 0.3));
 
+    // add a bright light above the scene
+	Light* light = mSceneMgr->createLight();
+	light->setType(Light::LT_POINT);
+	light->setPosition(-10, 40, 20);
+	light->setSpecularColour(ColourValue::White);
+
+	// create a floor mesh resource
+	MeshManager::getSingleton().createPlane("floor", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
+	Plane(Vector3::UNIT_Y, 0), 500, 500, 10, 10, true, 1, 10, 10, Vector3::UNIT_Z);
+
+	// create a floor entity, give it a material, and place it at the origin
+    Entity* floor = mSceneMgr->createEntity("Floor", "floor");
+    floor->setMaterialName("Examples/Rockwall");
+    floor->setCastShadows(false);
+    mSceneMgr->getRootSceneNode()->attachObject(floor);
+
+	// disable default camera control so the character can do its own
+	mCameraMan->setStyle(CS_MANUAL);
+
+	// create our character controller
+	mChara = new SinbadCharacterController(mCamera);
+	mMathInput = new MathInput();
 
 }
-bool MathRacer::nextLocation(void){
-    if (mWalkList.empty()) return false;
-    mDestination = mWalkList.front();  // this gets the front of the deque
-    mWalkList.pop_front();             // this removes the front of the deque
-    mDirection = mDestination - mNode->getPosition();
-    mDistance = mDirection.normalise();
-    return true;
-}
 
-bool MathRacer::frameRenderingQueued(const Ogre::FrameEvent &evt){
-
-   	if (mDirection == Ogre::Vector3::ZERO) {
-		if (nextLocation()) {
-			// Set walking animation
-
-		}//if
-	}else{
-		Ogre::Real move = mWalkSpeed * evt.timeSinceLastFrame;
-		mDistance -= move;
-		if (mDistance <= 0.0f){
-			mNode->setPosition(mDestination);
-			mDirection = Ogre::Vector3::ZERO;
-			// Set animation based on if the robot has another point to walk to.
-			if (!nextLocation()){
-				// Set Idle animation
-
-			}else{
-				// Rotation Code will go here later
-				Ogre::Vector3 src = mNode->getOrientation() * Ogre::Vector3::UNIT_X;
-				if ((1.0f + src.dotProduct(mDirection)) < 0.0001f) {
-					mNode->yaw(Ogre::Degree(180));
-				}else{
-					Ogre::Quaternion quat = src.getRotationTo(mDirection);
-					mNode->rotate(quat);
-				} // else
-			}//else
-		}else{
-			mNode->translate(mDirection * move);
-		} // else
-	} // if
-	//mAnimationState->addTime(evt.timeSinceLastFrame);
-
-   //update timer as this function runs on a timer and we don't want to update time thru user input like
-   //I will with questions and answers
-   if (mScoreDetailsPanel->isVisible())   // if details panel is visible, then update its contents
-   {
-   	mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
-   }
-
+bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
+{
+	// let character update animations and camera
+	mChara->addTime(evt.timeSinceLastFrame);
 	return BaseApplication::frameRenderingQueued(evt);
 }
 
-void MathRacer::getNewQuestion()
+bool MathRacer::keyPressed(const OIS::KeyEvent& evt)
 {
-
-   //let's clear answers.....questions etc....
-   mCorrectAnswer = NULL;
-   mPlayerAnswer = NULL;
-   mScoreDetailsPanel->setParamValue(2, "");
-   mScoreDetailsPanel->setParamValue(3, "");
-
-  //mScoreDetailsPanel->setParamValue(2, Ogre::StringConverter::toString(mPlayerAnswer));
-    /* initialize random seed: */
-   srand ( time(NULL) );
-
-   /* generate numbers: */
-   mNumber1 = rand() % 10 + 1;
-   mNumber2 = rand() % 10 + 1;
-   mCorrectAnswer = mNumber1 + mNumber2;
-
-   /*conver numbers to strings */
- 	std::string my_string1 = Ogre::StringConverter::toString(mNumber1);
- 	std::string my_string2 = " + ";
-  	std::string my_string3 = Ogre::StringConverter::toString(mNumber2);
-
-   std::string my_string4 = my_string1 + my_string2 + my_string3;
-
-   /*display question */
-   mScoreDetailsPanel->setParamValue(1, my_string4);
-
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible())
+	{
+	 mChara->injectKeyDown(evt);
+	 mMathInput->injectKeyDown(evt);
+	}
+	return BaseApplication::keyPressed(evt);
 }
 
-void MathRacer::processAnswer()
+bool MathRacer::keyReleased(const OIS::KeyEvent& evt)
 {
-   mScoreDetailsPanel->setParamValue(3, Ogre::StringConverter::toString(mCorrectAnswer));
-	if (mCorrectAnswer == mPlayerAnswer)
-	{
-		mWalkSpeed += 1.0;
-	}
-	else
-	{
-		mWalkSpeed -= 1.0;
-	}
-   mScoreDetailsPanel->setParamValue(4, Ogre::StringConverter::toString(mWalkSpeed));
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectKeyUp(evt);
+	return BaseApplication::keyReleased(evt);
 }
 
-void MathRacer::keyNumberHit(const OIS::KeyEvent &arg)
+bool MathRacer::mouseMoved(const OIS::MouseEvent& evt)
 {
-	std::string playerAnswer = Ogre::StringConverter::toString(mPlayerAnswer); //set current real player answer to string
-   std::string tempString = Ogre::StringConverter::toString(arg.key);
-
-   Ogre::Real tempReal = Ogre::StringConverter::parseReal(tempString);
-   tempReal = tempReal - 1;
-   tempString = Ogre::StringConverter::toString(tempReal);
-
-   playerAnswer.append(tempString); // append new number to temp string
-
-   //let's strip leading zero....
-   if (playerAnswer.substr(0,1) == (std::string) "0")
-   	playerAnswer = playerAnswer.substr(1,playerAnswer.length() -1);
-
-   mScoreDetailsPanel->setParamValue(2, playerAnswer); //show player in box their newest answer
-
-   mPlayerAnswer = Ogre::StringConverter::parseReal(playerAnswer); // set global mPlayerAnswer(a real) to currnet answer attempt
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectMouseMove(evt);
+	return BaseApplication::mouseMoved(evt);
 }
 
-bool MathRacer::keyPressed( const OIS::KeyEvent &arg )
+bool MathRacer::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
- 	if(arg.key == OIS::KC_1)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-   else if(arg.key == OIS::KC_2)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-   else if(arg.key == OIS::KC_3)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}using namespace Ogre;
-using namespace OgreBites;
-    else if(arg.key == OIS::KC_4)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-    else if(arg.key == OIS::KC_5)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-    else if(arg.key == OIS::KC_6)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-   else if(arg.key == OIS::KC_7)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-   else if(arg.key == OIS::KC_8)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-   else if(arg.key == OIS::KC_9)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-   else if(arg.key == OIS::KC_0)   // refresh all textures
-	{
-		keyNumberHit(arg);
-	}
-	else if(arg.key == OIS::KC_RETURN)
-	{
-		processAnswer();
-		getNewQuestion();
-	}
-
+	// relay input events to character controller
+	if (!mTrayMgr->isDialogVisible()) mChara->injectMouseDown(evt, id);
+	return BaseApplication::mousePressed(evt, id);
 }
+
+
+
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+#define WIN32_LEAN_AND_MEAN
+#include "windows.h"
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+    INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
+#else
+    int main(int argc, char *argv[])
+#endif
+    {
+        // Create application object
+        MathRacer app;
+
+        try {
+            app.go();
+        } catch( Ogre::Exception& e ) {
+#if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
+            MessageBox( NULL, e.getFullDescription().c_str(), "An exception has occured!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
+#else
+            std::cerr << "An exception has occured: " <<
+                e.getFullDescription().c_str() << std::endl;
+#endif
+        }
+
+        return 0;
+    }
+
+#ifdef __cplusplus
+}
+#endif
+
+
 

@@ -8,7 +8,7 @@ class TutorialApplication;
 class MathInput
 {
 public:
-	MathInput(TutorialApplication* tutorialApplication);
+	MathInput();
 	~MathInput();
 
 	//input
@@ -16,7 +16,7 @@ public:
     void keyNumberHit (const OIS::KeyEvent &arg);
 
 protected:
-    TutorialApplication* mTutorialApplication;
+    //TutorialApplication* mTutorialApplication;
     std::string mPlayerAnswer;
 
 };

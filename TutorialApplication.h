@@ -33,6 +33,9 @@ public:
 	MathInput* mMathInput;
 	MathRacer* mMathRacer;
 
+    void createFrameListener(void);
+    OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
+
 protected:
     virtual void createScene(void);
 

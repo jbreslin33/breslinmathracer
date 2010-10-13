@@ -3,9 +3,9 @@
 #include "Ogre.h"
 
 
-MathInput::MathInput(TutorialApplication* tutorialApplication)
+MathInput::MathInput()
 {
-    mTutorialApplication = tutorialApplication;
+    //mTutorialApplication = tutorialApplication;
     mPlayerAnswer = "";
 }
 

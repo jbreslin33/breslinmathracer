@@ -1,59 +1,57 @@
-#ifndef __MathRacer_h_
-#define __MathRacer_h_
+/*
+-----------------------------------------------------------------------------
+Filename:    TutorialApplication.h
+-----------------------------------------------------------------------------
 
-#include <deque>
+This source file is part of the
+   ___                 __    __ _ _    _
+  /___\__ _ _ __ ___  / / /\ \ (_) | _(_)
+ //  // _` | '__/ _ \ \ \/  \/ / | |/ / |
+/ \_// (_| | | |  __/  \  /\  /| |   <| |
+\___/ \__, |_|  \___|   \/  \/ |_|_|\_\_|
+      |___/
+      Tutorial Framework
+      http://www.ogre3d.org/tikiwiki/
+-----------------------------------------------------------------------------
+*/
+#ifndef __MATHRACER_h_
+#define __MATHRACER_h_
 
-#include "Ogre.h"
-#include <OISEvents.h>
-#include <OISInputManager.h>
-#include <OISKeyboard.h>
-#include <OISMouse.h>
-#include <SdkTrays.h>
-#include <SdkCameraMan.h>
+#include "BaseApplication.h"
+#include "SinbadCharacterController.h"
 
-using namespace Ogre;
-using namespace OgreBites;
+class MathInput;
 
-class BaseApplication;
-
-class MathRacer
+class MathRacer : public BaseApplication
 {
 public:
-    MathRacer(BaseApplication* baseApplication);
-    virtual ~MathRacer();
+    MathRacer(void);
+    virtual ~MathRacer(void);
 
-protected:
+	SinbadCharacterController* mChara;
+	MathInput*                 mMathInput;
+
     void createFrameListener(void);
 
-    bool frameRenderingQueued(const Ogre::FrameEvent &evt);
-    bool nextLocation(void);
+    OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
 
-    Ogre::Real mDistance;                  // The distance the object has left to travel
-    Ogre::Vector3 mDirection;              // The direction the object is moving
-    Ogre::Vector3 mDestination;            // The destination the object is moving towards
+protected:
+    virtual void createScene(void);
 
-    //Ogre::AnimationState *mAnimationState; // The current animation state of the object
+    // Ogre::FrameListener
+    virtual bool frameRenderingQueued(const Ogre::FrameEvent& evt);
 
-    Ogre::Entity *mEntity;                 // The Entity we are animating
-    Ogre::SceneNode *mNode;                // The -SceneNode that the Entity is attached to
-    std::deque<Ogre::Vector3> mWalkList;   // The list of points we are walking to
+    // OIS::KeyListener
+    virtual bool keyPressed  (const OIS::KeyEvent &arg );
+    virtual bool keyReleased (const OIS::KeyEvent &arg );
 
-    Ogre::Real mWalkSpeed;                 // The speed at which the object is moving
+    // OIS::MouseListener
+    virtual bool mouseMoved  (const OIS::MouseEvent &arg );
+    virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id );
 
-    OgreBites::ParamsPanel* mScoreDetailsPanel;     // score details panel
-
-    Ogre::Real mNumber1;
-    Ogre::Real mNumber2;
-    Ogre::Real mCorrectAnswer;
-    Ogre::Real mPlayerAnswer;
-
-    void getNewQuestion();
-    void processAnswer();
-    void keyNumberHit(const OIS::KeyEvent &arg);
-
-    virtual bool keyPressed( const OIS::KeyEvent &arg );
 
 
 };
 
-#endif // #ifndef __MathRacer_h_
+#endif // #ifndef __TutorialApplication_h_
+

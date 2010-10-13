@@ -30,12 +30,30 @@ TutorialApplication::~TutorialApplication(void)
 {
 }
 
+
+//-------------------------------------------------------------------------------------
+void TutorialApplication::createFrameListener(void)
+{
+    BaseApplication::createFrameListener();
+
+    Ogre::StringVector scoreItems;
+    scoreItems.push_back("Time");
+    scoreItems.push_back("Question");
+    scoreItems.push_back("Answer");
+    scoreItems.push_back("Correct Answer");
+    scoreItems.push_back("Speed");
+
+    mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
+    mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPRIGHT, 0);
+    mScoreDetailsPanel->show();
+    //mRoot->addFrameListener(this);
+}
 //-------------------------------------------------------------------------------------
 void TutorialApplication::createScene(void)
 {
 	mSceneMgr->setAmbientLight(ColourValue(0.3, 0.3, 0.3));
 
-	// add a bright light above the scene
+    // add a bright light above the scene
 	Light* light = mSceneMgr->createLight();
 	light->setType(Light::LT_POINT);
 	light->setPosition(-10, 40, 20);
@@ -57,7 +75,7 @@ void TutorialApplication::createScene(void)
 	// create our character controller
 	mChara = new SinbadCharacterController(mCamera);
 	mMathInput = new MathInput(this);
-	mMathRacer = new MathRacer(this);
+	//mMathRacer = new MathRacer(this);
 
 }
 
