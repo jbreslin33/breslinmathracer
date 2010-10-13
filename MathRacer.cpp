@@ -45,16 +45,8 @@ void MathRacer::createFrameListener(void)
 
     mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_TOPLEFT, "ScoreDetailsPanel", 200, scoreItems);
     mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPLEFT, 0);
-    //mTrayMgr->moveWidgetToTray(mDetailsPanel     , OgreBites::TL_TOPRIGHT, 0);
-    mTrayMgr->removeWidgetFromTray(mDetailsPanel);
-    // mDetailsPanel->hide();
-    mScoreDetailsPanel->setParamValue(0, "13");
-   // mScoreDetailsPanel->hide();
     mScoreDetailsPanel->show();
-    //mScoreDetailsPanel->
-    mTrayMgr->toggleAdvancedFrameStats();
 
-    //mRoot->addFrameListener(this);
 }
 //-------------------------------------------------------------------------------------
 void MathRacer::createScene(void)
@@ -88,13 +80,9 @@ void MathRacer::createScene(void)
 
 bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
 {
-      // mScoreDetailsPanel->show();
-          // mDetailsPanel->hide();
-          // seconds = time (NULL);
 
+    //update score time
     mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
-
-
 
 	// let character update animations and camera
 	mChara->addTime(evt.timeSinceLastFrame);

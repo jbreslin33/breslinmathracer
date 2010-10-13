@@ -9,7 +9,6 @@ using namespace Ogre;
 #define NUM_ANIMS 13           // number of animations the character has
 #define CHAR_HEIGHT 5          // height of character's center of mass above ground
 #define CAM_HEIGHT 2           // height of camera above character's center of mass
-#define RUN_SPEED 17           // character running speed in units per second
 #define TURN_SPEED 500.0f      // character turning in degrees per second
 #define ANIM_FADE_SPEED 7.5f   // animation crossfade speed in % of full weight per second
 #define JUMP_ACCEL 30.0f       // character jump acceleration in upward units per squared second
@@ -40,9 +39,10 @@ private:
 	};
 
 public:
-	
+
 	SinbadCharacterController(Camera* cam)
 	{
+	    mRunSpeed = 17;
 		setupBody(cam->getSceneManager());
 		setupCamera(cam);
 		setupAnimations();
@@ -268,11 +268,11 @@ private:
 			// turn as much as we can, but not more than we need to
 			if (yawToGoal < 0) yawToGoal = std::min<Real>(0, std::max<Real>(yawToGoal, yawAtSpeed)); //yawToGoal = Math::Clamp<Real>(yawToGoal, yawAtSpeed, 0);
 			else if (yawToGoal > 0) yawToGoal = std::max<Real>(0, std::min<Real>(yawToGoal, yawAtSpeed)); //yawToGoal = Math::Clamp<Real>(yawToGoal, 0, yawAtSpeed);
-			
+
 			mBodyNode->yaw(Degree(yawToGoal));
 
 			// move in current body direction (not the goal direction)
-			mBodyNode->translate(0, 0, deltaTime * RUN_SPEED * mAnims[mBaseAnimID]->getWeight(),
+			mBodyNode->translate(0, 0, deltaTime * mRunSpeed * mAnims[mBaseAnimID]->getWeight(),
 				Node::TS_LOCAL);
 		}
 
@@ -281,7 +281,7 @@ private:
 			// if we're jumping, add a vertical offset too, and apply gravity
 			mBodyNode->translate(0, mVerticalVelocity * deltaTime, 0, Node::TS_LOCAL);
 			mVerticalVelocity -= GRAVITY * deltaTime;
-			
+
 			Vector3 pos = mBodyNode->getPosition();
 			if (pos.y <= CHAR_HEIGHT)
 			{
@@ -444,7 +444,7 @@ private:
 			mCameraPivot->pitch(Degree(deltaPitch), Node::TS_LOCAL);
 			mPivotPitch += deltaPitch;
 		}
-		
+
 		Real dist = mCameraGoal->_getDerivedPosition().distance(mCameraPivot->_getDerivedPosition());
 		Real distChange = deltaZoom * dist;
 
@@ -502,7 +502,7 @@ private:
 
 	void setRunSpeed(Real runSpeed)
 	{
-		mRunSpeed = runSpeed;	
+		mRunSpeed = runSpeed;
 	}
 
 	Camera* mCamera;
