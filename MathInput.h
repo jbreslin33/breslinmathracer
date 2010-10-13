@@ -3,12 +3,13 @@
 
 #include "OIS.h"
 
-class TutorialApplication;
+class MathRacer;
+
 
 class MathInput
 {
 public:
-	MathInput();
+	MathInput(MathRacer* mathRacer);
 	~MathInput();
 
 	//input
@@ -16,8 +17,9 @@ public:
     void keyNumberHit (const OIS::KeyEvent &arg);
 
 protected:
-    //TutorialApplication* mTutorialApplication;
     std::string mPlayerAnswer;
+
+    MathRacer* mMathRacer;
 
 };
 

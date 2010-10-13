@@ -1,17 +1,18 @@
 
 #include "MathInput.h"
+#include "MathRacer.h"
 #include "Ogre.h"
 
 
-MathInput::MathInput()
+MathInput::MathInput(MathRacer* mathRacer)
 {
     //mTutorialApplication = tutorialApplication;
     mPlayerAnswer = "";
+    mMathRacer = mathRacer;
 }
 
 MathInput::~MathInput()
 {
-
 }
 
 void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
@@ -39,18 +40,17 @@ void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
     mPlayerAnswer = Ogre::StringConverter::parseReal(playerAnswer); // set global mPlayerAnswer(a real) to currnet answer attempt
     */
 
-
 }
 
 void MathInput::injectKeyDown(const OIS::KeyEvent& evt)
 {
 std::cout << "hit a number";
-/*
-    if (evt.key == OIS::KC_S)
+
+    if (evt.key == OIS::KC_M)
     {
-            mScoreDetailsPanel->show();
+        mMathRacer->startGame();
     }
-*/
+
     if (evt.key == OIS::KC_0)
     {
         keyNumberHit(evt);

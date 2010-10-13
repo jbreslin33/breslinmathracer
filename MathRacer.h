@@ -20,7 +20,9 @@ This source file is part of the
 #include "BaseApplication.h"
 #include "SinbadCharacterController.h"
 
+
 class MathInput;
+class MathProblems;
 
 class MathRacer : public BaseApplication
 {
@@ -30,10 +32,15 @@ public:
 
 	SinbadCharacterController* mChara;
 	MathInput*                 mMathInput;
+	MathProblems*              mMathProblems;
+
 
     void createFrameListener(void);
 
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
+
+    bool getGameStarted() { return mGameStarted; }
+    void startGame();
 
 protected:
     virtual void createScene(void);
@@ -49,7 +56,7 @@ protected:
     virtual bool mouseMoved  (const OIS::MouseEvent &arg );
     virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id );
 
-
+    bool mGameStarted;
 
 };
 

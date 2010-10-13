@@ -16,6 +16,7 @@ This source file is part of the
 */
 #include "MathRacer.h"
 #include "MathInput.h"
+#include "MathProblems.h"
 
 #include <time.h>
 
@@ -35,6 +36,9 @@ MathRacer::~MathRacer(void)
 void MathRacer::createFrameListener(void)
 {
     BaseApplication::createFrameListener();
+
+
+    mGameStarted = false;
 
     Ogre::StringVector scoreItems;
     scoreItems.push_back("Time");
@@ -61,7 +65,7 @@ void MathRacer::createScene(void)
 
 	// create a floor mesh resource
 	MeshManager::getSingleton().createPlane("floor", ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
-	Plane(Vector3::UNIT_Y, 0), 500, 500, 10, 10, true, 1, 10, 10, Vector3::UNIT_Z);
+	Plane(Vector3::UNIT_Y, 0), 200, 200, 10, 10, true, 1, 10, 10, Vector3::UNIT_Z);
 
 	// create a floor entity, give it a material, and place it at the origin
     Entity* floor = mSceneMgr->createEntity("Floor", "floor");
@@ -73,16 +77,20 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our character controller
-	mChara = new SinbadCharacterController(mCamera);
-
+	mChara        = new SinbadCharacterController(mCamera);
+	mMathProblems = new MathProblems();
+	mMathInput    = new MathInput(this);
 
 }
 
 bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
 {
 
-    //update score time
-    mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+    if (mGameStarted)
+    {
+        //update score time
+        mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+    }
 
 	// let character update animations and camera
 	mChara->addTime(evt.timeSinceLastFrame);
@@ -121,7 +129,12 @@ bool MathRacer::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 	return BaseApplication::mousePressed(evt, id);
 }
 
-
+void MathRacer::startGame()
+{
+    mGameStarted = true;
+    //get a math problem
+    mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
+}
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
 #define WIN32_LEAN_AND_MEAN
