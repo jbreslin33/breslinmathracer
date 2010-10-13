@@ -17,6 +17,8 @@ This source file is part of the
 #include "MathRacer.h"
 #include "MathInput.h"
 
+#include <time.h>
+
 using namespace Ogre;
 using namespace OgreBites;
 
@@ -41,9 +43,16 @@ void MathRacer::createFrameListener(void)
     scoreItems.push_back("Correct Answer");
     scoreItems.push_back("Speed");
 
-    mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_NONE, "ScoreDetailsPanel", 200, scoreItems);
+    mScoreDetailsPanel = mTrayMgr->createParamsPanel(OgreBites::TL_TOPLEFT, "ScoreDetailsPanel", 200, scoreItems);
     mTrayMgr->moveWidgetToTray(mScoreDetailsPanel, OgreBites::TL_TOPLEFT, 0);
+    //mTrayMgr->moveWidgetToTray(mDetailsPanel     , OgreBites::TL_TOPRIGHT, 0);
+    mTrayMgr->removeWidgetFromTray(mDetailsPanel);
+    // mDetailsPanel->hide();
+    mScoreDetailsPanel->setParamValue(0, "13");
+   // mScoreDetailsPanel->hide();
     mScoreDetailsPanel->show();
+    //mScoreDetailsPanel->
+    mTrayMgr->toggleAdvancedFrameStats();
 
     //mRoot->addFrameListener(this);
 }
@@ -73,12 +82,20 @@ void MathRacer::createScene(void)
 
 	// create our character controller
 	mChara = new SinbadCharacterController(mCamera);
-	mMathInput = new MathInput();
+
 
 }
 
 bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
 {
+      // mScoreDetailsPanel->show();
+          // mDetailsPanel->hide();
+          // seconds = time (NULL);
+
+    mScoreDetailsPanel->setParamValue(0, Ogre::StringConverter::toString(time(NULL)));
+
+
+
 	// let character update animations and camera
 	mChara->addTime(evt.timeSinceLastFrame);
 	return BaseApplication::frameRenderingQueued(evt);

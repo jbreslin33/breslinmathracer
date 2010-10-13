@@ -38,11 +38,19 @@ void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
     mScoreDetailsPanel->setParamValue(2, playerAnswer); //show player in box their newest answer
     mPlayerAnswer = Ogre::StringConverter::parseReal(playerAnswer); // set global mPlayerAnswer(a real) to currnet answer attempt
     */
+
+
 }
 
 void MathInput::injectKeyDown(const OIS::KeyEvent& evt)
 {
 std::cout << "hit a number";
+/*
+    if (evt.key == OIS::KC_S)
+    {
+            mScoreDetailsPanel->show();
+    }
+*/
     if (evt.key == OIS::KC_0)
     {
         keyNumberHit(evt);
