@@ -97,7 +97,9 @@ std::cout << "hit a number";
 
     else if (evt.key == OIS::KC_RETURN)
     {
+        mMathRacer->getMathProblems()->setPlayerAnswer(mMathRacer->getScoreDetailsPanel()->getParamValue(2));
         mMathRacer->getMathProblems()->checkAnswer();
+        mMathRacer->getMathProblems()->getQuestion();
     }
 
 

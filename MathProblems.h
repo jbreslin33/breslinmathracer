@@ -17,7 +17,7 @@ public:
 	std::vector<int> mVectorOfInts;
 
 	//just to test for now....
-	std::string getQuestion();
+	virtual std::string getQuestion();
 	virtual bool        checkAnswer();
 
     virtual void setCorrectAnswer(std::string answer) { mCorrectAnswer = answer; }
