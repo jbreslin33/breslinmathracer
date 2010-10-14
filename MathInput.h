@@ -5,7 +5,6 @@
 
 class MathRacer;
 
-
 class MathInput
 {
 public:
@@ -13,6 +12,8 @@ public:
 	~MathInput();
 
 	//input
+
+	std::string getPlayerAnswer() { return mPlayerAnswer; }
 	void injectKeyDown(const OIS::KeyEvent& evt);
     void keyNumberHit (const OIS::KeyEvent &arg);
 

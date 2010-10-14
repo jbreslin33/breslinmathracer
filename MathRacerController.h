@@ -1,5 +1,5 @@
-#ifndef __Sinbad_H__
-#define __Sinbad_H__
+#ifndef __MATHRACERCONTROLLER_H__
+#define __MATHRACERCONTROLLER_H__
 
 #include "Ogre.h"
 #include "OIS.h"
@@ -14,8 +14,9 @@ class MathRacerController : public SinbadCharacterController
 
 public:
 
-	MathRacerController(Camera* cam)
+	MathRacerController(Camera* cam) : SinbadCharacterController(cam)
 	{
 	}
+};
 
 #endif

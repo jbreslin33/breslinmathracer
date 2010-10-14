@@ -18,10 +18,10 @@ MathInput::~MathInput()
 void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
 {
 
-    std::string tempString   = Ogre::StringConverter::toString(arg.key);
-
+    std::string tempString   = Ogre::StringConverter::toString(arg.key -1);
+    //tempString = tempString;
     mPlayerAnswer.append(tempString);
-
+    mMathRacer->getScoreDetaisPanel()->setParamValue(2, mPlayerAnswer); //show player in box their newest answer
     /*
     std::string playerAnswer = Ogre::StringConverter::toString(mPlayerAnswer); //set current real player answer to string
     std::string tempString   = Ogre::StringConverter::toString(arg.key);

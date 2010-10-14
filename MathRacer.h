@@ -35,10 +35,9 @@ public:
 	MathInput*                 mMathInput;
 	MathProblems*              mMathProblems;
 
-
     void createFrameListener(void);
 
-    OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
+    OgreBites::ParamsPanel* getScoreDetaisPanel() { return mScoreDetailsPanel; }
 
     bool getGameStarted() { return mGameStarted; }
     void startGame();
@@ -58,6 +57,8 @@ protected:
     virtual bool mousePressed(const OIS::MouseEvent &arg, OIS::MouseButtonID id );
 
     bool mGameStarted;
+
+    OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
 
 };
 
