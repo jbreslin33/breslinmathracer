@@ -22,7 +22,7 @@ This source file is part of the
 
 
 class MathInput;
-class MathProblems;
+class OgreMathProblems;
 class MathRacerController;
 
 class MathRacer : public BaseApplication
@@ -33,14 +33,16 @@ public:
 
 	MathRacerController* mChara;
 	MathInput*                 mMathInput;
-	MathProblems*              mMathProblems;
+
+    OgreMathProblems* getMathProblems() { return mMathProblems; }
 
     void createFrameListener(void);
 
-    OgreBites::ParamsPanel* getScoreDetaisPanel() { return mScoreDetailsPanel; }
+    OgreBites::ParamsPanel* getScoreDetailsPanel() { return mScoreDetailsPanel; }
 
     bool getGameStarted() { return mGameStarted; }
     void startGame();
+    //void checkAnswer();
 
 protected:
     virtual void createScene(void);
@@ -59,6 +61,8 @@ protected:
     bool mGameStarted;
 
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
+
+	OgreMathProblems*              mMathProblems;
 
 };
 

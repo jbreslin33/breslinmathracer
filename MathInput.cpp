@@ -1,6 +1,8 @@
 
 #include "MathInput.h"
 #include "MathRacer.h"
+#include "OgreMathProblems.h"
+
 #include "Ogre.h"
 
 
@@ -21,7 +23,8 @@ void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
     std::string tempString   = Ogre::StringConverter::toString(arg.key -1);
     //tempString = tempString;
     mPlayerAnswer.append(tempString);
-    mMathRacer->getScoreDetaisPanel()->setParamValue(2, mPlayerAnswer); //show player in box their newest answer
+    mMathRacer->getScoreDetailsPanel()->setParamValue(2, mPlayerAnswer); //show player in box their newest answer
+
     /*
     std::string playerAnswer = Ogre::StringConverter::toString(mPlayerAnswer); //set current real player answer to string
     std::string tempString   = Ogre::StringConverter::toString(arg.key);
@@ -94,7 +97,7 @@ std::cout << "hit a number";
 
     else if (evt.key == OIS::KC_RETURN)
     {
-
+        mMathRacer->getMathProblems()->checkAnswer();
     }
 
 

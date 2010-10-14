@@ -16,7 +16,7 @@ This source file is part of the
 */
 #include "MathRacer.h"
 #include "MathInput.h"
-#include "MathProblems.h"
+#include "OgreMathProblems.h"
 #include "MathRacerController.h"
 
 #include <time.h>
@@ -79,7 +79,7 @@ void MathRacer::createScene(void)
 
 	// create our character controller
 	mChara        = new MathRacerController(mCamera);
-	mMathProblems = new MathProblems();
+	mMathProblems = new OgreMathProblems(this);
 	mMathInput    = new MathInput(this);
 
 }
@@ -136,7 +136,23 @@ void MathRacer::startGame()
     //get a math problem
     mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
 }
+/*
+void MathRacer::checkAnswer()
+{
+   // if (mMathProblems->checkAnswer(mScoreDetailsPanel->getParamValue(2)))
 
+    {
+        mScoreDetailsPanel->setParamValue(3, "CORRECT");
+    }
+    else
+    {
+        mScoreDetailsPanel->setParamValue(3, "WRONG");
+    }
+    mScoreDetailsPanel->setParamValue(1, "");
+    mScoreDetailsPanel->setParamValue(2, "");
+
+}
+*/
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
 #define WIN32_LEAN_AND_MEAN
 #include "windows.h"

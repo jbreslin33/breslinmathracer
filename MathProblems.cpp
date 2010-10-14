@@ -4,8 +4,9 @@
 #include <sstream>
 #include <iostream>//Ah the way it should be
 
-MathProblems::MathProblems()
+MathProblems::MathProblems(MathRacer* mathRacer)
 {
+    mMathRacer = mathRacer;
 	mQuestion = "What is 7 + 3\n";
 }
 
@@ -21,9 +22,10 @@ std::string MathProblems::convertInt(int number)
    return ss.str();//return a string with the contents of the stream
 }
 
-bool MathProblems::checkAnswer(std::string answer)
+bool MathProblems::checkAnswer()
 {
-	if (answer == mAnswer)
+
+	if (mPlayerAnswer == mCorrectAnswer)
 		return true;
 	else
 		return false;
@@ -47,9 +49,9 @@ std::string MathProblems::getQuestion()
    /* generate numbers: */
    int mNumber1 = rand() % 10 + 1;
    int mNumber2 = rand() % 10 + 1;
-   int mCorrectAnswer = mNumber1 + mNumber2;
+   int correctAnswer = mNumber1 + mNumber2;
 
-   mAnswer = convertInt(mCorrectAnswer);
+   mCorrectAnswer = convertInt(correctAnswer);
 
    mQuestion = convertInt(mNumber1) + " + " + convertInt(mNumber2) + " = ";
    //std::cout << mAnswer;

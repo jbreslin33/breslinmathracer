@@ -94,6 +94,7 @@ set(HDRS
 	./MathRacer.h
 	#./MathRacerGui.h
 	./MathRacerController.h
+	./OgreMathProblems.h
 
 )
 
@@ -104,6 +105,7 @@ set(SRCS
 	./MathProblems.cpp
 	./MathRacer.cpp
 	#./MathRacerGui.cpp
+	./OgreMathProblems.cpp
 )
 
 include_directories( ${OIS_INCLUDE_DIRS}
