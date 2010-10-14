@@ -50,7 +50,7 @@ std::string OgreMathProblems::getQuestion()
    /*display question */
    //mScoreDetailsPanel->setParamValue(1, my_string4);
 
-   //  mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
+   mMathRacer->getScoreDetailsPanel()->setParamValue(1, mQuestion);
 
    return mQuestion;
 }
@@ -63,6 +63,8 @@ bool OgreMathProblems::checkAnswer()
         mMathRacer->getScoreDetailsPanel()->setParamValue(3, "CORRECT");
         mMathRacer->getScoreDetailsPanel()->setParamValue(1, "");
         mMathRacer->getScoreDetailsPanel()->setParamValue(2, "");
+        mCorrectAnswer = "";
+        mPlayerAnswer = "";
         return true;
     }
     else
@@ -70,6 +72,8 @@ bool OgreMathProblems::checkAnswer()
         mMathRacer->getScoreDetailsPanel()->setParamValue(3, "WRONG");
         mMathRacer->getScoreDetailsPanel()->setParamValue(1, "");
         mMathRacer->getScoreDetailsPanel()->setParamValue(2, "");
+        mCorrectAnswer = "";
+        mPlayerAnswer = "";
         return false;
     }
 
