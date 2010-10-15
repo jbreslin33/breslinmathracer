@@ -88,24 +88,20 @@ endif()
 set(HDRS
 	../baseapplication/BaseApplication.h
 	./MathInput.h
-	#./TutorialApplication.h
 	../charactercontrollers/SinbadCharacterController.h
-	./MathProblems.h
+	../questionfactory/MathProblems.h
 	./MathRacer.h
-	#./MathRacerGui.h
 	../charactercontrollers/MathRacerController.h
-	./OgreMathProblems.h
+	../questionfactory/OgreMathProblems.h
 
 )
 
 set(SRCS
 	../baseapplication/BaseApplication.cpp
 	./MathInput.cpp
-	#./TutorialApplication.cpp
-	./MathProblems.cpp
+	../questionfactory/MathProblems.cpp
 	./MathRacer.cpp
-	#./MathRacerGui.cpp
-	./OgreMathProblems.cpp
+	../questionfactory/OgreMathProblems.cpp
 )
 
 include_directories( ${OIS_INCLUDE_DIRS}

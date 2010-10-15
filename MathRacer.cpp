@@ -17,7 +17,7 @@ This source file is part of the
 
 #include "MathRacer.h"
 #include "MathInput.h"
-#include "OgreMathProblems.h"
+#include "../questionfactory/OgreMathProblems.h"
 #include "../charactercontrollers/MathRacerController.h"
 
 #include <time.h>
