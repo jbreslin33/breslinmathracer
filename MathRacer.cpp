@@ -16,7 +16,7 @@ This source file is part of the
 */
 
 #include "MathRacer.h"
-#include "MathInput.h"
+#include "../breslininput/MathInput.h"
 #include "../questionfactory/OgreMathProblems.h"
 #include "../charactercontrollers/MathRacerController.h"
 

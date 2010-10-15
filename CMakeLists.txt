@@ -87,7 +87,7 @@ endif()
 
 set(HDRS
 	../baseapplication/BaseApplication.h
-	./MathInput.h
+	../breslininput/MathInput.h
 	../charactercontrollers/SinbadCharacterController.h
 	../questionfactory/MathProblems.h
 	./MathRacer.h
@@ -98,7 +98,7 @@ set(HDRS
 
 set(SRCS
 	../baseapplication/BaseApplication.cpp
-	./MathInput.cpp
+	../breslininput/MathInput.cpp
 	../questionfactory/MathProblems.cpp
 	./MathRacer.cpp
 	../questionfactory/OgreMathProblems.cpp
