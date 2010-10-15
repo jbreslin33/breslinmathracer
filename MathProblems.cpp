@@ -26,12 +26,10 @@ std::string MathProblems::convertInt(int number)
 
 bool MathProblems::checkAnswer()
 {
-/*
 	if (mPlayerAnswer == mCorrectAnswer)
 		return true;
 	else
-		return false;
-*/
+        return false;
 }
 
 std::string MathProblems::getQuestion()
@@ -40,7 +38,7 @@ std::string MathProblems::getQuestion()
    srand ( time(NULL) );
 
    /* generate numbers: */
-   /*
+
    int mNumber1 = rand() % 10 + 1;
    int mNumber2 = rand() % 10 + 1;
    int correctAnswer = mNumber1 + mNumber2;
@@ -48,7 +46,7 @@ std::string MathProblems::getQuestion()
    mCorrectAnswer = convertInt(correctAnswer);
 
    mQuestion = convertInt(mNumber1) + " + " + convertInt(mNumber2) + " = ";
-*/
+
    return "";
 
 }

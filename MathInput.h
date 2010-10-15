@@ -11,15 +11,10 @@ public:
 	MathInput(MathRacer* mathRacer);
 	~MathInput();
 
-	//input
-
-	std::string getPlayerAnswer() { return mPlayerAnswer; }
 	void injectKeyDown(const OIS::KeyEvent& evt);
     void keyNumberHit (const OIS::KeyEvent &arg);
 
 protected:
-    std::string mPlayerAnswer;
-
     MathRacer* mMathRacer;
 
 };

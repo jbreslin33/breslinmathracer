@@ -8,7 +8,6 @@
 
 MathInput::MathInput(MathRacer* mathRacer)
 {
-    mPlayerAnswer = "";
     mMathRacer    = mathRacer;
 }
 
@@ -73,6 +72,4 @@ void MathInput::injectKeyDown(const OIS::KeyEvent& evt)
     {
         mMathRacer->getMathProblems()->checkAnswer();
     }
-
-
 }
