@@ -8,9 +8,8 @@
 
 MathInput::MathInput(MathRacer* mathRacer)
 {
-    //mTutorialApplication = tutorialApplication;
     mPlayerAnswer = "";
-    mMathRacer = mathRacer;
+    mMathRacer    = mathRacer;
 }
 
 MathInput::~MathInput()
@@ -19,42 +18,18 @@ MathInput::~MathInput()
 
 void MathInput::keyNumberHit(const OIS::KeyEvent &arg)
 {
-
-    std::string tempString   = Ogre::StringConverter::toString(arg.key -1);
-    //tempString = tempString;
-    mPlayerAnswer.append(tempString);
-    mMathRacer->getScoreDetailsPanel()->setParamValue(2, mPlayerAnswer); //show player in box their newest answer
-
-    /*
-    std::string playerAnswer = Ogre::StringConverter::toString(mPlayerAnswer); //set current real player answer to string
-    std::string tempString   = Ogre::StringConverter::toString(arg.key);
-
-    Ogre::Real tempReal = Ogre::StringConverter::parseReal(tempString);
-    tempReal            = tempReal - 1;
-    tempString          = Ogre::StringConverter::toString(tempReal);
-
-    playerAnswer.append(tempString); // append new number to temp string
-
-    //let's strip leading zero....
-    if (playerAnswer.substr(0,1) == (std::string) "0")
-        playerAnswer = playerAnswer.substr(1,playerAnswer.length() -1);
-
-    mScoreDetailsPanel->setParamValue(2, playerAnswer); //show player in box their newest answer
-    mPlayerAnswer = Ogre::StringConverter::parseReal(playerAnswer); // set global mPlayerAnswer(a real) to currnet answer attempt
-    */
-
+    std::string number   = Ogre::StringConverter::toString(arg.key -1);
+    mMathRacer->getMathProblems()->keyNumberHit(number);
 }
 
 void MathInput::injectKeyDown(const OIS::KeyEvent& evt)
 {
-std::cout << "hit a number";
 
     if (evt.key == OIS::KC_M)
     {
         mMathRacer->startGame();
     }
-
-    if (evt.key == OIS::KC_0)
+    else if (evt.key == OIS::KC_0)
     {
         keyNumberHit(evt);
     }
@@ -94,12 +69,9 @@ std::cout << "hit a number";
     {
         keyNumberHit(evt);
     }
-
     else if (evt.key == OIS::KC_RETURN)
     {
-        mMathRacer->getMathProblems()->setPlayerAnswer(mMathRacer->getScoreDetailsPanel()->getParamValue(2));
         mMathRacer->getMathProblems()->checkAnswer();
-        mMathRacer->getMathProblems()->getQuestion();
     }
 
 

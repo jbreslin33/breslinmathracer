@@ -22,6 +22,7 @@ public:
 
     virtual void setCorrectAnswer(std::string answer) { mCorrectAnswer = answer; }
     virtual void setPlayerAnswer (std::string answer) { mPlayerAnswer  = answer; }
+    virtual void keyNumberHit(std::string number) { }
    //utility
 	std::string convertInt(int number);
 

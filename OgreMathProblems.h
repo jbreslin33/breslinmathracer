@@ -17,6 +17,7 @@ public:
 
 	bool checkAnswer();
     std::string getQuestion();
+    void keyNumberHit(std::string number);
 };
 
 #endif
