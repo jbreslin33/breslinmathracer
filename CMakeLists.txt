@@ -86,20 +86,20 @@ if (NOT OGRE_BUILD_PLATFORM_IPHONE)
 endif()
 
 set(HDRS
-	./BaseApplication.h
+	../baseapplication/BaseApplication.h
 	./MathInput.h
 	#./TutorialApplication.h
-	./SinbadCharacterController.h
+	../charactercontrollers/SinbadCharacterController.h
 	./MathProblems.h
 	./MathRacer.h
 	#./MathRacerGui.h
-	./MathRacerController.h
+	../charactercontrollers/MathRacerController.h
 	./OgreMathProblems.h
 
 )
 
 set(SRCS
-	./BaseApplication.cpp
+	../baseapplication/BaseApplication.cpp
 	./MathInput.cpp
 	#./TutorialApplication.cpp
 	./MathProblems.cpp

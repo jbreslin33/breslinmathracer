@@ -14,10 +14,11 @@ This source file is part of the
       http://www.ogre3d.org/tikiwiki/
 -----------------------------------------------------------------------------
 */
+
 #include "MathRacer.h"
 #include "MathInput.h"
 #include "OgreMathProblems.h"
-#include "MathRacerController.h"
+#include "../charactercontrollers/MathRacerController.h"
 
 #include <time.h>
 

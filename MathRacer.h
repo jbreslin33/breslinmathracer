@@ -17,9 +17,7 @@ This source file is part of the
 #ifndef __MATHRACER_h_
 #define __MATHRACER_h_
 
-#include "BaseApplication.h"
-//#include "SinbadCharacterController.h"
-
+#include "../baseapplication/BaseApplication.h"
 
 class MathInput;
 class OgreMathProblems;
