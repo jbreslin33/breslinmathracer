@@ -40,6 +40,8 @@ public:
 
     bool getGameStarted() { return mGameStarted; }
     void startGame();
+
+    void processAnswer();
     //void checkAnswer();
 
 protected:

@@ -137,23 +137,22 @@ void MathRacer::startGame()
     //get a math problem
     mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
 }
-/*
-void MathRacer::checkAnswer()
-{
-   // if (mMathProblems->checkAnswer(mScoreDetailsPanel->getParamValue(2)))
 
+void MathRacer::processAnswer()
+{
+    if (mMathProblems->checkAnswer())
     {
-        mScoreDetailsPanel->setParamValue(3, "CORRECT");
+        getScoreDetailsPanel()->setParamValue(3, "YES");
     }
     else
     {
-        mScoreDetailsPanel->setParamValue(3, "WRONG");
+        getScoreDetailsPanel()->setParamValue(3, "NO");
     }
-    mScoreDetailsPanel->setParamValue(1, "");
-    mScoreDetailsPanel->setParamValue(2, "");
-
+    getScoreDetailsPanel()->setParamValue(1, "");
+    getScoreDetailsPanel()->setParamValue(2, "");
+    mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
 }
-*/
+
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
 #define WIN32_LEAN_AND_MEAN
 #include "windows.h"
