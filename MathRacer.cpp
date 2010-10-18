@@ -142,7 +142,7 @@ void MathRacer::keyNumberHit(std::string number)
    // std::string number   = Ogre::StringConverter::toString(arg.key -1);
     //mMathRacer->keyNumberHit(number);
    //mPlayerAnswer.append(number);
-//   mMathRacer->getScoreDetailsPanel()->setParamValue(2, mPlayerAnswer); //show player in box their newest answer
+  getScoreDetailsPanel()->setParamValue(2, getAdditionFactory()->getPlayerAnswer()); //show player in box their newest answer
 
 
 }
