@@ -20,7 +20,7 @@ This source file is part of the
 #include "../baseapplication/BaseApplication.h"
 
 class MathInput;
-class OgreMathProblems;
+class AdditionFactory;
 class MathRacerController;
 
 class MathRacer : public BaseApplication
@@ -29,20 +29,19 @@ public:
     MathRacer(void);
     virtual ~MathRacer(void);
 
-	MathRacerController* mChara;
-	MathInput*                 mMathInput;
-
-    OgreMathProblems* getMathProblems() { return mMathProblems; }
-
     void createFrameListener(void);
 
     OgreBites::ParamsPanel* getScoreDetailsPanel() { return mScoreDetailsPanel; }
 
     bool getGameStarted() { return mGameStarted; }
     void startGame();
-
     void processAnswer();
-    //void checkAnswer();
+
+    void keyNumberHit (std::string number);
+
+    //get objects
+    AdditionFactory* getAdditionFactory() { return mAdditionFactory; }
+
 
 protected:
     virtual void createScene(void);
@@ -62,7 +61,9 @@ protected:
 
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
 
-	OgreMathProblems*              mMathProblems;
+	AdditionFactory*        mAdditionFactory;
+	MathRacerController*    mChara;
+	MathInput*              mMathInput;
 
 };
 

@@ -17,7 +17,7 @@ This source file is part of the
 
 #include "MathRacer.h"
 #include "../breslininput/MathInput.h"
-#include "../questionfactory/OgreMathProblems.h"
+#include "../questionfactory/AdditionFactory.h"
 #include "../charactercontrollers/MathRacerController.h"
 
 #include <time.h>
@@ -38,7 +38,6 @@ MathRacer::~MathRacer(void)
 void MathRacer::createFrameListener(void)
 {
     BaseApplication::createFrameListener();
-
 
     mGameStarted = false;
 
@@ -79,9 +78,9 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our character controller
-	mChara        = new MathRacerController(mCamera);
-	mMathProblems = new OgreMathProblems(this);
-	mMathInput    = new MathInput(this);
+	mChara           = new MathRacerController(mCamera);
+	mAdditionFactory = new AdditionFactory();
+	mMathInput       = new MathInput(this);
 
 }
 
@@ -135,12 +134,22 @@ void MathRacer::startGame()
 {
     mGameStarted = true;
     //get a math problem
-    mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
+    mScoreDetailsPanel->setParamValue(1, mAdditionFactory->getQuestion());
+}
+
+void MathRacer::keyNumberHit(std::string number)
+{
+   // std::string number   = Ogre::StringConverter::toString(arg.key -1);
+    //mMathRacer->keyNumberHit(number);
+   //mPlayerAnswer.append(number);
+//   mMathRacer->getScoreDetailsPanel()->setParamValue(2, mPlayerAnswer); //show player in box their newest answer
+
+
 }
 
 void MathRacer::processAnswer()
 {
-    if (mMathProblems->checkAnswer())
+    if (mAdditionFactory->checkAnswer())
     {
         getScoreDetailsPanel()->setParamValue(3, "YES");
     }
@@ -150,7 +159,7 @@ void MathRacer::processAnswer()
     }
     getScoreDetailsPanel()->setParamValue(1, "");
     getScoreDetailsPanel()->setParamValue(2, "");
-    mScoreDetailsPanel->setParamValue(1, mMathProblems->getQuestion());
+    mScoreDetailsPanel->setParamValue(1, mAdditionFactory->getQuestion());
 }
 
 #if OGRE_PLATFORM == OGRE_PLATFORM_WIN32
