@@ -147,6 +147,9 @@ void MathRacer::processAnswer()
     if (mAdditionFactory->checkAnswer())
     {
         getScoreDetailsPanel()->setParamValue(3, "YES");
+
+        //let's also make character move
+
     }
     else
     {
