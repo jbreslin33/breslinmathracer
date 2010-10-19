@@ -78,7 +78,8 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our character controller
-	mChara           = new MathRacerController(mCamera);
+	mChara           = new MathRacerController(mCamera, "SinbadBody");
+	mNPC1            = new MathRacerController(mCamera, "npc1");
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
@@ -135,6 +136,7 @@ void MathRacer::startGame()
     mGameStarted = true;
     //get a math problem
     mScoreDetailsPanel->setParamValue(1, mAdditionFactory->getQuestion());
+    mChara->run();
 }
 
 void MathRacer::keyNumberHit(std::string number)

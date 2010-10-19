@@ -63,6 +63,7 @@ protected:
 
 	AdditionFactory*        mAdditionFactory;
 	MathRacerController*    mChara;
+	MathRacerController*    mNPC1;
 	MathInput*              mMathInput;
 
 };
