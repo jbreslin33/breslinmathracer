@@ -81,8 +81,8 @@ void MathRacer::createScene(void)
 
 
 
-	mChara           = new CharacterController(mCamera, "SinbadBody", mBodyNodeVector, mBodyEntVector);
-	mNPC1            = new CharacterController(mCamera, "npc1"      , mBodyNodeVector, mBodyEntVector);
+	mChara           = new CharacterController(mCamera, "SinbadBody", mBodyNodeVector, mBodyEntVector,0);
+	mNPC1            = new CharacterController(mCamera, "npc1"      , mBodyNodeVector, mBodyEntVector,1);
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
