@@ -21,7 +21,7 @@ This source file is part of the
 
 class MathInput;
 class AdditionFactory;
-class MathRacerController;
+class CharacterController;
 
 class MathRacer : public BaseApplication
 {
@@ -62,8 +62,8 @@ protected:
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
 
 	AdditionFactory*        mAdditionFactory;
-	MathRacerController*    mChara;
-	MathRacerController*    mNPC1;
+	CharacterController*    mChara;
+	//MathRacerController*    mNPC1;
 	MathInput*              mMathInput;
 
 };

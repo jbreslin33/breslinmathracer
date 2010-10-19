@@ -18,7 +18,7 @@ This source file is part of the
 #include "MathRacer.h"
 #include "../breslininput/MathInput.h"
 #include "../questionfactory/AdditionFactory.h"
-#include "../charactercontrollers/MathRacerController.h"
+#include "../charactercontrollers/CharacterController.h"
 
 #include <time.h>
 
@@ -78,8 +78,8 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our character controller
-	mChara           = new MathRacerController(mCamera, "SinbadBody");
-	mNPC1            = new MathRacerController(mCamera, "npc1");
+	mChara           = new CharacterController(mCamera, "SinbadBody");
+	//mNPC1            = new MathRacerController(mCamera, "npc1");
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
