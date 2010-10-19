@@ -78,8 +78,11 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our character controller
-	mChara           = new CharacterController(mCamera, "SinbadBody");
-	//mNPC1            = new MathRacerController(mCamera, "npc1");
+
+
+
+	mChara           = new CharacterController(mCamera, "SinbadBody", mBodyNodeVector, mBodyEntVector);
+	mNPC1            = new CharacterController(mCamera, "npc1"      , mBodyNodeVector, mBodyEntVector);
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 

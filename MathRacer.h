@@ -17,7 +17,11 @@ This source file is part of the
 #ifndef __MATHRACER_h_
 #define __MATHRACER_h_
 
+#include "Ogre.h"
+
 #include "../baseapplication/BaseApplication.h"
+
+using namespace Ogre;
 
 class MathInput;
 class AdditionFactory;
@@ -62,9 +66,15 @@ protected:
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
 
 	AdditionFactory*        mAdditionFactory;
-	CharacterController*    mChara;
-	//MathRacerController*    mNPC1;
+
 	MathInput*              mMathInput;
+
+	CharacterController*    mChara;
+	CharacterController*    mNPC1;
+
+public:
+	std::vector<SceneNode*> mBodyNodeVector;
+	std::vector<Entity*>    mBodyEntVector;
 
 };
 
