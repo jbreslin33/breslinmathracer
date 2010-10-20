@@ -70,11 +70,9 @@ protected:
 	MathInput*              mMathInput;
 
 	CharacterController*    mChara;
-	CharacterController*    mNPC1;
 
-public:
-	std::vector<SceneNode*> mBodyNodeVector;
-	std::vector<Entity*>    mBodyEntVector;
+
+
 
 };
 

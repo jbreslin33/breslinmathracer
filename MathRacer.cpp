@@ -76,13 +76,15 @@ void MathRacer::createScene(void)
 
 	// disable default camera control so the character can do its own
 	mCameraMan->setStyle(CS_MANUAL);
+        std::cerr << "hello";
 
 	// create our character controller
 
 
 
-	mChara           = new CharacterController(mCamera, "SinbadBody", mBodyNodeVector, mBodyEntVector,0);
-	mNPC1            = new CharacterController(mCamera, "npc1"      , mBodyNodeVector, mBodyEntVector,1);
+
+	mChara           = new CharacterController(mCamera);
+
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
@@ -139,7 +141,7 @@ void MathRacer::startGame()
     mGameStarted = true;
     //get a math problem
     mScoreDetailsPanel->setParamValue(1, mAdditionFactory->getQuestion());
-    mChara->run();
+    //mChara->run();
 }
 
 void MathRacer::keyNumberHit(std::string number)
