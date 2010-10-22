@@ -18,7 +18,7 @@ This source file is part of the
 #include "MathRacer.h"
 #include "../breslininput/MathInput.h"
 #include "../questionfactory/AdditionFactory.h"
-#include "../charactercontrollers/CharacterController.h"
+#include "../charactercontrollers/Character.h"
 
 #include <time.h>
 
@@ -78,12 +78,24 @@ void MathRacer::createScene(void)
 	mCameraMan->setStyle(CS_MANUAL);
         std::cerr << "hello";
 
-	// create our character controller
+	// create our characters
 
+	std::vector<std::string> mNames;
+	std::vector<std::string> mMeshes;
 
+    std::string s1 = "sinbad1";
+    std::string s2 = "sinbad2";
+    std::string s3 = "sinbad3";
 
+	mNames.push_back(s1);
+    mNames.push_back(s2);
+    mNames.push_back(s3);
 
-	mChara           = new CharacterController(mCamera);
+	mMeshes.push_back("sinbad.mesh");
+	mMeshes.push_back("sinbad.mesh");
+	mMeshes.push_back("sinbad.mesh");
+
+	mChara           = new Character(mCamera, 3, mNames, mMeshes);
 
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
@@ -100,7 +112,7 @@ bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
     }
 
 	// let character update animations and camera
-	mChara->addTime(evt.timeSinceLastFrame);
+	//mChara->addTime(evt.timeSinceLastFrame);
 	return BaseApplication::frameRenderingQueued(evt);
 }
 
@@ -109,7 +121,7 @@ bool MathRacer::keyPressed(const OIS::KeyEvent& evt)
 	// relay input events to character controller
 	if (!mTrayMgr->isDialogVisible())
 	{
-        mChara->injectKeyDown(evt);
+        //mChara->injectKeyDown(evt);
         mMathInput->injectKeyDown(evt);
 	}
 	return BaseApplication::keyPressed(evt);
@@ -118,21 +130,21 @@ bool MathRacer::keyPressed(const OIS::KeyEvent& evt)
 bool MathRacer::keyReleased(const OIS::KeyEvent& evt)
 {
 	// relay input events to character controller
-	if (!mTrayMgr->isDialogVisible()) mChara->injectKeyUp(evt);
+	if (!mTrayMgr->isDialogVisible()) //mChara->injectKeyUp(evt);
 	return BaseApplication::keyReleased(evt);
 }
 
 bool MathRacer::mouseMoved(const OIS::MouseEvent& evt)
 {
 	// relay input events to character controller
-	if (!mTrayMgr->isDialogVisible()) mChara->injectMouseMove(evt);
+	if (!mTrayMgr->isDialogVisible()) //mChara->injectMouseMove(evt);
 	return BaseApplication::mouseMoved(evt);
 }
 
 bool MathRacer::mousePressed(const OIS::MouseEvent& evt, OIS::MouseButtonID id)
 {
 	// relay input events to character controller
-	if (!mTrayMgr->isDialogVisible()) mChara->injectMouseDown(evt, id);
+	if (!mTrayMgr->isDialogVisible()) //mChara->injectMouseDown(evt, id);
 	return BaseApplication::mousePressed(evt, id);
 }
 

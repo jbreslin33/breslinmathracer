@@ -25,7 +25,7 @@ using namespace Ogre;
 
 class MathInput;
 class AdditionFactory;
-class CharacterController;
+class Character;
 
 class MathRacer : public BaseApplication
 {
@@ -69,7 +69,7 @@ protected:
 
 	MathInput*              mMathInput;
 
-	CharacterController*    mChara;
+	Character*    mChara;
 
 
 
