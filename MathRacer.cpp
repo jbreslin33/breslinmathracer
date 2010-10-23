@@ -75,28 +75,11 @@ void MathRacer::createScene(void)
     mSceneMgr->getRootSceneNode()->attachObject(floor);
 
 	// disable default camera control so the character can do its own
-	mCameraMan->setStyle(CS_MANUAL);
-        std::cerr << "hello";
+	//mCameraMan->setStyle(CS_MANUAL);
 
 	// create our characters
-
-	std::vector<std::string> mNames;
-	std::vector<std::string> mMeshes;
-
-    std::string s1 = "sinbad1";
-    std::string s2 = "sinbad2";
-    std::string s3 = "sinbad3";
-
-	mNames.push_back(s1);
-    mNames.push_back(s2);
-    mNames.push_back(s3);
-
-	mMeshes.push_back("sinbad.mesh");
-	mMeshes.push_back("sinbad.mesh");
-	mMeshes.push_back("sinbad.mesh");
-
-	mChara           = new Character(mCamera, 3, mNames, mMeshes);
-
+	mChara           = new Character(mCamera);
+    mChara->setupBody();
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
