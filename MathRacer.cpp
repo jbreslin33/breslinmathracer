@@ -75,11 +75,11 @@ void MathRacer::createScene(void)
     mSceneMgr->getRootSceneNode()->attachObject(floor);
 
 	// disable default camera control so the character can do its own
-	//mCameraMan->setStyle(CS_MANUAL);
+	mCameraMan->setStyle(CS_MANUAL);
 
 	// create our characters
 	mChara           = new Character(mCamera);
-    mChara->setupBody();
+    mChara->setupBodys(3);
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
