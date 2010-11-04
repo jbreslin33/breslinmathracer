@@ -91,8 +91,9 @@ set(HDRS
 	./MathRacer.h
 	#../charactercontrollers/SinbadCharacterController.h
 	#../charactercontrollers/MathRacerController.h
-	../charactercontrollers/CharacterController.h
-	../charactercontrollers/Character.h
+	#../charactercontrollers/CharacterController.h
+	#../charactercontrollers/Character.h
+	../charactercontrollers/SkeletalAnimation.h
 	../questionfactory/QuestionFactory.h
 	../questionfactory/AdditionFactory.h
 )
@@ -101,8 +102,9 @@ set(SRCS
 	../baseapplication/BaseApplication.cpp
 	../breslininput/MathInput.cpp
 	./MathRacer.cpp
-	../charactercontrollers/CharacterController.cpp
-	../charactercontrollers/Character.cpp
+	#../charactercontrollers/CharacterController.cpp
+	#../charactercontrollers/Character.cpp
+	../charactercontrollers/SkeletalAnimation.cpp
 	../questionfactory/QuestionFactory.cpp
 	../questionfactory/AdditionFactory.cpp
 )
