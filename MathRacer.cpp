@@ -82,6 +82,7 @@ void MathRacer::createScene(void)
 
     //mChara->setupBodys(3);
     //mChara->mBodysCreated = true;
+    mChara = new SkeletalAnimation(mSceneMgr);
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
@@ -98,7 +99,7 @@ bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
 
 	// let character update animations and camera
 	//if (mChara->mBodysCreated == true)
-      //  mChara->addTime(evt.timeSinceLastFrame);
+        mChara->addTime(evt.timeSinceLastFrame);
 	return BaseApplication::frameRenderingQueued(evt);
 }
 
