@@ -18,7 +18,7 @@ This source file is part of the
 #include "MathRacer.h"
 #include "../breslininput/MathInput.h"
 #include "../questionfactory/AdditionFactory.h"
-#include "../charactercontrollers/SkeletalAnimation.h"
+#include "../charactercontrollers/Character.h"
 
 #include <time.h>
 
@@ -82,7 +82,8 @@ void MathRacer::createScene(void)
 
     //mChara->setupBodys(3);
     //mChara->mBodysCreated = true;
-    mChara = new SkeletalAnimation(mSceneMgr);
+    jay = new Character(mSceneMgr,"jay",0,0);
+    silentbob = new Character(mSceneMgr,"silentbob",10,10);
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
@@ -99,7 +100,8 @@ bool MathRacer::frameRenderingQueued(const FrameEvent& evt)
 
 	// let character update animations and camera
 	//if (mChara->mBodysCreated == true)
-        mChara->addTime(evt.timeSinceLastFrame);
+        jay->addTime(evt.timeSinceLastFrame);
+        silentbob->addTime(evt.timeSinceLastFrame);
 	return BaseApplication::frameRenderingQueued(evt);
 }
 
