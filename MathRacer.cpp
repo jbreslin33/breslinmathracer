@@ -82,8 +82,8 @@ void MathRacer::createScene(void)
 
     //mChara->setupBodys(3);
     //mChara->mBodysCreated = true;
-    jay = new Character(mSceneMgr,"jay",0,0);
-    silentbob = new Character(mSceneMgr,"silentbob",10,10);
+    jay = new Character(mSceneMgr,"jay",0,0,-20);
+    silentbob = new Character(mSceneMgr,"silentbob",10,10,0);
 	mAdditionFactory = new AdditionFactory();
 	mMathInput       = new MathInput(this);
 
