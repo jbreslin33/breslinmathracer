@@ -77,15 +77,11 @@ void MathRacer::createScene(void)
 	// disable default camera control so the character can do its own
 	mCameraMan->setStyle(CS_MANUAL);
 
-	// create our characters
-	//mChara           = new CharacterController(mCamera);
+    jay       = new Character(mSceneMgr, "jay"      , "Sinbad.mesh", "RunBase",  0,  0, -20);
+    silentbob = new Character(mSceneMgr, "silentbob", "Sinbad.mesh", "Dance"  , 10, 10,   0);
 
-    //mChara->setupBodys(3);
-    //mChara->mBodysCreated = true;
-    jay = new Character(mSceneMgr,"jay",0,0,-20);
-    silentbob = new Character(mSceneMgr,"silentbob",10,10,0);
 	mAdditionFactory = new AdditionFactory();
-	mMathInput       = new MathInput(this);
+	mMathInput       = new MathInput      (this);
 
 }
 
