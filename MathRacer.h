@@ -65,15 +65,12 @@ protected:
 
     OgreBites::ParamsPanel* mScoreDetailsPanel;     // sample details panel
 
-	AdditionFactory*        mAdditionFactory;
+    AdditionFactory*        mAdditionFactory;
 
-	MathInput*              mMathInput;
+    MathInput*              mMathInput;
 
-	Character*    jay;
-	Character*    silentbob;
-
-
-
+    Character*    jay;
+    Character*    silentbob;
 
 };
 
