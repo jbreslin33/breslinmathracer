@@ -1,5 +1,0 @@
-cd /home/jbreslin/sandbox/breslinmathracer_build/
-make
-./OgreApp
-cd /home/jbreslin/sandbox/breslinmathracer
-
