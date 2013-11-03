@@ -6,37 +6,31 @@
 --**************************************************************
 --**************************************************************
 
---==================================================================
---====================== BATTLES  =============================
---==================================================================
-
-DROP TABLE battles cascade;
-
---==================================================================
---====================== QUESTIONS  =============================
---==================================================================
-
-DROP TABLE questions_attempts cascade;
-DROP TABLE questions cascade;
-
 
 --==================================================================
 --====================== GAMES  =============================
 --==================================================================
 
+DROP TABLE games_levels_dungeon cascade;
+DROP TABLE games_levels cascade;
 DROP TABLE games_attempts cascade;
-DROP TABLE games_instance cascade;
 DROP TABLE games cascade;
 
 --==================================================================
 --====================== LEVELS  =============================
 --==================================================================
 
+DROP TABLE counting cascade;
+DROP TABLE addition cascade;
+DROP TABLE subtraction cascade;
+DROP TABLE multiplication cascade;
+DROP TABLE division cascade;
+
+DROP TABLE questions cascade;
+
 DROP TABLE levels_standards_clusters_domains_grades cascade;
 DROP TABLE levels_transactions cascade;
-
 DROP TABLE levels cascade;
-
 
 --==================================================================
 --====================== PEOPLE  =============================
@@ -247,7 +241,6 @@ CREATE TABLE standards_clusters_domains_grades (
 --====================== LEVELS  =============================
 --==================================================================
 
-
 --LEVELS
 CREATE TABLE levels (
     id double precision NOT NULL UNIQUE, 
@@ -268,11 +261,76 @@ CREATE TABLE levels_standards_clusters_domains_grades (
     standard_cluster_domain_grade_id integer NOT NULL
 );
 
+--COUNTING
+CREATE TABLE counting (
+    id integer NOT NULL,
+    score_needed integer DEFAULT 10 NOT NULL,
+    start_number integer NOT NULL,
+    end_number integer NOT NULL,
+    count_by integer DEFAULT 1 NOT NULL,
+    level_id double precision NOT NULL
+);
+
+--ADDITION
+CREATE TABLE addition (
+    id integer NOT NULL,
+    score_needed integer DEFAULT 10 NOT NULL,
+    addend_min integer NOT NULL,
+    addend_max integer NOT NULL,
+    number_of_addends integer DEFAULT 2 NOT NULL,
+    level_id double precision NOT NULL
+);
+
+--SUBTRACTION
+CREATE TABLE subtraction (
+    id integer NOT NULL,
+    score_needed integer DEFAULT 10 NOT NULL,
+    minuend_min integer NOT NULL,
+    minuend_max integer NOT NULL,
+    subtrahend_min integer NOT NULL,
+    subtrahend_max integer NOT NULL,
+    number_of_subtrahends integer DEFAULT 1 NOT NULL,
+    negative_difference boolean DEFAULT false NOT NULL,
+    level_id double precision NOT NULL
+);
+
+--MULTIPLICATION
+CREATE TABLE multiplication (
+    id integer NOT NULL,
+    score_needed integer DEFAULT 10 NOT NULL,
+    factor_min integer NOT NULL,
+    factor_max integer NOT NULL,
+    number_of_factors integer DEFAULT 2 NOT NULL,
+    level_id double precision NOT NULL
+);
+
+
+--DIVISION
+CREATE TABLE division (
+    id integer NOT NULL,
+    score_needed integer DEFAULT 10 NOT NULL,
+    factor_min integer NOT NULL,
+    factor_max integer NOT NULL,
+    number_of_factors integer DEFAULT 2 NOT NULL,
+    level_id double precision NOT NULL
+);
+
+
+--QUESTIONS
+CREATE TABLE questions (
+    id integer NOT NULL,
+    question text NOT NULL,
+    answer text NOT NULL,
+    level_id double precision NOT NULL,
+    question_order double precision NOT NULL 
+);
+
+
 --==================================================================
 --===================== GAMES =====================================
 --==================================================================
 
---GAMES such as partido...
+--GAMES
 CREATE TABLE games (
     id integer NOT NULL,
     game text NOT NULL UNIQUE,
@@ -281,87 +339,32 @@ CREATE TABLE games (
     picture_closed text NOT NULL
 );
 
---GAMES_INSTANCE an instance of partido or another game
-CREATE TABLE games_instance (
+--GAMES_LEVELS
+CREATE TABLE games_levels (
     id integer NOT NULL,
-    game_instance_time_start timestamp,
-    game_instance_time_end timestamp,
-    game_id integer NOT NULL
+    game_id integer NOT NULL,
+    level_id double precision NOT NULL
 );
 
---GAMES_ATTEMPTS a user attempt at a game...
+--GAMES_ATTEMPTS
 CREATE TABLE games_attempts (
     id integer NOT NULL,
     game_attempt_time_start timestamp,
     game_attempt_time_end timestamp,
-    game_instance_id integer NOT NULL,
-    user_id integer NOT NULL
-    --level_id double precision NOT NULL --should this be standard_id?
-	--score integer DEFAULT 0 NOT NULL,
-	--time_warning boolean DEFAULT false NOT NULL
+    game_id integer NOT NULL,
+    user_id integer NOT NULL,
+    level_id double precision NOT NULL, --should this be standard_id?
+	score integer DEFAULT 0 NOT NULL,
+	time_warning boolean DEFAULT false NOT NULL
 );
 
---==================================================================
---===================== QUESTIONS =====================================
---==================================================================
-
---QUESTIONS
-CREATE TABLE questions (
+--GAMES_LEVELS_DUNGEON
+CREATE TABLE games_levels_dungeon (
     id integer NOT NULL,
-    question text NOT NULL,
-    answer text NOT NULL,
-    level_id double precision NOT NULL
+    chasers integer NOT NULL,
+    games_levels_id integer NOT NULL
 );
 
---need to change the way you gain levels.....
---threshold for pass. 100 correct attempts with timestamp 
---your level is basically whatever question you have passed
---you are judged on your last 100 attempts at a level....
---so...if you do not get 100 attempts that where successful and average under 300 seconds than you are not passed that level....
---so you are eligible to be asked the lowest level question you have not mastered plus an algorithm of mastered questions. with a greater percent coming from high levels then obviously lowest percent from low levels...
---take number_of_mastered_levels = 10;
--- so if you have none mastered you get ma1  
---mastered = 0
---live_unmastered =1;
---un_mastered === rest;
-
-
---QUESTIONS_ATTEMPTS
-CREATE TABLE questions_attempts (
-    id integer NOT NULL,
-    question_id integer NOT NULL,
-    answer text,
-    answer_attempt_time timestamp default current_timestamp,
-    answer_time integer NOT NULL,
-    user_id integer NOT NULL
-);
-
-
---battles last 30 seconds... we ask only 15 questions on average..
---so 30 seconds
---have x amount of questions ready
--- winner is determined by time/questions * correct 
---even better...
---send a question to both combatants..whoever gets the right answer first wins. if they are both
---wrong nobody gets a hit. 
---advantages of this system are that you get more of a heads up draw.
---this also allows for 10 questions no matter what...
--- then if opponent answers before you you just go onto next? no you get a chance up to 5 seconds...then we move on..or we could just have you for now get wiped out....if you get wiped out we could after battle so you need time to recover? 
---i think you must wait for an answer then show each user the correct answer, then have another round of battle. so after 10 seconds we could time out round. and just show answer for 5 seconds then move on.
---shoiuld for now just do everything in db...
---==================================================================
---================= BATTLES  ====================================
---==================================================================
---BATTLE an instance of battle class? do i calc winner from other tables or just put it here?
-CREATE TABLE battles (
-    id integer NOT NULL,
-    battle_start_time timestamp,
-    battle_end_time timestamp,
-    home_score integer,
-    away_score integer,
-    home_user_id integer,
-    away_user_id integer
-);
 
 --==================================================================
 --================= ENVIRONMENT  ====================================
@@ -382,6 +385,9 @@ CREATE TABLE battles (
 --DROP TABLE browser cascade; --ie6,ie7,ie8,ie9,ie10,opera9,opera10,firefox8,firefox9
 --DROP TABLE engine cascade; --ogre,torque,javascript,2d_brengine,jmonkey
 --i am thinking to show all?
+
+
+
 
 
 
@@ -526,6 +532,8 @@ CREATE SEQUENCE grades_id_seq
 --================= LEVELS  ====================================
 --==================================================================
 
+--LEVELS
+
 --LEVELS_TRANSACTIONS
 CREATE SEQUENCE levels_transactions_id_seq
     START WITH 1
@@ -534,41 +542,34 @@ CREATE SEQUENCE levels_transactions_id_seq
     NO MAXVALUE
     CACHE 1;
 
---==================================================================
---==================================================================
---================= GAMES  ====================================
---==================================================================
+--LEVELS_STANDARDS
 
---GAMES
-CREATE SEQUENCE games_id_seq
+--COUNTING
+CREATE SEQUENCE counting_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
 
---GAMES_INSTANCE
-CREATE SEQUENCE games_instance_id_seq
+--ADDITION
+CREATE SEQUENCE addition_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
 
---GAMES_ATTEMPTS
-CREATE SEQUENCE games_attempts_id_seq
+--SUBTRACTION
+CREATE SEQUENCE subtraction_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
 
---==================================================================
---==================================================================
---================= QUESTIONS  ====================================
---==================================================================
---QUESTIONS_ATTEMPTS
-CREATE SEQUENCE questions_attempts_id_seq
+--MULTIPLICATION
+CREATE SEQUENCE multiplication_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -583,17 +584,50 @@ CREATE SEQUENCE questions_id_seq
     NO MAXVALUE
     CACHE 1;
 
---==================================================================
---==================================================================
---================= BATTLES  ====================================
---==================================================================
---BATTLES
-CREATE SEQUENCE battles_id_seq
+--DIVISION
+CREATE SEQUENCE division_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
+
+--==================================================================
+--================= GAMES  ====================================
+--==================================================================
+
+--GAMES
+CREATE SEQUENCE games_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+--GAMES_LEVELS
+CREATE SEQUENCE games_levels_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+--GAMES_LEVELS_DUNGEON
+CREATE SEQUENCE games_levels_dungeon_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+--GAMES_ATTEMPTS
+CREATE SEQUENCE games_attempts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
 
 --****************************************************************
 --***************************************************************
@@ -682,6 +716,23 @@ ALTER TABLE public.levels_transactions OWNER TO postgres;
 --LEVELS_STANDARDS_CLUSTERS_DOMAINS_GRADES
 ALTER TABLE public.levels_standards_clusters_domains_grades OWNER TO postgres;
 
+--COUNTING
+ALTER TABLE public.counting OWNER TO postgres;
+
+--ADDITION
+ALTER TABLE public.addition OWNER TO postgres;
+
+--SUBTRACTION
+ALTER TABLE public.subtraction OWNER TO postgres;
+
+--MULTIPLICATION
+ALTER TABLE public.multiplication OWNER TO postgres;
+
+--DIVISION
+ALTER TABLE public.division OWNER TO postgres;
+
+--QUESTIONS
+ALTER TABLE public.questions OWNER TO postgres;
 
 --==================================================================
 --================= GAMES  ====================================
@@ -690,28 +741,14 @@ ALTER TABLE public.levels_standards_clusters_domains_grades OWNER TO postgres;
 --GAMES
 ALTER TABLE public.games OWNER TO postgres;
 
---GAMES_INSTANCE
-ALTER TABLE public.games_instance OWNER TO postgres;
+--GAMES_LEVELS
+ALTER TABLE public.games_levels OWNER TO postgres;
+
+--GAMES_LEVELS_DUNGEON
+ALTER TABLE public.games_levels_dungeon OWNER TO postgres;
 
 --GAMES_ATTEMPTS
 ALTER TABLE public.games_attempts OWNER TO postgres;
-
---==================================================================
---================= QUESTIONS  ====================================
---==================================================================
-
---QUESTIONS_ATTEMPTS
-ALTER TABLE public.questions_attempts OWNER TO postgres;
-
---QUESTIONS
-ALTER TABLE public.questions OWNER TO postgres;
-
---==================================================================
---================= BATTLES  ====================================
---==================================================================
-
---BATTLES
-ALTER TABLE public.battles OWNER TO postgres;
 
 
 --****************************************************************
@@ -814,11 +851,44 @@ ALTER TABLE ONLY standards_clusters_domains_grades ALTER COLUMN id SET DEFAULT n
 --================= LEVELS  ====================================
 --==================================================================
 
+--LEVELS
+
 --LEVELS_TRANSACTIONS
 ALTER TABLE public.levels_transactions_id_seq OWNER TO postgres;
 ALTER SEQUENCE levels_transactions_id_seq OWNED BY levels_transactions.id;
 ALTER TABLE ONLY levels_transactions ALTER COLUMN id SET DEFAULT nextval('levels_transactions_id_seq'::regclass);
 
+--LEVELS_STANDARDS
+
+--COUNTING
+ALTER TABLE public.counting_id_seq OWNER TO postgres;
+ALTER SEQUENCE counting_id_seq OWNED BY counting.id;
+ALTER TABLE ONLY counting ALTER COLUMN id SET DEFAULT nextval('counting_id_seq'::regclass);
+
+--ADDITION
+ALTER TABLE public.addition_id_seq OWNER TO postgres;
+ALTER SEQUENCE addition_id_seq OWNED BY addition.id;
+ALTER TABLE ONLY addition ALTER COLUMN id SET DEFAULT nextval('addition_id_seq'::regclass);
+
+--SUBTRACTION
+ALTER TABLE public.subtraction_id_seq OWNER TO postgres;
+ALTER SEQUENCE subtraction_id_seq OWNED BY subtraction.id;
+ALTER TABLE ONLY subtraction ALTER COLUMN id SET DEFAULT nextval('subtraction_id_seq'::regclass);
+
+--MULTIPLICATION
+ALTER TABLE public.multiplication_id_seq OWNER TO postgres;
+ALTER SEQUENCE multiplication_id_seq OWNED BY multiplication.id;
+ALTER TABLE ONLY multiplication ALTER COLUMN id SET DEFAULT nextval('multiplication_id_seq'::regclass);
+
+--DIVISION
+ALTER TABLE public.division_id_seq OWNER TO postgres;
+ALTER SEQUENCE division_id_seq OWNED BY division.id;
+ALTER TABLE ONLY division ALTER COLUMN id SET DEFAULT nextval('division_id_seq'::regclass);
+
+--QUESTIONS
+ALTER TABLE public.questions_id_seq OWNER TO postgres;
+ALTER SEQUENCE questions_id_seq OWNED BY questions.id;
+ALTER TABLE ONLY questions ALTER COLUMN id SET DEFAULT nextval('questions_id_seq'::regclass);
 
 --==================================================================
 --================= GAMES  ====================================
@@ -829,44 +899,21 @@ ALTER TABLE public.games_id_seq OWNER TO postgres;
 ALTER SEQUENCE games_id_seq OWNED BY games.id;
 ALTER TABLE ONLY games ALTER COLUMN id SET DEFAULT nextval('games_id_seq'::regclass);
 
---GAMES_INSTANCE
-ALTER TABLE public.games_instance_id_seq OWNER TO postgres;
-ALTER SEQUENCE games_instance_id_seq OWNED BY games_instance.id;
-ALTER TABLE ONLY games_instance ALTER COLUMN id SET DEFAULT nextval('games_instance_id_seq'::regclass);
+--GAMES_LEVELS
+ALTER TABLE public.games_levels_id_seq OWNER TO postgres;
+ALTER SEQUENCE games_levels_id_seq OWNED BY games_levels.id;
+ALTER TABLE ONLY games_levels ALTER COLUMN id SET DEFAULT nextval('games_levels_id_seq'::regclass);
+
+--GAMES_LEVELS_DUNGEON
+ALTER TABLE public.games_levels_dungeon_id_seq OWNER TO postgres;
+ALTER SEQUENCE games_levels_dungeon_id_seq OWNED BY games_levels_dungeon.id;
+ALTER TABLE ONLY games_levels_dungeon ALTER COLUMN id SET DEFAULT nextval('games_levels_dungeon_id_seq'::regclass);
 
 --GAMES_ATTEMPTS
 ALTER TABLE public.games_attempts_id_seq OWNER TO postgres;
 ALTER SEQUENCE games_attempts_id_seq OWNED BY games_attempts.id;
 ALTER TABLE ONLY games_attempts ALTER COLUMN id SET DEFAULT nextval('games_attempts_id_seq'::regclass);
 
---==================================================================
---================= QUESTIONS  ====================================
---==================================================================
-
---QUESTIONS_ATTEMPTS
-ALTER TABLE public.questions_attempts_id_seq OWNER TO postgres;
-ALTER SEQUENCE questions_attempts_id_seq OWNED BY questions_attempts.id;
-ALTER TABLE ONLY questions_attempts ALTER COLUMN id SET DEFAULT nextval('questions_attempts_id_seq'::regclass);
-
---QUESTIONS
-ALTER TABLE public.questions_id_seq OWNER TO postgres;
-ALTER SEQUENCE questions_id_seq OWNED BY questions.id;
-ALTER TABLE ONLY questions ALTER COLUMN id SET DEFAULT nextval('questions_id_seq'::regclass);
-
---==================================================================
---================= BATTLES  ====================================
---==================================================================
-
---BATTLES
-ALTER TABLE public.battles_id_seq OWNER TO postgres;
-ALTER SEQUENCE battles_id_seq OWNED BY battles.id;
-ALTER TABLE ONLY battles ALTER COLUMN id SET DEFAULT nextval('battles_id_seq'::regclass);
-
---****************************************************************
---***************************************************************
---****************** PRIMARY KEY  *************************
---**************************************************************
---**************************************************************
 
 --****************************************************************
 --***************************************************************
@@ -951,8 +998,27 @@ ALTER TABLE levels ADD PRIMARY KEY (id);
 --LEVELS_TRANSACTIONS
 ALTER TABLE levels_transactions ADD PRIMARY KEY (id);
 
+
 --LEVELS_STANDARDS_CLUSTERS_DOMAINS_GRADES
 ALTER TABLE levels_standards_clusters_domains_grades ADD PRIMARY KEY (level_id, standard_cluster_domain_grade_id);
+
+--COUNTING
+ALTER TABLE counting ADD PRIMARY KEY (id);
+
+--ADDITION
+ALTER TABLE addition ADD PRIMARY KEY (id);
+
+--SUBTRACTION
+ALTER TABLE subtraction ADD PRIMARY KEY (id);
+
+--MULTIPLICATION
+ALTER TABLE multiplication ADD PRIMARY KEY (id);
+
+--DIVISION
+ALTER TABLE division ADD PRIMARY KEY (id);
+
+--QUESTIONS
+ALTER TABLE questions ADD PRIMARY KEY (id);
 
 --==================================================================
 --================= GAMES  ====================================
@@ -961,28 +1027,14 @@ ALTER TABLE levels_standards_clusters_domains_grades ADD PRIMARY KEY (level_id, 
 --GAMES
 ALTER TABLE games ADD PRIMARY KEY (id);
 
---GAMES_INSTANCE
-ALTER TABLE games_instance ADD PRIMARY KEY (id);
+--GAMES_LEVELS
+ALTER TABLE games_levels ADD PRIMARY KEY (id);
+
+--GAMES_LEVELS_DUNGEON
+ALTER TABLE games_levels_dungeon ADD PRIMARY KEY (id);
 
 --GAMES_ATTEMPTS
 ALTER TABLE games_attempts ADD PRIMARY KEY (id);
-
---==================================================================
---================= QUESTIONS  ====================================
---==================================================================
-
---QUESTIONS_ATTEMPTS
-ALTER TABLE questions_attempts ADD PRIMARY KEY (id);
-
---QUESTIONS
-ALTER TABLE questions ADD PRIMARY KEY (id);
-
---==================================================================
---================= BATTLES  ====================================
---==================================================================
-
---BATTLES
-ALTER TABLE battles ADD PRIMARY KEY (id);
 
 
 --****************************************************************
@@ -1060,7 +1112,6 @@ ALTER TABLE standards_clusters_domains_grades ADD FOREIGN KEY (cluster_domain_gr
 
 --LEVELS
 
-
 --LEVELS_TRANSACTIONS
 ALTER TABLE levels_transactions ADD FOREIGN KEY (user_id) REFERENCES users(id);
 ALTER TABLE levels_transactions ADD FOREIGN KEY (level_id) REFERENCES levels(id);
@@ -1069,6 +1120,23 @@ ALTER TABLE levels_transactions ADD FOREIGN KEY (level_id) REFERENCES levels(id)
 ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (standard_cluster_domain_grade_id) REFERENCES standards_clusters_domains_grades(id);
 
+--COUNTING
+ALTER TABLE counting ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+
+--ADDITION
+ALTER TABLE addition ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+
+--SUBTRACTION
+ALTER TABLE subtraction ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+
+--MULTIPLICATION
+ALTER TABLE multiplication ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+
+--DIVISION
+ALTER TABLE division ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+
+--QUESTIONS
+ALTER TABLE questions ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 
 --==================================================================
 --================= GAMES  ====================================
@@ -1076,30 +1144,18 @@ ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (standard_c
 
 --GAMES
 
---GAMES_INSTANCE
-ALTER TABLE games_instance ADD FOREIGN KEY (game_id) REFERENCES games(id);
+--GAMES_LEVELS
+ALTER TABLE games_levels ADD FOREIGN KEY (game_id) REFERENCES games(id);
+ALTER TABLE games_levels ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+
+--GAMES_LEVELS_DUNGEON
+ALTER TABLE games_levels_dungeon ADD FOREIGN KEY (games_levels_id) REFERENCES games_levels(id);
 
 --GAMES_ATTEMPTS
-ALTER TABLE games_attempts ADD FOREIGN KEY (game_instance_id) REFERENCES games(id);
+ALTER TABLE games_attempts ADD FOREIGN KEY (game_id) REFERENCES games(id);
 ALTER TABLE games_attempts ADD FOREIGN KEY (user_id) REFERENCES users(id);
+ALTER TABLE games_attempts ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 
---==================================================================
---================= QUESTIONS  ====================================
---==================================================================
-
---QUESTIONS_ATTEMPTS
-ALTER TABLE questions_attempts ADD FOREIGN KEY (question_id) REFERENCES questions(id);
-
---QUESTIONS
-ALTER TABLE questions ADD FOREIGN KEY (level_id) REFERENCES levels(id);
-
---==================================================================
---================= BATTLES  ====================================
---==================================================================
-
---BATTLES
-ALTER TABLE battles ADD FOREIGN KEY (home_user_id) REFERENCES users(id);
-ALTER TABLE battles ADD FOREIGN KEY (away_user_id) REFERENCES users(id);
 
 --****************************************************************
 --***************************************************************
@@ -1230,6 +1286,13 @@ insert into permissions(permission) values ('INSERT');
 --		GAMES	
 --****************************************
 
+insert into games (game,url,picture_open,picture_closed) values ('Dungeon','/web/game/dungeon.php','/images/doors/door_open.png','/images/doors/door_closed.png');
+
+insert into games (game,url,picture_open,picture_closed) values ('Dungeon Count','/web/game/represent.php','/images/doors/door_open.png','/images/doors/door_closed.png');
+
+insert into games (game,url,picture_open,picture_closed) values ('Click','/web/game/clicky.php','/images/doors/door_open.png','/images/doors/door_closed.png');
+
+insert into games (game,url,picture_open,picture_closed) values ('Network','/web/game/network.php','/images/doors/door_open.png','/images/doors/door_closed.png');
 --****************************************
 --		LEVELS	
 --****************************************
@@ -1270,146 +1333,153 @@ insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade
 --		LEVEL_ID: 0 
 insert into levels(id,description) values (0,'Start of Journey');       
 
---		LEVEL_ID: .100 
---insert into levels(id,description) values (.1,'Identify 0');       
---insert into questions (level_id,question,answer) values (.1,'0','0');
-
---		LEVEL_ID: .101 
-insert into levels(id,description) values (.101,'Identify 1');       
---insert into questions (level_id,question,answer) values (.101,'1','1');
-
---		LEVEL_ID: .102 
-insert into levels(id,description) values (.102,'Identify 2');       
---insert into questions (level_id,question,answer) values (.102,'2','2');
-
---		LEVEL_ID: .103 
-insert into levels(id,description) values (.103,'Identify 3');       
---insert into questions (level_id,question,answer) values (.103,'3','3');
-
---		LEVEL_ID: .104 
-insert into levels(id,description) values (.104,'Identify 4');       
---insert into questions (level_id,question,answer) values (.104,'4','4');
-
---		LEVEL_ID: .105 
-insert into levels(id,description) values (.105,'Identify 5');       
---insert into questions (level_id,question,answer) values (.105,'5','5');
-
---		LEVEL_ID: .106 
-insert into levels(id,description) values (.106,'Identify 6');       
---insert into questions (level_id,question,answer) values (.106,'6','6');
-
---		LEVEL_ID: .107 
-insert into levels(id,description) values (.107,'Identify 7');       
---insert into questions (level_id,question,answer) values (.107,'7','7');
-
---		LEVEL_ID: .108 
-insert into levels(id,description) values (.108,'Identify 8');       
---insert into questions (level_id,question,answer) values (.108,'8','8');
-
---		LEVEL_ID: .109 
-insert into levels(id,description) values (.109,'Identify 9');       
---insert into questions (level_id,question,answer) values (.109,'9','9');
-
---		LEVEL_ID: .110 
-insert into levels(id,description) values (.110,'Identify 10');       
---insert into questions (level_id,question,answer) values (.110,'10','10');
-
-
 --		LEVEL_ID: 1
 insert into levels(id,description) values (1,'Count from 0 to 1');        
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1,1);       
 --	QUESTIONS:
---insert into questions (level_id,question,answer) values (1,'Count from 0 to 1:','0 1');
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1,1,0,1,1);
+--	GAMES: dungeon
+insert into games_levels (level_id,game_id) values  (1,1);
+insert into games_levels (level_id,game_id) values  (1,4);
+
 	
 --		LEVEL_ID: 1.01 
 insert into levels(id,description) values (1.01,'Count from 0 to 2');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.01,1);       
 --	QUESTIONS:
---insert into questions (level_id,question,answer) values (1.01,'Count from 0 to 2:','0 1 2');
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.01,2,0,2,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.01,1);
 
 
 --		LEVEL_ID: 1.02 
 insert into levels(id,description) values (1.02,'Count from 0 to 3');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.02,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.02,3,0,3,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.02,1);
 
 
 --		LEVEL_ID: 1.03  
 insert into levels(id,description) values (1.03,'Count from 0 to 4');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.03,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.03,4,0,4,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.03,1);
 
 
 --		LEVEL_ID: 1.04 
 insert into levels(id,description) values (1.04,'Count from 0 to 5');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.04,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.04,5,0,5,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.04,1);
 
 
 --		LEVEL_ID: 1.05  
 insert into levels(id,description) values (1.05,'Count from 0 to 6');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.05,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.05,6,0,6,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.05,1);
 
 
 --		LEVEL_ID: 1.06 
 insert into levels(id,description) values (1.06,'Count from 0 to 7');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.06,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.06,7,0,7,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.06,1);
 
 
 --		LEVEL_ID: 1.07  
 insert into levels(id,description) values (1.07,'Count from 0 to 8');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.07,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.07,8,0,8,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.07,1);
 
 
 --		LEVEL_ID: 1.08  
 insert into levels(id,description) values (1.08,'Count from 0 to 9');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.08,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.08,9,0,9,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.08,1);
 
 
 --		LEVEL_ID: 1.09  
 insert into levels(id,description) values (1.09,'Count from 0 to 10');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.09,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.09,10,0,10,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.09,1);
 
 
 --		LEVEL_ID: 1.10  
 insert into levels(id,description) values (1.10,'Count from 10 to 11');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.10,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.10,1,10,11,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.10,1);
 
 
 --		LEVEL_ID: 1.11  
 insert into levels(id,description) values (1.11,'Count from 10 to 12');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.11,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.11,2,10,12,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.11,1);
 
 
 --		LEVEL_ID: 1.12  
 insert into levels(id,description) values (1.12,'Count from 10 to 13');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.12,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.12,3,10,13,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.12,1);
 
 
 --		LEVEL_ID: 1.13  
 insert into levels(id,description) values (1.13,'Count from 10 to 14');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.13,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.13,4,10,14,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.13,1);
 
 
 --		LEVEL_ID: 1.14  
 insert into levels(id,description) values (1.14,'Count from 10 to 15');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.14,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.14,5,10,15,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.14,1);
+
+
+
+
 
 
 --		LEVEL_ID: 1.50  
 insert into levels(id,description) values (1.90,'Count to 100 by tens');       
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.90,1);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1.90,10,0,100,10);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (1.90,1);
 
 
 --------------------------------------------------------------------------------
@@ -1425,24 +1495,37 @@ insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade
 insert into levels(id,description) values (2,'Count from 87 to 97'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2,2);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (2,10,87,97,1);
+
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (2,1);
 
 
 --		LEVEL_ID: 2.1 
 insert into levels(id,description) values (2.1,'Count from 23 to 33'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.1,2);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (2.1,10,23,33,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (2.1,1);
 
 
 --		LEVEL_ID: 2.2  
 insert into levels(id,description) values (2.2,'Count from 55 to 65'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.2,2);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (2.2,10,55,65,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (2.2,1);
 
 
 --		LEVEL_ID: 2.3  
 insert into levels(id,description) values (2.3,'Count from 4 to 14');  
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.3,2);       
 --	QUESTIONS:
+insert into counting (level_id,score_needed,start_number,end_number,count_by) values (2.3,10,4,14,1);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (2.3,1);
 
 
 
@@ -1458,18 +1541,57 @@ insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade
 insert into levels(id,description) values (3,'Write numbers from 0 to 5'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3,3);       
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 _','1',1);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 _','2',2);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 _','3',3);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 _','4',4);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 _','5',5);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 5 _','6',6);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 5 6 _','7',7);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 5 6 7 _','8',8);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 5 6 7 8 _','9',9);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 5 6 7 8 9 _','1',10);
+insert into questions (level_id,question,answer,question_order) values (3,'What comes next after 0 1 2 3 4 5 6 7 8 9 1_','0',11);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (3,1);
+
 
 
 --		LEVEL_ID: 3.1 
 insert into levels(id,description) values (3.1,'Write numbers from 5 to 10'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3.1,3);       
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 _','1',1);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 1_','1',2);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 _','1',3);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 1_','2',4);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 12 _','1',5);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 12 1_','3',6);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 12 13 _','1',7);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 12 13 1_','4',8);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 12 13 14 _','1',9);
+insert into questions (level_id,question,answer,question_order) values (3.1,'What comes next after 10 11 12 13 14 1_','5',10);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (3.1,1);
+
 
 
 --		LEVEL_ID: 3.2  
 insert into levels(id,description) values (3.2,'Write numbers from 10 to 15'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3.2,3);       
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 _','1',1);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 1_','6',2);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 _','1',3);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 1_','7',4);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 17 _','1',5);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 17 1_','8',6);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 17 18 _','1',7);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 17 18 1_','9',8);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 17 18 19 _','2',9);
+insert into questions (level_id,question,answer,question_order) values (3.2,'What comes next after 15 16 17 18 19 2_','0',10);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (3.2,1);
 
 
 
@@ -1477,6 +1599,18 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 insert into levels(id,description) values (3.3,'Write numbers from 15 to 20'); 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3.3,3);       
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 _','2',1);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 2_','1',2);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 _','2',3);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 2_','2',4);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 22 _','2',5);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 22 2_','3',6);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 22 23 _','2',7);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 22 23 2_','4',8);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 22 23 24 _','2',9);
+insert into questions (level_id,question,answer,question_order) values (3.3,'What comes next after 20 21 22 23 24 2_','5',10);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (3.3,1);
 
 
 
@@ -1505,6 +1639,19 @@ insert into levels(id,description) values (4,'Count objects from 0 to 20');
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4,4);       
 
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','2',1);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','7',2);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','3',3);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','10',4);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','12',5);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','5',6);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','13',7);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','17',8);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','14',9);
+insert into questions (level_id,question,answer,question_order) values (4,'How many Red Monsters?','4',10);
+
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (4,2);
 
 
 --		LEVEL_ID: 4  
@@ -1512,6 +1659,19 @@ insert into levels(id,description) values (4.1,'Count objects from 0 to 20');
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4.1,4);       
 
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','6',1);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','2',2);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','8',3);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','1',4);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','8',5);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','10',6);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','17',7);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','15',8);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','4',9);
+insert into questions (level_id,question,answer,question_order) values (4.1,'How many Red Monsters?','9',10);
+
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (4.1,2);
 
 
 --		LEVEL_ID: 4.2  
@@ -1519,6 +1679,19 @@ insert into levels(id,description) values (4.2,'Count objects in standard order 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4.2,4);       
 
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after zero?','one',1);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after one?','two',2);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after two?','three',3);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after three?','four',4);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after four?','five',5);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after five?','six',6);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after six?','seven',7);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after seven?','eight',8);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after eight?','nine',9);
+insert into questions (level_id,question,answer,question_order) values (4.2,'What number comes after nine?','ten',10);
+
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (4.2,1);
 
 
 --		LEVEL_ID: 4.3  
@@ -1526,6 +1699,19 @@ insert into levels(id,description) values (4.3,'Count objects in standard order 
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4.3,4);       
 
 --	QUESTIONS:
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after ten?','eleven',1);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after eleven?','twelve',2);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after twelve?','thirteen',3);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after thirteen?','fourteen',4);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after fourteen?','fifteen',5);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after fifteen?','sixteen',6);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after sixteen?','seventeen',7);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after seventeen?','eighteen',8);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after eighteen?','nineteen',9);
+insert into questions (level_id,question,answer,question_order) values (4.3,'What number comes after nineteen?','twenty',10);
+
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (4.3,1);
 
 
 
@@ -1639,42 +1825,72 @@ insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade
 --		LEVEL_ID: 14  
 insert into levels(id,description) values (14,'Addition addends 0 to 1');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14,10,0,1,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14,1);
 
 --		LEVEL_ID: 14.01  
 insert into levels(id,description) values (14.01,'Addition addends 0 to 2');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.01,10,0,2,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.01,1);
 
 --		LEVEL_ID: 14.02  
 insert into levels(id,description) values (14.02,'Addition addends 0 to 3');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.02,10,0,3,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.02,1);
 
 --		LEVEL_ID: 14.03  
 insert into levels(id,description) values (14.03,'Addition addends 0 to 4');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.03,10,0,4,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.03,1);
 
 --		LEVEL_ID: 14.04  
 insert into levels(id,description) values (14.04,'Addition addends 0 to 5');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.04,10,0,5,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.04,1);
 
 --		LEVEL_ID: 14.05  
 insert into levels(id,description) values (14.05,'Addition addends 0 to 6');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.05,10,0,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.05,1);
 
 --		LEVEL_ID: 14.06  
 insert into levels(id,description) values (14.06,'Addition addends 0 to 7');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.06,10,0,7,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.06,1);
 
 --		LEVEL_ID: 14.07  
 insert into levels(id,description) values (14.07,'Addition addends 0 to 8');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.07,10,0,8,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.07,1);
 
 --		LEVEL_ID: 14.08  
 insert into levels(id,description) values (14.08,'Addition addends 0 to 9');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.08,10,0,9,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.08,1);
 
 --		LEVEL_ID: 14.09  
 insert into levels(id,description) values (14.09,'Addition addends 0 to 10');
 --	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.09,10,0,10,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.09,1);
 
 
 
@@ -1802,1060 +2018,177 @@ insert into clusters (cluster) values ('Analyze, compare, create, and compose sh
 --		LEVEL_ID: 500  
 insert into levels(id,description) values (500,'Subtraction min 0 max 1');
 --	QUESTIONS: 
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500,10,0,1,0,1,2,FALSE);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (500,1);
 
 --              LEVEL_ID: 500.01
 insert into levels(id,description) values (500.01,'Subtraction min 0 max 2');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.01,10,0,2,0,2,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.01,1);
 
 --              LEVEL_ID: 500.02
 insert into levels(id,description) values (500.02,'Subtraction min 0 max 3');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.02,10,0,3,0,3,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.02,1);
 
 --              LEVEL_ID: 500.03
 insert into levels(id,description) values (500.03,'Subtraction min 0 max 4');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.03,10,0,4,0,4,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.03,1);
 
 --              LEVEL_ID: 500.04
 insert into levels(id,description) values (500.04,'Subtraction min 0 max 5');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.04,10,0,5,0,5,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.04,1);
 
 --              LEVEL_ID: 500.05
 insert into levels(id,description) values (500.05,'Subtraction min 0 max 6');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.05,10,0,6,0,6,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.05,1);
 
 --              LEVEL_ID: 500.06
 insert into levels(id,description) values (500.06,'Subtraction min 0 max 7');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.06,10,0,7,0,7,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.06,1);
 
 --              LEVEL_ID: 500.07
 insert into levels(id,description) values (500.07,'Subtraction min 0 max 8');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.07,10,0,8,0,8,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.07,1);
 
 --              LEVEL_ID: 500.08
 insert into levels(id,description) values (500.08,'Subtraction min 0 max 9');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.08,10,0,9,0,9,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.08,1);
 
 --              LEVEL_ID: 500.09
 insert into levels(id,description) values (500.09,'Subtraction min 0 max 10');
 --      QUESTIONS:
+insert into subtraction (level_id,score_needed,minuend_min,minuend_max,subtrahend_min,subtrahend_max,number_of_subtrahends,negative_difference) values (500.09,10,0,10,0,10,2,FALSE);
+--      GAMES:
+insert into games_levels (level_id,game_id) values  (500.09,1);
 
 ----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-MULTIPLICATION XXXXXXXXXXXXXXXXX
 
--- 0 times table
 --		LEVEL_ID: 600  
-insert into levels(id,description) values (600,'0 X 0');
+insert into levels(id,description) values (600,'Multiplication min 0 max 1');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600,'0 X 0','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600,10,0,1,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600,1);
 
 --		LEVEL_ID: 600.01  
-insert into levels(id,description) values (600.01,'0 X 1');
+insert into levels(id,description) values (600.01,'Multiplication min 0 max 2');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.01,'0 X 1','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.01,10,0,2,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.01,1);
 
 --		LEVEL_ID: 600.02  
-insert into levels(id,description) values (600.02,'1 X 0');
+insert into levels(id,description) values (600.02,'Multiplication min 0 max 3');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.02,'1 X 0','0');
-
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.02,10,0,3,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.02,1);
 
 --		LEVEL_ID: 600.03  
-insert into levels(id,description) values (600.03,'0 X 2');
+insert into levels(id,description) values (600.03,'Multiplication min 0 max 4');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.03,'0 X 2','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.03,10,0,4,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.03,1);
 
 --		LEVEL_ID: 600.04  
-insert into levels(id,description) values (600.04,'2 X 0');
+insert into levels(id,description) values (600.04,'Multiplication min 0 max 5');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.04,'2 X 0','0');
-
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.04,10,0,5,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.04,1);
 
 --		LEVEL_ID: 600.05  
-insert into levels(id,description) values (600.05,'0 X 3');
+insert into levels(id,description) values (600.05,'Multiplication min 0 max 6');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.05,'0 X 3','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.05,10,0,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.05,1);
 
 --		LEVEL_ID: 600.06  
-insert into levels(id,description) values (600.06,'3 X 0');
+insert into levels(id,description) values (600.06,'Multiplication min 0 max 7');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.06,'3 X 0','0');
-
-
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.06,10,0,7,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.06,1);
 
 --		LEVEL_ID: 600.07  
-insert into levels(id,description) values (600.07,'0 X 4');
+insert into levels(id,description) values (600.07,'Multiplication min 0 max 8');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.07,'4 X 0','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.07,10,0,8,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.07,1);
 
 --		LEVEL_ID: 600.08  
-insert into levels(id,description) values (600.08,'4 X 0');
+insert into levels(id,description) values (600.08,'Multiplication min 0 max 9');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.08,'0 X 4','0');
-
-
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.08,10,0,9,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.08,1);
 
 --		LEVEL_ID: 600.09  
-insert into levels(id,description) values (600.09,'0 X 5');
+insert into levels(id,description) values (600.09,'Multiplication min 0 max 10');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.09,'0 X 5','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.09,10,0,10,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.09,1);
 
 --		LEVEL_ID: 600.10  
-insert into levels(id,description) values (600.10,'5 X 0');
+insert into levels(id,description) values (600.10,'Multiplication min 0 max 11');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.10,'5 X 0','0');
-
-
-
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.10,10,0,11,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.10,1);
 
 --		LEVEL_ID: 600.11  
-insert into levels(id,description) values (600.11,'0 X 6');
+insert into levels(id,description) values (600.11,'Multiplication min 0 max 12');
 --	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.11,'0 X 6','0');
+insert into multiplication (level_id,score_needed,factor_min,factor_max,number_of_factors) values (600.11,10,0,12,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (600.11,1);
 
---		LEVEL_ID: 600.12  
-insert into levels(id,description) values (600.12,'6 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.12,'6 X 0','0');
-
-
-
-
---		LEVEL_ID: 600.13  
-insert into levels(id,description) values (600.13,'0 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.13,'0 X 7','0');
-
---		LEVEL_ID: 600.14  
-insert into levels(id,description) values (600.14,'7 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.14,'7 X 0','0');
-
-
---		LEVEL_ID: 600.15  
-insert into levels(id,description) values (600.15,'0 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.15,'0 X 8','0');
-
---		LEVEL_ID: 600.16  
-insert into levels(id,description) values (600.16,'8 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.16,'8 X 0','0');
-
-
---		LEVEL_ID: 600.17  
-insert into levels(id,description) values (600.17,'0 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.17,'0 X 9','0');
-
---		LEVEL_ID: 600.18  
-insert into levels(id,description) values (600.18,'9 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.18,'9 X 0','0');
-
-
---		LEVEL_ID: 600.19  
-insert into levels(id,description) values (600.19,'0 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.19,'0 X 10','0');
-
---		LEVEL_ID: 600.20  
-insert into levels(id,description) values (600.20,'10 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.20,'10 X 0','0');
-
-
---		LEVEL_ID: 600.21  
-insert into levels(id,description) values (600.21,'0 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.21,'0 X 11','0');
-
---		LEVEL_ID: 600.22  
-insert into levels(id,description) values (600.22,'11 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.22,'11 X 0','0');
-
---		LEVEL_ID: 600.23  
-insert into levels(id,description) values (600.23,'0 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.23,'0 X 12','0');
-
---		LEVEL_ID: 600.24  
-insert into levels(id,description) values (600.24,'12 X 0');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (600.24,'12 X 0','0');
-
--- 1 times table
-
---		LEVEL_ID: 601  
-insert into levels(id,description) values (601,'1 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601,'1 X 1','1');
-
-
-
---		LEVEL_ID: 601.01  
-insert into levels(id,description) values (601.01,'1 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.01,'1 X 2','2');
-
---		LEVEL_ID: 601.02  
-insert into levels(id,description) values (601.02,'2 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.02,'2 X 1','2');
-
-
-
---		LEVEL_ID: 601.03  
-insert into levels(id,description) values (601.03,'1 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.03,'1 X 3','3');
-
---		LEVEL_ID: 601.04  
-insert into levels(id,description) values (601.04,'3 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.04,'3 X 1','3');
-
-
-
---		LEVEL_ID: 601.05  
-insert into levels(id,description) values (601.05,'1 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.05,'1 X 4','4');
-
---		LEVEL_ID: 601.06  
-insert into levels(id,description) values (601.06,'4 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.06,'4 X 1','4');
-
-
---		LEVEL_ID: 601.07  
-insert into levels(id,description) values (601.07,'1 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.07,'1 X 5','5');
-
---		LEVEL_ID: 601.08  
-insert into levels(id,description) values (601.08,'5 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.08,'5 X 1','5');
-
-
---		LEVEL_ID: 601.09  
-insert into levels(id,description) values (601.09,'1 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.09,'1 X 6','6');
-
---		LEVEL_ID: 601.10  
-insert into levels(id,description) values (601.10,'6 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.10,'6 X 1','6');
-
-
---		LEVEL_ID: 601.11  
-insert into levels(id,description) values (601.11,'1 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.11,'1 X 7','7');
-
---		LEVEL_ID: 601.12  
-insert into levels(id,description) values (601.12,'7 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.12,'7 X 1','7');
-
-
---		LEVEL_ID: 601.13  
-insert into levels(id,description) values (601.13,'1 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.13,'1 X 8','8');
-
---		LEVEL_ID: 601.14  
-insert into levels(id,description) values (601.14,'8 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.14,'8 X 1','8');
-
-
---		LEVEL_ID: 601.15  
-insert into levels(id,description) values (601.15,'1 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.15,'1 X 9','9');
-
---		LEVEL_ID: 601.16  
-insert into levels(id,description) values (601.16,'9 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.16,'9 X 1','9');
-
-
-
---		LEVEL_ID: 601.17  
-insert into levels(id,description) values (601.17,'1 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.17,'1 X 10','10');
-
---		LEVEL_ID: 601.18  
-insert into levels(id,description) values (601.18,'10 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.18,'10 X 1','10');
-
-
-
---		LEVEL_ID: 601.19  
-insert into levels(id,description) values (601.19,'1 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.19,'1 X 11','11');
-
---		LEVEL_ID: 601.20  
-insert into levels(id,description) values (601.20,'11 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.20,'11 X 1','11');
-
-
---		LEVEL_ID: 601.21  
-insert into levels(id,description) values (601.21,'1 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.21,'1 X 12','12');
-
---		LEVEL_ID: 601.22  
-insert into levels(id,description) values (601.22,'12 X 1');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (601.22,'12 X 1','12');
-
-
--- 2 times table
-
---		LEVEL_ID: 602  
-insert into levels(id,description) values (602,'2 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602,'2 X 2','4');
-
-
-
---		LEVEL_ID: 602.01  
-insert into levels(id,description) values (602.01,'2 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.01,'2 X 3','6');
-
---		LEVEL_ID: 602.02  
-insert into levels(id,description) values (602.02,'3 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.02,'3 X 2','6');
-
-
-
---		LEVEL_ID: 602.03  
-insert into levels(id,description) values (602.03,'2 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.03,'2 X 4','8');
-
---		LEVEL_ID: 602.04  
-insert into levels(id,description) values (602.04,'4 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.04,'4 X 2','8');
-
-
---		LEVEL_ID: 602.05  
-insert into levels(id,description) values (602.05,'2 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.05,'2 X 5','10');
-
---		LEVEL_ID: 602.06  
-insert into levels(id,description) values (602.06,'5 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.06,'5 X 2','10');
-
-
---		LEVEL_ID: 602.07  
-insert into levels(id,description) values (602.07,'2 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.07,'2 X 6','12');
-
---		LEVEL_ID: 602.08  
-insert into levels(id,description) values (602.08,'6 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.08,'6 X 2','12');
-
-
-
---		LEVEL_ID: 602.09  
-insert into levels(id,description) values (602.09,'2 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.09,'2 X 7','14');
-
---		LEVEL_ID: 602.10  
-insert into levels(id,description) values (602.10,'7 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.10,'7 X 2','14');
-
-
-
---		LEVEL_ID: 602.11  
-insert into levels(id,description) values (602.11,'2 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.11,'2 X 8','16');
-
---		LEVEL_ID: 602.12  
-insert into levels(id,description) values (602.12,'8 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.12,'8 X 2','16');
-
-
-
-
---		LEVEL_ID: 602.13  
-insert into levels(id,description) values (602.13,'2 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.13,'2 X 9','18');
-
---		LEVEL_ID: 602.14  
-insert into levels(id,description) values (602.14,'9 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.14,'9 X 2','18');
-
-
-
-
---		LEVEL_ID: 602.15  
-insert into levels(id,description) values (602.15,'2 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.15,'2 X 10','20');
-
---		LEVEL_ID: 602.16  
-insert into levels(id,description) values (602.16,'10 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.16,'10 X 2','20');
-
-
-
---		LEVEL_ID: 602.17  
-insert into levels(id,description) values (602.17,'2 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.17,'2 X 11','22');
-
---		LEVEL_ID: 602.18  
-insert into levels(id,description) values (602.18,'11 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.18,'11 X 2','22');
-
-
---		LEVEL_ID: 602.19  
-insert into levels(id,description) values (602.19,'2 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.19,'2 X 12','24');
-
---		LEVEL_ID: 602.20  
-insert into levels(id,description) values (602.20,'12 X 2');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (602.20,'12 X 2','24');
-
-
--- 3 times table
-
---		LEVEL_ID: 603  
-insert into levels(id,description) values (603,'3 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603,'3 X 3','9');
-
-
-
---		LEVEL_ID: 603.01  
-insert into levels(id,description) values (603.01,'3 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.01,'3 X 4','12');
-
---		LEVEL_ID: 603.02  
-insert into levels(id,description) values (603.02,'4 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.02,'4 X 3','12');
-
-
-
-
---		LEVEL_ID: 603.03  
-insert into levels(id,description) values (603.03,'3 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.03,'3 X 5','15');
-
---		LEVEL_ID: 603.04  
-insert into levels(id,description) values (603.04,'5 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.04,'5 X 3','15');
-
-
-
-
---		LEVEL_ID: 603.05  
-insert into levels(id,description) values (603.05,'3 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.05,'3 X 6','18');
-
---		LEVEL_ID: 603.06  
-insert into levels(id,description) values (603.06,'6 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.06,'6 X 3','18');
-
-
-
---		LEVEL_ID: 603.07  
-insert into levels(id,description) values (603.07,'3 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.07,'3 X 7','21');
-
---		LEVEL_ID: 603.08  
-insert into levels(id,description) values (603.08,'7 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.08,'7 X 3','21');
-
-
-
---		LEVEL_ID: 603.09  
-insert into levels(id,description) values (603.09,'3 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.09,'3 X 8','24');
-
---		LEVEL_ID: 603.10  
-insert into levels(id,description) values (603.10,'8 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.10,'8 X 3','24');
-
-
---		LEVEL_ID: 603.11  
-insert into levels(id,description) values (603.11,'3 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.11,'3 X 9','27');
-
---		LEVEL_ID: 603.12  
-insert into levels(id,description) values (603.12,'9 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.12,'9 X 3','27');
-
-
-
---		LEVEL_ID: 603.13  
-insert into levels(id,description) values (603.13,'3 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.13,'3 X 10','30');
-
---		LEVEL_ID: 603.14  
-insert into levels(id,description) values (603.14,'10 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.14,'10 X 3','30');
-
-
-
-
---		LEVEL_ID: 603.15  
-insert into levels(id,description) values (603.15,'3 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.15,'3 X 11','33');
-
---		LEVEL_ID: 603.16  
-insert into levels(id,description) values (603.16,'11 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.16,'11 X 3','33');
-
-
-
---		LEVEL_ID: 603.17  
-insert into levels(id,description) values (603.17,'3 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.17,'3 X 12','36');
-
---		LEVEL_ID: 603.18  
-insert into levels(id,description) values (603.18,'12 X 3');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (603.18,'12 X 3','36');
-
-
--- 4 times table
-
-
---		LEVEL_ID: 604  
-insert into levels(id,description) values (604,'4 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604,'4 X 4','16');
-
-
-
---		LEVEL_ID: 604.01  
-insert into levels(id,description) values (604.01,'4 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.01,'4 X 5','20');
-
---		LEVEL_ID: 604.02  
-insert into levels(id,description) values (604.02,'5 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.02,'5 X 4','20');
-
-
-
---		LEVEL_ID: 604.03  
-insert into levels(id,description) values (604.03,'4 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.03,'4 X 6','24');
-
---		LEVEL_ID: 604.04  
-insert into levels(id,description) values (604.04,'6 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.04,'6 X 4','24');
-
-
-
-
---		LEVEL_ID: 604.05  
-insert into levels(id,description) values (604.05,'4 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.05,'4 X 7','28');
-
---		LEVEL_ID: 604.06  
-insert into levels(id,description) values (604.06,'7 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.06,'7 X 4','28');
-
-
-
---		LEVEL_ID: 604.07  
-insert into levels(id,description) values (604.07,'4 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.07,'4 X 8','32');
-
---		LEVEL_ID: 604.08  
-insert into levels(id,description) values (604.08,'8 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.08,'8 X 4','32');
-
-
-
---		LEVEL_ID: 604.09  
-insert into levels(id,description) values (604.09,'4 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.09,'4 X 9','36');
-
---		LEVEL_ID: 604.10  
-insert into levels(id,description) values (604.10,'9 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.10,'9 X 4','36');
-
-
-
---		LEVEL_ID: 604.11  
-insert into levels(id,description) values (604.11,'4 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.11,'4 X 10','40');
-
---		LEVEL_ID: 604.12  
-insert into levels(id,description) values (604.12,'10 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.12,'10 X 4','40');
-
-
---		LEVEL_ID: 604.13  
-insert into levels(id,description) values (604.13,'4 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.13,'4 X 11','44');
-
---		LEVEL_ID: 604.14  
-insert into levels(id,description) values (604.14,'11 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.14,'11 X 4','44');
-
-
---		LEVEL_ID: 604.15  
-insert into levels(id,description) values (604.15,'4 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.15,'4 X 12','48');
-
---		LEVEL_ID: 604.16  
-insert into levels(id,description) values (604.16,'12 X 4');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (604.16,'12 X 4','48');
-
-
--- 5 times table
-
---		LEVEL_ID: 605  
-insert into levels(id,description) values (605,'5 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605,'5 X 5','25');
-
-
---		LEVEL_ID: 605.01  
-insert into levels(id,description) values (605.01,'5 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.01,'5 X 6','30');
-
---		LEVEL_ID: 605.02  
-insert into levels(id,description) values (605.02,'6 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.02,'6 X 5','30');
-
-
-
---		LEVEL_ID: 605.03  
-insert into levels(id,description) values (605.03,'5 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.03,'5 X 7','35');
-
---		LEVEL_ID: 605.04  
-insert into levels(id,description) values (605.04,'7 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.04,'7 X 5','35');
-
-
-
---		LEVEL_ID: 605.05  
-insert into levels(id,description) values (605.05,'5 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.05,'5 X 8','40');
-
---		LEVEL_ID: 605.06  
-insert into levels(id,description) values (605.06,'8 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.06,'8 X 5','40');
-
-
-
---		LEVEL_ID: 605.07  
-insert into levels(id,description) values (605.07,'5 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.07,'5 X 9','45');
-
---		LEVEL_ID: 605.08  
-insert into levels(id,description) values (605.08,'9 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.08,'9 X 5','45');
-
-
-
---		LEVEL_ID: 605.09  
-insert into levels(id,description) values (605.09,'5 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.09,'5 X 10','50');
-
---		LEVEL_ID: 605.10  
-insert into levels(id,description) values (605.10,'10 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.10,'10 X 5','50');
-
-
-
---		LEVEL_ID: 605.11  
-insert into levels(id,description) values (605.11,'5 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.11,'5 X 11','55');
-
---		LEVEL_ID: 605.12  
-insert into levels(id,description) values (605.12,'11 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.12,'11 X 5','55');
-
-
---		LEVEL_ID: 605.13  
-insert into levels(id,description) values (605.13,'5 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.13,'5 X 12','60');
-
---		LEVEL_ID: 605.14  
-insert into levels(id,description) values (605.14,'12 X 5');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (605.14,'12 X 5','60');
-
-
--- 6 times table
---		LEVEL_ID: 606  
-insert into levels(id,description) values (606,'6 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606,'6 X 6','36');
-
-
---		LEVEL_ID: 606.01  
-insert into levels(id,description) values (606.01,'6 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.01,'6 X 7','42');
-
---		LEVEL_ID: 606.02  
-insert into levels(id,description) values (606.02,'7 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.02,'7 X 6','42');
-
-
-
---		LEVEL_ID: 606.03  
-insert into levels(id,description) values (606.03,'6 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.03,'6 X 8','48');
-
---		LEVEL_ID: 606.04  
-insert into levels(id,description) values (606.04,'8 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.04,'8 X 6','48');
-
-
-
---		LEVEL_ID: 606.05  
-insert into levels(id,description) values (606.05,'6 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.05,'6 X 9','54');
-
---		LEVEL_ID: 606.06  
-insert into levels(id,description) values (606.06,'9 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.06,'9 X 6','54');
-
-
---		LEVEL_ID: 606.07  
-insert into levels(id,description) values (606.07,'6 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.07,'6 X 10','60');
-
---		LEVEL_ID: 606.08  
-insert into levels(id,description) values (606.08,'10 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.08,'10 X 6','60');
-
-
---		LEVEL_ID: 606.09  
-insert into levels(id,description) values (606.09,'6 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.09,'6 X 11','66');
-
---		LEVEL_ID: 606.10  
-insert into levels(id,description) values (606.10,'11 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.10,'11 X 6','66');
-
-
-
---		LEVEL_ID: 606.11  
-insert into levels(id,description) values (606.11,'6 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.11,'6 X 12','72');
-
---		LEVEL_ID: 606.12  
-insert into levels(id,description) values (606.12,'12 X 6');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (606.12,'12 X 6','72');
-
-
--- 7 times table
-
-
---		LEVEL_ID: 607  
-insert into levels(id,description) values (607,'7 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607,'7 X 7','49');
-
-
-
---		LEVEL_ID: 607.01  
-insert into levels(id,description) values (607.01,'7 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.01,'7 X 8','56');
-
---		LEVEL_ID: 607.02  
-insert into levels(id,description) values (607.02,'8 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.02,'8 X 7','56');
-
-
---		LEVEL_ID: 607.03  
-insert into levels(id,description) values (607.03,'7 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.03,'7 X 9','63');
-
---		LEVEL_ID: 607.04  
-insert into levels(id,description) values (607.04,'9 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.04,'9 X 7','63');
-
-
---		LEVEL_ID: 607.05  
-insert into levels(id,description) values (607.05,'7 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.05,'7 X 10','70');
-
---		LEVEL_ID: 607.06  
-insert into levels(id,description) values (607.06,'10 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.06,'10 X 7','70');
-
-
---		LEVEL_ID: 607.07  
-insert into levels(id,description) values (607.07,'7 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.07,'7 X 11','77');
-
---		LEVEL_ID: 607.08  
-insert into levels(id,description) values (607.08,'11 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.08,'11 X 7','77');
-
-
-
---		LEVEL_ID: 607.09  
-insert into levels(id,description) values (607.09,'7 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.09,'7 X 12','84');
-
---		LEVEL_ID: 607.10  
-insert into levels(id,description) values (607.10,'12 X 7');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (607.10,'12 X 7','84');
-
-
--- 8 times table
---		LEVEL_ID: 608  
-insert into levels(id,description) values (608,'8 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608,'8 X 8','64');
-
-
---		LEVEL_ID: 608.01  
-insert into levels(id,description) values (608.01,'8 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.01,'8 X 9','72');
-
---		LEVEL_ID: 608.02  
-insert into levels(id,description) values (608.02,'9 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.02,'9 X 8','72');
-
-
---		LEVEL_ID: 608.03  
-insert into levels(id,description) values (608.03,'8 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.03,'8 X 10','80');
-
---		LEVEL_ID: 608.04  
-insert into levels(id,description) values (608.04,'10 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.04,'10 X 8','80');
-
-
---		LEVEL_ID: 608.05  
-insert into levels(id,description) values (608.05,'8 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.05,'8 X 11','88');
-
---		LEVEL_ID: 608.06  
-insert into levels(id,description) values (608.06,'11 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.06,'11 X 8','88');
-
-
---		LEVEL_ID: 608.07  
-insert into levels(id,description) values (608.07,'8 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.07,'8 X 12','96');
-
---		LEVEL_ID: 608.08  
-insert into levels(id,description) values (608.08,'12 X 8');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (608.08,'12 X 8','96');
-
-
-
-
-
--- 9 times table
---		LEVEL_ID: 609  
-insert into levels(id,description) values (609,'9 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609,'9 X 9','81');
-
-
---		LEVEL_ID: 609.01  
-insert into levels(id,description) values (609.01,'9 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609.01,'9 X 10','90');
-
---		LEVEL_ID: 609.02  
-insert into levels(id,description) values (609.02,'10 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609.02,'10 X 9','90');
-
-
---		LEVEL_ID: 609.03  
-insert into levels(id,description) values (609.03,'9 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609.03,'9 X 11','99');
-
---		LEVEL_ID: 609.04  
-insert into levels(id,description) values (609.04,'11 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609.04,'11 X 9','99');
-
-
---		LEVEL_ID: 609.05  
-insert into levels(id,description) values (609.05,'9 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609.05,'9 X 12','108');
-
---		LEVEL_ID: 609.06  
-insert into levels(id,description) values (609.06,'12 X 9');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (609.06,'12 X 9','108');
-
-
-
-
--- 10 times table
---		LEVEL_ID: 610  
-insert into levels(id,description) values (610,'10 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (610,'10 X 10','100');
-
---		LEVEL_ID: 610.01  
-insert into levels(id,description) values (610.01,'10 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (610.01,'10 X 11','110');
-
---		LEVEL_ID: 610.02  
-insert into levels(id,description) values (610.02,'11 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (610.02,'11 X 10','110');
-
-
---		LEVEL_ID: 610.03  
-insert into levels(id,description) values (610.03,'10 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (610.03,'10 X 12','120');
-
---		LEVEL_ID: 610.04  
-insert into levels(id,description) values (610.04,'12 X 10');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (610.04,'12 X 10','120');
-
-
-
--- 11 times table
---		LEVEL_ID: 611  
-insert into levels(id,description) values (611,'11 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (611,'11 X 11','122');
-
-
---		LEVEL_ID: 611.01  
-insert into levels(id,description) values (611.01,'11 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (611.01,'11 X 12','132');
-
---		LEVEL_ID: 611.02  
-insert into levels(id,description) values (611.02,'12 X 11');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (611.02,'12 X 11','132');
-
-
-
-
-
--- 12 times table
---		LEVEL_ID: 612  
-insert into levels(id,description) values (612,'12 X 12');
---	QUESTIONS: 
-insert into questions (level_id,question,answer) values (612,'12 X 12','144');
 -----////////////////////-DIVISION-///////////////////////////////////////
 
 --		LEVEL_ID: 700 
 insert into levels(id,description) values (700,'Division factors 0 to 1');
 --	QUESTIONS: 
+insert into division (level_id,score_needed,factor_min,factor_max,number_of_factors) values (700,10,1,12,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (700,1);
 
 
+
+
+
+
+
+
+--GAMES_LEVELS_DUNGEON
+insert into games_levels_dungeon (chasers,games_levels_id) values  (3,1);
 
 
 --GAMES_ATTEMPTS
@@ -3673,5 +3006,15 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --select standards.standard from clusters_domains join clusters_grades on clusters_domains.cluster_id = clusters_grades.cluster_id where clusters_grades.grade_id = 1; 
 
 --select standards_clusters.standard_id, standards_clusters.cluster_id  from standards_clusters, clusters_grades, clusters_domains where standards_clusters.cluster_id = clusters_grades.cluster_id and clusters_grades.cluster_id = clusters_domains.cluster_id  and clusters_grades.grade_id = 1 and clusters_domains.domain_id = 1; 
+
+
+
+
+
+
+
+
+
+
 
 
