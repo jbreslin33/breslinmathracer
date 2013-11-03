@@ -21,11 +21,10 @@ var curDate = "<?php echo $curDate; ?>";
 var username = "<?php echo $username; ?>";
 var next_level = "<?php echo $next_level; ?>";
 </script>
-
 </head>
 
 <body bgcolor="grey">
-
+<button onclick="GAME.doNothing();">calculator</button>
 <script language="javascript">
 
 var GAME;

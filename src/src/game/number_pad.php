@@ -66,6 +66,11 @@ if (this.mOn)
 		//this.parent();
 	},
 
+	doNothing: function()
+	{
+		this.log('doing nothing');
+	},
+
 	createQuestionShapes: function()
 	{
 		//this.parent();
