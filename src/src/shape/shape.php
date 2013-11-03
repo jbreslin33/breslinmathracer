@@ -68,7 +68,17 @@ var Shape = new Class(
                 this.mMesh;
         
                 //create clientImage
-                if (this.mSrc)
+
+                if (this.mSrc == "BUTTON")
+                {
+                        //image to attach to our div "vessel"
+                        this.mMesh  = document.createElement("BUTTON");
+                        //this.mMesh.src  = this.mSrc;
+                        this.mMesh.style.width = this.mWidth+'px'; 
+                        this.mMesh.style.height = this.mHeight+'px'; 
+                }
+
+                else if (this.mSrc)
                 {
                         //image to attach to our div "vessel"
                         this.mMesh  = document.createElement("IMG");
