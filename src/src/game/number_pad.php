@@ -13,7 +13,8 @@ Extends: GameSimple,
 		//create number pad
 
 		this.mNumOne = new Shape(50,50,100,200,this,"BUTTON","","");
-		this.mNumOne.setText('1');
+		this.mNumOne.mMesh.innerHTML = '1';
+		//this.mNumOne.appendText('1');
 		this.mNumOne.mMesh.mGame = this;
 		this.mNumOne.mMesh.addEvent('click',this.addOneToAnswer);
 /*
