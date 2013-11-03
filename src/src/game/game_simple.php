@@ -80,6 +80,10 @@ var GameSimple = new Class(
 			//this.log('mDeltaTime:' + this.mDeltaTime)
 		
 //			for ( i = 0; i < questions
+ 			for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
+			{
+				this.log('question:' + this.mQuiz.mQuestionArray[i].getQuestion());
+			}
 		}
         },
 
