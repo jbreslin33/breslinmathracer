@@ -63,12 +63,12 @@ var GameSimple = new Class(
                         //set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
                         this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
                         
-			//if(this.mDeltaTime < 50000)
-                        //{
-                                this.mGameTime = this.mGameTime + this.mDeltaTime;
-                        //}
-			//this.log('mGameTime:' + this.mGameTime)
-			this.log('mDeltaTime:' + this.mDeltaTime)
+			if(this.mDeltaTime < 50000)
+                        {
+                        	this.mGameTime = this.mGameTime + this.mDeltaTime;
+                        }
+			this.log('mGameTime:' + this.mGameTime)
+			//this.log('mDeltaTime:' + this.mDeltaTime)
 		}
         },
 
