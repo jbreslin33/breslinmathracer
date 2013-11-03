@@ -39,6 +39,15 @@ var GameSimple = new Class(
         {
         },
 
+	createQuestions: function()
+        {
+                for (i = 0; i < scoreNeeded; i++)
+                {
+                        var question = new Question(questions[i],answers[i]);
+                        this.mQuiz.mQuestionArray.push(question);
+                }
+        },
+
 	/*********************** PUBLIC ***************************/
 	getControlObject: function()
 	{
@@ -67,8 +76,10 @@ var GameSimple = new Class(
                         {
                         	this.mGameTime = this.mGameTime + this.mDeltaTime;
                         }
-			this.log('mGameTime:' + this.mGameTime)
+			//this.log('mGameTime:' + this.mGameTime)
 			//this.log('mDeltaTime:' + this.mDeltaTime)
+		
+//			for ( i = 0; i < questions
 		}
         },
 

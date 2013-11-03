@@ -44,12 +44,12 @@ window.addEvent('domready', function()
         GAME.setHud(hud);
 
 	//QUIZ	
-       	//quiz = new Quiz(scoreNeeded);
-       	//GAME.mQuiz = quiz;
-	//quiz.mGame = GAME;
+       	quiz = new Quiz(scoreNeeded);
+       	GAME.mQuiz = quiz;
+	quiz.mGame = GAME;
 
         //create questions
-        //GAME.createQuestions();
+        GAME.createQuestions();
 
         //create control object
         //GAME.createControlObject();
