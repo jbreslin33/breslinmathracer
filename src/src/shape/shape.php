@@ -71,7 +71,7 @@ var Shape = new Class(
                 if (this.mSrc == "BUTTON")
                 {
                         //button to attach to our div "vessel"
-                        this.mMesh  = document.createElement('input');
+                        this.mMesh  = document.createElement("BUTTON");
                         this.mMesh.style.width = this.mWidth+'px'; 
                         this.mMesh.style.height = this.mHeight+'px'; 
                 }
