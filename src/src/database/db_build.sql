@@ -1342,8 +1342,8 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 insert into counting (level_id,score_needed,start_number,end_number,count_by) values (1,1,0,1,1);
 --	GAMES: dungeon,network,racer
 insert into games_levels (level_id,game_id) values  (1,1);
-insert into games_levels (level_id,game_id) values  (1,4);
-insert into games_levels (level_id,game_id) values  (1,5);
+--insert into games_levels (level_id,game_id) values  (1,4);
+--insert into games_levels (level_id,game_id) values  (1,5);
 
 	
 --		LEVEL_ID: 1.01 
