@@ -17,7 +17,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 ?>
 
 <script type="text/javascript" src="/src/game/game_quiz.php"></script>
-<script type="text/javascript" src="/src/game/chooser.php"></script>
+<script type="text/javascript" src="/src/game/play.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
 
 </head>
@@ -42,7 +42,7 @@ window.addEvent('domready', function()
         hud.mGameName.setText('<font size="2">DUNGEON</font>');
 
 	//GAME
-	GAME = new Chooser("Chooser");
+	GAME = new Play("Play");
 
 	//set hud
 	GAME.setHud(hud);
