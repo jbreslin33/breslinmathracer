@@ -46,6 +46,24 @@ Extends: GameSimple,
 		this.mNumSix.mMesh.innerHTML = '6';
 		this.mNumSix.mMesh.mGame = this;
 		this.mNumSix.mMesh.addEvent('click',this.numPadHit);
+		
+		//7	
+		this.mNumSeven= new Shape(50,50,300,200,this,"BUTTON","","");
+		this.mNumSeven.mMesh.innerHTML = '7';
+		this.mNumSeven.mMesh.mGame = this;
+		this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
+			
+		//8	
+		this.mNumEight= new Shape(50,50,350,200,this,"BUTTON","","");
+		this.mNumEight.mMesh.innerHTML = '8';
+		this.mNumEight.mMesh.mGame = this;
+		this.mNumEight.mMesh.addEvent('click',this.numPadHit);
+		
+		//9	
+		this.mNumNine= new Shape(50,50,400,200,this,"BUTTON","","");
+		this.mNumNine.mMesh.innerHTML = '9';
+		this.mNumNine.mMesh.mGame = this;
+		this.mNumNine.mMesh.addEvent('click',this.numPadHit);
 	},
 	
 	numPadHit: function()
