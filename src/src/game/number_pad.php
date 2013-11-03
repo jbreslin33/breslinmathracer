@@ -13,13 +13,20 @@ Extends: GameSimple,
 		//create number pad
 		this.mNumOne = new Shape(50,50,100,200,this,"BUTTON","","");
 		this.mNumOne.mMesh.set('text','1');
-		this.mNumOne.mMesh.addEvent('click',addOneToAnswer);
+		this.mNumOne.mMesh.addEvent('click',this.addOneToAnswer);
 		
 /*
 		this.mNumTwo = new Shape(50,50,150,200,this,"BUTTON","","");
 		this.mNumTwo.mMesh.set('text','2');
 		this.mNumTwo.mMesh.addEvent('click',this.addTwoToAnswer);
 */
+	},
+	
+	addOneToAnswer: function()
+	{
+		//this.mAnswer = this.mAnswer + '1'; 
+		//alert('mAnswer:' + this.mGame.mNumOne.mMesh.innerHTML);
+		alert('mAnswer:');
 	},
 
 	update: function()
@@ -85,11 +92,6 @@ if (this.mOn)
 		alert('11');
 	},
 	
-	addOneToAnswer: function()
-	{
-		//this.mAnswer = this.mAnswer + '1'; 
-		alert('mAnswer:' + this.mGame.mNumOne.mMesh.innerHTML);
-	},
 	
 	createQuestionShapes: function()
 	{
