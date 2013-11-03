@@ -73,7 +73,7 @@ var Shape = new Class(
                 {
                         //image to attach to our div "vessel"
                         this.mMesh  = document.createElement("BUTTON");
-                        //this.mMesh.src  = this.mSrc;
+                        this.mMesh.innerHTML  = "1";
                         this.mMesh.style.width = this.mWidth+'px'; 
                         this.mMesh.style.height = this.mHeight+'px'; 
                 }
