@@ -1,1 +1,1 @@
-sudo -u postgres psql -d abcandyou -f src/database/quick_level_jump.sql
+sudo -u postgres psql -d jamesanthonybreslin -f src/database/quick_level_jump.sql
