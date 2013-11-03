@@ -1293,6 +1293,8 @@ insert into games (game,url,picture_open,picture_closed) values ('Dungeon Count'
 insert into games (game,url,picture_open,picture_closed) values ('Click','/web/game/clicky.php','/images/doors/door_open.png','/images/doors/door_closed.png');
 
 insert into games (game,url,picture_open,picture_closed) values ('Network','/web/game/network.php','/images/doors/door_open.png','/images/doors/door_closed.png');
+
+insert into games (game,url,picture_open,picture_closed) values ('Racer','/web/game/racer.php','/images/doors/door_open.png','/images/doors/door_closed.png');
 --****************************************
 --		LEVELS	
 --****************************************
@@ -1341,6 +1343,7 @@ insert into counting (level_id,score_needed,start_number,end_number,count_by) va
 --	GAMES: dungeon
 insert into games_levels (level_id,game_id) values  (1,1);
 insert into games_levels (level_id,game_id) values  (1,4);
+insert into games_levels (level_id,game_id) values  (1,5);
 
 	
 --		LEVEL_ID: 1.01 
