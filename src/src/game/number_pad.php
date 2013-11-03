@@ -7,10 +7,20 @@ Extends: GameSimple,
 	{
        		this.parent();
 		//this.createChasers();
-		this.numberOne = new Shape(50,50,200,200,this,"BUTTON","green","hello");
-		this.numberOne.mMesh.addEvent('click',this.doNothing);
-	},
 
+		this.mAnswer = '';
+
+		//create number pad
+		this.mNumOne = new Shape(50,50,100,200,this,"BUTTON","","");
+		this.mNumOne.mMesh.set('text','1');
+		this.mNumOne.mMesh.addEvent('click',addOneToAnswer);
+		
+/*
+		this.mNumTwo = new Shape(50,50,150,200,this,"BUTTON","","");
+		this.mNumTwo.mMesh.set('text','2');
+		this.mNumTwo.mMesh.addEvent('click',this.addTwoToAnswer);
+*/
+	},
 
 	update: function()
 	{
@@ -74,7 +84,13 @@ if (this.mOn)
 		//this.log('doing nothing');
 		alert('11');
 	},
-
+	
+	addOneToAnswer: function()
+	{
+		//this.mAnswer = this.mAnswer + '1'; 
+		alert('mAnswer:' + this.mGame.mNumOne.mMesh.innerHTML);
+	},
+	
 	createQuestionShapes: function()
 	{
 		//this.parent();
