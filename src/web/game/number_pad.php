@@ -17,6 +17,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 
 <script type="text/javascript" src="/src/game/game_quiz.php"></script>
 <script type="text/javascript" src="/src/game/dungeon.php"></script>
+<script type="text/javascript" src="/src/game/number_pad.php"></script>
 
 <!-- HUD VARIABLES    -->
 <script language="javascript">
@@ -41,7 +42,7 @@ window.addEvent('domready', function()
         hud.mGameName.setText('<font size="2">DUNGEON</font>');
         
 	//GAME
-	GAME = new Dungeon();
+	GAME = new NumberPad();
 
         //set hud
         GAME.setHud(hud);

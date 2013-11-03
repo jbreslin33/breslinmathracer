@@ -1,7 +1,7 @@
-var Dungeon = new Class(
+var NumberPad = new Class(
 {
 
-Extends: GameQuiz,
+Extends: Dungeon,
 
 	initialize: function()
 	{
