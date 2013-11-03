@@ -6,6 +6,15 @@ var GameSimple = new Class(
 {
 	initialize: function()
         {
+     		/************** On_Off **********/
+                this.mOn = true;
+     		
+		/**************** TIME ************/
+                this.mTimeSinceEpoch = 0;
+                this.mLastTimeSinceEpoch = 0;
+                this.mDeltaTime = 0;
+                this.mGameTime = 0;
+
 		document.body.style.cursor = 'crosshair';
         },
  	
@@ -44,6 +53,22 @@ var GameSimple = new Class(
 	
         update: function()
         {
+		if (this.mOn)
+                {
+                        //get time since epoch and set lasttime
+                        e = new Date();
+                        this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
+                        this.mTimeSinceEpoch = e.getTime();
+
+                        //set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
+                        this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
+                        
+			if(this.mDeltaTime < 50000)
+                        {
+                                this.mGameTime = this.mGameTime + this.mDeltaTime;
+                        }
+			this.log('mGameTime:' + e.getTime())
+		}
         },
 
 	/****************************** PROTECTED ***************************************/
