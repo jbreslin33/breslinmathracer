@@ -11,11 +11,17 @@ Extends: GameSimple,
 		this.mAnswer = '';
 
 		//create number pad
-
-		this.mNumOne = new Shape(50,50,100,200,this,"BUTTON","","");
+		//1
+		this.mNumOne = new Shape(50,50,300,100,this,"BUTTON","","");
 		this.mNumOne.mMesh.innerHTML = '1';
 		this.mNumOne.mMesh.mGame = this;
 		this.mNumOne.mMesh.addEvent('click',this.numPadHit);
+	
+		//2	
+		this.mNumTwo = new Shape(50,50,350,100,this,"BUTTON","","");
+		this.mNumTwo.mMesh.innerHTML = '2';
+		this.mNumTwo.mMesh.mGame = this;
+		this.mNumTwo.mMesh.addEvent('click',this.numPadHit);
 	},
 	
 	numPadHit: function()
