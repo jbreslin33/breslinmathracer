@@ -110,7 +110,32 @@ if (this.mOn)
         	door.mOpenOnQuestionSolved = true;
         	this.addToShapeArray(door);
 
-	}
+	},
+ 	
+	checkKeys: (function()
+        {
+		this.parent();
+		/*
+                //idle
+                if (GAME.mKeyLeft == false && GAME.mKeyRight == false && GAME.mKeyUp == false && GAME.mKeyDown == false)
+                {
+                        if (this.mControlObject)
+                        {
+                                this.mControlObject.mKey.mX = 0;
+                                this.mControlObject.mKey.mY = 0;
+                        }
+                }
+                //north
+                if (GAME.mKeyLeft == false && GAME.mKeyRight == false && GAME.mKeyUp == true && GAME.mKeyDown == false)
+                {
+                        if (this.mControlObject)
+                        {
+                                this.mControlObject.mKey.mX = 0;
+                                this.mControlObject.mKey.mY = -1;
+                        }
+                }
+		*/
+ 	}).protect(),
 		
 });
 
