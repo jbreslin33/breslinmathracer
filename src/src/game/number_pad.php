@@ -22,6 +22,12 @@ Extends: GameSimple,
 		this.mNumTwo.mMesh.innerHTML = '2';
 		this.mNumTwo.mMesh.mGame = this;
 		this.mNumTwo.mMesh.addEvent('click',this.numPadHit);
+		
+		//3	
+		this.mNumThree = new Shape(50,50,400,100,this,"BUTTON","","");
+		this.mNumThree.mMesh.innerHTML = '3';
+		this.mNumThree.mMesh.mGame = this;
+		this.mNumThree.mMesh.addEvent('click',this.numPadHit);
 	},
 	
 	numPadHit: function()
