@@ -24,7 +24,6 @@ var next_level = "<?php echo $next_level; ?>";
 </head>
 
 <body bgcolor="grey">
-<button onclick="GAME.doNothing();">calculator</button>
 <script language="javascript">
 
 var GAME;

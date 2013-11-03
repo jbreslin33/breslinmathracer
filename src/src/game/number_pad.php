@@ -7,6 +7,8 @@ Extends: GameSimple,
 	{
        		this.parent();
 		//this.createChasers();
+		this.numberOne = new Shape(50,50,200,200,this,"","green","hello");
+//initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
 	},
 
 	update: function()
