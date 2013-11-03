@@ -8,43 +8,20 @@ Extends: GameSimple,
        		this.parent();
 		//this.createChasers();
 
-		this.mAnswer = '345';
+		this.mAnswer = '';
 
 		//create number pad
 
 		this.mNumOne = new Shape(50,50,100,200,this,"BUTTON","","");
 		this.mNumOne.mMesh.innerHTML = '1';
-		//this.mNumOne.appendText('1');
 		this.mNumOne.mMesh.mGame = this;
-		this.mNumOne.mMesh.addEvent('click',this.addOneToAnswer);
-/*
-		this.mNumOne.mMesh.set('text','1');
-*/
-//this.mNumOne.mMesh.setAttribute('type','button');
-//buttonnode.setAttribute('name','sal');
-//buttonnode.setAttribute('value','sal');
-//this.mNumOne.mMesh.attachEvent('onclick',this.Hi);
-//cell1.appendChild(buttonnode);		
-/*
-		this.mNumTwo = new Shape(50,50,150,200,this,"BUTTON","","");
-		this.mNumTwo.mMesh.set('text','2');
-		this.mNumTwo.mMesh.addEvent('click',this.addTwoToAnswer);
-*/
+		this.mNumOne.mMesh.addEvent('click',this.numPadHit);
 	},
 	
-	addOneToAnswer: function()
+	numPadHit: function()
 	{
-		//answer = answer + '1';
-		//alert('mAnswer:'  + answer);
+		this.mGame.mAnswer = this.mGame.mAnswer + this.innerHTML; 	
 		alert('mAnswer:' + this.mGame.mAnswer);
-		
-		//this.mAnswer = this.mAnswer + '1'; 
-		//alert('mAnswer:' + this.mGame.mNumOne.mMesh.innerHTML);
-	},
-
-	Hi: function()
-	{
-		alert('hilll');
 	},
 
 	update: function()
