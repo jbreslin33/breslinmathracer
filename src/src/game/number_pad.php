@@ -8,8 +8,9 @@ Extends: GameSimple,
        		this.parent();
 		//this.createChasers();
 		this.numberOne = new Shape(50,50,200,200,this,"BUTTON","green","hello");
-//initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
+		this.numberOne.mMesh.addEvent('click',this.doNothing);
 	},
+
 
 	update: function()
 	{
@@ -70,7 +71,8 @@ if (this.mOn)
 
 	doNothing: function()
 	{
-		this.log('doing nothing');
+		//this.log('doing nothing');
+		alert('11');
 	},
 
 	createQuestionShapes: function()

@@ -68,7 +68,6 @@ var Shape = new Class(
                 this.mMesh;
         
                 //create clientImage
-
                 if (this.mSrc == "BUTTON")
                 {
                         //image to attach to our div "vessel"
