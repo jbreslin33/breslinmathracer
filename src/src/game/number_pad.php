@@ -13,7 +13,6 @@ Extends: Dungeon,
 	{
 		this.parent();
 		this.mLevel = 1;	
-		//document.write("I AM HERE");
 	},
 
 /*

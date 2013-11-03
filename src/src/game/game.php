@@ -4,8 +4,7 @@ session_start();
 
 var Game = new Class(
 {
-
-        initialize: function()
+	initialize: function()
         {
 		/************ SCORE *******/
 		this.mScoreOnServer  = 0;
