@@ -1,0 +1,2 @@
+cd ../vserver
+make

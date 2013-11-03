@@ -1,0 +1,2 @@
+Main-Class: breslin.game.GameMonkey
+Class-Path: jME3-lwjgl-natives.jar jMonkeyEngine3.jar lwjgl.jar
