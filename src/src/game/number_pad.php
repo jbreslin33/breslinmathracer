@@ -13,7 +13,7 @@ Extends: Dungeon,
 	createControlObject: function()
 	{
 		this.parent();
-
+/*
         	this.mControlObject.mHideOnQuestionSolved = false;
         	this.mControlObject.createMountPoint(0,-5,-41);
 
@@ -35,6 +35,7 @@ Extends: Dungeon,
 
 		//sync with mounter
 		questionMountee.setCopyQuestionFromMounter(true);
+*/
 	},
 
 	createQuestionShapes: function()
