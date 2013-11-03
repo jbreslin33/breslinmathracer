@@ -1,18 +1,18 @@
 var NumberPad = new Class(
 {
 
-Extends: Dungeon,
+Extends: GameSimple,
 
 	initialize: function()
 	{
        		this.parent();
-		this.createChasers();
+		//this.createChasers();
 	},
 
 	update: function()
 	{
 		this.parent();
-		this.mLevel = 1;	
+		//this.mLevel = 1;	
 	},
 
 /*
@@ -63,7 +63,7 @@ if (this.mOn)
 */
 	createControlObject: function()
 	{
-		this.parent();
+		//this.parent();
 	},
 
 	createQuestionShapes: function()
@@ -73,17 +73,19 @@ if (this.mOn)
 
 	createChasers: function()
 	{
+/*
                 for (i = 0; i < 1; i++)
                 {
                         var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
                         var shape = new ShapeChaser(50,50,openPoint.mX,openPoint.mY,this,"/images/monster/red_monster.png","","chaser");
                         this.addToShapeArray(shape);
                 }
+*/
 	},
 
 	createKey: function(image_source)
 	{
-
+/*
         	var keyQuestion = new Question('Pick up key.',"key");
         	this.mQuiz.mQuestionArray.push(keyQuestion);
 
@@ -94,12 +96,12 @@ if (this.mOn)
        	 	key.mMountable = true;
         	key.setHideOnQuestionSolved(false);
         	this.addToShapeArray(key);
-
+*/
 	},
 
 	createDoor: function(image_source_closed,image_source_open)
 	{
-
+/*
         	var doorQuestion = new Question('Open door with key.',"door");
         	this.mQuiz.mQuestionArray.push(doorQuestion);
 
@@ -108,11 +110,12 @@ if (this.mOn)
         	door.mUrl = '/src/database/goto_next_level.php';
         	door.mOpenOnQuestionSolved = true;
         	this.addToShapeArray(door);
-
+*/
 	},
  	
 	checkKeys: (function()
         {
+/*
 		this.parent();
 		/*
                 //idle

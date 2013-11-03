@@ -12,11 +12,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_games_attempts.php");
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 ?>
 
-<script type="text/javascript" src="/src/shape/shape_ai.php"></script>
-<script type="text/javascript" src="/src/shape/shape_chaser.php"></script>
-
-<script type="text/javascript" src="/src/game/game_quiz.php"></script>
-<script type="text/javascript" src="/src/game/dungeon.php"></script>
+<script type="text/javascript" src="/src/game/game_simple.php"></script>
 <script type="text/javascript" src="/src/game/number_pad.php"></script>
 
 <!-- HUD VARIABLES    -->
@@ -48,24 +44,24 @@ window.addEvent('domready', function()
         GAME.setHud(hud);
 
 	//QUIZ	
-       	quiz = new Quiz(scoreNeeded);
-       	GAME.mQuiz = quiz;
-	quiz.mGame = GAME;
+       	//quiz = new Quiz(scoreNeeded);
+       	//GAME.mQuiz = quiz;
+	//quiz.mGame = GAME;
 
         //create questions
-        GAME.createQuestions();
+        //GAME.createQuestions();
 
         //create control object
-        GAME.createControlObject();
+        //GAME.createControlObject();
 
         //create question shapes
-        GAME.createQuestionShapes();
+        //GAME.createQuestionShapes();
 
         //create key
-        GAME.createKey("/images/key/key_dungeon.gif");
+        //GAME.createKey("/images/key/key_dungeon.gif");
 
         //create door
-        GAME.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
+        //GAME.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 
         //KEYS
         GAME.mKeysOn = true;
