@@ -13,7 +13,7 @@ var Quiz = new Class(
 
 		//question
 		this.mMarker = 0;
-
+		
         },
 
 	//returns question object	

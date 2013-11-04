@@ -15,12 +15,15 @@ Extends: GameSimple,
 		this.mStartGameHit = false;
 		this.mUserAnswer = '';
 
+
+		//hud question bar
+		this.mHud.setQuestion(this.mQuiz.getQuestion().getQuestion());
+		
 		//question bar
 		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-
-		//this.log('q:' + this.mQuiz.mQuestionArray[0].getQuestion());
 		this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
 		this.mNumQuestion.mMesh.mGame = this;
+		
 		
 		//answer text box 
 		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");

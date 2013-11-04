@@ -50,9 +50,12 @@ var Hud = new Class(
         westBounds  = new Shape         ( 10, 50,  0,335,"","","#F19BF1","boundary");
         westBounds  = new Shape         ( 10, 20,  0,385,"","","#F08EF0","boundary");
 
-        }
+        },
 
-
+	setQuestion: function(question)
+	{
+        	this.mQuestion.setText('<font size="2"> Question: ' + question + '</font>');
+	}
 });
 
 
