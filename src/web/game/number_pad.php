@@ -33,7 +33,7 @@ window.addEvent('domready', function()
         //HUD
         hud = new Hud();
         hud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
-        hud.mGameName.setText('<font size="2">DUNGEON</font>');
+        hud.mGameName.setText('<font size="2">Math Racer</font>');
         
 	//GAME
 	GAME = new NumberPad();
@@ -48,17 +48,6 @@ window.addEvent('domready', function()
 
         //create questions
         GAME.createQuestions();
-
-        //KEYS
-        //GAME.mKeysOn = true;
-        //document.addEvent("keydown", GAME.keyDown);
-        //document.addEvent("keyup", GAME.keyUp);
-
-        //MOUSE
-        //GAME.mMouseOn     = true;
-        //GAME.mMouseMoveOn = true;
-        //GAME.mMouseDownOn = true;
-
 <?php
 
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
