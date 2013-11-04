@@ -6,7 +6,11 @@ Extends: GameSimple,
 	initialize: function()
 	{
        		this.parent();
-			
+	
+		//times	
+		this.mThresholdTime = 0;	
+		this.mAnswerTime = 0;	
+		
 		this.mStartGameHit = false;
 		this.mUserAnswer = '';
 
@@ -133,7 +137,8 @@ Extends: GameSimple,
 			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
 			if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
 			{
-				alert('Electrial Bananas');
+				//alert('Electrical Bananas');
+				this.mGame.incrementScore();
 			}
 			else
 			{

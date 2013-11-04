@@ -6,7 +6,8 @@ var GameSimple = new Class(
 {
 	initialize: function()
         {
-		//can i do this here...
+		this.mScore = 0;		
+	
 		//HUD
         	this.mHud = new Hud();
         	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
@@ -73,14 +74,6 @@ var GameSimple = new Class(
                         {
                         	this.mGameTime = this.mGameTime + this.mDeltaTime;
                         }
-			//this.log('mGameTime:' + this.mGameTime)
-			//this.log('mDeltaTime:' + this.mDeltaTime)
-		
-//			for ( i = 0; i < questions
- //			for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
-//			{
-//				this.log('question:' + this.mQuiz.mQuestionArray[i].getQuestion());
-//			}
 		}
         },
         
