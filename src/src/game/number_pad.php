@@ -138,6 +138,44 @@ Extends: GameSimple,
 	{
 		if (e.key == 'enter')
 		{
+  			if (this.mGame.mStartGameHit == false)
+                	{
+                        	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+                        	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        	{
+                                	//this.mGame.incrementScore();
+                                	this.mGame.mQuiz.correctAnswer();
+                                	this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                        	}
+                        	else
+                        	{
+                                	this.mGame.mOutOfTime = true;
+                                	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                	location.reload()
+                        	}
+                        	this.mGame.mStartGameHit = true;
+                        	this.mGame.mNumAnswer.mMesh.value = '';
+                	}
+                	else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
+                	{
+                        	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+                        	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        	{
+                                	//this.mGame.incrementScore();
+                                	this.mGame.mQuiz.correctAnswer();
+                                	this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                        	}
+                        	else
+                        	{
+                                	this.mGame.mOutOfTime = true;
+                                	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                	location.reload()
+                        	}
+                        	this.mGame.mStartGameHit = true;
+                        	this.mGame.mNumAnswer.mMesh.value = '';
+			}
+                	this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
+			this.mGame.mNumAnswer.mMesh.value = '';
 			alert('enter key hit!!');
 		}				
 	},
@@ -186,7 +224,6 @@ Extends: GameSimple,
                         this.mGame.mNumAnswer.mMesh.value = '';
 		}
 		this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
-			
 	},
 
 	update: function()
@@ -216,9 +253,3 @@ Extends: GameSimple,
 					
 	},
 });
-//to reload??		
-//location.reload();
-		//this is for when you complete game.....
-		//nextLevelUrl = '/src/database/goto_next_level.php';
-		//window.location = nextLevelUrl;
-
