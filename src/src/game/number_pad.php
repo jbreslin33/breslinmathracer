@@ -11,6 +11,24 @@ Extends: GameSimple,
 		this.mAnswer = '';
 
 		//create number pad
+		//Lock	
+		this.mNumLock= new Shape(50,50,300,150,this,"BUTTON","","");
+		this.mNumLock.mMesh.innerHTML = 'NumLock';
+		this.mNumLock.mMesh.mGame = this;
+		this.mNumLock.mMesh.addEvent('click',this.numPadHit);
+			
+		//Division	
+		this.mNumDivision= new Shape(50,50,350,150,this,"BUTTON","","");
+		this.mNumDivision.mMesh.innerHTML = '/';
+		this.mNumDivision.mMesh.mGame = this;
+		this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
+		
+		//Multiplication	
+		this.mNumMultiplication= new Shape(50,50,400,150,this,"BUTTON","","");
+		this.mNumMultiplication.mMesh.innerHTML = '*';
+		this.mNumMultiplication.mMesh.mGame = this;
+		this.mNumMultiplication.mMesh.addEvent('click',this.numPadHit);
+		
 		//7	
 		this.mNumSeven= new Shape(50,50,300,200,this,"BUTTON","","");
 		this.mNumSeven.mMesh.innerHTML = '7';
