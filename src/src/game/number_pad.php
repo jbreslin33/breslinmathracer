@@ -6,7 +6,8 @@ Extends: GameSimple,
 	initialize: function()
 	{
        		this.parent();
-
+			
+		this.mStartGameHit = false;
 		this.mAnswer = '';
 
 		//create number pad
@@ -115,6 +116,11 @@ Extends: GameSimple,
 	
 	numPadHit: function()
 	{
+		if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == false)
+		{
+			alert('start game hit');
+			this.mGame.mStartGameHit = true;
+		}
 		this.mGame.mAnswer = this.mGame.mAnswer + this.innerHTML; 	
 		//alert('mAnswer:' + this.mGame.mAnswer);
 		//nextLevelUrl = '/src/database/goto_next_level.php';
