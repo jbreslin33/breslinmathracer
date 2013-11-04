@@ -8,9 +8,7 @@ Extends: GameSimple,
        		this.parent();
 			
 		this.mStartGameHit = false;
-		this.mAnswer = '';
-
-//this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
+		this.mUserAnswer = '';
 
 		//question bar
 		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
@@ -132,14 +130,24 @@ Extends: GameSimple,
 	{
 		if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == false)
 		{
-			alert('start game hit');
+			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+			if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+			{
+				alert('Electrial Bananas');
+			}
+			else
+			{
+				alert('WRONG');
+			}
 			this.mGame.mStartGameHit = true;
 		}
+		else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
+		{
+	
+		}
+	
+			
 		this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
-		
-		//this.mGame.mAnswer = this.mGame.mAnswer + this.innerHTML; 	
-		
-		//this.mNumAnswer.mMesh.value = this.mGame.mAnswer;
 	},
 
 	update: function()
