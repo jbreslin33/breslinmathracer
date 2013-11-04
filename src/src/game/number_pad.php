@@ -149,7 +149,7 @@ Extends: GameSimple,
 		}
 		else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
 		{
-	
+				
 		}
 			
 		this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
@@ -163,7 +163,7 @@ Extends: GameSimple,
 			if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
 			{
 				this.mOutOfTime = true;
-				alert('Out of time:');
+				alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
 				location.reload()
 			}		
 		}			
