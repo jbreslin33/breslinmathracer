@@ -49,7 +49,8 @@ var GameSimple = new Class(
 	
  	resetGame: function()
         {
-        },
+       		this.setScore(0); 
+	},
 
 	createQuestions: function()
         {
