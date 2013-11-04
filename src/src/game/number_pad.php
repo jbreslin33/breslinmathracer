@@ -53,6 +53,12 @@ Extends: GameSimple,
 		this.mNumNine.mMesh.mGame = this;
 		this.mNumNine.mMesh.addEvent('click',this.numPadHit);
 		
+		//Addition	
+		this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
+		this.mNumAddition.mMesh.innerHTML = '+';
+		this.mNumAddition.mMesh.mGame = this;
+		this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
+		
 		//4	
 		this.mNumFour = new Shape(50,50,300,250,this,"BUTTON","","");
 		this.mNumFour.mMesh.innerHTML = '4';
