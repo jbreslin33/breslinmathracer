@@ -8,13 +8,12 @@ Extends: GameSimple,
        		this.parent();
 	
 		//times	
-		this.mThresholdTime = 2000;	
+		this.mThresholdTime = 6000;	
 		this.mAnswerTime = 0;	
 		this.mQuestionStartTime = 0;	
 		this.mOutOfTime = false;		
 		this.mStartGameHit = false;
 		this.mUserAnswer = '';
-
 
 		//hud question bar
 		this.mHud.setQuestion(this.mQuiz.getQuestion().getQuestion());
@@ -23,7 +22,6 @@ Extends: GameSimple,
 		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
 		this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
 		this.mNumQuestion.mMesh.mGame = this;
-		
 		
 		//answer text box 
 		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
@@ -177,6 +175,7 @@ Extends: GameSimple,
                         this.mGame.mStartGameHit = true;
                         this.mGame.mNumAnswer.mMesh.value = '';
 		}
+		this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
 			
 	},
 
