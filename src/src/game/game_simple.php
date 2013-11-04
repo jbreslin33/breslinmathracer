@@ -6,6 +6,19 @@ var GameSimple = new Class(
 {
 	initialize: function()
         {
+		//can i do this here...
+		//HUD
+        	this.mHud = new Hud();
+        	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
+        	this.mHud.mGameName.setText('<font size="2">Math Racer</font>');
+
+        	//QUIZ
+        	this.mQuiz = new Quiz(scoreNeeded);
+        	this.mQuiz.mGame = GAME;
+
+        	//create questions
+        	this.createQuestions();
+
      		/************** On_Off **********/
                 this.mOn = true;
      		

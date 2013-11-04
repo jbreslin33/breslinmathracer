@@ -10,9 +10,11 @@ Extends: GameSimple,
 		this.mStartGameHit = false;
 		this.mAnswer = '';
 
+//this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
+
 		//question bar
 		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-		this.mNumQuestion.mMesh.innerHTML = 'Question:';
+		//this.mNumQuestion.mMesh.innerHTML = this.mQuiz.mQuestionArray[i].getQuestion();
 		this.mNumQuestion.mMesh.mGame = this;
 		
 		//answer text box 

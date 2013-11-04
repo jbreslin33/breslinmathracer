@@ -31,23 +31,23 @@ var GAME;
 window.addEvent('domready', function()
 {
         //HUD
-        hud = new Hud();
-        hud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
-        hud.mGameName.setText('<font size="2">Math Racer</font>');
+        //hud = new Hud();
+        //hud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
+        //hud.mGameName.setText('<font size="2">Math Racer</font>');
         
 	//GAME
 	GAME = new NumberPad();
 
         //set hud
-        GAME.setHud(hud);
+        //GAME.setHud(hud);
 
 	//QUIZ	
-       	quiz = new Quiz(scoreNeeded);
-       	GAME.mQuiz = quiz;
-	quiz.mGame = GAME;
+       	//quiz = new Quiz(scoreNeeded);
+       	//GAME.mQuiz = quiz;
+	//quiz.mGame = GAME;
 
         //create questions
-        GAME.createQuestions();
+        //GAME.createQuestions();
 <?php
 
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
