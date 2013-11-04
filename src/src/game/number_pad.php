@@ -138,7 +138,8 @@ Extends: GameSimple,
 			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
 			if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
 			{
-				this.mGame.incrementScore();
+				//this.mGame.incrementScore();
+				this.mGame.mQuiz.correctAnswer();
 				this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;	
 			}
 			else
