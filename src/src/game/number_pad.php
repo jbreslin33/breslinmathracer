@@ -142,7 +142,13 @@ Extends: GameSimple,
 			}
 			else
 			{
-				alert('WRONG');
+				//to reload??		
+				//location.reload();
+				//nextLevelUrl = '/src/database/goto_next_level.php';
+			//	reloadURL = 'location.reload()';	
+			//	window.location = reloadURL;
+				location.reload()
+				//o	alert('WRONG');
 			}
 			this.mGame.mStartGameHit = true;
 		}
@@ -163,6 +169,9 @@ Extends: GameSimple,
 		{
 			
 		}			
+			
+//to reload??		
+//location.reload();
 		//this is for when you complete game.....
 		//nextLevelUrl = '/src/database/goto_next_level.php';
 		//window.location = nextLevelUrl;
