@@ -11,7 +11,7 @@ Extends: GameSimple,
 		this.mThresholdTime = 2000;	
 		this.mAnswerTime = 0;	
 		this.mQuestionStartTime = 0;	
-		
+		this.mOutOfTime = false;		
 		this.mStartGameHit = false;
 		this.mUserAnswer = '';
 
@@ -158,12 +158,11 @@ Extends: GameSimple,
 	update: function()
 	{
 		this.parent();
-		if (this.mStartGameHit == true)
+		if (this.mStartGameHit == true && this.mOutOfTime == false)
 		{
-			//this.mAnswerTime = this.mGameTime - this.mQuestionStartTime;		
-			//	this.mQuestionStartTime = this.mTimeSinceEpoch;	
 			if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
 			{
+				this.mOutOfTime = true;
 				alert('Out of time:');
 				location.reload()
 			}		
