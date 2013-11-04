@@ -67,8 +67,14 @@ var Shape = new Class(
 
                 this.mMesh;
         
-                //create clientImage
-                if (this.mSrc == "BUTTON")
+                if (this.mSrc == "INPUT")
+                {
+                        //textbox to attach to our div "vessel"
+                        this.mMesh  = document.createElement("INPUT");
+                        this.mMesh.style.width = this.mWidth+'px'; 
+                        this.mMesh.style.height = this.mHeight+'px'; 
+                }
+                else if (this.mSrc == "BUTTON")
                 {
                         //button to attach to our div "vessel"
                         this.mMesh  = document.createElement("BUTTON");

@@ -14,13 +14,11 @@ Extends: GameSimple,
 		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
 		this.mNumQuestion.mMesh.innerHTML = 'Question:';
 		this.mNumQuestion.mMesh.mGame = this;
-		this.mNumQuestion.mMesh.addEvent('click',this.numPadHit);
 		
 		//answer text box 
-		this.mNumAnswer = new Shape(100,50,400,100,this,"","","");
+		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
 		this.mNumAnswer.mMesh.innerHTML = 'Answer:';
 		this.mNumAnswer.mMesh.mGame = this;
-		this.mNumAnswer.mMesh.addEvent('click',this.numPadHit);
 
 		//create number pad
 		//Lock	
