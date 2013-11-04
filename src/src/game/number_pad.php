@@ -21,7 +21,7 @@ Extends: GameSimple,
 		
 		//answer text box 
 		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
-		this.mNumAnswer.mMesh.innerHTML = 'Answer:';
+		this.mNumAnswer.mMesh.value = '';
 		this.mNumAnswer.mMesh.mGame = this;
 
 		//create number pad
@@ -135,10 +135,11 @@ Extends: GameSimple,
 			alert('start game hit');
 			this.mGame.mStartGameHit = true;
 		}
-		this.mGame.mAnswer = this.mGame.mAnswer + this.innerHTML; 	
-		//alert('mAnswer:' + this.mGame.mAnswer);
-		//nextLevelUrl = '/src/database/goto_next_level.php';
-		//window.location = nextLevelUrl;
+		this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
+		
+		//this.mGame.mAnswer = this.mGame.mAnswer + this.innerHTML; 	
+		
+		//this.mNumAnswer.mMesh.value = this.mGame.mAnswer;
 	},
 
 	update: function()
@@ -149,6 +150,9 @@ Extends: GameSimple,
 		{
 			
 		}			
+		//this is for when you complete game.....
+		//nextLevelUrl = '/src/database/goto_next_level.php';
+		//window.location = nextLevelUrl;
 	},
 });
 
