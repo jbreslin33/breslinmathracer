@@ -143,6 +143,8 @@ Extends: GameSimple,
 			}
 			else
 			{
+				this.mGame.mOutOfTime = true;
+				alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
 				location.reload()
 			}
 			this.mGame.mStartGameHit = true;
