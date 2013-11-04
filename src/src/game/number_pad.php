@@ -8,8 +8,9 @@ Extends: GameSimple,
        		this.parent();
 	
 		//times	
-		this.mThresholdTime = 0;	
+		this.mThresholdTime = 10000;	
 		this.mAnswerTime = 0;	
+		this.mQuestionStartTime = 0;	
 		
 		this.mStartGameHit = false;
 		this.mUserAnswer = '';
@@ -137,18 +138,12 @@ Extends: GameSimple,
 			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
 			if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
 			{
-				//alert('Electrical Bananas');
 				this.mGame.incrementScore();
+				this.mQuestionStartTime = this.mGameTime;
 			}
 			else
 			{
-				//to reload??		
-				//location.reload();
-				//nextLevelUrl = '/src/database/goto_next_level.php';
-			//	reloadURL = 'location.reload()';	
-			//	window.location = reloadURL;
 				location.reload()
-				//o	alert('WRONG');
 			}
 			this.mGame.mStartGameHit = true;
 		}
@@ -156,7 +151,6 @@ Extends: GameSimple,
 		{
 	
 		}
-	
 			
 		this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
 	},
@@ -167,14 +161,18 @@ Extends: GameSimple,
 		
 		if (this.mStartGameHit == true)
 		{
-			
+			this.mAnswerTime = this.mGameTime - this.mQuestionStartTime;		
+			if (this.mAnswerTime > this.mThresholdTime)
+			{
+				alert('Out of time:' + this.mAnswerTime);
+			}		
 		}			
-			
+					
+	},
+});
 //to reload??		
 //location.reload();
 		//this is for when you complete game.....
 		//nextLevelUrl = '/src/database/goto_next_level.php';
 		//window.location = nextLevelUrl;
-	},
-});
 
