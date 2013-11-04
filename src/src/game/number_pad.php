@@ -10,6 +10,18 @@ Extends: GameSimple,
 		this.mStartGameHit = false;
 		this.mAnswer = '';
 
+		//question bar
+		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
+		this.mNumQuestion.mMesh.innerHTML = 'Question:';
+		this.mNumQuestion.mMesh.mGame = this;
+		this.mNumQuestion.mMesh.addEvent('click',this.numPadHit);
+		
+		//answer text box 
+		this.mNumAnswer = new Shape(100,50,400,100,this,"","","");
+		this.mNumAnswer.mMesh.innerHTML = 'Answer:';
+		this.mNumAnswer.mMesh.mGame = this;
+		this.mNumAnswer.mMesh.addEvent('click',this.numPadHit);
+
 		//create number pad
 		//Lock	
 		this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
@@ -130,6 +142,11 @@ Extends: GameSimple,
 	update: function()
 	{
 		this.parent();
+		
+		if (this.mStartGameHit == true)
+		{
+			
+		}			
 	},
 });
 
