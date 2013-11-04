@@ -136,6 +136,11 @@ Extends: GameSimple,
 	
 	numPadHit: function()
 	{
+		if (this.innerHTML != 'Enter')
+		{
+			this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
+		}
+		
 		if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == false)
 		{
 			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
@@ -152,13 +157,27 @@ Extends: GameSimple,
 				location.reload()
 			}
 			this.mGame.mStartGameHit = true;
+			this.mGame.mNumAnswer.mMesh.value = '';
 		}
 		else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
 		{
-				
+  			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+                        if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        {
+                                //this.mGame.incrementScore();
+                                this.mGame.mQuiz.correctAnswer();
+                                this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                        }
+                        else
+                        {
+                                this.mGame.mOutOfTime = true;
+                                alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                location.reload()
+                        }
+                        this.mGame.mStartGameHit = true;
+                        this.mGame.mNumAnswer.mMesh.value = '';
 		}
 			
-		this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
 	},
 
 	update: function()
