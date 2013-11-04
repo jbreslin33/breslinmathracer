@@ -14,6 +14,7 @@ Extends: GameSimple,
 		this.mOutOfTime = false;		
 		this.mStartGameHit = false;
 		this.mUserAnswer = '';
+		this.mQuizComplete = false;
 
 		//hud question bar
 		this.mHud.setQuestion(this.mQuiz.getQuestion().getQuestion());
@@ -181,15 +182,27 @@ Extends: GameSimple,
 
 	update: function()
 	{
-		this.parent();
-		if (this.mStartGameHit == true && this.mOutOfTime == false)
+		if (this.mQuizComplete == false)
 		{
-			if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+			this.parent();
+
+			if (this.mQuiz.isQuizComplete())
 			{
-				this.mOutOfTime = true;
-				alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
-				location.reload()
-			}		
+				this.mQuizComplete = true;	
+                		alert('Electrical Bananas! Next Level!');
+				nextLevelUrl = '/src/database/goto_next_level.php';
+				window.location = nextLevelUrl;
+			}	
+
+			if (this.mStartGameHit == true && this.mOutOfTime == false)
+			{
+				if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+				{
+					this.mOutOfTime = true;
+					alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
+					location.reload()
+				}		
+			}
 		}			
 					
 	},
