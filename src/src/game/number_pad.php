@@ -14,7 +14,9 @@ Extends: GameSimple,
 
 		//question bar
 		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-		//this.mNumQuestion.mMesh.innerHTML = this.mQuiz.mQuestionArray[i].getQuestion();
+
+		//this.log('q:' + this.mQuiz.mQuestionArray[0].getQuestion());
+		this.mNumQuestion.mMesh.innerHTML = this.mQuiz.mQuestionArray[0].getQuestion();
 		this.mNumQuestion.mMesh.mGame = this;
 		
 		//answer text box 

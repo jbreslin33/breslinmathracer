@@ -14,7 +14,7 @@ var GameSimple = new Class(
 
         	//QUIZ
         	this.mQuiz = new Quiz(scoreNeeded);
-        	this.mQuiz.mGame = GAME;
+        	this.mQuiz.mGame = this;
 
         	//create questions
         	this.createQuestions();
