@@ -156,7 +156,7 @@ Extends: GameSimple,
                         	this.mGame.mStartGameHit = true;
                         	this.mGame.mNumAnswer.mMesh.value = '';
                 	}
-                	else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
+                	else if (this.mGame.mStartGameHit == true)
                 	{
                         	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
                         	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
@@ -176,7 +176,6 @@ Extends: GameSimple,
 			}
                 	this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
 			this.mGame.mNumAnswer.mMesh.value = '';
-			alert('enter key hit!!');
 		}				
 	},
 
