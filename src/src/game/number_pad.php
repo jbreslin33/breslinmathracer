@@ -165,7 +165,7 @@ Extends: GameSimple,
 			if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
 			{
 				alert('Out of time:');
-				
+				location.reload()
 			}		
 		}			
 					
