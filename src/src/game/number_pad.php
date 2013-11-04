@@ -77,6 +77,11 @@ Extends: GameSimple,
 		this.mNumDecimal.mMesh.mGame = this;
 		this.mNumDecimal.mMesh.addEvent('click',this.numPadHit);
 		
+		//enter	
+		this.mNumEnter= new Shape(50,100,450,200,this,"BUTTON","","");
+		this.mNumEnter.mMesh.innerHTML = 'ENTER';
+		this.mNumEnter.mMesh.mGame = this;
+		this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
 
 
 	},
