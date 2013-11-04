@@ -28,6 +28,7 @@ Extends: GameSimple,
 		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
 		this.mNumAnswer.mMesh.value = '';
 		this.mNumAnswer.mMesh.mGame = this;
+		this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
 
 		//create number pad
 		//Lock	
@@ -133,6 +134,14 @@ Extends: GameSimple,
 		this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
 	},
 	
+	inputKeyHit: function(e)
+	{
+		if (e.key == 'enter')
+		{
+			alert('enter key hit!!');
+		}				
+	},
+
 	numPadHit: function()
 	{
 		if (this.innerHTML != 'Enter')
