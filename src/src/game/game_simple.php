@@ -15,7 +15,7 @@ var GameSimple = new Class(
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
 
-		document.body.style.cursor = 'crosshair';
+		document.body.style.cursor = 'auto';
         },
  	
 	log: function(msg)
@@ -31,10 +31,6 @@ var GameSimple = new Class(
 	{
 	},
 	
-	checkTime: function()
-	{
-	},
-
  	resetGame: function()
         {
         },
@@ -48,18 +44,6 @@ var GameSimple = new Class(
                 }
         },
 
-	/*********************** PUBLIC ***************************/
-	getControlObject: function()
-	{
-//		return this.mControlObject;
-	},
-
-	/**************** ADD METHODS *************/
-	addToShapeArray: function(shape)
-	{
-//		this.mShapeArray.push(shape);
-	},
-	
         update: function()
         {
 		if (this.mOn)
@@ -89,70 +73,6 @@ var GameSimple = new Class(
 
 	/****************************** PROTECTED ***************************************/
 	
-
-	checkKeys: (function()
-        {
-        }).protect(),
-
-	//CHECK MOUSE
-	checkMouse: function()
-	{
-	},
-
-	click: function(event)
-	{
-	},
-
-	mousedown: function(event)
-	{
-		GAME.mLeftMouseDown = true;	
-	},
-
-	mouseup: function(event)
-	{
-		GAME.mLeftMouseDown = false;	
-	},
-	
-	mouseMove: function(event)
-	{
-		if (GAME.mMouseMoveOn)
-		{	
-                	GAME.mControlObject.mPosition.mX = event.page.x;
-                	GAME.mControlObject.mPosition.mY = event.page.y;
-		}
-	},
-
-	mouseDown: function(event)
-	{
-		if (GAME.mMouseDownOn)
-		{	
-                	GAME.mControlObject.mPosition.mX = event.page.x;
-                	GAME.mControlObject.mPosition.mY = event.page.y;
-		}
-	},
-
-        saveOldPositions: (function()
-        {
-        }).protect(),
-
-	//this is still ineffiecient because it is checking to see if one coin is colliding with another. when neither is moving.	
-	checkForCollisions: (function()
-        {
-	}).protect(),
-
-	collisionCheck: function(col1,col2)
-	{
-	},
-	
-	getOpenPoint2D: function(xMin,xMax,yMin,yMax,newShapeWidth,spreadFactor)
-        {
-        },
-
-  	createBounds: function(north,east,south,west)
-        {
-                mBounds = new Bounds(north,east,south,west);
-        },
-
         getScore: function()
         {
                 return this.mScore;
@@ -175,19 +95,30 @@ var GameSimple = new Class(
 		this.mHud = hud;
 	},
 
-	getHud: function()
-	{
-		return this.mHud;
-	},
-
-	/******************************* CONTROLS  *************/
- 	keyDown: function(event)
+	//brians code... 
+	checkTime: function()
         {
+                if (this.mGameTime > 10000 && this.timeWarning == false)
+                {
+                        var xmlhttp;
+
+                        if (window.XMLHttpRequest)
+                        {// code for IE7+, Firefox, Chrome, Opera, Safari
+                                xmlhttp=new XMLHttpRequest();
+                        }
+                        else
+                        {// code for IE6, IE5
+                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xmlhttp.onreadystatechange=function()
+                        {
+
+                        }
+                        xmlhttp.open("GET","../../src/database/time_warning.php",true);
+                        xmlhttp.send();
+                        this.timeWarning = true;
+                }
         },
-
-        keyUp: function(event)
-        {
-        }
 
 
 });

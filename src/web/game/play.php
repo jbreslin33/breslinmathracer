@@ -56,10 +56,10 @@ window.addEvent('domready', function()
         GAME.createQuestions();
 
         //create control object
-        GAME.createControlObject();
+        //GAME.createControlObject();
 
         //create doors
-        GAME.createPortals();
+        //GAME.createPortals();
 
         //KEYS
 	GAME.mKeysOn = true;
