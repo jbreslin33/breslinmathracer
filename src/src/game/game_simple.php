@@ -70,10 +70,8 @@ var GameSimple = new Class(
 //			}
 		}
         },
-
-	/****************************** PROTECTED ***************************************/
-	
-        getScore: function()
+        
+	getScore: function()
         {
                 return this.mScore;
         },
@@ -119,8 +117,6 @@ var GameSimple = new Class(
                         this.timeWarning = true;
                 }
         },
-
-
 });
 
 

@@ -116,9 +116,9 @@ Extends: GameSimple,
 	numPadHit: function()
 	{
 		this.mGame.mAnswer = this.mGame.mAnswer + this.innerHTML; 	
-		alert('mAnswer:' + this.mGame.mAnswer);
-		nextLevelUrl = '/src/database/goto_next_level.php';
-		window.location = nextLevelUrl;
+		//alert('mAnswer:' + this.mGame.mAnswer);
+		//nextLevelUrl = '/src/database/goto_next_level.php';
+		//window.location = nextLevelUrl;
 	},
 
 	update: function()
