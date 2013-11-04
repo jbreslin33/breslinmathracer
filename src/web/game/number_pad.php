@@ -49,22 +49,10 @@ window.addEvent('domready', function()
         //create questions
         GAME.createQuestions();
 
-        //create control object
-        //GAME.createControlObject();
-
-        //create question shapes
-        //GAME.createQuestionShapes();
-
-        //create key
-        //GAME.createKey("/images/key/key_dungeon.gif");
-
-        //create door
-        //GAME.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
-
         //KEYS
-        GAME.mKeysOn = true;
-        document.addEvent("keydown", GAME.keyDown);
-        document.addEvent("keyup", GAME.keyUp);
+        //GAME.mKeysOn = true;
+        //document.addEvent("keydown", GAME.keyDown);
+        //document.addEvent("keyup", GAME.keyUp);
 
         //MOUSE
         //GAME.mMouseOn     = true;
