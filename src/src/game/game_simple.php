@@ -6,12 +6,14 @@ var GameSimple = new Class(
 {
 	initialize: function()
         {
-		this.mScore = 0;		
 	
 		//HUD
         	this.mHud = new Hud();
         	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
         	this.mHud.mGameName.setText('<font size="2">Math Racer</font>');
+		
+		this.mScore = 0;		
+		this.setScore(0);
 
         	//QUIZ
         	this.mQuiz = new Quiz(scoreNeeded);
