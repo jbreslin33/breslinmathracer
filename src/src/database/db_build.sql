@@ -1827,74 +1827,91 @@ insert into standards (standard) values ('Fluently add and subtract within 5.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
 
 --		LEVEL_ID: 14  
-insert into levels(id,description) values (14,'Addition addends 0 to 1');
+insert into levels(id,description) values (14,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14,10,0,1,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14,10,0,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14,6);
 
 --		LEVEL_ID: 14.01  
-insert into levels(id,description) values (14.01,'Addition addends 0 to 2');
+insert into levels(id,description) values (14.01,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.01,10,0,2,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.01,10,1,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.01,6);
 
 --		LEVEL_ID: 14.02  
-insert into levels(id,description) values (14.02,'Addition addends 0 to 3');
+insert into levels(id,description) values (14.02,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.02,10,0,3,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.02,10,2,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.02,6);
 
 --		LEVEL_ID: 14.03  
-insert into levels(id,description) values (14.03,'Addition addends 0 to 4');
+insert into levels(id,description) values (14.03,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.03,10,0,4,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.03,10,3,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.03,6);
 
 --		LEVEL_ID: 14.04  
-insert into levels(id,description) values (14.04,'Addition addends 0 to 5');
+insert into levels(id,description) values (14.04,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.04,10,0,5,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.04,10,4,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.04,6);
 
 --		LEVEL_ID: 14.05  
-insert into levels(id,description) values (14.05,'Addition addends 0 to 6');
+insert into levels(id,description) values (14.05,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.05,10,0,6,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.05,10,5,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.05,6);
 
 --		LEVEL_ID: 14.06  
-insert into levels(id,description) values (14.06,'Addition addends 0 to 7');
+insert into levels(id,description) values (14.06,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.06,10,0,7,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.06,10,6,0,2);
+
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.06,6);
 
 --		LEVEL_ID: 14.07  
-insert into levels(id,description) values (14.07,'Addition addends 0 to 8');
+insert into levels(id,description) values (14.07,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.07,10,0,8,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.07,10,7,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.07,1);
 
 --		LEVEL_ID: 14.08  
-insert into levels(id,description) values (14.08,'Addition addends 0 to 9');
+insert into levels(id,description) values (14.08,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.08,10,0,9,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.08,10,8,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.08,1);
 
 --		LEVEL_ID: 14.09  
-insert into levels(id,description) values (14.09,'Addition addends 0 to 10');
+insert into levels(id,description) values (14.09,'Addition');
 --	QUESTIONS: 
-insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.09,10,0,10,2);
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.09,10,9,0,2);
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (14.09,1);
+
+--		LEVEL_ID: 14.10  
+insert into levels(id,description) values (14.10,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.10,10,10,0,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.10,1);
+
+--		LEVEL_ID: 14.11  
+insert into levels(id,description) values (14.11,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (14.10,10,11,0,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (14.11,1);
+
+
 
 
 
