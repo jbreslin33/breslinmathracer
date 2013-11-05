@@ -56,9 +56,21 @@ var GameSimple = new Class(
         {
                 for (i = 0; i < scoreNeeded; i++)
                 {
-			randomNumber = Math.floor((Math.random()*numberOfRows));			
-                        var question = new Question(questions[randomNumber],answers[randomNumber]);
-                        this.mQuiz.mQuestionArray.push(question);
+			randomNumber = Math.floor((Math.random()*2));			
+			if (randomNumber == 0)
+			{
+				//random oldie
+				randomQuestion = Math.floor((Math.random()*numberOfRows));			
+                        	var question = new Question(questions[randomQuestion],answers[randomQuestion]);
+                        	this.mQuiz.mQuestionArray.push(question);
+			}
+			else
+			{
+				//latest level question
+				latestIndex = numberOfRows - 1;
+                        	var question = new Question(questions[latestIndex],answers[latestIndex]);
+                        	this.mQuiz.mQuestionArray.push(question);
+			}
                 }
         },
 
