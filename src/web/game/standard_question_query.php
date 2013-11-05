@@ -86,7 +86,7 @@ if ($numberOfRowsInCounting > 0)
 }
 
 //*******************     anything in addition? if so override above ^ **********************************
-$query = "select score_needed, addend_min, addend_max, number_of_addends from addition where level_id = ";
+$query = "select score_needed, addend_min, addend_max, number_of_addends from addition where level_id > 14 AND level_id <= ";
 $query .= $_SESSION["next_level_id"];
 
 //get db result
@@ -97,34 +97,30 @@ $numberOfRowsInAddition = pg_num_rows($result);
 
 if ($numberOfRowsInAddition > 0)
 {
+	$i = 0;	
         while ($row = pg_fetch_row($result))
         {
-                //fill php vars from db
-                $scoreNeeded = $row[0];
-                $addend_min = $row[1];
-                $addend_max = $row[2];
-                $number_of_addends = $row[3];
+                //fill php vars from db only on first
+               	$scoreNeeded = $row[0];
+               	$addend_min = $row[1];
+               	$addend_max = $row[2];
+               	$number_of_addends = $row[3];
 
-                for ($i=0; $i < $scoreNeeded; $i++)
-                {
-			$addend1 = rand($addend_min,$addend_max);
-			$addend2 = rand($addend_min,$addend_max);
-
-                        $a = $addend1 + $addend2;
-                        echo "<script language=\"javascript\">";
-                        echo "questions[$i] = \"What is $addend1 + $addend2 ?\";";
-			if ($a == 0)
-			{
-                        	echo "answers[$i] = '0'";
-			}
-			else
-			{
-                        	echo "answers[$i] = $a";
-			}
-                        echo "</script>";
-                }
+                $a = $addend_min + $addend_max;
+                echo "<script language=\"javascript\">";
+                echo "questions[$i] = \"What is $addend_min + $addend_max ?\";";
+		if ($a == 0)
+		{
+                       	echo "answers[$i] = '0'";
+		}
+		else
+		{
+                       	echo "answers[$i] = $a";
+		}
+                echo "</script>";
+		$i++;
         }
-        $numberOfRows = $scoreNeeded;
+        $numberOfRows = $numberOfRowsInAddition;
         echo "<script language=\"javascript\">";
         echo "scoreNeeded = $scoreNeeded;";
         echo "numberOfRows = $numberOfRows;";
