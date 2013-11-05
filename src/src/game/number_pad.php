@@ -8,7 +8,7 @@ Extends: GameSimple,
        		this.parent();
 	
 		//times	
-		this.mThresholdTime = 6000;	
+		this.mThresholdTime = 2000;	
 		this.mAnswerTime = 0;	
 		this.mQuestionStartTime = 0;	
 		this.mOutOfTime = false;		
