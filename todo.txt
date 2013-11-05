@@ -4,3 +4,5 @@ etc... order should be random.....half the questions should come from current le
 if wrong go back to that level??? or just a level???? what if we used 10 correct?? let's ask away.
 then when you get 10 correct at that level you advance....so if you are at 5 + 6 we ask you that half the time until you get 10 in a row on that game. then we advance you. NO GAMES IF YOU ALREADY HAD A LEVEL_TRANSACTION AT THAT LEVEL>>>>
 
+as soon as you get one wrong we need to know what level question that was and send you to that level???
+then that is your new level but you can be asked anything up to your max level....
