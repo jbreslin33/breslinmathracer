@@ -6,3 +6,7 @@ then when you get 10 correct at that level you advance....so if you are at 5 + 6
 
 as soon as you get one wrong we need to know what level question that was and send you to that level???
 then that is your new level but you can be asked anything up to your max level....
+
+
+bascially they should all work like this. we should once in a while check old level then send you back for remediation...
+
