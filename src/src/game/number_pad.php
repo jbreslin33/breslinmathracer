@@ -224,6 +224,7 @@ Extends: GameSimple,
                         this.mGame.mNumAnswer.mMesh.value = '';
 		}
 		this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
+		this.mGame.mNumAnswer.mMesh.focus();
 	},
 
 	update: function()
