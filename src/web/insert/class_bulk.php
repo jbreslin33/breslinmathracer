@@ -92,17 +92,27 @@ while (!feof($file_handle))
 			$last_name = $full_name_pieces[4];
 		}
 
-		//let's actually add the user
-		insertIntoUsersWithFullName($conn,$newUsername, $password, $_SESSION["school_id"],$first_name,$middle_name1,$middle_name2,$middle_name3,$last_name);
+		//right here you should select to see if user exists....
+		$tempid = selectUserID($conn, $_SESSION["school_id"],$newUsername,$password);
+		if ($tempid != 0)
+		{
 
-		//get new user id
-		$new_student_id = selectUserID($conn, $_SESSION["school_id"],$newUsername,$password);
+		}
+		else
+		{	
 
-		//insert student
-		insertIntoStudents($conn,$new_student_id,$_SESSION["school_id"]);
+			//let's actually add the user
+			insertIntoUsersWithFullName($conn,$newUsername, $password, $_SESSION["school_id"],$first_name,$middle_name1,$middle_name2,$middle_name3,$last_name);
 
-		//insert first transaction for levels to lowest level
-		insertFirstLevelTransaction($conn,$new_student_id);
+			//get new user id
+			$new_student_id = selectUserID($conn, $_SESSION["school_id"],$newUsername,$password);
+
+			//insert student
+			insertIntoStudents($conn,$new_student_id,$_SESSION["school_id"]);
+
+			//insert first transaction for levels to lowest level
+			insertFirstLevelTransaction($conn,$new_student_id);
+		}
 	}
 }
 
