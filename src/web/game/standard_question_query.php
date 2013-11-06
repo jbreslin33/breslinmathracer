@@ -86,7 +86,7 @@ if ($numberOfRowsInCounting > 0)
 }
 
 //*******************     anything in addition? if so override above ^ **********************************
-$query = "select score_needed, addend_min, addend_max, number_of_addends from addition where level_id > 14 AND level_id <= ";
+$query = "select score_needed, addend_min, addend_max, number_of_addends from addition where level_id >= 14 AND level_id <= ";
 $query .= $_SESSION["next_level_id"];
 
 //get db result
