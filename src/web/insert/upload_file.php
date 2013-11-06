@@ -23,7 +23,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/png")
 || ($_FILES["file"]["type"] == "text/plain")
 || ($_FILES["file"]["type"] == "image/pjpeg"))
-&& ($_FILES["file"]["size"] < 20000)
+&& ($_FILES["file"]["size"] < 99999)
 && in_array($extension, $allowedExts))
 {
 	if ($_FILES["file"]["error"] > 0)
