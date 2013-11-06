@@ -2177,7 +2177,70 @@ insert into addition (level_id,score_needed,addend_min,addend_max,number_of_adde
 --	GAMES: 
 insert into games_levels (level_id,game_id) values  (15.11,6);
 
+--ADD 6
 
+--		LEVEL_ID: 16.10  
+insert into levels(id,description) values (16.10,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.10,10,0,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.10,6);
+
+--		LEVEL_ID: 16.11  
+insert into levels(id,description) values (16.11,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.11,10,1,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.11,6);
+
+--		LEVEL_ID: 16.12  
+insert into levels(id,description) values (16.12,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.12,10,2,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.12,6);
+
+--		LEVEL_ID: 16.13  
+insert into levels(id,description) values (16.13,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.13,10,3,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.13,6);
+
+--		LEVEL_ID: 16.14  
+insert into levels(id,description) values (16.14,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.14,10,5,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.14,6);
+
+--		LEVEL_ID: 16.15  
+insert into levels(id,description) values (16.15,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.15,10,6,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.15,6);
+
+--		LEVEL_ID: 16.16  
+insert into levels(id,description) values (16.16,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.16,10,7,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.16,6);
+
+--		LEVEL_ID: 16.17  
+insert into levels(id,description) values (16.17,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.17,10,8,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.17,6);
+
+--		LEVEL_ID: 16.18  
+insert into levels(id,description) values (16.18,'Addition');
+--	QUESTIONS: 
+insert into addition (level_id,score_needed,addend_min,addend_max,number_of_addends) values (16.18,10,9,6,2);
+--	GAMES: 
+insert into games_levels (level_id,game_id) values  (16.18,6);
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 --	Number and Operations in Base Ten
