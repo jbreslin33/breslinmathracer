@@ -14,14 +14,10 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_teachers.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_students.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_first_level_transaction.php"); 
 
-//$_FILES["file"]["name"];
-//$file_handle = fopen("viso.txt", "r");
 $userfile = $_GET["userfile"]; 
 $userfile = "upload/" . $userfile;
 echo $userfile;
 $file_handle = fopen($userfile, "r");
-//$file_handle = fopen($_FILES["file"]["name"], "r");
-//$file_handle = $_GET["userfile"];
 
 while (!feof($file_handle))
 {
