@@ -33,49 +33,51 @@ var next_level = "<?php echo $next_level; ?>";
 
 <script language="javascript">
 
-var mGame;
-var mApplication;
+var GAME;
 
 window.addEvent('domready', function()
 {
-        //APPLICATION
-        mApplication = new Application();
-
         //HUD
         hud = new Hud();
         hud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
         hud.mGameName.setText('<font size="2">DUNGEON</font>');
         
 	//GAME
-	game = new Represent();
+	GAME = new Represent();
 
         //set hud
-        game.setHud(hud);
+        GAME.setHud(hud);
 
 	//QUIZ	
        	quiz = new Quiz(scoreNeeded);
-       	game.mQuiz = quiz;
-	quiz.mGame = game;
+       	GAME.mQuiz = quiz;
+	quiz.mGame = GAME;
 
         //create questions
-        game.createQuestions();
+        GAME.createQuestions();
 
         //create control object
-        game.createControlObject();
+        GAME.createControlObject();
 
         //create question shapes
-        game.createQuestionShapes();
+        GAME.createQuestionShapes();
 
         //create key
-        game.createKey("/images/key/key_dungeon.gif");
+        GAME.createKey("/images/key/key_dungeon.gif");
 
         //create door
-        game.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
-
+        GAME.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 
         //KEYS
-        document.addEvent("keydown", mApplication.keyDown);
-        document.addEvent("keyup", mApplication.keyUp);
+        GAME.mKeysOn = true;
+        document.addEvent("keydown", GAME.keyDown);
+        document.addEvent("keyup", GAME.keyUp);
+
+        //MOUSE
+        GAME.mMouseOn     = true;
+        GAME.mMouseMoveOn = true;
+        GAME.mMouseDownOn = true;
+
 <?php
 
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
