@@ -111,7 +111,7 @@ var Game = new Class(
 			}
 			xmlhttp.onreadystatechange=function()
 		  	{
-			  
+				console.log(xmlhttp.responseText);			  
 			}
 			xmlhttp.open("GET","../../src/database/update_score.php?q="+str,true);
 			xmlhttp.send();
