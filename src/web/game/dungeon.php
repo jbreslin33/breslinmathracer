@@ -72,9 +72,9 @@ window.addEvent('domready', function()
         document.addEvent("keyup", GAME.keyUp);
 
         //MOUSE
-        //GAME.mMouseOn     = true;
-        //GAME.mMouseMoveOn = true;
-        //GAME.mMouseDownOn = true;
+        GAME.mMouseOn     = true;
+        GAME.mMouseMoveOn = true;
+        GAME.mMouseDownOn = true;
 
 <?php
 
