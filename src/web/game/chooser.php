@@ -23,13 +23,53 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 </head>
 
 <body bgcolor="grey">
-
 <script language="javascript">
-
+if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', function(eventData) {
+        var LR = eventData.gamma;
+        var FB = eventData.beta;
+        var DIR = eventData.alpha;
+        deviceOrientationHandler(LR, FB, DIR);
+        }, false);
+}
+ 
 var GAME;
 //var mApplication;
 var mHud;
 
+function deviceOrientationHandler(LR, FB, DIR)
+{
+	if (LR > 0)
+	{
+		GAME.mKeyLeft = false;
+		GAME.mKeyRight = true;
+	}
+	if (LR < 0)
+	{
+		GAME.mKeyLeft = true;
+		GAME.mKeyRight = false;
+	}
+	if (FB > 0)
+	{
+		GAME.mKeyUp = false;
+		GAME.mKeyDown = true;
+	}
+	if (FB < 0)
+	{
+		GAME.mKeyUp = true;
+		GAME.mKeyDown = false;
+	}
+	if (LR == 0)
+	{
+		GAME.mKeyLeft = false;
+		GAME.mKeyRight = false;
+	}
+	if (FB == 0)
+	{
+		GAME.mKeyUp = false;
+		GAME.mKeyDown = false;
+	}
+}
 window.addEvent('domready', function()
 {
 
