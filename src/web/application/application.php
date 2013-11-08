@@ -26,8 +26,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 var APPLICATION;
 window.addEvent('domready', function()
 {
-	APPLICATION = new Application("Application",scoreNeeded);
-	console.log('scoreNeeded:' + scoreNeeded);
+	APPLICATION = new Application();
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
 ?>

@@ -1,6 +1,6 @@
 var Quiz = new Class(
 {
-        initialize: function(game,scoreNeeded)
+        initialize: function(game)
         {
 		//GAME
 		this.mGame = game;
@@ -8,9 +8,6 @@ var Quiz = new Class(
 		//Question and Answer Array
 		this.mQuestionArray = new Array();
 			
-		//score
-                this.mScoreNeeded = scoreNeeded;
-
 		//question
 		this.mMarker = 0;
         },
@@ -35,14 +32,9 @@ var Quiz = new Class(
 		//this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
 	},
 	
-	getScoreNeeded: function()
-	{
-		return this.mScoreNeeded;
-	},
-
 	isQuizComplete: function()
 	{
-		if (this.mGame.getScore() >= this.getScoreNeeded())
+		if (this.mGame.getScore() >= this.mGame.mApplication.mScoreNeeded)
 		{
 			return true;
 		}
@@ -50,12 +42,6 @@ var Quiz = new Class(
 		{
 			return false;
 		}
-	},
-
-	setScoreNeeded: function(scoreNeeded)
-	{
-		this.mScoreNeeded = scoreNeeded;
-		this.mGame.mApplication.mHud.mScoreNeeded.setText('<font size="2"> Needed: ' + this.mScoreNeeded + '</font>');
 	},
 
 	reset: function()

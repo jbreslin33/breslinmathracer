@@ -3,15 +3,13 @@ var GameQuiz = new Class(
 
 Extends: Game,
 
-	initialize: function(application,scoreNeeded)
+	initialize: function(application)
 	{
 
                 /************** QUIZ **********/
 		this.parent(application);
        	
-		this.mScoreNeeded = scoreNeeded; 
-	
-		this.mQuiz = new Quiz(this,this.mScoreNeeded);
+		this.mQuiz = new Quiz(this);
 
         	//create questions
         	this.createQuestions();
@@ -28,6 +26,7 @@ Extends: Game,
                         this.mQuiz.reset();
                 }
         },
+
         update: function()
         {
 		this.parent();
@@ -77,7 +76,7 @@ Extends: Game,
 
         createQuestions: function()
         {
-                for (i = 0; i < this.mScoreNeeded; i++)
+                for (i = 0; i < this.mApplication.mScoreNeeded; i++)
                 {
                         var question = new Question(this.mApplication.mQuestions[i],this.mApplication.mAnswers[i]);
                         this.mQuiz.mQuestionArray.push(question);

@@ -12,7 +12,7 @@ var Application = new Class(
 		/************ questions array from server db  *****/
 		this.mQuestions = new Array();
 		this.mAnswers   = new Array();
-
+		this.mScoreNeeded = scoreNeeded; 
 		for (i = 0; i < 10; i++)
 		{
 			this.mQuestions[i] = questions[i];
