@@ -36,7 +36,7 @@ var GAME;
 window.addEvent('domready', function()
 {
 	//GAME
-	GAME = new Dungeon();
+	GAME = new Dungeon(scoreNeeded);
 
         //KEYS
         GAME.mKeysOn = true;

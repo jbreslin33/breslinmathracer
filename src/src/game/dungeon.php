@@ -3,9 +3,9 @@ var Dungeon = new Class(
 
 Extends: GameQuiz,
 
-	initialize: function()
+	initialize: function(scoreNeeded)
 	{
-       		this.parent();
+       		this.parent(scoreNeeded);
 
  		//create key
         	this.createKey("/images/key/key_dungeon.gif");

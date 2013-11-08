@@ -3,13 +3,13 @@ var GameQuiz = new Class(
 
 Extends: Game,
 
-	initialize: function()
+	initialize: function(scoreNeeded)
 	{
 
                 /************** QUIZ **********/
 		this.parent();
         	
-		this.mQuiz = new Quiz(this,1);
+		this.mQuiz = new Quiz(this,scoreNeeded);
 
         	//create questions
         	this.createQuestions();
