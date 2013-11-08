@@ -6,12 +6,6 @@ var Game = new Class(
 {
 	initialize: function()
         {
-		/********* HUD *******************/ 
-        	this.mHud = new Hud();
-        	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
-        	this.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
-		
-
 		/********* SHAPES *******************/ 
 		//shape Array
        		this.mShapeArray = new Array();
@@ -406,25 +400,12 @@ var Game = new Class(
         setScore: function(score)
         {
                 this.mScore = score;
-                this.mHud.mScore.setText('<font size="2">Score: ' + this.mScore + '</font>');
+                APPLICATION.mHud.mScore.setText('<font size="2">Score: ' + this.mScore + '</font>');
         },
 
         incrementScore: function()
         {
                 this.mScore++;
-                this.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
-        },
-
-	setHud: function(hud)
-	{
-		this.mHud = hud;
-	},
-
-	getHud: function()
-	{
-		return this.mHud;
-	}
-
+                APPLICATION.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
+        }
 });
-
-

@@ -53,7 +53,6 @@ var Application = new Class(
                 //document.addEvent("keyup", this.keyup);
                 document.body.style.cursor = 'crosshair';
 
-
         	//START UPDATING
         	var t=setInterval("APPLICATION.update()",32)
         },

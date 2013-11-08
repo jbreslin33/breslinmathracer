@@ -23,7 +23,6 @@ Extends: GameQuiz,
                         var shape = new ShapeChaser(50,50,openPoint.mX,openPoint.mY,this,"","/images/monsters/red_monster.png","","chaser");
                         this.addToShapeArray(shape);
                 }
-
 	},
 	
 	createPortals: function()
@@ -57,21 +56,10 @@ Extends: GameQuiz,
 
                         //evaluate questions
                         questionMountee.setEvaluateQuestions(false);
-
 		}
 	},
 
-        createHud: function()
-        {
-        	mHud = new Hud();
-        	mHud.mScoreNeeded.setText('<font size="2"> Needed : 1 </font>');
-        	mHud.mGameName.setText('<font size="2">GAME CHOOSER</font>');
-        },
-
 	createQuestions: function()
 	{
-	
 	}
-
-
 });
