@@ -10,7 +10,7 @@ Extends: GameQuiz,
 		this.mPortal = 0;
 		this.createPortals();
 	},
-
+	
 	createQuestionShapes: function()
 	{
 	},
@@ -62,4 +62,5 @@ Extends: GameQuiz,
 	createQuestions: function()
 	{
 	}
+
 });
