@@ -6,6 +6,9 @@ Extends: GameQuiz,
 	initialize: function(application,scoreNeeded)
 	{
        		this.parent(application,scoreNeeded);
+
+		this.mApplication.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
+        	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 	
  		//create key
         	this.createKey("/images/key/key_dungeon.gif");

@@ -8,8 +8,17 @@ var Application = new Class(
         {
 		/********* HUD *******************/ 
         	this.mHud = new Hud();
-        	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
-        	this.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+
+		/************ questions array from server db  *****/
+		this.mQuestions = new Array();
+		this.mAnswers   = new Array();
+
+		for (i = 0; i < 10; i++)
+		{
+			this.mQuestions[i] = questions[i];
+			this.mAnswers[i] = answers[i];
+			this.log('question:' + questions[i]);
+		} 
 		
 		/************** On_Off **********/
                 this.mOn = true;
