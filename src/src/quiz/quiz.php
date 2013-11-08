@@ -1,9 +1,9 @@
 var Quiz = new Class(
 {
-        initialize: function(scoreNeeded)
+        initialize: function(game,scoreNeeded)
         {
 		//GAME
-		this.mGame = 0;
+		this.mGame = game;
 
 		//Question and Answer Array
 		this.mQuestionArray = new Array();
@@ -13,7 +13,6 @@ var Quiz = new Class(
 
 		//question
 		this.mMarker = 0;
-		
         },
 
 	//returns question object	
@@ -33,7 +32,7 @@ var Quiz = new Class(
         	this.mGame.incrementScore();
 		this.mMarker++;
 	
-		this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
+		//this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
 	},
 	
 	getScoreNeeded: function()

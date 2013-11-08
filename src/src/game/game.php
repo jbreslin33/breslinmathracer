@@ -6,23 +6,17 @@ var Game = new Class(
 {
 	initialize: function()
         {
-		//shape Array
-       		this.mShapeArray = new Array();
-
-  		//HUD
+		//HUD
         	this.mHud = new Hud();
         	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
         	this.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+		
+		//shape Array
+       		this.mShapeArray = new Array();
 
-        	//QUIZ
-        	this.mQuiz = new Quiz(1);
-        	this.mQuiz.mGame = this;
-
-        	//create questions
-        	this.createQuestions();
-
-        	//create control object
-        	this.createControlObject();
+		/********* SHAPES *******************/ 
+		//create control object
+                this.mControlObject = 0;
 
 		/************ SCORE *******/
 		this.mScoreOnServer  = 0;
@@ -41,11 +35,6 @@ var Game = new Class(
                 this.mDeltaTime = 0;
 		this.mGameTime = 0;
 
-		/********* SHAPES *******************/ 
-		//control object
-                this.mControlObject;
-                
-			
 		/********* BOUNDS *******************/ 
                 //create bounds
                 this.createBounds(60,735,380,35);
@@ -496,7 +485,7 @@ var Game = new Class(
         incrementScore: function()
         {
                 this.mScore++;
-                this.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
+                //this.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
         },
 
 	setHud: function(hud)

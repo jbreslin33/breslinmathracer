@@ -6,12 +6,14 @@ Extends: GameQuiz,
 	initialize: function()
 	{
        		this.parent();
+
  		//create key
         	this.createKey("/images/key/key_dungeon.gif");
 
         	//create door
         	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 		this.createChasers();
+		this.createQuestionShapes();
 	},
 
 	createControlObject: function()
@@ -105,7 +107,6 @@ Extends: GameQuiz,
         	door.mUrl = '/src/database/goto_next_level.php';
         	door.mOpenOnQuestionSolved = true;
         	this.addToShapeArray(door);
-
 	}
 		
 });

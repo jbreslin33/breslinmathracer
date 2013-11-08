@@ -5,10 +5,17 @@ Extends: Game,
 
 	initialize: function()
 	{
-       		this.parent();
 
                 /************** QUIZ **********/
-                //this.mQuiz = 0;
+		this.parent();
+        	
+		this.mQuiz = new Quiz(this,1);
+
+        	//create questions
+        	this.createQuestions();
+	
+		this.createControlObject();
+       		
 	},
 
         resetGame: function()
@@ -79,7 +86,7 @@ Extends: Game,
 	createControlObject: function()
         {
                 //*******************CONTROL OBJECT
-                this.mControlObject = new Player(50,50,400,300,this,this.mQuiz.getSpecificQuestion(0),"/images/characters/wizard.png","","controlObject");
+		this.mControlObject = new Player(50,50,400,300,this,this.mQuiz.getSpecificQuestion(0),"/images/characters/wizard.png","","controlObject");
 
                 //set animation instance
                 this.mControlObject.mAnimation = new AnimationAdvanced(this.mControlObject);
