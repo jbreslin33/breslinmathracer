@@ -7,8 +7,10 @@ Extends: Game,
 	{
                 /************** QUIZ **********/
 		this.parent();
-        	
-		this.mQuiz = new Quiz(this,scoreNeeded);
+       		
+		this.mScoreNeeded = scoreNeeded; 
+	
+		this.mQuiz = new Quiz(this,this.mScoreNeeded);
 
         	//create questions
         	this.createQuestions();
@@ -74,7 +76,7 @@ Extends: Game,
 
         createQuestions: function()
         {
-                for (i = 0; i < scoreNeeded; i++)
+                for (i = 0; i < this.mScoreNeeded; i++)
                 {
                         var question = new Question(questions[i],answers[i]);
                         this.mQuiz.mQuestionArray.push(question);

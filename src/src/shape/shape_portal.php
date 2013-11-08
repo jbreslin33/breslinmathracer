@@ -86,7 +86,8 @@ this.mDiv.onclick=function(){ this.enterPortal();  };
 	enterPortal: function()
         {
                 this.mGame.mOn = false;
-                window.location = this.mUrl;
+		APPLICATION.mGame = new Dungeon(APPLICATION.scoreNeeded);
+                //this.mGamewindow.location = this.mUrl;
         }
 	
 
