@@ -26,13 +26,9 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 <body bgcolor="grey">
 <script language="javascript">
 
-var GAME;
-
 window.addEvent('domready', function()
 {
 	APPLICATION = new Application("Application");
-	GAME = APPLICATION.mGame;
-
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
 ?>

@@ -39,44 +39,6 @@ var Game = new Class(
 		/********* BOUNDS *******************/ 
                 //create bounds
                 this.createBounds(60,735,380,35);
-		
-		/********** OLD APPLICATION STUFF ***********/
- 		//window size
-                this.mWindow = window.getSize();
-
-                //key pressed
-                this.mKeyLeft = false;
-                this.mKeyRight = false;
-                this.mKeyUp = false;
-                this.mKeyDown = false;
-                this.mKeyStop = false;
-                this.mKeySpace = false;
-                this.mKey0 = false;
-                this.mKey1 = false;
-                this.mKey2 = false;
-                this.mKey3 = false;
-                this.mKey4 = false;
-                this.mKey5 = false;
-                this.mKey6 = false;
-                this.mKey7 = false;
-                this.mKey8 = false;
-                this.mKey9 = false;
-
-		//mouse clicked or moved
-		this.mMouseOn = false;
-		this.mLeftMouseDown = false;
-		this.mRightMouseDown = false;
-
-		this.mMousePosition = new Point2D(0,0);
-		this.mMouseMoveEvent = 0;
-		
-		document.addEvent("mousemove", this.mouseMove);
- 		//document.addEvent("click", this.click);
-        	//document.addEvent("mousedown", this.mouseDown);
-        	//document.addEvent("mouseup", this.mouseup);
-        	//document.addEvent("mousemove", this.mouseMove);
-        	//document.addEvent("keyup", this.keyup);
-		document.body.style.cursor = 'crosshair';
         },
  	
 	log: function(msg)
@@ -224,7 +186,7 @@ var Game = new Class(
 	checkKeys: (function()
         {
                 //idle
-                if (GAME.mKeyLeft == false && GAME.mKeyRight == false && GAME.mKeyUp == false && GAME.mKeyDown == false)
+                if (APPLICATION.mKeyLeft == false && APPLICATION.mKeyRight == false && APPLICATION.mKeyUp == false && APPLICATION.mKeyDown == false)
                 {
 			if (this.mControlObject)
 			{
@@ -233,7 +195,7 @@ var Game = new Class(
 			}
                 }
                 //north
-                if (GAME.mKeyLeft == false && GAME.mKeyRight == false && GAME.mKeyUp == true && GAME.mKeyDown == false)
+                if (APPLICATION.mKeyLeft == false && APPLICATION.mKeyRight == false && APPLICATION.mKeyUp == true && APPLICATION.mKeyDown == false)
                 {
 			if (this.mControlObject)
 			{
@@ -242,7 +204,7 @@ var Game = new Class(
 			}
                 }
                 //north_east
-                if (GAME.mKeyLeft == false && GAME.mKeyRight == true && GAME.mKeyUp == true && GAME.mKeyDown == false)
+                if (APPLICATION.mKeyLeft == false && APPLICATION.mKeyRight == true && APPLICATION.mKeyUp == true && APPLICATION.mKeyDown == false)
                 {
 			if (this.mControlObject)
 			{
@@ -251,7 +213,7 @@ var Game = new Class(
 			}
                 }
                 //east
-                if (GAME.mKeyLeft == false && GAME.mKeyRight == true && GAME.mKeyUp == false && GAME.mKeyDown == false)
+                if (APPLICATION.mKeyLeft == false && APPLICATION.mKeyRight == true && APPLICATION.mKeyUp == false && APPLICATION.mKeyDown == false)
                 {
 			if (this.mControlObject)
 			{
@@ -260,7 +222,7 @@ var Game = new Class(
 			}
                 }
                 //south_east
-                if (GAME.mKeyLeft == false && GAME.mKeyRight == true && GAME.mKeyUp == false && GAME.mKeyDown == true)
+                if (APPLICATION.mKeyLeft == false && APPLICATION.mKeyRight == true && APPLICATION.mKeyUp == false && APPLICATION.mKeyDown == true)
                 {
 			if (this.mControlObject)
 			{
@@ -269,7 +231,7 @@ var Game = new Class(
 			}
                 }
                 //south
-                if (GAME.mKeyLeft == false && GAME.mKeyRight == false && GAME.mKeyUp == false && GAME.mKeyDown == true)
+                if (APPLICATION.mKeyLeft == false && APPLICATION.mKeyRight == false && APPLICATION.mKeyUp == false && APPLICATION.mKeyDown == true)
                 {
 			if (this.mControlObject)
 			{
@@ -278,7 +240,7 @@ var Game = new Class(
 			}
                 }
                 //south_west
-                if (GAME.mKeyLeft == true && GAME.mKeyRight == false && GAME.mKeyUp == false && GAME.mKeyDown == true)
+                if (APPLICATION.mKeyLeft == true && APPLICATION.mKeyRight == false && APPLICATION.mKeyUp == false && APPLICATION.mKeyDown == true)
                 {
 			if (this.mControlObject)
 			{
@@ -287,7 +249,7 @@ var Game = new Class(
 			}
                 }
                 //west
-                if (GAME.mKeyLeft == true && GAME.mKeyRight == false && GAME.mKeyUp == false && GAME.mKeyDown == false)
+                if (APPLICATION.mKeyLeft == true && APPLICATION.mKeyRight == false && APPLICATION.mKeyUp == false && APPLICATION.mKeyDown == false)
                 {
 			if (this.mControlObject)
 			{
@@ -296,7 +258,7 @@ var Game = new Class(
 			}
                 }
                 //north_west
-                if (GAME.mKeyLeft == true && GAME.mKeyRight == false && GAME.mKeyUp == true && GAME.mKeyDown == false)
+                if (APPLICATION.mKeyLeft == true && APPLICATION.mKeyRight == false && APPLICATION.mKeyUp == true && APPLICATION.mKeyDown == false)
                 {
 			if (this.mControlObject)
 			{
@@ -309,40 +271,8 @@ var Game = new Class(
 	//CHECK MOUSE
 	checkMouse: function()
 	{
-                if (GAME.mLeftMouseDown == true)
+                if (APPLICATION.mLeftMouseDown == true)
 		{
-		}
-	},
-
-	click: function(event)
-	{
-	},
-
-	mousedown: function(event)
-	{
-		GAME.mLeftMouseDown = true;	
-	},
-
-	mouseup: function(event)
-	{
-		GAME.mLeftMouseDown = false;	
-	},
-	
-	mouseMove: function(event)
-	{
-		if (GAME.mMouseMoveOn)
-		{	
-                	GAME.mControlObject.mPosition.mX = event.page.x;
-                	GAME.mControlObject.mPosition.mY = event.page.y;
-		}
-	},
-
-	mouseDown: function(event)
-	{
-		if (GAME.mMouseDownOn)
-		{	
-                	GAME.mControlObject.mPosition.mX = event.page.x;
-                	GAME.mControlObject.mPosition.mY = event.page.y;
 		}
 	},
 
@@ -493,137 +423,7 @@ var Game = new Class(
 	getHud: function()
 	{
 		return this.mHud;
-	},
-
-	/******************************* CONTROLS  *************/
- 	keyDown: function(event)
-        {
-                if (event.key == 'left')
-                {
-                        GAME.mKeyLeft = true;
-                }
-                if (event.key == 'right')
-                {
-                        GAME.mKeyRight = true;
-                }
-                if (event.key == 'up')
-                {
-                        GAME.mKeyUp = true;
-                }
-                if (event.key == 'down')
-                {
-                        GAME.mKeyDown = true;
-                }
-                if (event.key == 'space')
-                {
-                        GAME.mKeySpace = true;
-                }
-                if (event.key == '0')
-                {
-                        GAME.mKey0 = true;
-                }
-                if (event.key == '1')
-                {
-                        GAME.mKey1 = true;
-                }
-                if (event.key == '2')
-                {
-                        GAME.mKey2 = true;
-                }
-                if (event.key == '3')
-                {
-                        GAME.mKey3 = true;
-                }
-                if (event.key == '4')
-                {
-                        GAME.mKey4 = true;
-                }
-                if (event.key == '5')
-                {
-                        GAME.mKey5 = true;
-                }
-                if (event.key == '6')
-                {
-                        GAME.mKey6 = true;
-                }
-                if (event.key == '7')
-                {
-                        GAME.mKey7 = true;
-                }
- 		if (event.key == '8')
-                {
-                        GAME.mKey8 = true;
-                }
-                if (event.key == '9')
-                {
-                        GAME.mKey9 = true;
-                }
-        },
-
-        keyUp: function(event)
-        {
-                if (event.key == 'left')
-                {
-                        GAME.mKeyLeft = false;
-                }
-                if (event.key == 'right')
-                {
-                        GAME.mKeyRight = false;
-                }
-                if (event.key == 'up')
-                {
-                        GAME.mKeyUp = false;
-                }
-                if (event.key == 'down')
-                {
-                        GAME.mKeyDown = false;
-                }
-                if (event.key == 'space')
-                {
-                        GAME.mKeySpace = false;
-                }
-                if (event.key == '0')
-                {
-                        GAME.mKey0 = false;
-                }
-                if (event.key == '1')
-                {
-                        GAME.mKey1 = false;
-                }
-                if (event.key == '2')
-                {
-                        GAME.mKey2 = false;
-                }
-                if (event.key == '3')
-                {
-                        GAME.mKey3 = false;
-                }
-                if (event.key == '4')
-                {
-                        GAME.mKey4 = false;
-                }
-                if (event.key == '5')
-                {
-                        GAME.mKey5 = false;
-                }
- 		if (event.key == '6')
-                {
-                        GAME.mKey6 = false;
-                }
-                if (event.key == '7')
-                {
-                        GAME.mKey7 = false;
-                }
-                if (event.key == '8')
-                {
-                        GAME.mKey8 = false;
-                }
-                if (event.key == '9')
-                {
-                        GAME.mKey9 = false;
-                }
-        }
-
+	}
 
 });
 
