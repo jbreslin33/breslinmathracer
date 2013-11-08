@@ -14,7 +14,7 @@ var Application = new Class(
 		/************** On_Off **********/
                 this.mOn = true;
 
-		this.mGame = new Dungeon(10);
+		this.mGame = new Dungeon(this,10);
 
 		//KEYS
         	this.mGame.mKeysOn = true;
