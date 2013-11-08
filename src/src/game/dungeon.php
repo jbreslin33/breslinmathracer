@@ -3,11 +3,11 @@ var Dungeon = new Class(
 
 Extends: GameQuiz,
 
-	initialize: function(application,scoreNeeded)
+	initialize: function(application)
 	{
-       		this.parent(application,scoreNeeded);
+       		this.parent(application);
 
-		this.mApplication.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
+		this.mApplication.mHud.mScoreNeeded.setText('<font size="2"> 'Needed :' + this.mApplication.mScoreNeeded</font>');
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 	
  		//create key
