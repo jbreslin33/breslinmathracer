@@ -6,15 +6,16 @@ var Game = new Class(
 {
 	initialize: function()
         {
-		//HUD
+		/********* HUD *******************/ 
         	this.mHud = new Hud();
         	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
         	this.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 		
-		//shape Array
-       		this.mShapeArray = new Array();
 
 		/********* SHAPES *******************/ 
+		//shape Array
+       		this.mShapeArray = new Array();
+		
 		//create control object
                 this.mControlObject = 0;
 
@@ -38,10 +39,6 @@ var Game = new Class(
 		/********* BOUNDS *******************/ 
                 //create bounds
                 this.createBounds(60,735,380,35);
-
-		/********* HUD *******************/ 
-		//HUD
-		this.mHud = 0;
 		
 		/********** OLD APPLICATION STUFF ***********/
  		//window size
@@ -485,7 +482,7 @@ var Game = new Class(
         incrementScore: function()
         {
                 this.mScore++;
-                //this.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
+                this.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
         },
 
 	setHud: function(hud)

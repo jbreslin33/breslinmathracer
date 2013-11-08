@@ -1,5 +1,5 @@
   	//RESET GAME TO START
-       // GAME.resetGame();
+        //GAME.resetGame();
 
         //START UPDATING
         var t=setInterval("GAME.update()",32)
