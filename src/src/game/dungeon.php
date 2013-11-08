@@ -3,10 +3,10 @@ var Dungeon = new Class(
 
 Extends: GameQuiz,
 
-	initialize: function(scoreNeeded)
+	initialize: function(application,scoreNeeded)
 	{
-       		this.parent(scoreNeeded);
-
+       		this.parent(application,scoreNeeded);
+	
  		//create key
         	this.createKey("/images/key/key_dungeon.gif");
 

@@ -3,7 +3,7 @@
 
 window.onresize = function(event)
 {
-        GAME.mWindow = window.getSize();
+        APPLICATION.mWindow = window.getSize();
 }
 </script>
 

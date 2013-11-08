@@ -3,11 +3,12 @@ var GameQuiz = new Class(
 
 Extends: Game,
 
-	initialize: function(scoreNeeded)
+	initialize: function(application,scoreNeeded)
 	{
+
                 /************** QUIZ **********/
-		this.parent();
-       		
+		this.parent(application);
+       	
 		this.mScoreNeeded = scoreNeeded; 
 	
 		this.mQuiz = new Quiz(this,this.mScoreNeeded);
@@ -78,7 +79,7 @@ Extends: Game,
         {
                 for (i = 0; i < this.mScoreNeeded; i++)
                 {
-                        var question = new Question(APPLICATION.questions[i],APPLICATION.answers[i]);
+                        var question = new Question(this.mApplication.questions[i],this.mApplication.answers[i]);
                         this.mQuiz.mQuestionArray.push(question);
                 }
         },

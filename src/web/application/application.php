@@ -23,11 +23,11 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 
 <body bgcolor="grey">
 <script language="javascript">
-
+var APPLICATION;
 window.addEvent('domready', function()
 {
 	APPLICATION = new Application("Application");
-	APPLICATION.scoreNeeded = 1;
+	APPLICATION.scoreNeeded = 10;
 	
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
