@@ -5,7 +5,6 @@ Extends: Game,
 
 	initialize: function(scoreNeeded)
 	{
-
                 /************** QUIZ **********/
 		this.parent();
         	
@@ -15,7 +14,6 @@ Extends: Game,
         	this.createQuestions();
 	
 		this.createControlObject();
-       		
 	},
 
         resetGame: function()
