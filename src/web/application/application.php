@@ -30,6 +30,14 @@ window.addEvent('domready', function()
 {
 	APPLICATION = new Application("Application");
 	APPLICATION.scoreNeeded = 1;
+	APPLICATION.questions = new Array();
+	APPLICATION.answers = new Array();
+	for (i = 0; i < APPLICATION.scoreNeeded; i++)
+	{	
+		APPLICATION.answers[i] = "1";
+		APPLICATION.questions[i] = "1";
+	}
+	
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
 ?>

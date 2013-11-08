@@ -78,7 +78,7 @@ Extends: Game,
         {
                 for (i = 0; i < this.mScoreNeeded; i++)
                 {
-                        var question = new Question(questions[i],answers[i]);
+                        var question = new Question(APPLICATION.questions[i],APPLICATION.answers[i]);
                         this.mQuiz.mQuestionArray.push(question);
                 }
         },
