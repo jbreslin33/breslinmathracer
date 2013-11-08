@@ -8,6 +8,7 @@ Extends: GameQuiz,
        		this.parent();
 
 		this.mPortal = 0;
+		this.createPortals();
 	},
 
 	createQuestionShapes: function()

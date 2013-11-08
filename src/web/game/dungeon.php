@@ -35,36 +35,8 @@ var GAME;
 
 window.addEvent('domready', function()
 {
-        //HUD
-        hud = new Hud();
-        hud.mScoreNeeded.setText('<font size="2"> Needed : ' + scoreNeeded + '</font>');
-        hud.mGameName.setText('<font size="2">DUNGEON</font>');
-        
 	//GAME
 	GAME = new Dungeon();
-
-        //set hud
-        GAME.setHud(hud);
-
-	//QUIZ	
-       	quiz = new Quiz(scoreNeeded);
-       	GAME.mQuiz = quiz;
-	quiz.mGame = GAME;
-
-        //create questions
-        GAME.createQuestions();
-
-        //create control object
-        GAME.createControlObject();
-
-        //create question shapes
-        GAME.createQuestionShapes();
-
-        //create key
-        GAME.createKey("/images/key/key_dungeon.gif");
-
-        //create door
-        GAME.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 
         //KEYS
         GAME.mKeysOn = true;

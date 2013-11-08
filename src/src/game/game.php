@@ -6,6 +6,24 @@ var Game = new Class(
 {
 	initialize: function()
         {
+		//shape Array
+       		this.mShapeArray = new Array();
+
+  		//HUD
+        	this.mHud = new Hud();
+        	this.mHud.mScoreNeeded.setText('<font size="2"> Needed : 1</font>');
+        	this.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+
+        	//QUIZ
+        	this.mQuiz = new Quiz(1);
+        	this.mQuiz.mGame = this;
+
+        	//create questions
+        	this.createQuestions();
+
+        	//create control object
+        	this.createControlObject();
+
 		/************ SCORE *******/
 		this.mScoreOnServer  = 0;
 		this.mScore = 0;
@@ -27,8 +45,6 @@ var Game = new Class(
 		//control object
                 this.mControlObject;
                 
-		//shape Array
-                this.mShapeArray = new Array();
 			
 		/********* BOUNDS *******************/ 
                 //create bounds

@@ -8,7 +8,7 @@ Extends: Game,
        		this.parent();
 
                 /************** QUIZ **********/
-                this.mQuiz = 0;
+                //this.mQuiz = 0;
 	},
 
         resetGame: function()
