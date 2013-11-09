@@ -51,7 +51,7 @@ var Game = new Class(
 		if(this.gameOver == false)
 		{
 			var str = this.getScore();
-			
+			this.log('str:' + str);	
 			if (str == this.mScoreOnServer)
 			{
 				return;
