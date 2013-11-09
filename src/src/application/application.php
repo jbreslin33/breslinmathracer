@@ -9,12 +9,15 @@ var Application = new Class(
 		/************ questions array from server db  later this need come in ajax*****/
 		this.mQuestions = new Array();
 		this.mAnswers   = new Array();
+		this.mScoreNeeded = 0; 
+/*
 		this.mScoreNeeded = scoreNeeded; 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			this.mQuestions[i] = questions[i];
 			this.mAnswers  [i] = answers  [i];
 		} 
+*/
 		this.mWait = false;
 		this.mEnteredDoor = false;
 		this.mUsername = username;
@@ -25,7 +28,7 @@ var Application = new Class(
 		/************** On_Off **********/
                 this.mOn = true;
 
-		this.mGame = new Dungeon(this,10);
+		this.mGame = 0;
 
 		//KEYS
         	this.mGame.mKeysOn = true;
@@ -80,6 +83,13 @@ var Application = new Class(
         {
                 if (this.mOn)
                 {
+			//if no game get one....
+			if (this.mGame ==  0);
+			{
+				this.getGameFromServer();	
+			}
+
+
 			//if (this.mWait == true && this.mWaiting = false)
 			if (this.mEnteredDoor == true && this.mWait == false)
 			{
@@ -93,6 +103,30 @@ var Application = new Class(
 			}
 		}
         },
+ 
+	getGameFromServer: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        console.log('gameID:' + xmlhttp.responseText);
+                        //this.mWait = false;
+
+                }
+                xmlhttp.open("GET","../../web/game/ajax_games_query.php",true);
+                xmlhttp.send();
+                this.timeWarning = true;
+        },
+
  
 	getNewStuff: function()
         {
