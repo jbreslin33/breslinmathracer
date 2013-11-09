@@ -13,7 +13,8 @@ var Application = new Class(
 		this.mQuestions = new Array();
 		this.mAnswers   = new Array();
 		this.mScoreNeeded = scoreNeeded; 
-		for (i = 0; i < 10; i++)
+		this.log('mScoreNeeded:' + this.mScoreNeeded);
+		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			this.mQuestions[i] = questions[i];
 			this.mAnswers[i] = answers[i];
