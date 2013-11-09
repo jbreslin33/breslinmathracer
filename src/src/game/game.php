@@ -35,8 +35,11 @@ var Game = new Class(
 		/********* BOUNDS *******************/ 
                 //create bounds
                 this.createBounds(60,735,380,35);
+
+		//keys
+		this.mKeysOn = true;
 	
-		this.standardGameAttempt();
+//		this.standardGameAttempt();
 
         },
  	

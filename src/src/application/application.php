@@ -32,7 +32,10 @@ var Application = new Class(
 		this.mSentForGame = false;
 
 		//KEYS
-        	this.mGame.mKeysOn = true;
+		if (this.mGame)
+		{
+        		this.mGame.mKeysOn = true;
+		}
         	document.addEvent("keydown", this.keyDown);
         	document.addEvent("keyup", this.keyUp);
 
@@ -86,12 +89,17 @@ var Application = new Class(
                 {
 
 			//if no game get one....
-			if (this.mGame ==  0 && this.mSentForGame == false);
+			if (this.mGame == 0 && this.mSentForGame == false)
 			{
+				this.log('what');
 				this.mSentForGame = true;
 				this.getGameFromServer();	
 			}
 		
+			if (this.mGame)
+			{
+				this.mGame.update();
+			}
 /*
 			if (this.mGame)
 			{
@@ -126,11 +134,14 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        console.log('gameID:' + xmlhttp.responseText);
-			if (xmlhttp.responseText == '1')
-			{
 				APPLICATION.mGame = new Dungeon(APPLICATION);
+/*
+                        r =  xmlhttp.responseText;
+                        console.log('gameID:' + r);
+			if (r == '1')
+			{
 			}
+*/
                 }
                 xmlhttp.open("GET","../../web/game/ajax_games_query.php",true);
                 xmlhttp.send();
@@ -221,6 +232,7 @@ var Application = new Class(
 
         mouseMove: function(event)
         {
+/*
                 if (APPLICATION.mMouseMoveOn)
                 {
                         if (APPLICATION.mGame)
@@ -232,10 +244,12 @@ var Application = new Class(
 				}
 			}
                 }
+*/
         },
 
         mouseDown: function(event)
         {
+/*
                 if (APPLICATION.mMouseDownOn)
                 {      
                         if (APPLICATION.mGame)
@@ -247,5 +261,6 @@ var Application = new Class(
 				}
 			}
                 }
+*/
         }
 });
