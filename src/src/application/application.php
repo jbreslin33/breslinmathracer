@@ -29,6 +29,7 @@ var Application = new Class(
                 this.mOn = true;
 
 		this.mGame = 0;
+		this.mSentForGame = false;
 
 		//KEYS
         	this.mGame.mKeysOn = true;
@@ -83,24 +84,31 @@ var Application = new Class(
         {
                 if (this.mOn)
                 {
+
 			//if no game get one....
-			if (this.mGame ==  0);
+			if (this.mGame ==  0 && this.mSentForGame == false);
 			{
+				this.mSentForGame = true;
 				this.getGameFromServer();	
 			}
-
-
-			//if (this.mWait == true && this.mWaiting = false)
-			if (this.mEnteredDoor == true && this.mWait == false)
+		
+/*
+			if (this.mGame)
 			{
-				//run ajax function to get new db stuff then set mWaiting to true  	
-				this.mWait = true;
-				this.getNewStuff();
-			}	
-			else
-			{
-				this.mGame.update();
+
+				//if (this.mWait == true && this.mWaiting = false)
+				if (this.mEnteredDoor == true && this.mWait == false)
+				{
+					//run ajax function to get new db stuff then set mWaiting to true  	
+					this.mWait = true;
+					this.getNewStuff();
+				}		
+				else
+				{
+					this.mGame.update();
+				}
 			}
+*/
 		}
         },
  
@@ -119,8 +127,10 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         console.log('gameID:' + xmlhttp.responseText);
-                        //this.mWait = false;
-
+			if (xmlhttp.responseText == '1')
+			{
+				APPLICATION.mGame = new Dungeon(APPLICATION);
+			}
                 }
                 xmlhttp.open("GET","../../web/game/ajax_games_query.php",true);
                 xmlhttp.send();
