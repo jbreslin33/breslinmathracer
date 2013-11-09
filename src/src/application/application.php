@@ -9,7 +9,9 @@ var Application = new Class(
 		/********* HUD *******************/ 
         	this.mHud = new Hud();
 
-		/************ questions array from server db  *****/
+		this.mWait = false;
+
+		/************ questions array from server db  later this need come in ajax*****/
 		this.mQuestions = new Array();
 		this.mAnswers   = new Array();
 		this.mScoreNeeded = scoreNeeded; 
@@ -20,7 +22,7 @@ var Application = new Class(
 			this.mAnswers[i] = answers[i];
 			this.log('question:' + questions[i]);
 		} 
-		
+
 		/************** On_Off **********/
                 this.mOn = true;
 

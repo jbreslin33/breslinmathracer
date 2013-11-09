@@ -7,8 +7,10 @@ Extends: GameQuiz,
 	{
        		this.parent(application);
 
-		//this.mApplication.mHud.mScoreNeeded.setText('<font size="2"> 'Needed :' + this.mApplication.mScoreNeeded</font>');
-        	//this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+		scoreText = '<font size="2"> Needed :' +  this.mApplication.mScoreNeeded + '</font>';
+
+		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
+        	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 	
  		//create key
         	this.createKey("/images/key/key_dungeon.gif");
