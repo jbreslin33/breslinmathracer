@@ -22,7 +22,8 @@ while ($row = pg_fetch_row($result))
         //fill php vars from db
         $game_id = $row[4];
 
-	echo "$game_id"; 
+	//echo $game_id; 
+	echo "helllllllllllllllllllls";
         $counter++;
 }
 ?>

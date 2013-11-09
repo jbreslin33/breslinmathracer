@@ -11,17 +11,17 @@ $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error())
 $numberOfRows = pg_num_rows($result);
 
 echo "<script language=\"javascript\">";
-echo "var numberOfRows = $numberOfRows;";
-echo "var game_name = new Array();";
-echo "var picture_open = new Array();";
-echo "var picture_closed = new Array();";
-echo "var url = new Array();";
+//echo "var numberOfRows = $numberOfRows;";
+//echo "var game_name = new Array();";
+//echo "var picture_open = new Array();";
+//echo "var picture_closed = new Array();";
+//echo "var url = new Array();";
 
 $next_level = $_SESSION["next_level"];
-echo "var next_level = $next_level;";
+//echo "var next_level = $next_level;";
 
-echo "</script>";
-
+//echo "</script>";
+echo "jello";
 $counter = 0;
 while ($row = pg_fetch_row($result))
 {
@@ -32,13 +32,13 @@ while ($row = pg_fetch_row($result))
         $picture_closed = $row[3];
         $game_id = $row[4];
 
-        echo "<script language=\"javascript\">";
+        //echo "<script language=\"javascript\">";
 
-        echo "game_name[$counter] = \"$game_name\";";
-        echo "url[$counter] = \"$url?game_id=$game_id\";";
-        echo "picture_open[$counter] = \"$picture_open\";";
-        echo "picture_closed[$counter] = \"$picture_closed\";";
-        echo "</script>";
+        //echo "game_name[$counter] = \"$game_name\";";
+        //echo "url[$counter] = \"$url?game_id=$game_id\";";
+        //echo "picture_open[$counter] = \"$picture_open\";";
+        //echo "picture_closed[$counter] = \"$picture_closed\";";
+        //echo "</script>";
         $counter++;
 }
 ?>

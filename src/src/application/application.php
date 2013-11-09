@@ -134,7 +134,11 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
+                        console.log('gamellll:' + xmlhttp.responseText)
+                        //if (xmlhttp.responseText == "1")
+			//{
 				APPLICATION.mGame = new Dungeon(APPLICATION);
+			//}
 /*
                         r =  xmlhttp.responseText;
                         console.log('gameID:' + r);
@@ -143,7 +147,7 @@ var Application = new Class(
 			}
 */
                 }
-                xmlhttp.open("GET","../../web/game/ajax_games_query.php",true);
+                xmlhttp.open("GET","../../web/game/standard_games_query.php",true);
                 xmlhttp.send();
                 this.timeWarning = true;
         },
