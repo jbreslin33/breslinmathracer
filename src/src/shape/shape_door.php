@@ -81,11 +81,10 @@ Extends: QuestionShape,
 	
 	enterDoor: function()
         {
-                //this.mGame.mOn = false;
-                //window.location = this.mUrl;
+		if (this.mGame.mApplication.mEnteredDoor == false)
+		{
+			this.mGame.mApplication.mEnteredDoor = true;
+		}
         }
-	
-
-
 });
 

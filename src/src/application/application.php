@@ -16,6 +16,7 @@ var Application = new Class(
 			this.mAnswers  [i] = answers  [i];
 		} 
 		this.mWait = false;
+		this.mEnteredDoor = false;
 		this.mUsername = username;
 		
 		/********* HUD *******************/ 
@@ -79,10 +80,43 @@ var Application = new Class(
         {
                 if (this.mOn)
                 {
-			this.mGame.update();
+			//if (this.mWait == true && this.mWaiting = false)
+			if (this.mEnteredDoor == true && this.mWait == false)
+			{
+				//run ajax function to get new db stuff then set mWaiting to true  	
+				this.mWait = true;
+				this.getNewStuff();
+			}	
+			else
+			{
+				this.mGame.update();
+			}
 		}
         },
-   	
+ 
+	getNewStuff: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        console.log(xmlhttp.responseText);
+			//this.mWait = false;
+				
+		}
+                xmlhttp.open("GET","../../web/game/standard_question_query2.php",true);
+                xmlhttp.send();
+                this.timeWarning = true;
+        },
+
 	/******************************* CONTROLS  *************/
         keyDown: function(event)
         {

@@ -1,5 +1,4 @@
 <?php
-
 echo "<script language=\"javascript\">";
 echo "var questions = new Array();";
 echo "var answers = new Array();";
