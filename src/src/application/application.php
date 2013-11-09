@@ -125,10 +125,11 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         console.log('gamellll:' + xmlhttp.responseText)
-                        //if (xmlhttp.responseText == "1")
-			//{
+                        if (xmlhttp.responseText == "1")
+			{
+				APPLICATION.log('got 1 for an answer');
 				//APPLICATION.mGame = new Dungeon(APPLICATION);
-			//}
+			}
 /*
                         r =  xmlhttp.responseText;
                         console.log('gameID:' + r);
