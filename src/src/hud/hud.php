@@ -6,8 +6,10 @@ public methods
 
 var Hud = new Class(
 {
-        initialize: function()
+        initialize: function(application)
         {
+	
+	this.mApplication = application;	
 	/******************* BOUNDARY WALLS AND HUD COMBO ***********/
         var ySize = 35;
         var yCoord = 0;
@@ -28,7 +30,7 @@ var Hud = new Class(
         this.mScoreNeeded = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
 
 	this.mUsername = new Shape     (180, ySize,590,  yCoord,"","","#F8CDF8","boundary");
-        this.mUsername.setText('<font size="2"> User : ' + username + '</font>');
+        this.mUsername.setText('<font size="2"> User : ' + this.mApplication.mUsername + '</font>');
         
 	eastBounds  = new Shape         ( 10, 50,760, 35,"","","#F8CDF8","boundary");
         eastBounds  = new Shape         ( 10, 50,760, 85,"","","#F6C0F6","boundary");

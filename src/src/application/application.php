@@ -6,22 +6,20 @@ var Application = new Class(
 {
 	initialize: function()
         {
-		/********* HUD *******************/ 
-        	this.mHud = new Hud();
-
-		this.mWait = false;
-
 		/************ questions array from server db  later this need come in ajax*****/
 		this.mQuestions = new Array();
 		this.mAnswers   = new Array();
 		this.mScoreNeeded = scoreNeeded; 
-		this.log('mScoreNeeded:' + this.mScoreNeeded);
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			this.mQuestions[i] = questions[i];
-			this.mAnswers[i] = answers[i];
-			this.log('question:' + questions[i]);
+			this.mAnswers  [i] = answers  [i];
 		} 
+		this.mWait = false;
+		this.mUsername = username;
+		
+		/********* HUD *******************/ 
+        	this.mHud = new Hud(this);
 
 		/************** On_Off **********/
                 this.mOn = true;

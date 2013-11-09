@@ -22,8 +22,15 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 </head>
 
 <body bgcolor="grey">
+
+<!-- HUD VARIABLES    -->
 <script language="javascript">
+var curDate = "<?php echo $curDate; ?>";
+var username = "<?php echo $username; ?>";
+var next_level = "<?php echo $next_level; ?>";
+
 var APPLICATION;
+
 window.addEvent('domready', function()
 {
 	APPLICATION = new Application();
