@@ -81,8 +81,8 @@ Extends: QuestionShape,
 	
 	enterDoor: function()
         {
-                this.mGame.mOn = false;
-                window.location = this.mUrl;
+                //this.mGame.mOn = false;
+                //window.location = this.mUrl;
         }
 	
 
