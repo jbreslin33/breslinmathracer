@@ -8,13 +8,14 @@ Extends: Game,
 
                 /************** QUIZ **********/
 		this.parent(application);
-       	
+
 		this.mQuiz = new Quiz(this);
 
         	//create questions
         	this.createQuestions();
 	
 		this.createControlObject();
+
 	},
 
         resetGame: function()

@@ -18,5 +18,6 @@
 <script type="text/javascript" src="/src/game/game.php"></script>
 <script type="text/javascript" src="/src/game/game_quiz.php"></script>
 <script type="text/javascript" src="/src/game/dungeon.php"></script>
+<script type="text/javascript" src="/src/game/hunt.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
 

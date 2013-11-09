@@ -1,37 +1,43 @@
-var Dungeon = new Class(
+var Hunt = new Class(
 {
 
-Extends: GameQuiz,
+Extends: Game,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-
-
+		
 		scoreText = '<font size="2"> Needed :' +  this.mApplication.mScoreNeeded + '</font>';
 
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 	
  		//create key
-        	this.createKey("/images/key/key_dungeon.gif");
+        	//this.createKey("/images/key/key_dungeon.gif");
 
         	//create door
-        	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
+        	//this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 		this.createChasers();
-		this.createQuestionShapes();
+		//this.createQuestionShapes();
 
 	},
 
 	createControlObject: function()
 	{
-		this.parent();
+  		//*******************CONTROL OBJECT
+                this.mControlObject = new Player(50,50,400,300,this,this.mQuiz.getSpecificQuestion(0),"/images/characters/wizard.png","","controlObject");
 
-        	this.mControlObject.mHideOnQuestionSolved = false;
-        	this.mControlObject.createMountPoint(0,-5,-41);
+                //set animation instance
+                this.mControlObject.mAnimation = new AnimationAdvanced(this.mControlObject);
+                this.mControlObject.mAnimation.addAnimations('/images/characters/wizard_','.png');
+                this.addToShapeArray(this.mControlObject);
+
+                this.mControlObject.mHideOnQuestionSolved = false;
+                this.mControlObject.createMountPoint(0,-5,-41);
+
+		//this.parent();
 
         	this.mControlObject.showQuestionObject(false);
-
         	
 		//text question mountee
         	var questionMountee = new QuestionShape(100,50,300,300,this,this.mQuiz.getSpecificQuestion(0),"","orange","questionMountee");
@@ -52,6 +58,7 @@ Extends: GameQuiz,
 
 	createQuestionShapes: function()
 	{
+/*
                 count = 0;
                 for (i = 0; i < this.mApplication.mQuestions.length; i++)
                 {
@@ -78,6 +85,7 @@ Extends: GameQuiz,
 
                         count++;
                 }
+*/
 	},
 
 	createChasers: function()
@@ -92,6 +100,7 @@ Extends: GameQuiz,
 
 	createKey: function(image_source)
 	{
+/*
         	var keyQuestion = new Question('Pick up key.',"key");
         	this.mQuiz.mQuestionArray.push(keyQuestion);
 
@@ -102,10 +111,12 @@ Extends: GameQuiz,
        	 	key.mMountable = true;
         	key.setHideOnQuestionSolved(false);
         	this.addToShapeArray(key);
+*/
 	},
 
 	createDoor: function(image_source_closed,image_source_open)
 	{
+/*
         	var doorQuestion = new Question('Open door with key.',"door");
         	this.mQuiz.mQuestionArray.push(doorQuestion);
 
@@ -114,7 +125,9 @@ Extends: GameQuiz,
         	door.mUrl = '/src/database/goto_next_level.php';
         	door.mOpenOnQuestionSolved = true;
         	this.addToShapeArray(door);
+*/
 	}
+
 		
 });
 

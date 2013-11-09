@@ -89,11 +89,11 @@ var Application = new Class(
 				this.mSentForGame = true;
 				this.getGameIDFromServer();	
 			}
-	/*	
 			if (this.mGame)
 			{
 				this.mGame.update();
 			}
+	/*	
 			if (this.mGame)
 			{
 
@@ -130,7 +130,7 @@ var Application = new Class(
 			{
 				APPLICATION.log('got 1 for an answer');
 				APPLICATION.log('APPLICATION.mVariable:' + APPLICATION.mVariable);
-				//APPLICATION.mGame = new Dungeon(APPLICATION);
+				APPLICATION.mGame = new Dungeon(APPLICATION);
 			}
 /*
                         r =  xmlhttp.responseText;

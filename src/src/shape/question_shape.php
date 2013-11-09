@@ -7,6 +7,10 @@ Extends: Shape,
 		this.parent(width,height,spawnX,spawnY,game,src,backgroundColor,message)
 
                	//QUESTIONS 
+		if (question = "")
+		{
+			this.mQuestion = new Question("1","2");
+		}
 		this.mQuestion = question; // the question object that contains a question and answer.
                 this.mShowQuestionObject = true; //even if we have a valid question object we can shut off showing it.
                 this.mShowQuestion = true; //toggles between question or answer text from question object
