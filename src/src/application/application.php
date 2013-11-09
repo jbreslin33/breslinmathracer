@@ -64,11 +64,6 @@ var Application = new Class(
                 this.mMouseMoveEvent = 0;
 
                 document.addEvent("mousemove", this.mouseMove);
-                //document.addEvent("click", this.click);
-                //document.addEvent("mousedown", this.mouseDown);
-                //document.addEvent("mouseup", this.mouseup);
-                //document.addEvent("mousemove", this.mouseMove);
-                //document.addEvent("keyup", this.keyup);
                 document.body.style.cursor = 'crosshair';
 
         	//START UPDATING
@@ -87,27 +82,22 @@ var Application = new Class(
         {
                 if (this.mOn)
                 {
-
-			//if no game get one....
+			
 			if (this.mGame == 0 && this.mSentForGame == false)
 			{
-				this.log('what');
 				this.mSentForGame = true;
-				this.getGameFromServer();	
+				this.getGameIDFromServer();	
 			}
-		
+	/*	
 			if (this.mGame)
 			{
 				this.mGame.update();
 			}
-/*
 			if (this.mGame)
 			{
 
-				//if (this.mWait == true && this.mWaiting = false)
 				if (this.mEnteredDoor == true && this.mWait == false)
 				{
-					//run ajax function to get new db stuff then set mWaiting to true  	
 					this.mWait = true;
 					this.getNewStuff();
 				}		
@@ -120,7 +110,7 @@ var Application = new Class(
 		}
         },
  
-	getGameFromServer: function()
+	getGameIDFromServer: function()
         {
                 var xmlhttp;
 
@@ -137,7 +127,7 @@ var Application = new Class(
                         console.log('gamellll:' + xmlhttp.responseText)
                         //if (xmlhttp.responseText == "1")
 			//{
-				APPLICATION.mGame = new Dungeon(APPLICATION);
+				//APPLICATION.mGame = new Dungeon(APPLICATION);
 			//}
 /*
                         r =  xmlhttp.responseText;
