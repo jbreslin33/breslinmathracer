@@ -18,6 +18,7 @@ var Application = new Class(
 			this.mAnswers  [i] = answers  [i];
 		} 
 */
+		this.mVariable = 13;
 		this.mWait = false;
 		this.mEnteredDoor = false;
 		this.mUsername = username;
@@ -128,6 +129,7 @@ var Application = new Class(
                         if (xmlhttp.responseText == "1")
 			{
 				APPLICATION.log('got 1 for an answer');
+				APPLICATION.log('APPLICATION.mVariable:' + APPLICATION.mVariable);
 				//APPLICATION.mGame = new Dungeon(APPLICATION);
 			}
 /*
