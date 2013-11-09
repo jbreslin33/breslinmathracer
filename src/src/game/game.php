@@ -35,6 +35,9 @@ var Game = new Class(
 		/********* BOUNDS *******************/ 
                 //create bounds
                 this.createBounds(60,735,380,35);
+	
+		this.standardGameAttempt();
+
         },
  	
 	log: function(msg)
@@ -78,6 +81,27 @@ var Game = new Class(
 			
 			this.mScoreOnServer = str;
 		}
+	},
+
+	standardGameAttempt: function()
+	{
+  		var xmlhttp;
+                        
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+			console.log(xmlhttp.responseText);			  
+                }
+                xmlhttp.open("GET","../../web/game/standard_games_attempts.php",true);
+                xmlhttp.send();
+                this.timeWarning = true;
 	},
 	
 	checkTime: function()
