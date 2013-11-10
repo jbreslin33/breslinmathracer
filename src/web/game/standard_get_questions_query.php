@@ -58,7 +58,11 @@ if ($numberOfRowsInCounting > 0)
 			echo $q;
 			echo ",";
 			echo $a;
-			echo ",";
+			$c = $scoreNeeded - 1;	
+			if ($i < $c)
+			{ 
+				echo ",";
+			}
 		}
 	}
 	$numberOfRows = $scoreNeeded;
