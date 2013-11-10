@@ -17,9 +17,6 @@ Extends: Game,
 
 	createQuestionStuff: function()
 	{
-        	//create questions
-        	this.createQuestions();
-	
 		this.createControlObject();
 	},
 
@@ -39,6 +36,10 @@ Extends: Game,
 
 		if (this.mGotQuestions && this.mGettingQuestions == false)
 		{
+			if (!this.mControlObject)	
+			{
+				this.createControlObject();
+			}
                 	if (this.mOn)
                 	{
                         	//check for quiz complete
@@ -121,15 +122,6 @@ Extends: Game,
                 }
         },
 
-        createQuestions: function()
-        {
-                for (i = 0; i < this.mApplication.mScoreNeeded; i++)
-                {
-                        var question = new Question(this.mApplication.mQuestions[i],this.mApplication.mAnswers[i]);
-                        this.mQuiz.mQuestionArray.push(question);
-                }
-        },
-        
 	createControlObject: function()
         {
                 //*******************CONTROL OBJECT
