@@ -9,7 +9,6 @@ Extends: Game,
                 /************** QUIZ **********/
 		this.parent(application);
 
-		this.mCreateQuestionStuff = false;
 		this.mGotQuestions = false;
 		this.mGettingQuestions = false;
 
@@ -35,18 +34,8 @@ Extends: Game,
         {
 		this.parent();
 
-		if (this.mCreateQuestionStuff)
-		{
-			this.createQuestionStuff();
-			this.mCreateQuestionStuff = false;
-		}
-
 		if (this.mGotQuestions && this.mGettingQuestions == false)
 		{
-			if (!this.mControlObject)	
-			{
-				this.createControlObject();
-			}
                 	if (this.mOn)
                 	{
                         	//check for quiz complete
@@ -97,7 +86,7 @@ Extends: Game,
 					question = new Question(questionStringArray[i],questionStringArray[i + 1]);
 					APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
 				}
-				APPLICATION.mGame.mCreateQuestionStuff = true;
+				APPLICATION.mGame.createQuestionStuff();
 			}		
                 }
                 xmlhttp.open("GET","../../web/game/standard_get_questions_query.php",true);
