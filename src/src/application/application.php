@@ -7,19 +7,6 @@ var Application = new Class(
 	initialize: function()
         {
 		/************ questions array from server db  later this need come in ajax*****/
-		this.mQuestions = new Array();
-		this.mAnswers   = new Array();
-		this.mScoreNeeded = 0; 
-/*
-		this.mScoreNeeded = scoreNeeded; 
-		for (i = 0; i < this.mScoreNeeded; i++)
-		{
-			this.mQuestions[i] = questions[i];
-			this.mAnswers  [i] = answers  [i];
-		} 
-*/
-		this.mVariable = 13;
-		this.mWait = false;
 		this.mEnteredDoor = false;
 		this.mUsername = username;
 		
@@ -93,21 +80,6 @@ var Application = new Class(
 			{
 				this.mGame.update();
 			}
-	/*	
-			if (this.mGame)
-			{
-
-				if (this.mEnteredDoor == true && this.mWait == false)
-				{
-					this.mWait = true;
-					this.getNewStuff();
-				}		
-				else
-				{
-					this.mGame.update();
-				}
-			}
-*/
 		}
         },
  
@@ -125,11 +97,8 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        console.log('gamellll:' + xmlhttp.responseText)
                         if (xmlhttp.responseText == "1")
 			{
-				APPLICATION.log('got 1 for an answer');
-				APPLICATION.log('APPLICATION.mVariable:' + APPLICATION.mVariable);
 				APPLICATION.mGame = new Dungeon(APPLICATION);
 			}
                 }
@@ -154,7 +123,6 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         console.log(xmlhttp.responseText);
-			//this.mWait = false;
 				
 		}
                 xmlhttp.open("GET","../../web/game/standard_question_query2.php",true);
