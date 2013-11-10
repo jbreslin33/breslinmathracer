@@ -10,6 +10,7 @@ Extends: Shape,
 		if (question = "")
 		{
 			this.mQuestion = new Question("1","2");
+			this.log('got notthnin');
 		}
 		this.mQuestion = question; // the question object that contains a question and answer.
                 this.mShowQuestionObject = true; //even if we have a valid question object we can shut off showing it.

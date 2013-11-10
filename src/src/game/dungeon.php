@@ -11,18 +11,20 @@ Extends: GameQuiz,
 
 	createQuestionStuff: function()
 	{
+		this.createQuestionShapes();
+		
 		this.createControlObject();
 
 		scoreText = '<font size="2"> Needed :' +  this.mApplication.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 
- 		//create key
-        	//this.createKey("/images/key/key_dungeon.gif");
+		this.createChasers();
+ 		
+		//create key
+        	this.createKey("/images/key/key_dungeon.gif");
 
         	//create door
-        	//this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
-		this.createChasers();
-		this.createQuestionShapes();
+        	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 	},
 
 	createControlObject: function()
@@ -61,8 +63,7 @@ Extends: GameQuiz,
 
 	createQuestionShapes: function()
 	{
-                count = 0;
-                console.log('lengh of qeustionArray:' + this.mQuiz.mQuestionArray.length);
+  count = 0;
                 for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
                 {
                         var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
@@ -75,19 +76,20 @@ Extends: GameQuiz,
                         var questionMountee = new QuestionShape(1,1,100,100,this,this.mQuiz.getSpecificQuestion(count),"","orange","questionMountee");
                         questionMountee.setMountable(true);
                         this.addToShapeArray(questionMountee);
-        		shape.setStartingMountee(questionMountee);
-                        questionMountee.showQuestion(true);
+                        shape.setStartingMountee(questionMountee);
+                        questionMountee.showQuestion(false);
 
                         //do the mount
                         shape.mount(questionMountee,0);
 
                         questionMountee.setBackgroundColor("transparent");
 
-			//evaluate questions
-			questionMountee.setEvaluateQuestions(false);
+                        //evaluate questions
+                        questionMountee.setEvaluateQuestions(false);
 
                         count++;
                 }
+
 	},
 
 	createChasers: function()
