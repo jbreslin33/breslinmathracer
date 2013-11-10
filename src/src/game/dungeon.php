@@ -6,13 +6,16 @@ Extends: GameQuiz,
 	initialize: function(application)
 	{
        		this.parent(application);
+        	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+	},
 
+	createQuestionStuff: function()
+	{
+		this.parent();
 
 		scoreText = '<font size="2"> Needed :' +  this.mApplication.mScoreNeeded + '</font>';
-
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
-        	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
-	
+
  		//create key
         	this.createKey("/images/key/key_dungeon.gif");
 
@@ -20,7 +23,6 @@ Extends: GameQuiz,
         	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 		this.createChasers();
 		this.createQuestionShapes();
-
 	},
 
 	createControlObject: function()
@@ -31,7 +33,6 @@ Extends: GameQuiz,
         	this.mControlObject.createMountPoint(0,-5,-41);
 
         	this.mControlObject.showQuestionObject(false);
-
         	
 		//text question mountee
         	var questionMountee = new QuestionShape(100,50,300,300,this,this.mQuiz.getSpecificQuestion(0),"","orange","questionMountee");

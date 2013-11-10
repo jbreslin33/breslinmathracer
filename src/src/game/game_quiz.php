@@ -10,12 +10,14 @@ Extends: Game,
 		this.parent(application);
 
 		this.mQuiz = new Quiz(this);
+	},
 
+	createQuestionStuff: function()
+	{
         	//create questions
         	this.createQuestions();
 	
 		this.createControlObject();
-
 	},
 
         resetGame: function()
