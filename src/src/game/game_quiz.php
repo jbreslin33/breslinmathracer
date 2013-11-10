@@ -9,6 +9,9 @@ Extends: Game,
                 /************** QUIZ **********/
 		this.parent(application);
 
+		this.mGotQuestions = false;
+		this.mGettingQuestions = false;
+
 		this.mQuiz = new Quiz(this);
 	},
 
@@ -34,22 +37,53 @@ Extends: Game,
         {
 		this.parent();
 
-                if (this.mOn)
+		if (this.mGotQuestions && this.mGettingQuestions)
+		{
+                	if (this.mOn)
+                	{
+                        	//check for quiz complete
+                        	if (this.mQuiz)
+                        	{
+                                	if (this.mQuiz.isQuizComplete())
+                                	{
+                                        	// update score one last time
+                                        	this.updateScore();
+                                        	// set game end time
+                                        	this.quizComplete();
+                                        	// putting this in for now we may not need it
+                                        	this.gameOver = true;
+                                	}
+                        	}
+                	}
+		}
+		else
+		{
+			this.getQuestions();
+		}
+        },
+
+	getQuestions: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {// code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
                 {
-                        //check for quiz complete
-                        if (this.mQuiz)
+                        console.log('getQuestions:' + xmlhttp.responseText)
+                        if (xmlhttp.responseText == "1")
                         {
-                                if (this.mQuiz.isQuizComplete())
-                                {
-                                        // update score one last time
-                                        this.updateScore();
-                                        // set game end time
-                                        this.quizComplete();
-                                        // putting this in for now we may not need it
-                                        this.gameOver = true;
-                                }
                         }
                 }
+                xmlhttp.open("GET","../../web/game/standard_get_questions_query.php",true);
+                xmlhttp.send();
+                this.timeWarning = true;
         },
 
         quizComplete: function()

@@ -132,13 +132,6 @@ var Application = new Class(
 				APPLICATION.log('APPLICATION.mVariable:' + APPLICATION.mVariable);
 				APPLICATION.mGame = new Dungeon(APPLICATION);
 			}
-/*
-                        r =  xmlhttp.responseText;
-                        console.log('gameID:' + r);
-			if (r == '1')
-			{
-			}
-*/
                 }
                 xmlhttp.open("GET","../../web/game/standard_games_query.php",true);
                 xmlhttp.send();
