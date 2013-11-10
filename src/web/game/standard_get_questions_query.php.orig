@@ -15,6 +15,7 @@ $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error())
 //get numer of rows which will also be score needed
 $numberOfRowsInQuestions = pg_num_rows($result);
 
+$jsonArray = array();
 
 if ($numberOfRowsInQuestions > 0)
 {
@@ -38,7 +39,7 @@ $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error())
 
 //get numer of rows which will also be score needed
 $numberOfRowsInCounting = pg_num_rows($result);
-echo "counting";
+
 if ($numberOfRowsInCounting > 0)
 {
 	while ($row = pg_fetch_row($result))
@@ -55,8 +56,8 @@ if ($numberOfRowsInCounting > 0)
 		{	
 			$q = $count_by * $i + $start_number;
 			$a = $q + $count_by;
-			echo $q;
-			echo $a;
+			$jsonArray[i][0] = $q;
+			$jsonArray[i][1] = $a;
 		}
 	}
 	$numberOfRows = $scoreNeeded;
@@ -236,7 +237,7 @@ if ($numberOfRowsInDivision > 0)
 			{
                         //	echo "answers[$i] = $a";
 			}
-                        echo "</script>";
+                        //echo "</script>";
                 }
         }
         $numberOfRows = $scoreNeeded;
@@ -244,6 +245,7 @@ if ($numberOfRowsInDivision > 0)
         //echo "scoreNeeded = $scoreNeeded;";
         //echo "numberOfRows = $numberOfRows;";
         //echo "</script>";
+	echo json_encode($jsonArray);
 }
 
 ?>
