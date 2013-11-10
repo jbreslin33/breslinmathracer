@@ -4,8 +4,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 session_start();
 $conn = dbConnect();
 
-echo "query";
-
 //*******************     anything in questions? *******************************
 $query = "select question, answer, question_order from questions where level_id = ";
 $query .= $_SESSION["next_level_id"];
@@ -58,7 +56,9 @@ if ($numberOfRowsInCounting > 0)
 			$q = $count_by * $i + $start_number;
 			$a = $q + $count_by;
 			echo $q;
+			echo ",";
 			echo $a;
+			echo ",";
 		}
 	}
 	$numberOfRows = $scoreNeeded;
