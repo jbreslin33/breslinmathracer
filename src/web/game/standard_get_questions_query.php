@@ -4,6 +4,9 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 session_start();
 $conn = dbConnect();
 
+$returnString = "";
+
+
 //*******************     anything in questions? *******************************
 $query = "select question, answer, question_order from questions where level_id = ";
 $query .= $_SESSION["next_level_id"];
@@ -55,17 +58,20 @@ if ($numberOfRowsInCounting > 0)
 		{	
 			$q = $count_by * $i + $start_number;
 			$a = $q + $count_by;
-			echo $q;
-			echo ",";
-			echo $a;
+
+			$returnString .= $q;
+			$returnString .= ",";
+			$returnString .= $a;
+
 			$c = $scoreNeeded - 1;	
 			if ($i < $c)
 			{ 
-				echo ",";
+				$returnString .= ",";
 			}
 		}
 	}
 	$numberOfRows = $scoreNeeded;
+	echo $returnString;
 }
 
 //*******************     anything in addition? if so override above ^ **********************************
@@ -149,7 +155,7 @@ if ($numberOfRowsInSubtraction > 0)
 			{
                         //	echo "answers[$i] = $a";
 			}
-                        echo "</script>";
+                        //echo "</script>";
                 }
         }
         $numberOfRows = $scoreNeeded;
@@ -242,7 +248,7 @@ if ($numberOfRowsInDivision > 0)
 			{
                         //	echo "answers[$i] = $a";
 			}
-                        echo "</script>";
+                        //echo "</script>";
                 }
         }
         $numberOfRows = $scoreNeeded;
@@ -251,5 +257,4 @@ if ($numberOfRowsInDivision > 0)
         //echo "numberOfRows = $numberOfRows;";
         //echo "</script>";
 }
-
 ?>

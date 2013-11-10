@@ -80,15 +80,18 @@ Extends: Game,
                 {
                         //console.log('getQuestions:' + xmlhttp.responseText)
                         var questionString = xmlhttp.responseText;
-			var questionStringArray = questionString.split(","); 
-			for (i = 0; i < questionStringArray.length; i++)
+			if (questionString.length > 0)
 			{
-				console.log('q:' + questionStringArray[i]);
+				console.log('string:' + questionString);
+				var questionStringArray = questionString.split(","); 
+				for (i = 0; i < questionStringArray.length; i++)
+				{
+					if (i == 0)
+					{
+						console.log('q:' + questionStringArray[i]);
+					}
+				}
 			}		
-		
-                        if (xmlhttp.responseText == "1")
-                        {
-                        }
                 }
                 xmlhttp.open("GET","../../web/game/standard_get_questions_query.php",true);
                 xmlhttp.send();
