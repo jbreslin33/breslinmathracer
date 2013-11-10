@@ -11,7 +11,7 @@ Extends: GameQuiz,
 
 	createQuestionStuff: function()
 	{
-		this.parent();
+		this.createControlObject();
 
 		scoreText = '<font size="2"> Needed :' +  this.mApplication.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);

@@ -15,11 +15,6 @@ Extends: Game,
 		this.mQuiz = new Quiz(this);
 	},
 
-	createQuestionStuff: function()
-	{
-		this.createControlObject();
-	},
-
         resetGame: function()
         {
 		this.parent();
