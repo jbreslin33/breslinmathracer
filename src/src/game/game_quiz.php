@@ -86,7 +86,8 @@ Extends: Game,
 				for (i = 0; i < questionStringArray.length; i++)
 				{
 					console.log('log:' + questionStringArray[i]);		
-					
+					question = new Question(questionStringArray[i],questionStringArray[i + 1]);
+					APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
 				}
 			}		
                 }
