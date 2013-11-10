@@ -63,7 +63,7 @@ Extends: GameQuiz,
 
 	createQuestionShapes: function()
 	{
-  count = 0;
+ 		count = 0;
                 for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
                 {
                         var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
