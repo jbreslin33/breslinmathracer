@@ -78,7 +78,6 @@ Extends: Game,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        //console.log('getQuestions:' + xmlhttp.responseText)
                         var questionString = xmlhttp.responseText;
 			if (questionString.length > 0)
 			{
@@ -86,6 +85,7 @@ Extends: Game,
 				var questionStringArray = questionString.split(","); 
 				for (i = 0; i < questionStringArray.length; i++)
 				{
+					console.log('log:' + questionStringArray[i]);		
 					
 				}
 			}		
