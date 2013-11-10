@@ -37,7 +37,7 @@ Extends: Game,
         {
 		this.parent();
 
-		if (this.mGotQuestions && this.mGettingQuestions)
+		if (this.mGotQuestions && this.mGettingQuestions == false)
 		{
                 	if (this.mOn)
                 	{
@@ -59,6 +59,8 @@ Extends: Game,
 		else
 		{
 			this.getQuestions();
+			this.mGotQuestions = true;
+			this.mGettingQuestions = false;
 		}
         },
 

@@ -4,6 +4,8 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 session_start();
 $conn = dbConnect();
 
+echo "query";
+
 //*******************     anything in questions? *******************************
 $query = "select question, answer, question_order from questions where level_id = ";
 $query .= $_SESSION["next_level_id"];
