@@ -27,7 +27,15 @@ Extends: GameQuiz,
 
 	createControlObject: function()
 	{
-		this.parent();
+//*******************CONTROL OBJECT
+                this.mControlObject = new Player(50,50,400,300,this,this.mQuiz.getSpecificQuestion(0),"/images/characters/wizard.png","","controlObject");
+
+                //set animation instance
+                this.mControlObject.mAnimation = new AnimationAdvanced(this.mControlObject);
+                this.mControlObject.mAnimation.addAnimations('/images/characters/wizard_','.png');
+                this.addToShapeArray(this.mControlObject);
+
+//		this.parent();
 
         	this.mControlObject.mHideOnQuestionSolved = false;
         	this.mControlObject.createMountPoint(0,-5,-41);
