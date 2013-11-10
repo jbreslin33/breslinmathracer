@@ -17,10 +17,10 @@ Extends: GameQuiz,
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 
  		//create key
-        	this.createKey("/images/key/key_dungeon.gif");
+        	//this.createKey("/images/key/key_dungeon.gif");
 
         	//create door
-        	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
+        	//this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 		this.createChasers();
 		this.createQuestionShapes();
 	},
@@ -62,6 +62,7 @@ Extends: GameQuiz,
 	createQuestionShapes: function()
 	{
                 count = 0;
+                console.log('lengh of qeustionArray:' + this.mQuiz.mQuestionArray.length);
                 for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
                 {
                         var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
@@ -75,7 +76,7 @@ Extends: GameQuiz,
                         questionMountee.setMountable(true);
                         this.addToShapeArray(questionMountee);
         		shape.setStartingMountee(questionMountee);
-                        questionMountee.showQuestion(false);
+                        questionMountee.showQuestion(true);
 
                         //do the mount
                         shape.mount(questionMountee,0);
