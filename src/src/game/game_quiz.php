@@ -86,10 +86,7 @@ Extends: Game,
 				var questionStringArray = questionString.split(","); 
 				for (i = 0; i < questionStringArray.length; i++)
 				{
-					if (i == 0)
-					{
-						console.log('q:' + questionStringArray[i]);
-					}
+					
 				}
 			}		
                 }
