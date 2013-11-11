@@ -1,9 +1,12 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/web/login/check_login.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
+include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+
+//start new session
+session_start();
 
 $conn = dbConnect();
+
+include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 
 $query = "insert into levels_transactions (advancement_time, level_id, user_id) values (current_timestamp,'";
 $query .= $_SESSION["next_level_id"];
