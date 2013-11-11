@@ -80,8 +80,8 @@ Extends: Game,
 					console.log('lenght questionStringArray:' + questionStringArray.length);
 					var g = i + 1;
 					var h = parseInt(g);
-					//question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
-					question = new Question('1','1');
+					question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
+					//question = new Question('1','1');
 					APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
 					console.log('gq:' + question.getQuestion());
 					console.log('ga:' + question.getQuestion());
