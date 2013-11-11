@@ -39,7 +39,7 @@ var Game = new Class(
 		//keys
 		this.mKeysOn = true;
 	
-//		this.standardGameAttempt();
+		this.standardGameAttempt();
 
         },
  	
