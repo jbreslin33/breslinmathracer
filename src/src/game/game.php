@@ -160,6 +160,16 @@ var Game = new Class(
         {
                 if (this.mOn)
                 {
+
+			if (this.mGameOver)
+			{
+				//this.mGame.mApplication.mEnteredDoor = true;
+                        	//this.mGame.updateScore();
+                        	// set game end time
+                        	//this.mGame.quizComplete();
+				this.gameOver();
+			}
+
 			//get time since epoch and set lasttime
                 	e = new Date();
                 	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
@@ -202,6 +212,11 @@ var Game = new Class(
                 	this.saveOldPositions();
 		}
         },
+
+	gameOver: function()
+	{
+
+	},
 
 	/****************************** PROTECTED ***************************************/
 	
@@ -436,5 +451,6 @@ var Game = new Class(
         {
                 this.mScore++;
                 APPLICATION.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
+		this.updateScore();
         }
 });

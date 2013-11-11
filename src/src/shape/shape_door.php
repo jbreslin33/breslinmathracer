@@ -84,13 +84,7 @@ Extends: QuestionShape,
 		if (this.mGame.mApplication.mEnteredDoor == false)
 		{
 			console.log('entered Door!!!!');
-			//this.mGame.mApplication.mEnteredDoor = true;
-			this.mGame.updateScore();
-                        // set game end time
-                        this.mGame.quizComplete();
-                        // putting this in for now we may not need it
                         this.mGame.gameOver = true;
-
 		}
         }
 });
