@@ -10,7 +10,6 @@ Extends: Game,
 		this.parent(application);
 
 		this.mGotQuestions = false;
-		this.mGettingQuestions = false;
 
 		this.mQuiz = new Quiz(this);
 	},
@@ -29,7 +28,7 @@ Extends: Game,
         {
 		this.parent();
 
-		if (this.mGotQuestions && this.mGettingQuestions == false)
+		if (this.mGotQuestions)
 		{
                 	if (this.mOn)
                 	{
@@ -52,7 +51,6 @@ Extends: Game,
 		{
 			this.getQuestions();
 			this.mGotQuestions = true;
-			this.mGettingQuestions = false;
 		}
         },
 
