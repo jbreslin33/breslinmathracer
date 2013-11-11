@@ -7,7 +7,7 @@ Extends: Shape,
 		this.parent(width,height,spawnX,spawnY,game,src,backgroundColor,message)
 
                	//QUESTIONS 
-		if (question = "")
+		if (!question)
 		{
 			this.mQuestion = new Question("1","2");
 			this.log('got notthnin');
