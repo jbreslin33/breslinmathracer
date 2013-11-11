@@ -164,8 +164,9 @@ var Game = new Class(
 			if (this.mGameOver)
 			{
 				this.log('gameOver called');	
+				this.resetGame();
 				//this.gameOver();
-				this.mGameOver == false;
+				this.mGameOver = false;
 			}
 
 			//get time since epoch and set lasttime

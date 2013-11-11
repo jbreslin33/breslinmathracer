@@ -16,6 +16,7 @@ Extends: QuestionShape,
                 this.mOpenOnQuestionSolved = true;
 		
 		this.mUrl = url; 
+		this.mEnteredDoor = false;
 
         },
 
@@ -81,10 +82,14 @@ Extends: QuestionShape,
 	
 	enterDoor: function()
         {
-		if (!this.mGame.mGameOver)
+		if (!this.mEnteredDoor)
 		{
-			console.log('entered Door!!!!');
-                        this.mGame.mGameOver = true;
+			if (!this.mGame.mGameOver)
+			{
+				this.mEnteredDoor = true;
+				console.log('entered Door!!!!');
+                        	this.mGame.mGameOver = true;
+			}
 		}
         }
 });

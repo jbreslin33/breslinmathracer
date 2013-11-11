@@ -30,7 +30,7 @@ Extends: Game,
 
 		if (this.mGameOver)
 		{
-			this.mGotQuestions = false;
+			//this.mGotQuestions = false;
 		}
 
 		if (this.mGotQuestions)
