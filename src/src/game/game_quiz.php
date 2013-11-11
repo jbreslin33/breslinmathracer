@@ -78,7 +78,6 @@ Extends: Game,
 				for (i = 0; i < questionStringArray.length; i++)
 				{
 					console.log('lenght questionStringArray:' + questionStringArray.length);
-					console.log('log:' + questionStringArray[i]);		
 					var g = i + 1;
 					var h = parseInt(g);
 					//question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
