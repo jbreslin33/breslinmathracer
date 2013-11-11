@@ -11,6 +11,8 @@ Extends: GameQuiz,
 
 	createQuestionStuff: function()
 	{
+		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
+
 		this.createQuestionShapes();
 		
 		this.createControlObject();

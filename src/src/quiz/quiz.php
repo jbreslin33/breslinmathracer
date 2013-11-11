@@ -34,7 +34,7 @@ var Quiz = new Class(
 	
 	isQuizComplete: function()
 	{
-		if (this.mGame.getScore() >= this.mGame.mApplication.mScoreNeeded)
+		if (this.mGame.getScore() >= this.mGame.mScoreNeeded)
 		{
 			return true;
 		}
