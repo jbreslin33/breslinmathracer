@@ -83,6 +83,7 @@ Extends: QuestionShape,
         {
 		if (this.mGame.mApplication.mEnteredDoor == false)
 		{
+			console.log('entered Door!!!!');
 			this.mGame.mApplication.mEnteredDoor = true;
 		}
         }

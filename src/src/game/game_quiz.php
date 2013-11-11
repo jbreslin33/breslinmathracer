@@ -39,11 +39,11 @@ Extends: Game,
                                 	if (this.mQuiz.isQuizComplete())
                                 	{
                                         	// update score one last time
-                                        	this.updateScore();
+                                        	//this.updateScore();
                                         	// set game end time
-                                        	this.quizComplete();
+                                        	//this.quizComplete();
                                         	// putting this in for now we may not need it
-                                        	this.gameOver = true;
+                                        	//this.gameOver = true;
                                 	}
                         	}
                 	}
