@@ -17,7 +17,6 @@ var Application = new Class(
                 this.mOn = true;
 
 		this.mGame = 0;
-		this.mSentForGame = false;
 
 		//KEYS
 		if (this.mGame)
@@ -71,9 +70,8 @@ var Application = new Class(
                 if (this.mOn)
                 {
 			
-			if (this.mGame == 0 && this.mSentForGame == false)
+			if (this.mGame == 0)
 			{
-				this.mSentForGame = true;
 				this.getGameIDFromServer();	
 			}
 			if (this.mGame)
@@ -82,6 +80,12 @@ var Application = new Class(
 			}
 		}
         },
+
+	newGame: function()
+	{
+		this.log('newGame!');
+		this.mGame = 0;	
+	},
  
 	getGameIDFromServer: function()
         {

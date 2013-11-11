@@ -167,6 +167,7 @@ var Game = new Class(
 				this.gameOver();
 				this.resetGame();
 				this.mGameOver = false;
+				APPLICATION.newGame();	
 			}
 
 			//get time since epoch and set lasttime

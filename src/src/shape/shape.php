@@ -106,6 +106,8 @@ var Shape = new Class(
 		this.mHideOnDrop = false; 
         },
 
+	
+
 	/****** LOGGING ******************/
 
         log: function(msg)
