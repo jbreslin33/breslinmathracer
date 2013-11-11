@@ -28,6 +28,11 @@ Extends: Game,
         {
 		this.parent();
 
+		if (this.mGameOver)
+		{
+			this.mGotQuestions = false;
+		}
+
 		if (this.mGotQuestions)
 		{
                 	if (this.mOn)
@@ -51,6 +56,7 @@ Extends: Game,
 		{
 			this.getQuestions();
 			this.mGotQuestions = true;
+			this.mGameOver = false;
 		}
         },
 
