@@ -163,6 +163,7 @@ var Game = new Class(
 
 			if (this.mGameOver)
 			{
+				this.advanceToNextLevel();
 				this.log('gameOver called');	
 				this.sendGameTimeEnd();
 				this.resetGame();
@@ -213,7 +214,6 @@ var Game = new Class(
                 	this.saveOldPositions();
 		}
         },
-
 	gameOver: function()
 	{
                	for (i = 0; i < this.mShapeArray.length; i++)
@@ -223,6 +223,28 @@ var Game = new Class(
                         this.mShapeArray[i].mCollisionOn = false;
 		}
 	},
+
+	advanceToNextLevel: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        // code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+
+                }
+                xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
+                xmlhttp.send();
+        },
 
 	sendGameTimeEnd: function()
 	{
