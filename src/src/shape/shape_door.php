@@ -19,6 +19,12 @@ Extends: QuestionShape,
 		this.mEnteredDoor = false;
 
         },
+	
+	reset: function()
+	{
+		this.mEnteredDoor = false 
+		this.mOpen = false;	
+	},
 
         update: function(delta)
 	{
