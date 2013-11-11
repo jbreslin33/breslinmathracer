@@ -81,10 +81,10 @@ Extends: QuestionShape,
 	
 	enterDoor: function()
         {
-		if (this.mGame.mApplication.mEnteredDoor == false)
+		if (!this.mGame.mGameOver)
 		{
 			console.log('entered Door!!!!');
-                        this.mGame.gameOver = true;
+                        this.mGame.mGameOver = true;
 		}
         }
 });

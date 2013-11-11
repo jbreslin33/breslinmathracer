@@ -23,7 +23,7 @@ var Game = new Class(
                 this.mOn = true;
 				
 		// may get rid of later and just use mOn
-		this.gameOver = false;
+		this.mGameOver = false;
 		this.timeWarning = false;
                 
 		/**************** TIME ************/
@@ -54,7 +54,7 @@ var Game = new Class(
 	//brian - update score in games_attempts table		
 	updateScore: function()
 	{
-		if(this.gameOver == false)
+		if(this.mGameOver == false)
 		{
 			var str = this.getScore();
 			this.log('str:' + str);	
@@ -163,10 +163,6 @@ var Game = new Class(
 
 			if (this.mGameOver)
 			{
-				//this.mGame.mApplication.mEnteredDoor = true;
-                        	//this.mGame.updateScore();
-                        	// set game end time
-                        	//this.mGame.quizComplete();
 				this.gameOver();
 			}
 
@@ -215,7 +211,24 @@ var Game = new Class(
 
 	gameOver: function()
 	{
+        	var xmlhttp;
 
+                if (window.XMLHttpRequest)
+                {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        // code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+
+                }
+                xmlhttp.open("GET","../../src/database/set_game_end_time.php",true);
+                xmlhttp.send();
 	},
 
 	/****************************** PROTECTED ***************************************/
