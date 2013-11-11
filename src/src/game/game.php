@@ -164,8 +164,8 @@ var Game = new Class(
 			if (this.mGameOver)
 			{
 				this.log('gameOver called');	
+				this.gameOver();
 				this.resetGame();
-				//this.gameOver();
 				this.mGameOver = false;
 			}
 
