@@ -164,8 +164,9 @@ var Game = new Class(
 			if (this.mGameOver)
 			{
 				this.log('gameOver called');	
-				this.gameOver();
+				this.sendGameTimeEnd();
 				this.resetGame();
+				this.gameOver();
 				this.mGameOver = false;
 				APPLICATION.newGame();	
 			}
@@ -214,6 +215,16 @@ var Game = new Class(
         },
 
 	gameOver: function()
+	{
+               	for (i = 0; i < this.mShapeArray.length; i++)
+		{
+                        this.mShapeArray[i].setVisibility(false);
+                        this.mShapeArray[i].mCollidable = false;
+                        this.mShapeArray[i].mCollisionOn = false;
+		}
+	},
+
+	sendGameTimeEnd: function()
 	{
         	var xmlhttp;
 
