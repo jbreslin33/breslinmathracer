@@ -17,6 +17,7 @@ var Application = new Class(
                 this.mOn = true;
 
 		this.mGame = 0;
+		this.mInstantiatedGame = false;
 
 		//KEYS
 		if (this.mGame)
@@ -83,6 +84,7 @@ var Application = new Class(
 
 	newGame: function()
 	{
+		this.mInstantiatedGame = false;
 		this.log('newGame!');
 		this.mGame = 0;	
 	},
@@ -100,9 +102,10 @@ var Application = new Class(
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.responseText == "1")
+                 {
+                        if (xmlhttp.responseText == "1" && APPLICATION.mInstantiatedGame == false) 
 			{
+				APPLICATION.mInstantiatedGame = true;
 				APPLICATION.mGame = new Dungeon(APPLICATION);
 			}
                 }
