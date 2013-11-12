@@ -10,6 +10,7 @@ Extends: Game,
 		this.parent(application);
 
 		this.mGotQuestions = false;
+		this.mGotIt = false;
 
 		this.mQuiz = new Quiz(this);
 	},
@@ -51,9 +52,9 @@ Extends: Game,
                 xmlhttp.onreadystatechange=function()
                 {
                         var questionString = xmlhttp.responseText;
-			if (questionString.length > 0)
+			if (questionString.length > 0 && APPLICATION.mGame.mGotIt == false)
 			{
-				console.log('string:' + questionString);
+				APPLICATION.mGame.mGotIt = true;
 				var questionStringArray = questionString.split(","); 
 				for (i = 0; i < questionStringArray.length; i++)
 				{
