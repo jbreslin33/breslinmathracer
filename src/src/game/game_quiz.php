@@ -28,11 +28,7 @@ Extends: Game,
         {
 		this.parent();
 
-		if (this.mGotQuestions)
-		{
-		
-		}
-		else
+		if (!this.mGotQuestions)
 		{
 			this.getQuestions();
 			this.mGotQuestions = true;
