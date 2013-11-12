@@ -31,8 +31,8 @@ Extends: Game,
 
 		if (!this.mGotQuestions)
 		{
-			this.getQuestions();
 			this.mGotQuestions = true;
+			this.getQuestions();
 			this.mGameOver = false;
 		}
         },
@@ -58,14 +58,10 @@ Extends: Game,
 				var questionStringArray = questionString.split(","); 
 				for (i = 0; i < questionStringArray.length; i++)
 				{
-					console.log('lenght questionStringArray:' + questionStringArray.length);
 					var g = i + 1;
 					var h = parseInt(g);
 					question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
-					//question = new Question('1','1');
 					APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
-					console.log('gq:' + question.getQuestion());
-					console.log('ga:' + question.getQuestion());
 					i++;
 				}
 				APPLICATION.mGame.createQuestionStuff();
