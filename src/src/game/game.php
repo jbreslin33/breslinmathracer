@@ -133,7 +133,6 @@ var Game = new Class(
 
  	resetGame: function()
         {
-                
 		//call reset on all shapes
                 for (i=0; i < this.mShapeArray.length; i++)
                 {
