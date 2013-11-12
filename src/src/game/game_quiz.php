@@ -28,29 +28,9 @@ Extends: Game,
         {
 		this.parent();
 
-		if (this.mGameOver)
-		{
-			//this.mGotQuestions = false;
-		}
-
 		if (this.mGotQuestions)
 		{
-                	if (this.mOn)
-                	{
-                        	//check for quiz complete
-                        	if (this.mQuiz)
-                        	{
-                                	if (this.mQuiz.isQuizComplete())
-                                	{
-                                        	// update score one last time
-                                        	//this.updateScore();
-                                        	// set game end time
-                                        	//this.quizComplete();
-                                        	// putting this in for now we may not need it
-                                        	//this.gameOver = true;
-                                	}
-                        	}
-                	}
+		
 		}
 		else
 		{
