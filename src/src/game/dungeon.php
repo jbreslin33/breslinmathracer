@@ -1,12 +1,22 @@
 var Dungeon = new Class(
 {
 
-Extends: GameQuiz,
+Extends: Game,
 
 	initialize: function(application)
 	{
        		this.parent(application);
+		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+	},
+
+	update: function()
+	{
+		this.parent()
+		if( this.mQuiz)
+		{
+			this.mQuiz.update();
+		}
 	},
 
 	createQuestionStuff: function()
