@@ -21,7 +21,6 @@ Extends: Game,
 	
 	update: function()
         {
-		console.log('ddd');
                 this.parent();
                 if (this.mQuizComplete == false)
                 {
@@ -46,15 +45,6 @@ Extends: Game,
                         }
                 }
         },
-
-	update: function()
-	{
-		this.parent()
-		if( this.mQuiz)
-		{
-			this.mQuiz.update();
-		}
-	},
 
 	createWorld: function()
 	{
