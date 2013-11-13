@@ -32,7 +32,6 @@ Extends: Game,
 		{
 			this.mGotQuestions = true;
 			this.getQuestions();
-			this.mGameOver = false;
 		}
         },
 

@@ -9,6 +9,9 @@ var Application = new Class(
 		/************ questions array from server db  later this need come in ajax*****/
 		this.mEnteredDoor = false;
 		this.mUsername = username;
+
+		/******************************
+		this.mLevelCompleted = false;
 		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);

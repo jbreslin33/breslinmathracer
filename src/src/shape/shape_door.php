@@ -94,7 +94,7 @@ Extends: QuestionShape,
 			{
 				this.mEnteredDoor = true;
 				console.log('entered Door!!!!');
-                        	this.mGame.mGameOver = true;
+				this.mGame.mApplication.mLevelCompleted = true;	
 			}
 		}
         }
