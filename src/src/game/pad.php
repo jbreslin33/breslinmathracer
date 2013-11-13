@@ -41,6 +41,7 @@ Extends: Game,
                                 {
                                         this.mOutOfTime = true;
                                         alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
+					this.resetGame();
                                 }
                         }
                 }
