@@ -46,15 +46,19 @@ Extends: Game,
                 }
         },
 
+	createQuestions: function()
+	{
+ 		//dup questions
+                for (i = 0; i < 10; i++)
+                {
+                        question = new Question('1','1');
+                        this.mQuiz.mQuestionArray.push(question);
+                }
+	},
+
 	createWorld: function()
 	{
-		//dup questions
-		for (i = 0; i < 10; i++)
-		{
-			question = new Question('1','1');	
-			this.mQuiz.mQuestionArray.push(question);
-		}		
-	
+		this.createQuestions();	
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createNumberPad();
