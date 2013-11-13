@@ -127,6 +127,12 @@ Extends: Game,
                 this.mNumEight.mMesh.mGame = this;
                 this.mNumEight.mMesh.addEvent('click',this.numPadHit);
 
+		//9
+                this.mNumNine = new Shape(50,50,400,200,this,"BUTTON","","");
+                this.mNumNine.mMesh.innerHTML = '9';
+                this.mNumNine.mMesh.mGame = this;
+                this.mNumNine.mMesh.addEvent('click',this.numPadHit);
+
 		//Addition
                 this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
                 this.mNumAddition.mMesh.innerHTML = '+';
