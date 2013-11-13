@@ -8,7 +8,48 @@ Extends: Game,
        		this.parent(application);
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+
+ 		//times
+                this.mThresholdTime = 2000;
+                this.mAnswerTime = 0;
+                this.mQuestionStartTime = 0;
+                this.mOutOfTime = false;
+                this.mStartGameHit = false;
+                this.mUserAnswer = '';
+                this.mQuizComplete = false;
 	},
+
+	update: function()
+        {
+                if (this.mQuizComplete == false)
+                {
+                        this.parent();
+			
+			if( this.mQuiz)
+			{
+				this.mQuiz.update();
+			}
+
+                        if (this.mQuiz.isQuizComplete())
+                        {
+                                this.mQuizComplete = true;
+                                alert('Electrical Bananas! Next Level!');
+                                nextLevelUrl = '/src/database/goto_next_level.php';
+                                window.location = nextLevelUrl;
+                        }
+
+                        if (this.mStartGameHit == true && this.mOutOfTime == false)
+                        {
+                                if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+                                {
+                                        this.mOutOfTime = true;
+                                        alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
+                                        location.reload()
+                                }
+                        }
+                }
+
+        },
 
 	update: function()
 	{
@@ -21,6 +62,13 @@ Extends: Game,
 
 	createWorld: function()
 	{
+		//dup questions
+		for (i = 0; i < 10; i++)
+		{
+			question = new Question('1','1');	
+			this.mQuiz.mQuestionArray.push(question);
+		}		
+	
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createNumberPad();
@@ -139,6 +187,98 @@ Extends: Game,
                 this.mNumEnter.mMesh.mGame = this;
                 this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
 
-	}
+	},
+	inputKeyHit: function(e)
+	{
+		if (e.key == 'enter')
+		{
+  			if (this.mGame.mStartGameHit == false)
+                	{
+                        	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+                        	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        	{
+                                	//this.mGame.incrementScore();
+                                	this.mGame.mQuiz.correctAnswer();
+                                	this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                        	}
+                        	else
+                        	{
+                                	this.mGame.mOutOfTime = true;
+                                	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                	//location.reload()
+                        	}
+                        	this.mGame.mStartGameHit = true;
+                        	this.mGame.mNumAnswer.mMesh.value = '';
+                	}
+                	else if (this.mGame.mStartGameHit == true)
+                	{
+                        	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+                        	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        	{
+                                	//this.mGame.incrementScore();
+                                	this.mGame.mQuiz.correctAnswer();
+                                	this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                        	}
+                        	else
+                        	{
+                                	this.mGame.mOutOfTime = true;
+                                	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                	//location.reload()
+                        	}
+                        	this.mGame.mStartGameHit = true;
+                        	this.mGame.mNumAnswer.mMesh.value = '';
+			}
+                	this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
+			this.mGame.mNumAnswer.mMesh.value = '';
+		}				
+	},
+
+	numPadHit: function()
+	{
+		if (this.innerHTML != 'Enter')
+		{
+			this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
+		}
+		
+		if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == false)
+		{
+			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+			if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+			{
+				//this.mGame.incrementScore();
+				this.mGame.mQuiz.correctAnswer();
+				this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;	
+			}
+			else
+			{
+				this.mGame.mOutOfTime = true;
+				alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+				location.reload()
+			}
+			this.mGame.mStartGameHit = true;
+			this.mGame.mNumAnswer.mMesh.value = '';
+		}
+		else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
+		{
+  			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
+                        if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        {
+                                //this.mGame.incrementScore();
+                                this.mGame.mQuiz.correctAnswer();
+                                this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                        }
+                        else
+                        {
+                                this.mGame.mOutOfTime = true;
+                                alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                location.reload()
+                        }
+                        this.mGame.mStartGameHit = true;
+                        this.mGame.mNumAnswer.mMesh.value = '';
+		}
+		this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
+		this.mGame.mNumAnswer.mMesh.focus();
+	},
+
 });
 
