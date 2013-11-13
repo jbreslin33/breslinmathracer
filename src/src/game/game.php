@@ -131,16 +131,13 @@ var Game = new Class(
 		}
 	},
 
- 	resetGame: function()
+ 	resetShapes: function()
         {
 		//call reset on all shapes
                 for (i=0; i < this.mShapeArray.length; i++)
                 {
 			this.mShapeArray[i].reset();
 		}
-
-		//reset score
-		this.setScore(0);
         },
 
 	/*********************** PUBLIC ***************************/
@@ -159,16 +156,23 @@ var Game = new Class(
         {
                 if (this.mOn)
                 {
-
+			//when you complete a level we should
+			//advance to next in db
+			//then get new level
+			//then check for a new game id
+			//then if same game d
+			if (this.mApplication.mLevelCompleted)
+			{
+				this.resetShapes();
+				this.setScore(0);
+				this.sendGameTimeEnd();
+				this.advanceToNextLevel();
+				//APPLICATION.newGame();	
+			}
 			if (this.mGameOver)
 			{
-				this.advanceToNextLevel();
-				this.log('gameOver called');	
-				this.sendGameTimeEnd();
-				this.resetGame();
-				this.gameOver();
-				this.mGameOver = false;
-				APPLICATION.newGame();	
+				//this.gameOver();
+				//this.mGameOver = false;
 			}
 
 			//get time since epoch and set lasttime
