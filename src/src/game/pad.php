@@ -7,7 +7,7 @@ Extends: Game,
 	{
        		this.parent(application);
 		this.mQuiz = new Quiz(this);
-        	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+        	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
  		//times
                 this.mThresholdTime = 2000;
@@ -18,13 +18,13 @@ Extends: Game,
                 this.mUserAnswer = '';
                 this.mQuizComplete = false;
 	},
-
+	
 	update: function()
         {
+		console.log('ddd');
                 this.parent();
                 if (this.mQuizComplete == false)
                 {
-			
 			if( this.mQuiz)
 			{
 				this.mQuiz.update();
@@ -45,7 +45,6 @@ Extends: Game,
                                 }
                         }
                 }
-
         },
 
 	update: function()
