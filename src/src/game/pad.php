@@ -197,7 +197,6 @@ Extends: Game,
                         	{
                                 	this.mGame.mOutOfTime = true;
                                 	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
-                                	//location.reload()
                         	}
                         	this.mGame.mStartGameHit = true;
                         	this.mGame.mNumAnswer.mMesh.value = '';
@@ -215,7 +214,6 @@ Extends: Game,
                         	{
                                 	this.mGame.mOutOfTime = true;
                                 	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
-                                	//location.reload()
                         	}
                         	this.mGame.mStartGameHit = true;
                         	this.mGame.mNumAnswer.mMesh.value = '';
@@ -245,7 +243,6 @@ Extends: Game,
 			{
 				this.mGame.mOutOfTime = true;
 				alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
-				location.reload()
 			}
 			this.mGame.mStartGameHit = true;
 			this.mGame.mNumAnswer.mMesh.value = '';
@@ -263,14 +260,13 @@ Extends: Game,
                         {
                                 this.mGame.mOutOfTime = true;
                                 alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
-                                location.reload()
                         }
                         this.mGame.mStartGameHit = true;
                         this.mGame.mNumAnswer.mMesh.value = '';
 		}
 		this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
 		this.mGame.mNumAnswer.mMesh.focus();
-	},
+	}
 
 });
 
