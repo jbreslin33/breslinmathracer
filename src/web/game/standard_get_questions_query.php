@@ -74,14 +74,19 @@ if ($numberOfRowsInCounting > 0)
 }
 
 //*******************     anything in addition? if so override above ^ **********************************
-$query = "select score_needed, addend_min, addend_max, number_of_addends from addition where level_id >= 14 AND level_id <= ";
+$query = "select score_needed, addend_a, addend_b, number_of_addends from addition where level_id >= 14 AND level_id <= ";
 $query .= $_SESSION["next_level_id"];
+$query .= " ORDER BY level_id";
 
 //get db result
 $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
 
 //get numer of rows which will also be score needed
 $numberOfRowsInAddition = pg_num_rows($result);
+
+$addend_a_array = array();
+$addend_b_array = array();
+
 
 if ($numberOfRowsInAddition > 0)
 {
@@ -90,14 +95,26 @@ if ($numberOfRowsInAddition > 0)
         {
                 //fill php vars from db only on first
                	$scoreNeeded = $row[0];
-               	$addend_one = $row[1];
-               	$addend_two = $row[2];
-
-		$returnString .= $addend_one;
-		$returnString .= ",";
-		$returnString .= $addend_two;
+               	$addend_a_array[$i] = $row[1];
+               	$addend_b_array[$i] = $row[2];
 		$i++;
         }
+	
+	$arrlength=count($addend_a_array);
+	for($j = 0; $j < $scoreNeeded; $j++)
+	{		
+		$randomRow = rand(0,$arrlength);
+		$returnString .= $addend_a_array[$randomRow];
+		$returnString .= ",";
+		$returnString .= $addend_b_array[$randomRow];
+ 		
+		$c = $scoreNeeded - 1;
+                if ($j < $c)
+                {
+                	$returnString .= ",";
+                }
+
+	}
         $numberOfRows = $numberOfRowsInAddition;
 }
 

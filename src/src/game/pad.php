@@ -49,26 +49,17 @@ Extends: Game,
 	resetGame: function()
 	{
 		this.log('resetGame called in pad');
-		this.mQuiz.mQuestionArray = 0; 
-		this.mQuiz.mQuestionArray = new Array(); 
+		this.mGameOver = true;
+		//this.mQuiz.mQuestionArray = 0; 
+		//this.mQuiz.mQuestionArray = new Array(); 
 	
-		this.createQuestions();
-		this.setScore(0);
+		//this.createQuestions();
+//		this.setScore(0);
 	},
 
-	createQuestions: function()
-	{
- 		//dup questions
-                for (i = 0; i < 10; i++)
-                {
-                        question = new Question('1','1');
-                        this.mQuiz.mQuestionArray.push(question);
-                }
-	},
 
 	createWorld: function()
 	{
-		this.createQuestions();	
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createNumberPad();
