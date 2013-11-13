@@ -31,7 +31,6 @@ Extends: GameSimple,
 		this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
 		this.mNumAnswer.mMesh.focus();
 
-		//create number pad
 		//Lock	
 		this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
 		this.mNumLock.mMesh.innerHTML = 'Lock';
