@@ -119,29 +119,6 @@ var Application = new Class(
                 this.timeWarning = true;
         },
 
- 
-	getNewStuff: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {// code for IE6, IE5
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        console.log(xmlhttp.responseText);
-				
-		}
-                xmlhttp.open("GET","../../web/game/standard_question_query2.php",true);
-                xmlhttp.send();
-                this.timeWarning = true;
-        },
-
 	/******************************* CONTROLS  *************/
         keyDown: function(event)
         {
