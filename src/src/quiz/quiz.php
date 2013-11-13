@@ -55,7 +55,7 @@ var Quiz = new Class(
                                         APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
                                         i++;
                                 }
-                                APPLICATION.mGame.createQuestionStuff();
+                                APPLICATION.mGame.createWorld();
                         }
                 }
                 xmlhttp.open("GET","../../web/game/standard_get_questions_query.php",true);

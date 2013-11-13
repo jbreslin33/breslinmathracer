@@ -19,7 +19,7 @@ Extends: Game,
 		}
 	},
 
-	createQuestionStuff: function()
+	createWorld: function()
 	{
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 

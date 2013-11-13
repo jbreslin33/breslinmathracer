@@ -19,13 +19,13 @@ Extends: Game,
 		}
 	},
 
-	createQuestionStuff: function()
+	createWorld: function()
 	{
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createQuestionShapes();
 		
-		this.createControlObject();
+		//this.createControlObject();
 
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
