@@ -21,9 +21,9 @@ Extends: Game,
 
 	update: function()
         {
+                this.parent();
                 if (this.mQuizComplete == false)
                 {
-                        this.parent();
 			
 			if( this.mQuiz)
 			{
@@ -34,8 +34,6 @@ Extends: Game,
                         {
                                 this.mQuizComplete = true;
                                 alert('Electrical Bananas! Next Level!');
-                                nextLevelUrl = '/src/database/goto_next_level.php';
-                                window.location = nextLevelUrl;
                         }
 
                         if (this.mStartGameHit == true && this.mOutOfTime == false)
@@ -44,7 +42,6 @@ Extends: Game,
                                 {
                                         this.mOutOfTime = true;
                                         alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
-                                        location.reload()
                                 }
                         }
                 }
