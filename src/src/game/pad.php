@@ -45,6 +45,16 @@ Extends: Game,
                         }
                 }
         },
+	
+	resetGame: function()
+	{
+		this.log('resetGame called in pad');
+		this.mQuiz.mQuestionArray = 0; 
+		this.mQuiz.mQuestionArray = new Array(); 
+	
+		this.createQuestions();
+		this.setScore(0);
+	},
 
 	createQuestions: function()
 	{
@@ -188,42 +198,43 @@ Extends: Game,
 	{
 		if (e.key == 'enter')
 		{
-  			if (this.mGame.mStartGameHit == false)
+  			if (APPLICATION.mGame.mStartGameHit == false)
                 	{
-                        	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
-                        	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        	APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+                        	if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
                         	{
-                                	//this.mGame.incrementScore();
-                                	this.mGame.mQuiz.correctAnswer();
-                                	this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                                	APPLICATION.mGame.mQuiz.correctAnswer();
+                                	APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;
                         	}
                         	else
                         	{
-                                	this.mGame.mOutOfTime = true;
-                                	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                	APPLICATION.mGame.mOutOfTime = true;
+                                	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
+					APPLICATION.mGame.resetGame();
                         	}
-                        	this.mGame.mStartGameHit = true;
-                        	this.mGame.mNumAnswer.mMesh.value = '';
+                        	APPLICATION.mGame.mStartGameHit = true;
+                        	APPLICATION.mGame.mNumAnswer.mMesh.value = '';
                 	}
-                	else if (this.mGame.mStartGameHit == true)
+                	else if (APPLICATION.mGame.mStartGameHit == true)
                 	{
-                        	this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
-                        	if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+                        	APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+                        	if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
                         	{
-                                	//this.mGame.incrementScore();
-                                	this.mGame.mQuiz.correctAnswer();
-                                	this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                                	//APPLICATION.mGame.incrementScore();
+                                	APPLICATION.mGame.mQuiz.correctAnswer();
+                                	APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;
                         	}
                         	else
                         	{
-                                	this.mGame.mOutOfTime = true;
-                                	alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                	APPLICATION.mGame.mOutOfTime = true;
+                                	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
+					APPLICATION.mGame.resetGame();
                         	}
-                        	this.mGame.mStartGameHit = true;
-                        	this.mGame.mNumAnswer.mMesh.value = '';
+                        	APPLICATION.mGame.mStartGameHit = true;
+                        	APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 			}
-                	this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
-			this.mGame.mNumAnswer.mMesh.value = '';
+                	APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
+			APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 		}				
 	},
 
@@ -231,45 +242,47 @@ Extends: Game,
 	{
 		if (this.innerHTML != 'Enter')
 		{
-			this.mGame.mNumAnswer.mMesh.value = this.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
+			APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
 		}
 		
-		if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == false)
+		if (this.innerHTML == 'Enter' && APPLICATION.mGame.mStartGameHit == false)
 		{
-			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
-			if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+			APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+			if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
 			{
-				//this.mGame.incrementScore();
-				this.mGame.mQuiz.correctAnswer();
-				this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;	
+				//APPLICATION.mGame.incrementScore();
+				APPLICATION.mGame.mQuiz.correctAnswer();
+				APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;	
 			}
 			else
 			{
-				this.mGame.mOutOfTime = true;
-				alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+				APPLICATION.mGame.mOutOfTime = true;
+				alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
+				APPLICATION.mGame.resetGame();
 			}
-			this.mGame.mStartGameHit = true;
-			this.mGame.mNumAnswer.mMesh.value = '';
+			APPLICATION.mGame.mStartGameHit = true;
+			APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 		}
-		else if (this.innerHTML == 'Enter' && this.mGame.mStartGameHit == true)
+		else if (this.innerHTML == 'Enter' && APPLICATION.mGame.mStartGameHit == true)
 		{
-  			this.mGame.mUserAnswer = this.mGame.mNumAnswer.mMesh.value;
-                        if (this.mGame.mUserAnswer == this.mGame.mQuiz.getQuestion().getAnswer())
+  			APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+                        if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
                         {
-                                //this.mGame.incrementScore();
-                                this.mGame.mQuiz.correctAnswer();
-                                this.mGame.mQuestionStartTime = this.mGame.mTimeSinceEpoch;
+                                //APPLICATION.mGame.incrementScore();
+                                APPLICATION.mGame.mQuiz.correctAnswer();
+                                APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;
                         }
                         else
                         {
-                                this.mGame.mOutOfTime = true;
-                                alert('Try again. Correct Answer is:' + this.mGame.mQuiz.getQuestion().getAnswer());
+                                APPLICATION.mGame.mOutOfTime = true;
+                                alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
+				APPLICATION.mGame.resetGame();
                         }
-                        this.mGame.mStartGameHit = true;
-                        this.mGame.mNumAnswer.mMesh.value = '';
+                        APPLICATION.mGame.mStartGameHit = true;
+                        APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 		}
-		this.mGame.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
-		this.mGame.mNumAnswer.mMesh.focus();
+		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
+		APPLICATION.mGame.mNumAnswer.mMesh.focus();
 	}
 
 });
