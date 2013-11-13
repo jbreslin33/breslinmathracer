@@ -15,6 +15,5 @@ $_SESSION["game_over"] = "false";
 
 //brian - attempt a game - still hardcoding game_id = 1
 insertIntoGamesAttempts($conn,$_SESSION["game_start_time"],1,$_SESSION["user_id"],$_SESSION["next_level"]);
-echo "hello i gameatt";
 ?>
 

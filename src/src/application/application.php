@@ -111,7 +111,7 @@ var Application = new Class(
                         if (xmlhttp.responseText == "6" && APPLICATION.mInstantiatedGame == false) 
 			{
 				APPLICATION.mInstantiatedGame = true;
-				APPLICATION.mGame = new Dungeon(APPLICATION);
+				APPLICATION.mGame = new Pad(APPLICATION);
 			}
                 }
                 xmlhttp.open("GET","../../web/game/standard_games_query.php",true);

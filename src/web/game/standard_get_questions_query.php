@@ -71,7 +71,6 @@ if ($numberOfRowsInCounting > 0)
 		}
 	}
 	$numberOfRows = $scoreNeeded;
-	echo $returnString;
 }
 
 //*******************     anything in addition? if so override above ^ **********************************
@@ -91,24 +90,18 @@ if ($numberOfRowsInAddition > 0)
         {
                 //fill php vars from db only on first
                	$scoreNeeded = $row[0];
-               	$addend_min = $row[1];
-               	$addend_max = $row[2];
-               	$number_of_addends = $row[3];
+               	$addend_one = $row[1];
+               	$addend_two = $row[2];
 
-                $a = $addend_min + $addend_max;
-		if ($a == 0)
-		{
-                       	//echo "answers[$i] = '0'";
-		}
-		else
-		{
-                       	//echo "answers[$i] = $a";
-		}
+		$returnString .= $addend_one;
+		$returnString .= ",";
+		$returnString .= $addend_two;
 		$i++;
         }
         $numberOfRows = $numberOfRowsInAddition;
 }
 
+echo $returnString;
 
 //*******************     anything in subtraction? if so override above ^ **********************************
 $query = "select score_needed, minuend_min, minuend_max, subtrahend_min, subtrahend_max, number_of_subtrahends, negative_difference from subtraction where level_id = ";
