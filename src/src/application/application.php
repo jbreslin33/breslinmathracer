@@ -106,8 +106,9 @@ var Application = new Class(
 			{
 				if (APPLICATION.mGameID == "1") 
 				{
-					console.log('if quiz..');
+					//console.log('if quiz..');
 					//so we need new questions...
+					/*
 					if (APPLICATION.mGame.mQuiz && this.mGotQuestions == false)
 					{
 						console.log('mGotQuestions set to false');
@@ -115,6 +116,7 @@ var Application = new Class(
                         			this.mGotQuestions = true;
 						APPLICATION.mGame.mQuiz.getQuestions(); 
 					}
+					*/
 				}
 				else
 				{
