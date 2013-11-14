@@ -10,15 +10,13 @@ var Application = new Class(
 		this.mEnteredDoor = false;
 		this.mUsername = username;
 
-		/******************************
+		/*********** LEVEL *******************
 		this.mLevelCompleted = false;
 		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
 
-		/************** On_Off **********/
-                this.mOn = true;
-
+		/********* GAME *******************/ 
 		this.mGame = 0;
 		this.mInstantiatedGame = false;
 
@@ -71,17 +69,13 @@ var Application = new Class(
 				
         update: function()
         {
-                if (this.mOn)
-                {
-			
-			if (this.mGame == 0)
-			{
-				this.getGameIDFromServer();	
-			}
-			if (this.mGame)
-			{
-				this.mGame.update();
-			}
+		if (this.mGame == 0)
+		{
+			this.getGameIDFromServer();	
+		}
+		if (this.mGame)
+		{
+			this.mGame.update();
 		}
         },
 
