@@ -103,7 +103,6 @@ var Application = new Class(
                  {
                         if (xmlhttp.responseText == "1" && APPLICATION.mInstantiatedGame == false) 
 			{
-				/*
 				console.log('got gameID 1');
 				if (APPLICATION.mGameID == "1") 
 				{
@@ -114,16 +113,14 @@ var Application = new Class(
 					console.log('new game');
 					APPLICATION.mLastGameID = APPLICATION.mGameID; 
 					APPLICATION.mGameID = "1"; 
-				*/
 					APPLICATION.mInstantiatedGame = true;
 					APPLICATION.mGame = new Dungeon(APPLICATION);
-				//}
+				}
 			}
                         if (xmlhttp.responseText == "6" && APPLICATION.mInstantiatedGame == false) 
 			{
-				/*
 				console.log('got gameID 6');
-				if (APPLICATION.mGameID == "6"
+				if (APPLICATION.mGameID == "6")
 				{
 					console.log('already have game 6');
 				}
@@ -132,10 +129,9 @@ var Application = new Class(
 					console.log('new game');
 					APPLICATION.mLastGameID = APPLICATION.mGameID; 
 					APPLICATION.mGameID = "6"; 
-				*/
 					APPLICATION.mInstantiatedGame = true;
 					APPLICATION.mGame = new Pad(APPLICATION);
-				//}
+				}
 			}
                 }
                 xmlhttp.open("GET","../../web/game/standard_games_query.php",true);
