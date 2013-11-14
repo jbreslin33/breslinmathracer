@@ -7,7 +7,7 @@ var Game = new Class(
 	initialize: function(application)
         {
 		this.mApplication = application;
-	
+
 		/********* SHAPES *******************/ 
 		//shape Array
        		this.mShapeArray = new Array();

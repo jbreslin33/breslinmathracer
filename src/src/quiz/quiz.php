@@ -51,8 +51,6 @@ var Quiz = new Class(
                                 {
                                         var g = i + 1;
                                         var h = parseInt(g);
-					console.log('qb:' + questionStringArray[i]);
-					console.log('ab:' + questionStringArray[h]);
                                         question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
                                         APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
                                         i++;

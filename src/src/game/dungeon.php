@@ -21,6 +21,16 @@ Extends: Game,
 
 	createWorld: function()
 	{
+		
+		for (i = 0; i < this.mShapeArray.length; i++)
+		{
+			this.mShapeArray[i].setVisibility(false);
+			this.mShapeArray[i].mCollidable = false;
+			this.mShapeArray[i].mCollisionOn = false;
+		}
+		this.mShapeArray = 0;
+		this.mShapeArray = new Array();
+
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createQuestionShapes();
@@ -30,13 +40,14 @@ Extends: Game,
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 
+		//chasers
 		this.createChasers();
- 		
-		//create key
+ 	
+		//key	
         	this.createKey("/images/key/key_dungeon.gif");
 
         	//create door
-        	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
+        	this.mDoor = this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 	},
 
 	createControlObject: function()
