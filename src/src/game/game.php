@@ -162,9 +162,7 @@ var Game = new Class(
 			this.resetShapes();
 			this.setScore(0);
 			this.sendGameTimeEnd();
-
-
-
+			this.mApplication.getGameIDFromServer();
 			//APPLICATION.newGame();	
 		}
 		if (this.mGameOver)

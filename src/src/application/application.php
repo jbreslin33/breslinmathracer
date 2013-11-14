@@ -101,32 +101,42 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                  {
-                        if (xmlhttp.responseText == "1" && APPLICATION.mInstantiatedGame == false) 
+                        //if (xmlhttp.responseText == "1" && APPLICATION.mInstantiatedGame == false) 
+                        if (xmlhttp.responseText == "1") 
 			{
-				console.log('got gameID 1');
 				if (APPLICATION.mGameID == "1") 
 				{
-					console.log('already have game 1');
+					console.log('if quiz..');
+					//so we need new questions...
+					if (APPLICATION.mGame.mQuiz && this.mGotQuestions == false)
+					{
+						console.log('mGotQuestions set to false');
+ 						this.mGotIt        = false;
+                        			this.mGotQuestions = true;
+						APPLICATION.mGame.mQuiz.getQuestions(); 
+					}
 				}
 				else
 				{
-					console.log('new game');
 					APPLICATION.mLastGameID = APPLICATION.mGameID; 
 					APPLICATION.mGameID = "1"; 
 					APPLICATION.mInstantiatedGame = true;
 					APPLICATION.mGame = new Dungeon(APPLICATION);
 				}
 			}
-                        if (xmlhttp.responseText == "6" && APPLICATION.mInstantiatedGame == false) 
+                        //if (xmlhttp.responseText == "6" && APPLICATION.mInstantiatedGame == false) 
+                        if (xmlhttp.responseText == "6") 
 			{
-				console.log('got gameID 6');
 				if (APPLICATION.mGameID == "6")
 				{
-					console.log('already have game 6');
+					//so we need new questions...
+					if (APPLICATION.mGame.mQuiz)
+					{
+						APPLICATION.mGame.mQuiz.mGotQuestions = false; 
+					}
 				}
 				else
 				{
-					console.log('new game');
 					APPLICATION.mLastGameID = APPLICATION.mGameID; 
 					APPLICATION.mGameID = "6"; 
 					APPLICATION.mInstantiatedGame = true;

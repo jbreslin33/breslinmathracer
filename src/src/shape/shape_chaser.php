@@ -12,7 +12,7 @@ Extends: ShapeAI,
 		this.parent(col);
                 if (col == this.mGame.mControlObject)
                 {
-			this.mGame.resetGame();
+//			this.mGame.resetGame();
                 }
         }
 });

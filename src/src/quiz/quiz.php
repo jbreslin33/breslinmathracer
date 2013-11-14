@@ -20,9 +20,9 @@ var Quiz = new Class(
         {
                 if (!this.mGotQuestions)
                 {
+                	this.mGotIt        = false;
                         this.mGotQuestions = true;
                         this.getQuestions();
-                        this.mGame.mGameOver = false;
                 }
         },
 	
