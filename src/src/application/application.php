@@ -104,21 +104,7 @@ var Application = new Class(
                         //if (xmlhttp.responseText == "1" && APPLICATION.mInstantiatedGame == false) 
                         if (xmlhttp.responseText == "1") 
 			{
-				if (APPLICATION.mGameID == "1") 
-				{
-					//console.log('if quiz..');
-					//so we need new questions...
-					/*
-					if (APPLICATION.mGame.mQuiz && this.mGotQuestions == false)
-					{
-						console.log('mGotQuestions set to false');
- 						this.mGotIt        = false;
-                        			this.mGotQuestions = true;
-						APPLICATION.mGame.mQuiz.getQuestions(); 
-					}
-					*/
-				}
-				else
+				if (APPLICATION.mGameID != "1") 
 				{
 					APPLICATION.mLastGameID = APPLICATION.mGameID; 
 					APPLICATION.mGameID = "1"; 
@@ -129,15 +115,7 @@ var Application = new Class(
                         //if (xmlhttp.responseText == "6" && APPLICATION.mInstantiatedGame == false) 
                         if (xmlhttp.responseText == "6") 
 			{
-				if (APPLICATION.mGameID == "6")
-				{
-					//so we need new questions...
-					if (APPLICATION.mGame.mQuiz)
-					{
-						APPLICATION.mGame.mQuiz.mGotQuestions = false; 
-					}
-				}
-				else
+				if (APPLICATION.mGameID != "6")
 				{
 					APPLICATION.mLastGameID = APPLICATION.mGameID; 
 					APPLICATION.mGameID = "6"; 
