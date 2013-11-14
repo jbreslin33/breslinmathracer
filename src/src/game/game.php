@@ -163,6 +163,7 @@ var Game = new Class(
 			//then if same game d
 			if (this.mApplication.mLevelCompleted)
 			{
+				this.mApplication.mLevelCompleted = false;
 				this.resetShapes();
 				this.setScore(0);
 				this.sendGameTimeEnd();
