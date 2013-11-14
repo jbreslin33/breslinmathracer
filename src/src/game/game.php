@@ -54,7 +54,6 @@ var Game = new Class(
 		if(this.mGameOver == false)
 		{
 			var str = this.getScore();
-			this.log('str:' + str);	
 			if (str == this.mScoreOnServer)
 			{
 				return;
@@ -159,10 +158,13 @@ var Game = new Class(
 		if (this.mApplication.mLevelCompleted)
 		{
 			this.mApplication.mLevelCompleted = false;
+			this.advanceToNextLevel();
 			this.resetShapes();
 			this.setScore(0);
 			this.sendGameTimeEnd();
-			this.advanceToNextLevel();
+
+
+
 			//APPLICATION.newGame();	
 		}
 		if (this.mGameOver)
