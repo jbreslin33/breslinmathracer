@@ -162,6 +162,10 @@ var Game = new Class(
 			this.resetShapes();
 			this.setScore(0);
 			this.sendGameTimeEnd();
+			if (this.mQuiz)
+			{
+				this.mQuiz.mGotQuestions = false;
+			}
 			this.mApplication.getGameIDFromServer();
 			//APPLICATION.newGame();	
 		}
