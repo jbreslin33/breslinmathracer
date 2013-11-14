@@ -19,9 +19,6 @@ var Game = new Class(
 		this.mScoreOnServer  = 0;
 		this.mScore = 0;
 
-		/************** On_Off **********/
-                this.mOn = true;
-				
 		// may get rid of later and just use mOn
 		this.mGameOver = false;
 		this.timeWarning = false;
@@ -154,69 +151,66 @@ var Game = new Class(
 	
         update: function()
         {
-                if (this.mOn)
-                {
-			//when you complete a level we should
-			//advance to next in db
-			//then get new level
-			//then check for a new game id
-			//then if same game d
-			if (this.mApplication.mLevelCompleted)
-			{
-				this.mApplication.mLevelCompleted = false;
-				this.resetShapes();
-				this.setScore(0);
-				this.sendGameTimeEnd();
-				this.advanceToNextLevel();
-				//APPLICATION.newGame();	
-			}
-			if (this.mGameOver)
-			{
-				//this.gameOver();
-				//this.mGameOver = false;
-			}
-
-			//get time since epoch and set lasttime
-                	e = new Date();
-                	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
-                	this.mTimeSinceEpoch = e.getTime();
-
-                	//set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
-                	this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
-					
-			if(this.mDeltaTime < 50000)
-			{
-				this.mGameTime = this.mGameTime + this.mDeltaTime;
-			}
-                        
-			//check Keys from application
-			if (this.mKeysOn)
-			{
-				this.checkKeys();
-			}
-
-			if (this.mMouseOn)
-			{
-				this.checkMouse();
-			}
-
-                	//move shapes   
-                	for (i = 0; i < this.mShapeArray.length; i++)
-                	{
-				this.mShapeArray[i].update(this.mDeltaTime);
-                	}
-			
-			//collision Detection
-			this.checkForCollisions();
-
-                	for (i = 0; i < this.mShapeArray.length; i++)
-			{
-                        	this.mShapeArray[i].render();
-			}	
-        
-                	//save old positions
-                	this.saveOldPositions();
+		//when you complete a level we should
+		//advance to next in db
+		//then get new level
+		//then check for a new game id
+		//then if same game d
+		if (this.mApplication.mLevelCompleted)
+		{
+			this.mApplication.mLevelCompleted = false;
+			this.resetShapes();
+			this.setScore(0);
+			this.sendGameTimeEnd();
+			this.advanceToNextLevel();
+			//APPLICATION.newGame();	
 		}
+		if (this.mGameOver)
+		{
+			//this.gameOver();
+			//this.mGameOver = false;
+		}
+
+		//get time since epoch and set lasttime
+               	e = new Date();
+               	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
+               	this.mTimeSinceEpoch = e.getTime();
+
+               	//set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
+               	this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
+				
+		if(this.mDeltaTime < 50000)
+		{
+			this.mGameTime = this.mGameTime + this.mDeltaTime;
+		}
+                        
+		//check Keys from application
+		if (this.mKeysOn)
+		{
+			this.checkKeys();
+		}
+
+		if (this.mMouseOn)
+		{
+			this.checkMouse();
+		}
+
+               	//move shapes   
+               	for (i = 0; i < this.mShapeArray.length; i++)
+               	{
+			this.mShapeArray[i].update(this.mDeltaTime);
+               	}
+			
+		//collision Detection
+		this.checkForCollisions();
+
+               	for (i = 0; i < this.mShapeArray.length; i++)
+		{
+                       	this.mShapeArray[i].render();
+		}	
+        
+               	//save old positions
+               	this.saveOldPositions();
         },
 	gameOver: function()
 	{
