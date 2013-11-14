@@ -156,7 +156,7 @@ Extends: Shape,
 
         incorrectAnswer: function()
         {
-                this.mGame.resetGame();
+                //this.mGame.resetGame();
         },
 
 

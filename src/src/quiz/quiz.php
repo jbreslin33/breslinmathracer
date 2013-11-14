@@ -46,6 +46,7 @@ var Quiz = new Class(
                                 APPLICATION.mGame.mQuiz.mGotIt = true;
                                 APPLICATION.mGame.mQuiz.mQuestionArray = 0;
                                 APPLICATION.mGame.mQuiz.mQuestionArray = new Array();
+				APPLICATION.mGame.mQuiz.mMarker = 0;
                                 var questionStringArray = questionString.split(",");
                                 for (i = 0; i < questionStringArray.length; i++)
                                 {
