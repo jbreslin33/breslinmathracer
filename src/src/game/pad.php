@@ -56,7 +56,6 @@ Extends: Game,
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 	},
-
 	
 	resetGame: function()
 	{
@@ -64,7 +63,7 @@ Extends: Game,
 		//this.mQuiz.mQuestionArray = new Array(); 
 	
 		//this.createQuestions();
-//		this.setScore(0);
+		this.setScore(0);
 	},
 
 
