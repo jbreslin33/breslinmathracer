@@ -122,6 +122,13 @@ var Game = new Class(
 			this.timeWarning = true;
 		}
 	},
+ 
+	resetGame: function()
+        {
+		this.resetShapes();
+		this.mQuiz.reset();
+              	this.setScore(0);
+        },
 
  	resetShapes: function()
         {
@@ -146,24 +153,17 @@ var Game = new Class(
 	
         update: function()
         {
-		//when you complete a level we should
-		//advance to next in db
-		//then get new level
-		//then check for a new game id
-		//then if same game d
 		if (this.mApplication.mLevelCompleted)
 		{
 			this.mApplication.mLevelCompleted = false;
 			this.advanceToNextLevel();
-			this.resetShapes();
-			this.setScore(0);
+			this.resetGame();
 			this.sendGameTimeEnd();
 			if (this.mQuiz)
 			{
 				this.mQuiz.mGotQuestions = false;
 			}
 			this.mApplication.getGameIDFromServer();
-			//APPLICATION.newGame();	
 		}
 
 		//get time since epoch and set lasttime
