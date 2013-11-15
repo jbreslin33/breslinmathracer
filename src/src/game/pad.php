@@ -47,16 +47,6 @@ Extends: Game,
                 }
         },
 	
-	resetGame: function()
-	{
-		//this.mQuiz.mQuestionArray = 0; 
-		//this.mQuiz.mQuestionArray = new Array(); 
-	
-		//this.createQuestions();
-//		this.setScore(0);
-	},
-
-
 	createWorld: function()
 	{
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
@@ -66,6 +56,17 @@ Extends: Game,
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 	},
+
+	
+	resetGame: function()
+	{
+		//this.mQuiz.mQuestionArray = 0; 
+		//this.mQuiz.mQuestionArray = new Array(); 
+	
+		//this.createQuestions();
+//		this.setScore(0);
+	},
+
 
 	createNumberPad: function()
 	{

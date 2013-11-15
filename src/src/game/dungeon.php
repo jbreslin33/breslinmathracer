@@ -52,7 +52,7 @@ Extends: Game,
 
 	createControlObject: function()
 	{
-//*******************CONTROL OBJECT
+		//*******************CONTROL OBJECT
                 this.mControlObject = new Player(50,50,400,300,this,this.mQuiz.getSpecificQuestion(0),"/images/characters/wizard.png","","controlObject");
 
                 //set animation instance
