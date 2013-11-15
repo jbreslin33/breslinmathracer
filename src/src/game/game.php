@@ -51,35 +51,32 @@ var Game = new Class(
 	//brian - update score in games_attempts table		
 	updateScore: function()
 	{
-		if(this.mGameOver == false)
+		var str = this.getScore();
+		if (str == this.mScoreOnServer)
 		{
-			var str = this.getScore();
-			if (str == this.mScoreOnServer)
-			{
-				return;
-			}
-			
-			var xmlhttp;    
-			
-			if (window.XMLHttpRequest)
-			{
-				// code for IE7+, Firefox, Chrome, Opera, Safari
-			  	xmlhttp=new XMLHttpRequest();
-			}
-			else
-			{
-				// code for IE6, IE5
-			  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange=function()
-		  	{
-				console.log(xmlhttp.responseText);			  
-			}
-			xmlhttp.open("GET","../../src/database/update_score.php?q="+str,true);
-			xmlhttp.send();
-			
-			this.mScoreOnServer = str;
+			return;
 		}
+		
+		var xmlhttp;    
+		
+		if (window.XMLHttpRequest)
+		{
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+		  	xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{
+			// code for IE6, IE5
+		  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+	  	{
+			console.log(xmlhttp.responseText);			  
+		}
+		xmlhttp.open("GET","../../src/database/update_score.php?q="+str,true);
+		xmlhttp.send();
+			
+		this.mScoreOnServer = str;
 	},
 
 	standardGameAttempt: function()
