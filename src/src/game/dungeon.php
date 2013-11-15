@@ -21,19 +21,12 @@ Extends: Game,
 
 	createWorld: function()
 	{
-		
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
-			//this.mShapeArray[i].setVisibility(false);
-			//this.mShapeArray[i].mCollidable = false;
-			//this.mShapeArray[i].mCollisionOn = false;
-
    			//back to div
-                	//this.mDiv.mDiv.appendChild(this.mMesh);
 			this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
+			document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
 		}
-
-
 
 		this.mShapeArray = 0;
 		this.mShapeArray = new Array();
