@@ -49,8 +49,6 @@ Extends: Game,
 	
 	resetGame: function()
 	{
-		this.log('resetGame called in pad');
-		this.mGameOver = true;
 		//this.mQuiz.mQuestionArray = 0; 
 		//this.mQuiz.mQuestionArray = new Array(); 
 	

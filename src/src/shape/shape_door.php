@@ -90,12 +90,8 @@ Extends: QuestionShape,
         {
 		if (!this.mEnteredDoor)
 		{
-			if (!this.mGame.mGameOver)
-			{
-				this.mEnteredDoor = true;
-				console.log('entered Door!!!!');
-				this.mGame.mApplication.mLevelCompleted = true;	
-			}
+			this.mEnteredDoor = true;
+			this.mGame.mApplication.mLevelCompleted = true;	
 		}
         }
 });

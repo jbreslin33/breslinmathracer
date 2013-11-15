@@ -20,7 +20,6 @@ var Game = new Class(
 		this.mScore = 0;
 
 		// may get rid of later and just use mOn
-		this.mGameOver = false;
 		this.timeWarning = false;
                 
 		/**************** TIME ************/
@@ -165,11 +164,6 @@ var Game = new Class(
 			}
 			this.mApplication.getGameIDFromServer();
 			//APPLICATION.newGame();	
-		}
-		if (this.mGameOver)
-		{
-			//this.gameOver();
-			//this.mGameOver = false;
 		}
 
 		//get time since epoch and set lasttime
