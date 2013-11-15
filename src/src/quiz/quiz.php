@@ -80,7 +80,6 @@ var Quiz = new Class(
 	{
         	this.mGame.incrementScore();
 		this.mMarker++;
-	
 		//this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
 	},
 	
