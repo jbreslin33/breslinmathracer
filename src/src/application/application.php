@@ -101,7 +101,6 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                  {
-                        //if (xmlhttp.responseText == "1" && APPLICATION.mInstantiatedGame == false) 
                         if (xmlhttp.responseText == "1") 
 			{
 				if (APPLICATION.mGameID != "1") 
@@ -112,7 +111,6 @@ var Application = new Class(
 					APPLICATION.mGame = new Dungeon(APPLICATION);
 				}
 			}
-                        //if (xmlhttp.responseText == "6" && APPLICATION.mInstantiatedGame == false) 
                         if (xmlhttp.responseText == "6") 
 			{
 				if (APPLICATION.mGameID != "6")
