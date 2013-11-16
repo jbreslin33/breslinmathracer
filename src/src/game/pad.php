@@ -22,27 +22,24 @@ Extends: Game,
 	update: function()
         {
                 this.parent();
-                if (this.mQuizComplete == false)
+		if( this.mQuiz)
+		{
+			this.mQuiz.update();
+		}
+
+                if (this.mQuiz.isQuizComplete())
                 {
-			if( this.mQuiz)
-			{
-				this.mQuiz.update();
-			}
+                        this.mQuizComplete = true;
+                        alert('Electrical Bananas! Next Level!');
+                }
 
-                        if (this.mQuiz.isQuizComplete())
-                        {
-                                this.mQuizComplete = true;
-                                alert('Electrical Bananas! Next Level!');
-                        }
-
-                        if (this.mStartGameHit == true && this.mOutOfTime == false)
-                        {
-                                if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
-                                {
-                                        this.mOutOfTime = true;
-                                        alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
-					this.resetGame();
-                                }
+                if (this.mStartGameHit == true && this.mOutOfTime == false)
+                {
+                	if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+                	{
+                                this.mOutOfTime = true;
+                                alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
+				this.resetGame();
                         }
                 }
         },
@@ -51,10 +48,10 @@ Extends: Game,
 	{
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
-		this.createNumberPad();
-		
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
+
+		this.createNumberPad();
 	},
 	
 	resetGame: function()

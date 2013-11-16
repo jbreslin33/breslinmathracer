@@ -83,7 +83,6 @@ var Application = new Class(
 	newGame: function()
 	{
 		this.mInstantiatedGame = false;
-		this.log('newGame!');
 		this.mGame = 0;	
 	},
  
