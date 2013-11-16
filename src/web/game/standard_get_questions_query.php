@@ -125,7 +125,7 @@ if ($numberOfRowsInAddition > 0)
 
 		$returnString .= ",";
 
-		if ($$addend_a_array[$randomRow] + $addend_b_array[$randomRow] == 0)
+		if ($addend_a_array[$randomRow] + $addend_b_array[$randomRow] == 0)
 		{
 			$returnString .= "0"; 
 		}
