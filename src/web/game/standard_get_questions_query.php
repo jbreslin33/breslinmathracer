@@ -87,7 +87,6 @@ $numberOfRowsInAddition = pg_num_rows($result);
 $addend_a_array = array();
 $addend_b_array = array();
 
-
 if ($numberOfRowsInAddition > 0)
 {
 	$i = 0;	
@@ -113,7 +112,7 @@ if ($numberOfRowsInAddition > 0)
 			$returnString .= $addend_a_array[$randomRow];
 		}
 		
-		$returnString .= ",";
+		$returnString .= " + ";
 
 		if ($addend_b_array[$randomRow] == 0)
 		{
@@ -123,6 +122,11 @@ if ($numberOfRowsInAddition > 0)
 		{
 			$returnString .= $addend_b_array[$randomRow];
 		}
+
+		$returnString .= ",";
+
+		$returnString .= $addend_a_array[$randomRow] + $addend_a_array[$randomRow]; 
+
 
 		$c = $scoreNeeded - 1;
                 if ($j < $c)
