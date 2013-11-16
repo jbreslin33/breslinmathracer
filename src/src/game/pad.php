@@ -30,7 +30,7 @@ Extends: Game,
                 if (this.mQuiz.isQuizComplete())
                 {
 			this.mQuizComplete = true;
-			mApplication.mLevelCompleted = true;
+			this.mApplication.mLevelCompleted = true;
                         alert('Electrical Bananas! Next Level!');
                 }
 
