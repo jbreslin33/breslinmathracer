@@ -125,7 +125,14 @@ if ($numberOfRowsInAddition > 0)
 
 		$returnString .= ",";
 
-		$returnString .= $addend_a_array[$randomRow] + $addend_a_array[$randomRow]; 
+		if ($$addend_a_array[$randomRow] + $addend_b_array[$randomRow] == 0)
+		{
+			$returnString .= "0"; 
+		}
+		else
+		{
+			$returnString .= $addend_a_array[$randomRow] + $addend_b_array[$randomRow]; 
+		}
 
 
 		$c = $scoreNeeded - 1;
