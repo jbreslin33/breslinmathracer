@@ -54,6 +54,9 @@ var Quiz = new Class(
                                         var h = parseInt(g);
                                         question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
                                         APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
+					console.log('i:' + questionStringArray[i]); 
+					console.log('h:' + questionStringArray[h]); 
+				
                                         i++;
                                 }
                                 APPLICATION.mGame.createWorld();

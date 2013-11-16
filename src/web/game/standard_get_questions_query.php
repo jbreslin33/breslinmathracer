@@ -104,16 +104,31 @@ if ($numberOfRowsInAddition > 0)
 	for($j = 0; $j < $scoreNeeded; $j++)
 	{		
 		$randomRow = rand(0,$arrlength);
-		$returnString .= $addend_a_array[$randomRow];
+		if ($addend_a_array[$randomRow] == 0)
+		{
+			$returnString .= "0";
+		}
+		else
+		{
+			$returnString .= $addend_a_array[$randomRow];
+		}
+		
 		$returnString .= ",";
-		$returnString .= $addend_b_array[$randomRow];
- 		
+
+		if ($addend_b_array[$randomRow] == 0)
+		{
+			$returnString .= "0";
+		}
+		else
+		{
+			$returnString .= $addend_b_array[$randomRow];
+		}
+
 		$c = $scoreNeeded - 1;
                 if ($j < $c)
                 {
                 	$returnString .= ",";
                 }
-
 	}
         $numberOfRows = $numberOfRowsInAddition;
 }
