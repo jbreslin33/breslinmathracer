@@ -16,7 +16,7 @@ Extends: Game,
                 this.mOutOfTime = false;
                 this.mStartGameHit = false;
                 this.mUserAnswer = '';
-                this.mQuizComplete = false;
+		this.mQuizComplete = false;
 	},
 	
 	update: function()
@@ -29,7 +29,8 @@ Extends: Game,
 
                 if (this.mQuiz.isQuizComplete())
                 {
-                        this.mQuizComplete = true;
+			this.mQuizComplete = true;
+			mApplication.mLevelCompleted = true;
                         alert('Electrical Bananas! Next Level!');
                 }
 
@@ -220,7 +221,10 @@ Extends: Game,
                         	APPLICATION.mGame.mStartGameHit = true;
                         	APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 			}
-                	APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
+                	if (APPLICATION.mGame.mQuiz)
+			{
+                		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
+			}
 			APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 		}				
 	},
@@ -268,7 +272,10 @@ Extends: Game,
                         APPLICATION.mGame.mStartGameHit = true;
                         APPLICATION.mGame.mNumAnswer.mMesh.value = '';
 		}
-		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
+               	if (APPLICATION.mGame.mQuiz)
+		{
+               		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
+		}
 		APPLICATION.mGame.mNumAnswer.mMesh.focus();
 	}
 
