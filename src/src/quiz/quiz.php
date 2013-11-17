@@ -49,7 +49,7 @@ var Quiz = new Class(
                                 APPLICATION.mGame.mQuiz.mQuestionArray = new Array();
 				APPLICATION.mGame.mQuiz.mMarker = 0;
                                 var questionStringArray = questionString.split(",");
-                                for (i = 0; i < 20; i++)
+                                for (i = 0; i < questionStringArray.length; i++)
                                 {
                                         var g = i + 1;
                                         var h = parseInt(g);
@@ -65,7 +65,6 @@ var Quiz = new Class(
                 }
                 xmlhttp.open("GET","../../web/game/standard_get_questions_query.php",true);
                 xmlhttp.send();
-                this.timeWarning = true;
         },
 
 	//returns question object	
