@@ -89,6 +89,8 @@ $addend_b_array = array();
 
 if ($numberOfRowsInAddition > 0)
 {
+	$returnString = ""; //reset returnString from addition
+
 	$i = 0;	
         while ($row = pg_fetch_row($result))
         {
@@ -100,6 +102,7 @@ if ($numberOfRowsInAddition > 0)
         }
 	
 	$arrlength=count($addend_a_array);
+//	$returnString .= $scoreNeeded;
 	for($j = 0; $j < $scoreNeeded; $j++)
 	{		
 		$randomRow = rand(0,$arrlength);

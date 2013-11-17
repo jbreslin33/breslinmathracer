@@ -49,7 +49,7 @@ var Quiz = new Class(
                                 APPLICATION.mGame.mQuiz.mQuestionArray = new Array();
 				APPLICATION.mGame.mQuiz.mMarker = 0;
                                 var questionStringArray = questionString.split(",");
-                                for (i = 0; i < questionStringArray.length; i++)
+                                for (i = 0; i < 20; i++)
                                 {
                                         var g = i + 1;
                                         var h = parseInt(g);
