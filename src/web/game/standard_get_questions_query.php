@@ -115,7 +115,7 @@ if ($numberOfRowsInAddition > 0)
 			$returnString .= $addend_a_array[$randomRow];
 		}
 		
-		$returnString .= " + ";
+		$returnString .= ' + ';
 
 		if ($addend_b_array[$randomRow] == 0)
 		{
@@ -139,10 +139,10 @@ if ($numberOfRowsInAddition > 0)
 
 
 		$c = $scoreNeeded - 1;
-                if ($j < $c)
-                {
+               // if ($j < $c)
+                //{
                 	$returnString .= ",";
-                }
+                //}
 	}
         $numberOfRows = $numberOfRowsInAddition;
 }
