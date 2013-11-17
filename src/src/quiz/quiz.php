@@ -43,6 +43,7 @@ var Quiz = new Class(
                         var questionString = xmlhttp.responseText;
                         if (questionString.length > 0 && APPLICATION.mGame.mQuiz.mGotIt == false)
                         {
+				console.log('rawquestion:' + questionString);
                                 APPLICATION.mGame.mQuiz.mGotIt = true;
                                 APPLICATION.mGame.mQuiz.mQuestionArray = 0;
                                 APPLICATION.mGame.mQuiz.mQuestionArray = new Array();
@@ -54,8 +55,8 @@ var Quiz = new Class(
                                         var h = parseInt(g);
                                         question = new Question('' + questionStringArray[i],'' + questionStringArray[h]);
                                         APPLICATION.mGame.mQuiz.mQuestionArray.push(question);
-					console.log('i:' + questionStringArray[i]); 
-					console.log('h:' + questionStringArray[h]); 
+					console.log('q:' + questionStringArray[i]); 
+					console.log('a:' + questionStringArray[h]); 
 				
                                         i++;
                                 }
