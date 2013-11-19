@@ -16,11 +16,18 @@ $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error())
 //get numer of rows
 $numberOfRows = pg_num_rows($result);
 $counter = 0;
+$returnString = "";
 while ($row = pg_fetch_row($result))
 {
         //fill php vars from db
         $game_id = $row[0];
-	echo $game_id;
+	$returnString .= "100,"; // 
+	$returnString .= $game_id;
+	$returnString .= ",";
+	$returnString .= $_SESSION["last_level_id"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["next_level_id"];
         $counter++;
 }
+echo $returnString;
 ?>

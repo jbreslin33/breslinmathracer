@@ -17,8 +17,11 @@ var Application = new Class(
         	this.mHud = new Hud(this);
 
 		/********* GAME *******************/ 
-		this.mGameID = 0;
 		this.mGame = 0;
+		this.mGameID = 0;
+		this.mLastGameID = 0;
+		this.mLevelID = 0;
+		this.mNextLevelID = 0;
 		this.mInstantiatedGame = false;
 
 		//KEYS
@@ -99,28 +102,41 @@ var Application = new Class(
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.onreadystatechange=function()
-                 {
-                        if (xmlhttp.responseText == "1") 
+                {
+                        var response = xmlhttp.responseText; 
+			var responseArray = response.split(","); 
+			var code = responseArray[0];
+
+                        console.log('responseText:' + xmlhttp.responseText); 
+			if (code == "100")
 			{
-				if (APPLICATION.mGameID != "1") 
+                        	console.log('yes:' + xmlhttp.responseText); 
+				APPLICATION.mLastGameID  = APPLICATION.mGameID;
+				APPLICATION.mGameID      = responseArray[1];
+				APPLICATION.mLevelID     = responseArray[2];
+				APPLICATION.mNextLevelID = responseArray[3];
+
+                        	console.log('mGameID =' + APPLICATION.mGameID); 
+                        	if (APPLICATION.mGameID == "1") 
 				{
-					APPLICATION.mLastGameID = APPLICATION.mGameID; 
-					APPLICATION.mGameID = "1"; 
-					APPLICATION.mInstantiatedGame = true;
-					APPLICATION.mGame = new Dungeon(APPLICATION);
+                        		console.log('1 equals:' + xmlhttp.responseText); 
+					if (APPLICATION.mLastGameID != "1") 
+					{
+						console.log('create game!!!!!!!!!!!!!!');
+						APPLICATION.mInstantiatedGame = true;
+						APPLICATION.mGame = new Dungeon(APPLICATION);
+					}
 				}
-			}
-                        if (xmlhttp.responseText == "6") 
-			{
-				if (APPLICATION.mGameID != "6")
+                        	if (APPLICATION.mGameID == "6") 
 				{
-					APPLICATION.mLastGameID = APPLICATION.mGameID; 
-					APPLICATION.mGameID = "6"; 
-					APPLICATION.mInstantiatedGame = true;
-					APPLICATION.mGame = new Pad(APPLICATION);
+					if (APPLICATION.mLastGameID != "6")
+					{
+						APPLICATION.mInstantiatedGame = true;
+						APPLICATION.mGame = new Pad(APPLICATION);
+					}
 				}
-			}
-                }
+                	}
+		}
                 xmlhttp.open("GET","../../web/game/standard_games_query.php",true);
                 xmlhttp.send();
                 this.timeWarning = true;
