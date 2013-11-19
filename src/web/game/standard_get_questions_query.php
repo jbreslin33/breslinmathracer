@@ -114,7 +114,7 @@ if ($numberOfRowsInAddition > 0)
 			$returnAdditionString .= $addend_a_array[$randomRow];
 		}
 		
-		$returnString .= ' + ';
+		//$returnAdditionString .= " X ";
 
 		if ($addend_b_array[$randomRow] == 0)
 		{
