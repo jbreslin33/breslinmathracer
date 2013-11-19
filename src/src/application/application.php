@@ -107,22 +107,17 @@ var Application = new Class(
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
-                        console.log('responseText:' + xmlhttp.responseText); 
 			if (code == "100")
 			{
-                        	console.log('yes:' + xmlhttp.responseText); 
 				APPLICATION.mLastGameID  = APPLICATION.mGameID;
 				APPLICATION.mGameID      = responseArray[1];
 				APPLICATION.mLevelID     = responseArray[2];
 				APPLICATION.mNextLevelID = responseArray[3];
 
-                        	console.log('mGameID =' + APPLICATION.mGameID); 
                         	if (APPLICATION.mGameID == "1") 
 				{
-                        		console.log('1 equals:' + xmlhttp.responseText); 
 					if (APPLICATION.mLastGameID != "1") 
 					{
-						console.log('create game!!!!!!!!!!!!!!');
 						APPLICATION.mInstantiatedGame = true;
 						APPLICATION.mGame = new Dungeon(APPLICATION);
 					}
