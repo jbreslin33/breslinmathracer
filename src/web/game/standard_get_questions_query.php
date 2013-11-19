@@ -87,9 +87,9 @@ $numberOfRowsInAddition = pg_num_rows($result);
 $addend_a_array = array();
 $addend_b_array = array();
 
+$returnAdditionString = ""; //reset returnString from addition
 if ($numberOfRowsInAddition > 0)
 {
-	$returnString = ""; //reset returnString from addition
 
 	$i = 0;	
         while ($row = pg_fetch_row($result))
@@ -102,52 +102,50 @@ if ($numberOfRowsInAddition > 0)
         }
 	
 	$arrlength=count($addend_a_array);
-//	$returnString .= $scoreNeeded;
 	for($j = 0; $j < $scoreNeeded; $j++)
 	{		
 		$randomRow = rand(0,$arrlength);
 		if ($addend_a_array[$randomRow] == 0)
 		{
-			$returnString .= "0";
+			$returnAdditionString .= "0";
 		}
 		else
 		{
-			$returnString .= $addend_a_array[$randomRow];
+			$returnAdditionString .= $addend_a_array[$randomRow];
 		}
 		
 		$returnString .= ' + ';
 
 		if ($addend_b_array[$randomRow] == 0)
 		{
-			$returnString .= "0";
+			$returnAdditionString .= "0";
 		}
 		else
 		{
-			$returnString .= $addend_b_array[$randomRow];
+			$returnAdditionString .= $addend_b_array[$randomRow];
 		}
 
-		$returnString .= ",";
+		$returnAdditionString .= ",";
 
 		if ($addend_a_array[$randomRow] + $addend_b_array[$randomRow] == 0)
 		{
-			$returnString .= "0"; 
+			$returnAdditionString .= "0"; 
 		}
 		else
 		{
-			$returnString .= $addend_a_array[$randomRow] + $addend_b_array[$randomRow]; 
+			$returnAdditionString .= $addend_a_array[$randomRow] + $addend_b_array[$randomRow]; 
 		}
 
-
 		$c = $scoreNeeded - 1;
-               // if ($j < $c)
-                //{
-                	$returnString .= ",";
-                //}
+                if ($j < $c)
+                {
+                	$returnAdditionString .= ",";
+                }
 	}
         $numberOfRows = $numberOfRowsInAddition;
 }
 
-echo $returnString;
+echo $returnAdditionString;
 
 //*******************     anything in subtraction? if so override above ^ **********************************
 $query = "select score_needed, minuend_min, minuend_max, subtrahend_min, subtrahend_max, number_of_subtrahends, negative_difference from subtraction where level_id = ";
