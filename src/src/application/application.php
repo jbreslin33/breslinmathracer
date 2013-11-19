@@ -118,7 +118,6 @@ var Application = new Class(
 				{
 					if (APPLICATION.mLastGameID != "1") 
 					{
-						APPLICATION.mInstantiatedGame = true;
 						APPLICATION.mGame = new Dungeon(APPLICATION);
 					}
 				}
@@ -126,7 +125,6 @@ var Application = new Class(
 				{
 					if (APPLICATION.mLastGameID != "6")
 					{
-						APPLICATION.mInstantiatedGame = true;
 						APPLICATION.mGame = new Pad(APPLICATION);
 					}
 				}

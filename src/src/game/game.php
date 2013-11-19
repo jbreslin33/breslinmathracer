@@ -7,6 +7,8 @@ var Game = new Class(
 	initialize: function(application)
         {
 		this.mApplication = application;
+	
+		this.mApplication.mInstantiatedGame = true;
 
 		/********* SHAPES *******************/ 
 		//shape Array
