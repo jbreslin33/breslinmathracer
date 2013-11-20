@@ -87,7 +87,7 @@ $numberOfRowsInAddition = pg_num_rows($result);
 $addend_a_array = array();
 $addend_b_array = array();
 
-$returnAdditionString = ""; //reset returnString from addition
+$returnAdditionString = ''; //reset returnString from addition
 if ($numberOfRowsInAddition > 0)
 {
 
@@ -107,29 +107,29 @@ if ($numberOfRowsInAddition > 0)
 		$randomRow = rand(0,$arrlength);
 		if ($addend_a_array[$randomRow] == 0)
 		{
-			$returnAdditionString .= "0";
+			$returnAdditionString .= '0';
 		}
 		else
 		{
 			$returnAdditionString .= $addend_a_array[$randomRow];
 		}
 		
-		$returnAdditionString .= "X";
+		$returnAdditionString .= 'X';
 
 		if ($addend_b_array[$randomRow] == 0)
 		{
-			$returnAdditionString .= "0";
+			$returnAdditionString .= '0';
 		}
 		else
 		{
 			$returnAdditionString .= $addend_b_array[$randomRow];
 		}
 
-		$returnAdditionString .= ",";
+		$returnAdditionString .= ',';
 
 		if ($addend_a_array[$randomRow] + $addend_b_array[$randomRow] == 0)
 		{
-			$returnAdditionString .= "0"; 
+			$returnAdditionString .= '0'; 
 		}
 		else
 		{
@@ -139,7 +139,7 @@ if ($numberOfRowsInAddition > 0)
 		$c = $scoreNeeded - 1;
                 if ($j < $c)
                 {
-                	$returnAdditionString .= ",";
+                	$returnAdditionString .= ',';
                 }
 	}
         $numberOfRows = $numberOfRowsInAddition;
