@@ -118,6 +118,7 @@ var Application = new Class(
 				{
 					if (APPLICATION.mLastGameID != "1") 
 					{
+						console.log('dun');
 						APPLICATION.mGame = new Dungeon(APPLICATION);
 					}
 				}

@@ -6,21 +6,43 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
+		this.log('new Quiz');
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
+		this.mWorkingOnLevel = this.mApplication.mLevelID;
 	},
 
 	update: function()
 	{
 		this.parent()
+
+		if (this.mWorkingOnLevel != this.mApplication.mLevelID)
+		{
+			this.mWorkingOnLevel = this.mApplication.mLevelID;	
+			this.makeNewQuestions();
+		}		
+
 		if( this.mQuiz)
 		{
 			this.mQuiz.update();
 		}
 	},
 
+	makeNewQuestions: function()
+	{
+		if (this.mWorkingOnLevel == 1)
+		{
+			this.mQuiz.mQuestionArray = 0; //delete array
+			var question = new Question('0','1');						
+			this.mQuiz.mQuestionArray.push(question);
+		}
+		
+		createWorld();
+	},
+
 	createWorld: function()
 	{
+		this.log('createWorld');
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
    			//back to div

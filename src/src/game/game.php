@@ -6,6 +6,7 @@ var Game = new Class(
 {
 	initialize: function(application)
         {
+		this.log('Game cons');
 		this.mApplication = application;
 	
 		this.mApplication.mInstantiatedGame = true;
