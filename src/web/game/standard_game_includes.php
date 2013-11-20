@@ -15,8 +15,6 @@
 <script type="text/javascript" src="/src/question/question.php"></script>
 <script type="text/javascript" src="/src/quiz/quiz.php"></script>
 <script type="text/javascript" src="/src/hud/hud.php"></script>
-<script type="text/javascript" src="/src/game/game.php"></script>
-<script type="text/javascript" src="/src/game/game_quiz.php"></script>
-<script type="text/javascript" src="/src/game/dungeon.php"></script>
-<script type="text/javascript" src="/src/game/pad.php"></script>
+<script type="text/javascript" src="/src/game/dungeon_add.php"></script>
+<script type="text/javascript" src="/src/game/pad_add.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
