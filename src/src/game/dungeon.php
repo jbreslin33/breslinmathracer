@@ -15,10 +15,12 @@ Extends: Game,
 	update: function()
 	{
 		this.parent()
-
-		if (this.mWorkingOnLevel != this.mApplication.mLevelID)
+		//this.log('w:' + this.mWorkingOnLevel);
+		//this.log('l:' + this.mApplication.mNextLevelID);
+		if (this.mWorkingOnLevel != this.mApplication.mNextLevelID)
 		{
-			this.mWorkingOnLevel = this.mApplication.mLevelID;	
+			this.log('call makeNewQuestions');
+			this.mWorkingOnLevel = this.mApplication.mNextLevelID;	
 			this.makeNewQuestions();
 		}		
 
@@ -33,11 +35,11 @@ Extends: Game,
 		if (this.mWorkingOnLevel == 1)
 		{
 			this.mQuiz.mQuestionArray = 0; //delete array
-			var question = new Question('0','1');						
-			this.mQuiz.mQuestionArray.push(question);
+			this.mQuiz.mQuestionArray = new Array(); //delete array
+			this.mQuiz.mQuestionArray.push(new Question('0','1'));
 		}
 		
-		createWorld();
+		this.createWorld();
 	},
 
 	createWorld: function()
