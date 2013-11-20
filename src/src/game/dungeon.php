@@ -15,11 +15,8 @@ Extends: Game,
 	update: function()
 	{
 		this.parent()
-		//this.log('w:' + this.mWorkingOnLevel);
-		//this.log('l:' + this.mApplication.mNextLevelID);
 		if (this.mWorkingOnLevel != this.mApplication.mNextLevelID)
 		{
-			this.log('call makeNewQuestions');
 			this.mWorkingOnLevel = this.mApplication.mNextLevelID;	
 			this.makeNewQuestions();
 		}		
@@ -32,11 +29,25 @@ Extends: Game,
 
 	makeNewQuestions: function()
 	{
+		this.mQuiz.mQuestionArray = 0; //delete array
+		this.mQuiz.mQuestionArray = new Array(); //new array
+
 		if (this.mWorkingOnLevel == 1)
 		{
-			this.mQuiz.mQuestionArray = 0; //delete array
-			this.mQuiz.mQuestionArray = new Array(); //delete array
 			this.mQuiz.mQuestionArray.push(new Question('0','1'));
+		}
+		
+		if (this.mWorkingOnLevel == 1.01)
+		{
+			this.mQuiz.mQuestionArray.push(new Question('0','1'));
+			this.mQuiz.mQuestionArray.push(new Question('1','2'));
+		}
+		
+		if (this.mWorkingOnLevel == 1.02)
+		{
+			this.mQuiz.mQuestionArray.push(new Question('0','1'));
+			this.mQuiz.mQuestionArray.push(new Question('1','2'));
+			this.mQuiz.mQuestionArray.push(new Question('2','3'));
 		}
 		
 		this.createWorld();
