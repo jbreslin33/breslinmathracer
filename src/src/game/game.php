@@ -162,10 +162,6 @@ var Game = new Class(
 			this.advanceToNextLevel();
 			this.resetGame();
 			this.sendGameTimeEnd();
-			if (this.mQuiz)
-			{
-				this.mQuiz.mGotQuestions = false;
-			}
 			this.mApplication.getGameIDFromServer();
 		}
 

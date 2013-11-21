@@ -75,7 +75,7 @@ var Application = new Class(
         {
 		if (this.mGame == 0)
 		{
-			this.getGameIDFromServer();	
+			this.getGameData();	
 		}
 		if (this.mGame)
 		{
@@ -89,7 +89,7 @@ var Application = new Class(
 		this.mGame = 0;	
 	},
  
-	getGameIDFromServer: function()
+	getGameData: function()
         {
                 var xmlhttp;
 
