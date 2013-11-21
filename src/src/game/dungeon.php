@@ -6,7 +6,6 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.log('new Quiz');
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 		this.mWorkingOnLevel = this.mApplication.mLevelID;
@@ -18,7 +17,7 @@ Extends: Game,
 		if (this.mWorkingOnLevel != this.mApplication.mNextLevelID)
 		{
 			this.mWorkingOnLevel = this.mApplication.mNextLevelID;	
-			this.makeNewQuestions();
+			this.createQuestions();
 		}		
 
 		if( this.mQuiz)
@@ -27,7 +26,7 @@ Extends: Game,
 		}
 	},
 
-	makeNewQuestions: function()
+	createQuestions: function()
 	{
 		this.mQuiz.mQuestionArray = 0; //delete array
 		this.mQuiz.mQuestionArray = new Array(); //new array

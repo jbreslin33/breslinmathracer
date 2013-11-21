@@ -7,6 +7,7 @@ var Quiz = new Class(
 
 		//Question and Answer Array
 		this.mQuestionArray = new Array();
+		this.mQuestionPoolArray = new Array();
 			
 		//question
 		this.mMarker = 0;

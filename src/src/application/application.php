@@ -118,7 +118,7 @@ var Application = new Class(
 				{
 					if (APPLICATION.mLastGameID != "1") 
 					{
-						console.log('dun');
+						console.log('Dungeon Game!');
 						APPLICATION.mGame = new Dungeon(APPLICATION);
 					}
 				}
@@ -126,6 +126,7 @@ var Application = new Class(
 				{
 					if (APPLICATION.mLastGameID != "6")
 					{
+						console.log('Pad Game!');
 						APPLICATION.mGame = new Pad(APPLICATION);
 					}
 				}
