@@ -122,6 +122,7 @@ Extends: Game,
 	{
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
+		this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mNextLevelID + '</font>');
 
 		this.createNumberPad();
 	},
