@@ -138,7 +138,7 @@ Extends: Game,
 		if (!this.mNumQuestion)
 		{
                 	this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-                	//this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
+                	this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
                 	this.mNumQuestion.mMesh.mGame = this;
 		}
 
