@@ -131,6 +131,16 @@ Extends: Game,
 	{
 		this.createWorld();
 		this.setScore(0);
+  
+		//times
+                this.mThresholdTime = 2000;
+                this.mAnswerTime = 0;
+                this.mQuestionStartTime = 0;
+                this.mOutOfTime = false;
+                this.mStartGameHit = false;
+                this.mUserAnswer = '';
+                this.mQuizComplete = false;
+
 	},
 
 	createNumberPad: function()
