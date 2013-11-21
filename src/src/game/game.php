@@ -162,7 +162,7 @@ var Game = new Class(
 			this.advanceToNextLevel();
 			this.resetGame();
 			this.sendGameTimeEnd();
-			this.mApplication.getGameIDFromServer();
+			this.mApplication.getGameData();
 		}
 
 		//get time since epoch and set lasttime
