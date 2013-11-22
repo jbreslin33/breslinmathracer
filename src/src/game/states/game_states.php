@@ -21,6 +21,9 @@ enter: function(game)
 
 execute: function(game)
 {
+
+	this.log('execute');
+/*
         if (game.mControlObject)
         {
                 if (game.mControlObject.mCommandToRunOnShape.mDeltaCode == game.mApplication.mMessageGameEnd)
@@ -35,6 +38,7 @@ execute: function(game)
 
         //network outgoing
         game.sendByteBuffer();
+*/
 },
 
 exit: function(game)
