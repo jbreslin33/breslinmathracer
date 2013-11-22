@@ -15,7 +15,7 @@ Extends: Game,
  		//times
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
-                this.mQuestionStartTime = 0;
+                this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
                 this.mStartGameHit = false;
                 this.mUserAnswer = '';
@@ -44,8 +44,7 @@ Extends: Game,
                         alert('Electrical Bananas! Next Level!');
                 }
 
-
-		if (!this.mAlertPause)
+		if (this.mAlertPause == false)
 		{
                 	if (this.mStartGameHit == true && this.mOutOfTime == false)
                 	{
@@ -140,7 +139,7 @@ Extends: Game,
 		//times
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
-                this.mQuestionStartTime = 0;
+                this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
                 this.mStartGameHit = false;
                 this.mUserAnswer = '';
