@@ -20,6 +20,7 @@ Extends: Game,
                 this.mStartGameHit = false;
                 this.mUserAnswer = '';
 		this.mQuizComplete = false;
+		this.mShowCorrectAnswer = false;
 	},
 	
 	update: function()
