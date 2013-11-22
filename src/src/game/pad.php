@@ -32,21 +32,13 @@ Extends: Game,
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
 	},
 
-//states
-/*
-init
-
-SHOW_CORRECT_ANSWER ..hideNumberPad showCorrectANswer
-WAITING_ON_ANSWER ...hideCorrectAnswer showNumberPad...
-
-*/	
 	update: function()
         {
   		this.parent()
                 if (this.mWorkingOnLevel != this.mApplication.mNextLevelID)
                 {
                         this.mWorkingOnLevel = this.mApplication.mNextLevelID;
-                        this.createQuestions();
+                        this.resetGame();
                 }
 
                 if( this.mQuiz)
@@ -83,8 +75,6 @@ WAITING_ON_ANSWER ...hideCorrectAnswer showNumberPad...
                 this.mQuiz.mQuestionArray = new Array(); //new array
                
 		this.createAdditionQuestions();
- 
-                this.createWorld();
         },
 
 	createAdditionQuestions: function()
@@ -152,6 +142,7 @@ WAITING_ON_ANSWER ...hideCorrectAnswer showNumberPad...
 	
 	resetGame: function()
 	{
+		this.createQuestions();
 		this.createWorld();
 		this.setScore(0);
   
