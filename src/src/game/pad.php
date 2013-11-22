@@ -20,7 +20,7 @@ Extends: Game,
                 this.mStartGameHit = false;
                 this.mUserAnswer = '';
 		this.mQuizComplete = false;
-		this.mShowCorrectAnswer = false;
+		this.mAlertPause = false;
 	},
 	
 	update: function()
@@ -44,14 +44,18 @@ Extends: Game,
                         alert('Electrical Bananas! Next Level!');
                 }
 
-                if (this.mStartGameHit == true && this.mOutOfTime == false)
-                {
-                	if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+
+		if (!this.mAlertPause)
+		{
+                	if (this.mStartGameHit == true && this.mOutOfTime == false)
                 	{
-                                this.mOutOfTime = true;
-                                alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
-				this.resetGame();
-                        }
+                		if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+                		{
+                                	this.mOutOfTime = true;
+                                	alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
+					this.resetGame();
+                        	}
+			}
                 }
         },
    
@@ -141,7 +145,7 @@ Extends: Game,
                 this.mStartGameHit = false;
                 this.mUserAnswer = '';
                 this.mQuizComplete = false;
-
+		this.mAlertPause = false;
 	},
 
 	createNumberPad: function()
@@ -332,7 +336,7 @@ Extends: Game,
                         	}
                         	else
                         	{
-                                	APPLICATION.mGame.mOutOfTime = true;
+					APPLICATION.mGame.mAlertPause = true;	
                                 	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
 					APPLICATION.mGame.resetGame();
                         	}
@@ -344,13 +348,12 @@ Extends: Game,
                         	APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
                         	if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
                         	{
-                                	//APPLICATION.mGame.incrementScore();
                                 	APPLICATION.mGame.mQuiz.correctAnswer();
                                 	APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;
                         	}
                         	else
                         	{
-                                	APPLICATION.mGame.mOutOfTime = true;
+					APPLICATION.mGame.mAlertPause = true;	
                                 	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
 					APPLICATION.mGame.resetGame();
                         	}
@@ -383,7 +386,7 @@ Extends: Game,
 			}
 			else
 			{
-				APPLICATION.mGame.mOutOfTime = true;
+				APPLICATION.mGame.mAlertPause = true;	
 				alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
 				APPLICATION.mGame.resetGame();
 			}
@@ -401,7 +404,7 @@ Extends: Game,
                         }
                         else
                         {
-                                APPLICATION.mGame.mOutOfTime = true;
+				APPLICATION.mGame.mAlertPause = true;	
                                 alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
 				APPLICATION.mGame.resetGame();
                         }
