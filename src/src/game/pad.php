@@ -23,12 +23,21 @@ Extends: Game,
 		this.mAlertPause = false;
 
 		this.mPadStateMachine = new StateMachine(this);
-        	this.mPLAY_GAME = new PLAY_GAME(this);
-        	//this.mRESET_GAME = new RESET_GAME(this);
+        	this.mINIT_PAD_GAME       = new INIT_PAD_GAME(this);
+        	this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
+        	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
         	this.mPadStateMachine.setGlobalState(0);
-        	this.mPadStateMachine.changeState(this.mPLAY_GAME);
+        	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
 	},
-	
+
+//states
+/*
+init
+
+SHOW_CORRECT_ANSWER ..hideNumberPad showCorrectANswer
+WAITING_ON_ANSWER ...hideCorrectAnswer showNumberPad...
+
+*/	
 	update: function()
         {
   		this.parent()
