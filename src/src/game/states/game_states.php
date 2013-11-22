@@ -20,6 +20,7 @@ enter: function(game)
 
 execute: function(game)
 {
+	this.log('ex global');
 },
 
 exit: function(game)
