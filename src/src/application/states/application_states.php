@@ -83,7 +83,7 @@ execute: function(application)
 {
 	if (application.mGame == 0)
         {
-                application.getGameData();
+		application.mStateMachine.changeState(application.mGET_GAME_DATA_APPLICATION);
         }
         if (application.mGame)
         {
@@ -96,3 +96,39 @@ exit: function(application)
 }
 
 });
+
+var GET_GAME_DATA_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(application)
+{
+	application.getGameData();
+},
+
+execute: function(application)
+{
+        if (application.mGame)
+        {
+		application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
