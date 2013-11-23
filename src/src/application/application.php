@@ -72,7 +72,7 @@ var Application = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
                 this.mStateMachine.changeState(this.mINIT_APPLICATION);
-		
+
         	//START UPDATING
         	var t=setInterval("APPLICATION.update()",32)
         },
@@ -128,7 +128,12 @@ var Application = new Class(
 
 	gameDecider: function()
 	{
-  		if (this.mNextLevelID < 2)
+		if (this.mNextLevelID == 0 || this.mNextLevelID == null)
+		{
+			this.log('no level yet');
+		}
+
+  		if (this.mNextLevelID > 0 && this.mNextLevelID < 2)
                 {
                 	if (this.mGameName != "Dungeon")
                         {

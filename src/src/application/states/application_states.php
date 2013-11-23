@@ -77,6 +77,7 @@ log: function(msg)
 
 enter: function(application)
 {
+	//this.log('NORMAL_APPLICATION::enter');
 	application.gameDecider();
 },
 
@@ -120,6 +121,7 @@ log: function(msg)
 
 enter: function(application)
 {
+	//this.log('GET_LEVEL_DATA_APPLICATION::enter');
 	application.mWaitingOnLevelData = true;
 	application.getLevelData();
 },
@@ -157,6 +159,7 @@ log: function(msg)
 
 enter: function(application)
 {
+	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
 	application.mLevelCompleted = false;
 	if (application.mGame)
 	{
