@@ -23,11 +23,14 @@ Extends: Game,
 		this.mAlertPause = false;
 
 		this.mPadStateMachine = new StateMachine(this);
+
+        	this.mGLOBAL_PAD_GAME     = new GLOBAL_PAD_GAME(this);
         	this.mINIT_PAD_GAME       = new INIT_PAD_GAME(this);
-        	this.mGLOBAL_PAD_GAME       = new GLOBAL_PAD_GAME(this);
+        	this.mRESET_PAD_GAME      = new RESET_PAD_GAME(this);
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
         	this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
+
         	this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
 	},

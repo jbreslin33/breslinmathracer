@@ -22,13 +22,7 @@ execute: function(game)
 {
 	if (game.mWorkingOnLevel != game.mApplication.mNextLevelID)
         {
-                game.mWorkingOnLevel = game.mApplication.mNextLevelID;
-                game.resetGame();
-        }
-
-       	if( game.mQuiz)
-        {
-                game.mQuiz.update();
+		game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);
         }
 
         if (game.mQuiz.isQuizComplete())
@@ -76,6 +70,38 @@ log: function(msg)
 
 enter: function(game)
 {
+},
+
+execute: function(game)
+{
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var RESET_PAD_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	game.mWorkingOnLevel = game.mApplication.mNextLevelID;
+        game.resetGame();
 },
 
 execute: function(game)

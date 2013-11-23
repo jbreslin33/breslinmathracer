@@ -13,11 +13,6 @@ var Quiz = new Class(
 		this.mMarker = 0;
         },
  	
-	update: function()
-        {
-        
-	},
-	
 	//returns question object	
 	getQuestion: function()
 	{
