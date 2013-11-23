@@ -20,6 +20,36 @@ enter: function(game)
 
 execute: function(game)
 {
+	if (game.mWorkingOnLevel != game.mApplication.mNextLevelID)
+        {
+                game.mWorkingOnLevel = game.mApplication.mNextLevelID;
+                game.resetGame();
+        }
+
+       	if( game.mQuiz)
+        {
+                game.mQuiz.update();
+        }
+
+        if (game.mQuiz.isQuizComplete())
+        {
+                game.mQuizComplete = true;
+                game.mApplication.mLevelCompleted = true;
+                alert('Electrical Bananas! Next Level!');
+        }
+
+        if (game.mAlertPause == false)
+        {
+        	if (game.mStartGameHit == true && game.mOutOfTime == false)
+                {
+                	if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
+                        {
+                       	        game.mOutOfTime = true;
+                                alert('Out of time! Correct Answer is:' + game.mQuiz.getQuestion().getAnswer());
+                                game.resetGame();
+                        }
+                }
+         }
 },
 
 exit: function(game)

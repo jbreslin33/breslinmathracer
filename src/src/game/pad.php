@@ -35,37 +35,6 @@ Extends: Game,
 	update: function()
         {
   		this.parent()
-                if (this.mWorkingOnLevel != this.mApplication.mNextLevelID)
-                {
-                        this.mWorkingOnLevel = this.mApplication.mNextLevelID;
-                        this.resetGame();
-                }
-
-                if( this.mQuiz)
-                {
-                        this.mQuiz.update();
-                }
-
-                if (this.mQuiz.isQuizComplete())
-                {
-			this.mQuizComplete = true;
-			this.mApplication.mLevelCompleted = true;
-                        alert('Electrical Bananas! Next Level!');
-                }
-
-		if (this.mAlertPause == false)
-		{
-                	if (this.mStartGameHit == true && this.mOutOfTime == false)
-                	{
-                		if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
-                		{
-                                	this.mOutOfTime = true;
-                                	alert('Out of time! Correct Answer is:' + this.mQuiz.getQuestion().getAnswer());
-					this.resetGame();
-                        	}
-			}
-                }
-  		
 		this.mPadStateMachine.update();
         },
    
