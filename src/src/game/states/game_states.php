@@ -352,6 +352,7 @@ execute: function(game)
 
 exit: function(game)
 {
+	game.hideCorrectAnswerBar();
 }
 
 });
