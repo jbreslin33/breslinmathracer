@@ -207,28 +207,6 @@ var Game = new Class(
 		}
 	},
 
-	advanceToNextLevel: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {
-                        // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        // code for IE6, IE5
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-
-                }
-                xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
-                xmlhttp.send();
-        },
-
 	sendGameTimeEnd: function()
 	{
         	var xmlhttp;

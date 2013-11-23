@@ -157,7 +157,7 @@ enter: function(application)
 	application.mLevelCompleted = false;
 	if (application.mGame)
 	{
-        	application.mGame.advanceToNextLevel();
+        	application.advanceToNextLevel();
                 application.mGame.resetGame();
                 application.mGame.sendGameTimeEnd();
 	}
