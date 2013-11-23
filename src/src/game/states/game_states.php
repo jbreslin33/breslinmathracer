@@ -264,7 +264,7 @@ log: function(msg)
 
 enter: function(game)
 {
-	
+	game.hideCorrectAnswerBar();
 },
 
 execute: function(game)
@@ -337,6 +337,7 @@ log: function(msg)
 enter: function(game)
 {
 	game.hideNumberPad();
+	game.showCorrectAnswerBar();
         this.log('Try again. Correct Answer is:' + game.mQuiz.getQuestion().getAnswer());
  	game.mStartGameHit = true;
         game.mNumAnswer.mMesh.value = '';

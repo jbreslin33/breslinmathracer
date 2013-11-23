@@ -24,6 +24,9 @@ Extends: Game,
 		//number pad
 		this.mNumberPadArray = new Array();
 
+		//correctAnswerbar
+		this.mCorrectAnswerBar = 0;
+
 		//state machine
 		this.mPadStateMachine = new StateMachine(this);
 
@@ -134,6 +137,7 @@ Extends: Game,
 		this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mNextLevelID + '</font>');
 
 		this.createNumberPad();
+		this.createCorrectAnswerBar();
 	},
 	
 	hideNumberPad: function()
@@ -143,6 +147,16 @@ Extends: Game,
 		{
 			this.mNumberPadArray[i].setVisibility(false);
 		}
+	},
+	
+	showNumberPad: function()
+	{
+  		//shapes and array
+                for (i = 0; i < this.mNumberPadArray.length; i++)
+		{
+			this.mNumberPadArray[i].setVisibility(true);
+		}
+               	this.mNumAnswer.mMesh.focus();
 	},
 
 	destroyNumberPad: function()
@@ -158,6 +172,23 @@ Extends: Game,
                 this.mNumberPadArray = 0;
 
 	},
+
+	showCorrectAnswerBar: function()
+	{
+		this.mCorrectAnswerBar.setVisibility(true);
+	},
+	
+	hideCorrectAnswerBar: function()
+	{
+		this.mCorrectAnswerBar.setVisibility(false);
+	},
+	
+	destroyCorrectAnswerBar: function()
+	{
+                this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
+                document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
+                this.mCorrectAnswerBar = 0;
+        },
 
 	inputKeyHit: function(e)
 	{
@@ -207,6 +238,13 @@ Extends: Game,
                		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
 		}
 		APPLICATION.mGame.mNumAnswer.mMesh.focus();
+	},
+
+	createCorrectAnswerBar: function()
+	{
+		//question bar
+               	this.mCorrectAnswerBar = new Shape(100,50,300,100,this,"","","");
+               	this.mCorrectAnswerBar.mMesh.innerHTML = 'CA:';
 	},
 
 	createNumberPad: function()
