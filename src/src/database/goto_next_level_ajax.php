@@ -20,7 +20,16 @@ $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error())
 setLevelSessionVariables($conn,$_SESSION["user_id"]);
 
 //send player to the game page where he will be redirected.
-header("Location: /web/application/application.php");
+//header("Location: /web/application/application.php");
+
+//fill php vars
+$returnString = "101,"; 
+$returnString .= ",";
+$returnString .= $_SESSION["last_level_id"];
+$returnString .= ",";
+$returnString .= $_SESSION["next_level_id"];
+echo $returnString;
+
 
 ?>
 

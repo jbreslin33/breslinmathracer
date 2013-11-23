@@ -15,6 +15,7 @@ var Application = new Class(
 		this.mLevelID = 0;
 		this.mNextLevelID = 0;
 		this.mWaitingOnLevelData = false;
+		this.mAdvanceToNextLevelConfirmation = false;
 		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -118,34 +119,35 @@ var Application = new Class(
 				APPLICATION.mLevelID     = responseArray[2];
 				APPLICATION.mNextLevelID = responseArray[3];
 				APPLICATION.mWaitingOnLevelData = false;
-			
-                        	if (APPLICATION.mNextLevelID < 2) 
-				{
-					if (APPLICATION.mLastGameName != "Dungeon") 
-					{
-						console.log('Dungeon Game!');
-						APPLICATION.mLastGameName = APPLICATION.mGameName; 
-						APPLICATION.mGameName = "Dungeon"; 
-						APPLICATION.mGame = new Dungeon(APPLICATION);
-					}
-				}
-
-                        	if (APPLICATION.mNextLevelID >= 14) 
-				{
-					if (APPLICATION.mLastGameName != "Pad") 
-					{
-						console.log('Pad Game!');
-						APPLICATION.mLastGameName = APPLICATION.mGameName; 
-						APPLICATION.mGameName = "Pad"; 
-						APPLICATION.mGame = new Pad(APPLICATION);
-					}
-				}
                 	}
 		}
                 xmlhttp.open("GET","../../web/application/level_query.php",true);
                 xmlhttp.send();
                 this.timeWarning = true;
         },
+
+	gameDecider: function()
+	{
+  		if (this.mNextLevelID < 2)
+                {
+                	if (this.mGameName != "Dungeon")
+                        {
+                        	console.log('Dungeon Game!');
+                                this.mGameName = "Dungeon";
+                                this.mGame = new Dungeon(APPLICATION);
+                        }
+                }
+
+                if (this.mNextLevelID >= 14)
+                {
+               		if (this.mGameName != "Pad")
+                        {
+                        	console.log('Pad Game!');
+                                this.mGameName = "Pad";
+                                this.mGame = new Pad(APPLICATION);
+                        }
+                }
+	},
 
 	advanceToNextLevel: function()
         {
@@ -163,7 +165,16 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
+                        var response = xmlhttp.responseText; 
+			var responseArray = response.split(","); 
+			var code = responseArray[0];
 
+			if (code == "101")
+			{
+				APPLICATION.mLevelID     = responseArray[2];
+				APPLICATION.mNextLevelID = responseArray[3];
+				APPLICATION.mAdvanceToNextLevelConfirmation = true;
+			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
                 xmlhttp.send();

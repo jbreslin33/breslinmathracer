@@ -77,6 +77,7 @@ log: function(msg)
 
 enter: function(application)
 {
+	application.gameDecider();
 },
 
 execute: function(application)
@@ -127,10 +128,7 @@ execute: function(application)
 {
 	if (!application.mWaitingOnLevelData)
 	{
-        	if (application.mGame)
-        	{
-			application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
-        	}
+		application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
 	}
 },
 
@@ -166,12 +164,11 @@ enter: function(application)
                 application.mGame.resetGame();
                 application.sendGameTimeEnd();
 	}
-        application.mStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
 },
 
 execute: function(application)
 {
-        if (application.mGame)
+        if (application.mAdvanceToNextLevelConfirmation)
         {
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
