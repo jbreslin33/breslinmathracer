@@ -59,6 +59,15 @@ var Application = new Class(
                 document.addEvent("mousemove", this.mouseMove);
                 document.body.style.cursor = 'crosshair';
 
+		//states
+		this.mPadStateMachine = new StateMachine(this);
+
+                this.mGLOBAL_APPLICATION = new GLOBAL_APPLICATION(this);
+                this.mINIT_APPLICATION   = new INIT_APPLICATION(this);
+
+                this.mPadStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
+                this.mPadStateMachine.changeState(this.mINIT_APPLICATION);
+		
         	//START UPDATING
         	var t=setInterval("APPLICATION.update()",32)
         },
