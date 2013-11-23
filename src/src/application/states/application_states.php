@@ -119,7 +119,7 @@ log: function(msg)
 
 enter: function(application)
 {
-	application.getGameData();
+	application.getLevelData();
 },
 
 execute: function(application)
