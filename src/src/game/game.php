@@ -84,8 +84,6 @@ var Game = new Class(
                 this.mGameTime = 0;
 
                 this.standardGameAttempt();
-
-                //this.mStateMachine.changeState(this.mINIT_GAME);
         },
 
 	destroyShapesAndArray: function()
@@ -96,6 +94,7 @@ var Game = new Class(
                         //back to div
                         this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
                         document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
+                	this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
 	},
