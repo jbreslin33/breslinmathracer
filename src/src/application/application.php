@@ -60,13 +60,14 @@ var Application = new Class(
                 document.body.style.cursor = 'crosshair';
 
 		//states
-		this.mPadStateMachine = new StateMachine(this);
+		this.mStateMachine = new StateMachine(this);
 
                 this.mGLOBAL_APPLICATION = new GLOBAL_APPLICATION(this);
                 this.mINIT_APPLICATION   = new INIT_APPLICATION(this);
+                this.mNORMAL_APPLICATION = new NORMAL_APPLICATION(this);
 
-                this.mPadStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
-                this.mPadStateMachine.changeState(this.mINIT_APPLICATION);
+                this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
+                this.mStateMachine.changeState(this.mINIT_APPLICATION);
 		
         	//START UPDATING
         	var t=setInterval("APPLICATION.update()",32)
@@ -82,14 +83,7 @@ var Application = new Class(
 				
         update: function()
         {
-		if (this.mGame == 0)
-		{
-			this.getGameData();	
-		}
-		if (this.mGame)
-		{
-			this.mGame.update();
-		}
+		this.mStateMachine.update();
         },
 
 	newGame: function()

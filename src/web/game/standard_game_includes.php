@@ -2,9 +2,10 @@
 <script type="text/javascript" src="/src/bounds/bounds.php"></script>
 <script type="text/javascript" src="/src/fsm/state.php"></script>
 <script type="text/javascript" src="/src/fsm/state_machine.php"></script>
+<script type="text/javascript" src="/src/application/application.php"></script>
+<script type="text/javascript" src="/src/application/states/application_states.php"></script>
 <script type="text/javascript" src="/src/game/game.php"></script>
 <script type="text/javascript" src="/src/game/states/game_states.php"></script>
-<script type="text/javascript" src="/src/application/application.php"></script>
 <script type="text/javascript" src="/src/animation/animation.php"></script>
 <script type="text/javascript" src="/src/animation/animation_advanced.php"></script>
 <script type="text/javascript" src="/src/shape/shape.php"></script>

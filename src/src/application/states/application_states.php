@@ -14,15 +14,15 @@ log: function(msg)
         }, 0);
 },
 
-enter: function(game)
+enter: function(application)
 {
 },
 
-execute: function(game)
+execute: function(application)
 {
 },
 
-exit: function(game)
+exit: function(application)
 {
 }
 
@@ -44,15 +44,16 @@ log: function(msg)
         }, 0);
 },
 
-enter: function(game)
+enter: function(application)
 {
 },
 
-execute: function(game)
+execute: function(application)
 {
+	application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
 },
 
-exit: function(game)
+exit: function(application)
 {
 }
 
@@ -74,15 +75,23 @@ log: function(msg)
         }, 0);
 },
 
-enter: function(game)
+enter: function(application)
 {
 },
 
-execute: function(game)
+execute: function(application)
 {
+	if (application.mGame == 0)
+        {
+                application.getGameData();
+        }
+        if (application.mGame)
+        {
+                application.mGame.update();
+        }
 },
 
-exit: function(game)
+exit: function(application)
 {
 }
 
