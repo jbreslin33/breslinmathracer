@@ -39,6 +39,16 @@ var Game = new Class(
 		this.mKeysOn = true;
 	
 		this.standardGameAttempt();
+ 
+		//states
+                this.mStateMachine = new StateMachine(this);
+
+                this.mGLOBAL_GAME                       = new GLOBAL_GAME       (this);
+                this.mINIT_GAME                         = new INIT_GAME         (this);
+                this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
+
+                this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
+                this.mStateMachine.changeState(this.mINIT_GAME);
 
         },
  	
@@ -156,6 +166,7 @@ var Game = new Class(
 	
         update: function()
         {
+
 		//get time since epoch and set lasttime
                	e = new Date();
                	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
@@ -196,6 +207,9 @@ var Game = new Class(
         
                	//save old positions
                	this.saveOldPositions();
+
+		this.mStateMachine.update();
+	
         },
 	gameOver: function()
 	{

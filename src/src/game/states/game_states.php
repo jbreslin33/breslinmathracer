@@ -1,3 +1,97 @@
+/*************** GAME STATES ************/
+var GLOBAL_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var INIT_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+	game.mStateMachine.changeState(game.mNORMAL_GAME);
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var NORMAL_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+	this.log('NORMAL_GAME::execute');
+},
+
+exit: function(game)
+{
+}
+
+});
+
+/****************** PAD STATES ************/
 var GLOBAL_PAD_GAME = new Class(
 {
 Extends: State,
