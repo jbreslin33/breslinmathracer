@@ -8,8 +8,6 @@ Extends: Game,
        		this.parent(application);
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
-		this.mWorkingOnLevel = this.mApplication.mNextLevelID;
-		this.log('levelW:' + this.mWorkingOnLevel);
 		this.createQuestions(); //do this once
 		this.createWorld(); //do this once
 	},
@@ -20,6 +18,13 @@ Extends: Game,
 		this.mQuiz.destructor();
 	},
 
+	reset: function()
+	{
+		this.parent();
+		this.createQuestions(); //do this once
+		this.createWorld(); //do this once
+	},
+
 	update: function()
 	{
 		this.parent()
@@ -27,18 +32,20 @@ Extends: Game,
 
 	createQuestions: function()
 	{
-		if (this.mWorkingOnLevel == 1)
+		this.mQuiz.reset();
+
+		if (this.mApplication.mNextLevelID == 1)
 		{
 			this.mQuiz.mQuestionArray.push(new Question('0','1'));
 		}
 		
-		if (this.mWorkingOnLevel == 1.01)
+		if (this.mApplication.mNextLevelID == 1.01)
 		{
 			this.mQuiz.mQuestionArray.push(new Question('0','1'));
 			this.mQuiz.mQuestionArray.push(new Question('1','2'));
 		}
 		
-		if (this.mWorkingOnLevel == 1.02)
+		if (this.mApplication.mNextLevelID == 1.02)
 		{
 			this.mQuiz.mQuestionArray.push(new Question('0','1'));
 			this.mQuiz.mQuestionArray.push(new Question('1','2'));
@@ -48,6 +55,9 @@ Extends: Game,
 
 	createWorld: function()
 	{
+		this.destroyShapesAndArray();
+		this.mShapeArray = new Array();
+
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createQuestionShapes();

@@ -112,7 +112,7 @@ Extends: Game,
 		this.createNumberPad();
 	},
 	
-	resetGame: function()
+	reset: function()
 	{
 		this.createQuestions();
 		this.createWorld();
@@ -319,7 +319,7 @@ Extends: Game,
                         	{
 					APPLICATION.mGame.mAlertPause = true;	
                                 	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
-					APPLICATION.mGame.resetGame();
+					APPLICATION.mGame.reset();
                         	}
                         	APPLICATION.mGame.mStartGameHit = true;
                         	APPLICATION.mGame.mNumAnswer.mMesh.value = '';
@@ -336,7 +336,7 @@ Extends: Game,
                         	{
 					APPLICATION.mGame.mAlertPause = true;	
                                 	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
-					APPLICATION.mGame.resetGame();
+					APPLICATION.mGame.reset();
                         	}
                         	APPLICATION.mGame.mStartGameHit = true;
                         	APPLICATION.mGame.mNumAnswer.mMesh.value = '';
@@ -369,7 +369,7 @@ Extends: Game,
 			{
 				APPLICATION.mGame.mAlertPause = true;	
 				alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
-				APPLICATION.mGame.resetGame();
+				APPLICATION.mGame.reset();
 			}
 			APPLICATION.mGame.mStartGameHit = true;
 			APPLICATION.mGame.mNumAnswer.mMesh.value = '';
@@ -387,7 +387,7 @@ Extends: Game,
                         {
 				APPLICATION.mGame.mAlertPause = true;	
                                 alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
-				APPLICATION.mGame.resetGame();
+				APPLICATION.mGame.reset();
                         }
                         APPLICATION.mGame.mStartGameHit = true;
                         APPLICATION.mGame.mNumAnswer.mMesh.value = '';

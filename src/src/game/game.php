@@ -29,7 +29,7 @@ var Game = new Class(
 
 		/********* BOUNDS *******************/ 
                 //create bounds
-                this.createBounds(60,735,380,35);
+                this.mBounds = new Bounds(60,735,380,35);
 
 		//keys
 		this.mKeysOn = true;
@@ -58,12 +58,46 @@ var Game = new Class(
 
 	destructor: function()
 	{
- 		for (i = 0; i < this.mShapeArray.length; i++)
+		//shapes and array
+		this.destroyShapesAndArray();
+		
+		//bounds
+		this.mBounds = 0;
+
+		//states
+		this.mStateMachine = 0;
+		this.mGLOBAL_GAME = 0;
+		this.mINIT_GAME = 0;
+		this.mNORMAL_GAME = 0;
+	},
+
+	reset: function()
+        {
+                /************ SCORE *******/
+                this.mScore = 0;
+
+                /**************** TIME ************/
+                this.timeWarning = false;
+                this.mTimeSinceEpoch = 0;
+                this.mLastTimeSinceEpoch = 0;
+                this.mDeltaTime = 0;
+                this.mGameTime = 0;
+
+                this.standardGameAttempt();
+
+                //this.mStateMachine.changeState(this.mINIT_GAME);
+        },
+
+	destroyShapesAndArray: function()
+	{
+		//shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         //back to div
                         this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
                         document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
                 }
+                this.mShapeArray = 0;
 	},
 
 	update: function()
@@ -113,22 +147,6 @@ var Game = new Class(
                 xmlhttp.send();
 	},
 	
-	resetGame: function()
-        {
-		this.resetShapes();
-		this.mQuiz.reset();
-              	this.setScore(0);
-        },
-
- 	resetShapes: function()
-        {
-		//call reset on all shapes
-                for (i=0; i < this.mShapeArray.length; i++)
-                {
-			this.mShapeArray[i].reset();
-		}
-        },
-
 	/*********************** PUBLIC ***************************/
 	getControlObject: function()
 	{
@@ -360,11 +378,6 @@ var Game = new Class(
                                 return randomPoint2D;
                         }
                 } 
-        },
-
-  	createBounds: function(north,east,south,west)
-        {
-                mBounds = new Bounds(north,east,south,west);
         },
 
         getScore: function()

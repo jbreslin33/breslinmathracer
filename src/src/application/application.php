@@ -122,6 +122,7 @@ var Application = new Class(
                 xmlhttp.send();
         },
 
+	// are we running the right game??
 	gameDecider: function()
 	{
 		if (this.mNextLevelID == 0 || this.mNextLevelID == null)

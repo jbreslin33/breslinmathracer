@@ -149,21 +149,21 @@ var Shape = new Class(
 
 	checkForOutOfBounds: function()
 	{
-                if (this.mPosition.mY < mBounds.mNorth)
+                if (this.mPosition.mY < this.mGame.mBounds.mNorth)
                 {
-                        this.mPosition.mY = mBounds.mNorth;
+                        this.mPosition.mY = this.mGame.mBounds.mNorth;
                 }
-                if (this.mPosition.mX > mBounds.mEast)
+                if (this.mPosition.mX > this.mGame.mBounds.mEast)
                 {
-                        this.mPosition.mX = mBounds.mEast;
+                        this.mPosition.mX = this.mGame.mBounds.mEast;
                 }
-                if (this.mPosition.mY > mBounds.mSouth)
+                if (this.mPosition.mY > this.mGame.mBounds.mSouth)
                 {
-                        this.mPosition.mY = mBounds.mSouth;
+                        this.mPosition.mY = this.mGame.mBounds.mSouth;
                 }
-                if (this.mPosition.mX < mBounds.mWest)
+                if (this.mPosition.mX < this.mGame.mBounds.mWest)
                 {
-                        this.mPosition.mX = mBounds.mWest;
+                        this.mPosition.mX = this.mGame.mBounds.mWest;
                 }
         },
 

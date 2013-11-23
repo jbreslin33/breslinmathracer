@@ -20,6 +20,7 @@ var Quiz = new Class(
 		{
 			this.mQuestionArray[i] = 0;
 		}
+
 		//destroy question array
 		this.mQuestionArray = 0;
 		
@@ -31,6 +32,18 @@ var Quiz = new Class(
 		//destroy question pool array
 		this.mQuestionPoolArray = 0;
 	},	
+	
+	reset: function()
+	{
+		this.destructor();
+		
+		//Question and Answer Array
+		this.mQuestionArray = new Array();
+		this.mQuestionPoolArray = new Array();
+
+		//reset marker
+		this.mMarker = 0;
+	},
  	
 	//returns question object	
 	getQuestion: function()
@@ -61,22 +74,5 @@ var Quiz = new Class(
 		{
 			return false;
 		}
-	},
-
-	reset: function()
-	{
-		//reset marker
-		this.mMarker = 0;
-                
-		//update question 
-		this.mGame.mApplication.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
-
-		for (i = 0; i < this.mQuestionArray.length; i++)
-		{
-			this.mQuestionArray[i].setSolved(false);	
-		}
 	}
-
 });
-
-

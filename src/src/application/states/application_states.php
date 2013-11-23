@@ -79,14 +79,8 @@ enter: function(application)
 {
 	//this.log('NORMAL_APPLICATION::enter');
 	
-	//delete any current game
-	if (application.mGame)
-	{
-		application.mGame.destructor();
-		application.mGame = 0;
-	}
-
-	//get a new game
+	//get a new game if neccesary
+	
 	application.gameDecider();
 },
 
@@ -103,6 +97,7 @@ execute: function(application)
 			application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 
 		}
+		this.log('dd');
                 application.mGame.update();
         }
 },
@@ -169,6 +164,7 @@ log: function(msg)
 enter: function(application)
 {
 	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
+        application.mAdvanceToNextLevelConfirmation = false;
 	application.mLevelCompleted = false;
 
 	//tell db to advance you
@@ -182,6 +178,12 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
+		this.log('ADVANCE_TO_:' + application.mNextLevelID);
+		if (application.mGame)
+		{
+			application.mGame.reset();
+		}
+		
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
