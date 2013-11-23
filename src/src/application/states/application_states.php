@@ -83,7 +83,7 @@ execute: function(application)
 {
 	if (application.mGame == 0)
         {
-		application.mStateMachine.changeState(application.mGET_GAME_DATA_APPLICATION);
+		application.mStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
         }
         if (application.mGame)
         {
@@ -101,7 +101,7 @@ exit: function(application)
 
 });
 
-var GET_GAME_DATA_APPLICATION = new Class(
+var GET_LEVEL_DATA_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -161,7 +161,7 @@ enter: function(application)
                 application.mGame.resetGame();
                 application.sendGameTimeEnd();
 	}
-        application.mStateMachine.changeState(application.mGET_GAME_DATA_APPLICATION);
+        application.mStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
 },
 
 execute: function(application)
