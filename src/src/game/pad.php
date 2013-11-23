@@ -136,6 +136,15 @@ Extends: Game,
 		this.createNumberPad();
 	},
 	
+	hideNumberPad: function()
+	{
+  		//shapes and array
+                for (i = 0; i < this.mNumberPadArray.length; i++)
+		{
+			this.mNumberPadArray[i].setVisibility(false);
+		}
+	},
+
 	destroyNumberPad: function()
 	{
   		//shapes and array
