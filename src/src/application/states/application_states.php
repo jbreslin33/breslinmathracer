@@ -159,7 +159,7 @@ enter: function(application)
 	{
         	application.advanceToNextLevel();
                 application.mGame.resetGame();
-                application.mGame.sendGameTimeEnd();
+                application.sendGameTimeEnd();
 	}
         application.mStateMachine.changeState(application.mGET_GAME_DATA_APPLICATION);
 },
