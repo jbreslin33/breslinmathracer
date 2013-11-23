@@ -336,15 +336,18 @@ log: function(msg)
 
 enter: function(game)
 {
+	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
 	game.hideNumberPad();
 	game.showCorrectAnswerBar();
-        this.log('Try again. Correct Answer is:' + game.mQuiz.getQuestion().getAnswer());
- 	game.mStartGameHit = true;
-        game.mNumAnswer.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.value = 'CA: ' + game.mQuiz.getQuestion().getQuestion() + '=' +  game.mQuiz.getQuestion().getAnswer();
 },
 
 execute: function(game)
 {
+	if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
+        {
+		game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);	
+	}
 },
 
 exit: function(game)

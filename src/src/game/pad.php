@@ -20,6 +20,8 @@ Extends: Game,
                 this.mUserAnswer = '';
 		this.mQuizComplete = false;
 		this.mAlertPause = false;
+		this.mCorrectAnswerStartTime = 0;
+		this.mCorrectAnswerThresholdTime = 5000;
 		
 		//number pad
 		this.mNumberPadArray = new Array();
