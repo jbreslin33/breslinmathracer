@@ -6,11 +6,8 @@ var Game = new Class(
 {
 	initialize: function(application)
         {
-		this.log('Game cons');
 		this.mApplication = application;
 	
-		this.mApplication.mInstantiatedGame = true;
-
 		/********* SHAPES *******************/ 
 		//shape Array
        		this.mShapeArray = new Array();
@@ -82,7 +79,6 @@ var Game = new Class(
 		}
 		xmlhttp.onreadystatechange=function()
 	  	{
-			console.log(xmlhttp.responseText);			  
 		}
 		xmlhttp.open("GET","../../src/database/update_score.php?q="+score,true);
 		xmlhttp.send();

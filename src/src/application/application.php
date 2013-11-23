@@ -23,8 +23,6 @@ var Application = new Class(
 		/********* GAME *******************/ 
 		this.mGame = 0;
 		this.mGameName = "";
-		this.mLastGameName = "";
-		this.mInstantiatedGame = false;
 
 		//KEYS
 		if (this.mGame)
@@ -92,7 +90,6 @@ var Application = new Class(
 
 	newGame: function()
 	{
-		this.mInstantiatedGame = false;
 		this.mGame = 0;	
 	},
  
@@ -123,7 +120,6 @@ var Application = new Class(
 		}
                 xmlhttp.open("GET","../../web/application/level_query.php",true);
                 xmlhttp.send();
-                this.timeWarning = true;
         },
 
 	gameDecider: function()
@@ -137,7 +133,6 @@ var Application = new Class(
                 {
                 	if (this.mGameName != "Dungeon")
                         {
-                        	console.log('Dungeon Game!');
                                 this.mGameName = "Dungeon";
                                 this.mGame = new Dungeon(APPLICATION);
                         }
@@ -147,7 +142,6 @@ var Application = new Class(
                 {
                		if (this.mGameName != "Pad")
                         {
-                        	console.log('Pad Game!');
                                 this.mGameName = "Pad";
                                 this.mGame = new Pad(APPLICATION);
                         }
@@ -201,7 +195,6 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-
                 }
                 xmlhttp.open("GET","../../src/database/set_game_end_time.php",true);
                 xmlhttp.send();
