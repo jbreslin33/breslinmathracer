@@ -31,6 +31,7 @@ Extends: Game,
         	this.mINIT_PAD_GAME       = new INIT_PAD_GAME(this);
         	this.mRESET_PAD_GAME      = new RESET_PAD_GAME(this);
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
+        	this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
         	this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
 
@@ -156,19 +157,6 @@ Extends: Game,
                         APPLICATION.mGame.mStartGameHit = true;
 
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-                       	if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
-                       	{
-                               	APPLICATION.mGame.mQuiz.correctAnswer();
-                               	APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;
-                       	}
-                       	else
-                       	{
-				APPLICATION.mGame.mAlertPause = true;	
-                               	alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
-				APPLICATION.mGame.reset();
-                       	}
-                       	APPLICATION.mGame.mStartGameHit = true;
-                       	APPLICATION.mGame.mNumAnswer.mMesh.value = '';
                	}
 
                	if (APPLICATION.mGame.mQuiz)

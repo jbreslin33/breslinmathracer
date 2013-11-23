@@ -158,9 +158,10 @@ execute: function(game)
         {
                 game.mQuizComplete = true;
                 game.mApplication.mLevelCompleted = true;
-                alert('Electrical Bananas! Next Level!');
+                //alert('Electrical Bananas! Next Level!');
         }
 
+/*
         if (game.mAlertPause == false)
         {
         	if (game.mStartGameHit == true && game.mOutOfTime == false)
@@ -173,6 +174,7 @@ execute: function(game)
                         }
                 }
          }
+*/
 },
 
 exit: function(game)
@@ -231,6 +233,7 @@ log: function(msg)
 enter: function(game)
 {
         game.reset();
+	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
 },
 
 execute: function(game)
@@ -243,6 +246,48 @@ exit: function(game)
 
 });
 
+var WAITING_ON_ANSWER_FIRST_TIME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	
+},
+
+execute: function(game)
+{
+	if (game.mUserAnswer != '')
+	{
+		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
+               	{ 
+                        game.mQuiz.correctAnswer();
+                        game.mQuestionStartTime = game.mTimeSinceEpoch;
+                }
+                else
+                {
+                      	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
+                }
+	}
+},
+
+exit: function(game)
+{
+}
+
+});
 var WAITING_ON_ANSWER = new Class(
 {
 Extends: State,
@@ -291,6 +336,9 @@ log: function(msg)
 
 enter: function(game)
 {
+        this.log('Try again. Correct Answer is:' + game.mQuiz.getQuestion().getAnswer());
+ 	game.mStartGameHit = true;
+        game.mNumAnswer.mMesh.value = '';
 },
 
 execute: function(game)
