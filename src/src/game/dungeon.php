@@ -19,11 +19,6 @@ Extends: Game,
 			this.mWorkingOnLevel = this.mApplication.mNextLevelID;	
 			this.createQuestions();
 		}		
-
-		if( this.mQuiz)
-		{
-			this.mQuiz.update();
-		}
 	},
 
 	createQuestions: function()
