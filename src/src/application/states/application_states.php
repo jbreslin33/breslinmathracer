@@ -80,7 +80,6 @@ enter: function(application)
 	//this.log('NORMAL_APPLICATION::enter');
 	
 	//get a new game if neccesary
-	
 	application.gameDecider();
 },
 
@@ -97,7 +96,6 @@ execute: function(application)
 			application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 
 		}
-		this.log('dd');
                 application.mGame.update();
         }
 },

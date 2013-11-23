@@ -134,6 +134,11 @@ var Application = new Class(
                 {
                 	if (this.mGameName != "Dungeon")
                         {
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
                                 this.mGameName = "Dungeon";
                                 this.mGame = new Dungeon(APPLICATION);
                         }
@@ -143,6 +148,11 @@ var Application = new Class(
                 {
                		if (this.mGameName != "Pad")
                         {
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
                                 this.mGameName = "Pad";
                                 this.mGame = new Pad(APPLICATION);
                         }
