@@ -56,6 +56,16 @@ var Game = new Class(
                 }, 0);
         },
 
+	destructor: function()
+	{
+ 		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        //back to div
+                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
+                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
+                }
+	},
+
 	update: function()
         {
                 this.mStateMachine.update();

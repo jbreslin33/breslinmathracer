@@ -18,6 +18,7 @@ Extends: Game,
 		{
 			this.mWorkingOnLevel = this.mApplication.mNextLevelID;	
 			this.createQuestions();
+			this.createWorld();
 		}		
 	},
 
@@ -43,8 +44,6 @@ Extends: Game,
 			this.mQuiz.mQuestionArray.push(new Question('1','2'));
 			this.mQuiz.mQuestionArray.push(new Question('2','3'));
 		}
-		
-		this.createWorld();
 	},
 
 	createWorld: function()
@@ -89,8 +88,6 @@ Extends: Game,
                 this.mControlObject.mAnimation = new AnimationAdvanced(this.mControlObject);
                 this.mControlObject.mAnimation.addAnimations('/images/characters/wizard_','.png');
                 this.addToShapeArray(this.mControlObject);
-
-//		this.parent();
 
         	this.mControlObject.mHideOnQuestionSolved = false;
         	this.mControlObject.createMountPoint(0,-5,-41);
