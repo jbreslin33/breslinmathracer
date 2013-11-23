@@ -85,6 +85,7 @@ enter: function(application)
 
 execute: function(application)
 {
+	//you might not have a game if this your first time or you just went to a level that requires new game
 	if (application.mGame == 0)
         {
 		application.mStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
@@ -94,7 +95,6 @@ execute: function(application)
 		if (application.mLevelCompleted)
 		{
 			application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
-
 		}
                 application.mGame.update();
         }
@@ -176,12 +176,10 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
-		this.log('ADVANCE_TO_:' + application.mNextLevelID);
 		if (application.mGame)
 		{
 			application.mGame.reset();
 		}
-		
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
@@ -191,4 +189,3 @@ exit: function(application)
 }
 
 });
-
