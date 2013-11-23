@@ -59,7 +59,12 @@ var Game = new Class(
                         throw new Error(msg);
                 }, 0);
         },
-				
+
+	update: function()
+        {
+                this.mStateMachine.update();
+        },
+			
 	//brian - update score in games_attempts table		
 	updateScore: function()
 	{
@@ -164,53 +169,6 @@ var Game = new Class(
 		this.mShapeArray.push(shape);
 	},
 	
-        update: function()
-        {
-
-		//get time since epoch and set lasttime
-               	e = new Date();
-               	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
-               	this.mTimeSinceEpoch = e.getTime();
-
-               	//set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
-               	this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
-				
-		if(this.mDeltaTime < 50000)
-		{
-			this.mGameTime = this.mGameTime + this.mDeltaTime;
-		}
-                        
-		//check Keys from application
-		if (this.mKeysOn)
-		{
-			this.checkKeys();
-		}
-
-		if (this.mMouseOn)
-		{
-			this.checkMouse();
-		}
-
-               	//move shapes   
-               	for (i = 0; i < this.mShapeArray.length; i++)
-               	{
-			this.mShapeArray[i].update(this.mDeltaTime);
-               	}
-			
-		//collision Detection
-		this.checkForCollisions();
-
-               	for (i = 0; i < this.mShapeArray.length; i++)
-		{
-                       	this.mShapeArray[i].render();
-		}	
-        
-               	//save old positions
-               	this.saveOldPositions();
-
-		this.mStateMachine.update();
-	
-        },
 	gameOver: function()
 	{
                	for (i = 0; i < this.mShapeArray.length; i++)
