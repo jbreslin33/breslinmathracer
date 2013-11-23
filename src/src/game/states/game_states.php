@@ -154,11 +154,6 @@ enter: function(game)
 
 execute: function(game)
 {
-	if (game.mWorkingOnLevel != game.mApplication.mNextLevelID)
-        {
-		game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);
-        }
-
         if (game.mQuiz.isQuizComplete())
         {
                 game.mQuizComplete = true;
@@ -174,7 +169,7 @@ execute: function(game)
                         {
                        	        game.mOutOfTime = true;
                                 alert('Out of time! Correct Answer is:' + game.mQuiz.getQuestion().getAnswer());
-                                game.resetGame();
+                                game.reset();
                         }
                 }
          }
@@ -208,6 +203,7 @@ enter: function(game)
 
 execute: function(game)
 {
+	game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);
 },
 
 exit: function(game)
@@ -234,8 +230,7 @@ log: function(msg)
 
 enter: function(game)
 {
-	game.mWorkingOnLevel = game.mApplication.mNextLevelID;
-        game.resetGame();
+        game.reset();
 },
 
 execute: function(game)

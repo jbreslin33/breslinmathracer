@@ -10,7 +10,6 @@ Extends: Game,
 
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
-                this.mWorkingOnLevel = this.mApplication.mLevelID;
 
  		//times
                 this.mThresholdTime = 2000;
@@ -59,9 +58,8 @@ Extends: Game,
                 this.mQuiz.mQuestionPoolArray.push(new Question('4 + 1 =','5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('5 + 1 =','6'));
 
-                if (this.mWorkingOnLevel == 14)
+                if (this.mApplication.mNextLevelID == 14)
 		{
-			this.log('mWorkingOnLevel!!!! 14');
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
 				randomElement = Math.floor((Math.random()*1));		
@@ -69,7 +67,7 @@ Extends: Game,
 				this.log(this.mQuiz.mQuestionArray[i].getQuestion());
 			}
 		}
-                if (this.mWorkingOnLevel == 14.01)
+                if (this.mApplication.mNextLevelID == 14.01)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -77,7 +75,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mWorkingOnLevel == 14.02)
+                if (this.mApplication.mNextLevelID == 14.02)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -85,7 +83,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mWorkingOnLevel == 14.03)
+                if (this.mApplication.mNextLevelID == 14.03)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -93,7 +91,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mWorkingOnLevel == 14.04)
+                if (this.mApplication.mNextLevelID == 14.04)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
