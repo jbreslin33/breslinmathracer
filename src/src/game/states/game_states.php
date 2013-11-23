@@ -338,8 +338,8 @@ enter: function(game)
 {
 	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
 	game.hideNumberPad();
+	game.mCorrectAnswerBar.mMesh.innerHTML = 'C:' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
 	game.showCorrectAnswerBar();
-        game.mCorrectAnswerBar.mMesh.value = 'CA: ' + game.mQuiz.getQuestion().getQuestion() + '=' +  game.mQuiz.getQuestion().getAnswer();
 },
 
 execute: function(game)
