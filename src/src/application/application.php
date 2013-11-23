@@ -12,6 +12,9 @@ var Application = new Class(
 
 		/*********** LEVEL *******************
 		this.mLevelCompleted = false;
+		this.mLevelID = 0;
+		this.mNextLevelID = 0;
+		this.mWaitingOnLevelData = false;
 		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -20,8 +23,6 @@ var Application = new Class(
 		this.mGame = 0;
 		this.mGameName = "";
 		this.mLastGameName = "";
-		this.mLevelID = 0;
-		this.mNextLevelID = 0;
 		this.mInstantiatedGame = false;
 
 		//KEYS
@@ -116,6 +117,7 @@ var Application = new Class(
 			{
 				APPLICATION.mLevelID     = responseArray[2];
 				APPLICATION.mNextLevelID = responseArray[3];
+				APPLICATION.mWaitingOnLevelData = false;
 			
                         	if (APPLICATION.mNextLevelID < 2) 
 				{

@@ -119,19 +119,24 @@ log: function(msg)
 
 enter: function(application)
 {
+	application.mWaitingOnLevelData = true;
 	application.getLevelData();
 },
 
 execute: function(application)
 {
-        if (application.mGame)
-        {
-		application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
-        }
+	if (!application.mWaitingOnLevelData)
+	{
+        	if (application.mGame)
+        	{
+			application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+        	}
+	}
 },
 
 exit: function(application)
 {
+	application.mWaitingOnLevelData = false;
 }
 
 });
