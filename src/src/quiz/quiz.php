@@ -12,6 +12,25 @@ var Quiz = new Class(
 		//question
 		this.mMarker = 0;
         },
+
+	destructor: function()
+	{
+		//destroy questions
+		for (i = 0; i < this.mQuestionArray.length; i++)
+		{
+			this.mQuestionArray[i] = 0;
+		}
+		//destroy question array
+		this.mQuestionArray = 0;
+		
+		//destroy question pool
+		for (i = 0; i < this.mQuestionPoolArray.length; i++)
+		{
+			this.mQuestionPoolArray[i] = 0;
+		}
+		//destroy question pool array
+		this.mQuestionPoolArray = 0;
+	},	
  	
 	//returns question object	
 	getQuestion: function()

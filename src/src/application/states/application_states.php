@@ -78,6 +78,15 @@ log: function(msg)
 enter: function(application)
 {
 	//this.log('NORMAL_APPLICATION::enter');
+	
+	//delete any current game
+	if (application.mGame)
+	{
+		application.mGame.destructor();
+		application.mGame = 0;
+	}
+
+	//get a new game
 	application.gameDecider();
 },
 
@@ -161,12 +170,12 @@ enter: function(application)
 {
 	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
 	application.mLevelCompleted = false;
-	if (application.mGame)
-	{
-        	application.advanceToNextLevel();
-                application.mGame.resetGame();
-                application.sendGameTimeEnd();
-	}
+
+	//tell db to advance you
+        application.advanceToNextLevel();
+
+	//set the game on db to end 
+        application.sendGameTimeEnd();
 },
 
 execute: function(application)
