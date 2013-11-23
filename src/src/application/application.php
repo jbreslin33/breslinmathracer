@@ -137,7 +137,7 @@ var Application = new Class(
 				}
                 	}
 		}
-                xmlhttp.open("GET","../../web/game/standard_games_query.php",true);
+                xmlhttp.open("GET","../../web/application/level_query.php",true);
                 xmlhttp.send();
                 this.timeWarning = true;
         },
