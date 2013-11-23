@@ -156,15 +156,6 @@ var Game = new Class(
 	
         update: function()
         {
-		if (this.mApplication.mLevelCompleted)
-		{
-			this.mApplication.mLevelCompleted = false;
-			this.advanceToNextLevel();
-			this.resetGame();
-			this.sendGameTimeEnd();
-			this.mApplication.getGameData();
-		}
-
 		//get time since epoch and set lasttime
                	e = new Date();
                	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;

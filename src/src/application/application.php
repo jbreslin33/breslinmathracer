@@ -62,10 +62,11 @@ var Application = new Class(
 		//states
 		this.mStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_APPLICATION        = new GLOBAL_APPLICATION       (this);
-                this.mINIT_APPLICATION          = new INIT_APPLICATION         (this);
-                this.mNORMAL_APPLICATION        = new NORMAL_APPLICATION       (this);
-                this.mGET_GAME_DATA_APPLICATION = new GET_GAME_DATA_APPLICATION(this);
+                this.mGLOBAL_APPLICATION                = new GLOBAL_APPLICATION       (this);
+                this.mINIT_APPLICATION                  = new INIT_APPLICATION         (this);
+                this.mNORMAL_APPLICATION                = new NORMAL_APPLICATION       (this);
+                this.mGET_GAME_DATA_APPLICATION         = new GET_GAME_DATA_APPLICATION(this);
+                this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
                 this.mStateMachine.changeState(this.mINIT_APPLICATION);

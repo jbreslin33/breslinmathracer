@@ -87,10 +87,14 @@ execute: function(application)
         }
         if (application.mGame)
         {
+		if (application.mLevelCompleted)
+		{
+			application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
+
+		}
                 application.mGame.update();
         }
 },
-
 exit: function(application)
 {
 }
@@ -123,6 +127,48 @@ execute: function(application)
         if (application.mGame)
         {
 		application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var ADVANCE_TO_NEXT_LEVEL_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(application)
+{
+	application.mLevelCompleted = false;
+	if (application.mGame)
+	{
+        	application.mGame.advanceToNextLevel();
+                application.mGame.resetGame();
+                application.mGame.sendGameTimeEnd();
+	}
+        application.mStateMachine.changeState(application.mGET_GAME_DATA_APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mGame)
+        {
+                application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
 
