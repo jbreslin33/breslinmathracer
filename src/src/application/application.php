@@ -18,8 +18,8 @@ var Application = new Class(
 
 		/********* GAME *******************/ 
 		this.mGame = 0;
-		this.mGameID = 0;
-		this.mLastGameID = 0;
+		this.mGameName = "";
+		this.mLastGameName = "";
 		this.mLevelID = 0;
 		this.mNextLevelID = 0;
 		this.mInstantiatedGame = false;
@@ -114,24 +114,27 @@ var Application = new Class(
 
 			if (code == "100")
 			{
-				APPLICATION.mLastGameID  = APPLICATION.mGameID;
-				APPLICATION.mGameID      = responseArray[1];
 				APPLICATION.mLevelID     = responseArray[2];
 				APPLICATION.mNextLevelID = responseArray[3];
-
-                        	if (APPLICATION.mGameID == "1") 
+			
+                        	if (APPLICATION.mNextLevelID < 2) 
 				{
-					if (APPLICATION.mLastGameID != "1") 
+					if (APPLICATION.mLastGameName != "Dungeon") 
 					{
 						console.log('Dungeon Game!');
+						APPLICATION.mLastGameName = APPLICATION.mGameName; 
+						APPLICATION.mGameName = "Dungeon"; 
 						APPLICATION.mGame = new Dungeon(APPLICATION);
 					}
 				}
-                        	if (APPLICATION.mGameID == "6") 
+
+                        	if (APPLICATION.mNextLevelID >= 14) 
 				{
-					if (APPLICATION.mLastGameID != "6")
+					if (APPLICATION.mLastGameName != "Pad") 
 					{
 						console.log('Pad Game!');
+						APPLICATION.mLastGameName = APPLICATION.mGameName; 
+						APPLICATION.mGameName = "Pad"; 
 						APPLICATION.mGame = new Pad(APPLICATION);
 					}
 				}
