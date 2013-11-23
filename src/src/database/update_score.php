@@ -20,5 +20,4 @@ $query .= "';";
 // insert into users......
 $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
 dbErrorCheck($conn,$result);
-echo "hello";
 ?>

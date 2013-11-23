@@ -19,7 +19,6 @@ var Game = new Class(
                 this.mControlObject = 0;
 
 		/************ SCORE *******/
-		this.mScoreOnServer  = 0;
 		this.mScore = 0;
 
 		// may get rid of later and just use mOn
@@ -68,12 +67,7 @@ var Game = new Class(
 	//brian - update score in games_attempts table		
 	updateScore: function()
 	{
-		var str = this.getScore();
-		if (str == this.mScoreOnServer)
-		{
-			return;
-		}
-		
+		var score = this.getScore();
 		var xmlhttp;    
 		
 		if (window.XMLHttpRequest)
@@ -90,10 +84,8 @@ var Game = new Class(
 	  	{
 			console.log(xmlhttp.responseText);			  
 		}
-		xmlhttp.open("GET","../../src/database/update_score.php?q="+str,true);
+		xmlhttp.open("GET","../../src/database/update_score.php?q="+score,true);
 		xmlhttp.send();
-			
-		this.mScoreOnServer = str;
 	},
 
 	standardGameAttempt: function()
@@ -110,37 +102,11 @@ var Game = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-			console.log(xmlhttp.responseText);			  
                 }
                 xmlhttp.open("GET","../../web/game/standard_games_attempts.php",true);
                 xmlhttp.send();
-                this.timeWarning = true;
 	},
 	
-	checkTime: function()
-	{
-		if (this.mGameTime > 10000 && this.timeWarning == false)
-		{
-			var xmlhttp;    
-			
-			if (window.XMLHttpRequest)
-			{// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp=new XMLHttpRequest();
-			}
-			else
-			{// code for IE6, IE5
-				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange=function()
-			{
-				  
-			}
-			xmlhttp.open("GET","../../src/database/time_warning.php",true);
-			xmlhttp.send();
-			this.timeWarning = true;
-		}
-	},
- 
 	resetGame: function()
         {
 		this.resetShapes();
