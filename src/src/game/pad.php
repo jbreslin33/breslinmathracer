@@ -21,6 +21,7 @@ Extends: Game,
 		//show correct 
 		this.mCorrectAnswerStartTime = 0;
 		this.mCorrectAnswerThresholdTime = 5000;
+		this.mCorrectAnswerBarHeader = 0;
 		this.mCorrectAnswerBar = 0;
 	
 		//quiz	
@@ -39,6 +40,7 @@ Extends: Game,
         	this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
         	this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
+        	this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
 
         	this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
@@ -213,9 +215,14 @@ Extends: Game,
 
 	createCorrectAnswerBar: function()
 	{
+		//question bar header
+               	this.mCorrectAnswerBarHeader = new Shape(100,50,300,50,this,"","","");
+               	this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Header:';
+		
 		//question bar
                	this.mCorrectAnswerBar = new Shape(100,50,300,100,this,"","","");
-               	this.mCorrectAnswerBar.mMesh.innerHTML = 'CA:';
+               	this.mCorrectAnswerBar.mMesh.innerHTML = '';
+		
 	},
 
 	createNumberPad: function()

@@ -251,6 +251,8 @@ enter: function(game)
 
 	//correctAnswer
 	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBarHeader.mMesh.value = '';
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
 	game.mCorrectAnswerBar.mMesh.value = '';
 	game.mCorrectAnswerBar.mMesh.innerHTML = '';
 
@@ -313,6 +315,8 @@ enter: function(game)
 	
 	//correctAnswer
 	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBarHeader.mMesh.value = '';
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
 	game.mCorrectAnswerBar.mMesh.value = '';
 	game.mCorrectAnswerBar.mMesh.innerHTML = '';
 
@@ -352,9 +356,8 @@ execute: function(game)
 	//check time
         if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
         {
-		this.log('out of time gettting called');
         	game.mOutOfTime = true;
-                game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
+                game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
        	} 
 },
 
@@ -385,7 +388,8 @@ enter: function(game)
 	this.log('SHOW_CORRECT_ANSWER');
 	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
 	game.hideNumberPad();
-	game.mCorrectAnswerBar.mMesh.innerHTML = 'C:' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer:'; 
+	game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
 	game.showCorrectAnswerBar();
 },
 
@@ -401,6 +405,47 @@ exit: function(game)
 {
 	game.hideCorrectAnswerBar();
 	game.mCorrectAnswerBar.mMesh.innerHTML = ''; 
+}
+
+});
+var SHOW_CORRECT_ANSWER_OUT_OF_TIME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        this.log('SHOW_CORRECT_ANSWER_OUT_OF_TIME');
+        game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
+        game.hideNumberPad();
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'OUT OF TIME!';  
+        game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer();  
+        game.showCorrectAnswerBar();
+},
+
+execute: function(game)
+{
+        if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
+        {
+                game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);
+        }
+},
+
+exit: function(game)
+{
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBar.mMesh.innerHTML = '';
 }
 
 });
