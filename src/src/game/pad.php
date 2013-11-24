@@ -11,6 +11,7 @@ Extends: Game,
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
+		
 		//answers 
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
@@ -27,7 +28,7 @@ Extends: Game,
 
 		//number pad
 		this.mNumberPadArray = new Array();
-
+		
 		//state machine
 		this.mPadStateMachine = new StateMachine(this);
 
@@ -41,6 +42,7 @@ Extends: Game,
 
         	this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
+
 	},
 
 	destructor: function()
@@ -91,7 +93,6 @@ Extends: Game,
 			{	
 				randomElement = Math.floor((Math.random()*1));		
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-				this.log(this.mQuiz.mQuestionArray[i].getQuestion());
 			}
 		}
                 if (this.mApplication.mNextLevelID == 14.01)
@@ -130,9 +131,9 @@ Extends: Game,
 	
 	createWorld: function()
 	{
-		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
-		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
-		this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mNextLevelID + '</font>');
+		//scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
+		//this.mApplication.mHud.mScoreNeeded.setText(scoreText);
+		//this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mNextLevelID + '</font>');
 
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
@@ -220,136 +221,193 @@ Extends: Game,
 	createNumberPad: function()
 	{
 		//question bar
-               	this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-               	this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
-               	this.mNumQuestion.mMesh.mGame = this;
-		this.mNumberPadArray.push(this.mNumQuestion); 
+		if (!this.mNumQuestion)
+		{
+               		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
+               		this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
+               		this.mNumQuestion.mMesh.mGame = this;
+			this.mNumberPadArray.push(this.mNumQuestion); 
+		}
 
                 //answer text box
-               	this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
-               	this.mNumAnswer.mMesh.value = '';
-               	this.mNumAnswer.mMesh.mGame = this;
-               	this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-               	this.mNumAnswer.mMesh.focus();
-		this.mNumberPadArray.push(this.mNumAnswer); 
-
+		if (!this.mNumAnswer)
+		{
+               		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
+               		this.mNumAnswer.mMesh.value = '';
+               		this.mNumAnswer.mMesh.mGame = this;
+               		this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
+               		this.mNumAnswer.mMesh.focus();
+			this.mNumberPadArray.push(this.mNumAnswer); 
+		}
+		
                 //Lock
-                this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
-                this.mNumLock.mMesh.innerHTML = 'Lock';
-                this.mNumLock.mMesh.mGame = this;
-                this.mNumLock.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumLock); 
+		if (!this.mNumLock)
+		{
+                	this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
+                	this.mNumLock.mMesh.innerHTML = 'Lock';
+                	this.mNumLock.mMesh.mGame = this;
+                	this.mNumLock.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumLock); 
+		}
 		
 		//Division
-                this.mNumDivision = new Shape(50,50,350,150,this,"BUTTON","","");
-                this.mNumDivision.mMesh.innerHTML = '/';
-                this.mNumDivision.mMesh.mGame = this;
-                this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumDivision); 
+		if (!this.mNumDivision)
+		{
+                	this.mNumDivision = new Shape(50,50,350,150,this,"BUTTON","","");
+                	this.mNumDivision.mMesh.innerHTML = '/';
+                	this.mNumDivision.mMesh.mGame = this;
+                	this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumDivision); 
+		}
 
                 //Multiplication
-                this.mNumMultiplication= new Shape(50,50,400,150,this,"BUTTON","","");
-                this.mNumMultiplication.mMesh.innerHTML = '*';
-                this.mNumMultiplication.mMesh.mGame = this;
-                this.mNumMultiplication.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumMultiplication); 
+		if (!this.mNumMultiplication)
+		{
+                	this.mNumMultiplication= new Shape(50,50,400,150,this,"BUTTON","","");
+                	this.mNumMultiplication.mMesh.innerHTML = '*';
+                	this.mNumMultiplication.mMesh.mGame = this;
+                	this.mNumMultiplication.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumMultiplication); 
+		}
 
                 //Subtraction
-                this.mNumSubtraction = new Shape(50,50,450,150,this,"BUTTON","","");
-                this.mNumSubtraction.mMesh.innerHTML = '-';
-                this.mNumSubtraction.mMesh.mGame = this;
-                this.mNumSubtraction.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumSubtraction); 
+		if (!this.mNumSubtraction)
+		{
+                	this.mNumSubtraction = new Shape(50,50,450,150,this,"BUTTON","","");
+                	this.mNumSubtraction.mMesh.innerHTML = '-';
+                	this.mNumSubtraction.mMesh.mGame = this;
+                	this.mNumSubtraction.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumSubtraction); 
+		}
 
                 //7
-                this.mNumSeven = new Shape(50,50,300,200,this,"BUTTON","","");
-                this.mNumSeven.mMesh.innerHTML = '7';
-                this.mNumSeven.mMesh.mGame = this;
-                this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumSeven); 
+		if (!this.mNumSeven)
+		{
+                	this.mNumSeven = new Shape(50,50,300,200,this,"BUTTON","","");
+                	this.mNumSeven.mMesh.innerHTML = '7';
+                	this.mNumSeven.mMesh.mGame = this;
+                	this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumSeven); 
+		}
 
                 //8
-                this.mNumEight = new Shape(50,50,350,200,this,"BUTTON","","");
-                this.mNumEight.mMesh.innerHTML = '8';
-                this.mNumEight.mMesh.mGame = this;
-                this.mNumEight.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumEight); 
+		if (!this.mNumEight)
+		{
+                	this.mNumEight = new Shape(50,50,350,200,this,"BUTTON","","");
+                	this.mNumEight.mMesh.innerHTML = '8';
+                	this.mNumEight.mMesh.mGame = this;
+                	this.mNumEight.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumEight); 
+		}
 
 		//9
-                this.mNumNine = new Shape(50,50,400,200,this,"BUTTON","","");
-                this.mNumNine.mMesh.innerHTML = '9';
-                this.mNumNine.mMesh.mGame = this;
-                this.mNumNine.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumNine); 
+		if (!this.mNumNine)
+		{
+                	this.mNumNine = new Shape(50,50,400,200,this,"BUTTON","","");
+                	this.mNumNine.mMesh.innerHTML = '9';
+                	this.mNumNine.mMesh.mGame = this;
+                	this.mNumNine.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumNine); 
+		}
 
 		//Addition
-                this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
-                this.mNumAddition.mMesh.innerHTML = '+';
-                this.mNumAddition.mMesh.mGame = this;
-                this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumAddition); 
+               	if (!this.mNumAddition)
+		{ 
+			this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
+                	this.mNumAddition.mMesh.innerHTML = '+';
+                	this.mNumAddition.mMesh.mGame = this;
+                	this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumAddition); 
+		}
 		
                 //4
-                this.mNumFour = new Shape(50,50,300,250,this,"BUTTON","","");
-                this.mNumFour.mMesh.innerHTML = '4';
-                this.mNumFour.mMesh.mGame = this;
-                this.mNumFour.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumFour); 
+		if (!this.mNumFour)
+		{
+                	this.mNumFour = new Shape(50,50,300,250,this,"BUTTON","","");
+                	this.mNumFour.mMesh.innerHTML = '4';
+                	this.mNumFour.mMesh.mGame = this;
+                	this.mNumFour.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumFour); 
+		}
                 
 		//5
-                this.mNumFive = new Shape(50,50,350,250,this,"BUTTON","","");
-                this.mNumFive.mMesh.innerHTML = '5';
-                this.mNumFive.mMesh.mGame = this;
-                this.mNumFive.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumFive); 
+		if (!this.mNumFive)
+		{
+                	this.mNumFive = new Shape(50,50,350,250,this,"BUTTON","","");
+                	this.mNumFive.mMesh.innerHTML = '5';
+                	this.mNumFive.mMesh.mGame = this;
+                	this.mNumFive.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumFive); 
+		}
 
                 //6
-                this.mNumSix = new Shape(50,50,400,250,this,"BUTTON","","");
-                this.mNumSix.mMesh.innerHTML = '6';
-                this.mNumSix.mMesh.mGame = this;
-                this.mNumSix.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumSix); 
+		if (!this.mNumSix)
+		{
+                	this.mNumSix = new Shape(50,50,400,250,this,"BUTTON","","");
+                	this.mNumSix.mMesh.innerHTML = '6';
+                	this.mNumSix.mMesh.mGame = this;
+                	this.mNumSix.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumSix); 
+		}
 
                 //1
-                this.mNumOne = new Shape(50,50,300,300,this,"BUTTON","","");
-                this.mNumOne.mMesh.innerHTML = '1';
-                this.mNumOne.mMesh.mGame = this;
-                this.mNumOne.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumOne); 
+		if (!this.mNumOne)
+		{
+                	this.mNumOne = new Shape(50,50,300,300,this,"BUTTON","","");
+                	this.mNumOne.mMesh.innerHTML = '1';
+                	this.mNumOne.mMesh.mGame = this;
+                	this.mNumOne.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumOne); 
+		}
 
 		//2
-                this.mNumTwo = new Shape(50,50,350,300,this,"BUTTON","","");
-                this.mNumTwo.mMesh.innerHTML = '2';
-                this.mNumTwo.mMesh.mGame = this;
-               	this.mNumTwo.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumTwo); 
+		if (!this.mNumTwo)
+		{
+                	this.mNumTwo = new Shape(50,50,350,300,this,"BUTTON","","");
+                	this.mNumTwo.mMesh.innerHTML = '2';
+                	this.mNumTwo.mMesh.mGame = this;
+               		this.mNumTwo.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumTwo); 
+		}
 
                 //3
-                this.mNumThree = new Shape(50,50,400,300,this,"BUTTON","","");
-                this.mNumThree.mMesh.innerHTML = '3';
-                this.mNumThree.mMesh.mGame = this;
-               	this.mNumThree.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumThree); 
+		if (!this.mNumThree)
+		{	
+                	this.mNumThree = new Shape(50,50,400,300,this,"BUTTON","","");
+                	this.mNumThree.mMesh.innerHTML = '3';
+                	this.mNumThree.mMesh.mGame = this;
+               		this.mNumThree.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumThree); 
+		}
 
                 //0
-                this.mNumZero = new Shape(100,50,300,350,this,"BUTTON","","");
-                this.mNumZero.mMesh.innerHTML = '0';
-                this.mNumZero.mMesh.mGame = this;
-                this.mNumZero.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumZero); 
+		if (!this.mNumZero)
+		{
+                	this.mNumZero = new Shape(100,50,300,350,this,"BUTTON","","");
+                	this.mNumZero.mMesh.innerHTML = '0';
+                	this.mNumZero.mMesh.mGame = this;
+                	this.mNumZero.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumZero); 
+		}
 
                 //.
-                this.mNumDecimal = new Shape(50,50,400,350,this,"BUTTON","","");
-                this.mNumDecimal.mMesh.innerHTML = '.';
-               	this.mNumDecimal.mMesh.mGame = this;
-                this.mNumDecimal.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumDecimal); 
+		if (!this.mNumDecimal)
+		{
+                	this.mNumDecimal = new Shape(50,50,400,350,this,"BUTTON","","");
+                	this.mNumDecimal.mMesh.innerHTML = '.';
+               		this.mNumDecimal.mMesh.mGame = this;
+                	this.mNumDecimal.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumDecimal); 
+		}
 
                 //enter
-               	this.mNumEnter = new Shape(50,100,450,300,this,"BUTTON","","");
-               	this.mNumEnter.mMesh.innerHTML = 'Enter';
-               	this.mNumEnter.mMesh.mGame = this;
-               	this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
-		this.mNumberPadArray.push(this.mNumEnter); 
+		if (!this.mNumEnter)
+		{
+               		this.mNumEnter = new Shape(50,100,450,300,this,"BUTTON","","");
+               		this.mNumEnter.mMesh.innerHTML = 'Enter';
+               		this.mNumEnter.mMesh.mGame = this;
+               		this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
+			this.mNumberPadArray.push(this.mNumEnter); 
+		}
 	}
 });
