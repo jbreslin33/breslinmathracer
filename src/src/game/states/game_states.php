@@ -395,7 +395,6 @@ execute: function(game)
         if (game.mQuiz.isQuizComplete())
         {
 		game.mPadStateMachine.changeState(game.mLEVEL_PASSED_PAD);
-                game.mApplication.mLevelCompleted = true;
         }
 	else
 	{
@@ -511,8 +510,11 @@ log: function(msg)
 
 enter: function(game)
 {
+
         this.log('LEVEL_PASSED_PAD');
-        game.hideNumberPad();
+        game.mApplication.mLevelCompleted = true;
+        
+	game.hideNumberPad();
 
 	//correctAnswer
         game.hideCorrectAnswerBar();
@@ -538,7 +540,7 @@ enter: function(game)
 
 execute: function(game)
 {
-
+	//just wait here until what???
 },
 
 exit: function(game)
