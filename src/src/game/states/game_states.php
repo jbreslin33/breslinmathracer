@@ -541,6 +541,10 @@ enter: function(game)
 execute: function(game)
 {
 	//just wait here until what???
+ 	if (game.mApplication.mAdvanceToNextLevelConfirmation)
+	{
+		game.mPadStateMachine.changeState(game.mINIT_PAD_GAME);
+	}
 },
 
 exit: function(game)

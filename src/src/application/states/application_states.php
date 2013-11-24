@@ -162,11 +162,6 @@ log: function(msg)
 enter: function(application)
 {
 	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
-  	if (application.mGame)
-        {
-                application.mGame.mPadStateMachine.changeState(application.mGame.mLEVEL_PASSED);
-        }
-
         application.mAdvanceToNextLevelConfirmation = false;
 	application.mLevelCompleted = false;
 
@@ -181,10 +176,6 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
-		if (application.mGame)
-		{
-			application.mGame.reset();
-		}
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
