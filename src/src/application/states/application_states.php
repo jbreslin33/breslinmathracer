@@ -20,6 +20,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mGame)
+	{
+		application.mGame.update();
+	}
 },
 
 exit: function(application)
@@ -90,14 +94,10 @@ execute: function(application)
         {
 		application.mStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
         }
-        if (application.mGame)
-        {
-		if (application.mLevelCompleted)
-		{
-			application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
-		}
-                application.mGame.update();
-        }
+	if (application.mLevelCompleted)
+	{
+		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
+	}
 },
 exit: function(application)
 {
@@ -162,6 +162,11 @@ log: function(msg)
 enter: function(application)
 {
 	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
+  	if (application.mGame)
+        {
+                application.mGame.mPadStateMachine.changeState(application.mGame.mLEVEL_PASSED);
+        }
+
         application.mAdvanceToNextLevelConfirmation = false;
 	application.mLevelCompleted = false;
 

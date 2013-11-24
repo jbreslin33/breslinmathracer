@@ -39,8 +39,10 @@ Extends: Game,
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
         	this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
         	this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
+        	this.mCORRECT_ANSWER_PAD_GAME = new CORRECT_ANSWER_PAD_GAME(this);
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
         	this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
+        	this.mLEVEL_PASSED_PAD = new LEVEL_PASSED_PAD(this);
 
         	this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);

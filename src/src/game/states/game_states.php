@@ -345,9 +345,7 @@ execute: function(game)
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
 			this.log('correct in reg wait !!!!!');
-                        game.mQuiz.correctAnswer();
-                        game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
-                      	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
+                      	game.mPadStateMachine.changeState(game.mCORRECT_ANSWER_PAD_GAME);
                 }
                 else
                 {
@@ -362,6 +360,47 @@ execute: function(game)
         	game.mOutOfTime = true;
                 game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
        	} 
+},
+
+exit: function(game)
+{
+}
+
+});
+
+/****************** PAD STATES ************/
+var CORRECT_ANSWER_PAD_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	game.mQuiz.correctAnswer();
+},
+
+execute: function(game)
+{
+        if (game.mQuiz.isQuizComplete())
+        {
+		game.mPadStateMachine.changeState(game.mLEVEL_PASSED_PAD);
+                game.mApplication.mLevelCompleted = true;
+        }
+	else
+	{
+		game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
+	}
 },
 
 exit: function(game)
@@ -411,6 +450,7 @@ exit: function(game)
 }
 
 });
+
 var SHOW_CORRECT_ANSWER_OUT_OF_TIME = new Class(
 {
 Extends: State,
@@ -449,6 +489,60 @@ exit: function(game)
 {
         game.hideCorrectAnswerBar();
         game.mCorrectAnswerBar.mMesh.innerHTML = '';
+}
+
+});
+
+var LEVEL_PASSED_PAD = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        this.log('LEVEL_PASSED_PAD');
+        game.hideNumberPad();
+
+	//correctAnswer
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+
+        //number pad
+        game.mNumAnswer.mMesh.value = '';
+        game.mNumAnswer.mMesh.innerHTML = '';
+
+        game.mNumQuestion.mMesh.value = '';
+        game.mNumQuestion.mMesh.innerHTML = '';
+
+        //user answer
+        game.mUserAnswer = '';
+
+        //times
+        game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
+
+},
+
+execute: function(game)
+{
+
+},
+
+exit: function(game)
+{
 }
 
 });
