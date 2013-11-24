@@ -182,6 +182,7 @@ execute: function(application)
 
 exit: function(application)
 {
+ 	application.mHud.mLevel.setText('<font size="2"> Level : ' + application.mNextLevelID + '</font>');	
 }
 
 });
