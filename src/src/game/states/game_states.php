@@ -248,10 +248,18 @@ log: function(msg)
 enter: function(game)
 {
 	this.log('WAITING_ON_ANSWER_FIRST_TIME');
+
+	//correctAnswer
 	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBar.mMesh.value = '';
+	game.mCorrectAnswerBar.mMesh.innerHTML = '';
+
+	//number pad
 	game.showNumberPad();
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
+
+	//user answer
 	game.mUserAnswer = '';
 },
 
@@ -298,11 +306,21 @@ log: function(msg)
 enter: function(game)
 {
 	this.log('WAITING_ON_ANSWER');
+	
+	//correctAnswer
 	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBar.mMesh.value = '';
+	game.mCorrectAnswerBar.mMesh.innerHTML = '';
+
+	//number pad
 	game.showNumberPad();
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
+
+	//user answer
 	game.mUserAnswer = '';
+
+	//times
 	game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
 },
 
