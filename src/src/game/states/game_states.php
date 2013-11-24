@@ -232,6 +232,7 @@ log: function(msg)
 
 enter: function(game)
 {
+	this.log('RESET_PAD_GAME');
         game.reset();
 	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
 },
@@ -264,17 +265,22 @@ log: function(msg)
 
 enter: function(game)
 {
+	this.log('WAITING_ON_ANSWER_FIRST_TIME');
 	game.hideCorrectAnswerBar();
+	game.showNumberPad();
+ 	game.mNumAnswer.mMesh.value = '';
+ 	game.mNumAnswer.mMesh.innerHTML = '';
 },
 
 execute: function(game)
 {
+	//if you have an answer...
 	if (game.mUserAnswer != '')
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
                         game.mQuiz.correctAnswer();
-                        game.mQuestionStartTime = game.mTimeSinceEpoch;
+                      	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
                 }
                 else
                 {
@@ -288,6 +294,7 @@ exit: function(game)
 }
 
 });
+
 var WAITING_ON_ANSWER = new Class(
 {
 Extends: State,
@@ -306,10 +313,34 @@ log: function(msg)
 
 enter: function(game)
 {
+	this.log('WAITING_ON_ANSWER');
+ 	game.mNumAnswer.mMesh.value = '';
+ 	game.mNumAnswer.mMesh.innerHTML = '';
+	game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
 },
 
 execute: function(game)
 {
+	//if you have an answer...
+	if (game.mUserAnswer != '')
+	{
+		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
+               	{ 
+                        game.mQuiz.correctAnswer();
+                        game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
+                }
+                else
+                {
+                      	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
+                }
+	}
+
+	//check time
+        if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
+        {
+        	game.mOutOfTime = true;
+                game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
+       	} 
 },
 
 exit: function(game)
@@ -336,6 +367,7 @@ log: function(msg)
 
 enter: function(game)
 {
+	this.log('SHOW_CORRECT_ANSWER');
 	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
 	game.hideNumberPad();
 	game.mCorrectAnswerBar.mMesh.innerHTML = 'C:' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
