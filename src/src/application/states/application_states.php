@@ -161,7 +161,7 @@ log: function(msg)
 
 enter: function(application)
 {
-	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
+	this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
         application.mAdvanceToNextLevelConfirmation = false;
 	application.mLevelCompleted = false;
 
