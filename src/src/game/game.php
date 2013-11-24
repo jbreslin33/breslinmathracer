@@ -74,7 +74,7 @@ var Game = new Class(
 	reset: function()
         {
                 /************ SCORE *******/
-                this.mScore = 0;
+                this.setScore(0);
 
                 /**************** TIME ************/
                 this.timeWarning = false;
