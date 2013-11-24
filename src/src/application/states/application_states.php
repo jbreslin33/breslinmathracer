@@ -163,7 +163,6 @@ enter: function(application)
 {
 	this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
         application.mAdvanceToNextLevelConfirmation = false;
-	application.mLevelCompleted = false;
 
 	//tell db to advance you
         application.advanceToNextLevel();
@@ -182,6 +181,7 @@ execute: function(application)
 
 exit: function(application)
 {
+	application.mLevelCompleted = false;
  	application.mHud.mLevel.setText('<font size="2"> Level : ' + application.mNextLevelID + '</font>');	
 }
 
