@@ -276,12 +276,13 @@ execute: function(game)
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
-			this.log('correct!!!!!');
+			this.log('correct in first wait!!!!!');
                         game.mQuiz.correctAnswer();
                       	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
                 }
                 else
                 {
+			this.log('show correct in first wait!!!!!');
                       	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
                 }
 	}
@@ -343,12 +344,13 @@ execute: function(game)
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
+			this.log('correct in reg wait !!!!!');
                         game.mQuiz.correctAnswer();
                         game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
                 }
                 else
                 {
-			this.log('wrong answer gettting called');
+			this.log('wrong answer gettting called reg wait');
                       	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
                 }
 	}
