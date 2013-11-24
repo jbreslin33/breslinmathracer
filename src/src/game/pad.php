@@ -196,16 +196,15 @@ Extends: Game,
 	{
 		if (e.key == 'enter')
 		{
-                        APPLICATION.mGame.mStartGameHit = true;
-
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
                	}
-
+/*
                	if (APPLICATION.mGame.mQuiz)
 		{
                		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
 		}
 		APPLICATION.mGame.mNumAnswer.mMesh.value = '';
+*/
 	},
 
 	numPadHit: function()
@@ -217,27 +216,7 @@ Extends: Game,
 		
 		if (this.innerHTML == 'Enter')
 		{
-			APPLICATION.mGame.mStartGameHit = true;
 			APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-
-			if (APPLICATION.mGame.mUserAnswer == APPLICATION.mGame.mQuiz.getQuestion().getAnswer())
-			{
-				//APPLICATION.mGame.incrementScore();
-				APPLICATION.mGame.mQuiz.correctAnswer();
-				APPLICATION.mGame.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch;	
-			}
-			else
-			{
-				APPLICATION.mGame.mAlertPause = true;	
-				alert('Try again. Correct Answer is:' + APPLICATION.mGame.mQuiz.getQuestion().getAnswer());
-				APPLICATION.mGame.reset();
-			}
-			APPLICATION.mGame.mNumAnswer.mMesh.value = '';
-		}
-               	
-		if (APPLICATION.mGame.mQuiz)
-		{
-               		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
 		}
 		APPLICATION.mGame.mNumAnswer.mMesh.focus();
 	},

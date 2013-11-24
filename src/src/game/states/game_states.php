@@ -158,23 +158,7 @@ execute: function(game)
         {
                 game.mQuizComplete = true;
                 game.mApplication.mLevelCompleted = true;
-                //alert('Electrical Bananas! Next Level!');
         }
-
-/*
-        if (game.mAlertPause == false)
-        {
-        	if (game.mStartGameHit == true && game.mOutOfTime == false)
-                {
-                	if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
-                        {
-                       	        game.mOutOfTime = true;
-                                alert('Out of time! Correct Answer is:' + game.mQuiz.getQuestion().getAnswer());
-                                game.reset();
-                        }
-                }
-         }
-*/
 },
 
 exit: function(game)
@@ -270,6 +254,7 @@ enter: function(game)
 	game.showNumberPad();
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
+	game.mUserAnswer = '';
 },
 
 execute: function(game)
@@ -279,6 +264,7 @@ execute: function(game)
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
+			this.log('correct!!!!!');
                         game.mQuiz.correctAnswer();
                       	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
                 }
@@ -316,6 +302,7 @@ enter: function(game)
 	this.log('WAITING_ON_ANSWER');
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
+	game.mUserAnswer = '';
 	game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
 },
 
@@ -331,6 +318,7 @@ execute: function(game)
                 }
                 else
                 {
+			this.log('wrong answer gettting called');
                       	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
                 }
 	}
@@ -338,6 +326,7 @@ execute: function(game)
 	//check time
         if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
         {
+		this.log('out of time gettting called');
         	game.mOutOfTime = true;
                 game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
        	} 
