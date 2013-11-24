@@ -153,10 +153,6 @@ enter: function(game)
 
 execute: function(game)
 {
-        if (game.mQuiz.isQuizComplete())
-        {
-                game.mApplication.mLevelCompleted = true;
-        }
 },
 
 exit: function(game)
