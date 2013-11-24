@@ -81,7 +81,7 @@ log: function(msg)
 
 enter: function(application)
 {
-	//this.log('NORMAL_APPLICATION::enter');
+	this.log('NORMAL_APPLICATION::enter');
 	
 	//get a new game if neccesary
 	application.gameDecider();
@@ -123,7 +123,7 @@ log: function(msg)
 
 enter: function(application)
 {
-	//this.log('GET_LEVEL_DATA_APPLICATION::enter');
+	this.log('GET_LEVEL_DATA_APPLICATION::enter');
 	application.mWaitingOnLevelData = true;
 	application.getLevelData();
 },
