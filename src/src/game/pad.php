@@ -194,13 +194,6 @@ Extends: Game,
 		{
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
                	}
-/*
-               	if (APPLICATION.mGame.mQuiz)
-		{
-               		APPLICATION.mGame.mNumQuestion.mMesh.innerHTML = APPLICATION.mGame.mQuiz.getQuestion().getQuestion();
-		}
-		APPLICATION.mGame.mNumAnswer.mMesh.value = '';
-*/
 	},
 
 	numPadHit: function()

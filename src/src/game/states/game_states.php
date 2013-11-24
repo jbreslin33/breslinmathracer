@@ -122,7 +122,6 @@ execute: function(game)
 
         //save old positions
         game.saveOldPositions();
-
 },
 
 exit: function(game)
@@ -299,6 +298,8 @@ log: function(msg)
 enter: function(game)
 {
 	this.log('WAITING_ON_ANSWER');
+	game.hideCorrectAnswerBar();
+	game.showNumberPad();
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
 	game.mUserAnswer = '';
