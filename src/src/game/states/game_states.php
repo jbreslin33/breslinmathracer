@@ -156,7 +156,6 @@ execute: function(game)
 {
         if (game.mQuiz.isQuizComplete())
         {
-                game.mQuizComplete = true;
                 game.mApplication.mLevelCompleted = true;
         }
 },

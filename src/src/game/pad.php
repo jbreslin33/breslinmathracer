@@ -11,23 +11,22 @@ Extends: Game,
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
- 		//times
+		//answers 
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
-                this.mStartGameHit = false;
-                this.mUserAnswer = '';
-		this.mQuizComplete = false;
-		this.mAlertPause = false;
+
+		//show correct 
 		this.mCorrectAnswerStartTime = 0;
 		this.mCorrectAnswerThresholdTime = 5000;
-		
+		this.mCorrectAnswerBar = 0;
+	
+		//quiz	
+                this.mUserAnswer = '';
+
 		//number pad
 		this.mNumberPadArray = new Array();
-
-		//correctAnswerbar
-		this.mCorrectAnswerBar = 0;
 
 		//state machine
 		this.mPadStateMachine = new StateMachine(this);
@@ -57,14 +56,11 @@ Extends: Game,
 		this.createWorld();
   
 		//times
-                this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
-                this.mStartGameHit = false;
                 this.mUserAnswer = '';
-                this.mQuizComplete = false;
-		this.mAlertPause = false;
+		this.mCorrectAnswerStartTime = 0;
 	},
 
 	update: function()
