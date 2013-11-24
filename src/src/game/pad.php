@@ -218,11 +218,11 @@ Extends: Game,
 	createCorrectAnswerBar: function()
 	{
 		//question bar header
-               	this.mCorrectAnswerBarHeader = new Shape(100,50,300,50,this,"","","");
+               	this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
                	this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Header:';
 		
 		//question bar
-               	this.mCorrectAnswerBar = new Shape(100,50,300,100,this,"","","");
+               	this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
                	this.mCorrectAnswerBar.mMesh.innerHTML = '';
 		
 	},
