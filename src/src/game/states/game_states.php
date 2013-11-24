@@ -347,6 +347,7 @@ execute: function(game)
 			this.log('correct in reg wait !!!!!');
                         game.mQuiz.correctAnswer();
                         game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
+                      	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
                 }
                 else
                 {
