@@ -255,9 +255,13 @@ enter: function(game)
 	game.mCorrectAnswerBar.mMesh.innerHTML = '';
 
 	//number pad
-	game.showNumberPad();
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
+
+ 	game.mNumQuestion.mMesh.value = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
+	game.showNumberPad();
 
 	//user answer
 	game.mUserAnswer = '';
@@ -313,9 +317,13 @@ enter: function(game)
 	game.mCorrectAnswerBar.mMesh.innerHTML = '';
 
 	//number pad
-	game.showNumberPad();
  	game.mNumAnswer.mMesh.value = '';
  	game.mNumAnswer.mMesh.innerHTML = '';
+
+ 	game.mNumQuestion.mMesh.value = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
+	game.showNumberPad();
 
 	//user answer
 	game.mUserAnswer = '';
