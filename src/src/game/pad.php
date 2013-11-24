@@ -176,12 +176,14 @@ Extends: Game,
 
 	showCorrectAnswerBar: function()
 	{
+		this.mCorrectAnswerBarHeader.setVisibility(true);
 		this.mCorrectAnswerBar.setVisibility(true);
 	},
 	
 	hideCorrectAnswerBar: function()
 	{
 		this.mCorrectAnswerBar.setVisibility(false);
+		this.mCorrectAnswerBarHeader.setVisibility(false);
 	},
 	
 	destroyCorrectAnswerBar: function()
