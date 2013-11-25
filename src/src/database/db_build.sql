@@ -1254,6 +1254,48 @@ insert into levels(id,description) values (136,'Addition');
 insert into levels(id,description) values (137,'Addition');
 insert into levels(id,description) values (139,'Addition');
 insert into levels(id,description) values (140,'Addition');
+insert into levels(id,description) values (141,'Addition');
+insert into levels(id,description) values (142,'Addition');
+insert into levels(id,description) values (143,'Addition');
+insert into levels(id,description) values (144,'Addition');
+insert into levels(id,description) values (145,'Addition');
+insert into levels(id,description) values (146,'Addition');
+insert into levels(id,description) values (147,'Addition');
+insert into levels(id,description) values (148,'Addition');
+insert into levels(id,description) values (149,'Addition');
+insert into levels(id,description) values (150,'Addition');
+insert into levels(id,description) values (151,'Addition');
+insert into levels(id,description) values (152,'Addition');
+insert into levels(id,description) values (153,'Addition');
+insert into levels(id,description) values (154,'Addition');
+insert into levels(id,description) values (155,'Addition');
+insert into levels(id,description) values (156,'Addition');
+insert into levels(id,description) values (157,'Addition');
+insert into levels(id,description) values (158,'Addition');
+insert into levels(id,description) values (159,'Addition');
+insert into levels(id,description) values (160,'Addition');
+insert into levels(id,description) values (161,'Addition');
+insert into levels(id,description) values (162,'Addition');
+insert into levels(id,description) values (163,'Addition');
+insert into levels(id,description) values (164'Addition');
+insert into levels(id,description) values (165,'Addition');
+insert into levels(id,description) values (166,'Addition');
+insert into levels(id,description) values (167,'Addition');
+insert into levels(id,description) values (168,'Addition');
+insert into levels(id,description) values (169,'Addition');
+insert into levels(id,description) values (170,'Addition');
+insert into levels(id,description) values (171,'Addition');
+insert into levels(id,description) values (172,'Addition');
+insert into levels(id,description) values (173,'Addition');
+insert into levels(id,description) values (174,'Addition');
+insert into levels(id,description) values (175,'Addition');
+insert into levels(id,description) values (176,'Addition');
+insert into levels(id,description) values (177,'Addition');
+insert into levels(id,description) values (178,'Addition');
+insert into levels(id,description) values (179,'Addition');
+insert into levels(id,description) values (180,'Addition');
+
+
 
 
 
