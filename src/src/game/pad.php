@@ -100,91 +100,20 @@ Extends: Game,
 		this.log('offset:' + offset);
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			randomElement = Math.floor((Math.random()*offset));		
+			//50% chance of asking newest question
+			var randomChance = Math.floor((Math.random()*2));		
+			if (randomChance == 0)
+			{
+				this.log('zero');
+			}	
+			if (randomChance == 1)
+			{
+				this.log('one');
+			}
+
+			var randomElement = Math.floor((Math.random()*offset));		
 			this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 		}
-/*
-                if (this.mApplication.mNextLevelID == 100)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*1));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 101)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*2));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 102)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*3));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 103)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*4));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 104)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*5));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 105)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*6));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 106)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*7));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 107)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*8));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 108)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*9));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-                if (this.mApplication.mNextLevelID == 109)
-		{
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{	
-				randomElement = Math.floor((Math.random()*10));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}
-		}
-*/
 	},
 	
 	createWorld: function()
