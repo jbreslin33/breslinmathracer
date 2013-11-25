@@ -213,7 +213,7 @@ enter: function(game)
 {
         this.log('RESET_DUNGEON_GAME');
         game.reset();
-        game.mPadStateMachine.changeState(game.mNORMAL_DUNGEON_GAME);
+        game.mDungeonStateMachine.changeState(game.mNORMAL_DUNGEON_GAME);
 },
 
 execute: function(game)

@@ -19,6 +19,7 @@ Extends: Game,
                 this.mGLOBAL_DUNGEON_GAME  = new GLOBAL_DUNGEON_GAME(this);
                 this.mINIT_DUNGEON_GAME    = new INIT_DUNGEON_GAME(this);
                 this.mRESET_DUNGEON_GAME   = new RESET_DUNGEON_GAME(this);
+                this.mNORMAL_DUNGEON_GAME   = new NORMAL_DUNGEON_GAME(this);
                 this.mLEVEL_PASSED_DUNGEON = new LEVEL_PASSED_DUNGEON(this);
 
                 this.mDungeonStateMachine.setGlobalState(this.mGLOBAL_DUNGEON_GAME);
