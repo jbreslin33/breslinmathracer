@@ -202,6 +202,17 @@ Extends: Game,
 		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 6 =','10'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 5 =','11'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 6 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 2 =','7')); //5
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 5 =','7'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 3 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 + 5 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 4 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 5 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 5 =','10'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 2 =','6')); //4
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 4 =','6'));
+
+
 
 
 		var offset = parseInt(this.mApplication.mNextLevelID - 99); 
