@@ -259,7 +259,6 @@ CREATE TABLE games_attempts (
     id integer NOT NULL,
     game_attempt_time_start timestamp,
     game_attempt_time_end timestamp,
-    game_id integer NOT NULL,
     user_id integer NOT NULL,
     level_id double precision NOT NULL, --should this be standard_id?
 	score integer DEFAULT 0 NOT NULL,
@@ -849,7 +848,6 @@ ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (standard_c
 --==================================================================
 
 --GAMES_ATTEMPTS
-ALTER TABLE games_attempts ADD FOREIGN KEY (game_id) REFERENCES games(id);
 ALTER TABLE games_attempts ADD FOREIGN KEY (user_id) REFERENCES users(id);
 ALTER TABLE games_attempts ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 
