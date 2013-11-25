@@ -213,11 +213,46 @@ enter: function(game)
 {
         this.log('RESET_DUNGEON_GAME');
         game.reset();
-        game.mPadStateMachine.changeState(game.mINIT_DUNGEON_GAME);
+        game.mPadStateMachine.changeState(game.mNORMAL_DUNGEON_GAME);
 },
 
 execute: function(game)
 {
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var NORMAL_DUNGEON_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        this.log('NORMAL_DUNGEON_GAME');
+},
+
+execute: function(game)
+{
+	if (game.mDoor.mEnteredDoor == true)
+	{
+        	game.mDungeonStateMachine.changeState(game.mLEVEL_PASSED_DUNGEON);
+	}
 },
 
 exit: function(game)

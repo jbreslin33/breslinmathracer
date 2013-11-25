@@ -91,7 +91,6 @@ Extends: QuestionShape,
 		if (!this.mEnteredDoor)
 		{
 			this.mEnteredDoor = true;
-			this.mGame.mApplication.mLevelCompleted = true;	
 		}
         }
 });

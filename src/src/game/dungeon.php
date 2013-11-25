@@ -6,6 +6,8 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
+
+		this.mDoor = 0;
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 		this.createQuestions(); //do this once
@@ -89,7 +91,7 @@ Extends: Game,
         	this.createKey("/images/key/key_dungeon.gif");
 
         	//create door
-        	this.mDoor = this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
+        	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 	},
 
 	createControlObject: function()
@@ -185,10 +187,10 @@ Extends: Game,
         	this.mQuiz.mQuestionArray.push(doorQuestion);
 
         	var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
-        	var door = new ShapeDoor(50,50,openPoint.mX,openPoint.mY,this,doorQuestion,image_source_closed,"","door",image_source_open);
-        	door.mUrl = '/src/database/goto_next_level.php';
-        	door.mOpenOnQuestionSolved = true;
-        	this.addToShapeArray(door);
+        	this.mDoor = new ShapeDoor(50,50,openPoint.mX,openPoint.mY,this,doorQuestion,image_source_closed,"","door",image_source_open);
+        	this.mDoor.mUrl = '/src/database/goto_next_level.php';
+        	this.mDoor.mOpenOnQuestionSolved = true;
+        	this.addToShapeArray(this.mDoor);
 	}
 		
 });
