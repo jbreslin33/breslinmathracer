@@ -34,8 +34,6 @@ var Game = new Class(
 		//keys
 		this.mKeysOn = true;
 	
-		this.standardGameAttempt();
- 
 		//states
                 this.mStateMachine = new StateMachine(this);
 
