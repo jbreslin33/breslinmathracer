@@ -1006,98 +1006,57 @@ insert into standards (standard) values ('Count to 100 by ones and by tens.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); 
 
 
---		LEVEL_ID: 0 
 insert into levels(id,description) values (0,'Start of Journey');       
-
---		LEVEL_ID: 1
-insert into levels(id,description) values (1,'Count from 0 to 1');        
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1,1);       
-	
---		LEVEL_ID: 1.01 
-insert into levels(id,description) values (1.01,'Count from 0 to 2');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.01,1);       
-
---		LEVEL_ID: 1.02 
-insert into levels(id,description) values (1.02,'Count from 0 to 3');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.02,1);       
-
---		LEVEL_ID: 1.03  
-insert into levels(id,description) values (1.03,'Count from 0 to 4');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.03,1);       
-
---		LEVEL_ID: 1.04 
-insert into levels(id,description) values (1.04,'Count from 0 to 5');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.04,1);       
-
---		LEVEL_ID: 1.05  
-insert into levels(id,description) values (1.05,'Count from 0 to 6');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.05,1);       
-
---		LEVEL_ID: 1.06 
-insert into levels(id,description) values (1.06,'Count from 0 to 7');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.06,1);       
-
---		LEVEL_ID: 1.07  
-insert into levels(id,description) values (1.07,'Count from 0 to 8');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.07,1);       
-
---		LEVEL_ID: 1.08  
-insert into levels(id,description) values (1.08,'Count from 0 to 9');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.08,1);       
-
---		LEVEL_ID: 1.09  
-insert into levels(id,description) values (1.09,'Count from 0 to 10');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.09,1);       
-
---		LEVEL_ID: 1.10  
-insert into levels(id,description) values (1.10,'Count from 10 to 11');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.10,1);       
-
---		LEVEL_ID: 1.11  
-insert into levels(id,description) values (1.11,'Count from 10 to 12');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.11,1);       
-
---		LEVEL_ID: 1.12  
-insert into levels(id,description) values (1.12,'Count from 10 to 13');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.12,1);       
-
---		LEVEL_ID: 1.13  
-insert into levels(id,description) values (1.13,'Count from 10 to 14');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.13,1);       
-
---		LEVEL_ID: 1.14  
-insert into levels(id,description) values (1.14,'Count from 10 to 15');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.14,1);       
+insert into levels(id,description) values (1,'Count');        
+insert into levels(id,description) values (2,'Count');       
+insert into levels(id,description) values (3,'Count');       
+insert into levels(id,description) values (4,'Count');       
+insert into levels(id,description) values (5,'Count');       
+insert into levels(id,description) values (6,'Count');       
+insert into levels(id,description) values (7,'Count');       
+insert into levels(id,description) values (8,'Count');       
+insert into levels(id,description) values (9,'Count');       
+insert into levels(id,description) values (10,'Count');       
+insert into levels(id,description) values (11,'Count');       
+insert into levels(id,description) values (12,'Count');       
+insert into levels(id,description) values (13,'Count');       
+insert into levels(id,description) values (14,'Count');       
+insert into levels(id,description) values (15,'Count');       
+insert into levels(id,description) values (16,'Count');       
+insert into levels(id,description) values (17,'Count');       
+insert into levels(id,description) values (18,'Count');       
+insert into levels(id,description) values (19,'Count');       
+insert into levels(id,description) values (20,'Count');       
 
 
 --		LEVEL_ID: 1.50  
-insert into levels(id,description) values (1.90,'Count to 100 by tens');       
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.90,1);       
+--insert into levels(id,description) values (1.90,'Count to 100 by tens');       
+--insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.90,1);       
 
 --------------------------------------------------------------------------------
 --   	2.	 Count forward beginning from a given number within the known
 --   	sequence (instead of having to begin at 1).
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1); 
+--insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1); 
 
 
 
 --		LEVEL_ID: 2  
-insert into levels(id,description) values (2,'Count from 87 to 97'); 
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2,2);       
+--insert into levels(id,description) values (2,'Count from 87 to 97'); 
+--insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2,2);       
 
 --		LEVEL_ID: 2.1 
-insert into levels(id,description) values (2.1,'Count from 23 to 33'); 
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.1,2);       
+--insert into levels(id,description) values (2.1,'Count from 23 to 33'); 
+--insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.1,2);       
 
 --		LEVEL_ID: 2.2  
-insert into levels(id,description) values (2.2,'Count from 55 to 65'); 
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.2,2);       
+--insert into levels(id,description) values (2.2,'Count from 55 to 65'); 
+--insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.2,2);       
 
 --		LEVEL_ID: 2.3  
-insert into levels(id,description) values (2.3,'Count from 4 to 14');  
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.3,2);       
+--insert into levels(id,description) values (2.3,'Count from 4 to 14');  
+--insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.3,2);       
 
 --------------------------------------------------------------------------------
 --   	3.	 Write numbers from 0 to 20. Represent a number of objects with a
@@ -1264,190 +1223,79 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 
 -- ADD 0
 
---		LEVEL_ID: 14  
-insert into levels(id,description) values (14,'Addition');
-
---		LEVEL_ID: 14.01  
-insert into levels(id,description) values (14.01,'Addition');
-
---		LEVEL_ID: 14.02  
-insert into levels(id,description) values (14.02,'Addition');
-
---		LEVEL_ID: 14.03  
-insert into levels(id,description) values (14.03,'Addition');
-
---		LEVEL_ID: 14.04  
-insert into levels(id,description) values (14.04,'Addition');
-
---		LEVEL_ID: 14.05  
-insert into levels(id,description) values (14.05,'Addition');
-
---		LEVEL_ID: 14.06  
-insert into levels(id,description) values (14.06,'Addition');
-
---		LEVEL_ID: 14.07  
-insert into levels(id,description) values (14.07,'Addition');
-
---		LEVEL_ID: 14.08  
-insert into levels(id,description) values (14.08,'Addition');
-
---		LEVEL_ID: 14.09  
-insert into levels(id,description) values (14.09,'Addition');
-
---		LEVEL_ID: 14.10  
-insert into levels(id,description) values (14.10,'Addition');
-
---ADD 1
-
---		LEVEL_ID: 14.11  
-insert into levels(id,description) values (14.11,'Addition');
-
---		LEVEL_ID: 14.12  
-insert into levels(id,description) values (14.12,'Addition');
-
---		LEVEL_ID: 14.13  
-insert into levels(id,description) values (14.13,'Addition');
-
---		LEVEL_ID: 14.14  
-insert into levels(id,description) values (14.14,'Addition');
-
---		LEVEL_ID: 14.15  
-insert into levels(id,description) values (14.15,'Addition');
-
---		LEVEL_ID: 14.16  
-insert into levels(id,description) values (14.16,'Addition');
-
---		LEVEL_ID: 14.17  
-insert into levels(id,description) values (14.17,'Addition');
-
---		LEVEL_ID: 14.18  
-insert into levels(id,description) values (14.18,'Addition');
-
---		LEVEL_ID: 14.19  
-insert into levels(id,description) values (14.19,'Addition');
-
---ADD 2
-
---		LEVEL_ID: 14.20  
-insert into levels(id,description) values (14.20,'Addition');
-
---		LEVEL_ID: 14.21  
-insert into levels(id,description) values (14.21,'Addition');
-
---		LEVEL_ID: 14.22  
-insert into levels(id,description) values (14.22,'Addition');
-
---		LEVEL_ID: 14.23  
-insert into levels(id,description) values (14.23,'Addition');
-
---		LEVEL_ID: 14.24 
-insert into levels(id,description) values (14.24,'Addition');
-
---		LEVEL_ID: 14.25 
-insert into levels(id,description) values (14.25,'Addition');
-
---		LEVEL_ID: 14.26 
-insert into levels(id,description) values (14.26,'Addition');
-
---ADD 3
-
---		LEVEL_ID: 14.30 
-insert into levels(id,description) values (14.30,'Addition');
-
---		LEVEL_ID: 14.31 
-insert into levels(id,description) values (14.31,'Addition');
-
---		LEVEL_ID: 14.32 
-insert into levels(id,description) values (14.32,'Addition');
-
---		LEVEL_ID: 14.33 
-insert into levels(id,description) values (14.33,'Addition');
-
---		LEVEL_ID: 14.34 
-insert into levels(id,description) values (14.34,'Addition');
-
---ADD 4
-
---		LEVEL_ID: 14.40 
-insert into levels(id,description) values (14.40,'Addition');
-
---		LEVEL_ID: 14.41 
-insert into levels(id,description) values (14.41,'Addition');
-
---		LEVEL_ID: 14.42 
-insert into levels(id,description) values (14.42,'Addition');
-
---ADD 5
---		LEVEL_ID: 14.50 
-insert into levels(id,description) values (14.50,'Addition');
+insert into levels(id,description) values (100,'Addition');
+insert into levels(id,description) values (101,'Addition');
+insert into levels(id,description) values (102,'Addition');
+insert into levels(id,description) values (103,'Addition');
+insert into levels(id,description) values (104,'Addition');
+insert into levels(id,description) values (105,'Addition');
+insert into levels(id,description) values (106,'Addition');
+insert into levels(id,description) values (107,'Addition');
+insert into levels(id,description) values (108,'Addition');
+insert into levels(id,description) values (109,'Addition');
+insert into levels(id,description) values (110,'Addition');
+insert into levels(id,description) values (111,'Addition');
+insert into levels(id,description) values (112,'Addition');
+insert into levels(id,description) values (113,'Addition');
+insert into levels(id,description) values (114,'Addition');
+insert into levels(id,description) values (115,'Addition');
+insert into levels(id,description) values (116,'Addition');
+insert into levels(id,description) values (117,'Addition');
+insert into levels(id,description) values (118,'Addition');
+insert into levels(id,description) values (119,'Addition');
+insert into levels(id,description) values (120,'Addition');
+insert into levels(id,description) values (130,'Addition');
+insert into levels(id,description) values (131,'Addition');
+insert into levels(id,description) values (132,'Addition');
+insert into levels(id,description) values (133,'Addition');
+insert into levels(id,description) values (134,'Addition');
+insert into levels(id,description) values (135,'Addition');
+insert into levels(id,description) values (136,'Addition');
+insert into levels(id,description) values (137,'Addition');
+insert into levels(id,description) values (139,'Addition');
+insert into levels(id,description) values (140,'Addition');
 
 
---ADD UP TO 10
 
---		LEVEL_ID: 15  
-insert into levels(id,description) values (15,'Addition');
+insert into levels(id,description) values (201,'Subtraction');
+insert into levels(id,description) values (202,'Subtraction');
+insert into levels(id,description) values (203,'Subtraction');
+insert into levels(id,description) values (204,'Subtraction');
+insert into levels(id,description) values (205,'Subtraction');
+insert into levels(id,description) values (206,'Subtraction');
+insert into levels(id,description) values (207,'Subtraction');
+insert into levels(id,description) values (208,'Subtraction');
+insert into levels(id,description) values (209,'Subtraction');
+insert into levels(id,description) values (210,'Subtraction');
+insert into levels(id,description) values (211,'Subtraction');
+insert into levels(id,description) values (212,'Subtraction');
+insert into levels(id,description) values (213,'Subtraction');
+insert into levels(id,description) values (214,'Subtraction');
+insert into levels(id,description) values (215,'Subtraction');
+insert into levels(id,description) values (216,'Subtraction');
 
---		LEVEL_ID: 15.01  
-insert into levels(id,description) values (15.01,'Addition');
 
---		LEVEL_ID: 15.02  
-insert into levels(id,description) values (15.02,'Addition');
+insert into levels(id,description) values (300,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (301,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (302,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (303,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (304,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (305,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (306,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (307,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (308,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (309,'Mixed Addition and Subtraction');
+insert into levels(id,description) values (310,'Mixed Addition and Subtraction');
 
---		LEVEL_ID: 15.03  
-insert into levels(id,description) values (15.03,'Addition');
 
---		LEVEL_ID: 15.04  
-insert into levels(id,description) values (15.04,'Addition');
+insert into levels(id,description) values (400,'Multiplication');
+insert into levels(id,description) values (401,'Multiplication');
 
---		LEVEL_ID: 15.05  
-insert into levels(id,description) values (15.05,'Addition');
+insert into levels(id,description) values (500,'Division');
+insert into levels(id,description) values (501,'Division');
 
---		LEVEL_ID: 15.06  
-insert into levels(id,description) values (15.06,'Addition');
 
---		LEVEL_ID: 15.07  
-insert into levels(id,description) values (15.07,'Addition');
 
---		LEVEL_ID: 15.08  
-insert into levels(id,description) values (15.08,'Addition');
-
---		LEVEL_ID: 15.09  
-insert into levels(id,description) values (15.09,'Addition');
-
---		LEVEL_ID: 15.10  
-insert into levels(id,description) values (15.10,'Addition');
-
---		LEVEL_ID: 15.11  
-insert into levels(id,description) values (15.11,'Addition');
-
---ADD 6
-
---		LEVEL_ID: 16.10  
-insert into levels(id,description) values (16.10,'Addition');
-
---		LEVEL_ID: 16.11  
-insert into levels(id,description) values (16.11,'Addition');
-
---		LEVEL_ID: 16.12  
-insert into levels(id,description) values (16.12,'Addition');
-
---		LEVEL_ID: 16.13  
-insert into levels(id,description) values (16.13,'Addition');
-
---		LEVEL_ID: 16.14  
-insert into levels(id,description) values (16.14,'Addition');
-
---		LEVEL_ID: 16.15  
-insert into levels(id,description) values (16.15,'Addition');
-
---		LEVEL_ID: 16.16  
-insert into levels(id,description) values (16.16,'Addition');
-
---		LEVEL_ID: 16.17  
-insert into levels(id,description) values (16.17,'Addition');
-
---		LEVEL_ID: 16.18  
-insert into levels(id,description) values (16.18,'Addition');
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 --	Number and Operations in Base Ten
@@ -1569,79 +1417,6 @@ insert into clusters (cluster) values ('Analyze, compare, create, and compose sh
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
 
 ------------------------SUBTRACTION----------------------------------------
-
---		LEVEL_ID: 500  
-insert into levels(id,description) values (500,'Subtraction min 0 max 1');
-
---              LEVEL_ID: 500.01
-insert into levels(id,description) values (500.01,'Subtraction min 0 max 2');
-
---              LEVEL_ID: 500.02
-insert into levels(id,description) values (500.02,'Subtraction min 0 max 3');
-
---              LEVEL_ID: 500.03
-insert into levels(id,description) values (500.03,'Subtraction min 0 max 4');
-
---              LEVEL_ID: 500.04
-insert into levels(id,description) values (500.04,'Subtraction min 0 max 5');
-
---              LEVEL_ID: 500.05
-insert into levels(id,description) values (500.05,'Subtraction min 0 max 6');
-
---              LEVEL_ID: 500.06
-insert into levels(id,description) values (500.06,'Subtraction min 0 max 7');
-
---              LEVEL_ID: 500.07
-insert into levels(id,description) values (500.07,'Subtraction min 0 max 8');
-
---              LEVEL_ID: 500.08
-insert into levels(id,description) values (500.08,'Subtraction min 0 max 9');
-
---              LEVEL_ID: 500.09
-insert into levels(id,description) values (500.09,'Subtraction min 0 max 10');
-
-----XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-MULTIPLICATION XXXXXXXXXXXXXXXXX
-
---		LEVEL_ID: 600  
-insert into levels(id,description) values (600,'Multiplication min 0 max 1');
-
---		LEVEL_ID: 600.01  
-insert into levels(id,description) values (600.01,'Multiplication min 0 max 2');
-
---		LEVEL_ID: 600.02  
-insert into levels(id,description) values (600.02,'Multiplication min 0 max 3');
-
---		LEVEL_ID: 600.03  
-insert into levels(id,description) values (600.03,'Multiplication min 0 max 4');
-
---		LEVEL_ID: 600.04  
-insert into levels(id,description) values (600.04,'Multiplication min 0 max 5');
-
---		LEVEL_ID: 600.05  
-insert into levels(id,description) values (600.05,'Multiplication min 0 max 6');
-
---		LEVEL_ID: 600.06  
-insert into levels(id,description) values (600.06,'Multiplication min 0 max 7');
-
---		LEVEL_ID: 600.07  
-insert into levels(id,description) values (600.07,'Multiplication min 0 max 8');
-
---		LEVEL_ID: 600.08  
-insert into levels(id,description) values (600.08,'Multiplication min 0 max 9');
-
---		LEVEL_ID: 600.09  
-insert into levels(id,description) values (600.09,'Multiplication min 0 max 10');
-
---		LEVEL_ID: 600.10  
-insert into levels(id,description) values (600.10,'Multiplication min 0 max 11');
-
---		LEVEL_ID: 600.11  
-insert into levels(id,description) values (600.11,'Multiplication min 0 max 12');
-
------////////////////////-DIVISION-///////////////////////////////////////
-
---		LEVEL_ID: 700 
-insert into levels(id,description) values (700,'Division factors 0 to 1');
 
 --GAMES_ATTEMPTS
 
