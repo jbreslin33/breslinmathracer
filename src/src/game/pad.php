@@ -97,7 +97,6 @@ Extends: Game,
                 this.mQuiz.mQuestionPoolArray.push(new Question('10 + 2 =','12'));
 
 		var offset = parseInt(this.mApplication.mNextLevelID - 99); 
-		this.log('offset:' + offset);
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
 			//50% chance of asking newest question

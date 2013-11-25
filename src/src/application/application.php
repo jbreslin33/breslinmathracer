@@ -127,7 +127,7 @@ var Application = new Class(
 	{
 		if (this.mNextLevelID == 0 || this.mNextLevelID == null)
 		{
-			this.log('no level yet');
+			//this.log('no level yet');
 		}
 
   		if (this.mNextLevelID > 0 && this.mNextLevelID < 2)

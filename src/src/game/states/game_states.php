@@ -211,7 +211,7 @@ log: function(msg)
 
 enter: function(game)
 {
-        this.log('RESET_DUNGEON_GAME');
+        //this.log('RESET_DUNGEON_GAME');
         game.reset();
         game.mDungeonStateMachine.changeState(game.mNORMAL_DUNGEON_GAME);
 },
@@ -244,7 +244,7 @@ log: function(msg)
 
 enter: function(game)
 {
-        this.log('NORMAL_DUNGEON_GAME');
+        //this.log('NORMAL_DUNGEON_GAME');
 },
 
 execute: function(game)
@@ -279,7 +279,7 @@ log: function(msg)
 
 enter: function(game)
 {
-        this.log('RESET_DUNGEON_GAME');
+        //this.log('RESET_DUNGEON_GAME');
         game.mApplication.mLevelCompleted = true;
 },
 
@@ -381,7 +381,7 @@ log: function(msg)
 
 enter: function(game)
 {
-	this.log('RESET_PAD_GAME');
+	//this.log('RESET_PAD_GAME');
         game.reset();
 	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
 },
@@ -414,7 +414,7 @@ log: function(msg)
 
 enter: function(game)
 {
-	this.log('WAITING_ON_ANSWER_FIRST_TIME');
+	//this.log('WAITING_ON_ANSWER_FIRST_TIME');
 
 	//correctAnswer
 	game.hideCorrectAnswerBar();
@@ -443,13 +443,13 @@ execute: function(game)
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
-			this.log('correct in first wait!!!!!');
+			///this.log('correct in first wait!!!!!');
                         game.mQuiz.correctAnswer();
                       	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
                 }
                 else
                 {
-			this.log('show correct in first wait!!!!!');
+			//this.log('show correct in first wait!!!!!');
                       	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
                 }
 	}
@@ -479,7 +479,7 @@ log: function(msg)
 
 enter: function(game)
 {
-	this.log('WAITING_ON_ANSWER');
+	//this.log('WAITING_ON_ANSWER');
 	
 	//correctAnswer
 	game.hideCorrectAnswerBar();
@@ -511,12 +511,10 @@ execute: function(game)
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
-			this.log('correct in reg wait !!!!!');
                       	game.mPadStateMachine.changeState(game.mCORRECT_ANSWER_PAD_GAME);
                 }
                 else
                 {
-			this.log('wrong answer gettting called reg wait');
                       	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
                 }
 	}
@@ -634,7 +632,7 @@ log: function(msg)
 
 enter: function(game)
 {
-        this.log('SHOW_CORRECT_ANSWER_OUT_OF_TIME');
+        //this.log('SHOW_CORRECT_ANSWER_OUT_OF_TIME');
         game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
         game.hideNumberPad();
         game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'OUT OF TIME!';  
@@ -677,7 +675,7 @@ log: function(msg)
 enter: function(game)
 {
 
-        this.log('LEVEL_PASSED_PAD');
+        //this.log('LEVEL_PASSED_PAD');
         game.mApplication.mLevelCompleted = true;
         
 	game.hideNumberPad();
