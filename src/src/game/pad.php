@@ -111,11 +111,9 @@ Extends: Game,
                 this.mQuiz.mQuestionPoolArray.push(new Question('4 + 5 =','9'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('5 + 4 =','9'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('5 + 5 =','10'));
-
                 this.mQuiz.mQuestionPoolArray.push(new Question('0 + 0 =','0')); //0
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 0 =','1'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('0 + 1 =','1'));
-
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 0 =','10')); //10s + 1 
 		this.mQuiz.mQuestionPoolArray.push(new Question('0 + 10 =','10'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 1 =','11'));
@@ -196,9 +194,14 @@ Extends: Game,
 		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 6 =','13'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 7 =','13'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 7 =','14'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 7 =','14'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('9 + 7 =','16'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 9 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 2 =','9')); //6
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 6 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 3 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 + 6 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 4 =','10'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 6 =','10'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 5 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 6 =','11'));
 
 
 		var offset = parseInt(this.mApplication.mNextLevelID - 99); 
