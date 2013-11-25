@@ -46,7 +46,6 @@ Extends: Game,
 
         	this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
-
 	},
 
 	destructor: function()
@@ -97,6 +96,14 @@ Extends: Game,
                 this.mQuiz.mQuestionPoolArray.push(new Question('10 + 1 =','11'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('10 + 2 =','12'));
 
+		var offset = parseInt(this.mApplication.mNextLevelID - 99); 
+		this.log('offset:' + offset);
+		for (s = 0; s < this.mScoreNeeded; s++)
+		{	
+			randomElement = Math.floor((Math.random()*offset));		
+			this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+		}
+/*
                 if (this.mApplication.mNextLevelID == 100)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
@@ -177,6 +184,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
+*/
 	},
 	
 	createWorld: function()
