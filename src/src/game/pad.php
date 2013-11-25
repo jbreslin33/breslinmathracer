@@ -90,8 +90,14 @@ Extends: Game,
                 this.mQuiz.mQuestionPoolArray.push(new Question('3 + 1 =','4'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('4 + 1 =','5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('5 + 1 =','6'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('6 + 1 =','7'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('7 + 1 =','8'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 1 =','9'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('9 + 1 =','10'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('10 + 1 =','11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('10 + 2 =','12'));
 
-                if (this.mApplication.mNextLevelID == 14)
+                if (this.mApplication.mNextLevelID == 100)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -99,7 +105,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mApplication.mNextLevelID == 14.01)
+                if (this.mApplication.mNextLevelID == 101)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -107,7 +113,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mApplication.mNextLevelID == 14.02)
+                if (this.mApplication.mNextLevelID == 102)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -115,7 +121,7 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mApplication.mNextLevelID == 14.03)
+                if (this.mApplication.mNextLevelID == 103)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
@@ -123,11 +129,51 @@ Extends: Game,
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
-                if (this.mApplication.mNextLevelID == 14.04)
+                if (this.mApplication.mNextLevelID == 104)
 		{
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{	
 				randomElement = Math.floor((Math.random()*5));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+			}
+		}
+                if (this.mApplication.mNextLevelID == 105)
+		{
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{	
+				randomElement = Math.floor((Math.random()*6));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+			}
+		}
+                if (this.mApplication.mNextLevelID == 106)
+		{
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{	
+				randomElement = Math.floor((Math.random()*7));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+			}
+		}
+                if (this.mApplication.mNextLevelID == 107)
+		{
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{	
+				randomElement = Math.floor((Math.random()*8));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+			}
+		}
+                if (this.mApplication.mNextLevelID == 108)
+		{
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{	
+				randomElement = Math.floor((Math.random()*9));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+			}
+		}
+                if (this.mApplication.mNextLevelID == 109)
+		{
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{	
+				randomElement = Math.floor((Math.random()*10));		
 				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 		}
