@@ -6,7 +6,7 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.mScoreNeeded = 10;
+		this.mScoreNeeded = 20;
 
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
@@ -104,15 +104,15 @@ Extends: Game,
 			var randomChance = Math.floor((Math.random()*2));		
 			if (randomChance == 0)
 			{
-				this.log('zero');
+				var randomElement = Math.floor((Math.random()*offset));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}	
 			if (randomChance == 1)
 			{
-				this.log('one');
+				var randomElement = Math.floor((Math.random()*offset));		
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 			}
 
-			var randomElement = Math.floor((Math.random()*offset));		
-			this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 		}
 	},
 	
