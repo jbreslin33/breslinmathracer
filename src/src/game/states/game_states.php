@@ -129,8 +129,144 @@ exit: function(game)
 }
 
 });
+/****************** DUNGEON STATES ************/
+/****************** ***********************/
+/****************** ********* ************/
+var GLOBAL_DUNGEON_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var INIT_DUNGEON_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+        game.mDungeonStateMachine.changeState(game.mRESET_DUNGEON_GAME);
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var RESET_DUNGEON_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        this.log('RESET_DUNGEON_GAME');
+        game.reset();
+        game.mPadStateMachine.changeState(game.mINIT_DUNGEON_GAME);
+},
+
+execute: function(game)
+{
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var LEVEL_PASSED_DUNGEON = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        this.log('RESET_DUNGEON_GAME');
+        game.mApplication.mLevelCompleted = true;
+},
+
+execute: function(game)
+{
+	//just wait here until what???
+        if (game.mApplication.mAdvanceToNextLevelConfirmation)
+        {
+                game.mDungeonStateMachine.changeState(game.mINIT_DUNGEON_GAME);
+        }
+
+},
+
+exit: function(game)
+{
+}
+
+});
 
 /****************** PAD STATES ************/
+/****************** ***********************/
+/****************** ********* ************/
 var GLOBAL_PAD_GAME = new Class(
 {
 Extends: State,
@@ -364,7 +500,6 @@ exit: function(game)
 
 });
 
-/****************** PAD STATES ************/
 var CORRECT_ANSWER_PAD_GAME = new Class(
 {
 Extends: State,

@@ -10,6 +10,18 @@ Extends: Game,
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 		this.createQuestions(); //do this once
 		this.createWorld(); //do this once
+ 
+		//state machine
+                this.mDungeonStateMachine = new StateMachine(this);
+
+                this.mGLOBAL_DUNGEON_GAME  = new GLOBAL_DUNGEON_GAME(this);
+                this.mINIT_DUNGEON_GAME    = new INIT_DUNGEON_GAME(this);
+                this.mRESET_DUNGEON_GAME   = new RESET_DUNGEON_GAME(this);
+                this.mLEVEL_PASSED_DUNGEON = new LEVEL_PASSED_DUNGEON(this);
+
+                this.mDungeonStateMachine.setGlobalState(this.mGLOBAL_DUNGEON_GAME);
+                this.mDungeonStateMachine.changeState(this.mINIT_DUNGEON_GAME);
+
 	},
 
 	destructor: function()
@@ -28,6 +40,7 @@ Extends: Game,
 	update: function()
 	{
 		this.parent()
+		this.mDungeonStateMachine.update();
 	},
 
 	createQuestions: function()
