@@ -749,7 +749,6 @@ execute: function(game)
         {
                 game.mPadStateMachine.changeState(game.mINIT_PAD_GAME);
         }
-
 },
 
 exit: function(game)
