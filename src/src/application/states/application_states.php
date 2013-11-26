@@ -96,7 +96,6 @@ execute: function(application)
         }
 	if (application.mLevelCompleted)
 	{
-		this.log('mLevelCompleted true in normal');
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 	}
 },
@@ -176,6 +175,7 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
+		//instead change state to VIDEO_GAME_APPLICATION
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
