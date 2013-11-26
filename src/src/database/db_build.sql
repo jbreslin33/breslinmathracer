@@ -1007,6 +1007,7 @@ insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade
 
 
 insert into levels(id,description) values (0,'Start of Journey');       
+/*
 insert into levels(id,description) values (1,'Count');        
 insert into levels(id,description) values (2,'Count');       
 insert into levels(id,description) values (3,'Count');       
@@ -1027,6 +1028,7 @@ insert into levels(id,description) values (17,'Count');
 insert into levels(id,description) values (18,'Count');       
 insert into levels(id,description) values (19,'Count');       
 insert into levels(id,description) values (20,'Count');       
+*/
 
 
 --		LEVEL_ID: 1.50  
@@ -1354,7 +1356,6 @@ insert into levels(id,description) values (247,'Pad');
 insert into levels(id,description) values (248,'Pad');
 insert into levels(id,description) values (249,'Pad');
 insert into levels(id,description) values (250,'Pad');
-insert into levels(id,description) values (250,'Pad');
 insert into levels(id,description) values (251,'Pad');
 insert into levels(id,description) values (252,'Pad');
 insert into levels(id,description) values (253,'Pad');
@@ -1394,7 +1395,6 @@ insert into levels(id,description) values (296,'Pad');
 insert into levels(id,description) values (297,'Pad');
 insert into levels(id,description) values (298,'Pad');
 insert into levels(id,description) values (299,'Pad');
-insert into levels(id,description) values (200,'Pad');
 insert into levels(id,description) values (301,'Pad');
 insert into levels(id,description) values (302,'Pad');
 insert into levels(id,description) values (303,'Pad');
@@ -1444,7 +1444,6 @@ insert into levels(id,description) values (346,'Pad');
 insert into levels(id,description) values (347,'Pad');
 insert into levels(id,description) values (348,'Pad');
 insert into levels(id,description) values (349,'Pad');
-insert into levels(id,description) values (350,'Pad');
 insert into levels(id,description) values (350,'Pad');
 insert into levels(id,description) values (351,'Pad');
 insert into levels(id,description) values (352,'Pad');
@@ -1535,7 +1534,6 @@ insert into levels(id,description) values (447,'Pad');
 insert into levels(id,description) values (448,'Pad');
 insert into levels(id,description) values (449,'Pad');
 insert into levels(id,description) values (450,'Pad');
-insert into levels(id,description) values (450,'Pad');
 insert into levels(id,description) values (451,'Pad');
 insert into levels(id,description) values (452,'Pad');
 insert into levels(id,description) values (453,'Pad');
@@ -1624,7 +1622,6 @@ insert into levels(id,description) values (546,'Pad');
 insert into levels(id,description) values (547,'Pad');
 insert into levels(id,description) values (548,'Pad');
 insert into levels(id,description) values (549,'Pad');
-insert into levels(id,description) values (550,'Pad');
 insert into levels(id,description) values (550,'Pad');
 insert into levels(id,description) values (551,'Pad');
 insert into levels(id,description) values (552,'Pad');

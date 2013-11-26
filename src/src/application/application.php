@@ -130,6 +130,7 @@ var Application = new Class(
 			//this.log('no level yet');
 		}
 
+/*
   		if (this.mNextLevelID > 0 && this.mNextLevelID < 2)
                 {
                 	if (this.mGameName != "Dungeon")
@@ -143,8 +144,8 @@ var Application = new Class(
                                 this.mGame = new Dungeon(APPLICATION);
                         }
                 }
-
-                if (this.mNextLevelID >= 14)
+*/
+                if (this.mNextLevelID >= 100)
                 {
                		if (this.mGameName != "Pad")
                         {
