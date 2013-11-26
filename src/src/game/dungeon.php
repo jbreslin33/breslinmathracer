@@ -267,12 +267,6 @@ Extends: Game,
 			this.mQuiz.mQuestionArray.push(new Question('18','19'));
 			this.mQuiz.mQuestionArray.push(new Question('19','20'));
 		}
-
-
-
-
-
-
 	},
 
 	createWorld: function()
