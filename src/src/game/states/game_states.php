@@ -754,6 +754,11 @@ execute: function(game)
 
 exit: function(game)
 {
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = '';
 }
 });
 
