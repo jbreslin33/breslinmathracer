@@ -242,7 +242,7 @@ Extends: Game,
 	
 	createWorld: function()
 	{
-		this.mVictoryShape_1 = new ShapeVictory(50,50,300,300,this,"/images/characters/wizard.png","","");
+		this.mVictoryShape_1 = new ShapeVictory(50,50,300,300,this,"/images/bus/kid.png","","");
 		this.mShapeArray.push(this.mVictoryShape_1);
 		this.mVictoryShape_1.setVisibility(false);
 
