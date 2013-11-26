@@ -91,11 +91,6 @@ var Application = new Class(
 		this.mStateMachine.update();
         },
 
-	newGame: function()
-	{
-		this.mGame = 0;	
-	},
- 
 	getLevelData: function()
         {
                 var xmlhttp;
