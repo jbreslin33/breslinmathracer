@@ -70,6 +70,7 @@ var Application = new Class(
                 this.mNORMAL_APPLICATION                = new NORMAL_APPLICATION       (this);
                 this.mGET_LEVEL_DATA_APPLICATION        = new GET_LEVEL_DATA_APPLICATION(this);
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
+                this.mVIDEO_GAME_APPLICATION            = new VIDEO_GAME_APPLICATION(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
                 this.mStateMachine.changeState(this.mINIT_APPLICATION);
