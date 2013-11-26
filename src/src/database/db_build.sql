@@ -1293,7 +1293,17 @@ insert into levels(id,description) values (176,'Addition');
 insert into levels(id,description) values (177,'Addition');
 insert into levels(id,description) values (178,'Addition');
 insert into levels(id,description) values (179,'Addition');
-insert into levels(id,description) values (180,'Addition');
+insert into levels(id,description) values (190,'Addition');
+insert into levels(id,description) values (191,'Addition');
+insert into levels(id,description) values (192,'Addition');
+insert into levels(id,description) values (193,'Addition');
+insert into levels(id,description) values (194,'Addition');
+insert into levels(id,description) values (195,'Addition');
+insert into levels(id,description) values (196,'Addition');
+insert into levels(id,description) values (197,'Addition');
+insert into levels(id,description) values (198,'Addition');
+insert into levels(id,description) values (199,'Addition');
+insert into levels(id,description) values (200,'Addition');
 
 
 

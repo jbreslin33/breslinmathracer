@@ -20,7 +20,7 @@ Extends: Game,
 
 		//show correct 
 		this.mCorrectAnswerStartTime = 0;
-		this.mCorrectAnswerThresholdTime = 5000;
+		this.mCorrectAnswerThresholdTime = 10000;
 		this.mCorrectAnswerBarHeader = 0;
 		this.mCorrectAnswerBar = 0;
 	
