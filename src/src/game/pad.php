@@ -11,7 +11,6 @@ Extends: Game,
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
-		
 		//answers 
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
@@ -246,6 +245,8 @@ Extends: Game,
 
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
+
+		this.victoryShape_1 = new Shape(50,50,openPoint.mX,openPoint.mY,this,"","/images/monsters/red_monster.png","","chaser");
 	},
 	
 	hideNumberPad: function()
