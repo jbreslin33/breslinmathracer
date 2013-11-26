@@ -11,6 +11,9 @@ Extends: Game,
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
+		//victory shape
+		this.mVictoryShape = 0;
+
 		//answers 
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
@@ -239,14 +242,10 @@ Extends: Game,
 	
 	createWorld: function()
 	{
-		//scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
-		//this.mApplication.mHud.mScoreNeeded.setText(scoreText);
-		//this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mNextLevelID + '</font>');
-
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
 
-		this.victoryShape_1 = new Shape(50,50,openPoint.mX,openPoint.mY,this,"","/images/monsters/red_monster.png","","chaser");
+		this.mVictoryShape_1 = new Shape(50,50,300,300,this,"/images/characters/wizard.png","","");
 	},
 	
 	hideNumberPad: function()
