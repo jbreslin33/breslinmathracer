@@ -741,6 +741,7 @@ enter: function(game)
         game.mCorrectAnswerBar.mMesh.value = '';
         game.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
         game.showCorrectAnswerBar();
+	game.mVictoryShape_1.setVisibility(true);
 },
 
 execute: function(game)
@@ -758,6 +759,7 @@ exit: function(game)
         game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
         game.mCorrectAnswerBar.mMesh.value = '';
         game.mCorrectAnswerBar.mMesh.innerHTML = '';
+	game.mVictoryShape_1.setVisibility(false);
 }
 });
 

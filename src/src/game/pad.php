@@ -12,7 +12,7 @@ Extends: Game,
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
 		//victory shape
-		this.mVictoryShape = 0;
+		this.mVictoryShape_1 = 0;
 
 		//answers 
                 this.mThresholdTime = 2000;
@@ -242,10 +242,13 @@ Extends: Game,
 	
 	createWorld: function()
 	{
+		this.mVictoryShape_1 = new Shape(50,50,300,300,this,"/images/characters/wizard.png","","");
+		this.mShapeArray.push(this.mVictoryShape_1);
+		this.mVictoryShape_1.setVisibility(false);
+
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
 
-		this.mVictoryShape_1 = new Shape(50,50,300,300,this,"/images/characters/wizard.png","","");
 	},
 	
 	hideNumberPad: function()
