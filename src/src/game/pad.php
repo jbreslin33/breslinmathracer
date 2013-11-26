@@ -23,6 +23,10 @@ Extends: Game,
 		this.mCorrectAnswerThresholdTime = 10000;
 		this.mCorrectAnswerBarHeader = 0;
 		this.mCorrectAnswerBar = 0;
+
+		//level passed
+		this.mShowLevelPassedStartTime = 0;
+		this.mShowLevelPassedThresholdTime = 10000;
 	
 		//quiz	
                 this.mUserAnswer = '';
@@ -43,6 +47,7 @@ Extends: Game,
         	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
         	this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
         	this.mLEVEL_PASSED_PAD = new LEVEL_PASSED_PAD(this);
+        	this.mSHOW_LEVEL_PASSED_PAD = new SHOW_LEVEL_PASSED_PAD(this);
 
         	this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
         	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);

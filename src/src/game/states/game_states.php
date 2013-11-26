@@ -674,7 +674,6 @@ log: function(msg)
 
 enter: function(game)
 {
-
         //this.log('LEVEL_PASSED_PAD');
         game.mApplication.mLevelCompleted = true;
         
@@ -699,7 +698,6 @@ enter: function(game)
 
         //times
         game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
-
 },
 
 execute: function(game)
@@ -707,13 +705,55 @@ execute: function(game)
 	//just wait here until what???
  	if (game.mApplication.mAdvanceToNextLevelConfirmation)
 	{
-		game.mPadStateMachine.changeState(game.mINIT_PAD_GAME);
+		game.mPadStateMachine.changeState(game.mSHOW_LEVEL_PASSED_PAD);
 	}
 },
 
 exit: function(game)
 {
 }
+});
 
+var SHOW_LEVEL_PASSED_PAD = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        //this.log('SHOW_LEVEL_PASSED_PAD');
+	game.mShowLevelPassedStartTime = game.mTimeSinceEpoch;
+	
+	//correctAnswer
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+        game.showCorrectAnswerBar();
+},
+
+execute: function(game)
+{
+	if (game.mTimeSinceEpoch > game.mShowLevelPassedStartTime + game.mShowLevelPassedThresholdTime)
+        {
+                game.mPadStateMachine.changeState(game.mINIT_PAD_GAME);
+        }
+
+},
+
+exit: function(game)
+{
+}
 });
 
