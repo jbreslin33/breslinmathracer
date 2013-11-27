@@ -24,9 +24,6 @@ var Application = new Class(
 		this.mGame = 0;
 		this.mGameName = "";
 
-		this.mVideoGame = 0;	
-		this.mVideoGameName = "";
-
 		//KEYS
 		if (this.mGame)
 		{
@@ -70,7 +67,6 @@ var Application = new Class(
                 this.mNORMAL_APPLICATION                = new NORMAL_APPLICATION       (this);
                 this.mGET_LEVEL_DATA_APPLICATION        = new GET_LEVEL_DATA_APPLICATION(this);
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
-                this.mVIDEO_GAME_APPLICATION            = new VIDEO_GAME_APPLICATION(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
                 this.mStateMachine.changeState(this.mINIT_APPLICATION);
@@ -92,6 +88,11 @@ var Application = new Class(
 		this.mStateMachine.update();
         },
 
+	newGame: function()
+	{
+		this.mGame = 0;	
+	},
+ 
 	getLevelData: function()
         {
                 var xmlhttp;
@@ -129,7 +130,8 @@ var Application = new Class(
 			//this.log('no level yet');
 		}
 
-  		if (this.mNextLevelID > 0 && this.mNextLevelID <= 99)
+/*
+  		if (this.mNextLevelID > 0 && this.mNextLevelID < 2)
                 {
                 	if (this.mGameName != "Dungeon")
                         {
@@ -142,7 +144,7 @@ var Application = new Class(
                                 this.mGame = new Dungeon(APPLICATION);
                         }
                 }
-
+*/
                 if (this.mNextLevelID >= 100)
                 {
                		if (this.mGameName != "Pad")
@@ -157,43 +159,6 @@ var Application = new Class(
                         }
                 }
 	},
-  
-	// are we running the right game??
-        videoGameDecider: function()
-        {
-                if (this.mNextLevelID == 0 || this.mNextLevelID == null)
-                {
-                        //this.log('no level yet');
-                }
-
-                if (this.mNextLevelID > 0 && this.mNextLevelID <= 99)
-                {
-                        if (this.mGameName != "Dungeon")
-                        {
-                                if (this.mGame)
-                                {
-                                        this.mGame.destructor();
-                                        this.mGame = 0;
-                                }
-                                this.mGameName = "Dungeon";
-                                this.mGame = new Dungeon(APPLICATION);
-                        }
-                }
-
-                if (this.mNextLevelID >= 100)
-                {
-                        if (this.mGameName != "Pad")
-                        {
-                                if (this.mGame)
-                                {
-                                        this.mGame.destructor();
-                                        this.mGame = 0;
-                                }
-                                this.mGameName = "Pad";
-                                this.mGame = new Pad(APPLICATION);
-                        }
-                }
-        },
 
 	advanceToNextLevel: function()
         {

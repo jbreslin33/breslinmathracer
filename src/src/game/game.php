@@ -83,22 +83,6 @@ var Game = new Class(
 
                 this.standardGameAttempt();
         },
-	
-	show: function()
-	{
-                for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray.setVisibility(false);
-		}
-	},
-
-	hide: function()
-	{
-                for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray.setVisibility(true);
-		}
-	},
 
 	destroyShapesAndArray: function()
 	{

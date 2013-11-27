@@ -96,6 +96,7 @@ execute: function(application)
         }
 	if (application.mLevelCompleted)
 	{
+		this.log('mLevelCompleted true in normal');
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 	}
 },
@@ -175,8 +176,7 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
-		//instead change state to VIDEO_GAME_APPLICATION
-                application.mStateMachine.changeState(application.mVIDEO_GAME_APPLICATION);
+                application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
 
@@ -187,57 +187,3 @@ exit: function(application)
 }
 
 });
-
-var VIDEO_GAME_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
-enter: function(application)
-{
-	if (application.mVideoGame)
-	{
-		application.mVideoGame.show();
-
-		var e = new Date();
-        	application.mVideoGame.mTimeSinceEpoch = e.getTime();
-		application.mVideoGame.mGameSessionStartTime = application.mVideoGame.mTimeSinceEpoch;
-	}
-},
-
-execute: function(application)
-{
-	if (application.mVideoGame)
-	{
-		if (application.mVideoGame.mTimeSinceEpoch > application.mVideoGame.mGameSessionStartTime + application.mVideoGame.mGameSessionThresholdTime)
-        	{
-                	application.mPadStateMachine.changeState(application.mNORMAL_APPLICATION);
-        	}
-
-        	{
-                	application.mVideoGame.update();
-        	}
-	}
-},
-
-exit: function(application)
-{
-	if (application.mVideoGame)
-	{
-		application.mVideoGame.hide();
-	}
-}
-
-});
-
