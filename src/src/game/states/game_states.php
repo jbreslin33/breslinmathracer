@@ -760,6 +760,8 @@ exit: function(game)
         game.mCorrectAnswerBar.mMesh.value = '';
         game.mCorrectAnswerBar.mMesh.innerHTML = '';
 	game.mVictoryShape_1.setVisibility(false);
+	game.mVictoryShape_1.setPosition(300,300);
+	
 }
 });
 
