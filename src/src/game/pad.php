@@ -6,7 +6,7 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.mScoreNeeded = 20;
+		this.mScoreNeeded = 10;
 
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
@@ -238,20 +238,39 @@ Extends: Game,
 		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 2 =','6')); //4
 		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 4 =','6'));
 
-		var offset = parseInt(this.mApplication.mNextLevelID - 99); 
-		for (s = 0; s < this.mScoreNeeded; s++)
+
+		var totalOldElements   = parseInt(this.mApplication.mNextLevelID - 100); 
+
+		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
+		var totalNew           = 0;
+		var newQuestionElement = parseInt(this.mApplication.mNextLevelID - 100);
+
+		while (totalNew < totalNewGoal)
 		{	
-			//50% chance of asking newest question
-			var randomChance = Math.floor((Math.random()*2));		
-			if (randomChance == 0)
+			//reset vars and arrays
+			totalNew = 0;
+			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 			{
-				var randomElement = Math.floor((Math.random()*offset));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-			}	
-			if (randomChance == 1)
-			{
-				var randomElement = Math.floor((Math.random()*offset));		
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+				this.mQuiz.mQuestionArray[d] = 0;
+			} 
+			this.mQuiz.mQuestionArray = 0;
+			this.mQuiz.mQuestionArray = new Array();
+
+			for (s = 0; s < this.mScoreNeeded; s++)
+			{	
+				//50% chance of asking newest question
+				var randomChance = Math.floor((Math.random()*2));		
+				if (randomChance == 0)
+				{
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
+					totalNew++;
+				}	
+				if (randomChance == 1)
+				{
+					var randomElement = Math.floor((Math.random()*totalOldElements));		
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+				}
+				this.log('totalNew:' + totalNew);
 			}
 		}
 	},
