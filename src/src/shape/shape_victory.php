@@ -8,10 +8,10 @@ Extends: ShapeAI,
 		this.mDirection = 0;
         },
 	
+/*
 	ai: function()
         {
 		this.parent();
-/*
                 var direction = Math.floor(Math.random()*2)
 
                 if (direction == 0 && this.mDirection != 0) //up
@@ -26,8 +26,107 @@ Extends: ShapeAI,
                         this.mKey.mX = 0;
                         this.mKey.mY = 1;
                 }
-*/
         },
+*/
+ 	ai: function()
+        {
+                var direction = Math.floor(Math.random()*19)
 
+                if (direction == 0) //left
+                {
+                        this.mKey.mX = -1;
+                        this.mKey.mY = 0;
+                }
+                if (direction == 1) //right
+                {
+                        this.mKey.mX = 1;
+                        this.mKey.mY = 0;
+                }
+                if (direction == 2) //up
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = -1;
+                }
+                if (direction == 3) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 4) //leftup
+                {
+                        this.mKey.mX = -.5;
+                        this.mKey.mY = -.5;
+                }
+                if (direction == 5) //leftdown
+                {
+                        this.mKey.mX = -.5;
+                        this.mKey.mY = .5;
+                }
+                if (direction == 6) //rightup
+                {
+                        this.mKey.mX = .5;
+                        this.mKey.mY = -.5;
+                }
+                if (direction == 7) //rightdown
+                {
+                        this.mKey.mX = .5;
+                        this.mKey.mY = .5;
+                }
+                if (direction == 8) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 9) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 10) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 11) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 12) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 13) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 14) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 15) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 16) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 17) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+                if (direction == 18) //down
+                {
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+                }
+        }
 });
 
