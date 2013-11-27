@@ -36,7 +36,6 @@ $numrows = pg_numrows($result);
 	<tr>
    		<th>ID</th>
    		<th>USERNAME</th>
-   		<th>PASSWORD</th>
    		<th>FIRST NAME</th>
    		<th>LAST NAME</th>
    		<th>LEVEL ID</th>
@@ -66,7 +65,6 @@ for($ri = 0; $ri < $numrows; $ri++)
 		echo "<tr bgcolor=", $bg_color, ">\n";
     		echo " <td>", $row["id"], "</td>
    		<td>", $row["username"], "</td>
-   		<td>", $row["password"], "</td>
    		<td>", $row["first_name"], "</td>
    		<td>", $row["last_name"], "</td>";
 		$rowInner = pg_fetch_array($resultInner, $i);
