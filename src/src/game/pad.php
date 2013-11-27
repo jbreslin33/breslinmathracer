@@ -27,6 +27,9 @@ Extends: Game,
 		this.mVictoryShape_12 = 0;
 		this.mVictoryShape_13 = 0;
 
+		//clock shape
+		this.mClockShape = 0;
+
 		//answers 
                 this.mThresholdTime = 2000;
                 this.mAnswerTime = 0;
@@ -255,6 +258,12 @@ Extends: Game,
 	
 	createWorld: function()
 	{
+		//clock Shape
+		this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
+		this.mShapeArray.push(this.mClockShape);
+		this.mClockShape.setVisibility(false);
+
+		//victory shapes
 		this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
 		this.mShapeArray.push(this.mVictoryShape_0);
 		this.mVictoryShape_0.setVisibility(false);

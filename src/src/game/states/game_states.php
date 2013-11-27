@@ -638,6 +638,8 @@ enter: function(game)
         game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'OUT OF TIME!';  
         game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer();  
         game.showCorrectAnswerBar();
+	
+	game.mClockShape.setVisibility(true);
 },
 
 execute: function(game)
@@ -652,6 +654,8 @@ exit: function(game)
 {
         game.hideCorrectAnswerBar();
         game.mCorrectAnswerBar.mMesh.innerHTML = '';
+	
+	game.mClockShape.setVisibility(false);
 }
 
 });
