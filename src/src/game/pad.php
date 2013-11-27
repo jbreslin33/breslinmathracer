@@ -281,7 +281,6 @@ Extends: Game,
 		this.mShapeArray.push(this.mVictoryShape_7);
 		this.mVictoryShape_7.setVisibility(false);
 
-
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
 

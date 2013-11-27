@@ -8,30 +8,16 @@ Extends: ShapeAI,
 		this.mDirection = 0;
         },
 	
-/*
-	ai: function()
-        {
-		this.parent();
-                var direction = Math.floor(Math.random()*2)
-
-                if (direction == 0 && this.mDirection != 0) //up
-                {
-			this.mDirection = 0;
-                        this.mKey.mX = 0;
-                        this.mKey.mY = -1;
-                }
-                if (direction == 1 && this.mDirection != 1) //down
-                {
-			this.mDirection = 1;
-                        this.mKey.mX = 0;
-                        this.mKey.mY = 1;
-                }
-        },
-*/
  	ai: function()
         {
                 var direction = Math.floor(Math.random()*19)
-
+		if (this.mPosition < 290)
+		{
+                        this.mKey.mX = 0;
+                        this.mKey.mY = 1;
+		}
+		else
+		{
                 if (direction == 0) //left
                 {
                         this.mKey.mX = -1;
@@ -127,6 +113,7 @@ Extends: ShapeAI,
                         this.mKey.mX = 0;
                         this.mKey.mY = 1;
                 }
+		}
         }
 });
 
