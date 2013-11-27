@@ -20,7 +20,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/select/links.php");
 
 echo "<br><b><u>My Students:<u><b><br>";
 
-$query = "select students.id,  users.username, users.first_name, users.last_name from students join users on students.id = users.id where users.school_id = ";
+$query = "select students.id,  users.username, users.password, users.first_name, users.last_name from students join users on students.id = users.id where users.school_id = ";
 $query .= $_SESSION["school_id"];
 $query .= ";";
 
@@ -33,6 +33,7 @@ $numrows = pg_numrows($result);
   <tr>
    <th>ID</th>
    <th>USERNAME</th>
+   <th>PASSWORD</th>
    <th>FIRST NAME</th>
    <th>LAST NAME</th>
   </tr>
@@ -45,6 +46,7 @@ $numrows = pg_numrows($result);
     $row = pg_fetch_array($result, $ri);
     echo " <td>", $row["id"], "</td>
    <td>", $row["username"], "</td>
+   <td>", $row["password"], "</td>
    <td>", $row["first_name"], "</td>
    <td>", $row["last_name"], "</td>
   </tr>
