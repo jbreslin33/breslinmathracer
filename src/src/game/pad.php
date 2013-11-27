@@ -34,7 +34,7 @@ Extends: Game,
 		this.mMemorizeShape = 0;
 
 		//answers 
-                this.mThresholdTime = 2000;
+                this.mThresholdTime = 3000;
                 this.mAnswerTime = 0;
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
