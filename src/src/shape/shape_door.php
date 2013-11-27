@@ -90,6 +90,7 @@ Extends: QuestionShape,
         {
 		if (!this.mEnteredDoor)
 		{
+			this.log('enteredDOORRRRR');
 			this.mEnteredDoor = true;
 		}
         }
