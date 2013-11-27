@@ -593,9 +593,10 @@ enter: function(game)
 	this.log('SHOW_CORRECT_ANSWER');
 	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
 	game.hideNumberPad();
-	game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer:'; 
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = ''; 
 	game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
 	game.showCorrectAnswerBar();
+	game.mMemorizeShape.setVisibility(true);
 },
 
 execute: function(game)
@@ -610,6 +611,8 @@ exit: function(game)
 {
 	game.hideCorrectAnswerBar();
 	game.mCorrectAnswerBar.mMesh.innerHTML = ''; 
+	
+	game.mMemorizeShape.setVisibility(false);
 }
 
 });
@@ -635,7 +638,7 @@ enter: function(game)
         //this.log('SHOW_CORRECT_ANSWER_OUT_OF_TIME');
         game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
         game.hideNumberPad();
-        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'OUT OF TIME!';  
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'GO FASTER!';  
         game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer();  
         game.showCorrectAnswerBar();
 	

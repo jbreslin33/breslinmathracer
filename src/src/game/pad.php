@@ -29,6 +29,9 @@ Extends: Game,
 
 		//clock shape
 		this.mClockShape = 0;
+		
+		//memorize shape
+		this.mMemorizeShape = 0;
 
 		//answers 
                 this.mThresholdTime = 2000;
@@ -262,6 +265,11 @@ Extends: Game,
 		this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
 		this.mShapeArray.push(this.mClockShape);
 		this.mClockShape.setVisibility(false);
+		
+		//memorize Shape
+		this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
+		this.mShapeArray.push(this.mMemorizeShape);
+		this.mMemorizeShape.setVisibility(false);
 
 		//victory shapes
 		this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
