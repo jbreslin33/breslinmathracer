@@ -10,6 +10,8 @@ Extends: ShapeAI,
 	
 	ai: function()
         {
+		this.parent();
+/*
                 var direction = Math.floor(Math.random()*2)
 
                 if (direction == 0 && this.mDirection != 0) //up
@@ -24,6 +26,7 @@ Extends: ShapeAI,
                         this.mKey.mX = 0;
                         this.mKey.mY = 1;
                 }
+*/
         },
 
 });

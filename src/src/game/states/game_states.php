@@ -741,7 +741,14 @@ enter: function(game)
         game.mCorrectAnswerBar.mMesh.value = '';
         game.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
         game.showCorrectAnswerBar();
+	game.mVictoryShape_0.setVisibility(true);
 	game.mVictoryShape_1.setVisibility(true);
+	game.mVictoryShape_2.setVisibility(true);
+	game.mVictoryShape_3.setVisibility(true);
+	game.mVictoryShape_4.setVisibility(true);
+	game.mVictoryShape_5.setVisibility(true);
+	game.mVictoryShape_6.setVisibility(true);
+	game.mVictoryShape_7.setVisibility(true);
 },
 
 execute: function(game)
@@ -759,8 +766,22 @@ exit: function(game)
         game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
         game.mCorrectAnswerBar.mMesh.value = '';
         game.mCorrectAnswerBar.mMesh.innerHTML = '';
+	game.mVictoryShape_0.setVisibility(false);
+	game.mVictoryShape_0.setPosition(50,300);
 	game.mVictoryShape_1.setVisibility(false);
-	game.mVictoryShape_1.setPosition(300,300);
+	game.mVictoryShape_1.setPosition(100,300);
+	game.mVictoryShape_2.setVisibility(false);
+	game.mVictoryShape_2.setPosition(150,300);
+	game.mVictoryShape_3.setVisibility(false);
+	game.mVictoryShape_3.setPosition(200,300);
+	game.mVictoryShape_4.setVisibility(false);
+	game.mVictoryShape_4.setPosition(200,300);
+	game.mVictoryShape_5.setVisibility(false);
+	game.mVictoryShape_5.setPosition(200,300);
+	game.mVictoryShape_6.setVisibility(false);
+	game.mVictoryShape_6.setPosition(250,300);
+	game.mVictoryShape_7.setVisibility(false);
+	game.mVictoryShape_7.setPosition(300,300);
 	
 }
 });

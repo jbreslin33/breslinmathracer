@@ -12,7 +12,14 @@ Extends: Game,
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
 		//victory shape
+		this.mVictoryShape_0 = 0;
 		this.mVictoryShape_1 = 0;
+		this.mVictoryShape_2 = 0;
+		this.mVictoryShape_3 = 0;
+		this.mVictoryShape_4 = 0;
+		this.mVictoryShape_5 = 0;
+		this.mVictoryShape_6 = 0;
+		this.mVictoryShape_7 = 0;
 
 		//answers 
                 this.mThresholdTime = 2000;
@@ -242,9 +249,38 @@ Extends: Game,
 	
 	createWorld: function()
 	{
-		this.mVictoryShape_1 = new ShapeVictory(50,50,300,300,this,"/images/bus/kid.png","","");
+		this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_0);
+		this.mVictoryShape_0.setVisibility(false);
+		
+		this.mVictoryShape_1 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
 		this.mShapeArray.push(this.mVictoryShape_1);
 		this.mVictoryShape_1.setVisibility(false);
+		
+		this.mVictoryShape_2 = new ShapeVictory(50,50,150,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_2);
+		this.mVictoryShape_2.setVisibility(false);
+
+		this.mVictoryShape_3 = new ShapeVictory(50,50,200,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_3);
+		this.mVictoryShape_3.setVisibility(false);
+
+		this.mVictoryShape_4 = new ShapeVictory(50,50,250,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_4);
+		this.mVictoryShape_4.setVisibility(false);
+
+		this.mVictoryShape_5 = new ShapeVictory(50,50,300,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_5);
+		this.mVictoryShape_5.setVisibility(false);
+		
+		this.mVictoryShape_6 = new ShapeVictory(50,50,350,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_6);
+		this.mVictoryShape_6.setVisibility(false);
+
+		this.mVictoryShape_7 = new ShapeVictory(50,50,400,300,this,"/images/bus/kid.png","","");
+		this.mShapeArray.push(this.mVictoryShape_7);
+		this.mVictoryShape_7.setVisibility(false);
+
 
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
