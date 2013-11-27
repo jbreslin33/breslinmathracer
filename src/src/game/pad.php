@@ -238,9 +238,6 @@ Extends: Game,
 		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 2 =','6')); //4
 		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 4 =','6'));
 
-
-
-
 		var offset = parseInt(this.mApplication.mNextLevelID - 99); 
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
