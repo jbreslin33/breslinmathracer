@@ -11,22 +11,6 @@ Extends: Game,
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
 
-		//victory shape
-		this.mVictoryShape_0 = 0;
-		this.mVictoryShape_1 = 0;
-		this.mVictoryShape_2 = 0;
-		this.mVictoryShape_3 = 0;
-		this.mVictoryShape_4 = 0;
-		this.mVictoryShape_5 = 0;
-		this.mVictoryShape_6 = 0;
-		this.mVictoryShape_7 = 0;
-		this.mVictoryShape_8 = 0;
-		this.mVictoryShape_9 = 0;
-		this.mVictoryShape_10 = 0;
-		this.mVictoryShape_11 = 0;
-		this.mVictoryShape_12 = 0;
-		this.mVictoryShape_13 = 0;
-
 		//clock shape
 		this.mClockShape = 0;
 		
@@ -42,8 +26,6 @@ Extends: Game,
 		//show correct 
 		this.mCorrectAnswerStartTime = 0;
 		this.mCorrectAnswerThresholdTime = 10000;
-		this.mCorrectAnswerBarHeader = 0;
-		this.mCorrectAnswerBar = 0;
 
 		//level passed
 		this.mShowLevelPassedStartTime = 0;
@@ -277,6 +259,8 @@ Extends: Game,
 	
 	createWorld: function()
 	{
+		this.parent();
+
 		//clock Shape
 		this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
 		this.mShapeArray.push(this.mClockShape);
@@ -286,63 +270,6 @@ Extends: Game,
 		this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
 		this.mShapeArray.push(this.mMemorizeShape);
 		this.mMemorizeShape.setVisibility(false);
-
-		//victory shapes
-		this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_0);
-		this.mVictoryShape_0.setVisibility(false);
-		
-		this.mVictoryShape_1 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_1);
-		this.mVictoryShape_1.setVisibility(false);
-		
-		this.mVictoryShape_2 = new ShapeVictory(50,50,150,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_2);
-		this.mVictoryShape_2.setVisibility(false);
-
-		this.mVictoryShape_3 = new ShapeVictory(50,50,200,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_3);
-		this.mVictoryShape_3.setVisibility(false);
-
-		this.mVictoryShape_4 = new ShapeVictory(50,50,250,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_4);
-		this.mVictoryShape_4.setVisibility(false);
-
-		this.mVictoryShape_5 = new ShapeVictory(50,50,300,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_5);
-		this.mVictoryShape_5.setVisibility(false);
-		
-		this.mVictoryShape_6 = new ShapeVictory(50,50,350,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_6);
-		this.mVictoryShape_6.setVisibility(false);
-
-		this.mVictoryShape_7 = new ShapeVictory(50,50,400,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_7);
-		this.mVictoryShape_7.setVisibility(false);
-
-		this.mVictoryShape_8 = new ShapeVictory(50,50,450,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_8);
-		this.mVictoryShape_8.setVisibility(false);
-
-		this.mVictoryShape_9 = new ShapeVictory(50,50,500,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_9);
-		this.mVictoryShape_9.setVisibility(false);
-
-		this.mVictoryShape_10 = new ShapeVictory(50,50,550,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_10);
-		this.mVictoryShape_10.setVisibility(false);
-
-		this.mVictoryShape_11 = new ShapeVictory(50,50,600,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_11);
-		this.mVictoryShape_11.setVisibility(false);
-
-		this.mVictoryShape_12 = new ShapeVictory(50,50,650,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_12);
-		this.mVictoryShape_12.setVisibility(false);
-		
-		this.mVictoryShape_13 = new ShapeVictory(50,50,700,300,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mVictoryShape_13);
-		this.mVictoryShape_13.setVisibility(false);
 
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
@@ -382,25 +309,6 @@ Extends: Game,
 
 	},
 
-	showCorrectAnswerBar: function()
-	{
-		this.mCorrectAnswerBarHeader.setVisibility(true);
-		this.mCorrectAnswerBar.setVisibility(true);
-	},
-	
-	hideCorrectAnswerBar: function()
-	{
-		this.mCorrectAnswerBar.setVisibility(false);
-		this.mCorrectAnswerBarHeader.setVisibility(false);
-	},
-	
-	destroyCorrectAnswerBar: function()
-	{
-                this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
-                document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
-                this.mCorrectAnswerBar = 0;
-        },
-
 	inputKeyHit: function(e)
 	{
 		if (e.key == 'enter')
@@ -421,18 +329,6 @@ Extends: Game,
 			APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
 		}
 		APPLICATION.mGame.mNumAnswer.mMesh.focus();
-	},
-
-	createCorrectAnswerBar: function()
-	{
-		//question bar header
-               	this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-               	this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Header:';
-		
-		//question bar
-               	this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
-               	this.mCorrectAnswerBar.mMesh.innerHTML = '';
-		
 	},
 
 	createNumberPad: function()

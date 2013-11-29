@@ -21,6 +21,7 @@ Extends: Game,
                 this.mRESET_DUNGEON_GAME   = new RESET_DUNGEON_GAME(this);
                 this.mNORMAL_DUNGEON_GAME   = new NORMAL_DUNGEON_GAME(this);
                 this.mLEVEL_PASSED_DUNGEON = new LEVEL_PASSED_DUNGEON(this);
+                this.mSHOW_LEVEL_PASSED_DUNGEON = new SHOW_LEVEL_PASSED_DUNGEON(this);
 
                 this.mDungeonStateMachine.setGlobalState(this.mGLOBAL_DUNGEON_GAME);
                 this.mDungeonStateMachine.changeState(this.mINIT_DUNGEON_GAME);
@@ -274,6 +275,8 @@ Extends: Game,
 		this.destroyShapesAndArray();
 		this.mShapeArray = new Array();
 
+		this.parent();
+		
 		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createQuestionShapes();
@@ -293,6 +296,10 @@ Extends: Game,
 
         	//create door
         	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
+
+		//show answer bar
+	        this.createCorrectAnswerBar();
+
 	},
 
 	createControlObject: function()
