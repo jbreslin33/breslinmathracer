@@ -102,5 +102,18 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
+		if (this.mApplication.mNextLevelID == 1.10)   
+                {
+                       	this.mQuiz.mQuestionArray.push(new Question('0','10'));
+                       	this.mQuiz.mQuestionArray.push(new Question('10','20'));
+                       	this.mQuiz.mQuestionArray.push(new Question('20','30'));
+                       	this.mQuiz.mQuestionArray.push(new Question('30','40'));
+                       	this.mQuiz.mQuestionArray.push(new Question('40','50'));
+                       	this.mQuiz.mQuestionArray.push(new Question('50','60'));
+                       	this.mQuiz.mQuestionArray.push(new Question('60','70'));
+                       	this.mQuiz.mQuestionArray.push(new Question('70','80'));
+                       	this.mQuiz.mQuestionArray.push(new Question('80','90'));
+                       	this.mQuiz.mQuestionArray.push(new Question('90','100'));
+                }
 	}
 });

@@ -979,7 +979,8 @@ ALTER TABLE standards_clusters_domains_grades ADD UNIQUE (standard_id, cluster_d
 --================= GAMES  ====================================
 --==================================================================
 --GAMES
-insert into games (game) values ('Dungeon');
+insert into games (game) values ('Dungeon_k_cc_a_1');
+insert into games (game) values ('Dungeon_k_cc_a_2');
 insert into games (game) values ('Pad');
 
 --GAMES_ATTEMPTS
@@ -1031,104 +1032,112 @@ insert into permissions(permission) values ('INSERT');
 --&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 --			KINDERGARTEN             
 --&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-insert into grades (grade) values ('K');
+insert into grades (grade) values ('K'); --id = 1 
 
 --^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 --			MATH	
 --^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-insert into subjects (subject) values ('Math');
+insert into subjects (subject) values ('Math'); --id = 1
 
+--START LEVEL
+insert into levels(id,description) values (0,'Start of Journey');       
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 --	Counting and Cardinality
 --	K.CC
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-insert into domains (domain) values ('Counting and Cardinality'); 
-insert into domains_subjects (domain_id, subject_id) values (1,1); 
-insert into domains_grades (domain_id, grade_id) values (1,1); 
+insert into domains (domain) values ('Counting and Cardinality');  --id = 1 
+insert into domains_subjects (domain_id, subject_id) values (1,1); --id = 1 
+insert into domains_grades (domain_id, grade_id) values (1,1);     --id = 1 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --	Know number names and the count sequence.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-insert into clusters (cluster) values ('Know number names and the count sequence.');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1); 
+insert into clusters (cluster) values ('Know number names and the count sequence.'); --id = 1 
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);      --id = 1 
 
-
-insert into levels(id,description) values (0,'Start of Journey');       
 
 ----------------------------------------------------------------------------
 --   	1.	 Count to 100 by ones and by tens.
 ----------------------------------------------------------------------------
-insert into standards (standard) values ('Count to 100 by ones and by tens.'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); 
+insert into standards (standard) values ('Count to 100 by ones and by tens.'); --id = 1 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); --id = 1 
 
-insert into levels(id,description) values (1,'');        
-insert into games_levels (level_id,game_id) values  (1,1);
+insert into levels(id,description) values (1,'K_CC_A_1');          
+insert into games_levels (level_id,game_id) values  (1,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1,1);      
 
-insert into levels(id,description) values (1.01,'');        
-insert into games_levels (level_id,game_id) values  (1.01,1);
+insert into levels(id,description) values (1.01,'K_CC_A_1');         
+insert into games_levels (level_id,game_id) values  (1.01,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.01,1);       
 
-insert into levels(id,description) values (1.02,'');        
+insert into levels(id,description) values (1.02,'K_CC_A_1');        
 insert into games_levels (level_id,game_id) values  (1.02,1);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.02,1);       
 
-insert into levels(id,description) values (1.03,'');        
-insert into games_levels (level_id,game_id) values  (1.03,1);
+insert into levels(id,description) values (1.03,'K_CC_A_1');        
+insert into games_levels (level_id,game_id) values  (1.03,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.03,1);       
 
-insert into levels(id,description) values (1.04,'');        
-insert into games_levels (level_id,game_id) values  (1.04,1);
+insert into levels(id,description) values (1.04,'K_CC_A_1');        
+insert into games_levels (level_id,game_id) values  (1.04,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.04,1);        
 
+insert into levels(id,description) values (1.05,'K_CC_A_1');         
+insert into games_levels (level_id,game_id) values  (1.05,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.05,1);        
 
+insert into levels(id,description) values (1.06,'K_CC_A_1');         
+insert into games_levels (level_id,game_id) values  (1.06,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.06,1);       
 
-/*
-insert into levels(id,description) values (2,'Count');       
-insert into levels(id,description) values (3,'Count');       
-insert into levels(id,description) values (4,'Count');       
-insert into levels(id,description) values (5,'Count');       
-insert into levels(id,description) values (6,'Count');       
-insert into levels(id,description) values (7,'Count');       
-insert into levels(id,description) values (8,'Count');       
-insert into levels(id,description) values (9,'Count');       
-insert into levels(id,description) values (10,'Count');       
-insert into levels(id,description) values (11,'Count');       
-insert into levels(id,description) values (12,'Count');       
-insert into levels(id,description) values (13,'Count');       
-insert into levels(id,description) values (14,'Count');       
-insert into levels(id,description) values (15,'Count');       
-insert into levels(id,description) values (16,'Count');       
-insert into levels(id,description) values (17,'Count');       
-insert into levels(id,description) values (18,'Count');       
-insert into levels(id,description) values (19,'Count');       
-insert into levels(id,description) values (20,'Count');       
-*/
+insert into levels(id,description) values (1.07,'K_CC_A_1');        
+insert into games_levels (level_id,game_id) values  (1.07,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.07,1);       
 
---		LEVEL_ID: 1.50  
---insert into levels(id,description) values (1.90,'Count to 100 by tens');       
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.90,1);       
+insert into levels(id,description) values (1.08,'K_CC_A_1');        
+insert into games_levels (level_id,game_id) values  (1.08,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.08,1);       
+
+insert into levels(id,description) values (1.09,'K_CC_A_1');        
+insert into games_levels (level_id,game_id) values  (1.09,1);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.09,1);       
+
+insert into levels(id,description) values (1.10,'K_CC_A_1');        
+insert into games_levels (level_id,game_id) values  (1.10,1); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.10,1);     
 
 --------------------------------------------------------------------------------
 --   	2.	 Count forward beginning from a given number within the known
 --   	sequence (instead of having to begin at 1).
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1); 
+insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); --id=2
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1); --id=2  
 
+insert into levels(id,description) values (2,'K_CC_A_2'); 
+insert into games_levels (level_id,game_id) values  (2,2); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2,2);       
 
+insert into levels(id,description) values (2.01,'K_CC_A_2'); 
+insert into games_levels (level_id,game_id) values  (2.01,2); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.01,2);       
 
---		LEVEL_ID: 2  
---insert into levels(id,description) values (2,'Count from 87 to 97'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2,2);       
+insert into levels(id,description) values (2.02,'K_CC_A_2'); 
+insert into games_levels (level_id,game_id) values  (2.02,2); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.02,2);       
 
---		LEVEL_ID: 2.1 
---insert into levels(id,description) values (2.1,'Count from 23 to 33'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.1,2);       
+insert into levels(id,description) values (2.03,'K_CC_A_2'); 
+insert into games_levels (level_id,game_id) values  (2.03,2); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.03,2);       
 
---		LEVEL_ID: 2.2  
---insert into levels(id,description) values (2.2,'Count from 55 to 65'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.2,2);       
+insert into levels(id,description) values (2.04,'K_CC_A_2'); 
+insert into games_levels (level_id,game_id) values  (2.04,2); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.04,2);       
 
---		LEVEL_ID: 2.3  
---insert into levels(id,description) values (2.3,'Count from 4 to 14');  
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.3,2);       
+insert into levels(id,description) values (2.05,'K_CC_A_2'); 
+insert into games_levels (level_id,game_id) values  (2.05,2); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (2.05,2);       
+
 
 --------------------------------------------------------------------------------
 --   	3.	 Write numbers from 0 to 20. Represent a number of objects with a
