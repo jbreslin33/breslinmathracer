@@ -11,223 +11,96 @@ Extends: Dungeon,
 	createQuestions: function()
 	{
 		this.parent();
-		
-		if (this.mApplication.mNextLevelID == 1)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-		}
-		
-		if (this.mApplication.mNextLevelID == 1.01)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-		}
-		
-		if (this.mApplication.mNextLevelID == 1.02)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-		}
-		if (this.mApplication.mNextLevelID == 1.03)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-		}
-		if (this.mApplication.mNextLevelID == 1.04)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-		}
-		if (this.mApplication.mNextLevelID == 1.05) 
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-		}
-		if (this.mApplication.mNextLevelID == 1.06)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-		}
-		if (this.mApplication.mNextLevelID == 1.07)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-		}
-		if (this.mApplication.mNextLevelID == 1.08)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-		}
-		if (this.mApplication.mNextLevelID == 1.09)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('0','1'));
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-		}
-		if (this.mApplication.mNextLevelID == 1.10) 
-		{
-			this.mQuiz.mQuestionArray.push(new Question('1','2'));
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-		}
-		if (this.mApplication.mNextLevelID == 1.11)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('2','3'));
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-		}
-		if (this.mApplication.mNextLevelID == 1.12)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('3','4'));
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-		}
-		if (this.mApplication.mNextLevelID == 1.13)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('4','5'));
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-		}
-		if (this.mApplication.mNextLevelID == 1.14)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('5','6'));
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-			this.mQuiz.mQuestionArray.push(new Question('14','15'));
-		}
-		if (this.mApplication.mNextLevelID == 1.15)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('6','7'));
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-			this.mQuiz.mQuestionArray.push(new Question('14','15'));
-			this.mQuiz.mQuestionArray.push(new Question('15','16'));
-		}
-		if (this.mApplication.mNextLevelID == 1.16)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('7','8'));
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-			this.mQuiz.mQuestionArray.push(new Question('14','15'));
-			this.mQuiz.mQuestionArray.push(new Question('15','16'));
-			this.mQuiz.mQuestionArray.push(new Question('16','17'));
-		}
-		if (this.mApplication.mNextLevelID == 1.17)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('8','9'));
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-			this.mQuiz.mQuestionArray.push(new Question('14','15'));
-			this.mQuiz.mQuestionArray.push(new Question('15','16'));
-			this.mQuiz.mQuestionArray.push(new Question('16','17'));
-			this.mQuiz.mQuestionArray.push(new Question('17','18'));
-		}
-		if (this.mApplication.mNextLevelID == 1.18)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('9','10'));
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-			this.mQuiz.mQuestionArray.push(new Question('14','15'));
-			this.mQuiz.mQuestionArray.push(new Question('15','16'));
-			this.mQuiz.mQuestionArray.push(new Question('16','17'));
-			this.mQuiz.mQuestionArray.push(new Question('17','18'));
-			this.mQuiz.mQuestionArray.push(new Question('18','19'));
-		}
-		if (this.mApplication.mNextLevelID == 1.19)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('10','11'));
-			this.mQuiz.mQuestionArray.push(new Question('11','12'));
-			this.mQuiz.mQuestionArray.push(new Question('12','13'));
-			this.mQuiz.mQuestionArray.push(new Question('13','14'));
-			this.mQuiz.mQuestionArray.push(new Question('14','15'));
-			this.mQuiz.mQuestionArray.push(new Question('15','16'));
-			this.mQuiz.mQuestionArray.push(new Question('16','17'));
-			this.mQuiz.mQuestionArray.push(new Question('17','18'));
-			this.mQuiz.mQuestionArray.push(new Question('18','19'));
-			this.mQuiz.mQuestionArray.push(new Question('19','20'));
-		}
+
+		if (this.mApplication.mNextLevelID == 1)   
+                {
+			for (i = 0; i < 10; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.01)   
+                {
+			for (i = 10; i < 20; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.02)   
+                {
+			for (i = 20; i < 30; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.03)   
+                {
+			for (i = 30; i < 40; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.04)   
+                {
+			for (i = 40; i < 50; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.05)   
+                {
+			for (i = 50; i < 60; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.06)   
+                {
+			for (i = 60; i < 70; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.07)   
+                {
+			for (i = 70; i < 80; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.08)   
+                {
+			for (i = 80; i < 90; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
+		if (this.mApplication.mNextLevelID == 1.09)   
+                {
+			for (i = 90; i < 100; i++)
+			{
+				var question = i;
+				var answer = parseInt(i + 1); 
+                        	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
+			}
+                }
 	}
 });

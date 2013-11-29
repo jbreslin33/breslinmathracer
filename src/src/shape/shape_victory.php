@@ -6,6 +6,10 @@ Extends: ShapeAI,
         {
 		this.parent(width,height,spawnX,spawnY,game,src,backgroundColor,message);
 		this.mDirection = 0;
+
+                //collision on or off
+                this.mCollidable = false;
+                this.mCollisionOn = false;
         },
 	
  	ai: function()
