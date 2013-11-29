@@ -55,9 +55,12 @@ function setLevelSessionVariables($conn,$user_id)
        	        echo "error no transactions";
         }
 
-  	//---------------- GET next level id and level using last_level_id----------------------------------------------
+  	//---------------- GET next level id and level and game_id using last_level_id----------------------------------------------
+	//$query = "select games.id from games join games_levels on games.id = games_levels.game_id where games_levels.level_id = ";
+        //$query = "select id from levels where id > ";
 
-        $query = "select id from levels where id > ";
+	$query = "select game_id, level_id from games_levels where level_id > ";
+
         $query .= $_SESSION["last_level"];
         $query .= " order by id ASC LIMIT 1;";
 
@@ -71,12 +74,12 @@ function setLevelSessionVariables($conn,$user_id)
         if ($num > 0)
         {
         	//get the id and level
-                $next_level_id = pg_Result($result, 0, 'id');
-                $next_level    = pg_Result($result, 0, 'id');
+                $next_level_id = pg_Result($result, 0, 'level_id');
+                $next_level_game_id = pg_Result($result, 0, 'game_id');
 
                	//set session
                 $_SESSION["next_level_id"] = $next_level_id;
-                $_SESSION["next_level"] = $next_level;
+                $_SESSION["next_level_game_id"] = $next_level_game_id;
         }
         else
         {

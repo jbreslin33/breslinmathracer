@@ -11,8 +11,9 @@
 --====================== GAMES  =============================
 --==================================================================
 
-DROP TABLE games_attempts cascade;
 DROP TABLE games_levels cascade;
+DROP TABLE games_attempts cascade;
+DROP TABLE games cascade;
 
 --==================================================================
 --====================== LEVELS  =============================
@@ -977,7 +978,7 @@ ALTER TABLE standards_clusters_domains_grades ADD UNIQUE (standard_id, cluster_d
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
-GAMES_
+--GAMES
 insert into games (game) values ('Dungeon');
 insert into games (game) values ('Pad');
 
