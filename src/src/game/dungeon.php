@@ -77,10 +77,6 @@ Extends: Game,
 
         	//create door
         	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
-
-		//show answer bar
-	        this.createCorrectAnswerBar();
-
 	},
 
 	createControlObject: function()

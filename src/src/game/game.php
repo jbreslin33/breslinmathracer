@@ -121,6 +121,8 @@ var Game = new Class(
                 	this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
+
+		this.destroyCorrectAnswerBar();
 	},
 
 	update: function()
@@ -130,6 +132,10 @@ var Game = new Class(
 
 	createWorld: function()
 	{
+
+		//correctAnswerBar
+		this.createCorrectAnswerBar();
+
  		//victory shapes
                 this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_0);
@@ -495,21 +501,29 @@ var Game = new Class(
 
         destroyCorrectAnswerBar: function()
         {
-                this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
-                document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
-                this.mCorrectAnswerBar = 0;
+		if (this.mCorrectAnswerBarHeader)
+		{
+                	this.mCorrectAnswerBarHeader.mDiv.mDiv.removeChild(this.mCorrectAnswerBarHeader.mMesh);
+                	document.body.removeChild(this.mCorrectAnswerBarHeader.mDiv.mDiv);
+                	this.mCorrectAnswerBarHeader = 0;
+		}
+		if (this.mCorrectAnswerBar)
+		{
+                	this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
+                	document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
+                	this.mCorrectAnswerBar = 0;
+		}
         },
  
 	createCorrectAnswerBar: function()
         {
                 //question bar header
                 this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Header:';
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
 
                 //question bar
                 this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
-
         }
 
 });

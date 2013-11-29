@@ -244,7 +244,13 @@ log: function(msg)
 
 enter: function(game)
 {
-        //this.log('NORMAL_DUNGEON_GAME');
+        this.log('NORMAL_DUNGEON_GAME');
+        //correctAnswer
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = '';
 },
 
 execute: function(game)
