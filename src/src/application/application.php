@@ -132,6 +132,19 @@ var Application = new Class(
 			//this.log('no level yet');
 		}
 		this.log('gaID:' + this.mNextLevelGameID);
+		if (this.mNextLevelGameID == 1)
+		{ 
+             		if (this.mGameName != "Dungeon")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "Dungeon";
+                               	this.mGame = new Dungeon(APPLICATION);
+			}
+                }
 		if (this.mNextLevelGameID == 2)
 		{ 
              		if (this.mGameName != "Pad")

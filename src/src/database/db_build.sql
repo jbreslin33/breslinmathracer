@@ -1054,16 +1054,32 @@ insert into clusters (cluster) values ('Know number names and the count sequence
 insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1); 
 
 
+insert into levels(id,description) values (0,'Start of Journey');       
+
 ----------------------------------------------------------------------------
 --   	1.	 Count to 100 by ones and by tens.
 ----------------------------------------------------------------------------
 insert into standards (standard) values ('Count to 100 by ones and by tens.'); 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); 
 
+insert into levels(id,description) values (1,'');        
+insert into games_levels (level_id,game_id) values  (1,1);
 
-insert into levels(id,description) values (0,'Start of Journey');       
+insert into levels(id,description) values (1.01,'');        
+insert into games_levels (level_id,game_id) values  (1.01,1);
+
+insert into levels(id,description) values (1.02,'');        
+insert into games_levels (level_id,game_id) values  (1.02,1);
+
+insert into levels(id,description) values (1.03,'');        
+insert into games_levels (level_id,game_id) values  (1.03,1);
+
+insert into levels(id,description) values (1.04,'');        
+insert into games_levels (level_id,game_id) values  (1.04,1);
+
+
+
 /*
-insert into levels(id,description) values (1,'Count');        
 insert into levels(id,description) values (2,'Count');       
 insert into levels(id,description) values (3,'Count');       
 insert into levels(id,description) values (4,'Count');       
@@ -1084,7 +1100,6 @@ insert into levels(id,description) values (18,'Count');
 insert into levels(id,description) values (19,'Count');       
 insert into levels(id,description) values (20,'Count');       
 */
-
 
 --		LEVEL_ID: 1.50  
 --insert into levels(id,description) values (1.90,'Count to 100 by tens');       
