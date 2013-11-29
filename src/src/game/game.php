@@ -41,6 +41,9 @@ var Game = new Class(
                 this.mVictoryShape_12 = 0;
                 this.mVictoryShape_13 = 0;
 
+                //level passed
+                this.mShowLevelPassedStartTime = 0;
+                this.mShowLevelPassedThresholdTime = 10000;
                 
 		/**************** TIME ************/
                 this.mTimeSinceEpoch = 0;

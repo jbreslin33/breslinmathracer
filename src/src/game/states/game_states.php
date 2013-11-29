@@ -364,7 +364,7 @@ execute: function(game)
 {
         if (game.mTimeSinceEpoch > game.mShowLevelPassedStartTime + game.mShowLevelPassedThresholdTime)
         {
-                game.mPadStateMachine.changeState(game.mINIT_DUNGEON_GAME);
+                game.mDungeonStateMachine.changeState(game.mINIT_DUNGEON_GAME);
         }
 },
 

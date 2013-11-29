@@ -27,10 +27,6 @@ Extends: Game,
 		this.mCorrectAnswerStartTime = 0;
 		this.mCorrectAnswerThresholdTime = 10000;
 
-		//level passed
-		this.mShowLevelPassedStartTime = 0;
-		this.mShowLevelPassedThresholdTime = 10000;
-	
 		//quiz	
                 this.mUserAnswer = '';
 
