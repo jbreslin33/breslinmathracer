@@ -255,8 +255,11 @@ execute: function(game)
         	game.mDungeonStateMachine.changeState(game.mLEVEL_PASSED_DUNGEON);
 	}
 
- 	
-
+	if (game.mKilled == true)
+	{	
+		this.log('killed');
+        	game.mDungeonStateMachine.changeState(game.mRESET_DUNGEON_GAME);
+	}
 },
 
 exit: function(game)

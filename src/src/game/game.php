@@ -17,6 +17,7 @@ var Game = new Class(
 
 		/************ SCORE *******/
 		this.mScore = 0;
+		this.mKilled = false;
 
 		// may get rid of later and just use mOn
 		this.timeWarning = false;
@@ -97,6 +98,7 @@ var Game = new Class(
         {
                 /************ SCORE *******/
                 this.setScore(0);
+		this.mKilled = false;
 
                 /**************** TIME ************/
                 this.timeWarning = false;
