@@ -12,6 +12,7 @@
 --==================================================================
 
 DROP TABLE games_attempts cascade;
+DROP TABLE games_levels cascade;
 
 --==================================================================
 --====================== LEVELS  =============================
@@ -254,6 +255,19 @@ CREATE TABLE levels_standards_clusters_domains_grades (
 --===================== GAMES =====================================
 --==================================================================
 
+--GAMES
+CREATE TABLE games (
+    id integer NOT NULL,
+    game text NOT NULL UNIQUE
+);
+
+--GAMES_LEVELS
+CREATE TABLE games_levels (
+    id integer NOT NULL,
+    game_id integer NOT NULL,
+    level_id double precision NOT NULL
+);
+
 --GAMES_ATTEMPTS
 CREATE TABLE games_attempts (
     id integer NOT NULL,
@@ -446,6 +460,21 @@ CREATE SEQUENCE levels_transactions_id_seq
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
+--GAMES
+CREATE SEQUENCE games_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+--GAMES_LEVELS
+CREATE SEQUENCE games_levels_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
 --GAMES_ATTEMPTS
 CREATE SEQUENCE games_attempts_id_seq
@@ -546,6 +575,11 @@ ALTER TABLE public.levels_standards_clusters_domains_grades OWNER TO postgres;
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
+--GAMES
+ALTER TABLE public.games OWNER TO postgres;
+
+--GAMES_LEVELS
+ALTER TABLE public.games_levels OWNER TO postgres;
 
 --GAMES_ATTEMPTS
 ALTER TABLE public.games_attempts OWNER TO postgres;
@@ -662,6 +696,15 @@ ALTER TABLE ONLY levels_transactions ALTER COLUMN id SET DEFAULT nextval('levels
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
+--GAMES
+ALTER TABLE public.games_id_seq OWNER TO postgres;
+ALTER SEQUENCE games_id_seq OWNED BY games.id;
+ALTER TABLE ONLY games ALTER COLUMN id SET DEFAULT nextval('games_id_seq'::regclass);
+
+--GAMES_LEVELS
+ALTER TABLE public.games_levels_id_seq OWNER TO postgres;
+ALTER SEQUENCE games_levels_id_seq OWNED BY games_levels.id;
+ALTER TABLE ONLY games_levels ALTER COLUMN id SET DEFAULT nextval('games_levels_id_seq'::regclass);
 
 --GAMES_ATTEMPTS
 ALTER TABLE public.games_attempts_id_seq OWNER TO postgres;
@@ -757,6 +800,11 @@ ALTER TABLE levels_standards_clusters_domains_grades ADD PRIMARY KEY (level_id, 
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
+--GAMES
+ALTER TABLE games ADD PRIMARY KEY (id);
+
+--GAMES_LEVELS
+ALTER TABLE games_levels ADD PRIMARY KEY (id);
 
 --GAMES_ATTEMPTS
 ALTER TABLE games_attempts ADD PRIMARY KEY (id);
@@ -846,6 +894,9 @@ ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (standard_c
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
+--GAMES_LEVELS
+ALTER TABLE games_levels ADD FOREIGN KEY (game_id) REFERENCES games(id);
+ALTER TABLE games_levels ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 
 --GAMES_ATTEMPTS
 ALTER TABLE games_attempts ADD FOREIGN KEY (user_id) REFERENCES users(id);
@@ -926,6 +977,9 @@ ALTER TABLE standards_clusters_domains_grades ADD UNIQUE (standard_id, cluster_d
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
+GAMES_
+insert into games (game) values ('Dungeon');
+insert into games (game) values ('Pad');
 
 --GAMES_ATTEMPTS
 
@@ -1226,9 +1280,17 @@ insert into levels(id,description) values (20,'Count');
 -- ADD 0
 
 insert into levels(id,description) values (100,'Pad');
+insert into games_levels (level_id,game_id) values  (100,1);
+
 insert into levels(id,description) values (101,'Pad');
+insert into games_levels (level_id,game_id) values  (101,1);
+
 insert into levels(id,description) values (102,'Pad');
+insert into games_levels (level_id,game_id) values  (102,1);
+
 insert into levels(id,description) values (103,'Pad');
+insert into games_levels (level_id,game_id) values  (103,1);
+
 insert into levels(id,description) values (104,'Pad');
 insert into levels(id,description) values (105,'Pad');
 insert into levels(id,description) values (106,'Pad');

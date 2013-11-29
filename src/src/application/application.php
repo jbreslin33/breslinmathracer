@@ -115,6 +115,7 @@ var Application = new Class(
 			{
 				APPLICATION.mLevelID     = responseArray[2];
 				APPLICATION.mNextLevelID = responseArray[3];
+				APPLICATION.mNextLevelGameID = responseArray[4];
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
 		}
@@ -130,49 +131,17 @@ var Application = new Class(
 			//this.log('no level yet');
 		}
 
-/*
-  		if (this.mNextLevelID > 0 && this.mNextLevelID < 2)
+                if (this.mNextLevelID >= 100)
                 {
-                	if (this.mGameName != "Dungeon")
-                        {
+               		if (this.mGameName != "Pad")
+                       	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                                this.mGameName = "Dungeon";
-                                this.mGame = new Dungeon(APPLICATION);
-                        }
-                }
-*/
-		//if odd play video game....
-		if (this.isOdd(this.mNextLevelID))
-		{
- 			if (this.mGameName != "Gobble")
-                        {
-                        	if (this.mGame)
-                                {
-                                        this.mGame.destructor();
-                                        this.mGame = 0;
-                                }
-                                this.mGameName = "Gobble";
-                                this.mGame = new Gobble(APPLICATION);
-			}
-		}
-                else 
-		{
-                	if (this.mNextLevelID >= 100)
-                	{
-               			if (this.mGameName != "Pad")
-                        	{
-					if (this.mGame)
-					{
-						this.mGame.destructor();
-						this.mGame = 0;
-					}
-                                	this.mGameName = "Pad";
-                                	this.mGame = new Pad(APPLICATION);
-                        	}
+                               	this.mGameName = "Pad";
+                               	this.mGame = new Pad(APPLICATION);
 			}
                 }
 	},
@@ -206,6 +175,7 @@ var Application = new Class(
 			{
 				APPLICATION.mLevelID     = responseArray[2];
 				APPLICATION.mNextLevelID = responseArray[3];
+				APPLICATION.mNextLevelGameID = responseArray[4];
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}
                 }
