@@ -278,7 +278,6 @@ var Application = new Class(
 
         mouseMove: function(event)
         {
-/*
                 if (APPLICATION.mMouseMoveOn)
                 {
                         if (APPLICATION.mGame)
@@ -290,7 +289,7 @@ var Application = new Class(
 				}
 			}
                 }
-*/
+
         },
 
         mouseDown: function(event)
