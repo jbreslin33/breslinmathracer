@@ -7,5 +7,7 @@ $returnString .= ",";
 $returnString .= $_SESSION["last_level_id"];
 $returnString .= ",";
 $returnString .= $_SESSION["next_level_id"];
+$returnString .= ",";
+$returnString .= $_SESSION["next_level_game_id"];
 echo $returnString;
 ?>

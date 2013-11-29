@@ -1281,16 +1281,16 @@ insert into levels(id,description) values (20,'Count');
 -- ADD 0
 
 insert into levels(id,description) values (100,'Pad');
-insert into games_levels (level_id,game_id) values  (100,1);
+insert into games_levels (level_id,game_id) values  (100,2);
 
 insert into levels(id,description) values (101,'Pad');
-insert into games_levels (level_id,game_id) values  (101,1);
+insert into games_levels (level_id,game_id) values  (101,2);
 
 insert into levels(id,description) values (102,'Pad');
-insert into games_levels (level_id,game_id) values  (102,1);
+insert into games_levels (level_id,game_id) values  (102,2);
 
 insert into levels(id,description) values (103,'Pad');
-insert into games_levels (level_id,game_id) values  (103,1);
+insert into games_levels (level_id,game_id) values  (103,2);
 
 insert into levels(id,description) values (104,'Pad');
 insert into levels(id,description) values (105,'Pad');

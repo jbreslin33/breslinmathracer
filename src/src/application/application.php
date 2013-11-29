@@ -14,6 +14,7 @@ var Application = new Class(
 		this.mLevelCompleted = false;
 		this.mLevelID = 0;
 		this.mNextLevelID = 0;
+		this.mNextLevelGameID = 0;
 		this.mWaitingOnLevelData = false;
 		this.mAdvanceToNextLevelConfirmation = false;
 		
@@ -130,10 +131,10 @@ var Application = new Class(
 		{
 			//this.log('no level yet');
 		}
-
-                if (this.mNextLevelID >= 100)
-                {
-               		if (this.mGameName != "Pad")
+		this.log('gaID:' + this.mNextLevelGameID);
+		if (this.mNextLevelGameID == 2)
+		{ 
+             		if (this.mGameName != "Pad")
                        	{
 				if (this.mGame)
 				{
