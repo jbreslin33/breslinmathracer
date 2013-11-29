@@ -131,18 +131,17 @@ var Application = new Class(
 		{
 			//this.log('no level yet');
 		}
-		this.log('gaID:' + this.mNextLevelGameID);
 		if (this.mNextLevelGameID == 1)
 		{ 
-             		if (this.mGameName != "Dungeon")
+             		if (this.mGameName != "Dungeon_k_cc_a_1")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Dungeon";
-                               	this.mGame = new Dungeon(APPLICATION);
+                               	this.mGameName = "Dungeon_k_cc_a_1";
+                               	this.mGame = new Dungeon_k_cc_a_1(APPLICATION);
 			}
                 }
 		if (this.mNextLevelGameID == 2)
