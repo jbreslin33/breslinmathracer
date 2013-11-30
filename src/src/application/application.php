@@ -156,8 +156,21 @@ var Application = new Class(
                                	this.mGame = new Dungeon_k_cc_a_2(APPLICATION);
 			}
                 }
-		
 		if (this.mNextLevelGameID == 3)
+		{ 
+             		if (this.mGameName != "Count_k_cc_a_3")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "Count_k_cc_a_3";
+                               	this.mGame = new Count_k_cc_a_3(APPLICATION);
+			}
+                }
+		
+		if (this.mNextLevelGameID == 4)
 		{ 
              		if (this.mGameName != "Pad")
                        	{
