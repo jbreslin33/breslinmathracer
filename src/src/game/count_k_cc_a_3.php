@@ -19,24 +19,6 @@ Extends: Pad,
 
 		//answers 
                 this.mThresholdTime = 10000;
-
-		//state machine
-		this.mCountStateMachine = new StateMachine(this);
-
-        	this.mGLOBAL_COUNT_GAME     = new GLOBAL_COUNT_GAME(this);
-        	this.mINIT_COUNT_GAME       = new INIT_COUNT_GAME(this);
-        	this.mRESET_COUNT_GAME      = new RESET_COUNT_GAME(this);
-        	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
-        	this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
-        	this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
-        	this.mCORRECT_ANSWER_COUNT_GAME = new CORRECT_ANSWER_COUNT_GAME(this);
-        	this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
-        	this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
-        	this.mLEVEL_PASSED_COUNT = new LEVEL_PASSED_COUNT(this);
-        	this.mSHOW_LEVEL_PASSED_COUNT = new SHOW_LEVEL_PASSED_COUNT(this);
-
-        	this.mCountStateMachine.setGlobalState(this.mGLOBAL_COUNT_GAME);
-        	this.mCountStateMachine.changeState(this.mINIT_COUNT_GAME);
 	},
 
 	destructor: function()
@@ -62,7 +44,6 @@ Extends: Pad,
 	update: function()
         {
   		this.parent()
-		this.mCountStateMachine.update();
         },
 
 	showNumberPad: function()
