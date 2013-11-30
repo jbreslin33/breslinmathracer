@@ -217,7 +217,8 @@ CREATE TABLE clusters_domains_grades (
 --STANDARDS
 CREATE TABLE standards (
     id integer NOT NULL,
-    standard text NOT NULL
+    standard text NOT NULL,
+    description text NOT NULL
 );
 
 --STANDARDS_CLUSTERS_DOMAINS_GRADES
@@ -1072,7 +1073,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);
 --STANDARD #1
 --   	1.	 Count to 100 by ones and by tens.
 ----------------------------------------------------------------------------
-insert into standards (standard) values ('Count to 100 by ones and by tens.');  
+insert into standards (standard,description) values ('K_CC_A_1','Count to 100 by ones and by tens.');  
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); 
 
 insert into levels(id,description) values (1,'K_CC_A_1');          
@@ -1124,7 +1125,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --   	2.	 Count forward beginning from a given number within the known
 --   	sequence (instead of having to begin at 1).
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
+insert into standards (standard,description) values ('K_CC_A_2','Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1);   
 
 insert into levels(id,description) values (2,'K_CC_A_2'); 
@@ -1157,7 +1158,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --   	3.	 Write numbers from 0 to 20. Represent a number of objects with a
 --	written numeral 0-20 (with 0 representing a count of no objects).
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
+insert into standards (standard,description) values ('K_CC_A_3','Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (3,1); --id=3 
 
 insert into levels(id,description) values (3,'K_CC_A_3'); 
@@ -1186,7 +1187,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (2,1);
 --	order, pairing each object with one and only one number name
 --	and each number name with one and only one object.
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
+insert into standards (standard,description) values ('K_CC_B_4A','When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (4,2); 
 
 insert into levels(id,description) values (4,'K_CC_B_4A'); 
@@ -1199,7 +1200,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	objects counted. The number of objects is the same regardless of
 --	their arrangement or the order in which they were counted.
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
+insert into standards (standard,description) values ('K_CC_B_4B','Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (5,2); 
 
 insert into levels(id,description) values (5,'K_CC_B_4B'); 
@@ -1211,7 +1212,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	c.	 Understand that each successive number name refers to a quantity
 --	that is one larger.
 --------------------------------------------------------------------------------
-insert into standards (standard) values (' Understand that each successive number name refers to a quantity that is one larger.'); 
+insert into standards (standard,description) values ('K_CC_B_4C','Understand that each successive number name refers to a quantity that is one larger.'); 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (6,2); 
 
 insert into levels(id,description) values (6,'K_CC_B_4C');
@@ -1225,7 +1226,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	things in a scattered configuration; given a number from 1–20, count
 --	out that many objects.
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
+insert into standards (standard,description) values ('K_CC_B_5','Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (7,2); 
 
 insert into levels(id,description) values (7,'K_CC_B_5'); 
@@ -1245,7 +1246,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (3,1);
 --	less than, or equal to the number of objects in another group, e.g., by
 --	using matching and counting strategies.
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
+insert into standards (standard,description) values ('K_CC_C_6','Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (8,3);
 
 insert into levels(id,description) values (8,'K_CC_C_6'); 
@@ -1258,7 +1259,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	7.	 Compare two numbers between 1 and 10 presented as written
 --	numerals.
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K_CC_C_7','Compare two numbers between 1 and 10 presented as written numerals.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (9,3);
 
 insert into levels(id,description) values (9,'K_CC_C_7'); 
@@ -1296,7 +1297,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,2);
 --	images, drawings2, sounds (e.g., claps), acting out situations, verbal
 --	explanations, expressions, or equations.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K_OA_A_1','Compare two numbers between 1 and 10 presented as written numerals.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (10,4);
 
 insert into levels(id,description) values (10,'K_OA_A_1'); 
@@ -1308,7 +1309,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	2.	 Solve addition and subtraction word problems, and add and subtract
 --	within 10, e.g., by using objects or drawings to represent the problem.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
+insert into standards (standard,description) values ('K_OA_A_2','Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (11,4);
 
 insert into levels(id,description) values (11,'K_OA_A_2'); 
@@ -1321,7 +1322,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	than one way, e.g., by using objects or drawings, and record each
 --	decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
+insert into standards (standard,description) values ('K_OA_A_3','Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (12,4);
 
 insert into levels(id,description) values (12,'K_OA_A_3'); 
@@ -1333,7 +1334,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	added to the given number, e.g., by using objects or drawings, and
 --	record the answer with a drawing or equation.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
+insert into standards (standard,description) values ('K_OA_A_4','For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (13,4);
 
 insert into levels(id,description) values (13,'K_OA_A_4'); 
@@ -1344,7 +1345,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	5.	 Fluently add and subtract within 5.
 -----------------------------------------------------------------------------
 
-insert into standards (standard) values ('Fluently add and subtract within 5.');
+insert into standards (standard,description) values ('K_OA_A_5','Fluently add and subtract within 5.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
 
 insert into levels(id,description) values (14,'K_OA_A_5');
@@ -1456,7 +1457,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (5,3);
 --	8); understand that these numbers are composed of ten ones and one,
 --	two, three, four, five, six, seven, eight, or nine ones.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
+insert into standards (standard,description) values ('K_NBT_A_1','Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (15,5);
 
 insert into levels(id,description) values (15,'K_NBT_A_1');
@@ -1489,7 +1490,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (6,4);
 --	1.	 Describe measurable attributes of objects, such as length or weight.
 --	Describe several measurable attributes of a single object.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
+insert into standards (standard,description) values ('K_MD_A_1','Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (16,5);
 
 insert into levels(id,description) values (16,'K_MD_A_1');
@@ -1504,7 +1505,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	the difference. For example, directly compare the heights of two
 --	children and describe one child as taller/shorter.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Directly compare two objects with a measurable attribute in common...');
+insert into standards (standard,description) values ('K_MD_A_2','Directly compare two objects with a measurable attribute in common...');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (17,6);
 
 insert into levels(id,description) values (17,'K_MD_A_2');
@@ -1525,10 +1526,10 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (7,4);
 --	3.	 Classify objects into given categories; count the numbers of objects in
 --	each category and sort the categories by count.3
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
+insert into standards (standard,description) values ('K_MD_B_3','Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (18,7);
 
-insert into levels(id,description) values (18,'K_MD_A_2');
+insert into levels(id,description) values (18,'K_MD_B_3');
 --insert into games_levels (level_id,game_id) values  (18,0);
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (18,18);       
 
@@ -1558,7 +1559,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (8,5);
 --	describe the relative positions of these objects using terms such as
 --	above, below, beside, in front of, behind, and next to.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Describe objects in the environment using names of shapes...');
+insert into standards (standard,description) values ('K_G_A_1','Describe objects in the environment using names of shapes...');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (19,8);
 
 insert into levels(id,description) values (19,'K_G_A_1');
@@ -1570,7 +1571,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --STANDARD #20
 --	2.	 Correctly name shapes regardless of their orientations or overall size.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Correctly name shapes regardless of their orientations or overall size.');
+insert into standards (standard,description) values ('K_G_A_2','Correctly name shapes regardless of their orientations or overall size.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (20,8);
 
 insert into levels(id,description) values (20,'K_G_A_2');
@@ -1582,7 +1583,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	3.	 Identify shapes as two-dimensional (lying in a plane, “flat”) or three-
 --	dimensional (“solid”).
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Identify shapes as two-dimensional....');
+insert into standards (standard,description) values ('K_G_A_3','Identify shapes as two-dimensional....');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (21,8);
 
 insert into levels(id,description) values (21,'K_G_A_3');
@@ -1607,7 +1608,7 @@ insert into clusters_domains_grades (cluster_id, domain_grade_id) values (9,5);
 --	vertices/“corners”) and other attributes (e.g., having sides of equal
 --	length).
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Analyze and compare two- and three-dimensional shapes...');
+insert into standards (standard,description) values ('K_G_B_4','Analyze and compare two- and three-dimensional shapes...');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (22,9);
 
 insert into levels(id,description) values (22,'K_G_B_4');
@@ -1620,7 +1621,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	5.	 Model shapes in the world by building shapes from components (e.g.,
 --	sticks and clay balls) and drawing shapes.
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Model shapes in the world by building shapes from components...');
+insert into standards (standard,description) values ('K_G_B_5','Model shapes in the world by building shapes from components...');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (23,9);
 
 insert into levels(id,description) values (23,'K_G_B_5');
@@ -1633,7 +1634,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --	6.	 Compose simple shapes to form larger shapes. For example, “Can you
 --	join these two triangles with full sides touching to make a rectangle?”
 -----------------------------------------------------------------------------
-insert into standards (standard) values ('Compose simple shapes to form..');
+insert into standards (standard,description) values ('K_G_B_6','Compose simple shapes to form..');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (24,9);
 
 insert into levels(id,description) values (24,'K_G_B_6');
