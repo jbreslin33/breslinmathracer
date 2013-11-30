@@ -330,7 +330,7 @@ log: function(msg)
 
 enter: function(game)
 {
-        //this.log('SHOW_LEVEL_PASSED_PAD');
+        //this.log('SHOW_LEVEL_PASSED_DUNGEON');
         game.mShowLevelPassedStartTime = game.mTimeSinceEpoch;
 
         //correctAnswer
@@ -941,7 +941,532 @@ exit: function(game)
 	
 }
 });
+/****************** COUNT STATES ************/
+/****************** ***********************/
+/****************** ********* ************/
+var GLOBAL_COUNT_GAME = new Class(
+{
+Extends: State,
 
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var INIT_COUNT_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+},
+
+execute: function(game)
+{
+	game.mCountStateMachine.changeState(game.mRESET_COUNT_GAME);
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var RESET_COUNT_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	//this.log('RESET_COUNT_GAME');
+        game.reset();
+	game.mCountStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
+},
+
+execute: function(game)
+{
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var WAITING_ON_ANSWER_FIRST_TIME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	//this.log('WAITING_ON_ANSWER_FIRST_TIME');
+
+	//correctAnswer
+	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBarHeader.mMesh.value = '';
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+	game.mCorrectAnswerBar.mMesh.value = '';
+	game.mCorrectAnswerBar.mMesh.innerHTML = '';
+
+	//number pad
+ 	game.mNumAnswer.mMesh.value = '';
+ 	game.mNumAnswer.mMesh.innerHTML = '';
+
+ 	game.mNumQuestion.mMesh.value = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
+	game.showNumberPad();
+
+	//user answer
+	game.mUserAnswer = '';
+},
+
+execute: function(game)
+{
+	//if you have an answer...
+	if (game.mUserAnswer != '')
+	{
+		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
+               	{ 
+			///this.log('correct in first wait!!!!!');
+                        game.mQuiz.correctAnswer();
+                      	game.mCountStateMachine.changeState(game.mWAITING_ON_ANSWER);
+                }
+                else
+                {
+			//this.log('show correct in first wait!!!!!');
+                      	game.mCountStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
+                }
+	}
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var WAITING_ON_ANSWER = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	//this.log('WAITING_ON_ANSWER');
+	
+	//correctAnswer
+	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBarHeader.mMesh.value = '';
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+	game.mCorrectAnswerBar.mMesh.value = '';
+	game.mCorrectAnswerBar.mMesh.innerHTML = '';
+
+	//number pad
+ 	game.mNumAnswer.mMesh.value = '';
+ 	game.mNumAnswer.mMesh.innerHTML = '';
+
+ 	game.mNumQuestion.mMesh.value = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '';
+ 	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
+	game.showNumberPad();
+
+	//user answer
+	game.mUserAnswer = '';
+
+	//times
+	game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
+},
+
+execute: function(game)
+{
+	//if you have an answer...
+	if (game.mUserAnswer != '')
+	{
+		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
+               	{ 
+                      	game.mCountStateMachine.changeState(game.mCORRECT_ANSWER_COUNT_GAME);
+                }
+                else
+                {
+                      	game.mCountStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
+                }
+	}
+
+	//check time
+        if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
+        {
+        	game.mOutOfTime = true;
+                game.mCountStateMachine.changeState(game.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
+       	} 
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var CORRECT_ANSWER_COUNT_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	game.mQuiz.correctAnswer();
+},
+
+execute: function(game)
+{
+        if (game.mQuiz.isQuizComplete())
+        {
+		game.mCountStateMachine.changeState(game.mLEVEL_PASSED_COUNT);
+        }
+	else
+	{
+		game.mCountStateMachine.changeState(game.mWAITING_ON_ANSWER);
+	}
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var SHOW_CORRECT_ANSWER = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	this.log('SHOW_CORRECT_ANSWER');
+	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
+	game.hideNumberPad();
+	game.mCorrectAnswerBarHeader.mMesh.innerHTML = ''; 
+	game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
+	game.showCorrectAnswerBar();
+	game.mMemorizeShape.setVisibility(true);
+},
+
+execute: function(game)
+{
+	if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
+        {
+		game.mCountStateMachine.changeState(game.mRESET_COUNT_GAME);	
+	}
+},
+
+exit: function(game)
+{
+	game.hideCorrectAnswerBar();
+	game.mCorrectAnswerBar.mMesh.innerHTML = ''; 
+	
+	game.mMemorizeShape.setVisibility(false);
+}
+
+});
+
+var SHOW_CORRECT_ANSWER_OUT_OF_TIME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        //this.log('SHOW_CORRECT_ANSWER_OUT_OF_TIME');
+        game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
+        game.hideNumberPad();
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'GO FASTER!';  
+        game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer();  
+        game.showCorrectAnswerBar();
+	
+	game.mClockShape.setVisibility(true);
+},
+
+execute: function(game)
+{
+        if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
+        {
+                game.mPadStateMachine.changeState(game.mRESET_COUNT_GAME);
+        }
+},
+
+exit: function(game)
+{
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBar.mMesh.innerHTML = '';
+	
+	game.mClockShape.setVisibility(false);
+}
+
+});
+
+var LEVEL_PASSED_COUNT = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        //this.log('LEVEL_PASSED_COUNT');
+        game.mApplication.mLevelCompleted = true;
+        
+	game.hideNumberPad();
+
+	//correctAnswer
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+
+        //number pad
+        game.mNumAnswer.mMesh.value = '';
+        game.mNumAnswer.mMesh.innerHTML = '';
+
+        game.mNumQuestion.mMesh.value = '';
+        game.mNumQuestion.mMesh.innerHTML = '';
+
+        //user answer
+        game.mUserAnswer = '';
+
+        //times
+        game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
+},
+
+execute: function(game)
+{
+	//just wait here until what???
+ 	if (game.mApplication.mAdvanceToNextLevelConfirmation)
+	{
+		game.mCountStateMachine.changeState(game.mSHOW_LEVEL_PASSED_COUNT);
+	}
+},
+
+exit: function(game)
+{
+}
+});
+
+var SHOW_LEVEL_PASSED_COUNT = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+        //this.log('SHOW_LEVEL_PASSED_COUNT');
+	game.mShowLevelPassedStartTime = game.mTimeSinceEpoch;
+	
+	//correctAnswer
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+        game.showCorrectAnswerBar();
+ 
+	game.mVictoryShape_0.setVisibility(true);
+        game.mVictoryShape_0.setPosition(50,300);
+        game.mVictoryShape_1.setVisibility(true);
+        game.mVictoryShape_1.setPosition(100,300);
+        game.mVictoryShape_2.setVisibility(true);
+        game.mVictoryShape_2.setPosition(150,300);
+        game.mVictoryShape_3.setVisibility(true);
+        game.mVictoryShape_3.setPosition(200,300);
+        game.mVictoryShape_4.setVisibility(true);
+        game.mVictoryShape_4.setPosition(250,300);
+        game.mVictoryShape_5.setVisibility(true);
+        game.mVictoryShape_5.setPosition(300,300);
+        game.mVictoryShape_6.setVisibility(true);
+        game.mVictoryShape_6.setPosition(350,300);
+        game.mVictoryShape_7.setVisibility(true);
+        game.mVictoryShape_7.setPosition(400,300);
+        game.mVictoryShape_8.setVisibility(true);
+        game.mVictoryShape_8.setPosition(450,300);
+        game.mVictoryShape_9.setVisibility(true);
+        game.mVictoryShape_9.setPosition(500,300);
+        game.mVictoryShape_10.setVisibility(true);
+        game.mVictoryShape_10.setPosition(550,300);
+        game.mVictoryShape_11.setVisibility(true);
+        game.mVictoryShape_11.setPosition(600,300);
+        game.mVictoryShape_12.setVisibility(true);
+        game.mVictoryShape_12.setPosition(650,300);
+        game.mVictoryShape_13.setVisibility(true);
+        game.mVictoryShape_13.setPosition(700,300);
+},
+
+execute: function(game)
+{
+	if (game.mTimeSinceEpoch > game.mShowLevelPassedStartTime + game.mShowLevelPassedThresholdTime)
+        {
+                game.mPadStateMachine.changeState(game.mINIT_COUNT_GAME);
+        }
+},
+
+exit: function(game)
+{
+        game.hideCorrectAnswerBar();
+        game.mCorrectAnswerBarHeader.mMesh.value = '';
+        game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        game.mCorrectAnswerBar.mMesh.value = '';
+        game.mCorrectAnswerBar.mMesh.innerHTML = '';
+	game.mVictoryShape_0.setVisibility(false);
+	game.mVictoryShape_0.setPosition(50,300);
+	game.mVictoryShape_1.setVisibility(false);
+	game.mVictoryShape_1.setPosition(100,300);
+	game.mVictoryShape_2.setVisibility(false);
+	game.mVictoryShape_2.setPosition(150,300);
+	game.mVictoryShape_3.setVisibility(false);
+	game.mVictoryShape_3.setPosition(200,300);
+	game.mVictoryShape_4.setVisibility(false);
+	game.mVictoryShape_4.setPosition(250,300);
+	game.mVictoryShape_5.setVisibility(false);
+	game.mVictoryShape_5.setPosition(300,300);
+	game.mVictoryShape_6.setVisibility(false);
+	game.mVictoryShape_6.setPosition(350,300);
+	game.mVictoryShape_7.setVisibility(false);
+	game.mVictoryShape_7.setPosition(400,300);
+	game.mVictoryShape_8.setVisibility(false);
+	game.mVictoryShape_8.setPosition(450,300);
+	game.mVictoryShape_9.setVisibility(false);
+	game.mVictoryShape_9.setPosition(500,300);
+	game.mVictoryShape_10.setVisibility(false);
+	game.mVictoryShape_10.setPosition(550,300);
+	game.mVictoryShape_11.setVisibility(false);
+	game.mVictoryShape_11.setPosition(600,300);
+	game.mVictoryShape_12.setVisibility(false);
+	game.mVictoryShape_12.setPosition(650,300);
+	game.mVictoryShape_13.setVisibility(false);
+	game.mVictoryShape_13.setPosition(700,300);
+	
+}
+});
 /****************** GOBBLE STATES ************/
 /****************** ***********************/
 /****************** ********* ************/
