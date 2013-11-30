@@ -1432,19 +1432,6 @@ insert into levels(id,description) values (14.20,'K_OA_A_5');
 insert into games_levels (level_id,game_id) values  (14.20,4);
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.20,14);       
 
-insert into levels(id,description) values (14.21,'K_OA_A_5');
-insert into games_levels (level_id,game_id) values  (14.21,4);
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.21,14);       
-
-insert into levels(id,description) values (14.22,'K_OA_A_5');
-insert into games_levels (level_id,game_id) values  (14.22,4);
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.22,14);       
-
-insert into levels(id,description) values (14.23,'K_OA_A_5');
-insert into games_levels (level_id,game_id) values  (14.23,4);
-insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.23,14);       
-
-
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 --	Number and Operations in Base Ten
