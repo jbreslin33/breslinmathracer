@@ -1008,10 +1008,6 @@ ALTER TABLE standards_clusters_domains_grades ADD UNIQUE (standard_id, cluster_d
 --================= GAMES  ====================================
 --==================================================================
 --GAMES
-insert into games (game) values ('Dungeon_k_cc_a_1');
-insert into games (game) values ('Dungeon_k_cc_a_2');
-insert into games (game) values ('Count_k_cc_a_3');
-insert into games (game) values ('Pad_k_oa_a_5');
 
 --GAMES_ATTEMPTS
 
@@ -1050,368 +1046,77 @@ insert into permissions(permission) values ('INSERT');
 --================= CORE CURRICULUM  ====================================
 --==================================================================
 
-
---****************************************
---		GAMES	
---****************************************
-
---****************************************
---		LEVELS	
---****************************************
-
---&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
---GRADE #1
---			KINDERGARTEN             
---&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-insert into grades (grade) values ('K'); --id = 1 
-
---^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
---SUBJECT #1
---			MATH	
---^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-insert into subjects (subject) values ('Math'); --id = 1
-
---START LEVEL
-insert into levels(id,description) values (0,'Start of Journey');       
-
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---DOMAIN #1
---	Counting and Cardinality
---	K.CC
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--DOMAINS
 insert into domains (domain) values ('Counting and Cardinality');   
+insert into domains (domain) values ('Opererations & Algebraic Thinking');   
+insert into domains (domain) values ('Number & Opererations in Base Ten');   
+insert into domains (domain) values ('Measurement & DataNumber');   
+insert into domains (domain) values ('Geometry');   
 
--- DOMAIN_SUBJECTS #1
-insert into domains_subjects (domain_id, subject_id) values (1,1); 
+--GRADES
+insert into grades (grade) values ('K'); 
+insert into grades (grade) values ('1'); 
+insert into grades (grade) values ('2'); 
+insert into grades (grade) values ('3'); 
+insert into grades (grade) values ('4'); 
+insert into grades (grade) values ('5'); 
+insert into grades (grade) values ('6'); 
+insert into grades (grade) values ('7'); 
+insert into grades (grade) values ('8'); 
+insert into grades (grade) values ('9'); 
+insert into grades (grade) values ('10'); 
+insert into grades (grade) values ('11'); 
+insert into grades (grade) values ('12'); 
 
--- DOMAIN_GRADES #1
-insert into domains_grades (domain_id, grade_id) values (1,1);     
+--SUBJECTS
+insert into subjects (subject) values ('Mathematics');
+insert into subjects (subject) values ('English Language Arts');
 
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #1
---	Know number names and the count sequence.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTERS
 insert into clusters (cluster) values ('Know number names and the count sequence.'); 
-
---CLUSTER_DOMAIN_GRADES #1
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);      
-
-----------------------------------------------------------------------------
---STANDARD #1
---   	1.	 Count to 100 by ones and by tens.
-----------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_A_1','Count to 100 by ones and by tens.');  
-
---------------------------------------------------------------------------------
---STANDARD #2
---   	2.	 Count forward beginning from a given number within the known
---   	sequence (instead of having to begin at 1).
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_A_2','Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1);   
-
---------------------------------------------------------------------------------
---STANDARD #3
---   	3.	 Write numbers from 0 to 20. Represent a number of objects with a
---	written numeral 0-20 (with 0 representing a count of no objects).
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_A_3','Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (3,1); --id=3 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #2
---	Count to tell the number of objects. 	
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-insert into clusters (cluster) values ('Count to tell the number of objects.'); --2
-
---CLUSTERS_DOMAINS_GRADES #2
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (2,1);  
-
---------------------------------------------------------------------------------
---	4.	 Understand the relationship between numbers and quantities; connect
---	counting to cardinality.
---------------------------------------------------------------------------------
---Skip this as it is not a standard but a heading posing as a standard.
-
---------------------------------------------------------------------------------
---STANDARD #4
---	a.	 When counting objects, say the number names in the standard
---	order, pairing each object with one and only one number name
---	and each number name with one and only one object.
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_B_4A','When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (4,2); 
-
---------------------------------------------------------------------------------
---STANDARD #5
---	b.	 Understand that the last number name said tells the number of
---	objects counted. The number of objects is the same regardless of
---	their arrangement or the order in which they were counted.
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_B_4B','Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (5,2); 
-
---------------------------------------------------------------------------------
---STANDARD #6
---	c.	 Understand that each successive number name refers to a quantity
---	that is one larger.
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_B_4C','Understand that each successive number name refers to a quantity that is one larger.'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (6,2); 
-
---------------------------------------------------------------------------------
---STANDARD #7
---	5.	 Count to answer “how many?” questions about as many as 20 things
---	arranged in a line, a rectangular array, or a circle, or as many as 10
---	things in a scattered configuration; given a number from 1–20, count
---	out that many objects.
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_B_5','Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (7,2); 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #3
---	Compare numbers.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-insert into clusters (cluster) values ('Compare numbers.');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (3,1); 
-
---------------------------------------------------------------------------------
---STANDARD #8
---	6.	 Identify whether the number of objects in one group is greater than,
---	less than, or equal to the number of objects in another group, e.g., by
---	using matching and counting strategies.
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_C_6','Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (8,3);
-
---------------------------------------------------------------------------------
---STANDARD #9
---	7.	 Compare two numbers between 1 and 10 presented as written
---	numerals.
---------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_CC_C_7','Compare two numbers between 1 and 10 presented as written numerals.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (9,3);
-
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---DOMAIN #2
---	Operations and Algebraic Thinking
---	K.OA	
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-insert into domains (domain) values ('Operations and Algebraic Thinking'); 
-
---DOMAINS_SUBJECTS #2
-insert into domains_subjects (domain_id, subject_id) values (2,1); 
-
---DOMAINS_GRADES #2
-insert into domains_grades (domain_id, grade_id) values (2,1); 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #4
---	Understand addition as putting together and adding to, and under-
---	stand subtraction as taking apart and taking from.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+insert into clusters (cluster) values ('Count to tell the number of objects.'); 
+insert into clusters (cluster) values ('Compare Numbers.'); 
 insert into clusters (cluster) values ('Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from.');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,2); 
-
------------------------------------------------------------------------------
---STANDARD #10
---	1.	 Represent addition and subtraction with objects, fingers, mental
---	images, drawings2, sounds (e.g., claps), acting out situations, verbal
---	explanations, expressions, or equations.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_OA_A_1','Compare two numbers between 1 and 10 presented as written numerals.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (10,4);
-
------------------------------------------------------------------------------
---STANDARD #11
---	2.	 Solve addition and subtraction word problems, and add and subtract
---	within 10, e.g., by using objects or drawings to represent the problem.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_OA_A_2','Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (11,4);
-
------------------------------------------------------------------------------
---STANDARD #12
---	3.	 Decompose numbers less than or equal to 10 into pairs in more
---	than one way, e.g., by using objects or drawings, and record each
---	decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_OA_A_3','Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (12,4);
-
------------------------------------------------------------------------------
---STANDARD #13
---	4.	 For any number from 1 to 9, find the number that makes 10 when
---	added to the given number, e.g., by using objects or drawings, and
---	record the answer with a drawing or equation.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_OA_A_4','For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (13,4);
-
------------------------------------------------------------------------------
---	5.	 Fluently add and subtract within 5.
------------------------------------------------------------------------------
-
-insert into standards (standard,description) values ('K_OA_A_5','Fluently add and subtract within 5.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
-
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
--- DOMAIN #3 "The fiend was here."
---	Number and Operations in Base Ten
---	K.NBT	
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-insert into domains (domain) values ('Number and Operations in Base Ten'); 
-insert into domains_subjects (domain_id, subject_id) values (3,1); 
-insert into domains_grades (domain_id, grade_id) values (3,1); 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #5
---	Work with numbers 11–19 to gain foundations for place value.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Work with numbers 11-19 to gain foundations for place value');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (5,3); 
-
------------------------------------------------------------------------------
---STANDARD #15
---	1.	 Compose and decompose numbers from 11 to 19 into ten ones and
---	some further ones, e.g., by using objects or drawings, and record each
---	composition or decomposition by a drawing or equation (e.g., 18 = 10 +
---	8); understand that these numbers are composed of ten ones and one,
---	two, three, four, five, six, seven, eight, or nine ones.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_NBT_A_1','Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (15,5);
-
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---DOMAIN #4
---	Measurement and Data	
---	K.MD
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-insert into domains (domain) values ('Measurement and Data'); 
-
---DOMAINS_SUBJECTS #4
-insert into domains_subjects (domain_id, subject_id) values (4,1); 
-
---DOMAINS_GRADES #4
-insert into domains_grades (domain_id, grade_id) values (4,1); 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #6
---	Describe and compare measurable attributes.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Describe and compare measurable attributes');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (6,4); 
-
------------------------------------------------------------------------------
---STANDARD #16
---	1.	 Describe measurable attributes of objects, such as length or weight.
---	Describe several measurable attributes of a single object.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_MD_A_1','Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (16,5);
-
------------------------------------------------------------------------------
---STANDARD #17
---	2.	 Directly compare two objects with a measurable attribute in common,
---	to see which object has “more of”/“less of” the attribute, and describe
---	the difference. For example, directly compare the heights of two
---	children and describe one child as taller/shorter.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_MD_A_2','Directly compare two objects with a measurable attribute in common...');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (17,6);
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #7
---	Classify objects and count the number of objects in each category.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Classify objects and count the number of objects in each category.');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (7,4); 
-
------------------------------------------------------------------------------
---STANDARD #18
---	3.	 Classify objects into given categories; count the numbers of objects in
---	each category and sort the categories by count.3
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_MD_B_3','Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (18,7);
-
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---DOMAIN #5
---	Geometry	
---	K.G
---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-insert into domains (domain) values ('Geometry'); 
-insert into domains_subjects (domain_id, subject_id) values (5,1); 
-insert into domains_grades (domain_id, grade_id) values (5,1); 
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #8
---	Identify and describe shapes (squares, circles, triangles, rectangles,
---	hexagons, cubes, cones, cylinders, and spheres).
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Identify and describe shapes (squares, circles, triangles, rectangles, hexagons, cubes, cones, cylinders, and spheres).'); 
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (8,5); 
-
------------------------------------------------------------------------------
---STANDARD #19
---	1.	 Describe objects in the environment using names of shapes, and
---	describe the relative positions of these objects using terms such as
---	above, below, beside, in front of, behind, and next to.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_G_A_1','Describe objects in the environment using names of shapes...');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (19,8);
-
------------------------------------------------------------------------------
---STANDARD #20
---	2.	 Correctly name shapes regardless of their orientations or overall size.
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_G_A_2','Correctly name shapes regardless of their orientations or overall size.');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (20,8);
-
------------------------------------------------------------------------------
---STANDARD #21
---	3.	 Identify shapes as two-dimensional (lying in a plane, “flat”) or three-
---	dimensional (“solid”).
------------------------------------------------------------------------------
-insert into standards (standard,description) values ('K_G_A_3','Identify shapes as two-dimensional....');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (21,8);
-
------------------------------------------------------------------------------
-
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---CLUSTER #9
---	Analyze, compare, create, and compose shapes.
---+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Analyze, compare, create, and compose shapes.');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (9,5); 
 
------------------------------------------------------------------------------
---STANDARD #22
---	4.	 Analyze and compare two- and three-dimensional shapes, in
---	different sizes and orientations, using informal language to describe
---	their similarities, differences, parts (e.g., number of sides and
---	vertices/“corners”) and other attributes (e.g., having sides of equal
---	length).
------------------------------------------------------------------------------
+--STANDARDS
+insert into standards (standard,description) values ('K_CC_A_1','Count to 100 by ones and by tens.');  
+insert into standards (standard,description) values ('K_CC_A_2','Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
+insert into standards (standard,description) values ('K_CC_A_3','Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
+insert into standards (standard,description) values ('K_CC_B_4A','When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
+insert into standards (standard,description) values ('K_CC_B_4B','Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
+insert into standards (standard,description) values ('K_CC_B_4C','Understand that each successive number name refers to a quantity that is one larger.'); 
+insert into standards (standard,description) values ('K_CC_B_5','Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
+insert into standards (standard,description) values ('K_CC_C_6','Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
+insert into standards (standard,description) values ('K_CC_C_7','Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K_OA_A_1','Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K_OA_A_2','Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
+insert into standards (standard,description) values ('K_OA_A_3','Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
+insert into standards (standard,description) values ('K_OA_A_4','For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
+insert into standards (standard,description) values ('K_OA_A_5','Fluently add and subtract within 5.');
+insert into standards (standard,description) values ('K_NBT_A_1','Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
+insert into standards (standard,description) values ('K_MD_A_1','Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
+insert into standards (standard,description) values ('K_MD_A_2','Directly compare two objects with a measurable attribute in common...');
+insert into standards (standard,description) values ('K_MD_B_3','Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
+insert into standards (standard,description) values ('K_G_A_1','Describe objects in the environment using names of shapes...');
+insert into standards (standard,description) values ('K_G_A_2','Correctly name shapes regardless of their orientations or overall size.');
+insert into standards (standard,description) values ('K_G_A_3','Identify shapes as two-dimensional....');
 insert into standards (standard,description) values ('K_G_B_4','Analyze and compare two- and three-dimensional shapes...');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (22,9);
-
------------------------------------------------------------------------------
---STANDARD #23
---	5.	 Model shapes in the world by building shapes from components (e.g.,
---	sticks and clay balls) and drawing shapes.
------------------------------------------------------------------------------
 insert into standards (standard,description) values ('K_G_B_5','Model shapes in the world by building shapes from components...');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (23,9);
-
------------------------------------------------------------------------------
---STANDARD #24
---	6.	 Compose simple shapes to form larger shapes. For example, “Can you
---	join these two triangles with full sides touching to make a rectangle?”
------------------------------------------------------------------------------
 insert into standards (standard,description) values ('K_G_B_6','Compose simple shapes to form..');
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (24,9);
+
+--GAMES	
+insert into games (game) values ('Dungeon_k_cc_a_1');
+insert into games (game) values ('Dungeon_k_cc_a_2');
+insert into games (game) values ('Count_k_cc_a_3');
+insert into games (game) values ('Pad_k_oa_a_5');
+
+--LEVELS	
+insert into levels(id,description) values (0,'Start of Journey');       
 
 --(((((((((((((((((((((((((((((((())))))))))))))))))))))))))))
 		--LEVELS GAMES STANDARDS
@@ -1582,6 +1287,49 @@ insert into levels_standards(level_id, standard_id) values (14.20,14);
 			--
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
+--COMBINES
+--insert into domains_subjects (domain_id, subject_id) values (1,1); 
+--insert into domains_grades (domain_id, grade_id) values (1,1);     
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);      
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1);   
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (2,1);  
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (4,2); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (5,2); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (3,1); --id=3 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (6,2); 
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (3,1); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (7,2); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (8,3);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (9,3);
+--insert into domains_subjects (domain_id, subject_id) values (2,1); 
+--insert into domains_grades (domain_id, grade_id) values (2,1); 
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,2); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (10,4);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (11,4);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (12,4);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (13,4);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
+--insert into domains_subjects (domain_id, subject_id) values (3,1); 
+--insert into domains_grades (domain_id, grade_id) values (3,1); 
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (5,3); 
+--insert into domains_subjects (domain_id, subject_id) values (4,1); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (15,5);
+--insert into domains_grades (domain_id, grade_id) values (4,1); 
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (6,4); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (16,5);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (17,6);
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (7,4); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (18,7);
+--insert into domains_subjects (domain_id, subject_id) values (5,1); 
+--insert into domains_grades (domain_id, grade_id) values (5,1); 
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (8,5); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (19,8);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (20,8);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (21,8);
+--insert into clusters_domains_grades (cluster_id, domain_grade_id) values (9,5); 
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (22,9);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (23,9);
+--insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (24,9);
 
 --(CONTINUED PASSWORDS).......
 
