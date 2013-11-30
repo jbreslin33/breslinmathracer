@@ -146,6 +146,20 @@ var Application = new Class(
                 }
 		if (this.mNextLevelGameID == 2)
 		{ 
+             		if (this.mGameName != "Dungeon_k_cc_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "Dungeon_k_cc_a_2";
+                               	this.mGame = new Dungeon_k_cc_a_2(APPLICATION);
+			}
+                }
+		
+		if (this.mNextLevelGameID == 3)
+		{ 
              		if (this.mGameName != "Pad")
                        	{
 				if (this.mGame)

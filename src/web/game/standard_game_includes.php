@@ -24,6 +24,7 @@
 <script type="text/javascript" src="/src/game/game_quiz.php"></script>
 <script type="text/javascript" src="/src/game/dungeon.php"></script>
 <script type="text/javascript" src="/src/game/dungeon_k_cc_a_1.php"></script>
+<script type="text/javascript" src="/src/game/dungeon_k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad.php"></script>
 <script type="text/javascript" src="/src/game/gobble.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
