@@ -545,6 +545,15 @@ enter: function(game)
 
  	game.mNumQuestion.mMesh.value = '';
  	game.mNumQuestion.mMesh.innerHTML = '';
+
+	if (game.mQuiz)
+	{
+		if (!game.mQuiz.getQuestion())	
+		{
+			game.createQuestions();
+		}
+	}
+
  	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
 	game.showNumberPad();
 

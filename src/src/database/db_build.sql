@@ -982,7 +982,7 @@ ALTER TABLE standards_clusters_domains_grades ADD UNIQUE (standard_id, cluster_d
 insert into games (game) values ('Dungeon_k_cc_a_1');
 insert into games (game) values ('Dungeon_k_cc_a_2');
 insert into games (game) values ('Count_k_cc_a_3');
-insert into games (game) values ('Pad');
+insert into games (game) values ('Pad_k_oa_a_5');
 
 --GAMES_ATTEMPTS
 
@@ -1031,11 +1031,13 @@ insert into permissions(permission) values ('INSERT');
 --****************************************
 
 --&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+--GRADE #1
 --			KINDERGARTEN             
 --&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 insert into grades (grade) values ('K'); --id = 1 
 
 --^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--SUBJECT #1
 --			MATH	
 --^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 insert into subjects (subject) values ('Math'); --id = 1
@@ -1044,25 +1046,34 @@ insert into subjects (subject) values ('Math'); --id = 1
 insert into levels(id,description) values (0,'Start of Journey');       
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--DOMAIN #1
 --	Counting and Cardinality
 --	K.CC
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-insert into domains (domain) values ('Counting and Cardinality');  --id = 1 
-insert into domains_subjects (domain_id, subject_id) values (1,1); --id = 1 
-insert into domains_grades (domain_id, grade_id) values (1,1);     --id = 1 
+insert into domains (domain) values ('Counting and Cardinality');   
+
+-- DOMAIN_SUBJECTS #1
+insert into domains_subjects (domain_id, subject_id) values (1,1); 
+
+-- DOMAIN_GRADES #1
+insert into domains_grades (domain_id, grade_id) values (1,1);     
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #1
 --	Know number names and the count sequence.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-insert into clusters (cluster) values ('Know number names and the count sequence.'); --id = 1 
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);      --id = 1 
+insert into clusters (cluster) values ('Know number names and the count sequence.'); 
+
+--CLUSTER_DOMAIN_GRADES #1
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);      
 
 
 ----------------------------------------------------------------------------
+--STANDARD #1
 --   	1.	 Count to 100 by ones and by tens.
 ----------------------------------------------------------------------------
-insert into standards (standard) values ('Count to 100 by ones and by tens.'); --id = 1 
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); --id = 1 
+insert into standards (standard) values ('Count to 100 by ones and by tens.');  
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (1,1); 
 
 insert into levels(id,description) values (1,'K_CC_A_1');          
 insert into games_levels (level_id,game_id) values  (1,1); 
@@ -1109,11 +1120,12 @@ insert into games_levels (level_id,game_id) values  (1.10,1);
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (1.10,1);     
 
 --------------------------------------------------------------------------------
+--STANDARD #2
 --   	2.	 Count forward beginning from a given number within the known
 --   	sequence (instead of having to begin at 1).
 --------------------------------------------------------------------------------
-insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); --id=2
-insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1); --id=2  
+insert into standards (standard) values ('Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1);   
 
 insert into levels(id,description) values (2,'K_CC_A_2'); 
 insert into games_levels (level_id,game_id) values  (2,2); 
@@ -1141,6 +1153,7 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 
 
 --------------------------------------------------------------------------------
+--STANDARD #3
 --   	3.	 Write numbers from 0 to 20. Represent a number of objects with a
 --	written numeral 0-20 (with 0 representing a count of no objects).
 --------------------------------------------------------------------------------
@@ -1153,10 +1166,13 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #2
 --	Count to tell the number of objects. 	
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Count to tell the number of objects.');
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (2,1); 
+insert into clusters (cluster) values ('Count to tell the number of objects.'); --2
+
+--CLUSTERS_DOMAINS_GRADES #2
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (2,1);  
 
 --------------------------------------------------------------------------------
 --	4.	 Understand the relationship between numbers and quantities; connect
@@ -1165,580 +1181,268 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --Skip this as it is not a standard but a heading posing as a standard.
 
 --------------------------------------------------------------------------------
+--STANDARD #4
 --	a.	 When counting objects, say the number names in the standard
 --	order, pairing each object with one and only one number name
 --	and each number name with one and only one object.
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (4,2); 
+insert into standards (standard) values ('When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (4,2); 
 
---		LEVEL_ID: 4  
---insert into levels(id,description) values (4,'Count objects from 0 to 20'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4,4);       
-
---		LEVEL_ID: 4  
---insert into levels(id,description) values (4.1,'Count objects from 0 to 20'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4.1,4);       
-
---		LEVEL_ID: 4.2  
---insert into levels(id,description) values (4.2,'Count objects in standard order using names. 0-10'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4.2,4);       
-
---		LEVEL_ID: 4.3  
---insert into levels(id,description) values (4.3,'Count objects in standard order using names. 10-20');
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4.3,4);       
+insert into levels(id,description) values (4,'K_CC_B_4A'); 
+--insert into games_levels (level_id,game_id) values  (4,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (4,4);       
 
 --------------------------------------------------------------------------------
+--STANDARD #5
 --	b.	 Understand that the last number name said tells the number of
 --	objects counted. The number of objects is the same regardless of
 --	their arrangement or the order in which they were counted.
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (5,2); 
+insert into standards (standard) values ('Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (5,2); 
 
+insert into levels(id,description) values (5,'K_CC_B_4B'); 
+--insert into games_levels (level_id,game_id) values  (5,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (5,5);       
 
 --------------------------------------------------------------------------------
+--STANDARD #6
 --	c.	 Understand that each successive number name refers to a quantity
 --	that is one larger.
 --------------------------------------------------------------------------------
---insert into standards (standard) values (' Understand that each successive number name refers to a quantity that is one larger.'); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (6,2); 
+insert into standards (standard) values (' Understand that each successive number name refers to a quantity that is one larger.'); 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (6,2); 
+
+insert into levels(id,description) values (6,'K_CC_B_4C');
+--insert into games_levels (level_id,game_id) values  (6,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (6,6);       
 
 --------------------------------------------------------------------------------
+--STANDARD #7
 --	5.	 Count to answer “how many?” questions about as many as 20 things
 --	arranged in a line, a rectangular array, or a circle, or as many as 10
 --	things in a scattered configuration; given a number from 1–20, count
 --	out that many objects.
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (7,2); 
+insert into standards (standard) values ('Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (7,2); 
 
+insert into levels(id,description) values (7,'K_CC_B_5'); 
+--insert into games_levels (level_id,game_id) values  (7,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (7,7);       
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #3
 --	Compare numbers.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Compare numbers.');
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (3,1); 
+insert into clusters (cluster) values ('Compare numbers.');
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (3,1); 
 
 --------------------------------------------------------------------------------
+--STANDARD #8
 --	6.	 Identify whether the number of objects in one group is greater than,
 --	less than, or equal to the number of objects in another group, e.g., by
 --	using matching and counting strategies.
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (8,3);
+insert into standards (standard) values ('Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (8,3);
+
+insert into levels(id,description) values (8,'K_CC_C_6'); 
+--insert into games_levels (level_id,game_id) values  (8,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (8,8);       
 
 
 --------------------------------------------------------------------------------
+--STANDARD #9
 --	7.	 Compare two numbers between 1 and 10 presented as written
 --	numerals.
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('Compare two numbers between 1 and 10 presented as written numerals.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (9,3);
+insert into standards (standard) values ('Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (9,3);
+
+insert into levels(id,description) values (9,'K_CC_C_7'); 
+--insert into games_levels (level_id,game_id) values  (9,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (9,9);       
+
+
 
 
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--DOMAIN #2
 --	Operations and Algebraic Thinking
 --	K.OA	
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---insert into domains (domain) values ('Operations and Algebraic Thinking'); 
---insert into domains_subjects (domain_id, subject_id) values (2,1); 
---insert into domains_grades (domain_id, grade_id) values (2,1); 
+insert into domains (domain) values ('Operations and Algebraic Thinking'); 
+
+--DOMAINS_SUBJECTS #2
+insert into domains_subjects (domain_id, subject_id) values (2,1); 
+
+--DOMAINS_GRADES #2
+insert into domains_grades (domain_id, grade_id) values (2,1); 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #4
 --	Understand addition as putting together and adding to, and under-
 --	stand subtraction as taking apart and taking from.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from.');
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,1); 
+insert into clusters (cluster) values ('Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from.');
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,1); 
 
 -----------------------------------------------------------------------------
+--STANDARD #10
 --	1.	 Represent addition and subtraction with objects, fingers, mental
 --	images, drawings2, sounds (e.g., claps), acting out situations, verbal
 --	explanations, expressions, or equations.
 -----------------------------------------------------------------------------
---insert into standards (standard) values ('Compare two numbers between 1 and 10 presented as written numerals.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (10,4);
+insert into standards (standard) values ('Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (10,4);
+
+insert into levels(id,description) values (10,'K_OA_A_1'); 
+--insert into games_levels (level_id,game_id) values  (10,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (10,10);       
 
 -----------------------------------------------------------------------------
+--STANDARD #11
 --	2.	 Solve addition and subtraction word problems, and add and subtract
 --	within 10, e.g., by using objects or drawings to represent the problem.
 -----------------------------------------------------------------------------
---insert into standards (standard) values ('Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (11,4);
+insert into standards (standard) values ('Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (11,4);
+
+insert into levels(id,description) values (11,'K_OA_A_2'); 
+--insert into games_levels (level_id,game_id) values  (11,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (11,11);       
 
 -----------------------------------------------------------------------------
+--STANDARD #12
 --	3.	 Decompose numbers less than or equal to 10 into pairs in more
 --	than one way, e.g., by using objects or drawings, and record each
 --	decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).
 -----------------------------------------------------------------------------
---insert into standards (standard) values ('Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (12,4);
+insert into standards (standard) values ('Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (12,4);
 
+insert into levels(id,description) values (12,'K_OA_A_3'); 
+--insert into games_levels (level_id,game_id) values  (12,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (12,12);       
 -----------------------------------------------------------------------------
+--STANDARD #13
 --	4.	 For any number from 1 to 9, find the number that makes 10 when
 --	added to the given number, e.g., by using objects or drawings, and
 --	record the answer with a drawing or equation.
 -----------------------------------------------------------------------------
---insert into standards (standard) values ('For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (13,4);
+insert into standards (standard) values ('For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (13,4);
+
+insert into levels(id,description) values (13,'K_OA_A_4'); 
+--insert into games_levels (level_id,game_id) values  (13,0); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (13,13);       
 
 -----------------------------------------------------------------------------
 --	5.	 Fluently add and subtract within 5.
 -----------------------------------------------------------------------------
 
---insert into standards (standard) values ('Fluently add and subtract within 5.');
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
+insert into standards (standard) values ('Fluently add and subtract within 5.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
 
 -- ADD 0
+insert into levels(id,description) values (14,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14,14);       
 
-insert into levels(id,description) values (100,'Pad');
-insert into games_levels (level_id,game_id) values  (100,4);
+insert into levels(id,description) values (14.01,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.01,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.01,14);       
 
-insert into levels(id,description) values (101,'Pad');
-insert into games_levels (level_id,game_id) values  (101,4);
+insert into levels(id,description) values (14.02,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.02,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.02,14);       
 
-insert into levels(id,description) values (102,'Pad');
-insert into games_levels (level_id,game_id) values  (102,4);
+insert into levels(id,description) values (14.03,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.03,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.03,14);       
 
-insert into levels(id,description) values (103,'Pad');
-insert into games_levels (level_id,game_id) values  (103,4);
+insert into levels(id,description) values (14.04,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.04,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.04,14);       
 
-insert into levels(id,description) values (104,'Pad');
-insert into levels(id,description) values (105,'Pad');
-insert into levels(id,description) values (106,'Pad');
-insert into levels(id,description) values (107,'Pad');
-insert into levels(id,description) values (108,'Pad');
-insert into levels(id,description) values (109,'Pad');
-insert into levels(id,description) values (110,'Pad');
-insert into levels(id,description) values (111,'Pad');
-insert into levels(id,description) values (112,'Pad');
-insert into levels(id,description) values (113,'Pad');
-insert into levels(id,description) values (114,'Pad');
-insert into levels(id,description) values (115,'Pad');
-insert into levels(id,description) values (116,'Pad');
-insert into levels(id,description) values (117,'Pad');
-insert into levels(id,description) values (118,'Pad');
-insert into levels(id,description) values (119,'Pad');
-insert into levels(id,description) values (120,'Pad');
-insert into levels(id,description) values (130,'Pad');
-insert into levels(id,description) values (131,'Pad');
-insert into levels(id,description) values (132,'Pad');
-insert into levels(id,description) values (133,'Pad');
-insert into levels(id,description) values (134,'Pad');
-insert into levels(id,description) values (135,'Pad');
-insert into levels(id,description) values (136,'Pad');
-insert into levels(id,description) values (137,'Pad');
-insert into levels(id,description) values (139,'Pad');
-insert into levels(id,description) values (140,'Pad');
-insert into levels(id,description) values (141,'Pad');
-insert into levels(id,description) values (142,'Pad');
-insert into levels(id,description) values (143,'Pad');
-insert into levels(id,description) values (144,'Pad');
-insert into levels(id,description) values (145,'Pad');
-insert into levels(id,description) values (146,'Pad');
-insert into levels(id,description) values (147,'Pad');
-insert into levels(id,description) values (148,'Pad');
-insert into levels(id,description) values (149,'Pad');
-insert into levels(id,description) values (150,'Pad');
-insert into levels(id,description) values (151,'Pad');
-insert into levels(id,description) values (152,'Pad');
-insert into levels(id,description) values (153,'Pad');
-insert into levels(id,description) values (154,'Pad');
-insert into levels(id,description) values (155,'Pad');
-insert into levels(id,description) values (156,'Pad');
-insert into levels(id,description) values (157,'Pad');
-insert into levels(id,description) values (158,'Pad');
-insert into levels(id,description) values (159,'Pad');
-insert into levels(id,description) values (160,'Pad');
-insert into levels(id,description) values (161,'Pad');
-insert into levels(id,description) values (162,'Pad');
-insert into levels(id,description) values (163,'Pad');
-insert into levels(id,description) values (164,'Pad');
-insert into levels(id,description) values (165,'Pad');
-insert into levels(id,description) values (166,'Pad');
-insert into levels(id,description) values (167,'Pad');
-insert into levels(id,description) values (168,'Pad');
-insert into levels(id,description) values (169,'Pad');
-insert into levels(id,description) values (170,'Pad');
-insert into levels(id,description) values (171,'Pad');
-insert into levels(id,description) values (172,'Pad');
-insert into levels(id,description) values (173,'Pad');
-insert into levels(id,description) values (174,'Pad');
-insert into levels(id,description) values (175,'Pad');
-insert into levels(id,description) values (176,'Pad');
-insert into levels(id,description) values (177,'Pad');
-insert into levels(id,description) values (178,'Pad');
-insert into levels(id,description) values (179,'Pad');
-insert into levels(id,description) values (190,'Pad');
-insert into levels(id,description) values (191,'Pad');
-insert into levels(id,description) values (192,'Pad');
-insert into levels(id,description) values (193,'Pad');
-insert into levels(id,description) values (194,'Pad');
-insert into levels(id,description) values (195,'Pad');
-insert into levels(id,description) values (196,'Pad');
-insert into levels(id,description) values (197,'Pad');
-insert into levels(id,description) values (198,'Pad');
-insert into levels(id,description) values (199,'Pad');
-insert into levels(id,description) values (200,'Pad');
-insert into levels(id,description) values (201,'Pad');
-insert into levels(id,description) values (202,'Pad');
-insert into levels(id,description) values (203,'Pad');
-insert into levels(id,description) values (204,'Pad');
-insert into levels(id,description) values (205,'Pad');
-insert into levels(id,description) values (206,'Pad');
-insert into levels(id,description) values (207,'Pad');
-insert into levels(id,description) values (208,'Pad');
-insert into levels(id,description) values (209,'Pad');
-insert into levels(id,description) values (210,'Pad');
-insert into levels(id,description) values (211,'Pad');
-insert into levels(id,description) values (212,'Pad');
-insert into levels(id,description) values (213,'Pad');
-insert into levels(id,description) values (214,'Pad');
-insert into levels(id,description) values (215,'Pad');
-insert into levels(id,description) values (216,'Pad');
-insert into levels(id,description) values (217,'Pad');
-insert into levels(id,description) values (218,'Pad');
-insert into levels(id,description) values (219,'Pad');
-insert into levels(id,description) values (220,'Pad');
-insert into levels(id,description) values (221,'Pad');
-insert into levels(id,description) values (222,'Pad');
-insert into levels(id,description) values (223,'Pad');
-insert into levels(id,description) values (224,'Pad');
-insert into levels(id,description) values (225,'Pad');
-insert into levels(id,description) values (226,'Pad');
-insert into levels(id,description) values (227,'Pad');
-insert into levels(id,description) values (228,'Pad');
-insert into levels(id,description) values (229,'Pad');
-insert into levels(id,description) values (230,'Pad');
-insert into levels(id,description) values (231,'Pad');
-insert into levels(id,description) values (232,'Pad');
-insert into levels(id,description) values (233,'Pad');
-insert into levels(id,description) values (234,'Pad');
-insert into levels(id,description) values (235,'Pad');
-insert into levels(id,description) values (236,'Pad');
-insert into levels(id,description) values (237,'Pad');
-insert into levels(id,description) values (238,'Pad');
-insert into levels(id,description) values (239,'Pad');
-insert into levels(id,description) values (240,'Pad');
-insert into levels(id,description) values (241,'Pad');
-insert into levels(id,description) values (242,'Pad');
-insert into levels(id,description) values (243,'Pad');
-insert into levels(id,description) values (244,'Pad');
-insert into levels(id,description) values (245,'Pad');
-insert into levels(id,description) values (246,'Pad');
-insert into levels(id,description) values (247,'Pad');
-insert into levels(id,description) values (248,'Pad');
-insert into levels(id,description) values (249,'Pad');
-insert into levels(id,description) values (250,'Pad');
-insert into levels(id,description) values (251,'Pad');
-insert into levels(id,description) values (252,'Pad');
-insert into levels(id,description) values (253,'Pad');
-insert into levels(id,description) values (254,'Pad');
-insert into levels(id,description) values (255,'Pad');
-insert into levels(id,description) values (256,'Pad');
-insert into levels(id,description) values (257,'Pad');
-insert into levels(id,description) values (258,'Pad');
-insert into levels(id,description) values (259,'Pad');
-insert into levels(id,description) values (260,'Pad');
-insert into levels(id,description) values (261,'Pad');
-insert into levels(id,description) values (262,'Pad');
-insert into levels(id,description) values (263,'Pad');
-insert into levels(id,description) values (264,'Pad');
-insert into levels(id,description) values (265,'Pad');
-insert into levels(id,description) values (266,'Pad');
-insert into levels(id,description) values (267,'Pad');
-insert into levels(id,description) values (268,'Pad');
-insert into levels(id,description) values (269,'Pad');
-insert into levels(id,description) values (270,'Pad');
-insert into levels(id,description) values (271,'Pad');
-insert into levels(id,description) values (272,'Pad');
-insert into levels(id,description) values (273,'Pad');
-insert into levels(id,description) values (274,'Pad');
-insert into levels(id,description) values (275,'Pad');
-insert into levels(id,description) values (276,'Pad');
-insert into levels(id,description) values (277,'Pad');
-insert into levels(id,description) values (278,'Pad');
-insert into levels(id,description) values (279,'Pad');
-insert into levels(id,description) values (290,'Pad');
-insert into levels(id,description) values (291,'Pad');
-insert into levels(id,description) values (292,'Pad');
-insert into levels(id,description) values (293,'Pad');
-insert into levels(id,description) values (294,'Pad');
-insert into levels(id,description) values (295,'Pad');
-insert into levels(id,description) values (296,'Pad');
-insert into levels(id,description) values (297,'Pad');
-insert into levels(id,description) values (298,'Pad');
-insert into levels(id,description) values (299,'Pad');
-insert into levels(id,description) values (301,'Pad');
-insert into levels(id,description) values (302,'Pad');
-insert into levels(id,description) values (303,'Pad');
-insert into levels(id,description) values (304,'Pad');
-insert into levels(id,description) values (305,'Pad');
-insert into levels(id,description) values (306,'Pad');
-insert into levels(id,description) values (307,'Pad');
-insert into levels(id,description) values (308,'Pad');
-insert into levels(id,description) values (309,'Pad');
-insert into levels(id,description) values (310,'Pad');
-insert into levels(id,description) values (311,'Pad');
-insert into levels(id,description) values (312,'Pad');
-insert into levels(id,description) values (313,'Pad');
-insert into levels(id,description) values (314,'Pad');
-insert into levels(id,description) values (315,'Pad');
-insert into levels(id,description) values (316,'Pad');
-insert into levels(id,description) values (317,'Pad');
-insert into levels(id,description) values (318,'Pad');
-insert into levels(id,description) values (319,'Pad');
-insert into levels(id,description) values (320,'Pad');
-insert into levels(id,description) values (321,'Pad');
-insert into levels(id,description) values (322,'Pad');
-insert into levels(id,description) values (323,'Pad');
-insert into levels(id,description) values (324,'Pad');
-insert into levels(id,description) values (325,'Pad');
-insert into levels(id,description) values (326,'Pad');
-insert into levels(id,description) values (327,'Pad');
-insert into levels(id,description) values (328,'Pad');
-insert into levels(id,description) values (329,'Pad');
-insert into levels(id,description) values (330,'Pad');
-insert into levels(id,description) values (331,'Pad');
-insert into levels(id,description) values (332,'Pad');
-insert into levels(id,description) values (333,'Pad');
-insert into levels(id,description) values (334,'Pad');
-insert into levels(id,description) values (335,'Pad');
-insert into levels(id,description) values (336,'Pad');
-insert into levels(id,description) values (337,'Pad');
-insert into levels(id,description) values (338,'Pad');
-insert into levels(id,description) values (339,'Pad');
-insert into levels(id,description) values (340,'Pad');
-insert into levels(id,description) values (341,'Pad');
-insert into levels(id,description) values (342,'Pad');
-insert into levels(id,description) values (343,'Pad');
-insert into levels(id,description) values (344,'Pad');
-insert into levels(id,description) values (345,'Pad');
-insert into levels(id,description) values (346,'Pad');
-insert into levels(id,description) values (347,'Pad');
-insert into levels(id,description) values (348,'Pad');
-insert into levels(id,description) values (349,'Pad');
-insert into levels(id,description) values (350,'Pad');
-insert into levels(id,description) values (351,'Pad');
-insert into levels(id,description) values (352,'Pad');
-insert into levels(id,description) values (353,'Pad');
-insert into levels(id,description) values (354,'Pad');
-insert into levels(id,description) values (355,'Pad');
-insert into levels(id,description) values (356,'Pad');
-insert into levels(id,description) values (357,'Pad');
-insert into levels(id,description) values (358,'Pad');
-insert into levels(id,description) values (359,'Pad');
-insert into levels(id,description) values (360,'Pad');
-insert into levels(id,description) values (361,'Pad');
-insert into levels(id,description) values (362,'Pad');
-insert into levels(id,description) values (363,'Pad');
-insert into levels(id,description) values (364,'Pad');
-insert into levels(id,description) values (365,'Pad');
-insert into levels(id,description) values (366,'Pad');
-insert into levels(id,description) values (367,'Pad');
-insert into levels(id,description) values (368,'Pad');
-insert into levels(id,description) values (369,'Pad');
-insert into levels(id,description) values (370,'Pad');
-insert into levels(id,description) values (371,'Pad');
-insert into levels(id,description) values (372,'Pad');
-insert into levels(id,description) values (373,'Pad');
-insert into levels(id,description) values (374,'Pad');
-insert into levels(id,description) values (375,'Pad');
-insert into levels(id,description) values (376,'Pad');
-insert into levels(id,description) values (377,'Pad');
-insert into levels(id,description) values (378,'Pad');
-insert into levels(id,description) values (379,'Pad');
-insert into levels(id,description) values (390,'Pad');
-insert into levels(id,description) values (391,'Pad');
-insert into levels(id,description) values (392,'Pad');
-insert into levels(id,description) values (393,'Pad');
-insert into levels(id,description) values (394,'Pad');
-insert into levels(id,description) values (395,'Pad');
-insert into levels(id,description) values (396,'Pad');
-insert into levels(id,description) values (397,'Pad');
-insert into levels(id,description) values (398,'Pad');
-insert into levels(id,description) values (399,'Pad');
-insert into levels(id,description) values (401,'Pad');
-insert into levels(id,description) values (402,'Pad');
-insert into levels(id,description) values (403,'Pad');
-insert into levels(id,description) values (404,'Pad');
-insert into levels(id,description) values (405,'Pad');
-insert into levels(id,description) values (406,'Pad');
-insert into levels(id,description) values (407,'Pad');
-insert into levels(id,description) values (408,'Pad');
-insert into levels(id,description) values (409,'Pad');
-insert into levels(id,description) values (410,'Pad');
-insert into levels(id,description) values (411,'Pad');
-insert into levels(id,description) values (412,'Pad');
-insert into levels(id,description) values (413,'Pad');
-insert into levels(id,description) values (414,'Pad');
-insert into levels(id,description) values (415,'Pad');
-insert into levels(id,description) values (416,'Pad');
-insert into levels(id,description) values (417,'Pad');
-insert into levels(id,description) values (418,'Pad');
-insert into levels(id,description) values (419,'Pad');
-insert into levels(id,description) values (420,'Pad');
-insert into levels(id,description) values (421,'Pad');
-insert into levels(id,description) values (422,'Pad');
-insert into levels(id,description) values (423,'Pad');
-insert into levels(id,description) values (424,'Pad');
-insert into levels(id,description) values (425,'Pad');
-insert into levels(id,description) values (426,'Pad');
-insert into levels(id,description) values (427,'Pad');
-insert into levels(id,description) values (428,'Pad');
-insert into levels(id,description) values (429,'Pad');
-insert into levels(id,description) values (430,'Pad');
-insert into levels(id,description) values (431,'Pad');
-insert into levels(id,description) values (432,'Pad');
-insert into levels(id,description) values (433,'Pad');
-insert into levels(id,description) values (434,'Pad');
-insert into levels(id,description) values (435,'Pad');
-insert into levels(id,description) values (436,'Pad');
-insert into levels(id,description) values (437,'Pad');
-insert into levels(id,description) values (438,'Pad');
-insert into levels(id,description) values (439,'Pad');
-insert into levels(id,description) values (440,'Pad');
-insert into levels(id,description) values (441,'Pad');
-insert into levels(id,description) values (442,'Pad');
-insert into levels(id,description) values (443,'Pad');
-insert into levels(id,description) values (444,'Pad');
-insert into levels(id,description) values (445,'Pad');
-insert into levels(id,description) values (446,'Pad');
-insert into levels(id,description) values (447,'Pad');
-insert into levels(id,description) values (448,'Pad');
-insert into levels(id,description) values (449,'Pad');
-insert into levels(id,description) values (450,'Pad');
-insert into levels(id,description) values (451,'Pad');
-insert into levels(id,description) values (452,'Pad');
-insert into levels(id,description) values (453,'Pad');
-insert into levels(id,description) values (454,'Pad');
-insert into levels(id,description) values (455,'Pad');
-insert into levels(id,description) values (456,'Pad');
-insert into levels(id,description) values (457,'Pad');
-insert into levels(id,description) values (458,'Pad');
-insert into levels(id,description) values (459,'Pad');
-insert into levels(id,description) values (460,'Pad');
-insert into levels(id,description) values (461,'Pad');
-insert into levels(id,description) values (462,'Pad');
-insert into levels(id,description) values (463,'Pad');
-insert into levels(id,description) values (464,'Pad');
-insert into levels(id,description) values (465,'Pad');
-insert into levels(id,description) values (466,'Pad');
-insert into levels(id,description) values (467,'Pad');
-insert into levels(id,description) values (468,'Pad');
-insert into levels(id,description) values (469,'Pad');
-insert into levels(id,description) values (470,'Pad');
-insert into levels(id,description) values (471,'Pad');
-insert into levels(id,description) values (472,'Pad');
-insert into levels(id,description) values (473,'Pad');
-insert into levels(id,description) values (474,'Pad');
-insert into levels(id,description) values (475,'Pad');
-insert into levels(id,description) values (476,'Pad');
-insert into levels(id,description) values (477,'Pad');
-insert into levels(id,description) values (478,'Pad');
-insert into levels(id,description) values (479,'Pad');
-insert into levels(id,description) values (490,'Pad');
-insert into levels(id,description) values (491,'Pad');
-insert into levels(id,description) values (492,'Pad');
-insert into levels(id,description) values (493,'Pad');
-insert into levels(id,description) values (494,'Pad');
-insert into levels(id,description) values (495,'Pad');
-insert into levels(id,description) values (496,'Pad');
-insert into levels(id,description) values (497,'Pad');
-insert into levels(id,description) values (498,'Pad');
-insert into levels(id,description) values (499,'Pad');
-insert into levels(id,description) values (501,'Pad');
-insert into levels(id,description) values (502,'Pad');
-insert into levels(id,description) values (503,'Pad');
-insert into levels(id,description) values (504,'Pad');
-insert into levels(id,description) values (505,'Pad');
-insert into levels(id,description) values (506,'Pad');
-insert into levels(id,description) values (507,'Pad');
-insert into levels(id,description) values (508,'Pad');
-insert into levels(id,description) values (509,'Pad');
-insert into levels(id,description) values (510,'Pad');
-insert into levels(id,description) values (511,'Pad');
-insert into levels(id,description) values (512,'Pad');
-insert into levels(id,description) values (513,'Pad');
-insert into levels(id,description) values (514,'Pad');
-insert into levels(id,description) values (515,'Pad');
-insert into levels(id,description) values (516,'Pad');
-insert into levels(id,description) values (517,'Pad');
-insert into levels(id,description) values (518,'Pad');
-insert into levels(id,description) values (519,'Pad');
-insert into levels(id,description) values (520,'Pad');
-insert into levels(id,description) values (521,'Pad');
-insert into levels(id,description) values (522,'Pad');
-insert into levels(id,description) values (523,'Pad');
-insert into levels(id,description) values (524,'Pad');
-insert into levels(id,description) values (525,'Pad');
-insert into levels(id,description) values (526,'Pad');
-insert into levels(id,description) values (527,'Pad');
-insert into levels(id,description) values (528,'Pad');
-insert into levels(id,description) values (529,'Pad');
-insert into levels(id,description) values (530,'Pad');
-insert into levels(id,description) values (531,'Pad');
-insert into levels(id,description) values (532,'Pad');
-insert into levels(id,description) values (533,'Pad');
-insert into levels(id,description) values (534,'Pad');
-insert into levels(id,description) values (535,'Pad');
-insert into levels(id,description) values (536,'Pad');
-insert into levels(id,description) values (537,'Pad');
-insert into levels(id,description) values (538,'Pad');
-insert into levels(id,description) values (539,'Pad');
-insert into levels(id,description) values (540,'Pad');
-insert into levels(id,description) values (541,'Pad');
-insert into levels(id,description) values (542,'Pad');
-insert into levels(id,description) values (543,'Pad');
-insert into levels(id,description) values (544,'Pad');
-insert into levels(id,description) values (545,'Pad');
-insert into levels(id,description) values (546,'Pad');
-insert into levels(id,description) values (547,'Pad');
-insert into levels(id,description) values (548,'Pad');
-insert into levels(id,description) values (549,'Pad');
-insert into levels(id,description) values (550,'Pad');
-insert into levels(id,description) values (551,'Pad');
-insert into levels(id,description) values (552,'Pad');
-insert into levels(id,description) values (553,'Pad');
-insert into levels(id,description) values (554,'Pad');
-insert into levels(id,description) values (555,'Pad');
-insert into levels(id,description) values (556,'Pad');
-insert into levels(id,description) values (557,'Pad');
-insert into levels(id,description) values (558,'Pad');
-insert into levels(id,description) values (559,'Pad');
-insert into levels(id,description) values (560,'Pad');
-insert into levels(id,description) values (561,'Pad');
-insert into levels(id,description) values (562,'Pad');
-insert into levels(id,description) values (563,'Pad');
-insert into levels(id,description) values (564,'Pad');
-insert into levels(id,description) values (565,'Pad');
-insert into levels(id,description) values (566,'Pad');
-insert into levels(id,description) values (567,'Pad');
-insert into levels(id,description) values (568,'Pad');
-insert into levels(id,description) values (569,'Pad');
-insert into levels(id,description) values (570,'Pad');
-insert into levels(id,description) values (571,'Pad');
-insert into levels(id,description) values (572,'Pad');
-insert into levels(id,description) values (573,'Pad');
-insert into levels(id,description) values (574,'Pad');
-insert into levels(id,description) values (575,'Pad');
-insert into levels(id,description) values (576,'Pad');
-insert into levels(id,description) values (577,'Pad');
-insert into levels(id,description) values (578,'Pad');
-insert into levels(id,description) values (579,'Pad');
-insert into levels(id,description) values (590,'Pad');
-insert into levels(id,description) values (591,'Pad');
-insert into levels(id,description) values (592,'Pad');
-insert into levels(id,description) values (593,'Pad');
-insert into levels(id,description) values (594,'Pad');
-insert into levels(id,description) values (595,'Pad');
-insert into levels(id,description) values (596,'Pad');
-insert into levels(id,description) values (597,'Pad');
-insert into levels(id,description) values (598,'Pad');
-insert into levels(id,description) values (599,'Pad');
+insert into levels(id,description) values (14.05,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.05,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.05,14);       
 
+insert into levels(id,description) values (14.06,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.06,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.06,14);       
+
+insert into levels(id,description) values (14.07,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.07,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.07,14);       
+
+insert into levels(id,description) values (14.08,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.08,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.08,14);       
+
+insert into levels(id,description) values (14.09,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.09,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.09,14);       
+
+insert into levels(id,description) values (14.10,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.10,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.10,14);       
+
+insert into levels(id,description) values (14.11,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.11,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.11,14);       
+
+insert into levels(id,description) values (14.12,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.12,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.12,14);       
+
+insert into levels(id,description) values (14.13,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.13,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.13,14);       
+
+insert into levels(id,description) values (14.14,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.14,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.14,14);       
+
+insert into levels(id,description) values (14.15,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.15,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.15,14);       
+
+insert into levels(id,description) values (14.16,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.16,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.16,14);       
+
+insert into levels(id,description) values (14.17,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.17,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.17,14);       
+
+insert into levels(id,description) values (14.18,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.18,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.18,14);       
+
+insert into levels(id,description) values (14.19,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.19,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.19,14);       
+
+insert into levels(id,description) values (14.20,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.20,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.20,14);       
+
+insert into levels(id,description) values (14.21,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.21,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.21,14);       
+
+insert into levels(id,description) values (14.22,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.22,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.22,14);       
+
+insert into levels(id,description) values (14.23,'K_OA_A_5');
+insert into games_levels (level_id,game_id) values  (14.23,4);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14.23,14);       
 
 
 
