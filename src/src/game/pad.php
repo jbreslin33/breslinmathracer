@@ -6,6 +6,9 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
+	
+		this.mApplication.mMouseMoveOn = false;
+
 		this.mScoreNeeded = 10;
 
 		this.mQuiz = new Quiz(this);
