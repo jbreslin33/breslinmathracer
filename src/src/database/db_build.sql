@@ -1288,7 +1288,7 @@ insert into domains_grades (domain_id, grade_id) values (2,1);
 --	stand subtraction as taking apart and taking from.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from.');
-insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,1); 
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,2); 
 
 -----------------------------------------------------------------------------
 --STANDARD #10
@@ -1347,7 +1347,6 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 insert into standards (standard) values ('Fluently add and subtract within 5.');
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
 
--- ADD 0
 insert into levels(id,description) values (14,'K_OA_A_5');
 insert into games_levels (level_id,game_id) values  (14,4);
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (14,14);       
@@ -1434,46 +1433,69 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-- DOMAIN #3 "The fiend was here."
 --	Number and Operations in Base Ten
 --	K.NBT	
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---insert into domains (domain) values ('Number and Operations in Base Ten'); 
---insert into domains_subjects (domain_id, subject_id) values (3,1); 
---insert into domains_grades (domain_id, grade_id) values (3,1); 
+insert into domains (domain) values ('Number and Operations in Base Ten'); 
+insert into domains_subjects (domain_id, subject_id) values (3,1); 
+insert into domains_grades (domain_id, grade_id) values (3,1); 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #5
 --	Work with numbers 11–19 to gain foundations for place value.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Work with numbers 11-19 to gain foundations for place value');
-
+insert into clusters (cluster) values ('Work with numbers 11-19 to gain foundations for place value');
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (5,3); 
 
 -----------------------------------------------------------------------------
+--STANDARD #15
 --	1.	 Compose and decompose numbers from 11 to 19 into ten ones and
 --	some further ones, e.g., by using objects or drawings, and record each
 --	composition or decomposition by a drawing or equation (e.g., 18 = 10 +
 --	8); understand that these numbers are composed of ten ones and one,
 --	two, three, four, five, six, seven, eight, or nine ones.
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (15,5);
 
+insert into levels(id,description) values (15,'K_NBT_A_1');
+--insert into games_levels (level_id,game_id) values  (15,5);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (15,15);       
 
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--DOMAIN #4
 --	Measurement and Data	
 --	K.MD
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---insert into domains (domain) values ('Measurement and Data'); 
---insert into domains_subjects (domain_id, subject_id) values (4,1); 
---insert into domains_grades (domain_id, grade_id) values (4,1); 
+insert into domains (domain) values ('Measurement and Data'); 
+
+--DOMAINS_SUBJECTS #4
+insert into domains_subjects (domain_id, subject_id) values (4,1); 
+
+--DOMAINS_GRADES #4
+insert into domains_grades (domain_id, grade_id) values (4,1); 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #6
 --	Describe and compare measurable attributes.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Describe and compare measurable attributes');
+insert into clusters (cluster) values ('Describe and compare measurable attributes');
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (6,4); 
 
 -----------------------------------------------------------------------------
+--STANDARD #16
 --	1.	 Describe measurable attributes of objects, such as length or weight.
 --	Describe several measurable attributes of a single object.
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (16,5);
+
+insert into levels(id,description) values (16,'K_MD_A_1');
+--insert into games_levels (level_id,game_id) values  (16,5);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (16,16);       
+
 
 -----------------------------------------------------------------------------
 --	2.	 Directly compare two objects with a measurable attribute in common,
