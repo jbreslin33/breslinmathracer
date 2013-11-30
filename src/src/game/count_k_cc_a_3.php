@@ -35,6 +35,9 @@ Extends: Pad,
 	{
 		this.parent();
 
+		//set question invis...
+		this.mNumQuestion.setVisibility(false);
+
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
 			this.mCountShapeArray[i].setVisibility(false);
