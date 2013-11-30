@@ -1493,90 +1493,157 @@ insert into standards (standard) values ('Describe measurable attributes of obje
 insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (16,5);
 
 insert into levels(id,description) values (16,'K_MD_A_1');
---insert into games_levels (level_id,game_id) values  (16,5);
+--insert into games_levels (level_id,game_id) values  (16,0);
 insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (16,16);       
 
 
 -----------------------------------------------------------------------------
+--STANDARD #17
 --	2.	 Directly compare two objects with a measurable attribute in common,
 --	to see which object has “more of”/“less of” the attribute, and describe
 --	the difference. For example, directly compare the heights of two
 --	children and describe one child as taller/shorter.
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Directly compare two objects with a measurable attribute in common...');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (17,6);
+
+insert into levels(id,description) values (17,'K_MD_A_2');
+--insert into games_levels (level_id,game_id) values  (17,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (17,17);       
+
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #7
 --	Classify objects and count the number of objects in each category.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Classify objects and count the number of objects in each category.');
+insert into clusters (cluster) values ('Classify objects and count the number of objects in each category.');
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (7,4); 
 
 
 -----------------------------------------------------------------------------
+--STANDARD #18
 --	3.	 Classify objects into given categories; count the numbers of objects in
 --	each category and sort the categories by count.3
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (18,7);
+
+insert into levels(id,description) values (18,'K_MD_A_2');
+--insert into games_levels (level_id,game_id) values  (18,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (18,18);       
+
 
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+--DOMAIN #5
 --	Geometry	
 --	K.G
 --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
---insert into domains (domain) values ('Geometry'); 
---insert into domains_subjects (domain_id, subject_id) values (5,1); 
---insert into domains_grades (domain_id, grade_id) values (5,1); 
+insert into domains (domain) values ('Geometry'); 
+insert into domains_subjects (domain_id, subject_id) values (5,1); 
+insert into domains_grades (domain_id, grade_id) values (5,1); 
 
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #8
 --	Identify and describe shapes (squares, circles, triangles, rectangles,
 --	hexagons, cubes, cones, cylinders, and spheres).
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---insert into clusters (cluster) values ('Identify and describe shapes (squares, circles, triangles, rectangles, hexagons, cubes, cones, cylinders, and spheres).'); 
+insert into clusters (cluster) values ('Identify and describe shapes (squares, circles, triangles, rectangles, hexagons, cubes, cones, cylinders, and spheres).'); 
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (8,5); 
 
 
 -----------------------------------------------------------------------------
+--STANDARD #19
 --	1.	 Describe objects in the environment using names of shapes, and
 --	describe the relative positions of these objects using terms such as
 --	above, below, beside, in front of, behind, and next to.
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Describe objects in the environment using names of shapes...');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (19,8);
+
+insert into levels(id,description) values (19,'K_G_A_1');
+--insert into games_levels (level_id,game_id) values  (19,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (19,19);       
+
 
 -----------------------------------------------------------------------------
+--STANDARD #20
 --	2.	 Correctly name shapes regardless of their orientations or overall size.
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Correctly name shapes regardless of their orientations or overall size.');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (20,8);
+
+insert into levels(id,description) values (20,'K_G_A_2');
+--insert into games_levels (level_id,game_id) values  (20,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (20,20);       
 
 -----------------------------------------------------------------------------
+--STANDARD #21
 --	3.	 Identify shapes as two-dimensional (lying in a plane, “flat”) or three-
 --	dimensional (“solid”).
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Identify shapes as two-dimensional....');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (21,8);
+
+insert into levels(id,description) values (21,'K_G_A_3');
+--insert into games_levels (level_id,game_id) values  (21,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (21,21);       
+
+-----------------------------------------------------------------------------
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+--CLUSTER #9
 --	Analyze, compare, create, and compose shapes.
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 insert into clusters (cluster) values ('Analyze, compare, create, and compose shapes.');
+insert into clusters_domains_grades (cluster_id, domain_grade_id) values (9,5); 
 
 
 -----------------------------------------------------------------------------
+--STANDARD #22
 --	4.	 Analyze and compare two- and three-dimensional shapes, in
 --	different sizes and orientations, using informal language to describe
 --	their similarities, differences, parts (e.g., number of sides and
 --	vertices/“corners”) and other attributes (e.g., having sides of equal
 --	length).
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Analyze and compare two- and three-dimensional shapes...');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (22,9);
+
+insert into levels(id,description) values (22,'K_G_B_4');
+--insert into games_levels (level_id,game_id) values  (22,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (22,22);       
+
 
 -----------------------------------------------------------------------------
+--STANDARD #23
 --	5.	 Model shapes in the world by building shapes from components (e.g.,
 --	sticks and clay balls) and drawing shapes.
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Model shapes in the world by building shapes from components...');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (23,9);
+
+insert into levels(id,description) values (23,'K_G_B_5');
+--insert into games_levels (level_id,game_id) values  (23,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (23,23);       
+
 
 -----------------------------------------------------------------------------
+--STANDARD #24
 --	6.	 Compose simple shapes to form larger shapes. For example, “Can you
 --	join these two triangles with full sides touching to make a rectangle?”
 -----------------------------------------------------------------------------
+insert into standards (standard) values ('Compose simple shapes to form..');
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (24,9);
+
+insert into levels(id,description) values (24,'K_G_B_6');
+--insert into games_levels (level_id,game_id) values  (24,0);
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (24,24);       
+
 
 
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
-
-------------------------SUBTRACTION----------------------------------------
-
---GAMES_ATTEMPTS
 
 --(CONTINUED PASSWORDS).......
 
