@@ -7,6 +7,9 @@ Extends: Game,
 	{
        		this.parent(application);
 	
+		//cursor
+		document.body.style.cursor = 'default';	
+
 		this.mApplication.mMouseMoveOn = false;
 
 		this.mScoreNeeded = 10;

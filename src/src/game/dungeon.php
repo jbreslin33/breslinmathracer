@@ -7,6 +7,9 @@ Extends: Game,
 	{
        		this.parent(application);
 
+		//cursor
+		document.body.style.cursor = 'crosshair';
+
 		this.mDoor = 0;
 		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');

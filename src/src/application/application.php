@@ -58,7 +58,6 @@ var Application = new Class(
                 this.mMouseMoveEvent = 0;
 
                 document.addEvent("mousemove", this.mouseMove);
-                document.body.style.cursor = 'crosshair';
 
 		//states
 		this.mStateMachine = new StateMachine(this);
