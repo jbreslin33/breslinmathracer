@@ -50,8 +50,13 @@ Extends: Pad,
 		
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
-			this.mCountShapeArray.setVisibility(false);
+			this.mCountShapeArray[i].setVisibility(false);
 		} 
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		{
+			this.log('setting vis:' + v);
+			this.mCountShapeArray[v].setVisibility(true);
+		}	
 	},
 
 	update: function()
@@ -63,12 +68,22 @@ Extends: Pad,
 	showNumberPad: function()
 	{
 		this.parent();
-		
+
+		for (i = 0; i < this.mCountShapeArray.length; i++)
+		{
+			this.mCountShapeArray[i].setVisibility(false);
+		}	
+
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		{
+			this.log('setting vis:' + v);
+			this.mCountShapeArray[v].setVisibility(true);
+		}	
 	},
    
 	createQuestions: function()
         {
- 		this.mQuiz.reset();
+		this.parent();
 		
 		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;
@@ -89,7 +104,8 @@ Extends: Pad,
 			{	
 				//random number to count from 0-20
 				var objectsToCount = Math.floor((Math.random()*21));		
-				this.mQuiz.mQuestionArray.push('' + objectsToCount, '' + objectsToCount);
+				var question = new Question('' + objectsToCount, '' + objectsToCount);
+				this.mQuiz.mQuestionArray.push(question);
 
 				totalCount = parseInt(totalCount + objectsToCount);
 				this.log('totalCount:' + totalCount);
@@ -100,7 +116,7 @@ Extends: Pad,
 		
 	},
 
-	creaetQuestionShapes: function()
+	createQuestionShapes: function()
 	{
                 this.mCountShapeArray.push(new ShapeVictory(50,50,25,25,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,25,50,this,"/images/bus/kid.png","",""));
@@ -123,6 +139,16 @@ Extends: Pad,
                 this.mCountShapeArray.push(new ShapeVictory(50,50,50,200,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,50,225,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,50,250,this,"/images/bus/kid.png","",""));
+
+		for (i = 0; i < this.mCountShapeArray.length; i++)
+		{
+			this.mCountShapeArray[i].setVisibility(false);
+		}	
+		
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		{
+			this.mCountShapeArray[v].setVisibility(true);
+		}	
 	},
 	
 	createWorld: function()
