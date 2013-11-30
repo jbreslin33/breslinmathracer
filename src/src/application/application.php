@@ -172,15 +172,15 @@ var Application = new Class(
 		
 		if (this.mNextLevelGameID == 4)
 		{ 
-             		if (this.mGameName != "Pad")
+             		if (this.mGameName != "Pad_k_oa_a_5")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Pad";
-                               	this.mGame = new Pad(APPLICATION);
+                               	this.mGameName = "Pad_k_oa_a_5";
+                               	this.mGame = new Pad_k_oa_a_5(APPLICATION);
 			}
                 }
 	},

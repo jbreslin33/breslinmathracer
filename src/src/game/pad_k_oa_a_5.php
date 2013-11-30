@@ -15,7 +15,7 @@ Extends: Pad,
 		this.mScoreNeeded = 10;
 
 		this.mQuiz = new Quiz(this);
-        	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
+        	this.mApplication.mHud.mGameName.setText('<font size="2">PAID</font>');
 
 		//clock shape
 		this.mClockShape = 0;
