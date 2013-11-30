@@ -141,7 +141,17 @@ Extends: Game,
                 this.mNumberPadArray = 0;
 
 	},
-
+	
+	showCorrectAnswer: function()
+	{
+		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+        	this.hideNumberPad();
+        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+        	this.showCorrectAnswerBar();
+        	this.mMemorizeShape.setVisibility(true);
+	},
+	
 	inputKeyHit: function(e)
 	{
 		if (e.key == 'enter')

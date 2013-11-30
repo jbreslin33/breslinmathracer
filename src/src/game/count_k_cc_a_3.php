@@ -30,6 +30,12 @@ Extends: Pad,
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
+	
+	hideNumberPad: function()
+	{
+		this.parent();
+		this.mNumQuestion.setVisibility(false);
+	},
 
 	showNumberPad: function()
 	{
@@ -48,6 +54,12 @@ Extends: Pad,
 			this.log('setting vis:' + v);
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
+	},
+
+	showCorrectAnswer: function()
+	{
+		this.parent();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 	},
    
 	createQuestions: function()

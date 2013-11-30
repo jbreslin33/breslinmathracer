@@ -707,12 +707,8 @@ log: function(msg)
 enter: function(game)
 {
 	this.log('SHOW_CORRECT_ANSWER');
-	game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
-	game.hideNumberPad();
-	game.mCorrectAnswerBarHeader.mMesh.innerHTML = ''; 
-	game.mCorrectAnswerBar.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion() + ' ' + game.mQuiz.getQuestion().getAnswer(); 
-	game.showCorrectAnswerBar();
-	game.mMemorizeShape.setVisibility(true);
+	
+	game.showCorrectAnswer();
 },
 
 execute: function(game)
