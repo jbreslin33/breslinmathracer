@@ -1,4 +1,4 @@
-var Pad = new Class(
+var Count_k_cc_a_3 = new Class(
 {
 
 Extends: Game,

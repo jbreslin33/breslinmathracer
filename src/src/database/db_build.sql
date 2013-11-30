@@ -981,6 +981,7 @@ ALTER TABLE standards_clusters_domains_grades ADD UNIQUE (standard_id, cluster_d
 --GAMES
 insert into games (game) values ('Dungeon_k_cc_a_1');
 insert into games (game) values ('Dungeon_k_cc_a_2');
+insert into games (game) values ('Count_k_cc_a_3');
 insert into games (game) values ('Pad');
 
 --GAMES_ATTEMPTS
@@ -1143,25 +1144,13 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 --   	3.	 Write numbers from 0 to 20. Represent a number of objects with a
 --	written numeral 0-20 (with 0 representing a count of no objects).
 --------------------------------------------------------------------------------
---insert into standards (standard) values ('Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (3,1); 
+insert into standards (standard) values ('Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
+insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (3,1); --id=3 
 
+insert into levels(id,description) values (3,'K_CC_A_3'); 
+insert into games_levels (level_id,game_id) values  (3,3); 
+insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3,3);       
 
---		LEVEL_ID: 3  
---insert into levels(id,description) values (3,'Write numbers from 0 to 5'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3,3);       
-
---		LEVEL_ID: 3.1 
---insert into levels(id,description) values (3.1,'Write numbers from 5 to 10'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3.1,3);       
-
---		LEVEL_ID: 3.2  
---insert into levels(id,description) values (3.2,'Write numbers from 10 to 15'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3.2,3);       
-
---		LEVEL_ID: 3.3 
---insert into levels(id,description) values (3.3,'Write numbers from 15 to 20'); 
---insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_domain_grade_id) values (3.3,3);       
 
 --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --	Count to tell the number of objects. 	
@@ -1305,16 +1294,16 @@ insert into levels_standards_clusters_domains_grades(level_id, standard_cluster_
 -- ADD 0
 
 insert into levels(id,description) values (100,'Pad');
-insert into games_levels (level_id,game_id) values  (100,3);
+insert into games_levels (level_id,game_id) values  (100,4);
 
 insert into levels(id,description) values (101,'Pad');
-insert into games_levels (level_id,game_id) values  (101,3);
+insert into games_levels (level_id,game_id) values  (101,4);
 
 insert into levels(id,description) values (102,'Pad');
-insert into games_levels (level_id,game_id) values  (102,3);
+insert into games_levels (level_id,game_id) values  (102,4);
 
 insert into levels(id,description) values (103,'Pad');
-insert into games_levels (level_id,game_id) values  (103,3);
+insert into games_levels (level_id,game_id) values  (103,4);
 
 insert into levels(id,description) values (104,'Pad');
 insert into levels(id,description) values (105,'Pad');
