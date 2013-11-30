@@ -10,20 +10,10 @@ Extends: Pad,
 		//count shape array
 		this.mCountShapeArray = new Array();
 	
-		//cursor
-		document.body.style.cursor = 'default';	
-
-		this.mApplication.mMouseMoveOn = false;
-
         	this.mApplication.mHud.mGameName.setText('<font size="2">COUNT</font>');
 
 		//answers 
                 this.mThresholdTime = 10000;
-	},
-
-	destructor: function()
-	{
-		this.parent();
 	},
 
 	reset: function()
@@ -40,11 +30,6 @@ Extends: Pad,
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
-
-	update: function()
-        {
-  		this.parent()
-        },
 
 	showNumberPad: function()
 	{
@@ -92,9 +77,7 @@ Extends: Pad,
 				this.log('totalCount:' + totalCount);
 			}
 		}
-
 		this.createQuestionShapes();
-		
 	},
 
 	createQuestionShapes: function()
@@ -130,10 +113,5 @@ Extends: Pad,
 		{
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
-	},
-	
-	createWorld: function()
-	{
-		this.parent();
 	}
 });
