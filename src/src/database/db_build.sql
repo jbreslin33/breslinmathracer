@@ -1111,16 +1111,26 @@ insert into standards (standard,description) values ('1.NBT.B.2b','10 can be tho
 
 insert into standards (standard,description) values ('1.NBT.B.2c','The numbers 10, 20, 30, 40, 50, 60, 70, 80, 90 refer to one, two, three, four, five, six, seven, eight, or nine tens (and 0 ones).');
 
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
+insert into standards (standard,description) values ('1.NBT.B.3','iCompare two two-digit numbers based on meanings of the tens and ones digits, recording the results of comparisons with the symbols >, =, and <.');
+
+insert into standards (standard,description) values ('1.NBT.C.4','Add within 100, including adding a two-digit number and a one-digit number, and adding a two-digit number and a multiple of 10, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used. Understand that in adding two-digit numbers, one adds tens and tens, ones and ones; and sometimes it is necessary to compose a ten.');
+
+insert into standards (standard,description) values ('1.NBT.C.5','Given a two-digit number, mentally find 10 more or 10 less than the number, without having to count; explain the reasoning used.');
+
+insert into standards (standard,description) values ('1.NBT.C.6','Subtract multiples of 10 in the range 10-90 from multiples of 10 in the range 10-90 (positive or zero differences), using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used.');
+
+insert into standards (standard,description) values ('1.MD.A.1','Order three objects by length; compare the lengths of two objects indirectly by using a third object.');
+
+insert into standards (standard,description) values ('1.MD.A.2',' Express the length of an object as a whole number of length units, by laying multiple copies of a shorter object (the length unit) end to end; understand that the length measurement of an object is the number of same-size length units that span it with no gaps or overlaps. Limit to contexts where the object being measured is spanned by a whole number of length units with no gaps or overlaps.');
+
+insert into standards (standard,description) values ('1.MD.C.4','Organize, represent, and interpret data with up to three categories; ask and answer questions about the total number of data points, how many in each category, and how many more or less are in one category than in another.');
+
+insert into standards (standard,description) values ('1.G.A.1','Distinguish between defining attributes (e.g., triangles are closed and three-sided) versus non-defining attributes (e.g., color, orientation, overall size); build and draw shapes to possess defining attributes.');
+
+insert into standards (standard,description) values ('1.G.A.2','Compose two-dimensional shapes (rectangles, squares, trapezoids, triangles, half-circles, and quarter-circles) or three-dimensional shapes (cubes, right rectangular prisms, right circular cones, and right circular cylinders) to create a composite shape, and compose new shapes from the composite shape.');
+
+insert into standards (standard,description) values ('1.G.A.3','Partition circles and rectangles into two and four equal shares, describe the shares using the words halves, fourths, and quarters, and use the phrases half of, fourth of, and quarter of. Describe the whole as two of, or four of the shares. Understand for these examples that decomposing into more equal shares creates smaller shares.');
+
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
