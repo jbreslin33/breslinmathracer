@@ -826,16 +826,6 @@ ALTER TABLE domains_subjects ADD FOREIGN KEY (subject_id) REFERENCES subjects(id
 ALTER TABLE domains_grades ADD FOREIGN KEY (domain_id) REFERENCES domains(id);
 ALTER TABLE domains_grades ADD FOREIGN KEY (grade_id) REFERENCES grades(id);
 
---CLUSTERS_DOMAINS_GRADES
-ALTER TABLE clusters_domains_grades ADD FOREIGN KEY (cluster_id) REFERENCES clusters(id);
-ALTER TABLE clusters_domains_grades ADD FOREIGN KEY (domain_grade_id) REFERENCES domains_grades(id);
-
---STANDARDS_CLUSTERS_DOMAINS_GRADES
-ALTER TABLE standards_clusters_domains_grades ADD FOREIGN KEY (standard_id) REFERENCES standards(id);
-ALTER TABLE standards_clusters_domains_grades ADD FOREIGN KEY (cluster_domain_grade_id) REFERENCES clusters_domains_grades(id);
-
---==================================================================
---================= LEVELS  ====================================
 --==================================================================
 
 --LEVELS_STANDARDS
@@ -848,6 +838,7 @@ ALTER TABLE levels_standards ADD FOREIGN KEY (standard_id) REFERENCES standards(
 --GAMES_LEVELS
 ALTER TABLE games_levels ADD FOREIGN KEY (game_id) REFERENCES games(id);
 ALTER TABLE games_levels ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+ALTER TABLE games_levels ADD UNIQUE (level_id,game_id);
 
 --GAMES_ATTEMPTS
 ALTER TABLE games_attempts ADD FOREIGN KEY (user_id) REFERENCES users(id);
