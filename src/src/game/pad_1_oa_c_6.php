@@ -1,4 +1,4 @@
-var Pad_k_oa_a_5 = new Class(
+var Pad_1_oa_c_6 = new Class(
 {
 
 Extends: Pad,
@@ -41,19 +41,19 @@ Extends: Pad,
 		var totalNew           = 0;
 		var newQuestionElement = 0;
 
-		if (this.mApplication.mNextLevelID == 14)
+		if (this.mApplication.mNextLevelID == 100)
 		{
 			newQuestionElement = 0;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.01)
+		if (this.mApplication.mNextLevelID == 100.01)
 		{
 			newQuestionElement = 1;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.02)
+		if (this.mApplication.mNextLevelID == 100.02)
 		{
 			newQuestionElement = 2;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.03)
+		if (this.mApplication.mNextLevelID == 100.03)
 		{
 			newQuestionElement = 3;	
 		}		
