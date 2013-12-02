@@ -1094,7 +1094,40 @@ insert into standards (standard,description) values ('1.OA.B.3','Apply propertie
 
 insert into standards (standard,description) values ('1.OA.B.4','Understand subtraction as an unknown-addend problem. For example, subtract 10 – 8 by finding the number that makes 10 when added to 8.');
 
+insert into standards (standard,description) values ('1.OA.C.5','Relate counting to addition and subtraction (e.g., by counting on 2 to add 2).');
 
+insert into standards (standard,description) values ('1.OA.C.6','Add and subtract within 20, demonstrating fluency for addition and subtraction within 10. Use strategies such as counting on; making ten (e.g., 8 + 6 = 8 + 2 + 4 = 10 + 4 = 14); decomposing a number leading to a ten (e.g., 13 – 4 = 13 – 3 – 1 = 10 – 1 = 9); using the relationship between addition and subtraction (e.g., knowing that 8 + 4 = 12, one knows 12 – 8 = 4); and creating equivalent but easier or known sums (e.g., adding 6 + 7 by creating the known equivalent 6 + 6 + 1 = 12 + 1 = 13).');
+
+insert into standards (standard,description) values ('1.OA.D.7','Understand the meaning of the equal sign, and determine if equations involving addition and subtraction are true or false. For example, which of the following equations are true and which are false? 6 = 6, 7 = 8 – 1, 5 + 2 = 2 + 5, 4 + 1 = 5 + 2.');
+
+insert into standards (standard,description) values ('1.OA.D.8','Determine the unknown whole number in an addition or subtraction equation relating three whole numbers. For example, determine the unknown number that makes the equation true in each of the equations 8 + ? = 11, 5 = _ – 3, 6 + 6 = _.');
+
+
+insert into standards (standard,description) values ('1.NBT.A.1','Count to 120, starting at any number less than 120. In this range, read and write numerals and represent a number of objects with a written numeral.');
+
+insert into standards (standard,description) values ('1.NBT.B.2','Understand that the two digits of a two-digit number represent amounts of tens and ones. Understand the following as special cases:');
+
+insert into standards (standard,description) values ('1.NBT.B.2b','10 can be thought of as a bundle of ten ones — called a “ten.”');
+
+insert into standards (standard,description) values ('1.NBT.B.2c','The numbers 10, 20, 30, 40, 50, 60, 70, 80, 90 refer to one, two, three, four, five, six, seven, eight, or nine tens (and 0 ones).');
+
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
 
 --GAMES	
 insert into games (game) values ('Dungeon_k_cc_a_1');
