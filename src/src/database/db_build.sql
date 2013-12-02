@@ -289,30 +289,6 @@ CREATE TABLE games_attempts (
 	time_warning boolean DEFAULT false NOT NULL
 );
 
---==================================================================
---================= ENVIRONMENT  ====================================
---==================================================================
-
---BROWSERS
---CREATE TABLE browsers (
- --   id integer NOT NULL,
-  --  browser text NOT NULL UNIQUE
---);
-
---Modenizr should help make stuff compatible but we still need webistie to hide certain games.
--- Lets go step by step
--- you have to goto abcandyou.com...when you do...
---i think for now this should be left alone till needed.
-
---DROP TABLE os cascade; --win98,win2000,winxp,win7,vista,win8,debian3,ubuntu,redhat,fedora,android,mac,etc
---DROP TABLE browser cascade; --ie6,ie7,ie8,ie9,ie10,opera9,opera10,firefox8,firefox9
---DROP TABLE engine cascade; --ogre,torque,javascript,2d_brengine,jmonkey
---i am thinking to show all?
-
-
-
-
-
 
 --****************************************************************
 --***************************************************************
