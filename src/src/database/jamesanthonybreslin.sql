@@ -1211,6 +1211,8 @@ SELECT pg_catalog.setval('levels_standards_id_seq', 39, true);
 --
 
 COPY levels_transactions (id, advancement_time, level_id, user_id) FROM stdin;
+1	2013-12-02 08:19:23.093179	0	1
+2	2013-12-02 08:19:46.161963	1	1
 \.
 
 
@@ -1218,7 +1220,7 @@ COPY levels_transactions (id, advancement_time, level_id, user_id) FROM stdin;
 -- Name: levels_transactions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('levels_transactions_id_seq', 1, false);
+SELECT pg_catalog.setval('levels_transactions_id_seq', 2, true);
 
 
 --
@@ -1308,6 +1310,7 @@ SELECT pg_catalog.setval('rooms_id_seq', 1, false);
 --
 
 COPY schools (id, school_name) FROM stdin;
+1	j
 \.
 
 
@@ -1315,7 +1318,7 @@ COPY schools (id, school_name) FROM stdin;
 -- Name: schools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('schools_id_seq', 1, false);
+SELECT pg_catalog.setval('schools_id_seq', 1, true);
 
 
 --
@@ -1377,6 +1380,7 @@ SELECT pg_catalog.setval('standards_id_seq', 24, true);
 --
 
 COPY students (id, teacher_id) FROM stdin;
+1	0
 \.
 
 
@@ -1402,6 +1406,7 @@ SELECT pg_catalog.setval('subjects_id_seq', 2, true);
 --
 
 COPY teachers (id, room_id) FROM stdin;
+1	\N
 \.
 
 
@@ -1410,6 +1415,7 @@ COPY teachers (id, room_id) FROM stdin;
 --
 
 COPY users (id, username, password, first_name, middle_name1, middle_name2, middle_name3, last_name, school_id) FROM stdin;
+1	root		\N	\N	\N	\N	\N	1
 \.
 
 
@@ -1417,7 +1423,7 @@ COPY users (id, username, password, first_name, middle_name1, middle_name2, midd
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, false);
+SELECT pg_catalog.setval('users_id_seq', 1, true);
 
 
 --

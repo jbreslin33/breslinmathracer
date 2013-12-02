@@ -1060,30 +1060,41 @@ insert into clusters (cluster) values ('Identify and describe shapes (squares, c
 insert into clusters (cluster) values ('Analyze, compare, create, and compose shapes.');
 
 --STANDARDS
-insert into standards (standard,description) values ('K_CC_A_1','Count to 100 by ones and by tens.');  
-insert into standards (standard,description) values ('K_CC_A_2','Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
-insert into standards (standard,description) values ('K_CC_A_3','Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
-insert into standards (standard,description) values ('K_CC_B_4A','When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
-insert into standards (standard,description) values ('K_CC_B_4B','Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
-insert into standards (standard,description) values ('K_CC_B_4C','Understand that each successive number name refers to a quantity that is one larger.'); 
-insert into standards (standard,description) values ('K_CC_B_5','Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
-insert into standards (standard,description) values ('K_CC_C_6','Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
-insert into standards (standard,description) values ('K_CC_C_7','Compare two numbers between 1 and 10 presented as written numerals.');
-insert into standards (standard,description) values ('K_OA_A_1','Compare two numbers between 1 and 10 presented as written numerals.');
-insert into standards (standard,description) values ('K_OA_A_2','Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
-insert into standards (standard,description) values ('K_OA_A_3','Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
-insert into standards (standard,description) values ('K_OA_A_4','For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
-insert into standards (standard,description) values ('K_OA_A_5','Fluently add and subtract within 5.');
-insert into standards (standard,description) values ('K_NBT_A_1','Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
-insert into standards (standard,description) values ('K_MD_A_1','Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
-insert into standards (standard,description) values ('K_MD_A_2','Directly compare two objects with a measurable attribute in common...');
-insert into standards (standard,description) values ('K_MD_B_3','Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
-insert into standards (standard,description) values ('K_G_A_1','Describe objects in the environment using names of shapes...');
-insert into standards (standard,description) values ('K_G_A_2','Correctly name shapes regardless of their orientations or overall size.');
-insert into standards (standard,description) values ('K_G_A_3','Identify shapes as two-dimensional....');
-insert into standards (standard,description) values ('K_G_B_4','Analyze and compare two- and three-dimensional shapes...');
-insert into standards (standard,description) values ('K_G_B_5','Model shapes in the world by building shapes from components...');
-insert into standards (standard,description) values ('K_G_B_6','Compose simple shapes to form..');
+insert into standards (standard,description) values ('K.CC.A.1','Count to 100 by ones and by tens.');  
+insert into standards (standard,description) values ('K.CC.A.2','Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
+insert into standards (standard,description) values ('K.CC.A.3','Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.'); --id=3 
+insert into standards (standard,description) values ('K.CC.B.4A','When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.'); 
+insert into standards (standard,description) values ('K.CC.B.4B','Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.'); 
+insert into standards (standard,description) values ('K.CC.B.4C','Understand that each successive number name refers to a quantity that is one larger.'); 
+insert into standards (standard,description) values ('K.CC.B.5','Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
+insert into standards (standard,description) values ('K.CC.C.6','Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
+insert into standards (standard,description) values ('K.CC.C.7','Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K.OA.A.1','Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K.OA.A.2','Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
+insert into standards (standard,description) values ('K.OA.A.3','Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
+insert into standards (standard,description) values ('K.OA.A.4','For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
+insert into standards (standard,description) values ('K.OA.A.5','Fluently add and subtract within 5.');
+insert into standards (standard,description) values ('K.NBT.A.1','Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.');
+insert into standards (standard,description) values ('K.MD.A.1','Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
+insert into standards (standard,description) values ('K.MD.A.2','Directly compare two objects with a measurable attribute in common...');
+insert into standards (standard,description) values ('K.MD.B.3','Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
+insert into standards (standard,description) values ('K.G.A.1','Describe objects in the environment using names of shapes...');
+insert into standards (standard,description) values ('K.G.A.2','Correctly name shapes regardless of their orientations or overall size.');
+insert into standards (standard,description) values ('K.G.A.3','Identify shapes as two-dimensional....');
+insert into standards (standard,description) values ('K.G.B.4','Analyze and compare two- and three-dimensional shapes...');
+insert into standards (standard,description) values ('K.G.B.5','Model shapes in the world by building shapes from components...');
+insert into standards (standard,description) values ('K.G.B.6','Compose simple shapes to form..');
+
+--insert into standards (standard,description) values ('','');
+
+insert into standards (standard,description) values ('1.OA.A.1',' Use addition and subtraction within 20 to solve word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.');
+insert into standards (standard,description) values ('1.O.A.2','Solve word problems that call for addition of three whole numbers whose sum is less than or equal to 20, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.');
+
+insert into standards (standard,description) values ('1.OA.B.3','Apply properties of operations as strategies to add and subtract.2 Examples: If 8 + 3 = 11 is known, then 3 + 8 = 11 is also known. (Commutative property of addition.) To add 2 + 6 + 4, the second two numbers can be added to make a ten, so 2 + 6 + 4 = 2 + 10 = 12. (Associative property of addition.)');
+
+insert into standards (standard,description) values ('1.OA.B.4','Understand subtraction as an unknown-addend problem. For example, subtract 10 – 8 by finding the number that makes 10 when added to 8.');
+
+
 
 --GAMES	
 insert into games (game) values ('Dungeon_k_cc_a_1');
