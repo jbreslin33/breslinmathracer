@@ -19,7 +19,6 @@ DROP TABLE games cascade;
 --====================== LEVELS  =============================
 --==================================================================
 
-DROP TABLE levels_standards_clusters_domains_grades cascade;
 DROP TABLE levels_standards cascade;
 DROP TABLE levels cascade;
 
@@ -244,12 +243,6 @@ CREATE TABLE levels_standards (
     id integer NOT NULL,
     level_id double precision NOT NULL,
     standard_id integer NOT NULL
-);
-
---LEVELS_STANDARDS_CLUSTERS_DOMAINS_GRADES
-CREATE TABLE levels_standards_clusters_domains_grades (
-    level_id double precision NOT NULL,
-    standard_cluster_domain_grade_id integer NOT NULL
 );
 
 --==================================================================
@@ -542,9 +535,6 @@ ALTER TABLE public.levels OWNER TO postgres;
 --LEVELS_STANDARDS
 ALTER TABLE public.levels_standards OWNER TO postgres;
 
---LEVELS_STANDARDS_CLUSTERS_DOMAINS_GRADES
-ALTER TABLE public.levels_standards_clusters_domains_grades OWNER TO postgres;
-
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
@@ -764,9 +754,6 @@ ALTER TABLE levels ADD PRIMARY KEY (id);
 ALTER TABLE levels_standards ADD PRIMARY KEY (id);
 ALTER TABLE levels_standards ADD UNIQUE (level_id,standard_id);
 
---LEVELS_STANDARDS_CLUSTERS_DOMAINS_GRADES
-ALTER TABLE levels_standards_clusters_domains_grades ADD PRIMARY KEY (level_id, standard_cluster_domain_grade_id);
-
 --==================================================================
 --================= GAMES  ====================================
 --==================================================================
@@ -854,10 +841,6 @@ ALTER TABLE standards_clusters_domains_grades ADD FOREIGN KEY (cluster_domain_gr
 --LEVELS_STANDARDS
 ALTER TABLE levels_standards ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 ALTER TABLE levels_standards ADD FOREIGN KEY (standard_id) REFERENCES standards(id);
-
---LEVELS_STANDARDS_CLUSTERS_DOMAINS_GRADES
-ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (level_id) REFERENCES levels(id);
-ALTER TABLE levels_standards_clusters_domains_grades ADD FOREIGN KEY (standard_cluster_domain_grade_id) REFERENCES standards_clusters_domains_grades(id);
 
 --==================================================================
 --================= GAMES  ====================================
@@ -1094,12 +1077,6 @@ insert into standards (standard,description) values ('1.G.A.2','Compose two-dime
 insert into standards (standard,description) values ('1.G.A.3','Partition circles and rectangles into two and four equal shares, describe the shares using the words halves, fourths, and quarters, and use the phrases half of, fourth of, and quarter of. Describe the whole as two of, or four of the shares. Understand for these examples that decomposing into more equal shares creates smaller shares.');
 
 --insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
 
 --GAMES	
 insert into games (game) values ('Dungeon_k_cc_a_1');
@@ -1297,50 +1274,6 @@ insert into levels_standards(level_id, standard_id) values (100.03,30);
 
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
---COMBINES
---insert into domains_subjects (domain_id, subject_id) values (1,1); 
---insert into domains_grades (domain_id, grade_id) values (1,1);     
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (1,1);      
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (2,1);   
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (2,1);  
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (4,2); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (5,2); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (3,1); --id=3 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (6,2); 
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (3,1); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (7,2); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (8,3);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (9,3);
---insert into domains_subjects (domain_id, subject_id) values (2,1); 
---insert into domains_grades (domain_id, grade_id) values (2,1); 
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (4,2); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (10,4);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (11,4);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (12,4);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (13,4);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (14,4);
---insert into domains_subjects (domain_id, subject_id) values (3,1); 
---insert into domains_grades (domain_id, grade_id) values (3,1); 
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (5,3); 
---insert into domains_subjects (domain_id, subject_id) values (4,1); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (15,5);
---insert into domains_grades (domain_id, grade_id) values (4,1); 
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (6,4); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (16,5);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (17,6);
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (7,4); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (18,7);
---insert into domains_subjects (domain_id, subject_id) values (5,1); 
---insert into domains_grades (domain_id, grade_id) values (5,1); 
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (8,5); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (19,8);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (20,8);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (21,8);
---insert into clusters_domains_grades (cluster_id, domain_grade_id) values (9,5); 
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (22,9);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (23,9);
---insert into standards_clusters_domains_grades (standard_id, cluster_domain_grade_id) values (24,9);
-
 --(CONTINUED PASSWORDS).......
 
 --PASSWORDS
