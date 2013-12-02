@@ -1314,7 +1314,24 @@ insert into levels(id,description) values (14.20,'');
 insert into games_levels (level_id,game_id) values  (14.20,4);
 insert into levels_standards(level_id, standard_id) values (14.20,14);       
 
-			--
+		--L:100, G:5, SID:30 S:1.OA.C.6
+insert into levels(id,description) values (100,'');
+insert into games_levels (level_id,game_id) values  (100,5);
+insert into levels_standards(level_id, standard_id) values (100,30);       
+
+insert into levels(id,description) values (100.01,'');
+insert into games_levels (level_id,game_id) values  (100.01,5);
+insert into levels_standards(level_id, standard_id) values (100.01,30);       
+
+insert into levels(id,description) values (100.02,'');
+insert into games_levels (level_id,game_id) values  (100.02,5);
+insert into levels_standards(level_id, standard_id) values (100.02,30);       
+
+insert into levels(id,description) values (100.03,'');
+insert into games_levels (level_id,game_id) values  (100.03,5);
+insert into levels_standards(level_id, standard_id) values (100.03,30);       
+
+
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
 --COMBINES
