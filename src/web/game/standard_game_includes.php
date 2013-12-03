@@ -28,5 +28,6 @@
 <script type="text/javascript" src="/src/game/dungeon_k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/game/count_k_cc_a_3.php"></script>
 <script type="text/javascript" src="/src/game/pad_k_oa_a_5.php"></script>
+<script type="text/javascript" src="/src/game/pad_1_oa_c_6.php"></script>
 <script type="text/javascript" src="/src/game/gobble.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>

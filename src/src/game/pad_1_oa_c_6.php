@@ -85,89 +85,169 @@ Extends: Pad,
 		var totalNew           = 0;
 		var newQuestionElement = 0;
 
-		if (this.mApplication.mNextLevelID == 14)
+		if (this.mApplication.mNextLevelID == 100)
 		{
 			newQuestionElement = 0;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.01)
+		if (this.mApplication.mNextLevelID == 100.01)
 		{
 			newQuestionElement = 1;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.02)
+		if (this.mApplication.mNextLevelID == 100.02)
 		{
 			newQuestionElement = 2;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.03)
+		if (this.mApplication.mNextLevelID == 100.03)
 		{
 			newQuestionElement = 3;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.04)
+		if (this.mApplication.mNextLevelID == 100.04)
 		{
 			newQuestionElement = 4;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.05)
+		if (this.mApplication.mNextLevelID == 100.05)
 		{
 			newQuestionElement = 5;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.06)
+		if (this.mApplication.mNextLevelID == 100.06)
 		{
 			newQuestionElement = 6;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.07)
+		if (this.mApplication.mNextLevelID == 100.07)
 		{
 			newQuestionElement = 7;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.08)
+		if (this.mApplication.mNextLevelID == 100.08)
 		{
 			newQuestionElement = 8;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.09)
+		if (this.mApplication.mNextLevelID == 100.09)
 		{
 			newQuestionElement = 9;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.10)
+		if (this.mApplication.mNextLevelID == 100.10)
 		{
 			newQuestionElement = 10;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.11)
+		if (this.mApplication.mNextLevelID == 100.11)
 		{
 			newQuestionElement = 11;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.12)
+		if (this.mApplication.mNextLevelID == 100.12)
 		{
 			newQuestionElement = 12;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.13)
+		if (this.mApplication.mNextLevelID == 100.13)
 		{
 			newQuestionElement = 13;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.14)
+		if (this.mApplication.mNextLevelID == 100.14)
 		{
 			newQuestionElement = 14;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.15)
+		if (this.mApplication.mNextLevelID == 100.15)
 		{
 			newQuestionElement = 15;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.16)
+		if (this.mApplication.mNextLevelID == 100.16)
 		{
 			newQuestionElement = 16;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.17)
+		if (this.mApplication.mNextLevelID == 100.17)
 		{
 			newQuestionElement = 17;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.18)
+		if (this.mApplication.mNextLevelID == 100.18)
 		{
 			newQuestionElement = 18;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.19)
+		if (this.mApplication.mNextLevelID == 100.19)
 		{
 			newQuestionElement = 19;	
 		}		
-		if (this.mApplication.mNextLevelID == 14.20)
+		if (this.mApplication.mNextLevelID == 100.20)
 		{
 			newQuestionElement = 20;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.21)
+		{
+			newQuestionElement = 21;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.22)
+		{
+			newQuestionElement = 22;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.23)
+		{
+			newQuestionElement = 23;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.24)
+		{
+			newQuestionElement = 24;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.25)
+		{
+			newQuestionElement = 25;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.26)
+		{
+			newQuestionElement = 26;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.27)
+		{
+			newQuestionElement = 27;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.28)
+		{
+			newQuestionElement = 28;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.29)
+		{
+			newQuestionElement = 29;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.30)
+		{
+			newQuestionElement = 30;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.31)
+		{
+			newQuestionElement = 31;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.32)
+		{
+			newQuestionElement = 32;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.33)
+		{
+			newQuestionElement = 33;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.34)
+		{
+			newQuestionElement = 34;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.35)
+		{
+			newQuestionElement = 35;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.36)
+		{
+			newQuestionElement = 36;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.37)
+		{
+			newQuestionElement = 37;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.38)
+		{
+			newQuestionElement = 38;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.39)
+		{
+			newQuestionElement = 39;	
+		}		
+		if (this.mApplication.mNextLevelID == 100.40)
+		{
+			newQuestionElement = 40;	
 		}		
 
 		while (totalNew < totalNewGoal)
