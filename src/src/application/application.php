@@ -192,7 +192,7 @@ var Application = new Class(
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Pad_k_oa_a_5";
+                               	this.mGameName = "Pad_1_oa_c_6";
                                	this.mGame = new Pad_1_oa_c_6(APPLICATION);
 			}
                 }
