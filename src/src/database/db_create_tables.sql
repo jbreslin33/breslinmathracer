@@ -168,21 +168,21 @@ CREATE TABLE permissions_users (
 --GRADE
 CREATE TABLE grades (
     id integer NOT NULL,
-    grade text  
+    grade text UNIQUE 
 );
 
 --*************************
 --SUBJECTS
 CREATE TABLE subjects (
     id integer NOT NULL,
-    subject text NOT NULL
+    subject text NOT NULL UNIQUE
 );
 
 --*************************
 --DOMAINS
 CREATE TABLE domains (
     id integer NOT NULL,
-    domain text NOT NULL
+    domain text NOT NULL UNIQUE
 );
 
 --DOMAINS_SUBJECTS
@@ -202,7 +202,7 @@ CREATE TABLE domains_grades (
 --CLUSTERS
 CREATE TABLE clusters (
     id integer NOT NULL,
-    cluster text NOT NULL -- Know number names and the count sequence. | Key ideas and details 
+    cluster text NOT NULL UNIQUE -- Know number names and the count sequence. | Key ideas and details 
 );
 
 --CLUSTERS_DOMAINS_GRADES
@@ -216,7 +216,7 @@ CREATE TABLE clusters_domains_grades (
 --STANDARDS
 CREATE TABLE standards (
     id integer NOT NULL,
-    standard text NOT NULL,
+    standard text NOT NULL UNIQUE,
     description text NOT NULL
 );
 
