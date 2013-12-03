@@ -28,7 +28,7 @@ Extends: Pad,
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 0 =','2'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('3 + 0 =','3'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('4 + 0 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 + 0 =','0'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 + 0 =','5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('0 + 1 =','1'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('0 + 2 =','2'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('0 + 3 =','3'));
