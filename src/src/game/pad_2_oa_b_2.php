@@ -55,6 +55,49 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 8 =','13'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 7 =','13'));
 
+		//14
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 + 1 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 + 2 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 + 2 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('11 + 3 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 4 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 + 5 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 + 6 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 7 =','14'));
+
+		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 13 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 12 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 + 11 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 10 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 9 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 8 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 7 =','14'));
+
+		//15
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 + 1 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 + 2 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 + 3 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('11 + 4 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 5 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 + 6 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 + 7 =','15'));
+		
+		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 14 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 13 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 + 12 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 11 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 10 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 9 =','15'));
+
+		//16
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 + 1 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 + 2 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 + 3 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 + 4 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('11 + 5 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 6 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 + 7 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 + 8 =','16'));
 
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
