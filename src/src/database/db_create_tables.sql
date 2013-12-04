@@ -853,6 +853,7 @@ ALTER TABLE domains_grades ADD FOREIGN KEY (grade_id) REFERENCES grades(id);
 --LEVELS_TRANSACTIONS
 ALTER TABLE levels_transactions ADD FOREIGN KEY (user_id) REFERENCES users(id);
 ALTER TABLE levels_transactions ADD FOREIGN KEY (level_id) REFERENCES levels(id);
+ALTER TABLE levels_transactions ADD UNIQUE (advancement_time,level_id,user_id);
 
 --LEVELS_STANDARDS
 ALTER TABLE levels_standards ADD FOREIGN KEY (level_id) REFERENCES levels(id);
