@@ -85,171 +85,172 @@ Extends: Pad,
 		var totalNew           = 0;
 		var newQuestionElement = 0;
 
-		if (this.mApplication.mNextLevelID == 100)
+		if (this.mApplication.mNextLevelID == 30)
 		{
 			newQuestionElement = 0;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.01)
+		if (this.mApplication.mNextLevelID == 30.01)
 		{
 			newQuestionElement = 1;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.02)
+		if (this.mApplication.mNextLevelID == 30.02)
 		{
 			newQuestionElement = 2;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.03)
+		if (this.mApplication.mNextLevelID == 30.03)
 		{
 			newQuestionElement = 3;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.04)
+		if (this.mApplication.mNextLevelID == 30.04)
 		{
 			newQuestionElement = 4;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.05)
+		if (this.mApplication.mNextLevelID == 30.05)
 		{
 			newQuestionElement = 5;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.06)
+		if (this.mApplication.mNextLevelID == 30.06)
 		{
 			newQuestionElement = 6;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.07)
+		if (this.mApplication.mNextLevelID == 30.07)
 		{
 			newQuestionElement = 7;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.08)
+		if (this.mApplication.mNextLevelID == 30.08)
 		{
 			newQuestionElement = 8;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.09)
+		if (this.mApplication.mNextLevelID == 30.09)
 		{
 			newQuestionElement = 9;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.10)
+		if (this.mApplication.mNextLevelID == 30.10)
 		{
 			newQuestionElement = 10;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.11)
+		if (this.mApplication.mNextLevelID == 30.11)
 		{
 			newQuestionElement = 11;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.12)
+		if (this.mApplication.mNextLevelID == 30.12)
 		{
 			newQuestionElement = 12;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.13)
+		if (this.mApplication.mNextLevelID == 30.13)
 		{
 			newQuestionElement = 13;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.14)
+		if (this.mApplication.mNextLevelID == 30.14)
 		{
 			newQuestionElement = 14;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.15)
+		if (this.mApplication.mNextLevelID == 30.15)
 		{
 			newQuestionElement = 15;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.16)
+		if (this.mApplication.mNextLevelID == 30.16)
 		{
 			newQuestionElement = 16;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.17)
+		if (this.mApplication.mNextLevelID == 30.17)
 		{
 			newQuestionElement = 17;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.18)
+		if (this.mApplication.mNextLevelID == 30.18)
 		{
 			newQuestionElement = 18;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.19)
+		if (this.mApplication.mNextLevelID == 30.19)
 		{
 			newQuestionElement = 19;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.20)
+		if (this.mApplication.mNextLevelID == 30.20)
 		{
 			newQuestionElement = 20;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.21)
+		if (this.mApplication.mNextLevelID == 30.21)
 		{
 			newQuestionElement = 21;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.22)
+		if (this.mApplication.mNextLevelID == 30.22)
 		{
 			newQuestionElement = 22;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.23)
+		if (this.mApplication.mNextLevelID == 30.23)
 		{
 			newQuestionElement = 23;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.24)
+		if (this.mApplication.mNextLevelID == 30.24)
 		{
 			newQuestionElement = 24;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.25)
+		if (this.mApplication.mNextLevelID == 30.25)
 		{
 			newQuestionElement = 25;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.26)
+		if (this.mApplication.mNextLevelID == 30.26)
 		{
 			newQuestionElement = 26;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.27)
+		if (this.mApplication.mNextLevelID == 30.27)
 		{
 			newQuestionElement = 27;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.28)
+		if (this.mApplication.mNextLevelID == 30.28)
 		{
 			newQuestionElement = 28;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.29)
+		if (this.mApplication.mNextLevelID == 30.29)
 		{
 			newQuestionElement = 29;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.30)
+		if (this.mApplication.mNextLevelID == 30.30)
 		{
 			newQuestionElement = 30;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.31)
+		if (this.mApplication.mNextLevelID == 30.31)
 		{
 			newQuestionElement = 31;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.32)
+		if (this.mApplication.mNextLevelID == 30.32)
 		{
 			newQuestionElement = 32;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.33)
+		if (this.mApplication.mNextLevelID == 30.33)
 		{
 			newQuestionElement = 33;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.34)
+		if (this.mApplication.mNextLevelID == 30.34)
 		{
 			newQuestionElement = 34;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.35)
+		if (this.mApplication.mNextLevelID == 30.35)
 		{
 			newQuestionElement = 35;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.36)
+		if (this.mApplication.mNextLevelID == 30.36)
 		{
 			newQuestionElement = 36;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.37)
+		if (this.mApplication.mNextLevelID == 30.37)
 		{
 			newQuestionElement = 37;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.38)
+		if (this.mApplication.mNextLevelID == 30.38)
 		{
 			newQuestionElement = 38;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.39)
+		if (this.mApplication.mNextLevelID == 30.39)
 		{
 			newQuestionElement = 39;	
 		}		
-		if (this.mApplication.mNextLevelID == 100.40)
+		if (this.mApplication.mNextLevelID == 30.40)
 		{
 			newQuestionElement = 40;	
 		}		
 
+		
 		while (totalNew < totalNewGoal)
 		{	
 			//reset vars and arrays
