@@ -412,7 +412,7 @@ ALTER SEQUENCE levels_standards_id_seq OWNED BY levels_standards.id;
 CREATE TABLE levels_transactions (
     id integer NOT NULL,
     advancement_time timestamp without time zone,
-    level_id double precision NOT NULL,
+    level_id numeric(4,2) NOT NULL,
     user_id integer NOT NULL
 );
 
@@ -919,7 +919,7 @@ SELECT pg_catalog.setval('clusters_domains_grades_id_seq', 1, false);
 -- Name: clusters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('clusters_id_seq', 9, true);
+SELECT pg_catalog.setval('clusters_id_seq', 18, true);
 
 
 --
@@ -954,7 +954,7 @@ SELECT pg_catalog.setval('domains_grades_id_seq', 1, false);
 -- Name: domains_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('domains_id_seq', 5, true);
+SELECT pg_catalog.setval('domains_id_seq', 10, true);
 
 
 --
@@ -1012,7 +1012,7 @@ SELECT pg_catalog.setval('games_attempts_id_seq', 1, false);
 -- Name: games_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('games_id_seq', 5, true);
+SELECT pg_catalog.setval('games_id_seq', 10, true);
 
 
 --
@@ -1107,7 +1107,7 @@ COPY games_levels (id, game_id, level_id) FROM stdin;
 -- Name: games_levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('games_levels_id_seq', 80, true);
+SELECT pg_catalog.setval('games_levels_id_seq', 160, true);
 
 
 --
@@ -1135,7 +1135,7 @@ COPY grades (id, grade) FROM stdin;
 -- Name: grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('grades_id_seq', 13, true);
+SELECT pg_catalog.setval('grades_id_seq', 26, true);
 
 
 --
@@ -1327,7 +1327,7 @@ COPY levels_standards_clusters_domains_grades (level_id, standard_cluster_domain
 -- Name: levels_standards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('levels_standards_id_seq', 80, true);
+SELECT pg_catalog.setval('levels_standards_id_seq', 160, true);
 
 
 --
@@ -1335,20 +1335,9 @@ SELECT pg_catalog.setval('levels_standards_id_seq', 80, true);
 --
 
 COPY levels_transactions (id, advancement_time, level_id, user_id) FROM stdin;
-1	2013-12-02 17:49:42.0693	0	1
-2	2013-12-02 17:50:34.489266	1	1
-3	2013-12-02 17:51:37.210572	1.01000000000000001	1
-4	2013-12-02 17:53:34.404889	1.02000000000000002	1
-5	2013-12-03 17:41:52.813887	0	1
-6	2013-12-03 17:48:16.080822	3	1
-7	2013-12-03 17:48:35.868052	14	1
-8	2013-12-03 17:50:19.969935	14.1999999999999993	1
-9	2013-12-03 17:52:58.187251	100	1
-10	2013-12-03 17:53:58.774059	100.010000000000005	1
-11	2013-12-03 17:54:14.483726	100.019999999999996	1
-12	2013-12-03 17:54:28.585201	100.030000000000001	1
-13	2013-12-04 08:43:11.138628	0	1
-14	2013-12-04 08:43:33.847439	1	1
+1	2013-12-04 14:51:59.811782	0.00	1
+2	2013-12-04 14:52:14.416035	1.00	1
+3	2013-12-04 14:52:41.91897	1.01	1
 \.
 
 
@@ -1356,7 +1345,7 @@ COPY levels_transactions (id, advancement_time, level_id, user_id) FROM stdin;
 -- Name: levels_transactions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('levels_transactions_id_seq', 14, true);
+SELECT pg_catalog.setval('levels_transactions_id_seq', 3, true);
 
 
 --
@@ -1399,7 +1388,7 @@ COPY passwords (id, password) FROM stdin;
 -- Name: passwords_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('passwords_id_seq', 28, true);
+SELECT pg_catalog.setval('passwords_id_seq', 56, true);
 
 
 --
@@ -1415,7 +1404,7 @@ COPY permissions (id, permission) FROM stdin;
 -- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('permissions_id_seq', 1, true);
+SELECT pg_catalog.setval('permissions_id_seq', 2, true);
 
 
 --
@@ -1446,7 +1435,7 @@ SELECT pg_catalog.setval('rooms_id_seq', 1, false);
 --
 
 COPY schools (id, school_name) FROM stdin;
-1	j
+1	jimbo
 \.
 
 
@@ -1558,7 +1547,7 @@ SELECT pg_catalog.setval('standards_clusters_domains_grades_id_seq', 1, false);
 -- Name: standards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('standards_id_seq', 74, true);
+SELECT pg_catalog.setval('standards_id_seq', 148, true);
 
 
 --
@@ -1584,7 +1573,7 @@ COPY subjects (id, subject) FROM stdin;
 -- Name: subjects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('subjects_id_seq', 2, true);
+SELECT pg_catalog.setval('subjects_id_seq', 4, true);
 
 
 --
@@ -1778,6 +1767,14 @@ ALTER TABLE ONLY levels_standards
 
 ALTER TABLE ONLY levels_standards
     ADD CONSTRAINT levels_standards_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: levels_transactions_advancement_time_level_id_user_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY levels_transactions
+    ADD CONSTRAINT levels_transactions_advancement_time_level_id_user_id_key UNIQUE (advancement_time, level_id, user_id);
 
 
 --
@@ -2042,6 +2039,22 @@ ALTER TABLE ONLY levels_standards
 
 ALTER TABLE ONLY levels_standards
     ADD CONSTRAINT levels_standards_standard_id_fkey FOREIGN KEY (standard_id) REFERENCES standards(id);
+
+
+--
+-- Name: levels_transactions_level_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY levels_transactions
+    ADD CONSTRAINT levels_transactions_level_id_fkey FOREIGN KEY (level_id) REFERENCES levels(id);
+
+
+--
+-- Name: levels_transactions_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY levels_transactions
+    ADD CONSTRAINT levels_transactions_user_id_fkey FOREIGN KEY (user_id) REFERENCES users(id);
 
 
 --
