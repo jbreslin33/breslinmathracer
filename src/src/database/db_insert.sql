@@ -117,7 +117,74 @@ insert into standards (standard,description) values ('1.G.A.2','Compose two-dime
 
 insert into standards (standard,description) values ('1.G.A.3','Partition circles and rectangles into two and four equal shares, describe the shares using the words halves, fourths, and quarters, and use the phrases half of, fourth of, and quarter of. Describe the whole as two of, or four of the shares. Understand for these examples that decomposing into more equal shares creates smaller shares.');
 
+insert into standards (standard,description) values ('2.OA.A.1','Use addition and subtraction within 100 to solve one- and two-step word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.');
+
+insert into standards (standard,description) values ('2.OA.B.2','Fluently add and subtract within 20 using mental strategies.2 By end of Grade 2, know from memory all sums of two one-digit numbers.');
+
+insert into standards (standard,description) values ('2.OA.C.3','Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s; write an equation to express an even number as a sum of two equal addends.');
+
+insert into standards (standard,description) values ('2.OA.C.4','Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.');
+
+insert into standards (standard,description) values ('2.NBT.A.1','Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones. Understand the following as special cases:');
+
+insert into standards (standard,description) values ('2.NBT.A.1a','100 can be thought of as a bundle of ten tens — called a “hundred.”');
+
+insert into standards (standard,description) values ('2.NBT.A.1b','The numbers 100, 200, 300, 400, 500, 600, 700, 800, 900 refer to one, two, three, four, five, six, seven, eight, or nine hundreds (and 0 tens and 0 ones).');
+
+
+
+insert into standards (standard,description) values ('2.NBT.A.2','Count within 1000; skip-count by 5s, 10s, and 100s.');
+
+insert into standards (standard,description) values ('2.NBT.A.3','Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.');
+
+insert into standards (standard,description) values ('2.NBT.A.4','Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using >, =, and < symbols to record the results of comparisons.');
+
+insert into standards (standard,description) values ('2.NBT.B.5','Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.
+');
+
+
+insert into standards (standard,description) values ('2.NBT.B.6','Add up to four two-digit numbers using strategies based on place value and properties of operations.');
+
+insert into standards (standard,description) values ('2.NBT.B.7','Add and subtract within 1000, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method. Understand that in adding or subtracting three-digit numbers, one adds or subtracts hundreds and hundreds, tens and tens, ones and ones; and sometimes it is necessary to compose or decompose tens or hundreds.');
+
+insert into standards (standard,description) values ('2.NBT.B.8','Mentally add 10 or 100 to a given number 100–900, and mentally subtract 10 or 100 from a given number 100–900.');
+
+insert into standards (standard,description) values ('2.NBT.B.9','Explain why addition and subtraction strategies work, using place value and the properties of operations.');
+
+insert into standards (standard,description) values ('2.MD.A.1','Measure the length of an object by selecting and using appropriate tools such as rulers, yardsticks, meter sticks, and measuring tapes.');
+
+insert into standards (standard,description) values ('2.MD.A.2',' Measure the length of an object twice, using length units of different lengths for the two measurements; describe how the two measurements relate to the size of the unit chosen.');
+
+insert into standards (standard,description) values ('2.MD.A.3','Estimate lengths using units of inches, feet, centimeters, and meters.');
+
+insert into standards (standard,description) values ('2.MD.A.4','Measure to determine how much longer one object is than another, expressing the length difference in terms of a standard length unit.');
+
+insert into standards (standard,description) values ('2.MD.B.5','Use addition and subtraction within 100 to solve word problems involving lengths that are given in the same units, e.g., by using drawings (such as drawings of rulers) and equations with a symbol for the unknown number to represent the problem.');
+
+insert into standards (standard,description) values ('2.MD.B.6','Represent whole numbers as lengths from 0 on a number line diagram with equally spaced points corresponding to the numbers 0, 1, 2, ..., and represent whole-number sums and differences within 100 on a number line diagram.');
+
+insert into standards (standard,description) values ('2.MD.C.7','Tell and write time from analog and digital clocks to the nearest five minutes, using a.m. and p.m.');
+
+insert into standards (standard,description) values ('2.MD.C.8','Solve word problems involving dollar bills, quarters, dimes, nickels, and pennies, using $ and ¢ symbols appropriately. Example: If you have 2 dimes and 3 pennies, how many cents do you have?');
+
 --insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+
+
 
 --GAMES	
 insert into games (game) values ('Dungeon_k_cc_a_1');
