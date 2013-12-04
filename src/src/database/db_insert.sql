@@ -167,10 +167,16 @@ insert into standards (standard,description) values ('2.MD.C.7','Tell and write 
 
 insert into standards (standard,description) values ('2.MD.C.8','Solve word problems involving dollar bills, quarters, dimes, nickels, and pennies, using $ and ¢ symbols appropriately. Example: If you have 2 dimes and 3 pennies, how many cents do you have?');
 
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
---insert into standards (standard,description) values ('','');
+insert into standards (standard,description) values ('2.MD.C.9','Generate measurement data by measuring lengths of several objects to the nearest whole unit, or by making repeated measurements of the same object. Show the measurements by making a line plot, where the horizontal scale is marked off in whole-number units.');
+
+insert into standards (standard,description) values ('2.MD.C.10','Draw a picture graph and a bar graph (with single-unit scale) to represent a data set with up to four categories. Solve simple put-together, take-apart, and compare problems1 using information presented in a bar graph.');
+
+insert into standards (standard,description) values ('2.MD.G.A.1','Recognize and draw shapes having specified attributes, such as a given number of angles or a given number of equal faces.1 Identify triangles, quadrilaterals, pentagons, hexagons, and cubes.');
+
+insert into standards (standard,description) values ('2.G.A.2','Partition a rectangle into rows and columns of same-size squares and count to find the total number of them.');
+
+insert into standards (standard,description) values ('2.G.A.3','Partition circles and rectangles into two, three, or four equal shares, describe the shares using the words halves, thirds, half of, a third of, etc., and describe the whole as two halves, three thirds, four fourths. Recognize that equal shares of identical wholes need not have the same shape.');
+
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
