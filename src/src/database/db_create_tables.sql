@@ -18,7 +18,7 @@ DROP TABLE games cascade;
 --==================================================================
 --====================== LEVELS  =============================
 --==================================================================
-
+DROP TABLE levels_transactions;
 DROP TABLE levels_standards cascade;
 DROP TABLE levels cascade;
 
@@ -232,6 +232,14 @@ CREATE TABLE standards_clusters_domains_grades (
 --====================== LEVELS  =============================
 --==================================================================
 
+--LEVELS_TRANSACTIONS
+CREATE TABLE levels_transactions (
+    id integer NOT NULL,
+    advancement_time timestamp,
+    level_id numeric(4,2) NOT NULL,
+    user_id integer NOT NULL
+);
+
 --LEVELS
 CREATE TABLE levels (
     id NUMERIC(4,2) NOT NULL UNIQUE, 
@@ -414,6 +422,13 @@ CREATE SEQUENCE grades_id_seq
 --==================================================================
 --================= LEVELS  ====================================
 --==================================================================
+--LEVELS_TRANSACTIONS
+CREATE SEQUENCE levels_transactions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
 
 --LEVELS_STANDARDS
 CREATE SEQUENCE levels_standards_id_seq
@@ -528,6 +543,8 @@ ALTER TABLE public.standards_clusters_domains_grades OWNER TO postgres;
 --==================================================================
 --================= LEVELS  ====================================
 --==================================================================
+--LEVELS_TRANSACTIONS
+ALTER TABLE public.levels_transactions OWNER TO postgres;
 
 --LEVELS
 ALTER TABLE public.levels OWNER TO postgres;
@@ -646,6 +663,10 @@ ALTER TABLE ONLY standards_clusters_domains_grades ALTER COLUMN id SET DEFAULT n
 --==================================================================
 --================= LEVELS  ====================================
 --==================================================================
+--LEVELS_TRANSACTIONS
+ALTER TABLE public.levels_transactions_id_seq OWNER TO postgres;
+ALTER SEQUENCE levels_transactions_id_seq OWNED BY levels_transactions.id;
+ALTER TABLE ONLY levels_transactions ALTER COLUMN id SET DEFAULT nextval('levels_transactions_id_seq'::regclass);
 
 --LEVELS_STANDARDS
 ALTER TABLE public.levels_standards_id_seq OWNER TO postgres;
@@ -746,6 +767,8 @@ ALTER TABLE standards_clusters_domains_grades ADD PRIMARY KEY (id);
 --==================================================================
 --================= LEVELS  ====================================
 --==================================================================
+--LEVELS_TRANSACTIONS
+ALTER TABLE levels_transactions ADD PRIMARY KEY (id);
 
 --LEVELS
 ALTER TABLE levels ADD PRIMARY KEY (id);
@@ -827,6 +850,9 @@ ALTER TABLE domains_grades ADD FOREIGN KEY (domain_id) REFERENCES domains(id);
 ALTER TABLE domains_grades ADD FOREIGN KEY (grade_id) REFERENCES grades(id);
 
 --==================================================================
+--LEVELS_TRANSACTIONS
+ALTER TABLE levels_transactions ADD FOREIGN KEY (user_id) REFERENCES users(id);
+ALTER TABLE levels_transactions ADD FOREIGN KEY (level_id) REFERENCES levels(id);
 
 --LEVELS_STANDARDS
 ALTER TABLE levels_standards ADD FOREIGN KEY (level_id) REFERENCES levels(id);
