@@ -236,20 +236,20 @@ CREATE TABLE standards_clusters_domains_grades (
 CREATE TABLE levels_transactions (
     id integer NOT NULL,
     advancement_time timestamp,
-    level_id numeric(4,2) NOT NULL,
+    level_id NUMERIC(9,3) NOT NULL,
     user_id integer NOT NULL
 );
 
 --LEVELS
 CREATE TABLE levels (
-    id NUMERIC(4,2) NOT NULL UNIQUE, 
+    id NUMERIC(9,3) NOT NULL UNIQUE, 
     description text NOT NULL
 );
 
 --LEVELS_STANDARDS
 CREATE TABLE levels_standards (
     id integer NOT NULL,
-    level_id NUMERIC(4,2) NOT NULL,
+    level_id NUMERIC(9,3) NOT NULL,
     standard_id integer NOT NULL
 );
 
@@ -267,7 +267,7 @@ CREATE TABLE games (
 CREATE TABLE games_levels (
     id integer NOT NULL,
     game_id integer NOT NULL,
-    level_id numeric(4,2) NOT NULL
+    level_id NUMERIC(9,3) NOT NULL
 );
 
 --GAMES_ATTEMPTS
@@ -276,7 +276,7 @@ CREATE TABLE games_attempts (
     game_attempt_time_start timestamp,
     game_attempt_time_end timestamp,
     user_id integer NOT NULL,
-    level_id numeric(4,2) NOT NULL, --should this be standard_id?
+    level_id NUMERIC(9,3) NOT NULL, --should this be standard_id?
 	score integer DEFAULT 0 NOT NULL,
 	time_warning boolean DEFAULT false NOT NULL
 );
