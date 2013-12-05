@@ -198,6 +198,7 @@ insert into games (game) values ('Dungeon_k_cc_a_2');
 insert into games (game) values ('Count_k_cc_a_3');
 insert into games (game) values ('Pad_k_oa_a_5');
 insert into games (game) values ('Pad_1_oa_c_6');
+insert into games (game) values ('Pad_2_oa_b_2');
 
 --LEVELS	
 insert into levels(id,description) values (0,'Start of Journey');       
