@@ -542,6 +542,22 @@ insert into levels(id,description) values (48,'');
 insert into games_levels (level_id,game_id) values  (48,6);
 insert into levels_standards(level_id, standard_id) values (48,48);       
 
+insert into levels(id,description) values (48.001,'');
+insert into games_levels (level_id,game_id) values  (48.001,6);
+insert into levels_standards(level_id, standard_id) values (48.001,48);       
+
+insert into levels(id,description) values (48.002,'');
+insert into games_levels (level_id,game_id) values  (48.002,6);
+insert into levels_standards(level_id, standard_id) values (48.002,48);       
+
+insert into levels(id,description) values (48.003,'');
+insert into games_levels (level_id,game_id) values  (48.003,6);
+insert into levels_standards(level_id, standard_id) values (48.003,48);       
+
+insert into levels(id,description) values (48.004,'');
+insert into games_levels (level_id,game_id) values  (48.004,6);
+insert into levels_standards(level_id, standard_id) values (48.004,48);       
+
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
 --(CONTINUED PASSWORDS).......
 

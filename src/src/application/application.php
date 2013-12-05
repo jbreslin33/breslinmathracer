@@ -196,6 +196,19 @@ var Application = new Class(
                                	this.mGame = new Pad_1_oa_c_6(APPLICATION);
 			}
                 }
+		if (this.mNextLevelGameID == 6)
+		{ 
+             		if (this.mGameName != "Pad_2_oa_b_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "Pad_2_oa_b_2";
+                               	this.mGame = new Pad_2_oa_b_2(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
