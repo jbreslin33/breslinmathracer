@@ -84,6 +84,78 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('0 + 10 =','10'));
 		//39
 
+		//0
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 - 6 =','0'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 7 =','0'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 8 =','0'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 9 =','0'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 10 =','0'));
+		//44
+	
+		//1
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 9 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 8 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 7 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 6 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 - 5 =','1'));
+		//49
+
+		//2
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 - 4 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 5 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 6 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 7 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 8 =','2'));
+		//54
+
+		//3
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 - 3 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 4 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 5 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 6 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 7 =','3'));
+		//59
+
+		//4
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 - 2 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 3 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 4 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 5 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 6 =','4'));
+		//64
+
+		//5
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 - 1 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 2 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 3 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 4 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 5 =','5'));
+		//69
+
+		//6	
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 - 1 =','6'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 2 =','6'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 3 =','6'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 4 =','6'));
+		//73
+
+		//7
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 - 1 =','7'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 2 =','7'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 3 =','7'));
+		//76
+
+		//8
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 - 1 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 2 =','8'));
+		//78
+
+		//9
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 - 1 =','9'));
+		//79
+
+
+
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
 		var newQuestionElement = 0;
@@ -244,6 +316,168 @@ Extends: Pad,
 		if (this.mApplication.mNextLevelID == 30.38)
 		{
 			newQuestionElement = 38;	
+		}		
+                if (this.mApplication.mNextLevelID == 30.39)
+		{
+			newQuestionElement = 39;	
+		}	
+               
+		if (this.mApplication.mNextLevelID == 30.40)
+		{
+			newQuestionElement = 40;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.41)
+		{
+			newQuestionElement = 41;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.42)
+		{
+			newQuestionElement = 42;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.43)
+		{
+			newQuestionElement = 43;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.44)
+		{
+			newQuestionElement = 44;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.45)
+		{
+			newQuestionElement = 45;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.46)
+		{
+			newQuestionElement = 46;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.47)
+		{
+			newQuestionElement = 47;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.48)
+		{
+			newQuestionElement = 48;	
+		}		
+                if (this.mApplication.mNextLevelID == 30.49)
+		{
+			newQuestionElement = 49;	
+		}	
+
+                if (this.mApplication.mNextLevelID == 30.50)
+		{
+			newQuestionElement = 50;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.51)
+		{
+			newQuestionElement = 51;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.52)
+		{
+			newQuestionElement = 52;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.53)
+		{
+			newQuestionElement = 53;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.54)
+		{
+			newQuestionElement = 54;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.55)
+		{
+			newQuestionElement = 55;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.56)
+		{
+			newQuestionElement = 56;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.57)
+		{
+			newQuestionElement = 57;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.58)
+		{
+			newQuestionElement = 58;	
+		}		
+                if (this.mApplication.mNextLevelID == 30.59)
+		{
+			newQuestionElement = 59;	
+		}
+                if (this.mApplication.mNextLevelID == 30.60)
+		{
+			newQuestionElement = 60;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.61)
+		{
+			newQuestionElement = 61;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.62)
+		{
+			newQuestionElement = 62;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.63)
+		{
+			newQuestionElement = 63;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.64)
+		{
+			newQuestionElement = 64;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.65)
+		{
+			newQuestionElement = 65;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.66)
+		{
+			newQuestionElement = 66;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.67)
+		{
+			newQuestionElement = 67;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.68)
+		{
+			newQuestionElement = 68;	
+		}		
+                if (this.mApplication.mNextLevelID == 30.69)
+		{
+			newQuestionElement = 69;	
+		}	
+               if (this.mApplication.mNextLevelID == 30.70)
+		{
+			newQuestionElement = 70;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.71)
+		{
+			newQuestionElement = 71;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.72)
+		{
+			newQuestionElement = 72;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.73)
+		{
+			newQuestionElement = 73;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.74)
+		{
+			newQuestionElement = 74;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.75)
+		{
+			newQuestionElement = 75;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.76)
+		{
+			newQuestionElement = 76;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.77)
+		{
+			newQuestionElement = 77;	
+		}		
+		if (this.mApplication.mNextLevelID == 30.78)
+		{
+			newQuestionElement = 78;	
 		}		
 
 		while (totalNew < totalNewGoal)
