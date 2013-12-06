@@ -34,6 +34,7 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('8 + 4 =','12'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 5 =','12'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 6 =','12'));
+		//16
 
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 11 =','12'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 10 =','12'));
@@ -742,6 +743,26 @@ if (this.mApplication.mNextLevelID == 48)
 		if (this.mApplication.mNextLevelID == 48.133)
 		{
 			newQuestionElement = 133;	
+		}		
+		if (this.mApplication.mNextLevelID == 48.134)
+		{
+			newQuestionElement = 134;	
+		}		
+		if (this.mApplication.mNextLevelID == 48.135)
+		{
+			newQuestionElement = 135;	
+		}		
+		if (this.mApplication.mNextLevelID == 48.136)
+		{
+			newQuestionElement = 136;	
+		}		
+		if (this.mApplication.mNextLevelID == 48.137)
+		{
+			newQuestionElement = 137;	
+		}		
+		if (this.mApplication.mNextLevelID == 48.138)
+		{
+			newQuestionElement = 138;	
 		}		
 		
 		
