@@ -247,9 +247,11 @@ insert into standards (standard,description) values ('3.MD.C.7d','Recognize area
 
 insert into standards (standard,description) values ('3.MD.D.8','Solve real world and mathematical problems involving perimeters of polygons, including finding the perimeter given the side lengths, finding an unknown side length, and exhibiting rectangles with the same perimeter and different areas or with the same area and different perimeters.');
 
-insert into standards (standard,description) values ('','');
+insert into standards (standard,description) values ('3.G.A.1','Understand that shapes in different categories (e.g., rhombuses, rectangles, and others) may share attributes (e.g., having four sides), and that the shared attributes can define a larger category (e.g., quadrilaterals). Recognize rhombuses, rectangles, and squares as examples of quadrilaterals, and draw examples of quadrilaterals that do not belong to any of these subcategories.');
 
---insert into standards (standard,description) values ('','');
+
+insert into standards (standard,description) values ('3.G.A.2','Partition shapes into parts with equal areas. Express the area of each part as a unit fraction of the whole. For example, partition a shape into 4 parts with equal area, and describe the area of each part as 1/4 of the area of the shape.');
+
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
