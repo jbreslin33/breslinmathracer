@@ -197,6 +197,71 @@ insert into standards (standard,description) values ('3.OA.D.9','Identify arithm
 
 insert into standards (standard,description) values ('3.NBT.A.1','Use place value understanding to round whole numbers to the nearest 10 or 100.');
 
+insert into standards (standard,description) values ('3.NBT.A.2','Fluently add and subtract within 1000 using strategies and algorithms based on place value, properties of operations, and/or the relationship between addition and subtraction.');
+
+insert into standards (standard,description) values ('3.NBT.A.3','Multiply one-digit whole numbers by multiples of 10 in the range 10–90 (e.g., 9 × 80, 5 × 60) using strategies based on place value and properties of operations.');
+
+insert into standards (standard,description) values ('3.NF.A.1','Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal parts; understand a fraction a/b as the quantity formed by a parts of size 1/b.');
+
+insert into standards (standard,description) values ('3.NF.A.2','Understand a fraction as a number on the number line; represent fractions on a number line diagram.');
+
+--insert into standards (standard,description) values ('3.NF.A.2a','Represent a fraction 1/b on a number line diagram by defining the interval from 0 to 1 as the whole and partitioning it into b equal parts. Recognize that each part has size 1/b and that the endpoint of the part based at 0 locates the number 1/b on the number line.');
+
+insert into standards (standard,description) values ('3.NF.A.2b','Represent a fraction a/b on a number line diagram by marking off a lengths 1/b from 0. Recognize that the resulting interval has size a/b and that its endpoint locates the number a/b on the number line.');
+
+insert into standards (standard,description) values ('3.NF.A.3','Explain equivalence of fractions in special cases, and compare fractions by reasoning about their size.');
+
+insert into standards (standard,description) values ('3.NF.A.3a','Understand two fractions as equivalent (equal) if they are the same size, or the same point on a number line.');
+
+insert into standards (standard,description) values ('3.NF.A.3b','Recognize and generate simple equivalent fractions, e.g., 1/2 = 2/4, 4/6 = 2/3. Explain why the fractions are equivalent, e.g., by using a visual fraction model.');
+
+insert into standards (standard,description) values ('3.NF.A.3c','Express whole numbers as fractions, and recognize fractions that are equivalent to whole numbers. Examples: Express 3 in the form 3 = 3/1; recognize that 6/1 = 6; locate 4/4 and 1 at the same point of a number line diagram.');
+
+insert into standards (standard,description) values ('3.NF.A.3d','Compare two fractions with the same numerator or the same denominator by reasoning about their size. Recognize that comparisons are valid only when the two fractions refer to the same whole. Record the results of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual fraction model.');
+
+insert into standards (standard,description) values ('3.MD.A.1','Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram.');
+
+insert into standards (standard,description) values ('3.MD.A.2','Measure and estimate liquid volumes and masses of objects using standard units of grams (g), kilograms (kg), and liters (l).1 Add, subtract, multiply, or divide to solve one-step word problems involving masses or volumes that are given in the same units, e.g., by using drawings (such as a beaker with a measurement scale) to represent the problem.');
+
+insert into standards (standard,description) values ('3.MD.B.3','Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories. Solve one- and two-step “how many more” and “how many less” problems using information presented in scaled bar graphs. For example, draw a bar graph in which each square in the bar graph might represent 5 pets.');
+
+insert into standards (standard,description) values ('3.MD.B.4','Generate measurement data by measuring lengths using rulers marked with halves and fourths of an inch. Show the data by making a line plot, where the horizontal scale is marked off in appropriate units— whole numbers, halves, or quarters.');
+
+insert into standards (standard,description) values ('3.MD.C.5','Recognize area as an attribute of plane figures and understand concepts of area measurement.');
+
+insert into standards (standard,description) values ('3.MD.C.5a','A square with side length 1 unit, called “a unit square,” is said to have “one square unit” of area, and can be used to measure area.');
+
+insert into standards (standard,description) values ('3.MD.C.5b','A plane figure which can be covered without gaps or overlaps by n unit squares is said to have an area of n square units.');
+
+insert into standards (standard,description) values ('3.MD.C.6','Measure areas by counting unit squares (square cm, square m, square in, square ft, and improvised units).');
+
+insert into standards (standard,description) values ('3.MD.C.7','Relate area to the operations of multiplication and addition.');
+
+insert into standards (standard,description) values ('3.MD.C.7a','Find the area of a rectangle with whole-number side lengths by tiling it, and show that the area is the same as would be found by multiplying the side lengths.');
+
+insert into standards (standard,description) values ('3.MD.C.7b','Multiply side lengths to find areas of rectangles with whole-number side lengths in the context of solving real world and mathematical problems, and represent whole-number products as rectangular areas in mathematical reasoning.');
+
+insert into standards (standard,description) values ('3.MD.C.7c','Use tiling to show in a concrete case that the area of a rectangle with whole-number side lengths a and b + c is the sum of a × b and a × c. Use area models to represent the distributive property in mathematical reasoning.');
+
+insert into standards (standard,description) values ('3.MD.C.7d','Recognize area as additive. Find areas of rectilinear figures by decomposing them into non-overlapping rectangles and adding the areas of the non-overlapping parts, applying this technique to solve real world problems.');
+
+insert into standards (standard,description) values ('3.MD.D.8','Solve real world and mathematical problems involving perimeters of polygons, including finding the perimeter given the side lengths, finding an unknown side length, and exhibiting rectangles with the same perimeter and different areas or with the same area and different perimeters.');
+
+insert into standards (standard,description) values ('','');
+
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
+--insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
 --insert into standards (standard,description) values ('','');
