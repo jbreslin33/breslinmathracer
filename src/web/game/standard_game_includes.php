@@ -30,5 +30,6 @@
 <script type="text/javascript" src="/src/game/pad_k_oa_a_5.php"></script>
 <script type="text/javascript" src="/src/game/pad_1_oa_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad_2_oa_b_2.php"></script>
+<script type="text/javascript" src="/src/game/pad_3_oa_c_7.php"></script>
 <script type="text/javascript" src="/src/game/gobble.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
