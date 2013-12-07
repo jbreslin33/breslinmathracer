@@ -168,6 +168,50 @@ Extends: Pad,
 		//10
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 X 10 =','100'));
 
+		//division
+	
+		//denominator 1	
+		this.mQuiz.mQuestionPoolArray.push(new Question('1 / 1 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 / 1 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 / 1 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 / 1 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 / 1 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 / 1 =','6'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 / 1 =','7'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 / 1 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 / 1 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 / 1 =','10'));
+
+		//denominator 2	
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 / 2 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 / 2 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 / 2 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 / 2 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 / 2 =','5'));
+
+		//denominator 3	
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 / 3 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 / 3 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 / 3 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 / 3 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 / 3 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 / 3 =','6'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('21 / 3 =','7'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('24 / 3 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('27 / 3 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('30 / 3 =','10'));
+
+		//denominator 4	
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 / 4 =','1'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 / 4 =','2'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 / 4 =','3'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 / 4 =','4'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 / 4 =','5'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('24 / 4 =','6'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('28 / 4 =','7'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('32 / 4 =','8'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('36 / 4 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('36 / 4 =','9'));
 
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
