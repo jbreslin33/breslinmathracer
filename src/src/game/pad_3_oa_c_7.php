@@ -323,7 +323,7 @@ Extends: Pad,
 		var newQuestionElement = 0;
 		var elementCounter     = 0;	
 		
-		for (i = 48.000; i <= 48.303; i = i + .001)
+		for (i = 81.000; i <= 81.217; i = i + .001)
 		{
 			if (this.mApplication.mNextLevelID == i)
 			{
