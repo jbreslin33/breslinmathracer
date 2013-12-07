@@ -434,10 +434,9 @@ Extends: Pad,
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
 		var newQuestionElement = 0;
-
-	
-		var elementCounter = 0;	
-		for (i = 48.000; i < 48.303; i = i + .001)
+		var elementCounter     = 0;	
+		
+		for (i = 48.000; i <= 48.303; i = i + .001)
 		{
 			if (this.mApplication.mNextLevelID == i)
 			{
@@ -446,18 +445,6 @@ Extends: Pad,
 			elementCounter++;
 		}
 
-/*
-		if (this.mApplication.mNextLevelID == 48)
-		{
-			newQuestionElement = 0;	
-		}		
-		if (this.mApplication.mNextLevelID == 48.001)
-		{
-			newQuestionElement = 1;	
-		}		
-*/
-		
-		
 		while (totalNew < totalNewGoal)
 		{	
 			//reset vars and arrays
