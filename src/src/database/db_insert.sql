@@ -877,7 +877,7 @@ insert into levels(id,description) values (30.78,'');
 insert into games_levels (level_id,game_id) values  (30.78,5);
 insert into levels_standards(level_id, standard_id) values (30.78,30);       
 
-		--L:48, G:6, SID:30 S:1.OA.C.6
+		--L:48, G:6, SID:48 S:2.OA.B.2
 insert into levels(id,description) values (48,'');
 insert into games_levels (level_id,game_id) values  (48,6);
 insert into levels_standards(level_id, standard_id) values (48,48);       
@@ -2095,6 +2095,881 @@ insert into levels(id,description) values (48.303,'');
 insert into games_levels (level_id,game_id) values  (48.303,6);
 insert into levels_standards(level_id, standard_id) values (48.303,48);  
 
+		--L:81, G:7, SID:81 S:3.OA.C.7
+insert into levels(id,description) values (81,'');
+insert into games_levels (level_id,game_id) values  (81,7);
+insert into levels_standards(level_id, standard_id) values (81,81);       
+
+insert into levels(id,description) values (81.001,'');
+insert into games_levels (level_id,game_id) values  (81.001,7);
+insert into levels_standards(level_id, standard_id) values (81.001,81);       
+
+insert into levels(id,description) values (81.002,'');
+insert into games_levels (level_id,game_id) values  (81.002,7);
+insert into levels_standards(level_id, standard_id) values (81.002,81);       
+
+insert into levels(id,description) values (81.003,'');
+insert into games_levels (level_id,game_id) values  (81.003,7);
+insert into levels_standards(level_id, standard_id) values (81.003,81);       
+
+insert into levels(id,description) values (81.004,'');
+insert into games_levels (level_id,game_id) values  (81.004,7);
+insert into levels_standards(level_id, standard_id) values (81.004,81);       
+
+insert into levels(id,description) values (81.005,'');
+insert into games_levels (level_id,game_id) values  (81.005,7);
+insert into levels_standards(level_id, standard_id) values (81.005,81);       
+
+insert into levels(id,description) values (81.006,'');
+insert into games_levels (level_id,game_id) values  (81.006,7);
+insert into levels_standards(level_id, standard_id) values (81.006,81);       
+
+insert into levels(id,description) values (81.007,'');
+insert into games_levels (level_id,game_id) values  (81.007,7);
+insert into levels_standards(level_id, standard_id) values (81.007,81);       
+
+insert into levels(id,description) values (81.008,'');
+insert into games_levels (level_id,game_id) values  (81.008,7);
+insert into levels_standards(level_id, standard_id) values (81.008,81);       
+
+insert into levels(id,description) values (81.009,'');
+insert into games_levels (level_id,game_id) values  (81.009,7);
+insert into levels_standards(level_id, standard_id) values (81.009,81);       
+
+insert into levels(id,description) values (81.010,'');
+insert into games_levels (level_id,game_id) values  (81.010,7);
+insert into levels_standards(level_id, standard_id) values (81.010,81);       
+
+insert into levels(id,description) values (81.011,'');
+insert into games_levels (level_id,game_id) values  (81.011,7);
+insert into levels_standards(level_id, standard_id) values (81.011,81);       
+
+insert into levels(id,description) values (81.012,'');
+insert into games_levels (level_id,game_id) values  (81.012,7);
+insert into levels_standards(level_id, standard_id) values (81.012,81);       
+
+insert into levels(id,description) values (81.013,'');
+insert into games_levels (level_id,game_id) values  (81.013,7);
+insert into levels_standards(level_id, standard_id) values (81.013,81);       
+
+insert into levels(id,description) values (81.014,'');
+insert into games_levels (level_id,game_id) values  (81.014,7);
+insert into levels_standards(level_id, standard_id) values (81.014,81);       
+
+insert into levels(id,description) values (81.015,'');
+insert into games_levels (level_id,game_id) values  (81.015,7);
+insert into levels_standards(level_id, standard_id) values (81.015,81);       
+
+
+insert into levels(id,description) values (81.016,'');
+insert into games_levels (level_id,game_id) values  (81.016,7);
+insert into levels_standards(level_id, standard_id) values (81.016,81);       
+
+insert into levels(id,description) values (81.017,'');
+insert into games_levels (level_id,game_id) values  (81.017,7);
+insert into levels_standards(level_id, standard_id) values (81.017,81);       
+
+insert into levels(id,description) values (81.018,'');
+insert into games_levels (level_id,game_id) values  (81.018,7);
+insert into levels_standards(level_id, standard_id) values (81.018,81);       
+
+insert into levels(id,description) values (81.019,'');
+insert into games_levels (level_id,game_id) values  (81.019,7);
+insert into levels_standards(level_id, standard_id) values (81.019,81);       
+
+insert into levels(id,description) values (81.020,'');
+insert into games_levels (level_id,game_id) values  (81.020,7);
+insert into levels_standards(level_id, standard_id) values (81.020,81);       
+
+insert into levels(id,description) values (81.021,'');
+insert into games_levels (level_id,game_id) values  (81.021,7);
+insert into levels_standards(level_id, standard_id) values (81.021,81);       
+
+insert into levels(id,description) values (81.022,'');
+insert into games_levels (level_id,game_id) values  (81.022,7);
+insert into levels_standards(level_id, standard_id) values (81.022,81);       
+
+insert into levels(id,description) values (81.023,'');
+insert into games_levels (level_id,game_id) values  (81.023,7);
+insert into levels_standards(level_id, standard_id) values (81.023,81);       
+
+insert into levels(id,description) values (81.024,'');
+insert into games_levels (level_id,game_id) values  (81.024,7);
+insert into levels_standards(level_id, standard_id) values (81.024,81);       
+
+insert into levels(id,description) values (81.025,'');
+insert into games_levels (level_id,game_id) values  (81.025,7);
+insert into levels_standards(level_id, standard_id) values (81.025,81);       
+
+insert into levels(id,description) values (81.026,'');
+insert into games_levels (level_id,game_id) values  (81.026,7);
+insert into levels_standards(level_id, standard_id) values (81.026,81);       
+
+insert into levels(id,description) values (81.027,'');
+insert into games_levels (level_id,game_id) values  (81.027,7);
+insert into levels_standards(level_id, standard_id) values (81.027,81);       
+
+insert into levels(id,description) values (81.028,'');
+insert into games_levels (level_id,game_id) values  (81.028,7);
+insert into levels_standards(level_id, standard_id) values (81.028,81);       
+
+insert into levels(id,description) values (81.029,'');
+insert into games_levels (level_id,game_id) values  (81.029,7);
+insert into levels_standards(level_id, standard_id) values (81.029,81);       
+
+insert into levels(id,description) values (81.030,'');
+insert into games_levels (level_id,game_id) values  (81.030,7);
+insert into levels_standards(level_id, standard_id) values (81.030,81);       
+
+insert into levels(id,description) values (81.031,'');
+insert into games_levels (level_id,game_id) values  (81.031,7);
+insert into levels_standards(level_id, standard_id) values (81.031,81);       
+
+insert into levels(id,description) values (81.032,'');
+insert into games_levels (level_id,game_id) values  (81.032,7);
+insert into levels_standards(level_id, standard_id) values (81.032,81);       
+
+insert into levels(id,description) values (81.033,'');
+insert into games_levels (level_id,game_id) values  (81.033,7);
+insert into levels_standards(level_id, standard_id) values (81.033,81);       
+
+insert into levels(id,description) values (81.034,'');
+insert into games_levels (level_id,game_id) values  (81.034,7);
+insert into levels_standards(level_id, standard_id) values (81.034,81);       
+
+insert into levels(id,description) values (81.035,'');
+insert into games_levels (level_id,game_id) values  (81.035,7);
+insert into levels_standards(level_id, standard_id) values (81.035,81);       
+
+insert into levels(id,description) values (81.036,'');
+insert into games_levels (level_id,game_id) values  (81.036,7);
+insert into levels_standards(level_id, standard_id) values (81.036,81);       
+
+insert into levels(id,description) values (81.037,'');
+insert into games_levels (level_id,game_id) values  (81.037,7);
+insert into levels_standards(level_id, standard_id) values (81.037,81);       
+
+insert into levels(id,description) values (81.038,'');
+insert into games_levels (level_id,game_id) values  (81.038,7);
+insert into levels_standards(level_id, standard_id) values (81.038,81);       
+
+insert into levels(id,description) values (81.039,'');
+insert into games_levels (level_id,game_id) values  (81.039,7);
+insert into levels_standards(level_id, standard_id) values (81.039,81);       
+
+insert into levels(id,description) values (81.040,'');
+insert into games_levels (level_id,game_id) values  (81.040,7);
+insert into levels_standards(level_id, standard_id) values (81.040,81);       
+
+insert into levels(id,description) values (81.041,'');
+insert into games_levels (level_id,game_id) values  (81.041,7);
+insert into levels_standards(level_id, standard_id) values (81.041,81);       
+
+insert into levels(id,description) values (81.042,'');
+insert into games_levels (level_id,game_id) values  (81.042,7);
+insert into levels_standards(level_id, standard_id) values (81.042,81);       
+
+insert into levels(id,description) values (81.043,'');
+insert into games_levels (level_id,game_id) values  (81.043,7);
+insert into levels_standards(level_id, standard_id) values (81.043,81);       
+
+insert into levels(id,description) values (81.044,'');
+insert into games_levels (level_id,game_id) values  (81.044,7);
+insert into levels_standards(level_id, standard_id) values (81.044,81);       
+
+insert into levels(id,description) values (81.045,'');
+insert into games_levels (level_id,game_id) values  (81.045,7);
+insert into levels_standards(level_id, standard_id) values (81.045,81);       
+
+insert into levels(id,description) values (81.046,'');
+insert into games_levels (level_id,game_id) values  (81.046,7);
+insert into levels_standards(level_id, standard_id) values (81.046,81);       
+
+insert into levels(id,description) values (81.047,'');
+insert into games_levels (level_id,game_id) values  (81.047,7);
+insert into levels_standards(level_id, standard_id) values (81.047,81);       
+
+insert into levels(id,description) values (81.048,'');
+insert into games_levels (level_id,game_id) values  (81.048,7);
+insert into levels_standards(level_id, standard_id) values (81.048,81);       
+
+insert into levels(id,description) values (81.049,'');
+insert into games_levels (level_id,game_id) values  (81.049,7);
+insert into levels_standards(level_id, standard_id) values (81.049,81);       
+
+insert into levels(id,description) values (81.050,'');
+insert into games_levels (level_id,game_id) values  (81.050,7);
+insert into levels_standards(level_id, standard_id) values (81.050,81);       
+
+insert into levels(id,description) values (81.051,'');
+insert into games_levels (level_id,game_id) values  (81.051,7);
+insert into levels_standards(level_id, standard_id) values (81.051,81);       
+
+insert into levels(id,description) values (81.052,'');
+insert into games_levels (level_id,game_id) values  (81.052,7);
+insert into levels_standards(level_id, standard_id) values (81.052,81);       
+
+insert into levels(id,description) values (81.053,'');
+insert into games_levels (level_id,game_id) values  (81.053,7);
+insert into levels_standards(level_id, standard_id) values (81.053,81);       
+
+insert into levels(id,description) values (81.054,'');
+insert into games_levels (level_id,game_id) values  (81.054,7);
+insert into levels_standards(level_id, standard_id) values (81.054,81);       
+
+insert into levels(id,description) values (81.055,'');
+insert into games_levels (level_id,game_id) values  (81.055,7);
+insert into levels_standards(level_id, standard_id) values (81.055,81);       
+
+insert into levels(id,description) values (81.056,'');
+insert into games_levels (level_id,game_id) values  (81.056,7);
+insert into levels_standards(level_id, standard_id) values (81.056,81);       
+
+insert into levels(id,description) values (81.057,'');
+insert into games_levels (level_id,game_id) values  (81.057,7);
+insert into levels_standards(level_id, standard_id) values (81.057,81);       
+
+insert into levels(id,description) values (81.058,'');
+insert into games_levels (level_id,game_id) values  (81.058,7);
+insert into levels_standards(level_id, standard_id) values (81.058,81);       
+
+insert into levels(id,description) values (81.059,'');
+insert into games_levels (level_id,game_id) values  (81.059,7);
+insert into levels_standards(level_id, standard_id) values (81.059,81);    
+
+insert into levels(id,description) values (81.060,'');
+insert into games_levels (level_id,game_id) values  (81.060,7);
+insert into levels_standards(level_id, standard_id) values (81.060,81);       
+
+insert into levels(id,description) values (81.061,'');
+insert into games_levels (level_id,game_id) values  (81.061,7);
+insert into levels_standards(level_id, standard_id) values (81.061,81);       
+
+insert into levels(id,description) values (81.062,'');
+insert into games_levels (level_id,game_id) values  (81.062,7);
+insert into levels_standards(level_id, standard_id) values (81.062,81);       
+
+insert into levels(id,description) values (81.063,'');
+insert into games_levels (level_id,game_id) values  (81.063,7);
+insert into levels_standards(level_id, standard_id) values (81.063,81);       
+
+insert into levels(id,description) values (81.064,'');
+insert into games_levels (level_id,game_id) values  (81.064,7);
+insert into levels_standards(level_id, standard_id) values (81.064,81);       
+
+insert into levels(id,description) values (81.065,'');
+insert into games_levels (level_id,game_id) values  (81.065,7);
+insert into levels_standards(level_id, standard_id) values (81.065,81);       
+
+insert into levels(id,description) values (81.066,'');
+insert into games_levels (level_id,game_id) values  (81.066,7);
+insert into levels_standards(level_id, standard_id) values (81.066,81);       
+
+insert into levels(id,description) values (81.067,'');
+insert into games_levels (level_id,game_id) values  (81.067,7);
+insert into levels_standards(level_id, standard_id) values (81.067,81);       
+
+insert into levels(id,description) values (81.068,'');
+insert into games_levels (level_id,game_id) values  (81.068,7);
+insert into levels_standards(level_id, standard_id) values (81.068,81);       
+
+insert into levels(id,description) values (81.069,'');
+insert into games_levels (level_id,game_id) values  (81.069,7);
+insert into levels_standards(level_id, standard_id) values (81.069,81);    
+
+insert into levels(id,description) values (81.070,'');
+insert into games_levels (level_id,game_id) values  (81.070,7);
+insert into levels_standards(level_id, standard_id) values (81.070,81);       
+
+insert into levels(id,description) values (81.071,'');
+insert into games_levels (level_id,game_id) values  (81.071,7);
+insert into levels_standards(level_id, standard_id) values (81.071,81);       
+
+insert into levels(id,description) values (81.072,'');
+insert into games_levels (level_id,game_id) values  (81.072,7);
+insert into levels_standards(level_id, standard_id) values (81.072,81);       
+
+insert into levels(id,description) values (81.073,'');
+insert into games_levels (level_id,game_id) values  (81.073,7);
+insert into levels_standards(level_id, standard_id) values (81.073,81);       
+
+insert into levels(id,description) values (81.074,'');
+insert into games_levels (level_id,game_id) values  (81.074,7);
+insert into levels_standards(level_id, standard_id) values (81.074,81);       
+
+insert into levels(id,description) values (81.075,'');
+insert into games_levels (level_id,game_id) values  (81.075,7);
+insert into levels_standards(level_id, standard_id) values (81.075,81);       
+
+insert into levels(id,description) values (81.076,'');
+insert into games_levels (level_id,game_id) values  (81.076,7);
+insert into levels_standards(level_id, standard_id) values (81.076,81);       
+
+insert into levels(id,description) values (81.077,'');
+insert into games_levels (level_id,game_id) values  (81.077,7);
+insert into levels_standards(level_id, standard_id) values (81.077,81);       
+
+insert into levels(id,description) values (81.078,'');
+insert into games_levels (level_id,game_id) values  (81.078,7);
+insert into levels_standards(level_id, standard_id) values (81.078,81);       
+
+insert into levels(id,description) values (81.079,'');
+insert into games_levels (level_id,game_id) values  (81.079,7);
+insert into levels_standards(level_id, standard_id) values (81.079,81);    
+
+insert into levels(id,description) values (81.080,'');
+insert into games_levels (level_id,game_id) values  (81.080,7);
+insert into levels_standards(level_id, standard_id) values (81.080,81);       
+
+insert into levels(id,description) values (81.081,'');
+insert into games_levels (level_id,game_id) values  (81.081,7);
+insert into levels_standards(level_id, standard_id) values (81.081,81);       
+
+insert into levels(id,description) values (81.082,'');
+insert into games_levels (level_id,game_id) values  (81.082,7);
+insert into levels_standards(level_id, standard_id) values (81.082,81);       
+
+insert into levels(id,description) values (81.083,'');
+insert into games_levels (level_id,game_id) values  (81.083,7);
+insert into levels_standards(level_id, standard_id) values (81.083,81);       
+
+insert into levels(id,description) values (81.084,'');
+insert into games_levels (level_id,game_id) values  (81.084,7);
+insert into levels_standards(level_id, standard_id) values (81.084,81);       
+
+insert into levels(id,description) values (81.085,'');
+insert into games_levels (level_id,game_id) values  (81.085,7);
+insert into levels_standards(level_id, standard_id) values (81.085,81);       
+
+insert into levels(id,description) values (81.086,'');
+insert into games_levels (level_id,game_id) values  (81.086,7);
+insert into levels_standards(level_id, standard_id) values (81.086,81);       
+
+insert into levels(id,description) values (81.087,'');
+insert into games_levels (level_id,game_id) values  (81.087,7);
+insert into levels_standards(level_id, standard_id) values (81.087,81);       
+
+insert into levels(id,description) values (81.088,'');
+insert into games_levels (level_id,game_id) values  (81.088,7);
+insert into levels_standards(level_id, standard_id) values (81.088,81);       
+
+insert into levels(id,description) values (81.089,'');
+insert into games_levels (level_id,game_id) values  (81.089,7);
+insert into levels_standards(level_id, standard_id) values (81.089,81);    
+
+insert into levels(id,description) values (81.090,'');
+insert into games_levels (level_id,game_id) values  (81.090,7);
+insert into levels_standards(level_id, standard_id) values (81.090,81);       
+
+insert into levels(id,description) values (81.091,'');
+insert into games_levels (level_id,game_id) values  (81.091,7);
+insert into levels_standards(level_id, standard_id) values (81.091,81);       
+
+insert into levels(id,description) values (81.092,'');
+insert into games_levels (level_id,game_id) values  (81.092,7);
+insert into levels_standards(level_id, standard_id) values (81.092,81);       
+
+insert into levels(id,description) values (81.093,'');
+insert into games_levels (level_id,game_id) values  (81.093,7);
+insert into levels_standards(level_id, standard_id) values (81.093,81);       
+
+insert into levels(id,description) values (81.094,'');
+insert into games_levels (level_id,game_id) values  (81.094,7);
+insert into levels_standards(level_id, standard_id) values (81.094,81);       
+
+insert into levels(id,description) values (81.095,'');
+insert into games_levels (level_id,game_id) values  (81.095,7);
+insert into levels_standards(level_id, standard_id) values (81.095,81);       
+
+insert into levels(id,description) values (81.096,'');
+insert into games_levels (level_id,game_id) values  (81.096,7);
+insert into levels_standards(level_id, standard_id) values (81.096,81);       
+
+insert into levels(id,description) values (81.097,'');
+insert into games_levels (level_id,game_id) values  (81.097,7);
+insert into levels_standards(level_id, standard_id) values (81.097,81);       
+
+insert into levels(id,description) values (81.098,'');
+insert into games_levels (level_id,game_id) values  (81.098,7);
+insert into levels_standards(level_id, standard_id) values (81.098,81);       
+
+insert into levels(id,description) values (81.099,'');
+insert into games_levels (level_id,game_id) values  (81.099,7);
+insert into levels_standards(level_id, standard_id) values (81.099,81);    
+
+insert into levels(id,description) values (81,'');
+insert into games_levels (level_id,game_id) values  (81,7);
+insert into levels_standards(level_id, standard_id) values (81,81);       
+
+insert into levels(id,description) values (81.101,'');
+insert into games_levels (level_id,game_id) values  (81.101,7);
+insert into levels_standards(level_id, standard_id) values (81.101,81);       
+
+insert into levels(id,description) values (81.102,'');
+insert into games_levels (level_id,game_id) values  (81.102,7);
+insert into levels_standards(level_id, standard_id) values (81.102,81);       
+
+insert into levels(id,description) values (81.103,'');
+insert into games_levels (level_id,game_id) values  (81.103,7);
+insert into levels_standards(level_id, standard_id) values (81.103,81);       
+
+insert into levels(id,description) values (81.104,'');
+insert into games_levels (level_id,game_id) values  (81.104,7);
+insert into levels_standards(level_id, standard_id) values (81.104,81);       
+
+insert into levels(id,description) values (81.105,'');
+insert into games_levels (level_id,game_id) values  (81.105,7);
+insert into levels_standards(level_id, standard_id) values (81.105,81);       
+
+insert into levels(id,description) values (81.106,'');
+insert into games_levels (level_id,game_id) values  (81.106,7);
+insert into levels_standards(level_id, standard_id) values (81.106,81);       
+
+insert into levels(id,description) values (81.107,'');
+insert into games_levels (level_id,game_id) values  (81.107,7);
+insert into levels_standards(level_id, standard_id) values (81.107,81);       
+
+insert into levels(id,description) values (81.108,'');
+insert into games_levels (level_id,game_id) values  (81.108,7);
+insert into levels_standards(level_id, standard_id) values (81.108,81);       
+
+insert into levels(id,description) values (81.109,'');
+insert into games_levels (level_id,game_id) values  (81.109,7);
+insert into levels_standards(level_id, standard_id) values (81.109,81);       
+
+insert into levels(id,description) values (81.110,'');
+insert into games_levels (level_id,game_id) values  (81.110,7);
+insert into levels_standards(level_id, standard_id) values (81.110,81);       
+
+insert into levels(id,description) values (81.111,'');
+insert into games_levels (level_id,game_id) values  (81.111,7);
+insert into levels_standards(level_id, standard_id) values (81.111,81);       
+
+insert into levels(id,description) values (81.112,'');
+insert into games_levels (level_id,game_id) values  (81.112,7);
+insert into levels_standards(level_id, standard_id) values (81.112,81);       
+
+insert into levels(id,description) values (81.113,'');
+insert into games_levels (level_id,game_id) values  (81.113,7);
+insert into levels_standards(level_id, standard_id) values (81.113,81);       
+
+insert into levels(id,description) values (81.114,'');
+insert into games_levels (level_id,game_id) values  (81.114,7);
+insert into levels_standards(level_id, standard_id) values (81.114,81);       
+
+insert into levels(id,description) values (81.115,'');
+insert into games_levels (level_id,game_id) values  (81.115,7);
+insert into levels_standards(level_id, standard_id) values (81.115,81);       
+
+
+insert into levels(id,description) values (81.116,'');
+insert into games_levels (level_id,game_id) values  (81.116,7);
+insert into levels_standards(level_id, standard_id) values (81.116,81);       
+
+insert into levels(id,description) values (81.117,'');
+insert into games_levels (level_id,game_id) values  (81.117,7);
+insert into levels_standards(level_id, standard_id) values (81.117,81);       
+
+insert into levels(id,description) values (81.118,'');
+insert into games_levels (level_id,game_id) values  (81.118,7);
+insert into levels_standards(level_id, standard_id) values (81.118,81);       
+
+insert into levels(id,description) values (81.119,'');
+insert into games_levels (level_id,game_id) values  (81.119,7);
+insert into levels_standards(level_id, standard_id) values (81.119,81);       
+
+insert into levels(id,description) values (81.120,'');
+insert into games_levels (level_id,game_id) values  (81.120,7);
+insert into levels_standards(level_id, standard_id) values (81.120,81);       
+
+insert into levels(id,description) values (81.121,'');
+insert into games_levels (level_id,game_id) values  (81.121,7);
+insert into levels_standards(level_id, standard_id) values (81.121,81);       
+
+insert into levels(id,description) values (81.122,'');
+insert into games_levels (level_id,game_id) values  (81.122,7);
+insert into levels_standards(level_id, standard_id) values (81.122,81);       
+
+insert into levels(id,description) values (81.123,'');
+insert into games_levels (level_id,game_id) values  (81.123,7);
+insert into levels_standards(level_id, standard_id) values (81.123,81);       
+
+insert into levels(id,description) values (81.124,'');
+insert into games_levels (level_id,game_id) values  (81.124,7);
+insert into levels_standards(level_id, standard_id) values (81.124,81);       
+
+insert into levels(id,description) values (81.125,'');
+insert into games_levels (level_id,game_id) values  (81.125,7);
+insert into levels_standards(level_id, standard_id) values (81.125,81);       
+
+insert into levels(id,description) values (81.126,'');
+insert into games_levels (level_id,game_id) values  (81.126,7);
+insert into levels_standards(level_id, standard_id) values (81.126,81);       
+
+insert into levels(id,description) values (81.127,'');
+insert into games_levels (level_id,game_id) values  (81.127,7);
+insert into levels_standards(level_id, standard_id) values (81.127,81);       
+
+insert into levels(id,description) values (81.128,'');
+insert into games_levels (level_id,game_id) values  (81.128,7);
+insert into levels_standards(level_id, standard_id) values (81.128,81);       
+
+insert into levels(id,description) values (81.129,'');
+insert into games_levels (level_id,game_id) values  (81.129,7);
+insert into levels_standards(level_id, standard_id) values (81.129,81);       
+
+insert into levels(id,description) values (81.130,'');
+insert into games_levels (level_id,game_id) values  (81.130,7);
+insert into levels_standards(level_id, standard_id) values (81.130,81);       
+
+insert into levels(id,description) values (81.131,'');
+insert into games_levels (level_id,game_id) values  (81.131,7);
+insert into levels_standards(level_id, standard_id) values (81.131,81);       
+
+insert into levels(id,description) values (81.132,'');
+insert into games_levels (level_id,game_id) values  (81.132,7);
+insert into levels_standards(level_id, standard_id) values (81.132,81);       
+
+insert into levels(id,description) values (81.133,'');
+insert into games_levels (level_id,game_id) values  (81.133,7);
+insert into levels_standards(level_id, standard_id) values (81.133,81);       
+
+insert into levels(id,description) values (81.134,'');
+insert into games_levels (level_id,game_id) values  (81.134,7);
+insert into levels_standards(level_id, standard_id) values (81.134,81);       
+
+insert into levels(id,description) values (81.135,'');
+insert into games_levels (level_id,game_id) values  (81.135,7);
+insert into levels_standards(level_id, standard_id) values (81.135,81);       
+
+insert into levels(id,description) values (81.136,'');
+insert into games_levels (level_id,game_id) values  (81.136,7);
+insert into levels_standards(level_id, standard_id) values (81.136,81);       
+
+insert into levels(id,description) values (81.137,'');
+insert into games_levels (level_id,game_id) values  (81.137,7);
+insert into levels_standards(level_id, standard_id) values (81.137,81);       
+
+insert into levels(id,description) values (81.138,'');
+insert into games_levels (level_id,game_id) values  (81.138,7);
+insert into levels_standards(level_id, standard_id) values (81.138,81);       
+
+insert into levels(id,description) values (81.139,'');
+insert into games_levels (level_id,game_id) values  (81.139,7);
+insert into levels_standards(level_id, standard_id) values (81.139,81);       
+
+insert into levels(id,description) values (81.140,'');
+insert into games_levels (level_id,game_id) values  (81.140,7);
+insert into levels_standards(level_id, standard_id) values (81.140,81);       
+
+insert into levels(id,description) values (81.141,'');
+insert into games_levels (level_id,game_id) values  (81.141,7);
+insert into levels_standards(level_id, standard_id) values (81.141,81);       
+
+insert into levels(id,description) values (81.142,'');
+insert into games_levels (level_id,game_id) values  (81.142,7);
+insert into levels_standards(level_id, standard_id) values (81.142,81);       
+
+insert into levels(id,description) values (81.143,'');
+insert into games_levels (level_id,game_id) values  (81.143,7);
+insert into levels_standards(level_id, standard_id) values (81.143,81);       
+
+insert into levels(id,description) values (81.144,'');
+insert into games_levels (level_id,game_id) values  (81.144,7);
+insert into levels_standards(level_id, standard_id) values (81.144,81);       
+
+insert into levels(id,description) values (81.145,'');
+insert into games_levels (level_id,game_id) values  (81.145,7);
+insert into levels_standards(level_id, standard_id) values (81.145,81);       
+
+insert into levels(id,description) values (81.146,'');
+insert into games_levels (level_id,game_id) values  (81.146,7);
+insert into levels_standards(level_id, standard_id) values (81.146,81);       
+
+insert into levels(id,description) values (81.147,'');
+insert into games_levels (level_id,game_id) values  (81.147,7);
+insert into levels_standards(level_id, standard_id) values (81.147,81);       
+
+insert into levels(id,description) values (81.148,'');
+insert into games_levels (level_id,game_id) values  (81.148,7);
+insert into levels_standards(level_id, standard_id) values (81.148,81);       
+
+insert into levels(id,description) values (81.149,'');
+insert into games_levels (level_id,game_id) values  (81.149,7);
+insert into levels_standards(level_id, standard_id) values (81.149,81);       
+
+insert into levels(id,description) values (81.150,'');
+insert into games_levels (level_id,game_id) values  (81.150,7);
+insert into levels_standards(level_id, standard_id) values (81.150,81);       
+
+insert into levels(id,description) values (81.151,'');
+insert into games_levels (level_id,game_id) values  (81.151,7);
+insert into levels_standards(level_id, standard_id) values (81.151,81);       
+
+insert into levels(id,description) values (81.152,'');
+insert into games_levels (level_id,game_id) values  (81.152,7);
+insert into levels_standards(level_id, standard_id) values (81.152,81);       
+
+insert into levels(id,description) values (81.153,'');
+insert into games_levels (level_id,game_id) values  (81.153,7);
+insert into levels_standards(level_id, standard_id) values (81.153,81);       
+
+insert into levels(id,description) values (81.154,'');
+insert into games_levels (level_id,game_id) values  (81.154,7);
+insert into levels_standards(level_id, standard_id) values (81.154,81);       
+
+insert into levels(id,description) values (81.155,'');
+insert into games_levels (level_id,game_id) values  (81.155,7);
+insert into levels_standards(level_id, standard_id) values (81.155,81);       
+
+insert into levels(id,description) values (81.156,'');
+insert into games_levels (level_id,game_id) values  (81.156,7);
+insert into levels_standards(level_id, standard_id) values (81.156,81);       
+
+insert into levels(id,description) values (81.157,'');
+insert into games_levels (level_id,game_id) values  (81.157,7);
+insert into levels_standards(level_id, standard_id) values (81.157,81);       
+
+insert into levels(id,description) values (81.158,'');
+insert into games_levels (level_id,game_id) values  (81.158,7);
+insert into levels_standards(level_id, standard_id) values (81.158,81);       
+
+insert into levels(id,description) values (81.159,'');
+insert into games_levels (level_id,game_id) values  (81.159,7);
+insert into levels_standards(level_id, standard_id) values (81.159,81);    
+
+insert into levels(id,description) values (81.160,'');
+insert into games_levels (level_id,game_id) values  (81.160,7);
+insert into levels_standards(level_id, standard_id) values (81.160,81);       
+
+insert into levels(id,description) values (81.161,'');
+insert into games_levels (level_id,game_id) values  (81.161,7);
+insert into levels_standards(level_id, standard_id) values (81.161,81);       
+
+insert into levels(id,description) values (81.162,'');
+insert into games_levels (level_id,game_id) values  (81.162,7);
+insert into levels_standards(level_id, standard_id) values (81.162,81);       
+
+insert into levels(id,description) values (81.163,'');
+insert into games_levels (level_id,game_id) values  (81.163,7);
+insert into levels_standards(level_id, standard_id) values (81.163,81);       
+
+insert into levels(id,description) values (81.164,'');
+insert into games_levels (level_id,game_id) values  (81.164,7);
+insert into levels_standards(level_id, standard_id) values (81.164,81);       
+
+insert into levels(id,description) values (81.165,'');
+insert into games_levels (level_id,game_id) values  (81.165,7);
+insert into levels_standards(level_id, standard_id) values (81.165,81);       
+
+insert into levels(id,description) values (81.166,'');
+insert into games_levels (level_id,game_id) values  (81.166,7);
+insert into levels_standards(level_id, standard_id) values (81.166,81);       
+
+insert into levels(id,description) values (81.167,'');
+insert into games_levels (level_id,game_id) values  (81.167,7);
+insert into levels_standards(level_id, standard_id) values (81.167,81);       
+
+insert into levels(id,description) values (81.168,'');
+insert into games_levels (level_id,game_id) values  (81.168,7);
+insert into levels_standards(level_id, standard_id) values (81.168,81);       
+
+insert into levels(id,description) values (81.169,'');
+insert into games_levels (level_id,game_id) values  (81.169,7);
+insert into levels_standards(level_id, standard_id) values (81.169,81);    
+
+insert into levels(id,description) values (81.170,'');
+insert into games_levels (level_id,game_id) values  (81.170,7);
+insert into levels_standards(level_id, standard_id) values (81.170,81);       
+
+insert into levels(id,description) values (81.171,'');
+insert into games_levels (level_id,game_id) values  (81.171,7);
+insert into levels_standards(level_id, standard_id) values (81.171,81);       
+
+insert into levels(id,description) values (81.172,'');
+insert into games_levels (level_id,game_id) values  (81.172,7);
+insert into levels_standards(level_id, standard_id) values (81.172,81);       
+
+insert into levels(id,description) values (81.173,'');
+insert into games_levels (level_id,game_id) values  (81.173,7);
+insert into levels_standards(level_id, standard_id) values (81.173,81);       
+
+insert into levels(id,description) values (81.174,'');
+insert into games_levels (level_id,game_id) values  (81.174,7);
+insert into levels_standards(level_id, standard_id) values (81.174,81);       
+
+insert into levels(id,description) values (81.175,'');
+insert into games_levels (level_id,game_id) values  (81.175,7);
+insert into levels_standards(level_id, standard_id) values (81.175,81);       
+
+insert into levels(id,description) values (81.176,'');
+insert into games_levels (level_id,game_id) values  (81.176,7);
+insert into levels_standards(level_id, standard_id) values (81.176,81);       
+
+insert into levels(id,description) values (81.177,'');
+insert into games_levels (level_id,game_id) values  (81.177,7);
+insert into levels_standards(level_id, standard_id) values (81.177,81);       
+
+insert into levels(id,description) values (81.178,'');
+insert into games_levels (level_id,game_id) values  (81.178,7);
+insert into levels_standards(level_id, standard_id) values (81.178,81);       
+
+insert into levels(id,description) values (81.179,'');
+insert into games_levels (level_id,game_id) values  (81.179,7);
+insert into levels_standards(level_id, standard_id) values (81.179,81);    
+
+insert into levels(id,description) values (81.180,'');
+insert into games_levels (level_id,game_id) values  (81.180,7);
+insert into levels_standards(level_id, standard_id) values (81.180,81);       
+
+insert into levels(id,description) values (81.181,'');
+insert into games_levels (level_id,game_id) values  (81.181,7);
+insert into levels_standards(level_id, standard_id) values (81.181,81);       
+
+insert into levels(id,description) values (81.182,'');
+insert into games_levels (level_id,game_id) values  (81.182,7);
+insert into levels_standards(level_id, standard_id) values (81.182,81);       
+
+insert into levels(id,description) values (81.183,'');
+insert into games_levels (level_id,game_id) values  (81.183,7);
+insert into levels_standards(level_id, standard_id) values (81.183,81);       
+
+insert into levels(id,description) values (81.184,'');
+insert into games_levels (level_id,game_id) values  (81.184,7);
+insert into levels_standards(level_id, standard_id) values (81.184,81);       
+
+insert into levels(id,description) values (81.185,'');
+insert into games_levels (level_id,game_id) values  (81.185,7);
+insert into levels_standards(level_id, standard_id) values (81.185,81);       
+
+insert into levels(id,description) values (81.186,'');
+insert into games_levels (level_id,game_id) values  (81.186,7);
+insert into levels_standards(level_id, standard_id) values (81.186,81);       
+
+insert into levels(id,description) values (81.187,'');
+insert into games_levels (level_id,game_id) values  (81.187,7);
+insert into levels_standards(level_id, standard_id) values (81.187,81);       
+
+insert into levels(id,description) values (81.188,'');
+insert into games_levels (level_id,game_id) values  (81.188,7);
+insert into levels_standards(level_id, standard_id) values (81.188,81);       
+
+insert into levels(id,description) values (81.189,'');
+insert into games_levels (level_id,game_id) values  (81.189,7);
+insert into levels_standards(level_id, standard_id) values (81.189,81);    
+
+insert into levels(id,description) values (81.190,'');
+insert into games_levels (level_id,game_id) values  (81.190,7);
+insert into levels_standards(level_id, standard_id) values (81.190,81);       
+
+insert into levels(id,description) values (81.191,'');
+insert into games_levels (level_id,game_id) values  (81.191,7);
+insert into levels_standards(level_id, standard_id) values (81.191,81);       
+
+insert into levels(id,description) values (81.192,'');
+insert into games_levels (level_id,game_id) values  (81.192,7);
+insert into levels_standards(level_id, standard_id) values (81.192,81);       
+
+insert into levels(id,description) values (81.193,'');
+insert into games_levels (level_id,game_id) values  (81.193,7);
+insert into levels_standards(level_id, standard_id) values (81.193,81);       
+
+insert into levels(id,description) values (81.194,'');
+insert into games_levels (level_id,game_id) values  (81.194,7);
+insert into levels_standards(level_id, standard_id) values (81.194,81);       
+
+insert into levels(id,description) values (81.195,'');
+insert into games_levels (level_id,game_id) values  (81.195,7);
+insert into levels_standards(level_id, standard_id) values (81.195,81);       
+
+insert into levels(id,description) values (81.196,'');
+insert into games_levels (level_id,game_id) values  (81.196,7);
+insert into levels_standards(level_id, standard_id) values (81.196,81);       
+
+insert into levels(id,description) values (81.197,'');
+insert into games_levels (level_id,game_id) values  (81.197,7);
+insert into levels_standards(level_id, standard_id) values (81.197,81);       
+
+insert into levels(id,description) values (81.198,'');
+insert into games_levels (level_id,game_id) values  (81.198,7);
+insert into levels_standards(level_id, standard_id) values (81.198,81);       
+
+insert into levels(id,description) values (81.199,'');
+insert into games_levels (level_id,game_id) values  (81.199,7);
+insert into levels_standards(level_id, standard_id) values (81.199,81);    
+
+insert into levels(id,description) values (81,'');
+insert into games_levels (level_id,game_id) values  (81,7);
+insert into levels_standards(level_id, standard_id) values (81,81);       
+
+insert into levels(id,description) values (81.201,'');
+insert into games_levels (level_id,game_id) values  (81.201,7);
+insert into levels_standards(level_id, standard_id) values (81.201,81);       
+
+insert into levels(id,description) values (81.202,'');
+insert into games_levels (level_id,game_id) values  (81.202,7);
+insert into levels_standards(level_id, standard_id) values (81.202,81);       
+
+insert into levels(id,description) values (81.203,'');
+insert into games_levels (level_id,game_id) values  (81.203,7);
+insert into levels_standards(level_id, standard_id) values (81.203,81);       
+
+insert into levels(id,description) values (81.204,'');
+insert into games_levels (level_id,game_id) values  (81.204,7);
+insert into levels_standards(level_id, standard_id) values (81.204,81);       
+
+insert into levels(id,description) values (81.205,'');
+insert into games_levels (level_id,game_id) values  (81.205,7);
+insert into levels_standards(level_id, standard_id) values (81.205,81);       
+
+insert into levels(id,description) values (81.206,'');
+insert into games_levels (level_id,game_id) values  (81.206,7);
+insert into levels_standards(level_id, standard_id) values (81.206,81);       
+
+insert into levels(id,description) values (81.207,'');
+insert into games_levels (level_id,game_id) values  (81.207,7);
+insert into levels_standards(level_id, standard_id) values (81.207,81);       
+
+insert into levels(id,description) values (81.208,'');
+insert into games_levels (level_id,game_id) values  (81.208,7);
+insert into levels_standards(level_id, standard_id) values (81.208,81);       
+
+insert into levels(id,description) values (81.209,'');
+insert into games_levels (level_id,game_id) values  (81.209,7);
+insert into levels_standards(level_id, standard_id) values (81.209,81);       
+
+insert into levels(id,description) values (81.210,'');
+insert into games_levels (level_id,game_id) values  (81.210,7);
+insert into levels_standards(level_id, standard_id) values (81.210,81);       
+
+insert into levels(id,description) values (81.211,'');
+insert into games_levels (level_id,game_id) values  (81.211,7);
+insert into levels_standards(level_id, standard_id) values (81.211,81);       
+
+insert into levels(id,description) values (81.212,'');
+insert into games_levels (level_id,game_id) values  (81.212,7);
+insert into levels_standards(level_id, standard_id) values (81.212,81);       
+
+insert into levels(id,description) values (81.213,'');
+insert into games_levels (level_id,game_id) values  (81.213,7);
+insert into levels_standards(level_id, standard_id) values (81.213,81);       
+
+insert into levels(id,description) values (81.214,'');
+insert into games_levels (level_id,game_id) values  (81.214,7);
+insert into levels_standards(level_id, standard_id) values (81.214,81);       
+
+insert into levels(id,description) values (81.215,'');
+insert into games_levels (level_id,game_id) values  (81.215,7);
+insert into levels_standards(level_id, standard_id) values (81.215,81);       
+
+
+insert into levels(id,description) values (81.216,'');
+insert into games_levels (level_id,game_id) values  (81.216,7);
+insert into levels_standards(level_id, standard_id) values (81.216,81);       
+
+insert into levels(id,description) values (81.217,'');
+insert into games_levels (level_id,game_id) values  (81.217,7);
+insert into levels_standards(level_id, standard_id) values (81.217,81);
 
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
