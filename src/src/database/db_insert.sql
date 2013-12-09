@@ -2498,9 +2498,9 @@ insert into levels(id,description) values (81.099,'');
 insert into games_levels (level_id,game_id) values  (81.099,7);
 insert into levels_standards(level_id, standard_id) values (81.099,81);    
 
-insert into levels(id,description) values (81,'');
-insert into games_levels (level_id,game_id) values  (81,7);
-insert into levels_standards(level_id, standard_id) values (81,81);       
+insert into levels(id,description) values (81.100,'');
+insert into games_levels (level_id,game_id) values  (81.100,7);
+insert into levels_standards(level_id, standard_id) values (81.100,81);       
 
 insert into levels(id,description) values (81.101,'');
 insert into games_levels (level_id,game_id) values  (81.101,7);
@@ -2899,9 +2899,9 @@ insert into levels(id,description) values (81.199,'');
 insert into games_levels (level_id,game_id) values  (81.199,7);
 insert into levels_standards(level_id, standard_id) values (81.199,81);    
 
-insert into levels(id,description) values (81,'');
-insert into games_levels (level_id,game_id) values  (81,7);
-insert into levels_standards(level_id, standard_id) values (81,81);       
+insert into levels(id,description) values (81.200,'');
+insert into games_levels (level_id,game_id) values  (81.200,7);
+insert into levels_standards(level_id, standard_id) values (81.200,81);       
 
 insert into levels(id,description) values (81.201,'');
 insert into games_levels (level_id,game_id) values  (81.201,7);
