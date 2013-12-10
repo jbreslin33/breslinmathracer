@@ -30,13 +30,13 @@
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
 
-<script type="text/javascript" src="/src/game/game/dungeon/dungeon.php"></script>
-<script type="text/javascript" src="/src/game/game/dungeon/states/states.php"></script>
+<script type="text/javascript" src="/src/game/dungeon/dungeon.php"></script>
+<script type="text/javascript" src="/src/game/dungeon/states/states.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/k_cc_a_2.php"></script>
 
 <script type="text/javascript" src="/src/game/pad/pad.php"></script>
-<script type="text/javascript" src="/src/game/game/pad/states/states.php"></script>
+<script type="text/javascript" src="/src/game/pad/states/states.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_a_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_oa_a_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_c_6.php"></script>
