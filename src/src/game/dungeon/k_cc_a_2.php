@@ -1,4 +1,4 @@
-var Dungeon_k_cc_a_2 = new Class(
+var k_cc_a_2 = new Class(
 {
 
 Extends: Dungeon,

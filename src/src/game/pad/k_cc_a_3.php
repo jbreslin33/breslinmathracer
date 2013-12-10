@@ -1,4 +1,4 @@
-var Count_k_cc_a_3 = new Class(
+var k_cc_a_3 = new Class(
 {
 
 Extends: Pad,
