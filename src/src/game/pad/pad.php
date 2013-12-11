@@ -405,7 +405,7 @@ Extends: Game,
   		//just wait here until what???
         	if (this.mApplication.mAdvanceToNextLevelConfirmation)
         	{
-                	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
+                	this.mPadStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
         	}
         },
 

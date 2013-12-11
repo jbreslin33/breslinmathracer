@@ -266,7 +266,7 @@ execute: function(game)
 {
         if (game.mQuiz.isQuizComplete())
         {
-		game.mStateMachine.changeState(game.mLEVEL_PASSED);
+		game.mPadStateMachine.changeState(game.mLEVEL_PASSED);
         }
 	else
 	{
