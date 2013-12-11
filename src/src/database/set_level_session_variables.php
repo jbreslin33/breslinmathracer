@@ -56,13 +56,11 @@ function setLevelSessionVariables($conn,$user_id)
         }
 
   	//---------------- GET next level id and level and game_id using last_level_id----------------------------------------------
-	//$query = "select games.id from games join games_levels on games.id = games_levels.game_id where games_levels.level_id = ";
-        //$query = "select id from levels where id > ";
 
 	$query = "select game_id, level_id from games_levels where level_id > ";
 
         $query .= $_SESSION["last_level"];
-        $query .= " order by id ASC LIMIT 1;";
+        $query .= " order by level_id ASC LIMIT 1;";
 
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
