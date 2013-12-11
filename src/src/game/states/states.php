@@ -180,17 +180,17 @@ log: function(msg)
 
 enter: function(game)
 {
-	game.levelPassedEnter();
+	game.showLevelPassedEnter();
 },
 
 execute: function(game)
 {
-	game.levelPassedExecute();
+	game.showLevelPassedExecute();
 },
 
 exit: function(game)
 {
-	game.levelPassedExit();
+	game.showLevelPassedExit();
 }
 
 });

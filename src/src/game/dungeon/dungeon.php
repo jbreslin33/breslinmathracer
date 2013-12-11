@@ -180,15 +180,15 @@ Extends: Game,
   
 	levelPassedEnter: function()
         {
-	 	mApplication.mLevelCompleted = true;
+	 	this.mApplication.mLevelCompleted = true;
         },
 
         levelPassedExecute: function()
         {
  		//just wait here until what???
-        	if (mApplication.mAdvanceToNextLevelConfirmation)
+        	if (this.mApplication.mAdvanceToNextLevelConfirmation)
         	{
-                	mDungeonStateMachine.changeState(mSHOW_LEVEL_PASSED_DUNGEON);
+                	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
         	}
         },
 
@@ -199,85 +199,85 @@ Extends: Game,
 
         showLevelPassedEnter: function()
         {
-        	mShowLevelPassedStartTime = mTimeSinceEpoch;
+        	this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
         	//correctAnswer
-        	mCorrectAnswerBarHeader.mMesh.value = '';
-        	mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
-        	mCorrectAnswerBar.mMesh.value = '';
-        	mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
-        	showCorrectAnswerBar();
+        	this.mCorrectAnswerBarHeader.mMesh.value = '';
+        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        	this.mCorrectAnswerBar.mMesh.value = '';
+        	this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+        	this.showCorrectAnswerBar();
 
-        	mVictoryShape_0.setVisibility(true);
-        	mVictoryShape_0.setPosition(50,300);
-        	mVictoryShape_1.setVisibility(true);
-        	mVictoryShape_1.setPosition(100,300);
-        	mVictoryShape_2.setVisibility(true);
-        	mVictoryShape_2.setPosition(150,300);
-        	mVictoryShape_3.setVisibility(true);
-        	mVictoryShape_3.setPosition(200,300);
-        	mVictoryShape_4.setVisibility(true);
-        	mVictoryShape_4.setPosition(250,300);
-        	mVictoryShape_5.setVisibility(true);
-        	mVictoryShape_5.setPosition(300,300);
-        	mVictoryShape_6.setVisibility(true);
-       	 	mVictoryShape_6.setPosition(350,300);
-        	mVictoryShape_7.setVisibility(true);
-        	mVictoryShape_7.setPosition(400,300);
-        	mVictoryShape_8.setVisibility(true);
-        	mVictoryShape_8.setPosition(450,300);
-        	mVictoryShape_9.setVisibility(true);
-        	mVictoryShape_9.setPosition(500,300);
-       		mVictoryShape_10.setVisibility(true);
-        	mVictoryShape_10.setPosition(550,300);
-        	mVictoryShape_11.setVisibility(true);
-        	mVictoryShape_11.setPosition(600,300);
-        	mVictoryShape_12.setVisibility(true);
-        	mVictoryShape_12.setPosition(650,300);
-        	mVictoryShape_13.setVisibility(true);
-        	mVictoryShape_13.setPosition(700,300);
+        	this.mVictoryShape_0.setVisibility(true);
+        	this.mVictoryShape_0.setPosition(50,300);
+        	this.mVictoryShape_1.setVisibility(true);
+        	this.mVictoryShape_1.setPosition(100,300);
+        	this.mVictoryShape_2.setVisibility(true);
+        	this.mVictoryShape_2.setPosition(150,300);
+        	this.mVictoryShape_3.setVisibility(true);
+        	this.mVictoryShape_3.setPosition(200,300);
+        	this.mVictoryShape_4.setVisibility(true);
+        	this.mVictoryShape_4.setPosition(250,300);
+        	this.mVictoryShape_5.setVisibility(true);
+        	this.mVictoryShape_5.setPosition(300,300);
+        	this.mVictoryShape_6.setVisibility(true);
+       	 	this.mVictoryShape_6.setPosition(350,300);
+        	this.mVictoryShape_7.setVisibility(true);
+        	this.mVictoryShape_7.setPosition(400,300);
+        	this.mVictoryShape_8.setVisibility(true);
+        	this.mVictoryShape_8.setPosition(450,300);
+        	this.mVictoryShape_9.setVisibility(true);
+        	this.mVictoryShape_9.setPosition(500,300);
+       		this.mVictoryShape_10.setVisibility(true);
+        	this.mVictoryShape_10.setPosition(550,300);
+        	this.mVictoryShape_11.setVisibility(true);
+        	this.mVictoryShape_11.setPosition(600,300);
+        	this.mVictoryShape_12.setVisibility(true);
+        	this.mVictoryShape_12.setPosition(650,300);
+        	this.mVictoryShape_13.setVisibility(true);
+        	this.mVictoryShape_13.setPosition(700,300);
         },
         showLevelPassedExecute: function()
         {
-    		if (mTimeSinceEpoch > mShowLevelPassedStartTime + mShowLevelPassedThresholdTime)
+    		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
         	{
-                	mDungeonStateMachine.changeState(mINIT_DUNGEON_GAME);
+                	this.mDungeonStateMachine.changeState(this.mINIT_DUNGEON_GAME);
         	}
         },
         showLevelPassedExit: function()
         {
-        	hideCorrectAnswerBar();
-        	mCorrectAnswerBarHeader.mMesh.value = '';
-        	mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-        	mCorrectAnswerBar.mMesh.value = '';
-        	mCorrectAnswerBar.mMesh.innerHTML = '';
-        	mVictoryShape_0.setVisibility(false);
-        	mVictoryShape_0.setPosition(50,300);
-        	mVictoryShape_1.setVisibility(false);
-        	mVictoryShape_1.setPosition(100,300);
-        	mVictoryShape_2.setVisibility(false);
-        	mVictoryShape_2.setPosition(150,300);
-        	mVictoryShape_3.setVisibility(false);
-        	mVictoryShape_3.setPosition(200,300);
-        	mVictoryShape_4.setVisibility(false);
-        	mVictoryShape_4.setPosition(250,300);
-        	mVictoryShape_5.setVisibility(false);
-        	mVictoryShape_5.setPosition(300,300);
-        	mVictoryShape_6.setVisibility(false);
-        	mVictoryShape_6.setPosition(350,300);
-        	mVictoryShape_7.setVisibility(false);
-        	mVictoryShape_7.setPosition(400,300);
-        	mVictoryShape_8.setVisibility(false);
-        	mVictoryShape_8.setPosition(450,300);
-        	mVictoryShape_9.setVisibility(false);
-        	mVictoryShape_9.setPosition(500,300);
-        	mVictoryShape_10.setVisibility(false);
-        	mVictoryShape_10.setPosition(550,300);
-        	mVictoryShape_11.setVisibility(false);
-        	mVictoryShape_11.setPosition(600,300);
-        	mVictoryShape_12.setVisibility(false);
-        	mVictoryShape_12.setPosition(650,300);
-        	mVictoryShape_13.setVisibility(false);
-        	mVictoryShape_13.setPosition(700,300);
+        	this.hideCorrectAnswerBar();
+        	this.mCorrectAnswerBarHeader.mMesh.value = '';
+        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        	this.mCorrectAnswerBar.mMesh.value = '';
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '';
+        	this.mVictoryShape_0.setVisibility(false);
+        	this.mVictoryShape_0.setPosition(50,300);
+        	this.mVictoryShape_1.setVisibility(false);
+        	this.mVictoryShape_1.setPosition(100,300);
+        	this.mVictoryShape_2.setVisibility(false);
+        	this.mVictoryShape_2.setPosition(150,300);
+        	this.mVictoryShape_3.setVisibility(false);
+        	this.mVictoryShape_3.setPosition(200,300);
+        	this.mVictoryShape_4.setVisibility(false);
+        	this.mVictoryShape_4.setPosition(250,300);
+        	this.mVictoryShape_5.setVisibility(false);
+        	this.mVictoryShape_5.setPosition(300,300);
+        	this.mVictoryShape_6.setVisibility(false);
+        	this.mVictoryShape_6.setPosition(350,300);
+        	this.mVictoryShape_7.setVisibility(false);
+        	this.mVictoryShape_7.setPosition(400,300);
+        	this.mVictoryShape_8.setVisibility(false);
+        	this.mVictoryShape_8.setPosition(450,300);
+        	this.mVictoryShape_9.setVisibility(false);
+        	this.mVictoryShape_9.setPosition(500,300);
+        	this.mVictoryShape_10.setVisibility(false);
+        	this.mVictoryShape_10.setPosition(550,300);
+        	this.mVictoryShape_11.setVisibility(false);
+        	this.mVictoryShape_11.setPosition(600,300);
+        	this.mVictoryShape_12.setVisibility(false);
+        	this.mVictoryShape_12.setPosition(650,300);
+        	this.mVictoryShape_13.setVisibility(false);
+        	this.mVictoryShape_13.setPosition(700,300);
         }
 });
