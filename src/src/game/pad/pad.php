@@ -66,8 +66,6 @@ Extends: Game,
 	{
 		this.parent();
 		
-		this.log('reset in pad');
-
 		this.createQuestions();
 		this.createWorld();
   
