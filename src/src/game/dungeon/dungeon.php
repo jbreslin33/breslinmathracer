@@ -188,7 +188,7 @@ Extends: Game,
  		//just wait here until what???
         	if (this.mApplication.mAdvanceToNextLevelConfirmation)
         	{
-                	this.mPadStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
+                	this.mDungeonStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
         	}
         },
 
