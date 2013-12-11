@@ -127,7 +127,7 @@ execute: function(game)
 	
 	if (game.mDoor.mEnteredDoor == true)
 	{
-        	game.mDungeonStateMachine.changeState(game.mLEVEL_PASSED_DUNGEON);
+        	game.mDungeonStateMachine.changeState(game.mLEVEL_PASSED);
 	}
 
 	if (game.mKilled == true)
