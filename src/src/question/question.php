@@ -7,6 +7,24 @@ var Question = new Class(
 
 		//answer
 		this.mAnswer = answer;
+		
+		//showAnswer
+		this.mShowAnswer = '';
+
+		//is solved
+		this.mSolved = false;
+        },
+        
+	initialize: function(question,answer,showAnswer)
+        {
+		//question
+		this.mQuestion = question;
+
+		//answer
+		this.mAnswer = answer;
+
+		//showAnswer
+		this.mShowAnswer = showAnswer;
 
 		//is solved
 		this.mSolved = false;
@@ -16,6 +34,14 @@ var Question = new Class(
 	{
 		this.mQuestion = question;
 		this.mAnswer = answer;
+		this.mSolved = false;
+	},
+	
+	set: function(question,answer,showAnswer)
+	{
+		this.mQuestion = question;
+		this.mAnswer = answer;
+		this.mShowAnswer = showAnswer;
 		this.mSolved = false;
 	},
 
@@ -28,6 +54,11 @@ var Question = new Class(
 	{
 		this.mAnswer = answer;
 	},	
+	
+	setShowAnswer: function(showAnswer)
+	{
+		this.mShowAnswer = answer;
+	},
 
 	setSolved: function(b)
 	{
@@ -47,8 +78,10 @@ var Question = new Class(
 	getAnswer: function()
 	{
 		return this.mAnswer;
+	},
+	
+	getShowAnswer: function()
+	{
+		return this.mShowAnswer;
 	}
-
 });
-
-

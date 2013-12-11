@@ -14,9 +14,9 @@ Extends: Pad,
  		this.parent();
 
 		//add
-                this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('8 + ? = 10','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('7 + ? = 10','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1','9 + 1 = 10'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + ? = 10','2','8 + 2 = 10'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('7 + ? = 10','3','7 + 3 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('6 + ? = 10','4'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('5 + ? = 10','5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('4 + ? = 10','6'));
