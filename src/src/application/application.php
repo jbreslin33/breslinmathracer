@@ -132,94 +132,94 @@ var Application = new Class(
 		}
 		if (this.mNextLevelGameID == 1)
 		{ 
-             		if (this.mGameName != "Dungeon_k_cc_a_1")
+             		if (this.mGameName != "k_cc_a_1")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Dungeon_k_cc_a_1";
-                               	this.mGame = new Dungeon_k_cc_a_1(APPLICATION);
+                               	this.mGameName = "k_cc_a_1";
+                               	this.mGame = new k_cc_a_1(APPLICATION);
 			}
                 }
 		if (this.mNextLevelGameID == 2)
 		{ 
-             		if (this.mGameName != "Dungeon_k_cc_a_2")
+             		if (this.mGameName != "k_cc_a_2")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Dungeon_k_cc_a_2";
-                               	this.mGame = new Dungeon_k_cc_a_2(APPLICATION);
+                               	this.mGameName = "k_cc_a_2";
+                               	this.mGame = new k_cc_a_2(APPLICATION);
 			}
                 }
 		if (this.mNextLevelGameID == 3)
 		{ 
-             		if (this.mGameName != "Count_k_cc_a_3")
+             		if (this.mGameName != "k_cc_a_3")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Count_k_cc_a_3";
-                               	this.mGame = new Count_k_cc_a_3(APPLICATION);
+                               	this.mGameName = "k_cc_a_3";
+                               	this.mGame = new k_cc_a_3(APPLICATION);
 			}
                 }
 		
 		if (this.mNextLevelGameID == 4)
 		{ 
-             		if (this.mGameName != "Pad_k_oa_a_5")
+             		if (this.mGameName != "k_oa_a_5")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Pad_k_oa_a_5";
-                               	this.mGame = new Pad_k_oa_a_5(APPLICATION);
+                               	this.mGameName = "k_oa_a_5";
+                               	this.mGame = new k_oa_a_5(APPLICATION);
 			}
                 }
 		if (this.mNextLevelGameID == 5)
 		{ 
-             		if (this.mGameName != "Pad_1_oa_c_6")
+             		if (this.mGameName != "g1_oa_c_6")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Pad_1_oa_c_6";
-                               	this.mGame = new Pad_1_oa_c_6(APPLICATION);
+                               	this.mGameName = "g1_oa_c_6";
+                               	this.mGame = new g1_oa_c_6(APPLICATION);
 			}
                 }
 		if (this.mNextLevelGameID == 6)
 		{ 
-             		if (this.mGameName != "Pad_2_oa_b_2")
+             		if (this.mGameName != "g2_oa_b_2")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Pad_2_oa_b_2";
-                               	this.mGame = new Pad_2_oa_b_2(APPLICATION);
+                               	this.mGameName = "g2_oa_b_2";
+                               	this.mGame = new g2_oa_b_2(APPLICATION);
 			}	
 		}
 		if (this.mNextLevelGameID == 7)
 		{ 
-             		if (this.mGameName != "Pad_3_oa_c_7")
+             		if (this.mGameName != "g3_oa_c_7")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "Pad_3_oa_c_7";
-                               	this.mGame = new Pad_3_oa_c_7(APPLICATION);
+                               	this.mGameName = "g3_oa_c_7";
+                               	this.mGame = new g3_oa_c_7(APPLICATION);
 			}	
 		}
 	},
