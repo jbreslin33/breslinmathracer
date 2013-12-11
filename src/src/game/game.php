@@ -10,6 +10,7 @@ var Game = new Class(
 
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
+                this.mUserAnswer = '';
 	
 		/********* SHAPES *******************/ 
 		//shape Array
@@ -54,6 +55,22 @@ var Game = new Class(
                 this.mLastTimeSinceEpoch = 0;
                 this.mDeltaTime = 0;
 		this.mGameTime = 0;
+
+                //answers
+                this.mThresholdTime = 3000;
+                this.mAnswerTime = 0;
+                this.mQuestionStartTime = this.mTimeSinceEpoch;
+                this.mOutOfTime = false;
+
+		//clock shape
+                this.mClockShape = 0;
+
+                //memorize shape
+                this.mMemorizeShape = 0;
+
+                //show correct
+                this.mCorrectAnswerStartTime = 0;
+                this.mCorrectAnswerThresholdTime = 10000;
 
 		/********* BOUNDS *******************/ 
                 //create bounds

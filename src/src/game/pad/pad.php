@@ -14,27 +14,7 @@ Extends: Game,
 
 		this.mScoreNeeded = 10;
 
-		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
-
-		//clock shape
-		this.mClockShape = 0;
-		
-		//memorize shape
-		this.mMemorizeShape = 0;
-
-		//answers 
-                this.mThresholdTime = 3000;
-                this.mAnswerTime = 0;
-                this.mQuestionStartTime = this.mTimeSinceEpoch;
-                this.mOutOfTime = false;
-
-		//show correct 
-		this.mCorrectAnswerStartTime = 0;
-		this.mCorrectAnswerThresholdTime = 10000;
-
-		//quiz	
-                this.mUserAnswer = '';
 
 		//number pad
 		this.mNumberPadArray = new Array();
