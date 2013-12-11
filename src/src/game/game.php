@@ -545,6 +545,43 @@ var Game = new Class(
 		
 	showLevelPassedEnter: function()
 	{
+ 		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
+
+                //correctAnswer
+                this.mCorrectAnswerBarHeader.mMesh.value = '';
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+                this.mCorrectAnswerBar.mMesh.value = '';
+                this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+                this.showCorrectAnswerBar();
+
+                this.mVictoryShape_0.setVisibility(true);
+                this.mVictoryShape_0.setPosition(50,300);
+                this.mVictoryShape_1.setVisibility(true);
+                this.mVictoryShape_1.setPosition(100,300);
+                this.mVictoryShape_2.setVisibility(true);
+                this.mVictoryShape_2.setPosition(150,300);
+                this.mVictoryShape_3.setVisibility(true);
+                this.mVictoryShape_3.setPosition(200,300);
+                this.mVictoryShape_4.setVisibility(true);
+                this.mVictoryShape_4.setPosition(250,300);
+                this.mVictoryShape_5.setVisibility(true);
+                this.mVictoryShape_5.setPosition(300,300);
+                this.mVictoryShape_6.setVisibility(true);
+                this.mVictoryShape_6.setPosition(350,300);
+                this.mVictoryShape_7.setVisibility(true);
+                this.mVictoryShape_7.setPosition(400,300);
+                this.mVictoryShape_8.setVisibility(true);
+                this.mVictoryShape_8.setPosition(450,300);
+                this.mVictoryShape_9.setVisibility(true);
+                this.mVictoryShape_9.setPosition(500,300);
+                this.mVictoryShape_10.setVisibility(true);
+                this.mVictoryShape_10.setPosition(550,300);
+                this.mVictoryShape_11.setVisibility(true);
+                this.mVictoryShape_11.setPosition(600,300);
+                this.mVictoryShape_12.setVisibility(true);
+                this.mVictoryShape_12.setPosition(650,300);
+                this.mVictoryShape_13.setVisibility(true);
+                this.mVictoryShape_13.setPosition(700,300);
 
 	},
 	showLevelPassedExecute: function()
@@ -553,7 +590,38 @@ var Game = new Class(
 	},
 	showLevelPassedExit: function()
 	{
-
+		this.hideCorrectAnswerBar();
+                this.mCorrectAnswerBarHeader.mMesh.value = '';
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+                this.mCorrectAnswerBar.mMesh.value = '';
+                this.mCorrectAnswerBar.mMesh.innerHTML = '';
+                this.mVictoryShape_0.setVisibility(false);
+                this.mVictoryShape_0.setPosition(50,300);
+                this.mVictoryShape_1.setVisibility(false);
+                this.mVictoryShape_1.setPosition(100,300);
+                this.mVictoryShape_2.setVisibility(false);
+                this.mVictoryShape_2.setPosition(150,300);
+                this.mVictoryShape_3.setVisibility(false);
+                this.mVictoryShape_3.setPosition(200,300);
+                this.mVictoryShape_4.setVisibility(false);
+                this.mVictoryShape_4.setPosition(250,300);
+                this.mVictoryShape_5.setVisibility(false);
+                this.mVictoryShape_5.setPosition(300,300);
+                this.mVictoryShape_6.setVisibility(false);
+                this.mVictoryShape_6.setPosition(350,300);
+                this.mVictoryShape_7.setVisibility(false);
+                this.mVictoryShape_7.setPosition(400,300);
+                this.mVictoryShape_8.setVisibility(false);
+                this.mVictoryShape_8.setPosition(450,300);
+                this.mVictoryShape_9.setVisibility(false);
+                this.mVictoryShape_9.setPosition(500,300);
+                this.mVictoryShape_10.setVisibility(false);
+                this.mVictoryShape_10.setPosition(550,300);
+                this.mVictoryShape_11.setVisibility(false);
+                this.mVictoryShape_11.setPosition(600,300);
+                this.mVictoryShape_12.setVisibility(false);
+                this.mVictoryShape_12.setPosition(650,300);
+                this.mVictoryShape_13.setVisibility(false);
+                this.mVictoryShape_13.setPosition(700,300);
 	}
-
 });
