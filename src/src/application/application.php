@@ -172,19 +172,6 @@ var Application = new Class(
 		
 		if (this.mNextLevelGameID == 4)
 		{ 
-             		if (this.mGameName != "k_oa_a_4")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "k_oa_a_4";
-                               	this.mGame = new k_oa_a_4(APPLICATION);
-			}
-		}
-		if (this.mNextLevelGameID == 5)
-		{ 
              		if (this.mGameName != "k_oa_a_5")
                        	{
 				if (this.mGame)
@@ -196,7 +183,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_5(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 6)
+		if (this.mNextLevelGameID == 5)
 		{ 
              		if (this.mGameName != "g1_oa_c_6")
                        	{
@@ -209,7 +196,7 @@ var Application = new Class(
                                	this.mGame = new g1_oa_c_6(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 7)
+		if (this.mNextLevelGameID == 6)
 		{ 
              		if (this.mGameName != "g2_oa_b_2")
                        	{
@@ -222,7 +209,7 @@ var Application = new Class(
                                	this.mGame = new g2_oa_b_2(APPLICATION);
 			}	
 		}
-		if (this.mNextLevelGameID == 8)
+		if (this.mNextLevelGameID == 7)
 		{ 
              		if (this.mGameName != "g3_oa_c_7")
                        	{
@@ -234,6 +221,19 @@ var Application = new Class(
                                	this.mGameName = "g3_oa_c_7";
                                	this.mGame = new g3_oa_c_7(APPLICATION);
 			}	
+		}
+		if (this.mNextLevelGameID == 8)
+		{ 
+             		if (this.mGameName != "k_oa_a_4")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "k_oa_a_4";
+                               	this.mGame = new k_oa_a_4(APPLICATION);
+			}
 		}
 	},
 	

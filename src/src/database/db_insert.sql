@@ -298,11 +298,11 @@ insert into standards (standard,description) values ('3.G.A.2','Partition shapes
 insert into games (game) values ('k_cc_a_1');
 insert into games (game) values ('k_cc_a_2');
 insert into games (game) values ('k_cc_a_3');
-insert into games (game) values ('k_oa_a_4');
 insert into games (game) values ('k_oa_a_5');
 insert into games (game) values ('1_oa_c_6');
 insert into games (game) values ('2_oa_b_2');
 insert into games (game) values ('3_oa_c_7');
+insert into games (game) values ('k_oa_a_4');
 
 --LEVELS	
 insert into levels(id,description) values (0,'Start of Journey');       
@@ -382,13 +382,20 @@ insert into levels(id,description) values (2.05,'');
 insert into games_levels (level_id,game_id) values  (2.05,2); 
 insert into levels_standards(level_id, standard_id) values (2.05,2);       
 
-		--L:3, G:3, SID:3 S:K.CC.A.3 
+
+		--Level:3, GameID:3, SID:3 S:K.CC.A.3 
 insert into levels(id,description) values (3,'K_CC_A_3'); 
 insert into games_levels (level_id,game_id) values  (3,3); 
 insert into levels_standards(level_id, standard_id) values (3,3);       
 
 
-		--L:3, G:3, SID:14 S:K.OA.A.5
+		--Level:13, GameID:8, SID:13 S:K.OA.A.4
+insert into levels(id,description) values (13,'');
+insert into games_levels (level_id,game_id) values  (13,8);
+insert into levels_standards(level_id, standard_id) values (13,13);       
+
+
+		--Level:14, GameID:4, SID:14 S:K.OA.A.5
 insert into levels(id,description) values (14,'');
 insert into games_levels (level_id,game_id) values  (14,4);
 insert into levels_standards(level_id, standard_id) values (14,14);       
