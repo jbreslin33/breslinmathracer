@@ -38,6 +38,7 @@
 <script type="text/javascript" src="/src/game/pad/pad.php"></script>
 <script type="text/javascript" src="/src/game/pad/states/states.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_a_3.php"></script>
+<script type="text/javascript" src="/src/game/pad/k_oa_a_4.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_oa_a_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_oa_b_2.php"></script>
