@@ -77,5 +77,12 @@ Extends: Pad,
 				}
 			}
 		}
-	}
+	},
+ 
+	showCorrectAnswer: function()
+        {
+		this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        }
+
 });
