@@ -129,3 +129,69 @@ exit: function(game)
 }
 });
 
+var LEVEL_PASSED = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	game.levelPassedEnter();
+},
+
+execute: function(game)
+{
+	game.levelPassedExecute();
+},
+
+exit: function(game)
+{
+	game.levelPassedExit();
+}
+
+});
+
+var SHOW_LEVEL_PASSED = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+log: function(msg)
+{
+        setTimeout(function()
+        {
+                throw new Error(msg);
+        }, 0);
+},
+
+enter: function(game)
+{
+	game.levelPassedEnter();
+},
+
+execute: function(game)
+{
+	game.levelPassedExecute();
+},
+
+exit: function(game)
+{
+	game.levelPassedExit();
+}
+
+});
+

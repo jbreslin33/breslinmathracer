@@ -51,8 +51,6 @@ Extends: Game,
                 this.mCORRECT_ANSWER_PAD_GAME = new CORRECT_ANSWER_PAD_GAME(this);
                 this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
                 this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
-                this.mLEVEL_PASSED_PAD = new LEVEL_PASSED_PAD(this);
-                this.mSHOW_LEVEL_PASSED_PAD = new SHOW_LEVEL_PASSED_PAD(this);
 
                 this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
                 this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
@@ -373,5 +371,131 @@ Extends: Game,
                		this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumEnter); 
 		}
-	}
+	},
+
+  	levelPassedEnter: function()
+        {
+        	mApplication.mLevelCompleted = true;
+
+        	hideNumberPad();
+
+        	//correctAnswer
+        	hideCorrectAnswerBar();
+        	mCorrectAnswerBarHeader.mMesh.value = '';
+        	mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+       	 	mCorrectAnswerBar.mMesh.value = '';
+        	mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+
+        	//number pad
+        	mNumAnswer.mMesh.value = '';
+        	mNumAnswer.mMesh.innerHTML = '';
+
+        	mNumQuestion.mMesh.value = '';
+        	mNumQuestion.mMesh.innerHTML = '';
+
+        	//user answer
+        	mUserAnswer = '';
+
+        	//times
+        	mQuestionStartTime = mTimeSinceEpoch; //restart timer
+        },
+
+        levelPassedExecute: function()
+        {
+  		//just wait here until what???
+        	if (mApplication.mAdvanceToNextLevelConfirmation)
+        	{
+                	mPadStateMachine.changeState(mSHOW_LEVEL_PASSED_PAD);
+        	}
+        },
+
+        levelPassedExit: function()
+        {
+
+        },
+
+        showLevelPassedEnter: function()
+        {
+ 		//this.log('SHOW_LEVEL_PASSED_PAD');
+        	mShowLevelPassedStartTime = mTimeSinceEpoch;
+
+        	//correctAnswer
+        	mCorrectAnswerBarHeader.mMesh.value = '';
+        	mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        	mCorrectAnswerBar.mMesh.value = '';
+        	mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+        	showCorrectAnswerBar();
+
+        	mVictoryShape_0.setVisibility(true);
+        	mVictoryShape_0.setPosition(50,300);
+        	mVictoryShape_1.setVisibility(true);
+        	mVictoryShape_1.setPosition(100,300);
+        	mVictoryShape_2.setVisibility(true);
+        	mVictoryShape_2.setPosition(150,300);
+        	mVictoryShape_3.setVisibility(true);
+        	mVictoryShape_3.setPosition(200,300);
+        	mVictoryShape_4.setVisibility(true);
+        	mVictoryShape_4.setPosition(250,300);
+        	mVictoryShape_5.setVisibility(true);
+        	mVictoryShape_5.setPosition(300,300);
+        	mVictoryShape_6.setVisibility(true);
+        	mVictoryShape_6.setPosition(350,300);
+        	mVictoryShape_7.setVisibility(true);
+        	mVictoryShape_7.setPosition(400,300);
+        	mVictoryShape_8.setVisibility(true);
+        	mVictoryShape_8.setPosition(450,300);
+        	mVictoryShape_9.setVisibility(true);
+        	mVictoryShape_9.setPosition(500,300);
+       		mVictoryShape_10.setVisibility(true);
+        	mVictoryShape_10.setPosition(550,300);
+        	mVictoryShape_11.setVisibility(true);
+        	mVictoryShape_11.setPosition(600,300);
+        	mVictoryShape_12.setVisibility(true);
+        	mVictoryShape_12.setPosition(650,300);
+        	mVictoryShape_13.setVisibility(true);
+        	mVictoryShape_13.setPosition(700,300);
+        },
+        showLevelPassedExecute: function()
+        {
+   		if (mTimeSinceEpoch > mShowLevelPassedStartTime + mShowLevelPassedThresholdTime)
+        	{
+                	mPadStateMachine.changeState(mINIT_PAD_GAME);
+        	}
+        },
+        showLevelPassedExit: function()
+        {
+ 		hideCorrectAnswerBar();
+        	mCorrectAnswerBarHeader.mMesh.value = '';
+        	mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        	mCorrectAnswerBar.mMesh.value = '';
+        	mCorrectAnswerBar.mMesh.innerHTML = '';
+        	mVictoryShape_0.setVisibility(false);
+        	mVictoryShape_0.setPosition(50,300);
+        	mVictoryShape_1.setVisibility(false);
+        	mVictoryShape_1.setPosition(100,300);
+        	mVictoryShape_2.setVisibility(false);
+        	mVictoryShape_2.setPosition(150,300);
+        	mVictoryShape_3.setVisibility(false);
+        	mVictoryShape_3.setPosition(200,300);
+        	mVictoryShape_4.setVisibility(false);
+        	mVictoryShape_4.setPosition(250,300);
+        	mVictoryShape_5.setVisibility(false);
+        	mVictoryShape_5.setPosition(300,300);
+        	mVictoryShape_6.setVisibility(false);
+        	mVictoryShape_6.setPosition(350,300);
+        	mVictoryShape_7.setVisibility(false);
+        	mVictoryShape_7.setPosition(400,300);
+        	mVictoryShape_8.setVisibility(false);
+        	mVictoryShape_8.setPosition(450,300);
+        	mVictoryShape_9.setVisibility(false);
+        	mVictoryShape_9.setPosition(500,300);
+        	mVictoryShape_10.setVisibility(false);
+        	mVictoryShape_10.setPosition(550,300);
+        	mVictoryShape_11.setVisibility(false);
+        	mVictoryShape_11.setPosition(600,300);
+        	mVictoryShape_12.setVisibility(false);
+        	mVictoryShape_12.setPosition(650,300);
+        	mVictoryShape_13.setVisibility(false);
+        	mVictoryShape_13.setPosition(700,300);
+        }
 });

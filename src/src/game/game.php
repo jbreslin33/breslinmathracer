@@ -65,6 +65,8 @@ var Game = new Class(
                 this.mGLOBAL_GAME                       = new GLOBAL_GAME       (this);
                 this.mINIT_GAME                         = new INIT_GAME         (this);
                 this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
+                this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
+                this.mSHOW_LEVEL_PASSED                 = new SHOW_LEVEL_PASSED (this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
                 this.mStateMachine.changeState(this.mINIT_GAME);
@@ -524,6 +526,34 @@ var Game = new Class(
                 //question bar
                 this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
-        }
+       	},
+
+	levelPassedEnter: function()
+	{
+
+	},
+
+	levelPassedExecute: function()
+	{
+
+	},
+	
+	levelPassedExit: function()
+	{
+
+	},
+		
+	showLevelPassedEnter: function()
+	{
+
+	},
+	showLevelPassedExecute: function()
+	{
+
+	},
+	showLevelPassedExit: function()
+	{
+
+	}
 
 });

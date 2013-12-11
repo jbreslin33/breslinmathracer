@@ -23,8 +23,6 @@ Extends: Game,
                 this.mINIT_DUNGEON_GAME    = new INIT_DUNGEON_GAME(this);
                 this.mRESET_DUNGEON_GAME   = new RESET_DUNGEON_GAME(this);
                 this.mNORMAL_DUNGEON_GAME   = new NORMAL_DUNGEON_GAME(this);
-                this.mLEVEL_PASSED_DUNGEON = new LEVEL_PASSED_DUNGEON(this);
-                this.mSHOW_LEVEL_PASSED_DUNGEON = new SHOW_LEVEL_PASSED_DUNGEON(this);
 
                 this.mDungeonStateMachine.setGlobalState(this.mGLOBAL_DUNGEON_GAME);
                 this.mDungeonStateMachine.changeState(this.mINIT_DUNGEON_GAME);
@@ -178,7 +176,108 @@ Extends: Game,
         	this.mDoor.mUrl = '/src/database/goto_next_level.php';
         	this.mDoor.mOpenOnQuestionSolved = true;
         	this.addToShapeArray(this.mDoor);
-	}
-		
-});
+	},
+  
+	levelPassedEnter: function()
+        {
+	 	mApplication.mLevelCompleted = true;
+        },
 
+        levelPassedExecute: function()
+        {
+ 		//just wait here until what???
+        	if (mApplication.mAdvanceToNextLevelConfirmation)
+        	{
+                	mDungeonStateMachine.changeState(mSHOW_LEVEL_PASSED_DUNGEON);
+        	}
+        },
+
+        levelPassedExit: function()
+        {
+
+        },
+
+        showLevelPassedEnter: function()
+        {
+        	mShowLevelPassedStartTime = mTimeSinceEpoch;
+
+        	//correctAnswer
+        	mCorrectAnswerBarHeader.mMesh.value = '';
+        	mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+        	mCorrectAnswerBar.mMesh.value = '';
+        	mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+        	showCorrectAnswerBar();
+
+        	mVictoryShape_0.setVisibility(true);
+        	mVictoryShape_0.setPosition(50,300);
+        	mVictoryShape_1.setVisibility(true);
+        	mVictoryShape_1.setPosition(100,300);
+        	mVictoryShape_2.setVisibility(true);
+        	mVictoryShape_2.setPosition(150,300);
+        	mVictoryShape_3.setVisibility(true);
+        	mVictoryShape_3.setPosition(200,300);
+        	mVictoryShape_4.setVisibility(true);
+        	mVictoryShape_4.setPosition(250,300);
+        	mVictoryShape_5.setVisibility(true);
+        	mVictoryShape_5.setPosition(300,300);
+        	mVictoryShape_6.setVisibility(true);
+       	 	mVictoryShape_6.setPosition(350,300);
+        	mVictoryShape_7.setVisibility(true);
+        	mVictoryShape_7.setPosition(400,300);
+        	mVictoryShape_8.setVisibility(true);
+        	mVictoryShape_8.setPosition(450,300);
+        	mVictoryShape_9.setVisibility(true);
+        	mVictoryShape_9.setPosition(500,300);
+       		mVictoryShape_10.setVisibility(true);
+        	mVictoryShape_10.setPosition(550,300);
+        	mVictoryShape_11.setVisibility(true);
+        	mVictoryShape_11.setPosition(600,300);
+        	mVictoryShape_12.setVisibility(true);
+        	mVictoryShape_12.setPosition(650,300);
+        	mVictoryShape_13.setVisibility(true);
+        	mVictoryShape_13.setPosition(700,300);
+        },
+        showLevelPassedExecute: function()
+        {
+    		if (mTimeSinceEpoch > mShowLevelPassedStartTime + mShowLevelPassedThresholdTime)
+        	{
+                	mDungeonStateMachine.changeState(mINIT_DUNGEON_GAME);
+        	}
+        },
+        showLevelPassedExit: function()
+        {
+        	hideCorrectAnswerBar();
+        	mCorrectAnswerBarHeader.mMesh.value = '';
+        	mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        	mCorrectAnswerBar.mMesh.value = '';
+        	mCorrectAnswerBar.mMesh.innerHTML = '';
+        	mVictoryShape_0.setVisibility(false);
+        	mVictoryShape_0.setPosition(50,300);
+        	mVictoryShape_1.setVisibility(false);
+        	mVictoryShape_1.setPosition(100,300);
+        	mVictoryShape_2.setVisibility(false);
+        	mVictoryShape_2.setPosition(150,300);
+        	mVictoryShape_3.setVisibility(false);
+        	mVictoryShape_3.setPosition(200,300);
+        	mVictoryShape_4.setVisibility(false);
+        	mVictoryShape_4.setPosition(250,300);
+        	mVictoryShape_5.setVisibility(false);
+        	mVictoryShape_5.setPosition(300,300);
+        	mVictoryShape_6.setVisibility(false);
+        	mVictoryShape_6.setPosition(350,300);
+        	mVictoryShape_7.setVisibility(false);
+        	mVictoryShape_7.setPosition(400,300);
+        	mVictoryShape_8.setVisibility(false);
+        	mVictoryShape_8.setPosition(450,300);
+        	mVictoryShape_9.setVisibility(false);
+        	mVictoryShape_9.setPosition(500,300);
+        	mVictoryShape_10.setVisibility(false);
+        	mVictoryShape_10.setPosition(550,300);
+        	mVictoryShape_11.setVisibility(false);
+        	mVictoryShape_11.setPosition(600,300);
+        	mVictoryShape_12.setVisibility(false);
+        	mVictoryShape_12.setPosition(650,300);
+        	mVictoryShape_13.setVisibility(false);
+        	mVictoryShape_13.setPosition(700,300);
+        }
+});
