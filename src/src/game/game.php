@@ -7,6 +7,9 @@ var Game = new Class(
 	initialize: function(application)
         {
 		this.mApplication = application;
+
+		/******* QUIZ **************/
+		this.mQuiz = new Quiz(this);
 	
 		/********* SHAPES *******************/ 
 		//shape Array

@@ -11,7 +11,6 @@ Extends: Game,
 		document.body.style.cursor = 'crosshair';
 
 		this.mDoor = 0;
-		this.mQuiz = new Quiz(this);
         	this.mApplication.mHud.mGameName.setText('<font size="2">DUNGEON</font>');
 		this.createQuestions(); //do this once
 		this.createWorld(); //do this once
