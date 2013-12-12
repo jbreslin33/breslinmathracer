@@ -519,7 +519,18 @@ var Game = new Class(
         {
                 this.mCorrectAnswerBar.setVisibility(false);
                 this.mCorrectAnswerBarHeader.setVisibility(false);
+
+		this.resetCorrectAnswerBar();
+
         },
+        
+	resetCorrectAnswerBar: function()
+	{
+ 		this.mCorrectAnswerBarHeader.mMesh.value = '';
+        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+        	this.mCorrectAnswerBar.mMesh.value = '';
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '';
+	},
 
         destroyCorrectAnswerBar: function()
         {

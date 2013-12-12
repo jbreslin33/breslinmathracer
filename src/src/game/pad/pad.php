@@ -98,12 +98,25 @@ Extends: Game,
 	
 	showNumberPad: function()
 	{
+		this.resetNumberPad();
+
   		//shapes and array
                 for (i = 0; i < this.mNumberPadArray.length; i++)
 		{
 			this.mNumberPadArray[i].setVisibility(true);
 		}
                	this.mNumAnswer.mMesh.focus();
+	},
+	
+	resetNumberPad: function()
+	{ 
+		//number pad
+        	this.mNumAnswer.mMesh.value = '';
+        	this.mNumAnswer.mMesh.innerHTML = '';
+
+        	this.mNumQuestion.mMesh.value = '';
+        	this.mNumQuestion.mMesh.innerHTML = '';
+        	this.mNumQuestion.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion();
 	},
 
 	destroyNumberPad: function()

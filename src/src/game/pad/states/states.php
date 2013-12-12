@@ -80,7 +80,6 @@ log: function(msg)
 
 enter: function(game)
 {
-	//this.log('RESET_PAD_GAME');
         game.reset();
 	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
 },
@@ -113,21 +112,8 @@ log: function(msg)
 
 enter: function(game)
 {
-	//this.log('WAITING_ON_ANSWER_FIRST_TIME');
-
 	//correctAnswer
 	game.hideCorrectAnswerBar();
-	game.mCorrectAnswerBarHeader.mMesh.value = '';
-	game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-	game.mCorrectAnswerBar.mMesh.value = '';
-	game.mCorrectAnswerBar.mMesh.innerHTML = '';
-
-	//number pad
- 	game.mNumAnswer.mMesh.value = '';
- 	game.mNumAnswer.mMesh.innerHTML = '';
-
- 	game.mNumQuestion.mMesh.value = '';
- 	game.mNumQuestion.mMesh.innerHTML = '';
 
 	if (game.mQuiz)
 	{
@@ -137,7 +123,7 @@ enter: function(game)
 		}
 	}
 
- 	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
+	//numberPad
 	game.showNumberPad();
 
 	//user answer
@@ -151,13 +137,11 @@ execute: function(game)
 	{
 		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
                	{ 
-			///this.log('correct in first wait!!!!!');
                         game.mQuiz.correctAnswer();
                       	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
                 }
                 else
                 {
-			//this.log('show correct in first wait!!!!!');
                       	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
                 }
 	}
@@ -187,22 +171,10 @@ log: function(msg)
 
 enter: function(game)
 {
-	//this.log('WAITING_ON_ANSWER');
-	
 	//correctAnswer
 	game.hideCorrectAnswerBar();
-	game.mCorrectAnswerBarHeader.mMesh.value = '';
-	game.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-	game.mCorrectAnswerBar.mMesh.value = '';
-	game.mCorrectAnswerBar.mMesh.innerHTML = '';
 
 	//number pad
- 	game.mNumAnswer.mMesh.value = '';
- 	game.mNumAnswer.mMesh.innerHTML = '';
-
- 	game.mNumQuestion.mMesh.value = '';
- 	game.mNumQuestion.mMesh.innerHTML = '';
- 	game.mNumQuestion.mMesh.innerHTML = '' + game.mQuiz.getQuestion().getQuestion();
 	game.showNumberPad();
 
 	//user answer
@@ -298,8 +270,6 @@ log: function(msg)
 
 enter: function(game)
 {
-	this.log('SHOW_CORRECT_ANSWER');
-	
 	game.showCorrectAnswer();
 },
 
@@ -314,7 +284,6 @@ execute: function(game)
 exit: function(game)
 {
 	game.hideCorrectAnswerBar();
-	game.mCorrectAnswerBar.mMesh.innerHTML = ''; 
 	
 	game.mMemorizeShape.setVisibility(false);
 }
@@ -360,8 +329,6 @@ execute: function(game)
 exit: function(game)
 {
         game.hideCorrectAnswerBar();
-        game.mCorrectAnswerBar.mMesh.innerHTML = '';
-	
 	game.mClockShape.setVisibility(false);
 }
 
