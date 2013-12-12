@@ -513,6 +513,8 @@ var Game = new Class(
         {
                 this.mCorrectAnswerBarHeader.setVisibility(true);
                 this.mCorrectAnswerBar.setVisibility(true);
+ 
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         },
 
         hideCorrectAnswerBar: function()
@@ -558,6 +560,12 @@ var Game = new Class(
                 this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
        	},
+
+	showClockShape: function()
+	{
+		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'GO FASTER!';
+        	this.mClockShape.setVisibility(true);
+	},
 
 	levelPassedEnter: function()
 	{
