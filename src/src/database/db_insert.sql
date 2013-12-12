@@ -391,7 +391,7 @@ insert into levels_standards(level_id, standard_id) values (3,3);
 	
 	
 		--Level:8, GameID:9, StandardID:8 S:K.CC.C.6 
-insert into levels(id,description) values (8,'K_CC_A_3'); 
+insert into levels(id,description) values (8,'K_CC_C_6'); 
 insert into games_levels (level_id,game_id) values  (8,9); 
 insert into levels_standards(level_id, standard_id) values (8,8);       
 
