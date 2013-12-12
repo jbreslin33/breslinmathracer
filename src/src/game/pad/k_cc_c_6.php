@@ -43,11 +43,13 @@ Extends: Pad,
 		//set question invis...
 		this.mNumQuestion.setVisibility(false);
 
+
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
 			this.mCountShapeArray[i].setVisibility(false);
 		}	
 
+		this.log('number:' + this.mQuiz.getQuestion().getQuestion());
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
 			this.mCountShapeArray[v].setVisibility(true);
