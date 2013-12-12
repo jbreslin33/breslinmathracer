@@ -55,7 +55,7 @@ insert into standards (standard,description) values ('K.CC.B.4C','Understand tha
 insert into standards (standard,description) values ('K.CC.B.5','Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.'); 
 insert into standards (standard,description) values ('K.CC.C.6','Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.');
 insert into standards (standard,description) values ('K.CC.C.7','Compare two numbers between 1 and 10 presented as written numerals.');
-insert into standards (standard,description) values ('K.OA.A.1','Compare two numbers between 1 and 10 presented as written numerals.');
+insert into standards (standard,description) values ('K.OA.A.1','Represent addition and subtraction with objects, fingers, mental images, drawings1, sounds (e.g., claps), acting out situations, verbal explanations, expressions, or equations.');
 insert into standards (standard,description) values ('K.OA.A.2','Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
 insert into standards (standard,description) values ('K.OA.A.3','Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.');
 insert into standards (standard,description) values ('K.OA.A.4','For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
@@ -303,6 +303,7 @@ insert into games (game) values ('1_oa_c_6');
 insert into games (game) values ('2_oa_b_2');
 insert into games (game) values ('3_oa_c_7');
 insert into games (game) values ('k_oa_a_4');
+insert into games (game) values ('k_cc_c_6'); 
 
 --LEVELS	
 insert into levels(id,description) values (0,'Start of Journey');       
@@ -387,9 +388,15 @@ insert into levels_standards(level_id, standard_id) values (2.05,2);
 insert into levels(id,description) values (3,'K_CC_A_3'); 
 insert into games_levels (level_id,game_id) values  (3,3); 
 insert into levels_standards(level_id, standard_id) values (3,3);       
+	
+	
+		--Level:8, GameID:9, StandardID:8 S:K.CC.C.6 
+insert into levels(id,description) values (8,'K_CC_A_3'); 
+insert into games_levels (level_id,game_id) values  (8,9); 
+insert into levels_standards(level_id, standard_id) values (8,8);       
 
 
-		--Level:13, GameID:8, SID:13 S:K.OA.A.4
+		--Level:13, GameID:8, StandardID:13 S:K.OA.A.4
 insert into levels(id,description) values (13,'');
 insert into games_levels (level_id,game_id) values  (13,8);
 insert into levels_standards(level_id, standard_id) values (13,13);       
