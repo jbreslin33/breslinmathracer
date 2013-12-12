@@ -235,6 +235,19 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_4(APPLICATION);
 			}
 		}
+		if (this.mNextLevelGameID == 9)
+		{ 
+             		if (this.mGameName != "k_cc_c_6")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "k_cc_c_6";
+                               	this.mGame = new k_cc_c_6(APPLICATION);
+			}
+		}
 	},
 	
 	isOdd: function(num)

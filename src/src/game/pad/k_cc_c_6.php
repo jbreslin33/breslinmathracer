@@ -10,7 +10,7 @@ Extends: Pad,
 		//count shape array
 		this.mCountShapeArray = new Array();
 	
-        	this.mApplication.mHud.mGameName.setText('<font size="2">COUNT</font>');
+        	this.mApplication.mHud.mGameName.setText('<font size="2">COMPARE</font>');
 
 		//answers 
                 this.mThresholdTime = 10000;
@@ -26,7 +26,6 @@ Extends: Pad,
 		} 
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
-			this.log('setting vis:' + v);
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
@@ -51,7 +50,6 @@ Extends: Pad,
 
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
-			this.log('setting vis:' + v);
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
@@ -69,7 +67,6 @@ Extends: Pad,
 		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;
 
-		this.log('totalCountGoal:' + totalCountGoal);
 		while (totalCount < totalCountGoal)
 		{	
 			//reset vars and arrays
@@ -89,7 +86,6 @@ Extends: Pad,
 				this.mQuiz.mQuestionArray.push(question);
 
 				totalCount = parseInt(totalCount + objectsToCount);
-				this.log('totalCount:' + totalCount);
 			}
 		}
 		this.createQuestionShapes();
