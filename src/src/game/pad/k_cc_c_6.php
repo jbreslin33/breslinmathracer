@@ -29,6 +29,35 @@ Extends: Pad,
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
+ 
+	createNumberPad: function()
+        {
+                //question bar
+                if (!this.mNumQuestion)
+                {
+                        this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
+                        if (this.mQuiz)
+                        {
+                                if (this.mQuiz.getQuestion())
+                                {
+                                        this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
+                                }
+                        }
+                        this.mNumQuestion.mMesh.mGame = this;
+                        this.mNumberPadArray.push(this.mNumQuestion);
+                }
+
+                //answer text box
+                if (!this.mNumAnswer)
+                {
+                        this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
+                        this.mNumAnswer.mMesh.value = '';
+                        this.mNumAnswer.mMesh.mGame = this;
+                        this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mNumAnswer.mMesh.focus();
+                        this.mNumberPadArray.push(this.mNumAnswer);
+                }
+	},
 	
 	hideNumberPad: function()
 	{
@@ -43,13 +72,11 @@ Extends: Pad,
 		//set question invis...
 		this.mNumQuestion.setVisibility(false);
 
-
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
 			this.mCountShapeArray[i].setVisibility(false);
 		}	
 
-		this.log('number:' + this.mQuiz.getQuestion().getQuestion());
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
 			this.mCountShapeArray[v].setVisibility(true);
