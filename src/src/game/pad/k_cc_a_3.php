@@ -30,6 +30,22 @@ Extends: Pad,
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
+ 
+	destroyShapesAndArray: function()
+        {
+		this.parent();
+
+                //shapes and array
+                for (i = 0; i < this.mCountShapeArray.length; i++)
+                {
+                        //back to div
+                        this.mCountShapeArray[i].mDiv.mDiv.removeChild(this.mCountShapeArray[i].mMesh);
+                        document.body.removeChild(this.mCountShapeArray[i].mDiv.mDiv);
+                        this.mCountShapeArray[i] = 0;
+                }
+                this.mCountShapeArray = 0;
+
+        },
 	
 	hideNumberPad: function()
 	{
