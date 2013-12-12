@@ -8,7 +8,8 @@ Extends: Pad,
        		this.parent(application);
 
 		//count shape array
-		this.mCountShapeArray = new Array();
+		this.mCountShapeArrayA = new Array();
+		this.mCountShapeArrayB = new Array();
 	
         	this.mApplication.mHud.mGameName.setText('<font size="2">COMPARE</font>');
 
@@ -19,14 +20,25 @@ Extends: Pad,
 	reset: function()
 	{
 		this.parent();
-		
-		for (i = 0; i < this.mCountShapeArray.length; i++)
+	
+		//A	
+		for (i = 0; i < this.mCountShapeArrayA.length; i++)
 		{
-			this.mCountShapeArray[i].setVisibility(false);
+			this.mCountShapeArrayA[i].setVisibility(false);
 		} 
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
-			this.mCountShapeArray[v].setVisibility(true);
+			this.mCountShapeArrayA[v].setVisibility(true);
+		}	
+	
+		//B	
+		for (i = 0; i < this.mCountShapeArrayB.length; i++)
+		{
+			this.mCountShapeArrayB[i].setVisibility(false);
+		} 
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		{
+			this.mCountShapeArrayB[v].setVisibility(true);
 		}	
 	},
   
@@ -35,14 +47,25 @@ Extends: Pad,
                 this.parent();
 
                 //shapes and array
-                for (i = 0; i < this.mCountShapeArray.length; i++)
+		//A
+                for (i = 0; i < this.mCountShapeArrayA.length; i++)
                 {
                         //back to div
-                        this.mCountShapeArray[i].mDiv.mDiv.removeChild(this.mCountShapeArray[i].mMesh);
-                        document.body.removeChild(this.mCountShapeArray[i].mDiv.mDiv);
-                        this.mCountShapeArray[i] = 0;
+                        this.mCountShapeArrayA[i].mDiv.mDiv.removeChild(this.mCountShapeArrayA[i].mMesh);
+                        document.body.removeChild(this.mCountShapeArrayA[i].mDiv.mDiv);
+                        this.mCountShapeArrayA[i] = 0;
                 }
-                this.mCountShapeArray = 0;
+                this.mCountShapeArrayA = 0;
+               
+		//B 
+		for (i = 0; i < this.mCountShapeArrayB.length; i++)
+                {
+                        //back to div
+                        this.mCountShapeArrayB[i].mDiv.mDiv.removeChild(this.mCountShapeArrayB[i].mMesh);
+                        document.body.removeChild(this.mCountShapeArrayB[i].mDiv.mDiv);
+                        this.mCountShapeArrayB[i] = 0;
+                }
+                this.mCountShapeArrayB = 0;
         },
  
 	createNumberPad: function()
@@ -87,14 +110,26 @@ Extends: Pad,
 		//set question invis...
 		this.mNumQuestion.setVisibility(false);
 
-		for (i = 0; i < this.mCountShapeArray.length; i++)
+		//A
+		for (i = 0; i < this.mCountShapeArrayA.length; i++)
 		{
-			this.mCountShapeArray[i].setVisibility(false);
+			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
-			this.mCountShapeArray[v].setVisibility(true);
+			this.mCountShapeArrayA[v].setVisibility(true);
+		}	
+	
+		//B	
+		for (i = 0; i < this.mCountShapeArrayB.length; i++)
+		{
+			this.mCountShapeArrayB[i].setVisibility(false);
+		}	
+
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		{
+			this.mCountShapeArrayB[v].setVisibility(true);
 		}	
 	},
 
@@ -137,38 +172,74 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-                this.mCountShapeArray.push(new ShapeVictory(50,50,25,50,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,25,100,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,25,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,25,200,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,25,250,this,"/images/bus/kid.png","",""));
+		//A
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,25,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,25,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,25,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,25,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,25,250,this,"/images/bus/kid.png","",""));
                 	
-                this.mCountShapeArray.push(new ShapeVictory(50,50,75,50,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,75,100,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,75,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,75,200,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,75,250,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,75,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,75,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,75,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,75,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,75,250,this,"/images/bus/kid.png","",""));
                 
-		this.mCountShapeArray.push(new ShapeVictory(50,50,125,50,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,125,100,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,125,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,125,200,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,125,250,this,"/images/bus/kid.png","",""));
+		this.mCountShapeArrayA.push(new ShapeVictory(50,50,125,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,125,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,125,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,125,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,125,250,this,"/images/bus/kid.png","",""));
 		
-		this.mCountShapeArray.push(new ShapeVictory(50,50,175,50,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,175,100,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,175,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,175,200,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new ShapeVictory(50,50,175,250,this,"/images/bus/kid.png","",""));
+		this.mCountShapeArrayA.push(new ShapeVictory(50,50,175,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,175,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,175,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,175,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayA.push(new ShapeVictory(50,50,175,250,this,"/images/bus/kid.png","",""));
 
-		for (i = 0; i < this.mCountShapeArray.length; i++)
+		for (i = 0; i < this.mCountShapeArrayA.length; i++)
 		{
-			this.mCountShapeArray[i].setVisibility(false);
+			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 		
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
-			this.mCountShapeArray[v].setVisibility(true);
+			this.mCountShapeArrayA[v].setVisibility(true);
 		}	
+
+		//B
+		this.mCountShapeArrayB.push(new ShapeVictory(50,50,425,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,425,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,425,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,425,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,425,250,this,"/images/bus/kid.png","",""));
+                        
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,475,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,475,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,475,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,475,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,475,250,this,"/images/bus/kid.png","",""));
+                
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,525,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,525,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,525,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,525,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,525,250,this,"/images/bus/kid.png","",""));
+                
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,575,50,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,575,100,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,575,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,575,200,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArrayB.push(new ShapeVictory(50,50,575,250,this,"/images/bus/kid.png","",""));
+                
+                for (i = 0; i < this.mCountShapeArrayB.length; i++)
+                {
+                        this.mCountShapeArrayB[i].setVisibility(false);
+                }
+                
+                for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+                {       
+                        this.mCountShapeArrayB[v].setVisibility(true);
+                }
 	}
 });
