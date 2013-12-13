@@ -83,6 +83,7 @@ Extends: Pad,
                         }
                         this.mNumQuestion.mMesh.mGame = this;
                         this.mNumberPadArray.push(this.mNumQuestion);
+			this.mNumQuestion.setVisibility(false);
                 }
 
                 //answer text box
@@ -94,29 +95,30 @@ Extends: Pad,
                         this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                         this.mNumAnswer.mMesh.focus();
                         this.mNumberPadArray.push(this.mNumAnswer);
+			this.mNumAnswer.setVisibility(false);
                 }
 
 		//BUTTONS
                 if (!this.mButtonA)
 		{
-			this.mButtonA = new Shape(50,50,300,200,this,"BUTTON","","");
- 			this.mButtonA.mMesh.innerHTML = 'equal';
+			this.mButtonA = new Shape(150,50,300,100,this,"BUTTON","","");
+ 			this.mButtonA.mMesh.innerHTML = 'is equal to';
                 	this.mButtonA.mMesh.mGame = this;
                 	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonA);
 		}
                 if (!this.mButtonB)
 		{
-			this.mButtonB = new Shape(50,50,300,250,this,"BUTTON","","");
- 			this.mButtonB.mMesh.innerHTML = 'greater than';
+			this.mButtonB = new Shape(150,50,300,200,this,"BUTTON","","");
+ 			this.mButtonB.mMesh.innerHTML = 'is greater than';
                 	this.mButtonB.mMesh.mGame = this;
                 	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonB);
 		}
                 if (!this.mButtonC)
 		{
-			this.mButtonC = new Shape(50,50,300,300,this,"BUTTON","","");
- 			this.mButtonC.mMesh.innerHTML = 'less than';
+			this.mButtonC = new Shape(150,50,300,300,this,"BUTTON","","");
+ 			this.mButtonC.mMesh.innerHTML = 'is less than';
                 	this.mButtonC.mMesh.mGame = this;
                 	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonC);
@@ -135,6 +137,7 @@ Extends: Pad,
 
 		//set question invis...
 		this.mNumQuestion.setVisibility(false);
+		this.mNumAnswer.setVisibility(false);
 
 		//A
 		for (i = 0; i < this.mCountShapeArrayA.length; i++)
@@ -199,15 +202,15 @@ Extends: Pad,
 				var comparison = '';
 				if (objectsToCountA == objectsToCountB)
 				{
-					comparison = 'equal';
+					comparison = 'is equal to';
 				}
 				if (objectsToCountA > objectsToCountB)
 				{
-					comparison = 'greater than';
+					comparison = 'is greater than';
 				}
 				if (objectsToCountA < objectsToCountB)
 				{
-					comparison = 'less than';
+					comparison = 'is less than';
 				}
 
 				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
