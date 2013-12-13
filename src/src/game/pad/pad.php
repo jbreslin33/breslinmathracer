@@ -153,16 +153,8 @@ Extends: Game,
 
 	numPadHit: function()
 	{
-		if (this.innerHTML != 'Enter')
-		{
-			APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
-		}
-		
-		if (this.innerHTML == 'Enter')
-		{
-			APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-		}
-		APPLICATION.mGame.mNumAnswer.mMesh.focus();
+		APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
+		APPLICATION.mGame.mUserAnswer 		 = APPLICATION.mGame.mNumAnswer.mMesh.value;
 	},
 
 	createNumberPad: function()

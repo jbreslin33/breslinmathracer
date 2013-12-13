@@ -9,12 +9,6 @@ Extends: Question,
 		this.mB = b; 
 	},
 
-	set: function(question,answer)
-	{
-		this.mQuestion = question;
-		this.mAnswer = answer;
-	},
-
 	setVariables: function(a,b)
 	{
 		this.mA = a;

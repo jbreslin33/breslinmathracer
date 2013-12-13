@@ -15,8 +15,6 @@ Extends: Pad,
 
 		//answers 
                 this.mThresholdTime = 10000;
-
-
 	},
 
 	reset: function()
@@ -28,7 +26,7 @@ Extends: Pad,
 		{
 			this.mCountShapeArrayA[i].setVisibility(false);
 		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
 		{
 			this.mCountShapeArrayA[v].setVisibility(true);
 		}	
@@ -38,7 +36,7 @@ Extends: Pad,
 		{
 			this.mCountShapeArrayB[i].setVisibility(false);
 		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
 		{
 			this.mCountShapeArrayB[v].setVisibility(true);
 		}	
@@ -102,7 +100,7 @@ Extends: Pad,
                 if (!this.mButtonA)
 		{
 			this.mButtonA = new Shape(50,50,300,200,this,"BUTTON","","");
- 			this.mButtonA.mMesh.innerHTML = 'A';
+ 			this.mButtonA.mMesh.innerHTML = 'equal';
                 	this.mButtonA.mMesh.mGame = this;
                 	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonA);
@@ -110,7 +108,7 @@ Extends: Pad,
                 if (!this.mButtonB)
 		{
 			this.mButtonB = new Shape(50,50,300,250,this,"BUTTON","","");
- 			this.mButtonB.mMesh.innerHTML = 'B';
+ 			this.mButtonB.mMesh.innerHTML = 'greater than';
                 	this.mButtonB.mMesh.mGame = this;
                 	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonB);
@@ -118,7 +116,7 @@ Extends: Pad,
                 if (!this.mButtonC)
 		{
 			this.mButtonC = new Shape(50,50,300,300,this,"BUTTON","","");
- 			this.mButtonC.mMesh.innerHTML = 'C';
+ 			this.mButtonC.mMesh.innerHTML = 'less than';
                 	this.mButtonC.mMesh.mGame = this;
                 	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonC);
@@ -144,7 +142,8 @@ Extends: Pad,
 			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+                this.log('show variableA:' + this.mQuiz.getQuestion().getVariableA());
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
 		{
 			this.mCountShapeArrayA[v].setVisibility(true);
 		}	
@@ -155,11 +154,18 @@ Extends: Pad,
 			this.mCountShapeArrayB[i].setVisibility(false);
 		}	
 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+                this.log('show variableB:' + this.mQuiz.getQuestion().getVariableB());
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
 		{
 			this.mCountShapeArrayB[v].setVisibility(true);
 		}	
 	},
+ 
+	numPadHit: function()
+        {
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
+                APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+        },
 
 	showCorrectAnswer: function()
 	{
@@ -188,11 +194,28 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//random number to count from 0-20
-				var objectsToCount = Math.floor((Math.random()*21));		
-				var question = new Question('' + objectsToCount, '' + objectsToCount);
+				var objectsToCountA = Math.floor((Math.random()*21));		
+				var objectsToCountB = Math.floor((Math.random()*21));		
+				var comparison = '';
+				if (objectsToCountA == objectsToCountB)
+				{
+					comparison = 'equal';
+				}
+				if (objectsToCountA > objectsToCountB)
+				{
+					comparison = 'greater than';
+				}
+				if (objectsToCountA < objectsToCountB)
+				{
+					comparison = 'less than';
+				}
+
+				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
+
 				this.mQuiz.mQuestionArray.push(question);
 
-				totalCount = parseInt(totalCount + objectsToCount);
+				totalCount = parseInt(totalCount + objectsToCountA);
+				
 			}
 		}
 		this.createQuestionShapes();
@@ -230,7 +253,8 @@ Extends: Pad,
 			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 		
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+                this.log('create variableA:' + this.mQuiz.getQuestion().getVariableA());
+		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
 		{
 			this.mCountShapeArrayA[v].setVisibility(true);
 		}	
@@ -265,7 +289,8 @@ Extends: Pad,
                         this.mCountShapeArrayB[i].setVisibility(false);
                 }
                 
-                for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+                this.log('create variableB:' + this.mQuiz.getQuestion().getVariableB());
+                for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
                 {       
                         this.mCountShapeArrayB[v].setVisibility(true);
                 }
