@@ -15,6 +15,8 @@ Extends: Pad,
 
 		//answers 
                 this.mThresholdTime = 10000;
+
+
 	},
 
 	reset: function()
@@ -95,6 +97,32 @@ Extends: Pad,
                         this.mNumAnswer.mMesh.focus();
                         this.mNumberPadArray.push(this.mNumAnswer);
                 }
+
+		//BUTTONS
+                if (!this.mButtonA)
+		{
+			this.mButtonA = new Shape(50,50,300,200,this,"BUTTON","","");
+ 			this.mButtonA.mMesh.innerHTML = 'A';
+                	this.mButtonA.mMesh.mGame = this;
+                	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
+                	this.mNumberPadArray.push(this.mButtonA);
+		}
+                if (!this.mButtonB)
+		{
+			this.mButtonB = new Shape(50,50,300,250,this,"BUTTON","","");
+ 			this.mButtonB.mMesh.innerHTML = 'B';
+                	this.mButtonB.mMesh.mGame = this;
+                	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
+                	this.mNumberPadArray.push(this.mButtonB);
+		}
+                if (!this.mButtonC)
+		{
+			this.mButtonC = new Shape(50,50,300,300,this,"BUTTON","","");
+ 			this.mButtonC.mMesh.innerHTML = 'C';
+                	this.mButtonC.mMesh.mGame = this;
+                	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
+                	this.mNumberPadArray.push(this.mButtonC);
+		}
 	},
 	
 	hideNumberPad: function()
