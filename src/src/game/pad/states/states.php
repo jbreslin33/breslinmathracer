@@ -308,11 +308,7 @@ log: function(msg)
 
 enter: function(game)
 {
-        game.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
-        game.hideNumberPad();
-        game.showCorrectAnswerBar();
-	
-	game.showClockShape();
+	game.showCorrectAnswerOutOfTimeEnter();
 },
 
 execute: function(game)

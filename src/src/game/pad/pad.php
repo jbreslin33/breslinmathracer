@@ -142,6 +142,19 @@ Extends: Game,
         	this.showCorrectAnswerBar();
         	this.mMemorizeShape.setVisibility(true);
 	},
+
+	showCorrectAnswerOutOfTimeEnter: function()
+	{
+		this.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
+        	this.hideNumberPad();
+        	this.showCorrectAnswerBar();
+       	 	this.showClockShape();
+	}
+	showCorrectAnswerEnter: function()
+	{
+
+	},
+
 	
 	inputKeyHit: function(e)
 	{
