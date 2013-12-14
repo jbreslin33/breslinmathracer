@@ -70,34 +70,6 @@ Extends: Pad,
  
 	createNumberPad: function()
         {
-                //question bar
-                if (!this.mNumQuestion)
-                {
-                        this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-                        if (this.mQuiz)
-                        {
-                                if (this.mQuiz.getQuestion())
-                                {
-                                        this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
-                                }
-                        }
-                        this.mNumQuestion.mMesh.mGame = this;
-                        this.mNumberPadArray.push(this.mNumQuestion);
-			this.mNumQuestion.setVisibility(false);
-                }
-
-                //answer text box
-                if (!this.mNumAnswer)
-                {
-                        this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
-                        this.mNumAnswer.mMesh.value = '';
-                        this.mNumAnswer.mMesh.mGame = this;
-                        this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-                        this.mNumAnswer.mMesh.focus();
-                        this.mNumberPadArray.push(this.mNumAnswer);
-			this.mNumAnswer.setVisibility(false);
-                }
-
 		//BUTTONS
                 if (!this.mButtonA)
 		{
@@ -123,6 +95,35 @@ Extends: Pad,
                 	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
                 	this.mNumberPadArray.push(this.mButtonC);
 		}
+
+                //question bar
+                if (!this.mNumQuestion)
+                {
+                        this.mNumQuestion = new Shape(100,50,300,50,this,"","","");
+                        if (this.mQuiz)
+                        {
+                                if (this.mQuiz.getQuestion())
+                                {
+                                        this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
+                                }
+                        }
+                        this.mNumQuestion.mMesh.mGame = this;
+                        this.mNumberPadArray.push(this.mNumQuestion);
+			this.mNumQuestion.setVisibility(false);
+                }
+
+                //answer text box
+                if (!this.mNumAnswer)
+                {
+                        this.mNumAnswer = new Shape(100,50,400,50,this,"INPUT","","");
+                        this.mNumAnswer.mMesh.value = '';
+                        this.mNumAnswer.mMesh.mGame = this;
+                        this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mNumAnswer.mMesh.focus();
+                        this.mNumberPadArray.push(this.mNumAnswer);
+			this.mNumAnswer.setVisibility(false);
+                }
+
 	},
 	
 	hideNumberPad: function()
@@ -170,10 +171,6 @@ Extends: Pad,
                 APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
         },
 
-//old begin
-
-
-//old end
 	showCorrectAnswer: function()
 	{
 		this.parent();
@@ -182,36 +179,22 @@ Extends: Pad,
 
 	showCorrectAnswerEnter: function()
 	{
-		this.showCorrectAnswer();
+		this.parent();
 	},
 	
 	showCorrectAnswerOutOfTimeEnter: function()
 	{
 		this.parent();
-		/*
-                this.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
-                this.hideNumberPad();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-		*/
 	},
         
 	showCorrectAnswerExit: function()
         {
 		this.parent();
-		/*
-                this.hideCorrectAnswerBar();
-                this.mMemorizeShape.setVisibility(false);
-		*/
         },
  
         showCorrectAnswerOutOfTimeExit: function()
         {
 		this.parent();
-		/*
-                this.hideCorrectAnswerBar();
-                this.mClockShape.setVisibility(false);
-		*/
         },
    
 	createQuestions: function()

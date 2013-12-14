@@ -553,12 +553,18 @@ var Game = new Class(
 	createCorrectAnswerBar: function()
         {
                 //question bar header
-                this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+		if (!this.mCorrectAnswerBarHeader)
+		{
+                	this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
+                	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+		}
 
                 //question bar
-                this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
-                this.mCorrectAnswerBar.mMesh.innerHTML = '';
+		if (!this.mCorrectAnswerBar)
+		{
+                	this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
+                	this.mCorrectAnswerBar.mMesh.innerHTML = '';
+		}
        	},
 
 	showClockShape: function()

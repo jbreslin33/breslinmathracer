@@ -41,6 +41,22 @@ Extends: Game,
 	{
 		this.parent();
 	},
+ 
+	destroyShapesAndArray: function()
+        {
+		this.parent();
+                //shapes and array
+                for (i = 0; i < this.mNumberPadArray.length; i++)
+                {
+                        //back to div
+                        this.mNumberPadArray[i].mDiv.mDiv.removeChild(this.mNumberPadArray[i].mMesh);
+                        document.body.removeChild(this.mNumberPadArray[i].mDiv.mDiv);
+                        this.mNumberPadArray[i] = 0;
+                }
+                this.mShapeArray = 0;
+
+                this.destroyCorrectAnswerBar();
+        },
 
 	reset: function()
 	{
@@ -73,14 +89,20 @@ Extends: Game,
 		this.parent();
 
 		//clock Shape
-		this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
-		this.mShapeArray.push(this.mClockShape);
-		this.mClockShape.setVisibility(false);
+		if (!this.mClockShape)
+		{
+			this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
+			this.mShapeArray.push(this.mClockShape);
+			this.mClockShape.setVisibility(false);
+		}
 		
 		//memorize Shape
-		this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
-		this.mShapeArray.push(this.mMemorizeShape);
-		this.mMemorizeShape.setVisibility(false);
+		if (!this.mMemorizeShape)
+		{	
+			this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
+			this.mShapeArray.push(this.mMemorizeShape);
+			this.mMemorizeShape.setVisibility(false);
+		}
 
 		this.createNumberPad();
 		this.createCorrectAnswerBar();
