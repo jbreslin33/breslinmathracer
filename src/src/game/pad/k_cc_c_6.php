@@ -203,8 +203,11 @@ Extends: Pad,
 		
 		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;
+		var greaterThans = 0;
+		var lessThans = 0;
+		var equalTos = 0;
 
-		while (totalCount < totalCountGoal)
+		while (totalCount < totalCountGoal && greaterThans <)
 		{	
 			//reset vars and arrays
 			totalCount = 0;
