@@ -1,0 +1,1 @@
+select levels_transactions.advancement_time, levels_transactions.level_id, users.first_name, users.last_name from levels_transactions INNER JOIN users on levels_transactions.user_id=users.id order by advancement_time desc;

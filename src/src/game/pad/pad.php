@@ -143,18 +143,30 @@ Extends: Game,
         	this.mMemorizeShape.setVisibility(true);
 	},
 
+	showCorrectAnswerEnter: function()
+	{
+		this.showCorrectAnswer();
+	},
+
 	showCorrectAnswerOutOfTimeEnter: function()
 	{
-		this.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
+		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.hideNumberPad();
         	this.showCorrectAnswerBar();
        	 	this.showClockShape();
-	}
-	showCorrectAnswerEnter: function()
-	{
-
 	},
-
+	
+	showCorrectAnswerExit: function()
+	{ 
+		this.hideCorrectAnswerBar();
+        	this.mMemorizeShape.setVisibility(false);
+	},
+  
+	showCorrectAnswerOutOfTimeExit: function()
+	{ 
+		this.hideCorrectAnswerBar();
+        	this.mClockShape.setVisibility(false);
+	},
 	
 	inputKeyHit: function(e)
 	{

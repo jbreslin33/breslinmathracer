@@ -170,11 +170,49 @@ Extends: Pad,
                 APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
         },
 
+//old begin
+
+
+//old end
 	showCorrectAnswer: function()
 	{
 		this.parent();
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 	},
+
+	showCorrectAnswerEnter: function()
+	{
+		this.showCorrectAnswer();
+	},
+	
+	showCorrectAnswerOutOfTimeEnter: function()
+	{
+		this.parent();
+		/*
+                this.mCorrectAnswerStartTime = game.mTimeSinceEpoch;
+                this.hideNumberPad();
+                this.showCorrectAnswerBar();
+                this.showClockShape();
+		*/
+	},
+        
+	showCorrectAnswerExit: function()
+        {
+		this.parent();
+		/*
+                this.hideCorrectAnswerBar();
+                this.mMemorizeShape.setVisibility(false);
+		*/
+        },
+ 
+        showCorrectAnswerOutOfTimeExit: function()
+        {
+		this.parent();
+		/*
+                this.hideCorrectAnswerBar();
+                this.mClockShape.setVisibility(false);
+		*/
+        },
    
 	createQuestions: function()
         {

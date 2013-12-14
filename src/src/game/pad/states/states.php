@@ -270,7 +270,7 @@ log: function(msg)
 
 enter: function(game)
 {
-	game.showCorrectAnswer();
+	game.showCorrectAnswerEnter();
 },
 
 execute: function(game)
@@ -283,9 +283,7 @@ execute: function(game)
 
 exit: function(game)
 {
-	game.hideCorrectAnswerBar();
-	
-	game.mMemorizeShape.setVisibility(false);
+	game.showCorrectAnswerExit();
 }
 
 });
@@ -321,8 +319,7 @@ execute: function(game)
 
 exit: function(game)
 {
-        game.hideCorrectAnswerBar();
-	game.mClockShape.setVisibility(false);
+	game.showCorrectAnswerOutOfTimeExit();
 }
 
 });
