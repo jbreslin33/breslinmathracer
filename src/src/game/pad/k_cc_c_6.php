@@ -207,7 +207,7 @@ Extends: Pad,
 		var lessThans = 0;
 		var equalTos = 0;
 
-		while (totalCount < totalCountGoal && greaterThans <)
+		while (totalCount < totalCountGoal || greaterThans < 2 || lessThans < 2 || equalTos < 2)
 		{	
 			//reset vars and arrays
 			totalCount = 0;
@@ -227,14 +227,17 @@ Extends: Pad,
 				if (objectsToCountA == objectsToCountB)
 				{
 					comparison = 'is equal to';
+					equalTos++;
 				}
 				if (objectsToCountA > objectsToCountB)
 				{
 					comparison = 'is greater than';
+					greaterThans++;
 				}
 				if (objectsToCountA < objectsToCountB)
 				{
 					comparison = 'is less than';
+					lessThans++;
 				}
 
 				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
