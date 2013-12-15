@@ -304,6 +304,7 @@ insert into games (game) values ('2_oa_b_2');
 insert into games (game) values ('3_oa_c_7');
 insert into games (game) values ('k_oa_a_4');
 insert into games (game) values ('k_cc_c_6'); 
+insert into games (game) values ('k_oa_a_2'); 
 
 --LEVELS	
 insert into levels(id,description) values (0,'Start of Journey');       
@@ -312,7 +313,7 @@ insert into levels(id,description) values (0,'Start of Journey');
 		--LEVELS GAMES STANDARDS
 --(((((((((((((((((((((((((((((((())))))))))))))))))))))))))))
 
-		--Level:1, GameID:1, SID:1 S:K.CC.A.1 
+		--LevelID:1, GameID:1, StandardID:1 Standard:K.CC.A.1 
 insert into levels(id,description) values (1,'');          
 insert into games_levels (level_id,game_id) values  (1,1); 
 insert into levels_standards(level_id, standard_id) values (1,1);      
@@ -358,7 +359,7 @@ insert into games_levels (level_id,game_id) values  (1.10,1);
 insert into levels_standards(level_id, standard_id) values (1.10,1);     
 
 
-		--Level:2, GameID:2, SID:2 S:K.CC.A.2 
+		--LevelID:2, GameID:2, StandardID:2 Standard:K.CC.A.2 
 insert into levels(id,description) values (2,''); 
 insert into games_levels (level_id,game_id) values  (2,2); 
 insert into levels_standards(level_id, standard_id) values (2,2);       
@@ -384,19 +385,24 @@ insert into games_levels (level_id,game_id) values  (2.05,2);
 insert into levels_standards(level_id, standard_id) values (2.05,2);       
 
 
-		--Level:3, GameID:3, SID:3 S:K.CC.A.3 
+		--LevelID:3, GameID:3, StandardID:3 Standard:K.CC.A.3 
 insert into levels(id,description) values (3,'K_CC_A_3'); 
 insert into games_levels (level_id,game_id) values  (3,3); 
 insert into levels_standards(level_id, standard_id) values (3,3);       
 	
 	
-		--Level:8, GameID:9, StandardID:8 S:K.CC.C.6 
+		--LevelID:8, GameID:9, StandardID:8 Standard:K.CC.C.6 
 insert into levels(id,description) values (8,'K_CC_C_6'); 
 insert into games_levels (level_id,game_id) values  (8,9); 
 insert into levels_standards(level_id, standard_id) values (8,8);       
+		
+		--LevelID:11, GameID:10, StandardID:11 Standard:K.OA.A.2 
+insert into levels(id,description) values (11,'K_OA_A_2'); 
+insert into games_levels (level_id,game_id) values  (11,10); 
+insert into levels_standards(level_id, standard_id) values (11,11);       
 
 
-		--Level:13, GameID:8, StandardID:13 S:K.OA.A.4
+		--LevelID:13, GameID:8, StandardID:13 Standard:K.OA.A.4
 insert into levels(id,description) values (13,'');
 insert into games_levels (level_id,game_id) values  (13,8);
 insert into levels_standards(level_id, standard_id) values (13,13);       
@@ -470,7 +476,7 @@ insert into games_levels (level_id,game_id) values  (13.17,8);
 insert into levels_standards(level_id, standard_id) values (13.17,13);       
 
 
-		--Level:14, GameID:4, SID:14 S:K.OA.A.5
+		--LevelID:14, GameID:4, StandardID:14 Standard:K.OA.A.5
 insert into levels(id,description) values (14,'');
 insert into games_levels (level_id,game_id) values  (14,4);
 insert into levels_standards(level_id, standard_id) values (14,14);       
@@ -640,7 +646,7 @@ insert into levels(id,description) values (14.41,'');
 insert into games_levels (level_id,game_id) values  (14.41,4);
 insert into levels_standards(level_id, standard_id) values (14.41,14);       
 
-		--L:30, G:5, SID:30 S:1.OA.C.6
+		--LevelID:30, GameID:5, StandardID:30 Standard:1.OA.C.6
 insert into levels(id,description) values (30,'');
 insert into games_levels (level_id,game_id) values  (30,5);
 insert into levels_standards(level_id, standard_id) values (30,30);       
@@ -961,7 +967,7 @@ insert into levels(id,description) values (30.78,'');
 insert into games_levels (level_id,game_id) values  (30.78,5);
 insert into levels_standards(level_id, standard_id) values (30.78,30);       
 
-		--L:48, G:6, SID:48 S:2.OA.B.2
+		--LevelID:48, GameID:6, StandardID:48 Standard:2.OA.B.2
 insert into levels(id,description) values (48,'');
 insert into games_levels (level_id,game_id) values  (48,6);
 insert into levels_standards(level_id, standard_id) values (48,48);       
@@ -2179,7 +2185,7 @@ insert into levels(id,description) values (48.303,'');
 insert into games_levels (level_id,game_id) values  (48.303,6);
 insert into levels_standards(level_id, standard_id) values (48.303,48);  
 
-		--L:81, G:7, SID:81 S:3.OA.C.7
+		--LevelID:81, GameID:7, StandardID:81 Standard:3.OA.C.7
 insert into levels(id,description) values (81,'');
 insert into games_levels (level_id,game_id) values  (81,7);
 insert into levels_standards(level_id, standard_id) values (81,81);       
