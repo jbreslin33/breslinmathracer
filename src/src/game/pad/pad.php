@@ -179,6 +179,7 @@ Extends: Game,
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.hideNumberPad();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showCorrectAnswerBar();
        	 	this.showClockShape();
 	},
