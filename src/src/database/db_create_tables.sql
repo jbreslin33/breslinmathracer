@@ -37,6 +37,7 @@ DROP TABLE schools cascade;
 --==================================================================
 --=========================== CORE CURRICULUM  ========================
 --==================================================================
+DROP TABLE LearningStandards;
 
 DROP TABLE standards_clusters_domains_grades cascade;
 DROP TABLE standards cascade;
@@ -163,6 +164,11 @@ CREATE TABLE permissions_users (
 --==================================================================
 --==================== CORE CURRICULUM  ========================
 --==================================================================
+
+CREATE TABLE LearningStandards (
+	RefID text NOT NULL UNIQUE,
+	progression NUMERIC(9,3) NOT NULL 	
+);	
 
 --*************************
 --GRADE
