@@ -83,6 +83,11 @@ Extends: Pad,
         {
 		this.parent();
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
-        }
+        },
 
+	showCorrectAnswerOutOfTime: function()
+        {
+                this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        }
 });

@@ -513,8 +513,6 @@ var Game = new Class(
         {
                 this.mCorrectAnswerBarHeader.setVisibility(true);
                 this.mCorrectAnswerBar.setVisibility(true);
- 
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         },
 
         hideCorrectAnswerBar: function()

@@ -155,6 +155,11 @@ Extends: Game,
 
 	},
 	
+	showCorrectAnswerEnter: function()
+	{
+		this.showCorrectAnswer();
+	},
+
 	showCorrectAnswer: function()
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
@@ -165,12 +170,12 @@ Extends: Game,
         	this.mMemorizeShape.setVisibility(true);
 	},
 
-	showCorrectAnswerEnter: function()
+	showCorrectAnswerOutOfTimeEnter: function()
 	{
-		this.showCorrectAnswer();
+		this.showCorrectAnswerOutOfTime();
 	},
 
-	showCorrectAnswerOutOfTimeEnter: function()
+	showCorrectAnswerOutOfTime: function()
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.hideNumberPad();

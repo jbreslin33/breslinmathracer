@@ -171,32 +171,18 @@ Extends: Pad,
                 APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
         },
 
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-	},
+ 	showCorrectAnswer: function()
+        {
+                this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+        },
 
-	showCorrectAnswerEnter: function()
-	{
-		this.parent();
-	},
-	
-	showCorrectAnswerOutOfTimeEnter: function()
-	{
-		this.parent();
-	},
-        
-	showCorrectAnswerExit: function()
+        showCorrectAnswerOutOfTime: function()
         {
-		this.parent();
+                this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
         },
- 
-        showCorrectAnswerOutOfTimeExit: function()
-        {
-		this.parent();
-        },
-   
+
 	createQuestions: function()
         {
 		this.parent();
