@@ -120,15 +120,17 @@ CREATE TABLE schools (
 
 --USERS
 CREATE TABLE users (
-    id integer NOT NULL,
-    username text, 
-    password text,
-    first_name text,
-    middle_name1 text,
-    middle_name2 text,
-    middle_name3 text,
-    last_name text,
-    school_id integer NOT NULL 
+	id integer NOT NULL,
+    	username text, 
+    	password text,
+    	first_name text,
+    	middle_name1 text,
+    	middle_name2 text,
+    	middle_name3 text,
+    	last_name text,
+    	school_id integer NOT NULL,
+    	RefID text NOT NULL default 'CA9EE2E34F384E95A5FA26769C5864B8',
+	level integer NOT NULL default 1 
 );
 
 --TEACHERS
@@ -488,6 +490,15 @@ CREATE SEQUENCE games_attempts_id_seq
     NO MAXVALUE
     CACHE 1;
 
+--LEVELS_ATTEMPTS
+CREATE SEQUENCE level_attempts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
 
 --****************************************************************
 --***************************************************************
@@ -714,6 +725,11 @@ ALTER TABLE public.games_attempts_id_seq OWNER TO postgres;
 ALTER SEQUENCE games_attempts_id_seq OWNED BY games_attempts.id;
 ALTER TABLE ONLY games_attempts ALTER COLUMN id SET DEFAULT nextval('games_attempts_id_seq'::regclass);
 
+--LEVEL_ATTEMPTS
+ALTER TABLE public.level_attempts_id_seq OWNER TO postgres;
+ALTER SEQUENCE level_attempts_id_seq OWNED BY LevelAttempts.id;
+ALTER TABLE ONLY LevelAttempts ALTER COLUMN id SET DEFAULT nextval('level_attempts_id_seq'::regclass);
+
 --****************************************************************
 --***************************************************************
 --****************** PRIMARY KEY  *************************
@@ -811,6 +827,9 @@ ALTER TABLE games_levels ADD PRIMARY KEY (id);
 
 --GAMES_ATTEMPTS
 ALTER TABLE games_attempts ADD PRIMARY KEY (id);
+
+--LEVEL_ATTEMPTS
+ALTER TABLE LevelAttempts ADD PRIMARY KEY (id);
 
 --****************************************************************
 --***************************************************************

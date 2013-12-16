@@ -12,9 +12,8 @@ var Application = new Class(
 
 		/*********** LEVEL *******************
 		this.mLevelCompleted = false;
-		this.mLevelID = 0;
-		this.mNextLevelID = 0;
-		this.mNextLevelGameID = 0;
+		this.mRefID = 0;
+		this.mLevel = 0;
 		this.mWaitingOnLevelData = false;
 		this.mAdvanceToNextLevelConfirmation = false;
 		
@@ -113,9 +112,8 @@ var Application = new Class(
 
 			if (code == "100")
 			{
-				APPLICATION.mLevelID     = responseArray[2];
-				APPLICATION.mNextLevelID = responseArray[3];
-				APPLICATION.mNextLevelGameID = responseArray[4];
+				APPLICATION.mRefID    = responseArray[2];
+				APPLICATION.mLevel = responseArray[3];
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
 		}
@@ -126,11 +124,11 @@ var Application = new Class(
 	// are we running the right game??
 	gameDecider: function()
 	{
-		if (this.mNextLevelID == 0 || this.mNextLevelID == null)
+		if (this.mRefID == 0)
 		{
 			//this.log('no level yet');
 		}
-		if (this.mNextLevelGameID == 1)
+		if (this.mRefID == 'CA9EE2E34F384E95A5FA26769C5864B8')
 		{ 
              		if (this.mGameName != "k_cc_a_1")
                        	{
@@ -272,14 +270,14 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
+			APPLICATION.log('response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
 			if (code == "101")
 			{
-				APPLICATION.mLevelID     = responseArray[2];
-				APPLICATION.mNextLevelID = responseArray[3];
-				APPLICATION.mNextLevelGameID = responseArray[4];
+				APPLICATION.mRefID     = responseArray[2];
+				APPLICATION.mLevel = responseArray[3];
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}
                 }

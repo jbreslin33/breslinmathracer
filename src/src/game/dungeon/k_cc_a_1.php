@@ -12,7 +12,7 @@ Extends: Dungeon,
 	{
 		this.parent();
 
-		if (this.mApplication.mNextLevelID == 1)   
+		if (this.mApplication.mLevel == 1)   
                 {
 			for (i = 0; i < 10; i++)
 			{
@@ -21,7 +21,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.01)   
+		if (this.mApplication.mLevel == 2)   
                 {
 			for (i = 10; i < 20; i++)
 			{
@@ -30,7 +30,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.02)   
+		if (this.mApplication.mLevel == 3)   
                 {
 			for (i = 20; i < 30; i++)
 			{
