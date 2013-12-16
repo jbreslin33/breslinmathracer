@@ -107,13 +107,14 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
+			APPLICATION.log('getLevelData response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
 			if (code == "100")
 			{
-				APPLICATION.mRefID    = responseArray[2];
-				APPLICATION.mLevel = responseArray[3];
+				APPLICATION.mRefID = responseArray[1];
+				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
 		}
@@ -270,14 +271,14 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
-			APPLICATION.log('response:' + response);
+			APPLICATION.log('advanceToNextLevel response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
 			if (code == "101")
 			{
-				APPLICATION.mRefID     = responseArray[2];
-				APPLICATION.mLevel = responseArray[3];
+				APPLICATION.mRefID = responseArray[1];
+				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}
                 }

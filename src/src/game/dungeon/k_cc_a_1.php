@@ -11,6 +11,7 @@ Extends: Dungeon,
 	createQuestions: function()
 	{
 		this.parent();
+		this.log('this.mApplication.mLevel:' + this.mApplication.mLevel); 
 
 		if (this.mApplication.mLevel == 1)   
                 {

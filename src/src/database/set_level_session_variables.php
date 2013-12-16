@@ -25,16 +25,14 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         {
                 echo "error no LearningStandard";
         }
-	$levelVar = (int) preg_replace('/[^0-9]/', '', $$_SESSION["level"]);
-	$levelsVar = (int) preg_replace('/[^0-9]/', '', $$_SESSION["levels"]);
+	$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
+	$levelsVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["levels"]);
 
        	if ($levelVar < $levelsVar)
 	{
 		$levelVar++;
 	}
 	$_SESSION["level"] = $levelVar;
-        
-	
 
 }
 function setLevelSessionVariables($conn,$user_id)
