@@ -179,7 +179,7 @@ CREATE TABLE LevelAttempts (
     	end_time timestamp,
     	user_id integer NOT NULL,
     	level integer NOT NULL, 
-    	standard_id integer NOT NULL, 
+    	RefID text NOT NULL, --FK 
 	score integer DEFAULT 0 NOT NULL,
 	time_warning boolean DEFAULT false NOT NULL,
 	passed boolean DEFAULT false NOT NULL
