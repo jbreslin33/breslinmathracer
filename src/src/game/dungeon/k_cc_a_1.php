@@ -40,7 +40,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.03)   
+		if (this.mApplication.mLevel == 4)   
                 {
 			for (i = 30; i < 40; i++)
 			{
@@ -49,7 +49,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.04)   
+		if (this.mApplication.mLevel == 5)   
                 {
 			for (i = 40; i < 50; i++)
 			{
@@ -58,7 +58,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.05)   
+		if (this.mApplication.mLevel == 6)   
                 {
 			for (i = 50; i < 60; i++)
 			{
@@ -67,7 +67,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.06)   
+		if (this.mApplication.mLevel == 7)   
                 {
 			for (i = 60; i < 70; i++)
 			{
@@ -76,7 +76,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.07)   
+		if (this.mApplication.mLevel == 8)   
                 {
 			for (i = 70; i < 80; i++)
 			{
@@ -85,7 +85,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.08)   
+		if (this.mApplication.mLevel == 9)   
                 {
 			for (i = 80; i < 90; i++)
 			{
@@ -94,7 +94,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.09)   
+		if (this.mApplication.mLevel == 10)   
                 {
 			for (i = 90; i < 100; i++)
 			{
@@ -103,7 +103,7 @@ Extends: Dungeon,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
-		if (this.mApplication.mNextLevelID == 1.10)   
+		if (this.mApplication.mLevel == 11)   
                 {
                        	this.mQuiz.mQuestionArray.push(new Question('0','10'));
                        	this.mQuiz.mQuestionArray.push(new Question('10','20'));
