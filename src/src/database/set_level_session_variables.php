@@ -65,9 +65,9 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 		if ($num2 > 0)
         	{
                 	//get the id from user table
-                	$levels      = pg_Result($result, 0, 'levels');
-                	$RefID       = pg_Result($result, 0, 'RefID');
-                	$progression = pg_Result($result, 0, 'progression');
+                	$levels      = pg_Result($result2, 0, 'levels');
+                	$RefID       = pg_Result($result2, 0, 'RefID');
+                	$progression = pg_Result($result2, 0, 'progression');
                 
 			$_SESSION["levels"] = $levels;
 			$_SESSION["level"] = 1;
@@ -78,9 +78,9 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 			//you need to goto next LearningStandard...
  			$query3 = "update users set level = ";
 			$query3 .= $_SESSION["level"];
-			$query3 .= ",RefID=";
+			$query3 .= ",RefID='";
 			$query3 .= $_SESSION["RefID"];
-			$query3 .= " where id = ";
+			$query3 .= "' where id = ";
 			$query3 .= $_SESSION["user_id"]; 
         		$query3 .= ";";
 		
@@ -124,34 +124,6 @@ function setLevelSessionVariables($conn,$user_id)
         {
                 echo "error no user";
         }
-	
-/*
- 	$query = "select RefID, advancement_time, level_id from levels_transactions where user_id = ";
-        $query .= $user_id;
-        $query .= " ORDER BY advancement_time DESC LIMIT 1";
-        $query .= ";";
-
-        //get db result
-        $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
-
-        //get numer of rows
-        $num = pg_num_rows($result);
-
-        if ($num > 0)
-        {
-                //get the id from user table
-                $last_level_id = pg_Result($result, 0, 'level_id');
-
-                //set level_id
-                $_SESSION["last_level_id"] = $last_level_id;
-        }
-        else
-        {
-                // no transaction in level_transactions so set level_id to 1
-                echo "error no transactions";
-        }
-*/
 }
 
 function setLevelSessionVariablesOLD($conn,$user_id)
