@@ -16,6 +16,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         {
                 //get the id from user table
                 $levels = pg_Result($result, 0, 'levels');
+                $progression = pg_Result($result, 0, 'progression');
 
                 //set level_id
                 $_SESSION["levels"] = $levels;
