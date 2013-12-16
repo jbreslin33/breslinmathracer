@@ -51,7 +51,9 @@ insert into clusters (cluster) values ('Analyze, compare, create, and compose sh
   --      progression NUMERIC(9,3) NOT NULL, -- for us to determine order
    --     levels integer NOT NULL -- for us to determine number of levels till next LearningStandard
 
-insert into LearningStandards (RefID,progression,levels) values ('C712BAA86FEF4BFAB703AD2EB402B2DD',1,11);
+insert into LearningStandards (RefID,progression,levels) values ('CA9EE2E34F384E95A5FA26769C5864B8',1,11);
+insert into LearningStandards (RefID,progression,levels) values ('5E6A3E3B939B4577B104FA8658206E9E',2,6);
+insert into LearningStandards (RefID,progression,levels) values ('C11F30815A9C49B9A83B61A285EA11F9',3,1);
 
 
 --STANDARDS
