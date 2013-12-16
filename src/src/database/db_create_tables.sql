@@ -38,6 +38,7 @@ DROP TABLE schools cascade;
 --=========================== CORE CURRICULUM  ========================
 --==================================================================
 DROP TABLE LearningStandards;
+DROP TABLE LevelAttempts;
 
 DROP TABLE standards_clusters_domains_grades cascade;
 DROP TABLE standards cascade;
@@ -164,12 +165,27 @@ CREATE TABLE permissions_users (
 --==================================================================
 --==================== CORE CURRICULUM  ========================
 --==================================================================
-
+--LEARNING_STANDARDS
 CREATE TABLE LearningStandards (
 	RefID text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	levels integer NOT NULL -- for us to determine number of levels till next LearningStandard	
 );	
+
+--LEVEL_ATTEMPTS
+CREATE TABLE LevelAttempts (
+	id integer NOT NULL,
+    	start_time timestamp,
+    	end_time timestamp,
+    	user_id integer NOT NULL,
+    	level integer NOT NULL, 
+    	standard_id integer NOT NULL, 
+	score integer DEFAULT 0 NOT NULL,
+	time_warning boolean DEFAULT false NOT NULL,
+	passed boolean DEFAULT false NOT NULL
+);
+
+
 
 --*************************
 --GRADE
