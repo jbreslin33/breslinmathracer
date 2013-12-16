@@ -45,6 +45,15 @@ insert into clusters (cluster) values ('Classify objects and count the number of
 insert into clusters (cluster) values ('Identify and describe shapes (squares, circles, triangles, rectangles, hexagons, cubes, cones, cylinders, and spheres).'); 
 insert into clusters (cluster) values ('Analyze, compare, create, and compose shapes.');
 
+--LEARING_STANDARDS
+--REATE TABLE LearningStandards (
+ --       RefID text NOT NULL UNIQUE,
+  --      progression NUMERIC(9,3) NOT NULL, -- for us to determine order
+   --     levels integer NOT NULL -- for us to determine number of levels till next LearningStandard
+
+insert into LearningStandards (RefID,progression,levels) values ('C712BAA86FEF4BFAB703AD2EB402B2DD',1,11);
+
+
 --STANDARDS
 insert into standards (standard,description) values ('K.CC.A.1','Count to 100 by ones and by tens.');  
 insert into standards (standard,description) values ('K.CC.A.2','Count forward beginning from a given number within the known sequence (instead of having to begin at 1).'); 
