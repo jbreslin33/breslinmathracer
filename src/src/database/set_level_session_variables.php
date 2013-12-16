@@ -30,19 +30,33 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
        	if ($levelVar < $levelsVar)
 	{
+		//go up one level in same RefID
 		$levelVar++;
 		$_SESSION["level"] = $levelVar;
+
+		//update db
+                //you need to goto next LearningStandard...
+                $query4 = "update users set level = ";
+                $query4 .= $_SESSION["level"];
+                $query4 .= " where id = ";
+                $query4 .= $_SESSION["user_id"];
+                $query4 .= ";";
+
+                //get db result
+                $result4 = pg_query($conn,$query4) or die('Could not connect: ' . pg_last_error());
+                dbErrorCheck($conn,$result4);
 	}
 	else
 	{
+		//go to new RefID
 		//you need to goto next LearningStandard...
  		$query2 = "select RefID, levels, progression from LearningStandards where progression > ";
 		$query2 .= $_SESSION["progression"];
         	$query2 .= " order by progression asc LIMIT 1;";
 											
 		//get db result
-        	$result2 = pg_query($conn2,$query2) or die('Could not connect: ' . pg_last_error());
-        	dbErrorCheck($conn2,$result2);
+        	$result2 = pg_query($conn,$query2) or die('Could not connect: ' . pg_last_error());
+        	dbErrorCheck($conn,$result2);
         	
 		//get numer of rows
         	$num2 = pg_num_rows($result2);
@@ -68,6 +82,10 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 			$query3 .= " where id = ";
 			$query3 .= $_SESSION["user_id"]; 
         		$query3 .= ";";
+		
+			//get db result
+        		$result3 = pg_query($conn,$query3) or die('Could not connect: ' . pg_last_error());
+        		dbErrorCheck($conn,$result3);
 		}
 		else
 		{
