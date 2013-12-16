@@ -142,7 +142,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_1(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 2)
+		if (this.mNextLevelGameID == '5E6A3E3B939B4577B104FA8658206E9E')
 		{ 
              		if (this.mGameName != "k_cc_a_2")
                        	{
@@ -155,7 +155,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_2(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 3)
+		if (this.mNextLevelGameID == 'C11F30815A9C49B9A83B61A285EA11F9')
 		{ 
              		if (this.mGameName != "k_cc_a_3")
                        	{
