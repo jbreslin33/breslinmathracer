@@ -60,7 +60,14 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	$_SESSION["RefID"] = $RefID;
 		
 			//update db
-				
+			//you need to goto next LearningStandard...
+ 			$query3 = "update users set level = ";
+			$query3 .= $_SESSION["level"];
+			$query3 .= ",RefID=";
+			$query3 .= $_SESSION["RefID"];
+			$query3 .= " where id = ";
+			$query3 .= $_SESSION["user_id"]; 
+        		$query3 .= ";";
 		}
 		else
 		{
