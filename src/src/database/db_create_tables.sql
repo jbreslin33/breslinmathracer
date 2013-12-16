@@ -167,7 +167,8 @@ CREATE TABLE permissions_users (
 
 CREATE TABLE LearningStandards (
 	RefID text NOT NULL UNIQUE,
-	progression NUMERIC(9,3) NOT NULL 	
+	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
+	levels integer NOT NULL -- for us to determine number of levels till next LearningStandard	
 );	
 
 --*************************
