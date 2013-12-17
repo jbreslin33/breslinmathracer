@@ -32,10 +32,6 @@ insertIntoTeachers($conn,$new_teacher_id);
 //insert student
 insertIntoStudents($conn,$new_teacher_id,$new_teacher_id);
 
-//insert first transaction for levels to lowest level
-insertFirstLevelTransaction($conn,$new_teacher_id);
-
-
 //now loop thru and add a class of students..
 $number_of_students = $_POST["number_of_students"]; 
 for ($i = 0; $i < $number_of_students; $i++)
@@ -54,10 +50,6 @@ for ($i = 0; $i < $number_of_students; $i++)
 
 	//insert student
 	insertIntoStudents($conn,$new_student_id,$new_teacher_id);
-
-
-	//insert first transaction for levels to lowest level
-	insertFirstLevelTransaction($conn,$new_student_id);
 }
 
 //go to success page

@@ -100,9 +100,6 @@ while (!feof($file_handle))
 
 		//insert student
 		insertIntoStudents($conn,$new_student_id,$_SESSION["school_id"]);
-
-		//insert first transaction for levels to lowest level
-		insertFirstLevelTransaction($conn,$new_student_id);
 	}
 }
 

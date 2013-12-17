@@ -30,9 +30,6 @@ $new_user_id = selectUserID($conn, $_SESSION["school_id"],$newUsername,$password
 //insert teacher
 insertIntoStudents($conn,$new_user_id,0);
 
-//transaction
-insertFirstLevelTransaction($conn,$new_user_id);
-
 //insert teacher
 insertIntoTeachers($conn,$new_user_id,0);
 

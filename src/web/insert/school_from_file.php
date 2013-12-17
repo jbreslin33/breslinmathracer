@@ -32,8 +32,6 @@ while (!feof($file_handle))
 
 	insertIntoStudents($conn,$new_student_id,1);
 
-	insertFirstLevelTransaction($conn,$new_student_id);
-
 	$i++;
 }
 
