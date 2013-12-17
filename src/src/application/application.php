@@ -142,7 +142,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_1(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == '5E6A3E3B939B4577B104FA8658206E9E')
+		if (this.mRefID == '5E6A3E3B939B4577B104FA8658206E9E')
 		{ 
              		if (this.mGameName != "k_cc_a_2")
                        	{
@@ -155,7 +155,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_2(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 'C11F30815A9C49B9A83B61A285EA11F9')
+		if (this.mRefID == 'C11F30815A9C49B9A83B61A285EA11F9')
 		{ 
              		if (this.mGameName != "k_cc_a_3")
                        	{
@@ -169,7 +169,7 @@ var Application = new Class(
 			}
                 }
 		
-		if (this.mNextLevelGameID == 4)
+		if (this.mRefID == 4)
 		{ 
              		if (this.mGameName != "k_oa_a_5")
                        	{
@@ -182,7 +182,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_5(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 5)
+		if (this.mRefID == 5)
 		{ 
              		if (this.mGameName != "g1_oa_c_6")
                        	{
@@ -195,7 +195,7 @@ var Application = new Class(
                                	this.mGame = new g1_oa_c_6(APPLICATION);
 			}
                 }
-		if (this.mNextLevelGameID == 6)
+		if (this.mRefID == 6)
 		{ 
              		if (this.mGameName != "g2_oa_b_2")
                        	{
@@ -208,7 +208,7 @@ var Application = new Class(
                                	this.mGame = new g2_oa_b_2(APPLICATION);
 			}	
 		}
-		if (this.mNextLevelGameID == 7)
+		if (this.mRefID == 7)
 		{ 
              		if (this.mGameName != "g3_oa_c_7")
                        	{
@@ -221,7 +221,7 @@ var Application = new Class(
                                	this.mGame = new g3_oa_c_7(APPLICATION);
 			}	
 		}
-		if (this.mNextLevelGameID == 8)
+		if (this.mRefID == 8)
 		{ 
              		if (this.mGameName != "k_oa_a_4")
                        	{
@@ -234,7 +234,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_4(APPLICATION);
 			}
 		}
-		if (this.mNextLevelGameID == 9)
+		if (this.mRefID == 9)
 		{ 
              		if (this.mGameName != "k_cc_c_6")
                        	{
