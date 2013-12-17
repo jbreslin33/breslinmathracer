@@ -168,60 +168,20 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_3(APPLICATION);
 			}
                 }
-		
-		if (this.mRefID == 4)
+		if (this.mRefID == '66626D8AEE4E474B8CFEC8A4B68AA51C')
 		{ 
-             		if (this.mGameName != "k_oa_a_5")
+             		if (this.mGameName != "k_cc_c_6")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "k_oa_a_5";
-                               	this.mGame = new k_oa_a_5(APPLICATION);
+                               	this.mGameName = "k_cc_c_6";
+                               	this.mGame = new k_cc_c_6(APPLICATION);
 			}
-                }
-		if (this.mRefID == 5)
-		{ 
-             		if (this.mGameName != "g1_oa_c_6")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "g1_oa_c_6";
-                               	this.mGame = new g1_oa_c_6(APPLICATION);
-			}
-                }
-		if (this.mRefID == 6)
-		{ 
-             		if (this.mGameName != "g2_oa_b_2")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "g2_oa_b_2";
-                               	this.mGame = new g2_oa_b_2(APPLICATION);
-			}	
 		}
-		if (this.mRefID == 7)
-		{ 
-             		if (this.mGameName != "g3_oa_c_7")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "g3_oa_c_7";
-                               	this.mGame = new g3_oa_c_7(APPLICATION);
-			}	
-		}
-		if (this.mRefID == 8)
+		if (this.mRefID == '0CFFCBC851984A4281C23D34FC400445')
 		{ 
              		if (this.mGameName != "k_oa_a_4")
                        	{
@@ -234,18 +194,57 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_4(APPLICATION);
 			}
 		}
-		if (this.mRefID == 9)
+		if (this.mRefID == '1353E9D5614D460FA32E67853B6BA6D8')
 		{ 
-             		if (this.mGameName != "k_cc_c_6")
+             		if (this.mGameName != "k_oa_a_5")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "k_cc_c_6";
-                               	this.mGame = new k_cc_c_6(APPLICATION);
+                               	this.mGameName = "k_oa_a_5";
+                               	this.mGame = new k_oa_a_5(APPLICATION);
 			}
+                }
+		if (this.mRefID == '6C33D2BEC1AC431C8FC4BF9FD4DD3DCA')
+		{ 
+             		if (this.mGameName != "g1_oa_c_6")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g1_oa_c_6";
+                               	this.mGame = new g1_oa_c_6(APPLICATION);
+			}
+                }
+		if (this.mRefID == '800715566B824BB3A5A8C464E961C2B4')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2";
+                               	this.mGame = new g2_oa_b_2(APPLICATION);
+			}	
+		}
+		if (this.mRefID == '3D384CB2349B41299A3B5A133AB9E3F8')
+		{ 
+             		if (this.mGameName != "g3_oa_c_7")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g3_oa_c_7";
+                               	this.mGame = new g3_oa_c_7(APPLICATION);
+			}	
 		}
 	},
 	
