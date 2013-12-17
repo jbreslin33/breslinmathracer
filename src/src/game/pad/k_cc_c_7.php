@@ -1,4 +1,4 @@
-var k_cc_c_6 = new Class(
+var k_cc_c_7 = new Class(
 {
 
 Extends: Pad,
@@ -7,9 +7,10 @@ Extends: Pad,
 	{
        		this.parent(application);
 
-		//count shape array
-		this.mCountShapeArrayA = new Array();
-		this.mCountShapeArrayB = new Array();
+		//instead we need 2 widgets....
+		this.mCompareBarA = 0;									
+		this.mCompareBarB = 0;									
+		this.createCompareBars();
 	
         	this.mApplication.mHud.mGameName.setText('<font size="2">COMPARE</font>');
 
@@ -20,32 +21,34 @@ Extends: Pad,
 	reset: function()
 	{
 		this.parent();
-	
-		//A	
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(false);
-		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
-		{
-			this.mCountShapeArrayA[v].setVisibility(true);
-		}	
-	
-		//B	
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(false);
-		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
-		{
-			this.mCountShapeArrayB[v].setVisibility(true);
-		}	
+
+                this.mCompareBarA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableA();;
+                this.mCompareBarB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableB();;
 	},
+ 
+	createCompareBars: function()
+        {
+                //comparaBarA
+                if (!this.mCompareBarA)
+                {
+                        this.mCompareA = new Shape(150,50,100,50,this,"","","");
+                        this.mCompareA.mMesh.innerHTML = '';
+                }
+                //comparaBarB
+                if (!this.mCompareBarB)
+                {
+                        this.mCompareB = new Shape(150,50,400,50,this,"","","");
+                        this.mCompareB.mMesh.innerHTML = '';
+                }
+        },
   
 	destroyShapesAndArray: function()
         {
                 this.parent();
 
+                this.mCompareA[i].mDiv.mDiv.removeChild(this.mCountShapeArrayA[i].mMesh);
+                document.body.removeChild(this.mCountShapeArrayA[i].mDiv.mDiv);
+                this.mCountShapeArrayA[i] = 0;
                 //shapes and array
 		//A
                 for (i = 0; i < this.mCountShapeArrayA.length; i++)
