@@ -2,6 +2,12 @@
 insert into LearningStandards (RefID,progression,levels) values ('CA9EE2E34F384E95A5FA26769C5864B8',1,11);
 insert into LearningStandards (RefID,progression,levels) values ('5E6A3E3B939B4577B104FA8658206E9E',2,6);
 insert into LearningStandards (RefID,progression,levels) values ('C11F30815A9C49B9A83B61A285EA11F9',3,1);
+insert into LearningStandards (RefID,progression,levels) values ('66626D8AEE4E474B8CFEC8A4B68AA51C',4,1);
+insert into LearningStandards (RefID,progression,levels) values ('0CFFCBC851984A4281C23D34FC400445',5,18);
+insert into LearningStandards (RefID,progression,levels) values ('1353E9D5614D460FA32E67853B6BA6D8',6,42);
+insert into LearningStandards (RefID,progression,levels) values ('6C33D2BEC1AC431C8FC4BF9FD4DD3DCA',7,79);
+insert into LearningStandards (RefID,progression,levels) values ('800715566B824BB3A5A8C464E961C2B4',8,304);
+insert into LearningStandards (RefID,progression,levels) values ('3D384CB2349B41299A3B5A133AB9E3F8',9,218);
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
 --(CONTINUED PASSWORDS).......
