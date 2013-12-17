@@ -84,9 +84,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/select_student_id.php");
                 	$_SESSION["Login"] = "NO";
 		}
 	
-		//prime the level_transaction table	
-		insertFirstLevelTransaction($conn,$_SESSION["user_id"]);
-		
 		//set session levels
 		setLevelSessionVariables($conn,$_SESSION["user_id"]);
 
@@ -95,7 +92,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/select_student_id.php");
 
 	   	//insert student 
                 insertIntoStudents($conn,$_SESSION["user_id"],0);
-
 
        		//--------------------------------------------------------------
                 
