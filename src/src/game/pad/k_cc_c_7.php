@@ -127,29 +127,8 @@ Extends: Pad,
 		this.mNumQuestion.setVisibility(false);
 		this.mNumAnswer.setVisibility(false);
 
-		//A
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(false);
-		}	
-
-                this.log('show variableA:' + this.mQuiz.getQuestion().getVariableA());
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
-		{
-			this.mCountShapeArrayA[v].setVisibility(true);
-		}	
-	
-		//B	
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(false);
-		}	
-
-                this.log('show variableB:' + this.mQuiz.getQuestion().getVariableB());
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
-		{
-			this.mCountShapeArrayB[v].setVisibility(true);
-		}	
+                this.mCompareBarA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableA();;
+                this.mCompareBarB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableB();;
 	},
  
 	numPadHit: function()
