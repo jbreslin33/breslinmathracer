@@ -7,76 +7,68 @@ Extends: Pad,
 	{
        		this.parent(application);
 		this.mApplication.mHud.mGameName.setText('<font size="2">ADD</font>');
+		
+		this.mAdditionArray = new Array();
+
+		this.mAdditionArray.
+
+	
+		this.mNameA = '';
+		this.mNameB = '';
+	
+		this.mNameArrayA = new Array();
+		this.mNameArrayB = new Array();
+	
+		this.mNameArrayA[0] = 'Joe'; 
+		this.mNameArrayA[1] = 'Tom'; 
+		
+		this.mNameArrayB[0] = 'Sally'; 
+		this.mNameArrayB[1] = 'Jane'; 
+
+		this.mObjectArrayB[0][0] = 'Apple'; 
+		this.mObjectArrayB[0][1] = 'Apples'; 
+		this.mObjectArrayB[1][1] = 'Cats'; 
+
+		this.mAddendA = 0;
+		this.mAddendB = 0';
+	
+		this.mSubtrahendA = 0;
+		this.mSubtrahendB = 0;
+
+		this.mSign = '';
+		
+	
 	},
 
 	createQuestions: function()
         {
  		this.parent();
 
-		//add
-		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 1 =','3'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 2 =','3'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 1 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 3 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 + 1 =','5'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 4 =','5'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 3 =','5'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 2 =','5'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 0 =','0')); 
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 0 =','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 0 =','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 0 =','3'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 + 0 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 + 0 =','5'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 1 =','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 2 =','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 3 =','3'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 4 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 5 =','5'));
-		//21
+	
+                for (i = 0; i < this.mScoreNeeded; i++)
+		{
+			//let's get name a and b
+			this.mNameA = this.mRandNameArrayA[Math.floor((Math.random()*2))];		
+			this.mNameB = this.mRandNameArrayB[Math.floor((Math.random()*2))];		
 
-		//subtract
-		//0
-                this.mQuiz.mQuestionPoolArray.push(new Question('0 - 0 =','0'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 - 1 =','0'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 - 2 =','0'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 3 =','0'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 4 =','0'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 5 =','0'));
-		//27
+			var mRandomSign = Math.floor((Math.random()*2));		
+			if (mRandomSign == 0)
+			{
+				//do addition 
+					
+					
+			}
+			else
+			{
 
-		//1
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 - 0 =','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 - 1 =','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 2 =','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 3 =','1'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 4 =','1'));
-		//32
+			}
+		}
+		 
 
-		//2	
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 - 0 =','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 1 =','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 2 =','2'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 3 =','2'));
-		//36
+		//var randomChance = Math.floor((Math.random()*2));		
 
-		//3
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 0 =','3'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 1 =','3'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 2 =','3'));
-		//39
-
-		//4
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 0 =','4'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 1 =','4'));
-		//41
-
-		//5
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 0 =','5'));
-		//42
-
+                //this.mQuiz.mQuestionPoolArray.push(new Question('5 - 0 =','5'));
+/*
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
@@ -91,7 +83,8 @@ Extends: Pad,
                         }
                         elementCounter++;
                 }
-
+*/
+/*
 		while (totalNew < totalNewGoal)
 		{	
 			//reset vars and arrays
@@ -119,5 +112,6 @@ Extends: Pad,
 				}
 			}
 		}
+*/
 	}
 });
