@@ -194,6 +194,19 @@ var Application = new Class(
                                	this.mGame = new k_cc_c_7(APPLICATION);
 			}
 		}
+		if (this.mRefID == '695A7607FE8A4E27AB80652C45C84FA8')
+		{ 
+             		if (this.mGameName != "k_oa_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "k_oa_a_2";
+                               	this.mGame = new k_oa_a_2(APPLICATION);
+			}
+		}
 		if (this.mRefID == '0CFFCBC851984A4281C23D34FC400445')
 		{ 
              		if (this.mGameName != "k_oa_a_4")
