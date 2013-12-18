@@ -31,13 +31,13 @@ Extends: Pad,
                 //comparaBarA
                 if (!this.mCompareBarA)
                 {
-                        this.mCompareBarA = new Shape(150,50,100,50,this,"","","");
+                        this.mCompareBarA = new Shape(150,50,250,100,this,"","","");
                         this.mCompareBarA.mMesh.innerHTML = '';
                 }
                 //comparaBarB
                 if (!this.mCompareBarB)
                 {
-                        this.mCompareBarB = new Shape(150,50,400,50,this,"","","");
+                        this.mCompareBarB = new Shape(150,50,500,100,this,"","","");
                         this.mCompareBarB.mMesh.innerHTML = '';
                 }
         },
