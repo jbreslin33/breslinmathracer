@@ -7,11 +7,12 @@ Extends: Pad,
 	{
        		this.parent(application);
 		this.mApplication.mHud.mGameName.setText('<font size="2">ADD</font>');
+
+		//Ben had 2 toys. Jane gave him 2 more toys. How many toys does ben have now? 
 		
 		this.mAdditionArray = new Array();
 
 		this.mAdditionArray.
-
 	
 		this.mNameA = '';
 		this.mNameB = '';
@@ -43,7 +44,6 @@ Extends: Pad,
 	createQuestions: function()
         {
  		this.parent();
-
 	
                 for (i = 0; i < this.mScoreNeeded; i++)
 		{
