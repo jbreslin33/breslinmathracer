@@ -4,7 +4,7 @@ insert into LearningStandards (RefID,progression,levels) values ('5E6A3E3B939B45
 insert into LearningStandards (RefID,progression,levels) values ('C11F30815A9C49B9A83B61A285EA11F9',3,1);
 insert into LearningStandards (RefID,progression,levels) values ('66626D8AEE4E474B8CFEC8A4B68AA51C',4,1);
 insert into LearningStandards (RefID,progression,levels) values ('C9B9CAD5BDE84CE2A7A0C441A3DF1A2D',5,1);
-insert into LearningStandards (RefID,progression,levels) values ('695A7607FE8A4E27AB80652C45C84FA8',6,1);
+--insert into LearningStandards (RefID,progression,levels) values ('695A7607FE8A4E27AB80652C45C84FA8',6,1);
 insert into LearningStandards (RefID,progression,levels) values ('0CFFCBC851984A4281C23D34FC400445',7,18);
 insert into LearningStandards (RefID,progression,levels) values ('1353E9D5614D460FA32E67853B6BA6D8',8,42);
 insert into LearningStandards (RefID,progression,levels) values ('6C33D2BEC1AC431C8FC4BF9FD4DD3DCA',9,79);
