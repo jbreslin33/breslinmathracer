@@ -65,7 +65,7 @@ Extends: Game,
 		this.createControlObject();
 
 		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
-        	this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mNextLevelID + '</font>');
+        	this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mLevel + '</font>');
 
 		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 

@@ -183,7 +183,7 @@ execute: function(application)
 exit: function(application)
 {
 	application.mLevelCompleted = false;
- 	application.mHud.mLevel.setText('<font size="2"> Level : ' + application.mNextLevelID + '</font>');	
+ 	application.mHud.mLevel.setText('<font size="2"> Level : ' + application.mLevel + '</font>');	
 }
 
 });

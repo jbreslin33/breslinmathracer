@@ -41,9 +41,9 @@ Extends: Pad,
 		var newQuestionElement = 0;
    		var elementCounter     = 0;
                 
-                for (i = 13.00; i <= 13.17; i = i + .01)
+                for (i = 0; i <= 17; i = i++)
                 {
-                        if (this.mApplication.mNextLevelID == i)
+                        if (this.mApplication.mLevel == i)
                         {
                                 newQuestionElement = elementCounter;
                         }
