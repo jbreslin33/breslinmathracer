@@ -78,6 +78,19 @@ CREATE TABLE learning_standards (
 ALTER TABLE public.learning_standards OWNER TO postgres;
 
 --
+-- Name: learningstandards; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE learningstandards (
+    refid text NOT NULL,
+    progression numeric(9,3) NOT NULL,
+    levels integer NOT NULL
+);
+
+
+ALTER TABLE public.learningstandards OWNER TO postgres;
+
+--
 -- Name: levelattempts; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -149,51 +162,6 @@ ALTER TABLE public.passwords_id_seq OWNER TO postgres;
 
 ALTER SEQUENCE passwords_id_seq OWNED BY passwords.id;
 
-
---
--- Name: permissions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE permissions (
-    id integer NOT NULL,
-    permission text NOT NULL
-);
-
-
-ALTER TABLE public.permissions OWNER TO postgres;
-
---
--- Name: permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE permissions_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.permissions_id_seq OWNER TO postgres;
-
---
--- Name: permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE permissions_id_seq OWNED BY permissions.id;
-
-
---
--- Name: permissions_users; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE permissions_users (
-    permission_id integer NOT NULL,
-    user_id integer NOT NULL
-);
-
-
-ALTER TABLE public.permissions_users OWNER TO postgres;
 
 --
 -- Name: schools; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -318,13 +286,6 @@ ALTER TABLE ONLY passwords ALTER COLUMN id SET DEFAULT nextval('passwords_id_seq
 -- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY permissions ALTER COLUMN id SET DEFAULT nextval('permissions_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY schools ALTER COLUMN id SET DEFAULT nextval('schools_id_seq'::regclass);
 
 
@@ -359,6 +320,24 @@ COPY learning_standards (id, ref_id, progression, levels) FROM stdin;
 
 
 --
+-- Data for Name: learningstandards; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY learningstandards (refid, progression, levels) FROM stdin;
+CA9EE2E34F384E95A5FA26769C5864B8	1.000	11
+5E6A3E3B939B4577B104FA8658206E9E	2.000	6
+C11F30815A9C49B9A83B61A285EA11F9	3.000	1
+66626D8AEE4E474B8CFEC8A4B68AA51C	4.000	1
+C9B9CAD5BDE84CE2A7A0C441A3DF1A2D	5.000	1
+0CFFCBC851984A4281C23D34FC400445	7.000	18
+1353E9D5614D460FA32E67853B6BA6D8	8.000	42
+6C33D2BEC1AC431C8FC4BF9FD4DD3DCA	9.000	79
+800715566B824BB3A5A8C464E961C2B4	10.000	304
+3D384CB2349B41299A3B5A133AB9E3F8	11.000	218
+\.
+
+
+--
 -- Name: level_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -386,30 +365,6 @@ COPY passwords (id, password) FROM stdin;
 --
 
 SELECT pg_catalog.setval('passwords_id_seq', 1, false);
-
-
---
--- Data for Name: permissions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY permissions (id, permission) FROM stdin;
-1	INSERT
-\.
-
-
---
--- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('permissions_id_seq', 1, true);
-
-
---
--- Data for Name: permissions_users; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY permissions_users (permission_id, user_id) FROM stdin;
-\.
 
 
 --
@@ -483,6 +438,14 @@ ALTER TABLE ONLY learning_standards
 
 
 --
+-- Name: learningstandards_refid_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY learningstandards
+    ADD CONSTRAINT learningstandards_refid_key UNIQUE (refid);
+
+
+--
 -- Name: levelattempts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -504,30 +467,6 @@ ALTER TABLE ONLY passwords
 
 ALTER TABLE ONLY passwords
     ADD CONSTRAINT passwords_pkey PRIMARY KEY (password);
-
-
---
--- Name: permissions_permission_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY permissions
-    ADD CONSTRAINT permissions_permission_key UNIQUE (permission);
-
-
---
--- Name: permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY permissions
-    ADD CONSTRAINT permissions_pkey PRIMARY KEY (id);
-
-
---
--- Name: permissions_users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY permissions_users
-    ADD CONSTRAINT permissions_users_pkey PRIMARY KEY (permission_id, user_id);
 
 
 --
@@ -576,14 +515,6 @@ ALTER TABLE ONLY users
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_username_school_id_key UNIQUE (username, school_id);
-
-
---
--- Name: permissions_users_permission_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY permissions_users
-    ADD CONSTRAINT permissions_users_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES permissions(id);
 
 
 --
