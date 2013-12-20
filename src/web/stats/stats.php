@@ -30,7 +30,6 @@ echo $_SESSION["school_name"];
 echo "<br>";
 echo "<br>";
 
-
 echo "user_id: ";
 echo $_SESSION["user_id"];
 echo "<br>";
@@ -52,28 +51,6 @@ echo $_SESSION["last_name"];
 echo "<br>";
 echo "<br>";
 
-
-echo "last_level_id: ";
-echo $_SESSION["last_level_id"];
-echo "<br>";
-
-echo "last_level: ";
-echo $_SESSION["last_level"];
-echo "<br>";
-
-echo "next_level_id: ";
-echo $_SESSION["next_level_id"];
-echo "<br>";
-
-echo "next_level: ";
-echo $_SESSION["next_level"];
-echo "<br>";
-
-
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
 ?>
 </body>
 

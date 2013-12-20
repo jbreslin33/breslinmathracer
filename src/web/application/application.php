@@ -18,11 +18,12 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 
 <!-- HUD VARIABLES    -->
 <script language="javascript">
-var curDate = "<?php echo $curDate; ?>";
-var username = "<?php echo $username; ?>";
-var next_level = "<?php echo $next_level; ?>";
-var ref_id = "<?php echo $ref_id; ?>";
-var level = "<?php echo $level; ?>";
+var curDate   = "<?php echo $curDate; ?>";
+var username  = "<?php echo $username; ?>";
+var firstname = "<?php echo $first_name; ?>";
+var lastname  = "<?php echo $last_name; ?>";
+var ref_id    = "<?php echo $ref_id; ?>";
+var level     = "<?php echo $level; ?>";
 
 var APPLICATION;
 
