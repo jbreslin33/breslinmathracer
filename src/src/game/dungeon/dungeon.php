@@ -172,7 +172,6 @@ Extends: Game,
 
         	var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
         	this.mDoor = new ShapeDoor(50,50,openPoint.mX,openPoint.mY,this,doorQuestion,image_source_closed,"","door",image_source_open);
-        	this.mDoor.mUrl = '/src/database/goto_next_level.php';
         	this.mDoor.mOpenOnQuestionSolved = true;
         	this.addToShapeArray(this.mDoor);
 	},
