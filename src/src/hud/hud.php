@@ -56,7 +56,7 @@ var Hud = new Class(
 	
 	setScoreNeeded: function(scoreNeeded)
 	{
-        	this.mScoreNeeded.setText('<font size="2"> Score Needed: ' + scoreNeeded +  '</font>');
+        	this.mScoreNeeded.setText('<font size="2"> Goal: ' + scoreNeeded +  '</font>');
 	},
 	
 	setGameName: function(gameName)
