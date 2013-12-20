@@ -54,6 +54,11 @@ var Hud = new Class(
 
         },
 
+	setLevel: function(level)
+	{
+        	this.mLevel.setText('<font size="2"> Level: ' + level + '</font>');
+	},
+
 	setQuestion: function(question)
 	{
         	this.mQuestion.setText('<font size="2"> Question: ' + question + '</font>');

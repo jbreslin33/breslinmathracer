@@ -120,6 +120,7 @@ var Application = new Class(
 			{
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
+				APPLICATION.mHud.setLevel(APPLICATION.mLevel);
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
 		}
