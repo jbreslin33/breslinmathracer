@@ -118,55 +118,6 @@ ALTER SEQUENCE level_attempts_id_seq OWNED BY levelattempts.id;
 
 
 --
--- Name: levels_standards_clusters_domains_grades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE levels_standards_clusters_domains_grades (
-    level_id double precision NOT NULL,
-    standard_cluster_domain_grade_id integer NOT NULL
-);
-
-
-ALTER TABLE public.levels_standards_clusters_domains_grades OWNER TO postgres;
-
---
--- Name: multiplication; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE multiplication (
-    id integer NOT NULL,
-    score_needed integer DEFAULT 10 NOT NULL,
-    factor_min integer NOT NULL,
-    factor_max integer NOT NULL,
-    number_of_factors integer DEFAULT 2 NOT NULL,
-    level_id double precision NOT NULL
-);
-
-
-ALTER TABLE public.multiplication OWNER TO postgres;
-
---
--- Name: multiplication_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE multiplication_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.multiplication_id_seq OWNER TO postgres;
-
---
--- Name: multiplication_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE multiplication_id_seq OWNED BY multiplication.id;
-
-
---
 -- Name: passwords; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -360,13 +311,6 @@ ALTER TABLE ONLY levelattempts ALTER COLUMN id SET DEFAULT nextval('level_attemp
 -- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY multiplication ALTER COLUMN id SET DEFAULT nextval('multiplication_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY passwords ALTER COLUMN id SET DEFAULT nextval('passwords_id_seq'::regclass);
 
 
@@ -438,41 +382,6 @@ SELECT pg_catalog.setval('level_attempts_id_seq', 1, false);
 
 COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, score, time_warning, passed) FROM stdin;
 \.
-
-
---
--- Data for Name: levels_standards_clusters_domains_grades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY levels_standards_clusters_domains_grades (level_id, standard_cluster_domain_grade_id) FROM stdin;
-\.
-
-
---
--- Data for Name: multiplication; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY multiplication (id, score_needed, factor_min, factor_max, number_of_factors, level_id) FROM stdin;
-1	10	0	1	2	600
-2	10	0	2	2	600.009999999999991
-3	10	0	3	2	600.019999999999982
-4	10	0	4	2	600.029999999999973
-5	10	0	5	2	600.039999999999964
-6	10	0	6	2	600.049999999999955
-7	10	0	7	2	600.059999999999945
-8	10	0	8	2	600.07000000000005
-9	10	0	9	2	600.080000000000041
-10	10	0	10	2	600.090000000000032
-11	10	0	11	2	600.100000000000023
-12	10	0	12	2	600.110000000000014
-\.
-
-
---
--- Name: multiplication_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('multiplication_id_seq', 12, true);
 
 
 --
@@ -1544,22 +1453,6 @@ ALTER TABLE ONLY learning_standards
 
 ALTER TABLE ONLY levelattempts
     ADD CONSTRAINT levelattempts_pkey PRIMARY KEY (id);
-
-
---
--- Name: levels_standards_clusters_domains_grades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels_standards_clusters_domains_grades
-    ADD CONSTRAINT levels_standards_clusters_domains_grades_pkey PRIMARY KEY (level_id, standard_cluster_domain_grade_id);
-
-
---
--- Name: multiplication_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY multiplication
-    ADD CONSTRAINT multiplication_pkey PRIMARY KEY (id);
 
 
 --
