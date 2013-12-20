@@ -8,7 +8,12 @@ var Application = new Class(
         {
 		/************ questions array from server db  later this need come in ajax*****/
 		this.mEnteredDoor = false;
+
+
+		//personal info
 		this.mUsername = username;
+		this.mFirstName = firstname;
+		this.mLastName = lastname;
 
 		/*********** LEVEL *******************
 		this.mLevelCompleted = false;
