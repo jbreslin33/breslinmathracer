@@ -14,7 +14,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 <style>
 body 
 {
-background-color:#cccccc;
+background-color:#848484;
 }
 </style>
 </head>
