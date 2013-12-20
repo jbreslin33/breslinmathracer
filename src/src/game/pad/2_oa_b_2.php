@@ -436,7 +436,7 @@ Extends: Pad,
 		var newQuestionElement = 0;
 		var elementCounter     = 0;	
 		
-		for (i = 0; i <= 303; i = i++)
+		for (i = 0; i <= 303; i++)
 		{
 			if (this.mApplication.mLevel == i)
 			{
