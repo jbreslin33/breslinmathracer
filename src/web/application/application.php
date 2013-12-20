@@ -11,10 +11,14 @@ $conn = dbConnect();
 include(getenv("DOCUMENT_ROOT") . "/web/application/standard_sessions.php");
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 ?>
-
+<style>
+body 
+{
+background-color:#cccccc;
+}
+</style>
 </head>
 
-<body bgcolor="grey">
 
 <!-- HUD VARIABLES    -->
 <script language="javascript">
