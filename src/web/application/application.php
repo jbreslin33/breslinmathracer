@@ -17,7 +17,6 @@ body
 background-color:#848484;
 }
 </style>
-</head>
 
 
 <!-- HUD VARIABLES    -->
@@ -30,6 +29,7 @@ var ref_id    = "<?php echo $ref_id; ?>";
 var level     = "<?php echo $level; ?>";
 
 var APPLICATION;
+</head>
 
 window.addEvent('domready', function()
 {
