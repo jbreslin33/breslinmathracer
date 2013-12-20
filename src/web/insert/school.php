@@ -12,7 +12,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_users.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_teachers.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_students.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/insert_first_level_transaction.php"); 
 
 //loop thru classes
 $number_of_classes = $_POST["number_of_classes"];

@@ -5,7 +5,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_schools.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_users.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_teachers.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_students.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/insert_first_level_transaction.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_periods.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_spaces.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_numbers.php"); 
