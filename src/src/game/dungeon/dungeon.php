@@ -60,8 +60,6 @@ Extends: Game,
 		this.mShapeArray = new Array();
 
 		this.parent();
-		
-		this.mScoreNeeded = this.mQuiz.mQuestionArray.length;
 
 		this.createQuestionShapes();
 		
