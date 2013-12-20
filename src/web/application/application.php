@@ -21,7 +21,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 var curDate = "<?php echo $curDate; ?>";
 var username = "<?php echo $username; ?>";
 var next_level = "<?php echo $next_level; ?>";
-var RefID = "<?php echo $RefID; ?>";
+var ref_id = "<?php echo $ref_id; ?>";
 var level = "<?php echo $level; ?>";
 
 var APPLICATION;

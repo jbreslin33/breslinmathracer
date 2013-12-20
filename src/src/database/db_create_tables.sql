@@ -9,7 +9,7 @@ DROP TABLE schools cascade;
 --==================================================================
 --=========================== CORE CURRICULUM  ========================
 --==================================================================
-DROP TABLE LearningStandards;
+DROP TABLE learning_standards;
 DROP TABLE LevelAttempts;
 
 --=========================== HELPER  ========================
@@ -85,7 +85,7 @@ CREATE TABLE users (
     	middle_name3 text,
     	last_name text,
     	school_id integer NOT NULL,
-    	RefID text NOT NULL default 'CA9EE2E34F384E95A5FA26769C5864B8',
+    	ref_id text NOT NULL default 'CA9EE2E34F384E95A5FA26769C5864B8',
 	level integer NOT NULL default 1 
 );
 
@@ -105,8 +105,8 @@ CREATE TABLE students (
 --==================== CORE CURRICULUM  ========================
 --==================================================================
 --LEARNING_STANDARDS
-CREATE TABLE LearningStandards (
-	RefID text NOT NULL UNIQUE,
+CREATE TABLE learning_standards (
+	ref_id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	levels integer NOT NULL -- for us to determine number of levels till next LearningStandard	
 );	
@@ -118,7 +118,7 @@ CREATE TABLE LevelAttempts (
     	end_time timestamp,
     	user_id integer NOT NULL,
     	level integer NOT NULL, 
-    	RefID text NOT NULL, --FK 
+    	ref_id text NOT NULL, --FK 
 	score integer DEFAULT 0 NOT NULL,
 	time_warning boolean DEFAULT false NOT NULL,
 	passed boolean DEFAULT false NOT NULL

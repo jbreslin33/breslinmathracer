@@ -1,8 +1,8 @@
 <?php
 function setLevelSessionVariablesAdvance($conn,$user_id)
 {
- 	$query = "select levels,progression from LearningStandards where RefID = '";
-	$query .= $_SESSION["RefID"];
+ 	$query = "select levels,progression from learning_standards where ref_id = '";
+	$query .= $_SESSION["ref_id"];
         $query .= "';";
 
 	//get db result
@@ -31,7 +31,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
        	if ($levelVar < $levelsVar)
 	{
-		//go up one level in same RefID
+		//go up one level in same ref_id
 		$levelVar++;
 		$_SESSION["level"] = $levelVar;
 
@@ -49,9 +49,9 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 	}
 	else
 	{
-		//go to new RefID
+		//go to new ref_id
 		//you need to goto next LearningStandard...
- 		$query2 = "select RefID, levels, progression from LearningStandards where progression > ";
+ 		$query2 = "select ref_id, levels, progression from learning_standards where progression > ";
 		$query2 .= $_SESSION["progression"];
         	$query2 .= " order by progression asc LIMIT 1;";
 											
@@ -66,20 +66,20 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         	{
                 	//get the id from user table
                 	$levels      = pg_Result($result2, 0, 'levels');
-                	$RefID       = pg_Result($result2, 0, 'RefID');
+                	$ref_id       = pg_Result($result2, 0, 'ref_id');
                 	$progression = pg_Result($result2, 0, 'progression');
                 
 			$_SESSION["levels"] = $levels;
 			$_SESSION["level"] = 1;
                 	$_SESSION["progression"] = $progression;
-                	$_SESSION["RefID"] = $RefID;
+                	$_SESSION["ref_id"] = $ref_id;
 		
 			//update db
 			//you need to goto next LearningStandard...
  			$query3 = "update users set level = ";
 			$query3 .= $_SESSION["level"];
-			$query3 .= ",RefID='";
-			$query3 .= $_SESSION["RefID"];
+			$query3 .= ",ref_id='";
+			$query3 .= $_SESSION["ref_id"];
 			$query3 .= "' where id = ";
 			$query3 .= $_SESSION["user_id"]; 
         		$query3 .= ";";
@@ -99,7 +99,7 @@ function setLevelSessionVariables($conn,$user_id)
 {
 	$user_id = selectUserID($conn, $_SESSION["school_id"],$_SESSION["username"],$_SESSION["password"]);
 
- 	$query = "select RefID, level from users where id = ";
+ 	$query = "select ref_id, level from users where id = ";
         $query .= $user_id;
         $query .= ";";
 
@@ -113,11 +113,11 @@ function setLevelSessionVariables($conn,$user_id)
         if ($num > 0)
         {
                 //get the id from user table
-                $RefID = pg_Result($result, 0, 'RefID');
+                $ref_id = pg_Result($result, 0, 'ref_id');
                 $level = pg_Result($result, 0, 'level');
 
                 //set level_id
-                $_SESSION["RefID"] = $RefID;
+                $_SESSION["ref_id"] = $ref_id;
                 $_SESSION["level"] = $level;
         }
         else

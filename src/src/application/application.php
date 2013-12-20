@@ -12,7 +12,7 @@ var Application = new Class(
 
 		/*********** LEVEL *******************
 		this.mLevelCompleted = false;
-		this.mRefID = 0;
+		this.mRef_id = 0;
 		this.mLevel = 0;
 		this.mWaitingOnLevelData = false;
 		this.mAdvanceToNextLevelConfirmation = false;
@@ -113,7 +113,7 @@ var Application = new Class(
 
 			if (code == "100")
 			{
-				APPLICATION.mRefID = responseArray[1];
+				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
@@ -125,11 +125,11 @@ var Application = new Class(
 	// are we running the right game??
 	gameDecider: function()
 	{
-		if (this.mRefID == 0)
+		if (this.mRef_id == 0)
 		{
 			//this.log('no level yet');
 		}
-		if (this.mRefID == 'CA9EE2E34F384E95A5FA26769C5864B8')
+		if (this.mRef_id == 'CA9EE2E34F384E95A5FA26769C5864B8')
 		{ 
              		if (this.mGameName != "k_cc_a_1")
                        	{
@@ -142,7 +142,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_1(APPLICATION);
 			}
                 }
-		if (this.mRefID == '5E6A3E3B939B4577B104FA8658206E9E')
+		if (this.mRef_id == '5E6A3E3B939B4577B104FA8658206E9E')
 		{ 
              		if (this.mGameName != "k_cc_a_2")
                        	{
@@ -155,7 +155,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_2(APPLICATION);
 			}
                 }
-		if (this.mRefID == 'C11F30815A9C49B9A83B61A285EA11F9')
+		if (this.mRef_id == 'C11F30815A9C49B9A83B61A285EA11F9')
 		{ 
              		if (this.mGameName != "k_cc_a_3")
                        	{
@@ -168,7 +168,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_a_3(APPLICATION);
 			}
                 }
-		if (this.mRefID == '66626D8AEE4E474B8CFEC8A4B68AA51C')
+		if (this.mRef_id == '66626D8AEE4E474B8CFEC8A4B68AA51C')
 		{ 
              		if (this.mGameName != "k_cc_c_6")
                        	{
@@ -181,7 +181,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_c_6(APPLICATION);
 			}
 		}
-		if (this.mRefID == 'C9B9CAD5BDE84CE2A7A0C441A3DF1A2D')
+		if (this.mRef_id == 'C9B9CAD5BDE84CE2A7A0C441A3DF1A2D')
 		{ 
              		if (this.mGameName != "k_cc_c_7")
                        	{
@@ -194,7 +194,7 @@ var Application = new Class(
                                	this.mGame = new k_cc_c_7(APPLICATION);
 			}
 		}
-		if (this.mRefID == '695A7607FE8A4E27AB80652C45C84FA8')
+		if (this.mRef_id == '695A7607FE8A4E27AB80652C45C84FA8')
 		{ 
              		if (this.mGameName != "k_oa_a_2")
                        	{
@@ -207,7 +207,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_2(APPLICATION);
 			}
 		}
-		if (this.mRefID == '0CFFCBC851984A4281C23D34FC400445')
+		if (this.mRef_id == '0CFFCBC851984A4281C23D34FC400445')
 		{ 
              		if (this.mGameName != "k_oa_a_4")
                        	{
@@ -220,7 +220,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_4(APPLICATION);
 			}
 		}
-		if (this.mRefID == '1353E9D5614D460FA32E67853B6BA6D8')
+		if (this.mRef_id == '1353E9D5614D460FA32E67853B6BA6D8')
 		{ 
              		if (this.mGameName != "k_oa_a_5")
                        	{
@@ -233,7 +233,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_5(APPLICATION);
 			}
                 }
-		if (this.mRefID == 'ED150B29EFD14FF8B655FA3F2CA4FE6D')
+		if (this.mRef_id == 'ED150B29EFD14FF8B655FA3F2CA4FE6D')
 		{ 
              		if (this.mGameName != "k_nbt_a_1")
                        	{
@@ -248,7 +248,7 @@ var Application = new Class(
                 }
 
 
-		if (this.mRefID == '6C33D2BEC1AC431C8FC4BF9FD4DD3DCA')
+		if (this.mRef_id == '6C33D2BEC1AC431C8FC4BF9FD4DD3DCA')
 		{ 
              		if (this.mGameName != "g1_oa_c_6")
                        	{
@@ -261,7 +261,7 @@ var Application = new Class(
                                	this.mGame = new g1_oa_c_6(APPLICATION);
 			}
                 }
-		if (this.mRefID == '800715566B824BB3A5A8C464E961C2B4')
+		if (this.mRef_id == '800715566B824BB3A5A8C464E961C2B4')
 		{ 
              		if (this.mGameName != "g2_oa_b_2")
                        	{
@@ -274,7 +274,7 @@ var Application = new Class(
                                	this.mGame = new g2_oa_b_2(APPLICATION);
 			}	
 		}
-		if (this.mRefID == '3D384CB2349B41299A3B5A133AB9E3F8')
+		if (this.mRef_id == '3D384CB2349B41299A3B5A133AB9E3F8')
 		{ 
              		if (this.mGameName != "g3_oa_c_7")
                        	{
@@ -317,7 +317,7 @@ var Application = new Class(
 
 			if (code == "101")
 			{
-				APPLICATION.mRefID = responseArray[1];
+				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}

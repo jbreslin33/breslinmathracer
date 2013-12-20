@@ -8,8 +8,8 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 /*
-$query = "insert into levelAttempts (end_time, RefID, level, passed, user_id) values (current_timestamp,'";
-$query .= $_SESSION["RefID"];
+$query = "insert into levelAttempts (end_time, ref_id, level, passed, user_id) values (current_timestamp,'";
+$query .= $_SESSION["ref_id"];
 $query .= "','";
 $query .= $_SESSION["level"];
 $query .= "',";
@@ -26,7 +26,7 @@ setLevelSessionVariablesAdvance($conn,$_SESSION["user_id"]);
 
 //fill php vars
 $returnString = "101,"; 
-$returnString .= $_SESSION["RefID"];
+$returnString .= $_SESSION["ref_id"];
 $returnString .= ",";
 $returnString .= $_SESSION["level"];
 echo $returnString;
