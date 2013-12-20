@@ -21,6 +21,7 @@ var Game = new Class(
 
 		/************ SCORE *******/
 		this.mScore = 0;
+		this.mScoreNeeded = 0;
 		this.mKilled = false;
 
 		// may get rid of later and just use mOn
@@ -501,6 +502,12 @@ var Game = new Class(
                 this.mScore = score;
                 APPLICATION.mHud.mScore.setText('<font size="2">Score: ' + this.mScore + '</font>');
         },
+
+	setScoreNeeded: function(scoreNeeded)
+	{
+		this.mScoreNeeded = scoreNeeded;	
+                this.mApplication.mHud.setScoreNeeded(scoreNeeded);
+	},
 
         incrementScore: function()
         {

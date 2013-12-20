@@ -12,9 +12,9 @@ Extends: Game,
 
 		this.mApplication.mMouseMoveOn = false;
 
-		this.mScoreNeeded = 10;
+		this.setScoreNeeded(10);
 
-        	this.mApplication.mHud.mGameName.setText('<font size="2">PAD</font>');
+        	this.mApplication.mHud.setGameName('PAD');
 
 		//number pad
 		this.mNumberPadArray = new Array();

@@ -96,7 +96,7 @@ var Application = new Class(
 	{
 		this.mGame = 0;	
 	},
- 
+
 	getLevelData: function()
         {
                 var xmlhttp;

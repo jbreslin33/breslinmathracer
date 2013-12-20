@@ -38,6 +38,9 @@ Extends: Game,
 		this.parent();
 		this.createQuestions(); //do this once
 		this.createWorld(); //do this once
+
+		//set score needed...
+		this.mApplication.mHud.setScoreNeeded(this.mQuiz.mQuestionArray.length);
 	},
 
 	update: function()
@@ -63,11 +66,6 @@ Extends: Game,
 		this.createQuestionShapes();
 		
 		this.createControlObject();
-
-		scoreText = '<font size="2"> Needed :' +  this.mScoreNeeded + '</font>';
-        	this.mApplication.mHud.mLevel.setText('<font size="2"> Level : ' + APPLICATION.mLevel + '</font>');
-
-		this.mApplication.mHud.mScoreNeeded.setText(scoreText);
 
 		//chasers
 		this.createChasers();

@@ -53,6 +53,16 @@ var Hud = new Class(
         westBounds  = new Shape         ( 10, 20,  0,385,"","","#F08EF0","boundary");
 
         },
+	
+	setScoreNeeded: function(scoreNeeded)
+	{
+        	this.mScoreNeeded.setText('<font size="2"> Score Needed: ' + scoreNeeded +  '</font>');
+	},
+	
+	setGameName: function(gameName)
+	{
+        	this.mGameName.setText('<font size="2"> ' + gameName +  '</font>');
+	},
 
 	setLevel: function(level)
 	{
