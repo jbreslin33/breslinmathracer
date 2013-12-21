@@ -19,10 +19,7 @@ var Application = new Class(
 		this.mRef_id = ref_id;
 		this.mLevel = level;
 		this.mProgression = progression;
-		this.log('mProgression:' + this.mProgression);
-		this.log('dfdfdffffffffffffffffffddd');
 		this.mStandard = standard;
-		this.log('mStandard:' + this.mStandard);
 
 		this.mLevelCompleted = false;
 		this.mWaitingOnLevelData = false;
@@ -118,7 +115,7 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
-			APPLICATION.log('getLevelData response:' + response);
+			//APPLICATION.log('getLevelData response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
@@ -258,6 +255,19 @@ var Application = new Class(
                                	this.mGame = new k_nbt_a_1(APPLICATION);
 			}
                 }
+		if (this.mRef_id == 'C712BAA86FEF4BFAB703AD2EB402B2DD')
+		{ 
+             		if (this.mGameName != "g1_oa_a_1")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g1_oa_a_1";
+                               	this.mGame = new g1_oa_a_1(APPLICATION);
+			}
+                }
 
 
 		if (this.mRef_id == '6C33D2BEC1AC431C8FC4BF9FD4DD3DCA')
@@ -323,7 +333,7 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
-			APPLICATION.log('advanceToNextLevel response:' + response);
+			//APPLICATION.log('advanceToNextLevel response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
