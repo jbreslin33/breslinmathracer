@@ -8,16 +8,7 @@ Extends: QuestionShape,
 		this.mOpen = false;	
 		this.mSrcClosed = src;
 		this.mSrcOpen = srcOpen;
-
-                //open on quiz complete??
-                this.mOpenOnQuizComplete = false;
-
-                //open on question solved
-                this.mOpenOnQuestionSolved = true;
-		
-		this.mUrl = url; 
 		this.mEnteredDoor = false;
-
         },
 	
 	reset: function()
@@ -25,26 +16,6 @@ Extends: QuestionShape,
 		this.mEnteredDoor = false 
 		this.mOpen = false;	
 	},
-
-        update: function(delta)
-	{
-		if (this.mOpenOnQuizComplete)
-		{
-	               	if (this.mGame.mQuiz.isQuizComplete())
-			{
-				this.mOpen = true;
-			}
-		}
-
-		//open on question solved?
-		if (this.mQuestion)
-		{
-	               	if (this.mQuestion.mSolved)
-			{
-				this.mOpen = true;
-			}
-		}
-        },
 
         onCollision: function(col)
         {
@@ -90,7 +61,6 @@ Extends: QuestionShape,
         {
 		if (!this.mEnteredDoor)
 		{
-			this.log('enteredDOORRRRR');
 			this.mEnteredDoor = true;
 		}
         }
