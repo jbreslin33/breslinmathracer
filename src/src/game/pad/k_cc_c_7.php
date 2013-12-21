@@ -12,8 +12,6 @@ Extends: Pad,
 		this.mCompareBarB = 0;									
 		this.createCompareBars();
 	
-        	this.mApplication.mHud.mGameName.setText('<font size="2">COMPARE</font>');
-
 		//answers 
                 this.mThresholdTime = 10000;
 	},

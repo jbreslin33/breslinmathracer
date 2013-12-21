@@ -19,7 +19,8 @@ var Hud = new Class(
 	this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
         this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/login/login_form.php"> LOGOUT</a> </font>');
 	
-        this.mGameName = new Shape (200, ySize,90,  yCoord,"","","orange","boundary");
+        this.mStandard    = new Shape (75, ySize,90,  yCoord,"","","orange","boundary");
+        this.mProgression = new Shape (125, ySize,165,  yCoord,"","","pink","boundary");
 	
 	this.mLevel = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
         this.mLevel.setText('<font size="2"> Level : ' + this.mApplication.mLevel + '</font>');

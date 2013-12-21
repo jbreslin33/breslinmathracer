@@ -14,8 +14,6 @@ Extends: Game,
 
 		this.setScoreNeeded(10);
 
-        	this.mApplication.mHud.setGameName('PAD');
-
 		//number pad
 		this.mNumberPadArray = new Array();
 

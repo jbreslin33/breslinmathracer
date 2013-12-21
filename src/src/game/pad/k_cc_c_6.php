@@ -10,8 +10,6 @@ Extends: Pad,
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
-	
-        	this.mApplication.mHud.mGameName.setText('<font size="2">COMPARE</font>');
 
 		//answers 
                 this.mThresholdTime = 10000;

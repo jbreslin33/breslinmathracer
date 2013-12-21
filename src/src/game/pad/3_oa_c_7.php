@@ -6,7 +6,6 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.mApplication.mHud.mGameName.setText('<font size="2">MULTIPLY AND DIVIDE</font>');
 	},
 
 	createQuestions: function()

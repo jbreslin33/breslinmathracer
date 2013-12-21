@@ -6,7 +6,6 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.mApplication.mHud.mGameName.setText('<font size="2">ADD</font>');
 	},
 
 	createQuestions: function()
