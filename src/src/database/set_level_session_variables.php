@@ -98,8 +98,8 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 function setLevelSessionVariables($conn,$user_id)
 {
 	$user_id = selectUserID($conn, $_SESSION["school_id"],$_SESSION["username"],$_SESSION["password"]);
-
- 	$query = "select * from users where id = ";
+	
+	$query = "select users.ref_id, users.level, users.first_name, users.last_name, learning_standards.id, learning_standards.progression from users INNER JOIN learning_standards ON users.ref_id=learning_standards.ref_id WHERE users.id = ";
         $query .= $user_id;
         $query .= ";";
 
@@ -117,12 +117,16 @@ function setLevelSessionVariables($conn,$user_id)
                 $level = pg_Result($result, 0, 'level');
                 $first_name = pg_Result($result, 0, 'first_name');
                 $last_name = pg_Result($result, 0, 'last_name');
+                $standard = pg_Result($result, 0, 'id');
+                $progression = pg_Result($result, 0, 'progression');
 
                 //set level_id
                 $_SESSION["ref_id"] = $ref_id;
                 $_SESSION["level"] = $level;
                 $_SESSION["first_name"] = $first_name;
                 $_SESSION["last_name"] = $last_name;
+                $_SESSION["standard"] = $standard;
+                $_SESSION["progression"] = $progression;
         }
         else
         {

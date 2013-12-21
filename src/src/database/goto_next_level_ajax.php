@@ -22,7 +22,6 @@ $query .= "');";
 $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
 */
 setLevelSessionVariablesAdvance($conn,$_SESSION["user_id"]);
-//setLevelSessionVariables($conn,$_SESSION["user_id"]);
 
 //fill php vars
 $returnString = "101,"; 
