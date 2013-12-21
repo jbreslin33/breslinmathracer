@@ -15,7 +15,7 @@ Extends: Pad,
 		//answers 
                 this.mThresholdTime = 10000;
 
-		this.setScoreNeeded(9);
+		//this.setScoreNeeded(9);
 	},
 
 	reset: function()
