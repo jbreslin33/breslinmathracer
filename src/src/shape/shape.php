@@ -320,6 +320,13 @@ var Shape = new Class(
 		this.mPosition.mX = x;
 		this.mPosition.mY = y;
 	},
+	
+	setSize: function(w,h)
+	{
+		//size 
+		this.mWidth = w;
+                this.mHeight = h;
+	},
 
 	/********* ANIMATION ******************/
 

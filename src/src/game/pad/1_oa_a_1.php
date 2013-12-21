@@ -6,7 +6,16 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
+
 	},
+
+	reset: function()
+        {
+                this.parent();
+	
+		this.mNumQuestion.setPosition(100,100);
+		this.mNumberPadArray[0].setPosition(100,100);
+        },
 
 	getAdditionQuestion: function(maxsum)
 	{
@@ -39,6 +48,8 @@ Extends: Pad,
 	createQuestions: function()
         {
  		this.parent();
+		
+		//this.mNumberPadArray[0].setPosition(100,100);
 
 		//add
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
