@@ -20,7 +20,9 @@ var Hud = new Class(
         this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/login/login_form.php"> LOGOUT</a> </font>');
 	
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
+	this.setStandard(standard);
         this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
+	this.setProgression(progression);
 	
 	this.mLevel = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
         this.mLevel.setText('<font size="2"> Level : ' + this.mApplication.mLevel + '</font>');
@@ -60,14 +62,14 @@ var Hud = new Class(
         	this.mScoreNeeded.setText('<font size="2"> Goal: ' + scoreNeeded +  '</font>');
 	},
 	
-	setStandard: function(standard)
+	setStandard: function(s)
 	{
-        	this.mStandard.setText('<font size="1"> Standard:' + standard +  '</font>');
+        	this.mStandard.setText('<font size="1"> Standard:' + s +  '</font>');
 	},
 
-	setProgression: function(progression)
+	setProgression: function(p)
 	{
-        	this.mProgression.setText('<font size="1"> Progress:' + progress +  '</font>');
+        	this.mProgression.setText('<font size="1"> Progress:' + p +  '</font>');
 	},
 
 	setLevel: function(level)

@@ -16,9 +16,15 @@ var Application = new Class(
 		this.mLastName = lastname;
 
 		/*********** LEVEL *******************
+		this.mRef_id = ref_id;
+		this.mLevel = level;
+		this.mProgression = progression;
+		this.log('mProgression:' + this.mProgression);
+		this.log('dfdfdffffffffffffffffffddd');
+		this.mStandard = standard;
+		this.log('mStandard:' + this.mStandard);
+
 		this.mLevelCompleted = false;
-		this.mRef_id = 0;
-		this.mLevel = 0;
 		this.mWaitingOnLevelData = false;
 		this.mAdvanceToNextLevelConfirmation = false;
 		
