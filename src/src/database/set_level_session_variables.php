@@ -51,7 +51,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 	{
 		//go to new ref_id
 		//you need to goto next LearningStandard...
- 		$query2 = "select ref_id, levels, progression from learning_standards where progression > ";
+ 		$query2 = "select ref_id, levels, progression, id from learning_standards where progression > ";
 		$query2 .= $_SESSION["progression"];
         	$query2 .= " order by progression asc LIMIT 1;";
 											
@@ -68,11 +68,13 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	$levels      = pg_Result($result2, 0, 'levels');
                 	$ref_id       = pg_Result($result2, 0, 'ref_id');
                 	$progression = pg_Result($result2, 0, 'progression');
+                	$standard = pg_Result($result2, 0, 'id');
                 
 			$_SESSION["levels"] = $levels;
 			$_SESSION["level"] = 1;
                 	$_SESSION["progression"] = $progression;
                 	$_SESSION["ref_id"] = $ref_id;
+                	$_SESSION["standard"] = $standard;
 		
 			//update db
 			//you need to goto next LearningStandard...

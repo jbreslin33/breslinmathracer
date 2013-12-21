@@ -28,6 +28,10 @@ $returnString = "101,";
 $returnString .= $_SESSION["ref_id"];
 $returnString .= ",";
 $returnString .= $_SESSION["level"];
+$returnString .= ",";
+$returnString .= $_SESSION["standard"];
+$returnString .= ",";
+$returnString .= $_SESSION["progression"];
 echo $returnString;
 
 

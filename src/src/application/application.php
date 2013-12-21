@@ -331,6 +331,10 @@ var Application = new Class(
 			{
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
+				APPLICATION.mStandard = responseArray[3];
+				APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				APPLICATION.mProgression = responseArray[4];
+				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}
                 }
