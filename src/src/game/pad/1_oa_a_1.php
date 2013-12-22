@@ -9,13 +9,40 @@ Extends: Pad,
 
 	},
 
-	reset: function()
+        resetNumberPad: function()
         {
-                this.parent();
-	
-		this.mNumQuestion.setPosition(100,100);
-		this.mNumberPadArray[0].setPosition(100,100);
+                //number pad
+                this.mNumAnswer.mMesh.value = '';
+                this.mNumAnswer.mMesh.innerHTML = '';
+
+                this.mNumQuestion.mMesh.value = '';
+                this.mNumQuestion.mMesh.innerHTML = '';
+               
+                this.mNumQuestionBig.mMesh.value = '';
+                this.mNumQuestionBig.mMesh.innerHTML = '';
+                this.mNumQuestionBig.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion();
         },
+   
+	createNumberPad: function()
+        {
+		this.parent();
+
+                //question bar
+                if (!this.mNumQuestionBig)
+                {
+                        this.mNumQuestionBig = new Shape(200,200,50,100,this,"","","");
+                        if (this.mQuiz)
+                        {
+                                if (this.mQuiz.getQuestion())
+                                {
+                                        this.mNumQuestionBig.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
+                                }
+                        }
+                        this.mNumQuestionBig.mMesh.mGame = this;
+                        this.mNumberPadArray.push(this.mNumQuestionBig);
+                }
+	},
+
 
 	getAdditionQuestion: function(maxsum)
 	{
