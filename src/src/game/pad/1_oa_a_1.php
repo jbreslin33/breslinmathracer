@@ -80,26 +80,20 @@ Extends: Pad,
 		//this.mNumberPadArray[0].setPosition(100,100);
 
 		//add
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion());
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
 
 		//3
 
