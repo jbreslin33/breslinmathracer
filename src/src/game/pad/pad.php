@@ -14,6 +14,9 @@ Extends: Game,
 
 		this.setScoreNeeded(10);
 
+		//other pad
+		this.mNumberPad = new NumberPad(application,this);
+
 		//number pad
 		this.mNumberPadArray = new Array();
 
@@ -118,39 +121,12 @@ Extends: Game,
 	
 	showNumberPad: function()
 	{
-		this.resetNumberPad();
-
   		//shapes and array
                 for (i = 0; i < this.mNumberPadArray.length; i++)
 		{
 			this.mNumberPadArray[i].setVisibility(true);
 		}
                	this.mNumAnswer.mMesh.focus();
-	},
-	
-	resetNumberPad: function()
-	{ 
-		//number pad
-        	this.mNumAnswer.mMesh.value = '';
-        	this.mNumAnswer.mMesh.innerHTML = '';
-
-        	this.mNumQuestion.mMesh.value = '';
-        	this.mNumQuestion.mMesh.innerHTML = '';
-        	this.mNumQuestion.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion();
-	},
-
-	destroyNumberPad: function()
-	{
-  		//shapes and array
-                for (i = 0; i < this.mNumberPadArray.length; i++)
-                {
-                        //back to div
-                        this.mNumberPadArray[i].mDiv.mDiv.removeChild(this.mNumberPadArray[i].mMesh);
-                        document.body.removeChild(this.mNumberPadArray[i].mDiv.mDiv);
-                	this.mNumberPadArray[i] = 0;
-                }
-                this.mNumberPadArray = 0;
-
 	},
 	
 	showCorrectAnswerEnter: function()
@@ -194,54 +170,13 @@ Extends: Game,
         	this.mClockShape.setVisibility(false);
 	},
 	
-	inputKeyHit: function(e)
-	{
-		if (e.key == 'enter')
-		{
-                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-               	}
-	},
-
-	numPadHit: function()
-	{
-		APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
-		APPLICATION.mGame.mUserAnswer 		 = APPLICATION.mGame.mNumAnswer.mMesh.value;
-	},
-
 	createNumberPad: function()
 	{
-		//question bar
-		if (!this.mNumQuestion)
-		{
-               		this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
-			if (this.mQuiz)
-			{
-				if (this.mQuiz.getQuestion())
-				{
-               				this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
-				}
-			}
-               		this.mNumQuestion.mMesh.mGame = this;
-			this.mNumberPadArray.push(this.mNumQuestion); 
-		}
-
-                //answer text box
-		if (!this.mNumAnswer)
-		{
-               		this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
-               		this.mNumAnswer.mMesh.value = '';
-               		this.mNumAnswer.mMesh.mGame = this;
-               		this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-               		this.mNumAnswer.mMesh.focus();
-			this.mNumberPadArray.push(this.mNumAnswer); 
-		}
-		
                 //Lock
 		if (!this.mNumLock)
 		{
                 	this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
                 	this.mNumLock.mMesh.innerHTML = 'Lock';
-                	this.mNumLock.mMesh.mGame = this;
                 	this.mNumLock.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumLock); 
 		}
@@ -251,7 +186,6 @@ Extends: Game,
 		{
                 	this.mNumDivision = new Shape(50,50,350,150,this,"BUTTON","","");
                 	this.mNumDivision.mMesh.innerHTML = '/';
-                	this.mNumDivision.mMesh.mGame = this;
                 	this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumDivision); 
 		}
@@ -261,7 +195,6 @@ Extends: Game,
 		{
                 	this.mNumMultiplication= new Shape(50,50,400,150,this,"BUTTON","","");
                 	this.mNumMultiplication.mMesh.innerHTML = '*';
-                	this.mNumMultiplication.mMesh.mGame = this;
                 	this.mNumMultiplication.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumMultiplication); 
 		}
@@ -271,7 +204,6 @@ Extends: Game,
 		{
                 	this.mNumSubtraction = new Shape(50,50,450,150,this,"BUTTON","","");
                 	this.mNumSubtraction.mMesh.innerHTML = '-';
-                	this.mNumSubtraction.mMesh.mGame = this;
                 	this.mNumSubtraction.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumSubtraction); 
 		}
@@ -281,7 +213,6 @@ Extends: Game,
 		{
                 	this.mNumSeven = new Shape(50,50,300,200,this,"BUTTON","","");
                 	this.mNumSeven.mMesh.innerHTML = '7';
-                	this.mNumSeven.mMesh.mGame = this;
                 	this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumSeven); 
 		}
@@ -291,7 +222,6 @@ Extends: Game,
 		{
                 	this.mNumEight = new Shape(50,50,350,200,this,"BUTTON","","");
                 	this.mNumEight.mMesh.innerHTML = '8';
-                	this.mNumEight.mMesh.mGame = this;
                 	this.mNumEight.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumEight); 
 		}
@@ -301,7 +231,6 @@ Extends: Game,
 		{
                 	this.mNumNine = new Shape(50,50,400,200,this,"BUTTON","","");
                 	this.mNumNine.mMesh.innerHTML = '9';
-                	this.mNumNine.mMesh.mGame = this;
                 	this.mNumNine.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumNine); 
 		}
@@ -311,7 +240,6 @@ Extends: Game,
 		{ 
 			this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
                 	this.mNumAddition.mMesh.innerHTML = '+';
-                	this.mNumAddition.mMesh.mGame = this;
                 	this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumAddition); 
 		}
@@ -321,7 +249,6 @@ Extends: Game,
 		{
                 	this.mNumFour = new Shape(50,50,300,250,this,"BUTTON","","");
                 	this.mNumFour.mMesh.innerHTML = '4';
-                	this.mNumFour.mMesh.mGame = this;
                 	this.mNumFour.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumFour); 
 		}
@@ -331,7 +258,6 @@ Extends: Game,
 		{
                 	this.mNumFive = new Shape(50,50,350,250,this,"BUTTON","","");
                 	this.mNumFive.mMesh.innerHTML = '5';
-                	this.mNumFive.mMesh.mGame = this;
                 	this.mNumFive.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumFive); 
 		}
@@ -341,7 +267,6 @@ Extends: Game,
 		{
                 	this.mNumSix = new Shape(50,50,400,250,this,"BUTTON","","");
                 	this.mNumSix.mMesh.innerHTML = '6';
-                	this.mNumSix.mMesh.mGame = this;
                 	this.mNumSix.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumSix); 
 		}
@@ -351,7 +276,6 @@ Extends: Game,
 		{
                 	this.mNumOne = new Shape(50,50,300,300,this,"BUTTON","","");
                 	this.mNumOne.mMesh.innerHTML = '1';
-                	this.mNumOne.mMesh.mGame = this;
                 	this.mNumOne.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumOne); 
 		}
@@ -361,7 +285,6 @@ Extends: Game,
 		{
                 	this.mNumTwo = new Shape(50,50,350,300,this,"BUTTON","","");
                 	this.mNumTwo.mMesh.innerHTML = '2';
-                	this.mNumTwo.mMesh.mGame = this;
                		this.mNumTwo.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumTwo); 
 		}
@@ -371,7 +294,6 @@ Extends: Game,
 		{	
                 	this.mNumThree = new Shape(50,50,400,300,this,"BUTTON","","");
                 	this.mNumThree.mMesh.innerHTML = '3';
-                	this.mNumThree.mMesh.mGame = this;
                		this.mNumThree.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumThree); 
 		}
@@ -381,7 +303,6 @@ Extends: Game,
 		{
                 	this.mNumZero = new Shape(100,50,300,350,this,"BUTTON","","");
                 	this.mNumZero.mMesh.innerHTML = '0';
-                	this.mNumZero.mMesh.mGame = this;
                 	this.mNumZero.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumZero); 
 		}
@@ -391,7 +312,6 @@ Extends: Game,
 		{
                 	this.mNumDecimal = new Shape(50,50,400,350,this,"BUTTON","","");
                 	this.mNumDecimal.mMesh.innerHTML = '.';
-               		this.mNumDecimal.mMesh.mGame = this;
                 	this.mNumDecimal.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumDecimal); 
 		}
@@ -401,7 +321,6 @@ Extends: Game,
 		{
                		this.mNumEnter = new Shape(50,100,450,300,this,"BUTTON","","");
                		this.mNumEnter.mMesh.innerHTML = 'Enter';
-               		this.mNumEnter.mMesh.mGame = this;
                		this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
 			this.mNumberPadArray.push(this.mNumEnter); 
 		}

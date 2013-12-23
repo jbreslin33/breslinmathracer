@@ -32,6 +32,8 @@
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
 
+<script type="text/javascript" src="/src/widgets/numberpad.php"></script>
+
 <script type="text/javascript" src="/src/game/dungeon/dungeon.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/states/states.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/k_cc_a_1.php"></script>
