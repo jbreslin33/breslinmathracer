@@ -151,5 +151,16 @@ Extends: Pad,
 		{
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
-	}
+	},
+
+	//state overides
+	showCorrectAnswerOutOfTime: function()
+        {
+                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+                this.mNumberPad.hide();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                this.showCorrectAnswerBar();
+                this.showClockShape();
+        },
+
 });
