@@ -12,6 +12,9 @@ Extends: Pad,
 	
 		//answers 
                 this.mThresholdTime = 10000;
+
+		//input pad
+		this.mInputPad = new NumberPad(application,application.mGame);
 	},
 
 	reset: function()
@@ -58,7 +61,7 @@ Extends: Pad,
 	hideNumberPad: function()
 	{
 		this.parent();
-		this.mNumQuestion.setVisibility(false);
+		this.mInputPad.mNumQuestion.setVisibility(false);
 	},
 
 	showNumberPad: function()
@@ -66,7 +69,7 @@ Extends: Pad,
 		this.parent();
 
 		//set question invis...
-		this.mNumQuestion.setVisibility(false);
+		this.mInputPad.mNumQuestion.setVisibility(false);
 
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
@@ -157,7 +160,7 @@ Extends: Pad,
 	showCorrectAnswerOutOfTime: function()
         {
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mNumberPad.hide();
+                this.mInputPad.hide();
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                 this.showCorrectAnswerBar();
                 this.showClockShape();

@@ -15,7 +15,7 @@ Extends: Game,
 		this.setScoreNeeded(10);
 
 		//other pad
-		this.mNumberPad = new NumberPad(application,this);
+		this.mInputPad = 0;
 
 		//state machine
                 this.mPadStateMachine = new StateMachine(this);
@@ -96,7 +96,7 @@ Extends: Game,
 
 	showQuestion: function()
 	{
-		this.mNumberPad.mNumQuestion.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion(); 
+		this.mInputPad.showQuestion();
 	},
 	
 	showCorrectAnswerEnter: function()
@@ -107,7 +107,7 @@ Extends: Game,
 	showCorrectAnswer: function()
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-        	this.mNumberPad.hide();
+        	this.mInputPad.hide();
         	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showCorrectAnswerBar();
@@ -122,7 +122,7 @@ Extends: Game,
 	showCorrectAnswerOutOfTime: function()
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-        	this.mNumberPad.hide();
+        	this.mInputPad.hide();
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showCorrectAnswerBar();
        	 	this.showClockShape();
@@ -144,7 +144,7 @@ Extends: Game,
         {
         	this.mApplication.mLevelCompleted = true;
 
-        	this.mNumberPad.hide();
+        	this.mInputPad.hide();
 
         	//correctAnswer
         	this.hideCorrectAnswerBar();
@@ -153,12 +153,8 @@ Extends: Game,
        	 	this.mCorrectAnswerBar.mMesh.value = '';
         	this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
 
-        	//number pad
-        	this.mNumAnswer.mMesh.value = '';
-        	this.mNumAnswer.mMesh.innerHTML = '';
-
-        	this.mNumQuestion.mMesh.value = '';
-        	this.mNumQuestion.mMesh.innerHTML = '';
+        	//input pad
+		this.mInputPad.reset();	
 
         	//user answer
         	this.mUserAnswer = '';

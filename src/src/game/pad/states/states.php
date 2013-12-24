@@ -124,9 +124,9 @@ enter: function(game)
 	}
 
 	//numberPad
-	game.mNumberPad.reset();
+	game.mInputPad.reset();
 	game.showQuestion();
-	game.mNumberPad.show();
+	game.mInputPad.show();
 
 	//user answer
 	game.mUserAnswer = '';
@@ -177,9 +177,9 @@ enter: function(game)
 	game.hideCorrectAnswerBar();
 
 	//number pad
-	game.mNumberPad.reset();
+	game.mInputPad.reset();
 	game.showQuestion();
-	game.mNumberPad.show();
+	game.mInputPad.show();
 
 	//user answer
 	game.mUserAnswer = '';
