@@ -176,7 +176,9 @@ enter: function(game)
 	//correctAnswer
 	game.hideCorrectAnswerBar();
 
+
 	//number pad
+	game.showAnswer();
 	game.mNumberPad.show();
 
 	//user answer
