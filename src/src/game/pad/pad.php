@@ -95,7 +95,6 @@ Extends: Game,
 			this.mMemorizeShape.setVisibility(false);
 		}
 
-		this.createNumberPad();
 		this.createCorrectAnswerBar();
 
 	},
@@ -146,72 +145,6 @@ Extends: Game,
         	this.mClockShape.setVisibility(false);
 	},
 	
-	createNumberPad: function()
-	{
-                //6
-		if (!this.mNumSix)
-		{
-                	this.mNumSix = new Shape(50,50,400,250,this,"BUTTON","","");
-                	this.mNumSix.mMesh.innerHTML = '6';
-                	this.mNumSix.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumSix); 
-		}
-
-                //1
-		if (!this.mNumOne)
-		{
-                	this.mNumOne = new Shape(50,50,300,300,this,"BUTTON","","");
-                	this.mNumOne.mMesh.innerHTML = '1';
-                	this.mNumOne.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumOne); 
-		}
-
-		//2
-		if (!this.mNumTwo)
-		{
-                	this.mNumTwo = new Shape(50,50,350,300,this,"BUTTON","","");
-                	this.mNumTwo.mMesh.innerHTML = '2';
-               		this.mNumTwo.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumTwo); 
-		}
-
-                //3
-		if (!this.mNumThree)
-		{	
-                	this.mNumThree = new Shape(50,50,400,300,this,"BUTTON","","");
-                	this.mNumThree.mMesh.innerHTML = '3';
-               		this.mNumThree.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumThree); 
-		}
-
-                //0
-		if (!this.mNumZero)
-		{
-                	this.mNumZero = new Shape(100,50,300,350,this,"BUTTON","","");
-                	this.mNumZero.mMesh.innerHTML = '0';
-                	this.mNumZero.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumZero); 
-		}
-
-                //.
-		if (!this.mNumDecimal)
-		{
-                	this.mNumDecimal = new Shape(50,50,400,350,this,"BUTTON","","");
-                	this.mNumDecimal.mMesh.innerHTML = '.';
-                	this.mNumDecimal.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumDecimal); 
-		}
-
-                //enter
-		if (!this.mNumEnter)
-		{
-               		this.mNumEnter = new Shape(50,100,450,300,this,"BUTTON","","");
-               		this.mNumEnter.mMesh.innerHTML = 'Enter';
-               		this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumEnter); 
-		}
-	},
-
   	levelPassedEnter: function()
         {
         	this.mApplication.mLevelCompleted = true;
