@@ -125,7 +125,7 @@ enter: function(game)
 
 	//numberPad
 	game.mNumberPad.reset();
-	game.showAnswer();
+	game.showQuestion();
 	game.mNumberPad.show();
 
 	//user answer
@@ -176,10 +176,9 @@ enter: function(game)
 	//correctAnswer
 	game.hideCorrectAnswerBar();
 
-
 	//number pad
 	game.mNumberPad.reset();
-	game.showAnswer();
+	game.showQuestion();
 	game.mNumberPad.show();
 
 	//user answer

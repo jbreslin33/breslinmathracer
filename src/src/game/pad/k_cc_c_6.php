@@ -40,7 +40,7 @@ Extends: Pad,
 		}	
 	},
   
-	destroyShapesAndArray: function()
+	destroyShapes: function()
         {
                 this.parent();
 

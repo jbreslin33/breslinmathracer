@@ -105,8 +105,11 @@ var Game = new Class(
 	destructor: function()
 	{
 		//shapes and array
-		this.destroyShapesAndArray();
-		
+		this.destroyShapes();
+	
+		//correctanswerbar
+		this.destroyCorrectAnswerBar();
+	
 		//bounds
 		this.mBounds = 0;
 
@@ -133,7 +136,7 @@ var Game = new Class(
                 this.standardGameAttempt();
         },
 
-	destroyShapesAndArray: function()
+	destroyShapes: function()
 	{
 		//shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
@@ -144,8 +147,6 @@ var Game = new Class(
                 	this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
-
-		this.destroyCorrectAnswerBar();
 	},
 
 	update: function()

@@ -27,12 +27,12 @@ Extends: Pad,
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
 	},
- 
-	destroyShapesAndArray: function()
-        {
+	
+	destroyShapes: function()
+	{
 		this.parent();
 
-                //shapes and array
+		//shapes and array
                 for (i = 0; i < this.mCountShapeArray.length; i++)
                 {
                         //back to div
@@ -41,8 +41,20 @@ Extends: Pad,
                         this.mCountShapeArray[i] = 0;
                 }
                 this.mCountShapeArray = 0;
-        },
-	
+	},
+
+	showQuestion: function()
+	{
+		for (i = 0; i < this.mCountShapeArray.length; i++)
+                {
+                        this.mCountShapeArray[i].setVisibility(false);
+                }
+                for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
+                {
+                        this.mCountShapeArray[v].setVisibility(true);
+                }
+	},
+ 
 	hideNumberPad: function()
 	{
 		this.parent();

@@ -32,7 +32,6 @@ Extends: Game,
 
                 this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
                 this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
-
 	},
 
 	destructor: function()
@@ -40,10 +39,9 @@ Extends: Game,
 		this.parent();
 	},
  
-	destroyShapesAndArray: function()
+	destroyShapes: function()
         {
 		this.parent();
-                this.destroyCorrectAnswerBar();
         },
 
 	reset: function()
@@ -96,7 +94,7 @@ Extends: Game,
 
 	},
 
-	showAnswer: function()
+	showQuestion: function()
 	{
 		this.mNumberPad.mNumQuestion.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion(); 
 	},

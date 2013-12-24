@@ -55,7 +55,7 @@ Extends: Game,
 
 	createWorld: function()
 	{
-		this.destroyShapesAndArray();
+		this.destroyShapes();
 		this.mShapeArray = new Array();
 
 		this.parent();
