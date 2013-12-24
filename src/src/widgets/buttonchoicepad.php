@@ -74,6 +74,6 @@ Extends: InputPad,
         numPadHit: function()
         {
                 APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
-                APPLICATION.mGame.mInputPad.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
+                APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
         }
 });
