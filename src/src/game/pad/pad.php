@@ -43,9 +43,6 @@ Extends: Game,
 	destroyShapesAndArray: function()
         {
 		this.parent();
-                
-		this.mShapeArray = 0;
-
                 this.destroyCorrectAnswerBar();
         },
 

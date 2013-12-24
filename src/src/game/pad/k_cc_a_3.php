@@ -41,7 +41,6 @@ Extends: Pad,
                         this.mCountShapeArray[i] = 0;
                 }
                 this.mCountShapeArray = 0;
-
         },
 	
 	hideNumberPad: function()
