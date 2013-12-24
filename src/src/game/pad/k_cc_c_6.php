@@ -13,6 +13,10 @@ Extends: Pad,
 
 		//answers 
                 this.mThresholdTime = 10000;
+
+                //input pad
+                this.mInputPad = new ButtonChoicePad(application,application.mGame);
+
 	},
 
 	reset: function()
@@ -75,7 +79,7 @@ Extends: Pad,
  			this.mButtonA.mMesh.innerHTML = 'is equal to';
                 	this.mButtonA.mMesh.mGame = this;
                 	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
-                	this.mNumberPadArray.push(this.mButtonA);
+                	this.mInputPadArray.push(this.mButtonA);
 		}
                 if (!this.mButtonB)
 		{
@@ -83,7 +87,7 @@ Extends: Pad,
  			this.mButtonB.mMesh.innerHTML = 'is greater than';
                 	this.mButtonB.mMesh.mGame = this;
                 	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
-                	this.mNumberPadArray.push(this.mButtonB);
+                	this.mInputPadArray.push(this.mButtonB);
 		}
                 if (!this.mButtonC)
 		{
@@ -91,7 +95,7 @@ Extends: Pad,
  			this.mButtonC.mMesh.innerHTML = 'is less than';
                 	this.mButtonC.mMesh.mGame = this;
                 	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
-                	this.mNumberPadArray.push(this.mButtonC);
+                	this.mInputPadArray.push(this.mButtonC);
 		}
 
                 //question bar
@@ -106,7 +110,7 @@ Extends: Pad,
                                 }
                         }
                         this.mNumQuestion.mMesh.mGame = this;
-                        this.mNumberPadArray.push(this.mNumQuestion);
+                        this.mInputPadArray.push(this.mNumQuestion);
 			this.mNumQuestion.setVisibility(false);
                 }
 
@@ -118,7 +122,7 @@ Extends: Pad,
                         this.mNumAnswer.mMesh.mGame = this;
                         this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                         this.mNumAnswer.mMesh.focus();
-                        this.mNumberPadArray.push(this.mNumAnswer);
+                        this.mInputPadArray.push(this.mNumAnswer);
 			this.mNumAnswer.setVisibility(false);
                 }
 
