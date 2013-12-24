@@ -17,9 +17,6 @@ Extends: Game,
 		//other pad
 		this.mNumberPad = new NumberPad(application,this);
 
-		//number pad
-		this.mNumberPadArray = new Array();
-
 		//state machine
                 this.mPadStateMachine = new StateMachine(this);
 
@@ -46,15 +43,8 @@ Extends: Game,
 	destroyShapesAndArray: function()
         {
 		this.parent();
-                //shapes and array
-                for (i = 0; i < this.mNumberPadArray.length; i++)
-                {
-                        //back to div
-                        this.mNumberPadArray[i].mDiv.mDiv.removeChild(this.mNumberPadArray[i].mMesh);
-                        document.body.removeChild(this.mNumberPadArray[i].mDiv.mDiv);
-                        this.mNumberPadArray[i] = 0;
-                }
-                this.mShapeArray = 0;
+                
+		this.mShapeArray = 0;
 
                 this.destroyCorrectAnswerBar();
         },
@@ -158,96 +148,6 @@ Extends: Game,
 	
 	createNumberPad: function()
 	{
-                //Lock
-		if (!this.mNumLock)
-		{
-                	this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
-                	this.mNumLock.mMesh.innerHTML = 'Lock';
-                	this.mNumLock.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumLock); 
-		}
-		
-		//Division
-		if (!this.mNumDivision)
-		{
-                	this.mNumDivision = new Shape(50,50,350,150,this,"BUTTON","","");
-                	this.mNumDivision.mMesh.innerHTML = '/';
-                	this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumDivision); 
-		}
-
-                //Multiplication
-		if (!this.mNumMultiplication)
-		{
-                	this.mNumMultiplication= new Shape(50,50,400,150,this,"BUTTON","","");
-                	this.mNumMultiplication.mMesh.innerHTML = '*';
-                	this.mNumMultiplication.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumMultiplication); 
-		}
-
-                //Subtraction
-		if (!this.mNumSubtraction)
-		{
-                	this.mNumSubtraction = new Shape(50,50,450,150,this,"BUTTON","","");
-                	this.mNumSubtraction.mMesh.innerHTML = '-';
-                	this.mNumSubtraction.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumSubtraction); 
-		}
-
-                //7
-		if (!this.mNumSeven)
-		{
-                	this.mNumSeven = new Shape(50,50,300,200,this,"BUTTON","","");
-                	this.mNumSeven.mMesh.innerHTML = '7';
-                	this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumSeven); 
-		}
-
-                //8
-		if (!this.mNumEight)
-		{
-                	this.mNumEight = new Shape(50,50,350,200,this,"BUTTON","","");
-                	this.mNumEight.mMesh.innerHTML = '8';
-                	this.mNumEight.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumEight); 
-		}
-
-		//9
-		if (!this.mNumNine)
-		{
-                	this.mNumNine = new Shape(50,50,400,200,this,"BUTTON","","");
-                	this.mNumNine.mMesh.innerHTML = '9';
-                	this.mNumNine.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumNine); 
-		}
-
-		//Addition
-               	if (!this.mNumAddition)
-		{ 
-			this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
-                	this.mNumAddition.mMesh.innerHTML = '+';
-                	this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumAddition); 
-		}
-		
-                //4
-		if (!this.mNumFour)
-		{
-                	this.mNumFour = new Shape(50,50,300,250,this,"BUTTON","","");
-                	this.mNumFour.mMesh.innerHTML = '4';
-                	this.mNumFour.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumFour); 
-		}
-                
-		//5
-		if (!this.mNumFive)
-		{
-                	this.mNumFive = new Shape(50,50,350,250,this,"BUTTON","","");
-                	this.mNumFive.mMesh.innerHTML = '5';
-                	this.mNumFive.mMesh.addEvent('click',this.numPadHit);
-			this.mNumberPadArray.push(this.mNumFive); 
-		}
-
                 //6
 		if (!this.mNumSix)
 		{
