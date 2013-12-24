@@ -167,12 +167,6 @@ Extends: Pad,
 		}	
 	},
  
-	numPadHit: function()
-        {
-        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
-                APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-        },
-
  	showCorrectAnswer: function()
         {
                 this.parent();

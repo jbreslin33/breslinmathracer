@@ -71,40 +71,9 @@ Extends: InputPad,
                 }
         },
 
-        showAnswer: function()
-        {
-
-        },
-
-        reset: function()
-        {
-                //number pad
-                this.mNumAnswer.mMesh.value = '';
-                this.mNumAnswer.mMesh.innerHTML = '';
-
-                this.mNumQuestion.mMesh.value = '';
-                this.mNumQuestion.mMesh.innerHTML = '';
-        },
-
-        inputKeyHit: function(e)
-        {
-                if (e.key == 'enter')
-                {
-                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
-                }
-        },
-
         numPadHit: function()
         {
-                if (this.innerHTML == 'Enter')
-                {
-                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumberPad.mNumAnswer.mMesh.value;
-                }
-                else
-                {
-                        APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
-                }
+                APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
+                APPLICATION.mGame.mInputPad.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
         }
-
-
 });
