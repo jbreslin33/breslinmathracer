@@ -123,6 +123,8 @@ enter: function(game)
 		}
 	}
 
+	game.showAnswer();
+
 	//numberPad
 	game.mNumberPad.show();
 

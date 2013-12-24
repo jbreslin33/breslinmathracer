@@ -109,6 +109,11 @@ Extends: Game,
 		this.createCorrectAnswerBar();
 
 	},
+
+	showAnswer: function()
+	{
+		this.mNumberPad.mNumQuestion.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion(); 
+	},
 	
 	showCorrectAnswerEnter: function()
 	{
