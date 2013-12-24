@@ -110,25 +110,6 @@ Extends: Game,
 
 	},
 	
-	hideNumberPad: function()
-	{
-  		//shapes and array
-                for (i = 0; i < this.mNumberPadArray.length; i++)
-		{
-			this.mNumberPadArray[i].setVisibility(false);
-		}
-	},
-	
-	showNumberPad: function()
-	{
-  		//shapes and array
-                for (i = 0; i < this.mNumberPadArray.length; i++)
-		{
-			this.mNumberPadArray[i].setVisibility(true);
-		}
-               	this.mNumAnswer.mMesh.focus();
-	},
-	
 	showCorrectAnswerEnter: function()
 	{
 		this.showCorrectAnswer();
@@ -137,7 +118,7 @@ Extends: Game,
 	showCorrectAnswer: function()
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-        	this.hideNumberPad();
+        	this.mNumberPad.hide();
         	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showCorrectAnswerBar();
@@ -152,7 +133,7 @@ Extends: Game,
 	showCorrectAnswerOutOfTime: function()
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-        	this.hideNumberPad();
+        	this.mNumberPad.hide();
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showCorrectAnswerBar();
        	 	this.showClockShape();
@@ -330,7 +311,7 @@ Extends: Game,
         {
         	this.mApplication.mLevelCompleted = true;
 
-        	this.hideNumberPad();
+        	this.mNumberPad.hide();
 
         	//correctAnswer
         	this.hideCorrectAnswerBar();

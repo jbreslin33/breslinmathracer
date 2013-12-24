@@ -124,7 +124,7 @@ enter: function(game)
 	}
 
 	//numberPad
-	game.showNumberPad();
+	game.mNumberPad.show();
 
 	//user answer
 	game.mUserAnswer = '';
@@ -175,7 +175,7 @@ enter: function(game)
 	game.hideCorrectAnswerBar();
 
 	//number pad
-	game.showNumberPad();
+	game.mNumberPad.show();
 
 	//user answer
 	game.mUserAnswer = '';
