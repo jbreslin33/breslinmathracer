@@ -6,6 +6,9 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
+	       	
+		//input pad
+                this.mInputPad = new NumberPad(application,application.mGame);
 	},
 
 	createQuestions: function()
@@ -76,6 +79,7 @@ Extends: Pad,
 				}
 			}
 		}
+
 	},
  
 	showCorrectAnswer: function()

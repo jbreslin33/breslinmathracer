@@ -200,11 +200,11 @@ var InputPad  = new Class(
         {
                 if (this.innerHTML == 'Enter')
                 {
-                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumberPad.mNumAnswer.mMesh.value;
+                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
                 }
                 else
                 {
-                        APPLICATION.mGame.mNumberPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumberPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
+                        APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
                 }
         }
 
