@@ -14,6 +14,9 @@ Extends: Pad,
 	
 		//answers 
                 this.mThresholdTime = 10000;
+
+                //input pad
+                this.mInputPad = new ButtonChoicePad(application,application.mGame);
 	},
 
 	reset: function()
