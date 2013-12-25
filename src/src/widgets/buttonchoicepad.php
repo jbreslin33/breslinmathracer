@@ -32,48 +32,23 @@ Extends: InputPad,
                         this.mButtonC.mMesh.addEvent('click',this.numPadHit);
                         this.mInputPadArray.push(this.mButtonC);
                 }
+	},
 
-                //question bar
-                if (!this.mNumQuestion)
+	show: function()
+	{
+ 		//shapes and array
+                for (i = 0; i < this.mInputPadArray.length; i++)
                 {
-                        this.mNumQuestion = new Shape(100,50,300,50,this.mGame,"","","");
-                        if (this.mQuiz)
-                        {
-                                if (this.mQuiz.getQuestion())
-                                {
-                                        this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
-                                }
-                        }
-                        this.mInputPadArray.push(this.mNumQuestion);
-                        this.mNumQuestion.setVisibility(false);
-                }
-
-                //answer text box
-                if (!this.mNumAnswer)
-                {
-                        this.mNumAnswer = new Shape(100,50,-100,-150,this.mGame,"INPUT","","");
-                        this.mNumAnswer.mMesh.value = '';
-                        this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-                        this.mNumAnswer.mMesh.focus();
-                        this.mInputPadArray.push(this.mNumAnswer);
-                        this.mNumAnswer.setVisibility(false);
+                        this.mInputPadArray[i].setVisibility(true);
                 }
 	},
 
-	showQuestion: function()
-        {
-                if (this.mGame.mQuiz)
-                {
-                        if (this.mGame.mQuiz.getQuestion())
-                        {
-                                this.mNumQuestion.mMesh.innerHTML = this.mGame.mQuiz.getQuestion().getQuestion();
-                        }
-                }
-        },
+	reset: function()
+	{
+	},
 
         numPadHit: function()
         {
-                APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
-                APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
+                APPLICATION.mGame.mUserAnswer = this.innerHTML;
         }
 });
