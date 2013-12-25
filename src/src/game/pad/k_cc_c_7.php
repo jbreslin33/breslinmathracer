@@ -55,89 +55,13 @@ Extends: Pad,
                 document.body.removeChild(this.mCompareBarB.mDiv.mDiv);
                 this.mCompareBarB = 0;
         },
- 
-	createNumberPad: function()
+
+	showQuestion: function()
         {
-		//BUTTONS
-                if (!this.mButtonA)
-		{
-			this.mButtonA = new Shape(150,50,300,100,this,"BUTTON","","");
- 			this.mButtonA.mMesh.innerHTML = 'is equal to';
-                	this.mButtonA.mMesh.mGame = this;
-                	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
-                	this.mNumberPadArray.push(this.mButtonA);
-		}
-                if (!this.mButtonB)
-		{
-			this.mButtonB = new Shape(150,50,300,200,this,"BUTTON","","");
- 			this.mButtonB.mMesh.innerHTML = 'is greater than';
-                	this.mButtonB.mMesh.mGame = this;
-                	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
-                	this.mNumberPadArray.push(this.mButtonB);
-		}
-                if (!this.mButtonC)
-		{
-			this.mButtonC = new Shape(150,50,300,300,this,"BUTTON","","");
- 			this.mButtonC.mMesh.innerHTML = 'is less than';
-                	this.mButtonC.mMesh.mGame = this;
-                	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
-                	this.mNumberPadArray.push(this.mButtonC);
-		}
-
-                //question bar
-                if (!this.mNumQuestion)
-                {
-                        this.mNumQuestion = new Shape(100,50,300,50,this,"","","");
-                        if (this.mQuiz)
-                        {
-                                if (this.mQuiz.getQuestion())
-                                {
-                                        this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
-                                }
-                        }
-                        this.mNumQuestion.mMesh.mGame = this;
-                        this.mNumberPadArray.push(this.mNumQuestion);
-			this.mNumQuestion.setVisibility(false);
-                }
-
-                //answer text box
-                if (!this.mNumAnswer)
-                {
-                        this.mNumAnswer = new Shape(100,50,400,50,this,"INPUT","","");
-                        this.mNumAnswer.mMesh.value = '';
-                        this.mNumAnswer.mMesh.mGame = this;
-                        this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-                        this.mNumAnswer.mMesh.focus();
-                        this.mNumberPadArray.push(this.mNumAnswer);
-			this.mNumAnswer.setVisibility(false);
-                }
-
-	},
-	
-	hideNumberPad: function()
-	{
-		this.parent();
-		this.mNumQuestion.setVisibility(false);
-	},
-
-	showNumberPad: function()
-	{
-		this.parent();
-
-		//set question invis...
-		this.mNumQuestion.setVisibility(false);
-		this.mNumAnswer.setVisibility(false);
-
                 this.mCompareBarA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableA();;
                 this.mCompareBarB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableB();;
-	},
- 
-	numPadHit: function()
-        {
-        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
-                APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
         },
-
+ 
  	showCorrectAnswer: function()
         {
                 this.parent();
@@ -201,7 +125,5 @@ Extends: Pad,
 				
 			}
 		}
-                this.mCompareBarA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableA();;
-                this.mCompareBarB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableB();;
 	},
 });
