@@ -141,7 +141,10 @@ Extends: Pad,
 		//set question invis...
 		this.mNumQuestion.setVisibility(false);
 		this.mNumAnswer.setVisibility(false);
+	},
 
+	showQuestion: function()
+	{
 		//A
 		for (i = 0; i < this.mCountShapeArrayA.length; i++)
 		{
@@ -166,7 +169,8 @@ Extends: Pad,
 			this.mCountShapeArrayB[v].setVisibility(true);
 		}	
 	},
- 
+
+	//state overides 
  	showCorrectAnswer: function()
         {
                 this.parent();
