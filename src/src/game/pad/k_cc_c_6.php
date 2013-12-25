@@ -16,7 +16,6 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);
-
 	},
 
 	reset: function()
@@ -151,7 +150,6 @@ Extends: Pad,
 			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 
-                this.log('show variableA:' + this.mQuiz.getQuestion().getVariableA());
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
 		{
 			this.mCountShapeArrayA[v].setVisibility(true);
@@ -163,7 +161,6 @@ Extends: Pad,
 			this.mCountShapeArrayB[i].setVisibility(false);
 		}	
 
-                this.log('show variableB:' + this.mQuiz.getQuestion().getVariableB());
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
 		{
 			this.mCountShapeArrayB[v].setVisibility(true);
@@ -269,7 +266,6 @@ Extends: Pad,
 			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 		
-                this.log('create variableA:' + this.mQuiz.getQuestion().getVariableA());
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
 		{
 			this.mCountShapeArrayA[v].setVisibility(true);
@@ -305,7 +301,6 @@ Extends: Pad,
                         this.mCountShapeArrayB[i].setVisibility(false);
                 }
                 
-                this.log('create variableB:' + this.mQuiz.getQuestion().getVariableB());
                 for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
                 {       
                         this.mCountShapeArrayB[v].setVisibility(true);

@@ -51,7 +51,7 @@ Extends: InputPad,
                 //answer text box
                 if (!this.mNumAnswer)
                 {
-                        this.mNumAnswer = new Shape(100,50,400,50,this.mGame,"INPUT","","");
+                        this.mNumAnswer = new Shape(100,50,-100,-150,this.mGame,"INPUT","","");
                         this.mNumAnswer.mMesh.value = '';
                         this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                         this.mNumAnswer.mMesh.focus();
