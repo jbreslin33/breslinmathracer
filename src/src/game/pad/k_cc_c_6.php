@@ -222,15 +222,5 @@ Extends: Pad,
                 this.mCountShapeArrayB.push(new ShapeVictory(50,50,675,150,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArrayB.push(new ShapeVictory(50,50,675,200,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArrayB.push(new ShapeVictory(50,50,675,250,this,"/images/bus/kid.png","",""));
-                
-                for (i = 0; i < this.mCountShapeArrayB.length; i++)
-                {
-                        this.mCountShapeArrayB[i].setVisibility(false);
-                }
-                
-                for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
-                {       
-                        this.mCountShapeArrayB[v].setVisibility(true);
-                }
 	}
 });
