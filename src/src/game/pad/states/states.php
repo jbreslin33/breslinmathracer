@@ -127,8 +127,14 @@ enter: function(game)
 	{
 		this.log('mQuiz ! exists');
 	}	
-	//game.mInputPad.reset();
+	
+	//clear the answer for a new one...	
+	game.mInputPad.reset();
+
+	//show the question...
 	game.showQuestion();
+
+	//show the pad	
 	game.mInputPad.show();
 
 	//correctAnswer
@@ -184,6 +190,8 @@ enter: function(game)
 	game.hideCorrectAnswerBar();
 
 	//number pad
+	//clear the answer for a new one...	
+	game.mInputPad.reset();
 	game.showQuestion();
 	game.mInputPad.show();
 

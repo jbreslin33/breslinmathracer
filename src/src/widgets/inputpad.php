@@ -11,8 +11,15 @@ var InputPad  = new Class(
 		this.createInputPad();	
 	},
 
+	//fake virtual
 	createInputPad: function()
 	{
+	},
+
+	//fake virtual
+	reset: function()
+	{
+
 	},
 
       	hide: function()
@@ -44,6 +51,4 @@ var InputPad  = new Class(
                 }
                 this.mInputPadArray = 0;
         }
-
-	//*************possible overides
 });
