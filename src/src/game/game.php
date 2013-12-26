@@ -122,6 +122,7 @@ var Game = new Class(
 
 	reset: function()
         {
+		this.log('Game.reset');
                 /************ SCORE *******/
                 this.setScore(0);
 		this.mKilled = false;

@@ -3,9 +3,9 @@ var ButtonChoicePad  = new Class(
 
 Extends: InputPad,
 
-	initialize: function(application, game)
+	initialize: function(application)
 	{
-		this.parent(application,game);
+		this.parent(application);
 	},
 
 	createInputPad: function()
@@ -41,10 +41,6 @@ Extends: InputPad,
                 {
                         this.mInputPadArray[i].setVisibility(true);
                 }
-	},
-
-	reset: function()
-	{
 	},
 
         numPadHit: function()

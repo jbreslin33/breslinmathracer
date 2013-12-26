@@ -8,12 +8,14 @@ Extends: Pad,
        		this.parent(application);
 	       	
 		//input pad
-                this.mInputPad = new NumberPad(application,application.mGame);
+                this.mInputPad = new NumberPad(application);
 	},
 
 	createQuestions: function()
         {
  		this.parent();
+
+		this.log('k_oa_a_4.createQuestions');
 
 		//add
                 this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1','9 + 1 = 10'));
@@ -70,10 +72,12 @@ Extends: Pad,
 				if (randomChance == 0)
 				{
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
+					this.log('createQuestion:' + s);
 					totalNew++;
 				}	
 				if (randomChance == 1)
 				{
+					this.log('createQuestion:' + s);
 					var randomElement = Math.floor((Math.random()*newQuestionElement));		
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 				}
