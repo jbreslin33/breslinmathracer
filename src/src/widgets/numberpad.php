@@ -8,13 +8,6 @@ Extends: InputPad,
 		this.parent(application)
 	},
 
-	reset: function()
-	{
-                this.mApplication.log('NumberPad.reset');
-        	this.mNumAnswer.mMesh.mValue = '';
-        	this.mNumAnswer.mMesh.innerHTML = '';
-	},
-
 	//*************possible overides
        	show: function()
         {
