@@ -45,12 +45,17 @@ Extends: InputPad,
                         APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value + '' + this.innerHTML;
                 }
         },
-
-	createInputPad: function()
-	{
- 		//question
+        createNumQuestion: function()
+        {
+                //question
                 this.mNumQuestion = new Shape(100,50,300,100,this.mGame,"","","");
-		this.mInputPadArray.push(this.mNumQuestion);
+                this.mInputPadArray.push(this.mNumQuestion);
+        },
+
+        createInputPad: function()
+        {
+                //question
+                this.createNumQuestion();
 
                 //answer
                 this.mNumAnswer = new Shape(100,50,400,100,this.mGame,"INPUT","","");

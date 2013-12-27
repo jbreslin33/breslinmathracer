@@ -10,12 +10,11 @@ Extends: Pad,
 		this.mThresholdTime = 120000;
 
                 //input pad
-                this.mInputPad = new NumberPad(application);
+                this.mInputPad = new BigQuestionNumberPad(application);
 	},
 
 	getAdditionQuestion: function(maxsum)
 	{
-
 		var nameArray   = new Array();
 		var objectArray = new Array();
 		
@@ -60,9 +59,6 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-
-		//3
-
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
