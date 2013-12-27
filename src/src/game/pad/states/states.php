@@ -137,8 +137,6 @@ enter: function(game)
 	
 	//show question
 	game.showQuestion();
-	
-
 },
 
 execute: function(game)
