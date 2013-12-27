@@ -86,11 +86,14 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
 
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
-		var totalNew           = 0;
-		var newQuestionElement = parseInt(this.mApplication.mLevel - 1);
-                
-		while (totalNew < totalNewGoal)
+		var totalAddition        = 0;
+		var totalSubtraction     = 0;
+		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		this.log('totA:' + totalAdditionGoal);
+		this.log('totS:' + totalSubtractionGoal);
+
+		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
 		{	
 			//RESET as we have either just started or failed to reach totalNewGoal
 			totalNew = 0;
@@ -108,13 +111,13 @@ Extends: Pad,
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
-					totalNew++;
+					this.mQuiz.mQuestionArray.push(this.getAdditionQuestion(20));
+					totalAddition++;
 				}	
 				if (randomChance == 1)
 				{
-					var randomElement = Math.floor((Math.random()*newQuestionElement));		
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+					this.mQuiz.mQuestionArray.push(this.getSubtractionQuestion(20));
+					totalSubtraction++;
 				}
 			}
 		}
