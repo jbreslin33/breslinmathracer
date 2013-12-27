@@ -31,8 +31,6 @@ Extends: InputPad,
                 if (e.key == 'enter')
                 {
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value;
-			APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = '';
-			APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
                 }
         },
 
