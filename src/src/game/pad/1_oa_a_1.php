@@ -8,6 +8,9 @@ Extends: Pad,
        		this.parent(application);
 
 		this.mThresholdTime = 120000;
+
+                //input pad
+                this.mInputPad = new NumberPad(application);
 	},
 
         resetNumberPad: function()

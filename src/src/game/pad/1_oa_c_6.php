@@ -6,6 +6,7 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
+
 	},
 
 	createQuestions: function()
