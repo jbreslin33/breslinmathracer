@@ -7,6 +7,8 @@ Extends: Pad,
 	{
        		this.parent(application);
 
+                //input pad
+                this.mInputPad = new NumberPad(application);
 	},
 
 	createQuestions: function()
