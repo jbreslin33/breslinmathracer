@@ -112,6 +112,9 @@ log: function(msg)
 
 enter: function(game)
 {
+ 	APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = '';
+        APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
+
 	//show inputPad	
 	game.mInputPad.show();
 
@@ -180,6 +183,9 @@ log: function(msg)
 
 enter: function(game)
 {
+ 	APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = '';
+        APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
+
 	//correctAnswer
 	game.hideCorrectAnswerBar();
 	
