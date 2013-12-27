@@ -6,11 +6,14 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
+		
+		this.mScoreNeeded = 4;
 
 		this.mThresholdTime = 120000;
 
                 //input pad
                 this.mInputPad = new BigQuestionNumberPad(application);
+
 	},
 
 	getAdditionQuestion: function(maxsum)
@@ -40,43 +43,56 @@ Extends: Pad,
 		return question;
 	},
 
+	getSubtractionQuestion: function(maxsum)
+	{
+		var nameArray   = new Array();
+		var objectArray = new Array();
+		
+		var addendA = 0;			
+		var addendB = 0;			
+		var sum = 100;
+		var questionText = '';
+
+		while (sum > maxsum || sum < 1 || subtrahendA == 0 || subtrahendA == 1 || subtrahendB == 0 || subtrahendB == 1)
+		{
+			subtrahendB = Math.floor((Math.random()*8)+1);		
+			subtrahendA = parseInt (subtrahendB + Math.floor((Math.random()*5)+1));		
+			sum = parseInt(subtrahendA - subtrahendB);		
+		}
+		//okay we have a valid sum and plural addends
+		questionText = 'Jose had '; 	
+		questionText = questionText + '' + subtrahendA; 	
+		questionText = questionText + ' toy cars. He gives away ';
+		questionText = questionText + '' + subtrahendB; 	
+		questionText = questionText + ' toy cars. How many toy cars does Jose have now?';
+
+		var question = new Question('' + questionText,'' + sum);
+		return question;
+	},
+
 	createQuestions: function()
         {
  		this.parent();
 		
 		//add
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
 		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
+		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
-		var newQuestionElement = 0;
-   		var elementCounter     = 0;
+		var newQuestionElement = parseInt(this.mApplication.mLevel - 1);
                 
-                for (i = 0; i <= 10; i++)
-                {
-                        if (this.mApplication.mLevel == i)
-                        {
-                                newQuestionElement = elementCounter;
-                        }
-                        elementCounter++;
-                }
-
 		while (totalNew < totalNewGoal)
 		{	
-			//reset vars and arrays
+			//RESET as we have either just started or failed to reach totalNewGoal
 			totalNew = 0;
 			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 			{
@@ -85,6 +101,7 @@ Extends: Pad,
 			this.mQuiz.mQuestionArray = 0;
 			this.mQuiz.mQuestionArray = new Array();
 
+			//ADD questions
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
