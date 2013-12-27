@@ -80,7 +80,6 @@ log: function(msg)
 
 enter: function(game)
 {
-	this.log('RESET_PAD_GAME.game.reset');
         game.reset();
 	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
 },
@@ -113,33 +112,33 @@ log: function(msg)
 
 enter: function(game)
 {
+	//show inputPad	
+	game.mInputPad.show();
+
+	//correctAnswer
+	game.hideCorrectAnswerBar();
+	
+	//user answer
+	game.mUserAnswer = '';
+
 	//numberPad
-	this.log('WAITING_ON_ANSWER_FIRST_TIME.mInputPad.reset');
 	if (game.mQuiz)
 	{
-		this.log('mQuiz exists');
 		if (!game.mQuiz.getQuestion())	
 		{
+			this.log('NO QUESTIONS: calling createQuestions');
 			game.createQuestions();
 		}
 	}
 	else
 	{
-		this.log('mQuiz ! exists');
+		this.log('NO QUIZ');
 	}	
 	
-	//show the question...
+	//show question
 	game.showQuestion();
+	
 
-	//show the pad	
-	game.mInputPad.show();
-
-	//correctAnswer
-	game.hideCorrectAnswerBar();
-
-
-	//user answer
-	game.mUserAnswer = '';
 },
 
 execute: function(game)
@@ -185,13 +184,12 @@ enter: function(game)
 {
 	//correctAnswer
 	game.hideCorrectAnswerBar();
-
-	//number pad
-	game.showQuestion();
-	game.mInputPad.show();
-
+	
 	//user answer
 	game.mUserAnswer = '';
+
+	//show question
+	game.showQuestion();
 
 	//times
 	game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer

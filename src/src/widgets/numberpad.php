@@ -17,16 +17,10 @@ Extends: InputPad,
 
         showQuestion: function()
         {
-                this.mApplication.log('inputPad.showQuestion');
-                this.mApplication.log('question:');
-                this.mApplication.log('question:' + this.mApplication.mGame.mQuiz.getQuestion().getQuestion());
-
                 if (this.mApplication.mGame.mQuiz)
                 {
-                        this.mApplication.log('inputPad.showQuestion there is a quiz');
                         if (this.mApplication.mGame.mQuiz.getQuestion())
                         {
-                                this.mApplication.log('inputPad.showQuestion there is a question');
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
                         }
                 }
