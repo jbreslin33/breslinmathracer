@@ -47,7 +47,6 @@ Extends: Game,
 	reset: function()
 	{
 		this.parent();
-		this.log('Pad.reset');
 		
 		this.createQuestions();
 		this.createWorld();
@@ -68,7 +67,6 @@ Extends: Game,
    
 	createQuestions: function()
         {
-		this.log('Pad.createQuestions');
  		this.mQuiz.reset();
 	},
 	

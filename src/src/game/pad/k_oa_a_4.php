@@ -72,12 +72,10 @@ Extends: Pad,
 				if (randomChance == 0)
 				{
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
-					this.log('createQuestion:' + s);
 					totalNew++;
 				}	
 				if (randomChance == 1)
 				{
-					this.log('createQuestion:' + s);
 					var randomElement = Math.floor((Math.random()*newQuestionElement));		
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 				}
