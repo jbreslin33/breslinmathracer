@@ -16,6 +16,24 @@ Extends: Pad,
 
 	},
 
+	createCorrectAnswerBar: function()
+        {
+                //question bar header
+                if (!this.mCorrectAnswerBarHeader)
+                {
+                        this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
+                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+                }
+
+                //question bar
+                if (!this.mCorrectAnswerBar)
+                {
+                        this.mCorrectAnswerBar = new Shape(200,200,100,100,this,"","","");
+                        this.mCorrectAnswerBar.mMesh.innerHTML = '';
+                }
+        },
+
+
 	getAdditionQuestion: function(maxsum)
 	{
 		var nameArray   = new Array();
