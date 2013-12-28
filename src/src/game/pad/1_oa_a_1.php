@@ -51,7 +51,7 @@ Extends: Pad,
 			sum = addendA + addendB;		
 		}
 		//okay we have a valid sum and plural addends
-		questionText = 'Jose had '; 	
+		questionText = 'Jim had '; 	
 		questionText = questionText + '' + addendA; 	
 		questionText = questionText + ' toy cars. He found ';
 		questionText = questionText + '' + addendB; 	
@@ -78,7 +78,7 @@ Extends: Pad,
 			sum = parseInt(subtrahendA - subtrahendB);		
 		}
 		//okay we have a valid sum and plural addends
-		questionText = 'Jose had '; 	
+		questionText = 'Jim had '; 	
 		questionText = questionText + '' + subtrahendA; 	
 		questionText = questionText + ' toy cars. He gives away ';
 		questionText = questionText + '' + subtrahendB; 	
