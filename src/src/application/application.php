@@ -299,6 +299,20 @@ var Application = new Class(
 			}
                 }
 
+		if (this.mRef_id == 'FC21412A7C92444EA50B30A09729330F')
+		{ 
+             		if (this.mGameName != "g1_oa_b_3")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g1_oa_b_3";
+                               	this.mGame = new g1_oa_b_3(APPLICATION);
+			}
+                }
+
 		if (this.mRef_id == '6C33D2BEC1AC431C8FC4BF9FD4DD3DCA')
 		{ 
              		if (this.mGameName != "g1_oa_c_6")

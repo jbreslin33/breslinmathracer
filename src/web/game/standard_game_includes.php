@@ -57,6 +57,7 @@
 <script type="text/javascript" src="/src/game/pad/k_nbt_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_a_2.php"></script>
+<script type="text/javascript" src="/src/game/pad/1_oa_b_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_oa_b_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_c_7.php"></script>
