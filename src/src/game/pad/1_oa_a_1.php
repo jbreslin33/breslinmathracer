@@ -62,7 +62,7 @@ Extends: Pad,
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(20));
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(20,2));
 					totalAddition++;
 				}	
 				if (randomChance == 1)
