@@ -47,6 +47,7 @@
 <script type="text/javascript" src="/src/game/pad/k_cc_a_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_c_7.php"></script>
+<script type="text/javascript" src="/src/game/pad/k_oa_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_oa_a_4.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_oa_a_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_nbt_a_1.php"></script>
