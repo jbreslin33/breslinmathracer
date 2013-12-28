@@ -43,7 +43,7 @@ var WordProblems = new Class(
 				addendA = Math.floor((Math.random()*20));		
 				addendB = Math.floor((Math.random()*20));		
 				addendC = Math.floor((Math.random()*20));		
-				sum = addendA + addendB;		
+				sum = addendA + addendB + addendC;		
 			}
 			//okay we have a valid sum and plural addends
 			questionText = 'Jim had '; 	
