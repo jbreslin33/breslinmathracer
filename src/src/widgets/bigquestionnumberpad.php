@@ -11,7 +11,7 @@ Extends: NumberPad,
 	createNumQuestion: function()
 	{
  		//question
-                this.mNumQuestion = new Shape(200,200,100,100,this.mGame,"","","");
+                this.mNumQuestion = new Shape(200,200,50,100,this.mGame,"","","");
 		this.mInputPadArray.push(this.mNumQuestion);
 	}
 });

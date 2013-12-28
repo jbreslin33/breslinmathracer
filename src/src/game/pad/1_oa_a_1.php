@@ -28,7 +28,7 @@ Extends: Pad,
                 //question bar
                 if (!this.mCorrectAnswerBar)
                 {
-                        this.mCorrectAnswerBar = new Shape(200,200,100,100,this,"","","");
+                        this.mCorrectAnswerBar = new Shape(200,200,50,100,this,"","","");
                         this.mCorrectAnswerBar.mMesh.innerHTML = '';
                 }
         },
