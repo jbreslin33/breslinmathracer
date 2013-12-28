@@ -22,5 +22,21 @@ Extends: Game,
                         	this.mQuiz.mQuestionArray.push(new Question('' + question, '' + answer));
 			}
                 }
+	},
+
+	normalGameExecute: function()
+	{
+		this.parent();
+		/*
+        	if (game.mDoor.mEnteredDoor == true)
+        	{
+                	game.mDungeonStateMachine.changeState(game.mLEVEL_PASSED);
+        	}
+
+        	if (game.mKilled == true)
+        	{
+                	game.mDungeonStateMachine.changeState(game.mRESET_DUNGEON_GAME);
+        	}
+		*/
 	}
 });
