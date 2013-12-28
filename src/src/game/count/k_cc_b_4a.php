@@ -7,6 +7,14 @@ Extends: Game,
 	{
        		this.parent(application);
 		this.mApplication.mMouseMoveOn = false;	
+
+		this.createWorld();
+	},
+
+	createWorld: function()
+	{
+		var dropZone5 = new Shape(200,200,25,50,this,"/images/dropzone/dropzone5.jpg","","");
+		this.mShapeArray.push(dropZone5);
 	},
 
 	createQuestions: function()
