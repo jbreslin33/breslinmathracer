@@ -89,9 +89,6 @@ Extends: Game,
 			this.mShapeArray.push(this.mMemorizeShape);
 			this.mMemorizeShape.setVisibility(false);
 		}
-
-		this.createCorrectAnswerBar();
-
 	},
 
 	showQuestion: function()
