@@ -39,6 +39,9 @@
 
 <script type="text/javascript" src="/src/game/dungeon/dungeon.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/states/states.php"></script>
+
+<script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
+
 <script type="text/javascript" src="/src/game/dungeon/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/k_cc_a_2.php"></script>
 
