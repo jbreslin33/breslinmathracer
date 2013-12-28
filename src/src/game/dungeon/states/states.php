@@ -80,7 +80,6 @@ log: function(msg)
 
 enter: function(game)
 {
-        //this.log('RESET_DUNGEON_GAME');
         game.reset();
         game.mDungeonStateMachine.changeState(game.mNORMAL_DUNGEON_GAME);
 },
@@ -113,7 +112,6 @@ log: function(msg)
 
 enter: function(game)
 {
-        this.log('NORMAL_DUNGEON_GAME');
         //correctAnswer
         game.hideCorrectAnswerBar();
         game.mCorrectAnswerBarHeader.mMesh.value = '';
@@ -132,7 +130,6 @@ execute: function(game)
 
 	if (game.mKilled == true)
 	{	
-		this.log('killed');
         	game.mDungeonStateMachine.changeState(game.mRESET_DUNGEON_GAME);
 	}
 },
