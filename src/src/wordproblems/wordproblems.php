@@ -40,9 +40,9 @@ var WordProblems = new Class(
 
 			while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1 || addendC == 0 || addendC == 1)
 			{
-				addendA = Math.floor((Math.random()*20));		
-				addendB = Math.floor((Math.random()*20));		
-				addendC = Math.floor((Math.random()*20));		
+				addendA = Math.floor((Math.random()*5)+2);		
+				addendB = Math.floor((Math.random()*5)+2);		
+				addendC = Math.floor((Math.random()*5)+2);		
 				sum = addendA + addendB + addendC;		
 			}
 			//okay we have a valid sum and plural addends

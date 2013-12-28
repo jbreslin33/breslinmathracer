@@ -317,7 +317,6 @@ var Shape = new Class(
 
 	setPosition: function(x,y)
 	{
-		this.log('Shape.setPosition:' + x);
 		this.mPosition.mX = x;
 		this.mPosition.mY = y;
 	},
