@@ -7,7 +7,7 @@ Extends: Pad,
 	{
        		this.parent(application);
 		
-		this.mScoreNeeded = 4;
+		this.setScoreNeeded(4);
 
 		this.mThresholdTime = 120000;
 
