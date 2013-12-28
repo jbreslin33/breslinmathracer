@@ -73,7 +73,7 @@ Extends: Pad,
 
 		while (sum > maxsum || sum < 1 || subtrahendA == 0 || subtrahendA == 1 || subtrahendB == 0 || subtrahendB == 1)
 		{
-			subtrahendB = Math.floor((Math.random()*8)+1);		
+			subtrahendB = Math.floor((Math.random()*4)+1);		
 			subtrahendA = parseInt (subtrahendB + Math.floor((Math.random()*5)+1));		
 			sum = parseInt(subtrahendA - subtrahendB);		
 		}
@@ -92,24 +92,10 @@ Extends: Pad,
         {
  		this.parent();
 		
-		//add
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-
 		var totalAddition        = 0;
 		var totalSubtraction     = 0;
 		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		this.log('totA:' + totalAdditionGoal);
-		this.log('totS:' + totalSubtractionGoal);
 
 		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
 		{	
@@ -129,12 +115,12 @@ Extends: Pad,
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.getAdditionQuestion(20));
+					this.mQuiz.mQuestionArray.push(this.getAdditionQuestion(10));
 					totalAddition++;
 				}	
 				if (randomChance == 1)
 				{
-					this.mQuiz.mQuestionArray.push(this.getSubtractionQuestion(20));
+					this.mQuiz.mQuestionArray.push(this.getSubtractionQuestion(10));
 					totalSubtraction++;
 				}
 			}

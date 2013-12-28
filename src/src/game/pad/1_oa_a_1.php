@@ -92,24 +92,10 @@ Extends: Pad,
         {
  		this.parent();
 		
-		//add
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getAdditionQuestion(20));
-		this.mQuiz.mQuestionPoolArray.push(this.getSubtractionQuestion(20));
-
 		var totalAddition        = 0;
 		var totalSubtraction     = 0;
 		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		this.log('totA:' + totalAdditionGoal);
-		this.log('totS:' + totalSubtractionGoal);
 
 		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
 		{	
