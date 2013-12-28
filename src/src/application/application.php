@@ -255,6 +255,7 @@ var Application = new Class(
                                	this.mGame = new k_nbt_a_1(APPLICATION);
 			}
                 }
+
 		if (this.mRef_id == 'C712BAA86FEF4BFAB703AD2EB402B2DD')
 		{ 
              		if (this.mGameName != "g1_oa_a_1")
@@ -269,6 +270,19 @@ var Application = new Class(
 			}
                 }
 
+		if (this.mRef_id == 'AF4F218991664833853239C29DCE8521')
+		{ 
+             		if (this.mGameName != "g1_oa_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g1_oa_a_2";
+                               	this.mGame = new g1_oa_a_2(APPLICATION);
+			}
+                }
 
 		if (this.mRef_id == '6C33D2BEC1AC431C8FC4BF9FD4DD3DCA')
 		{ 
