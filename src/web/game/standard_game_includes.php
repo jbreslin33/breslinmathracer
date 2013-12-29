@@ -50,6 +50,7 @@
 <script type="text/javascript" src="/src/game/dungeon/k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_a_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_b_4a.php"></script>
+<script type="text/javascript" src="/src/game/pad/k_cc_b_4b.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_c_7.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_oa_a_2.php"></script>
