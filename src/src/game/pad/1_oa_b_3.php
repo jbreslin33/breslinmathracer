@@ -17,7 +17,7 @@ Extends: Pad,
                 if (!this.mCorrectAnswerBarHeader)
                 {
                         this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
+                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
                 }
 
                 //question bar
@@ -27,6 +27,16 @@ Extends: Pad,
                         this.mCorrectAnswerBar.mMesh.innerHTML = '';
                 }
         },
+  
+	showCorrectAnswerBar: function()
+        {
+                this.mCorrectAnswerBarHeader.setVisibility(true);
+                this.mCorrectAnswerBar.setVisibility(true);
+        	
+		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
+        },
+
+        //this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
 
 	createQuestions: function()
         {
