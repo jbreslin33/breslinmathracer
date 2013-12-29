@@ -101,7 +101,14 @@ Extends: Pad,
 		//kids A
 		for (i = 0; i < this.mScore + 1; i++)
 		{
-			this.mCountShapeArrayA[i].setVisibility(true);
+			if (this.mScore == parseInt(this.mScoreNeeded - 1))
+			{
+
+			} 
+			else
+			{
+				this.mCountShapeArrayA[i].setVisibility(true);
+			}
 		}
 
 		//number names B
