@@ -7,28 +7,49 @@ Extends: Pad,
 	{
        		this.parent(application);
 	       	
-		//input pad
-                this.mInputPad = new NumberPad(application);
-	},
+                //input pad
+                this.mInputPad = new LongQuestionNumberPad(application);
+        },
+
+        createCorrectAnswerBar: function()
+        {
+                //question bar header
+                if (!this.mCorrectAnswerBarHeader)
+                {
+                        this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
+                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+                }
+
+                //question bar
+                if (!this.mCorrectAnswerBar)
+                {
+                        this.mCorrectAnswerBar = new Shape(200,200,50,100,this,"","","");
+                        this.mCorrectAnswerBar.mMesh.innerHTML = '';
+                }
+        },
 
 	createQuestions: function()
         {
  		this.parent();
 
 		//commutative
+
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('8 + 3 = 11 and 3 + ? = 11','8','8 + 3 = 11 and 3 + 8 = 11'));
 
-                this.mQuiz.mQuestionPoolArray.push(new Question('1 + ? = 10','9','1 + 9 = 10'));
-
-		this.mQuiz.mQuestionPoolArray.push(new Question('1 + ? = 10','9','1 + 9 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('2 + ? = 10','8','2 + 8 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('3 + ? = 10','7','3 + 7 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 + ? = 10','6','4 + 6 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('5 + ? = 10','5','5 + 5 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('6 + ? = 10','4','6 + 4 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('7 + ? = 10','3','7 + 3 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('8 + ? = 10','2','8 + 2 = 10'));
-                this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1','9 + 1 = 10'));
 		//18
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);

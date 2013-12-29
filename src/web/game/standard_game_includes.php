@@ -35,6 +35,7 @@
 <script type="text/javascript" src="/src/widgets/inputpad.php"></script>
 <script type="text/javascript" src="/src/widgets/numberpad.php"></script>
 <script type="text/javascript" src="/src/widgets/bigquestionnumberpad.php"></script>
+<script type="text/javascript" src="/src/widgets/longquestionnumberpad.php"></script>
 <script type="text/javascript" src="/src/widgets/buttonchoicepad.php"></script>
 
 <script type="text/javascript" src="/src/game/dungeon/dungeon.php"></script>
