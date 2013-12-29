@@ -171,6 +171,7 @@ Extends: Pad,
 	
 		//how many should we count
 		this.mNumberToCount = Math.floor((Math.random()*10)+1);	
+		this.setScoreNeeded(this.mNumberToCount);
 		this.log('numberToCount:' + this.mNumberToCount);
 	
 		//reset vars and arrays
