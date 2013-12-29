@@ -105,6 +105,11 @@ Extends: Pad,
 			{
 				this.mCountShapeArrayA[i].setVisibility(true);
 			} 
+
+			//right here we need to show How Many 	
+			this.mCorrectAnswerBarHeader.setVisibility('true');
+			this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'How Many?';
+				
 		}
 		else
 		{
@@ -140,15 +145,36 @@ Extends: Pad,
 
 			if (this.mCorrectButtonNumber == 0)
 			{
-				this.mButtonElementA = this.mScore; 
+				if (this.mScore == parseInt(this.mScoreNeeded - 1))
+				{
+					this.mButtonElementA = parseInt(this.mScore - 1); 
+				}
+				else
+				{
+					this.mButtonElementA = this.mScore; 
+				}
 			}
 			if (this.mCorrectButtonNumber == 1)
 			{
-				this.mButtonElementB = this.mScore; 
+				if (this.mScore == parseInt(this.mScoreNeeded - 1))
+				{
+					this.mButtonElementB = parseInt(this.mScore - 1); 
+				}
+				else
+				{
+					this.mButtonElementB = this.mScore; 
+				}
 			}
 			if (this.mCorrectButtonNumber == 2)
 			{
-				this.mButtonElementC = this.mScore; 
+				if (this.mScore == parseInt(this.mScoreNeeded - 1))
+				{
+					this.mButtonElementC = parseInt(this.mScore - 1); 
+				}
+				else
+				{
+					this.mButtonElementC = this.mScore; 
+				}
 			}
 		}
 		this.mInputPad.mButtonA.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementA];
@@ -169,12 +195,6 @@ Extends: Pad,
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
         },
      
-	showLevelPassedEnter: function()
-        {
-                this.parent();
-		this.mCountShapeArrayB[9].setVisibility(true);
-        },
-
 	//questions
 	createQuestions: function()
         {
