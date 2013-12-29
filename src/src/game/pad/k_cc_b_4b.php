@@ -99,16 +99,20 @@ Extends: Pad,
 		}	
 
 		//kids A
-		for (i = 0; i < this.mScore + 1; i++)
+		if (this.mScore == parseInt(this.mScoreNeeded - 1))
 		{
-			if (this.mScore == parseInt(this.mScoreNeeded - 1))
-			{
-
-			} 
-			else
+			for (i = 0; i < this.mScore; i++)
 			{
 				this.mCountShapeArrayA[i].setVisibility(true);
-			}
+			} 
+		}
+		else
+		{
+			for (i = 0; i < this.mScore + 1; i++)
+			{
+				this.mCountShapeArrayA[i].setVisibility(true);
+			} 
+
 		}
 
 		//number names B
