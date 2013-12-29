@@ -163,6 +163,32 @@ Extends: Pad,
 		this.createQuestionShapes();
 	},
 
+	createCountingShape: function(numberName)
+	{
+/*
+  		var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
+                var shape;
+                this.addToShapeArray(shape = new QuestionShape(50,50,openPoint.mX,openPoint.mY,this,this.mQuiz.getSpecificQuestion(count),"/images/treasure/gold_coin_head.png","","question"));
+                        shape.createMountPoint(0,-5,-41);
+                        shape.showQuestion(false);
+
+                        //numberMount to go on top let's make it small and draw it on top
+                        var questionMountee = new QuestionShape(1,1,100,100,this,this.mQuiz.getSpecificQuestion(count),"","orange","questionMountee");
+                        questionMountee.setMountable(true);
+                        this.addToShapeArray(questionMountee);
+                        shape.setStartingMountee(questionMountee);
+                        questionMountee.showQuestion(false);
+
+                        //do the mount
+                        shape.mount(questionMountee,0);
+
+                        questionMountee.setBackgroundColor("transparent");
+
+                        //evaluate questions
+                        questionMountee.setEvaluateQuestions(false);
+*/
+	},
+
 	createQuestionShapes: function()
 	{
 		//A
@@ -224,5 +250,17 @@ Extends: Pad,
                 this.mCountShapeArrayB.push(new ShapeVictory(50,50,675,150,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArrayB.push(new ShapeVictory(50,50,675,200,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArrayB.push(new ShapeVictory(50,50,675,250,this,"/images/bus/kid.png","",""));
+/*
+		for (i = 0; i < this.mCountShapeArrayB.length; i++)
+		{
+			this.mCountShapeArrayB[i].setMountable(true);
+ 			this.mCountShapeArrayA[i].setStartingMountee(this.mCountShapeArrayB[i]);
+
+                        //do the mount
+                        this.mCountShapeArrayA[i].mount(this.mCountShapeArrayB[i],0);
+
+                        //this.mCountShapeArrayB[i].setBackgroundColor("transparent");
+		}
+*/
 	}
 });
