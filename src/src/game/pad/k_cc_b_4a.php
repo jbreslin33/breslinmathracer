@@ -12,6 +12,7 @@ Extends: Pad,
 		this.mCountShapeArrayB = new Array();
 		this.mNumberNameArray = new Array();
 
+		//number names
 		this.mNumberNameArray[0] = 'one';
 		this.mNumberNameArray[1] = 'two';
 		this.mNumberNameArray[2] = 'three';
@@ -51,7 +52,6 @@ Extends: Pad,
 		{
 			this.mCountShapeArrayB[i].setVisibility(false);
 		} 
-
 	},
   
 	destroyShapes: function()
@@ -108,7 +108,6 @@ Extends: Pad,
 		}
 
 		this.setButtons();
-	
 	},
 	
 	setButtons: function()
@@ -143,7 +142,6 @@ Extends: Pad,
 		this.mInputPad.mButtonC.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementC];
 	},
 
-
 	//state overides 
  	showCorrectAnswer: function()
         {
@@ -158,8 +156,6 @@ Extends: Pad,
         },
 
 	//questions
-//this.mButtonC.mMesh.innerHTML = 'is less than';
-
 	createQuestions: function()
         {
 		this.parent();
@@ -169,6 +165,7 @@ Extends: Pad,
 		{
 			this.mQuiz.mQuestionArray[d] = 0;
 		} 
+
 		this.mQuiz.mQuestionArray = 0;
 		this.mQuiz.mQuestionArray = new Array();
 
