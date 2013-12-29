@@ -171,7 +171,7 @@ Extends: Pad,
 	
 		//how many should we count
 		this.mNumberToCount = Math.floor((Math.random()*10)+1);	
-		this.setScoreNeeded(this.mNumberToCount);
+		this.setScoreNeeded(parseInt(this.mNumberToCount + 1));
 		this.log('numberToCount:' + this.mNumberToCount);
 	
 		//reset vars and arrays
@@ -188,6 +188,9 @@ Extends: Pad,
 			var question = new Question('Count', '' + this.mNumberNameArray[i]);
 			this.mQuiz.mQuestionArray.push(question);
 		}
+		//extra question
+		var question = new Question('How Many?', '' + this.mNumberNameArray[parseInt(this.mNumberToCount - 1)]);
+		this.mQuiz.mQuestionArray.push(question);
 
 		this.createQuestionShapes();
 	},
