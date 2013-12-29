@@ -17,13 +17,13 @@ Extends: Pad,
                 if (!this.mCorrectAnswerBarHeader)
                 {
                         this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
                 }
 
                 //question bar
                 if (!this.mCorrectAnswerBar)
                 {
-                        this.mCorrectAnswerBar = new Shape(200,200,50,100,this,"","","");
+                        this.mCorrectAnswerBar = new Shape(300,50,25,100,this,"","","");
                         this.mCorrectAnswerBar.mMesh.innerHTML = '';
                 }
         },
