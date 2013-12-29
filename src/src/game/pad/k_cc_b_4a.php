@@ -154,6 +154,12 @@ Extends: Pad,
                 this.parent();
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
         },
+     
+	showLevelPassedEnter: function()
+        {
+                this.parent();
+		this.mCountShapeArrayB[9].setVisibility(true);
+        },
 
 	//questions
 	createQuestions: function()
