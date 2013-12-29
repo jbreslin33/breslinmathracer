@@ -27,20 +27,12 @@ Extends: Pad,
 		{
 			this.mCountShapeArrayA[i].setVisibility(false);
 		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
-		{
-			this.mCountShapeArrayA[v].setVisibility(true);
-		}	
 	
 		//B	
 		for (i = 0; i < this.mCountShapeArrayB.length; i++)
 		{
 			this.mCountShapeArrayB[i].setVisibility(false);
 		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
-		{
-			this.mCountShapeArrayB[v].setVisibility(true);
-		}	
 	},
   
 	destroyShapes: function()
@@ -78,21 +70,30 @@ Extends: Pad,
 			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
-		{
-			this.mCountShapeArrayA[v].setVisibility(true);
-		}	
-	
 		//B	
 		for (i = 0; i < this.mCountShapeArrayB.length; i++)
 		{
 			this.mCountShapeArrayB[i].setVisibility(false);
 		}	
 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
+		//kids A
+		for (i = 0; i < this.mScore + 1; i++)
 		{
-			this.mCountShapeArrayB[v].setVisibility(true);
-		}	
+			this.mCountShapeArrayA[i].setVisibility(true);
+		}
+
+		//number names B
+		for (i = 0; i < this.mScore; i++)
+		{
+			this.mCountShapeArrayB[i].setVisibility(true);
+		}
+
+		
+		this.mInputPad.mButtonA.mMesh.innerHTML = 'one';
+		this.mInputPad.mButtonB.mMesh.innerHTML = 'two';
+		this.mInputPad.mButtonC.mMesh.innerHTML = 'three';
+
+
 	},
 
 	//state overides 
@@ -109,57 +110,41 @@ Extends: Pad,
         },
 
 	//questions
+//this.mButtonC.mMesh.innerHTML = 'is less than';
+
 	createQuestions: function()
         {
 		this.parent();
 		
-		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
-		var totalCount           = 0;
-		var greaterThans = 0;
-		var lessThans = 0;
-		var equalTos = 0;
+		//reset vars and arrays
+		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
+		{
+			this.mQuiz.mQuestionArray[d] = 0;
+		} 
+		this.mQuiz.mQuestionArray = 0;
+		this.mQuiz.mQuestionArray = new Array();
 
-		while (totalCount < totalCountGoal || greaterThans < 2 || lessThans < 2 || equalTos < 2)
-		{	
-			//reset vars and arrays
-			totalCount = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+		var question = new Question('Count', 'one');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'two');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'three');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'four');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'five');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'six');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'seven');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'eight');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'nine');
+		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('Count', 'ten');
+		this.mQuiz.mQuestionArray.push(question);
 
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//random number to count from 0-20
-				var objectsToCountA = Math.floor((Math.random()*21));		
-				var objectsToCountB = Math.floor((Math.random()*21));		
-				var comparison = '';
-				if (objectsToCountA == objectsToCountB)
-				{
-					comparison = 'is equal to';
-					equalTos++;
-				}
-				if (objectsToCountA > objectsToCountB)
-				{
-					comparison = 'is greater than';
-					greaterThans++;
-				}
-				if (objectsToCountA < objectsToCountB)
-				{
-					comparison = 'is less than';
-					lessThans++;
-				}
-
-				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
-
-				this.mQuiz.mQuestionArray.push(question);
-
-				totalCount = parseInt(totalCount + objectsToCountA);
-				
-			}
-		}
 		this.createQuestionShapes();
 	},
 
@@ -220,19 +205,9 @@ Extends: Pad,
 			this.mCountShapeArrayA[i].setVisibility(false);
 		}	
 		
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableA()); v++)
-		{
-			this.mCountShapeArrayA[v].setVisibility(true);
-		}	
-
 		for (i = 0; i < this.mCountShapeArrayB.length; i++)
 		{
 			this.mCountShapeArrayB[i].setVisibility(false);
-		}	
-		
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getVariableB()); v++)
-		{
-			this.mCountShapeArrayB[v].setVisibility(true);
 		}	
 	}
 });
