@@ -10,6 +10,24 @@ Extends: Pad,
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
+		this.mNumberNameArray = new Array();
+
+		this.mNumberNameArray[0] = 'one';
+		this.mNumberNameArray[1] = 'two';
+		this.mNumberNameArray[2] = 'three';
+		this.mNumberNameArray[3] = 'four';
+		this.mNumberNameArray[4] = 'five';
+		this.mNumberNameArray[5] = 'six';
+		this.mNumberNameArray[6] = 'seven';
+		this.mNumberNameArray[7] = 'eight';
+		this.mNumberNameArray[8] = 'nine';
+		this.mNumberNameArray[9] = 'ten';
+	
+		//buttons	
+		this.mCorrectButtonNumber = 0;	
+		this.mButtonElementA = 0;	
+		this.mButtonElementB = 0;	
+		this.mButtonElementC = 0;	
 
 		//answers 
                 this.mThresholdTime = 10000;
@@ -33,6 +51,7 @@ Extends: Pad,
 		{
 			this.mCountShapeArrayB[i].setVisibility(false);
 		} 
+
 	},
   
 	destroyShapes: function()
@@ -88,13 +107,42 @@ Extends: Pad,
 			this.mCountShapeArrayB[i].setVisibility(true);
 		}
 
-		
-		this.mInputPad.mButtonA.mMesh.innerHTML = 'one';
-		this.mInputPad.mButtonB.mMesh.innerHTML = 'two';
-		this.mInputPad.mButtonC.mMesh.innerHTML = 'three';
-
-
+		this.setButtons();
+	
 	},
+	
+	setButtons: function()
+	{
+		this.mCorrectButtonNumber = 0;
+		this.mButtonElementA = 0;
+		this.mButtonElementB = 0;
+		this.mButtonElementC = 0;
+
+		while (this.mButtonElementA == this.mButtonElementB || this.mButtoneElementA == this.mButtonElementC || this.mButtonElementB == this.mButtonElementC)
+		{
+			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
+			this.mButtonElementA = Math.floor((Math.random()*10));	
+			this.mButtonElementB = Math.floor((Math.random()*10));	
+			this.mButtonElementC = Math.floor((Math.random()*10));	
+
+			if (this.mCorrectButtonNumber == 0)
+			{
+				this.mButtonElementA = this.mScore; 
+			}
+			if (this.mCorrectButtonNumber == 1)
+			{
+				this.mButtonElementB = this.mScore; 
+			}
+			if (this.mCorrectButtonNumber == 2)
+			{
+				this.mButtonElementC = this.mScore; 
+			}
+		}
+		this.mInputPad.mButtonA.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementA];
+		this.mInputPad.mButtonB.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementB];
+		this.mInputPad.mButtonC.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementC];
+	},
+
 
 	//state overides 
  	showCorrectAnswer: function()
