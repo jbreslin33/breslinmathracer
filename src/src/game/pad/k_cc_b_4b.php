@@ -108,8 +108,8 @@ Extends: Pad,
 
 			//right here we need to show How Many 	
 			this.mCorrectAnswerBarHeader.setVisibility('true');
-			this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'How Many?';
-				
+			this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'How Many kids?';
+			this.mApplication.mHud.mScoreNeeded.setText('<font size="2">How Many?</font>');
 		}
 		else
 		{
@@ -117,7 +117,10 @@ Extends: Pad,
 			{
 				this.mCountShapeArrayA[i].setVisibility(true);
 			} 
-
+			//right here we need to say to count 	
+			this.mCorrectAnswerBarHeader.setVisibility('true');
+			this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Count the kids!';
+			this.mApplication.mHud.mScoreNeeded.setText('<font size="2">Count?</font>');
 		}
 
 		//number names B
