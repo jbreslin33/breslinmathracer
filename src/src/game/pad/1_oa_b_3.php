@@ -27,17 +27,28 @@ Extends: Pad,
                         this.mCorrectAnswerBar.mMesh.innerHTML = '';
                 }
         },
-  
+ 
+	//states 
 	showCorrectAnswerBar: function()
         {
-                this.mCorrectAnswerBarHeader.setVisibility(true);
-                this.mCorrectAnswerBar.setVisibility(true);
-        	
+       		this.parent(); 
 		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
         },
 
-        //this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
+        showCorrectAnswerOutOfTime: function()
+        {
+		this.parent();
+		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Out of Time! Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        },
+	
+	showCorrectAnswer: function()
+        {
+		this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        },
 
+	//questions
 	createQuestions: function()
         {
  		this.parent();
@@ -104,17 +115,5 @@ Extends: Pad,
 			}
 		}
 
-	},
- 
-	showCorrectAnswer: function()
-        {
-		this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
-        },
-
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
-        }
+	}
 });
