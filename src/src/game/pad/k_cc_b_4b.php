@@ -183,26 +183,11 @@ Extends: Pad,
 		this.mQuiz.mQuestionArray = 0;
 		this.mQuiz.mQuestionArray = new Array();
 
-		var question = new Question('Count', 'one');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'two');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'three');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'four');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'five');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'six');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'seven');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'eight');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'nine');
-		this.mQuiz.mQuestionArray.push(question);
-		var question = new Question('Count', 'ten');
-		this.mQuiz.mQuestionArray.push(question);
+		for (i = 0; i < this.mNumberToCount; i++)
+		{
+			var question = new Question('Count', '' + this.mNumberNameArray[i]);
+			this.mQuiz.mQuestionArray.push(question);
+		}
 
 		this.createQuestionShapes();
 	},
