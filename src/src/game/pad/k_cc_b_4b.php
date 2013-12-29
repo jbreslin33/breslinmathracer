@@ -7,6 +7,9 @@ Extends: Pad,
 	{
        		this.parent(application);
 
+		//number to count
+		this.mNumberToCount = 0;
+
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
@@ -165,7 +168,11 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
-		
+	
+		//how many should we count
+		this.mNumberToCount = Math.floor((Math.random()*10)+1);	
+		this.log('numberToCount:' + this.mNumberToCount);
+	
 		//reset vars and arrays
 		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 		{
