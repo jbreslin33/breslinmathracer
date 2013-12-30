@@ -71,9 +71,14 @@ Extends: Pad,
           				//collision on or off
                 			this.mShapeArray[i].mCollidable = false;
                 			this.mShapeArray[i].mCollisionOn = false;
-
-					this.log('setPos:' + i)
-					this.mShapeArray[i].setPosition(25, 50)	
+					this.mShapeArray[i].setPosition(parseInt(i * 50 + 50), 50)	
+				}
+				if (i >= 5 && i < 10)
+				{
+          				//collision on or off
+                			this.mShapeArray[i].mCollidable = false;
+                			this.mShapeArray[i].mCollisionOn = false;
+					this.mShapeArray[i].setPosition(50,parseInt(i * 50 - 200))	
 				}
 			}
 		}
