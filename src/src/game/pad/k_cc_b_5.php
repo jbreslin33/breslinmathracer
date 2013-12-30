@@ -53,6 +53,30 @@ Extends: Pad,
                 {
                         this.mShapeArray[v].setVisibility(true);
                 }
+
+		//right here randomly arrange them.
+		var arrangeType = Math.floor((Math.random()*3));		
+		arrangeType = 1;
+		if (arrangeType == 0)
+		{
+			//do default
+		}
+		
+		if (arrangeType == 1)
+		{
+			for (i = 0; i < this.mShapeArray.length; i++)
+			{	
+				if (i < 5)
+				{
+          				//collision on or off
+                			this.mShapeArray[i].mCollidable = false;
+                			this.mShapeArray[i].mCollisionOn = false;
+
+					this.log('setPos:' + i)
+					this.mShapeArray[i].setPosition(25, 50)	
+				}
+			}
+		}
 	},
  
 	hideNumberPad: function()
