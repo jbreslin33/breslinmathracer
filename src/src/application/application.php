@@ -206,6 +206,20 @@ var Application = new Class(
 			}
                 }
 
+		if (this.mRef_id == '6F4455B55B4240F3B4738DD9DB3EAF40')
+		{ 
+             		if (this.mGameName != "k_cc_b_5")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "k_cc_b_5";
+                               	this.mGame = new k_cc_b_5(APPLICATION);
+			}
+		}
+
 		if (this.mRef_id == '66626D8AEE4E474B8CFEC8A4B68AA51C')
 		{ 
              		if (this.mGameName != "k_cc_c_6")
@@ -258,6 +272,7 @@ var Application = new Class(
                                	this.mGame = new k_oa_a_4(APPLICATION);
 			}
 		}
+		
 		if (this.mRef_id == '1353E9D5614D460FA32E67853B6BA6D8')
 		{ 
              		if (this.mGameName != "k_oa_a_5")
