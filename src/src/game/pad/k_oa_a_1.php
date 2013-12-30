@@ -49,77 +49,25 @@ Extends: Pad,
                 {
                         this.mShapeArray[i].setVisibility(false);
                 }
-                for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
-                {
-                        this.mShapeArray[v].setVisibility(true);
-                }
 
-		//right here randomly arrange them.
-		var arrangeType = Math.floor((Math.random()*3));		
-		if (arrangeType == 0)
-		{
-			//do default
-		}
-	
-		//rectangle array	
-		if (arrangeType == 1)
-		{
-			for (i = 0; i < this.mShapeArray.length; i++)
-			{	
-				if (i < 5)
-				{
-          				//collision on or off
-                			this.mShapeArray[i].mCollidable = false;
-                			this.mShapeArray[i].mCollisionOn = false;
-					this.mShapeArray[i].setPosition(parseInt(i * 50 + 50), 50)	
-				}
-				if (i >= 5 && i < 11)
-				{
-          				//collision on or off
-                			this.mShapeArray[i].mCollidable = false;
-                			this.mShapeArray[i].mCollisionOn = false;
-					this.mShapeArray[i].setPosition(50,parseInt(i * 50 - 135))	
-				}
-				if (i >= 11 && i < 15)
-				{
-          				//collision on or off
-                			this.mShapeArray[i].mCollidable = false;
-                			this.mShapeArray[i].mCollisionOn = false;
-					this.mShapeArray[i].setPosition(parseInt(i * 50 - 450 ), 365)	
-				}
-				if (i >= 15 && i < 20)
-				{
-          				//collision on or off
-                			this.mShapeArray[i].mCollidable = false;
-                			this.mShapeArray[i].mCollisionOn = false;
-					this.mShapeArray[i].setPosition(250,parseInt(i * 50 - 635))	
-				}
-			}
-		}
-		//scattered
-		if (arrangeType == 2)
-		{
-			this.mShapeArray[0].setPosition(150,350);
-			this.mShapeArray[1].setPosition(250,400);
-			this.mShapeArray[2].setPosition(200,250);
-			this.mShapeArray[3].setPosition(150,150);
-			this.mShapeArray[4].setPosition(050,250);
-			this.mShapeArray[5].setPosition(150,050);
-			this.mShapeArray[6].setPosition(150,150);
-			this.mShapeArray[7].setPosition(200,400);
-			this.mShapeArray[8].setPosition(100,350);
-			this.mShapeArray[9].setPosition(050,100);
-			this.mShapeArray[10].setPosition(050,050);
-			this.mShapeArray[11].setPosition(050,150);
-			this.mShapeArray[12].setPosition(050,300);
-			this.mShapeArray[13].setPosition(050,300);
-			this.mShapeArray[14].setPosition(200,200);
-			this.mShapeArray[15].setPosition(150,050);
-			this.mShapeArray[16].setPosition(150,250);
-			this.mShapeArray[17].setPosition(200,100);
-			this.mShapeArray[18].setPosition(050,250);
-			this.mShapeArray[19].setPosition(250,100);
-		}
+                var question = this.mQuiz.getQuestion().getQuestion();
+		var addendA = question[0];   
+		var sign = question[2];   
+		var addendB = question[4];   
+
+		this.log('addendA:' + addendA);
+		this.log('sign:' + sign);
+		this.log('addendB:' + addendB);
+		
+		//this.mShapeArray[v].setVisibility(true);
+
+          	//collision on or off
+               	this.mShapeArray[0].mCollidable = false;
+               	this.mShapeArray[0].mCollisionOn = false;
+		//this.mShapeArray[0].setPosition(parseInt(i * 50 + 50), 50)	
+		
+		
+		
 	},
  
 	hideNumberPad: function()
@@ -155,14 +103,90 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
-		
-		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
-		var totalCount           = 0;
 
-		while (totalCount < totalCountGoal)
+		//add
+		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 1 =','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 2 =','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 1 =','4'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 3 =','4'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 + 1 =','5'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 4 =','5'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 3 =','5'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 2 =','5'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 0 =','0')); 
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 0 =','1'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 0 =','2'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 0 =','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 + 0 =','4'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 + 0 =','5'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 1 =','1'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 2 =','2'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 3 =','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 4 =','4'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 + 5 =','5'));
+		//21
+
+		//subtract
+		//0
+                this.mQuiz.mQuestionPoolArray.push(new Question('0 - 0 =','0'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 - 1 =','0'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 - 2 =','0'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 3 =','0'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 4 =','0'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 5 =','0'));
+		//27
+
+		//1
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 - 0 =','1'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 - 1 =','1'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 2 =','1'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 3 =','1'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 4 =','1'));
+		//32
+
+		//2	
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 - 0 =','2'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 1 =','2'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 2 =','2'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 3 =','2'));
+		//36
+
+		//3
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 - 0 =','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 1 =','3'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 2 =','3'));
+		//39
+
+		//4
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 - 0 =','4'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 1 =','4'));
+		//41
+
+		//5
+                this.mQuiz.mQuestionPoolArray.push(new Question('5 - 0 =','5'));
+		//42
+
+
+		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
+		var totalNew           = 0;
+		var newQuestionElement = 0;
+   		var elementCounter     = 0;
+                
+                for (i = 0; i <= 41; i++)
+                {
+                        if (this.mApplication.mLevel == i)
+                        {
+                                newQuestionElement = elementCounter;
+                        }
+                        elementCounter++;
+                }
+
+		while (totalNew < totalNewGoal)
 		{	
 			//reset vars and arrays
-			totalCount = 0;
+			totalNew = 0;
 			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 			{
 				this.mQuiz.mQuestionArray[d] = 0;
@@ -172,12 +196,18 @@ Extends: Pad,
 
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
-				//random number to count from 0-20
-				var objectsToCount = Math.floor((Math.random()*21));		
-				var question = new Question('' + objectsToCount, '' + objectsToCount);
-				this.mQuiz.mQuestionArray.push(question);
-
-				totalCount = parseInt(totalCount + objectsToCount);
+				//50% chance of asking newest question
+				var randomChance = Math.floor((Math.random()*2));		
+				if (randomChance == 0)
+				{
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
+					totalNew++;
+				}	
+				if (randomChance == 1)
+				{
+					var randomElement = Math.floor((Math.random()*newQuestionElement));		
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+				}
 			}
 		}
 		this.createQuestionShapes();
