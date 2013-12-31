@@ -51,49 +51,29 @@ Extends: Pad,
                 }
 
                 var question = this.mQuiz.getQuestion().getQuestion();
-		var addendA = question[0];   
+                var answer = parseInt(this.mQuiz.getQuestion().getAnswer());
+		var addendA = parseInt(question[0]);   
 		var sign = question[2];   
-		var addendB = question[4];   
+		var addendB = parseInt(question[4]);   
 
+		this.log('question:' + question);
+		this.log('answer:' + answer);
 		this.log('addendA:' + addendA);
 		this.log('sign:' + sign);
 		this.log('addendB:' + addendB);
-		
-		//this.mShapeArray[v].setVisibility(true);
 
-          	//collision on or off
-               	this.mShapeArray[0].mCollidable = false;
-               	this.mShapeArray[0].mCollisionOn = false;
-		//this.mShapeArray[0].setPosition(parseInt(i * 50 + 50), 50)	
+		for (i = 0; i < answer; i++)
+                {
+                        this.mShapeArray[i].setVisibility(true);
+                }
+
+		this.mShapeArray[5].setVisibility(true);
+		this.mShapeArray[5].setPosition(parseInt(this.mShapeArray[addendA - 1].mPosition.mX + 50), 50)	
 		
-		
-		
+		this.mShapeArray[6].setVisibility(true);
+		this.mShapeArray[6].setPosition(parseInt(this.mShapeArray[answer - 1].mPosition.mX + 50), 50)	
 	},
  
-	hideNumberPad: function()
-	{
-		this.parent();
-		this.mInputPad.mNumQuestion.setVisibility(false);
-	},
-
-	showNumberPad: function()
-	{
-		this.parent();
-
-		//set question invis...
-		this.mInputPad.mNumQuestion.setVisibility(false);
-
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-		}	
-
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
-		{
-			this.mShapeArray[v].setVisibility(true);
-		}	
-	},
-
 	showCorrectAnswer: function()
 	{
 		this.parent();
@@ -215,38 +195,19 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-                this.mShapeArray.push(new Shape(50,50,25,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,250,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,025,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,325,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,50,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,50,this,"/images/symbols/equal.png","",""));
                 	
-                this.mShapeArray.push(new Shape(50,50,75,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,250,this,"/images/bus/kid.png","",""));
-                
-		this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,250,this,"/images/bus/kid.png","",""));
-		
-		this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
-
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
 			this.mShapeArray[i].setVisibility(false);
-		}	
-		
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
-		{
-			this.mShapeArray[v].setVisibility(true);
+               		this.mShapeArray[i].mCollidable = false;
+               		this.mShapeArray[i].mCollisionOn = false;
 		}	
 	},
 
