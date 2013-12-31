@@ -112,55 +112,12 @@ log: function(msg)
 
 enter: function(game)
 {
-
- 	if (APPLICATION.mGame.mInputPad.mNumAnswer)
-	{
- 		APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = '';
-        	APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
-	}
-
-	//show inputPad	
-	game.mInputPad.show();
-
-	//correctAnswer
-	game.hideCorrectAnswerBar();
-	
-	//user answer
-	game.mUserAnswer = '';
-
-	//numberPad
-	if (game.mQuiz)
-	{
-		if (!game.mQuiz.getQuestion())	
-		{
-			this.log('NO QUESTIONS: calling createQuestions');
-			game.createQuestions();
-		}
-	}
-	else
-	{
-		this.log('NO QUIZ');
-	}	
-	
-	//show question
-	game.showQuestion();
+	game.waitingOnAnswerFirstTimeEnter();
 },
 
 execute: function(game)
 {
-	//if you have an answer...
-	if (game.mUserAnswer != '')
-	{
-		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
-               	{ 
-                        game.mQuiz.correctAnswer();
-                      	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER);
-                }
-                else
-                {
-                      	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
-                }
-	}
+	game.waitingOnAnswerFirstTimeExecute();
 },
 
 exit: function(game)
@@ -187,46 +144,12 @@ log: function(msg)
 
 enter: function(game)
 {
- 	if (APPLICATION.mGame.mInputPad.mNumAnswer)
-	{
- 		APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.value = '';
-        	APPLICATION.mGame.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
-	}
-
-	//correctAnswer
-	game.hideCorrectAnswerBar();
-	
-	//user answer
-	game.mUserAnswer = '';
-
-	//show question
-	game.showQuestion();
-
-	//times
-	game.mQuestionStartTime = game.mTimeSinceEpoch; //restart timer
+	game.waitingOnAnswerEnter();
 },
 
 execute: function(game)
 {
-	//if you have an answer...
-	if (game.mUserAnswer != '')
-	{
-		if (game.mUserAnswer == game.mQuiz.getQuestion().getAnswer())
-               	{ 
-                      	game.mPadStateMachine.changeState(game.mCORRECT_ANSWER_PAD_GAME);
-                }
-                else
-                {
-                      	game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER);
-                }
-	}
-
-	//check time
-        if (game.mTimeSinceEpoch > game.mQuestionStartTime + game.mThresholdTime)
-        {
-        	game.mOutOfTime = true;
-                game.mPadStateMachine.changeState(game.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
-       	} 
+	game.waitingOnAnswerExecute();
 },
 
 exit: function(game)

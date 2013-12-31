@@ -91,11 +91,112 @@ Extends: Game,
 		}
 	},
 
+		
+	//states
+
+	waitingOnAnswerFirstTimeEnter: function()
+	{
+        	if (this.mInputPad.mNumAnswer)
+        	{
+               		this.mInputPad.mNumAnswer.mMesh.value = '';
+                	this.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
+        	}
+	
+        	//show inputPad
+        	this.mInputPad.show();
+
+        	//correctAnswer
+        	this.hideCorrectAnswerBar();
+
+        	//user answer
+        	this.mUserAnswer = '';
+
+        	//numberPad
+        	if (this.mQuiz)
+        	{
+                	if (!this.mQuiz.getQuestion())
+                	{
+                        	this.log('NO QUESTIONS: calling createQuestions');
+                        	this.createQuestions();
+                	}
+        	}
+        	else
+        	{
+                	this.log('NO QUIZ');
+       		}      
+
+        	//show question
+        	this.showQuestion();
+	},
+	
+	waitingOnAnswerFirstTimeExecute: function()
+	{
+		//if you have an answer...
+        	if (this.mUserAnswer != '')
+        	{
+                	if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
+                	{
+                        	this.mQuiz.correctAnswer();
+                        	this.mPadStateMachine.changeState(this.mWAITING_ON_ANSWER);
+                	}
+                	else
+                	{
+                        	this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
+                	}
+		}
+        },
+	
+	waitingOnAnswerEnter: function()
+	{
+       		if (this.mInputPad.mNumAnswer)
+        	{
+                	this.mInputPad.mNumAnswer.mMesh.value = '';
+                	this.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
+        	}
+
+        	//correctAnswer
+        	this.hideCorrectAnswerBar();
+
+        	//user answer
+        	this.mUserAnswer = '';
+
+        	//show question
+        	this.showQuestion();
+
+        	//times
+        	this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
+	},
+
+	waitingOnAnswerExecute: function()
+	{
+		//if you have an answer...
+        	if (this.mUserAnswer != '')
+        	{
+                	if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
+                	{
+                        	this.mPadStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
+                	}
+                	else
+                	{
+                        	this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
+                	}
+		}
+
+        	//check time
+        	if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+        	{
+                	this.mOutOfTime = true;
+                	this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
+        	}
+
+	},
+
 	showQuestion: function()
 	{
 		this.mInputPad.showQuestion();
 	},
-	
+
+
 	showCorrectAnswerEnter: function()
 	{
 		this.showCorrectAnswer();
