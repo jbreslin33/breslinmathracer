@@ -148,20 +148,7 @@ Extends: Game,
 	
 	waitingOnAnswerEnter: function()
 	{
-       		if (this.mInputPad.mNumAnswer)
-        	{
-                	this.mInputPad.mNumAnswer.mMesh.value = '';
-                	this.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
-        	}
-
-        	//correctAnswer
-        	this.hideCorrectAnswerBar();
-
-        	//user answer
-        	this.mUserAnswer = '';
-
-        	//show question
-        	this.showQuestion();
+		this.waitingOnAnswerFirstTimeEnter();
 
         	//times
         	this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
