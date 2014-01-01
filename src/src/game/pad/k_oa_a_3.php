@@ -87,13 +87,13 @@ Extends: Pad,
  	showCorrectAnswer: function()
         {
                 this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                this.mCorrectAnswerBar.mMesh.innerHTML = this.mApplication.mLevel + ' = ' + this.mQuiz.getQuestion().getAnswer();
         },
 
         showCorrectAnswerOutOfTime: function()
         {
                 this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                this.mCorrectAnswerBar.mMesh.innerHTML = this.mApplication.mLevel + ' = ' + this.mQuiz.getQuestion().getAnswer();
         },
      
 	//questions
