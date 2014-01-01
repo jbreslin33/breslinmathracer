@@ -136,8 +136,7 @@ Extends: Game,
         	{
                 	if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                 	{
-                        	this.mQuiz.correctAnswer();
-                        	this.mPadStateMachine.changeState(this.mWAITING_ON_ANSWER);
+                        	this.mPadStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
                 	}
                 	else
                 	{
@@ -156,18 +155,7 @@ Extends: Game,
 
 	waitingOnAnswerExecute: function()
 	{
-		//if you have an answer...
-        	if (this.mUserAnswer != '')
-        	{
-                	if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
-                	{
-                        	this.mPadStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
-                	}
-                	else
-                	{
-                        	this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
-                	}
-		}
+		this.waitingOnAnswerFirstTimeExecute();
 
         	//check time
         	if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
@@ -175,14 +163,12 @@ Extends: Game,
                 	this.mOutOfTime = true;
                 	this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
         	}
-
 	},
 
 	showQuestion: function()
 	{
 		this.mInputPad.showQuestion();
 	},
-
 
 	showCorrectAnswerEnter: function()
 	{
