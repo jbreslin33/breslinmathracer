@@ -113,15 +113,20 @@ Extends: Pad,
 		if (this.mApplication.mLevel == 1)
 		{
                        	var question = new Question('1 = ?', '1 + 0');
+                       	this.mQuiz.mQuestionArray.push(question);
                        	var question = new Question('1 = ?', '0 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
+			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 2)
 		{
                        	var question = new Question('2 = ?', '2 + 0');
+                       	this.mQuiz.mQuestionArray.push(question);
                        	var question = new Question('2 = ?', '0 + 2');
+                       	this.mQuiz.mQuestionArray.push(question);
                        	var question = new Question('2 = ?', '1 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
+			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 	}
 });
