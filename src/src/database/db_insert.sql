@@ -1,5 +1,5 @@
 --LEARNING_STANDARDS
-insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.1','CA9EE2E34F384E95A5FA26769C5864B8',1,11); --k.cc.a.1
+insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.1','CA9EE2E34F384E95A5FA26769C5864B8',1,11); 
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.2','5E6A3E3B939B4577B104FA8658206E9E',2,6);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.3','C11F30815A9C49B9A83B61A285EA11F9',3,1);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4a','7B20214AA4AA445AA720062C6F1B5C58',3.1,3);
@@ -11,8 +11,9 @@ insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.1'
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.2','695A7607FE8A4E27AB80652C45C84FA8',6,1);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.3','9EC218587C01452C9EB49F52EB2DD1DD',6.5,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.4','0CFFCBC851984A4281C23D34FC400445',7,18);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.5','1353E9D5614D460FA32E67853B6BA6D8',8,42); --k.oa.a.5
-insert into learning_standards (id,ref_id,progression,levels) values ('k.nbt.a.1','ED150B29EFD14FF8B655FA3F2CA4FE6D',8.2,9); --k.nbt.a.1
+insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.5','1353E9D5614D460FA32E67853B6BA6D8',8,42); 
+insert into learning_standards (id,ref_id,progression,levels) values ('k.nbt.a.1','ED150B29EFD14FF8B655FA3F2CA4FE6D',8.2,9);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.md.a.1','017AAEA9D22543A59A60C697FEBADD1B',8.3,9);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.a.1','C712BAA86FEF4BFAB703AD2EB402B2DD',8.5,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.a.2','AF4F218991664833853239C29DCE8521',8.6,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.b.3','FC21412A7C92444EA50B30A09729330F',8.7,1);
