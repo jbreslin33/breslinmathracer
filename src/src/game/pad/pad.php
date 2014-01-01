@@ -167,7 +167,10 @@ Extends: Game,
 
 	showQuestion: function()
 	{
-		this.mInputPad.showQuestion();
+		if (this.mInputPad)
+		{
+			this.mInputPad.showQuestion();
+		}
 	},
 
 	showCorrectAnswerEnter: function()

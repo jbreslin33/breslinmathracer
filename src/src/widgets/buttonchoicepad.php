@@ -10,6 +10,8 @@ Extends: InputPad,
 
 	createInputPad: function()
 	{
+		this.createNumQuestion(); 
+
 		//BUTTONS	
 		if (!this.mButtonA)
                 {
@@ -33,6 +35,13 @@ Extends: InputPad,
                         this.mInputPadArray.push(this.mButtonC);
                 }
 	},
+      
+	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(100,50,100,100,this.mGame,"","","");
+                this.mInputPadArray.push(this.mNumQuestion);
+        },
 
 	show: function()
 	{
@@ -42,6 +51,17 @@ Extends: InputPad,
                         this.mInputPadArray[i].setVisibility(true);
                 }
 	},
+
+        showQuestion: function()
+        {
+                if (this.mApplication.mGame.mQuiz)
+                {
+                        if (this.mApplication.mGame.mQuiz.getQuestion())
+                        {
+                                this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
+                        }
+                }
+        },
 
         numPadHit: function()
         {

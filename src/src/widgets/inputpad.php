@@ -31,6 +31,10 @@ var InputPad  = new Class(
                 }
         },
 
+	showQuestion: function()
+        {
+        },
+
         show: function()
         {
                 //shapes and array
