@@ -96,7 +96,6 @@ execute: function(application)
         }
 	if (application.mLevelCompleted)
 	{
-		this.log('mLevelCompleted true in normal');
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 	}
 },

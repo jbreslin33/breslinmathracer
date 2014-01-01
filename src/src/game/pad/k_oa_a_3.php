@@ -52,32 +52,35 @@ Extends: Pad,
 			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
 			this.mButtonAddend1A      = Math.floor((Math.random()*10));	
 			this.mButtonAddend2A      = Math.floor((Math.random()*10));	
-			this.mButtonSumA          = parseInt(parseInt(this.mButtonAddend1A) + parseInt(this.mButtonAddend1B));	
+			this.mButtonSumA          = parseInt(parseInt(this.mButtonAddend1A) + parseInt(this.mButtonAddend2A));	
 
 			this.mButtonAddend1B      = Math.floor((Math.random()*10));	
 			this.mButtonAddend2B      = Math.floor((Math.random()*10));	
-			this.mButtonSumB          = parseInt(parseInt(this.mButtonAddend1B) + parseInt(this.mButtonAddend1B));	
+			this.mButtonSumB          = parseInt(parseInt(this.mButtonAddend1B) + parseInt(this.mButtonAddend2B));	
 
 			this.mButtonAddend1C      = Math.floor((Math.random()*10));	
 			this.mButtonAddend2C      = Math.floor((Math.random()*10));	
-			this.mButtonSumC          = parseInt(parseInt(this.mButtonAddend1C) + parseInt(this.mButtonAddend1C));	
+			this.mButtonSumC          = parseInt(parseInt(this.mButtonAddend1C) + parseInt(this.mButtonAddend2C));	
 
 			if (this.mCorrectButtonNumber == 0)
 			{
+				this.mButtonSumA = parseInt(this.mApplication.mLevel);  
 				this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-				this.mInputPad.mButtonB.mMesh.innerHTML = this.mButtonAddend1B + ' + ' + this.mButtonAddend1B;
-				this.mInputPad.mButtonC.mMesh.innerHTML = this.mButtonAddend1C + ' + ' + this.mButtonAddend1C;
+				this.mInputPad.mButtonB.mMesh.innerHTML = this.mButtonAddend1B + ' + ' + this.mButtonAddend2B;
+				this.mInputPad.mButtonC.mMesh.innerHTML = this.mButtonAddend1C + ' + ' + this.mButtonAddend2C;
 			}
 			if (this.mCorrectButtonNumber == 1)
 			{
-				this.mInputPad.mButtonA.mMesh.innerHTML = this.mButtonAddend1A + ' + ' + this.mButtonAddend1A;
+				this.mButtonSumB = parseInt(this.mApplication.mLevel);  
+				this.mInputPad.mButtonA.mMesh.innerHTML = this.mButtonAddend1A + ' + ' + this.mButtonAddend2A;
 				this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-				this.mInputPad.mButtonC.mMesh.innerHTML = this.mButtonAddend1C + ' + ' + this.mButtonAddend1C;
+				this.mInputPad.mButtonC.mMesh.innerHTML = this.mButtonAddend1C + ' + ' + this.mButtonAddend2C;
 			}
 			if (this.mCorrectButtonNumber == 2)
 			{
-				this.mInputPad.mButtonA.mMesh.innerHTML = this.mButtonAddend1A + ' + ' + this.mButtonAddend1A;
-				this.mInputPad.mButtonB.mMesh.innerHTML = this.mButtonAddend1B + ' + ' + this.mButtonAddend1B;
+				this.mButtonSumC = parseInt(this.mApplication.mLevel);  
+				this.mInputPad.mButtonA.mMesh.innerHTML = this.mButtonAddend1A + ' + ' + this.mButtonAddend2A;
+				this.mInputPad.mButtonB.mMesh.innerHTML = this.mButtonAddend1B + ' + ' + this.mButtonAddend2B;
 				this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 			}
 		}
