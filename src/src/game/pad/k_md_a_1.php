@@ -80,7 +80,7 @@ Extends: Pad,
 	createQuestionShapes: function()
 	{
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,100,200,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
                 	
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
