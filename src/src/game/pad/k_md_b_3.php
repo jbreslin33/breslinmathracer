@@ -140,20 +140,20 @@ Extends: Pad,
                 this.mCountShapeArray.push(new Shape(50,50,550,250,this,"/images/monster/red_monster.png","",""));
                 this.mCountShapeArray.push(new Shape(50,50,550,350,this,"/images/attributes/feather.jpg","",""));
 		
-		this.mCountShapeArray.push(new Shape(50,50,600,050,this,"/images/attributes/girafe.jpg","",""));
+		//this.mCountShapeArray.push(new Shape(50,50,600,050,this,"/images/attributes/girafe.jpg","",""));
                 this.mCountShapeArray.push(new Shape(50,50,600,150,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new Shape(50,50,600,250,this,"/images/monster/red_monster.png","",""));
                 this.mCountShapeArray.push(new Shape(50,50,600,350,this,"/images/attributes/feather.jpg","",""));
 		
-		this.mCountShapeArray.push(new Shape(50,50,650,050,this,"/images/attributes/girafe.jpg","",""));
+		//this.mCountShapeArray.push(new Shape(50,50,650,050,this,"/images/attributes/girafe.jpg","",""));
                 this.mCountShapeArray.push(new Shape(50,50,650,150,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new Shape(50,50,650,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,650,350,this,"/images/attributes/feather.jpg","",""));
+                //this.mCountShapeArray.push(new Shape(50,50,650,350,this,"/images/attributes/feather.jpg","",""));
 		
-		this.mCountShapeArray.push(new Shape(50,50,700,050,this,"/images/attributes/girafe.jpg","",""));
+		//this.mCountShapeArray.push(new Shape(50,50,700,050,this,"/images/attributes/girafe.jpg","",""));
                 this.mCountShapeArray.push(new Shape(50,50,700,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,700,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,700,350,this,"/images/attributes/feather.jpg","",""));
+                //this.mCountShapeArray.push(new Shape(50,50,700,250,this,"/images/monster/red_monster.png","",""));
+                //this.mCountShapeArray.push(new Shape(50,50,700,350,this,"/images/attributes/feather.jpg","",""));
 
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
