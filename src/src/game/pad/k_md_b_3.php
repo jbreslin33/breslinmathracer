@@ -22,8 +22,19 @@ Extends: Pad,
 		//move buttons
 		this.mInputPad.mButtonA.setPosition(100,100);
 
-		//correctAnswers
+		//numberOfShapes
+		this.mNumberOfAArray = new Array()
+		this.mNumberOfBArray = new Array()
+		this.mNumberOfCArray = new Array()
+		this.mNumberOfDArray = new Array()
 
+		this.mLeastMost = 0;
+
+		this.mCorrectAnswerArray = new Array();
+		this.mCorrectAnswerArray[0] = 'giraffes';
+		this.mCorrectAnswerArray[1] = 'kids';
+		this.mCorrectAnswerArray[2] = 'red monsters';
+		this.mCorrectAnswerArray[3] = 'feathers';
 	},
 
 	destroyShapes: function()
@@ -84,84 +95,76 @@ Extends: Pad,
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			var correctAnswerElement = Math.floor((Math.random()*3));
+			while (this.mNumberOfAArray[i] ==  this.mNumberOfBArray[i] || this.mNumberOfCArray[i] == this.mNumberOfCArray[i] || this.mNumberOfArray[i] == this.mNumberOfDArray[i] || this.mNumberOfBArray[i] == this.mNumberOfCArray[i] || this.mNumberOfBArray[i] == this.mNumberOfDArray[i] || this.mNumberOfnumberC[i] == this.mNumberOfDArray[i])
+			{
+				this.mLeastMost = Math.floor((Math.random()*2));
+				this.mNumberOfAArray[i] = Math.floor((Math.random()*6)+1);
+				this.mNumberOfBArray[i] = Math.floor((Math.random()*6)+1);
+				this.mNumberOfCArray[i] = Math.floor((Math.random()*6)+1);
+				this.mNumberOfDArray[i] = Math.floor((Math.random()*6)+1);
+			}
 
-			var question = new Question('What has the most?','kids');
-			var question.setChoice('A','girafes');
-			var question.setChoice('B','kids');
-			var question.setChoice('C','red monsters');
-			var question.setChoice('D','feathers');
-			this.mQuiz.mQuestionArray.push(question);
+			var question;
+			if (this.mLeastMost == 0)
+			{
+				//who has the least?
+				this.log('least');
+				for (m = 0; i < 7; m++)
+				{
+					if (this.mNumberOfAArray[i] == m)
+					{
+						question = new Question('What has the least?','' + this.mCorrectAnswerArray[0]);
+					}
+					if (this.mNumberOfBArray[i] == m)
+					{
+						question = new Question('What has the least?','' + this.mCorrectAnswerArray[1]);
+					}	
+					if (this.mNumberOfCArray[i] == m)
+					{
+						question = new Question('What has the least?','' + this.mCorrectAnswerArray[2]);
+					}
+					if (this.mNumberOfDArray[i] == m)
+					{
+						question = new Question('What has the least?','' + this.mCorrectAnswerArray[3]);
+					}
+
+				}
+				
+			}
+			if (this.mLeastMost == 1)
+			{
+				this.log('most');
+                       		//who has the most?
+                                for (m = 7; i > 0; m--)
+                                {
+                                	if (this.mNumberOfAArray[i] == m)
+                                        {
+                                                question = new Question('What has the most?','' + this.mCorrectAnswerArray[0]);
+                                        }
+                                        if (this.mNumberOfBArray[i] == m)
+                                        {
+                                                        question = new Question('What has the most?','' + this.mCorrectAnswerArray[1]);
+                                                }
+                                                if (this.mNumberOfCArray[i] == m)
+                                                {
+                                                        question = new Question('What has the most?','' + this.mCorrectAnswerArray[2]);
+                                                }
+                                                if (this.mNumberOfDArray[i] == m)
+                                                {
+                                                        question = new Question('What has the most?','' + this.mCorrectAnswerArray[3]);
+                                                }
+
+                                        }
+				}
+
+				question.setChoice('A','girafes');
+				question.setChoice('B','kids');
+				question.setChoice('C','red monsters');
+				question.setChoice('D','feathers');
+				this.mQuiz.mQuestionArray.push(question);
+			}
 		}
 
-/*
-
-		//tall
-		var question = new Question('What has the most?','kids');
-		question.setChoice('A','girafes');
-		question.setChoice('B','kids');
-		question.setChoice('C','red monsters');
-		question.setChoice('D','feathers');
-		this.mQuiz.mQuestionArray.push(question);
-	
-		//short	
-		var question = new Question('What has the least?','girafes');
-		question.setChoice('A','girafes');
-		question.setChoice('B','kids');
-		question.setChoice('C','red monsters');
-		question.setChoice('D','feathers');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//heavy
-		var question = new Question('How many red monsters?','5');
-		question.setChoice('A','2');
-		question.setChoice('B','3');
-		question.setChoice('C','4');
-		question.setChoice('D','5');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//tall
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-*/
 		this.createQuestionShapes();
 	},
 
