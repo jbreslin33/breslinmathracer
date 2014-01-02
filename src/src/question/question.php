@@ -13,8 +13,14 @@ var Question = new Class(
 
 		//is solved
 		this.mSolved = false;
+
+		//choiceArray
+		this.mChoiceA = '';
+		this.mChoiceB = '';
+		this.mChoiceC = '';
+		this.mChoiceD = '';
         },
-        
+
 	initialize: function(question,answer,showAnswer)
         {
 		//question
@@ -29,6 +35,26 @@ var Question = new Class(
 		//is solved
 		this.mSolved = false;
         },
+
+	setChoice: function(letter,choice)
+	{
+		if (letter == 'A') 
+		{
+			this.mChoiceA = choice;
+		}	
+		if (letter == 'B') 
+		{
+			this.mChoiceB = choice;
+		}	
+		if (letter == 'C') 
+		{
+			this.mChoiceC = choice;
+		}	
+		if (letter == 'D') 
+		{
+			this.mChoiceD = choice;
+		}	
+	},
 	
 	set: function(question,answer)
 	{
