@@ -11,10 +11,14 @@ Extends: Pad,
                 this.mThresholdTime = 10000;
 
 		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
+		this.mInputPad = new ButtonMultipleChoicePadSpread(application);
 	
 		//count shape array
 		this.mCountShapeArray = new Array();
+
+		//move buttons
+		this.mInputPad.mButtonA.setPosition(100,100);
+
 	},
 
 	destroyShapes: function()
@@ -59,21 +63,27 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = new Array();
 
 		//tall
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		var question = new Question('What has the most?','kids');
+		question.setChoice('A','girafes');
+		question.setChoice('B','kids');
+		question.setChoice('C','red monsters');
+		question.setChoice('D','feathers');
 		this.mQuiz.mQuestionArray.push(question);
 	
 		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		var question = new Question('What has the least?','girafes');
+		question.setChoice('A','girafes');
+		question.setChoice('B','kids');
+		question.setChoice('C','red monsters');
+		question.setChoice('D','feathers');
 		this.mQuiz.mQuestionArray.push(question);
 
 		//heavy
 		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		question.setChoice('A','girafes');
+		question.setChoice('B','kids');
+		question.setChoice('C','red monsters');
+		question.setChoice('D','feathers');
 		this.mQuiz.mQuestionArray.push(question);
 		
 		//light

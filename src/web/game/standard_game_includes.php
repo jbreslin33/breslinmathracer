@@ -38,6 +38,7 @@
 <script type="text/javascript" src="/src/widgets/longquestionnumberpad.php"></script>
 <script type="text/javascript" src="/src/widgets/buttonchoicepad.php"></script>
 <script type="text/javascript" src="/src/widgets/buttonmultiplechoicepad.php"></script>
+<script type="text/javascript" src="/src/widgets/buttonmultiplechoicepadspread.php"></script>
 
 <script type="text/javascript" src="/src/game/dungeon/dungeon.php"></script>
 <script type="text/javascript" src="/src/game/dungeon/states/states.php"></script>

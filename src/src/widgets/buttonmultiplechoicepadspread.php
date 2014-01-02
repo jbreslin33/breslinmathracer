@@ -1,4 +1,4 @@
-var ButtonMultipleChoicePad  = new Class(
+var ButtonMultipleChoicePadSpread  = new Class(
 {
 
 Extends: InputPad,
@@ -15,7 +15,7 @@ Extends: InputPad,
 		//BUTTONS	
 		if (!this.mButtonA)
                 {
-                        this.mButtonA = new Shape(150,50,300,100,this.mGame,"BUTTON","","");
+                        this.mButtonA = new Shape(150,50,300,50,this.mGame,"BUTTON","","");
  			this.mButtonA.mCollidable  = false;
                         this.mButtonA.mCollisionOn = false;
                         this.mButtonA.mMesh.innerHTML = 'A';
@@ -33,7 +33,7 @@ Extends: InputPad,
                 }
                 if (!this.mButtonC)
                 {
-                        this.mButtonC = new Shape(150,50,300,200,this.mGame,"BUTTON","","");
+                        this.mButtonC = new Shape(150,50,300,250,this.mGame,"BUTTON","","");
  			this.mButtonC.mCollidable  = false;
                         this.mButtonC.mCollisionOn = false;
                         this.mButtonC.mMesh.innerHTML = 'C';
@@ -42,7 +42,7 @@ Extends: InputPad,
                 }
                 if (!this.mButtonD)
                 {
-                        this.mButtonD = new Shape(150,50,300,250,this.mGame,"BUTTON","","");
+                        this.mButtonD = new Shape(150,50,300,350,this.mGame,"BUTTON","","");
  			this.mButtonD.mCollidable  = false;
                         this.mButtonD.mCollisionOn = false;
                         this.mButtonD.mMesh.innerHTML = 'D';
