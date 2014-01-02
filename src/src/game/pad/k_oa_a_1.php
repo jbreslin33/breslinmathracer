@@ -83,6 +83,13 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
+		
+		for (d = 0; d < this.mQuiz.mQuestionPoolArray.length; d++)
+		{
+			this.mQuiz.mQuestionPoolArray[d] = 0;
+		} 
+		this.mQuiz.mQuestionPoolArray = 0;
+		this.mQuiz.mQuestionPoolArray = new Array();
 
 		//add
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));

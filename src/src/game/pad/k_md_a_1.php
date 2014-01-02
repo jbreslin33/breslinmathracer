@@ -35,6 +35,7 @@ Extends: Pad,
                         this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
                         document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
                         this.mShapeArray[i] = 0;
+			this.log('destroyShape:' + i);
                 }
                 this.mShapeArray = 0;
 	},
@@ -63,6 +64,13 @@ Extends: Pad,
         {
 		this.parent();
 
+              	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
+               	{
+                        this.mQuiz.mQuestionArray[d] = 0;
+                }
+                this.mQuiz.mQuestionArray = 0;
+                this.mQuiz.mQuestionArray = new Array();
+
 		//tall
 		var question = new Question('What is this?','tall');
 		question.setChoice('A','tall');
@@ -122,14 +130,17 @@ Extends: Pad,
 		question.setChoice('A','light');
 		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-	
-	
 
 		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
 	{
+		this.log('createQ');
+		this.destroyShapes();
+
+		this.mShapeArray = new Array();		
+
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
