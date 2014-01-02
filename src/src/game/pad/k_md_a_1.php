@@ -48,6 +48,9 @@ Extends: Pad,
                 this.mShapeArray[this.mScore].setVisibility(false);
 
 		this.mInputPad.showQuestion();	
+		
+		//show shape	
+		this.mShapeArray[this.mScore].setVisibility(true);
 	},
  
 	showCorrectAnswer: function()
@@ -76,7 +79,7 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-                this.mShapeArray.push(new Shape(50,50,100,200,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,100,200,this,"/images/attributes/girafe.jpg","",""));
                 	
 		for (i = 0; i < this.mShapeArray.length; i++)
