@@ -125,31 +125,36 @@ Extends: Pad,
 	{
 		this.mCountShapeArray = new Array();		
 
-                this.mCountShapeArray.push(new Shape(50,50,50,050,this,"/images/attributes/girafe.jpg","",""));
-                this.mCountShapeArray.push(new Shape(50,50,50,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,50,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,50,350,this,"/images/attributes/feather.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,450,050,this,"/images/attributes/girafe.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,450,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,450,250,this,"/images/monster/red_monster.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,450,350,this,"/images/attributes/feather.jpg","",""));
                 
-		this.mCountShapeArray.push(new Shape(50,50,100,050,this,"/images/attributes/girafe.jpg","",""));
-                this.mCountShapeArray.push(new Shape(50,50,100,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,100,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,100,350,this,"/images/attributes/feather.jpg","",""));
+		this.mCountShapeArray.push(new Shape(50,50,500,050,this,"/images/attributes/girafe.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,500,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,500,250,this,"/images/monster/red_monster.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,500,350,this,"/images/attributes/feather.jpg","",""));
 		
-		this.mCountShapeArray.push(new Shape(50,50,150,050,this,"/images/attributes/girafe.jpg","",""));
-                this.mCountShapeArray.push(new Shape(50,50,150,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,150,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,150,350,this,"/images/attributes/feather.jpg","",""));
+		this.mCountShapeArray.push(new Shape(50,50,550,050,this,"/images/attributes/girafe.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,550,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,550,250,this,"/images/monster/red_monster.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,550,350,this,"/images/attributes/feather.jpg","",""));
 		
-		this.mCountShapeArray.push(new Shape(50,50,200,050,this,"/images/attributes/girafe.jpg","",""));
-                this.mCountShapeArray.push(new Shape(50,50,200,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,200,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,200,350,this,"/images/attributes/feather.jpg","",""));
+		this.mCountShapeArray.push(new Shape(50,50,600,050,this,"/images/attributes/girafe.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,600,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,600,250,this,"/images/monster/red_monster.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,600,350,this,"/images/attributes/feather.jpg","",""));
 		
-		this.mCountShapeArray.push(new Shape(50,50,250,050,this,"/images/attributes/girafe.jpg","",""));
-                this.mCountShapeArray.push(new Shape(50,50,250,150,this,"/images/bus/kid.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,250,250,this,"/images/monster/red_monster.png","",""));
-                this.mCountShapeArray.push(new Shape(50,50,250,350,this,"/images/attributes/feather.jpg","",""));
+		this.mCountShapeArray.push(new Shape(50,50,650,050,this,"/images/attributes/girafe.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,650,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,650,250,this,"/images/monster/red_monster.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,650,350,this,"/images/attributes/feather.jpg","",""));
 		
+		this.mCountShapeArray.push(new Shape(50,50,700,050,this,"/images/attributes/girafe.jpg","",""));
+                this.mCountShapeArray.push(new Shape(50,50,700,150,this,"/images/bus/kid.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,700,250,this,"/images/monster/red_monster.png","",""));
+                this.mCountShapeArray.push(new Shape(50,50,700,350,this,"/images/attributes/feather.jpg","",""));
+
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
 			this.mCountShapeArray[i].setVisibility(false);
