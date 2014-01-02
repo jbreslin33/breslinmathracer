@@ -29,263 +29,6 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: addition; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE addition (
-    id integer NOT NULL,
-    score_needed integer DEFAULT 10 NOT NULL,
-    addend_a integer NOT NULL,
-    addend_b integer NOT NULL,
-    number_of_addends integer DEFAULT 2 NOT NULL,
-    level_id double precision NOT NULL
-);
-
-
-ALTER TABLE public.addition OWNER TO postgres;
-
---
--- Name: addition_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE addition_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.addition_id_seq OWNER TO postgres;
-
---
--- Name: addition_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE addition_id_seq OWNED BY addition.id;
-
-
---
--- Name: clusters; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE clusters (
-    id integer NOT NULL,
-    cluster text NOT NULL
-);
-
-
-ALTER TABLE public.clusters OWNER TO postgres;
-
---
--- Name: clusters_domains_grades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE clusters_domains_grades (
-    id integer NOT NULL,
-    cluster_id integer NOT NULL,
-    domain_grade_id integer NOT NULL
-);
-
-
-ALTER TABLE public.clusters_domains_grades OWNER TO postgres;
-
---
--- Name: clusters_domains_grades_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE clusters_domains_grades_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.clusters_domains_grades_id_seq OWNER TO postgres;
-
---
--- Name: clusters_domains_grades_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE clusters_domains_grades_id_seq OWNED BY clusters_domains_grades.id;
-
-
---
--- Name: clusters_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE clusters_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.clusters_id_seq OWNER TO postgres;
-
---
--- Name: clusters_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE clusters_id_seq OWNED BY clusters.id;
-
-
---
--- Name: counting; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE counting (
-    id integer NOT NULL,
-    score_needed integer DEFAULT 10 NOT NULL,
-    start_number integer NOT NULL,
-    end_number integer NOT NULL,
-    count_by integer DEFAULT 1 NOT NULL,
-    level_id double precision NOT NULL
-);
-
-
-ALTER TABLE public.counting OWNER TO postgres;
-
---
--- Name: counting_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE counting_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.counting_id_seq OWNER TO postgres;
-
---
--- Name: counting_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE counting_id_seq OWNED BY counting.id;
-
-
---
--- Name: division; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE division (
-    id integer NOT NULL,
-    score_needed integer DEFAULT 10 NOT NULL,
-    factor_min integer NOT NULL,
-    factor_max integer NOT NULL,
-    number_of_factors integer DEFAULT 2 NOT NULL,
-    level_id double precision NOT NULL
-);
-
-
-ALTER TABLE public.division OWNER TO postgres;
-
---
--- Name: division_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE division_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.division_id_seq OWNER TO postgres;
-
---
--- Name: division_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE division_id_seq OWNED BY division.id;
-
-
---
--- Name: domains; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE domains (
-    id integer NOT NULL,
-    domain text NOT NULL
-);
-
-
-ALTER TABLE public.domains OWNER TO postgres;
-
---
--- Name: domains_grades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE domains_grades (
-    id integer NOT NULL,
-    domain_id integer,
-    grade_id integer
-);
-
-
-ALTER TABLE public.domains_grades OWNER TO postgres;
-
---
--- Name: domains_grades_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE domains_grades_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.domains_grades_id_seq OWNER TO postgres;
-
---
--- Name: domains_grades_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE domains_grades_id_seq OWNED BY domains_grades.id;
-
-
---
--- Name: domains_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE domains_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.domains_id_seq OWNER TO postgres;
-
---
--- Name: domains_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE domains_id_seq OWNED BY domains.id;
-
-
---
--- Name: domains_subjects; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE domains_subjects (
-    domain_id integer NOT NULL,
-    subject_id integer NOT NULL
-);
-
-
-ALTER TABLE public.domains_subjects OWNER TO postgres;
-
---
 -- Name: error_log; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -321,178 +64,6 @@ ALTER SEQUENCE error_log_id_seq OWNED BY error_log.id;
 
 
 --
--- Name: games; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE games (
-    id integer NOT NULL,
-    game text NOT NULL
-);
-
-
-ALTER TABLE public.games OWNER TO postgres;
-
---
--- Name: games_attempts; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE games_attempts (
-    id integer NOT NULL,
-    game_attempt_time_start timestamp without time zone,
-    game_attempt_time_end timestamp without time zone,
-    user_id integer NOT NULL,
-    level_id numeric(9,3) NOT NULL,
-    score integer DEFAULT 0 NOT NULL,
-    time_warning boolean DEFAULT false NOT NULL
-);
-
-
-ALTER TABLE public.games_attempts OWNER TO postgres;
-
---
--- Name: games_attempts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE games_attempts_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.games_attempts_id_seq OWNER TO postgres;
-
---
--- Name: games_attempts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE games_attempts_id_seq OWNED BY games_attempts.id;
-
-
---
--- Name: games_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE games_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.games_id_seq OWNER TO postgres;
-
---
--- Name: games_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE games_id_seq OWNED BY games.id;
-
-
---
--- Name: games_levels; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE games_levels (
-    id integer NOT NULL,
-    game_id integer NOT NULL,
-    level_id numeric(9,3) NOT NULL
-);
-
-
-ALTER TABLE public.games_levels OWNER TO postgres;
-
---
--- Name: games_levels_dungeon; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE games_levels_dungeon (
-    id integer NOT NULL,
-    chasers integer NOT NULL,
-    games_levels_id integer NOT NULL
-);
-
-
-ALTER TABLE public.games_levels_dungeon OWNER TO postgres;
-
---
--- Name: games_levels_dungeon_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE games_levels_dungeon_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.games_levels_dungeon_id_seq OWNER TO postgres;
-
---
--- Name: games_levels_dungeon_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE games_levels_dungeon_id_seq OWNED BY games_levels_dungeon.id;
-
-
---
--- Name: games_levels_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE games_levels_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.games_levels_id_seq OWNER TO postgres;
-
---
--- Name: games_levels_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE games_levels_id_seq OWNED BY games_levels.id;
-
-
---
--- Name: grades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE grades (
-    id integer NOT NULL,
-    grade text
-);
-
-
-ALTER TABLE public.grades OWNER TO postgres;
-
---
--- Name: grades_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE grades_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.grades_id_seq OWNER TO postgres;
-
---
--- Name: grades_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE grades_id_seq OWNED BY grades.id;
-
-
---
 -- Name: learning_standards; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -505,6 +76,19 @@ CREATE TABLE learning_standards (
 
 
 ALTER TABLE public.learning_standards OWNER TO postgres;
+
+--
+-- Name: learningstandards; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE learningstandards (
+    refid text NOT NULL,
+    progression numeric(9,3) NOT NULL,
+    levels integer NOT NULL
+);
+
+
+ALTER TABLE public.learningstandards OWNER TO postgres;
 
 --
 -- Name: levelattempts; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -547,136 +131,6 @@ ALTER SEQUENCE level_attempts_id_seq OWNED BY levelattempts.id;
 
 
 --
--- Name: levels; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE levels (
-    id numeric(9,3) NOT NULL,
-    description text NOT NULL
-);
-
-
-ALTER TABLE public.levels OWNER TO postgres;
-
---
--- Name: levels_standards; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE levels_standards (
-    id integer NOT NULL,
-    level_id numeric(9,3) NOT NULL,
-    standard_id integer NOT NULL
-);
-
-
-ALTER TABLE public.levels_standards OWNER TO postgres;
-
---
--- Name: levels_standards_clusters_domains_grades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE levels_standards_clusters_domains_grades (
-    level_id double precision NOT NULL,
-    standard_cluster_domain_grade_id integer NOT NULL
-);
-
-
-ALTER TABLE public.levels_standards_clusters_domains_grades OWNER TO postgres;
-
---
--- Name: levels_standards_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE levels_standards_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.levels_standards_id_seq OWNER TO postgres;
-
---
--- Name: levels_standards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE levels_standards_id_seq OWNED BY levels_standards.id;
-
-
---
--- Name: levels_transactions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE levels_transactions (
-    id integer NOT NULL,
-    advancement_time timestamp without time zone,
-    level_id numeric(9,3) NOT NULL,
-    user_id integer NOT NULL
-);
-
-
-ALTER TABLE public.levels_transactions OWNER TO postgres;
-
---
--- Name: levels_transactions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE levels_transactions_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.levels_transactions_id_seq OWNER TO postgres;
-
---
--- Name: levels_transactions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE levels_transactions_id_seq OWNED BY levels_transactions.id;
-
-
---
--- Name: multiplication; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE multiplication (
-    id integer NOT NULL,
-    score_needed integer DEFAULT 10 NOT NULL,
-    factor_min integer NOT NULL,
-    factor_max integer NOT NULL,
-    number_of_factors integer DEFAULT 2 NOT NULL,
-    level_id double precision NOT NULL
-);
-
-
-ALTER TABLE public.multiplication OWNER TO postgres;
-
---
--- Name: multiplication_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE multiplication_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.multiplication_id_seq OWNER TO postgres;
-
---
--- Name: multiplication_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE multiplication_id_seq OWNED BY multiplication.id;
-
-
---
 -- Name: passwords; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -707,121 +161,6 @@ ALTER TABLE public.passwords_id_seq OWNER TO postgres;
 --
 
 ALTER SEQUENCE passwords_id_seq OWNED BY passwords.id;
-
-
---
--- Name: permissions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE permissions (
-    id integer NOT NULL,
-    permission text NOT NULL
-);
-
-
-ALTER TABLE public.permissions OWNER TO postgres;
-
---
--- Name: permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE permissions_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.permissions_id_seq OWNER TO postgres;
-
---
--- Name: permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE permissions_id_seq OWNED BY permissions.id;
-
-
---
--- Name: permissions_users; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE permissions_users (
-    permission_id integer NOT NULL,
-    user_id integer NOT NULL
-);
-
-
-ALTER TABLE public.permissions_users OWNER TO postgres;
-
---
--- Name: questions; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE questions (
-    id integer NOT NULL,
-    question text NOT NULL,
-    answer text NOT NULL,
-    level_id double precision NOT NULL,
-    question_order double precision NOT NULL
-);
-
-
-ALTER TABLE public.questions OWNER TO postgres;
-
---
--- Name: questions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE questions_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.questions_id_seq OWNER TO postgres;
-
---
--- Name: questions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE questions_id_seq OWNED BY questions.id;
-
-
---
--- Name: rooms; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE rooms (
-    id integer NOT NULL,
-    room text NOT NULL,
-    school_id integer NOT NULL
-);
-
-
-ALTER TABLE public.rooms OWNER TO postgres;
-
---
--- Name: rooms_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE rooms_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.rooms_id_seq OWNER TO postgres;
-
---
--- Name: rooms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE rooms_id_seq OWNED BY rooms.id;
 
 
 --
@@ -858,74 +197,6 @@ ALTER SEQUENCE schools_id_seq OWNED BY schools.id;
 
 
 --
--- Name: standards; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE standards (
-    id integer NOT NULL,
-    standard text NOT NULL,
-    description text NOT NULL
-);
-
-
-ALTER TABLE public.standards OWNER TO postgres;
-
---
--- Name: standards_clusters_domains_grades; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE standards_clusters_domains_grades (
-    id integer NOT NULL,
-    standard_id integer NOT NULL,
-    cluster_domain_grade_id integer NOT NULL
-);
-
-
-ALTER TABLE public.standards_clusters_domains_grades OWNER TO postgres;
-
---
--- Name: standards_clusters_domains_grades_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE standards_clusters_domains_grades_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.standards_clusters_domains_grades_id_seq OWNER TO postgres;
-
---
--- Name: standards_clusters_domains_grades_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE standards_clusters_domains_grades_id_seq OWNED BY standards_clusters_domains_grades.id;
-
-
---
--- Name: standards_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE standards_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.standards_id_seq OWNER TO postgres;
-
---
--- Name: standards_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE standards_id_seq OWNED BY standards.id;
-
-
---
 -- Name: students; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -936,79 +207,6 @@ CREATE TABLE students (
 
 
 ALTER TABLE public.students OWNER TO postgres;
-
---
--- Name: subjects; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE subjects (
-    id integer NOT NULL,
-    subject text NOT NULL
-);
-
-
-ALTER TABLE public.subjects OWNER TO postgres;
-
---
--- Name: subjects_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE subjects_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.subjects_id_seq OWNER TO postgres;
-
---
--- Name: subjects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE subjects_id_seq OWNED BY subjects.id;
-
-
---
--- Name: subtraction; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE subtraction (
-    id integer NOT NULL,
-    score_needed integer DEFAULT 10 NOT NULL,
-    minuend_min integer NOT NULL,
-    minuend_max integer NOT NULL,
-    subtrahend_min integer NOT NULL,
-    subtrahend_max integer NOT NULL,
-    number_of_subtrahends integer DEFAULT 1 NOT NULL,
-    negative_difference boolean DEFAULT false NOT NULL,
-    level_id double precision NOT NULL
-);
-
-
-ALTER TABLE public.subtraction OWNER TO postgres;
-
---
--- Name: subtraction_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE subtraction_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.subtraction_id_seq OWNER TO postgres;
-
---
--- Name: subtraction_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE subtraction_id_seq OWNED BY subtraction.id;
-
 
 --
 -- Name: teachers; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -1067,91 +265,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY addition ALTER COLUMN id SET DEFAULT nextval('addition_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY clusters ALTER COLUMN id SET DEFAULT nextval('clusters_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY clusters_domains_grades ALTER COLUMN id SET DEFAULT nextval('clusters_domains_grades_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY counting ALTER COLUMN id SET DEFAULT nextval('counting_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY division ALTER COLUMN id SET DEFAULT nextval('division_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY domains ALTER COLUMN id SET DEFAULT nextval('domains_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY domains_grades ALTER COLUMN id SET DEFAULT nextval('domains_grades_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY error_log ALTER COLUMN id SET DEFAULT nextval('error_log_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games ALTER COLUMN id SET DEFAULT nextval('games_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games_attempts ALTER COLUMN id SET DEFAULT nextval('games_attempts_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games_levels ALTER COLUMN id SET DEFAULT nextval('games_levels_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games_levels_dungeon ALTER COLUMN id SET DEFAULT nextval('games_levels_dungeon_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY grades ALTER COLUMN id SET DEFAULT nextval('grades_id_seq'::regclass);
 
 
 --
@@ -1165,49 +279,7 @@ ALTER TABLE ONLY levelattempts ALTER COLUMN id SET DEFAULT nextval('level_attemp
 -- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY levels_standards ALTER COLUMN id SET DEFAULT nextval('levels_standards_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY levels_transactions ALTER COLUMN id SET DEFAULT nextval('levels_transactions_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY multiplication ALTER COLUMN id SET DEFAULT nextval('multiplication_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY passwords ALTER COLUMN id SET DEFAULT nextval('passwords_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY permissions ALTER COLUMN id SET DEFAULT nextval('permissions_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY questions ALTER COLUMN id SET DEFAULT nextval('questions_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY rooms ALTER COLUMN id SET DEFAULT nextval('rooms_id_seq'::regclass);
 
 
 --
@@ -1221,240 +293,7 @@ ALTER TABLE ONLY schools ALTER COLUMN id SET DEFAULT nextval('schools_id_seq'::r
 -- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY standards ALTER COLUMN id SET DEFAULT nextval('standards_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY standards_clusters_domains_grades ALTER COLUMN id SET DEFAULT nextval('standards_clusters_domains_grades_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY subjects ALTER COLUMN id SET DEFAULT nextval('subjects_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY subtraction ALTER COLUMN id SET DEFAULT nextval('subtraction_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
-
-
---
--- Data for Name: addition; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY addition (id, score_needed, addend_a, addend_b, number_of_addends, level_id) FROM stdin;
-1	10	0	0	2	14
-2	10	1	0	2	14.0099999999999998
-3	10	2	0	2	14.0199999999999996
-4	10	3	0	2	14.0299999999999994
-5	10	4	0	2	14.0399999999999991
-6	10	5	0	2	14.0500000000000007
-7	10	0	1	2	14.0600000000000005
-8	10	0	2	2	14.0700000000000003
-9	10	0	3	2	14.0800000000000001
-10	10	0	4	2	14.0899999999999999
-11	10	0	5	2	14.0999999999999996
-12	10	1	1	2	14.1099999999999994
-13	10	2	1	2	14.1199999999999992
-14	10	3	1	2	14.1300000000000008
-15	10	4	1	2	14.1400000000000006
-16	10	5	1	2	14.1500000000000004
-17	10	1	2	2	14.1600000000000001
-18	10	1	3	2	14.1699999999999999
-19	10	1	4	2	14.1799999999999997
-20	10	1	5	2	14.1899999999999995
-21	10	2	2	2	14.1999999999999993
-22	10	3	2	2	14.2100000000000009
-23	10	4	2	2	14.2200000000000006
-24	10	5	2	2	14.2300000000000004
-25	10	2	3	2	14.2400000000000002
-26	10	2	4	2	14.25
-27	10	2	5	2	14.2599999999999998
-28	10	3	3	2	14.3000000000000007
-29	10	4	3	2	14.3100000000000005
-30	10	5	3	2	14.3200000000000003
-31	10	3	4	2	14.3300000000000001
-32	10	3	5	2	14.3399999999999999
-33	10	4	4	2	14.4000000000000004
-34	10	5	4	2	14.4100000000000001
-35	10	4	5	2	14.4199999999999999
-36	10	5	5	2	14.5
-37	10	10	0	2	15
-38	10	9	1	2	15.0099999999999998
-39	10	8	2	2	15.0199999999999996
-40	10	7	3	2	15.0299999999999994
-41	10	6	4	2	15.0399999999999991
-42	10	4	6	2	15.0500000000000007
-43	10	3	7	2	15.0600000000000005
-44	10	2	8	2	15.0700000000000003
-45	10	1	9	2	15.0800000000000001
-46	10	0	10	2	15.0899999999999999
-47	10	10	0	2	15.0999999999999996
-48	10	9	1	2	15.1099999999999994
-49	10	0	6	2	16.1000000000000014
-50	10	1	6	2	16.1099999999999994
-51	10	2	6	2	16.120000000000001
-52	10	3	6	2	16.129999999999999
-53	10	5	6	2	16.1400000000000006
-54	10	6	6	2	16.1499999999999986
-55	10	7	6	2	16.1600000000000001
-56	10	8	6	2	16.1700000000000017
-57	10	9	6	2	16.1799999999999997
-\.
-
-
---
--- Name: addition_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('addition_id_seq', 57, true);
-
-
---
--- Data for Name: clusters; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY clusters (id, cluster) FROM stdin;
-1	Know number names and the count sequence.
-2	Count to tell the number of objects.
-3	Compare Numbers.
-4	Understand addition as putting together and adding to, and understand subtraction as taking apart and taking from.
-5	Work with numbers 11-19 to gain foundations for place value
-6	Describe and compare measurable attributes
-7	Classify objects and count the number of objects in each category.
-8	Identify and describe shapes (squares, circles, triangles, rectangles, hexagons, cubes, cones, cylinders, and spheres).
-9	Analyze, compare, create, and compose shapes.
-\.
-
-
---
--- Data for Name: clusters_domains_grades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY clusters_domains_grades (id, cluster_id, domain_grade_id) FROM stdin;
-\.
-
-
---
--- Name: clusters_domains_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('clusters_domains_grades_id_seq', 1, false);
-
-
---
--- Name: clusters_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('clusters_id_seq', 9, true);
-
-
---
--- Data for Name: counting; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY counting (id, score_needed, start_number, end_number, count_by, level_id) FROM stdin;
-1	1	0	1	1	1
-2	2	0	2	1	1.01000000000000001
-3	3	0	3	1	1.02000000000000002
-4	4	0	4	1	1.03000000000000003
-5	5	0	5	1	1.04000000000000004
-6	6	0	6	1	1.05000000000000004
-7	7	0	7	1	1.06000000000000005
-8	8	0	8	1	1.07000000000000006
-9	9	0	9	1	1.08000000000000007
-10	10	0	10	1	1.09000000000000008
-11	1	10	11	1	1.10000000000000009
-12	2	10	12	1	1.1100000000000001
-13	3	10	13	1	1.12000000000000011
-14	4	10	14	1	1.12999999999999989
-15	5	10	15	1	1.1399999999999999
-16	10	0	100	10	1.89999999999999991
-17	10	87	97	1	2
-18	10	23	33	1	2.10000000000000009
-19	10	55	65	1	2.20000000000000018
-20	10	4	14	1	2.29999999999999982
-\.
-
-
---
--- Name: counting_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('counting_id_seq', 20, true);
-
-
---
--- Data for Name: division; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY division (id, score_needed, factor_min, factor_max, number_of_factors, level_id) FROM stdin;
-1	10	1	12	2	700
-\.
-
-
---
--- Name: division_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('division_id_seq', 1, true);
-
-
---
--- Data for Name: domains; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY domains (id, domain) FROM stdin;
-1	Counting and Cardinality
-2	Opererations & Algebraic Thinking
-3	Number & Opererations in Base Ten
-4	Measurement & DataNumber
-5	Geometry
-\.
-
-
---
--- Data for Name: domains_grades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY domains_grades (id, domain_id, grade_id) FROM stdin;
-\.
-
-
---
--- Name: domains_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('domains_grades_id_seq', 1, false);
-
-
---
--- Name: domains_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('domains_id_seq', 5, true);
-
-
---
--- Data for Name: domains_subjects; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY domains_subjects (domain_id, subject_id) FROM stdin;
-\.
 
 
 --
@@ -1473,548 +312,39 @@ SELECT pg_catalog.setval('error_log_id_seq', 1, false);
 
 
 --
--- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY games (id, game) FROM stdin;
-1	Dungeon_k_cc_a_1
-2	Dungeon_k_cc_a_2
-3	Count_k_cc_a_3
-4	Pad_k_oa_a_5
-5	Pad_1_oa_c_6
-6	Pad_2_oa_b_2
-\.
-
-
---
--- Data for Name: games_attempts; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY games_attempts (id, game_attempt_time_start, game_attempt_time_end, user_id, level_id, score, time_warning) FROM stdin;
-\.
-
-
---
--- Name: games_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('games_attempts_id_seq', 1, false);
-
-
---
--- Name: games_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('games_id_seq', 6, true);
-
-
---
--- Data for Name: games_levels; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY games_levels (id, game_id, level_id) FROM stdin;
-1	1	1.000
-2	1	1.010
-3	1	1.020
-4	1	1.030
-5	1	1.040
-6	1	1.050
-7	1	1.060
-8	1	1.070
-9	1	1.080
-10	1	1.090
-11	1	1.100
-12	2	2.000
-13	2	2.010
-14	2	2.020
-15	2	2.030
-16	2	2.040
-17	2	2.050
-18	3	3.000
-19	4	14.000
-20	4	14.010
-21	4	14.020
-22	4	14.030
-23	4	14.040
-24	4	14.050
-25	4	14.060
-26	4	14.070
-27	4	14.080
-28	4	14.090
-29	4	14.100
-30	4	14.110
-31	4	14.120
-32	4	14.130
-33	4	14.140
-34	4	14.150
-35	4	14.160
-36	4	14.170
-37	4	14.180
-38	4	14.190
-39	4	14.200
-40	4	14.210
-41	4	14.220
-42	4	14.230
-43	4	14.240
-44	4	14.250
-45	4	14.260
-46	4	14.270
-47	4	14.280
-48	4	14.290
-49	4	14.300
-50	4	14.310
-51	4	14.320
-52	4	14.330
-53	4	14.340
-54	4	14.350
-55	4	14.360
-56	4	14.370
-57	4	14.380
-58	4	14.390
-59	4	14.400
-60	4	14.410
-61	5	30.000
-62	5	30.010
-63	5	30.020
-64	5	30.030
-65	5	30.040
-66	5	30.050
-67	5	30.060
-68	5	30.070
-69	5	30.080
-70	5	30.090
-71	5	30.100
-72	5	30.110
-73	5	30.120
-74	5	30.130
-75	5	30.140
-76	5	30.150
-77	5	30.160
-78	5	30.170
-79	5	30.180
-80	5	30.190
-81	5	30.200
-82	5	30.210
-83	5	30.220
-84	5	30.230
-85	5	30.240
-86	5	30.250
-87	5	30.260
-88	5	30.270
-89	5	30.280
-90	5	30.290
-91	5	30.300
-92	5	30.310
-93	5	30.320
-94	5	30.330
-95	5	30.340
-96	5	30.350
-97	5	30.360
-98	5	30.370
-99	5	30.380
-100	5	30.390
-101	5	30.400
-102	5	30.410
-103	5	30.420
-104	5	30.430
-105	5	30.440
-106	5	30.450
-107	5	30.460
-108	5	30.470
-109	5	30.480
-110	5	30.490
-111	5	30.500
-112	5	30.510
-113	5	30.520
-114	5	30.530
-115	5	30.540
-116	5	30.550
-117	5	30.560
-118	5	30.570
-119	5	30.580
-120	5	30.590
-121	5	30.600
-122	5	30.610
-123	5	30.620
-124	5	30.630
-125	5	30.640
-126	5	30.650
-127	5	30.660
-128	5	30.670
-129	5	30.680
-130	5	30.690
-131	5	30.700
-132	5	30.710
-133	5	30.720
-134	5	30.730
-135	5	30.740
-136	5	30.750
-137	5	30.760
-138	5	30.770
-139	5	30.780
-140	6	48.000
-141	6	48.001
-142	6	48.002
-143	6	48.003
-144	6	48.004
-145	6	48.005
-146	6	48.006
-147	6	48.007
-148	6	48.008
-149	6	48.009
-150	6	48.010
-151	6	48.011
-152	6	48.012
-153	6	48.013
-154	6	48.014
-155	6	48.015
-156	6	48.016
-157	6	48.017
-158	6	48.018
-159	6	48.019
-160	6	48.020
-161	6	48.021
-162	6	48.022
-163	6	48.023
-164	6	48.024
-165	6	48.025
-166	6	48.026
-167	6	48.027
-168	6	48.028
-169	6	48.029
-170	6	48.030
-171	6	48.031
-172	6	48.032
-173	6	48.033
-174	6	48.034
-175	6	48.035
-176	6	48.036
-177	6	48.037
-178	6	48.038
-179	6	48.039
-180	6	48.040
-181	6	48.041
-182	6	48.042
-183	6	48.043
-184	6	48.044
-185	6	48.045
-186	6	48.046
-187	6	48.047
-188	6	48.048
-189	6	48.049
-190	6	48.050
-191	6	48.051
-192	6	48.052
-193	6	48.053
-194	6	48.054
-195	6	48.055
-196	6	48.056
-197	6	48.057
-198	6	48.058
-199	6	48.059
-200	6	48.060
-201	6	48.061
-202	6	48.062
-203	6	48.063
-204	6	48.064
-205	6	48.065
-206	6	48.066
-207	6	48.067
-208	6	48.068
-209	6	48.069
-210	6	48.070
-211	6	48.071
-212	6	48.072
-213	6	48.073
-214	6	48.074
-215	6	48.075
-216	6	48.076
-217	6	48.077
-218	6	48.078
-219	6	48.079
-220	6	48.080
-221	6	48.081
-222	6	48.082
-223	6	48.083
-224	6	48.084
-225	6	48.085
-226	6	48.086
-227	6	48.087
-228	6	48.088
-229	6	48.089
-230	6	48.090
-231	6	48.091
-232	6	48.092
-233	6	48.093
-234	6	48.094
-235	6	48.095
-236	6	48.096
-237	6	48.097
-238	6	48.098
-239	6	48.099
-240	6	48.100
-241	6	48.101
-242	6	48.102
-243	6	48.103
-244	6	48.104
-245	6	48.105
-246	6	48.106
-247	6	48.107
-248	6	48.108
-249	6	48.109
-250	6	48.110
-251	6	48.111
-252	6	48.112
-253	6	48.113
-254	6	48.114
-255	6	48.115
-256	6	48.116
-257	6	48.117
-258	6	48.118
-259	6	48.119
-260	6	48.120
-261	6	48.121
-262	6	48.122
-263	6	48.123
-264	6	48.124
-265	6	48.125
-266	6	48.126
-267	6	48.127
-268	6	48.128
-269	6	48.129
-270	6	48.130
-271	6	48.131
-272	6	48.132
-273	6	48.133
-274	6	48.134
-275	6	48.135
-276	6	48.136
-277	6	48.137
-278	6	48.138
-279	6	48.139
-280	6	48.140
-281	6	48.141
-282	6	48.142
-283	6	48.143
-284	6	48.144
-285	6	48.145
-286	6	48.146
-287	6	48.147
-288	6	48.148
-289	6	48.149
-290	6	48.150
-291	6	48.151
-292	6	48.152
-293	6	48.153
-294	6	48.154
-295	6	48.155
-296	6	48.156
-297	6	48.157
-298	6	48.158
-299	6	48.159
-300	6	48.160
-301	6	48.161
-302	6	48.162
-303	6	48.163
-304	6	48.164
-305	6	48.165
-306	6	48.166
-307	6	48.167
-308	6	48.168
-309	6	48.169
-310	6	48.170
-311	6	48.171
-312	6	48.172
-313	6	48.173
-314	6	48.174
-315	6	48.175
-316	6	48.176
-317	6	48.177
-318	6	48.178
-319	6	48.179
-320	6	48.180
-321	6	48.181
-322	6	48.182
-323	6	48.183
-324	6	48.184
-325	6	48.185
-326	6	48.186
-327	6	48.187
-328	6	48.188
-329	6	48.189
-330	6	48.190
-331	6	48.191
-332	6	48.192
-333	6	48.193
-334	6	48.194
-335	6	48.195
-336	6	48.196
-337	6	48.197
-338	6	48.198
-339	6	48.199
-340	6	48.200
-341	6	48.201
-342	6	48.202
-343	6	48.203
-344	6	48.204
-345	6	48.205
-346	6	48.206
-347	6	48.207
-348	6	48.208
-349	6	48.209
-350	6	48.210
-351	6	48.211
-352	6	48.212
-353	6	48.213
-354	6	48.214
-355	6	48.215
-356	6	48.216
-357	6	48.217
-358	6	48.218
-359	6	48.219
-360	6	48.220
-361	6	48.221
-362	6	48.222
-363	6	48.223
-364	6	48.224
-365	6	48.225
-366	6	48.226
-367	6	48.227
-368	6	48.228
-369	6	48.229
-370	6	48.230
-371	6	48.231
-372	6	48.232
-373	6	48.233
-374	6	48.234
-375	6	48.235
-376	6	48.236
-377	6	48.237
-378	6	48.238
-379	6	48.239
-380	6	48.240
-381	6	48.241
-382	6	48.242
-383	6	48.243
-384	6	48.244
-385	6	48.245
-386	6	48.246
-387	6	48.247
-388	6	48.248
-389	6	48.249
-390	6	48.250
-391	6	48.251
-392	6	48.252
-393	6	48.253
-394	6	48.254
-395	6	48.255
-396	6	48.256
-397	6	48.257
-398	6	48.258
-399	6	48.259
-400	6	48.260
-401	6	48.261
-402	6	48.262
-403	6	48.263
-404	6	48.264
-405	6	48.265
-406	6	48.266
-407	6	48.267
-408	6	48.268
-409	6	48.269
-410	6	48.270
-411	6	48.271
-412	6	48.272
-413	6	48.273
-414	6	48.274
-415	6	48.275
-416	6	48.276
-417	6	48.277
-418	6	48.278
-419	6	48.279
-420	6	48.280
-421	6	48.281
-422	6	48.282
-423	6	48.283
-424	6	48.284
-425	6	48.285
-426	6	48.286
-427	6	48.287
-428	6	48.288
-429	6	48.289
-430	6	48.290
-431	6	48.291
-432	6	48.292
-433	6	48.293
-434	6	48.294
-435	6	48.295
-436	6	48.296
-437	6	48.297
-438	6	48.298
-439	6	48.299
-440	6	48.300
-441	6	48.301
-442	6	48.302
-443	6	48.303
-\.
-
-
---
--- Data for Name: games_levels_dungeon; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY games_levels_dungeon (id, chasers, games_levels_id) FROM stdin;
-1	3	1
-\.
-
-
---
--- Name: games_levels_dungeon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('games_levels_dungeon_id_seq', 1, true);
-
-
---
--- Name: games_levels_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('games_levels_id_seq', 443, true);
-
-
---
--- Data for Name: grades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY grades (id, grade) FROM stdin;
-1	K
-2	1
-3	2
-4	3
-5	4
-6	5
-7	6
-8	7
-9	8
-10	9
-11	10
-12	11
-13	12
-\.
-
-
---
--- Name: grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('grades_id_seq', 13, true);
-
-
---
 -- Data for Name: learning_standards; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY learning_standards (id, ref_id, progression, levels) FROM stdin;
+k.cc.a.1	CA9EE2E34F384E95A5FA26769C5864B8	1.000	11
+k.cc.a.2	5E6A3E3B939B4577B104FA8658206E9E	2.000	6
+k.cc.a.3	C11F30815A9C49B9A83B61A285EA11F9	3.000	1
+k.cc.c.6	66626D8AEE4E474B8CFEC8A4B68AA51C	4.000	1
+k.cc.c.7	C9B9CAD5BDE84CE2A7A0C441A3DF1A2D	5.000	1
+k.oa.a.4	0CFFCBC851984A4281C23D34FC400445	7.000	18
+k.oa.a.5	1353E9D5614D460FA32E67853B6BA6D8	8.000	42
+k.nbt.a.1	ED150B29EFD14FF8B655FA3F2CA4FE6D	8.000	9
+1.oa.c.6	6C33D2BEC1AC431C8FC4BF9FD4DD3DCA	9.000	79
+2.oa.b.2	800715566B824BB3A5A8C464E961C2B4	10.000	304
+3.oa.c.7	3D384CB2349B41299A3B5A133AB9E3F8	11.000	218
+\.
+
+
+--
+-- Data for Name: learningstandards; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY learningstandards (refid, progression, levels) FROM stdin;
+CA9EE2E34F384E95A5FA26769C5864B8	1.000	11
+5E6A3E3B939B4577B104FA8658206E9E	2.000	6
+C11F30815A9C49B9A83B61A285EA11F9	3.000	1
+66626D8AEE4E474B8CFEC8A4B68AA51C	4.000	1
+C9B9CAD5BDE84CE2A7A0C441A3DF1A2D	5.000	1
+0CFFCBC851984A4281C23D34FC400445	7.000	18
+1353E9D5614D460FA32E67853B6BA6D8	8.000	42
+6C33D2BEC1AC431C8FC4BF9FD4DD3DCA	9.000	79
+800715566B824BB3A5A8C464E961C2B4	10.000	304
+3D384CB2349B41299A3B5A133AB9E3F8	11.000	218
 \.
 
 
@@ -2034,970 +364,38 @@ COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, score, tim
 
 
 --
--- Data for Name: levels; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY levels (id, description) FROM stdin;
-0.000	Start of Journey
-1.000	
-1.010	
-1.020	
-1.030	
-1.040	
-1.050	
-1.060	
-1.070	
-1.080	
-1.090	
-1.100	
-2.000	
-2.010	
-2.020	
-2.030	
-2.040	
-2.050	
-3.000	K_CC_A_3
-14.000	
-14.010	
-14.020	
-14.030	
-14.040	
-14.050	
-14.060	
-14.070	
-14.080	
-14.090	
-14.100	
-14.110	
-14.120	
-14.130	
-14.140	
-14.150	
-14.160	
-14.170	
-14.180	
-14.190	
-14.200	
-14.210	
-14.220	
-14.230	
-14.240	
-14.250	
-14.260	
-14.270	
-14.280	
-14.290	
-14.300	
-14.310	
-14.320	
-14.330	
-14.340	
-14.350	
-14.360	
-14.370	
-14.380	
-14.390	
-14.400	
-14.410	
-30.000	
-30.010	
-30.020	
-30.030	
-30.040	
-30.050	
-30.060	
-30.070	
-30.080	
-30.090	
-30.100	
-30.110	
-30.120	
-30.130	
-30.140	
-30.150	
-30.160	
-30.170	
-30.180	
-30.190	
-30.200	
-30.210	
-30.220	
-30.230	
-30.240	
-30.250	
-30.260	
-30.270	
-30.280	
-30.290	
-30.300	
-30.310	
-30.320	
-30.330	
-30.340	
-30.350	
-30.360	
-30.370	
-30.380	
-30.390	
-30.400	
-30.410	
-30.420	
-30.430	
-30.440	
-30.450	
-30.460	
-30.470	
-30.480	
-30.490	
-30.500	
-30.510	
-30.520	
-30.530	
-30.540	
-30.550	
-30.560	
-30.570	
-30.580	
-30.590	
-30.600	
-30.610	
-30.620	
-30.630	
-30.640	
-30.650	
-30.660	
-30.670	
-30.680	
-30.690	
-30.700	
-30.710	
-30.720	
-30.730	
-30.740	
-30.750	
-30.760	
-30.770	
-30.780	
-48.000	
-48.001	
-48.002	
-48.003	
-48.004	
-48.005	
-48.006	
-48.007	
-48.008	
-48.009	
-48.010	
-48.011	
-48.012	
-48.013	
-48.014	
-48.015	
-48.016	
-48.017	
-48.018	
-48.019	
-48.020	
-48.021	
-48.022	
-48.023	
-48.024	
-48.025	
-48.026	
-48.027	
-48.028	
-48.029	
-48.030	
-48.031	
-48.032	
-48.033	
-48.034	
-48.035	
-48.036	
-48.037	
-48.038	
-48.039	
-48.040	
-48.041	
-48.042	
-48.043	
-48.044	
-48.045	
-48.046	
-48.047	
-48.048	
-48.049	
-48.050	
-48.051	
-48.052	
-48.053	
-48.054	
-48.055	
-48.056	
-48.057	
-48.058	
-48.059	
-48.060	
-48.061	
-48.062	
-48.063	
-48.064	
-48.065	
-48.066	
-48.067	
-48.068	
-48.069	
-48.070	
-48.071	
-48.072	
-48.073	
-48.074	
-48.075	
-48.076	
-48.077	
-48.078	
-48.079	
-48.080	
-48.081	
-48.082	
-48.083	
-48.084	
-48.085	
-48.086	
-48.087	
-48.088	
-48.089	
-48.090	
-48.091	
-48.092	
-48.093	
-48.094	
-48.095	
-48.096	
-48.097	
-48.098	
-48.099	
-48.100	
-48.101	
-48.102	
-48.103	
-48.104	
-48.105	
-48.106	
-48.107	
-48.108	
-48.109	
-48.110	
-48.111	
-48.112	
-48.113	
-48.114	
-48.115	
-48.116	
-48.117	
-48.118	
-48.119	
-48.120	
-48.121	
-48.122	
-48.123	
-48.124	
-48.125	
-48.126	
-48.127	
-48.128	
-48.129	
-48.130	
-48.131	
-48.132	
-48.133	
-48.134	
-48.135	
-48.136	
-48.137	
-48.138	
-48.139	
-48.140	
-48.141	
-48.142	
-48.143	
-48.144	
-48.145	
-48.146	
-48.147	
-48.148	
-48.149	
-48.150	
-48.151	
-48.152	
-48.153	
-48.154	
-48.155	
-48.156	
-48.157	
-48.158	
-48.159	
-48.160	
-48.161	
-48.162	
-48.163	
-48.164	
-48.165	
-48.166	
-48.167	
-48.168	
-48.169	
-48.170	
-48.171	
-48.172	
-48.173	
-48.174	
-48.175	
-48.176	
-48.177	
-48.178	
-48.179	
-48.180	
-48.181	
-48.182	
-48.183	
-48.184	
-48.185	
-48.186	
-48.187	
-48.188	
-48.189	
-48.190	
-48.191	
-48.192	
-48.193	
-48.194	
-48.195	
-48.196	
-48.197	
-48.198	
-48.199	
-48.200	
-48.201	
-48.202	
-48.203	
-48.204	
-48.205	
-48.206	
-48.207	
-48.208	
-48.209	
-48.210	
-48.211	
-48.212	
-48.213	
-48.214	
-48.215	
-48.216	
-48.217	
-48.218	
-48.219	
-48.220	
-48.221	
-48.222	
-48.223	
-48.224	
-48.225	
-48.226	
-48.227	
-48.228	
-48.229	
-48.230	
-48.231	
-48.232	
-48.233	
-48.234	
-48.235	
-48.236	
-48.237	
-48.238	
-48.239	
-48.240	
-48.241	
-48.242	
-48.243	
-48.244	
-48.245	
-48.246	
-48.247	
-48.248	
-48.249	
-48.250	
-48.251	
-48.252	
-48.253	
-48.254	
-48.255	
-48.256	
-48.257	
-48.258	
-48.259	
-48.260	
-48.261	
-48.262	
-48.263	
-48.264	
-48.265	
-48.266	
-48.267	
-48.268	
-48.269	
-48.270	
-48.271	
-48.272	
-48.273	
-48.274	
-48.275	
-48.276	
-48.277	
-48.278	
-48.279	
-48.280	
-48.281	
-48.282	
-48.283	
-48.284	
-48.285	
-48.286	
-48.287	
-48.288	
-48.289	
-48.290	
-48.291	
-48.292	
-48.293	
-48.294	
-48.295	
-48.296	
-48.297	
-48.298	
-48.299	
-48.300	
-48.301	
-48.302	
-48.303	
-\.
-
-
---
--- Data for Name: levels_standards; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY levels_standards (id, level_id, standard_id) FROM stdin;
-1	1.000	1
-2	1.010	1
-3	1.020	1
-4	1.030	1
-5	1.040	1
-6	1.050	1
-7	1.060	1
-8	1.070	1
-9	1.080	1
-10	1.090	1
-11	1.100	1
-12	2.000	2
-13	2.010	2
-14	2.020	2
-15	2.030	2
-16	2.040	2
-17	2.050	2
-18	3.000	3
-19	14.000	14
-20	14.010	14
-21	14.020	14
-22	14.030	14
-23	14.040	14
-24	14.050	14
-25	14.060	14
-26	14.070	14
-27	14.080	14
-28	14.090	14
-29	14.100	14
-30	14.110	14
-31	14.120	14
-32	14.130	14
-33	14.140	14
-34	14.150	14
-35	14.160	14
-36	14.170	14
-37	14.180	14
-38	14.190	14
-39	14.200	14
-40	14.210	14
-41	14.220	14
-42	14.230	14
-43	14.240	14
-44	14.250	14
-45	14.260	14
-46	14.270	14
-47	14.280	14
-48	14.290	14
-49	14.300	14
-50	14.310	14
-51	14.320	14
-52	14.330	14
-53	14.340	14
-54	14.350	14
-55	14.360	14
-56	14.370	14
-57	14.380	14
-58	14.390	14
-59	14.400	14
-60	14.410	14
-61	30.000	30
-62	30.010	30
-63	30.020	30
-64	30.030	30
-65	30.040	30
-66	30.050	30
-67	30.060	30
-68	30.070	30
-69	30.080	30
-70	30.090	30
-71	30.100	30
-72	30.110	30
-73	30.120	30
-74	30.130	30
-75	30.140	30
-76	30.150	30
-77	30.160	30
-78	30.170	30
-79	30.180	30
-80	30.190	30
-81	30.200	30
-82	30.210	30
-83	30.220	30
-84	30.230	30
-85	30.240	30
-86	30.250	30
-87	30.260	30
-88	30.270	30
-89	30.280	30
-90	30.290	30
-91	30.300	30
-92	30.310	30
-93	30.320	30
-94	30.330	30
-95	30.340	30
-96	30.350	30
-97	30.360	30
-98	30.370	30
-99	30.380	30
-100	30.390	30
-101	30.400	30
-102	30.410	30
-103	30.420	30
-104	30.430	30
-105	30.440	30
-106	30.450	30
-107	30.460	30
-108	30.470	30
-109	30.480	30
-110	30.490	30
-111	30.500	30
-112	30.510	30
-113	30.520	30
-114	30.530	30
-115	30.540	30
-116	30.550	30
-117	30.560	30
-118	30.570	30
-119	30.580	30
-120	30.590	30
-121	30.600	30
-122	30.610	30
-123	30.620	30
-124	30.630	30
-125	30.640	30
-126	30.650	30
-127	30.660	30
-128	30.670	30
-129	30.680	30
-130	30.690	30
-131	30.700	30
-132	30.710	30
-133	30.720	30
-134	30.730	30
-135	30.740	30
-136	30.750	30
-137	30.760	30
-138	30.770	30
-139	30.780	30
-140	48.000	48
-141	48.001	48
-142	48.002	48
-143	48.003	48
-144	48.004	48
-145	48.005	48
-146	48.006	48
-147	48.007	48
-148	48.008	48
-149	48.009	48
-150	48.010	48
-151	48.011	48
-152	48.012	48
-153	48.013	48
-154	48.014	48
-155	48.015	48
-156	48.016	48
-157	48.017	48
-158	48.018	48
-159	48.019	48
-160	48.020	48
-161	48.021	48
-162	48.022	48
-163	48.023	48
-164	48.024	48
-165	48.025	48
-166	48.026	48
-167	48.027	48
-168	48.028	48
-169	48.029	48
-170	48.030	48
-171	48.031	48
-172	48.032	48
-173	48.033	48
-174	48.034	48
-175	48.035	48
-176	48.036	48
-177	48.037	48
-178	48.038	48
-179	48.039	48
-180	48.040	48
-181	48.041	48
-182	48.042	48
-183	48.043	48
-184	48.044	48
-185	48.045	48
-186	48.046	48
-187	48.047	48
-188	48.048	48
-189	48.049	48
-190	48.050	48
-191	48.051	48
-192	48.052	48
-193	48.053	48
-194	48.054	48
-195	48.055	48
-196	48.056	48
-197	48.057	48
-198	48.058	48
-199	48.059	48
-200	48.060	48
-201	48.061	48
-202	48.062	48
-203	48.063	48
-204	48.064	48
-205	48.065	48
-206	48.066	48
-207	48.067	48
-208	48.068	48
-209	48.069	48
-210	48.070	48
-211	48.071	48
-212	48.072	48
-213	48.073	48
-214	48.074	48
-215	48.075	48
-216	48.076	48
-217	48.077	48
-218	48.078	48
-219	48.079	48
-220	48.080	48
-221	48.081	48
-222	48.082	48
-223	48.083	48
-224	48.084	48
-225	48.085	48
-226	48.086	48
-227	48.087	48
-228	48.088	48
-229	48.089	48
-230	48.090	48
-231	48.091	48
-232	48.092	48
-233	48.093	48
-234	48.094	48
-235	48.095	48
-236	48.096	48
-237	48.097	48
-238	48.098	48
-239	48.099	48
-240	48.100	48
-241	48.101	48
-242	48.102	48
-243	48.103	48
-244	48.104	48
-245	48.105	48
-246	48.106	48
-247	48.107	48
-248	48.108	48
-249	48.109	48
-250	48.110	48
-251	48.111	48
-252	48.112	48
-253	48.113	48
-254	48.114	48
-255	48.115	48
-256	48.116	48
-257	48.117	48
-258	48.118	48
-259	48.119	48
-260	48.120	48
-261	48.121	48
-262	48.122	48
-263	48.123	48
-264	48.124	48
-265	48.125	48
-266	48.126	48
-267	48.127	48
-268	48.128	48
-269	48.129	48
-270	48.130	48
-271	48.131	48
-272	48.132	48
-273	48.133	48
-274	48.134	48
-275	48.135	48
-276	48.136	48
-277	48.137	48
-278	48.138	48
-279	48.139	48
-280	48.140	48
-281	48.141	48
-282	48.142	48
-283	48.143	48
-284	48.144	48
-285	48.145	48
-286	48.146	48
-287	48.147	48
-288	48.148	48
-289	48.149	48
-290	48.150	48
-291	48.151	48
-292	48.152	48
-293	48.153	48
-294	48.154	48
-295	48.155	48
-296	48.156	48
-297	48.157	48
-298	48.158	48
-299	48.159	48
-300	48.160	48
-301	48.161	48
-302	48.162	48
-303	48.163	48
-304	48.164	48
-305	48.165	48
-306	48.166	48
-307	48.167	48
-308	48.168	48
-309	48.169	48
-310	48.170	48
-311	48.171	48
-312	48.172	48
-313	48.173	48
-314	48.174	48
-315	48.175	48
-316	48.176	48
-317	48.177	48
-318	48.178	48
-319	48.179	48
-320	48.180	48
-321	48.181	48
-322	48.182	48
-323	48.183	48
-324	48.184	48
-325	48.185	48
-326	48.186	48
-327	48.187	48
-328	48.188	48
-329	48.189	48
-330	48.190	48
-331	48.191	48
-332	48.192	48
-333	48.193	48
-334	48.194	48
-335	48.195	48
-336	48.196	48
-337	48.197	48
-338	48.198	48
-339	48.199	48
-340	48.200	48
-341	48.201	48
-342	48.202	48
-343	48.203	48
-344	48.204	48
-345	48.205	48
-346	48.206	48
-347	48.207	48
-348	48.208	48
-349	48.209	48
-350	48.210	48
-351	48.211	48
-352	48.212	48
-353	48.213	48
-354	48.214	48
-355	48.215	48
-356	48.216	48
-357	48.217	48
-358	48.218	48
-359	48.219	48
-360	48.220	48
-361	48.221	48
-362	48.222	48
-363	48.223	48
-364	48.224	48
-365	48.225	48
-366	48.226	48
-367	48.227	48
-368	48.228	48
-369	48.229	48
-370	48.230	48
-371	48.231	48
-372	48.232	48
-373	48.233	48
-374	48.234	48
-375	48.235	48
-376	48.236	48
-377	48.237	48
-378	48.238	48
-379	48.239	48
-380	48.240	48
-381	48.241	48
-382	48.242	48
-383	48.243	48
-384	48.244	48
-385	48.245	48
-386	48.246	48
-387	48.247	48
-388	48.248	48
-389	48.249	48
-390	48.250	48
-391	48.251	48
-392	48.252	48
-393	48.253	48
-394	48.254	48
-395	48.255	48
-396	48.256	48
-397	48.257	48
-398	48.258	48
-399	48.259	48
-400	48.260	48
-401	48.261	48
-402	48.262	48
-403	48.263	48
-404	48.264	48
-405	48.265	48
-406	48.266	48
-407	48.267	48
-408	48.268	48
-409	48.269	48
-410	48.270	48
-411	48.271	48
-412	48.272	48
-413	48.273	48
-414	48.274	48
-415	48.275	48
-416	48.276	48
-417	48.277	48
-418	48.278	48
-419	48.279	48
-420	48.280	48
-421	48.281	48
-422	48.282	48
-423	48.283	48
-424	48.284	48
-425	48.285	48
-426	48.286	48
-427	48.287	48
-428	48.288	48
-429	48.289	48
-430	48.290	48
-431	48.291	48
-432	48.292	48
-433	48.293	48
-434	48.294	48
-435	48.295	48
-436	48.296	48
-437	48.297	48
-438	48.298	48
-439	48.299	48
-440	48.300	48
-441	48.301	48
-442	48.302	48
-443	48.303	48
-\.
-
-
---
--- Data for Name: levels_standards_clusters_domains_grades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY levels_standards_clusters_domains_grades (level_id, standard_cluster_domain_grade_id) FROM stdin;
-\.
-
-
---
--- Name: levels_standards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('levels_standards_id_seq', 443, true);
-
-
---
--- Data for Name: levels_transactions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY levels_transactions (id, advancement_time, level_id, user_id) FROM stdin;
-\.
-
-
---
--- Name: levels_transactions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('levels_transactions_id_seq', 1, false);
-
-
---
--- Data for Name: multiplication; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY multiplication (id, score_needed, factor_min, factor_max, number_of_factors, level_id) FROM stdin;
-1	10	0	1	2	600
-2	10	0	2	2	600.009999999999991
-3	10	0	3	2	600.019999999999982
-4	10	0	4	2	600.029999999999973
-5	10	0	5	2	600.039999999999964
-6	10	0	6	2	600.049999999999955
-7	10	0	7	2	600.059999999999945
-8	10	0	8	2	600.07000000000005
-9	10	0	9	2	600.080000000000041
-10	10	0	10	2	600.090000000000032
-11	10	0	11	2	600.100000000000023
-12	10	0	12	2	600.110000000000014
-\.
-
-
---
--- Name: multiplication_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('multiplication_id_seq', 12, true);
-
-
---
 -- Data for Name: passwords; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY passwords (id, password) FROM stdin;
+1	ahh
+2	abs
+3	ace
+4	add
+5	aft
+6	ape
+7	and
+8	aim
+9	aid
+10	air
+11	all
+12	amp
+13	ant
+14	app
+15	apt
+16	arc
+17	arf
+18	ark
+19	arm
+20	art
+21	ash
+22	ask
+23	ate
+24	ave
+25	awe
+26	axe
+27	aye
+28	ays
 \.
 
 
@@ -3005,61 +403,7 @@ COPY passwords (id, password) FROM stdin;
 -- Name: passwords_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('passwords_id_seq', 1, false);
-
-
---
--- Data for Name: permissions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY permissions (id, permission) FROM stdin;
-1	INSERT
-\.
-
-
---
--- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('permissions_id_seq', 1, true);
-
-
---
--- Data for Name: permissions_users; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY permissions_users (permission_id, user_id) FROM stdin;
-\.
-
-
---
--- Data for Name: questions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY questions (id, question, answer, level_id, question_order) FROM stdin;
-\.
-
-
---
--- Name: questions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('questions_id_seq', 1, false);
-
-
---
--- Data for Name: rooms; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY rooms (id, room, school_id) FROM stdin;
-\.
-
-
---
--- Name: rooms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('rooms_id_seq', 1, false);
+SELECT pg_catalog.setval('passwords_id_seq', 28, true);
 
 
 --
@@ -3067,6 +411,7 @@ SELECT pg_catalog.setval('rooms_id_seq', 1, false);
 --
 
 COPY schools (id, school_name) FROM stdin;
+1	visitationbvm
 \.
 
 
@@ -3074,121 +419,7 @@ COPY schools (id, school_name) FROM stdin;
 -- Name: schools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('schools_id_seq', 1, false);
-
-
---
--- Data for Name: standards; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY standards (id, standard, description) FROM stdin;
-1	K.CC.A.1	Count to 100 by ones and by tens.
-2	K.CC.A.2	Count forward beginning from a given number within the known sequence (instead of having to begin at 1).
-3	K.CC.A.3	Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects.
-4	K.CC.B.4A	When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.
-5	K.CC.B.4B	Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.
-6	K.CC.B.4C	Understand that each successive number name refers to a quantity that is one larger.
-7	K.CC.B.5	Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.
-8	K.CC.C.6	Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies. Includes groups with up to ten objects.
-9	K.CC.C.7	Compare two numbers between 1 and 10 presented as written numerals.
-10	K.OA.A.1	Compare two numbers between 1 and 10 presented as written numerals.
-11	K.OA.A.2	Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.
-12	K.OA.A.3	Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each  decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1.
-13	K.OA.A.4	For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.
-14	K.OA.A.5	Fluently add and subtract within 5.
-15	K.NBT.A.1	Compose and decompose numbers from 11 to 19 into ten ones and some further ones. Understand that numbers 11 to 19 are made up of 1 ten and x amount of ones.
-16	K.MD.A.1	Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.
-17	K.MD.A.2	Directly compare two objects with a measurable attribute in common...
-18	K.MD.B.3	Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.
-19	K.G.A.1	Describe objects in the environment using names of shapes...
-20	K.G.A.2	Correctly name shapes regardless of their orientations or overall size.
-21	K.G.A.3	Identify shapes as two-dimensional....
-22	K.G.B.4	Analyze and compare two- and three-dimensional shapes...
-23	K.G.B.5	Model shapes in the world by building shapes from components...
-24	K.G.B.6	Compose simple shapes to form..
-25	1.OA.A.1	 Use addition and subtraction within 20 to solve word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.
-26	1.O.A.2	Solve word problems that call for addition of three whole numbers whose sum is less than or equal to 20, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.
-27	1.OA.B.3	Apply properties of operations as strategies to add and subtract.2 Examples: If 8 + 3 = 11 is known, then 3 + 8 = 11 is also known. (Commutative property of addition.) To add 2 + 6 + 4, the second two numbers can be added to make a ten, so 2 + 6 + 4 = 2 + 10 = 12. (Associative property of addition.)
-28	1.OA.B.4	Understand subtraction as an unknown-addend problem. For example, subtract 10 – 8 by finding the number that makes 10 when added to 8.
-29	1.OA.C.5	Relate counting to addition and subtraction (e.g., by counting on 2 to add 2).
-30	1.OA.C.6	Add and subtract within 20, demonstrating fluency for addition and subtraction within 10. Use strategies such as counting on; making ten (e.g., 8 + 6 = 8 + 2 + 4 = 10 + 4 = 14); decomposing a number leading to a ten (e.g., 13 – 4 = 13 – 3 – 1 = 10 – 1 = 9); using the relationship between addition and subtraction (e.g., knowing that 8 + 4 = 12, one knows 12 – 8 = 4); and creating equivalent but easier or known sums (e.g., adding 6 + 7 by creating the known equivalent 6 + 6 + 1 = 12 + 1 = 13).
-31	1.OA.D.7	Understand the meaning of the equal sign, and determine if equations involving addition and subtraction are true or false. For example, which of the following equations are true and which are false? 6 = 6, 7 = 8 – 1, 5 + 2 = 2 + 5, 4 + 1 = 5 + 2.
-32	1.OA.D.8	Determine the unknown whole number in an addition or subtraction equation relating three whole numbers. For example, determine the unknown number that makes the equation true in each of the equations 8 + ? = 11, 5 = _ – 3, 6 + 6 = _.
-33	1.NBT.A.1	Count to 120, starting at any number less than 120. In this range, read and write numerals and represent a number of objects with a written numeral.
-34	1.NBT.B.2	Understand that the two digits of a two-digit number represent amounts of tens and ones. Understand the following as special cases:
-35	1.NBT.B.2b	10 can be thought of as a bundle of ten ones — called a “ten.”
-36	1.NBT.B.2c	The numbers 10, 20, 30, 40, 50, 60, 70, 80, 90 refer to one, two, three, four, five, six, seven, eight, or nine tens (and 0 ones).
-37	1.NBT.B.3	iCompare two two-digit numbers based on meanings of the tens and ones digits, recording the results of comparisons with the symbols >, =, and <.
-38	1.NBT.C.4	Add within 100, including adding a two-digit number and a one-digit number, and adding a two-digit number and a multiple of 10, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used. Understand that in adding two-digit numbers, one adds tens and tens, ones and ones; and sometimes it is necessary to compose a ten.
-39	1.NBT.C.5	Given a two-digit number, mentally find 10 more or 10 less than the number, without having to count; explain the reasoning used.
-40	1.NBT.C.6	Subtract multiples of 10 in the range 10-90 from multiples of 10 in the range 10-90 (positive or zero differences), using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used.
-41	1.MD.A.1	Order three objects by length; compare the lengths of two objects indirectly by using a third object.
-42	1.MD.A.2	 Express the length of an object as a whole number of length units, by laying multiple copies of a shorter object (the length unit) end to end; understand that the length measurement of an object is the number of same-size length units that span it with no gaps or overlaps. Limit to contexts where the object being measured is spanned by a whole number of length units with no gaps or overlaps.
-43	1.MD.C.4	Organize, represent, and interpret data with up to three categories; ask and answer questions about the total number of data points, how many in each category, and how many more or less are in one category than in another.
-44	1.G.A.1	Distinguish between defining attributes (e.g., triangles are closed and three-sided) versus non-defining attributes (e.g., color, orientation, overall size); build and draw shapes to possess defining attributes.
-45	1.G.A.2	Compose two-dimensional shapes (rectangles, squares, trapezoids, triangles, half-circles, and quarter-circles) or three-dimensional shapes (cubes, right rectangular prisms, right circular cones, and right circular cylinders) to create a composite shape, and compose new shapes from the composite shape.
-46	1.G.A.3	Partition circles and rectangles into two and four equal shares, describe the shares using the words halves, fourths, and quarters, and use the phrases half of, fourth of, and quarter of. Describe the whole as two of, or four of the shares. Understand for these examples that decomposing into more equal shares creates smaller shares.
-47	2.OA.A.1	Use addition and subtraction within 100 to solve one- and two-step word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.
-48	2.OA.B.2	Fluently add and subtract within 20 using mental strategies.2 By end of Grade 2, know from memory all sums of two one-digit numbers.
-49	2.OA.C.3	Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s; write an equation to express an even number as a sum of two equal addends.
-50	2.OA.C.4	Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.
-51	2.NBT.A.1	Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones. Understand the following as special cases:
-52	2.NBT.A.1a	100 can be thought of as a bundle of ten tens — called a “hundred.”
-53	2.NBT.A.1b	The numbers 100, 200, 300, 400, 500, 600, 700, 800, 900 refer to one, two, three, four, five, six, seven, eight, or nine hundreds (and 0 tens and 0 ones).
-54	2.NBT.A.2	Count within 1000; skip-count by 5s, 10s, and 100s.
-55	2.NBT.A.3	Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.
-56	2.NBT.A.4	Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using >, =, and < symbols to record the results of comparisons.
-57	2.NBT.B.5	Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.\n
-58	2.NBT.B.6	Add up to four two-digit numbers using strategies based on place value and properties of operations.
-59	2.NBT.B.7	Add and subtract within 1000, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method. Understand that in adding or subtracting three-digit numbers, one adds or subtracts hundreds and hundreds, tens and tens, ones and ones; and sometimes it is necessary to compose or decompose tens or hundreds.
-60	2.NBT.B.8	Mentally add 10 or 100 to a given number 100–900, and mentally subtract 10 or 100 from a given number 100–900.
-61	2.NBT.B.9	Explain why addition and subtraction strategies work, using place value and the properties of operations.
-62	2.MD.A.1	Measure the length of an object by selecting and using appropriate tools such as rulers, yardsticks, meter sticks, and measuring tapes.
-63	2.MD.A.2	 Measure the length of an object twice, using length units of different lengths for the two measurements; describe how the two measurements relate to the size of the unit chosen.
-64	2.MD.A.3	Estimate lengths using units of inches, feet, centimeters, and meters.
-65	2.MD.A.4	Measure to determine how much longer one object is than another, expressing the length difference in terms of a standard length unit.
-66	2.MD.B.5	Use addition and subtraction within 100 to solve word problems involving lengths that are given in the same units, e.g., by using drawings (such as drawings of rulers) and equations with a symbol for the unknown number to represent the problem.
-67	2.MD.B.6	Represent whole numbers as lengths from 0 on a number line diagram with equally spaced points corresponding to the numbers 0, 1, 2, ..., and represent whole-number sums and differences within 100 on a number line diagram.
-68	2.MD.C.7	Tell and write time from analog and digital clocks to the nearest five minutes, using a.m. and p.m.
-69	2.MD.C.8	Solve word problems involving dollar bills, quarters, dimes, nickels, and pennies, using $ and ¢ symbols appropriately. Example: If you have 2 dimes and 3 pennies, how many cents do you have?
-70	2.MD.C.9	Generate measurement data by measuring lengths of several objects to the nearest whole unit, or by making repeated measurements of the same object. Show the measurements by making a line plot, where the horizontal scale is marked off in whole-number units.
-71	2.MD.C.10	Draw a picture graph and a bar graph (with single-unit scale) to represent a data set with up to four categories. Solve simple put-together, take-apart, and compare problems1 using information presented in a bar graph.
-72	2.MD.G.A.1	Recognize and draw shapes having specified attributes, such as a given number of angles or a given number of equal faces.1 Identify triangles, quadrilaterals, pentagons, hexagons, and cubes.
-73	2.G.A.2	Partition a rectangle into rows and columns of same-size squares and count to find the total number of them.
-74	2.G.A.3	Partition circles and rectangles into two, three, or four equal shares, describe the shares using the words halves, thirds, half of, a third of, etc., and describe the whole as two halves, three thirds, four fourths. Recognize that equal shares of identical wholes need not have the same shape.
-75	3.OA.A.1	Interpret products of whole numbers, e.g., interpret 5 × 7 as the total number of objects in 5 groups of 7 objects each. For example, describe a context in which a total number of objects can be expressed as 5 × 7.
-76	3.OA.A.2	Interpret whole-number quotients of whole numbers, e.g., interpret 56 ÷ 8 as the number of objects in each share when 56 objects are partitioned equally into 8 shares, or as a number of shares when 56 objects are partitioned into equal shares of 8 objects each. For example, describe a context in which a number of  shares or a number of groups can be expressed as 56 ÷ 8.
-77	3.OA.A.3	Use multiplication and division within 100 to solve word problems in situations involving equal groups, arrays, and measurement quantities, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.
-78	3.OA.A.4	Determine the unknown whole number in a multiplication or division equation relating three whole numbers. For example, determine the unknown number that makes the equation true in each of the equations 8 × ? = 48, 5 = _ ÷ 3, 6 × 6 = ?
-79	3.OA.B.5	Apply properties of operations as strategies to multiply and divide.2 Examples: If 6 × 4 = 24 is known, then 4 × 6 = 24 is also known. (Commutative property of multiplication.) 3 × 5 × 2 can be found by 3 × 5 = 15, then 15 × 2 = 30, or by 5 × 2 = 10, then 3 × 10 = 30. (Associative property of multiplication.) Knowing that 8 × 5 = 40 and 8 × 2 = 16, one can find 8 × 7 as 8 × (5 + 2) = (8 × 5) + (8 × 2) = 40 + 16 = 56. (Distributive property.)
-80	3.OA.B.6	Understand division as an unknown-factor problem. For example, find 32 ÷ 8 by finding the number that makes 32 when multiplied by 8.
-81	3.OA.C.7	Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.
-82	3.OA.D.8	Solve two-step word problems using the four operations. Represent these problems using equations with a letter standing for the unknown quantity. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.
-83	3.OA.D.9	Identify arithmetic patterns (including patterns in the addition table or multiplication table), and explain them using properties of operations. For example, observe that 4 times a number is always even, and explain why 4 times a number can be decomposed into two equal addends.
-84	3.NBT.A.1	Use place value understanding to round whole numbers to the nearest 10 or 100.
-\.
-
-
---
--- Data for Name: standards_clusters_domains_grades; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY standards_clusters_domains_grades (id, standard_id, cluster_domain_grade_id) FROM stdin;
-\.
-
-
---
--- Name: standards_clusters_domains_grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('standards_clusters_domains_grades_id_seq', 1, false);
-
-
---
--- Name: standards_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('standards_id_seq', 84, true);
+SELECT pg_catalog.setval('schools_id_seq', 1, true);
 
 
 --
@@ -3196,49 +427,469 @@ SELECT pg_catalog.setval('standards_id_seq', 84, true);
 --
 
 COPY students (id, teacher_id) FROM stdin;
+1	0
+2	1
+3	1
+4	1
+5	1
+6	1
+7	1
+8	1
+9	1
+10	1
+11	1
+12	1
+13	1
+14	1
+15	1
+16	1
+17	1
+18	1
+19	1
+20	1
+21	1
+22	1
+23	1
+24	1
+25	1
+26	1
+27	1
+28	1
+29	1
+30	1
+31	1
+32	1
+33	1
+34	1
+35	1
+36	1
+37	1
+38	1
+39	1
+40	1
+41	1
+42	1
+43	1
+44	1
+45	1
+46	1
+47	1
+48	1
+49	1
+50	1
+51	1
+52	1
+53	1
+54	1
+55	1
+56	1
+57	1
+58	1
+59	1
+60	1
+61	1
+62	1
+63	1
+64	1
+65	1
+66	1
+67	1
+68	1
+69	1
+70	1
+71	1
+72	1
+73	1
+74	1
+75	1
+76	1
+77	1
+78	1
+79	1
+80	1
+81	1
+82	1
+83	1
+84	1
+85	1
+86	1
+87	1
+88	1
+89	1
+90	1
+91	1
+92	1
+93	1
+94	1
+95	1
+96	1
+97	1
+98	1
+99	1
+100	1
+101	1
+102	1
+103	1
+104	1
+105	1
+106	1
+107	1
+108	1
+109	1
+110	1
+111	1
+112	1
+113	1
+114	1
+115	1
+116	1
+117	1
+118	1
+119	1
+120	1
+121	1
+122	1
+123	1
+124	1
+125	1
+126	1
+127	1
+128	1
+129	1
+130	1
+131	1
+132	1
+133	1
+134	1
+135	1
+136	1
+137	1
+138	1
+139	1
+140	1
+141	1
+142	1
+143	1
+144	1
+145	1
+146	1
+147	1
+148	1
+149	1
+150	1
+151	1
+152	1
+153	1
+154	1
+155	1
+156	1
+157	1
+158	1
+159	1
+160	1
+161	1
+162	1
+163	1
+164	1
+165	1
+166	1
+167	1
+168	1
+169	1
+170	1
+171	1
+172	1
+173	1
+174	1
+175	1
+176	1
+177	1
+178	1
+179	1
+180	1
+181	1
+182	1
+183	1
+184	1
+185	1
+186	1
+187	1
+188	1
+189	1
+190	1
+191	1
+192	1
+193	1
+194	1
+195	1
+196	1
+197	1
+198	1
+199	1
+200	1
+201	1
+202	1
+203	1
+204	1
+205	1
+206	1
+207	1
+208	1
+209	1
+210	1
+211	1
+212	1
+213	1
+214	1
+215	1
+216	1
+217	1
+218	1
+219	1
+220	1
+221	1
+222	1
+223	1
+224	1
+225	1
+226	1
+227	1
+228	1
+229	1
+230	1
+231	1
+232	1
+233	1
+234	1
+235	1
+236	1
+237	1
+238	1
+239	1
+240	1
+241	1
+242	1
+243	1
+244	1
+245	1
+246	1
+247	1
+248	1
+249	1
+250	1
+251	1
+252	1
+253	1
+254	1
+255	1
+256	1
+257	1
+258	1
+259	1
+260	1
+261	1
+262	1
+263	1
+264	1
+265	1
+266	1
+267	1
+268	1
+269	1
+270	1
+271	1
+272	1
+273	1
+274	1
+275	1
+276	1
+277	1
+278	1
+279	1
+280	1
+281	1
+282	1
+283	1
+284	1
+285	1
+286	1
+287	1
+288	1
+289	1
+290	1
+291	1
+292	1
+293	1
+294	1
+295	1
+296	1
+297	1
+298	1
+299	1
+300	1
+301	1
+302	1
+303	1
+304	1
+305	1
+306	1
+307	1
+308	1
+309	1
+310	1
+311	1
+312	1
+313	1
+314	1
+315	1
+316	1
+317	1
+318	1
+319	1
+320	1
+321	1
+322	1
+323	1
+324	1
+325	1
+326	1
+327	1
+328	1
+329	1
+330	1
+331	1
+332	1
+333	1
+334	1
+335	1
+336	1
+337	1
+338	1
+339	1
+340	1
+341	1
+342	1
+343	1
+344	1
+345	1
+346	1
+347	1
+348	1
+349	1
+350	1
+351	1
+352	1
+353	1
+354	1
+355	1
+356	1
+357	1
+358	1
+359	1
+360	1
+361	1
+362	1
+363	1
+364	1
+365	1
+366	1
+367	1
+368	1
+369	1
+370	1
+371	1
+372	1
+373	1
+374	1
+375	1
+376	1
+377	1
+378	1
+379	1
+380	1
+381	1
+382	1
+383	1
+384	1
+385	1
+386	1
+387	1
+388	1
+389	1
+390	1
+391	1
+392	1
+393	1
+394	1
+395	1
+396	1
+397	1
+398	1
+399	1
+400	1
+401	1
+402	1
+403	1
+404	1
+405	1
+406	1
+407	1
+408	1
+409	1
+410	1
+411	1
+412	1
+413	1
+414	1
+415	1
+416	1
+417	1
+418	1
+419	1
+420	1
+421	1
+422	1
+423	1
+424	1
+425	1
+426	1
+427	1
+428	1
+429	1
+430	1
+431	1
+432	1
+433	1
+434	1
+435	1
+436	1
+437	1
+438	1
+439	1
+440	1
+441	1
+442	1
+443	1
+444	1
+445	1
+446	1
+447	1
+448	1
+449	1
+450	1
+451	1
+452	1
+453	1
+454	1
+455	1
+456	1
+457	1
+458	1
+459	1
+460	1
+461	1
+462	1
 \.
-
-
---
--- Data for Name: subjects; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY subjects (id, subject) FROM stdin;
-1	Mathematics
-2	English Language Arts
-\.
-
-
---
--- Name: subjects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('subjects_id_seq', 2, true);
-
-
---
--- Data for Name: subtraction; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY subtraction (id, score_needed, minuend_min, minuend_max, subtrahend_min, subtrahend_max, number_of_subtrahends, negative_difference, level_id) FROM stdin;
-1	10	0	1	0	1	2	f	500
-2	10	0	2	0	2	2	f	500.009999999999991
-3	10	0	3	0	3	2	f	500.019999999999982
-4	10	0	4	0	4	2	f	500.029999999999973
-5	10	0	5	0	5	2	f	500.04000000000002
-6	10	0	6	0	6	2	f	500.050000000000011
-7	10	0	7	0	7	2	f	500.060000000000002
-8	10	0	8	0	8	2	f	500.069999999999993
-9	10	0	9	0	9	2	f	500.079999999999984
-10	10	0	10	0	10	2	f	500.089999999999975
-\.
-
-
---
--- Name: subtraction_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('subtraction_id_seq', 10, true);
 
 
 --
@@ -3246,6 +897,7 @@ SELECT pg_catalog.setval('subtraction_id_seq', 10, true);
 --
 
 COPY teachers (id) FROM stdin;
+1
 \.
 
 
@@ -3254,6 +906,468 @@ COPY teachers (id) FROM stdin;
 --
 
 COPY users (id, username, password, first_name, middle_name1, middle_name2, middle_name3, last_name, school_id, ref_id, level) FROM stdin;
+1	root	Paul_1768	\N	\N	\N	\N	\N	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+2	k	k					kindergarten	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+3	jbreslin	Iggles_13	Jim				Breslin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+4	v1202	bio	Jim				Roache	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+5	v1203	bio	Sister				Terri	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+6	v1204	bio	Sister				Margaret	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+101	v1612	amp	Jonathan				Mejia	1	0CFFCBC851984A4281C23D34FC400445	1
+102	v1613	ant	Magalis				Mota	1	0CFFCBC851984A4281C23D34FC400445	1
+103	v1614	app	Thanh				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+104	v1615	apt	Maria				Nolasco	1	0CFFCBC851984A4281C23D34FC400445	1
+105	v1616	arc	Thuy				Pham	1	0CFFCBC851984A4281C23D34FC400445	1
+106	v1617	arf	Timothy				Poulterer	1	0CFFCBC851984A4281C23D34FC400445	1
+107	v1618	ark	Zachary				Quinones	1	0CFFCBC851984A4281C23D34FC400445	1
+108	v1619	arm	Ryan				Ramirez	1	0CFFCBC851984A4281C23D34FC400445	1
+109	v1620	art	Ciara				Skinner	1	0CFFCBC851984A4281C23D34FC400445	1
+110	v1621	ash	Sasha				Vidro	1	0CFFCBC851984A4281C23D34FC400445	1
+111	v1622	ask	Christopher	Campverde			Pacheco	1	0CFFCBC851984A4281C23D34FC400445	1
+112	v1623	ate	Lily				Chieu	1	0CFFCBC851984A4281C23D34FC400445	1
+113	v1624	ave	Lukas				Cruz	1	0CFFCBC851984A4281C23D34FC400445	1
+114	v1625	awe	Layani				Fermin	1	0CFFCBC851984A4281C23D34FC400445	1
+115	v1626	axe	Alexandria				Furlow	1	0CFFCBC851984A4281C23D34FC400445	1
+116	v1627	aye	Abigale				Gibson	1	0CFFCBC851984A4281C23D34FC400445	1
+117	v1628	ays	Andre				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+118	v1629	baa	Timothy				Gordon	1	0CFFCBC851984A4281C23D34FC400445	1
+119	v1630	bit	Wylid				Harmon	1	0CFFCBC851984A4281C23D34FC400445	1
+217	v1832	bam	Halle				Jimenez	1	0CFFCBC851984A4281C23D34FC400445	1
+218	v1833	ban	Vivian				Le	1	0CFFCBC851984A4281C23D34FC400445	1
+219	v1834	bap	Richard				Lillo	1	0CFFCBC851984A4281C23D34FC400445	1
+220	v1835	bar	Wei				Lin	1	0CFFCBC851984A4281C23D34FC400445	1
+221	v1836	bat	Israel				Lugo	1	0CFFCBC851984A4281C23D34FC400445	1
+222	v1837	bay	Makel				Martin	1	0CFFCBC851984A4281C23D34FC400445	1
+223	v1838	bed	Elias				Merced	1	0CFFCBC851984A4281C23D34FC400445	1
+224	v1839	bee	Valerie				Montiel	1	0CFFCBC851984A4281C23D34FC400445	1
+225	v1840	beg	Ai	Nhi			Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+226	v1841	ben	Juliza				Portillo	1	0CFFCBC851984A4281C23D34FC400445	1
+227	v1842	bet	Jacelynne	Quinones			Castro	1	0CFFCBC851984A4281C23D34FC400445	1
+228	v1843	bib	Markus				Richards	1	0CFFCBC851984A4281C23D34FC400445	1
+229	v1844	bid	Joel	Rivera			Jr	1	0CFFCBC851984A4281C23D34FC400445	1
+230	v1845	big	Brianna				Rodriquez	1	0CFFCBC851984A4281C23D34FC400445	1
+231	v1846	bin	Joshua				Rojas	1	0CFFCBC851984A4281C23D34FC400445	1
+232	v1847	bin	Abrianna				Santiago	1	0CFFCBC851984A4281C23D34FC400445	1
+233	v1848	bin	Christopher				Serrano	1	0CFFCBC851984A4281C23D34FC400445	1
+234	v1849	bin	Terrell				Wood	1	0CFFCBC851984A4281C23D34FC400445	1
+235	v1850	bit	Ashanti				Lopez	1	0CFFCBC851984A4281C23D34FC400445	1
+236	v1851	bit	Bangelis				Cosma	1	0CFFCBC851984A4281C23D34FC400445	1
+7	v1401	ahh	Anthony				Arvelo	1	C9B9CAD5BDE84CE2A7A0C441A3DF1A2D	1
+54	v1501	ahh	Keaira				Archie	1	0CFFCBC851984A4281C23D34FC400445	1
+55	v1502	abs	Jacin				Aviles	1	0CFFCBC851984A4281C23D34FC400445	1
+56	v1503	ace	Tony				Boose	1	0CFFCBC851984A4281C23D34FC400445	1
+57	v1504	add	Tiara				Bounyarith	1	0CFFCBC851984A4281C23D34FC400445	1
+58	v1505	aft	Ledys				Chavez	1	0CFFCBC851984A4281C23D34FC400445	1
+59	v1506	ape	Natalie				Colon	1	0CFFCBC851984A4281C23D34FC400445	1
+60	v1507	and	Pablo	Manuel			Diaz	1	0CFFCBC851984A4281C23D34FC400445	1
+61	v1508	aim	Dang	Thanh			Duong	1	0CFFCBC851984A4281C23D34FC400445	1
+62	v1509	aid	Eliannie				Figueroa	1	0CFFCBC851984A4281C23D34FC400445	1
+63	v1510	air	Thomas				Flynn	1	0CFFCBC851984A4281C23D34FC400445	1
+64	v1511	all	Alexandria	Luz			Medina	1	0CFFCBC851984A4281C23D34FC400445	1
+65	v1512	amp	Javier				Morales	1	0CFFCBC851984A4281C23D34FC400445	1
+66	v1513	ant	Destiny				Nunez	1	0CFFCBC851984A4281C23D34FC400445	1
+67	v1514	app	Kelly				Pickering	1	0CFFCBC851984A4281C23D34FC400445	1
+68	v1515	apt	Miguel				Reyes	1	0CFFCBC851984A4281C23D34FC400445	1
+69	v1516	arc	Christopher				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+70	v1517	arf	Rajah				Williams	1	0CFFCBC851984A4281C23D34FC400445	1
+71	v1518	ark	Pamela				Bonifacio	1	0CFFCBC851984A4281C23D34FC400445	1
+72	v1519	arm	Marlon				Castillo	1	0CFFCBC851984A4281C23D34FC400445	1
+73	v1520	art	Kiara				Figuereo	1	0CFFCBC851984A4281C23D34FC400445	1
+74	v1521	ash	Nicole				Garcia	1	0CFFCBC851984A4281C23D34FC400445	1
+75	v1522	ask	Kiara				Gomez	1	0CFFCBC851984A4281C23D34FC400445	1
+76	v1523	ate	Nicola				Izzard	1	0CFFCBC851984A4281C23D34FC400445	1
+77	v1524	ave	Howard				Jiang	1	0CFFCBC851984A4281C23D34FC400445	1
+90	v1601	ahh	Ruben				Avalos	1	0CFFCBC851984A4281C23D34FC400445	1
+91	v1602	abs	Paula	Barbot			Santana	1	0CFFCBC851984A4281C23D34FC400445	1
+92	v1603	ace	Gregory				Dillon	1	0CFFCBC851984A4281C23D34FC400445	1
+93	v1604	add	Shaun				Doyle	1	0CFFCBC851984A4281C23D34FC400445	1
+94	v1605	aft	Joshua				Figueroa	1	0CFFCBC851984A4281C23D34FC400445	1
+95	v1606	ape	Diosmairi				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+96	v1607	and	Emely				Jimenez	1	0CFFCBC851984A4281C23D34FC400445	1
+97	v1608	aim	Genesis				Jimenez	1	0CFFCBC851984A4281C23D34FC400445	1
+98	v1609	aid	Sharon				Kelly	1	0CFFCBC851984A4281C23D34FC400445	1
+99	v1610	air	Maximo				Lebron	1	0CFFCBC851984A4281C23D34FC400445	1
+100	v1611	all	William				Lewandowski	1	0CFFCBC851984A4281C23D34FC400445	1
+259	v1923	bot	Luke				Breslin	1	0CFFCBC851984A4281C23D34FC400445	2
+249	v1913	ant	Diveah				Henry	1	0CFFCBC851984A4281C23D34FC400445	1
+250	v1914	app	Adam				Moore	1	0CFFCBC851984A4281C23D34FC400445	1
+251	v1915	apt	Jose				Morales	1	0CFFCBC851984A4281C23D34FC400445	1
+252	v1916	arc	Rachel				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+253	v1917	arf	Richel				Nunez	1	0CFFCBC851984A4281C23D34FC400445	1
+254	v1918	ark	Dasha				Rios	1	0CFFCBC851984A4281C23D34FC400445	1
+255	v1919	arm	Erik				Sanchez	1	0CFFCBC851984A4281C23D34FC400445	1
+256	v1920	art	Jaslin	Vasquez			Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+257	v1921	ash	Brandon				Alston	1	0CFFCBC851984A4281C23D34FC400445	1
+258	v1922	ask	Lily				Billarrial	1	0CFFCBC851984A4281C23D34FC400445	1
+134	v1701	ahh	Jared				Alston	1	0CFFCBC851984A4281C23D34FC400445	1
+135	v1702	abs	Celine				Beltran	1	0CFFCBC851984A4281C23D34FC400445	1
+136	v1703	ace	Tytiona				Booker	1	0CFFCBC851984A4281C23D34FC400445	1
+137	v1704	add	Donte				Burton	1	0CFFCBC851984A4281C23D34FC400445	1
+138	v1705	aft	Brandon				Castillo	1	0CFFCBC851984A4281C23D34FC400445	1
+139	v1706	ape	Waleska	Chaves			Quesada	1	0CFFCBC851984A4281C23D34FC400445	1
+140	v1707	and	Joshua	Dela			Cruz	1	0CFFCBC851984A4281C23D34FC400445	1
+141	v1708	aim	Ciennali				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+142	v1709	aid	Genesis				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+143	v1710	air	Angie				Gutierrez	1	0CFFCBC851984A4281C23D34FC400445	1
+144	v1711	all	Justine				Jones	1	0CFFCBC851984A4281C23D34FC400445	1
+145	v1712	amp	Jaden				Jordan	1	0CFFCBC851984A4281C23D34FC400445	1
+146	v1713	ant	Jesse	Magobet			Jr	1	0CFFCBC851984A4281C23D34FC400445	1
+147	v1714	app	Jordan				Medina	1	0CFFCBC851984A4281C23D34FC400445	1
+148	v1715	apt	Paola	Munoz			Navarro	1	0CFFCBC851984A4281C23D34FC400445	1
+149	v1716	arc	Tamthu				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+150	v1717	arf	Chaneli				Nolasco	1	0CFFCBC851984A4281C23D34FC400445	1
+151	v1718	ark	Aidan				Ramirez	1	0CFFCBC851984A4281C23D34FC400445	1
+152	v1719	arm	Victor				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+153	v1720	art	Evelyn				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+154	v1721	ash	Samir				Sullivan	1	0CFFCBC851984A4281C23D34FC400445	1
+186	v1801	ahh	Juan				Ayala	1	0CFFCBC851984A4281C23D34FC400445	1
+187	v1802	abs	Lanya				Bell	1	0CFFCBC851984A4281C23D34FC400445	1
+188	v1803	ace	Angel				Bernardy	1	0CFFCBC851984A4281C23D34FC400445	1
+189	v1804	add	Daniel				Diaz	1	0CFFCBC851984A4281C23D34FC400445	1
+190	v1805	aft	Stephanie				Donato	1	0CFFCBC851984A4281C23D34FC400445	1
+191	v1806	ape	Desmond				Dowling	1	0CFFCBC851984A4281C23D34FC400445	1
+192	v1807	and	Fabiana				Fred	1	0CFFCBC851984A4281C23D34FC400445	1
+193	v1808	aim	Ledyn				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+194	v1809	aid	Jonathan	Guerrero			Melchor	1	0CFFCBC851984A4281C23D34FC400445	1
+195	v1810	air	Isael				Jimenez	1	0CFFCBC851984A4281C23D34FC400445	1
+196	v1811	all	Jenny				Le	1	0CFFCBC851984A4281C23D34FC400445	1
+197	v1812	amp	Nicholas				Lewandowski	1	0CFFCBC851984A4281C23D34FC400445	1
+198	v1813	ant	Victor				Luna	1	0CFFCBC851984A4281C23D34FC400445	1
+199	v1814	app	Christopher				Martinez	1	0CFFCBC851984A4281C23D34FC400445	1
+200	v1815	apt	Miguel				Martinez	1	0CFFCBC851984A4281C23D34FC400445	1
+201	v1816	arc	Milagros				Mejia	1	0CFFCBC851984A4281C23D34FC400445	1
+202	v1817	arf	Christina				Negron	1	0CFFCBC851984A4281C23D34FC400445	1
+203	v1818	ark	Minh	Tai			Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+204	v1819	arm	Charil				Nolasco	1	0CFFCBC851984A4281C23D34FC400445	1
+205	v1820	art	Brian				Ramos	1	0CFFCBC851984A4281C23D34FC400445	1
+206	v1821	ash	Ashley				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+207	v1822	ask	Serenety				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+208	v1823	ate	Adrian				Terrero	1	0CFFCBC851984A4281C23D34FC400445	1
+209	v1824	ave	Cecilia				Valentin	1	0CFFCBC851984A4281C23D34FC400445	1
+210	v1825	awe	Adriana				Burgos	1	0CFFCBC851984A4281C23D34FC400445	1
+211	v1826	axe	Leilani				Burgos	1	0CFFCBC851984A4281C23D34FC400445	1
+212	v1827	aye	Fernando	Cargua			Buestan	1	0CFFCBC851984A4281C23D34FC400445	1
+213	v1828	ays	Miguel				Collazo	1	0CFFCBC851984A4281C23D34FC400445	1
+214	v1829	baa	Karina				Cotto	1	0CFFCBC851984A4281C23D34FC400445	1
+215	v1830	bit	Jefferson				Delorbe	1	0CFFCBC851984A4281C23D34FC400445	1
+216	v1831	bag	Reece	Gibson			Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+242	v1906	ape	Tam				Lee	1	0CFFCBC851984A4281C23D34FC400445	1
+243	v1907	and	Lesly				Ceballos	1	0CFFCBC851984A4281C23D34FC400445	1
+244	v1908	aim	Bryan				Delorbe	1	0CFFCBC851984A4281C23D34FC400445	1
+245	v1909	aid	Daniel				DelRosario	1	0CFFCBC851984A4281C23D34FC400445	1
+246	v1910	air	Phoenix				Diaz	1	0CFFCBC851984A4281C23D34FC400445	1
+247	v1911	all	Christ				Guzman	1	0CFFCBC851984A4281C23D34FC400445	1
+248	v1912	amp	Destiny				Haley	1	0CFFCBC851984A4281C23D34FC400445	1
+260	v1924	ave	Genesis				Castro	1	0CFFCBC851984A4281C23D34FC400445	1
+261	v1925	awe	Edwin	Colon			III	1	0CFFCBC851984A4281C23D34FC400445	1
+262	v1926	axe	Carlos				Diaz	1	0CFFCBC851984A4281C23D34FC400445	1
+263	v1927	aye	Zamantha				Garro	1	0CFFCBC851984A4281C23D34FC400445	1
+264	v1928	ays	Gabriella	Gibson			Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+265	v1929	baa	James				Harris	1	0CFFCBC851984A4281C23D34FC400445	1
+266	v1930	bit	Matthew	Lampert			Dimperio	1	0CFFCBC851984A4281C23D34FC400445	1
+267	v1931	bag	Mya				Lowry	1	0CFFCBC851984A4281C23D34FC400445	1
+268	v1932	bam	Isabel				Lugo	1	0CFFCBC851984A4281C23D34FC400445	1
+269	v1933	ban	Jada				Mack	1	0CFFCBC851984A4281C23D34FC400445	1
+270	v1934	bap	Carleigh				Marsilio	1	0CFFCBC851984A4281C23D34FC400445	1
+271	v1935	bar	Lamanh				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+272	v1936	bat	Tamthi				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+273	v1937	bay	Nicholas	Nguyen			Do	1	0CFFCBC851984A4281C23D34FC400445	1
+274	v1938	bed	Aldo				Rodriguez	1	0CFFCBC851984A4281C23D34FC400445	1
+275	v1939	bee	Joshua				Rojas	1	0CFFCBC851984A4281C23D34FC400445	1
+276	v1940	beg	Ricardo				Taveras	1	0CFFCBC851984A4281C23D34FC400445	1
+277	v1941	ben	Quan				Tran	1	0CFFCBC851984A4281C23D34FC400445	1
+278	v1942	bet	Imani				Velazquez	1	0CFFCBC851984A4281C23D34FC400445	1
+279	v1943	bib	Michael				Zelaya	1	0CFFCBC851984A4281C23D34FC400445	1
+280	v1944	big	Ethan				Garcia	1	0CFFCBC851984A4281C23D34FC400445	1
+281	v1945	big	Carlos				Jovel	1	0CFFCBC851984A4281C23D34FC400445	1
+282	v1946	bag	Suzi				Lin	1	0CFFCBC851984A4281C23D34FC400445	1
+283	v1947	bet	Astrid				Cordero	1	0CFFCBC851984A4281C23D34FC400445	1
+284	v1948	ben	Christian				Perez	1	0CFFCBC851984A4281C23D34FC400445	1
+285	v1949	abc	Omar				Balouch	1	0CFFCBC851984A4281C23D34FC400445	1
+286	v1950	bat	Nathaniel				Hamilton	1	0CFFCBC851984A4281C23D34FC400445	1
+287	v1951	cat	Ahmir				Porter	1	0CFFCBC851984A4281C23D34FC400445	1
+288	v1952	cat	Joseph				Mejia	1	0CFFCBC851984A4281C23D34FC400445	1
+290	v2001	ahh	Yandel				Alvarez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+291	v2002	abs	Shadir				Brown	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+292	v2003	ace	Eliyah				Clark	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+293	v2004	add	Richard	Compres			Taveras	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+294	v2005	aft	Amirrah				Conde	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+295	v2006	ape	Patrick				Daly	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+296	v2007	and	Leanny				Delacruz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+297	v2008	aim	Elijah				Desamour	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+298	v2009	aid	Allessandra				Lilo	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+299	v2010	air	Lamir				Moore	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+300	v2011	all	Brianna	Munoz			Navarro	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+301	v2012	amp	Gabriella				Mystil	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+302	v2013	ant	Devin				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+303	v2014	app	He				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+304	v2015	apt	Frank	Nguyen			Do	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+305	v2016	arc	Jordan				Pipkin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+306	v2017	arf	Unique				Rodriquez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+307	v2018	ark	Alex				Santiago	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+308	v2019	arm	Jesus				Terreforte	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+237	v1901	ahh	Angelis				Bernardy	1	0CFFCBC851984A4281C23D34FC400445	1
+238	v1902	abs	Julio				Bristol	1	0CFFCBC851984A4281C23D34FC400445	1
+239	v1903	ace	Rafael	Cargua			Buestan	1	0CFFCBC851984A4281C23D34FC400445	1
+240	v1904	add	Alexander				Caseres	1	0CFFCBC851984A4281C23D34FC400445	1
+241	v1905	aft	Luis				Caseres	1	0CFFCBC851984A4281C23D34FC400445	1
+309	v2020	art	Donathan				Truong	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+310	v2021	ash	Alex				Acevedo	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+311	v2022	ask	Zeannalie				Bobe	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+312	v2023	ate	Desiray				Cartegna	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+313	v2024	ave	Jasnelly				Castillo	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+314	v2025	awe	Randy				Ceballos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+315	v2026	axe	Jason	Compres			Taveras	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+316	v2027	aye	Crystal				Conway	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+317	v2028	ays	Antonio				Delvalle	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+318	v2029	baa	Jaelynn				Garcia	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+319	v2030	bit	Christian				Gonzalez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+320	v2031	bag	Daniel				Le	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+321	v2032	bam	Lymari				Loftus	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+322	v2033	ban	Lilah				Martinez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+323	v2034	bap	Joshua				Mcafee	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+324	v2035	bar	Faith				Mendendez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+325	v2036	bat	Adrianna				Morales	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+326	v2037	bay	Diego				Morales	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+327	v2038	bed	Danny				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+328	v2039	bee	Chaveliz	Reyes			Pacheco	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+329	v2040	beg	Kalah				Rosario	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+330	v2041	ben	Alexis				Sanchez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+331	v2042	bet	Antonio				Santiago	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+332	v2043	bib	Isis				Torres	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+333	v2044	bib	Jaden				Camillo	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+334	v2045	bib	Allan				Ortiz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+335	v2046	bib	Mariah				Alicea	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+336	v2047	bib	Shawnese				Kervin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+337	v2048	bib	Bre				Rivera	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+338	v2049	bib	Hugh				Lin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+339	v2050	cat	David				Amigon	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+340	v2051	cat	Aryana				Rosario	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+341	v2101	ahh	Kayla				Aponte	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+342	v2102	abs	Julian				Aviles	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+343	v2103	ace	Yvanna				Burgos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+344	v2104	add	Yanely				Collado	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+345	v2105	aft	Anthony				Colon	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+346	v2106	ape	Marielis				Colon	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+347	v2107	and	John				Colon	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+348	v2108	aim	Michael				Colon	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+349	v2109	aid	Ebrianna				Cruz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+350	v2110	air	Klaritza				Delarosa	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+351	v2111	all	Michael				Delorbe	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+352	v2112	amp	Yurielis				Delorbe	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+353	v2113	ant	Genesis				Galvez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+354	v2114	app	Nelson				Garcia	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+355	v2115	apt	Melaney				Gonzalez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+356	v2116	arc	Azora				Goodwin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+357	v2117	arf	Heaven				Hernandez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+358	v2118	ark	Francis				Hillsee	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+359	v2119	arm	Paula				Jarmul	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+360	v2120	art	Alexis	Tina			McLeod	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+361	v2121	ash	Guy	Mystil			III	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+362	v2122	ask	Devin				Nugyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+363	v2123	ate	Miaizabella				Nicasio	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+364	v2124	ave	Alina				Ortiz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+365	v2125	awe	Siani				Pagan	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+366	v2126	axe	Edgardo				Rivera	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+367	v2127	aye	Chastity				Rivera	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+368	v2128	ays	Nicholas				Torres	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+369	v2129	baa	Jayzn				Vargas	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+370	v2130	bit	Kirian	Vargas			Calcano	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+371	v2131	bag	Lianna				Adames	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+372	v2132	bam	Guadalupe				Avalos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+373	v2133	ban	Jesus	Avalos			Jr	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+374	v2134	bap	Mariah				Bristol	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+375	v2135	bar	Amairlys				Caseras	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+376	v2136	bat	Catherine				Cortez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+377	v2137	bay	Samara				Cruz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+378	v2138	bed	Millie				Delorbe	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+379	v2139	bee	Luz				Delvalle	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+380	v2140	beg	Kaydence				Dillon	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+381	v2141	ben	Brayner				Estevez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+382	v2142	bet	Javier				Garcia	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+383	v2143	bib	Michael				German	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+384	v2144	bid	Bo				Greenfield	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+385	v2145	big	India	Mari	Izzard		Salas	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+386	v2146	bin	Wilgerleez	Mercedes			Marte	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+387	v2147	bio	Giaminh				Nuguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+388	v2148	bio	Danny				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+389	v2149	bio	Javier				Oquendo	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+390	v2150	bio	Marcos				Perez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+391	v2151	bio	Duy				Pham	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+392	v2152	bio	Reinayah				Ramos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+393	v2153	bio	Israel				Santiago	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+394	v2154	bio	Jenavi				Severino	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+395	v2155	bio	Justin	Suchite			Velazquez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+396	v2156	bio	Emilio				Tapia	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+397	v2201	ahh	Christopher				Barton	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+398	v2202	abc	Zuyanah				Berdicia	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+399	v2203	ace	Albert				Bobe	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+400	v2204	add	Jaavon				Brown	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+401	v2205	aft	Iris				Castro	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+402	v2206	ape	Jasmine				Castro	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+403	v2207	and	Leah				Castro	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+404	v2208	aim	Liany				Collado	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+405	v2209	aid	Michael				Do	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+406	v2210	air	Zabriana				Garro	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+407	v2211	all	Tanya				Lin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+408	v2212	amp	Devin				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+409	v2213	ant	Ny				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+410	v2214	app	Jason				Nieves	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+411	v2215	apt	Jeremiah				Ortiz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+412	v2216	arc	Anthony				Pham	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+413	v2217	arf	Kiera				Reilly	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+414	v2218	ark	Elijah				Rios	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+415	v2219	arm	Edgardo				Rivera	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+416	v2220	art	Madison				Rodriquez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+417	v2221	ash	Adrian				Rodriquez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+418	v2222	ask	Alejandro				Santiago	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+419	v2223	big	Selene				Torres	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+420	v2224	ave	Jennelyce				Valera	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+421	v2225	awe	Dominis				Zapata	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+422	v2226	axe	Marcus				Alicea	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+423	v2227	aye	Ailany				Asencio	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+424	v2228	ays	Luigi				Baez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+425	v2229	baa	Mariah				Bristol	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+426	v2230	bit	Emilia				Burgos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+427	v2231	bag	Yamel				Burgos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+428	v2232	bam	Juan				Delarosa	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+429	v2233	ban	Luz				Delvalle	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+430	v2234	bap	LOuverture				Desamour	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+431	v2235	bar	Azavier				Gonzalez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+432	v2236	bat	Maya				Jarmul	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+433	v2237	bay	Sean				Lopez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+434	v2238	bed	Larissa				Mejia	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+435	v2239	bee	Paola				Montiel	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+436	v2240	beg	Michael				Moore	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+437	v2241	ben	Genesis				Morales	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+438	v2242	bet	Danny				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+439	v2243	bib	Giaminh				Nguyen	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+440	v2244	bid	Rodney				Montiz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+441	v2245	big	Serenity				Montiz	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+442	v2246	bin	Serenity				Rodriquez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+443	v2247	bio	Aiden				Smith	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+444	v2248	big	Haylee				Trinh	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+445	v2249	cat	Sashalynn				Alicea	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+446	v2250	bat	David				Andujar	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+447	v2251	hat	Rashad				Burgess	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+448	v2252	sat	Dan				Doan	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+449	v2253	bat	Jan				Gomez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+450	v2254	cat	Imani				Hansberry	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+451	v2255	cat	Chloe				Mack	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+452	v2256	cat	Alyssa				Mao	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+453	v2257	sat	Lisnett				Nolasco	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+454	v2258	cat	Elmer				Peralta	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+455	v2259	bat	Ryan				Perfidio	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+456	v2260	cat	Aiden				Quin	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+457	v2261	bat	Connor				Rivera	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+458	v2262	cat	Giana				Rodriquez	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+459	v2263	cat	Ricardo				Santos	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+460	v2264	bat	Kristian				Serrano	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+461	v2265	cat	Mya				Torres	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+462	v2266	cat	Anna				Van	1	CA9EE2E34F384E95A5FA26769C5864B8	1
+8	v1402	abs	Damyer				Batties	1	0CFFCBC851984A4281C23D34FC400445	1
+9	v1403	ace	Johnson				Chieu	1	0CFFCBC851984A4281C23D34FC400445	1
+10	v1404	add	Carina				Cintron	1	0CFFCBC851984A4281C23D34FC400445	1
+11	v1405	aft	Edward	Clark			Jr	1	0CFFCBC851984A4281C23D34FC400445	1
+12	v1406	ape	Michael				Colon	1	0CFFCBC851984A4281C23D34FC400445	1
+13	v1407	and	Annalyse				Feliciano	1	0CFFCBC851984A4281C23D34FC400445	1
+14	v1408	aim	Khayree				Hurst	1	0CFFCBC851984A4281C23D34FC400445	1
+15	v1409	aid	Oscar	Lomeli			Avalos	1	0CFFCBC851984A4281C23D34FC400445	1
+16	v1410	air	Alex	Lopez			Pineda	1	0CFFCBC851984A4281C23D34FC400445	1
+17	v1411	all	Curtis				McCoy	1	0CFFCBC851984A4281C23D34FC400445	1
+18	v1412	amp	Junior	Tommy			Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+19	v1413	ant	Richard				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+20	v1414	app	Ashley				Norwood	1	0CFFCBC851984A4281C23D34FC400445	1
+21	v1415	apt	Yamilex				Ortiz	1	0CFFCBC851984A4281C23D34FC400445	1
+22	v1416	arc	Christina				Perez	1	0CFFCBC851984A4281C23D34FC400445	1
+23	v1417	arf	Melanie				Posada	1	0CFFCBC851984A4281C23D34FC400445	1
+24	v1418	ark	Briana				Poulterer	1	0CFFCBC851984A4281C23D34FC400445	1
+25	v1419	arm	Darien				Quinones	1	0CFFCBC851984A4281C23D34FC400445	1
+26	v1420	art	Roberto				Ramos	1	0CFFCBC851984A4281C23D34FC400445	1
+27	v1421	ash	Jasmin				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+28	v1422	ask	Cindy				Trinidad	1	0CFFCBC851984A4281C23D34FC400445	1
+29	v1423	ate	Jasibel				Vasquez-Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+30	v1424	ave	Andres				Adames	1	0CFFCBC851984A4281C23D34FC400445	1
+31	v1425	awe	Nashyra				Burgess	1	0CFFCBC851984A4281C23D34FC400445	1
+32	v1426	axe	Jose				Burgos	1	0CFFCBC851984A4281C23D34FC400445	1
+33	v1427	aye	Lucilenny				Florentino	1	0CFFCBC851984A4281C23D34FC400445	1
+34	v1428	ays	Frailyn				Francisco	1	0CFFCBC851984A4281C23D34FC400445	1
+35	v1429	baa	Kastiani	Gonzalez			Solano	1	0CFFCBC851984A4281C23D34FC400445	1
+36	v1430	bit	Johnny				Hua	1	0CFFCBC851984A4281C23D34FC400445	1
+37	v1431	bag	Shu				Lin	1	0CFFCBC851984A4281C23D34FC400445	1
+38	v1432	bam	Jennifer				Morales	1	0CFFCBC851984A4281C23D34FC400445	1
+39	v1433	ban	Rafael				Ortiz	1	0CFFCBC851984A4281C23D34FC400445	1
+40	v1434	bap	Caroline				Pena	1	0CFFCBC851984A4281C23D34FC400445	1
+41	v1435	bar	Jason				Ramirez	1	0CFFCBC851984A4281C23D34FC400445	1
+42	v1436	bat	Tiffany				Ramirez	1	0CFFCBC851984A4281C23D34FC400445	1
+43	v1437	bay	Tommy				Ramos	1	0CFFCBC851984A4281C23D34FC400445	1
+44	v1438	bed	Martin				Redanauer	1	0CFFCBC851984A4281C23D34FC400445	1
+45	v1439	bee	Joseph				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+46	v1440	beg	Alexis				Rodriquez	1	0CFFCBC851984A4281C23D34FC400445	1
+47	v1441	ben	Emanuel				Rodriquez	1	0CFFCBC851984A4281C23D34FC400445	1
+48	v1442	bet	Isaura				Sanguinetti	1	0CFFCBC851984A4281C23D34FC400445	1
+49	v1443	bib	Vitylia				Santigo	1	0CFFCBC851984A4281C23D34FC400445	1
+50	v1444	bid	Kylik				Taylor	1	0CFFCBC851984A4281C23D34FC400445	1
+51	v1445	big	Luis				Torres	1	0CFFCBC851984A4281C23D34FC400445	1
+52	v1446	bin	Caroline				Trinidad	1	0CFFCBC851984A4281C23D34FC400445	1
+53	v1447	bee	Mayralee				Maldonado	1	0CFFCBC851984A4281C23D34FC400445	1
+78	v1525	awe	Neshaiyah				Loney	1	0CFFCBC851984A4281C23D34FC400445	1
+79	v1526	axe	Luis				Maldonado	1	0CFFCBC851984A4281C23D34FC400445	1
+80	v1527	aye	Ashley				Meregildo	1	0CFFCBC851984A4281C23D34FC400445	1
+81	v1528	ays	An				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+82	v1529	baa	Marilee				Reyes	1	0CFFCBC851984A4281C23D34FC400445	1
+83	v1530	bit	Nathaniel				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+84	v1531	bag	Christian				Rojas	1	0CFFCBC851984A4281C23D34FC400445	1
+85	v1532	bam	Christina	Marie			Santana	1	0CFFCBC851984A4281C23D34FC400445	1
+86	v1533	ban	Joseph				Wetherill	1	0CFFCBC851984A4281C23D34FC400445	1
+87	v1534	bag	Chuong				Pham	1	0CFFCBC851984A4281C23D34FC400445	1
+88	v1535	bat	Deja				Mason	1	0CFFCBC851984A4281C23D34FC400445	1
+89	v1536	bat	Hunter				Doan	1	0CFFCBC851984A4281C23D34FC400445	1
+155	v1722	ask	Jonathan	E			Torres	1	0CFFCBC851984A4281C23D34FC400445	1
+156	v1723	ate	Nataly				Torres	1	0CFFCBC851984A4281C23D34FC400445	1
+157	v1724	ave	Wilson				Torres	1	0CFFCBC851984A4281C23D34FC400445	1
+158	v1725	awe	Tattianna				Zelaya	1	0CFFCBC851984A4281C23D34FC400445	1
+159	v1726	axe	Jonathan	A			Torres	1	0CFFCBC851984A4281C23D34FC400445	1
+160	v1727	aye	Yassel				Baez	1	0CFFCBC851984A4281C23D34FC400445	1
+161	v1728	ays	Marina				Burgos	1	0CFFCBC851984A4281C23D34FC400445	1
+162	v1729	baa	Richard				Cintron	1	0CFFCBC851984A4281C23D34FC400445	1
+163	v1730	bit	Aryana				Colon	1	0CFFCBC851984A4281C23D34FC400445	1
+164	v1731	bag	Meira				Coston	1	0CFFCBC851984A4281C23D34FC400445	1
+165	v1732	bam	Ollie				Days	1	0CFFCBC851984A4281C23D34FC400445	1
+166	v1733	ban	Louis				Delvalle	1	0CFFCBC851984A4281C23D34FC400445	1
+167	v1734	bap	Britney				Do	1	0CFFCBC851984A4281C23D34FC400445	1
+168	v1735	bar	Jack				Flynn	1	0CFFCBC851984A4281C23D34FC400445	1
+169	v1736	bat	Gisselle				Gerena	1	0CFFCBC851984A4281C23D34FC400445	1
+170	v1737	bay	Nicholas				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+171	v1738	bed	Nicole				Gonzalez	1	0CFFCBC851984A4281C23D34FC400445	1
+172	v1739	bee	Serenity				Haley	1	0CFFCBC851984A4281C23D34FC400445	1
+173	v1740	beg	Gianna				Hernandez	1	0CFFCBC851984A4281C23D34FC400445	1
+174	v1741	ben	Sameer				Hill	1	0CFFCBC851984A4281C23D34FC400445	1
+175	v1742	bet	Jason				Hua	1	0CFFCBC851984A4281C23D34FC400445	1
+176	v1743	bib	Natavia				Lewis	1	0CFFCBC851984A4281C23D34FC400445	1
+177	v1744	bid	Najalie				Medina	1	0CFFCBC851984A4281C23D34FC400445	1
+178	v1745	big	Annalley				Portillo	1	0CFFCBC851984A4281C23D34FC400445	1
+179	v1746	bin	Jorden				Richards	1	0CFFCBC851984A4281C23D34FC400445	1
+180	v1747	bip	Jaslin				Seck	1	0CFFCBC851984A4281C23D34FC400445	1
+181	v1748	bip	Vy				Nuguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+182	v1749	bio	William				Santana	1	0CFFCBC851984A4281C23D34FC400445	1
+183	v1750	bit	Floridei				Jovel	1	0CFFCBC851984A4281C23D34FC400445	1
+184	v1751	bin	Calvin				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+185	v1752	bin	Alexander				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+120	v1631	bag	Robert				Hiciano	1	0CFFCBC851984A4281C23D34FC400445	1
+121	v1632	bam	Destiny				Knight	1	0CFFCBC851984A4281C23D34FC400445	1
+122	v1633	ban	Francis	Lowry			III	1	0CFFCBC851984A4281C23D34FC400445	1
+123	v1634	bap	Destiny	Ngo			Maysonet	1	0CFFCBC851984A4281C23D34FC400445	1
+124	v1635	bar	Randy				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+125	v1636	bat	Andres				Perez	1	0CFFCBC851984A4281C23D34FC400445	1
+126	v1637	bay	Hailey				Ramirez	1	0CFFCBC851984A4281C23D34FC400445	1
+127	v1638	bed	Anthony				Rivera	1	0CFFCBC851984A4281C23D34FC400445	1
+128	v1639	bee	Alexandra				Rodriguez	1	0CFFCBC851984A4281C23D34FC400445	1
+129	v1642	bet	Anna				Truong	1	0CFFCBC851984A4281C23D34FC400445	1
+130	v1643	bit	Amber				Diaz	1	0CFFCBC851984A4281C23D34FC400445	1
+131	v1644	bit	Marcos				Alexander	1	0CFFCBC851984A4281C23D34FC400445	1
+132	v1645	bit	Bryan				Doan	1	0CFFCBC851984A4281C23D34FC400445	1
+133	v1646	bit	Sandra				Nguyen	1	0CFFCBC851984A4281C23D34FC400445	1
+289	v1953	cat	Lyanelis				Oquendo	1	0CFFCBC851984A4281C23D34FC400445	1
 \.
 
 
@@ -3261,95 +1375,7 @@ COPY users (id, username, password, first_name, middle_name1, middle_name2, midd
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, false);
-
-
---
--- Name: addition_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY addition
-    ADD CONSTRAINT addition_pkey PRIMARY KEY (id);
-
-
---
--- Name: clusters_cluster_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY clusters
-    ADD CONSTRAINT clusters_cluster_key UNIQUE (cluster);
-
-
---
--- Name: clusters_domains_grades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY clusters_domains_grades
-    ADD CONSTRAINT clusters_domains_grades_pkey PRIMARY KEY (id);
-
-
---
--- Name: clusters_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY clusters
-    ADD CONSTRAINT clusters_pkey PRIMARY KEY (id);
-
-
---
--- Name: counting_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY counting
-    ADD CONSTRAINT counting_pkey PRIMARY KEY (id);
-
-
---
--- Name: division_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY division
-    ADD CONSTRAINT division_pkey PRIMARY KEY (id);
-
-
---
--- Name: domains_domain_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY domains
-    ADD CONSTRAINT domains_domain_key UNIQUE (domain);
-
-
---
--- Name: domains_grades_domain_id_grade_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY domains_grades
-    ADD CONSTRAINT domains_grades_domain_id_grade_id_key UNIQUE (domain_id, grade_id);
-
-
---
--- Name: domains_grades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY domains_grades
-    ADD CONSTRAINT domains_grades_pkey PRIMARY KEY (id);
-
-
---
--- Name: domains_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY domains
-    ADD CONSTRAINT domains_pkey PRIMARY KEY (id);
-
-
---
--- Name: domains_subjects_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY domains_subjects
-    ADD CONSTRAINT domains_subjects_pkey PRIMARY KEY (domain_id, subject_id);
+SELECT pg_catalog.setval('users_id_seq', 462, true);
 
 
 --
@@ -3358,70 +1384,6 @@ ALTER TABLE ONLY domains_subjects
 
 ALTER TABLE ONLY error_log
     ADD CONSTRAINT error_log_pkey PRIMARY KEY (id);
-
-
---
--- Name: games_attempts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY games_attempts
-    ADD CONSTRAINT games_attempts_pkey PRIMARY KEY (id);
-
-
---
--- Name: games_game_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY games
-    ADD CONSTRAINT games_game_key UNIQUE (game);
-
-
---
--- Name: games_levels_dungeon_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY games_levels_dungeon
-    ADD CONSTRAINT games_levels_dungeon_pkey PRIMARY KEY (id);
-
-
---
--- Name: games_levels_level_id_game_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY games_levels
-    ADD CONSTRAINT games_levels_level_id_game_id_key UNIQUE (level_id, game_id);
-
-
---
--- Name: games_levels_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY games_levels
-    ADD CONSTRAINT games_levels_pkey PRIMARY KEY (id);
-
-
---
--- Name: games_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY games
-    ADD CONSTRAINT games_pkey PRIMARY KEY (id);
-
-
---
--- Name: grades_grade_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY grades
-    ADD CONSTRAINT grades_grade_key UNIQUE (grade);
-
-
---
--- Name: grades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY grades
-    ADD CONSTRAINT grades_pkey PRIMARY KEY (id);
 
 
 --
@@ -3441,75 +1403,19 @@ ALTER TABLE ONLY learning_standards
 
 
 --
+-- Name: learningstandards_refid_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY learningstandards
+    ADD CONSTRAINT learningstandards_refid_key UNIQUE (refid);
+
+
+--
 -- Name: levelattempts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY levelattempts
     ADD CONSTRAINT levelattempts_pkey PRIMARY KEY (id);
-
-
---
--- Name: levels_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels
-    ADD CONSTRAINT levels_id_key UNIQUE (id);
-
-
---
--- Name: levels_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels
-    ADD CONSTRAINT levels_pkey PRIMARY KEY (id);
-
-
---
--- Name: levels_standards_clusters_domains_grades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels_standards_clusters_domains_grades
-    ADD CONSTRAINT levels_standards_clusters_domains_grades_pkey PRIMARY KEY (level_id, standard_cluster_domain_grade_id);
-
-
---
--- Name: levels_standards_level_id_standard_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels_standards
-    ADD CONSTRAINT levels_standards_level_id_standard_id_key UNIQUE (level_id, standard_id);
-
-
---
--- Name: levels_standards_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels_standards
-    ADD CONSTRAINT levels_standards_pkey PRIMARY KEY (id);
-
-
---
--- Name: levels_transactions_advancement_time_level_id_user_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels_transactions
-    ADD CONSTRAINT levels_transactions_advancement_time_level_id_user_id_key UNIQUE (advancement_time, level_id, user_id);
-
-
---
--- Name: levels_transactions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY levels_transactions
-    ADD CONSTRAINT levels_transactions_pkey PRIMARY KEY (id);
-
-
---
--- Name: multiplication_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY multiplication
-    ADD CONSTRAINT multiplication_pkey PRIMARY KEY (id);
 
 
 --
@@ -3529,78 +1435,6 @@ ALTER TABLE ONLY passwords
 
 
 --
--- Name: permissions_permission_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY permissions
-    ADD CONSTRAINT permissions_permission_key UNIQUE (permission);
-
-
---
--- Name: permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY permissions
-    ADD CONSTRAINT permissions_pkey PRIMARY KEY (id);
-
-
---
--- Name: permissions_users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY permissions_users
-    ADD CONSTRAINT permissions_users_pkey PRIMARY KEY (permission_id, user_id);
-
-
---
--- Name: questions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY questions
-    ADD CONSTRAINT questions_pkey PRIMARY KEY (id);
-
-
---
--- Name: rooms_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY rooms
-    ADD CONSTRAINT rooms_pkey PRIMARY KEY (id);
-
-
---
--- Name: rooms_school_id_room_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY rooms
-    ADD CONSTRAINT rooms_school_id_room_key UNIQUE (school_id, room);
-
-
---
--- Name: rooms_school_id_room_key1; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY rooms
-    ADD CONSTRAINT rooms_school_id_room_key1 UNIQUE (school_id, room);
-
-
---
--- Name: rooms_school_id_room_key2; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY rooms
-    ADD CONSTRAINT rooms_school_id_room_key2 UNIQUE (school_id, room);
-
-
---
--- Name: rooms_school_id_room_key3; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY rooms
-    ADD CONSTRAINT rooms_school_id_room_key3 UNIQUE (school_id, room);
-
-
---
 -- Name: schools_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -3617,67 +1451,11 @@ ALTER TABLE ONLY schools
 
 
 --
--- Name: standards_clusters_domains_gr_standard_id_cluster_domain_gr_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY standards_clusters_domains_grades
-    ADD CONSTRAINT standards_clusters_domains_gr_standard_id_cluster_domain_gr_key UNIQUE (standard_id, cluster_domain_grade_id);
-
-
---
--- Name: standards_clusters_domains_grades_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY standards_clusters_domains_grades
-    ADD CONSTRAINT standards_clusters_domains_grades_pkey PRIMARY KEY (id);
-
-
---
--- Name: standards_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY standards
-    ADD CONSTRAINT standards_pkey PRIMARY KEY (id);
-
-
---
--- Name: standards_standard_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY standards
-    ADD CONSTRAINT standards_standard_key UNIQUE (standard);
-
-
---
 -- Name: students_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
 
 ALTER TABLE ONLY students
     ADD CONSTRAINT students_pkey PRIMARY KEY (id);
-
-
---
--- Name: subjects_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY subjects
-    ADD CONSTRAINT subjects_pkey PRIMARY KEY (id);
-
-
---
--- Name: subjects_subject_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY subjects
-    ADD CONSTRAINT subjects_subject_key UNIQUE (subject);
-
-
---
--- Name: subtraction_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY subtraction
-    ADD CONSTRAINT subtraction_pkey PRIMARY KEY (id);
 
 
 --
@@ -3702,94 +1480,6 @@ ALTER TABLE ONLY users
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_username_school_id_key UNIQUE (username, school_id);
-
-
---
--- Name: domains_grades_domain_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY domains_grades
-    ADD CONSTRAINT domains_grades_domain_id_fkey FOREIGN KEY (domain_id) REFERENCES domains(id);
-
-
---
--- Name: domains_grades_grade_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY domains_grades
-    ADD CONSTRAINT domains_grades_grade_id_fkey FOREIGN KEY (grade_id) REFERENCES grades(id);
-
-
---
--- Name: domains_subjects_domain_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY domains_subjects
-    ADD CONSTRAINT domains_subjects_domain_id_fkey FOREIGN KEY (domain_id) REFERENCES domains(id);
-
-
---
--- Name: domains_subjects_subject_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY domains_subjects
-    ADD CONSTRAINT domains_subjects_subject_id_fkey FOREIGN KEY (subject_id) REFERENCES subjects(id);
-
-
---
--- Name: games_attempts_level_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games_attempts
-    ADD CONSTRAINT games_attempts_level_id_fkey FOREIGN KEY (level_id) REFERENCES levels(id);
-
-
---
--- Name: games_levels_game_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games_levels
-    ADD CONSTRAINT games_levels_game_id_fkey FOREIGN KEY (game_id) REFERENCES games(id);
-
-
---
--- Name: games_levels_level_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY games_levels
-    ADD CONSTRAINT games_levels_level_id_fkey FOREIGN KEY (level_id) REFERENCES levels(id);
-
-
---
--- Name: levels_standards_level_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY levels_standards
-    ADD CONSTRAINT levels_standards_level_id_fkey FOREIGN KEY (level_id) REFERENCES levels(id);
-
-
---
--- Name: levels_standards_standard_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY levels_standards
-    ADD CONSTRAINT levels_standards_standard_id_fkey FOREIGN KEY (standard_id) REFERENCES standards(id);
-
-
---
--- Name: levels_transactions_level_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY levels_transactions
-    ADD CONSTRAINT levels_transactions_level_id_fkey FOREIGN KEY (level_id) REFERENCES levels(id);
-
-
---
--- Name: permissions_users_permission_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY permissions_users
-    ADD CONSTRAINT permissions_users_permission_id_fkey FOREIGN KEY (permission_id) REFERENCES permissions(id);
 
 
 --

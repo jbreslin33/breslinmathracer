@@ -63,7 +63,6 @@ Extends: InputPad,
 
         showQuestion: function()
         {
-				this.mApplication.log('aaaaa');
                 if (this.mApplication.mGame.mQuiz)
                 {
                         if (this.mApplication.mGame.mQuiz.getQuestion())
