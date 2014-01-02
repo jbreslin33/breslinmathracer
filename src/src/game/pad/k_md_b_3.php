@@ -21,6 +21,9 @@ Extends: Pad,
 
 		//move buttons
 		this.mInputPad.mButtonA.setPosition(100,100);
+
+		//correctAnswers
+
 	},
 
 	destroyShapes: function()
@@ -78,6 +81,20 @@ Extends: Pad,
                 }
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
+
+		for (i = 0; i < this.mScoreNeeded; i++)
+		{
+			var correctAnswerElement = Math.floor((Math.random()*3));
+
+			var question = new Question('What has the most?','kids');
+			var question.setChoice('A','girafes');
+			var question.setChoice('B','kids');
+			var question.setChoice('C','red monsters');
+			var question.setChoice('D','feathers');
+			this.mQuiz.mQuestionArray.push(question);
+		}
+
+/*
 
 		//tall
 		var question = new Question('What has the most?','kids');
@@ -144,7 +161,7 @@ Extends: Pad,
 		question.setChoice('A','light');
 		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-
+*/
 		this.createQuestionShapes();
 	},
 
