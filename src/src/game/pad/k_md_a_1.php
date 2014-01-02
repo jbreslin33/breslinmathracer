@@ -63,16 +63,30 @@ Extends: Pad,
         {
 		this.parent();
 
-		//add
+		//tall
 		var question = new Question('What is this?','tall');
 		question.setChoice('A','tall');
 		question.setChoice('B','short');
+		this.mQuiz.mQuestionArray.push(question);
+	
+		//short	
+		var question = new Question('What is this?','short');
+		question.setChoice('A','tall');
+		question.setChoice('B','short');
+		this.mQuiz.mQuestionArray.push(question);
+
+		//heavy
+		var question = new Question('What is this?','heavy');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//light
+		var question = new Question('What is this?','light');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
+	
 
 		this.createQuestionShapes();
 	},
@@ -81,6 +95,8 @@ Extends: Pad,
 	{
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
+                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
                 	
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
@@ -88,6 +104,9 @@ Extends: Pad,
                		this.mShapeArray[i].mCollidable = false;
                		this.mShapeArray[i].mCollisionOn = false;
 		}	
+		
+		this.setScoreNeeded(this.mShapeArray.length);
+
 	},
 
 	//state overides
