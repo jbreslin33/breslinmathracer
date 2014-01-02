@@ -71,64 +71,64 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//tall
+		//1 tall
 		var question = new Question('','is more tall than');
 		question.setChoice('A','is more tall than');
 		question.setChoice('B','is more short than');
 		this.mQuiz.mQuestionArray.push(question);
 	
-		//short	
+		//2 short	
 		var question = new Question('','is more short than');
 		question.setChoice('A','is more tall than');
 		question.setChoice('B','is more short than');
 		this.mQuiz.mQuestionArray.push(question);
 
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//3 heavy
+		var question = new Question('','is more heavy than');
+		question.setChoice('A','is more light than');
+		question.setChoice('B','is more heavy than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//4 light
+		var question = new Question('','is more light than');
+		question.setChoice('A','is more light than');
+		question.setChoice('B','is more heavy than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//5 short	
+		var question = new Question('','is more short than');
+		question.setChoice('A','is more tall than');
+		question.setChoice('B','is more short than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//6 light
+		var question = new Question('','is more light than');
+		question.setChoice('A','is more light than');
+		question.setChoice('B','is more heavy than');
 		this.mQuiz.mQuestionArray.push(question);
 
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//7 heavy
+		var question = new Question('','is more heavy than');
+		question.setChoice('A','is more light than');
+		question.setChoice('B','is more heavy than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//8 short	
+		var question = new Question('','is more short than');
+		question.setChoice('A','is more tall than');
+		question.setChoice('B','is more short than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//tall
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//9 tall
+		var question = new Question('','is more tall than');
+		question.setChoice('A','is more tall than');
+		question.setChoice('B','is more short than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//10 light
+		var question = new Question('','is more light than');
+		question.setChoice('A','is more light than');
+		question.setChoice('B','is more heavy than');
 		this.mQuiz.mQuestionArray.push(question);
 
 		this.createQuestionShapes();
@@ -140,25 +140,46 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 	
-		//1
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
+		//1 tall 
+                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/girafe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
 
-		//2
+		//2 short
+                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/girafe.jpg","",""));
+	
+		//3 heavy
+                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/heavy.gif","",""));
+                this.mShapeArray.push(new Shape(50,50,600,400,this,"/images/attributes/feather.jpg","",""));
+
+		//4 light
+                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/heavy.gif","",""));
+               
+		//5 short 
+		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/girafe.jpg","",""));
+
+		//6 light
+                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/heavy.gif","",""));
+
+		//7 heavy
+                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/heavy.gif","",""));
+                this.mShapeArray.push(new Shape(50,50,600,400,this,"/images/attributes/feather.jpg","",""));
+
+		//8 short 
+		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/girafe.jpg","",""));
+
+		//9 tall
+                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/girafe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
 
-
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
+		//10 light
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/girafe.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                	
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/heavy.gif","",""));
+	
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
 			this.mShapeArray[i].setVisibility(false);
@@ -166,7 +187,7 @@ Extends: Pad,
                		this.mShapeArray[i].mCollisionOn = false;
 		}	
 		
-		this.setScoreNeeded(this.mShapeArray.length);
+		this.setScoreNeeded(this.mQuiz.mQuestionArray.length);
 
 	},
 
