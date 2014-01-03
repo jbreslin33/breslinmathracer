@@ -71,66 +71,75 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//1 tall
+		//1 more sides 
 		var question = new Question('','has more sides than');
 		question.setChoice('A','has less sides than');
 		question.setChoice('B','has same sides as');
 		question.setChoice('C','has more sides than');
 		this.mQuiz.mQuestionArray.push(question);
 	
-		//2 short	
-		var question = new Question('','is more short than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
+		//2 less sides	
+		var question = new Question('','has less sides than');
+		question.setChoice('A','has less sides than');
+		question.setChoice('B','has same sides as');
+		question.setChoice('C','has more sides than');
 		this.mQuiz.mQuestionArray.push(question);
 
-		//3 heavy
-		var question = new Question('','is more heavy than');
-		question.setChoice('A','is more light than');
-		question.setChoice('B','is more heavy than');
+		//3 less sides	
+		var question = new Question('','has less sides than');
+		question.setChoice('A','has less sides than');
+		question.setChoice('B','has same sides as');
+		question.setChoice('C','has more sides than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//4 light
-		var question = new Question('','is more light than');
-		question.setChoice('A','is more light than');
-		question.setChoice('B','is more heavy than');
+		//4 more sides 
+		var question = new Question('','has more sides than');
+		question.setChoice('A','has less sides than');
+		question.setChoice('B','has same sides as');
+		question.setChoice('C','has more sides than');
 		this.mQuiz.mQuestionArray.push(question);
-		
-		//5 short	
-		var question = new Question('','is more short than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//6 light
-		var question = new Question('','is more light than');
-		question.setChoice('A','is more light than');
-		question.setChoice('B','is more heavy than');
-		this.mQuiz.mQuestionArray.push(question);
+     
+		//5 more corners 
+                var question = new Question('','has more corners than');
+                question.setChoice('A','has less corners than');
+                question.setChoice('B','has same corners as');
+                question.setChoice('C','has more corners than');
+                this.mQuiz.mQuestionArray.push(question);
 
-		//7 heavy
-		var question = new Question('','is more heavy than');
-		question.setChoice('A','is more light than');
-		question.setChoice('B','is more heavy than');
+                //6 less corners 
+                var question = new Question('','has less corners than');
+                question.setChoice('A','has less corners than');
+                question.setChoice('B','has same corners as');
+                question.setChoice('C','has more corners than');
+                this.mQuiz.mQuestionArray.push(question);
+
+                //7 less corners 
+                var question = new Question('','has less corners than');
+                question.setChoice('A','has less corners than');
+                question.setChoice('B','has same corners as');
+                question.setChoice('C','has more corners than');
+                this.mQuiz.mQuestionArray.push(question);
+                
+                //8 more corners
+                var question = new Question('','has more corners than');
+                question.setChoice('A','has less corners than');
+                question.setChoice('B','has same corners as');
+                question.setChoice('C','has more corners than');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//9 more sides 
+		var question = new Question('','has more sides than');
+		question.setChoice('A','has less sides than');
+		question.setChoice('B','has same sides as');
+		question.setChoice('C','has more sides than');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//8 short	
-		var question = new Question('','is more short than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//9 tall
-		var question = new Question('','is more tall than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//10 light
-		var question = new Question('','is more light than');
-		question.setChoice('A','is more light than');
-		question.setChoice('B','is more heavy than');
-		this.mQuiz.mQuestionArray.push(question);
+  		//10 less corners 
+                var question = new Question('','has less corners than');
+                question.setChoice('A','has less corners than');
+                question.setChoice('B','has same corners as');
+                question.setChoice('C','has more corners than');
+                this.mQuiz.mQuestionArray.push(question);
 
 		this.createQuestionShapes();
 	},
@@ -141,46 +150,46 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 	
-		//1 tall 
+		//1 more sides 
                 this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/hexagon.png","",""));
                 this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/square.png","",""));
 
-		//2 short
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/giraffe.jpg","",""));
+		//2 less sides 
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/square.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/hexagon.png","",""));
 	
-		//3 heavy
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/heavy.gif","",""));
-                this.mShapeArray.push(new Shape(50,50,600,400,this,"/images/attributes/feather.jpg","",""));
+		//3 less sides 
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/triangle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/rectangle.png","",""));
+		
+		//4 more sides 
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/square.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
 
-		//4 light
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/heavy.gif","",""));
-               
-		//5 short 
-		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/giraffe.jpg","",""));
+	        //5 more corners 
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/cube.jpg","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/square.png","",""));
 
-		//6 light
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/heavy.gif","",""));
+                //6 less corners
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/rectangle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/hexagon.png","",""));
 
-		//7 heavy
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/heavy.gif","",""));
-                this.mShapeArray.push(new Shape(50,50,600,400,this,"/images/attributes/feather.jpg","",""));
+                //7 less corners
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/circle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
 
-		//8 short 
-		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/giraffe.jpg","",""));
+                //8 more corners
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/rectangle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
+		
+		//9 more sides 
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/square.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
+                
+		//10 less corners 
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/triangle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/rectangle.png","",""));
 
-		//9 tall
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/giraffe.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
-
-		//10 light
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/heavy.gif","",""));
-	
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
 			this.mShapeArray[i].setVisibility(false);
