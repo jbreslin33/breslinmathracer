@@ -61,7 +61,10 @@ Extends: Pad,
                         document.body.removeChild(this.mCountShapeArrayD[i].mDiv.mDiv);
                         this.mCountShapeArrayD[i] = 0;
                 }
-                this.mShapeArray = 0;
+                this.mCountShapeArrayA = 0;
+                this.mCountShapeArrayB = 0;
+                this.mCountShapeArrayC = 0;
+                this.mCountShapeArrayD = 0;
 	},
 
 	showQuestion: function()
@@ -98,6 +101,9 @@ Extends: Pad,
 	{
 		this.parent();
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+		this.mInputPad.showQuestion();	
+		this.mInputPad.hide();
+		this.mInputPad.mNumQuestion.setVisibility('true');
 	},
    
 	createQuestions: function()
