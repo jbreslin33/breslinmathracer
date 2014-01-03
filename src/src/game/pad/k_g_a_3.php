@@ -71,67 +71,66 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//1 circle
-		var question = new Question('What is this?','circle');
-		question.setChoice('A','circle');
-		question.setChoice('B','cone');
+		//1 flat  
+		var question = new Question('','flat');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
 		this.mQuiz.mQuestionArray.push(question);
 	
-		//2 cone	
-		var question = new Question('What is this?','cone');
-		question.setChoice('A','circle');
-		question.setChoice('B','cone');
+		//2 solid  
+		var question = new Question('','solid');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
 		this.mQuiz.mQuestionArray.push(question);
 
-		//3 cube
-		var question = new Question('What is this?','cube');
-		question.setChoice('A','cube');
-		question.setChoice('B','cylinder');
+		//3 solid  
+		var question = new Question('','solid');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
 		this.mQuiz.mQuestionArray.push(question);
-		
-		//4 cylinder
-		var question = new Question('What is this?','cylinder');
-		question.setChoice('A','hexagon');
-		question.setChoice('B','cylinder');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//5 hexagon	
-		var question = new Question('What is this?','hexagon');
-		question.setChoice('A','hexagon');
-		question.setChoice('B','rectangle');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//6 rectangle 
-		var question = new Question('What is this?','rectangle');
-		question.setChoice('A','sphere');
-		question.setChoice('B','rectangle');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//7 sphere
-		var question = new Question('What is this?','sphere');
-		question.setChoice('A','sphere');
-		question.setChoice('B','square');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//8 square	
-		var question = new Question('What is this?','square');
-		question.setChoice('A','triangle');
-		question.setChoice('B','square');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//9 triangle
-		var question = new Question('What is this?','triangle');
-		question.setChoice('A','triangle');
-		question.setChoice('B','circle');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//10 circle
-		var question = new Question('What is this?','circle');
-		question.setChoice('A','cone');
-		question.setChoice('B','circle');
-		this.mQuiz.mQuestionArray.push(question);
-
 		this.createQuestionShapes();
+		
+		//4 solid  
+		var question = new Question('','solid');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
+		
+		//5 flat  
+		var question = new Question('','flat');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
+		
+		//6 flat  
+		var question = new Question('','flat');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
+		
+		//7 solid  
+		var question = new Question('','solid');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
+		
+		//8 flat  
+		var question = new Question('','flat');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
+			
+		//9 flat  
+		var question = new Question('','flat');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
+		
+		//10 solid  
+		var question = new Question('','solid');
+		question.setChoice('A','flat');
+		question.setChoice('B','solid');
+		this.mQuiz.mQuestionArray.push(question);
 	},
 
 	createQuestionShapes: function()
@@ -141,16 +140,16 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cone.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cube.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cylinder.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/hexagon.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/rectangle.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/sphere.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/square.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/triangle.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/circle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/cone.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/cube.jpg","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/cylinder.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/hexagon.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/rectangle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/sphere.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/square.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/triangle.png","",""));
+                this.mShapeArray.push(new Shape(100,100,150,225,this,"/images/shapes/cone.png","",""));
                 	
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
