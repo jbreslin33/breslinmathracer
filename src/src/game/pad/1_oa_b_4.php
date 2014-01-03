@@ -1,4 +1,4 @@
-var k_oa_b_4 = new Class(
+var g1_oa_b_4 = new Class(
 {
 
 Extends: Pad,

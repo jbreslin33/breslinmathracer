@@ -458,7 +458,7 @@ var Application = new Class(
 			}
                 }
 
-		if (this.mRef_id == '0CFFCBC851984A4281C23D34FC400445')
+		if (this.mRef_id == '6929CC4620B54F1692E2C20D8FAA12F8')
 		{ 
              		if (this.mGameName != "g1_oa_b_4")
                        	{
