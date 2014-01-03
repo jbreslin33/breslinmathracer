@@ -66,6 +66,14 @@ Extends: Pad,
 
 	showQuestion: function()
 	{
+		for (i = 0; i < this.mCountShapeArrayA.length; i++)
+                {
+                        this.mCountShapeArrayA[i].setVisibility(false);
+                        this.mCountShapeArrayB[i].setVisibility(false);
+                        this.mCountShapeArrayC[i].setVisibility(false);
+                        this.mCountShapeArrayD[i].setVisibility(false);
+                }
+
 		for (i = 0; i < this.mNumberOfAArray[this.mScore]; i++)
                 {
                         this.mCountShapeArrayA[i].setVisibility(true);
