@@ -288,6 +288,6 @@ Extends: Pad,
                 this.mInputPad.hide();
                 this.mInputPad.mNumQuestion.setVisibility('true');
 
-        },
+        }
 
 });
