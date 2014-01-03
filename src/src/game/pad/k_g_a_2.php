@@ -71,64 +71,64 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//triangle
-		var question = new Question('What is this?','triangle');
-		question.setChoice('A','square');
-		question.setChoice('B','triangle');
+		//1 circle
+		var question = new Question('What is this?','circle');
+		question.setChoice('A','circle');
+		question.setChoice('B','cone');
 		this.mQuiz.mQuestionArray.push(question);
 	
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//2 cone	
+		var question = new Question('What is this?','cone');
+		question.setChoice('A','circle');
+		question.setChoice('B','cone');
 		this.mQuiz.mQuestionArray.push(question);
 
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//3 cube
+		var question = new Question('What is this?','cube');
+		question.setChoice('A','cube');
+		question.setChoice('B','cylinder');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//4 cylinder
+		var question = new Question('What is this?','cylinder');
+		question.setChoice('A','hexagon');
+		question.setChoice('B','cylinder');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//5 hexagon	
+		var question = new Question('What is this?','hexagon');
+		question.setChoice('A','hexagon');
+		question.setChoice('B','rectangle');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//6 rectangle 
+		var question = new Question('What is this?','rectangle');
+		question.setChoice('A','sphere');
+		question.setChoice('B','rectangle');
 		this.mQuiz.mQuestionArray.push(question);
 
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//7 sphere
+		var question = new Question('What is this?','sphere');
+		question.setChoice('A','sphere');
+		question.setChoice('B','square');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//8 square	
+		var question = new Question('What is this?','square');
+		question.setChoice('A','triangle');
+		question.setChoice('B','square');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//tall
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//9 triangle
+		var question = new Question('What is this?','triangle');
+		question.setChoice('A','triangle');
+		question.setChoice('B','circle');
 		this.mQuiz.mQuestionArray.push(question);
 		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
+		//10 circle
+		var question = new Question('What is this?','circle');
+		question.setChoice('A','cone');
+		question.setChoice('B','circle');
 		this.mQuiz.mQuestionArray.push(question);
 
 		this.createQuestionShapes();
@@ -141,16 +141,16 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cone.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cube.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cylinder.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/hexagon.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/rectangle.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/sphere.png","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/square.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/triangle.png","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/giraffe.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
                 	
 		for (i = 0; i < this.mShapeArray.length; i++)
 		{
