@@ -72,9 +72,10 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = new Array();
 
 		//1 tall
-		var question = new Question('','is more tall than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
+		var question = new Question('','has more sides than');
+		question.setChoice('A','has less sides than');
+		question.setChoice('B','has same sides as');
+		question.setChoice('C','has more sides than');
 		this.mQuiz.mQuestionArray.push(question);
 	
 		//2 short	
@@ -141,8 +142,8 @@ Extends: Pad,
 		this.mShapeArray = new Array();		
 	
 		//1 tall 
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/giraffe.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/hexagon.png","",""));
+                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/square.png","",""));
 
 		//2 short
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
