@@ -66,13 +66,23 @@ Extends: Pad,
 
 	showQuestion: function()
 	{
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
+		for (i = 0; i < this.mNumberOfAArray[this.mScore]; i++)
                 {
                         this.mCountShapeArrayA[i].setVisibility(true);
+                }
+		for (i = 0; i < this.mNumberOfBArray[this.mScore]; i++)
+                {
                         this.mCountShapeArrayB[i].setVisibility(true);
+                }
+		for (i = 0; i < this.mNumberOfCArray[this.mScore]; i++)
+                {
                         this.mCountShapeArrayC[i].setVisibility(true);
+                }
+		for (i = 0; i < this.mNumberOfDArray[this.mScore]; i++)
+                {
                         this.mCountShapeArrayD[i].setVisibility(true);
                 }
+
 		this.mInputPad.showQuestion();	
 	},
  
@@ -95,78 +105,87 @@ Extends: Pad,
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			while (this.mNumberOfAArray[i] ==  this.mNumberOfBArray[i] || this.mNumberOfCArray[i] == this.mNumberOfCArray[i] || this.mNumberOfArray[i] == this.mNumberOfDArray[i] || this.mNumberOfBArray[i] == this.mNumberOfCArray[i] || this.mNumberOfBArray[i] == this.mNumberOfDArray[i] || this.mNumberOfnumberC[i] == this.mNumberOfDArray[i])
+			this.log('i in score:' + i);
+			this.mNumberOfAArray[i] = Math.floor((Math.random()*6)+1);
+			this.mNumberOfBArray[i] = Math.floor((Math.random()*6)+1);
+			this.mNumberOfCArray[i] = Math.floor((Math.random()*6)+1);
+			this.mNumberOfDArray[i] = Math.floor((Math.random()*6)+1);
+			this.mLeastMost = Math.floor((Math.random()*2));
+
+			while (this.mNumberOfAArray[i] == this.mNumberOfBArray[i] || this.mNumberOfAArray[i] == this.mNumberOfCArray[i] || this.mNumberOfAArray[i] == this.mNumberOfDArray[i] || this.mNumberOfBArray[i] == this.mNumberOfCArray[i] || this.mNumberOfBArray[i] == this.mNumberOfDArray[i] || this.mNumberOfCArray[i] == this.mNumberOfDArray[i])
 			{
-				this.mLeastMost = Math.floor((Math.random()*2));
+				this.log('i:' + i);
 				this.mNumberOfAArray[i] = Math.floor((Math.random()*6)+1);
 				this.mNumberOfBArray[i] = Math.floor((Math.random()*6)+1);
 				this.mNumberOfCArray[i] = Math.floor((Math.random()*6)+1);
 				this.mNumberOfDArray[i] = Math.floor((Math.random()*6)+1);
 			}
 
-			var question;
 			if (this.mLeastMost == 0)
 			{
 				//who has the least?
 				this.log('least');
-				for (m = 0; i < 7; m++)
+				for (m = 0; m < 7; m++)
 				{
 					if (this.mNumberOfAArray[i] == m)
 					{
-						question = new Question('What has the least?','' + this.mCorrectAnswerArray[0]);
+						var question = new Question('What has the least?','' + this.mCorrectAnswerArray[0]);
+						this.mQuiz.mQuestionArray.push(question);
 					}
 					if (this.mNumberOfBArray[i] == m)
 					{
-						question = new Question('What has the least?','' + this.mCorrectAnswerArray[1]);
+						var question = new Question('What has the least?','' + this.mCorrectAnswerArray[1]);
+						this.mQuiz.mQuestionArray.push(question);
 					}	
 					if (this.mNumberOfCArray[i] == m)
 					{
-						question = new Question('What has the least?','' + this.mCorrectAnswerArray[2]);
+						var question = new Question('What has the least?','' + this.mCorrectAnswerArray[2]);
+						this.mQuiz.mQuestionArray.push(question);
 					}
 					if (this.mNumberOfDArray[i] == m)
 					{
-						question = new Question('What has the least?','' + this.mCorrectAnswerArray[3]);
+						var question = new Question('What has the least?','' + this.mCorrectAnswerArray[3]);
+						this.mQuiz.mQuestionArray.push(question);
 					}
-
 				}
-				
 			}
+			
 			if (this.mLeastMost == 1)
 			{
 				this.log('most');
                        		//who has the most?
-                                for (m = 7; i > 0; m--)
+                                for (m = 7; m > 0; m--)
                                 {
                                 	if (this.mNumberOfAArray[i] == m)
                                         {
-                                                question = new Question('What has the most?','' + this.mCorrectAnswerArray[0]);
+                                                var question = new Question('What has the most?','' + this.mCorrectAnswerArray[0]);
+						this.mQuiz.mQuestionArray.push(question);
                                         }
                                         if (this.mNumberOfBArray[i] == m)
                                         {
-                                                        question = new Question('What has the most?','' + this.mCorrectAnswerArray[1]);
-                                                }
-                                                if (this.mNumberOfCArray[i] == m)
-                                                {
-                                                        question = new Question('What has the most?','' + this.mCorrectAnswerArray[2]);
-                                                }
-                                                if (this.mNumberOfDArray[i] == m)
-                                                {
-                                                        question = new Question('What has the most?','' + this.mCorrectAnswerArray[3]);
-                                                }
-
+                                               	var question = new Question('What has the most?','' + this.mCorrectAnswerArray[1]);
+						this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                        if (this.mNumberOfCArray[i] == m)
+                                        {
+                                                var question = new Question('What has the most?','' + this.mCorrectAnswerArray[2]);
+						this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                        if (this.mNumberOfDArray[i] == m)
+                                        {
+                                                var question = new Question('What has the most?','' + this.mCorrectAnswerArray[3]);
+						this.mQuiz.mQuestionArray.push(question);
                                         }
 				}
-
-				question.setChoice('A','girafes');
-				question.setChoice('B','kids');
-				question.setChoice('C','red monsters');
-				question.setChoice('D','feathers');
-				this.mQuiz.mQuestionArray.push(question);
 			}
 		}
 
 		this.createQuestionShapes();
 	},
+			//question.setChoice('A','girafes');
+			//question.setChoice('B','kids');
+			//question.setChoice('C','red monsters');
+			//question.setChoice('D','feathers');
 
 	createQuestionShapes: function()
 	{
@@ -224,9 +243,6 @@ Extends: Pad,
                		this.mCountShapeArrayD[i].mCollidable = false;
                		this.mCountShapeArrayD[i].mCollisionOn = false;
 		}	
-		
-		this.setScoreNeeded(this.mQuiz.mQuestionArray.length);
-
 	},
 
 	//state overides
