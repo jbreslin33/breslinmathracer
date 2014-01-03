@@ -18,6 +18,7 @@ insert into learning_standards (id,ref_id,progression,levels) values ('k.md.a.2'
 insert into learning_standards (id,ref_id,progression,levels) values ('k.md.b.3','C655A9B714CB481EB9D88759DD9BD0D1',8.45,1);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.1','D55BE0EDAFBC47B0BBDB1B88F9DF8781',8.46,1);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.2','4F0A52E0906841DFA13739BFC87B330B',8.47,1);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.3','01938BB1EE4E47319738DAC239A2B141',8.48,1);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.a.1','C712BAA86FEF4BFAB703AD2EB402B2DD',8.5,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.a.2','AF4F218991664833853239C29DCE8521',8.6,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.b.3','FC21412A7C92444EA50B30A09729330F',8.7,1);
