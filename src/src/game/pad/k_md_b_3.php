@@ -216,7 +216,10 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-
+		if (this.mCountShapeArrayA.length > 0)
+		{
+			return;
+		}
 		this.mCountShapeArrayA = new Array();		
 		this.mCountShapeArrayB = new Array();		
 		this.mCountShapeArrayC = new Array();		

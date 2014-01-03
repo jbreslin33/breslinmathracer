@@ -58,7 +58,7 @@ Extends: Game,
                 this.mUserAnswer = '';
 		this.mCorrectAnswerStartTime = 0;
 	},
-
+	
 	update: function()
         {
   		this.parent()
