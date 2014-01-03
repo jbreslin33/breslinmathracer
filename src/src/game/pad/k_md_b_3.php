@@ -284,6 +284,10 @@ Extends: Pad,
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                 this.showCorrectAnswerBar();
                 this.showClockShape();
+                this.mInputPad.showQuestion();
+                this.mInputPad.hide();
+                this.mInputPad.mNumQuestion.setVisibility('true');
+
         },
 
 });
