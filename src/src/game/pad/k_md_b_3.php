@@ -39,7 +39,7 @@ Extends: Pad,
 
 	destroyShapes: function()
 	{
-		//this.parent();
+		this.parent();
 
 		//shapes and array
                 for (i = 0; i < this.mCountShapeArrayA.length; i++)
@@ -216,7 +216,6 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-		this.destroyShapes();
 
 		this.mCountShapeArrayA = new Array();		
 		this.mCountShapeArrayB = new Array();		
