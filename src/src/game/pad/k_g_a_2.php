@@ -71,10 +71,10 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//tall
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
+		//triangle
+		var question = new Question('What is this?','triangle');
+		question.setChoice('A','square');
+		question.setChoice('B','triangle');
 		this.mQuiz.mQuestionArray.push(question);
 	
 		//short	
@@ -141,7 +141,7 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 
-                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/giraffe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/triangle.png","",""));
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
