@@ -71,10 +71,10 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//1 tall
-		var question = new Question('','is more tall than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
+		//1 beside 
+		var question = new Question('Where is the giraffe?','beside');
+		question.setChoice('A','beside');
+		question.setChoice('B','above');
 		this.mQuiz.mQuestionArray.push(question);
 	
 		//2 short	
@@ -140,9 +140,9 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 	
-		//1 tall 
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/giraffe.jpg","",""));
-                this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
+		//1 beside 
+                this.mShapeArray.push(new Shape(50,50,150,200,this,"/images/attributes/giraffe.jpg","",""));
+                this.mShapeArray.push(new Shape(50,50,200,200,this,"/images/bus/kid.png","",""));
 
 		//2 short
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
