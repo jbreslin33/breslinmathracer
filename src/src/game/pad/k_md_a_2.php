@@ -141,12 +141,12 @@ Extends: Pad,
 		this.mShapeArray = new Array();		
 	
 		//1 tall 
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/giraffe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
 
 		//2 short
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/giraffe.jpg","",""));
 	
 		//3 heavy
                 this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/heavy.gif","",""));
@@ -158,7 +158,7 @@ Extends: Pad,
                
 		//5 short 
 		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/giraffe.jpg","",""));
 
 		//6 light
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/attributes/feather.jpg","",""));
@@ -170,10 +170,10 @@ Extends: Pad,
 
 		//8 short 
 		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,600,305,this,"/images/attributes/giraffe.jpg","",""));
 
 		//9 tall
-                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/girafe.jpg","",""));
+                this.mShapeArray.push(new Shape(200,200,150,305,this,"/images/attributes/giraffe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,550,400,this,"/images/bus/kid.png","",""));
 
 		//10 light
