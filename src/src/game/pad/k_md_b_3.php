@@ -91,8 +91,6 @@ Extends: Pad,
                         this.mCountShapeArrayD[i].setVisibility(true);
                 }
 		
-		//this.mCorrectAnswerArray = new Array();
-
 		this.mInputPad.showQuestion();	
 	},
  

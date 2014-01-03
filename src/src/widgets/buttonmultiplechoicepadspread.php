@@ -118,7 +118,9 @@ Extends: InputPad,
 					this.mButtonD.setVisibility(false);
 				}
 
+				this.mApplication.log('showQ:' + this.mApplication.mGame.mQuiz.getQuestion().getQuestion());
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
+                                this.mNumQuestion.setVisibility('true');
                         }
                 }
         },
