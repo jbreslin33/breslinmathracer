@@ -39,10 +39,10 @@ Extends: Pad,
 
 	destroyShapes: function()
 	{
-		this.parent();
+		//this.parent();
 
 		//shapes and array
-                for (i = 0; i < this.mCountShapeArray.length; i++)
+                for (i = 0; i < this.mCountShapeArrayA.length; i++)
                 {
 			//A
                         this.mCountShapeArrayA[i].mDiv.mDiv.removeChild(this.mCountShapeArrayA[i].mMesh);
@@ -113,9 +113,26 @@ Extends: Pad,
               	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
                	{
                         this.mQuiz.mQuestionArray[d] = 0;
+			this.mNumberOfAArray[i] = 0;
+			this.mNumberOfBArray[i] = 0;
+			this.mNumberOfCArray[i] = 0;
+			this.mNumberOfDArray[i] = 0;
                 }
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
+			
+		this.mNumberOfAArray = 0;
+		this.mNumberOfAArray = new Array();
+		
+		this.mNumberOfBArray = 0;
+		this.mNumberOfBArray = new Array();
+
+		this.mNumberOfCArray = 0;
+		this.mNumberOfCArray = new Array();
+	
+		this.mNumberOfDArray = 0;
+		this.mNumberOfDArray = new Array();
+			
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
@@ -199,6 +216,8 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
+		this.destroyShapes();
+
 		this.mCountShapeArrayA = new Array();		
 		this.mCountShapeArrayB = new Array();		
 		this.mCountShapeArrayC = new Array();		
