@@ -72,25 +72,25 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = new Array();
 
 		//1 beside 
-		var question = new Question('Where is the giraffe?','beside');
+		var question = new Question('Where is the red monster?','beside');
 		question.setChoice('A','beside');
 		question.setChoice('B','above');
 		this.mQuiz.mQuestionArray.push(question);
 	
 		//2 above	
-		var question = new Question('Where is the giraffe?','above');
+		var question = new Question('Where is the red monster?','above');
 		question.setChoice('A','below');
 		question.setChoice('B','above');
 		this.mQuiz.mQuestionArray.push(question);
 
 		//3 behind 
-		var question = new Question('Where is the giraffe','behind');
+		var question = new Question('Where is the red monster','behind');
 		question.setChoice('A','in front of');
 		question.setChoice('B','behind');
 		this.mQuiz.mQuestionArray.push(question);
 		
 		//4 in front of  
-		var question = new Question('Where is he giraffe','in front of');
+		var question = new Question('Where is the red monster','in front of');
 		question.setChoice('A','in front of');
 		question.setChoice('B','behind');
 		this.mQuiz.mQuestionArray.push(question);
@@ -141,20 +141,20 @@ Extends: Pad,
 		this.mShapeArray = new Array();		
 	
 		//1 beside 
-                this.mShapeArray.push(new Shape(50,50,200,250,this,"/images/attributes/giraffe.jpg","",""));
+                this.mShapeArray.push(new Shape(50,50,200,250,this,"/images/monster/red_monster.png","",""));
                 this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/bus/kid.png","",""));
 
 		//2 above 
-                this.mShapeArray.push(new Shape(50,50,150,200,this,"/images/attributes/giraffe.jpg","",""));
+                this.mShapeArray.push(new Shape(50,50,150,200,this,"/images/monster/red_monster.png","",""));
                 this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/bus/kid.png","",""));
 	
 		//3 behind 
-                this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/attributes/giraffe.jpg","",""));
+                this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/monster/red_monster.png","",""));
                 this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/bus/kid.png","",""));
 
 		//4 in front of 
                 this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/attributes/giraffe.jpg","",""));
+                this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/monster/red_monster.png","",""));
                
 		//5 short 
 		this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
