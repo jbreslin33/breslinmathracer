@@ -10,7 +10,7 @@ Extends: Pad,
                 //input pad
                 this.mInputPad = new LongQuestionNumberPad(application);
 
-                this.mThresholdTime = 3000;
+                this.mThresholdTime = 60000;
         },
 
         createCorrectAnswerBar: function()
