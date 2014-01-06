@@ -56,10 +56,10 @@ Extends: Pad,
 		var sign = question[2];   
 		var addendB = parseInt(question[4]);   
 
-		for (i = 0; i < answer; i++)
+		for (i = 0; i < parseInt(addendA + addendB); i++)
                 {
-                        this.mShapeArray[i].setVisibility(true);
-                }
+                	this.mShapeArray[i].setVisibility(true);
+		}
 
 		//sign
 		if (sign == '+')
@@ -71,11 +71,12 @@ Extends: Pad,
 		{
 			this.mShapeArray[6].setVisibility(true);
 			this.mShapeArray[6].setPosition(parseInt(this.mShapeArray[addendA - 1].mPosition.mX + 50), 50)	
+			
 		}
-	
 		//equals	
 		this.mShapeArray[7].setVisibility(true);
-		this.mShapeArray[7].setPosition(parseInt(this.mShapeArray[answer - 1].mPosition.mX + 50), 50)	
+		this.mShapeArray[7].setPosition(parseInt(this.mShapeArray[parseInt(addendA + addendB - 1)].mPosition.mX + 50), 50)	
+	
 	},
  
 	showCorrectAnswer: function()
