@@ -10,7 +10,7 @@ Extends: Pad,
                 //input pad
                 this.mInputPad = new LongQuestionNumberPad(application);
 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 3000;
         },
 
         createCorrectAnswerBar: function()
@@ -31,12 +31,6 @@ Extends: Pad,
         },
  
 	//states 
-	showCorrectAnswerBar: function()
-        {
-       		this.parent(); 
-		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
-        },
-
         showCorrectAnswerOutOfTime: function()
         {
 		this.parent();
@@ -56,35 +50,29 @@ Extends: Pad,
  		this.parent();
 
 		//commutative
-		//10
                 this.mQuiz.mQuestionPoolArray.push(new Question('9 + 1 = 10 and 1 + ? = 10','9','9 + 1 = 10 and 1 + 9 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('8 + 2 = 10 and 2 + ? = 10','8','8 + 2 = 10 and 2 + 8 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('7 + 3 = 10 and 3 + ? = 10','7','7 + 3 = 10 and 3 + 7 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('6 + 4 = 10 and 4 + ? = 10','6','6 + 4 = 10 and 4 + 6 = 10'));
-
-		//3
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 2  = 3 and 2 + ? = 3','1','1 + 2 = 3 and 2 + 1 = 3'));
-
-		//4
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 3  = 4 and 3 + ? = 4','1','1 + 3 = 4 and 3 + 1 = 4'));
-	
-		//5	
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 3  = 5 and 3 + ? = 5','2','2 + 3 = 5 and 3 + 2 = 5'));
-
-		//6
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 4  = 6 and 4 + ? = 6','2','2 + 4 = 6 and 4 + 2 = 6'));
-
-		//7
                 this.mQuiz.mQuestionPoolArray.push(new Question('3 + 4  = 7 and 4 + ? = 7','3','3 + 4 = 7 and 4 + 3 = 7'));
-
-		//8
                 this.mQuiz.mQuestionPoolArray.push(new Question('3 + 5  = 8 and 5 + ? = 8','3','3 + 5 = 8 and 5 + 3 = 8'));
 		
-		//9
-                this.mQuiz.mQuestionPoolArray.push(new Question('4 + 5  = 9 and 5 + ? = 9','4','4 + 5 = 9 and 5 + 4 = 9'));
-
-
 		//associative
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 6 + 4 = 12 and 2 + ? = 12','10','2 + 6 + 4 = 12 and 2 + 10 = 12'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('4 + 7 + 3 = 14 and 4 + ? = 14','10','4 + 7 + 3 = 14 and 4 + 10 = 14'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 8 + 2 = 13 and 3 + ? = 13','10','3 + 8 + 2 = 13 and 3 + 10 = 13'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('3 + 5 + 5 = 13 and 3 + ? = 13','10','3 + 5 + 5 = 13 and 3 + 10 = 13'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('1 + 4 + 4 = 9 and 1 + ? = 9','8','1 + 4 + 4 = 9 and 1 + 8 = 9'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 3 + 4 = 9 and 2 + ? = 9','7','2 + 3 + 4 = 9 and 2 + 7 = 9'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('2 + 3 + 2 = 7 and 2 + ? = 7','5','2 + 3 + 2 = 7 and 2 + 5 = 7'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('7 + 5 + 2 = 14 and 7 + ? = 14','7','7 + 5 + 2 = 14 and 7 + 7 = 14'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('9 + 5 + 4 = 18 and 9 + ? = 19','9','9 + 5 + 4 = 19 and 9 + 9 = 18'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('6 + 2 + 4 = 12 and 6 + ? = 12','6','6 + 2 + 4 = 12 and 6 + 6 = 12'));
+
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
