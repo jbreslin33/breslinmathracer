@@ -7,7 +7,7 @@ Extends: Pad,
 	{
        		this.parent(application);
 		
-		this.mThresholdTime = 120000;
+		this.mThresholdTime = 3000;
 
                 //input pad
                 this.mInputPad = new BigQuestionNumberPad(application);
