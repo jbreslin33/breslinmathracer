@@ -29,72 +29,27 @@ Extends: Pad,
         {
 		this.parent();
 
-              	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
+              	for (i = 0; d < this.mQuiz.mQuestionArray.length; i++)
                	{
-                        this.mQuiz.mQuestionArray[d] = 0;
+                        this.mQuiz.mQuestionArray[i] = 0;
                 }
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//tall
+		var question = new Question('7 + 1 = 9','false');
+		this.mQuiz.mQuestionArray.push(question);
+		
 		var question = new Question('7 + 1 = 9','false');
 		question.setChoice('A','true');
 		question.setChoice('B','false');
 		this.mQuiz.mQuestionArray.push(question);
+              	
+		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
+		{
+			this.mQuiz.mQuestionArray[i].setChoice('B','false');
+
+		}
 	
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//heavy
-		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//short	
-		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//tall
-		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//light
-		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
-		this.mQuiz.mQuestionArray.push(question);
 	},
 
 	//state overides
