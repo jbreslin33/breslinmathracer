@@ -61,8 +61,8 @@ var WordProblems = new Class(
 
 	getSubtractionQuestion: function(maxsum)
 	{
-		var addendA = 0;			
-		var addendB = 0;			
+		var subtrahendA = 0;			
+		var subtrahendB = 0;			
 		var sum = 100;
 		var questionText = '';
 
@@ -81,5 +81,29 @@ var WordProblems = new Class(
 
 		var question = new Question('' + questionText,'' + sum);
 		return question;
-	}
+	},
+  	
+	getSubtractionQuestionUnknowAddend: function(maxSubtrahendA)
+      	{ 
+                var subtrahendA = 0;
+                var subtrahendB = 0;
+                var sum = 100;
+                var questionText = '';
+
+                while (subtrahendA > maxSubtrahendA || sum < 1 || subtrahendA == 0 || subtrahendA == 1 || subtrahendB == 0 || subtrahendB == 1)
+                {
+                        subtrahendB = Math.floor((Math.random()*10)+1);
+                        subtrahendA = parseInt (subtrahendB + Math.floor((Math.random()*8)+1));
+                        sum = parseInt(subtrahendA - subtrahendB);
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Jim had ';
+                questionText = questionText + '' + subtrahendA;
+                questionText = questionText + ' toy cars. He gives away ';
+                questionText = questionText + '' + subtrahendB;
+                questionText = questionText + ' toy cars. How many toy cars does Jim have now?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
+        }
 });

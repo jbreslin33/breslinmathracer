@@ -7,8 +7,6 @@ Extends: Pad,
 	{
        		this.parent(application);
 		
-		this.setScoreNeeded(4);
-
 		this.mThresholdTime = 120000;
 
                 //input pad
@@ -39,38 +37,19 @@ Extends: Pad,
         {
  		this.parent();
 		
-		var totalAddition        = 0;
-		var totalSubtraction     = 0;
-		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		//RESET as we have either just started or failed to reach totalNewGoal
+		totalNew = 0;
+		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
+		{
+			this.mQuiz.mQuestionArray[d] = 0;
+		} 
+		this.mQuiz.mQuestionArray = 0;
+		this.mQuiz.mQuestionArray = new Array();
 
-		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
+		//ADD questions
+		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			//RESET as we have either just started or failed to reach totalNewGoal
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
-
-			//ADD questions
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*2));		
-				if (randomChance == 0)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(20,2));
-					totalAddition++;
-				}	
-				if (randomChance == 1)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getSubtractionQuestion(20));
-					totalSubtraction++;
-				}
-			}
+			this.mQuiz.mQuestionArray.push(this.mWordProblems.getSubtractionQuestionUnknowAddend(10));
 		}
 	}
 });
