@@ -97,11 +97,15 @@ var WordProblems = new Class(
                         sum = parseInt(subtrahendA - subtrahendB);
                 }
                 //okay we have a valid sum and plural addends
-                questionText = 'Jim had ';
+                questionText = 'Subtract ';
                 questionText = questionText + '' + subtrahendA;
-                questionText = questionText + ' toy cars. He gives away ';
+                questionText = questionText + ' minus ';
                 questionText = questionText + '' + subtrahendB;
-                questionText = questionText + ' toy cars. How many toy cars does Jim have now?';
+                questionText = questionText + ' by finding the number that makes ';
+                questionText = questionText + '' + subtrahendA;
+                questionText = questionText + ' when added to ';
+                questionText = questionText + '' + subtrahendB;
+                questionText = questionText + '.';
 
                 var question = new Question('' + questionText,'' + sum);
                 return question;
