@@ -14,6 +14,8 @@ Extends: Pad,
 	createQuestions: function()
         {
  		this.parent();
+		this.mQuiz.mQuestionArray = 0;
+		this.mQuiz.mQuestionArray = new Array();
 
 		if (this.mApplication.mLevel == 1)
 		{
@@ -30,45 +32,16 @@ Extends: Pad,
 		}
 		else if (this.mApplication.mLevel == 2)
 		{
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 ?','2'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 ?','4'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 ?','6'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 ?','8'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 ?','10'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 ?','12'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 ?','14'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 ?','16'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 16 ?','18'));
-			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 16 18 ?','20'));
-		}
-
-                
-		while (totalNew < totalNewGoal)
-		{	
-			//reset vars and arrays
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
-
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*2));		
-				if (randomChance == 0)
-				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
-					totalNew++;
-				}	
-				if (randomChance == 1)
-				{
-					var randomElement = Math.floor((Math.random()*newQuestionElement));		
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-				}
-			}
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 ?','3'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 ?','5'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 ?','7'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 ?','9'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 ?','11'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 ?','13'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 ?','15'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 ?','17'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 17 ?','19'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 17 19 ?','21'));
 		}
 	}
 });
