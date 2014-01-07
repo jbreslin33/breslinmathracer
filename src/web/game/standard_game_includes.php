@@ -75,6 +75,7 @@
 <script type="text/javascript" src="/src/game/pad/1_oa_b_4.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_c_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_c_6.php"></script>
+<script type="text/javascript" src="/src/game/pad/1_oa_d_7.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_oa_b_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_c_7.php"></script>
 

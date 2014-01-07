@@ -110,15 +110,12 @@ Extends: InputPad,
 				{
 					this.mButtonD.setVisibility(true);
 					this.mButtonD.mMesh.innerHTML = '' + this.mApplication.mGame.mQuiz.getQuestion().mChoiceD;	
-					this.mApplication.log('setVis on d to true');
 				}
 				else
 				{
-					this.mApplication.log('setVis on d to false');
 					this.mButtonD.setVisibility(false);
 				}
 
-				this.mApplication.log('showQ:' + this.mApplication.mGame.mQuiz.getQuestion().getQuestion());
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
                                 this.mNumQuestion.setVisibility('true');
                         }
