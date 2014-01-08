@@ -198,7 +198,6 @@ Extends: Pad,
 		}	
 		
 		this.setScoreNeeded(this.mQuiz.mQuestionArray.length);
-
 	},
 
 	//state overides
@@ -209,6 +208,5 @@ Extends: Pad,
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                 this.showCorrectAnswerBar();
                 this.showClockShape();
-        },
-
+        }
 });
