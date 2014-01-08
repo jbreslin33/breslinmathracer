@@ -53,28 +53,24 @@ Extends: InputPad,
       
 	createNumQuestion: function()
         {
+		this.mApplication.log('createNumQuestion');
                 //question
-                this.mNumQuestion = new Shape(100,50,100,100,this.mGame,"","","");
-                this.mInputPadArray.push(this.mNumQuestion);
+		if (!this.mNumQuestion)
+		{
+			this.mApplication.log(' new createNumQuestion');
+                	this.mNumQuestion = new Shape(100,50,100,100,this.mGame,"","","");
+                	this.mInputPadArray.push(this.mNumQuestion);
+		}
         },
-
-	show: function()
-	{
- 		//shapes and array
-		/*
-                for (i = 0; i < this.mInputPadArray.length; i++)
-                {
-                        this.mInputPadArray[i].setVisibility(true);
-                }
-		*/
-	},
 
         showQuestion: function()
         {
                 if (this.mApplication.mGame.mQuiz)
                 {
+			this.mApplication.log('quiz');
                         if (this.mApplication.mGame.mQuiz.getQuestion())
                         {
+				this.mApplication.log('question');
 				//how many buttons
                                 if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceA != '')
 				{
@@ -117,6 +113,7 @@ Extends: InputPad,
 				}
 
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
+                                this.mApplication.log('actualQuestion:' + this.mApplication.mGame.mQuiz.getQuestion().getQuestion());
                         }
                 }
         },

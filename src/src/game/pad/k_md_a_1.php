@@ -42,6 +42,7 @@ Extends: Pad,
 
 	showQuestion: function()
 	{
+
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(false);
@@ -70,6 +71,8 @@ Extends: Pad,
                 }
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
+	
+		//addendC = Math.floor((Math.random()*5)+2);
 
 		//tall
 		var question = new Question('What is this?','tall');
@@ -171,6 +174,6 @@ Extends: Pad,
                 this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                 this.showCorrectAnswerBar();
                 this.showClockShape();
-        },
+        }
 
 });
