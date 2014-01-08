@@ -1,4 +1,4 @@
-var k_md_a_1 = new Class(
+var g1_oa_d_7 = new Class(
 {
 
 Extends: Pad,
@@ -35,7 +35,6 @@ Extends: Pad,
                         this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
                         document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
                         this.mShapeArray[i] = 0;
-			this.log('destroyShape:' + i);
                 }
                 this.mShapeArray = 0;
 	},
@@ -136,7 +135,6 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-		this.log('createQ');
 		this.destroyShapes();
 
 		this.mShapeArray = new Array();		
