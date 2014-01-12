@@ -133,7 +133,7 @@ var WordProblems = new Class(
                 var questionText = '';
 
                 questionText = questionText + varAString + ' has ';
-                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes;
+                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes + ' ones.';
                 var question = new Question('' + questionText,'' + amountOfOnes);
                 return question;
 
@@ -141,7 +141,7 @@ var WordProblems = new Class(
 
 	getPlaceTensQuestion: function(max)
 	{
-    var varA = Math.floor((Math.random()*max));
+  		var varA = Math.floor((Math.random()*max));
                 var varAString = varA.toString();
 
                 var amountOfOnes = '';
@@ -161,7 +161,7 @@ var WordProblems = new Class(
                 var questionText = '';
 
                 questionText = questionText + varAString + ' has ';
-                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes;
+                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes + ' ones.';
                 var question = new Question('' + questionText,'' + amountOfOnes);
                 return question;
 	
