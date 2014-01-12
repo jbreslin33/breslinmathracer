@@ -14,12 +14,6 @@ Extends: Pad,
 		this.mInputPad = new NumberPad(application);
 	},
 
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-	},
-   
 	createQuestions: function()
         {
   		this.parent();
@@ -98,11 +92,17 @@ Extends: Pad,
 	},
 
 	//state overides
+	showCorrectAnswer: function()
+	{
+		this.parent();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
+	},
+
 	showCorrectAnswerOutOfTime: function()
         {
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
                 this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
                 this.showCorrectAnswerBar();
                 this.showClockShape();
         }
