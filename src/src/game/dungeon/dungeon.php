@@ -113,7 +113,7 @@ Extends: Game,
                 {
                         var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
                         var shape;
-                        this.addToShapeArray(shape = new QuestionShape(50,50,openPoint.mX,openPoint.mY,this,this.mQuiz.getSpecificQuestion(count),"/images/treasure/gold_coin_head.png","","question"));
+                        this.addToShapeArray(shape = new QuestionShape(50,50,openPoint.mX,openPoint.mY,this,this.mQuiz.getSpecificQuestion(count),"/images/planets/planet.png","","question"));
                         shape.createMountPoint(0,-5,-41);
                         shape.showQuestion(false);
 
