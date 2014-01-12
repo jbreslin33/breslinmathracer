@@ -53,11 +53,9 @@ Extends: InputPad,
       
 	createNumQuestion: function()
         {
-		this.mApplication.log('createNumQuestion');
                 //question
 		if (!this.mNumQuestion)
 		{
-			this.mApplication.log(' new createNumQuestion');
                 	this.mNumQuestion = new Shape(100,50,100,100,this.mGame,"","","");
                 	this.mInputPadArray.push(this.mNumQuestion);
 		}
@@ -67,10 +65,8 @@ Extends: InputPad,
         {
                 if (this.mApplication.mGame.mQuiz)
                 {
-			this.mApplication.log('quiz');
                         if (this.mApplication.mGame.mQuiz.getQuestion())
                         {
-				this.mApplication.log('question');
 				//how many buttons
                                 if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceA != '')
 				{
@@ -113,7 +109,6 @@ Extends: InputPad,
 				}
 
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
-                                this.mApplication.log('actualQuestion:' + this.mApplication.mGame.mQuiz.getQuestion().getQuestion());
                         }
                 }
         },
