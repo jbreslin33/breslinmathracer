@@ -133,7 +133,7 @@ var WordProblems = new Class(
                 var questionText = '';
 
                 questionText = questionText + varAString + ' has ';
-                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes + ' ones.';
+                questionText = questionText + '' + amountOfTens + ' tens and ? ones.';
                 var question = new Question('' + questionText,'' + amountOfOnes);
                 return question;
 
@@ -161,8 +161,8 @@ var WordProblems = new Class(
                 var questionText = '';
 
                 questionText = questionText + varAString + ' has ';
-                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes + ' ones.';
-                var question = new Question('' + questionText,'' + amountOfOnes);
+                questionText = questionText + '? tens and ' + amountOfOnes + ' ones.';
+                var question = new Question('' + questionText,'' + amountOfTens);
                 return question;
 	
 	}
