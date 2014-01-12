@@ -14,11 +14,6 @@ Extends: Pad,
 		this.mInputPad = new NumberPad(application);
 	},
 
-	showQuestion: function()
-	{
-		this.mInputPad.showQuestion();	
-	},
- 
 	showCorrectAnswer: function()
 	{
 		this.parent();
