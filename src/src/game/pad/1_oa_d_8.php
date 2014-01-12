@@ -85,9 +85,58 @@ Extends: Pad,
                                         }
 				}
 			}
-			//else if (minusOrNot == 1)
-			//{
-			//}
+ 			//subtraction
+                        if (minusOrNot == 1)
+                        {
+                                while(VarC > 20)
+                                {
+                                        VarA = Math.floor((Math.random()*20)+1);
+                                        VarB = Math.floor((Math.random()*20)+1);
+                                        VarC = parseInt(VarA + VarB);
+                                }
+                                //ok we have an equation with sum < 20  in the form a+b=c
+
+                                //a+b=c
+                                if (StandardFormOrNot == 0)
+                                {
+                                        if (missingVar == 0)
+                                        {
+                                                var question = new Question('? + ' + VarB + ' = ' + VarC,'' + VarA);
+                                                this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                        else if (missingVar == 1)
+                                        {
+                                                var question = new Question('' + VarA + ' + ? = ' + VarC,'' + VarB);
+                                                this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                        else if (missingVar == 2)
+                                        {
+                                                var question = new Question('' + VarA + ' + ' + VarB + ' = ?','' + VarC);
+                                                this.mQuiz.mQuestionArray.push(question);
+                                        }
+
+                                }
+                                //c=a+b
+                                else if (StandardFormOrNot == 1)
+                                {
+                                        if (missingVar == 0)
+                                        {
+                                                var question = new Question('? = ' + VarA + ' + ' + VarB,'' + VarC);
+                                                this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                        else if (missingVar == 1)
+                                        {
+                                                var question = new Question('' + VarC + ' = ? + ' + VarB,'' + VarA);
+                                                this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                        else if (missingVar == 2)
+                                        {
+                                                var question = new Question('' + VarC + ' = ' + VarA + ' + ?','' + VarB);
+                                                this.mQuiz.mQuestionArray.push(question);
+                                        }
+                                }
+                        }
+
 		}
 	},
 
