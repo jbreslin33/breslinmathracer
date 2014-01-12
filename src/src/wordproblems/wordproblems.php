@@ -113,62 +113,57 @@ var WordProblems = new Class(
 
 	getPlaceOnesQuestion: function(max)
 	{
-        	var varA = Math.floor((Math.random()*max));
+   		var varA = Math.floor((Math.random()*max));
+   		var varAString = varA.toString();
 
-		var amountOfTens = 0;
-		var amountOfTens = 0;
+                var amountOfOnes = '';
+                var amountOfTens = '';
 
-		if (varA < 10)
-		{
-			amountOfTens = 0;
-		}
-		if (varA >= 10 && varA < 20)
-		{
-			amountOfTens = 1;
-		}
-		if (varA >= 20 && varA < 30)
-		{
-			amountOfTens = 2;
-		}
-		if (varA >= 30 && varA < 40)
-		{
-			amountOfTens = 3;
-		}
-		if (varA >= 40 && varA < 50)
-		{
-			amountOfTens = 4; 
-		}
-		if (varA >= 50 && varA < 60)
-		{
-			amountOfTens = 5; 
-		}
-		if (varA >= 60 && varA < 70)
-		{
-			amountOfTens = 6; 
-		}
-		if (varA >= 70 && varA < 80)
-		{
-			amountOfTens = 7; 
-		}
-		if (varA >= 80 && varA < 90)
-		{
-			amountOfTens = 8; 
-		}
-		if (varA >= 90 && varA < 100)
-		{
-			amountOfTens = 9; 
-		}
+                if (varA < 10)
+                {
+                        amountOfTens = '0';
+                        amountOfOnes = '' + varAString;
+                }
+                if (varA >= 10)
+                {
+                        amountOfTens = '' + varAString[0];
+                        amountOfOnes = '' + varAString[1];
+                }
 
                 var questionText = '';
 
-                questionText = questionText + varA + ' has ';
-		questionText = questionText + '' + amountOfTens + ' tens and '; 
-		
-			
+                questionText = questionText + varAString + ' has ';
+                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes;
+                var question = new Question('' + questionText,'' + amountOfOnes);
+                return question;
 
 	},
+
 	getPlaceTensQuestion: function(max)
 	{
+    var varA = Math.floor((Math.random()*max));
+                var varAString = varA.toString();
 
+                var amountOfOnes = '';
+                var amountOfTens = '';
+
+                if (varA < 10)
+                {
+                        amountOfTens = '0';
+                        amountOfOnes = '' + varAString;
+                }
+                if (varA >= 10)
+                {
+                        amountOfTens = '' + varAString[0];
+                        amountOfOnes = '' + varAString[1];
+                }
+
+                var questionText = '';
+
+                questionText = questionText + varAString + ' has ';
+                questionText = questionText + '' + amountOfTens + ' tens and ' + amountOfOnes;
+                var question = new Question('' + questionText,'' + amountOfOnes);
+                return question;
+	
 	}
 });
