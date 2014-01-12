@@ -11,7 +11,7 @@ Extends: Pad,
                 this.mThresholdTime = 10000;
 
 		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
+		this.mInputPad = new NumberPad(application);
 	},
 
 	showQuestion: function()
