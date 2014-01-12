@@ -45,6 +45,8 @@ Extends: Pad,
 
               	for (i = 0; i < this.mScoreNeeded; i++)
 		{
+			var VarC = 100;
+
 			//addition
 			if (minusOrNot == 0)
 			{
