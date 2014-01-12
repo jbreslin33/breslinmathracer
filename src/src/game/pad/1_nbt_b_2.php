@@ -39,12 +39,12 @@ Extends: Pad,
         {
  		this.parent();
 		
-		var totalAddition        = 0;
-		var totalSubtraction     = 0;
-		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalOnes     = 0;
+		var totalTens     = 0;
+		var totalOnesGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalTensGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 
-		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
+		while (totalOnes < totalOnesGoal || totalTens < totalTensGoal)
 		{	
 			//RESET as we have either just started or failed to reach totalNewGoal
 			totalNew = 0;
@@ -62,13 +62,13 @@ Extends: Pad,
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(20,2));
-					totalAddition++;
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.getPlaceOnesQuestion(99));
+					totalOnes++;
 				}	
 				if (randomChance == 1)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getSubtractionQuestion(20));
-					totalSubtraction++;
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.getPlaceTensQuestion(99));
+					totalTens++;
 				}
 			}
 		}

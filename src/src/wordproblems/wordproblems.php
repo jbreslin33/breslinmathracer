@@ -109,5 +109,66 @@ var WordProblems = new Class(
 
                 var question = new Question('' + questionText,'' + sum);
                 return question;
-        }
+        },
+
+	getPlaceOnesQuestion: function(max)
+	{
+        	var varA = Math.floor((Math.random()*max));
+
+		var amountOfTens = 0;
+		var amountOfTens = 0;
+
+		if (varA < 10)
+		{
+			amountOfTens = 0;
+		}
+		if (varA >= 10 && varA < 20)
+		{
+			amountOfTens = 1;
+		}
+		if (varA >= 20 && varA < 30)
+		{
+			amountOfTens = 2;
+		}
+		if (varA >= 30 && varA < 40)
+		{
+			amountOfTens = 3;
+		}
+		if (varA >= 40 && varA < 50)
+		{
+			amountOfTens = 4; 
+		}
+		if (varA >= 50 && varA < 60)
+		{
+			amountOfTens = 5; 
+		}
+		if (varA >= 60 && varA < 70)
+		{
+			amountOfTens = 6; 
+		}
+		if (varA >= 70 && varA < 80)
+		{
+			amountOfTens = 7; 
+		}
+		if (varA >= 80 && varA < 90)
+		{
+			amountOfTens = 8; 
+		}
+		if (varA >= 90 && varA < 100)
+		{
+			amountOfTens = 9; 
+		}
+
+                var questionText = '';
+
+                questionText = questionText + varA + ' has ';
+		questionText = questionText + '' + amountOfTens + ' tens and '; 
+		
+			
+
+	},
+	getPlaceTensQuestion: function(max)
+	{
+
+	}
 });
