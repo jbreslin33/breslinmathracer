@@ -36,27 +36,26 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		var equalOrNot = Math.floor((Math.random()*2));
-		var addendA = 0;
-		var addendB = 0;
-		var sumReal = 100;
-		var sumFake = 100;
+		var minusOrNot = Math.floor((Math.random()*2));
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
 
               	for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			if (equalOrNot == 0)
+			if (minusOrNot == 0)
 			{
-				while(sumReal > 10)
+				while(sumReal > 20)
 				{
-					addendA = Math.floor((Math.random()*10)+1);
-					addendA = Math.floor((Math.random()*10)+1);
+					varA = Math.floor((Math.random()*20)+1);
+					varB = Math.floor((Math.random()*20)+1);
 					sumReal = parseInt(addendA + addendB);
 				
 					var question = new Question('' + addendA + ' + ' + addendB + ' = ' + sumReal,'true');
 					this.mQuiz.mQuestionArray.push(question);
 				}
 			}
-			else if (equalOrNot == 1)
+			else if (minusOrNot == 1)
 			{
 				while(sumReal > 10 || sumFake == sumReal )
 				{

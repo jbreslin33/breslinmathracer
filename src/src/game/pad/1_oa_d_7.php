@@ -49,7 +49,7 @@ Extends: Pad,
 				while(sumReal > 10)
 				{
 					addendA = Math.floor((Math.random()*10)+1);
-					addendA = Math.floor((Math.random()*10)+1);
+					addendB = Math.floor((Math.random()*10)+1);
 					sumReal = parseInt(addendA + addendB);
 				
 					var question = new Question('' + addendA + ' + ' + addendB + ' = ' + sumReal,'true');
@@ -61,7 +61,7 @@ Extends: Pad,
 				while(sumReal > 10 || sumFake == sumReal )
 				{
 					addendA = Math.floor((Math.random()*10)+1);
-					addendA = Math.floor((Math.random()*10)+1);
+					addendB = Math.floor((Math.random()*10)+1);
 					sumReal = parseInt(addendA + addendB);
 					sumFake = Math.floor((Math.random()*10)+1);
 				
