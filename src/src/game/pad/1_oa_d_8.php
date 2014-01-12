@@ -31,15 +31,13 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		var minusOrNot = Math.floor((Math.random()*2));
-		var StandardFormOrNot = Math.floor((Math.random()*2));
-		var missingVar = Math.floor((Math.random()*3)+1);
-		var VarA = 0;
-		var VarB = 0;
-		var VarC = 100;
-
               	for (i = 0; i < this.mScoreNeeded; i++)
 		{
+			var minusOrNot = Math.floor((Math.random()*2));
+			var StandardFormOrNot = Math.floor((Math.random()*2));
+			var missingVar = Math.floor((Math.random()*3)+1);
+			var VarA = 0;
+			var VarB = 0;
 			var VarC = 100;
 
 			//addition
@@ -63,12 +61,12 @@ Extends: Pad,
 					}
 					else if (missingVar == 1)
 					{
-						var question = new Question('' + VarA + ' ? = ' + VarC,'' + VarB);
+						var question = new Question('' + VarA + ' + ? = ' + VarC,'' + VarB);
 						this.mQuiz.mQuestionArray.push(question);
 					}
 					else if (missingVar == 2)
 					{
-						var question = new Question('' + VarA + ' + ' + VarB + ' = ' + VarC,'' + VarC);
+						var question = new Question('' + VarA + ' + ' + VarB + ' = ?','' + VarC);
 						this.mQuiz.mQuestionArray.push(question);
 					}
 				
@@ -88,7 +86,7 @@ Extends: Pad,
                                         }
                                         else if (missingVar == 2)
                                         {
-                                                var question = new Question('' + VarC + ' = ' + VarA + ' ?','' + VarB);
+                                                var question = new Question('' + VarC + ' = ' + VarA + ' + ?','' + VarB);
                                                 this.mQuiz.mQuestionArray.push(question);
                                         }
 				}
