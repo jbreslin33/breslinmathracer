@@ -24,7 +24,7 @@ Extends: InputPad,
                 }
                 if (!this.mButtonB)
                 {
-                        this.mButtonB = new Shape(150,50,300,150,this.mGame,"/images/symbols/greater_than.png","","");
+                        this.mButtonB = new Shape(150,50,300,200,this.mGame,"/images/symbols/greater_than.png","","");
  			this.mButtonB.mCollidable  = false;
                         this.mButtonB.mCollisionOn = false;
                         this.mButtonB.mMesh.innerHTML = 'B';
@@ -33,7 +33,7 @@ Extends: InputPad,
                 }
                 if (!this.mButtonC)
                 {
-                        this.mButtonC = new Shape(150,50,300,200,this.mGame,"/images/symbols/less_than.png","","");
+                        this.mButtonC = new Shape(150,50,300,300,this.mGame,"/images/symbols/less_than.png","","");
  			this.mButtonC.mCollidable  = false;
                         this.mButtonC.mCollisionOn = false;
                         this.mButtonC.mMesh.innerHTML = 'C';
