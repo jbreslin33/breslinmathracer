@@ -8,6 +8,8 @@ Extends: Pad,
        		this.parent(application);
 
 		this.mThresholdTime = 60000;
+		
+		this.setScoreNeeded(20);
 
                 //input pad
                 this.mInputPad = new NumberPad(application);
@@ -43,13 +45,15 @@ Extends: Pad,
 					varA = Math.floor((Math.random()*99)+1);		
 					varB = Math.floor((Math.random()*10));		
 					varC = parseInt(varA + varB);
-					
 				}	
 
 				//b = multiple of ten
 				if (randomChance == 1)
 				{
-				
+					varA = Math.floor((Math.random()*99)+1);		
+					varB = Math.floor((Math.random()*10));		
+					varB = parseInt(varB * 10);
+					varC = parseInt(varA + varB);
 				}
 			}
 			//ok we broke while now add question...
