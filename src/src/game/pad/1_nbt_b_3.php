@@ -16,7 +16,7 @@ Extends: Pad,
                 this.mThresholdTime = 10000;
 
                 //input pad
-                this.mInputPad = new ButtonChoicePad(application,application.mGame);
+                this.mInputPad = new ButtonMultipleChoicePadImages(application);
 	},
 
 	reset: function()
@@ -65,7 +65,19 @@ Extends: Pad,
  	showCorrectAnswer: function()
         {
                 this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+		if (this.mQuiz.getQuestion().getAnswer() == 'A')
+		{
+                	this.mCorrectAnswerBar.mMesh.innerHTML = '=';
+		}
+		if (this.mQuiz.getQuestion().getAnswer() == 'B')
+		{
+                	this.mCorrectAnswerBar.mMesh.innerHTML = '>';
+		}
+		if (this.mQuiz.getQuestion().getAnswer() == 'C')
+		{
+                	this.mCorrectAnswerBar.mMesh.innerHTML = '<';
+		}
+                //this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
         },
 
         showCorrectAnswerOutOfTime: function()
@@ -103,17 +115,17 @@ Extends: Pad,
 				var comparison = '';
 				if (objectsToCountA == objectsToCountB)
 				{
-					comparison = 'is equal to';
+					comparison = 'A';
 					equalTos++;
 				}
 				if (objectsToCountA > objectsToCountB)
 				{
-					comparison = 'is greater than';
+					comparison = 'B';
 					greaterThans++;
 				}
 				if (objectsToCountA < objectsToCountB)
 				{
-					comparison = 'is less than';
+					comparison = 'C';
 					lessThans++;
 				}
 
@@ -125,5 +137,13 @@ Extends: Pad,
 				
 			}
 		}
+    		
+		for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
+                {
+                        this.mQuiz.mQuestionArray[i].setChoice('A','A');
+                        this.mQuiz.mQuestionArray[i].setChoice('B','B');
+                        this.mQuiz.mQuestionArray[i].setChoice('C','C');
+                }
+
 	},
 });
