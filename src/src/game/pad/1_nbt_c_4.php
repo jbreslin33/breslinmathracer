@@ -7,6 +7,8 @@ Extends: Pad,
 	{
        		this.parent(application);
 
+		this.mThresholdTime = 60000;
+
                 //input pad
                 this.mInputPad = new NumberPad(application);
 	},
@@ -15,46 +17,44 @@ Extends: Pad,
         {
  		this.parent();
 
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
-		var totalNew           = 0;
-		var newQuestionElement = 0;
-   		var elementCounter     = 0;
-                
-                for (i = 0; i <= 41; i++)
-                {
-                        if (this.mApplication.mLevel == i)
-                        {
-                                newQuestionElement = elementCounter;
-                        }
-                        elementCounter++;
-                }
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
 
-		while (totalNew < totalNewGoal)
+		//reset vars and arrays
+		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
+		{
+			this.mQuiz.mQuestionArray[d] = 0;
+		} 
+		this.mQuiz.mQuestionArray = 0;
+		this.mQuiz.mQuestionArray = new Array();
+
+		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			//reset vars and arrays
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
-
-			for (s = 0; s < this.mScoreNeeded; s++)
+			varC = 100;
+			while (varC > 99)
 			{	
-				//50% chance of asking newest question
+				//50% chance of different type of question 
 				var randomChance = Math.floor((Math.random()*2));		
+
+				//b = 1 digit
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
-					totalNew++;
+					varA = Math.floor((Math.random()*99)+1);		
+					varB = Math.floor((Math.random()*10));		
+					varC = parseInt(varA + varB);
+					
 				}	
+
+				//b = multiple of ten
 				if (randomChance == 1)
 				{
-					var randomElement = Math.floor((Math.random()*newQuestionElement));		
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+				
 				}
 			}
+			//ok we broke while now add question...
+			this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
+			
 		}
 	}
 });
