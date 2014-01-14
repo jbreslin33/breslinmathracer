@@ -5,6 +5,7 @@
 
 <!-- mootools -->
 <script type="text/javascript" src="/src/mootools/mootools-core-1.4.5-full-compat.js"></script>
+<script type="text/javascript" src="/src/raphael/raphael-min.js"></script>
 
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/login/check_login.php");
