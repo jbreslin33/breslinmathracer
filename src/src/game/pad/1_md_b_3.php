@@ -147,7 +147,7 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 		
-		this.drawClock();	
+		this.createClock();	
 
                 this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/circle.png","",""));
                 this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/cone.png","",""));
@@ -181,25 +181,39 @@ Extends: Pad,
                 this.showClockShape();
         },
 
-	drawClock: function()
+	createClock: function()
 	{
-		// Creates canvas 320 × 200 at 10, 50
-		var paper = Raphael(10, 50, 320, 200);
-
-		// Creates circle at x = 50, y = 40, with radius 10
-		var circle = paper.circle(50, 40, 10);
-
-		// Sets the fill attribute of the circle to red (#f00)
-		circle.attr("fill", "#f00");
-
-		// Sets the stroke attribute of the circle to white
-		circle.attr("stroke", "#fff");
-
+		this.clockDiv = new Shape(200,200,200,200,this,"","",""); 
+		canvas = Raphael(this.clockDiv,200, 200);
+                var clock = canvas.circle(100,100,95);
+                clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})  
+                var hour_sign;
+                for(i=0;i<12;i++)
+		{
+                	var start_x = 100+Math.round(80*Math.cos(30*i*Math.PI/180));
+                    	var start_y = 100+Math.round(80*Math.sin(30*i*Math.PI/180));
+                    	var end_x = 100+Math.round(90*Math.cos(30*i*Math.PI/180));
+                    	var end_y = 100+Math.round(90*Math.sin(30*i*Math.PI/180));    
+                    	hour_sign = canvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
+                }    
+                hour_hand = canvas.path("M100 100L100 50");
+                hour_hand.attr({stroke: "#444444", "stroke-width": 6});
+                minute_hand = canvas.path("M100 100L100 40");
+                minute_hand.attr({stroke: "#444444", "stroke-width": 4});
+                second_hand = canvas.path("M100 110L100 25");
+                second_hand.attr({stroke: "#444444", "stroke-width": 2}); 
+                var pin = canvas.circle(100, 100, 5);
+                pin.attr("fill", "#000000");    
 	},
  	
 	updateClock: function()
 	{
+   		var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
+                minute_hand.rotate(6*minutes, 100, 100);
+                second_hand.rotate(6*seconds, 100, 100);
        	}
-	
-
 });
