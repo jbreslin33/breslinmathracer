@@ -208,6 +208,7 @@ Extends: Pad,
  	
 	updateClock: function()
 	{
+		/*
    		var now = new Date();
                 var hours = now.getHours();
                 var minutes = now.getMinutes();
@@ -215,5 +216,6 @@ Extends: Pad,
                 hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
                 minute_hand.rotate(6*minutes, 100, 100);
                 second_hand.rotate(6*seconds, 100, 100);
+		*/
        	}
 });
