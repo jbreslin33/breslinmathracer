@@ -11,7 +11,7 @@ Extends: Pad,
                 this.mThresholdTime = 10000;
 
 		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
+		this.mInputPad = new NumberPad(application);
 	},
 	
 	update: function()
@@ -47,7 +47,10 @@ Extends: Pad,
 	showQuestion: function()
 	{
 		this.mInputPad.showQuestion();	
-		this.setClock(5,45);	
+		var t = this.mQuiz.getQuestion().getAnswer(); 	
+		var tArray = t.split(":");
+		tArray[0]
+		this.setClock(parseInt(tArray[0]),parseInt(tArray[1]));	
 	},
  
 	showCorrectAnswer: function()
