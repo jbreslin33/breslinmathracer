@@ -18,7 +18,6 @@ Extends: Pad,
 	update: function()
 	{
 		this.parent();
-		this.updateClock();
 	},
 
 	reset: function()
@@ -49,16 +48,9 @@ Extends: Pad,
 
 	showQuestion: function()
 	{
-		for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                }
-                this.mShapeArray[this.mScore].setVisibility(false);
-
 		this.mInputPad.showQuestion();	
-		
-		//show shape	
-		this.mShapeArray[this.mScore].setVisibility(true);
+	
+		this.setClock(5,45);	
 	},
  
 	showCorrectAnswer: function()
@@ -78,65 +70,27 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 
-		//1 circle
-		var question = new Question('What is this?','circle');
-		question.setChoice('A','dddddcircle');
-		question.setChoice('B','cone');
-		this.mQuiz.mQuestionArray.push(question);
-	
-		//2 cone	
-		var question = new Question('What is this?','cone');
-		question.setChoice('A','circle');
-		question.setChoice('B','cone');
-		this.mQuiz.mQuestionArray.push(question);
+		for (i=0; i < this.mScoreNeeded; i++)
+		{
+			var h = '' + Math.floor((Math.random()*12)+1);	
+			var m = '00';	
+			randomChance = Math.floor((Math.random()*2));	
+			
+			//exact hour
+			if (randomChance == 0)
+			{
+				m = '00';	
 
-		//3 cube
-		var question = new Question('What is this?','cube');
-		question.setChoice('A','cube');
-		question.setChoice('B','cylinder');
-		this.mQuiz.mQuestionArray.push(question);
+			}
+			//half past
+			else
+			{
+				m = '30';	
+			}
 		
-		//4 cylinder
-		var question = new Question('What is this?','cylinder');
-		question.setChoice('A','hexagon');
-		question.setChoice('B','cylinder');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//5 hexagon	
-		var question = new Question('What is this?','hexagon');
-		question.setChoice('A','hexagon');
-		question.setChoice('B','rectangle');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//6 rectangle 
-		var question = new Question('What is this?','rectangle');
-		question.setChoice('A','sphere');
-		question.setChoice('B','rectangle');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//7 sphere
-		var question = new Question('What is this?','sphere');
-		question.setChoice('A','sphere');
-		question.setChoice('B','square');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//8 square	
-		var question = new Question('What is this?','square');
-		question.setChoice('A','triangle');
-		question.setChoice('B','square');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//9 triangle
-		var question = new Question('What is this?','triangle');
-		question.setChoice('A','triangle');
-		question.setChoice('B','circle');
-		this.mQuiz.mQuestionArray.push(question);
-		
-		//10 circle
-		var question = new Question('What is this?','circle');
-		question.setChoice('A','cone');
-		question.setChoice('B','circle');
-		this.mQuiz.mQuestionArray.push(question);
+			var question = new Question('What time is it?', '' + h + ':' + m);
+			this.mQuiz.mQuestionArray.push(question);
+		}
 
 		this.createQuestionShapes();
 	},
@@ -183,9 +137,9 @@ Extends: Pad,
 
 	createClock: function(hours,minutes,seconds)
 	{
-		this.clockDiv = new Shape(200,200,200,200,this,"","",""); 
-		canvas = Raphael(this.clockDiv,200, 200);
-                var clock = canvas.circle(100,100,95);
+		clockDiv = new Shape(200,200,200,200,this,"","",""); 
+		canvas = Raphael(clockDiv,200, 200);
+                clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})  
                 var hour_sign;
                 for(i=0;i<12;i++)
@@ -196,21 +150,23 @@ Extends: Pad,
                     	var end_y = 100+Math.round(90*Math.sin(30*i*Math.PI/180));    
                     	hour_sign = canvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
                 }    
-                hour_hand = canvas.path("M100 100L100 50");
-                hour_hand.attr({stroke: "#444444", "stroke-width": 6});
+                this.hour_hand = canvas.path("M100 100L100 50");
+                this.hour_hand.attr({stroke: "#444444", "stroke-width": 6});
 
-                minute_hand = canvas.path("M100 100L100 40");
-                minute_hand.attr({stroke: "#444444", "stroke-width": 4});
-
-                second_hand = canvas.path("M100 110L100 25");
-                second_hand.attr({stroke: "#444444", "stroke-width": 2}); 
+                this.minute_hand = canvas.path("M100 100L100 40");
+                this.minute_hand.attr({stroke: "#444444", "stroke-width": 4});
 
                 var pin = canvas.circle(100, 100, 5);
                 pin.attr("fill", "#000000");    
 		
+		//rotate to spot 
+ 		this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
+                this.minute_hand.rotate(6*minutes, 100, 100);
+	},
+	setClock: function(hours,minutes)
+	{
 		//rotate to spot
- 		hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
-                minute_hand.rotate(6*minutes, 100, 100);
-                second_hand.rotate(6*seconds, 100, 100);
+ 		this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
+                this.minute_hand.rotate(6*minutes, 100, 100);
 	}
 });
