@@ -147,7 +147,7 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 		
-		this.createClock();	
+		this.createClock(2,3,4);	
 
                 this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/circle.png","",""));
                 this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/cone.png","",""));
@@ -181,7 +181,7 @@ Extends: Pad,
                 this.showClockShape();
         },
 
-	createClock: function()
+	createClock: function(hours,minutes,seconds)
 	{
 		this.clockDiv = new Shape(200,200,200,200,this,"","",""); 
 		canvas = Raphael(this.clockDiv,200, 200);
@@ -198,24 +198,19 @@ Extends: Pad,
                 }    
                 hour_hand = canvas.path("M100 100L100 50");
                 hour_hand.attr({stroke: "#444444", "stroke-width": 6});
+
                 minute_hand = canvas.path("M100 100L100 40");
                 minute_hand.attr({stroke: "#444444", "stroke-width": 4});
+
                 second_hand = canvas.path("M100 110L100 25");
                 second_hand.attr({stroke: "#444444", "stroke-width": 2}); 
+
                 var pin = canvas.circle(100, 100, 5);
                 pin.attr("fill", "#000000");    
-	},
- 	
-	updateClock: function()
-	{
-		/*
-   		var now = new Date();
-                var hours = now.getHours();
-                var minutes = now.getMinutes();
-                var seconds = now.getSeconds();
-                hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
+		
+		//rotate to spot
+ 		hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
                 minute_hand.rotate(6*minutes, 100, 100);
                 second_hand.rotate(6*seconds, 100, 100);
-		*/
-       	}
+	}
 });
