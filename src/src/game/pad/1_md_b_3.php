@@ -12,7 +12,6 @@ Extends: Pad,
 
 		//input pad
 		this.mInputPad = new ButtonMultipleChoicePad(application);
-
 	},
 	
 	update: function()
@@ -41,7 +40,6 @@ Extends: Pad,
                         this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
                         document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
                         this.mShapeArray[i] = 0;
-			this.log('destroyShape:' + i);
                 }
                 this.mShapeArray = 0;
 	},
@@ -49,7 +47,6 @@ Extends: Pad,
 	showQuestion: function()
 	{
 		this.mInputPad.showQuestion();	
-	
 		this.setClock(5,45);	
 	},
  
@@ -101,28 +98,7 @@ Extends: Pad,
 
 		this.mShapeArray = new Array();		
 		
-		this.createClock(2,3,4);	
-
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/circle.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/cone.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/cube.jpg","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/cylinder.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/hexagon.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/rectangle.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/sphere.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/square.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/triangle.png","",""));
-                this.mShapeArray.push(new Shape(200,200,450,275,this,"/images/shapes/circle.png","",""));
-               	
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-               		this.mShapeArray[i].mCollidable = false;
-               		this.mShapeArray[i].mCollisionOn = false;
-		}	
-		
-		this.setScoreNeeded(this.mShapeArray.length);
-
+		this.createClock(12,59);	
 	},
 
 	//state overides
