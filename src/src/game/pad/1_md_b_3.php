@@ -72,7 +72,7 @@ Extends: Pad,
 
 		for (i=0; i < this.mScoreNeeded; i++)
 		{
-			var h = '' + Math.floor((Math.random()*12)+1);	
+			var h = '' + Math.floor((Math.random()*12));	
 			var m = '00';	
 			randomChance = Math.floor((Math.random()*2));	
 			
@@ -80,7 +80,6 @@ Extends: Pad,
 			if (randomChance == 0)
 			{
 				m = '00';	
-
 			}
 			//half past
 			else
