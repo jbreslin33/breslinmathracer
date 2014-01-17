@@ -221,6 +221,7 @@ var Game = new Class(
 	//brian - update score in games_attempts table		
 	updateScore: function()
 	{
+		/*
 		var score = this.getScore();
 		var xmlhttp;    
 		
@@ -239,6 +240,7 @@ var Game = new Class(
 		}
 		xmlhttp.open("GET","../../src/database/update_score.php?q="+score,true);
 		xmlhttp.send();
+		*/
 	},
 
 	standardGameAttempt: function()
