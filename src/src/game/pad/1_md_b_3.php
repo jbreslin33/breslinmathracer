@@ -49,7 +49,6 @@ Extends: Pad,
 		this.mInputPad.showQuestion();	
 		var t = this.mQuiz.getQuestion().getAnswer(); 	
 		var tArray = t.split(":");
-		tArray[0]
 		this.setClock(parseInt(tArray[0]),parseInt(tArray[1]));	
 	},
  
