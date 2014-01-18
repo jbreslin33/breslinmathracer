@@ -29,21 +29,6 @@ Extends: Pad,
 		} 
 	},
 	
-	destroyShapes: function()
-	{
-		this.parent();
-
-		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        //back to div
-                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
-                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
-                        this.mShapeArray[i] = 0;
-                }
-                this.mShapeArray = 0;
-	},
-
 	showQuestion: function()
 	{
 		this.mInputPad.showQuestion();	
@@ -111,11 +96,17 @@ Extends: Pad,
                 this.showCorrectAnswerBar();
                 this.showClockShape();
         },
+	
+	destroyShapes: function()
+	{
+		this.parent();
+	},
 
 	createClock: function(hours,minutes,seconds)
 	{
-		clockDiv = new Shape(200,200,200,200,this,"","",""); 
-		canvas = Raphael(clockDiv,200, 200);
+		this.mClock = new Shape(200,200,200,200,this,"","",""); 
+		this.mShapeArray.push(this.mClock);
+		canvas = Raphael(this.mClock,200, 200);
                 clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})  
                 var hour_sign;
