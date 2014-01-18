@@ -149,13 +149,17 @@ Extends: Pad,
 		//rotate to spot
 		if (hours == 12)
 		{
+			
  			this.hour_hand.rotate(minutes/2.5, 100, 100);
                 	this.minute_hand.rotate(6*minutes, 100, 100);
 		}
 		else
 		{
- 			this.hour_hand.rotate(30*hours, 100, 100);
-                	this.minute_hand.rotate(6*minutes, 100, 100);
+ 			//this.hour_hand.rotate(30*hours, 100, 100);
+                	//this.minute_hand.rotate(6*minutes, 100, 100);
+			this.hour_hand.transform("r" + 30*hours + ",100,100"); 
+			this.minute_hand.transform("r" + 6*minutes); 
+			
 		}
 		this.log('' + hours + ':' + minutes);
  		//this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
