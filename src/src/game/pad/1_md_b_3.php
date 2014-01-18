@@ -155,14 +155,9 @@ Extends: Pad,
 		}
 		else
 		{
- 			//this.hour_hand.rotate(30*hours, 100, 100);
-                	//this.minute_hand.rotate(6*minutes, 100, 100);
-			this.hour_hand.transform("r" + 30*hours + ",100,100"); 
-			this.minute_hand.transform("r" + 6*minutes); 
-			
+			this.hour_hand.transform("r" + parseInt(30*hours + (minutes/2)) + ",100,100"); 
+			this.minute_hand.transform("r" + parseInt(6*minutes) + "100,100"); 
 		}
 		this.log('' + hours + ':' + minutes);
- 		//this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
-                //this.minute_hand.rotate(6*minutes, 100, 100);
 	}
 });
