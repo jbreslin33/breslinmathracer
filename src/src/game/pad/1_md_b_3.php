@@ -136,14 +136,29 @@ Extends: Pad,
                 var pin = canvas.circle(100, 100, 5);
                 pin.attr("fill", "#000000");    
 		
-		//rotate to spot 
- 		this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
-                this.minute_hand.rotate(6*minutes, 100, 100);
+		//reset transforms
+ 		this.hour_hand.transform("");
+ 		this.minute_hand.transform("");
 	},
 	setClock: function(hours,minutes)
 	{
+		//reset transforms
+ 		this.hour_hand.transform("");
+ 		this.minute_hand.transform("");
+		
 		//rotate to spot
- 		this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
-                this.minute_hand.rotate(6*minutes, 100, 100);
+		if (hours == 12)
+		{
+ 			this.hour_hand.rotate(minutes/2.5, 100, 100);
+                	this.minute_hand.rotate(6*minutes, 100, 100);
+		}
+		else
+		{
+ 			this.hour_hand.rotate(30*hours, 100, 100);
+                	this.minute_hand.rotate(6*minutes, 100, 100);
+		}
+		this.log('' + hours + ':' + minutes);
+ 		//this.hour_hand.rotate(30*hours+(minutes/2.5), 100, 100);
+                //this.minute_hand.rotate(6*minutes, 100, 100);
 	}
 });
