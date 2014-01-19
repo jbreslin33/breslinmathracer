@@ -11,12 +11,11 @@ Extends: Timer,
 	update: function()
 	{
 		this.parent();
-		this.mApplication.log('mThresholdTime:' + this.mApplication.mGame.mThresholdTime);
-		this.mApplication.log('mTimeSinceEpoch:' + this.mApplication.mGame.mTimeSinceEpoch);
-		this.mApplication.log('mQuestionStartTime:' + this.mApplication.mGame.mQuestionStartTime);
-		
-
+//		this.mApplication.log('mThresholdTime:' + this.mApplication.mGame.mThresholdTime);
+//		this.mApplication.log('mTimeSinceEpoch:' + this.mApplication.mGame.mTimeSinceEpoch);
+//		this.mApplication.log('mQuestionStartTime:' + this.mApplication.mGame.mQuestionStartTime);
 //this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime
+
 		
 	},
 
@@ -37,9 +36,6 @@ Extends: Timer,
                         var end_y = 100+Math.round(90*Math.sin(30*i*Math.PI/180));
                         hour_sign = canvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
                 }
-                this.hour_hand = canvas.path("M100 100L100 50");
-                this.hour_hand.attr({stroke: "#444444", "stroke-width": 6});
-
                 this.minute_hand = canvas.path("M100 100L100 40");
                 this.minute_hand.attr({stroke: "#444444", "stroke-width": 4});
 
@@ -47,15 +43,6 @@ Extends: Timer,
                 pin.attr("fill", "#000000");
 
                 //reset transforms
-                this.hour_hand.transform("");
-
-
-                //answer
-/*j
-                this.mNumAnswer = new Shape(100,50,400,100,this.mGame,"INPUT","","");
-                this.mNumAnswer.mMesh.value = '';
-                this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-                this.mTimerArray.push(this.mNumAnswer);
-*/
+                this.minute_hand.transform("");
 	}
 });
