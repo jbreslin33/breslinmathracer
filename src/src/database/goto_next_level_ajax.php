@@ -32,6 +32,8 @@ $returnString .= ",";
 $returnString .= $_SESSION["standard"];
 $returnString .= ",";
 $returnString .= $_SESSION["progression"];
+$returnString .= ",";
+$returnString .= $_SESSION["levels"];
 echo $returnString;
 
 

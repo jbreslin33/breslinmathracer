@@ -7,4 +7,5 @@ $ref_id = $_SESSION["ref_id"];
 $level = $_SESSION["level"];
 $standard = $_SESSION["standard"];
 $progression = $_SESSION["progression"];
+$levels = $_SESSION["levels"];
 ?>

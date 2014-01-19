@@ -29,6 +29,7 @@ var ref_id      = "<?php echo $ref_id; ?>";
 var level       = "<?php echo $level; ?>";
 var standard    = "<?php echo $standard; ?>";
 var progression = "<?php echo $progression; ?>";
+var levels      = "<?php echo $levels; ?>";
 
 var APPLICATION;
 

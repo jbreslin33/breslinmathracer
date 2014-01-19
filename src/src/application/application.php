@@ -18,6 +18,7 @@ var Application = new Class(
 		/*********** LEVEL *******************
 		this.mRef_id = ref_id;
 		this.mLevel = level;
+		this.mLevels = levels;
 		this.mProgression = progression;
 		this.mStandard = standard;
 
@@ -115,7 +116,7 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
-			//APPLICATION.log('getLevelData response:' + response);
+			APPLICATION.log('getLevelData response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
@@ -123,7 +124,8 @@ var Application = new Class(
 			{
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
-				APPLICATION.mHud.setLevel(APPLICATION.mLevel);
+				APPLICATION.mLevels = responseArray[3];
+				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
 		}
@@ -677,6 +679,8 @@ var Application = new Class(
 				APPLICATION.mStandard = responseArray[3];
 				APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 				APPLICATION.mProgression = responseArray[4];
+				APPLICATION.mLevels = responseArray[5];
+				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}
