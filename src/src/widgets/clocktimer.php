@@ -6,30 +6,23 @@ Extends: Timer,
 	initialize: function(application)
 	{
 		this.parent(application)
+		this.mElapsedTime = 0;	
 	},
 
 	update: function()
 	{
 		this.parent();
-//		this.mApplication.log('mThresholdTime:' + this.mApplication.mGame.mThresholdTime);
-//		this.mApplication.log('mTimeSinceEpoch:' + this.mApplication.mGame.mTimeSinceEpoch);
-//		this.mApplication.log('mQuestionStartTime:' + this.mApplication.mGame.mQuestionStartTime);
-//this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime
-
-		
+		this.mApplication.mGame.mElapsedTime = this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime;	
+		this.setTimer();
 	},
 
-	callThis: function()
+	destroy: function()
 	{
-
+		canvas.remove();
 	},
 
         createTimer: function()
         {
-
-		//  this.mClock = new Shape(200,200,400,400,"","","#F6C0F6","boundary");
- 		//this.mClock = new Shape(200,200,400,400,this,"","","");
-               // this.mTimerArray.push(this.mClock);
                 var canvas = Raphael(200,200,200,200);
                 clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
@@ -50,5 +43,17 @@ Extends: Timer,
 
                 //reset transforms
                 this.minute_hand.transform("");
+	},
+
+	setTimer: function()
+	{
+  		//reset transforms
+                this.minute_hand.transform("");
+
+		//find value of 1 second of threshold time in degrees 
+                //this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100");
+		var rotateDegree = parseInt(this.mApplication.mGame.mThresholdTime/1000);
+		this.mApplication.log('rotateDegree:' + rotateDegree);
+                //this.minute_hand.transform("r" + rotateDegree + ",100,100");
 	}
 });
