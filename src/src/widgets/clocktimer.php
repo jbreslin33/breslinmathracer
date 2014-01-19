@@ -22,7 +22,16 @@ Extends: Timer,
 			this.mValueInSeconds = parseInt(360/this.mThresh); 
 			this.mFirstTime = false;
 		}
-
+  
+		if (this.mApplication.mGame.mPadStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
+                {
+			this.mApplication.log('mWAIT');
+                        this.minute_hand.transform("");
+		}
+		else
+		{
+			this.mApplication.log('not mWAIT');
+		}		
 		if (this.mApplication.mGame.mQuestionStartTime > 0)
 		{
 			this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
@@ -38,7 +47,7 @@ Extends: Timer,
 
         createTimer: function()
         {
-                var canvas = Raphael(200,200,200,200);
+                var canvas = Raphael(550,200,200,200);
                 clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
                 var hour_sign;
@@ -64,8 +73,11 @@ Extends: Timer,
 	{
   		//reset transforms
                 this.minute_hand.transform("");
-		
-		var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
-                this.minute_hand.transform("r" + rot + ",100,100");
+
+		if (this.mApplication.mGame.mCurrentState == this.mWAITING_ON_ANSWER)
+		{
+			var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
+                	this.minute_hand.transform("r" + rot + ",100,100");
+		}
 	}
 });
