@@ -58,11 +58,11 @@ Extends: Timer,
                 //this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100");
 		var thresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
 
-		var valueOfThreshInDeg = parseInt(360/thresh); 
+		var v = parseInt(360/thresh); 
 
-		var r = this.mElapsedTime;
-
-		this.mApplication.log('r:' + r);	
-                //this.minute_hand.transform("r" + rotateDegree + ",100,100");
+		var t = this.mElapsedTime;
+		var rot = parseInt(t*v); 
+		this.mApplication.log('rot:' + rot);	
+                this.minute_hand.transform("r" + rot + ",100,100");
 	}
 });
