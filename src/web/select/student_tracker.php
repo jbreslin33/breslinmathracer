@@ -20,7 +20,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 <?php
 $query = "select users.username, users.first_name, users.last_name, learning_standards.progression, users.level, learning_standards.levels from users join learning_standards on learning_standards.ref_id = users.ref_id where users.school_id = ";
 $query .= $_SESSION["school_id"];
-$query .= " order by learning_standards.progression desc;";
+$query .= " order by learning_standards.progression desc, users.level desc;";
 
 
 $result = pg_query($conn,$query);
