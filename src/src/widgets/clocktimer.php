@@ -53,16 +53,11 @@ Extends: Timer,
 	{
   		//reset transforms
                 this.minute_hand.transform("");
-
-		//find value of 1 second of threshold time in degrees 
-                //this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100");
+		
 		var thresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
-
 		var v = parseInt(360/thresh); 
-
 		var t = this.mElapsedTime;
 		var rot = parseInt(t*v); 
-		this.mApplication.log('rot:' + rot);	
                 this.minute_hand.transform("r" + rot + ",100,100");
 	}
 });
