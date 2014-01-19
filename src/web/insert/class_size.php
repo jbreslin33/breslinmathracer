@@ -13,7 +13,7 @@ session_start();
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_root.php");
 echo "<br>";
 include(getenv("DOCUMENT_ROOT") . "/web/insert/links.php");
 ?>

@@ -9,14 +9,10 @@ $conn = dbConnect();
 if  ($_SESSION["username"] == "root")
 {
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_root.php");
-echo "<br>";
-include(getenv("DOCUMENT_ROOT") . "/web/insert/links.php");
-
 } 
 else
 {
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
-echo "<br>";
 }
 ?>
 
