@@ -12,6 +12,11 @@ var Timer  = new Class(
 	},
 
 	//fake virtual
+	update: function()
+	{
+	},
+
+	//fake virtual
 	createTimer: function()
 	{
 	},

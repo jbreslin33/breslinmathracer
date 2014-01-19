@@ -22,6 +22,7 @@ Extends: Pad,
 
 	update: function()
 	{
+		this.parent();
 		this.mTimer.update();
 	},
 

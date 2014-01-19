@@ -10,7 +10,14 @@ Extends: Timer,
 
 	update: function()
 	{
-		this.mApplication.log('update ClockTimer:');
+		this.parent();
+		this.mApplication.log('mThresholdTime:' + this.mApplication.mGame.mThresholdTime);
+		this.mApplication.log('mTimeSinceEpoch:' + this.mApplication.mGame.mTimeSinceEpoch);
+		this.mApplication.log('mQuestionStartTime:' + this.mApplication.mGame.mQuestionStartTime);
+		
+
+//this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime
+		
 	},
 
         createTimer: function()
