@@ -12,8 +12,12 @@ Extends: Timer,
 	update: function()
 	{
 		this.parent();
-		this.mApplication.mGame.mElapsedTime = this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime;	
-		this.setTimer();
+		if (this.mApplication.mGame.mQuestionStartTime > 0)
+		{
+			this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
+			this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
+			this.setTimer();
+		}
 	},
 
 	destroy: function()
@@ -55,7 +59,10 @@ Extends: Timer,
 		var thresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
 
 		var valueOfThreshInDeg = parseInt(360/thresh); 
-		this.mApplication.log('v:' + valueOfThreshInDeg);	
+
+		var r = this.mElapsedTime;
+
+		this.mApplication.log('r:' + r);	
                 //this.minute_hand.transform("r" + rotateDegree + ",100,100");
 	}
 });
