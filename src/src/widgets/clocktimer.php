@@ -19,12 +19,18 @@ Extends: Timer,
 		
 	},
 
+	callThis: function()
+	{
+
+	},
+
         createTimer: function()
         {
 
- 		this.mClock = new Shape(200,200,200,200,this,"","","");
-                this.mTimerArray.push(this.mClock);
-                canvas = Raphael(this.mClock,200, 200);
+		//  this.mClock = new Shape(200,200,400,400,"","","#F6C0F6","boundary");
+ 		//this.mClock = new Shape(200,200,400,400,this,"","","");
+               // this.mTimerArray.push(this.mClock);
+                var canvas = Raphael(200,200,200,200);
                 clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
                 var hour_sign;
