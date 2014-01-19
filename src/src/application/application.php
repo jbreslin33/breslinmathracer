@@ -116,7 +116,6 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
-			APPLICATION.log('getLevelData response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
