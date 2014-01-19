@@ -32,6 +32,8 @@ Extends: Game,
 
                 this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
                 this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
+
+   		this.mTimer = new ClockTimer(application);
 	},
 
 	destructor: function()
@@ -63,6 +65,7 @@ Extends: Game,
         {
   		this.parent()
 		this.mPadStateMachine.update();
+		this.mTimer.update();
         },
    
 	createQuestions: function()

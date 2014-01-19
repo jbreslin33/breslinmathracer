@@ -15,15 +15,6 @@ Extends: Pad,
 
 		//input pad
 		this.mInputPad = new NumberPad(application);
-
-		this.mTimer = new ClockTimer(application);
-
-	},
-
-	update: function()
-	{
-		this.parent();
-		this.mTimer.update();
 	},
 
 	reset: function()
