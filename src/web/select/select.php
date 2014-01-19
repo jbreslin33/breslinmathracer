@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-
-<html>
-
-<head>
-<link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
-</head>
-
-<body>
 <?php
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
-echo "<br>";
-include(getenv("DOCUMENT_ROOT") . "/web/select/links.php");
+session_start();
+//db connection
+include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+$conn = dbConnect();
+
+//i should show a diff page depending on whether you are root
+if  ($_SESSION["username"] == "root")
+{
+include(getenv("DOCUMENT_ROOT") . "/web/select/select_root.php");
+}
+else
+{
+include(getenv("DOCUMENT_ROOT") . "/web/select/select_user.php");
+}
 ?>
-</body>
-
-</html>
-
 

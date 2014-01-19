@@ -8,9 +8,7 @@
 
 <body>
 <?php
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
-echo "<br>";
-include(getenv("DOCUMENT_ROOT") . "/web/select/links.php");
+include(getenv("DOCUMENT_ROOT") . "/web/select/links_root.php");
 ?>
 </body>
 
