@@ -9,6 +9,7 @@ Extends: Timer,
 		this.mElapsedTime = 0;	
 		this.mFirstTime = true;
 		this.mThresh = 0;
+		this.mValueInSeconds = 0;
 	},
 
 	update: function()
@@ -18,6 +19,7 @@ Extends: Timer,
 		if (this.mFirstTime == true)
 		{
 			this.mThresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
+			this.mValueInSeconds = parseInt(360/this.mThresh); 
 			this.mFirstTime = false;
 		}
 
@@ -63,9 +65,7 @@ Extends: Timer,
   		//reset transforms
                 this.minute_hand.transform("");
 		
-		var v = parseInt(360/this.mThresh); 
-		var t = this.mElapsedTime;
-		var rot = parseInt(t*v); 
+		var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
                 this.minute_hand.transform("r" + rot + ",100,100");
 	}
 });
