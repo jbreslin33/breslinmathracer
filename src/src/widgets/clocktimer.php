@@ -52,8 +52,10 @@ Extends: Timer,
 
 		//find value of 1 second of threshold time in degrees 
                 //this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100");
-		var rotateDegree = parseInt(this.mApplication.mGame.mThresholdTime/1000);
-		this.mApplication.log('rotateDegree:' + rotateDegree);
+		var thresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
+
+		var valueOfThreshInDeg = parseInt(360/thresh); 
+		this.mApplication.log('v:' + valueOfThreshInDeg);	
                 //this.minute_hand.transform("r" + rotateDegree + ",100,100");
 	}
 });
