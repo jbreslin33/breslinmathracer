@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <html>
 
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
+
 <?php
-header("Refresh: 10;");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 ?>
 
-<head>
-<link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
 <body>
+
+<br><b><u>Student Leaders:<u><b><br>
+
 <?php
-session_start();
-//db connection
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
-$conn = dbConnect();
-
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
-echo "<br>";
-include(getenv("DOCUMENT_ROOT") . "/web/select/links.php");
-
-
-echo "<br><b><u>My Students:<u><b><br>";
-
-$query = "select games_attempts.game_attempt_time_start, games_attempts.score, games_attempts.time_warning, levels.description, users.first_name, users.last_name from users  join games_attempts on games_attempts.user_id = users.id join levels on levels.id = games_attempts.level_id where users.school_id = ";
+$query = "select users.username, users.first_name, users.last_name, learning_standards.progression, users.level, learning_standards.levels from users join learning_standards on learning_standards.ref_id = users.ref_id where users.school_id = ";
 $query .= $_SESSION["school_id"];
-$query .= "ORDER BY game_attempt_time_start DESC";
-$query .= ";";
+$query .= " order by learning_standards.progression desc;";
+
 
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
@@ -37,35 +30,26 @@ $numrows = pg_numrows($result);
 
 <table border="1">
   <tr>
-   <th>TIME</th>
-   <th>SCORE</th>
-   <th>DESCRIPTION</th>
-   <th>FIRST NAME</th>
-   <th>LAST NAME</th>
+   <th>Username</th>
+   <th>FirstName</th>
+   <th>LastName</th>
+   <th>Progression</th>
+   <th>Level</th>
+   <th>Levels</th>
   </tr>
 
 <?php
    // Loop on rows in the result set.
 
    for($ri = 0; $ri < $numrows; $ri++) {
-   
-   $row = pg_fetch_array($result, $ri);
-   
-		if($row["time_warning"] == "f")
-		{
-			$bg_color = "#EEEEEE";
-		}
-		else {
-			$bg_color = "#FF3300";
-		}
-		
-		echo "<tr bgcolor=", $bg_color, ">\n";
-	
-    echo " <td>", $row["game_attempt_time_start"], "</td>
-   <td>", $row["score"], "</td>
-   <td>", $row["description"], "</td>
+    echo "<tr>\n";
+    $row = pg_fetch_array($result, $ri);
+    echo " <td>", $row["username"], "</td>
    <td>", $row["first_name"], "</td>
    <td>", $row["last_name"], "</td>
+   <td>", $row["progression"], "</td>
+   <td>", $row["level"], "</td>
+   <td>", $row["levels"], "</td>
   </tr>
   ";
    }
@@ -73,6 +57,7 @@ $numrows = pg_numrows($result);
   ?>
 
   </table>
+
 
 </body>
 
