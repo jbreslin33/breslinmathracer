@@ -1,11 +1,24 @@
-<ul>
-<li><a href="/web/home/home.php">Home</a></li>
-<li><a href="/web/application/application.php">Play</a></li>
-<li><a href="/web/insert/insert.php">Inserts</a></li>
-<li><a href="/web/select/select.php">Selects</a></li>
-<li><a href="/web/stats/stats.php">Stats</a></li>
-<li><a href="/web/login/login_form.php">Logout</a></li>
-</ul>
+
+<?php
+session_start();
+//db connection
+include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+$conn = dbConnect();
+
+//i should show a diff page depending on whether you are root
+if  ($_SESSION["username"] == "root")
+{
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_root.php");
+echo "<br>";
+include(getenv("DOCUMENT_ROOT") . "/web/insert/links.php");
+
+} 
+else
+{
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+echo "<br>";
+}
+?>
 
 
 
