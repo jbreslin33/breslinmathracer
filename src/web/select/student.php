@@ -3,23 +3,22 @@
 <html>
 
 <head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
-</head>
-
-<body>
 <?php
 session_start();
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
+?>
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
-echo "<br>";
-include(getenv("DOCUMENT_ROOT") . "/web/select/links.php");
+</head>
 
+<body>
 
-echo "<br><b><u>My Students:<u><b><br>";
-
+<br><b><u>My Students:<u><b><br>
+<?php
 $query = "select students.id,  users.username, users.password, users.first_name, users.last_name from students join users on students.id = users.id where users.school_id = ";
 $query .= $_SESSION["school_id"];
 $query .= ";";
@@ -56,7 +55,6 @@ $numrows = pg_numrows($result);
   ?>
 
   </table>
-
 </body>
 
 </html>
