@@ -8,6 +8,11 @@ Extends: Timer,
 		this.parent(application)
 	},
 
+	update: function()
+	{
+		this.mApplication.log('update ClockTimer:');
+	},
+
         createTimer: function()
         {
 

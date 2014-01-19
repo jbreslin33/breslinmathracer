@@ -20,6 +20,11 @@ Extends: Pad,
 
 	},
 
+	update: function()
+	{
+		this.mTimer.update();
+	},
+
 	reset: function()
 	{
 		this.parent();
