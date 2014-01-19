@@ -25,18 +25,16 @@ Extends: Timer,
   
 		if (this.mApplication.mGame.mPadStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
                 {
-			this.mApplication.log('mWAIT');
-                        this.minute_hand.transform("");
+			if (this.mApplication.mGame.mQuestionStartTime > 0)
+			{
+				this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
+				this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
+				this.setTimer();
+			}
 		}
-		else
+		else //just reset clock
 		{
-			this.mApplication.log('not mWAIT');
-		}		
-		if (this.mApplication.mGame.mQuestionStartTime > 0)
-		{
-			this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
-			this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
-			this.setTimer();
+                        this.minute_hand.transform("");
 		}
 	},
 
@@ -74,10 +72,10 @@ Extends: Timer,
   		//reset transforms
                 this.minute_hand.transform("");
 
-		if (this.mApplication.mGame.mCurrentState == this.mWAITING_ON_ANSWER)
-		{
+		//if (this.mApplication.mGame.mCurrentState == this.mWAITING_ON_ANSWER)
+		//{
 			var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
                 	this.minute_hand.transform("r" + rot + ",100,100");
-		}
+		//}
 	}
 });
