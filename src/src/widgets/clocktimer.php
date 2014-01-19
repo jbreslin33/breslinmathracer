@@ -7,11 +7,20 @@ Extends: Timer,
 	{
 		this.parent(application)
 		this.mElapsedTime = 0;	
+		this.mFirstTime = true;
+		this.mThresh = 0;
 	},
 
 	update: function()
 	{
 		this.parent();
+
+		if (this.mFirstTime == true)
+		{
+			this.mThresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
+			this.mFirstTime = false;
+		}
+
 		if (this.mApplication.mGame.mQuestionStartTime > 0)
 		{
 			this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
@@ -54,8 +63,7 @@ Extends: Timer,
   		//reset transforms
                 this.minute_hand.transform("");
 		
-		var thresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
-		var v = parseInt(360/thresh); 
+		var v = parseInt(360/this.mThresh); 
 		var t = this.mElapsedTime;
 		var rot = parseInt(t*v); 
                 this.minute_hand.transform("r" + rot + ",100,100");
