@@ -24,6 +24,8 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);
+
+		this.mLastCorrectButtonNumber = 0;
 	},
 
 	showQuestion: function()
@@ -46,13 +48,12 @@ Extends: Pad,
 		this.mButtonAddend2C = 0;	
 		this.mButtonSumC = 0;	
 
-		while (this.mButtonSumA == this.mButtonSumB || this.mButtonSumA == this.mButtonSumC || this.mButtonSumB == this.mButtonSumC || this.mButtonSumA > 10 || this.mButtonSumB > 10 || this.mButtonSumC > 10)
+		while (this.mCorrectButtonNumber == this.mLastCorrectButtonNumber || this.mButtonSumA == this.mButtonSumB || this.mButtonSumA == this.mButtonSumC || this.mButtonSumB == this.mButtonSumC || this.mButtonSumA > 10 || this.mButtonSumB > 10 || this.mButtonSumC > 10)
 		{
 			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
-
+			
 			if (this.mCorrectButtonNumber == 0)
 			{
-
 				//A
 				this.mButtonSumA = parseInt(this.mApplication.mLevel);  
 				this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
@@ -109,6 +110,7 @@ Extends: Pad,
                                 this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 			}
 		}
+		this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
 	},
 
 	//state overides 
