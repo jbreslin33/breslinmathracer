@@ -5,8 +5,8 @@ insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.3'
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4a','7B20214AA4AA445AA720062C6F1B5C58',4,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4b','3DEE205D86BC461FA4271EF4BD190A0C',5,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.5','6F4455B55B4240F3B4738DD9DB3EAF40',6,10);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.c.6','66626D8AEE4E474B8CFEC8A4B68AA51C',7,1);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.c.7','C9B9CAD5BDE84CE2A7A0C441A3DF1A2D',8,1);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.c.6','66626D8AEE4E474B8CFEC8A4B68AA51C',7,10);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.c.7','C9B9CAD5BDE84CE2A7A0C441A3DF1A2D',8,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.1','C815B29CD8F546BBBB4C647B9D163942',9,20);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.2','695A7607FE8A4E27AB80652C45C84FA8',10,1);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.3','9EC218587C01452C9EB49F52EB2DD1DD',11,10);
