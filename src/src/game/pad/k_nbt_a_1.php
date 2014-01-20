@@ -27,6 +27,9 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 9 =','19'));
 		//9
 
+		//extra
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 9 =','19'));
+
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
 
