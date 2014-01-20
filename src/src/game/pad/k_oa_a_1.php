@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 5000;
 
 		//input pad
 		this.mInputPad = new NumberPad(application);
@@ -56,25 +56,20 @@ Extends: Pad,
 		var sign = question[2];   
 		var addendB = parseInt(question[4]);   
 
-		this.log('addendA:' + addendA);
-		this.log('addendB:' + addendB);
 
 		for (i = 0; i < parseInt(addendA + addendB); i++)
                 {
-			this.log('vis:' + i);
                 	this.mShapeArray[i].setVisibility(true);
 		}
 
 		//sign
 		if (sign == "+")
 		{
-			this.log('plus');
 			this.mShapeArray[7].setVisibility(true);
 			this.mShapeArray[7].setPosition(parseInt(this.mShapeArray[addendA - 1].mPosition.mX + 50), 50)	
 		}
 		else if (sign == "-")
 		{
-			this.log('minus');
 			this.mShapeArray[8].setVisibility(true);
 			this.mShapeArray[8].setPosition(parseInt(this.mShapeArray[addendA - 1].mPosition.mX + 50), 50)	
 			
