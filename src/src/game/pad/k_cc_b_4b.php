@@ -99,29 +99,15 @@ Extends: Pad,
 		}	
 
 		//kids A
-		if (this.mScore == parseInt(this.mScoreNeeded - 1))
+		for (i = 0; i < this.mQuiz.getQuestionmScore; i++)
 		{
-			for (i = 0; i < this.mScore; i++)
-			{
-				this.mCountShapeArrayA[i].setVisibility(true);
-			} 
+			this.mCountShapeArrayA[i].setVisibility(true);
+		} 
 
-			//right here we need to show How Many 	
-			this.mCorrectAnswerBarHeader.setVisibility('true');
-			this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'How Many kids?';
-			this.mApplication.mHud.mScoreNeeded.setText('<font size="2">How Many?</font>');
-		}
-		else
-		{
-			for (i = 0; i < this.mScore + 1; i++)
-			{
-				this.mCountShapeArrayA[i].setVisibility(true);
-			} 
-			//right here we need to say to count 	
-			this.mCorrectAnswerBarHeader.setVisibility('true');
-			this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Count the kids!';
-			this.mApplication.mHud.mScoreNeeded.setText('<font size="2">Count?</font>');
-		}
+		//right here we need to show How Many 	
+		this.mCorrectAnswerBarHeader.setVisibility('true');
+		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'How Many kids?';
+		this.mApplication.mHud.mScoreNeeded.setText('<font size="2">How Many?</font>');
 
 		//number names B
 		for (i = 0; i < this.mScore; i++)
@@ -203,10 +189,6 @@ Extends: Pad,
         {
 		this.parent();
 	
-		//how many should we count
-		this.mNumberToCount = Math.floor((Math.random()*10)+1);	
-		this.setScoreNeeded(parseInt(this.mNumberToCount + 1));
-	
 		//reset vars and arrays
 		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 		{
@@ -216,14 +198,12 @@ Extends: Pad,
 		this.mQuiz.mQuestionArray = 0;
 		this.mQuiz.mQuestionArray = new Array();
 
-		for (i = 0; i < this.mNumberToCount; i++)
+		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			var question = new Question('Count', '' + this.mNumberNameArray[i]);
+			var numberToCount = Math.floor((Math.random()*10)+1);	
+			var question = new Question('How Many?', '' + this.mNumberNameArray[parseInt(numberToCount-1)]);
 			this.mQuiz.mQuestionArray.push(question);
 		}
-		//extra question
-		var question = new Question('How Many?', '' + this.mNumberNameArray[parseInt(this.mNumberToCount - 1)]);
-		this.mQuiz.mQuestionArray.push(question);
 
 		this.createQuestionShapes();
 	},
