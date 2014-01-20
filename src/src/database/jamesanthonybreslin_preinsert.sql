@@ -78,19 +78,6 @@ CREATE TABLE learning_standards (
 ALTER TABLE public.learning_standards OWNER TO postgres;
 
 --
--- Name: learningstandards; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE learningstandards (
-    refid text NOT NULL,
-    progression numeric(9,3) NOT NULL,
-    levels integer NOT NULL
-);
-
-
-ALTER TABLE public.learningstandards OWNER TO postgres;
-
---
 -- Name: levelattempts; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -320,24 +307,6 @@ COPY learning_standards (id, ref_id, progression, levels) FROM stdin;
 
 
 --
--- Data for Name: learningstandards; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY learningstandards (refid, progression, levels) FROM stdin;
-CA9EE2E34F384E95A5FA26769C5864B8	1.000	11
-5E6A3E3B939B4577B104FA8658206E9E	2.000	6
-C11F30815A9C49B9A83B61A285EA11F9	3.000	1
-66626D8AEE4E474B8CFEC8A4B68AA51C	4.000	1
-C9B9CAD5BDE84CE2A7A0C441A3DF1A2D	5.000	1
-0CFFCBC851984A4281C23D34FC400445	7.000	18
-1353E9D5614D460FA32E67853B6BA6D8	8.000	42
-6C33D2BEC1AC431C8FC4BF9FD4DD3DCA	9.000	79
-800715566B824BB3A5A8C464E961C2B4	10.000	304
-3D384CB2349B41299A3B5A133AB9E3F8	11.000	218
-\.
-
-
---
 -- Name: level_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -435,14 +404,6 @@ ALTER TABLE ONLY learning_standards
 
 ALTER TABLE ONLY learning_standards
     ADD CONSTRAINT learning_standards_ref_id_key UNIQUE (ref_id);
-
-
---
--- Name: learningstandards_refid_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY learningstandards
-    ADD CONSTRAINT learningstandards_refid_key UNIQUE (refid);
 
 
 --
