@@ -20,13 +20,12 @@ Extends: Pad,
 		this.mButtonSumC = 0;	
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 60000;
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);
 	},
 
-	// you need to show a kid with a number name mount... 
 	showQuestion: function()
 	{
 		this.parent();

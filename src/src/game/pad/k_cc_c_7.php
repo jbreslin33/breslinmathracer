@@ -13,7 +13,7 @@ Extends: Pad,
 		this.createCompareBars();
 	
 		//answers 
-                this.mThresholdTime = 5000;
+                this.mThresholdTime = 60000;
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);

@@ -12,7 +12,7 @@ Extends: Pad,
 		this.mCountShapeArrayB = new Array();
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 60000;
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);
