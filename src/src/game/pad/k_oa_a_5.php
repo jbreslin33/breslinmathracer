@@ -9,6 +9,8 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new NumberPad(application);
+
+		this.setScoreNeeded(20);
 	},
 
 	createQuestions: function()
@@ -78,6 +80,9 @@ Extends: Pad,
 		//5
                 this.mQuiz.mQuestionPoolArray.push(new Question('5 - 0 =','5'));
 		//42
+               
+		//extra.. 
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 - 0 =','5'));
 
 
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
@@ -98,6 +103,7 @@ Extends: Pad,
 		{	
 			//reset vars and arrays
 			totalNew = 0;
+
 			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 			{
 				this.mQuiz.mQuestionArray[d] = 0;
