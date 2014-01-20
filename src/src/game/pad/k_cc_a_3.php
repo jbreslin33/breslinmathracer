@@ -11,8 +11,8 @@ Extends: Pad,
 		this.mCountShapeArray = new Array();
 	
 		//answers 
-                this.mThresholdTime = 60000;
-
+                this.mThresholdTime = 10000;
+	
 		//input pad
 		this.mInputPad = new NumberPad(application);
 	},
@@ -20,7 +20,7 @@ Extends: Pad,
 	reset: function()
 	{
 		this.parent();
-		
+                
 		for (i = 0; i < this.mCountShapeArray.length; i++)
 		{
 			this.mCountShapeArray[i].setVisibility(false);
