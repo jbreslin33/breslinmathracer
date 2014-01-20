@@ -72,10 +72,7 @@ Extends: Timer,
   		//reset transforms
                 this.minute_hand.transform("");
 
-		//if (this.mApplication.mGame.mCurrentState == this.mWAITING_ON_ANSWER)
-		//{
-			var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
-                	this.minute_hand.transform("r" + rot + ",100,100");
-		//}
+		var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
+                this.minute_hand.transform("r" + rot + ",100,100");
 	}
 });

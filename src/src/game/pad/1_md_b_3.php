@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 30000;
 
 		//input pad
 		this.mInputPad = new NumberPad(application);
@@ -104,9 +104,7 @@ Extends: Pad,
 
 	createClock: function(hours,minutes,seconds)
 	{
-		this.mClock = new Shape(200,200,200,200,this,"","",""); 
-		this.mShapeArray.push(this.mClock);
-		canvas = Raphael(this.mClock,200, 200);
+		canvas = Raphael(25,200,200, 200);
                 clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})  
                 var hour_sign;
@@ -131,6 +129,7 @@ Extends: Pad,
  		this.hour_hand.transform("");
  		this.minute_hand.transform("");
 	},
+
 	setClock: function(hours,minutes)
 	{
 		//reset transforms
@@ -149,6 +148,5 @@ Extends: Pad,
 			this.hour_hand.transform("r" + parseInt(30*hours + (minutes/2)) + ",100,100"); 
 			this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100"); 
 		}
-		this.log('' + hours + ':' + minutes);
 	}
 });
