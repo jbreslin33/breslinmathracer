@@ -7,9 +7,6 @@ Extends: Pad,
 	{
        		this.parent(application);
 
-		//number to count
-		this.mNumberToCount = 0;
-
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
@@ -99,7 +96,7 @@ Extends: Pad,
 		}	
 
 		//kids A
-		for (i = 0; i < this.mQuiz.getQuestionmScore; i++)
+		for (i = 0; i < this.mQuiz.getQuestion().getAnswer(); i++)
 		{
 			this.mCountShapeArrayA[i].setVisibility(true);
 		} 
@@ -110,7 +107,7 @@ Extends: Pad,
 		this.mApplication.mHud.mScoreNeeded.setText('<font size="2">How Many?</font>');
 
 		//number names B
-		for (i = 0; i < this.mScore; i++)
+		for (i = 0; i < this.mQuiz.getQuestion().getAnswer(); i++)
 		{
 			this.mCountShapeArrayB[i].setVisibility(true);
 		}
@@ -201,7 +198,7 @@ Extends: Pad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			var numberToCount = Math.floor((Math.random()*10)+1);	
-			var question = new Question('How Many?', '' + this.mNumberNameArray[parseInt(numberToCount-1)]);
+			var question = new Question('How Many?', '' + numberToCount);
 			this.mQuiz.mQuestionArray.push(question);
 		}
 
