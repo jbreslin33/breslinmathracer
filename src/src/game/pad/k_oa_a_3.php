@@ -53,7 +53,6 @@ Extends: Pad,
 
 			if (this.mCorrectButtonNumber == 0)
 			{
-				this.log('mCorrectButtonNumber:' + this.mCorrectButtonNumber); 
 
 				//A
 				this.mButtonSumA = parseInt(this.mApplication.mLevel);  
@@ -73,7 +72,6 @@ Extends: Pad,
 			}
 			if (this.mCorrectButtonNumber == 1)
 			{
-				this.log('mCorrectButtonNumber:' + this.mCorrectButtonNumber); 
                         
                                 //A
                                 this.mButtonAddend1A      = Math.floor((Math.random()*11));
@@ -94,7 +92,6 @@ Extends: Pad,
 			}
 			if (this.mCorrectButtonNumber == 2)
 			{
-				this.log('mCorrectButtonNumber:' + this.mCorrectButtonNumber); 
 
                                 //A
                                 this.mButtonAddend1A      = Math.floor((Math.random()*11));
@@ -112,9 +109,6 @@ Extends: Pad,
                                 this.mButtonSumC = parseInt(this.mApplication.mLevel);
                                 this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 			}
-				this.log('sumA:' + this.mButtonSumA);
-				this.log('sumB:' + this.mButtonSumB);
-				this.log('sumC:' + this.mButtonSumC);
 		}
 	},
 
