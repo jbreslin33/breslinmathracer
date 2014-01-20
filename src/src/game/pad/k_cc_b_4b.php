@@ -31,7 +31,7 @@ Extends: Pad,
 		this.mButtonElementC = 0;	
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 30000;
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);
@@ -125,47 +125,26 @@ Extends: Pad,
 		while (this.mButtonElementA == this.mButtonElementB || this.mButtoneElementA == this.mButtonElementC || this.mButtonElementB == this.mButtonElementC)
 		{
 			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
-			this.mButtonElementA = Math.floor((Math.random()*10));	
-			this.mButtonElementB = Math.floor((Math.random()*10));	
-			this.mButtonElementC = Math.floor((Math.random()*10));	
+			this.mButtonElementA = Math.floor((Math.random()*10)+1);	
+			this.mButtonElementB = Math.floor((Math.random()*10)+1);	
+			this.mButtonElementC = Math.floor((Math.random()*10)+1);	
 
 			if (this.mCorrectButtonNumber == 0)
 			{
-				if (this.mScore == parseInt(this.mScoreNeeded - 1))
-				{
-					this.mButtonElementA = parseInt(this.mScore - 1); 
-				}
-				else
-				{
-					this.mButtonElementA = this.mScore; 
-				}
+				this.mButtonElementA = this.mQuiz.getQuestion().getAnswer(); 
 			}
 			if (this.mCorrectButtonNumber == 1)
 			{
-				if (this.mScore == parseInt(this.mScoreNeeded - 1))
-				{
-					this.mButtonElementB = parseInt(this.mScore - 1); 
-				}
-				else
-				{
-					this.mButtonElementB = this.mScore; 
-				}
+				this.mButtonElementB = this.mQuiz.getQuestion().getAnswer(); 
 			}
 			if (this.mCorrectButtonNumber == 2)
 			{
-				if (this.mScore == parseInt(this.mScoreNeeded - 1))
-				{
-					this.mButtonElementC = parseInt(this.mScore - 1); 
-				}
-				else
-				{
-					this.mButtonElementC = this.mScore; 
-				}
+				this.mButtonElementC = this.mQuiz.getQuestion().getAnswer(); 
 			}
 		}
-		this.mInputPad.mButtonA.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementA];
-		this.mInputPad.mButtonB.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementB];
-		this.mInputPad.mButtonC.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementC];
+		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mButtonElementA;
+		this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mButtonElementB;
+		this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mButtonElementC;
 	},
 
 	//state overides 

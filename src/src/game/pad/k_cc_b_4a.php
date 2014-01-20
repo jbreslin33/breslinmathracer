@@ -31,7 +31,7 @@ Extends: Pad,
 		this.mButtonElementC = 0;	
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 30000;
 
                 //input pad
                 this.mInputPad = new ButtonChoicePad(application,application.mGame);
