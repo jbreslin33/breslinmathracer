@@ -9,8 +9,6 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new NumberPad(application);
-
-		this.setScoreNeeded(20);
 	},
 
 	createQuestions: function()
@@ -84,21 +82,9 @@ Extends: Pad,
 		//extra.. 
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 - 0 =','5'));
 
-
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
-		var newQuestionElement = 0;
-   		var elementCounter     = 0;
                 
-                for (i = 0; i <= 41; i++)
-                {
-                        if (this.mApplication.mLevel == i)
-                        {
-                                newQuestionElement = elementCounter;
-                        }
-                        elementCounter++;
-                }
-
 		while (totalNew < totalNewGoal)
 		{	
 			//reset vars and arrays
@@ -117,12 +103,12 @@ Extends: Pad,
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel-1)]);
 					totalNew++;
 				}	
 				if (randomChance == 1)
 				{
-					var randomElement = Math.floor((Math.random()*newQuestionElement));		
+					var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));	
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 				}
 			}
