@@ -77,32 +77,31 @@ Extends: Pad,
 	setButtons: function()
         {
                 this.mCorrectButtonNumber = 0;
-                this.mButtonElementA = 0;
-                this.mButtonElementB = 0;
-                this.mButtonElementC = 0;
 
-                while (this.mLastCorrectButtonNumber == this.mCorrectButtonNumber || this.mButtonElementA == this.mButtonElementB || this.mButtoneElementA == this.mButtonElementC || this.mButtonElementB == this.mButtonElementC)
+                while (this.mLastCorrectButtonNumber == this.mCorrectButtonNumber || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonB.mMesh.innerHTML || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML || this.mInputPad.mButtonB.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML)
                 {
-                        this.mCorrectButtonNumber = Math.floor((Math.random()*3));
+                        this.mCorrectButtonNumber = Math.floor(Math.random()*3);
 
                         if (this.mCorrectButtonNumber == 0)
                         {
                 		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                		this.mInputPad.mButtonB.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor((Math.random()*6))];
-                		this.mInputPad.mButtonC.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor((Math.random()*6))];
+                		this.mInputPad.mButtonB.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonC.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
                         }
                         if (this.mCorrectButtonNumber == 1)
                         {
-                                this.mButtonElementB = this.mQuiz.getQuestion().getAnswer();
+                		this.mInputPad.mButtonA.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                		this.mInputPad.mButtonC.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
                         }
                         if (this.mCorrectButtonNumber == 2)
                         {
-                                this.mButtonElementC = this.mQuiz.getQuestion().getAnswer();
+                		this.mInputPad.mButtonA.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonB.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                         }
                 }
-
 		this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
-
         },
  
 	showCorrectAnswer: function()
