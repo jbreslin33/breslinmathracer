@@ -65,6 +65,9 @@ Extends: Pad,
 	// you need to show a kid with a number name mount... 
 	showQuestion: function()
 	{
+		this.mQuiz.getQuestion().setChoices();
+		this.mInputPad.showButtons();
+
 		//A
 		for (i = 0; i < this.mCountShapeArrayA.length; i++)
 		{
@@ -89,8 +92,6 @@ Extends: Pad,
 			this.mCountShapeArrayB[i].setVisibility(true);
 		}
 
-		this.mQuiz.getQuestion().setChoices();
-		this.mInputPad.showButtons();
 	},
 	
 	//state overides 
