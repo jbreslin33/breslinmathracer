@@ -10,31 +10,12 @@ Extends: Pad,
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
-		this.mNumberNameArray = new Array();
-
-		//number names
-		this.mNumberNameArray[0] = 'one';
-		this.mNumberNameArray[1] = 'two';
-		this.mNumberNameArray[2] = 'three';
-		this.mNumberNameArray[3] = 'four';
-		this.mNumberNameArray[4] = 'five';
-		this.mNumberNameArray[5] = 'six';
-		this.mNumberNameArray[6] = 'seven';
-		this.mNumberNameArray[7] = 'eight';
-		this.mNumberNameArray[8] = 'nine';
-		this.mNumberNameArray[9] = 'ten';
-	
-		//buttons	
-		this.mCorrectButtonNumber = 0;	
-		this.mButtonElementA = 0;	
-		this.mButtonElementB = 0;	
-		this.mButtonElementC = 0;	
 
 		//answers 
                 this.mThresholdTime = 60000;
 
                 //input pad
-                this.mInputPad = new ButtonChoicePad(application,application.mGame);
+                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	reset: function()
@@ -83,6 +64,9 @@ Extends: Pad,
 	// you need to show a kid with a number name mount... 
 	showQuestion: function()
 	{
+		this.mQuiz.getQuestion().setChoices();
+                this.mInputPad.showButtons();
+
 		//A
 		for (i = 0; i < this.mCountShapeArrayA.length; i++)
 		{
@@ -111,42 +95,8 @@ Extends: Pad,
 		{
 			this.mCountShapeArrayB[i].setVisibility(true);
 		}
-
-		this.setButtons();
 	},
 	
-	setButtons: function()
-	{
-		this.mCorrectButtonNumber = 0;
-		this.mButtonElementA = 0;
-		this.mButtonElementB = 0;
-		this.mButtonElementC = 0;
-
-		while (this.mButtonElementA == this.mButtonElementB || this.mButtoneElementA == this.mButtonElementC || this.mButtonElementB == this.mButtonElementC)
-		{
-			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
-			this.mButtonElementA = Math.floor((Math.random()*10)+1);	
-			this.mButtonElementB = Math.floor((Math.random()*10)+1);	
-			this.mButtonElementC = Math.floor((Math.random()*10)+1);	
-
-			if (this.mCorrectButtonNumber == 0)
-			{
-				this.mButtonElementA = this.mQuiz.getQuestion().getAnswer(); 
-			}
-			if (this.mCorrectButtonNumber == 1)
-			{
-				this.mButtonElementB = this.mQuiz.getQuestion().getAnswer(); 
-			}
-			if (this.mCorrectButtonNumber == 2)
-			{
-				this.mButtonElementC = this.mQuiz.getQuestion().getAnswer(); 
-			}
-		}
-		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mButtonElementA;
-		this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mButtonElementB;
-		this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mButtonElementC;
-	},
-
 	//state overides 
  	showCorrectAnswer: function()
         {
@@ -164,6 +114,18 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
+          
+		//answer pool
+                this.mQuiz.mAnswerPool.push('1');
+                this.mQuiz.mAnswerPool.push('2');
+                this.mQuiz.mAnswerPool.push('3');
+                this.mQuiz.mAnswerPool.push('4');
+                this.mQuiz.mAnswerPool.push('5');
+                this.mQuiz.mAnswerPool.push('6');
+                this.mQuiz.mAnswerPool.push('7');
+                this.mQuiz.mAnswerPool.push('8');
+                this.mQuiz.mAnswerPool.push('9');
+                this.mQuiz.mAnswerPool.push('10');
 	
 		//reset vars and arrays
 		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
@@ -178,12 +140,13 @@ Extends: Pad,
 		{
 			var numberToCount = Math.floor((Math.random()*10)+1);	
 			var question = new Question('How Many?', '' + numberToCount);
+                        question.mAnswerPool = this.mQuiz.mAnswerPool;
 			this.mQuiz.mQuestionArray.push(question);
 		}
 
 		this.createQuestionShapes();
 	},
-
+	
 	createQuestionShapes: function()
 	{
 		//one

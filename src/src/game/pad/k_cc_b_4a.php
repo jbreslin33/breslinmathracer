@@ -10,7 +10,6 @@ Extends: Pad,
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
-		this.mNumberNameArray = new Array();
 	
 		//answers 
                 this.mThresholdTime = 60000;
