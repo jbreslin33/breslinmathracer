@@ -22,19 +22,6 @@ Extends: Pad,
                 this.mInputPad.showButtons();
 	},
 	
-	//state overides 
- 	showCorrectAnswer: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = this.mApplication.mLevel + ' = ' + this.mQuiz.getQuestion().getAnswer();
-        },
-
-        showCorrectAnswerOutOfTime: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = this.mApplication.mLevel + ' = ' + this.mQuiz.getQuestion().getAnswer();
-        },
-     
 	//questions
 	createQuestions: function()
         {
@@ -67,11 +54,11 @@ Extends: Pad,
 			this.mQuiz.mAnswerPool.push('3 + 1');
 			this.mQuiz.mAnswerPool.push('1 + 2');
 
-                       	var question = new Question('1 = ?', '1 + 0');
+                       	var question = new Question('1 = ', '1 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
 
-                       	var question = new Question('1 = ?', '0 + 1');
+                       	var question = new Question('1 = ', '0 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
 
@@ -79,163 +66,163 @@ Extends: Pad,
 		}
 		if (this.mApplication.mLevel == 2)
 		{
-                       	var question = new Question('2 = ?', '2 + 0');
+                       	var question = new Question('2 =', '2 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('2 = ?', '0 + 2');
+                       	var question = new Question('2 =', '0 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('2 = ?', '1 + 1');
+                       	var question = new Question('2 =', '1 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 3)
 		{
-                       	var question = new Question('3 = ?', '3 + 0');
+                       	var question = new Question('3 =', '3 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('3 = ?', '0 + 3');
+                       	var question = new Question('3 =', '0 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('3 = ?', '1 + 2');
+                       	var question = new Question('3 =', '1 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('3 = ?', '2 + 1');
+                       	var question = new Question('3 =', '2 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 4)
 		{
-                       	var question = new Question('4 = ?', '4 + 0');
+                       	var question = new Question('4 =', '4 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('4 = ?', '0 + 4');
+                       	var question = new Question('4 =', '0 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('4 = ?', '1 + 3');
+                       	var question = new Question('4 =', '1 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('4 = ?', '3 + 1');
+                       	var question = new Question('4 =', '3 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('4 = ?', '2 + 2');
+                       	var question = new Question('4 =', '2 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 5)
 		{
-                       	var question = new Question('5 = ?', '5 + 0');
+                       	var question = new Question('5 =', '5 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('5 = ?', '0 + 5');
+                       	var question = new Question('5 =', '0 + 5');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('5 = ?', '1 + 4');
+                       	var question = new Question('5 =', '1 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('5 = ?', '4 + 1');
+                       	var question = new Question('5 =', '4 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('5 = ?', '2 + 3');
+                       	var question = new Question('5 =', '2 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('5 = ?', '3 + 2');
+                       	var question = new Question('5 =', '3 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 6)
 		{
-                       	var question = new Question('6 = ?', '6 + 0');
+                       	var question = new Question('6 =', '6 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('6 = ?', '0 + 6');
+                       	var question = new Question('6 =', '0 + 6');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('6 = ?', '1 + 5');
+                       	var question = new Question('6 =', '1 + 5');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('6 = ?', '5 + 1');
+                       	var question = new Question('6 =', '5 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('6 = ?', '2 + 4');
+                       	var question = new Question('6 =', '2 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('6 = ?', '4 + 2');
+                       	var question = new Question('6 =', '4 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('6 = ?', '3 + 3');
+                       	var question = new Question('6 =', '3 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}	
 		if (this.mApplication.mLevel == 7)
 		{
-                       	var question = new Question('7 = ?', '7 + 0');
+                       	var question = new Question('7 =', '7 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '0 + 7');
+                       	var question = new Question('7 =', '0 + 7');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '1 + 6');
+                       	var question = new Question('7 =', '1 + 6');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '6 + 1');
+                       	var question = new Question('7 =', '6 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '2 + 5');
+                       	var question = new Question('7 =', '2 + 5');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '5 + 2');
+                       	var question = new Question('7 =', '5 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '3 + 4');
+                       	var question = new Question('7 =', '3 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('7 = ?', '4 + 3');
+                       	var question = new Question('7 =', '4 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 8)
 		{
-                       	var question = new Question('8 = ?', '8 + 0');
+                       	var question = new Question('8 =', '8 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '0 + 8');
+                       	var question = new Question('8 =', '0 + 8');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '1 + 7');
+                       	var question = new Question('8 =', '1 + 7');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '7 + 1');
+                       	var question = new Question('8 =', '7 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '2 + 6');
+                       	var question = new Question('8 =', '2 + 6');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '6 + 2');
+                       	var question = new Question('8 =', '6 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '3 + 5');
+                       	var question = new Question('8 =', '3 + 5');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '5 + 3');
+                       	var question = new Question('8 =', '5 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('8 = ?', '4 + 4');
+                       	var question = new Question('8 =', '4 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 9)
 		{
-                       	var question = new Question('9 = ?', '9 + 0');
+                       	var question = new Question('9 =', '9 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '0 + 9');
+                       	var question = new Question('9 =', '0 + 9');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '1 + 8');
+                       	var question = new Question('9 =', '1 + 8');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '8 + 1');
+                       	var question = new Question('9 =', '8 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '2 + 7');
+                       	var question = new Question('9 =', '2 + 7');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '7 + 2');
+                       	var question = new Question('9 =', '7 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '3 + 6');
+                       	var question = new Question('9 =', '3 + 6');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '6 + 3');
+                       	var question = new Question('9 =', '6 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '5 + 4');
+                       	var question = new Question('9 =', '5 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('9 = ?', '4 + 5');
+                       	var question = new Question('9 =', '4 + 5');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 10)
 		{
-                       	var question = new Question('10 = ?', '10 + 0');
+                       	var question = new Question('10 =', '10 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '0 + 10');
+                       	var question = new Question('10 =', '0 + 10');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '1 + 9');
+                       	var question = new Question('10 =', '1 + 9');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '9 + 1');
+                       	var question = new Question('10 =', '9 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '2 + 8');
+                       	var question = new Question('10 =', '2 + 8');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '8 + 2');
+                       	var question = new Question('10 =', '8 + 2');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '3 + 7');
+                       	var question = new Question('10 =', '3 + 7');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '7 + 3');
+                       	var question = new Question('10 =', '7 + 3');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '6 + 4');
+                       	var question = new Question('10 =', '6 + 4');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '4 + 6');
+                       	var question = new Question('10 =', '4 + 6');
                        	this.mQuiz.mQuestionArray.push(question);
-                       	var question = new Question('10 = ?', '5 + 5');
+                       	var question = new Question('10 =', '5 + 5');
                        	this.mQuiz.mQuestionArray.push(question);
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
