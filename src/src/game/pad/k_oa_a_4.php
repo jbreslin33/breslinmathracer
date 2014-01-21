@@ -39,11 +39,13 @@ Extends: Pad,
                 this.mQuiz.mQuestionPoolArray.push(new Question('8 + ? = 10','2','8 + 2 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1','9 + 1 = 10'));
 		//18
+               
+		//extra 
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1','9 + 1 = 10'));
 
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
                 
-		while (totalNew < totalNewGoal)
+		while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
 		{	
 			//reset vars and arrays
 			totalNew = 0;
