@@ -71,7 +71,6 @@ Extends: Pad,
 			this.mShapeArray[11].setVisibility(true);
                 }       
 
-		this.log('setButtons');
 		this.setButtons();
 	},
 
@@ -84,7 +83,6 @@ Extends: Pad,
                 while (goOnce == true ||this.mLastCorrectButtonNumber == this.mCorrectButtonNumber || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonB.mMesh.innerHTML || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML || this.mInputPad.mButtonB.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML)
                 {
                         this.mCorrectButtonNumber = Math.floor(Math.random()*3);
-			this.log('c:' +  this.mCorrectButtonNumber);
 
                         if (this.mCorrectButtonNumber == 0)
                         {
