@@ -118,7 +118,6 @@ Extends: Pad,
                 this.mQuiz.mAnswerPool.push('is greater than');
                 this.mQuiz.mAnswerPool.push('is equal to');
                 this.mQuiz.mAnswerPool.push('is less than');
-
 		
 		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;

@@ -16,7 +16,7 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
                 //input pad
-                this.mInputPad = new ButtonChoicePad(application,application.mGame);
+                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	reset: function()
@@ -58,6 +58,9 @@ Extends: Pad,
 
 	showQuestion: function()
         {
+  		this.mQuiz.getQuestion().setChoices();
+                this.mInputPad.showButtons();
+
                 this.mCompareBarA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableA();;
                 this.mCompareBarB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getVariableB();;
         },
@@ -77,7 +80,12 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
-		
+
+                //answer pool
+                this.mQuiz.mAnswerPool.push('is greater than');
+                this.mQuiz.mAnswerPool.push('is equal to');
+                this.mQuiz.mAnswerPool.push('is less than');
+   
 		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;
 		var greaterThans = 0;
@@ -118,11 +126,10 @@ Extends: Pad,
 				}
 
 				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
-
 				this.mQuiz.mQuestionArray.push(question);
+				question.mAnswerPool = this.mQuiz.mAnswerPool;
 
 				totalCount = parseInt(totalCount + objectsToCountA);
-				
 			}
 		}
 	},
