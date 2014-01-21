@@ -71,6 +71,7 @@ Extends: Pad,
 			this.mShapeArray[11].setVisibility(true);
                 }       
 
+		this.log('setButtons');
 		this.setButtons();
 	},
 
@@ -78,28 +79,32 @@ Extends: Pad,
         {
                 this.mCorrectButtonNumber = 0;
 
-                while (this.mLastCorrectButtonNumber == this.mCorrectButtonNumber || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonB.mMesh.innerHTML || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML || this.mInputPad.mButtonB.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML)
+		var goOnce = true;
+
+                while (goOnce == true ||this.mLastCorrectButtonNumber == this.mCorrectButtonNumber || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonB.mMesh.innerHTML || this.mInputPad.mButtonA.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML || this.mInputPad.mButtonB.mMesh.innerHTML == this.mInputPad.mButtonC.mMesh.innerHTML)
                 {
                         this.mCorrectButtonNumber = Math.floor(Math.random()*3);
+			this.log('c:' +  this.mCorrectButtonNumber);
 
                         if (this.mCorrectButtonNumber == 0)
                         {
                 		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                		this.mInputPad.mButtonB.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
-                		this.mInputPad.mButtonC.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*5))];
+                		this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*5))];
                         }
                         if (this.mCorrectButtonNumber == 1)
                         {
-                		this.mInputPad.mButtonA.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*5))];
                 		this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                		this.mInputPad.mButtonC.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*5))];
                         }
                         if (this.mCorrectButtonNumber == 2)
                         {
-                		this.mInputPad.mButtonA.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
-                		this.mInputPad.mButtonB.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*6))];
+                		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*5))];
+                		this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mCorrectAnswerArray[parseInt(Math.floor(Math.random()*5))];
                 		this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                         }
+			goOnce = false;
                 }
 		this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
         },
