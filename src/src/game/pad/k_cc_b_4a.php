@@ -11,18 +11,6 @@ Extends: Pad,
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
 		this.mNumberNameArray = new Array();
-
-		//number names
-		this.mNumberNameArray[0] = 'one';
-		this.mNumberNameArray[1] = 'two';
-		this.mNumberNameArray[2] = 'three';
-		this.mNumberNameArray[3] = 'four';
-		this.mNumberNameArray[4] = 'five';
-		this.mNumberNameArray[5] = 'six';
-		this.mNumberNameArray[6] = 'seven';
-		this.mNumberNameArray[7] = 'eight';
-		this.mNumberNameArray[8] = 'nine';
-		this.mNumberNameArray[9] = 'ten';
 	
 		//buttons	
 		this.mCorrectButtonNumber = 0;	
@@ -34,7 +22,7 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
                 //input pad
-                this.mInputPad = new ButtonChoicePad(application,application.mGame);
+                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	reset: function()
@@ -137,9 +125,9 @@ Extends: Pad,
 				this.mButtonElementC = this.mScore; 
 			}
 		}
-		this.mInputPad.mButtonA.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementA];
-		this.mInputPad.mButtonB.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementB];
-		this.mInputPad.mButtonC.mMesh.innerHTML = this.mNumberNameArray[this.mButtonElementC];
+		this.mInputPad.mButtonA.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementA];
+		this.mInputPad.mButtonB.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementB];
+		this.mInputPad.mButtonC.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementC];
 	},
 
 	//state overides 
@@ -165,6 +153,18 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
+
+		//answer pool		
+		this.mQuiz.mAnswerPool.push('one');
+		this.mQuiz.mAnswerPool.push('two');
+		this.mQuiz.mAnswerPool.push('three');
+		this.mQuiz.mAnswerPool.push('four');
+		this.mQuiz.mAnswerPool.push('five');
+		this.mQuiz.mAnswerPool.push('six');
+		this.mQuiz.mAnswerPool.push('seven');
+		this.mQuiz.mAnswerPool.push('eight');
+		this.mQuiz.mAnswerPool.push('nine');
+		this.mQuiz.mAnswerPool.push('ten');
 		
 		//reset vars and arrays
 		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
@@ -177,7 +177,7 @@ Extends: Pad,
 
    		for (i = 0; i < this.mScoreNeeded; i++)
                 {
-                        var question = new Question('Count', '' + this.mNumberNameArray[i]);
+                        var question = new Question('Count', '' + this.mQuiz.mAnswerPool[i]);
                         this.mQuiz.mQuestionArray.push(question);
                 }
 
