@@ -69,21 +69,21 @@ var Question = new Class(
                 {
                         this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
 
-                        this.mChoiceA = APPLICATION.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(APPLICATION.mGame.mQuiz.mAnswerPool.length)))];
-                        this.mChoiceB = APPLICATION.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(APPLICATION.mGame.mQuiz.mAnswerPool.length)))];
-                        this.mChoiceC = APPLICATION.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(APPLICATION.mGame.mQuiz.mAnswerPool.length)))];
+                        this.mChoiceA = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+                        this.mChoiceB = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+                        this.mChoiceC = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
 
                         if (this.mCorrectChoiceNumber == 0)
                         {
-                                this.mChoiceA = APPLICATION.mGame.mQuiz.getQuestion().getAnswer();
+                                this.mChoiceA = this.getAnswer();
                         }
                         if (this.mCorrectChoiceNumber == 1)
                         {
-                                this.mChoiceB = APPLICATION.mGame.mQuiz.getQuestion().getAnswer();
+                                this.mChoiceB = this.getAnswer();
                         }
                         if (this.mCorrectChoiceNumber == 2)
                         {
-                                this.mChoiceC = APPLICATION.mGame.mQuiz.getQuestion().getAnswer();
+                                this.mChoiceC = this.getAnswer();
                         }
                         goOnce = false;
                 }

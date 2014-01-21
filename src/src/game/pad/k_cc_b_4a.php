@@ -141,6 +141,7 @@ Extends: Pad,
    		for (i = 0; i < this.mScoreNeeded; i++)
                 {
                         var question = new Question('Count', '' + this.mQuiz.mAnswerPool[i]);
+			question.mAnswerPool = this.mQuiz.mAnswerPool;
                         this.mQuiz.mQuestionArray.push(question);
                 }
 
