@@ -11,9 +11,10 @@ var Quiz = new Class(
 			
 		//question
 		this.mMarker = 0;
-
+  
 		//answer pool
-		this.mAnswerPool = new Array();
+                this.mAnswerPool = new Array();
+
         },
 
 	destructor: function()

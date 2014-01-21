@@ -89,7 +89,8 @@ Extends: Pad,
 			this.mCountShapeArrayB[i].setVisibility(true);
 		}
 
-		this.mInputPad.setButtons();
+		this.mQuiz.getQuestion().setChoices();
+		this.mInputPad.showButtons();
 	},
 	
 	//state overides 

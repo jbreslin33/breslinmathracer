@@ -14,6 +14,9 @@ var Question = new Class(
 		//is solved
 		this.mSolved = false;
 
+  		//answer pool
+                this.mAnswerPool = new Array();
+
 		//choiceArray
 		this.mChoiceA = '';
 		this.mChoiceB = '';
@@ -55,6 +58,37 @@ var Question = new Class(
 			this.mChoiceD = choice;
 		}	
 	},
+        
+	setChoices: function()
+        {
+                this.mCorrectChoiceNumber = 0;
+
+                var goOnce = true;
+
+                while (goOnce == true || this.mCorrectChoiceNumber == this.mLastCorrectChoiceNumber || this.mChoiceA == this.mChoiceB || this.mChoiceA == this.mChoiceC || this.mChoiceB == this.mChoiceC)
+                {
+                        this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
+
+                        this.mChoiceA = APPLICATION.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(APPLICATION.mGame.mQuiz.mAnswerPool.length)))];
+                        this.mChoiceB = APPLICATION.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(APPLICATION.mGame.mQuiz.mAnswerPool.length)))];
+                        this.mChoiceC = APPLICATION.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(APPLICATION.mGame.mQuiz.mAnswerPool.length)))];
+
+                        if (this.mCorrectChoiceNumber == 0)
+                        {
+                                this.mChoiceA = APPLICATION.mGame.mQuiz.getQuestion().getAnswer();
+                        }
+                        if (this.mCorrectChoiceNumber == 1)
+                        {
+                                this.mChoiceB = APPLICATION.mGame.mQuiz.getQuestion().getAnswer();
+                        }
+                        if (this.mCorrectChoiceNumber == 2)
+                        {
+                                this.mChoiceC = APPLICATION.mGame.mQuiz.getQuestion().getAnswer();
+                        }
+                        goOnce = false;
+                }
+                this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
+        },
 	
 	set: function(question,answer)
 	{

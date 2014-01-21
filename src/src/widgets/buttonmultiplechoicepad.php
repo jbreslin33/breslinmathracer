@@ -64,7 +64,7 @@ Extends: InputPad,
 		}
         },
 
-        showQuestion: function()
+        showButtons: function()
         {
                 if (this.mApplication.mGame.mQuiz)
                 {
@@ -114,36 +114,6 @@ Extends: InputPad,
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
                         }
                 }
-        },
-
-	setButtons: function(unique)
-        {
-                this.mCorrectButtonNumber = 0;
-		
-		var goOnce = true;
-
-                while (goOnce == true || this.mCorrectButtonNumber == this.mLastCorrectButtonNumber || this.mButtonA.mMesh.innerHTML == this.mButtonB.mMesh.innerHTML || this.mButtonA.mMesh.innerHTML == this.mButtonC.mMesh.innerHTML || this.mButtonB.mMesh.innerHTML == this.mButtonC.mMesh.innerHTML)
-                {
-                        this.mCorrectButtonNumber = Math.floor((Math.random()*3));
-                        this.mButtonA.mMesh.innerHTML = this.mApplication.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(this.mApplication.mGame.mQuiz.mAnswerPool.length)))];
-                        this.mButtonB.mMesh.innerHTML = this.mApplication.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(this.mApplication.mGame.mQuiz.mAnswerPool.length)))];
-                        this.mButtonC.mMesh.innerHTML = this.mApplication.mGame.mQuiz.mAnswerPool[Math.floor((Math.random()*parseInt(this.mApplication.mGame.mQuiz.mAnswerPool.length)))];
-
-                        if (this.mCorrectButtonNumber == 0)
-                        {
-                                this.mButtonA.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getAnswer();
-                        }
-                        if (this.mCorrectButtonNumber == 1)
-                        {
-                                this.mButtonB.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getAnswer();
-                        }
-                        if (this.mCorrectButtonNumber == 2)
-                        {
-                                this.mButtonC.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getAnswer();
-                        }
-			goOnce = false;
-                }
-                this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
         },
 
         numPadHit: function()
