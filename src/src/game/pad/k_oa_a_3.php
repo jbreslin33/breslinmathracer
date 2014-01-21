@@ -7,25 +7,11 @@ Extends: Pad,
 	{
        		this.parent(application);
 
-		//buttons	
-		this.mCorrectButtonNumber = 0;	
-		this.mButtonAddend1A = 0;	
-		this.mButtonAddend2A = 0;	
-		this.mButtonSumA = 0;	
-		this.mButtonAddend1B = 0;	
-		this.mButtonAddend2B = 0;	
-		this.mButtonSumB = 0;	
-		this.mButtonAddend1C = 0;	
-		this.mButtonAddend2C = 0;	
-		this.mButtonSumC = 0;	
-
 		//answers 
                 this.mThresholdTime = 60000;
 
                 //input pad
                 this.mInputPad = new ButtonMultipleChoicePad(application);
-
-		this.mLastCorrectButtonNumber = 0;
 	},
 
 	showQuestion: function()
@@ -36,84 +22,6 @@ Extends: Pad,
                 this.mInputPad.showButtons();
 	},
 	
-	setButtons: function()
-	{
-		this.mCorrectButtonNumber = 0;	
-		this.mButtonAddend1A = 0;	
-		this.mButtonAddend2A = 0;	
-		this.mButtonSumA = 0;	
-		this.mButtonAddend1B = 0;	
-		this.mButtonAddend2B = 0;	
-		this.mButtonSumB = 0;	
-		this.mButtonAddend1C = 0;	
-		this.mButtonAddend2C = 0;	
-		this.mButtonSumC = 0;	
-
-		while (this.mCorrectButtonNumber == this.mLastCorrectButtonNumber || this.mButtonSumA == this.mButtonSumB || this.mButtonSumA == this.mButtonSumC || this.mButtonSumB == this.mButtonSumC || this.mButtonSumA > 10 || this.mButtonSumB > 10 || this.mButtonSumC > 10)
-		{
-			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
-			
-			if (this.mCorrectButtonNumber == 0)
-			{
-				//A
-				this.mButtonSumA = parseInt(this.mApplication.mLevel);  
-				this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-		
-				//B	
-				this.mButtonAddend1B      = Math.floor((Math.random()*11));	
-				this.mButtonAddend2B      = Math.floor((Math.random()*11));	
-				this.mButtonSumB          = parseInt(parseInt(this.mButtonAddend1B) + parseInt(this.mButtonAddend2B));	
-				this.mInputPad.mButtonB.mMesh.innerHTML = this.mButtonAddend1B + ' + ' + this.mButtonAddend2B;
-				
-				//C
-				this.mButtonAddend1C      = Math.floor((Math.random()*11));	
-				this.mButtonAddend2C      = Math.floor((Math.random()*11));	
-				this.mButtonSumC          = parseInt(parseInt(this.mButtonAddend1C) + parseInt(this.mButtonAddend2C));	
-				this.mInputPad.mButtonC.mMesh.innerHTML = this.mButtonAddend1C + ' + ' + this.mButtonAddend2C;
-			}
-			if (this.mCorrectButtonNumber == 1)
-			{
-                        
-                                //A
-                                this.mButtonAddend1A      = Math.floor((Math.random()*11));
-                                this.mButtonAddend2A      = Math.floor((Math.random()*11));
-                                this.mButtonSumA          = parseInt(parseInt(this.mButtonAddend1A) + parseInt(this.mButtonAddend2A));
-                                this.mInputPad.mButtonA.mMesh.innerHTML = this.mButtonAddend1A + ' + ' + this.mButtonAddend2A;
-	                        
-				//B
-                                this.mButtonSumB = parseInt(this.mApplication.mLevel);
-                                this.mInputPad.mButtonB.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-
-                                //C
-                                this.mButtonAddend1C      = Math.floor((Math.random()*11));
-                                this.mButtonAddend2C      = Math.floor((Math.random()*11));
-                                this.mButtonSumC          = parseInt(parseInt(this.mButtonAddend1C) + parseInt(this.mButtonAddend2C));
-                                this.mInputPad.mButtonC.mMesh.innerHTML = this.mButtonAddend1C + ' + ' + this.mButtonAddend2C;
-
-			}
-			if (this.mCorrectButtonNumber == 2)
-			{
-
-                                //A
-                                this.mButtonAddend1A      = Math.floor((Math.random()*11));
-                                this.mButtonAddend2A      = Math.floor((Math.random()*11));
-                                this.mButtonSumA          = parseInt(parseInt(this.mButtonAddend1A) + parseInt(this.mButtonAddend2A));
-                                this.mInputPad.mButtonA.mMesh.innerHTML = this.mButtonAddend1A + ' + ' + this.mButtonAddend2A;
-
-				//B	
-				this.mButtonAddend1B      = Math.floor((Math.random()*11));	
-				this.mButtonAddend2B      = Math.floor((Math.random()*11));	
-				this.mButtonSumB          = parseInt(parseInt(this.mButtonAddend1B) + parseInt(this.mButtonAddend2B));	
-				this.mInputPad.mButtonB.mMesh.innerHTML = this.mButtonAddend1B + ' + ' + this.mButtonAddend2B;
-
-				//C
-                                this.mButtonSumC = parseInt(this.mApplication.mLevel);
-                                this.mInputPad.mButtonC.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-			}
-		}
-		this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
-	},
-
 	//state overides 
  	showCorrectAnswer: function()
         {
