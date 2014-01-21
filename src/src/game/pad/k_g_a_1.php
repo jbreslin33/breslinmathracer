@@ -146,10 +146,9 @@ Extends: Pad,
                 var question = new Question('Where is the red monster','next to');
                 this.mQuiz.mQuestionPoolArray.push(question);
 
-  		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
                 var totalNew           = 0;
 
-                while (totalNew < totalNewGoal)
+                while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
                 {
                         //reset vars and arrays
                         totalNew = 0;
