@@ -59,7 +59,7 @@ Extends: InputPad,
                 //question
 		if (!this.mNumQuestion)
 		{
-                	this.mNumQuestion = new Shape(100,50,100,100,this.mGame,"","","");
+                	this.mNumQuestion = new Shape(100,50,330,40,this.mGame,"","","");
                 	this.mInputPadArray.push(this.mNumQuestion);
 		}
         },
