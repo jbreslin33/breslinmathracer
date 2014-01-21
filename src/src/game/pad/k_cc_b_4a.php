@@ -114,15 +114,15 @@ Extends: Pad,
 
 			if (this.mCorrectButtonNumber == 0)
 			{
-				this.mButtonElementA = this.mScore; 
+				this.mButtonElementA = this.mQuiz.getQuestion().getAnswer(); 
 			}
 			if (this.mCorrectButtonNumber == 1)
 			{
-				this.mButtonElementB = this.mScore; 
+				this.mButtonElementB = this.mQuiz.getQuestion().getAnswer(); 
 			}
 			if (this.mCorrectButtonNumber == 2)
 			{
-				this.mButtonElementC = this.mScore; 
+				this.mButtonElementC = this.mQuiz.getQuestion().getAnswer(); 
 			}
 		}
 		this.mInputPad.mButtonA.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementA];
