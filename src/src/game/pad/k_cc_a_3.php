@@ -17,6 +17,7 @@ Extends: Pad,
 		this.mInputPad = new NumberPad(application);
 	},
 
+	//class overides
 	reset: function()
 	{
 		this.parent();
@@ -80,12 +81,6 @@ Extends: Pad,
 		{
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
-	},
-
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 	},
    
 	createQuestions: function()
@@ -157,6 +152,12 @@ Extends: Pad,
 	},
 
 	//state overides
+	showCorrectAnswer: function()
+	{
+		this.parent();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+	},
+
 	showCorrectAnswerOutOfTime: function()
         {
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
