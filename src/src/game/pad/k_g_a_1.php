@@ -11,7 +11,17 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
 		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
+                this.mInputPad = new ButtonChoicePad(application);
+                
+		this.mLastCorrectButtonNumber = 0;
+
+		this.mCorrectAnswerArray = new Array();
+		this.mCorrectAnswerArray.push('beside');
+		this.mCorrectAnswerArray.push('above');
+		this.mCorrectAnswerArray.push('behind');
+		this.mCorrectAnswerArray.push('in front of');
+		this.mCorrectAnswerArray.push('below');
+		this.mCorrectAnswerArray.push('next to');
 	},
 
 	showQuestion: function()
@@ -60,7 +70,40 @@ Extends: Pad,
 			this.mShapeArray[10].setVisibility(true);
 			this.mShapeArray[11].setVisibility(true);
                 }       
+
+		this.setButtons();
 	},
+
+	setButtons: function()
+        {
+                this.mCorrectButtonNumber = 0;
+                this.mButtonElementA = 0;
+                this.mButtonElementB = 0;
+                this.mButtonElementC = 0;
+
+                while (this.mLastCorrectButtonNumber == this.mCorrectButtonNumber || this.mButtonElementA == this.mButtonElementB || this.mButtoneElementA == this.mButtonElementC || this.mButtonElementB == this.mButtonElementC)
+                {
+                        this.mCorrectButtonNumber = Math.floor((Math.random()*3));
+
+                        if (this.mCorrectButtonNumber == 0)
+                        {
+                		this.mInputPad.mButtonA.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                		this.mInputPad.mButtonB.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor((Math.random()*6))];
+                		this.mInputPad.mButtonC.mMesh.innerHTML = this.mCorrectAnswerArray[parseInt(Math.floor((Math.random()*6))];
+                        }
+                        if (this.mCorrectButtonNumber == 1)
+                        {
+                                this.mButtonElementB = this.mQuiz.getQuestion().getAnswer();
+                        }
+                        if (this.mCorrectButtonNumber == 2)
+                        {
+                                this.mButtonElementC = this.mQuiz.getQuestion().getAnswer();
+                        }
+                }
+
+		this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
+
+        },
  
 	showCorrectAnswer: function()
         {
@@ -77,38 +120,26 @@ Extends: Pad,
 
 		//1 beside
                 var question = new Question('Where is the red monster?','beside');
-                question.setChoice('A','beside');
-                question.setChoice('B','above');
  		this.mQuiz.mQuestionPoolArray.push(question);
 
              	//2 above
                 var question = new Question('Where is the red monster?','above');
-                question.setChoice('A','below');
-                question.setChoice('B','above');
                 this.mQuiz.mQuestionPoolArray.push(question);
 
                 //3 behind
                 var question = new Question('Where is the red monster','behind');
-                question.setChoice('A','in front of');
-                question.setChoice('B','behind');
                 this.mQuiz.mQuestionPoolArray.push(question);
 
                 //4 in front of
                 var question = new Question('Where is the red monster','in front of');
-                question.setChoice('A','in front of');
-                question.setChoice('B','behind');
                 this.mQuiz.mQuestionPoolArray.push(question);
 
                 //5 below
                 var question = new Question('Where is the red monster','below');
-                question.setChoice('A','above');
-                question.setChoice('B','below');
                 this.mQuiz.mQuestionPoolArray.push(question);
 
                 //6 next to
                 var question = new Question('Where is the red monster','next to');
-                question.setChoice('A','above');
-                question.setChoice('B','next to');
                 this.mQuiz.mQuestionPoolArray.push(question);
 
   		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
