@@ -9,6 +9,8 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new NumberPad(application);
+
+		this.setScoreNeeded(20);
 	},
 
 	createQuestions: function()
@@ -30,10 +32,9 @@ Extends: Pad,
 		//extra
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 9 =','19'));
 
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
 
-		while (totalNew < totalNewGoal)
+		while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
 		{	
 			//reset vars and arrays
 			totalNew = 0;
