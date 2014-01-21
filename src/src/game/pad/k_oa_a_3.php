@@ -23,7 +23,7 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
                 //input pad
-                this.mInputPad = new ButtonChoicePad(application,application.mGame);
+                this.mInputPad = new ButtonMultipleChoicePad(application);
 
 		this.mLastCorrectButtonNumber = 0;
 	},
@@ -31,8 +31,9 @@ Extends: Pad,
 	showQuestion: function()
 	{
 		this.parent();
-		
-		this.setButtons();
+
+	 	this.mQuiz.getQuestion().setChoices();
+                this.mInputPad.showButtons();
 	},
 	
 	setButtons: function()
@@ -140,12 +141,32 @@ Extends: Pad,
 		this.mQuiz.mQuestionArray = 0;
 		this.mQuiz.mQuestionArray = new Array();
 
+		//reset vars and arrays
+		for (d = 0; d < this.mQuiz.mAnswerPool.length; d++)
+		{
+			this.mQuiz.mAnswerPool[d] = 0;
+		} 
+
+		this.mQuiz.mAnswerPool = 0;
+		this.mQuiz.mAnswerPool = new Array();
+
 		if (this.mApplication.mLevel == 1)
 		{
+			this.mQuiz.mAnswerPool.push('2 + 0');
+			this.mQuiz.mAnswerPool.push('1 + 1');
+			this.mQuiz.mAnswerPool.push('0 + 0');
+			this.mQuiz.mAnswerPool.push('3 + 0');
+			this.mQuiz.mAnswerPool.push('3 + 1');
+			this.mQuiz.mAnswerPool.push('1 + 2');
+
                        	var question = new Question('1 = ?', '1 + 0');
                        	this.mQuiz.mQuestionArray.push(question);
+			question.mAnswerPool = this.mQuiz.mAnswerPool;
+
                        	var question = new Question('1 = ?', '0 + 1');
                        	this.mQuiz.mQuestionArray.push(question);
+			question.mAnswerPool = this.mQuiz.mAnswerPool;
+
 			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
 		}
 		if (this.mApplication.mLevel == 2)
