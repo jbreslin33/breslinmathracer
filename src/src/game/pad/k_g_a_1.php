@@ -148,8 +148,6 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-		this.mShapeArray = new Array();		
-            
 		//1 beside 
                 this.mShapeArray.push(new Shape(50,50,200,250,this,"/images/monster/red_monster.png","",""));
                 this.mShapeArray.push(new Shape(50,50,150,250,this,"/images/bus/kid.png","",""));
