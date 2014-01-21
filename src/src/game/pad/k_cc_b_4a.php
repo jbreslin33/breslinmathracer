@@ -12,12 +12,6 @@ Extends: Pad,
 		this.mCountShapeArrayB = new Array();
 		this.mNumberNameArray = new Array();
 	
-		//buttons	
-		this.mCorrectButtonNumber = 0;	
-		this.mButtonElementA = 0;	
-		this.mButtonElementB = 0;	
-		this.mButtonElementC = 0;	
-
 		//answers 
                 this.mThresholdTime = 60000;
 
@@ -95,41 +89,9 @@ Extends: Pad,
 			this.mCountShapeArrayB[i].setVisibility(true);
 		}
 
-		this.setButtons();
+		this.mInputPad.setButtons();
 	},
 	
-	setButtons: function()
-	{
-		this.mCorrectButtonNumber = 0;
-		this.mButtonElementA = 0;
-		this.mButtonElementB = 0;
-		this.mButtonElementC = 0;
-
-		while (this.mButtonElementA == this.mButtonElementB || this.mButtoneElementA == this.mButtonElementC || this.mButtonElementB == this.mButtonElementC)
-		{
-			this.mCorrectButtonNumber = Math.floor((Math.random()*3));	
-			this.mButtonElementA = Math.floor((Math.random()*10));	
-			this.mButtonElementB = Math.floor((Math.random()*10));	
-			this.mButtonElementC = Math.floor((Math.random()*10));	
-
-			if (this.mCorrectButtonNumber == 0)
-			{
-				this.mButtonElementA = this.mQuiz.getQuestion().getAnswer(); 
-			}
-			if (this.mCorrectButtonNumber == 1)
-			{
-				this.mButtonElementB = this.mQuiz.getQuestion().getAnswer(); 
-			}
-			if (this.mCorrectButtonNumber == 2)
-			{
-				this.mButtonElementC = this.mQuiz.getQuestion().getAnswer(); 
-			}
-		}
-		this.mInputPad.mButtonA.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementA];
-		this.mInputPad.mButtonB.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementB];
-		this.mInputPad.mButtonC.mMesh.innerHTML = this.mQuiz.mAnswerPool[this.mButtonElementC];
-	},
-
 	//state overides 
  	showCorrectAnswer: function()
         {
