@@ -163,6 +163,7 @@ var Game = new Class(
                 if (this.mInputPad)
                 {
                 	this.mInputPad.showQuestion();
+                	this.mInputPad.showButtons();
 		}
 	},
 

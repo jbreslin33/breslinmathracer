@@ -22,6 +22,11 @@ var InputPad  = new Class(
 
 	},
 
+	showButtons: function()
+	{
+		//fake virtual
+	},
+
       	hide: function()
         {
                 //shapes and array
