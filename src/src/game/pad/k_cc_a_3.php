@@ -25,12 +25,15 @@ Extends: Pad,
 			//reset vars and arrays
 			totalCount = 0;
 
+			//just the question array reset
 			this.mQuiz.resetQuestionArray();
 
+			//loop thru and make potential questions
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//random number to count from 0-20
 				var objectsToCount = Math.floor((Math.random()*21));		
+
 				var question = new Question('How many kids?', '' + objectsToCount);
 				for (i = 0; i < objectsToCount; i++)
 				{
