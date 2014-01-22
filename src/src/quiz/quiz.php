@@ -40,7 +40,6 @@ var Quiz = new Class(
 		//destroy questions
 		for (i = 0; i < this.mQuestionArray.length; i++)
 		{
-			this.mQuestionArray[i].destructor();
 			this.mQuestionArray[i] = 0;
 		}
 
