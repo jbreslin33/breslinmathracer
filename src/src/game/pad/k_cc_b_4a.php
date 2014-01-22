@@ -72,13 +72,13 @@ Extends: Pad,
 	createQuestionShapes: function()
 	{
 		//one
-                this.mShapeArray.push(new Shape(50,50,18,60,this,"/images/bus/kid.png","",""));
-		this.mShapeArray.push(new Shape(50,50,25,25,this,"","",""));
+                this.mShapeArray.push(new Shape(50,50,38,80,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,45,45,this,"","",""));
 		this.mShapeArray[1].setText('one');
 		
 		//two
-                this.mShapeArray.push(new Shape(50,50,63,60,this,"/images/bus/kid.png","",""));
-		this.mShapeArray.push(new Shape(50,50,73,25,this,"","",""));
+                this.mShapeArray.push(new Shape(50,50,83,80,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,93,45,this,"","",""));
 		this.mShapeArray[3].setText('two');
 		
 		//three
