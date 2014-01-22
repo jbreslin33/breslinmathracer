@@ -14,16 +14,6 @@ Extends: Pad,
                 this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
-	// you need to show a kid with a number name mount... 
-	showQuestion: function()
-	{
-		this.parent();
-		
-	//	this.mQuiz.getQuestion().setChoices();
-	//	this.mInputPad.showButtons();
-	},
-	
-
 	//questions
 	createQuestions: function()
         {

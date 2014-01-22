@@ -18,7 +18,7 @@ Extends: Pad,
         {
 		this.parent();
 		
-		var totalCount           = 0;
+		var totalCount = 0;
 
 		while (totalCount < parseInt(this.mScoreNeeded * 7) || totalCount > parseInt(this.mScoreNeeded * 13))
 		{	

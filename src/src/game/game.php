@@ -152,7 +152,10 @@ var Game = new Class(
 			if (this.mQuiz.getQuestion())
 			{
                 		this.mQuiz.getQuestion().showShapes();
- 				this.mQuiz.getQuestion().setChoices();
+                		if (this.mInputPad)
+                		{
+ 					this.mQuiz.getQuestion().setChoices();
+				}
 			}
 		}
 	
@@ -160,7 +163,6 @@ var Game = new Class(
                 if (this.mInputPad)
                 {
                 	this.mInputPad.showQuestion();
-        		this.mInputPad.showButtons();
 		}
 	},
 

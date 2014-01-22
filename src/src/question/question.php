@@ -49,33 +49,37 @@ var Question = new Class(
         
 	setChoices: function()
         {
-                this.mCorrectChoiceNumber = 0;
+		if (this.mAnswerPool.length > 2)
+		{
+		
+                	this.mCorrectChoiceNumber = 0;
 
-                var goOnce = true;
+                	var goOnce = true;
 
-                while (goOnce == true || this.mCorrectChoiceNumber == this.mLastCorrectChoiceNumber || this.mChoiceA == this.mChoiceB || this.mChoiceA == this.mChoiceC || this.mChoiceB == this.mChoiceC)
-                {
-                        this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
+                	while (goOnce == true || this.mCorrectChoiceNumber == this.mLastCorrectChoiceNumber || this.mChoiceA == this.mChoiceB || this.mChoiceA == this.mChoiceC || this.mChoiceB == this.mChoiceC)
+                	{
+                        	this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
 
-                        this.mChoiceA = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-                        this.mChoiceB = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-                        this.mChoiceC = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+                        	this.mChoiceA = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+                        	this.mChoiceB = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+                        	this.mChoiceC = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
 
-                        if (this.mCorrectChoiceNumber == 0)
-                        {
-                                this.mChoiceA = this.getAnswer();
-                        }
-                        if (this.mCorrectChoiceNumber == 1)
-                        {
-                                this.mChoiceB = this.getAnswer();
-                        }
-                        if (this.mCorrectChoiceNumber == 2)
-                        {
-                                this.mChoiceC = this.getAnswer();
-                        }
-                        goOnce = false;
-                }
-                this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
+                        	if (this.mCorrectChoiceNumber == 0)
+                        	{
+                                	this.mChoiceA = this.getAnswer();
+                        	}
+                        	if (this.mCorrectChoiceNumber == 1)
+                        	{
+                                	this.mChoiceB = this.getAnswer();
+                        	}
+                        	if (this.mCorrectChoiceNumber == 2)
+                        	{
+                                	this.mChoiceC = this.getAnswer();
+                        	}
+                        	goOnce = false;
+                	}
+                	this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
+		}
         },
 	
 	set: function(question,answer)
