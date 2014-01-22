@@ -14,50 +14,6 @@ Extends: Pad,
                 this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
-	// you need to show a kid with a number name mount... 
-	showQuestion: function()
-	{
-		this.mQuiz.getQuestion().setChoices();
-                this.mInputPad.showButtons();
-
-		//A
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(false);
-		}	
-
-		//B	
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(false);
-		}	
-
-		//kids A
-		for (i = 0; i < this.mQuiz.getQuestion().getAnswer(); i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(true);
-		} 
-
-		//number names B
-		for (i = 0; i < this.mQuiz.getQuestion().getAnswer(); i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(true);
-		}
-	},
-	
-	//state overides 
- 	showCorrectAnswer: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-        },
-
-        showCorrectAnswerOutOfTime: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-        },
-     
 	//questions
 	createQuestions: function()
         {
@@ -75,26 +31,24 @@ Extends: Pad,
                 this.mQuiz.mAnswerPool.push('9');
                 this.mQuiz.mAnswerPool.push('10');
 	
-		//reset vars and arrays
-		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-		{
-			this.mQuiz.mQuestionArray[d] = 0;
-		} 
-
-		this.mQuiz.mQuestionArray = 0;
-		this.mQuiz.mQuestionArray = new Array();
+		//just the question array reset
+                this.mQuiz.resetQuestionArray();
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			var numberToCount = Math.floor((Math.random()*10)+1);	
 			var question = new Question('How Many?', '' + numberToCount);
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
+                        
+			for (s = 0; s < parseInt(numberToCount * 2); s++)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[s]);
+			}
+
 			this.mQuiz.mQuestionArray.push(question);
 		}
-
-		this.createQuestionShapes();
 	},
-     
+	
 	createQuestionShapes: function()
         {
                 //one
