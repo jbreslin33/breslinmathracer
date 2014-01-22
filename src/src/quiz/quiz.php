@@ -22,6 +22,7 @@ var Quiz = new Class(
 		//destroy questions
 		for (i = 0; i < this.mQuestionArray.length; i++)
 		{
+			this.mQuestionArray[i].destructor();
 			this.mQuestionArray[i] = 0;
 		}
 
@@ -31,6 +32,7 @@ var Quiz = new Class(
 		//destroy question pool
 		for (i = 0; i < this.mQuestionPoolArray.length; i++)
 		{
+			this.mQuestionPoolArray[i].destructor();
 			this.mQuestionPoolArray[i] = 0;
 		}
 		//destroy question pool array

@@ -1,6 +1,6 @@
 var Question = new Class(
 {
-        initialize: function(question,answer)
+        initialize: function(question,answer,showAnswer)
         {
 		//question
 		this.mQuestion = question;
@@ -9,7 +9,7 @@ var Question = new Class(
 		this.mAnswer = answer;
 		
 		//showAnswer
-		this.mShowAnswer = '';
+		this.mShowAnswer = showAnswer;
 
 		//is solved
 		this.mSolved = false;
@@ -22,21 +22,37 @@ var Question = new Class(
 		this.mChoiceB = '';
 		this.mChoiceC = '';
 		this.mChoiceD = '';
+
+		//shapes
+		this.mShapeArray = new Array();
         },
 
-	initialize: function(question,answer,showAnswer)
+	destructor: function()
+	{
+		this.destroyAnswerPool();
+		this.destroyShapes();
+	},
+
+	destroyAnswerPool: function()
+	{
+  		for (d = 0; d < this.mAnswerPool.length; d++)
+                {
+                        this.mAnswerPool[d] = 0;
+                }
+                this.mAnswerPool = 0;
+	},
+
+	destroyShapes: function()
         {
-		//question
-		this.mQuestion = question;
-
-		//answer
-		this.mAnswer = answer;
-
-		//showAnswer
-		this.mShowAnswer = showAnswer;
-
-		//is solved
-		this.mSolved = false;
+                //shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        //back to div
+                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
+                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
+                        this.mShapeArray[i] = 0;
+                }
+                this.mShapeArray = 0;
         },
 
 	setChoice: function(letter,choice)

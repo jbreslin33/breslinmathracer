@@ -42,6 +42,8 @@ Extends: Pad,
 
 	showQuestion: function()
 	{
+        	this.mQuiz.getQuestion().setChoices();
+                this.mInputPad.showButtons();
 
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -64,6 +66,13 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
+  		
+		//answer pool
+                this.mQuiz.mAnswerPool.push('tall');
+                this.mQuiz.mAnswerPool.push('short');
+                this.mQuiz.mAnswerPool.push('heavy');
+                this.mQuiz.mAnswerPool.push('light');
+
 
               	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
                	{
@@ -72,67 +81,55 @@ Extends: Pad,
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
 	
-		//addendC = Math.floor((Math.random()*5)+2);
-
 		//tall
 		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 	
 		//short	
 		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 
 		//heavy
 		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//light
 		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//short	
 		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//light
 		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
+		
 		//heavy
 		var question = new Question('What is this?','heavy');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//short	
 		var question = new Question('What is this?','short');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//tall
 		var question = new Question('What is this?','tall');
-		question.setChoice('A','tall');
-		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//light
 		var question = new Question('What is this?','light');
-		question.setChoice('A','light');
-		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;
 
 		this.createQuestionShapes();
 	},
