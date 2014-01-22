@@ -45,6 +45,7 @@ var Question = new Class(
 	destroyShapes: function()
         {
                 //shapes and array
+/*
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         //back to div
@@ -53,6 +54,7 @@ var Question = new Class(
                         this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
+*/
         },
 
 	setChoice: function(letter,choice)

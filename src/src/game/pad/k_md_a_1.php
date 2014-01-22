@@ -35,7 +35,6 @@ Extends: Pad,
                         this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
                         document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
                         this.mShapeArray[i] = 0;
-			this.log('destroyShape:' + i);
                 }
                 this.mShapeArray = 0;
 	},
@@ -72,7 +71,6 @@ Extends: Pad,
                 this.mQuiz.mAnswerPool.push('short');
                 this.mQuiz.mAnswerPool.push('heavy');
                 this.mQuiz.mAnswerPool.push('light');
-
 
               	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
                	{
