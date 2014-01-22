@@ -117,8 +117,6 @@ var Game = new Class(
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
 
-                this.standardGameAttempt();
-  
 		this.createQuestions();
                 this.createWorld();
         },
@@ -143,7 +141,13 @@ var Game = new Class(
                 }
 
                 //if any shapes...
-                this.mQuiz.getQuestion().showShapes();
+		if (this.mQuiz)
+		{
+			if (this.mQuiz.getQuestion())
+			{
+                		this.mQuiz.getQuestion().showShapes();
+			}
+		}
 	},
 
 	destroyShapes: function()
@@ -217,50 +221,6 @@ var Game = new Class(
                 this.mShapeArray.push(this.mVictoryShape_13);
 	},
 			
-	//brian - update score in games_attempts table		
-	updateScore: function()
-	{
-		/*
-		var score = this.getScore();
-		var xmlhttp;    
-		
-		if (window.XMLHttpRequest)
-		{
-			// code for IE7+, Firefox, Chrome, Opera, Safari
-		  	xmlhttp=new XMLHttpRequest();
-		}
-		else
-		{
-			// code for IE6, IE5
-		  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-		}
-		xmlhttp.onreadystatechange=function()
-	  	{
-		}
-		xmlhttp.open("GET","../../src/database/update_score.php?q="+score,true);
-		xmlhttp.send();
-		*/
-	},
-
-	standardGameAttempt: function()
-	{
-  		var xmlhttp;
-                        
-                if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {// code for IE6, IE5
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                }
-                xmlhttp.open("GET","../../web/game/standard_games_attempts.php",true);
-                xmlhttp.send();
-	},
-	
 	/*********************** PUBLIC ***************************/
 	getControlObject: function()
 	{
@@ -515,7 +475,6 @@ var Game = new Class(
         {
                 this.mScore++;
                 APPLICATION.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
-		this.updateScore();
         },
   
 	showCorrectAnswerBar: function()
@@ -530,7 +489,6 @@ var Game = new Class(
                 this.mCorrectAnswerBarHeader.setVisibility(false);
 
 		this.resetCorrectAnswerBar();
-
         },
         
 	resetCorrectAnswerBar: function()
