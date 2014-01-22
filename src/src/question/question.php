@@ -49,11 +49,8 @@ var Question = new Class(
         
 	setChoices: function()
         {
-		APPLICATION.log('a');
 		if (this.mAnswerPool.length > 2)
 		{
-			APPLICATION.log('b');
-		
                 	this.mCorrectChoiceNumber = 0;
 
                 	var goOnce = true;
