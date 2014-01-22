@@ -123,7 +123,7 @@ enter: function(game)
 execute: function(game)
 {
 	
-	if (game.mDoor.mEnteredDoor == true)
+ 	if (game.mQuiz.isQuizComplete())
 	{
         	game.mDungeonStateMachine.changeState(game.mLEVEL_PASSED);
 	}

@@ -6,10 +6,6 @@ var Application = new Class(
 {
 	initialize: function()
         {
-		/************ questions array from server db  later this need come in ajax*****/
-		this.mEnteredDoor = false;
-
-
 		//personal info
 		this.mUsername = username;
 		this.mFirstName = firstname;

@@ -66,12 +66,6 @@ Extends: Game,
 
 		//chasers
 		this.createChasers();
- 	
-		//key	
-        	this.createKey("/images/key/key_dungeon.gif");
-
-        	//create door
-        	this.createDoor("/images/doors/door_closed.png","/images/doors/door_open.png");
 	},
 
 	createControlObject: function()
@@ -146,31 +140,6 @@ Extends: Game,
                 }
 	},
 
-	createKey: function(image_source)
-	{
-        	var keyQuestion = new Question('Pick up key.',"key");
-        	this.mQuiz.mQuestionArray.push(keyQuestion);
-
-        	openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
-        	var key = new QuestionShape(50,50,openPoint.mX,openPoint.mY,this,keyQuestion,"/images/key/key_dungeon.gif","","key");
-        	key.setVisibility(false);
-        	key.mShowOnlyOnQuizComplete = true;
-       	 	key.mMountable = true;
-        	key.setHideOnQuestionSolved(false);
-        	this.addToShapeArray(key);
-	},
-
-	createDoor: function(image_source_closed,image_source_open)
-	{
-        	var doorQuestion = new Question('Open door with key.',"door");
-        	this.mQuiz.mQuestionArray.push(doorQuestion);
-
-        	var openPoint = this.getOpenPoint2D(40,735,75,375,50,7);
-        	this.mDoor = new ShapeDoor(50,50,openPoint.mX,openPoint.mY,this,doorQuestion,image_source_closed,"","door",image_source_open);
-        	this.mDoor.mOpenOnQuestionSolved = true;
-        	this.addToShapeArray(this.mDoor);
-	},
-  
 	levelPassedEnter: function()
         {
 	 	this.mApplication.mLevelCompleted = true;
