@@ -166,10 +166,12 @@ var Game = new Class(
 
 	createWorld: function()
 	{
-
 		//correctAnswerBar
 		this.createCorrectAnswerBar();
+	},
 
+	createVictoryShapes: function()
+	{
  		//victory shapes
                 this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_0);
@@ -610,6 +612,8 @@ var Game = new Class(
 	{
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
+		this.createVictoryShapes();
+
                 //correctAnswer
                 this.mCorrectAnswerBarHeader.mMesh.value = '';
                 this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
@@ -653,11 +657,15 @@ var Game = new Class(
 	},
 	showLevelPassedExit: function()
 	{
+
+		this.destroyShapes();
+		
 		this.hideCorrectAnswerBar();
                 this.mCorrectAnswerBarHeader.mMesh.value = '';
                 this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
                 this.mCorrectAnswerBar.mMesh.value = '';
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
+/*
                 this.mVictoryShape_0.setVisibility(false);
                 this.mVictoryShape_0.setPosition(50,300);
                 this.mVictoryShape_1.setVisibility(false);
@@ -686,6 +694,7 @@ var Game = new Class(
                 this.mVictoryShape_12.setPosition(650,300);
                 this.mVictoryShape_13.setVisibility(false);
                 this.mVictoryShape_13.setPosition(700,300);
+*/		
 	},
 
 	normalGameExecute: function()
