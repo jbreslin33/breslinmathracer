@@ -134,7 +134,16 @@ var Game = new Class(
                 this.mGameTime = 0;
 
                 this.standardGameAttempt();
+  
+		this.createQuestions();
+                this.createWorld();
         },
+
+	createQuestions: function()
+	{
+		//first reset quiz...before you create any questions...
+		this.mQuiz.reset();
+	},
 
 	destroyShapes: function()
 	{

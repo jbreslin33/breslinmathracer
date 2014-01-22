@@ -50,9 +50,6 @@ Extends: Game,
 	{
 		this.parent();
 		
-		this.createQuestions();
-		this.createWorld();
-  
 		//times
                 this.mAnswerTime = 0;
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
@@ -68,11 +65,6 @@ Extends: Game,
 		this.mTimer.update();
         },
    
-	createQuestions: function()
-        {
- 		this.mQuiz.reset();
-	},
-	
 	createWorld: function()
 	{
 		this.parent();
