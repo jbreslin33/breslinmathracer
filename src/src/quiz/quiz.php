@@ -24,17 +24,19 @@ var Quiz = new Class(
 		{
 			this.mQuestionArray[i] = 0;
 		}
-
 		//destroy question array
 		this.mQuestionArray = 0;
+                this.mQuestionArray = new Array();
 		
 		//destroy question pool
 		for (i = 0; i < this.mQuestionPoolArray.length; i++)
 		{
 			this.mQuestionPoolArray[i] = 0;
 		}
+
 		//destroy question pool array
 		this.mQuestionPoolArray = 0;
+                this.mQuestionPoolArray = new Array();
 	},	
 	
 	reset: function()
