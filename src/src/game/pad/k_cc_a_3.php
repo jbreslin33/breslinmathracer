@@ -21,15 +21,6 @@ Extends: Pad,
 	reset: function()
 	{
 		this.parent();
-                
-		for (i = 0; i < this.mCountShapeArray.length; i++)
-		{
-			this.mCountShapeArray[i].setVisibility(false);
-		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
-		{
-			this.mCountShapeArray[v].setVisibility(true);
-		}	
 	},
 	
 	destroyShapes: function()
@@ -141,11 +132,6 @@ Extends: Pad,
                 this.mCountShapeArray.push(new ShapeVictory(50,50,175,150,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,175,200,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,175,250,this,"/images/bus/kid.png","",""));
-
-		for (i = 0; i < this.mCountShapeArray.length; i++)
-		{
-			this.mCountShapeArray[i].setVisibility(false);
-		}	
 	},
 
 	//state overides
