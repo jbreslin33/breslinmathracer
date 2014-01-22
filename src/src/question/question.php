@@ -39,6 +39,11 @@ var Question = new Class(
 		this.mSolved = false;
         },
 
+	destructor: function()
+	{
+		APPLICATION.log('destructor');
+	},
+
 	setChoice: function(letter,choice)
 	{
 		if (letter == 'A') 
