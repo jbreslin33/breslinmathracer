@@ -7,10 +7,6 @@ Extends: Pad,
 	{
        		this.parent(application);
 
-		//count shape array
-		this.mCountShapeArrayA = new Array();
-		this.mCountShapeArrayB = new Array();
-	
 		//answers 
                 this.mThresholdTime = 60000;
 
@@ -18,86 +14,20 @@ Extends: Pad,
                 this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
-	reset: function()
-	{
-		this.parent();
-	
-		//A	
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(false);
-		} 
-	
-		//B	
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(false);
-		} 
-	},
-  
-	destroyShapes: function()
-        {
-                this.parent();
-
-                //shapes and array
-		//A
-                for (i = 0; i < this.mCountShapeArrayA.length; i++)
-                {
-                        //back to div
-                        this.mCountShapeArrayA[i].mDiv.mDiv.removeChild(this.mCountShapeArrayA[i].mMesh);
-                        document.body.removeChild(this.mCountShapeArrayA[i].mDiv.mDiv);
-                        this.mCountShapeArrayA[i] = 0;
-                }
-                this.mCountShapeArrayA = 0;
-               
-		//B 
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-                {
-                        //back to div
-                        this.mCountShapeArrayB[i].mDiv.mDiv.removeChild(this.mCountShapeArrayB[i].mMesh);
-                        document.body.removeChild(this.mCountShapeArrayB[i].mDiv.mDiv);
-                        this.mCountShapeArrayB[i] = 0;
-                }
-                this.mCountShapeArrayB = 0;
-        },
-
 	// you need to show a kid with a number name mount... 
 	showQuestion: function()
 	{
+		this.parent();
+		
 		this.mQuiz.getQuestion().setChoices();
 		this.mInputPad.showButtons();
-
-		//A
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(false);
-		}	
-
-		//B	
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(false);
-		}	
-
-		//kids A
-		for (i = 0; i < this.mScore + 1; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(true);
-		}
-
-		//number names B
-		for (i = 0; i < this.mScore; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(true);
-		}
-
 	},
 	
 	//state overides 
 	showLevelPassedEnter: function()
         {
                 this.parent();
-		this.mCountShapeArrayB[9].setVisibility(true);
+		this.mShapeArray[19].setVisibility(true);
         },
 
 	//questions
@@ -130,72 +60,65 @@ Extends: Pad,
                 {
                         var question = new Question('Count?', '' + this.mQuiz.mAnswerPool[i]);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
+			for (s = 0; s <= parseInt(i*2); s++)
+			{
+				question.mShapeArray.push(this.mShapeArray[s]);
+			}
                         this.mQuiz.mQuestionArray.push(question);
                 }
-
 		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
 	{
 		//one
-		this.mCountShapeArrayB.push(new Shape(50,50,25,25,this,"","",""));
-		this.mCountShapeArrayB[0].setText('one');
-                this.mCountShapeArrayA.push(new Shape(50,50,18,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,18,60,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,25,25,this,"","",""));
+		this.mShapeArray[1].setText('one');
 		
 		//two
-		this.mCountShapeArrayB.push(new Shape(50,50,73,25,this,"","",""));
-		this.mCountShapeArrayB[1].setText('two');
-                this.mCountShapeArrayA.push(new Shape(50,50,63,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,63,60,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,73,25,this,"","",""));
+		this.mShapeArray[3].setText('two');
 		
 		//three
-		this.mCountShapeArrayB.push(new Shape(50,50,120,25,this,"","",""));
-		this.mCountShapeArrayB[2].setText('three');
-                this.mCountShapeArrayA.push(new Shape(50,50,115,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,115,60,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,120,25,this,"","",""));
+		this.mShapeArray[5].setText('three');
 		
 		//four
-		this.mCountShapeArrayB.push(new Shape(50,50,170,25,this,"","",""));
-		this.mCountShapeArrayB[3].setText('four');
-                this.mCountShapeArrayA.push(new Shape(50,50,165,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,165,60,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,170,25,this,"","",""));
+		this.mShapeArray[7].setText('four');
                 
 		//five
-		this.mCountShapeArrayB.push(new Shape(50,50,220,25,this,"","",""));
-		this.mCountShapeArrayB[4].setText('five');
-                this.mCountShapeArrayA.push(new Shape(50,50,215,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,215,60,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,220,25,this,"","",""));
+		this.mShapeArray[9].setText('five');
 		
 		//six
-		this.mCountShapeArrayB.push(new Shape(50,50,25,125,this,"","",""));
-		this.mCountShapeArrayB[5].setText('six');
-                this.mCountShapeArrayA.push(new Shape(50,50,18,160,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,18,160,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,25,125,this,"","",""));
+		this.mShapeArray[11].setText('six');
 		
 		//seven
-		this.mCountShapeArrayB.push(new Shape(50,50,73,125,this,"","",""));
-		this.mCountShapeArrayB[6].setText('seven');
-                this.mCountShapeArrayA.push(new Shape(50,50,63,160,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,63,160,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,73,125,this,"","",""));
+		this.mShapeArray[13].setText('seven');
 		
 		//eight
-		this.mCountShapeArrayB.push(new Shape(50,50,120,125,this,"","",""));
-		this.mCountShapeArrayB[7].setText('eight');
-                this.mCountShapeArrayA.push(new Shape(50,50,115,160,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,115,160,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,120,125,this,"","",""));
+		this.mShapeArray[15].setText('eight');
 		
 		//nine
-		this.mCountShapeArrayB.push(new Shape(50,50,170,125,this,"","",""));
-		this.mCountShapeArrayB[8].setText('nine');
-                this.mCountShapeArrayA.push(new Shape(50,50,165,160,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,165,160,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,170,125,this,"","",""));
+		this.mShapeArray[17].setText('nine');
                 
 		//ten
-		this.mCountShapeArrayB.push(new Shape(50,50,220,125,this,"","",""));
-		this.mCountShapeArrayB[9].setText('ten');
-                this.mCountShapeArrayA.push(new Shape(50,50,215,160,this,"/images/bus/kid.png","",""));
-                
-		for (i = 0; i < this.mCountShapeArrayA.length; i++)
-		{
-			this.mCountShapeArrayA[i].setVisibility(false);
-		}	
-		
-		for (i = 0; i < this.mCountShapeArrayB.length; i++)
-		{
-			this.mCountShapeArrayB[i].setVisibility(false);
-		}	
+                this.mShapeArray.push(new Shape(50,50,215,160,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(50,50,220,125,this,"","",""));
+		this.mShapeArray[19].setText('ten');
 	}
 });
