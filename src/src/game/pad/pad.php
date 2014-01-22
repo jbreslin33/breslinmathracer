@@ -14,9 +14,6 @@ Extends: Game,
 
 		this.setScoreNeeded(10);
 
-		//other pad
-		this.mInputPad = 0;
-
 		//state machine
                 this.mPadStateMachine = new StateMachine(this);
 

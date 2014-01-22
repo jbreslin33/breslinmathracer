@@ -8,6 +8,9 @@ var Game = new Class(
         {
 		this.mApplication = application;
 
+               	//other pad
+                this.mInputPad = 0;
+
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
                 this.mUserAnswer = '';
@@ -137,24 +140,27 @@ var Game = new Class(
 
 	showQuestion: function()
 	{
-                if (this.mInputPad)
-                {
-                        this.mInputPad.showQuestion();
-                }
-
-  		//should this go higher up the chain..will it be standard...
+		//set all shapes invisible to start semi-clean
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(false);
                 }
 
-                //if any shapes...
+                //if there is a quiz
 		if (this.mQuiz)
 		{
 			if (this.mQuiz.getQuestion())
 			{
                 		this.mQuiz.getQuestion().showShapes();
+ 				this.mQuiz.getQuestion().setChoices();
 			}
+		}
+	
+		//input pad?
+                if (this.mInputPad)
+                {
+                	this.mInputPad.showQuestion();
+        		this.mInputPad.showButtons();
 		}
 	},
 
