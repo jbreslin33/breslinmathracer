@@ -160,14 +160,6 @@ Extends: Game,
         	}
 	},
 
-	showQuestion: function()
-	{
-		if (this.mInputPad)
-		{
-			this.mInputPad.showQuestion();
-		}
-	},
-
 	showCorrectAnswerEnter: function()
 	{
 		this.showCorrectAnswer();

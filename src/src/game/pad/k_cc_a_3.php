@@ -20,17 +20,6 @@ Extends: Pad,
 		this.parent();
 	},
 	
-	showQuestion: function()
-	{
-		this.parent();	
-
-		for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                }
-		this.mQuiz.getQuestion().showShapes();
-	},
- 
 	createQuestions: function()
         {
 		this.parent();

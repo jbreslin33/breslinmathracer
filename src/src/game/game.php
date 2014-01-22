@@ -129,6 +129,23 @@ var Game = new Class(
 		this.mQuiz.reset();
 	},
 
+	showQuestion: function()
+	{
+                if (this.mInputPad)
+                {
+                        this.mInputPad.showQuestion();
+                }
+
+  		//should this go higher up the chain..will it be standard...
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
+                //if any shapes...
+                this.mQuiz.getQuestion().showShapes();
+	},
+
 	destroyShapes: function()
 	{
 		//shapes and array
