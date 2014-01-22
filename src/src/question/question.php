@@ -28,6 +28,7 @@ var Question = new Class(
 
 	destructor: function()
 	{
+		APPLICATION.log('dest');
 		this.destroyShapes();	
 	},
 
@@ -42,6 +43,7 @@ var Question = new Class(
                         this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
+		this.mShapeArray = new Array();
 	},
 
 	setChoice: function(letter,choice)

@@ -19,38 +19,45 @@ var Quiz = new Class(
 
 	destructor: function()
 	{
-		//destroy questions
-		for (i = 0; i < this.mQuestionArray.length; i++)
-		{
-			this.mQuestionArray[i] = 0;
-		}
-		//destroy question array
-		this.mQuestionArray = 0;
-                this.mQuestionArray = new Array();
-		
-		//destroy question pool
-		for (i = 0; i < this.mQuestionPoolArray.length; i++)
-		{
-			this.mQuestionPoolArray[i] = 0;
-		}
-
-		//destroy question pool array
-		this.mQuestionPoolArray = 0;
-                this.mQuestionPoolArray = new Array();
+		this.resetQuestionArray();
+		this.resetQuestionPoolArray();
 	},	
 	
 	reset: function()
 	{
 		this.destructor();
 		
-		//Question and Answer Array
-		this.mQuestionArray = new Array();
-		this.mQuestionPoolArray = new Array();
-
 		//reset marker
 		this.mMarker = 0;
 	},
- 	
+
+	resetQuestionArray: function()
+	{
+ 		for (i = 0; i < this.mQuestionArray.length; i++)
+                {
+			this.mGame.log('this.mQuestionArray[i].destructor');
+                        this.mQuestionArray[i].destructor();
+                        this.mQuestionArray[i] = 0;
+                }
+                //destroy question array
+                this.mQuestionArray = 0;
+                this.mQuestionArray = new Array();
+	},
+	
+	resetQuestionPoolArray: function()
+	{
+		//destroy question pool
+		for (i = 0; i < this.mQuestionPoolArray.length; i++)
+		{
+                        this.mQuestionPoolArray[i].destructor();
+			this.mQuestionPoolArray[i] = 0;
+		}
+
+		//destroy question pool array
+		this.mQuestionPoolArray = 0;
+                this.mQuestionPoolArray = new Array();
+	}, 	
+
 	//returns question object	
 	getQuestion: function()
 	{
