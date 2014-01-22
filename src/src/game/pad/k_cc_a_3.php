@@ -87,6 +87,8 @@ Extends: Pad,
         {
 		this.parent();
 		
+		this.createQuestionShapes();
+		
 		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;
 
@@ -102,12 +104,15 @@ Extends: Pad,
 				//random number to count from 0-20
 				var objectsToCount = Math.floor((Math.random()*21));		
 				var question = new Question('' + objectsToCount, '' + objectsToCount);
+				for (i = 0; i < objectsToCount; i++)
+				{
+					question.mShapeArray.push(this.mCountShapeArray[i]);
+				}
 				this.mQuiz.mQuestionArray.push(question);
 
 				totalCount = parseInt(totalCount + objectsToCount);
 			}
 		}
-		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
@@ -140,11 +145,12 @@ Extends: Pad,
 		{
 			this.mCountShapeArray[i].setVisibility(false);
 		}	
-		
+	/*	
 		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
 		{
 			this.mCountShapeArray[v].setVisibility(true);
 		}	
+*/
 	},
 
 	//state overides
