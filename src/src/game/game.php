@@ -31,22 +31,6 @@ var Game = new Class(
               	this.mCorrectAnswerBarHeader = 0;
                 this.mCorrectAnswerBar = 0;
 
- 		//victory shape
-                this.mVictoryShape_0 = 0;
-                this.mVictoryShape_1 = 0;
-                this.mVictoryShape_2 = 0;
-                this.mVictoryShape_3 = 0;
-                this.mVictoryShape_4 = 0;
-                this.mVictoryShape_5 = 0;
-                this.mVictoryShape_6 = 0;
-                this.mVictoryShape_7 = 0;
-                this.mVictoryShape_8 = 0;
-                this.mVictoryShape_9 = 0;
-                this.mVictoryShape_10 = 0;
-                this.mVictoryShape_11 = 0;
-                this.mVictoryShape_12 = 0;
-                this.mVictoryShape_13 = 0;
-
                 //level passed
                 this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelPassedThresholdTime = 10000;
@@ -175,59 +159,45 @@ var Game = new Class(
  		//victory shapes
                 this.mVictoryShape_0 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_0);
-                this.mVictoryShape_0.setVisibility(false);
 
                 this.mVictoryShape_1 = new ShapeVictory(50,50,100,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_1);
-                this.mVictoryShape_1.setVisibility(false);
 
                 this.mVictoryShape_2 = new ShapeVictory(50,50,150,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_2);
-                this.mVictoryShape_2.setVisibility(false);
 
                 this.mVictoryShape_3 = new ShapeVictory(50,50,200,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_3);
-                this.mVictoryShape_3.setVisibility(false);
 
                 this.mVictoryShape_4 = new ShapeVictory(50,50,250,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_4);
-                this.mVictoryShape_4.setVisibility(false);
 
                 this.mVictoryShape_5 = new ShapeVictory(50,50,300,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_5);
-                this.mVictoryShape_5.setVisibility(false);
 
                 this.mVictoryShape_6 = new ShapeVictory(50,50,350,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_6);
-                this.mVictoryShape_6.setVisibility(false);
 
                 this.mVictoryShape_7 = new ShapeVictory(50,50,400,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_7);
-                this.mVictoryShape_7.setVisibility(false);
 
                 this.mVictoryShape_8 = new ShapeVictory(50,50,450,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_8);
-                this.mVictoryShape_8.setVisibility(false);
 
                 this.mVictoryShape_9 = new ShapeVictory(50,50,500,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_9);
-                this.mVictoryShape_9.setVisibility(false);
 
                 this.mVictoryShape_10 = new ShapeVictory(50,50,550,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_10);
-                this.mVictoryShape_10.setVisibility(false);
 
                 this.mVictoryShape_11 = new ShapeVictory(50,50,600,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_11);
-                this.mVictoryShape_11.setVisibility(false);
   
 		this.mVictoryShape_12 = new ShapeVictory(50,50,650,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_12);
-                this.mVictoryShape_12.setVisibility(false);
 
                 this.mVictoryShape_13 = new ShapeVictory(50,50,700,300,this,"/images/bus/kid.png","","");
                 this.mShapeArray.push(this.mVictoryShape_13);
-                this.mVictoryShape_13.setVisibility(false);
 	},
 			
 	//brian - update score in games_attempts table		
@@ -612,6 +582,10 @@ var Game = new Class(
 	{
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
+		//get rid of everything...
+		this.destroyShapes();
+
+		//create victory shapes...
 		this.createVictoryShapes();
 
                 //correctAnswer
@@ -620,36 +594,6 @@ var Game = new Class(
                 this.mCorrectAnswerBar.mMesh.value = '';
                 this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
                 this.showCorrectAnswerBar();
-
-                this.mVictoryShape_0.setVisibility(true);
-                this.mVictoryShape_0.setPosition(50,300);
-                this.mVictoryShape_1.setVisibility(true);
-                this.mVictoryShape_1.setPosition(100,300);
-                this.mVictoryShape_2.setVisibility(true);
-                this.mVictoryShape_2.setPosition(150,300);
-                this.mVictoryShape_3.setVisibility(true);
-                this.mVictoryShape_3.setPosition(200,300);
-                this.mVictoryShape_4.setVisibility(true);
-                this.mVictoryShape_4.setPosition(250,300);
-                this.mVictoryShape_5.setVisibility(true);
-                this.mVictoryShape_5.setPosition(300,300);
-                this.mVictoryShape_6.setVisibility(true);
-                this.mVictoryShape_6.setPosition(350,300);
-                this.mVictoryShape_7.setVisibility(true);
-                this.mVictoryShape_7.setPosition(400,300);
-                this.mVictoryShape_8.setVisibility(true);
-                this.mVictoryShape_8.setPosition(450,300);
-                this.mVictoryShape_9.setVisibility(true);
-                this.mVictoryShape_9.setPosition(500,300);
-                this.mVictoryShape_10.setVisibility(true);
-                this.mVictoryShape_10.setPosition(550,300);
-                this.mVictoryShape_11.setVisibility(true);
-                this.mVictoryShape_11.setPosition(600,300);
-                this.mVictoryShape_12.setVisibility(true);
-                this.mVictoryShape_12.setPosition(650,300);
-                this.mVictoryShape_13.setVisibility(true);
-                this.mVictoryShape_13.setPosition(700,300);
-
 	},
 	showLevelPassedExecute: function()
 	{
@@ -657,7 +601,8 @@ var Game = new Class(
 	},
 	showLevelPassedExit: function()
 	{
-
+		
+		//lets get a fresh start with shapes.
 		this.destroyShapes();
 		
 		this.hideCorrectAnswerBar();
@@ -665,36 +610,6 @@ var Game = new Class(
                 this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
                 this.mCorrectAnswerBar.mMesh.value = '';
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
-/*
-                this.mVictoryShape_0.setVisibility(false);
-                this.mVictoryShape_0.setPosition(50,300);
-                this.mVictoryShape_1.setVisibility(false);
-                this.mVictoryShape_1.setPosition(100,300);
-                this.mVictoryShape_2.setVisibility(false);
-                this.mVictoryShape_2.setPosition(150,300);
-                this.mVictoryShape_3.setVisibility(false);
-                this.mVictoryShape_3.setPosition(200,300);
-                this.mVictoryShape_4.setVisibility(false);
-                this.mVictoryShape_4.setPosition(250,300);
-                this.mVictoryShape_5.setVisibility(false);
-                this.mVictoryShape_5.setPosition(300,300);
-                this.mVictoryShape_6.setVisibility(false);
-                this.mVictoryShape_6.setPosition(350,300);
-                this.mVictoryShape_7.setVisibility(false);
-                this.mVictoryShape_7.setPosition(400,300);
-                this.mVictoryShape_8.setVisibility(false);
-                this.mVictoryShape_8.setPosition(450,300);
-                this.mVictoryShape_9.setVisibility(false);
-                this.mVictoryShape_9.setPosition(500,300);
-                this.mVictoryShape_10.setVisibility(false);
-                this.mVictoryShape_10.setPosition(550,300);
-                this.mVictoryShape_11.setVisibility(false);
-                this.mVictoryShape_11.setPosition(600,300);
-                this.mVictoryShape_12.setVisibility(false);
-                this.mVictoryShape_12.setPosition(650,300);
-                this.mVictoryShape_13.setVisibility(false);
-                this.mVictoryShape_13.setPosition(700,300);
-*/		
 	},
 
 	normalGameExecute: function()
