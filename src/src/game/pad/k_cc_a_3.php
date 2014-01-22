@@ -45,6 +45,7 @@ Extends: Pad,
                         this.mCountShapeArray[i] = 0;
                 }
                 this.mCountShapeArray = 0;
+                this.mCountShapeArray = new Array();
 	},
 
 	showQuestion: function()
@@ -115,6 +116,8 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
+		this.destroyShapes();		
+
                 this.mCountShapeArray.push(new ShapeVictory(50,50,25,50,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,25,100,this,"/images/bus/kid.png","",""));
                 this.mCountShapeArray.push(new ShapeVictory(50,50,25,150,this,"/images/bus/kid.png","",""));

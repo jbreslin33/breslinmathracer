@@ -156,6 +156,7 @@ var Game = new Class(
                 	this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
+                this.mShapeArray = new Array();
 	},
 
 	update: function()
