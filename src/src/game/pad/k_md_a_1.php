@@ -24,21 +24,6 @@ Extends: Pad,
 		} 
 	},
 	
-	destroyShapes: function()
-	{
-		this.parent();
-
-		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        //back to div
-                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
-                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
-                        this.mShapeArray[i] = 0;
-                }
-                this.mShapeArray = 0;
-	},
-
 	showQuestion: function()
 	{
         	this.mQuiz.getQuestion().setChoices();
@@ -65,20 +50,21 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
-  		
+  	
 		//answer pool
                 this.mQuiz.mAnswerPool.push('tall');
                 this.mQuiz.mAnswerPool.push('short');
                 this.mQuiz.mAnswerPool.push('heavy');
                 this.mQuiz.mAnswerPool.push('light');
-
+/*
               	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
                	{
+                        this.mQuiz.mQuestionArray[d].destructor();
                         this.mQuiz.mQuestionArray[d] = 0;
                 }
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
-	
+*/	
 		//tall
 		var question = new Question('What is this?','tall');
 		this.mQuiz.mQuestionArray.push(question);
@@ -134,11 +120,6 @@ Extends: Pad,
 
 	createQuestionShapes: function()
 	{
-		this.log('createQ');
-		this.destroyShapes();
-
-		this.mShapeArray = new Array();		
-
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/giraffe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
@@ -156,9 +137,6 @@ Extends: Pad,
                		this.mShapeArray[i].mCollidable = false;
                		this.mShapeArray[i].mCollisionOn = false;
 		}	
-		
-		this.setScoreNeeded(this.mShapeArray.length);
-
 	},
 
 	//state overides

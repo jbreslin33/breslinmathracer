@@ -46,6 +46,7 @@ var Quiz = new Class(
 		//Question and Answer Array
 		this.mQuestionArray = new Array();
 		this.mQuestionPoolArray = new Array();
+                this.mAnswerPool = new Array();
 
 		//reset marker
 		this.mMarker = 0;

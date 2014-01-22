@@ -29,23 +29,13 @@ var Question = new Class(
 
 	destructor: function()
 	{
-		this.destroyAnswerPool();
 		this.destroyShapes();
-	},
-
-	destroyAnswerPool: function()
-	{
-  		for (d = 0; d < this.mAnswerPool.length; d++)
-                {
-                        this.mAnswerPool[d] = 0;
-                }
-                this.mAnswerPool = 0;
 	},
 
 	destroyShapes: function()
         {
                 //shapes and array
-/*
+
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         //back to div
@@ -54,7 +44,6 @@ var Question = new Class(
                         this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
-*/
         },
 
 	setChoice: function(letter,choice)
