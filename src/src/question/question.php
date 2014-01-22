@@ -131,5 +131,21 @@ var Question = new Class(
 	getShowAnswer: function()
 	{
 		return this.mShowAnswer;
+	},
+
+	hideShapes: function()
+	{
+   		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+	},
+	
+	showShapes: function()
+	{
+   		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(true);
+                }
 	}
 });

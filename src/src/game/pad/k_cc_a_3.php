@@ -53,10 +53,15 @@ Extends: Pad,
                 {
                         this.mCountShapeArray[i].setVisibility(false);
                 }
+
+
+		this.mQuiz.getQuestion().showShapes();
+/*
                 for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
                 {
                         this.mCountShapeArray[v].setVisibility(true);
                 }
+*/
 	},
  
 	hideNumberPad: function()
