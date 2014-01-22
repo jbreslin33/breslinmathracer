@@ -14,22 +14,13 @@ Extends: Pad,
 		this.mInputPad = new NumberPad(application);
 	},
 
-	//class overides
-	reset: function()
-	{
-		this.parent();
-	},
-	
 	createQuestions: function()
         {
 		this.parent();
 		
-		this.createQuestionShapes();
-		
-		var totalCountGoal       = parseInt(this.mScoreNeeded * 10);
 		var totalCount           = 0;
 
-		while (totalCount < totalCountGoal)
+		while (totalCount < parseInt(this.mScoreNeeded * 7) || totalCount > parseInt(this.mScoreNeeded * 13))
 		{	
 			//reset vars and arrays
 			totalCount = 0;
@@ -79,22 +70,5 @@ Extends: Pad,
                 this.mShapeArray.push(new Shape(50,50,175,150,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,175,200,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
-	},
-
-	//state overides
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-	},
-
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-        },
-
+	}
 });

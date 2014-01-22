@@ -125,6 +125,14 @@ var Game = new Class(
 	{
 		//first reset quiz...before you create any questions...
 		this.mQuiz.reset();
+
+		this.createQuestionShapes();
+
+	},
+
+	createQuestionShapes: function()
+	{
+		//fake virtual	
 	},
 
 	showQuestion: function()
