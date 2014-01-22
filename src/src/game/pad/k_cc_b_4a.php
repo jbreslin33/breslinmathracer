@@ -30,15 +30,9 @@ Extends: Pad,
 		this.mQuiz.mAnswerPool.push('eight');
 		this.mQuiz.mAnswerPool.push('nine');
 		this.mQuiz.mAnswerPool.push('ten');
-		
-		//reset vars and arrays
-		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-		{
-			this.mQuiz.mQuestionArray[d] = 0;
-		} 
 
-		this.mQuiz.mQuestionArray = 0;
-		this.mQuiz.mQuestionArray = new Array();
+ 		//just the question array reset
+                this.mQuiz.resetQuestionArray();
 
    		for (i = 0; i < this.mScoreNeeded; i++)
                 {
@@ -50,7 +44,6 @@ Extends: Pad,
 			}
                         this.mQuiz.mQuestionArray.push(question);
                 }
-		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
