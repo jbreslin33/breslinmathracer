@@ -17,22 +17,8 @@ var Quiz = new Class(
 	destructor: function()
 	{
 		this.resetQuestionArray();		
-
-		//destroy question pool
-		for (i = 0; i < this.mQuestionPoolArray.length; i++)
-		{
-			this.mQuestionPoolArray[i] = 0;
-		}
-		//destroy question pool array
-		this.mQuestionPoolArray = 0;
-
-		//destroy answer pool
-                for (i = 0; i < this.mAnswerPool.length; i++)
-                {
-                        this.mAnswerPool[i] = 0;
-                }
-                //destroy answer pool array
-                this.mAnswerPool = 0;
+		this.resetQuestionPoolArray();		
+		this.resetAnswerPool();		
 	},	
 
 	resetQuestionArray: function()
@@ -47,15 +33,35 @@ var Quiz = new Class(
 		this.mQuestionArray = 0;
 		this.mQuestionArray = new Array();
 	},
+
+	resetQuestionPoolArray: function()
+	{
+		//destroy question pool
+		for (i = 0; i < this.mQuestionPoolArray.length; i++)
+		{
+			this.mQuestionPoolArray[i] = 0;
+		}
+		//destroy question pool array
+		this.mQuestionPoolArray = 0;
+		this.mQuestionPoolArray = new Array();
+	},
+	
+	resetAnswerPool: function()
+	{
+		//destroy answer pool
+                for (i = 0; i < this.mAnswerPool.length; i++)
+                {
+                        this.mAnswerPool[i] = 0;
+                }
+                //destroy answer pool array
+                this.mAnswerPool = 0;
+                this.mAnswerPool = new Array();
+	},
 	
 	reset: function()
 	{
 		this.destructor();
 		
-		//Question and Answer Array
-		this.mQuestionPoolArray = new Array();
-		this.mAnswerPool = new Array();
-
 		//reset marker
 		this.mMarker = 0;
 	},
