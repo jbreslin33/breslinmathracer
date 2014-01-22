@@ -8,16 +8,34 @@ var Quiz = new Class(
 		//Question and Answer Array
 		this.mQuestionArray = new Array();
 		this.mQuestionPoolArray = new Array();
+                this.mAnswerPool = new Array();
 			
 		//question
 		this.mMarker = 0;
-  
-		//answer pool
-                this.mAnswerPool = new Array();
-
         },
 
 	destructor: function()
+	{
+		this.resetQuestionArray();		
+
+		//destroy question pool
+		for (i = 0; i < this.mQuestionPoolArray.length; i++)
+		{
+			this.mQuestionPoolArray[i] = 0;
+		}
+		//destroy question pool array
+		this.mQuestionPoolArray = 0;
+
+		//destroy answer pool
+                for (i = 0; i < this.mAnswerPool.length; i++)
+                {
+                        this.mAnswerPool[i] = 0;
+                }
+                //destroy answer pool array
+                this.mAnswerPool = 0;
+	},	
+
+	resetQuestionArray: function()
 	{
 		//destroy questions
 		for (i = 0; i < this.mQuestionArray.length; i++)
@@ -27,23 +45,16 @@ var Quiz = new Class(
 
 		//destroy question array
 		this.mQuestionArray = 0;
-		
-		//destroy question pool
-		for (i = 0; i < this.mQuestionPoolArray.length; i++)
-		{
-			this.mQuestionPoolArray[i] = 0;
-		}
-		//destroy question pool array
-		this.mQuestionPoolArray = 0;
-	},	
+		this.mQuestionArray = new Array();
+	},
 	
 	reset: function()
 	{
 		this.destructor();
 		
 		//Question and Answer Array
-		this.mQuestionArray = new Array();
 		this.mQuestionPoolArray = new Array();
+		this.mAnswerPool = new Array();
 
 		//reset marker
 		this.mMarker = 0;
