@@ -1,6 +1,6 @@
 var Question = new Class(
 {
-        initialize: function(question,answer)
+        initialize: function(question,answer,showAnswer)
         {
 		//question
 		this.mQuestion = question;
@@ -9,7 +9,7 @@ var Question = new Class(
 		this.mAnswer = answer;
 		
 		//showAnswer
-		this.mShowAnswer = '';
+		this.mShowAnswer = showAnswer;
 
 		//is solved
 		this.mSolved = false;
@@ -22,22 +22,27 @@ var Question = new Class(
 		this.mChoiceB = '';
 		this.mChoiceC = '';
 		this.mChoiceD = '';
+
+		this.mShapeArray = new Array();
         },
 
-	initialize: function(question,answer,showAnswer)
-        {
-		//question
-		this.mQuestion = question;
+	destructor: function()
+	{
+		this.destroyShapes();	
+	},
 
-		//answer
-		this.mAnswer = answer;
-
-		//showAnswer
-		this.mShowAnswer = showAnswer;
-
-		//is solved
-		this.mSolved = false;
-        },
+	destroyShapes: function()
+	{
+  		//shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        //back to div
+                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
+                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
+                        this.mShapeArray[i] = 0;
+                }
+                this.mShapeArray = 0;
+	},
 
 	setChoice: function(letter,choice)
 	{

@@ -96,6 +96,7 @@ Extends: Pad,
 			totalCount = 0;
 			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
 			{
+				this.mQuiz.mQuestionArray[d].destructor();
 				this.mQuiz.mQuestionArray[d] = 0;
 			} 
 			this.mQuiz.mQuestionArray = 0;
