@@ -106,11 +106,7 @@ var Game = new Class(
 	{
 		//shapes and array
 		this.destroyShapes();
-
-		//quiz
-		this.log('this.mQuiz.destructor from game');
-		this.mQuiz.destructor();
-
+	
 		//correctanswerbar
 		this.destroyCorrectAnswerBar();
 	

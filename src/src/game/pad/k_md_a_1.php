@@ -24,10 +24,24 @@ Extends: Pad,
 		} 
 	},
 	
+	destroyShapes: function()
+	{
+		this.parent();
+
+		//shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        //back to div
+                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
+                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
+                        this.mShapeArray[i] = 0;
+			this.log('destroyShape:' + i);
+                }
+                this.mShapeArray = 0;
+	},
+
 	showQuestion: function()
 	{
-        	this.mQuiz.getQuestion().setChoices();
-                this.mInputPad.showButtons();
 
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -50,76 +64,86 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
-  	
-		//answer pool
-                this.mQuiz.mAnswerPool.push('tall');
-                this.mQuiz.mAnswerPool.push('short');
-                this.mQuiz.mAnswerPool.push('heavy');
-                this.mQuiz.mAnswerPool.push('light');
-/*
+
               	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
                	{
-                        this.mQuiz.mQuestionArray[d].destructor();
                         this.mQuiz.mQuestionArray[d] = 0;
                 }
                 this.mQuiz.mQuestionArray = 0;
                 this.mQuiz.mQuestionArray = new Array();
-*/	
+	
+		//addendC = Math.floor((Math.random()*5)+2);
+
 		//tall
 		var question = new Question('What is this?','tall');
+		question.setChoice('A','tall');
+		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 	
 		//short	
 		var question = new Question('What is this?','short');
+		question.setChoice('A','tall');
+		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 
 		//heavy
 		var question = new Question('What is this?','heavy');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//light
 		var question = new Question('What is this?','light');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//short	
 		var question = new Question('What is this?','short');
+		question.setChoice('A','tall');
+		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//light
 		var question = new Question('What is this?','light');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
-		
+
 		//heavy
 		var question = new Question('What is this?','heavy');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//short	
 		var question = new Question('What is this?','short');
+		question.setChoice('A','tall');
+		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//tall
 		var question = new Question('What is this?','tall');
+		question.setChoice('A','tall');
+		question.setChoice('B','short');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		
 		//light
 		var question = new Question('What is this?','light');
+		question.setChoice('A','light');
+		question.setChoice('B','heavy');
 		this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
 
 		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
 	{
+		this.log('createQ');
+		this.destroyShapes();
+
+		this.mShapeArray = new Array();		
+
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/giraffe.jpg","",""));
                 this.mShapeArray.push(new Shape(50,50,150,400,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/attributes/heavy.gif","",""));
@@ -137,6 +161,9 @@ Extends: Pad,
                		this.mShapeArray[i].mCollidable = false;
                		this.mShapeArray[i].mCollisionOn = false;
 		}	
+		
+		this.setScoreNeeded(this.mShapeArray.length);
+
 	},
 
 	//state overides

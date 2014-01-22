@@ -73,11 +73,6 @@ Extends: Game,
  		this.mQuiz.reset();
 	},
 	
-	destroyQuestions: function()
-	{
-
-	},
-	
 	createWorld: function()
 	{
 		this.parent();
