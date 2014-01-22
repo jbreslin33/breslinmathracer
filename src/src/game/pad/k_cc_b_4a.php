@@ -94,18 +94,6 @@ Extends: Pad,
 	},
 	
 	//state overides 
- 	showCorrectAnswer: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-        },
-
-        showCorrectAnswerOutOfTime: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-        },
-     
 	showLevelPassedEnter: function()
         {
                 this.parent();
@@ -140,7 +128,7 @@ Extends: Pad,
 
    		for (i = 0; i < this.mScoreNeeded; i++)
                 {
-                        var question = new Question('Count', '' + this.mQuiz.mAnswerPool[i]);
+                        var question = new Question('Count?', '' + this.mQuiz.mAnswerPool[i]);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
                         this.mQuiz.mQuestionArray.push(question);
                 }
