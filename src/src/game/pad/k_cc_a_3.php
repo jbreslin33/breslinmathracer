@@ -22,28 +22,15 @@ Extends: Pad,
 	
 	showQuestion: function()
 	{
+		this.parent();	
+
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(false);
                 }
-
 		this.mQuiz.getQuestion().showShapes();
 	},
  
-	hideNumberPad: function()
-	{
-		this.parent();
-		this.mInputPad.mNumQuestion.setVisibility(false);
-	},
-
-	showNumberPad: function()
-	{
-		this.parent();
-
-		//set question invis...
-		this.mInputPad.mNumQuestion.setVisibility(false);
-	},
-   
 	createQuestions: function()
         {
 		this.parent();
@@ -64,7 +51,7 @@ Extends: Pad,
 			{	
 				//random number to count from 0-20
 				var objectsToCount = Math.floor((Math.random()*21));		
-				var question = new Question('' + objectsToCount, '' + objectsToCount);
+				var question = new Question('How many kids?', '' + objectsToCount);
 				for (i = 0; i < objectsToCount; i++)
 				{
 					question.mShapeArray.push(this.mShapeArray[i]);
