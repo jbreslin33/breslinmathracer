@@ -13,6 +13,18 @@ Extends: Pad,
 		this.setScoreNeeded(20);
 	},
 
+	showCorrectAnswer: function()
+        {
+		this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        },
+
+	showCorrectAnswerOutOfTime: function()
+        {
+                this.parent();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        },
+
 	createQuestions: function()
         {
  		this.parent();
@@ -49,12 +61,8 @@ Extends: Pad,
 		{	
 			//reset vars and arrays
 			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+
+			this.mQuiz.resetQuestionArray();
 
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
@@ -73,17 +81,5 @@ Extends: Pad,
 			}
 		}
 
-	},
- 
-	showCorrectAnswer: function()
-        {
-		this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
-        },
-
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
-        }
+	}
 });
