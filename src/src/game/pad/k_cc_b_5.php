@@ -24,7 +24,7 @@ Extends: Pad,
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			var numberToCount = Math.floor((Math.random()*10)+1);	
+			var numberToCount = Math.floor((Math.random()*this.mShapeArray.length)+1);	
 			var question = new Question('How Many?', '' + numberToCount);
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
                         
@@ -116,18 +116,6 @@ Extends: Pad,
                 	this.mShapeArray.push(new Shape(50,50,75,200,this,"/images/bus/kid.png","",""));
                 	this.mShapeArray.push(new Shape(50,50,75,250,this,"/images/bus/kid.png","",""));
 
-                	this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,125,100,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,125,150,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,125,200,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,125,250,this,"/images/bus/kid.png","",""));
-
-                	this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,175,100,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,175,150,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,175,200,this,"/images/bus/kid.png","",""));
-                	this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
-  
 			this.mShapeArray[0].setPosition (150,350);
                         this.mShapeArray[1].setPosition (250,400);
                         this.mShapeArray[2].setPosition (200,250);
@@ -138,17 +126,6 @@ Extends: Pad,
                         this.mShapeArray[7].setPosition (200,400);
                         this.mShapeArray[8].setPosition (100,350);
                         this.mShapeArray[9].setPosition (100,100);
-                        this.mShapeArray[10].setPosition(050,100);
-                        this.mShapeArray[11].setPosition(050,150);
-                        this.mShapeArray[12].setPosition(100,300);
-                        this.mShapeArray[13].setPosition(050,300);
-                        this.mShapeArray[14].setPosition(200,200);
-                        this.mShapeArray[15].setPosition(100,050);
-                        this.mShapeArray[16].setPosition(150,250);
-                        this.mShapeArray[17].setPosition(200,100);
-                        this.mShapeArray[18].setPosition(050,250);
-                        this.mShapeArray[19].setPosition(250,100);
-
 		} 
 	}
 	
