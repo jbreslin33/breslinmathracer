@@ -13,33 +13,7 @@ Extends: Pad,
 		//input pad
 		this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
-
-	reset: function()
-	{
-		this.parent();
-		
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-		} 
-	},
 	
-	destroyShapes: function()
-	{
-		this.parent();
-
-		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        //back to div
-                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
-                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
-                        this.mShapeArray[i] = 0;
-			this.log('destroyShape:' + i);
-                }
-                this.mShapeArray = 0;
-	},
-
 	showQuestion: function()
 	{
 		for (i = 0; i < this.mShapeArray.length; i++)
@@ -60,6 +34,16 @@ Extends: Pad,
         	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 	},
    
+	//state overides
+	showCorrectAnswerOutOfTime: function()
+        {
+                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+                this.mInputPad.hide();
+                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                this.showCorrectAnswerBar();
+                this.showClockShape();
+        },
+
 	createQuestions: function()
         {
 		this.parent();
@@ -131,15 +115,11 @@ Extends: Pad,
 		question.setChoice('B','circle');
 		this.mQuiz.mQuestionArray.push(question);
 
-		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
 	{
-		this.log('createQ');
 		this.destroyShapes();
-
-		this.mShapeArray = new Array();		
 
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cone.png","",""));
@@ -151,26 +131,5 @@ Extends: Pad,
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/square.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/triangle.png","",""));
                 this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
-                	
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-               		this.mShapeArray[i].mCollidable = false;
-               		this.mShapeArray[i].mCollisionOn = false;
-		}	
-		
-		this.setScoreNeeded(this.mShapeArray.length);
-
-	},
-
-	//state overides
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-        },
-
+	}
 });
