@@ -34,21 +34,12 @@ Extends: Pad,
 		this.parent();
  		
 		//answer pool
-                this.mQuiz.mAnswerPool.push('tall');
-                this.mQuiz.mAnswerPool.push('short');
-                this.mQuiz.mAnswerPool.push('heavy');
-                this.mQuiz.mAnswerPool.push('light');
+                this.mQuiz.mAnswerPool.push('is more tall than');
+                this.mQuiz.mAnswerPool.push('is more short than');
+                this.mQuiz.mAnswerPool.push('is more heavy than');
+                this.mQuiz.mAnswerPool.push('is more light than');
 
 		this.mQuiz.resetQuestionArray();	
-
-/*
-                //tall
-                var question = new Question('What is this?','tall');
-                question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
-                question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
-                question.mShapeArray.push(this.mShapeArray[0]);
-                this.mQuiz.mQuestionArray.push(question);
-*/
 
 		//1 tall
 		var question = new Question('','is more tall than');
@@ -61,9 +52,11 @@ Extends: Pad,
 	
 		//2 short	
 		var question = new Question('','is more short than');
-		question.setChoice('A','is more tall than');
-		question.setChoice('B','is more short than');
-		this.mQuiz.mQuestionArray.push(question);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
+                question.mShapeArray.push(this.mShapeArray[1]);
+                question.mShapeArray.push(this.mShapeArray[4]);
+                this.mQuiz.mQuestionArray.push(question);
 
 		//3 heavy
 		var question = new Question('','is more heavy than');
