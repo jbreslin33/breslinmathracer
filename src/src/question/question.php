@@ -49,7 +49,33 @@ var Question = new Class(
         
 	setChoices: function()
         {
-		if (this.mAnswerPool.length > 2)
+  		if (this.mAnswerPool.length == 2)
+                {
+                        this.mCorrectChoiceNumber = 0;
+
+                        var goOnce = true;
+
+                        while (goOnce == true || this.mCorrectChoiceNumber == this.mLastCorrectChoiceNumber || this.mChoiceA == this.mChoiceB)
+                        {
+                                this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
+
+                                this.mChoiceA = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+                                this.mChoiceB = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
+
+                                if (this.mCorrectChoiceNumber == 0)
+                                {
+                                        this.mChoiceA = this.getAnswer();
+                                }
+                                if (this.mCorrectChoiceNumber == 1)
+                                {
+                                        this.mChoiceB = this.getAnswer();
+                                }
+                                goOnce = false;
+                        }
+                        this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
+                }
+
+		if (this.mAnswerPool.length > 3)
 		{
                 	this.mCorrectChoiceNumber = 0;
 

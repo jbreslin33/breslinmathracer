@@ -28,63 +28,73 @@ Extends: Pad,
 
 		//tall
 		var question = new Question('What is this?','tall');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
 		question.mShapeArray.push(this.mShapeArray[0]);
 		this.mQuiz.mQuestionArray.push(question);
-	
+
 		//short	
 		var question = new Question('What is this?','short');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[1]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
+                question.mShapeArray.push(this.mShapeArray[1]);
+                this.mQuiz.mQuestionArray.push(question);
 
 		//heavy
 		var question = new Question('What is this?','heavy');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[2]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
+                question.mShapeArray.push(this.mShapeArray[2]);
+                this.mQuiz.mQuestionArray.push(question);
 		
 		//light
 		var question = new Question('What is this?','light');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[3]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
+                question.mShapeArray.push(this.mShapeArray[3]);
+                this.mQuiz.mQuestionArray.push(question);
 		
 		//tall
 		var question = new Question('What is this?','tall');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
 		question.mShapeArray.push(this.mShapeArray[0]);
 		this.mQuiz.mQuestionArray.push(question);
-	
+
 		//short	
 		var question = new Question('What is this?','short');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[1]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
+                question.mShapeArray.push(this.mShapeArray[1]);
+                this.mQuiz.mQuestionArray.push(question);
 
 		//heavy
 		var question = new Question('What is this?','heavy');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[2]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
+                question.mShapeArray.push(this.mShapeArray[2]);
+                this.mQuiz.mQuestionArray.push(question);
 		
 		//light
 		var question = new Question('What is this?','light');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[3]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
+                question.mShapeArray.push(this.mShapeArray[3]);
+                this.mQuiz.mQuestionArray.push(question);
 		
 		//tall
 		var question = new Question('What is this?','tall');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
 		question.mShapeArray.push(this.mShapeArray[0]);
 		this.mQuiz.mQuestionArray.push(question);
-	
+
 		//short	
 		var question = new Question('What is this?','short');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[1]);
-		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
+                question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
+                question.mShapeArray.push(this.mShapeArray[1]);
+                this.mQuiz.mQuestionArray.push(question);
 	},
 
 	createQuestionShapes: function()
