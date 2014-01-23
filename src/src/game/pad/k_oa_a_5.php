@@ -91,12 +91,7 @@ Extends: Pad,
 			//reset vars and arrays
 			totalNew = 0;
 
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			this.mQuiz.resetQuestionArray();
 
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
