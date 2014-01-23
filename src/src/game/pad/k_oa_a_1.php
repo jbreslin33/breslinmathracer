@@ -14,35 +14,6 @@ Extends: Pad,
 		this.mInputPad = new NumberPad(application);
 	},
 
-	reset: function()
-	{
-		this.parent();
-		
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-		} 
-		for (v = 0; v < parseInt(this.mQuiz.getQuestion().getQuestion()); v++)
-		{
-			this.mShapeArray[v].setVisibility(true);
-		}	
-	},
-	
-	destroyShapes: function()
-	{
-		this.parent();
-
-		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        //back to div
-                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
-                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
-                        this.mShapeArray[i] = 0;
-                }
-                this.mShapeArray = 0;
-	},
-
 	showQuestion: function()
 	{
 		for (i = 0; i < this.mShapeArray.length; i++)
@@ -88,14 +59,9 @@ Extends: Pad,
 	createQuestions: function()
         {
 		this.parent();
-		
-		for (d = 0; d < this.mQuiz.mQuestionPoolArray.length; d++)
-		{
-			this.mQuiz.mQuestionPoolArray[d] = 0;
-		} 
-		this.mQuiz.mQuestionPoolArray = 0;
-		this.mQuiz.mQuestionPoolArray = new Array();
 
+		this.mQuiz.resetQuestionPoolArray();
+		
 		//add
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
@@ -139,13 +105,10 @@ Extends: Pad,
 		while (totalNew < totalNewGoal)
 		{	
 			//reset vars and arrays
+			
 			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			
+			this.mQuiz.resetQuestionArray();
 
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
@@ -163,7 +126,6 @@ Extends: Pad,
 				}
 			}
 		}
-		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
