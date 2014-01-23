@@ -29,13 +29,7 @@ Extends: Pad,
 
 		while (greaterThans < 2 || lessThans < 2 || equalTos < 2)
 		{	
-			//reset vars and arrays
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			this.mQuiz.resetQuestionArray();
 
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
@@ -64,14 +58,14 @@ Extends: Pad,
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
 				//add shapes
-				for (a = 0; a < objectsToCountA; a++)
-				{
-					question.mShapeArray.push(this.mShapeArray[a])
-				}
-				for (b = 0; b < objectsToCountB; b++)
-				{
-					question.mShapeArray.push(this.mShapeArray[b+20])
-				}
+				this.mShapeArray[s].mMesh.innerHTML = '' + objectsToCountA;
+				this.log('A:' + objectsToCountA);
+				question.mShapeArray.push(this.mShapeArray[s]);
+				
+				this.mShapeArray[s+10].mMesh.innerHTML = '' + objectsToCountB;
+				this.log('B:' + objectsToCountB);
+				question.mShapeArray.push(this.mShapeArray[s+10]);
+				
 			}
 		}
 	},
@@ -79,53 +73,26 @@ Extends: Pad,
 	createQuestionShapes: function()
 	{
 		//A
-                this.mShapeArray.push(new Shape(50,50,25,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,25,250,this,"/images/bus/kid.png","",""));
-                	
-                this.mShapeArray.push(new Shape(50,50,75,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,250,this,"/images/bus/kid.png","",""));
-                
-		this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,250,this,"/images/bus/kid.png","",""));
-		
-		this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
-
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
 		//B
-		this.mShapeArray.push(new Shape(50,50,525,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,525,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,525,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,525,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,525,250,this,"/images/bus/kid.png","",""));
-                        
-                this.mShapeArray.push(new Shape(50,50,575,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,575,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,575,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,575,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,575,250,this,"/images/bus/kid.png","",""));
-                
-                this.mShapeArray.push(new Shape(50,50,625,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,625,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,625,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,625,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,625,250,this,"/images/bus/kid.png","",""));
-                
-                this.mShapeArray.push(new Shape(50,50,675,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,675,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,675,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,675,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,675,250,this,"/images/bus/kid.png","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
 	}
 });
