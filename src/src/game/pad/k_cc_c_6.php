@@ -59,7 +59,7 @@ Extends: Pad,
 					lessThans++;
 				}
 
-				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
+				var question = new QuestionCompare('Compare?', '' + comparison, objectsToCountA, objectsToCountB);
 				this.mQuiz.mQuestionArray.push(question);
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
