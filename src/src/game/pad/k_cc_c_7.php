@@ -12,6 +12,8 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new ButtonMultipleChoicePad(application);
+
+		this.setScoreNeeded(20);
 	},
 
 	createQuestions: function()
