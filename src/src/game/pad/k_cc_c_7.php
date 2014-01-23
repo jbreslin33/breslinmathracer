@@ -58,41 +58,21 @@ Extends: Pad,
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
 				//add shapes
-				this.mShapeArray[s].mMesh.innerHTML = '' + objectsToCountA;
-				this.log('A:' + objectsToCountA);
-				question.mShapeArray.push(this.mShapeArray[s]);
+				this.mShapeArray[s*2].mMesh.innerHTML = '' + objectsToCountA;
+				question.mShapeArray.push(this.mShapeArray[s*2]);
 				
-				this.mShapeArray[s+10].mMesh.innerHTML = '' + objectsToCountB;
-				this.log('B:' + objectsToCountB);
-				question.mShapeArray.push(this.mShapeArray[s+10]);
-				
+				this.mShapeArray[(s*2)+1].mMesh.innerHTML = '' + objectsToCountB;
+				question.mShapeArray.push(this.mShapeArray[(s*2)+1]);
 			}
 		}
 	},
 	
 	createQuestionShapes: function()
 	{
-		//A
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,250,100,this,"","",""));
-		//B
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,500,100,this,"","",""));
+		for (i=0; i < this.mScoreNeeded; i++)
+		{	
+			this.mShapeArray.push(new Shape(150,50,300,100,this,"","",""));
+			this.mShapeArray.push(new Shape(150,50,550,100,this,"","",""));
+		}
 	}
 });
