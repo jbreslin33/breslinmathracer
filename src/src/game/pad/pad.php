@@ -33,16 +33,6 @@ Extends: Game,
    		this.mTimer = new ClockTimer(application);
 	},
 
-	destructor: function()
-	{
-		this.parent();
-	},
- 
-	destroyShapes: function()
-        {
-		this.parent();
-        },
-
 	reset: function()
 	{
 		this.parent();
@@ -67,25 +57,17 @@ Extends: Game,
 		this.parent();
 
 		//clock Shape
-		if (!this.mClockShape)
-		{
-			this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
-			this.mShapeArray.push(this.mClockShape);
-			this.mClockShape.setVisibility(false);
-		}
+		this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
+		this.mShapeArray.push(this.mClockShape);
+		this.mClockShape.setVisibility(false);
 		
 		//memorize Shape
-		if (!this.mMemorizeShape)
-		{	
-			this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
-			this.mShapeArray.push(this.mMemorizeShape);
-			this.mMemorizeShape.setVisibility(false);
-		}
+		this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
+		this.mShapeArray.push(this.mMemorizeShape);
+		this.mMemorizeShape.setVisibility(false);
 	},
-
 		
 	//states
-
 	waitingOnAnswerFirstTimeEnter: function()
 	{
         	if (this.mInputPad.mNumAnswer)

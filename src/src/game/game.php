@@ -94,9 +94,6 @@ var Game = new Class(
 		//shapes and array
 		this.destroyShapes();
 	
-		//correctanswerbar
-		this.destroyCorrectAnswerBar();
-	
 		//bounds
 		this.mBounds = 0;
 
@@ -120,22 +117,14 @@ var Game = new Class(
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
 
-		this.createQuestions();
                 this.createWorld();
+		this.createQuestions();
         },
 
 	createQuestions: function()
 	{
 		//first reset quiz...before you create any questions...
 		this.mQuiz.reset();
-
-		this.createQuestionShapes();
-
-	},
-
-	createQuestionShapes: function()
-	{
-		//fake virtual	
 	},
 
 	showQuestion: function()
@@ -516,37 +505,15 @@ var Game = new Class(
         	this.mCorrectAnswerBar.mMesh.innerHTML = '';
 	},
 
-        destroyCorrectAnswerBar: function()
-        {
-		if (this.mCorrectAnswerBarHeader)
-		{
-                	this.mCorrectAnswerBarHeader.mDiv.mDiv.removeChild(this.mCorrectAnswerBarHeader.mMesh);
-                	document.body.removeChild(this.mCorrectAnswerBarHeader.mDiv.mDiv);
-                	this.mCorrectAnswerBarHeader = 0;
-		}
-		if (this.mCorrectAnswerBar)
-		{
-                	this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
-                	document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
-                	this.mCorrectAnswerBar = 0;
-		}
-        },
- 
 	createCorrectAnswerBar: function()
         {
                 //question bar header
-		if (!this.mCorrectAnswerBarHeader)
-		{
-                	this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-		}
+                this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
 
                 //question bar
-		if (!this.mCorrectAnswerBar)
-		{
-                	this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
-                	this.mCorrectAnswerBar.mMesh.innerHTML = '';
-		}
+                this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
+                this.mCorrectAnswerBar.mMesh.innerHTML = '';
        	},
 
 	showClockShape: function()

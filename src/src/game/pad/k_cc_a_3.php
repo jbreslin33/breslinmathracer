@@ -37,7 +37,7 @@ Extends: Pad,
 				var question = new Question('How many kids?', '' + objectsToCount);
 				for (i = 0; i < objectsToCount; i++)
 				{
-					question.mShapeArray.push(this.mShapeArray[i]);
+					question.mShapeArray.push(this.mShapeArray[i+4]);
 				}
 				this.mQuiz.mQuestionArray.push(question);
 
@@ -46,9 +46,9 @@ Extends: Pad,
 		}
 	},
 
-	createQuestionShapes: function()
+	createWorld: function()
 	{
-		this.destroyShapes();		
+		this.parent();
 
                 this.mShapeArray.push(new Shape(50,50,25,50,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,25,100,this,"/images/bus/kid.png","",""));
