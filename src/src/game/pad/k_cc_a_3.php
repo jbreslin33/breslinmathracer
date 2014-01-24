@@ -37,7 +37,7 @@ Extends: Pad,
 				var question = new Question('How many kids?', '' + objectsToCount);
 				for (i = 0; i < objectsToCount; i++)
 				{
-					question.mShapeArray.push(this.mShapeArray[i+4]);
+					question.mShapeArray.push(this.mShapeArray[i+2]);
 				}
 				this.mQuiz.mQuestionArray.push(question);
 
