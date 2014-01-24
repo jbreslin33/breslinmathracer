@@ -16,10 +16,10 @@ insert into learning_standards (id,ref_id,progression,levels) values ('k.nbt.a.1
 insert into learning_standards (id,ref_id,progression,levels) values ('k.md.a.1','017AAEA9D22543A59A60C697FEBADD1B',15,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.md.a.2','4D3953649C704D4CAFC97E99C7A83EE9',16,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.md.b.3','C655A9B714CB481EB9D88759DD9BD0D1',17,10);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.1','D55BE0EDAFBC47B0BBDB1B88F9DF8781',18,6);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.2','4F0A52E0906841DFA13739BFC87B330B',19,1);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.3','01938BB1EE4E47319738DAC239A2B141',20,1);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.g.b.4','C712BAA86FEF4BFAB703AD2EB402B2DE',21,1);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.1','D55BE0EDAFBC47B0BBDB1B88F9DF8781',18,10);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.2','4F0A52E0906841DFA13739BFC87B330B',19,10);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.g.a.3','01938BB1EE4E47319738DAC239A2B141',20,10);
+insert into learning_standards (id,ref_id,progression,levels) values ('k.g.b.4','C712BAA86FEF4BFAB703AD2EB402B2DE',21,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.a.1','C712BAA86FEF4BFAB703AD2EB402B2DD',101,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.a.2','AF4F218991664833853239C29DCE8521',102,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.oa.b.3','FC21412A7C92444EA50B30A09729330F',103,19);
