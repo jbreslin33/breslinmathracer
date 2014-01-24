@@ -30,15 +30,17 @@ Extends: Pad,
                         
 			for (s = 0; s < parseInt(numberToCount); s++)
                         {
-                                question.mShapeArray.push(this.mShapeArray[s]);
+                                question.mShapeArray.push(this.mShapeArray[s+2]);
 			}
 
 			this.mQuiz.mQuestionArray.push(question);
 		}
 	},
 	
-	createQuestionShapes: function()
+	createWorld: function()
         {
+		this.parent();
+
 		//scattered
 		if (this.mApplication.mLevel < 5)
 		{
@@ -72,33 +74,32 @@ Extends: Pad,
                                 if (i < 5)
                                 {
                                         //collision on or off
-                                        this.mShapeArray[i].mCollidable = false;
-                                        this.mShapeArray[i].mCollisionOn = false;
-                                        this.mShapeArray[i].setPosition(parseInt(i * 50 + 50), 50)
+                                        this.mShapeArray[i+2].mCollidable = false;
+                                        this.mShapeArray[i+2].mCollisionOn = false;
+                                        this.mShapeArray[i+2].setPosition(parseInt(i * 50 + 50), 50)
                                 }
                                 if (i >= 5 && i < 11)
                                 {
                                         //collision on or off
-                                        this.mShapeArray[i].mCollidable = false;
-                                        this.mShapeArray[i].mCollisionOn = false;
-                                        this.mShapeArray[i].setPosition(50,parseInt(i * 50 - 135))
+                                        this.mShapeArray[i+2].mCollidable = false;
+                                        this.mShapeArray[i+2].mCollisionOn = false;
+                                        this.mShapeArray[i+2].setPosition(50,parseInt(i * 50 - 135))
                                 }
                                 if (i >= 11 && i < 15)
                                 {
                                         //collision on or off
-                                        this.mShapeArray[i].mCollidable = false;
-                                        this.mShapeArray[i].mCollisionOn = false;
-                                        this.mShapeArray[i].setPosition(parseInt(i * 50 - 450 ), 365)
+                                        this.mShapeArray[i+2].mCollidable = false;
+                                        this.mShapeArray[i+2].mCollisionOn = false;
+                                        this.mShapeArray[i+2].setPosition(parseInt(i * 50 - 450 ), 365)
                                 }
                                 if (i >= 15 && i < 20)
                                 {
                                         //collision on or off
-                                        this.mShapeArray[i].mCollidable = false;
-                                        this.mShapeArray[i].mCollisionOn = false;
-                                        this.mShapeArray[i].setPosition(250,parseInt(i * 50 - 635))
+                                        this.mShapeArray[i+2].mCollidable = false;
+                                        this.mShapeArray[i+2].mCollisionOn = false;
+                                        this.mShapeArray[i+2].setPosition(250,parseInt(i * 50 - 635))
                                 }
                         }
-
 		}
 		
 		else
@@ -116,16 +117,16 @@ Extends: Pad,
                 	this.mShapeArray.push(new Shape(50,50,75,200,this,"/images/bus/kid.png","",""));
                 	this.mShapeArray.push(new Shape(50,50,75,250,this,"/images/bus/kid.png","",""));
 
-			this.mShapeArray[0].setPosition (150,350);
-                        this.mShapeArray[1].setPosition (250,400);
-                        this.mShapeArray[2].setPosition (200,250);
-                        this.mShapeArray[3].setPosition (150,150);
-                        this.mShapeArray[4].setPosition (050,050);
-                        this.mShapeArray[5].setPosition (150,050);
-                        this.mShapeArray[6].setPosition (250,150);
-                        this.mShapeArray[7].setPosition (200,400);
-                        this.mShapeArray[8].setPosition (100,350);
-                        this.mShapeArray[9].setPosition (100,100);
+			this.mShapeArray[2].setPosition (150,350);
+                        this.mShapeArray[3].setPosition (250,400);
+                        this.mShapeArray[4].setPosition (200,250);
+                        this.mShapeArray[5].setPosition (150,150);
+                        this.mShapeArray[6].setPosition (050,050);
+                        this.mShapeArray[7].setPosition (150,050);
+                        this.mShapeArray[8].setPosition (250,150);
+                        this.mShapeArray[9].setPosition (200,400);
+                        this.mShapeArray[10].setPosition (100,350);
+                        this.mShapeArray[11].setPosition (100,100);
 		} 
 	}
 	
