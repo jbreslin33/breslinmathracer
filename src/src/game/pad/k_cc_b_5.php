@@ -24,7 +24,7 @@ Extends: Pad,
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			var numberToCount = Math.floor((Math.random()*this.mShapeArray.length)+1);	
+			var numberToCount = Math.floor((Math.random()*21));	
 			var question = new Question('How Many?', '' + numberToCount);
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
                         
