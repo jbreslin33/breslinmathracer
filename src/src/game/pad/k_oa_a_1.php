@@ -13,44 +13,7 @@ Extends: Pad,
 		//input pad
 		this.mInputPad = new NumberPad(application);
 	},
-/*
-	showQuestion: function()
-	{
-		this.parent();
-
-		for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i+2].setVisibility(false);
-                }
-
-                var question = this.mQuiz.getQuestion().getQuestion();
-                var answer = parseInt(this.mQuiz.getQuestion().getAnswer());
-		var addendA = parseInt(question[0]);   
-		var sign = question[2];   
-		var addendB = parseInt(question[4]);   
-
-		for (i = 0; i < parseInt(addendA + addendB); i++)
-                {
-                	this.mShapeArray[i+2].setVisibility(true);
-		}
-
-		//sign
-		if (sign == "+")
-		{
-			this.mShapeArray[9].setVisibility(true);
-			this.mShapeArray[9].setPosition(parseInt(this.mShapeArray[addendA - 1].mPosition.mX + 50), 50)	
-		}
-		else if (sign == "-")
-		{
-			this.mShapeArray[10].setVisibility(true);
-			this.mShapeArray[12].setPosition(parseInt(this.mShapeArray[addendA - 1].mPosition.mX + 50), 50)	
-			
-		}
-		//equals	
-		this.mShapeArray[11].setVisibility(true);
-		this.mShapeArray[11].setPosition(parseInt(this.mShapeArray[parseInt(addendA + addendB - 1)].mPosition.mX + 50), 50)	
-	},
-*/ 
+	
 	showCorrectAnswer: function()
 	{
 		this.parent();
@@ -115,20 +78,21 @@ Extends: Pad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*2));		
+				var element = 0;
 				if (randomChance == 0)
 				{
-					var question = this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel-1)];
-					this.mQuiz.mQuestionArray.push(question);
-					question.mShapeArray.push(this.mShapeArray[2]);
+					element = parseInt(this.mApplication.mLevel-1);
 					totalNew++;
 				}	
 				if (randomChance == 1)
 				{
-					var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));	
-					var question = this.mQuiz.mQuestionPoolArray[randomElement];
-					this.mQuiz.mQuestionArray.push(question);
-					question.mShapeArray.push(this.mShapeArray[2]);
+					element = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));	
 				}
+				question = this.mQuiz.mQuestionPoolArray[element];
+				this.mQuiz.mQuestionArray.push(question);
+                                question.mShapeArray.push(this.mShapeArray[2]);
+
+
 			}
 		}
 	},
