@@ -20,11 +20,11 @@ var WordProblems = new Class(
 				sum = addendA + addendB;		
 			}
 			//okay we have a valid sum and plural addends
-			questionText = 'Jim had '; 	
+			questionText = '' + APPLICATION.mFirstName + ' had '; 	
 			questionText = questionText + '' + addendA; 	
 			questionText = questionText + ' toy cars. He found ';
 			questionText = questionText + '' + addendB; 	
-			questionText = questionText + ' more toy cars. How many toy cars does Jim have now?';
+			questionText = questionText + ' more toy cars. How many toy cars does ' + APPLICATION.mFirstName + ' have now?';
 
 			var question = new Question('' + questionText,'' + sum);
 			return question;
