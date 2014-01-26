@@ -8,18 +8,20 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 3000;
+	
+		this.setScoreNeeded(20);
 
 		//input pad
 		this.mInputPad = new NumberPad(application);
 	},
 	
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-	},
-   
+       	showCorrectAnswerBar: function()
+       	{
+                //this.mCorrectAnswerBarHeader.setVisibility(true);
+                this.mCorrectAnswerBar.setVisibility(true);
+       	},
+
 	createQuestions: function()
         {
 		this.parent();
@@ -124,9 +126,6 @@ Extends: Pad,
 					i++;
 				} 
                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+30)]);
-				
-
-
 			}
 		}
 	},
@@ -178,15 +177,5 @@ Extends: Pad,
                 this.mShapeArray.push(new Shape(50,50,400,60,this,"/images/symbols/equal.png","",""));
                 this.mShapeArray.push(new Shape(50,50,450,60,this,"/images/symbols/equal.png","",""));
                 this.mShapeArray.push(new Shape(50,50,500,60,this,"/images/symbols/equal.png","",""));
-	},
-
-	//state overides
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-        }
+	}
 });
