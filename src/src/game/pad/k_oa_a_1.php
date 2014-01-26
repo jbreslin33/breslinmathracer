@@ -98,13 +98,27 @@ Extends: Pad,
                 		var addendA = parseInt(actualQuestion[0]);
                 		var sign = actualQuestion[2];
                 		var addendB = parseInt(actualQuestion[4]);
-				this.log('' + addendA + ' ' + sign + ' ' + addendA + ' = ' + answer); 
 
 				//addendA
-				for (a = 0; a < addendA; a++)
+				var i = 0;
+				while(i < addendA)
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(a+2)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2)]);
+					i++;
 				} 
+
+				//sign
+                		if (sign == "+")
+				{
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+1+10)]);
+					i++;
+				}
+                		if (sign == "-")
+				{
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+1+20)]);
+					i++;
+				}
+				
 
 
 			}
@@ -148,36 +162,47 @@ Extends: Pad,
 		this.parent();
 
                 this.mShapeArray.push(new Shape(50,50,025,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,100,60,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,200,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,275,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,325,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,075,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,125,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,175,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,225,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,275,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,325,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,375,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,475,60,this,"/images/bus/kid.png","",""));
 
-                this.mShapeArray.push(new Shape(50,50,075,50,this,"/images/symbols/plus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/symbols/plus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/symbols/plus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/symbols/plus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,275,50,this,"/images/symbols/plus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,325,50,this,"/images/symbols/plus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,375,50,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,025,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,075,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,125,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,175,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,225,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,275,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,325,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,375,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,60,this,"/images/symbols/plus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,475,60,this,"/images/symbols/plus.png","",""));
 
-                this.mShapeArray.push(new Shape(50,50,075,50,this,"/images/symbols/minus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/symbols/minus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/symbols/minus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/symbols/minus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,275,50,this,"/images/symbols/minus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,325,50,this,"/images/symbols/minus.png","",""));
-                this.mShapeArray.push(new Shape(50,50,375,50,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,025,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,075,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,125,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,175,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,225,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,275,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,325,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,375,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,60,this,"/images/symbols/minus.png","",""));
+                this.mShapeArray.push(new Shape(50,50,475,60,this,"/images/symbols/minus.png","",""));
 
-                this.mShapeArray.push(new Shape(50,50,075,50,this,"/images/symbols/equal.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/symbols/equal.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/symbols/equal.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/symbols/equal.png","",""));
-                this.mShapeArray.push(new Shape(50,50,275,50,this,"/images/symbols/equal.png","",""));
-                this.mShapeArray.push(new Shape(50,50,325,50,this,"/images/symbols/equal.png","",""));
-                this.mShapeArray.push(new Shape(50,50,375,50,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,075,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,125,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,175,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,225,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,275,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,325,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,375,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,425,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,475,60,this,"/images/symbols/equal.png","",""));
 	},
 
 	//state overides
