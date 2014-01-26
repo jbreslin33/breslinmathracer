@@ -123,6 +123,7 @@ Extends: Pad,
                                 	question.mShapeArray.push(this.mShapeArray[parseInt(i+2)]);
 					i++;
 				} 
+                               	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+30)]);
 				
 
 
@@ -169,6 +170,7 @@ Extends: Pad,
 
                 this.mShapeArray.push(new Shape(50,50,050,60,this,"/images/symbols/equal.png","",""));
                 this.mShapeArray.push(new Shape(50,50,100,60,this,"/images/symbols/equal.png","",""));
+                this.mShapeArray.push(new Shape(50,50,150,60,this,"/images/symbols/equal.png","",""));
                 this.mShapeArray.push(new Shape(50,50,200,60,this,"/images/symbols/equal.png","",""));
                 this.mShapeArray.push(new Shape(50,50,250,60,this,"/images/symbols/equal.png","",""));
                 this.mShapeArray.push(new Shape(50,50,300,60,this,"/images/symbols/equal.png","",""));
