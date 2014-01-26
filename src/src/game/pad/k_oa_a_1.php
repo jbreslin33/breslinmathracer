@@ -15,12 +15,17 @@ Extends: Pad,
 		//input pad
 		this.mInputPad = new NumberPad(application);
 	},
-	
-       	showCorrectAnswerBar: function()
-       	{
-                //this.mCorrectAnswerBarHeader.setVisibility(true);
-                this.mCorrectAnswerBar.setVisibility(true);
-       	},
+
+        createCorrectAnswerBar: function()
+        {
+                //question bar header
+                this.mCorrectAnswerBarHeader = new Shape(150,50,100,300,this,"","","");
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+
+                //question bar
+                this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
+                this.mCorrectAnswerBar.mMesh.innerHTML = '';
+        },	
 
 	createQuestions: function()
         {
