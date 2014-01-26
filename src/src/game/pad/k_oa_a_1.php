@@ -90,7 +90,6 @@ Extends: Pad,
 				}
 				question = this.mQuiz.mQuestionPoolArray[element];
 				this.mQuiz.mQuestionArray.push(question);
-                                question.mShapeArray.push(this.mShapeArray[2]);
 
 				//shapes 
 				var answer = parseInt(question.getAnswer());
@@ -100,6 +99,12 @@ Extends: Pad,
                 		var sign = actualQuestion[2];
                 		var addendB = parseInt(actualQuestion[4]);
 				this.log('' + addendA + ' ' + sign + ' ' + addendA + ' = ' + answer); 
+
+				//addendA
+				for (a = 0; a < addendA; a++)
+				{
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(a+2)]);
+				} 
 
 
 			}
@@ -143,8 +148,8 @@ Extends: Pad,
 		this.parent();
 
                 this.mShapeArray.push(new Shape(50,50,025,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,075,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,100,60,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,200,50,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,275,50,this,"/images/bus/kid.png","",""));
