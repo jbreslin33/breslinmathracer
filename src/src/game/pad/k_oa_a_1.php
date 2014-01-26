@@ -118,6 +118,11 @@ Extends: Pad,
                                 	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+20)]);
 					i++;
 				}
+				while(i < parseInt(addendB + addendA + 1))
+				{
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2)]);
+					i++;
+				} 
 				
 
 
