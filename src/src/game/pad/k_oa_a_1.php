@@ -94,11 +94,12 @@ Extends: Pad,
 
 				//shapes 
 				var answer = parseInt(question.getAnswer());
-                		//var addendA = parseInt(question[0]);
-                		//var sign = question[2];
-                		//var addendB = parseInt(question[4]);
-				//this.log('' + addendA + ' ' + sign + ' ' + addendA + ' ' + answer); 
-				this.log('' + answer); 
+				var actualQuestion = question.getQuestion();
+				
+                		var addendA = parseInt(actualQuestion[0]);
+                		var sign = actualQuestion[2];
+                		var addendB = parseInt(actualQuestion[4]);
+				this.log('' + addendA + ' ' + sign + ' ' + addendA + ' = ' + answer); 
 
 
 			}
