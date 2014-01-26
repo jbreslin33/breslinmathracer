@@ -9,11 +9,11 @@ Extends: Pad,
 
 		//answers 
                 this.mThresholdTime = 60000;
+		
+		this.setScoreNeeded(20);
 
                 //input pad
                 this.mInputPad = new ButtonMultipleChoicePad(application);
-
-		this.setScoreNeeded(20);
 	},
 
 	createQuestions: function()
@@ -60,17 +60,19 @@ Extends: Pad,
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
 				//add shapes
-				this.mShapeArray[s*2].mMesh.innerHTML = '' + objectsToCountA;
-				question.mShapeArray.push(this.mShapeArray[s*2]);
+				this.mShapeArray[ parseInt( s*2+2 ) ].mMesh.innerHTML = '' + objectsToCountA;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2)+2)]);
 				
-				this.mShapeArray[(s*2)+1].mMesh.innerHTML = '' + objectsToCountB;
-				question.mShapeArray.push(this.mShapeArray[(s*2)+1]);
+				this.mShapeArray[parseInt((s*2)+3)].mMesh.innerHTML = '' + objectsToCountB;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2)+3)]);
 			}
 		}
 	},
 	
-	createQuestionShapes: function()
+	createWorld: function()
 	{
+		this.parent();
+
 		for (i=0; i < this.mScoreNeeded; i++)
 		{	
 			this.mShapeArray.push(new Shape(150,50,300,100,this,"","",""));
