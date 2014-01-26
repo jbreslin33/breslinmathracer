@@ -92,6 +92,14 @@ Extends: Pad,
 				this.mQuiz.mQuestionArray.push(question);
                                 question.mShapeArray.push(this.mShapeArray[2]);
 
+				//shapes 
+				var answer = parseInt(question.getAnswer());
+                		//var addendA = parseInt(question[0]);
+                		//var sign = question[2];
+                		//var addendB = parseInt(question[4]);
+				//this.log('' + addendA + ' ' + sign + ' ' + addendA + ' ' + answer); 
+				this.log('' + answer); 
+
 
 			}
 		}
