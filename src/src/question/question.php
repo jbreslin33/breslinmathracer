@@ -49,7 +49,7 @@ var Question = new Class(
         
 	setChoices: function()
         {
-  		if (this.mAnswerPool.length == 2)
+		if (this.mAnswerPool.length == 2)
                 {
                         this.mCorrectChoiceNumber = 0;
 
@@ -75,7 +75,7 @@ var Question = new Class(
                         this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
                 }
 
-		if (this.mAnswerPool.length > 3)
+		if (this.mAnswerPool.length >= 3)
 		{
                 	this.mCorrectChoiceNumber = 0;
 

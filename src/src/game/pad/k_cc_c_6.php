@@ -13,7 +13,7 @@ Extends: Pad,
                 //input pad
                 this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
-
+	
 	createQuestions: function()
         {
 		this.parent();
@@ -29,13 +29,7 @@ Extends: Pad,
 
 		while (greaterThans < 2 || lessThans < 2 || equalTos < 2)
 		{	
-			//reset vars and arrays
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			this.mQuiz.resetQuestionArray();
 
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
@@ -60,24 +54,26 @@ Extends: Pad,
 				}
 
 				var question = new QuestionCompare('Compare?', '' + comparison, objectsToCountA, objectsToCountB);
-				this.mQuiz.mQuestionArray.push(question);
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
+				this.mQuiz.mQuestionArray.push(question);
 
 				//add shapes
 				for (a = 0; a < objectsToCountA; a++)
 				{
-					question.mShapeArray.push(this.mShapeArray[a])
+					question.mShapeArray.push(this.mShapeArray[a+2])
 				}
 				for (b = 0; b < objectsToCountB; b++)
 				{
-					question.mShapeArray.push(this.mShapeArray[b+20])
+					question.mShapeArray.push(this.mShapeArray[b+22])
 				}
 			}
 		}
 	},
 	
-	createQuestionShapes: function()
+	createWorld: function()
 	{
+		this.parent();
+
 		//A
                 this.mShapeArray.push(new Shape(50,50,25,50,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,25,100,this,"/images/bus/kid.png","",""));

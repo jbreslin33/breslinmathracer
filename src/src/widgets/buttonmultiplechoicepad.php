@@ -14,7 +14,6 @@ Extends: InputPad,
 	createInputPad: function()
 	{
 		this.createNumQuestion(); 
-
 		//BUTTONS	
 		if (!this.mButtonA)
                 {
