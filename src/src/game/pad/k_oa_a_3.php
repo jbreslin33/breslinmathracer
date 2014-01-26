@@ -10,6 +10,9 @@ Extends: Pad,
 		//answers 
                 this.mThresholdTime = 60000;
 
+		//score needed
+		this.setScoreNeeded(20);
+
                 //input pad
                 this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
@@ -55,14 +58,18 @@ Extends: Pad,
 			this.mQuiz.mAnswerPool.push('1 + 2');
 
                        	var question = new Question('1 = ', '1 + 0');
-                       	this.mQuiz.mQuestionArray.push(question);
+                       	this.mQuiz.mQuestionPoolArray.push(question);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
 
                        	var question = new Question('1 = ', '0 + 1');
-                       	this.mQuiz.mQuestionArray.push(question);
+                       	this.mQuiz.mQuestionPoolArray.push(question);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
 
-			this.setScoreNeeded(parseInt(this.mQuiz.mQuestionArray.length));
+			for (i=0; i < this.mScoreNeeded; i++)
+			{
+				var element = Math.floor((Math.random()*parseInt(this.mQuiz.mQuestionPoolArray.length)));
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[element]);	
+			}
 		}
 		if (this.mApplication.mLevel == 2)
 		{
