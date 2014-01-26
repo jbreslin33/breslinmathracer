@@ -10,6 +10,9 @@ Extends: Pad,
 		//answers 
                 this.mThresholdTime = 60000;
 
+		//score needed
+		this.setScoreNeeded(20);
+
 		//input pad
 		this.mInputPad = new ButtonMultipleChoicePadSpread(application);
 	
