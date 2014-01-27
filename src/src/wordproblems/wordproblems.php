@@ -99,7 +99,7 @@ var WordProblems = new Class(
                 //okay we have a valid sum and plural addends
                 questionText = 'Subtract ';
                 questionText = questionText + '' + subtrahendA;
-                questionText = questionText + ' minus ';
+                questionText = questionText + ' - ';
                 questionText = questionText + '' + subtrahendB;
                 questionText = questionText + ' by finding the number that makes ';
                 questionText = questionText + '' + subtrahendA;
