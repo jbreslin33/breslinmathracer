@@ -15,7 +15,7 @@ Extends: Pad,
         {
  		this.parent();
 
-		if (this.mApplication.mLevel == 1)
+		if (this.mApplication.mLevel <= 10)
 		{
                 	this.mQuiz.resetQuestionArray();
 
@@ -30,7 +30,7 @@ Extends: Pad,
 			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 16 ?','18'));
 			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 16 18 ?','20'));
 		}
-		else if (this.mApplication.mLevel == 2)
+		else if (this.mApplication.mLevel <= 20)
 		{
                 	this.mQuiz.resetQuestionArray();
 
@@ -45,7 +45,7 @@ Extends: Pad,
 			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 17 ?','19'));
 			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 17 19 ?','21'));
 		}
-		else if (this.mApplication.mLevel > 2)
+		else if (this.mApplication.mLevel <= 30)
 		{
 			this.setScoreNeeded(20);
 			this.mInputPad = new NumberPad(this.mApplication);
