@@ -6,9 +6,11 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		
-		this.setScoreNeeded(4);
+	
+		//score needed 	
+		this.setScoreNeeded(20);
 
+		//threshold
 		this.mThresholdTime = 120000;
 
                 //input pad
@@ -39,15 +41,6 @@ Extends: Pad,
         {
  		this.parent();
 		
-		//RESET as we have either just started or failed to reach totalNewGoal
-		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-		{
-			this.mQuiz.mQuestionArray[d] = 0;
-		} 
-		this.mQuiz.mQuestionArray = 0;
-		this.mQuiz.mQuestionArray = new Array();
-
-		//ADD questions
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
 			this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(20,3));
