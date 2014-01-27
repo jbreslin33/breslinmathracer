@@ -73,30 +73,18 @@ Extends: Pad,
                         {
                                 if (i < 5)
                                 {
-                                        //collision on or off
-                                        this.mShapeArray[i+2].mCollidable = false;
-                                        this.mShapeArray[i+2].mCollisionOn = false;
                                         this.mShapeArray[i+2].setPosition(parseInt(i * 50 + 50), 50)
                                 }
                                 if (i >= 5 && i < 11)
                                 {
-                                        //collision on or off
-                                        this.mShapeArray[i+2].mCollidable = false;
-                                        this.mShapeArray[i+2].mCollisionOn = false;
                                         this.mShapeArray[i+2].setPosition(50,parseInt(i * 50 - 135))
                                 }
                                 if (i >= 11 && i < 15)
                                 {
-                                        //collision on or off
-                                        this.mShapeArray[i+2].mCollidable = false;
-                                        this.mShapeArray[i+2].mCollisionOn = false;
                                         this.mShapeArray[i+2].setPosition(parseInt(i * 50 - 450 ), 365)
                                 }
                                 if (i >= 15 && i < 20)
                                 {
-                                        //collision on or off
-                                        this.mShapeArray[i+2].mCollidable = false;
-                                        this.mShapeArray[i+2].mCollisionOn = false;
                                         this.mShapeArray[i+2].setPosition(250,parseInt(i * 50 - 635))
                                 }
                         }
@@ -129,5 +117,4 @@ Extends: Pad,
                         this.mShapeArray[11].setPosition (100,100);
 		} 
 	}
-	
 });
