@@ -14,8 +14,8 @@ Extends: Pad,
 	createQuestions: function()
         {
  		this.parent();
-		this.mQuiz.mQuestionArray = 0;
-		this.mQuiz.mQuestionArray = new Array();
+
+		this.mQuiz.resetQuestionArray();
 
 		if (this.mApplication.mLevel == 1)
 		{
