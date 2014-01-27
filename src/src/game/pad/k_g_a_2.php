@@ -11,7 +11,7 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
 		//score needed
-		this.setScoreNeeded(50);
+		this.setScoreNeeded(20);
 
 		//input pad
 		this.mInputPad = new ButtonMultipleChoicePad(application);
@@ -33,7 +33,6 @@ Extends: Pad,
                 this.mQuiz.mAnswerPool.push('sphere');
                 this.mQuiz.mAnswerPool.push('square');
                 this.mQuiz.mAnswerPool.push('triangle');
-
 
 		var question = new Question('What is this?','cone');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
@@ -90,7 +89,7 @@ Extends: Pad,
 		var totalSquares = 0;
 		var totalTriangles = 0;
 
-		while (totalCones < 3 || totalCubes < 3 || totalCircles < 3|| totalCylinders < 3 || totalHexagons < 3 || totalRectangles < 3 || totalSpheres < 3 || totalSquares < 3 || totalTriangles < 3)
+		while (totalCones < 1 || totalCubes < 1 || totalCircles < 1 || totalCylinders < 1 || totalHexagons < 1 || totalRectangles < 1 || totalSpheres < 1 || totalSquares < 1 || totalTriangles < 1)
 		{
 			totalCones = 0;
 			totalCubes = 0;
