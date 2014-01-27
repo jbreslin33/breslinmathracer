@@ -8,205 +8,136 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 60000;
+
+		//score needed
+		this.setScoreNeeded(20);
 
 		//input pad
 		this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
-	reset: function()
-	{
-		this.parent();
-		
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-		} 
-	},
-	
-	destroyShapes: function()
-	{
-		this.parent();
-
-		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        //back to div
-                        this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
-                        document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
-                        this.mShapeArray[i] = 0;
-                }
-                this.mShapeArray = 0;
-	},
-
-	showQuestion: function()
-	{
-		for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                }
-                this.mShapeArray[this.mScore].setVisibility(false);
-
-		this.mInputPad.showQuestion();	
-		
-		//show shape	
-		this.mShapeArray[parseInt(this.mScore * 2)].setVisibility(true);
-		this.mShapeArray[parseInt(parseInt(this.mScore * 2) + 1)].setVisibility(true);
-	},
- 
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-	},
-   
 	createQuestions: function()
         {
 		this.parent();
-
-              	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-               	{
-                        this.mQuiz.mQuestionArray[d] = 0;
-                }
-                this.mQuiz.mQuestionArray = 0;
-                this.mQuiz.mQuestionArray = new Array();
-
-		//1 more sides 
-		var question = new Question('','has more sides than');
-		question.setChoice('A','has less sides than');
-		question.setChoice('B','has same sides as');
-		question.setChoice('C','has more sides than');
-		this.mQuiz.mQuestionArray.push(question);
-	
-		//2 less sides	
-		var question = new Question('','has less sides than');
-		question.setChoice('A','has less sides than');
-		question.setChoice('B','has same sides as');
-		question.setChoice('C','has more sides than');
-		this.mQuiz.mQuestionArray.push(question);
-
-		//3 less sides	
-		var question = new Question('','has less sides than');
-		question.setChoice('A','has less sides than');
-		question.setChoice('B','has same sides as');
-		question.setChoice('C','has more sides than');
-		this.mQuiz.mQuestionArray.push(question);
 		
-		//4 more sides 
-		var question = new Question('','has more sides than');
-		question.setChoice('A','has less sides than');
-		question.setChoice('B','has same sides as');
-		question.setChoice('C','has more sides than');
-		this.mQuiz.mQuestionArray.push(question);
-     
-		//5 more corners 
-                var question = new Question('','has more corners than');
-                question.setChoice('A','has less corners than');
-                question.setChoice('B','has same corners as');
-                question.setChoice('C','has more corners than');
-                this.mQuiz.mQuestionArray.push(question);
+		this.mQuiz.resetQuestionPoolArray();
 
-                //6 less corners 
-                var question = new Question('','has less corners than');
-                question.setChoice('A','has less corners than');
-                question.setChoice('B','has same corners as');
-                question.setChoice('C','has more corners than');
-                this.mQuiz.mQuestionArray.push(question);
+	       	//answer pool
+                this.mQuiz.mAnswerPool.push('flat');
+                this.mQuiz.mAnswerPool.push('solid');
 
-                //7 less corners 
-                var question = new Question('','has less corners than');
-                question.setChoice('A','has less corners than');
-                question.setChoice('B','has same corners as');
-                question.setChoice('C','has more corners than');
-                this.mQuiz.mQuestionArray.push(question);
-                
-                //8 more corners
-                var question = new Question('','has more corners than');
-                question.setChoice('A','has less corners than');
-                question.setChoice('B','has same corners as');
-                question.setChoice('C','has more corners than');
-                this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('What is this?','solid');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[2]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 		
-		//9 more sides 
-		var question = new Question('','has more sides than');
-		question.setChoice('A','has less sides than');
-		question.setChoice('B','has same sides as');
-		question.setChoice('C','has more sides than');
-		this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('What is this?','solid');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[3]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 		
-  		//10 less corners 
-                var question = new Question('','has less corners than');
-                question.setChoice('A','has less corners than');
-                question.setChoice('B','has same corners as');
-                question.setChoice('C','has more corners than');
-                this.mQuiz.mQuestionArray.push(question);
+		var question = new Question('What is this?','flat');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[4]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-		this.createQuestionShapes();
-	},
+		var question = new Question('What is this?','solid');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[5]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-	createQuestionShapes: function()
-	{
-		this.destroyShapes();
+		var question = new Question('What is this?','flat');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[6]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-		this.mShapeArray = new Array();		
-	
-		//1 more sides 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/hexagon.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/square.png","",""));
+		var question = new Question('What is this?','flat');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[7]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-		//2 less sides 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/square.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/hexagon.png","",""));
-	
-		//3 less sides 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/triangle.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/rectangle.png","",""));
-		
-		//4 more sides 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/square.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
+		var question = new Question('What is this?','solid');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[8]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-	        //5 more corners 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/cube.jpg","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/square.png","",""));
+		var question = new Question('What is this?','flat');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[9]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-                //6 less corners
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/rectangle.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/hexagon.png","",""));
+		var question = new Question('What is this?','flat');
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+		question.mShapeArray.push(this.mShapeArray[10]);
+		this.mQuiz.mQuestionPoolArray.push(question);
 
-                //7 less corners
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/circle.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
+		var totalFlat = 0;
+		var totalSolid = 0;
 
-                //8 more corners
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/rectangle.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
-		
-		//9 more sides 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/square.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/triangle.png","",""));
-                
-		//10 less corners 
-                this.mShapeArray.push(new Shape(100,100,200,175,this,"/images/shapes/triangle.png","",""));
-                this.mShapeArray.push(new Shape(100,100,550,175,this,"/images/shapes/rectangle.png","",""));
-
-		for (i = 0; i < this.mShapeArray.length; i++)
+		while (totalFlat < this.mScoreNeeded * .4 || totalSolid < this.mScoreNeeded * .4)
 		{
-			this.mShapeArray[i].setVisibility(false);
-               		this.mShapeArray[i].mCollidable = false;
-               		this.mShapeArray[i].mCollisionOn = false;
-		}	
+			totalFlat = 0;
+			totalSolid = 0;
+
+			this.mQuiz.resetQuestionArray();
 		
-		this.setScoreNeeded(this.mQuiz.mQuestionArray.length);
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{
+				var element = Math.floor((Math.random()*this.mQuiz.mQuestionPoolArray.length));			
+				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[element]);
+				if (element == 0)
+				{
+					totalSolid++;
+				}
+				if (element == 1)
+				{
+					totalSolid++;
+				}
+				if (element == 2)
+				{
+					totalFlat++;
+				}
+				if (element == 3)
+				{
+					totalSolid++;
+				}
+				if (element == 4)
+				{
+					totalFlat++;
+				}
+				if (element == 5)
+				{
+					totalFlat++;
+				}
+				if (element == 6)
+				{
+					totalSolid++;
+				}
+				if (element == 7)
+				{
+					totalFlat++;
+				}
+				if (element == 8)
+				{
+					totalFlat++;
+				}
+			}	
+		}  
 	},
 
-	//state overides
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-        }
+	createWorld: function()
+	{
+		this.parent();
+		
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cone.png","",""));
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cube.jpg","",""));
+		this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cylinder.png","",""));
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/hexagon.png","",""));
+        	this.mShapeArray.push(new Shape(200,150,150,275,this,"/images/shapes/rectangle.png","",""));
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/sphere.png","",""));
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/square.png","",""));
+        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/triangle.png","",""));
+	}
 });
