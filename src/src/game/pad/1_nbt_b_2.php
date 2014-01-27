@@ -41,21 +41,11 @@ Extends: Pad,
 		
 		var totalOnes     = 0;
 		var totalTens     = 0;
-		var totalOnesGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalTensGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 
-		while (totalOnes < totalOnesGoal || totalTens < totalTensGoal)
+		while (totalOnes < this.mScoreNeeded * .4 || totalTens < this.mScoreNeeded * .4)
 		{	
-			//RESET as we have either just started or failed to reach totalNewGoal
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			this.mQuiz.resetQuestionArray();
 
-			//ADD questions
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
