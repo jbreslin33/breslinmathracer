@@ -15,6 +15,8 @@ Extends: Pad,
         {
  		this.parent();
 
+		//next show right answer tell student to to 6 + 6 + 1 = 13 etc...
+
 		//5
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 1 =','6'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 5 =','6'));
