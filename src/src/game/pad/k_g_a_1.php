@@ -52,7 +52,7 @@ Extends: Pad,
 		this.mQuiz.mAnswerPool.push('next to');
 
 		//1 beside
-                var question = new Question('Where is the red monster?','beside');
+                var question = new Question('Red Monster is','beside');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
@@ -63,7 +63,7 @@ Extends: Pad,
  		this.mQuiz.mQuestionPoolArray.push(question);
 
              	//2 above
-                var question = new Question('Where is the red monster?','above');
+                var question = new Question('Red Monster is','above');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
@@ -74,7 +74,7 @@ Extends: Pad,
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //3 behind
-                var question = new Question('Where is the red monster','behind');
+                var question = new Question('Red Monster is','behind');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
@@ -85,7 +85,7 @@ Extends: Pad,
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //4 in front of
-                var question = new Question('Where is the red monster','in front of');
+                var question = new Question('Red Monster is','in front of');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
@@ -96,7 +96,7 @@ Extends: Pad,
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //5 below
-                var question = new Question('Where is the red monster','below');
+                var question = new Question('Red Monster is','below');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
@@ -107,7 +107,7 @@ Extends: Pad,
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //6 next to
-                var question = new Question('Where is the red monster','next to');
+                var question = new Question('Red Monster is','next to');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
