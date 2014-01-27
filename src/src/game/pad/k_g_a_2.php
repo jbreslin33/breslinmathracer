@@ -11,7 +11,7 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
 		//score needed
-		this.setScoreNeeded(20);
+		this.setScoreNeeded(40);
 
 		//input pad
 		this.mInputPad = new ButtonMultipleChoicePad(application);
@@ -89,7 +89,7 @@ Extends: Pad,
 		var totalSquares = 0;
 		var totalTriangles = 0;
 
-		while (totalCones < 1 || totalCubes < 1 || totalCircles < 1 || totalCylinders < 1 || totalHexagons < 1 || totalRectangles < 1 || totalSpheres < 1 || totalSquares < 1 || totalTriangles < 1)
+		while (totalCones < 3 || totalCubes < 3 || totalCircles < 3 || totalCylinders < 3 || totalHexagons < 3 || totalRectangles < 3 || totalSpheres < 3 || totalSquares < 3 || totalTriangles < 3)
 		{
 			totalCones = 0;
 			totalCubes = 0;
@@ -156,7 +156,7 @@ Extends: Pad,
 		this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/circle.png","",""));
         	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cylinder.png","",""));
         	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/hexagon.png","",""));
-        	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/rectangle.png","",""));
+        	this.mShapeArray.push(new Shape(200,150,150,275,this,"/images/shapes/rectangle.png","",""));
         	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/sphere.png","",""));
         	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/square.png","",""));
         	this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/triangle.png","",""));
