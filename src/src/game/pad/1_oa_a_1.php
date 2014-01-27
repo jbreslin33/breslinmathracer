@@ -6,9 +6,11 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		
-		this.setScoreNeeded(4);
+	
+		//score needed	
+		this.setScoreNeeded(20);
 
+		//threshold
 		this.mThresholdTime = 120000;
 
                 //input pad
@@ -41,19 +43,10 @@ Extends: Pad,
 		
 		var totalAddition        = 0;
 		var totalSubtraction     = 0;
-		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 
-		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
+		while (totalAddition < this.mScoreNeeded * .4 || totalSubtraction < this.mScoreNeeded * .4)
 		{	
-			//RESET as we have either just started or failed to reach totalNewGoal
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			this.mQuiz.resetQuestionArray();
 
 			//ADD questions
 			for (s = 0; s < this.mScoreNeeded; s++)
