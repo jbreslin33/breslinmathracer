@@ -23,105 +23,95 @@ Extends: Pad,
 		
 		this.mQuiz.resetQuestionPoolArray();
 
-	       	//answer pool
-                this.mQuiz.mAnswerPool.push('flat');
-                this.mQuiz.mAnswerPool.push('solid');
-
-		var question = new Question('What is this?','solid');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[2]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-		
-		var question = new Question('What is this?','solid');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[3]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-		
-		var question = new Question('What is this?','flat');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[4]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var question = new Question('What is this?','solid');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[5]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var question = new Question('What is this?','flat');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[6]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var question = new Question('What is this?','flat');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[7]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var question = new Question('What is this?','solid');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[8]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var question = new Question('What is this?','flat');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[9]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var question = new Question('What is this?','flat');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[10]);
-		this.mQuiz.mQuestionPoolArray.push(question);
-
-		var totalFlat = 0;
-		var totalSolid = 0;
-
-		while (totalFlat < this.mScoreNeeded * .4 || totalSolid < this.mScoreNeeded * .4)
+		if (this.mApplication.mLevel < 11)
 		{
-			totalFlat = 0;
-			totalSolid = 0;
+	       		//answer pool
+                	this.mQuiz.mAnswerPool.push('0');
+                	this.mQuiz.mAnswerPool.push('1');
+                	this.mQuiz.mAnswerPool.push('2');
+                	this.mQuiz.mAnswerPool.push('3');
+                	this.mQuiz.mAnswerPool.push('4');
+                	this.mQuiz.mAnswerPool.push('5');
+                	this.mQuiz.mAnswerPool.push('6');
+                	this.mQuiz.mAnswerPool.push('7');
+                	this.mQuiz.mAnswerPool.push('8');
+                	this.mQuiz.mAnswerPool.push('9');
+                	this.mQuiz.mAnswerPool.push('10');
+                	this.mQuiz.mAnswerPool.push('11');
+                	this.mQuiz.mAnswerPool.push('12');
 
-			this.mQuiz.resetQuestionArray();
-		
-			for (i = 0; i < this.mScoreNeeded; i++)
-			{
-				var element = Math.floor((Math.random()*this.mQuiz.mQuestionPoolArray.length));			
-				this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[element]);
-				if (element == 0)
-				{
-					totalSolid++;
-				}
-				if (element == 1)
-				{
-					totalSolid++;
-				}
-				if (element == 2)
-				{
-					totalFlat++;
-				}
-				if (element == 3)
-				{
-					totalSolid++;
-				}
-				if (element == 4)
-				{
-					totalFlat++;
-				}
-				if (element == 5)
-				{
-					totalFlat++;
-				}
-				if (element == 6)
-				{
-					totalSolid++;
-				}
-				if (element == 7)
-				{
-					totalFlat++;
-				}
-				if (element == 8)
-				{
-					totalFlat++;
-				}
+			//cube	
+			var question = new Question('How many sides?','12');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;	
+			question.mShapeArray.push(this.mShapeArray[3]);
+			this.mQuiz.mQuestionPoolArray.push(question);
+	
+			//hexagon
+			var question = new Question('How many sides?','6');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;	
+			question.mShapeArray.push(this.mShapeArray[6]);
+			this.mQuiz.mQuestionPoolArray.push(question);
+
+			//rectangle
+			var question = new Question('How many sides?','4');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;	
+			question.mShapeArray.push(this.mShapeArray[7]);
+			this.mQuiz.mQuestionPoolArray.push(question);
+
+			//square
+			var question = new Question('How many sides?','4');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;	
+			question.mShapeArray.push(this.mShapeArray[9]);
+			this.mQuiz.mQuestionPoolArray.push(question);
+
+			//triangle
+			var question = new Question('How many sides?','3');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;	
+			question.mShapeArray.push(this.mShapeArray[10]);
+			this.mQuiz.mQuestionPoolArray.push(question);
+
+                	var totalCubes = 0;
+                	var totalHexagons = 0;
+                	var totalRectangles = 0;
+                	var totalSquares = 0;
+                	var totalTriangles = 0;
+
+                	while (totalCubes < 2 || totalHexagons < 2 || totalRectangles < 2 || totalSquares < 2 || totalTriangles < 2)
+                	{
+                        	totalCubes = 0;
+                        	totalHexagons = 0;
+                        	totalRectangles = 0;
+                        	totalSquares = 0;
+                        	totalTriangles = 0;
+                      	
+				this.mQuiz.resetQuestionArray();
+
+                        	for (i = 0; i < this.mScoreNeeded; i++)
+                        	{
+                                	var element = Math.floor((Math.random()*this.mQuiz.mQuestionPoolArray.length));
+                                	this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[element]);
+                                
+                                	if (element == 0)
+                                	{
+                                        	totalCubes++;
+                                	}
+                                	if (element == 1)
+                                	{
+                                        	totalHexagons++;
+                                	}
+                                	if (element == 2)
+                                	{
+                                        	totalRectangles++;
+                                	}
+                                	if (element == 3)
+                                	{
+                                        	totalSquares++;
+                               		}
+                                	if (element == 4)
+                                	{
+                                        	totalTriangles++;
+                                	}
+                        	}
 			}	
 		}  
 	},
