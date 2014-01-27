@@ -47,6 +47,7 @@ Extends: Pad,
 		}
 		else if (this.mApplication.mLevel > 2)
 		{
+			this.setScoreNeeded(20);
 			this.mInputPad = new NumberPad(this.mApplication);
 
 			this.mQuiz.resetQuestionPoolArray();
