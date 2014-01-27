@@ -7,12 +7,31 @@ Extends: Pad,
 	{
        		this.parent(application);
 
-		//answers 
-                this.mThresholdTime = 10000;
+		//time
+                this.mThresholdTime = 60000;
+	
+		//score needed	
+		this.setScoreNeeded(20);
 
 		//input pad
 		this.mInputPad = new NumberPad(application);
 	},
+	
+	//state overides
+	showCorrectAnswer: function()
+	{
+		this.parent();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
+	},
+
+	showCorrectAnswerOutOfTime: function()
+        {
+                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+                this.mInputPad.hide();
+        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
+                this.showCorrectAnswerBar();
+                this.showClockShape();
+        },
 
 	createQuestions: function()
         {
@@ -138,21 +157,5 @@ Extends: Pad,
                         }
 
 		}
-	},
-
-	//state overides
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
-	},
-
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-        }
+	}
 });
