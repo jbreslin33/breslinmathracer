@@ -177,7 +177,7 @@ var Game = new Class(
 
 	createWorld: function()
 	{
-	//	this.destroyShapes();	
+		this.destroyShapes();	
 	
 		//correctAnswerBar
 		this.createCorrectAnswerBar();
