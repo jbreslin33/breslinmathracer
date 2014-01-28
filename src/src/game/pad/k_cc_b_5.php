@@ -24,15 +24,22 @@ Extends: Pad,
 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			var numberToCount = Math.floor((Math.random()*21));	
+			var numberToCount = 0;	
+			if (this.mApplication.mLevel < 5)
+			{	
+				var numberToCount = Math.floor((Math.random()*20));	
+			}
+			else
+			{
+				var numberToCount = Math.floor((Math.random()*10));	
+			}
+					
 			var question = new Question('How Many?', '' + numberToCount);
-                        question.mAnswerPool = this.mQuiz.mAnswerPool;
                         
 			for (s = 0; s < parseInt(numberToCount); s++)
                         {
                                 question.mShapeArray.push(this.mShapeArray[s+2]);
 			}
-
 			this.mQuiz.mQuestionArray.push(question);
 		}
 	},
