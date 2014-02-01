@@ -13,8 +13,81 @@ Extends: Pad,
 		this.setScoreNeeded(20);
 
                 //input pad
-                this.mInputPad = new ButtonMultipleChoicePad(application);
+                this.mInputPad = new ButtonMultipleChoicePadImages(application);
 	},
+
+	showQuestion: function()
+        {
+		this.parent();
+
+		if (this.mInputPad.mButtonA.mMesh.innerHTML == 'is greater than')
+		{
+			this.mInputPad.mButtonA.setSrc('/images/symbols/greater_than.png');
+		}
+		if (this.mInputPad.mButtonA.mMesh.innerHTML == 'is equal to')
+		{
+			this.mInputPad.mButtonA.setSrc('/images/symbols/equal.png');
+		}
+		if (this.mInputPad.mButtonA.mMesh.innerHTML == 'is less than')
+		{
+			this.mInputPad.mButtonA.setSrc('/images/symbols/less_than.png');
+		}
+
+                if (this.mInputPad.mButtonB.mMesh.innerHTML == 'is greater than')
+                {
+                        this.mInputPad.mButtonB.setSrc('/images/symbols/greater_than.png');
+                }
+                if (this.mInputPad.mButtonB.mMesh.innerHTML == 'is equal to')
+                {
+                        this.mInputPad.mButtonB.setSrc('/images/symbols/equal.png');
+                }
+                if (this.mInputPad.mButtonB.mMesh.innerHTML == 'is less than')
+                {
+                        this.mInputPad.mButtonB.setSrc('/images/symbols/less_than.png');
+                }
+
+                if (this.mInputPad.mButtonC.mMesh.innerHTML == 'is greater than')
+                {
+                        this.mInputPad.mButtonC.setSrc('/images/symbols/greater_than.png');
+                }
+                if (this.mInputPad.mButtonC.mMesh.innerHTML == 'is equal to')
+                {
+                        this.mInputPad.mButtonC.setSrc('/images/symbols/equal.png');
+                }
+                if (this.mInputPad.mButtonC.mMesh.innerHTML == 'is less than')
+                {
+                        this.mInputPad.mButtonC.setSrc('/images/symbols/less_than.png');
+                }
+
+
+/*
+                //set all shapes invisible to start semi-clean
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
+                //if there is a quiz
+                if (this.mQuiz)
+                {
+                        if (this.mQuiz.getQuestion())
+                        {
+                                this.mQuiz.getQuestion().showShapes();
+                                if (this.mInputPad)
+                                {
+                                        this.mQuiz.getQuestion().setChoices();
+                                }
+                        }
+                }
+
+                //input pad?
+                if (this.mInputPad)
+                {
+                        this.mInputPad.showQuestion();
+                        this.mInputPad.showButtons();
+                }
+*/
+        },
 
 	createQuestions: function()
         {
