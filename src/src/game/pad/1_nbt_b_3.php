@@ -13,7 +13,7 @@ Extends: Pad,
 		this.setScoreNeeded(20);
 
                 //input pad
-                this.mInputPad = new ButtonMultipleChoicePadImages(application);
+                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	createQuestions: function()

@@ -107,7 +107,10 @@ Extends: InputPad,
 				}
 				else
 				{
-					this.mButtonD.setVisibility(false);
+					if (this.mButtonD)
+					{
+						this.mButtonD.setVisibility(false);
+					}
 				}
 
                                 this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();

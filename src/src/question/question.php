@@ -49,6 +49,7 @@ var Question = new Class(
         
 	setChoices: function()
         {
+		APPLICATION.log('setChoices');
 		if (this.mAnswerPool.length == 2)
                 {
                         this.mCorrectChoiceNumber = 0;
