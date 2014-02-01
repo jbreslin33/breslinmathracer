@@ -17,14 +17,6 @@ Extends: Pad,
                 this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
-	showQuestion: function()
-	{
-		this.parent();
-
-	 	this.mQuiz.getQuestion().setChoices();
-                this.mInputPad.showButtons();
-	},
-	
 	//questions
 	createQuestions: function()
         {
