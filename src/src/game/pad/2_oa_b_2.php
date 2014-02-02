@@ -7,6 +7,8 @@ Extends: Pad,
 	{
        		this.parent(application);
 
+		this.setScoreNeeded(20);
+
                 //input pad
                 this.mInputPad = new NumberPad(application);
 	},
@@ -432,44 +434,27 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 0 =','20'));
 		//304
 
-
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
-		var newQuestionElement = 0;
-		var elementCounter     = 0;	
 		
-		for (i = 0; i <= 303; i++)
-		{
-			if (this.mApplication.mLevel == i)
-			{
-				newQuestionElement = elementCounter;	
-			}			
-			elementCounter++;
-		}
-
-		while (totalNew < totalNewGoal)
+		while (totalNew < this.mScoreNeeded * .4)
 		{	
 			//reset vars and arrays
 			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
 
+			this.mQuiz.resetQuestionArray();		
+		
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel-1)]);
 					totalNew++;
 				}	
 				if (randomChance == 1)
 				{
-					var randomElement = Math.floor((Math.random()*newQuestionElement));		
+					var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));		
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 				}
 			}
