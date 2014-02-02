@@ -26,7 +26,6 @@ Extends: Pad,
 
 		this.mQuiz.resetQuestionArray();
 
-
               	for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			var equalOrNot = Math.floor((Math.random()*2));

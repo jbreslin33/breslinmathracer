@@ -37,12 +37,7 @@ Extends: Pad,
         {
   		this.parent();
 
-                for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-                {
-                        this.mQuiz.mQuestionArray[d] = 0;
-                }
-                this.mQuiz.mQuestionArray = 0;
-                this.mQuiz.mQuestionArray = new Array();
+		this.mQuiz.resetQuestionArray();
 
               	for (i = 0; i < this.mScoreNeeded; i++)
 		{
