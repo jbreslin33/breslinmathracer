@@ -10,18 +10,10 @@ Extends: Pad,
 		//answers 
                 this.mThresholdTime = 60000;
 
+		this.setScoreNeeded(20);
+
 		//input pad
 		this.mInputPad = new NumberPad(application);
-	},
-	
-	reset: function()
-	{
-		this.parent();
-		
-		for (i = 0; i < this.mShapeArray.length; i++)
-		{
-			this.mShapeArray[i].setVisibility(false);
-		} 
 	},
 	
 	showQuestion: function()
@@ -30,36 +22,6 @@ Extends: Pad,
 		var t = this.mQuiz.getQuestion().getAnswer(); 	
 		var tArray = t.split(":");
 		this.setClock(parseInt(tArray[0]),parseInt(tArray[1]));	
-	},
- 
-	createQuestions: function()
-        {
-		this.parent();
-
-		this.mQuiz.resetQuestionArray();
-
-		for (i=0; i < this.mScoreNeeded; i++)
-		{
-			var h = '' + Math.floor((Math.random()*12)+1);	
-			var m = '00';	
-			randomChance = Math.floor((Math.random()*2));	
-			
-			//exact hour
-			if (randomChance == 0)
-			{
-				m = '00';	
-			}
-			//half past
-			else
-			{
-				m = '30';	
-			}
-		
-			var question = new Question('What time is it?', '' + h + ':' + m);
-			this.mQuiz.mQuestionArray.push(question);
-		}
-
-		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
@@ -127,5 +89,35 @@ Extends: Pad,
 			this.hour_hand.transform("r" + parseInt(30*hours + (minutes/2)) + ",100,100"); 
 			this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100"); 
 		}
+	},
+	
+	createQuestions: function()
+        {
+		this.parent();
+
+		this.mQuiz.resetQuestionArray();
+
+		for (i=0; i < this.mScoreNeeded; i++)
+		{
+			var h = '' + Math.floor((Math.random()*12)+1);	
+			var m = '00';	
+			randomChance = Math.floor((Math.random()*2));	
+			
+			//exact hour
+			if (randomChance == 0)
+			{
+				m = '00';	
+			}
+			//half past
+			else
+			{
+				m = '30';	
+			}
+		
+			var question = new Question('What time is it?', '' + h + ':' + m);
+			this.mQuiz.mQuestionArray.push(question);
+		}
+
+		this.createQuestionShapes();
 	}
 });
