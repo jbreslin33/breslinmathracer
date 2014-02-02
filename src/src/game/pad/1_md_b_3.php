@@ -8,17 +8,12 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 30000;
+                this.mThresholdTime = 60000;
 
 		//input pad
 		this.mInputPad = new NumberPad(application);
 	},
 	
-	update: function()
-	{
-		this.parent();
-	},
-
 	reset: function()
 	{
 		this.parent();
@@ -37,22 +32,11 @@ Extends: Pad,
 		this.setClock(parseInt(tArray[0]),parseInt(tArray[1]));	
 	},
  
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-	},
-   
 	createQuestions: function()
         {
 		this.parent();
 
-              	for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-               	{
-                        this.mQuiz.mQuestionArray[d] = 0;
-                }
-                this.mQuiz.mQuestionArray = 0;
-                this.mQuiz.mQuestionArray = new Array();
+		this.mQuiz.resetQuestionArray();
 
 		for (i=0; i < this.mScoreNeeded; i++)
 		{
@@ -97,11 +81,6 @@ Extends: Pad,
                 this.showClockShape();
         },
 	
-	destroyShapes: function()
-	{
-		this.parent();
-	},
-
 	createClock: function(hours,minutes,seconds)
 	{
 		canvas = Raphael(25,200,200, 200);
