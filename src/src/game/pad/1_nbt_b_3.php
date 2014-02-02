@@ -58,35 +58,6 @@ Extends: Pad,
                 {
                         this.mInputPad.mButtonC.setSrc('/images/symbols/less_than.png');
                 }
-
-
-/*
-                //set all shapes invisible to start semi-clean
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                }
-
-                //if there is a quiz
-                if (this.mQuiz)
-                {
-                        if (this.mQuiz.getQuestion())
-                        {
-                                this.mQuiz.getQuestion().showShapes();
-                                if (this.mInputPad)
-                                {
-                                        this.mQuiz.getQuestion().setChoices();
-                                }
-                        }
-                }
-
-                //input pad?
-                if (this.mInputPad)
-                {
-                        this.mInputPad.showQuestion();
-                        this.mInputPad.showButtons();
-                }
-*/
         },
 
 	createQuestions: function()
