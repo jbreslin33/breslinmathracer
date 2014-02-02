@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 5000;
 
 		this.setScoreNeeded(20);
 
@@ -33,16 +33,6 @@ Extends: Pad,
 		this.createClock(12,59);	
 	},
 
-	//state overides
-	showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-        },
-	
 	createClock: function(hours,minutes,seconds)
 	{
 		canvas = Raphael(25,200,200, 200);
