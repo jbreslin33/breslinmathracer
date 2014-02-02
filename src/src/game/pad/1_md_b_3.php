@@ -28,8 +28,6 @@ Extends: Pad,
 	{
 		this.destroyShapes();
 
-		this.mShapeArray = new Array();		
-		
 		this.createClock(12,59);	
 	},
 
