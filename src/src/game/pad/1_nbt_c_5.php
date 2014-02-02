@@ -7,7 +7,7 @@ Extends: Pad,
 	{
        		this.parent(application);
 
-		this.mThresholdTime = 4000;
+		this.mThresholdTime = 10000;
 		
 		this.setScoreNeeded(20);
 
@@ -24,13 +24,8 @@ Extends: Pad,
 		var varC = 0;
 		var randomChance = 0;
 
-		//reset vars and arrays
-		for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-		{
-			this.mQuiz.mQuestionArray[d] = 0;
-		} 
-		this.mQuiz.mQuestionArray = 0;
-		this.mQuiz.mQuestionArray = new Array();
+		this.mQuiz.resetQuestionArray();
+
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
 			varC = 100;
