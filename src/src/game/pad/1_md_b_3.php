@@ -33,7 +33,6 @@ Extends: Pad,
 		//rotate to spot
 		if (hours == 12)
 		{
-			
 			this.hour_hand.transform("r" + parseInt(minutes/2) + ",100,100"); 
 			this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100"); 
 		}
