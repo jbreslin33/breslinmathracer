@@ -17,9 +17,6 @@ Extends: Game,
 		//state machine
                 this.mPadStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_PAD_GAME     = new GLOBAL_PAD_GAME(this);
-                this.mINIT_PAD_GAME       = new INIT_PAD_GAME(this);
-                this.mRESET_PAD_GAME      = new RESET_PAD_GAME(this);
                 this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
                 this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
                 this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
@@ -27,8 +24,8 @@ Extends: Game,
                 this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
                 this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
 
-                this.mPadStateMachine.setGlobalState(this.mGLOBAL_PAD_GAME);
-                this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
+                this.mPadStateMachine.setGlobalState(0);
+                this.mPadStateMachine.changeState(this.mINIT_GAME);
 
    		this.mTimer = new ClockTimer(application);
 	},
@@ -51,6 +48,12 @@ Extends: Game,
 		this.mPadStateMachine.update();
 		this.mTimer.update();
         },
+
+	createUniverse: function()
+        {
+                this.createWorld();
+                this.createQuestions();
+        },
    
 	createWorld: function()
 	{
@@ -68,6 +71,12 @@ Extends: Game,
 	},
 		
 	//states
+	resetGameEnter: function()
+	{
+		this.reset();
+        	this.mPadStateMachine.changeState(this.mWAITING_ON_ANSWER_FIRST_TIME);
+	},
+
 	waitingOnAnswerFirstTimeEnter: function()
 	{
         	if (this.mInputPad.mNumAnswer)

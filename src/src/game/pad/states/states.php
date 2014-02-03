@@ -1,113 +1,12 @@
 /****************** PAD STATES ************/
 /****************** ***********************/
 /****************** ********* ************/
-var GLOBAL_PAD_GAME = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
-enter: function(game)
-{
-},
-
-execute: function(game)
-{
-},
-
-exit: function(game)
-{
-}
-
-});
-
-var INIT_PAD_GAME = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
-enter: function(game)
-{
-},
-
-execute: function(game)
-{
-	game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);
-},
-
-exit: function(game)
-{
-}
-
-});
-
-var RESET_PAD_GAME = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
-enter: function(game)
-{
-        game.reset();
-	game.mPadStateMachine.changeState(game.mWAITING_ON_ANSWER_FIRST_TIME);
-},
-
-execute: function(game)
-{
-},
-
-exit: function(game)
-{
-}
-
-});
-
 var WAITING_ON_ANSWER_FIRST_TIME = new Class(
 {
 Extends: State,
 
 initialize: function()
 {
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
 },
 
 enter: function(game)
@@ -134,14 +33,6 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(game)
 {
 	game.waitingOnAnswerEnter();
@@ -164,14 +55,6 @@ Extends: State,
 
 initialize: function()
 {
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
 },
 
 enter: function(game)
@@ -205,14 +88,6 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(game)
 {
 	game.showCorrectAnswerEnter();
@@ -239,14 +114,6 @@ Extends: State,
 
 initialize: function()
 {
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
 },
 
 enter: function(game)

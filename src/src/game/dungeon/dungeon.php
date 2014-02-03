@@ -11,53 +11,11 @@ Extends: Game,
 		document.body.style.cursor = 'crosshair';
 
 		this.mDoor = 0;
-		this.createQuestions(); //do this once
-		this.createWorld(); //do this once
- 
-		//state machine
-                this.mDungeonStateMachine = new StateMachine(this);
-
-                this.mGLOBAL_DUNGEON_GAME  = new GLOBAL_DUNGEON_GAME(this);
-                this.mINIT_DUNGEON_GAME    = new INIT_DUNGEON_GAME(this);
-                this.mRESET_DUNGEON_GAME   = new RESET_DUNGEON_GAME(this);
-                this.mNORMAL_DUNGEON_GAME   = new NORMAL_DUNGEON_GAME(this);
-
-                this.mDungeonStateMachine.setGlobalState(this.mGLOBAL_DUNGEON_GAME);
-                this.mDungeonStateMachine.changeState(this.mINIT_DUNGEON_GAME);
-	},
-
-	destructor: function()
-	{
-		this.parent();
-		this.mQuiz.destructor();
-	},
-
-	reset: function()
-	{
-		this.parent();
-		this.createQuestions(); //do this once
-		this.createWorld(); //do this once
-
-		//set score needed...
-		this.mApplication.mHud.setScoreNeeded(this.mQuiz.mQuestionArray.length);
-	},
-
-	update: function()
-	{
-		this.parent()
-		this.mDungeonStateMachine.update();
-	},
-
-	createQuestions: function()
-	{
-		this.mQuiz.reset();
 	},
 
 	createWorld: function()
 	{
-		this.destroyShapes();
-		this.mShapeArray = new Array();
-
+		this.log('createWorld in dungeon');
 		this.parent();
 
 		this.createQuestionShapes();
@@ -140,38 +98,45 @@ Extends: Game,
                 }
 	},
 
+	//STATES
+  
+	normalGameExecute: function()
+	{
+		this.parent();
+
+   		if (this.mQuiz.isQuizComplete())
+        	{
+                	this.mStateMachine.changeState(this.mLEVEL_PASSED);
+        	}
+
+        	if (this.mKilled == true)
+        	{
+                	this.mStateMachine.changeState(this.mRESET_GAME);
+        	}
+	},
+
 	levelPassedEnter: function()
         {
+		this.log('levelPassedEnter');
 	 	this.mApplication.mLevelCompleted = true;
         },
 
         levelPassedExecute: function()
         {
+		this.log('levelPassedExecute');
  		//just wait here until what???
         	if (this.mApplication.mAdvanceToNextLevelConfirmation)
         	{
-                	this.mDungeonStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
+                	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
         	}
         },
 
-        levelPassedExit: function()
-        {
-
-        },
-
-        showLevelPassedEnter: function()
-        {
-		this.parent();
-        },
         showLevelPassedExecute: function()
         {
+		this.log('showLevelPassedExecute');
     		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
         	{
-                	this.mDungeonStateMachine.changeState(this.mINIT_DUNGEON_GAME);
+                	this.mStateMachine.changeState(this.mINIT_GAME);
         	}
-        },
-        showLevelPassedExit: function()
-        {
-       		this.parent(); 
-	}
+        }
 });

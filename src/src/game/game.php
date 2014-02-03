@@ -72,6 +72,7 @@ var Game = new Class(
 
                 this.mGLOBAL_GAME                       = new GLOBAL_GAME       (this);
                 this.mINIT_GAME                         = new INIT_GAME         (this);
+                this.mRESET_GAME                        = new RESET_GAME        (this);
                 this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
                 this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
                 this.mSHOW_LEVEL_PASSED                 = new SHOW_LEVEL_PASSED (this);
@@ -106,6 +107,7 @@ var Game = new Class(
 
 	reset: function()
         {
+		this.log('reset in game');
                 /************ SCORE *******/
                 this.setScore(0);
 		this.mKilled = false;
@@ -117,9 +119,14 @@ var Game = new Class(
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
 
-                this.createWorld();
-		this.createQuestions();
+		this.createUniverse();
         },
+		
+	createUniverse: function()
+	{
+		this.createQuestions();
+                this.createWorld();
+	},
 
 	createQuestions: function()
 	{
@@ -177,6 +184,7 @@ var Game = new Class(
 
 	createWorld: function()
 	{
+		this.log('createWorld in game');
 		this.destroyShapes();	
 	
 		//correctAnswerBar
@@ -524,21 +532,28 @@ var Game = new Class(
         	this.mClockShape.setVisibility(true);
 	},
 
+	//states
+	resetGameEnter: function()
+	{
+		this.reset();
+ 		this.mStateMachine.changeState(this.mNORMAL_GAME);
+	},
+
 	levelPassedEnter: function()
 	{
 
 	},
-
+	
 	levelPassedExecute: function()
 	{
 
 	},
-	
+
 	levelPassedExit: function()
 	{
 
 	},
-		
+
 	showLevelPassedEnter: function()
 	{
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
@@ -556,10 +571,7 @@ var Game = new Class(
                 this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
                 this.showCorrectAnswerBar();
 	},
-	showLevelPassedExecute: function()
-	{
-
-	},
+	
 	showLevelPassedExit: function()
 	{
 		
@@ -575,7 +587,11 @@ var Game = new Class(
 
 	normalGameExecute: function()
 	{
-		//states
+		this.normalGame();
+	},
+	
+	normalGame: function()
+	{
        		//get time since epoch and set lasttime
         	e = new Date();
         	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
@@ -617,5 +633,4 @@ var Game = new Class(
         	//save old positions
         	this.saveOldPositions();
 	}
-
 });

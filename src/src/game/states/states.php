@@ -7,20 +7,13 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(game)
 {
 },
 
 execute: function(game)
 {
+	game.normalGame();
 },
 
 exit: function(game)
@@ -37,21 +30,39 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(game)
 {
+	APPLICATION.log('INIT_GAME::enter');
 },
 
 execute: function(game)
 {
-	game.mStateMachine.changeState(game.mNORMAL_GAME);
+	APPLICATION.log('INIT_GAME::execute');
+	game.mStateMachine.changeState(game.mRESET_GAME);
+},
+
+exit: function(game)
+{
+}
+
+});
+
+var RESET_GAME = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(game)
+{
+	APPLICATION.log('RESET_GAME::enter');
+	game.resetGameEnter();
+},
+
+execute: function(game)
+{
 },
 
 exit: function(game)
@@ -68,16 +79,9 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(game)
 {
+	game.reset();
 },
 
 execute: function(game)
@@ -96,14 +100,6 @@ Extends: State,
 
 initialize: function()
 {
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
 },
 
 enter: function(game)
@@ -129,14 +125,6 @@ Extends: State,
 
 initialize: function()
 {
-},
-
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
 },
 
 enter: function(game)
