@@ -12,7 +12,14 @@ Extends: Pad,
                 //input pad
                 this.mInputPad = new NumberPad(application);
 	},
-
+  
+	showCorrectAnswer: function()
+        {
+		this.parent();
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer(); 
+                this.mCorrectAnswerBar.mMesh.innerHTML = 'tip:' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+        },
+	
 	createQuestions: function()
         {
  		this.parent();
@@ -465,8 +472,6 @@ Extends: Pad,
 
 		//9
 		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 9 =','11'));
-
-		this.log('length:' + this.mQuiz.mQuestionPoolArray.length);
 
 		var totalNew           = 0;
 		
