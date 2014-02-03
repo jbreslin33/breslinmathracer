@@ -122,11 +122,41 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('13 + 5 =','18'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('14 + 5 =','19'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('15 + 5 =','20'));
+
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 6 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 7 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 8 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 9 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 10 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 11 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 12 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 13 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 14 =','19'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 15 =','20'));
+
 	
 		//add 6
-		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 6 =','13'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 6 =','11'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 6 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 6 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 + 6 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 + 6 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 6 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('11 + 6 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 + 6 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 + 6 =','19'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 + 6 =','20'));
+
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 5 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 6 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 7 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 8 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 9 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 10 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 11 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 12 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 13 =','19'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 14 =','20'));
 
 		//add 7
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 7 =','12'));
