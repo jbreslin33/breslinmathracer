@@ -97,7 +97,7 @@ execute: function(game)
 {
 	if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
         {
-		game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);	
+		game.mPadStateMachine.changeState(game.mRESET_GAME);	
 	}
 },
 
@@ -125,7 +125,7 @@ execute: function(game)
 {
         if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
         {
-                game.mPadStateMachine.changeState(game.mRESET_PAD_GAME);
+                game.mPadStateMachine.changeState(game.mRESET_GAME);
         }
 },
 

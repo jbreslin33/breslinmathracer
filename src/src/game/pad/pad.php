@@ -234,7 +234,7 @@ Extends: Game,
         {
    		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
         	{
-                	this.mPadStateMachine.changeState(this.mINIT_PAD_GAME);
+                	this.mPadStateMachine.changeState(this.mINIT_GAME);
         	}
         },
         showLevelPassedExit: function()
