@@ -416,7 +416,7 @@ Extends: Pad,
 
 		//2
 		this.mQuiz.mQuestionPoolArray.push(new Question('13 - 2 =','11'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('14 - 2 =','12));
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 - 2 =','12'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('15 - 2 =','13'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 2 =','14'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 2 =','15'));
@@ -465,6 +465,8 @@ Extends: Pad,
 
 		//9
 		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 9 =','11'));
+
+		this.log('length:' + this.mQuiz.mQuestionPoolArray.length);
 
 		var totalNew           = 0;
 		

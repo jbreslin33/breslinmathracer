@@ -35,7 +35,7 @@ insert into learning_standards (id,ref_id,progression,levels) values ('1.nbt.c.4
 insert into learning_standards (id,ref_id,progression,levels) values ('1.nbt.c.5','B26DE2515D35459792503137FBF1BAC5',113,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.nbt.c.6','884F1851E494434DB4B70D01A077363D',114,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('1.md.b.3','87CBA4CAA0F6481DA4CE599F6B368E13',115,10);
-insert into learning_standards (id,ref_id,progression,levels) values ('2.oa.b.2','800715566B824BB3A5A8C464E961C2B4',116,304);
+insert into learning_standards (id,ref_id,progression,levels) values ('2.oa.b.2','800715566B824BB3A5A8C464E961C2B4',116,364);
 insert into learning_standards (id,ref_id,progression,levels) values ('3.oa.c.7','3D384CB2349B41299A3B5A133AB9E3F8',117,218);
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
