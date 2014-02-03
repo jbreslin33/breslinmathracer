@@ -107,7 +107,6 @@ var Game = new Class(
 
 	reset: function()
         {
-		this.log('reset in game');
                 /************ SCORE *******/
                 this.setScore(0);
 		this.mKilled = false;
@@ -184,7 +183,6 @@ var Game = new Class(
 
 	createWorld: function()
 	{
-		this.log('createWorld in game');
 		this.destroyShapes();	
 	
 		//correctAnswerBar

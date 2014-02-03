@@ -15,7 +15,6 @@ Extends: Game,
 
 	createWorld: function()
 	{
-		this.log('createWorld in dungeon');
 		this.parent();
 
 		this.createQuestionShapes();
@@ -117,13 +116,11 @@ Extends: Game,
 
 	levelPassedEnter: function()
         {
-		this.log('levelPassedEnter');
 	 	this.mApplication.mLevelCompleted = true;
         },
 
         levelPassedExecute: function()
         {
-		this.log('levelPassedExecute');
  		//just wait here until what???
         	if (this.mApplication.mAdvanceToNextLevelConfirmation)
         	{
@@ -133,7 +130,6 @@ Extends: Game,
 
         showLevelPassedExecute: function()
         {
-		this.log('showLevelPassedExecute');
     		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
         	{
                 	this.mStateMachine.changeState(this.mINIT_GAME);

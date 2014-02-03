@@ -32,12 +32,10 @@ initialize: function()
 
 enter: function(game)
 {
-	APPLICATION.log('INIT_GAME::enter');
 },
 
 execute: function(game)
 {
-	APPLICATION.log('INIT_GAME::execute');
 	game.mStateMachine.changeState(game.mRESET_GAME);
 },
 
@@ -57,7 +55,6 @@ initialize: function()
 
 enter: function(game)
 {
-	APPLICATION.log('RESET_GAME::enter');
 	game.resetGameEnter();
 },
 
