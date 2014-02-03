@@ -391,9 +391,80 @@ Extends: Pad,
 	
 
 		//subtract
-		this.mQuiz.mQuestionPoolArray.push(new Question('20 + 0 =','20'));
+		//0
+		this.mQuiz.mQuestionPoolArray.push(new Question('11 - 0 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 - 0 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 - 0 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 - 0 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 - 0 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 0 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 0 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 0 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 0 =','19'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 0 =','20'));
 
-			
+		//1
+		this.mQuiz.mQuestionPoolArray.push(new Question('12 - 1 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 - 1 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 - 1 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 - 1 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 1 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 1 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 1 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 1 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 1 =','19'));
+
+		//2
+		this.mQuiz.mQuestionPoolArray.push(new Question('13 - 2 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 - 2 =','12));
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 - 2 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 2 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 2 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 2 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 2 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 2 =','18'));
+
+		//3	
+		this.mQuiz.mQuestionPoolArray.push(new Question('14 - 3 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 - 3 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 3 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 3 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 3 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 3 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 3 =','17'));
+
+		//4
+		this.mQuiz.mQuestionPoolArray.push(new Question('15 - 4 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 4 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 4 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 4 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 4 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 4 =','16'));
+
+		//5
+		this.mQuiz.mQuestionPoolArray.push(new Question('16 - 5 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 5 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 5 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 5 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 5 =','15'));
+
+		//6
+		this.mQuiz.mQuestionPoolArray.push(new Question('17 - 6 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 6 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 6 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 6 =','14'));
+		
+		//7	
+		this.mQuiz.mQuestionPoolArray.push(new Question('18 - 7 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 7 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 7 =','13'));
+
+		//8
+		this.mQuiz.mQuestionPoolArray.push(new Question('19 - 8 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 8 =','12'));
+
+		//9
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 - 9 =','11'));
 
 		var totalNew           = 0;
 		
