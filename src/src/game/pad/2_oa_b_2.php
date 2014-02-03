@@ -390,6 +390,11 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('20 + 0 =','20'));
 	
 
+		//subtract
+		this.mQuiz.mQuestionPoolArray.push(new Question('20 + 0 =','20'));
+
+			
+
 		var totalNew           = 0;
 		
 		while (totalNew < this.mScoreNeeded * .4)
