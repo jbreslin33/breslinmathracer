@@ -126,13 +126,5 @@ Extends: Game,
         	{
                 	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
         	}
-        },
-
-        showLevelPassedExecute: function()
-        {
-    		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
-        	{
-                	this.mStateMachine.changeState(this.mINIT_GAME);
-        	}
         }
 });

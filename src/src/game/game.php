@@ -124,8 +124,18 @@ var Game = new Class(
 		
 	createUniverse: function()
 	{
+		this.log('Game::createUniverse');
 		this.createQuestions();
                 this.createWorld();
+	},
+	
+	createWorld: function()
+	{
+		this.destroyShapes();	
+		this.destroyCorrectAnswerBar();
+	
+		//correctAnswerBar
+		this.createCorrectAnswerBar();
 	},
 
 	createQuestions: function()
@@ -165,6 +175,7 @@ var Game = new Class(
 
 	destroyShapes: function()
 	{
+		this.log('Game::destroyShapes');
 		//shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -182,13 +193,6 @@ var Game = new Class(
                 this.mStateMachine.update();
         },
 
-	createWorld: function()
-	{
-		this.destroyShapes();	
-	
-		//correctAnswerBar
-		this.createCorrectAnswerBar();
-	},
 
 	createVictoryShapes: function()
 	{
@@ -508,32 +512,47 @@ var Game = new Class(
         
 	resetCorrectAnswerBar: function()
 	{
- 		this.mCorrectAnswerBarHeader.mMesh.value = '';
-        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-        	this.mCorrectAnswerBar.mMesh.value = '';
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '';
+		if (this.mCorrectAnswerBarHeader)
+		{
+        		this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+		}
+		if (this.mCorrectAnswerBarHeader)
+		{
+        		this.mCorrectAnswerBar.mMesh.innerHTML = '';
+		}
 	},
 
 	createCorrectAnswerBar: function()
         {
-                //question bar header
-                this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+		if (!this.mCorrectAnswerBarHeader)
+		{
+                	this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
+                	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
+		}
 
-                //question bar
+		if (!this.mCorrectAnswerBar)
+		{
                 this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
+		}
        	},
 	
 	destroyCorrectAnswerBar: function()
 	{
-		this.mCorrectAnswerBarHeader.mDiv.mDiv.removeChild(this.mCorrectAnswerBarHeader.mMesh);
-               	document.body.removeChild(this.mCorrectAnswerBarHeader.mDiv.mDiv);
-		this.mCorrectAnswerBarHeader = 0;
+		this.resetCorrectAnswerBar();	
+		if (this.mCorrectAnswerBarHeader)
+		{
+			this.mCorrectAnswerBarHeader.mDiv.mDiv.removeChild(this.mCorrectAnswerBarHeader.mMesh);
+               		document.body.removeChild(this.mCorrectAnswerBarHeader.mDiv.mDiv);
+			this.mCorrectAnswerBarHeader = 0;
+		}
 
-		this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
-               	document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
-		this.mCorrectAnswerBar = 0;
+		if (this.mCorrectAnswerBar)
+		{
+			this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
+               		document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
+			this.mCorrectAnswerBar = 0;
+		}
 	},
 
 	showClockShape: function()
@@ -581,18 +600,18 @@ var Game = new Class(
                 this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
                 this.showCorrectAnswerBar();
 	},
+  
+	showLevelPassedExecute: function()
+        {
+                if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
+                {
+                        this.mStateMachine.changeState(this.mINIT_GAME);
+                }
+        },
 	
 	showLevelPassedExit: function()
 	{
-		
-		//lets get a fresh start with shapes.
-		this.destroyShapes();
-		
 		this.hideCorrectAnswerBar();
-                this.mCorrectAnswerBarHeader.mMesh.value = '';
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-                this.mCorrectAnswerBar.mMesh.value = '';
-                this.mCorrectAnswerBar.mMesh.innerHTML = '';
 	},
 
 	normalGameExecute: function()

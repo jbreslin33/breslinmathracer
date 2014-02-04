@@ -51,6 +51,7 @@ Extends: Game,
 
 	createUniverse: function()
         {
+		this.log('Pad::createUniverse');
                 this.createWorld();
                 this.createQuestions();
         },
@@ -219,17 +220,5 @@ Extends: Game,
         	{
                 	this.mPadStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
         	}
-        },
-
-        showLevelPassedExecute: function()
-        {
-   		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
-        	{
-                	this.mPadStateMachine.changeState(this.mINIT_GAME);
-        	}
-        },
-        showLevelPassedExit: function()
-        {
-		this.parent();
         }
 });
