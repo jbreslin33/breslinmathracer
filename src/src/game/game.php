@@ -124,7 +124,6 @@ var Game = new Class(
 		
 	createUniverse: function()
 	{
-		this.log('Game::createUniverse');
 		this.createQuestions();
                 this.createWorld();
 	},
@@ -175,7 +174,6 @@ var Game = new Class(
 
 	destroyShapes: function()
 	{
-		this.log('Game::destroyShapes');
 		//shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -569,15 +567,35 @@ var Game = new Class(
 	},
 
 	levelPassedEnter: function()
-	{
+        {
+                this.mApplication.mLevelCompleted = true;
 
-	},
-	
+                //correctAnswer
+                this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+                this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+
+		if (this.mInputPad)
+		{
+                	this.mInputPad.hide();
+                	this.mInputPad.reset();
+		}
+
+                //user answer
+                this.mUserAnswer = '';
+
+                //times
+                this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
+        },
+
 	levelPassedExecute: function()
-	{
-
-	},
-
+        {
+                if (this.mApplication.mAdvanceToNextLevelConfirmation)
+                {
+                	this.mApplication.mAdvanceToNextLevelConfirmation = false;
+                        this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
+                }
+        },
+	
 	levelPassedExit: function()
 	{
 
@@ -585,6 +603,7 @@ var Game = new Class(
 
 	showLevelPassedEnter: function()
 	{
+		this.log('Game::showLevelPassedEnter');
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
 		//get rid of everything...

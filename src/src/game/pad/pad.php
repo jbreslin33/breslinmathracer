@@ -51,7 +51,6 @@ Extends: Game,
 
 	createUniverse: function()
         {
-		this.log('Pad::createUniverse');
                 this.createWorld();
                 this.createQuestions();
         },
@@ -188,37 +187,5 @@ Extends: Game,
 	{ 
 		this.hideCorrectAnswerBar();
         	this.mClockShape.setVisibility(false);
-	},
-	
-  	levelPassedEnter: function()
-        {
-        	this.mApplication.mLevelCompleted = true;
-
-        	this.mInputPad.hide();
-
-        	//correctAnswer
-        	this.hideCorrectAnswerBar();
-        	this.mCorrectAnswerBarHeader.mMesh.value = '';
-        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
-       	 	this.mCorrectAnswerBar.mMesh.value = '';
-        	this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
-
-        	//input pad
-		this.mInputPad.reset();	
-
-        	//user answer
-        	this.mUserAnswer = '';
-
-        	//times
-        	this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
-        },
-
-        levelPassedExecute: function()
-        {
-  		//just wait here until what???
-        	if (this.mApplication.mAdvanceToNextLevelConfirmation)
-        	{
-                	this.mPadStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
-        	}
-        }
+	}
 });

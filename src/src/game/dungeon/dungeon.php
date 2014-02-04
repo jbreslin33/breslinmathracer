@@ -112,19 +112,5 @@ Extends: Game,
         	{
                 	this.mStateMachine.changeState(this.mRESET_GAME);
         	}
-	},
-
-	levelPassedEnter: function()
-        {
-	 	this.mApplication.mLevelCompleted = true;
-        },
-
-        levelPassedExecute: function()
-        {
- 		//just wait here until what???
-        	if (this.mApplication.mAdvanceToNextLevelConfirmation)
-        	{
-                	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
-        	}
-        }
+	}
 });
