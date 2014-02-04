@@ -6,14 +6,6 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(application)
 {
 },
@@ -40,14 +32,6 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(application)
 {
 },
@@ -71,18 +55,8 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(application)
 {
-	this.log('NORMAL_APPLICATION::enter');
-	
 	//get a new game if neccesary
 	application.gameDecider();
 },
@@ -113,17 +87,8 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(application)
 {
-	//this.log('GET_LEVEL_DATA_APPLICATION::enter');
 	application.mWaitingOnLevelData = true;
 	application.getLevelData();
 },
@@ -151,17 +116,8 @@ initialize: function()
 {
 },
 
-log: function(msg)
-{
-        setTimeout(function()
-        {
-                throw new Error(msg);
-        }, 0);
-},
-
 enter: function(application)
 {
-	//this.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
         application.mAdvanceToNextLevelConfirmation = false;
 
 	//tell db to advance you
@@ -175,7 +131,6 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
-		application.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::execute confirmation');	
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },

@@ -131,10 +131,8 @@ var Application = new Class(
 	// are we running the right game??
 	gameDecider: function()
 	{
-		this.log('Application::gameDecider');
 		if (this.mRef_id == 0)
 		{
-			//this.log('no level yet');
 		}
 		if (this.mRef_id == 'CA9EE2E34F384E95A5FA26769C5864B8')
 		{ 
@@ -664,7 +662,6 @@ var Application = new Class(
                 xmlhttp.onreadystatechange=function()
                 {
                         var response = xmlhttp.responseText; 
-			//APPLICATION.log('advanceToNextLevel response:' + response);
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 
