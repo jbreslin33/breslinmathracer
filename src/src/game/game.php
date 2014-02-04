@@ -94,6 +94,7 @@ var Game = new Class(
 	{
 		//shapes and array
 		this.destroyShapes();
+		this.destroyCorrectAnswerBar();
 	
 		//bounds
 		this.mBounds = 0;
@@ -523,6 +524,17 @@ var Game = new Class(
                 this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
                 this.mCorrectAnswerBar.mMesh.innerHTML = '';
        	},
+	
+	destroyCorrectAnswerBar: function()
+	{
+		this.mCorrectAnswerBarHeader.mDiv.mDiv.removeChild(this.mCorrectAnswerBarHeader.mMesh);
+               	document.body.removeChild(this.mCorrectAnswerBarHeader.mDiv.mDiv);
+		this.mCorrectAnswerBarHeader = 0;
+
+		this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
+               	document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
+		this.mCorrectAnswerBar = 0;
+	},
 
 	showClockShape: function()
 	{

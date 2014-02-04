@@ -131,6 +131,7 @@ var Application = new Class(
 	// are we running the right game??
 	gameDecider: function()
 	{
+		this.log('Application::gameDecider');
 		if (this.mRef_id == 0)
 		{
 			//this.log('no level yet');

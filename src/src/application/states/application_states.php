@@ -81,7 +81,7 @@ log: function(msg)
 
 enter: function(application)
 {
-	//this.log('NORMAL_APPLICATION::enter');
+	this.log('NORMAL_APPLICATION::enter');
 	
 	//get a new game if neccesary
 	application.gameDecider();
@@ -175,6 +175,7 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
+		application.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::execute confirmation');	
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
