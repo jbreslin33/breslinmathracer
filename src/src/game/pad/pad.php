@@ -221,15 +221,6 @@ Extends: Game,
         	}
         },
 
-        levelPassedExit: function()
-        {
-
-        },
-
-        showLevelPassedEnter: function()
-        {
-		this.parent();
-        },
         showLevelPassedExecute: function()
         {
    		if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
