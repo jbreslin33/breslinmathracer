@@ -591,19 +591,16 @@ var Game = new Class(
         {
                 if (this.mApplication.mAdvanceToNextLevelConfirmation)
                 {
-                	this.mApplication.mAdvanceToNextLevelConfirmation = false;
                         this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
                 }
         },
 	
 	levelPassedExit: function()
 	{
-
 	},
 
 	showLevelPassedEnter: function()
 	{
-		this.log('Game::showLevelPassedEnter');
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
 		//get rid of everything...

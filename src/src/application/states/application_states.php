@@ -118,7 +118,6 @@ initialize: function()
 
 enter: function(application)
 {
-	application.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::enter');
         application.mAdvanceToNextLevelConfirmation = false;
 
 	//tell db to advance you
@@ -130,11 +129,9 @@ enter: function(application)
 
 execute: function(application)
 {
-	application.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::execute');
         if (application.mAdvanceToNextLevelConfirmation)
         {
         	application.mAdvanceToNextLevelConfirmation = false;
-		application.log('ADVANCE_TO_NEXT_LEVEL_APPLICATION::execute confirmation');
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
