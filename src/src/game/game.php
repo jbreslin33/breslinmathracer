@@ -544,6 +544,7 @@ var Game = new Class(
 
 	levelPassedEnter: function()
         {
+		this.log('Game::levelPassedEnter');
                 this.mApplication.mLevelCompleted = true;
 
                 //correctAnswer
