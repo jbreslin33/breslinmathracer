@@ -55,21 +55,6 @@ Extends: Game,
                 this.createQuestions();
         },
    
-	createWorld: function()
-	{
-		this.parent();
-
-		//clock Shape
-		this.mClockShape = new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","","");
-		this.mShapeArray.push(this.mClockShape);
-		this.mClockShape.setVisibility(false);
-		
-		//memorize Shape
-		this.mMemorizeShape = new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","","");
-		this.mShapeArray.push(this.mMemorizeShape);
-		this.mMemorizeShape.setVisibility(false);
-	},
-		
 	//states
 	resetGameEnter: function()
 	{
