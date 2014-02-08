@@ -161,7 +161,7 @@ Extends: Game,
                 this.mShapeArray[1].setVisibility(true);
         	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
 
-        	this.mShapeArray[8].setVisibility(true);
+        	this.mShapeArray[9].setVisibility(true);
         	
 		this.mInputPad.hide();
 	},
@@ -177,7 +177,7 @@ Extends: Game,
 		
 		this.mShapeArray[0].mMesh.innerHTML = 'GO FASTER!';
         	this.mShapeArray[0].setVisibility(true);
-        	this.mShapeArray[9].setVisibility(true);
+        	this.mShapeArray[8].setVisibility(true);
 	 	
 		this.mShapeArray[1].setPosition(400,100);
         	this.mShapeArray[1].setVisibility(true);

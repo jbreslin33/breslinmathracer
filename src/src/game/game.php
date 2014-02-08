@@ -132,10 +132,19 @@ var Game = new Class(
                 
 		for (i = 0; i < this.mTotalGuiBars; i++)
 		{
-			this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
+			if (i == 8)
+			{
+				this.mShapeArray.push(new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","",""));
+			}
+			if (i == 9)
+			{
+				this.mShapeArray.push(new Shape(197,185,425,245,this,"/images/symbols/dontforget.gif","",""));
+			}
+			if (i < 8)
+			{	
+				this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
+			}			
 		}
-		//this.mShapeArray[8].setSrc('/images/symbols/clock.jpg');
-		//this.mShapeArray[9].setSrc('/images/symbols/dontforget.gif');
 	},
 
 	createQuestions: function()
