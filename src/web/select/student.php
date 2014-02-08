@@ -17,9 +17,9 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 
 <br><b><u>My Students:<u><b><br>
 <?php
-$query = "select students.id,  users.username, users.password, users.first_name, users.last_name from students join users on students.id = users.id where users.school_id = ";
+$query = "select id,  username, password, first_name, last_name from users where school_id = ";
 $query .= $_SESSION["school_id"];
-$query .= ";";
+$query .= " order by username;";
 
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
