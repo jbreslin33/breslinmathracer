@@ -157,7 +157,7 @@ Extends: Game,
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.mInputPad.hide();
-        	this.mShapeArray[1].setPosition(400,100);
+                this.mShapeArray[1].setPosition(400,100);
         	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showGuiBar();
         	this.mMemorizeShape.setVisibility(true);
@@ -172,6 +172,7 @@ Extends: Game,
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.mInputPad.hide();
+                this.mShapeArray[1].setPosition(400,100);
         	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         	this.showGuiBar();
        	 	this.showClockShape();

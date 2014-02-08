@@ -519,16 +519,10 @@ var Game = new Class(
 
 	createGuiBar: function()
         {
-		this.mShapeArray.push(new Shape(150,50,300,50,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,300,100,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
-		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		for (i = 0; i < this.mTotalGuiBars; i++)
+		{
+			this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
+		}
        	},
 	
 	showClockShape: function()
