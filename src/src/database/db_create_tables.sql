@@ -1,7 +1,6 @@
 --***************************************************************
 --******************  DROP TABLES *************************
 --**************************************************************
-DROP TABLE teachers cascade;
 DROP TABLE students cascade;
 DROP TABLE users cascade;
 DROP TABLE schools cascade;
@@ -87,11 +86,6 @@ CREATE TABLE users (
     	school_id integer NOT NULL,
     	ref_id text NOT NULL default 'CA9EE2E34F384E95A5FA26769C5864B8',
 	level integer NOT NULL default 1 
-);
-
---TEACHERS
-CREATE TABLE teachers (
-    id integer NOT NULL
 );
 
 --STUDENTS
@@ -213,10 +207,6 @@ ALTER TABLE public.schools OWNER TO postgres;
 --STUDENTS
 ALTER TABLE public.students OWNER TO postgres;
 
---TEACHERS
-ALTER TABLE public.teachers OWNER TO postgres;
-
-
 --****************************************************************
 --***************************************************************
 --****************** ALTER SEQUENCE  *************************
@@ -253,8 +243,6 @@ ALTER SEQUENCE schools_id_seq OWNED BY schools.id;
 ALTER TABLE ONLY schools ALTER COLUMN id SET DEFAULT nextval('schools_id_seq'::regclass);
 
 --STUDENTS
-
---TEACHERS
 
 --==================================================================
 --================= CORE CURRICULUM  ====================================
@@ -294,9 +282,6 @@ ALTER TABLE schools ADD PRIMARY KEY (id);
 --STUDENTS
 ALTER TABLE students ADD PRIMARY KEY (id);
 
---TEACHERS
-ALTER TABLE teachers ADD PRIMARY KEY (id);
-
 --==================================================================
 --================= CORE CURRICULUM  ====================================
 --==================================================================
@@ -332,9 +317,6 @@ ALTER TABLE users ADD FOREIGN KEY (school_id) REFERENCES schools(id);
 
 --STUDENTS
 ALTER TABLE students ADD FOREIGN KEY (id) REFERENCES users(id);
-
---TEACHERS
-ALTER TABLE teachers ADD FOREIGN KEY (id) REFERENCES users(id);
 
 --==================================================================
 --================= CORE CURRICULUM  ====================================
