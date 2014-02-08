@@ -129,9 +129,13 @@ var Game = new Class(
 	createWorld: function()
 	{
 		this.destroyShapes();	
-		
-		//gui bar
-		this.createGuiBar();
+                
+		for (i = 0; i < this.mTotalGuiBars; i++)
+		{
+			this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
+		}
+		//this.mShapeArray[8].setSrc('/images/symbols/clock.jpg');
+		//this.mShapeArray[9].setSrc('/images/symbols/dontforget.gif');
 	},
 
 	createQuestions: function()
@@ -515,20 +519,6 @@ var Game = new Class(
 		{
         		this.mShapeArray[i].mMesh.innerHTML = '';
 		}
-	},
-
-	createGuiBar: function()
-        {
-		for (i = 0; i < this.mTotalGuiBars; i++)
-		{
-			this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
-		}
-       	},
-	
-	showClockShape: function()
-	{
-		this.mGuiBarArray[0].mMesh.innerHTML = 'GO FASTER!';
-        	this.mClockShape.setVisibility(true);
 	},
 
 	//states
