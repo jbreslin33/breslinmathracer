@@ -89,7 +89,7 @@ Extends: Game,
         	this.mInputPad.show();
 
         	//correctAnswer
-        	this.hideCorrectAnswerBar();
+        	this.hideGuiBar();
 
         	//user answer
         	this.mUserAnswer = '';
@@ -157,9 +157,9 @@ Extends: Game,
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.mInputPad.hide();
-        	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
-        	this.showCorrectAnswerBar();
+        	this.mShapeArray[1].setPosition(400,100);
+        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+        	this.showGuiBar();
         	this.mMemorizeShape.setVisibility(true);
 	},
 
@@ -172,20 +172,20 @@ Extends: Game,
 	{
 		this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
         	this.mInputPad.hide();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
-        	this.showCorrectAnswerBar();
+        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+        	this.showGuiBar();
        	 	this.showClockShape();
 	},
 	
 	showCorrectAnswerExit: function()
 	{ 
-		this.hideCorrectAnswerBar();
+		this.hideGuiBar();
         	this.mMemorizeShape.setVisibility(false);
 	},
   
 	showCorrectAnswerOutOfTimeExit: function()
 	{ 
-		this.hideCorrectAnswerBar();
+		this.hideGuiBar();
         	this.mClockShape.setVisibility(false);
 	}
 });

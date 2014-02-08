@@ -18,6 +18,9 @@ var Game = new Class(
 		/********* SHAPES *******************/ 
 		//shape Array
        		this.mShapeArray = new Array();
+
+		//total guiBar
+		this.mTotalGuiBars = 10;
 		
 		//create control object
                 this.mControlObject = 0;
@@ -29,10 +32,6 @@ var Game = new Class(
 
 		// may get rid of later and just use mOn
 		this.timeWarning = false;
-
-		//bar
-              	this.mCorrectAnswerBarHeader = 0;
-                this.mCorrectAnswerBar = 0;
 
                 //level passed
                 this.mShowLevelPassedStartTime = 0;
@@ -94,7 +93,6 @@ var Game = new Class(
 	{
 		//shapes and array
 		this.destroyShapes();
-		this.destroyCorrectAnswerBar();
 	
 		//bounds
 		this.mBounds = 0;
@@ -131,10 +129,9 @@ var Game = new Class(
 	createWorld: function()
 	{
 		this.destroyShapes();	
-		this.destroyCorrectAnswerBar();
-	
-		//correctAnswerBar
-		this.createCorrectAnswerBar();
+		
+		//gui bar
+		this.createGuiBar();
 	},
 
 	createQuestions: function()
@@ -494,68 +491,49 @@ var Game = new Class(
                 APPLICATION.mHud.mScore.setText('<font size="2"> Score : ' + this.mScore + '</font>');
         },
   
-	showCorrectAnswerBar: function()
+	showGuiBar: function()
         {
-                this.mCorrectAnswerBarHeader.setVisibility(true);
-                this.mCorrectAnswerBar.setVisibility(true);
+		for (i = 0; i < this.mTotalGuiBars; i++)
+		{
+                	this.mShapeArray[i].setVisibility(true);
+		}
         },
 
-        hideCorrectAnswerBar: function()
+        hideGuiBar: function()
         {
-                this.mCorrectAnswerBar.setVisibility(false);
-                this.mCorrectAnswerBarHeader.setVisibility(false);
+		for (i = 0; i < this.mTotalGuiBars; i++)
+		{
+                	this.mShapeArray[i].setVisibility(false);
+		}
 
-		this.resetCorrectAnswerBar();
+		this.resetGuiBar();
         },
         
-	resetCorrectAnswerBar: function()
+	resetGuiBar: function()
 	{
-		if (this.mCorrectAnswerBarHeader)
+               	for (i = 0; i < this.mTotalGuiBars; i++) 	
 		{
-        		this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-		}
-		if (this.mCorrectAnswerBarHeader)
-		{
-        		this.mCorrectAnswerBar.mMesh.innerHTML = '';
+        		this.mShapeArray[i].mMesh.innerHTML = '';
 		}
 	},
 
-	createCorrectAnswerBar: function()
+	createGuiBar: function()
         {
-		if (!this.mCorrectAnswerBarHeader)
-		{
-                	this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                	this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-		}
-
-		if (!this.mCorrectAnswerBar)
-		{
-                this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
-                this.mCorrectAnswerBar.mMesh.innerHTML = '';
-		}
+		this.mShapeArray.push(new Shape(150,50,300,50,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,300,100,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
+		this.mShapeArray.push(new Shape(150,50,-150,-150,this,"","",""));
        	},
 	
-	destroyCorrectAnswerBar: function()
-	{
-		this.resetCorrectAnswerBar();	
-		if (this.mCorrectAnswerBarHeader)
-		{
-			this.mCorrectAnswerBarHeader.mDiv.mDiv.removeChild(this.mCorrectAnswerBarHeader.mMesh);
-               		document.body.removeChild(this.mCorrectAnswerBarHeader.mDiv.mDiv);
-			this.mCorrectAnswerBarHeader = 0;
-		}
-
-		if (this.mCorrectAnswerBar)
-		{
-			this.mCorrectAnswerBar.mDiv.mDiv.removeChild(this.mCorrectAnswerBar.mMesh);
-               		document.body.removeChild(this.mCorrectAnswerBar.mDiv.mDiv);
-			this.mCorrectAnswerBar = 0;
-		}
-	},
-
 	showClockShape: function()
 	{
-		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'GO FASTER!';
+		this.mGuiBarArray[0].mMesh.innerHTML = 'GO FASTER!';
         	this.mClockShape.setVisibility(true);
 	},
 
@@ -571,8 +549,8 @@ var Game = new Class(
                 this.mApplication.mLevelCompleted = true;
 
                 //correctAnswer
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
-                this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
+                this.mShapeArray[0].mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+                this.mShapeArray[1].mMesh.innerHTML = 'HOORAY!!!!!';
 
 		if (this.mInputPad)
 		{
@@ -603,18 +581,13 @@ var Game = new Class(
 	{
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
-		//get rid of everything...
-		this.destroyShapes();
-
 		//create victory shapes...
 		this.createVictoryShapes();
 
                 //correctAnswer
-                this.mCorrectAnswerBarHeader.mMesh.value = '';
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
-                this.mCorrectAnswerBar.mMesh.value = '';
-                this.mCorrectAnswerBar.mMesh.innerHTML = 'HOORAY!';
-                this.showCorrectAnswerBar();
+                this.mShapeArray[0].mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+                this.mShapeArray[1].mMesh.innerHTML = 'HOORAY!!!!!';
+                this.showGuiBar();
 	},
   
 	showLevelPassedExecute: function()
@@ -627,7 +600,7 @@ var Game = new Class(
 	
 	showLevelPassedExit: function()
 	{
-		this.hideCorrectAnswerBar();
+		this.destroyShapes();
 	},
 
 	normalGameExecute: function()
