@@ -577,10 +577,12 @@ var Game = new Class(
 		//create victory shapes...
 		this.createVictoryShapes();
 
-                //correctAnswer
+                //gui bar
                 this.mShapeArray[0].mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
+                this.mShapeArray[0].setVisibility(true);
+
                 this.mShapeArray[1].mMesh.innerHTML = 'HOORAY!!!!!';
-                this.showGuiBar();
+                this.mShapeArray[1].setVisibility(true);
 	},
   
 	showLevelPassedExecute: function()
