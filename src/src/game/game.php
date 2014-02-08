@@ -145,6 +145,11 @@ var Game = new Class(
 				this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
 			}			
 		}
+		//set all shapes invisible to start semi-clean
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
 	},
 
 	createQuestions: function()
@@ -572,6 +577,7 @@ var Game = new Class(
 
 	showLevelPassedEnter: function()
 	{
+		this.log('Game::showLevelPassedEnter');
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
 		//create victory shapes...
