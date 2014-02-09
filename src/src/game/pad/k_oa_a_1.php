@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 5000;
 	
 		this.setScoreNeeded(20);
 
@@ -16,23 +16,10 @@ Extends: Pad,
 		this.mInputPad = new NumberPad(application);
 	},
 
-        createCorrectAnswerBar: function()
-        {
-                //question bar header
-                this.mCorrectAnswerBarHeader = new Shape(150,50,100,300,this,"","","");
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-
-                //question bar
-                this.mCorrectAnswerBar = new Shape(150,50,300,100,this,"","","");
-                this.mCorrectAnswerBar.mMesh.innerHTML = '';
-        },	
-
 	createQuestions: function()
         {
 		this.parent();
 
-		this.mQuiz.resetQuestionPoolArray();
-		
 		//add
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
