@@ -34,6 +34,7 @@ var Game = new Class(
 		this.timeWarning = false;
 
                 //level passed
+		this.mReadyForNormalApplication = false;
                 this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelPassedThresholdTime = 10000;
                 
@@ -559,6 +560,8 @@ var Game = new Class(
 	showLevelPassedEnter: function()
 	{
 		this.log('Game::showLevelPassedEnter');
+			
+		this.mApplication.mLevelCompleted = true;
 		
 		if (this.mInputPad)
 		{
@@ -583,7 +586,6 @@ var Game = new Class(
                 this.mShapeArray[1].mMesh.innerHTML = 'HOORAY!!!!!';
                 this.mShapeArray[1].setVisibility(true);
                 	
-		this.mApplication.mLevelCompleted = true;
 	},
   
 	showLevelPassedExecute: function()
@@ -596,6 +598,7 @@ var Game = new Class(
 	
 	showLevelPassedExit: function()
 	{
+		this.mReadyForNormalApplication = true;
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
 		this.destroyShapes();
 	},

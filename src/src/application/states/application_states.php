@@ -68,6 +68,7 @@ execute: function(application)
         {
 		application.mStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
         }
+
 	if (application.mLevelCompleted)
 	{
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
@@ -75,6 +76,7 @@ execute: function(application)
 },
 exit: function(application)
 {
+	application.mLevelCompleted = false;
 }
 
 });
@@ -118,8 +120,6 @@ initialize: function()
 
 enter: function(application)
 {
-        application.mAdvanceToNextLevelConfirmation = false;
-
 	//tell db to advance you
         application.advanceToNextLevel();
 
@@ -129,16 +129,15 @@ enter: function(application)
 
 execute: function(application)
 {
-        if (application.mAdvanceToNextLevelConfirmation)
+	if (application.mGame.mReadyForNormalApplication)
         {
-        	//application.mAdvanceToNextLevelConfirmation = false;
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },
 
 exit: function(application)
 {
-	application.mLevelCompleted = false;
+	application.mGame.mReadyForNormalApplication = false;
  	application.mHud.setLevel(application.mLevel,application.mLevels);	
 }
 
