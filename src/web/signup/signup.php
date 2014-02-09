@@ -86,12 +86,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/select_student_id.php");
 		//set session levels
 		setLevelSessionVariables($conn,$_SESSION["user_id"]);
 
- 		//insert teacher 
-                insertIntoTeachers($conn,$_SESSION["user_id"]);
-
-	   	//insert student 
-                insertIntoStudents($conn,$_SESSION["user_id"],0);
-
        		//--------------------------------------------------------------
                 
 		$_SESSION["Login"] = "YES";

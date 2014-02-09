@@ -50,14 +50,6 @@ echo "<br>";
 	{
 		echo "No admin try again.";
 	}
-	if ($mess == "no_teacher")
-	{
-		echo "No teacher try again.";
-	}
-	if ($mess == "no_student")
-	{
-		echo "No student try again.";
-	}
 ?>
 	<p><b> PLEASE LOGIN: </p></b>
 	

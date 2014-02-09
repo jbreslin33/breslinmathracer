@@ -4,7 +4,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_school_id.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php");
-include(getenv("DOCUMENT_ROOT") . "/src/database/select_student_id.php");
 
 //db connection
 $conn = dbConnect();
