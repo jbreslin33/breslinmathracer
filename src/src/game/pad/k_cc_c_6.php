@@ -60,11 +60,11 @@ Extends: Pad,
 				//add shapes
 				for (a = 0; a < objectsToCountA; a++)
 				{
-					question.mShapeArray.push(this.mShapeArray[a+2])
+					question.mShapeArray.push(this.mShapeArray[parseInt(a + this.mTotalGuiBars)])
 				}
 				for (b = 0; b < objectsToCountB; b++)
 				{
-					question.mShapeArray.push(this.mShapeArray[b+22])
+					question.mShapeArray.push(this.mShapeArray[parseInt(b + this.mTotalGuiBars + 20)])
 				}
 			}
 		}
