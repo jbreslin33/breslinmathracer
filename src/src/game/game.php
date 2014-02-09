@@ -686,5 +686,128 @@ var Game = new Class(
 
         	//save old positions
         	this.saveOldPositions();
-	}
+	},
+
+	//old pad states
+       	showCorrectAnswerEnter: function()
+        {
+                this.showCorrectAnswer();
+        },
+
+        showCorrectAnswer: function()
+        {
+                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+
+                this.mShapeArray[1].setPosition(400,125);
+                this.mShapeArray[1].setVisibility(true);
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+
+                this.mShapeArray[9].setVisibility(true);
+
+                this.mInputPad.hide();
+        },
+
+        showCorrectAnswerOutOfTimeEnter: function()
+        {
+                this.showCorrectAnswerOutOfTime();
+        },
+
+        showCorrectAnswerOutOfTime: function()
+        {
+                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+
+                this.mShapeArray[0].setPosition(400,125);
+                this.mShapeArray[0].mMesh.innerHTML = 'GO FASTER!';
+                this.mShapeArray[0].setVisibility(true);
+
+                this.mShapeArray[1].setPosition(400,150);
+                this.mShapeArray[1].setVisibility(true);
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+
+                //frantic clock
+                this.mShapeArray[8].setVisibility(true);
+
+                this.mInputPad.hide();
+        },
+
+        showCorrectAnswerExit: function()
+        {
+                this.hideGuiBar();
+        },
+ 
+        showCorrectAnswerOutOfTimeExit: function()
+        {
+                this.hideGuiBar();
+        },
+    
+	waitingOnAnswerEnter: function()
+        {
+                this.waitingOnAnswerFirstTimeEnter();
+
+                //times
+                this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
+        },
+
+        waitingOnAnswerExecute: function()
+        {
+                this.waitingOnAnswerFirstTimeExecute();
+
+                //check time
+                if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+                {
+                        this.mOutOfTime = true;
+                        this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
+                }
+        },
+ 
+	waitingOnAnswerFirstTimeEnter: function()
+        {
+                if (this.mInputPad.mNumAnswer)
+                {
+                        this.mInputPad.mNumAnswer.mMesh.value = '';
+                        this.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
+                }
+
+                //show inputPad
+                this.mInputPad.show();
+
+                //correctAnswer
+                //this.hideGuiBar();
+
+                //user answer
+                this.mUserAnswer = '';
+
+                //numberPad
+                if (this.mQuiz)
+                {
+                        if (!this.mQuiz.getQuestion())
+                        {
+                                this.log('NO QUESTIONS: calling createQuestions');
+                                this.createQuestions();
+                        }
+                }
+                else
+                {
+                        this.log('NO QUIZ');
+                }
+
+                //show question
+                this.showQuestion();
+        },
+
+        waitingOnAnswerFirstTimeExecute: function()
+        {
+                //if you have an answer...
+                if (this.mUserAnswer != '')
+                {
+                        if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
+                        {
+                                this.mPadStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
+                        }
+                        else
+                        {
+                                this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
+                        }
+                }
+        }
 });
