@@ -92,6 +92,11 @@ var Game = new Class(
 	{
 		//shapes and array
 		this.destroyShapes();
+
+		if (this.mInputPad)
+		{
+			this.mInputPad.destructor();
+		}
 	
 		//bounds
 		this.mBounds = 0;

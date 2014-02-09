@@ -10,6 +10,19 @@ var InputPad  = new Class(
 		//create input pad
 		this.createInputPad();	
 	},
+	
+	destructor: function()
+	{
+                for (i = 0; i < this.mInputPadArray.length; i++)
+                {
+                        //back to div
+                        this.mInputPadArray[i].mDiv.mDiv.removeChild(this.mInputPadArray[i].mMesh);
+                        document.body.removeChild(this.mInputPadArray[i].mDiv.mDiv);
+                        this.mInputPadArray[i] = 0;
+                }
+                this.mInputPadArray = 0;
+		this.mInputPadArray = new Array();
+        },
 
 	//fake virtual
 	createInputPad: function()
@@ -47,17 +60,5 @@ var InputPad  = new Class(
                 {
                         this.mInputPadArray[i].setVisibility(true);
                 }
-        },
-
-	destroy: function()
-	{
-                for (i = 0; i < this.mInputPadArray.length; i++)
-                {
-                        //back to div
-                        this.mInputPadArray[i].mDiv.mDiv.removeChild(this.mInputPadArray[i].mMesh);
-                        document.body.removeChild(this.mInputPadArray[i].mDiv.mDiv);
-                        this.mInputPadArray[i] = 0;
-                }
-                this.mInputPadArray = 0;
         }
 });
