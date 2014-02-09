@@ -23,7 +23,7 @@ Extends: Timer,
 			this.mFirstTime = false;
 		}
   
-		if (this.mApplication.mGame.mPadStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
+		if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
                 {
 			if (this.mApplication.mGame.mQuestionStartTime > 0)
 			{

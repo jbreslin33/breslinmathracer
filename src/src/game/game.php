@@ -75,11 +75,19 @@ var Game = new Class(
                 this.mRESET_GAME                        = new RESET_GAME        (this);
                 this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
                 this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
+               
+		//pad states  
+		this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
+                this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
+                this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
+                this.mCORRECT_ANSWER_PAD_GAME = new CORRECT_ANSWER_PAD_GAME(this);
+                this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
+                this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
                 this.mStateMachine.changeState(this.mINIT_GAME);
         },
- 	
+	
 	log: function(msg)
         {
                 setTimeout(function()
@@ -756,7 +764,7 @@ var Game = new Class(
                 if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
                 {
                         this.mOutOfTime = true;
-                        this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
+                        this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
                 }
         },
  
@@ -802,11 +810,11 @@ var Game = new Class(
                 {
                         if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                         {
-                                this.mPadStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
+                                this.mStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
                         }
                         else
                         {
-                                this.mPadStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
+                                this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
                         }
                 }
         }

@@ -14,19 +14,6 @@ Extends: Game,
 
 		this.setScoreNeeded(10);
 
-		//state machine
-                this.mPadStateMachine = new StateMachine(this);
-
-                this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
-                this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
-                this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
-                this.mCORRECT_ANSWER_PAD_GAME = new CORRECT_ANSWER_PAD_GAME(this);
-                this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
-                this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
-
-                this.mPadStateMachine.setGlobalState(0);
-                this.mPadStateMachine.changeState(this.mINIT_GAME);
-
    		this.mTimer = new ClockTimer(application);
 	},
 
@@ -45,7 +32,6 @@ Extends: Game,
 	update: function()
         {
   		this.parent()
-		this.mPadStateMachine.update();
 		this.mTimer.update();
         },
 
@@ -59,6 +45,6 @@ Extends: Game,
 	resetGameEnter: function()
 	{
 		this.reset();
-        	this.mPadStateMachine.changeState(this.mWAITING_ON_ANSWER_FIRST_TIME);
+        	this.mStateMachine.changeState(this.mWAITING_ON_ANSWER_FIRST_TIME);
 	}
 });
