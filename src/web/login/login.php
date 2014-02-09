@@ -19,7 +19,7 @@ $_SESSION["school_id"] = 1;
 $_SESSION["school_name"] = "";
 
 //set user sessions
-$user_id = selectUserID($conn, $_SESSION["school_id"],$_SESSION["username"],$_SESSION["password"]);
+$user_id = selectUserID($conn, $_SESSION["username"], $_SESSION["password"]);
 if ($user_id)
 {
 	//set sessions
