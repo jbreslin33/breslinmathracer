@@ -1,15 +1,9 @@
 <?php
-
-
-function checkForSchools($conn,$school_name)
+function checkForUser($conn,$username)
 {
-
- //----------------check for school existence-----------------------------------
-        $taken = false;
-
         //query string
-        $query = "select school_name from schools where school_name = '";
-        $query .= $school_name;
+        $query = "select username from users where username = '";
+        $query .= $username;
         $query .= "';";
 
         //get db result
@@ -28,7 +22,5 @@ function checkForSchools($conn,$school_name)
 	{
 		return false;
 	}
-
-
 }
 ?>

@@ -19,14 +19,6 @@ echo "<br>";
         {
                 echo "That username is taken, Please try another.";
         }
-        if ($mess == "no_numbers")
-        {
-                echo "You cannot use numbers in username. Please try again.";
-        }
-        if ($mess == "no_periods")
-        {
-                echo "You cannot use periods in signup. Please try again.";
-        }
         if ($mess == "no_name")
         {
                 echo "You forgot a username. Please fill one out.";
@@ -40,7 +32,7 @@ echo "<br>";
 	
 	<form method="post" action="../signup/signup.php">
 
-	<p>Username: <input type="text" name="schoolname" /></p>
+	<p>Username: <input type="text" name="username" /></p>
 	<p>Password: <input type="text" name="password" /></p>
 
 	<p><input type="submit" value="Sign Up" /></p>

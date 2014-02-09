@@ -15,8 +15,8 @@ $problem = "";
 
 $_SESSION["password"] = $_POST["password"];
 $_SESSION["username"] = $_POST["username"];
-$_SESSION["school_id"] = 1;
-$_SESSION["school_name"] = "";
+$_SESSION["school_id"] = "1";
+$_SESSION["school_name"] = "visitationbvm";
 
 //set user sessions
 $user_id = selectUserID($conn, $_SESSION["username"], $_SESSION["password"]);
