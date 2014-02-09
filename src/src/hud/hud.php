@@ -69,7 +69,7 @@ var Hud = new Class(
 
 	setProgression: function(p)
 	{
-        	this.mProgression.setText('<font size="1"> Progress:' + p +  '</font>');
+        	this.mProgression.setText('<font size="1"> Game:' + p +  '</font>');
 	},
 
 	setLevel: function(level,levels)
