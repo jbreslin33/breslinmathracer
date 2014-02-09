@@ -131,7 +131,7 @@ execute: function(application)
 {
         if (application.mAdvanceToNextLevelConfirmation)
         {
-        	application.mAdvanceToNextLevelConfirmation = false;
+        	//application.mAdvanceToNextLevelConfirmation = false;
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
 },

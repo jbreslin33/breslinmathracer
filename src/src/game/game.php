@@ -545,12 +545,21 @@ var Game = new Class(
 	levelPassedEnter: function()
         {
 		this.log('Game::levelPassedEnter');
-                this.mApplication.mLevelCompleted = true;
+        },
 
-                //correctAnswer
-                this.mShapeArray[0].mMesh.innerHTML = 'LEVEL PASSED!!!!!!';
-                this.mShapeArray[1].mMesh.innerHTML = 'HOORAY!!!!!';
+	levelPassedExecute: function()
+        {
+        	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
+        },
+	
+	levelPassedExit: function()
+	{
+	},
 
+	showLevelPassedEnter: function()
+	{
+		this.log('Game::showLevelPassedEnter');
+		
 		if (this.mInputPad)
 		{
                 	this.mInputPad.hide();
@@ -562,23 +571,6 @@ var Game = new Class(
 
                 //times
                 this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
-        },
-
-	levelPassedExecute: function()
-        {
-                if (this.mApplication.mAdvanceToNextLevelConfirmation)
-                {
-                        this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
-                }
-        },
-	
-	levelPassedExit: function()
-	{
-	},
-
-	showLevelPassedEnter: function()
-	{
-		this.log('Game::showLevelPassedEnter');
  		this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
 
 		//create victory shapes...
@@ -590,11 +582,13 @@ var Game = new Class(
 
                 this.mShapeArray[1].mMesh.innerHTML = 'HOORAY!!!!!';
                 this.mShapeArray[1].setVisibility(true);
+                	
+		this.mApplication.mLevelCompleted = true;
 	},
   
 	showLevelPassedExecute: function()
         {
-                if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
+                if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime && this.mApplication.mAdvanceToNextLevelConfirmation)
                 {
                         this.mStateMachine.changeState(this.mINIT_GAME);
                 }
@@ -602,6 +596,7 @@ var Game = new Class(
 	
 	showLevelPassedExit: function()
 	{
+		this.mApplication.mAdvanceToNextLevelConfirmation = false;
 		this.destroyShapes();
 	},
 
