@@ -611,9 +611,18 @@ var Game = new Class(
 		this.createVictoryShapes();
 
                 //gui bar
-                this.mShapeArray[0].setPosition(400,125);
-                this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' just beat level ' + this.mApplication.mLevel + ' of this game!';
-                this.mShapeArray[0].setVisibility(true);
+		if (this.mApplication.mLevel == this.mApplication.mLevels)
+		{
+                	this.mShapeArray[0].setPosition(400,125);
+                	this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' just beat the whole game!';
+                	this.mShapeArray[0].setVisibility(true);
+		}
+		else
+		{
+                	this.mShapeArray[0].setPosition(400,125);
+                	this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' just beat level ' + this.mApplication.mLevel + ' of this game!';
+                	this.mShapeArray[0].setVisibility(true);
+		}
 	},
   
 	levelPassedExecute: function()
