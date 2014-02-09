@@ -128,7 +128,9 @@ var Game = new Class(
 	createWorld: function()
 	{
 		this.destroyShapes();	
-                
+               
+		//creating gui bars 
+		this.log('Game::createWorld');
 		for (i = 0; i < this.mTotalGuiBars; i++)
 		{
 			if (i == 8)

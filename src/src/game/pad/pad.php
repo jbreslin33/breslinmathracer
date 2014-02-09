@@ -74,6 +74,7 @@ Extends: Game,
         	this.mInputPad.show();
 
         	//correctAnswer
+		this.log('Game::waitingOnAnswerFirstTimeEnter');
         	this.hideGuiBar();
 
         	//user answer
@@ -173,11 +174,13 @@ Extends: Game,
 	
 	showCorrectAnswerExit: function()
 	{ 
+		this.log('Game::showCorrectAnswerExit');
 		this.hideGuiBar();
 	},
   
 	showCorrectAnswerOutOfTimeExit: function()
 	{ 
+		this.log('Game::showCorrectAnswerOutOfTimeExit');
 		this.hideGuiBar();
 	}
 });
