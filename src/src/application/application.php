@@ -123,7 +123,6 @@ var Application = new Class(
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
-			APPLICATION.log('response:' + response);
 		}
                 xmlhttp.open("GET","../../web/application/level_query.php",true);
                 xmlhttp.send();
