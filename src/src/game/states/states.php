@@ -83,7 +83,6 @@ enter: function(game)
 
 execute: function(game)
 {
-	game.normalGameExecute();
 },
 
 exit: function(game)

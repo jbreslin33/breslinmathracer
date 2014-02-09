@@ -647,11 +647,6 @@ var Game = new Class(
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
 	},
 
-	normalGameExecute: function()
-	{
-		this.normalGame();
-	},
-	
 	normalGame: function()
 	{
        		//get time since epoch and set lasttime
