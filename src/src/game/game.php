@@ -130,7 +130,6 @@ var Game = new Class(
 		this.destroyShapes();	
                
 		//creating gui bars 
-		this.log('Game::createWorld');
 		for (i = 0; i < this.mTotalGuiBars; i++)
 		{
 			if (i == 8)
@@ -551,8 +550,6 @@ var Game = new Class(
 
 	levelPassedEnter: function()
 	{
-		this.log('Game::showLevelPassedEnter');
-			
 		this.mApplication.mLevelCompleted = true;
 		
 		if (this.mInputPad)
@@ -592,7 +589,6 @@ var Game = new Class(
 	{
 		this.mReadyForNormalApplication = true;
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
-		this.destroyShapes();
 	},
 
 	normalGameExecute: function()

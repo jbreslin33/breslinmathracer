@@ -48,6 +48,7 @@ Extends: Pad,
 
 	createWorld: function()
 	{
+		this.log('k_cc_a_3::createWorld');
 		this.parent();
 
                 this.mShapeArray.push(new Shape(50,50,25,50,this,"/images/bus/kid.png","",""));
