@@ -438,7 +438,6 @@ var Game = new Class(
              
 			if (col1.getTimeoutShape() != col2 && col2.getTimeoutShape() != col1)
 			{
-				this.log('collision');
 				col2.onCollision(col1);	
 				col1.onCollision(col2);	
 			}
