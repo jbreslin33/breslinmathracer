@@ -95,22 +95,6 @@ Extends: Game,
                         var shape = new ShapeChaser(50,50,openPoint.mX,openPoint.mY,this,"/images/monster/red_monster.png","","chaser");
                         this.addToShapeArray(shape);
                 }
-	},
-
-	//STATES
-  
-	normalGameExecute: function()
-	{
-		this.parent();
-
-   		if (this.mQuiz.isQuizComplete())
-        	{
-                	this.mStateMachine.changeState(this.mLEVEL_PASSED);
-        	}
-
-        	if (this.mKilled == true)
-        	{
-                	this.mStateMachine.changeState(this.mRESET_GAME);
-        	}
 	}
+
 });

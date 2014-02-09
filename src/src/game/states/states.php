@@ -82,6 +82,15 @@ enter: function(game)
 
 execute: function(game)
 {
+	if (game.mQuiz.isQuizComplete())
+        {
+                game.mStateMachine.changeState(game.mLEVEL_PASSED);
+        }
+
+        if (game.mKilled == true)
+       	{
+                game.mStateMachine.changeState(game.mRESET_GAME);
+        }
 },
 
 exit: function(game)
@@ -115,7 +124,7 @@ exit: function(game)
 });
 
 //pad states
-var WAITING_ON_ANSWER_FIRST_TIME = new Class(
+var FIRST_TIME = new Class(
 {
 Extends: State,
 
@@ -125,12 +134,12 @@ initialize: function()
 
 enter: function(game)
 {
-        game.waitingOnAnswerFirstTimeEnter();
+        game.firstTimeEnter();
 },
 
 execute: function(game)
 {
-        game.waitingOnAnswerFirstTimeExecute();
+        game.firstTimeExecute();
 },
 
 exit: function(game)
@@ -163,7 +172,7 @@ exit: function(game)
 
 });
 
-var CORRECT_ANSWER_PAD_GAME = new Class(
+var CORRECT_ANSWER = new Class(
 {
 Extends: State,
 
@@ -222,7 +231,7 @@ exit: function(game)
 
 });
 
-var SHOW_CORRECT_ANSWER_OUT_OF_TIME = new Class(
+var OUT_OF_TIME = new Class(
 {
 Extends: State,
 
@@ -232,20 +241,17 @@ initialize: function()
 
 enter: function(game)
 {
-        game.showCorrectAnswerOutOfTimeEnter();
+        game.outOfTimeEnter();
 },
 
 execute: function(game)
 {
-        if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
-        {
-                game.mStateMachine.changeState(game.mRESET_GAME);
-        }
+        game.outOfTimeExecute();
 },
 
 exit: function(game)
 {
-        game.showCorrectAnswerOutOfTimeExit();
+        game.outOfTimeExit();
 }
 
 });

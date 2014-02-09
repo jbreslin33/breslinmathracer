@@ -78,11 +78,11 @@ var Game = new Class(
                
 		//pad states  
 		this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
-                this.mWAITING_ON_ANSWER_FIRST_TIME   = new WAITING_ON_ANSWER_FIRST_TIME(this);
+                this.mFIRST_TIME   = new FIRST_TIME(this);
                 this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
-                this.mCORRECT_ANSWER_PAD_GAME = new CORRECT_ANSWER_PAD_GAME(this);
+                this.mCORRECT_ANSWER = new CORRECT_ANSWER(this);
                 this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
-                this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME = new SHOW_CORRECT_ANSWER_OUT_OF_TIME(this);
+                this.mOUT_OF_TIME = new OUT_OF_TIME(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
                 this.mStateMachine.changeState(this.mINIT_GAME);
@@ -689,12 +689,9 @@ var Game = new Class(
 	},
 
 	//old pad states
+	
+	//showCorrectAnswer
        	showCorrectAnswerEnter: function()
-        {
-                this.showCorrectAnswer();
-        },
-
-        showCorrectAnswer: function()
         {
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
 
@@ -706,13 +703,14 @@ var Game = new Class(
 
                 this.mInputPad.hide();
         },
-
-        showCorrectAnswerOutOfTimeEnter: function()
+        
+	showCorrectAnswerExit: function()
         {
-                this.showCorrectAnswerOutOfTime();
+                this.hideGuiBar();
         },
 
-        showCorrectAnswerOutOfTime: function()
+	//outOfTime
+        outOfTimeEnter: function()
         {
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
 
@@ -729,20 +727,24 @@ var Game = new Class(
 
                 this.mInputPad.hide();
         },
+        
+	outOfTimeExecute: function()
+	{
+		if (this.mTimeSinceEpoch > this.mCorrectAnswerStartTime + this.mCorrectAnswerThresholdTime)
+        	{
+               		this.mStateMachine.changeState(this.mRESET_GAME);
+        	}
+	},
 
-        showCorrectAnswerExit: function()
+        outOfTimeExit: function()
         {
                 this.hideGuiBar();
         },
- 
-        showCorrectAnswerOutOfTimeExit: function()
-        {
-                this.hideGuiBar();
-        },
-    
+   
+	//waitingOnAnswer 
 	waitingOnAnswerEnter: function()
         {
-                this.waitingOnAnswerFirstTimeEnter();
+                this.firstTimeEnter();
 
                 //times
                 this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
@@ -750,17 +752,18 @@ var Game = new Class(
 
         waitingOnAnswerExecute: function()
         {
-                this.waitingOnAnswerFirstTimeExecute();
+                this.firstTimeExecute();
 
                 //check time
                 if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
                 {
                         this.mOutOfTime = true;
-                        this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER_OUT_OF_TIME);
+                        this.mStateMachine.changeState(this.mOUT_OF_TIME);
                 }
         },
- 
-	waitingOnAnswerFirstTimeEnter: function()
+
+	//firstTime 
+	firstTimeEnter: function()
         {
                 if (this.mInputPad.mNumAnswer)
                 {
@@ -795,14 +798,14 @@ var Game = new Class(
                 this.showQuestion();
         },
 
-        waitingOnAnswerFirstTimeExecute: function()
+        firstTimeExecute: function()
         {
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
                         if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                         {
-                                this.mStateMachine.changeState(this.mCORRECT_ANSWER_PAD_GAME);
+                                this.mStateMachine.changeState(this.mCORRECT_ANSWER);
                         }
                         else
                         {

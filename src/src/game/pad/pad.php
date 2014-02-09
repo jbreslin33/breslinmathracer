@@ -45,6 +45,6 @@ Extends: Game,
 	resetGameEnter: function()
 	{
 		this.reset();
-        	this.mStateMachine.changeState(this.mWAITING_ON_ANSWER_FIRST_TIME);
+        	this.mStateMachine.changeState(this.mFIRST_TIME);
 	}
 });
