@@ -218,9 +218,50 @@ var Game = new Class(
 
 	update: function()
         {
+		//get time since epoch and set lasttime
+                e = new Date();
+                this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
+                this.mTimeSinceEpoch = e.getTime();
+
+                //set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
+                this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
+
+                if(this.mDeltaTime < 50000)
+                {
+                        this.mGameTime = this.mGameTime + this.mDeltaTime;
+                }
+
+                //check Keys from application
+                if (this.mKeysOn)
+                {
+                        this.checkKeys();
+                }
+
+                if (this.mMouseOn)
+                {
+                        this.checkMouse();
+                }
+
+                //move shapes
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].update(this.mDeltaTime);
+                }
+
+                //collision Detection
+                this.checkForCollisions();
+
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].render();
+                }
+
+                //save old positions
+                this.saveOldPositions();
+
+		//state machine
                 this.mStateMachine.update();
         },
-
 
 	createVictoryShapes: function()
 	{
@@ -645,50 +686,6 @@ var Game = new Class(
 	{
 		this.mReadyForNormalApplication = true;
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
-	},
-
-	normalGame: function()
-	{
-       		//get time since epoch and set lasttime
-        	e = new Date();
-        	this.mLastTimeSinceEpoch = this.mTimeSinceEpoch;
-        	this.mTimeSinceEpoch = e.getTime();
-
-        	//set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
-        	this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
-
-        	if(this.mDeltaTime < 50000)
-        	{
-                	this.mGameTime = this.mGameTime + this.mDeltaTime;
-        	}
-
-        	//check Keys from application
-        	if (this.mKeysOn)
-        	{
-                	this.checkKeys();
-        	}
-
-        	if (this.mMouseOn)
-        	{
-                	this.checkMouse();
-        	}
-
-        	//move shapes
-        	for (i = 0; i < this.mShapeArray.length; i++)
-        	{
-                	this.mShapeArray[i].update(this.mDeltaTime);
-        	}
-
-        	//collision Detection
-        	this.checkForCollisions();
-
-        	for (i = 0; i < this.mShapeArray.length; i++)
-        	{
-                	this.mShapeArray[i].render();
-        	}
-
-        	//save old positions
-        	this.saveOldPositions();
 	},
 
 	//old pad states

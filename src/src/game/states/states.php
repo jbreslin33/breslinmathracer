@@ -13,7 +13,6 @@ enter: function(game)
 
 execute: function(game)
 {
-	game.normalGame();
 },
 
 exit: function(game)
