@@ -110,27 +110,27 @@ Extends: Pad,
 				var i = 0;
 				while(i < addendA)
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars)]);
 					i++;
 				} 
 
 				//sign
                 		if (sign == "+")
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+10)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + 10)]);
 					i++;
 				}
                 		if (sign == "-")
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+20)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + 20)]);
 					i++;
 				}
 				while(i < parseInt(addendB + addendA + 1))
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i+2)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars)]);
 					i++;
 				} 
-                               	question.mShapeArray.push(this.mShapeArray[parseInt(i+2+30)]);
+                               	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + 30)]);
 			}
 		}
 	},
