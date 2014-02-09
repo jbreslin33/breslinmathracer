@@ -115,29 +115,3 @@ exit: function(game)
 }
 
 });
-
-var SHOW_LEVEL_PASSED = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	game.showLevelPassedEnter();
-},
-
-execute: function(game)
-{
-	game.showLevelPassedExecute();
-},
-
-exit: function(game)
-{
-	game.showLevelPassedExit();
-}
-
-});
-

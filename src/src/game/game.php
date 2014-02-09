@@ -75,11 +75,9 @@ var Game = new Class(
                 this.mRESET_GAME                        = new RESET_GAME        (this);
                 this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
                 this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
-                this.mSHOW_LEVEL_PASSED                 = new SHOW_LEVEL_PASSED (this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
                 this.mStateMachine.changeState(this.mINIT_GAME);
-
         },
  	
 	log: function(msg)
@@ -544,20 +542,6 @@ var Game = new Class(
 	},
 
 	levelPassedEnter: function()
-        {
-		this.log('Game::levelPassedEnter');
-        },
-
-	levelPassedExecute: function()
-        {
-        	this.mStateMachine.changeState(this.mSHOW_LEVEL_PASSED);
-        },
-	
-	levelPassedExit: function()
-	{
-	},
-
-	showLevelPassedEnter: function()
 	{
 		this.log('Game::showLevelPassedEnter');
 			
@@ -588,7 +572,7 @@ var Game = new Class(
                 	
 	},
   
-	showLevelPassedExecute: function()
+	levelPassedExecute: function()
         {
                 if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime && this.mApplication.mAdvanceToNextLevelConfirmation)
                 {
@@ -596,7 +580,7 @@ var Game = new Class(
                 }
         },
 	
-	showLevelPassedExit: function()
+	levelPassedExit: function()
 	{
 		this.mReadyForNormalApplication = true;
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
