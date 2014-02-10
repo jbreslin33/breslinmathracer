@@ -665,6 +665,19 @@ var Game = new Class(
                 this.mShapeArray[9].setVisibility(true);
 
                 this.mInputPad.hide();
+	
+		if (this.mQuiz.getQuestion().mTip != '')
+		{
+                	//tip header
+                	this.mShapeArray[2].setPosition(200,150);
+                	this.mShapeArray[2].setVisibility(true);
+                	this.mShapeArray[2].mMesh.innerHTML = 'Tip:';
+
+                	//tip
+                	this.mShapeArray[3].setPosition(200,200);
+                	this.mShapeArray[3].setVisibility(true);
+                	this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTip;
+		}
         },
         
 	showCorrectAnswerExit: function()

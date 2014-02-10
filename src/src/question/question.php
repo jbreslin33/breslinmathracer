@@ -11,6 +11,9 @@ var Question = new Class(
 		//showAnswer
 		this.mShowAnswer = showAnswer;
 
+		//tip
+		this.mTip = '';
+
 		//is solved
 		this.mSolved = false;
 

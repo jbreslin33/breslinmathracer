@@ -19,6 +19,8 @@ Extends: Pad,
 
 		//add
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));
+		this.mQuiz.mQuestionPoolArray[0].mTip = 'Adding 1 to a number is just like counting by 1.';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 1 =','3'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 2 =','3'));
