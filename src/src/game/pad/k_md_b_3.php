@@ -103,9 +103,7 @@ Extends: Pad,
 	showCorrectAnswer: function()
 	{
 		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-		this.mInputPad.showQuestion();	
-		this.mInputPad.hide();
+        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
 		this.mInputPad.mNumQuestion.setVisibility('true');
 	},
    
@@ -280,17 +278,10 @@ Extends: Pad,
 	},
 
 	//state overides
-	showCorrectAnswerOutOfTime: function()
+	outOfTime: function()
         {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-                this.mInputPad.showQuestion();
-                this.mInputPad.hide();
+		this.parent();
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
                 this.mInputPad.mNumQuestion.setVisibility('true');
-
         }
-
 });
