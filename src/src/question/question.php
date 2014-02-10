@@ -12,7 +12,7 @@ var Question = new Class(
 		this.mShowAnswer = showAnswer;
 
 		//tip
-		this.mTip = '';
+		this.mTipArray = new Array();
 
 		//is solved
 		this.mSolved = false;

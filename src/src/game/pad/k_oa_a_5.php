@@ -19,14 +19,26 @@ Extends: Pad,
 
 		//add
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 1 =','2'));
-		this.mQuiz.mQuestionPoolArray[0].mTip = 'Adding 1 to a number is just like counting by 1.';
+		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = 'Adding 1 to a number is just like counting by 1.';
 
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
+		this.mQuiz.mQuestionPoolArray[1].mTipArray[0] = 'Adding 2 to a number is just like counting by 2.';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 1 =','3'));
+		this.mQuiz.mQuestionPoolArray[2].mTipArray[0] = 'Adding 1 to a number is just like counting by 1.';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 2 =','3'));
+		this.mQuiz.mQuestionPoolArray[3].mTipArray[0] = 'Think of this as 1 more than 2. ';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('3 + 1 =','4'));
+		this.mQuiz.mQuestionPoolArray[4].mTipArray[0] = 'Adding 1 to a number is just like counting by 1.';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 3 =','4'));
+		this.mQuiz.mQuestionPoolArray[5].mTipArray[0] = 'Think of this as 1 more than 3.';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('4 + 1 =','5'));
+		this.mQuiz.mQuestionPoolArray[6].mTipArray[0] = 'Adding 1 to a number is just like counting by 1.';
+
                 this.mQuiz.mQuestionPoolArray.push(new Question('1 + 4 =','5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('2 + 3 =','5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('3 + 2 =','5'));

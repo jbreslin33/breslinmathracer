@@ -666,17 +666,38 @@ var Game = new Class(
 
                 this.mInputPad.hide();
 	
-		if (this.mQuiz.getQuestion().mTip != '')
+		if (this.mQuiz.getQuestion().mTipArray.length > 0) 
 		{
                 	//tip header
                 	this.mShapeArray[2].setPosition(200,150);
                 	this.mShapeArray[2].setVisibility(true);
-                	this.mShapeArray[2].mMesh.innerHTML = 'Tip:';
+			if (this.mQuiz.getQuestion().mTipArray.length == 1) 
+			{
+                		this.mShapeArray[2].mMesh.innerHTML = 'Tip:';
+			}
+			else 
+			{
+                		this.mShapeArray[2].mMesh.innerHTML = 'Tips:';
+			}
 
-                	//tip
-                	this.mShapeArray[3].setPosition(200,200);
-                	this.mShapeArray[3].setVisibility(true);
-                	this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTip;
+			if (this.mQuiz.getQuestion().mTipArray.length > 0) 
+			{
+                		this.mShapeArray[3].setPosition(200,200);
+                		this.mShapeArray[3].setVisibility(true);
+                		this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[0];
+			}
+			if (this.mQuiz.getQuestion().mTipArray.length > 1) 
+			{
+                		this.mShapeArray[4].setPosition(200,300);
+                		this.mShapeArray[4].setVisibility(true);
+                		this.mShapeArray[4].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[1];
+			}
+			if (this.mQuiz.getQuestion().mTipArray.length > 2) 
+			{
+                		this.mShapeArray[5].setPosition(200,400);
+                		this.mShapeArray[5].setVisibility(true);
+                		this.mShapeArray[5].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[2];
+			}
 		}
         },
         
