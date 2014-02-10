@@ -58,6 +58,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
 		question.mShapeArray.push(this.mShapeArray[2]);
 		question.mShapeArray.push(this.mShapeArray[3]);
  		this.mQuiz.mQuestionPoolArray.push(question);
@@ -69,8 +71,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[4]);
-		question.mShapeArray.push(this.mShapeArray[5]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 2)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //3 behind
@@ -80,8 +82,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[6]);
-		question.mShapeArray.push(this.mShapeArray[7]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 4)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 5)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //4 in front of
@@ -91,8 +93,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[8]);
-		question.mShapeArray.push(this.mShapeArray[9]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 6)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 7)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //5 below
@@ -102,8 +104,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[10]);
-		question.mShapeArray.push(this.mShapeArray[11]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 8)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 9)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //6 next to
@@ -113,8 +115,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[12]);
-		question.mShapeArray.push(this.mShapeArray[13]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 10)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 11)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 var totalNew           = 0;
