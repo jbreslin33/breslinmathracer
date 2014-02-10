@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 5000;
 
 		//score needed
 		this.setScoreNeeded(20);
@@ -38,6 +38,21 @@ Extends: Pad,
 		this.mCorrectAnswerArray[1] = 'kids';
 		this.mCorrectAnswerArray[2] = 'red monsters';
 		this.mCorrectAnswerArray[3] = 'feathers';
+	},
+	
+	//state overides
+	outOfTime: function()
+        {
+		this.parent();
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+                this.mInputPad.mNumQuestion.setVisibility('true');
+        },
+
+	showCorrectAnswer: function()
+	{
+		this.parent();
+        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
+		this.mInputPad.mNumQuestion.setVisibility('true');
 	},
 
 	destroyShapes: function()
@@ -100,13 +115,6 @@ Extends: Pad,
 		this.mInputPad.showQuestion();	
 	},
  
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-		this.mInputPad.mNumQuestion.setVisibility('true');
-	},
-   
 	createQuestions: function()
         {
 		this.parent();
@@ -275,13 +283,5 @@ Extends: Pad,
                		this.mCountShapeArrayD[i].mCollidable = false;
                		this.mCountShapeArrayD[i].mCollisionOn = false;
 		}	
-	},
-
-	//state overides
-	outOfTime: function()
-        {
-		this.parent();
-                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.mInputPad.mNumQuestion.setVisibility('true');
-        }
+	}
 });
