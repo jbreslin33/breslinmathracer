@@ -29,47 +29,47 @@ Extends: Pad,
 
 		var question = new Question('What is this?','solid');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[2]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','solid');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[3]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','flat');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[4]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 2)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','solid');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[5]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','flat');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[6]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 4)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','flat');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[7]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 5)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','solid');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[8]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','flat');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[9]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 7)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','flat');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[10]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 8)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var totalFlat = 0;
