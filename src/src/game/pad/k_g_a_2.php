@@ -36,7 +36,7 @@ Extends: Pad,
 
 		var question = new Question('What is this?','cone');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[2]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','cube');
@@ -47,7 +47,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[3]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 1]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','circle');
@@ -59,17 +59,17 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[4]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 2]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','cylinder');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[5]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 3]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','hexagon');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[6]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 4]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','rectangle');
@@ -80,7 +80,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[7]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 5]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','sphere');
@@ -92,7 +92,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[8]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 6]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','square');
@@ -103,12 +103,12 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[9]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 7]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','triangle');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[10]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 8]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var totalCones = 0;
