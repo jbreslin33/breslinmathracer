@@ -33,28 +33,28 @@ Extends: Pad,
 		var question = new Question('What is this?','tall');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
-		question.mShapeArray.push(this.mShapeArray[2]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		//short	
 		var question = new Question('What is this?','short');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
-                question.mShapeArray.push(this.mShapeArray[3]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		//heavy
 		var question = new Question('What is this?','heavy');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
-                question.mShapeArray.push(this.mShapeArray[4]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 2)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 		
 		//light
 		var question = new Question('What is this?','light');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
-                question.mShapeArray.push(this.mShapeArray[5]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		var totalTall = 0;
