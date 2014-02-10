@@ -19,35 +19,26 @@ Extends: Pad,
 
 		//add
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 1 =','11'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 1 is like 0 + 1.';
-
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 2 =','12'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 2 is like 0 + 2.';
-
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 3 =','13'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 3 is like 0 + 3.';
-		
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 4 =','14'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 4 is like 0 + 4.';
-		
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 5 =','15'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 5 is like 0 + 5.';
-
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 6 =','16'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 6 is like 0 + 6.';
-
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 7 =','17'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 7 is like 0 + 7.';
-		
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 8 =','18'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 8 is like 0 + 8.';
-
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 9 =','19'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 9 is like 0 + 9.';
+		this.mQuiz.mQuestionPoolArray.push(new Question('1 + 10 =','11'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 + 10 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 + 10 =','13'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 + 10 =','14'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 + 10 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 10 =','16'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 + 10 =','17'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 + 10 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 + 10 =','19'));
 
 		//extra
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 + 9 =','19'));
-//		this.mQuiz.mQuestionPoolArray[0].mTipArray[0] = '10 + 9 is like 0 + 9.';
 
 		var totalNew           = 0;
 
