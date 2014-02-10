@@ -20,21 +20,24 @@ Extends: Pad,
 		this.mWordProblems = new WordProblems();
 	},
 
-	createCorrectAnswerBar: function()
+        //showCorrectAnswer
+        showCorrectAnswerEnter: function()
         {
-                //question bar header
-                if (!this.mCorrectAnswerBarHeader)
-                {
-                        this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-                }
+                this.parent();
 
-                //question bar
-                if (!this.mCorrectAnswerBar)
-                {
-                        this.mCorrectAnswerBar = new Shape(200,200,50,100,this,"","","");
-                        this.mCorrectAnswerBar.mMesh.innerHTML = '';
-                }
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+        },
+
+        //outOfTime
+        outOfTimeEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[0].setPosition(400,50);
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
         },
 
 	createQuestions: function()
