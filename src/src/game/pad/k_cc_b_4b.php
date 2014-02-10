@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 5000;
 
                 //input pad
                 this.mInputPad = new ButtonMultipleChoicePad(application);
