@@ -16,36 +16,27 @@ Extends: Pad,
                 //input pad
                 this.mInputPad = new LongQuestionNumberPad(application);
         },
+   
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
 
-        createCorrectAnswerBar: function()
-        {
-                //question bar header
-                if (!this.mCorrectAnswerBarHeader)
-                {
-                        this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-                }
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+        },
 
-                //question bar
-                if (!this.mCorrectAnswerBar)
-                {
-                        this.mCorrectAnswerBar = new Shape(300,50,25,100,this,"","","");
-                        this.mCorrectAnswerBar.mMesh.innerHTML = '';
-                }
-        },
- 
-	//states 
-        showCorrectAnswerOutOfTime: function()
+        //outOfTime
+        outOfTimeEnter: function()
         {
-		this.parent();
-		this.mCorrectAnswerBarHeader.mMesh.innerHTML = 'Out of Time! Correct Answer: ' + this.mQuiz.getQuestion().getAnswer();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
-        },
-	
-	showCorrectAnswer: function()
-        {
-		this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+                this.parent();
+
+                this.mShapeArray[0].setPosition(400,50);
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
         },
 
 	//questions
