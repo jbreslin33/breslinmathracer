@@ -147,7 +147,7 @@ var Game = new Class(
 		{
 			if (i == 8)
 			{
-				this.mShapeArray.push(new Shape(197,185,370,275,this,"/images/symbols/clock.jpg","",""));
+				this.mShapeArray.push(new Shape(197,185,425,245,this,"/images/symbols/clock.jpg","",""));
 			}
 			if (i == 9)
 			{
@@ -594,44 +594,7 @@ var Game = new Class(
         		this.mShapeArray[i].mMesh.innerHTML = '';
 		}
 	},
-/*
-        showCorrectAnswer: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-
-                this.mShapeArray[1].setPosition(400,125);
-                this.mShapeArray[1].setVisibility(true);
-                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
-
-                this.mShapeArray[9].setVisibility(true);
-
-                this.mInputPad.hide();
-        },
-
-        showCorrectAnswerOutOfTimeEnter: function()
-        {
-                this.showCorrectAnswerOutOfTime();
-        },
-
-        showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-
-                this.mShapeArray[0].setPosition(400,125);
-                this.mShapeArray[0].mMesh.innerHTML = 'GO FASTER!';
-                this.mShapeArray[0].setVisibility(true);
-
-                this.mShapeArray[1].setPosition(400,150);
-                this.mShapeArray[1].setVisibility(true);
-                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
-
-                //frantic clock
-                this.mShapeArray[8].setVisibility(true);
-
-                this.mInputPad.hide();
-        },
-
-*/
+	
 	//states
 	resetGameEnter: function()
 	{
@@ -714,11 +677,11 @@ var Game = new Class(
         {
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
 
-                this.mShapeArray[0].setPosition(400,125);
+                this.mShapeArray[0].setPosition(400,100);
                 this.mShapeArray[0].mMesh.innerHTML = 'GO FASTER!';
                 this.mShapeArray[0].setVisibility(true);
 
-                this.mShapeArray[1].setPosition(400,150);
+                this.mShapeArray[1].setPosition(400,125);
                 this.mShapeArray[1].setVisibility(true);
                 this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
 
