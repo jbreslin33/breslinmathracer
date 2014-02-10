@@ -665,7 +665,12 @@ var Game = new Class(
                 this.mShapeArray[9].setVisibility(true);
 
                 this.mInputPad.hide();
+
+		this.tip();
+	},
 	
+	tip: function()
+	{
 		if (this.mQuiz.getQuestion().mTipArray.length > 0) 
 		{
                 	//tip header
@@ -700,7 +705,7 @@ var Game = new Class(
 			}
 		}
         },
-        
+
 	showCorrectAnswerExit: function()
         {
                 this.hideGuiBar();
@@ -723,6 +728,8 @@ var Game = new Class(
                 this.mShapeArray[8].setVisibility(true);
 
                 this.mInputPad.hide();
+
+		this.tip();
         },
         
 	outOfTimeExecute: function()
