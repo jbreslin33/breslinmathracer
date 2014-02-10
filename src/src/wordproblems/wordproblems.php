@@ -20,11 +20,11 @@ var WordProblems = new Class(
 				sum = addendA + addendB;		
 			}
 			//okay we have a valid sum and plural addends
-			questionText = '' + APPLICATION.mFirstName + ' had '; 	
+			questionText = 'Jim had '; 	
 			questionText = questionText + '' + addendA; 	
 			questionText = questionText + ' toy cars. He found ';
 			questionText = questionText + '' + addendB; 	
-			questionText = questionText + ' more toy cars. How many toy cars does ' + APPLICATION.mFirstName + ' have now?';
+			questionText = questionText + ' more toy cars. How many toy cars does Jim have now?';
 
 			var question = new Question('' + questionText,'' + sum);
 			return question;
@@ -46,13 +46,13 @@ var WordProblems = new Class(
 				sum = addendA + addendB + addendC;		
 			}
 			//okay we have a valid sum and plural addends
-			questionText = '' + APPLICATION.mFirstName + ' had '; 	
+			questionText = 'Jim had '; 	
 			questionText = questionText + '' + addendA; 	
-			questionText = questionText + ' toy cars. ' + APPLICATION.mFirstName + ' found ';
+			questionText = questionText + ' toy cars. Jim found ';
 			questionText = questionText + '' + addendB; 	
-			questionText = questionText + ' more toy cars. Then ' + APPLICATION.mFirstName + ' found ';
+			questionText = questionText + ' more toy cars. Then Jim found ';
 			questionText = questionText + '' + addendC; 	
-			questionText = questionText + ' more toy cars. How many toy cars does ' + APPLICATION.mFirstName + ' have now?';
+			questionText = questionText + ' more toy cars. How many toy cars does Jim have now?';
 
 			var question = new Question('' + questionText,'' + sum);
 			return question;
