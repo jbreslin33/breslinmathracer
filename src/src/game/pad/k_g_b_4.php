@@ -43,31 +43,31 @@ Extends: Pad,
 			//cube	
 			var question = new Question('How many sides?','12');
 			question.mAnswerPool = this.mQuiz.mAnswerPool;	
-			question.mShapeArray.push(this.mShapeArray[3]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
 			this.mQuiz.mQuestionPoolArray.push(question);
 	
 			//hexagon
 			var question = new Question('How many sides?','6');
 			question.mAnswerPool = this.mQuiz.mAnswerPool;	
-			question.mShapeArray.push(this.mShapeArray[6]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 4)]);
 			this.mQuiz.mQuestionPoolArray.push(question);
 
 			//rectangle
 			var question = new Question('How many sides?','4');
 			question.mAnswerPool = this.mQuiz.mAnswerPool;	
-			question.mShapeArray.push(this.mShapeArray[7]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 5)]);
 			this.mQuiz.mQuestionPoolArray.push(question);
 
 			//square
 			var question = new Question('How many sides?','4');
 			question.mAnswerPool = this.mQuiz.mAnswerPool;	
-			question.mShapeArray.push(this.mShapeArray[9]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 7)]);
 			this.mQuiz.mQuestionPoolArray.push(question);
 
 			//triangle
 			var question = new Question('How many sides?','3');
 			question.mAnswerPool = this.mQuiz.mAnswerPool;	
-			question.mShapeArray.push(this.mShapeArray[10]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 8)]);
 			this.mQuiz.mQuestionPoolArray.push(question);
 
                 	var totalCubes = 0;
@@ -135,31 +135,31 @@ Extends: Pad,
                         //cube
                         var question = new Question('How many corners?','12');
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
-                        question.mShapeArray.push(this.mShapeArray[3]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
                         this.mQuiz.mQuestionPoolArray.push(question);
 
                         //hexagon
                         var question = new Question('How many corners?','6');
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
-                        question.mShapeArray.push(this.mShapeArray[6]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 4)]);
                         this.mQuiz.mQuestionPoolArray.push(question);
 
                         //rectangle
                         var question = new Question('How many corners?','4');
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
-                        question.mShapeArray.push(this.mShapeArray[7]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 5)]);
                         this.mQuiz.mQuestionPoolArray.push(question);
 
                         //square
                         var question = new Question('How many corners?','4');
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
-                        question.mShapeArray.push(this.mShapeArray[9]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 7)]);
                         this.mQuiz.mQuestionPoolArray.push(question);
 
                         //triangle
                         var question = new Question('How many corners?','3');
                         question.mAnswerPool = this.mQuiz.mAnswerPool;
-                        question.mShapeArray.push(this.mShapeArray[10]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 8)]);
                         this.mQuiz.mQuestionPoolArray.push(question);
 
 	                var totalCubes = 0;
