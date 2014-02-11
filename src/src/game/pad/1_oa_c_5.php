@@ -11,6 +11,26 @@ Extends: Pad,
 		this.mInputPad = new LongQuestionNumberPad(application);
 	},
 
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+        },
+
+        //outOfTime
+        outOfTimeEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[0].setPosition(400,50);
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+        },
+
 	createQuestions: function()
         {
  		this.parent();
