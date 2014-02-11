@@ -13,13 +13,6 @@ Extends: Pad,
                 this.mInputPad = new NumberPad(application);
 	},
   
-	showCorrectAnswer: function()
-        {
-		this.parent();
-                this.mCorrectAnswerBarHeader.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer(); 
-                this.mCorrectAnswerBar.mMesh.innerHTML = 'tip:' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
-        },
-	
 	createQuestions: function()
         {
  		this.parent();
