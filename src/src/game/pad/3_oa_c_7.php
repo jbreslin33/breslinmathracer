@@ -278,7 +278,6 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('56 / 7 =','8'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('63 / 7 =','9'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('70 / 7 =','10'));
-		//188
 
 		//denominator 8	
 		this.mQuiz.mQuestionPoolArray.push(new Question('8 / 8 =','1'));
@@ -291,7 +290,6 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('64 / 8 =','8'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('72 / 8 =','9'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('80 / 8 =','10'));
-		//198
 
 		//denominator 9	
 		this.mQuiz.mQuestionPoolArray.push(new Question('9 / 9 =','1'));
@@ -304,7 +302,6 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('72 / 9 =','8'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('81 / 9 =','9'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('90 / 9 =','10'));
-		//208
 		
 		//denominator 10	
 		this.mQuiz.mQuestionPoolArray.push(new Question('10 / 10 =','1'));
@@ -317,49 +314,33 @@ Extends: Pad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('80 / 10 =','8'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('90 / 10 =','9'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('100 / 10 =','10'));
-		//218
 
+		this.log('len:' + this.mQuiz.mQuestionPoolArray.length);
 
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
-		var totalNew           = 0;
-		var newQuestionElement = 0;
-		var elementCounter     = 0;	
-		
-		for (i = 0; i <= 217; i++)
-		{
-			if (this.mApplication.mLevel == i)
-			{
-				newQuestionElement = elementCounter;	
-			}			
-			elementCounter++;
-		}
+  		var totalNew           = 0;
 
-		while (totalNew < totalNewGoal)
-		{	
-			//reset vars and arrays
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+                while (totalNew < this.mScoreNeeded * .4)
+                {
+                        //reset vars and arrays
+                        totalNew = 0;
 
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*2));		
-				if (randomChance == 0)
-				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[newQuestionElement]);
-					totalNew++;
-				}	
-				if (randomChance == 1)
-				{
-					var randomElement = Math.floor((Math.random()*newQuestionElement));		
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
-				}
-			}
-		}
+                        this.mQuiz.resetQuestionArray();
+
+                        for (s = 0; s < this.mScoreNeeded; s++)
+                        {
+                                //50% chance of asking newest question
+                                var randomChance = Math.floor((Math.random()*2));
+                                if (randomChance == 0)
+                                {
+                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel-1)]);
+                                        totalNew++;
+                                }
+                                if (randomChance == 1)
+                                {
+                                        var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));           
+                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
+                                }
+                        }
+                }
 	}
 });
