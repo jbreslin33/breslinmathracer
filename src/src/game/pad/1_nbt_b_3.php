@@ -104,11 +104,11 @@ Extends: Pad,
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
 				//add shapes
-				this.mShapeArray[ parseInt( s*2+2 ) ].mMesh.innerHTML = '' + objectsToCountA;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2)+2)]);
+				this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars ) ].mMesh.innerHTML = '' + objectsToCountA;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars)]);
 				
-				this.mShapeArray[parseInt((s*2)+3)].mMesh.innerHTML = '' + objectsToCountB;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2)+3)]);
+				this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + 1)].mMesh.innerHTML = '' + objectsToCountB;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + 1)]);
 			}
 		}
 	},
