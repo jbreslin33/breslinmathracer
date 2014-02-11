@@ -9,7 +9,7 @@ Extends: Pad,
 		
 		this.setScoreNeeded(20);
 
-		this.mThresholdTime = 60000;
+		this.mThresholdTime = 5000;
 
                 //input pad
                 this.mInputPad = new BigQuestionNumberPad(application);
@@ -18,21 +18,28 @@ Extends: Pad,
 		this.mWordProblems = new WordProblems();
 	},
 
-	createCorrectAnswerBar: function()
+     	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
         {
-                //question bar header
-                if (!this.mCorrectAnswerBarHeader)
-                {
-                        this.mCorrectAnswerBarHeader = new Shape(150,50,300,50,this,"","","");
-                        this.mCorrectAnswerBarHeader.mMesh.innerHTML = '';
-                }
+                this.parent();
 
-                //question bar
-                if (!this.mCorrectAnswerBar)
-                {
-                        this.mCorrectAnswerBar = new Shape(200,200,50,100,this,"","","");
-                        this.mCorrectAnswerBar.mMesh.innerHTML = '';
-                }
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+	
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer(); 
+        },
+
+        //outOfTime
+        outOfTimeEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[0].setPosition(400,50);
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+		
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer(); 
         },
 
 	createQuestions: function()
