@@ -50,8 +50,14 @@ Extends: Pad,
 		var totalD = 0;
 		var totalE = 0;
 		var totalF = 0;
+		var totalG = 0;
+		var totalH = 0;
+		var totalI = 0;
+		var totalJ = 0;
+		var totalK = 0;
+		var totalL = 0;
 
-		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF)
+		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1|| totalG < 1 || totalH < 1 || totalI < 1 || totalJ < 1 || totalK < 1 || totalL < 1)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -59,7 +65,7 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*5));		
+				var randomChance = Math.floor((Math.random()*12));		
 				if (randomChance == 0)
 				{
 					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_A());
@@ -89,6 +95,36 @@ Extends: Pad,
 				{
 					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_F());
 					totalF++;
+				}
+				if (randomChance == 6)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_G());
+					totalG++;
+				}
+				if (randomChance == 7)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_H());
+					totalH++;
+				}
+				if (randomChance == 8)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_I());
+					totalI++;
+				}
+				if (randomChance == 9)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_J());
+					totalJ++;
+				}
+				if (randomChance == 10)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_K());
+					totalK++;
+				}
+				if (randomChance == 11)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_L());
+					totalL++;
 				}
 			}
 		}

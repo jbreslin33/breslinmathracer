@@ -230,6 +230,7 @@ var WordProblems = new Class(
                 var question = new Question('' + questionText,'' + sum);
                 return question;
 	},
+
 	g1_oa_a_1_F: function()
 	{
         	var addendA = 0;
@@ -253,6 +254,162 @@ var WordProblems = new Class(
 
                 var question = new Question('' + questionText,'' + sum);
                 return question;
+	},
+	
+	g1_oa_a_1_G: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Macon and Parker picked up the crayons they spilled onto the floor. When they put all the crayons back in the box, there were ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' crayons in the box. He knows that he put ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' crayons in. How many crayons did Parker put in the box?';
+
+                var question = new Question('' + questionText,'' + addendA);
+                return question;
+	},
+	
+
+	g1_oa_a_1_H: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Cole and Maggie worked together to make a train that had ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' cubes. They broke it into pieces. One piece had ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' cubes. How many cubes were in the other piece?';
+
+                var question = new Question('' + questionText,'' + addendA);
+                return question;
+	},
+	
+	g1_oa_a_1_I: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Sally and Amy shared one box of colored pencils. They used all of the pencils to make drawings for art class. Sally chose ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' pencils. Amy chose ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' pencils. How many pencils were in the box to begin with?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
+	},
+
+	g1_oa_a_1_J: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Skip and Jacob made ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' cookies. They ate some as soon as they had cooled off. There were ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' cookies left. How many cookies did Skip and Jacob eat?';
+
+                var question = new Question('' + questionText,'' + addendA);
+                return question;
+	},
+
+	g1_oa_a_1_K: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendB - addendA;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'In the basketball game, Tiffany scored ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' points and Alexa scored ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' points. How many more points did Alexa score?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
+	},
+
+	g1_oa_a_1_L: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA - addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Carson has ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' plastic bugs in his collection. He has';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' more bugs than his brother has. How many bugs does his brother have?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
+	},
+
+
+
+
 
 	getAdditionQuestion: function(maxsum,addends)
 	{
