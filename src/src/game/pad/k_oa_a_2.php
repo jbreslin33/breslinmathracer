@@ -42,12 +42,16 @@ Extends: Pad,
         {
  		this.parent();
 		
-		var totalAddition        = 0;
-		var totalSubtraction     = 0;
-		var totalAdditionGoal    = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalSubtractionGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalA = 0;
+		var totalB = 0;
+		var totalC = 0;
+		var totalD = 0;
+		var totalAGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalBGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalCGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
+		var totalDGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 
-		while (totalAddition < totalAdditionGoal || totalSubtraction < totalSubtractionGoal)
+		while (totalA < totalAGoal || totalB < totalBGoal || totalC < totalCGoal || totalD < totalDGoal)
 		{	
 			//RESET as we have either just started or failed to reach totalNewGoal
 			totalNew = 0;
@@ -62,16 +66,26 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*2));		
+				var randomChance = Math.floor((Math.random()*4));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(10,2));
-					totalAddition++;
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_A());
+					totalA++;
 				}	
 				if (randomChance == 1)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getSubtractionQuestion(10));
-					totalSubtraction++;
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_B());
+					totalB++;
+				}
+				if (randomChance == 2)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_C());
+					totalC++;
+				}
+				if (randomChance == 3)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_D());
+					totalD++;
 				}
 			}
 		}
