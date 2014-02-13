@@ -27,7 +27,7 @@ var WordProblems = new Class(
                 questionText = questionText + textC;
 
                 var question = new Question('' + questionText,'' + x);
-		question.mTipArray[0] = '' + x + ' = ' + a + ' + ' + b;  
+		question.mTipArray[3] = '' + x + ' = ' + a + ' + ' + b;  
                 return question;
 	},
 	
