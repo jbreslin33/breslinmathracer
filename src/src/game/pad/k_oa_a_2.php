@@ -45,7 +45,7 @@ Extends: Pad,
                 {
                         //tip header
                         this.mShapeArray[2].setPosition(140,200);
-                        this.mShapeArray[2].setSize(200,25);
+                        this.mShapeArray[2].setSize(200,10);
                         this.mShapeArray[2].setVisibility(true);
                         if (this.mQuiz.getQuestion().mTipArray.length == 1)
                         {
@@ -59,28 +59,28 @@ Extends: Pad,
                         if (this.mQuiz.getQuestion().mTipArray.length > 0)
                         {
                                 this.mShapeArray[3].setPosition(140,225);
-                                this.mShapeArray[3].setSize(200,25);
+                                this.mShapeArray[3].setSize(250,10);
                                 this.mShapeArray[3].setVisibility(true);
                                 this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[0];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 1)
                         {
                                 this.mShapeArray[4].setPosition(140,250);
-                        	this.mShapeArray[4].setSize(200,25);
+                        	this.mShapeArray[4].setSize(250,10);
                                 this.mShapeArray[4].setVisibility(true);
                                 this.mShapeArray[4].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[1];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 2)
                         {
                                 this.mShapeArray[5].setPosition(140,275);
-                        	this.mShapeArray[5].setSize(200,25);
+                        	this.mShapeArray[5].setSize(250,10);
                                 this.mShapeArray[5].setVisibility(true);
                                 this.mShapeArray[5].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[2];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
                                 this.mShapeArray[6].setPosition(140,300);
-                        	this.mShapeArray[6].setSize(200,25);
+                        	this.mShapeArray[6].setSize(250,10);
                                 this.mShapeArray[6].setVisibility(true);
                                 this.mShapeArray[6].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[3];
 			}
