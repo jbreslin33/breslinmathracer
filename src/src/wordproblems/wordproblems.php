@@ -105,7 +105,8 @@ var WordProblems = new Class(
                 var question = new Question('' + questionText,'' + addendA);
                 return question;
 	},	
-	
+
+	//1 grade..	
 	getAdditionQuestion: function(maxsum,addends)
 	{
 		if (addends == 2)
@@ -267,7 +268,5 @@ var WordProblems = new Class(
                 var question = new Question('' + questionText,'' + amountOfTens);
                 return question;
 	
-	},
-
-
+	}
 });
