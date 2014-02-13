@@ -4,7 +4,7 @@ var WordProblems = new Class(
 	{
 	
 	},
-	
+
 	//k.oa.a.2
 	k_oa_a_2_A: function()
 	{
