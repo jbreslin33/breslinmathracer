@@ -273,7 +273,7 @@ var WordProblems = new Class(
                 //okay we have a valid sum and plural addends
                 questionText = 'Macon and Parker picked up the crayons they spilled onto the floor. When they put all the crayons back in the box, there were ';
                 questionText = questionText + '' + sum;
-                questionText = questionText + ' crayons in the box. He knows that he put ';
+                questionText = questionText + ' crayons in the box. Macon knows that he put ';
                 questionText = questionText + '' + addendB;
                 questionText = questionText + ' crayons in. How many crayons did Parker put in the box?';
 
@@ -365,7 +365,7 @@ var WordProblems = new Class(
                 var sum = 100;
                 var questionText = '';
 
-                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1 || addendB < addendA)
                 {
                 	addendA = Math.floor((Math.random()*20));
                         addendB = Math.floor((Math.random()*20));
@@ -399,17 +399,13 @@ var WordProblems = new Class(
                 //okay we have a valid sum and plural addends
                 questionText = 'Carson has ';
                 questionText = questionText + '' + addendA;
-                questionText = questionText + ' plastic bugs in his collection. He has';
+                questionText = questionText + ' plastic bugs in his collection. He has ';
                 questionText = questionText + '' + addendB;
                 questionText = questionText + ' more bugs than his brother has. How many bugs does his brother have?';
 
                 var question = new Question('' + questionText,'' + sum);
                 return question;
 	},
-
-
-
-
 
 	getAdditionQuestion: function(maxsum,addends)
 	{
@@ -420,7 +416,7 @@ var WordProblems = new Class(
 			var sum = 100;
 			var questionText = '';
 
-			while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+			while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1 || addendA < addendB)
 			{
 				addendA = Math.floor((Math.random()*20));		
 				addendB = Math.floor((Math.random()*20));		
