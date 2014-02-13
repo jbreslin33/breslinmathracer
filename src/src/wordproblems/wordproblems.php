@@ -21,7 +21,7 @@ var WordProblems = new Class(
                 
 		//okay we have a valid sum and plural addends
                 questionText = textA;
-                questionText = questionText + ' ' + a;
+                questionText = questionText + ' ' + a + ' ';
                 questionText = questionText + textB;
                 questionText = questionText + ' ' + b + ' ';
                 questionText = questionText + textC;
