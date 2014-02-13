@@ -70,12 +70,12 @@ Extends: Pad,
 				}
 				if (randomChance == 2)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_C());
+       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
 					totalC++;
 				}
 				if (randomChance == 3)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_D());
+       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
 					totalD++;
 				}
 			}
