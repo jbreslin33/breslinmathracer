@@ -59,13 +59,13 @@ Extends: Pad,
 				this.log('s:' + s);
 				if (randomChance == 0)
 				{
-					this.log('makeXAB:');
-       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXAB(2,9,2,9,2,9,'Luke had','toy cars. His cousin Mikey brings', 'toy cars to play with Luke. How many cars do the boys have to play with now?'));
+       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Luke had','toy cars. His cousin Mikey brings', 'toy cars to play with Luke. How many cars do the boys have to play with now?'));
 					totalA++;
 				}	
+
 				if (randomChance == 1)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_B());
+       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Brent had',' books about dinosaurs. He got', 'more books about dinasaurs from the library. How many books about dinosaurs does Brent have now?'));
 					totalB++;
 				}
 				if (randomChance == 2)
