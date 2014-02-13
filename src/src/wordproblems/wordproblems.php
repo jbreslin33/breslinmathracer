@@ -206,6 +206,30 @@ var WordProblems = new Class(
                 var question = new Question('' + questionText,'' + addendB);
                 return question;
 	},
+	g1_oa_a_1_E: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Molly had some ladybug stickers. She gave ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' of the stickers to her sister and kept ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' for herself. How many stickers did Molly have to begin with?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
+	},
 
 	getAdditionQuestion: function(maxsum,addends)
 	{

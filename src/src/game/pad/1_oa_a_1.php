@@ -48,8 +48,9 @@ Extends: Pad,
 		var totalB = 0;
 		var totalC = 0;
 		var totalD = 0;
+		var totalE = 0;
 
-		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1)
+		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -57,7 +58,7 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*4));		
+				var randomChance = Math.floor((Math.random()*5));		
 				if (randomChance == 0)
 				{
 					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_A());
@@ -77,6 +78,11 @@ Extends: Pad,
 				{
 					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_D());
 					totalD++;
+				}
+				if (randomChance == 4)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_E());
+					totalE++;
 				}
 			}
 		}
