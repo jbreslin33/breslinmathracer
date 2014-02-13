@@ -23,9 +23,12 @@ Extends: Pad,
         showCorrectAnswerEnter: function()
         {
 		this.parent();
-
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(140,140);
+                
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+       
+		//move dont forget 
+	        this.mShapeArray[9].setPosition(650,300);
         },
 
         //outOfTime
@@ -37,6 +40,9 @@ Extends: Pad,
 
                 this.mShapeArray[1].setSize(200,200);
                 this.mShapeArray[1].setPosition(140,140);
+	      
+		//move frantic clock 
+		this.mShapeArray[8].setPosition(650,300);
         },
 
     	tip: function()
@@ -58,28 +64,28 @@ Extends: Pad,
 
                         if (this.mQuiz.getQuestion().mTipArray.length > 0)
                         {
-                                this.mShapeArray[3].setPosition(140,225);
+                                this.mShapeArray[3].setPosition(140,210);
                                 this.mShapeArray[3].setSize(250,10);
                                 this.mShapeArray[3].setVisibility(true);
                                 this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[0];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 1)
                         {
-                                this.mShapeArray[4].setPosition(140,250);
+                                this.mShapeArray[4].setPosition(140,280);
                         	this.mShapeArray[4].setSize(250,10);
                                 this.mShapeArray[4].setVisibility(true);
                                 this.mShapeArray[4].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[1];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 2)
                         {
-                                this.mShapeArray[5].setPosition(140,275);
+                                this.mShapeArray[5].setPosition(140,320);
                         	this.mShapeArray[5].setSize(250,10);
                                 this.mShapeArray[5].setVisibility(true);
                                 this.mShapeArray[5].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[2];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
-                                this.mShapeArray[6].setPosition(140,300);
+                                this.mShapeArray[6].setPosition(140,340);
                         	this.mShapeArray[6].setSize(250,10);
                                 this.mShapeArray[6].setVisibility(true);
                                 this.mShapeArray[6].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[3];
@@ -119,16 +125,25 @@ Extends: Pad,
 				if (randomChance == 1)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Brent had',' books about dinosaurs. He got', 'more books about dinasaurs from the library. How many books about dinosaurs does Brent have now?'));
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
 					totalB++;
 				}
 				if (randomChance == 2)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
 					totalC++;
 				}
 				if (randomChance == 3)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
 					totalD++;
 				}
 			}
