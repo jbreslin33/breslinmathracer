@@ -230,6 +230,29 @@ var WordProblems = new Class(
                 var question = new Question('' + questionText,'' + sum);
                 return question;
 	},
+	g1_oa_a_1_F: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' and Ethan brought ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' pots. They had just enough pots to put one flower in each pot. How many flowers did they have?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
 
 	getAdditionQuestion: function(maxsum,addends)
 	{

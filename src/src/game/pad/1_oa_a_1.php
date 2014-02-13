@@ -49,8 +49,9 @@ Extends: Pad,
 		var totalC = 0;
 		var totalD = 0;
 		var totalE = 0;
+		var totalF = 0;
 
-		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1)
+		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -83,6 +84,11 @@ Extends: Pad,
 				{
 					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_E());
 					totalE++;
+				}
+				if (randomChance == 5)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_F());
+					totalF++;
 				}
 			}
 		}
