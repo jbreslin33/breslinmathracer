@@ -46,30 +46,21 @@ Extends: Pad,
 		var totalB = 0;
 		var totalC = 0;
 		var totalD = 0;
-		var totalAGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalBGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalCGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
-		var totalDGoal = parseInt( parseInt(this.mScoreNeeded / 2) - parseInt(1));
 
-		while (totalA < totalAGoal || totalB < totalBGoal || totalC < totalCGoal || totalD < totalDGoal)
+		while (totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2 || totalD < this.mScoreNeeded * .2)
 		{	
-			//RESET as we have either just started or failed to reach totalNewGoal
-			totalNew = 0;
-			for (d = 0; d < this.mQuiz.mQuestionArray.length; d++)
-			{
-				this.mQuiz.mQuestionArray[d] = 0;
-			} 
-			this.mQuiz.mQuestionArray = 0;
-			this.mQuiz.mQuestionArray = new Array();
+			this.mQuiz.resetQuestionArray();
 
 			//ADD questions
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*4));		
+				this.log('s:' + s);
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.k_oa_a_2_A());
+					this.log('makeXAB:');
+       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXAB(2,9,2,9,2,9,'Luke had','toy cars. His cousin Mikey brings', 'toy cars to play with Luke. How many cars do the boys have to play with now?'));
 					totalA++;
 				}	
 				if (randomChance == 1)
