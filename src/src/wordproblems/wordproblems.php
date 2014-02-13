@@ -48,7 +48,7 @@ var WordProblems = new Class(
                 //okay we have a valid sum and plural addends
                 questionText = 'Carlos had ';
                 questionText = questionText + '' + addendA;
-                questionText = questionText + ' about dinosaurs. She got ';
+                questionText = questionText + ' books about dinosaurs. He got ';
                 questionText = questionText + '' + addendB;
                 questionText = questionText + ' more books about dinosaurs from the library. How many dinosaur books does Carlos have now?';
 
@@ -71,13 +71,13 @@ var WordProblems = new Class(
                         sum = addendA + addendB;
                 }
                 //okay we have a valid sum and plural addends
-                questionText = 'Carlos had ';
+                questionText = 'Nicole had ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' stuffed animals. She put ';
                 questionText = questionText + '' + addendA;
-                questionText = questionText + ' about dinosaurs. She got ';
-                questionText = questionText + '' + addendB;
-                questionText = questionText + ' more books about dinosaurs from the library. How many dinosaur books does Carlos have now?';
+                questionText = questionText + ' of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Nicole leave on the bed?';
 
-                var question = new Question('' + questionText,'' + sum);
+                var question = new Question('' + questionText,'' + addendB);
                 return question;
 	},
 
@@ -96,13 +96,13 @@ var WordProblems = new Class(
                         sum = addendA + addendB;
                 }
                 //okay we have a valid sum and plural addends
-                questionText = 'Carlos had ';
-                questionText = questionText + '' + addendA;
-                questionText = questionText + ' about dinosaurs. She got ';
+                questionText = 'John had ';
+                questionText = questionText + '' + sum; 
+                questionText = questionText + ' pencils in his box. He gave ';
                 questionText = questionText + '' + addendB;
-                questionText = questionText + ' more books about dinosaurs from the library. How many dinosaur books does Carlos have now?';
+                questionText = questionText + ' of them to Calvin. How many pencils does John have in his box now?';
 
-                var question = new Question('' + questionText,'' + sum);
+                var question = new Question('' + questionText,'' + addendA);
                 return question;
 	},	
 	
