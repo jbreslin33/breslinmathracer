@@ -10,6 +10,7 @@ Extends: Pad,
 		this.setScoreNeeded(20);
 
 		this.mThresholdTime = 120000;
+             	this.mCorrectAnswerThresholdTime = 30000;
 
                 //input pad
                 this.mInputPad = new BigQuestionNumberPad(application);
@@ -35,7 +36,7 @@ Extends: Pad,
                 this.mShapeArray[0].setPosition(400,50);
 
                 this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(100,100);
+                this.mShapeArray[1].setPosition(140,140);
         },
 
     	tip: function()
@@ -43,7 +44,7 @@ Extends: Pad,
                 if (this.mQuiz.getQuestion().mTipArray.length > 0)
                 {
                         //tip header
-                        this.mShapeArray[2].setPosition(200,350);
+                        this.mShapeArray[2].setPosition(200,250);
                         this.mShapeArray[2].setVisibility(true);
                         if (this.mQuiz.getQuestion().mTipArray.length == 1)
                         {
@@ -56,19 +57,19 @@ Extends: Pad,
 
                         if (this.mQuiz.getQuestion().mTipArray.length > 0)
                         {
-                                this.mShapeArray[3].setPosition(200,400);
+                                this.mShapeArray[3].setPosition(200,300);
                                 this.mShapeArray[3].setVisibility(true);
                                 this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[0];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 1)
                         {
-                                this.mShapeArray[4].setPosition(200,500);
+                                this.mShapeArray[4].setPosition(200,400);
                                 this.mShapeArray[4].setVisibility(true);
                                 this.mShapeArray[4].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[1];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 2)
                         {
-                                this.mShapeArray[5].setPosition(200,600);
+                                this.mShapeArray[5].setPosition(200,500);
                                 this.mShapeArray[5].setVisibility(true);
                                 this.mShapeArray[5].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[2];
                         }
