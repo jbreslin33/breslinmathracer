@@ -2,7 +2,75 @@ var WordProblems = new Class(
 {
 	initialize: function()
 	{
+	
 	},
+	
+	//k.oa.a.2
+
+	kPuttingTogetherTotalUnknown: function()
+	{
+      		if (addends == 2)
+                {
+                        var addendA = 0;
+                        var addendB = 0;
+                        var sum = 100;
+                        var questionText = '';
+
+                        while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                        {
+                                addendA = Math.floor((Math.random()*20));
+                                addendB = Math.floor((Math.random()*20));
+                                sum = addendA + addendB;
+                        }
+                        //okay we have a valid sum and plural addends
+                        questionText = 'Josh had ';
+                        questionText = questionText + '' + addendA;
+                        questionText = questionText + ' toy cars. His friend Matt brings ';
+                        questionText = questionText + '' + addendB;
+                        questionText = questionText + ' toy cars to play with Josh. How many cars do the boys have to play with now?';
+
+                        var question = new Question('' + questionText,'' + sum);
+                        return question;
+                }
+	},
+
+	kAddingTo: function()
+	{
+      		if (addends == 2)
+                {
+                        var addendA = 0;
+                        var addendB = 0;
+                        var sum = 100;
+                        var questionText = '';
+
+                        while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                        {
+                                addendA = Math.floor((Math.random()*20));
+                                addendB = Math.floor((Math.random()*20));
+                                sum = addendA + addendB;
+                        }
+                        //okay we have a valid sum and plural addends
+                        questionText = 'Carlos had ';
+                        questionText = questionText + '' + addendA;
+                        questionText = questionText + ' about dinosaurs. She got ';
+                        questionText = questionText + '' + addendB;
+                        questionText = questionText + ' more books about dinosaurs from the library. How many dinosaur books does Carlos have now?';
+
+                        var question = new Question('' + questionText,'' + sum);
+                        return question;
+                }
+
+	},
+	
+	kTakingApartAddendUnknown: function()
+	{
+
+	},
+
+	kTakingFrom: function()
+	{
+
+	},	
 	
 	getAdditionQuestion: function(maxsum,addends)
 	{
@@ -165,5 +233,7 @@ var WordProblems = new Class(
                 var question = new Question('' + questionText,'' + amountOfTens);
                 return question;
 	
-	}
+	},
+
+
 });
