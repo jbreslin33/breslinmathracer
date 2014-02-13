@@ -44,10 +44,12 @@ Extends: Pad,
         {
  		this.parent();
 		
-		var totalAddition        = 0;
-		var totalSubtraction     = 0;
+		var totalA = 0;
+		var totalB = 0;
+		var totalC = 0;
+		var totalD = 0;
 
-		while (totalAddition < this.mScoreNeeded * .4 || totalSubtraction < this.mScoreNeeded * .4)
+		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -55,16 +57,26 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*2));		
+				var randomChance = Math.floor((Math.random()*4));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getAdditionQuestion(20,2));
-					totalAddition++;
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_A());
+					totalA++;
 				}	
 				if (randomChance == 1)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.getSubtractionQuestion(20));
-					totalSubtraction++;
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_B());
+					totalB++;
+				}
+				if (randomChance == 2)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_C());
+					totalC++;
+				}
+				if (randomChance == 3)
+				{
+					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_D());
+					totalD++;
 				}
 			}
 		}

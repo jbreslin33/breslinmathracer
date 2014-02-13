@@ -107,6 +107,106 @@ var WordProblems = new Class(
 	},	
 
 	//1 grade..	
+	g1_oa_a_1_A: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Brandon had ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' toy cars. He bought ';
+                questionText = questionText + '' + addendB;
+                questionText = questionText + ' more at a yard sale. How many toy cars does Brandon have now?';
+
+                var question = new Question('' + questionText,'' + sum);
+                return question;
+	},
+
+	g1_oa_a_1_B: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Aubrey had some seashells in a box. She found ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' more seashells in her closet and put them in the box. Now there are ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' seashells in the box. How many seashells were in the box to begin with?';
+
+                var question = new Question('' + questionText,'' + addendB);
+                return question;
+	},
+
+	g1_oa_a_1_C: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Anna had ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' dog treats. She gave ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' to her puppy. How many dog treats does Anna have now?';
+
+                var question = new Question('' + questionText,'' + addendB);
+                return question;
+	},
+
+	g1_oa_a_1_D: function()
+	{
+        	var addendA = 0;
+                var addendB = 0;
+		var maxsum = 19; 
+                var sum = 100;
+                var questionText = '';
+
+                while (sum > maxsum || addendA == 0 || addendA == 1 || addendB == 0 || addendB == 1)
+                {
+                	addendA = Math.floor((Math.random()*20));
+                        addendB = Math.floor((Math.random()*20));
+                        sum = addendA + addendB;
+                }
+                //okay we have a valid sum and plural addends
+                questionText = 'Issac had ';
+                questionText = questionText + '' + sum;
+                questionText = questionText + ' quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had  ';
+                questionText = questionText + '' + addendA;
+                questionText = questionText + ' quarters left in his pocket. How many fell out?';
+
+                var question = new Question('' + questionText,'' + addendB);
+                return question;
+	},
+
 	getAdditionQuestion: function(maxsum,addends)
 	{
 		if (addends == 2)
