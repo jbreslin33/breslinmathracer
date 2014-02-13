@@ -44,7 +44,7 @@ Extends: Pad,
                 if (this.mQuiz.getQuestion().mTipArray.length > 0)
                 {
                         //tip header
-                        this.mShapeArray[2].setPosition(200,250);
+                        this.mShapeArray[2].setPosition(200,200);
                         this.mShapeArray[2].setVisibility(true);
                         if (this.mQuiz.getQuestion().mTipArray.length == 1)
                         {
@@ -57,19 +57,19 @@ Extends: Pad,
 
                         if (this.mQuiz.getQuestion().mTipArray.length > 0)
                         {
-                                this.mShapeArray[3].setPosition(200,300);
+                                this.mShapeArray[3].setPosition(200,225);
                                 this.mShapeArray[3].setVisibility(true);
                                 this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[0];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 1)
                         {
-                                this.mShapeArray[4].setPosition(200,400);
+                                this.mShapeArray[4].setPosition(200,250);
                                 this.mShapeArray[4].setVisibility(true);
                                 this.mShapeArray[4].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[1];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 2)
                         {
-                                this.mShapeArray[5].setPosition(200,500);
+                                this.mShapeArray[5].setPosition(200,275);
                                 this.mShapeArray[5].setVisibility(true);
                                 this.mShapeArray[5].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[2];
                         }
@@ -99,6 +99,7 @@ Extends: Pad,
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Luke had','toy cars. His cousin Mikey brings', 'toy cars to play with Luke. How many cars do the boys have to play with now?'));
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
 					totalA++;
 				}	
 
