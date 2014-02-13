@@ -27,6 +27,7 @@ var WordProblems = new Class(
                 questionText = questionText + textC;
 
                 var question = new Question('' + questionText,'' + x);
+		question.mTipArray[0] = '' + x + ' = ' + a + ' + ' + b;  
                 return question;
 	},
 	
@@ -52,108 +53,9 @@ var WordProblems = new Class(
                 questionText = questionText + textC;
 
                 var question = new Question('' + questionText,'' + x);
+		question.mTipArray[0] = '' + x + ' = ' + a + ' - ' + b;  
                 return question;
 	},
-
-	//k.oa.a.2
-	//a + b = x
-	k_oa_a_2_A: function()
-	{
-        	var a = 0;
-                var b = 0;
-		var x = 100; 
-                var questionText = '';
-                
-                while (x > 9 || a == 0 || a == 1 || b == 0 || b == 1 )
-                {
-                	a = Math.floor((Math.random()*10));
-                        b = Math.floor((Math.random()*10));
-                        x = a + b;
-                }
-                //okay we have a valid sum and plural addends
-                questionText = 'Josh had ';
-                questionText = questionText + '' + a;
-                questionText = questionText + ' toy cars. His friend Matt brings ';
-                questionText = questionText + '' + b;
-                questionText = questionText + ' toy cars to play with Josh. How many cars do the boys have to play with now?';
-
-                var question = new Question('' + questionText,'' + x);
-                return question;
-	},
-
-	//a + b = x
-	k_oa_a_2_B: function()
-	{
-        	var a = 0;
-                var b = 0;
-		var x = 100; 
-                var questionText = '';
-
-                while (x > 9 || a == 0 || a == 1 || b == 0 || b == 1 )
-                {
-                        a = Math.floor((Math.random()*10));
-                        b = Math.floor((Math.random()*10));
-                        x = a + b;
-                }
-                //okay we have a valid sum and plural addends
-                questionText = 'Carlos had ';
-                questionText = questionText + '' + a;
-                questionText = questionText + ' books about dinosaurs. He got ';
-                questionText = questionText + '' + b;
-                questionText = questionText + ' more books about dinosaurs from the library. How many dinosaur books does Carlos have now?';
-
-                var question = new Question('' + questionText,'' + x);
-                return question;
-	},
-	
-	//a - b = x
-	k_oa_a_2_C: function()
-	{
-        	var a = 0;
-                var b = 0;
-		var x = 100; 
-                var questionText = '';
-
-                while (x > 9 || a == 0 || a == 1 || b == 0 || b == 1 || a < b )
-                {
-                        a = Math.floor((Math.random()*10));
-                        b = Math.floor((Math.random()*10));
-                        x = a - b;
-                }
-                //okay we have a valid sum and plural addends
-                questionText = 'Nicole had ';
-                questionText = questionText + '' + a;
-                questionText = questionText + ' stuffed animals. She put ';
-                questionText = questionText + '' + b;
-                questionText = questionText + ' of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Nicole leave on the bed?';
-
-                var question = new Question('' + questionText,'' + x);
-                return question;
-	},
-
-	k_oa_a_2_D: function()
-	{
-        	var a = 0;
-                var b = 0;
-		var x = 100; 
-                var questionText = '';
-
-                while (x > 9 || a == 0 || a == 1 || b == 0 || b == 1 || a < b )
-                {
-                        a = Math.floor((Math.random()*10));
-                        b = Math.floor((Math.random()*10));
-                        x = a - b;
-                }
-                //okay we have a valid sum and plural addends
-                questionText = 'John had ';
-                questionText = questionText + '' + a; 
-                questionText = questionText + ' pencils in his box. He gave ';
-                questionText = questionText + '' + b;
-                questionText = questionText + ' of them to Calvin. How many pencils does John have in his box now?';
-
-                var question = new Question('' + questionText,'' + x);
-                return question;
-	},	
 
 	//1 grade..	
 	g1_oa_a_1_A: function()
