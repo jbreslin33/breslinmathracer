@@ -14,9 +14,6 @@ Extends: Pad,
 
                 //input pad
                 this.mInputPad = new BigQuestionNumberPad(application);
-
-		//word problems
-		this.mWordProblems = new WordProblems();
 	},
 
      	//showCorrectAnswer
