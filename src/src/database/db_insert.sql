@@ -38,6 +38,8 @@ insert into learning_standards (id,ref_id,progression,levels) values ('1.md.b.3'
 insert into learning_standards (id,ref_id,progression,levels) values ('2.oa.a.1','800715566B824BB3A5A8C464E961C2B3',201,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('2.oa.b.2','800715566B824BB3A5A8C464E961C2B4',202,364);
 insert into learning_standards (id,ref_id,progression,levels) values ('3.oa.c.7','3D384CB2349B41299A3B5A133AB9E3F8',301,218);
+insert into learning_standards (id,ref_id,progression,levels) values ('4.oa.a.1','7828B4F15ABD40E19EF14DDE0EB399DF',401,20);
+insert into learning_standards (id,ref_id,progression,levels) values ('4.oa.a.2','062925BDC19347E8890A6D7390DF3842',402,20);
 
 ----*****-----%%%%%%-----&&&&&&------######-------@@@@@ SKIP AHEAD SECTION FOR LEVELS
 --(CONTINUED PASSWORDS).......

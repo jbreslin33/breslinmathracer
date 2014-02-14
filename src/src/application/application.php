@@ -651,6 +651,32 @@ var Application = new Class(
                                	this.mGame = new g3_oa_c_7(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '7828B4F15ABD40E19EF14DDE0EB399DF')
+		{ 
+             		if (this.mGameName != "g4_oa_a_1")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_oa_a_1";
+                               	this.mGame = new g4_oa_a_1(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '062925BDC19347E8890A6D7390DF3842')
+		{ 
+             		if (this.mGameName != "g4_oa_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_oa_a_2";
+                               	this.mGame = new g4_oa_a_2(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)

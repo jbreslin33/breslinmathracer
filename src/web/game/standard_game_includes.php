@@ -88,5 +88,7 @@
 <script type="text/javascript" src="/src/game/pad/2_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_oa_b_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_c_7.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_oa_a_2.php"></script>
 
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
