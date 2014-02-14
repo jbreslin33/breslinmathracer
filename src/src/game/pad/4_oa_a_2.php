@@ -82,39 +82,16 @@ Extends: Pad,
  		this.parent();
 
 		//a
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Chris had','toy cars. His friend Albert brings', 'toy cars to play with Julian. How many cars do they have to play with now?',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,100,2,10,2,10,'Tennis Steve had','diamonds. Athletic Steve had','times that amount of diamonds. How many diamonds does Athletic Steve have?',3));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Tennis Steve diamonds times AMOUNT = Athletic Steve diamonds';
 		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Zuyanna had','rings. Her friend Iris gave her', ' more rings. How many rings does Zuyanna have now?',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
-
-		//b
-       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Jaavon had','books about dinosaurs. He got', 'more books about dinosaurs from the library. How many books about dinosaurs does Jaavon have now?',0));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
-       		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Michael had','baseballs. He got ', 'more baseballs from his friend. How many baseballs does Michael have now?',0));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
-	
-		//c	
-       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Jasmine had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Jasmine leave on the bed.',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had on bed - put on chair = on bed';
-       		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Leah had',' cookies. She ate', 'of them. She left the rest of the cookies for Santa Claus. How many cookies did Leah leave for Santa Claus.',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - ate = left for Santa Claus';
-
-		//d
-       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Devin had','pencils in his box. He gave', 'of them to Zabriana. How many pencils does Devin have in his box now?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
-
-       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Tanya had','erasers in her case. She gave', 'of them to Ny. How many erasers does Tanya have in her case now?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,100,2,10,2,10,'Tennis Steve had','diamonds. Athletic Steve had','times that amount of diamonds. How many diamonds does Athletic Steve have?',3));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Tennis Steve diamonds times AMOUNT = Athletic Steve diamonds';
 
 		var totalA = 0;
 		var totalB = 0;
-		var totalC = 0;
-		var totalD = 0;
 
-		while (totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2 || totalD < this.mScoreNeeded * .2)
+		while (totalA < this.mScoreNeeded * .4 || totalB < this.mScoreNeeded * .4) 
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -122,27 +99,16 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*8));		
-				if (randomChance < 2)
+				var randomChance = Math.floor((Math.random()*2));		
+				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalA++;
 				}	
-
-				else if (randomChance > 1 && randomChance < 4 )
+				if (randomChance == 1)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalB++;
-				}
-				else if (randomChance > 3 && randomChance < 6 )
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalC++;
-				}
-				else if (randomChance > 5 && randomChance < 8 )
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalD++;
 				}
 			}
 		}

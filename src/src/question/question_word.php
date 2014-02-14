@@ -27,6 +27,10 @@ Extends: Question,
 			{
 				x = a - b;
 			}
+			else if (type == 3)
+			{
+                        	x = a * b;
+			}
                 }
 		
 		//valid parameters so make the question...
@@ -49,6 +53,11 @@ Extends: Question,
 		{
                 	this.mTipArray[2] = 'a - b = x';
                 	this.mTipArray[3] = '' + a + ' - ' + b + ' = ' + x;
+		}
+		else if (type == 2)
+		{
+                	this.mTipArray[2] = 'a X b = x';
+                	this.mTipArray[3] = '' + a + ' X ' + b + ' = ' + x;
 		}
         }
 });
