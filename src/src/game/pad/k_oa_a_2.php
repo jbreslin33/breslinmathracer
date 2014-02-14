@@ -68,28 +68,28 @@ Extends: Pad,
                                 this.mShapeArray[3].setPosition(380,150);
                                 this.mShapeArray[3].setSize(700,10);
                                 this.mShapeArray[3].setVisibility(true);
-                                this.mShapeArray[3].mMesh.innerHTML = 'Step 1: ' + this.mQuiz.getQuestion().mTipArray[0];
+                                this.mShapeArray[3].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[0];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 1)
                         {
                                 this.mShapeArray[4].setPosition(380,200);
                         	this.mShapeArray[4].setSize(700,10);
                                 this.mShapeArray[4].setVisibility(true);
-                                this.mShapeArray[4].mMesh.innerHTML = 'Step 2: ' + this.mQuiz.getQuestion().mTipArray[1];
+                                this.mShapeArray[4].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[1];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 2)
                         {
                                 this.mShapeArray[5].setPosition(380,250);
                         	this.mShapeArray[5].setSize(700,10);
                                 this.mShapeArray[5].setVisibility(true);
-                                this.mShapeArray[5].mMesh.innerHTML = 'Step 3: ' + this.mQuiz.getQuestion().mTipArray[2];
+                                this.mShapeArray[5].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[2];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
                                 this.mShapeArray[6].setPosition(380,300);
                         	this.mShapeArray[6].setSize(700,10);
                                 this.mShapeArray[6].setVisibility(true);
-                                this.mShapeArray[6].mMesh.innerHTML = 'Step 4: ' + this.mQuiz.getQuestion().mTipArray[3];
+                                this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
 			}
                 }
         },
@@ -118,33 +118,29 @@ Extends: Pad,
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Luke had','toy cars. His cousin Mikey brings', 'toy cars to play with Luke. How many cars do the boys have to play with now?'));
 					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'boys cars = Luke cars + Mikey cars';
 					totalA++;
 				}	
 
 				if (randomChance == 1)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Brent had',' books about dinosaurs. He got', 'more books about dinasaurs from the library. How many books about dinosaurs does Brent have now?'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = had, b = got, x = has';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'had + got = has';
 					totalB++;
 				}
 				if (randomChance == 2)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = total, b = put on chair, x = on bed';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'total - put on chair = on bed';
 					totalC++;
 				}
 				if (randomChance == 3)
 				{
-       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Total cars = Luke cars + Mikey cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[2] = 'a + b = x';
+       					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Max had','pencils in his box. He gave', 'of them to Lyle. How many pencils does Max have in his box now?'));
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Max had, b = gave to Lyle, x = Max has';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Max had - gave to Lyle = Max has';
 					totalD++;
 				}
 			}

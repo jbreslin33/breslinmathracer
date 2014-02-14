@@ -27,6 +27,7 @@ var WordProblems = new Class(
                 questionText = questionText + textC;
 
                 var question = new Question('' + questionText,'' + x);
+		question.mTipArray[2] = 'a + b = x';  
 		question.mTipArray[3] = '' + x + ' = ' + a + ' + ' + b;  
                 return question;
 	},
@@ -53,7 +54,8 @@ var WordProblems = new Class(
                 questionText = questionText + textC;
 
                 var question = new Question('' + questionText,'' + x);
-		question.mTipArray[0] = '' + x + ' = ' + a + ' - ' + b;  
+		question.mTipArray[2] = 'a - b = x';  
+		question.mTipArray[3] = '' + a + ' - ' + b + ' = ' + x;  
                 return question;
 	},
 
