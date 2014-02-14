@@ -117,30 +117,30 @@ Extends: Pad,
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Luke had','toy cars. His cousin Mikey brings', 'toy cars to play with Luke. How many cars do the boys have to play with now?'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'boys cars = Luke cars + Mikey cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'boys cars = Luke cars + Mikey cars';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'a = Luke cars, b = Mikey cars, x = Boys cars';
 					totalA++;
 				}	
 
 				if (randomChance == 1)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeApB(2,9,2,9,2,9,'Brent had',' books about dinosaurs. He got', 'more books about dinasaurs from the library. How many books about dinosaurs does Brent have now?'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = had, b = got, x = has';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'had + got = has';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'had + got = has';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'a = had, b = got, x = has';
 					totalB++;
 				}
 				if (randomChance == 2)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Emerald had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Emerald leave on the bed.'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = total, b = put on chair, x = on bed';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'total - put on chair = on bed';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'total - put on chair = on bed';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'a = total, b = put on chair, x = on bed';
 					totalC++;
 				}
 				if (randomChance == 3)
 				{
        					this.mQuiz.mQuestionArray.push(this.mWordProblems.makeXeAmB(2,9,2,9,2,9,'Max had','pencils in his box. He gave', 'of them to Lyle. How many pencils does Max have in his box now?'));
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'a = Max had, b = gave to Lyle, x = Max has';
-					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'Max had - gave to Lyle = Max has';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'Max had - gave to Lyle = Max has';
+					this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[1] = 'a = Max had, b = gave to Lyle, x = Max has';
 					totalD++;
 				}
 			}
