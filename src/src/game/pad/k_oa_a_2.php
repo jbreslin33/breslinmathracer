@@ -28,7 +28,8 @@ Extends: Pad,
                 this.mShapeArray[1].setPosition(380,80);
        
 		//move dont forget 
-	        this.mShapeArray[9].setPosition(650,300);
+	        this.mShapeArray[8].setVisibility(false);
+	        this.mShapeArray[9].setVisibility(false);
         },
 
         //outOfTime
@@ -50,7 +51,7 @@ Extends: Pad,
                 if (this.mQuiz.getQuestion().mTipArray.length > 0)
                 {
                         //tip header
-                        this.mShapeArray[2].setPosition(140,200);
+                        this.mShapeArray[2].setPosition(140,100);
                         this.mShapeArray[2].setSize(200,10);
                         this.mShapeArray[2].setVisibility(true);
                         if (this.mQuiz.getQuestion().mTipArray.length == 1)
@@ -64,31 +65,31 @@ Extends: Pad,
 
                         if (this.mQuiz.getQuestion().mTipArray.length > 0)
                         {
-                                this.mShapeArray[3].setPosition(140,210);
-                                this.mShapeArray[3].setSize(250,10);
+                                this.mShapeArray[3].setPosition(380,150);
+                                this.mShapeArray[3].setSize(700,10);
                                 this.mShapeArray[3].setVisibility(true);
-                                this.mShapeArray[3].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[0];
+                                this.mShapeArray[3].mMesh.innerHTML = 'Step 1: ' + this.mQuiz.getQuestion().mTipArray[0];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 1)
                         {
-                                this.mShapeArray[4].setPosition(140,280);
-                        	this.mShapeArray[4].setSize(250,10);
+                                this.mShapeArray[4].setPosition(380,200);
+                        	this.mShapeArray[4].setSize(700,10);
                                 this.mShapeArray[4].setVisibility(true);
-                                this.mShapeArray[4].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[1];
+                                this.mShapeArray[4].mMesh.innerHTML = 'Step 2: ' + this.mQuiz.getQuestion().mTipArray[1];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 2)
                         {
-                                this.mShapeArray[5].setPosition(140,320);
-                        	this.mShapeArray[5].setSize(250,10);
+                                this.mShapeArray[5].setPosition(380,250);
+                        	this.mShapeArray[5].setSize(700,10);
                                 this.mShapeArray[5].setVisibility(true);
-                                this.mShapeArray[5].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[2];
+                                this.mShapeArray[5].mMesh.innerHTML = 'Step 3: ' + this.mQuiz.getQuestion().mTipArray[2];
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
-                                this.mShapeArray[6].setPosition(140,340);
-                        	this.mShapeArray[6].setSize(250,10);
+                                this.mShapeArray[6].setPosition(380,300);
+                        	this.mShapeArray[6].setSize(700,10);
                                 this.mShapeArray[6].setVisibility(true);
-                                this.mShapeArray[6].mMesh.innerHTML = '' + this.mQuiz.getQuestion().mTipArray[3];
+                                this.mShapeArray[6].mMesh.innerHTML = 'Step 4: ' + this.mQuiz.getQuestion().mTipArray[3];
 			}
                 }
         },
