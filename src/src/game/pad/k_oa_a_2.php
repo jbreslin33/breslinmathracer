@@ -9,7 +9,7 @@ Extends: Pad,
 		
 		this.setScoreNeeded(20);
 
-		this.mThresholdTime = 120000;
+		this.mThresholdTime = 3000;
              	this.mCorrectAnswerThresholdTime = 10000;
 
                 //input pad
@@ -37,10 +37,10 @@ Extends: Pad,
         {
 		this.parent();
 
-                this.mShapeArray[0].setPosition(400,50);
+                this.mShapeArray[0].setPosition(650,170);
 
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(140,140);
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
 	      
 		//move frantic clock 
 		this.mShapeArray[8].setPosition(650,300);
