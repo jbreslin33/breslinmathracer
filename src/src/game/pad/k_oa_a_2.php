@@ -72,7 +72,7 @@ Extends: Pad,
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
-                                this.mShapeArray[6].setPosition(380,300);
+                                this.mShapeArray[6].setPosition(380,180);
                         	this.mShapeArray[6].setSize(700,10);
                                 this.mShapeArray[6].setVisibility(true);
                                 this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
