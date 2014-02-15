@@ -8,7 +8,7 @@ Extends: Pad,
        		this.parent(application);
 	       	
 		//input pad
-                this.mInputPad = new NumberPad(application);
+                this.mInputPad = new LongQuestionNumberPad(application);
 
 		this.setScoreNeeded(20);
 	},
