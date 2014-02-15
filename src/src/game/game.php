@@ -8,9 +8,6 @@ var Game = new Class(
         {
 		this.mApplication = application;
 
-               	//other pad
-                this.mInputPad = 0;
-
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
                 this.mUserAnswer = '';
@@ -21,6 +18,7 @@ var Game = new Class(
 
 		//total guiBar
 		this.mTotalGuiBars = 10;
+		this.mTotalInputBars = 19;
 		
 		//create control object
                 this.mControlObject = 0;
@@ -101,11 +99,6 @@ var Game = new Class(
 		//shapes and array
 		this.destroyShapes();
 
-		if (this.mInputPad)
-		{
-			this.mInputPad.destructor();
-		}
-	
 		//bounds
 		this.mBounds = 0;
 
@@ -187,18 +180,19 @@ var Game = new Class(
 			if (this.mQuiz.getQuestion())
 			{
                 		this.mQuiz.getQuestion().showShapes();
-                		if (this.mInputPad)
-                		{
- 					this.mQuiz.getQuestion().setChoices();
+ 				this.mQuiz.getQuestion().setChoices();
+				if (this.mNumQuestion)
+				{
+                                	this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
 				}
 			}
 		}
 	
-		//input pad?
-                if (this.mInputPad)
-                {
-                	this.mInputPad.showQuestion();
-                	this.mInputPad.showButtons();
+		//breslin need a number on this.	
+                for (i = 0; i < this.mShapeArray.length; i++)
+		{
+                        this.mShapeArray[i].setVisibility(true);
+
 		}
 	},
 
@@ -605,13 +599,13 @@ var Game = new Class(
 	levelPassedEnter: function()
 	{
 		this.mApplication.mLevelCompleted = true;
-		
-		if (this.mInputPad)
-		{
-                	this.mInputPad.hide();
-                	this.mInputPad.reset();
-		}
+	
+ 		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
 
+                }
+	
                 //user answer
                 this.mUserAnswer = '';
 
@@ -656,6 +650,11 @@ var Game = new Class(
 	//showCorrectAnswer
        	showCorrectAnswerEnter: function()
         {
+		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
 
                 this.mShapeArray[1].setPosition(400,175);
@@ -663,8 +662,6 @@ var Game = new Class(
                 this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
 
                 this.mShapeArray[9].setVisibility(true);
-
-                this.mInputPad.hide();
 
 		this.tip();
 	},
@@ -714,6 +711,11 @@ var Game = new Class(
 	//outOfTime
         outOfTimeEnter: function()
         {
+ 		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
                 this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
 
                 this.mShapeArray[0].setPosition(400,150);
@@ -726,8 +728,6 @@ var Game = new Class(
 
                 //frantic clock
                 this.mShapeArray[8].setVisibility(true);
-
-                this.mInputPad.hide();
 
 		this.tip();
         },
@@ -769,17 +769,11 @@ var Game = new Class(
 	//firstTime 
 	firstTimeEnter: function()
         {
-                if (this.mInputPad.mNumAnswer)
+                if (this.mNumAnswer)
                 {
-                        this.mInputPad.mNumAnswer.mMesh.value = '';
-                        this.mInputPad.mNumAnswer.mMesh.innerHTML =  '';
+                        this.mNumAnswer.mMesh.value = '';
+                        this.mNumAnswer.mMesh.innerHTML =  '';
                 }
-
-                //show inputPad
-                this.mInputPad.show();
-
-                //correctAnswer
-                //this.hideGuiBar();
 
                 //user answer
                 this.mUserAnswer = '';
