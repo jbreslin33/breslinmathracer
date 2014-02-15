@@ -30,7 +30,7 @@ Extends: Pad,
  		this.parent();
 
 		//add
-                this.mQuiz.mQuestionPoolArray.push(new Question('9 + ? = 10','1','9 + 1 = 10'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5','7','interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('8 + ? = 10','2','8 + 2 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('7 + ? = 10','3','7 + 3 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('6 + ? = 10','4','6 + 4 = 10'));
