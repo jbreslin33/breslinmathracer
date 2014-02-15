@@ -56,8 +56,12 @@ Extends: Pad,
 
 			var randomChance = Math.floor((Math.random()*5));		
 			
-
 			if (s == 0)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('Write ' + x + ' equals '  + a + ' times as many as ' + b + ' equals ' + b + ' times as many as ' + a + ' in numerical form with no blank spaces and a lowercase x for the times symbol.','' + x + '=' + a + 'x' + b + '=' + b + 'x' + a,'' + x + '=' + a + 'x' + b + '=' + b + 'x' + a));
+			}
+
+			else if (s == 1)
 			{
                			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ? is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + x,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 			}
