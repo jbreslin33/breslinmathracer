@@ -54,7 +54,7 @@ Extends: Pad,
 			var b = Math.floor((Math.random()*8)+3);		
 			var x = a * b;
 
-               		this.mQuiz.mQuestionArray.push(new Question('Interpret ' + x + ' = ' + a + ' x ' + b + ' as a statement that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.','' + b,'Interpret ' + x + ' = ' + a + ' x ' + b + ' as a statement that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.'));
+               		this.mQuiz.mQuestionArray.push(new Question('Interpret ' + x + ' = ' + a + ' x ' + b + ' as a statement that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.','' + b,'Interpret ' + x + ' = ' + a + ' x ' + b + ' as a statement that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 		}
 	}
 });
