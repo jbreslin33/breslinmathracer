@@ -42,21 +42,13 @@ Extends: Pad,
 
 		if (this.mApplication.mLevel == 1)
 		{
-			this.mQuiz.mAnswerPool.push('2 + 0');
-			this.mQuiz.mAnswerPool.push('1 + 1');
-			this.mQuiz.mAnswerPool.push('0 + 0');
-			this.mQuiz.mAnswerPool.push('3 + 0');
-			this.mQuiz.mAnswerPool.push('3 + 1');
-			this.mQuiz.mAnswerPool.push('1 + 2');
+			this.mQuiz.mAnswerPool.push('35 is 5 times as many as 5 and 7 times as many as 7');
+			this.mQuiz.mAnswerPool.push('5 is 35 times as many as 5 and 7 times as many as 7');
+			this.mQuiz.mAnswerPool.push('7 is 5 times as many as 35 and 5 times as many as 5');
 
-                       	var question = new Question('1 = ', '1 + 0');
+                       	var question = new Question('35 = 5 X 7', '35 is 5 times as many as 7 and 7 times as many as 5');
                        	this.mQuiz.mQuestionPoolArray.push(question);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
-
-                       	var question = new Question('1 = ', '0 + 1');
-                       	this.mQuiz.mQuestionPoolArray.push(question);
-			question.mAnswerPool = this.mQuiz.mAnswerPool;
-
 		}
 		if (this.mApplication.mLevel == 2)
 		{
