@@ -24,8 +24,8 @@ Extends: Pad,
                 this.mShapeArray[1].setPosition(380,80);
 
                 //move dont forget
-                this.mShapeArray[8].setVisibility(false);
-                this.mShapeArray[9].setVisibility(false);
+                //this.mShapeArray[8].setVisibility(false);
+                //this.mShapeArray[9].setVisibility(false);
                 
 		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
         },
