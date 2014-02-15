@@ -10,6 +10,8 @@ Extends: Pad,
 		//input pad
                 this.mInputPad = new BigQuestionNumberPad(application);
 
+		this.mThresholdTime = 120000;
+
 		this.setScoreNeeded(20);
 	},
 
