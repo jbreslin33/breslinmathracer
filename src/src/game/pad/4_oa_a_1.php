@@ -54,7 +54,17 @@ Extends: Pad,
 			var b = Math.floor((Math.random()*8)+3);		
 			var x = a * b;
 
-               		this.mQuiz.mQuestionArray.push(new Question('Interpret ' + x + ' = ' + a + ' x ' + b + ' as a statement that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.','' + b,'Interpret ' + x + ' = ' + a + ' x ' + b + ' as a statement that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+			var randomChance = Math.floor((Math.random()*2));		
+	
+			if (randomChance == 2)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.','' + b,'The equation ' + x + ' = ' + a + ' x ' + b + ' alson means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+
+			}
+			else if (randomChance < 2)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ? is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + b,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+			}
 		}
 	}
 });
