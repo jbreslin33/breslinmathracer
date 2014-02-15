@@ -8,21 +8,40 @@ Extends: Pad,
        		this.parent(application);
 	       	
 		//input pad
-                this.mInputPad = new LongQuestionNumberPad(application);
+                this.mInputPad = new BigQuestionNumberPad(application);
 
 		this.setScoreNeeded(20);
 	},
 
+     	//showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
-		this.parent();
-                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+                this.parent();
+
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+
+                //move dont forget
+                this.mShapeArray[8].setVisibility(false);
+                this.mShapeArray[9].setVisibility(false);
+                
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
         },
 
+        //outOfTime
         outOfTimeEnter: function()
         {
                 this.parent();
-                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+
+                this.mShapeArray[0].setPosition(650,170);
+
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+
+                //move frantic clock
+                this.mShapeArray[8].setPosition(650,300);
+		
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
         },
 
 	createQuestions: function()
@@ -30,7 +49,7 @@ Extends: Pad,
  		this.parent();
 
 		//add
-                this.mQuiz.mQuestionPoolArray.push(new Question('interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5','7','interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5'));
+                this.mQuiz.mQuestionPoolArray.push(new Question('Interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as ? and 7 times as many as 5.','7','Interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5.'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('8 + ? = 10','2','8 + 2 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('7 + ? = 10','3','7 + 3 = 10'));
                 this.mQuiz.mQuestionPoolArray.push(new Question('6 + ? = 10','4','6 + 4 = 10'));
