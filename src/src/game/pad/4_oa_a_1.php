@@ -54,21 +54,35 @@ Extends: Pad,
 			var b = Math.floor((Math.random()*8)+3);		
 			var x = a * b;
 
-			var randomChance = Math.floor((Math.random()*2));		
-	
+			var randomChance = Math.floor((Math.random()*5));		
+			
+
 			if (s == 0)
 			{
                			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ? is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + x,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 			}
+
 			else if (s == 1)
 			{
                			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ? times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + a,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 			}
-			else if (s > 1)
+
+			else if (s == 2)
 			{
                			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.','' + b,'The equation ' + x + ' = ' + a + ' x ' + b + ' alson means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 
 			}
+			
+			if (s == 3)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ? times as many as ' + a + '.','' + b,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+			}
+
+			if (s > 3)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ?.','' + a,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+			}
+
 		}
 	}
 });
