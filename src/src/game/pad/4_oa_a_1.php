@@ -56,14 +56,18 @@ Extends: Pad,
 
 			var randomChance = Math.floor((Math.random()*2));		
 	
-			if (randomChance == 2)
+			if (s == 0)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ? is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + x,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+			}
+			else if (s == 1)
+			{
+               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ? times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + a,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
+			}
+			else if (s > 1)
 			{
                			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ? and ' + b + ' times as many as ' + a + '.','' + b,'The equation ' + x + ' = ' + a + ' x ' + b + ' alson means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 
-			}
-			else if (randomChance < 2)
-			{
-               			this.mQuiz.mQuestionArray.push(new Question('The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ? is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.','' + b,'The equation ' + x + ' = ' + a + ' x ' + b + ' also means that ' + x + ' is ' + a + ' times as many as ' + b + ' and ' + b + ' times as many as ' + a + '.'));
 			}
 		}
 	}
