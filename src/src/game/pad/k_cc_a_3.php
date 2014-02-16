@@ -1,7 +1,7 @@
 var k_cc_a_3 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
