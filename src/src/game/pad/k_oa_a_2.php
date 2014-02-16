@@ -143,5 +143,14 @@ Extends: NumberPad,
 				}
 			}
 		}
-	}
+	},
+    
+        createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(200,200,140,140,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        }
 });

@@ -103,12 +103,14 @@ Extends: Game,
 		this.parent();
 		this.createInput();
 	},
-
+      
 	createNumQuestion: function()
         {
                 //question
                 this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
         },
 
 	createInput: function()
