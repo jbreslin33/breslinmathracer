@@ -47,6 +47,7 @@
 
 <script type="text/javascript" src="/src/game/pad/pad.php"></script>
 <script type="text/javascript" src="/src/game/pad/numberpad.php"></script>
+<script type="text/javascript" src="/src/game/pad/multiplechoicepad.php"></script>
 
 <script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
 

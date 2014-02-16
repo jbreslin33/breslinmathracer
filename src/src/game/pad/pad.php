@@ -103,7 +103,7 @@ Extends: Game,
 		this.parent();
 		this.createInput();
 	},
-        
+
 	createNumQuestion: function()
         {
                 //question
