@@ -136,7 +136,7 @@ var Game = new Class(
 		this.destroyShapes();	
                
 		//creating gui bars 
-		for (i = 0; i < this.mTotalGuiBars; i++)
+		for (i = 0; i < 10; i++)
 		{
 			if (i == 8)
 			{
@@ -158,6 +158,7 @@ var Game = new Class(
                         this.mShapeArray[i].mCollidable = false;
                         this.mShapeArray[i].mCollisionOn = false;
                 }
+		this.mTotalGuiBars = this.mShapeArray.length; 
 	},
 
 	createQuestions: function()

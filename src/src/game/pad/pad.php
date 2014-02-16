@@ -204,5 +204,15 @@ Extends: Game,
                 this.mNumEnter.mMesh.innerHTML = 'Enter';
                 this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumEnter);
+
+		this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
+
+                //set all pad shapes invisible to start semi-clean
+                for (i = this.mTotalGuiBars; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                        this.mShapeArray[i].mCollidable = false;
+                        this.mShapeArray[i].mCollisionOn = false;
+                }
         }
 });
