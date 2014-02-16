@@ -38,7 +38,6 @@ Extends: Game,
 	createUniverse: function()
         {
                 this.createWorld();
-		this.createInputPad();
                 this.createQuestions();
         },
    
@@ -91,8 +90,10 @@ Extends: Game,
                 this.mShapeArray.push(this.mNumQuestion);
         },
       
-	createInputPad: function()
+	createWorld: function()
         {
+		this.parent();
+
                 //question
                 this.createNumQuestion();
 
