@@ -1,7 +1,7 @@
 var k_cc_c_6 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -9,9 +9,6 @@ Extends: Pad,
 
 		//answers 
                 this.mThresholdTime = 60000;
-
-                //input pad
-                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 	
 	createQuestions: function()
@@ -60,11 +57,11 @@ Extends: Pad,
 				//add shapes
 				for (a = 0; a < objectsToCountA; a++)
 				{
-					question.mShapeArray.push(this.mShapeArray[parseInt(a + this.mTotalGuiBars)])
+					question.mShapeArray.push(this.mShapeArray[parseInt(a + this.mTotalGuiBars + this.mTotalInputBars)])
 				}
 				for (b = 0; b < objectsToCountB; b++)
 				{
-					question.mShapeArray.push(this.mShapeArray[parseInt(b + this.mTotalGuiBars + 20)])
+					question.mShapeArray.push(this.mShapeArray[parseInt(b + this.mTotalGuiBars + this.mTotalInputBars + 20)])
 				}
 			}
 		}
