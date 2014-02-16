@@ -17,7 +17,7 @@ var Game = new Class(
        		this.mShapeArray = new Array();
 
 		//total guiBar
-		this.mTotalGuiBars = 10;
+		this.mTotalGuiBars = 0;
 		this.mTotalInputBars = 19;
 		
 		//create control object
@@ -138,8 +138,6 @@ var Game = new Class(
 		this.createBlankShapes();      
 		this.createFranticClock();      
 		this.createForget();      
-
-		this.mTotalGuiBars = this.mShapeArray.length; 
 	},
 
 	createFranticClock: function()
@@ -148,6 +146,7 @@ var Game = new Class(
                 this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
                 this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
                 this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+		this.mTotalGuiBars++;
 	},
 	
 	createForget: function()
@@ -156,6 +155,7 @@ var Game = new Class(
                 this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
                 this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
                 this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+		this.mTotalGuiBars++;
 	}, 
 
 	createBlankShapes: function()
@@ -166,6 +166,7 @@ var Game = new Class(
                 	this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
                 	this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
                 	this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+			this.mTotalGuiBars++;
 		}
 	},
 
