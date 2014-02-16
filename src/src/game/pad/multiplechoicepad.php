@@ -13,12 +13,10 @@ Extends: Pad,
 
 	createNumQuestion: function()
         {
-                //question
-                if (!this.mNumQuestion)
-                {
-                        this.mNumQuestion = new Shape(100,50,330,40,this,"","","");
-                        this.mShapeArray.push(this.mNumQuestion);
-                }
+		this.mNumQuestion = new Shape(100,40,380,-90,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+    		this.mNumQuestion.mCollidable  = false;
+                this.mNumQuestion.mCollisionOn = false;
         },
 
         showQuestion: function()
@@ -35,6 +33,7 @@ Extends: Pad,
                         {
                                 this.mQuiz.getQuestion().showShapes();
                                 this.mQuiz.getQuestion().setChoices();
+    				this.mNumQuestion.setVisibility(true);
                                 this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
                         }
                 }

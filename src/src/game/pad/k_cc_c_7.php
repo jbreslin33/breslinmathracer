@@ -66,16 +66,6 @@ Extends: MultipleChoicePad,
 		}
 	},
  
-	createNumQuestion: function()
-        {
-                //question
-                if (!this.mNumQuestion)
-                {
-                        this.mNumQuestion = new Shape(100,50,-330,-40,this,"","","");
-                        this.mShapeArray.push(this.mNumQuestion);
-                }
-        },
-	
 	createWorld: function()
 	{
 		this.parent();
