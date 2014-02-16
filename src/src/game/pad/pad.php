@@ -47,9 +47,16 @@ Extends: Game,
 		this.reset();
         	this.mStateMachine.changeState(this.mFIRST_TIME);
 	},
-    
+
         showQuestion: function()
         {
+              	//set all shapes invisible to start semi-clean
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
+		this.log('Pad::showQuestion');
 		if (this.mNumAnswer)
 		{
                 	this.mNumAnswer.mMesh.focus();
@@ -58,8 +65,18 @@ Extends: Game,
                 {
                         if (this.mApplication.mGame.mQuiz.getQuestion())
                         {
-                                this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
+                                this.mQuiz.getQuestion().showShapes();
+                                this.mQuiz.getQuestion().setChoices();
+                                this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
                         }
+                }
+               
+		//show input pad 
+		this.log('total:' + parseInt(this.mTotalGuiBars + this.mTotalInputBars));
+		for (i = this.mTotalGuiBars; i < parseInt(this.mTotalGuiBars + this.mTotalInputBars); i++)
+                {
+			this.log('i:' + i);
+                        this.mShapeArray[i].setVisibility(true);
                 }
         },
 

@@ -27,7 +27,6 @@ var Question = new Class(
 		this.mChoiceD = '';
 
 		this.mShapeArray = new Array();
-
         },
 
 	setChoice: function(letter,choice)
@@ -175,6 +174,8 @@ var Question = new Class(
 	
 	showShapes: function()
 	{
+   		this.hideShapes();	
+		APPLICATION.log('length:' + this. mShapeArray.length);
    		for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(true);

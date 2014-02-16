@@ -169,6 +169,7 @@ var Game = new Class(
 
 	showQuestion: function()
 	{
+		this.log('Game::showQuestion');
 		//set all shapes invisible to start semi-clean
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -187,13 +188,6 @@ var Game = new Class(
                                 	this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
 				}
 			}
-		}
-	
-		//breslin need a number on this.	
-                for (i = 0; i < this.mShapeArray.length; i++)
-		{
-                        this.mShapeArray[i].setVisibility(true);
-
 		}
 	},
 
