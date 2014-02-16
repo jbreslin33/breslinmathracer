@@ -96,7 +96,7 @@ Extends: Pad,
         {
                 APPLICATION.mGame.mUserAnswer = this.innerHTML;
         },
-
+   
 	createInput: function()
 	{
        		this.createNumQuestion();
@@ -106,29 +106,29 @@ Extends: Pad,
                 this.mButtonA.mCollidable  = false;
                 this.mButtonA.mCollisionOn = false;
                 this.mButtonA.mMesh.innerHTML = 'A';
-                        this.mButtonA.mMesh.addEvent('click',this.numPadHit);
-                        this.mShapeArray.push(this.mButtonA);
+                this.mButtonA.mMesh.addEvent('click',this.numPadHit);
+                this.mShapeArray.push(this.mButtonA);
                         
-			this.mButtonB = new Shape(150,50,375,150,this,"BUTTON","","");
-                        this.mButtonB.mCollidable  = false;
-                        this.mButtonB.mCollisionOn = false;
-                        this.mButtonB.mMesh.innerHTML = 'B';
-                        this.mButtonB.mMesh.addEvent('click',this.numPadHit);
-                        this.mShapeArray.push(this.mButtonB);
-                        
-			this.mButtonC = new Shape(150,50,375,200,this,"BUTTON","","");
-                        this.mButtonC.mCollidable  = false;
-                        this.mButtonC.mCollisionOn = false;
-                        this.mButtonC.mMesh.innerHTML = 'C';
-                        this.mButtonC.mMesh.addEvent('click',this.numPadHit);
-                        this.mShapeArray.push(this.mButtonC);
-                
-                        this.mButtonD = new Shape(150,50,375,250,this,"BUTTON","","");
-                        this.mButtonD.mCollidable  = false;
-                        this.mButtonD.mCollisionOn = false;
-                        this.mButtonD.mMesh.innerHTML = 'D';
-                        this.mButtonD.mMesh.addEvent('click',this.numPadHit);
-                        this.mShapeArray.push(this.mButtonD);
+		this.mButtonB = new Shape(150,50,375,150,this,"BUTTON","","");
+                this.mButtonB.mCollidable  = false;
+                this.mButtonB.mCollisionOn = false;
+                this.mButtonB.mMesh.innerHTML = 'B';
+                this.mButtonB.mMesh.addEvent('click',this.numPadHit);
+                this.mShapeArray.push(this.mButtonB);
+                      
+		this.mButtonC = new Shape(150,50,375,200,this,"BUTTON","","");
+                this.mButtonC.mCollidable  = false;
+                this.mButtonC.mCollisionOn = false;
+                this.mButtonC.mMesh.innerHTML = 'C';
+                this.mButtonC.mMesh.addEvent('click',this.numPadHit);
+                this.mShapeArray.push(this.mButtonC);
+               
+                this.mButtonD = new Shape(150,50,375,250,this,"BUTTON","","");
+                this.mButtonD.mCollidable  = false;
+                this.mButtonD.mCollisionOn = false;
+                this.mButtonD.mMesh.innerHTML = 'D';
+                this.mButtonD.mMesh.addEvent('click',this.numPadHit);
+                this.mShapeArray.push(this.mButtonD);
 
  		this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
 	}

@@ -65,6 +65,16 @@ Extends: MultipleChoicePad,
 			}
 		}
 	},
+ 
+	createNumQuestion: function()
+        {
+                //question
+                if (!this.mNumQuestion)
+                {
+                        this.mNumQuestion = new Shape(100,50,-330,-40,this,"","","");
+                        this.mShapeArray.push(this.mNumQuestion);
+                }
+        },
 	
 	createWorld: function()
 	{
@@ -72,8 +82,8 @@ Extends: MultipleChoicePad,
 
 		for (i=0; i < this.mScoreNeeded; i++)
 		{	
-			this.mShapeArray.push(new Shape(150,50,300,100,this,"","",""));
-			this.mShapeArray.push(new Shape(150,50,550,100,this,"","",""));
+			this.mShapeArray.push(new Shape(10,10,225,125,this,"","",""));
+			this.mShapeArray.push(new Shape(10,10,500,125,this,"","",""));
 		}
 	}
 });
