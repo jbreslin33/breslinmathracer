@@ -670,6 +670,9 @@ var Game = new Class(
 
                 this.mShapeArray[9].setVisibility(true);
 
+		//show question shapes
+ 		this.mQuiz.getQuestion().showShapes();
+
 		this.tip();
 	},
 	
@@ -735,6 +738,9 @@ var Game = new Class(
 
                 //frantic clock
                 this.mShapeArray[8].setVisibility(true);
+		
+		//show question shapes
+ 		this.mQuiz.getQuestion().showShapes();
 
 		this.tip();
         },
