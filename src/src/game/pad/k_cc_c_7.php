@@ -1,7 +1,7 @@
 var k_cc_c_7 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -11,9 +11,6 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 		
 		this.setScoreNeeded(20);
-
-                //input pad
-                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	createQuestions: function()
@@ -60,11 +57,11 @@ Extends: Pad,
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
 				//add shapes
-				this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars ) ].mMesh.innerHTML = '' + objectsToCountA;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars)]);
+				this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars + this.mTotalInputBars) ].mMesh.innerHTML = '' + objectsToCountA;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars)]);
 				
-				this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + 1)].mMesh.innerHTML = '' + objectsToCountB;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + 1)]);
+				this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1 )].mMesh.innerHTML = '' + objectsToCountB;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)]);
 			}
 		}
 	},
