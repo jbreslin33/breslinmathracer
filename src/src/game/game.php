@@ -134,31 +134,39 @@ var Game = new Class(
 	createWorld: function()
 	{
 		this.destroyShapes();	
-               
-		//creating gui bars 
-		for (i = 0; i < 10; i++)
-		{
-			if (i == 8)
-			{
-				this.mShapeArray.push(new Shape(197,185,425,300,this,"/images/symbols/clock.jpg","",""));
-			}
-			if (i == 9)
-			{
-				this.mShapeArray.push(new Shape(197,185,425,300,this,"/images/symbols/dontforget.gif","",""));
-			}
-			if (i < 8)
-			{	
-				this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
-			}			
-		}
-		//set all shapes invisible to start semi-clean
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                        this.mShapeArray[i].mCollidable = false;
-                        this.mShapeArray[i].mCollisionOn = false;
-                }
+         
+		this.createBlankShapes();      
+		this.createFranticClock();      
+		this.createForget();      
+
 		this.mTotalGuiBars = this.mShapeArray.length; 
+	},
+
+	createFranticClock: function()
+	{
+		this.mShapeArray.push(new Shape(197,185,425,300,this,"/images/symbols/clock.jpg","",""));
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+	},
+	
+	createForget: function()
+	{
+		this.mShapeArray.push(new Shape(197,185,425,300,this,"/images/symbols/dontforget.gif","",""));
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+	}, 
+
+	createBlankShapes: function()
+	{
+		for (i = 0; i < 8; i++)
+		{
+			this.mShapeArray.push(new Shape(150,50,-300,-300,this,"","",""));
+                	this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
+                	this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
+                	this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+		}
 	},
 
 	createQuestions: function()
