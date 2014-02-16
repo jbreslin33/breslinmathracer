@@ -56,11 +56,6 @@ Extends: Game,
                         this.mShapeArray[i].setVisibility(false);
                 }
 
-		this.log('Pad::showQuestion');
-		if (this.mNumAnswer)
-		{
-                	this.mNumAnswer.mMesh.focus();
-		}
                 if (this.mApplication.mGame.mQuiz)
                 {
                         if (this.mApplication.mGame.mQuiz.getQuestion())
@@ -72,12 +67,15 @@ Extends: Game,
                 }
                
 		//show input pad 
-		this.log('total:' + parseInt(this.mTotalGuiBars + this.mTotalInputBars));
 		for (i = this.mTotalGuiBars; i < parseInt(this.mTotalGuiBars + this.mTotalInputBars); i++)
                 {
-			this.log('i:' + i);
                         this.mShapeArray[i].setVisibility(true);
                 }
+		
+		if (this.mNumAnswer)
+		{
+                	this.mNumAnswer.mMesh.focus();
+		}
         },
 
         inputKeyHit: function(e)
