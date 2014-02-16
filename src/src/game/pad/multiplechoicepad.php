@@ -46,7 +46,6 @@ Extends: Pad,
                                 //how many buttons
                                 if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceA != '')
                                 {
-					this.log('MultipleChoicePad::showQuestion set vis true'); 
                                         this.mButtonA.setVisibility(true);
                                         this.mButtonA.mMesh.innerHTML = '' + this.mApplication.mGame.mQuiz.getQuestion().mChoiceA;
                                 }
