@@ -1,7 +1,7 @@
 var k_cc_b_4b = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -10,8 +10,6 @@ Extends: Pad,
 		//answers 
                 this.mThresholdTime = 60000;
 
-                //input pad
-                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	//questions
@@ -42,7 +40,7 @@ Extends: Pad,
                         
 			for (s = 0; s < parseInt(numberToCount * 2); s++)
                         {
-                                question.mShapeArray.push(this.mShapeArray[parseInt(s + this.mTotalGuiBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(s + this.mTotalGuiBars + this.mTotalInputBars)]);
 			}
 
 			this.mQuiz.mQuestionArray.push(question);
@@ -56,51 +54,51 @@ Extends: Pad,
                 //one
                 this.mShapeArray.push(new Shape(50,50,38,80,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,45,45,this,"","",""));
-                this.mShapeArray[parseInt(1 + this.mTotalGuiBars)].setText('one');
+                this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)].setText('one');
 
                 //two
                 this.mShapeArray.push(new Shape(50,50,83,80,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,93,45,this,"","",""));
-                this.mShapeArray[parseInt(3 + this.mTotalGuiBars)].setText('two');
+                this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)].setText('two');
 
                 //three
                 this.mShapeArray.push(new Shape(50,50,135,80,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,140,45,this,"","",""));
-                this.mShapeArray[parseInt(5 + this.mTotalGuiBars)].setText('three');
+                this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)].setText('three');
 
                 //four
                 this.mShapeArray.push(new Shape(50,50,185,80,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,190,45,this,"","",""));
-                this.mShapeArray[parseInt(7 + this.mTotalGuiBars)].setText('four');
+                this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)].setText('four');
 
                 //five
                 this.mShapeArray.push(new Shape(50,50,235,80,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,240,45,this,"","",""));
-                this.mShapeArray[parseInt(9 + this.mTotalGuiBars)].setText('five');
+                this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)].setText('five');
 
                 //six
                 this.mShapeArray.push(new Shape(50,50,38,180,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,45,145,this,"","",""));
-                this.mShapeArray[parseInt(11 + this.mTotalGuiBars)].setText('six');
+                this.mShapeArray[parseInt(11 + this.mTotalGuiBars + this.mTotalInputBars)].setText('six');
 
                 //seven
                 this.mShapeArray.push(new Shape(50,50,83,180,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,93,145,this,"","",""));
-                this.mShapeArray[parseInt(13 + this.mTotalGuiBars)].setText('seven');
+                this.mShapeArray[parseInt(13 + this.mTotalGuiBars + this.mTotalInputBars)].setText('seven');
 
                 //eight
                 this.mShapeArray.push(new Shape(50,50,135,180,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,140,145,this,"","",""));
-                this.mShapeArray[parseInt(15 + this.mTotalGuiBars)].setText('eight');
+                this.mShapeArray[parseInt(15 + this.mTotalGuiBars + this.mTotalInputBars)].setText('eight');
 
                 //nine
                 this.mShapeArray.push(new Shape(50,50,185,180,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,190,145,this,"","",""));
-                this.mShapeArray[parseInt(17 + this.mTotalGuiBars)].setText('nine');
+                this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)].setText('nine');
 
                 //ten
                 this.mShapeArray.push(new Shape(50,50,235,180,this,"/images/bus/kid.png","",""));
                 this.mShapeArray.push(new Shape(50,50,240,145,this,"","",""));
-                this.mShapeArray[parseInt(19 + this.mTotalGuiBars)].setText('ten');
+                this.mShapeArray[parseInt(19 + this.mTotalGuiBars + this.mTotalInputBars)].setText('ten');
         }
 });
