@@ -1,16 +1,13 @@
 var k_oa_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
 
 		this.setScoreNeeded(20);
-
-		//input pad
-		this.mInputPad = new NumberPad(application);
 	},
 
 	createQuestions: function()
@@ -94,27 +91,27 @@ Extends: Pad,
 				var i = 0;
 				while(i < addendA)
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
 					i++;
 				} 
 
 				//sign
                 		if (sign == "+")
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + 10)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 10)]);
 					i++;
 				}
                 		if (sign == "-")
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + 20)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 20)]);
 					i++;
 				}
 				while(i < parseInt(addendB + addendA + 1))
 				{
-                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars)]);
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
 					i++;
 				} 
-                               	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + 30)]);
+                               	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 30)]);
 			}
 		}
 	},
