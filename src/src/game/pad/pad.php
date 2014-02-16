@@ -100,16 +100,22 @@ Extends: Game,
                 }
         },
 
-        createNumQuestion: function()
+	createWorld: function()
+        {
+		this.parent();
+
+		this.createInput();
+	},
+        
+	createNumQuestion: function()
         {
                 //question
                 this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
         },
-      
-	createWorld: function()
-        {
-		this.parent();
+
+	createInput: function()
+	{
 
                 //question
                 this.createNumQuestion();

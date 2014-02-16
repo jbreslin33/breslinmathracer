@@ -202,6 +202,7 @@ var Game = new Class(
 
 	destroyShapes: function()
 	{
+
 		//shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -212,6 +213,8 @@ var Game = new Class(
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
+		
+		this.mTotalGuiBars = 0;
 	},
 
 	update: function()
