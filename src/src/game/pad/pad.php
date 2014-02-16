@@ -103,7 +103,7 @@ Extends: Game,
         createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(100,50,300,100,this,"","","");
+                this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
         },
       
@@ -115,7 +115,7 @@ Extends: Game,
                 this.createNumQuestion();
 
                 //answer
-                this.mNumAnswer = new Shape(100,50,400,100,this,"INPUT","","");
+                this.mNumAnswer = new Shape(100,50,425,100,this,"INPUT","","");
                 this.mNumAnswer.mMesh.value = '';
                 this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                 this.mShapeArray.push(this.mNumAnswer);
@@ -163,7 +163,7 @@ Extends: Game,
                 this.mShapeArray.push(this.mNumNine);
 
                 //Addition
-                this.mNumAddition = new Shape(50,100,450,200,this,"BUTTON","","");
+                this.mNumAddition = new Shape(50,100,450,225,this,"BUTTON","","");
                 this.mNumAddition.mMesh.innerHTML = '+';
                 this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumAddition);
@@ -205,7 +205,7 @@ Extends: Game,
                 this.mShapeArray.push(this.mNumThree);
 
                 //0
-                this.mNumZero = new Shape(100,50,300,350,this,"BUTTON","","");
+                this.mNumZero = new Shape(100,50,325,350,this,"BUTTON","","");
                 this.mNumZero.mMesh.innerHTML = '0';
                 this.mNumZero.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumZero);
@@ -217,7 +217,7 @@ Extends: Game,
                 this.mShapeArray.push(this.mNumDecimal);
 
                 //enter
-                this.mNumEnter = new Shape(50,100,450,300,this,"BUTTON","","");
+                this.mNumEnter = new Shape(50,100,450,325,this,"BUTTON","","");
                 this.mNumEnter.mMesh.innerHTML = 'Enter';
                 this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumEnter);
