@@ -1,7 +1,7 @@
 var k_oa_a_2 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -11,12 +11,6 @@ Extends: Pad,
 
 		this.mThresholdTime = 240000;
              	this.mCorrectAnswerThresholdTime = 40000;
-
-                //input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
-
-		//word problems
-		this.mWordProblems = new WordProblems();
 	},
 
      	//showCorrectAnswer
