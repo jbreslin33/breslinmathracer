@@ -1,15 +1,12 @@
 var k_oa_a_4 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
 	       	
-		//input pad
-                this.mInputPad = new NumberPad(application);
-
 		this.setScoreNeeded(20);
 	},
 
