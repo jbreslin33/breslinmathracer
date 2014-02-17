@@ -1,7 +1,7 @@
 var k_g_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -12,10 +12,14 @@ Extends: Pad,
 
 		//scoreNeeded
 		this.setScoreNeeded(20);
-
-		//input pad
-                this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
+
+        createNumQuestion: function()
+        {
+                this.parent();
+
+                this.mNumQuestion.setPosition(200,100,140,140);
+        },
 	
 	//state overides
         showCorrectAnswerOutOfTime: function()
@@ -58,8 +62,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 1)]);
 		question.mShapeArray.push(this.mShapeArray[2]);
 		question.mShapeArray.push(this.mShapeArray[3]);
  		this.mQuiz.mQuestionPoolArray.push(question);
@@ -71,8 +75,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 2)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 2)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 3)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //3 behind
@@ -82,8 +86,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 4)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 5)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 4)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 5)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //4 in front of
@@ -93,8 +97,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 6)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 7)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 6)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 7)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //5 below
@@ -104,8 +108,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 8)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 9)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 8)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 9)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 //6 next to
@@ -115,8 +119,8 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 10)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 11)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 10)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 11)]);
  		this.mQuiz.mQuestionPoolArray.push(question);
 
                 var totalNew           = 0;
