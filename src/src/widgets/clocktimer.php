@@ -7,7 +7,6 @@ Extends: Timer,
 	{
 		this.parent(application)
 		this.mElapsedTime = 0;	
-		this.mFirstTime = true;
 		this.mThresh = 0;
 		this.mValueInSeconds = 0;
 	},
@@ -16,21 +15,27 @@ Extends: Timer,
 	{
 		this.parent();
 
-		if (this.mFirstTime == true)
-		{
-			this.mThresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
-			this.mValueInSeconds = parseInt(360/this.mThresh); 
-			this.mFirstTime = false;
-		}
-  
 		if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
                 {
+			this.mFirstTimeWaitingOnAnswer == false; 
 			if (this.mApplication.mGame.mQuestionStartTime > 0)
 			{
+				this.mThresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
+				this.mValueInSeconds = parseInt(360/this.mThresh); 
+
 				this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
 				this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
 				this.setTimer();
 			}
+		}
+
+		else if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mSHOW_CORRECT_ANSWER)
+                {
+			this.mThresh = parseInt(this.mApplication.mGame.mCorrectAnswerThresholdTime/1000);
+			this.mValueInSeconds = parseInt(360/this.mThresh); 
+			this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - parseInt(this.mApplication.mGame.mCorrectAnswerStartTime));	
+			this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
+			this.setTimer();
 		}
 		else //just reset clock
 		{
@@ -69,7 +74,7 @@ Extends: Timer,
 
 	setTimer: function()
 	{
-  		//reset transforms
+		//reset transforms
                 this.minute_hand.transform("");
 
 		var rot = parseInt(this.mElapsedTime*this.mValueInSeconds); 
