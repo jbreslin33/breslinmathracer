@@ -1,7 +1,7 @@
 var k_g_a_2 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -12,10 +12,14 @@ Extends: Pad,
 
 		//score needed
 		this.setScoreNeeded(40);
-
-		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
+  
+	createNumQuestion: function()
+        {
+                this.parent();
+                this.mNumQuestion.setPosition(100,60,380,-90);
+        },
+
 
 	createQuestions: function()
         {
@@ -36,7 +40,7 @@ Extends: Pad,
 
 		var question = new Question('What is this?','cone');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','cube');
@@ -47,7 +51,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 1]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 1]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','circle');
@@ -59,17 +63,17 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 2]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 2]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','cylinder');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 3]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 3]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','hexagon');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 4]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 4]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','rectangle');
@@ -80,7 +84,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 5]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 5]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','sphere');
@@ -92,7 +96,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 6]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 6]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','square');
@@ -103,7 +107,7 @@ Extends: Pad,
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 7]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 7]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','triangle');

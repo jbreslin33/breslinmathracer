@@ -13,10 +13,8 @@ Extends: Pad,
 
 	createNumQuestion: function()
         {
-		this.mNumQuestion = new Shape(100,40,380,-90,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
-    		this.mNumQuestion.mCollidable  = false;
-                this.mNumQuestion.mCollisionOn = false;
+		this.parent();
+		this.mNumQuestion.setPosition(100,40,380,-90);
         },
 
         showQuestion: function()
