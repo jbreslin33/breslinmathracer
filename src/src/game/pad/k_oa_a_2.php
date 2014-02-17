@@ -48,6 +48,7 @@ Extends: NumberPad,
                         this.mShapeArray[2].setPosition(140,100);
                         this.mShapeArray[2].setSize(200,10);
                         this.mShapeArray[2].setVisibility(true);
+
                         if (this.mQuiz.getQuestion().mTipArray.length == 1)
                         {
                                 this.mShapeArray[2].mMesh.innerHTML = 'Tip:';
@@ -72,6 +73,15 @@ Extends: NumberPad,
                                 this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
 			}
                 }
+        },
+
+        createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(200,200,140,140,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
         },
 
 	createQuestions: function()
@@ -145,12 +155,4 @@ Extends: NumberPad,
 		}
 	},
     
-        createNumQuestion: function()
-        {
-                //question
-                this.mNumQuestion = new Shape(200,200,140,140,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
-                this.mNumQuestion.mCollidable = false;
-                this.mNumQuestion.mCollisionOn = false;
-        }
 });
