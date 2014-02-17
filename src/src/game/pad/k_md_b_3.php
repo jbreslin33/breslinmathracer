@@ -33,6 +33,14 @@ Extends: MultipleChoicePad,
 		this.mCorrectAnswerArray[2] = 'red monsters';
 		this.mCorrectAnswerArray[3] = 'feathers';
 	},
+
+	createNumQuestion: function()
+        {
+		this.parent();
+
+                this.mNumQuestion.setPosition(200,200,140,140);
+        },
+
  
 	createInput: function()
         {
