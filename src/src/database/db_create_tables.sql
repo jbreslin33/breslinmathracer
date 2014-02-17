@@ -187,6 +187,18 @@ CREATE SEQUENCE level_attempts_id_seq
     NO MAXVALUE
     CACHE 1;
 
+--LEVEL_TRANSACTIONS
+CREATE SEQUENCE level_transactions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+--****************************************************************
+--***************************************************************
+--****************** ALTER OWNER  *************************
+
 --****************************************************************
 --***************************************************************
 --****************** ALTER OWNER  *************************
@@ -263,6 +275,11 @@ ALTER TABLE public.level_attempts_id_seq OWNER TO postgres;
 ALTER SEQUENCE level_attempts_id_seq OWNED BY LevelAttempts.id;
 ALTER TABLE ONLY LevelAttempts ALTER COLUMN id SET DEFAULT nextval('level_attempts_id_seq'::regclass);
 
+--LEVEL_TRANSACTIONS
+ALTER TABLE public.level_transactions_id_seq OWNER TO postgres;
+ALTER SEQUENCE level_transactions_id_seq OWNED BY Level_transactions.id;
+ALTER TABLE ONLY level_transactions ALTER COLUMN id SET DEFAULT nextval('level_transactions_id_seq'::regclass);
+
 --****************************************************************
 --***************************************************************
 --****************** PRIMARY KEY  *************************
@@ -298,6 +315,8 @@ ALTER TABLE students ADD PRIMARY KEY (id);
 
 --LEVEL_ATTEMPTS
 ALTER TABLE LevelAttempts ADD PRIMARY KEY (id);
+
+ALTER TABLE level_transactions ADD PRIMARY KEY (id);
 
 --****************************************************************
 --***************************************************************

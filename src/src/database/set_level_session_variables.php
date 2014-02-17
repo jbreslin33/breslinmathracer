@@ -48,7 +48,8 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 dbErrorCheck($conn,$result4);
 
 
-		//insert into levels_attempts
+		//insert into level_transactions
+		$queryLT = "insert into level_transactions
 	}
 	else
 	{
@@ -93,7 +94,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         		$result3 = pg_query($conn,$query3) or die('Could not connect: ' . pg_last_error());
         		dbErrorCheck($conn,$result3);
 		
-			//insert into levels_transaction
+			//insert into level_transactions
 		}
 		else
 		{
