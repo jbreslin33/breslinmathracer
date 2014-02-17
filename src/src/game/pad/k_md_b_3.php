@@ -1,7 +1,7 @@
 var k_md_b_3 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -13,17 +13,11 @@ Extends: Pad,
 		//score needed
 		this.setScoreNeeded(20);
 
-		//input pad
-		this.mInputPad = new ButtonMultipleChoicePadSpread(application);
-	
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();
 		this.mCountShapeArrayC = new Array();
 		this.mCountShapeArrayD = new Array();
-
-		//move buttons
-		this.mInputPad.mButtonA.setPosition(100,100);
 
 		//numberOfShapes
 		this.mNumberOfAArray = new Array()
@@ -40,21 +34,6 @@ Extends: Pad,
 		this.mCorrectAnswerArray[3] = 'feathers';
 	},
 	
-	//state overides
-	outOfTime: function()
-        {
-		this.parent();
-                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.mInputPad.mNumQuestion.setVisibility('true');
-        },
-
-	showCorrectAnswer: function()
-	{
-		this.parent();
-        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-		this.mInputPad.mNumQuestion.setVisibility('true');
-	},
-
 	destroyShapes: function()
 	{
 		this.parent();
@@ -87,6 +66,8 @@ Extends: Pad,
 
 	showQuestion: function()
 	{
+		this.parent();
+
 		for (i = 0; i < this.mCountShapeArrayA.length; i++)
                 {
                         this.mCountShapeArrayA[i].setVisibility(false);
@@ -111,8 +92,6 @@ Extends: Pad,
                 {
                         this.mCountShapeArrayD[i].setVisibility(true);
                 }
-		
-		this.mInputPad.showQuestion();	
 	},
  
 	createQuestions: function()
