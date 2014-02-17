@@ -1,63 +1,127 @@
 var g1_oa_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-	
-		//score needed	
+		
 		this.setScoreNeeded(20);
 
-		//threshold
-		this.mThresholdTime = 120000;
-
-                //input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
-
-		//word problems
-		this.mWordProblems = new WordProblems();
+		this.mThresholdTime = 240000;
+             	this.mCorrectAnswerThresholdTime = 40000;
 	},
 
-        //showCorrectAnswer
+     	//showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
-                this.parent();
-
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(200,200);
+		this.parent();
+                
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+       
+		//move dont forget 
+	        this.mShapeArray[8].setVisibility(false);
+	        this.mShapeArray[9].setVisibility(false);
         },
 
         //outOfTime
         outOfTimeEnter: function()
         {
-                this.parent();
+		this.parent();
 
-                this.mShapeArray[0].setPosition(400,50);
+                this.mShapeArray[0].setPosition(650,170);
 
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(200,200);
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+	      
+		//move frantic clock 
+		this.mShapeArray[8].setPosition(650,300);
+        },
+
+    	tip: function()
+        {
+                if (this.mQuiz.getQuestion().mTipArray.length > 0)
+                {
+                        //tip header
+                        this.mShapeArray[2].setPosition(140,100);
+                        this.mShapeArray[2].setSize(200,10);
+                        this.mShapeArray[2].setVisibility(true);
+
+                        if (this.mQuiz.getQuestion().mTipArray.length == 1)
+                        {
+                                this.mShapeArray[2].mMesh.innerHTML = 'Tip:';
+                        }
+                        else
+                        {
+                                this.mShapeArray[2].mMesh.innerHTML = 'Tips:';
+                        }
+
+                        if (this.mQuiz.getQuestion().mTipArray.length > 0)
+                        {
+                                this.mShapeArray[3].setPosition(380,150);
+                                this.mShapeArray[3].setSize(700,10);
+                                this.mShapeArray[3].setVisibility(true);
+                                this.mShapeArray[3].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[0];
+                        }
+                        if (this.mQuiz.getQuestion().mTipArray.length > 3)
+                        {
+                                this.mShapeArray[6].setPosition(380,180);
+                        	this.mShapeArray[6].setSize(700,10);
+                                this.mShapeArray[6].setVisibility(true);
+                                this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
+			}
+                }
+        },
+
+        createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(200,200,140,140,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
         },
 
 	createQuestions: function()
         {
  		this.parent();
+
+		//a
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Chris had','toy cars. His friend Albert brings', 'toy cars to play with Julian. How many cars do they have to play with now?',0));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Zuyanna had','rings. Her friend Iris gave her', ' more rings. How many rings does Zuyanna have now?',0));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+
+		//b
+       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Jaavon had','books about dinosaurs. He got', 'more books about dinosaurs from the library. How many books about dinosaurs does Jaavon have now?',0));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+       		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Michael had','baseballs. He got ', 'more baseballs from his friend. How many baseballs does Michael have now?',0));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+	
+		//c	
+       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Jasmine had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Jasmine leave on the bed.',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had on bed - put on chair = on bed';
+       		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Leah had',' cookies. She ate', 'of them. She left the rest of the cookies for Santa Claus. How many cookies did Leah leave for Santa Claus.',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - ate = left for Santa Claus';
+
+		//d
+       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Devin had','pencils in his box. He gave', 'of them to Zabriana. How many pencils does Devin have in his box now?',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+
+       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Tanya had','erasers in her case. She gave', 'of them to Ny. How many erasers does Tanya have in her case now?',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+
 		var totalA = 0;
 		var totalB = 0;
 		var totalC = 0;
 		var totalD = 0;
-		var totalE = 0;
-		var totalF = 0;
-		var totalG = 0;
-		var totalH = 0;
-		var totalI = 0;
-		var totalJ = 0;
-		var totalK = 0;
-		var totalL = 0;
 
-		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1|| totalG < 1 || totalH < 1 || totalI < 1 || totalJ < 1 || totalK < 1 || totalL < 1)
+		while (totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2 || totalD < this.mScoreNeeded * .2)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -65,68 +129,30 @@ Extends: Pad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*12));		
-				if (randomChance == 0)
+				var randomChance = Math.floor((Math.random()*8));		
+				if (randomChance < 2)
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_A());
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalA++;
 				}	
-				if (randomChance == 1)
+
+				else if (randomChance > 1 && randomChance < 4 )
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_B());
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalB++;
 				}
-				if (randomChance == 2)
+				else if (randomChance > 3 && randomChance < 6 )
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_C());
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalC++;
 				}
-				if (randomChance == 3)
+				else if (randomChance > 5 && randomChance < 8 )
 				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_D());
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalD++;
-				}
-				if (randomChance == 4)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_E());
-					totalE++;
-				}
-				if (randomChance == 5)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_F());
-					totalF++;
-				}
-				if (randomChance == 6)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_G());
-					totalG++;
-				}
-				if (randomChance == 7)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_H());
-					totalH++;
-				}
-				if (randomChance == 8)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_I());
-					totalI++;
-				}
-				if (randomChance == 9)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_J());
-					totalJ++;
-				}
-				if (randomChance == 10)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_K());
-					totalK++;
-				}
-				if (randomChance == 11)
-				{
-					this.mQuiz.mQuestionArray.push(this.mWordProblems.g1_oa_a_1_L());
-					totalL++;
 				}
 			}
 		}
-	}
+	},
+    
 });
