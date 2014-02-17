@@ -1,7 +1,7 @@
 var k_md_a_2 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -12,9 +12,6 @@ Extends: Pad,
 
 		//scoreNeeded
 		this.setScoreNeeded(20);
-
-		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	showCorrectAnswer: function()
@@ -49,8 +46,8 @@ Extends: Pad,
 		var question = new Question('','is more tall than');
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 5)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 5)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 	
@@ -58,24 +55,24 @@ Extends: Pad,
 		var question = new Question('','is more short than');
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 4)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 1)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 4)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		//3 heavy
 		var question = new Question('','is more heavy than');
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 2)]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 7)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 2)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 7)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 		
 		//4 light
 		var question = new Question('','is more light than');
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 6)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 3)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 6)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
                	var totalTall = 0;

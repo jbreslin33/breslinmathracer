@@ -1,7 +1,7 @@
 var k_md_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -12,9 +12,6 @@ Extends: Pad,
 
 		//scoreNeeded
 		this.setScoreNeeded(20);
-
-		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 
 	createQuestions: function()
@@ -33,28 +30,28 @@ Extends: Pad,
 		var question = new Question('What is this?','tall');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		//short	
 		var question = new Question('What is this?','short');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 1)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 1)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		//heavy
 		var question = new Question('What is this?','heavy');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 2)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 2)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 		
 		//light
 		var question = new Question('What is this?','light');
 		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);
                 question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + 3)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 3)]);
                 this.mQuiz.mQuestionPoolArray.push(question);
 
 		var totalTall = 0;

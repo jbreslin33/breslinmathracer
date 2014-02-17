@@ -1,14 +1,11 @@
 var k_nbt_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-
-                //input pad
-                this.mInputPad = new NumberPad(application);
 
 		this.setScoreNeeded(20);
 	},
