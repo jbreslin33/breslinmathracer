@@ -1,47 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
+
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
-include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
-
-include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php");
-
-//db connection
-$conn = dbConnect();
-
-//start new session
-session_start();
-
-//let's set a var that will be false if there was a problem..
-$problem = "";
-
-$_SESSION["password"] = $_POST["password"];
-$_SESSION["username"] = $_POST["username"];
-$_SESSION["school_id"] = "1";
-$_SESSION["school_name"] = "visitationbvm";
-
-//set user sessions
-$user_id = selectUserID($conn, $_SESSION["username"], $_SESSION["password"]);
-if ($user_id)
-{
-	//set sessions
-        $_SESSION["user_id"] = $user_id;
-      	$_SESSION["Login"] = "YES";
-	setLevelSessionVariables($conn,$user_id);
-}
-else
-{
-        $_SESSION["Login"] = "NO";
-	$problem = "no_user";	
-       	$_SESSION["user_id"] = 0;
-}
-
-if ($problem == "")
-{
-        header("Location: /web/home/home.php");
-}
-else
-{
-        header("Location: login_form.php?message=$problem");
-}
-
-pg_close();
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 ?>
+
+</head>
+
+<body>
+
+<br><b><u>Student Leaders:<u><b><br>
+
+<?php
+$query = "select users.username, users.first_name, users.last_name, learning_standards.progression, users.level, learning_standards.levels from users join learning_standards on learning_standards.ref_id = users.ref_id where users.school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by learning_standards.progression desc, users.level desc;";
+
+
+$result = pg_query($conn,$query);
+dbErrorCheck($conn,$result);
+$numrows = pg_numrows($result);
+?>
+
+<table border="1">
+  <tr>
+   <th>Username</th>
+   <th>FirstName</th>
+   <th>LastName</th>
+   <th>Progression</th>
+   <th>Level</th>
+   <th>Levels</th>
+  </tr>
+
+<?php
+   // Loop on rows in the result set.
+
+   for($ri = 0; $ri < $numrows; $ri++) {
+    echo "<tr>\n";
+    $row = pg_fetch_array($result, $ri);
+    echo " <td>", $row["username"], "</td>
+   <td>", $row["first_name"], "</td>
+   <td>", $row["last_name"], "</td>
+   <td>", $row["progression"], "</td>
+   <td>", $row["level"], "</td>
+   <td>", $row["levels"], "</td>
+  </tr>
+  ";
+   }
+   pg_close($conn);
+  ?>
+
+  </table>
+
+
+</body>
+
+</html>
+
