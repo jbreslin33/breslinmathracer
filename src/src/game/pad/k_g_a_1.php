@@ -21,29 +21,6 @@ Extends: MultipleChoicePad,
                 this.mNumQuestion.setPosition(200,100,140,140);
         },
 	
-	//state overides
-        showCorrectAnswerOutOfTime: function()
-        {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
-                this.mInputPad.showQuestion();
-                this.mInputPad.hide();
-                this.mInputPad.mNumQuestion.setVisibility('true');
-
-        },
-
-	showCorrectAnswer: function()
-        {
-                this.parent();
-                this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getAnswer();
-                this.mInputPad.showQuestion();
-                this.mInputPad.hide();
-                this.mInputPad.mNumQuestion.setVisibility('true');
-        },
- 
 	createQuestions: function()
         {
 		this.parent();
