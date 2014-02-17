@@ -9,6 +9,7 @@ DROP TABLE schools cascade;
 --=========================== CORE CURRICULUM  ========================
 --==================================================================
 DROP TABLE learning_standards;
+DROP TABLE level_transactions;
 DROP TABLE LevelAttempts;
 
 --=========================== HELPER  ========================
@@ -117,6 +118,15 @@ CREATE TABLE LevelAttempts (
 	score integer DEFAULT 0 NOT NULL,
 	time_warning boolean DEFAULT false NOT NULL,
 	passed boolean DEFAULT false NOT NULL
+);
+
+--LEVEL_TRANSACTIONS
+CREATE TABLE level_transactions (
+        id integer NOT NULL,
+        transaction_time timestamp,
+        user_id integer NOT NULL,
+        level integer NOT NULL,
+        ref_id text NOT NULL --FK
 );
 
 --****************************************************************

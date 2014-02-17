@@ -48,7 +48,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 dbErrorCheck($conn,$result4);
 
 
-		//insert into levels_transaction
+		//insert into levels_attempts
 	}
 	else
 	{
