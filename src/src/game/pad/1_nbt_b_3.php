@@ -1,7 +1,7 @@
 var g1_nbt_b_3 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePadImages,
 
 	initialize: function(application)
 	{
@@ -11,52 +11,49 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 		
 		this.setScoreNeeded(20);
-
-                //input pad
-                this.mInputPad = new ButtonMultipleChoicePadImages(application);
 	},
 
 	showQuestion: function()
         {
 		this.parent();
 
-		if (this.mInputPad.mButtonA.mMesh.innerHTML == 'is greater than')
+		if (this.mButtonA.mMesh.innerHTML == 'is greater than')
 		{
-			this.mInputPad.mButtonA.setSrc('/images/symbols/greater_than.png');
+			this.mButtonA.setSrc('/images/symbols/greater_than.png');
 		}
-		if (this.mInputPad.mButtonA.mMesh.innerHTML == 'is equal to')
+		if (this.mButtonA.mMesh.innerHTML == 'is equal to')
 		{
-			this.mInputPad.mButtonA.setSrc('/images/symbols/equal.png');
+			this.mButtonA.setSrc('/images/symbols/equal.png');
 		}
-		if (this.mInputPad.mButtonA.mMesh.innerHTML == 'is less than')
+		if (this.mButtonA.mMesh.innerHTML == 'is less than')
 		{
-			this.mInputPad.mButtonA.setSrc('/images/symbols/less_than.png');
+			this.mButtonA.setSrc('/images/symbols/less_than.png');
 		}
 
-                if (this.mInputPad.mButtonB.mMesh.innerHTML == 'is greater than')
+                if (this.mButtonB.mMesh.innerHTML == 'is greater than')
                 {
-                        this.mInputPad.mButtonB.setSrc('/images/symbols/greater_than.png');
+                        this.mButtonB.setSrc('/images/symbols/greater_than.png');
                 }
-                if (this.mInputPad.mButtonB.mMesh.innerHTML == 'is equal to')
+                if (this.mButtonB.mMesh.innerHTML == 'is equal to')
                 {
-                        this.mInputPad.mButtonB.setSrc('/images/symbols/equal.png');
+                        this.mButtonB.setSrc('/images/symbols/equal.png');
                 }
-                if (this.mInputPad.mButtonB.mMesh.innerHTML == 'is less than')
+                if (this.mButtonB.mMesh.innerHTML == 'is less than')
                 {
-                        this.mInputPad.mButtonB.setSrc('/images/symbols/less_than.png');
+                        this.mButtonB.setSrc('/images/symbols/less_than.png');
                 }
 
-                if (this.mInputPad.mButtonC.mMesh.innerHTML == 'is greater than')
+                if (this.mButtonC.mMesh.innerHTML == 'is greater than')
                 {
-                        this.mInputPad.mButtonC.setSrc('/images/symbols/greater_than.png');
+                        this.mButtonC.setSrc('/images/symbols/greater_than.png');
                 }
-                if (this.mInputPad.mButtonC.mMesh.innerHTML == 'is equal to')
+                if (this.mButtonC.mMesh.innerHTML == 'is equal to')
                 {
-                        this.mInputPad.mButtonC.setSrc('/images/symbols/equal.png');
+                        this.mButtonC.setSrc('/images/symbols/equal.png');
                 }
-                if (this.mInputPad.mButtonC.mMesh.innerHTML == 'is less than')
+                if (this.mButtonC.mMesh.innerHTML == 'is less than')
                 {
-                        this.mInputPad.mButtonC.setSrc('/images/symbols/less_than.png');
+                        this.mButtonC.setSrc('/images/symbols/less_than.png');
                 }
         },
 
