@@ -495,6 +495,7 @@ var Application = new Class(
                                	this.mGame = new g1_oa_c_6(APPLICATION);
 			}
                 }
+
 		if (this.mRef_id == '2A26EE660F72412EA29765D79C367F0B')
 		{ 
              		if (this.mGameName != "g1_oa_d_7")
