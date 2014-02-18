@@ -1,7 +1,7 @@
 var g1_oa_b_3 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -12,9 +12,6 @@ Extends: Pad,
 
 		//score needed
 		this.setScoreNeeded(20);
-     	
-                //input pad
-                this.mInputPad = new LongQuestionNumberPad(application);
         },
    
 	//showCorrectAnswer
