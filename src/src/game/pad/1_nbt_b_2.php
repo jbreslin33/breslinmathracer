@@ -1,7 +1,7 @@
 var g1_nbt_b_2 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -11,11 +11,14 @@ Extends: Pad,
 
 		this.mThresholdTime = 60000;
 
-                //input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
-
 		//word problems
 		this.mWordProblems = new WordProblems();
+	},
+
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(200,200);
 	},
 
      	//showCorrectAnswer
