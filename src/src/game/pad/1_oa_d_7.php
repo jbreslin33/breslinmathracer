@@ -13,6 +13,14 @@ Extends: MultipleChoicePad,
 		//score needed
 		this.setScoreNeeded(20);	
 	},
+
+	createNumQuestion: function()
+        {
+		this.parent();
+
+                //question
+                this.mNumQuestion.setPosition(370,30);
+        },      
 	
 	createQuestions: function()
         {
