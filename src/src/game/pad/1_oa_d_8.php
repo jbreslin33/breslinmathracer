@@ -1,7 +1,7 @@
 var g1_oa_d_8 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -12,25 +12,19 @@ Extends: Pad,
 	
 		//score needed	
 		this.setScoreNeeded(20);
-
-		//input pad
-		this.mInputPad = new NumberPad(application);
 	},
 	
 	//state overides
-	showCorrectAnswer: function()
+	showCorrectAnswerEnter: function()
 	{
 		this.parent();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
+        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
 	},
 
-	showCorrectAnswerOutOfTime: function()
+	showCorrectAnswerOutOfTimeEnter: function()
         {
-                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
-                this.mInputPad.hide();
-        	this.mCorrectAnswerBar.mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
-                this.showCorrectAnswerBar();
-                this.showClockShape();
+		this.parent();
+        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
         },
 
 	createQuestions: function()
@@ -77,7 +71,6 @@ Extends: Pad,
 						var question = new Question('' + VarA + ' + ' + VarB + ' = ?','' + VarC);
 						this.mQuiz.mQuestionArray.push(question);
 					}
-				
 				}
 				//c=a+b
 				else if (StandardFormOrNot == 1)
@@ -128,7 +121,6 @@ Extends: Pad,
                                                 var question = new Question('' + VarA + ' - ' + VarB + ' = ?','' + VarC);
                                                 this.mQuiz.mQuestionArray.push(question);
                                         }
-
                                 }
                                 //c=a+b
                                 else if (StandardFormOrNot == 1)
@@ -150,7 +142,6 @@ Extends: Pad,
                                         }
                                 }
                         }
-
 		}
 	}
 });
