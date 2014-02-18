@@ -1,7 +1,7 @@
 var g1_oa_b_4 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -13,12 +13,18 @@ Extends: Pad,
 		//score needed
 		this.setScoreNeeded(20);
 
-                //input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
-
 		//word problems
 		this.mWordProblems = new WordProblems();
 	},
+
+       	createNumQuestion: function()
+        {
+		this.parent();
+
+                //question
+                this.mNumQuestion.setPosition(140,140);
+                this.mNumQuestion.setSize(200,200);
+        },
 
 	//showCorrectAnswer
         showCorrectAnswerEnter: function()
