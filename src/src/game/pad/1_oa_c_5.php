@@ -1,15 +1,21 @@
 var g1_oa_c_5 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-
-                //input pad
-		this.mInputPad = new LongQuestionNumberPad(application);
 	},
+
+        createNumQuestion: function()
+        {
+                this.parent();
+
+                //question
+                this.mNumQuestion.setPosition(140,140);
+                this.mNumQuestion.setSize(200,200);
+        },
 
 	//showCorrectAnswer
         showCorrectAnswerEnter: function()
