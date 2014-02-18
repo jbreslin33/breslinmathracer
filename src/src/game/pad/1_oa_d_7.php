@@ -1,7 +1,7 @@
 var g1_oa_d_7 = new Class(
 {
 
-Extends: Pad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -12,9 +12,6 @@ Extends: Pad,
 
 		//score needed
 		this.setScoreNeeded(20);	
-
-		//input pad
-		this.mInputPad = new ButtonMultipleChoicePad(application);
 	},
 	
 	createQuestions: function()
