@@ -1,19 +1,23 @@
 var g4_oa_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
 	       	
-		//input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
-
 		this.mThresholdTime = 120000;
 
 		this.setScoreNeeded(20);
 	},
+
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(140,140);
+		this.mNumQuestion.setSize(200,200);
+	},	
 
      	//showCorrectAnswer
         showCorrectAnswerEnter: function()

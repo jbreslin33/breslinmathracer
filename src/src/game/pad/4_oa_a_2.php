@@ -1,7 +1,7 @@
 var g4_oa_a_2 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -11,10 +11,14 @@ Extends: Pad,
 
 		this.mThresholdTime = 240000;
              	this.mCorrectAnswerThresholdTime = 40000;
-
-                //input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
 	},
+
+        createNumQuestion: function()
+        {
+                this.parent();
+                this.mNumQuestion.setPosition(140,140);
+                this.mNumQuestion.setSize(200,200);
+        },
 
      	//showCorrectAnswer
         showCorrectAnswerEnter: function()
