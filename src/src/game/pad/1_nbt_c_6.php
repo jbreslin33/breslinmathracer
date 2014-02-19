@@ -1,7 +1,7 @@
 var g1_nbt_c_6 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -10,9 +10,6 @@ Extends: Pad,
 		this.mThresholdTime = 4000;
 		
 		this.setScoreNeeded(20);
-
-                //input pad
-                this.mInputPad = new NumberPad(application);
 	},
 
 	createQuestions: function()
