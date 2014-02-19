@@ -1,16 +1,13 @@
 var g2_oa_b_2 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
 
 		this.setScoreNeeded(20);
-
-                //input pad
-                this.mInputPad = new NumberPad(application);
 	},
   
 	createQuestions: function()
