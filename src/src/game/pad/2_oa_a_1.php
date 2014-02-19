@@ -1,7 +1,7 @@
 var g2_oa_a_1 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -13,11 +13,16 @@ Extends: Pad,
 		//threshold
 		this.mThresholdTime = 120000;
 
-                //input pad
-                this.mInputPad = new BigQuestionNumberPad(application);
-
 		//word problems
 		this.mWordProblems = new WordProblems();
+	},
+
+	createNumQuestion: function()
+	{
+		this.parent();
+
+		this.mNumQuestion.setPosition(140,140);
+		this.mNumQuestion.setSize(200,200);
 	},
 
         //showCorrectAnswer
