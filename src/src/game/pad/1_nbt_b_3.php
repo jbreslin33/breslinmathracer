@@ -13,6 +13,50 @@ Extends: MultipleChoicePadImages,
 		this.setScoreNeeded(20);
 	},
 
+	showQuestion: function()
+        {
+                this.parent();
+
+                if (this.mButtonA.mMesh.innerHTML == 'is greater than')
+                {
+                        this.mButtonA.setSrc('/images/symbols/greater_than.png');
+                }
+                if (this.mButtonA.mMesh.innerHTML == 'is equal to')
+                {
+                        this.mButtonA.setSrc('/images/symbols/equal.png');
+                }
+                if (this.mButtonA.mMesh.innerHTML == 'is less than')
+                {
+                        this.mButtonA.setSrc('/images/symbols/less_than.png');
+                }
+
+                if (this.mButtonB.mMesh.innerHTML == 'is greater than')
+                {
+                        this.mButtonB.setSrc('/images/symbols/greater_than.png');
+                }
+                if (this.mButtonB.mMesh.innerHTML == 'is equal to')
+                {
+                        this.mButtonB.setSrc('/images/symbols/equal.png');
+                }
+                if (this.mButtonB.mMesh.innerHTML == 'is less than')
+                {
+                        this.mButtonB.setSrc('/images/symbols/less_than.png');
+                }
+
+                if (this.mButtonC.mMesh.innerHTML == 'is greater than')
+                {
+                        this.mButtonC.setSrc('/images/symbols/greater_than.png');
+                }
+                if (this.mButtonC.mMesh.innerHTML == 'is equal to')
+                {
+                        this.mButtonC.setSrc('/images/symbols/equal.png');
+                }
+                if (this.mButtonC.mMesh.innerHTML == 'is less than')
+                {
+                        this.mButtonC.setSrc('/images/symbols/less_than.png');
+                }
+        },
+
 	createQuestions: function()
         {
 		this.parent();
@@ -57,11 +101,11 @@ Extends: MultipleChoicePadImages,
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
 				//add shapes
-				this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars ) ].mMesh.innerHTML = '' + objectsToCountA;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars)]);
+				this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars + this.mTotalInputBars) ].mMesh.innerHTML = '' + objectsToCountA;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars)]);
 				
-				this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + 1)].mMesh.innerHTML = '' + objectsToCountB;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + 1)]);
+				this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)].mMesh.innerHTML = '' + objectsToCountB;
+				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)]);
 			}
 		}
 	},
