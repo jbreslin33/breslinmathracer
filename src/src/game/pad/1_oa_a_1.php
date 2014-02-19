@@ -88,40 +88,56 @@ Extends: NumberPad,
         {
  		this.parent();
 
-		//a
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Graham had','toy cars. He bought', 'more at the toy store. How many toy cars does Graham have now?',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 
-		//b
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Anna had','dog treats. She gave', 'to here puppy. How many dog treats does Anna have now?',0));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
        		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Isaac had','quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had', 'quarters left in his pocket. How many fell out?',0));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 	
-		//c	
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?',1));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had on bed - put on chair = on bed';
        		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought','pots and Ethan brought', 'pots. They had just enough pots to put one flower in each pot. How many flowers did they have?',1));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - ate = left for Santa Claus';
 
-		//d
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Macon and Parker picked up the crayons that spilled onto the floor. When they put all the crayons back in the box, there were','crayons. Macon counted as she put the crayons in the box. He knows that he put', 'crayons in. How many crayons did Parker put in the box?',1));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
 
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Cole and Maggie worked together to make a train that had','cubes. They broke it into two pieces. One had', 'cubes. How many cubes were in the other piece?',1));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
-
+       		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Sally and Amy shared one box of colored pencils. They used all of the pencils to make drawings for art class. Sally chose','pencils to use for her drawing. Amy chose', 'pencils. How many pencils were in the box to begin with?',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Skip and Jacob made','cookies. They ate some as soon as they had cooled off. There were','cookies left. How many cookies did Skip and Jacob eat?',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'In the basketball game, Tiffany scored','points and Alexa scored','points. How many more points did Alexa score?',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Carson has','plastic bugs in his collection. He has','more bugs than his brother has. How many bugs does his brother have?',1));
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		
 		var totalA = 0;
 		var totalB = 0;
 		var totalC = 0;
 		var totalD = 0;
+		var totalE = 0;
+		var totalF = 0;
+		var totalG = 0;
+		var totalH = 0;
+		var totalI = 0;
+		var totalJ = 0;
+		var totalK = 0;
+		var totalL = 0;
 
-		while (totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2 || totalD < this.mScoreNeeded * .2)
+		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -129,27 +145,67 @@ Extends: NumberPad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*8));		
-				if (randomChance < 2)
+				var randomChance = Math.floor((Math.random()*12));		
+				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalA++;
 				}	
 
-				else if (randomChance > 1 && randomChance < 4 )
+				else if (randomChance == 1)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalB++;
 				}
-				else if (randomChance > 3 && randomChance < 6 )
+				else if (randomChance == 2)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalC++;
 				}
-				else if (randomChance > 5 && randomChance < 8 )
+				else if (randomChance == 3)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalD++;
+				}
+				else if (randomChance == 4)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalE++;
+				}
+				else if (randomChance == 5)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalF++;
+				}
+				else if (randomChance == 6)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalG++;
+				}
+				else if (randomChance == 7)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalH++;
+				}
+				else if (randomChance == 8)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalI++;
+				}
+				else if (randomChance == 9)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalJ++;
+				}
+				else if (randomChance == 10)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalK++;
+				}
+				else if (randomChance == 11)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalL++;
 				}
 			}
 		}
