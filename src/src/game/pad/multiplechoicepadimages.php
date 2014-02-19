@@ -6,9 +6,6 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-		//answers 
-                this.mThresholdTime = 60000;
 	},
 
 	createInput: function()
@@ -23,14 +20,14 @@ Extends: MultipleChoicePad,
                 this.mButtonA.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mButtonA);
                         
-		this.mButtonB = new Shape(150,50,375,150,this,"BUTTON","/images/symbols/greater_than.png","");
+		this.mButtonB = new Shape(150,50,375,150,this,"/images/symbols/greater_than.png","","");
                 this.mButtonB.mCollidable  = false;
                 this.mButtonB.mCollisionOn = false;
                 this.mButtonB.mMesh.innerHTML = 'B';
                 this.mButtonB.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mButtonB);
                       
-		this.mButtonC = new Shape(150,50,375,200,this,"BUTTON","/images/symbols/less_than.png","");
+		this.mButtonC = new Shape(150,50,375,200,this,"/images/symbols/less_than.png","","");
                 this.mButtonC.mCollidable  = false;
                 this.mButtonC.mCollisionOn = false;
                 this.mButtonC.mMesh.innerHTML = 'C';
