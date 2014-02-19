@@ -1,14 +1,11 @@
 var g3_oa_c_7 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-
-                //input pad
-                this.mInputPad = new NumberPad(application);
 	},
 
 	createQuestions: function()
