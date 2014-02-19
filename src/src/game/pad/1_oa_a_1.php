@@ -100,7 +100,7 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Isaac had','quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had', 'quarters left in his pocket. How many fell out?',1));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 	
-       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?',1));
+       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?',0));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had on bed - put on chair = on bed';
        		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought','pots and Ethan brought', 'pots. They had just enough pots to put one flower in each pot. How many flowers did they have?',0));
