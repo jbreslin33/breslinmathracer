@@ -4,6 +4,7 @@ var QuestionWord = new Class(
 types
 0: a+b=x
 1: a-b=x
+2: b-a=x
 */
 Extends: Question,
   	initialize: function(question,answer,minX,maxX,minA,maxA,minB,maxB,textA,textB,textC,type)
@@ -26,6 +27,10 @@ Extends: Question,
 			else if (type == 1)
 			{
 				x = a - b;
+			}
+			else if (type == 2)
+			{
+				x = b - a;
 			}
 			else if (type == 3)
 			{
@@ -55,6 +60,11 @@ Extends: Question,
                 	this.mTipArray[3] = '' + a + ' - ' + b + ' = ' + x;
 		}
 		else if (type == 2)
+		{
+                	this.mTipArray[2] = 'b - a = x';
+                	this.mTipArray[3] = '' + b + ' - ' + a                                                                                                                                                                                                                                                                                                                                                                                + ' = ' + x;
+		}
+		else if (type == 3)
 		{
                 	this.mTipArray[2] = 'a X b = x';
                 	this.mTipArray[3] = '' + a + ' X ' + b + ' = ' + x;

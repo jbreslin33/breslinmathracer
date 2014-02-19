@@ -91,7 +91,7 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Graham had','toy cars. He bought', 'more at the toy store. How many toy cars does Graham have now?',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?',1));	
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?',2));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
 
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Anna had','dog treats. She gave', 'to here puppy. How many dog treats does Anna have now?',1));
