@@ -13,6 +13,13 @@ Extends: NumberPad,
 		//score needed
 		this.setScoreNeeded(20);
         },
+
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(190,40);		
+		this.mNumQuestion.setSize(300,10);		
+	},
    
 	//showCorrectAnswer
         showCorrectAnswerEnter: function()
