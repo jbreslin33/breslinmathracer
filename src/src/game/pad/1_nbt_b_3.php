@@ -116,8 +116,8 @@ Extends: MultipleChoicePadImages,
 
 		for (i=0; i < this.mScoreNeeded; i++)
 		{	
-			this.mShapeArray.push(new Shape(150,50,300,100,this,"","",""));
-			this.mShapeArray.push(new Shape(150,50,550,100,this,"","",""));
+			this.mShapeArray.push(new Shape(15,10,245,130,this,"","",""));
+			this.mShapeArray.push(new Shape(15,10,495,130,this,"","",""));
 		}
 	}
 });
