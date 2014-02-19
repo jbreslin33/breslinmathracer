@@ -1,7 +1,7 @@
 var g1_md_b_3 = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -11,14 +11,12 @@ Extends: Pad,
                 this.mThresholdTime = 60000;
 
 		this.setScoreNeeded(20);
-
-		//input pad
-		this.mInputPad = new NumberPad(application);
 	},
 	
 	showQuestion: function()
 	{
-		this.mInputPad.showQuestion();	
+		this.parent();
+		
 		var t = this.mQuiz.getQuestion().getAnswer(); 	
 		var tArray = t.split(":");
 		this.setClock(parseInt(tArray[0]),parseInt(tArray[1]));	
