@@ -89,40 +89,40 @@ Extends: NumberPad,
  		this.parent();
 
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Graham had','toy cars. He bought', 'more at the toy store. How many toy cars does Graham have now?',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Graham had + Graham bought = Graham has';
 		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?',2));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Aubrey has - Aubrey found = Aubrey had';
 
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Anna had','dog treats. She gave', 'to here puppy. How many dog treats does Anna have now?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Anna had - Annad gave to puppy = Anna has now';
        		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Isaac had','quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had', 'quarters left in his pocket. How many fell out?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had + got = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Issac had - Issac has left = Issac lost';
 	
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?',0));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had on bed - put on chair = on bed';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Molly gave to sister + Molly kept for herself = Molly had to begin with';
        		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought','pots and Ethan brought', 'pots. They had just enough pots to put one flower in each pot. How many flowers did they have?',0));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - ate = left for Santa Claus';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Kaleb pots + Ethan pots = total flowers because there is one in each pot';
 
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Macon and Parker picked up the crayons that spilled onto the floor. When they put all the crayons back in the box, there were','crayons. Macon counted as he put the crayons in the box. He knows that he put', 'crayons in. How many crayons did Parker put in the box?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'total crayons - crayons Macon put away = crayons Parker put away';
 
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,'Cole and Maggie worked together to make a train that had','cubes. They broke it into two pieces. One had', 'cubes. How many cubes were in the other piece?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'total cubes - cubes on one train = cubes on the other train';
        		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Sally and Amy shared one box of colored pencils. They used all of the pencils to make drawings for art class. Sally chose','pencils to use for her drawing. Amy chose', 'pencils. How many pencils were in the box to begin with?',0));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Sally pencils + Amy pencils = total pencils';
 		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Skip and Jacob made','cookies. They ate some as soon as they had cooled off. There were','cookies left. How many cookies did Skip and Jacob eat?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'made - left = ate';
 		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'In the basketball game, Tiffany scored','points and Alexa scored','points. How many more points did Alexa score?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Alexa points - Tiffany points = difference in points';
 		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,'Carson has','plastic bugs in his collection. He has','more bugs than his brother has. How many bugs does his brother have?',1));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'had - gave = has';
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Carson bugs - how many more he has than brother = how many his brother has';
 		
 		var totalA = 0;
 		var totalB = 0;
