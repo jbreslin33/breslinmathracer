@@ -8,6 +8,7 @@ types
 3: a*b=x
 4: a/b=x
 5: a+b+c=x
+6: a-b-c=x
 */
 Extends: Question,
   	initialize: function(question,answer,minX,maxX,minA,maxA,minB,maxB,minC,maxC,textA,textB,textC,textD,type)
@@ -55,6 +56,10 @@ Extends: Question,
 				if (type == 5)
 				{
                         		x = a + b + c;
+				}
+				if (type == 6)
+				{
+                        		x = a - b - c;
 				}
 			}
                 }
@@ -105,6 +110,11 @@ Extends: Question,
 		{
                 	this.mTipArray[2] = 'a + b + c = x';
                 	this.mTipArray[3] = '' + a + ' + ' + b + ' + ' +  c  + ' = ' + x;
+		}
+		else if (type == 6)
+		{
+                	this.mTipArray[2] = 'a - b - c = x';
+                	this.mTipArray[3] = '' + a + ' - ' + b + ' - ' +  c  + ' = ' + x;
 		}
         }
 });
