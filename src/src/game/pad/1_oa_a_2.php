@@ -67,7 +67,7 @@ Extends: NumberPad,
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
-                                this.mShapeArray[6].setPosition(380,180);
+                                this.mShapeArray[6].setPosition(380,190);
                         	this.mShapeArray[6].setSize(700,10);
                                 this.mShapeArray[6].setVisibility(true);
                                 this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
@@ -148,7 +148,6 @@ Extends: NumberPad,
 				var randomChance = Math.floor((Math.random()*12));		
 				if (randomChance == 0)
 				{
-					this.log('AAAAAAAAAAAAAAAAAAAAAA');
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalA++;
 				}	
