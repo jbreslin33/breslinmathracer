@@ -47,7 +47,7 @@ Extends: Question,
 
 		if (type > 4)
 		{
-                	while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || c > minC | c < maxC)
+                	while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || c < minC | c > maxC)
                 	{
                         	a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
                         	b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
@@ -59,15 +59,13 @@ Extends: Question,
 			}
                 }
 		
-		if (type < 5)
-		{
-			//valid parameters so make the question...
-                	questionText = textA;
-                	questionText = questionText + ' ' + a + ' ';
-                	questionText = questionText + textB;
-                	questionText = questionText + ' ' + b + ' ';
-                	questionText = questionText + textC;
-		}
+		//valid parameters so make the question...
+                questionText = textA;
+                questionText = questionText + ' ' + a + ' ';
+                questionText = questionText + textB;
+                questionText = questionText + ' ' + b + ' ';
+                questionText = questionText + textC;
+
 		if (type > 4)
 		{
                 	questionText = questionText + ' ' + c + ' ';
@@ -91,7 +89,7 @@ Extends: Question,
 		else if (type == 2)
 		{
                 	this.mTipArray[2] = 'b - a = x';
-                	this.mTipArray[3] = '' + b + ' - ' + a                                                                                                                                                                                                                                                                                                                                                                                + ' = ' + x;
+                	this.mTipArray[3] = '' + b + ' - ' + a + ' = ' + x;
 		}
 		else if (type == 3)
 		{
@@ -106,7 +104,7 @@ Extends: Question,
 		else if (type == 5)
 		{
                 	this.mTipArray[2] = 'a + b + c = x';
-                	this.mTipArray[3] = '' + a + ' + ' + b + ' + ' + ' c ' + ' = ' + x;
+                	this.mTipArray[3] = '' + a + ' + ' + b + ' + ' +  c  + ' = ' + x;
 		}
         }
 });
