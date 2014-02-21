@@ -90,26 +90,21 @@ Extends: NumberPad,
 
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'Erin put','marbles into a jar. Sarah and Tracey put more marbles into the jar. Sarah put in', 'and Tracey put in','. How many marbles in the jar now?',5));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
 
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-	
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-	
-	
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'Erin put','marbles into a jar. Sarah and Tracey put more marbles into the jar. Sarah put in', 'and Tracey put in','. How many marbles in the jar now?',5));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
 
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'Erin put','marbles into a jar. Sarah and Tracey put more marbles into the jar. Sarah put in', 'and Tracey put in','. How many marbles in the jar now?',5));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'Erin put','marbles into a jar. Sarah and Tracey put more marbles into the jar. Sarah put in', 'and Tracey put in','. How many marbles in the jar now?',5));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
+
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'Erin put','marbles into a jar. Sarah and Tracey put more marbles into the jar. Sarah put in', 'and Tracey put in','. How many marbles in the jar now?',5));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
+
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'Erin put','marbles into a jar. Sarah and Tracey put more marbles into the jar. Sarah put in', 'and Tracey put in','. How many marbles in the jar now?',5));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
 		
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
