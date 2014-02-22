@@ -106,13 +106,16 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Kaleb and Ethan are building towers with blocks. The tower Kaleb builds has','blocks. The tower Ethan builds has','blocks. How many blocks will there be if they put both towers together to make one big tower?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Blocks in tower Kaleb builds + Blocks in tower Ethan builds = Total blocks if towers are put together';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Macon, Parker, and Carson made sandwiches for a Picnic. When they put all of the sandwiches in the cooler, there were','sandwiches. Macon knows that he made','and Parker made','. How many sandwiches did Carson make?',6));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total Sandwiches made - Sandwiches Macon Made - Sandwiches Parker made = Sandwiches Carson made';
+
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
 		var totalD = 2;
 		var totalE = 2;
-		var totalF = 0;
-		var totalG = 2;
+		var totalF = 2;
+		var totalG = 0;
 		var totalH = 2;
 		var totalI = 2;
 		var totalJ = 2;
@@ -128,7 +131,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 5;		
+				randomChance = 6;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
