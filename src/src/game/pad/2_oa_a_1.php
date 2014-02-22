@@ -111,6 +111,10 @@ Extends: NumberPad,
 
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Cole and Maggie worked together to make a paper chain with','links. At the end of the day, they each wanted to take home part of the chain. The part Maggie took had','links. How many links were in the part Cole took?','',1));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total links in paper chain - Links Maggie took = Links Cole took';
+		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Sally and Amy put together a puzzle. When it was time to clean up, Sally took apart','pieces and Amy took apart','pieces. How many pieces were in the puzzle?','',0));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Pieces Sally took apart - Pieces Amy took apart = Total Pieces in the puzzle';
+
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
@@ -118,8 +122,8 @@ Extends: NumberPad,
 		var totalE = 2;
 		var totalF = 2;
 		var totalG = 2;
-		var totalH = 0;
-		var totalI = 2;
+		var totalH = 2;
+		var totalI = 0;
 		var totalJ = 2;
 		var totalK = 2;
 		var totalL = 2;
@@ -133,7 +137,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 7;		
+				randomChance = 8;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
