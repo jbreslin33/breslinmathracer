@@ -94,9 +94,12 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Aubrey had a box of crayons. She found','more crayons when she cleaned out her desk and put them in the box. Now there are', 'crayons in the box. How many were in the box to begin with?','',2));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Crayons in the box now - Crayons Aubrey found = Crayons in the box to begin with';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Anna had','tickets for the carnival rides. She used', 'tickets for the roller coaster ride and','tickets for the rocket ride. How many tickets does Anna have now?',6));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Tickets Anna had to begin with - Tickets Anna use for roller coaster - Tickets Anna used for rocket ride = Tickets Anna has left';
+
 		var totalA = 2;
-		var totalB = 0;
-		var totalC = 2;
+		var totalB = 2;
+		var totalC = 0;
 		var totalD = 2;
 		var totalE = 2;
 		var totalF = 2;
@@ -116,7 +119,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 1;		
+				randomChance = 2;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
