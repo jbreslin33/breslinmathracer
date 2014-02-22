@@ -124,6 +124,9 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Tiffany put some birdseed in a feeder on her porch. She counted the birds that came to the feeder each day. She counted','birds on Monday. She noticed there were','more birds on Monday than there were on Friday. How many birds came to the feeder on Friday?','',1));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Birds on Monday - difference in Birds compared to Friday = Birds on Friday';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Hunter and Joshua raced to see who could stack more boxes in a minute. Joshua stacked','less than Hunter. The stack Joshua made had','boxes. How many boxes did Hunter stack? ','',0));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Boxes Joshua stacked + difference in Boxes Hunter stacked = Boxes Hunter stacked';
+
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
@@ -135,9 +138,10 @@ Extends: NumberPad,
 		var totalI = 2;
 		var totalJ = 2;
 		var totalK = 2;
-		var totalL = 0;
+		var totalL = 2;
+		var totalM = 0;
 
-		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01)
+		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01 || totalM < this.mScoreNeeded * .01)
 		{	
 			this.mQuiz.resetQuestionArray();
 
@@ -146,7 +150,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 11;		
+				randomChance = 12;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
@@ -207,6 +211,11 @@ Extends: NumberPad,
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
 					totalL++;
+				}
+				else if (randomChance == 12)
+				{
+       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
+					totalM++;
 				}
 			}
 		}
