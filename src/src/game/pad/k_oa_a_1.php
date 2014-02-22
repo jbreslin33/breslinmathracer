@@ -51,13 +51,10 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new Question('5 - 1 =','4'));
 		//22
 
-		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
                 
 		while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
 		{	
-			//reset vars and arrays
-			
 			totalNew = 0;
 			
 			this.mQuiz.resetQuestionArray();

@@ -159,7 +159,7 @@ Extends: NumberPad,
 
 		var totalNew           = 0;
                 
-		while (totalNew < this.mScoreNeeded * .45)
+		while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
 		{	
 			//reset vars and arrays
 			totalNew = 0;
