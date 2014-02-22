@@ -109,14 +109,16 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Macon, Parker, and Carson made sandwiches for a Picnic. When they put all of the sandwiches in the cooler, there were','sandwiches. Macon knows that he made','and Parker made','. How many sandwiches did Carson make?',6));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total Sandwiches made - Sandwiches Macon Made - Sandwiches Parker made = Sandwiches Carson made';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Cole and Maggie worked together to make a paper chain with','links. At the end of the day, they each wanted to take home part of the chain. The part Maggie took had','links. How many links were in the part Cole took?','',1));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total links in paper chain - Links Maggie took = Links Cole took';
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
 		var totalD = 2;
 		var totalE = 2;
 		var totalF = 2;
-		var totalG = 0;
-		var totalH = 2;
+		var totalG = 2;
+		var totalH = 0;
 		var totalI = 2;
 		var totalJ = 2;
 		var totalK = 2;
@@ -131,7 +133,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 6;		
+				randomChance = 7;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
