@@ -118,6 +118,9 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Jacob and Skip took a model airplane apart to put it away. The airplane had','pieces. Skip counted','pieces that he put away. How many pieces did Jacob put away?','',1));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total Pieces airplane has - Pieces Skip put away = Pieces Jacob put away';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Alexa is practicing for a race. She ran for','minutes on Friday and','minutes on Saturday. How much longer did Alexa run on Saturday?','',2));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Minutes on Saturday - Minutes on Friday = How much longer Alexa ran on Saturday';
+
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
@@ -127,8 +130,8 @@ Extends: NumberPad,
 		var totalG = 2;
 		var totalH = 2;
 		var totalI = 2;
-		var totalJ = 0;
-		var totalK = 2;
+		var totalJ = 2;
+		var totalK = 0;
 		var totalL = 2;
 
 		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01)
@@ -140,7 +143,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 9;		
+				randomChance = 10;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
