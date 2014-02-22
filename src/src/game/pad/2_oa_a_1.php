@@ -102,12 +102,16 @@ Extends: NumberPad,
 
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Molly baked some cupcakes for a bake sale. She sold','and had','left over. How many cupcakes did Molly bake?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Cupcakes Molly sold + Cupcakes Molly had left = Cupcakes Molly baked';
+		
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Kaleb and Ethan are building towers with blocks. The tower Kaleb builds has','blocks. The tower Ethan builds has','blocks. How many blocks will there be if they put both towers together to make one big tower?','',0));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Blocks in tower Kaleb builds + Blocks in tower Ethan builds = Total blocks if towers are put together';
+
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
 		var totalD = 2;
-		var totalE = 0;
-		var totalF = 2;
+		var totalE = 2;
+		var totalF = 0;
 		var totalG = 2;
 		var totalH = 2;
 		var totalI = 2;
@@ -124,7 +128,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 4;		
+				randomChance = 5;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
