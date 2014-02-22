@@ -49,19 +49,19 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
 		//insert into level_transactions
 		//INSERT INTO level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP, 1, 1, 'C85C9392B07C477BB499004696474B25');
-/*
+
 		$queryLT = "insert into level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP,"; 
-		$queryLT =  $_SESSION["user_id"]; 
-		$queryLT =  ","; 
-		$queryLT =  $_SESSION["level"]; 
-		$queryLT =  ",'"; 
-		$queryLT =  $_SESSION["ref_id"]; 
-		$queryLT =  "');"; 
+		$queryLT .=  $_SESSION["user_id"]; 
+		$queryLT .=  ","; 
+		$queryLT .=  $_SESSION["level"]; 
+		$queryLT .=  ",'"; 
+		$queryLT .=  $_SESSION["ref_id"]; 
+		$queryLT .=  "');"; 
                 
 		//get db result
                 $resultLT = pg_query($conn,$queryLT) or die('Could not connect: ' . pg_last_error());
                 dbErrorCheck($conn,$resultLT);
-*/
+
 	}
 	else
 	{
@@ -105,19 +105,18 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 			//get db result
         		$result3 = pg_query($conn,$query3) or die('Could not connect: ' . pg_last_error());
         		dbErrorCheck($conn,$result3);
-	/*	
-			$queryLT = "insert into level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP,"; 
-			$queryLT =  $_SESSION["user_id"]; 
-			$queryLT =  ","; 
-			$queryLT =  $_SESSION["level"]; 
-			$queryLT =  ",'"; 
-			$queryLT =  $_SESSION["ref_id"]; 
-			$queryLT =  "');"; 
 		
+			$queryLT = "insert into level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP,"; 
+			$queryLT .=  $_SESSION["user_id"]; 
+			$queryLT .=  ","; 
+			$queryLT .=  $_SESSION["level"]; 
+			$queryLT .=  ",'"; 
+			$queryLT .=  $_SESSION["ref_id"]; 
+			$queryLT .=  "');"; 
+                
 			//get db result
                 	$resultLT = pg_query($conn,$queryLT) or die('Could not connect: ' . pg_last_error());
                 	dbErrorCheck($conn,$resultLT);
-*/
 		}
 		else
 		{
