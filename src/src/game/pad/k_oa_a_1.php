@@ -54,7 +54,7 @@ Extends: NumberPad,
 		var totalNewGoal       = parseInt(this.mScoreNeeded / 2);
 		var totalNew           = 0;
                 
-		while (totalNew < totalNewGoal)
+		while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
 		{	
 			//reset vars and arrays
 			
