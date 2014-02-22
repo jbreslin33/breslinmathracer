@@ -94,54 +94,18 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
 
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Marbles Erin put in jar + Marbles Sarah put in Jar + Marbles Tracey put in jar = Total marbles in jar';
-
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,19,2,20,2,20,2,20,'There are','flowers planted beside the sidewalk. Jon planted', 'of them. Bailey planted','of them. Montez planted the rest of them. How many flowers did Montez plant?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total flowers planted - Flowers Jon planted - Flowers Baily planted = Flowers Montez planted';
-
-		var totalA = 0;
+		var totalA = 2;
 		var totalB = 0;
-		var totalC = 0;
-		var totalD = 0;
-		var totalE = 0;
-		var totalF = 0;
-		var totalG = 0;
-		var totalH = 0;
-		var totalI = 0;
-		var totalJ = 0;
-		var totalK = 0;
-		var totalL = 0;
+		var totalC = 2;
+		var totalD = 2;
+		var totalE = 2;
+		var totalF = 2;
+		var totalG = 2;
+		var totalH = 2;
+		var totalI = 2;
+		var totalJ = 2;
+		var totalK = 2;
+		var totalL = 2;
 
 		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01)
 		{	
@@ -152,6 +116,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
+				randomChance = 1;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
