@@ -127,18 +127,18 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Hunter and Joshua raced to see who could stack more boxes in a minute. Joshua stacked','less than Hunter. The stack Joshua made had','boxes. How many boxes did Hunter stack? ','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Boxes Joshua stacked + difference in Boxes Hunter stacked = Boxes Hunter stacked';
 
-		var totalA = 2;
-		var totalB = 2;
-		var totalC = 2;
-		var totalD = 2;
-		var totalE = 2;
-		var totalF = 2;
-		var totalG = 2;
-		var totalH = 2;
-		var totalI = 2;
-		var totalJ = 2;
-		var totalK = 2;
-		var totalL = 2;
+		var totalA = 0;
+		var totalB = 0;
+		var totalC = 0;
+		var totalD = 0;
+		var totalE = 0;
+		var totalF = 0;
+		var totalG = 0;
+		var totalH = 0;
+		var totalI = 0;
+		var totalJ = 0;
+		var totalK = 0;
+		var totalL = 0;
 		var totalM = 0;
 
 		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01 || totalM < this.mScoreNeeded * .01)
@@ -149,8 +149,7 @@ Extends: NumberPad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 12;		
+				var randomChance = Math.floor((Math.random()*13));		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
