@@ -91,7 +91,7 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Baseball cards Graham had + Baseball cards Graham bought = Baseball cards Graham has now';
 
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Aubrey had a box of crayons. She found','more crayons when she cleaned out her desk and put them in the box. Now there are', 'crayons in the box. How many were in the box to begin with?','',1));	
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Aubrey had a box of crayons. She found','more crayons when she cleaned out her desk and put them in the box. Now there are', 'crayons in the box. How many were in the box to begin with?','',2));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Crayons in the box now - Crayons Aubrey found = Crayons in the box to begin with';
 
 		var totalA = 2;
