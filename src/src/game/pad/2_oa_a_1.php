@@ -100,11 +100,13 @@ Extends: NumberPad,
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Issac had','toy cars in a box. Some of them fell out of the box on the way to the playground. When he opened the box, there were only', 'cars left inside. How many fell out?','',1));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Toy cars to begin with - Toys cars left = Toy cars that fell out';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Molly baked some cupcakes for a bake sale. She sold','and had','left over. How many cupcakes did Molly bake?','',0));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Cupcakes Molly sold + Cupcakes Molly had left = Cupcakes Molly baked';
 		var totalA = 2;
 		var totalB = 2;
 		var totalC = 2;
-		var totalD = 0;
-		var totalE = 2;
+		var totalD = 2;
+		var totalE = 0;
 		var totalF = 2;
 		var totalG = 2;
 		var totalH = 2;
@@ -122,7 +124,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 3;		
+				randomChance = 4;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
@@ -186,6 +188,5 @@ Extends: NumberPad,
 				}
 			}
 		}
-	},
-    
+	}
 });
