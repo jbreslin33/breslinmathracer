@@ -88,19 +88,22 @@ Extends: NumberPad,
         {
  		this.parent();
 
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Baseball cards Graham had + Baseball cards Graham bought = Baseball cards Graham has now';
 
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Aubrey had a box of crayons. She found','more crayons when she cleaned out her desk and put them in the box. Now there are', 'crayons in the box. How many were in the box to begin with?','',2));	
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Aubrey had a box of crayons. She found','more crayons when she cleaned out her desk and put them in the box. Now there are', 'crayons in the box. How many were in the box to begin with?','',2));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Crayons in the box now - Crayons Aubrey found = Crayons in the box to begin with';
 
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Anna had','tickets for the carnival rides. She used', 'tickets for the roller coaster ride and','tickets for the rocket ride. How many tickets does Anna have now?',6));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Tickets Anna had to begin with - Tickets Anna use for roller coaster - Tickets Anna used for rocket ride = Tickets Anna has left';
 
+		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Issac had','toy cars in a box. Some of them fell out of the box on the way to the playground. When he opened the box, there were only', 'cars left inside. How many fell out?','',1));	
+		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Toy cars to begin with - Toys cars left = Toy cars that fell out';
+
 		var totalA = 2;
 		var totalB = 2;
-		var totalC = 0;
-		var totalD = 2;
+		var totalC = 2;
+		var totalD = 0;
 		var totalE = 2;
 		var totalF = 2;
 		var totalG = 2;
@@ -119,7 +122,7 @@ Extends: NumberPad,
 			{	
 				//50% chance of asking newest question
 				var randomChance = Math.floor((Math.random()*12));		
-				randomChance = 2;		
+				randomChance = 3;		
 				if (randomChance == 0)
 				{
        					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
