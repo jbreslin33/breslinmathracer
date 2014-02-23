@@ -146,18 +146,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 $result4 = pg_query($conn,$query4) or die('Could not connect: ' . pg_last_error());
                 dbErrorCheck($conn,$result4);
 
-		$queryLT = "insert into level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP,"; 
-		$queryLT .=  $_SESSION["user_id"]; 
-		$queryLT .=  ","; 
-		$queryLT .=  $_SESSION["level"]; 
-		$queryLT .=  ",'"; 
-		$queryLT .=  $_SESSION["ref_id"]; 
-		$queryLT .=  "');"; 
-                
-		//get db result
-                $resultLT = pg_query($conn,$queryLT) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$resultLT);
-
 		//update level attempts
 		$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, passed = TRUE WHERE id = ";
 		$update .= $_SESSION["attempt_id"];
@@ -183,6 +171,14 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         
 		if ($num2 > 0)
         	{
+			//update level attempts
+			$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, passed = TRUE WHERE id = ";
+			$update .= $_SESSION["attempt_id"];
+			$update .=  ";"; 
+                
+			$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
+                	dbErrorCheck($conn,$updateResult);
+
                 	//get the id from user table
                 	$levels      = pg_Result($result2, 0, 'levels');
                 	$ref_id       = pg_Result($result2, 0, 'ref_id');
@@ -208,18 +204,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 			//get db result
         		$result3 = pg_query($conn,$query3) or die('Could not connect: ' . pg_last_error());
         		dbErrorCheck($conn,$result3);
-		
-			$queryLT = "insert into level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP,"; 
-			$queryLT .=  $_SESSION["user_id"]; 
-			$queryLT .=  ","; 
-			$queryLT .=  $_SESSION["level"]; 
-			$queryLT .=  ",'"; 
-			$queryLT .=  $_SESSION["ref_id"]; 
-			$queryLT .=  "');"; 
-                
-			//get db result
-                	$resultLT = pg_query($conn,$queryLT) or die('Could not connect: ' . pg_last_error());
-                	dbErrorCheck($conn,$resultLT);
 		}
 		else
 		{
