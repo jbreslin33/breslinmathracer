@@ -850,6 +850,13 @@ var Game = new Class(
 
         firstTimeExecute: function()
         {
+		this.log('t:' + this.mFailedAttemptsThreshold);
+        	this.log('f:' + this.mApplication.mFailedAttempts);
+        	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
+        	{
+                	this.mStateMachine.changeState(this.mLEVEL_FAILED);
+        	}
+
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {

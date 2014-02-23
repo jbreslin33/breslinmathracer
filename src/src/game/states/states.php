@@ -91,7 +91,9 @@ execute: function(game)
        	{
                 game.mStateMachine.changeState(game.mRESET_GAME);
         }
-	
+
+	this.log('t:' + game.mFailedAttemptsThreshold);	
+	this.log('f:' + APPLICATION.mFailedAttempts);
 	if (APPLICATION.mFailedAttempts > game.mFailedAttemptsThreshold)
         {
                 game.mStateMachine.changeState(game.mLEVEL_FAILED);
