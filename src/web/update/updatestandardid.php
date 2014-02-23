@@ -37,11 +37,13 @@ if ($num > 0)
 	$updateResult = pg_query($conn,$update);
 	$errorCheck = dbErrorCheck($conn,$updateResult);
 	
-	$response = "success";;
+	$response = "Success";
+	
+	//setLevelSessionVariables($conn,$_SESSION["user_id"]);
 }
 else
 {
-	$response = "standard does not exist";;
+	$response = "Standard does not exist";
 }
 
 pg_close($conn);
