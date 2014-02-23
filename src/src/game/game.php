@@ -858,6 +858,7 @@ var Game = new Class(
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
+			this.mApplication.sendLevelAttempt();
                         if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                         {
                                 this.mStateMachine.changeState(this.mCORRECT_ANSWER);

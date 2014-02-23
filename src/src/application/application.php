@@ -729,6 +729,45 @@ var Application = new Class(
                 xmlhttp.open("GET","../../src/database/send_failed_attempt.php",true);
                 xmlhttp.send();
         },
+       
+	sendLevelAttempt: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        // code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        var response = xmlhttp.responseText;
+                        var responseArray = response.split(",");
+                        var code = responseArray[0];
+
+                        if (code == "101")
+                        {
+                                APPLICATION.mRef_id = responseArray[1];
+                                APPLICATION.mLevel = responseArray[2];
+                                APPLICATION.mStandard = responseArray[3];
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                APPLICATION.mProgression = responseArray[4];
+                                APPLICATION.mLevels = responseArray[5];
+                                APPLICATION.mFailedAttempts = responseArray[6];
+                                APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                //APPLICATION.mRewindToPreviousLevelConfirmation = true;
+                        }
+                }
+                xmlhttp.open("GET","../../src/database/send_level_attempt.php",true);
+                xmlhttp.send();
+        },
+
 
 	advanceToNextLevel: function()
         {

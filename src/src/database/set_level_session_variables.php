@@ -1,5 +1,21 @@
 <?php
 
+function insertLevelAttempt($conn,$user_id)
+{
+	//insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,1,1,'CA9EE2E34F384E95A5FA26769C5864B8');
+	$query = "insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,";
+  	$query .= $_SESSION["user_id"];
+	$query .= ",";	
+  	$query .= $_SESSION["level"];
+	$query .= ",'";	
+  	$query .= $_SESSION["ref_id"];
+	$query .= "');";	
+
+        //get db result
+        $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$result);
+}
+
 function updateFailedAttempts($conn,$user_id)
 {
         if ( $_SESSION["level"] == 1)
