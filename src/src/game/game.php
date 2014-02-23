@@ -41,6 +41,8 @@ var Game = new Class(
                 this.mShowLevelFailedThresholdTime = 10000;
 
                 this.mFailedAttemptsThreshold = 10;
+
+		this.mFirstTimeAnswer = false;
                 
 		/**************** TIME ************/
                 this.mTimeSinceEpoch = 0;
@@ -127,6 +129,8 @@ var Game = new Class(
                 this.mLastTimeSinceEpoch = 0;
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
+
+		this.mFirstTimeAnswer = false;
 
 		this.createUniverse();
         },
@@ -858,7 +862,12 @@ var Game = new Class(
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
-			this.mApplication.sendLevelAttempt();
+			if (this.mFirstTimeAnswer == false)
+			{
+				this.mFirstTimeAnswer = true;
+				this.mApplication.sendLevelAttempt();
+			}
+
                         if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                         {
                                 this.mStateMachine.changeState(this.mCORRECT_ANSWER);
