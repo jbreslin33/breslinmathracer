@@ -13,7 +13,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 
 <?php
 //update users SET ref_id = ( select ref_id from learning_standards where id = 'k.oa.a.2') where username = 'v1401';
-$query = "update users SET ref_id = ( select ref_id from learning_standards where id = '";
+$query = "update users SET failed_attempts=0, level = 1,ref_id = ( select ref_id from learning_standards where id = '";
 $query .= $_POST["standardid"];
 $query .= "') where username = '";
 $query .= $_SESSION["username"];
