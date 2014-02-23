@@ -750,17 +750,15 @@ var Application = new Class(
                 {
                         var response = xmlhttp.responseText;
                         var responseArray = response.split(",");
-			APPLICATION.log('response:' + response);
                         var code = responseArray[0];
 
                         if (code == "101")
                         {
                                 APPLICATION.mAttempt_id = responseArray[1];
-				APPLICATION.log('attempt_id:' + APPLICATION.mAttempt_id);
                         }
                 }
 
-                xmlhttp.open("GET","../../src/database/send_level_attempt.php",true);
+                xmlhttp.open("GET","../../src/database/send_level_attempt.php",false);
                 xmlhttp.send();
         },
 
