@@ -862,12 +862,6 @@ var Game = new Class(
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
-			if (this.mFirstTimeAnswer == false)
-			{
-				this.mFirstTimeAnswer = true;
-				this.mApplication.sendLevelAttempt();
-			}
-
                         if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                         {
                                 this.mStateMachine.changeState(this.mCORRECT_ANSWER);
@@ -876,6 +870,12 @@ var Game = new Class(
                         {
                                 this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
                         }
+			
+			if (this.mFirstTimeAnswer == false)
+			{
+				this.mFirstTimeAnswer = true;
+				this.mApplication.sendLevelAttempt();
+			}
                 }
         }
 });
