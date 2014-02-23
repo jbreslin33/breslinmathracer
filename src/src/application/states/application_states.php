@@ -76,7 +76,7 @@ execute: function(application)
 		
 	if (application.mLevelFailed)
 	{
-		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
+		application.mStateMachine.changeState(application.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
 	}
 },
 exit: function(application)
