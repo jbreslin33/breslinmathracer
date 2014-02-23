@@ -735,15 +735,12 @@ var Application = new Class(
 	sendLevelAttempt: function()
         {
                 var xmlhttp;
-
                 if (window.XMLHttpRequest)
                 {
-                        // code for IE7+, Firefox, Chrome, Opera, Safari
                         xmlhttp=new XMLHttpRequest();
                 }
                 else
                 {
-                        // code for IE6, IE5
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.open("POST","../../src/database/send_level_attempt.php",false);
@@ -753,15 +750,12 @@ var Application = new Class(
 	advanceToNextLevel: function()
         {
                 var xmlhttp;
-
                 if (window.XMLHttpRequest)
                 {
-                        // code for IE7+, Firefox, Chrome, Opera, Safari
                         xmlhttp=new XMLHttpRequest();
                 }
                 else
                 {
-                        // code for IE6, IE5
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.onreadystatechange=function()
