@@ -9,6 +9,7 @@
 
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
+include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
 ?>
 
 <?php
@@ -38,15 +39,26 @@ if ($num > 0)
 	$errorCheck = dbErrorCheck($conn,$updateResult);
 	
 	$response = "Success";
+
+	//set session vars	
+	$standard_id = pg_Result($selectResult, 0, 'id');
+	$ref_id = pg_Result($selectResult, 0, 'ref_id');
+	$progression = pg_Result($selectResult, 0, 'progression');
+	$levels = pg_Result($selectResult, 0, 'levels');
 	
-	//setLevelSessionVariables($conn,$_SESSION["user_id"]);
+        $_SESSION["standard"] = $standard_id;
+        $_SESSION["ref_id"] = $ref_id;
+        $_SESSION["progression"] = $progression;
+        $_SESSION["levels"] = $levels;
+        $_SESSION["level"] = 1;
+        $_SESSION["failed_attempts"] = 0;
+
 }
 else
 {
 	$response = "Standard does not exist";
 }
 
-pg_close($conn);
 ?>
 
 </head>
