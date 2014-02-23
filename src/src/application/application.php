@@ -26,6 +26,8 @@ var Application = new Class(
 
 		this.mAdvanceToNextLevelConfirmation = false;
 		this.mRewindToPreviousLevelConfirmation = false;
+
+		this.mAttempt_id = 0;
 		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -744,6 +746,20 @@ var Application = new Class(
                         // code for IE6, IE5
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
+  		xmlhttp.onreadystatechange=function()
+                {
+                        var response = xmlhttp.responseText;
+                        var responseArray = response.split(",");
+			APPLICATION.log('response:' + response);
+                        var code = responseArray[0];
+
+                        if (code == "101")
+                        {
+                                APPLICATION.mAttempt_id = responseArray[1];
+				APPLICATION.log('attempt_id:' + APPLICATION.mAttempt_id);
+                        }
+                }
+
                 xmlhttp.open("GET","../../src/database/send_level_attempt.php",true);
                 xmlhttp.send();
         },
