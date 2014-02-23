@@ -755,6 +755,7 @@ var Application = new Class(
                         if (code == "101")
                         {
                                 APPLICATION.mAttempt_id = responseArray[1];
+				APPLICATION.log('mAttempt_id:' + APPLICATION.mAttempt_id);
                         }
                 }
 

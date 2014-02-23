@@ -22,7 +22,7 @@ function insertLevelAttempt($conn,$user_id)
   	$select .= $_SESSION["level"];
 	$select .= " AND ref_id = '";	
   	$select .= $_SESSION["ref_id"];
-	$select .= "';";	
+	$select .= "' ORDER BY start_time DESC;";	
 
         //get db result
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
