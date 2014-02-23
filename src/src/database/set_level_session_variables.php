@@ -1,4 +1,31 @@
 <?php
+
+function updateFailedAttempts($conn,$user_id)
+{
+        if ( $_SESSION["level"] == 1)
+        {
+
+        }
+        else
+        {
+                //go back
+                //update users SET level = 2, failed_attempts=4 where username = 'v1401';
+                $failedAttemptsVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["failed_attempts"]);
+                $failedAttemptsVar++;
+                $_SESSION["failed_attempts"] = $failedAttemptsVar;
+
+                $query = "update users set failed_attempts = ";
+                $query .= $_SESSION["failed_attempts"];
+                $query .= " where id = ";
+                $query .= $_SESSION["user_id"];
+                $query .= ";";
+
+                //get db result
+                $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+                dbErrorCheck($conn,$result);
+        }
+}
+
 function setLevelSessionVariablesRewind($conn,$user_id)
 {
 	if ( $_SESSION["level"] == 1)

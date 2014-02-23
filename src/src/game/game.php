@@ -77,7 +77,6 @@ var Game = new Class(
                 this.mLEVEL_FAILED                      = new LEVEL_FAILED      (this);
                
 		//pad states  
-		this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
                 this.mFIRST_TIME   = new FIRST_TIME(this);
                 this.mWAITING_ON_ANSWER   = new WAITING_ON_ANSWER(this);
                 this.mCORRECT_ANSWER = new CORRECT_ANSWER(this);
@@ -693,6 +692,9 @@ var Game = new Class(
 	//showCorrectAnswer
        	showCorrectAnswerEnter: function()
         {
+		//should you make db call here?	
+		this.mApplication.sendFailedAttempt();	
+	
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(false);
@@ -751,7 +753,6 @@ var Game = new Class(
 
 	showCorrectAnswerExit: function()
         {
-		this.mApplication.mFailedAttempts++;
 		this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
                 this.hideGuiBar();
         },
