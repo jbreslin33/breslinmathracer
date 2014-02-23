@@ -746,23 +746,9 @@ var Application = new Class(
                         // code for IE6, IE5
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-  		xmlhttp.onreadystatechange=function()
-                {
-                        var response = xmlhttp.responseText;
-                        var responseArray = response.split(",");
-                        var code = responseArray[0];
-
-                        if (code == "101")
-                        {
-                                APPLICATION.mAttempt_id = responseArray[1];
-				APPLICATION.log('mAttempt_id:' + APPLICATION.mAttempt_id);
-                        }
-                }
-
                 xmlhttp.open("GET","../../src/database/send_level_attempt.php",false);
                 xmlhttp.send();
         },
-
 
 	advanceToNextLevel: function()
         {
