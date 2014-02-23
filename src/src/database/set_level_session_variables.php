@@ -158,6 +158,13 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 $resultLT = pg_query($conn,$queryLT) or die('Could not connect: ' . pg_last_error());
                 dbErrorCheck($conn,$resultLT);
 
+		//update level attempts
+		$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, passed = TRUE WHERE id = ";
+		$update .= $_SESSION["attempt_id"];
+		$update .=  ";"; 
+                
+		$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
+                dbErrorCheck($conn,$updateResult);
 	}
 	else
 	{
