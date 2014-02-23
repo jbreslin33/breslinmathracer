@@ -12,9 +12,10 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 ?>
 
 <?php
-$query = "update users SET ref_id = '";
-$query .= $_POST["refid"];
-$query .= "', level=1 where username = '";
+//update users SET ref_id = ( select ref_id from learning_standards where id = 'k.oa.a.2') where username = 'v1401';
+$query = "update users SET ref_id = ( select ref_id from learning_standards where id = '";
+$query .= $_POST["standardid"];
+$query .= "') where username = '";
 $query .= $_SESSION["username"];
 $query .= "';";
 
@@ -27,7 +28,7 @@ pg_close($conn);
 
 <body>
 
-<br><b><u>Student Leaders:<u><b><br>
+<br><b><u>Sql update:<u><b><br>
 <?php
 echo $query;
 ?>
