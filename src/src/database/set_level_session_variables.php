@@ -28,7 +28,7 @@ function updateFailedAttempts($conn,$user_id)
 
 function setLevelSessionVariablesRewind($conn,$user_id)
 {
-	if ( $_SESSION["level"] == 1)
+	if ( $_SESSION["level"] == 1 || $_SESSION["failed_attempts"] == 0)
 	{
 
 	}
