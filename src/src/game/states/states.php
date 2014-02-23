@@ -91,6 +91,11 @@ execute: function(game)
        	{
                 game.mStateMachine.changeState(game.mRESET_GAME);
         }
+	
+	if (APPLICATION.mFailedAttempts > game.mFailedAttemptsThreshold)
+        {
+                game.mStateMachine.changeState(game.mLEVEL_FAILED);
+        }
 },
 
 exit: function(game)
@@ -119,6 +124,31 @@ execute: function(game)
 exit: function(game)
 {
 	game.levelPassedExit();
+}
+
+});
+
+var LEVEL_FAILED = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(game)
+{
+        game.levelFailedEnter();
+},
+
+execute: function(game)
+{
+        game.levelFailedExecute();
+},
+
+exit: function(game)
+{
+        game.levelFailedExit();
 }
 
 });

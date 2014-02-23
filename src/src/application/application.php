@@ -17,10 +17,15 @@ var Application = new Class(
 		this.mLevels = levels;
 		this.mProgression = progression;
 		this.mStandard = standard;
+		this.mFailedAttempts = failed_attempts;
 
 		this.mLevelCompleted = false;
+		this.mLevelFailed = false;
+
 		this.mWaitingOnLevelData = false;
+
 		this.mAdvanceToNextLevelConfirmation = false;
+		this.mRewindToPreviousLevelConfirmation = false;
 		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -71,6 +76,7 @@ var Application = new Class(
                 this.mNORMAL_APPLICATION                = new NORMAL_APPLICATION       (this);
                 this.mGET_LEVEL_DATA_APPLICATION        = new GET_LEVEL_DATA_APPLICATION(this);
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
+                this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
                 this.mStateMachine.changeState(this.mINIT_APPLICATION);
@@ -120,6 +126,7 @@ var Application = new Class(
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mLevels = responseArray[3];
+				APPLICATION.mFailedAttempts = responseArray[4];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
@@ -713,6 +720,7 @@ var Application = new Class(
 				APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 				APPLICATION.mProgression = responseArray[4];
 				APPLICATION.mLevels = responseArray[5];
+				APPLICATION.mFailedAttempts = responseArray[6];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
@@ -721,6 +729,45 @@ var Application = new Class(
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
                 xmlhttp.send();
         },
+
+       	advanceToLastLevel: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        // code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        var response = xmlhttp.responseText;
+                        var responseArray = response.split(",");
+                        var code = responseArray[0];
+
+                        if (code == "101")
+                        {
+                                APPLICATION.mRef_id = responseArray[1];
+                                APPLICATION.mLevel = responseArray[2];
+                                APPLICATION.mStandard = responseArray[3];
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                APPLICATION.mProgression = responseArray[4];
+                                APPLICATION.mLevels = responseArray[5];
+				APPLICATION.mFailedAttempts = responseArray[6];
+                                APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                APPLICATION.mAdvanceToNextLevelConfirmation = true;
+                        }
+                }
+                xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
+                xmlhttp.send();
+        },
+
  	
 	sendGameTimeEnd: function()
         {

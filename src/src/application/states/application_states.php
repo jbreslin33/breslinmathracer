@@ -73,6 +73,11 @@ execute: function(application)
 	{
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 	}
+		
+	if (application.mLevelFailed)
+	{
+		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
+	}
 },
 exit: function(application)
 {
@@ -122,6 +127,39 @@ enter: function(application)
 {
 	//tell db to advance you
         application.advanceToNextLevel();
+
+	//set the game on db to end 
+        application.sendGameTimeEnd();
+},
+
+execute: function(application)
+{
+	if (application.mGame.mReadyForNormalApplication)
+        {
+                application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+	application.mGame.mReadyForNormalApplication = false;
+ 	application.mHud.setLevel(application.mLevel,application.mLevels);	
+}
+
+});
+
+var REWIND_TO_PREVIOUS_LEVEL_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	//tell db to advance you
+        application.advanceToLastLevel();
 
 	//set the game on db to end 
         application.sendGameTimeEnd();

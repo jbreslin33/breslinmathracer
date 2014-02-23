@@ -1,4 +1,31 @@
 <?php
+function setLevelSessionVariablesRewind($conn,$user_id)
+{
+	if ( $_SESSION["level"] == 1)
+	{
+
+	}
+	else
+	{
+		//go back
+ 		//update users SET level = 2, failed_attempts=4 where username = 'v1401';	
+ 		$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
+		$levelVar--;
+		$_SESSION["level"] = $levelVar;
+		$_SESSION["failed_attempts"] = 0;
+
+ 		$query = "update users SET level = ";
+		$query .= $_SESSION["level"];
+		$query .= ", failed_attempts = 0 where id = ";
+		$query .= $_SESSION["user_id"];	
+                $query .= ";";
+
+        	//get db result
+        	$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+        	dbErrorCheck($conn,$result);
+	}
+}
+
 function setLevelSessionVariablesAdvance($conn,$user_id)
 {
  	$query = "select levels,progression from learning_standards where ref_id = '";
@@ -46,9 +73,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 //get db result
                 $result4 = pg_query($conn,$query4) or die('Could not connect: ' . pg_last_error());
                 dbErrorCheck($conn,$result4);
-
-		//insert into level_transactions
-		//INSERT INTO level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP, 1, 1, 'C85C9392B07C477BB499004696474B25');
 
 		$queryLT = "insert into level_transactions (transaction_time, user_id, level, ref_id) VALUES (CURRENT_TIMESTAMP,"; 
 		$queryLT .=  $_SESSION["user_id"]; 
@@ -129,7 +153,7 @@ function setLevelSessionVariables($conn,$user_id)
 {
 	$user_id = selectUserID($conn, $_SESSION["username"],$_SESSION["password"]);
 	
-	$query = "select users.ref_id, users.level, users.first_name, users.last_name, learning_standards.id, learning_standards.progression, learning_standards.levels from users INNER JOIN learning_standards ON users.ref_id=learning_standards.ref_id WHERE users.id = ";
+	$query = "select users.ref_id, users.level, users.first_name, users.last_name, users.failed_attempts, learning_standards.id, learning_standards.progression, learning_standards.levels from users INNER JOIN learning_standards ON users.ref_id=learning_standards.ref_id WHERE users.id = ";
         $query .= $user_id;
         $query .= ";";
 
@@ -150,6 +174,7 @@ function setLevelSessionVariables($conn,$user_id)
                 $standard = pg_Result($result, 0, 'id');
                 $progression = pg_Result($result, 0, 'progression');
                 $levels = pg_Result($result, 0, 'levels');
+                $failed_attempts = pg_Result($result, 0, 'failed_attempts');
 
                 //set level_id
                 $_SESSION["ref_id"] = $ref_id;
@@ -159,6 +184,7 @@ function setLevelSessionVariables($conn,$user_id)
                 $_SESSION["standard"] = $standard;
                 $_SESSION["progression"] = $progression;
                 $_SESSION["levels"] = $levels;
+                $_SESSION["failed_attempts"] = $failed_attempts;
         }
         else
         {

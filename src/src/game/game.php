@@ -35,6 +35,7 @@ var Game = new Class(
 		this.mReadyForNormalApplication = false;
                 this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelPassedThresholdTime = 10000;
+                this.mFailedAttemptsThreshold = 10;
                 
 		/**************** TIME ************/
                 this.mTimeSinceEpoch = 0;
@@ -73,6 +74,7 @@ var Game = new Class(
                 this.mRESET_GAME                        = new RESET_GAME        (this);
                 this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
                 this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
+                this.mLEVEL_FAILED                      = new LEVEL_FAILED      (this);
                
 		//pad states  
 		this.mSHOW_CORRECT_ANSWER = new SHOW_CORRECT_ANSWER(this);
@@ -610,7 +612,6 @@ var Game = new Class(
  		for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(false);
-
                 }
 	
                 //user answer
@@ -650,6 +651,41 @@ var Game = new Class(
 	{
 		this.mReadyForNormalApplication = true;
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
+	},
+
+	levelFailedEnter: function()
+	{
+		this.mApplication.mLevelFailed = true;
+       
+		//user answer
+                this.mUserAnswer = '';
+
+                //times
+                this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
+                this.mShowLevelFailedStartTime = this.mTimeSinceEpoch;
+
+                //create victory shapes...
+                this.createVictoryShapes();
+
+		//if (this.mApplication.mLevel == this.mApplication.mLevels)
+
+                this.mShapeArray[0].setPosition(400,125);
+                this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' is going back a level!';
+               	this.mShapeArray[0].setVisibility(true);
+
+	},
+	levelFailedExecute: function()
+	{
+                if (this.mTimeSinceEpoch > this.mShowLevelFailedStartTime + this.mShowLevelFailedThresholdTime && this.mApplication.mRewindToPreviousLevelConfirmation)
+                {
+                        this.mStateMachine.changeState(this.mINIT_GAME);
+                }
+	},
+
+	levelFailedExit: function()
+	{
+		this.mReadyForNormalApplication = true;
+		this.mApplication.mRewindToPreviousLevelConfirmation = false;
 	},
 
 	//old pad states
@@ -715,6 +751,8 @@ var Game = new Class(
 
 	showCorrectAnswerExit: function()
         {
+		this.mApplication.mFailedAttempts++;
+		this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
                 this.hideGuiBar();
         },
 

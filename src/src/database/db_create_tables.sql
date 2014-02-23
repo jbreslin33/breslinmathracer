@@ -89,6 +89,9 @@ CREATE TABLE users (
 	level integer NOT NULL default 1 
 );
 
+--alter
+alter table users add column failed_attempts integer NOT NULL default 0;
+
 --STUDENTS
 CREATE TABLE students (
     id integer NOT NULL,
