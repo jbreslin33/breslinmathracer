@@ -746,7 +746,7 @@ var Application = new Class(
                         // code for IE6, IE5
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("GET","../../src/database/send_level_attempt.php",false);
+                xmlhttp.open("PUT","../../src/database/send_level_attempt.php",false);
                 xmlhttp.send();
         },
 
