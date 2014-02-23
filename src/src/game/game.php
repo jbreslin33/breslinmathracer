@@ -33,8 +33,13 @@ var Game = new Class(
 
                 //level passed
 		this.mReadyForNormalApplication = false;
+
                 this.mShowLevelPassedStartTime = 0;
+                this.mShowLevelFailedStartTime = 0;
+
                 this.mShowLevelPassedThresholdTime = 10000;
+                this.mShowLevelFailedThresholdTime = 10000;
+
                 this.mFailedAttemptsThreshold = 10;
                 
 		/**************** TIME ************/
@@ -850,13 +855,6 @@ var Game = new Class(
 
         firstTimeExecute: function()
         {
-		this.log('t:' + this.mFailedAttemptsThreshold);
-        	this.log('f:' + this.mApplication.mFailedAttempts);
-        	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
-        	{
-                	this.mStateMachine.changeState(this.mLEVEL_FAILED);
-        	}
-
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {

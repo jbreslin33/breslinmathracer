@@ -91,13 +91,6 @@ execute: function(game)
        	{
                 game.mStateMachine.changeState(game.mRESET_GAME);
         }
-
-	this.log('t:' + game.mFailedAttemptsThreshold);	
-	this.log('f:' + APPLICATION.mFailedAttempts);
-	if (APPLICATION.mFailedAttempts > game.mFailedAttemptsThreshold)
-        {
-                game.mStateMachine.changeState(game.mLEVEL_FAILED);
-        }
 },
 
 exit: function(game)
@@ -250,9 +243,17 @@ enter: function(game)
 
 execute: function(game)
 {
+
         if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
         {
-                game.mStateMachine.changeState(game.mRESET_GAME);
+                if (game.mApplication.mFailedAttempts > game.mFailedAttemptsThreshold)
+                {
+                        game.mStateMachine.changeState(game.mLEVEL_FAILED);
+                }
+		else
+		{
+                	game.mStateMachine.changeState(game.mRESET_GAME);
+		}
         }
 },
 
