@@ -51,7 +51,7 @@ $result2 = pg_query($conn,$query2);
 dbErrorCheck($conn,$result2);
 $numrows = pg_numrows($result2);
 
-echo '<table>';
+echo '<table border=\"1\">';
 for($i = 0; $i < $numrows; $i++) 
 {
         $row = pg_fetch_array($result2, $i);
