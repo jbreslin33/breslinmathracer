@@ -9,6 +9,8 @@ Extends: MultipleChoicePad,
 
 		//answers 
                 this.mThresholdTime = 60000;
+	
+		this.mFailedAttemptsThreshold = 0;
 	},
 
 	//questions
