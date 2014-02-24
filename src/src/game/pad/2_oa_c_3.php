@@ -1,7 +1,7 @@
 var g2_oa_c_3 = new Class(
 {
 
-Extends: NumberPad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -10,10 +10,45 @@ Extends: NumberPad,
 		//answers 
                 this.mThresholdTime = 60000;
 	},
+  
+        createQuestions: function()
+        {
+                this.parent();
+
+                //answer pool
+                this.mQuiz.mAnswerPool.push('one');
+                this.mQuiz.mAnswerPool.push('two');
+                this.mQuiz.mAnswerPool.push('three');
+                this.mQuiz.mAnswerPool.push('four');
+                this.mQuiz.mAnswerPool.push('five');
+                this.mQuiz.mAnswerPool.push('six');
+                this.mQuiz.mAnswerPool.push('seven');
+                this.mQuiz.mAnswerPool.push('eight');
+                this.mQuiz.mAnswerPool.push('nine');
+                this.mQuiz.mAnswerPool.push('ten');
+
+                //just the question array reset
+                this.mQuiz.resetQuestionArray();
+
+                for (i = 0; i < this.mScoreNeeded; i++)
+                {
+                        var question = new Question('Count?', '' + this.mQuiz.mAnswerPool[i]);
+                        question.mAnswerPool = this.mQuiz.mAnswerPool;
+                        for (s = 0; s <= parseInt(i*2); s++)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(s + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        this.mQuiz.mQuestionArray.push(question);
+                }
+        },
 
 	createQuestions: function()
         {
 		this.parent();
+
+                //answer pool
+                this.mQuiz.mAnswerPool.push('odd');
+                this.mQuiz.mAnswerPool.push('even');
 		
 		var totalCount = 0;
 
@@ -25,7 +60,31 @@ Extends: NumberPad,
 			//just the question array reset
 			this.mQuiz.resetQuestionArray();
 
+                	for (i = 0; i < this.mScoreNeeded; i++)
+                	{
+				var question;
+				var objectsToCount = Math.floor((Math.random()*21));		
+				
+				if (objectsToCount%2 == 0)
+				{
+                        		question = new Question('Odd or Even?', '' + this.mQuiz.mAnswerPool[1]);
+				}
+				else
+				{
+                        		question = new Question('Odd or Even?', '' + this.mQuiz.mAnswerPool[0]);
+				}
+				
+                        	question.mAnswerPool = this.mQuiz.mAnswerPool;
+                        	for (s = 0; s <= parseInt(i*2); s++)
+                        	{
+                                	question.mShapeArray.push(this.mShapeArray[parseInt(s + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        	}
+                        	this.mQuiz.mQuestionArray.push(question);
+				totalCount = parseInt(totalCount + objectsToCount);
+                	}
+		}
 			//loop thru and make potential questions
+/*
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//random number to count from 0-20
@@ -40,7 +99,7 @@ Extends: NumberPad,
 
 				totalCount = parseInt(totalCount + objectsToCount);
 			}
-		}
+*/
 	},
 
 	createWorld: function()
