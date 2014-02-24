@@ -109,6 +109,8 @@ CREATE TABLE learning_standards (
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	levels integer NOT NULL -- for us to determine number of levels till next LearningStandard	
 );	
+alter table learning_standards add column standard text;
+
 
 --LEVEL_ATTEMPTS
 CREATE TABLE LevelAttempts (

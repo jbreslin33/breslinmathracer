@@ -1,6 +1,6 @@
 --LEARNING_STANDARDS
-insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.1','CA9EE2E34F384E95A5FA26769C5864B8',1,11); 
-insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.2','5E6A3E3B939B4577B104FA8658206E9E',2,6);
+insert into learning_standards (id,ref_id,progression,levels,standard) values ('k.cc.a.1','CA9EE2E34F384E95A5FA26769C5864B8',1,11,'Count to 100 by ones and by tens.'); 
+insert into learning_standards (id,ref_id,progression,levels,standard) values ('k.cc.a.2','5E6A3E3B939B4577B104FA8658206E9E',2,6,'Count forward beginning from a given number within the known sequence (instead of having to begin at 1).');
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.3','C11F30815A9C49B9A83B61A285EA11F9',3,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4a','7B20214AA4AA445AA720062C6F1B5C58',4,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4b','3DEE205D86BC461FA4271EF4BD190A0C',5,10);
