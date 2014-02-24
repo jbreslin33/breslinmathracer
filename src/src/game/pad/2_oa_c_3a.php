@@ -1,4 +1,4 @@
-var g2_oa_c_3 = new Class(
+var g2_oa_c_3a = new Class(
 {
 
 Extends: MultipleChoicePad,
