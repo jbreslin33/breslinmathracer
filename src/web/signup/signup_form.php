@@ -34,6 +34,8 @@ echo "<br>";
 
 	<p>Username: <input type="text" name="username" /></p>
 	<p>Password: <input type="text" name="password" /></p>
+	<p>First Name: <input type="text" name="firstname" /></p>
+	<p>Last Name: <input type="text" name="lastname" /></p>
 
 	<p><input type="submit" value="Sign Up" /></p>
 
