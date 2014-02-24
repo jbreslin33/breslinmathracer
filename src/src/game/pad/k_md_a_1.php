@@ -11,7 +11,10 @@ Extends: MultipleChoicePad,
                 this.mThresholdTime = 60000;
 
 		//scoreNeeded
-		this.setScoreNeeded(20);
+		this.setScoreNeeded(10);
+
+		this.mFailedAttemptsThreshold = 0;
+
 	},
 
 	createQuestions: function()
@@ -59,7 +62,7 @@ Extends: MultipleChoicePad,
 		var totalHeavy = 0;
 		var totalLight = 0;
 	
-		while(totalTall < 3  || totalShort < 3 || totalHeavy < 3 || totalLight < 3)
+		while(totalTall < 1  || totalShort < 1 || totalHeavy < 1 || totalLight < 1)
 		{
 			this.mQuiz.resetQuestionArray();
 			for (i=0; i < this.mScoreNeeded; i++)
