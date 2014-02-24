@@ -658,6 +658,7 @@ var Game = new Class(
 	levelPassedExit: function()
 	{
 		this.mReadyForNormalApplication = true;
+		this.log('set mAdvanceToNextLevelConfirmation to false');
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
 	},
 
