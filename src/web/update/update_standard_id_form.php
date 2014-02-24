@@ -16,17 +16,6 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
-
-      	$mess = $_GET["message"];
-	
-	if ($mess == "no_user")
-	{
-		echo "No user try again.";
-	}
-	if ($mess == "user")
-	{
-		echo "we have a user.";
-	}
 ?>
 
 <?php
