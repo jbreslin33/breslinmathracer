@@ -32,14 +32,12 @@ Extends: MultipleChoicePad,
 		
 		var totalCount = 0;
 
-	//	while (totalCount < parseInt(this.mScoreNeeded * 7) || totalCount > parseInt(this.mScoreNeeded * 13))
-	//	{	
-			//reset vars and arrays
-	//		totalCount = 0;
+		while (totalCount < parseInt(this.mScoreNeeded * 7) || totalCount > parseInt(this.mScoreNeeded * 13))
+		{	
+			totalCount = 0;
 
-			//just the question array reset
 			this.mQuiz.resetQuestionArray();
-			this.log('create the quesetoins');
+
                 	for (i = 0; i < this.mScoreNeeded; i++)
                 	{
 			
@@ -49,12 +47,10 @@ Extends: MultipleChoicePad,
 				if (objectsToCount%2 == 0)
 				{
                         		question = new Question('Odd or Even?', '' + this.mQuiz.mAnswerPool[1]);
-					this.log('even');
 				}
 				else
 				{
                         		question = new Question('Odd or Even?', '' + this.mQuiz.mAnswerPool[0]);
-					this.log('odd');
 				}
 				
                         	question.mAnswerPool = this.mQuiz.mAnswerPool;
@@ -63,10 +59,9 @@ Extends: MultipleChoicePad,
                                 	question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
                         	}
                         	this.mQuiz.mQuestionArray.push(question);
-	//			totalCount = parseInt(totalCount + objectsToCount);
+				totalCount = parseInt(totalCount + objectsToCount);
                 	}
-	//	}
-			//loop thru and make potential questions
+		}
 	},
 
 	createWorld: function()
