@@ -28,11 +28,30 @@ echo "<br>";
 		echo "we have a user.";
 	}
 ?>
-	<p><b> Enter Standard ID: </p></b>
+
+<?php
+$query = "select id from learning_standards order by progression;";
+$result = pg_query($conn,$query);
+dbErrorCheck($conn,$result);
+$numrows = pg_numrows($result);
+?>
+	<p><b> Select Standard ID: </p></b>
 	
 	<form method="post" action="/web/update/updatestandardid.php">
 
-	<p>STANDARD ID: <input type="text" name="standardid" /></p>
+<select name="standardid">
+
+<?php
+        // Loop on rows in the result set.
+        for($ri = 0; $ri < $numrows; $ri++) 
+        {
+                $row = pg_fetch_array($result, $ri);
+                echo "<option value=\"$row[0]\">$row[0]</option>";
+        }
+        pg_close($conn);
+?>
+
+</select>
 
 	<p><input type="submit" value="UPDATE" /></p>
 
