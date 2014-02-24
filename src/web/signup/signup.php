@@ -15,7 +15,7 @@ session_start();
 //set school_name, username and password
 $_SESSION["username"] = $_POST["username"];
 $_SESSION["password"] = $_POST["password"];
-$_SESSION["first_naame"] = $_POST["firstname"];
+$_SESSION["first_name"] = $_POST["firstname"];
 $_SESSION["last_name"]   = $_POST["lastname"];
 
 $userNameString = $_SESSION["username"];
