@@ -51,7 +51,7 @@ var Game = new Class(
 		this.mGameTime = 0;
 
                 //answers
-                this.mThresholdTime = 5000;
+                this.mThresholdTime = 6000;
                 this.mAnswerTime = 0;
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
