@@ -19,7 +19,7 @@ echo "<br>";
 ?>
 
 <?php
-$query = "select id from learning_standards order by progression;";
+$query = "select id,standard from learning_standards order by progression;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
@@ -35,7 +35,7 @@ $numrows = pg_numrows($result);
         for($ri = 0; $ri < $numrows; $ri++) 
         {
                 $row = pg_fetch_array($result, $ri);
-                echo "<option value=\"$row[0]\">$row[0]</option>";
+                echo "<option value=\"$row[0]\">$row[0] $row[1]</option>";
         }
         pg_close($conn);
 ?>
