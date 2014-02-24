@@ -4,7 +4,7 @@ insert into learning_standards (id,ref_id,progression,levels,standard) values ('
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.a.3','C11F30815A9C49B9A83B61A285EA11F9',3,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4a','7B20214AA4AA445AA720062C6F1B5C58',4,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.4b','3DEE205D86BC461FA4271EF4BD190A0C',5,10);
-insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.b.5','6F4455B55B4240F3B4738DD9DB3EAF40',6,10);
+insert into learning_standards (id,ref_id,progression,levels,standard) values ('k.cc.b.5','6F4455B55B4240F3B4738DD9DB3EAF40',6,10,'Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.');
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.c.6','66626D8AEE4E474B8CFEC8A4B68AA51C',7,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.cc.c.7','C9B9CAD5BDE84CE2A7A0C441A3DF1A2D',8,10);
 insert into learning_standards (id,ref_id,progression,levels) values ('k.oa.a.1','C815B29CD8F546BBBB4C647B9D163942',9,21);
