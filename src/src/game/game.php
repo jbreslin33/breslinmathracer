@@ -763,7 +763,6 @@ var Game = new Class(
 
 	showCorrectAnswerExit: function()
         {
-		this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
                 this.hideGuiBar();
         },
 
