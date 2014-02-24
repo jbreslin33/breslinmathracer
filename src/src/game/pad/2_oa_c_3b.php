@@ -10,6 +10,13 @@ Extends: NumberPad,
 		this.setScoreNeeded(20);
 		this.mFailedAttemptsThreshold = 0;
 	},
+	
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(140,140);		
+		this.mNumQuestion.setSize(200,200);		
+	},	
 
 	createQuestions: function()
         {
