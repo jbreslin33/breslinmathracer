@@ -10,6 +10,20 @@ Extends: NumberPad,
 		this.setScoreNeeded(20);
 		this.mFailedAttemptsThreshold = 0;
 	},
+        
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+		this.parent();
+                this.mShapeArray[1].setPosition(140,140);
+        },
+        
+	//outOfTime
+        outOfTimeEnter: function()
+        {
+		this.parent();
+                this.mShapeArray[1].setPosition(140,140);
+        },
 	
 	createNumQuestion: function()
 	{
