@@ -62,7 +62,7 @@ Extends: NumberPad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//random number to count from 0-20
-				var randomChance = Math.floor((Math.random()*5));		
+				var randomChance = Math.floor((Math.random()*3));		
 
 				if (randomChance == 0)
 				{
