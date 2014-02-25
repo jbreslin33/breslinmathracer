@@ -26,17 +26,38 @@ Extends: NumberPad,
 		this.mNumQuestion.setPosition(590,140);
 		this.mNumQuestion.setSize(200,200);
 	},
+       
+	showCorrectAnswerEnter: function()
+        {
+		this.parent(); 
+		this.mShapeArray[1].setPosition(400,175);
+		this.mShapeArray[1].setSize(200,200);
+        },
+ 
+	outOfTimeEnter: function()
+        {
+		this.parent(); 
+		this.mShapeArray[1].setPosition(400,175);
+		this.mShapeArray[1].setSize(200,200);
+        },
 
 	createQuestions: function()
         {
 		this.parent();
-		
-		var totalCount = 0;
 
-		while (totalCount < parseInt(this.mScoreNeeded * 7) || totalCount > parseInt(this.mScoreNeeded * 13))
+		var totalA = 0;
+		var totalB = 0;
+		var totalC = 0;
+		var totalD = 0;
+		var totalE = 0;
+		
+		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1)
 		{	
-			//reset vars and arrays
-			totalCount = 0;
+			totalA = 0;
+			totalB = 0;
+			totalC = 0;
+			totalD = 0;
+			totalE = 0;
 
 			//just the question array reset
 			this.mQuiz.resetQuestionArray();
@@ -45,16 +66,58 @@ Extends: NumberPad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//random number to count from 0-20
-				var objectsToCount = Math.floor((Math.random()*21));		
+				var randomChance = Math.floor((Math.random()*5));		
 
-				var question = new Question('Write an equation to express the total as a sum of equal addends.', '' + objectsToCount);
-				for (i = 0; i < objectsToCount; i++)
+				if (randomChance == 0)
 				{
-					question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+					for (i = 0; i < 5; i++)
+					{
+						var question = new Question('Write an equation to express the total as a sum of equal addends.', '1+1+1+1+1=5');
+						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+						this.mQuiz.mQuestionArray.push(question);
+						totalA++;
+					}
 				}
-				this.mQuiz.mQuestionArray.push(question);
-
-				totalCount = parseInt(totalCount + objectsToCount);
+				if (randomChance == 1)
+				{
+					for (i = 0; i < 10; i++)
+					{
+						var question = new Question('Write an equation to express the total as a sum of equal addends.', '2+2+2+2+2=10');
+						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+						this.mQuiz.mQuestionArray.push(question);
+						totalB++;
+					}
+				}
+				if (randomChance == 2)
+				{
+					for (i = 0; i < 15; i++)
+					{
+						var question = new Question('Write an equation to express the total as a sum of equal addends.', '3+3+3+3+3=15');
+						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+						this.mQuiz.mQuestionArray.push(question);
+						totalC++;
+					}
+				}
+				if (randomChance == 3)
+				{
+					for (i = 0; i < 20; i++)
+					{
+						var question = new Question('Write an equation to express the total as a sum of equal addends.', '4+4+4+4+4=20');
+						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+						this.mQuiz.mQuestionArray.push(question);
+						totalD++;
+					}
+				}
+				if (randomChance == 4)
+				{
+					for (i = 0; i < 25; i++)
+					{
+						var question = new Question('Write an equation to express the total as a sum of equal addends.', '5+5+5+5+5=25');
+						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+						this.mQuiz.mQuestionArray.push(question);
+						totalE++;
+					}
+				}
 			}
 		}
 	},
