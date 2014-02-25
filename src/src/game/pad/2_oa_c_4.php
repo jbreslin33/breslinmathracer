@@ -13,11 +13,11 @@ Extends: NumberPad,
 		this.mFailedAttemptsThreshold = 0;
 	},
 	
-	createNumAnswer: function()
+	createInput: function()
 	{
 		this.parent();
-		this.mNumAnswer.setSize(100,50);
-		this.mNumAnswer.setPosition(425,100);
+		this.mNumAnswer.setSize(200,50);
+		this.mNumAnswer.setPosition(375,100);
 	},
 
 	createNumQuestion: function()
