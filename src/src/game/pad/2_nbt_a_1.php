@@ -64,72 +64,45 @@ Extends: NumberPad,
 				//random number to count from 0-20
 				var randomChance = Math.floor((Math.random()*3));		
 
+				//ones
 				if (randomChance == 0)
 				{
-					var question = new Question('Write an equation to express the total as a sum of equal addends.', '1+1+1+1+1=5');
-					for (i = 0; i < 5; i++)
-					{
-						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-					}
+					var randomOnes = Math.floor((Math.random()*10));		
+					var randomTens = Math.floor((Math.random()*10));		
+					var randomHundreds = Math.floor((Math.random()*10));		
+					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+					
+					var question = new Question('How many ones in the ones place of ' + randomNumber + '?', '' + randomOnes);
 					this.mQuiz.mQuestionArray.push(question);
 					totalA++;
 				}
+			
+				//tens
 				if (randomChance == 1)
 				{
-					var question = new Question('Write an equation to express the total as a sum of equal addends.', '3+3+3+3+3=15');
-					for (i = 0; i < 15; i++)
-					{
-						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-					}
+					var randomOnes = Math.floor((Math.random()*10));		
+					var randomTens = Math.floor((Math.random()*10));		
+					var randomHundreds = Math.floor((Math.random()*10));		
+					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+					
+					var question = new Question('How many tens in the tens place of ' + randomNumber + '?', '' + randomTens);
 					this.mQuiz.mQuestionArray.push(question);
 					totalB++;
 				}
+
+				//hundreds
 				if (randomChance == 2)
-				{
-					var question = new Question('Write an equation to express the total as a sum of equal addends.', '5+5+5+5+5=25');
-					for (i = 0; i < 25; i++)
-					{
-						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-					}
+				{	
+					var randomOnes = Math.floor((Math.random()*10));		
+					var randomTens = Math.floor((Math.random()*10));		
+					var randomHundreds = Math.floor((Math.random()*10));		
+					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+					
+					var question = new Question('How many hundreds in the hundreds place of ' + randomNumber + '?', '' + randomHundreds);
 					this.mQuiz.mQuestionArray.push(question);
 					totalC++;
 				}
 			}
 		}
-	},
-
-	createWorld: function()
-	{
-		this.parent();
-
-                this.mShapeArray.push(new Shape(50,50,25,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,50,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,50,this,"/images/bus/kid.png","",""));
-                
-		this.mShapeArray.push(new Shape(50,50,25,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,100,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,100,this,"/images/bus/kid.png","",""));
-                	
-		this.mShapeArray.push(new Shape(50,50,25,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,150,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,150,this,"/images/bus/kid.png","",""));
-		
-		this.mShapeArray.push(new Shape(50,50,25,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,200,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,200,this,"/images/bus/kid.png","",""));
-		
-		this.mShapeArray.push(new Shape(50,50,25,250,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,75,250,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,125,250,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
-                this.mShapeArray.push(new Shape(50,50,225,250,this,"/images/bus/kid.png","",""));
 	}
 });
