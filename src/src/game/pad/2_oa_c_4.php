@@ -13,6 +13,13 @@ Extends: NumberPad,
 		this.mFailedAttemptsThreshold = 0;
 	},
 
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(590,140);
+		this.mNumQuestion.setSize(200,200);
+	},
+
 	createQuestions: function()
         {
 		this.parent();
@@ -33,7 +40,7 @@ Extends: NumberPad,
 				//random number to count from 0-20
 				var objectsToCount = Math.floor((Math.random()*21));		
 
-				var question = new Question('How many kids?', '' + objectsToCount);
+				var question = new Question('Write an equation to express the total as a sum of equal addends.', '' + objectsToCount);
 				for (i = 0; i < objectsToCount; i++)
 				{
 					question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
