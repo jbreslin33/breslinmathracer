@@ -48,16 +48,12 @@ Extends: NumberPad,
 		var totalA = 0;
 		var totalB = 0;
 		var totalC = 0;
-		var totalD = 0;
-		var totalE = 0;
 		
-		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1)
+		while (totalA < 1 || totalB < 1 || totalC < 1)
 		{	
 			totalA = 0;
 			totalB = 0;
 			totalC = 0;
-			totalD = 0;
-			totalE = 0;
 
 			//just the question array reset
 			this.mQuiz.resetQuestionArray();
@@ -80,8 +76,8 @@ Extends: NumberPad,
 				}
 				if (randomChance == 1)
 				{
-					var question = new Question('Write an equation to express the total as a sum of equal addends.', '2+2+2+2+2=10');
-					for (i = 0; i < 10; i++)
+					var question = new Question('Write an equation to express the total as a sum of equal addends.', '3+3+3+3+3=15');
+					for (i = 0; i < 15; i++)
 					{
 						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
 					}
@@ -90,33 +86,13 @@ Extends: NumberPad,
 				}
 				if (randomChance == 2)
 				{
-					var question = new Question('Write an equation to express the total as a sum of equal addends.', '3+3+3+3+3=15');
-					for (i = 0; i < 15; i++)
-					{
-						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-					}
-					this.mQuiz.mQuestionArray.push(question);
-					totalC++;
-				}
-				if (randomChance == 3)
-				{
-					var question = new Question('Write an equation to express the total as a sum of equal addends.', '4+4+4+4+4=20');
-					for (i = 0; i < 20; i++)
-					{
-						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-					}
-					this.mQuiz.mQuestionArray.push(question);
-					totalD++;
-				}
-				if (randomChance == 4)
-				{
 					var question = new Question('Write an equation to express the total as a sum of equal addends.', '5+5+5+5+5=25');
 					for (i = 0; i < 25; i++)
 					{
 						question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
 					}
 					this.mQuiz.mQuestionArray.push(question);
-					totalE++;
+					totalC++;
 				}
 			}
 		}
