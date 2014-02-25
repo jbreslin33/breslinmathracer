@@ -12,6 +12,13 @@ Extends: NumberPad,
 	
 		this.mFailedAttemptsThreshold = 0;
 	},
+	
+	createNumAnswer: function()
+	{
+		this.parent();
+		this.mNumAnswer.setSize(100,50);
+		this.mNumAnswer.setPosition(425,100);
+	},
 
 	createNumQuestion: function()
 	{
