@@ -10,7 +10,7 @@ Extends: MultipleChoicePad,
 		//answers 
                 this.mThresholdTime = 60000;
 
-		this.
+		this.setScoreNeeded(20);
 	},
 	
 	createQuestions: function()
@@ -26,7 +26,7 @@ Extends: MultipleChoicePad,
 		var lessThans = 0;
 		var equalTos = 0;
 
-		while (greaterThans < 2 || lessThans < 2 || equalTos < 2)
+		while (greaterThans < this.mScoreNeeded * .2  || lessThans < this.mScoreNeeded * .2 || equalTos < this.mScoreNeeded * .2)
 		{	
 			this.mQuiz.resetQuestionArray();
 
