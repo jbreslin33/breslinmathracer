@@ -189,7 +189,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::WAITING_ON_ANSWER');
+	//game.log('GAME::WAITING_ON_ANSWER');
         game.waitingOnAnswerEnter();
 },
 
