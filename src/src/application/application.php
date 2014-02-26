@@ -811,6 +811,7 @@ var Application = new Class(
 
 	advanceToNextLevel: function()
         {
+		APPLICATION.log('advanceToNextLevel');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
