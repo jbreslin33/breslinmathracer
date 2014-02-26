@@ -12,9 +12,6 @@ Extends: MultipleChoicePad,
 
 		//scoreNeeded
 		this.setScoreNeeded(10);
-
-		this.mFailedAttemptsThreshold = 0;
-
 	},
 
 	createQuestions: function()

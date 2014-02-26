@@ -12,8 +12,6 @@ Extends: MultipleChoicePad,
 
 		//score needed
 		this.setScoreNeeded(20);
-
-		this.mFailedAttemptsThreshold = 0;
 	},
 
 	//questions

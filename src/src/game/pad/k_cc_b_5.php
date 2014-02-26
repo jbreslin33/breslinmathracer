@@ -8,7 +8,7 @@ Extends: NumberPad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 120000;
 	},
 
 	//questions

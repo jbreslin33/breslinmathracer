@@ -40,7 +40,7 @@ var Game = new Class(
                 this.mShowLevelPassedThresholdTime = 10000;
                 this.mShowLevelFailedThresholdTime = 10000;
 
-                this.mFailedAttemptsThreshold = 10;
+                this.mFailedAttemptsThreshold = 0;
 
 		this.mFirstTimeAnswer = false;
                 

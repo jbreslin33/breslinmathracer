@@ -8,8 +8,6 @@ Extends: NumberPad,
        		this.parent(application);
 
 		this.setScoreNeeded(20);
-	
-		this.mFailedAttemptsThreshold = 3;
 	},
 
 	createQuestions: function()
