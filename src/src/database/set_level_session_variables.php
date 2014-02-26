@@ -177,13 +177,19 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         
 		if ($num2 > 0)
         	{
-			//update level attempts
-			$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, passed = TRUE WHERE id = ";
-			$update .= $_SESSION["attempt_id"];
-			$update .=  ";"; 
+    			if ($_SESSION["ref_id"] == 'CA9EE2E34F384E95A5FA26769C5864B8' || $_SESSION["ref_id"] == '5E6A3E3B939B4577B104FA8658206E9E')
+                	{
+                	}
+                	else
+                	{
+				//update level attempts
+				$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, passed = TRUE WHERE id = ";
+				$update .= $_SESSION["attempt_id"];
+				$update .=  ";"; 
                 
-			$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
-                	dbErrorCheck($conn,$updateResult);
+				$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
+                		dbErrorCheck($conn,$updateResult);
+			}
 
                 	//get the id from user table
                 	$levels      = pg_Result($result2, 0, 'levels');
