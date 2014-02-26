@@ -666,18 +666,6 @@ var Game = new Class(
 	{
 		this.mApplication.mLevelFailed = true;
        
-		//user answer
-                this.mUserAnswer = '';
-
-                //times
-                this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
-                this.mShowLevelFailedStartTime = this.mTimeSinceEpoch;
-
-                //create victory shapes...
-                this.createVictoryShapes();
-
-		//if (this.mApplication.mLevel == this.mApplication.mLevels)
-
                 this.mShapeArray[0].setPosition(400,125);
                 this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' is going back a level!';
                	this.mShapeArray[0].setVisibility(true);
@@ -685,15 +673,15 @@ var Game = new Class(
 	},
 	levelFailedExecute: function()
 	{
-                if (this.mTimeSinceEpoch > this.mShowLevelFailedStartTime + this.mShowLevelFailedThresholdTime && this.mApplication.mRewindToPreviousLevelConfirmation)
+                if (this.mApplication.mRewindToPreviousLevelConfirmation)
                 {
-                        this.mStateMachine.changeState(this.mINIT_GAME);
+                        this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
                 }
 	},
 
 	levelFailedExit: function()
 	{
-		this.mReadyForNormalApplication = true;
+		//this.mReadyForNormalApplication = true;
 		this.mApplication.mRewindToPreviousLevelConfirmation = false;
 	},
 

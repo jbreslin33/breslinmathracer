@@ -252,18 +252,15 @@ enter: function(game)
 
 execute: function(game)
 {
+        if (game.mApplication.mFailedAttempts > game.mFailedAttemptsThreshold)
+        {
+		game.mApplication.mFailedAttempts = 0;
+                game.mStateMachine.changeState(game.mLEVEL_FAILED);
+        }
 
         if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
         {
-                if (game.mApplication.mFailedAttempts > game.mFailedAttemptsThreshold)
-                {
-			game.mApplication.mFailedAttempts = 0;
-                        game.mStateMachine.changeState(game.mLEVEL_FAILED);
-                }
-		else
-		{
-                	game.mStateMachine.changeState(game.mRESET_GAME);
-		}
+               	game.mStateMachine.changeState(game.mRESET_GAME);
         }
 },
 
