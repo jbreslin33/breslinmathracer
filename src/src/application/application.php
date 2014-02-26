@@ -811,7 +811,7 @@ var Application = new Class(
 
 	advanceToNextLevel: function()
         {
-		APPLICATION.log('advanceToNextLevel');
+		//APPLICATION.log('advanceToNextLevel');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -839,7 +839,7 @@ var Application = new Class(
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
-				APPLICATION.log('set mAdvanceToNextLevelConfirmation to true');
+				//APPLICATION.log('set mAdvanceToNextLevelConfirmation to true');
 			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
@@ -876,7 +876,7 @@ var Application = new Class(
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 APPLICATION.mRewindToPreviousLevelConfirmation = true;
-				APPLICATION.log('set mRewindToPreviousLevelConfirmation to true');
+				//APPLICATION.log('set mRewindToPreviousLevelConfirmation to true');
                         }
                 }
                 xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);

@@ -12,6 +12,12 @@ Extends: MultipleChoicePad,
 
 		this.setScoreNeeded(20);
 	},
+
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(380,40);
+	},
 	
 	createQuestions: function()
         {
@@ -52,7 +58,7 @@ Extends: MultipleChoicePad,
 					lessThans++;
 				}
 
-				var question = new QuestionCompare('Compare?', '' + comparison, objectsToCountA, objectsToCountB);
+				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 				this.mQuiz.mQuestionArray.push(question);
 

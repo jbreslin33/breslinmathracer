@@ -31,7 +31,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('INIT_GAME');
+	//game.log('INIT_GAME');
 },
 
 execute: function(game)
@@ -55,7 +55,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('RESET_GAME');
+	//game.log('RESET_GAME');
 	game.resetGameEnter();
 },
 
@@ -79,7 +79,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('NORMAL_GAME');
+	//game.log('NORMAL_GAME');
 	game.reset();
 },
 
@@ -111,7 +111,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('LEVEL_PASSED');
+	//game.log('LEVEL_PASSED');
 	game.levelPassedEnter();
 },
 
@@ -137,7 +137,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('LEVEL_FAILED');
+	//game.log('LEVEL_FAILED');
         game.levelFailedEnter();
 },
 
@@ -164,7 +164,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('FIRST_TIME');
+	//game.log('FIRST_TIME');
         game.firstTimeEnter();
 },
 
@@ -189,7 +189,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('WAITING_ON_ANSWER');
+	//game.log('WAITING_ON_ANSWER');
         game.waitingOnAnswerEnter();
 },
 
@@ -214,7 +214,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('CORRECT_ANSWER');
+	//game.log('CORRECT_ANSWER');
         game.mQuiz.correctAnswer();
 },
 
@@ -246,7 +246,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('SHOW_CORRECT_ANSWER');
+	//game.log('SHOW_CORRECT_ANSWER');
         game.showCorrectAnswerEnter();
 },
 
@@ -284,7 +284,7 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('OUT_OF_TIME');
+	//game.log('OUT_OF_TIME');
         game.outOfTimeEnter();
 },
 
