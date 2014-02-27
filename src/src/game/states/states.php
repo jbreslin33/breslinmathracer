@@ -279,14 +279,6 @@ enter: function(game)
 
 execute: function(game)
 {
-        if (game.mApplication.mFailedAttempts > game.mFailedAttemptsThreshold)
-        {
-		game.log('mFailedAttempts:' + game.mApplication.mFailedAttempts);
-		game.mApplication.mFailedAttempts = 0;
-		game.log('mFailedAttempts:' + game.mApplication.mFailedAttempts);
-                game.mStateMachine.changeState(game.mLEVEL_FAILED);
-        }
-
         if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
         {
                	game.mStateMachine.changeState(game.mRESET_GAME);

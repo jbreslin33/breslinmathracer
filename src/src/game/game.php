@@ -668,10 +668,11 @@ var Game = new Class(
 	levelFailedEnter: function()
 	{
 		this.mApplication.mLevelFailed = true;
-       
+      /* 
                 this.mShapeArray[0].setPosition(400,125);
                 this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' is going back a level!';
                	this.mShapeArray[0].setVisibility(true);
+*/
 
 	},
 	levelFailedExecute: function()
@@ -694,7 +695,19 @@ var Game = new Class(
        	showCorrectAnswerEnter: function()
         {
 		//should you make db call here?	
-		this.mApplication.sendFailedAttempt();	
+		//this.mApplication.sendFailedAttempt();	
+        	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
+        	{
+                	this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
+                	this.mApplication.mFailedAttempts = 0;
+                	this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
+                	this.mStateMachine.changeState(this.mLEVEL_FAILED);
+        	}
+        	else
+        	{
+                	//just update failed attempts by one on javascript and server and db.
+                	this.mApplication.sendFailedAttempt();
+        	}
 	
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {
