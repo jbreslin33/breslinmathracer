@@ -681,7 +681,7 @@ var Game = new Class(
 
 	levelFailedExit: function()
 	{
-		//this.mReadyForNormalApplication = true;
+		this.mReadyForNormalApplication = true;
 		this.mApplication.mRewindToPreviousLevelConfirmation = false;
 	},
 
