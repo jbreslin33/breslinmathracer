@@ -281,7 +281,9 @@ execute: function(game)
 {
         if (game.mApplication.mFailedAttempts > game.mFailedAttemptsThreshold)
         {
+		game.log('mFailedAttempts:' + game.mApplication.mFailedAttempts);
 		game.mApplication.mFailedAttempts = 0;
+		game.log('mFailedAttempts:' + game.mApplication.mFailedAttempts);
                 game.mStateMachine.changeState(game.mLEVEL_FAILED);
         }
 

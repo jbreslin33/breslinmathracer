@@ -791,6 +791,7 @@ var Application = new Class(
                                 APPLICATION.mProgression = responseArray[4];
                                 APPLICATION.mLevels = responseArray[5];
                                 APPLICATION.mFailedAttempts = responseArray[6];
+				APPLICATION.log('sendFaildedAttempt::mFailedAttempts' + APPLICATION.mFailedAttempts);
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                         }
@@ -878,10 +879,10 @@ var Application = new Class(
                                 APPLICATION.mProgression = responseArray[4];
                                 APPLICATION.mLevels = responseArray[5];
 				APPLICATION.mFailedAttempts = responseArray[6];
+				APPLICATION.log('advanceToLastLevel::mFailedAttempts:' + APPLICATION.mFailedAttempts);
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 APPLICATION.mRewindToPreviousLevelConfirmation = true;
-				//APPLICATION.log('set mRewindToPreviousLevelConfirmation to true');
                         }
                 }
                 xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
