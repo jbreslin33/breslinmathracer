@@ -34,7 +34,7 @@ initialize: function()
 
 enter: function(application)
 {
-	//application.log('APPLICATION::INIT_APPLICATION');
+	application.log('APPLICATION::INIT_APPLICATION');
 },
 
 execute: function(application)
@@ -58,7 +58,7 @@ initialize: function()
 
 enter: function(application)
 {
-	//application.log('APPLICATION::NORMAL_APPLICATION');
+	application.log('APPLICATION::NORMAL_APPLICATION');
 	//get a new game if neccesary
 	application.gameDecider();
 },
@@ -98,7 +98,7 @@ initialize: function()
 
 enter: function(application)
 {
-	//application.log('APPLICATION::GET_LEVEL_DATA_APPLICATION');
+	application.log('APPLICATION::GET_LEVEL_DATA_APPLICATION');
 	application.mWaitingOnLevelData = true;
 	application.getLevelData();
 },
@@ -128,7 +128,7 @@ initialize: function()
 
 enter: function(application)
 {
-	//application.log('APPLICATION::ADVANCE_TO_NEXT_LEVEL_APPLICATION');
+	application.log('APPLICATION::ADVANCE_TO_NEXT_LEVEL_APPLICATION');
 	//tell db to advance you
         application.advanceToNextLevel();
 
@@ -162,7 +162,7 @@ initialize: function()
 
 enter: function(application)
 {
-	//application.log('APPLICATION::REWIND_TO_PREVIOUS_LEVEL_APPLICATION');
+	application.log('APPLICATION::REWIND_TO_PREVIOUS_LEVEL_APPLICATION');
 	//tell db to advance you
         application.advanceToLastLevel();
 
