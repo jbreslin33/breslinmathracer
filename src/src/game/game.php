@@ -8,6 +8,9 @@ var Game = new Class(
         {
 		this.mApplication = application;
 
+		//loggin
+		this.mStateLogs = false;
+
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
                 this.mUserAnswer = '';

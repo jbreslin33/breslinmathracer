@@ -31,7 +31,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::INIT_GAME');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::INIT_GAME');
+	}
 },
 
 execute: function(game)
@@ -55,7 +58,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::RESET_GAME');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::RESET_GAME');
+	}
 	game.resetGameEnter();
 },
 
@@ -79,7 +85,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::NORMAL_GAME');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::NORMAL_GAME');
+	}
 	game.reset();
 },
 
@@ -111,7 +120,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::LEVEL_PASSED');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::LEVEL_PASSED');
+	}
 	game.levelPassedEnter();
 },
 
@@ -137,7 +149,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::LEVEL_FAILED');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::LEVEL_FAILED');
+	}
         game.levelFailedEnter();
 },
 
@@ -164,7 +179,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::FIRST_TIME');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::FIRST_TIME');
+	}
         game.firstTimeEnter();
 },
 
@@ -189,7 +207,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::WAITING_ON_ANSWER');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::WAITING_ON_ANSWER');
+	}
         game.waitingOnAnswerEnter();
 },
 
@@ -214,7 +235,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::CORRECT_ANSWER');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::CORRECT_ANSWER');
+	}
         game.mQuiz.correctAnswer();
 },
 
@@ -246,7 +270,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::SHOW_CORRECT_ANSWER');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::SHOW_CORRECT_ANSWER');
+	}
         game.showCorrectAnswerEnter();
 },
 
@@ -281,7 +308,10 @@ initialize: function()
 
 enter: function(game)
 {
-	game.log('GAME::OUT_OF_TIME');
+	if (game.mStateLogs)
+	{
+		game.log('GAME::OUT_OF_TIME');
+	}
         game.outOfTimeEnter();
 },
 

@@ -6,6 +6,9 @@ var Application = new Class(
 {
 	initialize: function()
         {
+		this.mAppliacationStateLogs = false;
+		this.mGameStateLogs = false;
+
 		//personal info
 		this.mUsername = username;
 		this.mFirstName = firstname;
