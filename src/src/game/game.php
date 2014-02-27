@@ -9,7 +9,7 @@ var Game = new Class(
 		this.mApplication = application;
 
 		//loggin
-		this.mStateLogs = false;
+		this.mStateLogs = true;
 
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
