@@ -24,7 +24,7 @@ $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 ?>
-	<p><b> Select Standard ID: </p></b>
+	<p><b> Select Standard: </p></b>
 	
 	<form method="post" action="/web/update/updatestandardid.php">
 
@@ -37,7 +37,7 @@ $numrows = pg_numrows($result);
                 $row = pg_fetch_array($result, $ri);
                 echo "<option value=\"$row[0]\">$row[0]</option>";
         }
-        //pg_close($conn);
+pg_free_result($result);
 ?>
 
 </select>
@@ -45,16 +45,17 @@ $numrows = pg_numrows($result);
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
+
 <?php
-$query2 = "select id,standard from learning_standards order by progression;";
-$result2 = pg_query($conn,$query2);
-dbErrorCheck($conn,$result2);
-$numrows = pg_numrows($result2);
+$query = "select id,standard from learning_standards order by progression;";
+$result = pg_query($conn,$query);
+dbErrorCheck($conn,$result);
+$numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
 for($i = 0; $i < $numrows; $i++) 
 {
-        $row = pg_fetch_array($result2, $i);
+        $row = pg_fetch_array($result, $i);
 
 	echo '<tr>';
 	echo '<td>';
@@ -65,7 +66,7 @@ for($i = 0; $i < $numrows; $i++)
 	echo '</td>';
 	echo '</tr>';
 }
-pg_free_result($result2);
+pg_free_result($result);
 
 echo '</table>';
 ?>
