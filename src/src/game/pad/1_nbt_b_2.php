@@ -7,10 +7,6 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 		
-		this.setScoreNeeded(20);
-
-		this.mThresholdTime = 60000;
-
 		//word problems
 		this.mWordProblems = new WordProblems();
 	},

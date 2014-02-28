@@ -12,8 +12,6 @@ Extends: Game,
 
 		this.mApplication.mMouseMoveOn = false;
 
-		this.setScoreNeeded(10);
-
    		this.mTimer = new ClockTimer(application);
 	},
 

@@ -6,12 +6,6 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-		//answers 
-                this.mThresholdTime = 60000;
-
-		//score needed
-		this.setScoreNeeded(20);	
 	},
 
 	createNumQuestion: function()

@@ -28,7 +28,7 @@ var Game = new Class(
 
 		/************ SCORE *******/
 		this.mScore = 0;
-		this.mScoreNeeded = 20;
+		this.setScoreNeeded(20);
 		this.mKilled = false;
 
 		// may get rid of later and just use mOn
