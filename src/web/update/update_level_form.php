@@ -19,14 +19,14 @@ echo "<br>";
 ?>
 
 <?php
-$query = "select id,standard from learning_standards order by progression;";
+$query = "select username from users where school_id = 1 order by username;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 ?>
-	<p><b> Select Standard ID: </p></b>
+	<p><b> Select User Name: </p></b>
 	
-	<form method="post" action="/web/update/updatestandardid.php">
+	<form method="post" action="/web/update/updatelevelid.php">
 
 <select name="standardid">
 
@@ -37,7 +37,6 @@ $numrows = pg_numrows($result);
                 $row = pg_fetch_array($result, $ri);
                 echo "<option value=\"$row[0]\">$row[0]</option>";
         }
-        //pg_close($conn);
 ?>
 
 </select>
@@ -46,7 +45,7 @@ $numrows = pg_numrows($result);
 
 	</form>
 <?php
-$query2 = "select id,standard from learning_standards order by progression;";
+$query2 = "select levels from learning_standards;";
 $result2 = pg_query($conn,$query2);
 dbErrorCheck($conn,$result2);
 $numrows = pg_numrows($result2);
@@ -59,9 +58,6 @@ for($i = 0; $i < $numrows; $i++)
 	echo '<tr>';
 	echo '<td>';
 	echo $row[0];
-	echo '</td>';
-	echo '<td>';
-	echo $row[1];
 	echo '</td>';
 	echo '</tr>';
 }
