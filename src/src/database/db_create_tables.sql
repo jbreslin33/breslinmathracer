@@ -1,21 +1,11 @@
 --***************************************************************
 --******************  DROP TABLES *************************
 --**************************************************************
-DROP TABLE students cascade;
 DROP TABLE users cascade;
-DROP TABLE schools cascade;
 
---==================================================================
---=========================== CORE CURRICULUM  ========================
---==================================================================
 DROP TABLE learning_standards;
-DROP TABLE level_transactions;
 DROP TABLE LevelAttempts;
 
---=========================== HELPER  ========================
---==================================================================
-
-DROP TABLE passwords cascade;
 DROP TABLE error_log cascade; 
 
 --****************************************************************
@@ -58,22 +48,6 @@ CREATE TABLE error_log (
     username text
 );
 
---PASSWORDS
-CREATE TABLE passwords (
-    id integer NOT NULL,
-    password text UNIQUE 
-);
-
---==================================================================
---================= PEOPLE  ====================================
---==================================================================
-
---SCHOOLS
-CREATE TABLE schools (
-    id integer NOT NULL,
-    school_name text NOT NULL UNIQUE 
-);
-
 --USERS
 CREATE TABLE users (
 	id integer NOT NULL,
@@ -91,12 +65,6 @@ CREATE TABLE users (
 
 --alter
 alter table users add column failed_attempts integer NOT NULL default 0;
-
---STUDENTS
-CREATE TABLE students (
-    id integer NOT NULL,
-    teacher_id integer 
-);
 
 
 --==================================================================
@@ -125,25 +93,6 @@ CREATE TABLE LevelAttempts (
 	passed boolean DEFAULT false NOT NULL
 );
 
---LEVEL_TRANSACTIONS
-CREATE TABLE level_transactions (
-        id integer NOT NULL,
-        transaction_time timestamp,
-        user_id integer NOT NULL,
-        level integer NOT NULL,
-        ref_id text NOT NULL --FK
-);
-
---****************************************************************
---***************************************************************
---******************  CREATE SEQUENCES *************************
---**************************************************************
---**************************************************************
-
---==================================================================
---================= HELPER  ====================================
---==================================================================
-
 --ERROR_LOG
 CREATE SEQUENCE error_log_id_seq
     START WITH 1
@@ -152,28 +101,8 @@ CREATE SEQUENCE error_log_id_seq
     NO MAXVALUE
     CACHE 1;
 
---PASSWORDS
-CREATE SEQUENCE passwords_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
---==================================================================
---================= PEOPLE  ====================================
---==================================================================
-
 --USERS
 CREATE SEQUENCE users_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
---SCHOOLS
-CREATE SEQUENCE schools_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -192,68 +121,16 @@ CREATE SEQUENCE level_attempts_id_seq
     NO MAXVALUE
     CACHE 1;
 
---LEVEL_TRANSACTIONS
-CREATE SEQUENCE level_transactions_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
---****************************************************************
---***************************************************************
---****************** ALTER OWNER  *************************
-
---****************************************************************
---***************************************************************
---****************** ALTER OWNER  *************************
---**************************************************************
---**************************************************************
-
---==================================================================
---================= HELPER  ====================================
---==================================================================
-
---PASSWORDS
-ALTER TABLE public.passwords OWNER TO postgres;
-
 --ERROR_LOG
 ALTER TABLE public.error_log OWNER TO postgres;
 
-
---==================================================================
---================= PEOPLE  ====================================
---==================================================================
-
 --USERS
 ALTER TABLE public.users OWNER TO postgres;
-
---SCHOOLS
-ALTER TABLE public.schools OWNER TO postgres;
-
---STUDENTS
-ALTER TABLE public.students OWNER TO postgres;
-
---****************************************************************
---***************************************************************
---****************** ALTER SEQUENCE  *************************
---**************************************************************
---**************************************************************
-
---==================================================================
---================= HELPER  ====================================
---==================================================================
 
 --ERROR_LOG
 ALTER TABLE public.error_log_id_seq OWNER TO postgres;
 ALTER SEQUENCE error_log_id_seq OWNED BY error_log.id;
 ALTER TABLE ONLY error_log ALTER COLUMN id SET DEFAULT nextval('error_log_id_seq'::regclass);
-
---PASSWORDS
-ALTER TABLE public.passwords_id_seq OWNER TO postgres;
-ALTER SEQUENCE passwords_id_seq OWNED BY passwords.id;
-ALTER TABLE ONLY passwords ALTER COLUMN id SET DEFAULT nextval('passwords_id_seq'::regclass);
-
 
 --==================================================================
 --================= PEOPLE   ====================================
@@ -264,108 +141,19 @@ ALTER TABLE public.users_id_seq OWNER TO postgres;
 ALTER SEQUENCE users_id_seq OWNED BY users.id;
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
---SCHOOLS
-ALTER TABLE public.schools_id_seq OWNER TO postgres;
-ALTER SEQUENCE schools_id_seq OWNED BY schools.id;
-ALTER TABLE ONLY schools ALTER COLUMN id SET DEFAULT nextval('schools_id_seq'::regclass);
-
---STUDENTS
-
---==================================================================
---================= CORE CURRICULUM  ====================================
---==================================================================
-
 --LEVEL_ATTEMPTS
 ALTER TABLE public.level_attempts_id_seq OWNER TO postgres;
 ALTER SEQUENCE level_attempts_id_seq OWNED BY LevelAttempts.id;
 ALTER TABLE ONLY LevelAttempts ALTER COLUMN id SET DEFAULT nextval('level_attempts_id_seq'::regclass);
 
---LEVEL_TRANSACTIONS
-ALTER TABLE public.level_transactions_id_seq OWNER TO postgres;
-ALTER SEQUENCE level_transactions_id_seq OWNED BY Level_transactions.id;
-ALTER TABLE ONLY level_transactions ALTER COLUMN id SET DEFAULT nextval('level_transactions_id_seq'::regclass);
-
---****************************************************************
---***************************************************************
---****************** PRIMARY KEY  *************************
---**************************************************************
---**************************************************************
-
---==================================================================
---================= HELPER  ====================================
---==================================================================
-
---PASSWORDS
-ALTER TABLE passwords ADD PRIMARY KEY (password);
-
 --ERROR_LOG
 ALTER TABLE error_log ADD PRIMARY KEY (id);
-
---==================================================================
---================= PEOPLE  ====================================
---==================================================================
 
 --USERS
 ALTER TABLE users ADD PRIMARY KEY (id);
 
---SCHOOLS
-ALTER TABLE schools ADD PRIMARY KEY (id);
-
---STUDENTS
-ALTER TABLE students ADD PRIMARY KEY (id);
-
---==================================================================
---================= CORE CURRICULUM  ====================================
---==================================================================
-
 --LEVEL_ATTEMPTS
 ALTER TABLE LevelAttempts ADD PRIMARY KEY (id);
 
-ALTER TABLE level_transactions ADD PRIMARY KEY (id);
-
---****************************************************************
---***************************************************************
---****************** FOREIGN KEY  *************************
---**************************************************************
---**************************************************************
-
---==================================================================
---================= HELPER  ====================================
---==================================================================
-
---PASSWORDS
---NO FOREIGN KEY
-
---ERROR_LOG
---NO FOREIGN KEY
-
-
---==================================================================
---================= PEOPLE  ====================================
---==================================================================
-
 --USERS
-ALTER TABLE users ADD FOREIGN KEY (school_id) REFERENCES schools(id);
-
---SCHOOLS
-
---STUDENTS
-ALTER TABLE students ADD FOREIGN KEY (id) REFERENCES users(id);
-
---==================================================================
---================= CORE CURRICULUM  ====================================
---==================================================================
-
---****************************************************************
---***************************************************************
---****************** UNIQUE CONSTRAINT  *************************
---**************************************************************
---**************************************************************
-
---==================================================================
---================= PEOPLE  ====================================
---==================================================================
-
---USERS
-ALTER TABLE users ADD UNIQUE (username,school_id);
-
+ALTER TABLE users ADD FOREIGN KEY (school_id) REFERENCES users(id);
