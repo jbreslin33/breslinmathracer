@@ -54,7 +54,7 @@ var Game = new Class(
 		this.mGameTime = 0;
 
                 //answers
-                this.mThresholdTime = 6000;
+                this.mThresholdTime = 0;
                 this.mAnswerTime = 0;
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
@@ -822,7 +822,12 @@ var Game = new Class(
                 this.firstTimeExecute();
 
                 //check time
-                if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
+
+		if (this.mThresholdTime == 0)
+		{
+			//no possibility of OUT_OF_TIME
+		}
+                else if (this.mTimeSinceEpoch > this.mQuestionStartTime + this.mThresholdTime)
                 {
                         this.mOutOfTime = true;
                         this.mStateMachine.changeState(this.mOUT_OF_TIME);

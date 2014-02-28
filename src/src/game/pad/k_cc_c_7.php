@@ -8,10 +8,16 @@ Extends: MultipleChoicePad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 0;
 		
 		this.setScoreNeeded(20);
 	},
+
+        createNumQuestion: function()
+        {
+                this.parent();
+                this.mNumQuestion.setPosition(380,60);
+        },
 
 	createQuestions: function()
         {
@@ -52,7 +58,7 @@ Extends: MultipleChoicePad,
 					lessThans++;
 				}
 
-				var question = new QuestionCompare('Compare?', '' + comparison, objectsToCountA, objectsToCountB);
+				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
 				this.mQuiz.mQuestionArray.push(question);
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 

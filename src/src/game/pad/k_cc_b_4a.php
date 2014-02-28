@@ -8,7 +8,7 @@ Extends: MultipleChoicePad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 60000;
+                this.mThresholdTime = 0;
 	},
 
 	createNumQuestion: function()

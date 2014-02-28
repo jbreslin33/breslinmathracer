@@ -8,7 +8,7 @@ Extends: NumberPad,
        		this.parent(application);
 
 		//answers 
-                this.mThresholdTime = 240000;
+                this.mThresholdTime = 0;
 	},
 
 	createQuestions: function()
