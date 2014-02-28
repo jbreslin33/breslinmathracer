@@ -87,7 +87,7 @@ Extends: NumberPad,
 
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,0,0,'Chris had','toy cars. His friend Albert brings', 'toy cars to play with Albert. How many cars do they have to play with now?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Toy cars Chris had + Toy cars Albert brings =  Total toy cars they have to play with now';
-		
+
 		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,0,0,'Zuyanna had','rings. Her friend Iris gave her', ' more rings. How many rings does Zuyanna have now?','',0));	
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Rings Zuyanna had + Rings Iris gave Zuyanna = Rings Zuyanna has now';
 
@@ -108,77 +108,31 @@ Extends: NumberPad,
 
        		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,9,2,9,2,9,0,0,'Tanya had','erasers in her case. She gave', 'of them to Ny. How many erasers does Tanya have in her case now?','',1));
 		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Erasers Tanya had in her case - Erasers Tanya gave to Ny = Erasers Tanya has left in her case';
+  
+		var totalNew           = 0;
 
-		var totalA = 0;
-		var totalB = 0;
-		var totalC = 0;
-		var totalD = 0;
-		var totalE = 0;
-		var totalF = 0;
-		var totalG = 0;
-		var totalH = 0;
+                while (totalNew < this.mScoreNeeded * .4 || totalNew > this.mScoreNeeded * .6)
+                {
+                        //reset vars and arrays
+                        totalNew = 0;
 
-		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1 || totalG < 1 || totalH < 1)
-		{	
-			totalA = 0;
-			totalB = 0;
-			totalC = 0;
-			totalD = 0;
-			totalE = 0;
-			totalF = 0;
-			totalG = 0;
-			totalH = 0;
+                        this.mQuiz.resetQuestionArray();
 
-			this.mQuiz.resetQuestionArray();
-
-			//ADD questions
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*8));		
-				if (randomChance == 0)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalA++;
-				}	
-
-				else if (randomChance == 1) 
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalB++;
-				}
-				else if (randomChance == 2) 
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalC++;
-				}
-				else if (randomChance == 3) 
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalD++;
-				}
-                                if (randomChance == 4)
+                        for (s = 0; s < this.mScoreNeeded; s++)
+                        {
+                                //50% chance of asking newest question
+                                var randomChance = Math.floor((Math.random()*2));
+                                if (randomChance == 0)
                                 {
-                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-                                        totalE++;
+                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel-1)]);
+                                        totalNew++;
                                 }
-
-                                else if (randomChance == 5) 
+                                if (randomChance == 1)
                                 {
-                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-                                        totalF++;
+                                        var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));
+                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
                                 }
-                                else if (randomChance == 6)
-                                {
-                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-                                        totalG++;
-                                }
-                                else if (randomChance == 7)
-                                {
-                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-                                        totalH++;
-                                }
-			}
-		}
+                        }
+                }
 	}
 });
