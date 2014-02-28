@@ -18,33 +18,32 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 
-<?php
-$query = "select id,standard from learning_standards order by progression;";
-$result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
-$numrows = pg_numrows($result);
-?>
-	<p><b> Select Standard: </p></b>
+<p><b> Select Standard: </p></b>
 	
-	<form method="post" action="/web/update/updatestandardid.php">
+<form method="post" action="/web/update/updatestandardid.php">
 
-<select name="standardid">
+	<select name="standardid">
 
-<?php
-        // Loop on rows in the result set.
-        for($ri = 0; $ri < $numrows; $ri++) 
-        {
-                $row = pg_fetch_array($result, $ri);
-                echo "<option value=\"$row[0]\">$row[0]</option>";
-        }
-pg_free_result($result);
-?>
+		<?php
+		$query = "select id,standard from learning_standards order by progression;";
+		$result = pg_query($conn,$query);
+		dbErrorCheck($conn,$result);
+		$numrows = pg_numrows($result);
+	
+		// Loop on rows in the result set.
+		for($ri = 0; $ri < $numrows; $ri++) 
+		{
+			$row = pg_fetch_array($result, $ri);
+        		echo "<option value=\"$row[0]\">$row[0]</option>";
+		}
+		pg_free_result($result);
+		?>
 
-</select>
+	</select>
 
 	<p><input type="submit" value="UPDATE" /></p>
 
-	</form>
+</form>
 
 <?php
 $query = "select id,standard from learning_standards order by progression;";
@@ -53,20 +52,21 @@ dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
-for($i = 0; $i < $numrows; $i++) 
-{
-        $row = pg_fetch_array($result, $i);
+	for($i = 0; $i < $numrows; $i++) 
+	{
+        	$row = pg_fetch_array($result, $i);
 
-	echo '<tr>';
-	echo '<td>';
-	echo $row[0];
-	echo '</td>';
-	echo '<td>';
-	echo $row[1];
-	echo '</td>';
-	echo '</tr>';
-}
-pg_free_result($result);
+		echo '<tr>';
+		echo '<td>';
+		echo $row[0];
+		echo '</td>';
+		echo '<td>';
+		echo $row[1];
+		echo '</td>';
+		echo '</tr>';
+	}
+
+	pg_free_result($result);
 
 echo '</table>';
 ?>
