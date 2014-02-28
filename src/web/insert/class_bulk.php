@@ -6,12 +6,8 @@ session_start();
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php"); 
 $conn = dbConnect();
 
-include(getenv("DOCUMENT_ROOT") . "/src/database/get_random_password.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/get_next_usernumber.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_users.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_teachers.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_students.php"); 
 
 $userfile = $_GET["userfile"]; 
 $userfile = "upload/" . $userfile;
@@ -95,11 +91,8 @@ while (!feof($file_handle))
 		}
 		else
 		{	
-
 			//let's actually add the user
-			//insertIntoUsers($conn,$_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
-			insertIntoUsers($conn,$nerUsername, $password, $first_name, $last_name);
-			//insertIntoUsersWithFullName($conn,$newUsername, $password, $_SESSION["school_id"],$first_name,$middle_name1,$middle_name2,$middle_name3,$last_name);
+			insertIntoUsersWithSchool($conn, $newUsername, $password, $first_name, $last_name, $_SESSION["user_id"]);
 		}
 	}
 }

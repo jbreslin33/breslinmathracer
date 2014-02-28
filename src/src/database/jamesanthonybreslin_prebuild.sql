@@ -271,6 +271,7 @@ COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, score, tim
 --
 
 COPY users (id, username, password, first_name, middle_name1, middle_name2, middle_name3, last_name, school_id, ref_id, level, failed_attempts) FROM stdin;
+1	jbreslin33	Iggles_13	James	\N	\N	\N	Breslin	1	CA9EE2E34F384E95A5FA26769C5864B8	1	0
 \.
 
 
@@ -278,7 +279,7 @@ COPY users (id, username, password, first_name, middle_name1, middle_name2, midd
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, false);
+SELECT pg_catalog.setval('users_id_seq', 1, true);
 
 
 --
