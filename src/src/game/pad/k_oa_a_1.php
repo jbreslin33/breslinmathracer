@@ -7,8 +7,6 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(8);
-
 		this.mThresholdTime = 6000;
 	},
 

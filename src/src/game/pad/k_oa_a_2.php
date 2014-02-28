@@ -7,10 +7,7 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 		
-		this.setScoreNeeded(20);
-
-		this.mThresholdTime = 240000;
-             	this.mCorrectAnswerThresholdTime = 40000;
+		this.setScoreNeeded(8);
 	},
 
      	//showCorrectAnswer
@@ -121,8 +118,17 @@ Extends: NumberPad,
 		var totalG = 0;
 		var totalH = 0;
 
-		while (totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2 || totalD < this.mScoreNeeded * .2 || totalE < this.mScoreNeeded * .2 || totalF < this.mScoreNeeded * .2 || totalG < this.mScoreNeeded * .2 || totalH < this.mScoreNeeded * .2)
+		while (totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1 || totalG < 1 || totalH < 1)
 		{	
+			totalA = 0;
+			totalB = 0;
+			totalC = 0;
+			totalD = 0;
+			totalE = 0;
+			totalF = 0;
+			totalG = 0;
+			totalH = 0;
+
 			this.mQuiz.resetQuestionArray();
 
 			//ADD questions
@@ -172,7 +178,6 @@ Extends: NumberPad,
                                         this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
                                         totalH++;
                                 }
-
 			}
 		}
 	}

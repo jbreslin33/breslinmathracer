@@ -7,8 +7,7 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 
-		//answers 
-                this.mThresholdTime = 0;
+		this.setScoreNeeded(10);
 	},
 
 	createQuestions: function()
