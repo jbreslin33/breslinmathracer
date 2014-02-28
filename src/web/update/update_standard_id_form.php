@@ -18,14 +18,15 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 
+
 <p><b> Select Standard: </p></b>
 	
 <form method="post" action="/web/update/updatestandardid.php">
 
-	<select name="standardid">
+	<select id="standardid name="standardid" onchange="loadXMLDoc()">
 
 		<?php
-		$query = "select id,standard from learning_standards order by progression;";
+		$query = "select id, standard from learning_standards order by progression;";
 		$result = pg_query($conn,$query);
 		dbErrorCheck($conn,$result);
 		$numrows = pg_numrows($result);
@@ -41,7 +42,7 @@ echo "<br>";
 
 	</select>
 	
-	<select name="levelid">
+	<select name="levels">
 
 		<?php
 		$query = "select levels from learning_standards order by progression;";
@@ -65,7 +66,7 @@ echo "<br>";
 </form>
 
 <?php
-$query = "select id,standard from learning_standards order by progression;";
+$query = "select id, standard from learning_standards order by progression;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
@@ -89,6 +90,41 @@ echo '<table border=\"1\">';
 
 echo '</table>';
 ?>
+<script>
+function loadXMLDoc()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+  	{
+  		xmlhttp=new XMLHttpRequest();
+  	}
+	else
+  	{
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+	xmlhttp.onreadystatechange=function()
+	{
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    		{
+			var levels = document.getElementById("levels");
+			var length = select.options.length;
+			for (i = 0; i < length; i++)
+			{
+  				levels.options[i] = null;
+			}
+                	var response = xmlhttp.responseText;
+			var option = document.createElement("option");
+			option.text = "" + response;
+			levels.add(option);
+		}
+    	}
+	var select = document.getElementById("standardid");
+	var idvalue=encodeURIComponent(select.value);
+	xmlhttp.open("GET", "../../src/database/select_levels.php?id="+idvalue, true);
+	xmlhttp.send(null);
+}
+
+</script>
 
 </body>
 </html>

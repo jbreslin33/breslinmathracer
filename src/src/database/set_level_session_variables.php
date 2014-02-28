@@ -265,4 +265,31 @@ function setLevelSessionVariables($conn,$user_id)
                 echo "error no user";
         }
 }
+
+function selectLevels($conn,$id)
+{
+        $query = "select levels from learning_standards where id = '";
+        $query .= $id;
+        $query .= "';";
+
+        //get db result
+        $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$result);
+
+        //get numer of rows
+        $num = pg_num_rows($result);
+
+        // if there is a row then the username and password pair exists
+        if ($num > 0)
+        {
+                //get the id from user table
+                $id = pg_Result($result, 0, 'id');
+                return $id;
+        }
+        else
+        {
+                return 0;
+        }
+}
 ?>
+
