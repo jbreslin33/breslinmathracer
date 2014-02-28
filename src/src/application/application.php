@@ -6,10 +6,8 @@ var Application = new Class(
 {
 	initialize: function()
         {
-		this.mAppliacationStateLogs = false;
-
 		//logging
-		this.mGameStateLogs = true;
+		this.mStateLogs = true;
 
 		//personal info
 		this.mUsername = username;

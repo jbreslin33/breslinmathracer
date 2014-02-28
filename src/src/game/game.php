@@ -694,14 +694,10 @@ var Game = new Class(
 	//showCorrectAnswer
        	showCorrectAnswerEnter: function()
         {
-		//should you make db call here?	
-		//this.mApplication.sendFailedAttempt();	
         	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
         	{
-                	this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
                 	this.mApplication.mFailedAttempts = 0;
-                	this.log('mFailedAttempts:' + this.mApplication.mFailedAttempts);
-                	this.mStateMachine.changeState(this.mLEVEL_FAILED);
+			this.mApplication.mStateMachine.changeState(this.mApplication.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
         	}
         	else
         	{

@@ -183,7 +183,7 @@ enter: function(application)
         application.advanceToLastLevel();
 
 	//set the game on db to end 
-        application.sendGameTimeEnd();
+        //application.sendGameTimeEnd();
 },
 
 execute: function(application)
