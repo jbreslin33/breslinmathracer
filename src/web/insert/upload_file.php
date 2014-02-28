@@ -12,7 +12,6 @@ session_start();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
 echo "<br>";
-include(getenv("DOCUMENT_ROOT") . "/web/insert/links.php");
 ?>
 
 <?php

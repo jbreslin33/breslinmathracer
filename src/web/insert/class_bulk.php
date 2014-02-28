@@ -97,19 +97,15 @@ while (!feof($file_handle))
 		{	
 
 			//let's actually add the user
-			insertIntoUsersWithFullName($conn,$newUsername, $password, $_SESSION["school_id"],$first_name,$middle_name1,$middle_name2,$middle_name3,$last_name);
-
-			//get new user id
-			$new_student_id = selectUserID($conn, $_SESSION["school_id"],$newUsername,$password);
-
-			//insert student
-			insertIntoStudents($conn,$new_student_id,$_SESSION["school_id"]);
+			//insertIntoUsers($conn,$_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
+			insertIntoUsers($conn,$nerUsername, $password, $first_name, $last_name);
+			//insertIntoUsersWithFullName($conn,$newUsername, $password, $_SESSION["school_id"],$first_name,$middle_name1,$middle_name2,$middle_name3,$last_name);
 		}
 	}
 }
 
 //go to success page
-header("Location: /web/select/student.php");
+//header("Location: /web/select/student.php");
 
 ?>
 
