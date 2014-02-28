@@ -40,6 +40,25 @@ echo "<br>";
 		?>
 
 	</select>
+	
+	<select name="levelid">
+
+		<?php
+		$query = "select levels from learning_standards order by progression;";
+		$result = pg_query($conn,$query);
+		dbErrorCheck($conn,$result);
+		$numrows = pg_numrows($result);
+	
+		// Loop on rows in the result set.
+		for($ri = 0; $ri < $numrows; $ri++) 
+		{
+			$row = pg_fetch_array($result, $ri);
+        		echo "<option value=\"$row[0]\">$row[0]</option>";
+		}
+		pg_free_result($result);
+		?>
+
+	</select>
 
 	<p><input type="submit" value="UPDATE" /></p>
 
