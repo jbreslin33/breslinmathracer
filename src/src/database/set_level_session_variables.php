@@ -73,14 +73,13 @@ function updateFailedAttempts($conn,$user_id)
 
 function setLevelSessionVariablesRewind($conn,$user_id)
 {
-	if ( $_SESSION["level"] == 1 || $_SESSION["failed_attempts"] == 0)
+	if ( $_SESSION["level"] == 1)
 	{
 
 	}
 	else
 	{
 		//go back
- 		//update users SET level = 2, failed_attempts=4 where username = 'v1401';	
  		$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 		$levelVar--;
 		$_SESSION["level"] = $levelVar;
