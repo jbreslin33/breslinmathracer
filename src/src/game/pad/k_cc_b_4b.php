@@ -12,6 +12,12 @@ Extends: MultipleChoicePad,
 
 	},
 
+        createNumQuestion: function()
+        {
+                this.parent();
+                this.mNumQuestion.setPosition(380,60);
+        },
+
 	//questions
 	createQuestions: function()
         {
