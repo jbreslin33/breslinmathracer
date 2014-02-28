@@ -694,6 +694,8 @@ var Game = new Class(
 	//showCorrectAnswer
        	showCorrectAnswerEnter: function()
         {
+        	this.mApplication.mFailedAttempts++;
+
         	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
         	{
                 	this.mApplication.mFailedAttempts = 0;

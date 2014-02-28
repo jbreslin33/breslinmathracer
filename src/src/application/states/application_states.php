@@ -81,12 +81,6 @@ execute: function(application)
 	{
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 	}
-	/*	
-	if (application.mLevelFailed)
-	{
-		application.mStateMachine.changeState(application.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
-	}
-*/
 },
 exit: function(application)
 {
@@ -181,14 +175,11 @@ enter: function(application)
 	}
 	//tell db to advance you
         application.advanceToLastLevel();
-
-	//set the game on db to end 
-        //application.sendGameTimeEnd();
 },
 
 execute: function(application)
 {
-	if (application.mGame.mReadyForNormalApplication)
+ 	if (application.mRewindToPreviousLevelConfirmation)
         {
                 application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
         }
@@ -196,8 +187,7 @@ execute: function(application)
 
 exit: function(application)
 {
-	application.mGame.mReadyForNormalApplication = false;
-	application.mLevelFailed = false;
+ 	application.mRewindToPreviousLevelConfirmation = false;
  	application.mHud.setLevel(application.mLevel,application.mLevels);	
 }
 
