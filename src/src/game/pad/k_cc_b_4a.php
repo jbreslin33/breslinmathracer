@@ -11,6 +11,12 @@ Extends: MultipleChoicePad,
                 this.mThresholdTime = 60000;
 	},
 
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(390,60);
+	},
+
 	//questions
 	createQuestions: function()
         {
@@ -33,7 +39,7 @@ Extends: MultipleChoicePad,
 
    		for (i = 0; i < this.mScoreNeeded; i++)
                 {
-                        var question = new Question('Count?', '' + this.mQuiz.mAnswerPool[i]);
+                        var question = new Question('Count', '' + this.mQuiz.mAnswerPool[i]);
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
 			for (s = 0; s <= parseInt(i*2); s++)
 			{
