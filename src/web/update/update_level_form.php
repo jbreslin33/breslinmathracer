@@ -19,24 +19,31 @@ echo "<br>";
 ?>
 
 <?php
-$query = "select username from users where school_id = 1 order by username;";
+$query = "select levels from learning_standards where ref_id = '";
+$query .= $_SESSION["ref_id"]; 
+$query .= "';"; 
+
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 ?>
-	<p><b> Select User Name: </p></b>
+	<p><b> Select Level: </p></b>
 	
-	<form method="post" action="/web/update/updatelevelid.php">
+	<form method="post" action="/web/update/updatelevel.php">
 
-<select name="standardid">
+<select name="levels">
 
 <?php
-        // Loop on rows in the result set.
-        for($ri = 0; $ri < $numrows; $ri++) 
-        {
+	if ($numrows > 0)
+	{
                 $row = pg_fetch_array($result, $ri);
-                echo "<option value=\"$row[0]\">$row[0]</option>";
-        }
+                $levels = $row[0];
+
+        	for($i = 0; $i < $levels; $i++) 
+        	{
+                	echo "<option value=\"$i\">$i</option>";
+        	}
+	}
 ?>
 
 </select>
@@ -44,27 +51,6 @@ $numrows = pg_numrows($result);
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
-<?php
-$query2 = "select levels from learning_standards;";
-$result2 = pg_query($conn,$query2);
-dbErrorCheck($conn,$result2);
-$numrows = pg_numrows($result2);
-
-echo '<table border=\"1\">';
-for($i = 0; $i < $numrows; $i++) 
-{
-        $row = pg_fetch_array($result2, $i);
-
-	echo '<tr>';
-	echo '<td>';
-	echo $row[0];
-	echo '</td>';
-	echo '</tr>';
-}
-pg_free_result($result2);
-
-echo '</table>';
-?>
 
 </body>
 </html>

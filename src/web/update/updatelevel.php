@@ -16,48 +16,21 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php
 
 $response = "";
 
-$select = "select * from learning_standards where id = '";
-$select .= $_POST["standardid"];
-$select .= "';";
-        
-//get db result
-$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-dbErrorCheck($conn,$selectResult);
+$update = "update users SET failed_attempts=0, level = ";
 
-//get numer of rows
-$num = pg_num_rows($selectResult);
+$update .= $_POST["level"];
+$update .= " where username = '";
+$update .= $_SESSION["username"];
+$update .= "';";
 
-if ($num > 0)
-{
-	$update = "update users SET failed_attempts=0, level = 1,ref_id = ( select ref_id from learning_standards where id = '";
-	$update .= $_POST["standardid"];
-	$update .= "') where username = '";
-	$update .= $_SESSION["username"];
-	$update .= "';";
-
-	$updateResult = pg_query($conn,$update);
-	$errorCheck = dbErrorCheck($conn,$updateResult);
+$updateResult = pg_query($conn,$update);
+$errorCheck = dbErrorCheck($conn,$updateResult);
 	
-	$response = "Success";
+$response = "Success";
 
-	//set session vars	
-	$standard_id = pg_Result($selectResult, 0, 'id');
-	$ref_id = pg_Result($selectResult, 0, 'ref_id');
-	$progression = pg_Result($selectResult, 0, 'progression');
-	$levels = pg_Result($selectResult, 0, 'levels');
-	
-        $_SESSION["standard"] = $standard_id;
-        $_SESSION["ref_id"] = $ref_id;
-        $_SESSION["progression"] = $progression;
-        $_SESSION["levels"] = $levels;
-        $_SESSION["level"] = 1;
-        $_SESSION["failed_attempts"] = 0;
-
-}
-else
-{
-	$response = "Standard does not exist";
-}
+//set session vars	
+$_SESSION["level"] = $_POST["level"];
+$_SESSION["failed_attempts"] = 0;
 
 ?>
 
@@ -68,7 +41,6 @@ else
 <?php
 echo $response;
 ?>
-
 
 </body>
 
