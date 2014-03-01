@@ -815,7 +815,7 @@ var Application = new Class(
 
 	advanceToNextLevel: function()
         {
-		//APPLICATION.log('advanceToNextLevel');
+		APPLICATION.log('advanceToNextLevel');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -830,8 +830,10 @@ var Application = new Class(
                         var response = xmlhttp.responseText; 
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
+			var codeNumber = parseInt(code);
+			APPLICATION.log('codeNumber:' + codeNumber);
 
-			if (code == "101")
+			if (codeNumber == 101)
 			{
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
@@ -843,7 +845,7 @@ var Application = new Class(
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
-				//APPLICATION.log('set mAdvanceToNextLevelConfirmation to true');
+				APPLICATION.log('set mAdvanceToNextLevelConfirmation to true');
 			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);

@@ -31,7 +31,7 @@ $numrows = pg_numrows($result);
 	
 	<form method="post" action="/web/update/updatelevel.php">
 
-<select name="levels">
+<select name="level">
 
 <?php
 	if ($numrows > 0)
