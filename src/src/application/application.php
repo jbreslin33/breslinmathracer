@@ -7,7 +7,7 @@ var Application = new Class(
 	initialize: function()
         {
 		//logging
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//personal info
 		this.mUsername = username;
@@ -778,9 +778,10 @@ var Application = new Class(
                 {
                         var response = xmlhttp.responseText;
                         var responseArray = response.split(",");
-                        var code = responseArray[0];
+			var code = responseArray[0];
+                        var codeNumber = parseInt(code);
 
-                        if (code == "101")
+                        if (codeNumber == 101)
                         {
                                 APPLICATION.mRef_id = responseArray[1];
                                 APPLICATION.mLevel = responseArray[2];
@@ -789,7 +790,6 @@ var Application = new Class(
                                 APPLICATION.mProgression = responseArray[4];
                                 APPLICATION.mLevels = responseArray[5];
                                 APPLICATION.mFailedAttempts = responseArray[6];
-				APPLICATION.log('sendFaildedAttempt::mFailedAttempts' + APPLICATION.mFailedAttempts);
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                         }
@@ -815,7 +815,6 @@ var Application = new Class(
 
 	advanceToNextLevel: function()
         {
-		APPLICATION.log('advanceToNextLevel');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -831,7 +830,6 @@ var Application = new Class(
 			var responseArray = response.split(","); 
 			var code = responseArray[0];
 			var codeNumber = parseInt(code);
-			APPLICATION.log('codeNumber:' + codeNumber);
 
 			if (codeNumber == 101)
 			{
@@ -845,7 +843,6 @@ var Application = new Class(
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 				APPLICATION.mAdvanceToNextLevelConfirmation = true;
-				APPLICATION.log('set mAdvanceToNextLevelConfirmation to true');
 			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
@@ -868,9 +865,10 @@ var Application = new Class(
                 {
                         var response = xmlhttp.responseText;
                         var responseArray = response.split(",");
-                        var code = responseArray[0];
+			var code = responseArray[0];
+			var codeNumber = parseInt(code);
 
-                        if (code == "101")
+			if (codeNumber == 101)
                         {
                                 APPLICATION.mRef_id = responseArray[1];
                                 APPLICATION.mLevel = responseArray[2];
@@ -879,7 +877,6 @@ var Application = new Class(
                                 APPLICATION.mProgression = responseArray[4];
                                 APPLICATION.mLevels = responseArray[5];
 				APPLICATION.mFailedAttempts = responseArray[6];
-				APPLICATION.log('advanceToLastLevel::mFailedAttempts:' + APPLICATION.mFailedAttempts);
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 APPLICATION.mRewindToPreviousLevelConfirmation = true;
