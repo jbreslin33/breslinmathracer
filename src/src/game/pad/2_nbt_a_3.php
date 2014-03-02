@@ -264,22 +264,22 @@ Extends: NumberPad,
 					{
 						if (this.tensText != '')
 						{
-							this.answerText = '' + this.randomHundreds + '+';
+							this.answerText = '' + parseInt(this.randomHundreds*100) + '+';
 						}
 						else
 						{
-							this.answerText = '' + this.randomHundreds;
+							this.answerText = '' + parseInt(this.randomHundreds*100);
 						}
 					}
 					if (this.tensText != '')
 					{
 						if (this.onesText != '')
 						{
-							this.answerText = '' + this.answerText + this.randomTens + '+';
+							this.answerText = '' + this.answerText + parseInt(this.randomTens*10) + '+';
 						}
 						else
 						{
-							this.answerText = '' + this.answerText + this.randomTens;
+							this.answerText = '' + this.answerText + parseInt(this.randomTens*10);
 						}
 					}
 					if (this.onesText != '')
