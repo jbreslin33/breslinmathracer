@@ -102,7 +102,51 @@ Extends: NumberPad,
 			}
 			if (randomTens == 1)
 			{
-				tensText = 'teen ';	
+				if (randomOnes == 1)
+				{
+					randomOnes = 0;	
+					tensText = 'eleven';		
+				}
+				if (randomOnes == 2)
+				{
+					randomOnes = 0;	
+					tensText = 'twelve';		
+				}
+				if (randomOnes == 3)
+				{
+					randomOnes = 0;	
+					tensText = 'thirteen';		
+				}
+				if (randomOnes == 4)
+				{
+					randomOnes = 0;	
+					tensText = 'fourteen';		
+				}
+				if (randomOnes == 5)
+				{
+					randomOnes = 0;	
+					tensText = 'fifteen';		
+				}
+				if (randomOnes == 6)
+				{
+					randomOnes = 0;	
+					tensText = 'sixteen';		
+				}
+				if (randomOnes == 7)
+				{
+					randomOnes = 0;	
+					tensText = 'seventeen';		
+				}
+				if (randomOnes == 8)
+				{
+					randomOnes = 0;	
+					tensText = 'eighteen';		
+				}
+				if (randomOnes == 9)
+				{
+					randomOnes = 0;	
+					tensText = 'nineteen';		
+				}
 			}
 			if (randomTens == 2)
 			{
