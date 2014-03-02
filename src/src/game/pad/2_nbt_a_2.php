@@ -6,9 +6,6 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-		//answers 
-                this.mThresholdTime = 60000;
 	},
 	
 	createInput: function()

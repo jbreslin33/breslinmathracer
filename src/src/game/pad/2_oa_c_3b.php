@@ -6,8 +6,6 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-		this.setScoreNeeded(20);
 	},
         
 	//showCorrectAnswer
