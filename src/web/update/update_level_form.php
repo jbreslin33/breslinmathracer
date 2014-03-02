@@ -65,7 +65,7 @@ $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
-echo '<table border=\"1\">';
+echo '<table border=\"1\" bgcolor="#00FF00">';
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
