@@ -51,6 +51,30 @@ $numrows = pg_numrows($result);
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
+<?php
+$query = "select id,standard from learning_standards order by progression;";
+$result = pg_query($conn,$query);
+dbErrorCheck($conn,$result);
+$numrows = pg_numrows($result);
+
+echo '<table border=\"1\">';
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+
+        echo '<tr>';
+        echo '<td>';
+        echo $row[0];
+        echo '</td>';
+        echo '<td>';
+        echo $row[1];
+        echo '</td>';
+        echo '</tr>';
+}
+pg_free_result($result);
+
+echo '</table>';
+?>
 
 </body>
 </html>
