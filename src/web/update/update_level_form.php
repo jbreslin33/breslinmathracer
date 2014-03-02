@@ -51,6 +51,8 @@ $numrows = pg_numrows($result);
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
+	
+<p><b> Level History: </p></b>
 
 <?php
 $query = "select end_time, level from levelattempts where passed = 't' and user_id = ";

@@ -46,6 +46,8 @@ pg_free_result($result);
 
         </form>
 
+<p><b> Common Core Standards: </p></b>
+
 <?php
 $query = "select id,standard from learning_standards order by progression;";
 $result = pg_query($conn,$query);
