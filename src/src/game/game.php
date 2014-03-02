@@ -661,20 +661,14 @@ var Game = new Class(
 	levelPassedExit: function()
 	{
 		this.mReadyForNormalApplication = true;
-		this.log('set mAdvanceToNextLevelConfirmation to false');
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
 	},
 
 	levelFailedEnter: function()
 	{
 		this.mApplication.mLevelFailed = true;
-      /* 
-                this.mShapeArray[0].setPosition(400,125);
-                this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' is going back a level!';
-               	this.mShapeArray[0].setVisibility(true);
-*/
-
 	},
+
 	levelFailedExecute: function()
 	{
                 if (this.mApplication.mRewindToPreviousLevelConfirmation)
