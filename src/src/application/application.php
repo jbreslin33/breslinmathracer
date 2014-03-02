@@ -27,8 +27,6 @@ var Application = new Class(
 
 		this.mWaitingOnLevelData = false;
 
-		this.mAttempt_id = 0;
-		
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
 
