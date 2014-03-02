@@ -15,6 +15,7 @@ Extends: Timer,
 	{
 		this.parent();
 
+		APPLICATION.log('mThresholdTime:' + this.mApplication.mGame.mThresholdTime); 
 		if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
                 {
 			this.mFirstTimeWaitingOnAnswer == false; 
