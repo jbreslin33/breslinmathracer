@@ -64,7 +64,7 @@ dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
-for($i = 0; $i < $_SESSION["levels"]; $i++)
+for($i = 1; $i < $_SESSION["levels"]; $i++)
 {
 	$match = false;
 	//lets loop and see if we have a level match from resultset
