@@ -84,7 +84,6 @@ var Game = new Class(
                 this.mRESET_GAME                        = new RESET_GAME        (this);
                 this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
                 this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
-                this.mLEVEL_FAILED                      = new LEVEL_FAILED      (this);
                
 		//pad states  
                 this.mFIRST_TIME   = new FIRST_TIME(this);
@@ -662,25 +661,6 @@ var Game = new Class(
 	{
 		this.mReadyForNormalApplication = true;
 		this.mApplication.mAdvanceToNextLevelConfirmation = false;
-	},
-
-	levelFailedEnter: function()
-	{
-		this.mApplication.mLevelFailed = true;
-	},
-
-	levelFailedExecute: function()
-	{
-                if (this.mApplication.mRewindToPreviousLevelConfirmation)
-                {
-                        this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
-                }
-	},
-
-	levelFailedExit: function()
-	{
-		this.mReadyForNormalApplication = true;
-		this.mApplication.mRewindToPreviousLevelConfirmation = false;
 	},
 
 	//old pad states

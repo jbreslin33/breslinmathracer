@@ -139,35 +139,6 @@ exit: function(game)
 
 });
 
-var LEVEL_FAILED = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::LEVEL_FAILED');
-	}
-        game.levelFailedEnter();
-},
-
-execute: function(game)
-{
-        game.levelFailedExecute();
-},
-
-exit: function(game)
-{
-        game.levelFailedExit();
-}
-
-});
-
 //pad states
 var FIRST_TIME = new Class(
 {

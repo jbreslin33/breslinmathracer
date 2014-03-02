@@ -175,20 +175,15 @@ enter: function(application)
 	}
 	//tell db to advance you
         application.advanceToLastLevel();
+	application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
 },
 
 execute: function(application)
 {
- 	if (application.mRewindToPreviousLevelConfirmation)
-        {
-                application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
-        }
 },
 
 exit: function(application)
 {
- 	application.mRewindToPreviousLevelConfirmation = false;
- 	application.mHud.setLevel(application.mLevel,application.mLevels);	
 }
 
 });
