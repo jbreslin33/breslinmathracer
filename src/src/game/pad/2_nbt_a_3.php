@@ -220,7 +220,7 @@ Extends: NumberPad,
 
 		var totalA = 0;
 		var totalB = 0;
-		var totalC = 5;
+		var totalC = 0;
 
 		while(totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2) 
 		{
@@ -229,7 +229,7 @@ Extends: NumberPad,
 			//loop thru and make potential questions
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
-				var randomChance = Math.floor((Math.random()*2));		
+				var randomChance = Math.floor((Math.random()*3));		
 
 				this.randomOnes     = Math.floor((Math.random()*10));		
 				this.randomTens     = Math.floor((Math.random()*10));		
@@ -293,6 +293,45 @@ Extends: NumberPad,
 					
 					totalB++;
 				}
+  				if (randomChance == 2)
+                                {
+					this.setNameForm();
+                                        this.questionText = 'Write in expanded form: ';
+
+                                        if (this.hundredsText != '')
+                                        {
+                                                if (this.tensText != '')
+                                                {
+                                                        this.answerText = '' + parseInt(this.randomHundreds*100) + '+';
+                                                }
+                                                else
+                                                {
+                                                        this.answerText = '' + parseInt(this.randomHundreds*100);
+                                                }
+                                        }
+                                        if (this.tensText != '')
+                                        {
+                                                if (this.onesText != '')
+                                                {
+                                                        this.answerText = '' + this.answerText + parseInt(this.randomTens*10) + '+';
+                                                }
+                                                else
+                                                {
+                                                        this.answerText = '' + this.answerText + parseInt(this.randomTens*10);
+                                                }
+                                        }
+                                        if (this.onesText != '')
+                                        {
+                                                this.answerText = '' + this.answerText + this.randomOnes;
+                                        }
+
+
+                                        var question = new Question('' + this.questionText + randomNumber, '' + this.answerText);
+                                        this.mQuiz.mQuestionArray.push(question);
+
+                                        totalC++;
+                                }
+
 			}
 		}
 	}
