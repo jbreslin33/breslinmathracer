@@ -75,7 +75,6 @@ Extends: NumberPad,
 		}
 		else if (this.mApplication.mLevel <= 30)
 		{
-			this.setScoreNeeded(20);
 			this.mThresholdTime = 6000;
 
 			this.mInputPad = new NumberPad(this.mApplication);
