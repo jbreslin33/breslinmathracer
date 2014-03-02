@@ -52,7 +52,14 @@ $numrows = pg_numrows($result);
 
 	</form>
 <?php
-$query = "select id,standard from learning_standards order by progression;";
+//select end_time, level from levelattempts where passed = 't' and user_id = 302 and ref_id = '3D384CB2349B41299A3B5A133AB9E3F8' order by level;
+//$query = "select id,standard from learning_standards order by progression;";
+$query = "select end_time, level from levelattempts where passed = 't' and user_id = ";
+$query .= $_SESSION["user_id"];
+$query .= " and ref_id = '";
+$query .= $_SESSION["ref_id"];
+$query .= "' order by level;";
+
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
