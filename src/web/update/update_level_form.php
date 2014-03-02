@@ -51,10 +51,8 @@ $numrows = pg_numrows($result);
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
+
 <?php
-//select end_time, level from levelattempts where passed = 't' and user_id = 302 and ref_id = '3D384CB2349B41299A3B5A133AB9E3F8' order by level
-//select end_time, level from levelattempts where passed = 't' and user_id = 302 and ref_id = '3D384CB2349B41299A3B5A133AB9E3F8' order by level;
-//$query = "select id,standard from learning_standards order by progression;";
 $query = "select end_time, level from levelattempts where passed = 't' and user_id = ";
 $query .= $_SESSION["user_id"];
 $query .= " and ref_id = '";
@@ -65,19 +63,39 @@ $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
-echo '<table border=\"1\" bgcolor="#00FF00">';
-for($i = 0; $i < $numrows; $i++)
+echo '<table border=\"1\">';
+for($i = 0; $i < $_SESSION["levels"]; $i++)
 {
-        $row = pg_fetch_array($result, $i);
-
-        echo '<tr>';
-        echo '<td>';
-        echo $row[0];
-        echo '</td>';
-        echo '<td>';
-        echo $row[1];
-        echo '</td>';
-        echo '</tr>';
+	$match = false;
+	//lets loop and see if we have a level match from resultset
+	for($r = 0; $r < $numrows; $r++)
+	{
+        	$row = pg_fetch_array($result, $r);
+		if ($row[1] == $i)
+		{
+			$match = true;
+        		echo '<tr bgcolor="#00FF00">';
+        		echo '<td>';
+        		echo $row[0];
+        		echo '</td>';
+        		echo '<td>';
+        		echo $row[1];
+        		echo '</td>';
+        		echo '</tr>';
+		} 
+	}
+	//if no match lets make it red
+	if ($match == false)
+	{
+        	echo '<tr bgcolor="#FF0000">';
+        	echo '<td>';
+        	echo 'Incomplete';
+        	echo '</td>';
+        	echo '<td>';
+        	echo $i;
+        	echo '</td>';
+        	echo '</tr>';
+	}
 }
 pg_free_result($result);
 
