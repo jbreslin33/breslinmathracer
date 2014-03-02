@@ -59,9 +59,6 @@ var Game = new Class(
                 this.mQuestionStartTime = this.mTimeSinceEpoch;
                 this.mOutOfTime = false;
 
-		//clock shape
-                this.mClockShape = 0;
-
                 //memorize shape
                 this.mMemorizeShape = 0;
 

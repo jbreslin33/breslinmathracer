@@ -7,12 +7,6 @@ Extends: MultipleChoicePad,
 	{
        		this.parent(application);
 
-		//answers 
-                this.mThresholdTime = 60000;
-
-		//score needed
-		this.setScoreNeeded(20);
-
 		//count shape array
 		this.mCountShapeArrayA = new Array();
 		this.mCountShapeArrayB = new Array();

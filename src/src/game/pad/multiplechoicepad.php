@@ -6,9 +6,6 @@ Extends: Pad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-		//answers 
-                this.mThresholdTime = 60000;
 	},
 
 	createNumQuestion: function()
