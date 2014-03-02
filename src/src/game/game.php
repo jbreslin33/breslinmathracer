@@ -651,7 +651,7 @@ var Game = new Class(
   
 	levelPassedExecute: function()
         {
-                if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime && this.mApplication.mAdvanceToNextLevelConfirmation)
+                if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
                 {
                         this.mStateMachine.changeState(this.mINIT_GAME);
                 }
@@ -660,7 +660,6 @@ var Game = new Class(
 	levelPassedExit: function()
 	{
 		this.mReadyForNormalApplication = true;
-		this.mApplication.mAdvanceToNextLevelConfirmation = false;
 	},
 
 	//old pad states

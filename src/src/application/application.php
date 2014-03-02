@@ -27,8 +27,6 @@ var Application = new Class(
 
 		this.mWaitingOnLevelData = false;
 
-		this.mAdvanceToNextLevelConfirmation = false;
-
 		this.mAttempt_id = 0;
 		
 		/********* HUD *******************/ 
@@ -841,7 +839,6 @@ var Application = new Class(
 				APPLICATION.mFailedAttempts = responseArray[6];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-				APPLICATION.mAdvanceToNextLevelConfirmation = true;
 			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
