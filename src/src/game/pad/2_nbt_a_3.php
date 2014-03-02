@@ -264,27 +264,27 @@ Extends: NumberPad,
 					{
 						if (this.tensText != '')
 						{
-							this.answerText = '' + this.hundredsText + '+';
+							this.answerText = '' + this.randomHundreds + '+';
 						}
 						else
 						{
-							this.answerText = '' + this.hundredsText;
+							this.answerText = '' + this.randomHundreds;
 						}
 					}
 					if (this.tensText != '')
 					{
 						if (this.onesText != '')
 						{
-							this.answerText = '' + this.answerText + this.tensText + '+';
+							this.answerText = '' + this.answerText + this.randomTens + '+';
 						}
 						else
 						{
-							this.answerText = '' + this.answerText + this.tensText;
+							this.answerText = '' + this.answerText + this.randomTens;
 						}
 					}
 					if (this.onesText != '')
 					{
-						this.answerText = '' + this.answerText + this.onesText;
+						this.answerText = '' + this.answerText + this.randomOnes;
 					}
 
 
