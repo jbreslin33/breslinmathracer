@@ -6,97 +6,145 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-	},
-	
-	createInput: function()
-	{
-		this.parent();
-		this.mNumAnswer.setSize(200,50);
-		this.mNumAnswer.setPosition(375,100);
+
+		this.mThresholdTime = 6000;
 	},
 
-	createNumQuestion: function()
-	{
-		this.parent();
-		this.mNumQuestion.setPosition(590,140);
-		this.mNumQuestion.setSize(200,200);
-	},
-       
-	showCorrectAnswerEnter: function()
+        createNumQuestion: function()
         {
-		this.parent(); 
-		this.mShapeArray[1].setPosition(400,175);
-		this.mShapeArray[1].setSize(200,200);
+                this.parent();
+
+                //question
+                this.mNumQuestion.setPosition(140,140);
+                this.mNumQuestion.setSize(200,200);
         },
- 
-	outOfTimeEnter: function()
+
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
         {
-		this.parent(); 
-		this.mShapeArray[1].setPosition(400,175);
-		this.mShapeArray[1].setSize(200,200);
+                this.parent();
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
+        },
+
+        //outOfTime
+        outOfTimeEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[0].setPosition(400,50);
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
         },
 
 	createQuestions: function()
         {
-		this.parent();
+ 		this.parent();
 
-		var totalA = 0;
-		var totalB = 0;
-		var totalC = 0;
+		if (this.mApplication.mLevel <= 10)
+		{
+                	this.mQuiz.resetQuestionArray();
+
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 ?','2'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 ?','4'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 ?','6'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 ?','8'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 ?','10'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 ?','12'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 ?','14'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 ?','16'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 16 ?','18'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 0 2 4 6 8 10 12 14 16 18 ?','20'));
+		}
+		else if (this.mApplication.mLevel <= 20)
+		{
+                	this.mQuiz.resetQuestionArray();
+
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 ?','3'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 ?','5'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 ?','7'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 ?','9'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 ?','11'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 ?','13'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 ?','15'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 ?','17'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 17 ?','19'));
+			this.mQuiz.mQuestionArray.push(new Question('Count by 2. 1 3 5 7 9 11 13 15 17 19 ?','21'));
+		}
+		else if (this.mApplication.mLevel <= 30)
+		{
+			//this.mInputPad = new NumberPad(this.mApplication);
+
+			this.mQuiz.resetQuestionPoolArray();
+
+			//add
+			this.mQuiz.mQuestionPoolArray.push(new Question('0 + 2 =','2'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('1 + 2 =','3'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('2 + 2 =','4'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('3 + 2 =','5'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('4 + 2 =','6'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('5 + 2 =','7'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('6 + 2 =','8'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('7 + 2 =','9'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('8 + 2 =','10'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('9 + 2 =','11'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('10 + 2 =','12'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('11 + 2 =','13'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('12 + 2 =','14'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('13 + 2 =','15'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('14 + 2 =','16'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('15 + 2 =','17'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('16 + 2 =','18'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('17 + 2 =','19'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('18 + 2 =','20'));
 		
-		while (totalA < 1 || totalB < 1 || totalC < 1)
-		{	
-			totalA = 0;
-			totalB = 0;
-			totalC = 0;
+			//subtract	
+			this.mQuiz.mQuestionPoolArray.push(new Question('2 - 2 =','0'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('3 - 2 =','1'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('4 - 2 =','2'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('5 - 2 =','3'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('6 - 2 =','4'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('7 - 2 =','5'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('8 - 2 =','6'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('9 - 2 =','7'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('10 - 2 =','8'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('11 - 2 =','9'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('12 - 2 =','10'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('13 - 2 =','11'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('14 - 2 =','12'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('15 - 2 =','13'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('16 - 2 =','14'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('17 - 2 =','15'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('18 - 2 =','16'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('19 - 2 =','17'));
+			this.mQuiz.mQuestionPoolArray.push(new Question('20 - 2 =','18'));
 
-			//just the question array reset
-			this.mQuiz.resetQuestionArray();
+			var totalAddition    = 0;
+			var totalSubtraction = 0;
 
-			//loop thru and make potential questions
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//random number to count from 0-20
-				var randomChance = Math.floor((Math.random()*3));		
+			while (totalAddition < this.mScoreNeeded * .4 || totalSubtraction < this.mScoreNeeded * .4)
+			{
+    				//just the question array reset
+                		this.mQuiz.resetQuestionArray();
 
-				//ones
-				if (randomChance == 0)
-				{
-					var randomOnes = Math.floor((Math.random()*10));		
-					var randomTens = Math.floor((Math.random()*10));		
-					var randomHundreds = Math.floor((Math.random()*10));		
-					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
-					
-					var question = new Question('How many ones in the ones place of ' + randomNumber + '?', '' + randomOnes);
-					this.mQuiz.mQuestionArray.push(question);
-					totalA++;
-				}
-			
-				//tens
-				if (randomChance == 1)
-				{
-					var randomOnes = Math.floor((Math.random()*10));		
-					var randomTens = Math.floor((Math.random()*10));		
-					var randomHundreds = Math.floor((Math.random()*10));		
-					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
-					
-					var question = new Question('How many tens in the tens place of ' + randomNumber + '?', '' + randomTens);
-					this.mQuiz.mQuestionArray.push(question);
-					totalB++;
-				}
+				totalAddition = 0;
+				totalSubtraction = 0;
 
-				//hundreds
-				if (randomChance == 2)
-				{	
-					var randomOnes = Math.floor((Math.random()*10));		
-					var randomTens = Math.floor((Math.random()*10));		
-					var randomHundreds = Math.floor((Math.random()*10));		
-					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
-					
-					var question = new Question('How many hundreds in the hundreds place of ' + randomNumber + '?', '' + randomHundreds);
-					this.mQuiz.mQuestionArray.push(question);
-					totalC++;
-				}
+                		for (i = 0; i < this.mScoreNeeded; i++)
+                		{
+                        		var element = Math.floor((Math.random()*this.mQuiz.mQuestionPoolArray.length));
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[element]);
+					if (element < 20)
+					{
+						totalAddition++;
+					}
+					else if (element >= 20)
+					{
+						totalSubtraction++;
+					}
+                		}
 			}
 		}
 	}
