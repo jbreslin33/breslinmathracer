@@ -6,109 +6,98 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-		this.setScoreNeeded(10);
-
-		this.mThresholdTime = 6000;
+	},
+	
+	createInput: function()
+	{
+		this.parent();
+		this.mNumAnswer.setSize(200,50);
+		this.mNumAnswer.setPosition(375,100);
 	},
 
-        createNumQuestion: function()
+	createNumQuestion: function()
+	{
+		this.parent();
+		this.mNumQuestion.setPosition(590,140);
+		this.mNumQuestion.setSize(200,200);
+	},
+       
+	showCorrectAnswerEnter: function()
         {
-                this.parent();
-
-                //question
-                this.mNumQuestion.setPosition(140,140);
-                this.mNumQuestion.setSize(200,200);
+		this.parent(); 
+		this.mShapeArray[1].setPosition(400,175);
+		this.mShapeArray[1].setSize(200,200);
         },
-
-	//showCorrectAnswer
-        showCorrectAnswerEnter: function()
+ 
+	outOfTimeEnter: function()
         {
-                this.parent();
-
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(200,200);
-        },
-
-        //outOfTime
-        outOfTimeEnter: function()
-        {
-                this.parent();
-
-                this.mShapeArray[0].setPosition(400,50);
-
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(200,200);
+		this.parent(); 
+		this.mShapeArray[1].setPosition(400,175);
+		this.mShapeArray[1].setSize(200,200);
         },
 
 	createQuestions: function()
         {
- 		this.parent();
+		this.parent();
 
-                this.mQuiz.resetQuestionArray();
+		var totalA = 0;
+		var totalB = 0;
+		var totalC = 0;
 		
-		var countBy = 0;	
-		var startNumber = 0;
- 		    				
-		if (this.mApplication.mLevel == 1)
-		{
-			countBy = 5;	
-			startNumber = 0;
-		}	
+		while (totalA < 1 || totalB < 1 || totalC < 1)
+		{	
+			totalA = 0;
+			totalB = 0;
+			totalC = 0;
 
-		if (this.mApplication.mLevel == 2)
-		{
-			countBy = 5;	
-			startNumber = 50;
-		}	
-		
-		if (this.mApplication.mLevel == 3)
-		{
-			countBy = 5;	
-			startNumber = 200;
-		}	
-		
-		if (this.mApplication.mLevel == 4)
-		{
-			countBy = 5;	
-			startNumber = 350;
-		}	
-		
-		if (this.mApplication.mLevel == 5)
-		{
-			countBy = 5;	
-			startNumber = 880;
-		}	
-		
-		if (this.mApplication.mLevel == 6)
-		{
-			countBy = 10;	
-			startNumber = 0;
-		}	
-		if (this.mApplication.mLevel == 7)
-		{
-			countBy = 10;	
-			startNumber = 100;
-		}	
-		if (this.mApplication.mLevel == 8)
-		{
-			countBy = 10;	
-			startNumber = 400;
-		}	
-		if (this.mApplication.mLevel == 9)
-		{
-			countBy = 10;	
-			startNumber = 170;
-		}	
-		if (this.mApplication.mLevel == 10)
-		{
-			countBy = 100;	
-			startNumber = 0;
-		}	
-	
-		for (i = 0; i < this.mScoreNeeded; i++)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('Count by ' + countBy + ':      ' + parseInt(startNumber + countBy * i) ,'' + parseInt(startNumber + countBy + countBy * i)));
+			//just the question array reset
+			this.mQuiz.resetQuestionArray();
+
+			//loop thru and make potential questions
+			for (s = 0; s < this.mScoreNeeded; s++)
+			{	
+				//random number to count from 0-20
+				var randomChance = Math.floor((Math.random()*3));		
+
+				//ones
+				if (randomChance == 0)
+				{
+					var randomOnes = Math.floor((Math.random()*10));		
+					var randomTens = Math.floor((Math.random()*10));		
+					var randomHundreds = Math.floor((Math.random()*10));		
+					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+					
+					var question = new Question('How many ones in the ones place of ' + randomNumber + '?', '' + randomOnes);
+					this.mQuiz.mQuestionArray.push(question);
+					totalA++;
+				}
+			
+				//tens
+				if (randomChance == 1)
+				{
+					var randomOnes = Math.floor((Math.random()*10));		
+					var randomTens = Math.floor((Math.random()*10));		
+					var randomHundreds = Math.floor((Math.random()*10));		
+					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+					
+					var question = new Question('How many tens in the tens place of ' + randomNumber + '?', '' + randomTens);
+					this.mQuiz.mQuestionArray.push(question);
+					totalB++;
+				}
+
+				//hundreds
+				if (randomChance == 2)
+				{	
+					var randomOnes = Math.floor((Math.random()*10));		
+					var randomTens = Math.floor((Math.random()*10));		
+					var randomHundreds = Math.floor((Math.random()*10));		
+					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+					
+					var question = new Question('How many hundreds in the hundreds place of ' + randomNumber + '?', '' + randomHundreds);
+					this.mQuiz.mQuestionArray.push(question);
+					totalC++;
+				}
+			}
 		}
 	}
 });
