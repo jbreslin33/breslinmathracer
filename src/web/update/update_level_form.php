@@ -66,6 +66,13 @@ dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
+        echo '<tr>';
+        echo '<td> Date Completed';
+        echo '</td>';
+        echo '<td> Level';
+        echo '</td>';
+        echo '</tr>';
+
 for($i = 1; $i < $_SESSION["levels"]; $i++)
 {
 	$match = false;

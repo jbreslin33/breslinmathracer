@@ -55,6 +55,12 @@ dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
+        echo '<tr>';
+        echo '<td> Standard';
+        echo '</td>';
+        echo '<td> Description';
+        echo '</td>';
+        echo '</tr>';
 for($i = 0; $i < $numrows; $i++) 
 {
         $row = pg_fetch_array($result, $i);
