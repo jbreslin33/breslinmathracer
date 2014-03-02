@@ -65,6 +65,7 @@ Extends: NumberPad,
 				var randomTens     = Math.floor((Math.random()*10));		
 				var randomHundreds = Math.floor((Math.random()*10));		
 				var randomNumber   = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
+				var questionText = '';
 				var onesText = '';
 				var tensText = '';
 				var hundredsText = '';
@@ -237,9 +238,14 @@ Extends: NumberPad,
 					{
 						onesText = 'nine';
 					}
-					totalA++;
+					totalA++; 
+ 					questionText = 'Write in numerical form: '; 
 				}
-			var question = new Question('Write in numerical form: ' + hundredsText + '' + tensText + '' + onesText, '' + randomNumber);
+				if (randomChance == 1)
+				{
+
+				}
+			var question = new Question('' + questionText + hundredsText + '' + tensText + '' + onesText, '' + randomNumber);
 			this.mQuiz.mQuestionArray.push(question);
 			}
 		}
