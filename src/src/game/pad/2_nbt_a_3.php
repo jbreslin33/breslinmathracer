@@ -40,64 +40,147 @@ Extends: NumberPad,
         {
 		this.parent();
 
-		var totalA = 0;
-		var totalB = 0;
-		var totalC = 0;
-		
-		while (totalA < 1 || totalB < 1 || totalC < 1)
+		//just the question array reset
+		this.mQuiz.resetQuestionArray();
+
+		//loop thru and make potential questions
+		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			totalA = 0;
-			totalB = 0;
-			totalC = 0;
+			var randomOnes     = Math.floor((Math.random()*10));		
+			var randomTens     = Math.floor((Math.random()*10));		
+			var randomHundreds = Math.floor((Math.random()*10));		
+			var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
 
-			//just the question array reset
-			this.mQuiz.resetQuestionArray();
+			var onesText = '';
+			var tensText = '';
+			var hundredsText = '';
 
-			//loop thru and make potential questions
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//random number to count from 0-20
-				var randomChance = Math.floor((Math.random()*3));		
-
-				//ones
-				if (randomChance == 0)
-				{
-					var randomOnes = Math.floor((Math.random()*10));		
-					var randomTens = Math.floor((Math.random()*10));		
-					var randomHundreds = Math.floor((Math.random()*10));		
-					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
-					
-					var question = new Question('How many ones in the ones place of ' + randomNumber + '?', '' + randomOnes);
-					this.mQuiz.mQuestionArray.push(question);
-					totalA++;
-				}
-			
-				//tens
-				if (randomChance == 1)
-				{
-					var randomOnes = Math.floor((Math.random()*10));		
-					var randomTens = Math.floor((Math.random()*10));		
-					var randomHundreds = Math.floor((Math.random()*10));		
-					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
-					
-					var question = new Question('How many tens in the tens place of ' + randomNumber + '?', '' + randomTens);
-					this.mQuiz.mQuestionArray.push(question);
-					totalB++;
-				}
-
-				//hundreds
-				if (randomChance == 2)
-				{	
-					var randomOnes = Math.floor((Math.random()*10));		
-					var randomTens = Math.floor((Math.random()*10));		
-					var randomHundreds = Math.floor((Math.random()*10));		
-					var randomNumber = parseInt((randomOnes * 1) + (randomTens * 10) + (randomHundreds * 100));	
-					
-					var question = new Question('How many hundreds in the hundreds place of ' + randomNumber + '?', '' + randomHundreds);
-					this.mQuiz.mQuestionArray.push(question);
-					totalC++;
-				}
+			//hundreds
+			if (randomHundreds == 0)
+			{
 			}
+			if (randomHundreds == 1)
+			{
+				hundredsText = 'one hundred ';
+			}
+			if (randomHundreds == 2)
+			{
+				hundredsText = 'two hundred ';
+			}
+			if (randomHundreds == 3)
+			{
+				hundredsText = 'three hundred ';
+			}
+			if (randomHundreds == 4)
+			{
+				hundredsText = 'four hundred ';
+			}
+			if (randomHundreds == 5)
+			{
+				hundredsText = 'five hundred ';
+			}
+			if (randomHundreds == 6)
+			{
+				hundredsText = 'six hundred ';
+			}
+			if (randomHundreds == 7)
+			{
+				hundredsText = 'seven hundred ';
+			}
+			if (randomHundreds == 8)
+			{
+				hundredsText = 'eight hundred ';
+			}
+			if (randomHundreds == 9)
+			{
+				hundredsText = 'nine hundred ';
+			}
+		
+			//tens	
+			if (randomTens == 0)
+			{
+			}
+			if (randomTens == 1)
+			{
+				tensText = 'teen ';	
+			}
+			if (randomTens == 2)
+			{
+				tensText = 'twenty ';	
+			}
+			if (randomTens == 3)
+			{
+				tensText = 'thirty ';	
+			}
+			if (randomTens == 4)
+			{
+				tensText = 'forty ';	
+			}
+			if (randomTens == 5)
+			{
+				tensText = 'fifty ';	
+			}
+			if (randomTens == 6)
+			{
+				tensText = 'sixty ';	
+			}
+			if (randomTens == 7)
+			{
+				tensText = 'seventy ';	
+			}
+			if (randomTens == 8)
+			{
+				tensText = 'eighty ';	
+			}
+			if (randomTens == 9)
+			{
+				tensText = 'ninety ';	
+			}
+			
+			//ones	
+			if (randomOnes == 0)
+			{
+			}
+			if (randomOnes == 1)
+			{
+				onesText = 'one';	
+			}
+			if (randomOnes == 2)
+			{
+				onesText = 'two';	
+			}
+			if (randomOnes == 3)
+			{
+				onesText = 'three';	
+			}
+			if (randomOnes == 4)
+			{
+				onesText = 'four';	
+			}
+			if (randomOnes == 5)
+			{
+				onesText = 'five';	
+			}
+			if (randomOnes == 6)
+			{
+				onesText = 'six';	
+			}
+			if (randomOnes == 7)
+			{
+				onesText = 'seven';	
+			}
+			if (randomOnes == 8)
+			{
+				onesText = 'eight';	
+			}
+			if (randomOnes == 9)
+			{
+				onesText = 'nine';
+			}
+
+			var question = new Question('Write in numerical form: ' + hundredsText + '' + tensText + '' + onesText, '' + randomNumber);
+
+			this.mQuiz.mQuestionArray.push(question);
 		}
 	}
 });
