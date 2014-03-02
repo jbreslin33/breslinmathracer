@@ -259,7 +259,34 @@ Extends: NumberPad,
 				{
 					this.setNameForm();
  					this.questionText = 'Write in expanded form: '; 
-					this.answerText = '' + randomNumber;
+	
+					if (this.hundredsText != '')
+					{
+						if (this.tensText != '')
+						{
+							this.answerText = '' + this.hundredsText + '+';
+						}
+						else
+						{
+							this.answerText = '' + this.hundredsText;
+						}
+					}
+					if (this.tensText != '')
+					{
+						if (this.onesText != '')
+						{
+							this.answerText = '' + this.answerText + this.tensText + '+';
+						}
+						else
+						{
+							this.answerText = '' + this.answerText + this.tensText;
+						}
+					}
+					if (this.onesText != '')
+					{
+						this.answerText = '' + this.answerText + this.onesText;
+					}
+
 
 					var question = new Question('' + this.questionText + this.hundredsText + '' + this.tensText + '' + this.onesText, '' + this.answerText);
 					this.mQuiz.mQuestionArray.push(question);
