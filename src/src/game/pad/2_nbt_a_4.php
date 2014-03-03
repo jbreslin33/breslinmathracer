@@ -72,8 +72,8 @@ Extends: MultipleChoicePadImages,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				//random number to count from 0-20
-				var objectsToCountA = Math.floor((Math.random()*21));		
-				var objectsToCountB = Math.floor((Math.random()*21));		
+				var objectsToCountA = Math.floor((Math.random()*999));		
+				var objectsToCountB = Math.floor((Math.random()*999));		
 				var comparison = '';
 				if (objectsToCountA == objectsToCountB)
 				{
