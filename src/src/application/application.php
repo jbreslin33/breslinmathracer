@@ -750,6 +750,19 @@ var Application = new Class(
                                	this.mGame = new g2_nbt_b_5(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '70CC6A0456AB4CD1A86BC8EA43B447BA')
+		{ 
+             		if (this.mGameName != "g2_nbt_b_6")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_nbt_b_6";
+                               	this.mGame = new g2_nbt_b_6(APPLICATION);
+			}	
+		}
 		if (this.mRef_id == '3D384CB2349B41299A3B5A133AB9E3F8')
 		{ 
              		if (this.mGameName != "g3_oa_c_7")
