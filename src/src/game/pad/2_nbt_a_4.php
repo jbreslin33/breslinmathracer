@@ -1,4 +1,4 @@
-var g1_nbt_b_3 = new Class(
+var g2_nbt_a_4 = new Class(
 {
 
 Extends: MultipleChoicePadImages,
