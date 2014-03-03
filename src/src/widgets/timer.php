@@ -9,7 +9,20 @@ var Timer  = new Class(
 
 		this.canvas = 0;
 		this.clock = 0;
-		this.hour_sign = 0;
+
+		this.hour_sign = new Array();
+		this.hour_sign[0] = 0;
+		this.hour_sign[1] = 0;
+		this.hour_sign[2] = 0;
+		this.hour_sign[3] = 0;
+		this.hour_sign[4] = 0;
+		this.hour_sign[5] = 0;
+		this.hour_sign[6] = 0;
+		this.hour_sign[7] = 0;
+		this.hour_sign[8] = 0;
+		this.hour_sign[9] = 0;
+		this.hour_sign[10] = 0;
+		this.hour_sign[11] = 0;
 		this.minute_hand = 0;
 		this.pin = 0;
 
@@ -36,10 +49,13 @@ var Timer  = new Class(
       	hide: function()
         {
                 //shapes and array
-                for (i = 0; i < this.mTimerArray.length; i++)
-                {
-                        this.mTimerArray[i].setVisibility(false);
-                }
+		this.clock.hide();
+		for (i=0;i<12;i++)
+		{
+			this.hour_sign[i].hide();
+		}
+		this.minute_hand.hide();
+		this.pin.hide();
         },
 
 	showQuestion: function()
@@ -49,11 +65,14 @@ var Timer  = new Class(
         show: function()
         {
                 //shapes and array
-                for (i = 0; i < this.mTimerArray.length; i++)
-                {
-                        this.mTimerArray[i].setVisibility(true);
-                }
-        },
+		this.clock.show();
+		for (i=0;i<12;i++)
+		{
+			this.hour_sign[i].show();
+		}
+		this.minute_hand.show();
+		this.pin.show();
+	},
 
 	destroy: function()
 	{
