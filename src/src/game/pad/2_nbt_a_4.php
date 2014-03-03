@@ -91,7 +91,7 @@ Extends: MultipleChoicePadImages,
 					lessThans++;
 				}
 
-				var question = new QuestionCompare('Compare?', '' + comparison, objectsToCountA, objectsToCountB);
+				var question = new QuestionCompare('Compare', '' + comparison, objectsToCountA, objectsToCountB);
 				this.mQuiz.mQuestionArray.push(question);
 				question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
@@ -111,8 +111,8 @@ Extends: MultipleChoicePadImages,
 
 		for (i=0; i < this.mScoreNeeded; i++)
 		{	
-			this.mShapeArray.push(new Shape(15,10,245,130,this,"","",""));
-			this.mShapeArray.push(new Shape(15,10,495,130,this,"","",""));
+			this.mShapeArray.push(new Shape(15,10,245,200,this,"","",""));
+			this.mShapeArray.push(new Shape(15,10,495,200,this,"","",""));
 		}
 	}
 });
