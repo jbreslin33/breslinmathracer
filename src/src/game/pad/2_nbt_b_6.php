@@ -7,6 +7,22 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 	},
+/*
+      	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        },
+*/
+	createNumQuestion: function()
+	{
+		this.parent();
+		//this.mNumQuestion.setPosition(300,95);
+		this.mNumQuestion.setSize(200,50);
+	},
 
 	createQuestions: function()
         {
