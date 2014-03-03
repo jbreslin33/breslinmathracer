@@ -9,7 +9,7 @@ var Game = new Class(
 		this.mApplication = application;
 
 		//loggin
-		this.mStateLogs = false;
+		this.mStateLogs = true;
 
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
@@ -65,7 +65,7 @@ var Game = new Class(
                 //show correct
                 this.mCorrectAnswerStartTime = 0;
                 this.mCorrectAnswerThresholdTime = 10000;
-
+               
 		/********* BOUNDS *******************/ 
                 //create bounds
                 this.mBounds = new Bounds(60,735,380,35);

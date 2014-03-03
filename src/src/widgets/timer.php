@@ -7,6 +7,12 @@ var Timer  = new Class(
 		//number pad
 		this.mTimerArray = new Array();
 
+		this.canvas = 0;
+		this.clock = 0;
+		this.hour_sign = 0;
+		this.minute_hand = 0;
+		this.pin = 0;
+
 		//create input pad
 		this.createTimer();	
 	},
