@@ -37,8 +37,9 @@ Extends: NumberPad,
 		var totalJ = 0; 
 		var totalK = 0; 
 		var totalL = 0; 
+		var VarCTotal = 0;
 
-		while(totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1 || totalG < 1 || totalH < 1 || totalI < 1 || totalJ < 1 || totalK < 1 || totalL < 1)  
+		while(VarCTotal < 500 || totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1 || totalG < 1 || totalH < 1 || totalI < 1 || totalJ < 1 || totalK < 1 || totalL < 1)  
 		{
 			totalA = 0; 
 			totalB = 0; 
@@ -52,6 +53,8 @@ Extends: NumberPad,
 			totalJ = 0; 
 			totalK = 0; 
 			totalL = 0; 
+
+			VarCTotal = 0;
 
 			this.mQuiz.resetQuestionArray();
 
@@ -173,6 +176,7 @@ Extends: NumberPad,
 						}
                                         }
                                 }
+				VarCTotal = VarC + VarCTotal;
                         }
 		}
 	}
