@@ -17,16 +17,6 @@ $conn = dbConnect();
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
-
-<?php
-$query = "select username from users where school_id = ";
-$query .= $_SESSION["user_id"]; 
-$query .= ";"; 
-
-$result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
-$numrows = pg_numrows($result);
-?>
 	<p><b> Select Username: </p></b>
 	
 	<form method="post" action="/web/update/updatepassword.php">
@@ -34,14 +24,20 @@ $numrows = pg_numrows($result);
 <select name="username">
 
 <?php
-	if ($numrows > 0)
-	{
-        	for($i = 0; $i < $numrows; $i++) 
-        	{
-                	$row = pg_fetch_array($result, $i);
-                	echo "<option value=\"$row[$i]\">$row[$i]</option>";
-        	}
-	}
+$query = "select username, password from users where school_id = ";
+$query .= $_SESSION["user_id"];
+$query .= ";";
+echo "hello query";
+echo $query;
+$result = pg_query($conn,$query);
+dbErrorCheck($conn,$result);
+$numrows = pg_numrows($result);
+
+for($i = 0; $i < $numrows; $i++) 
+{
+      	$row = pg_fetch_array($result, $i);
+      	echo "<option value=\"$row[0]\">$row[0]</option>";
+}
 ?>
 
 </select>
@@ -72,8 +68,6 @@ echo '<table border=\"1\">';
 
 for($i = 1; $i < $_SESSION["levels"]; $i++)
 {
-	$match = false;
-	//lets loop and see if we have a level match from resultset
 	for($r = 0; $r < $numrows; $r++)
 	{
                 $row = pg_fetch_array($result, $r);
