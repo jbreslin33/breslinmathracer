@@ -36,14 +36,14 @@ Extends: NumberPad,
 			var VarB = 0;
 			var VarC = 100;
 
-			//addition
+			//multiplication
 			if (minusOrNot == 0)
 			{
 				while(VarC > 20)
 				{
-					VarA = Math.floor((Math.random()*20)+1);
-					VarB = Math.floor((Math.random()*20)+1);
-					VarC = parseInt(VarA + VarB);
+					VarA = Math.floor((Math.random()*11));
+					VarB = Math.floor((Math.random()*11));
+					VarC = parseInt(VarA * VarB);
 				}
 				//ok we have an equation with sum < 20  in the form a+b=c
 
@@ -52,17 +52,17 @@ Extends: NumberPad,
 				{
 					if (missingVar == 0)
 					{
-						var question = new Question('? + ' + VarB + ' = ' + VarC,'' + VarA);
+						var question = new Question('? x ' + VarB + ' = ' + VarC,'' + VarA);
 						this.mQuiz.mQuestionArray.push(question);
 					}
 					else if (missingVar == 1)
 					{
-						var question = new Question('' + VarA + ' + ? = ' + VarC,'' + VarB);
+						var question = new Question('' + VarA + ' x ? = ' + VarC,'' + VarB);
 						this.mQuiz.mQuestionArray.push(question);
 					}
 					else if (missingVar == 2)
 					{
-						var question = new Question('' + VarA + ' + ' + VarB + ' = ?','' + VarC);
+						var question = new Question('' + VarA + ' x ' + VarB + ' = ?','' + VarC);
 						this.mQuiz.mQuestionArray.push(question);
 					}
 				}
@@ -71,17 +71,17 @@ Extends: NumberPad,
 				{
    					if (missingVar == 0)
                                         {
-                                                var question = new Question('? = ' + VarA + ' + ' + VarB,'' + VarC);
+                                                var question = new Question('? = ' + VarA + ' x ' + VarB,'' + VarC);
                                                 this.mQuiz.mQuestionArray.push(question);
                                         }
                                         else if (missingVar == 1)
                                         {
-                                                var question = new Question('' + VarC + ' = ? + ' + VarB,'' + VarA);
+                                                var question = new Question('' + VarC + ' = ? x ' + VarB,'' + VarA);
                                                 this.mQuiz.mQuestionArray.push(question);
                                         }
                                         else if (missingVar == 2)
                                         {
-                                                var question = new Question('' + VarC + ' = ' + VarA + ' + ?','' + VarB);
+                                                var question = new Question('' + VarC + ' = ' + VarA + ' x ?','' + VarB);
                                                 this.mQuiz.mQuestionArray.push(question);
                                         }
 				}
