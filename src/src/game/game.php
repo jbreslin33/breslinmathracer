@@ -839,6 +839,7 @@ var Game = new Class(
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
+			//you need to use an array....
                         if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
                         {
                                 this.mStateMachine.changeState(this.mCORRECT_ANSWER);
