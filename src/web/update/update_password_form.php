@@ -19,9 +19,9 @@ echo "<br>";
 ?>
 
 <?php
-$query = "select username from users where school_id = '";
+$query = "select username from users where school_id = ";
 $query .= $_SESSION["user_id"]; 
-$query .= "';"; 
+$query .= ";"; 
 
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
@@ -36,12 +36,10 @@ $numrows = pg_numrows($result);
 <?php
 	if ($numrows > 0)
 	{
-                $row = pg_fetch_array($result, $ri);
-                $levels = $row[0];
-
-        	for($i = 0; $i < $levels; $i++) 
+        	for($i = 0; $i < $numrows; $i++) 
         	{
-                	echo "<option value=\"$i\">$i</option>";
+                	$row = pg_fetch_array($result, $i);
+                	echo "<option value=\"$row[$i]\">$row[$i]</option>";
         	}
 	}
 ?>
