@@ -396,6 +396,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 2.nbt.a.4	B9615D5AFE1A46C3B0AD4E517ECB0C9E	209.000	10	Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using &gt;, =, and &lt; symbols to record the results of comparisons.
 2.nbt.b.5	7C9ACFC70C934A229B447804D6A1C0FC	210.000	10	Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.
 2.nbt.b.6	70CC6A0456AB4CD1A86BC8EA43B447BA	211.000	10	Add up to four two-digit numbers using strategies based on place value and properties of operations.
+2.nbt.b.7	29E245BF9A144F5B96C6DE0A626622A7	212.000	10	Add and subtract within 1000, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method. Understand that in adding or subtracting three-digit numbers, one adds or subtracts hundreds and hundreds, tens and tens, ones and ones; and sometimes it is necessary to compose or decompose tens or hundreds.
 3.oa.c.7	3D384CB2349B41299A3B5A133AB9E3F8	301.000	218	Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.
 4.oa.a.1	7828B4F15ABD40E19EF14DDE0EB399DF	401.000	20	Interpret a multiplication equation as a comparison, e.g., interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.
 4.oa.a.2	062925BDC19347E8890A6D7390DF3842	402.000	20	Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.
@@ -406,7 +407,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 -- Name: level_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('level_attempts_id_seq', 103, true);
+SELECT pg_catalog.setval('level_attempts_id_seq', 105, true);
 
 
 --
@@ -532,6 +533,8 @@ COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, score, tim
 101	2014-03-03 17:49:03.990787	\N	8	1	70CC6A0456AB4CD1A86BC8EA43B447BA	0	f	f
 102	2014-03-03 17:51:43.155006	\N	8	1	70CC6A0456AB4CD1A86BC8EA43B447BA	0	f	f
 103	2014-03-03 17:53:15.062041	\N	8	1	70CC6A0456AB4CD1A86BC8EA43B447BA	0	f	f
+104	2014-03-03 19:20:17.986334	\N	8	1	29E245BF9A144F5B96C6DE0A626622A7	0	f	f
+105	2014-03-03 19:21:20.903545	\N	8	1	29E245BF9A144F5B96C6DE0A626622A7	0	f	f
 \.
 
 
@@ -2136,7 +2139,7 @@ COPY users (id, username, password, first_name, middle_name1, middle_name2, midd
 760	v2498	cat	New	\N	\N	\N	Student	1	CA9EE2E34F384E95A5FA26769C5864B8	1	0
 761	v2499	cat	New	\N	\N	\N	Student	1	CA9EE2E34F384E95A5FA26769C5864B8	1	0
 302	v1923	bot	Luke	\N	\N	\N	Breslin	1	3D384CB2349B41299A3B5A133AB9E3F8	203	0
-8	v1401	ahh	Anthony	\N	\N	\N	Arvelo	1	70CC6A0456AB4CD1A86BC8EA43B447BA	1	0
+8	v1401	ahh	Anthony	\N	\N	\N	Arvelo	1	29E245BF9A144F5B96C6DE0A626622A7	1	0
 \.
 
 
