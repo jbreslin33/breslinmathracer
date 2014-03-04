@@ -349,10 +349,10 @@ SELECT pg_catalog.setval('error_log_id_seq', 1, true);
 --
 
 COPY learning_standards (id, ref_id, progression, levels, standard) FROM stdin;
+k.cc.a.1	CA9EE2E34F384E95A5FA26769C5864B8	1.000	11	Count to 100 by ones and by tens.
 k.cc.a.2	5E6A3E3B939B4577B104FA8658206E9E	2.000	6	Count forward beginning from a given number within the known sequence (instead of having to begin at 1).
 k.cc.a.3	C11F30815A9C49B9A83B61A285EA11F9	3.000	10	Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects).
 k.cc.b.4a	7B20214AA4AA445AA720062C6F1B5C58	4.000	10	When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.
-k.cc.a.1	CA9EE2E34F384E95A5FA26769C5864B8	1.000	11	Count to 100 by ones and by tens.
 k.cc.b.4b	3DEE205D86BC461FA4271EF4BD190A0C	5.000	10	Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.
 k.cc.b.5	6F4455B55B4240F3B4738DD9DB3EAF40	6.000	10	Count to answer “how many?” questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1–20, count out that many objects.
 k.cc.c.6	66626D8AEE4E474B8CFEC8A4B68AA51C	7.000	10	Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies.
@@ -395,6 +395,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 2.nbt.a.3	EE06B2E4211C4C8EB432A5448DA82C77	208.000	10	Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.
 2.nbt.a.4	B9615D5AFE1A46C3B0AD4E517ECB0C9E	209.000	10	Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using &gt;, =, and &lt; symbols to record the results of comparisons.
 2.nbt.b.5	7C9ACFC70C934A229B447804D6A1C0FC	210.000	10	Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.
+2.nbt.b.6	70CC6A0456AB4CD1A86BC8EA43B447BA	211.000	10	Add up to four two-digit numbers using strategies based on place value and properties of operations.
 3.oa.c.7	3D384CB2349B41299A3B5A133AB9E3F8	301.000	218	Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.
 4.oa.a.1	7828B4F15ABD40E19EF14DDE0EB399DF	401.000	20	Interpret a multiplication equation as a comparison, e.g., interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.
 4.oa.a.2	062925BDC19347E8890A6D7390DF3842	402.000	20	Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.
@@ -405,7 +406,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 -- Name: level_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('level_attempts_id_seq', 100, true);
+SELECT pg_catalog.setval('level_attempts_id_seq', 103, true);
 
 
 --
@@ -528,6 +529,9 @@ COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, score, tim
 98	2014-03-03 17:28:55.407561	\N	8	1	7C9ACFC70C934A229B447804D6A1C0FC	0	f	f
 99	2014-03-03 17:29:19.533101	\N	8	1	7C9ACFC70C934A229B447804D6A1C0FC	0	f	f
 100	2014-03-03 17:29:41.543603	\N	8	1	7C9ACFC70C934A229B447804D6A1C0FC	0	f	f
+101	2014-03-03 17:49:03.990787	\N	8	1	70CC6A0456AB4CD1A86BC8EA43B447BA	0	f	f
+102	2014-03-03 17:51:43.155006	\N	8	1	70CC6A0456AB4CD1A86BC8EA43B447BA	0	f	f
+103	2014-03-03 17:53:15.062041	\N	8	1	70CC6A0456AB4CD1A86BC8EA43B447BA	0	f	f
 \.
 
 
@@ -2132,7 +2136,7 @@ COPY users (id, username, password, first_name, middle_name1, middle_name2, midd
 760	v2498	cat	New	\N	\N	\N	Student	1	CA9EE2E34F384E95A5FA26769C5864B8	1	0
 761	v2499	cat	New	\N	\N	\N	Student	1	CA9EE2E34F384E95A5FA26769C5864B8	1	0
 302	v1923	bot	Luke	\N	\N	\N	Breslin	1	3D384CB2349B41299A3B5A133AB9E3F8	203	0
-8	v1401	ahh	Anthony	\N	\N	\N	Arvelo	1	7C9ACFC70C934A229B447804D6A1C0FC	1	0
+8	v1401	ahh	Anthony	\N	\N	\N	Arvelo	1	70CC6A0456AB4CD1A86BC8EA43B447BA	1	0
 \.
 
 
