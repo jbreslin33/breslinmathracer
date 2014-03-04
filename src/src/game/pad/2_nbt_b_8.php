@@ -14,6 +14,8 @@ Extends: NumberPad,
 
 		var totalA = 0;
 		var totalB = 0;
+		var totalC = 0;
+		var totalD = 0;
 
 		var varA = 0;
 		var varB = 0;
@@ -21,7 +23,7 @@ Extends: NumberPad,
 
 		var randomChance = 0;
 
-		while (totalA < this.mScoreNeeded * .4 || totalB < this.mScoreNeeded * .4)
+		while (totalA < this.mScoreNeeded * .2 || totalB < this.mScoreNeeded * .2 || totalC < this.mScoreNeeded * .2 || totalD < this.mScoreNeeded * .2)
 		{
 			this.mQuiz.resetQuestionArray();
 			totalA = 0;
@@ -30,19 +32,34 @@ Extends: NumberPad,
 			for (s = 0; s < this.mScoreNeeded; s++)
 			{	
 				varC = 10000;
-				randomChance = Math.floor((Math.random()*2));		
+				randomChance = Math.floor((Math.random()*4));		
 
 				while (varC > 999 || varC < 0)
 				{	
-					varA = Math.floor((Math.random()*999));		
-					varB = Math.floor((Math.random()*999));		
-				
+					varA = Math.floor((Math.random()*899)+101);		
+			
 					if (randomChance == 0)
 					{
+						varB = Math.floor((Math.random()*10));		
+						varB = varB * 10;	
 						varC = parseInt(varA + varB);
 					}
-					else
+					if (randomChance == 1)
 					{
+						varB = Math.floor((Math.random()*10));		
+						varB = varB * 100;	
+						varC = parseInt(varA + varB);
+					}
+					if (randomChance == 2)
+					{
+						varB = Math.floor((Math.random()*10));		
+						varB = varB * 10;	
+						varC = parseInt(varA - varB);
+					}
+					if (randomChance == 3)
+					{
+						varB = Math.floor((Math.random()*10));		
+						varB = varB * 100;	
 						varC = parseInt(varA - varB);
 					}
 				}
@@ -51,10 +68,20 @@ Extends: NumberPad,
                                         this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
                                         totalA++;
                                 }
-                                else
+   				if (randomChance == 1)
+                                {
+                                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
+                                        totalB++;
+                                }
+   				if (randomChance == 2)
                                 {
                                         this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
-                                        totalB++;
+                                        totalC++;
+                                }
+   				if (randomChance == 3)
+                                {
+                                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
+                                        totalD++;
                                 }
 			}
 			//ok we broke while now add question...
