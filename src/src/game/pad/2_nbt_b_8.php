@@ -40,26 +40,22 @@ Extends: NumberPad,
 			
 					if (randomChance == 0)
 					{
-						varB = Math.floor((Math.random()*10));		
-						varB = varB * 10;	
+						varB = 10		
 						varC = parseInt(varA + varB);
 					}
 					if (randomChance == 1)
 					{
-						varB = Math.floor((Math.random()*10));		
-						varB = varB * 100;	
+						varB = 100;	
 						varC = parseInt(varA + varB);
 					}
 					if (randomChance == 2)
 					{
-						varB = Math.floor((Math.random()*10));		
-						varB = varB * 10;	
+						varB = 10;	
 						varC = parseInt(varA - varB);
 					}
 					if (randomChance == 3)
 					{
-						varB = Math.floor((Math.random()*10));		
-						varB = varB * 100;	
+						varB = 100;	
 						varC = parseInt(varA - varB);
 					}
 				}
