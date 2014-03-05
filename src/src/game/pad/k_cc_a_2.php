@@ -1,4 +1,4 @@
-var k_cc_a_1 = new Class(
+var k_cc_a_2 = new Class(
 {
 
 Extends: NumberPad,
@@ -8,6 +8,8 @@ Extends: NumberPad,
        		this.parent(application);
 
 		this.setScoreNeeded(10);
+
+		this.mThresholdTime = 6000;
 	},
 
         createNumQuestion: function()
@@ -50,62 +52,57 @@ Extends: NumberPad,
  		    				
 		if (this.mApplication.mLevel == 1)
 		{
-			countBy = 1;	
+			countBy = 5;	
 			startNumber = 0;
 		}	
 
 		if (this.mApplication.mLevel == 2)
 		{
-			countBy = 1;	
-			startNumber = 10;
+			countBy = 5;	
+			startNumber = 50;
 		}	
 		
 		if (this.mApplication.mLevel == 3)
 		{
-			countBy = 1;	
-			startNumber = 20;
+			countBy = 5;	
+			startNumber = 200;
 		}	
 		
 		if (this.mApplication.mLevel == 4)
 		{
-			countBy = 1;	
-			startNumber = 30;
+			countBy = 5;	
+			startNumber = 350;
 		}	
 		
 		if (this.mApplication.mLevel == 5)
 		{
-			countBy = 1;	
-			startNumber = 40;
+			countBy = 5;	
+			startNumber = 880;
 		}	
 		
 		if (this.mApplication.mLevel == 6)
 		{
-			countBy = 1;	
-			startNumber = 50;
+			countBy = 10;	
+			startNumber = 0;
 		}	
 		if (this.mApplication.mLevel == 7)
 		{
-			countBy = 1;	
-			startNumber = 60;
+			countBy = 10;	
+			startNumber = 100;
 		}	
 		if (this.mApplication.mLevel == 8)
 		{
-			countBy = 1;	
-			startNumber = 70;
+			countBy = 10;	
+			startNumber = 400;
 		}	
 		if (this.mApplication.mLevel == 9)
 		{
-			countBy = 1;	
-			startNumber = 80;
+			countBy = 10;	
+			startNumber = 170;
 		}	
 		if (this.mApplication.mLevel == 10)
 		{
-			countBy = 1;	
-			startNumber = 90;
-		}	
-		if (this.mApplication.mLevel == 11)
-		{
-			countBy = 10;	
+			countBy = 100;	
 			startNumber = 0;
 		}	
 	
