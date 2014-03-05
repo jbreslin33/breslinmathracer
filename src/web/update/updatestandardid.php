@@ -8,7 +8,7 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
 
-//setLevelSessionVariablesChange($conn,$_SESSION["user_id"]);
+setLevelSessionVariablesChange($conn,$_SESSION["user_id"]);
 
 //fill php vars
 $returnString = "101,";
