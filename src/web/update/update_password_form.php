@@ -26,7 +26,7 @@ echo "<br>";
 <?php
 $query = "select username, password from users where school_id = ";
 $query .= $_SESSION["user_id"];
-$query .= ";";
+$query .= " order by username;";
 echo "hello query";
 echo $query;
 $result = pg_query($conn,$query);
