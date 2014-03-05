@@ -312,6 +312,36 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
 }
 
+function setLevelSessionVariablesBreslin($conn,$user_id)
+{
+        $query = "select first_name, last_name from users where id = ";
+	$query .= $_SESSION["user_id"]; 
+        $query .= ";";
+
+        //get db result
+        $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$result);
+
+        //get numer of rows
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the id from user table
+                $first_name = pg_Result($result, 0, 'first_name');
+                $last_name = pg_Result($result, 0, 'last_name');
+
+                //set level_id
+                $_SESSION["first_name"] = $first_name;
+                $_SESSION["last_name"] = $last_name;
+                $_SESSION["user_id"] = $user_id;
+        }
+        else
+        {
+                echo "error no user";
+        }
+}
+
 function setLevelSessionVariables($conn,$user_id)
 {
 	$user_id = selectUserID($conn, $_SESSION["username"],$_SESSION["password"]);
