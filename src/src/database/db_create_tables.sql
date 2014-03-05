@@ -93,6 +93,8 @@ CREATE TABLE LevelAttempts (
 	passed boolean DEFAULT false NOT NULL
 );
 
+ALTER TABLE levelattempts RENAME COLUMN score TO transaction_code;
+
 --ERROR_LOG
 CREATE SEQUENCE error_log_id_seq
     START WITH 1

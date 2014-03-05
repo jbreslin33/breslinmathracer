@@ -55,7 +55,7 @@ $numrows = pg_numrows($result);
 <p><b> Level History: </p></b>
 
 <?php
-$query = "select end_time, level from levelattempts where passed = 't' and user_id = ";
+$query = "select end_time, level from levelattempts where transaction_code = 1 and user_id = ";
 $query .= $_SESSION["user_id"];
 $query .= " and ref_id = '";
 $query .= $_SESSION["ref_id"];
