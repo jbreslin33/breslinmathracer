@@ -52,7 +52,7 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 $query = "select username, password from users where school_id = ";
 $query .= $_SESSION["user_id"];
-$query .= ";";
+$query .= " order by username;";
 
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);

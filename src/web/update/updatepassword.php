@@ -16,21 +16,16 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php
 
 $response = "";
 
-$update = "update users SET failed_attempts=0, level = ";
-
-$update .= $_POST["level"];
-$update .= " where username = '";
-$update .= $_SESSION["username"];
+$update = "update users SET password = '";
+$update .= $_POST["password"];
+$update .= "' where username = '";
+$update .= $_POST["username"];
 $update .= "';";
 
 $updateResult = pg_query($conn,$update);
 $errorCheck = dbErrorCheck($conn,$updateResult);
 	
 $response = "Success";
-
-//set session vars	
-$_SESSION["level"] = $_POST["level"];
-$_SESSION["failed_attempts"] = 0;
 
 ?>
 
