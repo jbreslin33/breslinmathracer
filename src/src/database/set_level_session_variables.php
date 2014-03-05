@@ -143,7 +143,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	}
                 	else
                 	{
-				//update level attempts
+				//update level attempts to say we passed
 				$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
 				$update .= $_SESSION["attempt_id"];
 				$update .=  ";"; 
@@ -163,20 +163,19 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	$_SESSION["progression"] = $progression;
                 	$_SESSION["ref_id"] = $ref_id;
                 	$_SESSION["standard"] = $standard;
-		
-			//update db
-			//you need to goto next LearningStandard...
- 			$query3 = "update users set level = ";
-			$query3 .= $_SESSION["level"];
-			$query3 .= ",ref_id='";
-			$query3 .= $_SESSION["ref_id"];
-			$query3 .= "' where id = ";
-			$query3 .= $_SESSION["user_id"]; 
-        		$query3 .= ";";
-		
+	
+ 			//insert into level attempts for a jump
+        		$insert = "insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,";
+        		$insert .= $_SESSION["user_id"];
+        		$insert .= ",";
+        		$insert .= $_SESSION["level"];
+        		$insert .= ",'";
+        		$insert .= $_SESSION["ref_id"];
+        		$insert .= "');";
+
 			//get db result
-        		$result3 = pg_query($conn,$query3) or die('Could not connect: ' . pg_last_error());
-        		dbErrorCheck($conn,$result3);
+        		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+        		dbErrorCheck($conn,$insertResult);
 		}
 		else
 		{
