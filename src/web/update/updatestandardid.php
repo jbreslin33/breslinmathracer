@@ -16,48 +16,22 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php
 
 $response = "";
 
-$select = "select * from learning_standards where id = '";
-$select .= $_POST["standardid"];
-$select .= "';";
-        
-//get db result
-$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-dbErrorCheck($conn,$selectResult);
+//new
+//insert into levelattempts (start_time,user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,7,1,( select ref_id from learning_standards where id = 'k.cc.a.1'),2);
 
-//get numer of rows
-$num = pg_num_rows($selectResult);
+        $insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+	$insert .= $_SESSION["user_id"];
+	$insert .= ",1,'"; 
+	$insert .= "( select ref_id from learning_standards where id = '";
+	$insert .= $_POST["standardid"]; 
+	$insert .= "'),2);";
 
-if ($num > 0)
-{
-	$update = "update users SET failed_attempts=0, level = 1,ref_id = ( select ref_id from learning_standards where id = '";
-	$update .= $_POST["standardid"];
-	$update .= "') where username = '";
-	$update .= $_SESSION["username"];
-	$update .= "';";
+        $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$insertResult);
 
-	$updateResult = pg_query($conn,$update);
-	$errorCheck = dbErrorCheck($conn,$updateResult);
-	
+
 	$response = "Success";
 
-	//set session vars	
-	$standard_id = pg_Result($selectResult, 0, 'id');
-	$ref_id = pg_Result($selectResult, 0, 'ref_id');
-	$progression = pg_Result($selectResult, 0, 'progression');
-	$levels = pg_Result($selectResult, 0, 'levels');
-	
-        $_SESSION["standard"] = $standard_id;
-        $_SESSION["ref_id"] = $ref_id;
-        $_SESSION["progression"] = $progression;
-        $_SESSION["levels"] = $levels;
-        $_SESSION["level"] = 1;
-        $_SESSION["failed_attempts"] = 0;
-
-}
-else
-{
-	$response = "Standard does not exist";
-}
 
 ?>
 
