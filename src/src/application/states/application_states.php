@@ -174,7 +174,7 @@ enter: function(application)
 		application.log('APPLICATION::REWIND_TO_PREVIOUS_LEVEL_APPLICATION');
 	}
 	//tell db to advance you
-        application.advanceToLastLevel();
+        application.setSessionVariables();
 	application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
 },
 

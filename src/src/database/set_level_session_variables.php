@@ -96,7 +96,20 @@ function setLevelSessionVariablesRewind($conn,$user_id)
         	dbErrorCheck($conn,$result);
 	}
 }
+function setLevelSessionVariablesAdvance($conn,$user_id)
+{
+	//update levelattempts
+        $update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
+        $update .= $_SESSION["attempt_id"];
+        $update .=  ";";
 
+        $updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$updateResult);
+
+	setLevelSessionVariables($conn,$user_id);
+}
+
+/*
 function setLevelSessionVariablesAdvance($conn,$user_id)
 {
  	$query = "select levels,progression from learning_standards where ref_id = '";
@@ -223,6 +236,8 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 	} 
 
 }
+*/
+
 function setLevelSessionVariables($conn,$user_id)
 {
 	$user_id = selectUserID($conn, $_SESSION["username"],$_SESSION["password"]);

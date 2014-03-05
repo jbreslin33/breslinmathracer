@@ -664,18 +664,7 @@ var Game = new Class(
 	//showCorrectAnswer
        	showCorrectAnswerEnter: function()
         {
-        	this.mApplication.mFailedAttempts++;
-
-        	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
-        	{
-                	this.mApplication.mFailedAttempts = 0;
-			this.mApplication.mStateMachine.changeState(this.mApplication.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
-        	}
-        	else
-        	{
-                	//just update failed attempts by one on javascript and server and db.
-                	this.mApplication.sendFailedAttempt();
-        	}
+		this.mApplication.mStateMachine.changeState(this.mApplication.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
 	
 		for (i = 0; i < this.mShapeArray.length; i++)
                 {

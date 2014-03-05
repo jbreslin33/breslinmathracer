@@ -925,7 +925,6 @@ var Application = new Class(
 				APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 				APPLICATION.mProgression = responseArray[4];
 				APPLICATION.mLevels = responseArray[5];
-				APPLICATION.mFailedAttempts = responseArray[6];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
 			}
@@ -969,6 +968,42 @@ var Application = new Class(
                 xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
                 xmlhttp.send();
         },
+
+        setSessionVariables: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        var response = xmlhttp.responseText;
+                        var responseArray = response.split(",");
+                        var code = responseArray[0];
+                        var codeNumber = parseInt(code);
+
+                        if (codeNumber == 101)
+                        {
+                                APPLICATION.mRef_id = responseArray[1];
+                                APPLICATION.mLevel = responseArray[2];
+                                APPLICATION.mStandard = responseArray[3];
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                APPLICATION.mProgression = responseArray[4];
+                                APPLICATION.mLevels = responseArray[5];
+                                APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                        }
+                }
+                xmlhttp.open("GET","../../src/database/set_session_variables.php",true);
+                xmlhttp.send();
+        },
+
  	
 	sendGameTimeEnd: function()
         {
