@@ -8,8 +8,6 @@ Extends: NumberPad,
        		this.parent(application);
 
 		this.setScoreNeeded(10);
-
-		this.mThresholdTime = 6000;
 	},
 
         createNumQuestion: function()
@@ -47,63 +45,37 @@ Extends: NumberPad,
 
                 this.mQuiz.resetQuestionArray();
 		
-		var countBy = 0;	
+		var countBy = 1;	
 		var startNumber = 0;
  		    				
 		if (this.mApplication.mLevel == 1)
 		{
-			countBy = 5;	
-			startNumber = 0;
+			startNumber = 3;
 		}	
 
 		if (this.mApplication.mLevel == 2)
 		{
-			countBy = 5;	
-			startNumber = 50;
+			startNumber = 15;
 		}	
 		
 		if (this.mApplication.mLevel == 3)
 		{
-			countBy = 5;	
-			startNumber = 200;
+			startNumber = 87;
 		}	
 		
 		if (this.mApplication.mLevel == 4)
 		{
-			countBy = 5;	
-			startNumber = 350;
+			startNumber = 42;
 		}	
 		
 		if (this.mApplication.mLevel == 5)
 		{
-			countBy = 5;	
-			startNumber = 880;
+			startNumber = 76;
 		}	
 		
 		if (this.mApplication.mLevel == 6)
 		{
-			countBy = 10;	
-			startNumber = 0;
-		}	
-		if (this.mApplication.mLevel == 7)
-		{
-			countBy = 10;	
-			startNumber = 100;
-		}	
-		if (this.mApplication.mLevel == 8)
-		{
-			countBy = 10;	
-			startNumber = 400;
-		}	
-		if (this.mApplication.mLevel == 9)
-		{
-			countBy = 10;	
-			startNumber = 170;
-		}	
-		if (this.mApplication.mLevel == 10)
-		{
-			countBy = 100;	
-			startNumber = 0;
+			startNumber = 52;
 		}	
 	
 		for (i = 0; i < this.mScoreNeeded; i++)
