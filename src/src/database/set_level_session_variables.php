@@ -107,18 +107,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 		$levelVar++;
 		$_SESSION["level"] = $levelVar;
 
-		//update db
-                //you need to goto next LearningStandard...
-                $query4 = "update users set level = ";
-                $query4 .= $_SESSION["level"];
-                $query4 .= " where id = ";
-                $query4 .= $_SESSION["user_id"];
-                $query4 .= ";";
-
-                //get db result
-                $result4 = pg_query($conn,$query4) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$result4);
-
 		if ($_SESSION["ref_id"] == 'CA9EE2E34F384E95A5FA26769C5864B8' || $_SESSION["ref_id"] == '5E6A3E3B939B4577B104FA8658206E9E')
 		{
 		}
