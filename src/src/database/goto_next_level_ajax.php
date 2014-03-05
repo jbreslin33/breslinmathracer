@@ -21,6 +21,8 @@ $returnString .= ",";
 $returnString .= $_SESSION["progression"];
 $returnString .= ",";
 $returnString .= $_SESSION["levels"];
+$returnString .= ",";
+$returnString .= $_SESSION["failed_attempts"];
 echo $returnString;
 
 ?>

@@ -79,6 +79,7 @@ function setLevelSessionVariablesRewind($conn,$user_id)
 	}
 	else
 	{
+		/*
 		//go back
  		$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 		$levelVar--;
@@ -94,22 +95,11 @@ function setLevelSessionVariablesRewind($conn,$user_id)
         	//get db result
         	$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
         	dbErrorCheck($conn,$result);
+		*/
+		setLevelSessionVariables($conn,$user_id);
 	}
 }
-function setLevelSessionVariablesAdvance($conn,$user_id)
-{
-	//update levelattempts
-        $update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
-        $update .= $_SESSION["attempt_id"];
-        $update .=  ";";
 
-        $updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$updateResult);
-
-	setLevelSessionVariables($conn,$user_id);
-}
-
-/*
 function setLevelSessionVariablesAdvance($conn,$user_id)
 {
  	$query = "select levels,progression from learning_standards where ref_id = '";
@@ -236,8 +226,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 	} 
 
 }
-*/
-
 function setLevelSessionVariables($conn,$user_id)
 {
 	$user_id = selectUserID($conn, $_SESSION["username"],$_SESSION["password"]);
@@ -304,17 +292,6 @@ get last transaction code and then decision tree it.
                 echo "error no user";
         }
 
-	//failed
-	if ($_SESSION["transaction_code"] == 0)
-	{
-		if ($levelVar > 1)
-		{ 
- 			$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
-			$levelVar--;
-                	$_SESSION["level"]            = $levelVar;
-		}
-        }
-
 	//passed
 	if ($_SESSION["transaction_code"] == 1)
 	{
@@ -322,6 +299,17 @@ get last transaction code and then decision tree it.
 		$levelVar++;
                 $_SESSION["level"]            = $levelVar;
         }
+	//failed
+	if ($_SESSION["transaction_code"] == 0)
+	{
+		if ($_SESSION["level"] > 1)
+		{
+ 			$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
+			$levelVar--;
+                	$_SESSION["level"]            = $levelVar;
+		}
+        }
+
 
 	//select * from learning_standards where ref_id = 'ACB26A2ED7114E59911EE985D8D02B6D';
 	$query = "select * from learning_standards where ref_id = '";
