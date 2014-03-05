@@ -8,8 +8,7 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
 
-//insertLevelAttempt($conn,$_SESSION["user_id"]);
-setLevelSessionVariablesBreslin($conn,$_SESSION["user_id"]);
+setLevelSessionVariablesRewind($conn,$_SESSION["user_id"]);
 
 //fill php vars
 $returnString = "101,";
