@@ -2,15 +2,14 @@
 
 function setLevelSessionVariablesChange($conn,$user_id)
 {
-/*
 	$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
 	$insert .= $_SESSION["user_id"];
 	$insert .= ",1,'";
-	$insert .= "( select ref_id from learning_standards where id = '";
+	$insert .= "( select ref_id from learning_standards where id = ";
 	$insert .= $_POST["standardid"];
-	$insert .= "'),2);";
-*/
-	$insert = "select * from users;";
+	$insert .= ")',2);";
+	echo $insert;	
+//	$insert = "select * from users;";
 	
 	$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
 	dbErrorCheck($conn,$insertResult);
