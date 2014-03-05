@@ -289,6 +289,17 @@ get last transaction code and then decision tree it.
                 echo "error no user";
         }
 
+	//failed
+	if ($_SESSION["transaction_code"] == 0)
+	{
+		if ($levelVar > 1)
+		{ 
+ 			$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
+			$levelVar--;
+                	$_SESSION["level"]            = $levelVar;
+		}
+        }
+
 	//passed
 	if ($_SESSION["transaction_code"] == 1)
 	{
