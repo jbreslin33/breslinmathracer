@@ -126,7 +126,6 @@ var Application = new Class(
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mLevels = responseArray[3];
-				APPLICATION.mFailedAttempts = responseArray[4];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mWaitingOnLevelData = false;
                 	}
