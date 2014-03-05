@@ -126,8 +126,11 @@ var Application = new Class(
 				APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mLevel = responseArray[2];
 				APPLICATION.mLevels = responseArray[3];
+				APPLICATION.mLevels = responseArray[3];
+                                APPLICATION.mProgression = responseArray[4];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mWaitingOnLevelData = false;
+                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                 	}
 		}
                 xmlhttp.open("GET","../../web/application/level_query.php",true);

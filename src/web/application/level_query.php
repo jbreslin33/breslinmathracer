@@ -22,7 +22,8 @@ if ($_SESSION["level"] == NULL)
 
 	$_SESSION["ref_id"] = 'CA9EE2E34F384E95A5FA26769C5864B8';
 	$_SESSION["level"] = 1;
-	$_SESSION["levels"] = 11;
+	$_SESSION["levels"] = 10;
+	$_SESSION["progression"] = 3.000;
 }
 
 //fill php vars 
@@ -32,5 +33,7 @@ $returnString .= ",";
 $returnString .= $_SESSION["level"];
 $returnString .= ",";
 $returnString .= $_SESSION["levels"];
+$returnString .= ",";
+$returnString .= $_SESSION["progression"];
 echo $returnString;
 ?>
