@@ -28,7 +28,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 	$insert .= ",1,'";
 	$insert .= $ref_id;
 	$insert .= "',2);";
-	echo $insert;	
 	
 	$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
 	dbErrorCheck($conn,$insertResult);
