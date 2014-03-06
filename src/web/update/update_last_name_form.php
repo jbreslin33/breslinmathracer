@@ -41,7 +41,7 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 
 </select>
-        <p>Username: <input type="text" name="last_name" /></p>
+        <p>Last Name: <input type="text" name="last_name" /></p>
 
 	<p><input type="submit" value="UPDATE" /></p>
 

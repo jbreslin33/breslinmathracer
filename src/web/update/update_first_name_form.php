@@ -19,7 +19,7 @@ echo "<br>";
 ?>
 	<p><b> Select Username: </p></b>
 	
-	<form method="post" action="/web/update/updatelastname.php">
+	<form method="post" action="/web/update/updatefirstname.php">
 
 <select name="id">
 
@@ -41,7 +41,7 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 
 </select>
-        <p>Username: <input type="text" name="last_name" /></p>
+        <p>First Name: <input type="text" name="first_name" /></p>
 
 	<p><input type="submit" value="UPDATE" /></p>
 
