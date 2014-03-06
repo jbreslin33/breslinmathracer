@@ -14,8 +14,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 
         if ($num > 0)
         {
-		
-
                 //get the vars from user table
                 $levels = pg_Result($selectResult, 0, 'levels');
                 $ref_id = pg_Result($selectResult, 0, 'ref_id');
@@ -28,10 +26,11 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		$select .= $_SESSION["user_id"];
 		$select .= " and ref_id = '";
 		$select .= $_SESSION["ref_id"];	
-		$select .= "' order by start_time desc;";
+		$select .= "' order by start_time desc limit 1;";
 	
 		$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
 		dbErrorCheck($conn,$selectResult);
+       		$num = pg_num_rows($selectResult);
         
 		if ($num > 0)
 		{
