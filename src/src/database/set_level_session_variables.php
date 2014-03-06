@@ -2,7 +2,7 @@
 
 function setLevelSessionVariablesChange($conn,$user_id)
 {
-	$select = "select ref_id from learning_standards where id = '";
+	$select = "select ref_id, levels, progression from learning_standards where id = '";
 	$select .= $_POST["standardid"];
 	$select .= "';";
 	
@@ -11,26 +11,34 @@ function setLevelSessionVariablesChange($conn,$user_id)
 
  	//get numer of rows
         $num = pg_num_rows($selectResult);
-	$ref_id = '';
 
         if ($num > 0)
         {
                 //get the id from user table
+                $levels = pg_Result($selectResult, 0, 'levels');
                 $ref_id = pg_Result($selectResult, 0, 'ref_id');
+                $progression = pg_Result($selectResult, 0, 'progression');
+                $standard = pg_Result($selectResult, 0, 'id');
+
+		$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+		$insert .= $_SESSION["user_id"];
+		$insert .= ",1,'";
+		$insert .= $ref_id;
+		$insert .= "',2);";
+	
+		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+		dbErrorCheck($conn,$insertResult);
+
+        	$_SESSION["levels"] = $levels;
+        	$_SESSION["level"] = 1;
+        	$_SESSION["progression"] = $progression;
+        	$_SESSION["ref_id"] = $ref_id;
+        	$_SESSION["standard"] = $_POST["standardid"]; 
         }
         else
         {
                 echo "error no id in learning_standards";
         }
-
-	$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
-	$insert .= $_SESSION["user_id"];
-	$insert .= ",1,'";
-	$insert .= $ref_id;
-	$insert .= "',2);";
-	
-	$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-	dbErrorCheck($conn,$insertResult);
 }
 
 function insertLevelAttempt($conn,$user_id)
