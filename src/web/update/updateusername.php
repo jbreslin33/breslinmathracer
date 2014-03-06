@@ -18,8 +18,8 @@ $response = "";
 
 $update = "update users SET username = '";
 $update .= $_POST["username"];
-$update .= "' where username = '";
-$update .= $_POST["username"];
+$update .= "' where id = '";
+$update .= $_POST["id"];
 $update .= "';";
 
 $updateResult = pg_query($conn,$update);

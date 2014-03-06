@@ -21,10 +21,10 @@ echo "<br>";
 	
 	<form method="post" action="/web/update/updateusername.php">
 
-<select name="username">
+<select name="id">
 
 <?php
-$query = "select username, password from users where school_id = ";
+$query = "select id, username, password from users where school_id = ";
 $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 echo "hello query";
@@ -36,7 +36,7 @@ $numrows = pg_numrows($result);
 for($i = 0; $i < $numrows; $i++) 
 {
       	$row = pg_fetch_array($result, $i);
-      	echo "<option value=\"$row[0]\">$row[0]</option>";
+      	echo "<option value=\"$row[0]\">$row[1]</option>";
 }
 ?>
 
