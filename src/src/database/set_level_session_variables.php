@@ -2,14 +2,33 @@
 
 function setLevelSessionVariablesChange($conn,$user_id)
 {
+	$select = "select ref_id from learning_standards where id = '";
+	$select .= $_POST["standardid"];
+	$select .= "';";
+	
+	$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+	dbErrorCheck($conn,$selectResult);
+
+ 	//get numer of rows
+        $num = pg_num_rows($selectResult);
+	$ref_id = '';
+
+        if ($num > 0)
+        {
+                //get the id from user table
+                $ref_id = pg_Result($selectResult, 0, 'ref_id');
+        }
+        else
+        {
+                echo "error no id in learning_standards";
+        }
+
 	$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
 	$insert .= $_SESSION["user_id"];
 	$insert .= ",1,'";
-	$insert .= "( select ref_id from learning_standards where id = ";
-	$insert .= $_POST["standardid"];
-	$insert .= ")',2);";
+	$insert .= $ref_id;
+	$insert .= "',2);";
 	echo $insert;	
-//	$insert = "select * from users;";
 	
 	$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
 	dbErrorCheck($conn,$insertResult);
