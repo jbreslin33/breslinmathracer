@@ -17,49 +17,42 @@ $conn = dbConnect();
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
+	<p><b> Select Username: </p></b>
+	
+	<form method="post" action="/web/update/updatefirstname.php">
+
+<select name="id">
 
 <?php
-$query = "select levels from learning_standards where ref_id = '";
-$query .= $_SESSION["ref_id"]; 
-$query .= "';"; 
-
+$query = "select id, username, password from users where school_id = ";
+$query .= $_SESSION["user_id"];
+$query .= " order by username;";
+echo "hello query";
+echo $query;
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
-?>
-	<p><b> Select Level: </p></b>
-	
-	<form method="post" action="/web/update/updatelevel.php">
 
-<select name="level">
-
-<?php
-	if ($numrows > 0)
-	{
-                $row = pg_fetch_array($result, $ri);
-                $levels = $row[0];
-
-        	for($i = 0; $i < $levels; $i++) 
-        	{
-                	echo "<option value=\"$i\">$i</option>";
-        	}
-	}
+for($i = 0; $i < $numrows; $i++) 
+{
+      	$row = pg_fetch_array($result, $i);
+      	echo "<option value=\"$row[0]\">$row[1]</option>";
+}
 ?>
 
 </select>
+        <p>First Name: <input type="text" name="first_name" /></p>
 
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
 	
-<p><b> Level History: </p></b>
+<p><b> Current Student List: </p></b>
 
 <?php
-$query = "select end_time, level from levelattempts where transaction_code = 1 and user_id = ";
+$query = "select username, password, first_name, last_name from users where school_id = ";
 $query .= $_SESSION["user_id"];
-$query .= " and ref_id = '";
-$query .= $_SESSION["ref_id"];
-$query .= "' order by level;";
+$query .= " order by username;";
 
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
@@ -67,45 +60,34 @@ $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Date Completed';
+        echo '<td> Username';
         echo '</td>';
-        echo '<td> Level';
+        echo '<td> Password';
+        echo '</td>';
+        echo '<td> First Name';
+        echo '</td>';
+        echo '<td> Last Name';
         echo '</td>';
         echo '</tr>';
 
-for($i = 1; $i < $_SESSION["levels"]; $i++)
-{
-	$match = false;
-	//lets loop and see if we have a level match from resultset
 	for($r = 0; $r < $numrows; $r++)
 	{
-        	$row = pg_fetch_array($result, $r);
-		if ($row[1] == $i)
-		{
-			$match = true;
-        		echo '<tr bgcolor="#00FF00">';
-        		echo '<td>';
-        		echo $row[0];
-        		echo '</td>';
-        		echo '<td>';
-        		echo $row[1];
-        		echo '</td>';
-        		echo '</tr>';
-		} 
+                $row = pg_fetch_array($result, $r);
+		echo '<tr>';
+                echo '<td>';
+                echo $row[0];
+                echo '</td>';
+                echo '<td>';
+                echo $row[1];
+                echo '</td>';
+                echo '<td>';
+                echo $row[2];
+                echo '</td>';
+                echo '<td>';
+                echo $row[3];
+                echo '</td>';
+                echo '</tr>';
 	}
-	//if no match lets make it red
-	if ($match == false)
-	{
-        	echo '<tr bgcolor="#FF0000">';
-        	echo '<td>';
-        	echo 'Incomplete';
-        	echo '</td>';
-        	echo '<td>';
-        	echo $i;
-        	echo '</td>';
-        	echo '</tr>';
-	}
-}
 pg_free_result($result);
 
 echo '</table>';
