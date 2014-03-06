@@ -47,10 +47,10 @@ for($i = 0; $i < $numrows; $i++)
 
 	</form>
 	
-<p><b> Level History: </p></b>
+<p><b> Current Student List: </p></b>
 
 <?php
-$query = "select username, password from users where school_id = ";
+$query = "select username, password, first_name, last_name from users where school_id = ";
 $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 
@@ -64,10 +64,12 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Password';
         echo '</td>';
+        echo '<td> First Name';
+        echo '</td>';
+        echo '<td> Last Name';
+        echo '</td>';
         echo '</tr>';
 
-for($i = 1; $i < $_SESSION["levels"]; $i++)
-{
 	for($r = 0; $r < $numrows; $r++)
 	{
                 $row = pg_fetch_array($result, $r);
@@ -78,9 +80,14 @@ for($i = 1; $i < $_SESSION["levels"]; $i++)
                 echo '<td>';
                 echo $row[1];
                 echo '</td>';
+                echo '<td>';
+                echo $row[2];
+                echo '</td>';
+                echo '<td>';
+                echo $row[3];
+                echo '</td>';
                 echo '</tr>';
 	}
-}
 pg_free_result($result);
 
 echo '</table>';
