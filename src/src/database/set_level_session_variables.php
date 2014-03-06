@@ -19,6 +19,8 @@ function setLevelSessionVariablesChange($conn,$user_id)
                 $ref_id = pg_Result($selectResult, 0, 'ref_id');
                 $progression = pg_Result($selectResult, 0, 'progression');
                 $standard = pg_Result($selectResult, 0, 'id');
+        	
+		$_SESSION["ref_id"] = $ref_id;
 		
 		//get the last level
 		//select level, transaction_code from levelattempts where user_id = 7 and ref_id = '695A7607FE8A4E27AB80652C45C84FA8' order by start_time desc;
@@ -68,7 +70,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		//update session vars
         	$_SESSION["levels"] = $levels;
         	$_SESSION["progression"] = $progression;
-        	$_SESSION["ref_id"] = $ref_id;
         	$_SESSION["standard"] = $_POST["standardid"]; 
         }
         else
