@@ -44,6 +44,12 @@ function setLevelSessionVariablesChange($conn,$user_id)
 			$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 			$_SESSION["transaction_code"] = $transaction_code;
 
+			if ($transaction_code == 0 && $levelVar > 1)
+			{
+				//the last time this standard was played student passed the level so lets bump him 
+				$levelVar--;
+				$_SESSION["level"] = $levelVar;
+			} 
 			if ($transaction_code == 1)
 			{
 				//the last time this standard was played student passed the level so lets bump him 
