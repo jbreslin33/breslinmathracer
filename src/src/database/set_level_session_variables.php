@@ -14,12 +14,49 @@ function setLevelSessionVariablesChange($conn,$user_id)
 
         if ($num > 0)
         {
-                //get the id from user table
+		
+
+                //get the vars from user table
                 $levels = pg_Result($selectResult, 0, 'levels');
                 $ref_id = pg_Result($selectResult, 0, 'ref_id');
                 $progression = pg_Result($selectResult, 0, 'progression');
                 $standard = pg_Result($selectResult, 0, 'id');
+		
+		//get the last level
+		//select level, transaction_code from levelattempts where user_id = 7 and ref_id = '695A7607FE8A4E27AB80652C45C84FA8' order by start_time desc;
+		$select = "select level, transaction_code from levelattempts where user_id = ";	
+		$select .= $_SESSION["user_id"];
+		$select .= " and ref_id = '";
+		$select .= $_SESSION["ref_id"];	
+		$select .= "' order by start_time desc;";
+	
+		$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+		dbErrorCheck($conn,$selectResult);
+        
+		if ($num > 0)
+		{
+			//student played this standard before lets get his level and code
+               		$level = pg_Result($selectResult, 0, 'level');
+               		$transaction_code = pg_Result($selectResult, 0, 'transaction_code');
 
+			$_SESSION["level"] = $level;
+			$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
+			$_SESSION["transaction_code"] = $transaction_code;
+
+			if ($transaction_code == 1)
+			{
+				//the last time this standard was played student passed the level so lets bump him 
+				$levelVar++;
+				$_SESSION["level"] = $levelVar;
+			} 
+		}
+		else
+		{
+			//no previous transaction at this standard so goto level 1
+        		$_SESSION["level"] = 1;
+		}
+
+		//do the insert...
 		$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
 		$insert .= $_SESSION["user_id"];
 		$insert .= ",1,'";
@@ -29,8 +66,8 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
 		dbErrorCheck($conn,$insertResult);
 
+		//update session vars
         	$_SESSION["levels"] = $levels;
-        	$_SESSION["level"] = 1;
         	$_SESSION["progression"] = $progression;
         	$_SESSION["ref_id"] = $ref_id;
         	$_SESSION["standard"] = $_POST["standardid"]; 
