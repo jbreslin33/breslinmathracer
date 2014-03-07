@@ -1,5 +1,30 @@
 <?php
 
+function getLevels($conn,$user_id)
+{
+	$select = "select levels from learning_standards where id = '";
+        $select .= $_POST["standardid"];
+        $select .= "';";
+
+        $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$selectResult);
+
+        //get numer of rows
+        $num = pg_num_rows($selectResult);
+
+        if ($num > 0)
+        {
+                //get the vars from user table
+                $levels = pg_Result($selectResult, 0, 'levels');
+		return $levels;
+	}
+	else
+	{
+		return 0;
+	}
+
+}
+
 function setLevelSessionVariablesChange($conn,$user_id)
 {
 	$select = "select ref_id, levels, progression from learning_standards where id = '";

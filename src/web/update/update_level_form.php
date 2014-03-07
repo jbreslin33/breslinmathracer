@@ -5,6 +5,38 @@
 <head>
 	<title>UPDATE STANDARD</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
+
+<script>
+
+function getLevels()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+  	{
+  		xmlhttp=new XMLHttpRequest();
+  	}
+	else
+  	{
+  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+		xmlhttp.onreadystatechange=function()
+  	{
+  	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    	{
+    		//document.getElementById("levels").innerHTML=xmlhttp.responseText;
+      		//echo "<option value=\"$row[0]\">$row[1]</option>";
+		var x = document.getElementById("levels");
+		var option = document.createElement("option");
+		option.text = "" + xmlhttp.responseText;
+		x.add(option);
+    	}
+}
+xmlhttp.open("GET","/src/database/get_levels.php",true);
+xmlhttp.send();
+}
+
+</script>
+
 </head>
 
 <body>
@@ -41,7 +73,30 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 
 </select>
-        <p>First Name: <input type="text" name="first_name" /></p>
+
+<select name="standardid" onchange="getLevels()">
+
+<?php
+$query = "select id from learning_standards";
+$query .= " order by id;";
+$result = pg_query($conn,$query);
+dbErrorCheck($conn,$result);
+$numrows = pg_numrows($result);
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        echo "<option value=\"$row[0]\">$row[0]</option>";
+}
+?>
+
+</select>
+
+<select id="levels" name="levels">
+
+</select>
+        
+	<p>First Name: <input type="text" name="first_name" /></p>
 
 	<p><input type="submit" value="UPDATE" /></p>
 
