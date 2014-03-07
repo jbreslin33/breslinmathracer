@@ -11,7 +11,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php
 $levels = getLevels($conn,$_SESSION["user_id"]);
 
 //fill php vars
-$returnString = "101,";
 $returnString .= $levels;
 echo $returnString;
 

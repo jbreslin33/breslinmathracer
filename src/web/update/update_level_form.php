@@ -31,8 +31,9 @@ function getLevels()
 		x.add(option);
     	}
 }
-xmlhttp.open("GET","/src/database/get_levels.php",true);
-xmlhttp.send();
+xmlhttp.open("POST","/src/database/get_levels.php",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("standardid=k.oa.a.1");
 }
 
 </script>
@@ -74,7 +75,7 @@ for($i = 0; $i < $numrows; $i++)
 
 </select>
 
-<select name="standardid" onchange="getLevels()">
+<select id="standardsid" name="standardid" onchange="getLevels()">
 
 <?php
 $query = "select id from learning_standards";

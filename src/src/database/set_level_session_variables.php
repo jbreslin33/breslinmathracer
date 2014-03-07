@@ -20,7 +20,7 @@ function getLevels($conn,$user_id)
 	}
 	else
 	{
-		return 0;
+		return $select;
 	}
 
 }
