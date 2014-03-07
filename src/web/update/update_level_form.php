@@ -31,12 +31,6 @@ function getLevels()
     		{
         		x.remove(i);
     		}		
-		/*
-		for (i = 0; i < length; i++) 
-		{
-        		//x.options[i] = null;
-		}
-		*/
 		
 		var levelsTotal = parseInt(xmlhttp.responseText);	
 	
@@ -116,8 +110,6 @@ for($i = 0; $i < $numrows; $i++)
 
 </select>
         
-	<p>First Name: <input type="text" name="first_name" /></p>
-
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
