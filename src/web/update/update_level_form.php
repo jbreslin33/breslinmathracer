@@ -40,7 +40,7 @@ function getLevels()
 		
 		var levelsTotal = parseInt(xmlhttp.responseText);	
 	
-		for (i = i; i <= levelsTotal; i++) 
+		for (i = 1; i <= levelsTotal; i++) 
 		{
 			var option = document.createElement("option");
 			option.text = "" + i;
