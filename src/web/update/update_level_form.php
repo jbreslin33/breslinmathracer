@@ -31,9 +31,11 @@ function getLevels()
 		x.add(option);
     	}
 }
+var e = document.getElementById("standardsid");
+var str = e.options[e.selectedIndex].value;
 xmlhttp.open("POST","/src/database/get_levels.php",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-xmlhttp.send("standardid=k.oa.a.1");
+xmlhttp.send("standardid=" + str);
 }
 
 </script>
