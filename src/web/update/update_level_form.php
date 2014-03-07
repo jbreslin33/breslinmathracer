@@ -25,14 +25,22 @@ function getLevels()
     	{
 		var x = document.getElementById("levels");
 		var length = x.options.length;
+		
+		var i;
+    		for(i=x.options.length-1;i>=0;i--)
+    		{
+        		x.remove(i);
+    		}		
+		/*
 		for (i = 0; i < length; i++) 
 		{
-        		x.options[i] = null;
+        		//x.options[i] = null;
 		}
+		*/
 		
 		var levelsTotal = parseInt(xmlhttp.responseText);	
 	
-		for (i = 0; i < levelsTotal; i++) 
+		for (i = i; i <= levelsTotal; i++) 
 		{
 			var option = document.createElement("option");
 			option.text = "" + i;
