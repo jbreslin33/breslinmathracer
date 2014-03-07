@@ -65,7 +65,7 @@ echo "<br>";
 ?>
 	<p><b> Select Username: </p></b>
 	
-	<form method="post" action="/web/update/updatefirstname.php">
+	<form method="post" action="/web/update/updatelevel.php">
 
 <select name="id">
 

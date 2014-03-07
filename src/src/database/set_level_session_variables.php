@@ -25,6 +25,40 @@ function getLevels($conn,$user_id)
 
 }
 
+function changeLevel($conn,$user_id)
+{
+ 	$select = "select ref_id, levels, progression from learning_standards where id = '";
+        $select .= $_POST["standardid"];
+        $select .= "';";
+
+        $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$selectResult);
+
+        //get numer of rows
+        $num = pg_num_rows($selectResult);
+
+        if ($num > 0)
+        {
+                //get the vars from user table
+                $levels = pg_Result($selectResult, 0, 'levels');
+                $ref_id = pg_Result($selectResult, 0, 'ref_id');
+                $progression = pg_Result($selectResult, 0, 'progression');
+                $standard = pg_Result($selectResult, 0, 'id');
+  
+		//do the insert...
+                $insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+                $insert .= $_POST["id"];
+                $insert .= ",";
+		$insert .= $_POST["levels"];
+                $insert .= ",'";
+		$insert .= $ref_id; 
+                $insert .= "',2);";
+		
+                $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+                dbErrorCheck($conn,$insertResult);
+	}
+}
+
 function setLevelSessionVariablesChange($conn,$user_id)
 {
 	$select = "select ref_id, levels, progression from learning_standards where id = '";
