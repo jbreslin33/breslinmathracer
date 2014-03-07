@@ -78,7 +78,7 @@ for($i = 0; $i < $numrows; $i++)
 
 <?php
 $query = "select id from learning_standards";
-$query .= " order by id;";
+$query .= " order by progression;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
