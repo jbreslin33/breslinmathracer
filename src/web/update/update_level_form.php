@@ -23,12 +23,21 @@ function getLevels()
   	{
   	if (xmlhttp.readyState==4 && xmlhttp.status==200)
     	{
-    		//document.getElementById("levels").innerHTML=xmlhttp.responseText;
-      		//echo "<option value=\"$row[0]\">$row[1]</option>";
 		var x = document.getElementById("levels");
-		var option = document.createElement("option");
-		option.text = "" + xmlhttp.responseText;
-		x.add(option);
+		var length = x.options.length;
+		for (i = 0; i < length; i++) 
+		{
+        		x.options[i] = null;
+		}
+		
+		var levelsTotal = parseInt(xmlhttp.responseText);	
+	
+		for (i = 0; i < levelsTotal; i++) 
+		{
+			var option = document.createElement("option");
+			option.text = "" + i;
+			x.add(option);
+		}
     	}
 }
 var e = document.getElementById("standardsid");
