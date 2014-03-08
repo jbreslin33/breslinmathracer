@@ -72,9 +72,10 @@ echo "<br>";
 <?php
 $query = "select id, username, password from users where school_id = ";
 $query .= $_SESSION["user_id"];
+$query .= " or id = ";
+$query .= $_SESSION["user_id"];
 $query .= " order by username;";
-echo "hello query";
-echo $query;
+
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
