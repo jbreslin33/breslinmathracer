@@ -115,12 +115,12 @@ for($i = 0; $i < $numrows; $i++)
 
 	</form>
 	
-<p><b> Current Student List: </p></b>
+<p><b> Level Report: </p></b>
 
 <?php
-$query = "select username, password, first_name, last_name from users where school_id = ";
+$query = "select start_time, end_time, level, transaction_code, ref_id from levelattempts where user_id = ";
 $query .= $_SESSION["user_id"];
-$query .= " order by username;";
+$query .= " order by start_time desc;";
 
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
@@ -128,13 +128,16 @@ $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Username';
+        echo '<td> Start Time';
         echo '</td>';
-        echo '<td> Password';
+        echo '<td> End Time';
         echo '</td>';
-        echo '<td> First Name';
+        echo '<td> Level';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td> Transacation Code';
+        echo '</td>';
+        echo '</td>';
+        echo '<td> Ref_ID';
         echo '</td>';
         echo '</tr>';
 
@@ -153,6 +156,9 @@ echo '<table border=\"1\">';
                 echo '</td>';
                 echo '<td>';
                 echo $row[3];
+                echo '</td>';
+                echo '<td>';
+                echo $row[4];
                 echo '</td>';
                 echo '</tr>';
 	}
