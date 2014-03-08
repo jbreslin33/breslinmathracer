@@ -1,5 +1,70 @@
 <?php
 
+function getLevelsReport($conn,$user_id)
+{
+	$returnString = "101,";
+	$standardsArray = array();
+
+  	$select = "select id from learning_standards order by progression;";
+
+        $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$selectResult);
+
+        //get numer of rows
+        $num = pg_num_rows($selectResult);
+
+	for ($i = 0; $i < $num; $i++) 
+        {
+                //get the vars from user table
+                $id = pg_Result($selectResult, $i, 'id');
+		array_push($standardsArray, $id);
+        }
+	
+	$lengthOfStandardsArray = count($standardsArray);
+
+	for ($i = 0; $i < $lengthOfStandardsArray; $i++) 
+	{
+		$select = "select start_time, end_time, level, transaction_code, learning_standards.id, progression, levels from levelattempts JOIN learning_standards ON learning_standards.ref_id=levelattempts.ref_id where user_id = ";
+        	$select .= $_POST["usernameid"];
+		$select .= "and learning_standards.id = '";
+		$select .= $standardsArray[$i]; 
+		$select .= "' order by progression asc, start_time desc limit 1;";
+
+        	$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+        	dbErrorCheck($conn,$selectResult);
+
+        	//get numer of rows
+        	$num = pg_num_rows($selectResult);
+
+		for ($i = 0; $i < $num; $i++) 
+        	{
+                	//get the vars from user table
+                	$start_time = pg_Result($selectResult, $i, 'start_time');
+                	$end_time = pg_Result($selectResult, $i, 'end_time');
+                	$level = pg_Result($selectResult, $i, 'level');
+                	$transaction_code = pg_Result($selectResult, $i, 'transaction_code');
+                	$id = pg_Result($selectResult, $i, 'learning_standards.id');
+                	$progression = pg_Result($selectResult, $i, 'progression');
+                	$levels = pg_Result($selectResult, $i, 'levels');
+
+			$returnString .= ",";
+			$returnString .= $start_time;
+			$returnString .= ",";
+			$returnString .= $end_time;
+			$returnString .= ",";
+			$returnString .= $level;
+			$returnString .= ",";
+			$returnString .= $transaction_code;
+			$returnString .= ",";
+			$returnString .= $id;
+			$returnString .= ",";
+			$returnString .= $progression;
+			$returnString .= ",";
+			$returnString .= $levels;
+        	}
+	}
+}
+
 function getLevels($conn,$user_id)
 {
 	$select = "select levels from learning_standards where id = '";
@@ -22,7 +87,6 @@ function getLevels($conn,$user_id)
 	{
 		return $select;
 	}
-
 }
 
 function changeLevel($conn,$user_id)
