@@ -1,5 +1,3 @@
 <ul>
-<li><a href="/web/select/student_tracker.php">Student Leaders</a>
-<li><a href="/web/select/select_info.php">View My Info</a></li>
-
+<li><a href="/web/select/select_level_data_form.php">Level Data</a>
 </ul>
