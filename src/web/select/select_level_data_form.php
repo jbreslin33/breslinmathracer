@@ -10,7 +10,6 @@
 
 function getLevelsData()
 {
-	console.log('getLevelsData called');
 	var xmlhttp;
 	if (window.XMLHttpRequest)
   	{
@@ -25,7 +24,6 @@ function getLevelsData()
   	{
   	if (xmlhttp.readyState==4 && xmlhttp.status==200)
     	{
-		console.log('Hello World!');
 		var response = xmlhttp.responseText;
                 var responseArray = response.split(",");
                 var code = responseArray[0];
@@ -33,10 +31,8 @@ function getLevelsData()
 
                 if (codeNumber == 101)
 		{
-			console.log('Hello World!');
 			var table = document.getElementById("level_table");
 			var i = 1;
-
 	
 			while (i < responseArray.length)
 			{
