@@ -28,7 +28,6 @@ function getLevelsReport($conn,$user_id)
 	
 	$lengthOfStandardsArray = count($standardsArray);
  	$start_time       = "";
-        $end_time         = "";
         $level            = "";
         $transaction_code = "";
         $id               = "";
@@ -37,7 +36,7 @@ function getLevelsReport($conn,$user_id)
 
 	for ($i = 0; $i < $lengthOfStandardsArray; $i++) 
 	{
-		$select = "select start_time, end_time, level, transaction_code, progression, levels from levelattempts JOIN learning_standards ON learning_standards.ref_id=levelattempts.ref_id where user_id = ";
+		$select = "select start_time, level, transaction_code, progression, levels from levelattempts JOIN learning_standards ON learning_standards.ref_id=levelattempts.ref_id where user_id = ";
         	$select .= $_POST["usernameid"];
 		$select .= "and learning_standards.id = '";
 		$select .= $standardsArray[$i]; 
@@ -53,7 +52,6 @@ function getLevelsReport($conn,$user_id)
         	{
                 	//get the vars from user table
                 	$start_time       = pg_Result($selectResult, 0, 'start_time');
-                	$end_time         = pg_Result($selectResult, 0, 'end_time');
                 	$level            = pg_Result($selectResult, 0, 'level');
                 	$transaction_code = pg_Result($selectResult, 0, 'transaction_code');
                 	$id               = $standardsArray[$i];
@@ -64,7 +62,6 @@ function getLevelsReport($conn,$user_id)
         	{
                 	//get the vars from user table
                 	$start_time       = "";
-                	$end_time         = "";
                 	$level            = "1";
                 	$transaction_code = "2";
                 	$id               = $standardsArray[$i];
@@ -73,8 +70,6 @@ function getLevelsReport($conn,$user_id)
         	}
 		$returnString .= ",";
 		$returnString .= $start_time;
-		$returnString .= ",";
-		$returnString .= $end_time;
 		$returnString .= ",";
 		$returnString .= $level;
 		$returnString .= ",";
