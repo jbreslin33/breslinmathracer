@@ -62,8 +62,11 @@ function getLevelsData()
 				cell6.innerHTML = "" + responseArray[i];
 				var levels = parseInt(responseArray[i]);
 				i++;
+				level--; 
 				var percent = level / levels; 
-				cell7.innerHTML = "" + percent;  
+				var percent = percent * 100;
+				var truncatedPercent = Math.floor(percent);
+				cell7.innerHTML = "" + truncatedPercent;  
 			}
 		}
     	}
