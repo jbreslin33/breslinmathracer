@@ -55,6 +55,7 @@ function getLevelsData()
 				cell3.innerHTML = "" + responseArray[i];
 				i++;
 				cell4.innerHTML = "" + responseArray[i];
+				var transaction_code = parseInt(responseArray[i]);
 				i++;
 				cell5.innerHTML = "" + responseArray[i];
 				var level = parseInt(responseArray[i]);
@@ -62,11 +63,16 @@ function getLevelsData()
 				cell6.innerHTML = "" + responseArray[i];
 				var levels = parseInt(responseArray[i]);
 				i++;
-				level--; 
+
+				if (transaction_code == 0 || transaction_code == 2)
+				{ 
+					level--; 
+				}
+
 				var percent = level / levels; 
 				var percent = percent * 100;
 				var truncatedPercent = Math.floor(percent);
-				cell7.innerHTML = "" + truncatedPercent;  
+				cell7.innerHTML = "" + truncatedPercent + "%";  
 			}
 		}
     	}
