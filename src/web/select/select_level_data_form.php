@@ -57,11 +57,12 @@ function getLevelsData()
 				cell4.innerHTML = "" + responseArray[i];
 				i++;
 				cell5.innerHTML = "" + responseArray[i];
+				var level = parseInt(responseArray[i]);
 				i++;
 				cell6.innerHTML = "" + responseArray[i];
+				var levels = parseInt(responseArray[i]);
 				i++;
-				var level = parseInt(responseArray[i-2]);
-				cell7.innerHTML = "" + level;  
+				cell7.innerHTML = "" + level + " " + levels;  
 			}
 		}
     	}
