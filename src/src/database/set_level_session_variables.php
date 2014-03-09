@@ -2,7 +2,7 @@
 
 function getLevelsReport($conn,$user_id)
 {
-	$returnString = "101,";
+	$returnString = "101";
 	$standardsArray = array();
 
   	$select = "select id from learning_standards order by progression;";
@@ -63,6 +63,7 @@ function getLevelsReport($conn,$user_id)
 			$returnString .= $levels;
         	}
 	}
+	return $returnString;
 }
 
 function getLevels($conn,$user_id)

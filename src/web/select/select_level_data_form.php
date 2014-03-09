@@ -10,6 +10,7 @@
 
 function getLevelsData()
 {
+	console.log('getLevelsData called');
 	var xmlhttp;
 	if (window.XMLHttpRequest)
   	{
@@ -19,10 +20,12 @@ function getLevelsData()
   	{
   		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   	}
-		xmlhttp.onreadystatechange=function()
+
+	xmlhttp.onreadystatechange=function()
   	{
   	if (xmlhttp.readyState==4 && xmlhttp.status==200)
     	{
+		console.log('Hello World!');
 		var response = xmlhttp.responseText;
                 var responseArray = response.split(",");
                 var code = responseArray[0];
@@ -30,9 +33,11 @@ function getLevelsData()
 
                 if (codeNumber == 101)
 		{
+			console.log('Hello World!');
 			var table = document.getElementById("level_table");
 			var i = 1;
-			
+
+	
 			while (i < responseArray.length)
 			{
 				var row = table.insertRow(-1);
@@ -101,6 +106,7 @@ $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
+echo "<option value=\"all\">all</option>";
 for($i = 0; $i < $numrows; $i++) 
 {
       	$row = pg_fetch_array($result, $i);
