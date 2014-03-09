@@ -26,10 +26,12 @@ echo "<br>";
 <?php
 $query = "select username, password from users where school_id = ";
 $query .= $_SESSION["user_id"];
+$query .= " or id = ";
+$query .= $_SESSION["user_id"];
 $query .= " order by username;";
-echo "hello query";
-echo $query;
+
 $result = pg_query($conn,$query);
+
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
@@ -51,6 +53,8 @@ for($i = 0; $i < $numrows; $i++)
 
 <?php
 $query = "select username, password, first_name, last_name from users where school_id = ";
+$query .= $_SESSION["user_id"];
+$query .= " or id = ";
 $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 
