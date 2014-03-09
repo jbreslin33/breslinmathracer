@@ -62,7 +62,8 @@ function getLevelsData()
 				cell6.innerHTML = "" + responseArray[i];
 				var levels = parseInt(responseArray[i]);
 				i++;
-				cell7.innerHTML = "" + level + " " + levels;  
+				var percent = level / levels; 
+				cell7.innerHTML = "" + percent;  
 			}
 		}
     	}
