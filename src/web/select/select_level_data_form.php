@@ -10,6 +10,16 @@
 
 function getLevelsData()
 {
+	var table = document.getElementById("level_table");
+
+        //delete rows
+       	var totalRows = table.rows.length;
+
+        for(i = 1; i < totalRows; i++)
+        {
+        	table.deleteRow(totalRows - i);
+        }
+
 	var xmlhttp;
 	if (window.XMLHttpRequest)
   	{
@@ -32,6 +42,7 @@ function getLevelsData()
                 if (codeNumber == 101)
 		{
 			var table = document.getElementById("level_table");
+
 			var i = 1;
 	
 			while (i < responseArray.length)
