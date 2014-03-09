@@ -60,7 +60,7 @@ function getLevelsData()
 				i++;
 				cell6.innerHTML = "" + responseArray[i];
 				i++;
-				cell7.innerHTML = "99";  
+				cell7.innerHTML = "" + responseArray[i-2];  
 			}
 		}
     	}
