@@ -56,7 +56,6 @@ function getLevelsData()
 				var cell4 = row.insertCell(3);
 				var cell5 = row.insertCell(4);
 				var cell6 = row.insertCell(5);
-				var cell7 = row.insertCell(6);
 
 				// Add some text to the new cells:
 				cell1.innerHTML = "" + responseArray[i];
@@ -65,13 +64,12 @@ function getLevelsData()
 				i++;
 				cell3.innerHTML = "" + responseArray[i];
 				i++;
-				cell4.innerHTML = "" + responseArray[i];
 				var transaction_code = parseInt(responseArray[i]);
 				i++;
-				cell5.innerHTML = "" + responseArray[i];
+				cell4.innerHTML = "" + responseArray[i];
 				var level = parseInt(responseArray[i]);
 				i++;
-				cell6.innerHTML = "" + responseArray[i];
+				cell5.innerHTML = "" + responseArray[i];
 				var levels = parseInt(responseArray[i]);
 				i++;
 
@@ -83,7 +81,7 @@ function getLevelsData()
 				var percent = level / levels; 
 				var percent = percent * 100;
 				var truncatedPercent = Math.floor(percent);
-				cell7.innerHTML = "" + truncatedPercent + "%";  
+				cell6.innerHTML = "" + truncatedPercent + "%";  
 			}
 		}
     	}
@@ -150,13 +148,11 @@ echo '<table id="level_table" border=\"1\">';
         echo '</td>';
         echo '<td> Start Time';
         echo '</td>';
-        echo '<td> Transacation Code';
-        echo '</td>';
         echo '<td> Level';
         echo '</td>';
         echo '<td> Levels';
         echo '</td>';
-        echo '<td> Percent Complete';
+        echo '<td>Complete';
         echo '</td>';
         echo '</tr>';
 
