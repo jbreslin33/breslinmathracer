@@ -76,7 +76,6 @@ function getLevelsData()
 				i++;
 
 				cell5.innerHTML = "" + responseArray[i];
-				cell5.setAttribute("bgcolor","#FF0000");
 				var levels = parseInt(responseArray[i]);
 				i++;
 
@@ -89,6 +88,19 @@ function getLevelsData()
 				var percent = percent * 100;
 				var truncatedPercent = Math.floor(percent);
 				cell6.innerHTML = "" + truncatedPercent + "%";  
+
+				if (truncatedPercent == 0)
+				{
+					cell6.setAttribute("bgcolor","#FF0000");
+				}					
+				if (truncatedPercent > 0 && truncatedPercent < 99)
+				{
+					cell6.setAttribute("bgcolor","#F4FA58");
+				}
+				if (truncatedPercent == 100)
+				{
+					cell6.setAttribute("bgcolor","#40FF00");
+				}
 			}
 		}
     	}
