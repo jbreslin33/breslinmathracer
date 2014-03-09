@@ -56,7 +56,7 @@ function getLevelsReport($conn,$user_id)
                 	$end_time         = pg_Result($selectResult, 0, 'end_time');
                 	$level            = pg_Result($selectResult, 0, 'level');
                 	$transaction_code = pg_Result($selectResult, 0, 'transaction_code');
-                	$id               = pg_Result($selectResult, 0, 'learning_standards.id');
+                	$id               = $standardsArray[$i];
                 	$progression      = pg_Result($selectResult, 0, 'progression');
                 	$levels           = pg_Result($selectResult, 0, 'levels');
         	}
