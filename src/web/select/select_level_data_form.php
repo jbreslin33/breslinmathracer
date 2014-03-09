@@ -76,6 +76,7 @@ function getLevelsData()
 				i++;
 
 				cell5.innerHTML = "" + responseArray[i];
+				cell5.setAttribute("bgcolor","#FF0000");
 				var levels = parseInt(responseArray[i]);
 				i++;
 
