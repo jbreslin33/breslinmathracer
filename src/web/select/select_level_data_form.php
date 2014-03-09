@@ -62,13 +62,19 @@ function getLevelsData()
 				i++;
 				cell2.innerHTML = "" + responseArray[i];
 				i++;
-				cell3.innerHTML = "" + responseArray[i];
+
+				var startTime = responseArray[i];
+				startTime = startTime.substring(0, startTime.indexOf('.'));
+				cell3.innerHTML = "" + startTime;
 				i++;
+
 				var transaction_code = parseInt(responseArray[i]);
 				i++;
+
 				cell4.innerHTML = "" + responseArray[i];
 				var level = parseInt(responseArray[i]);
 				i++;
+
 				cell5.innerHTML = "" + responseArray[i];
 				var levels = parseInt(responseArray[i]);
 				i++;
