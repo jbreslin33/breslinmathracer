@@ -7,7 +7,7 @@ function getLevelsReport($conn,$user_id)
 	$levelsArray = array();
 	$progressionArray = array();
 
-  	$select = "select id, levels, progression from learning_standards order by progression;";
+  	$select = "select progression, id, levels from learning_standards order by progression;";
 
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$selectResult);
@@ -18,20 +18,21 @@ function getLevelsReport($conn,$user_id)
 	for ($i = 0; $i < $num; $i++) 
         {
                 //get the vars from user table
+                $progression = pg_Result($selectResult, $i, 'progression');
                 $id     = pg_Result($selectResult, $i, 'id');
                 $levels = pg_Result($selectResult, $i, 'levels');
-                $progression = pg_Result($selectResult, $i, 'progression');
 		array_push($standardsArray, $id);
-		array_push($levelsArray, $levels);
 		array_push($progressionArray, $progression);
+		array_push($levelsArray, $levels);
         }
 	
 	$lengthOfStandardsArray = count($standardsArray);
- 	$start_time       = "";
-        $level            = "";
-        $transaction_code = "";
-        $id               = "";
+
         $progression      = "";
+        $id               = "";
+ 	$start_time       = "";
+        $transaction_code = "";
+        $level            = "";
         $levels           = "";
 
 	for ($i = 0; $i < $lengthOfStandardsArray; $i++) 
@@ -51,33 +52,33 @@ function getLevelsReport($conn,$user_id)
 		if ($num)
         	{
                 	//get the vars from user table
-                	$start_time       = pg_Result($selectResult, 0, 'start_time');
-                	$level            = pg_Result($selectResult, 0, 'level');
-                	$transaction_code = pg_Result($selectResult, 0, 'transaction_code');
-                	$id               = $standardsArray[$i];
                 	$progression      = pg_Result($selectResult, 0, 'progression');
+                	$id               = $standardsArray[$i];
+                	$start_time       = pg_Result($selectResult, 0, 'start_time');
+                	$transaction_code = pg_Result($selectResult, 0, 'transaction_code');
+                	$level            = pg_Result($selectResult, 0, 'level');
                 	$levels           = pg_Result($selectResult, 0, 'levels');
         	}
 		else 
         	{
                 	//get the vars from user table
-                	$start_time       = "";
-                	$level            = "1";
-                	$transaction_code = "2";
-                	$id               = $standardsArray[$i];
                 	$progression      = $progressionArray[$i];
+                	$id               = $standardsArray[$i];
+                	$start_time       = "";
+                	$transaction_code = "2";
+                	$level            = "1";
                 	$levels		  = $levelsArray[$i];;
         	}
 		$returnString .= ",";
-		$returnString .= $start_time;
-		$returnString .= ",";
-		$returnString .= $level;
-		$returnString .= ",";
-		$returnString .= $transaction_code;
+		$returnString .= $progression;
 		$returnString .= ",";
 		$returnString .= $id;
 		$returnString .= ",";
-		$returnString .= $progression;
+		$returnString .= $start_time;
+		$returnString .= ",";
+		$returnString .= $transaction_code;
+		$returnString .= ",";
+		$returnString .= $level;
 		$returnString .= ",";
 		$returnString .= $levels;
 	}

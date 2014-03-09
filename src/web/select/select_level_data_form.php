@@ -116,19 +116,19 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 echo '<table id="level_table" border=\"1\">';
         echo '<tr>';
-        echo '<td> Start Time';
-        echo '</td>';
-        echo '<td> End Time';
-        echo '</td>';
-        echo '<td> Level';
-        echo '</td>';
-        echo '<td> Transacation Code';
+        echo '<td> Game';
         echo '</td>';
         echo '<td> Standard';
         echo '</td>';
-        echo '<td> Game';
+        echo '<td> Start Time';
         echo '</td>';
-        echo '<td> Total Level';
+        echo '<td> Transacation Code';
+        echo '</td>';
+        echo '<td> Level';
+        echo '</td>';
+        echo '<td> Levels';
+        echo '</td>';
+        echo '<td> Percent Complete';
         echo '</td>';
         echo '</tr>';
 
