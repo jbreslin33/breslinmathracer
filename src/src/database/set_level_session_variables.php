@@ -7,7 +7,7 @@ function getLevelsReport($conn,$user_id)
 	$levelsArray = array();
 	$progressionArray = array();
 
-  	$select = "select id, levels from learning_standards order by progression;";
+  	$select = "select id, levels, progression from learning_standards order by progression;";
 
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$selectResult);
