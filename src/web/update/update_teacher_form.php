@@ -19,16 +19,12 @@ echo "<br>";
 ?>
 	<p><b> Select Username: </p></b>
 	
-	<form method="post" action="/web/update/updatefirstname.php">
+	<form method="post" action="/web/update/updateteacher.php">
 
 <select name="id">
 
 <?php
-$query = "select id, username, password from users where school_id = ";
-$query .= $_SESSION["user_id"];
-$query .= " order by username;";
-echo "hello query";
-echo $query;
+$query = "select id, username from users order by username;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
@@ -41,57 +37,9 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 
 </select>
-        <p>First Name: <input type="text" name="first_name" /></p>
-
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
 	
-<p><b> Current Student List: </p></b>
-
-<?php
-$query = "select username, password, first_name, last_name from users where school_id = ";
-$query .= $_SESSION["user_id"];
-$query .= " order by username;";
-
-$result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
-$numrows = pg_numrows($result);
-
-echo '<table border=\"1\">';
-        echo '<tr>';
-        echo '<td> Username';
-        echo '</td>';
-        echo '<td> Password';
-        echo '</td>';
-        echo '<td> First Name';
-        echo '</td>';
-        echo '<td> Last Name';
-        echo '</td>';
-        echo '</tr>';
-
-	for($r = 0; $r < $numrows; $r++)
-	{
-                $row = pg_fetch_array($result, $r);
-		echo '<tr>';
-                echo '<td>';
-                echo $row[0];
-                echo '</td>';
-                echo '<td>';
-                echo $row[1];
-                echo '</td>';
-                echo '<td>';
-                echo $row[2];
-                echo '</td>';
-                echo '<td>';
-                echo $row[3];
-                echo '</td>';
-                echo '</tr>';
-	}
-pg_free_result($result);
-
-echo '</table>';
-?>
-
 </body>
 </html>
