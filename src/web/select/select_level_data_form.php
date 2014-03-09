@@ -114,7 +114,7 @@ echo "<br>";
 <select id="usernameid" name="id" onchange="getLevelsData()">
 
 <?php
-$query = "select id, username, password from users where school_id = ";
+$query = "select id, username, first_name, last_name from users where school_id = ";
 $query .= $_SESSION["user_id"];
 $query .= " or id = ";
 $query .= $_SESSION["user_id"];
@@ -128,7 +128,12 @@ echo "<option value=\"all\">all</option>";
 for($i = 0; $i < $numrows; $i++) 
 {
       	$row = pg_fetch_array($result, $i);
-      	echo "<option value=\"$row[0]\">$row[1]</option>";
+	$usernameText = $row[1];	
+	$usernameText .= ",";	
+	$usernameText .= $row[2];	
+	$usernameText .= ",";	
+	$usernameText .= $row[3];	
+      	echo "<option value=\"$row[0]\">$usernameText</option>";
 }
 ?>
 
