@@ -219,7 +219,6 @@ k.oa.a.2	695A7607FE8A4E27AB80652C45C84FA8	10.000	10	Solve addition and subtracti
 k.oa.a.3	9EC218587C01452C9EB49F52EB2DD1DD	11.000	10	Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).
 k.oa.a.4	0CFFCBC851984A4281C23D34FC400445	12.000	18	For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.
 k.oa.a.5	1353E9D5614D460FA32E67853B6BA6D8	13.000	42	Fluently add and subtract within 5.
-2.oa.c.4	A4531EC480FA4835AF9E3F9348FC5EC1	205.000	10	Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.
 k.nbt.a.1	ED150B29EFD14FF8B655FA3F2CA4FE6D	14.000	19	Compose and decompose numbers from 11 to 19 into ten ones and some further ones, e.g., by using objects or drawings, and record each composition or decomposition by a drawing or equation (such as 18 = 10 + 8); understand that these numbers are composed of ten ones and one, two, three, four, five, six, seven, eight, or nine ones.
 k.md.a.1	017AAEA9D22543A59A60C697FEBADD1B	15.000	10	Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.
 k.md.a.2	4D3953649C704D4CAFC97E99C7A83EE9	16.000	10	Directly compare two objects with a measurable attribute in common, to see which object has “more of”/“less of” the attribute, and describe the difference. For example, directly compare the heights of two children and describe one child as taller/shorter.
@@ -247,6 +246,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 2.oa.b.2	800715566B824BB3A5A8C464E961C2B4	202.000	364	Fluently add and subtract within 20 using mental strategies.2 By end of Grade 2, know from memory all sums of two one-digit numbers.
 2.oa.c.3a	C7ECD7455B7D46E89CF07EB8C0A2337Aa	203.000	10	Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s; write an equation to express an even number as a sum of two equal addends.
 2.oa.c.3b	C7ECD7455B7D46E89CF07EB8C0A2337Ab	204.000	10	Write an equation to express an even number as a sum of two equal addends.
+2.oa.c.4	A4531EC480FA4835AF9E3F9348FC5EC1	205.000	10	Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.
 2.nbt.a.1	3B25AF48C22D4668A6085998F847B56E	206.000	10	Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones.
 2.nbt.a.2	EE88A59EFD4348C28C56A49E61A673A8	207.000	10	Count within 1000; skip-count by 5s, 10s, and 100s.
 2.nbt.a.3	EE06B2E4211C4C8EB432A5448DA82C77	208.000	10	Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.
@@ -255,8 +255,10 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 2.nbt.b.6	70CC6A0456AB4CD1A86BC8EA43B447BA	211.000	10	Add up to four two-digit numbers using strategies based on place value and properties of operations.
 2.nbt.b.7	29E245BF9A144F5B96C6DE0A626622A7	212.000	10	Add and subtract within 1000, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method. Understand that in adding or subtracting three-digit numbers, one adds or subtracts hundreds and hundreds, tens and tens, ones and ones; and sometimes it is necessary to compose or decompose tens or hundreds.
 2.nbt.b.8	D7C98BF1710A476BAFD20AEC169E9DC3	213.000	10	Mentally add 10 or 100 to a given number 100&ndash;900, and mentally subtract 10 or 100 from a given number 100&ndash;900.
-3.oa.a.4	ACB26A2ED7114E59911EE985D8D02B6D	301.000	10	Determine the unknown whole number in a multiplication or division equation relating three whole numbers. <i>For example, determine the unknown number that makes the equation true in each of the equations 8 &times; ? = 48, 5 = _ &divide; 3, 6 &times; 6 = ?</i>
-3.oa.c.7	3D384CB2349B41299A3B5A133AB9E3F8	302.000	218	Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.
+3.oa.a.1	1F72443D6AC449C7B959047522ED087B	301.000	10	Interpret products of whole numbers, e.g., interpret 5 &times; 7 as the total number of objects in 5 groups of 7 objects each. <i>For example, describe a context in which a total number of objects can be expressed as 5 &times; 7</i>.
+3.oa.a.2	D9008C43187E44DDA9B676FFEAA78311	302.000	10	Interpret whole-number quotients of whole numbers, e.g., interpret 56 &divide; 8 as the number of objects in each share when 56 objects are partitioned equally into 8 shares, or as a number of shares when 56 objects are partitioned into equal shares of 8 objects each. <i>For example, describe a context in which a number of&nbsp; shares or a number of groups can be expressed as 56 &divide; 8</i>.
+3.oa.a.4	ACB26A2ED7114E59911EE985D8D02B6D	303.000	10	Determine the unknown whole number in a multiplication or division equation relating three whole numbers. <i>For example, determine the unknown number that makes the equation true in each of the equations 8 &times; ? = 48, 5 = _ &divide; 3, 6 &times; 6 = ?</i>
+3.oa.c.7	3D384CB2349B41299A3B5A133AB9E3F8	304.000	218	Fluently multiply and divide within 100, using strategies such as the relationship between multiplication and division (e.g., knowing that 8 × 5 = 40, one knows 40 ÷ 5 = 8) or properties of operations. By the end of Grade 3, know from memory all products of two one-digit numbers.
 4.oa.a.1	7828B4F15ABD40E19EF14DDE0EB399DF	401.000	20	Interpret a multiplication equation as a comparison, e.g., interpret 35 = 5 × 7 as a statement that 35 is 5 times as many as 7 and 7 times as many as 5. Represent verbal statements of multiplicative comparisons as multiplication equations.
 4.oa.a.2	062925BDC19347E8890A6D7390DF3842	402.000	20	Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison.
 \.
@@ -266,7 +268,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 -- Name: level_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('level_attempts_id_seq', 2744, true);
+SELECT pg_catalog.setval('level_attempts_id_seq', 2760, true);
 
 
 --
@@ -3018,6 +3020,22 @@ COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, transactio
 2742	2014-03-09 20:13:51.645908	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
 2743	2014-03-09 20:15:01.337905	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
 2744	2014-03-09 20:15:37.029348	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2745	2014-03-09 20:58:59.845108	\N	7	1	1F72443D6AC449C7B959047522ED087B	2	f	f
+2746	2014-03-09 21:09:20.84099	\N	7	1	CA9EE2E34F384E95A5FA26769C5864B8	2	f	f
+2747	2014-03-09 21:09:29.205462	\N	7	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2748	2014-03-09 21:19:20.464395	\N	7	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2749	2014-03-09 21:19:31.871227	\N	7	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2750	2014-03-09 21:20:38.539974	\N	7	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2751	2014-03-09 21:20:57.907916	\N	7	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2752	2014-03-09 21:24:46.809977	\N	301	1	CA9EE2E34F384E95A5FA26769C5864B8	2	f	f
+2753	2014-03-09 21:24:58.557731	\N	301	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2754	2014-03-09 21:25:10.103378	\N	301	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2755	2014-03-09 21:25:28.927257	\N	301	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
+2756	2014-03-09 21:25:46.156289	2014-03-09 21:25:53.862867	301	1	CA9EE2E34F384E95A5FA26769C5864B8	1	f	f
+2757	2014-03-09 21:52:00.251724	\N	7	1	1F72443D6AC449C7B959047522ED087B	2	f	f
+2758	2014-03-09 21:52:14.859071	\N	7	1	1F72443D6AC449C7B959047522ED087B	0	f	f
+2759	2014-03-09 21:52:34.090307	\N	7	1	1F72443D6AC449C7B959047522ED087B	0	f	f
+2760	2014-03-09 21:59:12.992208	2014-03-09 21:59:19.031788	7	1	1F72443D6AC449C7B959047522ED087B	1	f	f
 \.
 
 
