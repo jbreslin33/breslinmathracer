@@ -38,8 +38,8 @@ var Ruler  = new Class(
 	//fake virtual
 	createRuler: function()
 	{
-                this.mCanvas = Raphael(50,200,200,200);
-                this.mRuler = this.mCanvas.rect(50,50,100,100);
+                this.mCanvas = Raphael(25,45,50,350);
+                this.mRuler = this.mCanvas.rect(0,0,50,350);
                 this.mRuler.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
                 for(i=0;i<12;i++)
                 {
