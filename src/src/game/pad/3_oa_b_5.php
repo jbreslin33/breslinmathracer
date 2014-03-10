@@ -11,7 +11,16 @@ Extends: NumberPad,
 		this.c = 0;
 		this.x = 0;
 	},
-	
+      
+	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(200,200,140,140,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        },
+
 	//state overides
 	showCorrectAnswerEnter: function()
 	{
@@ -48,7 +57,7 @@ Extends: NumberPad,
 				{
 					this.a = Math.floor((Math.random()*10)+1);
 					this.b = Math.floor((Math.random()*10)+1);
-					var question = new Question('' + this.a + 'x' + this.b,'' + this.b + 'x' + this.a);
+					var question = new Question('Using the communative property of multiplication write this expression another way: ' + this.a + 'x' + this.b,'' + this.b + 'x' + this.a);
 					this.mQuiz.mQuestionArray.push(question);
 					totalA++;
 				}
