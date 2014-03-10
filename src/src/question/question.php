@@ -6,7 +6,8 @@ var Question = new Class(
 		this.mQuestion = question;
 
 		//answer
-		this.mAnswer = answer;
+		this.mAnswerArray = new Array();
+		this.mAnswerArray.push(answer);
 		
 		//showAnswer
 		this.mShowAnswer = showAnswer;
@@ -156,7 +157,7 @@ var Question = new Class(
 
 	getAnswer: function()
 	{
-		return this.mAnswer;
+		return this.mAnswerArray[0];
 	},
 	
 	getShowAnswer: function()
