@@ -219,6 +219,7 @@ k.oa.a.2	695A7607FE8A4E27AB80652C45C84FA8	10.000	10	Solve addition and subtracti
 k.oa.a.3	9EC218587C01452C9EB49F52EB2DD1DD	11.000	10	Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).
 k.oa.a.4	0CFFCBC851984A4281C23D34FC400445	12.000	18	For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.
 k.oa.a.5	1353E9D5614D460FA32E67853B6BA6D8	13.000	42	Fluently add and subtract within 5.
+2.oa.c.4	A4531EC480FA4835AF9E3F9348FC5EC1	205.000	10	Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.
 k.nbt.a.1	ED150B29EFD14FF8B655FA3F2CA4FE6D	14.000	19	Compose and decompose numbers from 11 to 19 into ten ones and some further ones, e.g., by using objects or drawings, and record each composition or decomposition by a drawing or equation (such as 18 = 10 + 8); understand that these numbers are composed of ten ones and one, two, three, four, five, six, seven, eight, or nine ones.
 k.md.a.1	017AAEA9D22543A59A60C697FEBADD1B	15.000	10	Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.
 k.md.a.2	4D3953649C704D4CAFC97E99C7A83EE9	16.000	10	Directly compare two objects with a measurable attribute in common, to see which object has “more of”/“less of” the attribute, and describe the difference. For example, directly compare the heights of two children and describe one child as taller/shorter.
@@ -246,7 +247,6 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 2.oa.b.2	800715566B824BB3A5A8C464E961C2B4	202.000	364	Fluently add and subtract within 20 using mental strategies.2 By end of Grade 2, know from memory all sums of two one-digit numbers.
 2.oa.c.3a	C7ECD7455B7D46E89CF07EB8C0A2337Aa	203.000	10	Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s; write an equation to express an even number as a sum of two equal addends.
 2.oa.c.3b	C7ECD7455B7D46E89CF07EB8C0A2337Ab	204.000	10	Write an equation to express an even number as a sum of two equal addends.
-2.oa.c.4	A4531EC480FA4835AF9E3F9348FC5EC1	205.000	10	Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.
 2.nbt.a.1	3B25AF48C22D4668A6085998F847B56E	206.000	10	Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones.
 2.nbt.a.2	EE88A59EFD4348C28C56A49E61A673A8	207.000	10	Count within 1000; skip-count by 5s, 10s, and 100s.
 2.nbt.a.3	EE06B2E4211C4C8EB432A5448DA82C77	208.000	10	Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.
@@ -266,7 +266,7 @@ k.g.b.4	C712BAA86FEF4BFAB703AD2EB402B2DE	21.000	10	Analyze and compare two- and 
 -- Name: level_attempts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('level_attempts_id_seq', 2736, true);
+SELECT pg_catalog.setval('level_attempts_id_seq', 2744, true);
 
 
 --
@@ -3010,6 +3010,14 @@ COPY levelattempts (id, start_time, end_time, user_id, level, ref_id, transactio
 2734	2014-03-07 20:17:36.517853	\N	370	1	CA9EE2E34F384E95A5FA26769C5864B8	0	f	f
 2735	2014-03-09 16:06:28.669279	\N	1	1	0CFFCBC851984A4281C23D34FC400445	0	f	f
 2736	2014-03-09 19:38:14.354953	\N	7	1	017AAEA9D22543A59A60C697FEBADD1B	2	f	f
+2737	2014-03-09 19:44:22.593354	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	2	f	f
+2738	2014-03-09 19:49:29.654908	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2739	2014-03-09 19:53:59.926037	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2740	2014-03-09 20:05:17.644317	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2741	2014-03-09 20:13:23.279087	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2742	2014-03-09 20:13:51.645908	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2743	2014-03-09 20:15:01.337905	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
+2744	2014-03-09 20:15:37.029348	\N	7	1	6B0AB3E999084B1B8FE700DD665EF86C	0	f	f
 \.
 
 
