@@ -9,6 +9,7 @@ Extends: NumberPad,
 		this.setScoreNeeded(4);
 		this.a = 0;
 		this.b = 0;
+		this.c = 0;
 	},
 
      	//showCorrectAnswer
@@ -86,10 +87,12 @@ Extends: NumberPad,
 	{
  		this.a = Math.floor((Math.random()*98)+2);
                 this.b = Math.floor((Math.random()*98)+2);
-                while(this.a%this.b != 0 || this.a == this.b || this.a < this.b)
+		this.c = 99;
+                while(this.a%this.b != 0 || this.a == this.b || this.a < this.b || this.c > 10 || this.b > 10)
                 {
                         this.a = Math.floor((Math.random()*98)+2);
                         this.b = Math.floor((Math.random()*98)+2);
+			this.c = this.a / this.b;
                 }
 	},
 
