@@ -24,7 +24,6 @@ var Ruler  = new Class(
 		this.hour_sign[10] = 0;
 		this.hour_sign[11] = 0;
 		this.minute_hand = 0;
-		this.pin = 0;
 
 		//create input pad
 		this.createRuler();	
@@ -50,10 +49,8 @@ var Ruler  = new Class(
                         this.hour_sign[i] = this.mCanvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
                 }
                 this.minute_hand = this.mCanvas.path("M100 100L100 40");
+		this.mInchA = this.mCanvas.path("M0 30L60 30");
                 this.minute_hand.attr({stroke: "#444444", "stroke-width": 4});
-
-                this.pin = this.mCanvas.circle(100, 100, 5);
-                this.pin.attr("fill", "#000000");
 
                 //reset transforms
                 this.minute_hand.transform("");
@@ -75,7 +72,6 @@ var Ruler  = new Class(
 			this.hour_sign[i].hide();
 		}
 		this.minute_hand.hide();
-		this.pin.hide();
         },
 
 	showQuestion: function()
@@ -91,7 +87,6 @@ var Ruler  = new Class(
 			this.hour_sign[i].show();
 		}
 		this.minute_hand.show();
-		this.pin.show();
 	},
 
 	destroy: function()
