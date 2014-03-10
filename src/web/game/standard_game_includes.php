@@ -34,6 +34,8 @@
 <script type="text/javascript" src="/src/widgets/timer.php"></script>
 <script type="text/javascript" src="/src/widgets/clocktimer.php"></script>
 
+<script type="text/javascript" src="/src/widgets/ruler.php"></script>
+
 <script type="text/javascript" src="/src/widgets/inputpad.php"></script>
 <script type="text/javascript" src="/src/widgets/numberpad.php"></script>
 <script type="text/javascript" src="/src/widgets/bigquestionnumberpad.php"></script>
