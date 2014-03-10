@@ -6,6 +6,10 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
+		this.a = 0;
+		this.b = 0;
+		this.c = 0;
+		this.x = 0;
 	},
 	
 	//state overides
@@ -28,45 +32,28 @@ Extends: NumberPad,
 		var totalA = 0; 
 		var totalB = 0; 
 		var totalC = 0; 
-		var totalD = 0; 
-		var totalE = 0; 
-		var totalF = 0; 
-		var totalG = 0; 
-		var totalH = 0; 
-		var totalI = 0; 
-		var totalJ = 0; 
-		var totalK = 0; 
-		var totalL = 0; 
-		var VarCTotal = 0;
 
-		while(VarCTotal < 500 || totalA < 1 || totalB < 1 || totalC < 1 || totalD < 1 || totalE < 1 || totalF < 1 || totalG < 1 || totalH < 1 || totalI < 1 || totalJ < 1 || totalK < 1 || totalL < 1)  
+		while(totalA < 1)  
 		{
 			totalA = 0; 
 			totalB = 0; 
 			totalC = 0; 
-			totalD = 0; 
-			totalE = 0; 
-			totalF = 0; 
-			totalG = 0; 
-			totalH = 0; 
-			totalI = 0; 
-			totalJ = 0; 
-			totalK = 0; 
-			totalL = 0; 
-
-			VarCTotal = 0;
 
 			this.mQuiz.resetQuestionArray();
 
               		for (i = 0; i < this.mScoreNeeded; i++)
 			{
-				var minusOrNot = Math.floor((Math.random()*2));
-				var StandardFormOrNot = Math.floor((Math.random()*2));
-				var missingVar = Math.floor((Math.random()*3));
-				var VarA = 0;
-				var VarB = 0;
-				var VarC = 100;
+				var property = Math.floor((Math.random()*3));
+				if (property < 3)	
+				{
+					this.a = Math.floor((Math.random()*10)+1);
+					this.b = Math.floor((Math.random()*10)+1);
+					var question = new Question('' + this.a + 'x' + this.b,'' + this.b + 'x' + this.a);
+					this.mQuiz.mQuestionArray.push(question);
+					totalA++;
+				}
 
+				/*
 				//multiplication
 				if (minusOrNot == 0)
 				{
@@ -177,6 +164,7 @@ Extends: NumberPad,
                                         }
                                 }
 				VarCTotal = VarC + VarCTotal;
+				*/
                         }
 		}
 	}
