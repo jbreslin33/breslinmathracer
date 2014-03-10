@@ -836,16 +836,21 @@ var Game = new Class(
 
         firstTimeExecute: function()
         {
+		var correct = false;
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
-			//you need to use an array....
-                        if (this.mUserAnswer == this.mQuiz.getQuestion().getAnswer())
-                        {
-                                this.mStateMachine.changeState(this.mCORRECT_ANSWER);
-                        }
-                        else
-                        {
+			for (i=0; i < this.mQuiz.getQuestion().mAnswerArray.length; i++)
+			{
+                        	if (this.mUserAnswer == this.mQuiz.getQuestion().mAnswerArray[i])
+				{
+					correct = true;
+                               		this.mStateMachine.changeState(this.mCORRECT_ANSWER);
+				}
+			}
+
+			if (correct == false)
+			{
                                 this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
                         }
 			
