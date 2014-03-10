@@ -21,7 +21,7 @@ Extends: Question,
                 var x = 100;
                 var questionText = '';
 
-		if (type < 5)
+		if (type < 4)
 		{
                 	while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB)
                 	{
@@ -44,6 +44,16 @@ Extends: Question,
                         		x = a * b;
 				}
 			}
+                }
+                
+		if (type == 4)
+                {
+                        while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || a%b != 0 || a == b || a < b)
+                        {
+                                a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
+                                b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
+                                x = a / b;
+                        }
                 }
 
 		if (type > 4)
@@ -78,7 +88,7 @@ Extends: Question,
 		}
 
 		this.mQuestion = '' + questionText;
-		this.mAnswer = '' + x;
+		this.mAnswerArray.push('' + x);
 
 		//auto tips
 		if (type == 0)
