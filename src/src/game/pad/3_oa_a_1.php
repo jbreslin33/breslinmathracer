@@ -6,7 +6,7 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(2);
+		this.setScoreNeeded(4);
 	},
 
      	//showCorrectAnswer
@@ -96,7 +96,21 @@ Extends: NumberPad,
 		
 		var a = Math.floor((Math.random()*9)+1);		
 		var b = Math.floor((Math.random()*9)+1);		
-		var question = new Question('There are ' + a + ' players to a team and ' + b + ' teams in the league. Write an expression to represent this. Do not use spaces. Use Lowercase x for times symbol.','' + a + 'x' + b);	
+		var question = new Question('There are ' + a + ' students in each class and ' + b + ' classes in the school. Write an expression to represent this. Do not use spaces. Use Lowercase x for times symbol.','' + a + 'x' + b);	
+		question.mTipArray[0] = '' + a + 'x' + b + ' or ' + b + 'x' + a;
+		question.mAnswerArray.push('' + b + 'x' + a);
+       		this.mQuiz.mQuestionArray.push(question);
+		
+		var a = Math.floor((Math.random()*9)+1);		
+		var b = Math.floor((Math.random()*9)+1);		
+		var question = new Question('There are ' + a + ' cookies on each baking sheet and ' + b + ' baking sheets total. Write an expression to represent this. Do not use spaces. Use Lowercase x for times symbol.','' + a + 'x' + b);	
+		question.mTipArray[0] = '' + a + 'x' + b + ' or ' + b + 'x' + a;
+		question.mAnswerArray.push('' + b + 'x' + a);
+       		this.mQuiz.mQuestionArray.push(question);
+		
+		var a = Math.floor((Math.random()*9)+1);		
+		var b = Math.floor((Math.random()*9)+1);		
+		var question = new Question('Lucy gave ' + a + ' cupcakes to ' + b + ' kids. Write an expression to represent this. Do not use spaces. Use Lowercase x for times symbol.','' + a + 'x' + b);	
 		question.mTipArray[0] = '' + a + 'x' + b + ' or ' + b + 'x' + a;
 		question.mAnswerArray.push('' + b + 'x' + a);
        		this.mQuiz.mQuestionArray.push(question);
