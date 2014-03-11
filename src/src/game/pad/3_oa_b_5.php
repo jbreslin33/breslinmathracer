@@ -74,7 +74,7 @@ Extends: NumberPad,
 		var totalB = 0; 
 		var totalC = 0; 
 
-		while(totalA < 1)  
+		while(totalA < 5 || totalB < 5 || totalC < 5)  
 		{
 			totalA = 0; 
 			totalB = 0; 
@@ -86,7 +86,7 @@ Extends: NumberPad,
 			{
 				var property = Math.floor((Math.random()*3));
 				//communative
-				if (property > 3)	
+				if (property == 0)	
 				{
 					this.a = Math.floor((Math.random()*10)+1);
 					this.b = Math.floor((Math.random()*10)+1);
@@ -95,18 +95,18 @@ Extends: NumberPad,
 					totalA++;
 				}
 				//associative
-				if (property > 3)
+				if (property == 1)
                                 {
                                         this.a = Math.floor((Math.random()*10)+1);
                                         this.b = Math.floor((Math.random()*10)+1);
                                         this.c = Math.floor((Math.random()*10)+1);
                                         var question = new Question('Using the associative property of multiplication write this expression another way: ' + this.a + 'x' + this.b + 'x' + this.c,'' + parseInt(this.a * this.b) + 'x' + this.c);
-					question.mAnswerArray.push('' + parseInt(this.a * this.b) + 'x' + this.c);
+					question.mAnswerArray.push('' + this.a + 'x' + parseInt(this.b * this.c));
                                         this.mQuiz.mQuestionArray.push(question);
-                                        totalA++;
+                                        totalB++;
                                 }
 				//distributive
-				if (property < 3)
+				if (property == 2)
                                 {
 					this.x = 1000;
 					while (this.x > 100 || this.b + this.c > 10)
@@ -118,122 +118,8 @@ Extends: NumberPad,
 					}
                                         var question = new Question('Using the distributive property of multiplication solve this: ' + this.a + 'x(' + this.b + '+' + this.c + ')','' + this.x);
                                         this.mQuiz.mQuestionArray.push(question);
-                                        totalA++;
+                                        totalC++;
                                 }
-
-
-				/*
-				//multiplication
-				if (minusOrNot == 0)
-				{
-					VarA = Math.floor((Math.random()*10)+1);
-					VarB = Math.floor((Math.random()*10)+1);
-					VarC = parseInt(VarA * VarB);
-
-					//a+b=c
-					if (StandardFormOrNot == 0)
-					{
-						if (missingVar == 0)
-						{
-							var question = new Question('? x ' + VarB + ' = ' + VarC,'' + VarA);
-							this.mQuiz.mQuestionArray.push(question);
-							totalA++;
-						}
-						else if (missingVar == 1)
-						{
-							var question = new Question('' + VarA + ' x ? = ' + VarC,'' + VarB);
-							this.mQuiz.mQuestionArray.push(question);
-							totalB++;
-						}
-						else if (missingVar == 2)
-						{
-							var question = new Question('' + VarA + ' x ' + VarB + ' = ?','' + VarC);
-							this.mQuiz.mQuestionArray.push(question);
-							totalC++;
-						}
-					}
-					//c=a+b
-					else if (StandardFormOrNot == 1)
-					{
-   						if (missingVar == 0)
-                                        	{
-                                                	var question = new Question('? = ' + VarA + ' x ' + VarB,'' + VarC);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalD++;
-                                        	}
-                                        	else if (missingVar == 1)
-                                        	{
-                                                	var question = new Question('' + VarC + ' = ? x ' + VarB,'' + VarA);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalE++;
-                                        	}
-                                        	else if (missingVar == 2)
-                                        	{
-                                                	var question = new Question('' + VarC + ' = ' + VarA + ' x ?','' + VarB);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalF++;
-                                        	}
-					}
-				}
- 				//division
-                        	if (minusOrNot == 1)
-                        	{
-					//num % 1 != 0
-                                	while(VarA % VarB != 0 || VarA < VarB)
-                                	{
-                                        	VarA = Math.floor((Math.random()*10)+1);
-                                        	VarB = Math.floor((Math.random()*10)+1);
-                                        	VarC = parseInt(VarA / VarB);
-                                	}
-                                	//ok we have an equation with sum < 20  in the form a+b=c
-
-                                	//a+b=c
-                                	if (StandardFormOrNot == 0)
-                                	{
-                                       		if (missingVar == 0)
-                                        	{
-                                                	var question = new Question('? / ' + VarB + ' = ' + VarC,'' + VarA);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalG++;
-                                        	}
-                                        	else if (missingVar == 1)
-                                        	{
-                                                	var question = new Question('' + VarA + ' / ? = ' + VarC,'' + VarB);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalH++;
-                                        	}
-                                        	else if (missingVar == 2)
-                                        	{
-                                                	var question = new Question('' + VarA + ' / ' + VarB + ' = ?','' + VarC);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalI++;
-                                        	}
-                                	}
-                                	//c=a+b
-                                	else if (StandardFormOrNot == 1)
-                                	{
-                                        	if (missingVar == 0)
-                                        	{
-                                                	var question = new Question('? = ' + VarA + ' / ' + VarB,'' + VarC);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalJ++;
-                                        	}
-                                        	else if (missingVar == 1)
-                                        	{
-                                                	var question = new Question('' + VarC + ' = ? / ' + VarB,'' + VarA);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalK++;
-                                        	}
-                                        	else if (missingVar == 2)
-                                        	{
-                                                	var question = new Question('' + VarC + ' = ' + VarA + ' / ?','' + VarB);
-                                                	this.mQuiz.mQuestionArray.push(question);
-							totalL++;
-						}
-                                        }
-                                }
-				VarCTotal = VarC + VarCTotal;
-				*/
                         }
 		}
 	}
