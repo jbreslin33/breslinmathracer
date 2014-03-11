@@ -109,7 +109,7 @@ Extends: NumberPad,
 				if (property < 3)
                                 {
 					this.x = 1000;
-					while (this.x > 100)
+					while (this.x > 100 || this.b + this.c > 10)
 					{
                                         	this.a = Math.floor((Math.random()*10)+1);
                                         	this.b = Math.floor((Math.random()*10)+1);
