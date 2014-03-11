@@ -8,7 +8,6 @@ Extends: NumberPad,
        		this.parent(application);
 		this.a = 0;
 		this.b = 0;
-		this.c = 0;
 		this.x = 0;
 	},
 
