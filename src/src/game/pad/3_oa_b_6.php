@@ -81,9 +81,9 @@ Extends: NumberPad,
 			{
 				this.a = Math.floor((Math.random()*10)+1);
 				this.b = Math.floor((Math.random()*10)+1);
+				this.x = this.a / this.b;
 				var question = new Question('Find ' + this.a + '÷' + this.b + ' by finding the number that makes ' + this.a + ' when multiplied by ' + this.b + '.','' + this.x);
 				this.mQuiz.mQuestionArray.push(question);
-				totalA++;
                         }
 		}
 	}
