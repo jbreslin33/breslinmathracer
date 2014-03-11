@@ -19,7 +19,15 @@ Extends: NumberPad,
 
                 this.mShapeArray[1].setSize(700,100);
                 this.mShapeArray[1].setPosition(380,80);
-		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer() + ' or you could have put:' + this.mQuiz.getQuestion().mAnswerArray[1];
+             
+		if (this.mQuiz.getQuestion().mAnswerArray.length > 1)
+                {
+                        this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer() + ' or you could have put:' + this.mQuiz.getQuestion().mAnswerArray[1];
+                }
+                else
+                {
+                        this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer();
+                }
 
                 //move dont forget
                 this.mShapeArray[8].setVisibility(false);
@@ -100,10 +108,15 @@ Extends: NumberPad,
 				//distributive
 				if (property < 3)
                                 {
-                                        this.a = Math.floor((Math.random()*10)+1);
-                                        this.b = Math.floor((Math.random()*10)+1);
-                                        this.c = Math.floor((Math.random()*10)+1);
-                                        var question = new Question('Using the distributive property of multiplication solve this: ' + this.a + 'x(' + this.b + '+' + this.c + ')','' + parseInt(this.a * (this.b + this.c)));
+					this.x = 1000;
+					while (this.x > 100)
+					{
+                                        	this.a = Math.floor((Math.random()*10)+1);
+                                        	this.b = Math.floor((Math.random()*10)+1);
+                                        	this.c = Math.floor((Math.random()*10)+1);
+						this.x = parseInt(this.a * (this.b + this.c));
+					}
+                                        var question = new Question('Using the distributive property of multiplication solve this: ' + this.a + 'x(' + this.b + '+' + this.c + ')','' + this.x);
                                         this.mQuiz.mQuestionArray.push(question);
                                         totalA++;
                                 }
