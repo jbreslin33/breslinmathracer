@@ -11,6 +11,33 @@ Extends: NumberPad,
 		this.c = 0;
 		this.x = 0;
 	},
+
+        //showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+
+                //move dont forget
+                this.mShapeArray[8].setVisibility(false);
+                this.mShapeArray[9].setVisibility(false);
+        },
+
+        //outOfTime
+        outOfTimeEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[0].setPosition(650,170);
+
+                this.mShapeArray[1].setSize(700,100);
+                this.mShapeArray[1].setPosition(380,80);
+
+                //move frantic clock
+                this.mShapeArray[8].setPosition(650,300);
+        },
       
 	createNumQuestion: function()
         {
@@ -19,19 +46,6 @@ Extends: NumberPad,
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
-        },
-
-	//state overides
-	showCorrectAnswerEnter: function()
-	{
-		this.parent();
-        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
-	},
-
-	showCorrectAnswerOutOfTimeEnter: function()
-        {
-		this.parent();
-        	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
         },
 
 	createQuestions: function()
@@ -53,7 +67,8 @@ Extends: NumberPad,
               		for (i = 0; i < this.mScoreNeeded; i++)
 			{
 				var property = Math.floor((Math.random()*3));
-				if (property < 3)	
+				//communative
+				if (property > 3)	
 				{
 					this.a = Math.floor((Math.random()*10)+1);
 					this.b = Math.floor((Math.random()*10)+1);
@@ -61,6 +76,18 @@ Extends: NumberPad,
 					this.mQuiz.mQuestionArray.push(question);
 					totalA++;
 				}
+				//associative
+				if (property < 3)
+                                {
+                                        this.a = Math.floor((Math.random()*10)+1);
+                                        this.b = Math.floor((Math.random()*10)+1);
+                                        this.c = Math.floor((Math.random()*10)+1);
+                                        var question = new Question('Using the associative property of multiplication write this expression another way: ' + this.a + 'x' + this.b + 'x' + this.c,'' + parseInt(this.a * this.b) + 'x' + this.c);
+					question.mAnswerArray.push('' + parseInt(this.a * this.b) + 'x' + this.c);
+                                        this.mQuiz.mQuestionArray.push(question);
+                                        totalA++;
+                                }
+
 
 				/*
 				//multiplication
