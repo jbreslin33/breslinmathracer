@@ -6,7 +6,7 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
+                this.mThresholdTime = 6000;
 		this.setScoreNeeded(20);
 	},
 
