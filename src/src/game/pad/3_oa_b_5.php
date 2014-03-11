@@ -19,6 +19,7 @@ Extends: NumberPad,
 
                 this.mShapeArray[1].setSize(700,100);
                 this.mShapeArray[1].setPosition(380,80);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer() + ' or you could have put:' + this.mQuiz.getQuestion().mAnswerArray[1];
 
                 //move dont forget
                 this.mShapeArray[8].setVisibility(false);
@@ -34,6 +35,7 @@ Extends: NumberPad,
 
                 this.mShapeArray[1].setSize(700,100);
                 this.mShapeArray[1].setPosition(380,80);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer() + ' or you could have put:' + this.mQuiz.getQuestion().mAnswerArray[1];
 
                 //move frantic clock
                 this.mShapeArray[8].setPosition(650,300);
