@@ -20,6 +20,7 @@ Extends: NumberPad,
                 this.mShapeArray[1].setSize(700,100);
                 this.mShapeArray[1].setPosition(380,80);
              
+/*
 		if (this.mQuiz.getQuestion().mAnswerArray.length > 1)
                 {
                         this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer() + ' or you could have put:' + this.mQuiz.getQuestion().mAnswerArray[1];
@@ -28,7 +29,7 @@ Extends: NumberPad,
                 {
                         this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer();
                 }
-
+*/
                 //move dont forget
                 this.mShapeArray[8].setVisibility(false);
                 this.mShapeArray[9].setVisibility(false);
@@ -43,7 +44,7 @@ Extends: NumberPad,
 
                 this.mShapeArray[1].setSize(700,100);
                 this.mShapeArray[1].setPosition(380,80);
-
+/*
 		if (this.mQuiz.getQuestion().mAnswerArray.length > 1)
 		{ 
 			this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer() + ' or you could have put:' + this.mQuiz.getQuestion().mAnswerArray[1];
@@ -52,7 +53,7 @@ Extends: NumberPad,
 		{
 			this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' = ' + this.mQuiz.getQuestion().getAnswer();
 		}
-
+*/
                 //move frantic clock
                 this.mShapeArray[8].setPosition(650,300);
         },
@@ -77,14 +78,14 @@ Extends: NumberPad,
 			this.a = 0;
 			this.b = 0;
 			this.x = 0;
-			while (this.a == this.b)
+			while (this.a <= this.b || this.a % this.b != 0 || this.x > 10)
 			{
-				this.a = Math.floor((Math.random()*10)+1);
+				this.a = Math.floor((Math.random()*100)+1);
 				this.b = Math.floor((Math.random()*10)+1);
 				this.x = this.a / this.b;
-				var question = new Question('Find ' + this.a + '÷' + this.b + ' by finding the number that makes ' + this.a + ' when multiplied by ' + this.b + '.','' + this.x);
-				this.mQuiz.mQuestionArray.push(question);
                         }
+			var question = new Question('Find ' + this.a + '÷' + this.b + ' by finding the number that makes ' + this.a + ' when multiplied by ' + this.b + '.','' + this.x);
+			this.mQuiz.mQuestionArray.push(question);
 		}
 	}
 });
