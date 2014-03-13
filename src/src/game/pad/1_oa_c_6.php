@@ -33,7 +33,7 @@ Extends: NumberPad,
 		//9
 
 		//6
-		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 0 =','0'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 0 =','6'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('0 + 6 =','6'));
 		
 		this.mQuiz.mQuestionPoolArray.push(new Question('6 + 1 =','7'));
