@@ -90,7 +90,7 @@ Extends: NumberPad,
 		if (this.mApplication.mLevel == 1)
 		{
 			//There are 6 teams in a league. Each team has 5 players on it. One team called the bears adds 2 players. How many players do the bears have now?   
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'There are', 'teams in a league. Each team has', 'players on it. One team called the bears adds', 'more players. How many players do the bears have now?',0);	
+			var question = new QuestionWord('','',2,100,2,9,2,9,2,9,'There are', 'teams in a league. Each team has', 'players on it. One team called the bears adds', 'more players. How many players do the bears have now?',7);	
 			question.mTipArray[0] = 'Players bears had + Players bears added = Players bears have now.';
                         this.mQuiz.mQuestionArray.push(question);
 		}
