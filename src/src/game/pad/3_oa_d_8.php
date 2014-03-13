@@ -6,6 +6,8 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
+		
+		this.setScoreNeeded(1);
 	},
 
      	//showCorrectAnswer
@@ -62,7 +64,7 @@ Extends: NumberPad,
                         }
                         if (this.mQuiz.getQuestion().mTipArray.length > 3)
                         {
-                                this.mShapeArray[6].setPosition(380,190);
+                                this.mShapeArray[6].setPosition(380,180);
                         	this.mShapeArray[6].setSize(700,10);
                                 this.mShapeArray[6].setVisibility(true);
                                 this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
@@ -82,136 +84,65 @@ Extends: NumberPad,
 	createQuestions: function()
         {
  		this.parent();
+                
+		this.mQuiz.resetQuestionArray();
 
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Graham had','baseball cards in his collection. He bought', 'more at a yard sale. How many baseball cards does Graham have now?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Baseball cards Graham had + Baseball cards Graham bought = Baseball cards Graham has now';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Aubrey had a box of crayons. She found','more crayons when she cleaned out her desk and put them in the box. Now there are', 'crayons in the box. How many were in the box to begin with?','',2));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Crayons in the box now - Crayons Aubrey found = Crayons in the box to begin with';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Anna had','tickets for the carnival rides. She used', 'tickets for the roller coaster ride and','tickets for the rocket ride. How many tickets does Anna have now?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Tickets Anna had to begin with - Tickets Anna use for roller coaster - Tickets Anna used for rocket ride = Tickets Anna has left';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Issac had','toy cars in a box. Some of them fell out of the box on the way to the playground. When he opened the box, there were only', 'cars left inside. How many fell out?','',1));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Toy cars to begin with - Toys cars left = Toy cars that fell out';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Molly baked some cupcakes for a bake sale. She sold','and had','left over. How many cupcakes did Molly bake?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Cupcakes Molly sold + Cupcakes Molly had left = Cupcakes Molly baked';
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Kaleb and Ethan are building towers with blocks. The tower Kaleb builds has','blocks. The tower Ethan builds has','blocks. How many blocks will there be if they put both towers together to make one big tower?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Blocks in tower Kaleb builds + Blocks in tower Ethan builds = Total blocks if towers are put together';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,2,100,'Macon, Parker, and Carson made sandwiches for a Picnic. When they put all of the sandwiches in the cooler, there were','sandwiches. Macon knows that he made','and Parker made','. How many sandwiches did Carson make?',6));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total Sandwiches made - Sandwiches Macon Made - Sandwiches Parker made = Sandwiches Carson made';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Cole and Maggie worked together to make a paper chain with','links. At the end of the day, they each wanted to take home part of the chain. The part Maggie took had','links. How many links were in the part Cole took?','',1));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total links in paper chain - Links Maggie took = Links Cole took';
-		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Sally and Amy put together a puzzle. When it was time to clean up, Sally took apart','pieces and Amy took apart','pieces. How many pieces were in the puzzle?','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Pieces Sally took apart - Pieces Amy took apart = Total Pieces in the puzzle';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Jacob and Skip took a model airplane apart to put it away. The airplane had','pieces. Skip counted','pieces that he put away. How many pieces did Jacob put away?','',1));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total Pieces airplane has - Pieces Skip put away = Pieces Jacob put away';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Alexa is practicing for a race. She ran for','minutes on Friday and','minutes on Saturday. How much longer did Alexa run on Saturday?','',2));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Minutes on Saturday - Minutes on Friday = How much longer Alexa ran on Saturday';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Tiffany put some birdseed in a feeder on her porch. She counted the birds that came to the feeder each day. She counted','birds on Monday. She noticed there were','more birds on Monday than there were on Friday. How many birds came to the feeder on Friday?','',1));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Birds on Monday - difference in Birds compared to Friday = Birds on Friday';
-
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,100,2,100,0,0,'Hunter and Joshua raced to see who could stack more boxes in a minute. Joshua stacked','less than Hunter. The stack Joshua made had','boxes. How many boxes did Hunter stack? ','',0));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Boxes Joshua stacked + difference in Boxes Hunter stacked = Boxes Hunter stacked';
-
-		var totalA = 0;
-		var totalB = 0;
-		var totalC = 0;
-		var totalD = 0;
-		var totalE = 0;
-		var totalF = 0;
-		var totalG = 0;
-		var totalH = 0;
-		var totalI = 0;
-		var totalJ = 0;
-		var totalK = 0;
-		var totalL = 0;
-		var totalM = 0;
-
-		while (totalA < this.mScoreNeeded * .01 || totalB < this.mScoreNeeded * .01 || totalC < this.mScoreNeeded * .01 || totalD < this.mScoreNeeded * .01 || totalE < this.mScoreNeeded * .01 || totalF < this.mScoreNeeded * .01 || totalG < this.mScoreNeeded * .01 || totalH < this.mScoreNeeded * .01 || totalI < this.mScoreNeeded * .01 || totalJ < this.mScoreNeeded * .01 || totalK < this.mScoreNeeded * .01 || totalL < this.mScoreNeeded * .01 || totalM < this.mScoreNeeded * .01)
-		{	
-			this.mQuiz.resetQuestionArray();
-
-			//ADD questions
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*13));		
-				if (randomChance == 0)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalA++;
-				}	
-
-				else if (randomChance == 1)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalB++;
-				}
-				else if (randomChance == 2)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalC++;
-				}
-				else if (randomChance == 3)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalD++;
-				}
-				else if (randomChance == 4)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalE++;
-				}
-				else if (randomChance == 5)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalF++;
-				}
-				else if (randomChance == 6)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalG++;
-				}
-				else if (randomChance == 7)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalH++;
-				}
-				else if (randomChance == 8)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalI++;
-				}
-				else if (randomChance == 9)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalJ++;
-				}
-				else if (randomChance == 10)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalK++;
-				}
-				else if (randomChance == 11)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalL++;
-				}
-				else if (randomChance == 12)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalM++;
-				}
-			}
+		if (this.mApplication.mLevel == 1)
+		{
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Chris had','toy cars. His friend Albert brings', 'toy cars to play with Albert. How many cars do they have to play with now?','',0);	
+			question.mTipArray[0] = 'Toy cars Chris had + Toy cars Albert brings =  Total toy cars they have to play with now';
+                        this.mQuiz.mQuestionArray.push(question);
 		}
+
+		if (this.mApplication.mLevel == 2)
+		{
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Zuyanna had','rings. Her friend Iris gave her', ' more rings. How many rings does Zuyanna have now?','',0);	
+			question.mTipArray[0] = 'Rings Zuyanna had + Rings Iris gave Zuyanna = Rings Zuyanna has now';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+		
+		if (this.mApplication.mLevel == 3)
+		{
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Jaavon had','books about dinosaurs. He got', 'more books about dinosaurs from the library. How many books about dinosaurs does Jaavon have now?','',0);
+			question.mTipArray[0] = 'Dinosaur books Jaavon had + Dinosaur books Jaavon got from library = Dinosaur books Jaavon has now';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+		
+		if (this.mApplication.mLevel == 4)
+		{
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Michael had','baseballs. He got ', 'more baseballs from his friend. How many baseballs does Michael have now?','',0);
+			question.mTipArray[0] = 'Baseballs Michael had + Baseballs Michael got from his friend = Baseballs Michael has now';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+		
+		if (this.mApplication.mLevel == 5)
+		{
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Jasmine had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Jasmine leave on the bed.','',1);
+			question.mTipArray[0] = 'Stuffed animals Jasmine had - Stuffed animals Jasmine put on chair = rest of Stuffed animals on bed';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+		
+		if (this.mApplication.mLevel == 6)
+		{
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Leah had',' cookies. She ate', 'of them. She left the rest of the cookies for Santa Claus. How many cookies did Leah leave for Santa Claus.','',1);
+			question.mTipArray[0] = 'Cookies Leah had - Cookies Leah ate = Cookies Leah left for Santa Claus';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+
+		if (this.mApplication.mLevel == 7)
+		{
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Devin had','pencils in his box. He gave', 'of them to Zabriana. How many pencils does Devin have in his box now?','',1);
+			question.mTipArray[0] = 'Pencils Devin had in box - Pencils Devin game to Zabriana = Pencils Devin has left in box';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+
+		if (this.mApplication.mLevel == 8)
+		{
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Tanya had','erasers in her case. She gave', 'of them to Ny. How many erasers does Tanya have in her case now?','',1);
+			question.mTipArray[0] = 'Erasers Tanya had in her case - Erasers Tanya gave to Ny = Erasers Tanya has left in her case';
+                        this.mQuiz.mQuestionArray.push(question);
+		}
+		//buffer
+ 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
