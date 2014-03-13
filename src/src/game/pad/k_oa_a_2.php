@@ -142,5 +142,7 @@ Extends: NumberPad,
 			question.mTipArray[0] = 'Erasers Tanya had in her case - Erasers Tanya gave to Ny = Erasers Tanya has left in her case';
                         this.mQuiz.mQuestionArray.push(question);
 		}
+		//buffer
+ 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });

@@ -88,7 +88,7 @@ Extends: Question,
 		}
 
 		this.mQuestion = '' + questionText;
-		this.mAnswerArray.push('' + x);
+		this.mAnswerArray[0] = '' + x;
 
 		//auto tips
 		if (type == 0)

@@ -840,6 +840,18 @@ var Game = new Class(
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
+			if (this.mQuiz == 0)
+			{
+				return;
+			}
+			if (this.mQuiz.getQuestion() == 0)
+			{
+				return;
+			}
+			if (this.mQuiz.getQuestion().mAnswerArray == 0)
+			{
+				return;
+			}
 			for (i=0; i < this.mQuiz.getQuestion().mAnswerArray.length; i++)
 			{
                         	if (this.mUserAnswer == this.mQuiz.getQuestion().mAnswerArray[i])

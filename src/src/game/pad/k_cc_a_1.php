@@ -113,5 +113,6 @@ Extends: NumberPad,
 		{
 			this.mQuiz.mQuestionArray.push(new Question('Count by ' + countBy + ':      ' + parseInt(startNumber + countBy * i) ,'' + parseInt(startNumber + countBy + countBy * i)));
 		}
+		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
