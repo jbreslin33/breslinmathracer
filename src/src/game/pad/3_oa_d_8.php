@@ -90,8 +90,8 @@ Extends: NumberPad,
 		if (this.mApplication.mLevel == 1)
 		{
 			//There are 6 teams in a league. Each team has 5 players on it. One team called the bears adds 2 players. How many players do the bears have now?   
-			var question = new QuestionWord('','',2,100,2,9,2,9,2,9,'There are', 'teams in a league. Each team has', 'players on it. One team called the bears adds', 'more players. How many players do the bears have now?',7);	
-			question.mTipArray[0] = 'Players bears had + Players bears added = Players bears have now.';
+			var question = new QuestionWord('','',2,100,2,9,2,9,2,9,'There were', 'teams in a league. Each team had', 'players on it. Then one team called the bears adds', 'more players. How many total players are in the league now?',7);	
+			question.mTipArray[0] = 'Teams X Players on team  + Players bears added = Total players in the league now.';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 
@@ -109,40 +109,6 @@ Extends: NumberPad,
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
-		if (this.mApplication.mLevel == 4)
-		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Michael had','baseballs. He got ', 'more baseballs from his friend. How many baseballs does Michael have now?','',0);
-			question.mTipArray[0] = 'Baseballs Michael had + Baseballs Michael got from his friend = Baseballs Michael has now';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 5)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Jasmine had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Jasmine leave on the bed.','',1);
-			question.mTipArray[0] = 'Stuffed animals Jasmine had - Stuffed animals Jasmine put on chair = rest of Stuffed animals on bed';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 6)
-		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Leah had',' cookies. She ate', 'of them. She left the rest of the cookies for Santa Claus. How many cookies did Leah leave for Santa Claus.','',1);
-			question.mTipArray[0] = 'Cookies Leah had - Cookies Leah ate = Cookies Leah left for Santa Claus';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-
-		if (this.mApplication.mLevel == 7)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Devin had','pencils in his box. He gave', 'of them to Zabriana. How many pencils does Devin have in his box now?','',1);
-			question.mTipArray[0] = 'Pencils Devin had in box - Pencils Devin game to Zabriana = Pencils Devin has left in box';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-
-		if (this.mApplication.mLevel == 8)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Tanya had','erasers in her case. She gave', 'of them to Ny. How many erasers does Tanya have in her case now?','',1);
-			question.mTipArray[0] = 'Erasers Tanya had in her case - Erasers Tanya gave to Ny = Erasers Tanya has left in her case';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
 		//buffer
  		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
