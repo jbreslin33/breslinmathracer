@@ -89,7 +89,6 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 1)
 		{
-			//There are 6 teams in a league. Each team has 5 players on it. One team called the bears adds 2 players. How many players do the bears have now?   
 			var question = new QuestionWord('','',2,100,2,9,2,9,2,9,'There were', 'teams in a league. Each team had', 'players on it. Then one team called the bears adds', 'more players. How many total players are in the league now?',7);	
 			question.mTipArray[0] = 'Teams X Players on team  + Players bears added = Total players in the league now.';
                         this.mQuiz.mQuestionArray.push(question);
@@ -97,8 +96,8 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 2)
 		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Zuyanna had','rings. Her friend Iris gave her', ' more rings. How many rings does Zuyanna have now?','',0);	
-			question.mTipArray[0] = 'Rings Zuyanna had + Rings Iris gave Zuyanna = Rings Zuyanna has now';
+			var question = new QuestionWord('','',2,100,2,100,2,9,2,9,'There were', 'total players in a league. There are', 'total teams. Each team had exactly the same amount of players on it. Then one team called the knights adds', 'more players. How many players are on the knights now?',8);	
+			question.mTipArray[0] = 'Total players / Total teams  + Players knights added = Total players on knights now.';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		

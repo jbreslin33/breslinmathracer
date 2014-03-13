@@ -78,7 +78,18 @@ Extends: Question,
 				}
 			}
                 }
-		
+	   	
+		if (type == 8)
+                {
+                        while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || a%b != 0 || a == b || a < b)
+                        {
+                                a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
+                                b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
+                        	c = Math.floor((Math.random()* parseInt(maxC - minC + 1)));
+                        	x = a / b + c;
+                        }
+                }
+	
 		//valid parameters so make the question...
                 questionText = textA;
                 questionText = questionText + ' ' + a + ' ';
@@ -135,6 +146,11 @@ Extends: Question,
 		{
                 	this.mTipArray[2] = 'a * b + c = x';
                 	this.mTipArray[3] = '' + a + ' x ' + b + ' + ' +  c  + ' = ' + x;
+		}
+		else if (type == 8)
+		{
+                	this.mTipArray[2] = 'a / b + c = x';
+                	this.mTipArray[3] = '' + a + ' / ' + b + ' + ' +  c  + ' = ' + x;
 		}
         }
 });
