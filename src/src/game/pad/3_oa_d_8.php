@@ -103,8 +103,9 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 3)
 		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Jaavon had','books about dinosaurs. He got', 'more books about dinosaurs from the library. How many books about dinosaurs does Jaavon have now?','',0);
-			question.mTipArray[0] = 'Dinosaur books Jaavon had + Dinosaur books Jaavon got from library = Dinosaur books Jaavon has now';
+			//c(a+b)
+			var question = new QuestionWord('','',2,100,2,10,2,10,2,10,'Megan and Jane made a total of', 'trays of cookies. Megan made', 'cookies for each tray. Jane made', 'cookies for each tray. How many cookies did the girls make total?',9);
+			question.mTipArray[0] = 'Total players / Total teams  + Players knights added = Total players on knights now.';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
