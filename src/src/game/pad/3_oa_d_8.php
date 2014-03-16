@@ -89,6 +89,7 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 1)
 		{
+			//(a*b)+c
 			var question = new QuestionWord('','',2,100,2,9,2,9,2,9,'There were', 'teams in a league. Each team had', 'players on it. Then one team called the bears adds', 'more players. How many total players are in the league now?',7);	
 			question.mTipArray[0] = 'Teams X Players on team  + Players bears added = Total players in the league now.';
                         this.mQuiz.mQuestionArray.push(question);
@@ -96,6 +97,7 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 2)
 		{
+			//(a/b)+3
 			var question = new QuestionWord('','',2,100,2,100,2,9,2,9,'There were', 'total players in a league. There are', 'total teams. Each team had exactly the same amount of players on it. Then one team called the knights adds', 'more players. How many players are on the knights now?',8);	
 			question.mTipArray[0] = 'Total players / Total teams  + Players knights added = Total players on knights now.';
                         this.mQuiz.mQuestionArray.push(question);
@@ -103,12 +105,12 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 3)
 		{
-			//c(a+b)
+			//a(b+c)
 			var question = new QuestionWord('','',2,100,2,10,2,10,2,10,'Megan and Jane made a total of', 'trays of cookies. Megan made', 'cookies for each tray. Jane made', 'cookies for each tray. How many cookies did the girls make total?',9);
 			question.mTipArray[0] = 'Total players / Total teams  + Players knights added = Total players on knights now.';
                         this.mQuiz.mQuestionArray.push(question);
 		}
-		
+
 		//buffer
  		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
