@@ -39,6 +39,8 @@ Extends: NumberPad,
 				totalCount = parseInt(totalCount + objectsToCount);
 			}
 		}
+               	//buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	},
 
 	createWorld: function()
