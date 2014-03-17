@@ -76,7 +76,6 @@ Extends: MultipleChoicePad,
 			this.mQuiz.mAnswerPool.push('2 + 2');
 			this.mQuiz.mAnswerPool.push('1 + 1');
 			this.mQuiz.mAnswerPool.push('3 + 2');
-			this.mQuiz.mAnswerPool.push('2 + 1');
 			this.mQuiz.mAnswerPool.push('1 + 3');
 
                        	var question = new Question('3 =', '3 + 0');
