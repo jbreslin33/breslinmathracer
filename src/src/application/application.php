@@ -1161,8 +1161,8 @@ var Application = new Class(
 			{
                         	if (APPLICATION.mGame.mControlObject != 0);
 				{
-                        		APPLICATION.mGame.mControlObject.mPosition.mX = event.page.x;
-                        		APPLICATION.mGame.mControlObject.mPosition.mY = event.page.y;
+                        		//APPLICATION.mGame.mControlObject.mPosition.mX = event.page.x;
+                        		//APPLICATION.mGame.mControlObject.mPosition.mY = event.page.y;
 				}
 			}
                 }

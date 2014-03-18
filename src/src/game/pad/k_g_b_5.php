@@ -7,6 +7,8 @@ Extends: Game,
 	{
        		this.parent(application);
 		this.setScoreNeeded(1);
+	
+
 	},
 
 	createQuestions: function()
@@ -26,18 +28,23 @@ Extends: Game,
 	createWorld: function()
 	{
 		this.parent();
-
-		// Creates canvas 320 × 200 at 10, 50
-		var paper = Raphael(10, 50, 320, 200);
-
-		// Creates circle at x = 50, y = 40, with radius 10
-		var circle = paper.circle(50, 40, 10);
-
-		// Sets the fill attribute of the circle to red (#f00)
-		circle.attr("fill", "#f00");
-
-		// Sets the stroke attribute of the circle to white
-		circle.attr("stroke", "#fff");
+                var R = Raphael(0, 0, "100%", "100%"),
+                    r = R.circle(100, 100, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
+                    g = R.circle(210, 100, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
+                    b = R.circle(320, 100, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
+                    p = R.circle(430, 100, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
+                var start = function () {
+                    this.ox = this.attr("cx");
+                    this.oy = this.attr("cy");
+                    this.animate({r: 70, opacity: .25}, 500, ">");
+                },
+                move = function (dx, dy) {
+                    this.attr({cx: this.ox + dx, cy: this.oy + dy});
+                },
+                up = function () {
+                    this.animate({r: 50, opacity: .5}, 500, ">");
+                };
+                R.set(r, g, b, p).drag(move, start, up);
 
                 this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
 	}
