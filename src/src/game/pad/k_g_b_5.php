@@ -7,24 +7,31 @@ Extends: Game,
 	{
        		this.parent(application);
 		this.setScoreNeeded(1);
-    		var R = Raphael(10, 35, 760, 405),
-                    r = R.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
-                    g = R.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
-                    b = R.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
-                    p = R.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
-                var start = function () {
+
+    		this.mRaphael = Raphael(10, 35, 760, 405),
+                    r = this.mRaphael.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
+                    g = this.mRaphael.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
+                    b = this.mRaphael.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
+                    p = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
+                this.mRaphael.set(r, g, b, p).drag(this.move, this.start, this.up);                
+
+	},
+
+	start: function()
+	{
                     this.ox = this.attr("cx");
                     this.oy = this.attr("cy");
                     this.animate({r: 70, opacity: .25}, 500, ">");
-                },
-                move = function (dx, dy) {
-                    this.attr({cx: this.ox + dx, cy: this.oy + dy});
-                },
-                up = function () {
-                    this.animate({r: 50, opacity: .5}, 500, ">");
-                };
-                R.set(r, g, b, p).drag(move, start, up);                
+	},
 
+	move: function(dx,dy)
+	{
+        	this.attr({cx: this.ox + dx, cy: this.oy + dy});
+	},
+	
+	up: function()
+	{
+        	this.animate({r: 50, opacity: .5}, 500, ">");
 	},
 
 	createQuestions: function()
