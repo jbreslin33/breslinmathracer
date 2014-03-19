@@ -7,7 +7,7 @@ Extends: Game,
 	{
        		this.parent(application);
 		this.setScoreNeeded(1);
-    		var R = Raphael(0, 0, "100%", "100%"),
+    		var R = Raphael(10, 35, 760, 405),
                     r = R.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
                     g = R.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
                     b = R.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
