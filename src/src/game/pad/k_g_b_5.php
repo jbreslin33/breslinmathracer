@@ -13,6 +13,7 @@ Extends: Game,
                     this.g = this.mRaphael.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
                     this.b = this.mRaphael.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
                     this.p = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
+
                 this.mRaphael.set(this.r, this.g, this.b, this.p).drag(this.move, this.start, this.up);                
 
 	},
