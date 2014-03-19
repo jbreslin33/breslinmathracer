@@ -9,20 +9,19 @@ Extends: Game,
 		this.setScoreNeeded(1);
 
     		this.mRaphael = Raphael(10, 35, 760, 405),
-                    this.r = this.mRaphael.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
-                    this.g = this.mRaphael.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
-                    this.b = this.mRaphael.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
-                    this.p = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
+                this.mRedCircle = this.mRaphael.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
+                this.mGreenCircle = this.mRaphael.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
+                this.mBlueCircle = this.mRaphael.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
+                this.mPurpleCircle = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
 
-                this.mRaphael.set(this.r, this.g, this.b, this.p).drag(this.move, this.start, this.up);                
-
+                this.mRaphael.set(this.mRedCircle, this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle).drag(this.move, this.start, this.up);                
 	},
 
 	start: function()
 	{
-                    this.ox = this.attr("cx");
-                    this.oy = this.attr("cy");
-                    this.animate({r: 70, opacity: .25}, 500, ">");
+        	this.ox = this.attr("cx");
+                this.oy = this.attr("cy");
+                this.animate({r: 70, opacity: .25}, 500, ">");
 	},
 
 	move: function(dx,dy)
