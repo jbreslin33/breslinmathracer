@@ -50,7 +50,7 @@ Extends: Game,
 	moveTriangle: function(dx,dy)
 	{
 		this.attr("transform", "T15,0");
-        	this.attr({x: this.ox + dx, y: this.oy + dy});
+        	//this.attr({x: this.ox + dx, y: this.oy + dy});
 	},
 	
 	up: function()
