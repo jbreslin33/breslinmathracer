@@ -49,7 +49,13 @@ Extends: Game,
 	
 	moveTriangle: function(dx,dy)
 	{
-		this.attr("transform", "T" + dx + "," + dy);
+		var x = this.ox + dx;
+		var y = this.oy + dy;
+		APPLICATION.log('x:' + x);
+		APPLICATION.log('y:' + y);
+			
+		//this.attr("transform", "T" + parseInt(this.ox + dx) + "," + parseInt(this.oy + dy));
+		//this.log('x:' + 
         	//this.attr({x: this.ox + dx, y: this.oy + dy});
 	},
 	
