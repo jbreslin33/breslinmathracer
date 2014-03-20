@@ -21,6 +21,7 @@ Extends: Game,
 
                 this.mRaphael.set(this.mRedCircle, this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle).drag(this.moveCircle, this.startCircle, this.upCircle);                
                 this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
+                this.mRaphael.set(this.mRedTriangle).drag(this.moveTriangle, this.start, this.up);                
 	},
 
 	start: function()
@@ -44,6 +45,12 @@ Extends: Game,
 	moveCircle: function(dx,dy)
 	{
         	this.attr({cx: this.ox + dx, cy: this.oy + dy});
+	},
+	
+	moveTriangle: function(dx,dy)
+	{
+		this.attr("transform", "T15,0");
+        	this.attr({x: this.ox + dx, y: this.oy + dy});
 	},
 	
 	up: function()
