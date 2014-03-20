@@ -15,10 +15,18 @@ Extends: Game,
                 this.mPurpleCircle = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5}),
 		this.mRedRectangle = this.mRaphael.rect(10, 10, 50, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
 
-                this.mRaphael.set(this.mRedCircle, this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle, this.mRedRectangle).drag(this.move, this.start, this.up);                
+                this.mRaphael.set(this.mRedCircle, this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle).drag(this.moveCircle, this.startCircle, this.up);                
+                this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
 	},
 
 	start: function()
+	{
+        	this.ox = this.attr("x");
+                this.oy = this.attr("y");
+                //this.animate({r: 70, opacity: .25}, 500, ">");
+	},
+	
+	startCircle: function()
 	{
         	this.ox = this.attr("cx");
                 this.oy = this.attr("cy");
@@ -27,8 +35,14 @@ Extends: Game,
 
 	move: function(dx,dy)
 	{
-        	//this.attr({cx: this.ox + dx, cy: this.oy + dy});
-		this.transform("t" + dx + "," + dy);
+        	this.attr({x: this.ox + dx, y: this.oy + dy});
+		//this.transform("t" + parseInt(this.ox + dx) + "," + parseInt(this.oy + dy));
+	},
+	
+	moveCircle: function(dx,dy)
+	{
+        	this.attr({cx: this.ox + dx, cy: this.oy + dy});
+		//this.transform("t" + parseInt(this.ox + dx) + "," + parseInt(this.oy + dy));
 	},
 	
 	up: function()
