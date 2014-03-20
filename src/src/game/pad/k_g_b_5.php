@@ -54,9 +54,9 @@ Extends: Game,
 		APPLICATION.log('x:' + x);
 		APPLICATION.log('y:' + y);
 			
-		//this.attr("transform", "T" + parseInt(this.ox + dx) + "," + parseInt(this.oy + dy));
+		this.attr("transform", "T" + x + "," + y);
 		//this.log('x:' + 
-        	//this.attr({x: this.ox + dx, y: this.oy + dy});
+        	//this.attr({x: x, y: y});
 	},
 	
 	up: function()
