@@ -8,19 +8,8 @@ Extends: Game,
        		this.parent(application);
 		this.setScoreNeeded(1);
 
-
-		//next make a triangle class....
-		this.mRedTriangleX1 = 0;
-		this.mRedTriangleY1 = 100;
-		this.mRedTriangleX2 = 50;
-		this.mRedTriangleY2 = 50;
-		this.mRedTriangleX3 = 100;
-		this.mRedTriangleY3 = 100;
-		
 		this.mRedTriangleLastMoveX = 0;
 		this.mRedTriangleLastMoveY = 0;
-
-		this.mRedTrianglePath = "M" + this.mRedTriangleX1 + "," + this.mRedTriangleY1 + " L" + this.mRedTriangleX2 + "," + this.mRedTriangleY2 + " L" + this.mRedTriangleX3 + "," + this.mRedTriangleY3 + " z";
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
@@ -31,11 +20,11 @@ Extends: Game,
 
 		this.mRedRectangle = this.mRaphael.rect(10, 10, 50, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
 
-		this.mRedTriangle = this.mRaphael.path("" + this.mRedTrianglePath).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
+		this.mTriangle = new Triangle(this.mRaphael,0,100,50,50,100,100); 
 
                 this.mRaphael.set(this.mRedCircle, this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle).drag(this.moveCircle, this.startCircle, this.upCircle);                
                 this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
-                this.mRaphael.set(this.mRedTriangle).drag(this.moveTriangle, this.startTriangle, this.up);                
+                this.mRaphael.set(this.mTriangle.mPath).drag(this.moveTriangle, this.startTriangle, this.up);                
 	},
 
 	start: function()
@@ -69,21 +58,7 @@ Extends: Game,
 	
 	moveTriangle: function(dx,dy)
 	{
-		var deltaX = dx - APPLICATION.mGame.mRedTriangleLastMoveX;
-		var deltaY = dy - APPLICATION.mGame.mRedTriangleLastMoveY;
-
-		APPLICATION.mGame.mRedTriangleX1 += deltaX;
-		APPLICATION.mGame.mRedTriangleY1 += deltaY;
-		APPLICATION.mGame.mRedTriangleX2 += deltaX;
-		APPLICATION.mGame.mRedTriangleY2 += deltaY;
-		APPLICATION.mGame.mRedTriangleX3 += deltaX;
-		APPLICATION.mGame.mRedTriangleY3 += deltaY;
-		
-		APPLICATION.mGame.mRedTrianglePath = "M" + APPLICATION.mGame.mRedTriangleX1 + "," + APPLICATION.mGame.mRedTriangleY1 + " L" + APPLICATION.mGame.mRedTriangleX2 + "," + APPLICATION.mGame.mRedTriangleY2 + " L" + APPLICATION.mGame.mRedTriangleX3 + "," + APPLICATION.mGame.mRedTriangleY3 + " z";
-		this.attr({path:"" + APPLICATION.mGame.mRedTrianglePath});
-		
-		APPLICATION.mGame.mRedTriangleLastMoveX = dx;
-		APPLICATION.mGame.mRedTriangleLastMoveY = dy;
+		APPLICATION.mTriangle.updateMove(dx,dy);
 	},
 	
 	up: function()
