@@ -47,6 +47,13 @@ var Application = new Class(
         	this.mMouseMoveOn = true;
         	this.mMouseDownOn = true;
 
+		this.mMouseMoveX = 0;
+		this.mMouseMoveY = 0;
+		this.mMouseDownX = 0;
+		this.mMouseDownY = 0;
+		this.mMouseUpX = 0;
+		this.mMouseUpY = 0;
+
 		/********** OLD APPLICATION STUFF ***********/
                 //window size
                 this.mWindow = window.getSize();
@@ -67,6 +74,7 @@ var Application = new Class(
                 this.mMouseMoveEvent = 0;
 
                 document.addEvent("mousemove", this.mouseMove);
+                document.addEvent("mousedown", this.mouseDown);
 
 		//states
 		this.mStateMachine = new StateMachine(this);
@@ -1143,11 +1151,6 @@ var Application = new Class(
         {
         },
 
-        mousedown: function(event)
-        {
-                APPLICATION.mLeftMouseDown = true;
-        },
-
         mouseup: function(event)
         {
                 APPLICATION.mLeftMouseDown = false;
@@ -1155,34 +1158,13 @@ var Application = new Class(
 
         mouseMove: function(event)
         {
-                if (APPLICATION.mMouseMoveOn)
-                {
-                        if (APPLICATION.mGame)
-			{
-                        	if (APPLICATION.mGame.mControlObject != 0);
-				{
-                        		//APPLICATION.mGame.mControlObject.mPosition.mX = event.page.x;
-                        		//APPLICATION.mGame.mControlObject.mPosition.mY = event.page.y;
-				}
-			}
-                }
-
-        },
+		APPLICATION.mMouseMoveX = event.page.x;
+		APPLICATION.mMouseMoveY = event.page.y;
+	},
 
         mouseDown: function(event)
         {
-/*
-                if (APPLICATION.mMouseDownOn)
-                {      
-                        if (APPLICATION.mGame)
-			{
-                        	if (APPLICATION.mGame.mControlObject);
-				{
-                        		APPLICATION.mControlObject.mPosition.mX = event.page.x;
-                        		APPLICATION.mControlObject.mPosition.mY = event.page.y;
-				}
-			}
-                }
-*/
+		APPLICATION.mMouseDownX = event.page.x;
+		APPLICATION.mMouseDownY = event.page.y;
         }
 });
