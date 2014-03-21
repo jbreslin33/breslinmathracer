@@ -7,7 +7,9 @@ Extends: Game,
 	{
        		this.parent(application);
 		this.setScoreNeeded(1);
-//next make a triangle class....
+
+
+		//next make a triangle class....
 		this.mRedTriangleX1 = 0;
 		this.mRedTriangleY1 = 100;
 		this.mRedTriangleX2 = 50;
