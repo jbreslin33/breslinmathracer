@@ -22,14 +22,14 @@ Extends: Game,
 
 		this.mRedTrianglePath = "M" + this.mRedTriangleX1 + "," + this.mRedTriangleY1 + " L" + this.mRedTriangleX2 + "," + this.mRedTriangleY2 + " L" + this.mRedTriangleX3 + "," + this.mRedTriangleY3 + " z";
 
-    		this.mRaphael = Raphael(10, 35, 760, 405),
+    		this.mRaphael = Raphael(10, 35, 760, 405);
 
-                this.mRedCircle = this.mRaphael.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
-                this.mGreenCircle = this.mRaphael.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5}),
-                this.mBlueCircle = this.mRaphael.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5}),
-                this.mPurpleCircle = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5}),
+                this.mRedCircle = this.mRaphael.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
+                this.mGreenCircle = this.mRaphael.circle(210, 300, 50).attr({fill: "hsb(.3, 1, 1)", stroke: "none", opacity: .5});
+                this.mBlueCircle = this.mRaphael.circle(320, 300, 50).attr({fill: "hsb(.6, 1, 1)", stroke: "none", opacity: .5});
+                this.mPurpleCircle = this.mRaphael.circle(430, 300, 50).attr({fill: "hsb(.8, 1, 1)", stroke: "none", opacity: .5});
 
-		this.mRedRectangle = this.mRaphael.rect(10, 10, 50, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5}),
+		this.mRedRectangle = this.mRaphael.rect(10, 10, 50, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
 
 		this.mRedTriangle = this.mRaphael.path("" + this.mRedTrianglePath).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
 
