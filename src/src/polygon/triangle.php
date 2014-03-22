@@ -37,11 +37,16 @@ Extends: Polygon,
                 this.mLastX = dx;
                 this.mLastY = dy;
 	},
+	
+	resetLast: function()
+	{
+                this.mLastX = 0;
+                this.mLastY = 0;
+	},
 
         start: function()
         {
-                APPLICATION.mGame.mTriangle.mLastX = 0;
-                APPLICATION.mGame.mTriangle.mLastY = 0;
+                APPLICATION.mGame.mTriangle.resetLast();
         },
         
 	move: function(dx,dy)
