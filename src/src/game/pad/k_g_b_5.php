@@ -19,7 +19,7 @@ Extends: Game,
 
                 this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
 
-                this.mRaphael.set(this.mRedRectangle.mRectangle).drag(this.mRedRectangle.move, this.mRedRectangle.start, this.mRedRectangle.up);                
+                this.mRaphael.set(this.mRedRectangle.mPolygon).drag(this.mRedRectangle.move, this.mRedRectangle.start, this.mRedRectangle.up);                
                 this.mRaphael.set(this.mRedCircle.mCircle).drag(this.mRedCircle.move, this.mRedCircle.start, this.mRedCircle.up);                
                 this.mRaphael.set(this.mGreenCircle.mCircle).drag(this.mGreenCircle.move, this.mGreenCircle.start, this.mGreenCircle.up);                
                 this.mRaphael.set(this.mBlueCircle.mCircle).drag(this.mBlueCircle.move, this.mBlueCircle.start, this.mBlueCircle.up);                

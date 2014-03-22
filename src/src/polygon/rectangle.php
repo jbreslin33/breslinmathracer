@@ -1,5 +1,8 @@
 var Rectangle = new Class(
 {
+
+Extends: Polygon,
+
         initialize: function (raphael,x,y,w,h,r,g,b,s,op)
         {
 		this.mRaphael = raphael;
@@ -14,9 +17,9 @@ var Rectangle = new Class(
 		this.mStroke = s;
 		this.mOpacity = op;
 
- 		this.mRectangle = this.mRaphael.rect(this.x, this.y, this.w, this.h).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+ 		this.mPolygon = this.mRaphael.rect(this.x, this.y, this.w, this.h).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-		this.mRectangle.mRectangle = this;
+		this.mPolygon.mPolygon = this;
 	
 		this.mLastX = 0;
 		this.mLastY = 0;
@@ -30,7 +33,7 @@ var Rectangle = new Class(
                 this.x += deltaX;
                 this.y += deltaY;
  		
-		this.mRectangle.attr({x: this.x, y: this.y});
+		this.mPolygon.attr({x: this.x, y: this.y});
 
                 this.mLastX = dx;
                 this.mLastY = dy;
@@ -44,17 +47,15 @@ var Rectangle = new Class(
 
         start: function()
         {
-		this.mRectangle.resetLast();
-            //    this.animate({r: 70, opacity: .25}, 500, ">");
+		this.mPolygon.resetLast();
         },
         
 	move: function(dx,dy)
         {
-		this.mRectangle.updateMove(dx,dy);
+		this.mPolygon.updateMove(dx,dy);
         },
 
         up: function()
         {
- 		//this.animate({r: 50, opacity: .5}, 500, ">");
         }
 });
