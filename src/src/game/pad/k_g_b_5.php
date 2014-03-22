@@ -29,19 +29,16 @@ Extends: Game,
                 this.mRaphael.set(this.mGreenRectangle.mPolygon).drag(this.mGreenRectangle.move, this.mGreenRectangle.start, this.mGreenRectangle.up);                
                 this.mRaphael.set(this.mBlueRectangle.mPolygon).drag(this.mBlueRectangle.move, this.mBlueRectangle.start, this.mBlueRectangle.up);                
                 this.mRaphael.set(this.mPurpleRectangle.mPolygon).drag(this.mPurpleRectangle.move, this.mPurpleRectangle.start, this.mPurpleRectangle.up);                
-                
 		
 		this.mRaphael.set(this.mRedTriangle.mPolygon).drag(this.mRedTriangle.move, this.mRedTriangle.start, this.mRedTriangle.up);                
 		this.mRaphael.set(this.mGreenTriangle.mPolygon).drag(this.mGreenTriangle.move, this.mGreenTriangle.start, this.mGreenTriangle.up);                
 		this.mRaphael.set(this.mBlueTriangle.mPolygon).drag(this.mBlueTriangle.move, this.mBlueTriangle.start, this.mBlueTriangle.up);                
 		this.mRaphael.set(this.mPurpleTriangle.mPolygon).drag(this.mPurpleTriangle.move, this.mPurpleTriangle.start, this.mPurpleTriangle.up);                
 
-
                 this.mRaphael.set(this.mRedCircle.mPolygon).drag(this.mRedCircle.move, this.mRedCircle.start, this.mRedCircle.up);                
                 this.mRaphael.set(this.mGreenCircle.mPolygon).drag(this.mGreenCircle.move, this.mGreenCircle.start, this.mGreenCircle.up);                
                 this.mRaphael.set(this.mBlueCircle.mPolygon).drag(this.mBlueCircle.move, this.mBlueCircle.start, this.mBlueCircle.up);                
                 this.mRaphael.set(this.mPurpleCircle.mPolygon).drag(this.mPurpleCircle.move, this.mPurpleCircle.start, this.mPurpleCircle.up);                
-
 	},
 
 	createQuestions: function()
@@ -51,7 +48,7 @@ Extends: Game,
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
 
-		var question = new Question('What?', 'Nothing');
+		var question = new Question('Play with shapes?', 'Nothing');
 		this.mQuiz.mQuestionArray.push(question);
 	
                	//buffer
