@@ -50,16 +50,21 @@ var Circle = new Class(
 
         start: function()
         {
-                APPLICATION.mGame.mTriangle.resetLast();
+                //APPLICATION.mGame.mTriangle.resetLast();
+ 		this.ox = this.attr("cx");
+                this.oy = this.attr("cy");
+                this.animate({r: 70, opacity: .25}, 500, ">");
         },
         
 	move: function(dx,dy)
         {
-		APPLICATION.mGame.mTriangle.updateMove(dx,dy);
+		//APPLICATION.mGame.mTriangle.updateMove(dx,dy);
+ 		this.attr({cx: this.ox + dx, cy: this.oy + dy});
         },
 
         up: function()
         {
+ 		this.animate({r: 50, opacity: .5}, 500, ">");
         }
 });
 
