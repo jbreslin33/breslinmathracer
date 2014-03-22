@@ -30,10 +30,6 @@ var Circle = new Class(
                 this.y += deltaY;
  		
 		this.mCircle.attr({cx: this.x, cy: this.y});
-		//this.attr({cx: this.ox + dx, cy: this.oy + dy});
-
-                //this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
-                //this.mPath.attr({path:"" + this.mPathString});
 
                 this.mLastX = dx;
                 this.mLastY = dy;
@@ -47,18 +43,13 @@ var Circle = new Class(
 
         start: function()
         {
-                //APPLICATION.mGame.mTriangle.resetLast();
 		this.mCircle.resetLast();
- 		//this.ox = this.attr("cx");
-                //this.oy = this.attr("cy");
                 this.animate({r: 70, opacity: .25}, 500, ">");
         },
         
 	move: function(dx,dy)
         {
-		//APPLICATION.mGame.mTriangle.updateMove(dx,dy);
 		this.mCircle.updateMove(dx,dy);
- 		//this.attr({cx: this.ox + dx, cy: this.oy + dy});
         },
 
         up: function()
@@ -66,4 +57,3 @@ var Circle = new Class(
  		this.animate({r: 50, opacity: .5}, 500, ">");
         }
 });
-

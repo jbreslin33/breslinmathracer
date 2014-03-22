@@ -1,8 +1,6 @@
 var Triangle = new Class(
 {
-
 Extends: Polygon,
-
         initialize: function (raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op)
         {
 		this.mRaphael = raphael;
@@ -56,13 +54,11 @@ Extends: Polygon,
 
         start: function()
         {
-                //APPLICATION.mGame.mTriangle.resetLast();
 		this.mTriangle.resetLast();
         },
         
 	move: function(dx,dy)
         {
-		//APPLICATION.mGame.mTriangle.updateMove(dx,dy);
 		this.mTriangle.updateMove(dx,dy);
         },
 
@@ -70,4 +66,3 @@ Extends: Polygon,
         {
         }
 });
-
