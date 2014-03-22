@@ -15,8 +15,8 @@ Extends: Game,
 		this.mBlueRectangle   = new Rectangle(this.mRaphael,210,10,50,50,.6,1,1,"none",.5); 
 		this.mPurpleRectangle = new Rectangle(this.mRaphael,310,10,50,50,.8,1,1,"none",.5); 
 
-		this.mRedTriangle     = new Triangle (this.mRaphael,0,150,50,100,100,150,0,1,1,"none",.5); 
-		this.mGreenTriangle   = new Triangle (this.mRaphael,100,150,150,100,200,150,.3,1,1,"none",.5); 
+		this.mRedTriangle     = new Triangle (this.mRaphael,0,150,0,100,50,100,0,1,1,"none",.5); 
+		this.mGreenTriangle   = new Triangle (this.mRaphael,150,100,150,150,100,125,.3,1,1,"none",.5); 
 		this.mBlueTriangle    = new Triangle (this.mRaphael,200,150,250,100,300,150,.6,1,1,"none",.5); 
 		this.mPurpleTriangle  = new Triangle (this.mRaphael,300,150,350,100,400,150,.8,1,1,"none",.5); 
 
