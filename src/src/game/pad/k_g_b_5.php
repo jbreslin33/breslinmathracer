@@ -17,7 +17,7 @@ Extends: Game,
 		this.mBlueCircle   = new Circle   (this.mRaphael,320,300,50,.6,1,1,"none",.5); 
 		this.mPurpleCircle = new Circle   (this.mRaphael,430,300,50,.8,1,1,"none",.5); 
 
-                this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
+                this.mRaphael.set(this.mRedRectangle).drag(this.mRedRectangle.move, this.mRedRectangle.start, this.mRedRectangle.up);                
 
                 this.mRaphael.set(this.mRedRectangle.mPolygon).drag(this.mRedRectangle.move, this.mRedRectangle.start, this.mRedRectangle.up);                
                 this.mRaphael.set(this.mRedCircle.mPolygon).drag(this.mRedCircle.move, this.mRedCircle.start, this.mRedCircle.up);                
@@ -26,21 +26,6 @@ Extends: Game,
                 this.mRaphael.set(this.mPurpleCircle.mPolygon).drag(this.mPurpleCircle.move, this.mPurpleCircle.start, this.mPurpleCircle.up);                
 
                 this.mRaphael.set(this.mRedTriangle.mPolygon).drag(this.mRedTriangle.move, this.mRedTriangle.start, this.mRedTriangle.up);                
-	},
-
-	start: function()
-	{
-        	this.ox = this.attr("x");
-                this.oy = this.attr("y");
-	},
-	
-	move: function(dx,dy)
-	{
-        	this.attr({x: this.ox + dx, y: this.oy + dy});
-	},
-	
-	up: function()
-	{
 	},
 
 	createQuestions: function()
