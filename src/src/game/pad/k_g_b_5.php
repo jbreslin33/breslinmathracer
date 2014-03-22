@@ -17,11 +17,11 @@ Extends: Game,
 		this.mRedRectangle = this.mRaphael.rect(10, 10, 50, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
 
 		this.mTriangle = new Triangle(this.mRaphael,0,100,50,50,100,100,0,1,1,"none",.5); 
-		this.mCircle   = new Circle  (this.mRaphael,100,300,50,0,1,1,"none",.5); 
+		this.mRedCircle   = new Circle  (this.mRaphael,100,300,50,0,1,1,"none",.5); 
 
                 this.mRaphael.set(this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle).drag(this.moveCircle, this.startCircle, this.upCircle);                
                 this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
-                this.mRaphael.set(this.mCircle.mCircle).drag(this.mCircle.move, this.mCircle.start, this.mCircle.up);                
+                this.mRaphael.set(this.mRedCircle.mCircle).drag(this.mRedCircle.move, this.mRedCircle.start, this.mRedCircle.up);                
                 this.mRaphael.set(this.mTriangle.mPath).drag(this.mTriangle.move, this.mTriangle.start, this.mTriangle.up);                
 	},
 
