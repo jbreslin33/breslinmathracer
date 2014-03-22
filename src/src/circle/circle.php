@@ -17,7 +17,7 @@ var Circle = new Class(
 		
 		//this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 	
- 		this.mCircle = this.mRaphael.circle(this.x, this.y, this.mRadius).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
+ 		this.mCircle = this.mRaphael.circle(this.x, this.y, this.mRadius).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: "none", opacity: .5});
 	
 		this.mLastX = 0;
 		this.mLastY = 0;
