@@ -45,8 +45,8 @@
 <script type="text/javascript" src="/src/widgets/buttonmultiplechoicepadimages.php"></script>
 <script type="text/javascript" src="/src/widgets/buttonmultiplechoicepadspread.php"></script>
 
-<script type="text/javascript" src="/src/polygon/circle.php"></script>
 <script type="text/javascript" src="/src/polygon/polygon.php"></script>
+<script type="text/javascript" src="/src/polygon/circle.php"></script>
 <script type="text/javascript" src="/src/polygon/triangle.php"></script>
 <script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 

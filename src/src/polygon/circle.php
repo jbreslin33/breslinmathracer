@@ -1,5 +1,8 @@
 var Circle = new Class(
 {
+
+Extends: Polygon,
+	
         initialize: function (raphael,x,y,radius,r,g,b,s,op)
         {
 		this.mRaphael = raphael;
@@ -13,9 +16,9 @@ var Circle = new Class(
 		this.mStroke = s;
 		this.mOpacity = op;
 
- 		this.mCircle = this.mRaphael.circle(this.x, this.y, this.mRadius).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+ 		this.mPolygon = this.mRaphael.circle(this.x, this.y, this.mRadius).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-		this.mCircle.mCircle = this;
+		this.mPolygon.mPolygon = this;
 	
 		this.mLastX = 0;
 		this.mLastY = 0;
@@ -29,7 +32,7 @@ var Circle = new Class(
                 this.x += deltaX;
                 this.y += deltaY;
  		
-		this.mCircle.attr({cx: this.x, cy: this.y});
+		this.mPolygon.attr({cx: this.x, cy: this.y});
 
                 this.mLastX = dx;
                 this.mLastY = dy;
@@ -43,13 +46,13 @@ var Circle = new Class(
 
         start: function()
         {
-		this.mCircle.resetLast();
+		this.mPolygon.resetLast();
                 this.animate({r: 70, opacity: .25}, 500, ">");
         },
         
 	move: function(dx,dy)
         {
-		this.mCircle.updateMove(dx,dy);
+		this.mPolygon.updateMove(dx,dy);
         },
 
         up: function()
