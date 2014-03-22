@@ -15,11 +15,12 @@ Extends: Game,
 		this.mBlueRectangle   = new Rectangle(this.mRaphael,210,10,50,50,0,1,1,"none",.5); 
 		this.mPurpleRectangle = new Rectangle(this.mRaphael,310,10,50,50,0,1,1,"none",.5); 
 
-		this.mRedTriangle  = new Triangle (this.mRaphael,0,100,50,50,100,100,0,1,1,"none",.5); 
-		this.mRedCircle    = new Circle   (this.mRaphael,100,300,50,0,1,1,"none",.5); 
-		this.mGreenCircle  = new Circle   (this.mRaphael,210,300,50,.3,1,1,"none",.5); 
-		this.mBlueCircle   = new Circle   (this.mRaphael,320,300,50,.6,1,1,"none",.5); 
-		this.mPurpleCircle = new Circle   (this.mRaphael,430,300,50,.8,1,1,"none",.5); 
+		this.mRedTriangle  = new Triangle (this.mRaphael,0,150,50,100,100,150,0,1,1,"none",.5); 
+
+		this.mRedCircle    = new Circle   (this.mRaphael,100,300,25,0,1,1,"none",.5); 
+		this.mGreenCircle  = new Circle   (this.mRaphael,210,300,25,.3,1,1,"none",.5); 
+		this.mBlueCircle   = new Circle   (this.mRaphael,320,300,25,.6,1,1,"none",.5); 
+		this.mPurpleCircle = new Circle   (this.mRaphael,430,300,25,.8,1,1,"none",.5); 
 
                 this.mRaphael.set(this.mRedRectangle).drag(this.mRedRectangle.move, this.mRedRectangle.start, this.mRedRectangle.up);                
 

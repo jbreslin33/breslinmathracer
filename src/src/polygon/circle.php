@@ -47,7 +47,7 @@ Extends: Polygon,
         start: function()
         {
 		this.mPolygon.resetLast();
-                this.animate({r: 70, opacity: .25}, 500, ">");
+                this.animate({r: 50, opacity: .25}, 500, ">");
         },
         
 	move: function(dx,dy)
@@ -57,6 +57,6 @@ Extends: Polygon,
 
         up: function()
         {
- 		this.animate({r: 50, opacity: .5}, 500, ">");
+ 		this.animate({r: 25, opacity: .5}, 500, ">");
         }
 });
