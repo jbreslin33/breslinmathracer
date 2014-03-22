@@ -21,7 +21,7 @@ Extends: Polygon,
 
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
 		
-		this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: "none", opacity: .5});
+		this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: "none", opacity: this.mOpacity});
 		//this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: #FF0000, stroke: "none", opacity: .5}); 
 		//this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: #FF0000, stroke: "none", opacity: .5});
  		//this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: + " " + this.mFill + "", stroke: + " " + this.mStroke + "", opacity: + this.mOpacity});        
