@@ -58,7 +58,8 @@ Extends: Game,
 	
 	moveTriangle: function(dx,dy)
 	{
-		APPLICATION.mTriangle.updateMove(dx,dy);
+		APPLICATION.log('x:' + dx + 'y:' + dy);
+		APPLICATION.mGame.mTriangle.updateMove(dx,dy);
 	},
 	
 	up: function()
