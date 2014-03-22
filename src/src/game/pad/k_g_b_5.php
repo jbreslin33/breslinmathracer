@@ -21,7 +21,7 @@ Extends: Game,
 
                 this.mRaphael.set(this.mRedCircle, this.mGreenCircle, this.mBlueCircle, this.mPurpleCircle).drag(this.moveCircle, this.startCircle, this.upCircle);                
                 this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
-                this.mRaphael.set(this.mTriangle.mPath).drag(this.moveTriangle, this.startTriangle, this.up);                
+                this.mRaphael.set(this.mTriangle.mPath).drag(this.mTriangle.move, this.mTriangle.start, this.mTriangle.up);                
 	},
 
 	start: function()
@@ -37,12 +37,6 @@ Extends: Game,
                 this.animate({r: 70, opacity: .25}, 500, ">");
 	},
 	
-	startTriangle: function()
-	{
-		APPLICATION.mGame.mTriangle.mLastX = 0;
-		APPLICATION.mGame.mTriangle.mLastY = 0;
-	},
-
 	move: function(dx,dy)
 	{
         	this.attr({x: this.ox + dx, y: this.oy + dy});
@@ -51,11 +45,6 @@ Extends: Game,
 	moveCircle: function(dx,dy)
 	{
         	this.attr({cx: this.ox + dx, cy: this.oy + dy});
-	},
-	
-	moveTriangle: function(dx,dy)
-	{
-		APPLICATION.mGame.mTriangle.updateMove(dx,dy);
 	},
 	
 	up: function()

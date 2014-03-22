@@ -36,6 +36,21 @@ Extends: Polygon,
 
                 this.mLastX = dx;
                 this.mLastY = dy;
-	}
+	},
+
+        start: function()
+        {
+                APPLICATION.mGame.mTriangle.mLastX = 0;
+                APPLICATION.mGame.mTriangle.mLastY = 0;
+        },
+        
+	move: function(dx,dy)
+        {
+		APPLICATION.mGame.mTriangle.updateMove(dx,dy);
+        },
+
+        up: function()
+        {
+        }
 });
 

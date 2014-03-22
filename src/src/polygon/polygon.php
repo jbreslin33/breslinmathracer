@@ -5,9 +5,19 @@ var Polygon = new Class(
                 
         },
 
-	what: function()
-	{
+        start: function()
+        {
 
-	}
+        },
+
+        move: function()
+        {
+
+        },
+
+        up: function()
+        {
+
+        }
 });
 
