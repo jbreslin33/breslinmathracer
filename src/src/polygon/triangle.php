@@ -21,7 +21,6 @@ Extends: Polygon,
 
 	updateMove: function(dx,dy)
 	{
-		//APPLICATION.log('x:' + dx + 'y:' + dy);	
    		var deltaX = dx - this.mLastX;
                 var deltaY = dy - this.mLastY;
 
