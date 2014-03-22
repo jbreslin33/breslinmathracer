@@ -34,30 +34,13 @@ Extends: Game,
                 this.oy = this.attr("y");
 	},
 	
-	startCircle: function()
-	{
-        	this.ox = this.attr("cx");
-                this.oy = this.attr("cy");
-                this.animate({r: 70, opacity: .25}, 500, ">");
-	},
-	
 	move: function(dx,dy)
 	{
         	this.attr({x: this.ox + dx, y: this.oy + dy});
 	},
 	
-	moveCircle: function(dx,dy)
-	{
-        	this.attr({cx: this.ox + dx, cy: this.oy + dy});
-	},
-	
 	up: function()
 	{
-	},
-
-	upCircle: function()
-	{
-        	this.animate({r: 50, opacity: .5}, 500, ">");
 	},
 
 	createQuestions: function()
@@ -77,7 +60,5 @@ Extends: Game,
 	createWorld: function()
 	{
 		this.parent();
-
-                this.mShapeArray.push(new Shape(50,50,175,250,this,"/images/bus/kid.png","",""));
 	}
 });
