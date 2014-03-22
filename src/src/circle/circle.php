@@ -14,6 +14,8 @@ var Circle = new Class(
 		this.mOpacity = op;
 
  		this.mCircle = this.mRaphael.circle(this.x, this.y, this.mRadius).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+
+		this.mCircle.mCircle = this;
 	
 		this.mLastX = 0;
 		this.mLastY = 0;
@@ -24,15 +26,14 @@ var Circle = new Class(
    		var deltaX = dx - this.mLastX;
                 var deltaY = dy - this.mLastY;
 
-                this.x1 += deltaX;
-                this.y1 += deltaY;
-                this.x2 += deltaX;
-                this.y2 += deltaY;
-                this.x3 += deltaX;
-                this.y3 += deltaY;
+                this.x += deltaX;
+                this.y += deltaY;
+ 		
+		this.mCircle.attr({cx: this.x, cy: this.y});
+		//this.attr({cx: this.ox + dx, cy: this.oy + dy});
 
-                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
-                this.mPath.attr({path:"" + this.mPathString});
+                //this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
+                //this.mPath.attr({path:"" + this.mPathString});
 
                 this.mLastX = dx;
                 this.mLastY = dy;
@@ -47,15 +48,17 @@ var Circle = new Class(
         start: function()
         {
                 //APPLICATION.mGame.mTriangle.resetLast();
- 		this.ox = this.attr("cx");
-                this.oy = this.attr("cy");
+		this.mCircle.resetLast();
+ 		//this.ox = this.attr("cx");
+                //this.oy = this.attr("cy");
                 this.animate({r: 70, opacity: .25}, 500, ">");
         },
         
 	move: function(dx,dy)
         {
 		//APPLICATION.mGame.mTriangle.updateMove(dx,dy);
- 		this.attr({cx: this.ox + dx, cy: this.oy + dy});
+		this.mCircle.updateMove(dx,dy);
+ 		//this.attr({cx: this.ox + dx, cy: this.oy + dy});
         },
 
         up: function()
