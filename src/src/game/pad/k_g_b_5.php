@@ -11,7 +11,7 @@ Extends: Game,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
 		this.mRedRectangle = new Rectangle(this.mRaphael,10,10,50,50,0,1,1,"none",.5); 
-		this.mTriangle     = new Triangle (this.mRaphael,0,100,50,50,100,100,0,1,1,"none",.5); 
+		this.mRedTriangle  = new Triangle (this.mRaphael,0,100,50,50,100,100,0,1,1,"none",.5); 
 		this.mRedCircle    = new Circle   (this.mRaphael,100,300,50,0,1,1,"none",.5); 
 		this.mGreenCircle  = new Circle   (this.mRaphael,210,300,50,.3,1,1,"none",.5); 
 		this.mBlueCircle   = new Circle   (this.mRaphael,320,300,50,.6,1,1,"none",.5); 
@@ -25,7 +25,7 @@ Extends: Game,
                 this.mRaphael.set(this.mBlueCircle.mCircle).drag(this.mBlueCircle.move, this.mBlueCircle.start, this.mBlueCircle.up);                
                 this.mRaphael.set(this.mPurpleCircle.mCircle).drag(this.mPurpleCircle.move, this.mPurpleCircle.start, this.mPurpleCircle.up);                
 
-                this.mRaphael.set(this.mTriangle.mPath).drag(this.mTriangle.move, this.mTriangle.start, this.mTriangle.up);                
+                this.mRaphael.set(this.mRedTriangle.mPolygon).drag(this.mRedTriangle.move, this.mRedTriangle.start, this.mRedTriangle.up);                
 	},
 
 	start: function()

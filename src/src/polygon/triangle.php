@@ -19,9 +19,9 @@ Extends: Polygon,
 
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
 		
-		this.mPath = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-		this.mPath.mTriangle = this;
+		this.mPolygon.mPolygon = this;
 		
 		this.mLastX = 0;
 		this.mLastY = 0;
@@ -40,7 +40,7 @@ Extends: Polygon,
                 this.y3 += deltaY;
 
                 this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
-                this.mPath.attr({path:"" + this.mPathString});
+                this.mPolygon.attr({path:"" + this.mPathString});
 
                 this.mLastX = dx;
                 this.mLastY = dy;
@@ -54,12 +54,12 @@ Extends: Polygon,
 
         start: function()
         {
-		this.mTriangle.resetLast();
+		this.mPolygon.resetLast();
         },
         
 	move: function(dx,dy)
         {
-		this.mTriangle.updateMove(dx,dy);
+		this.mPolygon.updateMove(dx,dy);
         },
 
         up: function()
