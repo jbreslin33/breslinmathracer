@@ -10,16 +10,16 @@ Extends: Game,
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
-		this.mRedRectangle = this.mRaphael.rect(10, 10, 50, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
-
-		this.mTriangle = new Triangle(this.mRaphael,0,100,50,50,100,100,0,1,1,"none",.5); 
-		this.mRedCircle    = new Circle  (this.mRaphael,100,300,50,0,1,1,"none",.5); 
-		this.mGreenCircle  = new Circle  (this.mRaphael,210,300,50,.3,1,1,"none",.5); 
-		this.mBlueCircle   = new Circle  (this.mRaphael,320,300,50,.6,1,1,"none",.5); 
-		this.mPurpleCircle = new Circle  (this.mRaphael,430,300,50,.8,1,1,"none",.5); 
+		this.mRedRectangle = new Rectangle(this.mRaphael,10,10,50,50,0,1,1,"none",.5); 
+		this.mTriangle     = new Triangle (this.mRaphael,0,100,50,50,100,100,0,1,1,"none",.5); 
+		this.mRedCircle    = new Circle   (this.mRaphael,100,300,50,0,1,1,"none",.5); 
+		this.mGreenCircle  = new Circle   (this.mRaphael,210,300,50,.3,1,1,"none",.5); 
+		this.mBlueCircle   = new Circle   (this.mRaphael,320,300,50,.6,1,1,"none",.5); 
+		this.mPurpleCircle = new Circle   (this.mRaphael,430,300,50,.8,1,1,"none",.5); 
 
                 this.mRaphael.set(this.mRedRectangle).drag(this.move, this.start, this.up);                
 
+                this.mRaphael.set(this.mRedRectangle.mRectangle).drag(this.mRedRectangle.move, this.mRedRectangle.start, this.mRedRectangle.up);                
                 this.mRaphael.set(this.mRedCircle.mCircle).drag(this.mRedCircle.move, this.mRedCircle.start, this.mRedCircle.up);                
                 this.mRaphael.set(this.mGreenCircle.mCircle).drag(this.mGreenCircle.move, this.mGreenCircle.start, this.mGreenCircle.up);                
                 this.mRaphael.set(this.mBlueCircle.mCircle).drag(this.mBlueCircle.move, this.mBlueCircle.start, this.mBlueCircle.up);                

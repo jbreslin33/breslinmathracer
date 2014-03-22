@@ -1,11 +1,12 @@
-var Circle = new Class(
+var Rectangle = new Class(
 {
-        initialize: function (raphael,x,y,radius,r,g,b,s,op)
+        initialize: function (raphael,x,y,w,h,r,g,b,s,op)
         {
 		this.mRaphael = raphael;
 		this.x = x;
 		this.y = y;
-		this.mRadius = radius;
+		this.w = w;
+		this.h = h;
 		
 		this.mRed = r;
 		this.mGreen = g;
@@ -13,9 +14,9 @@ var Circle = new Class(
 		this.mStroke = s;
 		this.mOpacity = op;
 
- 		this.mCircle = this.mRaphael.circle(this.x, this.y, this.mRadius).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+ 		this.mRectangle = this.mRaphael.rect(this.x, this.y, this.w, this.h).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-		this.mCircle.mCircle = this;
+		this.mRectangle.mRectangle = this;
 	
 		this.mLastX = 0;
 		this.mLastY = 0;
@@ -29,7 +30,7 @@ var Circle = new Class(
                 this.x += deltaX;
                 this.y += deltaY;
  		
-		this.mCircle.attr({cx: this.x, cy: this.y});
+		this.mRectangle.attr({x: this.x, y: this.y});
 
                 this.mLastX = dx;
                 this.mLastY = dy;
@@ -43,17 +44,17 @@ var Circle = new Class(
 
         start: function()
         {
-		this.mCircle.resetLast();
-                this.animate({r: 70, opacity: .25}, 500, ">");
+		this.mRectangle.resetLast();
+            //    this.animate({r: 70, opacity: .25}, 500, ">");
         },
         
 	move: function(dx,dy)
         {
-		this.mCircle.updateMove(dx,dy);
+		this.mRectangle.updateMove(dx,dy);
         },
 
         up: function()
         {
- 		this.animate({r: 50, opacity: .5}, 500, ">");
+ 		//this.animate({r: 50, opacity: .5}, 500, ">");
         }
 });
