@@ -42,8 +42,8 @@ Extends: Game,
 	
 	startTriangle: function()
 	{
-		APPLICATION.mGame.mRedTriangleLastMoveX = 0;
-		APPLICATION.mGame.mRedTriangleLastMoveY = 0;
+		APPLICATION.mGame.mTriangle.mLastX = 0;
+		APPLICATION.mGame.mTriangle.mLastY = 0;
 	},
 
 	move: function(dx,dy)
