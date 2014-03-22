@@ -8,9 +8,6 @@ Extends: Game,
        		this.parent(application);
 		this.setScoreNeeded(1);
 
-		this.mRedTriangleLastMoveX = 0;
-		this.mRedTriangleLastMoveY = 0;
-
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
                 this.mRedCircle = this.mRaphael.circle(100, 300, 50).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: .5});
