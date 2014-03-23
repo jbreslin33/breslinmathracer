@@ -1,5 +1,8 @@
 var Shape = new Class(
 {
+
+Extends: Polygon,	
+
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
         {
                

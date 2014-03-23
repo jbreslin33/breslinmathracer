@@ -14,11 +14,13 @@
 <script type="text/javascript" src="/src/animation/animation.php"></script>
 <script type="text/javascript" src="/src/animation/animation_advanced.php"></script>
 
+<script type="text/javascript" src="/src/polygon/polygon.php"></script>
+
 <script type="text/javascript" src="/src/shape/shape.php"></script>
-<script type="text/javascript" src="/src/shape/question_shape.php"></script>
-<script type="text/javascript" src="/src/shape/shape_player.php"></script>
+<script type="text/javascript" src="/src/polygon/circle.php"></script>
+<script type="text/javascript" src="/src/polygon/triangle.php"></script>
+<script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 <script type="text/javascript" src="/src/shape/shape_ai.php"></script>
-<script type="text/javascript" src="/src/shape/shape_chaser.php"></script>
 <script type="text/javascript" src="/src/shape/shape_victory.php"></script>
 
 <script type="text/javascript" src="/src/div/div.php"></script>
@@ -45,10 +47,6 @@
 <script type="text/javascript" src="/src/widgets/buttonmultiplechoicepadimages.php"></script>
 <script type="text/javascript" src="/src/widgets/buttonmultiplechoicepadspread.php"></script>
 
-<script type="text/javascript" src="/src/polygon/polygon.php"></script>
-<script type="text/javascript" src="/src/polygon/circle.php"></script>
-<script type="text/javascript" src="/src/polygon/triangle.php"></script>
-<script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 
 <script type="text/javascript" src="/src/game/dungeon/dungeon.php"></script>
 
