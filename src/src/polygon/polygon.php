@@ -278,6 +278,14 @@ var Polygon = new Class(
 	/********* VISIBILITY ******************/
 	setVisibility: function(b)
 	{
+		if (b)
+		{
+			this.mPolygon.show();
+		}
+		else
+		{
+			this.mPolygon.hide();
+		}
 	},		
 
 	getVisibility: function()
