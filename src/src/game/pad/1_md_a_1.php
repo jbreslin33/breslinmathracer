@@ -86,18 +86,11 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		t = 50;
-		
-		this.mShapeArray.push(new Rectangle(50,50,475,t,this,this.mRaphael,0,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,575,t,this,this.mRaphael,.3,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,675,t,this,this.mRaphael,.6,1,1,"none",.5,true));
-		
-		this.mShapeArray.push(new Rectangle(50,50,475,t,this,this.mRaphael,0,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,575,t,this,this.mRaphael,.3,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,675,t,this,this.mRaphael,.6,1,1,"none",.5,true));
-		
-		this.mShapeArray.push(new Rectangle(50,50,475,t,this,this.mRaphael,0,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,575,t,this,this.mRaphael,.3,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,675,t,this,this.mRaphael,.6,1,1,"none",.5,true));
+		for (i = 0; i < this.mScoreNeeded; i++)
+		{
+			this.mShapeArray.push(new Rectangle(50,50,475,0,this,this.mRaphael,0,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,575,0,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,675,0,this,this.mRaphael,.6,1,1,"none",.5,true));
+		}
 	}
 });
