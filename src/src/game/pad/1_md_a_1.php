@@ -56,9 +56,9 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,0,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,300,310,this,this.mRaphael,.3,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,410,310,this,this.mRaphael,.6,1,1,"none",.5,true));
+		this.mShapeArray.push(new Rectangle(50,50,475,310,this,this.mRaphael,0,1,1,"none",.5,true));
+                this.mShapeArray.push(new Rectangle(50,50,575,310,this,this.mRaphael,.3,1,1,"none",.5,true));
+                this.mShapeArray.push(new Rectangle(50,50,675,310,this,this.mRaphael,.6,1,1,"none",.5,true));
 		
 		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,0,1,1,"none",.5,true));
                 this.mShapeArray.push(new Rectangle(50,50,300,310,this,this.mRaphael,.3,1,1,"none",.5,true));
