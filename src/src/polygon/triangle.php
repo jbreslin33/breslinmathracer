@@ -1,7 +1,7 @@
 var Triangle = new Class(
 {
 Extends: Polygon,
-        initialize: function (raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op)
+        initialize: function (raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
         {
 		this.parent();
 		this.mRaphael = raphael;
@@ -26,6 +26,13 @@ Extends: Polygon,
 		
 		this.mLastX = 0;
 		this.mLastY = 0;
+
+		this.mDrag = d;
+
+		if (this.mDrag)
+		{
+ 			this.mPolygon.drag(this.move, this.start, this.up);
+		}
 	},
 
 	updateMove: function(dx,dy)
