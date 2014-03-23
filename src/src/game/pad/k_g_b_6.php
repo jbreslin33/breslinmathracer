@@ -10,11 +10,14 @@ Extends: MultipleChoicePad,
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
+	
+        //showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
 
-	update: function()
-	{
-		this.parent();
-	},
+                this.mShapeArray[1].setPosition(100,80);
+        },
 
 	createQuestions: function()
         {
