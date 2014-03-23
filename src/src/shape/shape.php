@@ -5,6 +5,7 @@ Extends: Polygon,
 
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
         {
+		this.parent();
                
 		//game so you can know of your world
 		this.mGame = game;

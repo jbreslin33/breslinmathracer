@@ -5,6 +5,7 @@ Extends: Polygon,
 	
         initialize: function (raphael,x,y,radius,r,g,b,s,op)
         {
+		this.parent();
 		this.mRaphael = raphael;
 		this.x = x;
 		this.y = y;

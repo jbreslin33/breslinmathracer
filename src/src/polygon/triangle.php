@@ -3,6 +3,7 @@ var Triangle = new Class(
 Extends: Polygon,
         initialize: function (raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op)
         {
+		this.parent();
 		this.mRaphael = raphael;
 		this.x1 = x1;
 		this.y1 = y1;
