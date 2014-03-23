@@ -100,6 +100,13 @@ Extends: Polygon,
 		this.mMessage = message;
         },
 
+       	/****** DESTRUCTOR ******************/
+        destructor: function()
+        {
+ 		this.mDiv.mDiv.removeChild(this.mMesh);
+                document.body.removeChild(this.mDiv.mDiv);
+        },
+
 	/****** LOGGING ******************/
         log: function(msg)
         {

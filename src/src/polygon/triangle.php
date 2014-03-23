@@ -35,6 +35,11 @@ Extends: Polygon,
 		}
 	},
 
+	destructor: function()
+	{
+		this.mPolygon.remove();
+	},
+
 	dragMove: function(dx,dy)
 	{
    		var deltaX = dx - this.mLastX;

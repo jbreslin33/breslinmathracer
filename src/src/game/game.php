@@ -214,18 +214,8 @@ var Game = new Class(
 		//shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
-			//old school shape
-			if (this.mShapeArray[i].mDiv)
-			{
-                        	this.mShapeArray[i].mDiv.mDiv.removeChild(this.mShapeArray[i].mMesh);
-                        	document.body.removeChild(this.mShapeArray[i].mDiv.mDiv);
-                		this.mShapeArray[i] = 0;
-			}
-			else //raphael
-			{
-				//remove element from paper(raphael)
-				this.mShapeArray[i].mPolygon.remove();
-			}
+			this.mShapeArray[i].destructor();
+                	this.mShapeArray[i] = 0;
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();

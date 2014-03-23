@@ -14,6 +14,12 @@ var Polygon = new Class(
                 }, 0);
         },
 
+	/****** DESTRUCTOR ******************/
+	destructor: function()
+	{
+		
+	},
+
 	/****** RESETTING ******************/
 	reset: function()
 	{
