@@ -25,14 +25,15 @@ Extends: MultipleChoicePad,
 	createQuestions: function()
         {
 		this.parent();
+		
+		//just the question array reset
+		this.mQuiz.resetQuestionArray();
+		this.mQuiz.resetQuestionPoolArray();
    
 		this.mQuiz.mAnswerPool.push('YES');
                 this.mQuiz.mAnswerPool.push('NO');
-	
-		//just the question array reset
-		this.mQuiz.resetQuestionArray();
 
-		var question = new Question('Can you join the red and green triangles together to form a square?', 'Yes');
+		var question = new Question('Can you join the red and green triangles together to form a square?', 'YES');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		this.mQuiz.mQuestionArray.push(question);
 	
