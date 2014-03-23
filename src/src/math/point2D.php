@@ -14,15 +14,15 @@ var Point2D = new Class(
         initialize: function(x,y)
         {
 		//coordinates
-		this.mX = x;
-		this.mY = y;
+		this.mX = parseInt(x);
+		this.mY = parseInt(y);
         },
 
 	set: function(x,y)
 	{
         	//set coordinates 
-                this.mX = x;
-		this.mY = y;	
+                this.mX = parseInt(x);
+		this.mY = parseInt(y);	
 	}
 
 });
