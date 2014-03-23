@@ -1,37 +1,24 @@
 var Rectangle = new Class(
 {
 
-Extends: Polygon,
+Extends: RaphaelPolygon,
 
         initialize: function (raphael,x,y,w,h,r,g,b,s,op,d)
         {
-		this.parent();
-		this.mRaphael = raphael;
+		this.parent(raphael,r,g,b,s,op,d);
 		this.x = x;
 		this.y = y;
 		this.w = w;
 		this.h = h;
 		
-		this.mRed = r;
-		this.mGreen = g;
-		this.mBlue = b;
-		this.mStroke = s;
-		this.mOpacity = op;
-
  		this.mPolygon = this.mRaphael.rect(this.x, this.y, this.w, this.h).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
 		this.mPolygon.mPolygon = this;
 	
-		this.mLastX = 0;
-		this.mLastY = 0;
-
-               	this.mDrag = d;
-
                 if (this.mDrag)
                 {
                         this.mPolygon.drag(this.move, this.start, this.up);
                 }
-
 	},
 
 	dragMove: function(dx,dy)
@@ -46,25 +33,5 @@ Extends: Polygon,
 
                 this.mLastX = dx;
                 this.mLastY = dy;
-	},
-	
-	resetLast: function()
-	{
-                this.mLastX = 0;
-                this.mLastY = 0;
-	},
-
-        start: function()
-        {
-		this.mPolygon.resetLast();
-        },
-        
-	move: function(dx,dy)
-        {
-		this.mPolygon.dragMove(dx,dy);
-        },
-
-        up: function()
-        {
-        }
+	}
 });

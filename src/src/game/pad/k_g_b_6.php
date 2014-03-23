@@ -9,7 +9,6 @@ Extends: MultipleChoicePad,
 		this.setScoreNeeded(2);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
-
 	},
 
 	update: function()

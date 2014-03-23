@@ -1,10 +1,10 @@
 var Triangle = new Class(
 {
-Extends: Polygon,
+Extends: RaphaelPolygon,
         initialize: function (raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
         {
-		this.parent();
-		this.mRaphael = raphael;
+		this.parent(raphael,r,g,b,s,op,d);
+
 		this.x1 = x1;
 		this.y1 = y1;
 		this.x2 = x2;
@@ -12,32 +12,16 @@ Extends: Polygon,
 		this.x3 = x3;
 		this.y3 = y3;
 
-		this.mRed = r;
-		this.mGreen = g;
-		this.mBlue = b;
-		this.mStroke = s;
-		this.mOpacity = op;
-
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
 		
 		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
 		this.mPolygon.mPolygon = this;
-		
-		this.mLastX = 0;
-		this.mLastY = 0;
-
-		this.mDrag = d;
 
 		if (this.mDrag)
 		{
  			this.mPolygon.drag(this.move, this.start, this.up);
 		}
-	},
-
-	destructor: function()
-	{
-		this.mPolygon.remove();
 	},
 
 	dragMove: function(dx,dy)
@@ -57,25 +41,5 @@ Extends: Polygon,
 
                 this.mLastX = dx;
                 this.mLastY = dy;
-	},
-	
-	resetLast: function()
-	{
-                this.mLastX = 0;
-                this.mLastY = 0;
-	},
-
-        start: function()
-        {
-		this.mPolygon.resetLast();
-        },
-        
-	move: function(dx,dy)
-        {
-		this.mPolygon.dragMove(dx,dy);
-        },
-
-        up: function()
-        {
-        }
+	}
 });

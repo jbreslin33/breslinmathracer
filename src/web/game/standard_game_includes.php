@@ -15,6 +15,7 @@
 <script type="text/javascript" src="/src/animation/animation_advanced.php"></script>
 
 <script type="text/javascript" src="/src/polygon/polygon.php"></script>
+<script type="text/javascript" src="/src/polygon/raphael_polygon.php"></script>
 
 <script type="text/javascript" src="/src/shape/shape.php"></script>
 <script type="text/javascript" src="/src/polygon/circle.php"></script>
