@@ -1,9 +1,9 @@
 var Triangle = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
+        initialize: function (width,height,spawnX,spawnY,game,raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
         {
-		this.parent(raphael,r,g,b,s,op,d);
+		this.parent(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d);
 
 		this.x1 = x1;
 		this.y1 = y1;

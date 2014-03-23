@@ -3,9 +3,9 @@ var Rectangle = new Class(
 
 Extends: RaphaelPolygon,
 
-        initialize: function (raphael,x,y,w,h,r,g,b,s,op,d)
+        initialize: function (width,height,spawnX,spawnY,game,raphael,x,y,w,h,r,g,b,s,op,d)
         {
-		this.parent(raphael,r,g,b,s,op,d);
+		this.parent(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d);
 		this.x = x;
 		this.y = y;
 		this.w = w;

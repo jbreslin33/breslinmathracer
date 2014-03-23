@@ -1,9 +1,9 @@
 var RaphaelPolygon = new Class(
 {
 Extends: Polygon,
-        initialize: function (raphael,r,g,b,s,op,d,type)
+        initialize: function (height,width,spawnX,spawnY,game,raphael,r,g,b,s,op,d,type)
         {
-		this.parent();
+		this.parent(height,width,spawnX,spawnY,game);
 		this.mRaphael = raphael;
 		
 		this.mRed = r;
