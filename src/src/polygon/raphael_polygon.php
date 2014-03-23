@@ -27,6 +27,18 @@ Extends: Polygon,
 		this.mPolygon.remove();
 	},
 
+	setVisibility: function(b)
+	{
+             	if (b)
+                {
+                        this.mPolygon.show();
+                }
+                else
+                {
+                        this.mPolygon.hide();
+                }
+	},
+
 	dragMove: function(dx,dy)
 	{
 	

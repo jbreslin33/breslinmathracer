@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(2);
+		this.setScoreNeeded(3);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -34,22 +34,50 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mAnswerPool.push('Blue Red Green');
                 this.mQuiz.mAnswerPool.push('Blue Green Red');
 
-		var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
-		this.mQuiz.mQuestionArray.push(question);
+		for (i = 0; i < this.mScoreNeeded; i++)
+		{
+			var redHeightCode = 0; 
+			var greenHeightCode = 0; 
+			var blueHeightCode = 0; 
+			
+			var redHeight = 0;
+			var greenHeight = 0;
+			var blueHeight = 0;
 
-		this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(100,50);
-		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			while (redHeightCode == greenHeightCode || redHeightCode == blueHeightCode)
+			{ 
+				//get 3 random heights.
+				redHeightCode = Math.floor((Math.random()*6)+1);
+				redHeight = redHeightCode * 50;  
+		
+				greenHeightCode = Math.floor((Math.random()*6)+1);
+				greenHeight = greenHeightCode * 50;  
+		
+				blueHeightCode = Math.floor((Math.random()*6)+1);
+				blueHeight = blueHeightCode * 50;  
+			}
+			
+			var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;
+			this.mQuiz.mQuestionArray.push(question);
+			
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * 3 + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			this.mShapeArray[parseInt(i * 3 + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
 
-		var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * 3 + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			this.mShapeArray[parseInt(i * 3 + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,greenHeight);
+
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * 3 + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			this.mShapeArray[parseInt(i * 3 + 2 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,blueHeight);
+		}
+/*
+			var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
+			question.mAnswerPool = this.mQuiz.mAnswerPool;
 		this.mQuiz.mQuestionArray.push(question);
 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
-	
+*/	
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	},
@@ -62,8 +90,12 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(new Rectangle(50,50,575,310,this,this.mRaphael,.3,1,1,"none",.5,true));
                 this.mShapeArray.push(new Rectangle(50,50,675,310,this,this.mRaphael,.6,1,1,"none",.5,true));
 		
-		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,0,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,300,310,this,this.mRaphael,.3,1,1,"none",.5,true));
-                this.mShapeArray.push(new Rectangle(50,50,410,310,this,this.mRaphael,.3,1,1,"none",.5,true));
+		this.mShapeArray.push(new Rectangle(50,50,475,310,this,this.mRaphael,0,1,1,"none",.5,true));
+                this.mShapeArray.push(new Rectangle(50,50,575,310,this,this.mRaphael,.3,1,1,"none",.5,true));
+                this.mShapeArray.push(new Rectangle(50,50,675,310,this,this.mRaphael,.6,1,1,"none",.5,true));
+		
+		this.mShapeArray.push(new Rectangle(50,50,475,310,this,this.mRaphael,0,1,1,"none",.5,true));
+                this.mShapeArray.push(new Rectangle(50,50,575,310,this,this.mRaphael,.3,1,1,"none",.5,true));
+                this.mShapeArray.push(new Rectangle(50,50,675,310,this,this.mRaphael,.6,1,1,"none",.5,true));
 	}
 });
