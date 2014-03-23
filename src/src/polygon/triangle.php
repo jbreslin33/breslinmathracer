@@ -1,13 +1,13 @@
 var Triangle = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (width,height,spawnX,spawnY,game,raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
+        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
         {
 		//find center for mPosition...
 		sX = x1 + x2 + x3 / 3;
 		sY = y1 + y2 + y3 / 3;
 
-		this.parent(width,height,sX,sY,game,raphael,r,g,b,s,op,d);
+		this.parent(0,0,sX,sY,game,raphael,r,g,b,s,op,d);
 
 		this.x1 = x1;
 		this.y1 = y1;
