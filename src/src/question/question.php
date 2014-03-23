@@ -28,7 +28,6 @@ var Question = new Class(
 		this.mChoiceD = '';
 
 		this.mShapeArray   = new Array();
-		this.mElementArray = new Array();
         },
 
 	setChoice: function(letter,choice)
