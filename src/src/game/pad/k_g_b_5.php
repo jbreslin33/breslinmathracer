@@ -20,10 +20,10 @@ Extends: Game,
 		this.mBlueTriangle    = new Triangle (0,0,200,150,this,this.mRaphael,200,150,250,100,300,150,.6,1,1,"none",.5,true); 
 		this.mPurpleTriangle  = new Triangle (0,0,300,150,this,this.mRaphael,300,150,350,100,400,150,.8,1,1,"none",.5,true); 
 
-		this.mRedCircle    = new Circle   (0,0,100,300,this,this.mRaphael,100,300,25,0,1,1,"none",.5,true); 
-		this.mGreenCircle  = new Circle   (0,0,210,300,this,this.mRaphael,210,300,25,.3,1,1,"none",.5,true); 
-		this.mBlueCircle   = new Circle   (0,0,310,300,this,this.mRaphael,320,300,25,.6,1,1,"none",.5,true); 
-		this.mPurpleCircle = new Circle   (0,0,410,300,this,this.mRaphael,430,300,25,.8,1,1,"none",.5,true); 
+		this.mRedCircle    = new Circle   (25,100,300,this,this.mRaphael,0,1,1,"none",.5,true); 
+		this.mGreenCircle  = new Circle   (25,210,300,this,this.mRaphael,.3,1,1,"none",.5,true); 
+		this.mBlueCircle   = new Circle   (25,310,300,this,this.mRaphael,.6,1,1,"none",.5,true); 
+		this.mPurpleCircle = new Circle   (25,410,300,this,this.mRaphael,.8,1,1,"none",.5,true); 
 	},
 
 	createQuestions: function()
