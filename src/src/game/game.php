@@ -223,8 +223,8 @@ var Game = new Class(
 			}
 			else //raphael
 			{
-
-
+				//remove element from paper(raphael)
+				this.mShapeArray[i].mPolygon.remove();
 			}
                 }
                 this.mShapeArray = 0;
@@ -272,9 +272,6 @@ var Game = new Class(
                 {
                         this.mShapeArray[i].render();
                 }
-
-                //save old positions
-                this.saveOldPositions();
 
 		//state machine
                 this.mStateMachine.update();
@@ -441,19 +438,6 @@ var Game = new Class(
 		{
 		}
 	},
-
-        saveOldPositions: (function()
-        {
-                //save old positions
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        //record old position to use for collisions or whatever you fancy
-                        this.mShapeArray[i].mPositionOld.mX = this.mShapeArray[i].mPosition.mX;
-                        this.mShapeArray[i].mPositionOld.mY = this.mShapeArray[i].mPosition.mY;
-                        this.mShapeArray[i].mPositionRenderOld.mX = this.mShapeArray[i].mPositionRender.mX;
-                        this.mShapeArray[i].mPositionRenderOld.mY = this.mShapeArray[i].mPositionRender.mY;
-                }
-        }).protect(),
 
 	//this is still ineffiecient because it is checking to see if one coin is colliding with another. when neither is moving.	
 	checkForCollisions: (function()
