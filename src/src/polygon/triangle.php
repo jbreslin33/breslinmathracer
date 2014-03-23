@@ -35,7 +35,7 @@ Extends: Polygon,
 		}
 	},
 
-	updateMove: function(dx,dy)
+	dragMove: function(dx,dy)
 	{
    		var deltaX = dx - this.mLastX;
                 var deltaY = dy - this.mLastY;
@@ -67,7 +67,7 @@ Extends: Polygon,
         
 	move: function(dx,dy)
         {
-		this.mPolygon.updateMove(dx,dy);
+		this.mPolygon.dragMove(dx,dy);
         },
 
         up: function()

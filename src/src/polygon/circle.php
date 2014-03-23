@@ -3,7 +3,7 @@ var Circle = new Class(
 
 Extends: Polygon,
 	
-        initialize: function (raphael,x,y,radius,r,g,b,s,op)
+        initialize: function (raphael,x,y,radius,r,g,b,s,op,d)
         {
 		this.parent();
 		this.mRaphael = raphael;
@@ -23,9 +23,16 @@ Extends: Polygon,
 	
 		this.mLastX = 0;
 		this.mLastY = 0;
+
+	        this.mDrag = d;
+
+                if (this.mDrag)
+                {
+                        this.mPolygon.drag(this.move, this.start, this.up);
+                }
 	},
 
-	updateMove: function(dx,dy)
+	dragMove: function(dx,dy)
 	{
    		var deltaX = dx - this.mLastX;
                 var deltaY = dy - this.mLastY;
@@ -53,7 +60,7 @@ Extends: Polygon,
         
 	move: function(dx,dy)
         {
-		this.mPolygon.updateMove(dx,dy);
+		this.mPolygon.dragMove(dx,dy);
         },
 
         up: function()
