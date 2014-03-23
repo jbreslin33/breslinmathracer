@@ -15,8 +15,8 @@ Extends: NumberPad,
                 this.parent();
 
                 //question
-                this.mNumQuestion.setPosition(280,180);
-                this.mNumQuestion.setSize(200,200);
+                this.mNumQuestion.setPosition(295,25);
+                this.mNumQuestion.setSize(125,20);
         },
 
 	//showCorrectAnswer
@@ -111,7 +111,7 @@ Extends: NumberPad,
 	
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			this.mQuiz.mQuestionArray.push(new Question('Count by ' + countBy + ' start at ' + parseInt(startNumber + countBy * i) ,'' + parseInt(startNumber + countBy + countBy * i)));
+			this.mQuiz.mQuestionArray.push(new Question('When counting by ' + countBy + ' what comes after ' + parseInt(startNumber + countBy * i) + '?','' + parseInt(startNumber + countBy + countBy * i)));
 		}
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
