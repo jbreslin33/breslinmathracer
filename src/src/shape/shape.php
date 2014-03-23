@@ -6,16 +6,12 @@ var Shape = new Class(
 		//game so you can know of your world
 		this.mGame = game;
 
-		//outOfViewPort
-		this.mOutOfViewPort = true;
-
 		//animation 
 		this.mAnimation;
 
 		//for the mounter
 		this.mMounteeArray = new Array();
 		this.mMountPointArray = new Array();	
-		this.mStartingMountee = 0;
 
 		//for the mountee
 		this.mMountable = false;
@@ -52,9 +48,6 @@ var Shape = new Class(
 		//background
 		this.mBackgroundColor = backgroundColor;
                 
-		//onclick	
-		this.mOnClick;
-              
                 //create the movable div that will be used to move image around.        
 		this.mDiv = new Div(this);
 
@@ -101,15 +94,9 @@ var Shape = new Class(
        
 		//message ..this can be used for collisions or whatever
 		this.mMessage = message;
-
-		//hide on drop
-		this.mHideOnDrop = false; 
         },
 
-	
-
 	/****** LOGGING ******************/
-
         log: function(msg)
         {
                 setTimeout(function()
@@ -119,7 +106,6 @@ var Shape = new Class(
         },
 
 	/****** RESETTING ******************/
-
 	reset: function()
 	{
 		//set every shape to spawn position
@@ -131,13 +117,9 @@ var Shape = new Class(
                 	this.mCollisionOn = true;
 			this.setVisibility(true);
                 }
-
-                //if you have a starting mountee then mount it. this is an attempt to fix mountee bug
-                this.mount(this.getStartingMountee(),0);
 	},
 
 	/****** COLLISION ******************/
-
 	onCollision: function(col)
 	{
 		this.mPosition.mX = this.mPositionOld.mX;
@@ -168,7 +150,6 @@ var Shape = new Class(
         },
 
 	/****** MOUNTING ******************/
-
 	createMountPoint: function(slot,x,y)
 	{
 		this.mMountPointArray[slot] = new Point2D();
@@ -185,16 +166,6 @@ var Shape = new Class(
         	}
 	},	
 
-	setStartingMountee: function(mountee)
-	{
-		this.mStartingMountee = mountee;
-	},
-
-	getStartingMountee: function()
-	{
-		return this.mStartingMountee;
-	},
-	
 	mount: function(mountee,slot)
 	{
                 if (mountee.mMountable)
@@ -254,7 +225,6 @@ var Shape = new Class(
 	},
 
 	/************ UPDATE ****************/
-
 	update: function(delta)
 	{
 		//IF YOU ARE MOUNTED TURN OFF COLLISION
@@ -286,7 +256,6 @@ var Shape = new Class(
 	},
  
 	/********* VELOCITY ******************/
-
 	updateVelocity: function(delta)
 	{
                 //update Velocity
@@ -295,7 +264,6 @@ var Shape = new Class(
 	},
 	
 	/********* POSITION ******************/
-
 	updatePosition: function()
 	{
                 //update position
@@ -331,7 +299,6 @@ var Shape = new Class(
 	},
 
 	/********* ANIMATION ******************/
-
 	updateAnimation: function()
 	{
 		if (this.mAnimation)
@@ -341,7 +308,6 @@ var Shape = new Class(
 	},
 
 	/********* IMAGES ******************/
-
 	setSrc: function(src)
 	{
                 //create clientImage
@@ -366,7 +332,6 @@ var Shape = new Class(
 	},
 
 	/********* TIMEOUT ******************/
-
 	setTimeoutShape: function(shape)
 	{
 		this.mTimeoutShape = shape;		
@@ -379,7 +344,6 @@ var Shape = new Class(
 
 
 	/********* VISIBILITY ******************/
-
 	setVisibility: function(b)
 	{
 		if (b)
@@ -416,18 +380,7 @@ var Shape = new Class(
 		}
 	},
 
-	setHideOnDrop: function(b)
-	{
-		this.mHideOnDrop = b;
-	},
-
-	getHideOnDrop: function()
-	{
-		return this.mHideOnDrop;
-	},
-
 	/********* TEXT ******************/
-
 	setText: function(t)
 	{
 		if (this.mMesh.innerHTML != t)
@@ -440,14 +393,12 @@ var Shape = new Class(
 	},
 
 	/********* MESSAGE ******************/
-
 	setMessage: function(message)
 	{
 		this.mMessage = message;
 	},
 
 	/********* COLOR ******************/
-
 	setBackgroundColor: function(c)
 	{
 		this.mBackgroundColor = c;
@@ -455,7 +406,6 @@ var Shape = new Class(
 	},
 
 	/*********** RENDER *************/
-	
 	render: function()
 	{
         	//center image relative to position set it to mPositionRender
@@ -474,5 +424,4 @@ var Shape = new Class(
 			this.mDiv.mDiv.style.top = mody;
 		}
 	}
-
  }); 
