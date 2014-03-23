@@ -15,7 +15,7 @@ Extends: NumberPad,
                 this.parent();
 
                 //question
-                this.mNumQuestion.setPosition(140,140);
+                this.mNumQuestion.setPosition(280,180);
                 this.mNumQuestion.setSize(200,200);
         },
 
@@ -111,7 +111,7 @@ Extends: NumberPad,
 	
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			this.mQuiz.mQuestionArray.push(new Question('Count by ' + countBy + ':      ' + parseInt(startNumber + countBy * i) ,'' + parseInt(startNumber + countBy + countBy * i)));
+			this.mQuiz.mQuestionArray.push(new Question('Count by ' + countBy + ' start at ' + parseInt(startNumber + countBy * i) ,'' + parseInt(startNumber + countBy + countBy * i)));
 		}
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
