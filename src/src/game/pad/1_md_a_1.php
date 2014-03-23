@@ -68,15 +68,9 @@ Extends: MultipleChoicePad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * 3 + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			this.mShapeArray[parseInt(i * 3 + 2 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,blueHeight);
 		}
-/*
-			var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
-			question.mAnswerPool = this.mQuiz.mAnswerPool;
-		this.mQuiz.mQuestionArray.push(question);
-		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
-		question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
-*/	
-               	//buffer
+               	
+
+		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	},
 
@@ -86,9 +80,9 @@ Extends: MultipleChoicePad,
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			this.mShapeArray.push(new Rectangle(50,50,475,0,this,this.mRaphael,0,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,575,0,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,675,0,this,this.mRaphael,.6,1,1,"none",.5,true));
+			this.mShapeArray.push(new Rectangle(50,50,475,50,this,this.mRaphael,0,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,575,50,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,675,50,this,this.mRaphael,.6,1,1,"none",.5,true));
 		}
 	}
 });
