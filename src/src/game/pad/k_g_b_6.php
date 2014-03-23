@@ -13,7 +13,7 @@ Extends: MultipleChoicePad,
 		this.mRedTriangle     = new Triangle (this.mRaphael,0,150,0,100,50,100,0,1,1,"none",.5); 
 		this.mGreenTriangle   = new Triangle (this.mRaphael,100,150,150,100,150,150,.3,1,1,"none",.5); 
 
-		this.mRedTriangle.mPolygon.hide();
+	//	this.mRedTriangle.mPolygon.hide();
 
 		this.mRaphael.set(this.mRedTriangle.mPolygon).drag(this.mRedTriangle.move, this.mRedTriangle.start, this.mRedTriangle.up);                
 		this.mRaphael.set(this.mGreenTriangle.mPolygon).drag(this.mGreenTriangle.move, this.mGreenTriangle.start, this.mGreenTriangle.up);                
