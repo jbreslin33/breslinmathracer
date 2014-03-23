@@ -24,6 +24,7 @@ Extends: Game,
 		this.mGreenCircle  = new Circle   (25,210,300,this,this.mRaphael,.3,1,1,"none",.5,true); 
 		this.mBlueCircle   = new Circle   (25,310,300,this,this.mRaphael,.6,1,1,"none",.5,true); 
 		this.mPurpleCircle = new Circle   (25,410,300,this,this.mRaphael,.8,1,1,"none",.5,true); 
+
 	},
 
 	createQuestions: function()

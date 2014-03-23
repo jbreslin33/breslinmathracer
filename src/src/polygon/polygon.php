@@ -26,8 +26,8 @@ var Polygon = new Class(
                 this.mKey = new Point2D(0,0);
   
                 //collision on or off
-                this.mCollidable = true;
-                this.mCollisionOn = true;
+                this.mCollidable = false;
+                this.mCollisionOn = false;
 
                 //collisionDistance
                 this.mCollisionDistance = this.mWidth * 6.5;
