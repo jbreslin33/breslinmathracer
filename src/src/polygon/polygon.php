@@ -1,8 +1,49 @@
 var Polygon = new Class(
 {
-        initialize: function()
+        initialize: function(width,height,spawnX,spawnY,game)
         {
-               
+  		//game so you can know of your world
+                this.mGame = game;
+
+	        //size
+                this.mWidth = width;
+                this.mHeight = height;
+
+                //position
+                this.mPosition      = new Point2D(spawnX,spawnY);
+                this.mPositionOld   = new Point2D(spawnX,spawnY);
+                this.mPositionSpawn = new Point2D(spawnX,spawnY);
+                this.mPositionRender = new Point2D(spawnX,spawnY);
+                this.mPositionRenderOld = new Point2D(spawnX,spawnY);
+
+                //velocity
+                this.mVelocity = new Point2D(0,0);
+
+                //speed
+                this.mSpeed = .1;
+
+                //keys
+                this.mKey = new Point2D(0,0);
+  
+                //collision on or off
+                this.mCollidable = true;
+                this.mCollisionOn = true;
+
+                //collisionDistance
+                this.mCollisionDistance = this.mWidth * 6.5;
+
+                //for the mounter
+                this.mMounteeArray = new Array();
+                this.mMountPointArray = new Array();
+
+                //for the mountee
+                this.mMountable = false;
+                this.mMounter = 0;
+                this.mMountPoint = 0;
+
+                //timeouts
+                this.mTimeoutShape;
+                this.mTimeoutCounter = 0;
         },
 
 	/****** LOGGING ******************/

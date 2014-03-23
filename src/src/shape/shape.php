@@ -5,62 +5,19 @@ Extends: Polygon,
 
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
         {
-		this.parent();
+		this.parent(width,height,spawnX,spawnY,game,message);
                
-		//game so you can know of your world
-		this.mGame = game;
-
 		//animation 
 		this.mAnimation;
 
-		//for the mounter
-		this.mMounteeArray = new Array();
-		this.mMountPointArray = new Array();	
-
-		//for the mountee
-		this.mMountable = false;
-		this.mMounter = 0;
-		this.mMountPoint = 0;
-	
-		//timeouts	
-		this.mTimeoutShape;
-		this.mTimeoutCounter = 0;
-
-		//speed
-		this.mSpeed = .1;
-		
 		//src 
 		this.mSrc = src;
                
-		//size 
-		this.mWidth = width;
-                this.mHeight = height;
-
-		//position
-		this.mPosition      = new Point2D(spawnX,spawnY);
-		this.mPositionOld   = new Point2D(spawnX,spawnY);
-		this.mPositionSpawn = new Point2D(spawnX,spawnY);
-		this.mPositionRender = new Point2D(spawnX,spawnY);
-		this.mPositionRenderOld = new Point2D(spawnX,spawnY);
-
-		//velocity 
-		this.mVelocity = new Point2D(0,0);
-                
-		//keys
-		this.mKey = new Point2D(0,0);
-                
 		//background
 		this.mBackgroundColor = backgroundColor;
                 
                 //create the movable div that will be used to move image around.        
 		this.mDiv = new Div(this);
-
-		//collision on or off
-		this.mCollidable = true;
-		this.mCollisionOn = true;
-
-                //collisionDistance
-                this.mCollisionDistance = this.mWidth * 6.5;
 
                 this.mMesh;
         
@@ -95,9 +52,6 @@ Extends: Polygon,
 		
                 //back to div   
                 this.mDiv.mDiv.appendChild(this.mMesh);
-       
-		//message ..this can be used for collisions or whatever
-		this.mMessage = message;
         },
 
        	/****** DESTRUCTOR ******************/
@@ -105,15 +59,6 @@ Extends: Polygon,
         {
  		this.mDiv.mDiv.removeChild(this.mMesh);
                 document.body.removeChild(this.mDiv.mDiv);
-        },
-
-	/****** LOGGING ******************/
-        log: function(msg)
-        {
-                setTimeout(function()
-                {
-                        throw new Error(msg);
-                }, 0);
         },
 
 	/****** RESETTING ******************/
@@ -401,12 +346,6 @@ Extends: Polygon,
 				this.mMesh.innerHTML = t;
 			}
 		}
-	},
-
-	/********* MESSAGE ******************/
-	setMessage: function(message)
-	{
-		this.mMessage = message;
 	},
 
 	/********* COLOR ******************/
