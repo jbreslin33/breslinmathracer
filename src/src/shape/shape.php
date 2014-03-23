@@ -61,199 +61,6 @@ Extends: Polygon,
                 document.body.removeChild(this.mDiv.mDiv);
         },
 
-	/****** RESETTING ******************/
-	reset: function()
-	{
-		//set every shape to spawn position
-                this.mPosition.mX = this.mPositionSpawn.mX;
-                this.mPosition.mY = this.mPositionSpawn.mY;
-
-		if (this.mCollidable == true)
-                {
-                	this.mCollisionOn = true;
-			this.setVisibility(true);
-                }
-	},
-
-	/****** COLLISION ******************/
-	onCollision: function(col)
-	{
-		this.mPosition.mX = this.mPositionOld.mX;
-                this.mPosition.mY = this.mPositionOld.mY;
-
-		//try to mount
-		this.mount(col,0);
-	},
-
-	checkForOutOfBounds: function()
-	{
-                if (this.mPosition.mY < this.mGame.mBounds.mNorth)
-                {
-                        this.mPosition.mY = this.mGame.mBounds.mNorth;
-                }
-                if (this.mPosition.mX > this.mGame.mBounds.mEast)
-                {
-                        this.mPosition.mX = this.mGame.mBounds.mEast;
-                }
-                if (this.mPosition.mY > this.mGame.mBounds.mSouth)
-                {
-                        this.mPosition.mY = this.mGame.mBounds.mSouth;
-                }
-                if (this.mPosition.mX < this.mGame.mBounds.mWest)
-                {
-                        this.mPosition.mX = this.mGame.mBounds.mWest;
-                }
-        },
-
-	/****** MOUNTING ******************/
-	createMountPoint: function(slot,x,y)
-	{
-		this.mMountPointArray[slot] = new Point2D();
-
-		if (navigator.appName == "Microsoft Internet Explorer" || navigator.appName == "Opera")
-        	{
-			this.mMountPointArray[slot].mX = x;
-			this.mMountPointArray[slot].mY = y;
-        	}
-        	else
-       	 	{
-			this.mMountPointArray[slot].mX = x;
-			this.mMountPointArray[slot].mY = y - 17;
-        	}
-	},	
-
-	mount: function(mountee,slot)
-	{
-                if (mountee.mMountable)
-                {
-                        if (this.mMountPointArray[0])
-                        {
-                                if (this.mMounteeArray[0])
-                                {
-                                        this.unMount(0);
-                                }
-
-        			if (mountee != this.getTimeoutShape())
-                		{
-                			//first unmount  if you have something
-                        		if (this.mMounteeArray[slot])
-                        		{
-                        			this.unMount(0);
-                        		}
-                        
-					//then mount
-					this.mMounteeArray[slot] = mountee;
-					this.mMounteeArray[slot].mountedBy(this,slot);
-                		}
-			}
-		}
-	},
-
-	mountedBy: function(mounter,slot)
-	{
-		this.mCollisionOn = false;
-		this.mMounter = mounter;
-		this.mMountPoint = slot;
-	},
-
-	unMount: function(slot)
-	{
-		this.mMounteeArray[slot].setTimeoutShape(this);
-
-		if (this.mMounteeArray[slot].mCollidable)
-		{
-			this.mMounteeArray[slot].mCollisionOn = true;
-		}
-
-		if (this.mMounteeArray[slot].getHideOnDrop())
-		{
-			this.mMounteeArray[slot].mCollision = false;
-			this.mMounteeArray[slot].setVisibility(false);
-		}
-
-		this.mMounteeArray[slot].mMounter = 0;
-		this.mMounteeArray[slot] = 0;	
-	},
-
-	setMountable: function(b)
-	{
-		this.mMountable = b;
-	},
-
-	/************ UPDATE ****************/
-	update: function(delta)
-	{
-		//IF YOU ARE MOUNTED TURN OFF COLLISION
-		if (this.mMounter)
-		{
-			this.mCollisionOn = false;
-		}
-
-		//IF YOU HAVE TIMED OUT ANOTHER SHAPE.... 
-		if (this.mTimeoutShape)
-		{
-			this.mTimeoutCounter++;
-			if (this.mTimeoutCounter > 50)
-			{
-				this.mTimeoutShape = 0;
-				this.mTimeoutCounter = 0;	
-			}
-		}
-
-		this.updateVelocity(delta);
-		this.updatePosition();
-		this.updateAnimation();
-
-		//IF YOU ARE NOT MOUNTED BY SOMETHING THEN CHECK FOR OUT OF BOUNDS
-		if (this.mMounter == 0)
-		{	
-			this.checkForOutOfBounds();
-		}
-	},
- 
-	/********* VELOCITY ******************/
-	updateVelocity: function(delta)
-	{
-                //update Velocity
-                this.mVelocity.mX = this.mKey.mX * delta * this.mSpeed;
-                this.mVelocity.mY = this.mKey.mY * delta * this.mSpeed;
-	},
-	
-	/********* POSITION ******************/
-	updatePosition: function()
-	{
-                //update position
-                this.mPosition.mX += this.mVelocity.mX;
-                this.mPosition.mY += this.mVelocity.mY;
-              
-		//if you have a mounter then move with the mounter with offset
-		if (this.mMounter)
-		{
-			//set this shape to position of it's mounter
-			this.mPosition.mX = this.mMounter.mPosition.mX;
-			this.mPosition.mY = this.mMounter.mPosition.mY;
-
-			//offset
-			this.mPosition.mX += this.mMounter.mMountPointArray[this.mMountPoint].mX;
-			this.mPosition.mY += this.mMounter.mMountPointArray[this.mMountPoint].mY;
-		} 
-	},
-
-	setPosition: function(x,y)
-	{
-		this.mPosition.mX = x;
-		this.mPosition.mY = y;
-	},
-	
-	setSize: function(w,h)
-	{
-		//size 
-		this.mWidth = w;
-                this.mHeight = h;
-                this.mMesh.style.width = this.mWidth+'px'; 
-                this.mMesh.style.height = this.mHeight+'px'; 
-	},
-
 	/********* ANIMATION ******************/
 	updateAnimation: function()
 	{
@@ -287,54 +94,42 @@ Extends: Polygon,
 		}
 	},
 
-	/********* TIMEOUT ******************/
-	setTimeoutShape: function(shape)
-	{
-		this.mTimeoutShape = shape;		
-	},
+      	/********* VISIBILITY ******************/
+        setVisibility: function(b)
+        {
+                if (b)
+                {
+                        if (this.mDiv.mDiv.style.visibility != 'visible')
+                        {
+                                this.mDiv.mDiv.style.visibility = 'visible';
+                        }
+                }
+                else
+                {
+                        if (this.mDiv.mDiv.style.visibility != 'hidden')
+                        {
+                                this.mDiv.mDiv.style.visibility = 'hidden';
+                        }
+                }
 
-	getTimeoutShape: function()
-	{
-		return this.mTimeoutShape;		
-	},
+                //how about your mounted shapes
+                if (this.mMounteeArray[0])
+                {
+                        this.mMounteeArray[0].setVisibility(b);
+                }
+        },
 
-
-	/********* VISIBILITY ******************/
-	setVisibility: function(b)
-	{
-		if (b)
-		{
-			if (this.mDiv.mDiv.style.visibility != 'visible')
-			{
-				this.mDiv.mDiv.style.visibility = 'visible';
-			}
-		}
-		else
-		{
-			if (this.mDiv.mDiv.style.visibility != 'hidden')
-			{
-				this.mDiv.mDiv.style.visibility = 'hidden';
-			}
-		}
-	
-		//how about your mounted shapes	
-		if (this.mMounteeArray[0])
-		{
-			this.mMounteeArray[0].setVisibility(b);
-		}
-	},		
-
-	getVisibility: function()
-	{
-		if (this.mDiv.mDiv.style.visibility == 'visible')
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	},
+        getVisibility: function()
+        {
+                if (this.mDiv.mDiv.style.visibility == 'visible')
+                {
+                        return true;
+                }
+                else
+                {
+                        return false;
+                }
+        },
 
 	/********* TEXT ******************/
 	setText: function(t)
