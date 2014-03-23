@@ -29,5 +29,11 @@ Extends: RaphaelPolygon,
 
                 this.mLastX = dx;
                 this.mLastY = dy;
+	},
+
+	setSize: function(w,h)
+	{
+		this.mPolygon.attr({width: w, height: h});
 	}
+
 });

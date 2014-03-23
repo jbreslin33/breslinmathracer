@@ -37,6 +37,8 @@ Extends: MultipleChoicePad,
 		var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
 		question.mAnswerPool = this.mQuiz.mAnswerPool;
 		this.mQuiz.mQuestionArray.push(question);
+
+		this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(100,50);
 		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
@@ -55,7 +57,7 @@ Extends: MultipleChoicePad,
 	createWorld: function()
 	{
 		this.parent();
-		
+
 		this.mShapeArray.push(new Rectangle(50,50,475,310,this,this.mRaphael,0,1,1,"none",.5,true));
                 this.mShapeArray.push(new Rectangle(50,50,575,310,this,this.mRaphael,.3,1,1,"none",.5,true));
                 this.mShapeArray.push(new Rectangle(50,50,675,310,this,this.mRaphael,.6,1,1,"none",.5,true));

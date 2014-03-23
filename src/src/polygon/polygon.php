@@ -247,11 +247,8 @@ var Polygon = new Class(
 
         setSize: function(w,h)
         {
-                //size
-                this.mWidth = w;
-                this.mHeight = h;
-                this.mMesh.style.width = this.mWidth+'px';
-                this.mMesh.style.height = this.mHeight+'px';
+	
+
         },
 
 	/********* ANIMATION ******************/
