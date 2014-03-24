@@ -37,7 +37,7 @@ Extends: NumberPad,
 			var redHeightCode = Math.floor((Math.random()*6)+1);
 			var redHeight = parseInt(redHeightCode * 50);  
 					
-			var question = new Question('What is then length of the red shape in green blocks?', redHeightCode);
+			var question = new Question('What is the length of the red shape in green blocks?', redHeightCode);
 			this.mQuiz.mQuestionArray.push(question);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);

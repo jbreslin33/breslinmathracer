@@ -851,7 +851,7 @@ var Application = new Class(
                                	this.mGame = new g2_nbt_b_8(APPLICATION);
 			}	
 		}
-		if (this.mRef_id == '6B0AB3E999084B1B8FE700DD665EF86C')
+		if (this.mRef_id == '2.md.a.1')
 		{ 
              		if (this.mGameName != "g2_md_a_1")
                        	{
