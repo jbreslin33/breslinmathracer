@@ -63,7 +63,7 @@ Extends: MultipleChoicePad,
 					question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
 					this.log('rgb');
 				}
-                                else (blueHeightCode > greenHeightCode)
+                                else if (blueHeightCode > greenHeightCode)
                                 {
                                         question = new Question('Order shapes by length from shortest to longest.', 'Red Blue Green');
 					this.log('rbg');
