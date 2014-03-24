@@ -26,6 +26,11 @@ Extends: Polygon,
 	{
 		this.mPolygon.remove();
 	},
+	
+	checkForOutOfBounds: function()
+	{
+
+	},
 
 	setVisibility: function(b)
 	{
