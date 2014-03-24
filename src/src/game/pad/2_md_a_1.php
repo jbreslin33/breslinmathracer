@@ -9,8 +9,7 @@ Extends: NumberPad,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 		
 		//width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d
-		this.mRuler = new Ruler(50,50,75,200,this,this.mRaphael,.3,1,1,"none",.5,true);
-
+		this.mRuler = new Ruler(50,300,75,200,this,this.mRaphael,.3,1,1,"none",.5,true);
 	},
        
 	createNumQuestion: function()
@@ -75,8 +74,6 @@ Extends: NumberPad,
                 	this.mShapeArray.push(new Rectangle(50,50,475,200,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,525,200,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,575,200,this,this.mRaphael,.3,1,1,"none",.5,true));
-			
-
 		}
 	}
 });
