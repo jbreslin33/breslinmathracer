@@ -42,7 +42,7 @@ Extends: MultipleChoicePad,
 			var greenHeight = 0;
 			var blueHeight = 0;
 
-			while (redHeightCode == greenHeightCode || redHeightCode == blueHeightCode)
+			while (redHeightCode == greenHeightCode || redHeightCode == blueHeightCode || blueHeightCode == greenHeightCode)
 			{ 
 				//get 3 random heights.
 				redHeightCode = Math.floor((Math.random()*6)+1);
@@ -54,8 +54,49 @@ Extends: MultipleChoicePad,
 				blueHeightCode = Math.floor((Math.random()*6)+1);
 				blueHeight = blueHeightCode * 50;  
 			}
-			
-			var question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
+		//rgb	
+			var question = 0;
+			if (redHeightCode > greenHeightCode && redHeightCode > blueHeightCode)
+			{
+				if (greenHeightCode > blueHeightCode)
+				{
+					question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
+					this.log('rgb');
+				}
+                                else (blueHeightCode > greenHeightCode)
+                                {
+                                        question = new Question('Order shapes by length from shortest to longest.', 'Red Blue Green');
+					this.log('rbg');
+                                }
+                        }
+			else if (greenHeightCode > redHeightCode && greenHeightCode > blueHeightCode)
+			{
+				if (redHeightCode > blueHeightCode)
+				{
+                        		question = new Question('Order shapes by length from shortest to longest.', 'Green Red Blue');
+					this.log('grb');
+				}
+				else if (blueHeightCode > redHeightCode)
+				{
+                        		question = new Question('Order shapes by length from shortest to longest.', 'Green Blue Red');
+					this.log('gbr');
+				}
+			}
+			else if (blueHeightCode > redHeightCode && blueHeightCode > greenHeightCode)
+			{
+				if (redHeightCode > greenHeightCode)
+				{
+                        		question = new Question('Order shapes by length from shortest to longest.', 'Blue Red Green');
+					this.log('brg');
+				}
+				else if (greenHeightCode > redHeightCode)
+				{
+                        		question = new Question('Order shapes by length from shortest to longest.', 'Blue Green Red');
+					this.log('bgr');
+				}
+			}	
+
+			this.log('makequestion');
 			question.mAnswerPool = this.mQuiz.mAnswerPool;
 			this.mQuiz.mQuestionArray.push(question);
 			
