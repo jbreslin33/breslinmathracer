@@ -656,6 +656,19 @@ var Application = new Class(
                                	this.mGame = new g1_md_a_1(APPLICATION);
 			}
                 }
+		if (this.mRef_id == '1.md.a.2')
+		{ 
+             		if (this.mGameName != "g1_md_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g1_md_a_2";
+                               	this.mGame = new g1_md_a_2(APPLICATION);
+			}
+                }
 		if (this.mRef_id == '87CBA4CAA0F6481DA4CE599F6B368E13')
 		{ 
              		if (this.mGameName != "g1_md_b_3")
