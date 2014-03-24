@@ -284,7 +284,6 @@ Extends: MultipleChoicePad,
 			this.mQuiz.mAnswerPool.push('9 + 1');
 			this.mQuiz.mAnswerPool.push('6 + 1');
 			this.mQuiz.mAnswerPool.push('7 + 1');
-			this.mQuiz.mAnswerPool.push('7 + 2');
 			this.mQuiz.mAnswerPool.push('3 + 2');
 			this.mQuiz.mAnswerPool.push('5 + 3');
 
