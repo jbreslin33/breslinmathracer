@@ -15,8 +15,8 @@ Extends: NumberPad,
                 this.parent();
 
                 //question
-                this.mNumQuestion.setPosition(140,140);
-                this.mNumQuestion.setSize(200,200);
+                this.mNumQuestion.setPosition(295,25);
+                this.mNumQuestion.setSize(125,20);
         },
 
 	//showCorrectAnswer
