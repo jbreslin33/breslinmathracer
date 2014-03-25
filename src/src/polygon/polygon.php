@@ -248,7 +248,6 @@ var Polygon = new Class(
         setSize: function(w,h)
         {
 	
-
         },
 
 	/********* ANIMATION ******************/

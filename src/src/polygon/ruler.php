@@ -17,6 +17,7 @@ Extends: RaphaelPolygon,
                 }
 	
  		this.mRectangleA = new Rectangle(50,50,75,200,this,this.mRaphael,.6,1,1,"none",.1,true);
+ 		this.createMountPoint(0,0,0);
 		this.mount(this.mRectangleA,0);
 	},
 
