@@ -34,6 +34,24 @@ Extends: RaphaelPolygon,
 	setSize: function(w,h)
 	{
 		this.mPolygon.attr({width: w, height: h});
-	}
+	},
+
+        /*********** RENDER *************/
+        render: function()
+        {
+		/*
+		//center image relative to position set it to mPositionRender
+                this.mPositionRender.mX = this.mPosition.mX - (this.mWidth / 2);
+                this.mPositionRender.mY = this.mPosition.mY - (this.mHeight / 2);
+
+                //check for new values if so change render of div
+                modx = this.mPositionRender.mX+'px';    
+                this.mDiv.mDiv.style.left = modx; 
+                        
+                mody = this.mPositionRender.mY+'px';
+                this.mDiv.mDiv.style.top = mody; 
+		*/
+        }
+
 
 });

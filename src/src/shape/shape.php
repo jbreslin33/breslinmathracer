@@ -168,15 +168,10 @@ Extends: Polygon,
                	this.mPositionRender.mY = this.mPosition.mY - (this.mHeight / 2);
 
 		//check for new values if so change render of div	
-		if (this.mPositionRenderOld.mX != this.mPositionRender.mX)
-		{
-			modx = this.mPositionRender.mX+'px';	
-			this.mDiv.mDiv.style.left = modx;
-		}	
-		if (this.mPositionRenderOld.mY != this.mPositionRender.mY)
-		{
-			mody = this.mPositionRender.mY+'px';	
-			this.mDiv.mDiv.style.top = mody;
-		}
+		modx = this.mPositionRender.mX+'px';	
+		this.mDiv.mDiv.style.left = modx;
+			
+		mody = this.mPositionRender.mY+'px';	
+		this.mDiv.mDiv.style.top = mody;
 	}
  }); 
