@@ -39,6 +39,8 @@ Extends: RaphaelPolygon,
         /*********** RENDER *************/
         render: function()
         {
+		this.log('x:' + this.mPosition.mX);
+		this.mPolygon.attr({x: this.mPosition.mX, y: this.mPosition.mY});
 		/*
 		//center image relative to position set it to mPositionRender
                 this.mPositionRender.mX = this.mPosition.mX - (this.mWidth / 2);
