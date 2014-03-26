@@ -89,9 +89,18 @@ Extends: NumberPad,
 			//the ruler
 			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
 			ruler.createMountPoint(0,0,17);
+			ruler.createMountPoint(1,0,67);
+			ruler.createMountPoint(2,0,117);
+			ruler.createMountPoint(3,0,167);
+			ruler.createMountPoint(4,0,217);
+			ruler.createMountPoint(5,0,267);
 			this.mShapeArray.push(ruler);
 			ruler.mount(unitA,0);
-			
+			ruler.mount(unitB,1);
+			ruler.mount(unitC,2);
+			ruler.mount(unitD,3);
+			ruler.mount(unitE,4);
+			ruler.mount(unitF,5);
 		}
 	}
 });
