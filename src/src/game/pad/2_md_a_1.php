@@ -98,7 +98,7 @@ Extends: NumberPad,
 
 			//the ruler
 			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
-			ruler.createMountPoint(0,50,30);
+			ruler.createMountPoint(0,30,30);
 			ruler.createMountPoint(1,0,17);
 			ruler.createMountPoint(2,0,67);
 			ruler.createMountPoint(3,0,117);
