@@ -46,6 +46,7 @@ Extends: MultipleChoicePad,
 			}
                         this.mQuiz.mQuestionArray.push(question);
                 }
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	},
 
 	createWorld: function()
@@ -53,27 +54,27 @@ Extends: MultipleChoicePad,
 		this.parent();
 
 		//one
-                this.mShapeArray.push(new Shape(50,50,38,80,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,38,90,this,"/images/bus/kid.png","",""));
 		this.mShapeArray.push(new Shape(50,50,45,45,this,"","",""));
 		this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)].setText('one');
 		
 		//two
-                this.mShapeArray.push(new Shape(50,50,83,80,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,83,90,this,"/images/bus/kid.png","",""));
 		this.mShapeArray.push(new Shape(50,50,93,45,this,"","",""));
 		this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)].setText('two');
 		
 		//three
-                this.mShapeArray.push(new Shape(50,50,135,80,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,135,90,this,"/images/bus/kid.png","",""));
 		this.mShapeArray.push(new Shape(50,50,140,45,this,"","",""));
 		this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)].setText('three');
 	
 		//four
-                this.mShapeArray.push(new Shape(50,50,185,80,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,185,90,this,"/images/bus/kid.png","",""));
 		this.mShapeArray.push(new Shape(50,50,190,45,this,"","",""));
 		this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)].setText('four');
                 
 		//five
-                this.mShapeArray.push(new Shape(50,50,235,80,this,"/images/bus/kid.png","",""));
+                this.mShapeArray.push(new Shape(50,50,235,90,this,"/images/bus/kid.png","",""));
 		this.mShapeArray.push(new Shape(50,50,240,45,this,"","",""));
 		this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)].setText('five');
 		
