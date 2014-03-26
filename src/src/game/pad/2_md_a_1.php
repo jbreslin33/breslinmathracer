@@ -37,7 +37,7 @@ Extends: NumberPad,
 			var redHeightCode = Math.floor((Math.random()*6)+1);
 			var redHeight = parseInt(redHeightCode * 50);  
 					
-			var question = new Question('What is then length of the red shape in green blocks?', redHeightCode);
+			var question = new Question('What is the length of the red shape?', redHeightCode);
 			this.mQuiz.mQuestionArray.push(question);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
@@ -61,22 +61,35 @@ Extends: NumberPad,
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			//red
+			//red item to measure
 			this.mShapeArray.push(new Rectangle(50,50,475,50,this,this.mRaphael,0,1,1,"none",.5,true));
 
-			//greens
-                	this.mShapeArray.push(new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,525,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,575,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,475,200,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	var last = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
-			last.setMountable(true);
+			//greens to make a ruler with
+                	var unitA = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+			this.mShapeArray.push(unitA);
+			unitA.setMountable(true);
+	
+                	var unitB = new Rectangle(50,50,525,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+			this.mShapeArray.push(unitB);
+			unitB.setMountable(true);
 
-			this.mShapeArray.push(last);
+                	var unitC = new Rectangle(50,50,575,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+			this.mShapeArray.push(unitC);
+			unitC.setMountable(true);
+
+                	var unitD = new Rectangle(50,50,475,200,this,this.mRaphael,.3,1,1,"none",.5,true);
+			this.mShapeArray.push(unitD);
+			unitD.setMountable(true);
+
+                	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+			this.mShapeArray.push(unitE);
+			unitE.setMountable(true);
+
+			//the ruler
 			var ruler = new Ruler(50,50,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
 			ruler.createMountPoint(0,0,0);
 			this.mShapeArray.push(ruler);
-			ruler.mount(last,0);
+			ruler.mount(unitA,0);
 			
 		}
 		//this.mRuler = new Ruler(50,300,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);

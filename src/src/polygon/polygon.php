@@ -126,19 +126,19 @@ var Polygon = new Class(
         {
                 if (mountee.mMountable)
                 {
-                        if (this.mMountPointArray[0])
+                        if (this.mMountPointArray[parseInt(slot)])
                         {
-                                if (this.mMounteeArray[0])
+                                if (this.mMounteeArray[parseInt(slot)])
                                 {
-                                        this.unMount(0);
+                                        this.unMount(parseInt(slot));
                                 }
 
                                 if (mountee != this.getTimeoutShape())
                                 {
                                         //first unmount  if you have something
-                                        if (this.mMounteeArray[slot])
+                                        if (this.mMounteeArray[parseInt(slot)])
                                         {
-                                                this.unMount(0);
+                                                this.unMount(parseInt(slot));
                                         }
 
                                         //then mount
@@ -158,21 +158,21 @@ var Polygon = new Class(
 
         unMount: function(slot)
         {
-                this.mMounteeArray[slot].setTimeoutShape(this);
+                this.mMounteeArray[parseInt(slot)].setTimeoutShape(this);
 
-                if (this.mMounteeArray[slot].mCollidable)
+                if (this.mMounteeArray[parseInt(slot)].mCollidable)
                 {
-                        this.mMounteeArray[slot].mCollisionOn = true;
+                        this.mMounteeArray[parseInt(slot)].mCollisionOn = true;
                 }
 
-                if (this.mMounteeArray[slot].getHideOnDrop())
+                if (this.mMounteeArray[parseInt(slot)].getHideOnDrop())
                 {
-                        this.mMounteeArray[slot].mCollision = false;
-                        this.mMounteeArray[slot].setVisibility(false);
+                        this.mMounteeArray[parseInt(slot)].mCollision = false;
+                        this.mMounteeArray[parseInt(slot)].setVisibility(false);
                 }
 
-                this.mMounteeArray[slot].mMounter = 0;
-                this.mMounteeArray[slot] = 0;
+                this.mMounteeArray[parseInt(slot)].mMounter = 0;
+                this.mMounteeArray[parseInt(slot)] = 0;
         },
 
         setMountable: function(b)
