@@ -32,7 +32,7 @@ Extends: NumberPad,
 		this.mQuiz.resetQuestionArray();
 
 		//number of shapes
-		var s = 9;  
+		var s = 13;  
  
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
@@ -54,6 +54,10 @@ Extends: NumberPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 6 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 7 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 8 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 9 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 10 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 11 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 12 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		}
                	
 		//buffer
@@ -86,17 +90,37 @@ Extends: NumberPad,
 			this.mShapeArray.push(unitB);
 			unitB.setMountable(true);
 
+			var textC = new Shape(5,5,245,200,this,"","","");
+			this.mShapeArray.push(textC);
+			textC.setMountable(true);
+			textC.setText('33');
+
                 	var unitC = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
 			this.mShapeArray.push(unitC);
 			unitC.setMountable(true);
+
+			var textD = new Shape(5,5,245,200,this,"","","");
+			this.mShapeArray.push(textD);
+			textD.setMountable(true);
+			textD.setText('33');
 
                 	var unitD = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
 			this.mShapeArray.push(unitD);
 			unitD.setMountable(true);
 
+			var textE = new Shape(5,5,245,200,this,"","","");
+			this.mShapeArray.push(textE);
+			textE.setMountable(true);
+			textE.setText('33');
+
                 	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
 			this.mShapeArray.push(unitE);
 			unitE.setMountable(true);
+			
+			var textF = new Shape(5,5,245,200,this,"","","");
+			this.mShapeArray.push(textF);
+			textF.setMountable(true);
+			textF.setText('33');
 
                 	var unitF = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
 			this.mShapeArray.push(unitF);
@@ -108,19 +132,27 @@ Extends: NumberPad,
 			ruler.createMountPoint(1,0,17);
 			ruler.createMountPoint(2,30,80);
 			ruler.createMountPoint(3,0,67);
-			ruler.createMountPoint(4,0,117);
-			ruler.createMountPoint(5,0,167);
-			ruler.createMountPoint(6,0,217);
-			ruler.createMountPoint(7,0,267);
+			ruler.createMountPoint(4,30,130);
+			ruler.createMountPoint(5,0,117);
+			ruler.createMountPoint(6,30,180);
+			ruler.createMountPoint(7,0,167);
+			ruler.createMountPoint(8,30,230);
+			ruler.createMountPoint(9,0,217);
+			ruler.createMountPoint(10,30,280);
+			ruler.createMountPoint(11,0,267);
 			this.mShapeArray.push(ruler);
 			ruler.mount(textA,0);
 			ruler.mount(unitA,1);
 			ruler.mount(textB,2);
 			ruler.mount(unitB,3);
-			ruler.mount(unitC,4);
-			ruler.mount(unitD,5);
-			ruler.mount(unitE,6);
-			ruler.mount(unitF,7);
+			ruler.mount(textC,4);
+			ruler.mount(unitC,5);
+			ruler.mount(textD,6);
+			ruler.mount(unitD,7);
+			ruler.mount(textE,8);
+			ruler.mount(unitE,9);
+			ruler.mount(textF,10);
+			ruler.mount(unitF,11);
 		}
 	}
 });
