@@ -86,13 +86,11 @@ Extends: NumberPad,
 			unitE.setMountable(true);
 
 			//the ruler
-			var ruler = new Ruler(50,50,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
-			ruler.createMountPoint(0,0,0);
+			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
+			ruler.createMountPoint(0,0,17);
 			this.mShapeArray.push(ruler);
 			ruler.mount(unitA,0);
 			
 		}
-		//this.mRuler = new Ruler(50,300,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
-		//this.mShapeArray.push(this.mRuler);
 	}
 });
