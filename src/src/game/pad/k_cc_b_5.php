@@ -108,7 +108,7 @@ Extends: NumberPad,
                 	this.mShapeArray.push(new Shape(50,50,75,200,this,"/images/bus/kid.png","",""));
                 	this.mShapeArray.push(new Shape(50,50,75,250,this,"/images/bus/kid.png","",""));
 
-			this.mShapeArray[parseInt(this.mTotalGuiBars)].setPosition (150,350);
+			this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)].setPosition (150,350);
                         this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)].setPosition (250,400);
                         this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)].setPosition (200,250);
                         this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)].setPosition (150,150);
