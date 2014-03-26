@@ -36,12 +36,12 @@ Extends: RaphaelPolygon,
 		this.mPolygon.attr({width: w, height: h});
 	},
 
-        /*********** RENDER *************/
+     /*********** RENDER *************/
         render: function()
         {
-		//this.log('x:' + this.mPosition.mX);
-		//this.mPolygon.attr({x: this.mPosition.mX, y: this.mPosition.mY});
+                this.mPolygon.attr({x: this.mPosition.mX, y: this.mPosition.mY});
         }
+
 
 
 });

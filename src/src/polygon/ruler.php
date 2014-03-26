@@ -41,44 +41,10 @@ Extends: RaphaelPolygon,
 		this.mPolygon.attr({width: w, height: h});
 	},
 
-       	/********* VELOCITY ******************/
-        updateVelocity: function(delta)
-        {
-                //update Velocity
-/*
-                this.mVelocity.mX = this.mKey.mX * delta * this.mSpeed;
-                this.mVelocity.mY = this.mKey.mY * delta * this.mSpeed;
-*/
-        },
-
-        /********* POSITION ******************/
-        updatePosition: function()
-        {
-/*
-                //update position
-                this.mPosition.mX += this.mVelocity.mX;
-                this.mPosition.mY += this.mVelocity.mY;
-
-                //if you have a mounter then move with the mounter with offset
-                if (this.mMounter)
-                {
-                        //set this shape to position of it's mounter
-                        this.mPosition.mX = this.mMounter.mPosition.mX;
-                        this.mPosition.mY = this.mMounter.mPosition.mY;
-
-                        //offset
-                        this.mPosition.mX += this.mMounter.mMountPointArray[this.mMountPoint].mX;
-                        this.mPosition.mY += this.mMounter.mMountPointArray[this.mMountPoint].mY;
-                }
-*/
-        },
- 
 	/*********** RENDER *************/
         render: function()
         {
-                this.log('x:' + this.mPosition.mX);
-                this.log('y:' + this.mPosition.mY);
-                //this.mPolygon.attr({x: this.mPosition.mX, y: this.mPosition.mY});
+                this.mPolygon.attr({x: this.mPosition.mX, y: this.mPosition.mY});
         }
 
 });

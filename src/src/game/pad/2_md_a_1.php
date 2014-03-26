@@ -69,10 +69,17 @@ Extends: NumberPad,
                 	this.mShapeArray.push(new Rectangle(50,50,525,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,575,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,475,200,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,525,200,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,575,200,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	var last = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+			last.setMountable(true);
+
+			this.mShapeArray.push(last);
+			var ruler = new Ruler(50,50,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
+			ruler.createMountPoint(0,0,0);
+			this.mShapeArray.push(ruler);
+			ruler.mount(last,0);
+			
 		}
-		this.mRuler = new Ruler(50,300,75,200,this,this.mRaphael,.3,1,1,"none",.5,true);
+		//this.mRuler = new Ruler(50,300,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
 		//this.mShapeArray.push(this.mRuler);
 	}
 });
