@@ -76,7 +76,7 @@ Extends: NumberPad,
 			var textA = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textA);
 			textA.setMountable(true);
-			textA.setText('13');
+			textA.setText('0');
 
                 	var unitA = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
 			this.mShapeArray.push(unitA);
@@ -85,7 +85,7 @@ Extends: NumberPad,
 			var textB = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textB);
 			textB.setMountable(true);
-			textB.setText('23');
+			textB.setText('1');
 
                 	var unitB = new Rectangle(50,50,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
 			this.mShapeArray.push(unitB);
@@ -94,7 +94,7 @@ Extends: NumberPad,
 			var textC = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textC);
 			textC.setMountable(true);
-			textC.setText('33');
+			textC.setText('2');
 
                 	var unitC = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
 			this.mShapeArray.push(unitC);
@@ -103,7 +103,7 @@ Extends: NumberPad,
 			var textD = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textD);
 			textD.setMountable(true);
-			textD.setText('33');
+			textD.setText('3');
 
                 	var unitD = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
 			this.mShapeArray.push(unitD);
@@ -112,7 +112,7 @@ Extends: NumberPad,
 			var textE = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textE);
 			textE.setMountable(true);
-			textE.setText('33');
+			textE.setText('4');
 
                 	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
 			this.mShapeArray.push(unitE);
@@ -121,7 +121,7 @@ Extends: NumberPad,
 			var textF = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textF);
 			textF.setMountable(true);
-			textF.setText('33');
+			textF.setText('5');
 
                 	var unitF = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
 			this.mShapeArray.push(unitF);
@@ -130,7 +130,7 @@ Extends: NumberPad,
 			var textG = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textG);
 			textG.setMountable(true);
-			textG.setText('33');
+			textG.setText('6');
 
 			//the ruler
 			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
