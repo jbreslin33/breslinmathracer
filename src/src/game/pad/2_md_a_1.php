@@ -66,23 +66,23 @@ Extends: NumberPad,
 			this.mShapeArray.push(unitA);
 			unitA.setMountable(true);
 	
-                	var unitB = new Rectangle(50,50,525,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+                	var unitB = new Rectangle(50,50,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
 			this.mShapeArray.push(unitB);
 			unitB.setMountable(true);
 
-                	var unitC = new Rectangle(50,50,575,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+                	var unitC = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
 			this.mShapeArray.push(unitC);
 			unitC.setMountable(true);
 
-                	var unitD = new Rectangle(50,50,475,200,this,this.mRaphael,.3,1,1,"none",.5,true);
+                	var unitD = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
 			this.mShapeArray.push(unitD);
 			unitD.setMountable(true);
 
-                	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+                	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
 			this.mShapeArray.push(unitE);
 			unitE.setMountable(true);
 
-                	var unitF = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+                	var unitF = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
 			this.mShapeArray.push(unitF);
 			unitF.setMountable(true);
 
