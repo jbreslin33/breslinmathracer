@@ -61,9 +61,6 @@ Extends: NumberPad,
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			//red item to measure
-			this.mShapeArray.push(new Rectangle(50,50,475,50,this,this.mRaphael,0,1,1,"none",.5,true));
-
 			//greens to make a ruler with
                 	var unitA = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
 			this.mShapeArray.push(unitA);
@@ -84,6 +81,10 @@ Extends: NumberPad,
                 	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
 			this.mShapeArray.push(unitE);
 			unitE.setMountable(true);
+
+                	var unitF = new Rectangle(50,50,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+			this.mShapeArray.push(unitF);
+			unitF.setMountable(true);
 
 			//the ruler
 			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
