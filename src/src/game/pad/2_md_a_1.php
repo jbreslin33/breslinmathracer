@@ -30,7 +30,10 @@ Extends: NumberPad,
 		
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
-   
+
+		//number of shapes
+		var s = 8;  
+ 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//get random heights.
@@ -40,15 +43,16 @@ Extends: NumberPad,
 			var question = new Question('What is the length of the red shape?', redHeightCode);
 			this.mQuiz.mQuestionArray.push(question);
 			
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			this.mShapeArray[parseInt(i * 7 + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		//	this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
 			
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 3 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 4 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 5 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 7 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		}
                	
 		//buffer
@@ -62,6 +66,12 @@ Extends: NumberPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//greens to make a ruler with
+
+			var textA = new Shape(5,5,245,200,this,"","","");
+			this.mShapeArray.push(textA);
+			textA.setMountable(true);
+			textA.setText('13');
+
                 	var unitA = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
 			this.mShapeArray.push(unitA);
 			unitA.setMountable(true);
@@ -88,19 +98,21 @@ Extends: NumberPad,
 
 			//the ruler
 			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
-			ruler.createMountPoint(0,0,17);
-			ruler.createMountPoint(1,0,67);
-			ruler.createMountPoint(2,0,117);
-			ruler.createMountPoint(3,0,167);
-			ruler.createMountPoint(4,0,217);
-			ruler.createMountPoint(5,0,267);
+			ruler.createMountPoint(0,50,30);
+			ruler.createMountPoint(1,0,17);
+			ruler.createMountPoint(2,0,67);
+			ruler.createMountPoint(3,0,117);
+			ruler.createMountPoint(4,0,167);
+			ruler.createMountPoint(5,0,217);
+			ruler.createMountPoint(6,0,267);
 			this.mShapeArray.push(ruler);
-			ruler.mount(unitA,0);
-			ruler.mount(unitB,1);
-			ruler.mount(unitC,2);
-			ruler.mount(unitD,3);
-			ruler.mount(unitE,4);
-			ruler.mount(unitF,5);
+			ruler.mount(textA,0);
+			ruler.mount(unitA,1);
+			ruler.mount(unitB,2);
+			ruler.mount(unitC,3);
+			ruler.mount(unitD,4);
+			ruler.mount(unitE,5);
+			ruler.mount(unitF,6);
 		}
 	}
 });
