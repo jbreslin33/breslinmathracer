@@ -80,7 +80,7 @@
 <script type="text/javascript" src="/src/game/pad/1_oa_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_d_7.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_oa_d_8.php"></script>
-<script type="text/javascript" src="/src/game/dungeon/1_nbt_a_1.php"></script>
+<script type="text/javascript" src="/src/game/pad/1_nbt_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_nbt_b_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_nbt_b_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/1_nbt_c_4.php"></script>
