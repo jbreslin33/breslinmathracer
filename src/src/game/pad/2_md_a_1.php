@@ -14,7 +14,7 @@ Extends: NumberPad,
                 this.parent();
 
                 //question
-                this.mNumQuestion.setPosition(170,30);
+                this.mNumQuestion.setPosition(310,30);
         },	
 
         showCorrectAnswerEnter: function()
@@ -139,7 +139,7 @@ Extends: NumberPad,
 			this.mShapeArray.push(redRectangle);
 
 			//the ruler
-			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
+			var ruler = new Ruler(50,300,500,50,this,this.mRaphael,.6,1,1,"none",.5,true);
 
 			ruler.createMountPoint(0,30,30);
 			ruler.createMountPoint(1,0,17);
