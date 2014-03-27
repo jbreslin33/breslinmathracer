@@ -40,7 +40,7 @@ Extends: NumberPad,
 			var redHeightCode = Math.floor((Math.random()*6)+1);
 			var redHeight = parseInt(redHeightCode * 50);  
 					
-			var question = new Question('What is the length of the red shape?', redHeightCode);
+			var question = new Question('What is the length of the red shape in inches?', redHeightCode);
 			this.mQuiz.mQuestionArray.push(question);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
@@ -75,10 +75,10 @@ Extends: NumberPad,
 		{
 			//greens to make a ruler with
 
-			var textA = new Shape(5,5,245,200,this,"","","");
+			var textA = new Shape(55,5,350,200,this,"","","");
 			this.mShapeArray.push(textA);
 			textA.setMountable(true);
-			textA.setText('0');
+			textA.setText('0 inch');
 
                 	var unitA = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
 			this.mShapeArray.push(unitA);
@@ -87,7 +87,7 @@ Extends: NumberPad,
 			var textB = new Shape(5,5,245,200,this,"","","");
 			this.mShapeArray.push(textB);
 			textB.setMountable(true);
-			textB.setText('1');
+			textB.setText('1 inch');
 
                 	var unitB = new Rectangle(50,50,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
 			this.mShapeArray.push(unitB);
