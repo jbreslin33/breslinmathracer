@@ -32,7 +32,7 @@ Extends: NumberPad,
 		this.mQuiz.resetQuestionArray();
 
 		//number of shapes
-		var s = 14;  
+		var s = 15;  
  
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
@@ -44,7 +44,6 @@ Extends: NumberPad,
 			this.mQuiz.mQuestionArray.push(question);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
-		//	this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
@@ -59,6 +58,9 @@ Extends: NumberPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 11 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 12 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			this.mShapeArray[parseInt(i * s + 13 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 14 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		
 		}
                	
 		//buffer
@@ -131,9 +133,14 @@ Extends: NumberPad,
 			this.mShapeArray.push(textG);
 			textG.setMountable(true);
 			textG.setText('6');
+                
+			//red shape to measure	
+			var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
+			this.mShapeArray.push(redRectangle);
 
 			//the ruler
 			var ruler = new Ruler(50,300,200,100,this,this.mRaphael,.6,1,1,"none",.5,true);
+
 			ruler.createMountPoint(0,30,30);
 			ruler.createMountPoint(1,0,17);
 			ruler.createMountPoint(2,30,80);
@@ -147,7 +154,9 @@ Extends: NumberPad,
 			ruler.createMountPoint(10,30,280);
 			ruler.createMountPoint(11,0,267);
 			ruler.createMountPoint(12,30,330);
+
 			this.mShapeArray.push(ruler);
+
 			ruler.mount(textA,0);
 			ruler.mount(unitA,1);
 			ruler.mount(textB,2);
