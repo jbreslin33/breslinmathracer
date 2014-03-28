@@ -1,7 +1,7 @@
 var NumberPad = new Class(
 {
 
-Extends: Pad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -61,7 +61,6 @@ Extends: Pad,
 	createWorld: function()
         {
 		this.parent();
-
 		this.createInput();
 	},
         
@@ -76,40 +75,24 @@ Extends: Pad,
 
 	createInput: function()
 	{
-                //question
-                this.createNumQuestion();
+		this.parent();
 
-                //answer
-                this.mNumAnswer = new Shape(100,50,425,100,this,"INPUT","","");
-                this.mNumAnswer.mMesh.value = '';
-                this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
-                this.mShapeArray.push(this.mNumAnswer);
+		this.mNumAnswer.setPosition(400,50);
 
                 //Lock
-                this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
-                this.mNumLock.mMesh.innerHTML = 'Lock';
-                this.mNumLock.mMesh.addEvent('click',this.numPadHit);
-                this.mShapeArray.push(this.mNumLock);
+		this.mNumLock.setVisibility(false);
 
                 //Division
-                this.mNumDivision = new Shape(50,50,350,150,this,"BUTTON","","");
-                this.mNumDivision.mMesh.innerHTML = '/';
-                this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
-                this.mShapeArray.push(this.mNumDivision);
+		this.mNumDivision.setVisibility(false);
 
                 //Multiplication
-                this.mNumMultiplication= new Shape(50,50,400,150,this,"BUTTON","","");
-                this.mNumMultiplication.mMesh.innerHTML = '*';
-                this.mNumMultiplication.mMesh.addEvent('click',this.numPadHit);
-                this.mShapeArray.push(this.mNumMultiplication);
+		this.mNumMultiplication.setVisibility(false);
 
                 //Subtraction
-                this.mNumSubtraction = new Shape(50,50,450,150,this,"BUTTON","","");
-                this.mNumSubtraction.mMesh.innerHTML = '-';
-                this.mNumSubtraction.mMesh.addEvent('click',this.numPadHit);
-                this.mShapeArray.push(this.mNumSubtraction);
+		this.mNumSubtraction.setVisibility(false);
 
                 //7
+/*
                 this.mNumSeven = new Shape(50,50,300,200,this,"BUTTON","","");
                 this.mNumSeven.mMesh.innerHTML = '7';
                 this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
@@ -186,9 +169,10 @@ Extends: Pad,
                 this.mNumEnter.mMesh.innerHTML = 'Enter';
                 this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumEnter);
+*/
+	//	this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
 
-		this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
-
+/*
                 //set all pad shapes invisible to start semi-clean
                 for (i = this.mTotalGuiBars; i < this.mShapeArray.length; i++)
                 {
@@ -196,5 +180,6 @@ Extends: Pad,
                         this.mShapeArray[i].mCollidable = false;
                         this.mShapeArray[i].mCollisionOn = false;
                 }
+*/
         }
 });
