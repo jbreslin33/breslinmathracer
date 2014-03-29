@@ -111,9 +111,6 @@ var Quiz = new Class(
 			
 			this.mQuestionArray[swapElementNumberA] = tempQuestionB;
 			this.mQuestionArray[swapElementNumberB] = tempQuestionA;
-			
-			APPLICATION.log('a:' + swapElementNumberA);
-			APPLICATION.log('b:' + swapElementNumberB);
 		}
 	}
 });

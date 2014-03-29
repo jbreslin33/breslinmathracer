@@ -338,5 +338,6 @@ Extends: NumberPad,
                                 }
                         }
                 }
+  		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
