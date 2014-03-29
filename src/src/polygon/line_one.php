@@ -1,11 +1,11 @@
 var LineOne = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
+        initialize: function (game,raphael,x1,y1,x2,y2,r,g,b,s,op,d)
         {
 		//find center for mPosition...
-		sX = x1 + x2 + x3 / 3;
-		sY = y1 + y2 + y3 / 3;
+		sX = x1 + x2 / 3;
+		sY = y1 + y2 / 3;
 
 		this.parent(0,0,sX,sY,game,raphael,r,g,b,s,op,d);
 
@@ -13,12 +13,10 @@ Extends: RaphaelPolygon,
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
-		this.x3 = x3;
-		this.y3 = y3;
 		
-		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
+		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 		
-		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+		this.mPolygon = this.mRaphael.path("" + this.mPathString);
 
 		this.mPolygon.mPolygon = this;
 
@@ -44,7 +42,7 @@ Extends: RaphaelPolygon,
                 this.x3 += deltaX;
                 this.y3 += deltaY;
 
-                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
+                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
                 this.mPolygon.attr({path:"" + this.mPathString});
 
                 this.mLastX = dx;
