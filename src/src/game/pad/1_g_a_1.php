@@ -64,8 +64,8 @@ Extends: MultipleChoicePad,
 		
 		if (this.mApplication.mLevel < 11)	
 		{
-			this.mShapeArray.push(new LineOne   (this,this.mRaphael,300,300,350,250,.3,1,1,"none",.5,true)); 
-			this.mShapeArray.push(new Triangle   (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true)); 
+			this.mShapeArray.push(new LineOne  (this,this.mRaphael,300,300,350,250,"#0000FF",true)); 
+			this.mShapeArray.push(new Triangle (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true)); 
  			this.mShapeArray.push(new Rectangle(50,50,300,310,this,this.mRaphael,.3,1,1,"none",.5,true));
  			this.mShapeArray.push(new Rectangle(50,50,300,310,this,this.mRaphael,.3,1,1,"none",.5,true));
 		}
