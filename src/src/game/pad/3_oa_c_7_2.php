@@ -51,12 +51,12 @@ Extends: NumberPad,
                                 var randomChance = Math.floor((Math.random()*2));
                                 if (randomChance == 0)
                                 {
-                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel-1)]);
+                                        this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[parseInt(this.mApplication.mLevel)]);
                                         totalNew++;
                                 }
                                 if (randomChance == 1)
                                 {
-                                        var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel-1)));           
+                                        var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel)));           
                                         this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
                                 }
                         }
