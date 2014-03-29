@@ -1,4 +1,4 @@
-var NumberPad = new Class(
+var RulerPad = new Class(
 {
 
 Extends: NumberPad,
