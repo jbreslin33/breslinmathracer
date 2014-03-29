@@ -95,5 +95,25 @@ var Quiz = new Class(
 		{
 			return false;
 		}
+	},
+
+	randomize: function(degree)
+	{
+		var size = this.mQuestionArray.length - 1;
+	
+		for (i=0; i < degree; i++)
+		{
+			var swapElementNumberA = Math.floor((Math.random()*size));
+			var swapElementNumberB = Math.floor((Math.random()*size));
+
+			var tempQuestionA = this.mQuestionArray[swapElementNumberA];	
+			var tempQuestionB = this.mQuestionArray[swapElementNumberB];	
+			
+			this.mQuestionArray[swapElementNumberA] = tempQuestionB;
+			this.mQuestionArray[swapElementNumberB] = tempQuestionA;
+			
+			APPLICATION.log('a:' + swapElementNumberA);
+			APPLICATION.log('b:' + swapElementNumberB);
+		}
 	}
 });

@@ -1,4 +1,4 @@
-var g1_g_a_1 = new Class(
+var g1_g_a_2 = new Class(
 {
 
 Extends: MultipleChoicePad,
@@ -71,7 +71,6 @@ Extends: MultipleChoicePad,
                		//buffer
                 	this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		}
-		this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
