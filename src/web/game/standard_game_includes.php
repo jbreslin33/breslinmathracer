@@ -109,7 +109,15 @@
 <script type="text/javascript" src="/src/game/pad/3_oa_a_4.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_b_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_b_6.php"></script>
-<script type="text/javascript" src="/src/game/pad/3_oa_c_7g.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_2.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_3.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_4.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_5.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_6.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_7.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_8.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_9.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_oa_c_7_10.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_c_7.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_d_8.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
