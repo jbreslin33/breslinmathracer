@@ -28,13 +28,15 @@ Extends: RulerPad,
 			//get random heights.
 			var redHeightCode = Math.floor((Math.random()*5)+1);
 			var redWidthCode  = Math.floor((Math.random()*5)+1);
+			redHeightCode = 5;
+			redWidthCode = 5;
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
 					
 			var question = new Question('What is the Area of the red rectangle in green blocks?', parseInt(redHeightCode * redWidthCode));
 			this.mQuiz.mQuestionArray.push(question);
 		
-			var s = 13;
+			var s = 15;
 	
 			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
 			
@@ -51,6 +53,8 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 10 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 11 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 12 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 14 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			
 		}
                	
@@ -82,6 +86,9 @@ Extends: RulerPad,
                 	this.mShapeArray.push(new Rectangle(50,50,520,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,580,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,640,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	
+			this.mShapeArray.push(new Rectangle(50,50,620,240,this,this.mRaphael,.3,1,1,"none",.5,true));
+			this.mShapeArray.push(new Rectangle(50,50,680,240,this,this.mRaphael,.3,1,1,"none",.5,true));
 		}
 	}
 });
