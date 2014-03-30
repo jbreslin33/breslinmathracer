@@ -95,12 +95,12 @@ Extends: RulerPad,
 
 
                 	this.mShapeArray.push(new Rectangle(50,50,280,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,340,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,400,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,460,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,520,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,580,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,640,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,335,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,390,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,445,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,500,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,555,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,610,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	
 			this.mShapeArray.push(new Rectangle(50,50,620,240,this,this.mRaphael,.3,1,1,"none",.5,true));
 			this.mShapeArray.push(new Rectangle(50,50,620,180,this,this.mRaphael,.3,1,1,"none",.5,true));
