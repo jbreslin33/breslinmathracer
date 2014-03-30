@@ -1,7 +1,7 @@
 var g2_g_a_2 = new Class(
 {
 
-Extends: NumberPad,
+Extends: RulerPad,
 
 	initialize: function(application)
 	{

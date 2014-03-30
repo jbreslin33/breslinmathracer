@@ -1,7 +1,7 @@
 var RulerPad = new Class(
 {
 
-Extends: NumberPad,
+Extends: Pad,
 
 	initialize: function(application)
 	{
@@ -61,6 +61,7 @@ Extends: NumberPad,
 	createWorld: function()
         {
 		this.parent();
+
 		this.createInput();
 	},
         
@@ -75,24 +76,16 @@ Extends: NumberPad,
 
 	createInput: function()
 	{
-		this.parent();
+                //question
+                this.createNumQuestion();
 
-		this.mNumAnswer.setPosition(400,50);
-
-                //Lock
-		this.mNumLock.setVisibility(false);
-
-                //Division
-		this.mNumDivision.setVisibility(false);
-
-                //Multiplication
-		this.mNumMultiplication.setVisibility(false);
-
-                //Subtraction
-		this.mNumSubtraction.setVisibility(false);
+                //answer
+                this.mNumAnswer = new Shape(100,50,425,100,this,"INPUT","","");
+                this.mNumAnswer.mMesh.value = '';
+                this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
+                this.mShapeArray.push(this.mNumAnswer);
 
                 //7
-/*
                 this.mNumSeven = new Shape(50,50,300,200,this,"BUTTON","","");
                 this.mNumSeven.mMesh.innerHTML = '7';
                 this.mNumSeven.mMesh.addEvent('click',this.numPadHit);
@@ -109,12 +102,6 @@ Extends: NumberPad,
                 this.mNumNine.mMesh.innerHTML = '9';
                 this.mNumNine.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumNine);
-
-                //Addition
-                this.mNumAddition = new Shape(50,100,450,225,this,"BUTTON","","");
-                this.mNumAddition.mMesh.innerHTML = '+';
-                this.mNumAddition.mMesh.addEvent('click',this.numPadHit);
-                this.mShapeArray.push(this.mNumAddition);
 
                 //4
                 this.mNumFour = new Shape(50,50,300,250,this,"BUTTON","","");
@@ -169,10 +156,9 @@ Extends: NumberPad,
                 this.mNumEnter.mMesh.innerHTML = 'Enter';
                 this.mNumEnter.mMesh.addEvent('click',this.numPadHit);
                 this.mShapeArray.push(this.mNumEnter);
-*/
-	//	this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
 
-/*
+		this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
+
                 //set all pad shapes invisible to start semi-clean
                 for (i = this.mTotalGuiBars; i < this.mShapeArray.length; i++)
                 {
@@ -180,6 +166,5 @@ Extends: NumberPad,
                         this.mShapeArray[i].mCollidable = false;
                         this.mShapeArray[i].mCollisionOn = false;
                 }
-*/
         }
 });
