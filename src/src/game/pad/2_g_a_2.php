@@ -26,23 +26,31 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//get random heights.
-			var redHeightCode = Math.floor((Math.random()*6)+1);
-			var redWidthCode  = Math.floor((Math.random()*6)+1);
+			var redHeightCode = Math.floor((Math.random()*5)+1);
+			var redWidthCode  = Math.floor((Math.random()*5)+1);
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
 					
 			var question = new Question('What is the Area of the red rectangle in green blocks?', parseInt(redHeightCode * redWidthCode));
 			this.mQuiz.mQuestionArray.push(question);
+		
+			var s = 13;
+	
+			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
 			
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			this.mShapeArray[parseInt(i * 7 + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
-			
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 3 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 4 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 5 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(i * 7 + 6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 7 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 8 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 9 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 10 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 11 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 12 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			
 		}
                	
@@ -57,15 +65,23 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//red
-			this.mShapeArray.push(new Rectangle(50,50,475,50,this,this.mRaphael,0,1,1,"none",.5,true));
+			this.mShapeArray.push(new Rectangle(50,50,350,25,this,this.mRaphael,0,1,1,"none",.5,true));
 
 			//greens
-                	this.mShapeArray.push(new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,525,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,575,300,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,475,200,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,525,200,this,this.mRaphael,.3,1,1,"none",.5,true));
-                	this.mShapeArray.push(new Rectangle(50,50,575,200,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,220,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,220,240,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,220,180,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,220,120,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,220,60,this,this.mRaphael,.3,1,1,"none",.5,true));
+
+
+                	this.mShapeArray.push(new Rectangle(50,50,280,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,340,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,400,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,460,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,520,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,580,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,640,300,this,this.mRaphael,.3,1,1,"none",.5,true));
 		}
 	}
 });
