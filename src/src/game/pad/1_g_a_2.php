@@ -72,7 +72,7 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Triangle   (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true)); 
 		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,.6,1,1,"none",.5,true));
 		
-		this.mShapeArray.push(new Triangle   (this,this.mRaphael,200,300,200,250,250,250,0,1,1,"none",.5,true)); 
+		this.mShapeArray.push(new Triangle   (this,this.mRaphael,200,300,200,250,250,300,0,1,1,"none",.5,true)); 
 		this.mShapeArray.push(new Triangle   (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true)); 
 		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,.6,1,1,"none",.5,true));
 
