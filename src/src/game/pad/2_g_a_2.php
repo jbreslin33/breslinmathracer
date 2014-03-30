@@ -36,7 +36,7 @@ Extends: RulerPad,
 			var question = new Question('What is the Area of the red rectangle in green blocks?', parseInt(redHeightCode * redWidthCode));
 			this.mQuiz.mQuestionArray.push(question);
 		
-			var s = 15;
+			var s = 18;
 	
 			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
 			
@@ -55,6 +55,9 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 12 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 13 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 14 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 15 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 17 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			
 		}
                	
@@ -88,6 +91,13 @@ Extends: RulerPad,
                 	this.mShapeArray.push(new Rectangle(50,50,640,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	
 			this.mShapeArray.push(new Rectangle(50,50,620,240,this,this.mRaphael,.3,1,1,"none",.5,true));
+			this.mShapeArray.push(new Rectangle(50,50,620,180,this,this.mRaphael,.3,1,1,"none",.5,true));
+			this.mShapeArray.push(new Rectangle(50,50,620,120,this,this.mRaphael,.3,1,1,"none",.5,true));
+			this.mShapeArray.push(new Rectangle(50,50,620,60,this,this.mRaphael,.3,1,1,"none",.5,true));
+
+
+
+
 			this.mShapeArray.push(new Rectangle(50,50,680,240,this,this.mRaphael,.3,1,1,"none",.5,true));
 		}
 	}
