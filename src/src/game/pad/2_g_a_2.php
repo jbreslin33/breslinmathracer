@@ -9,14 +9,6 @@ Extends: RulerPad,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
        
-	createNumQuestion: function()
-        {
-                this.parent();
-
-                //question
-                this.mNumQuestion.setPosition(170,30);
-        },	
-
         showCorrectAnswerEnter: function()
         {
                 this.parent();
