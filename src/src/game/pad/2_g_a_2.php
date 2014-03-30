@@ -7,6 +7,8 @@ Extends: RulerPad,
 	{
        		this.parent(application);
     		this.mRaphael = Raphael(10, 35, 760, 405);
+		
+		this.setScoreNeeded(10);
 	},
        
         showCorrectAnswerEnter: function()
@@ -22,21 +24,19 @@ Extends: RulerPad,
 		
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
-   
+ 
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//get random heights.
 			var redHeightCode = Math.floor((Math.random()*5)+1);
 			var redWidthCode  = Math.floor((Math.random()*5)+1);
-			redHeightCode = 5;
-			redWidthCode = 5;
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
 					
 			var question = new Question('What is the Area of the red rectangle in green blocks?', parseInt(redHeightCode * redWidthCode));
 			this.mQuiz.mQuestionArray.push(question);
 		
-			var s = 25;
+			var s = 26;
 	
 			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
 			
@@ -65,6 +65,7 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 22 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 23 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 24 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 25 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			
 		}
                	
@@ -101,6 +102,7 @@ Extends: RulerPad,
                 	this.mShapeArray.push(new Rectangle(50,50,500,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,555,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	this.mShapeArray.push(new Rectangle(50,50,610,300,this,this.mRaphael,.3,1,1,"none",.5,true));
+                	this.mShapeArray.push(new Rectangle(50,50,665,300,this,this.mRaphael,.3,1,1,"none",.5,true));
                 	
 			this.mShapeArray.push(new Rectangle(50,50,620,240,this,this.mRaphael,.3,1,1,"none",.5,true));
 			this.mShapeArray.push(new Rectangle(50,50,620,180,this,this.mRaphael,.3,1,1,"none",.5,true));
