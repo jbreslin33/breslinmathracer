@@ -27,7 +27,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
    
-		var question = new Question('Describe this?','HALF');
+		var question = new Question('Describe this?','1 HALF');
 		question.mAnswerPool[0] = '1 FOURTH';
 		question.mAnswerPool[1] = '1 HALF';
 		this.mQuiz.mQuestionArray.push(question);
@@ -44,7 +44,7 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,0,0,.5,"#19070B",.5,true));
-		this.mShapeArray.push(new Rectangle(50,50,260,210,this,this.mRaphael,.75,.75,.75,"#19070B",1,true));
+		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",.5,false));
+		this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 	}
 });
