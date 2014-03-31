@@ -44,7 +44,7 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,1,1,1,"#19070B",.5,true));
+		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,0,0,.5,"#19070B",.5,true));
 		this.mShapeArray.push(new Rectangle(50,50,260,210,this,this.mRaphael,.75,.75,.75,"#19070B",1,true));
 	}
 });
