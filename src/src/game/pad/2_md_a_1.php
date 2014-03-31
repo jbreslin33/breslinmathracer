@@ -76,7 +76,7 @@ Extends: RulerPad,
 			this.mShapeArray.push(unitA);
 			unitA.setMountable(true);
 	
-			var textB = new Shape(5,5,245,200,this,"","","");
+			var textB = new Shape(55,5,245,200,this,"","","");
 			this.mShapeArray.push(textB);
 			textB.setMountable(true);
 			textB.setText('1 inch');
@@ -85,46 +85,46 @@ Extends: RulerPad,
 			this.mShapeArray.push(unitB);
 			unitB.setMountable(true);
 
-			var textC = new Shape(5,5,245,200,this,"","","");
+			var textC = new Shape(55,5,245,200,this,"","","");
 			this.mShapeArray.push(textC);
 			textC.setMountable(true);
-			textC.setText('2');
+			textC.setText('2 inch');
 
                 	var unitC = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
 			this.mShapeArray.push(unitC);
 			unitC.setMountable(true);
 
-			var textD = new Shape(5,5,245,200,this,"","","");
+			var textD = new Shape(55,5,245,200,this,"","","");
 			this.mShapeArray.push(textD);
 			textD.setMountable(true);
-			textD.setText('3');
+			textD.setText('3 inch');
 
                 	var unitD = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
 			this.mShapeArray.push(unitD);
 			unitD.setMountable(true);
 
-			var textE = new Shape(5,5,245,200,this,"","","");
+			var textE = new Shape(55,5,245,200,this,"","","");
 			this.mShapeArray.push(textE);
 			textE.setMountable(true);
-			textE.setText('4');
+			textE.setText('4 inch');
 
                 	var unitE = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
 			this.mShapeArray.push(unitE);
 			unitE.setMountable(true);
 			
-			var textF = new Shape(5,5,245,200,this,"","","");
+			var textF = new Shape(55,5,245,200,this,"","","");
 			this.mShapeArray.push(textF);
 			textF.setMountable(true);
-			textF.setText('5');
+			textF.setText('5 inch');
 
                 	var unitF = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
 			this.mShapeArray.push(unitF);
 			unitF.setMountable(true);
 			
-			var textG = new Shape(5,5,245,200,this,"","","");
+			var textG = new Shape(55,5,245,200,this,"","","");
 			this.mShapeArray.push(textG);
 			textG.setMountable(true);
-			textG.setText('6');
+			textG.setText('6 inch');
                 
 			//red shape to measure	
 			var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
