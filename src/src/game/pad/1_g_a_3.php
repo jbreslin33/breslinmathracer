@@ -28,40 +28,42 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
   
               	var question = new Question('Describe this?','ZERO OF TWO');
-                question.mAnswerPool[0] = '1 FOURTH';
-                question.mAnswerPool[1] = '2 FOURTHS';
-                question.mAnswerPool[2] = '1 HALF';
+                question.mAnswerPool[0] = 'ZERO OF TWO';
+                question.mAnswerPool[1] = 'ONE OF TWO';
+                question.mAnswerPool[2] = 'TWO OF TWO';
                 this.mQuiz.mQuestionArray.push(question);
                 question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
  
-		var question = new Question('Describe this?','1 HALF');
-		question.mAnswerPool[0] = '1 FOURTH';
-		question.mAnswerPool[1] = '2 FOURTHS';
-		question.mAnswerPool[2] = '1 HALF';
+		var question = new Question('Describe this?','ONE OF TWO');
+                question.mAnswerPool[0] = 'ZERO OF TWO';
+                question.mAnswerPool[1] = 'ONE OF TWO';
+                question.mAnswerPool[2] = 'TWO OF TWO';
 		this.mQuiz.mQuestionArray.push(question);
 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
            	
 		var question = new Question('Describe this?','TWO OF TWO');
-                question.mAnswerPool[0] = '1 HALF';
-                question.mAnswerPool[1] = 'TWO OF TWO';
-                question.mAnswerPool[2] = 'TWO OF ONE';
+                question.mAnswerPool[0] = 'ZERO OF TWO';
+                question.mAnswerPool[1] = 'ONE OF TWO';
+                question.mAnswerPool[2] = 'TWO OF TWO';
                 this.mQuiz.mQuestionArray.push(question);
                 question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		
-		var question = new Question('Describe this?','2 OF FOUR');
-		question.mAnswerPool[0] = '3 FOURTHS';
-		question.mAnswerPool[1] = '1 HALF';
-		question.mAnswerPool[2] = '2 HALVES';
+		var question = new Question('Describe this?','ZERO OF FOUR');
+                question.mAnswerPool[0] = 'ZERO OF FOUR';
+                question.mAnswerPool[1] = 'ONE OF FOUR';
+                question.mAnswerPool[2] = 'TWO OF FOUR';
+                question.mAnswerPool[3] = 'THREE OF FOUR';
+                question.mAnswerPool[4] = 'FOUR OF FOUR';
 		this.mQuiz.mQuestionArray.push(question);
 		question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
            
-		var question = new Question('Describe this?','FOUR OF FOUR');
+		var question = new Question('Describe this?','ONE OF FOUR');
                 question.mAnswerPool[0] = '1 HALF';
                 question.mAnswerPool[1] = 'FOUR OF FOUR';
                 question.mAnswerPool[2] = '3 FOURTHS';
@@ -102,7 +104,7 @@ Extends: MultipleChoicePad,
 		
 		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
-		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
+		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,0,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		
 		
