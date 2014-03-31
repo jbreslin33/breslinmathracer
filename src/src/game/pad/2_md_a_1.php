@@ -1,7 +1,7 @@
 var g2_md_a_1 = new Class(
 {
 
-Extends: NumberPad,
+Extends: RulerPad,
 
 	initialize: function(application)
 	{
@@ -9,14 +9,6 @@ Extends: NumberPad,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
        
-	createNumQuestion: function()
-        {
-                this.parent();
-
-                //question
-                this.mNumQuestion.setPosition(310,30);
-        },	
-
         showCorrectAnswerEnter: function()
         {
                 this.parent();
