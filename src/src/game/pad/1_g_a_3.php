@@ -43,6 +43,6 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,.6,1,1,"none",.5,true));
+		this.mShapeArray.push(new Rectangle(50,50,210,210,this,this.mRaphael,1,1,1,"#19070B",.5,true));
 	}
 });
