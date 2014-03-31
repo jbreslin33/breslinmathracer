@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(5);
+		this.setScoreNeeded(6);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -60,7 +60,6 @@ Extends: MultipleChoicePad,
 		question.mShapeArray.push(this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
-	
            
 		var question = new Question('Describe this?','FOUR OF FOUR');
                 question.mAnswerPool[0] = '1 HALF';
