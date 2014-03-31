@@ -27,9 +27,9 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
    
-		var question = new Question('Can you drag the triangles and rectangle together to form a parallelogram?', 'YES');
-		question.mAnswerPool[0] = 'FOURTHS';
-		question.mAnswerPool[1] = 'HALVES';
+		var question = new Question('Describe this?','HALF');
+		question.mAnswerPool[0] = '1 FOURTH';
+		question.mAnswerPool[1] = '1 HALF';
 		this.mQuiz.mQuestionArray.push(question);
 		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
