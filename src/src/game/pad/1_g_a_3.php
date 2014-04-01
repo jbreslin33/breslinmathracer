@@ -11,6 +11,22 @@ Extends: MultipleChoicePad,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
 	
+	arc: function(x, y, radius, start, end)
+	{
+        	var f = ((end - start) > Math.PI) ? 1 : 0;
+ 
+          	var sx = radius * Math.cos(start);
+          	var sy = radius * Math.sin(start);
+          	var ex = x + radius * Math.cos(end);
+          	var ey = y + radius * Math.sin(end);
+ 
+          	var path = "M " + x + " " + y + " l " 
+              	+ sx + " " + sy + " A " + radius 
+              	+ " " + radius + " 0 " + f + " 1 " 
+              	+ ex + " " + ey + " z";
+          	return path;
+        },
+	
         //showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
@@ -154,5 +170,11 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
+        
+		this.mRaphael.path(this.arc(200,200,150,0,2) +
+               	this.arc(200,200,150,2,3) + 
+               	this.arc(200,200,150,3,4.5) + 
+               	this.arc(200,200,150,4.5,5) + 
+               	this.arc(200,200,150,5,Math.PI*2)).attr("stroke", "white");
 	}
 });
