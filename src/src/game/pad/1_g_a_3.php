@@ -117,7 +117,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool[2] = 'TWO OF TWO';
                 this.mQuiz.mQuestionArray.push(question);
                 question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
-                //question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -163,7 +163,8 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		
-		this.mShapeArray.push(new Arc      (this,this.mRaphael,200,200,50,0,Math.PI,0.8,1,1,"none",.5,true));
+		this.mShapeArray.push(new Arc      (this,this.mRaphael,200,200,50,0,Math.PI,0.3,1,1,"none",.5,false));
+		this.mShapeArray.push(new Arc      (this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"none",.5,false));
 /*
                	this.arc(200,200,150,2,3) + 
                	this.arc(200,200,150,3,4.5) + 
