@@ -1,22 +1,25 @@
 var Arc = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
+        initialize: function (game,raphael,x,y,radius,start,end,r,g,b,s,op,d)
         {
+		this.parent(0,0,x,y,game,raphael,r,g,b,s,op,d);
+
 		//find center for mPosition...
-		sX = x1 + x2 + x3 / 3;
-		sY = y1 + y2 + y3 / 3;
+		sX = x;
+		sY = y;
 
-		this.parent(0,0,sX,sY,game,raphael,r,g,b,s,op,d);
+		var f = ((end - start) > Math.PI) ? 1 : 0;
 
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		this.x3 = x3;
-		this.y3 = y3;
+                var sx = radius * Math.cos(start);
+                var sy = radius * Math.sin(start);
+                var ex = x + radius * Math.cos(end);
+                var ey = y + radius * Math.sin(end);
 		
-		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
+ 		this.mPathString = "M " + x + " " + y + " l "
+                + sx + " " + sy + " A " + radius
+                + " " + radius + " 0 " + f + " 1 "
+                + ex + " " + ey + " z";
 		
 		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 

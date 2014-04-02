@@ -137,7 +137,13 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+		//this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+		//this.mShapeArray.push(new Arc(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+		//this.mPurpleTriangle  = new Triangle (this,this.mRaphael,300,150,350,100,400,150,.8,1,1,"none",.5,true);
+		//this.mShapeArray.push(new Triangle (this,this.mRaphael,50,100,350,100,400,150,.8,1,1,"none",.5,true));
+		//this.mRaphael.path(this.arc(200,200,150,0,2));
+		//game,raphael,x,y,radius,start,end,r,g,b,s,op,d
+		this.mShapeArray.push(new Arc      (this,this.mRaphael,200,200,150,0,0.8,1,1,"none",.5,true));
 		this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 
 		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
@@ -170,8 +176,9 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
+		
         
-		this.mRaphael.path(this.arc(200,200,150,0,2));
+		//this.mRaphael.path(this.arc(200,200,150,0,2));
 /*
                	this.arc(200,200,150,2,3) + 
                	this.arc(200,200,150,3,4.5) + 
