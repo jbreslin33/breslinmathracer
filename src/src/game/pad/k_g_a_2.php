@@ -23,93 +23,70 @@ Extends: MultipleChoicePad,
 		this.parent();
 		
 		this.mQuiz.resetQuestionPoolArray();
-
-	       	//answer pool
-                this.mQuiz.mAnswerPool.push('cone');
-                this.mQuiz.mAnswerPool.push('cube');
-                this.mQuiz.mAnswerPool.push('circle');
-                this.mQuiz.mAnswerPool.push('cylinder');
-                this.mQuiz.mAnswerPool.push('hexagon');
-                this.mQuiz.mAnswerPool.push('rectangle');
-                this.mQuiz.mAnswerPool.push('sphere');
-                this.mQuiz.mAnswerPool.push('square');
-                this.mQuiz.mAnswerPool.push('triangle');
+                this.mQuiz.resetQuestionPoolArray();
 
 		var question = new Question('What is this?','cone');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('square');
+ 		question.mAnswerPool.push('rectangle');
+
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','cube');
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('circle');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 1]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 		
 		var question = new Question('What is this?','circle');
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('square');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 2]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','cylinder');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('square');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 3]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','hexagon');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('square');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 4]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','rectangle');
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('square');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 5]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','sphere');
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[1]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[5]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('square');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 6]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','square');
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[0]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[2]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[3]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[4]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[6]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[7]);	
-		question.mAnswerPool.push(this.mQuiz.mAnswerPool[8]);	
+ 		question.mAnswerPool.push('triangle');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('circle');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 7]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var question = new Question('What is this?','triangle');
-		question.mAnswerPool = this.mQuiz.mAnswerPool;	
-		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars) + 8]);
+ 		question.mAnswerPool.push('square');
+ 		question.mAnswerPool.push('cone');
+ 		question.mAnswerPool.push('circle');
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars) + 8]);
 		this.mQuiz.mQuestionPoolArray.push(question);
 
 		var totalCones = 0;
