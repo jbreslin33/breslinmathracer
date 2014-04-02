@@ -120,8 +120,8 @@ Extends: MultipleChoicePad,
 	createWorld: function()
 	{
 		this.parent();
-		
-		this.mShapeArray.push(new Arc      (this,this.mRaphael,200,200,150,0,0.8,1,1,"none",.5,true));
+	//200,200,150,0,2	
+		this.mShapeArray.push(new Arc      (this,this.mRaphael,200,200,150,0,2,0.8,1,1,"none",.5,true));
 		this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 
 		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
