@@ -171,11 +171,11 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		
-		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI,0.3,1,1,"none",.5,false));
-		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"none",.5,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0,0,.5,"#19070B",1,false));
 		
-		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI,0.3,1,1,"none",.5,false));
-		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"none",.5,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"#19070B",1,false));
 /*
                	this.arc(200,200,150,2,3) + 
                	this.arc(200,200,150,3,4.5) + 
