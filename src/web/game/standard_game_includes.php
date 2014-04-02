@@ -20,6 +20,7 @@
 <script type="text/javascript" src="/src/shape/shape.php"></script>
 <script type="text/javascript" src="/src/polygon/circle.php"></script>
 <script type="text/javascript" src="/src/polygon/triangle.php"></script>
+<script type="text/javascript" src="/src/polygon/arc.php"></script>
 <script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 <script type="text/javascript" src="/src/polygon/line_one.php"></script>
 <script type="text/javascript" src="/src/polygon/ruler.php"></script>
