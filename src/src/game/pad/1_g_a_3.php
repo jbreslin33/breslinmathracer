@@ -171,10 +171,12 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
         
-		this.mRaphael.path(this.arc(200,200,150,0,2) +
+		this.mRaphael.path(this.arc(200,200,150,0,2));
+/*
                	this.arc(200,200,150,2,3) + 
                	this.arc(200,200,150,3,4.5) + 
                	this.arc(200,200,150,4.5,5) + 
                	this.arc(200,200,150,5,Math.PI*2)).attr("stroke", "white");
+*/
 	}
 });
