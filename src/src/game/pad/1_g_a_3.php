@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(22);
+		this.setScoreNeeded(23);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -251,6 +251,16 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(70 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(71 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
+	        var question = new Question('Describe this?','3 QUARTERS');
+                question.mAnswerPool[0] = '1 QUARTER';
+                question.mAnswerPool[1] = '3 HALVES';
+                question.mAnswerPool[2] = '1 FOURTH';
+                this.mQuiz.mQuestionArray.push(question);
+                question.mShapeArray.push(this.mShapeArray[parseInt(72 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(73 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(74 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(75 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
 
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -355,6 +365,11 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI/2,Math.PI,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI + Math.PI/2,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI + Math.PI/2,Math.PI*2,0,0,.5,"#19070B",1,false));
+
+	        this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
+                this.mShapeArray.push(new Rectangle(50,50,100,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
+                this.mShapeArray.push(new Rectangle(50,50,150,200,this,this.mRaphael,.75,.75,.75,"#19070B",1,false));
+                this.mShapeArray.push(new Rectangle(50,50,200,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 
 	
 	}
