@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(10);
+		this.setScoreNeeded(11);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -127,6 +127,14 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(29 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
+           	var question = new Question('Describe this?','TWO OF TWO');
+                question.mAnswerPool[0] = 'ZERO OF TWO';
+                question.mAnswerPool[1] = 'ONE OF TWO';
+                question.mAnswerPool[2] = 'TWO OF TWO';
+                this.mQuiz.mQuestionArray.push(question);
+                question.mShapeArray.push(this.mShapeArray[parseInt(30 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(31 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
@@ -175,6 +183,9 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0,0,.5,"#19070B",1,false));
 		
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"#19070B",1,false));
+		
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI,0.8,1,1,"#19070B",1,false));
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"#19070B",1,false));
 /*
                	this.arc(200,200,150,2,3) + 
