@@ -147,6 +147,19 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(34 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(35 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
+
+              	var question = new Question('Describe this?','ONE OF FOUR');
+                question.mAnswerPool[0] = 'ZERO OF FOUR';
+                question.mAnswerPool[1] = 'ONE OF FOUR';
+                question.mAnswerPool[2] = 'TWO OF FOUR';
+                question.mAnswerPool[2] = 'THREE OF FOUR';
+                question.mAnswerPool[2] = 'FOUR OF FOUR';
+                this.mQuiz.mQuestionArray.push(question);
+                question.mShapeArray.push(this.mShapeArray[parseInt(36 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(37 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(38 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(39 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
@@ -201,6 +214,11 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI*2,0.8,1,1,"#19070B",1,false));
 		
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI/2,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI/2,Math.PI,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI + Math.PI/2,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI + Math.PI/2,Math.PI*2,0,0,.5,"#19070B",1,false));
+		
+		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,0,Math.PI/2,.75,.75,.75,"#19070B",1,false));
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI/2,Math.PI,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI,Math.PI + Math.PI/2,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Arc(this,this.mRaphael,200,200,50,Math.PI + Math.PI/2,Math.PI*2,0,0,.5,"#19070B",1,false));
