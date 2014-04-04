@@ -84,13 +84,14 @@ Extends: RulerPad,
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
+			//make each cm 20 long
                      	//greens to make a cm ruler with
                         var textAcm = new Shape(55,5,350,200,this,"","","");
                         this.mShapeArray.push(textAcm);
                         textAcm.setMountable(true);
                         textAcm.setText('0 cm');
 
-                        var unitAcm = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+                        var unitAcm = new Rectangle(50,20,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
                         this.mShapeArray.push(unitAcm);
                         unitAcm.setMountable(true);
 
@@ -99,7 +100,7 @@ Extends: RulerPad,
                         textBcm.setMountable(true);
                         textBcm.setText('1 cm');
 
-                        var unitBcm = new Rectangle(50,50,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
+                        var unitBcm = new Rectangle(50,20,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
                         this.mShapeArray.push(unitBcm);
                         unitBcm.setMountable(true);
 
@@ -108,7 +109,7 @@ Extends: RulerPad,
                         textCcm.setMountable(true);
                         textCcm.setText('2 cm');
 
-                        var unitCcm = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
+                        var unitCcm = new Rectangle(50,20,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
                         this.mShapeArray.push(unitCcm);
                         unitCcm.setMountable(true);
 
@@ -117,7 +118,7 @@ Extends: RulerPad,
                         textDcm.setMountable(true);
                         textDcm.setText('3 cm');
 
-                        var unitDcm = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
+                        var unitDcm = new Rectangle(50,20,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
                         this.mShapeArray.push(unitDcm);
                         unitDcm.setMountable(true);
 
@@ -126,7 +127,7 @@ Extends: RulerPad,
                         textEcm.setMountable(true);
                         textEcm.setText('4 cm');
 
-                        var unitEcm = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
+                        var unitEcm = new Rectangle(50,20,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
                         this.mShapeArray.push(unitEcm);
                         unitEcm.setMountable(true);
 
@@ -135,7 +136,7 @@ Extends: RulerPad,
                         textFcm.setMountable(true);
                         textFcm.setText('5 cm');
 
-                        var unitFcm = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
+                        var unitFcm = new Rectangle(50,20,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
                         this.mShapeArray.push(unitFcm);
                         unitFcm.setMountable(true);
 
@@ -153,17 +154,17 @@ Extends: RulerPad,
 
                         rulercm.createMountPoint(0,30,30);
                         rulercm.createMountPoint(1,0,17);
-                        rulercm.createMountPoint(2,30,80);
-                        rulercm.createMountPoint(3,0,67);
-                        rulercm.createMountPoint(4,30,130);
-                        rulercm.createMountPoint(5,0,117);
-                        rulercm.createMountPoint(6,30,180);
-                        rulercm.createMountPoint(7,0,167);
-                        rulercm.createMountPoint(8,30,230);
-                        rulercm.createMountPoint(9,0,217);
-                        rulercm.createMountPoint(10,30,280);
-                        rulercm.createMountPoint(11,0,267);
-                        rulercm.createMountPoint(12,30,330);
+                        rulercm.createMountPoint(2,30,50);
+                        rulercm.createMountPoint(3,0,37);
+                        rulercm.createMountPoint(4,30,70);
+                        rulercm.createMountPoint(5,0,57);
+                        rulercm.createMountPoint(6,30,90);
+                        rulercm.createMountPoint(7,0,77);
+                        rulercm.createMountPoint(8,30,110);
+                        rulercm.createMountPoint(9,0,97);
+                        rulercm.createMountPoint(10,30,130);
+                        rulercm.createMountPoint(11,0,107);
+                        rulercm.createMountPoint(12,30,150);
 
                         this.mShapeArray.push(rulercm);
 
