@@ -52,6 +52,25 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 13 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			this.mShapeArray[parseInt(i * s + 13 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 14 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 15 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 17 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 18 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 19 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 20 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 21 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 22 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 23 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 24 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 25 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        this.mShapeArray[parseInt(i * s + 28 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
+                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 29 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		
 		}
                	
@@ -65,8 +84,104 @@ Extends: RulerPad,
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			//greens to make a ruler with
+                     	//greens to make a cm ruler with
+                        var textAcm = new Shape(55,5,350,200,this,"","","");
+                        this.mShapeArray.push(textAcm);
+                        textAcm.setMountable(true);
+                        textAcm.setText('0 inch');
 
+                        var unitAcm = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+                        this.mShapeArray.push(unitAcm);
+                        unitAcm.setMountable(true);
+
+                        var textBcm = new Shape(55,5,245,200,this,"","","");
+                        this.mShapeArray.push(textBcm);
+                        textBcm.setMountable(true);
+                        textBcm.setText('1 inch');
+
+                        var unitBcm = new Rectangle(50,50,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
+                        this.mShapeArray.push(unitBcm);
+                        unitBcm.setMountable(true);
+
+                        var textCcm = new Shape(55,5,245,200,this,"","","");
+                        this.mShapeArray.push(textCcm);
+                        textCcm.setMountable(true);
+                        textCcm.setText('2 inch');
+
+                        var unitCcm = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
+                        this.mShapeArray.push(unitCcm);
+                        unitCcm.setMountable(true);
+
+                        var textDcm = new Shape(55,5,245,200,this,"","","");
+                        this.mShapeArray.push(textDcm);
+                        textDcm.setMountable(true);
+                        textDcm.setText('3 inch');
+
+                        var unitDcm = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
+                        this.mShapeArray.push(unitDcm);
+                        unitDcm.setMountable(true);
+
+                        var textEcm = new Shape(55,5,245,200,this,"","","");
+                        this.mShapeArray.push(textEcm);
+                        textEcm.setMountable(true);
+                        textEcm.setText('4 inch');
+
+                        var unitEcm = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
+                        this.mShapeArray.push(unitEcm);
+                        unitEcm.setMountable(true);
+
+                        var textFcm = new Shape(55,5,245,200,this,"","","");
+                        this.mShapeArray.push(textFcm);
+                        textFcm.setMountable(true);
+                        textFcm.setText('5 inch');
+
+                        var unitFcm = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
+                        this.mShapeArray.push(unitFcm);
+                        unitFcm.setMountable(true);
+
+                        var textGcm = new Shape(55,5,245,200,this,"","","");
+                        this.mShapeArray.push(textGcm);
+                        textGcm.setMountable(true);
+                        textGcm.setText('6 inch');
+
+                        //red shape to measure
+                        var redRectanglecm = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
+                        this.mShapeArray.push(redRectanglecm);
+
+                        //the ruler
+                        var rulercm = new Ruler(50,300,500,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+
+                        rulercm.createMountPoint(0,30,30);
+                        rulercm.createMountPoint(1,0,17);
+                        rulercm.createMountPoint(2,30,80);
+                        rulercm.createMountPoint(3,0,67);
+                        rulercm.createMountPoint(4,30,130);
+                        rulercm.createMountPoint(5,0,117);
+                        rulercm.createMountPoint(6,30,180);
+                        rulercm.createMountPoint(7,0,167);
+                        rulercm.createMountPoint(8,30,230);
+                        rulercm.createMountPoint(9,0,217);
+                        rulercm.createMountPoint(10,30,280);
+                        rulercm.createMountPoint(11,0,267);
+                        rulercm.createMountPoint(12,30,330);
+
+                        this.mShapeArray.push(rulercm);
+
+                        rulercm.mount(textAcm,0);
+                        rulercm.mount(unitAcm,1);
+                        rulercm.mount(textBcm,2);
+                        rulercm.mount(unitBcm,3);
+                        rulercm.mount(textCcm,4);
+                        rulercm.mount(unitCcm,5);
+                        rulercm.mount(textDcm,6);
+                        rulercm.mount(unitDcm,7);
+                        rulercm.mount(textEcm,8);
+                        rulercm.mount(unitEcm,9);
+                        rulercm.mount(textFcm,10);
+                        rulercm.mount(unitFcm,11);
+                        rulercm.mount(textGcm,12);
+
+			//greens to make a in ruler with
 			var textA = new Shape(55,5,350,200,this,"","","");
 			this.mShapeArray.push(textA);
 			textA.setMountable(true);
