@@ -88,7 +88,7 @@ Extends: RulerPad,
                         var textAcm = new Shape(55,5,350,200,this,"","","");
                         this.mShapeArray.push(textAcm);
                         textAcm.setMountable(true);
-                        textAcm.setText('0 inch');
+                        textAcm.setText('0 cm');
 
                         var unitAcm = new Rectangle(50,50,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
                         this.mShapeArray.push(unitAcm);
@@ -97,7 +97,7 @@ Extends: RulerPad,
                         var textBcm = new Shape(55,5,245,200,this,"","","");
                         this.mShapeArray.push(textBcm);
                         textBcm.setMountable(true);
-                        textBcm.setText('1 inch');
+                        textBcm.setText('1 cm');
 
                         var unitBcm = new Rectangle(50,50,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
                         this.mShapeArray.push(unitBcm);
@@ -106,7 +106,7 @@ Extends: RulerPad,
                         var textCcm = new Shape(55,5,245,200,this,"","","");
                         this.mShapeArray.push(textCcm);
                         textCcm.setMountable(true);
-                        textCcm.setText('2 inch');
+                        textCcm.setText('2 cm');
 
                         var unitCcm = new Rectangle(50,50,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
                         this.mShapeArray.push(unitCcm);
@@ -115,7 +115,7 @@ Extends: RulerPad,
                         var textDcm = new Shape(55,5,245,200,this,"","","");
                         this.mShapeArray.push(textDcm);
                         textDcm.setMountable(true);
-                        textDcm.setText('3 inch');
+                        textDcm.setText('3 cm');
 
                         var unitDcm = new Rectangle(50,50,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
                         this.mShapeArray.push(unitDcm);
@@ -124,7 +124,7 @@ Extends: RulerPad,
                         var textEcm = new Shape(55,5,245,200,this,"","","");
                         this.mShapeArray.push(textEcm);
                         textEcm.setMountable(true);
-                        textEcm.setText('4 inch');
+                        textEcm.setText('4 cm');
 
                         var unitEcm = new Rectangle(50,50,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
                         this.mShapeArray.push(unitEcm);
@@ -133,7 +133,7 @@ Extends: RulerPad,
                         var textFcm = new Shape(55,5,245,200,this,"","","");
                         this.mShapeArray.push(textFcm);
                         textFcm.setMountable(true);
-                        textFcm.setText('5 inch');
+                        textFcm.setText('5 cm');
 
                         var unitFcm = new Rectangle(50,50,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
                         this.mShapeArray.push(unitFcm);
@@ -142,7 +142,7 @@ Extends: RulerPad,
                         var textGcm = new Shape(55,5,245,200,this,"","","");
                         this.mShapeArray.push(textGcm);
                         textGcm.setMountable(true);
-                        textGcm.setText('6 inch');
+                        textGcm.setText('6 cm');
 
                         //red shape to measure
                         var redRectanglecm = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
