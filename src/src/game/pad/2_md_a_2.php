@@ -1,4 +1,4 @@
-var g2_md_a_1 = new Class(
+var g2_md_a_2 = new Class(
 {
 
 Extends: RulerPad,
