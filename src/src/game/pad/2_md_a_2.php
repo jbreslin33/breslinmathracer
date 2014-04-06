@@ -148,7 +148,7 @@ Extends: RulerPad,
                         this.mShapeArray.push(redRectanglecm);
 
                         //the ruler
-                        var rulercm = new Ruler(50,300,500,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+                        var rulercm = new Ruler(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
 
                         rulercm.createMountPoint(0,30,30);
                         rulercm.createMountPoint(1,0,17);
