@@ -163,7 +163,7 @@ Extends: RulerPad,
                         rulercm.createMountPoint(8,30,110);
                         rulercm.createMountPoint(9,0,97);
                         rulercm.createMountPoint(10,30,130);
-                        rulercm.createMountPoint(11,0,107);
+                        rulercm.createMountPoint(11,0,117);
                         rulercm.createMountPoint(12,30,150);
 
                         this.mShapeArray.push(rulercm);
