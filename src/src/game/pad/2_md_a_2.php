@@ -69,8 +69,6 @@ Extends: RulerPad,
                         question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 26 + this.mTotalGuiBars + this.mTotalInputBars)]);
                         question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 27 + this.mTotalGuiBars + this.mTotalInputBars)]);
                         question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 28 + this.mTotalGuiBars + this.mTotalInputBars)]);
-                        this.mShapeArray[parseInt(i * s + 28 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(50,redHeight);
-                        question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 29 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		
 		}
                	
@@ -242,10 +240,6 @@ Extends: RulerPad,
 			textG.setMountable(true);
 			textG.setText('6 inch');
                 
-			//red shape to measure	
-			var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
-			this.mShapeArray.push(redRectangle);
-
 			//the ruler
 			var ruler = new Ruler(50,300,500,50,this,this.mRaphael,.6,1,1,"none",.5,true);
 
