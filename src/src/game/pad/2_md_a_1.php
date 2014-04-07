@@ -8,9 +8,9 @@ Extends: RulerPad,
        		this.parent(application);
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
-		this.mRectangleArray = new Array();	
-		this.mRulerCentimeterArray     = new Array();	
-		this.mRulerInchArray     = new Array();	
+		this.mRectangleArray       = new Array();	
+		this.mRulerCentimeterArray = new Array();	
+		this.mRulerInchArray       = new Array();	
 	},
    
         showCorrectAnswerEnter: function()
@@ -25,14 +25,6 @@ Extends: RulerPad,
         {
 		this.parent();
 		
-		this.mRectangleArray = [ ];	
-		this.mRectangleArray = new Array();
-	
-		this.mRulerCentimeterArray = [ ];	
-		this.mRulerCentimeterArray = new Array();	
-
-		this.mRulerInchArray       = [ ];	
-		this.mRulerInchArray       = new Array();	
 		
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
@@ -101,6 +93,10 @@ Extends: RulerPad,
 	createWorld: function()
 	{
 		this.parent();
+		
+		this.mRectangleArray.length = 0;
+		this.mRulerCentimeterArray.length = 0;	
+		this.mRulerInchArray.length = 0;	
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
