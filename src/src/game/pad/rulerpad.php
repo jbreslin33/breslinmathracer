@@ -68,7 +68,7 @@ Extends: Pad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(150,150,100,100,this,"","","");
+                this.mNumQuestion = new Shape(200,150,120,100,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -80,7 +80,7 @@ Extends: Pad,
                 this.createNumQuestion();
 
                 //answer
-                this.mNumAnswer = new Shape(75,25,100,150,this,"INPUT","","");
+                this.mNumAnswer = new Shape(100,25,100,150,this,"INPUT","","");
                 this.mNumAnswer.mMesh.value = '';
                 this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                 this.mShapeArray.push(this.mNumAnswer);

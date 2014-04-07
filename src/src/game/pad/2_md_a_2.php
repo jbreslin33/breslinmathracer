@@ -12,12 +12,14 @@ Extends: RulerPad,
 		this.mRulerCentimeterArray     = new Array();	
 		this.mRulerInchArray     = new Array();	
 	},
-       
+   
         showCorrectAnswerEnter: function()
         {
                 this.parent();
 
                 this.mShapeArray[1].setPosition(100,80);
+             	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' CORRECT ANSWER:' + this.mQuiz.getQuestion().getAnswer();
+
         },
 
 	createQuestions: function()
@@ -30,14 +32,29 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//get random heights.
-			var redHeightCode = Math.floor((Math.random()*6)+1);
-			var redHeight = parseInt(redHeightCode * 50);  
+			var redHeightCode = Math.floor((Math.random()*3)+1);
+			var redHeight = parseInt(redHeightCode * 100);  
+		
+			answer = '';	
+			if (redHeight == 100)
+			{
+				answer = '5cm or 2in';	
+			}		
+			if (redHeight == 200)
+			{
+				answer = '10cm or 4in';	
+			}		
+			if (redHeight == 300)
+			{
+				answer = '15cm or 6in';	
+			}		
 					
-			var question = new Question('What is the length of the red shape in inches?', redHeightCode);
+			var question = new Question('What is the length of the red shape in centimeters and inches? Write answer like this: 10 cm or 4 in', '' + answer);
 			this.mQuiz.mQuestionArray.push(question);
 			
 			question.mShapeArray.push(this.mRectangleArray[i]);
 			this.mRectangleArray[i].setSize(50,redHeight);
+
 
 			this.mRulerCentimeterArray[i].addToQuestion(question);
 			question.mShapeArray.push(this.mRulerCentimeterArray[i]);
@@ -56,10 +73,6 @@ Extends: RulerPad,
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
-                        //red shape to measure
-                        var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
-                        this.mShapeArray.push(redRectangle);
-			this.mRectangleArray.push(redRectangle);
 
                         //the cm ruler
                         var rulerCentimeter = new RulerCentimeter(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
@@ -70,6 +83,11 @@ Extends: RulerPad,
                         var rulerInch = new RulerInch(50,300,400,50,this,this.mRaphael,.6,1,1,"none",.5,true);
                         this.mShapeArray.push(rulerInch);
 			this.mRulerInchArray.push(rulerInch);
+                        
+			//red shape to measure
+                        var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
+                        this.mShapeArray.push(redRectangle);
+			this.mRectangleArray.push(redRectangle);
 		}
 	}
 });
