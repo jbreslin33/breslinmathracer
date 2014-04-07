@@ -1,4 +1,4 @@
-var Ruler = new Class(
+var RulerCentimeter = new Class(
 {
 
 Extends: RaphaelPolygon,

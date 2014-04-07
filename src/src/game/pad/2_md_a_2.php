@@ -58,7 +58,7 @@ Extends: RulerPad,
 			this.mRectangleArray.push(redRectangle);
 
                         //the ruler
-                        var ruler = new Ruler(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+                        var ruler = new RulerCentimeter(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
                         this.mShapeArray.push(ruler);
 			this.mRulerArray.push(ruler);
 		}
