@@ -25,6 +25,15 @@ Extends: RulerPad,
         {
 		this.parent();
 		
+		this.mRectangleArray = [ ];	
+		this.mRectangleArray = new Array();
+	
+		this.mRulerCentimeterArray = [ ];	
+		this.mRulerCentimeterArray = new Array();	
+
+		this.mRulerInchArray       = [ ];	
+		this.mRulerInchArray       = new Array();	
+		
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
 
