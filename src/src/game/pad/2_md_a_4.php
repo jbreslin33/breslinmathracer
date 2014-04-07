@@ -8,7 +8,8 @@ Extends: RulerPad,
        		this.parent(application);
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
-		this.mRectangleArray = new Array();	
+		this.mRedRectangleArray = new Array();	
+		this.mGreenRectangleArray = new Array();	
 		this.mRulerCentimeterArray     = new Array();	
 		this.mRulerInchArray     = new Array();	
 	},
@@ -54,8 +55,11 @@ Extends: RulerPad,
 				question = new Question('How much longer in centimeters is the red shape than the green shape? Write answer like this: 10 cm', '' + answer);
 				this.mQuiz.mQuestionArray.push(question);
 			
-				question.mShapeArray.push(this.mRectangleArray[i]);
-				this.mRectangleArray[i].setSize(50,redHeight);
+				question.mShapeArray.push(this.mRedRectangleArray[i]);
+				this.mRedRectangleArray[i].setSize(50,redHeight);
+				
+				question.mShapeArray.push(this.mGreenRectangleArray[i]);
+				this.mGreenRectangleArray[i].setSize(50,50);
 
 				this.mRulerCentimeterArray[i].addToQuestion(question);
 				question.mShapeArray.push(this.mRulerCentimeterArray[i]);
@@ -74,8 +78,11 @@ Extends: RulerPad,
 				question = new Question('How much longer in inches is the red shape than the green shape? Write answer like this: 10 in', '' + answer);
                         	this.mQuiz.mQuestionArray.push(question);
 
-                        	question.mShapeArray.push(this.mRectangleArray[i]);
-                        	this.mRectangleArray[i].setSize(50,redHeight);
+                        	question.mShapeArray.push(this.mRedRectangleArray[i]);
+                        	this.mRedRectangleArray[i].setSize(50,redHeight);
+				
+				question.mShapeArray.push(this.mGreenRectangleArray[i]);
+				this.mGreenRectangleArray[i].setSize(50,50);
 
                         	this.mRulerCentimeterArray[i].addToQuestion(question);
                         	question.mShapeArray.push(this.mRulerCentimeterArray[i]);
@@ -109,7 +116,12 @@ Extends: RulerPad,
 			//red shape to measure
                         var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
                         this.mShapeArray.push(redRectangle);
-			this.mRectangleArray.push(redRectangle);
+			this.mRedRectangleArray.push(redRectangle);
+			
+			//green shape to measure
+                        var greenRectangle = new Rectangle(50,50,700,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+                        this.mShapeArray.push(greenRectangle);
+			this.mGreenRectangleArray.push(greenRectangle);
 		}
 	}
 });
