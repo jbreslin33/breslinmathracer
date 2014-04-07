@@ -51,7 +51,7 @@ Extends: RulerPad,
 					answer = '15 cm';	
 				}		
 					
-				question = new Question('What is the length of the red shape in centimeters? Write answer like this: 10 cm', '' + answer);
+				question = new Question('How much longer in centimeters is the red shape than the green shape? Write answer like this: 10 cm', '' + answer);
 				this.mQuiz.mQuestionArray.push(question);
 			
 				question.mShapeArray.push(this.mRectangleArray[i]);
@@ -71,7 +71,7 @@ Extends: RulerPad,
 
                         	answer = '' + redHeightCode + ' in';
 
-                        	question = new Question('What is the length of the red shape in inches? Write answer like this: 10 in', '' + answer);
+				question = new Question('How much longer in inches is the red shape than the green shape? Write answer like this: 10 in', '' + answer);
                         	this.mQuiz.mQuestionArray.push(question);
 
                         	question.mShapeArray.push(this.mRectangleArray[i]);
