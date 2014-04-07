@@ -9,7 +9,8 @@ Extends: RulerPad,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
 		this.mRectangleArray = new Array();	
-		this.mRulerArray     = new Array();	
+		this.mRulerCentimeterArray     = new Array();	
+		this.mRulerInchArray     = new Array();	
 	},
        
         showCorrectAnswerEnter: function()
@@ -38,8 +39,11 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mRectangleArray[i]);
 			this.mRectangleArray[i].setSize(50,redHeight);
 
-			this.mRulerArray[i].addToQuestion(question);
-			question.mShapeArray.push(this.mRulerArray[i]);
+			this.mRulerCentimeterArray[i].addToQuestion(question);
+			question.mShapeArray.push(this.mRulerCentimeterArray[i]);
+			
+			this.mRulerInchArray[i].addToQuestion(question);
+			question.mShapeArray.push(this.mRulerInchArray[i]);
 		}
                	
 		//buffer
@@ -57,10 +61,15 @@ Extends: RulerPad,
                         this.mShapeArray.push(redRectangle);
 			this.mRectangleArray.push(redRectangle);
 
-                        //the ruler
-                        var ruler = new RulerCentimeter(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
-                        this.mShapeArray.push(ruler);
-			this.mRulerArray.push(ruler);
+                        //the cm ruler
+                        var rulerCentimeter = new RulerCentimeter(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+                        this.mShapeArray.push(rulerCentimeter);
+			this.mRulerCentimeterArray.push(rulerCentimeter);
+                        
+			//the inch ruler
+                        var rulerInch = new RulerInch(50,300,400,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+                        this.mShapeArray.push(rulerInch);
+			this.mRulerInchArray.push(rulerInch);
 		}
 	}
 });
