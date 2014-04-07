@@ -24,6 +24,7 @@
 <script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 <script type="text/javascript" src="/src/polygon/line_one.php"></script>
 <script type="text/javascript" src="/src/polygon/ruler_centimeter.php"></script>
+<script type="text/javascript" src="/src/polygon/ruler_inch.php"></script>
 <script type="text/javascript" src="/src/shape/shape_ai.php"></script>
 <script type="text/javascript" src="/src/shape/shape_victory.php"></script>
 

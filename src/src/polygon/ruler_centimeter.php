@@ -16,65 +16,74 @@ Extends: RaphaelPolygon,
                         this.mPolygon.drag(this.move, this.start, this.up);
                 }
 
-			this.textAcm = new Shape(55,5,350,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textAcm);
-                        this.textAcm.setMountable(true);
-                        this.textAcm.setText('0 cm');
+			this.textA = new Shape(55,5,350,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textA);
+                        this.textA.setMountable(true);
+                        this.textA.setText('0 cm');
 
-                        this.unitAcm = new Rectangle(50,20,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitAcm);
-                        this.unitAcm.setMountable(true);
+                        this.unitA = new Rectangle(50,20,475,300,this,this.mRaphael,.3,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitA);
+                        this.unitA.setMountable(true);
 
-                        this.textBcm = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textBcm);
-                        this.textBcm.setMountable(true);
-                        this.textBcm.setText('1 cm');
+                        this.textB = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textB);
+                        this.textB.setMountable(true);
+                        this.textB.setText('1 cm');
 
-                        this.unitBcm = new Rectangle(50,20,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitBcm);
-                        this.unitBcm.setMountable(true);
+                        this.unitB = new Rectangle(50,20,525,300,this,this.mRaphael,.4,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitB);
+                        this.unitB.setMountable(true);
 
-                        this.textCcm = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textCcm);
-                       	this.textCcm.setMountable(true);
-                        this.textCcm.setText('2 cm');
+                        this.textC = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textC);
+                       	this.textC.setMountable(true);
+                        this.textC.setText('2 cm');
 
-                        this.unitCcm = new Rectangle(50,20,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitCcm);
-                        this.unitCcm.setMountable(true);
+                        this.unitC = new Rectangle(50,20,575,300,this,this.mRaphael,.5,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitC);
+                        this.unitC.setMountable(true);
 
-                        this.textDcm = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textDcm);
-                        this.textDcm.setMountable(true);
-                        this.textDcm.setText('3 cm');
+                        this.textD = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textD);
+                        this.textD.setMountable(true);
+                        this.textD.setText('3 cm');
 
-                        this.unitDcm = new Rectangle(50,20,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitDcm);
-                        this.unitDcm.setMountable(true);
+                        this.unitD = new Rectangle(50,20,475,200,this,this.mRaphael,.7,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitD);
+                        this.unitD.setMountable(true);
 
-                        this.textEcm = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textEcm);
-                        this.textEcm.setMountable(true);
-                        this.textEcm.setText('4 cm');
+                        this.textE = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textE);
+                        this.textE.setMountable(true);
+                        this.textE.setText('4 cm');
 
-                        this.unitEcm = new Rectangle(50,20,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitEcm);
-                        this.unitEcm.setMountable(true);
+                        this.unitE = new Rectangle(50,20,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitE);
+                        this.unitE.setMountable(true);
 
-                        this.textFcm = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textFcm);
-                        this.textFcm.setMountable(true);
-                        this.textFcm.setText('5 cm');
+                        this.textF = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textF);
+                        this.textF.setMountable(true);
+                        this.textF.setText('5 cm');
 
-                        this.unitFcm = new Rectangle(50,20,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitFcm);
-                        this.unitFcm.setMountable(true);
+                        this.unitF = new Rectangle(50,20,200,100,this,this.mRaphael,.9,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitF);
+                        this.unitF.setMountable(true);
 
-                        this.textGcm = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textGcm);
-                        this.textGcm.setMountable(true);
-                        this.textGcm.setText('6 cm');
-      
+                        this.textG = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textG);
+                        this.textG.setMountable(true);
+                        this.textG.setText('6 cm');
+
+                        this.unitG = new Rectangle(50,20,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+                        this.mGame.mShapeArray.push(this.unitG);
+                        this.unitG.setMountable(true);
+
+                        this.textH = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textH);
+                        this.textH.setMountable(true);
+                        this.textH.setText('7 cm');
+
 			this.createMountPoint(0,30,30);
                         this.createMountPoint(1,0,17);
                         this.createMountPoint(2,30,50);
@@ -88,20 +97,24 @@ Extends: RaphaelPolygon,
                         this.createMountPoint(10,30,130);
                         this.createMountPoint(11,0,117);
                         this.createMountPoint(12,30,150);
+                        this.createMountPoint(13,0,137);
+                        this.createMountPoint(14,30,170);
 
-                        this.mount(this.textAcm,0);
-                        this.mount(this.unitAcm,1);
-                        this.mount(this.textBcm,2);
-                        this.mount(this.unitBcm,3);
-                        this.mount(this.textCcm,4);
-                        this.mount(this.unitCcm,5);
-                        this.mount(this.textDcm,6);
-                        this.mount(this.unitDcm,7);
-                        this.mount(this.textEcm,8);
-                        this.mount(this.unitEcm,9);
-                        this.mount(this.textFcm,10);
-                        this.mount(this.unitFcm,11);
-                        this.mount(this.textGcm,12);
+                        this.mount(this.textA,0);
+                        this.mount(this.unitA,1);
+                        this.mount(this.textB,2);
+                        this.mount(this.unitB,3);
+                        this.mount(this.textC,4);
+                        this.mount(this.unitC,5);
+                        this.mount(this.textD,6);
+                        this.mount(this.unitD,7);
+                        this.mount(this.textE,8);
+                        this.mount(this.unitE,9);
+                        this.mount(this.textF,10);
+                        this.mount(this.unitF,11);
+                        this.mount(this.textG,12);
+                        this.mount(this.unitG,13);
+                        this.mount(this.textH,14);
 	},
 
 	dragMove: function(dx,dy)
@@ -132,18 +145,20 @@ Extends: RaphaelPolygon,
 	addToQuestion: function(question)
 	{
  		//question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);			
- 		question.mShapeArray.push(this.textAcm);			
- 		question.mShapeArray.push(this.unitAcm);			
- 		question.mShapeArray.push(this.textBcm);			
- 		question.mShapeArray.push(this.unitBcm);			
- 		question.mShapeArray.push(this.textCcm);			
- 		question.mShapeArray.push(this.unitCcm);			
- 		question.mShapeArray.push(this.textDcm);			
- 		question.mShapeArray.push(this.unitDcm);			
- 		question.mShapeArray.push(this.textEcm);			
- 		question.mShapeArray.push(this.unitEcm);			
- 		question.mShapeArray.push(this.textFcm);			
- 		question.mShapeArray.push(this.unitFcm);			
- 		question.mShapeArray.push(this.textGcm);			
+ 		question.mShapeArray.push(this.textA);			
+ 		question.mShapeArray.push(this.unitA);			
+ 		question.mShapeArray.push(this.textB);			
+ 		question.mShapeArray.push(this.unitB);			
+ 		question.mShapeArray.push(this.textC);			
+ 		question.mShapeArray.push(this.unitC);			
+ 		question.mShapeArray.push(this.textD);			
+ 		question.mShapeArray.push(this.unitD);			
+ 		question.mShapeArray.push(this.textE);			
+ 		question.mShapeArray.push(this.unitE);			
+ 		question.mShapeArray.push(this.textF);			
+ 		question.mShapeArray.push(this.unitF);			
+ 		question.mShapeArray.push(this.textG);			
+ 		question.mShapeArray.push(this.unitG);			
+ 		question.mShapeArray.push(this.textH);			
 	}
 });
