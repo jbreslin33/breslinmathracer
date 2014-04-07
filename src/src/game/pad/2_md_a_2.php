@@ -38,8 +38,8 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mRectangleArray[i]);
 			this.mRectangleArray[i].setSize(50,redHeight);
 
-			question.mShapeArray.push(this.mRulerArray[i]);
 			this.mRulerArray[i].addToQuestion(question);
+			question.mShapeArray.push(this.mRulerArray[i]);
 		}
                	
 		//buffer

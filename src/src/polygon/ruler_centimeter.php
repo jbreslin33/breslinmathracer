@@ -6,6 +6,15 @@ Extends: RaphaelPolygon,
         initialize: function (width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
         {
 		this.parent(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d);
+		
+		this.mPolygon = this.mRaphael.rect(this.mPosition.mX, this.mPosition.mY, this.mWidth, this.mHeight).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+
+		this.mPolygon.mPolygon = this;
+                
+		if (this.mDrag)
+                {
+                        this.mPolygon.drag(this.move, this.start, this.up);
+                }
 
 		this.textA = new Shape(55,5,350,200,this,"","","");
                 this.mGame.mShapeArray.push(this.textA);
@@ -77,21 +86,21 @@ Extends: RaphaelPolygon,
   
 		this.unitH = new Rectangle(50,20,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
                 this.mGame.mShapeArray.push(this.unitH);
-                        this.unitH.setMountable(true);
+                this.unitH.setMountable(true);
 
-                        this.textI = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textI);
-                        this.textI.setMountable(true);
-                        this.textI.setText('8 cm');
-      
-			this.unitI = new Rectangle(50,20,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
-                        this.mGame.mShapeArray.push(this.unitI);
-                        this.unitI.setMountable(true);
+                this.textI = new Shape(55,5,245,200,this,"","","");
+                this.mGame.mShapeArray.push(this.textI);
+                this.textI.setMountable(true);
+                this.textI.setText('8 cm');
+     
+		this.unitI = new Rectangle(50,20,200,100,this,this.mRaphael,.3,1,1,"none",.5,true);
+                this.mGame.mShapeArray.push(this.unitI);
+                this.unitI.setMountable(true);
 
-                        this.textJ = new Shape(55,5,245,200,this,"","","");
-                        this.mGame.mShapeArray.push(this.textJ);
-                        this.textJ.setMountable(true);
-                        this.textJ.setText('9 cm');
+                this.textJ = new Shape(55,5,245,200,this,"","","");
+                this.mGame.mShapeArray.push(this.textJ);
+                this.textJ.setMountable(true);
+                this.textJ.setText('9 cm');
 
 			this.unitJ = new Rectangle(50,20,200,100,this,this.mRaphael,.8,1,1,"none",.5,true);
                 	this.mGame.mShapeArray.push(this.unitJ);
@@ -212,14 +221,6 @@ Extends: RaphaelPolygon,
                 this.mount(this.unitO,29);
                 this.mount(this.textP,30);
  		
-		this.mPolygon = this.mRaphael.rect(this.mPosition.mX, this.mPosition.mY, this.mWidth, this.mHeight).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
-
-		this.mPolygon.mPolygon = this;
-                
-		if (this.mDrag)
-                {
-                        this.mPolygon.drag(this.move, this.start, this.up);
-                }
 	},
 
 	dragMove: function(dx,dy)
