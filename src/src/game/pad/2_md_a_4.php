@@ -99,6 +99,11 @@ Extends: RulerPad,
 	createWorld: function()
 	{
 		this.parent();
+
+                this.mRedRectangleArray.length    = 0;
+                this.mGreenRectangleArray.length  = 0;
+                this.mRulerCentimeterArray.length = 0;
+                this.mRulerInchArray.length       = 0; 
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{

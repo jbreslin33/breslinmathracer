@@ -25,7 +25,6 @@ Extends: RulerPad,
         {
 		this.parent();
 		
-		
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
 
