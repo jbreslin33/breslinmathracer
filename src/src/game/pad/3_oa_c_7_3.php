@@ -13,29 +13,28 @@ Extends: NumberPad,
         {
  		this.parent();
 
+		this.mQuiz.mQuestionPoolArray.push(new Question('8 X 3 =','24'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('9 X 3 =','27'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 8 =','24'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 9 =','27'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('7 X 3 =','21'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 6 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 7 =','21'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('6 X 3 =','18'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('4 X 3 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('5 X 3 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 4 =','12'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 5 =','15'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 3 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('10 X 3 =','30'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 3 =','9'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 10 =','30'));
+		this.mQuiz.mQuestionPoolArray.push(new Question('2 X 3 =','6'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 0 =','0'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 1 =','3'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 2 =','6'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 3 =','9'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 4 =','12'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 5 =','15'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 6 =','18'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 7 =','21'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 8 =','24'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 9 =','27'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 10 =','30'));
-		
 		this.mQuiz.mQuestionPoolArray.push(new Question('0 X 3 =','0'));
 		this.mQuiz.mQuestionPoolArray.push(new Question('1 X 3 =','3'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('2 X 3 =','6'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('3 X 3 =','9'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('4 X 3 =','12'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('5 X 3 =','15'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('6 X 3 =','18'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('7 X 3 =','21'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('8 X 3 =','24'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('9 X 3 =','27'));
-		this.mQuiz.mQuestionPoolArray.push(new Question('10 X 3 =','30'));
 		
   		var totalNew           = 0;
 
