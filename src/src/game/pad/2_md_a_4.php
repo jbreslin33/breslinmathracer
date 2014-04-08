@@ -35,21 +35,29 @@ Extends: RulerPad,
 			if (randomNumber == 0)
 			{
 				//get random heights.
-				var redHeightCode = Math.floor((Math.random()*3)+1);
-				var redHeight = parseInt(redHeightCode * 100);  
+				var redHeightCode = Math.floor((Math.random()*2)+2);
+				var redHeight     = parseInt(redHeightCode * 100);  
+				var greenHeight   = 0;
 		
 				answer = '';	
-				if (redHeight == 100)
-				{
-					answer = '5 cm';	
-				}		
 				if (redHeight == 200)
 				{
-					answer = '10 cm';	
+					answer = '5 cm';	
+					greenHeight = 100;
 				}		
 				if (redHeight == 300)
 				{
-					answer = '15 cm';	
+					var randomDif = Math.floor((Math.random()*2));	
+					if (randomDif == 0)
+					{
+						greenHeight = 200;
+						answer = '5 cm';	
+					}
+					else
+					{
+						greenHeight = 100;
+						answer = '10 cm';	
+					}
 				}		
 					
 				question = new Question('How much longer in centimeters is the red shape than the green shape? Write answer like this: 10 cm', '' + answer);
