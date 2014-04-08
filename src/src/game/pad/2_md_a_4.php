@@ -8,10 +8,10 @@ Extends: RulerPad,
        		this.parent(application);
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
-		this.mRedRectangleArray = new Array();	
-		this.mGreenRectangleArray = new Array();	
-		this.mRulerCentimeterArray     = new Array();	
-		this.mRulerInchArray     = new Array();	
+		this.mRedRectangleArray    = new Array();	
+		this.mGreenRectangleArray  = new Array();	
+		this.mRulerCentimeterArray = new Array();	
+		this.mRulerInchArray       = new Array();	
 	},
    
         showCorrectAnswerEnter: function()
@@ -34,6 +34,7 @@ Extends: RulerPad,
 			var randomNumber = Math.floor((Math.random()*2));	
 			if (randomNumber == 0)
 			{
+
 				//get random heights.
 				var redHeightCode = Math.floor((Math.random()*2)+2);
 				var redHeight     = parseInt(redHeightCode * 100);  
@@ -67,7 +68,7 @@ Extends: RulerPad,
 				this.mRedRectangleArray[i].setSize(50,redHeight);
 				
 				question.mShapeArray.push(this.mGreenRectangleArray[i]);
-				this.mGreenRectangleArray[i].setSize(50,50);
+				this.mGreenRectangleArray[i].setSize(50,greenHeight);
 
 				this.mRulerCentimeterArray[i].addToQuestion(question);
 				question.mShapeArray.push(this.mRulerCentimeterArray[i]);
@@ -78,10 +79,30 @@ Extends: RulerPad,
 			else
 			{
 				//get random heights.
-                        	var redHeightCode = Math.floor((Math.random()*3)+1);
-                        	var redHeight = parseInt(redHeightCode * 50);
+				var redHeightCode = Math.floor((Math.random()*2)+2);
+				var redHeight     = parseInt(redHeightCode * 100);  
+				var greenHeight   = 0;
 
-                        	answer = '' + redHeightCode + ' in';
+                        	answer = '';
+                                if (redHeight == 200)
+                                {
+                                        answer = '2 in';
+                                        greenHeight = 100;
+                                }
+                                if (redHeight == 300)
+                                {
+                                        var randomDif = Math.floor((Math.random()*2));
+                                        if (randomDif == 0)
+                                        {
+                                                greenHeight = 200;
+                                                answer = '2 in';
+                                        }
+                                        else
+                                        {
+                                                greenHeight = 100;
+                                                answer = '4 in';
+                                        }
+                                }
 
 				question = new Question('How much longer in inches is the red shape than the green shape? Write answer like this: 10 in', '' + answer);
                         	this.mQuiz.mQuestionArray.push(question);
