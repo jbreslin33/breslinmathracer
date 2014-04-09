@@ -88,7 +88,7 @@ Extends: NumberPad,
 
                 if (this.mApplication.mLevel == 1)
                 {
-			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Graham had','feet of string. He bought', 'more feet of string at the toy store. How much string does Graham have now?','',0);	
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Graham had','feet of string. He bought', 'more feet of string at the toy store. How much string does Graham have now? Write answer in the form: 23 ft','',0);	
 			question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
                         this.mQuiz.mQuestionArray.push(question);
                 }
