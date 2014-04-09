@@ -109,6 +109,7 @@
 <script type="text/javascript" src="/src/game/pad/2_md_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_md_a_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_md_a_4.php"></script>
+<script type="text/javascript" src="/src/game/pad/2_md_b_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/2_g_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_oa_a_2.php"></script>
