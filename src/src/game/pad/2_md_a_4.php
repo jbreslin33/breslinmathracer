@@ -80,8 +80,6 @@ Extends: RulerPad,
 				//get random heights.
 				redHeightCode = Math.floor((Math.random()*5)+2);
 				redHeight     = parseInt(redHeightCode * 50);  
-				this.log('redHeightCode:' + redHeightCode);	
-				this.log('redHeight:' + redHeight);	
 				greenHeight   = 0;
 
                         	answer = '';
@@ -181,7 +179,6 @@ Extends: RulerPad,
                         	this.mQuiz.mQuestionArray.push(question);
 
                         	question.mShapeArray.push(this.mRedRectangleArray[i]);
-				this.log('xredHeight:' + redHeight);
                         	this.mRedRectangleArray[i].setSize(50,redHeight);
 				
 				question.mShapeArray.push(this.mGreenRectangleArray[i]);
