@@ -34,11 +34,10 @@ Extends: RulerPad,
 			var randomNumber = Math.floor((Math.random()*2));	
 			if (randomNumber == 0)
 			{
-
 				//get random heights.
-				var redHeightCode = Math.floor((Math.random()*2)+2);
-				var redHeight     = parseInt(redHeightCode * 100);  
-				var greenHeight   = 0;
+				redHeightCode = Math.floor((Math.random()*2)+2);
+				redHeight     = parseInt(redHeightCode * 100);  
+				greenHeight   = 0;
 		
 				answer = '';	
 				if (redHeight == 200)
@@ -79,28 +78,102 @@ Extends: RulerPad,
 			else
 			{
 				//get random heights.
-				var redHeightCode = Math.floor((Math.random()*2)+2);
-				var redHeight     = parseInt(redHeightCode * 100);  
-				var greenHeight   = 0;
+				redHeightCode = Math.floor((Math.random()*5)+2);
+				redHeight     = parseInt(redHeightCode * 50);  
+				this.log('redHeightCode:' + redHeightCode);	
+				this.log('redHeight:' + redHeight);	
+				greenHeight   = 0;
 
                         	answer = '';
-                                if (redHeight == 200)
+                                if (redHeight == 100)
                                 {
-                                        answer = '2 in';
-                                        greenHeight = 100;
+                                        answer = '1 in';
+                                        greenHeight = 50;
                                 }
-                                if (redHeight == 300)
+                                if (redHeight == 150)
                                 {
                                         var randomDif = Math.floor((Math.random()*2));
                                         if (randomDif == 0)
                                         {
-                                                greenHeight = 200;
-                                                answer = '2 in';
+                                        	answer = '1 in';
+                                                greenHeight = 50;
                                         }
                                         else
                                         {
+                                        	answer = '2 in';
                                                 greenHeight = 100;
+                                        }
+                                }
+ 				if (redHeight == 200)
+                                {
+                                        var randomDif = Math.floor((Math.random()*3));
+                                        if (randomDif == 0)
+                                        {
+                                                answer = '3 in';
+                                                greenHeight = 50;
+                                        }
+                                        if (randomDif == 1)
+                                        {
+                                                answer = '2 in';
+                                                greenHeight = 100;
+                                        }
+                                        if (randomDif == 2)
+					{
+                                                answer = '1 in';
+                                                greenHeight = 150;
+					}
+                                }
+                               	if (redHeight == 250)
+                                {
+                                        var randomDif = Math.floor((Math.random()*4));
+                                        if (randomDif == 0)
+                                        {
                                                 answer = '4 in';
+                                                greenHeight = 50;
+                                        }
+                                        if (randomDif == 1)
+                                        {
+                                                answer = '3 in';
+                                                greenHeight = 100;
+                                        }
+                                        if (randomDif == 2)
+                                        {
+                                                answer = '2 in';
+                                                greenHeight = 150;
+                                        }
+                                        if (randomDif == 3)
+                                        {
+                                                answer = '1 in';
+                                                greenHeight = 200;
+                                        }
+                                }
+   				if (redHeight == 300)
+                                {
+                                        var randomDif = Math.floor((Math.random()*5));
+                                        if (randomDif == 0)
+                                        {
+                                                answer = '5 in';
+                                                greenHeight = 50;
+                                        }
+                                        if (randomDif == 1)
+                                        {
+                                                answer = '4 in';
+                                                greenHeight = 100;
+                                        }
+                                        if (randomDif == 2)
+                                        {
+                                                answer = '3 in';
+                                                greenHeight = 150;
+                                        }
+                                        if (randomDif == 3)
+                                        {
+                                                answer = '2 in';
+                                                greenHeight = 200;
+                                        }
+                                        if (randomDif == 4)
+                                        {
+                                                answer = '1 in';
+                                                greenHeight = 250;
                                         }
                                 }
 
@@ -108,10 +181,11 @@ Extends: RulerPad,
                         	this.mQuiz.mQuestionArray.push(question);
 
                         	question.mShapeArray.push(this.mRedRectangleArray[i]);
+				this.log('xredHeight:' + redHeight);
                         	this.mRedRectangleArray[i].setSize(50,redHeight);
 				
 				question.mShapeArray.push(this.mGreenRectangleArray[i]);
-				this.mGreenRectangleArray[i].setSize(50,50);
+				this.mGreenRectangleArray[i].setSize(50,greenHeight);
 
                         	this.mRulerCentimeterArray[i].addToQuestion(question);
                         	question.mShapeArray.push(this.mRulerCentimeterArray[i]);
