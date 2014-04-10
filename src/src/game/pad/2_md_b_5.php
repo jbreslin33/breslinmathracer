@@ -89,20 +89,23 @@ Extends: NumberPad,
                 if (this.mApplication.mLevel == 1)
                 {
 			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Graham had','feet of string. He bought', 'more feet of string at the toy store. How much string does Graham have now? Write answer in the form: 23 ft','',0);	
+			question.setAnswer('' + question.getAnswer() + ' ft',0);
 			question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
                         this.mQuiz.mQuestionArray.push(question);
                 }
 
                 if (this.mApplication.mLevel == 2)
 		{	
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?','',2);	
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Aubrey had some yarn in a box. She found','feet of yarn in her closet and put it in the box. Now there are', 'inches of yarn in the box. How much yarn in inches were in the box to begin with? Write answer in the form: 23 in','',2);	
+			question.setAnswer('' + question.getAnswer() + ' in',0);
 			question.mTipArray[0] = 'Aubrey has - Aubrey found = Aubrey had';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 
                 if (this.mApplication.mLevel == 3)
 		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Anna had','dog treats. She gave', 'to here puppy. How many dog treats does Anna have now?','',1);
+       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Anna had','centimeters of a chocolate bar. She gave', 'centimters to here puppy. How much chocolate bar does Anna have now? Write answer in the form: 23 cm','',1);
+			question.setAnswer('' + question.getAnswer() + ' cm',0);
 			question.mTipArray[0] = 'Anna had - Anna gave to puppy = Anna has now';
                         this.mQuiz.mQuestionArray.push(question);
 		}

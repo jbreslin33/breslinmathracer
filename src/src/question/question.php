@@ -130,9 +130,9 @@ var Question = new Class(
 		this.mQuestion = question;
 	},
 
-	setAnswer: function(answer)
+	setAnswer: function(answer,slot)
 	{
-		this.mAnswer = answer;
+		this.mAnswerArray[slot] = answer;
 	},	
 	
 	setShowAnswer: function(showAnswer)
