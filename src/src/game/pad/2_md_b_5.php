@@ -121,14 +121,16 @@ Extends: NumberPad,
                 
 		if (this.mApplication.mLevel == 5)
 		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?','',0);
+       			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Molly had some ladybug stickers. She gave','inches of the stickers to her sister and kept', 'inches for herself. How many inches of stickers did Molly have to begin with?  Write answer in the form: 23 in','',0);
+			question.setAnswer('' + question.getAnswer() + ' in',0);
 			question.mTipArray[0] = 'Molly gave to sister + Molly kept for herself = Molly had to begin with';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 6)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought','pots and Ethan brought', 'pots. They had just enough pots to put one flower in each pot. How many flowers did they have?','',0);
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Kaleb and Ethan were flying a kite. Kaleb brought','yards of kite string and Ethan brought', 'yards of kite string. How much kite string did the boys have total? Write answer in the form: 23 ft','',0);
+			question.setAnswer('' + question.getAnswer() + ' ft',0);
 			question.mTipArray[0] = 'Kaleb pots + Ethan pots = total flowers because there is one in each pot';
                         this.mQuiz.mQuestionArray.push(question);
 		}
