@@ -105,7 +105,7 @@ Extends: NumberPad,
 
                 if (this.mApplication.mLevel == 3)
 		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Anna had','centimeters of a chocolate bar. She gave', 'centimters to here puppy. How much chocolate bar does Anna have now? Write answer in the form: 23 cm','',1);
+       			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Anna had','centimeters of a chocolate bar. She gave', 'centimters to here puppy. How much chocolate bar does Anna have now? Write answer in the form: 23 cm','',1);
 			question.setAnswer('' + question.getAnswer() + ' cm',0);
 			question.mTipArray[0] = 'Anna had - Anna gave to puppy = Anna has now';
                         this.mQuiz.mQuestionArray.push(question);
@@ -113,7 +113,8 @@ Extends: NumberPad,
        		
                 if (this.mApplication.mLevel == 4)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Isaac had','quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had', 'quarters left in his pocket. How many fell out?','',1);
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Isaac had','centimeters of candy cane in his pocket. Some of it slipped out through a hole in his pocket. When he got to the playground he only had', 'centimeters of candy cane left in his pocket. How much fell out? Write answer in the form: 23 cm','',1);
+			question.setAnswer('' + question.getAnswer() + ' cm',0);
 			question.mTipArray[0] = 'Issac had - Issac has left = Issac lost';
                         this.mQuiz.mQuestionArray.push(question);
 		}
