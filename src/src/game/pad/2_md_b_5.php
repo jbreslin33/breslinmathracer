@@ -129,7 +129,7 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 6)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Kaleb and Ethan were flying a kite. Kaleb brought','yards of kite string and Ethan brought', 'yards of kite string. How much kite string did the boys have total? Write answer in the form: 23 ft','',0);
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Kaleb and Ethan were flying a kite. Kaleb brought','yards of kite string and Ethan brought', 'yards of kite string. How much kite string did the boys have total? Write answer in the form: 23 ft','',0);
 			question.setAnswer('' + question.getAnswer() + ' ft',0);
 			question.mTipArray[0] = 'Kaleb pots + Ethan pots = total flowers because there is one in each pot';
                         this.mQuiz.mQuestionArray.push(question);
@@ -137,7 +137,8 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 7)
 		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Macon and Parker picked up the crayons that spilled onto the floor. When they put all the crayons back in the box, there were','crayons. Macon counted as he put the crayons in the box. He knows that he put', 'crayons in. How many crayons did Parker put in the box?','',1);
+       			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Macon and Parker picked up the crayons that spilled onto the floor. They measured the amount of crayon they put back in the box and it came to','centimeters of crayon. Macon measured that he put back', 'centimeters of crayon into the box. How many centimeters of crayons did Parker put in the box?  Write answer in the form: 23 cm','',1);
+			question.setAnswer('' + question.getAnswer() + ' cm',0);
 			question.mTipArray[0] = 'total crayons - crayons Macon put away = crayons Parker put away';
                         this.mQuiz.mQuestionArray.push(question);
 		}
