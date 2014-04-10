@@ -21,7 +21,6 @@ Extends: NumberPad,
 	        this.mShapeArray[8].setVisibility(false);
 	        this.mShapeArray[9].setVisibility(false);
   		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ANSWER: ' + this.mQuiz.getQuestion().getAnswer();
-
         },
 
         //outOfTime
