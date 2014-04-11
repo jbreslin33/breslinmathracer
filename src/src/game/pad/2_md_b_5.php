@@ -131,7 +131,7 @@ Extends: NumberPad,
 		{
 			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Kaleb and Ethan were flying a kite. Kaleb brought','yards of kite string and Ethan brought', 'yards of kite string. How much kite string did the boys have total? Write answer in the form: 23 ft','',0);
 			question.setAnswer('' + question.getAnswer() + ' ft',0);
-			question.mTipArray[0] = 'Kaleb pots + Ethan pots = total flowers because there is one in each pot';
+			question.mTipArray[0] = 'Kaleb kite string + Ethan kite string = total kite string';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 
@@ -139,21 +139,23 @@ Extends: NumberPad,
 		{
        			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Macon and Parker picked up the crayons that spilled onto the floor. They measured the amount of crayon they put back in the box and it came to','centimeters of crayon. Macon measured that he put back', 'centimeters of crayon into the box. How many centimeters of crayons did Parker put in the box?  Write answer in the form: 23 cm','',1);
 			question.setAnswer('' + question.getAnswer() + ' cm',0);
-			question.mTipArray[0] = 'total crayons - crayons Macon put away = crayons Parker put away';
+			question.mTipArray[0] = 'total crayon length - length Macon put away = length Parker put away';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 
 		if (this.mApplication.mLevel == 8)
 		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Cole and Maggie worked together to make a train that had','cubes. They broke it into two pieces. One had', 'cubes. How many cubes were in the other piece?','',1);
-			question.mTipArray[0] = 'total cubes - cubes on one train = cubes on the other train';
+       			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Cole and Maggie worked together to make a train that was','inches long. They broke it into two pieces. One was', 'inches long. How long was the other piece?','',1);
+			question.setAnswer('' + question.getAnswer() + ' in',0);
+			question.mTipArray[0] = 'train length - one piece = other piece';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 9)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Sally and Amy shared one box of colored pencils. They used all of the pencils to make drawings for art class. Sally chose','pencils to use for her drawing. Amy chose', 'pencils. How many pencils were in the box to begin with?','',0);
-			question.mTipArray[0] = 'Sally pencils + Amy pencils = total pencils';
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Sally and Amy shared colored thread that was in a box. They used all of the thread to make something for art class. Sally used','yards of thread for her project. Amy used', 'yards of thread for her project. How much thread was in the box to begin with?','',0);
+			question.setAnswer('' + question.getAnswer() + ' yd',0);
+			question.mTipArray[0] = 'Sally thread + Amy thread = total thread';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
