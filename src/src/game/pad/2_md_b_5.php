@@ -169,15 +169,17 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 11)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'In the basketball game, Tiffany scored','points and Alexa scored','points. How many more points did Alexa score?','',1);
-			question.mTipArray[0] = 'Alexa points - Tiffany points = difference in points';
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'In the baseball game the kids pitched from','feet away from the batter. They then started pitching','feet closer to the batter. How close are they now?','',1);
+			question.setAnswer('' + question.getAnswer() + ' ft',0);
+			question.mTipArray[0] = 'original distance - amount moved closer = new distance';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 12)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Carson has','plastic bugs in his collection. He has','more bugs than his brother has. How many bugs does his brother have?','',1);
-			question.mTipArray[0] = 'Carson bugs - how many more he has than brother = how many his brother has';
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Carson can kick a soccer ball','yards. His litter brother can kick it','yards less. How far can his litter brother kick the soccer ball?','',1);
+			question.setAnswer('' + question.getAnswer() + ' yd',0);
+			question.mTipArray[0] = 'Carson distance - how many yards less his brother kicks = distance brother kicks';
                         this.mQuiz.mQuestionArray.push(question);
 		}
    		//buffer
