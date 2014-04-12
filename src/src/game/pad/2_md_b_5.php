@@ -177,7 +177,7 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 12)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Carson can kick a soccer ball','yards. His litter brother can kick it','yards less. How far can his litter brother kick the soccer ball?','',1);
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Carson can kick a soccer ball','yards. His litter brother can kick it','yards less. How far can his litter brother kick the soccer ball?','',1);
 			question.setAnswer('' + question.getAnswer() + ' yd',0);
 			question.mTipArray[0] = 'Carson distance - how many yards less his brother kicks = distance brother kicks';
                         this.mQuiz.mQuestionArray.push(question);
