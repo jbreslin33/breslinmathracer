@@ -161,8 +161,9 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 10)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Skip and Jacob made','cookies. They ate some as soon as they had cooled off. There were','cookies left. How many cookies did Skip and Jacob eat?','',1);
-			question.mTipArray[0] = 'made - left = ate';
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Skip made a wall of sand on the beach that was','inches long. Jacob knocked down','inches of the wall. How many inches were left standing?','',1);
+			question.setAnswer('' + question.getAnswer() + ' in',0);
+			question.mTipArray[0] = 'built - knocked down = left';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
