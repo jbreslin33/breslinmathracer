@@ -23,54 +23,53 @@ Extends: MultipleChoicePad,
         {
 		this.parent();
 	
-		if (this.mApplication.mLevel < 11)	
-		{
-			//just the question array reset
-			this.mQuiz.resetQuestionArray();
-			this.mQuiz.resetQuestionPoolArray();
+		//just the question array reset
+		this.mQuiz.resetQuestionArray();
+		this.mQuiz.resetQuestionPoolArray();
 
-			var question = new Question('This blue shape has 4 sides, is it a rectangle?', 'no');
-			question.mAnswerPool.push('yes');
-			question.mAnswerPool.push('no'); 
-			this.mQuiz.mQuestionArray.push(question);
-			question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
+		var question = new Question('This blue shape has 4 sides, is it a rectangle?', 'no');
+		question.mAnswerPool.push('yes');
+		question.mAnswerPool.push('no'); 
+		this.mQuiz.mQuestionArray.push(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
 			
-			var question = new Question('This blue shape has three sides, is it a triangle?', 'no');
-			question.mAnswerPool.push('yes');
-			question.mAnswerPool.push('no'); 
-			this.mQuiz.mQuestionArray.push(question);
-			question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
-			question.mTipArray[0] = 'A triangle has 3 sides that touch.';
+		var question = new Question('This blue shape has three sides, is it a triangle?', 'no');
+		question.mAnswerPool.push('yes');
+		question.mAnswerPool.push('no'); 
+		this.mQuiz.mQuestionArray.push(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mTipArray[0] = 'A triangle has 3 sides that touch.';
    
-			var question = new Question('What makes this a triangle?', 'It has 3 sides that touch');
-			question.mAnswerPool.push('It is green');
-			question.mAnswerPool.push('It has 3 sides that touch'); 
-			question.mAnswerPool.push('It has 3 sides'); 
-			this.mQuiz.mQuestionArray.push(question);
-			question.mShapeArray.push(this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		var question = new Question('What makes this a triangle?', 'It has 3 sides that touch');
+		question.mAnswerPool.push('It is green');
+		question.mAnswerPool.push('It has 3 sides that touch'); 
+		question.mAnswerPool.push('It has 3 sides'); 
+		this.mQuiz.mQuestionArray.push(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
-			var question = new Question('Is this a triangle?', 'no');
-			question.mAnswerPool.push('yes');
-			question.mAnswerPool.push('no'); 
-			this.mQuiz.mQuestionArray.push(question);
-			question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		var question = new Question('Is this a triangle?', 'no');
+		question.mAnswerPool.push('yes');
+		question.mAnswerPool.push('no'); 
+		this.mQuiz.mQuestionArray.push(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			
-			var question = new Question('What makes this a square?', 'It has 4 equal sides that touch');
-			question.mAnswerPool.push('It has 4 sides');
-			question.mAnswerPool.push('It has 4 equal sides');
-			question.mAnswerPool.push('It has 4 equal sides that touch');
-			this.mQuiz.mQuestionArray.push(question);
-			question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		var question = new Question('What makes this a square?', 'It has 4 equal sides that touch');
+		question.mAnswerPool.push('It has 4 sides');
+		question.mAnswerPool.push('It has 4 equal sides');
+		question.mAnswerPool.push('It has 4 equal sides that touch');
+		this.mQuiz.mQuestionArray.push(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	
-               		//buffer
-                	this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
-		}
+               	//buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+		
+		//random	
 		this.mQuiz.randomize(10);
 	},
 
