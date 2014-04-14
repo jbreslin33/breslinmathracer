@@ -36,7 +36,7 @@ Extends: MultipleChoicePad,
 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
-			
+/*			
 		var question = new Question('This blue shape has three sides, is it a triangle?', 'no');
 		question.mAnswerPool.push('yes');
 		question.mAnswerPool.push('no'); 
@@ -65,7 +65,7 @@ Extends: MultipleChoicePad,
 		question.mAnswerPool.push('It has 4 equal sides that touch');
 		this.mQuiz.mQuestionArray.push(question);
 		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
-	
+*/	
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
@@ -77,13 +77,11 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 		
-		if (this.mApplication.mLevel < 11)	
-		{
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false)); 
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false)); 
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false)); 
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,325,150,275,"#0000FF",false)); 
-
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false)); 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false)); 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false)); 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,325,150,275,"#0000FF",false)); 
+/*
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,300,150,250,"#0000FF",false)); 
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,250,150,300,"#0000FF",false)); 
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,300,125,300,"#0000FF",false)); 
@@ -91,6 +89,6 @@ Extends: MultipleChoicePad,
 			this.mShapeArray.push(new Triangle (this,this.mRaphael,100,300,150,250,150,300,.3,1,1,"none",.5,false)); 
  			this.mShapeArray.push(new Rectangle(50,50,100,310,this,this.mRaphael,.3,1,1,"none",.5,false));
  			this.mShapeArray.push(new Rectangle(50,50,100,310,this,this.mRaphael,.3,1,1,"none",.5,false));
-		}
+*/
 	}
 });
