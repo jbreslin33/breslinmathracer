@@ -38,6 +38,7 @@ Extends: MultipleChoicePad,
 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		//question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
                	
 		//buffer
@@ -56,9 +57,15 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false)); 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,325,150,275,"#0000FF",false)); 
 
+		//0
 		shape = new Shape(5,5,55,275,this,"","","");	
 		this.mShapeArray.push(shape);	
 		shape.setText('A');
+		
+		//1
+		shape = new Shape(5,5,105,275,this,"","","");	
+		this.mShapeArray.push(shape);	
+		shape.setText('B');
 		
 	}
 });
