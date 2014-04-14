@@ -27,16 +27,18 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		var question = new Question('This blue shape has 4 sides, is it a rectangle?', 'no');
-		question.mAnswerPool.push('yes');
-		question.mAnswerPool.push('no'); 
+		var question = new Question('If A equals 0 and B equals 1, what does C equal?', '2');
+		question.mAnswerPool.push('0');
+		question.mAnswerPool.push('1'); 
+		question.mAnswerPool.push('3'); 
+		question.mAnswerPool.push('4'); 
 		this.mQuiz.mQuestionArray.push(question);
 		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
-		question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
+		//question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
                	
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
