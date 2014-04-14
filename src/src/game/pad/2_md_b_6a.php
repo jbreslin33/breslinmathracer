@@ -80,9 +80,9 @@ Extends: MultipleChoicePad,
 		if (this.mApplication.mLevel < 11)	
 		{
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false)); 
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,250,150,250,"#0000FF",false)); 
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,250,150,300,"#0000FF",false)); 
-			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,300,125,300,"#0000FF",false)); 
+			this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false)); 
+			this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false)); 
+			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,325,150,275,"#0000FF",false)); 
 
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,300,150,250,"#0000FF",false)); 
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,250,150,300,"#0000FF",false)); 
