@@ -35,6 +35,7 @@ Extends: MultipleChoicePad,
 		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		question.mTipArray[0] = 'A rectangle has 4 sides that touch.';
 /*			
 		var question = new Question('This blue shape has three sides, is it a triangle?', 'no');
@@ -81,6 +82,18 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false)); 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false)); 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,325,150,275,"#0000FF",false)); 
+
+		shape = new Shape(55,5,245,200,this,"","","");	
+		this.mShapeArray.push(shape);	
+		shape.setText('A');
+		
+/*
+                this.textG = new Shape(55,5,245,200,this,"","","");
+                        this.mGame.mShapeArray.push(this.textG);
+                        this.textG.setMountable(true);
+                        this.textG.setText('6 in');
+
+*/
 /*
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,300,150,250,"#0000FF",false)); 
 			this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,250,150,300,"#0000FF",false)); 
