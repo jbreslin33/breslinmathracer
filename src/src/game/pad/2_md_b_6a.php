@@ -57,7 +57,11 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(13 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(14 + this.mTotalGuiBars + this.mTotalInputBars)]);
-
+                question.mShapeArray.push(this.mShapeArray[parseInt(15 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(18 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(19 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -97,6 +101,11 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,150,325,150,275,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,200,325,200,275,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,250,325,250,275,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,300,325,300,275,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,400,325,400,275,"#0000FF",false));
 
                 //0
                 shape = new Shape(5,5,55,275,this,"","","");
