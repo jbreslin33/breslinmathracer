@@ -113,7 +113,7 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('2');
                 
-		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,650,287,"#0000FF",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,650,287,"#00FF00",false));
                 
 	
 	}
