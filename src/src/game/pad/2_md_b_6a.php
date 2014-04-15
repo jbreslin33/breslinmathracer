@@ -67,6 +67,16 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(22 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(23 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(24 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(25 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(29 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(30 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(31 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(32 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(33 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                question.mShapeArray.push(this.mShapeArray[parseInt(34 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -132,6 +142,56 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('2');
                 
+		//3
+                shape = new Shape(5,5,205,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('3');
+               
+		//4
+                shape = new Shape(5,5,255,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('4');
+
+		//5
+                shape = new Shape(5,5,305,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('5');
+
+		//6
+                shape = new Shape(5,5,355,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('6');
+
+		//7
+                shape = new Shape(5,5,405,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('7');
+
+		//8
+                shape = new Shape(5,5,455,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('8');
+
+		//9
+                shape = new Shape(5,5,505,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('9');
+
+		//10
+                shape = new Shape(5,5,555,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('10');
+
+		//11
+                shape = new Shape(5,5,605,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('11');
+		
+		//12
+                shape = new Shape(5,5,655,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('12');
+ 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,650,287,"#00FF00",false));
                 
 	
