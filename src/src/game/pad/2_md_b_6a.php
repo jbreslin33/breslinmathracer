@@ -48,7 +48,6 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(24 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(25 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
-                question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
 
 	createQuestions: function()
@@ -67,6 +66,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('4');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 2 
                 var question = new Question('What is the value of the green line?', '2');
@@ -76,6 +76,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('4');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 3 
                 var question = new Question('What is the value of the green line?', '3');
