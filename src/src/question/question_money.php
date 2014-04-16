@@ -21,7 +21,7 @@ Extends: Question,
                        	dimes = Math.floor((Math.random()* parseInt(maxDimes - minDimes + 1)));
                        	quarters = Math.floor((Math.random()* parseInt(maxQuarters - minQuarters + 1)));
                        	dollars = Math.floor((Math.random()* parseInt(maxDollars - minDollars + 1)));
-                       	x = pennies * + nickels * 5 + dimes * 10 + quarters * 25 + dollars * 100;
+                       	x = pennies + nickels * 5 + dimes * 10 + quarters * 25 + dollars * 100;
                 }
                 
 		//valid parameters so make the question...
