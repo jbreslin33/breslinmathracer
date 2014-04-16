@@ -1,4 +1,4 @@
-var g1_md_b_3 = new Class(
+var g2_md_c_7 = new Class(
 {
 
 Extends: NumberPad,
