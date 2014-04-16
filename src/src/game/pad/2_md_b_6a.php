@@ -86,6 +86,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('5');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(29 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 4 
                 var question = new Question('What is the value of the green line?', '4');
@@ -95,6 +96,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('6');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(30 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 5 
                 var question = new Question('What is the value of the green line?', '5');
@@ -104,6 +106,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('7');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(31 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 6 
                 var question = new Question('What is the value of the green line?', '6');
@@ -113,6 +116,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('8');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(32 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 7 
                 var question = new Question('What is the value of the green line?', '7');
@@ -122,6 +126,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('9');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(33 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 8   
                 var question = new Question('What is the value of the green line?', '8');
@@ -131,6 +136,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('10');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(34 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 9 
                 var question = new Question('What is the value of the green line?', '9');
@@ -140,6 +146,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('11');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(35 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 10
                 var question = new Question('What is the value of the green line?', '10');
@@ -149,6 +156,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('12');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(36 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 11
                 var question = new Question('What is the value of the green line?', '11');
@@ -158,6 +166,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('13');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(37 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 12
                 var question = new Question('What is the value of the green line?', '12');
@@ -167,6 +176,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('14');
                 this.mQuiz.mQuestionArray.push(question);
                 this.includeGraph(question);
+		question.mShapeArray.push(this.mShapeArray[parseInt(38 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
