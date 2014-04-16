@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(5);
+		this.setScoreNeeded(12);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -60,15 +60,113 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
         	//*************** question 1 
+                var question = new Question('What is the value of the green line?', '1');
+                question.mAnswerPool.push('0');
+                question.mAnswerPool.push('2');
+                question.mAnswerPool.push('3');
+                question.mAnswerPool.push('4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question);
+
+                //*************** question 2 
                 var question = new Question('What is the value of the green line?', '2');
                 question.mAnswerPool.push('0');
                 question.mAnswerPool.push('1');
                 question.mAnswerPool.push('3');
                 question.mAnswerPool.push('4');
                 this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
 
-		this.includeGraph(question);
-	
+                //*************** question 3 
+                var question = new Question('What is the value of the green line?', '3');
+                question.mAnswerPool.push('1');
+                question.mAnswerPool.push('2');
+                question.mAnswerPool.push('4');
+                question.mAnswerPool.push('5');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 4 
+                var question = new Question('What is the value of the green line?', '4');
+                question.mAnswerPool.push('2');
+                question.mAnswerPool.push('3');
+                question.mAnswerPool.push('5');
+                question.mAnswerPool.push('6');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 5 
+                var question = new Question('What is the value of the green line?', '5');
+                question.mAnswerPool.push('3');
+                question.mAnswerPool.push('4');
+                question.mAnswerPool.push('6');
+                question.mAnswerPool.push('7');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 6 
+                var question = new Question('What is the value of the green line?', '6');
+                question.mAnswerPool.push('4');
+                question.mAnswerPool.push('5');
+                question.mAnswerPool.push('7');
+                question.mAnswerPool.push('8');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 7 
+                var question = new Question('What is the value of the green line?', '7');
+                question.mAnswerPool.push('5');
+                question.mAnswerPool.push('6');
+                question.mAnswerPool.push('8');
+                question.mAnswerPool.push('9');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 8   
+                var question = new Question('What is the value of the green line?', '8');
+                question.mAnswerPool.push('6');
+                question.mAnswerPool.push('7');
+                question.mAnswerPool.push('9');
+                question.mAnswerPool.push('10');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 9 
+                var question = new Question('What is the value of the green line?', '9');
+                question.mAnswerPool.push('7');
+                question.mAnswerPool.push('8');
+                question.mAnswerPool.push('10');
+                question.mAnswerPool.push('11');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 10
+                var question = new Question('What is the value of the green line?', '10');
+                question.mAnswerPool.push('8');
+                question.mAnswerPool.push('9');
+                question.mAnswerPool.push('11');
+                question.mAnswerPool.push('12');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 11
+                var question = new Question('What is the value of the green line?', '11');
+                question.mAnswerPool.push('9');
+                question.mAnswerPool.push('10');
+                question.mAnswerPool.push('12');
+                question.mAnswerPool.push('13');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
+                //*************** question 12
+                var question = new Question('What is the value of the green line?', '12');
+                question.mAnswerPool.push('10');
+                question.mAnswerPool.push('11');
+                question.mAnswerPool.push('13');
+                question.mAnswerPool.push('14');
+                this.mQuiz.mQuestionArray.push(question);
+                this.includeGraph(question);
+
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
