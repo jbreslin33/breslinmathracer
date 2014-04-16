@@ -33,6 +33,7 @@
 <script type="text/javascript" src="/src/question/question.php"></script>
 <script type="text/javascript" src="/src/question/question_compare.php"></script>
 <script type="text/javascript" src="/src/question/question_word.php"></script>
+<script type="text/javascript" src="/src/question/question_money.php"></script>
 
 <script type="text/javascript" src="/src/quiz/quiz.php"></script>
 
