@@ -6,31 +6,43 @@ Extends: Question,
         {
                 this.parent(question,answer)
                 
-		var a = 0;
-                var b = 0;
-                var c = 0;
+		var pennies = 0;
+                var nickels = 0;
+                var dimes = 0;
+                var quarters = 0;
+                var dollars = 0;
                 var x = 100;
                 var questionText = '';
 
-                while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB)
+                while (x > maxTotal || x < minTotal || pennies < minPennies || pennies > maxPennies || nickels < minNickels || nickels > maxNickels || quarters < minQuarters || quarters > maxQuarters || dollars < minDollars || dollars > maxDollars)
                 {
-                       	a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
-                       	b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
-                       	x = a + b;
+                        pennies = Math.floor((Math.random()* parseInt(maxPennies - minPennies + 1)));
+                       	nickels = Math.floor((Math.random()* parseInt(maxNickels - minNickels + 1)));
+                       	dimes = Math.floor((Math.random()* parseInt(maxDimes - minDimes + 1)));
+                       	quarters = Math.floor((Math.random()* parseInt(maxQuarters - minQuarters + 1)));
+                       	dollars = Math.floor((Math.random()* parseInt(maxDollars - minDollars + 1)));
+                       	x = pennies * + nickels * 5 + dimes * 10 + quarters * 25 + dollars * 100;
                 }
                 
 		//valid parameters so make the question...
-                questionText = textA;
-                questionText = questionText + ' ' + a + ' ';
-                questionText = questionText + textB;
-                questionText = questionText + ' ' + b + ' ';
-                questionText = questionText + textC;
+                questionText = 'You have ';
+                questionText = questionText + ' ' + pennies;
+                questionText = questionText + ' pennies, ';
+                questionText = questionText + nickels;
+                questionText = questionText + ' nickels, ';
+                questionText = questionText + dimes;
+                questionText = questionText + ' dimes, ';
+                questionText = questionText + quarters;
+                questionText = questionText + ' quarters and ';
+                questionText = questionText + dollars;
+                questionText = questionText + ' dollars.';
+                questionText = questionText + ' How much money do you have?';
 
 		this.mQuestion = '' + questionText;
 		this.mAnswerArray[0] = '' + x;
 
 		//auto tips
-                this.mTipArray[2] = 'a + b = x';
-                this.mTipArray[3] = '' + a + ' + ' + b + ' = ' + x;
+                //this.mTipArray[2] = 'a + b = x';
+                //this.mTipArray[3] = '' + a + ' + ' + b + ' = ' + x;
         }
 });

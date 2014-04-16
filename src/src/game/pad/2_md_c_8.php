@@ -86,12 +86,13 @@ Extends: NumberPad,
                 this.parent();
 
                 this.mQuiz.resetQuestionArray();
+//initialize: function(question,answer,minTotal,maxTotal,minPennies,maxPennies,minNickels,maxNickels,minDimes,maxDimes,minQuarters,maxQuarters,minDollars,maxDollars)
 
                 if (this.mApplication.mLevel == 1)
                 {
-			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Graham had','feet of string. He bought', 'more feet of string at the toy store. How much string does Graham have now? Write answer in the form: 23 ft','',0);	
-			question.setAnswer('' + question.getAnswer() + ' ft',0);
-			question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
+			var question = new QuestionMoney('','',2,10000,2,99,2,5,2,9,2,4,2,99);	
+			//question.setAnswer('' + question.getAnswer() + ' ft',0);
+			//question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
                         this.mQuiz.mQuestionArray.push(question);
                 }
 
