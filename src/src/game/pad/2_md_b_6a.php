@@ -155,6 +155,17 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('12');
  
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,100,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,150,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,200,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,250,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,300,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,350,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,400,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,450,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,500,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,550,287,"#00FF00",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,600,287,"#00FF00",false));
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,287,650,287,"#00FF00",false));
                 
 	
