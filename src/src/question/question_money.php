@@ -39,6 +39,9 @@ Extends: Question,
                 questionText = questionText + ' How much money do you have?';
 
 		this.mQuestion = '' + questionText;
+		
+		//var decimal = x.split 
+		
 		this.mAnswerArray[0] = '' + x;
 
 		//auto tips
