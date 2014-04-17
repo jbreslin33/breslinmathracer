@@ -91,7 +91,7 @@ Extends: NumberPad,
                 if (this.mApplication.mLevel == 1)
                 {
 			var question = new QuestionMoney('','',2,10000,2,99,2,5,2,9,2,4,2,99);	
-			//question.setAnswer('' + question.getAnswer() + ' ft',0);
+			//question.setAnswer('$' + question.getAnswer(),0);
 			//question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
                         this.mQuiz.mQuestionArray.push(question);
                 }

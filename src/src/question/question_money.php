@@ -43,9 +43,8 @@ Extends: Question,
 		var number = parseInt(x); 
 		var decimal = number / 100;
 		var twoPlacedFloat = parseFloat(decimal).toFixed(2)
-
 		
-		this.mAnswerArray[0] = '' + twoPlacedFloat;
+		this.mAnswerArray[0] = '$' + twoPlacedFloat;
 
 		//auto tips
                 //this.mTipArray[2] = 'a + b = x';
