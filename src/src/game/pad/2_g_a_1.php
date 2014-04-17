@@ -15,7 +15,8 @@ Extends: MultipleChoicePad,
         showCorrectAnswerEnter: function()
         {
                 this.parent();
-                this.mShapeArray[1].setPosition(100,80);
+                //this.mShapeArray[1].setVePosition(100,80);
+                this.mShapeArray[9].setVisibility(false);
         },
 
 	includeTriangle: function(question)
@@ -110,7 +111,9 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(100,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
  		this.mShapeArray.push(new Pentagon (this,this.mRaphael,300,300,350,250,400,300,375,350,325,350,.3,1,1,"none",.5,true));
  		this.mShapeArray.push(new Hexagon  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
- 		this.mShapeArray.push(new Cube     (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
+ 		//this.mShapeArray.push(new Cube     (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
+  		this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cube.jpg","",""));
+
 
 	}
 });
