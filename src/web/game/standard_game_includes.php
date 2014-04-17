@@ -22,6 +22,7 @@
 <script type="text/javascript" src="/src/polygon/triangle.php"></script>
 <script type="text/javascript" src="/src/polygon/pentagon.php"></script>
 <script type="text/javascript" src="/src/polygon/hexagon.php"></script>
+<script type="text/javascript" src="/src/polygon/cube.php"></script>
 <script type="text/javascript" src="/src/polygon/arc.php"></script>
 <script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 <script type="text/javascript" src="/src/polygon/line_one.php"></script>
