@@ -22,9 +22,13 @@ Extends: MultipleChoicePad,
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
-	includeRectangle: function(question)
+	includeSquare: function(question)
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+	},
+	includeRectangle: function(question)
+	{
+                question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
 
 	createQuestions: function()
@@ -47,6 +51,13 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('NO');
                 question.mAnswerPool.push('YES');
                 this.mQuiz.mQuestionArray.push(question);
+		this.includeSquare(question);
+                
+		//*************** question 3 
+                var question = new Question('Does this shape have atleast 2 sides of equal length?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
 		this.includeRectangle(question);
 
 		//buffer
@@ -62,7 +73,8 @@ Extends: MultipleChoicePad,
 	
             	//************ setup
  		this.mShapeArray.push(new Triangle (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true));
-		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Rectangle(50,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Rectangle(100,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 
 	}
 });
