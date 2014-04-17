@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(12);
+		this.setScoreNeeded(6);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -98,7 +98,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		//this.mQuiz.randomize(10);
+		this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
@@ -113,7 +113,5 @@ Extends: MultipleChoicePad,
  		this.mShapeArray.push(new Hexagon  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
  		//this.mShapeArray.push(new Cube     (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
   		this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cube.jpg","",""));
-
-
 	}
 });
