@@ -15,13 +15,16 @@ Extends: MultipleChoicePad,
         showCorrectAnswerEnter: function()
         {
                 this.parent();
-
                 this.mShapeArray[1].setPosition(100,80);
         },
 
 	includeTriangle: function(question)
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+	},
+	includeRectangle: function(question)
+	{
+                question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
 
 	createQuestions: function()
@@ -38,19 +41,14 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('YES');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeTriangle(question);
-		//question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 //*************** question 2 
-/*
-                var question = new Question('What is the value of the green line?', '2');
-                question.mAnswerPool.push('0');
-                question.mAnswerPool.push('1');
-                question.mAnswerPool.push('3');
-                question.mAnswerPool.push('4');
+                var question = new Question('Does this shape have exactly 4 angles?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
                 this.mQuiz.mQuestionArray.push(question);
-                this.includeGraph(question);
-		question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
-*/
+		this.includeRectangle(question);
+
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
@@ -63,7 +61,8 @@ Extends: MultipleChoicePad,
 		this.parent();
 	
             	//************ setup
-                //this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false));
- 		this.mShapeArray.push(new Triangle   (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true));
+ 		this.mShapeArray.push(new Triangle (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true));
+		this.mShapeArray.push(new Rectangle(50,50,50,200,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+
 	}
 });
