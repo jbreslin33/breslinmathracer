@@ -30,6 +30,10 @@ Extends: MultipleChoicePad,
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
+	includePentagon: function(question)
+	{
+                question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+	},
 
 	createQuestions: function()
         {
@@ -59,6 +63,13 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('YES');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeRectangle(question);
+		
+		//*************** question 4 
+                var question = new Question('Is this a pentDoes this shape have atleast 2 sides of equal length?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includePentagon(question);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -75,6 +86,7 @@ Extends: MultipleChoicePad,
  		this.mShapeArray.push(new Triangle (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true));
 		this.mShapeArray.push(new Rectangle(50,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(100,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+ 		this.mShapeArray.push(new Pentagon (this,this.mRaphael,300,300,350,250,400,300,400,350,350,350,.3,1,1,"none",.5,true));
 
 	}
 });
