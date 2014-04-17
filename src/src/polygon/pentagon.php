@@ -52,7 +52,7 @@ Extends: RaphaelPolygon,
                 this.x5 += deltaX;
                 this.y5 += deltaY;
 
-                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + + " L" + this.x4 + "," + this.y4 + + " L" + this.x5 + "," + this.y5 + " z";
+                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " L" + this.x5 + "," + this.y5 + " z";
                 this.mPolygon.attr({path:"" + this.mPathString});
 
                 this.mLastX = dx;
