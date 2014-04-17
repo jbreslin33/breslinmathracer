@@ -1,4 +1,4 @@
-var Hexagon = new Class(
+var Cube = new Class(
 {
 Extends: RaphaelPolygon,
         initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,r,g,b,s,op,d)

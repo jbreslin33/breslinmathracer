@@ -38,6 +38,10 @@ Extends: MultipleChoicePad,
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
+	includeCube: function(question)
+	{
+                question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+	},
 
 	createQuestions: function()
         {
@@ -81,6 +85,13 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('YES');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeHexagon(question);
+		
+		//*************** question 6 
+                var question = new Question('Is this a cube?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeCube(question);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -98,7 +109,8 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new Rectangle(50,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(100,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
  		this.mShapeArray.push(new Pentagon (this,this.mRaphael,300,300,350,250,400,300,375,350,325,350,.3,1,1,"none",.5,true));
- 		this.mShapeArray.push(new Hexagon (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
+ 		this.mShapeArray.push(new Hexagon  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
+ 		this.mShapeArray.push(new Cube     (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
 
 	}
 });
