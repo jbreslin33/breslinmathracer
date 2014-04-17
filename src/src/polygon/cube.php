@@ -24,7 +24,7 @@ Extends: RaphaelPolygon,
 		
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " L" + this.x5 + "," + this.y5 + " L" + this.x6 + "," + this.y6 + " z";
 		
-		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+		this.mPolygon = this.mRaphael.path("" + this.mPathString);
 
 		this.mPolygon.mPolygon = this;
 
