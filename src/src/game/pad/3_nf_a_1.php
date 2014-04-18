@@ -39,7 +39,7 @@ Extends: NumberPad,
 				denominator = Math.floor((Math.random()*4)+1);		
 				numerator = parseInt(numeratorA + numeratorB);
 			}
-                        this.mQuiz.mQuestionArray.push(new Question('' + numeratorA + ' / ' + denominator + ' + ' + numeratorB + '/' + denominator, '' + numerator + '/' + denominator));
+                        this.mQuiz.mQuestionArray.push(new Question('' + numeratorA + '/' + denominator + ' + ' + numeratorB + '/' + denominator, '' + numerator + '/' + denominator));
 		}
 	}
 });
