@@ -30,7 +30,8 @@ Extends: NumberPad,
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
 			varA = Math.floor((Math.random()*9)+1);		
-			varB = Math.floor((Math.random()*8)+1*10);		
+			varB = Math.floor((Math.random()*8)+1);		
+			varB = varB * 10;		
 			varC = parseInt(varA * varB);		
 
                         this.mQuiz.mQuestionArray.push(new Question('What is ' + varA + ' X ' + varB + '?' , '' + varC));
