@@ -21,20 +21,25 @@ Extends: NumberPad,
         {
  		this.parent();
 
-		var numeratorA    = 0;
-		var denominatorA  = 0;
-		
-		var numeratorB    = 0;
-		var denominatorB  = 0;
+		var numeratorA  = 0;
+		var numeratorB  = 0;
+
+		var numerator   = 0;
+		var denominator = 0;
 
 		this.mQuiz.resetQuestionArray();
 
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			numeratorA   = Math.floor((Math.random()*4)+1);		
-			denominatorA = Math.floor((Math.random()*4)+1);		
-
-                        this.mQuiz.mQuestionArray.push(new Question('Sally ate ' + numeratorA + ' / ' + denominatorA + ' of a pie?' , '' + numeratorA + '/' + denominatorA));
+			numerator = 99;
+			while (numerator > denominator) 
+			{
+				numeratorA  = Math.floor((Math.random()*4)+1);		
+				numeratorB  = Math.floor((Math.random()*4)+1);		
+				denominator = Math.floor((Math.random()*4)+1);		
+				numerator = parseInt(numeratorA + numeratorB);
+			}
+                        this.mQuiz.mQuestionArray.push(new Question('' + numeratorA + ' / ' + denominator + ' + ' + numeratorB + '/' + denominator, '' + numerator + '/' + denominator));
 		}
 	}
 });
