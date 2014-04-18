@@ -138,6 +138,7 @@
 <script type="text/javascript" src="/src/game/pad/3_nbt_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_nbt_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_nbt_a_3.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_nf_a_2a.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_nf_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_2.php"></script>
