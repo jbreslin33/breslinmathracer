@@ -34,7 +34,7 @@ Extends: NumberPad,
 			numeratorA   = Math.floor((Math.random()*4)+1);		
 			denominatorA = Math.floor((Math.random()*4)+1);		
 
-                        this.mQuiz.mQuestionArray.push(new Question('Sally ate ' + numeratorA + ' / ' + denominatorB + ' of a pie?' , '' + numeratorA + '/' + denominatorB));
+                        this.mQuiz.mQuestionArray.push(new Question('Sally ate ' + numeratorA + ' / ' + denominatorA + ' of a pie?' , '' + numeratorA + '/' + denominatorA));
 		}
 	}
 });
