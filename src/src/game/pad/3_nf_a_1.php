@@ -21,20 +21,20 @@ Extends: NumberPad,
         {
  		this.parent();
 
-		var varA   = 0;
-		var varB   = 0;
-		var varC   = 0;
+		var numeratorA    = 0;
+		var denominatorA  = 0;
+		
+		var numeratorB    = 0;
+		var denominatorB  = 0;
 
 		this.mQuiz.resetQuestionArray();
 
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			varA = Math.floor((Math.random()*9)+1);		
-			varB = Math.floor((Math.random()*8)+1);		
-			varB = varB * 10;		
-			varC = parseInt(varA * varB);		
+			numeratorA   = Math.floor((Math.random()*4)+1);		
+			denominatorA = Math.floor((Math.random()*4)+1);		
 
-                        this.mQuiz.mQuestionArray.push(new Question('What is ' + varA + ' X ' + varB + '?' , '' + varC));
+                        this.mQuiz.mQuestionArray.push(new Question('Sally ate ' + numeratorA + ' / ' + denominatorB + ' of a pie?' , '' + numeratorA + '/' + denominatorB));
 		}
 	}
 });
