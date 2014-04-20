@@ -79,18 +79,23 @@ Extends: MultipleChoicePad,
 		}
 		if (denominator == 4)
 		{
+			// 0 and 1 setup
                 	question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
+			// fraction bars
                 	question.mShapeArray.push(this.mShapeArray[parseInt(18 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(19 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(20 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                
 
 			if (numerator == 0)
 			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(21 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
 			}
 		}
@@ -256,6 +261,46 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,200,325,200,275,"#0000FF",false));
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,500,325,500,275,"#0000FF",false));
+ 		
+		//V at 0/4 :21
+                shape = new Shape(5,5,55,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 1/4 :22
+                shape = new Shape(5,5,205,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 2/4 :23
+                shape = new Shape(5,5,355,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 3/4 :24
+                shape = new Shape(5,5,505,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 4/4 :25
+                shape = new Shape(5,5,655,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		// 1/4 at 1/4 :26
+                shape = new Shape(5,5,205,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1/4');
+		
+		// 2/4 at 2/4 :27
+                shape = new Shape(5,5,355,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('2/4');
+		
+		// 3/4 at 3/4 :28
+                shape = new Shape(5,5,505,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('3/4');
 	
 	}
 });
