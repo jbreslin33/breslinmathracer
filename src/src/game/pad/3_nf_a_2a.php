@@ -59,6 +59,7 @@ Extends: MultipleChoicePad,
                 	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		} 
 	},
 
@@ -104,6 +105,8 @@ Extends: MultipleChoicePad,
                 shape = new Shape(5,5,655,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('1');
+                	
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,100,325,100,275,"#0000FF",false));
 
 /*
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false));
