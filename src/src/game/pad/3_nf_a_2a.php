@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(12);
+		this.setScoreNeeded(7);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -154,14 +154,6 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
         	//*************** question 1 
-                var question = new Question('What is the value of V?', '0/2');
-                question.mAnswerPool.push('1/2');
-                question.mAnswerPool.push('2/2');
-                question.mAnswerPool.push('0/3');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeGraph(question,0,2);
-
-        	//*************** question 2 
                 var question = new Question('What is the value of V?', '1/2');
                 question.mAnswerPool.push('0/2');
                 question.mAnswerPool.push('2/2');
@@ -169,23 +161,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,1,2);
 
-        	//*************** question 3 
-                var question = new Question('What is the value of V?', '2/2');
-                question.mAnswerPool.push('0/2');
-                question.mAnswerPool.push('1/2');
-                question.mAnswerPool.push('2/3');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeGraph(question,2,2);
-        	
-		//*************** question 4 
-                var question = new Question('What is the value of V?', '0/3');
-                question.mAnswerPool.push('1/3');
-                question.mAnswerPool.push('2/3');
-                question.mAnswerPool.push('3/3');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeGraph(question,0,3);
-
-		//*************** question 5 
+		//*************** question 2 
                 var question = new Question('What is the value of V?', '1/3');
                 question.mAnswerPool.push('0/3');
                 question.mAnswerPool.push('2/3');
@@ -193,7 +169,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,1,3);
 
-		//*************** question 6 
+		//*************** question 3 
                 var question = new Question('What is the value of V?', '2/3');
                 question.mAnswerPool.push('0/3');
                 question.mAnswerPool.push('1/3');
@@ -201,7 +177,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,2,3);
 
-		//*************** question 7 
+		//*************** question 4 
                 var question = new Question('What is the value of V?', '3/3');
                 question.mAnswerPool.push('0/3');
                 question.mAnswerPool.push('1/3');
@@ -209,16 +185,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,3,3);
 		
-		//*************** question 8 
-                var question = new Question('What is the value of V?', '0/4');
-                question.mAnswerPool.push('1/4');
-                question.mAnswerPool.push('2/4');
-                question.mAnswerPool.push('3/4');
-                question.mAnswerPool.push('4/4');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeGraph(question,0,4);
-
-		//*************** question 9 
+		//*************** question 5 
                 var question = new Question('What is the value of V?', '1/4');
                 question.mAnswerPool.push('0/4');
                 question.mAnswerPool.push('2/4');
@@ -227,7 +194,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,1,4);
 
-		//*************** question 10 
+		//*************** question 6 
                 var question = new Question('What is the value of V?', '2/4');
                 question.mAnswerPool.push('0/4');
                 question.mAnswerPool.push('1/4');
@@ -236,7 +203,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,2,4);
 
-		//*************** question 11 
+		//*************** question 7 
                 var question = new Question('What is the value of V?', '3/4');
                 question.mAnswerPool.push('0/4');
                 question.mAnswerPool.push('1/4');
@@ -245,20 +212,11 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,3,4);
 
-		//*************** question 12 
-                var question = new Question('What is the value of V?', '4/4');
-                question.mAnswerPool.push('0/4');
-                question.mAnswerPool.push('1/4');
-                question.mAnswerPool.push('2/4');
-                question.mAnswerPool.push('3/4');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeGraph(question,4,4);
-
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		//this.mQuiz.randomize(10);
+		this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
