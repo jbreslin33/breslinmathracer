@@ -67,7 +67,8 @@ Extends: MultipleChoicePad,
                         }
                         if (numerator == 2)
                         {
-                                question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(14 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
                         }
                         if (numerator == 3)
                         {
