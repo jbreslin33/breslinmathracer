@@ -44,6 +44,14 @@ Extends: MultipleChoicePad,
                 		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			}
 		} 
+		if (denominator == 3)
+		{
+                	question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		}
 	},
 
 	createQuestions: function()
@@ -77,6 +85,15 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('2/3');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,2,2);
+        	
+		//*************** question 4 
+                var question = new Question('What is the value of V?', '0/3');
+                question.mAnswerPool.push('1/3');
+                question.mAnswerPool.push('2/3');
+                question.mAnswerPool.push('3/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,0,3);
+
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -89,7 +106,7 @@ Extends: MultipleChoicePad,
 	{
 		this.parent();
 	
-               	//  denominator 2 
+               	//*********  denominator 2 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,650,325,650,275,"#0000FF",false));
@@ -105,7 +122,6 @@ Extends: MultipleChoicePad,
                 shape.setText('1');
                 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
-		
 		
 		//V at 0/2
                 shape = new Shape(5,5,55,255,this,"","","");
@@ -126,6 +142,8 @@ Extends: MultipleChoicePad,
                 shape = new Shape(5,5,355,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('1/2');
+               	
+		//*********  denominator 3 
                 	
 	}
 });
