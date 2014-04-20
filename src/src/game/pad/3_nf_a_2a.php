@@ -63,6 +63,7 @@ Extends: MultipleChoicePad,
                         if (numerator == 1)
                         {
                                 question.mShapeArray.push(this.mShapeArray[parseInt(13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
                         }
                         if (numerator == 2)
                         {
@@ -157,24 +158,24 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,650,325,650,275,"#0000FF",false));
 
-                //0
+                //0 :3
                 shape = new Shape(5,5,55,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('0');
                 
-		//1
+		//1 :4
                 shape = new Shape(5,5,655,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('1');
                 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
 		
-		//V at 0/2
+		//V at 0/2 :6
                 shape = new Shape(5,5,55,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
 		
-		//V at 1/2 
+		//V at 1/2 :7 
                 shape = new Shape(5,5,355,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
