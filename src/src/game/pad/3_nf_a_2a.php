@@ -32,6 +32,7 @@ Extends: MultipleChoicePad,
 			if (numerator == 0)
 			{
                 		question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			}
 			if (numerator == 1)
 			{
@@ -40,6 +41,7 @@ Extends: MultipleChoicePad,
 			if (numerator == 2)
 			{
                 		question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			}
 		} 
 	},
@@ -80,7 +82,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		this.mQuiz.randomize(10);
+		//this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
@@ -104,6 +106,7 @@ Extends: MultipleChoicePad,
                 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
 		
+		
 		//V at 0/2
                 shape = new Shape(5,5,55,255,this,"","","");
                 this.mShapeArray.push(shape);
@@ -118,6 +121,11 @@ Extends: MultipleChoicePad,
                 shape = new Shape(5,5,655,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
+		
+		// 1/2 at 1/2 
+                shape = new Shape(5,5,355,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1/2');
                 	
 	}
 });
