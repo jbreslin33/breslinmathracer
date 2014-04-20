@@ -58,6 +58,7 @@ Extends: MultipleChoicePad,
                 	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		} 
 	},
 
@@ -93,10 +94,16 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false));
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,650,325,650,275,"#0000FF",false));
+
                 //0
                 shape = new Shape(5,5,55,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('0');
+                
+		//0
+                shape = new Shape(5,5,655,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1');
 
 /*
                 this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false));
