@@ -56,6 +56,7 @@ Extends: MultipleChoicePad,
                     	
 			if (numerator == 0)
                         {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
                                 question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
                                 question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
                         }
@@ -178,12 +179,12 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('V');
 		
-		//V at 2/2 
+		//V at 2/2 :8 
                 shape = new Shape(5,5,655,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
 		
-		// 1/2 at 1/2 
+		// 1/2 at 1/2 :9 
                 shape = new Shape(5,5,355,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('1/2');
@@ -192,32 +193,32 @@ Extends: MultipleChoicePad,
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,250,325,250,275,"#0000FF",false));
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,450,325,450,275,"#0000FF",false));
                 
- 		//V at 0/3
+ 		//V at 0/3 :12
                 shape = new Shape(5,5,55,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
 
-                //V at 1/3
+                //V at 1/3 :13
                 shape = new Shape(5,5,255,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
 
-                //V at 2/3
+                //V at 2/3 :14
                 shape = new Shape(5,5,455,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
                 
-		//V at 3/3
+		//V at 3/3 :15
                 shape = new Shape(5,5,655,255,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('V');
 		
-		// 1/3 at 1/3
+		// 1/3 at 1/3 :16
                 shape = new Shape(5,5,255,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('1/3');
 		
-		// 2/3 at 2/3
+		// 2/3 at 2/3 :17
                 shape = new Shape(5,5,455,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('2/3');
