@@ -77,6 +77,23 @@ Extends: MultipleChoicePad,
                                 question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
                         }
 		}
+		if (denominator == 4)
+		{
+                	question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+                	question.mShapeArray.push(this.mShapeArray[parseInt(18 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(19 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(20 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+			if (numerator == 0)
+			{
+
+			}
+		}
 	},
 
 	createQuestions: function()
@@ -142,6 +159,15 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('2/3');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,3,3);
+		
+		//*************** question 8 
+                var question = new Question('What is the value of V?', '0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('3/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,0,4);
+
 
 
 		//buffer
@@ -226,6 +252,10 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('2/3');
 
+		//*********  denominator 4 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,200,325,200,275,"#0000FF",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,500,325,500,275,"#0000FF",false));
 	
 	}
 });
