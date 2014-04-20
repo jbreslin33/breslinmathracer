@@ -97,6 +97,11 @@ Extends: MultipleChoicePad,
 				//v	
 				question.mShapeArray.push(this.mShapeArray[parseInt(21 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
 			}
 		}
 	},
