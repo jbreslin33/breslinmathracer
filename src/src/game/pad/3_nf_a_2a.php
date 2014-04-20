@@ -91,7 +91,6 @@ Extends: MultipleChoicePad,
                 	question.mShapeArray.push(this.mShapeArray[parseInt(19 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(20 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 
-
 			if (numerator == 0)
 			{
 				//v	
@@ -101,7 +100,47 @@ Extends: MultipleChoicePad,
 				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
 				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
 				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+			
+			if (numerator == 1)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(22 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+
+			if (numerator == 2)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(23 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+			
+			if (numerator == 3)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(24 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+
+			if (numerator == 4)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(25 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			}
 		}
 	},
@@ -175,10 +214,45 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('1/4');
                 question.mAnswerPool.push('2/4');
                 question.mAnswerPool.push('3/4');
+                question.mAnswerPool.push('4/4');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,0,4);
 
+		//*************** question 9 
+                var question = new Question('What is the value of V?', '1/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('3/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,1,4);
 
+		//*************** question 10 
+                var question = new Question('What is the value of V?', '2/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('3/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,2,4);
+
+		//*************** question 11 
+                var question = new Question('What is the value of V?', '3/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,3,4);
+
+		//*************** question 12 
+                var question = new Question('What is the value of V?', '4/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('3/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,4,4);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
