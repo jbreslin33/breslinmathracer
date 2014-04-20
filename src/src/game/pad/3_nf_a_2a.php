@@ -53,6 +53,25 @@ Extends: MultipleChoicePad,
                 	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(10 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(11 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                    	
+			if (numerator == 0)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        if (numerator == 1)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        if (numerator == 2)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        if (numerator == 3)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
 		}
 	},
 
@@ -95,6 +114,30 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('3/3');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeGraph(question,0,3);
+
+		//*************** question 5 
+                var question = new Question('What is the value of V?', '1/3');
+                question.mAnswerPool.push('0/3');
+                question.mAnswerPool.push('2/3');
+                question.mAnswerPool.push('3/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,1,3);
+
+		//*************** question 6 
+                var question = new Question('What is the value of V?', '2/3');
+                question.mAnswerPool.push('0/3');
+                question.mAnswerPool.push('1/3');
+                question.mAnswerPool.push('3/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,2,3);
+
+		//*************** question 7 
+                var question = new Question('What is the value of V?', '3/3');
+                question.mAnswerPool.push('0/3');
+                question.mAnswerPool.push('1/3');
+                question.mAnswerPool.push('2/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,3,3);
 
 
 		//buffer
@@ -141,13 +184,44 @@ Extends: MultipleChoicePad,
                 shape.setText('V');
 		
 		// 1/2 at 1/2 
-                shape = new Shape(5,5,355,255,this,"","","");
+                shape = new Shape(5,5,355,275,this,"","","");
                 this.mShapeArray.push(shape);
                 shape.setText('1/2');
                	
 		//*********  denominator 3 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,250,325,250,275,"#0000FF",false));
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,450,325,450,275,"#0000FF",false));
-                	
+                
+ 		//V at 0/3
+                shape = new Shape(5,5,55,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+
+                //V at 1/3
+                shape = new Shape(5,5,255,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+
+                //V at 2/3
+                shape = new Shape(5,5,455,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+                
+		//V at 3/3
+                shape = new Shape(5,5,655,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		// 1/3 at 1/3
+                shape = new Shape(5,5,255,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1/3');
+		
+		// 2/3 at 2/3
+                shape = new Shape(5,5,455,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('2/3');
+
+	
 	}
 });
