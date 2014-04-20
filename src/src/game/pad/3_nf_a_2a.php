@@ -29,6 +29,10 @@ Extends: MultipleChoicePad,
                 	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 	question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			if (numerator == 1)
+			{
+                		question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
 		} 
 	},
 
@@ -47,7 +51,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('3');
                 question.mAnswerPool.push('4');
                 this.mQuiz.mQuestionArray.push(question);
-		this.includeGraph(question,2,2);
+		this.includeGraph(question,1,2);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -76,6 +80,11 @@ Extends: MultipleChoicePad,
                 shape.setText('1');
                 
 		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
+		
+		//V
+                shape = new Shape(5,5,655,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
                 	
 	}
 });
