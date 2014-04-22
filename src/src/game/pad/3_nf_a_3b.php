@@ -1,7 +1,7 @@
 var g3_nf_a_3b = new Class(
 {
 
-Extends: MultipleChoicePad,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -34,10 +34,10 @@ Extends: MultipleChoicePad,
 		// 1/2 2/4
                 question = new Question('What is an equivalent fraction for 1/2?', '2/4');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/3');
-    		question.mAnswerPool.push('1/5');
-		
+		question.mAnswerArray.push('3/6');
+		question.mAnswerArray.push('4/8');
+		question.mAnswerArray.push('5/10');
+	
 		// 2/4 1/2
                 question = new Question('What is an equivalent fraction for 2/4?', '1/2');
                 this.mQuiz.mQuestionArray.push(question);
@@ -105,6 +105,6 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                this.mQuiz.randomize(10);
+                //this.mQuiz.randomize(10);
 	}
 });
