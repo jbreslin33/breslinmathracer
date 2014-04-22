@@ -18,6 +18,12 @@ Extends: MultipleChoicePad,
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
         },
+ 
+        showCorrectAnswerEnter: function()
+        {
+		this.parent();
+                this.mShapeArray[1].setPosition(200,200);
+        },
 
 	createQuestions: function()
         {
