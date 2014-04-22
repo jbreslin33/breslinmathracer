@@ -29,17 +29,18 @@ Extends: NumberPad,
 
 		this.mQuiz.resetQuestionArray();
 
-		for (s = 0; s < this.mScoreNeeded; s++)
-		{	
-			numerator = 99;
-			while (numerator > denominator) 
-			{
-				numeratorA  = Math.floor((Math.random()*4)+1);		
-				numeratorB  = Math.floor((Math.random()*4)+1);		
-				denominator = Math.floor((Math.random()*4)+1);		
-				numerator = parseInt(numeratorA + numeratorB);
-			}
-                        this.mQuiz.mQuestionArray.push(new Question('' + numeratorA + '/' + denominator + ' + ' + numeratorB + '/' + denominator, '' + numerator + '/' + denominator));
-		}
+		// 1/2 2/4
+                question = new Question('What is an equivalent fraction for 1/2?', '2/4');
+                this.mQuiz.mQuestionArray.push(question);
+    		question.mAnswerPool.push('1/4');
+    		question.mAnswerPool.push('2/3');
+    		question.mAnswerPool.push('1/5');
+		
+		// 1/3 2/6
+                question = new Question('What is an equivalent fraction for 1/3?', '2/6');
+                this.mQuiz.mQuestionArray.push(question);
+    		question.mAnswerPool.push('1/4');
+    		question.mAnswerPool.push('2/3');
+    		question.mAnswerPool.push('2/3');
 	}
 });
