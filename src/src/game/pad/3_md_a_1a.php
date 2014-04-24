@@ -115,6 +115,7 @@ Extends: NumberPad,
 		canvas = Raphael(25,200,200, 200);
                 clock = canvas.circle(100,100,95);
                 clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})  
+
                 var hour_sign;
                 for(i=0;i<12;i++)
 		{
@@ -124,6 +125,21 @@ Extends: NumberPad,
                     	var end_y = 100+Math.round(90*Math.sin(30*i*Math.PI/180));    
                     	hour_sign = canvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
                 }    
+                
+		var minute_sign;
+                for(i=0;i<60;i++)
+		{
+                	var start_x = 100+Math.round(80*Math.cos(6*i*Math.PI/180));
+                    	var start_y = 100+Math.round(80*Math.sin(6*i*Math.PI/180));
+                    	var end_x   = 100+Math.round(90*Math.cos(6*i*Math.PI/180));
+                    	var end_y   = 100+Math.round(90*Math.sin(6*i*Math.PI/180));    
+                    	minute_sign   = canvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
+                }    
+
+                this.hour_hand = canvas.path("M100 100L100 50");
+                this.hour_hand.attr({stroke: "#444444", "stroke-width": 6});
+
+
                 this.hour_hand = canvas.path("M100 100L100 50");
                 this.hour_hand.attr({stroke: "#444444", "stroke-width": 6});
 
