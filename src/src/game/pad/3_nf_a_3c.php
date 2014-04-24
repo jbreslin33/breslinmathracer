@@ -7,7 +7,7 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(10);
+		this.setScoreNeeded(12);
 	},
 
         createNumQuestion: function()
@@ -31,71 +31,60 @@ Extends: NumberPad,
 
 		this.mQuiz.resetQuestionArray();
 
-		// 1/2 2/4
-                question = new Question('What is an equivalent fraction for 1/2?', '2/4');
+		// 1/1 
+                question = new Question('What is 1/1 expressed as a whole number?', '1');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('3/6');
-		question.mAnswerArray.push('4/8');
-		question.mAnswerArray.push('5/10');
 	
-		// 2/4 1/2
-                question = new Question('What is an equivalent fraction for 2/4?', '1/2');
+		// 1 
+                question = new Question('What is 1 expressed as a fraction?', '1/1');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('3/6');
-		question.mAnswerArray.push('4/8');
-		question.mAnswerArray.push('5/10');
+		question.mAnswerArray.push('2/2');
+		question.mAnswerArray.push('3/3');
+		question.mAnswerArray.push('4/4');
 		
-		// 1/2 3/6
-                question = new Question('What is an equivalent fraction for 1/2?', '2/4');
+		//2/1 
+                question = new Question('What is 2/1 expressed as a whole number?', '2');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('3/6');
-		question.mAnswerArray.push('4/8');
-		question.mAnswerArray.push('5/10');
 		
-		// 2/4 3/6
-                question = new Question('What is an equivalent fraction for 2/4?', '1/2');
+		// 2 
+                question = new Question('What is 2 expressed as a fraction?', '2/1');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('3/6');
-		question.mAnswerArray.push('4/8');
-		question.mAnswerArray.push('5/10');
+		question.mAnswerArray.push('4/2');
+		question.mAnswerArray.push('8/4');
 		
-		// 3/6 2/4
-                question = new Question('What is an equivalent fraction for 3/6?', '1/2');
+		//3/1 
+                question = new Question('What is 3/1 expressed as a whole number?', '3');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('2/4');
-		question.mAnswerArray.push('4/8');
-		question.mAnswerArray.push('5/10');
+		
+		// 3 
+                question = new Question('What is 3 expressed as a fraction?', '3/1');
+                this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerArray.push('6/2');
+		
+		//4/1 
+                question = new Question('What is 4/1 expressed as a whole number?', '4');
+                this.mQuiz.mQuestionArray.push(question);
 
-		// 3/6 1/2
-                question = new Question('What is an equivalent fraction for 3/6?', '1/2');
+		// 4 
+                question = new Question('What is 4 expressed as a fraction?', '4/1');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('2/4');
-		question.mAnswerArray.push('4/8');
-		question.mAnswerArray.push('5/10');
+		question.mAnswerArray.push('8/2');
 		
-		// 1/3 2/6
-                question = new Question('What is an equivalent fraction for 1/3?', '2/6');
+		//5/1 
+                question = new Question('What is 5/1 expressed as a whole number?', '5');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('3/9');
-		question.mAnswerArray.push('4/12');
-		question.mAnswerArray.push('5/15');
+
+		// 5 
+                question = new Question('What is 5 expressed as a fraction?', '5/1');
+                this.mQuiz.mQuestionArray.push(question);
 		
-		// 2/6 1/3
-                question = new Question('What is an equivalent fraction for 2/6?', '1/3');
+		//6/1 
+                question = new Question('What is 6/1 expressed as a whole number?', '6');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('3/9');
-		question.mAnswerArray.push('4/12');
-		question.mAnswerArray.push('5/15');
 		
-		// 2/3 4/6
-                question = new Question('What is an equivalent fraction for 2/3?', '4/6');
+		// 6 
+                question = new Question('What is 6 expressed as a fraction?', '6/1');
                 this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('8/12');
-		
-		// 4/6 2/3
-                question = new Question('What is an equivalent fraction for 4/6?', '2/3');
-                this.mQuiz.mQuestionArray.push(question);
-		question.mAnswerArray.push('8/12');
 
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
