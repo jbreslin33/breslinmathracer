@@ -121,8 +121,8 @@ Extends: NumberPad,
 		{
                 	var start_x = 100+Math.round(80*Math.cos(30*i*Math.PI/180));
                     	var start_y = 100+Math.round(80*Math.sin(30*i*Math.PI/180));
-                    	var end_x = 100+Math.round(90*Math.cos(30*i*Math.PI/180));
-                    	var end_y = 100+Math.round(90*Math.sin(30*i*Math.PI/180));    
+                    	var end_x = 100+Math.round(100*Math.cos(30*i*Math.PI/180));
+                    	var end_y = 100+Math.round(100*Math.sin(30*i*Math.PI/180));    
                     	hour_sign = canvas.path("M"+start_x+" "+start_y+"L"+end_x+" "+end_y);
                 }    
                 
