@@ -145,6 +145,7 @@
 <script type="text/javascript" src="/src/game/pad/3_nf_a_3b.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_nf_a_3c.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_nf_a_3d.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_md_a_1a.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_2.php"></script>
 
