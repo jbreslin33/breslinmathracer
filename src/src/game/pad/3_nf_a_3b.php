@@ -41,70 +41,66 @@ Extends: NumberPad,
 		// 2/4 1/2
                 question = new Question('What is an equivalent fraction for 2/4?', '1/2');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/3');
-    		question.mAnswerPool.push('2/6');
-    		question.mAnswerPool.push('3/4');
+		question.mAnswerArray.push('3/6');
+		question.mAnswerArray.push('4/8');
+		question.mAnswerArray.push('5/10');
 		
 		// 1/2 3/6
-                question = new Question('What is an equivalent fraction for 1/2?', '3/6');
+                question = new Question('What is an equivalent fraction for 1/2?', '2/4');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/3');
-    		question.mAnswerPool.push('1/5');
+		question.mAnswerArray.push('3/6');
+		question.mAnswerArray.push('4/8');
+		question.mAnswerArray.push('5/10');
 		
 		// 2/4 3/6
-                question = new Question('What is an equivalent fraction for 2/4?', '3/6');
+                question = new Question('What is an equivalent fraction for 2/4?', '1/2');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/3');
-    		question.mAnswerPool.push('2/6');
-    		question.mAnswerPool.push('3/4');
+		question.mAnswerArray.push('3/6');
+		question.mAnswerArray.push('4/8');
+		question.mAnswerArray.push('5/10');
 		
 		// 3/6 2/4
-                question = new Question('What is an equivalent fraction for 3/6?', '2/4');
+                question = new Question('What is an equivalent fraction for 3/6?', '1/2');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/3');
-    		question.mAnswerPool.push('2/6');
-    		question.mAnswerPool.push('3/4');
+		question.mAnswerArray.push('2/4');
+		question.mAnswerArray.push('4/8');
+		question.mAnswerArray.push('5/10');
 
 		// 3/6 1/2
                 question = new Question('What is an equivalent fraction for 3/6?', '1/2');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/3');
-    		question.mAnswerPool.push('1/5');
+		question.mAnswerArray.push('2/4');
+		question.mAnswerArray.push('4/8');
+		question.mAnswerArray.push('5/10');
 		
 		// 1/3 2/6
                 question = new Question('What is an equivalent fraction for 1/3?', '2/6');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/3');
-    		question.mAnswerPool.push('2/3');
+		question.mAnswerArray.push('3/9');
+		question.mAnswerArray.push('4/12');
+		question.mAnswerArray.push('5/15');
 		
 		// 2/6 1/3
                 question = new Question('What is an equivalent fraction for 2/6?', '1/3');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/3');
-    		question.mAnswerPool.push('2/3');
+		question.mAnswerArray.push('3/9');
+		question.mAnswerArray.push('4/12');
+		question.mAnswerArray.push('5/15');
 		
 		// 2/3 4/6
                 question = new Question('What is an equivalent fraction for 2/3?', '4/6');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/6');
-    		question.mAnswerPool.push('1/3');
+		question.mAnswerArray.push('8/12');
 		
 		// 4/6 2/3
                 question = new Question('What is an equivalent fraction for 4/6?', '2/3');
                 this.mQuiz.mQuestionArray.push(question);
-    		question.mAnswerPool.push('1/4');
-    		question.mAnswerPool.push('2/6');
-    		question.mAnswerPool.push('1/3');
+		question.mAnswerArray.push('8/12');
 
                	//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                //this.mQuiz.randomize(10);
+                this.mQuiz.randomize(10);
 	}
 });
