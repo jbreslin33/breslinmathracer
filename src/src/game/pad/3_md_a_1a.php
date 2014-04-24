@@ -46,7 +46,7 @@ Extends: NumberPad,
 		{
 			var h = '' + Math.floor((Math.random()*12)+1);	
 			var m = '00';	
-			randomChance = Math.floor((Math.random()*11));	
+			randomChance = Math.floor((Math.random()*59));	
 			
 			//exact hour
 			if (randomChance == 0)
@@ -55,47 +55,43 @@ Extends: NumberPad,
 			}
 			if (randomChance == 1)
 			{
-				m = '05';	
+				m = '01';	
 			}
 			if (randomChance == 2)
 			{
-				m = '10';	
+				m = '02';	
 			}
 			if (randomChance == 3)
 			{
-				m = '15';	
+				m = '03';	
 			}
 			if (randomChance == 4)
 			{
-				m = '20';	
+				m = '04';	
 			}
 			if (randomChance == 5)
 			{
-				m = '25';	
+				m = '05';	
 			}
 			if (randomChance == 6)
 			{
-				m = '30';	
+				m = '06';	
 			}
 			if (randomChance == 7)
 			{
-				m = '35';	
+				m = '07';	
 			}
 			if (randomChance == 8)
 			{
-				m = '40';	
+				m = '08';	
 			}
 			if (randomChance == 9)
 			{
-				m = '45';	
+				m = '09';	
 			}
-			if (randomChance == 10)
+			if (randomChance > 9 && randomChance < 60)
 			{
-				m = '50';	
-			}
-			if (randomChance == 11)
-			{
-				m = '55';	
+				m = randomChance;	
 			}
 		
 			var question = new Question('What time is it?', '' + h + ':' + m);
