@@ -6,6 +6,8 @@ Extends: MultipleChoicePadImages,
 	initialize: function(application)
 	{
        		this.parent(application);
+		
+		this.setScoreNeeded(1);
 	},
 
 	showQuestion: function()
@@ -61,48 +63,27 @@ Extends: MultipleChoicePadImages,
                 this.mQuiz.mAnswerPool.push('is equal to');
                 this.mQuiz.mAnswerPool.push('is less than');
 		
-		var greaterThans = 0;
-		var lessThans = 0;
-		var equalTos = 0;
+		this.mQuiz.resetQuestionArray();
 
-		while (greaterThans < 2 || lessThans < 2 || equalTos < 2)
-		{	
-			this.mQuiz.resetQuestionArray();
+		var comparisonA = '2';
+		var comparisonB = '2';
 
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//random number to count from 0-20
-				var objectsToCountA = Math.floor((Math.random()*21));		
-				var objectsToCountB = Math.floor((Math.random()*21));		
-				var comparison = '';
-				if (objectsToCountA == objectsToCountB)
-				{
-					comparison = 'is equal to';
-					equalTos++;
-				}
-				if (objectsToCountA > objectsToCountB)
-				{
-					comparison = 'is greater than';
-					greaterThans++;
-				}
-				if (objectsToCountA < objectsToCountB)
-				{
-					comparison = 'is less than';
-					lessThans++;
-				}
+		var question = new QuestionCompare('Compare?', 'is equal to', '' + comparisonA, '' + comparisonB);
+		this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool = this.mQuiz.mAnswerPool;	
 
-				var question = new QuestionCompare('Compare?', '' + comparison, objectsToCountA, objectsToCountB);
-				this.mQuiz.mQuestionArray.push(question);
-				question.mAnswerPool = this.mQuiz.mAnswerPool;	
-
-				//add shapes
-				this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars + this.mTotalInputBars) ].mMesh.innerHTML = '' + objectsToCountA;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars)]);
+		//add shapes
+		this.mShapeArray[ parseInt( s*2 + this.mTotalGuiBars + this.mTotalInputBars) ].mMesh.innerHTML = '' + comparisonA;
+		question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars)]);
 				
-				this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)].mMesh.innerHTML = '' + objectsToCountB;
-				question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)]);
-			}
-		}
+		this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)].mMesh.innerHTML = '' + comparisonB;
+		question.mShapeArray.push(this.mShapeArray[parseInt((s*2) + this.mTotalGuiBars + this.mTotalInputBars + 1)]);
+
+                //buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+
+                //random
+                //this.mQuiz.randomize(10);
 	},
 	
 	createWorld: function()
