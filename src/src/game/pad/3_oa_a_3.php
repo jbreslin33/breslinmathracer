@@ -6,6 +6,7 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
+		this.setScoreNeeded(4);
 	},
 
      	//showCorrectAnswer
@@ -82,56 +83,25 @@ Extends: NumberPad,
 	createQuestions: function()
         {
  		this.parent();
+			
+		this.mQuiz.resetQuestionArray();
 
-       		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,10,2,10,0,0,'Monte arranged his toy soldiers in straight rows. He made','rows with', 'soldiers in each row. How many toy soldiers did Monte have?','',3));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total rows - Soldiers in each row = Total Soldiers';
+       		this.mQuiz.mQuestionArray.push(new QuestionWord('','',2,99,2,10,2,10,0,0,'Monte arranged his toy soldiers in straight rows. He made','rows with', 'soldiers in each row. How many toy soldiers did Monte have?','',3));
+		this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'Total rows - Soldiers in each row = Total Soldiers';
 
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,99,2,10,2,10,0,0,'Ted is selling popcorn to raise money for his baseball team. There are','packages of popcorn in each box. Ted has sold', 'boxes. How many packages of popcorn has Ted sold?','',3));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Packages in each Box x Boxes sold = Packages Sold';
+		this.mQuiz.mQuestionArray.push(new QuestionWord('','',2,99,2,10,2,10,0,0,'Ted is selling popcorn to raise money for his baseball team. There are','packages of popcorn in each box. Ted has sold', 'boxes. How many packages of popcorn has Ted sold?','',3));	
+		this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'Packages in each Box x Boxes sold = Packages Sold';
 		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,10,2,99,2,10,0,0,'Rachel used','beads to make', 'bracelets. Each bracelet had the same number of beads. How many beads did she use for each bracelet?','',4));	
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Total Beads used / Bracelets made = Beads for each bracelet';
+		this.mQuiz.mQuestionArray.push(new QuestionWord('','',2,10,2,99,2,10,0,0,'Rachel used','beads to make', 'bracelets. Each bracelet had the same number of beads. How many beads did she use for each bracelet?','',4));	
+		this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'Total Beads used / Bracelets made = Beads for each bracelet';
        		
-		this.mQuiz.mQuestionPoolArray.push(new QuestionWord('','',2,10,2,99,2,10,0,0,'Raul has','stamps to add to his collection. He keeps his stamps in a special book that has pockets to hold each stamp. He has just enough stamps to fill all of the pockets on one page. There are', 'pockets in each row. How many rows are on the page?','',4));
-		this.mQuiz.mQuestionPoolArray[this.mQuiz.mQuestionPoolArray.length -1].mTipArray[0] = 'Stamps to add / Pockets in each row = Rows on the page';
-	
-		var totalA = 0;
-		var totalB = 0;
-		var totalC = 0;
-		var totalD = 0;
+		this.mQuiz.mQuestionArray.push(new QuestionWord('','',2,10,2,99,2,10,0,0,'Raul has','stamps to add to his collection. He keeps his stamps in a special book that has pockets to hold each stamp. He has just enough stamps to fill all of the pockets on one page. There are', 'pockets in each row. How many rows are on the page?','',4));
+		this.mQuiz.mQuestionArray[this.mQuiz.mQuestionArray.length -1].mTipArray[0] = 'Stamps to add / Pockets in each row = Rows on the page';
 
-		while (totalA < 2 || totalB < 2 || totalC < 2 || totalD < 2)
-		{	
-			this.mQuiz.resetQuestionArray();
+              	//buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
-			//ADD questions
-			for (s = 0; s < this.mScoreNeeded; s++)
-			{	
-				//50% chance of asking newest question
-				var randomChance = Math.floor((Math.random()*4));		
-				if (randomChance == 0)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalA++;
-				}	
-
-				else if (randomChance == 1)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalB++;
-				}
-				else if (randomChance == 2)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalC++;
-				}
-				else if (randomChance == 3)
-				{
-       					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomChance]);
-					totalD++;
-				}
-			}
-		}
-	},
-    
+                //random
+                this.mQuiz.randomize(10);
+	}
 });
