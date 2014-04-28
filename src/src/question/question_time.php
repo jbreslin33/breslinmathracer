@@ -9,13 +9,13 @@ Extends: Question,
                 var tillMinute = 0;
                 var minute = 0;
                 var rawMinute = 0;
-                var hour = Math.floor(Math.random()*12)+1);
+                var hour = Math.floor((Math.random()*12)+1);
                 var questionText = '';
 
                 while (x < 1 || x > 59)
                 {
-                        fromMinute = Math.floor(Math.random()*60)+1);
-                        tillMinute = Math.floor(Math.random()*60)+1);
+                        fromMinute = Math.floor((Math.random()*60)+1);
+                        tillMinute = Math.floor((Math.random()*60)+1);
 			if (type == 0)
 			{
                        		x = tillMinute - fromMinute;
