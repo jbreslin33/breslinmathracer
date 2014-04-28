@@ -2,19 +2,19 @@ var QuestionMoney = new Class(
 {
 Extends: Question,
 		//Homer had 3 pennies, 4 nickels, 3 dimes, 3 quarters, and 3 dollars, how much money did Homer have?
-  	initialize: function(question,answer,minTotal,maxTotal,minPennies,maxPennies,minNickels,maxNickels,minDimes,maxDimes,minQuarters,maxQuarters,minDollars,maxDollars)
+  	//initialize: function(question,answer,minTotal,maxTotal,minPennies,maxPennies,minNickels,maxNickels,minDimes,maxDimes,minQuarters,maxQuarters,minDollars,maxDollars)
+	//'Luke practiced from','till','how long did he practice for?' 
+  	initialize: function(question,answer,textA,textB,textC,type)
         {
                 this.parent(question,answer)
                 
-		var pennies = 0;
-                var nickels = 0;
-                var dimes = 0;
-                var quarters = 0;
-                var dollars = 0;
-                var x = 100;
+                var from = 0;
+                var till = 0;
+                var minutes = ;
+		var hour = 0;
                 var questionText = '';
 
-                while (x > maxTotal || x < minTotal || pennies < minPennies || pennies > maxPennies || nickels < minNickels || nickels > maxNickels || quarters < minQuarters || quarters > maxQuarters || dollars < minDollars || dollars > maxDollars)
+                while (x > maxTotal || x < minTotal || from < minFrom || from > maxFrom || till < minTill || till > maxTill)
                 {
                         pennies = Math.floor((Math.random()* parseInt(maxPennies - minPennies + 1)));
                        	nickels = Math.floor((Math.random()* parseInt(maxNickels - minNickels + 1)));
