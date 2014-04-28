@@ -18,57 +18,101 @@ Extends: Question,
                         tillMinute = Math.floor(Math.random()*60)+1);
 			if (type == 0)
 			{
-                       		x = fromMinute + tillMinute;
+                       		x = tillMinute - fromMinute;
 			}
                 }
 
-		if (rawMinute == 0)
+		if (fromMinute == 0)
 		{
-			minute = '00';		
+			fromMinute = '00';		
 		}
-		if (rawMinute == 1)
+		if (fromMinute == 1)
 		{
-			minute = '01';		
+			fromMinute = '01';		
 		}
-		if (rawMinute == 2)
+		if (fromMinute == 2)
 		{
-			minute = '02';		
+			fromMinute = '02';		
 		}
-		if (rawMinute == 3)
+		if (fromMinute == 3)
 		{
-			minute = '03';		
+			fromMinute = '03';		
 		}
-		if (rawMinute == 4)
+		if (fromMinute == 4)
 		{
-			minute = '04';		
+			fromMinute = '04';		
 		}
-		if (rawMinute == 5)
+		if (fromMinute == 5)
 		{
-			minute = '05';		
+			fromMinute = '05';		
 		}
-		if (rawMinute == 6)
+		if (fromMinute == 6)
 		{
-			minute = '06';		
+			fromMinute = '06';		
 		}
-		if (rawMinute == 7)
+		if (fromMinute == 7)
 		{
-			minute = '07';		
+			fromMinute = '07';		
 		}
-		if (rawMinute == 8)
+		if (fromMinute == 8)
 		{
-			minute = '08';		
+			fromMinute = '08';		
 		}
-		if (rawMinute == 9)
+		if (fromMinute == 9)
 		{
-			minute = '09';		
+			fromMinute = '09';		
 		}
+     
+		if (tillMinute == 0)
+                {
+                        tillMinute = '00'; 
+                }
+                if (tillMinute == 1)
+                {
+                        tillMinute = '01'; 
+                }
+                if (tillMinute == 2)
+                {
+                        tillMinute = '02'; 
+                }
+                if (tillMinute == 3)
+                {
+                        tillMinute = '03'; 
+                }
+                if (tillMinute == 4)
+                {
+                        tillMinute = '04'; 
+                }
+                if (tillMinute == 5)
+                {
+                        tillMinute = '05';
+                }
+                if (tillMinute == 6)
+                {
+                        tillMinute = '06'; 
+                }
+                if (tillMinute == 7)
+                {
+                        tillMinute = '07';  
+                }
+                if (tillMinute == 8)
+                {
+                        tillMinute = '08'; 
+                }
+                if (tillMinute == 9)
+                {
+                        tillMinute = '09';
+                }
 
  		questionText = '' + textA;
-		questionText = questionText + ' ' + hour + ':' + ;
+		questionText = questionText + ' ' + hour + ':' + fromMinute;
+ 		questionText = '' + textB;
+		questionText = questionText + ' ' + hour + ':' + tillMinute;
+ 		questionText = '' + textC;
                 
 		this.mQuestion = '' + questionText;
 		
-		this.mAnswerArray[0] = '$' + twoPlacedFloat;
+		this.mAnswerArray[0] = '' + x;
 
 		//auto tips
                 //this.mTipArray[2] = 'a + b = x';
