@@ -1410,6 +1410,19 @@ var Application = new Class(
                                	this.mGame = new g4_oa_a_2(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.nbt.b.4')
+		{ 
+             		if (this.mGameName != "g4_nbt_b_4")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nbt_b_4";
+                               	this.mGame = new g4_nbt_b_4(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
