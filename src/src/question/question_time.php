@@ -30,37 +30,37 @@ Extends: Question,
 		{
 			minute = '01';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 2)
 		{
-			minute = '01';		
+			minute = '02';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 3)
 		{
-			minute = '01';		
+			minute = '03';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 4)
 		{
-			minute = '01';		
+			minute = '04';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 5)
 		{
-			minute = '01';		
+			minute = '05';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 6)
 		{
-			minute = '01';		
+			minute = '06';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 7)
 		{
-			minute = '01';		
+			minute = '07';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 8)
 		{
-			minute = '01';		
+			minute = '08';		
 		}
-		if (rawMinute == 1)
+		if (rawMinute == 9)
 		{
-			minute = '01';		
+			minute = '09';		
 		}
 
  		questionText = '' + textA;
