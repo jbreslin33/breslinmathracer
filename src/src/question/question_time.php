@@ -1,4 +1,4 @@
-var QuestionMoney = new Class(
+var QuestionTime = new Class(
 {
 Extends: Question,
   	initialize: function(question,answer,textA,textB,textC,type)
@@ -7,18 +7,18 @@ Extends: Question,
                 
                 var fromMinute = 0;
                 var tillMinute = 0;
-                var minute = 0;
-                var rawMinute = 0;
+                var minute = 99;
                 var hour = Math.floor((Math.random()*12)+1);
                 var questionText = '';
 
-                while (x < 1 || x > 59)
+                while (minute < 1 || minute > 59)
                 {
+			minute = 99;
                         fromMinute = Math.floor((Math.random()*60)+1);
                         tillMinute = Math.floor((Math.random()*60)+1);
 			if (type == 0)
 			{
-                       		x = tillMinute - fromMinute;
+                       		minute = tillMinute - fromMinute;
 			}
                 }
 
@@ -106,13 +106,13 @@ Extends: Question,
 
  		questionText = '' + textA;
 		questionText = questionText + ' ' + hour + ':' + fromMinute;
- 		questionText = '' + textB;
+ 		questionText = questionText + textB;
 		questionText = questionText + ' ' + hour + ':' + tillMinute;
- 		questionText = '' + textC;
+ 		questionText = questionText + textC;
                 
 		this.mQuestion = '' + questionText;
 		
-		this.mAnswerArray[0] = '' + x;
+		this.mAnswerArray[0] = '' + hour + ':' + minute;
 
 		//auto tips
                 //this.mTipArray[2] = 'a + b = x';
