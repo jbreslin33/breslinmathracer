@@ -1,8 +1,6 @@
 var g4_nbt_b_4 = new Class(
 {
-
 Extends: NumberPad,
-
 	initialize: function(application)
 	{
        		this.parent(application);
@@ -12,52 +10,40 @@ Extends: NumberPad,
         {
  		this.parent();
 
-		var totalA = 0;
-		var totalB = 0;
-
 		var varA = 0;
 		var varB = 0;
 		var varC = 0;
 
-		var randomChance = 0;
+		this.mQuiz.resetQuestionArray();
 
-		while (totalA < this.mScoreNeeded * .4 || totalB < this.mScoreNeeded * .4)
-		{
-			this.mQuiz.resetQuestionArray();
-			totalA = 0;
-			totalB = 0;
-
-			for (s = 0; s < this.mScoreNeeded; s++)
+		for (s = 0; s < this.mScoreNeeded / 2; s++)
+		{	
+			varC = 10000;
+			while (varC > 999 || varC < 0)
 			{	
 				varC = 10000;
-				randomChance = Math.floor((Math.random()*2));		
-
-				while (varC > 999 || varC < 0)
-				{	
-					varA = Math.floor((Math.random()*999));		
-					varB = Math.floor((Math.random()*999));		
-				
-					if (randomChance == 0)
-					{
-						varC = parseInt(varA + varB);
-					}
-					else
-					{
-						varC = parseInt(varA - varB);
-					}
-				}
-   				if (randomChance == 0)
-                                {
-                                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
-                                        totalA++;
-                                }
-                                else
-                                {
-                                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
-                                        totalB++;
-                                }
+				varA = Math.floor((Math.random()*999));		
+				varB = Math.floor((Math.random()*999));		
+				varC = parseInt(varA + varB);
 			}
-			//ok we broke while now add question...
+                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
 		}
+		for (s = 0; s < this.mScoreNeeded / 2; s++)
+		{
+			varC = 10000;
+			while (varC > 999 || varC < 0)
+			{	
+				varC = 10000;
+				varA = Math.floor((Math.random()*999));		
+				varB = Math.floor((Math.random()*999));		
+				varC = parseInt(varA - varB);
+			}
+                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
+		}
+                //buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+
+                //random
+                this.mQuiz.randomize(10);
 	}
 });
