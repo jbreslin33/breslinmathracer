@@ -112,7 +112,7 @@ Extends: Question,
                 
 		this.mQuestion = '' + questionText;
 		
-		this.mAnswerArray[0] = '' + hour + ':' + minute;
+		this.mAnswerArray[0] = '' + minute;
 
 		//auto tips
                 //this.mTipArray[2] = 'a + b = x';
