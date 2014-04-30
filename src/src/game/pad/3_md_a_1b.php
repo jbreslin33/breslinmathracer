@@ -86,14 +86,15 @@ Extends: NumberPad,
 
                 this.mQuiz.resetQuestionArray();
 
-                if (this.mApplication.mLevel == 1)
-                {
-
-			var question = new QuestionTime('','','Graham started practicing soccer at','. He finished at','. How long in minutes did Graham practice?',0);	
-			question.mTipArray[0] = 'Graham finish time + Graham start time = minutes Graham practiced';
-                        this.mQuiz.mQuestionArray.push(question);
-
-                }
+		//1
+		var question = new QuestionTime('','','Graham started practicing soccer at','. He finished at','. How long in minutes did Graham practice?',0);	
+		question.mTipArray[0] = 'Graham finish time + Graham start time = minutes Graham practiced';
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//2
+		var question = new QuestionTime('','','Graham started practicing soccer at','. He practiced for','minutes. When time did he finish practicing?',1);	
+		question.mTipArray[0] = 'Graham start time + Graham practice = Graham finish time';
+                this.mQuiz.mQuestionArray.push(question);
 
    		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
