@@ -1,4 +1,4 @@
-var g4_nbt_b_4 = new Class(
+var g4_nbt_b_5 = new Class(
 {
 Extends: NumberPad,
 	initialize: function(application)
