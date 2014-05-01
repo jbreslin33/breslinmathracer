@@ -6,6 +6,18 @@ Extends: NumberPad,
        		this.parent(application);
 	},
 
+
+	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(170,50,295,95,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        },
+
+	
+
 	createQuestions: function()
         {
  		this.parent();
@@ -18,26 +30,54 @@ Extends: NumberPad,
 
 		for (s = 0; s < this.mScoreNeeded / 2; s++)
 		{	
-			varC = 10000;
-			while (varC > 999 || varC < 0)
-			{	
-				varC = 10000;
-				varA = Math.floor((Math.random()*999));		
-				varB = Math.floor((Math.random()*999));		
+				// pick number of digits (2 - 6)
+				rand = 2 + Math.floor((Math.random()*5));
+
+				// get end number based on digits
+				end = Math.pow(10, rand);
+				// get start number based on digits
+				start = Math.pow(10, rand-1);
+
+				// pick number from start to end range
+				varA = start + Math.floor(Math.random()*(end-start));
+
+				rand = 2 + Math.floor((Math.random()*5));
+
+				end = Math.pow(10, rand);
+				start = Math.pow(10, rand-1);
+		
+				varB = start + Math.floor(Math.random()*(end-start));
+
+				//varA = 423456
+				//varB = 423456
+		
 				varC = parseInt(varA + varB);
-			}
+			
                         this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
 		}
 		for (s = 0; s < this.mScoreNeeded / 2; s++)
 		{
-			varC = 10000;
-			while (varC > 999 || varC < 0)
-			{	
-				varC = 10000;
-				varA = Math.floor((Math.random()*999));		
-				varB = Math.floor((Math.random()*999));		
+			
+				
+				rand = 2 + Math.floor((Math.random()*5));
+
+				end = Math.pow(10, rand);
+				start = Math.pow(10, rand-1);
+
+				varA = start + Math.floor(Math.random()*(end-start));	
+
+				rand = 2 + Math.floor((Math.random()*5));
+
+				end = Math.pow(10, rand);
+				start = Math.pow(10, rand-1);
+	
+				varB = start + Math.floor(Math.random()*(end-start));
+
+				//varA = 423456
+				//varB = 423456
+		
 				varC = parseInt(varA - varB);
-			}
+
                         this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
 		}
                 //buffer
