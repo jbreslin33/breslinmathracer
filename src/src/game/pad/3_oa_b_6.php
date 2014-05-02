@@ -6,6 +6,7 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
+		this.setScoreNeeded(10);
 		this.a = 0;
 		this.b = 0;
 		this.x = 0;
@@ -47,6 +48,19 @@ Extends: NumberPad,
                 this.mNumQuestion.mCollisionOn = false;
         },
 
+	getRandomVariables: function()
+	{
+ 		this.a = 0;
+                this.b = 0;
+                this.x = 0;
+                while (this.a <= this.b || this.a % this.b != 0 || this.x > 10)
+                {
+                        this.a = Math.floor((Math.random()*100)+1);
+                        this.b = Math.floor((Math.random()*10)+1);
+                      	this.x = this.a / this.b;
+                }
+	},
+
 	createQuestions: function()
         {
   		this.parent();
@@ -55,17 +69,15 @@ Extends: NumberPad,
 
               	for (i = 0; i < this.mScoreNeeded; i++)
 		{
-			this.a = 0;
-			this.b = 0;
-			this.x = 0;
-			while (this.a <= this.b || this.a % this.b != 0 || this.x > 10)
-			{
-				this.a = Math.floor((Math.random()*100)+1);
-				this.b = Math.floor((Math.random()*10)+1);
-				this.x = this.a / this.b;
-                        }
+			this.getRandomVariables();
 			var question = new Question('Find ' + this.a + '÷' + this.b + ' by finding the number that makes ' + this.a + ' when multiplied by ' + this.b + '.','' + this.x);
 			this.mQuiz.mQuestionArray.push(question);
 		}
+
+	        //buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+
+                //random
+                this.mQuiz.randomize(10);
 	}
 });
