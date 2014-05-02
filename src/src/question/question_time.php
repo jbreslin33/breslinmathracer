@@ -1,5 +1,17 @@
 var QuestionTime = new Class(
 {
+/*
+   //1
+                var question = new QuestionTime('','','Graham started practicing soccer at','. He finished at','. How long in minutes did Graham practice?',0); 
+                question.mTipArray[0] = 'Graham finish time + Graham start time = minutes Graham practiced';
+                this.mQuiz.mQuestionArray.push(question);
+
+                //2
+                var question = new QuestionTime('','','Graham started practicing soccer at','. He practiced for','minutes. When time did he finish practicing?',0);
+                question.mTipArray[0] = 'Graham start time + Graham practice = Graham finish time';
+                this.mQuiz.mQuestionArray.push(question);
+
+*/
 Extends: Question,
   	initialize: function(question,answer,textA,textB,textC,type)
         {
@@ -16,10 +28,7 @@ Extends: Question,
 			minute = 99;
                         fromMinute = Math.floor((Math.random()*60)+1);
                         tillMinute = Math.floor((Math.random()*60)+1);
-			if (type == 0)
-			{
-                       		minute = tillMinute - fromMinute;
-			}
+                       	minute = tillMinute - fromMinute;
                 }
 
 		if (fromMinute == 0)
@@ -103,19 +112,26 @@ Extends: Question,
                 {
                         tillMinute = '09';
                 }
-
- 		questionText = '' + textA;
-		questionText = questionText + ' ' + hour + ':' + fromMinute;
- 		questionText = questionText + textB;
-		questionText = questionText + ' ' + hour + ':' + tillMinute;
- 		questionText = questionText + textC;
+		
+		if (type == 0)
+		{
+ 			questionText = '' + textA;
+			questionText = questionText + ' ' + hour + ':' + fromMinute;
+ 			questionText = questionText + textB;
+			questionText = questionText + ' ' + hour + ':' + tillMinute;
+ 			questionText = questionText + textC;
+			this.mAnswerArray[0] = '' + minute;
+		}
+		if (type == 1)
+		{
+ 			questionText = '' + textA;
+			questionText = questionText + ' ' + hour + ':' + fromMinute;
+ 			questionText = questionText + textB;
+			questionText = questionText + ' ' + minute;
+ 			questionText = questionText + textC;
+			this.mAnswerArray[0] = '' + hour + ':' + tillMinute;
+		}
                 
 		this.mQuestion = '' + questionText;
-		
-		this.mAnswerArray[0] = '' + minute;
-
-		//auto tips
-                //this.mTipArray[2] = 'a + b = x';
-                //this.mTipArray[3] = '' + a + ' + ' + b + ' = ' + x;
         }
 });

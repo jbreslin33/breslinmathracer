@@ -6,7 +6,7 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(1);
+		this.setScoreNeeded(2);
 	},
 
      	//showCorrectAnswer
@@ -92,7 +92,7 @@ Extends: NumberPad,
                 this.mQuiz.mQuestionArray.push(question);
 		
 		//2
-		var question = new QuestionTime('','','Graham started practicing soccer at','. He practiced for','minutes. When time did he finish practicing?',0);	
+		var question = new QuestionTime('','','Graham started practicing soccer at','. He practiced for ','minutes. What time did he finish practicing?',1);	
 		question.mTipArray[0] = 'Graham start time + Graham practice = Graham finish time';
                 this.mQuiz.mQuestionArray.push(question);
 
