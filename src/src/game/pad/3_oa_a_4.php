@@ -49,9 +49,6 @@ Extends: NumberPad,
 
 		this.mQuiz.resetQuestionArray();
 
-		var minusOrNot = Math.floor((Math.random()*2));
-		var StandardFormOrNot = Math.floor((Math.random()*2));
-		var missingVar = Math.floor((Math.random()*3));
 		this.mA = 0;
 		this.mB = 0;
 		this.mC = 100;
