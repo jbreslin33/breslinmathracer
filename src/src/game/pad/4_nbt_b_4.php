@@ -26,6 +26,10 @@ Extends: NumberPad,
 		var varB = 0;
 		var varC = 0;
 
+		var start = 0;
+		var end = 0;
+		var rand = 0;
+
 		this.mQuiz.resetQuestionArray();
 
 		for (s = 0; s < this.mScoreNeeded / 2; s++)
@@ -47,9 +51,6 @@ Extends: NumberPad,
 				start = Math.pow(10, rand-1);
 		
 				varB = start + Math.floor(Math.random()*(end-start));
-
-				//varA = 423456
-				//varB = 423456
 		
 				varC = parseInt(varA + varB);
 			
@@ -61,21 +62,19 @@ Extends: NumberPad,
 				
 				rand = 2 + Math.floor((Math.random()*5));
 
-				end = Math.pow(10, rand);
 				start = Math.pow(10, rand-1);
 
+				end = Math.pow(10, rand);
+				
 				varA = start + Math.floor(Math.random()*(end-start));	
 
 				rand = 2 + Math.floor((Math.random()*5));
 
-				end = Math.pow(10, rand);
 				start = Math.pow(10, rand-1);
+				end = Math.pow(10, rand);
 	
 				varB = start + Math.floor(Math.random()*(end-start));
 
-				//varA = 423456
-				//varB = 423456
-		
 				varC = parseInt(varA - varB);
 
                         this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
