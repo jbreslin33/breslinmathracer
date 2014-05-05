@@ -760,6 +760,240 @@ var Application = new Class(
                                	this.mGame = new g2_oa_b_2_2(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '2.oa.b.2.3')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_3")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_3";
+                               	this.mGame = new g2_oa_b_2_3(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.4')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_4")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_4";
+                               	this.mGame = new g2_oa_b_2_4(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.5')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_5")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_5";
+                               	this.mGame = new g2_oa_b_2_5(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.6')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_6")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_6";
+                               	this.mGame = new g2_oa_b_2_6(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.7')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_7")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_7";
+                               	this.mGame = new g2_oa_b_2_7(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.8')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_8")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_8";
+                               	this.mGame = new g2_oa_b_2_8(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.9')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_9")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_9";
+                               	this.mGame = new g2_oa_b_2_9(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.10')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_10")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_10";
+                               	this.mGame = new g2_oa_b_2_10(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.11')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_11")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_11";
+                               	this.mGame = new g2_oa_b_2_11(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.12')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_12")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_12";
+                               	this.mGame = new g2_oa_b_2_12(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.13')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_13")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_13";
+                               	this.mGame = new g2_oa_b_2_13(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.14')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_14")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_14";
+                               	this.mGame = new g2_oa_b_2_14(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.15')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_15")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_15";
+                               	this.mGame = new g2_oa_b_2_15(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.16')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_16")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_16";
+                               	this.mGame = new g2_oa_b_2_16(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.17')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_17")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_17";
+                               	this.mGame = new g2_oa_b_2_17(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.18')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_18")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_18";
+                               	this.mGame = new g2_oa_b_2_18(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.19')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_19")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_19";
+                               	this.mGame = new g2_oa_b_2_19(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '2.oa.b.2.20')
+		{ 
+             		if (this.mGameName != "g2_oa_b_2_20")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g2_oa_b_2_20";
+                               	this.mGame = new g2_oa_b_2_20(APPLICATION);
+			}	
+		}
 		if (this.mRef_id == 'C7ECD7455B7D46E89CF07EB8C0A2337Aa')
 		{ 
              		if (this.mGameName != "g2_oa_c_3a")
