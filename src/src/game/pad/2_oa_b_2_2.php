@@ -1,4 +1,4 @@
-var g2_oa_b_2_1 = new Class(
+var g2_oa_b_2_2 = new Class(
 {
 
 Extends: NumberPad,
@@ -9,7 +9,7 @@ Extends: NumberPad,
 	
 		this.mThresholdTime = 6000;
 	
-		this.setScoreNeeded(28);
+		this.setScoreNeeded(27);
 	},
   
 	createQuestions: function()
@@ -19,38 +19,37 @@ Extends: NumberPad,
 		this.mQuiz.resetQuestionArray();
 
 		//add 1
-		this.mQuiz.mQuestionArray.push(new Question('10 + 1 =','11'));
-		this.mQuiz.mQuestionArray.push(new Question('11 + 1 =','12'));
-		this.mQuiz.mQuestionArray.push(new Question('12 + 1 =','13'));
-		this.mQuiz.mQuestionArray.push(new Question('13 + 1 =','14'));
-		this.mQuiz.mQuestionArray.push(new Question('14 + 1 =','15'));
-		this.mQuiz.mQuestionArray.push(new Question('15 + 1 =','16'));
-		this.mQuiz.mQuestionArray.push(new Question('16 + 1 =','17'));
-		this.mQuiz.mQuestionArray.push(new Question('17 + 1 =','18'));
-		this.mQuiz.mQuestionArray.push(new Question('18 + 1 =','19'));
-		this.mQuiz.mQuestionArray.push(new Question('19 + 1 =','20'));
+		this.mQuiz.mQuestionArray.push(new Question('10 + 2 =','12'));
+		this.mQuiz.mQuestionArray.push(new Question('11 + 2 =','13'));
+		this.mQuiz.mQuestionArray.push(new Question('12 + 2 =','14'));
+		this.mQuiz.mQuestionArray.push(new Question('13 + 2 =','15'));
+		this.mQuiz.mQuestionArray.push(new Question('14 + 2 =','16'));
+		this.mQuiz.mQuestionArray.push(new Question('15 + 2 =','17'));
+		this.mQuiz.mQuestionArray.push(new Question('16 + 2 =','18'));
+		this.mQuiz.mQuestionArray.push(new Question('17 + 2 =','19'));
+		this.mQuiz.mQuestionArray.push(new Question('18 + 2 =','20'));
 
 		//add 1  
-		this.mQuiz.mQuestionArray.push(new Question('1 + 10 =','11'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 11 =','12'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 12 =','13'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 13 =','14'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 14 =','15'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 16 =','17'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 17 =','18'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 18 =','19'));
-		this.mQuiz.mQuestionArray.push(new Question('1 + 19 =','20'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 10 =','12'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 11 =','13'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 12 =','14'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 13 =','15'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 14 =','16'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 15 =','17'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 16 =','18'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 17 =','19'));
+		this.mQuiz.mQuestionArray.push(new Question('2 + 18 =','20'));
 
 		//1
-		this.mQuiz.mQuestionArray.push(new Question('12 - 1 =','11'));
-		this.mQuiz.mQuestionArray.push(new Question('13 - 1 =','12'));
-		this.mQuiz.mQuestionArray.push(new Question('14 - 1 =','13'));
-		this.mQuiz.mQuestionArray.push(new Question('15 - 1 =','14'));
-		this.mQuiz.mQuestionArray.push(new Question('16 - 1 =','15'));
-		this.mQuiz.mQuestionArray.push(new Question('17 - 1 =','16'));
-		this.mQuiz.mQuestionArray.push(new Question('18 - 1 =','17'));
-		this.mQuiz.mQuestionArray.push(new Question('19 - 1 =','18'));
-		this.mQuiz.mQuestionArray.push(new Question('20 - 1 =','19'));
+		this.mQuiz.mQuestionArray.push(new Question('12 - 2 =','10'));
+		this.mQuiz.mQuestionArray.push(new Question('13 - 2 =','11'));
+		this.mQuiz.mQuestionArray.push(new Question('14 - 2 =','12'));
+		this.mQuiz.mQuestionArray.push(new Question('15 - 2 =','13'));
+		this.mQuiz.mQuestionArray.push(new Question('16 - 2 =','14'));
+		this.mQuiz.mQuestionArray.push(new Question('17 - 2 =','15'));
+		this.mQuiz.mQuestionArray.push(new Question('18 - 2 =','16'));
+		this.mQuiz.mQuestionArray.push(new Question('19 - 2 =','17'));
+		this.mQuiz.mQuestionArray.push(new Question('20 - 2 =','18'));
 		
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
