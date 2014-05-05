@@ -1,21 +1,16 @@
 var g2_oa_b_2_1 = new Class(
 {
-
 Extends: NumberPad,
-
 	initialize: function(application)
 	{
        		this.parent(application);
-	
 		this.mThresholdTime = 6000;
-	
 		this.setScoreNeeded(28);
 	},
   
 	createQuestions: function()
         {
  		this.parent();
-                
 		this.mQuiz.resetQuestionArray();
 
 		//add 1
