@@ -6,7 +6,31 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
+
 	},
+
+	createInput: function()
+        {
+                this.parent();
+
+                //answer
+                this.mNumAnswer2 = new Shape(100,50,525,100,this,"INPUT","","");
+                this.mNumAnswer2.mMesh.value = '';
+                this.mNumAnswer2.mMesh.addEvent('keypress',this.inputKeyHit);
+		this.mNumAnswer2.mMesh.addEvent('click',this.inputFocus);
+                this.mShapeArray.push(this.mNumAnswer2);
+        },
+
+	 inputKeyHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+			APPLICATION.mGame.mUserAnswer2 = APPLICATION.mGame.mNumAnswer2.mMesh.value;
+                }
+        },
+
+        
 
 	createQuestions: function()
         {

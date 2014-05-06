@@ -48,6 +48,7 @@
 
 <script type="text/javascript" src="/src/game/pad/pad.php"></script>
 <script type="text/javascript" src="/src/game/pad/numberpad.php"></script>
+<script type="text/javascript" src="/src/game/pad/numberpad2box.php"></script>
 <script type="text/javascript" src="/src/game/pad/rulerpad.php"></script>
 <script type="text/javascript" src="/src/game/pad/multiplechoicepad.php"></script>
 <script type="text/javascript" src="/src/game/pad/multiplechoicepadimages.php"></script>
