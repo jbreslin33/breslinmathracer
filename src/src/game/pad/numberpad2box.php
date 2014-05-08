@@ -50,6 +50,7 @@ Extends: Pad,
                 if (e.key == 'enter')
                 {
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+			APPLICATION.mGame.mUserAnswer2 = APPLICATION.mGame.mNumAnswer2.mMesh.value;
                 }
         },
 
@@ -58,11 +59,10 @@ Extends: Pad,
                 if (this.innerHTML == 'Enter')
                 {
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+			APPLICATION.mGame.mUserAnswer2 = APPLICATION.mGame.mNumAnswer2.mMesh.value;
                 }
                 else
                 {
-			var focus = document.activeElement
-
 			APPLICATION.mGame.mInputFocusField.value = 		  					APPLICATION.mGame.mInputFocusField.value + '' + this.innerHTML;
                 }
         },
@@ -73,6 +73,121 @@ Extends: Pad,
 
 		this.createInput();
 	},
+
+
+
+	//firstTime 
+	firstTimeEnter: function()
+        {
+                if (this.mNumAnswer)
+                {
+                        this.mNumAnswer.mMesh.value = '';
+                        this.mNumAnswer.mMesh.innerHTML =  '';
+                }
+
+		if (this.mNumAnswer2)
+                {
+                        this.mNumAnswer2.mMesh.value = '';
+                        this.mNumAnswer2.mMesh.innerHTML =  '';
+                }
+
+
+                //user answer1
+                this.mUserAnswer = '';
+
+		//user answer2
+                this.mUserAnswer2 = '';
+
+                //numberPad
+                if (this.mQuiz)
+                {
+                        if (!this.mQuiz.getQuestion())
+                        {
+                                this.log('NO QUESTIONS: calling createQuestions');
+                                this.createQuestions();
+                        }
+                }
+                else
+                {
+                        this.log('NO QUIZ');
+                }
+
+                //show question
+                this.showQuestion();
+        },
+
+	firstTimeExecute: function()
+        {
+		var correct = false;
+                //if you have an answer...
+                if (this.mUserAnswer != '')
+                {
+			if (this.mQuiz == 0)
+			{
+				return;
+			}
+			
+                        if (this.mUserAnswer == this.mQuiz.getQuestion().mAnswerArray[0])
+			{
+                               	if (this.mUserAnswer2 == this.mQuiz.getQuestion().mAnswerArray[1])
+				{
+					correct = true;
+                               		this.mStateMachine.changeState(this.mCORRECT_ANSWER);
+				}
+			}
+				
+		
+
+			if (correct == false)
+			{
+                                this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
+                        }
+			
+			if (this.mFirstTimeAnswer == false)
+			{
+				this.mFirstTimeAnswer = true;
+				this.mApplication.sendLevelAttempt();
+			}
+                }
+        },
+
+	//showCorrectAnswer
+       	showCorrectAnswerEnter: function()
+        {
+        	this.mApplication.mFailedAttempts++;
+
+        	if (this.mApplication.mFailedAttempts > this.mFailedAttemptsThreshold)
+        	{
+                	this.mApplication.mFailedAttempts = 0;
+			this.mApplication.mStateMachine.changeState(this.mApplication.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
+        	}
+        	else
+        	{
+                	//just update failed attempts by one on javascript and server and db.
+                	this.mApplication.sendFailedAttempt();
+        	}
+	
+		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
+                this.mCorrectAnswerStartTime = this.mTimeSinceEpoch;
+
+                this.mShapeArray[1].setPosition(400,175);
+		this.mShapeArray[1].setSize(300,100);
+                this.mShapeArray[1].setVisibility(true);
+                this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer() + ' Remainder ' + this.mQuiz.getQuestion().getAnswerTwo();
+
+                this.mShapeArray[9].setVisibility(true);
+
+		//show question shapes
+ 		this.mQuiz.getQuestion().showShapes();
+
+		this.tip();
+	},
+
+
         
 	createNumQuestion: function()
         {
@@ -88,12 +203,27 @@ Extends: Pad,
                 //question
                 this.createNumQuestion();
 
-                //answer
-                this.mNumAnswer = new Shape(100,50,425,100,this,"INPUT","","");
+                //answer1
+                this.mNumAnswer = new Shape(100,30,425,100,this,"INPUT","","");
                 this.mNumAnswer.mMesh.value = '';
                 this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
 		this.mNumAnswer.mMesh.addEvent('click',this.inputFocus);
                 this.mShapeArray.push(this.mNumAnswer);
+
+		//answer2
+                this.mNumAnswer2 = new Shape(100,30,525,100,this,"INPUT","","");
+                this.mNumAnswer2.mMesh.value = '';
+                this.mNumAnswer2.mMesh.addEvent('keypress',this.inputKeyHit);
+		this.mNumAnswer2.mMesh.addEvent('click',this.inputFocus);
+                this.mShapeArray.push(this.mNumAnswer2);
+
+		this.mNumAnswerHeading = new Shape(100,20,425,0,this,"","","");
+                this.mNumAnswerHeading.mMesh.innerHTML = 'Quotient';
+		this.mShapeArray.push(this.mNumAnswerHeading);
+
+		this.mNumAnswerHeading = new Shape(100,20,525,0,this,"","","");
+                this.mNumAnswerHeading.mMesh.innerHTML = 'Remainder';
+		this.mShapeArray.push(this.mNumAnswerHeading);
 
                 //Lock
                 this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");

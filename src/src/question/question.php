@@ -159,6 +159,11 @@ var Question = new Class(
 	{
 		return this.mAnswerArray[0];
 	},
+
+	getAnswerTwo: function()
+	{
+		return this.mAnswerArray[1];
+	},
 	
 	getShowAnswer: function()
 	{
