@@ -35,7 +35,7 @@ Extends: NumberPad2Box,
 		 {		
 
 			// pick number of digits (1 - 4)
-			rand = 4;
+			rand = 2 + Math.floor((Math.random()*3));
 
 			// get start number based on digits
 			start = Math.pow(10, rand-1);
