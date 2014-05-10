@@ -102,36 +102,36 @@ Extends: NumberPad,
 
                 if (this.mApplication.mLevel == 3)
 		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Anna had','dog treats. She gave', 'to here puppy. How many dog treats does Anna have now?','',1);
+       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Anna had','kilograms of dog treats. She gave', 'kilograms to here puppy. How many kilograms of dog treats does Anna have now?','',1);
 			question.mTipArray[0] = 'Anna had - Anna gave to puppy = Anna has now';
                         this.mQuiz.mQuestionArray.push(question);
 		}
        		
                 if (this.mApplication.mLevel == 4)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Isaac had','quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had', 'quarters left in his pocket. How many fell out?','',1);
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Isaac had','grams of candy in his pocket. Some of the candy slipped out through a hole in his pocket. When he got to the store he only had', 'grams of candy left in his pocket. How many grams fell out?','',1);
 			question.mTipArray[0] = 'Issac had - Issac has left = Issac lost';
                         this.mQuiz.mQuestionArray.push(question);
 		}
                 
 		if (this.mApplication.mLevel == 5)
 		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?','',0);
+       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Molly had some ladybug stickers. She gave','grams of the stickers to her sister and kept', 'grams for herself. How many grams of stickers did Molly have to begin with?','',0);
 			question.mTipArray[0] = 'Molly gave to sister + Molly kept for herself = Molly had to begin with';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 6)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought','pots and Ethan brought', 'pots. They had just enough pots to put one flower in each pot. How many flowers did they have?','',0);
-			question.mTipArray[0] = 'Kaleb pots + Ethan pots = total flowers because there is one in each pot';
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb put','kilograms of dirt in the pots and Ethan put', 'kilograms of dirt in the pots. How many kilograms of dirt did the boys put in the pots?','',0);
+			question.mTipArray[0] = 'Kaleb dirt + Ethan dirt = total dirt';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 
 		if (this.mApplication.mLevel == 7)
 		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Macon and Parker picked up the crayons that spilled onto the floor. When they put all the crayons back in the box, there were','crayons. Macon counted as he put the crayons in the box. He knows that he put', 'crayons in. How many crayons did Parker put in the box?','',1);
-			question.mTipArray[0] = 'total crayons - crayons Macon put away = crayons Parker put away';
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Macon and Parker picked up the crayons that spilled onto the floor. When they put all the crayons back in the box, there were','kilograms of crayons. Macon weighed each crayon as he put the crayons in the box. He knows that he put', 'kilograms of crayons in. How many kilograms of crayons did Parker put in the box?','',1);
+			question.mTipArray[0] = 'total kilograms of crayons - kilograms of crayons Macon put away = kilograms of crayons Parker put away';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 
