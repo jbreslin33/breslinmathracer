@@ -33,7 +33,7 @@ Extends: RulerPad,
                         var redHeightCode = Math.floor((Math.random()*3)+1);
                         var redHeight = parseInt(redHeightCode * 50);
 
-                        answer = '' + redHeightCode + ' in';
+                        answer = '' + redHeightCode + ' l';
 
                         question = new Question('What is the estimated volume of liquid to the nearest liter? Write answer like this: 3 l', '' + answer);
                         this.mQuiz.mQuestionArray.push(question);
@@ -67,9 +67,9 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//the inch ruler
-                        var rulerInch = new RulerInch(50,300,400,50,this,this.mRaphael,.6,1,1,"none",.5,true);
-                        this.mShapeArray.push(rulerInch);
-			this.mRulerInchArray.push(rulerInch);
+                        var volumeLiter = new VolumeLiter(50,300,400,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+                        this.mShapeArray.push(volumeLiter);
+			this.mRulerInchArray.push(volumeLiter);
                         
 			//red shape to measure
                         var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
