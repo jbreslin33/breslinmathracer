@@ -95,7 +95,7 @@ Extends: NumberPad,
 
                 if (this.mApplication.mLevel == 2)
 		{	
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Aubrey has','grams of seashells. She then gave went to the beach and found', 'grams of seashells How many grams of seashells does she have now. were in the box to begin with?','',2);	
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Aubrey had some seashells in a box. She found','more grams of seashells on the beach and put them in the box. Now there are', 'grams of seashells in the box. How many grams of seashells were in the box to begin with?','',2);	
 			question.mTipArray[0] = 'Aubrey has - Aubrey found = Aubrey had';
                         this.mQuiz.mQuestionArray.push(question);
 		}
