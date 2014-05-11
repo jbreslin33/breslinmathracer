@@ -1,7 +1,7 @@
 var g3_md_b_3 = new Class(
 {
 
-Extends: MultipleChoicePad,
+Extends: RulerPad,
 
 	initialize: function(application)
 	{
@@ -32,19 +32,20 @@ Extends: MultipleChoicePad,
         {
 		this.parent();
 
-                this.mNumQuestion.setPosition(200,200,140,140);
+                this.mNumQuestion.setPosition(110,100);
         },
-
  
 	createInput: function()
         {
                 this.parent();
 
                 //BUTTONS
+		/*
                 this.mButtonA.setPosition(375,75);
                 this.mButtonB.setPosition(375,175);
                 this.mButtonC.setPosition(375,275);
                 this.mButtonD.setPosition(375,375);
+		*/
         },
 	
 	destroyShapes: function()
@@ -230,7 +231,7 @@ Extends: MultipleChoicePad,
 
 			this.mQuiz.mQuestionArray.push(question);
 		}
-
+/*
 		for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
 		{
 			this.mQuiz.mQuestionArray[i].setChoice('A','' + this.mCorrectAnswerArray[0]);
@@ -238,7 +239,7 @@ Extends: MultipleChoicePad,
 			this.mQuiz.mQuestionArray[i].setChoice('C','' + this.mCorrectAnswerArray[2]);
 			this.mQuiz.mQuestionArray[i].setChoice('D','' + this.mCorrectAnswerArray[3]);
 		}	
-
+*/
 		this.createQuestionShapes();
 	},
 
