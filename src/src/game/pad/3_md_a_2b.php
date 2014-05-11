@@ -137,15 +137,15 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 8)
 		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Cole and Maggie worked together to make a train that had','cubes. They broke it into two pieces. One had', 'cubes. How many cubes were in the other piece?','',1);
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Cole and Maggie worked together to make a train that weighed','grams. They broke it into two pieces. One piece weighed', 'kilograms. How much did the other piece weigh in kilograms?','',1);
 			question.mTipArray[0] = 'total cubes - cubes on one train = cubes on the other train';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 9)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Sally and Amy shared one box of colored pencils. They used all of the pencils to make drawings for art class. Sally chose','pencils to use for her drawing. Amy chose', 'pencils. How many pencils were in the box to begin with?','',0);
-			question.mTipArray[0] = 'Sally pencils + Amy pencils = total pencils';
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Sally and Amy shared some clay for an art class. They used all of the clay to make sculptures for art class. Sally used','kilograms of clay her sculpture. Amy used', 'kilograms of clay for her sculpture. How much clay in kilograms was there to begin with?','',0);
+			question.mTipArray[0] = 'Sally clay + Amy clay = total clay';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
