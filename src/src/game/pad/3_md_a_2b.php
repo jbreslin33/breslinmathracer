@@ -137,7 +137,7 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 8)
 		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Cole and Maggie worked together to make a train that weighed','grams. They broke it into two pieces. One piece weighed', 'kilograms. How much did the other piece weigh in kilograms?','',1);
+       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Cole and Maggie worked together to make a train that weighed','kilograms. They broke it into two pieces. One piece weighed', 'kilograms. How much did the other piece weigh in kilograms?','',1);
 			question.mTipArray[0] = 'total cubes - cubes on one train = cubes on the other train';
                         this.mQuiz.mQuestionArray.push(question);
 		}
@@ -151,22 +151,22 @@ Extends: NumberPad,
 		
 		if (this.mApplication.mLevel == 10)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Skip and Jacob made','cookies. They ate some as soon as they had cooled off. There were','cookies left. How many cookies did Skip and Jacob eat?','',1);
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Skip and Jacob made cookies that weighed','grams each. They made','of them. How many total grams of cookie did they make?','',3);
 			question.mTipArray[0] = 'made - left = ate';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 11)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'In the basketball game, Tiffany scored','points and Alexa scored','points. How many more points did Alexa score?','',1);
-			question.mTipArray[0] = 'Alexa points - Tiffany points = difference in points';
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Tiffany had','balls. Each ball weighed','kilograms. How much did all the balls weigh in kilograms total?','',3);
+			question.mTipArray[0] = 'total balls * weight of each ball = total weight of all balls';
                         this.mQuiz.mQuestionArray.push(question);
 		}
 		
 		if (this.mApplication.mLevel == 12)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Carson has','plastic bugs in his collection. He has','more bugs than his brother has. How many bugs does his brother have?','',1);
-			question.mTipArray[0] = 'Carson bugs - how many more he has than brother = how many his brother has';
+			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Carson has','plastic bugs in his collection. They each weigh the same amount. They weigh a total of','grams.  How much does each bug weigh?','',4);
+			question.mTipArray[0] = 'Carson bugs total weight / amount of bugs = amount each bug weighs';
                         this.mQuiz.mQuestionArray.push(question);
 		}
    		//buffer
