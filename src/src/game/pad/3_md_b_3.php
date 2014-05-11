@@ -1,23 +1,18 @@
 var g3_md_b_3 = new Class(
 {
 
-Extends: NumberPad,
+Extends: RulerPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-var myTable = new HtmlTable({
-    properties: {
-        border: 1,
-        cellspacing: 3
-    },
-    headers: ['fruits', 'colors'],
-    rows: [
-        ['apple', 'red'],
-        ['lemon', 'yellow']
-    ]
-});
-myTable.inject($('someContainer'));	
+
+		// Creates canvas 640 × 480 at 10, 50
+		var r = Raphael(10, 50, 640, 480);
+		// Creates pie chart at with center at 320, 200,
+		// radius 100 and data: [55, 20, 13, 32, 5, 1, 2]
+		//r.piechart(320, 240, 100, [55, 20, 13, 32, 5, 1, 2]);
+		r.barchart(0, 0, 620, 260, [76, 70, 67, 71, 69], {})
 	},
 
 	createQuestions: function()
@@ -72,4 +67,5 @@ myTable.inject($('someContainer'));
 			//ok we broke while now add question...
 		}
 	}
+
 });
