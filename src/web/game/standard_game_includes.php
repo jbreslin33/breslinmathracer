@@ -160,6 +160,7 @@
 <script type="text/javascript" src="/src/game/pad/3_md_a_1b.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_md_a_2a.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_md_a_2b.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_md_b_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nbt_b_4.php"></script>
