@@ -35,19 +35,6 @@ Extends: RulerPad,
                 this.mNumQuestion.setPosition(110,100);
         },
  
-	createInput: function()
-        {
-                this.parent();
-
-                //BUTTONS
-		/*
-                this.mButtonA.setPosition(375,75);
-                this.mButtonB.setPosition(375,175);
-                this.mButtonC.setPosition(375,275);
-                this.mButtonD.setPosition(375,375);
-		*/
-        },
-	
 	destroyShapes: function()
 	{
 		this.parent();
@@ -107,6 +94,14 @@ Extends: RulerPad,
                         this.mCountShapeArrayD[i].setVisibility(true);
                 }
 	},
+
+	makeRandomChart: function()
+	{
+		this.mNumberOfAArray[i] = Math.floor((Math.random()*6)+1);
+		this.mNumberOfBArray[i] = Math.floor((Math.random()*6)+1);
+		this.mNumberOfCArray[i] = Math.floor((Math.random()*6)+1);
+		this.mNumberOfDArray[i] = Math.floor((Math.random()*6)+1);
+	},
  
 	createQuestions: function()
         {
@@ -139,108 +134,95 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			var question = 0;
+			var answer = -1;
 			this.mLeastMost = Math.floor((Math.random()*2));
+			this.makeRandomChart();
+			this.mLeastMost = 2; 
 
-			this.mNumberOfAArray[i] = Math.floor((Math.random()*6)+1);
-			this.mNumberOfBArray[i] = Math.floor((Math.random()*6)+1);
-			this.mNumberOfCArray[i] = Math.floor((Math.random()*6)+1);
-			this.mNumberOfDArray[i] = Math.floor((Math.random()*6)+1);
+			while (answer < 0)
+			{		
+				//try again
+				this.makeRandomChart();
 
-			while (this.mNumberOfAArray[i] == this.mNumberOfBArray[i] || this.mNumberOfAArray[i] == this.mNumberOfCArray[i] || this.mNumberOfAArray[i] == this.mNumberOfDArray[i] || this.mNumberOfBArray[i] == this.mNumberOfCArray[i] || this.mNumberOfBArray[i] == this.mNumberOfDArray[i] || this.mNumberOfCArray[i] == this.mNumberOfDArray[i])
-			{
-				this.mNumberOfAArray[i] = Math.floor((Math.random()*6)+1);
-				this.mNumberOfBArray[i] = Math.floor((Math.random()*6)+1);
-				this.mNumberOfCArray[i] = Math.floor((Math.random()*6)+1);
-				this.mNumberOfDArray[i] = Math.floor((Math.random()*6)+1);
-			}
-
-			var el = 0;
-			this.mLeastMost = 2;
-			if (this.mLeastMost == 0)
-			{
-                                for (m = 7; m > 0; m--)
+				var el = 0;
+				this.mLeastMost = 2;
+				if (this.mLeastMost == 0)
 				{
-					if (this.mNumberOfAArray[i] == m)
+                                	for (m = 7; m > 0; m--)
 					{
-						el = 0; 
+						if (this.mNumberOfAArray[i] == m)
+						{
+							el = 0; 
+						}
+						if (this.mNumberOfBArray[i] == m)
+						{
+							el = 1; 
+						}	
+						if (this.mNumberOfCArray[i] == m)
+						{
+							el = 2; 
+						}
+						if (this.mNumberOfDArray[i] == m)
+						{
+							el = 3; 
+						}
 					}
-					if (this.mNumberOfBArray[i] == m)
-					{
-						el = 1; 
-					}	
-					if (this.mNumberOfCArray[i] == m)
-					{
-						el = 2; 
-					}
-					if (this.mNumberOfDArray[i] == m)
-					{
-						el = 3; 
-					}
+					question = new Question('What has the least?','' + this.mCorrectAnswerArray[el]);
 				}
-				question = new Question('What has the least?','' + this.mCorrectAnswerArray[el]);
-			}
 			
-			if (this.mLeastMost == 1)
-			{
-				for (m = 0; m < 7; m++)
-                                {
-                                	if (this.mNumberOfAArray[i] == m)
-                                        {
-						el = 0; 
-                                        }
-                                        if (this.mNumberOfBArray[i] == m)
-                                        {
-						el = 1; 
-                                        }
-                                        if (this.mNumberOfCArray[i] == m)
-                                        {
-						el = 2; 
-                                        }
-                                        if (this.mNumberOfDArray[i] == m)
-                                        {
-						el = 3; 
-                                        }
+				if (this.mLeastMost == 1)
+				{
+					for (m = 0; m < 7; m++)
+                                	{
+                                		if (this.mNumberOfAArray[i] == m)
+                                        	{
+							el = 0; 
+                                        	}
+                                        	if (this.mNumberOfBArray[i] == m)
+                                        	{
+							el = 1; 
+                                       		}
+                                        	if (this.mNumberOfCArray[i] == m)
+                                        	{
+							el = 2; 
+                                        	}
+                                        	if (this.mNumberOfDArray[i] == m)
+                                        	{
+							el = 3; 
+                                        	}
+					}
+					question = new Question('What has the most?','' + this.mCorrectAnswerArray[el]);
 				}
-				question = new Question('What has the most?','' + this.mCorrectAnswerArray[el]);
+				
+				//giraffes - kids 
+                       		if (this.mLeastMost == 2)
+                        	{
+                                	for (m = 0; m < 7; m++)
+                                	{
+                                        	if (this.mNumberOfAArray[i] == m)
+                                        	{
+                                                	el = 0;
+                                        	}
+                                        	if (this.mNumberOfBArray[i] == m)
+                                        	{
+                                                	el = 1;
+                                        	}
+                                        	if (this.mNumberOfCArray[i] == m)
+                                        	{
+                                                	el = 2;
+                                        	}
+                                        	if (this.mNumberOfDArray[i] == m)
+                                        	{
+                                                	el = 3;
+                                        	}
+                                	}
+					answer = parseInt(this.mNumberOfAArray[i] - this.mNumberOfBArray[i]);	
+                                	question = new Question('How many more Giraffs are there than Kids?','' + answer);
+                        	}
 			}
- 
-                       	if (this.mLeastMost == 2)
-                        {
-                                for (m = 0; m < 7; m++)
-                                {
-                                        if (this.mNumberOfAArray[i] == m)
-                                        {
-                                                el = 0;
-                                        }
-                                        if (this.mNumberOfBArray[i] == m)
-                                        {
-                                                el = 1;
-                                        }
-                                        if (this.mNumberOfCArray[i] == m)
-                                        {
-                                                el = 2;
-                                        }
-                                        if (this.mNumberOfDArray[i] == m)
-                                        {
-                                                el = 3;
-                                        }
-                                }
-				var answer = parseInt(this.mNumberOfAArray[i] - this.mNumberOfBArray[i]);	
-                                question = new Question('How many more Giraffs are there than Kids?','' + answer);
-                        }
-
 			this.mQuiz.mQuestionArray.push(question);
+			this.createQuestionShapes();
 		}
-/*
-		for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
-		{
-			this.mQuiz.mQuestionArray[i].setChoice('A','' + this.mCorrectAnswerArray[0]);
-			this.mQuiz.mQuestionArray[i].setChoice('B','' + this.mCorrectAnswerArray[1]);
-			this.mQuiz.mQuestionArray[i].setChoice('C','' + this.mCorrectAnswerArray[2]);
-			this.mQuiz.mQuestionArray[i].setChoice('D','' + this.mCorrectAnswerArray[3]);
-		}	
-*/
-		this.createQuestionShapes();
 	},
 
 	createQuestionShapes: function()
