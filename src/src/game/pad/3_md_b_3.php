@@ -154,6 +154,7 @@ Extends: MultipleChoicePad,
 			}
 
 			var el = 0;
+			this.mLeastMost = 2;
 			if (this.mLeastMost == 0)
 			{
                                 for (m = 7; m > 0; m--)
@@ -201,6 +202,32 @@ Extends: MultipleChoicePad,
 				}
 				question = new Question('What has the most?','' + this.mCorrectAnswerArray[el]);
 			}
+ 
+                       	if (this.mLeastMost == 2)
+                        {
+                                for (m = 0; m < 7; m++)
+                                {
+                                        if (this.mNumberOfAArray[i] == m)
+                                        {
+                                                el = 0;
+                                        }
+                                        if (this.mNumberOfBArray[i] == m)
+                                        {
+                                                el = 1;
+                                        }
+                                        if (this.mNumberOfCArray[i] == m)
+                                        {
+                                                el = 2;
+                                        }
+                                        if (this.mNumberOfDArray[i] == m)
+                                        {
+                                                el = 3;
+                                        }
+                                }
+				var answer = parseInt(this.mNumberOfAArray[i] - this.mNumberOfBArray[i]);	
+                                question = new Question('How many more Giraffs are there than Kids?','' + answer);
+                        }
+
 			this.mQuiz.mQuestionArray.push(question);
 		}
 
