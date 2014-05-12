@@ -10,6 +10,8 @@ Extends: RulerPad,
 		// Creates canvas 640 × 480 at 10, 50
 		var r = Raphael(10, 50, 640, 480);
 		r.barchart(0, 0, 620, 260, [76, 70, 67, 71, 69], {})
+   		txtattr = { font: "12px sans-serif" };
+                r.text(160, 10, "Single Series Chart").attr(txtattr);
 	},
 
 	createQuestions: function()
