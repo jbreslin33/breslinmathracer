@@ -78,6 +78,7 @@ CREATE TABLE learning_standards (
 	levels integer NOT NULL -- for us to determine number of levels till next LearningStandard	
 );	
 alter table learning_standards add column standard text;
+alter table learning_standards add column subject integer default 1;
 
 
 --LEVEL_ATTEMPTS
