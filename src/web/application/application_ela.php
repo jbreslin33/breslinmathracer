@@ -33,6 +33,7 @@ var level       = "<?php echo $level; ?>";
 var standard    = "<?php echo $standard; ?>";
 var progression = "<?php echo $progression; ?>";
 var levels      = "<?php echo $levels; ?>";
+var subject_id  = "<?php echo $subject_id; ?>";
 
 var APPLICATION;
 

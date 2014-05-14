@@ -8,4 +8,5 @@ $level = $_SESSION["level"];
 $standard = $_SESSION["standard"];
 $progression = $_SESSION["progression"];
 $levels = $_SESSION["levels"];
+$subject_id = $_SESSION["subject_id"];
 ?>

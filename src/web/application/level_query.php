@@ -11,7 +11,6 @@ $conn = dbConnect();
 
 if ($_SESSION["level"] == NULL)
 {
-	//insert into levelattempts (start_time,user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,7,1,'CA9EE2E34F384E95A5FA26769C5864B8',2);
 	$insert = "insert into levelattempts (start_time,user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
 	$insert .= $_SESSION["user_id"]; 	
 	$insert .= ",1,'CA9EE2E34F384E95A5FA26769C5864B8',2);"; 
