@@ -1,14 +1,38 @@
 var g4_nf_a_1 = new Class(
 {
 
-Extends: NumberPad2Box,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-		//this.mUserAnswer2 = '';
-
+		
 	},
+
+	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(170,50,295,95,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        },
+
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[1].setSize(200,100);
+                //this.mShapeArray[1].setPosition(380,80);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + ' ? = ' + this.mQuiz.getQuestion().getAnswer();
+
+             
+                //move dont forget
+               // this.mShapeArray[8].setVisibility(false);
+               // this.mShapeArray[9].setVisibility(false);
+        },
+
   
 
 	createQuestions: function()
@@ -21,6 +45,8 @@ Extends: NumberPad2Box,
 		var varB = 0;
 		var varC = 0;
 		var varD = 0;
+		var varN = 0;
+
 
 		var start = 0;
 		var end = 0;
@@ -34,30 +60,42 @@ Extends: NumberPad2Box,
 		 for (s = 0; s < this.mScoreNeeded; s++)
 		 {		
 
-			// pick number of digits (1 - 4)
-			rand = 2 + Math.floor((Math.random()*3));
+			// pick random number (1 - 9)
+			varA = 1 + Math.floor((Math.random()*9));
 
-			// get start number based on digits
-			start = Math.pow(10, rand-1);
+			// pick random number from 2-12 (greater than varA)
+			varB = varA + (1 + Math.floor((Math.random()*(12-varA))));
 
-			// get end number based on digits
-			end = Math.pow(10, rand);
+			
+			// pick random number (1 - 9) as a multiplier
+			varN = 2 + Math.floor((Math.random()*9));
 
-			// pick number from start to end range
-			varA = start + Math.floor(Math.random()*(end-start));	
+			varC = varA * varN;
+			varD = varB * varN;
 
-			// pick one digit number
-			varB = 2 + Math.floor(Math.random()*8);
+			// pick number of digits (0 - 3) for if statement
+			rand = Math.floor((Math.random()*4));
 
-			//varC = Math.floor(varA / varB);	
-				
-			varC = parseInt(Math.floor(varA / varB));
-
-			varD =  parseInt(varA % varB);
+			if(rand == 0)
 					
-			question = new Question('' + varA + ' / ' +  varB + ' = ', '' + varC);
+			question = new Question('' + varA + ' / ' +  varB + ' = ' + '' + varC + ' / ' +  '?', '' + varD);
+
+			if(rand == 1)
+					
+			question = new Question('' + varA + ' / ' +  varB + ' = ' + '' + '?' + ' / ' +  varD, '' + varC);
+
+			if(rand == 2)
+					
+			question = new Question('' + varC + ' / ' +  varD + ' = ' + '' + varA + ' / ' +  '?', '' + varB);
+
+			if(rand == 3)
+					
+			question = new Question('' + varC + ' / ' +  varD + ' = ' + '' + '?' + ' / ' +  varB, '' + varA);
+
                 	this.mQuiz.mQuestionArray.push(question);
-			question.mAnswerArray.push(varD);
+
+			//question.mAnswerArray.push(varD);
+
    				
       //this.mQuiz.mQuestionArray.push(new Question('' + varA + ' * ' +  varB + ' = ', '' + varC));
                                        
@@ -68,6 +106,6 @@ Extends: NumberPad2Box,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                this.mQuiz.randomize(30);
+               // this.mQuiz.randomize(30);
 	}
 });
