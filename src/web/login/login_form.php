@@ -9,7 +9,11 @@
 
 <body>
 <?php
+
 session_start();
+
+$subject_id = $_GET["subject_id"];
+
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
