@@ -1748,6 +1748,19 @@ var Application = new Class(
                                	this.mGame = new g4_nf_a_1(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.nf.a.2')
+		{ 
+             		if (this.mGameName != "g4_nf_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_a_2";
+                               	this.mGame = new g4_nf_a_2(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
