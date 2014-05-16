@@ -1,4 +1,4 @@
-var MultipleChoicePad = new Class(
+var MultipleChoicePadTwo = new Class(
 {
 
 Extends: Pad,
