@@ -1,7 +1,7 @@
 var g4_nf_a_2 = new Class(
 {
 
-Extends: NumberPad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
