@@ -94,6 +94,11 @@ Extends: MultipleChoicePad,
 
                 	this.mQuiz.mQuestionArray.push(question);
 
+			question.mAnswerPool.push('1/4');
+    			question.mAnswerPool.push('2/3');
+    			//question.mAnswerPool.push('1/5');
+		
+
 			//question.mAnswerArray.push(varD);
 
    				
