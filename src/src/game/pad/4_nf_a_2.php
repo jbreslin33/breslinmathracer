@@ -12,7 +12,7 @@ Extends: MultipleChoicePadTwo,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(170,50,295,95,this,"","","");
+                this.mNumQuestion = new Shape(170,50,195,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -53,6 +53,7 @@ Extends: MultipleChoicePadTwo,
 		var rand = 0;
 
 		var question;
+		var answer;
 		
 		this.mQuiz.resetQuestionArray();
 			
@@ -74,32 +75,35 @@ Extends: MultipleChoicePadTwo,
 			varD = varB * varN;
 
 			// pick number of digits (0 - 3) for if statement
-			rand = Math.floor((Math.random()*4));
+			rand = Math.floor((Math.random()*2));
 
 			if(rand == 0)
-					
-			question = new Question('' + varA + ' / ' +  varB + ' = ' + '' + varC + ' / ' +  '?', '' + varD);
+				{	
+			question = new Question('' + varA + ' / ' +  varB + ' = ' + '' + varC + ' / ' +  varD, '' + 'less than');
+answer = varD;
+}
 
 			if(rand == 1)
-					
-			question = new Question('' + varA + ' / ' +  varB + ' = ' + '' + '?' + ' / ' +  varD, '' + varC);
-
-			if(rand == 2)
-					
-			question = new Question('' + varC + ' / ' +  varD + ' = ' + '' + varA + ' / ' +  '?', '' + varB);
-
-			if(rand == 3)
-					
-			question = new Question('' + varC + ' / ' +  varD + ' = ' + '' + '?' + ' / ' +  varB, '' + varA);
+				{	
+			question = new Question('' + varC + ' / ' +  varD + ' = ' + '' + varA + ' / ' +  varB, '' + 'greater than');
+answer = varB;
+}
 
                 	this.mQuiz.mQuestionArray.push(question);
 
-			question.mAnswerPool.push('1/4');
-    			question.mAnswerPool.push('2/3');
+			//question.mAnswerPool.push('1/4');
+    			//question.mAnswerPool.push('2/3');
     			//question.mAnswerPool.push('1/5');
 		
 
 			//question.mAnswerArray.push(varD);
+
+			this.mQuiz.mQuestionArray[s].setChoice('A', 'greater than');
+			this.mQuiz.mQuestionArray[s].setChoice('B', 'less than');
+			this.mQuiz.mQuestionArray[s].setChoice('C', 'equal to');
+			//this.mQuiz.mQuestionArray[i].setChoice('D','' + this.mCorrectAnswerArray[3]);
+		
+
 
    				
       //this.mQuiz.mQuestionArray.push(new Question('' + varA + ' * ' +  varB + ' = ', '' + varC));

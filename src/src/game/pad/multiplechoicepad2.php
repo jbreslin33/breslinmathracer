@@ -27,7 +27,7 @@ Extends: Pad,
                         if (this.mApplication.mGame.mQuiz.getQuestion())
                         {
                                 this.mQuiz.getQuestion().showShapes();
-                                this.mQuiz.getQuestion().setChoices();
+                                //this.mQuiz.getQuestion().setChoices();
     				this.mNumQuestion.setVisibility(true);
                                 this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
                         }
@@ -96,12 +96,12 @@ Extends: Pad,
        		this.createNumQuestion();
 
                 //BUTTONS
-                this.mButtonA = new Shape(150,50,375,100,this,"BUTTON","","");
-                this.mButtonA.mCollidable  = false;
-                this.mButtonA.mCollisionOn = false;
-                this.mButtonA.mMesh.innerHTML = 'A';
-                this.mButtonA.mMesh.addEvent('click',this.numPadHit);
-                this.mShapeArray.push(this.mButtonA);
+              this.mButtonA = new Shape(150,50,375,100,this,"BUTTON","","");
+              this.mButtonA.mCollidable  = false;
+              this.mButtonA.mCollisionOn = false;
+              this.mButtonA.mMesh.innerHTML = 'A';
+              this.mButtonA.mMesh.addEvent('click',this.numPadHit);
+              this.mShapeArray.push(this.mButtonA);
                         
 		this.mButtonB = new Shape(150,50,375,150,this,"BUTTON","","");
                 this.mButtonB.mCollidable  = false;
