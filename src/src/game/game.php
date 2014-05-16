@@ -64,7 +64,7 @@ var Game = new Class(
 
                 //show correct
                 this.mCorrectAnswerStartTime = 0;
-                this.mCorrectAnswerThresholdTime = 5000;
+                this.mCorrectAnswerThresholdTime = 10000;
                
 		/********* BOUNDS *******************/ 
                 //create bounds
