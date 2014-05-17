@@ -10,6 +10,11 @@ $conn = dbConnect();
 //start new session
 session_start();
 
+if ($_SESSION["subject_id"] == "")
+{
+        header("Location: /index.html");
+}
+
 //let's set a var that will be false if there was a problem..
 $problem = "";
 
