@@ -19,6 +19,7 @@ if ($_SESSION["level"] == NULL)
         	dbErrorCheck($conn,$insertResult);
 
 		$_SESSION["ref_id"] = 'CA9EE2E34F384E95A5FA26769C5864B8';
+                $_SESSION["standard"] = 'k.cc.a.1';
 		$_SESSION["level"] = 1;
 		$_SESSION["levels"] = 10;
 		$_SESSION["progression"] = 1.000;
@@ -34,6 +35,7 @@ if ($_SESSION["level"] == NULL)
                 dbErrorCheck($conn,$insertResult);
 
                 $_SESSION["ref_id"] = 'rl.k.1';
+                $_SESSION["standard"] = 'rl.k.1';
                 $_SESSION["level"] = 1;
                 $_SESSION["levels"] = 10;
                 $_SESSION["progression"] = 1.000;
@@ -50,5 +52,7 @@ $returnString .= ",";
 $returnString .= $_SESSION["levels"];
 $returnString .= ",";
 $returnString .= $_SESSION["progression"];
+$returnString .= ",";
+$returnString .= $_SESSION["standard"];
 echo $returnString;
 ?>

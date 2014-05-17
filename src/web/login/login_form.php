@@ -12,6 +12,14 @@
 session_start();
 
 $_SESSION["subject_id"] = $_GET["subjectid"];
+
+
+if ($_SESSION["subject_id"] == "")
+{
+        header("Location: /index.html");
+}
+
+
 //echo $_SERVER['HTTP_HOST'];
 echo $_SESSION["subject_id"];
 

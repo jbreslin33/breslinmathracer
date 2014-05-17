@@ -136,9 +136,11 @@ var Application = new Class(
 				APPLICATION.mLevels = responseArray[3];
 				APPLICATION.mLevels = responseArray[3];
                                 APPLICATION.mProgression = responseArray[4];
+                                APPLICATION.mStandard = responseArray[5];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mWaitingOnLevelData = false;
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                 	}
 		}
                 xmlhttp.open("GET","../../web/application/level_query.php",true);
@@ -1815,6 +1817,7 @@ var Application = new Class(
                                 APPLICATION.mFailedAttempts = responseArray[6];
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         }
                 }
                 xmlhttp.open("GET","../../src/database/send_failed_attempt.php",true);
@@ -1865,6 +1868,7 @@ var Application = new Class(
 				APPLICATION.mFailedAttempts = responseArray[6];
 				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
@@ -1901,6 +1905,7 @@ var Application = new Class(
 				APPLICATION.mFailedAttempts = responseArray[6];
                                 APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         }
                 }
                 xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
