@@ -19,10 +19,6 @@ if ($_SESSION["subject_id"] == "")
         header("Location: /index.html");
 }
 
-
-//echo $_SERVER['HTTP_HOST'];
-echo $_SESSION["subject_id"];
-
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
