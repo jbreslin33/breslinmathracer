@@ -26,7 +26,7 @@ if ($_SERVER['HTTP_HOST'] == 'elacore.org')
 }
 if ($_SERVER['HTTP_HOST'] == 'jamesanthonybreslin.com') 
 {
-	$_SESSION["subject_id"] = 2;
+	$_SESSION["subject_id"] = 1;
 }
 
 //db connection
