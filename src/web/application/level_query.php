@@ -21,7 +21,7 @@ if ($_SESSION["level"] == NULL)
 		$_SESSION["ref_id"] = 'CA9EE2E34F384E95A5FA26769C5864B8';
                 $_SESSION["standard"] = 'k.cc.a.1';
 		$_SESSION["level"] = 1;
-		$_SESSION["levels"] = 10;
+		$_SESSION["levels"] = 30;
 		$_SESSION["progression"] = 1.000;
 	}
         if ($_SESSION["subject_id"] == 2)
