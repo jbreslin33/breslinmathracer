@@ -151,6 +151,23 @@ var Application = new Class(
 		if (this.mRef_id == 0)
 		{
 		}
+		
+		//ela
+		if (this.mRef_id == 'rl.k.1')
+		{ 
+             		if (this.mGameName != "k_oa_a_1")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "k_oa_a_1";
+                               	this.mGame = new k_oa_a_1(APPLICATION);
+			}
+                }
+	
+		//math
 		if (this.mRef_id == 'CA9EE2E34F384E95A5FA26769C5864B8')
 		{ 
              		if (this.mGameName != "k_cc_a_1")

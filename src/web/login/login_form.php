@@ -12,7 +12,22 @@
 
 session_start();
 
-$subject_id = $_GET["subject_id"];
+if ($_SERVER['HTTP_HOST'] == 'mathcore.org') 
+{
+	$_SESSION["subject_id"] = 1;
+}
+if ($_SERVER['HTTP_HOST'] == 'abcandyou.org') 
+{
+	$_SESSION["subject_id"] = 1;
+}
+if ($_SERVER['HTTP_HOST'] == 'elacore.org') 
+{
+	$_SESSION["subject_id"] = 2;
+}
+if ($_SERVER['HTTP_HOST'] == 'jamesanthonybreslin.com') 
+{
+	$_SESSION["subject_id"] = 2;
+}
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");

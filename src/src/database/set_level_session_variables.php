@@ -533,10 +533,12 @@ function setLevelSessionVariables($conn,$user_id)
                 echo "error no user";
         }
 
-        $query  = "select * from levelattempts where user_id = ";
-        $query .= $_SESSION["user_id"];
+	$query  = "select learning_standards.subject, levelattempts.transaction_code, levelattempts.ref_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.ref_id=levelattempts.ref_id where user_id = ";
+	$query .= $_SESSION["user_id"];
+	$query .= " AND subject = ";
+	$query .= $_SESSION["subject_id"];
 	$query .= " order by start_time desc limit 1;";
-        
+
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$result);
@@ -557,7 +559,7 @@ function setLevelSessionVariables($conn,$user_id)
 	}
         else
         {
-                echo "error no user";
+                echo "error record for query";
         }
 
 	//passed
