@@ -7,6 +7,15 @@ Extends: RulerPad,
 	{
        		this.parent(application);
 
+		this.setScoreNeeded(2);
+
+		this.r = 0;
+
+		this.mLionTotal = 0;
+		this.mTigerTotal = 0;
+		this.mBearTotal = 0;
+		this.mApeTotal = 0;
+		this.mEagleTotal = 0;
 	},
 
 	getStart: function(num)
@@ -58,23 +67,28 @@ Extends: RulerPad,
 
 	},
 	
-	createBarChart: function(lions,tigers,bears,apes,eagles)
+	createBarChart: function()
 	{
+		if (this.r)
+		{
+			this.r.remove();
+		}	
+		
 		this.r = Raphael(250, 100, 520, 480);
 
-		this.rectangleLions = this.r.rect(115, this.getStart(lions), 50, this.getEnd(lions));  
+		this.rectangleLions = this.r.rect(115, this.getStart(this.mLionTotal), 50, this.getEnd(this.mLionTotal));  
 		this.rectangleLions.attr("fill", "blue");
 		
-		this.rectangleTigers = this.r.rect(205, this.getStart(tigers), 50, this.getEnd(tigers));  
+		this.rectangleTigers = this.r.rect(205, this.getStart(this.mTigerTotal), 50, this.getEnd(this.mTigerTotal));  
 		this.rectangleTigers.attr("fill", "orange");
 		
-		this.rectangleBears = this.r.rect(285, this.getStart(bears), 50, this.getEnd(bears));  
+		this.rectangleBears = this.r.rect(285, this.getStart(this.mBearTotal), 50, this.getEnd(this.mBearTotal));  
 		this.rectangleBears.attr("fill", "brown");
 		
-		this.rectangleApes = this.r.rect(365, this.getStart(apes), 50, this.getEnd(apes));  
+		this.rectangleApes = this.r.rect(365, this.getStart(this.mApeTotal), 50, this.getEnd(this.mApeTotal));  
 		this.rectangleApes.attr("fill", "red");
 		
-		this.rectangleEagles = this.r.rect(445, this.getStart(eagles), 50, this.getEnd(eagles));  
+		this.rectangleEagles = this.r.rect(445, this.getStart(this.mEagleTotal), 50, this.getEnd(this.mEagleTotal));  
 		this.rectangleEagles.attr("fill", "green");
 
 
@@ -113,33 +127,59 @@ Extends: RulerPad,
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
-
-		var lions = Math.floor((Math.random()*5)+1);
-		lions = lions * 5;
 		
-		var tigers = Math.floor((Math.random()*5)+1);
-		tigers = tigers * 5;
-		
-		var bears = Math.floor((Math.random()*5)+1);
-		bears = bears * 5;
-		
-		var apes = Math.floor((Math.random()*5)+1);
-		apes = apes * 5;
-		
-		var eagles = Math.floor((Math.random()*5)+1);
-		eagles = eagles * 5;
+		this.mLionTotal = 0;
+		this.mTigerTotal = 0;
+		this.mBearTotal = 0;
+		this.mApeTotal = 0;
+		this.mEagleTotal = 0;
 
-		this.log('lions:' + lions);
-		this.log('tigers:' + tigers);
-		this.log('bears:' + bears);
-		this.log('apes:' + apes);
-		this.log('eagles:' + eagles);
+		this.mLionTotal = Math.floor((Math.random()*5)+1);
+		this.mLionTotal = this.mLionTotal * 5;
+		
+		this.mTigerTotal = Math.floor((Math.random()*5)+1);
+		this.mTigerTotal = this.mTigerTotal * 5;
+		
+		this.mBearTotal = Math.floor((Math.random()*5)+1);
+		this.mBearTotal = this.mBearTotal * 5;
+		
+		this.mApeTotal = Math.floor((Math.random()*5)+1);
+		this.mApeTotal = this.mApeTotal * 5;
+		
+		this.mEagleTotal = Math.floor((Math.random()*5)+1);
+		this.mEagleTotal = this.mEagleTotal * 5;
 
-		this.createBarChart(lions,tigers,bears,apes,eagles);
-		//this.createBarChart(5,10,15,20,25);
+		this.log('lions:' + this.mLionTotal);
+		this.log('tigers:' + this.mTigerTotal);
+		this.log('bears:' + this.mBearTotal);
+		this.log('apes:' + this.mApeTotal);
+		this.log('eagles:' + this.mEagleTotal);
 
-                //add 1
-                this.mQuiz.mQuestionArray.push(new Question('10 + 3 =','13'));
+		this.createBarChart();
+
+		//1
+		if (this.mBearTotal >= this.mLionTotal) 
+		{
+			var answer = parseInt(this.mBearTotal - this.mLionTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more bears than lions?','' + answer));
+		}
+		else  
+		{
+			var answer = parseInt(this.mLionTotal - this.mBearTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more lions than bears?','' + answer));
+		}
+		
+		//2
+		if (this.mEagleTotal >= this.mTigerTotal) 
+		{
+			var answer = parseInt(this.mEagleTotal - this.mTigerTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more eagles than tigers?','' + answer));
+		}
+		else  
+		{
+			var answer = parseInt(this.mTigerTotal - this.mEagleTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers than eagles?','' + answer));
+		}
 
                 //buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
