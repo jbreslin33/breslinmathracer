@@ -22,6 +22,10 @@ Extends: RulerPad,
 		r.text(310, 270, "Bears").attr(txtattr);
 		r.text(390, 270, "Apes").attr(txtattr);
 		r.text(470, 270, "Birds").attr(txtattr);
+
+		//var line = paper.path( "M100,0 L30,100" );
+		r.path( "M100,225 L504,225" );
+                r.text(90, 225, "5").attr(txtattr);
 	},
 
 	createQuestions: function()
