@@ -8,7 +8,7 @@ Extends: RulerPad,
        		this.parent(application);
 
 		// Creates canvas 640 × 480 at 10, 50
-		var r = Raphael(380, 100, 540, 480);
+		var r = Raphael(250, 100, 540, 480);
 		r.barchart     (  50,   0, 350, 250, [76, 70, 67, 71, 69], {})
    		txtattr = { font: "12px sans-serif" };
                 r.text(0, 10, "Single Series Chart").attr(txtattr);
