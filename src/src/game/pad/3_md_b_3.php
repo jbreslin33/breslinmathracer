@@ -8,7 +8,7 @@ Extends: RulerPad,
        		this.parent(application);
 
 		var r = Raphael(250, 100, 520, 480);
-		r.barchart     (100,   0, 420, 280, [76, 70, 67, 71, 69], {})
+		r.barchart     (100,   0, 420, 270, [76, 70, 67, 71, 69], {})
    		txtattr = { font: "12px sans-serif" };
                 r.text(30, 90, "Number").attr(txtattr);
                 r.text(30, 110, "of").attr(txtattr);
@@ -17,11 +17,11 @@ Extends: RulerPad,
                 r.text(30, 170, "Zoo").attr(txtattr);
               
 		//animals 
-		r.text(145, 270, "Lions").attr(txtattr);
-		r.text(230, 270, "Tigers").attr(txtattr);
-		r.text(310, 270, "Bears").attr(txtattr);
-		r.text(390, 270, "Apes").attr(txtattr);
-		r.text(470, 270, "Birds").attr(txtattr);
+		r.text(145, 265, "Lions").attr(txtattr);
+		r.text(230, 265, "Tigers").attr(txtattr);
+		r.text(310, 265, "Bears").attr(txtattr);
+		r.text(390, 265, "Apes").attr(txtattr);
+		r.text(470, 265, "Birds").attr(txtattr);
 
 		//var line = paper.path( "M100,0 L30,100" );
 		r.path( "M100,225 L504,225" );
