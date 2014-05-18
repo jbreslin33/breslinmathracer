@@ -169,5 +169,6 @@
 <script type="text/javascript" src="/src/game/pad/4_nbt_b_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_a_2.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_nf_b_3a.php"></script>
 
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>

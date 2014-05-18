@@ -1780,6 +1780,19 @@ var Application = new Class(
                                	this.mGame = new g4_nf_a_2(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.nf.b.3a')
+		{ 
+             		if (this.mGameName != "g4_nf_b_3a")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_b_3a";
+                               	this.mGame = new g4_nf_b_3a(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
