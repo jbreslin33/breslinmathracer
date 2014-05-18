@@ -7,28 +7,31 @@ Extends: RulerPad,
 	{
        		this.parent(application);
 
-		var r = Raphael(250, 100, 520, 480);
-		r.barchart     (100,   0, 420, 270, [76, 70, 67, 71, 69], {})
+	},
+	
+	createBarChart: function()
+	{
+		this.r = Raphael(250, 100, 520, 480);
+		this.r.barchart     (100,   0, 420, 270, [76, 70, 67, 71, 69], {})
    		txtattr = { font: "12px sans-serif" };
-                r.text(30, 90, "Number").attr(txtattr);
-                r.text(30, 110, "of").attr(txtattr);
-                r.text(30, 130, "Animal").attr(txtattr);
-                r.text(30, 150, "In").attr(txtattr);
-                r.text(30, 170, "Zoo").attr(txtattr);
+                this.r.text(30, 90, "Number").attr(txtattr);
+                this.r.text(30, 110, "of").attr(txtattr);
+                this.r.text(30, 130, "Animal").attr(txtattr);
+                this.r.text(30, 150, "In").attr(txtattr);
+                this.r.text(30, 170, "Zoo").attr(txtattr);
               
 		//animals 
-		r.text(145, 265, "Lions").attr(txtattr);
-		r.text(230, 265, "Tigers").attr(txtattr);
-		r.text(310, 265, "Bears").attr(txtattr);
-		r.text(390, 265, "Apes").attr(txtattr);
-		r.text(470, 265, "Birds").attr(txtattr);
+		this.r.text(145, 265, "Lions").attr(txtattr);
+		this.r.text(230, 265, "Tigers").attr(txtattr);
+		this.r.text(310, 265, "Bears").attr(txtattr);
+		this.r.text(390, 265, "Apes").attr(txtattr);
+		this.r.text(470, 265, "Birds").attr(txtattr);
 
-		//var line = paper.path( "M100,0 L30,100" );
-		r.path( "M100,225 L504,225" );
-                r.text(90, 225, "5").attr(txtattr);
+		this.r.path( "M100,225 L504,225" );
+                this.r.text(90, 225, "5").attr(txtattr);
 		
-		r.path( "M100,200 L504,200" );
-                r.text(90, 200, "10").attr(txtattr);
+		this.r.path( "M100,200 L504,200" );
+                this.r.text(90, 200, "10").attr(txtattr);
 	},
 
 	createQuestions: function()
@@ -36,6 +39,8 @@ Extends: RulerPad,
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
+
+		this.createBarChart();
 
                 //add 1
                 this.mQuiz.mQuestionArray.push(new Question('10 + 3 =','13'));
