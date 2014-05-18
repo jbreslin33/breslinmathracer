@@ -32,6 +32,15 @@ Extends: RulerPad,
 		
 		this.r.path( "M100,158 L504,158" );
                 this.r.text(90, 158, "10").attr(txtattr);
+		
+		this.r.path( "M100,111 L504,111" );
+                this.r.text(90, 111, "15").attr(txtattr);
+		
+		this.r.path( "M100,65 L504,65" );
+                this.r.text(90, 65, "20").attr(txtattr);
+		
+		this.r.path( "M100,19 L504,19" );
+                this.r.text(90, 19, "25").attr(txtattr);
 	},
 
 	createQuestions: function()
