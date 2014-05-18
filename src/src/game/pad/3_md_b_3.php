@@ -26,6 +26,9 @@ Extends: RulerPad,
 		//var line = paper.path( "M100,0 L30,100" );
 		r.path( "M100,225 L504,225" );
                 r.text(90, 225, "5").attr(txtattr);
+		
+		r.path( "M100,200 L504,200" );
+                r.text(90, 200, "10").attr(txtattr);
 	},
 
 	createQuestions: function()
