@@ -12,7 +12,23 @@ Extends: RulerPad,
 	createBarChart: function(lions,tigers,bears,apes,birds)
 	{
 		this.r = Raphael(250, 100, 520, 480);
-		this.r.barchart     (100,   0, 420, 270, [lions, tigers, bears, apes, birds], {})
+
+		this.rectangleLions = this.r.rect(115, 0, 50, 250);  
+		this.rectangleLions.attr("fill", "green");
+		
+		this.rectangleLions = this.r.rect(205, 50, 50, 200);  
+		this.rectangleLions.attr("fill", "orange");
+		
+		this.rectangleLions = this.r.rect(285, 100, 50, 150);  
+		this.rectangleLions.attr("fill", "blue");
+		
+		this.rectangleLions = this.r.rect(365, 150, 50, 100);  
+		this.rectangleLions.attr("fill", "red");
+		
+		this.rectangleLions = this.r.rect(445, 200, 50, 50);  
+		this.rectangleLions.attr("fill", "yellow");
+
+
    		txtattr = { font: "12px sans-serif" };
                 this.r.text(30, 90, "Number").attr(txtattr);
                 this.r.text(30, 110, "of").attr(txtattr);
@@ -27,20 +43,20 @@ Extends: RulerPad,
 		this.r.text(390, 265, "Apes").attr(txtattr);
 		this.r.text(470, 265, "Birds").attr(txtattr);
 
-		this.r.path( "M100,205 L504,205" );
-                this.r.text(90, 205, "5").attr(txtattr);
+		this.r.path( "M100,200 L504,200" );
+                this.r.text(90, 200, "5").attr(txtattr);
 		
-		this.r.path( "M100,158 L504,158" );
-                this.r.text(90, 158, "10").attr(txtattr);
+		this.r.path( "M100,150 L504,150" );
+                this.r.text(90, 150, "10").attr(txtattr);
 		
-		this.r.path( "M100,111 L504,111" );
-                this.r.text(90, 111, "15").attr(txtattr);
+		this.r.path( "M100,105 L504,105" );
+                this.r.text(90, 105, "15").attr(txtattr);
 		
-		this.r.path( "M100,65 L504,65" );
-                this.r.text(90, 65, "20").attr(txtattr);
+		this.r.path( "M100,55 L504,55" );
+                this.r.text(90, 55, "20").attr(txtattr);
 		
-		this.r.path( "M100,19 L504,19" );
-                this.r.text(90, 19, "25").attr(txtattr);
+		this.r.path( "M100,10 L504,10" );
+                this.r.text(90, 10, "25").attr(txtattr);
 	},
 
 	createQuestions: function()
@@ -64,8 +80,14 @@ Extends: RulerPad,
 		var birds = Math.floor((Math.random()*8)+1);
 		birds = birds * 5;
 
-		//this.createBarChart(lions,tigers,bears,apes,birds);
-		this.createBarChart(5,10,15,20,25);
+		this.log('lions:' + lions);
+		this.log('tigers:' + tigers);
+		this.log('bears:' + bears);
+		this.log('apes:' + apes);
+		this.log('birds:' + birds);
+
+		this.createBarChart(lions,tigers,bears,apes,birds);
+		//this.createBarChart(5,10,15,20,25);
 
                 //add 1
                 this.mQuiz.mQuestionArray.push(new Question('10 + 3 =','13'));
