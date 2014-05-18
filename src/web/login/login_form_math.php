@@ -3,21 +3,13 @@
 <html>
 
 <head>
-	<title>Login</title>
+	<title>Login mathcore.org</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
 <body>
 <?php
 session_start();
-
-$_SESSION["subject_id"] = $_GET["subjectid"];
-
-
-if ($_SESSION["subject_id"] == "")
-{
-        header("Location: /index.html");
-}
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
@@ -42,7 +34,7 @@ echo "<br>";
 ?>
 	<p><b> PLEASE LOGIN: </p></b>
 	
-	<form method="post" action="/web/login/login.php">
+	<form method="post" action="/web/login/login.php?subjectid=1">
 
 	<p>Username: <input type="text" name="username" /></p>
 	<p>Password: <input type="text" name="password" /></p>

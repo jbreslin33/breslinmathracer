@@ -10,6 +10,8 @@ $conn = dbConnect();
 //start new session
 session_start();
 
+$_SESSION["subject_id"] = $_GET["subjectid"];
+
 if ($_SESSION["subject_id"] == "")
 {
         header("Location: /index.html");
@@ -45,7 +47,14 @@ if ($problem == "")
 }
 else
 {
-        header("Location: login_form.php?message=$problem");
+	if ($_SESSION["subject_id"] == 1)
+	{
+        	header("Location: login_form_math.php?message=$problem");
+	}
+	if ($_SESSION["subject_id"] == 2)
+	{
+        	header("Location: login_form_ela.php?message=$problem");
+	}
 }
 
 pg_close();
