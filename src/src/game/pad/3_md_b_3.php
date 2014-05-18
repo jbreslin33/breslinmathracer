@@ -8,25 +8,74 @@ Extends: RulerPad,
        		this.parent(application);
 
 	},
+
+	getStart: function(num)
+	{
+		if (num == 25)
+		{
+			return 0;
+		}  
+		if (num == 20)
+		{
+			return 50;
+		}  
+		if (num == 15)
+		{
+			return 100;
+		}  
+		if (num == 10)
+		{
+			return 150;
+		}  
+		if (num == 5)
+		{
+			return 200;
+		}  
+	},
+
+	getEnd: function(num)
+	{
+		if (num == 25)
+		{
+			return 250;
+		}  
+		if (num == 20)
+		{
+			return 200;
+		}  
+		if (num == 15)
+		{
+			return 150;
+		}  
+		if (num == 10)
+		{
+			return 100;
+		}  
+		if (num == 5)
+		{
+			return 50;
+		}  
+
+	},
 	
-	createBarChart: function(lions,tigers,bears,apes,birds)
+	createBarChart: function(lions,tigers,bears,apes,eagles)
 	{
 		this.r = Raphael(250, 100, 520, 480);
 
-		this.rectangleLions = this.r.rect(115, 0, 50, 250);  
-		this.rectangleLions.attr("fill", "green");
-		
-		this.rectangleLions = this.r.rect(205, 50, 50, 200);  
-		this.rectangleLions.attr("fill", "orange");
-		
-		this.rectangleLions = this.r.rect(285, 100, 50, 150);  
+		this.rectangleLions = this.r.rect(115, this.getStart(lions), 50, this.getEnd(lions));  
 		this.rectangleLions.attr("fill", "blue");
 		
-		this.rectangleLions = this.r.rect(365, 150, 50, 100);  
-		this.rectangleLions.attr("fill", "red");
+		this.rectangleTigers = this.r.rect(205, this.getStart(tigers), 50, this.getEnd(tigers));  
+		this.rectangleTigers.attr("fill", "orange");
 		
-		this.rectangleLions = this.r.rect(445, 200, 50, 50);  
-		this.rectangleLions.attr("fill", "yellow");
+		this.rectangleBears = this.r.rect(285, this.getStart(bears), 50, this.getEnd(bears));  
+		this.rectangleBears.attr("fill", "brown");
+		
+		this.rectangleApes = this.r.rect(365, this.getStart(apes), 50, this.getEnd(apes));  
+		this.rectangleApes.attr("fill", "red");
+		
+		this.rectangleEagles = this.r.rect(445, this.getStart(eagles), 50, this.getEnd(eagles));  
+		this.rectangleEagles.attr("fill", "green");
 
 
    		txtattr = { font: "12px sans-serif" };
@@ -37,11 +86,11 @@ Extends: RulerPad,
                 this.r.text(30, 170, "Zoo").attr(txtattr);
               
 		//animals 
-		this.r.text(145, 265, "Lions").attr(txtattr);
+		this.r.text(141, 265, "Lions").attr(txtattr);
 		this.r.text(230, 265, "Tigers").attr(txtattr);
 		this.r.text(310, 265, "Bears").attr(txtattr);
 		this.r.text(390, 265, "Apes").attr(txtattr);
-		this.r.text(470, 265, "Birds").attr(txtattr);
+		this.r.text(470, 265, "Eagles").attr(txtattr);
 		
 		this.r.path( "M100,1 L504,1" );
                 this.r.text(90, 4, "25").attr(txtattr);
@@ -65,28 +114,28 @@ Extends: RulerPad,
 
                 this.mQuiz.resetQuestionArray();
 
-		var lions = Math.floor((Math.random()*7)+1);
+		var lions = Math.floor((Math.random()*5)+1);
 		lions = lions * 5;
 		
-		var tigers = Math.floor((Math.random()*7)+1);
+		var tigers = Math.floor((Math.random()*5)+1);
 		tigers = tigers * 5;
 		
-		var bears = Math.floor((Math.random()*7)+1);
+		var bears = Math.floor((Math.random()*5)+1);
 		bears = bears * 5;
 		
-		var apes = Math.floor((Math.random()*7)+1);
+		var apes = Math.floor((Math.random()*5)+1);
 		apes = apes * 5;
 		
-		var birds = Math.floor((Math.random()*8)+1);
-		birds = birds * 5;
+		var eagles = Math.floor((Math.random()*5)+1);
+		eagles = eagles * 5;
 
 		this.log('lions:' + lions);
 		this.log('tigers:' + tigers);
 		this.log('bears:' + bears);
 		this.log('apes:' + apes);
-		this.log('birds:' + birds);
+		this.log('eagles:' + eagles);
 
-		this.createBarChart(lions,tigers,bears,apes,birds);
+		this.createBarChart(lions,tigers,bears,apes,eagles);
 		//this.createBarChart(5,10,15,20,25);
 
                 //add 1
