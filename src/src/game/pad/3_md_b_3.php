@@ -10,9 +10,11 @@ Extends: RulerPad,
 		var r = Raphael(250, 100, 520, 480);
 		r.barchart     (100,   0, 420, 280, [76, 70, 67, 71, 69], {})
    		txtattr = { font: "12px sans-serif" };
-                r.text(30, 110, "Single").attr(txtattr);
-                r.text(30, 130, "Series").attr(txtattr);
-                r.text(30, 150, "Chart").attr(txtattr);
+                r.text(30, 90, "Number").attr(txtattr);
+                r.text(30, 110, "of").attr(txtattr);
+                r.text(30, 130, "Animal").attr(txtattr);
+                r.text(30, 150, "In").attr(txtattr);
+                r.text(30, 170, "Zoo").attr(txtattr);
               
 		//animals 
 		r.text(145, 270, "Lions").attr(txtattr);
