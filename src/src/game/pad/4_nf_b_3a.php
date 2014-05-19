@@ -1,7 +1,7 @@
 var g4_nf_b_3a = new Class(
 {
 
-Extends: MultipleChoicePadTwo,
+Extends: NumberPad,
 
 	initialize: function(application)
 	{
@@ -12,7 +12,7 @@ Extends: MultipleChoicePadTwo,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(170,50,195,95,this,"","","");
+                this.mNumQuestion = new Shape(185,50,250,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -23,7 +23,7 @@ Extends: MultipleChoicePadTwo,
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(200,100);
+                this.mShapeArray[1].setSize(235,100);
                 //this.mShapeArray[1].setPosition(380,80);
 		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + ' ? = ' + this.mQuiz.getQuestion().getAnswer();
 
@@ -54,82 +54,49 @@ Extends: MultipleChoicePadTwo,
 
 		var question;
 		var answer;
-		var diff = 0;
 		
 		this.mQuiz.resetQuestionArray();
 			
 
-		 for (s = 0; s < this.mScoreNeeded; s++)
+		 for (s = 0; s < this.mScoreNeeded/2; s++)
 		 {		
 
-		    rand = Math.floor((Math.random()*3));
+			// get bottom number
+			varB = 6 + Math.floor(Math.random()*22);
 
-	            if(rand == 0 || rand == 1)
-		    {
+			// get top number
+			max = Math.floor(varB/2);
+			varA = 1 + Math.floor((Math.random()*max));
 
-			// pick random number (1 - 9)
-			varA = 1 + Math.floor((Math.random()*9));
+			varC = 1 + Math.floor((Math.random()*max));
+			varD = varB;
 
-			// pick random number from 2-12 (greater than varA)
-			varB = varA + (1 + Math.floor((Math.random()*(12-varA))));
-
-			varC = 1 + Math.floor((Math.random()*9));
-			varD = varC + (1 + Math.floor((Math.random()*(12-varA))));
-
-			if(varA == varC && varB == varD)
-			   varA = varA + 1;
-
-		     }
-		     else
-		     {
-
-			// pick random number (1 - 5)
-			varA = 1 + Math.floor((Math.random()*5));
-
-			// pick random number from 2-10 (greater than varA)
-			varB = varA + (1 + Math.floor((Math.random()*(10-varA))));
-
-			// pick random number (2 - 4) as a multiplier
-			varN = 2 + Math.floor((Math.random()*3));
-
-			varC = varA * varN;
-			varD = varB * varN;
-
+			answer = varA + varC;
+				
+			question = new Question('' + varA + ' / ' +  varB + ' + ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD, '' + answer);
 			
-		     }
-
-			diff = varA/varB - varC/varD;
-
-			if(diff > 0)
-			   answer = 'greater than';
-			else if(diff < 0)
-			   answer = 'less than';
-			else
-			   answer = 'equal to';
-			
-			question = new Question('' + varA + ' / ' +  varB + ' is ? ' + '' + varC + ' / ' +  varD, '' + answer);
-
-
-
                 	this.mQuiz.mQuestionArray.push(question);
-
-			//question.mAnswerPool.push('1/4');
-    			//question.mAnswerPool.push('2/3');
-    			//question.mAnswerPool.push('1/5');
-		
-
-			//question.mAnswerArray.push(varD);
-
-			this.mQuiz.mQuestionArray[s].setChoice('A', 'greater than');
-			this.mQuiz.mQuestionArray[s].setChoice('B', 'less than');
-			this.mQuiz.mQuestionArray[s].setChoice('C', 'equal to');
-			//this.mQuiz.mQuestionArray[i].setChoice('D','' + this.mCorrectAnswerArray[3]);
-		
+                 }
 
 
-   				
-      //this.mQuiz.mQuestionArray.push(new Question('' + varA + ' * ' +  varB + ' = ', '' + varC));
-                                       
+		 for (s = 0; s < this.mScoreNeeded/2; s++)
+		 {		
+
+			// get bottom number
+			varB = 6 + Math.floor(Math.random()*22);
+
+			// get top number
+			varA = 2 + Math.floor(Math.random()*(varB-2));
+			
+			varC = 1 + Math.floor(Math.random()*(varA-1));
+			//1 + Math.floor((Math.random()*max));
+			varD = varB;
+
+			answer = varA - varC;
+				
+			question = new Question('' + varA + ' / ' +  varB + ' - ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD, '' + answer);
+			
+                	this.mQuiz.mQuestionArray.push(question);
                  }
 			
 
@@ -137,6 +104,6 @@ Extends: MultipleChoicePadTwo,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-               // this.mQuiz.randomize(30);
+                this.mQuiz.randomize(40);
 	}
 });
