@@ -18,6 +18,19 @@ Extends: RulerPad,
 		this.mEagleTotal = 0;
 	},
 
+	showCorrectAnswerEnter: function()
+	{
+		this.parent();
+		this.mShapeArray[1].setPosition(100,75);
+	},
+   
+        createForget: function()
+        {
+		this.parent();
+		this.mShapeArray[9].setPosition(150,225);
+		this.mShapeArray[9].setSize(75,75);
+        },
+
 	getStart: function(num)
 	{
 		if (num == 25)
