@@ -7,7 +7,7 @@ Extends: RulerPad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(3);
+		this.setScoreNeeded(4);
 
 		this.r = 0;
 
@@ -169,6 +169,18 @@ Extends: RulerPad,
 		this.log('eagles:' + this.mEagleTotal);
 
 		this.createBarChart();
+
+		//4
+		if ( (parseInt(this.mLionTotal + this.mApeTotal + this.mEagleTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
+		{
+			var answer = parseInt((this.mLionTotal + this.mApeTotal + this.mEagleTotal) - (this.mTigerTotal + this.mBearTotal));
+                	this.mQuiz.mQuestionArray.push(new Question('How many more lions, apes and eagles are there than tigers and bears?','' + answer));
+		}
+		else  
+		{
+			var answer = parseInt((this.mTigerTotal + this.mBearTotal) - (this.mLionTotal + this.mApeTotal + this.mEagleTotal));
+                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers and bears are there than lions, apes and eagles?','' + answer));
+		}
 
 		//3
 		if ( (parseInt(this.mApeTotal + this.mEagleTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
