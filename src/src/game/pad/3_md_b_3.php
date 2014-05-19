@@ -7,7 +7,7 @@ Extends: RulerPad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(4);
+		this.setScoreNeeded(7);
 
 		this.r = 0;
 
@@ -169,7 +169,43 @@ Extends: RulerPad,
 		this.log('eagles:' + this.mEagleTotal);
 
 		this.createBarChart();
-
+		
+		//7	
+		if (this.mBearTotal >= this.mApeTotal) 
+		{
+			var answer = parseInt(this.mBearTotal - this.mApeTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more bears than apes?','' + answer));
+		}
+		else  
+		{
+			var answer = parseInt(this.mApeTotal - this.mBearTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more apes than bears?','' + answer));
+		}
+	
+		//6	
+		if (this.mBearTotal >= this.mLionTotal) 
+		{
+			var answer = parseInt(this.mBearTotal - this.mLionTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more bears than lions?','' + answer));
+		}
+		else  
+		{
+			var answer = parseInt(this.mLionTotal - this.mBearTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more lions than bears?','' + answer));
+		}
+		
+		//5
+		if (this.mApeTotal >= this.mLionTotal) 
+		{
+			var answer = parseInt(this.mBearTotal - this.mLionTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more bears than lions?','' + answer));
+		}
+		else  
+		{
+			var answer = parseInt(this.mLionTotal - this.mApeTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more lions than apes?','' + answer));
+		}
+		
 		//4
 		if ( (parseInt(this.mLionTotal + this.mApeTotal + this.mEagleTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
 		{
@@ -194,7 +230,7 @@ Extends: RulerPad,
                 	this.mQuiz.mQuestionArray.push(new Question('How many more tigers and bears are there than apes and eagles?','' + answer));
 		}
 
-		//1
+		//2
 		if (this.mBearTotal >= this.mLionTotal) 
 		{
 			var answer = parseInt(this.mBearTotal - this.mLionTotal);
@@ -206,7 +242,7 @@ Extends: RulerPad,
                 	this.mQuiz.mQuestionArray.push(new Question('How many more lions than bears?','' + answer));
 		}
 		
-		//2
+		//1
 		if (this.mEagleTotal >= this.mTigerTotal) 
 		{
 			var answer = parseInt(this.mEagleTotal - this.mTigerTotal);
