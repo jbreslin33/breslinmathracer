@@ -157,15 +157,15 @@ var Application = new Class(
 		//ela
 		if (this.mRef_id == 'rl.k.1')
 		{ 
-             		if (this.mGameName != "k_oa_a_1")
+             		if (this.mGameName != "rl_k_1")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "k_oa_a_1";
-                               	this.mGame = new k_oa_a_1(APPLICATION);
+                               	this.mGameName = "rl_k_1";
+                               	this.mGame = new rl_k_1(APPLICATION);
 			}
                 }
 	
