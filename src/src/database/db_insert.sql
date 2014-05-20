@@ -126,6 +126,7 @@ insert into learning_standards (id,ref_id,progression,levels,standard) values ('
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.a.2','4.nf.a.2',407,10,'Compare two fractions with different numerators and different denominators, e.g., by creating common denominators or numerators, or by comparing to a benchmark fraction such as 1/2. Recognize that comparisons are valid only when the two fractions refer to the same whole. Record the results of comparisons with symbols >, =, or <, and justify the conclusions, e.g., by using a visual fraction model.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.b.3a','4.nf.b.3a',408,10,'Understand addition and subtraction of fractions as joining and separating parts referring to the same whole.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.b.3b','4.nf.b.3b',409,10,'Decompose a fraction into a sum of fractions with the same denominator in more than one way, recording each decomposition by an equation. Justify decompositions, e.g., by using a visual fraction model.');
+insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.b.3c','4.nf.b.3c',410,10,'Add and subtract mixed numbers with like denominators, e.g., by replacing each mixed number with an equivalent fraction, and/or by using properties of operations and the relationship between addition and subtraction.');
 
 
 
