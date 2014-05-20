@@ -57,6 +57,9 @@
 
 <script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
 
+
+<script type="text/javascript" src="/src/game/pad/rl_k_1.php"></script>
+
 <script type="text/javascript" src="/src/game/pad/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_a_3.php"></script>
