@@ -62,9 +62,9 @@ Extends: MultipleChoicePadTwo,
 		 for (s = 0; s < this.mScoreNeeded; s++)
 		 {		
 
-		    rand = Math.floor((Math.random()*3));
+		    rand = Math.floor((Math.random()*2));
 
-	            if(rand == 0 || rand == 1)
+	            if(rand == 0)
 		    {
 
 			// pick random number (1 - 9)
