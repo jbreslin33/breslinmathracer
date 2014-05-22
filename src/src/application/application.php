@@ -125,23 +125,30 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        var response = xmlhttp.responseText; 
-			var responseArray = response.split(","); 
-			var code = responseArray[0];
+			if (typeof(xmlhttp.responseText)=="unknown")
+ 			{
+				return("");
+			} 
+			else
+ 			{
+                        	var response = xmlhttp.responseText; 
+				var responseArray = response.split(","); 
+				var code = responseArray[0];
 
-			if (code == "100")
-			{
-				APPLICATION.mRef_id = responseArray[1];
-				APPLICATION.mLevel = responseArray[2];
-				APPLICATION.mLevels = responseArray[3];
-				APPLICATION.mLevels = responseArray[3];
-                                APPLICATION.mProgression = responseArray[4];
-                                APPLICATION.mStandard = responseArray[5];
-				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-				APPLICATION.mWaitingOnLevelData = false;
-                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                	}
+				if (code == "100")
+				{
+					APPLICATION.mRef_id = responseArray[1];
+					APPLICATION.mLevel = responseArray[2];
+					APPLICATION.mLevels = responseArray[3];
+					APPLICATION.mLevels = responseArray[3];
+                                	APPLICATION.mProgression = responseArray[4];
+                                	APPLICATION.mStandard = responseArray[5];
+					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+					APPLICATION.mWaitingOnLevelData = false;
+                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                		}
+			}
 		}
                 xmlhttp.open("GET","../../web/application/level_query.php",true);
                 xmlhttp.send();
@@ -1817,19 +1824,6 @@ var Application = new Class(
 				}
                                	this.mGameName = "g4_nf_b_3c";
                                	this.mGame = new g4_nf_b_3c(APPLICATION);
-			}	
-		}
-		if (this.mRef_id == '4.nf.b.4a')
-		{ 
-             		if (this.mGameName != "g4_nf_b_4a")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "g4_nf_b_4a";
-                               	this.mGame = new g4_nf_b_4a(APPLICATION);
 			}	
 		}
 	},
