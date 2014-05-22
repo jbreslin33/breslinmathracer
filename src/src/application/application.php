@@ -1819,6 +1819,19 @@ var Application = new Class(
                                	this.mGame = new g4_nf_b_3c(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.nf.b.4a')
+		{ 
+             		if (this.mGameName != "g4_nf_b_4a")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_b_4a";
+                               	this.mGame = new g4_nf_b_4a(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
