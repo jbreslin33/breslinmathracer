@@ -12,7 +12,7 @@ Extends: NumberPad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(185,50,250,95,this,"","","");
+                this.mNumQuestion = new Shape(225,50,270,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -23,7 +23,7 @@ Extends: NumberPad,
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(235,100);
+                this.mShapeArray[1].setSize(265,100);
                 //this.mShapeArray[1].setPosition(380,80);
 		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + ' ? = ' + this.mQuiz.getQuestion().getAnswer();
 
@@ -66,7 +66,7 @@ Extends: NumberPad,
 
 			// get top number
 			max = Math.floor(varB/2);
-			varA = 1 + Math.floor((Math.random()*max));
+			varA = 1 + Math.floor((Math.random()*(max-1)));
 
 			varC = 1 + Math.floor((Math.random()*max));
 			varD = varB;
