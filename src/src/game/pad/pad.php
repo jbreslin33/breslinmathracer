@@ -95,6 +95,11 @@ Extends: Game,
                         APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
                 }
         },
+        
+	numPadHitEnter: function()
+        {
+                APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+        },
 
 	createWorld: function()
         {

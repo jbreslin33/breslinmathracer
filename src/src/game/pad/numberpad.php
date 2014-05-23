@@ -45,19 +45,7 @@ Extends: Pad,
                         APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
                 }
         },
-
-        numPadHit: function()
-        {
-                if (this.innerHTML == 'Enter')
-                {
-                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-                }
-                else
-                {
-                        APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '' + this.innerHTML;
-                }
-        },
-
+ 
 	createWorld: function()
         {
 		this.parent();
@@ -84,7 +72,7 @@ Extends: Pad,
                 this.mNumAnswer.mMesh.value = '';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumAnswer.mMesh.attachEvent('keypress',this.inputKeyHit);
+                	this.mNumAnswer.mMesh.attachEvent("onkeypress",this.inputKeyHit);
 		}
 		else
 		{
@@ -305,7 +293,7 @@ Extends: Pad,
                 this.mNumEnter.mMesh.innerHTML = 'Enter';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumEnter.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumEnter.mMesh.attachEvent("onclick",this.numPadHitEnter);
 		}
 		else
 		{
