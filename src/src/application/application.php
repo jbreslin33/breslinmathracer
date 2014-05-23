@@ -1873,23 +1873,30 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        var response = xmlhttp.responseText;
-                        var responseArray = response.split(",");
-			var code = responseArray[0];
-                        var codeNumber = parseInt(code);
-
-                        if (codeNumber == 101)
+                        if (typeof(xmlhttp.responseText)=="unknown")
                         {
-                                APPLICATION.mRef_id = responseArray[1];
-                                APPLICATION.mLevel = responseArray[2];
-                                APPLICATION.mStandard = responseArray[3];
-                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                APPLICATION.mProgression = responseArray[4];
-                                APPLICATION.mLevels = responseArray[5];
-                                APPLICATION.mFailedAttempts = responseArray[6];
-                                APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                return("");
+                        }
+                        else
+                        {
+                        	var response = xmlhttp.responseText;
+                        	var responseArray = response.split(",");
+				var code = responseArray[0];
+                        	var codeNumber = parseInt(code);
+
+                        	if (codeNumber == 101)
+                        	{
+                                	APPLICATION.mRef_id = responseArray[1];
+                                	APPLICATION.mLevel = responseArray[2];
+                                	APPLICATION.mStandard = responseArray[3];
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                	APPLICATION.mProgression = responseArray[4];
+                                	APPLICATION.mLevels = responseArray[5];
+                                	APPLICATION.mFailedAttempts = responseArray[6];
+                                	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				}
                         }
                 }
                 xmlhttp.open("GET","../../src/database/send_failed_attempt.php",true);
@@ -1924,23 +1931,30 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        var response = xmlhttp.responseText; 
-			var responseArray = response.split(","); 
-			var code = responseArray[0];
-			var codeNumber = parseInt(code);
+            		if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                        	var response = xmlhttp.responseText; 
+				var responseArray = response.split(","); 
+				var code = responseArray[0];
+				var codeNumber = parseInt(code);
 
-			if (codeNumber == 101)
-			{
-				APPLICATION.mRef_id = responseArray[1];
-				APPLICATION.mLevel = responseArray[2];
-				APPLICATION.mStandard = responseArray[3];
-				APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-				APPLICATION.mProgression = responseArray[4];
-				APPLICATION.mLevels = responseArray[5];
-				APPLICATION.mFailedAttempts = responseArray[6];
-				APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-				APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				if (codeNumber == 101)
+				{
+					APPLICATION.mRef_id = responseArray[1];
+					APPLICATION.mLevel = responseArray[2];
+					APPLICATION.mStandard = responseArray[3];
+					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+					APPLICATION.mProgression = responseArray[4];
+					APPLICATION.mLevels = responseArray[5];
+					APPLICATION.mFailedAttempts = responseArray[6];
+					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				}
 			}
                 }
                 xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
@@ -1961,23 +1975,30 @@ var Application = new Class(
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        var response = xmlhttp.responseText;
-                        var responseArray = response.split(",");
-			var code = responseArray[0];
-			var codeNumber = parseInt(code);
-
-			if (codeNumber == 101)
+                    	if (typeof(xmlhttp.responseText)=="unknown")
                         {
-                                APPLICATION.mRef_id = responseArray[1];
-                                APPLICATION.mLevel = responseArray[2];
-                                APPLICATION.mStandard = responseArray[3];
-                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                APPLICATION.mProgression = responseArray[4];
-                                APPLICATION.mLevels = responseArray[5];
-				APPLICATION.mFailedAttempts = responseArray[6];
-                                APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                return("");
+                        }
+                        else
+                        {
+                        	var response = xmlhttp.responseText;
+                        	var responseArray = response.split(",");
+				var code = responseArray[0];
+				var codeNumber = parseInt(code);
+
+				if (codeNumber == 101)
+                       	 	{
+                                	APPLICATION.mRef_id = responseArray[1];
+                                	APPLICATION.mLevel = responseArray[2];
+                                	APPLICATION.mStandard = responseArray[3];
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                	APPLICATION.mProgression = responseArray[4];
+                                	APPLICATION.mLevels = responseArray[5];
+					APPLICATION.mFailedAttempts = responseArray[6];
+                                	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				}
                         }
                 }
                 xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
