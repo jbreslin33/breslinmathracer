@@ -20,55 +20,39 @@ Extends: NumberPad,
 	firstTimeExecute: function()
         {
 		
-                if (this.mUserAnswer != '')
+             if (this.mUserAnswer != '')
+	     {
+
+		var str = '';
+		var res = '';
+		var whole;
+		var frac;
+		var res2;
+		var decimal;
+
+		frac = '' + this.mUserAnswer;
+		res2 = frac.split("/");
+
+		if (res2.length == 1)
 		{
-
-			var str = '';
-			var res = '';
-			var whole;
-			var frac;
-			var res2;
-			var decimal;
-
-			console.log('' + this.mUserAnswer);
-
-			str = '' + this.mUserAnswer;
-			res = str.split(" ");
-
-			if (res.length == 1)
-			{
-				res[1] = '0/1';
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			this.mUserAnswer = (whole + decimal) * 1.0;
-			//console.log('whole:' + whole);
-			//console.log('decimal:' + decimal);
-			//console.log(this.mUserAnswer);
-
-			str = this.mQuiz.getQuestion().mAnswerArray[0];
-			res = str.split(" ");
-
-			if (res.length == 1)
-			{
-				res[1] = '999/888';
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-			decimal = res2[0]/res2[1];
-			this.mDecimalAnswer = (whole + decimal) * 1.0;
-			
+			res2[1] = '1';
 		}
-		var correct = false;
+
+		decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+		this.mUserAnswer = decimal * 1.0;
+
+		str = this.mQuiz.getQuestion().mAnswerArray[0];
+		res2 = str.split("/");
+
+		if (res2.length == 1)
+		{
+			res2[1] = '1';
+		}
+
+		decimal = 1.0 * res2[0]/res2[1];
+		this.mDecimalAnswer = decimal * 1.0;
+	     }
+	     var correct = false;
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
@@ -138,85 +122,17 @@ Extends: NumberPad,
 		 for (s = 0; s < this.mScoreNeeded; s++)
 		 {		
 
-		    rand = Math.floor((Math.random()*2));
-
-	            if(rand == 0)
-		    {
-
-			// get bottom number
-			varB = 4 + Math.floor(Math.random()*9);
-
-			// get top number
-			max = Math.floor(varB/2);
-			varA = 1 + Math.floor((Math.random()*(max-1)));
-
-			varC = 1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answerFrac = varA + varC;
-			//answerFrac = '' + answerFrac + '/' + varD;
-			answerFracString = '' + answerFrac + '/' + varD;
-			answerFrac = answerFrac/varD;
-			
-
-			wholeA = 1 + Math.floor(Math.random()*9);
-			wholeB = 1 + Math.floor(Math.random()*9);
-
-			answerWhole = wholeA + wholeB;
-
-			//answerTotal = '' + answerWhole + ' ' + answerFrac;
-			answerTotal = answerWhole + answerFrac;
-			this.mDecimalAnswer = answerTotal;
-			answerTotalString = '' + answerWhole + ' ' + answerFracString;
-
-			answer1 = answerTotal;
-
-			mixA = '' + wholeA + ' ' + varA + '/' +  '' + varB;
-			mixB = '' + wholeB + ' ' + varC + '/' +  '' + varD;
-
-			question = new Question('' + mixA + ' + ' +  mixB + ' =', '' + answerTotalString);
-
-		     }
-		     else
-		     {
-
-			// get bottom number
-			varB = 4 + Math.floor(Math.random()*9);
-
-			// get top number
-			max = varB;
-
-			varC = 1 + Math.floor((Math.random()*(max-1)));
-			varA = varC + 1 + Math.floor((Math.random()*(max - varC - 1)));
-			varD = varB;
-
-			answerFrac = varA - varC;
-			//answerFrac = '' + answerFrac + '/' + varD;
-			answerFracString = '' + answerFrac + '/' + varD;
-			answerFrac = answerFrac/varD;
-			
 			wholeB = 1 + Math.floor(Math.random()*9);
 			wholeA = wholeB + 1 + Math.floor(Math.random()*(9 - wholeB));
 
-			answerWhole = wholeA - wholeB;
+			varA = '1/' + wholeA;
+			varB = wholeB;
+			answer = '' + wholeB + '/' + wholeA;
 
-			//answerTotal = '' + answerWhole + ' ' + answerFrac;
-			answerTotal = answerWhole + answerFrac;
-			this.mDecimalAnswer = answerTotal;
-			answerTotalString = '' + answerWhole + ' ' + answerFracString;
+			question = new Question('' + varA + ' * ' +  varB + ' =', '' + answer);
 
-			answer1 = answerTotal;
-
-			mixA = '' + wholeA + ' ' + varA + '/' +  '' + varB;
-			mixB = '' + wholeB + ' ' + varC + '/' +  '' + varD;
-
-			question = new Question('' + mixA + ' - ' +  mixB + ' =', '' + answerTotalString);
-
-
-		     }
-			//console.log(answerTotal);
+		 	//console.log(answerTotal);
 			
-
                 	this.mQuiz.mQuestionArray.push(question);
 
                                        
