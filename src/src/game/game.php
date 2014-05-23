@@ -793,7 +793,7 @@ var Game = new Class(
                 if (this.mNumAnswer)
                 {
                         this.mNumAnswer.mMesh.value = '';
-                        this.mNumAnswer.mMesh.innerHTML =  '';
+                        //this.mNumAnswer.mMesh.innerHTML =  "";
                 }
 
                 //user answer
