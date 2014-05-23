@@ -84,6 +84,15 @@ Extends: Game,
                 }
         },
 
+        inputKeyHitEnter: function(e)
+        {
+		if (e.keyCode == 13)	
+		{
+                	APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+		}
+        },
+
+
         numPadHit: function()
         {
                 if (this.innerHTML == 'Enter')

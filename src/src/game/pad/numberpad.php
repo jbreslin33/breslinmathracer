@@ -38,14 +38,6 @@ Extends: Pad,
 		}
         },
 
-        inputKeyHit: function(e)
-        {
-                if (e.key == 'enter')
-                {
-                        APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-                }
-        },
- 
 	createWorld: function()
         {
 		this.parent();
@@ -72,7 +64,7 @@ Extends: Pad,
                 this.mNumAnswer.mMesh.value = '';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumAnswer.mMesh.attachEvent("onkeypress",this.inputKeyHit);
+                	this.mNumAnswer.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
 		}
 		else
 		{
