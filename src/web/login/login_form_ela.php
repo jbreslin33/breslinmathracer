@@ -8,6 +8,16 @@
 </head>
 
 <body>
+<audio controls>
+    <source src="/audio/sound.mp3">
+    <source src="/audio/sound.oga">
+    <p>Your browser can’t play this audio content directly, but you can download it:</p>
+    <ul>
+      <li><a href="/audio/sound.mp3">Download as audio/mp3</a></li>
+      <li><a href="/audio/sound.oga">Download as audio/ogg</a></li>
+    </ul>
+</audio>
+
 <?php
 session_start();
 
