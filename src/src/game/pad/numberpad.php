@@ -72,25 +72,12 @@ Extends: Pad,
 		}	
                 this.mShapeArray.push(this.mNumAnswer);
 
-                //Lock
-                this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
-                this.mNumLock.mMesh.innerHTML = 'Lock';
-		if (navigator.appName == "Microsoft Internet Explorer")
-		{
-                	this.mNumLock.mMesh.attachEvent('click',this.numPadHit);
-		}
-		else
-		{
-                	this.mNumLock.mMesh.addEvent('click',this.numPadHit);
-		}
-                this.mShapeArray.push(this.mNumLock);
-
                 //Division
                 this.mNumDivision = new Shape(50,50,350,150,this,"BUTTON","","");
                 this.mNumDivision.mMesh.innerHTML = '/';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumDivision.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumDivision.mMesh.attachEvent("onclick",this.numPadHitDivision);
 		}
 		else
 		{
@@ -103,7 +90,7 @@ Extends: Pad,
                 this.mNumMultiplication.mMesh.innerHTML = '*';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumMultiplication.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumMultiplication.mMesh.attachEvent("onclick",this.numPadHitMultiplication);
 		}
 		else
 		{
@@ -116,7 +103,7 @@ Extends: Pad,
                 this.mNumSubtraction.mMesh.innerHTML = '-';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumSubtraction.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumSubtraction.mMesh.attachEvent("onclick",this.numPadHitSubtraction);
 		}
 		else
 		{
@@ -129,7 +116,7 @@ Extends: Pad,
                 this.mNumSeven.mMesh.innerHTML = '7';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumSeven.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumSeven.mMesh.attachEvent("onclick",this.numPadHitSeven);
 		}
 		else
 		{
@@ -142,7 +129,7 @@ Extends: Pad,
                 this.mNumEight.mMesh.innerHTML = '8';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumEight.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumEight.mMesh.attachEvent("onclick",this.numPadHitEight);
 		}
 		else
 		{
@@ -155,7 +142,7 @@ Extends: Pad,
                 this.mNumNine.mMesh.innerHTML = '9';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumNine.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumNine.mMesh.attachEvent("onclick",this.numPadHitNine);
 		}
 		else
 		{
@@ -168,7 +155,7 @@ Extends: Pad,
                 this.mNumAddition.mMesh.innerHTML = '+';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumAddition.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumAddition.mMesh.attachEvent("onclick",this.numPadHitAddition);
 		}
 		else
 		{
@@ -181,7 +168,7 @@ Extends: Pad,
                 this.mNumFour.mMesh.innerHTML = '4';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumFour.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumFour.mMesh.attachEvent("onclick",this.numPadHitFour);
 		}
 		else
 		{
@@ -194,7 +181,7 @@ Extends: Pad,
                 this.mNumFive.mMesh.innerHTML = '5';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumFive.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumFive.mMesh.attachEvent("onclick",this.numPadHitFive);
 		}
 		else
 		{
@@ -207,7 +194,7 @@ Extends: Pad,
                 this.mNumSix.mMesh.innerHTML = '6';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumSix.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumSix.mMesh.attachEvent("onclick",this.numPadHitSix);
 		}
 		else
 		{
@@ -220,7 +207,7 @@ Extends: Pad,
                 this.mNumOne.mMesh.innerHTML = '1';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumOne.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumOne.mMesh.attachEvent("onclick",this.numPadHitOne);
 		}
 		else
 		{
@@ -233,7 +220,7 @@ Extends: Pad,
                 this.mNumTwo.mMesh.innerHTML = '2';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumTwo.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumTwo.mMesh.attachEvent("onclick",this.numPadHitTwo);
 		}
 		else
 		{
@@ -246,7 +233,7 @@ Extends: Pad,
                 this.mNumThree.mMesh.innerHTML = '3';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumThree.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumThree.mMesh.attachEvent("onclick",this.numPadHitThree);
 		}
 		else
 		{
@@ -259,7 +246,7 @@ Extends: Pad,
                 this.mNumZero.mMesh.innerHTML = '0';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumZero.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumZero.mMesh.attachEvent("onclick",this.numPadHitZero);
 		}
 		else
 		{
@@ -272,7 +259,7 @@ Extends: Pad,
                 this.mNumDecimal.mMesh.innerHTML = '.';
 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumDecimal.mMesh.attachEvent('click',this.numPadHit);
+                	this.mNumDecimal.mMesh.attachEvent("onclick",this.numPadHitDecimal);
 		}
 		else	
 		{

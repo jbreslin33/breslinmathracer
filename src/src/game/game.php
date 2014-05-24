@@ -580,9 +580,15 @@ var Game = new Class(
         
 	resetGuiBar: function()
 	{
-               	for (i = 0; i < this.mTotalGuiBars; i++) 	
+ 		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-        		this.mShapeArray[i].mMesh.innerHTML = '';
+		}
+		else
+		{	
+               		for (i = 0; i < this.mTotalGuiBars; i++) 	
+			{
+        			this.mShapeArray[i].mMesh.innerHTML = '';
+			}
 		}
 	},
 	
