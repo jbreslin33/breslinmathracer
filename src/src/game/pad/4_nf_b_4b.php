@@ -122,12 +122,14 @@ Extends: NumberPad,
 		 for (s = 0; s < this.mScoreNeeded; s++)
 		 {		
 
-			wholeB = 1 + Math.floor(Math.random()*9);
-			wholeA = wholeB + 1 + Math.floor(Math.random()*(9 - wholeB));
+			wholeB = 2 + Math.floor(Math.random()*5);
+			varC = 2 + Math.floor(Math.random()*5);
+			wholeA = (wholeB * varC) + 1 + Math.floor(Math.random()*(38 - (wholeB * varC)));
 
-			varA = '1/' + wholeA;
+			varA = varC + '/' + wholeA;
 			varB = wholeB;
-			answer = '' + wholeB + '/' + wholeA;
+			varD = wholeB * varC;
+			answer = '' + varD + '/' + wholeA;
 
 			question = new Question('' + varA + ' * ' +  varB + ' =', '' + answer);
 
