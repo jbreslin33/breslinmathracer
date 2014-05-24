@@ -1852,6 +1852,45 @@ var Application = new Class(
                                	this.mGame = new g4_nf_b_4b(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.nf.c.5')
+		{ 
+             		if (this.mGameName != "g4_nf_c_5")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_c_5";
+                               	this.mGame = new g4_nf_c_5(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '4.nf.c.6')
+		{ 
+             		if (this.mGameName != "g4_nf_c_6")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_c_6";
+                               	this.mGame = new g4_nf_c_6(APPLICATION);
+			}	
+		}
+		if (this.mRef_id == '4.nf.c.7')
+		{ 
+             		if (this.mGameName != "g4_nf_c_7")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_c_7";
+                               	this.mGame = new g4_nf_c_7(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
