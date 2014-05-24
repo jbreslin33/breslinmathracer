@@ -92,7 +92,6 @@ Extends: Game,
 		}
         },
 
-
         numPadHit: function()
         {
                 if (this.innerHTML == 'Enter')
@@ -109,6 +108,67 @@ Extends: Game,
         {
                 APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
         },
+        
+	numPadHitZero: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '0';
+	},
+	numPadHitOne: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '1';
+	},
+	numPadHitTwo: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '2';
+	},
+	numPadHitThree: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '3';
+	},
+	numPadHitFour: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '4';
+	},
+	numPadHitFive: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '5';
+	},
+	numPadHitSix: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '6';
+	},
+	numPadHitSeven: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '7';
+	},
+	numPadHitEight: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '8';
+	},
+	numPadHitNine: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '9';
+	},
+	numPadHitDivision: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '/';
+	},
+	numPadHitMultiplication: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '*';
+	},
+	numPadHitAddition: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '+';
+	},
+	numPadHitSubtraction: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '-';
+	},
+	numPadHitDecimal: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.value = APPLICATION.mGame.mNumAnswer.mMesh.value + '.';
+	},
 
 	createWorld: function()
         {
