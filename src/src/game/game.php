@@ -187,7 +187,6 @@ var Game = new Class(
 
 	showQuestion: function()
 	{
-		this.log('Game::showQuestion');
 		//set all shapes invisible to start semi-clean
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
@@ -825,6 +824,19 @@ var Game = new Class(
 
         firstTimeExecute: function()
         {
+		//try to get focus to answer...
+		if (document.activeElement != this.mNumAnswer.mMesh)
+		{
+  			if (navigator.appName == "Microsoft Internet Explorer")
+                	{
+                        	setTimeout(this.focusTimeout, 200);
+			}
+			else
+			{
+                        	this.mNumAnswer.mMesh.focus();
+			}
+		}
+
 		var correct = false;
                 //if you have an answer...
                 if (this.mUserAnswer != '')
@@ -853,5 +865,6 @@ var Game = new Class(
 				this.mApplication.sendLevelAttempt();
 			}
                 }
+
         }
 });
