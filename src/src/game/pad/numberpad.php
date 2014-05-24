@@ -8,36 +8,6 @@ Extends: Pad,
        		this.parent(application);
 	},
 
-        showQuestion: function()
-        {
-              	//set all shapes invisible to start semi-clean
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                }
-
-                if (this.mApplication.mGame.mQuiz)
-                {
-                        if (this.mApplication.mGame.mQuiz.getQuestion())
-                        {
-                                this.mQuiz.getQuestion().showShapes();
-                                this.mQuiz.getQuestion().setChoices();
-                                this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
-                        }
-                }
-               
-		//show input pad 
-		for (i = this.mTotalGuiBars; i < parseInt(this.mTotalGuiBars + this.mTotalInputBars); i++)
-                {
-                        this.mShapeArray[i].setVisibility(true);
-                }
-		
-		if (this.mNumAnswer)
-		{
-                	this.mNumAnswer.mMesh.focus();
-		}
-        },
-
 	createWorld: function()
         {
 		this.parent();
