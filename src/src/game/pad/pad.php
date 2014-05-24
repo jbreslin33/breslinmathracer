@@ -103,7 +103,10 @@ Extends: Game,
 */
 	focusTimeout: function()
 	{
-        	APPLICATION.mGame.mNumAnswer.mMesh.focus();
+		if (APPLICATION.mGame.mNumAnswer.getVisibility() == true) 
+		{
+        		APPLICATION.mGame.mNumAnswer.mMesh.focus();
+		}
 	},
 
         inputKeyHit: function(e)

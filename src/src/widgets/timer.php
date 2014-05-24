@@ -58,10 +58,6 @@ var Timer  = new Class(
 		this.pin.hide();
         },
 
-	showQuestion: function()
-        {
-        },
-
         show: function()
         {
                 //shapes and array
