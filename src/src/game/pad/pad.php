@@ -1,3 +1,11 @@
+
+Element.implement({
+	setFocus: function(index) {
+		this.setAttribute('tabIndex',index || 0);
+		this.focus();
+	}
+});
+
 var Pad = new Class(
 {
 
@@ -45,10 +53,10 @@ Extends: Game,
 		this.reset();
         	this.mStateMachine.changeState(this.mFIRST_TIME);
 	},
-
-        showQuestion: function()
+       
+	showQuestion: function()
         {
-              	//set all shapes invisible to start semi-clean
+                //set all shapes invisible to start semi-clean
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
                         this.mShapeArray[i].setVisibility(false);
@@ -63,18 +71,40 @@ Extends: Game,
                                 this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
                         }
                 }
-               
-		//show input pad 
-		for (i = this.mTotalGuiBars; i < parseInt(this.mTotalGuiBars + this.mTotalInputBars); i++)
+
+                //show input pad
+                for (i = this.mTotalGuiBars; i < parseInt(this.mTotalGuiBars + this.mTotalInputBars); i++)
                 {
                         this.mShapeArray[i].setVisibility(true);
                 }
-		
-		if (this.mNumAnswer)
+
+		this.mNumAnswer.setVisibility(true);
+
+
+  		if (navigator.appName == "Microsoft Internet Explorer")
 		{
-                	this.mNumAnswer.mMesh.focus();
+			setTimeout(this.focusTimeout, 200);
+			//setTimeout(this.focusTimeout, 10);
+                        //this.mNumAnswer.mMesh.focus();
 		}
+                else if(this.mNumAnswer)
+                {
+                        this.mNumAnswer.mMesh.focus();
+                }
         },
+/*	
+	setFocus: function() {
+    var editor = $('#editor');
+    var value = editor.val();
+    editor.val("");
+    editor.focus();
+    editor.val(value);
+},
+*/
+	focusTimeout: function()
+	{
+        	APPLICATION.mGame.mNumAnswer.mMesh.focus();
+	},
 
         inputKeyHit: function(e)
         {
