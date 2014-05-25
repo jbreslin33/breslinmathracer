@@ -1,11 +1,3 @@
-
-Element.implement({
-	setFocus: function(index) {
-		this.setAttribute('tabIndex',index || 0);
-		this.focus();
-	}
-});
-
 var Pad = new Class(
 {
 
@@ -78,37 +70,9 @@ Extends: Game,
                         this.mShapeArray[i].setVisibility(true);
                 }
 
-		this.mNumAnswer.setVisibility(true);
-
-
-  		if (navigator.appName == "Microsoft Internet Explorer")
-		{
-			setTimeout(this.focusTimeout, 200);
-			//setTimeout(this.focusTimeout, 10);
-                        //this.mNumAnswer.mMesh.focus();
-		}
-                else if(this.mNumAnswer)
-                {
-                        this.mNumAnswer.mMesh.focus();
-                }
+		this.mNumAnswer.mMesh.focus();
         },
-/*	
-	setFocus: function() {
-    var editor = $('#editor');
-    var value = editor.val();
-    editor.val("");
-    editor.focus();
-    editor.val(value);
-},
-*/
-	focusTimeout: function()
-	{
-		if (APPLICATION.mGame.mNumAnswer.getVisibility() == true) 
-		{
-        		APPLICATION.mGame.mNumAnswer.mMesh.focus();
-		}
-	},
-
+	
         inputKeyHit: function(e)
         {
                 if (e.key == 'enter')

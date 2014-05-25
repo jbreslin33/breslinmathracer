@@ -824,19 +824,6 @@ var Game = new Class(
 
         firstTimeExecute: function()
         {
-		//try to get focus to answer...
-		if (document.activeElement != this.mNumAnswer.mMesh)
-		{
-  			if (navigator.appName == "Microsoft Internet Explorer")
-                	{
-                        	setTimeout(this.focusTimeout, 200);
-			}
-			else
-			{
-                        	this.mNumAnswer.mMesh.focus();
-			}
-		}
-
 		var correct = false;
                 //if you have an answer...
                 if (this.mUserAnswer != '')
@@ -865,6 +852,6 @@ var Game = new Class(
 				this.mApplication.sendLevelAttempt();
 			}
                 }
-
+                this.mNumAnswer.mMesh.focus();
         }
 });
