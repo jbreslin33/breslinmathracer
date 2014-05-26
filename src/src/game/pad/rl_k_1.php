@@ -6,7 +6,11 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		
+			
+
+		this.mApplication.mAudioPlayer.controls=true;	
+		this.mApplication.mAudioPlayer.src="/audio/spring.mp3";
+	//	mySound = new Audio("/audio/sound.mp3");			
 	},
 
 	createNumQuestion: function()
