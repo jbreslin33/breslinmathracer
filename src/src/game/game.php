@@ -852,6 +852,9 @@ var Game = new Class(
 				this.mApplication.sendLevelAttempt();
 			}
                 }
-                this.mNumAnswer.mMesh.focus();
+		if (this.mNumAnswer)
+		{
+                	this.mNumAnswer.mMesh.focus();
+		}
         }
 });

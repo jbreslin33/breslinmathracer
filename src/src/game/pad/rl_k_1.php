@@ -1,123 +1,65 @@
 var rl_k_1 = new Class(
 {
 
-Extends: NumberPad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
+
+		this.setScoreNeeded(2);
+
+		//sound shape
 		this.mVivaldi = new Shape(50,50,500,300,this,"AUDIO","","");		
 
+		//for new browsers
 		this.mVivaldi.mMesh.controls = true;
 		this.mVivaldi.mMesh.src="/audio/spring.mp3";
-		
+	
+		//for old browsers	
 		this.mVivaldi.mMesh.setAttribute('href', '/audio/spring.mp3');
                 this.mVivaldi.mMesh.innerHTML = "Vivaldi!";
-
-		//this.mMesh.setAttribute('href', 'http://juixe.com');
-                //this.mMesh.innerHTML = "Hello, Juixe!";
-
-
-//		this.mApplication.mAudioPlayer.controls=true;	
-//		this.mApplication.mAudioPlayer.src="/audio/spring.mp3";
-	//	mySound = new Audio("/audio/sound.mp3");			
 	},
 
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(185,50,250,95,this,"","","");
+                this.mNumQuestion = new Shape(200,100,120,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
         },
 
-	//showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(235,100);
-                //this.mShapeArray[1].setPosition(380,80);
-		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + ' ? = ' + this.mQuiz.getQuestion().getAnswer();
-
-             
-                //move dont forget
-               // this.mShapeArray[8].setVisibility(false);
-               // this.mShapeArray[9].setVisibility(false);
+                this.mShapeArray[1].setSize(200,100);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         },
-
-  
 
 	createQuestions: function()
         {
  		this.parent();
 
-		//this.mCorrectAnswerThresholdTime = 1000;
-
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varN = 0;
-
-
-		var start = 0;
-		var end = 0;
-		var rand = 0;
-
-		var question;
-		var answer;
-		
 		this.mQuiz.resetQuestionArray();
-			
-
-		 for (s = 0; s < this.mScoreNeeded/2; s++)
-		 {		
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			max = Math.floor(varB/2);
-			varA = 1 + Math.floor((Math.random()*max));
-
-			varC = 1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA + varC;
-				
-			question = new Question('' + varA + ' / ' +  varB + ' + ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD, '' + answer);
-			
-                	this.mQuiz.mQuestionArray.push(question);
-                 }
-
-
-		 for (s = 0; s < this.mScoreNeeded/2; s++)
-		 {		
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			varA = 2 + Math.floor(Math.random()*(varB-2));
-			
-			varC = 1 + Math.floor(Math.random()*(varA-1));
-			//1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA - varC;
-				
-			question = new Question('' + varA + ' / ' +  varB + ' - ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD, '' + answer);
-			
-                	this.mQuiz.mQuestionArray.push(question);
-                 }
-			
+	
+		//1
+		question = new Question('The boy had a red ball.', 'red');
+                this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push('boy');
+		question.mAnswerPool.push('ball');
+		
+		//2
+		question = new Question('The girl went home.', 'girl');
+                this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push('went');
+		question.mAnswerPool.push('home');
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                this.mQuiz.randomize(40);
+                this.mQuiz.randomize(10);
 	}
 });
