@@ -34,7 +34,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 	
 		//1
-		question = new Question('The boy had a red ball.', 'red');
+		question = new Question('The boy had a red ball. What color was the ball?', 'red');
                 this.mQuiz.mQuestionArray.push(question);
 		question.mAnswerPool.push('red');
 		question.mAnswerPool.push('boy');
@@ -42,7 +42,7 @@ Extends: MultipleChoicePad,
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
 		
 		//2
-		question = new Question('The girl went home.', 'girl');
+		question = new Question('The girl went home. Who went home?', 'girl');
                 this.mQuiz.mQuestionArray.push(question);
 		question.mAnswerPool.push('girl');
 		question.mAnswerPool.push('went');
@@ -61,7 +61,7 @@ Extends: MultipleChoicePad,
                 this.parent();
 
 		//1
-                this.mShapeArray.push(new Shape(50,50,500,300,this,"AUDIO","",""));
+                this.mShapeArray.push(new Shape(50,50,100,300,this,"AUDIO","",""));
 
 		//for new browsers
 		this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)].mMesh.controls = true;
@@ -73,7 +73,7 @@ Extends: MultipleChoicePad,
 
 
 		//2
-                this.mShapeArray.push(new Shape(50,50,500,300,this,"AUDIO","",""));
+                this.mShapeArray.push(new Shape(50,50,100,300,this,"AUDIO","",""));
 
 		//for new browsers
 		this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 1)].mMesh.controls = true;

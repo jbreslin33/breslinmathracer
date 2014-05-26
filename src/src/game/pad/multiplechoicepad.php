@@ -121,7 +121,7 @@ Extends: Pad,
                 }
                 else
                 {
-                	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
+                	this.mButtonA.mMesh.addEvent('click',this.numPadHitA);
 		}
                 this.mShapeArray.push(this.mButtonA);
                         
@@ -135,7 +135,7 @@ Extends: Pad,
                 }
                 else
                 {
-                	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
+                	this.mButtonB.mMesh.addEvent('click',this.numPadHitB);
 		}
                 this.mShapeArray.push(this.mButtonB);
                       
@@ -149,7 +149,7 @@ Extends: Pad,
                 }
                 else
                 {
-                	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
+                	this.mButtonC.mMesh.addEvent('click',this.numPadHitC);
 		}
                 this.mShapeArray.push(this.mButtonC);
                
@@ -163,7 +163,7 @@ Extends: Pad,
                 }
                 else
                 {
-                	this.mButtonD.mMesh.addEvent('click',this.numPadHit);
+                	this.mButtonD.mMesh.addEvent('click',this.numPadHitD);
 		}
                 this.mShapeArray.push(this.mButtonD);
 
