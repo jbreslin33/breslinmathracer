@@ -6,11 +6,6 @@ var Application = new Class(
 {
 	initialize: function()
         {
-
-		//lets hide audio player
-		this.mAudioPlayer = document.getElementById("audio_controls");
-		this.mAudioPlayer.controls=false;
-
 		//logging
 		this.mStateLogs = false;
 

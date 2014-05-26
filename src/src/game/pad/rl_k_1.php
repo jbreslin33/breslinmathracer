@@ -6,10 +6,13 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-			
 
-		this.mApplication.mAudioPlayer.controls=true;	
-		this.mApplication.mAudioPlayer.src="/audio/spring.mp3";
+		this.mVivaldi = new Shape(50,50,500,300,this,"AUDIO","","");		
+		this.mVivaldi.mMesh.controls = true;
+		this.mVivaldi.mMesh.src="/audio/spring.mp3";
+
+//		this.mApplication.mAudioPlayer.controls=true;	
+//		this.mApplication.mAudioPlayer.src="/audio/spring.mp3";
 	//	mySound = new Audio("/audio/sound.mp3");			
 	},
 
