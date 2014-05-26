@@ -86,23 +86,26 @@ Extends: Pad,
                 }
         },
 
-        numPadHit: function()
+        numPadHitA: function()
         {
-                APPLICATION.mGame.mUserAnswer = this.innerHTML;
+                APPLICATION.mGame.mUserAnswer = '' + APPLICATION.mGame.mQuiz.getQuestion().mChoiceA;
         },
-  /*
-
-//this is what i used to fix ie bug in number pad see if you can do this for multiplechoice pad....
-  if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mNumDivision.mMesh.attachEvent("onclick",this.numPadHitDivision);
-                }
-                else
-                {
-                        this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
-                }
-
-*/ 
+	
+        numPadHitB: function()
+        {
+                APPLICATION.mGame.mUserAnswer = '' + APPLICATION.mGame.mQuiz.getQuestion().mChoiceB;
+        },
+	
+        numPadHitC: function()
+        {
+                APPLICATION.mGame.mUserAnswer = '' + APPLICATION.mGame.mQuiz.getQuestion().mChoiceC;
+        },
+	
+        numPadHitD: function()
+        {
+                APPLICATION.mGame.mUserAnswer = '' + APPLICATION.mGame.mQuiz.getQuestion().mChoiceD;
+        },
+	
 	createInput: function()
 	{
        		this.createNumQuestion();
@@ -112,28 +115,56 @@ Extends: Pad,
                 this.mButtonA.mCollidable  = false;
                 this.mButtonA.mCollisionOn = false;
                 this.mButtonA.mMesh.innerHTML = 'A';
-                this.mButtonA.mMesh.addEvent('click',this.numPadHit);
+  		if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mButtonA.mMesh.attachEvent("onclick",this.numPadHitA);
+                }
+                else
+                {
+                	this.mButtonA.mMesh.addEvent('click',this.numPadHit);
+		}
                 this.mShapeArray.push(this.mButtonA);
                         
 		this.mButtonB = new Shape(150,50,375,150,this,"BUTTON","","");
                 this.mButtonB.mCollidable  = false;
                 this.mButtonB.mCollisionOn = false;
                 this.mButtonB.mMesh.innerHTML = 'B';
-                this.mButtonB.mMesh.addEvent('click',this.numPadHit);
+  		if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mButtonB.mMesh.attachEvent("onclick",this.numPadHitB);
+                }
+                else
+                {
+                	this.mButtonB.mMesh.addEvent('click',this.numPadHit);
+		}
                 this.mShapeArray.push(this.mButtonB);
                       
 		this.mButtonC = new Shape(150,50,375,200,this,"BUTTON","","");
                 this.mButtonC.mCollidable  = false;
                 this.mButtonC.mCollisionOn = false;
                 this.mButtonC.mMesh.innerHTML = 'C';
-                this.mButtonC.mMesh.addEvent('click',this.numPadHit);
+  		if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mButtonC.mMesh.attachEvent("onclick",this.numPadHitC);
+                }
+                else
+                {
+                	this.mButtonC.mMesh.addEvent('click',this.numPadHit);
+		}
                 this.mShapeArray.push(this.mButtonC);
                
                 this.mButtonD = new Shape(150,50,375,250,this,"BUTTON","","");
                 this.mButtonD.mCollidable  = false;
                 this.mButtonD.mCollisionOn = false;
                 this.mButtonD.mMesh.innerHTML = 'D';
-                this.mButtonD.mMesh.addEvent('click',this.numPadHit);
+  		if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mButtonD.mMesh.attachEvent("onclick",this.numPadHitD);
+                }
+                else
+                {
+                	this.mButtonD.mMesh.addEvent('click',this.numPadHit);
+		}
                 this.mShapeArray.push(this.mButtonD);
 
  		this.mTotalInputBars = this.mShapeArray.length - this.mTotalGuiBars;
