@@ -38,11 +38,19 @@ Extends: Polygon,
  
 		else if (this.mSrc == "AUDIO")
                 {
-                        //button to attach to our div "vessel"
+                        //audio object to attach to our div "vessel"
                         this.mMesh  = document.createElement("AUDIO");
                         this.mMesh.style.width = this.mWidth+'px';
                         this.mMesh.style.height = this.mHeight+'px';
-                }
+              		if (navigator.appName == "Microsoft Internet Explorer")  
+			{
+                        	this.mMesh  = document.createElement("a");
+				//this.mMesh.setAttribute('href', 'http://juixe.com');
+				//this.mMesh.innerHTML = "Hello, Juixe!";
+				//this.mMesh.setAttribute('href', 'http://juixe.com');
+				//this.mMesh.innerHTML = "Hello, Juixe!";
+			}
+		}
 
                 else if (this.mSrc)
                 {
