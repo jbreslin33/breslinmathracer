@@ -6,10 +6,17 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-
 		this.mVivaldi = new Shape(50,50,500,300,this,"AUDIO","","");		
+
 		this.mVivaldi.mMesh.controls = true;
 		this.mVivaldi.mMesh.src="/audio/spring.mp3";
+		
+		this.mVivaldi.mMesh.setAttribute('href', '/audio/spring.mp3');
+                this.mVivaldi.mMesh.innerHTML = "Vivaldi!";
+
+		//this.mMesh.setAttribute('href', 'http://juixe.com');
+                //this.mMesh.innerHTML = "Hello, Juixe!";
+
 
 //		this.mApplication.mAudioPlayer.controls=true;	
 //		this.mApplication.mAudioPlayer.src="/audio/spring.mp3";
