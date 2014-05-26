@@ -90,7 +90,19 @@ Extends: Pad,
         {
                 APPLICATION.mGame.mUserAnswer = this.innerHTML;
         },
-   
+  /*
+
+//this is what i used to fix ie bug in number pad see if you can do this for multiplechoice pad....
+  if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mNumDivision.mMesh.attachEvent("onclick",this.numPadHitDivision);
+                }
+                else
+                {
+                        this.mNumDivision.mMesh.addEvent('click',this.numPadHit);
+                }
+
+*/ 
 	createInput: function()
 	{
        		this.createNumQuestion();
