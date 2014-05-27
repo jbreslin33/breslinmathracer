@@ -61,7 +61,7 @@ Extends: MultipleChoicePad,
                 this.parent();
 
 		//1
-                this.mShapeArray.push(new Shape(50,50,100,300,this,"AUDIO","",""));
+                this.mShapeArray.push(new Shape(250,25,150,400,this,"AUDIO","",""));
 
 		//for new browsers
 		this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)].mMesh.controls = true;
@@ -73,7 +73,7 @@ Extends: MultipleChoicePad,
 
 
 		//2
-                this.mShapeArray.push(new Shape(50,50,100,300,this,"AUDIO","",""));
+                this.mShapeArray.push(new Shape(250,25,150,400,this,"AUDIO","",""));
 
 		//for new browsers
 		this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 1)].mMesh.controls = true;
