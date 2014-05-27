@@ -32,24 +32,72 @@ Extends: RulerPad,
 			var randomNumber = Math.floor((Math.random()*2));	
 			
 			//get random heights.
-			var redHeightCode = Math.floor((Math.random()*3)+1);
-			var redHeight = parseInt(redHeightCode * 100);  
+			var redHeightCode = Math.floor((Math.random()*13)+1);
+			var redHeight = parseInt(redHeightCode * 20);  
 		
 			answer = '';	
+			if (redHeight == 20)
+			{
+				answer = '1/4 in';	
+			}		
+			if (redHeight == 40)
+			{
+				answer = '1/2 in';	
+			}		
+			if (redHeight == 60)
+			{
+				answer = '3/4 in';	
+			}		
+			if (redHeight == 80)
+			{
+				answer = '1 in';	
+			}		
 			if (redHeight == 100)
 			{
-				answer = '5 cm';	
+				answer = '1 1/4 in';	
+			}		
+			if (redHeight == 120)
+			{
+				answer = '1 1/2 in';	
+			}		
+			if (redHeight == 140)
+			{
+				answer = '1 3/4 in';	
+			}		
+			if (redHeight == 160)
+			{
+				answer = '2 in';	
+			}		
+			if (redHeight == 180)
+			{
+				answer = '2 1/4 in';	
 			}		
 			if (redHeight == 200)
 			{
-				answer = '10 cm';	
+				answer = '2 1/2 in';	
+			}		
+			if (redHeight == 220)
+			{
+				answer = '2 3/4 in';	
+			}		
+			if (redHeight == 240)
+			{
+				answer = '3 in';	
+			}		
+			if (redHeight == 260)
+			{
+				answer = '3 1/4 in';	
+			}		
+			if (redHeight == 280)
+			{
+				answer = '3 1/2 in';	
 			}		
 			if (redHeight == 300)
 			{
-				answer = '15 cm';	
+				answer = '3 3/4 in';	
 			}		
 					
-			question = new Question('What is the length of the red shape in centimeters to the nearest 1/4 inch? Write answer like this: 1 3/4 in', '' + answer);
+			question = new Question('What is the length of the red shape in centimeters to the nearest 1/4 inch? Reduce fractions. Write answer like this: 1 3/4 in', '' + answer);
 			this.mQuiz.mQuestionArray.push(question);
 		
 			question.mShapeArray.push(this.mRectangleArray[i]);
