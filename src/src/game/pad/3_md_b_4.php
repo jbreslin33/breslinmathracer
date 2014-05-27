@@ -9,7 +9,7 @@ Extends: RulerPad,
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
 		this.mRectangleArray       = new Array();	
-		this.mRulerCentimeterArray = new Array();	
+		this.mRulerQuarterInchArray = new Array();	
 	},
    
         showCorrectAnswerEnter: function()
@@ -55,8 +55,8 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mRectangleArray[i]);
 			this.mRectangleArray[i].setSize(50,redHeight);
 
-			this.mRulerCentimeterArray[i].addToQuestion(question);
-			question.mShapeArray.push(this.mRulerCentimeterArray[i]);
+			this.mRulerQuarterInchArray[i].addToQuestion(question);
+			question.mShapeArray.push(this.mRulerQuarterInchArray[i]);
 		}
                	
 		//buffer
@@ -68,14 +68,14 @@ Extends: RulerPad,
 		this.parent();
 		
 		this.mRectangleArray.length = 0;
-		this.mRulerCentimeterArray.length = 0;	
+		this.mRulerQuarterInchArray.length = 0;	
 		
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
                         //the cm ruler
-                        var rulerCentimeter = new RulerCentimeter(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
-                        this.mShapeArray.push(rulerCentimeter);
-			this.mRulerCentimeterArray.push(rulerCentimeter);
+                        var rulerQuarterInch = new RulerQuarterInch(50,300,300,50,this,this.mRaphael,.6,1,1,"none",.5,true);
+                        this.mShapeArray.push(rulerQuarterInch);
+			this.mRulerQuarterInchArray.push(rulerQuarterInch);
                         
 			//red shape to measure
                         var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
