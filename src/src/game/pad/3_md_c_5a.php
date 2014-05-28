@@ -10,7 +10,16 @@ Extends: RulerPad,
 		
 		this.setScoreNeeded(10);
 	},
-       
+
+	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(225,150,125,100,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        },
+
         showCorrectAnswerEnter: function()
         {
                 this.parent();
@@ -33,7 +42,7 @@ Extends: RulerPad,
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
 					
-			var question = new Question('What is the Area of the red rectangle in green blocks?', parseInt(redHeightCode * redWidthCode));
+			var question = new Question('Each green square has a side length of 1 unit. We call these unit squares. What is the area of the red rectangle in unit squares?', parseInt(redHeightCode * redWidthCode));
 			this.mQuiz.mQuestionArray.push(question);
 		
 			var s = 26;
