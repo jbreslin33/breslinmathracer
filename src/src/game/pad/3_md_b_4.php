@@ -6,6 +6,9 @@ Extends: RulerPad,
 	initialize: function(application)
 	{
        		this.parent(application);
+
+		this.setScoreNeeded(2);
+
     		this.mRaphael = Raphael(10, 35, 760, 405);
 
 		this.mRectangleArray       = new Array();	
@@ -27,88 +30,33 @@ Extends: RulerPad,
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
 
-		for (i = 0; i < this.mScoreNeeded; i++)
-		{
-			var randomNumber = Math.floor((Math.random()*2));	
-			
-			//get random heights.
-			var redHeightCode = Math.floor((Math.random()*13)+1);
-			var redHeight = parseInt(redHeightCode * 20);  
+		//1
+		question = new Question('What is the length of the red shape in centimeters to the nearest 1/4 inch? Reduce fractions. Write answer like this: 1 3/4 in', '1/4 in');
+		this.mQuiz.mQuestionArray.push(question);
 		
-			answer = '';	
-			if (redHeight == 20)
-			{
-				answer = '1/4 in';	
-			}		
-			if (redHeight == 40)
-			{
-				answer = '1/2 in';	
-			}		
-			if (redHeight == 60)
-			{
-				answer = '3/4 in';	
-			}		
-			if (redHeight == 80)
-			{
-				answer = '1 in';	
-			}		
-			if (redHeight == 100)
-			{
-				answer = '1 1/4 in';	
-			}		
-			if (redHeight == 120)
-			{
-				answer = '1 1/2 in';	
-			}		
-			if (redHeight == 140)
-			{
-				answer = '1 3/4 in';	
-			}		
-			if (redHeight == 160)
-			{
-				answer = '2 in';	
-			}		
-			if (redHeight == 180)
-			{
-				answer = '2 1/4 in';	
-			}		
-			if (redHeight == 200)
-			{
-				answer = '2 1/2 in';	
-			}		
-			if (redHeight == 220)
-			{
-				answer = '2 3/4 in';	
-			}		
-			if (redHeight == 240)
-			{
-				answer = '3 in';	
-			}		
-			if (redHeight == 260)
-			{
-				answer = '3 1/4 in';	
-			}		
-			if (redHeight == 280)
-			{
-				answer = '3 1/2 in';	
-			}		
-			if (redHeight == 300)
-			{
-				answer = '3 3/4 in';	
-			}		
-					
-			question = new Question('What is the length of the red shape in centimeters to the nearest 1/4 inch? Reduce fractions. Write answer like this: 1 3/4 in', '' + answer);
-			this.mQuiz.mQuestionArray.push(question);
-		
-			question.mShapeArray.push(this.mRectangleArray[i]);
-			this.mRectangleArray[i].setSize(50,redHeight);
+		question.mShapeArray.push(this.mRectangleArray[0]);
+		this.mRectangleArray[0].setSize(50,20);
 
-			this.mRulerQuarterInchArray[i].addToQuestion(question);
-			question.mShapeArray.push(this.mRulerQuarterInchArray[i]);
-		}
-               	
+		this.mRulerQuarterInchArray[0].addToQuestion(question);
+		question.mShapeArray.push(this.mRulerQuarterInchArray[0]);
+
+	
+		//2
+		question = new Question('What is the length of the red shape in centimeters to the nearest 1/4 inch? Reduce fractions. Write answer like this: 1 3/4 in', '1/2 in');
+		this.mQuiz.mQuestionArray.push(question);
+		
+		question.mShapeArray.push(this.mRectangleArray[1]);
+		this.mRectangleArray[1].setSize(50,40);
+
+		this.mRulerQuarterInchArray[1].addToQuestion(question);
+		question.mShapeArray.push(this.mRulerQuarterInchArray[1]);
+
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+
+		//random
+                //this.mQuiz.randomize(10);
+
 	},
 
 	createWorld: function()
@@ -126,7 +74,7 @@ Extends: RulerPad,
 			this.mRulerQuarterInchArray.push(rulerQuarterInch);
                         
 			//red shape to measure
-                        var redRectangle = new Rectangle(50,50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
+                        var redRectangle = new Rectangle(parseInt(i * 20 + 20),50,600,100,this,this.mRaphael,0,1,1,"none",.5,true);
                         this.mShapeArray.push(redRectangle);
 			this.mRectangleArray.push(redRectangle);
 		}
