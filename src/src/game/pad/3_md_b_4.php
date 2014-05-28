@@ -21,6 +21,17 @@ Extends: RulerPad,
 
                 this.mShapeArray[1].setPosition(100,80);
              	this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' CORRECT ANSWER:' + this.mQuiz.getQuestion().getAnswer();
+/* 
+		this.mShapeArray.push(new Shape(197,185,425,300,this,"/images/symbols/dontforget.gif","",""));
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].setVisibility(false);
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollidable = false;
+                this.mShapeArray[parseInt(this.mShapeArray.length - 1)].mCollisionOn = false;
+                this.mTotalGuiBars++;
+*/
+
+  		this.mShapeArray[9].setSize(100,100);
+  		this.mShapeArray[9].setPosition(120,340);
+
         },
 
 	createQuestions: function()
@@ -176,8 +187,7 @@ Extends: RulerPad,
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
 		//random
-                //this.mQuiz.randomize(10);
-
+                this.mQuiz.randomize(10);
 
 	},
 
