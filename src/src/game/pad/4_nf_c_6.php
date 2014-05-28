@@ -88,7 +88,7 @@ Extends: NumberPad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(170,50,195,95,this,"","","");
+                this.mNumQuestion = new Shape(190,50,255,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -105,7 +105,7 @@ Extends: NumberPad,
 		var varB = 0;
 		var varC = 0;
 		var varD = 0;
-		var varN = 0;
+		var dec = 0;
 
 
 		var start = 0;
@@ -120,24 +120,31 @@ Extends: NumberPad,
 			
 
 		 for (s = 0; s < this.mScoreNeeded; s++)
-		 {		
+		 {	
+		    rand = 1 + Math.floor(Math.random()*3);
 
-			wholeB = 2 + Math.floor(Math.random()*5);
-			varC = 2 + Math.floor(Math.random()*5);
-			wholeA = (wholeB * varC) + 1 + Math.floor(Math.random()*(38 - (wholeB * varC)));
-
-			varA = varC + '/' + wholeA;
-			varB = wholeB;
-			varD = wholeB * varC;
-			answer = '' + varD + '/' + wholeA;
-
-			question = new Question('' + varA + ' * ' +  varB + ' =', '' + answer);
-
-		 	//console.log(answerTotal);
+		    if(rand == 1)
+		    {
+			varA = 1 + Math.floor(Math.random()*9);
+			dec = '.' + varA;
+			answer = varA + '/' + '10';
+                    }
+		    if(rand == 2)
+		    {
+			varA = 10 + Math.floor(Math.random()*90);
+			dec = '.' + varA;
+			answer = varA + '/' + '100';
 			
-                	this.mQuiz.mQuestionArray.push(question);
-
-                                       
+                    }
+		    if(rand == 3)
+		    {
+			varA = 1 + Math.floor(Math.random()*9);
+			dec = '.0' + varA;
+			answer = varA + '/' + '100';
+       
+                    }
+			question = new Question('Write ' + dec + ' as a fraction ', '' + answer);
+			this.mQuiz.mQuestionArray.push(question);
                  }
 			
 
