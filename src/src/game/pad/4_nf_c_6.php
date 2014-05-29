@@ -29,17 +29,7 @@ Extends: NumberPad,
 		var frac;
 		var res2;
 		var decimal;
-
-		frac = '' + this.mUserAnswer;
-		res2 = frac.split("/");
-
-		if (res2.length == 1)
-		{
-			res2[1] = '1';
-		}
-
-		decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-		this.mUserAnswer = decimal * 1.0;
+		var fraction = false;
 
 		str = this.mQuiz.getQuestion().mAnswerArray[0];
 		res2 = str.split("/");
@@ -47,10 +37,36 @@ Extends: NumberPad,
 		if (res2.length == 1)
 		{
 			res2[1] = '1';
+			fraction = false;
 		}
+		else
+			fraction = true;
 
 		decimal = 1.0 * res2[0]/res2[1];
 		this.mDecimalAnswer = decimal * 1.0;
+
+
+
+		frac = '' + this.mUserAnswer;
+		res2 = frac.split("/");
+
+		if (res2.length == 1 && fraction == true)
+		{
+			res2[1] = '.000001';
+			console.log('1');
+		}
+		
+		else if (res2.length == 2 && fraction == false)
+		{
+			res2[1] = '.000001';
+			console.log('2');
+		}
+		else if(res2.length == 1)
+			res2[1] = '1';
+
+		decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+		this.mUserAnswer = decimal * 1.0;
+
 	     }
 	     var correct = false;
                 //if you have an answer...
@@ -62,8 +78,8 @@ Extends: NumberPad,
 			}
 			for (i=0; i < this.mQuiz.getQuestion().mAnswerArray.length; i++)
 			{
-				//console.log('user: ' + this.mUserAnswer);
-				//console.log('decimal: ' + this.mDecimalAnswer);
+				console.log('user: ' + this.mUserAnswer);
+				console.log('decimal: ' + this.mDecimalAnswer);
 
                         	if (this.mUserAnswer == this.mDecimalAnswer)
 				{
@@ -88,7 +104,7 @@ Extends: NumberPad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(190,50,255,95,this,"","","");
+                this.mNumQuestion = new Shape(250,50,255,95,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -119,7 +135,7 @@ Extends: NumberPad,
 		this.mQuiz.resetQuestionArray();
 			
 
-		 for (s = 0; s < this.mScoreNeeded; s++)
+		 for (s = 0; s < this.mScoreNeeded/2; s++)
 		 {	
 		    rand = 1 + Math.floor(Math.random()*3);
 
@@ -146,12 +162,42 @@ Extends: NumberPad,
 			question = new Question('Write ' + dec + ' as a fraction ', '' + answer);
 			this.mQuiz.mQuestionArray.push(question);
                  }
+
+
+
+		for (s = 0; s < this.mScoreNeeded/2; s++)
+		 {	
+		    rand = 1 + Math.floor(Math.random()*3);
+
+		    if(rand == 1)
+		    {
+			varA = 1 + Math.floor(Math.random()*9);
+			dec = '.' + varA;
+			answer = varA + '/' + '10';
+                    }
+		    if(rand == 2)
+		    {
+			varA = 10 + Math.floor(Math.random()*90);
+			dec = '.' + varA;
+			answer = varA + '/' + '100';
+			
+                    }
+		    if(rand == 3)
+		    {
+			varA = 1 + Math.floor(Math.random()*9);
+			dec = '.0' + varA;
+			answer = varA + '/' + '100';
+       
+                    }
+			question = new Question('Write ' + answer + ' as a decimal ', '' + dec);
+			this.mQuiz.mQuestionArray.push(question);
+                 }
 			
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-               // this.mQuiz.randomize(30);
+                this.mQuiz.randomize(30);
 	}
 });
