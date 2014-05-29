@@ -1748,6 +1748,19 @@ var Application = new Class(
                                	this.mGame = new g3_md_c_6(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '3.md.c.7a')
+		{ 
+             		if (this.mGameName != "g3_md_c_7a")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g3_md_c_7a";
+                               	this.mGame = new g3_md_c_7a(APPLICATION);
+			}	
+		}
 		if (this.mRef_id == '7828B4F15ABD40E19EF14DDE0EB399DF')
 		{ 
              		if (this.mGameName != "g4_oa_a_1")
