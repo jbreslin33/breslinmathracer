@@ -14,7 +14,7 @@ Extends: RulerPad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(225,150,125,100,this,"","","");
+                this.mNumQuestion = new Shape(275,150,150,100,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -25,7 +25,15 @@ Extends: RulerPad,
                 this.parent();
 
                 this.mShapeArray[1].setPosition(100,80);
+                this.mShapeArray[9].setPosition(130,335);
+                this.mShapeArray[9].setSize(100,100);
         },
+ 
+	createInput: function()
+        {
+		this.parent();
+                this.mNumAnswer.setSize(125,25);
+	},
 
 	createQuestions: function()
         {
@@ -42,7 +50,7 @@ Extends: RulerPad,
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
 					
-			var question = new Question('Each green square has a side length of 1 unit. We call these unit squares. What is the area of the red rectangle in unit squares?', parseInt(redHeightCode * redWidthCode));
+			var question = new Question('Each green square has a side length of 1 unit. We call these unit squares. What is the area of the red rectangle in unit squares? Answer example: 5 square units', parseInt(redHeightCode * redWidthCode) + ' square units');
 			this.mQuiz.mQuestionArray.push(question);
 		
 			var s = 26;
