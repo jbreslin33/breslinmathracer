@@ -1,88 +1,12 @@
 var g4_nf_c_7 = new Class(
 {
 
-Extends: NumberPad,
+Extends: MultipleChoicePadTwo,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-                this.mDecimalAnswer = 0;
 		
-	},
-
-	showCorrectAnswerEnter: function()
-        {
-		this.parent();
-                //this.mShapeArray[1].setPosition(200,200);
-		this.mShapeArray[1].setSize(250,100);
-        },
-
-	firstTimeExecute: function()
-        {
-		
-             if (this.mUserAnswer != '')
-	     {
-
-		var str = '';
-		var res = '';
-		var whole;
-		var frac;
-		var res2;
-		var decimal;
-
-		frac = '' + this.mUserAnswer;
-		res2 = frac.split("/");
-
-		if (res2.length == 1)
-		{
-			res2[1] = '1';
-		}
-
-		decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-		this.mUserAnswer = decimal * 1.0;
-
-		str = this.mQuiz.getQuestion().mAnswerArray[0];
-		res2 = str.split("/");
-
-		if (res2.length == 1)
-		{
-			res2[1] = '1';
-		}
-
-		decimal = 1.0 * res2[0]/res2[1];
-		this.mDecimalAnswer = decimal * 1.0;
-	     }
-	     var correct = false;
-                //if you have an answer...
-                if (this.mUserAnswer != '')
-                {
-			if (this.mQuiz == 0)
-			{
-				return;
-			}
-			for (i=0; i < this.mQuiz.getQuestion().mAnswerArray.length; i++)
-			{
-				//console.log('user: ' + this.mUserAnswer);
-				//console.log('decimal: ' + this.mDecimalAnswer);
-
-                        	if (this.mUserAnswer == this.mDecimalAnswer)
-				{
-					correct = true;
-                               		this.mStateMachine.changeState(this.mCORRECT_ANSWER);
-				}
-			}
-
-			if (correct == false)
-			{
-                                this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
-                        }
-			
-			if (this.mFirstTimeAnswer == false)
-			{
-				this.mFirstTimeAnswer = true;
-				this.mApplication.sendLevelAttempt();
-			}
-                }
 	},
 
 	createNumQuestion: function()
@@ -93,6 +17,22 @@ Extends: NumberPad,
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
         },
+
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[1].setSize(200,100);
+                //this.mShapeArray[1].setPosition(380,80);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + ' ? = ' + this.mQuiz.getQuestion().getAnswer();
+
+             
+                //move dont forget
+               // this.mShapeArray[8].setVisibility(false);
+               // this.mShapeArray[9].setVisibility(false);
+        },
+
   
 
 	createQuestions: function()
@@ -122,21 +62,45 @@ Extends: NumberPad,
 		 for (s = 0; s < this.mScoreNeeded; s++)
 		 {		
 
-			wholeB = 2 + Math.floor(Math.random()*5);
-			varC = 2 + Math.floor(Math.random()*5);
-			wholeA = (wholeB * varC) + 1 + Math.floor(Math.random()*(38 - (wholeB * varC)));
+		   
 
-			varA = varC + '/' + wholeA;
-			varB = wholeB;
-			varD = wholeB * varC;
-			answer = '' + varD + '/' + wholeA;
+			varA = 1 + Math.floor(Math.random()*99);
+			varA = '.' + varA;
 
-			question = new Question('' + varA + ' * ' +  varB + ' =', '' + answer);
+			varB = 1 + Math.floor(Math.random()*99);
+			varB = '.' + varB;
 
-		 	//console.log(answerTotal);
+			diff = varA - varB;
+
+			if(diff > 0)
+			   answer = 'greater than';
+			else if(diff < 0)
+			   answer = 'less than';
+			else
+			   answer = 'equal to';
 			
+			question = new Question('' + varA + ' is ? ' + '' + varB, '' + answer);
+
+
+
                 	this.mQuiz.mQuestionArray.push(question);
 
+			//question.mAnswerPool.push('1/4');
+    			//question.mAnswerPool.push('2/3');
+    			//question.mAnswerPool.push('1/5');
+		
+
+			//question.mAnswerArray.push(varD);
+
+			this.mQuiz.mQuestionArray[s].setChoice('A', 'greater than');
+			this.mQuiz.mQuestionArray[s].setChoice('B', 'less than');
+			this.mQuiz.mQuestionArray[s].setChoice('C', 'equal to');
+			//this.mQuiz.mQuestionArray[i].setChoice('D','' + this.mCorrectAnswerArray[3]);
+		
+
+
+   				
+      //this.mQuiz.mQuestionArray.push(new Question('' + varA + ' * ' +  varB + ' = ', '' + varC));
                                        
                  }
 			
