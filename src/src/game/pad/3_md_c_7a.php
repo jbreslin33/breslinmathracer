@@ -49,27 +49,8 @@ Extends: RulerPad,
 			var redWidthCode  = Math.floor((Math.random()*5)+1);
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
-	
-			var question = 0; 
-		
-			var randomNumber = Math.floor((Math.random()*4));		
-
-			if (randomNumber == 0)	
-			{
-				question = new Question('Each green square is one square centimeter. What is the area of the red rectangle? Answer example: 5 square cm', parseInt(redHeightCode * redWidthCode) + ' square cm');
-			}
-			if (randomNumber == 1)	
-			{
-				question = new Question('Each green square is one square meter. What is the area of the red rectangle? Answer example: 5 square m', parseInt(redHeightCode * redWidthCode) + ' square m');
-			}
-			if (randomNumber == 2)	
-			{
-				question = new Question('Each green square is one square inch. What is the area of the red rectangle? Answer example: 5 square in', parseInt(redHeightCode * redWidthCode) + ' square in');
-			}
-			if (randomNumber == 3)	
-			{
-				question = new Question('Each green square is one square foot. What is the area of the red rectangle? Answer example: 5 square ft', parseInt(redHeightCode * redWidthCode) + ' square ft');
-			}
+			var question = new Question('Find the area and show that the area is the same as would be found by multiplying the side lengths. Example Answer: 12,3x4', parseInt(redHeightCode * redWidthCode) + ',' + redHeightCode + 'x' + redWidthCode);
+			question.setAnswer(parseInt(redHeightCode * redWidthCode) + ',' + redWidthCode + 'x' + redHeightCode,1);
 			
 			this.mQuiz.mQuestionArray.push(question);
 		
