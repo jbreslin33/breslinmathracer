@@ -15,7 +15,6 @@ Extends: RulerPad,
 		this.mTigerTotal = 0;
 		this.mBearTotal = 0;
 		this.mApeTotal = 0;
-		this.mEagleTotal = 0;
 	},
 
 	showCorrectAnswerEnter: function()
@@ -101,10 +100,6 @@ Extends: RulerPad,
 		this.rectangleApes = this.r.rect(365, this.getStart(this.mApeTotal), 50, this.getEnd(this.mApeTotal));  
 		this.rectangleApes.attr("fill", "red");
 		
-		this.rectangleEagles = this.r.rect(445, this.getStart(this.mEagleTotal), 50, this.getEnd(this.mEagleTotal));  
-		this.rectangleEagles.attr("fill", "green");
-
-
    		txtattr = { font: "12px sans-serif" };
                 this.r.text(30, 90, "Number").attr(txtattr);
                 this.r.text(30, 110, "of").attr(txtattr);
@@ -117,7 +112,6 @@ Extends: RulerPad,
 		this.r.text(230, 265, "Tigers").attr(txtattr);
 		this.r.text(310, 265, "Bears").attr(txtattr);
 		this.r.text(390, 265, "Apes").attr(txtattr);
-		this.r.text(470, 265, "Eagles").attr(txtattr);
 		
 		this.r.path( "M100,1 L504,1" );
                 this.r.text(90, 4, "5").attr(txtattr);
@@ -145,7 +139,6 @@ Extends: RulerPad,
 		this.mTigerTotal = 0;
 		this.mBearTotal = 0;
 		this.mApeTotal = 0;
-		this.mEagleTotal = 0;
 
 		this.mLionTotal = Math.floor((Math.random()*5)+1);
 		this.mLionTotal = this.mLionTotal;
@@ -159,9 +152,6 @@ Extends: RulerPad,
 		this.mApeTotal = Math.floor((Math.random()*5)+1);
 		this.mApeTotal = this.mApeTotal;
 		
-		this.mEagleTotal = Math.floor((Math.random()*5)+1);
-		this.mEagleTotal = this.mEagleTotal;
-
 		this.createBarChart();
 		
 		//7	
@@ -189,39 +179,39 @@ Extends: RulerPad,
 		}
 		
 		//5
-		if (this.mApeTotal >= this.mEagleTotal) 
+		if (this.mApeTotal >= this.mTigerTotal) 
 		{
-			var answer = parseInt(this.mApeTotal - this.mEagleTotal);
-                	this.mQuiz.mQuestionArray.push(new Question('How many more apes than eagles?','' + answer));
+			var answer = parseInt(this.mApeTotal - this.mTigerTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more apes than tigers?','' + answer));
 		}
 		else  
 		{
-			var answer = parseInt(this.mEagleTotal - this.mApeTotal);
-                	this.mQuiz.mQuestionArray.push(new Question('How many more eagles than apes?','' + answer));
+			var answer = parseInt(this.mTigerTotal - this.mApeTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers than apes?','' + answer));
 		}
 		
 		//4
-		if ( (parseInt(this.mLionTotal + this.mApeTotal + this.mEagleTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
+		if ( (parseInt(this.mLionTotal + this.mApeTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
 		{
-			var answer = parseInt((this.mLionTotal + this.mApeTotal + this.mEagleTotal) - (this.mTigerTotal + this.mBearTotal));
-                	this.mQuiz.mQuestionArray.push(new Question('How many more lions, apes and eagles are there than tigers and bears?','' + answer));
+			var answer = parseInt((this.mLionTotal + this.mApeTotal) - (this.mTigerTotal + this.mBearTotal));
+                	this.mQuiz.mQuestionArray.push(new Question('How many more lions and apes are there than tigers and bears?','' + answer));
 		}
 		else  
 		{
-			var answer = parseInt((this.mTigerTotal + this.mBearTotal) - (this.mLionTotal + this.mApeTotal + this.mEagleTotal));
-                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers and bears are there than lions, apes and eagles?','' + answer));
+			var answer = parseInt((this.mTigerTotal + this.mBearTotal) - (this.mLionTotal + this.mApeTotal));
+                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers and bears are there than lions and apes?','' + answer));
 		}
 
 		//3
-		if ( (parseInt(this.mApeTotal + this.mEagleTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
+		if ( (parseInt(this.mApeTotal + this.mLionTotal)) >= (parseInt(this.mTigerTotal + this.mBearTotal)) ) 
 		{
-			var answer = parseInt((this.mApeTotal + this.mEagleTotal) - (this.mTigerTotal + this.mBearTotal));
-                	this.mQuiz.mQuestionArray.push(new Question('How many more apes and eagles are there than tigers and bears?','' + answer));
+			var answer = parseInt((this.mApeTotal + this.mLionTotal) - (this.mTigerTotal + this.mBearTotal));
+                	this.mQuiz.mQuestionArray.push(new Question('How many more apes and lions are there than tigers and bears?','' + answer));
 		}
 		else  
 		{
-			var answer = parseInt((this.mTigerTotal + this.mBearTotal) - (this.mApeTotal + this.mEagleTotal));
-                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers and bears are there than apes and eagles?','' + answer));
+			var answer = parseInt((this.mTigerTotal + this.mBearTotal) - (this.mApeTotal + this.mLionTotal));
+                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers and bears are there than apes and lions?','' + answer));
 		}
 
 		//2
@@ -237,15 +227,15 @@ Extends: RulerPad,
 		}
 		
 		//1
-		if (this.mEagleTotal >= this.mTigerTotal) 
+		if (this.mApeTotal >= this.mTigerTotal) 
 		{
-			var answer = parseInt(this.mEagleTotal - this.mTigerTotal);
-                	this.mQuiz.mQuestionArray.push(new Question('How many more eagles than tigers?','' + answer));
+			var answer = parseInt(this.mApeTotal - this.mTigerTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more apes than tigers?','' + answer));
 		}
 		else  
 		{
-			var answer = parseInt(this.mTigerTotal - this.mEagleTotal);
-                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers than eagles?','' + answer));
+			var answer = parseInt(this.mTigerTotal - this.mApeTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more tigers than apes?','' + answer));
 		}
 
                 //buffer
