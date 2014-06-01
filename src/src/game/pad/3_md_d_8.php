@@ -90,6 +90,10 @@ Extends: NumberPad,
 		if (this.mApplication.mLevel < 11)
 		{
 			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Dave had a rectangular piece of paper with a perimeter of','inches and a length of', 'inches. What is the width of his paper?','',10);	
+			question.mTipArray[0] = 'Width = Perimeter - (2 x Length)';
+                        this.mQuiz.mQuestionArray.push(question);
+			
+			var question = new QuestionWord('','',2,99,2,99,2,99,0,0,'Dave had a rectangular piece of paper with a perimeter of','inches and a width of', 'inches. What is the length of his paper?','',10);	
 			question.mTipArray[0] = 'Length = Perimeter - (2 x Width)';
                         this.mQuiz.mQuestionArray.push(question);
 			
