@@ -33,23 +33,23 @@ Extends: RulerPad,
 
 	getStart: function(num)
 	{
-		if (num == 25)
+		if (num == 5)
 		{
 			return 0;
 		}  
-		if (num == 20)
+		if (num == 4)
 		{
 			return 50;
 		}  
-		if (num == 15)
+		if (num == 3)
 		{
 			return 100;
 		}  
-		if (num == 10)
+		if (num == 2)
 		{
 			return 150;
 		}  
-		if (num == 5)
+		if (num == 1)
 		{
 			return 200;
 		}  
@@ -57,23 +57,23 @@ Extends: RulerPad,
 
 	getEnd: function(num)
 	{
-		if (num == 25)
+		if (num == 5)
 		{
 			return 250;
 		}  
-		if (num == 20)
+		if (num == 4)
 		{
 			return 200;
 		}  
-		if (num == 15)
+		if (num == 3)
 		{
 			return 150;
 		}  
-		if (num == 10)
+		if (num == 2)
 		{
 			return 100;
 		}  
-		if (num == 5)
+		if (num == 1)
 		{
 			return 50;
 		}  
@@ -148,19 +148,19 @@ Extends: RulerPad,
 		this.mEagleTotal = 0;
 
 		this.mLionTotal = Math.floor((Math.random()*5)+1);
-		this.mLionTotal = this.mLionTotal * 5;
+		this.mLionTotal = this.mLionTotal;
 		
 		this.mTigerTotal = Math.floor((Math.random()*5)+1);
-		this.mTigerTotal = this.mTigerTotal * 5;
+		this.mTigerTotal = this.mTigerTotal;
 		
 		this.mBearTotal = Math.floor((Math.random()*5)+1);
-		this.mBearTotal = this.mBearTotal * 5;
+		this.mBearTotal = this.mBearTotal;
 		
 		this.mApeTotal = Math.floor((Math.random()*5)+1);
-		this.mApeTotal = this.mApeTotal * 5;
+		this.mApeTotal = this.mApeTotal;
 		
 		this.mEagleTotal = Math.floor((Math.random()*5)+1);
-		this.mEagleTotal = this.mEagleTotal * 5;
+		this.mEagleTotal = this.mEagleTotal;
 
 		this.createBarChart();
 		
