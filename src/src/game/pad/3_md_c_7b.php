@@ -7,7 +7,7 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 		
-		this.setScoreNeeded(1);
+		this.setScoreNeeded(4);
 	},
 
      	//showCorrectAnswer
@@ -89,59 +89,33 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel == 1)
 		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Chris had a backyard with a length of','square feet and a width of', 'square feet. What is the area of his yard?','',3);	
-			question.mTipArray[0] = 'Lenght x Width = Area';
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Chris had a rectangular backyard with a length of','square feet and a width of', 'square feet. What is the area of his yard? Example Answer 3 sq ft','',3);	
+			question.mTipArray[0] = 'Length x Width = Area';
+			var tempAnswer = question.getAnswer();
+			question.setAnswer(tempAnswer + ' sq ft',0);
                         this.mQuiz.mQuestionArray.push(question);
+			
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Dave had a rectangular piece of paper with a length of','square inches and a width of', 'square inches. What is the area of his paper? Example answer: 10 sq in','',3);	
+			question.mTipArray[0] = 'Length x Width = Area';
+			var tempAnswer = question.getAnswer();
+			question.setAnswer(tempAnswer + ' sq in',0);
+                        this.mQuiz.mQuestionArray.push(question);
+			
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Kate plays soccer on a rectangular soccer field with a length of','square yards and a width of', 'square yards. What is the area of her field? Example answer: 10 sq yds','',3);	
+			question.mTipArray[0] = 'Length x Width = Area';
+			var tempAnswer = question.getAnswer();
+			question.setAnswer(tempAnswer + ' sq yds',0);
+                        this.mQuiz.mQuestionArray.push(question);
+			
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Steve built a rectangular garden in a video game with a length of','square yards and a width of', 'square yards. What is the area of his garden? Example answer: 10 sq yds','',3);	
+			question.mTipArray[0] = 'Length x Width = Area';
+			var tempAnswer = question.getAnswer();
+			question.setAnswer(tempAnswer + ' sq yds',0);
+                        this.mQuiz.mQuestionArray.push(question);
+		
+			this.mQuiz.randomize(10);
 		}
 
-		if (this.mApplication.mLevel == 2)
-		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Zuyanna had','rings. Her friend Iris gave her', ' more rings. How many rings does Zuyanna have now?','',0);	
-			question.mTipArray[0] = 'Rings Zuyanna had + Rings Iris gave Zuyanna = Rings Zuyanna has now';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 3)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Jaavon had','books about dinosaurs. He got', 'more books about dinosaurs from the library. How many books about dinosaurs does Jaavon have now?','',0);
-			question.mTipArray[0] = 'Dinosaur books Jaavon had + Dinosaur books Jaavon got from library = Dinosaur books Jaavon has now';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 4)
-		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Michael had','baseballs. He got ', 'more baseballs from his friend. How many baseballs does Michael have now?','',0);
-			question.mTipArray[0] = 'Baseballs Michael had + Baseballs Michael got from his friend = Baseballs Michael has now';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 5)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Jasmine had',' stuffed animals. She put', 'of them in the chair for the tea party. She left the rest of them on the bed. How many stuffed animals did Jasmine leave on the bed.','',1);
-			question.mTipArray[0] = 'Stuffed animals Jasmine had - Stuffed animals Jasmine put on chair = rest of Stuffed animals on bed';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 6)
-		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Leah had',' cookies. She ate', 'of them. She left the rest of the cookies for Santa Claus. How many cookies did Leah leave for Santa Claus.','',1);
-			question.mTipArray[0] = 'Cookies Leah had - Cookies Leah ate = Cookies Leah left for Santa Claus';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-
-		if (this.mApplication.mLevel == 7)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Devin had','pencils in his box. He gave', 'of them to Zabriana. How many pencils does Devin have in his box now?','',1);
-			question.mTipArray[0] = 'Pencils Devin had in box - Pencils Devin game to Zabriana = Pencils Devin has left in box';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-
-		if (this.mApplication.mLevel == 8)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Tanya had','erasers in her case. She gave', 'of them to Ny. How many erasers does Tanya have in her case now?','',1);
-			question.mTipArray[0] = 'Erasers Tanya had in her case - Erasers Tanya gave to Ny = Erasers Tanya has left in her case';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
 		//buffer
  		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
