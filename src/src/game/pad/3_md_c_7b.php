@@ -87,7 +87,7 @@ Extends: NumberPad,
                 
 		this.mQuiz.resetQuestionArray();
 
-		if (this.mApplication.mLevel == 1)
+		if (this.mApplication.mLevel < 11)
 		{
 			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Chris had a rectangular backyard with a length of','square feet and a width of', 'square feet. What is the area of his yard? Example Answer 3 sq ft','',3);	
 			question.mTipArray[0] = 'Length x Width = Area';
