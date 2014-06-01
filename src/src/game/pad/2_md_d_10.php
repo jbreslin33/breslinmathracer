@@ -113,19 +113,19 @@ Extends: RulerPad,
 		this.r.text(310, 265, "Bears").attr(txtattr);
 		this.r.text(390, 265, "Apes").attr(txtattr);
 		
-		this.r.path( "M100,1 L504,1" );
+		this.r.path( "M100,1 L430,1" );
                 this.r.text(90, 4, "5").attr(txtattr);
 		
-		this.r.path( "M100,50 L504,50" );
+		this.r.path( "M100,50 L430,50" );
                 this.r.text(90, 50, "4").attr(txtattr);
 		
-		this.r.path( "M100,100 L504,100" );
+		this.r.path( "M100,100 L430,100" );
                 this.r.text(90, 100, "3").attr(txtattr);
 		
-		this.r.path( "M100,150 L504,150" );
+		this.r.path( "M100,150 L430,150" );
                 this.r.text(90, 150, "2").attr(txtattr);
 		
-		this.r.path( "M100,200 L504,200" );
+		this.r.path( "M100,200 L430,200" );
                 this.r.text(90, 200, "1").attr(txtattr);
 	},
 
