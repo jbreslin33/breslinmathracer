@@ -97,9 +97,10 @@ Extends: Question,
                         }
                 }
 
+		//10: x=(a-(b+b))/2
                 if (type == 9 || type == 10)
                 {
-                        while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || c < minC | c > maxC)
+                        while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB)
                         {
                                 a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
                                 b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
@@ -109,7 +110,8 @@ Extends: Question,
                                 }
                                 if (type == 10)
                                 {
-                                        x = 2 * ( a + b );
+					//var = b + b;
+                                        x = (a - (2 * b))/2;
                                 }
                         }
                 }
