@@ -189,15 +189,15 @@ Extends: RulerPad,
 		}
 		
 		//5
-		if (this.mApeTotal >= this.mLionTotal) 
+		if (this.mApeTotal >= this.mEagleTotal) 
 		{
-			var answer = parseInt(this.mBearTotal - this.mLionTotal);
-                	this.mQuiz.mQuestionArray.push(new Question('How many more bears than lions?','' + answer));
+			var answer = parseInt(this.mApeTotal - this.mEagleTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more apes than eagles?','' + answer));
 		}
 		else  
 		{
-			var answer = parseInt(this.mLionTotal - this.mApeTotal);
-                	this.mQuiz.mQuestionArray.push(new Question('How many more lions than apes?','' + answer));
+			var answer = parseInt(this.mEagleTotal - this.mApeTotal);
+                	this.mQuiz.mQuestionArray.push(new Question('How many more eagles than apes?','' + answer));
 		}
 		
 		//4
