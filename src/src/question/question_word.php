@@ -10,6 +10,8 @@ types
 5: a+b+c=x
 6: a-b-c=x
 7: a*b+c=x
+8: a/b+c=x
+9: 2(a+b)=x
 */
 Extends: Question,
   	initialize: function(question,answer,minX,maxX,minA,maxA,minB,maxB,minC,maxC,textA,textB,textC,textD,type)
@@ -75,6 +77,10 @@ Extends: Question,
 				if (type == 7)
 				{
                         		x = a * b + c;
+				}
+				else if (type == 9)
+				{
+                        		x = 2 * ( a + b );
 				}
 			}
                 }
@@ -151,6 +157,11 @@ Extends: Question,
 		{
                 	this.mTipArray[2] = 'a / b + c = x';
                 	this.mTipArray[3] = '' + a + ' / ' + b + ' + ' +  c  + ' = ' + x;
+		}
+		else if (type == 9)
+		{
+                	this.mTipArray[2] = 'P=2(L+W)';
+                	this.mTipArray[3] = 'P=2(' + a + '+' + b + ')';
 		}
         }
 });
