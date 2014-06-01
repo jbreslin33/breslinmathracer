@@ -103,7 +103,7 @@ Extends: Question,
                 questionText = questionText + ' ' + b + ' ';
                 questionText = questionText + textC;
 
-		if (type > 4)
+		if (type > 4 && type < 9)
 		{
                 	questionText = questionText + ' ' + c + ' ';
                 	questionText = questionText + textD;
