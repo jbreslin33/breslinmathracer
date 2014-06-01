@@ -12,6 +12,7 @@ types
 7: a*b+c=x
 8: a/b+c=x
 9: 2(a+b)=x
+10: x=(a-(b+b))/2
 */
 Extends: Question,
   	initialize: function(question,answer,minX,maxX,minA,maxA,minB,maxB,minC,maxC,textA,textB,textC,textD,type)
@@ -59,7 +60,7 @@ Extends: Question,
                         }
                 }
 
-		if (type > 4)
+		if (type > 4 && type < 8)
 		{
                 	while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || c < minC | c > maxC)
                 	{
@@ -84,7 +85,7 @@ Extends: Question,
 				}
 			}
                 }
-	   	
+		
 		if (type == 8)
                 {
                         while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || a%b != 0 || a == b || a < b)
@@ -95,7 +96,24 @@ Extends: Question,
                         	x = a / b + c;
                         }
                 }
-	
+
+                if (type == 9 || type == 10)
+                {
+                        while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || c < minC | c > maxC)
+                        {
+                                a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
+                                b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
+                                if (type == 9)
+                                {
+                                        x = 2 * ( a + b );
+                                }
+                                if (type == 10)
+                                {
+                                        x = 2 * ( a + b );
+                                }
+                        }
+                }
+	   	
 		//valid parameters so make the question...
                 questionText = textA;
                 questionText = questionText + ' ' + a + ' ';
