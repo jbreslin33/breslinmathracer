@@ -67,33 +67,33 @@ Extends: MultipleChoicePad,
 			{
 				if (greenHeightCode > blueHeightCode)
 				{
-					question = new Question('Order shapes by length from shortest to longest.', 'Red Green Blue');
+					question = new Question('Order shapes by length from longest to shortest.', 'Red Green Blue');
 				}
                                 else if (blueHeightCode > greenHeightCode)
                                 {
-                                        question = new Question('Order shapes by length from shortest to longest.', 'Red Blue Green');
+                                        question = new Question('Order shapes by length from longest to shortest.', 'Red Blue Green');
                                 }
                         }
 			else if (greenHeightCode > redHeightCode && greenHeightCode > blueHeightCode)
 			{
 				if (redHeightCode > blueHeightCode)
 				{
-                        		question = new Question('Order shapes by length from shortest to longest.', 'Green Red Blue');
+                        		question = new Question('Order shapes by length from longest to shortest.', 'Green Red Blue');
 				}
 				else if (blueHeightCode > redHeightCode)
 				{
-                        		question = new Question('Order shapes by length from shortest to longest.', 'Green Blue Red');
+                        		question = new Question('Order shapes by length from longest to shortest.', 'Green Blue Red');
 				}
 			}
 			else if (blueHeightCode > redHeightCode && blueHeightCode > greenHeightCode)
 			{
 				if (redHeightCode > greenHeightCode)
 				{
-                        		question = new Question('Order shapes by length from shortest to longest.', 'Blue Red Green');
+                        		question = new Question('Order shapes by length from longest to shortest.', 'Blue Red Green');
 				}
 				else if (greenHeightCode > redHeightCode)
 				{
-                        		question = new Question('Order shapes by length from shortest to longest.', 'Blue Green Red');
+                        		question = new Question('Order shapes by length from longest to shortest.', 'Blue Green Red');
 				}
 			}	
 
