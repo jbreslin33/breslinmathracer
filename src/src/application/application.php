@@ -2008,6 +2008,19 @@ var Application = new Class(
                                	this.mGame = new g4_oa_b_4(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.oa.c.5')
+		{ 
+             		if (this.mGameName != "g4_oa_c_5")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_oa_c_5";
+                               	this.mGame = new g4_oa_c_5(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)
