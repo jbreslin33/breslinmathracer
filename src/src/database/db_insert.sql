@@ -135,4 +135,6 @@ insert into learning_standards (id,ref_id,progression,levels,standard) values ('
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.c.6','4.nf.c.6',414,10,' Use decimal notation for fractions with denominators 10 or 100.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.c.7','4.nf.c.7',415,10,' Compare two decimals to hundredths by reasoning about their size. Recognize that comparisons are valid only when the two decimals refer to the same whole. Record the results of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual model.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.oa.b.4','4.oa.b.4',416,10,'  Find all factor pairs for a whole number in the range 1-100. Recognize that a whole number is a multiple of each of its factors. Determine whether a given whole number in the range 1-100 is a multiple of a given one-digit number. Determine whether a given whole number in the range 1-100 is prime or composite.');
+insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.oa.c.5','4.oa.c.5',417,10,'  Generate a number or shape pattern that follows a given rule. Identify apparent features of the pattern that were not explicit in the rule itself.');
+
 
