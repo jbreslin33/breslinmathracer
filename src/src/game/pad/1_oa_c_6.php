@@ -8,6 +8,7 @@ Extends: NumberPad,
        		this.parent(application);
 
 		this.mThresholdTime = 6000;
+		this.setScoreNeeded(6);	
 	},
 
 	createQuestions: function()
@@ -170,15 +171,17 @@ Extends: NumberPad,
 				var randomChance = Math.floor((Math.random()*2));		
 				if (randomChance == 0)
 				{
-					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[this.mApplication.mLevel - 1]);
+					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[this.mApplication.mLevel]);
 					totalNew++;
 				}	
 				if (randomChance == 1)
 				{
-					var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel - 1)));		
+					var randomElement = Math.floor((Math.random()*parseInt(this.mApplication.mLevel)));		
 					this.mQuiz.mQuestionArray.push(this.mQuiz.mQuestionPoolArray[randomElement]);
 				}
 			}
 		}
+   		//buffer
+                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
