@@ -7,7 +7,7 @@ Extends: NumberPad,
 	{
        		this.parent(application);
 		
-		this.setScoreNeeded(4);
+		this.setScoreNeeded(5);
 	},
 
      	//showCorrectAnswer
@@ -89,25 +89,31 @@ Extends: NumberPad,
 
 		if (this.mApplication.mLevel < 11)
 		{
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Chris had a rectangular backyard with a length of','feet and a width of', 'feet. What is the area of his yard? Example Answer 3 sq ft','',3);	
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Wilson had a rectangular backyard with a length of','feet and a width of', 'feet. What is the area of his yard? Example Answer 3 sq ft','',3);	
 			question.mTipArray[0] = 'Length x Width = Area';
 			var tempAnswer = question.getAnswer();
 			question.setAnswer(tempAnswer + ' sq ft',0);
                         this.mQuiz.mQuestionArray.push(question);
 			
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Dave had a rectangular piece of paper with a length of','inches and a width of', 'inches. What is the area of his paper? Example answer: 10 sq in','',3);	
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Nicole had a rectangular piece of paper with a length of','inches and a width of', 'inches. What is the area of her paper? Example answer: 10 sq in','',3);	
 			question.mTipArray[0] = 'Length x Width = Area';
 			var tempAnswer = question.getAnswer();
 			question.setAnswer(tempAnswer + ' sq in',0);
                         this.mQuiz.mQuestionArray.push(question);
 			
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Kate plays soccer on a rectangular soccer field with a length of','yards and a width of', 'yards. What is the area of her field? Example answer: 10 sq yds','',3);	
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Natavia plays soccer on a rectangular soccer field with a length of','yards and a width of', 'yards. What is the area of her field? Example answer: 10 sq yds','',3);	
 			question.mTipArray[0] = 'Length x Width = Area';
 			var tempAnswer = question.getAnswer();
 			question.setAnswer(tempAnswer + ' sq yds',0);
                         this.mQuiz.mQuestionArray.push(question);
 			
-			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Steve built a rectangular garden in a video game with a length of','yards and a width of', 'yards. What is the area of his garden? Example answer: 10 sq yds','',3);	
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Britney built a rectangular garden in a video game with a length of','yards and a width of', 'yards. What is the area of her garden? Example answer: 10 sq yds','',3);	
+			question.mTipArray[0] = 'Length x Width = Area';
+			var tempAnswer = question.getAnswer();
+			question.setAnswer(tempAnswer + ' sq yds',0);
+                        this.mQuiz.mQuestionArray.push(question);
+			
+			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Mimi built a rectangular house in the video game minecraft with a length of','yards and a width of', 'yards. What is the area of her house? Example answer: 10 sq yds','',3);	
 			question.mTipArray[0] = 'Length x Width = Area';
 			var tempAnswer = question.getAnswer();
 			question.setAnswer(tempAnswer + ' sq yds',0);
