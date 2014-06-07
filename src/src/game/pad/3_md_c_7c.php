@@ -49,14 +49,16 @@ Extends: RulerPad,
 			var redWidthCode  = Math.floor((Math.random()*5)+1);
 			var redHeight     = parseInt(redHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
+			
 			var question = new Question('Find the area and show that the area is the same as would be found by multiplying the side lengths. Example Answer: 12,3x4', parseInt(redHeightCode * redWidthCode) + ',' + redHeightCode + 'x' + redWidthCode);
 			question.setAnswer(parseInt(redHeightCode * redWidthCode) + ',' + redWidthCode + 'x' + redHeightCode,1);
 			
 			this.mQuiz.mQuestionArray.push(question);
 		
-			var s = 26;
+			var s = 27;
 	
 			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
+			this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
@@ -84,6 +86,7 @@ Extends: RulerPad,
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 23 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 24 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 25 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 26 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			
 		}
                	
@@ -99,6 +102,9 @@ Extends: RulerPad,
 		{
 			//red
 			this.mShapeArray.push(new Rectangle(50,50,350,25,this,this.mRaphael,0,1,1,"none",.5,true));
+			
+			//blue
+			this.mShapeArray.push(new Rectangle(50,50,350,25,this,this.mRaphael,.6,1,1,"none",.5,true));
 
 			//greens
                 	this.mShapeArray.push(new Rectangle(50,50,220,300,this,this.mRaphael,.3,1,1,"none",.5,true));
