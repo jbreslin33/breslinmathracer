@@ -7,7 +7,7 @@ Extends: RulerPad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(7);
+		this.setScoreNeeded(1);
 
 		this.r = 0;
 
@@ -15,6 +15,16 @@ Extends: RulerPad,
 		this.mTigerTotal = 0;
 		this.mBearTotal = 0;
 		this.mApeTotal = 0;
+	},
+
+	destructor: function()
+	{
+		this.parent();
+	
+               	if (this.r)
+                {
+                        this.r.remove();
+                }
 	},
 
 	showCorrectAnswerEnter: function()
