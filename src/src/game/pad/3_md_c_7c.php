@@ -45,20 +45,22 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//get random heights.
-			var redHeightCode = Math.floor((Math.random()*5)+1);
+			var totalHeightCode = Math.floor((Math.random()*5)+1);
 			var redWidthCode  = Math.floor((Math.random()*5)+1);
-			var redHeight     = parseInt(redHeightCode * 50);  
+			var blueWidthCode = Math.floor((Math.random()*parseInt(5-redWidthCode))+1);
+			var totalHeight   = parseInt(totalHeightCode * 50);  
 			var redWidth      = parseInt(redWidthCode * 50);  
+			var blueWidth      = parseInt(blueWidthCode * 50);  
 			
-			var question = new Question('Find the area and show that the area is the same as would be found by multiplying the side lengths. Example Answer: 12,3x4', parseInt(redHeightCode * redWidthCode) + ',' + redHeightCode + 'x' + redWidthCode);
-			question.setAnswer(parseInt(redHeightCode * redWidthCode) + ',' + redWidthCode + 'x' + redHeightCode,1);
+			var question = new Question('Find the area and show that the area is the same as would be found by multiplying the side lengths. Example Answer: 12,3x4', parseInt(totalHeightCode * redWidthCode) + ',' + totalHeightCode + 'x' + redWidthCode);
+			question.setAnswer(parseInt(totalHeightCode * redWidthCode) + ',' + redWidthCode + 'x' + totalHeightCode,1);
 			
 			this.mQuiz.mQuestionArray.push(question);
 		
 			var s = 27;
 	
-			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
-			this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
+			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,totalHeight);
+			this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(blueWidth,totalHeight);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)]);
