@@ -161,7 +161,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
                 $levels = pg_Result($selectResult, 0, 'levels');
                 $ref_id = pg_Result($selectResult, 0, 'ref_id');
                 $progression = pg_Result($selectResult, 0, 'progression');
-                $standard = pg_Result($selectResult, 0, 'id');
         	
 		$_SESSION["ref_id"] = $ref_id;
 		
@@ -189,14 +188,19 @@ function setLevelSessionVariablesChange($conn,$user_id)
 
 			if ($transaction_code == 0 && $levelVar > 1)
 			{
-				//the last time this standard was played student passed the level so lets bump him 
+				//the last time this standard was played student failed the level so lets bump him down 
 				$levelVar--;
 				$_SESSION["level"] = $levelVar;
 			} 
 			if ($transaction_code == 1)
 			{
-				//the last time this standard was played student passed the level so lets bump him 
+				//the last time this standard was played student passed the level so lets bump him up 
 				$levelVar++;
+				$_SESSION["level"] = $levelVar;
+			} 
+			if ($transaction_code == 2)
+			{
+				//the last time this standard updated with update standard button 
 				$_SESSION["level"] = $levelVar;
 			} 
 		}
@@ -209,7 +213,9 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		//do the insert...
 		$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
 		$insert .= $_SESSION["user_id"];
-		$insert .= ",1,'";
+		$insert .= ",";
+		$insert .= $_SESSION["level"];
+		$insert .= ",'";
 		$insert .= $ref_id;
 		$insert .= "',2);";
 	
