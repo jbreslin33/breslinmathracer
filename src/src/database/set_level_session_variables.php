@@ -374,11 +374,32 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	$standard = pg_Result($result2, 0, 'id');
                 
 			$_SESSION["levels"] = $levels;
-			$_SESSION["level"] = 1;
                 	$_SESSION["progression"] = $progression;
                 	$_SESSION["ref_id"] = $ref_id;
                 	$_SESSION["standard"] = $standard;
+
+//BEGIN NEW CODE
+			//right here you need to check the level of the ref_id you are about to send them to.
+                	$selectLastLevelAttempt = "select level, transaction_code from levelattempts where user_id = ";
+                	$selectLastLevelAttempt .= $_SESSION["user_id"];
+                	$selectLastLevelAttempt .= " and ref_id = '";
+                	$selectLastLevelAttempt .= $_SESSION["ref_id"];
+                	$selectLastLevelAttempt .= "' order by start_time desc limit 1;";
+
+                	$selectLastLevelAttemptResult = pg_query($conn,$selectLastLevelAttempt) or die('Could not connect: ' . pg_last_error());
+                	dbErrorCheck($conn,$selectLastLevelAttemptResult);
+                	$numLastLevelAttemptRows = pg_num_rows($selectLastLevelAttemptResult);
 	
+			if ($numLastLevelAttemptRows > 0)
+			{
+                		$level      = pg_Result($result2, 0, 'level');
+				$_SESSION["level"] = $level;
+			}
+			else
+			{
+				$_SESSION["level"] = 1;
+			}
+//END NEW CODE
  			//insert into level attempts for a jump
         		$insert = "insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,";
         		$insert .= $_SESSION["user_id"];
