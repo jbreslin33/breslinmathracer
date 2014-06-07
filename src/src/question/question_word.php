@@ -99,12 +99,25 @@ Extends: Question,
 
                 if (type == 9)
                 {
-                        while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB)
-                        {
-                                a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
-                                b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
-                                x = 2 * ( a + b );
-                        }
+			if (textD == '')
+			{
+                        	while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB)
+                        	{
+                                	a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
+                                	b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
+                                	x = 2 * ( a + b );
+                        	}
+			}
+			else
+			{
+                        	while (x > maxX || x < minX || a < minA || a > maxA || b < minB || b > maxB || c < minC || c > maxC)
+                        	{
+                                	a = Math.floor((Math.random()* parseInt(maxA - minA + 1)));
+                                	b = Math.floor((Math.random()* parseInt(maxB - minB + 1)));
+                                	c = Math.floor((Math.random()* parseInt(maxC - minC + 1)));
+                                	x = a * ( b + c );
+                        	}
+			}
                 }
   
 		//10: x=(a-(b+b))/2
@@ -125,7 +138,8 @@ Extends: Question,
                 questionText = questionText + ' ' + b + ' ';
                 questionText = questionText + textC;
 
-		if (type > 4 && type < 9)
+		//if (type > 4 && type < 9)
+		if (textD != '')
 		{
                 	questionText = questionText + ' ' + c + ' ';
                 	questionText = questionText + textD;
