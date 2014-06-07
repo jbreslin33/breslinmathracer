@@ -18,6 +18,16 @@ Extends: RulerPad,
 		this.mEagleTotal = 0;
 	},
 
+        destructor: function()
+        {
+                this.parent();
+
+                if (this.r)
+                {
+                        this.r.remove();
+                }
+        },
+
 	showCorrectAnswerEnter: function()
 	{
 		this.parent();
