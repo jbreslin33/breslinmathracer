@@ -52,8 +52,9 @@ Extends: RulerPad,
 			var redWidth      = parseInt(redWidthCode * 50);  
 			var blueWidth      = parseInt(blueWidthCode * 50);  
 			
-			var question = new Question('Find the area and show that you can use the distributive property to solve. Example Answer: 20,4(3+2)', parseInt(totalHeightCode * redWidthCode) + ',' + totalHeightCode + 'x' + redWidthCode);
-			question.setAnswer(parseInt(totalHeightCode * redWidthCode) + ',' + redWidthCode + 'x' + totalHeightCode,1);
+			var question = new Question('Find the area and show that you can use the distributive property to solve. Example Answer: 20,4(3+2)', parseInt(totalHeightCode * (redWidthCode + blueWidthCode)) + ',' + totalHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')');
+
+			question.setAnswer(parseInt(totalHeightCode * (redWidthCode + blueWidthCode)) + ',' + totalHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')',1);
 			
 			this.mQuiz.mQuestionArray.push(question);
 		
