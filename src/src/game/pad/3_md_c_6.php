@@ -27,6 +27,8 @@ Extends: RulerPad,
                 this.mShapeArray[1].setPosition(100,80);
                 this.mShapeArray[9].setPosition(130,335);
                 this.mShapeArray[9].setSize(100,100);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' CORRECT ANSWER:' + this.mQuiz.getQuestion().getAnswer();
+
         },
  
 	createInput: function()
