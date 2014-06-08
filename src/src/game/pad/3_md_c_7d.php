@@ -46,23 +46,28 @@ Extends: RulerPad,
 		for (i = 0; i < this.mScoreNeeded; i++)
 		{
 			//get random heights.
-			var totalHeightCode = Math.floor((Math.random()*5)+1);
+			var redHeightCode = Math.floor((Math.random()*5)+1);
+			var blueHeightCode = Math.floor((Math.random()*5)+1);
+
 			var redWidthCode  = Math.floor((Math.random()*5)+1);
 			var blueWidthCode = Math.floor((Math.random()*parseInt(5-redWidthCode))+1);
-			var totalHeight   = parseInt(totalHeightCode * 50);  
+
+			var redHeight   = parseInt(redHeightCode * 50);  
+			var blueHeight  = parseInt(blueHeightCode * 50);  
+
 			var redWidth      = parseInt(redWidthCode * 50);  
 			var blueWidth      = parseInt(blueWidthCode * 50);  
 			
-			var question = new Question('Find the area and show that you can use the distributive property to solve. Example Answer: 20,4(3+2)', parseInt(totalHeightCode * (redWidthCode + blueWidthCode)) + ',' + totalHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')');
+			var question = new Question('Find the area and show that you can use the distributive property to solve. Example Answer: 20,4(3+2)', parseInt(redHeightCode * (redWidthCode + blueWidthCode)) + ',' + redHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')');
 
-			question.setAnswer(parseInt(totalHeightCode * (redWidthCode + blueWidthCode)) + ',' + totalHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')',1);
+			question.setAnswer(parseInt(redHeightCode * (redWidthCode + blueWidthCode)) + ',' + redHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')',1);
 			
 			this.mQuiz.mQuestionArray.push(question);
 		
 			var s = 27;
 	
-			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,totalHeight);
-			this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(blueWidth,totalHeight);
+			this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(redWidth,redHeight);
+			this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setSize(blueWidth,blueHeight);
 			this.mShapeArray[parseInt(i * s + 1 + this.mTotalGuiBars + this.mTotalInputBars)].setPosition(parseInt(350 + redWidth),25);
 			
 			question.mShapeArray.push(this.mShapeArray[parseInt(i * s + 0 + this.mTotalGuiBars + this.mTotalInputBars)]);
