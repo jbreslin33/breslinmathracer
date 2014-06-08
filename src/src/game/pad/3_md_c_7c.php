@@ -52,7 +52,7 @@ Extends: RulerPad,
 			var redWidth      = parseInt(redWidthCode * 50);  
 			var blueWidth      = parseInt(blueWidthCode * 50);  
 			
-			var question = new Question('Find the area and show that the area is the same as would be found by multiplying the side lengths. Example Answer: 12,3x4', parseInt(totalHeightCode * redWidthCode) + ',' + totalHeightCode + 'x' + redWidthCode);
+			var question = new Question('Find the area and show that you can use the distributive property to solve. Example Answer: 20,4(3+2)', parseInt(totalHeightCode * redWidthCode) + ',' + totalHeightCode + 'x' + redWidthCode);
 			question.setAnswer(parseInt(totalHeightCode * redWidthCode) + ',' + redWidthCode + 'x' + totalHeightCode,1);
 			
 			this.mQuiz.mQuestionArray.push(question);
