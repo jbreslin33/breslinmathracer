@@ -58,9 +58,7 @@ Extends: RulerPad,
 			var redWidth      = parseInt(redWidthCode * 50);  
 			var blueWidth      = parseInt(blueWidthCode * 50);  
 			
-			var question = new Question('Find the area and show that you can use the distributive property to solve. Example Answer: 20,4(3+2)', parseInt(redHeightCode * (redWidthCode + blueWidthCode)) + ',' + redHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')');
-
-			question.setAnswer(parseInt(redHeightCode * (redWidthCode + blueWidthCode)) + ',' + redHeightCode + '(' + redWidthCode + '+' + blueWidthCode + ')',1);
+			var question = new Question('What is the area of the blue and red rectangles combined?', parseInt( (redHeightCode * redWidthCode) + (blueHeightCode * blueWidthCode) ) );
 			
 			this.mQuiz.mQuestionArray.push(question);
 		
