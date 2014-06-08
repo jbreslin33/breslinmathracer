@@ -1800,6 +1800,19 @@ var Application = new Class(
                                	this.mGame = new g3_md_c_7c(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '3.md.c.7d')
+		{ 
+             		if (this.mGameName != "g3_md_c_7d")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g3_md_c_7d";
+                               	this.mGame = new g3_md_c_7d(APPLICATION);
+			}	
+		}
 		if (this.mRef_id == '3.md.d.8')
 		{ 
              		if (this.mGameName != "g3_md_d_8")
