@@ -32,8 +32,16 @@ Extends: MultipleChoicePad,
  		this.parent();
 
 		this.mQuiz.resetQuestionArray();
+		
+		//
+		question = new Question('The frog was green. What color was the frog?', 'green');
+                this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push('red');
+		question.mAnswerPool.push('frog');
+		question.mAnswerPool.push('color');
+		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
 	
-		//1
+		//
 		question = new Question('The boy had a red ball. What color was the ball?', 'red');
                 this.mQuiz.mQuestionArray.push(question);
 		question.mAnswerPool.push('red');
@@ -41,7 +49,7 @@ Extends: MultipleChoicePad,
 		question.mAnswerPool.push('ball');
 		question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars)]);
 		
-		//2
+		//
 		question = new Question('The girl went home. Who went home?', 'girl');
                 this.mQuiz.mQuestionArray.push(question);
 		question.mAnswerPool.push('girl');
@@ -50,7 +58,7 @@ Extends: MultipleChoicePad,
                 question.mShapeArray.push(this.mShapeArray[parseInt(this.mTotalGuiBars + this.mTotalInputBars + 1)]);
 
 		//buffer
-                this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+                //this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
                 this.mQuiz.randomize(10);
