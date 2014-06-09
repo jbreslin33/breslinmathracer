@@ -1,11 +1,11 @@
 var Parallelogram = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,r,g,b,s,op,d)
+        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,x4,y4,r,g,b,s,op,d)
         {
 		//find center for mPosition...
-		sX = x1 + x2 + x3 + x4 + x5 + x6 / 3;
-		sY = y1 + y2 + y3 + y4 + y5 + y6 / 3;
+		sX = x1 + x2 + x3 + x4 / 3;
+		sY = y1 + y2 + y3 + y4 / 3;
 
 		this.parent(0,0,sX,sY,game,raphael,r,g,b,s,op,d);
 
@@ -17,12 +17,8 @@ Extends: RaphaelPolygon,
 		this.y3 = y3;
 		this.x4 = x4;
 		this.y4 = y4;
-		this.x5 = x5;
-		this.y5 = y5;
-		this.x6 = x6;
-		this.y6 = y6;
 		
-		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " L" + this.x5 + "," + this.y5 + " L" + this.x6 + "," + this.y6 + " z";
+		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " z";
 		
 		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
@@ -51,12 +47,8 @@ Extends: RaphaelPolygon,
                 this.y3 += deltaY;
                 this.x4 += deltaX;
                 this.y4 += deltaY;
-                this.x5 += deltaX;
-                this.y5 += deltaY;
-                this.x6 += deltaX;
-                this.y6 += deltaY;
 
-                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " L" + this.x5 + "," + this.y5 + " L" + this.x6 + "," + this.y6 + " z";
+                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " z";
                 this.mPolygon.attr({path:"" + this.mPathString});
 
                 this.mLastX = dx;
