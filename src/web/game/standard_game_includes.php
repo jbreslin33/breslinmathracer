@@ -176,6 +176,7 @@
 <script type="text/javascript" src="/src/game/pad/3_md_c_7c.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_md_c_7d.php"></script>
 <script type="text/javascript" src="/src/game/pad/3_md_d_8.php"></script>
+<script type="text/javascript" src="/src/game/pad/3_g_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nbt_b_4.php"></script>
