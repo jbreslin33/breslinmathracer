@@ -149,6 +149,6 @@ Extends: MultipleChoicePad,
  		this.mShapeArray.push(new Hexagon  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
   		this.mShapeArray.push(new Shape(200,200,150,275,this,"/images/shapes/cube.jpg","",""));
  		this.mShapeArray.push(new Parallelogram  (this,this.mRaphael, 300,300, 325,250, 475,250, 450,300 ,.3,1,1,"none",.5,true));
- 		this.mShapeArray.push(new Rhombus  (this,this.mRaphael,300,300, 325,250, 375,250, 350,300,.3,1,1,"none",.5,true));
+ 		this.mShapeArray.push(new Rhombus  (this,this.mRaphael, 300,300, 400,250, 375,250, 350,300 ,.3,1,1,"none",.5,true));
 	}
 });
