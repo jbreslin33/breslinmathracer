@@ -133,7 +133,7 @@ Extends: MultipleChoicePad,
             	//************ setup
  		this.mShapeArray.push(new Triangle (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true));
 		this.mShapeArray.push(new Rectangle(50,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
- 		this.mShapeArray.push(new Parallelogram  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300,.3,1,1,"none",.5,true));
+ 		this.mShapeArray.push(new Parallelogram  (this,this.mRaphael,300,300, 325,250, 375,250, 350,300,.3,1,1,"none",.5,true));
 		this.mShapeArray.push(new Rectangle(100,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
  		this.mShapeArray.push(new Pentagon (this,this.mRaphael,300,300,350,250,400,300,375,350,325,350,.3,1,1,"none",.5,true));
  		this.mShapeArray.push(new Hexagon  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
