@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(6);
+		this.setScoreNeeded(7);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -51,6 +51,13 @@ Extends: MultipleChoicePad,
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
+		
+		//*************** question 7 
+                var question = new Question('Is this a quadralateral?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeRectangle(question);
 
         	//*************** question 1 
                 var question = new Question('Does this shape have exactly 3 angles?', 'YES');
@@ -93,12 +100,12 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('YES');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeCube(question);
-
+		
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		this.mQuiz.randomize(10);
+		//this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
