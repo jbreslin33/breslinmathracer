@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(7);
+		this.setScoreNeeded(9);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -31,6 +31,10 @@ Extends: MultipleChoicePad,
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
 	},
+	includeParallelogram: function(question)
+	{
+                question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+	},
 	includePentagon: function(question)
 	{
                 question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
@@ -51,6 +55,13 @@ Extends: MultipleChoicePad,
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
+		
+		//*************** question 9
+                var question = new Question('Is this a quadralateral?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeParallelogram(question);
 		
 		//*************** question 8 
                 var question = new Question('Is this a quadralateral?', 'NO');
@@ -122,6 +133,7 @@ Extends: MultipleChoicePad,
             	//************ setup
  		this.mShapeArray.push(new Triangle (this,this.mRaphael,300,300,350,250,350,300,.3,1,1,"none",.5,true));
 		this.mShapeArray.push(new Rectangle(50,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
+		this.mShapeArray.push(new Parallelogram(50,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
 		this.mShapeArray.push(new Rectangle(100,50,300,250,this,this.mRaphael,0,0,.5,"#19070B",1,false));
  		this.mShapeArray.push(new Pentagon (this,this.mRaphael,300,300,350,250,400,300,375,350,325,350,.3,1,1,"none",.5,true));
  		this.mShapeArray.push(new Hexagon  (this,this.mRaphael,300,300, 325,250, 375,250, 400,300, 375,350, 325, 350,.3,1,1,"none",.5,true));
