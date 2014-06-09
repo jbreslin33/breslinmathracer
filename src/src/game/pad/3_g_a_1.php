@@ -52,6 +52,13 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 		
+		//*************** question 8 
+                var question = new Question('Is this a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeTriangle(question);
+		
 		//*************** question 7 
                 var question = new Question('Is this a quadralateral?', 'YES');
                 question.mAnswerPool.push('NO');
