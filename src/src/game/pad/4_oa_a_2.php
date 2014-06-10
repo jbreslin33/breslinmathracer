@@ -86,14 +86,14 @@ Extends: NumberPad,
 
                 this.mQuiz.resetQuestionArray();
 
-                if (this.mApplication.mLevel == 1)
+                if (this.mApplication.mLevel == 2)
                 {
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Graham had','toy cars. He bought', 'more at the toy store. How many toy cars does Graham have now?','',0);	
+			var question = new QuestionWord('','',2,99,2,10,2,10,0,0,'Graham had','boxes of toy cars. He had', 'toy cars in each box. How many toy cars does Graham have total?','',3);	
 			question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
                         this.mQuiz.mQuestionArray.push(question);
                 }
 
-                if (this.mApplication.mLevel == 2)
+                if (this.mApplication.mLevel == 1)
 		{	
 			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?','',2);	
 			question.mTipArray[0] = 'Aubrey has - Aubrey found = Aubrey had';
