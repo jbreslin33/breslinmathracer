@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(33);
+		this.setScoreNeeded(27);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -238,48 +238,6 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeRectangle(question);
 
-        	//*************** question 28 
-                var question = new Question('Does this shape have exactly 3 angles?', 'YES');
-                question.mAnswerPool.push('NO');
-                question.mAnswerPool.push('YES');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeTriangle(question);
-
-                //*************** question 29 
-                var question = new Question('Does this shape have exactly 4 angles?', 'YES');
-                question.mAnswerPool.push('NO');
-                question.mAnswerPool.push('YES');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeSquare(question);
-                
-		//*************** question 30 
-                var question = new Question('Does this shape have atleast 2 sides of equal length?', 'YES');
-                question.mAnswerPool.push('NO');
-                question.mAnswerPool.push('YES');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeRectangle(question);
-		
-		//*************** question 31 
-                var question = new Question('Is this a pentagon?', 'YES');
-                question.mAnswerPool.push('NO');
-                question.mAnswerPool.push('YES');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includePentagon(question);
-
-		//*************** question 32 
-                var question = new Question('Is this a hexagon?', 'YES');
-                question.mAnswerPool.push('NO');
-                question.mAnswerPool.push('YES');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeHexagon(question);
-		
-		//*************** question 33 
-                var question = new Question('Is this a cube?', 'YES');
-                question.mAnswerPool.push('NO');
-                question.mAnswerPool.push('YES');
-                this.mQuiz.mQuestionArray.push(question);
-		this.includeCube(question);
-		
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
