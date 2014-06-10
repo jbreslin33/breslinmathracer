@@ -242,7 +242,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		//this.mQuiz.randomize(10);
+		this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
