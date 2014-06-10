@@ -60,6 +60,73 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 		
+		//*************** question 11 
+                var question = new Question('How many sides does a quadrateral have?', '4');
+                question.mAnswerPool.push('3');
+                question.mAnswerPool.push('4');
+                question.mAnswerPool.push('5');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a sphere a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a circle a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a cube a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a pentagon a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+	
+		//*************** question 11 
+                var question = new Question('Is a hexagon a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+	
+		//*************** question 11 
+                var question = new Question('Is a triangle a quadralateral?', 'NO');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a rhombus a quadralateral?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a parallelogram a quadralateral?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
+		//*************** question 11 
+                var question = new Question('Is a rectangle a quadralateral?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+
+		//*************** question 11 
+                var question = new Question('Is a square a quadralateral?', 'YES');
+                question.mAnswerPool.push('NO');
+                question.mAnswerPool.push('YES');
+                this.mQuiz.mQuestionArray.push(question);
+		
 		//*************** question 10 
                 var question = new Question('Is this a quadralateral?', 'YES');
                 question.mAnswerPool.push('NO');
