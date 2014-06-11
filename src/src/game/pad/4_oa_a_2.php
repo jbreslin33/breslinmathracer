@@ -266,6 +266,55 @@ Extends: MultipleChoicePad,
 		}
 	},
 
+	createArrayQuestion: function(textA,textB,textC)
+	{
+                //*************** question 1
+                var a = 0;
+                var b = 0;
+                var c = 0;
+                var d = 0;
+                var e = 0;
+                var f = 0;
+
+                while ((a * b) == (c * d) || (a * b) == (e * f))
+                {
+                        a = Math.floor((Math.random()*9)+1);
+                        b = Math.floor((Math.random()*9)+1);
+                        c = Math.floor((Math.random()*9)+1);
+                        d = Math.floor((Math.random()*9)+1);
+                        e = Math.floor((Math.random()*9)+1);
+                        f = Math.floor((Math.random()*9)+1);
+                }
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC, 'A');
+                var correctLetterNumber = Math.floor(Math.random()*3);
+                if (correctLetterNumber == 0)
+                {
+                        question.setAnswer('A',0);
+                        this.includeCircles(question,'A',a,b);
+                        this.includeCircles(question,'B',c,d);
+                        this.includeCircles(question,'C',e,f);
+
+                }
+                if (correctLetterNumber == 1)
+                {
+                        question.setAnswer('B',0);
+                        this.includeCircles(question,'A',c,d);
+                        this.includeCircles(question,'B',a,b);
+                        this.includeCircles(question,'C',e,f);
+                }
+                if (correctLetterNumber == 2)
+                {
+                        question.setAnswer('C',0);
+                        this.includeCircles(question,'A',c,d);
+                        this.includeCircles(question,'B',e,f);
+                        this.includeCircles(question,'C',a,b);
+                }
+                question.mAnswerPool.push('A');
+                question.mAnswerPool.push('B');
+                question.mAnswerPool.push('C');
+                this.mQuiz.mQuestionArray.push(question);
+
+	},		
 	
 	createQuestions: function()
         {
@@ -275,52 +324,10 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-        	//*************** question 1 
-		var a = 0;
-		var b = 0;
-		var c = 0;
-		var d = 0;
-		var e = 0;
-		var f = 0;
+		this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row. How could we best show this problem in pictures?');
+		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team. How could we best show this league in pictures?');
 
-		while ((a * b) == (c * d) || (a * b) == (e * f))
-		{   
-			a = Math.floor((Math.random()*9)+1);
-			b = Math.floor((Math.random()*9)+1);
-			c = Math.floor((Math.random()*9)+1);
-			d = Math.floor((Math.random()*9)+1);
-			e = Math.floor((Math.random()*9)+1);
-			f = Math.floor((Math.random()*9)+1);
-		}
-                var question = new Question('A teacher put the kids desks in ' + a + ' rows with ' + b + ' desks in each row. How could we show this problem in pictures?', 'A');
-		var correctLetterNumber = Math.floor(Math.random()*3);
-		if (correctLetterNumber == 0)
-		{
-			question.setAnswer('A',0);
-			this.includeCircles(question,'A',a,b);
-			this.includeCircles(question,'B',c,d);
-			this.includeCircles(question,'C',e,f);
-			
-		}
-		if (correctLetterNumber == 1)
-		{
-			question.setAnswer('B',0);
-			this.includeCircles(question,'A',c,d);
-			this.includeCircles(question,'B',a,b);
-			this.includeCircles(question,'C',e,f);
-		}
-		if (correctLetterNumber == 2)
-		{
-			question.setAnswer('C',0);
-			this.includeCircles(question,'A',c,d);
-			this.includeCircles(question,'B',e,f);
-			this.includeCircles(question,'C',a,b);
-		}
-                question.mAnswerPool.push('A');
-                question.mAnswerPool.push('B');
-                question.mAnswerPool.push('C');
-                this.mQuiz.mQuestionArray.push(question);
-        	
+
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
