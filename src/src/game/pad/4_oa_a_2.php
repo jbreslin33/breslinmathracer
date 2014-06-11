@@ -371,23 +371,21 @@ Extends: MultipleChoicePad,
 
                 var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' Which equation would represent this situation?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
+                question.setAnswer('' + a + ' x ' + b + ' = ' + parseInt(a*b),0);
                 if (correctLetterNumber == 0)
                 {
-                        question.setAnswer('' + b + ' x ' + a,0);
                 	question.mAnswerPool.push('' + question.getAnswer());
                 	question.mAnswerPool.push('' + b + ' + ' + a);
                 	question.mAnswerPool.push('' + b + ' - ' + a);
                 }
                 if (correctLetterNumber == 1)
                 {
-                        question.setAnswer('' + b + ' x ' + a,0);
                 	question.mAnswerPool.push('' + b + ' + ' + a);
                 	question.mAnswerPool.push('' + question.getAnswer());
                 	question.mAnswerPool.push('' + b + ' - ' + a);
                 }
                 if (correctLetterNumber == 2)
                 {
-                        question.setAnswer('' + b + ' x ' + a,0);
                 	question.mAnswerPool.push('' + b + ' + ' + a);
                 	question.mAnswerPool.push('' + b + ' - ' + a);
                 	question.mAnswerPool.push('' + question.getAnswer());
