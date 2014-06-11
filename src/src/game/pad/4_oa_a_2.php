@@ -265,6 +265,7 @@ Extends: MultipleChoicePad,
                         }
 		}
 	},
+
 	
 	createQuestions: function()
         {
@@ -275,21 +276,46 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
         	//*************** question 1 
-                var question = new Question('A teacher put the kids desks in 5 rows with 7 desks in each row. How could we show this problem in pictures?', 'A');
+		var a = Math.floor((Math.random()*9)+1);
+		var b = Math.floor((Math.random()*9)+1);
+		var c = Math.floor((Math.random()*9)+1);
+		var d = Math.floor((Math.random()*9)+1);
+		var e = Math.floor((Math.random()*9)+1);
+		var f = Math.floor((Math.random()*9)+1);
+                var question = new Question('A teacher put the kids desks in ' + a + ' rows with ' + b + ' desks in each row. How could we show this problem in pictures?', 'A');
+		var correctLetterNumber = Math.floor(Math.random()*3);
+		if (correctLetterNumber == 0)
+		{
+			question.setAnswer('A',0);
+			this.includeCircles(question,'A',a,b);
+			this.includeCircles(question,'B',c,d);
+			this.includeCircles(question,'C',e,f);
+			
+		}
+		if (correctLetterNumber == 1)
+		{
+			question.setAnswer('B',0);
+			this.includeCircles(question,'A',c,d);
+			this.includeCircles(question,'B',a,b);
+			this.includeCircles(question,'C',e,f);
+		}
+		if (correctLetterNumber == 2)
+		{
+			question.setAnswer('C',0);
+			this.includeCircles(question,'A',c,d);
+			this.includeCircles(question,'B',e,f);
+			this.includeCircles(question,'C',a,b);
+		}
                 question.mAnswerPool.push('A');
                 question.mAnswerPool.push('B');
                 question.mAnswerPool.push('C');
                 this.mQuiz.mQuestionArray.push(question);
-		this.includeLetters(question);
-		this.includeCircles(question,'A',6,9);
-		this.includeCircles(question,'B',6,9);
-		this.includeCircles(question,'C',6,9);
-
+        	
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		this.mQuiz.randomize(10);
+		//this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
