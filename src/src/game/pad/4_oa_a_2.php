@@ -92,16 +92,11 @@ Extends: MultipleChoicePad,
                 shape.setText('C');
 
 		//A circles
-		this.mShapeArray.push(new Circle   (5,25,220,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,235,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,250,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,265,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,280,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,295,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,310,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,325,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,340,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,25,355,this,this.mRaphael,0,1,1,"none",.5,false));	
+		
+		for (i = 220; i < 10; i = i + 15)
+		{
+			this.mShapeArray.push(new Circle   (5,25,i,this,this.mRaphael,0,1,1,"none",.5,false));	
+		}
 		
 		this.mShapeArray.push(new Circle   (5,40,220,this,this.mRaphael,0,1,1,"none",.5,false));	
 		this.mShapeArray.push(new Circle   (5,40,235,this,this.mRaphael,0,1,1,"none",.5,false));	
