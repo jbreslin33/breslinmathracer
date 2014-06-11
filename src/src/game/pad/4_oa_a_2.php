@@ -385,21 +385,21 @@ Extends: MultipleChoicePad,
                 {
                         question.setAnswer('' + a + ' x ' + b + ' = ' + a*b,0);
                         question.mAnswerPool.push('' + question.getAnswer());
-                        question.mAnswerPool.push('' + b + ' + ' + a);
-                        question.mAnswerPool.push('' + b + ' - ' + a);
+                        question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + b+a);
+                        question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + b-a);
                 }
                 if (correctLetterNumber == 1)
                 {
                         question.setAnswer('' + a + ' x ' + b + ' = ' + a*b,0);
-                        question.mAnswerPool.push('' + b + ' + ' + a);
+                        question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + b+a);
                         question.mAnswerPool.push('' + question.getAnswer());
-                        question.mAnswerPool.push('' + b + ' - ' + a);
+                        question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + b-a);
                 }
                 if (correctLetterNumber == 2)
                 {
                         question.setAnswer('' + a + ' x ' + b + ' = ' + a*b,0);
-                        question.mAnswerPool.push('' + b + ' + ' + a);
-                        question.mAnswerPool.push('' + b + ' - ' + a);
+                        question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + b+a);
+                        question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + b-a);
                         question.mAnswerPool.push('' + question.getAnswer());
                 }
                 this.mQuiz.mQuestionArray.push(question);
