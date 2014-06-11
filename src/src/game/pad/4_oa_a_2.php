@@ -17,6 +17,18 @@ Extends: MultipleChoicePad,
                 this.mNumQuestion.setSize(250,200);
                 this.mNumQuestion.setPosition(140,140);
         },
+
+	createInput: function()
+	{
+		this.parent();
+		this.mButtonA.setPosition(375,100);
+		this.mButtonB.setPosition(525,100);
+		this.mButtonC.setPosition(675,100);
+//this.mButtonA = new Shape(150,50,375,100,this,"BUTTON","","");
+
+	},
+
+
 	
         //showCorrectAnswer
         showCorrectAnswerEnter: function()
