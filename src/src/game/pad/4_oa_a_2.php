@@ -43,9 +43,36 @@ Extends: MultipleChoicePad,
 
 	includeCircles: function(question,letter,x,y)
 	{
-		for (i = 0; i < y; i++) 
+		if (letter == 'A')
 		{
- 			question.mShapeArray.push(this.mShapeArray[parseInt(i + 3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			if (x > 0)	
+			{
+				for (i = 0; i < y; i++) 
+				{
+ 					question.mShapeArray.push(this.mShapeArray[parseInt(i + 3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				}
+			}
+			if (x > 1)	
+			{
+				for (i = 0; i < y; i++) 
+				{
+ 					question.mShapeArray.push(this.mShapeArray[parseInt(i + 13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				}
+			}
+			if (x > 2)	
+			{
+				for (i = 0; i < y; i++) 
+				{
+ 					question.mShapeArray.push(this.mShapeArray[parseInt(i + 23 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				}
+			}
+			if (x > 3)	
+			{
+				for (i = 0; i < y; i++) 
+				{
+ 					question.mShapeArray.push(this.mShapeArray[parseInt(i + 33 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				}
+			}
 		}
 	},
 	
@@ -64,7 +91,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('C');
                 this.mQuiz.mQuestionArray.push(question);
 		this.includeLetters(question);
-		this.includeCircles(question,'A',10,3);
+		this.includeCircles(question,'A',2,3);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -92,33 +119,33 @@ Extends: MultipleChoicePad,
                 shape.setText('C');
 
 		//A circles
-		
-		for (i = 220; i < 10; i = i + 15)
+	
+		y = 220; 	
+		for (i = 0; i < 10; i++)
 		{
-			this.mShapeArray.push(new Circle   (5,25,i,this,this.mRaphael,0,1,1,"none",.5,false));	
+			this.mShapeArray.push(new Circle   (5,25,y,this,this.mRaphael,0,1,1,"none",.5,false));	
+			y = y + 15;	
+		}
+
+		y = 220; 	
+		for (i = 0; i < 10; i++)
+		{
+			this.mShapeArray.push(new Circle   (5,40,y,this,this.mRaphael,0,1,1,"none",.5,false));	
+			y = y + 15;	
+		}
+
+		y = 220; 	
+		for (i = 0; i < 10; i++)
+		{
+			this.mShapeArray.push(new Circle   (5,55,y,this,this.mRaphael,0,1,1,"none",.5,false));	
+			y = y + 15;	
 		}
 		
-		this.mShapeArray.push(new Circle   (5,40,220,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,235,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,250,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,265,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,280,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,295,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,310,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,325,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,340,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,40,355,this,this.mRaphael,0,1,1,"none",.5,false));	
-		
-		this.mShapeArray.push(new Circle   (5,55,220,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,235,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,250,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,265,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,280,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,295,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,310,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,325,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,340,this,this.mRaphael,0,1,1,"none",.5,false));	
-		this.mShapeArray.push(new Circle   (5,55,355,this,this.mRaphael,0,1,1,"none",.5,false));	
-
+		y = 220; 	
+		for (i = 0; i < 10; i++)
+		{
+			this.mShapeArray.push(new Circle   (5,70,y,this,this.mRaphael,0,1,1,"none",.5,false));	
+			y = y + 15;	
+		}
 	}
 });
