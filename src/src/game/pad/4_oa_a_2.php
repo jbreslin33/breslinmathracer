@@ -1,175 +1,385 @@
 var g4_oa_a_2 = new Class(
 {
 
-Extends: NumberPad,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(1);
+		this.setScoreNeeded(12);
+
+    		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
-
-     	//showCorrectAnswer
+	
+        //showCorrectAnswer
         showCorrectAnswerEnter: function()
-        {
-		this.parent();
-                
-                this.mShapeArray[1].setSize(700,100);
-                this.mShapeArray[1].setPosition(380,80);
-       
-		//move dont forget 
-	        this.mShapeArray[8].setVisibility(false);
-	        this.mShapeArray[9].setVisibility(false);
-        },
-
-        //outOfTime
-        outOfTimeEnter: function()
-        {
-		this.parent();
-
-                this.mShapeArray[0].setPosition(650,170);
-
-                this.mShapeArray[1].setSize(700,100);
-                this.mShapeArray[1].setPosition(380,80);
-	      
-		//move frantic clock 
-		this.mShapeArray[8].setPosition(650,300);
-        },
-
-    	tip: function()
-        {
-                if (this.mQuiz.getQuestion().mTipArray.length > 0)
-                {
-                        //tip header
-                        this.mShapeArray[2].setPosition(140,100);
-                        this.mShapeArray[2].setSize(200,10);
-                        this.mShapeArray[2].setVisibility(true);
-
-                        if (this.mQuiz.getQuestion().mTipArray.length == 1)
-                        {
-                                this.mShapeArray[2].mMesh.innerHTML = 'Tip:';
-                        }
-                        else
-                        {
-                                this.mShapeArray[2].mMesh.innerHTML = 'Tips:';
-                        }
-
-                        if (this.mQuiz.getQuestion().mTipArray.length > 0)
-                        {
-                                this.mShapeArray[3].setPosition(380,150);
-                                this.mShapeArray[3].setSize(700,10);
-                                this.mShapeArray[3].setVisibility(true);
-                                this.mShapeArray[3].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[0];
-                        }
-                        if (this.mQuiz.getQuestion().mTipArray.length > 3)
-                        {
-                                this.mShapeArray[6].setPosition(380,180);
-                        	this.mShapeArray[6].setSize(700,10);
-                                this.mShapeArray[6].setVisibility(true);
-                                this.mShapeArray[6].mMesh.innerHTML = this.mQuiz.getQuestion().mTipArray[3];
-			}
-                }
-        },
-
-        createNumQuestion: function()
-        {
-                //question
-                this.mNumQuestion = new Shape(200,200,140,140,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
-                this.mNumQuestion.mCollidable = false;
-                this.mNumQuestion.mCollisionOn = false;
-        },
-
-	createQuestions: function()
         {
                 this.parent();
 
-                this.mQuiz.resetQuestionArray();
-
-                if (this.mApplication.mLevel == 2)
-                {
-			var question = new QuestionWord('','',2,99,2,10,2,10,0,0,'Graham had','boxes of toy cars. He had', 'toy cars in each box. How many toy cars does Graham have total?','',3);	
-			question.mTipArray[0] = 'Graham had + Graham bought = Graham has';
-                        this.mQuiz.mQuestionArray.push(question);
-                }
-
-                if (this.mApplication.mLevel == 1)
-		{	
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Aubrey had some seashells in a box. She found','more seashells in her closet and put them in the box. Now there are', 'seashells in the box. How many seashells were in the box to begin with?','',2);	
-			question.mTipArray[0] = 'Aubrey has - Aubrey found = Aubrey had';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-
-                if (this.mApplication.mLevel == 3)
+                this.mShapeArray[1].setPosition(100,80);
+        },
+	
+	includeGraph: function(question,numerator,denominator)
+	{
+		if (denominator == 2)
 		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Anna had','dog treats. She gave', 'to here puppy. How many dog treats does Anna have now?','',1);
-			question.mTipArray[0] = 'Anna had - Anna gave to puppy = Anna has now';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-       		
-                if (this.mApplication.mLevel == 4)
+                	question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			if (numerator == 0)
+			{
+                		question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+			if (numerator == 1)
+			{
+                		question.mShapeArray.push(this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+			if (numerator == 2)
+			{
+                		question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+		} 
+		if (denominator == 3)
 		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Isaac had','quarters in his pocket. Some of them slipped out through a hole in his pocket. When he got to the store he only had', 'quarters left in his pocket. How many fell out?','',1);
-			question.mTipArray[0] = 'Issac had - Issac has left = Issac lost';
-                        this.mQuiz.mQuestionArray.push(question);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(10 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(11 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                    	
+			if (numerator == 0)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        if (numerator == 1)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(13 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        if (numerator == 2)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(14 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
+                        if (numerator == 3)
+                        {
+                                question.mShapeArray.push(this.mShapeArray[parseInt(15 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(16 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                question.mShapeArray.push(this.mShapeArray[parseInt(17 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                        }
 		}
+		if (denominator == 4)
+		{
+			// 0 and 1 setup
+                	question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+			// fraction bars
+                	question.mShapeArray.push(this.mShapeArray[parseInt(18 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(19 + this.mTotalGuiBars + this.mTotalInputBars)]);
+                	question.mShapeArray.push(this.mShapeArray[parseInt(20 + this.mTotalGuiBars + this.mTotalInputBars)]);
                 
-		if (this.mApplication.mLevel == 5)
-		{
-       			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Molly had some ladybug stickers. She gave','of the stickers to her sister and kept', 'for herself. How many stickers did Molly have to begin with?','',0);
-			question.mTipArray[0] = 'Molly gave to sister + Molly kept for herself = Molly had to begin with';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 6)
-		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Kaleb and Ethan were planting flowers in pots for a school project. Kaleb brought','pots and Ethan brought', 'pots. They had just enough pots to put one flower in each pot. How many flowers did they have?','',0);
-			question.mTipArray[0] = 'Kaleb pots + Ethan pots = total flowers because there is one in each pot';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
+			if (numerator == 0)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(21 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
-		if (this.mApplication.mLevel == 7)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Macon and Parker picked up the crayons that spilled onto the floor. When they put all the crayons back in the box, there were','crayons. Macon counted as he put the crayons in the box. He knows that he put', 'crayons in. How many crayons did Parker put in the box?','',1);
-			question.mTipArray[0] = 'total crayons - crayons Macon put away = crayons Parker put away';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+			
+			if (numerator == 1)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(22 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
-		if (this.mApplication.mLevel == 8)
-		{
-       			var question = new QuestionWord('','',2,9,2,9,2,9,0,0,'Cole and Maggie worked together to make a train that had','cubes. They broke it into two pieces. One had', 'cubes. How many cubes were in the other piece?','',1);
-			question.mTipArray[0] = 'total cubes - cubes on one train = cubes on the other train';
-                        this.mQuiz.mQuestionArray.push(question);
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+
+			if (numerator == 2)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(23 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+			
+			if (numerator == 3)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(24 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
+
+			if (numerator == 4)
+			{
+				//v	
+				question.mShapeArray.push(this.mShapeArray[parseInt(25 + this.mTotalGuiBars + this.mTotalInputBars)]);
+
+				//fractions
+				question.mShapeArray.push(this.mShapeArray[parseInt(26 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(27 + this.mTotalGuiBars + this.mTotalInputBars)]);
+				question.mShapeArray.push(this.mShapeArray[parseInt(28 + this.mTotalGuiBars + this.mTotalInputBars)]);
+			}
 		}
+	},
+
+	createQuestions: function()
+        {
+		this.parent();
+	
+		//just the question array reset
+		this.mQuiz.resetQuestionArray();
+		this.mQuiz.resetQuestionPoolArray();
+
+        	//*************** question 1 
+                var question = new Question('What is the value of V?', '0/2');
+                question.mAnswerPool.push('1/2');
+                question.mAnswerPool.push('2/2');
+                question.mAnswerPool.push('0/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,0,2);
+
+        	//*************** question 2 
+                var question = new Question('What is the value of V?', '1/2');
+                question.mAnswerPool.push('0/2');
+                question.mAnswerPool.push('2/2');
+                question.mAnswerPool.push('1/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,1,2);
+
+        	//*************** question 3 
+                var question = new Question('What is the value of V?', '2/2');
+                question.mAnswerPool.push('0/2');
+                question.mAnswerPool.push('1/2');
+                question.mAnswerPool.push('2/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,2,2);
+        	
+		//*************** question 4 
+                var question = new Question('What is the value of V?', '0/3');
+                question.mAnswerPool.push('1/3');
+                question.mAnswerPool.push('2/3');
+                question.mAnswerPool.push('3/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,0,3);
+
+		//*************** question 5 
+                var question = new Question('What is the value of V?', '1/3');
+                question.mAnswerPool.push('0/3');
+                question.mAnswerPool.push('2/3');
+                question.mAnswerPool.push('3/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,1,3);
+
+		//*************** question 6 
+                var question = new Question('What is the value of V?', '2/3');
+                question.mAnswerPool.push('0/3');
+                question.mAnswerPool.push('1/3');
+                question.mAnswerPool.push('3/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,2,3);
+
+		//*************** question 7 
+                var question = new Question('What is the value of V?', '3/3');
+                question.mAnswerPool.push('0/3');
+                question.mAnswerPool.push('1/3');
+                question.mAnswerPool.push('2/3');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,3,3);
 		
-		if (this.mApplication.mLevel == 9)
-		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Sally and Amy shared one box of colored pencils. They used all of the pencils to make drawings for art class. Sally chose','pencils to use for her drawing. Amy chose', 'pencils. How many pencils were in the box to begin with?','',0);
-			question.mTipArray[0] = 'Sally pencils + Amy pencils = total pencils';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 10)
-		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Skip and Jacob made','cookies. They ate some as soon as they had cooled off. There were','cookies left. How many cookies did Skip and Jacob eat?','',1);
-			question.mTipArray[0] = 'made - left = ate';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 11)
-		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'In the basketball game, Tiffany scored','points and Alexa scored','points. How many more points did Alexa score?','',1);
-			question.mTipArray[0] = 'Alexa points - Tiffany points = difference in points';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-		
-		if (this.mApplication.mLevel == 12)
-		{
-			var question = new QuestionWord('','',2,19,2,20,2,20,0,0,'Carson has','plastic bugs in his collection. He has','more bugs than his brother has. How many bugs does his brother have?','',1);
-			question.mTipArray[0] = 'Carson bugs - how many more he has than brother = how many his brother has';
-                        this.mQuiz.mQuestionArray.push(question);
-		}
-   		//buffer
+		//*************** question 8 
+                var question = new Question('What is the value of V?', '0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('3/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,0,4);
+
+		//*************** question 9 
+                var question = new Question('What is the value of V?', '1/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('3/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,1,4);
+
+		//*************** question 10 
+                var question = new Question('What is the value of V?', '2/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('3/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,2,4);
+
+		//*************** question 11 
+                var question = new Question('What is the value of V?', '3/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('4/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,3,4);
+
+		//*************** question 12 
+                var question = new Question('What is the value of V?', '4/4');
+                question.mAnswerPool.push('0/4');
+                question.mAnswerPool.push('1/4');
+                question.mAnswerPool.push('2/4');
+                question.mAnswerPool.push('3/4');
+                this.mQuiz.mQuestionArray.push(question);
+		this.includeGraph(question,4,4);
+
+		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+		
+		//random	
+		this.mQuiz.randomize(10);
+	},
+
+	createWorld: function()
+	{
+		this.parent();
+	
+               	//*********  denominator 2 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,300,650,300,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,50,325,50,275,"#0000FF",false));
+                this.mShapeArray.push(new LineOne  (this,this.mRaphael,650,325,650,275,"#0000FF",false));
+
+                //0 :3
+                shape = new Shape(5,5,55,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('0');
+                
+		//1 :4
+                shape = new Shape(5,5,655,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1');
+                
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
+		
+		//V at 0/2 :6
+                shape = new Shape(5,5,55,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 1/2 :7 
+                shape = new Shape(5,5,355,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 2/2 :8 
+                shape = new Shape(5,5,655,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		// 1/2 at 1/2 :9 
+                shape = new Shape(5,5,355,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1/2');
+               	
+		//*********  denominator 3 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,250,325,250,275,"#0000FF",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,450,325,450,275,"#0000FF",false));
+                
+ 		//V at 0/3 :12
+                shape = new Shape(5,5,55,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+
+                //V at 1/3 :13
+                shape = new Shape(5,5,255,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+
+                //V at 2/3 :14
+                shape = new Shape(5,5,455,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+                
+		//V at 3/3 :15
+                shape = new Shape(5,5,655,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		// 1/3 at 1/3 :16
+                shape = new Shape(5,5,255,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1/3');
+		
+		// 2/3 at 2/3 :17
+                shape = new Shape(5,5,455,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('2/3');
+
+		//*********  denominator 4 
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,200,325,200,275,"#0000FF",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,350,325,350,275,"#0000FF",false));
+		this.mShapeArray.push(new LineOne  (this,this.mRaphael,500,325,500,275,"#0000FF",false));
+ 		
+		//V at 0/4 :21
+                shape = new Shape(5,5,55,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 1/4 :22
+                shape = new Shape(5,5,205,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 2/4 :23
+                shape = new Shape(5,5,355,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 3/4 :24
+                shape = new Shape(5,5,505,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		//V at 4/4 :25
+                shape = new Shape(5,5,655,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('V');
+		
+		// 1/4 at 1/4 :26
+                shape = new Shape(5,5,205,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('1/4');
+		
+		// 2/4 at 2/4 :27
+                shape = new Shape(5,5,355,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('2/4');
+		
+		// 3/4 at 3/4 :28
+                shape = new Shape(5,5,505,275,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('3/4');
+	
 	}
 });
