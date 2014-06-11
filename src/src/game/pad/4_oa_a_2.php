@@ -28,6 +28,76 @@ Extends: MultipleChoicePad,
 
 	},
 
+     	showQuestion: function()
+        {
+                //set all shapes invisible to start semi-clean
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].setVisibility(false);
+                }
+
+                if (this.mApplication.mGame.mQuiz)
+                {
+                        if (this.mApplication.mGame.mQuiz.getQuestion())
+                        {
+                                this.mQuiz.getQuestion().showShapes();
+                                this.mQuiz.getQuestion().setChoices();
+                                this.mNumQuestion.setVisibility(true);
+                                this.mNumQuestion.mMesh.innerHTML = this.mQuiz.getQuestion().getQuestion();
+                        }
+                }
+
+                if (this.mApplication.mGame.mQuiz)
+                {
+                        if (this.mApplication.mGame.mQuiz.getQuestion())
+                        {
+                                //how many buttons
+                                if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceA != '')
+                                {
+                                        this.mButtonA.setVisibility(true);
+                                        this.mButtonA.mMesh.innerHTML = '' + this.mApplication.mGame.mQuiz.getQuestion().mChoiceA;
+                                }
+                                else
+                                {
+                                        this.mButtonA.setVisibility(false);
+                                }
+
+                                if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceB != '')
+                                {
+                                        this.mButtonB.setVisibility(true);
+                                        this.mButtonB.mMesh.innerHTML = '' + this.mApplication.mGame.mQuiz.getQuestion().mChoiceB;
+                                }
+                                else
+                                {
+                                        this.mButtonB.setVisibility(false);
+                                }
+
+                                if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceC)
+                                {
+                                        this.mButtonC.setVisibility(true);
+                                        this.mButtonC.mMesh.innerHTML = '' + this.mApplication.mGame.mQuiz.getQuestion().mChoiceC;
+                                }
+                                else
+                                {
+                                        this.mButtonC.setVisibility(false);
+                                }
+                                if (this.mApplication.mGame.mQuiz.getQuestion().mChoiceD)
+                                {
+                                        this.mButtonD.setVisibility(true);
+                                        this.mButtonD.mMesh.innerHTML = '' + this.mApplication.mGame.mQuiz.getQuestion().mChoiceD;
+                                }
+                                else
+                                {
+                                        if (this.mButtonD)
+                                        {
+                                                this.mButtonD.setVisibility(false);
+                                        }
+                                }
+
+                                this.mNumQuestion.mMesh.innerHTML = this.mApplication.mGame.mQuiz.getQuestion().getQuestion();
+                        }
+                }
+	},
 
 	
         //showCorrectAnswer
