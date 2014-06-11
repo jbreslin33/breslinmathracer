@@ -368,6 +368,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
+		this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
 		this.createArrayQuestionTwo('Mike had','buckets. He had','fish in each bucket.');
 		this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row.');
 		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
