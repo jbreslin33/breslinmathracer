@@ -10,10 +10,17 @@ Extends: NumberPad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(170,50,295,95,this,"","","");
+                this.mNumQuestion = new Shape(270,50,195,5,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
+        },
+
+	showCorrectAnswerEnter: function()
+        {
+		this.parent();
+                //this.mShapeArray[1].setPosition(200,200);
+		this.mShapeArray[1].setSize(250,100);
         },
 
 	
@@ -26,63 +33,122 @@ Extends: NumberPad,
 		var varB = 0;
 		var varC = 0;
 
-		var start = 0;
-		var end = 0;
+		var number = '';
+
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
+
+		var exp = 0;
+		var answer = 0;
 		var rand = 0;
 
 		this.mQuiz.resetQuestionArray();
 
 		for (s = 0; s < this.mScoreNeeded / 2; s++)
 		{	
-				// pick number of digits (2 - 6)
-				rand = 2 + Math.floor((Math.random()*5));
+				varA = 1 + Math.floor(Math.random()*9);
 
-				// get end number based on digits
-				end = Math.pow(10, rand);
+				rand = 2 + Math.floor(Math.random()*3);
+
+				if(rand == 2)
+				{
+				   varB = 'tens';
+				   place1 = 2;
+				}
+				if(rand == 3)
+				{
+				   varB = 'hundreds';
+				   place1 = 3;
+				}
+				if(rand == 4)
+				{
+				   varB = 'thousands';
+				   place1 = 4;
+				}
+
+				if (varB == 'tens')
+					rand = 1;
+				if (varB == 'hundreds')
+					rand = 1 + Math.floor(Math.random()*2);
+				if (varB == 'thousands')
+					rand = 1 + Math.floor(Math.random()*3);
+				
+				if(rand == 1)
+				{
+				   varC = 'ones';
+				   place2 = 1;
+				}
+				if(rand == 2)
+				{
+				   varC = 'tens';
+				   place2 = 2;
+				}
+				if(rand == 3)
+				{
+				   varC = 'hundreds';
+				   place2 = 3;
+				}
+				if(rand == 4)
+				{
+				   varC = 'thousands';
+				   place2 = 4;
+				}
+
+				exp = place1 - place2;
+
 				// get start number based on digits
-				start = Math.pow(10, rand-1);
+				answer = varA * Math.pow(10, exp);
 
-				// pick number from start to end range
-				varA = start + Math.floor(Math.random()*(end-start));
-
-				rand = 2 + Math.floor((Math.random()*5));
-
-				end = Math.pow(10, rand);
-				start = Math.pow(10, rand-1);
-		
-				varB = start + Math.floor(Math.random()*(end-start));
-		
-				varC = parseInt(varA + varB);
 			
-                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' + ' +  varB + ' = ', '' + varC));
+                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' ' + varB + ' = ? ' + varC, '' + answer));
 		}
 		for (s = 0; s < this.mScoreNeeded / 2; s++)
 		{
 			
 				
-				rand = 2 + Math.floor((Math.random()*5));
+				rand = 1 + Math.floor((Math.random()*9));
+					ones = rand;
+				rand = 1 + Math.floor((Math.random()*9));
+					tens = rand;
+				rand = 1 + Math.floor((Math.random()*9));
+					hundreds = rand;
+				rand = 1 + Math.floor((Math.random()*9));
+					thousands = rand;
 
-				start = Math.pow(10, rand-1);
+				rand = 1 + Math.floor((Math.random()*4));
 
-				end = Math.pow(10, rand);
-				
-				varA = start + Math.floor(Math.random()*(end-start));	
+				if(rand == 1)
+				{
+				   varC = 'ones';
+				   answer = ones;
+				}
+				if(rand == 2)
+				{
+				   varC = 'tens';
+				   answer = tens;
+				}
+				if(rand == 3)
+				{
+				   varC = 'hundreds';
+				   answer = hundreds;
+				}
+				if(rand == 4)
+				{
+				   varC = 'thousands';
+				   answer = thousands;
+				}
 
-				rand = 2 + Math.floor((Math.random()*5));
+				number = '' + thousands + ',' + hundreds + tens + ones;
 
-				start = Math.pow(10, rand-1);
-				end = Math.pow(10, rand);
-	
-				varB = start + Math.floor(Math.random()*(end-start));
 
-				varC = parseInt(varA - varB);
-
-                        this.mQuiz.mQuestionArray.push(new Question('' + varA + ' - ' +  varB + ' = ', '' + varC));
+                        this.mQuiz.mQuestionArray.push(new Question('In the number ' + number + ' which digit is in the ' + varC + ' column?', '' + answer));
 		}
                 //buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                this.mQuiz.randomize(10);
+                this.mQuiz.randomize(30);
 	}
 });
