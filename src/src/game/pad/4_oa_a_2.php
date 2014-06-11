@@ -14,8 +14,8 @@ Extends: MultipleChoicePad,
 	createNumQuestion: function()
         {
 		this.parent();
-                this.mNumQuestion.setSize(550,200);
-                this.mNumQuestion.setPosition(400,140);
+                this.mNumQuestion.setSize(650,200);
+                this.mNumQuestion.setPosition(350,140);
         },
 
 	createInput: function()
@@ -285,7 +285,7 @@ Extends: MultipleChoicePad,
                         e = Math.floor((Math.random()*9)+1);
                         f = Math.floor((Math.random()*9)+1);
                 }
-                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC, 'A');
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' We could write the expression: ' + a + ' x ' + b + ' to represent this. How would we best represent this expression in a picture?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
                 if (correctLetterNumber == 0)
                 {
@@ -324,8 +324,8 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row. How could we best show this problem in pictures?');
-		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team. How could we best show this league in pictures?');
+		this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row.');
+		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
 
 
 		//buffer
