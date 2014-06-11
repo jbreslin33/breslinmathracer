@@ -84,7 +84,7 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('C');
 
-		this.mShapeArray.push(new Circle   (25,100,300,this,this.mRaphael,0,1,1,"none",.5,true));	
+		this.mShapeArray.push(new Circle   (25,100,300,this,this.mRaphael,0,1,1,"none",.5,false));	
 
 	}
 });
