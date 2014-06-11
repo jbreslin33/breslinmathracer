@@ -375,19 +375,19 @@ Extends: MultipleChoicePad,
                 if (correctLetterNumber == 0)
                 {
                 	question.mAnswerPool.push('' + question.getAnswer());
-                	question.mAnswerPool.push('' + b + ' + ' + a);
-                	question.mAnswerPool.push('' + b + ' - ' + a);
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
                 }
                 if (correctLetterNumber == 1)
                 {
-                	question.mAnswerPool.push('' + b + ' + ' + a);
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
                 	question.mAnswerPool.push('' + question.getAnswer());
-                	question.mAnswerPool.push('' + b + ' - ' + a);
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
                 }
                 if (correctLetterNumber == 2)
                 {
-                	question.mAnswerPool.push('' + b + ' + ' + a);
-                	question.mAnswerPool.push('' + b + ' - ' + a);
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
                 	question.mAnswerPool.push('' + question.getAnswer());
                 }
                 this.mQuiz.mQuestionArray.push(question);
