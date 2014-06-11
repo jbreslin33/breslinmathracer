@@ -14,16 +14,16 @@ Extends: MultipleChoicePad,
 	createNumQuestion: function()
         {
 		this.parent();
-                this.mNumQuestion.setSize(250,200);
-                this.mNumQuestion.setPosition(140,140);
+                this.mNumQuestion.setSize(550,200);
+                this.mNumQuestion.setPosition(400,140);
         },
 
 	createInput: function()
 	{
 		this.parent();
-		this.mButtonA.setPosition(375,100);
-		this.mButtonB.setPosition(525,100);
-		this.mButtonC.setPosition(675,100);
+		this.mButtonA.setPosition(105,200);
+		this.mButtonB.setPosition(385,200);
+		this.mButtonC.setPosition(660,200);
 	},
 
         //showCorrectAnswer
@@ -276,12 +276,22 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
         	//*************** question 1 
-		var a = Math.floor((Math.random()*9)+1);
-		var b = Math.floor((Math.random()*9)+1);
-		var c = Math.floor((Math.random()*9)+1);
-		var d = Math.floor((Math.random()*9)+1);
-		var e = Math.floor((Math.random()*9)+1);
-		var f = Math.floor((Math.random()*9)+1);
+		var a = 0;
+		var b = 0;
+		var c = 0;
+		var d = 0;
+		var e = 0;
+		var f = 0;
+
+		while ((a * b) == (c * d) || (a * b) == (e * f))
+		{   
+			a = Math.floor((Math.random()*9)+1);
+			b = Math.floor((Math.random()*9)+1);
+			c = Math.floor((Math.random()*9)+1);
+			d = Math.floor((Math.random()*9)+1);
+			e = Math.floor((Math.random()*9)+1);
+			f = Math.floor((Math.random()*9)+1);
+		}
                 var question = new Question('A teacher put the kids desks in ' + a + ' rows with ' + b + ' desks in each row. How could we show this problem in pictures?', 'A');
 		var correctLetterNumber = Math.floor(Math.random()*3);
 		if (correctLetterNumber == 0)
@@ -400,57 +410,58 @@ Extends: MultipleChoicePad,
  		
 		//B circles
                 y = 220;
+		b = 280;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,325,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,25+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,340,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,40+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,355,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,55+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,370,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,70+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,385,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,85+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,400,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,100+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,415,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,115+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,430,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,130+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,445,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,145+b,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
  		y = 220;
@@ -462,63 +473,64 @@ Extends: MultipleChoicePad,
  
 		//C circles
                 y = 220;
+		c = 560;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,625,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,25+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,640,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,40+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,655,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,55+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,670,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,70+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,685,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,85+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,700,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,100+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,715,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,115+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,730,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,130+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
                 y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,745,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,145+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
  		y = 220;
                 for (i = 0; i < 10; i++)
                 {
-                        this.mShapeArray.push(new Circle   (5,760,y,this,this.mRaphael,0,1,1,"none",.5,false));
+                        this.mShapeArray.push(new Circle   (5,160+c,y,this,this.mRaphael,0,1,1,"none",.5,false));
                         y = y + 15;
                 }
 	}
