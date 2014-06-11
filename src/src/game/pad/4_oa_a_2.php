@@ -361,7 +361,7 @@ Extends: MultipleChoicePad,
 	},		
       
 	createArrayQuestionThree: function(textA,textB,textC)
-        {
+	{
                 //*************** question 1
                 var a = 0;
                 var b = 0;
@@ -379,32 +379,31 @@ Extends: MultipleChoicePad,
                         e = Math.floor((Math.random()*9)+1);
                         f = Math.floor((Math.random()*9)+1);
                 }
-                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' What equation best shows this situation?', 'A');
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' We could write the expression: ' + a + ' x ' + b + ' to represent this. Which of these expressions also represent the situation?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
                 if (correctLetterNumber == 0)
                 {
-                        question.setAnswer('' + a + ' x ' + b + ' = ' + a*b,0);
-                        question.mAnswerPool.push('' + question.getAnswer());
-                        question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + b+a);
-                        question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + b-a);
+                        question.setAnswer('' + b + ' x ' + a,0);
+                	question.mAnswerPool.push('' + question.getAnswer());
+                	question.mAnswerPool.push('' + b + ' + ' + a);
+                	question.mAnswerPool.push('' + b + ' - ' + a);
                 }
                 if (correctLetterNumber == 1)
                 {
-                        question.setAnswer('' + a + ' x ' + b + ' = ' + a*b,0);
-                        question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + b+a);
-                        question.mAnswerPool.push('' + question.getAnswer());
-                        question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + b-a);
+                        question.setAnswer('' + b + ' x ' + a,0);
+                	question.mAnswerPool.push('' + b + ' + ' + a);
+                	question.mAnswerPool.push('' + question.getAnswer());
+                	question.mAnswerPool.push('' + b + ' - ' + a);
                 }
                 if (correctLetterNumber == 2)
                 {
-                        question.setAnswer('' + a + ' x ' + b + ' = ' + a*b,0);
-                        question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + b+a);
-                        question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + b-a);
-                        question.mAnswerPool.push('' + question.getAnswer());
+                        question.setAnswer('' + b + ' x ' + a,0);
+                	question.mAnswerPool.push('' + b + ' + ' + a);
+                	question.mAnswerPool.push('' + b + ' - ' + a);
+                	question.mAnswerPool.push('' + question.getAnswer());
                 }
                 this.mQuiz.mQuestionArray.push(question);
-        },
-
+	},		
 	
 	createQuestions: function()
         {
