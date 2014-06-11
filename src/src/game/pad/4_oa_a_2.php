@@ -379,7 +379,7 @@ Extends: MultipleChoicePad,
                         e = Math.floor((Math.random()*9)+1);
                         f = Math.floor((Math.random()*9)+1);
                 }
-                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' We could write the expression: ' + a + ' x ' + b + ' to represent this. Which of these expressions also represent the situation?', 'A');
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' Which equation would represent this situation?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
                 if (correctLetterNumber == 0)
                 {
