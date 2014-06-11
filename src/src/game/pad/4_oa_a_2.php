@@ -16,7 +16,6 @@ Extends: MultipleChoicePad,
 		this.parent();
                 this.mNumQuestion.setSize(250,200);
                 this.mNumQuestion.setPosition(140,140);
-// = new Shape(200,200,140,140,this,"","","");
         },
 	
         //showCorrectAnswer
@@ -26,6 +25,14 @@ Extends: MultipleChoicePad,
 
                 this.mShapeArray[1].setPosition(100,80);
         },
+
+	includeLetters: function(question)
+	{
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(1 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(2 + this.mTotalGuiBars + this.mTotalInputBars)]);
+	},
+
 	
 	createQuestions: function()
         {
@@ -41,7 +48,8 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('B');
                 question.mAnswerPool.push('C');
                 this.mQuiz.mQuestionArray.push(question);
- 		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+		this.includeLetters(question);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
@@ -53,6 +61,22 @@ Extends: MultipleChoicePad,
 	createWorld: function()
 	{
 		this.parent();
+		//A
+                shape = new Shape(5,5,55,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('A');
+
+		//B
+                shape = new Shape(5,5,255,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('B');
+
+		//C
+                shape = new Shape(5,5,455,255,this,"","","");
+                this.mShapeArray.push(shape);
+                shape.setText('C');
+
 		this.mShapeArray.push(new Circle   (25,100,300,this,this.mRaphael,0,1,1,"none",.5,true));	
+
 	}
 });
