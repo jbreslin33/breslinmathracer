@@ -57,6 +57,15 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('C');
                 this.mQuiz.mQuestionArray.push(question);
  		question.mShapeArray.push(this.mShapeArray[parseInt(3 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(4 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(5 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(6 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(7 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(8 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(9 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(10 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(11 + this.mTotalGuiBars + this.mTotalInputBars)]);
+ 		question.mShapeArray.push(this.mShapeArray[parseInt(12 + this.mTotalGuiBars + this.mTotalInputBars)]);
 		this.includeLetters(question);
 
 		//buffer
@@ -84,7 +93,16 @@ Extends: MultipleChoicePad,
                 this.mShapeArray.push(shape);
                 shape.setText('C');
 
-		this.mShapeArray.push(new Circle   (25,100,300,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,220,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,235,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,250,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,265,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,280,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,295,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,310,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,325,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,340,this,this.mRaphael,0,1,1,"none",.5,false));	
+		this.mShapeArray.push(new Circle   (5,25,355,this,this.mRaphael,0,1,1,"none",.5,false));	
 
 	}
 });
