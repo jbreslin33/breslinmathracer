@@ -391,7 +391,7 @@ Extends: MultipleChoicePad,
                         e = Math.floor((Math.random()*9)+1);
                         f = Math.floor((Math.random()*9)+1);
                 }
-                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' We could write the expression: ' + a + ' x ' + b + ' to represent this. How would we best represent this expression in a picture?', 'A');
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' Which picture captures this situation?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
                 if (correctLetterNumber == 0)
                 {
@@ -429,7 +429,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve. Which picture captures this situation?');
+		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
 		this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
 		this.createArrayQuestionTwo('Mike had','buckets. He had','fish in each bucket.');
 		this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
