@@ -420,6 +420,36 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('C');
                 this.mQuiz.mQuestionArray.push(question);
         },
+ 
+	createArrayQuestionFive: function(textA,textB,textC)
+        {
+                var a = Math.floor((Math.random()*100)+1);
+                var b = Math.floor((Math.random()*8)+2);
+
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC, 'A');
+                var correctLetterNumber = Math.floor(Math.random()*3);
+                question.setAnswer('' + a + ' / ' + b + ' = ' + parseInt(a/b),0);
+                if (correctLetterNumber == 0)
+                {
+                        question.mAnswerPool.push('' + question.getAnswer());
+                        question.mAnswerPool.push('' + a + ' - ' + b + ' = ' + parseInt(a-b));
+                        question.mAnswerPool.push('' + a + ' * ' + b + ' = ' + parseInt(a*b));
+                }
+                if (correctLetterNumber == 1)
+                {
+                        question.mAnswerPool.push('' + a + ' x ' + b + ' = ' + parseInt(a*b));
+                        question.mAnswerPool.push('' + question.getAnswer());
+                        question.mAnswerPool.push('' + a + ' + ' + b + ' = ' + parseInt(a+b));
+                }
+                if (correctLetterNumber == 2)
+                {
+                        question.mAnswerPool.push('' + a + ' x ' + b + ' = ' + parseInt(a*b));
+                        question.mAnswerPool.push('' + a + ' + ' + b + ' = ' + parseInt(a+b));
+                        question.mAnswerPool.push('' + question.getAnswer());
+                }
+                this.mQuiz.mQuestionArray.push(question);
+        },
+
 	
 	createQuestions: function()
         {
@@ -430,6 +460,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
 		//level 1	
+		this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
 		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
 		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
 		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
@@ -438,6 +469,7 @@ Extends: MultipleChoicePad,
 		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
 
 		//level 2
+		this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
 		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
 		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
 		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
