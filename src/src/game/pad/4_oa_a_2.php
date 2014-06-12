@@ -376,17 +376,17 @@ Extends: MultipleChoicePad,
                 {
                 	question.mAnswerPool.push('' + question.getAnswer());
                 	question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + parseInt(b+a));
-                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
+                	question.mAnswerPool.push('' + b + ' * ' + b + ' = ' + parseInt(b*b));
                 }
                 if (correctLetterNumber == 1)
                 {
-                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
+                	question.mAnswerPool.push('' + a + ' x ' + a + ' = ' + parseInt(a*a));
                 	question.mAnswerPool.push('' + question.getAnswer());
-                	question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + parseInt(b-a));
+                	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
                 }
                 if (correctLetterNumber == 2)
                 {
-                	question.mAnswerPool.push('' + b + ' - ' + a + ' = ' + parseInt(b-a));
+                	question.mAnswerPool.push('' + a + ' x ' + a + ' = ' + parseInt(a*a));
                 	question.mAnswerPool.push('' + b + ' + ' + a + ' = ' + parseInt(b+a));
                 	question.mAnswerPool.push('' + question.getAnswer());
                 }
