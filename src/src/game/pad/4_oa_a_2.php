@@ -460,6 +460,12 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
 		//level 1	
+		question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
+                question.mAnswerPool.push('Javier has 5 more points than John');
+                question.mAnswerPool.push('Javier has 3 points and John has 2 points');
+                question.mAnswerPool.push('Javier has 2 points and John has 10 points');
+                this.mQuiz.mQuestionArray.push(question);
+
 		this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
 		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
 		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
