@@ -492,8 +492,8 @@ Extends: MultipleChoicePad,
 		//level 1	
 		this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
 
-		question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
-                question.mAnswerPool.push('Javier has 5 more points than John');
+		question = new Question('Click an example of multiplicative comparison.','Javier has 4 times as many points as John');
+                question.mAnswerPool.push('Javier has 4 times as many points as John');
                 question.mAnswerPool.push('Javier has 3 points and John has 2 points');
                 question.mAnswerPool.push('Javier has 2 points and John has 10 points');
                 this.mQuiz.mQuestionArray.push(question);
