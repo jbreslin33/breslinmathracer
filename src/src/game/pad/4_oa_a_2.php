@@ -318,41 +318,26 @@ Extends: MultipleChoicePad,
 	createArrayQuestionTwo: function(textA,textB,textC)
 	{
                 //*************** question 1
-                var a = 0;
-                var b = 0;
-                var c = 0;
-                var d = 0;
-                var e = 0;
-                var f = 0;
-
-                while ((a * b) == (c * d) || (a * b) == (e * f))
-                {
-                        a = Math.floor((Math.random()*9)+1);
-                        b = Math.floor((Math.random()*9)+1);
-                        c = Math.floor((Math.random()*9)+1);
-                        d = Math.floor((Math.random()*9)+1);
-                        e = Math.floor((Math.random()*9)+1);
-                        f = Math.floor((Math.random()*9)+1);
-                }
-                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' We could write the expression: ' + a + ' x ' + b + ' to represent this. Which of these expressions also represent the situation?', 'A');
+                var a = Math.floor((Math.random()*9)+1);
+                var b = Math.floor((Math.random()*9)+1);
+                
+		var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' We could write the expression: ' + a + ' x ' + b + ' to represent this. Which of these expressions also represent the situation?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
+                question.setAnswer('' + b + ' x ' + a,0);
                 if (correctLetterNumber == 0)
                 {
-                        question.setAnswer('' + b + ' x ' + a,0);
                 	question.mAnswerPool.push('' + question.getAnswer());
                 	question.mAnswerPool.push('' + b + ' + ' + a);
                 	question.mAnswerPool.push('' + b + ' - ' + a);
                 }
                 if (correctLetterNumber == 1)
                 {
-                        question.setAnswer('' + b + ' x ' + a,0);
                 	question.mAnswerPool.push('' + b + ' + ' + a);
                 	question.mAnswerPool.push('' + question.getAnswer());
                 	question.mAnswerPool.push('' + b + ' - ' + a);
                 }
                 if (correctLetterNumber == 2)
                 {
-                        question.setAnswer('' + b + ' x ' + a,0);
                 	question.mAnswerPool.push('' + b + ' + ' + a);
                 	question.mAnswerPool.push('' + b + ' - ' + a);
                 	question.mAnswerPool.push('' + question.getAnswer());
@@ -362,12 +347,8 @@ Extends: MultipleChoicePad,
       
 	createArrayQuestionThree: function(textA,textB,textC)
 	{
-                //*************** question 1
-                var a = 0;
-                var b = 0;
-
-                a = Math.floor((Math.random()*9)+1);
-                b = Math.floor((Math.random()*9)+1);
+                var a = Math.floor((Math.random()*9)+1);
+                var b = Math.floor((Math.random()*9)+1);
 
                 var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC + ' Which equation would represent this situation?', 'A');
                 var correctLetterNumber = Math.floor(Math.random()*3);
@@ -401,9 +382,9 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
 		this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
 		this.createArrayQuestionTwo('Mike had','buckets. He had','fish in each bucket.');
+		this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
 		this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row.');
 		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
 
