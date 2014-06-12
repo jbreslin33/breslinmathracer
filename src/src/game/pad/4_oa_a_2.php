@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(12);
+		this.setScoreNeeded(9);
 
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
@@ -490,38 +490,44 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
 		//level 1	
-		this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
+		if (APPLICATION.mLevel == 1)
+		{
+			this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
 
-		question = new Question('Click an example of multiplicative comparison.','Javier has 4 times as many points as John');
-                question.mAnswerPool.push('Javier has 4 times as many points as John');
-                question.mAnswerPool.push('Javier has 3 points and John has 2 points');
-                question.mAnswerPool.push('Javier has 2 points and John has 10 points');
-                this.mQuiz.mQuestionArray.push(question);
+			question = new Question('Click an example of multiplicative comparison.','Javier has 4 times as many points as John');
+                	question.mAnswerPool.push('Javier has 4 times as many points as John');
+                	question.mAnswerPool.push('Javier has 3 points and John has 2 points');
+                	question.mAnswerPool.push('Javier has 2 points and John has 10 points');
+                	this.mQuiz.mQuestionArray.push(question);
 
-		this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
-		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
-		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
-		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
-		this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
-		this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
-		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
+			this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
+			this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
+			this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
+			this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
+			this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
+			this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
+			this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
+		}
 
 		//level 2
-		this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
+		if (APPLICATION.mLevel > 2)
+		{
+			this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
 
-		question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
-                question.mAnswerPool.push('Javier has 5 more points than John');
-                question.mAnswerPool.push('Javier has 3 points and John has 2 points');
-                question.mAnswerPool.push('Javier has 2 points and John has 10 points');
-                this.mQuiz.mQuestionArray.push(question);
+			question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
+                	question.mAnswerPool.push('Javier has 5 more points than John');
+                	question.mAnswerPool.push('Javier has 3 points and John has 2 points');
+                	question.mAnswerPool.push('Javier has 2 points and John has 10 points');
+                	this.mQuiz.mQuestionArray.push(question);
 
-		this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
-		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
-		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
-		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
-		this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
-		this.createArrayQuestionTwo('Mike had','buckets. He had','fish in each bucket.');
-		this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row.');
+			this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
+			this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
+			this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
+			this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
+			this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
+			this.createArrayQuestionTwo('Mike had','buckets. He had','fish in each bucket.');
+			this.createArrayQuestion('A teacher put the kids desk in','rows with','desks in each row.');
+		}
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
