@@ -430,6 +430,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
 		//level 1	
+		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
 		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
 		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
 		this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
@@ -437,6 +438,7 @@ Extends: MultipleChoicePad,
 		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
 
 		//level 2
+		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
 		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
 		this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
 		this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
