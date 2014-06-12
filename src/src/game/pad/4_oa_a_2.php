@@ -450,6 +450,36 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
         },
 
+	createArrayQuestionSix: function(textA,textB,textC)
+        {
+                //*************** question 1
+                var a = Math.floor((Math.random()*9)+1);
+                var b = Math.floor((Math.random()*99)+1);
+
+                var question = new Question(textA + ' ' + a + ' ' + textB + ' ' + b + ' ' + textC, 'A');
+                var correctLetterNumber = Math.floor(Math.random()*3);
+                question.setAnswer('' + b + ' x ' + a,0);
+                if (correctLetterNumber == 0)
+                {
+                        question.mAnswerPool.push('' + question.getAnswer());
+                        question.mAnswerPool.push('' + b + ' + ' + a);
+                        question.mAnswerPool.push('' + b + ' - ' + a);
+                }
+                if (correctLetterNumber == 1)
+                {
+                        question.mAnswerPool.push('' + b + ' + ' + a);
+                        question.mAnswerPool.push('' + question.getAnswer());
+                        question.mAnswerPool.push('' + b + ' - ' + a);
+                }
+                if (correctLetterNumber == 2)
+                {
+                        question.mAnswerPool.push('' + b + ' + ' + a);
+                        question.mAnswerPool.push('' + b + ' - ' + a);
+                        question.mAnswerPool.push('' + question.getAnswer());
+                }
+                this.mQuiz.mQuestionArray.push(question);
+        },
+
 	
 	createQuestions: function()
         {
@@ -460,6 +490,8 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionPoolArray();
 
 		//level 1	
+		this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
+
 		question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
                 question.mAnswerPool.push('Javier has 5 more points than John');
                 question.mAnswerPool.push('Javier has 3 points and John has 2 points');
@@ -475,6 +507,14 @@ Extends: MultipleChoicePad,
 		this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
 
 		//level 2
+		this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
+
+		question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
+                question.mAnswerPool.push('Javier has 5 more points than John');
+                question.mAnswerPool.push('Javier has 3 points and John has 2 points');
+                question.mAnswerPool.push('Javier has 2 points and John has 10 points');
+                this.mQuiz.mQuestionArray.push(question);
+
 		this.createArrayQuestionFive('Dave collected','pokemon cards. Dave collected','times as many cards as Mike. Which equation would tell us how many cards Mike collected?');
 		this.createArrayQuestionThree('Ava and Fred played soccer. Ava scored','goals. Ava scored','times as many goals as Fred.');
 		this.createArrayQuestionFour('Jim has','times as many balls as Steve. Steve has','balls.');
