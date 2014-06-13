@@ -52,19 +52,12 @@ Extends: MultipleChoicePad,
  		    				
 		if (this.mApplication.mLevel > 0)
 		{
-			//startNumber = 0;
 			question = new Question('What comes next after 0?','1');  
 			question.mAnswerPool.push('0');
 			question.mAnswerPool.push('1');
 			question.mAnswerPool.push('2');
 			this.mQuiz.mQuestionArray.push(question);
 		}	
-/*
-		for (i = 0; i < this.mScoreNeeded; i++)
-		{
-			this.mQuiz.mQuestionArray.push(new Question('When counting by ' + countBy + ' what comes after ' + parseInt(startNumber + countBy * i) + '?','' + parseInt(startNumber + countBy + countBy * i)));
-		}
-*/
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
