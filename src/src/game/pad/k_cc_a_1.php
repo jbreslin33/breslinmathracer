@@ -57,6 +57,7 @@ Extends: MultipleChoicePad,
 			question.mAnswerPool.push('1');
 			question.mAnswerPool.push('2');
 			this.mQuiz.mQuestionArray.push(question);
+			question.mRandomChoices = true;
 		}	
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
