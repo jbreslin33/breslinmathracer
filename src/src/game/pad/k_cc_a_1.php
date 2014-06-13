@@ -44,6 +44,7 @@ Extends: MultipleChoicePad,
 	createQuestions: function()
         {
  		this.parent();
+		this.log('createQuestions');
 
                 this.mQuiz.resetQuestionArray();
 		
@@ -113,6 +114,45 @@ Extends: MultipleChoicePad,
                                 question.mRandomChoices = true;
                         }
                 }
+ 		if (this.mApplication.mLevel == 5)
+                {
+                        this.setScoreNeeded(this.mApplication.mLevel);
+                        var L = parseInt(this.mApplication.mLevel);
+                        for (i = 0; i < this.mScoreNeeded; i++)
+                        {
+                                var a = L - 1;
+                                a = a + i;
+                                var b = parseInt(L + i);
+                                var c = L + 1;
+                                c = c + i;
+                                question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));
+                                question.mAnswerPool.push(a);
+                                question.mAnswerPool.push(b);
+                                question.mAnswerPool.push(c);
+                                this.mQuiz.mQuestionArray.push(question);
+                                question.mRandomChoices = true;
+                        }
+                }
+ 		if (this.mApplication.mLevel == 6)
+                {
+                        this.setScoreNeeded(this.mApplication.mLevel);
+                        var L = parseInt(this.mApplication.mLevel);
+                        for (i = 0; i < this.mScoreNeeded; i++)
+                        {
+                                var a = L - 1;
+                                a = a + i;
+                                var b = parseInt(L + i);
+                                var c = L + 1;
+                                c = c + i;
+                                question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));
+                                question.mAnswerPool.push(a);
+                                question.mAnswerPool.push(b);
+                                question.mAnswerPool.push(c);
+                                this.mQuiz.mQuestionArray.push(question);
+                                question.mRandomChoices = true;
+                        }
+                }
+
 
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
