@@ -41,119 +41,64 @@ Extends: MultipleChoicePad,
                 this.mShapeArray[1].setPosition(200,200);
         },
 
+	getStartNumber: function()
+	{
+		var startNumber = 1; 
+		for(i = 0; i < this.mApplication.mLevel; i++)
+		{
+			startNumber = startNumber + i;	
+		} 	
+		return startNumber;
+	},
+
 	createQuestions: function()
         {
  		this.parent();
 		this.log('createQuestions');
 
                 this.mQuiz.resetQuestionArray();
-		
-		if (this.mApplication.mLevel == 1)
-		{
-			question = new Question('What comes next after 0?','1');  
-			question.mAnswerPool.push('0');
-			question.mAnswerPool.push('1');
-			question.mAnswerPool.push('2');
-			this.mQuiz.mQuestionArray.push(question);
-			question.mRandomChoices = true;
-		}	
-		if (this.mApplication.mLevel == 2)
-		{
-                        this.setScoreNeeded(this.mApplication.mLevel);
-			var L = parseInt(this.mApplication.mLevel); 
+
+		if (this.mApplication.mLevel < 15)
+		{		
+                	this.setScoreNeeded(this.mApplication.mLevel);
+
+			var startNumber = this.getStartNumber();		
+
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{
-				var a = L - 1;	
+				var a = startNumber - 1;	
 				a = a + i;	
-				var b = parseInt(L + i); 
-				var c = L + 1;	
+				var b = parseInt(startNumber + i); 
+				var c = startNumber + 1;	
 				c = c + i;	
-				question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));  
+				question = new Question('What comes next after ' + parseInt( parseInt(startNumber - 1)  + i) ,'' + parseInt(startNumber + i));  
 				question.mAnswerPool.push(a);
 				question.mAnswerPool.push(b);
 				question.mAnswerPool.push(c);
 				this.mQuiz.mQuestionArray.push(question);
 				question.mRandomChoices = true;
 			}
-		}	
-    		if (this.mApplication.mLevel == 3)
+		}
+ 		if (this.mApplication.mLevel == 15)
                 {
-                        this.setScoreNeeded(this.mApplication.mLevel);
-                        var L = parseInt(this.mApplication.mLevel);
-                        for (i = 0; i < this.mScoreNeeded; i++)
-                        {
-                                var a = L - 1;
-                                a = a + i;
-                                var b = parseInt(L + i);
-                                var c = L + 1;
-                                c = c + i;
-                                question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));
-                                question.mAnswerPool.push(a);
-                                question.mAnswerPool.push(b);
-                                question.mAnswerPool.push(c);
-                                this.mQuiz.mQuestionArray.push(question);
-                                question.mRandomChoices = true;
-                        }
-                }
-		if (this.mApplication.mLevel == 4)
-                {
-                        this.setScoreNeeded(this.mApplication.mLevel);
-                        var L = parseInt(this.mApplication.mLevel);
-                        for (i = 0; i < this.mScoreNeeded; i++)
-                        {
-                                var a = L - 1;
-                                a = a + i;
-                                var b = parseInt(L + i);
-                                var c = L + 1;
-                                c = c + i;
-                                question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));
-                                question.mAnswerPool.push(a);
-                                question.mAnswerPool.push(b);
-                                question.mAnswerPool.push(c);
-                                this.mQuiz.mQuestionArray.push(question);
-                                question.mRandomChoices = true;
-                        }
-                }
- 		if (this.mApplication.mLevel == 5)
-                {
-                        this.setScoreNeeded(this.mApplication.mLevel);
-                        var L = parseInt(this.mApplication.mLevel);
-                        for (i = 0; i < this.mScoreNeeded; i++)
-                        {
-                                var a = L - 1;
-                                a = a + i;
-                                var b = parseInt(L + i);
-                                var c = L + 1;
-                                c = c + i;
-                                question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));
-                                question.mAnswerPool.push(a);
-                                question.mAnswerPool.push(b);
-                                question.mAnswerPool.push(c);
-                                this.mQuiz.mQuestionArray.push(question);
-                                question.mRandomChoices = true;
-                        }
-                }
- 		if (this.mApplication.mLevel == 6)
-                {
-                        this.setScoreNeeded(this.mApplication.mLevel);
-                        var L = parseInt(this.mApplication.mLevel);
-                        for (i = 0; i < this.mScoreNeeded; i++)
-                        {
-                                var a = L - 1;
-                                a = a + i;
-                                var b = parseInt(L + i);
-                                var c = L + 1;
-                                c = c + i;
-                                question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));
-                                question.mAnswerPool.push(a);
-                                question.mAnswerPool.push(b);
-                                question.mAnswerPool.push(c);
-                                this.mQuiz.mQuestionArray.push(question);
-                                question.mRandomChoices = true;
-                        }
-                }
+                        this.setScoreNeeded(10);
+                        
+			var startNumber = 10;
 
-
+                        for (i = 0; i < this.mScoreNeeded; i++)
+                        {
+                                var a = parseInt(startNumber);
+                                var b = startNumber + 10;
+                                var c = startNumber + 20;
+                                question = new Question('When counting by 10 what comes next after ' + startNumber, parseInt(startNumber + 10));
+                                question.mAnswerPool.push(a);
+                                question.mAnswerPool.push(b);
+                                question.mAnswerPool.push(c);
+                                this.mQuiz.mQuestionArray.push(question);
+                                question.mRandomChoices = true;
+				startNumber = startNumber + 10;
+                        }
+                }
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
