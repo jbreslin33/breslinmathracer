@@ -58,13 +58,14 @@ Extends: MultipleChoicePad,
 		}	
 		if (this.mApplication.mLevel == 2)
 		{
+			this.setScoreNeeded(2);
 			var L = parseInt(this.mApplication.mLevel); 
-			for (i = 0; i < 2; i++)
+			for (i = 0; i < this.mScoreNeeded; i++)
 			{
 				var a = L - 1;	
 				a = a + i;	
 				var b = parseInt(L + i); 
-				var c = L - 1;	
+				var c = L + 1;	
 				c = c + i;	
 				question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));  
 				question.mAnswerPool.push(a);
