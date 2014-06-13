@@ -47,10 +47,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 		
-		var countBy = 1;	
-		var startNumber = 0;
- 		    				
-		if (this.mApplication.mLevel > 0)
+		if (this.mApplication.mLevel == 1)
 		{
 			question = new Question('What comes next after 0?','1');  
 			question.mAnswerPool.push('0');
@@ -59,6 +56,25 @@ Extends: MultipleChoicePad,
 			this.mQuiz.mQuestionArray.push(question);
 			question.mRandomChoices = true;
 		}	
+		if (this.mApplication.mLevel == 2)
+		{
+			var L = parseInt(this.mApplication.mLevel); 
+			for (i = 0; i < 2; i++)
+			{
+				var a = L - 1;	
+				a = a + i;	
+				var b = parseInt(L + i); 
+				var c = L - 1;	
+				c = c + i;	
+				question = new Question('What comes next after ' + parseInt( parseInt(L - 1)  + i) ,'' + parseInt(L + i));  
+				question.mAnswerPool.push(a);
+				question.mAnswerPool.push(b);
+				question.mAnswerPool.push(c);
+				this.mQuiz.mQuestionArray.push(question);
+				//question.mRandomChoices = true;
+			}
+		}	
+
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
