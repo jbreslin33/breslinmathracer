@@ -54,7 +54,6 @@ Extends: MultipleChoicePad,
 	createQuestions: function()
         {
  		this.parent();
-		this.log('createQuestions');
 
                 this.mQuiz.resetQuestionArray();
 
@@ -103,21 +102,46 @@ Extends: MultipleChoicePad,
  		if (this.mApplication.mLevel == 15)
                 {
                         this.setScoreNeeded(10);
-                        
-			var startNumber = 10;
+   			var startNumber = 0;
+			var correctAnswer = 0;
 
                         for (i = 0; i < this.mScoreNeeded; i++)
                         {
-                                var a = parseInt(startNumber);
-                                var b = startNumber + 10;
-                                var c = startNumber + 20;
-                                question = new Question('When counting by 10 what comes next after ' + startNumber, parseInt(startNumber + 10));
+                                var a = 0;
+                                var b = 0;
+                                var c = 0;
+                                correctAnswerLetter = Math.floor(Math.random()*3);
+                                correctAnswer = correctAnswer + 10;
+                                incorrectAnswerStart = correctAnswer - 3;
+                                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                                {
+                                        if (correctAnswerLetter == 0)
+                                        {
+                                                a = correctAnswer;
+                                                b = incorrectAnswerStart + Math.floor(Math.random()*6);
+                                                c = incorrectAnswerStart + Math.floor(Math.random()*6);
+                                        }
+                                        if (correctAnswerLetter == 1)
+                                        {
+                                                a = incorrectAnswerStart + Math.floor(Math.random()*6);
+                                                b = correctAnswer;
+                                                c = incorrectAnswerStart + Math.floor(Math.random()*6);
+                                        }
+                                        if (correctAnswerLetter == 2)
+                                        {
+                                                a = incorrectAnswerStart + Math.floor(Math.random()*6);
+                                                b = incorrectAnswerStart + Math.floor(Math.random()*6);
+                                                c = correctAnswer;
+                                        }
+                                }
+                                question = new Question('When counting by 10 what comes next after ' + parseInt( parseInt(correctAnswer - 10)) ,'' + parseInt(correctAnswer));
                                 question.mAnswerPool.push(a);
                                 question.mAnswerPool.push(b);
                                 question.mAnswerPool.push(c);
                                 this.mQuiz.mQuestionArray.push(question);
-				startNumber = startNumber + 10;
                         }
+
+                        
                 }
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
