@@ -66,17 +66,38 @@ Extends: MultipleChoicePad,
 
 			for (i = 0; i < this.mScoreNeeded; i++)
 			{
-				var a = startNumber - 1;	
-				a = a + i;	
-				var b = parseInt(startNumber + i); 
-				var c = startNumber + 1;	
-				c = c + i;	
+				var a = 0;
+				var b = 0;
+				var c = 0;
+				correctAnswerLetter = Math.floor(Math.random()*3);	
+				correctAnswer = parseInt(startNumber + i); 
+				incorrectAnswerStart = correctAnswer - 3; 
+				while (a == b || a == c || b == c)
+				{	
+					if (correctAnswerLetter == 0)
+					{
+						a = correctAnswer; 
+						b = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						c = incorrectAnswerStart + Math.floor(Math.random()*6);	
+					}	
+					if (correctAnswerLetter == 1)
+					{
+						a = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						b = correctAnswer; 
+						c = incorrectAnswerStart + Math.floor(Math.random()*6);	
+					}	
+					if (correctAnswerLetter == 2)
+					{
+						a = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						b = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						c = correctAnswer; 
+					}	
+				}	
 				question = new Question('What comes next after ' + parseInt( parseInt(startNumber - 1)  + i) ,'' + parseInt(startNumber + i));  
 				question.mAnswerPool.push(a);
 				question.mAnswerPool.push(b);
 				question.mAnswerPool.push(c);
 				this.mQuiz.mQuestionArray.push(question);
-				question.mRandomChoices = true;
 			}
 		}
  		if (this.mApplication.mLevel == 15)
@@ -95,7 +116,6 @@ Extends: MultipleChoicePad,
                                 question.mAnswerPool.push(b);
                                 question.mAnswerPool.push(c);
                                 this.mQuiz.mQuestionArray.push(question);
-                                question.mRandomChoices = true;
 				startNumber = startNumber + 10;
                         }
                 }
