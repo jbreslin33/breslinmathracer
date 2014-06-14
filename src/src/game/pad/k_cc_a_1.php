@@ -72,7 +72,7 @@ Extends: MultipleChoicePad,
 				correctAnswerLetter = Math.floor(Math.random()*3);	
 				correctAnswer = parseInt(startNumber + i); 
 				incorrectAnswerStart = correctAnswer - 3; 
-				while (a == b || a == c || b == c)
+				while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
 				{	
 					if (correctAnswerLetter == 0)
 					{
