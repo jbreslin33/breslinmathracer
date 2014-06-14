@@ -6,69 +6,69 @@ Extends: NumberPad,
 	initialize: function(application)
 	{
        		this.parent(application);
-                this.mDecimalAnswer = 0;
 		
 	},
 
-	showCorrectAnswerEnter: function()
+	createNumQuestion: function()
         {
-		this.parent();
-                //this.mShapeArray[1].setPosition(200,200);
-		this.mShapeArray[1].setSize(250,100);
+                //question
+                this.mNumQuestion = new Shape(225,50,150,95,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+        },
+
+	//showCorrectAnswer
+        showCorrectAnswerEnter: function()
+        {
+                this.parent();
+
+                this.mShapeArray[1].setSize(265,100);
+                this.mShapeArray[1].setPosition(180,95);
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + '<br><br> Answer: ' + this.mQuiz.getQuestion().getAnswer();
+
+             
+                //move dont forget
+               // this.mShapeArray[8].setVisibility(false);
+               // this.mShapeArray[9].setVisibility(false);
         },
 
 	firstTimeExecute: function()
         {
 		
-                if (this.mUserAnswer != '')
+             if (this.mUserAnswer != '')
+	     {
+
+		var str = '';
+		var res = '';
+		var whole;
+		var frac;
+		var res2;
+		var decimal;
+
+		frac = '' + this.mUserAnswer;
+		res2 = frac.split("/");
+
+		if (res2.length == 1)
 		{
-
-			var str = '';
-			var res = '';
-			var whole;
-			var frac;
-			var res2;
-			var decimal;
-
-			console.log('' + this.mUserAnswer);
-
-			str = '' + this.mUserAnswer;
-			res = str.split(" ");
-
-			if (res.length == 1)
-			{
-				res[1] = '0/1';
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			this.mUserAnswer = (whole + decimal) * 1.0;
-			//console.log('whole:' + whole);
-			//console.log('decimal:' + decimal);
-			//console.log(this.mUserAnswer);
-
-			str = this.mQuiz.getQuestion().mAnswerArray[0];
-			res = str.split(" ");
-
-			if (res.length == 1)
-			{
-				res[1] = '999/888';
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-			decimal = res2[0]/res2[1];
-			this.mDecimalAnswer = (whole + decimal) * 1.0;
-			
+			res2[1] = '1';
 		}
-		var correct = false;
+
+		decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+		this.mUserAnswer = decimal * 1.0;
+
+		str = this.mQuiz.getQuestion().mAnswerArray[0];
+		res2 = str.split("/");
+
+		if (res2.length == 1)
+		{
+			res2[1] = '1';
+		}
+
+		decimal = 1.0 * res2[0]/res2[1];
+		this.mDecimalAnswer = decimal * 1.0;
+	     }
+	     var correct = false;
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
@@ -101,14 +101,7 @@ Extends: NumberPad,
                 }
 	},
 
-	createNumQuestion: function()
-        {
-                //question
-                this.mNumQuestion = new Shape(170,50,195,95,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
-                this.mNumQuestion.mCollidable = false;
-                this.mNumQuestion.mCollisionOn = false;
-        },
+
   
 
 	createQuestions: function()
@@ -130,21 +123,15 @@ Extends: NumberPad,
 
 		var question;
 		var answer;
-		var diff = 0;
 		
 		this.mQuiz.resetQuestionArray();
 			
 
-		 for (s = 0; s < this.mScoreNeeded; s++)
+		 for (s = 0; s < this.mScoreNeeded/2; s++)
 		 {		
 
-		    rand = Math.floor((Math.random()*2));
-
-	            if(rand == 0)
-		    {
-
 			// get bottom number
-			varB = 4 + Math.floor(Math.random()*9);
+			varB = 6 + Math.floor(Math.random()*22);
 
 			// get top number
 			max = Math.floor(varB/2);
@@ -153,73 +140,70 @@ Extends: NumberPad,
 			varC = 1 + Math.floor((Math.random()*max));
 			varD = varB;
 
-			answerFrac = varA + varC;
-			//answerFrac = '' + answerFrac + '/' + varD;
-			answerFracString = '' + answerFrac + '/' + varD;
-			answerFrac = answerFrac/varD;
+			answer = varA + varC;
+			answer = '' + answer + '/' + varD;
+
+			rand = Math.floor(Math.random()*4);
+
+			if(rand == 0)
+			{			
+			question = new Question('Tammy filled a bucket with ' + varA + '/' +  varB + ' of a gallon of water. Later, she poured ' + varC + '/' +  varD + ' of a gallon of water into the bucket. How many gallons of water are in the bucket?', '' + answer);
+			}
+			if(rand == 1)
+			{			
+			question = new Question('John drove his car ' + varA + '/' +  varB + ' of a mile and stopped at a gas station. Then, he drove ' + varC + '/' +  varD + ' of a mile to his house. How many miles did he drive altogether?', '' + answer);
+			}
+			if(rand == 2)
+			{			
+			question = new Question('Katie went to the salon and had ' + varA + '/' +  varB + ' of an inch of hair cut off. The next day she went back and asked for another ' + varC + '/' +  varD + ' of an inch to be cut off. How many inches of hair did she have cut off in all?', '' + answer);
+			}
+			if(rand == 3)
+			{			
+			question = new Question('Of the pies that Mom and Pops Pie Shop sold last month, ' + varA + '/' +  varB + ' were blueberry pies and ' + varC + '/' +  varD + ' were blackberry pies. What fraction of the pies sold were either blueberry or blackberry?', '' + answer);
+			}
 			
+                	this.mQuiz.mQuestionArray.push(question);
+                 }
 
-			wholeA = 1 + Math.floor(Math.random()*9);
-			wholeB = 1 + Math.floor(Math.random()*9);
 
-			answerWhole = wholeA + wholeB;
-
-			//answerTotal = '' + answerWhole + ' ' + answerFrac;
-			answerTotal = answerWhole + answerFrac;
-			this.mDecimalAnswer = answerTotal;
-			answerTotalString = '' + answerWhole + ' ' + answerFracString;
-
-			answer1 = answerTotal;
-
-			mixA = '' + wholeA + ' ' + varA + '/' +  '' + varB;
-			mixB = '' + wholeB + ' ' + varC + '/' +  '' + varD;
-
-			question = new Question('' + mixA + ' + ' +  mixB + ' =', '' + answerTotalString);
-
-		     }
-		     else
-		     {
+		 for (s = 0; s < this.mScoreNeeded/2; s++)
+		 {		
 
 			// get bottom number
-			varB = 4 + Math.floor(Math.random()*9);
+			varB = 6 + Math.floor(Math.random()*22);
 
 			// get top number
-			max = varB;
-
-			varC = 1 + Math.floor((Math.random()*(max-1)));
-			varA = varC + 1 + Math.floor((Math.random()*(max - varC - 1)));
+			varA = 2 + Math.floor(Math.random()*(varB-2));
+			
+			varC = 1 + Math.floor(Math.random()*(varA-1));
+			//1 + Math.floor((Math.random()*max));
 			varD = varB;
 
-			answerFrac = varA - varC;
-			//answerFrac = '' + answerFrac + '/' + varD;
-			answerFracString = '' + answerFrac + '/' + varD;
-			answerFrac = answerFrac/varD;
+			answer = varA - varC;
+			answer = '' + answer + '/' + varD;
+				
+			rand = Math.floor(Math.random()*4);
+
+			if(rand == 0)
+			{			
+			question = new Question('Bobby filled a bucket with ' + varA + '/' +  varB + ' of a gallon of water. Later, he poured out ' + varC + '/' +  varD + ' of a gallon of the water. How much water is in the bucket?', '' + answer);
+
+			}
+			if(rand == 1)
+			{			
+			question = new Question('At the market, Vicky bought ' + varA + '/' +  varB + ' of a pound of red apples and ' + varC + '/' +  varD + ' of a pound of green apples. How many more pounds of red apples did Vicky purchase?', '' + answer);
+			}
+			if(rand == 2)
+			{			
+			question = new Question('Planet X is ' + varA + '/' +  varB + ' of a light-year away from Earth. Planet Y is ' + varC + '/' +  varD + ' of a light-year away from Earth. How many light years farther away from earth is Planet X than Planet Y?', '' + answer);
+			}
+			if(rand == 3)
+			{			
+			question = new Question('Judy bought ' + varA + '/' +  varB + ' pounds of grapes. She gave ' + varC + '/' +  varD + ' of a pound to her sister. How many pounds of grapes did she have left?', '' + answer);
+			}
+
 			
-			wholeB = 1 + Math.floor(Math.random()*9);
-			wholeA = wholeB + 1 + Math.floor(Math.random()*(9 - wholeB));
-
-			answerWhole = wholeA - wholeB;
-
-			//answerTotal = '' + answerWhole + ' ' + answerFrac;
-			answerTotal = answerWhole + answerFrac;
-			this.mDecimalAnswer = answerTotal;
-			answerTotalString = '' + answerWhole + ' ' + answerFracString;
-
-			answer1 = answerTotal;
-
-			mixA = '' + wholeA + ' ' + varA + '/' +  '' + varB;
-			mixB = '' + wholeB + ' ' + varC + '/' +  '' + varD;
-
-			question = new Question('' + mixA + ' - ' +  mixB + ' =', '' + answerTotalString);
-
-
-		     }
-			//console.log(answerTotal);
-			
-
                 	this.mQuiz.mQuestionArray.push(question);
-
-                                       
                  }
 			
 
@@ -227,6 +211,6 @@ Extends: NumberPad,
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-               // this.mQuiz.randomize(30);
+                this.mQuiz.randomize(40);
 	}
 });
