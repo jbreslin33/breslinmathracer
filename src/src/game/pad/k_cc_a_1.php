@@ -140,8 +140,6 @@ Extends: MultipleChoicePad,
                                 question.mAnswerPool.push(c);
                                 this.mQuiz.mQuestionArray.push(question);
                         }
-
-                        
                 }
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
