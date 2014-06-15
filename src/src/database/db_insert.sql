@@ -142,5 +142,7 @@ insert into learning_standards (id,ref_id,progression,levels,standard) values ('
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.c.6','4.nf.c.6',417,10,' Use decimal notation for fractions with denominators 10 or 100.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.c.7','4.nf.c.7',418,10,' Compare two decimals to hundredths by reasoning about their size. Recognize that comparisons are valid only when the two decimals refer to the same whole. Record the results of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual model.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.b.3d','4.nf.b.3d',419,10,'Solve word problems involving addition and subtraction of fractions referring to the same whole and having like denominators, e.g., by using visual fraction models and equations to represent the problem.');
+insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.nf.b.4c','4.nf.b.4c',420,10,'Solve word problems involving multiplication of a fraction by a whole number, e.g., by using visual fraction models and equations to represent the problem.');
+
 
 
