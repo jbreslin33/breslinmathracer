@@ -193,6 +193,7 @@
 <script type="text/javascript" src="/src/game/pad/4_nf_b_3d.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_b_4a.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_b_4b.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_nf_b_4c.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_c_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_c_7.php"></script>

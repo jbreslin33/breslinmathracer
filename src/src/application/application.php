@@ -2021,6 +2021,19 @@ var Application = new Class(
                                	this.mGame = new g4_nf_b_4b(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '4.nf.b.4c')
+		{ 
+             		if (this.mGameName != "g4_nf_b_4c")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nf_b_4c";
+                               	this.mGame = new g4_nf_b_4c(APPLICATION);
+			}	
+		}
 		if (this.mRef_id == '4.nf.c.5')
 		{ 
              		if (this.mGameName != "g4_nf_c_5")
