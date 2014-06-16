@@ -48,6 +48,7 @@ Extends: MultipleChoicePad,
 
 	makeTypeA: function()
 	{
+		fontSize = "10px";
 		question = new Question('There are 9 blue pencils in a desk drawer. There are 8 more red pencils than blue pencils, and there are twice as many green pencils as red pencils. How many pencils are there altogether? What steps should be taken to find the correct answer?','a'); 
  		question.mAnswerPool.push('a');
                	question.mAnswerPool.push('b');
@@ -56,10 +57,47 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.mQuestionArray.push(question);
                	
-		//1 :4
-                shape = new Shape(30,5,655,275,this,"","","");
-                shape.setText('i am a shape');
+		//1
+                shape = new Shape(350,5,15,220,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find number of red pencils: 9 + 8 = 17');
 		question.mShapeArray.push(shape);
+                shape = new Shape(350,5,15,230,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find number of green pencils: 2 + 7 = 9');
+		question.mShapeArray.push(shape);
+                shape = new Shape(350,5,15,240,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find total number of pencils: 9 + 17 + 9 = 35');
+		question.mShapeArray.push(shape);
+
+		//2
+                shape = new Shape(250,5,275,220,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find number of red pencils: 9 + 8 = 17');
+                question.mShapeArray.push(shape);
+                shape = new Shape(250,5,275,230,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find number of green pencils: 2 + 7 = 9');
+                question.mShapeArray.push(shape);
+                shape = new Shape(250,5,275,240,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find total number of pencils: 9 + 17 + 9 = 35');
+                question.mShapeArray.push(shape);
+
+	        //3
+                shape = new Shape(250,5,525,220,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find number of red pencils: 9 + 8 = 17');
+                question.mShapeArray.push(shape);
+                shape = new Shape(250,5,525,230,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find number of green pencils: 2 + 7 = 9');
+                question.mShapeArray.push(shape);
+                shape = new Shape(250,5,525,240,this,"","","");
+		shape.setFontSize(fontSize);
+                shape.setText('Find total number of pencils: 9 + 17 + 9 = 35');
+                question.mShapeArray.push(shape);
 	},	
 
 	createQuestions: function()
