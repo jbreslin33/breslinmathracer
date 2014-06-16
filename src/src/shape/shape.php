@@ -169,6 +169,11 @@ Extends: Polygon,
 		}
 	},
 
+	setFontSize: function(s)
+	{
+		this.mDiv.mDiv.style.fontSize = s;
+	},
+
 	/********* COLOR ******************/
 	setBackgroundColor: function(c)
 	{
