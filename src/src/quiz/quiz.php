@@ -16,10 +16,20 @@ var Quiz = new Class(
 
 	destructor: function()
 	{
+		this.destroyShapes();
 		this.resetQuestionArray();		
 		this.resetQuestionPoolArray();		
 		this.resetAnswerPool();		
 	},	
+
+        destroyShapes: function()
+        {
+                //shapes and array
+		for (i = 0; i < this.mQuestionArray.length; i++)
+		{
+			this.mQuestionArray[i].destroyShapes();
+		}
+        },
 
 	resetQuestionArray: function()
 	{
