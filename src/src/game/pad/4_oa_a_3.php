@@ -53,9 +53,13 @@ Extends: MultipleChoicePad,
                	question.mAnswerPool.push('b');
                 question.mAnswerPool.push('c');
 
-		question.mShapeArray.push(this.mShapeArray[parseInt(0 + this.mTotalGuiBars + this.mTotalInputBars)]);
 
                 this.mQuiz.mQuestionArray.push(question);
+               	
+		//1 :4
+                shape = new Shape(30,5,655,275,this,"","","");
+                shape.setText('i am a shape');
+		question.mShapeArray.push(shape);
 	},	
 
 	createQuestions: function()
@@ -72,12 +76,5 @@ Extends: MultipleChoicePad,
 	createWorld: function()
 	{
 		this.parent();
-
-               	//1 :4
-                shape = new Shape(30,5,655,275,this,"","","");
-                this.mShapeArray.push(shape);
-                shape.setText('i am a shape');
-
 	}
-
 });
