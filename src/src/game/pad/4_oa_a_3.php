@@ -41,12 +41,25 @@ Extends: MultipleChoicePad,
                 this.mShapeArray[1].setPosition(200,200);
         },
 
+	makeTypeA: function()
+	{
+		question = new Question('There are 9 blue pencils in a desk drawer. There are 8 more red pencils than blue pencils, and there are twice as many green pencils as red pencils. How many pencils are there altogether?','a'); 
+ 		question.mAnswerPool.push('a');
+               	question.mAnswerPool.push('b');
+                question.mAnswerPool.push('c');
+
+                this.mQuiz.mQuestionArray.push(question);
+	},	
+
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeA();	
+
+/*
 		if (this.mApplication.mLevel < 15)
 		{		
                 	this.setScoreNeeded(this.mApplication.mLevel);
@@ -89,6 +102,7 @@ Extends: MultipleChoicePad,
 				this.mQuiz.mQuestionArray.push(question);
 			}
 		}
+*/
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
