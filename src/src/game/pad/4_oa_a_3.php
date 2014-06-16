@@ -13,19 +13,24 @@ Extends: MultipleChoicePad,
         createNumQuestion: function()
         {
                 this.parent();
-
-                //question
-                this.mNumQuestion.setPosition(165,135);
-                this.mNumQuestion.setSize(225,20);
+                this.mNumQuestion.setSize(650,200);
+                this.mNumQuestion.setPosition(350,140);
         },
 
-	//showCorrectAnswer
+        createInput: function()
+        {
+                this.parent();
+                this.mButtonA.setPosition(105,200);
+                this.mButtonB.setPosition(385,200);
+                this.mButtonC.setPosition(660,200);
+        },
+
+        //showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(200,200);
-   		this.mShapeArray[1].setPosition(200,200);
+                this.mShapeArray[1].setPosition(100,80);
         },
 
         //outOfTime
@@ -43,7 +48,7 @@ Extends: MultipleChoicePad,
 
 	makeTypeA: function()
 	{
-		question = new Question('There are 9 blue pencils in a desk drawer. There are 8 more red pencils than blue pencils, and there are twice as many green pencils as red pencils. How many pencils are there altogether?','a'); 
+		question = new Question('There are 9 blue pencils in a desk drawer. There are 8 more red pencils than blue pencils, and there are twice as many green pencils as red pencils. How many pencils are there altogether? What steps should be taken to find the correct answer?','a'); 
  		question.mAnswerPool.push('a');
                	question.mAnswerPool.push('b');
                 question.mAnswerPool.push('c');
