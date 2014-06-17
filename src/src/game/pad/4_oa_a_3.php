@@ -119,18 +119,21 @@ Extends: MultipleChoicePad,
 		x = parseInt(a + (a * b) + c - d);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
                 if (randomChoice == 0)
                 {
                         question = new Question('John had ' + a + ' footballs. His coach gave him ' + b + ' times that amount after practice. Then he found ' + c + ' more in his backyard. He gave ' + d + ' footballs to his friend. How many footballs does John have left?',x);
-                        question.mAnswerPool.push(x);
-                        question.mAnswerPool.push(x - (Math.floor(Math.random()*5)+1));
-                        question.mAnswerPool.push(x + (Math.floor(Math.random()*5)+1));
                 }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Steve had ' + a + ' blocks. His parent gave him ' + b + ' times that amount. Then he found ' + c + ' more while walking around. He gave ' + d + ' blocks to his friend. How many blocks does Steve have left?',x);
+		}
+                question.mAnswerPool.push(x);
+                question.mAnswerPool.push(x - (Math.floor(Math.random()*5)+1));
+                question.mAnswerPool.push(x + (Math.floor(Math.random()*5)+1));
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-
 
 	createQuestions: function()
         {
