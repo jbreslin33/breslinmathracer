@@ -107,7 +107,7 @@ Extends: MultipleChoicePad,
 
 		if (randomChoice == 0)
 		{	
-			question = new Question('A teacher had 150 stickers. She gave each student 3 stickers. If there are 4 dozen students in the class, will there be any stickers left over?','Yes');
+			question = new Question('A teacher had ' + a + ' stickers. She gave each student ' + b + ' stickers. If there are ' + c + ' dozen students in the class, will there be any stickers left over?','Yes');
 			if (x == a)	 
 			{
 				question.setAnswer('No',0);
