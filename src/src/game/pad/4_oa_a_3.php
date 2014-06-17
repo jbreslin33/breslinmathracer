@@ -29,8 +29,8 @@ Extends: MultipleChoicePad,
         showCorrectAnswerEnter: function()
         {
                 this.parent();
-
-                this.mShapeArray[1].setPosition(100,80);
+                this.mShapeArray[1].setSize(650,200);
+                this.mShapeArray[1].setPosition(350,140);
         },
 
         //outOfTime
