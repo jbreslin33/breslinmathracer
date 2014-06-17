@@ -94,15 +94,28 @@ Extends: MultipleChoicePad,
 	
 	makeTypeD: function()
 	{
+		question = '';
+                
+		a = Math.floor(Math.random()*101)+98;
+                b = Math.floor(Math.random()*8)+2;
+                c = Math.floor(Math.random()*8)+2;
+
+		x = parseInt( a - (b * c * 12)  );
+		
 		randomChoice = Math.floor(Math.random()*2);
 		randomChoice = 0;
-		question = '';
+
 		if (randomChoice == 0)
 		{	
 			question = new Question('A teacher had 150 stickers. She gave each student 3 stickers. If there are 4 dozen students in the class, will there be any stickers left over?','Yes');
-			question.mAnswerPool.push('Yes');
-			question.mAnswerPool.push('No');
+			if (x == a)	 
+			{
+				question.setAnswer('No',0);
+			}
 		}
+
+		question.mAnswerPool.push('Yes');
+		question.mAnswerPool.push('No');
                 this.mQuiz.mQuestionArray.push(question);
 		question.mRandomChoices = true;
 	},
@@ -140,8 +153,8 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeE();	
 		this.makeTypeD();	
+		this.makeTypeE();	
 		this.makeTypeC();	
 		this.makeTypeB();	
 		this.makeTypeA();	
