@@ -108,12 +108,12 @@ Extends: MultipleChoicePad,
 		if (randomChoice == 0)
 		{	
 			question = new Question('A teacher had ' + a + ' stickers. She gave each student ' + b + ' stickers. If there are ' + c + ' dozen students in the class, will there be any stickers left over?','Yes');
-			if (x == a)	 
-			{
-				question.setAnswer('No',0);
-			}
 		}
 
+		if (x == a)	 
+		{
+			question.setAnswer('No',0);
+		}
 		question.mAnswerPool.push('Yes');
 		question.mAnswerPool.push('No');
                 this.mQuiz.mQuestionArray.push(question);
