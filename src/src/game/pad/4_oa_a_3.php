@@ -7,7 +7,7 @@ Extends: MultipleChoicePad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(1);
+		this.setScoreNeeded(2);
 	},
 
         createNumQuestion: function()
@@ -97,7 +97,7 @@ Extends: MultipleChoicePad,
 		}
 		if (randomChoice == 1)
 		{
-  question = new Question('There are 9 blue fish in aquarium. There are 8 more red fish than blue fish, and there are twice as many green fish as red fish. How many fish are there total in the aquarium? What steps should be taken to find the correct answer?','b');
+  			question = new Question('There are 9 blue fish in aquarium. There are 8 more red fish than blue fish, and there are twice as many green fish as red fish. How many fish are there total in the aquarium? What steps should be taken to find the correct answer?','b');
                         question.mAnswerPool.push('a');
                         question.mAnswerPool.push('b');
                         question.mAnswerPool.push('c');
@@ -148,6 +148,18 @@ Extends: MultipleChoicePad,
 
 		}
 	},	
+	
+	makeTypeB: function()
+	{
+		question = new Question('At a party there were 115 total people. There were 5 times as many people at the party as there were women at the party. There were 2 times as many men at the party as women. The remaining people at the party were all children. How many children were at the party? Which step cannot be used to solve the problem?','115 - 23 = 92 children'); 
+		question.mAnswerPool.push('115 - 23 = 92 children');
+		question.mAnswerPool.push('115 / 5 = 23 children');
+		question.mAnswerPool.push('23 x 2 = 46 men');
+		question.randomChoices = true;	
+	
+                this.mQuiz.mQuestionArray.push(question);
+		
+	},
 
 	createQuestions: function()
         {
@@ -155,6 +167,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeB();	
 		this.makeTypeA();	
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
