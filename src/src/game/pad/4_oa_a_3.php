@@ -101,11 +101,15 @@ Extends: MultipleChoicePad,
 		x = parseInt( a - (b * c * 12)  );
 		
 		randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
+		randomChoice = 1;
 
 		if (randomChoice == 0)
 		{	
 			question = new Question('A teacher had ' + a + ' stickers. She gave each student ' + b + ' stickers. If there are ' + c + ' dozen students in the class, will there be any stickers left over?','Yes');
+		}
+		if (randomChoice == 1)
+		{	
+			question = new Question('A girl brought ' + a + ' cupcakes to her birthday party. She gave each kid at her party ' + b + ' cupcakes. If there are ' + c + ' dozen kids at her party, will there be any cupcakes left over?','Yes');
 		}
 
 		if (x == a)	 
