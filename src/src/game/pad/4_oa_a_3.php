@@ -106,6 +106,23 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		question.mRandomChoices = true;
 	},
+    
+	makeTypeE: function()
+        {
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+                question = '';
+                if (randomChoice == 0)
+                {
+                        question = new Question('John had 11 footballs. His coach gave him twice that amount after practice. Then he found 4 more in his backyard. He gave 6 footballs to his friend. How many footballs does John have left?','31');
+                        question.mAnswerPool.push('31');
+                        question.mAnswerPool.push('33');
+                        question.mAnswerPool.push('9');
+                }
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
 
 	createQuestions: function()
         {
@@ -113,6 +130,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeE();	
 		this.makeTypeD();	
 		this.makeTypeC();	
 		this.makeTypeB();	
