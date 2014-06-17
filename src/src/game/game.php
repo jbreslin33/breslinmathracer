@@ -193,12 +193,6 @@ var Game = new Class(
                         this.mShapeArray[i].setVisibility(false);
                 }
 
-		//what about question shapes that are not in game array?
-                for (i = 0; i < this.mQuiz.mQuestionArray.length; i++)
-		{
-			this.mQuiz.mQuestionArray[i].hideShapes();
-		}
-
                 //if there is a quiz
 		if (this.mQuiz)
 		{

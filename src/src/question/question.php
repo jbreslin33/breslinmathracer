@@ -31,19 +31,7 @@ var Question = new Class(
         
 		//randomChoices
 		this.mRandomChoices = false;
-	},
-
-        destroyShapes: function()
-        {
-                //shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].destructor();
-                        this.mShapeArray[i] = 0;
-                }
-                this.mShapeArray = 0;
-                this.mShapeArray = new Array();
-        },
+},
 
 	setChoice: function(letter,choice)
 	{

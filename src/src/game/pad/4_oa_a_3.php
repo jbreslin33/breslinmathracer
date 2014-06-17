@@ -7,162 +7,49 @@ Extends: MultipleChoicePad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(2);
+		this.setScoreNeeded(1);
 	},
 
         createNumQuestion: function()
         {
                 this.parent();
-                this.mNumQuestion.setSize(650,200);
-                this.mNumQuestion.setPosition(350,140);
+
+                //question
+                this.mNumQuestion.setPosition(165,135);
+                this.mNumQuestion.setSize(225,20);
         },
 
-        createInput: function()
-        {
-                this.parent();
-                this.mButtonA.setPosition(125,280);
-                this.mButtonB.setPosition(385,280);
-                this.mButtonC.setPosition(640,280);
-                
-		this.mButtonA.setSize(225,220);
-		this.mButtonB.setSize(225,220);
-		this.mButtonC.setSize(225,220);
-        },
-
-        //showCorrectAnswer
+	//showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
                 this.parent();
-		
-		//question
-                this.mShapeArray[1].setSize(650,200);
-                this.mShapeArray[1].setPosition(350,140);
-               
-		//dont forget 
-		this.mShapeArray[9].setSize(50,50);
-                this.mShapeArray[9].setPosition(350,170);
+
+                this.mShapeArray[1].setSize(200,200);
+   		this.mShapeArray[1].setPosition(200,200);
+        },
+
+        //outOfTime
+        outOfTimeEnter: function()
+        {
+                this.parent();
+
+		this.setScoreNeeded(1);
+
+                this.mShapeArray[0].setPosition(400,50);
+
+                this.mShapeArray[1].setSize(200,200);
+                this.mShapeArray[1].setPosition(200,200);
         },
 
 	makeTypeA: function()
 	{
-		fontSize = "10px";
-	 	randomChoice = Math.floor(Math.random()*2);
+		question = new Question('There are 9 blue pencils in a desk drawer. There are 8 more red pencils than blue pencils, and there are twice as many green pencils as red pencils. How many pencils are there altogether?','a'); 
+ 		question.mAnswerPool.push('a');
+               	question.mAnswerPool.push('b');
+                question.mAnswerPool.push('c');
 
-		if (randomChoice == 0)
-		{
-			question = new Question('There are 9 blue fish in aquarium. There are 8 more red fish than blue fish, and there are twice as many green fish as red fish. How many fish are there total in the aquarium? What steps should be taken to find the correct answer?','a'); 
- 			question.mAnswerPool.push('a');
-               		question.mAnswerPool.push('b');
-                	question.mAnswerPool.push('c');
-                	this.mQuiz.mQuestionArray.push(question);
-               	
-			//1
-                	shape = new Shape(350,5,15,220,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find number of red fish: 9 + 8 = 17');
-			question.mShapeArray.push(shape);
-                	shape = new Shape(350,5,15,230,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find number of green fish: 2 x 17 = 34');
-			question.mShapeArray.push(shape);
-                	shape = new Shape(350,5,15,240,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find total number of fish: 9 + 17 + 34 = 60');
-			question.mShapeArray.push(shape);
-
-			//2
-                	shape = new Shape(250,5,275,220,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find number of red fish: 9 + 8 = 17');
-                	question.mShapeArray.push(shape);
-                	shape = new Shape(250,5,275,230,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find number of green fish: 2 + 7 = 9');
-                	question.mShapeArray.push(shape);
-                	shape = new Shape(250,5,275,240,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find total number of fish: 9 + 17 + 9 = 35');
-                	question.mShapeArray.push(shape);
-
-	        	//3
-                	shape = new Shape(250,5,525,220,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find number of green fish: 2 + 7 = 9');
-                	question.mShapeArray.push(shape);
-                	shape = new Shape(250,5,525,230,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find number of red fish: 9 + 8 = 17');
-                	question.mShapeArray.push(shape);
-                	shape = new Shape(250,5,525,240,this,"","","");
-			shape.setFontSize(fontSize);
-                	shape.setText('Find total number of fish: 9 + 17 + 9 = 35');
-                	question.mShapeArray.push(shape);
-		}
-		if (randomChoice == 1)
-		{
-  			question = new Question('There are 9 blue fish in aquarium. There are 8 more red fish than blue fish, and there are twice as many green fish as red fish. How many fish are there total in the aquarium? What steps should be taken to find the correct answer?','b');
-                        question.mAnswerPool.push('a');
-                        question.mAnswerPool.push('b');
-                        question.mAnswerPool.push('c');
-                        this.mQuiz.mQuestionArray.push(question);
-
-                        //1
-                        shape = new Shape(250,5,15,220,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find number of red fish: 9 + 8 = 17');
-                        question.mShapeArray.push(shape);
-                        shape = new Shape(250,5,15,230,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find number of green fish: 2 + 7 = 9');
-                        question.mShapeArray.push(shape);
-                        shape = new Shape(250,5,15,240,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find total number of fish: 9 + 17 + 9 = 35');
-                        question.mShapeArray.push(shape);
-
-                        //2
-                        shape = new Shape(350,5,275,220,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find number of red fish: 9 + 8 = 17');
-                        question.mShapeArray.push(shape);
-                        shape = new Shape(350,5,275,230,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find number of green fish: 2 x 17 = 34');
-                        question.mShapeArray.push(shape);
-                        shape = new Shape(350,5,275,240,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find total number of fish: 9 + 17 + 34 = 60');
-                        question.mShapeArray.push(shape);
-
-
-                        //3
-                        shape = new Shape(250,5,525,220,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find number of green fish: 2 + 7 = 9');
-                        question.mShapeArray.push(shape);
-                        shape = new Shape(250,5,525,230,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find number of red fish: 9 + 8 = 17');
-                        question.mShapeArray.push(shape);
-                        shape = new Shape(250,5,525,240,this,"","","");
-                        shape.setFontSize(fontSize);
-                        shape.setText('Find total number of fish: 9 + 17 + 9 = 35');
-                        question.mShapeArray.push(shape);
-
-		}
-	},	
-	
-	makeTypeB: function()
-	{
-		question = new Question('At a party there were 115 total people. There were 5 times as many people at the party as there were women at the party. There were 2 times as many men at the party as women. The remaining people at the party were all children. How many children were at the party? Which step cannot be used to solve the problem?','115 - 23 = 92 children'); 
-		question.mAnswerPool.push('115 - 23 = 92 children');
-		question.mAnswerPool.push('115 / 5 = 23 children');
-		question.mAnswerPool.push('23 x 2 = 46 men');
-		question.randomChoices = true;	
-	
                 this.mQuiz.mQuestionArray.push(question);
-		
-	},
+	},	
 
 	createQuestions: function()
         {
@@ -170,14 +57,52 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeB();	
 		this.makeTypeA();	
 
-		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
-	},
+/*
+		if (this.mApplication.mLevel < 15)
+		{		
+                	this.setScoreNeeded(this.mApplication.mLevel);
 
-	createWorld: function()
-	{
-		this.parent();
+			var startNumber = Math.floor(Math.random()*99);	
+
+			for (i = 0; i < this.mScoreNeeded; i++)
+			{
+				var a = 0;
+				var b = 0;
+				var c = 0;
+				correctAnswerLetter = Math.floor(Math.random()*3);	
+				correctAnswer = parseInt(startNumber + i); 
+				incorrectAnswerStart = correctAnswer - 3; 
+				while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+				{	
+					if (correctAnswerLetter == 0)
+					{
+						a = correctAnswer; 
+						b = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						c = incorrectAnswerStart + Math.floor(Math.random()*6);	
+					}	
+					if (correctAnswerLetter == 1)
+					{
+						a = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						b = correctAnswer; 
+						c = incorrectAnswerStart + Math.floor(Math.random()*6);	
+					}	
+					if (correctAnswerLetter == 2)
+					{
+						a = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						b = incorrectAnswerStart + Math.floor(Math.random()*6);	
+						c = correctAnswer; 
+					}	
+				}	
+				question = new Question('What comes next after ' + parseInt( parseInt(startNumber - 1)  + i) ,'' + parseInt(startNumber + i));  
+				question.mAnswerPool.push(a);
+				question.mAnswerPool.push(b);
+				question.mAnswerPool.push(c);
+				this.mQuiz.mQuestionArray.push(question);
+			}
+		}
+*/
+		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
 });
