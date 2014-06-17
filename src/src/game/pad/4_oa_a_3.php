@@ -99,7 +99,7 @@ Extends: MultipleChoicePad,
 		question = '';
 		if (randomChoice == 0)
 		{	
-			question = new Question('The teacher had 150 stickers. She gave each student 3 stickers. If there are 4 dozen students in the class, will there be any stickers left over?','Yes');
+			question = new Question('A teacher had 150 stickers. She gave each student 3 stickers. If there are 4 dozen students in the class, will there be any stickers left over?','Yes');
 			question.mAnswerPool.push('Yes');
 			question.mAnswerPool.push('No');
 		}
@@ -115,11 +115,10 @@ Extends: MultipleChoicePad,
                 b = Math.floor(Math.random()*8)+2;
                 c = Math.floor(Math.random()*8)+2;
                 d = Math.floor(Math.random()*8)+2;
-
 		x = parseInt(a + (a * b) + c - d);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
+
                 if (randomChoice == 0)
                 {
                         question = new Question('John had ' + a + ' footballs. His coach gave him ' + b + ' times that amount after practice. Then he found ' + c + ' more in his backyard. He gave ' + d + ' footballs to his friend. How many footballs does John have left?',x);
