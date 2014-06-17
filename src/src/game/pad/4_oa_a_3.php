@@ -76,12 +76,29 @@ Extends: MultipleChoicePad,
 		question.mRandomChoices = true;
 	},
 
+	makeTypeC: function()
+	{
+		randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+		question = '';
+		if (randomChoice == 0)
+		{	
+			question = new Question('Mr. Roache has 24 math students. He divides the class equally into groups of 3 for an assignment. There are 9 ipads in the classroom. Are there enough ipads for each group to use one?','Yes, there will be enough for each group to have one with one ipad left over.');
+			question.mAnswerPool.push('Yes, there will be enough for each group to have one with one ipad left over.');
+			question.mAnswerPool.push('No, Mr. Roache needs one more ipad.');
+			question.mAnswerPool.push('Yes, there will be enough for each group to have one with two unused ipads left over.');
+		}
+                this.mQuiz.mQuestionArray.push(question);
+		question.mRandomChoices = true;
+	},
+
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeC();	
 		this.makeTypeA();	
 		this.makeTypeB();	
 
