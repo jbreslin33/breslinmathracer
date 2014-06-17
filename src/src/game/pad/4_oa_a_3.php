@@ -20,9 +20,13 @@ Extends: MultipleChoicePad,
         createInput: function()
         {
                 this.parent();
-                this.mButtonA.setPosition(105,200);
-                this.mButtonB.setPosition(385,200);
-                this.mButtonC.setPosition(660,200);
+                this.mButtonA.setPosition(125,280);
+                this.mButtonB.setPosition(385,280);
+                this.mButtonC.setPosition(640,280);
+                
+		this.mButtonA.setSize(225,220);
+		this.mButtonB.setSize(225,220);
+		this.mButtonC.setSize(225,220);
         },
 
         //showCorrectAnswer
@@ -37,7 +41,6 @@ Extends: MultipleChoicePad,
 		//dont forget 
 		this.mShapeArray[9].setSize(50,50);
                 this.mShapeArray[9].setPosition(350,170);
-
         },
 
 	makeTypeA: function()
