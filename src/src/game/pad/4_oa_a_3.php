@@ -7,7 +7,7 @@ Extends: MultipleChoicePad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(2);
+		this.setScoreNeeded(4);
 	},
 
         createInput: function()
@@ -91,6 +91,21 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
 		question.mRandomChoices = true;
 	},
+	
+	makeTypeD: function()
+	{
+		randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+		question = '';
+		if (randomChoice == 0)
+		{	
+			question = new Question('The teacher had 150 stickers. She gave each student 3 stickers. If there are 4 dozen students in the class, will there be any stickers left over?','Yes');
+			question.mAnswerPool.push('Yes');
+			question.mAnswerPool.push('No');
+		}
+                this.mQuiz.mQuestionArray.push(question);
+		question.mRandomChoices = true;
+	},
 
 	createQuestions: function()
         {
@@ -98,9 +113,10 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeD();	
 		this.makeTypeC();	
-		this.makeTypeA();	
 		this.makeTypeB();	
+		this.makeTypeA();	
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
