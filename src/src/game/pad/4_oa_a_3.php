@@ -10,13 +10,23 @@ Extends: MultipleChoicePad,
 		this.setScoreNeeded(1);
 	},
 
+        createInput: function()
+        {
+                this.parent();
+                this.mButtonA.setPosition(135,290);
+                this.mButtonB.setPosition(385,290);
+                this.mButtonC.setPosition(635,290);
+                
+		this.mButtonA.setSize(240,220);
+		this.mButtonB.setSize(240,220);
+		this.mButtonC.setSize(240,220);
+        },
+
         createNumQuestion: function()
         {
                 this.parent();
-
-                //question
-                this.mNumQuestion.setPosition(165,135);
-                this.mNumQuestion.setSize(225,20);
+                this.mNumQuestion.setSize(650,200);
+                this.mNumQuestion.setPosition(350,140);
         },
 
 	//showCorrectAnswer
@@ -26,19 +36,6 @@ Extends: MultipleChoicePad,
 
                 this.mShapeArray[1].setSize(200,200);
    		this.mShapeArray[1].setPosition(200,200);
-        },
-
-        //outOfTime
-        outOfTimeEnter: function()
-        {
-                this.parent();
-
-		this.setScoreNeeded(1);
-
-                this.mShapeArray[0].setPosition(400,50);
-
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(200,200);
         },
 
 	makeTypeA: function()
