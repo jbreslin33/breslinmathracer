@@ -34,8 +34,8 @@ Extends: MultipleChoicePad,
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(200,200);
-   		this.mShapeArray[1].setPosition(200,200);
+                this.mShapeArray[1].setSize(650,200);
+   		this.mShapeArray[1].setPosition(350,140);
         },
 
 	makeTypeA: function()
