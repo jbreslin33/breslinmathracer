@@ -153,11 +153,11 @@ Extends: MultipleChoicePad,
         {
                 question = '';
 
-                a = Math.floor(Math.random()*100)+99;
                 b = Math.floor(Math.random()*8)+2;
                 c = Math.floor(Math.random()*8)+2;
                 d = Math.floor(Math.random()*8)+2;
                 e = Math.floor(Math.random()*8)+2;
+                a = (Math.floor(Math.random()*8)+2) + ( (b * c) + d + (e * c) );
                 x = parseInt( a - ( (b * c) + d + (e * c) ) );
 
                 randomChoice = Math.floor(Math.random()*2);
