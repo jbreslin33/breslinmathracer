@@ -109,15 +109,23 @@ Extends: MultipleChoicePad,
     
 	makeTypeE: function()
         {
+                question = '';
+
+                a = Math.floor(Math.random()*8)+2;
+                b = Math.floor(Math.random()*8)+2;
+                c = Math.floor(Math.random()*8)+2;
+                d = Math.floor(Math.random()*8)+2;
+
+		x = parseInt(a + (a * b) + c - d);
+
                 randomChoice = Math.floor(Math.random()*2);
                 randomChoice = 0;
-                question = '';
                 if (randomChoice == 0)
                 {
-                        question = new Question('John had 11 footballs. His coach gave him twice that amount after practice. Then he found 4 more in his backyard. He gave 6 footballs to his friend. How many footballs does John have left?','31');
-                        question.mAnswerPool.push('31');
-                        question.mAnswerPool.push('33');
-                        question.mAnswerPool.push('9');
+                        question = new Question('John had ' + a + ' footballs. His coach gave him ' + b + ' times that amount after practice. Then he found ' + c + ' more in his backyard. He gave ' + d + ' footballs to his friend. How many footballs does John have left?',x);
+                        question.mAnswerPool.push(x);
+                        question.mAnswerPool.push(x - (Math.floor(Math.random()*5)+1));
+                        question.mAnswerPool.push(x + (Math.floor(Math.random()*5)+1));
                 }
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
