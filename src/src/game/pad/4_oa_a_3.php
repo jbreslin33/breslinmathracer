@@ -29,21 +29,15 @@ Extends: MultipleChoicePad,
         showCorrectAnswerEnter: function()
         {
                 this.parent();
+		
+		//question
                 this.mShapeArray[1].setSize(650,200);
                 this.mShapeArray[1].setPosition(350,140);
-        },
+               
+		//dont forget 
+		this.mShapeArray[9].setSize(50,50);
+                this.mShapeArray[9].setPosition(350,170);
 
-        //outOfTime
-        outOfTimeEnter: function()
-        {
-                this.parent();
-
-		this.setScoreNeeded(1);
-
-                this.mShapeArray[0].setPosition(400,50);
-
-                this.mShapeArray[1].setSize(200,200);
-                this.mShapeArray[1].setPosition(200,200);
         },
 
 	makeTypeA: function()
