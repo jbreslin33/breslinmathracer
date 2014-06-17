@@ -95,11 +95,9 @@ Extends: MultipleChoicePad,
 	makeTypeD: function()
 	{
 		question = '';
-                
-		a = Math.floor(Math.random()*101)+98;
                 b = Math.floor(Math.random()*8)+2;
                 c = Math.floor(Math.random()*8)+2;
-
+		a = (b * c * 12) + Math.floor(Math.random()*3);
 		x = parseInt( a - (b * c * 12)  );
 		
 		randomChoice = Math.floor(Math.random()*2);
