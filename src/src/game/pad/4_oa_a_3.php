@@ -266,7 +266,6 @@ Extends: MultipleChoicePad,
 
 		//random number of empty seats...	
 		x = Math.floor((Math.random()*5)+1);  
-		this.log('x:' + x);
 
 		//total students equals classes * (desks per room - empty seats per room)
 		b = parseInt(a * (c - x));
@@ -279,10 +278,15 @@ Extends: MultipleChoicePad,
                         question = new Question('A school has ' + a + ' classrooms and ' + b + ' students in the whole school. Each classroom has ' + c + ' desks. If there are the same number of students in each classroom how many empty desks will be left in each classroom if all the students get their own desk?',x);
                 }
                 question.mAnswerPool.push(x);
-                question.mAnswerPool.push('33');
-                question.mAnswerPool.push('44');
-                //question.mAnswerPool.push( parseInt(x + Math.floor(Math.random()*4) ) );
-                //question.mAnswerPool.push( parseInt(x - Math.floor(Math.random()*4) ) );
+		poolB = 0;
+		poolC = 0;
+		while (x == poolB || x == poolC || poolB == poolC)	
+		{
+			poolB = Math.floor((Math.random()*5)+1); 
+			poolC = Math.floor((Math.random()*5)+1); 
+		}
+                question.mAnswerPool.push(poolB);
+                question.mAnswerPool.push(poolC);
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
