@@ -177,12 +177,22 @@ Extends: MultipleChoicePad,
         {
                 question = '';
 
-                a = Math.floor(Math.random()*20)+2;
-                b = Math.floor(Math.random()*20)+2;
-                c = Math.floor(Math.random()*20)+2;
-                d = Math.floor(Math.random()*8)+2;
-                e = Math.floor(Math.random()*8)+2;
-		x = parseInt( (a + b + c) - (d * e) );
+		a = 0;
+		b = 0;
+		c = 0;
+		d = 0;
+		e = 0;
+		x = 100;
+		
+		while (x > 10 || x < -10)
+		{
+                	a = Math.floor(Math.random()*15)+2;
+                	b = Math.floor(Math.random()*15)+2;
+                	c = Math.floor(Math.random()*15)+2;
+                	d = Math.floor(Math.random()*8)+2;
+                	e = Math.floor(Math.random()*8)+2;
+			x = parseInt( (a + b + c) - (d * e) );
+		}
 
                 randomChoice = Math.floor(Math.random()*2);
                 randomChoice = 0;
