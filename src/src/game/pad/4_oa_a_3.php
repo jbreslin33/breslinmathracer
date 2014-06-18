@@ -271,11 +271,14 @@ Extends: MultipleChoicePad,
 		b = parseInt(a * (c - x));
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
 	
                 if (randomChoice == 0)
                 {
                         question = new Question('A school has ' + a + ' classrooms and ' + b + ' students in the whole school. Each classroom has ' + c + ' desks. If there are the same number of students in each classroom how many empty desks will be left in each classroom if all the students get their own desk?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('For a school trip there  ' + a + ' buses and ' + b + ' students going on the trip. Each bus has ' + c + ' seats. If there are the same number of students on each bus how many empty seats will be left on each bus if all the students get their own seat?',x);
                 }
                 question.mAnswerPool.push(x);
 		poolB = 0;
