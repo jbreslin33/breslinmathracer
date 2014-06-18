@@ -410,6 +410,42 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
+      
+	makeTypeM: function()
+        {
+                question = '';
+
+                //get the containers and slots
+                b = Math.floor(Math.random()*10)+7;
+                c = Math.floor(Math.random()*10)+20;
+
+                //random number of emptys per container...
+                x = Math.floor((Math.random()*20)+1);
+
+                //tally total objects retroactively
+                a = parseInt( (b * c) + x );
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Dave has ' + a + ' decks of game cards. Each deck has ' + b + ' cards in it. He is playing with his ' + c + ' friends and wants to divide of the cards so that everyone has the same amount. If he does this how many cards will be left over?',x);
+                }
+                question.mAnswerPool.push(x);
+                poolB = 0;
+                poolC = 0;
+                while (x == poolB || x == poolC || poolB == poolC)
+                {
+                        poolB = Math.floor((Math.random()*20)+1);
+                        poolC = Math.floor((Math.random()*20)+1);
+                }
+                question.mAnswerPool.push(poolB);
+                question.mAnswerPool.push(poolC);
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
 
 
 	createQuestions: function()
@@ -418,8 +454,8 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeL();	
-		this.makeTypeL();	
+		this.makeTypeM();	
+		this.makeTypeM();	
 		this.makeTypeI();	
 		this.makeTypeI();	
 		this.makeTypeI();	
