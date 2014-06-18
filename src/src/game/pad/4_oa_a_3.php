@@ -101,7 +101,6 @@ Extends: MultipleChoicePad,
 		x = parseInt( a - (b * c * 12)  );
 		
 		randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 1;
 
 		if (randomChoice == 0)
 		{	
@@ -173,6 +172,34 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
+  
+	makeTypeG: function()
+        {
+                question = '';
+
+                a = Math.floor(Math.random()*20)+2;
+                b = Math.floor(Math.random()*20)+2;
+                c = Math.floor(Math.random()*20)+2;
+                d = Math.floor(Math.random()*8)+2;
+                e = Math.floor(Math.random()*8)+2;
+		x = parseInt( (a + b + c) - (d * e) );
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Carly saved ' + a + '$ in September. She saved ' + b + '$ in October. She saved ' + c + '$ in November. Carly wants to buy video games that cost ' + d + '$ each. Did she save enough money to buy ' + e + ' video games?','Yes');
+                }
+		if (x < 0)
+		{
+			question.setAnswer('No',0);
+		}
+                question.mAnswerPool.push('Yes');
+                question.mAnswerPool.push('No');
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
 
 
 	createQuestions: function()
@@ -181,6 +208,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeG();	
 		this.makeTypeF();	
 		this.makeTypeE();	
 		this.makeTypeD();	
