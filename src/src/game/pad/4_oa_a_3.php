@@ -203,11 +203,15 @@ Extends: MultipleChoicePad,
 		}
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Carly saved ' + a + '$ in September. She saved ' + b + '$ in October. She saved ' + c + '$ in November. Carly wants to buy video games that cost ' + d + '$ each. Did she save enough money to buy ' + e + ' video games?','Yes');
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Brad saved ' + a + '$ on Tuesday. He saved ' + b + '$ on Wednesday. He saved ' + c + '$ on Thursday. Brad wants to buy game cards that cost ' + d + '$ each. Did he save enough money to buy ' + e + ' game cards?','Yes');
                 }
 		if (x < 0)
 		{
@@ -256,9 +260,9 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeG();	
 		this.makeTypeH();	
 		this.makeTypeF();	
-		this.makeTypeG();	
 		this.makeTypeE();	
 		this.makeTypeD();	
 		this.makeTypeC();	
