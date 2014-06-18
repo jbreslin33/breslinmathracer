@@ -152,10 +152,10 @@ Extends: MultipleChoicePad,
         {
                 question = '';
 
-                b = Math.floor(Math.random()*5)+5;
-                c = Math.floor(Math.random()*5)+2;
-                d = Math.floor(Math.random()*5)+2;
-                e = Math.floor(Math.random()*5)+5;
+                b = Math.floor(Math.random()*8)+2;
+                c = Math.floor(Math.random()*8)+2;
+                d = Math.floor(Math.random()*8)+2;
+                e = Math.floor(Math.random()*8)+2;
                 a = (Math.floor(Math.random()*8)+2) + ( (b * c) + d + (e * c) );
                 x = parseInt( a - ( (b * c) + d + (e * c) ) );
 
@@ -167,7 +167,12 @@ Extends: MultipleChoicePad,
                         question = new Question('Holly had ' + a + '$ to spend at a toy store. She bought ' + b + ' balls that cost ' + c + '$ each and a board game for ' + d + '$. She also spent ' + e + ' times as much on a video game as on one ball. How much does Holly have left to spend?',x + '$');
                 }
                 question.mAnswerPool.push(x + '$');
-                question.mAnswerPool.push(x - (Math.floor(Math.random()*8)+1) + '$');
+		minusX = x - (Math.floor(Math.random()*8)+1);	
+		if (minusX < 1)
+		{
+			minusX = x-1;
+		}
+                question.mAnswerPool.push(minusX + '$');
                 question.mAnswerPool.push(x + (Math.floor(Math.random()*8)+1) + '$');
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
@@ -218,8 +223,8 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeG();	
 		this.makeTypeF();	
+		this.makeTypeG();	
 		this.makeTypeE();	
 		this.makeTypeD();	
 		this.makeTypeC();	
