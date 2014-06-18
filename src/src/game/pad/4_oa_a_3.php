@@ -386,8 +386,8 @@ Extends: MultipleChoicePad,
                 //tally total objects retroactively
                 a = parseInt( (b * c) + x );
 
-                randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
+                randomChoice = Math.floor(Math.random()*3);
+                randomChoice = 2;
 
                 if (randomChoice == 0)
                 {
@@ -397,38 +397,7 @@ Extends: MultipleChoicePad,
                 {
                         question = new Question('Coach Allan had ' + a + ' plastic cones for his soccer players to practice with total. Hhe wants to give ' + b + ' conses to each player to practice with. He has ' + c + ' players on his team. How many cones will will Allan have left over after distibuting them out?',x);
                 }
-                question.mAnswerPool.push(x);
-                poolB = 0;
-                poolC = 0;
-                while (x == poolB || x == poolC || poolB == poolC)
-                {
-                        poolB = Math.floor((Math.random()*20)+1);
-                        poolC = Math.floor((Math.random()*20)+1);
-                }
-                question.mAnswerPool.push(poolB);
-                question.mAnswerPool.push(poolC);
-                this.mQuiz.mQuestionArray.push(question);
-                question.mRandomChoices = true;
-        },
-      
-	makeTypeM: function()
-        {
-                question = '';
-
-                //get the containers and slots
-                b = Math.floor(Math.random()*10)+7;
-                c = Math.floor(Math.random()*10)+20;
-
-                //random number of emptys per container...
-                x = Math.floor((Math.random()*20)+1);
-
-                //tally total objects retroactively
-                a = parseInt( (b * c) + x );
-
-                randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
-
-                if (randomChoice == 0)
+                if (randomChoice == 2)
                 {
                         question = new Question('Dave has ' + a + ' decks of game cards. Each deck has ' + b + ' cards in it. He is playing with his ' + c + ' friends and wants to divide of the cards so that everyone has the same amount. If he does this how many cards will be left over?',x);
                 }
@@ -445,17 +414,15 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-
-
-
+      
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeM();	
-		this.makeTypeM();	
+		this.makeTypeL();	
+		this.makeTypeL();	
 		this.makeTypeI();	
 		this.makeTypeI();	
 		this.makeTypeI();	
