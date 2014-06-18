@@ -160,11 +160,14 @@ Extends: MultipleChoicePad,
                 x = parseInt( a - ( (b * c) + d + (e * c) ) );
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Holly had ' + a + '$ to spend at a toy store. She bought ' + b + ' balls that cost ' + c + '$ each and a board game for ' + d + '$. She also spent ' + e + ' times as much on a video game as on one ball. How much does Holly have left to spend?',x + '$');
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Dave had ' + a + '$ to spend at the clothes store . He bought ' + b + ' shirts that cost ' + c + '$ each and a belt for ' + d + '$. He also spent ' + e + ' times as much on a tie as on one shirt. How much does Dave have left to spend?',x + '$');
                 }
                 question.mAnswerPool.push(x + '$');
 		minusX = x - (Math.floor(Math.random()*8)+1);	
