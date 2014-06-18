@@ -348,11 +348,15 @@ Extends: MultipleChoicePad,
                 a = parseInt( (b * c) + x );
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('There are ' + a + ' campers at a camp. Each camper recieves ' + b + ' packs of food at the begining of camp. If there are a total of ' + c + ' packs of food in the camp to begin with. How many packs of food will be left over once all the campers recieve their ' + b + ' packs of food each?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('There are ' + a + ' kids at an arcade party. Each kid recieves ' + b + ' coins to play video games at the begining of the party. If there are a total of ' + c + ' coins to hand out to begin with. How many coins will be left over once all the kids recieve their ' + b + ' coins?',x);
                 }
                 question.mAnswerPool.push(x);
                 poolB = 0;
