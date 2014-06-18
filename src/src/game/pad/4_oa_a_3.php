@@ -254,6 +254,38 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
         },
 
+     	makeTypeI: function()
+        {
+                question = '';
+
+		//total classrooms
+                a = Math.floor(Math.random()*5)+10;
+
+		//desks per class
+                c = Math.floor(Math.random()*10)+20;
+
+		//random number of empty seats...	
+		x = Math.floor((Math.random()*5)+1);  
+		this.log('x:' + x);
+
+		//total students equals classes * (desks per room - empty seats per room)
+		b = parseInt(a * (c - x));
+
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+	
+                if (randomChoice == 0)
+                {
+                        question = new Question('A school has ' + a + ' classrooms and ' + b + ' students in the whole school. Each classroom has ' + c + ' desks. If there are the same number of students in each classroom how many empty desks will be left in each classroom if all the students get their own desk?',x);
+                }
+                question.mAnswerPool.push(x);
+                question.mAnswerPool.push('33');
+                question.mAnswerPool.push('44');
+                //question.mAnswerPool.push( parseInt(x + Math.floor(Math.random()*4) ) );
+                //question.mAnswerPool.push( parseInt(x - Math.floor(Math.random()*4) ) );
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
 
 
 	createQuestions: function()
@@ -262,13 +294,12 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeH();	
-		this.makeTypeF();	
-		this.makeTypeE();	
-		this.makeTypeD();	
-		this.makeTypeC();	
-		this.makeTypeB();	
-		this.makeTypeA();	
+		this.makeTypeI();	
+		this.makeTypeI();	
+		this.makeTypeI();	
+		this.makeTypeI();	
+		this.makeTypeI();	
+		this.makeTypeI();	
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
