@@ -165,11 +165,11 @@ Extends: MultipleChoicePad,
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Holly had ' + a + '$ to spend at a toy store. She bought ' + b + ' balls that cost ' + c + '$ each and a board game for ' + d + '$. She also spent ' + e + ' times as much as on one ball for a video game. How much does Holly have left to spend?',x);
+                        question = new Question('Holly had ' + a + '$ to spend at a toy store. She bought ' + b + ' balls that cost ' + c + '$ each and a board game for ' + d + '$. She also spent ' + e + ' times as much on a video game as on one ball. How much does Holly have left to spend?',x + '$');
                 }
-                question.mAnswerPool.push(x);
-                question.mAnswerPool.push(x - (Math.floor(Math.random()*5)+1));
-                question.mAnswerPool.push(x + (Math.floor(Math.random()*5)+1));
+                question.mAnswerPool.push(x + '$');
+                question.mAnswerPool.push(x - (Math.floor(Math.random()*8)+1) + '$');
+                question.mAnswerPool.push(x + (Math.floor(Math.random()*8)+1) + '$');
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
