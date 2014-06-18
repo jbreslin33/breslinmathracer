@@ -219,6 +219,36 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
         },
 
+       	makeTypeH: function()
+        {
+                question = '';
+
+                a = Math.floor(Math.random()*15)+2;
+                b = Math.floor(Math.random()*15)+2;
+                c = Math.floor(Math.random()*5)+2;
+                d = Math.floor(Math.random()*5)+7;
+
+		x = parseInt( (a * c) + (b * d) ); 
+                e = parseInt( x - (Math.floor(Math.random()*8)-4));
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('A group of ' + a + ' children and ' + b + ' adults are going to the zoo. Child tickets cost ' + c + '$, and adult tickets cost ' + d + '$. Is ' + e + '$ enough to pay for everyone?','Yes');
+                }
+                if (e < x)
+                {
+                        question.setAnswer('No',0);
+                }
+                question.mAnswerPool.push('Yes');
+                question.mAnswerPool.push('No');
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
+
 
 	createQuestions: function()
         {
@@ -226,6 +256,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
+		this.makeTypeH();	
 		this.makeTypeF();	
 		this.makeTypeG();	
 		this.makeTypeE();	
