@@ -387,11 +387,15 @@ Extends: MultipleChoicePad,
                 a = parseInt( (b * c) + x );
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Emma was getting ready in case the lights go out during the coming storm. She had ' + a + ' candles total. She wants to put ' + b + ' candles in each of the ' + c + ' rooms of her house. How many candles will Emma have left over extra for backup?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Coach Allan had ' + a + ' plastic cones for his soccer players to practice with total. Hhe wants to give ' + b + ' conses to each player to practice with. He has ' + c + ' players on his team. How many cones will will Allan have left over after distibuting them out?',x);
                 }
                 question.mAnswerPool.push(x);
                 poolB = 0;
