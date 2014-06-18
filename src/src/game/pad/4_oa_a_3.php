@@ -203,7 +203,6 @@ Extends: MultipleChoicePad,
 		}
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
@@ -236,11 +235,14 @@ Extends: MultipleChoicePad,
                 e = parseInt( x - (Math.floor(Math.random()*8)-4));
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('A group of ' + a + ' children and ' + b + ' adults are going to the zoo. Child tickets cost ' + c + '$, and adult tickets cost ' + d + '$. Is ' + e + '$ enough to pay for everyone?','Yes');
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('A group of ' + a + ' children and ' + b + ' adults are going to the movies. Child tickets cost ' + c + '$, and adult tickets cost ' + d + '$. Is ' + e + '$ enough to pay for everyone?','Yes');
                 }
                 if (e < x)
                 {
@@ -260,7 +262,6 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeG();	
 		this.makeTypeH();	
 		this.makeTypeF();	
 		this.makeTypeE();	
