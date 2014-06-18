@@ -309,11 +309,15 @@ Extends: MultipleChoicePad,
 		a = parseInt( (b * c) + x );
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
+		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Ed has ' + a + ' toy cars. He puts them into cases that hold ' + b + ' cars each. After he fills up ' + c + ' cases, how many cars are not in a case yet?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('A class has ' + a + ' ipads. They put them into carts that hold ' + b + ' ipads each. After they fill up ' + c + ' carts, how many ipads are not in a cart yet?',x);
                 }
                 question.mAnswerPool.push(x);
                 poolB = 0;
