@@ -309,7 +309,6 @@ Extends: MultipleChoicePad,
 		a = parseInt( (b * c) + x );
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
@@ -319,86 +318,24 @@ Extends: MultipleChoicePad,
                 {
                         question = new Question('A class has ' + a + ' ipads. They put them into carts that hold ' + b + ' ipads each. After they fill up ' + c + ' carts, how many ipads are not in a cart yet?',x);
                 }
-                question.mAnswerPool.push(x);
-                poolB = 0;
-                poolC = 0;
-                while (x == poolB || x == poolC || poolB == poolC)
-                {
-                        poolB = Math.floor((Math.random()*20)+1);
-                        poolC = Math.floor((Math.random()*20)+1);
-                }
-                question.mAnswerPool.push(poolB);
-                question.mAnswerPool.push(poolC);
-                this.mQuiz.mQuestionArray.push(question);
-                question.mRandomChoices = true;
-        },
-
-        makeTypeK: function()
-        {
-                question = '';
-
-                //get the containers and slots
-                b = Math.floor(Math.random()*10)+7;
-                c = Math.floor(Math.random()*10)+20;
-
-                //random number of emptys per container...
-                x = Math.floor((Math.random()*20)+1);
-
-                //tally total objects retroactively
-                a = parseInt( (b * c) + x );
-
-                randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
-
-                if (randomChoice == 0)
+                if (randomChoice == 2)
                 {
                         question = new Question('There are ' + a + ' campers at a camp. Each camper recieves ' + b + ' packs of food at the begining of camp. If there are a total of ' + c + ' packs of food in the camp to begin with. How many packs of food will be left over once all the campers recieve their ' + b + ' packs of food each?',x);
                 }
-                if (randomChoice == 1)
+                if (randomChoice == 3)
                 {
                         question = new Question('There are ' + a + ' kids at an arcade party. Each kid recieves ' + b + ' coins to play video games at the begining of the party. If there are a total of ' + c + ' coins to hand out to begin with. How many coins will be left over once all the kids recieve their ' + b + ' coins?',x);
                 }
-                question.mAnswerPool.push(x);
-                poolB = 0;
-                poolC = 0;
-                while (x == poolB || x == poolC || poolB == poolC)
-                {
-                        poolB = Math.floor((Math.random()*20)+1);
-                        poolC = Math.floor((Math.random()*20)+1);
-                }
-                question.mAnswerPool.push(poolB);
-                question.mAnswerPool.push(poolC);
-                this.mQuiz.mQuestionArray.push(question);
-                question.mRandomChoices = true;
-        },
-     
-	makeTypeL: function()
-        {
-                question = '';
-
-                //get the containers and slots
-                b = Math.floor(Math.random()*10)+7;
-                c = Math.floor(Math.random()*10)+20;
-
-                //random number of emptys per container...
-                x = Math.floor((Math.random()*20)+1);
-
-                //tally total objects retroactively
-                a = parseInt( (b * c) + x );
-
-                randomChoice = Math.floor(Math.random()*3);
-                randomChoice = 2;
-
-                if (randomChoice == 0)
+                if (randomChoice == 4)
                 {
                         question = new Question('Emma was getting ready in case the lights go out during the coming storm. She had ' + a + ' candles total. She wants to put ' + b + ' candles in each of the ' + c + ' rooms of her house. How many candles will Emma have left over extra for backup?',x);
                 }
-                if (randomChoice == 1)
+                if (randomChoice == 5)
                 {
                         question = new Question('Coach Allan had ' + a + ' plastic cones for his soccer players to practice with total. Hhe wants to give ' + b + ' conses to each player to practice with. He has ' + c + ' players on his team. How many cones will will Allan have left over after distibuting them out?',x);
                 }
-                if (randomChoice == 2)
-                {
+                if (randomChoice == 6)
+               	{ 
                         question = new Question('Dave has ' + a + ' decks of game cards. Each deck has ' + b + ' cards in it. He is playing with his ' + c + ' friends and wants to divide of the cards so that everyone has the same amount. If he does this how many cards will be left over?',x);
                 }
                 question.mAnswerPool.push(x);
@@ -414,19 +351,21 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-      
+
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeL();	
-		this.makeTypeL();	
-		this.makeTypeI();	
-		this.makeTypeI();	
-		this.makeTypeI();	
-		this.makeTypeI();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
+		this.makeTypeJ();	
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
