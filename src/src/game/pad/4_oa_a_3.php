@@ -399,7 +399,7 @@ Extends: MultipleChoicePad,
                 if (randomChoice == 0)
                 {
                         v = 'T';
-                        question = new Question('On feeding days at the pet store Laura feeds a treate to ' + a + ' cages with ' + b + ' hamsters in each cage. Each hamster gets ' + c + ' treats a day. She does this ' + d + ' days a week. What equation can be used to find how many treats total Laura gives out per week?','' + v + '=' + c + '(' + a + 'x' + b + ')' + 'x' + d);
+                        question = new Question('On feeding days at the pet store Laura feeds a treat to ' + a + ' cages with ' + b + ' hamsters in each cage. Each hamster gets ' + c + ' treats a day. She does this ' + d + ' days a week. What equation can be used to find how many treats total Laura gives out per week?','' + v + '=' + c + '(' + a + 'x' + b + ')' + 'x' + d);
 
                 }
 
@@ -420,11 +420,15 @@ Extends: MultipleChoicePad,
 		x = parseInt(a + b + c);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Lucy played three basketball games. She scored ' + a + ' points in the first game. ' + b + ' points in the second game and ' + c + ' points in the third game. How many points did she score total?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Leanny sold boxes of cookies for three days. She sold ' + a + ' boxes the first day. She sold ' + b + ' boxes the second day and ' + c + ' boxes the third day. How many boxes did she sell total?',x);
                 }
 
 		poolB = 0;
