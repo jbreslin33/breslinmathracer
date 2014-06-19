@@ -494,11 +494,14 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b * c);
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('John ordered baseball cards from the internet. The cards come in boxes. In each box there is ' + a + ' packs of baseball cards. Each pack has ' + b + ' cards in it. If John orders ' + c + ' boxes of cards how many cards will he receive?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Steve bought blocks. The blocks come in crates. In each crate there is ' + a + ' packs of blocks. Each pack has ' + b + ' blocks in it. If Steve orders ' + c + ' crates of blocks how many blocks will he have total?',x);
                 }
 
                 poolB = 0;
