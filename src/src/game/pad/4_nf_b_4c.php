@@ -36,39 +36,67 @@ Extends: NumberPad,
 	firstTimeExecute: function()
         {
 		
-             if (this.mUserAnswer != '')
-	     {
-
-		var str = '';
-		var res = '';
-		var whole;
-		var frac;
-		var res2;
-		var decimal;
-
-		frac = '' + this.mUserAnswer;
-		res2 = frac.split("/");
-
-		if (res2.length == 1)
+                if (this.mUserAnswer != '')
 		{
-			res2[1] = '1';
+
+			var str = '';
+			var res = '';
+			var whole;
+			var frac;
+			var res2;
+			var decimal;
+
+			//console.log('' + this.mUserAnswer);
+
+			str = '' + this.mUserAnswer;
+			res = str.split(" ");
+
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			this.mUserAnswer = (whole + decimal) * 1.0;
+			//console.log('whole:' + whole);
+			//console.log('decimal:' + decimal);
+			//console.log(this.mUserAnswer);
+
+			str = this.mQuiz.getQuestion().mAnswerArray[0];
+			res = str.split(" ");
+
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+				res[1] = '0/1';
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+			decimal = res2[0]/res2[1];
+			this.mDecimalAnswer = (whole + decimal) * 1.0;
+			
 		}
-
-		decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-		this.mUserAnswer = decimal * 1.0;
-
-		str = this.mQuiz.getQuestion().mAnswerArray[0];
-		res2 = str.split("/");
-
-		if (res2.length == 1)
-		{
-			res2[1] = '1';
-		}
-
-		decimal = 1.0 * res2[0]/res2[1];
-		this.mDecimalAnswer = decimal * 1.0;
-	     }
-	     var correct = false;
+		var correct = false;
                 //if you have an answer...
                 if (this.mUserAnswer != '')
                 {
@@ -128,96 +156,78 @@ Extends: NumberPad,
 		this.mQuiz.resetQuestionArray();
 			
 
-		 for (s = 0; s < this.mScoreNeeded/2; s++)
+		 for (s = 0; s < this.mScoreNeeded; s++)
 		 {		
 
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
 			// get top number
-			max = Math.floor(varB/2);
-			varA = 1 + Math.floor((Math.random()*(max-1)));
+			varA = 1 + Math.floor(Math.random()*7);
 
-			varC = 1 + Math.floor((Math.random()*max));
+			// get bottom number
+			varB = varA + 1 + Math.floor(Math.random()*(9 - varA));
+
+			// get whole number
+			varC = 3 + Math.floor((Math.random()*7));
+
 			varD = varB;
 
-			answer = varA + varC;
-			answer = '' + answer + '/' + varD;
+			answer = varA * varC;
+			answer = '' + answer + '/' + varB;
 
-			showAnswer = varA + '/' +  varB + ' + ' + varC + '/' +  varD + ' = ' + answer;
+			showAnswer = varA + '/' +  varB + ' * ' + varC + ' = ' + answer;
 
-			rand = Math.floor(Math.random()*4);
+			rand = Math.floor(Math.random()*9);
+
 
 			if(rand == 0)
 			{			
-			question = new Question('Tammy filled a bucket with ' + varA + '/' +  varB + ' of a gallon of water. Later, she poured ' + varC + '/' +  varD + ' of a gallon of water into the bucket. How many gallons of water are in the bucket?', '' + answer, '' + showAnswer);
-
-			//question.mTipArray[0] = 'xxxxxxxxxxxxxxxxxxxx';
+			question = new Question('Peter owns ' + varC + ' acres of farmland. He grows corn on ' + varA + '/' + varB + ' of the land. On how many acres of land does Peter grow corn?', '' + answer, '' + showAnswer);
 			}
 			if(rand == 1)
 			{			
-			question = new Question('John drove his car ' + varA + '/' +  varB + ' of a mile and stopped at a gas station. Then, he drove ' + varC + '/' +  varD + ' of a mile to his house. How many miles did he drive altogether?', '' + answer, '' + showAnswer);
+			question = new Question('Jenny had ' + varC + ' pounds of strawberries. Jenny let her friend Doris eat ' + varA + '/' + varB + ' of the strawberries. How many pounds of strawberries did Doris eat?', '' + answer, '' + showAnswer);
 			}
 			if(rand == 2)
 			{			
-			question = new Question('Katie went to the salon and had ' + varA + '/' +  varB + ' of an inch of hair cut off. The next day she went back and asked for another ' + varC + '/' +  varD + ' of an inch to be cut off. How many inches of hair did she have cut off in all?', '' + answer, '' + showAnswer);
+			question = new Question('Kwan operates an orange juice stand. On Monday he used ' + varC + ' bags of oranges. On Tuesday he used ' + varA + '/' + varB + ' as many oranges as on Monday. How many bags of oranges did Kwan use on Tuesday?', '' + answer, '' + showAnswer);
 			}
 			if(rand == 3)
 			{			
-			question = new Question('Of the pies that Mom and Pops Pie Shop sold last month, ' + varA + '/' +  varB + ' were blueberry pies and ' + varC + '/' +  varD + ' were blackberry pies. What fraction of the pies sold were either blueberry or blackberry?', '' + answer, '' + showAnswer);
+			question = new Question('Pedro has a lemon cookie recipe that calls for ' + varA + '/' +  varB + ' of a cup of sugar. How much sugar would Pedro use to make ' + varC + ' batches of cookies?', '' + answer, '' + showAnswer);
+			}
+
+
+
+
+			if(rand == 4)
+			{			
+			question = new Question('Tina is making calzones to sell at her restaurant. She starts with ' + varC + ' cans of tomato sauce and then uses ' + varA + '/' + varB + ' of the cans for the first batch of calzones. How many cans of tomato sauce does Tina use for the first batch of calzones?', '' + answer, '' + showAnswer);
+			}
+			if(rand == 5)
+			{			
+			question = new Question('A factory makes sheets of metal that are ' + varA + '/' +  varB + ' of an inch thick. If a worker at the factory makes a stack of ' + varC + ' of the sheets, how many inches thick will the stack be?', '' + answer, '' + showAnswer);
+			}
+			if(rand == 6)
+			{			
+			question = new Question('Yesterday, a doughnut shop sold ' + varC + ' times as many chocolate doughnuts as cinnamon doughnuts. If they sold ' + varA + '/' + varB + ' of a tray of cinnamon doughnuts, how many trays of chocolate doughnuts did they sell?', '' + answer, '' + showAnswer);
+			}
+			if(rand == 7)
+			{			
+			question = new Question('Tracy made strawberry jam and raspberry jam. She made enough strawberry jam to fill ' + varA + '/' +  varB + ' of a jar. If she made ' + varC + ' times as much raspberry jam as strawberry jam, how many jars will the raspberry jam fill?', '' + answer, '' + showAnswer);
+			}
+			if(rand == 8)
+			{			
+			question = new Question('Carey uses ' + varA + '/' +  varB + ' of a cup of vinegar in her salad dressing recipe. How many cups of vinegar would Carey use to make ' + varC + ' recipes?', '' + answer, '' + showAnswer);
 			}
 			
                 	this.mQuiz.mQuestionArray.push(question);
                  }
 
-
-		 for (s = 0; s < this.mScoreNeeded/2; s++)
-		 {		
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			varA = 2 + Math.floor(Math.random()*(varB-2));
-			
-			varC = 1 + Math.floor(Math.random()*(varA-1));
-			//1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA - varC;
-			answer = '' + answer + '/' + varD;
-
-			showAnswer = varA + '/' +  varB + ' - ' + varC + '/' +  varD + ' = ' + answer;
-				
-			rand = Math.floor(Math.random()*4);
-
-			if(rand == 0)
-			{			
-			question = new Question('Bobby filled a bucket with ' + varA + '/' +  varB + ' of a gallon of water. Later, he poured out ' + varC + '/' +  varD + ' of a gallon of the water. How much water is in the bucket?', '' + answer, '' + showAnswer);
-
-			}
-			if(rand == 1)
-			{			
-			question = new Question('At the market, Vicky bought ' + varA + '/' +  varB + ' of a pound of red apples and ' + varC + '/' +  varD + ' of a pound of green apples. How many more pounds of red apples did Vicky purchase?', '' + answer, '' + showAnswer);
-			}
-			if(rand == 2)
-			{			
-			question = new Question('Planet X is ' + varA + '/' +  varB + ' of a light-year away from Earth. Planet Y is ' + varC + '/' +  varD + ' of a light-year away from Earth. How many light years farther away from earth is Planet X than Planet Y?', '' + answer, '' + showAnswer);
-			}
-			if(rand == 3)
-			{			
-			question = new Question('Judy bought ' + varA + '/' +  varB + ' pounds of grapes. She gave ' + varC + '/' +  varD + ' of a pound to her sister. How many pounds of grapes did she have left?', '' + answer, '' + showAnswer);
-			}
-
-			
-                	this.mQuiz.mQuestionArray.push(question);
-                 }
-			
+	
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                this.mQuiz.randomize(40);
+                //this.mQuiz.randomize(40);
 	}
 });
