@@ -352,14 +352,38 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
         },
 
+	makeTypeK: function()
+        {
+                question = '';
+
+                //total classrooms
+                a = Math.floor(Math.random()*4)+4;
+                b = Math.floor(Math.random()*5)+10;
+                c = Math.floor(Math.random()*5)+10;
+                d = Math.floor(Math.random()*3)+2;
+
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Nate practices soccer ' + a + ' days a week. Each day he first practices juggling a ball for ' + b + ' minutes then he practices dribbling for ' + c + ' minutes. He does this a total of ' + d + ' times each day of the week that he practices. What equation can be used to find how much time he spends practicing per week?','a');
+                }
+                question.mAnswerPool.push('a');
+                question.mAnswerPool.push('b');
+                question.mAnswerPool.push('c');
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeJ();	
-		this.makeTypeJ();	
+		this.makeTypeK();	
+		this.makeTypeK();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
