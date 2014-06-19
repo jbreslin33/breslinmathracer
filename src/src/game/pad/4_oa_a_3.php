@@ -483,6 +483,38 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
+     
+	makeTypeO: function()
+        {
+                question = '';
+
+                a = Math.floor(Math.random()*8)+2;
+                b = Math.floor(Math.random()*298)+2;
+                c = Math.floor(Math.random()*8)+2;
+                x = parseInt(a * b * c);
+
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('John ordered baseball cards from the internet. The cards come in boxes. In each box there is ' + a + ' packs of baseball cards. Each pack has ' + b + ' cards in it. If John orders ' + c + ' boxes of cards how many cards will he receive?',x);
+                }
+
+                poolB = 0;
+                poolC = 0;
+                while (x == poolB || x == poolC || poolB == poolC)
+                {
+                        poolB = parseInt(a + b + c);
+                        poolC = parseInt( (a + c) * b);
+                }
+                question.mAnswerPool.push(x);
+                question.mAnswerPool.push(poolB);
+                question.mAnswerPool.push(poolC);
+
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
 
 	createQuestions: function()
         {
@@ -490,7 +522,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeN();	
+		this.makeTypeO();	
 		this.makeTypeK();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
