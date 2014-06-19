@@ -371,8 +371,8 @@ Extends: MultipleChoicePad,
                 }
 
                 question.mAnswerPool.push('T=' + d + '(' + b + '+' + c + ')' + 'x' + a);
-                question.mAnswerPool.push('b');
-                question.mAnswerPool.push('c');
+                question.mAnswerPool.push('T=' + d + '(' + b + 'x' + c + ')' + 'x' + a);
+                question.mAnswerPool.push('T=' + a + '(' + b + '+' + c + ')' + '+' + d);
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
