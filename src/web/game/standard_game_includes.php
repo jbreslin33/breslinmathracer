@@ -183,6 +183,9 @@
 <script type="text/javascript" src="/src/game/pad/4_oa_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_oa_a_3.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_oa_b_4.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_oa_c_5.php"></script>
+<script type="text/javascript" src="/src/game/pad/4_nbt_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nbt_b_4.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nbt_b_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nbt_b_6.php"></script>
@@ -198,9 +201,5 @@
 <script type="text/javascript" src="/src/game/pad/4_nf_c_5.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_c_6.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_nf_c_7.php"></script>
-<script type="text/javascript" src="/src/game/pad/4_oa_b_4.php"></script>
-<script type="text/javascript" src="/src/game/pad/4_oa_c_5.php"></script>
-<script type="text/javascript" src="/src/game/pad/4_nbt_a_1.php"></script>
-
-
+<script type="text/javascript" src="/src/game/pad/4_md_a_1.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
