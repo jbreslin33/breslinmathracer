@@ -448,13 +448,52 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
         },
 
+	makeTypeN: function()
+        {
+                question = '';
+
+                b = Math.floor(Math.random()*300)+1;
+                c = Math.floor(Math.random()*300)+1;
+                x = Math.floor(Math.random()*300)+1;
+                a = parseInt(x + b + c);
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 1;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Sean ran a total of ' + a + ' meters in three days. He ran ' + b + ' meters the first day. He ran ' + c + ' meters the second day. How many meters did he run the third day?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Leanny sold boxes of cookies for three days. She sold ' + a + ' boxes the first day. She sold ' + b + ' boxes the second day and ' + c + ' boxes the third day. How many boxes did she sell total?',x);
+                }
+
+                poolB = 0;
+                poolC = 0;
+                while (x == poolB || x == poolC || poolB == poolC)
+                {
+                        poolB = Math.floor(Math.random()*10)-5;
+                        poolC = Math.floor(Math.random()*10)-5;
+                        poolB = poolB + x;
+                        poolC = poolC + x;
+                }
+                question.mAnswerPool.push(x);
+                question.mAnswerPool.push(poolB);
+                question.mAnswerPool.push(poolC);
+
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
+
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeM();	
+		this.makeTypeN();	
 		this.makeTypeK();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
