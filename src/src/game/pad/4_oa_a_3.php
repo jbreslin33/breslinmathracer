@@ -364,15 +364,18 @@ Extends: MultipleChoicePad,
 
                 randomChoice = Math.floor(Math.random()*2);
 		randomChoice = 0;
+	
+		v = '';		
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Nate practices soccer ' + a + ' days a week. Each day he first practices juggling a ball for ' + b + ' minutes then he practices dribbling for ' + c + ' minutes. He does this a total of ' + d + ' times each day of the week that he practices. What equation can be used to find how much time he spends practicing per week?','T=' + d + '(' + b + '+' + c + ')' + 'x' + a);
+			v = 'T';
+                        question = new Question('Nate practices soccer ' + a + ' days a week. Each day he first practices juggling a ball for ' + b + ' minutes then he practices dribbling for ' + c + ' minutes. He does this a total of ' + d + ' times each day of the week that he practices. What equation can be used to find how much time he spends practicing per week?','' + v + '=' + d + '(' + b + '+' + c + ')' + 'x' + a);
                 }
 
-                question.mAnswerPool.push('T=' + d + '(' + b + '+' + c + ')' + 'x' + a);
-                question.mAnswerPool.push('T=' + d + '(' + b + 'x' + c + ')' + 'x' + a);
-                question.mAnswerPool.push('T=' + a + '(' + b + '+' + c + ')' + '+' + d);
+                question.mAnswerPool.push('' + v + '=' + d + '(' + b + '+' + c + ')' + 'x' + a);
+                question.mAnswerPool.push('' + v + '=' + d + '(' + b + 'x' + c + ')' + 'x' + a);
+                question.mAnswerPool.push('' + v + '=' + a + '(' + b + '+' + c + ')' + '+' + d);
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
