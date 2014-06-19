@@ -7,7 +7,7 @@ Extends: MultipleChoicePad,
 	{
        		this.parent(application);
 
-		this.setScoreNeeded(4);
+		this.setScoreNeeded(15);
 	},
 
         createInput: function()
@@ -524,15 +524,28 @@ Extends: MultipleChoicePad,
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
-
+		
 		this.makeTypeO();	
+		this.makeTypeN();	
+		this.makeTypeM();	
+
+		this.makeTypeL();	
 		this.makeTypeK();	
 		this.makeTypeJ();	
-		this.makeTypeJ();	
-		this.makeTypeJ();	
-		this.makeTypeJ();	
-		this.makeTypeJ();	
-		this.makeTypeJ();	
+
+		this.makeTypeI();	
+		this.makeTypeH();	
+		this.makeTypeG();	
+
+		this.makeTypeF();	
+		this.makeTypeE();	
+		this.makeTypeD();	
+
+		this.makeTypeC();	
+		this.makeTypeB();	
+		this.makeTypeA();	
+
+		this.mQuiz.randomize(10);
 
 		this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 	}
