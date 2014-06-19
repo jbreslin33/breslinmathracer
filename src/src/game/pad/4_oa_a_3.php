@@ -409,7 +409,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-   
+  /* 
 	makeTypeM: function()
         {
                 question = '';
@@ -439,6 +439,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
+*/
 
 	createQuestions: function()
         {
@@ -446,7 +447,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeM();	
+		this.makeTypeL();	
 		this.makeTypeK();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
