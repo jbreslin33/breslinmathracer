@@ -380,13 +380,44 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
         },
 
+ 
+	makeTypeL: function()
+        {
+                question = '';
+
+                //total classrooms
+                a = Math.floor(Math.random()*4)+4;
+                b = Math.floor(Math.random()*5)+10;
+                c = Math.floor(Math.random()*5)+10;
+                d = Math.floor(Math.random()*3)+2;
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+
+                v = '';
+
+                if (randomChoice == 0)
+                {
+                        v = 'T';
+                        question = new Question('On feeding days at the pet store Laura feeds a treate to ' + a + ' cages with ' + b + ' hamsters in each cage. Each hamster gets ' + c + ' treats a day. She does this ' + d + ' days a week. What equation can be used to find how many treats total Laura gives out per week?','' + v + '=' + c + '(' + a + 'x' + b + ')' + 'x' + d);
+
+                }
+
+                question.mAnswerPool.push('' + v + '=' + c + '(' + a + 'x' + b + ')' + 'x' + d);
+                question.mAnswerPool.push('' + v + '=' + a + '(' + b + '+' + c + ')' + 'x' + d);
+                question.mAnswerPool.push('' + v + '=' + d + '(' + b + '+' + c + ')' + '-' + a);
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
+
 	createQuestions: function()
         {
  		this.parent();
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeK();	
+		this.makeTypeL();	
 		this.makeTypeK();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
