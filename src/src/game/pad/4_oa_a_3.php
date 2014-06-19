@@ -420,7 +420,6 @@ Extends: MultipleChoicePad,
 		x = parseInt(a + b + c);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
@@ -458,7 +457,6 @@ Extends: MultipleChoicePad,
                 a = parseInt(x + b + c);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
