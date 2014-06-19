@@ -30,14 +30,21 @@ Extends: NumberPad,
 			var res2;
 			var decimal;
 
-			console.log('' + this.mUserAnswer);
+			//console.log('' + this.mUserAnswer);
 
 			str = '' + this.mUserAnswer;
 			res = str.split(" ");
 
 			if (res.length == 1)
 			{
+				str = res[0].split("/");
+
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
 				res[1] = '0/1';
+
+				
 			}
 			whole = res[0] * 1.0;
 			frac = res[1];
@@ -50,9 +57,9 @@ Extends: NumberPad,
 
 			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
 			this.mUserAnswer = (whole + decimal) * 1.0;
-			//console.log('whole:' + whole);
-			//console.log('decimal:' + decimal);
-			//console.log(this.mUserAnswer);
+			console.log('whole:' + whole);
+			console.log('decimal:' + decimal);
+			console.log(this.mUserAnswer);
 
 			str = this.mQuiz.getQuestion().mAnswerArray[0];
 			res = str.split(" ");
