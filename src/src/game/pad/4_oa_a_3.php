@@ -409,12 +409,11 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-  /* 
+   
 	makeTypeM: function()
         {
                 question = '';
 
-                //total classrooms
                 a = Math.floor(Math.random()*99)+1;
                 b = Math.floor(Math.random()*99)+1;
                 c = Math.floor(Math.random()*99)+1;
@@ -423,23 +422,27 @@ Extends: MultipleChoicePad,
                 randomChoice = Math.floor(Math.random()*2);
                 randomChoice = 0;
 
-                v = '';
-
                 if (randomChoice == 0)
                 {
-                        v = 'T';
                         question = new Question('Lucy played three basketball games. She scored ' + a + ' points in the first game. ' + b + ' points in the second game and ' + c + ' points in the third game. How many points did she score total?',x);
-
                 }
 
+		poolB = 0;
+		poolC = 0;
+		while (x == poolB || x == poolC || poolB == poolC)
+		{
+			poolB = Math.floor(Math.random()*10)-5; 	
+			poolC = Math.floor(Math.random()*10)-5; 	
+			poolB = poolB + x;
+			poolC = poolC + x;
+		}
                 question.mAnswerPool.push(x);
-                question.mAnswerPool.push( parseInt( (Math.floor(Math.random()*10)-5) + x ) );
-                question.mAnswerPool.push( parseInt( (Math.floor(Math.random()*10)-5) + x ) );
+                question.mAnswerPool.push(poolB);
+                question.mAnswerPool.push(poolC);
 
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-*/
 
 	createQuestions: function()
         {
@@ -447,7 +450,7 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.resetQuestionArray();
 
-		this.makeTypeL();	
+		this.makeTypeM();	
 		this.makeTypeK();	
 		this.makeTypeJ();	
 		this.makeTypeJ();	
