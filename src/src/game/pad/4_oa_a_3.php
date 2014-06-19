@@ -466,7 +466,7 @@ Extends: MultipleChoicePad,
                 }
                 if (randomChoice == 1)
                 {
-                        question = new Question('Leanny sold boxes of cookies for three days. She sold ' + a + ' boxes the first day. She sold ' + b + ' boxes the second day and ' + c + ' boxes the third day. How many boxes did she sell total?',x);
+                        question = new Question('Leanny sold boxes of cookies for three days. She sold a total of ' + a + ' boxes. She sold ' + b + ' boxes the first day and ' + c + ' boxes the second day. How many boxes did she sell the third day?',x);
                 }
 
                 poolB = 0;
@@ -485,7 +485,6 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
-
 
 	createQuestions: function()
         {
