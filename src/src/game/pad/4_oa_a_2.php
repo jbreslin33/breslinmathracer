@@ -47,20 +47,23 @@ Extends: MultipleChoicePad,
 
                 while ((a * b) == (c * d) || (a * b) == (e * f))
                 {
-                        a = Math.floor((Math.random()*9)+1);
-                        b = Math.floor((Math.random()*9)+1);
-                        c = Math.floor((Math.random()*9)+1);
-                        d = Math.floor((Math.random()*9)+1);
-                        e = Math.floor((Math.random()*9)+1);
-                        f = Math.floor((Math.random()*9)+1);
+                        a = Math.floor((Math.random()*8)+2);
+                        b = Math.floor((Math.random()*8)+2);
+                        c = Math.floor((Math.random()*8)+2);
+                        d = Math.floor((Math.random()*8)+2);
+                        e = Math.floor((Math.random()*8)+2);
+                        f = Math.floor((Math.random()*8)+2);
                 }
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
 
 		if (randomChoice == 0)
 		{
-
                 	question = new Question('A soccer league had ' + a + ' teams. There were ' + b + ' players on each team. ' + a + ' x ' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
+		}
+		if (randomChoice == 1)
+		{
+                	question = new Question('A teacher put the kids desks in ' + a + ' rows with ' + b + ' desks in each row. ' + a + ' x ' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
 		}
 
                 var correctLetterNumber = Math.floor(Math.random()*3);
