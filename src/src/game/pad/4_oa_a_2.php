@@ -506,7 +506,7 @@ Extends: MultipleChoicePad,
 			this.createArrayQuestionFour('Steve has','balls. Jim has','times as many balls as Steve.');
 			this.createArrayQuestionTwo('A school had','class rooms. It had','students in each class.');
 			this.createArrayQuestionThree('A school had','class rooms. It had','students in each class.');
-			this.createArrayQuestion('A soccer league had','teams. There were','playes on each team.');
+			this.createArrayQuestion('A soccer league had','teams. There were','players on each team.');
 		}
 
 		//level 2
@@ -514,7 +514,7 @@ Extends: MultipleChoicePad,
 		{
 			this.createArrayQuestionSix('Greg has','game boards. Each game board has','pieces. How many total pieces in all the games are there?');
 
-			question = new Question('Javier has 4 times as many points as John','Javier has 4 times as many points as John');
+			question = new Question('Click an example of multiplicative comparison.','Javier has 5 times as many points as John');
                 	question.mAnswerPool.push('Javier has 5 more points than John');
                 	question.mAnswerPool.push('Javier has 3 points and John has 2 points');
                 	question.mAnswerPool.push('Javier has 2 points and John has 10 points');
