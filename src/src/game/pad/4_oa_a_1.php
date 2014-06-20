@@ -52,9 +52,23 @@ Extends: MultipleChoicePad,
                	question = new Question('Which equation means that ' + x + ' is '  + a + ' times as many as ' + b + '?','' + x  + '=' + a + 'x' + b);
                	this.mQuiz.mQuestionArray.push(question);
  		question.mAnswerPool.push('' + x  + '=' + a + 'x' + b);
+ 		question.mAnswerPool.push('' + a  + '=' + b + 'x' + x);
+ 		question.mAnswerPool.push('' + b  + '=' + x + 'x' + a);
+	},
+
+        makeTypeB: function()
+        {
+                var a = Math.floor((Math.random()*8)+3);
+                var b = Math.floor((Math.random()*8)+3);
+                var x = a * b;
+
+                question = new Question('Which equation means that ' + x + ' is '  + a + ' times as many as ' + b + '?','' + x  + '=' + a + 'x' + b);
+                this.mQuiz.mQuestionArray.push(question);
+                question.mAnswerPool.push('' + x  + '=' + a + 'x' + b);
                 question.mAnswerPool.push('b');
                 question.mAnswerPool.push('c');
-	},
+        },
+
 
 	createQuestions: function()
         {
