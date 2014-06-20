@@ -81,6 +81,19 @@ Extends: MultipleChoicePad,
  		question.mAnswerPool.push(parseInt(x - a));
  		question.mAnswerPool.push(x);
 	},
+	
+	makeTypeD: function()
+	{
+		var a = Math.floor((Math.random()*8)+3);		
+		var b = Math.floor((Math.random()*8)+3);		
+		var x = a * b;
+
+               	question = new Question('Which equation means the same as: ' + x + '=' + a + 'x' + b,x + '=' + b + 'x' + a);
+               	this.mQuiz.mQuestionArray.push(question);
+ 		question.mAnswerPool.push(x + '=' + b + 'x' + a);
+ 		question.mAnswerPool.push(x + '=' + b + '+' + a);
+ 		question.mAnswerPool.push(a + '=' + b + 'x' + x);
+	},
 
 	createQuestions: function()
         {
@@ -88,7 +101,7 @@ Extends: MultipleChoicePad,
                 
 		this.mQuiz.resetQuestionArray();
 
-		this.makeTypeC();
+		this.makeTypeD();
 		this.makeTypeA();
 		this.makeTypeA();
 		this.makeTypeA();
