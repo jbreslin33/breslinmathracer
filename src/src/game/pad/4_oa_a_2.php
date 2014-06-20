@@ -32,7 +32,10 @@ Extends: MultipleChoicePad,
         showCorrectAnswerEnter: function()
         {
                 this.parent();
-                this.mShapeArray[1].setPosition(100,80);
+                this.mShapeArray[1].setSize(650,200);
+                this.mShapeArray[1].setPosition(350,140);
+                this.mShapeArray[9].setSize(75,75);
+                this.mShapeArray[9].setPosition(75,175);
         },
 
 	makeTypeA: function()
