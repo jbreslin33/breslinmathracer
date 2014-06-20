@@ -6,7 +6,6 @@ Extends: MultipleChoicePadTwo,
 	initialize: function(application)
 	{
        		this.parent(application);
-		
 	},
 
 	createNumQuestion: function()
@@ -24,13 +23,7 @@ Extends: MultipleChoicePadTwo,
                 this.parent();
 
                 this.mShapeArray[1].setSize(280,100);
-                //this.mShapeArray[1].setPosition(380,80);
 		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
-
-             
-                //move dont forget
-               // this.mShapeArray[8].setVisibility(false);
-               // this.mShapeArray[9].setVisibility(false);
         },
 
   	createAnswers: function(s, varA, varD, varE)
@@ -79,11 +72,8 @@ Extends: MultipleChoicePadTwo,
 		var varF = 0;
 		var max = 0;
 		var rand = 0;
-
 		
 		this.mQuiz.resetQuestionArray();
-
-
 
 		for (s = 0; s < Math.floor(this.mScoreNeeded/3); s++)
 		 {		
@@ -117,11 +107,7 @@ Extends: MultipleChoicePadTwo,
                 	this.mQuiz.mQuestionArray.push(question);
 
 			this.createAnswers(s, varC, varD, varE);
-                                       
                  }
-		
-
-
 			
 		 for (s = Math.floor(this.mScoreNeeded/3); s < Math.floor(this.mScoreNeeded * 2/3); s++)
 		 {		
@@ -155,9 +141,7 @@ Extends: MultipleChoicePadTwo,
                 	this.mQuiz.mQuestionArray.push(question);
 
 			this.createAnswers(s, varA, varD, varE);
-                                       
                  }
-
 
 		for (s = Math.floor(this.mScoreNeeded * 2/3); s < this.mScoreNeeded; s++)
 		 {		
@@ -184,7 +168,6 @@ Extends: MultipleChoicePadTwo,
 
 			this.mQuiz.mQuestionArray[s].setChoice('A', 'yes');
 			this.mQuiz.mQuestionArray[s].setChoice('B', 'no');
-                                       
                  }
 			
 		//buffer
@@ -193,6 +176,4 @@ Extends: MultipleChoicePadTwo,
                 //random
                 this.mQuiz.randomize(30);
 	}
-
-	
 });
