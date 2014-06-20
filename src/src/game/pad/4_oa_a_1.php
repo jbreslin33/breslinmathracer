@@ -49,11 +49,11 @@ Extends: MultipleChoicePad,
 		var b = Math.floor((Math.random()*8)+3);		
 		var x = a * b;
 
-               	question = new Question('Which equation means that ' + x + ' is '  + a + ' times as many as ' + b + '?','' + x  + '=' + a + 'x' + b);
+               	question = new Question('Which equation means that ' + x + ' is '  + a + ' times as many as ' + b + '?',x  + '=' + a + 'x' + b);
                	this.mQuiz.mQuestionArray.push(question);
- 		question.mAnswerPool.push('' + x  + '=' + a + 'x' + b);
- 		question.mAnswerPool.push('' + a  + '=' + b + 'x' + x);
- 		question.mAnswerPool.push('' + b  + '=' + x + 'x' + a);
+ 		question.mAnswerPool.push(x + '=' + a + 'x' + b);
+ 		question.mAnswerPool.push(a + '=' + b + 'x' + x);
+ 		question.mAnswerPool.push(b + '=' + x + 'x' + a);
 	},
 	
 	makeTypeB: function()
@@ -62,11 +62,24 @@ Extends: MultipleChoicePad,
 		var b = Math.floor((Math.random()*8)+3);		
 		var x = a * b;
 
-               	question = new Question('Which equation does not mean that ' + x + ' is '  + a + ' times as many as ' + b + '?','' + x  + '=' + a + 'x' + b);
+               	question = new Question('Which equation does not mean that ' + x + ' is '  + a + ' times as many as ' + b + '?',b  + '=' + x + 'x' + a);
                	this.mQuiz.mQuestionArray.push(question);
- 		question.mAnswerPool.push('' + x  + '=' + a + 'x' + b);
- 		question.mAnswerPool.push('' + x  + '=' + b + 'x' + a);
- 		question.mAnswerPool.push('' + b  + '=' + x + 'x' + a);
+ 		question.mAnswerPool.push(x + '=' + a + 'x' + b);
+ 		question.mAnswerPool.push(x + '=' + b + 'x' + a);
+ 		question.mAnswerPool.push(b + '=' + x + 'x' + a);
+	},
+
+	makeTypeC: function()
+	{
+		var a = Math.floor((Math.random()*8)+3);		
+		var b = Math.floor((Math.random()*8)+3);		
+		var x = a * b;
+
+               	question = new Question('How many times more is ' + x + ' than '  + a + '?',b);
+               	this.mQuiz.mQuestionArray.push(question);
+ 		question.mAnswerPool.push(b);
+ 		question.mAnswerPool.push(parseInt(x - a));
+ 		question.mAnswerPool.push(x);
 	},
 
 	createQuestions: function()
@@ -75,14 +88,12 @@ Extends: MultipleChoicePad,
                 
 		this.mQuiz.resetQuestionArray();
 
-		this.makeTypeB();
+		this.makeTypeC();
 		this.makeTypeA();
 		this.makeTypeA();
 		this.makeTypeA();
 
                 //this.mQuiz.randomize(10);
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
-
-
 	}
 });
