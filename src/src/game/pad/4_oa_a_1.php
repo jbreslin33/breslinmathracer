@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(4);
+		this.setScoreNeeded(12);
 	},
 
 	createNumQuestion: function()
@@ -16,15 +16,12 @@ Extends: MultipleChoicePad,
 		this.mNumQuestion.setSize(200,200);
 	},	
 
-     	//showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(700,100);
-                this.mShapeArray[1].setPosition(380,80);
-
-		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getShowAnswer();
+                this.mShapeArray[1].setSize(650,200);
+                this.mShapeArray[1].setPosition(350,140);
         },
 
         //outOfTime
@@ -54,6 +51,7 @@ Extends: MultipleChoicePad,
  		question.mAnswerPool.push(x + '=' + a + 'x' + b);
  		question.mAnswerPool.push(a + '=' + b + 'x' + x);
  		question.mAnswerPool.push(b + '=' + x + 'x' + a);
+		question.mRandomChoices = true;
 	},
 	
 	makeTypeB: function()
@@ -67,6 +65,7 @@ Extends: MultipleChoicePad,
  		question.mAnswerPool.push(x + '=' + a + 'x' + b);
  		question.mAnswerPool.push(x + '=' + b + 'x' + a);
  		question.mAnswerPool.push(b + '=' + x + 'x' + a);
+		question.mRandomChoices = true;
 	},
 
 	makeTypeC: function()
@@ -79,7 +78,8 @@ Extends: MultipleChoicePad,
                	this.mQuiz.mQuestionArray.push(question);
  		question.mAnswerPool.push(b);
  		question.mAnswerPool.push(parseInt(x - a));
- 		question.mAnswerPool.push(x);
+ 		question.mAnswerPool.push(parseInt(x + a));
+		question.mRandomChoices = true;
 	},
 	
 	makeTypeD: function()
@@ -88,11 +88,12 @@ Extends: MultipleChoicePad,
 		var b = Math.floor((Math.random()*8)+3);		
 		var x = a * b;
 
-               	question = new Question('Which equation means the same as: ' + x + '=' + a + 'x' + b,x + '=' + b + 'x' + a);
+               	question = new Question('Which equation means the same as ' + x + '=' + a + 'x' + b + '?',x + '=' + b + 'x' + a);
                	this.mQuiz.mQuestionArray.push(question);
  		question.mAnswerPool.push(x + '=' + b + 'x' + a);
  		question.mAnswerPool.push(x + '=' + b + '+' + a);
  		question.mAnswerPool.push(a + '=' + b + 'x' + x);
+		question.mRandomChoices = true;
 	},
 
 	createQuestions: function()
@@ -101,12 +102,24 @@ Extends: MultipleChoicePad,
                 
 		this.mQuiz.resetQuestionArray();
 
+		this.makeTypeA();
+		this.makeTypeA();
+		this.makeTypeA();
+		this.makeTypeA();
+		this.makeTypeB();
+		this.makeTypeB();
+		this.makeTypeB();
+		this.makeTypeB();
+		this.makeTypeC();
+		this.makeTypeC();
+		this.makeTypeC();
+		this.makeTypeC();
 		this.makeTypeD();
-		this.makeTypeA();
-		this.makeTypeA();
-		this.makeTypeA();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
 
-                //this.mQuiz.randomize(10);
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
+                this.mQuiz.randomize(10);
 	}
 });
