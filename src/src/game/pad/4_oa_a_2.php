@@ -37,7 +37,6 @@ Extends: MultipleChoicePad,
                 this.mShapeArray[9].setSize(75,75);
                 this.mShapeArray[9].setPosition(75,175);
         },
-
 	makeTypeA: function()
         {
 		question = '';
@@ -61,11 +60,15 @@ Extends: MultipleChoicePad,
 
 		if (randomChoice == 0)
 		{
-                	question = new Question('A soccer league had ' + a + ' teams. There were ' + b + ' players on each team. ' + a + ' x ' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
+                	question = new Question('A soccer league had ' + a + ' teams. There were ' + b + ' players on each team. ' + a + 'x' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
 		}
 		if (randomChoice == 1)
 		{
-                	question = new Question('A teacher put the kids desks in ' + a + ' rows with ' + b + ' desks in each row. ' + a + ' x ' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
+                	question = new Question('A teacher put the kids desks in ' + a + ' rows with ' + b + ' desks in each row. ' + a + 'x' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
+		}
+		if (randomChoice == 2)
+		{
+                	question = new Question('Jim scored ' + a + ' points. He had ' + b + ' times as many points as Steve. ' + a + 'x' + b + ' represents this as an expression. How would we best represent this expression in a picture?', 'A');
 		}
 
                 var correctLetterNumber = Math.floor(Math.random()*3);
@@ -96,6 +99,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('C');
                 this.mQuiz.mQuestionArray.push(question);
         },
+
 
 	makeTypeB: function()
 	{
@@ -130,7 +134,6 @@ Extends: MultipleChoicePad,
 		x = parseInt(a * b);
 		
 		randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 1;
 
 		if (randomChoice == 0)
 		{
@@ -156,7 +159,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeC();
+		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
 		this.makeTypeB();
