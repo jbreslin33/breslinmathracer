@@ -98,6 +98,29 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
         },
 
+	makeTypeB: function()
+	{
+		question = '';
+                
+		a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
+                
+		randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+
+		if (randomChoice == 0)
+		{
+			question = new Question('Mike had ' + a + ' buckets. He had ' + b + ' fish in each bucket. We could write the expression: ' + a + 'x' + b + ' to represent this. Which of these expressions also represent the situation?',b + 'x' + a);
+                }
+
+                question.mAnswerPool.push('' + question.getAnswer());
+                question.mAnswerPool.push('' + b + '+' + a);
+                question.mAnswerPool.push('' + b + '-' + a);
+
+		question.mRandomChoices = true;
+		this.mQuiz.mQuestionArray.push(question);
+	},		
+
 	createQuestions: function()
         {
 		this.parent();
@@ -106,10 +129,10 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeA();
-		this.makeTypeA();
-		this.makeTypeA();
-		this.makeTypeA();
+		this.makeTypeB();
+		this.makeTypeB();
+		this.makeTypeB();
+		this.makeTypeB();
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
