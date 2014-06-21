@@ -58,7 +58,6 @@ Extends: MultipleChoicePad,
                         f = Math.floor((Math.random()*8)+2);
                 }
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
 
 		if (randomChoice == 0)
 		{
@@ -102,15 +101,18 @@ Extends: MultipleChoicePad,
 	{
 		question = '';
                 
-		a = Math.floor((Math.random()*9)+1);
-                b = Math.floor((Math.random()*9)+1);
+		a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*8)+2);
                 
 		randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
 
 		if (randomChoice == 0)
 		{
 			question = new Question('Mike had ' + a + ' buckets. He had ' + b + ' fish in each bucket. We could write the expression: ' + a + 'x' + b + ' to represent this. Which of these expressions also represent the situation?',b + 'x' + a);
+                }
+		if (randomChoice == 1)
+		{
+			question = new Question('A school had ' + a + ' class rooms. It had ' + b + ' students in each class. We could write the expression: ' + a + 'x' + b + ' to represent this. Which of these expressions also represent the situation?',b + 'x' + a);
                 }
 
                 question.mAnswerPool.push('' + question.getAnswer());
