@@ -145,12 +145,19 @@ Extends: NumberPad,
 		var varN = 0;
 
 
-		var start = 0;
-		var end = 0;
+		var max = 0;
+		var remainder = 0;
 		var rand = 0;
+		var top = 0;
+		var bottom = 0;
+		var whole = 0;
 
 		var question;
 		var answer;
+		var answer1;
+		var answer2;
+		var answer3;
+		var equation;
 		var showAnswer;
 		
 		this.mQuiz.resetQuestionArray();
@@ -168,14 +175,88 @@ Extends: NumberPad,
 			// get whole number
 			varC = 3 + Math.floor((Math.random()*7));
 
+			//varA = 1;
+			//varB = 4;
+			//varC = 2;
+
 			varD = varB;
 
-			answer = varA * varC;
-			answer = '' + answer + '/' + varB;
+			// numerator of improper fraction
+			top = varA * varC;
+			//whole number part of mixed number
+			whole = Math.floor(top/varB);
+			// numerator of mixed number
+			remainder = top % varB;
 
-			showAnswer = varA + '/' +  varB + ' * ' + varC + ' = ' + answer;
+			//equation used to solve problem
+			equation = '' + varA + '/' + varB + ' * ' + varC;
+			// answer in improper fraction form
+			answer1 = ' = ' + top + '/' + varB;
+
+			// are we dealing with regular fraction or mixed number
+			// answer2 is answer in fraction or mixed # form - not improper
+			if (whole == 0)
+				answer2 = '';
+			else
+			{
+			   if (remainder == 0)
+				answer2 = ' = ' + whole;
+			   else
+				answer2 = ' = ' + whole + ' ' + remainder + '/' + varB;
+			}
+
+			// is this a whole # answer or a mixed #
+			if (remainder > 0)
+			{
+			   max = Math.floor(remainder/2);
+
+			   success = false;
+			   var n = remainder;
+			   var a = 0;
+			   top = remainder;
+			   bottom = varB;
+
+			   // try to reduce fraction part
+			   do {
+   			 	a = remainder % n;
+				if (a == 0)
+				{
+    				   a = varB % n;
+
+				   if (a == 0)
+				   {
+					top = remainder/n;
+					bottom = varB/n;
+					success = true;
+				   }
+				}
+				n = n - 1;
+			   }
+			   while (n > 1 && success == false);
+				
+			   // answer3 is final answer in simplest form				
+			   if (whole == 0)
+				answer3 = ' = ' + top + '/' +  bottom;
+			   else
+			        answer3 = ' = ' + whole + ' ' + top + '/' +  bottom;
+
+			}
+			else
+			   answer3 = ' = ' + whole;
+
+			if (answer3 == answer2 || answer3 == answer1)
+				answer3 = '';
+
+			top = varA * varC;
+
+			// this is what we send in to question class as the anwer in raw form
+			answer = '' + top + '/' + varB;
+
+			// show how we got to final answer
+			showAnswer = '' + equation + answer1 + answer2 + answer3;
 
 			rand = Math.floor(Math.random()*9);
+
 
 
 			if(rand == 0)
