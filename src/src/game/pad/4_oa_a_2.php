@@ -130,17 +130,20 @@ Extends: MultipleChoicePad,
 		x = parseInt(a * b);
 		
 		randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
+		randomChoice = 1;
 
 		if (randomChoice == 0)
 		{
-
-                	question = new Question('Ava and Fred played soccer. Ava scored ' + a + ' goals. Ava scored ' + b + ' times as many goals as Fred. Which equation would represent this situation?',a + 'x' + b + '=' + x);
+                	question = new Question('Ava and Fred played soccer. Fred scored ' + a + ' goals. Ava scored ' + b + ' times as many goals as Fred. Which equation would represent this situation?',a + 'x' + b + '=' + x);
+               	} 
+		if (randomChoice == 1)
+		{
+                	question = new Question('Zach and Brent both love fruit. Brent loves it more. In the last 7 days Zach ate ' + a + ' pieces of fruit. Brent ate ' + b + ' times as many pieces of fruit as Zach. Which equation would represent this situation?',a + 'x' + b + '=' + x);
                	} 
 
 		question.mAnswerPool.push(question.getAnswer());
                 question.mAnswerPool.push(b + '-' + a + '=' + parseInt(b+a));
-                question.mAnswerPool.push(b + '*' + b + '=' + parseInt(b*b));
+                question.mAnswerPool.push(x + '+' + b + '=' + parseInt(x+b));
 		question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
 	},	
