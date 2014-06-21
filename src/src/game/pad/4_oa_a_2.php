@@ -123,6 +123,28 @@ Extends: MultipleChoicePad,
 		this.mQuiz.mQuestionArray.push(question);
 	},		
 
+	makeTypeC: function()
+	{
+                a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*8)+2);
+		x = parseInt(a * b);
+		
+		randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+		if (randomChoice == 0)
+		{
+
+                	question = new Question('Ava and Fred played soccer. Ava scored ' + a + ' goals. Ava scored ' + b + ' times as many goals as Fred. Which equation would represent this situation?',a + 'x' + b + '=' + x);
+               	} 
+
+		question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push(b + '-' + a + '=' + parseInt(b+a));
+                question.mAnswerPool.push(b + '*' + b + '=' + parseInt(b*b));
+		question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+	},	
+
 	createQuestions: function()
         {
 		this.parent();
@@ -131,9 +153,9 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
+		this.makeTypeC();
 		this.makeTypeB();
-		this.makeTypeB();
-		this.makeTypeB();
+		this.makeTypeC();
 		this.makeTypeB();
 
 		//buffer
