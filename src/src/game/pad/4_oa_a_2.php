@@ -163,10 +163,14 @@ Extends: MultipleChoicePad,
                 {
                         question = new Question('Lisnett and Zabrina played a game. Lisnett score ' + x + ' points. Which is ' + a + ' times as many points as Zabrina scored. Which equation would represent how many points Zabrina scored?',x + '/' + a + '=' + b);
                 }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Lisnett and Zabrina played a game. Lisnett score ' + x + ' points. Which is ' + a + ' times as many points as Zabrina scored. Which equation would represent how many points Zabrina scored?',x + '/' + a + '=' + b);
+                }
 
                 question.mAnswerPool.push(question.getAnswer());
-                question.mAnswerPool.push(b + '-' + a + '=' + parseInt(b+a));
-                question.mAnswerPool.push(x + '+' + b + '=' + parseInt(x+b));
+                question.mAnswerPool.push(x + '+' + a + '=' + parseInt(x+a));
+                question.mAnswerPool.push(x + '-' + a + '=' + parseInt(x-a));
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
         },
