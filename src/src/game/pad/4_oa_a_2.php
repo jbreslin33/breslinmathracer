@@ -9,7 +9,6 @@ Extends: MultipleChoicePad,
 		this.setScoreNeeded(4);
 
 		this.mCircles = new Circles(this);
-
     		this.mRaphael = Raphael(10, 35, 760, 405);
 	},
         
