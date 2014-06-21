@@ -1,0 +1,74 @@
+<html>
+<body>
+
+<style>
+DIV.movable { position:absolute; }
+</style>
+
+<div id="wizard" class="movable"><img src="wizard_north.png" /></div>
+
+<script language=javascript>
+
+
+/**************** POSITIONS ************/
+var xPosition = 0; 
+var yPosition = 200;
+
+/**************** VELOCITY ************/
+var xVelocity = 0;
+var yVelocity = 0;
+
+/**************** SPEED ************/
+var speed = .1;
+
+/**************** TIME ************/
+var timeSinceEpoch = 0;
+var lastTimeSinceEpoch = 0;
+var deltaTime = 0;
+
+/**************** SET INITIAL POSITION AND INITIALIZE TIME SINCE EPOCH************/
+document.getElementById("wizard").style.left = xPosition + 'px';
+document.getElementById("wizard").style.top  = yPosition + 'px';
+
+t = new Date();
+timeSinceEpoch = t.getTime();
+
+/**************** START UPDATING ************/
+var int=self.setInterval("update()",1);
+
+/**************** UPDATE ************/
+function update()
+{
+	//set key
+	xKey = 1;
+	yKey = 0;
+
+	//get time since epoch and set lasttime
+	e = new Date();
+        lastTimeSinceEpoch = timeSinceEpoch;
+        timeSinceEpoch = e.getTime();
+        
+	//set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
+        deltaTime = timeSinceEpoch - lastTimeSinceEpoch;
+
+	//update velocity
+	xVelocity = xKey * deltaTime * speed; 
+	yVelocity = yKey * deltaTime * speed; 
+
+	// update position based on current velocity 
+	xPosition += xVelocity;
+	yPosition += yVelocity;
+
+	//modify for style position 
+	modx = xPosition+'px';
+	mody = yPosition+'px';
+
+	//render at new position	
+	document.getElementById("wizard").style.left = modx;
+	document.getElementById("wizard").style.top  = mody;
+}
+
+</script>
+
+</body>
+</html> 
