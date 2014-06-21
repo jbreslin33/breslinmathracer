@@ -149,6 +149,27 @@ Extends: MultipleChoicePad,
 		question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
 	},	
+ 
+	makeTypeD: function()
+        {
+                a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*8)+2);
+                x = parseInt(a * b);
+
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Lisnett and Zabrina played a game. Lisnett score ' + x + ' points. Which is ' + a + ' times as many points as Zabrina scored. Which equation would represent how many points Zabrina scored?',x + '/' + a + '=' + b);
+                }
+
+                question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push(b + '-' + a + '=' + parseInt(b+a));
+                question.mAnswerPool.push(x + '+' + b + '=' + parseInt(x+b));
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
 
 	createQuestions: function()
         {
@@ -158,6 +179,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
+		this.makeTypeD();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
