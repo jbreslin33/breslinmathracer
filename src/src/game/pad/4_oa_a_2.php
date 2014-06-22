@@ -174,6 +174,23 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
         },
+	
+	makeTypeE: function()
+        {
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Which of the following is an example of multiplicative comparison?','Becky has 5 times as many points as Ralph');
+                }
+
+                question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push('Becky has 5 more points than Ralph');
+                question.mAnswerPool.push('Beck has 5 less points than Ralph');
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
 
 	createQuestions: function()
         {
@@ -183,7 +200,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeD();
+		this.makeTypeE();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
