@@ -222,6 +222,23 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
         },
+	
+	makeTypeG: function()
+        {
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Judy tries to solve a story problem: A pack of game cards costs 5 times as much as 1 card. If one card costs $1.50, how much does a pack of cards cost? Judy trys to solve the problem this way: 5 + $1.50 = $6.50','Judy is incorrect. She found the sum');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('Judy is correct. She found the sum');
+                	question.mAnswerPool.push('Judy is correct. She found the difference');
+                }
+
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
 
 	createQuestions: function()
         {
@@ -231,7 +248,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeF();
+		this.makeTypeG();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
