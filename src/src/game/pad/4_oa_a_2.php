@@ -178,16 +178,23 @@ Extends: MultipleChoicePad,
 	makeTypeE: function()
         {
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
+		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Which of the following is an example of multiplicative comparison?','Becky has 5 times as many points as Ralph');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('Becky has 5 more points than Ralph');
+                	question.mAnswerPool.push('Beck has 5 less points than Ralph');
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Which of the following is an example of multiplicative comparison?','Mike caught 5 times as many fish as Jim');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('Mike caught 4 more fish than Jim');
+                	question.mAnswerPool.push('Mike caught 4 less fish than Jim');
                 }
 
-                question.mAnswerPool.push(question.getAnswer());
-                question.mAnswerPool.push('Becky has 5 more points than Ralph');
-                question.mAnswerPool.push('Beck has 5 less points than Ralph');
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
         },
