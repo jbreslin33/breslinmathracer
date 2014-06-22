@@ -206,11 +206,15 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('A gym bag has soccerballs and basketballs in it. There are ' + x + ' soccerballs in the bag, which is ' + a + ' times as the amount of basketballs in the bag. Ho many basketballs are in the bag?',b);
+                        question = new Question('A gym bag has soccerballs and basketballs in it. There are ' + x + ' soccerballs in the bag, which is ' + a + ' times as the amount of basketballs in the bag. How many basketballs are in the bag?',b);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Allen and Sammy were reading the same book. Allen had read ' + x + ' pages of the book, which is ' + a + ' times as the amount of pages that Sammy had read. How many pages did Sammy read?',b);
                 }
                 question.mAnswerPool.push(question.getAnswer());
                 question.mAnswerPool.push(parseInt(x+a));
