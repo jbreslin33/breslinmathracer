@@ -157,15 +157,15 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b);
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
+		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Lisnett and Zabrina played a game. Lisnett score ' + x + ' points. Which is ' + a + ' times as many points as Zabrina scored. Which equation would represent how many points Zabrina scored?',x + '/' + a + '=' + b);
+                        question = new Question('Lisnett and Zabrina played a game. Lisnett scored ' + x + ' points. Which is ' + a + ' times as many points as Zabrina scored. Which equation would represent how many points Zabrina scored?',x + '/' + a + '=' + b);
                 }
                 if (randomChoice == 1)
                 {
-                        question = new Question('Lisnett and Zabrina played a game. Lisnett score ' + x + ' points. Which is ' + a + ' times as many points as Zabrina scored. Which equation would represent how many points Zabrina scored?',x + '/' + a + '=' + b);
+                        question = new Question('In a hot dog eating contest Fred ate ' + x + ' hot dogs. Which is ' + a + ' times as many hot dogs as Jason ate. Which equation would represent how many hot dogs Jason ate?',x + '/' + a + '=' + b);
                 }
 
                 question.mAnswerPool.push(question.getAnswer());
