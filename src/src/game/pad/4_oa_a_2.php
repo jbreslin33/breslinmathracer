@@ -199,6 +199,26 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
         },
 
+        makeTypeF: function()
+        {
+                a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*8)+2);
+                x = parseInt(a * b);
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('A gym bag has soccerballs and basketballs in it. There are ' + x + ' soccerballs in the bag, which is ' + a + ' times as the amount of basketballs in the bag. Ho many basketballs are in the bag?',b);
+                }
+                question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push(parseInt(x+a));
+                question.mAnswerPool.push(parseInt(x-a));
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
+
 	createQuestions: function()
         {
 		this.parent();
@@ -207,7 +227,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeE();
+		this.makeTypeF();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
