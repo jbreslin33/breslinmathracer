@@ -6,6 +6,7 @@ Extends: MultipleChoicePadTwo,
 	initialize: function(application)
 	{
        		this.parent(application);
+		this.setScoreNeeded(3);
 	},
 
 	createNumQuestion: function()
@@ -26,154 +27,167 @@ Extends: MultipleChoicePadTwo,
 		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
         },
 
-  	createAnswers: function(s, varA, varD, varE)
+  	createAnswers: function(question, varA, varD, varE)
         {
-			rand = Math.floor(Math.random()*3);
+		rand = Math.floor(Math.random()*3);
 
-			if(rand == 0)			
-			{
-				this.mQuiz.mQuestionArray[s].setChoice('A', varA);
-				this.mQuiz.mQuestionArray[s].setChoice('B', varD);
-				this.mQuiz.mQuestionArray[s].setChoice('C', varE);
-			}
-			else if(rand == 1)			
-			{
-				
-				this.mQuiz.mQuestionArray[s].setChoice('A', varD);
-				this.mQuiz.mQuestionArray[s].setChoice('B', varA);
-				this.mQuiz.mQuestionArray[s].setChoice('C', varE);
-			}
-			else
-			{
-				
-				this.mQuiz.mQuestionArray[s].setChoice('A', varD);
-				this.mQuiz.mQuestionArray[s].setChoice('B', varE);
-				this.mQuiz.mQuestionArray[s].setChoice('C', varA);
-			}
+		if(rand == 0)			
+		{
+			question.setChoice('A', varA);
+			question.setChoice('B', varD);
+			question.setChoice('C', varE);
+		}
+		else if(rand == 1)			
+		{
+			question.setChoice('A', varD);
+			question.setChoice('B', varA);
+			question.setChoice('C', varE);
+		}
+		else
+		{
+			question.setChoice('A', varD);
+			question.setChoice('B', varE);
+			question.setChoice('C', varA);
+		}
+	},
+
+	makeTypeA: function()
+	{
+		question = '';
+		varA = 0;
+		varB = 0;
+		varC = 0;
+		varD = 0;
+		varN = 0;
+		varE = 0;
+		varF = 0;
+	 	
+		// factor 1
+                varA = 3 + Math.floor(Math.random()*19);
+
+                max = Math.floor(100/varA);
+
+                // factor 2
+                varB = 2 + Math.floor(Math.random()*(max-1));
+
+                // multiple
+                varC = varA * varB;
+
+                // wrong answer 1
+                do
+		{
+                	varD = (2 * varA) + Math.floor(Math.random()*(101 - (2 * varA)));
+                        varN = varD % varA;
+                }
+                while (varN == 0);
+
+                // wrong answer 2
+                do
+	 	{
+                        varE = (2 * varA) + Math.floor(Math.random()*(101 - (2 * varA)));
+                        varF = varE % varA;
+                }
+                while (varF == 0 || varE == varD);
+
+                question = new Question('Which is a multiple of ' + varA + '? ', '' + varC);
+
+                this.mQuiz.mQuestionArray.push(question);
+
+                this.createAnswers(question, varC, varD, varE);
+	},
+	makeTypeB: function()
+	{
+		question = '';
+		max = 0;
+		varA = 0;
+		varB = 0;
+		varC = 0;
+		varD = 0;
+		varN = 0;
+		varE = 0;
+		varF = 0;
+	
+		// factor 1
+                varA = 3 + Math.floor(Math.random()*19);
+
+                max = Math.floor(100/varA);
+
+                // factor 2
+                varB = 2 + Math.floor(Math.random()*(max-1));
+
+                // multiple
+                varC = varA * varB;
+
+                // wrong answer 1
+                do
+		{
+                	varD = 2 + Math.floor(Math.random()*19);
+                       	varN = varC % varD;
+                }
+                while (varN == 0);
+
+                // wrong answer 2
+                do
+		{
+                	varE = 2 + Math.floor(Math.random()*19);
+                        varF = varC % varE;
+                }
+                while (varF == 0 || varE == varD);
+
+                question = new Question('Which is a factor of ' + varC + '? ', '' + varA);
+
+                this.mQuiz.mQuestionArray.push(question);
+
+                this.createAnswers(question, varA, varD, varE);
+	},
+	makeTypeC: function()
+	{
+		question = '';
+		answer = '';
+		prime = [3,5,7,11,13,17,19,23,29,31,37];
+		max = 0;
+		rand = 0;
+		varA = 0;
+		
+ 		// factor 1
+                rand = Math.floor(Math.random()*2);
+
+                if(rand == 0)
+                {
+                        varA = prime[Math.floor(Math.random()*11)];
+                        answer = 'yes';
+                        wrong = 'no';
+                }
+
+                if(rand == 1)
+                {
+                        varA = prime[Math.floor(Math.random()*11)] + 1;
+                        answer = 'no';
+                        wrong = 'yes';
+                }
+
+                question = new Question('Is ' + varA + ' a prime number? ', '' + answer);
+
+                this.mQuiz.mQuestionArray.push(question);
+
+               	question.setChoice('A', 'yes');
+                question.setChoice('B', 'no');
 	},
 
 	createQuestions: function()
         {
  		this.parent();
 
-		//this.mCorrectAnswerThresholdTime = 1000;
-
-		var prime = [3,5,7,11,13,17,19,23,29,31,37];
-
-		var question;
-		var answer;
-
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varN = 0;
-		var varE = 0;
-		var varF = 0;
-		var max = 0;
-		var rand = 0;
-		
 		this.mQuiz.resetQuestionArray();
 
-		for (s = 0; s < Math.floor(this.mScoreNeeded/3); s++)
-		 {		
-			// factor 1
-			varA = 3 + Math.floor(Math.random()*19);
-			
-			max = Math.floor(100/varA);
-			
-			// factor 2
-			varB = 2 + Math.floor(Math.random()*(max-1));
+		this.makeTypeA();
+		this.makeTypeB();
+		this.makeTypeC();
 
-			// multiple
-			varC = varA * varB;
-
-			// wrong answer 1
-			do {
-   			 	varD = (2 * varA) + Math.floor(Math.random()*(101 - (2 * varA)));
-    				varN = varD % varA;
-			}
-			while (varN == 0);
-
-			// wrong answer 2
-			do {
-   			 	varE = (2 * varA) + Math.floor(Math.random()*(101 - (2 * varA)));
-    				varF = varE % varA;
-			}
-			while (varF == 0 || varE == varD);
-			
-			question = new Question('Which is a multiple of ' + varA + '? ', '' + varC);
-
-                	this.mQuiz.mQuestionArray.push(question);
-
-			this.createAnswers(s, varC, varD, varE);
-                 }
-			
-		 for (s = Math.floor(this.mScoreNeeded/3); s < Math.floor(this.mScoreNeeded * 2/3); s++)
-		 {		
-			// factor 1
-			varA = 3 + Math.floor(Math.random()*19);
-			
-			max = Math.floor(100/varA);
-			
-			// factor 2
-			varB = 2 + Math.floor(Math.random()*(max-1));
-
-			// multiple
-			varC = varA * varB;
-
-			// wrong answer 1
-			do {
-   			 	varD = 2 + Math.floor(Math.random()*19);
-    				varN = varC % varD;
-			}
-			while (varN == 0);
-
-			// wrong answer 2
-			do {
-   			 	varE = 2 + Math.floor(Math.random()*19);
-    				varF = varC % varE;
-			}
-			while (varF == 0 || varE == varD);
-			
-			question = new Question('Which is a factor of ' + varC + '? ', '' + varA);
-
-                	this.mQuiz.mQuestionArray.push(question);
-
-			this.createAnswers(s, varA, varD, varE);
-                 }
-
-		for (s = Math.floor(this.mScoreNeeded * 2/3); s < this.mScoreNeeded; s++)
-		 {		
-			// factor 1
-			rand = Math.floor(Math.random()*2);
-			
-			if(rand == 0)
-			{
-				varA = prime[Math.floor(Math.random()*11)];
-				answer = 'yes';
-				wrong = 'no';
-			}
-
-			if(rand == 1)
-			{
-				varA = prime[Math.floor(Math.random()*11)] + 1;
-				answer = 'no';
-				wrong = 'yes';
-			}
-			
-			question = new Question('Is ' + varA + ' a prime number? ', '' + answer);
-
-                	this.mQuiz.mQuestionArray.push(question);
-
-			this.mQuiz.mQuestionArray[s].setChoice('A', 'yes');
-			this.mQuiz.mQuestionArray[s].setChoice('B', 'no');
-                 }
-			
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 
                 //random
-                this.mQuiz.randomize(30);
+                //this.mQuiz.randomize(30);
 	}
 });
