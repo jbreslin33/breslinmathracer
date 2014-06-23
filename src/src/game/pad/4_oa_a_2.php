@@ -247,14 +247,14 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
+                randomChoice = 0;
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Mr Nucera had ' + a + ' gym bags. Each gym bag had ' + b + ' dodgeballs in it. How many dodgeballs did Mr. Nucera have total?',b);
+                        question = new Question('Mr Nucera had ' + a + ' gym bags. Each gym bag had ' + b + ' dodgeballs in it. How many dodgeballs did Mr. Nucera have total?',x);
                 }
                 question.mAnswerPool.push(question.getAnswer());
-                question.mAnswerPool.push(parseInt(x+a));
+                question.mAnswerPool.push(parseInt(a+b));
                 question.mAnswerPool.push(parseInt(x-a));
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
