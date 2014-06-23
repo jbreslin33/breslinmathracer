@@ -263,6 +263,26 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
         },
 
+	makeTypeI: function()
+        {
+                a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*8)+2);
+                x = parseInt(a * b);
+
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Mr Dubois had ' + x + ' dodgeballs. He had made ' + a + ' teams. If Mr. Dubois wants to give each team the same amount of dodgeballs to start with than how many dodgeballs should he distribute to each team?',b);
+                }
+                question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push(parseInt(x-a));
+                question.mAnswerPool.push(parseInt(x+a));
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
+
 	createQuestions: function()
         {
 		this.parent();
@@ -271,7 +291,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeH();
+		this.makeTypeI();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
