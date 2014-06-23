@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(4);
+		this.setScoreNeeded(9);
 
 		this.mCircles = new Circles(this);
     		this.mRaphael = Raphael(10, 35, 760, 405);
@@ -222,7 +222,7 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
         },
-	
+/*	
 	makeTypeG: function()
         {
                 randomChoice = Math.floor(Math.random()*2);
@@ -239,7 +239,7 @@ Extends: MultipleChoicePad,
                 question.mRandomChoices = true;
                 this.mQuiz.mQuestionArray.push(question);
         },
-
+*/
         makeTypeH: function()
         {
                 a = Math.floor((Math.random()*99)+2);
@@ -318,17 +318,22 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeJ();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
-		this.makeTypeB();
+		this.makeTypeD();
+		this.makeTypeE();
+		this.makeTypeF();
+		//this.makeTypeG();
+		this.makeTypeH();
+		this.makeTypeI();
+		this.makeTypeJ();
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
 		
 		//random	
-		//this.mQuiz.randomize(10);
+		this.mQuiz.randomize(10);
 	},
 
 	createWorld: function()
