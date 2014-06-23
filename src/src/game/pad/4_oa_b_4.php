@@ -37,30 +37,6 @@ Extends: MultipleChoicePad,
                 this.mShapeArray[1].setPosition(350,140);
         },
 
-  	createAnswers: function(question, varA, varD, varE)
-        {
-		rand = Math.floor(Math.random()*3);
-
-		if(rand == 0)			
-		{
-			question.setChoice('A', varA);
-			question.setChoice('B', varD);
-			question.setChoice('C', varE);
-		}
-		else if(rand == 1)			
-		{
-			question.setChoice('A', varD);
-			question.setChoice('B', varA);
-			question.setChoice('C', varE);
-		}
-		else
-		{
-			question.setChoice('A', varD);
-			question.setChoice('B', varE);
-			question.setChoice('C', varA);
-		}
-	},
-
 	makeTypeA: function()
 	{
 		question = '';
@@ -157,6 +133,7 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
 	},
+
 	makeTypeC: function()
 	{
 		question = '';
