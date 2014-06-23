@@ -101,9 +101,13 @@ Extends: MultipleChoicePad,
 
                 question = new Question('Which is a multiple of ' + varA + '? ', '' + varC);
 
-                this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(varC);
+		question.mAnswerPool.push(varD);
+		question.mAnswerPool.push(varE);
+                
+		this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
 
-                this.createAnswers(question, varC, varD, varE);
 	},
 	makeTypeB: function()
 	{
@@ -146,9 +150,12 @@ Extends: MultipleChoicePad,
 
                 question = new Question('Which is a factor of ' + varC + '? ', '' + varA);
 
-                this.mQuiz.mQuestionArray.push(question);
+		question.mAnswerPool.push(varA);
+		question.mAnswerPool.push(varD);
+		question.mAnswerPool.push(varE);
 
-                this.createAnswers(question, varA, varD, varE);
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
 	},
 	makeTypeC: function()
 	{
@@ -178,10 +185,9 @@ Extends: MultipleChoicePad,
 
                 question = new Question('Is ' + varA + ' a prime number? ', '' + answer);
 
-                this.mQuiz.mQuestionArray.push(question);
-
                	question.mAnswerPool.push('yes');
                	question.mAnswerPool.push('no');
+                this.mQuiz.mQuestionArray.push(question);
 	},
 
 	makeTypeD: function()
