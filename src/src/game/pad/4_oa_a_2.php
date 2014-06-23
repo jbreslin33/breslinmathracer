@@ -270,11 +270,38 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b);
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Mr Dubois had ' + x + ' dodgeballs. He had made ' + a + ' teams. If Mr. Dubois wants to give each team the same amount of dodgeballs to start with than how many dodgeballs should he distribute to each team?',b);
+                }
+                if (randomChoice == 1) 
+                {
+                        question = new Question('Santa Claus had ' + x + ' toys. He has to deliver the toys to ' + a + ' very good kids. If Santa wants to give each kid the same amount of toys how many toys should he give to each kid?',b);
+                }
+                question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push(parseInt(x-a));
+                question.mAnswerPool.push(parseInt(x+a));
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
+   	
+	makeTypeJ: function()
+        {
+                a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*97)+2);
+                x = parseInt(a * b);
+
+                randomChoice = Math.floor(Math.random()*2);
+		randomChoice = 1;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Mr Dubois had ' + x + ' dodgeballs. He had made ' + a + ' teams. If Mr. Dubois wants to give each team the same amount of dodgeballs to start with than how many dodgeballs should he distribute to each team?',b);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Santa Claus had ' + x + ' toys. He has to deliver the toys to ' + a + ' very good kids. If Santa wants to give each kid the same amount of toys how many toys should he give to each kid?',b);
                 }
                 question.mAnswerPool.push(question.getAnswer());
                 question.mAnswerPool.push(parseInt(x-a));
@@ -291,7 +318,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeI();
+		this.makeTypeJ();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
