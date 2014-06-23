@@ -40,46 +40,46 @@ Extends: MultipleChoicePad,
 	makeTypeA: function()
 	{
 		question = '';
-		varA = 0;
-		varB = 0;
-		varC = 0;
-		varD = 0;
-		varN = 0;
-		varE = 0;
-		varF = 0;
+		a = 0;
+		b = 0;
+		c = 0;
+		d = 0;
+		n = 0;
+		e = 0;
+		f = 0;
 	 	
 		// factor 1
-                varA = 3 + Math.floor(Math.random()*19);
+                a = 3 + Math.floor(Math.random()*19);
 
-                max = Math.floor(100/varA);
+                max = Math.floor(100/a);
 
                 // factor 2
-                varB = 2 + Math.floor(Math.random()*(max-1));
+                b = 2 + Math.floor(Math.random()*(max-1));
 
                 // multiple
-                varC = varA * varB;
+                c = a * b;
 
                 // wrong answer 1
                 do
 		{
-                	varD = (2 * varA) + Math.floor(Math.random()*(101 - (2 * varA)));
-                        varN = varD % varA;
+                	d = (2 * a) + Math.floor(Math.random()*(101 - (2 * a)));
+                        n = d % a;
                 }
-                while (varN == 0);
+                while (n == 0);
 
                 // wrong answer 2
                 do
 	 	{
-                        varE = (2 * varA) + Math.floor(Math.random()*(101 - (2 * varA)));
-                        varF = varE % varA;
+                        e = (2 * a) + Math.floor(Math.random()*(101 - (2 * a)));
+                        f = e % a;
                 }
-                while (varF == 0 || varE == varD);
+                while (f == 0 || e == d);
 
-                question = new Question('Which is a multiple of ' + varA + '? ', '' + varC);
+                question = new Question('Which is a multiple of ' + a + '? ', '' + c);
 
-		question.mAnswerPool.push(varC);
-		question.mAnswerPool.push(varD);
-		question.mAnswerPool.push(varE);
+		question.mAnswerPool.push(c);
+		question.mAnswerPool.push(d);
+		question.mAnswerPool.push(e);
                 
 		this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
@@ -89,46 +89,46 @@ Extends: MultipleChoicePad,
 	{
 		question = '';
 		max = 0;
-		varA = 0;
-		varB = 0;
-		varC = 0;
-		varD = 0;
-		varN = 0;
-		varE = 0;
-		varF = 0;
+		a = 0;
+		b = 0;
+		c = 0;
+		d = 0;
+		n = 0;
+		e = 0;
+		f = 0;
 	
 		// factor 1
-                varA = 3 + Math.floor(Math.random()*19);
+                a = 3 + Math.floor(Math.random()*19);
 
-                max = Math.floor(100/varA);
+                max = Math.floor(100/a);
 
                 // factor 2
-                varB = 2 + Math.floor(Math.random()*(max-1));
+                b = 2 + Math.floor(Math.random()*(max-1));
 
                 // multiple
-                varC = varA * varB;
+                c = a * b;
 
                 // wrong answer 1
                 do
 		{
-                	varD = 2 + Math.floor(Math.random()*19);
-                       	varN = varC % varD;
+                	d = 2 + Math.floor(Math.random()*19);
+                       	n = c % d;
                 }
-                while (varN == 0);
+                while (n == 0);
 
                 // wrong answer 2
                 do
 		{
-                	varE = 2 + Math.floor(Math.random()*19);
-                        varF = varC % varE;
+                	e = 2 + Math.floor(Math.random()*19);
+                        f = c % e;
                 }
-                while (varF == 0 || varE == varD);
+                while (f == 0 || e == d);
 
-                question = new Question('Which is a factor of ' + varC + '? ', '' + varA);
+                question = new Question('Which is a factor of ' + c + '? ', '' + a);
 
-		question.mAnswerPool.push(varA);
-		question.mAnswerPool.push(varD);
-		question.mAnswerPool.push(varE);
+		question.mAnswerPool.push(a);
+		question.mAnswerPool.push(d);
+		question.mAnswerPool.push(e);
 
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
@@ -139,28 +139,23 @@ Extends: MultipleChoicePad,
 		question = '';
 		answer = '';
 		prime = [3,5,7,11,13,17,19,23,29,31,37];
-		max = 0;
-		rand = 0;
-		varA = 0;
+		a = 0;
 		
- 		// factor 1
-                rand = Math.floor(Math.random()*2);
+                randomChoice = Math.floor(Math.random()*2);
 
-                if(rand == 0)
+                if(randomChoice == 0)
                 {
-                        varA = prime[Math.floor(Math.random()*11)];
+                        a = prime[Math.floor(Math.random()*11)];
                         answer = 'yes';
-                        wrong = 'no';
                 }
 
-                if(rand == 1)
+                if(randomChoice == 1)
                 {
-                        varA = prime[Math.floor(Math.random()*11)] + 1;
+                        a = prime[Math.floor(Math.random()*11)] + 1;
                         answer = 'no';
-                        wrong = 'yes';
                 }
 
-                question = new Question('Is ' + varA + ' a prime number? ', '' + answer);
+                question = new Question('Is ' + a + ' a prime number? ', '' + answer);
 
                	question.mAnswerPool.push('yes');
                	question.mAnswerPool.push('no');
