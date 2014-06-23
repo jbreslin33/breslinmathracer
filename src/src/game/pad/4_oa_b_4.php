@@ -180,8 +180,8 @@ Extends: MultipleChoicePad,
 
                 this.mQuiz.mQuestionArray.push(question);
 
-               	question.setChoice('A', 'yes');
-                question.setChoice('B', 'no');
+               	question.mAnswerPool.push('yes');
+               	question.mAnswerPool.push('no');
 	},
 
 	makeTypeD: function()
@@ -225,7 +225,7 @@ Extends: MultipleChoicePad,
 
 		this.mQuiz.resetQuestionArray();
 
-		this.makeTypeD();
+		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
 
