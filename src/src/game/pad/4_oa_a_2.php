@@ -247,11 +247,15 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 0;
+                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
                         question = new Question('Mr Nucera had ' + a + ' gym bags. Each gym bag had ' + b + ' dodgeballs in it. How many dodgeballs did Mr. Nucera have total?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('A group of ' + b + ' friends each had a Halloween bag. If each bag contained ' + a + ' treats how many treats did the kids have total?',x);
                 }
                 question.mAnswerPool.push(question.getAnswer());
                 question.mAnswerPool.push(parseInt(a+b));
