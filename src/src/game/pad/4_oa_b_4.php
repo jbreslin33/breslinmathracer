@@ -1,7 +1,7 @@
 var g4_oa_b_4 = new Class(
 {
 
-Extends: MultipleChoicePadTwo,
+Extends: MultipleChoicePad,
 
 	initialize: function(application)
 	{
@@ -9,22 +9,32 @@ Extends: MultipleChoicePadTwo,
 		this.setScoreNeeded(3);
 	},
 
-	createNumQuestion: function()
+        createInput: function()
         {
-                //question
-                this.mNumQuestion = new Shape(270,50,195,95,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
-                this.mNumQuestion.mCollidable = false;
-                this.mNumQuestion.mCollisionOn = false;
+                this.parent();
+                this.mButtonA.setPosition(135,290);
+                this.mButtonB.setPosition(385,290);
+                this.mButtonC.setPosition(635,290);
+
+                this.mButtonA.setSize(240,220);
+                this.mButtonB.setSize(240,220);
+                this.mButtonC.setSize(240,220);
         },
 
-	//showCorrectAnswer
+        createNumQuestion: function()
+        {
+                this.parent();
+                this.mNumQuestion.setSize(650,200);
+                this.mNumQuestion.setPosition(350,140);
+        },
+
+        //showCorrectAnswer
         showCorrectAnswerEnter: function()
         {
                 this.parent();
 
-                this.mShapeArray[1].setSize(280,100);
-		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + this.mQuiz.getQuestion().getAnswer();
+                this.mShapeArray[1].setSize(650,200);
+                this.mShapeArray[1].setPosition(350,140);
         },
 
   	createAnswers: function(question, varA, varD, varE)
@@ -174,13 +184,48 @@ Extends: MultipleChoicePadTwo,
                 question.setChoice('B', 'no');
 	},
 
+	makeTypeD: function()
+        {
+                question = '';
+
+                a = Math.floor(Math.random()*8)+2;
+                b = Math.floor(Math.random()*298)+2;
+                c = Math.floor(Math.random()*8)+2;
+                x = parseInt(a * b * c);
+
+                randomChoice = Math.floor(Math.random()*2);
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('John ordered baseball cards from the internet. The cards come in boxes. In each box there is ' + a + ' packs of baseball cards. Each pack has ' + b + ' cards in it. If John orders ' + c + ' boxes of cards how many cards will he receive?',x);
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Steve bought blocks. The blocks come in crates. In each crate there is ' + a + ' packs of blocks. Each pack has ' + b + ' blocks in it. If Steve orders ' + c + ' crates of blocks how many blocks will he have total?',x);
+                }
+
+                poolB = 0;
+                poolC = 0;
+                while (x == poolB || x == poolC || poolB == poolC)
+                {
+                        poolB = parseInt(a + b + c);
+                        poolC = parseInt( (a + c) * b);
+                }
+                question.mAnswerPool.push(x);
+                question.mAnswerPool.push(poolB);
+                question.mAnswerPool.push(poolC);
+
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        },
+
 	createQuestions: function()
         {
  		this.parent();
 
 		this.mQuiz.resetQuestionArray();
 
-		this.makeTypeA();
+		this.makeTypeD();
 		this.makeTypeB();
 		this.makeTypeC();
 
