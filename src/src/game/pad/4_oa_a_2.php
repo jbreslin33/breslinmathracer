@@ -247,7 +247,6 @@ Extends: MultipleChoicePad,
                 x = parseInt(a * b);
 
                 randomChoice = Math.floor(Math.random()*2);
-                randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
