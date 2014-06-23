@@ -167,14 +167,21 @@ Extends: MultipleChoicePad,
                 question = '';
 
                 randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 0;
+		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Tommy had to pick the multiples of 2 from the following choices. What should Tommy chose?','2,4,6,8,10,12');
+                        question = new Question('Tommy had to pick the multiples of 2 from the following choices. What should Tommy choose?','2,4,6,8,10,12');
                 	question.mAnswerPool.push(question.getAnswer());
                 	question.mAnswerPool.push('1,2,4,6,8,10');
                 	question.mAnswerPool.push('4,6,8,10,12,14');
+                }
+                if (randomChoice == 1)
+                {
+                        question = new Question('Gwen had to pick the multiples of 3 from the following choices. What should Gwen choose?','3,6,9,12,15,18');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,3,6,9,12,15');
+                	question.mAnswerPool.push('6,9,12,15,18,21');
                 }
 
                 this.mQuiz.mQuestionArray.push(question);
