@@ -240,6 +240,26 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
         },
 
+        makeTypeH: function()
+        {
+                a = Math.floor((Math.random()*99)+2);
+                b = Math.floor((Math.random()*8)+2);
+                x = parseInt(a * b);
+
+                randomChoice = Math.floor(Math.random()*2);
+                randomChoice = 1;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Mr Nucera had ' + a + ' gym bags. Each gym bag had ' + b + ' dodgeballs in it. How many dodgeballs did Mr. Nucera have total?',b);
+                }
+                question.mAnswerPool.push(question.getAnswer());
+                question.mAnswerPool.push(parseInt(x+a));
+                question.mAnswerPool.push(parseInt(x-a));
+                question.mRandomChoices = true;
+                this.mQuiz.mQuestionArray.push(question);
+        },
+
 	createQuestions: function()
         {
 		this.parent();
@@ -248,7 +268,7 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeG();
+		this.makeTypeH();
 		this.makeTypeA();
 		this.makeTypeB();
 		this.makeTypeC();
