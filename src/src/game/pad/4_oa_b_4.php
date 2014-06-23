@@ -166,29 +166,16 @@ Extends: MultipleChoicePad,
         {
                 question = '';
 
-                a = Math.floor(Math.random()*8)+2;
-                b = Math.floor(Math.random()*298)+2;
-                c = Math.floor(Math.random()*8)+2;
-                x = parseInt(a * b * c);
-
                 randomChoice = Math.floor(Math.random()*2);
 		randomChoice = 0;
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Tommy had to pick the multiples of ' + a + ' from the following choices. What should Tommy chose?',x);
+                        question = new Question('Tommy had to pick the multiples of 2 from the following choices. What should Tommy chose?','2,4,6,8,10,12');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,2,4,6,8,10');
+                	question.mAnswerPool.push('4,6,8,10,12,14');
                 }
-
-                poolB = 0;
-                poolC = 0;
-                while (x == poolB || x == poolC || poolB == poolC)
-                {
-                        poolB = parseInt(a + b + c);
-                        poolC = parseInt( (a + c) * b);
-                }
-                question.mAnswerPool.push(x);
-                question.mAnswerPool.push(poolB);
-                question.mAnswerPool.push(poolC);
 
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
@@ -200,7 +187,7 @@ Extends: MultipleChoicePad,
 
 		this.mQuiz.resetQuestionArray();
 
-		this.makeTypeA();
+		this.makeTypeD();
 		this.makeTypeB();
 		this.makeTypeC();
 
