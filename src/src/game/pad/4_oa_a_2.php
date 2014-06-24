@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(9);
+		this.setScoreNeeded(5);
 
 		this.mCircles = new Circles(this);
     		this.mRaphael = Raphael(10, 35, 760, 405);
