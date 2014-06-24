@@ -235,6 +235,25 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         },
+   
+	makeTypeE: function()
+        {
+                question = '';
+
+                randomChoice = Math.floor(Math.random()*9);
+		randomChoice = 0;
+
+                if (randomChoice == 0)
+                {
+                        question = new Question('Tommy had to pick the multiples of 2 from the following choices. What should Tommy choose?','2,4,6,8,10,12');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,2,4,6,8,10');
+                	question.mAnswerPool.push('4,6,8,10,12,14');
+                }
+                this.mQuiz.mQuestionArray.push(question);
+                question.mRandomChoices = true;
+        
+	},
 
 	createQuestions: function()
         {
@@ -242,7 +261,7 @@ Extends: MultipleChoicePad,
 
 		this.mQuiz.resetQuestionArray();
 
-		this.makeTypeD();
+		this.makeTypeE();
 		this.makeTypeD();
 		this.makeTypeD();
 		this.makeTypeD();
