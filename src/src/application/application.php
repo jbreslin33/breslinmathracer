@@ -2375,3 +2375,4 @@ var Application = new Class(
 		APPLICATION.mMouseDownY = event.page.y;
         }
 });
+
