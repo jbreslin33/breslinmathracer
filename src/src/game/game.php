@@ -14,6 +14,7 @@ var Game = new Class(
 		/******* QUIZ **************/
 		this.mQuiz = new Quiz(this);
                 this.mUserAnswer = '';
+		this.mTypeWrong = '';
 	
 		/********* SHAPES *******************/ 
 		//shape Array
@@ -843,6 +844,7 @@ var Game = new Class(
 
 			if (correct == false)
 			{
+				this.mTypeWrong = this.mQuiz.getQuestion().getType();
                                 this.mStateMachine.changeState(this.mSHOW_CORRECT_ANSWER);
                         }
 			

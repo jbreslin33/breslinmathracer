@@ -99,18 +99,35 @@ var Quiz = new Class(
 
 	randomize: function(degree)
 	{
-		var size = this.mQuestionArray.length - 1;
+		size = this.mQuestionArray.length - 1;
 	
 		for (i=0; i < degree; i++)
 		{
-			var swapElementNumberA = Math.floor((Math.random()*size));
-			var swapElementNumberB = Math.floor((Math.random()*size));
+			swapElementNumberA = Math.floor((Math.random()*size));
+			swapElementNumberB = Math.floor((Math.random()*size));
 
-			var tempQuestionA = this.mQuestionArray[swapElementNumberA];	
-			var tempQuestionB = this.mQuestionArray[swapElementNumberB];	
+			tempQuestionA = this.mQuestionArray[swapElementNumberA];	
+			tempQuestionB = this.mQuestionArray[swapElementNumberB];	
 			
 			this.mQuestionArray[swapElementNumberA] = tempQuestionB;
 			this.mQuestionArray[swapElementNumberB] = tempQuestionA;
 		}
+
+		// when done swap the mTypeWrong to first spot. 
+		if (this.mGame.mTypeWrong != '')
+		{
+			APPLICATION.log('this.mGame.mTypeWrong:' + this.mGame.mTypeWrong);	
+			for (i = 0; i < size; i++)
+			{
+				if (this.mQuestionArray[i].getType() == this.mGame.mTypeWrong)
+				{
+					APPLICATION.log('swap type:' + this.mQuestionArray[i].getType()); 	
+					wrongQuestion = this.mQuestionArray[i]; 
+					questionInFirstSlot = this.mQuestionArray[0]; 
+					this.mQuestionArray[0] = wrongQuestion;
+					this.mQuestionArray[i] = questionInFirstSlot; 
+				}
+			}
+		}		
 	}
 });
