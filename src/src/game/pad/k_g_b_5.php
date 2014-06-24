@@ -1,7 +1,7 @@
 var k_g_b_5 = new Class(
 {
 
-Extends: Game,
+Extends: Pad,
 
 	initialize: function(application)
 	{
