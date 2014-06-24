@@ -99,7 +99,6 @@ Extends: MultipleChoicePad,
                 this.mQuiz.mQuestionArray.push(question);
         },
 
-
 	makeType2: function()
 	{
 		question = '';
