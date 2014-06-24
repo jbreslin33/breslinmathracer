@@ -214,7 +214,7 @@ Extends: MultipleChoicePad,
                 }
                 if (randomChoice == 1)
                 {
-                        question = new Question('Allen and Sammy were reading the same book. Allen had read ' + x + ' pages of the book, which is ' + a + ' times as the amount of pages that Sammy had read. How many pages did Sammy read?',b);
+                        question = new Question('Allen and Sammy were reading the same book. Allen had read ' + x + ' pages of the book, which is ' + a + ' times the amount of pages that Sammy had read. How many pages did Sammy read?',b);
                 }
                 question.mAnswerPool.push(question.getAnswer());
                 question.mAnswerPool.push(parseInt(x+a));
