@@ -315,6 +315,7 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push(parseInt(x-a));
                 question.mAnswerPool.push(parseInt(x+a));
                 question.mRandomChoices = true;
+		question.mType = 10;
                 this.mQuiz.mQuestionArray.push(question);
         },
 
@@ -336,6 +337,7 @@ Extends: MultipleChoicePad,
 		this.makeType6();
 		this.makeType8();
 		this.makeType9();
+		this.makeType10();
 		//this.makeType7);
 
 		//buffer
