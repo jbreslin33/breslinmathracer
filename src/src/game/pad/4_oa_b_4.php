@@ -6,7 +6,7 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(3);
+		this.setScoreNeeded(10);
 	},
 
         createInput: function()
@@ -166,8 +166,7 @@ Extends: MultipleChoicePad,
         {
                 question = '';
 
-                randomChoice = Math.floor(Math.random()*2);
-		randomChoice = 1;
+                randomChoice = Math.floor(Math.random()*9);
 
                 if (randomChoice == 0)
                 {
@@ -183,6 +182,55 @@ Extends: MultipleChoicePad,
                 	question.mAnswerPool.push('1,3,6,9,12,15');
                 	question.mAnswerPool.push('6,9,12,15,18,21');
                 }
+                if (randomChoice == 2)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 4 from the following choices. What should Gilbert choose?','4,8,12,16,20,24');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,4,8,12,16,20');
+                	question.mAnswerPool.push('8,12,16,20,24,28');
+                }
+                if (randomChoice == 3)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 5 from the following choices. What should Gilbert choose?','5,10,15,20,25,30');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,5,10,15,20,25');
+                	question.mAnswerPool.push('10,15,20,25,30,35');
+                }
+                if (randomChoice == 4)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 6 from the following choices. What should Gilbert choose?','6,12,18,24,30,36');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,6,12,18,24,30');
+                	question.mAnswerPool.push('12,18,24,30,36,42');
+                }
+                if (randomChoice == 5)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 7 from the following choices. What should Gilbert choose?','7,14,21,28,35,42');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,7,14,21,28,35');
+                	question.mAnswerPool.push('14,21,28,35,42,49');
+                }
+                if (randomChoice == 6)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 8 from the following choices. What should Gilbert choose?','8,16,24,32,40,48');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,8,16,24,32,40,48');
+                	question.mAnswerPool.push('16,24,32,40,48,56');
+                }
+                if (randomChoice == 7)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 9 from the following choices. What should Gilbert choose?','9,18,27,36,45,54');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,9,18,27,36,45');
+                	question.mAnswerPool.push('18,27,36,45,54,63');
+                }
+                if (randomChoice == 8)
+                {
+                        question = new Question('Gilbert had to pick the multiples of 10 from the following choices. What should Gilbert choose?','10,20,30,40,50,60');
+                	question.mAnswerPool.push(question.getAnswer());
+                	question.mAnswerPool.push('1,10,20,30,40,50');
+                	question.mAnswerPool.push('20,30,40,50,60,70');
+                }
 
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
@@ -195,8 +243,15 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 
 		this.makeTypeD();
-		this.makeTypeB();
-		this.makeTypeC();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
+		this.makeTypeD();
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
