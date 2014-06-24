@@ -231,8 +231,7 @@ Extends: MultipleChoicePad,
         {
                 question = '';
 
-                randomChoice = Math.floor(Math.random()*9);
-		randomChoice = 2;
+                randomChoice = Math.floor(Math.random()*26);
 
                 if (randomChoice == 0)
                 {
@@ -298,7 +297,97 @@ Extends: MultipleChoicePad,
                 {
                         question = new Question('List all factor pairs of 12?','1x12,2x6,3x4');
                 	question.mAnswerPool.push('0+12,1+11,2+10,3+9');
-                	question.mAnswerPool.push('12-0,12-2,13-1');
+                	question.mAnswerPool.push('12-0,13-1,14-2,15-3');
+                }
+                if (randomChoice == 11)
+                {
+                        question = new Question('List all factor pairs of 13?','1x13');
+                	question.mAnswerPool.push('0+13,1+12,2+11,3+10');
+                	question.mAnswerPool.push('13-0,15-2,14-1');
+                }
+                if (randomChoice == 12)
+                {
+                        question = new Question('List all factor pairs of 14?','1x14,2x7');
+                	question.mAnswerPool.push('0+14,1+13,2+12,3+11');
+                	question.mAnswerPool.push('14-0,15-1,16-2');
+                }
+                if (randomChoice == 13)
+                {
+                        question = new Question('List all factor pairs of 15?','1x15,3x5');
+                	question.mAnswerPool.push('1x15,2x15,3x5');
+                	question.mAnswerPool.push('0x15,1x15,3x5');
+                }
+                if (randomChoice == 14)
+                {
+                        question = new Question('List all factor pairs of 16?','1x16,2x8,4x4');
+                	question.mAnswerPool.push('1x16,2x8,3x16,4x4');
+                	question.mAnswerPool.push('0x16,1x16,2x8,4x4');
+                }
+                if (randomChoice == 15)
+                {
+                        question = new Question('List all factor pairs of 17?','1x17');
+                	question.mAnswerPool.push('1+16');
+                	question.mAnswerPool.push('0x17');
+                }
+                if (randomChoice == 16)
+                {
+                        question = new Question('List all factor pairs of 18?','1x18,2x9,3x6');
+                	question.mAnswerPool.push('1x18,2x9,3x6,4x18');
+                	question.mAnswerPool.push('0x18,1x18,2x9,3x6');
+                }
+                if (randomChoice == 17)
+                {
+                        question = new Question('List all factor pairs of 19?','1x19');
+                	question.mAnswerPool.push('1+18');
+                	question.mAnswerPool.push('0x19');
+                }
+                if (randomChoice == 18)
+                {
+                        question = new Question('List all factor pairs of 20?','1x20,2x10,4x5');
+                	question.mAnswerPool.push('1x20,2x10,3x20,4x5');
+                	question.mAnswerPool.push('0x20,1x20,2x10,4x5');
+                }
+                if (randomChoice == 19)
+                {
+                        question = new Question('List all factor pairs of 21?','1x21,3x7');
+                	question.mAnswerPool.push('1x21,2x21,3x7');
+                	question.mAnswerPool.push('0x21,1x21,3x7');
+                }
+                if (randomChoice == 20)
+                {
+                        question = new Question('List all factor pairs of 22?','1x22,2x11');
+                	question.mAnswerPool.push('1x22');
+                	question.mAnswerPool.push('2x11');
+                }
+                if (randomChoice == 21)
+                {
+                        question = new Question('List all factor pairs of 23?','1x23');
+                	question.mAnswerPool.push('1+22,24-1');
+                	question.mAnswerPool.push('24-1');
+                }
+                if (randomChoice == 22)
+                {
+                        question = new Question('List all factor pairs of 24?','1x24,2x12,3x8,4x6');
+                	question.mAnswerPool.push('1x24,2x12,4x6');
+                	question.mAnswerPool.push('1x24,3x8,4x6');
+                }
+                if (randomChoice == 23)
+                {
+                        question = new Question('List all factor pairs of 25?','1x25,5x5');
+                	question.mAnswerPool.push('5x5');
+                	question.mAnswerPool.push('1x25');
+                }
+                if (randomChoice == 24)
+                {
+                        question = new Question('List all factor pairs of 26?','1x26,2x13');
+                	question.mAnswerPool.push('1x26');
+                	question.mAnswerPool.push('26x1');
+                }
+                if (randomChoice == 25)
+                {
+                        question = new Question('List all factor pairs of 27?','1x27,3x9');
+                	question.mAnswerPool.push('1x27');
+                	question.mAnswerPool.push('3x9');
                 }
                 question.mAnswerPool.push(question.getAnswer());
                 this.mQuiz.mQuestionArray.push(question);
@@ -313,15 +402,15 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 
 		this.makeTypeE();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
-		this.makeTypeD();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
+		this.makeTypeE();
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
