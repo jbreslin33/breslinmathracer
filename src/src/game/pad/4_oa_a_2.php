@@ -35,7 +35,7 @@ Extends: MultipleChoicePad,
                 this.mShapeArray[9].setSize(75,75);
                 this.mShapeArray[9].setPosition(75,175);
         },
-	makeTypeA: function()
+	makeType1: function()
         {
 		question = '';
                 var a = 0;
@@ -95,11 +95,12 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('A');
                 question.mAnswerPool.push('B');
                 question.mAnswerPool.push('C');
+		question.mType = 1;
                 this.mQuiz.mQuestionArray.push(question);
         },
 
 
-	makeTypeB: function()
+	makeType2: function()
 	{
 		question = '';
                 
@@ -122,10 +123,11 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push('' + b + '-' + a);
 
 		question.mRandomChoices = true;
+		question.mType = 2;
 		this.mQuiz.mQuestionArray.push(question);
 	},		
 
-	makeTypeC: function()
+	makeType3: function()
 	{
                 a = Math.floor((Math.random()*8)+2);
                 b = Math.floor((Math.random()*8)+2);
@@ -146,10 +148,11 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push(b + '-' + a + '=' + parseInt(b+a));
                 question.mAnswerPool.push(x + '+' + b + '=' + parseInt(x+b));
 		question.mRandomChoices = true;
+		question.mType = 3;
                 this.mQuiz.mQuestionArray.push(question);
 	},	
  
-	makeTypeD: function()
+	makeType4: function()
         {
                 a = Math.floor((Math.random()*8)+2);
                 b = Math.floor((Math.random()*8)+2);
@@ -171,10 +174,11 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push(x + '+' + a + '=' + parseInt(x+a));
                 question.mAnswerPool.push(x + '-' + a + '=' + parseInt(x-a));
                 question.mRandomChoices = true;
+		question.mType = 4;
                 this.mQuiz.mQuestionArray.push(question);
         },
 	
-	makeTypeE: function()
+	makeType5: function()
         {
                 randomChoice = Math.floor(Math.random()*2);
 		randomChoice = 1;
@@ -195,10 +199,11 @@ Extends: MultipleChoicePad,
                 }
 
                 question.mRandomChoices = true;
+		question.mType = 5;
                 this.mQuiz.mQuestionArray.push(question);
         },
 
-        makeTypeF: function()
+        makeType6: function()
         {
                 a = Math.floor((Math.random()*8)+2);
                 b = Math.floor((Math.random()*8)+2);
@@ -219,10 +224,11 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push(parseInt(x+a));
                 question.mAnswerPool.push(parseInt(x-a));
                 question.mRandomChoices = true;
+		question.mType = 6;
                 this.mQuiz.mQuestionArray.push(question);
         },
 /*	
-	makeTypeG: function()
+	makeType7: function()
         {
                 randomChoice = Math.floor(Math.random()*2);
 		randomChoice = 0;
@@ -236,10 +242,11 @@ Extends: MultipleChoicePad,
                 }
 
                 question.mRandomChoices = true;
+		question.mType = 7;
                 this.mQuiz.mQuestionArray.push(question);
         },
 */
-        makeTypeH: function()
+        makeType8: function()
         {
                 a = Math.floor((Math.random()*99)+2);
                 b = Math.floor((Math.random()*8)+2);
@@ -259,10 +266,11 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push(parseInt(a+b));
                 question.mAnswerPool.push(parseInt(x-a));
                 question.mRandomChoices = true;
+		question.mType = 8;
                 this.mQuiz.mQuestionArray.push(question);
         },
 
-	makeTypeI: function()
+	makeType9: function()
         {
                 a = Math.floor((Math.random()*8)+2);
                 b = Math.floor((Math.random()*8)+2);
@@ -282,10 +290,11 @@ Extends: MultipleChoicePad,
                 question.mAnswerPool.push(parseInt(x-a));
                 question.mAnswerPool.push(parseInt(x+a));
                 question.mRandomChoices = true;
+		question.mType = 9;
                 this.mQuiz.mQuestionArray.push(question);
         },
    	
-	makeTypeJ: function()
+	makeType10: function()
         {
                 a = Math.floor((Math.random()*8)+2);
                 b = Math.floor((Math.random()*97)+2);
@@ -319,16 +328,15 @@ Extends: MultipleChoicePad,
 		this.mQuiz.resetQuestionArray();
 		this.mQuiz.resetQuestionPoolArray();
 
-		this.makeTypeA();
-		this.makeTypeB();
-		this.makeTypeC();
-		this.makeTypeD();
-		this.makeTypeE();
-		this.makeTypeF();
-		this.makeTypeH();
-		this.makeTypeI();
-		this.makeTypeJ();
-		//this.makeTypeG();
+		this.makeType1();
+		this.makeType2();
+		this.makeType3();
+		this.makeType4();
+		this.makeType5();
+		this.makeType6();
+		this.makeType8();
+		this.makeType9();
+		//this.makeType7);
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));

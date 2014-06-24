@@ -31,7 +31,14 @@ var Question = new Class(
         
 		//randomChoices
 		this.mRandomChoices = false;
+
+		this.mType = 0; //uncategorized
 },
+
+	getType: function()
+	{
+		return this.mType;
+	},
 
 	setChoice: function(letter,choice)
 	{
