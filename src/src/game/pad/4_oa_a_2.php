@@ -6,7 +6,6 @@ Extends: MultipleChoicePad,
 	initialize: function(application)
 	{
        		this.parent(application);
-		this.setScoreNeeded(5);
 
 		this.mCircles = new Circles(this);
     		this.mRaphael = Raphael(10, 35, 760, 405);
@@ -313,6 +312,8 @@ Extends: MultipleChoicePad,
 	createQuestions: function()
         {
 		this.parent();
+		
+		this.setScoreNeeded(this.mApplication.mLevel);
 	
 		//just the question array reset
 		this.mQuiz.resetQuestionArray();
@@ -324,10 +325,10 @@ Extends: MultipleChoicePad,
 		this.makeTypeD();
 		this.makeTypeE();
 		this.makeTypeF();
-		//this.makeTypeG();
 		this.makeTypeH();
 		this.makeTypeI();
 		this.makeTypeJ();
+		//this.makeTypeG();
 
 		//buffer
                 this.mQuiz.mQuestionArray.push(new Question('buf','buf'));
