@@ -241,15 +241,21 @@ Extends: MultipleChoicePad,
                 question = '';
 
                 randomChoice = Math.floor(Math.random()*9);
-		randomChoice = 0;
+		randomChoice = 1;
 
                 if (randomChoice == 0)
                 {
-                        question = new Question('Tommy had to pick the multiples of 2 from the following choices. What should Tommy choose?','2,4,6,8,10,12');
-                	question.mAnswerPool.push(question.getAnswer());
-                	question.mAnswerPool.push('1,2,4,6,8,10');
-                	question.mAnswerPool.push('4,6,8,10,12,14');
+                        question = new Question('List all factor pairs of 2?','1x2');
+                	question.mAnswerPool.push('1+1,0+2');
+                	question.mAnswerPool.push('4-2,3-1,2-0');
                 }
+                if (randomChoice == 1)
+                {
+                        question = new Question('List all factor pairs of 3?','1x3');
+                	question.mAnswerPool.push('1+2,0+3');
+                	question.mAnswerPool.push('4-1,3-0,5-2');
+                }
+                question.mAnswerPool.push(question.getAnswer());
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
         
