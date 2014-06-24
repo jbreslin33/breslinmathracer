@@ -294,6 +294,12 @@ Extends: MultipleChoicePad,
                 	question.mAnswerPool.push('0+11,1+10,2+9,3+8');
                 	question.mAnswerPool.push('11-0,12-1,13-2');
                 }
+                if (randomChoice == 10)
+                {
+                        question = new Question('List all factor pairs of 12?','1x12,2x6,3x4');
+                	question.mAnswerPool.push('0+12,1+11,2+10,3+9');
+                	question.mAnswerPool.push('12-0,12-2,13-1');
+                }
                 question.mAnswerPool.push(question.getAnswer());
                 this.mQuiz.mQuestionArray.push(question);
                 question.mRandomChoices = true;
