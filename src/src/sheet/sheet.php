@@ -37,6 +37,11 @@ var Sheet = new Class(
 	{
  		//state machine
                 this.mStateMachine.update();
+
+		for (i = 0; i < this.mItemArray.length; i++)
+		{
+			this.mItemArray[i].update();
+		}
 	},
 
         log: function(msg)

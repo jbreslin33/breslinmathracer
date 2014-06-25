@@ -35,11 +35,11 @@ enter: function(item)
 	{
 		item.log('ITEM::INIT_ITEM');
 	}
+	item.mStateMachine.changeState(item.mRESET_ITEM);
 },
 
 execute: function(item)
 {
-	item.mStateMachine.changeState(item.mRESET_ITEM);
 },
 
 exit: function(item)
@@ -62,7 +62,7 @@ enter: function(item)
 	{
 		item.log('ITEM::RESET_ITEM');
 	}
-	item.resetGameEnter();
+	item.mStateMachine.changeState(item.mNORMAL_ITEM);
 },
 
 execute: function(item)
@@ -89,20 +89,11 @@ enter: function(item)
 	{
 		item.log('ITEM::NORMAL_ITEM');
 	}
-	item.reset();
 },
 
 execute: function(item)
 {
-	if (item.mQuiz.isQuizComplete())
-        {
-                item.mStateMachine.changeState(item.mLEVEL_PASSED_ITEM);
-        }
 
-        if (item.mKilled == true)
-       	{
-                item.mStateMachine.changeState(item.mRESET_ITEM);
-        }
 },
 
 exit: function(item)
