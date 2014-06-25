@@ -85,6 +85,16 @@ Extends: Item,
                 {
                         //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
 			APPLICATION.log('enter hit');	
+			if (APPLICATION.mGame)
+			{
+				if (APPLICATION.mGame.mSheet)
+				{
+					if (APPLICATION.mGame.mSheet.mItem)
+					{
+						APPLICATION.mGame.mSheet.mItem.checkUserAnswer(APPLICATION.mGame.mSheet.mItem.mNumAnswer.mMesh.value); 
+					}
+				}
+			}
                 }
         },
  
@@ -94,6 +104,16 @@ Extends: Item,
                 {
                        	// APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
 			APPLICATION.log('enter hit');	
+			if (APPLICATION.mGame)
+			{
+				if (APPLICATION.mGame.mSheet)
+				{
+					if (APPLICATION.mGame.mSheet.mItem)
+					{
+						APPLICATION.mGame.mSheet.mItem.checkUserAnswer(APPLICATION.mGame.mSheet.mItem.mNumAnswer.mMesh.value); 
+					}
+				}
+			}
                 }
         }
 });

@@ -14,9 +14,6 @@ var Item = new Class(
 		this.mAnswerArray = new Array();
 		this.mAnswerArray.push(answer);
 		
-		//showAnswer
-		this.mShowAnswer = showAnswer;
-
 		//tip
 		this.mTipArray = new Array();
 
@@ -26,17 +23,8 @@ var Item = new Class(
   		//answer pool
                 this.mAnswerPool = new Array();
 
-		//choiceArray
-		this.mChoiceA = '';
-		this.mChoiceB = '';
-		this.mChoiceC = '';
-		this.mChoiceD = '';
-
 		this.mShapeArray   = new Array();
         
-		//randomChoices
-		this.mRandomChoices = false;
-
 		this.mType = 0; //uncategorized
  
 		//states
@@ -63,18 +51,21 @@ var Item = new Class(
                 //state machine
                 this.mStateMachine.update();
         },
+	
+	checkUserAnswer: function(userAnswer)
+	{
+		correctAnswerFound = false;
+		for (i = 0; i <  this.mAnswerArray.length; i++)
+		{
+			if (userAnswer == this.mAnswerArray[i])
+			{
+				correctAnswerFound = true;	
+			} 
+		}
+		this.log('checkUserAnswer:' + userAnswer);
+		return correctAnswerFound;
+	},
 
-	createNumQuestion: function()
-        {
-                //question
-                this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
-                this.mNumQuestion.mCollidable = false;
-                this.mNumQuestion.mCollisionOn = false;
-		this.mNumQuestion.setText(this.mQuestion);
-        },
-
- 
 	log: function(msg)
         {
                 setTimeout(function()
@@ -88,104 +79,6 @@ var Item = new Class(
 		return this.mType;
 	},
 
-	setChoice: function(letter,choice)
-	{
-		if (letter == 'A') 
-		{
-			this.mChoiceA = choice;
-		}	
-		if (letter == 'B') 
-		{
-			this.mChoiceB = choice;
-		}	
-		if (letter == 'C') 
-		{
-			this.mChoiceC = choice;
-		}	
-		if (letter == 'D') 
-		{
-			this.mChoiceD = choice;
-		}	
-	},
-        
-	setChoices: function()
-        {
-		if (this.mAnswerPool.length == 2)
-                {
-
-			if (this.mRandomChoices)
-			{
-                       	 	this.mCorrectChoiceNumber = 0;
-
-                        	var goOnce = true;
-
-                        	while (goOnce == true || this.mCorrectChoiceNumber == this.mLastCorrectChoiceNumber || this.mChoiceA == this.mChoiceB)
-                        	{
-                                	this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
-
-                                	this.mChoiceA = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-                                	this.mChoiceB = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-
-                                	if (this.mCorrectChoiceNumber == 0)
-                                	{
-                                        	this.mChoiceA = this.getAnswer();
-                                	}
-                                	if (this.mCorrectChoiceNumber == 1)
-                                	{
-                                        	this.mChoiceB = this.getAnswer();
-                                	}
-                                	goOnce = false;
-                        	}
-                        	this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
-			}
-			else
-			{
-				this.mChoiceA = this.mAnswerPool[0];	
-				this.mChoiceB = this.mAnswerPool[1];	
-			}
-                }
-
-		if (this.mAnswerPool.length >= 3)
-		{
-			if (this.mRandomChoices)
-			{
-                		this.mCorrectChoiceNumber = 0;
-
-                		var goOnce = true;
-
-                		while (goOnce == true || this.mCorrectChoiceNumber == this.mLastCorrectChoiceNumber || this.mChoiceA == this.mChoiceB || this.mChoiceA == this.mChoiceC || this.mChoiceB == this.mChoiceC)
-                		{
-                        		this.mCorrectChoiceNumber = Math.floor((Math.random()*3));
-
-                        		this.mChoiceA = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-                        		this.mChoiceB = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-                        		this.mChoiceC = this.mAnswerPool[Math.floor((Math.random()*parseInt(this.mAnswerPool.length)))];
-
-                        		if (this.mCorrectChoiceNumber == 0)
-                        		{
-                                		this.mChoiceA = this.getAnswer();
-                        		}
-                        		if (this.mCorrectChoiceNumber == 1)
-                        		{
-                                		this.mChoiceB = this.getAnswer();
-                        		}
-                        		if (this.mCorrectChoiceNumber == 2)
-                        		{
-                                		this.mChoiceC = this.getAnswer();
-                        		}
-                        		goOnce = false;
-                		}
-                		this.mLastCorrectButtonNumber = this.mCorrectButtonNumber;
-			}
-			else
-			{
-				this.mChoiceA = this.mAnswerPool[0];	
-				this.mChoiceB = this.mAnswerPool[1];	
-				this.mChoiceC = this.mAnswerPool[2];	
-			}
-		}
-        },
-	
 	set: function(question,answer)
 	{
 		this.mQuestion = question;
@@ -193,14 +86,6 @@ var Item = new Class(
 		this.mSolved = false;
 	},
 	
-	set: function(question,answer,showAnswer)
-	{
-		this.mQuestion = question;
-		this.mAnswer = answer;
-		this.mShowAnswer = showAnswer;
-		this.mSolved = false;
-	},
-
 	setQuestion: function(question)
 	{
 		this.mQuestion = question;
