@@ -2138,6 +2138,19 @@ var Application = new Class(
                                	this.mGame = new g4_md_a_1(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == '5.oa.a.1')
+		{ 
+             		if (this.mGameName != "g5_oa_a_1")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g5_oa_a_1";
+                               	this.mGame = new g5_oa_a_1(APPLICATION);
+			}	
+		}
 	},
 	
 	isOdd: function(num)

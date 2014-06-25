@@ -1,7 +1,7 @@
 var Pad = new Class(
 {
 
-Extends: Game,
+Extends: AmbitiousGame,
 
 	initialize: function(application)
 	{
