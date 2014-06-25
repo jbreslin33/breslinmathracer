@@ -22,16 +22,22 @@ var Sheet = new Class(
 		//states
                 this.mStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_SHEET       = new GLOBAL_SHEET(this);
-                this.mINIT_SHEET         = new INIT_SHEET         (this);
-                this.mRESET_SHEET        = new RESET_SHEET        (this);
-                this.mNORMAL_SHEET       = new NORMAL_SHEET       (this);
-                this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET (this);
+                this.mGLOBAL_SHEET       = new GLOBAL_SHEET      (this);
+                this.mINIT_SHEET         = new INIT_SHEET        (this);
+                this.mRESET_SHEET        = new RESET_SHEET       (this);
+                this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
+                this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);
                 this.mStateMachine.changeState(this.mINIT_SHEET);
 
         },
+
+	update: function()
+	{
+ 		//state machine
+                this.mStateMachine.update();
+	},
 
         log: function(msg)
         {
@@ -154,5 +160,12 @@ var Sheet = new Class(
 				}
 			}
 		}		
+	},
+
+	//states
+	
+	resetSheetEnter: function()
+	{
+
 	}
 });

@@ -9,6 +9,12 @@ Extends: Game,
 	
 		this.mSheet = new Sheet(this);	
 	},
+
+	update: function()
+	{
+		this.parent();
+		this.mSheet.update();
+	},
         
 	createWorld: function()
 	{
