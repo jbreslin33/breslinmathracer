@@ -39,7 +39,7 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
-	sheet.mStateMachine.changeState(sheet.mRESETSHEET);
+	sheet.mStateMachine.changeState(sheet.mRESET_SHEET);
 },
 
 exit: function(sheet)
@@ -62,7 +62,7 @@ enter: function(sheet)
 	{
 		sheet.log('SHEET::RESET_SHEET');
 	}
-	sheet.resetGameEnter();
+	sheet.resetSheetEnter();
 },
 
 execute: function(sheet)
