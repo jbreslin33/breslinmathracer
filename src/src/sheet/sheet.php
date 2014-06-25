@@ -5,12 +5,15 @@ var Sheet = new Class(
 {
         initialize: function(game)
         {
+		//logs
+		this.mStateLogs = true;
+
 		//GAME
 		this.mGame = game;
 
-		//Question and Answer Array
-		this.mQuestionArray = new Array();
-		this.mQuestionPoolArray = new Array();
+		//Item and Answer Array
+		this.mItemArray = new Array();
+		this.mItemPoolArray = new Array();
                 this.mAnswerPool = new Array();
 			
 		//question
@@ -25,41 +28,49 @@ var Sheet = new Class(
                 this.mNORMAL_SHEET       = new NORMAL_SHEET       (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET (this);
 
-                this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
-                this.mStateMachine.changeState(this.mINIT_GAME);
+                this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);
+                this.mStateMachine.changeState(this.mINIT_SHEET);
 
+        },
+
+        log: function(msg)
+        {
+                setTimeout(function()
+                {
+                        throw new Error(msg);
+                }, 0);
         },
 
 	destructor: function()
 	{
-		this.resetQuestionArray();		
-		this.resetQuestionPoolArray();		
+		this.resetItemArray();		
+		this.resetItemPoolArray();		
 		this.resetAnswerPool();		
 	},	
 
-	resetQuestionArray: function()
+	resetItemArray: function()
 	{
 		//destroy questions
-		for (i = 0; i < this.mQuestionArray.length; i++)
+		for (i = 0; i < this.mItemArray.length; i++)
 		{
-			this.mQuestionArray[i] = 0;
+			this.mItemArray[i] = 0;
 		}
 
 		//destroy question array
-		this.mQuestionArray = 0;
-		this.mQuestionArray = new Array();
+		this.mItemArray = 0;
+		this.mItemArray = new Array();
 	},
 
-	resetQuestionPoolArray: function()
+	resetItemPoolArray: function()
 	{
 		//destroy question pool
-		for (i = 0; i < this.mQuestionPoolArray.length; i++)
+		for (i = 0; i < this.mItemPoolArray.length; i++)
 		{
-			this.mQuestionPoolArray[i] = 0;
+			this.mItemPoolArray[i] = 0;
 		}
 		//destroy question pool array
-		this.mQuestionPoolArray = 0;
-		this.mQuestionPoolArray = new Array();
+		this.mItemPoolArray = 0;
+		this.mItemPoolArray = new Array();
 	},
 	
 	resetAnswerPool: function()
@@ -83,25 +94,25 @@ var Sheet = new Class(
 	},
  	
 	//returns question object	
-	getQuestion: function()
+	getItem: function()
 	{
-		return this.mQuestionArray[this.mMarker];
+		return this.mItemArray[this.mMarker];
 	},
 
 	//returns question object	
-	getSpecificQuestion: function(i)
+	getSpecificItem: function(i)
 	{
-		return this.mQuestionArray[i];
+		return this.mItemArray[i];
 	},
 	
 	correctAnswer: function()
 	{
         	this.mGame.incrementScore();
 		this.mMarker++;
-		//this.mGame.mHud.mQuestion.setText('<font size="2"> Question: ' + this.mQuestionArray[this.mMarker].getQuestion() + '</font>');
+		//this.mGame.mHud.mItem.setText('<font size="2"> Item: ' + this.mItemArray[this.mMarker].getItem() + '</font>');
 	},
 	
-	isQuizComplete: function()
+	isSheetComplete: function()
 	{
 		if (this.mGame.getScore() >= this.mGame.mScoreNeeded)
 		{
@@ -115,33 +126,31 @@ var Sheet = new Class(
 
 	randomize: function(degree)
 	{
-		size = this.mQuestionArray.length - 1;
+		size = this.mItemArray.length - 1;
 	
 		for (i=0; i < degree; i++)
 		{
 			swapElementNumberA = Math.floor((Math.random()*size));
 			swapElementNumberB = Math.floor((Math.random()*size));
 
-			tempQuestionA = this.mQuestionArray[swapElementNumberA];	
-			tempQuestionB = this.mQuestionArray[swapElementNumberB];	
+			tempItemA = this.mItemArray[swapElementNumberA];	
+			tempItemB = this.mItemArray[swapElementNumberB];	
 			
-			this.mQuestionArray[swapElementNumberA] = tempQuestionB;
-			this.mQuestionArray[swapElementNumberB] = tempQuestionA;
+			this.mItemArray[swapElementNumberA] = tempItemB;
+			this.mItemArray[swapElementNumberB] = tempItemA;
 		}
 
 		// when done swap the mTypeWrong to first spot. 
 		if (this.mGame.mTypeWrong != '')
 		{
-			APPLICATION.log('this.mGame.mTypeWrong:' + this.mGame.mTypeWrong);	
 			for (i = 0; i < size; i++)
 			{
-				if (this.mQuestionArray[i].getType() == this.mGame.mTypeWrong)
+				if (this.mItemArray[i].getType() == this.mGame.mTypeWrong)
 				{
-					APPLICATION.log('swap type:' + this.mQuestionArray[i].getType()); 	
-					wrongQuestion = this.mQuestionArray[i]; 
-					questionInFirstSlot = this.mQuestionArray[0]; 
-					this.mQuestionArray[0] = wrongQuestion;
-					this.mQuestionArray[i] = questionInFirstSlot; 
+					wrongItem = this.mItemArray[i]; 
+					questionInFirstSlot = this.mItemArray[0]; 
+					this.mItemArray[0] = wrongItem;
+					this.mItemArray[i] = questionInFirstSlot; 
 				}
 			}
 		}		

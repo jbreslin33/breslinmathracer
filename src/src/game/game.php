@@ -9,7 +9,7 @@ var Game = new Class(
 		this.mApplication = application;
 
 		//loggin
-		this.mStateLogs = false;
+		this.mStateLogs = true;
 
 		/********* SHAPES *******************/ 
 		//shape Array
