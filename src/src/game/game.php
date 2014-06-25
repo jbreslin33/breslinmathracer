@@ -20,7 +20,6 @@ var Game = new Class(
 
 		/************ SCORE *******/
 		this.mScore = 0;
-		this.setScoreNeeded(20);
 		this.mKilled = false;
 
 		/**************** TIME ************/
@@ -28,12 +27,6 @@ var Game = new Class(
                 this.mLastTimeSinceEpoch = 0;
                 this.mDeltaTime = 0;
 		this.mGameTime = 0;
-
-                //answers
-                this.mThresholdTime = 0;
-                this.mAnswerTime = 0;
-                this.mQuestionStartTime = this.mTimeSinceEpoch;
-                this.mOutOfTime = false;
 
 		/********* BOUNDS *******************/ 
                 //create bounds
@@ -49,7 +42,6 @@ var Game = new Class(
                 this.mINITGAME                         = new INITGAME         (this);
                 this.mRESETGAME                        = new RESETGAME        (this);
                 this.mNORMALGAME                       = new NORMALGAME       (this);
-                this.mLEVELPASSED                      = new LEVELPASSED      (this);
                
                 this.mStateMachine.setGlobalState(this.mGLOBALGAME);
                 this.mStateMachine.changeState(this.mINITGAME);
@@ -75,6 +67,7 @@ var Game = new Class(
 		this.mStateMachine = 0;
 		this.mGLOBALGAME = 0;
 		this.mINITGAME = 0;
+		this.mRESETGAME = 0;
 		this.mNORMALGAME = 0;
 	},
 
@@ -85,13 +78,10 @@ var Game = new Class(
 		this.mKilled = false;
 
                 /**************** TIME ************/
-                this.timeWarning = false;
                 this.mTimeSinceEpoch = 0;
                 this.mLastTimeSinceEpoch = 0;
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
-
-		this.mFirstTimeAnswer = false;
 
 		this.createWorld();
         },
@@ -391,12 +381,6 @@ var Game = new Class(
                 this.mScore = score;
                 APPLICATION.mHud.mScore.setText('<font size="2">Score: ' + this.mScore + '</font>');
         },
-
-	setScoreNeeded: function(scoreNeeded)
-	{
-		this.mScoreNeeded = scoreNeeded;	
-                this.mApplication.mHud.setScoreNeeded(scoreNeeded);
-	},
 
         incrementScore: function()
         {

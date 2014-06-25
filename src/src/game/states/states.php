@@ -104,33 +104,3 @@ exit: function(game)
 {
 }
 });
-
-var LEVELPASSED = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::LEVELPASSED');
-	}
-	game.levelPassedEnter();
-},
-
-execute: function(game)
-{
-	game.levelPassedExecute();
-},
-
-exit: function(game)
-{
-	game.levelPassedExit();
-}
-
-});
-
