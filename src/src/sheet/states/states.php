@@ -1,4 +1,4 @@
-/*************** GAME STATES ************/
+/*************** SHEET STATES ************/
 var GLOBAL_SHEET = new Class(
 {
 Extends: State,
@@ -33,13 +33,13 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('GAME::INITGAME');
+		sheet.log('SHEET::INIT_SHEET');
 	}
 },
 
 execute: function(sheet)
 {
-	sheet.mStateMachine.changeState(sheet.mRESETGAME);
+	sheet.mStateMachine.changeState(sheet.mRESETSHEET);
 },
 
 exit: function(sheet)
@@ -60,7 +60,7 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('GAME::RESET_SHEET');
+		sheet.log('SHEET::RESET_SHEET');
 	}
 	sheet.resetGameEnter();
 },
@@ -87,7 +87,7 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('GAME::NORMAL_SHEET');
+		sheet.log('SHEET::NORMAL_SHEET');
 	}
 	sheet.reset();
 },
@@ -113,7 +113,7 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('GAME::LEVEL_PASSED_SHEET');
+		sheet.log('SHEET::LEVEL_PASSED_SHEET');
 	}
 	sheet.levelPassedEnter();
 },
