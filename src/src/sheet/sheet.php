@@ -1,3 +1,6 @@
+/*
+ A Sheet should contain items(questions) it should facilitate randomizing, ordering items. it should deal with advancing levels....and other application related things.   
+*/
 var Sheet = new Class(
 {
         initialize: function(game)
@@ -12,6 +15,19 @@ var Sheet = new Class(
 			
 		//question
 		this.mMarker = 0;
+
+		//states
+                this.mStateMachine = new StateMachine(this);
+
+                this.mGLOBAL_SHEET       = new GLOBAL_SHEET(this);
+                this.mINIT_SHEET         = new INIT_SHEET         (this);
+                this.mRESET_SHEET        = new RESET_SHEET        (this);
+                this.mNORMAL_SHEET       = new NORMAL_SHEET       (this);
+                this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET (this);
+
+                this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
+                this.mStateMachine.changeState(this.mINIT_GAME);
+
         },
 
 	destructor: function()

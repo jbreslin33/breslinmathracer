@@ -6,6 +6,8 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
+	
+		this.mSheet = new Sheet(this);	
 	},
         
 	createWorld: function()
