@@ -33,6 +33,25 @@ var Item = new Class(
 		this.mRandomChoices = false;
 
 		this.mType = 0; //uncategorized
+ 
+		//states
+                this.mStateMachine = new StateMachine(this);
+
+                this.mGLOBAL_ITEM       = new GLOBAL_ITEM(this);
+                this.mINIT_ITEM         = new INIT_ITEM         (this);
+                this.mRESET_ITEM        = new RESET_ITEM        (this);
+                this.mNORMAL_ITEM       = new NORMAL_ITEM       (this);
+
+                //pad states
+                this.mFIRST_TIME_ITEM   = new FIRST_TIME_ITEM(this);
+                this.mWAITING_ON_ANSWER_ITEM   = new WAITING_ON_ANSWER_ITEM(this);
+                this.mCORRECT_ANSWER_ITEM = new CORRECT_ANSWER_ITEM(this);
+                this.mSHOW_CORRECT_ANSWER_ITEM = new SHOW_CORRECT_ANSWER_ITEM(this);
+                this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
+
+                this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
+                this.mStateMachine.changeState(this.mINIT_ITEM);
+
 },
 
 	getType: function()
