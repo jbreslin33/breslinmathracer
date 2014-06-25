@@ -55,6 +55,12 @@ var Item = new Class(
                 this.mStateMachine.changeState(this.mINIT_ITEM);
 	},
  
+	update: function()
+        {
+                //state machine
+                this.mStateMachine.update();
+        },
+ 
 	log: function(msg)
         {
                 setTimeout(function()
