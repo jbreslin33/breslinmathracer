@@ -45,14 +45,14 @@ var Game = new Class(
 		//states
                 this.mStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_GAME                       = new GLOBAL_GAME       (this);
-                this.mINIT_GAME                         = new INIT_GAME         (this);
-                this.mRESET_GAME                        = new RESET_GAME        (this);
-                this.mNORMAL_GAME                       = new NORMAL_GAME       (this);
-                this.mLEVEL_PASSED                      = new LEVEL_PASSED      (this);
+                this.mGLOBALGAME                       = new GLOBALGAME       (this);
+                this.mINITGAME                         = new INITGAME         (this);
+                this.mRESETGAME                        = new RESETGAME        (this);
+                this.mNORMALGAME                       = new NORMALGAME       (this);
+                this.mLEVELPASSED                      = new LEVELPASSED      (this);
                
-                this.mStateMachine.setGlobalState(this.mGLOBAL_GAME);
-                this.mStateMachine.changeState(this.mINIT_GAME);
+                this.mStateMachine.setGlobalState(this.mGLOBALGAME);
+                this.mStateMachine.changeState(this.mINITGAME);
         },
 	
 	log: function(msg)
@@ -73,9 +73,9 @@ var Game = new Class(
 
 		//states
 		this.mStateMachine = 0;
-		this.mGLOBAL_GAME = 0;
-		this.mINIT_GAME = 0;
-		this.mNORMAL_GAME = 0;
+		this.mGLOBALGAME = 0;
+		this.mINITGAME = 0;
+		this.mNORMALGAME = 0;
 	},
 
 	reset: function()
@@ -408,6 +408,6 @@ var Game = new Class(
 	resetGameEnter: function()
 	{
 		this.reset();
- 		this.mStateMachine.changeState(this.mNORMAL_GAME);
+ 		this.mStateMachine.changeState(this.mNORMALGAME);
 	}
 });
