@@ -35,11 +35,11 @@ enter: function(sheet)
 	{
 		sheet.log('SHEET::INIT_SHEET');
 	}
+	sheet.mStateMachine.changeState(sheet.mRESET_SHEET);
 },
 
 execute: function(sheet)
 {
-	sheet.mStateMachine.changeState(sheet.mRESET_SHEET);
 },
 
 exit: function(sheet)
@@ -62,7 +62,7 @@ enter: function(sheet)
 	{
 		sheet.log('SHEET::RESET_SHEET');
 	}
-	sheet.resetSheetEnter();
+	sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
 },
 
 execute: function(sheet)

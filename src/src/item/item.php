@@ -2,6 +2,8 @@ var Item = new Class(
 {
         initialize: function(question,answer,showAnswer)
         {
+		this.mStateLogs = true;		
+	
 		//question
 		this.mQuestion = question;
 
@@ -51,8 +53,15 @@ var Item = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
-
-},
+	},
+ 
+	log: function(msg)
+        {
+                setTimeout(function()
+                {
+                        throw new Error(msg);
+                }, 0);
+        },
 
 	getType: function()
 	{
