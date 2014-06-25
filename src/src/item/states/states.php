@@ -89,6 +89,7 @@ enter: function(item)
 	{
 		item.log('ITEM::NORMAL_ITEM');
 	}
+	item.createNumQuestion();
 },
 
 execute: function(item)

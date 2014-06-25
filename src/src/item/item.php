@@ -60,6 +60,17 @@ var Item = new Class(
                 //state machine
                 this.mStateMachine.update();
         },
+
+	createNumQuestion: function()
+        {
+                //question
+                this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
+                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion.mCollidable = false;
+                this.mNumQuestion.mCollisionOn = false;
+		this.mNumQuestion.setText(this.mQuestion);
+        },
+
  
 	log: function(msg)
         {
