@@ -13,7 +13,7 @@ Extends: Pad,
               	//set all shapes invisible to start semi-clean
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
-                        this.mShapeArray[i].setVisibility(false);
+                        //this.mShapeArray[i].setVisibility(false);
                 }
 
                 if (this.mApplication.mGame.mQuiz)
@@ -29,6 +29,7 @@ Extends: Pad,
 		//show input pad 
 		for (i = this.mTotalGuiBars; i < parseInt(this.mTotalGuiBars + this.mTotalInputBars); i++)
                 {
+			//console.log(i);
                         this.mShapeArray[i].setVisibility(true);
                 }
 		
@@ -36,7 +37,9 @@ Extends: Pad,
 		{
                 	this.mNumAnswer.mMesh.focus();
 			APPLICATION.mGame.mInputFocusField = APPLICATION.mGame.mNumAnswer.mMesh;
-		}
+		}	
+		//this.mShapeArray[12].setVisibility(false);
+		//this.mShapeArray[34].setVisibility(false);
         },
 
 	inputFocus: function()

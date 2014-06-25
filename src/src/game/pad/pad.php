@@ -170,7 +170,7 @@ Extends: Game,
 	createWorld: function()
         {
 		this.parent();
-		this.createInput();
+		//this.createInput();
 	},
       
 	createNumQuestion: function()
