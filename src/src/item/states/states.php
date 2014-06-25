@@ -89,7 +89,7 @@ enter: function(item)
 	{
 		item.log('ITEM::NORMAL_ITEM');
 	}
-	item.createNumQuestion();
+	item.createWorld();
 },
 
 execute: function(item)

@@ -9,7 +9,7 @@ Extends: Game,
 	
 		this.mSheet = new Sheet(this);	
 		
-		this.mItem1 = new Item('What is the answer of life, the universe and everything?','42');	
+		this.mItem1 = new TextItem('What is the answer of life, the universe and everything?','42');	
 		this.mSheet.mItemArray.push(this.mItem1);
 	},
 
