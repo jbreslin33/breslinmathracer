@@ -1,6 +1,9 @@
+/*
+barebones item class. Should this even have a gui????? I think it should be an abstract class with just an question and answer. let those that implent/extend it provide the gui.
+*/
 var Item = new Class(
 {
-        initialize: function(question,answer,showAnswer)
+        initialize: function(question,answer)
         {
 		this.mStateLogs = true;		
 	
