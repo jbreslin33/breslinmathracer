@@ -1,5 +1,5 @@
 /*************** GAME STATES ************/
-var GLOBAL_GAME = new Class(
+var GLOBALGAME = new Class(
 {
 Extends: State,
 
@@ -21,7 +21,7 @@ exit: function(game)
 
 });
 
-var INIT_GAME = new Class(
+var INITGAME = new Class(
 {
 Extends: State,
 
@@ -33,13 +33,13 @@ enter: function(game)
 {
 	if (game.mStateLogs)
 	{
-		game.log('GAME::INIT_GAME');
+		game.log('GAME::INITGAME');
 	}
 },
 
 execute: function(game)
 {
-	game.mStateMachine.changeState(game.mRESET_GAME);
+	game.mStateMachine.changeState(game.mRESETGAME);
 },
 
 exit: function(game)
@@ -48,7 +48,7 @@ exit: function(game)
 
 });
 
-var RESET_GAME = new Class(
+var RESETGAME = new Class(
 {
 Extends: State,
 
@@ -60,7 +60,7 @@ enter: function(game)
 {
 	if (game.mStateLogs)
 	{
-		game.log('GAME::RESET_GAME');
+		game.log('GAME::RESETGAME');
 	}
 	game.resetGameEnter();
 },
@@ -75,7 +75,7 @@ exit: function(game)
 
 });
 
-var NORMAL_GAME = new Class(
+var NORMALGAME = new Class(
 {
 Extends: State,
 
@@ -87,21 +87,16 @@ enter: function(game)
 {
 	if (game.mStateLogs)
 	{
-		game.log('GAME::NORMAL_GAME');
+		game.log('GAME::NORMALGAME');
 	}
 	game.reset();
 },
 
 execute: function(game)
 {
-	if (game.mQuiz.isQuizComplete())
-        {
-                game.mStateMachine.changeState(game.mLEVEL_PASSED);
-        }
-
         if (game.mKilled == true)
        	{
-                game.mStateMachine.changeState(game.mRESET_GAME);
+                game.mStateMachine.changeState(game.mRESETGAME);
         }
 },
 
@@ -110,7 +105,7 @@ exit: function(game)
 }
 });
 
-var LEVEL_PASSED = new Class(
+var LEVELPASSED = new Class(
 {
 Extends: State,
 
@@ -122,7 +117,7 @@ enter: function(game)
 {
 	if (game.mStateLogs)
 	{
-		game.log('GAME::LEVEL_PASSED');
+		game.log('GAME::LEVELPASSED');
 	}
 	game.levelPassedEnter();
 },
@@ -135,159 +130,6 @@ execute: function(game)
 exit: function(game)
 {
 	game.levelPassedExit();
-}
-
-});
-
-//pad states
-var FIRST_TIME = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::FIRST_TIME');
-	}
-        game.firstTimeEnter();
-},
-
-execute: function(game)
-{
-        game.firstTimeExecute();
-},
-
-exit: function(game)
-{
-}
-
-});
-
-var WAITING_ON_ANSWER = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::WAITING_ON_ANSWER');
-	}
-        game.waitingOnAnswerEnter();
-},
-
-execute: function(game)
-{
-        game.waitingOnAnswerExecute();
-},
-
-exit: function(game)
-{
-}
-
-});
-
-var CORRECT_ANSWER = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::CORRECT_ANSWER');
-	}
-        game.mQuiz.correctAnswer();
-},
-
-execute: function(game)
-{
-        if (game.mQuiz.isQuizComplete())
-        {
-                game.mStateMachine.changeState(game.mLEVEL_PASSED);
-        }
-        else
-        {
-                game.mStateMachine.changeState(game.mWAITING_ON_ANSWER);
-        }
-},
-
-exit: function(game)
-{
-}
-
-});
-
-var SHOW_CORRECT_ANSWER = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::SHOW_CORRECT_ANSWER');
-	}
-        game.showCorrectAnswerEnter();
-},
-
-execute: function(game)
-{
-        if (game.mTimeSinceEpoch > game.mCorrectAnswerStartTime + game.mCorrectAnswerThresholdTime)
-        {
-               	game.mStateMachine.changeState(game.mRESET_GAME);
-        }
-},
-
-exit: function(game)
-{
-        game.showCorrectAnswerExit();
-}
-
-});
-
-var OUT_OF_TIME = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::OUT_OF_TIME');
-	}
-        game.outOfTimeEnter();
-},
-
-execute: function(game)
-{
-        game.outOfTimeExecute();
-},
-
-exit: function(game)
-{
-        game.outOfTimeExit();
 }
 
 });
