@@ -8,6 +8,8 @@ Extends: Game,
        		this.parent(application);
 	
 		this.mSheet = new Sheet(this);	
+		
+		this.mItem1 = new Item('What is the answer of life, the universe and everything?','42');	
 	},
 
 	update: function()
