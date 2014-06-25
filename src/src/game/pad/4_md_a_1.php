@@ -10,7 +10,7 @@ Extends: NumberPad,
 	createNumQuestion: function()
         {
                 //question
-                this.mNumQuestion = new Shape(270,50,195,5,this,"","","");
+                this.mNumQuestion = new Shape(270,50,195,85,this,"","","");
                 this.mShapeArray.push(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
@@ -20,7 +20,9 @@ Extends: NumberPad,
         {
 		this.parent();
                 //this.mShapeArray[1].setPosition(200,200);
-		this.mShapeArray[1].setSize(250,100);
+		this.mShapeArray[1].setSize(250,200);
+
+		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + '<br><br> Answer: ' + this.mQuiz.getQuestion().getAnswer();
         },
 
 	
@@ -57,7 +59,7 @@ Extends: NumberPad,
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
 
-				rand = Math.floor(Math.random()*1);
+				rand = Math.floor(Math.random()*12);
 
 				if(rand == 0)
 				{
@@ -156,6 +158,15 @@ Extends: NumberPad,
 				   convert = 1000;
 
 				   num2 = 1 + Math.floor(Math.random()*9);
+				}
+
+				if(rand == 11)
+				{
+				   unit1 = 'hours';
+				   unit2 = 'day';
+				   convert = 24;
+
+				   num2 = 1 + Math.floor(Math.random()*4);
 				}
 
 				num1 = num2 * convert;
