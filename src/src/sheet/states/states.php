@@ -103,6 +103,12 @@ execute: function(sheet)
         {
                 sheet.log('Wrong!!!!');
         }
+ 
+	if (sheet.isSheetComplete())
+        {
+                sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED);
+        }
+
 },
 
 exit: function(sheet)
@@ -124,7 +130,22 @@ enter: function(sheet)
 	{
 		sheet.log('SHEET::LEVEL_PASSED_SHEET');
 	}
-	sheet.levelPassedEnter();
+   
+	APPLICATION.mLevelCompleted = true;
+
+        //times
+        sheet.getItem().mQuestionStartTime = sheet.mGame.mTimeSinceEpoch; //restart timer
+        sheet.mShowLevelPassedStartTime = sheet.mGame.mTimeSinceEpoch;
+
+        //gui bar
+        if (APPLICATION.mLevel == APPLICATION.mLevels)
+        {
+		sheet.log('level == levels');
+        }
+        else
+        {
+		sheet.log('level != levels');
+        }
 },
 
 execute: function(sheet)
