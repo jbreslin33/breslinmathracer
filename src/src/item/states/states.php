@@ -13,9 +13,6 @@ enter: function(item)
 
 execute: function(item)
 {
-	if (item.mStateMachine.currentState() !=  this.mFINISHED_ITEM) 
-	{
-	}
 },
 
 exit: function(item)
@@ -123,7 +120,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                item.log('ITEM::FINISHED_ITEM');
+                item.log('ITEM::CORRECT_ITEM');
         }
         item.destroyWorld();
 },
@@ -187,7 +184,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                item.log('ITEM::FINISHED_ITEM');
+                item.log('ITEM::INCORRECT_ITEM');
         }
         item.destroyWorld();
 },
