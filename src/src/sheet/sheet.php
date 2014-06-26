@@ -15,11 +15,20 @@ var Sheet = new Class(
 		this.mItemArray = new Array();
 		this.mItemPoolArray = new Array();
                 this.mAnswerPool = new Array();
-			
+
+                /**************** TIME ************/
+	 	this.mShowLevelPassedStartTime = 0;
+                this.mShowLevelFailedStartTime = 0;
+
+                this.mShowLevelPassedThresholdTime = 10000;
+                this.mShowLevelFailedThresholdTime = 10000;
+
+                this.mFailedAttemptsThreshold = 0;
+
 		//question
 		this.mMarker = 0;
 
-		this.mScoreNeeded = 1;
+		this.mScoreNeeded = 2;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -29,7 +38,7 @@ var Sheet = new Class(
                 this.mRESET_SHEET        = new RESET_SHEET       (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
-                this.m_END_SHEET         = new END_SHEET(this);
+                this.mEND_SHEET          = new END_SHEET(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);
                 this.mStateMachine.changeState(this.mINIT_SHEET);
