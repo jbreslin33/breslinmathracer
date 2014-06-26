@@ -38,14 +38,13 @@ Extends: Item,
                 if (e.key == 'enter')
                 {
                         //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-			APPLICATION.log('enter hit');	
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
 				{
-					if (APPLICATION.mGame.mSheet.mItem)
+					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.mItem.checkUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().checkUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
 					}
 				}
 			}
@@ -57,14 +56,13 @@ Extends: Item,
                 if (e.keyCode == 13)
                 {
                        	// APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-			APPLICATION.log('enter hit');	
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
 				{
-					if (APPLICATION.mGame.mSheet.mItem)
+					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.mItem.checkUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().checkUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
 					}
 				}
 			}
