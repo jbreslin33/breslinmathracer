@@ -35,7 +35,7 @@ var Item = new Class(
 		//times 
 		this.mThresholdTime = 0;
                 this.mAnswerTime = 0;
-                this.mQuestionStartTime = this.mTimeSinceEpoch;
+                this.mQuestionStartTime = 0;
                 this.mOutOfTime = false;
 
                 //times for show correct
