@@ -19,6 +19,8 @@ var Sheet = new Class(
 		//question
 		this.mMarker = 0;
 
+		this.mScoreNeeded = 1;
+
 		//states
                 this.mStateMachine = new StateMachine(this);
 
@@ -31,6 +33,7 @@ var Sheet = new Class(
                 this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);
                 this.mStateMachine.changeState(this.mINIT_SHEET);
 
+		this.mItem = 0;
         },
 
 	update: function()
@@ -41,17 +44,6 @@ var Sheet = new Class(
 		for (i = 0; i < this.mItemArray.length; i++)
 		{
 			this.mItemArray[i].update();
-		}
-	
-		if (this.getItem().mStatus == 2)
-		{
-			this.log('Correct!!!!');
-			this.correctAnswer();
-				
-		}
-		else if (this.getItem().mStatus == 3)
-		{
-			this.log('Wrong!!!!');
 		}
 	},
 
@@ -114,7 +106,17 @@ var Sheet = new Class(
 		//reset marker
 		this.mMarker = 0;
 	},
- 	
+
+	addItem: function(item)
+	{
+		this.mItemArray.push(item);
+		if (this.mItemArray.length == 1)
+		{
+			this.log('setting mItem');
+			this.mItem = this.mItemArray[0];
+		}		
+	}, 
+	
 	//returns question object	
 	getItem: function()
 	{
@@ -133,15 +135,15 @@ var Sheet = new Class(
         	this.mGame.incrementScore();
 		this.mMarker++;
 
-		//tell marker question to go live 
-		this.getItem().mStatus = 1;
+		//set marker item to THE ITEM	
+		this.mItem = this.getItem();
 
 		//this.mGame.mHud.mItem.setText('<font size="2"> Item: ' + this.mItemArray[this.mMarker].getItem() + '</font>');
 	},
 	
 	isSheetComplete: function()
 	{
-		if (this.mGame.getScore() >= this.mGame.mScoreNeeded)
+		if (this.mGame.getScore() >= this.mScoreNeeded)
 		{
 			return true;
 		}

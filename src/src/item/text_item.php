@@ -4,9 +4,9 @@ TextItem: this class just is barebones question and answer box to hit enter in.
 var TextItem = new Class(
 {
 Extends: Item,
-        initialize: function(question,answer)
+        initialize: function(sheet,question,answer)
         {
-		this.parent(question,answer);
+		this.parent(sheet,question,answer);
 	},
  
 	createWorld: function()
