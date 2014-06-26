@@ -7,7 +7,6 @@ Extends: Item,
         initialize: function(question,answer)
         {
 		this.parent(question,answer);
-	
 	},
  
 	createWorld: function()
@@ -32,6 +31,18 @@ Extends: Item,
                 }
                 this.mShapeArray.push(this.mNumAnswer);
         },
+
+	destroyWorld: function()
+        {
+                //shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].destructor();
+                        this.mShapeArray[i] = 0;
+                }
+                this.mShapeArray = 0;
+                this.mShapeArray = new Array();
+        },
  
 	inputKeyHit: function(e)
         {
@@ -44,7 +55,7 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.getItem().checkUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
 					}
 				}
 			}
@@ -62,7 +73,7 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.getItem().checkUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
 					}
 				}
 			}

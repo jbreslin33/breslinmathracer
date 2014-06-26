@@ -35,11 +35,14 @@ enter: function(item)
 	{
 		item.log('ITEM::INIT_ITEM');
 	}
-	item.mStateMachine.changeState(item.mRESET_ITEM);
 },
 
 execute: function(item)
 {
+	if (item.mStatus == 1)
+	{
+		item.mStateMachine.changeState(item.mRESET_ITEM);
+	}
 },
 
 exit: function(item)
@@ -94,13 +97,47 @@ enter: function(item)
 
 execute: function(item)
 {
-
+	if (item.mStatus == 2 || item.mStatus == 3)
+	{
+		item.mStateMachine.changeState(item.mFINISHED_ITEM);
+	} 
 },
 
 exit: function(item)
 {
 }
 });
+
+var FINISHED_ITEM = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                item.log('ITEM::FINISHED_ITEM');
+        }
+        item.destroyWorld();
+},
+
+execute: function(item)
+{
+        if (item.mStatus == 2 || item.mStatus == 3)
+        {
+                item.mStateMachine.changeState(item.mINIT_ITEM);
+        }
+},
+
+exit: function(item)
+{
+}
+});
+
 
 var LEVEL_PASSED_ITEM = new Class(
 {
