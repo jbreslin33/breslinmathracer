@@ -30,6 +30,9 @@ Extends: Item,
                         this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
                 this.mShapeArray.push(this.mNumAnswer);
+	
+		//try to set focus
+ 		this.mNumAnswer.mMesh.focus();		
         },
 
 	destroyWorld: function()
