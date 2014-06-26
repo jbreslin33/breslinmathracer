@@ -57,6 +57,7 @@ var Item = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
+
 	},
 
 	destructor: function()
