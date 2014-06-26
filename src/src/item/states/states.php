@@ -13,6 +13,9 @@ enter: function(item)
 
 execute: function(item)
 {
+	if (item.mStateMachine.currentState() !=  this.mFINISHED_ITEM) 
+	{
+	}
 },
 
 exit: function(item)
@@ -41,154 +44,8 @@ execute: function(item)
 {
 	if (item.mStatus == 1)
 	{
-		item.mStateMachine.changeState(item.mRESET_ITEM);
+		item.mStateMachine.changeState(item.mWAITING_ON_ANSWER_ITEM);
 	}
-},
-
-exit: function(item)
-{
-}
-
-});
-
-var RESET_ITEM = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(item)
-{
-	if (item.mStateLogs)
-	{
-		item.log('ITEM::RESET_ITEM');
-	}
-	item.mStateMachine.changeState(item.mNORMAL_ITEM);
-},
-
-execute: function(item)
-{
-},
-
-exit: function(item)
-{
-}
-
-});
-
-var NORMAL_ITEM = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(item)
-{
-	if (item.mStateLogs)
-	{
-		item.log('ITEM::NORMAL_ITEM');
-	}
-	item.createWorld();
-},
-
-execute: function(item)
-{
-	if (item.mStatus == 2 || item.mStatus == 3)
-	{
-		item.mStateMachine.changeState(item.mFINISHED_ITEM);
-	} 
-},
-
-exit: function(item)
-{
-}
-});
-
-var FINISHED_ITEM = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(item)
-{
-        if (item.mStateLogs)
-        {
-                item.log('ITEM::FINISHED_ITEM');
-        }
-        item.destroyWorld();
-},
-
-execute: function(item)
-{
-        if (item.mStatus == 2 || item.mStatus == 3)
-        {
-                item.mStateMachine.changeState(item.mINIT_ITEM);
-        }
-},
-
-exit: function(item)
-{
-}
-});
-
-
-var LEVEL_PASSED_ITEM = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(item)
-{
-	if (item.mStateLogs)
-	{
-		item.log('ITEM::LEVEL_PASSED_ITEM');
-	}
-	item.levelPassedEnter();
-},
-
-execute: function(item)
-{
-	item.levelPassedExecute();
-},
-
-exit: function(item)
-{
-	item.levelPassedExit();
-}
-
-});
-
-//pad states
-var FIRST_TIME_ITEM = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(item)
-{
-	if (item.mStateLogs)
-	{
-		item.log('ITEM::FIRST_TIME_ITEM');
-	}
-        item.firstTimeEnter();
-},
-
-execute: function(item)
-{
-        item.firstTimeExecute();
 },
 
 exit: function(item)
@@ -211,12 +68,24 @@ enter: function(item)
 	{
 		item.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
-        item.waitingOnAnswerEnter();
+	item.createWorld();
+        
+	//times
+       	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
 },
 
 execute: function(item)
 {
-        item.waitingOnAnswerExecute();
+	if (item.mThresholdTime == 0)
+        {
+                //no possibility of OUT_OF_TIME
+        }
+        else if (APPLICATION.mGame.mTimeSinceEpoch > item.mQuestionStartTime + item.mThresholdTime)
+        {
+        	item.mOutOfTime = true;
+                item.mStateMachine.changeState(item.mOUT_OF_TIME);
+	}
+
 },
 
 exit: function(item)
@@ -225,7 +94,8 @@ exit: function(item)
 
 });
 
-var CORRECT_ANSWER_ITEM = new Class(
+
+var CORRECT_ITEM = new Class(
 {
 Extends: State,
 
@@ -235,23 +105,19 @@ initialize: function()
 
 enter: function(item)
 {
-	if (item.mStateLogs)
-	{
-		item.log('ITEM::CORRECT_ANSWER_ITEM');
-	}
-        item.mQuiz.correctAnswer();
+        if (item.mStateLogs)
+        {
+                item.log('ITEM::FINISHED_ITEM');
+        }
+        item.destroyWorld();
 },
 
 execute: function(item)
 {
-        if (item.mQuiz.isQuizComplete())
-        {
-                item.mStateMachine.changeState(item.mLEVEL_PASSED_ITEM);
-        }
-        else
-        {
-                item.mStateMachine.changeState(item.mWAITING_ON_ANSWER_ITEM);
-        }
+	if (item.mStatus == 0)
+	{
+		item.mStateMachine.changeState(item.mINIT_ITEM);
+	}
 },
 
 exit: function(item)
@@ -259,6 +125,7 @@ exit: function(item)
 }
 
 });
+
 
 var SHOW_CORRECT_ANSWER_ITEM = new Class(
 {
@@ -281,7 +148,7 @@ execute: function(item)
 {
         if (item.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
         {
-               	item.mStateMachine.changeState(item.mRESET_ITEM);
+               	item.mStateMachine.changeState(item.mINCORRECT_ITEM);
         }
 },
 
@@ -291,6 +158,38 @@ exit: function(item)
 }
 
 });
+
+var INCORRECT_ITEM = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                item.log('ITEM::FINISHED_ITEM');
+        }
+        item.destroyWorld();
+},
+
+execute: function(item)
+{
+        if (item.mStatus == 0)
+        {
+                item.mStateMachine.changeState(item.mINIT_ITEM);
+        }
+},
+
+exit: function(item)
+{
+}
+});
+
+
 
 var OUT_OF_TIME_ITEM = new Class(
 {

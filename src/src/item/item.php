@@ -29,20 +29,27 @@ var Item = new Class(
 		this.mShapeArray   = new Array();
         
 		this.mType = 0; //uncategorized
+
+		//times 
+		this.mThresholdTime = 0;
+                this.mAnswerTime = 0;
+                this.mQuestionStartTime = this.mTimeSinceEpoch;
+                this.mOutOfTime = false;
+
+                //times for show correct
+                this.mCorrectAnswerStartTime = 0;
+                this.mCorrectAnswerThresholdTime = 10000;
  
 		//states
                 this.mStateMachine = new StateMachine(this);
 
                 this.mGLOBAL_ITEM   = new GLOBAL_ITEM  (this);
                 this.mINIT_ITEM     = new INIT_ITEM    (this);
-                this.mRESET_ITEM    = new RESET_ITEM   (this);
-                this.mNORMAL_ITEM   = new NORMAL_ITEM  (this);
-                this.mFINISHED_ITEM = new FINISHED_ITEM(this);
 
                 //pad states
-                this.mFIRST_TIME_ITEM   = new FIRST_TIME_ITEM(this);
                 this.mWAITING_ON_ANSWER_ITEM   = new WAITING_ON_ANSWER_ITEM(this);
-                this.mCORRECT_ANSWER_ITEM = new CORRECT_ANSWER_ITEM(this);
+                this.mCORRECT_ITEM = new CORRECT_ITEM(this);
+                this.mINCORRECT_ITEM = new INCORRECT_ITEM(this);
                 this.mSHOW_CORRECT_ANSWER_ITEM = new SHOW_CORRECT_ANSWER_ITEM(this);
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
 
