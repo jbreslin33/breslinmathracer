@@ -138,11 +138,11 @@ enter: function(sheet)
         //gui bar
         if (APPLICATION.mLevel == APPLICATION.mLevels)
         {
-		sheet.log('level == levels');
+
         }
         else
         {
-		sheet.log('level != levels');
+
         }
 },
 
