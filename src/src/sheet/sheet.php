@@ -73,7 +73,10 @@ var Sheet = new Class(
 
 		for (i = 0; i < this.mItemArray.length; i++)
 		{
-			this.mItemArray[i].update();
+			if (this.mItemArray[i])
+			{
+				this.mItemArray[i].update();
+			}
 		}
 	},
 

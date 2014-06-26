@@ -7,6 +7,9 @@ Extends: Item,
         initialize: function(sheet,question,answer)
         {
 		this.parent(sheet,question,answer);
+
+                this.createWorld();
+                this.hideShapes();
 	},
  
 	createWorld: function()

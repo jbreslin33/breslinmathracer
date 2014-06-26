@@ -66,10 +66,11 @@ enter: function(item)
 	{
 		item.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
-	item.createWorld();
         
 	//times
        	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
+	
+	item.showShapes();
 },
 
 execute: function(item)
