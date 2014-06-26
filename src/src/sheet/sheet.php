@@ -124,7 +124,6 @@ var Sheet = new Class(
 		this.mItemArray.push(item);
 		if (this.mItemArray.length == 1)
 		{
-			this.log('setting mItem');
 			this.mItem = this.mItemArray[0];
 		}		
 	}, 
