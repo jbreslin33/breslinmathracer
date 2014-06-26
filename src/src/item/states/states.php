@@ -128,7 +128,7 @@ enter: function(item)
         {
                 item.log('ITEM::CORRECT_ITEM');
         }
-        item.destroyWorld();
+        item.hideShapes();
 },
 
 execute: function(item)

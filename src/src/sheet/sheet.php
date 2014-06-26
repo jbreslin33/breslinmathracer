@@ -46,6 +46,26 @@ var Sheet = new Class(
 		this.mItem = 0;
         },
 
+	createItems: function()
+	{
+
+	},
+	
+	destroyItems: function()
+	{
+		//destroy items 
+                for (i = 0; i < this.mItemArray.length; i++)
+                {
+			//give item a chance to take care of its own business
+                        this.mItemArray[i].destructor();
+                        this.mItemArray[i] = 0;
+                }
+
+                //destroy question array
+                this.mItemArray = 0;
+                this.mItemArray = new Array();
+	},
+
 	update: function()
 	{
  		//state machine
@@ -72,10 +92,7 @@ var Sheet = new Class(
 
 	destructor: function()
 	{
-		this.resetItemArray();		
-		this.resetItemPoolArray();		
-		this.resetAnswerPool();		
-		this.destroyWorld();
+		this.destroyItems();
 	},	
 
 	destroyWorld: function()
@@ -83,43 +100,6 @@ var Sheet = new Class(
 
 	},
 
-	resetItemArray: function()
-	{
-		//destroy questions
-		for (i = 0; i < this.mItemArray.length; i++)
-		{
-			this.mItemArray[i] = 0;
-		}
-
-		//destroy question array
-		this.mItemArray = 0;
-		this.mItemArray = new Array();
-	},
-
-	resetItemPoolArray: function()
-	{
-		//destroy question pool
-		for (i = 0; i < this.mItemPoolArray.length; i++)
-		{
-			this.mItemPoolArray[i] = 0;
-		}
-		//destroy question pool array
-		this.mItemPoolArray = 0;
-		this.mItemPoolArray = new Array();
-	},
-	
-	resetAnswerPool: function()
-	{
-		//destroy answer pool
-                for (i = 0; i < this.mAnswerPool.length; i++)
-                {
-                        this.mAnswerPool[i] = 0;
-                }
-                //destroy answer pool array
-                this.mAnswerPool = 0;
-                this.mAnswerPool = new Array();
-	},
-	
 	reset: function()
 	{
 		this.log('resetting sheet');
