@@ -93,13 +93,13 @@ execute: function(item)
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
-			item.log('pass = true');
                         item.mStatus = 1;
+                	item.mStateMachine.changeState(item.mCORRECT_ITEM);
                 }
                 else
                 {
-			item.log('pass = false');
                         item.mStatus = 2;
+                	item.mStateMachine.changeState(item.mSHOW_CORRECT_ANSWER_ITEM);
                 }
 	}                   
 },
