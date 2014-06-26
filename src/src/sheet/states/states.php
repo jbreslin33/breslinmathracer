@@ -106,7 +106,7 @@ execute: function(sheet)
  
 	if (sheet.isSheetComplete())
         {
-                sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED);
+                sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED_SHEET);
         }
 
 },
@@ -150,13 +150,42 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
-	sheet.levelPassedExecute();
+	if (sheet.mGame.mTimeSinceEpoch > sheet.mShowLevelPassedStartTime + sheet.mShowLevelPassedThresholdTime)
+        {
+                this.mStateMachine.changeState(this.mEND_SHEET);
+        }
 },
 
 exit: function(sheet)
 {
-	sheet.levelPassedExit();
 }
 
 });
 
+var END_SHEET = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(sheet)
+{
+        if (sheet.mStateLogs)
+        {
+                sheet.log('SHEET::END_SHEET');
+        }
+        sheet.destructor();
+},
+
+execute: function(sheet)
+{
+
+
+},
+exit: function(sheet)
+{
+}
+
+});

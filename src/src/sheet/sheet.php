@@ -29,6 +29,7 @@ var Sheet = new Class(
                 this.mRESET_SHEET        = new RESET_SHEET       (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
+                this.m_END_SHEET         = new END_SHEET(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);
                 this.mStateMachine.changeState(this.mINIT_SHEET);
@@ -55,12 +56,23 @@ var Sheet = new Class(
                 }, 0);
         },
 
+	createWorld: function()
+	{
+
+	},
+
 	destructor: function()
 	{
 		this.resetItemArray();		
 		this.resetItemPoolArray();		
 		this.resetAnswerPool();		
+		this.destroyWorld();
 	},	
+
+	destroyWorld: function()
+	{
+
+	},
 
 	resetItemArray: function()
 	{
