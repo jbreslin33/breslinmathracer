@@ -85,8 +85,6 @@ var Item = new Class(
 		correctAnswerFound = false;
 		for (i = 0; i <  this.mAnswerArray.length; i++)
 		{
-			this.log('this.mAnswerArray[i]:' + this.mAnswerArray[i]);
-			this.log('this.mUserAnswer:' + this.mUserAnswer);
 			if (this.mUserAnswer == this.mAnswerArray[i])
 			{
 				correctAnswerFound = true;	
