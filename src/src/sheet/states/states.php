@@ -89,7 +89,6 @@ enter: function(sheet)
 	{
 		sheet.log('SHEET::NORMAL_SHEET');
 	}
-	sheet.reset();
 },
 
 execute: function(sheet)
