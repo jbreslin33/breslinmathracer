@@ -87,6 +87,12 @@ execute: function(item)
 	//you should check mUserAnswer in item here....
    	if (item.mUserAnswer != '')
         {
+		if (item == item.mSheet.mItemArray[0])
+		{
+			//item is the first in array on Sheet so send attempt
+			APPLICATION.sendLevelAttempt();
+		}
+
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
