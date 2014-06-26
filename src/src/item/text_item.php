@@ -35,15 +35,25 @@ Extends: Item,
  		this.mNumAnswer.mMesh.focus();		
         },
 
+	destructor: function()
+	{
+		//this.parent();
+		this.destroyWorld();	
+	},
+
 	destroyWorld: function()
         {
+		//this.parent();
+
                 //shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
+			this.log('descructor for shape:' + this.mShapeArray[i].getText())
                         this.mShapeArray[i].destructor();
                         this.mShapeArray[i] = 0;
                 }
-                this.mShapeArray = 0;
+                
+		this.mShapeArray = 0;
                 this.mShapeArray = new Array();
         },
  

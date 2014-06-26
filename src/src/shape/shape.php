@@ -168,6 +168,11 @@ Extends: Polygon,
 			}
 		}
 	},
+ 
+	getText: function()
+        {
+                return this.mMesh.innerHTML;
+        },
 
 	/********* COLOR ******************/
 	setBackgroundColor: function(c)
