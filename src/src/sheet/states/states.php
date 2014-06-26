@@ -225,7 +225,8 @@ enter: function(sheet)
         {
                 sheet.log('SHEET::END_SHEET');
         }
-        //sheet.destructor();
+	sheet.mGame.mReadyForNormalApplication = true;
+        sheet.reset();
 },
 
 execute: function(sheet)
