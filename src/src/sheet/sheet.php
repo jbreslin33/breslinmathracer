@@ -122,6 +122,7 @@ var Sheet = new Class(
 	
 	reset: function()
 	{
+		this.log('resetting sheet');
 		this.destructor();
 		
 		//reset marker

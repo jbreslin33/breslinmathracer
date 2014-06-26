@@ -7,6 +7,9 @@ var Game = new Class(
 	initialize: function(application)
         {
 		this.mApplication = application;
+	
+		//left over variable from old code but still needed until we make full switch	
+		this.mReadyForNormalApplication = false;
 
 		//loggin
 		this.mStateLogs = true;
