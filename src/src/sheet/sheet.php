@@ -42,6 +42,17 @@ var Sheet = new Class(
 		{
 			this.mItemArray[i].update();
 		}
+	
+		if (this.getItem().mStatus == 2)
+		{
+			this.log('Correct!!!!');
+			this.correctAnswer();
+				
+		}
+		else if (this.getItem().mStatus == 3)
+		{
+			this.log('Wrong!!!!');
+		}
 	},
 
         log: function(msg)
@@ -118,8 +129,13 @@ var Sheet = new Class(
 	
 	correctAnswer: function()
 	{
+
         	this.mGame.incrementScore();
 		this.mMarker++;
+
+		//tell marker question to go live 
+		this.getItem().mStatus = 1;
+
 		//this.mGame.mHud.mItem.setText('<font size="2"> Item: ' + this.mItemArray[this.mMarker].getItem() + '</font>');
 	},
 	

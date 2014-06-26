@@ -17,8 +17,11 @@ var Item = new Class(
 		//tip
 		this.mTipArray = new Array();
 
-		//is solved
-		this.mSolved = false;
+		//status	
+		this.mStatus = 0; //notLive=0,notAttempted=1,correct=2,incorrect=3
+
+		//userAnswer
+		this.mUserAnswer = '';
 
   		//answer pool
                 this.mAnswerPool = new Array();
@@ -30,10 +33,11 @@ var Item = new Class(
 		//states
                 this.mStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_ITEM       = new GLOBAL_ITEM(this);
-                this.mINIT_ITEM         = new INIT_ITEM         (this);
-                this.mRESET_ITEM        = new RESET_ITEM        (this);
-                this.mNORMAL_ITEM       = new NORMAL_ITEM       (this);
+                this.mGLOBAL_ITEM   = new GLOBAL_ITEM  (this);
+                this.mINIT_ITEM     = new INIT_ITEM    (this);
+                this.mRESET_ITEM    = new RESET_ITEM   (this);
+                this.mNORMAL_ITEM   = new NORMAL_ITEM  (this);
+                this.mFINISHED_ITEM = new FINISHED_ITEM(this);
 
                 //pad states
                 this.mFIRST_TIME_ITEM   = new FIRST_TIME_ITEM(this);
@@ -50,19 +54,46 @@ var Item = new Class(
         {
                 //state machine
                 this.mStateMachine.update();
+		
+		if (this.mUserAnswer != '' && this.mStatus == 1)
+		{
+			pass = this.checkUserAnswer();
+			if (pass)
+			{
+				this.mStatus = 2;
+			}
+			else
+			{
+				this.mStatus = 3;
+			}
+		}	
         },
+
+	createWorld: function()
+	{
+
+	},
 	
-	checkUserAnswer: function(userAnswer)
+	destroypWorld: function()
+	{
+
+	},
+
+	setUserAnswer: function(userAnswer)
+	{
+		this.mUserAnswer = userAnswer;
+	},
+	
+	checkUserAnswer: function()
 	{
 		correctAnswerFound = false;
 		for (i = 0; i <  this.mAnswerArray.length; i++)
 		{
-			if (userAnswer == this.mAnswerArray[i])
+			if (this.mUserAnswer == this.mAnswerArray[i])
 			{
 				correctAnswerFound = true;	
 			} 
 		}
-		this.log('checkUserAnswer:' + userAnswer);
 		return correctAnswerFound;
 	},
 
