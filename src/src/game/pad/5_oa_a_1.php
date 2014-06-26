@@ -11,8 +11,6 @@ Extends: Game,
 		
 		this.mItem1 = new TextItem('What is the answer of life, the universe and everything?','42');	
 		this.mSheet.mItemArray.push(this.mItem1);
-		//lets set THE item in mSheet for now.
-		this.mSheet.mItem = this.mItem1;
 	},
 
 	update: function()
