@@ -3,8 +3,10 @@ barebones item class. Should this even have a gui????? I think it should be an a
 */
 var Item = new Class(
 {
-        initialize: function(question,answer)
+        initialize: function(sheet,question,answer)
         {
+		this.mSheet = sheet;
+
 		this.mStateLogs = true;		
 	
 		//question
@@ -18,7 +20,7 @@ var Item = new Class(
 		this.mTipArray = new Array();
 
 		//status	
-		this.mStatus = 0; //notLive=0,notAttempted=1,correct=2,incorrect=3
+		this.mStatus = 0; //notAttempted=0,correct=1,incorrect=2
 
 		//userAnswer
 		this.mUserAnswer = '';
@@ -61,19 +63,6 @@ var Item = new Class(
         {
                 //state machine
                 this.mStateMachine.update();
-		
-		if (this.mUserAnswer != '' && this.mStatus == 1)
-		{
-			pass = this.checkUserAnswer();
-			if (pass)
-			{
-				this.mStatus = 2;
-			}
-			else
-			{
-				this.mStatus = 3;
-			}
-		}	
         },
 
 	createWorld: function()
@@ -81,7 +70,7 @@ var Item = new Class(
 
 	},
 	
-	destroypWorld: function()
+	destroyWorld: function()
 	{
 
 	},
@@ -96,6 +85,8 @@ var Item = new Class(
 		correctAnswerFound = false;
 		for (i = 0; i <  this.mAnswerArray.length; i++)
 		{
+			this.log('this.mAnswerArray[i]:' + this.mAnswerArray[i]);
+			this.log('this.mUserAnswer:' + this.mUserAnswer);
 			if (this.mUserAnswer == this.mAnswerArray[i])
 			{
 				correctAnswerFound = true;	

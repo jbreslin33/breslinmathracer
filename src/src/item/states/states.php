@@ -42,7 +42,8 @@ enter: function(item)
 
 execute: function(item)
 {
-	if (item.mStatus == 1)
+	//if your THE ITEM then go to wait state
+	if (item.mSheet.mItem == item)
 	{
 		item.mStateMachine.changeState(item.mWAITING_ON_ANSWER_ITEM);
 	}
@@ -86,6 +87,21 @@ execute: function(item)
                 item.mStateMachine.changeState(item.mOUT_OF_TIME);
 	}
 
+	//you should check mUserAnswer in item here....
+   	if (item.mUserAnswer != '')
+        {
+        	pass = item.checkUserAnswer();
+                if (pass)
+                {
+			item.log('pass = true');
+                        item.mStatus = 1;
+                }
+                else
+                {
+			item.log('pass = false');
+                        item.mStatus = 2;
+                }
+	}                   
 },
 
 exit: function(item)

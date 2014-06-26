@@ -94,6 +94,15 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
+	if (sheet.getItem().mStatus == 1)
+        {
+        	sheet.log('Correct!!!!');
+                sheet.correctAnswer();
+        }
+        else if (sheet.getItem().mStatus == 2)
+        {
+                sheet.log('Wrong!!!!');
+        }
 },
 
 exit: function(sheet)
