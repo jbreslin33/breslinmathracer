@@ -166,11 +166,12 @@ enter: function(item)
 	}
         //item.showCorrectAnswerEnter();
 	item.log('question:' + item.getQuestion() + ' answer: ' + item.getAnswer());
+        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
 },
 
 execute: function(item)
 {
-        if (item.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
+        if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
         {
                	item.mStateMachine.changeState(item.mINCORRECT_ITEM);
         }
