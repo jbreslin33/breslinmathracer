@@ -14,9 +14,14 @@ Extends: Sheet,
 		this.mItem4 = 0;		
 		this.mItem5 = 0;		
 
+		this.mVictoryShape1 = 0; 
+		this.mVictoryShape2 = 0; 
+		this.mVictoryShape3 = 0; 
+
 		APPLICATION.mHud.setScoreNeeded(5);
 
 		this.createItems(); 
+		this.createShapes();
         },
 	
 	createItems: function()
@@ -43,6 +48,32 @@ Extends: Sheet,
 		
 		this.mItem7 = new TextItem(this,'buf','buf');
                 this.addItem(this.mItem7);
-	}
+	},
+   
+	createVictoryShapes: function()
+        {
+                //victory shapes
+                this.mVictoryShape1 = new ShapeVictory(50,50,100,300,this.mGame,"/images/bus/kid.png","","");
+                this.addShape(this.mVictoryShape1);
+                this.mVictoryShape2 = new ShapeVictory(50,50,150,300,this.mGame,"/images/bus/kid.png","","");
+                this.addShape(this.mVictoryShape2);
+                this.mVictoryShape3 = new ShapeVictory(50,50,200,300,this.mGame,"/images/bus/kid.png","","");
+                this.addShape(this.mVictoryShape3);
+		
+		this.hideVictoryShapes();
+        },
 
+        hideVictoryShapes: function()
+        {
+		this.mVictoryShape1.setVisibility(false);
+		this.mVictoryShape2.setVisibility(false);
+		this.mVictoryShape3.setVisibility(false);
+        },
+
+        showVictoryShapes: function()
+        {
+		this.mVictoryShape1.setVisibility(true);
+		this.mVictoryShape2.setVisibility(true);
+		this.mVictoryShape3.setVisibility(true);
+        }
 });
