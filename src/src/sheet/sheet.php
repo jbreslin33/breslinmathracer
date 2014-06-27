@@ -27,7 +27,7 @@ var Sheet = new Class(
 		this.mMarker = 0;
 
 		//score
-		this.mScoreNeeded = 2;
+		this.mScoreNeeded = 6;
 
 		//states
                 this.mStateMachine = new StateMachine(this);

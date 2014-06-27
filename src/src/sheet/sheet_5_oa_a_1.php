@@ -21,20 +21,23 @@ Extends: Sheet,
 	{
 		this.parent();
 
-		this.mItem1 = new TextItem(this,'What is the answer of life, the universe and everything?','42');     
+		this.mItem1 = new TextItem(this,'5x7=','35');     
                 this.addItem(this.mItem1);
 
-                this.mItem2 = new TextItem(this,'What is your favorite color?','green');
+                this.mItem2 = new TextItem(this,'7x6=','42');
                 this.addItem(this.mItem2);
 
-                this.mItem3 = new TextItem(this,'What is your best dance move?','backspin');
+                this.mItem3 = new TextItem(this,'6x4=','24');
                 this.addItem(this.mItem3);
 
-                this.mItem4 = new TextItem(this,'What is your favorite team?','eagles');
+                this.mItem4 = new TextItem(this,'3x4=','12');
                 this.addItem(this.mItem4);
 
-                this.mItem5 = new TextItem(this,'Who sucks?','dallas');
+                this.mItem5 = new TextItem(this,'8x8=','64');
                 this.addItem(this.mItem5);
+                	
+		this.mItem6 = new TextItem(this,'9x8=','72');
+                this.addItem(this.mItem6);
 	}
 
 });
