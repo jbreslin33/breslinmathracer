@@ -90,13 +90,11 @@ var Sheet = new Class(
 
 	destructor: function()
 	{
-		this.log('Sheet::destructor');
 		this.destroyItems();
 	},	
 
 	reset: function()
 	{
-		this.log('Sheet::reset');
 		this.destructor();
 		
 		//reset marker
@@ -107,7 +105,6 @@ var Sheet = new Class(
 
 	addItem: function(item)
 	{
-		this.log('Sheet::addItem');
 		this.mItemArray.push(item);
 		if (this.mItemArray.length == 1)
 		{
@@ -132,7 +129,6 @@ var Sheet = new Class(
         	this.mGame.incrementScore();
 		this.mMarker++;
 
-		this.log('marker:' + this.mMarker);
 		//set marker item to THE ITEM	
 		this.mItem = this.getItem();
 
