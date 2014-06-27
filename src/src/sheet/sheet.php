@@ -14,6 +14,8 @@ var Sheet = new Class(
 		//Item and Answer Array
 		this.mItemArray = new Array();
 
+		this.mShapeArray = new Array();
+
                 /**************** TIME ************/
 	 	this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelFailedStartTime = 0;
@@ -48,6 +50,34 @@ var Sheet = new Class(
 	{
 
 	},
+
+	createShapes: function()
+	{
+		this.createVictoryShapes();
+	},
+  
+	addShape: function(shape)
+        {
+                this.mShapeArray.push(shape);
+                this.mGame.addShape(shape);
+        },
+
+        removeShape: function(shape)
+        {
+                //remove from game array first..
+                this.mGame.removeShape(shape);
+
+                //remove from this shape array
+                for (r = 0; r < this.mShapeArray.length; r++)
+                {
+                        if (shape == this.mShapeArray[r])
+                        {
+                                //first remove it from array...
+                                this.mShapeArray.splice(r,1);
+                        }
+                }
+        },
+
 	
 	destroyItems: function()
 	{
@@ -87,6 +117,21 @@ var Sheet = new Class(
                         throw new Error(msg);
                 }, 0);
         },
+
+	createVictoryShapes: function()
+	{
+	
+	},
+	
+	hideVictoryShapes: function()
+	{
+
+	},
+	
+	showVictoryShapes: function()
+	{
+
+	},	
 
 	destructor: function()
 	{

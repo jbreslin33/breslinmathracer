@@ -104,7 +104,6 @@ enter: function(sheet)
 	APPLICATION.mLevelCompleted = true;
 
         //times
-        sheet.getItem().mQuestionStartTime = sheet.mGame.mTimeSinceEpoch; //restart timer
         sheet.mShowLevelPassedStartTime = sheet.mGame.mTimeSinceEpoch;
 
         //gui bar
@@ -115,13 +114,12 @@ enter: function(sheet)
         else
         {
 		sheet.log('you beat a level!');
+		sheet.showVictoryShapes();
         }
 },
 
 execute: function(sheet)
 {
-	//sheet.log('epoch:' + sheet.mGame.mTimeSinceEpoch + ' rest:' + parseInt(sheet.mShowLevelPassedStartTime + sheet.mShowLevelPassedThresholdTime));
- 
 	if (sheet.mGame.mTimeSinceEpoch > sheet.mShowLevelPassedStartTime + sheet.mShowLevelPassedThresholdTime)
         {
                 sheet.mStateMachine.changeState(sheet.mEND_SHEET);
@@ -130,6 +128,7 @@ execute: function(sheet)
 
 exit: function(sheet)
 {
+	sheet.hideVictoryShapes();
 }
 
 });
