@@ -53,11 +53,11 @@ var Sheet = new Class(
 	{
 		this.log('Sheet::destroyItems');
 		//destroy items 
-                for (i = 0; i < this.mItemArray.length; i++)
+		while(this.mItemArray.length > 0)
                 {
-			item = this.mItemArray[i];
-			this.mItemArray.splice(i,1);
+			item = this.mItemArray[0];
                         item.destructor();
+			this.mItemArray.splice(0,1);
 			this.log('destroyItem:' + i);
                 }
 

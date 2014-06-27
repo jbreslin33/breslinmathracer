@@ -98,12 +98,12 @@ var Item = new Class(
                 while (this.mShapeArray.length > 0)
                 {
 			shape = this.mShapeArray[0];	
+
+			//destroy it just once at the local(item) level
+                        shape.destructor();
 		
 			//remove from item shape array
 			this.removeShape(shape);
-			
-			//finally destroy it just once at the local(item) level
-                        shape.destructor();
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();

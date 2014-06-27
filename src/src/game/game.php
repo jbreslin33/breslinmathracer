@@ -101,7 +101,6 @@ var Game = new Class(
 
 	removeShape: function(shape)
 	{
-		this.log('Game::removeShape');
 		//shapes and array
                 for (g = 0; g < this.mShapeArray.length; g++)
                 {
