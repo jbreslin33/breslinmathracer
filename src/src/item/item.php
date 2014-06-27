@@ -104,9 +104,9 @@ var Item = new Class(
 	destroyShapes: function()
         {
                 //shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
+                for (s = 0; s < this.mShapeArray.length; s++)
                 {
-			shape = this.mShapeArray[i];	
+			shape = this.mShapeArray[s];	
 			//remove from game shape array
 			this.mSheet.mGame.removeShape(shape);
 		
