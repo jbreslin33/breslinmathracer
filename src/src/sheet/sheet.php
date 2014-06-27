@@ -26,6 +26,7 @@ var Sheet = new Class(
 		//question
 		this.mMarker = 0;
 
+		//score
 		this.mScoreNeeded = 2;
 
 		//states

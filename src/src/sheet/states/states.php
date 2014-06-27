@@ -176,8 +176,8 @@ enter: function(sheet)
                 sheet.log('SHEET::END_SHEET');
         }
 	sheet.mGame.mReadyForNormalApplication = true;
-	sheet.mGame.reset();
         sheet.reset();
+	sheet.mGame.setScore(0);
         sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
 	
 },
