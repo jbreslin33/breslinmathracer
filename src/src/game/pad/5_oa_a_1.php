@@ -24,6 +24,6 @@ Extends: Game,
 	{
 		this.parent();
 		this.mControlObject = new Shape(50,50,150,375,this,"/images/bus/kid.png","","");
-		this.mShapeArray.push(this.mControlObject);
+		this.addShape(this.mControlObject);
 	}
 });
