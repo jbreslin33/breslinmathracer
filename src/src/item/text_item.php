@@ -40,6 +40,20 @@ Extends: Item,
                         this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
                 this.addShape(this.mNumAnswer);
+
+		//correctAnswer
+ 		this.mCorrectAnswer = new Shape(100,50,425,95,this.mSheet.mGame,"","","");
+                this.addShape(this.mCorrectAnswer);
+                this.mCorrectAnswer.mCollidable = false;
+                this.mCorrectAnswer.mCollisionOn = false;
+                this.mCorrectAnswer.setText(this.mQuestion);
+
+		//yourAnswer
+                this.mYourAnswer = new Shape(100,50,425,195,this.mSheet.mGame,"","","");
+                this.addShape(this.mYourAnswer);
+                this.mYourAnswer.mCollidable = false;
+                this.mYourAnswer.mCollisionOn = false;
+                this.mYourAnswer.setText(this.mQuestion);
         },
 
 	inputKeyHit: function(e)
@@ -76,5 +90,17 @@ Extends: Item,
 				}
 			}
                 }
+        },
+
+        showCorrectAnswer: function()
+        {
+		this.mCorrectAnswer.setText('QUESTION: ' + this.getQuestion() + ' ANSWER: ' + this.getAnswer()); 
+		this.mCorrectAnswer.setVisibility(true);
+        },
+
+        hideCorrectAnswer: function()
+        {
+		this.mCorrectAnswer.setVisibility(false);
         }
+
 });
