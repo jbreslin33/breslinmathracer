@@ -34,7 +34,6 @@ var Sheet = new Class(
 
                 this.mGLOBAL_SHEET       = new GLOBAL_SHEET      (this);
                 this.mINIT_SHEET         = new INIT_SHEET        (this);
-                this.mRESET_SHEET        = new RESET_SHEET       (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
                 this.mEND_SHEET          = new END_SHEET(this);
