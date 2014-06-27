@@ -46,8 +46,8 @@ Extends: Sheet,
 		this.mItem6 = new TextItem(this,'5','6');
                 this.addItem(this.mItem6);
 		
-		this.mItem7 = new TextItem(this,'buf','buf');
-                this.addItem(this.mItem7);
+		//this.mItem7 = new TextItem(this,'buf','buf');
+                //this.addItem(this.mItem7);
 	},
    
 	createVictoryShapes: function()

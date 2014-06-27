@@ -76,9 +76,11 @@ execute: function(sheet)
  
 	if (sheet.isSheetComplete())
         {
+		//set the ITEM to null so another item dont drop. this may get rid of need for buf question.
+		sheet.mItem = 0;
+
                 sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED_SHEET);
         }
-
 },
 
 exit: function(sheet)
