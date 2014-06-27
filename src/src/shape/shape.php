@@ -73,7 +73,6 @@ Extends: Polygon,
        	/****** DESTRUCTOR ******************/
         destructor: function()
         {
-		this.log('Shape::destructor');
  		this.mDiv.mDiv.removeChild(this.mMesh);
                 document.body.removeChild(this.mDiv.mDiv);
         },
