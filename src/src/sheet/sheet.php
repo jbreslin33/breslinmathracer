@@ -51,19 +51,19 @@ var Sheet = new Class(
 	
 	destroyItems: function()
 	{
-		this.log('Sheet::destroyItems');
 		//destroy items 
 		while(this.mItemArray.length > 0)
                 {
 			item = this.mItemArray[0];
                         item.destructor();
 			this.mItemArray.splice(0,1);
-			this.log('destroyItem:' + i);
                 }
 
                 //destroy question array
                 this.mItemArray = 0;
                 this.mItemArray = new Array();
+
+		this.mItem = 0;
 	},
 
 	update: function()
