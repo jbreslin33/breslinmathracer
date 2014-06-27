@@ -160,56 +160,7 @@ exit: function(sheet)
 }
 
 });
-/*
-levelPassedEnter: function()
-        {
-                this.mApplication.mLevelCompleted = true;
 
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-                        this.mShapeArray[i].setVisibility(false);
-                }
-
-                //user answer
-                this.mUserAnswer = '';
-
-                //times
-                this.mQuestionStartTime = this.mTimeSinceEpoch; //restart timer
-                this.mShowLevelPassedStartTime = this.mTimeSinceEpoch;
-
-                //create victory shapes...
-                this.createVictoryShapes();
-
-                //gui bar
-                if (this.mApplication.mLevel == this.mApplication.mLevels)
-                {
-                        this.mShapeArray[0].setPosition(400,125);
-                        this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' just beat the whole game!';
-                        this.mShapeArray[0].setVisibility(true);
-                }
-                else
-                {
-                        this.mShapeArray[0].setPosition(400,125);
-                        this.mShapeArray[0].mMesh.innerHTML = this.mApplication.mFirstName + ' just beat level ' + this.mApplication.mLevel + ' of this game!';
-                        this.mShapeArray[0].setVisibility(true);
-                }
-        },
- 
-        levelPassedExecute: function()
-        {
-                if (this.mTimeSinceEpoch > this.mShowLevelPassedStartTime + this.mShowLevelPassedThresholdTime)
-                {
-                        this.mStateMachine.changeState(this.mINIT_GAME);
-                }
-        },
-
-        levelPassedExit: function()
-        {
-                this.mReadyForNormalApplication = true;
-        },
-
-
-*/
 var END_SHEET = new Class(
 {
 Extends: State,

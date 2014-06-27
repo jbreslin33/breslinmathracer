@@ -71,6 +71,9 @@ enter: function(item)
        	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
 	
 	item.showShapes();
+ 
+	//try to set focus
+	item.setTheFocus();
 },
 
 execute: function(item)

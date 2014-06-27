@@ -93,7 +93,26 @@ var Game = new Class(
 	{
 		this.destroyShapes();	
 	},
+	
+	addShape: function(shape)
+	{
+		this.mShapeArray.push(shape);
+	},
 
+	removeShape: function(shape)
+	{
+		//shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+			if (shape == this.mShapeArray[i])
+			{
+				//first remove it from array...
+				this.mShapeArray.splice(i,1);
+			}
+		}
+	},
+
+	//should only be called as last resort
 	destroyShapes: function()
 	{
 		//shapes and array
