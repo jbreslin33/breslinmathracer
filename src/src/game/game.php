@@ -86,10 +86,10 @@ var Game = new Class(
                 this.mDeltaTime = 0;
                 this.mGameTime = 0;
 
-		this.createWorld();
+		this.createShapes();
         },
 		
-	createWorld: function()
+	createShapes: function()
 	{
 		this.destroyShapes();	
 	},
