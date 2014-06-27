@@ -101,13 +101,14 @@ var Game = new Class(
 
 	removeShape: function(shape)
 	{
+		this.log('Game::removeShape');
 		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
+                for (g = 0; g < this.mShapeArray.length; g++)
                 {
-			if (shape == this.mShapeArray[i])
+			if (shape == this.mShapeArray[g])
 			{
 				//first remove it from array...
-				this.mShapeArray.splice(i,1);
+				this.mShapeArray.splice(g,1);
 			}
 		}
 	},

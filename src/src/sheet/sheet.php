@@ -51,11 +51,12 @@ var Sheet = new Class(
 	
 	destroyItems: function()
 	{
+		this.log('Sheet::destroyItems');
 		//destroy items 
                 for (i = 0; i < this.mItemArray.length; i++)
                 {
-			item = this.mItemArray[0];
-			this.mItemArray.splice(0,1);
+			item = this.mItemArray[i];
+			this.mItemArray.splice(i,1);
                         item.destructor();
 			this.log('destroyItem:' + i);
                 }
@@ -95,6 +96,7 @@ var Sheet = new Class(
 
 	reset: function()
 	{
+		this.log('Sheet::reset');
 		this.destructor();
 		
 		//reset marker
@@ -103,6 +105,7 @@ var Sheet = new Class(
 
 	addItem: function(item)
 	{
+		this.log('Sheet::addItem');
 		this.mItemArray.push(item);
 		if (this.mItemArray.length == 1)
 		{
