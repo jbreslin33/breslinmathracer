@@ -101,6 +101,8 @@ var Sheet = new Class(
 		
 		//reset marker
 		this.mMarker = 0;
+
+		this.createItems();
 	},
 
 	addItem: function(item)
