@@ -19,6 +19,8 @@ Extends: Item,
  
 	createShapes: function()
         {
+		this.parent();
+
                 //question
                 this.mNumQuestion = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
                 this.addShape(this.mNumQuestion);

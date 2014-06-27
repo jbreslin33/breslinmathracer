@@ -76,39 +76,28 @@ var Item = new Class(
 		this.mSheet.mGame.removeShape(shape);	
 
                	//remove from this shape array 
-		for (i = 0; i < this.mShapeArray.length; i++)
+		for (r = 0; r < this.mShapeArray.length; r++)
                 {
-                        if (shape == this.mShapeArray[i])
+                        if (shape == this.mShapeArray[r])
                         {
                                 //first remove it from array...
-                                this.mShapeArray.splice(i,1);
+                                this.mShapeArray.splice(r,1);
                         }
                 }
         },
 
 	createShapes: function()
         {
-                this.destroyShapes();
- 		this.mGLOBAL_ITEM   = 0;
-                this.mINIT_ITEM     = 0;
-
-                //pad states
-                this.mWAITING_ON_ANSWER_ITEM   = 0;
-                this.mCORRECT_ITEM = 0;
-                this.mINCORRECT_ITEM = 0;
-                this.mSHOW_CORRECT_ANSWER_ITEM = 0;
-                this.mOUT_OF_TIME_ITEM = 0;
-        },
+        
+	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
 	destroyShapes: function()
         {
                 //shapes and array
-                for (s = 0; s < this.mShapeArray.length; s++)
+                while (this.mShapeArray.length > 0)
                 {
-			shape = this.mShapeArray[s];	
-			//remove from game shape array
-			this.mSheet.mGame.removeShape(shape);
+			shape = this.mShapeArray[0];	
 		
 			//remove from item shape array
 			this.removeShape(shape);
