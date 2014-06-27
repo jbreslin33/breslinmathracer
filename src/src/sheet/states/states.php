@@ -72,7 +72,8 @@ execute: function(sheet)
         }
         else if (sheet.getItem().mStatus == 2)
         {
-        }
+        
+	}
  
 	if (sheet.isSheetComplete())
         {

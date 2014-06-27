@@ -164,7 +164,8 @@ enter: function(item)
 	{
 		item.log('ITEM::SHOW_CORRECT_ANSWER_ITEM');
 	}
-        item.showCorrectAnswerEnter();
+        //item.showCorrectAnswerEnter();
+	item.log('question:' + item.getQuestion() + ' answer: ' + item.getAnswer());
 },
 
 execute: function(item)
