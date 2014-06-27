@@ -116,13 +116,15 @@ var Game = new Class(
 	destroyShapes: function()
 	{
 		//shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
+/*
+                while(this.mShapeArray.length > 0)
                 {
-			this.mShapeArray[i].destructor();
-                	this.mShapeArray[i] = 0;
+			this.mShapeArray[0].destructor();
+                	this.mShapeArray[0] = 0;
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
+*/
 	},
 
 	update: function()

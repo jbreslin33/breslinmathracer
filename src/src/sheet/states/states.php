@@ -176,7 +176,10 @@ enter: function(sheet)
                 sheet.log('SHEET::END_SHEET');
         }
 	sheet.mGame.mReadyForNormalApplication = true;
+	sheet.mGame.reset();
         sheet.reset();
+        sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
+	
 },
 
 execute: function(sheet)

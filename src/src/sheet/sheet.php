@@ -129,10 +129,10 @@ var Sheet = new Class(
 	
 	correctAnswer: function()
 	{
-
         	this.mGame.incrementScore();
 		this.mMarker++;
 
+		this.log('marker:' + this.mMarker);
 		//set marker item to THE ITEM	
 		this.mItem = this.getItem();
 
