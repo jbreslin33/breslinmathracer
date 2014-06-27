@@ -13,10 +13,14 @@ Extends: Game,
 	update: function()
 	{
 		this.parent();
-		this.mSheet.update();
+	
+		if (this.mSheet)
+		{	
+			this.mSheet.update();
+		}
 	},
         
-	createWorld: function()
+	createShapes: function()
 	{
 		this.parent();
 		this.mControlObject = new Shape(50,50,150,375,this,"/images/bus/kid.png","","");

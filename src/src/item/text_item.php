@@ -8,11 +8,11 @@ Extends: Item,
         {
 		this.parent(sheet,question,answer);
 
-                this.createWorld();
+                this.createShapes();
                 this.hideShapes();
 	},
  
-	createWorld: function()
+	createShapes: function()
         {
                 //question
                 this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
@@ -38,28 +38,6 @@ Extends: Item,
  		this.mNumAnswer.mMesh.focus();		
         },
 
-	destructor: function()
-	{
-		//this.parent();
-		this.destroyWorld();	
-	},
-
-	destroyWorld: function()
-        {
-		//this.parent();
-
-                //shapes and array
-                for (i = 0; i < this.mShapeArray.length; i++)
-                {
-			this.log('descructor for shape:' + this.mShapeArray[i].getText())
-                        this.mShapeArray[i].destructor();
-                        this.mShapeArray[i] = 0;
-                }
-                
-		this.mShapeArray = 0;
-                this.mShapeArray = new Array();
-        },
- 
 	inputKeyHit: function(e)
         {
                 if (e.key == 'enter')

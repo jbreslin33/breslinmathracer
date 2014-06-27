@@ -59,27 +59,34 @@ var Item = new Class(
                 this.mStateMachine.changeState(this.mINIT_ITEM);
 
 	},
+    
+	createShapes: function()
+        {
+                this.destroyShapes();
+        },
+
+        destroyShapes: function()
+        {
+                //shapes and array
+                for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        this.mShapeArray[i].destructor();
+                        this.mShapeArray[i] = 0;
+                }
+                this.mShapeArray = 0;
+                this.mShapeArray = new Array();
+        },
 
 	destructor: function()
 	{
-
+		this.destroyShapes();
 	},
- 
+
 	update: function()
         {
                 //state machine
                 this.mStateMachine.update();
         },
-
-	createWorld: function()
-	{
-
-	},
-	
-	destroyWorld: function()
-	{
-
-	},
 
 	setUserAnswer: function(userAnswer)
 	{

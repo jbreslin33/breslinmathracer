@@ -13,8 +13,6 @@ var Sheet = new Class(
 
 		//Item and Answer Array
 		this.mItemArray = new Array();
-		this.mItemPoolArray = new Array();
-                this.mAnswerPool = new Array();
 
                 /**************** TIME ************/
 	 	this.mShowLevelPassedStartTime = 0;
@@ -88,24 +86,14 @@ var Sheet = new Class(
                 }, 0);
         },
 
-	createWorld: function()
-	{
-
-	},
-
 	destructor: function()
 	{
+		this.log('Sheet::destructor');
 		this.destroyItems();
 	},	
 
-	destroyWorld: function()
-	{
-
-	},
-
 	reset: function()
 	{
-		this.log('resetting sheet');
 		this.destructor();
 		
 		//reset marker
