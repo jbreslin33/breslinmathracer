@@ -43,7 +43,6 @@ var Game = new Class(
 
                 this.mGLOBALGAME                       = new GLOBALGAME       (this);
                 this.mINITGAME                         = new INITGAME         (this);
-                this.mRESETGAME                        = new RESETGAME        (this);
                 this.mNORMALGAME                       = new NORMALGAME       (this);
                
                 this.mStateMachine.setGlobalState(this.mGLOBALGAME);
@@ -91,6 +90,7 @@ var Game = new Class(
 		
 	createShapes: function()
 	{
+		this.log('Game::createShapes');
 		this.destroyShapes();	
 	},
 	
@@ -115,8 +115,9 @@ var Game = new Class(
 	//should only be called as last resort
 	destroyShapes: function()
 	{
+		this.log('Game::destroyShapes');
 		//shapes and array
-/*
+
                 while(this.mShapeArray.length > 0)
                 {
 			this.mShapeArray[0].destructor();
@@ -124,7 +125,7 @@ var Game = new Class(
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
-*/
+
 	},
 
 	update: function()
