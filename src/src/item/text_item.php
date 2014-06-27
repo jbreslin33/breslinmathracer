@@ -11,18 +11,23 @@ Extends: Item,
                 this.createShapes();
                 this.hideShapes();
 	},
+
+	setTheFocus: function()
+	{
+		this.mNumAnswer.mMesh.focus();
+	},
  
 	createShapes: function()
         {
                 //question
-                this.mNumQuestion = new Shape(100,50,325,95,this,"","","");
-                this.mShapeArray.push(this.mNumQuestion);
+                this.mNumQuestion = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
+                this.addShape(this.mNumQuestion);
                 this.mNumQuestion.mCollidable = false;
                 this.mNumQuestion.mCollisionOn = false;
 		this.mNumQuestion.setText(this.mQuestion);
 
  		//answer
-                this.mNumAnswer = new Shape(100,50,425,100,this,"INPUT","","");
+                this.mNumAnswer = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mNumAnswer.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
@@ -32,10 +37,7 @@ Extends: Item,
                 {
                         this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
-                this.mShapeArray.push(this.mNumAnswer);
-	
-		//try to set focus
- 		this.mNumAnswer.mMesh.focus();		
+                this.addShape(this.mNumAnswer);
         },
 
 	inputKeyHit: function(e)

@@ -39,7 +39,7 @@ enter: function(game)
 
 execute: function(game)
 {
-	game.mStateMachine.changeState(game.mRESETGAME);
+	game.mStateMachine.changeState(game.mNORMALGAME);
 },
 
 exit: function(game)
@@ -89,7 +89,7 @@ enter: function(game)
 	{
 		game.log('GAME::NORMALGAME');
 	}
-	game.reset();
+	//game.reset();
 },
 
 execute: function(game)

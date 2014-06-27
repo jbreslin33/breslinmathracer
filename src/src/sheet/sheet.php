@@ -54,9 +54,9 @@ var Sheet = new Class(
 		//destroy items 
                 for (i = 0; i < this.mItemArray.length; i++)
                 {
-			//give item a chance to take care of its own business
-                        this.mItemArray[i].destructor();
-                        this.mItemArray[i] = 0;
+			item = this.mItemArray[0];
+			this.mItemArray.splice(0,1);
+                        item.destructor();
                 }
 
                 //destroy question array

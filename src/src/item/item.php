@@ -57,21 +57,64 @@ var Item = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
+	},
+
+	setTheFocus: function()
+	{
 
 	},
-    
+
+	addShape: function(shape)
+	{
+		this.mShapeArray.push(shape);
+		this.mSheet.mGame.addShape(shape);	
+	},
+
+	removeShape: function(shape)
+        {
+		//remove from game array first..
+		this.mSheet.mGame.removeShape(shape);	
+
+               	//remove from this shape array 
+		for (i = 0; i < this.mShapeArray.length; i++)
+                {
+                        if (shape == this.mShapeArray[i])
+                        {
+                                //first remove it from array...
+                                this.mShapeArray.splice(i,1);
+                        }
+                }
+        },
+
 	createShapes: function()
         {
                 this.destroyShapes();
+ 		this.mGLOBAL_ITEM   = 0;
+                this.mINIT_ITEM     = 0;
+
+                //pad states
+                this.mWAITING_ON_ANSWER_ITEM   = 0;
+                this.mCORRECT_ITEM = 0;
+                this.mINCORRECT_ITEM = 0;
+                this.mSHOW_CORRECT_ANSWER_ITEM = 0;
+                this.mOUT_OF_TIME_ITEM = 0;
         },
 
-        destroyShapes: function()
+       	//this will clean up all shapes in this item and it will take this items shapes out of game array
+	destroyShapes: function()
         {
                 //shapes and array
                 for (i = 0; i < this.mShapeArray.length; i++)
                 {
-                        this.mShapeArray[i].destructor();
-                        this.mShapeArray[i] = 0;
+			shape = this.mShapeArray[i];	
+			//remove from game shape array
+			this.mSheet.mGame.removeShape(shape);
+		
+			//remove from item shape array
+			this.removeShape(shape);
+			
+			//finally destroy it just once at the local(item) level
+                        shape.destructor();
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
