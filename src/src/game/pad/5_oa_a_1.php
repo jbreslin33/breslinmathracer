@@ -23,6 +23,7 @@ Extends: Game,
 	createShapes: function()
 	{
 		this.parent();
+		this.log('G5::createShapes');
 		this.mControlObject = new Shape(50,50,150,375,this,"/images/bus/kid.png","","");
 		this.addShape(this.mControlObject);
 	}

@@ -35,34 +35,8 @@ enter: function(game)
 	{
 		game.log('GAME::INITGAME');
 	}
-},
-
-execute: function(game)
-{
+	game.reset();
 	game.mStateMachine.changeState(game.mNORMALGAME);
-},
-
-exit: function(game)
-{
-}
-
-});
-
-var RESETGAME = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(game)
-{
-	if (game.mStateLogs)
-	{
-		game.log('GAME::RESETGAME');
-	}
-	game.resetGameEnter();
 },
 
 execute: function(game)
@@ -89,7 +63,6 @@ enter: function(game)
 	{
 		game.log('GAME::NORMALGAME');
 	}
-	//game.reset();
 },
 
 execute: function(game)
