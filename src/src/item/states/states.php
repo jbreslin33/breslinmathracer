@@ -167,6 +167,7 @@ enter: function(item)
         //item.showCorrectAnswerEnter();
 	item.log('question:' + item.getQuestion() + ' answer: ' + item.getAnswer());
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
+	item.showCorrectAnswer();
 },
 
 execute: function(item)
@@ -179,7 +180,7 @@ execute: function(item)
 
 exit: function(item)
 {
-        item.showCorrectAnswerExit();
+	item.hideCorrectAnswer();
 }
 
 });
