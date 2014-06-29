@@ -28,6 +28,8 @@ var Question = new Class(
 		this.mChoiceD = '';
 
 		this.mShapeArray   = new Array();
+
+		this.mHeadingArray   = new Array();
         
 		//randomChoices
 		this.mRandomChoices = false;

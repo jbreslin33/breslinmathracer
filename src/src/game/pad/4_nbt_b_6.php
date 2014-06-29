@@ -58,6 +58,8 @@ Extends: NumberPad2Box,
 			question = new Question('' + varA + ' / ' +  varB + ' = ', '' + varC);
                 	this.mQuiz.mQuestionArray.push(question);
 			question.mAnswerArray.push(varD);
+			question.mHeadingArray.push('Quotient');
+			question.mHeadingArray.push('Remainder');
    				
       //this.mQuiz.mQuestionArray.push(new Question('' + varA + ' * ' +  varB + ' = ', '' + varC));
                                        

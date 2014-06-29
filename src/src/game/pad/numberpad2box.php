@@ -37,9 +37,31 @@ Extends: Pad,
 		{
                 	this.mNumAnswer.mMesh.focus();
 			APPLICATION.mGame.mInputFocusField = APPLICATION.mGame.mNumAnswer.mMesh;
-		}	
-		//this.mShapeArray[12].setVisibility(false);
-		//this.mShapeArray[34].setVisibility(false);
+		}
+
+		if (this.mQuiz.getQuestion().mHeadingArray.length == 1)
+		{	
+		this.mNumAnswer2.setVisibility(false);
+		this.mNumAnswerHeading2.setVisibility(false);
+
+		this.mNumAnswerHeading1.mMesh.innerHTML = this.mQuiz.getQuestion().mHeadingArray[0];
+		}
+		else if (this.mQuiz.getQuestion().mHeadingArray.length > 1)
+		{	
+	
+		this.mNumAnswerHeading1.mMesh.innerHTML = this.mQuiz.getQuestion().mHeadingArray[0];
+		this.mNumAnswerHeading2.mMesh.innerHTML = this.mQuiz.getQuestion().mHeadingArray[1];
+		}
+		else
+		{
+			this.mNumAnswer.setVisibility(false);
+			this.mNumAnswerHeading1.setVisibility(false);
+
+			this.mNumAnswer2.setVisibility(false);
+			this.mNumAnswerHeading2.setVisibility(false);
+
+
+		}
         },
 
 	inputFocus: function()
@@ -74,7 +96,7 @@ Extends: Pad,
         {
 		this.parent();
 
-		this.createInput();
+		//this.createInput();
 	},
 
 
@@ -220,13 +242,13 @@ Extends: Pad,
 		this.mNumAnswer2.mMesh.addEvent('click',this.inputFocus);
                 this.mShapeArray.push(this.mNumAnswer2);
 
-		this.mNumAnswerHeading = new Shape(100,20,425,0,this,"","","");
-                this.mNumAnswerHeading.mMesh.innerHTML = 'Quotient';
-		this.mShapeArray.push(this.mNumAnswerHeading);
+		this.mNumAnswerHeading1 = new Shape(100,20,425,0,this,"","","");
+                this.mNumAnswerHeading1.mMesh.innerHTML = 'Quotient';
+		this.mShapeArray.push(this.mNumAnswerHeading1);
 
-		this.mNumAnswerHeading = new Shape(100,20,525,0,this,"","","");
-                this.mNumAnswerHeading.mMesh.innerHTML = 'Remainder';
-		this.mShapeArray.push(this.mNumAnswerHeading);
+		this.mNumAnswerHeading2 = new Shape(100,20,525,0,this,"","","");
+                this.mNumAnswerHeading2.mMesh.innerHTML = 'Remainder';
+		this.mShapeArray.push(this.mNumAnswerHeading2);
 
                 //Lock
                 this.mNumLock = new Shape(50,50,300,150,this,"BUTTON","","");
