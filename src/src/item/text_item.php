@@ -8,8 +8,8 @@ Extends: Item,
         {
 		this.parent(sheet,question,answer);
 
-                this.createShapes();
-                this.hideShapes();
+                //this.createShapes();
+                //this.hideShapes();
 	},
 
 	setTheFocus: function()
@@ -28,7 +28,7 @@ Extends: Item,
                 this.mNumQuestion.mCollisionOn = false;
 		this.mNumQuestion.setText(this.mQuestion);
 
- 		//answer
+ 		//answer Input
                 this.mNumAnswer = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mNumAnswer.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -47,13 +47,15 @@ Extends: Item,
                 this.mCorrectAnswer.mCollidable = false;
                 this.mCorrectAnswer.mCollisionOn = false;
                 this.mCorrectAnswer.setText(this.mQuestion);
+		this.mCorrectAnswer.setVisibility(false);
 
 		//yourAnswer
-                this.mYourAnswer = new Shape(100,50,425,195,this.mSheet.mGame,"","","");
+                this.mYourAnswer = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
                 this.addShape(this.mYourAnswer);
                 this.mYourAnswer.mCollidable = false;
                 this.mYourAnswer.mCollisionOn = false;
                 this.mYourAnswer.setText(this.mQuestion);
+		this.mYourAnswer.setVisibility(false);
         },
 
 	inputKeyHit: function(e)
@@ -91,16 +93,71 @@ Extends: Item,
 			}
                 }
         },
+	
+	showQuestion: function()
+	{
+		if (this.mNumQuestion)
+		{
+			this.mNumQuestion.setText(this.mQuestion);
+			this.mNumQuestion.setVisibility(true);
+		}
+	}, 
+	hideQuestion: function()
+	{
+		if (this.mNumQuestion)
+		{
+			this.mNumQuestion.setVisibility(false);
+		}
+	}, 
+
+	showAnswerInput: function()
+	{
+		if (this.mNumAnswer)
+		{
+			this.mNumAnswer.setVisibility(true);
+		}
+	},
+	hideAnswerInput: function()
+	{
+		if (this.mNumAnswer)
+		{
+			this.mNumAnswer.setVisibility(false);
+		}	
+	},
+
+	showUserAnswer: function()
+	{
+		if (this.mYourAnswer)
+		{
+                	this.mYourAnswer.setText(this.mQuestion);
+                	this.mYourAnswer.setVisibility(true);
+		}
+	}, 
+	
+	hideUserAnswer: function()
+	{
+		if (this.mYourAnswer)
+		{
+                	this.mYourAnswer.setVisibility(false);
+		}
+	}, 
 
         showCorrectAnswer: function()
         {
-		this.mCorrectAnswer.setText('QUESTION: ' + this.getQuestion() + ' ANSWER: ' + this.getAnswer()); 
-		this.mCorrectAnswer.setVisibility(true);
+		if (this.mCorrectAnswer)
+		{
+			this.mCorrectAnswer.setText('QUESTION: ' + this.getQuestion() + ' ANSWER: ' + this.getAnswer()); 
+			this.mCorrectAnswer.setVisibility(true);
+		}
         },
 
         hideCorrectAnswer: function()
         {
-		this.mCorrectAnswer.setVisibility(false);
+		this.log('ITEM::hideCorrectAnswer');
+		if (this.mCorrectAnswer)
+		{
+			this.mCorrectAnswer.setVisibility(false);
+			this.log('if ITEM::hideCorrectAnswer');
+		}
         }
-
 });

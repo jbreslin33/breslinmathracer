@@ -35,6 +35,10 @@ enter: function(item)
 	{
 		item.log('ITEM::INIT_ITEM');
 	}
+	item.createShapes();
+	item.hideShapes();
+	//item.hideUserAnswer();
+	//item.hideCorrectAnswer();
 },
 
 execute: function(item)
@@ -66,11 +70,12 @@ enter: function(item)
 	{
 		item.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
-        
+ 
 	//times
        	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
 	
-	item.showShapes();
+	item.showQuestion();
+	item.showAnswerInput();
  
 	//try to set focus
 	item.setTheFocus();
