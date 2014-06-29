@@ -152,11 +152,9 @@ Extends: Item,
 
         hideCorrectAnswer: function()
         {
-		this.log('ITEM::hideCorrectAnswer');
 		if (this.mCorrectAnswerLabel)
 		{
 			this.mCorrectAnswerLabel.setVisibility(false);
-			this.log('if ITEM::hideCorrectAnswer');
 		}
         }
 });
