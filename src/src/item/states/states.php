@@ -37,8 +37,6 @@ enter: function(item)
 	}
 	item.createShapes();
 	item.hideShapes();
-	//item.hideUserAnswer();
-	//item.hideCorrectAnswer();
 },
 
 execute: function(item)
@@ -75,7 +73,7 @@ enter: function(item)
        	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
 	
 	item.showQuestion();
-	item.showAnswerInput();
+	item.showAnswerInputs();
  
 	//try to set focus
 	item.setTheFocus();
@@ -172,6 +170,11 @@ enter: function(item)
         //item.showCorrectAnswerEnter();
 	item.log('question:' + item.getQuestion() + ' answer: ' + item.getAnswer());
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
+
+	item.hideAnswerInputs();
+
+	item.showQuestion();
+	item.showUserAnswer();
 	item.showCorrectAnswer();
 },
 
