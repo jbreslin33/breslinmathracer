@@ -35,6 +35,10 @@ enter: function(item)
 	{
 		item.log('ITEM::INIT_ITEM');
 	}
+	item.createShapes();
+	item.hideShapes();
+	//item.hideUserAnswer();
+	//item.hideCorrectAnswer();
 },
 
 execute: function(item)
@@ -66,11 +70,12 @@ enter: function(item)
 	{
 		item.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
-        
+ 
 	//times
        	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
 	
-	item.showShapes();
+	item.showQuestion();
+	item.showAnswerInput();
  
 	//try to set focus
 	item.setTheFocus();
@@ -166,11 +171,13 @@ enter: function(item)
 	}
         //item.showCorrectAnswerEnter();
 	item.log('question:' + item.getQuestion() + ' answer: ' + item.getAnswer());
+        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
+	item.showCorrectAnswer();
 },
 
 execute: function(item)
 {
-        if (item.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
+        if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
         {
                	item.mStateMachine.changeState(item.mINCORRECT_ITEM);
         }
@@ -178,7 +185,7 @@ execute: function(item)
 
 exit: function(item)
 {
-        item.showCorrectAnswerExit();
+	item.hideCorrectAnswer();
 }
 
 });
