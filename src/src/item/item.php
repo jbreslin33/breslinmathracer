@@ -217,5 +217,15 @@ var Item = new Class(
                 {
                         this.mShapeArray[i].setVisibility(true);
                 }
+	},
+	
+	showCorrectAnswer: function()
+	{
+
+	},
+
+	hideCorrectAnswer: function()
+	{
+
 	}
 });
