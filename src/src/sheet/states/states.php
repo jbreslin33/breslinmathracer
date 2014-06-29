@@ -72,7 +72,6 @@ execute: function(sheet)
         }
         else if (sheet.getItem().mStatus == 2)
         {
-		sheet.log('status == 2');
                 sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
 	}
  
@@ -188,16 +187,12 @@ enter: function(sheet)
         sheet.reset();
 	sheet.mGame.setScore(0);
         sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
-	
 },
 
 execute: function(sheet)
 {
-
-
 },
 exit: function(sheet)
 {
 }
-
 });
