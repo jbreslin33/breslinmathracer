@@ -2213,7 +2213,7 @@ var Application = new Class(
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../src/database/send_level_attempt.php",false);
+                xmlhttp.open("POST","../../src/database/send_level_attempt.php",true);
                 xmlhttp.send();
         },
 
