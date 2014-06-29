@@ -167,8 +167,6 @@ enter: function(item)
 	{
 		item.log('ITEM::SHOW_CORRECT_ANSWER_ITEM');
 	}
-        //item.showCorrectAnswerEnter();
-	item.log('question:' + item.getQuestion() + ' answer: ' + item.getAnswer());
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
 
 	item.hideAnswerInputs();
@@ -207,7 +205,7 @@ enter: function(item)
         {
                 item.log('ITEM::INCORRECT_ITEM');
         }
-        item.destroyWorld();
+	item.hideShapes();
 },
 
 execute: function(item)
