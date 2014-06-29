@@ -7,69 +7,67 @@ Extends: Item,
         initialize: function(sheet,question,answer)
         {
 		this.parent(sheet,question,answer);
-
-                //this.createShapes();
-                //this.hideShapes();
 	},
 
 	setTheFocus: function()
 	{
-		this.mNumAnswer.mMesh.focus();
+		this.mAnswerTextBox.mMesh.focus();
 	},
  
 	createShapes: function()
         {
 		this.parent();
 
-                //question
-                this.mNumQuestion = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
-                this.addShape(this.mNumQuestion);
-                this.mNumQuestion.mCollidable = false;
-                this.mNumQuestion.mCollisionOn = false;
-		this.mNumQuestion.setText(this.mQuestion);
+                //question Label
+                this.mQuestionLabel = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
+                this.addShape(this.mQuestionLabel);
+                this.mQuestionLabel.mCollidable = false;
+                this.mQuestionLabel.mCollisionOn = false;
+		this.mQuestionLabel.setText(this.mQuestion);
 
  		//answer Input
-                this.mNumAnswer = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
-                this.mNumAnswer.mMesh.value = '';
+                this.mAnswerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
+                this.mAnswerTextBox.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mNumAnswer.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+                        this.mAnswerTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
                 }
                 else
                 {
-                        this.mNumAnswer.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mAnswerTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
-                this.addShape(this.mNumAnswer);
+                this.addShape(this.mAnswerTextBox);
+		
+		//user Answer label
+                this.mUserAnswerLabel = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
+                this.addShape(this.mUserAnswerLabel);
+                this.mUserAnswerLabel.mCollidable = false;
+                this.mUserAnswerLabel.mCollisionOn = false;
+                this.mUserAnswerLabel.setText(this.mQuestion);
+		this.mUserAnswerLabel.setVisibility(false);
 
-		//correctAnswer
- 		this.mCorrectAnswer = new Shape(100,50,425,95,this.mSheet.mGame,"","","");
-                this.addShape(this.mCorrectAnswer);
-                this.mCorrectAnswer.mCollidable = false;
-                this.mCorrectAnswer.mCollisionOn = false;
-                this.mCorrectAnswer.setText(this.mQuestion);
-		this.mCorrectAnswer.setVisibility(false);
+		//correctAnswer Label
+ 		this.mCorrectAnswerLabel = new Shape(100,50,425,200,this.mSheet.mGame,"","","");
+                this.addShape(this.mCorrectAnswerLabel);
+                this.mCorrectAnswerLabel.mCollidable = false;
+                this.mCorrectAnswerLabel.mCollisionOn = false;
+                this.mCorrectAnswerLabel.setText(this.mQuestion);
+		this.mCorrectAnswerLabel.setVisibility(false);
 
-		//yourAnswer
-                this.mYourAnswer = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
-                this.addShape(this.mYourAnswer);
-                this.mYourAnswer.mCollidable = false;
-                this.mYourAnswer.mCollisionOn = false;
-                this.mYourAnswer.setText(this.mQuestion);
-		this.mYourAnswer.setVisibility(false);
         },
 
 	inputKeyHit: function(e)
         {
                 if (e.key == 'enter')
                 {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
 					}
 				}
 			}
@@ -80,14 +78,14 @@ Extends: Item,
         {
                 if (e.keyCode == 13)
                 {
-                       	// APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+                       	// APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mNumAnswer.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
 					}
 				}
 			}
@@ -96,67 +94,68 @@ Extends: Item,
 	
 	showQuestion: function()
 	{
-		if (this.mNumQuestion)
+		if (this.mQuestionLabel)
 		{
-			this.mNumQuestion.setText(this.mQuestion);
-			this.mNumQuestion.setVisibility(true);
+			this.mQuestionLabel.setText(this.mQuestion);
+			this.mQuestionLabel.setVisibility(true);
 		}
 	}, 
 	hideQuestion: function()
 	{
-		if (this.mNumQuestion)
+		if (this.mQuestionLabel)
 		{
-			this.mNumQuestion.setVisibility(false);
+			this.mQuestionLabel.setVisibility(false);
 		}
 	}, 
 
-	showAnswerInput: function()
+	//virtual functions that can show and hide buttons??	
+	showAnswerInputs: function()
 	{
-		if (this.mNumAnswer)
+		if (this.mAnswerTextBox)
 		{
-			this.mNumAnswer.setVisibility(true);
+			this.mAnswerTextBox.setVisibility(true);
 		}
 	},
-	hideAnswerInput: function()
+	hideAnswerInputs: function()
 	{
-		if (this.mNumAnswer)
+		if (this.mAnswerTextBox)
 		{
-			this.mNumAnswer.setVisibility(false);
-		}	
+			this.mAnswerTextBox.setVisibility(false);
+		}
 	},
 
 	showUserAnswer: function()
 	{
-		if (this.mYourAnswer)
+		if (this.mUserAnswerLabel)
 		{
-                	this.mYourAnswer.setText(this.mQuestion);
-                	this.mYourAnswer.setVisibility(true);
+                	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
+                	this.mUserAnswerLabel.setVisibility(true);
 		}
 	}, 
 	
 	hideUserAnswer: function()
 	{
-		if (this.mYourAnswer)
+		if (this.mUserAnswerLabel)
 		{
-                	this.mYourAnswer.setVisibility(false);
+                	this.mUserAnswerLabel.setVisibility(false);
 		}
 	}, 
 
         showCorrectAnswer: function()
         {
-		if (this.mCorrectAnswer)
+		if (this.mCorrectAnswerLabel)
 		{
-			this.mCorrectAnswer.setText('QUESTION: ' + this.getQuestion() + ' ANSWER: ' + this.getAnswer()); 
-			this.mCorrectAnswer.setVisibility(true);
+			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()); 
+			this.mCorrectAnswerLabel.setVisibility(true);
 		}
         },
 
         hideCorrectAnswer: function()
         {
 		this.log('ITEM::hideCorrectAnswer');
-		if (this.mCorrectAnswer)
+		if (this.mCorrectAnswerLabel)
 		{
-			this.mCorrectAnswer.setVisibility(false);
+			this.mCorrectAnswerLabel.setVisibility(false);
 			this.log('if ITEM::hideCorrectAnswer');
 		}
         }
