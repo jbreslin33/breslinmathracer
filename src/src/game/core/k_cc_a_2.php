@@ -10,6 +10,12 @@ Extends: Game,
 		this.mSheet = new Sheet_k_cc_a_2(this);	
 	},
 
+	destructor: function()
+	{
+		this.parent();
+		this.mSheet.destructor();
+	},
+
 	update: function()
 	{
 		this.parent();
