@@ -110,14 +110,14 @@ enter: function(sheet)
         sheet.mShowLevelPassedStartTime = sheet.mGame.mTimeSinceEpoch;
 
         //gui bar
-        if (APPLICATION.mLevel == APPLICATION.mLevels)
-        {
-		sheet.log('you beat the whole game!');
-        }
-        else
+        if (APPLICATION.mLevel < APPLICATION.mLevels)
         {
 		sheet.log('you beat a level!');
 		sheet.showVictoryShapes();
+        }
+        else
+        {
+		sheet.log('you beat the whole game!');
         }
 },
 
