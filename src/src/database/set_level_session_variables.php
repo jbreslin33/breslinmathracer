@@ -336,6 +336,10 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
        	if ($levelVar < $levelsVar)
 	{
+		//error
+		$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'if','jimbo');";
+  		$errorResult = pg_query($conn,$errorInsert);
+
 		//go up one level in same ref_id
 		$levelVar++;
 		$_SESSION["level"] = $levelVar;
@@ -347,9 +351,14 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 
 		$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
                	dbErrorCheck($conn,$updateResult);
+		
 	}
 	else
 	{
+		//error
+		$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else1','jimbo');";
+  		$errorResult = pg_query($conn,$errorInsert);
+
 		//go to new ref_id
 		//you need to goto next LearningStandard...
  		$query2 = "select ref_id, levels, progression, id from learning_standards where progression > ";
@@ -365,6 +374,10 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         
 		if ($num2 > 0)
         	{
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else2','jimbo');";
+  			$errorResult = pg_query($conn,$errorInsert);
+
 			//update level attempts to say we passed
 			$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
 			$update .= $_SESSION["attempt_id"];
@@ -383,6 +396,10 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	$_SESSION["progression"] = $progression;
                 	$_SESSION["ref_id"] = $ref_id;
                 	$_SESSION["standard"] = $standard;
+			
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else3','jimbo');";
+  			$errorResult = pg_query($conn,$errorInsert);
 
 //BEGIN NEW CODE
 			//right here you need to check the level of the ref_id you are about to send them to.
@@ -395,17 +412,43 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
                 	$selectLastLevelAttemptResult = pg_query($conn,$selectLastLevelAttempt) or die('Could not connect: ' . pg_last_error());
                 	dbErrorCheck($conn,$selectLastLevelAttemptResult);
                 	$numLastLevelAttemptRows = pg_num_rows($selectLastLevelAttemptResult);
-	
+			
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else4','jimbo');";
+  			$errorResult = pg_query($conn,$errorInsert);
+
 			if ($numLastLevelAttemptRows > 0)
 			{
-                		$level      = pg_Result($result2, 0, 'level');
+				//error
+				$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else5','jimbo');";
+  				$errorResult = pg_query($conn,$errorInsert);
+
+                		$level      = pg_Result($selectLastLevelAttemptResult, 0, 'level');
 				$_SESSION["level"] = $level;
 			}
 			else
 			{
+				//error
+				$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else6','jimbo');";
+  				$errorResult = pg_query($conn,$errorInsert);
 				$_SESSION["level"] = 1;
 			}
 //END NEW CODE
+			$userid = $_SESSION["user_id"]; 	
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else7','$userid');";
+  			$errorResult = pg_query($conn,$errorInsert);
+			
+			$lev = $_SESSION["level"]; 	
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else8','$lev');";
+  			$errorResult = pg_query($conn,$errorInsert);
+			
+			$refid = $_SESSION["ref_id"]; 	
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else9','$refid');";
+  			$errorResult = pg_query($conn,$errorInsert);
+			
  			//insert into level attempts for a jump
         		$insert = "insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,";
         		$insert .= $_SESSION["user_id"];
@@ -414,10 +457,18 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         		$insert .= ",'";
         		$insert .= $_SESSION["ref_id"];
         		$insert .= "');";
+			
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else10','$insert');";
+  			$errorResult = pg_query($conn,$errorInsert);
 
 			//get db result
         		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
         		dbErrorCheck($conn,$insertResult);
+		
+			//error
+			$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'else bottom','jimbo');";
+  			$errorResult = pg_query($conn,$errorInsert);
 		}
 		else
 		{
