@@ -1,4 +1,4 @@
-var k_cc_a_1 = new Class(
+var k_cc_a_2 = new Class(
 {
 
 Extends: Game,
@@ -7,12 +7,7 @@ Extends: Game,
 	{
        		this.parent(application);
 	
-		this.mSheet = new Sheet_k_cc_a_1(this);	
-	},
-
-	destructor: function()
-	{
-
+		this.mSheet = new Sheet_k_cc_a_2(this);	
 	},
 
 	update: function()
