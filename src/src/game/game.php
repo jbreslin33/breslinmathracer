@@ -116,6 +116,11 @@ var Game = new Class(
 	destroyShapes: function()
 	{
 		this.log('Game::destroyShapes');
+		while(this.mShapeArray.length > 0)
+		{
+			this.removeShape(this.mShapeArray[0]);
+		}
+/*
 		//shapes and array
 
                 while(this.mShapeArray.length > 0)
@@ -128,7 +133,7 @@ var Game = new Class(
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
-
+*/
 	},
 
 	update: function()

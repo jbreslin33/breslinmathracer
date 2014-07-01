@@ -12,7 +12,8 @@ Extends: Game,
 
 	destructor: function()
 	{
-
+		this.parent();
+		this.mSheet.destructor();
 	},
 
 	update: function()
