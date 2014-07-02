@@ -20,36 +20,11 @@ Extends: Item,
                 this.mQuestionLabel.mCollisionOn = false;
 		this.mQuestionLabel.setText(this.mQuestion);
 
- 		//answer Input
-/*
-                this.mAnswerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
-                this.mAnswerTextBox.mMesh.value = '';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mAnswerTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
-                }
-                else
-                {
-                        this.mAnswerTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
-                }
-                this.addShape(this.mAnswerTextBox);
-*/
 		//--------------add buttons here
                 //BUTTON A
-                this.mButtonA = new Shape(150,50,375,100,this.mSheet.mGame,"BUTTON","","");
-                this.mButtonA.mCollidable  = false;
-                this.mButtonA.mCollisionOn = false;
+                this.mButtonA = new ItemButton(150,50,375,100,this.mSheet.mGame,"BUTTON","","");
                 this.mButtonA.mMesh.innerHTML = 'A';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mButtonA.mMesh.attachEvent("onclick",this.buttonAHit);
-                }
-                else
-                {
-                        this.mButtonA.mMesh.addEvent('click',this.buttonAHit);
-                }
                 this.addShape(this.mButtonA);
-		
 		//-------------end add buttons
 		
 		//user Answer label
@@ -69,48 +44,6 @@ Extends: Item,
 		this.mCorrectAnswerLabel.setVisibility(false);
         },
 
-        buttonAHit: function()
-        {
-                APPLICATION.mGame.mSheet.mItem.mUserAnswer = '' + APPLICATION.mGame.mSheet.mItem.mButtonA.mMesh.innerHTML;
-		APPLICATION.log('innerHTML:' + APPLICATION.mGame.mSheet.mItem.mButtonA.mMesh.innerHTML); 
-        },
-
-	inputKeyHit: function(e)
-        {
-                if (e.key == 'enter')
-                {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
-			if (APPLICATION.mGame)
-			{
-				if (APPLICATION.mGame.mSheet)
-				{
-					if (APPLICATION.mGame.mSheet.getItem())
-					{
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
-					}
-				}
-			}
-                }
-        },
- 
-	inputKeyHitEnter: function(e)
-        {
-                if (e.keyCode == 13)
-                {
-                       	// APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
-			if (APPLICATION.mGame)
-			{
-				if (APPLICATION.mGame.mSheet)
-				{
-					if (APPLICATION.mGame.mSheet.getItem())
-					{
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
-					}
-				}
-			}
-                }
-        },
-	
 	showQuestion: function()
 	{
 		if (this.mQuestionLabel)
