@@ -7,7 +7,7 @@ var Application = new Class(
 	initialize: function()
         {
 		//logging
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//personal info
 		this.mUsername = username;
@@ -2266,7 +2266,6 @@ var Application = new Class(
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					APPLICATION.log('mRef_id' + APPLICATION.mRef_id);
 				}
 			}
                 }

@@ -6,7 +6,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//GAME
 		this.mGame = game;

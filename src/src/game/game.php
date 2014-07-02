@@ -12,7 +12,7 @@ var Game = new Class(
 		this.mReadyForNormalApplication = false;
 
 		//loggin
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		/********* SHAPES *******************/ 
 		//shape Array
@@ -90,7 +90,6 @@ var Game = new Class(
 		
 	createShapes: function()
 	{
-		this.log('Game::createShapes');
 		this.destroyShapes();	
 	},
 	
@@ -115,7 +114,6 @@ var Game = new Class(
 	//should only be called as last resort
 	destroyShapes: function()
 	{
-		this.log('Game::destroyShapes');
 		while(this.mShapeArray.length > 0)
 		{
 			this.removeShape(this.mShapeArray[0]);

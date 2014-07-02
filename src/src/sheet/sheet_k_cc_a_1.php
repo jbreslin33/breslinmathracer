@@ -46,7 +46,6 @@ Extends: Sheet,
 
         showVictoryShapes: function()
         {
-		this.log('Sheet_k_cc_a_1::showVictoryShapes');
 		for (i = 0; i < this.mVictoryShapeArray.length; i++)
 		{
 			this.mVictoryShapeArray[i].setVisibility(true);

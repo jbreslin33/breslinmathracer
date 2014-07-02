@@ -112,12 +112,11 @@ enter: function(sheet)
         //gui bar
 	if (parseInt(APPLICATION.mLevel) < parseInt(APPLICATION.mLevels))
         {
-		sheet.log('you beat a level!');
 		sheet.showVictoryShapes();
         }
         else
         {
-		sheet.log('you beat the whole game!');
+		//sheet.log('you beat the whole game!');
         }
 },
 
