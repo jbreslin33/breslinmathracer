@@ -18,7 +18,7 @@ Extends: Sheet,
 	{
 		this.parent();
 
-		this.addItem(new TextItem(this,'0','1'));     
+		this.addItem(new ThreeButtonItem(this,'0','1'));     
 		this.addItem(new TextItem(this,'1','2'));     
 		this.addItem(new TextItem(this,'2','3'));     
 		this.addItem(new TextItem(this,'3','4'));     
