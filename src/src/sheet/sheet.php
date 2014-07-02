@@ -15,6 +15,7 @@ var Sheet = new Class(
 		this.mItemArray = new Array();
 
 		this.mShapeArray = new Array();
+		this.mVictoryShapeArray = new Array();
 
                 /**************** TIME ************/
 	 	this.mShowLevelPassedStartTime = 0;
@@ -63,6 +64,12 @@ var Sheet = new Class(
                 this.mGame.addShape(shape);
         },
 
+        addVictoryShape: function(shape)
+        {
+                this.mVictoryShapeArray.push(shape);
+                this.addShape(shape);
+        },
+
         removeShape: function(shape)
         {
                 //remove from game array first..
@@ -79,7 +86,6 @@ var Sheet = new Class(
                 }
         },
 
-	
 	destroyItems: function()
 	{
 		//destroy items 
