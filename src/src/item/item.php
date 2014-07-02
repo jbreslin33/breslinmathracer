@@ -5,9 +5,9 @@ var Item = new Class(
 {
         initialize: function(sheet,question,answer)
         {
+		this.mStateLogs = false;		
+		
 		this.mSheet = sheet;
-
-		this.mStateLogs = true;		
 	
 		//question
 		this.mQuestion = question;
