@@ -43,6 +43,7 @@
 
 <script type="text/javascript" src="/src/item/item.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
+<script type="text/javascript" src="/src/item/collide_item.php"></script>
 <script type="text/javascript" src="/src/item/states/states.php"></script>
 <script type="text/javascript" src="/src/question/question.php"></script>
 <script type="text/javascript" src="/src/question/question_compare.php"></script>
