@@ -24,12 +24,5 @@ Extends: Game,
 		{	
 			this.mSheet.update();
 		}
-	},
-        
-	createShapes: function()
-	{
-		this.parent();
-		this.mControlObject = new Shape(50,50,150,375,this,"/images/bus/kid.png","","");
-		this.addShape(this.mControlObject);
 	}
 });
