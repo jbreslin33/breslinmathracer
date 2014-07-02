@@ -23,8 +23,7 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-                APPLICATION.mGame.mSheet.mItem.mUserAnswer = '' + APPLICATION.mGame.mSheet.mItem.mButtonA.mMesh.innerHTML;
-	//	APPLICATION.log('innerHTML:' + xAPPLICATION.mGame.mSheet.mItem.mButtonA.mMesh.innerHTML); 
+                APPLICATION.mGame.mSheet.mItem.mUserAnswer = '' + this.innerHTML;
 		APPLICATION.log('innerHTML:' + this.innerHTML); 
         }
 });
