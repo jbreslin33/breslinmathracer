@@ -7,13 +7,9 @@ Extends: Shape,
 
                 //ai
                 this.mAiCounter = 0;
-                this.mAiCounterDelay = 10;
+                this.mAiCounterDelay = 2;
 		this.mFire = false;
 
-		//lets make this not collide 
-                this.mCollidable  = false;
-                this.mCollisionOn = false;
-               
 		//event handling 
 		if (navigator.appName == "Microsoft Internet Explorer")
                 {
