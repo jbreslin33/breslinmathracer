@@ -1,11 +1,12 @@
+/*
+item_description: This virtual class will give you 3 buttons straight across and room for a question at the top.
+ */ 
 var ThreeButtonItem = new Class(
 {
 Extends: Item,
         initialize: function(sheet)
         {
 		this.parent(sheet);
-		this.mStandard = 'k.cc.a.1';
-		this.mType = 1;
 	},
 
 	createShapes: function()
