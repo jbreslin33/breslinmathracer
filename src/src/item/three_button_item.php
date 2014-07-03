@@ -8,7 +8,6 @@ Extends: Item,
         {
 		this.mButtonArray = new Array();
 		this.parent(sheet);
-
 	},
 
 	createShapes: function()
@@ -20,10 +19,8 @@ Extends: Item,
                 this.addShape(this.mQuestionLabel);
 		this.mQuestionLabel.setText(this.mQuestion);
 
-		//--------------add buttons here
                 //BUTTON A
                 this.mButtonA = new ItemButton(150,50,100,250,this.mSheet.mGame,"BUTTON","","");
-		//this.mButtonA.setBackGroundColor('red');
                 this.addButton(this.mButtonA);
 
                 //BUTTON B 
@@ -33,8 +30,6 @@ Extends: Item,
                 //BUTTON C 
                 this.mButtonC = new ItemButton(150,50,675,250,this.mSheet.mGame,"BUTTON","","");
                 this.addButton(this.mButtonC);
-		//-------------end add buttons
-		
         },
 	
 	addButton: function(button)
@@ -88,10 +83,5 @@ Extends: Item,
                                 this.mButtonArray[i].setBackGroundColor("green");
                         }
                 }
-	},
-
-        hideCorrectAnswer: function()
-        {
-        
 	}
 });
