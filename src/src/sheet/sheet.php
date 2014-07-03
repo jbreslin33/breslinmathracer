@@ -163,13 +163,9 @@ var Sheet = new Class(
 	
 	correctAnswer: function()
 	{
-        	//this.mGame.incrementScore();
 		this.mMarker++;
 
-		//set marker item to THE ITEM	
 		this.mItem = this.getItem();
-
-		//this.mGame.mHud.mItem.setText('<font size="2"> Item: ' + this.mItemArray[this.mMarker].getItem() + '</font>');
 	},
 	
 	isSheetComplete: function()
@@ -216,14 +212,7 @@ var Sheet = new Class(
 		}		
 	},
 
-	//states
-	
-	resetSheetEnter: function()
-	{
-
-	},
-
-	//VICTORY SHAPES
+	//VICTORY SHAPES --overide this for new victory screens
         createVictoryShapes: function()
         {
                 //victory shapes
