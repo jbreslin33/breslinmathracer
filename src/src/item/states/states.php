@@ -104,7 +104,7 @@ execute: function(item)
                 if (pass)
                 {
                         item.mStatus = 1;
-                	item.mStateMachine.changeState(item.mCORRECT_ITEM);
+                	item.mStateMachine.changeState(item.mCONTINUE_CORRECT);
                 }
                 else
                 {
@@ -116,6 +116,41 @@ execute: function(item)
 
 exit: function(item)
 {
+}
+
+});
+
+var CONTINUE_CORRECT = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                item.log('ITEM::CONTINUE_CORRECT');
+        }
+        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+
+        item.showContinueCorrectButton();
+},
+
+execute: function(item)
+{
+        if (item.mContinueCorrect == true)
+        {
+                item.mStateMachine.changeState(item.mCORRECT_ITEM);
+        }
+},
+
+exit: function(item)
+{
+        item.hideContinueCorrectButton();
+        //item.hideCorrectAnswer();
 }
 
 });
@@ -176,7 +211,7 @@ execute: function(item)
 {
         if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
         {
-               	item.mStateMachine.changeState(item.mCONTINUE_CORRECT);
+               	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
         }
 },
 
@@ -185,42 +220,6 @@ exit: function(item)
 }
 
 });
-
-var CONTINUE_CORRECT = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(item)
-{
-        if (item.mStateLogs)
-        {
-                item.log('ITEM::CONTINUE_CORRECT');
-        }
-        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
-
-        item.showContinueButton();
-},
-
-execute: function(item)
-{
-        if (item.mContinue == true)
-        {
-                item.mStateMachine.changeState(item.mINCORRECT_ITEM);
-        }
-},
-
-exit: function(item)
-{
-        item.hideContinueButton();
-        item.hideCorrectAnswer();
-}
-
-});
-
 
 var CONTINUE_INCORRECT = new Class(
 {
@@ -238,12 +237,12 @@ enter: function(item)
         }
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
-        item.showContinueButton();
+        item.showContinueIncorrectButton();
 },
 
 execute: function(item)
 {
-        if (item.mContinue == true)
+        if (item.mContinueIncorrect == true)
         {
                 item.mStateMachine.changeState(item.mINCORRECT_ITEM);
         }
@@ -251,7 +250,7 @@ execute: function(item)
 
 exit: function(item)
 {
-        item.hideContinueButton();
+        item.hideContinueIncorrectButton();
 	item.hideCorrectAnswer();
 }
 
