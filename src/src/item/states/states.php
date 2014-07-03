@@ -33,7 +33,7 @@ enter: function(item)
 {
 	if (item.mStateLogs)
 	{
-		item.log('ITEM::INIT_ITEM');
+		APPLICATION.log('ITEM::INIT_ITEM');
 	}
 	item.createShapes();
 	item.hideShapes();
@@ -66,7 +66,7 @@ enter: function(item)
 {
 	if (item.mStateLogs)
 	{
-		item.log('ITEM::WAITING_ON_ANSWER_ITEM');
+		APPLICATION.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
  
 	//times
@@ -131,7 +131,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                item.log('ITEM::CONTINUE_CORRECT');
+                APPLICATION.log('ITEM::CONTINUE_CORRECT');
         }
  	item.mShowContinueCorrectStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
@@ -175,7 +175,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                item.log('ITEM::CORRECT_ITEM');
+                APPLICATION.log('ITEM::CORRECT_ITEM');
         }
         item.mStatus = 1;
         item.hideShapes();
@@ -208,7 +208,7 @@ enter: function(item)
 {
 	if (item.mStateLogs)
 	{
-		item.log('ITEM::SHOW_CORRECT_ANSWER_ITEM');
+		APPLICATION.log('ITEM::SHOW_CORRECT_ANSWER_ITEM');
 	}
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
 
@@ -241,7 +241,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                item.log('ITEM::CONTINUE_INCORRECT');
+                APPLICATION.log('ITEM::CONTINUE_INCORRECT');
         }
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
@@ -278,7 +278,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                item.log('ITEM::INCORRECT_ITEM');
+                APPLICATION.log('ITEM::INCORRECT_ITEM');
         }
 	item.hideShapes();
 },
@@ -310,7 +310,7 @@ enter: function(item)
 {
 	if (item.mStateLogs)
 	{
-		item.log('ITEM::OUT_OF_TIME_ITEM');
+		APPLICATION.log('ITEM::OUT_OF_TIME_ITEM');
 	}
         item.outOfTimeEnter();
 },

@@ -52,14 +52,6 @@ var Sheet = new Class(
         },
 
 	/*********** CLASS ADMIN ************/
-        log: function(msg)
-        {
-                setTimeout(function()
-                {
-                        throw new Error(msg);
-                }, 0);
-        },
-
 	update: function()
 	{
  		//state machine

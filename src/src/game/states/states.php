@@ -33,7 +33,7 @@ enter: function(game)
 {
 	if (game.mStateLogs)
 	{
-		game.log('GAME::INITGAME');
+		APPLICATION.log('GAME::INITGAME');
 	}
 	game.reset();
 	game.mStateMachine.changeState(game.mNORMALGAME);
@@ -61,7 +61,7 @@ enter: function(game)
 {
 	if (game.mStateLogs)
 	{
-		game.log('GAME::NORMALGAME');
+		APPLICATION.log('GAME::NORMALGAME');
 	}
 },
 
