@@ -15,7 +15,7 @@ Extends: Polygon,
                
 		//background
 		this.mBackgroundColor = backgroundColor;
-                
+
                 //create the movable div that will be used to move image around.        
 		this.mDiv = new Div(this);
 
@@ -175,10 +175,10 @@ Extends: Polygon,
         },
 
 	/********* COLOR ******************/
-	setBackgroundColor: function(c)
+	setBackGroundColor: function(c)
 	{
 		this.mBackgroundColor = c;
-		this.mDiv.mDiv.style.backgroundColor = c;
+		this.mMesh.style.backgroundColor = c;
 	},
 
 	/*********** RENDER *************/
