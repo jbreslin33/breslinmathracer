@@ -5,7 +5,7 @@ var Item = new Class(
 {
         initialize: function(sheet)
         {
-		this.mStateLogs = false;		
+		this.mStateLogs = true;		
 
 		this.mID = 0;
 		
@@ -43,6 +43,10 @@ var Item = new Class(
                 //times for show correct
                 this.mCorrectAnswerStartTime = 0;
                 this.mCorrectAnswerThresholdTime = 10000;
+
+		//continue button vars
+		this.mContinue = false;
+		this.mContinueButton = 0; 
  
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -53,8 +57,9 @@ var Item = new Class(
                 //pad states
                 this.mWAITING_ON_ANSWER_ITEM   = new WAITING_ON_ANSWER_ITEM(this);
                 this.mCORRECT_ITEM = new CORRECT_ITEM(this);
-                this.mINCORRECT_ITEM = new INCORRECT_ITEM(this);
                 this.mSHOW_CORRECT_ANSWER_ITEM = new SHOW_CORRECT_ANSWER_ITEM(this);
+                this.mCONTINUE_ITEM = new CONTINUE_ITEM(this);
+                this.mINCORRECT_ITEM = new INCORRECT_ITEM(this);
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
@@ -90,7 +95,9 @@ var Item = new Class(
 
 	createShapes: function()
         {
-        
+                //BUTTON A
+                this.mContinueButton = new ContinueButton(150,50,200,350,this.mSheet.mGame,"BUTTON","","");
+                this.addShape(this.mContinueButton);
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -234,5 +241,15 @@ var Item = new Class(
 	hideCorrectAnswer: function()
 	{
 
+	},
+	
+	showContinueButton: function()
+	{
+		this.mContinueButton.setVisibility(true);
+	},
+	
+	hideContinueButton: function()
+	{
+		this.mContinueButton.setVisibility(false);
 	}
 });

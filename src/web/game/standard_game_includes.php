@@ -46,6 +46,7 @@
 <script type="text/javascript" src="/src/item/three_button_item.php"></script>
 <script type="text/javascript" src="/src/item/core/k_cc_a_1_type_1.php"></script>
 <script type="text/javascript" src="/src/item/item_button.php"></script>
+<script type="text/javascript" src="/src/item/continue_button.php"></script>
 <script type="text/javascript" src="/src/item/collide_item.php"></script>
 <script type="text/javascript" src="/src/item/states/states.php"></script>
 <script type="text/javascript" src="/src/question/question.php"></script>
