@@ -46,7 +46,7 @@ var Item = new Class(
 
 		//times for showContinueCorrect
                 this.mShowContinueCorrectStartTime = 0;
-                this.mShowContinueCorrectThresholdTime = 1000;
+                this.mShowContinueCorrectThresholdTime = 3000;
 
 		//continue button vars
 		this.mContinueCorrect = false;
@@ -268,7 +268,8 @@ var Item = new Class(
                 {
                         if (this.mButtonArray[i].getAnswer() != this.getAnswer())
                         {
-                                this.mButtonArray[i].setVisibility(false);
+                                //this.mButtonArray[i].setVisibility(false);
+                                this.mButtonArray[i].mFire = true;
                         }
                         if (this.mButtonArray[i].getAnswer() == this.getAnswer())
                         {
