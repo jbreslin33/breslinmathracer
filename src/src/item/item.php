@@ -46,7 +46,7 @@ var Item = new Class(
 
 		//times for showContinueCorrect
                 this.mShowContinueCorrectStartTime = 0;
-                this.mShowContinueCorrectThresholdTime = 1000;
+                this.mShowContinueCorrectThresholdTime = 500;
 
 		//continue button vars
 		this.mContinueCorrect = false;
