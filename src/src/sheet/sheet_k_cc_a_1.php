@@ -18,12 +18,7 @@ Extends: Sheet,
 	{
 		this.parent();
 
-		this.addItem(new ThreeButtonItem(this,'0','1'));     
-		this.addItem(new TextItem(this,'1','2'));     
-		this.addItem(new TextItem(this,'2','3'));     
-		this.addItem(new TextItem(this,'3','4'));     
-		this.addItem(new TextItem(this,'4','5'));     
-		this.addItem(new TextItem(this,'5','6'));     
+		this.addItem(new k_cc_a_1_type_1(this));     
 	},
    
 	createVictoryShapes: function()
