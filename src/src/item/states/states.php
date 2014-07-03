@@ -103,7 +103,6 @@ execute: function(item)
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
-                        item.mStatus = 1;
                 	item.mStateMachine.changeState(item.mCONTINUE_CORRECT);
                 }
                 else
@@ -134,6 +133,7 @@ enter: function(item)
         {
                 item.log('ITEM::CONTINUE_CORRECT');
         }
+	item.mSheet.mGame.incrementScore();
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
         item.showContinueCorrectButton();
@@ -170,6 +170,7 @@ enter: function(item)
         {
                 item.log('ITEM::CORRECT_ITEM');
         }
+        item.mStatus = 1;
         item.hideShapes();
 },
 

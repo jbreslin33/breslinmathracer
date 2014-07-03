@@ -178,7 +178,7 @@ var Sheet = new Class(
 	
 	correctAnswer: function()
 	{
-        	this.mGame.incrementScore();
+        	//this.mGame.incrementScore();
 		this.mMarker++;
 
 		//set marker item to THE ITEM	
