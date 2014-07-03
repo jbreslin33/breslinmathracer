@@ -176,16 +176,52 @@ execute: function(item)
 {
         if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
         {
-               	item.mStateMachine.changeState(item.mINCORRECT_ITEM);
+               	item.mStateMachine.changeState(item.mCONTINUE_ITEM);
         }
 },
 
 exit: function(item)
 {
+}
+
+});
+
+var CONTINUE_ITEM = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                item.log('ITEM::CONTINUE_ITEM');
+        }
+        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+
+        item.showContinueButton();
+},
+
+execute: function(item)
+{
+        if (item.mContinue == true)
+        {
+                item.mStateMachine.changeState(item.mINCORRECT_ITEM);
+        }
+},
+
+exit: function(item)
+{
+        item.hideContinueButton();
 	item.hideCorrectAnswer();
 }
 
 });
+
+
 
 var INCORRECT_ITEM = new Class(
 {
