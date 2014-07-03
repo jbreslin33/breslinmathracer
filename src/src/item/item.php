@@ -44,6 +44,10 @@ var Item = new Class(
                 this.mCorrectAnswerStartTime = 0;
                 this.mCorrectAnswerThresholdTime = 10000;
 
+		//times for showContinueCorrect
+                this.mShowContinueCorrectStartTime = 0;
+                this.mShowContinueCorrectThresholdTime = 10000;
+
 		//continue button vars
 		this.mContinueCorrect = false;
 		this.mContinueIncorrect = false;
