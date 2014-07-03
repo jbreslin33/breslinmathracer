@@ -48,44 +48,45 @@ var Sheet = new Class(
 		this.mItem = 0;
         },
 
-	createItems: function()
-	{
-
-	},
-
-	createShapes: function()
-	{
-		this.createVictoryShapes();
-	},
-  
-	addShape: function(shape)
+	/*********** CLASS ADMIN ************/
+        log: function(msg)
         {
-                this.mShapeArray.push(shape);
-                this.mGame.addShape(shape);
-        },
-
-        addVictoryShape: function(shape)
-        {
-                this.mVictoryShapeArray.push(shape);
-                this.addShape(shape);
-        },
-
-        removeShape: function(shape)
-        {
-                //remove from game array first..
-                this.mGame.removeShape(shape);
-
-                //remove from this shape array
-                for (r = 0; r < this.mShapeArray.length; r++)
+                setTimeout(function()
                 {
-                        if (shape == this.mShapeArray[r])
-                        {
-                                //first remove it from array...
-                                this.mShapeArray.splice(r,1);
-                        }
-                }
+                        throw new Error(msg);
+                }, 0);
         },
 
+	update: function()
+	{
+ 		//state machine
+                this.mStateMachine.update();
+
+		for (i = 0; i < this.mItemArray.length; i++)
+		{
+			if (this.mItemArray[i])
+			{
+				this.mItemArray[i].update();
+			}
+		}
+	},
+
+	destructor: function()
+	{
+		this.destroyItems();
+	},	
+
+	reset: function()
+	{
+		this.destructor();
+		
+		//reset marker
+		this.mMarker = 0;
+
+		this.createItems();
+	},
+
+	/************** ITEMS ******************/
 	destroyItems: function()
 	{
 		//destroy items 
@@ -103,42 +104,6 @@ var Sheet = new Class(
 		this.mItem = 0;
 	},
 
-	update: function()
-	{
- 		//state machine
-                this.mStateMachine.update();
-
-		for (i = 0; i < this.mItemArray.length; i++)
-		{
-			if (this.mItemArray[i])
-			{
-				this.mItemArray[i].update();
-			}
-		}
-	},
-
-        log: function(msg)
-        {
-                setTimeout(function()
-                {
-                        throw new Error(msg);
-                }, 0);
-        },
-
-	destructor: function()
-	{
-		this.destroyItems();
-	},	
-
-	reset: function()
-	{
-		this.destructor();
-		
-		//reset marker
-		this.mMarker = 0;
-
-		this.createItems();
-	},
 
 	addItem: function(item)
 	{
@@ -160,24 +125,10 @@ var Sheet = new Class(
 	{
 		return this.mItemArray[i];
 	},
-	
-	correctAnswer: function()
-	{
-		this.mMarker++;
 
-		this.mItem = this.getItem();
-	},
-	
-	isSheetComplete: function()
+	createItems: function()
 	{
-		if (this.mGame.getScore() >= this.mScoreNeeded)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+
 	},
 
 	randomize: function(degree)
@@ -212,6 +163,40 @@ var Sheet = new Class(
 		}		
 	},
 
+	/********************** SHAPES ******************/
+	createShapes: function()
+	{
+		this.createVictoryShapes();
+	},
+  
+	addShape: function(shape)
+        {
+                this.mShapeArray.push(shape);
+                this.mGame.addShape(shape);
+        },
+
+        addVictoryShape: function(shape)
+        {
+                this.mVictoryShapeArray.push(shape);
+                this.addShape(shape);
+        },
+
+        removeShape: function(shape)
+        {
+                //remove from game array first..
+                this.mGame.removeShape(shape);
+
+                //remove from this shape array
+                for (r = 0; r < this.mShapeArray.length; r++)
+                {
+                        if (shape == this.mShapeArray[r])
+                        {
+                                //first remove it from array...
+                                this.mShapeArray.splice(r,1);
+                        }
+                }
+        },
+	
 	//VICTORY SHAPES --overide this for new victory screens
         createVictoryShapes: function()
         {
@@ -237,6 +222,28 @@ var Sheet = new Class(
                 {
                         this.mVictoryShapeArray[i].setVisibility(true);
                 }
-        }
+        },
+
+	/******************** ANSWERS ********************/
+	
+	correctAnswer: function()
+	{
+		this.mMarker++;
+
+		this.mItem = this.getItem();
+	},
+
+	/******************* SHEET *********************/	
+	isSheetComplete: function()
+	{
+		if (this.mGame.getScore() >= this.mScoreNeeded)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 });
