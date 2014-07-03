@@ -32,13 +32,12 @@ var Game = new Class(
 		this.mGameTime = 0;
 
 		/********* BOUNDS *******************/ 
-                //create bounds
                 this.mBounds = new Bounds(60,735,380,35);
 
-		//keys
+		/********* KEYS *******************/ 
 		this.mKeysOn = true;
 	
-		//states
+		/********* STATES *******************/ 
                 this.mStateMachine = new StateMachine(this);
 
                 this.mGLOBALGAME                       = new GLOBALGAME       (this);
@@ -48,70 +47,8 @@ var Game = new Class(
                 this.mStateMachine.setGlobalState(this.mGLOBALGAME);
                 this.mStateMachine.changeState(this.mINITGAME);
         },
-	
-	destructor: function()
-	{
-		//shapes and array
-		this.destroyShapes();
 
-		//bounds
-		this.mBounds = 0;
-
-		//states
-		this.mStateMachine = 0;
-		this.mGLOBALGAME = 0;
-		this.mINITGAME = 0;
-		this.mRESETGAME = 0;
-		this.mNORMALGAME = 0;
-	},
-
-	reset: function()
-        {
-                /************ SCORE *******/
-                this.setScore(0);
-		this.mKilled = false;
-
-                /**************** TIME ************/
-                this.mTimeSinceEpoch = 0;
-                this.mLastTimeSinceEpoch = 0;
-                this.mDeltaTime = 0;
-                this.mGameTime = 0;
-
-		this.createShapes();
-        },
-		
-	createShapes: function()
-	{
-		this.destroyShapes();	
-	},
-	
-	addShape: function(shape)
-	{
-		this.mShapeArray.push(shape);
-	},
-
-	removeShape: function(shape)
-	{
-		//shapes and array
-                for (g = 0; g < this.mShapeArray.length; g++)
-                {
-			if (shape == this.mShapeArray[g])
-			{
-				//first remove it from array...
-				this.mShapeArray.splice(g,1);
-			}
-		}
-	},
-
-	//should only be called as last resort
-	destroyShapes: function()
-	{
-		while(this.mShapeArray.length > 0)
-		{
-			this.removeShape(this.mShapeArray[0]);
-		}
-	},
-
+	/******************** ADMIN *************/	
 	update: function()
         {
 		//get time since epoch and set lasttime
@@ -156,18 +93,78 @@ var Game = new Class(
                 this.mStateMachine.update();
         },
 
-	/*********************** PUBLIC ***************************/
+	destructor: function()
+	{
+		//shapes and array
+		this.destroyShapes();
+
+		//bounds
+		this.mBounds = 0;
+
+		//states
+		this.mStateMachine = 0;
+		this.mGLOBALGAME = 0;
+		this.mINITGAME = 0;
+		this.mRESETGAME = 0;
+		this.mNORMALGAME = 0;
+	},
+
+	reset: function()
+        {
+                /************ SCORE *******/
+                this.setScore(0);
+		this.mKilled = false;
+
+                /**************** TIME ************/
+                this.mTimeSinceEpoch = 0;
+                this.mLastTimeSinceEpoch = 0;
+                this.mDeltaTime = 0;
+                this.mGameTime = 0;
+
+		this.createShapes();
+        },
+
+	/********* SHAPES *******************/ 
 	getControlObject: function()
 	{
 		return this.mControlObject;
 	},
 
-	/**************** ADD METHODS *************/
 	addToShapeArray: function(shape)
 	{
 		this.mShapeArray.push(shape);
 	},
+	createShapes: function()
+	{
+		this.destroyShapes();	
+	},
 	
+	addShape: function(shape)
+	{
+		this.mShapeArray.push(shape);
+	},
+
+	removeShape: function(shape)
+	{
+		//shapes and array
+                for (g = 0; g < this.mShapeArray.length; g++)
+                {
+			if (shape == this.mShapeArray[g])
+			{
+				//first remove it from array...
+				this.mShapeArray.splice(g,1);
+			}
+		}
+	},
+
+	destroyShapes: function()
+	{
+		while(this.mShapeArray.length > 0)
+		{
+			this.removeShape(this.mShapeArray[0]);
+		}
+	},
+
 	gameOver: function()
 	{
                	for (i = 0; i < this.mShapeArray.length; i++)
@@ -178,6 +175,7 @@ var Game = new Class(
 		}
 	},
 
+	/*************** KEYBOARD **************/
 	checkKeys: (function()
         {
                 //idle
@@ -263,7 +261,7 @@ var Game = new Class(
                 }
         }).protect(),
 
-	//CHECK MOUSE
+	/********************** MOUSE ************/
 	checkMouse: function()
 	{
                 if (APPLICATION.mLeftMouseDown == true)
@@ -271,6 +269,7 @@ var Game = new Class(
 		}
 	},
 
+	/********************** COLLISIONS ************/
 	//this is still ineffiecient because it is checking to see if one coin is colliding with another. when neither is moving.	
 	checkForCollisions: (function()
         {
@@ -379,6 +378,7 @@ var Game = new Class(
                 } 
         },
 
+	/********************** SCORE ************/
         getScore: function()
         {
                 return this.mScore;
