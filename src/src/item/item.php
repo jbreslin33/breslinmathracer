@@ -258,22 +258,22 @@ var Item = new Class(
 
 	},
 	
-	showContinueCorrectButton: function()
+	showContinueCorrect: function()
 	{
 		this.mContinueCorrectButton.setVisibility(true);
 	},
 	
-	hideContinueCorrectButton: function()
+	hideContinueCorrect: function()
 	{
 		this.mContinueCorrectButton.setVisibility(false);
 	},
 	
-	showContinueIncorrectButton: function()
+	showContinueIncorrect: function()
 	{
 		this.mContinueIncorrectButton.setVisibility(true);
 	},
 	
-	hideContinueIncorrectButton: function()
+	hideContinueIncorrect: function()
 	{
 		this.mContinueIncorrectButton.setVisibility(false);
 	}

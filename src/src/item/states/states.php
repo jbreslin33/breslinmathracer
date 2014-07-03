@@ -136,7 +136,7 @@ enter: function(item)
 	item.mSheet.mGame.incrementScore();
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
-        item.showContinueCorrectButton();
+        item.showContinueCorrect();
 },
 
 execute: function(item)
@@ -149,8 +149,7 @@ execute: function(item)
 
 exit: function(item)
 {
-        item.hideContinueCorrectButton();
-        //item.hideCorrectAnswer();
+        item.hideContinueCorrect();
 }
 
 });
@@ -238,7 +237,7 @@ enter: function(item)
         }
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
-        item.showContinueIncorrectButton();
+        item.showContinueIncorrect();
 },
 
 execute: function(item)
@@ -251,7 +250,7 @@ execute: function(item)
 
 exit: function(item)
 {
-        item.hideContinueIncorrectButton();
+        item.hideContinueIncorrect();
 	item.hideCorrectAnswer();
 }
 
