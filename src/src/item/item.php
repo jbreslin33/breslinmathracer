@@ -220,6 +220,11 @@ var Item = new Class(
                         this.mShapeArray[i].setVisibility(true);
                 }
 	},
+
+	showAnswerInputs: function()
+	{
+
+	},
 	
 	showCorrectAnswer: function()
 	{
@@ -229,16 +234,5 @@ var Item = new Class(
 	hideCorrectAnswer: function()
 	{
 
-	},
-
-	showUserAnswer: function()
-	{
-
-	},
-	
-	hideUserAnswer: function()
-	{
-
-	},
-	
+	}
 });
