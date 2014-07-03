@@ -46,7 +46,7 @@ var Item = new Class(
 
 		//times for showContinueCorrect
                 this.mShowContinueCorrectStartTime = 0;
-                this.mShowContinueCorrectThresholdTime = 10000;
+                this.mShowContinueCorrectThresholdTime = 1000;
 
 		//continue button vars
 		this.mContinueCorrect = false;
@@ -261,15 +261,37 @@ var Item = new Class(
 	{
 
 	},
-	
+/*
+                for (i=0; i < this.mButtonArray.length; i++)
+                {
+                        if (this.mButtonArray[i].getAnswer() == this.mUserAnswer)
+                        {
+                                this.mButtonArray[i].setBackGroundColor("red");
+                        }
+                        if (this.mButtonArray[i].getAnswer() == this.getAnswer())
+                        {
+                                this.mButtonArray[i].setBackGroundColor("green");
+                        }
+                }
+
+*/	
 	showContinueCorrect: function()
 	{
-		this.mContinueCorrectButton.setVisibility(true);
+                for (i=0; i < this.mButtonArray.length; i++)
+                {
+                        if (this.mButtonArray[i].getAnswer() != this.getAnswer())
+                        {
+                                this.mButtonArray[i].setBackGroundColor("red");
+                        }
+                        if (this.mButtonArray[i].getAnswer() == this.getAnswer())
+                        {
+                                this.mButtonArray[i].setBackGroundColor("green");
+                        }
+		}
 	},
 	
 	hideContinueCorrect: function()
 	{
-		this.mContinueCorrectButton.setVisibility(false);
 	},
 	
 	showContinueIncorrect: function()
