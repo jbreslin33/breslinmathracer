@@ -6,7 +6,6 @@ Extends: ThreeButtonItem,
 		this.parent(sheet);
 		this.mStandard = 'k.cc.a.1';
 		this.mType = 1;
-		this.mThresholdTime = 6000;
 
 		r = Math.floor((Math.random()*2));
 		if (r == 0)
