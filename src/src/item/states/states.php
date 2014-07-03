@@ -133,6 +133,8 @@ enter: function(item)
         {
                 item.log('ITEM::CONTINUE_CORRECT');
         }
+ 	item.mShowContinueCorrectStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+
 	item.mSheet.mGame.incrementScore();
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
@@ -141,10 +143,16 @@ enter: function(item)
 
 execute: function(item)
 {
+        if (item.mSheet.mGame.mTimeSinceEpoch > item.mShowContinueCorrectStartTime + item.mShowContinueCorrectThresholdTime)
+        {
+               	item.mStateMachine.changeState(item.mCORRECT_ITEM);
+        }
+/*
         if (item.mContinueCorrect == true)
         {
                 item.mStateMachine.changeState(item.mCORRECT_ITEM);
         }
+*/
 },
 
 exit: function(item)
