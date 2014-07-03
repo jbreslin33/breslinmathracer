@@ -125,21 +125,6 @@ var Sheet = new Class(
                 }, 0);
         },
 
-	createVictoryShapes: function()
-	{
-	
-	},
-	
-	hideVictoryShapes: function()
-	{
-
-	},
-	
-	showVictoryShapes: function()
-	{
-
-	},	
-
 	destructor: function()
 	{
 		this.destroyItems();
@@ -236,5 +221,33 @@ var Sheet = new Class(
 	resetSheetEnter: function()
 	{
 
-	}
+	},
+
+	//VICTORY SHAPES
+        createVictoryShapes: function()
+        {
+                //victory shapes
+                this.addVictoryShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/bus/kid.png","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,300,300,this.mGame,"/images/bus/kid.png","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/bus/kid.png","",""));
+
+                this.hideVictoryShapes();
+        },
+
+        hideVictoryShapes: function()
+        {
+                for (i = 0; i < this.mVictoryShapeArray.length; i++)
+                {
+                        this.mVictoryShapeArray[i].setVisibility(false);
+                }
+        },
+
+        showVictoryShapes: function()
+        {
+                for (i = 0; i < this.mVictoryShapeArray.length; i++)
+                {
+                        this.mVictoryShapeArray[i].setVisibility(true);
+                }
+        }
+
 });
