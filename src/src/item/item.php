@@ -261,27 +261,14 @@ var Item = new Class(
 	{
 
 	},
-/*
-                for (i=0; i < this.mButtonArray.length; i++)
-                {
-                        if (this.mButtonArray[i].getAnswer() == this.mUserAnswer)
-                        {
-                                this.mButtonArray[i].setBackGroundColor("red");
-                        }
-                        if (this.mButtonArray[i].getAnswer() == this.getAnswer())
-                        {
-                                this.mButtonArray[i].setBackGroundColor("green");
-                        }
-                }
-
-*/	
+	
 	showContinueCorrect: function()
 	{
                 for (i=0; i < this.mButtonArray.length; i++)
                 {
                         if (this.mButtonArray[i].getAnswer() != this.getAnswer())
                         {
-                                this.mButtonArray[i].setBackGroundColor("red");
+                                this.mButtonArray[i].setVisibility(false);
                         }
                         if (this.mButtonArray[i].getAnswer() == this.getAnswer())
                         {
