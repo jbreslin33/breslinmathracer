@@ -54,12 +54,19 @@ var Item = new Class(
                 this.mGLOBAL_ITEM   = new GLOBAL_ITEM  (this);
                 this.mINIT_ITEM     = new INIT_ITEM    (this);
 
-                //pad states
+                //wait state
                 this.mWAITING_ON_ANSWER_ITEM   = new WAITING_ON_ANSWER_ITEM(this);
+
+		//correct states
                 this.mCORRECT_ITEM = new CORRECT_ITEM(this);
-                this.mSHOW_CORRECT_ANSWER_ITEM = new SHOW_CORRECT_ANSWER_ITEM(this);
-                this.mCONTINUE_ITEM = new CONTINUE_ITEM(this);
+                this.mCONTINUE_CORRECT = new CONTINUE_CORRECT(this);
+               
+		//incorrect states 
+		this.mSHOW_CORRECT_ANSWER_ITEM = new SHOW_CORRECT_ANSWER_ITEM(this);
+                this.mCONTINUE_INCORRECT = new CONTINUE_INCORRECT(this);
                 this.mINCORRECT_ITEM = new INCORRECT_ITEM(this);
+
+		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
