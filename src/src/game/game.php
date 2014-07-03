@@ -49,14 +49,6 @@ var Game = new Class(
                 this.mStateMachine.changeState(this.mINITGAME);
         },
 	
-	log: function(msg)
-        {
-                setTimeout(function()
-                {
-                        throw new Error(msg);
-                }, 0);
-        },
-
 	destructor: function()
 	{
 		//shapes and array

@@ -33,7 +33,7 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('SHEET::INIT_SHEET');
+		APPLICATION.log('SHEET::INIT_SHEET');
 	}
 	sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
 },
@@ -60,7 +60,7 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('SHEET::NORMAL_SHEET');
+		APPLICATION.log('SHEET::NORMAL_SHEET');
 	}
 },
 
@@ -101,7 +101,7 @@ enter: function(sheet)
 {
 	if (sheet.mStateLogs)
 	{
-		sheet.log('SHEET::LEVEL_PASSED_SHEET');
+		APPLICATION.log('SHEET::LEVEL_PASSED_SHEET');
 	}
    
 	APPLICATION.mLevelCompleted = true;
@@ -116,7 +116,7 @@ enter: function(sheet)
         }
         else
         {
-		//sheet.log('you beat the whole game!');
+		//APPLICATION.log('you beat the whole game!');
         }
 },
 
@@ -147,7 +147,7 @@ enter: function(sheet)
 {
         if (sheet.mStateLogs)
         {
-                sheet.log('SHEET::LEVEL_FAILED_SHEET');
+                APPLICATION.log('SHEET::LEVEL_FAILED_SHEET');
         }
 	APPLICATION.mStateMachine.changeState(APPLICATION.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
 },
@@ -180,7 +180,7 @@ enter: function(sheet)
 {
         if (sheet.mStateLogs)
         {
-                sheet.log('SHEET::END_SHEET');
+                APPLICATION.log('SHEET::END_SHEET');
         }
 	sheet.mGame.mReadyForNormalApplication = true;
         sheet.reset();

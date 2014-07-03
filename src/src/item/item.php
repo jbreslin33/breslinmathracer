@@ -166,14 +166,6 @@ var Item = new Class(
 		return correctAnswerFound;
 	},
 
-	log: function(msg)
-        {
-                setTimeout(function()
-                {
-                        throw new Error(msg);
-                }, 0);
-        },
-
 	getType: function()
 	{
 		return this.mType;
