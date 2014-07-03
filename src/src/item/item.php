@@ -54,9 +54,6 @@ var Item = new Class(
 		this.mContinueCorrectButton = 0; 
 		this.mContinueIncorrectButton = 0; 
 
-		//timer
-		this.mClock = new ClockItem(this);
- 
 		//states
                 this.mStateMachine = new StateMachine(this);
 
