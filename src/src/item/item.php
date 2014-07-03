@@ -3,18 +3,20 @@ barebones item class. Should this even have a gui????? I think it should be an a
 */
 var Item = new Class(
 {
-        initialize: function(sheet,question,answer)
+        initialize: function(sheet)
         {
 		this.mStateLogs = false;		
+
+		this.mID = 0;
 		
 		this.mSheet = sheet;
 	
 		//question
-		this.mQuestion = question;
+		this.mQuestion = '';
 
 		//answer
 		this.mAnswerArray = new Array();
-		this.mAnswerArray.push(answer);
+		//this.mAnswerArray.push(answer);
 		
 		//tip
 		this.mTipArray = new Array();
