@@ -6,7 +6,9 @@ var ThreeButtonItem = new Class(
 Extends: Item,
         initialize: function(sheet)
         {
+		this.mButtonArray = new Array();
 		this.parent(sheet);
+
 	},
 
 	createShapes: function()
@@ -14,25 +16,22 @@ Extends: Item,
 		this.parent();
 
                 //question Label
-                this.mQuestionLabel = new Shape(200,50,325,95,this.mSheet.mGame,"","","");
+                this.mQuestionLabel = new Shape(200,50,225,95,this.mSheet.mGame,"","","");
                 this.addShape(this.mQuestionLabel);
 		this.mQuestionLabel.setText(this.mQuestion);
 
 		//--------------add buttons here
                 //BUTTON A
                 this.mButtonA = new ItemButton(150,50,100,250,this.mSheet.mGame,"BUTTON","","");
-                this.mButtonA.mMesh.innerHTML = 'A';
-                this.addShape(this.mButtonA);
+                this.addButton(this.mButtonA);
 
                 //BUTTON B 
                 this.mButtonB = new ItemButton(150,50,380,250,this.mSheet.mGame,"BUTTON","","");
-                this.mButtonB.mMesh.innerHTML = 'B';
-                this.addShape(this.mButtonB);
+                this.addButton(this.mButtonB);
 
                 //BUTTON C 
                 this.mButtonC = new ItemButton(150,50,675,250,this.mSheet.mGame,"BUTTON","","");
-                this.mButtonC.mMesh.innerHTML = 'C';
-                this.addShape(this.mButtonC);
+                this.addButton(this.mButtonC);
 		//-------------end add buttons
 		
 		//user Answer label
@@ -47,6 +46,26 @@ Extends: Item,
                 this.mCorrectAnswerLabel.setText(this.mQuestion);
 		this.mCorrectAnswerLabel.setVisibility(false);
         },
+	
+	addButton: function(button)
+	{
+		this.mButtonArray.push(button);
+		this.addShape(button);
+	},
+
+	shuffle: function(degree)
+	{
+		for (i=0; i < degree; i++)
+		{
+        		indexFROM = Math.floor(Math.random()*3);
+        		indexTO = Math.floor(Math.random()*3);
+
+			answerFROM = this.mButtonArray[indexFROM].getAnswer();	
+			answerTO = this.mButtonArray[indexTO].getAnswer();	
+			this.mButtonArray[indexFROM].setAnswer(answerTO); 
+			this.mButtonArray[indexTO].setAnswer(answerFROM); 
+		}
+	},
 
 	showQuestion: function()
 	{

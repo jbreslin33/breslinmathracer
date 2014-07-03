@@ -25,10 +25,14 @@ Extends: Shape,
 		this.mMesh.innerHTML = answer;
 	},
 
+	getAnswer: function()
+	{
+		return this.mMesh.innerHTML;
+	},
+
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
                 APPLICATION.mGame.mSheet.mItem.mUserAnswer = '' + this.innerHTML;
-		APPLICATION.log('innerHTML:' + this.innerHTML); 
         }
 });
