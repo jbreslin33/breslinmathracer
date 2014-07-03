@@ -74,6 +74,11 @@ Extends: Item,
         {
 		for (i=0; i < this.mButtonArray.length; i++)
                 {
+ 			if (this.mButtonArray[i].getAnswer() != this.mUserAnswer && this.mButtonArray[i].getAnswer() != this.getAnswer())
+			{
+                                this.mButtonArray[i].setVisibility(false);
+			}
+
                         if (this.mButtonArray[i].getAnswer() == this.mUserAnswer)
                         {
                                 this.mButtonArray[i].setBackGroundColor("red");
