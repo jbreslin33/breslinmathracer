@@ -9,9 +9,6 @@ Extends: Sheet,
 		this.parent(game);
 
 		APPLICATION.mHud.setScoreNeeded(5);
-
-		this.createItems(); 
-		this.createShapes();
         },
 	
 	createItems: function()
