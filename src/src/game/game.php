@@ -118,20 +118,6 @@ var Game = new Class(
 		{
 			this.removeShape(this.mShapeArray[0]);
 		}
-/*
-		//shapes and array
-
-                while(this.mShapeArray.length > 0)
-                {
-			if (this.mShapeArray[0])
-			{
-				this.mShapeArray[0].destructor();
-                		this.mShapeArray[0] = 0;
-			}
-                }
-                this.mShapeArray = 0;
-                this.mShapeArray = new Array();
-*/
 	},
 
 	update: function()
@@ -200,7 +186,6 @@ var Game = new Class(
 		}
 	},
 
-	/****************************** PROTECTED ***************************************/
 	checkKeys: (function()
         {
                 //idle
