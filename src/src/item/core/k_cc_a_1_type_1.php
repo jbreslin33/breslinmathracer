@@ -12,11 +12,17 @@ Extends: ThreeButtonItem,
 		{
 			this.setQuestion('What comes after 0?');
 			this.setAnswer(1,0);
+			this.mButtonA.setAnswer('0');
+			this.mButtonB.setAnswer('1');
+			this.mButtonC.setAnswer('2');
 		}
 		if (r == 1)
 		{
 			this.setQuestion('What comes after 1?');
 			this.setAnswer(2,0);
+			this.mButtonA.setAnswer('1');
+			this.mButtonB.setAnswer('2');
+			this.mButtonC.setAnswer('3');
 		}
 	},
 
