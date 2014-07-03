@@ -23,6 +23,7 @@ Extends: Item,
 		//--------------add buttons here
                 //BUTTON A
                 this.mButtonA = new ItemButton(150,50,100,250,this.mSheet.mGame,"BUTTON","","");
+		//this.mButtonA.setBackGroundColor('red');
                 this.addButton(this.mButtonA);
 
                 //BUTTON B 
