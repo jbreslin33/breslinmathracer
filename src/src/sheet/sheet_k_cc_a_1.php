@@ -19,6 +19,11 @@ Extends: Sheet,
 		this.parent();
 
 		this.addItem(new k_cc_a_1_type_1(this));     
+		this.addItem(new k_cc_a_1_type_1(this));     
+		this.addItem(new k_cc_a_1_type_1(this));     
+		this.addItem(new k_cc_a_1_type_1(this));     
+		this.addItem(new k_cc_a_1_type_1(this));     
+		this.addItem(new k_cc_a_1_type_1(this));     
 	},
    
 	createVictoryShapes: function()

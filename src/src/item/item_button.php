@@ -20,6 +20,11 @@ Extends: Shape,
                 }
         },
 
+	setAnswer: function(answer)
+	{
+		this.mMesh.innerHTML = answer;
+	},
+
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
