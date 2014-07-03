@@ -64,6 +64,8 @@
 
 <script type="text/javascript" src="/src/widgets/timer.php"></script>
 <script type="text/javascript" src="/src/widgets/clocktimer.php"></script>
+<script type="text/javascript" src="/src/widgets/clock.php"></script>
+<script type="text/javascript" src="/src/item/clock_item.php"></script>
 <script type="text/javascript" src="/src/widgets/circles.php"></script>
 
 <script type="text/javascript" src="/src/game/pad/pad.php"></script>
