@@ -11,15 +11,16 @@ Extends: Clock,
 		this.mThresh = 0;
 		this.mValueInSeconds = 0;
 
-		APPLICATION.log('ClockItem::constructor');
 		this.hide();
 	},
 
 	update: function()
 	{
+		//APPLICATION.log('ClockItem::update');	
 		this.parent();
 		if (this.mItem.mStateMachine.mCurrentState == this.mItem.mWAITING_ON_ANSWER)
                 {
+			//APPLICATION.log('ClockItem::update mWAITING_ON');	
 			if (this.mItem.mThresholdTime == 0)
 			{
 				this.hide();
