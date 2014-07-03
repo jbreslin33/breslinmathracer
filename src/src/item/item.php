@@ -55,7 +55,7 @@ var Item = new Class(
 		this.mContinueIncorrectButton = 0; 
 
 		//timer
-		this.mClock = new ClockItem();
+		this.mClock = new ClockItem(this);
  
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -149,6 +149,8 @@ var Item = new Class(
         {
                 //state machine
                 this.mStateMachine.update();
+
+		this.mClock.update();
         },
 
 	setUserAnswer: function(userAnswer)
