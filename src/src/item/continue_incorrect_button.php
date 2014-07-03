@@ -1,4 +1,4 @@
-var ContinueButton = new Class(
+var ContinueIncorrectButton = new Class(
 {
 Extends: Shape,
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
@@ -23,6 +23,6 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-                APPLICATION.mGame.mSheet.mItem.mContinue = true;
+                APPLICATION.mGame.mSheet.mItem.mContinueIncorrect = true;
         }
 });

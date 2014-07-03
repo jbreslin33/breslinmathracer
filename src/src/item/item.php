@@ -45,8 +45,10 @@ var Item = new Class(
                 this.mCorrectAnswerThresholdTime = 10000;
 
 		//continue button vars
-		this.mContinue = false;
-		this.mContinueButton = 0; 
+		this.mContinueCorrect = false;
+		this.mContinueIncorrect = false;
+		this.mContinueCorrectButton = 0; 
+		this.mContinueIncorrectButton = 0; 
  
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -102,10 +104,15 @@ var Item = new Class(
 
 	createShapes: function()
         {
-                //BUTTON A
-                this.mContinueButton = new ContinueButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
-		this.mContinueButton.mMesh.innerHTML = 'CONTINUE';
-                this.addShape(this.mContinueButton);
+                //mContinueCorrectButton
+                this.mContinueCorrectButton = new ContinueCorrectButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
+		this.mContinueCorrectButton.mMesh.innerHTML = 'CONTINUE';
+                this.addShape(this.mContinueCorrectButton);
+                
+		//mContinueIncorrectButton
+                this.mContinueIncorrectButton = new ContinueIncorrectButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
+		this.mContinueIncorrectButton.mMesh.innerHTML = 'CONTINUE';
+                this.addShape(this.mContinueIncorrectButton);
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -251,13 +258,23 @@ var Item = new Class(
 
 	},
 	
-	showContinueButton: function()
+	showContinueCorrectButton: function()
 	{
-		this.mContinueButton.setVisibility(true);
+		this.mContinueCorrectButton.setVisibility(true);
 	},
 	
-	hideContinueButton: function()
+	hideContinueCorrectButton: function()
 	{
-		this.mContinueButton.setVisibility(false);
+		this.mContinueCorrectButton.setVisibility(false);
+	},
+	
+	showContinueIncorrectButton: function()
+	{
+		this.mContinueIncorrectButton.setVisibility(true);
+	},
+	
+	hideContinueIncorrectButton: function()
+	{
+		this.mContinueIncorrectButton.setVisibility(false);
 	}
 });
