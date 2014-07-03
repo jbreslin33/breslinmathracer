@@ -96,7 +96,8 @@ var Item = new Class(
 	createShapes: function()
         {
                 //BUTTON A
-                this.mContinueButton = new ContinueButton(150,50,200,350,this.mSheet.mGame,"BUTTON","","");
+                this.mContinueButton = new ContinueButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
+		this.mContinueButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueButton);
 	},
 
