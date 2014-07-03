@@ -35,17 +35,6 @@ Extends: Item,
                 this.addButton(this.mButtonC);
 		//-------------end add buttons
 		
-		//user Answer label
-                this.mUserAnswerLabel = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
-                this.addShape(this.mUserAnswerLabel);
-                this.mUserAnswerLabel.setText(this.mQuestion);
-		this.mUserAnswerLabel.setVisibility(false);
-
-		//correctAnswer Label
- 		this.mCorrectAnswerLabel = new Shape(100,50,425,200,this.mSheet.mGame,"","","");
-                this.addShape(this.mCorrectAnswerLabel);
-                this.mCorrectAnswerLabel.setText(this.mQuestion);
-		this.mCorrectAnswerLabel.setVisibility(false);
         },
 	
 	addButton: function(button)
@@ -88,61 +77,34 @@ Extends: Item,
 	//virtual functions that can show and hide buttons??	
 	showAnswerInputs: function()
 	{
-		if (this.mButtonA)
+		for (i = 0; i < this.mButtonArray.length; i++)
 		{
-			this.mButtonA.setVisibility(true);
-		}
-		if (this.mButtonB)
-		{
-			this.mButtonB.setVisibility(true);
-		}
-		if (this.mButtonC)
-		{
-			this.mButtonC.setVisibility(true);
+			this.mButtonArray[i].setVisibility(true);
 		}
 	},
 
 	hideAnswerInputs: function()
 	{
-		if (this.mButtonA)
+		for (i = 0; i < this.mButtonArray.length; i++)
 		{
-			this.mButtonA.setVisibility(false);
-		}
-		if (this.mButtonB)
-		{
-			this.mButtonB.setVisibility(false);
-		}
-		if (this.mButtonC)
-		{
-			this.mButtonC.setVisibility(false);
+			this.mButtonArray[i].setVisibility(false);
 		}
 	},
 
-	showUserAnswer: function()
-	{
-		if (this.mUserAnswerLabel)
-		{
-                	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
-                	this.mUserAnswerLabel.setVisibility(true);
-		}
-	}, 
-	
-	hideUserAnswer: function()
-	{
-		if (this.mUserAnswerLabel)
-		{
-                	this.mUserAnswerLabel.setVisibility(false);
-		}
-	}, 
-
         showCorrectAnswer: function()
         {
-		if (this.mCorrectAnswerLabel)
-		{
-			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()); 
-			this.mCorrectAnswerLabel.setVisibility(true);
-		}
-        },
+		for (i=0; i < this.mButtonArray.length; i++)
+                {
+                        if (this.mButtonArray[i].getAnswer() == this.mUserAnswer)
+                        {
+                                this.mButtonArray[i].setBackGroundColor("red");
+                        }
+                        if (this.mButtonArray[i].getAnswer() == this.getAnswer())
+                        {
+                                this.mButtonArray[i].setBackGroundColor("green");
+                        }
+                }
+	},
 
         hideCorrectAnswer: function()
         {

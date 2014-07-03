@@ -169,7 +169,7 @@ enter: function(item)
 	}
         item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
 
-	item.hideAnswerInputs();
+	//item.hideAnswerInputs();
 
 	item.showQuestion();
 	item.showUserAnswer();

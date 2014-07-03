@@ -229,5 +229,16 @@ var Item = new Class(
 	hideCorrectAnswer: function()
 	{
 
-	}
+	},
+
+	showUserAnswer: function()
+	{
+
+	},
+	
+	hideUserAnswer: function()
+	{
+
+	},
+	
 });
