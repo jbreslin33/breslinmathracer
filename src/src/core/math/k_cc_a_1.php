@@ -10,7 +10,7 @@ Extends: Game,
 	{
        		this.parent(application);
 	
-		this.mSheet = new Sheet_k_cc_a_1(this);	
+		this.mSheet = new sk_cc_a_1(this);	
 	},
 
 	destructor: function()
@@ -31,39 +31,36 @@ Extends: Game,
 });
 
 /***************
-SHEET: should contain items(questions) it should facilitate randomizing, ordering items. it should deal with advancing levels....and other application related things.
+SHEET:
 ******************/
-var Sheet_k_cc_a_1 = new Class(
+var sk_cc_a_1 = new Class(
 {
 Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
-
-                this.setScoreNeeded(2);
         },
 
         createItems: function()
         {
                 this.parent();
-               
-		if (APPLICATION.mLevel == 1)
-		{ 
-			this.addItem(new k_cc_a_1_t_1(this));
-		}
-		if (APPLICATION.mLevel == 2)
-		{ 
-			this.addItem(new k_cc_a_1_t_2(this));
-			this.addItem(new k_cc_a_1_t_3(this));
-		}
+              
+		this.setScoreNeeded(APPLICATION.mLevel); 
+
+		this.addItem(new i_k_cc_a_1_t_1(this));
+		
+		//this.randomize(10);
         }
 });
 
 /******************
-ITEMS:
+ITEMS: 
 *******************/
 
-var k_cc_a_1_t_1 = new Class(
+/*****************
+i_k_cc_a_1_t_1: This type will ask what comes next after a number from 0-99.
+****************/
+var i_k_cc_a_1_t_1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -72,50 +69,25 @@ Extends: ThreeButtonItem,
                 this.mStandard = 'k.cc.a.1';
                 this.mType = 1;
 
-                this.setQuestion('What comes after 0?');
-                this.setAnswer(1,0);
+		var x = Math.floor(Math.random()*100);
+		var a = parseInt(x+1);
+		var b = 0;
+		var c = 0; 
 
-                this.mButtonA.setAnswer('0');
-                this.mButtonB.setAnswer('1');
-                this.mButtonC.setAnswer('2');
-                this.shuffle(10);
-        }
-});
+		while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+		{
+			b = Math.floor(Math.random()*7)-3;
+			b = parseInt(a+b);
+			c = Math.floor(Math.random()*7)-3;
+			c = parseInt(a+c);
+		}
 
-var k_cc_a_1_t_2 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
-                this.mType = 2;
+		this.setQuestion('What comes after ' + x + '?');
+                this.setAnswer(a,0);
 
-                this.setQuestion('What comes after 1?');
-                this.setAnswer(2,0);
-
-                this.mButtonA.setAnswer('1');
-                this.mButtonB.setAnswer('2');
-                this.mButtonC.setAnswer('3');
-                this.shuffle(10);
-        }
-});
-
-var k_cc_a_1_t_3 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
-                this.mType = 2;
-
-                this.setQuestion('What comes after 2?');
-                this.setAnswer(2,0);
-
-                this.mButtonA.setAnswer('1');
-                this.mButtonB.setAnswer('2');
-                this.mButtonC.setAnswer('3');
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
                 this.shuffle(10);
         }
 });
