@@ -45,18 +45,9 @@ Extends: Sheet,
               
 		this.setScoreNeeded(APPLICATION.mLevel); 
 
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
+		this.addItem(new i_k_cc_a_1_t_1(this));
+		this.addItem(new i_k_cc_a_1_t_2(this));
+		this.addItem(new i_k_cc_a_1_t_3(this));
 		this.addItem(new i_k_cc_a_1_t_4(this));
 		
 		this.randomize(10);
