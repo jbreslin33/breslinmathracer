@@ -6,7 +6,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//GAME
 		this.mGame = game;
@@ -231,7 +231,6 @@ var Sheet = new Class(
 	/******************* SHEET *********************/	
 	isSheetComplete: function()
 	{
-		APPLICATION.log(this.mGame.getScore() + ':' + this.getScoreNeeded());
 		if (this.mGame.getScore() >= this.getScoreNeeded())
 		{
 			return true;
