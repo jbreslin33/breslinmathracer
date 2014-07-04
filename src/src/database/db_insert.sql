@@ -147,3 +147,10 @@ insert into learning_standards (id,ref_id,progression,levels,standard) values ('
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.md.a.1','4.md.a.1',422,10,'Know relative sizes of measurement units within one system of units including km, m, cm; kg, g; lb, oz.; l, ml; hr, min, sec. Within a single system of measurement, express measurements in a larger unit in terms of a smaller unit. Record measurement equivalents in a two-column table. For example, know that 1 ft is 12 times as long as 1 in. Express the length of a 4 ft snake as 48 in. Generate a conversion table for feet and inches listing the number pairs (1, 12), (2, 24), (3, 36), ...');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('4.md.a.2','4.md.a.2',423,10,'Use the four operations to solve word problems involving distances, intervals of time, liquid volumes, masses of objects, and money, including problems involving simple fractions or decimals, and problems that require expressing measurements given in a larger unit in terms of a smaller unit. Represent measurement quantities using diagrams such as number line diagrams that feature a measurement scale.');
 insert into learning_standards (id,ref_id,progression,levels,standard) values ('5.oa.a.1','5.oa.a.1',501,55,'Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols.');
+CREATE TABLE EvaluationAttempts (
+        id integer NOT NULL,
+        start_time timestamp,
+        end_time timestamp,
+        user_id integer NOT NULL
+);
+
