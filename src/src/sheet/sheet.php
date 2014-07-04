@@ -17,6 +17,7 @@ var Sheet = new Class(
 
 		this.mShapeArray = new Array();
 		this.mVictoryShapeArray = new Array();
+		this.mBossShapeArray = new Array();
 
                 /**************** TIME ************/
 	 	this.mShowLevelPassedStartTime = 0;
@@ -176,18 +177,13 @@ var Sheet = new Class(
 	createShapes: function()
 	{
 		this.createVictoryShapes();
+		this.createBossShapes();
 	},
   
 	addShape: function(shape)
         {
                 this.mShapeArray.push(shape);
                 this.mGame.addShape(shape);
-        },
-
-        addVictoryShape: function(shape)
-        {
-                this.mVictoryShapeArray.push(shape);
-                this.addShape(shape);
         },
 
         removeShape: function(shape)
@@ -216,10 +212,16 @@ var Sheet = new Class(
 
                 this.hideVictoryShapes();
         },
+        
+	addVictoryShape: function(shape)
+        {
+                this.mVictoryShapeArray.push(shape);
+                this.addShape(shape);
+        },
 
         hideVictoryShapes: function()
         {
-                for (i = 0; i < this.mVictoryShapeArray.length; i++)
+                for (var i = 0; i < this.mVictoryShapeArray.length; i++)
                 {
                         this.mVictoryShapeArray[i].setVisibility(false);
                 }
@@ -227,11 +229,44 @@ var Sheet = new Class(
 
         showVictoryShapes: function()
         {
-                for (i = 0; i < this.mVictoryShapeArray.length; i++)
+                for (var i = 0; i < this.mVictoryShapeArray.length; i++)
                 {
                         this.mVictoryShapeArray[i].setVisibility(true);
                 }
         },
+ 
+	//BOSS SHAPES --overide this for new boss screens
+        createBossShapes: function()
+        {
+                //boss shapes
+                this.addBossShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/monster/red_monster.png","",""));
+                this.hideBossShapes();
+        },
+	
+	addBossShape: function(shape)
+        {
+                this.mBossShapeArray.push(shape);
+                this.addShape(shape);
+        },
+
+        hideBossShapes: function()
+        {
+                for (var i = 0; i < this.mBossShapeArray.length; i++)
+                {
+                        this.mBossShapeArray[i].setVisibility(false);
+                }
+        },
+
+        showBossShapes: function()
+        {
+		APPLICATION.log('showBoss');
+                for (var i = 0; i < this.mBossShapeArray.length; i++)
+                {
+			APPLICATION.log('showBoss in loop');
+                        this.mBossShapeArray[i].setVisibility(true);
+                }
+        },
+
 
 	/******************** ANSWERS ********************/
 	
