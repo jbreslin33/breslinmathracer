@@ -13,6 +13,7 @@ var Sheet = new Class(
 
 		//Item and Answer Array
 		this.mItemArray = new Array();
+		this.mItemPoolArray = new Array();
 
 		this.mShapeArray = new Array();
 		this.mVictoryShapeArray = new Array();
@@ -114,11 +115,21 @@ var Sheet = new Class(
 	{
 		return this.mItemArray[this.mMarker];
 	},
-
+	
 	//returns question object	
 	getSpecificItem: function(i)
 	{
 		return this.mItemArray[i];
+	},
+	
+	addPoolItem: function(item)
+	{
+		this.mItemPoolArray.push(item);
+	}, 
+
+	getPoolItem: function(index)	
+	{
+		return this.mItemPoolArray[index];
 	},
 
 	createItems: function()
@@ -128,21 +139,23 @@ var Sheet = new Class(
 
 	randomize: function(degree)
 	{
-		size = this.mItemArray.length - 1;
-	
-		for (i=0; i < degree; i++)
+		var size = parseInt(this.mItemArray.length - 1);	
+		for (var i = 0; i < degree; i++)
 		{
-			swapElementNumberA = Math.floor((Math.random()*size));
-			swapElementNumberB = Math.floor((Math.random()*size));
+			var swapElementNumberA = Math.floor((Math.random()*size));
+			var swapElementNumberB = Math.floor((Math.random()*size));
 
-			tempItemA = this.mItemArray[swapElementNumberA];	
-			tempItemB = this.mItemArray[swapElementNumberB];	
+			var tempItemA = this.mItemArray[swapElementNumberA];	
+			var tempItemB = this.mItemArray[swapElementNumberB];	
 			
 			this.mItemArray[swapElementNumberA] = tempItemB;
 			this.mItemArray[swapElementNumberB] = tempItemA;
 		}
+		//redo setting mItem since you shuffled
+ 		this.mItem = this.mItemArray[0];
 
 		// when done swap the mTypeWrong to first spot. 
+/*
 		if (this.mGame.mTypeWrong != '')
 		{
 			for (i = 0; i < size; i++)
@@ -156,6 +169,7 @@ var Sheet = new Class(
 				}
 			}
 		}		
+*/
 	},
 
 	/********************** SHAPES ******************/
