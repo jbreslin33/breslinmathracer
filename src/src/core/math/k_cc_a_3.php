@@ -47,16 +47,16 @@ Extends: Sheet,
               
 		this.setScoreNeeded(APPLICATION.mLevel); 
 
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
+		this.addItem(new i_k_cc_a_3_t_1(this));
 		
 		this.randomize(10);
         }
