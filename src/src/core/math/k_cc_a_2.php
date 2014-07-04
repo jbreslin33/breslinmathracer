@@ -46,13 +46,23 @@ Extends: Sheet,
                 this.parent();
               
 		this.setScoreNeeded(APPLICATION.mLevel); 
-	
-		//ask as many questions as the level you are on 	
-		for (var i = 0; i < APPLICATION.mLevel; i++)
-		{
-			this.addItem(new i_k_cc_a_2_t_1(this));
-			this.addItem(new i_k_cc_a_2_t_2(this));
-		}
+
+		this.addItem(new i_k_cc_a_2_t_1(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		this.addItem(new i_k_cc_a_2_t_2(this));
+		
+		this.randomize(10);
         }
 });
 

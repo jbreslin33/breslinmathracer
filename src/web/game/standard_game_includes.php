@@ -225,5 +225,4 @@
 <script type="text/javascript" src="/src/game/pad/4_md_a_1.php"></script>
 <script type="text/javascript" src="/src/game/pad/4_md_a_2.php"></script>
 <script type="text/javascript" src="/src/game/pad/5_oa_a_1.php"></script>
-<script type="text/javascript" src="/src/sheet/sheet_5_oa_a_1.php"></script>
 <script type="text/javascript" src="/web/game/standard_game_hud.php"></script>
