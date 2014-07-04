@@ -114,7 +114,7 @@ enter: function(sheet)
         }
         else
         {
-		sheet.showVictoryShapes();
+		sheet.showBossShapes();
         }
 },
 
@@ -129,6 +129,7 @@ execute: function(sheet)
 exit: function(sheet)
 {
 	sheet.hideVictoryShapes();
+	sheet.hideBossShapes();
 }
 
 });
