@@ -45,12 +45,10 @@ Extends: Sheet,
         {
                 this.parent();
               
-		level = APPLICATION.mLevel;
-
-		APPLICATION.log('level:' + level);	
-		this.setScoreNeeded(level); 
-		
-		for (var i = 0; i < level; i++)
+		this.setScoreNeeded(APPLICATION.mLevel); 
+	
+		//ask as many questions as the level you are on 	
+		for (var i = 0; i < APPLICATION.mLevel; i++)
 		{
 			this.addItem(new i_k_cc_a_2_t_1(this));
 		}
@@ -58,9 +56,12 @@ Extends: Sheet,
 });
 
 /******************
-ITEMS:
+ITEMS: 
 *******************/
 
+/*****************
+i_k_cc_a_2_t_1: This type will ask what comes next after a number from 0-99.
+****************/
 var i_k_cc_a_2_t_1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -70,12 +71,27 @@ Extends: ThreeButtonItem,
                 this.mStandard = 'k.cc.a.2';
                 this.mType = 1;
 
-                this.setQuestion('What comes after 0?');
-                this.setAnswer(1,0);
+		var x = Math.floor(Math.random()*100);
+		var a = parseInt(x+1);
+ 
+		this.setQuestion('What comes after ' + x + '?');
+                this.setAnswer(a,0);
 
-                this.mButtonA.setAnswer('0');
-                this.mButtonB.setAnswer('1');
-                this.mButtonC.setAnswer('2');
+		var b = 0;
+		var c = 0; 
+
+		while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+		{
+			b = Math.floor(Math.random()*7)-3;
+			b = parseInt(a+b);
+			c = Math.floor(Math.random()*7)-3;
+			c = parseInt(a+c);
+
+		}
+
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
                 this.shuffle(10);
         }
 });
