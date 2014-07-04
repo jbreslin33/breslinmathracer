@@ -1,7 +1,7 @@
 /*************
 GAME:
 ***********/
-var k_cc_a_1 = new Class(
+var k_cc_a_2 = new Class(
 {
 
 Extends: Game,
@@ -10,7 +10,7 @@ Extends: Game,
 	{
        		this.parent(application);
 	
-		this.mSheet = new Sheet_k_cc_a_1(this);	
+		this.mSheet = new sk_cc_a_2(this);	
 	},
 
 	destructor: function()
@@ -33,7 +33,7 @@ Extends: Game,
 /***************
 SHEET: should contain items(questions) it should facilitate randomizing, ordering items. it should deal with advancing levels....and other application related things.
 ******************/
-var Sheet_k_cc_a_1 = new Class(
+var sk_cc_a_2 = new Class(
 {
 Extends: Sheet,
         initialize: function(game)
@@ -49,12 +49,12 @@ Extends: Sheet,
                
 		if (APPLICATION.mLevel == 1)
 		{ 
-			this.addItem(new k_cc_a_1_t_1(this));
+			this.addItem(new i_k_cc_a_2_t_1(this));
 		}
 		if (APPLICATION.mLevel == 2)
 		{ 
-			this.addItem(new k_cc_a_1_t_2(this));
-			this.addItem(new k_cc_a_1_t_3(this));
+			this.addItem(new i_k_cc_a_2_t_2(this));
+			this.addItem(new i_k_cc_a_2_t_3(this));
 		}
         }
 });
@@ -63,13 +63,13 @@ Extends: Sheet,
 ITEMS:
 *******************/
 
-var k_cc_a_1_t_1 = new Class(
+var i_k_cc_a_2_t_1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+                this.mStandard = 'k.cc.a.2';
                 this.mType = 1;
 
                 this.setQuestion('What comes after 0?');
@@ -82,13 +82,13 @@ Extends: ThreeButtonItem,
         }
 });
 
-var k_cc_a_1_t_2 = new Class(
+var i_k_cc_a_2_t_2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+                this.mStandard = 'k.cc.a.2';
                 this.mType = 2;
 
                 this.setQuestion('What comes after 1?');
@@ -101,13 +101,13 @@ Extends: ThreeButtonItem,
         }
 });
 
-var k_cc_a_1_t_3 = new Class(
+var i_k_cc_a_2_t_3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+                this.mStandard = 'k.cc.a.2';
                 this.mType = 2;
 
                 this.setQuestion('What comes after 2?');
