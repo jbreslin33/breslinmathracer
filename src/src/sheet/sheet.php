@@ -240,6 +240,9 @@ var Sheet = new Class(
         {
                 //boss shapes
                 this.addBossShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/monster/red_monster.png","",""));
+                var textShape = new ShapeVictory(250,10,400,0,this.mGame,"","","");
+		textShape.setText('You beat the BOSS level!');
+		this.addBossShape(textShape);
                 this.hideBossShapes();
         },
 	
