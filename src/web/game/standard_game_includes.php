@@ -47,7 +47,6 @@
 <script type="text/javascript" src="/src/item/item.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
 <script type="text/javascript" src="/src/item/three_button_item.php"></script>
-<script type="text/javascript" src="/src/item/core/k_cc_a_1_type_1.php"></script>
 <script type="text/javascript" src="/src/item/item_button.php"></script>
 <script type="text/javascript" src="/src/item/continue_correct_button.php"></script>
 <script type="text/javascript" src="/src/item/continue_incorrect_button.php"></script>
@@ -84,10 +83,8 @@
 
 <script type="text/javascript" src="/src/game/pad/rl_k_1.php"></script>
 
-<script type="text/javascript" src="/src/sheet/sheet_k_cc_a_1.php"></script>
-<script type="text/javascript" src="/src/game/core/k_cc_a_1.php"></script>
-<script type="text/javascript" src="/src/sheet/sheet_k_cc_a_2.php"></script>
-<script type="text/javascript" src="/src/game/core/k_cc_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_a_1.php"></script>
+
 <script type="text/javascript" src="/src/game/pad/k_cc_a_3.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_b_4a.php"></script>
 <script type="text/javascript" src="/src/game/pad/k_cc_b_4b.php"></script>
