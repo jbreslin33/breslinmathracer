@@ -114,7 +114,7 @@ enter: function(sheet)
         }
         else
         {
-		//APPLICATION.log('you beat the whole game!');
+		sheet.showVictoryShapes();
         }
 },
 
