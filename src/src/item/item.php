@@ -147,7 +147,10 @@ var Item = new Class(
                 //state machine
                 this.mStateMachine.update();
 
-		this.mClock.update();
+		if (this.mClock)
+		{
+			this.mClock.update();
+		}
         },
 
 	setUserAnswer: function(userAnswer)

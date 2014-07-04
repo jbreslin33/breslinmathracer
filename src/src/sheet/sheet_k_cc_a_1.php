@@ -8,18 +8,13 @@ Extends: Sheet,
         {
 		this.parent(game);
 
-		APPLICATION.mHud.setScoreNeeded(5);
+		this.setScoreNeeded(1);
         },
 	
 	createItems: function()
 	{
 		this.parent();
 
-		this.addItem(new k_cc_a_1_type_1(this));     
-		this.addItem(new k_cc_a_1_type_1(this));     
-		this.addItem(new k_cc_a_1_type_1(this));     
-		this.addItem(new k_cc_a_1_type_1(this));     
-		this.addItem(new k_cc_a_1_type_1(this));     
-		this.addItem(new k_cc_a_1_type_1(this));     
+		this.addItem(new k_cc_a_1_type_1(this));      
 	}
 });

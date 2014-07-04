@@ -7,30 +7,24 @@ Extends: ThreeButtonItem,
 		this.mStandard = 'k.cc.a.1';
 		this.mType = 1;
 
-		r = Math.floor((Math.random()*2));
-		if (r == 0)
+		//possible answers
+		a = APPLICATION.mLevel;	
+		b = 0;
+		c = 0;
+		
+		this.setQuestion('What comes after ' + parseInt(a-1) + '?');
+		this.setAnswer(a,0);
+	
+		//make sure they are not same or negative	
+		while (a < 0 || b < 0 || c < 0 || a == b || a == c || b == c)
 		{
-			this.setQuestion('What comes after 0?');
-			this.setAnswer(1,0);
-
-			this.mButtonA.setAnswer('0');
-			this.mButtonB.setAnswer('1');
-			this.mButtonC.setAnswer('2');
-			this.shuffle(10);
+			b = Math.floor((Math.random()*7)-3);
+			c = Math.floor((Math.random()*7)-3);
 		}
-		if (r == 1)
-		{
-			this.setQuestion('What comes after 1?');
-			this.setAnswer(2,0);
-			this.mButtonA.setAnswer('1');
-			this.mButtonB.setAnswer('2');
-			this.mButtonC.setAnswer('3');
-			this.shuffle(10);
-		}
-	},
-
-	createShapes: function()
-        {
-		this.parent();
-        }
+		
+		this.mButtonA.setAnswer(a);
+		this.mButtonB.setAnswer(b);
+		this.mButtonC.setAnswer(c);
+		this.shuffle(10);
+	}
 });
