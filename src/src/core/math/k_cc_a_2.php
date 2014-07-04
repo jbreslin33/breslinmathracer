@@ -39,22 +39,20 @@ Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
-
-                this.setScoreNeeded(2);
         },
 
         createItems: function()
         {
                 this.parent();
-               
-		if (APPLICATION.mLevel == 1)
-		{ 
+              
+		level = APPLICATION.mLevel;
+
+		APPLICATION.log('level:' + level);	
+		this.setScoreNeeded(level); 
+		
+		for (var i = 0; i < level; i++)
+		{
 			this.addItem(new i_k_cc_a_2_t_1(this));
-		}
-		if (APPLICATION.mLevel == 2)
-		{ 
-			this.addItem(new i_k_cc_a_2_t_2(this));
-			this.addItem(new i_k_cc_a_2_t_3(this));
 		}
         }
 });
@@ -78,44 +76,6 @@ Extends: ThreeButtonItem,
                 this.mButtonA.setAnswer('0');
                 this.mButtonB.setAnswer('1');
                 this.mButtonC.setAnswer('2');
-                this.shuffle(10);
-        }
-});
-
-var i_k_cc_a_2_t_2 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
-                this.mType = 2;
-
-                this.setQuestion('What comes after 1?');
-                this.setAnswer(2,0);
-
-                this.mButtonA.setAnswer('1');
-                this.mButtonB.setAnswer('2');
-                this.mButtonC.setAnswer('3');
-                this.shuffle(10);
-        }
-});
-
-var i_k_cc_a_2_t_3 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
-                this.mType = 2;
-
-                this.setQuestion('What comes after 2?');
-                this.setAnswer(2,0);
-
-                this.mButtonA.setAnswer('1');
-                this.mButtonB.setAnswer('2');
-                this.mButtonC.setAnswer('3');
                 this.shuffle(10);
         }
 });
