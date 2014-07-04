@@ -206,8 +206,7 @@ Extends: ThreeButtonItem,
                 this.mStandard = 'k.cc.a.2';
                 this.mType = 4;
 
-                var x = Math.floor(Math.random()*98);
-                var a = parseInt(x+1);
+                var a = Math.floor(Math.random()*98);
                 var b = 0;
                 var c = 0;
 
@@ -219,11 +218,7 @@ Extends: ThreeButtonItem,
                         c = parseInt(a+c);
                 }
 
-                a = a + ',' + parseInt(a+1) + ',' + parseInt(a+2);
-                b = b + ',' + parseInt(b+1) + ',' + parseInt(b+2);
-                c = c + ',' + parseInt(c+1) + ',' + parseInt(c+2);
-
-                this.setQuestion('What is the missing number? ' + parseInt(x-3) + ',' + parseInt(x-2) + ',' + parseInt(x-1) + ',_,' + parseInt(x+1) + ',' + parseInt(x+2) + ',' + parseInt(x+3));
+                this.setQuestion('What is the missing number? ' + parseInt(a-3) + ',' + parseInt(a-2) + ',' + parseInt(a-1) + ',_,' + parseInt(a+1) + ',' + parseInt(a+2) + ',' + parseInt(a+3));
 
                 this.setAnswer(a,0);
 
