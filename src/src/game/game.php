@@ -7,12 +7,12 @@ var Game = new Class(
 	initialize: function(application)
         {
 		this.mApplication = application;
+		
+		//logs
+		this.mStateLogs = true;
 	
 		//left over variable from old code but still needed until we make full switch	
 		this.mReadyForNormalApplication = false;
-
-		//loggin
-		this.mStateLogs = false;
 
 		/********* SHAPES *******************/ 
 		//shape Array
