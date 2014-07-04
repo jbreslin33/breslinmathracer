@@ -112,6 +112,14 @@ CREATE SEQUENCE users_id_seq
     NO MAXVALUE
     CACHE 1;
 
+--EVALUATION_ATTEMPTS
+CREATE TABLE EvaluationAttempts (
+        id integer NOT NULL,
+        start_time timestamp,
+        end_time timestamp,
+        user_id integer NOT NULL
+);
+
 --==================================================================
 --================= CORE CURRICULUM  ====================================
 --==================================================================
