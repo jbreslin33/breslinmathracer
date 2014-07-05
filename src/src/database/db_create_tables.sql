@@ -1,15 +1,16 @@
 --***************************************************************
 --******************  DROP TABLES *************************
 --**************************************************************
-DROP TABLE users cascade;
+DROP TABLE error_log cascade; 
+DROP TABLE levelattempts;
 
 DROP TABLE learning_standards;
 DROP TABLE core_standards;
-DROP TABLE levelattempts;
+
 DROP TABLE evaluation_attempts;
 DROP TABLE item_attempts;
 
-DROP TABLE error_log cascade; 
+DROP TABLE users cascade;
 
 --****************************************************************
 --***************************************************************
@@ -71,16 +72,7 @@ CREATE TABLE users (
 --==================================================================
 --==================== CORE CURRICULUM  ========================
 --==================================================================
---LEARNING_STANDARDS
-CREATE TABLE learning_standards (
-        id text NOT NULL UNIQUE,
-	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
-	levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard	
-	core_standards_id text NOT NULL,
-	PRIMARY KEY (id) 	
-);	
 
---CORE_STANDARDS
 CREATE TABLE core_standards (
         id text NOT NULL UNIQUE,
 	description text,	
@@ -88,7 +80,15 @@ CREATE TABLE core_standards (
 	PRIMARY KEY (id) 	
 );
 
---LEVEL_ATTEMPTS
+CREATE TABLE learning_standards (
+        id text NOT NULL UNIQUE,
+	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
+	levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard	
+	core_standards_id text NOT NULL,
+	PRIMARY KEY (id),	
+	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
+);	
+
 CREATE TABLE levelattempts (
 	id SERIAL,
     	start_time timestamp,
@@ -99,7 +99,9 @@ CREATE TABLE levelattempts (
 	transaction_code integer DEFAULT 0 NOT NULL,
 	score integer DEFAULT 0 NOT NULL,
 	score_needed integer DEFAULT 0 NOT NULL,
-	PRIMARY KEY (id) 	
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES users(id),
+	FOREIGN KEY (learning_standards_id) REFERENCES learning_standards(id)
 );
 
 --ITEM_ATTEMPTS
