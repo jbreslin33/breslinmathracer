@@ -232,34 +232,87 @@ function setLevelSessionVariablesChange($conn,$user_id)
                 echo "error no id in learning_standards";
         }
 }
-
 function insertLevelAttempt($conn,$user_id)
 {
-	//insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,1,1,'CA9EE2E34F384E95A5FA26769C5864B8');
-	$insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
-  	$insert .= $_SESSION["user_id"];
-	$insert .= ",";	
-  	$insert .= $_SESSION["level"];
-	$insert .= ",'";	
-  	$insert .= $_SESSION["ref_id"];
-	$insert .= "');";	
+        //insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,1,1,'CA9EE2E34F384E95A5FA26769C5864B8');
+        $insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
+        $insert .= $_SESSION["user_id"];
+        $insert .= ",";
+        $insert .= $_SESSION["level"];
+        $insert .= ",'";
+        $insert .= $_SESSION["ref_id"];
+        $insert .= "');";
 
         //get db result
         $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$insertResult);
-	
-	//get attempt id
-  	$select = "select id from levelattempts where user_id = ";
+
+        //get attempt id
+        $select = "select id from levelattempts where user_id = ";
         $select .= $_SESSION["user_id"];
-	$select .= " AND level = ";	
-  	$select .= $_SESSION["level"];
-	$select .= " AND learning_standards_id = '";	
-  	$select .= $_SESSION["ref_id"];
+        $select .= " AND level = ";
+        $select .= $_SESSION["level"];
+        $select .= " AND learning_standards_id = '";
+        $select .= $_SESSION["ref_id"];
+        $select .= "' ORDER BY start_time DESC;";
+
+        //get db result
+        $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$selectResult);
+
+        //get numer of rows
+        $num = pg_num_rows($selectResult);
+
+        if ($num > 0)
+        {
+                //get the id from user table
+                $attempt_id = pg_Result($selectResult, 0, 'id');
+
+                //set level_id
+                $_SESSION["attempt_id"] = $attempt_id;
+        }
+        else
+        {
+                echo "error no attempt_id";
+        }
+}
+
+function insertItemAttempt($conn,$user_id)
+{
+	$ai = $_SESSION["attempt_id"]; 	
+	$_SESSION["type_id"] = 1; 
+	$typeid = $_SESSION["type_id"]; 
+	
+	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
+	$result = pg_query($conn,$query);
+	
+	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$ai','$typeid');";
+	$result = pg_query($conn,$query);
+
+	$insert = "insert into item_attempts (start_time,levelattempts_id,type_id) VALUES (CURRENT_TIMESTAMP,";
+  	$insert .= $_SESSION["attempt_id"];
+	$insert .= ",";	
+  	$insert .= $_SESSION["type_id"];
+	$insert .= ");";	
+
+        //get db result
+        $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$insertResult);
+
+	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','');";
+	$result = pg_query($conn,$query);
+	
+	//get level_attempt id
+  	$select = "select id from item_attempts where level_attempts_id = ";
+        $select .= $_SESSION["attempt_id"];
 	$select .= "' ORDER BY start_time DESC;";	
 
         //get db result
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$selectResult);
+	
+	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
+	$result = pg_query($conn,$query);
 	
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -267,10 +320,10 @@ function insertLevelAttempt($conn,$user_id)
 	if ($num > 0)
         {
                 //get the id from user table
-                $attempt_id = pg_Result($selectResult, 0, 'id');
+                $level_attempt_id = pg_Result($selectResult, 0, 'id');
 
                 //set level_id
-                $_SESSION["attempt_id"] = $attempt_id;
+                $_SESSION["level_attempt_id"] = $level_attempt_id;
         }
         else
         {
