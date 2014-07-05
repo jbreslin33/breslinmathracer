@@ -19,7 +19,7 @@ echo "<br>";
 ?>
 
 <?php
-$query = "select id,standard from learning_standards order by progression;";
+$query = "select id from learning_standards order by progression;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
@@ -49,7 +49,7 @@ pg_free_result($result);
 <p><b> Common Core Standards: </p></b>
 
 <?php
-$query = "select id,standard from learning_standards order by progression;";
+$query = "select id, core_standards_id from learning_standards order by progression;";
 $result = pg_query($conn,$query);
 dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
