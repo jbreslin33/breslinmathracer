@@ -37,7 +37,7 @@ function getLevelsReport($conn,$user_id)
 
 	for ($i = 0; $i < $lengthOfStandardsArray; $i++) 
 	{
-		$select = "select start_time, level, transaction_code, progression, levels from levelattempts JOIN learning_standards ON learning_standards.ref_id=levelattempts.ref_id where user_id = ";
+		$select = "select start_time, level, transaction_code, progression, levels from levelattempts JOIN learning_standards ON learning_standards.id=levelattempts.learning_standards_id where user_id = ";
         	$select .= $_POST["usernameid"];
 		$select .= "and learning_standards.id = '";
 		$select .= $standardsArray[$i]; 
