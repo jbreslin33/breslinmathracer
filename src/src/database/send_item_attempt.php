@@ -8,12 +8,11 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 
-insertLevelAttempt($conn,$_SESSION["user_id"]);
 insertItemAttempt($conn,$_SESSION["user_id"]);
 
 //fill php vars
 $returnString = "101,"; 
-$returnString .= $_SESSION["attempt_id"];
+$returnString .= $_SESSION["level_attempt_id"];
 echo $returnString;
 
 ?>

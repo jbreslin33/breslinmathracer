@@ -2215,6 +2215,21 @@ var Application = new Class(
                 xmlhttp.open("GET","../../src/database/send_failed_attempt.php",true);
                 xmlhttp.send();
         },
+
+	sendItemAttempt: function()
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.open("POST","../../src/database/send_item_attempt.php",true);
+                xmlhttp.send();
+        },
        
 	sendLevelAttempt: function()
         {
