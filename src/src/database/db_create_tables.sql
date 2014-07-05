@@ -5,6 +5,7 @@ DROP TABLE users cascade;
 
 DROP TABLE learning_standards;
 DROP TABLE LevelAttempts;
+DROP TABLE evaluationattempts;
 
 DROP TABLE error_log cascade; 
 

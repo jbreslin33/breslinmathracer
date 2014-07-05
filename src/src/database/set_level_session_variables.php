@@ -611,6 +611,11 @@ function setLevelSessionVariables($conn,$user_id)
                 echo "error no user";
         }
 
+	if ($_SESSION["subject_id"] == NULL)
+	{
+		$_SESSION["subject_id"] = 1;
+	}
+
 	$query  = "select learning_standards.subject, levelattempts.transaction_code, levelattempts.ref_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.ref_id=levelattempts.ref_id where user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " AND subject = ";
