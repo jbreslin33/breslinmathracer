@@ -1,6 +1,5 @@
-/*************
-GAME:
-***********/
+/* GAME: */
+
 var k_cc_a_3 = new Class(
 {
 
@@ -30,9 +29,8 @@ Extends: Game,
 	}
 });
 
-/***************
-SHEET: 
-******************/
+/* SHEET: */ 
+
 var sk_cc_a_3 = new Class(
 {
 Extends: Sheet,
@@ -62,13 +60,10 @@ Extends: Sheet,
         }
 });
 
-/******************
-ITEMS: 
-*******************/
+/ * ITEMS: */
 
-/*****************
-i_k_cc_a_3_t_1: This type will ask what comes next after a number from 0-99.
-****************/
+/* TYPE_DESCRIPTION: i_k_cc_a_3_t_1: Count the objects up to 20. */
+
 var i_k_cc_a_3_t_1 = new Class(
 {
 Extends: ThreeButtonItem,
