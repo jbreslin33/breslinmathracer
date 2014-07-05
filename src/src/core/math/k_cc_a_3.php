@@ -127,5 +127,11 @@ Extends: ThreeButtonItem,
                 this.addQuestionShape(new Shape(50,50,175,150,this.mSheet.mGame,"/images/bus/kid.png","",""));
                 this.addQuestionShape(new Shape(50,50,175,200,this.mSheet.mGame,"/images/bus/kid.png","",""));
                 this.addQuestionShape(new Shape(50,50,175,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
+
+		//move the buttons and label to make room for shapes
+		this.mQuestionLabel.setPosition(425,95);
+		this.mButtonA.setPosition(100,350);
+		this.mButtonB.setPosition(380,350);
+		this.mButtonC.setPosition(675,350);
 	}
 });
