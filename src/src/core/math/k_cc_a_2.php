@@ -1,6 +1,5 @@
-/*************
-GAME:
-***********/
+/* GAME: */
+
 var k_cc_a_2 = new Class(
 {
 
@@ -30,9 +29,8 @@ Extends: Game,
 	}
 });
 
-/***************
-SHEET: should contain items(questions) it should facilitate randomizing, ordering items. it should deal with advancing levels....and other application related things.
-******************/
+/* SHEET */
+
 var sk_cc_a_2 = new Class(
 {
 Extends: Sheet,
@@ -56,13 +54,10 @@ Extends: Sheet,
         }
 });
 
-/******************
-ITEMS: 
-*******************/
+/* ITEMS: */ 
 
-/*****************
-i_k_cc_a_2_t_1: This type will ask what comes next after a number from 0-99.
-****************/
+/* TYPE_DESCRIPTION: i_k_cc_a_2_t_1: This type will ask what comes next after a number from 0-99. */
+
 var i_k_cc_a_2_t_1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -95,9 +90,8 @@ Extends: ThreeButtonItem,
         }
 });
 
-/*****************
-i_k_cc_a_2_t_2: This type will ask what 2 numbers come next after a number from 0-99.
-****************/
+/* TYPE_DESCRIPTION: i_k_cc_a_2_t_2: This type will ask what 2 numbers come next after a number from 0-99. */
+
 var i_k_cc_a_2_t_2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -134,10 +128,8 @@ Extends: ThreeButtonItem,
         }
 });
 
+/* TYPE_DESCRIPTION: i_k_cc_a_2_t_3: This type will ask what 3 numbers come next after a number from 0-99. */
 
-/*****************
-i_k_cc_a_2_t_3: This type will ask what 3 numbers come next after a number from 0-99.
-****************/
 var i_k_cc_a_2_t_3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -174,9 +166,8 @@ Extends: ThreeButtonItem,
         }
 });
 
-/*****************
-i_k_cc_a_2_t_4: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.
-****************/
+/ *TYPE_DESCRIPTION: i_k_cc_a_2_t_4: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100. */
+
 var i_k_cc_a_2_t_4 = new Class(
 {
 Extends: ThreeButtonItem,
