@@ -74,6 +74,7 @@ enter: function(item)
 	
 	item.showQuestion();
 	item.showAnswerInputs();
+	item.createQuestionShapes();
 	item.showQuestionShapes();
  
 	//try to set focus

@@ -100,38 +100,28 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         },
     	
-	createShapes: function()
+	createQuestionShapes: function()
 	{	
-		this.parent();
+		var x = 0;
+		var answer = this.getAnswer(); 
+		answer = parseInt(answer);	
+		for (var i = 0; i < answer; i++)
+		{
+			APPLICATION.log('i:' + i);
+                	x = parseInt(x + 50);	
+			this.addQuestionShape(new Shape(50,50,x,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
+		}
+/*
+		var x = 0;
+		var y = 0;
 
-		this.addQuestionShape(new Shape(50,50,25,50,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,25,100,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,25,150,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,25,200,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,25,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
-
-                this.addQuestionShape(new Shape(50,50,75,50,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,75,100,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,75,150,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,75,200,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,75,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
-
-                this.addQuestionShape(new Shape(50,50,125,50,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,125,100,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,125,150,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,125,200,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,125,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
-
-                this.addQuestionShape(new Shape(50,50,175,50,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,175,100,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,175,150,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,175,200,this.mSheet.mGame,"/images/bus/kid.png","",""));
-                this.addQuestionShape(new Shape(50,50,175,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
-
-		//move the buttons and label to make room for shapes
-		this.mQuestionLabel.setPosition(425,95);
-		this.mButtonA.setPosition(100,350);
-		this.mButtonB.setPosition(380,350);
-		this.mButtonC.setPosition(675,350);
+		APPLICATION.log('getAnswer:' + this.getAnswer());
+		for (var i = 0; i < parseInt(this.getAnswer()); i++); 
+		{
+			APPLICATION.log('i:' + i);
+                	x = parseInt(x + 25);	
+			//this.addQuestionShape(new Shape(50,50,x,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
+		}
+*/
 	}
 });

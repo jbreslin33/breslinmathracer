@@ -297,6 +297,11 @@ var Item = new Class(
 		this.mContinueIncorrectButton.setVisibility(false);
 	},
 
+	createQuestionShapes: function()
+	{
+
+	},	
+
 	showQuestionShapes: function()
 	{
    		for (i = 0; i < this.mQuestionShapeArray.length; i++)
