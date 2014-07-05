@@ -78,8 +78,7 @@ Extends: ThreeButtonItem,
                 this.mStandard = 'k.cc.a.3';
                 this.mType = 1;
 
-		var x = Math.floor(Math.random()*21);
-		var a = parseInt(x+1);
+		var a = Math.floor(Math.random()*21);
 		var b = 0;
 		var c = 0; 
 
@@ -91,7 +90,7 @@ Extends: ThreeButtonItem,
 			c = parseInt(a+c);
 		}
 
-		this.setQuestion('What new comes after ' + x + '?');
+		this.setQuestion('How many kids?');
                 this.setAnswer(a,0);
 
                 this.mButtonA.setAnswer(a);
@@ -110,13 +109,13 @@ Extends: ThreeButtonItem,
 
 		for (var i = 0; i < answer; i++)
 		{
-			if (i == 9) 
+			if (i == 10) 
 			{
 				x = 0;
-				y = 350;
+				y = 375;
 			}
-                	x = parseInt(x + 50);	
-			this.addQuestionShape(new Shape(40,40,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+                	x = parseInt(x + 70);	
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
 		}
 	}
 });
