@@ -108,8 +108,8 @@ CREATE TABLE item_attempts (
         start_time timestamp,
         end_time timestamp,
         user_id integer NOT NULL,
-        level integer NOT NULL,
-        learning_standards_id text NOT NULL,
+	levelattempts_id integer NOT NULL,
+	type_id integer DEFAULT 0 NOT NULL, -- 0 means no type identified
         transaction_code integer DEFAULT 0 NOT NULL, --were you correct?? 0 not answered yet   1 correct    2 incorrect
         PRIMARY KEY (id)
 );
