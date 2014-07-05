@@ -111,7 +111,7 @@ function getLevels($conn,$user_id)
 
 function changeLevel($conn,$user_id)
 {
- 	$select = "select ref_id, levels, progression from learning_standards where id = '";
+ 	$select = "select id, core_standards_id, levels, progression from learning_standards where id = '";
         $select .= $_POST["standardid"];
         $select .= "';";
 
@@ -125,12 +125,12 @@ function changeLevel($conn,$user_id)
         {
                 //get the vars from user table
                 $levels = pg_Result($selectResult, 0, 'levels');
-                $ref_id = pg_Result($selectResult, 0, 'ref_id');
+                $ref_id = pg_Result($selectResult, 0, 'id');
                 $progression = pg_Result($selectResult, 0, 'progression');
-                $standard = pg_Result($selectResult, 0, 'id');
+                $standard = pg_Result($selectResult, 0, 'core_standards_id');
   
 		//do the insert...
-                $insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+                $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
                 $insert .= $_POST["id"];
                 $insert .= ",";
 		$insert .= $_POST["levels"];
@@ -145,7 +145,7 @@ function changeLevel($conn,$user_id)
 
 function setLevelSessionVariablesChange($conn,$user_id)
 {
-	$select = "select ref_id, levels, progression from learning_standards where id = '";
+	$select = "select id, levels, progression from learning_standards where id = '";
 	$select .= $_POST["standardid"];
 	$select .= "';";
 	
@@ -159,7 +159,7 @@ function setLevelSessionVariablesChange($conn,$user_id)
         {
                 //get the vars from user table
                 $levels = pg_Result($selectResult, 0, 'levels');
-                $ref_id = pg_Result($selectResult, 0, 'ref_id');
+                $ref_id = pg_Result($selectResult, 0, 'id');
                 $progression = pg_Result($selectResult, 0, 'progression');
         	
 		$_SESSION["ref_id"] = $ref_id;
@@ -168,7 +168,7 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		//select level, transaction_code from levelattempts where user_id = 7 and ref_id = '695A7607FE8A4E27AB80652C45C84FA8' order by start_time desc;
 		$select = "select level, transaction_code from levelattempts where user_id = ";	
 		$select .= $_SESSION["user_id"];
-		$select .= " and ref_id = '";
+		$select .= " and learning_standards_id = '";
 		$select .= $_SESSION["ref_id"];	
 		$select .= "' order by start_time desc limit 1;";
 	
@@ -211,7 +211,7 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		}
 
 		//do the insert...
-		$insert = "insert into levelattempts (start_time, user_id,level,ref_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+		$insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
 		$insert .= $_SESSION["user_id"];
 		$insert .= ",";
 		$insert .= $_SESSION["level"];
