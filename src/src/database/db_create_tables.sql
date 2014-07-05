@@ -124,6 +124,7 @@ CREATE TABLE evaluation_attempts (
         start_time timestamp,
         end_time timestamp,
         user_id integer NOT NULL,
-	PRIMARY KEY (id) 	
+	PRIMARY KEY (id),	
+	FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
