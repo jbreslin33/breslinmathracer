@@ -5,8 +5,9 @@ DROP TABLE users cascade;
 
 DROP TABLE learning_standards;
 DROP TABLE core_standards;
-DROP TABLE LevelAttempts;
-DROP TABLE evaluationattempts;
+DROP TABLE levelattempts;
+DROP TABLE evaluation_attempts;
+DROP TABLE item_attempts;
 
 DROP TABLE error_log cascade; 
 
@@ -88,7 +89,7 @@ CREATE TABLE core_standards (
 );
 
 --LEVEL_ATTEMPTS
-CREATE TABLE LevelAttempts (
+CREATE TABLE levelattempts (
 	id SERIAL,
     	start_time timestamp,
     	end_time timestamp,
@@ -101,8 +102,20 @@ CREATE TABLE LevelAttempts (
 	PRIMARY KEY (id) 	
 );
 
+--ITEM_ATTEMPTS
+CREATE TABLE item_attempts (
+        id SERIAL,
+        start_time timestamp,
+        end_time timestamp,
+        user_id integer NOT NULL,
+        level integer NOT NULL,
+        learning_standards_id text NOT NULL,
+        transaction_code integer DEFAULT 0 NOT NULL, --were you correct?? 0 not answered yet   1 correct    2 incorrect
+        PRIMARY KEY (id)
+);
+
 --EVALUATION_ATTEMPTS
-CREATE TABLE EvaluationAttempts (
+CREATE TABLE evaluation_attempts (
         id SERIAL,
         start_time timestamp,
         end_time timestamp,
