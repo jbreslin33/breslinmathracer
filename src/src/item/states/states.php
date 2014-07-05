@@ -99,7 +99,12 @@ execute: function(item)
 		if (item == item.mSheet.mItemArray[0])
 		{
 			//item is the first in array on Sheet so send attempt
-			APPLICATION.sendLevelAttempt();
+			APPLICATION.sendLevelAttempt(item.mType);
+		}
+		else
+		{
+			//just send item attempt first item attempt was sent with sendLevelAttempt
+			APPLICATION.sendItemAttempt(item.mType);
 		}
 
         	pass = item.checkUserAnswer();
