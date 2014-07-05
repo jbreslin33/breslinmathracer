@@ -4,6 +4,7 @@
 DROP TABLE users cascade;
 
 DROP TABLE learning_standards;
+DROP TABLE core_standards;
 DROP TABLE LevelAttempts;
 DROP TABLE evaluationattempts;
 
@@ -42,16 +43,18 @@ SET default_with_oids = false;
 --==================================================================
 
 --ERROR_LOG
-CREATE TABLE error_log (
-    id integer NOT NULL,
-    error text,
-    error_time timestamp,
-    username text
+CREATE TABLE error_log
+(
+	id SERIAL,
+    	error text,
+    	error_time timestamp,
+    	username text,
+	PRIMARY KEY (id) 	
 );
 
 --USERS
 CREATE TABLE users (
-	id integer NOT NULL,
+	id SERIAL,
     	username text, 
     	password text,
     	first_name text,
@@ -59,7 +62,9 @@ CREATE TABLE users (
     	middle_name2 text,
     	middle_name3 text,
     	last_name text,
-    	school_id integer NOT NULL
+    	school_id integer NOT NULL,
+	PRIMARY KEY (id) 	
+	--FOREIGN KEY (school_id) REFERENCES users(id)
 );
 
 --==================================================================
@@ -67,99 +72,41 @@ CREATE TABLE users (
 --==================================================================
 --LEARNING_STANDARDS
 CREATE TABLE learning_standards (
-	id text NOT NULL UNIQUE,
-	ref_id text NOT NULL UNIQUE,
+        id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
-	levels integer NOT NULL -- for us to determine number of levels till next LearningStandard	
+	levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard	
+	core_standards_id text NOT NULL,
+	PRIMARY KEY (id) 	
 );	
-alter table learning_standards add column standard text;
-alter table learning_standards add column subject integer default 1;
 
+--CORE_STANDARDS
+CREATE TABLE core_standards (
+        id text NOT NULL UNIQUE,
+	description text,	
+	subject_id integer default 1,
+	PRIMARY KEY (id) 	
+);
 
 --LEVEL_ATTEMPTS
 CREATE TABLE LevelAttempts (
-	id integer NOT NULL,
+	id SERIAL,
     	start_time timestamp,
     	end_time timestamp,
     	user_id integer NOT NULL,
     	level integer NOT NULL, 
-    	ref_id text NOT NULL, --FK 
+    	learning_standards_id text NOT NULL,  
+	transaction_code integer DEFAULT 0 NOT NULL,
 	score integer DEFAULT 0 NOT NULL,
-	time_warning boolean DEFAULT false NOT NULL,
-	passed boolean DEFAULT false NOT NULL
+	score_needed integer DEFAULT 0 NOT NULL,
+	PRIMARY KEY (id) 	
 );
-
-ALTER TABLE levelattempts RENAME COLUMN score TO transaction_code;
-
---ERROR_LOG
-CREATE SEQUENCE error_log_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
---USERS
-CREATE SEQUENCE users_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
 
 --EVALUATION_ATTEMPTS
 CREATE TABLE EvaluationAttempts (
-        id integer NOT NULL,
+        id SERIAL,
         start_time timestamp,
         end_time timestamp,
-        user_id integer NOT NULL
+        user_id integer NOT NULL,
+	PRIMARY KEY (id) 	
 );
 
---==================================================================
---================= CORE CURRICULUM  ====================================
---==================================================================
-
---LEVELS_ATTEMPTS
-CREATE SEQUENCE level_attempts_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
---ERROR_LOG
-ALTER TABLE public.error_log OWNER TO postgres;
-
---USERS
-ALTER TABLE public.users OWNER TO postgres;
-
---ERROR_LOG
-ALTER TABLE public.error_log_id_seq OWNER TO postgres;
-ALTER SEQUENCE error_log_id_seq OWNED BY error_log.id;
-ALTER TABLE ONLY error_log ALTER COLUMN id SET DEFAULT nextval('error_log_id_seq'::regclass);
-
---==================================================================
---================= PEOPLE   ====================================
---==================================================================
-
---USERS
-ALTER TABLE public.users_id_seq OWNER TO postgres;
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
-ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
-
---LEVEL_ATTEMPTS
-ALTER TABLE public.level_attempts_id_seq OWNER TO postgres;
-ALTER SEQUENCE level_attempts_id_seq OWNED BY LevelAttempts.id;
-ALTER TABLE ONLY LevelAttempts ALTER COLUMN id SET DEFAULT nextval('level_attempts_id_seq'::regclass);
-
---ERROR_LOG
-ALTER TABLE error_log ADD PRIMARY KEY (id);
-
---USERS
-ALTER TABLE users ADD PRIMARY KEY (id);
-
---LEVEL_ATTEMPTS
-ALTER TABLE LevelAttempts ADD PRIMARY KEY (id);
-
---USERS
-ALTER TABLE users ADD FOREIGN KEY (school_id) REFERENCES users(id);
