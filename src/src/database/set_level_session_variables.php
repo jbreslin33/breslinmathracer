@@ -279,14 +279,8 @@ function insertLevelAttempt($conn,$user_id)
 
 function insertItemAttempt($conn,$user_id)
 {
-	$ai = $_SESSION["attempt_id"]; 	
-	$_SESSION["type_id"] = 1; 
-	$typeid = $_SESSION["type_id"]; 
 	
 	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-	$result = pg_query($conn,$query);
-	
-	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$ai','$typeid');";
 	$result = pg_query($conn,$query);
 
 	$insert = "insert into item_attempts (start_time,levelattempts_id,type_id) VALUES (CURRENT_TIMESTAMP,";
