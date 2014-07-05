@@ -147,6 +147,7 @@ var Application = new Class(
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+					APPLICATION.log('APPLICATION.mRef_id:' + APPLICATION.mRef_id);
                 		}
 			}
 		}
@@ -177,7 +178,7 @@ var Application = new Class(
                 }
 	
 		//math
-		if (this.mRef_id == 'CA9EE2E34F384E95A5FA26769C5864B8')
+		if (this.mRef_id == 'k.cc.a.1')
 		{ 
              		if (this.mGameName != "k_cc_a_1")
                        	{
