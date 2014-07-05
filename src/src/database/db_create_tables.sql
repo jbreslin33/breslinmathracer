@@ -58,14 +58,8 @@ CREATE TABLE users (
     	middle_name2 text,
     	middle_name3 text,
     	last_name text,
-    	school_id integer NOT NULL,
-    	ref_id text NOT NULL default 'CA9EE2E34F384E95A5FA26769C5864B8',
-	level integer NOT NULL default 1 
+    	school_id integer NOT NULL
 );
-
---alter
-alter table users add column failed_attempts integer NOT NULL default 0;
-
 
 --==================================================================
 --==================== CORE CURRICULUM  ========================
