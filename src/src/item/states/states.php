@@ -74,6 +74,7 @@ enter: function(item)
 	
 	item.showQuestion();
 	item.showAnswerInputs();
+	item.showQuestionShapes();
  
 	//try to set focus
 	item.setTheFocus();
@@ -179,6 +180,7 @@ enter: function(item)
         }
         item.mStatus = 1;
         item.hideShapes();
+	item.hideQuestionShapes();
 },
 
 execute: function(item)

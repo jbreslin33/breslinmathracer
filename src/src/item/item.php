@@ -31,6 +31,7 @@ var Item = new Class(
                 this.mAnswerPool = new Array();
 
 		this.mShapeArray   = new Array();
+		this.mQuestionShapeArray   = new Array();
         
 		this.mType = 0; //uncategorized
 
@@ -88,6 +89,12 @@ var Item = new Class(
 	{
 		this.mShapeArray.push(shape);
 		this.mSheet.mGame.addShape(shape);	
+	},
+	
+	addQuestionShape: function(shape)
+	{
+		this.mQuestionShapeArray.push(shape);
+		this.addShape(shape);
 	},
 
 	removeShape: function(shape)
@@ -288,5 +295,21 @@ var Item = new Class(
 	hideContinueIncorrect: function()
 	{
 		this.mContinueIncorrectButton.setVisibility(false);
+	},
+
+	showQuestionShapes: function()
+	{
+   		for (i = 0; i < this.mQuestionShapeArray.length; i++)
+                {
+                        this.mQuestionShapeArray[i].setVisibility(true);
+                }
+	},
+
+	hideQuestionShapes: function()
+	{
+   		for (i = 0; i < this.mQuestionShapeArray.length; i++)
+                {
+                        this.mQuestionShapeArray[i].setVisibility(false);
+                }
 	}
 });
