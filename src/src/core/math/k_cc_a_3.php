@@ -78,7 +78,7 @@ Extends: ThreeButtonItem,
                 this.mStandard = 'k.cc.a.3';
                 this.mType = 1;
 
-		var x = Math.floor(Math.random()*100);
+		var x = Math.floor(Math.random()*21);
 		var a = parseInt(x+1);
 		var b = 0;
 		var c = 0; 
@@ -103,25 +103,20 @@ Extends: ThreeButtonItem,
 	createQuestionShapes: function()
 	{	
 		var x = 0;
+		var y = 300;
+
 		var answer = this.getAnswer(); 
 		answer = parseInt(answer);	
+
 		for (var i = 0; i < answer; i++)
 		{
-			APPLICATION.log('i:' + i);
+			if (i == 9) 
+			{
+				x = 0;
+				y = 350;
+			}
                 	x = parseInt(x + 50);	
-			this.addQuestionShape(new Shape(50,50,x,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
+			this.addQuestionShape(new Shape(40,40,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
 		}
-/*
-		var x = 0;
-		var y = 0;
-
-		APPLICATION.log('getAnswer:' + this.getAnswer());
-		for (var i = 0; i < parseInt(this.getAnswer()); i++); 
-		{
-			APPLICATION.log('i:' + i);
-                	x = parseInt(x + 25);	
-			//this.addQuestionShape(new Shape(50,50,x,250,this.mSheet.mGame,"/images/bus/kid.png","",""));
-		}
-*/
 	}
 });
