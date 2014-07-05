@@ -279,10 +279,6 @@ function insertLevelAttempt($conn,$user_id)
 
 function insertItemAttempt($conn,$user_id)
 {
-	
-	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-	$result = pg_query($conn,$query);
-
 	$insert = "insert into item_attempts (start_time,levelattempts_id,type_id) VALUES (CURRENT_TIMESTAMP,";
   	$insert .= $_SESSION["attempt_id"];
 	$insert .= ",";	
@@ -293,9 +289,6 @@ function insertItemAttempt($conn,$user_id)
         $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$insertResult);
 
-	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','');";
-	$result = pg_query($conn,$query);
-	
 	//get level_attempt id
   	$select = "select id from item_attempts where level_attempts_id = ";
         $select .= $_SESSION["attempt_id"];
@@ -304,9 +297,6 @@ function insertItemAttempt($conn,$user_id)
         //get db result
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$selectResult);
-	
-	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
-	$result = pg_query($conn,$query);
 	
         //get numer of rows
         $num = pg_num_rows($selectResult);
