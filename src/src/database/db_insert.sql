@@ -153,4 +153,6 @@ CREATE TABLE EvaluationAttempts (
         end_time timestamp,
         user_id integer NOT NULL
 );
-
+ALTER TABLE users DROP COLUMN ref_id;
+ALTER TABLE users DROP COLUMN level;
+ALTER TABLE users DROP COLUMN failed_attempts;
