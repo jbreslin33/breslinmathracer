@@ -444,12 +444,18 @@ function setLevelSessionVariablesRewind($conn,$user_id)
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$result);
+	
+	$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
+	$errorResult = pg_query($conn,$errorInsert);	
 
         //get numer of rows
         $num = pg_num_rows($result);
 
         if ($num > 0)
         {
+		$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','');";
+		$errorResult = pg_query($conn,$errorInsert);	
+
                 //get the id from user table
                 $first_name = pg_Result($result, 0, 'first_name');
                 $last_name = pg_Result($result, 0, 'last_name');
@@ -471,6 +477,9 @@ function setLevelSessionVariablesRewind($conn,$user_id)
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$result);
+		
+	$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
+	$errorResult = pg_query($conn,$errorInsert);	
 
         //get numer of rows
         $num = pg_num_rows($result);
@@ -485,6 +494,9 @@ function setLevelSessionVariablesRewind($conn,$user_id)
                 $_SESSION["ref_id"]           = $ref_id;
                 $_SESSION["transaction_code"] = $transaction_code;
                 $_SESSION["level"]            = $level;
+	
+		$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'d','');";
+		$errorResult = pg_query($conn,$errorInsert);	
         }
         else
         {
@@ -508,13 +520,24 @@ function setLevelSessionVariablesRewind($conn,$user_id)
                         $_SESSION["level"]            = $levelVar;
                 }
         }
-        $query = "select * from learning_standards where learning_standards_id = '";
+	
+        $ref = $_SESSION["ref_id"];
+	$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$ref','ref');";
+	$errorResult = pg_query($conn,$errorInsert);	
+
+	$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'e1','');";
+	$errorResult = pg_query($conn,$errorInsert);	
+
+        $query = "select * from learning_standards where id = '";
         $query .= $_SESSION["ref_id"];
         $query .= "';";
 
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$result);
+		
+	$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'e2','');";
+	$errorResult = pg_query($conn,$errorInsert);	
 
         //get numer of rows
         $num = pg_num_rows($result);
@@ -530,6 +553,9 @@ function setLevelSessionVariablesRewind($conn,$user_id)
                 $_SESSION["standard"] = $standard;
                 $_SESSION["progression"] = $progression;
                 $_SESSION["levels"] = $levels;
+	
+		$errorInsert = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'f','');";
+		$errorResult = pg_query($conn,$errorInsert);	
         }
         else
         {
