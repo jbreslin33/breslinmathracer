@@ -43,7 +43,14 @@ Extends: Sheet,
         {
                 this.parent();
               
-		this.setScoreNeeded(APPLICATION.mLevel); 
+		if (APPLICATION.mLevel > APPLICATION.mLevels)
+		{
+			this.setScoreNeeded(APPLICATION.mLevels); 
+		}
+		else
+		{
+			this.setScoreNeeded(APPLICATION.mLevel); 
+		}
 
 		this.addItem(new i_k_cc_a_1_t_1(this));
 		this.addItem(new i_k_cc_a_1_t_2(this));
