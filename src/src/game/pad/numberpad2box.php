@@ -53,13 +53,9 @@ Extends: Pad,
 		this.mNumAnswerHeading2.mMesh.innerHTML = this.mQuiz.getQuestion().mHeadingArray[1];
 		}
 		else
-		{
-			this.mNumAnswer.setVisibility(false);
-			this.mNumAnswerHeading1.setVisibility(false);
-
-			this.mNumAnswer2.setVisibility(false);
-			this.mNumAnswerHeading2.setVisibility(false);
-
+		{	
+		this.mNumAnswer2.setVisibility(false);
+		this.mNumAnswerHeading2.setVisibility(false);
 
 		}
         },
@@ -154,11 +150,16 @@ Extends: Pad,
 			
                         if (this.mUserAnswer == this.mQuiz.getQuestion().mAnswerArray[0])
 			{
-                               	if (this.mUserAnswer2 == this.mQuiz.getQuestion().mAnswerArray[1])
+			   correct = true;
+                           this.mStateMachine.changeState(this.mCORRECT_ANSWER);
+
+			   if (this.mQuiz.getQuestion().mHeadingArray.length > 0)
+			   {
+                               	if (this.mUserAnswer2 != this.mQuiz.getQuestion().mAnswerArray[1])
 				{
-					correct = true;
-                               		this.mStateMachine.changeState(this.mCORRECT_ANSWER);
+					correct = false;                       
 				}
+			   }
 			}
 				
 		
@@ -243,11 +244,11 @@ Extends: Pad,
                 this.mShapeArray.push(this.mNumAnswer2);
 
 		this.mNumAnswerHeading1 = new Shape(100,20,425,0,this,"","","");
-                this.mNumAnswerHeading1.mMesh.innerHTML = 'Quotient';
+                this.mNumAnswerHeading1.mMesh.innerHTML = ' ';
 		this.mShapeArray.push(this.mNumAnswerHeading1);
 
 		this.mNumAnswerHeading2 = new Shape(100,20,525,0,this,"","","");
-                this.mNumAnswerHeading2.mMesh.innerHTML = 'Remainder';
+                this.mNumAnswerHeading2.mMesh.innerHTML = ' ';
 		this.mShapeArray.push(this.mNumAnswerHeading2);
 
                 //Lock
