@@ -2172,51 +2172,6 @@ var Application = new Class(
  		return num % 2;
 	},
 
-    	sendFailedAttempt: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (typeof(xmlhttp.responseText)=="unknown")
-                        {
-                                return("");
-                        }
-                        else
-                        {
-                        	var response = xmlhttp.responseText;
-                        	var responseArray = response.split(",");
-				var code = responseArray[0];
-                        	var codeNumber = parseInt(code);
-
-                        	if (codeNumber == 101)
-                        	{
-                                	APPLICATION.mRef_id = responseArray[1];
-                                	APPLICATION.mLevel = responseArray[2];
-                                	APPLICATION.mStandard = responseArray[3];
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                	APPLICATION.mProgression = responseArray[4];
-                                	APPLICATION.mLevels = responseArray[5];
-                                	APPLICATION.mFailedAttempts = responseArray[6];
-                                	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-				}
-                        }
-                }
-                xmlhttp.open("GET","../../src/database/send_failed_attempt.php",true);
-                xmlhttp.send();
-        },
-
-       
 	sendLevelAttempt: function(typeid,transactioncode)
         {
                 var xmlhttp;
@@ -2334,25 +2289,6 @@ var Application = new Class(
                 xmlhttp.send();
         },
  	
-	sendGameTimeEnd: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                }
-                xmlhttp.open("GET","../../src/database/set_game_end_time.php",true);
-                xmlhttp.send();
-        },
-
 	/******************************* CONTROLS  *************/
         keyDown: function(event)
         {
