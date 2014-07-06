@@ -106,6 +106,11 @@ var Application = new Class(
 		this.mStateMachine.update();
         },
 
+	isOdd: function(num)
+ 	{
+ 		return num % 2;
+	},
+
 	newGame: function()
 	{
 		this.mGame = 0;	
@@ -155,6 +160,190 @@ var Application = new Class(
                 xmlhttp.send();
         },
 
+	sendLevelAttempt: function(typeid,transactioncode)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.open("POST","../../src/database/send_level_attempt.php?typeid=" + typeid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.send();
+        },
+	
+	sendItemAttempt: function(typeid,transactioncode)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.open("POST","../../src/database/send_item_attempt.php?typeid=" + typeid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.send();
+        },
+
+	advanceToNextLevel: function()
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+            		if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                        	var response = xmlhttp.responseText; 
+				var responseArray = response.split(","); 
+				var code = responseArray[0];
+				var codeNumber = parseInt(code);
+
+				if (codeNumber == 101)
+				{
+					APPLICATION.mRef_id = responseArray[1];
+					APPLICATION.mLevel = responseArray[2];
+					APPLICATION.mStandard = responseArray[3];
+					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+					APPLICATION.mProgression = responseArray[4];
+					APPLICATION.mLevels = responseArray[5];
+					APPLICATION.mFailedAttempts = responseArray[6];
+					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				}
+			}
+                }
+                xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
+                xmlhttp.send();
+        },
+
+       	advanceToLastLevel: function()
+        {
+                var xmlhttp;
+
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                    	if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                        	var response = xmlhttp.responseText;
+                        	var responseArray = response.split(",");
+				var code = responseArray[0];
+				var codeNumber = parseInt(code);
+
+				if (codeNumber == 101)
+                       	 	{
+                                	APPLICATION.mRef_id = responseArray[1];
+                                	APPLICATION.mLevel = responseArray[2];
+                                	APPLICATION.mStandard = responseArray[3];
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                	APPLICATION.mProgression = responseArray[4];
+                                	APPLICATION.mLevels = responseArray[5];
+					APPLICATION.mFailedAttempts = responseArray[6];
+                                	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+				}
+                        }
+                }
+                xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
+                xmlhttp.send();
+        },
+ 	
+	/******************************* CONTROLS  *************/
+        keyDown: function(event)
+        {
+                if (event.key == 'left')
+                {
+                        APPLICATION.mKeyLeft = true;
+                }
+                if (event.key == 'right')
+                {
+                        APPLICATION.mKeyRight = true;
+                }
+                if (event.key == 'up')
+                {
+                        APPLICATION.mKeyUp = true;
+                }
+                if (event.key == 'down')
+                {
+                        APPLICATION.mKeyDown = true;
+                }
+        },
+    	
+	keyUp: function(event)
+        {
+                if (event.key == 'left')
+                {
+                        APPLICATION.mKeyLeft = false;
+                }
+                if (event.key == 'right')
+                {
+                        APPLICATION.mKeyRight = false;
+                }
+                if (event.key == 'up')
+                {
+                        APPLICATION.mKeyUp = false;
+                }
+                if (event.key == 'down')
+                {
+                        APPLICATION.mKeyDown = false;
+                }
+                if (event.key == 'space')
+                {
+                        APPLICATION.mKeySpace = false;
+                }
+        },
+
+        click: function(event)
+        {
+        },
+
+        mouseup: function(event)
+        {
+                APPLICATION.mLeftMouseDown = false;
+        },
+
+        mouseMove: function(event)
+        {
+		APPLICATION.mMouseMoveX = event.page.x;
+		APPLICATION.mMouseMoveY = event.page.y;
+	},
+
+        mouseDown: function(event)
+        {
+		APPLICATION.mMouseDownX = event.page.x;
+		APPLICATION.mMouseDownY = event.page.y;
+        },
+
+/**************** GAME DECIDER *******/
 	// are we running the right game??
 	gameDecider: function()
 	{
@@ -2165,193 +2354,6 @@ var Application = new Class(
                                	this.mGame = new g5_oa_a_1(APPLICATION);
 			}	
 		}
-	},
-	
-	isOdd: function(num)
- 	{
- 		return num % 2;
-	},
-
-	sendLevelAttempt: function(typeid,transactioncode)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.open("POST","../../src/database/send_level_attempt.php?typeid=" + typeid + "&transactioncode=" + transactioncode,true);
-                xmlhttp.send();
-        },
-	
-	sendItemAttempt: function(typeid,transactioncode)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.open("POST","../../src/database/send_item_attempt.php?typeid=" + typeid + "&transactioncode=" + transactioncode,true);
-                xmlhttp.send();
-        },
-
-	advanceToNextLevel: function()
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-            		if (typeof(xmlhttp.responseText)=="unknown")
-                        {
-                                return("");
-                        }
-                        else
-                        {
-                        	var response = xmlhttp.responseText; 
-				var responseArray = response.split(","); 
-				var code = responseArray[0];
-				var codeNumber = parseInt(code);
-
-				if (codeNumber == 101)
-				{
-					APPLICATION.mRef_id = responseArray[1];
-					APPLICATION.mLevel = responseArray[2];
-					APPLICATION.mStandard = responseArray[3];
-					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					APPLICATION.mProgression = responseArray[4];
-					APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mFailedAttempts = responseArray[6];
-					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-				}
-			}
-                }
-                xmlhttp.open("GET","../../src/database/goto_next_level_ajax.php",true);
-                xmlhttp.send();
-        },
-
-       	advanceToLastLevel: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                    	if (typeof(xmlhttp.responseText)=="unknown")
-                        {
-                                return("");
-                        }
-                        else
-                        {
-                        	var response = xmlhttp.responseText;
-                        	var responseArray = response.split(",");
-				var code = responseArray[0];
-				var codeNumber = parseInt(code);
-
-				if (codeNumber == 101)
-                       	 	{
-                                	APPLICATION.mRef_id = responseArray[1];
-                                	APPLICATION.mLevel = responseArray[2];
-                                	APPLICATION.mStandard = responseArray[3];
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                	APPLICATION.mProgression = responseArray[4];
-                                	APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mFailedAttempts = responseArray[6];
-                                	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-				}
-                        }
-                }
-                xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
-                xmlhttp.send();
-        },
- 	
-	/******************************* CONTROLS  *************/
-        keyDown: function(event)
-        {
-                if (event.key == 'left')
-                {
-                        APPLICATION.mKeyLeft = true;
-                }
-                if (event.key == 'right')
-                {
-                        APPLICATION.mKeyRight = true;
-                }
-                if (event.key == 'up')
-                {
-                        APPLICATION.mKeyUp = true;
-                }
-                if (event.key == 'down')
-                {
-                        APPLICATION.mKeyDown = true;
-                }
-        },
-    	
-	keyUp: function(event)
-        {
-                if (event.key == 'left')
-                {
-                        APPLICATION.mKeyLeft = false;
-                }
-                if (event.key == 'right')
-                {
-                        APPLICATION.mKeyRight = false;
-                }
-                if (event.key == 'up')
-                {
-                        APPLICATION.mKeyUp = false;
-                }
-                if (event.key == 'down')
-                {
-                        APPLICATION.mKeyDown = false;
-                }
-                if (event.key == 'space')
-                {
-                        APPLICATION.mKeySpace = false;
-                }
-        },
-        click: function(event)
-        {
-        },
-
-        mouseup: function(event)
-        {
-                APPLICATION.mLeftMouseDown = false;
-        },
-
-        mouseMove: function(event)
-        {
-		APPLICATION.mMouseMoveX = event.page.x;
-		APPLICATION.mMouseMoveY = event.page.y;
-	},
-
-        mouseDown: function(event)
-        {
-		APPLICATION.mMouseDownX = event.page.x;
-		APPLICATION.mMouseDownY = event.page.y;
-        }
+	}
 });
 
