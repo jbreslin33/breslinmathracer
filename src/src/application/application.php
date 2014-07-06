@@ -2302,7 +2302,7 @@ var Application = new Class(
                                	this.mGame = new g4_oa_c_5(APPLICATION);
 			}	
 		}
-		if (this.mRef_id == '4.nbt.a.1')
+		if (this.mRef_id == 'g4.nbt.a.1')
 		{ 
              		if (this.mGameName != "g4_nbt_a_1")
                        	{

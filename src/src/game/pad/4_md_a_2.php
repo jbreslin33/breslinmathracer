@@ -1,6 +1,6 @@
 var g4_md_a_2 = new Class(
 {
-Extends: NumberPad,
+Extends: NumberPad2Box,
 	initialize: function(application)
 	{
        		this.parent(application);
@@ -22,7 +22,7 @@ Extends: NumberPad,
                 //this.mShapeArray[1].setPosition(200,200);
 		this.mShapeArray[1].setSize(250,200);
 
-		this.mShapeArray[1].mMesh.innerHTML = '' + this.mQuiz.getQuestion().getQuestion() + ' ' + '<br><br> Answer: ' + this.mQuiz.getQuestion().getAnswer();
+		
         },
 
 	
@@ -31,117 +31,16 @@ Extends: NumberPad,
         {
 		
 
-				rand = Math.floor(Math.random()*12);
+		rand = Math.floor(Math.random()*12);
 
-				if(rand == 0)
-				{
-				   unit1 = 'grams';
-				   unit2 = 'kilograms';
-				   convert = 1000;
+		if(rand == 0)
+		{
+			unit1 = 'grams';
+			unit2 = 'kilograms';
+			convert = 1000;
 
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 1)
-				{
-				   unit1 = 'inches';
-				   unit2 = 'feet';
-				   convert = 12;
-
-				    num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 2)
-				{
-				   unit1 = 'feet';
-				   unit2 = 'yards';
-				   convert = 3;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 3)
-				{
-				   unit1 = 'minutes';
-				   unit2 = 'hours';
-				   convert = 60;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-				
-				if(rand == 4)
-				{
-				   unit1 = 'seconds';
-				   unit2 = 'minutes';
-				   convert = 60;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 5)
-				{
-				   unit1 = 'days';
-				   unit2 = 'weeks';
-				   convert = 7;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 6)
-				{
-				   unit1 = 'ounces';
-				   unit2 = 'pounds';
-				   convert = 16;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*6));
-				}
-
-				if(rand == 7)
-				{
-				   unit1 = 'centimeters';
-				   unit2 = 'meters';
-				   convert = 100;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-				
-				if(rand == 8)
-				{
-				   unit1 = 'cups';
-				   unit2 = 'pints';
-				   convert = 2;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 9)
-				{
-				   unit1 = 'pints';
-				   unit2 = 'quarts';
-				   convert = 2;
-
-				   num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 10)
-				{
-				   unit1 = 'milliliters';
-				   unit2 = 'liters';
-				   convert = 1000;
-
-				 num1 = convert + Math.floor(Math.random()*(convert*9));
-				}
-
-				if(rand == 11)
-				{
-				   unit1 = 'hours';
-				   unit2 = 'days';
-				   convert = 24;
-
-				  num1 = convert + Math.floor(Math.random()*(convert*4));
-				}
-
-
+			num1 = convert + Math.floor(Math.random()*(convert*9));
+		}
 
 				num2 = Math.floor(num1/convert);
 				remainder = num1 % convert;
@@ -157,134 +56,105 @@ Extends: NumberPad,
 
 	},
 
-
+	// weight
 	makeType2: function()
         {
+		rand = Math.floor(Math.random()*1);
 
-				rand = Math.floor(Math.random()*12);
+		// grams/kg - add
+		if(rand == 0)
+		{
+			unit1 = 'grams';
+			unit2 = 'kilograms';
+			convert = 1000;
+			num3 = 1 + Math.floor(Math.random()*4);
+			num1 = 400 * num3;
+			num2 = 600 * num3;
 
-				if(rand == 0)
-				{
-				   unit1 = 'grams';
-				   unit2 = 'kilograms';
-				   convert = 1000;
+			question = new Question('Billy has a textbook that weighs ' + num1 + ' ' + unit1 + ' and a workbook that weighs '  + num2 + ' ' + unit1 + '. How many kilograms do his books weigh altogether?', '' + num3);
 
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
+			this.mQuiz.mQuestionArray.push(question);
+		}
+
+
+		// kg/grams
+		if(rand == 1)
+		{
+			unit1 = 'grams';
+			unit2 = 'kilograms';
+			convert = 1000;
+
+			num2 = 2 + Math.floor(Math.random()*8);
+			num1 = num2 * convert;
+
+			question = new Question('Sally bought ' + num2 + ' ' + unit2 + ' of soil for her garden. How many grams of soil did she buy?', '' + num1);
+
+			this.mQuiz.mQuestionArray.push(question);
+		}
+
+		// ounces/pounds - add
+		if(rand == 2)
+		{
+			unit1 = 'ounces';
+			unit2 = 'pounds';
+			convert = 16;
+
+			num2 = 2 + Math.floor(Math.random()*8);
+			num3 = 2 + Math.floor(Math.random()*8);
+			num1 = (num2 + num3) * convert;
+
+			question = new Question('Tina needs ' + num2 + ' ' + unit2 + ' of sugar for her cookie recipe and ' + num3 + ' ' + unit2 + ' of sugar for her cupcake recipe. How many ounces of sugar does she need for both recipes?', '' + num1);
+
+			this.mQuiz.mQuestionArray.push(question);
+		}	
+
+		// ounces/pounds - decimal
+		if(rand == 3)
+		{
+			unit1 = 'ounces';
+			unit2 = 'pounds';
+			convert = 16;
+
+			num2 = 2 + Math.floor(Math.random()*8);
+			num3 = '.5';
+			num1 = (num2 * convert) + (num3 * convert);
+
+			question = new Question('Bill has a bowling ball that weighs ' + num2 + num3 + ' ' + unit2 + ' How many ounces does his bowling ball weigh?', '' + num1);
+
+			this.mQuiz.mQuestionArray.push(question);
+		}
+	},	
+
+	// distance
+	makeType3: function()
+        {
+		rand = Math.floor(Math.random()*1);
+						
+		if(rand == 0)
+		{
+			unit1 = 'feet';
+			unit2 = 'inches';
+			convert = 12;
+
+			num1 = 4 + Math.floor(Math.random()*3);
+			num2 = 1 + Math.floor(Math.random()*11);
+			num3 = num1 + Math.floor(Math.random()*(7 - num1));
+			num4 = num2 + Math.floor(Math.random()*(12 - num2));
+
+			answer1 = num3 - num1;
+			answer2 = num4 - num2;
+
+			question = new Question('Joey is ' + num1 + unit1 + ' ' + num2 + unit2 + ' tall. Patty is ' + num3 + unit1 + ' ' + num4 + unit2 + ' tall. How much taller is Patty than Joey?', '' + answer1);
+
+			this.mQuiz.mQuestionArray.push(question);
+
+			question.mAnswerArray.push(answer2);
+			question.mHeadingArray.push('Feet');
+			question.mHeadingArray.push('Inches');
+
+		}
+
 				
-				if(rand == 1)
-				{
-				   unit1 = 'inches';
-				   unit2 = 'feet';
-				   convert = 12;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 2)
-				{
-				   unit1 = 'feet';
-				   unit2 = 'yards';
-				   convert = 3;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 3)
-				{
-				   unit1 = 'minutes';
-				   unit2 = 'hours';
-				   convert = 60;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-				
-				if(rand == 4)
-				{
-				   unit1 = 'seconds';
-				   unit2 = 'minutes';
-				   convert = 60;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 5)
-				{
-				   unit1 = 'days';
-				   unit2 = 'weeks';
-				   convert = 7;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 6)
-				{
-				   unit1 = 'ounces';
-				   unit2 = 'pounds';
-				   convert = 16;
-
-				   num2 = 1 + Math.floor(Math.random()*6);
-				}
-
-				if(rand == 7)
-				{
-				   unit1 = 'centimeters';
-				   unit2 = 'meters';
-				   convert = 100;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-				
-				if(rand == 8)
-				{
-				   unit1 = 'cups';
-				   unit2 = 'pints';
-				   convert = 2;
-
-				   num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 9)
-				{
-				   unit1 = 'pints';
-				   unit2 = 'quarts';
-				   convert = 2;
-
-				  num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 10)
-				{
-				   unit1 = 'milliliters';
-				   unit2 = 'liters';
-				   convert = 1000;
-
-				  num2 = 1 + Math.floor(Math.random()*9);
-				}
-
-				if(rand == 11)
-				{
-				   unit1 = 'hours';
-				   unit2 = 'days';
-				   convert = 24;
-
-				   num2 = 1 + Math.floor(Math.random()*4);
-				}
-
-				num1 = num2 * convert;
-
-			rand = Math.floor(Math.random()*2);
-
-			if (rand == 0)
-			{
-                        this.mQuiz.mQuestionArray.push(new Question('' + num2 + ' ' + unit2 + ' = ? ' + unit1, '' + num1));
-			}
-
-			if (rand == 1)
-			{
-                        this.mQuiz.mQuestionArray.push(new Question('' + num1 + ' ' + unit1 + ' = ? ' + unit2, '' + num2));
-			}
-
 	},
 
 	createQuestions: function()
@@ -299,6 +169,8 @@ Extends: NumberPad,
 		var convert = 0;
 		var num1 = 0;
 		var num2 = 0;
+		var num3 = 0;
+		var num4 = 0;
 		var remainder = 0;
 
 		var varA = 0;
@@ -320,13 +192,13 @@ Extends: NumberPad,
 
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{
-			rand = Math.floor(Math.random()*3);
+			rand = Math.floor(Math.random()*2);
 
-			if(rand == 0)
-				this.makeType1();
+			//if(rand == 2)
+				//this.makeType1();
 
-			if(rand == 1 || rand == 2)
-				this.makeType2();
+			if(rand == 0 || rand == 1)
+				this.makeType3();
 
 
 		}
