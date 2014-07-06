@@ -389,6 +389,35 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 		$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
                	dbErrorCheck($conn,$updateResult);
 	}
+	/* else you finished the standard.
+		at this point we will do a test....
+		this way we can still allow the overide of a standard... 			
+		if you pass the whole test we send you to the earliest standard you have not completed in db. 	
+		if you fail the test then we send to where you failed and stick you at boss level which is just one level back in theory.	
+
+		how do we get in test mode???
+		easy way might be to simply insert a record with no end_time...until you provide an end time you are in test mode.....which may mean 
+		starting over??? to soften the blow amongst other reasons of starting a test over maybe they should be chunked. 
+		So check the last test record
+		
+		once in test mode it will only test you on things you have completed. and maybe not even all of them.	
+	
+		ok the test:
+		first we need to see where you are in db....
+		scenario 1: ok i see that you have finished progession 2 which means you are not done the whole cluster 	
+		this calls for a standards test. which will be on standard 1 and 2. 
+
+		scenario 2: ok i see that you hae finished progression 3 which is and end of cluster standard its time for a 
+		cluster test.
+
+		scenario 3: ok i see that you have finished k.cc.c.7 which is an end of domain standard so its time for a domain test...
+
+		scenario 4: ok i see that you have finished k.g.b.6 which is the last standard of the grade its time for a grade test.	
+		
+
+		see what the last test was on		
+	*/
+	
 	else
 	{
 		//go to new ref_id
