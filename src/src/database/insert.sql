@@ -56,6 +56,34 @@ insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (18,
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (19,1,10); -- (s:m g:9)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (20,2,10); -- (s:e g:9)
 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (1,1,1); -- k.cc  
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (2,2,1); -- k.oa  
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (3,3,1); -- k.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (4,4,1); -- k.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (5,5,1); -- k.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (6,2,1); -- 1.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (7,3,1); -- 1.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (8,4,1); -- 1.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (9,5,1); -- 1.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (10,2,1); -- 2.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (11,3,1); -- 2.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (12,4,1); -- 2.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (13,5,1); -- 2.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (14,2,1); -- 3.oa 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
