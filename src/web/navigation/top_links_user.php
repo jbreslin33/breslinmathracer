@@ -1,6 +1,5 @@
 <ul>
 <li><a href="/web/application/application.php">Play</a></li>
-<li><a href="/web/evaluation/evaluation.php">Evaluation</a></li>
 <li><a href="/web/select/select.php">Selects</a></li>
 <li><a href="/index.html">Logout</a></li>
 <li><a href="/web/update/update_standard_id_form.php">Update Standard ID</a></li>
