@@ -149,7 +149,6 @@ CREATE TABLE learning_standards (
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );	
 
-
 CREATE TABLE levelattempts (
 	id SERIAL,
     	start_time timestamp,
@@ -167,8 +166,8 @@ CREATE TABLE levelattempts (
 
 CREATE TABLE item_types (
         id integer NOT NULL UNIQUE,
-        --id SERIAL,
 	learning_standards_id text NOT NULL,
+	description text,	
         PRIMARY KEY (id),
 	FOREIGN KEY (learning_standards_id) REFERENCES learning_standards(id)
 );
