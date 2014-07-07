@@ -1,6 +1,10 @@
 
 delete from core_grades;
 delete from core_subjects;
+delete from core_domains;
+
+delete from core_subjects_grades;
+delete from core_subjects_grades;
 
 
 
@@ -17,6 +21,19 @@ insert into core_grades(id,description) values (7,'6');
 insert into core_grades(id,description) values (8,'7'); 
 insert into core_grades(id,description) values (9,'8'); 
 insert into core_grades(id,description) values (10,'9'); 
+
+insert into core_domains(id,description) values (1,'Counting and Cardinality'); 
+insert into core_domains(id,description) values (2,'Operations and Algebraic Thinking'); 
+insert into core_domains(id,description) values (3,'Number and Operations in Base Ten'); 
+insert into core_domains(id,description) values (4,'Measurement and Data'); 
+insert into core_domains(id,description) values (5,'Geometry'); 
+insert into core_domains(id,description) values (6,'Numbers and Operations Fractions'); 
+insert into core_domains(id,description) values (7,'Ratios and Proportional Relationships'); 
+insert into core_domains(id,description) values (8,'The Number System'); 
+insert into core_domains(id,description) values (9,'Expressions and Equations'); 
+insert into core_domains(id,description) values (10,'Statistics and Probability'); 
+insert into core_domains(id,description) values (11,'Functions'); 
+
 
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (1,1,1); -- (s:m g:k)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (2,2,1); -- (s:e g:k)
@@ -38,6 +55,7 @@ insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (17,
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (18,2,9); -- (s:e g:8)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (19,1,10); -- (s:m g:9)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (20,2,10); -- (s:e g:9)
+
 
 
 
