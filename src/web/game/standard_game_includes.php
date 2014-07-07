@@ -80,6 +80,7 @@
 
 <script type="text/javascript" src="/src/game/pad/rl_k_1.php"></script>
 
+<script type="text/javascript" src="/src/core/math/evaluation.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_3.php"></script>
