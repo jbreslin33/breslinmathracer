@@ -1,18 +1,16 @@
 
-delete from core_standards;
-delete from core_clusters;
-delete from core_domains;
 delete from core_grades;
 delete from core_subjects;
 
-delete from learning_standards;
-delete from learning_clusters;
+
 
 insert into core_subjects(id,description) values (1,'Math'); 
 insert into core_subjects(id,description) values (2,'ELA'); 
 
 insert into core_grades(id,description) values (1,'k'); 
 insert into core_grades(id,description) values (2,'1'); 
+
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (1,1,1); 
 
 
 
