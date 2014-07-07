@@ -111,7 +111,6 @@ CREATE TABLE core_domains (
 
 CREATE TABLE core_domains_subjects_grades (
         id integer NOT NULL UNIQUE,
-        description text,
         core_domains_id integer NOT NULL,
         core_subjects_grades_id integer NOT NULL,
         PRIMARY KEY (id),
