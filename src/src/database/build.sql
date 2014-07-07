@@ -3,6 +3,9 @@
 --**************************************************************
 DROP TABLE error_log; 
 DROP TABLE item_attempts;
+
+DROP TABLE item_types;
+
 DROP TABLE levelattempts;
 
 DROP TABLE learning_standards;
@@ -159,6 +162,14 @@ CREATE TABLE levelattempts (
 	score_needed integer DEFAULT 0 NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES users(id),
+	FOREIGN KEY (learning_standards_id) REFERENCES learning_standards(id)
+);
+
+CREATE TABLE item_types (
+        id integer NOT NULL UNIQUE,
+        --id SERIAL,
+	learning_standards_id text NOT NULL,
+        PRIMARY KEY (id),
 	FOREIGN KEY (learning_standards_id) REFERENCES learning_standards(id)
 );
 
