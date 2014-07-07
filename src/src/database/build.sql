@@ -96,7 +96,6 @@ CREATE TABLE core_grades (
 
 CREATE TABLE core_subjects_grades (
         id integer NOT NULL UNIQUE,
-	description text,	
 	core_subjects_id integer NOT NULL,
 	core_grades_id integer NOT NULL,
 	PRIMARY KEY (id), 	
