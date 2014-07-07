@@ -459,6 +459,8 @@ id     | progression | levels | core_standards_id
 	 	we could just have a g_evaluation game. this game would then call a s_evaluation sheet.
 		which would then contain every single type in whole application.
 		it would then select accordingly. if you got one wrong it would take you back a level on that game and send you there.	then the learning_standard the item_attempts would point to would be g_evaluation which could simple be first gamee!!!! then it would send you there its levelneeded is 1. it would then knock down a level on a higher progression or when finished it would simply select bump you up naturally......	
+
+	to do this i think we need a types table....then have item_itempts point to that..
 	*/
 	
 	else
