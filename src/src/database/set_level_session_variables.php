@@ -431,10 +431,21 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
 		don't rest till its done once issued. it's triggered after completing a standard(any standard) for instance even if you jumped to 4th grade
 		we are still gonna test you on standard_test or other cluster etc test based on where you currently are in db. meaning have many learning_standards have you completed in succession.	
-		standard_test : id, start_time, end_time, user_id,        learning_standards_id, transaction_code 
 
-		in theory a cluster test could be 1 to 5 standard_tests 
+		learning_standards_test : id, start_time, end_time, user_id,        learning_standards_id, transaction_code 
+		item_attempt:wq
+	
+
+		in theory a cluster test could be 1 to 7 standard_tests 
 		cluster_test:   id, start_time, end_time, user_id,        clusters_id,           transaction_code 
+
+		clusters: id, description 	
+		grade: id, description
+		domain: id, description
+				
+
+		clusters: id, progression, 	
+id     | progression | levels | core_standards_id
 				
 
 		see what the last test was on		
