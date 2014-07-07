@@ -6,7 +6,6 @@ DROP TABLE item_attempts;
 DROP TABLE levelattempts;
 
 DROP TABLE learning_standards;
-DROP TABLE learning_clusters;
 
 DROP TABLE core_standards;
 DROP TABLE core_clusters;
@@ -138,15 +137,6 @@ CREATE TABLE core_standards (
 --==================================================================
 --==================== LEARNING CURRICULUM  ========================
 --==================================================================
-CREATE TABLE learning_clusters (
-        id text NOT NULL UNIQUE,
-        progression NUMERIC(9,3) NOT NULL, -- for us to determine order
-        --levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard
-        core_clusters_id integer NOT NULL,
-        PRIMARY KEY (id),
-        FOREIGN KEY (core_clusters_id) REFERENCES core_clusters(id)
-);
-
 CREATE TABLE learning_standards (
         id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
