@@ -449,6 +449,16 @@ id     | progression | levels | core_standards_id
 				
 
 		see what the last test was on		
+
+
+		--trashing all of the above:
+		how about if we query db for 10 questions.
+		we take select question types which have not been answered correct x(10) times in a row 
+		question. do we use all item_attempts? or do we create a new table? 
+		if we use old table we can use inserts we have already used no need to create init insert.
+	 	we could just have a g_evaluation game. this game would then call a s_evaluation sheet.
+		which would then contain every single type in whole application.
+		it would then select accordingly. if you got one wrong it would take you back a level on that game and send you there.	then the learning_standard the item_attempts would point to would be g_evaluation which could simple be first gamee!!!! then it would send you there its levelneeded is 1. it would then knock down a level on a higher progression or when finished it would simply select bump you up naturally......	
 	*/
 	
 	else
