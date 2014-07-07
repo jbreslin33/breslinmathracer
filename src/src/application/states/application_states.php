@@ -138,9 +138,6 @@ enter: function(application)
 	}
 	//tell db to advance you
         application.advanceToNextLevel();
-
-	//set the game on db to end 
-        application.sendGameTimeEnd();
 },
 
 execute: function(application)

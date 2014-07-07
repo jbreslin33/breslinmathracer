@@ -675,10 +675,8 @@ function setLevelSessionVariables($conn,$user_id)
 		$_SESSION["subject_id"] = 1;
 	}
         
-	$query  = "select levelattempts.transaction_code, levelattempts.learning_standards_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.id=levelattempts.learning_standards_id JOIN core_standards ON core_standards.id=learning_standards.core_standards_id where user_id = ";
+	$query  = "select levelattempts.transaction_code, levelattempts.learning_standards_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.id=levelattempts.learning_standards_id JOIN core_standards ON core_standards.id=learning_standards.core_standards_id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id JOIN core_domains_subjects_grades ON core_domains_subjects_grades.id=core_clusters.core_domains_subjects_grades_id JOIN core_subjects_grades ON core_subjects_grades.id=core_domains_subjects_grades.core_subjects_grades_id JOIN core_subjects ON core_subjects.id=core_subjects_grades.core_subjects_id where user_id = ";
 	$query .= $_SESSION["user_id"];
-	$query .= " AND core_standards.subject_id = ";
-	$query .= $_SESSION["subject_id"];
 	$query .= " order by start_time desc limit 1;";
 	
         //get db result
@@ -690,7 +688,6 @@ function setLevelSessionVariables($conn,$user_id)
 
         if ($num > 0)
         {
-
                 //get the id from user table
                 $transaction_code = pg_Result($result, 0, 'transaction_code');
                 $ref_id           = pg_Result($result, 0, 'learning_standards_id');
