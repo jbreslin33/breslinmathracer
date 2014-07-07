@@ -19,8 +19,6 @@ DROP TABLE core_subjects_grades;
 DROP TABLE core_grades;
 DROP TABLE core_subjects;
 
-
-
 DROP TABLE users;
 
 --****************************************************************
@@ -122,13 +120,12 @@ CREATE TABLE core_domains_subjects_grades (
         FOREIGN KEY (core_subjects_grades_id) REFERENCES core_subjects_grades(id)
 );
 
-
 CREATE TABLE core_clusters (
         id integer NOT NULL UNIQUE,
 	description text,	
-	core_domains_id integer NOT NULL,
+	core_domains_subjects_grades_id integer NOT NULL,
 	PRIMARY KEY (id), 	
-        FOREIGN KEY (core_domains_id) REFERENCES core_domains(id)
+        FOREIGN KEY (core_domains_subjects_grades_id) REFERENCES core_domains_subjects_grades(id)
 );
 
 CREATE TABLE core_standards (
