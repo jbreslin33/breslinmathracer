@@ -42,7 +42,7 @@ insert into core_domains(id,description) values (12,'Functions');
 
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (1,1,1); -- (s:m g:e)
 
-insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (2,1,2); -- (s:m g:e)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (2,1,2); -- (s:m g:k)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (3,2,2); -- (s:e g:k)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (4,1,3); -- (s:m g:1)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (5,2,3); -- (s:e g:1)
@@ -65,46 +65,46 @@ insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (21,
 
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (1,1,1); -- e  
 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (2,2,1); -- k.cc  
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (3,3,1); -- k.oa  
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (4,4,1); -- k.nbt 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (5,5,1); -- k.md 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (6,6,1); -- k.g 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (7,3,3); -- 1.oa 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (8,4,3); -- 1.nbt 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (9,5,3); -- 1.md 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (10,6,3); -- 1.g 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (11,3,5); -- 2.oa 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (12,4,5); -- 2.nbt 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (13,5,5); -- 2.md 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (14,6,5); -- 2.g 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (15,3,7); -- 3.oa 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (16,4,7); -- 3.nbt 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (17,7,7); -- 3.f 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (18,5,7); -- 3.md 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (19,6,7); -- 3.g 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (20,3,9); -- 4.oa 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (21,3,9); -- 4.nbt 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (22,6,9); -- 4.f 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (23,4,9); -- 4.md 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (24,5,9); -- 4.g 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (25,2,11); -- 5.oa 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (26,3,11); -- 5.nbt 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (27,6,11); -- 5.f 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (28,4,11); -- 5.md 
-insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (29,5,11); -- 5.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (2,2,2); -- k.cc  
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (3,3,2); -- k.oa  
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (4,4,2); -- k.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (5,5,2); -- k.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (6,6,2); -- k.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (7,3,4); -- 1.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (8,4,4); -- 1.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (9,5,4); -- 1.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (10,6,4); -- 1.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (11,3,6); -- 2.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (12,4,6); -- 2.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (13,5,6); -- 2.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (14,6,6); -- 2.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (15,3,8); -- 3.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (16,4,8); -- 3.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (17,7,8); -- 3.f 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (18,5,8); -- 3.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (19,6,8); -- 3.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (20,3,10); -- 4.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (21,3,10); -- 4.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (22,6,10); -- 4.f 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (23,4,10); -- 4.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (24,5,10); -- 4.g 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (25,2,12); -- 5.oa 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (26,3,12); -- 5.nbt 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (27,6,12); -- 5.f 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (28,4,12); -- 5.md 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (29,5,12); -- 5.g 
 
 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Evaluation');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,1,'Know number names and the count sequence.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (3,1,'Count to tell the number of objects.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,1,'Compare numbers.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,2,'Understand addition, and understand subtraction.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,3,'Work with numbers 11-19 to gain foundations for place value.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,4,'Describe and compare measurable attributes.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,4,'Classify objects and count the number of objects in each category.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Identify and describe shapes.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10,5,'Analyze, compare, create, and compose shapes.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,2,'Know number names and the count sequence.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (3,2,'Count to tell the number of objects.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Compare numbers.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Understand addition, and understand subtraction.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Work with numbers 11-19 to gain foundations for place value.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,5,'Describe and compare measurable attributes.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Classify objects and count the number of objects in each category.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,6,'Identify and describe shapes.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10,6,'Analyze, compare, create, and compose shapes.');
 
 
 --ELA
