@@ -129,7 +129,6 @@ CREATE TABLE core_clusters (
 CREATE TABLE core_standards (
         id text NOT NULL UNIQUE,
 	description text,	
-	subject_id integer default 1,
 	core_clusters_id integer NOT NULL,
 	PRIMARY KEY (id),	
         FOREIGN KEY (core_clusters_id) REFERENCES core_clusters(id)
