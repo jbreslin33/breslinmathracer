@@ -415,6 +415,21 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 		scenario 4: ok i see that you have finished k.g.b.6 which is the last standard of the grade its time for a grade test.	
 		
 
+		these test will need a way to be strung together...I would say do it by standard......	
+		tables for this
+		
+		issue a grade test by entering a record in db.
+		then you can check for any 	
+			
+				
+		grade_test: id,grade_id,start_time,end_time, 
+		domain_test
+		cluster_test: 
+
+				id, start_time, end_time, user_id, level, learning_standards_id, transaction_code, score, score_needed 
+		standard_test : id, start_time, end_time, user_id,        learning_standards_id, transaction_code 
+		
+
 		see what the last test was on		
 	*/
 	
