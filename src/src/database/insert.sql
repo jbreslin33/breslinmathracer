@@ -1,10 +1,12 @@
 
-delete from core_grades;
 delete from core_subjects;
+delete from core_grades;
 delete from core_domains;
 
 delete from core_subjects_grades;
-delete from core_subjects_grades;
+
+delete from core_domains_subjects_grades;
+delete from core_clusters;
 
 
 
@@ -86,6 +88,15 @@ insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (28,5,11); -- 5.g 
 
 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,1,'Count to tell the number of objects.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (3,1,'Compare numbers.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,4,'Classify objects and count the number of objects in each category.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Identify and describe shapes.');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
 
 
 
