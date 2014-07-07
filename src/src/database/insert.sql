@@ -9,8 +9,35 @@ insert into core_subjects(id,description) values (2,'ELA');
 
 insert into core_grades(id,description) values (1,'k'); 
 insert into core_grades(id,description) values (2,'1'); 
+insert into core_grades(id,description) values (3,'2'); 
+insert into core_grades(id,description) values (4,'3'); 
+insert into core_grades(id,description) values (5,'4'); 
+insert into core_grades(id,description) values (6,'5'); 
+insert into core_grades(id,description) values (7,'6'); 
+insert into core_grades(id,description) values (8,'7'); 
+insert into core_grades(id,description) values (9,'8'); 
+insert into core_grades(id,description) values (10,'9'); 
 
-insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (1,1,1); 
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (1,1,1); -- (s:m g:k)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (2,2,1); -- (s:e g:k)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (3,1,2); -- (s:m g:1)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (4,2,2); -- (s:e g:1)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (5,1,3); -- (s:m g:2)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (6,2,3); -- (s:e g:2)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (7,1,4); -- (s:m g:3)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (8,2,4); -- (s:e g:3)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (9,1,5); -- (s:m g:4)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (10,2,5); -- (s:e g:4)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (11,1,6); -- (s:m g:5)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (12,2,6); -- (s:e g:5)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (13,1,7); -- (s:m g:6)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (14,2,7); -- (s:e g:6)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (15,1,8); -- (s:m g:7)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (16,2,8); -- (s:e g:7)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (17,1,9); -- (s:m g:8)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (18,2,9); -- (s:e g:8)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (19,1,10); -- (s:m g:9)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (20,2,10); -- (s:e g:9)
 
 
 
