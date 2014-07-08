@@ -354,10 +354,8 @@ function advanceCurrentLearningStandard($conn,$user_id)
        	dbErrorCheck($conn,$updateResult);
 }
 
-function setLevelSessionVariablesAdvance($conn,$user_id)
+function setLevelsProgression($conn,$user_id)
 {
-	advanceCurrentLearningStandard($conn,$user_id);
-
 	//get variables from current learning_standard 
  	$query = "select levels, progression from learning_standards where id = '";
 	$query .= $_SESSION["ref_id"];
@@ -384,6 +382,12 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         {
                 echo "error no LearningStandard";
         }
+}
+
+function setLevelSessionVariablesAdvance($conn,$user_id)
+{
+	advanceCurrentLearningStandard($conn,$user_id);
+	setLevelsProgression($conn,$user_id);
 
 	$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 	$levelsVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["levels"]);
