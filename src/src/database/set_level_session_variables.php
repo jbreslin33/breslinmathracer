@@ -384,6 +384,15 @@ function setLevelsProgression($conn,$user_id)
         }
 }
 
+function bumpLevel($conn,$user_id,$levelVar)
+{
+	//you are just going up one level is same learning_standard so just set session vars to reflect that.
+	$levelVar++;
+	$_SESSION["level"] = $levelVar;
+	
+	$attemptid = $_SESSTION["attempt_id"];
+}
+
 function setLevelSessionVariablesAdvance($conn,$user_id)
 {
 	advanceCurrentLearningStandard($conn,$user_id);
@@ -394,11 +403,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
        	if ($levelVar < $levelsVar)
 	{
-		//you are just going up one level is same learning_standard so just set session vars to reflect that.
-		$levelVar++;
-		$_SESSION["level"] = $levelVar;
-	
-		$attemptid = $_SESSTION["attempt_id"];
+		bumpLevel($conn,$user_id,$levelVar);
 	}
 	else
 	{
