@@ -389,79 +389,7 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 		$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
                	dbErrorCheck($conn,$updateResult);
 	}
-	/* else you finished the standard.
-		at this point we will do a test....
-		this way we can still allow the overide of a standard... 			
-		if you pass the whole test we send you to the earliest standard you have not completed in db. 	
-		if you fail the test then we send to where you failed and stick you at boss level which is just one level back in theory.	
 
-		how do we get in test mode???
-		easy way might be to simply insert a record with no end_time...until you provide an end time you are in test mode.....which may mean 
-		starting over??? to soften the blow amongst other reasons of starting a test over maybe they should be chunked. 
-		So check the last test record
-		
-		once in test mode it will only test you on things you have completed. and maybe not even all of them.	
-	
-		ok the test:
-		first we need to see where you are in db....
-		scenario 1: ok i see that you have finished progession 2 which means you are not done the whole cluster 	
-		this calls for a standards test. which will be on standard 1 and 2. 
-
-		scenario 2: ok i see that you hae finished progression 3 which is and end of cluster standard its time for a 
-		cluster test.
-
-		scenario 3: ok i see that you have finished k.cc.c.7 which is an end of domain standard so its time for a domain test...
-
-		scenario 4: ok i see that you have finished k.g.b.6 which is the last standard of the grade its time for a grade test.	
-		
-
-		these test will need a way to be strung together...I would say do it by standard......	
-		tables for this
-		
-		issue a grade test by entering a record in db.
-		then you can check for any 	
-			
-				
-		grade_test: id,grade_id,start_time,end_time, 
-		domain_test
-		cluster_test: 
-
-				id, start_time, end_time, user_id, level, learning_standards_id, transaction_code, score, score_needed 
-
-
-		don't rest till its done once issued. it's triggered after completing a standard(any standard) for instance even if you jumped to 4th grade
-		we are still gonna test you on standard_test or other cluster etc test based on where you currently are in db. meaning have many learning_standards have you completed in succession.	
-
-		learning_standards_test : id, start_time, end_time, user_id,        learning_standards_id, transaction_code 
-		item_attempt:wq
-	
-
-		in theory a cluster test could be 1 to 7 standard_tests 
-		cluster_test:   id, start_time, end_time, user_id,        clusters_id,           transaction_code 
-
-		clusters: id, description 	
-		grade: id, description
-		domain: id, description
-				
-
-		clusters: id, progression, 	
-id     | progression | levels | core_standards_id
-				
-
-		see what the last test was on		
-
-
-		--trashing all of the above:
-		how about if we query db for 10 questions.
-		we take select question types which have not been answered correct x(10) times in a row 
-		question. do we use all item_attempts? or do we create a new table? 
-		if we use old table we can use inserts we have already used no need to create init insert.
-	 	we could just have a g_evaluation game. this game would then call a s_evaluation sheet.
-		which would then contain every single type in whole application.
-		it would then select accordingly. if you got one wrong it would take you back a level on that game and send you there.	then the learning_standard the item_attempts would point to would be g_evaluation which could simple be first gamee!!!! then it would send you there its levelneeded is 1. it would then knock down a level on a higher progression or when finished it would simply select bump you up naturally......	
-
-	to do this i think we need a types table....then have item_itempts point to that..
-	*/
 	
 	else
 	{

@@ -23,8 +23,8 @@ var Sheet = new Class(
 	 	this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelFailedStartTime = 0;
 
-                this.mShowLevelPassedThresholdTime = 10000;
-                this.mShowLevelFailedThresholdTime = 10000;
+                this.mShowLevelPassedThresholdTime = 1000;
+                this.mShowLevelFailedThresholdTime = 1000;
 
                 this.mFailedAttemptsThreshold = 0;
 
