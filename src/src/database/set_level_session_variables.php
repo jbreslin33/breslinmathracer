@@ -343,8 +343,22 @@ function updateFailedAttempts($conn,$user_id)
         }
 }
 
+function advanceCurrentLearningStandard($conn,$user_id)
+{
+	//update levelattempts to say we passed. keep in mind transaction_code 1 is same as level bump.
+	$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
+	$update .= $_SESSION["attempt_id"];
+	$update .=  ";"; 
+               
+	$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
+       	dbErrorCheck($conn,$updateResult);
+}
+
 function setLevelSessionVariablesAdvance($conn,$user_id)
 {
+	advanceCurrentLearningStandard($conn,$user_id);
+
+	//get variables from current learning_standard 
  	$query = "select levels, progression from learning_standards where id = '";
 	$query .= $_SESSION["ref_id"];
         $query .= "';";
@@ -370,27 +384,18 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         {
                 echo "error no LearningStandard";
         }
+
 	$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 	$levelsVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["levels"]);
 
        	if ($levelVar < $levelsVar)
 	{
-		//go up one level in same ref_id
+		//you are just going up one level is same learning_standard so just set session vars to reflect that.
 		$levelVar++;
 		$_SESSION["level"] = $levelVar;
 	
 		$attemptid = $_SESSTION["attempt_id"];
-	
-		//update level attempts
-		$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
-		$update .= $_SESSION["attempt_id"];
-		$update .=  ";"; 
-                
-		$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
-               	dbErrorCheck($conn,$updateResult);
 	}
-
-	
 	else
 	{
 		//go to new ref_id
@@ -408,14 +413,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
         
 		if ($num2 > 0)
         	{
-			//update level attempts to say we passed
-			$update = "update levelattempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
-			$update .= $_SESSION["attempt_id"];
-			$update .=  ";"; 
-                
-			$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
-                	dbErrorCheck($conn,$updateResult);
-			
                 	//get the id from user table
                 	$levels      = pg_Result($result2, 0, 'levels');
                 	$ref_id       = pg_Result($result2, 0, 'id');
