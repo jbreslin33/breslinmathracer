@@ -510,9 +510,16 @@ function newLearningStandard($conn,$user_id)
 
 	$nextID = '';
 
-	while ($nextID == '')
+	if ($_SESSION["ref_id"] == 'evaluation')
 	{
-		$nextID = getNextNotMasteredLearningStandard($conn,$user_id);
+		while ($nextID == '')
+		{
+			$nextID = getNextNotMasteredLearningStandard($conn,$user_id);
+		}
+	}
+	else
+	{
+		$nextID = 'evaluation';
 	}
  	
  	$query2 = "select id, core_standards_id, levels, progression from learning_standards where id = '";
