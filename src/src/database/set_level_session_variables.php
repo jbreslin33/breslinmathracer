@@ -530,11 +530,12 @@ function newLearningStandard($conn,$user_id)
  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'got it','$nextID');";
   	pg_query($conn,$equery);
  	
-	//go to new ref_id
-	//you need to goto next LearningStandard...
- 	$query2 = "select id, core_standards_id, levels, progression from learning_standards where progression > ";
-	$query2 .= $_SESSION["progression"];
-        $query2 .= " order by progression asc LIMIT 1;";
+ 	$query2 = "select id, core_standards_id, levels, progression from learning_standards where id = '";
+	$query2 .= $nextID;
+        $query2 .= "' order by progression asc LIMIT 1;";
+		
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'query2','$query2');";
+  	pg_query($conn,$equery);
 											
 	//get db result
         $result2 = pg_query($conn,$query2) or die('Could not connect: ' . pg_last_error());
@@ -554,6 +555,9 @@ function newLearningStandard($conn,$user_id)
                	$_SESSION["progression"] = $progression;
                	$_SESSION["ref_id"] = $ref_id;
                	$_SESSION["standard"] = $standard;
+ 	
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'ref_id','$ref_id');";
+  		pg_query($conn,$equery);
 			
 		//BEGIN NEW CODE
 		//right here you need to check the level of the ref_id you are about to send them to.
