@@ -279,12 +279,12 @@ function insertLevelAttempt($conn,$user_id)
 
 function insertItemAttempt($conn,$user_id)
 {
-	$insert = "insert into item_attempts (start_time,levelattempts_id,transaction_code,type_id) VALUES (CURRENT_TIMESTAMP,";
+	$insert = "insert into item_attempts (start_time,levelattempts_id,transaction_code,item_types_id) VALUES (CURRENT_TIMESTAMP,";
   	$insert .= $_SESSION["attempt_id"];
 	$insert .= ",";	
   	$insert .= $_SESSION["item_transaction_code"];
 	$insert .= ",";	
-  	$insert .= $_SESSION["type_id"];
+  	$insert .= $_SESSION["item_types_id"];
 	$insert .= ");";	
 
         //get db result

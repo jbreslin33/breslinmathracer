@@ -160,7 +160,7 @@ var Application = new Class(
                 xmlhttp.send();
         },
 
-	sendLevelAttempt: function(typeid,transactioncode)
+	sendLevelAttempt: function(itemtypesid,transactioncode)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -171,11 +171,11 @@ var Application = new Class(
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../src/database/send_level_attempt.php?typeid=" + typeid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.open("POST","../../src/database/send_level_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
                 xmlhttp.send();
         },
 	
-	sendItemAttempt: function(typeid,transactioncode)
+	sendItemAttempt: function(itemtypesid,transactioncode)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -186,7 +186,7 @@ var Application = new Class(
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../src/database/send_item_attempt.php?typeid=" + typeid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.open("POST","../../src/database/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
                 xmlhttp.send();
         },
 
