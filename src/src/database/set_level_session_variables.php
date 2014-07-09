@@ -403,55 +403,35 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
        	if ($levelVar < $levelsVar)
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'bumpLevel','');";
-  		pg_query($conn,$equery);
-
 		bumpLevel($conn,$user_id,$levelVar);
 	}
 	else
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'newLearningStandard','');";
-  		pg_query($conn,$equery);
 		newLearningStandard($conn,$user_id);
 	}
 }
 
 function getNextLearningStandard($conn,$user_id)
 {
- 	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
-  	pg_query($conn,$equery);
+ 	//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
+  	//pg_query($conn,$equery);
 
  	$query = "select id from learning_standards where progression > ";
 	$query .= $_SESSION["progression_counter"];
         $query .= " order by progression asc LIMIT 1;";
  	
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'d','');";
-  	pg_query($conn,$equery);
-
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','');";
-        pg_query($conn,$equery);
-
-											
 	//get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$result);
 	
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'e','');";
-  	pg_query($conn,$equery);
-        
 	$num = pg_num_rows($result);
 	
 	$id = '';
 	
 	if ($num > 0)
         {
- 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'f','');";
-  		pg_query($conn,$equery);
-
                	//get the id from user table
                	$id       = pg_Result($result, 0, 'id');
- 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$id','');";
-  		pg_query($conn,$equery);
 	}
 
 
@@ -459,19 +439,10 @@ function getNextLearningStandard($conn,$user_id)
 
 function newLearningStandard($conn,$user_id)
 {
- 	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-  	pg_query($conn,$equery);
-
 	$_SESSION["progression_counter"] = 0;
-
- 	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','');";
-  	pg_query($conn,$equery);
 
 	getNextLearningStandard($conn,$user_id);
  	
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-  	pg_query($conn,$equery);
-
 	//go to new ref_id
 	//you need to goto next LearningStandard...
  	$query2 = "select id, core_standards_id, levels, progression from learning_standards where progression > ";
