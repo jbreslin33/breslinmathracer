@@ -124,7 +124,7 @@ insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.1
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('rl.k.1','rl.k.1',1,10); 
 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.1','k.cc.a.1',1,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',2,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',2,1); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.2','k.cc.a.2',3,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',4,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',5,4); 
