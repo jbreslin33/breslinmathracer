@@ -9,7 +9,7 @@ Extends: Game,
 	{
        		this.parent(application);
 	
-		this.mSheet = new sk_cc_a_2(this);	
+		this.mSheet = new s4_nbt_a_1(this);	
 	},
 
 	destructor: function()
@@ -31,7 +31,7 @@ Extends: Game,
 
 /* SHEET */
 
-var sk_cc_a_2 = new Class(
+var s4_nbt_a_1 = new Class(
 {
 Extends: Sheet,
         initialize: function(game)
@@ -52,158 +52,407 @@ Extends: Sheet,
                         this.setScoreNeeded(APPLICATION.mLevel); 
                 }
 
-		this.addItem(new i_k_cc_a_2_t_1(this));
-		this.addItem(new i_k_cc_a_2_t_2(this));
-		this.addItem(new i_k_cc_a_2_t_3(this));
-		this.addItem(new i_k_cc_a_2_t_4(this));
+		for (s = 0; s < this.mScoreNeeded; s++)
+		{	
+			rand = 1 + Math.floor(Math.random()*10);
+
+			if(rand == 1)
+				this.addItem(new i_4_nbt_a_1_t_1(this));
+
+			if(rand == 2)
+				this.addItem(new i_4_nbt_a_1_t_2(this));
+
+			if(rand == 3)
+				this.addItem(new i_4_nbt_a_1_t_3(this));
+
+			if(rand == 4)
+				this.addItem(new i_4_nbt_a_1_t_4(this));
+
+			if(rand == 5)
+				this.addItem(new i_4_nbt_a_1_t_5(this));
+
+			if(rand == 6)
+				this.addItem(new i_4_nbt_a_1_t_6(this));
+
+			if(rand == 7)
+				this.addItem(new i_4_nbt_a_1_t_7(this));
+
+			if(rand == 8)
+				this.addItem(new i_4_nbt_a_1_t_8(this));
+
+			if(rand == 9)
+				this.addItem(new i_4_nbt_a_1_t_9(this));
+
+			if(rand == 10)
+				this.addItem(new i_4_nbt_a_1_t_10(this));
+
 		
-		this.randomize(10);
+		}
         }
 });
 
 /* ITEMS: */ 
 
-/* TYPE_DESCRIPTION: i_k_cc_a_2_t_1: This type will ask what comes next after a number from 0-99. */
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_1: This type will ask which digit is in the ones column. */
 
-var i_k_cc_a_2_t_1 = new Class(
+var i_4_nbt_a_1_t_1 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
+                this.mStandard = '4.nbt.a.1';
                 this.mType = 1;
 
-		var x = Math.floor(Math.random()*100);
-		var a = parseInt(x+1);
-		var b = 0;
-		var c = 0; 
+		var place = 0;
 
-		while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-		{
-			b = Math.floor(Math.random()*7)-3;
-			b = parseInt(a+b);
-			c = Math.floor(Math.random()*7)-3;
-			c = parseInt(a+c);
-		}
+		var number = '';
 
-		this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
+		var answer = 0;
+		var rand = 0;
+
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'ones';
+		answer = ones;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
+                //this.mButtonA.setAnswer(a);
+                //this.mButtonB.setAnswer(b);
+                //this.mButtonC.setAnswer(c);
+                //this.shuffle(10);
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_2_t_2: This type will ask what 2 numbers come next after a number from 0-99. */
 
-var i_k_cc_a_2_t_2 = new Class(
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_2: This type will ask which digit is in the tens column. */
+
+var i_4_nbt_a_1_t_2 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
+                this.mStandard = '4.nbt.a.1';
                 this.mType = 2;
 
-                var x = Math.floor(Math.random()*98);
-                var a = parseInt(x+1);
-                var b = 0;
-                var c = 0;
+		var place = 0;
 
-                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-                {
-                        b = Math.floor(Math.random()*7)-3;
-                        b = parseInt(a+b);
-                        c = Math.floor(Math.random()*7)-3;
-                        c = parseInt(a+c);
-                }
+		var number = '';
 
-                a = a + ',' + parseInt(a+1);
-                b = b + ',' + parseInt(b+1);
-                c = c + ',' + parseInt(c+1);
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
 
-                this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+		var answer = 0;
+		var rand = 0;
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'tens';
+		answer = tens;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_2_t_3: This type will ask what 3 numbers come next after a number from 0-99. */
 
-var i_k_cc_a_2_t_3 = new Class(
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_3: This type will ask which digit is in the hundreds column. */
+
+var i_4_nbt_a_1_t_3 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
+                this.mStandard = '4.nbt.a.1';
                 this.mType = 3;
 
-                var x = Math.floor(Math.random()*98);
-		var a = parseInt(x+1);
-                var b = 0;
-                var c = 0;
+		var place = 0;
 
-                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-                {
-                        b = Math.floor(Math.random()*7)-3;
-                        b = parseInt(a+b);
-                        c = Math.floor(Math.random()*7)-3;
-                        c = parseInt(a+c);
-                }
+		var number = '';
 
-                a = a + ',' + parseInt(a+1) + ',' + parseInt(a+2);
-                b = b + ',' + parseInt(b+1) + ',' + parseInt(b+2);
-                c = c + ',' + parseInt(c+1) + ',' + parseInt(c+2);
-                
-		this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
+		var answer = 0;
+		var rand = 0;
+
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'hundreds';
+		answer = hundreds;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
         }
 });
 
-/ *TYPE_DESCRIPTION: i_k_cc_a_2_t_4: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100. */
 
-var i_k_cc_a_2_t_4 = new Class(
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_4: This type will ask which digit is in the thousands column. */
+
+var i_4_nbt_a_1_t_4 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
+                this.mStandard = '4.nbt.a.1';
                 this.mType = 4;
 
-                var a = Math.floor(Math.random()*98);
-                var b = 0;
-                var c = 0;
+		var place = 0;
 
-                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-                {
-                        b = Math.floor(Math.random()*7)-3;
-                        b = parseInt(a+b);
-                        c = Math.floor(Math.random()*7)-3;
-                        c = parseInt(a+c);
-                }
+		var number = '';
 
-                this.setQuestion('What is the missing number? ' + parseInt(a-3) + ',' + parseInt(a-2) + ',' + parseInt(a-1) + ',_,' + parseInt(a+1) + ',' + parseInt(a+2) + ',' + parseInt(a+3));
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
 
-                this.setAnswer(a,0);
+		var answer = 0;
+		var rand = 0;
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'thousands';
+		answer = thousands;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
         }
 });
 
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_5: This type will give thousands and ask for hundreds. */
+
+var i_4_nbt_a_1_t_5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mStandard = '4.nbt.a.1';
+                this.mType = 5;
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'thousands';
+		varC = 'hundreds';
+
+		answer = varA * 10;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_6: This type will give thousands and ask for tens. */
+
+var i_4_nbt_a_1_t_6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mStandard = '4.nbt.a.1';
+                this.mType = 6;
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'thousands';
+		varC = 'tens';
+
+		answer = varA * 100;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_7: This type will give thousands and ask for ones. */
+
+var i_4_nbt_a_1_t_7 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mStandard = '4.nbt.a.1';
+                this.mType = 7;
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'thousands';
+		varC = 'ones';
+
+		answer = varA * 1000;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_8: This type will give hundreds and ask for tens. */
+
+var i_4_nbt_a_1_t_8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mStandard = '4.nbt.a.1';
+                this.mType = 8;
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'hundreds';
+		varC = 'tens';
+
+		answer = varA * 10;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_9: This type will give hundreds and ask for ones. */
+
+var i_4_nbt_a_1_t_9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mStandard = '4.nbt.a.1';
+                this.mType = 9;
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'hundreds';
+		varC = 'ones';
+
+		answer = varA * 100;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_10: This type will give tens and ask for ones. */
+
+var i_4_nbt_a_1_t_10 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mStandard = '4.nbt.a.1';
+                this.mType = 10;
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'tens';
+		varC = 'ones';
+
+		answer = varA * 10;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
