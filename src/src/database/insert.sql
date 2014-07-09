@@ -129,4 +129,8 @@ insert into learning_standards (id,core_standards_id,progression,levels) values 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',4,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',5,4); 
 
-insert into item_types(id,learning_standards_id,description) values (1,'evaluation','Can student tell what comes after a random number from 0 to 99.');
+insert into item_types(id,progression,learning_standards_id,description) values (1,1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
+insert into item_types(id,progression,learning_standards_id,description) values (2,2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
+insert into item_types(id,progression,learning_standards_id,description) values (3,3,'k.cc.a.1','This type will ask what comes next after a number ending in 0 from 0-99.');
+insert into item_types(id,progression,learning_standards_id,description) values (4,4,'k.cc.a.1','When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100.');
+--insert into item_types(id,progression,learning_standards_id,description) values (1,1,'k.cc.a.1','');

@@ -166,7 +166,9 @@ CREATE TABLE levelattempts (
 
 CREATE TABLE item_types (
         id integer NOT NULL UNIQUE,
+	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	learning_standards_id text NOT NULL,
+	active_code integer NOT NULL DEFAULT 1, -- 0 not active, 1 active to let you know its not in application any more
 	description text,	
         PRIMARY KEY (id),
 	FOREIGN KEY (learning_standards_id) REFERENCES learning_standards(id)
