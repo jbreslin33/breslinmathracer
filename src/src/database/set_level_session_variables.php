@@ -413,9 +413,6 @@ function setLevelSessionVariablesAdvance($conn,$user_id)
 
 function getNextNotMasteredLearningStandard($conn,$user_id)
 {
- 	//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
-  	//pg_query($conn,$equery);
-
  	$query = "select id from learning_standards where progression > ";
 	$query .= $_SESSION["progression_counter"];
         $query .= " order by progression asc LIMIT 1;";
@@ -457,16 +454,12 @@ function getNextNotMasteredLearningStandard($conn,$user_id)
         		//passed
         		if ($transaction_codeVar == 1)
         		{
- 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-  				pg_query($conn,$equery);
                 		$levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
                 		$levelVar++;
         		}
  			//failed
         		if ($transaction_codeVar == 0)
         		{
- 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','');";
-  				pg_query($conn,$equery);
                 		if ($levelVar > 1)
                 		{
                         		$levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
@@ -496,8 +489,6 @@ function getNextNotMasteredLearningStandard($conn,$user_id)
 			//up the counter	
 			$_SESSION["progression_counter"] = $progression;
         	}
- 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$levelVar','$levelsVar');";
-  		pg_query($conn,$equery);
 
 		if ($levelVar < $levelsVar)
 		{
@@ -510,8 +501,6 @@ function getNextNotMasteredLearningStandard($conn,$user_id)
 	}
 	else
 	{
- 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','No learning standards left in db!!');";
-  		pg_query($conn,$equery);
 	}
 }
 
@@ -524,19 +513,12 @@ function newLearningStandard($conn,$user_id)
 	while ($nextID == '')
 	{
 		$nextID = getNextNotMasteredLearningStandard($conn,$user_id);
- 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'loop','$nextID');";
-  		pg_query($conn,$equery);
 	}
- 	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'got it','$nextID');";
-  	pg_query($conn,$equery);
  	
  	$query2 = "select id, core_standards_id, levels, progression from learning_standards where id = '";
 	$query2 .= $nextID;
         $query2 .= "' order by progression asc LIMIT 1;";
 		
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'query2','$query2');";
-  	pg_query($conn,$equery);
-											
 	//get db result
         $result2 = pg_query($conn,$query2) or die('Could not connect: ' . pg_last_error());
         dbErrorCheck($conn,$result2); 
@@ -556,9 +538,6 @@ function newLearningStandard($conn,$user_id)
                	$_SESSION["ref_id"] = $ref_id;
                	$_SESSION["standard"] = $standard;
  	
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'ref_id','$ref_id');";
-  		pg_query($conn,$equery);
-			
 		//BEGIN NEW CODE
 		//right here you need to check the level of the ref_id you are about to send them to.
                	$selectLastLevelAttempt = "select level, transaction_code from levelattempts where user_id = ";
