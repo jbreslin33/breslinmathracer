@@ -2315,6 +2315,19 @@ var Application = new Class(
                                	this.mGame = new g4_nbt_a_1(APPLICATION);
 			}	
 		}
+		if (this.mRef_id == 'g4.nbt.a.2')
+		{ 
+             		if (this.mGameName != "g4_nbt_a_2")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "g4_nbt_a_2";
+                               	this.mGame = new g4_nbt_a_2(APPLICATION);
+			}	
+		}
 		if (this.mRef_id == '4.md.a.1')
 		{ 
              		if (this.mGameName != "g4_md_a_1")
