@@ -8,7 +8,7 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 
-$_SESSION["type_id"] = $_GET["typeid"];
+$_SESSION["item_type_id"] = $_GET["itemtypeid"];
 $_SESSION["item_transaction_code"] = $_GET["transactioncode"];
 
 insertItemAttempt($conn,$_SESSION["user_id"]);
