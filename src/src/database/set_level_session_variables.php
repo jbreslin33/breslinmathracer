@@ -136,7 +136,7 @@ function changeLevel($conn,$user_id)
 		$insert .= $_POST["levels"];
                 $insert .= ",'";
 		$insert .= $ref_id; 
-                $insert .= "',2);";
+                $insert .= "',3);";
 		
                 $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
                 dbErrorCheck($conn,$insertResult);
@@ -185,21 +185,16 @@ function setLevelSessionVariablesChange($conn,$user_id)
 			$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 			$_SESSION["transaction_code"] = $transaction_code;
 
-			if ($transaction_code == 0 && $levelVar > 1)
+			if ($transaction_code == 2 && $levelVar > 1)
 			{
 				//the last time this standard was played student failed the level so lets bump him down 
 				$levelVar--;
 				$_SESSION["level"] = $levelVar;
 			} 
-			if ($transaction_code == 1)
+			if ($transaction_code == 2)
 			{
 				//the last time this standard was played student passed the level so lets bump him up 
 				$levelVar++;
-				$_SESSION["level"] = $levelVar;
-			} 
-			if ($transaction_code == 2)
-			{
-				//the last time this standard updated with update standard button 
 				$_SESSION["level"] = $levelVar;
 			} 
 		}
@@ -216,7 +211,7 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		$insert .= $_SESSION["level"];
 		$insert .= ",'";
 		$insert .= $ref_id;
-		$insert .= "',2);";
+		$insert .= "',3);";
 	
 		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
 		dbErrorCheck($conn,$insertResult);
