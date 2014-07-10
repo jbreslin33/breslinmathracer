@@ -617,8 +617,11 @@ function rewindCurrentLearningStandard($conn,$user_id)
 function bumpLevelDown($conn,$user_id,$levelVar)
 {
 	//you are just going down one level is same learning_standard so just set session vars to reflect that.
-	$levelVar--;
-	$_SESSION["level"] = $levelVar;
+	if ($levelVar > 1)
+	{
+		$levelVar--;
+		$_SESSION["level"] = $levelVar;
+	}
 }
 
 function setLevelSessionVariablesRewind($conn,$user_id)
