@@ -477,9 +477,6 @@ function newLearningStandard($conn,$user_id)
 
 	if ($_SESSION["ref_id"] == 'evaluation')
 	{
-		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'k.cc','');";
-  		$result = pg_query($conn,$query);
-
 		while ($nextID == '')
 		{
 			$nextID = getNextNotMasteredLearningStandard($conn,$user_id);
@@ -586,17 +583,16 @@ function setRawData($conn,$user_id)
 	//right here you need to query db to get rawdata for questions.
 	$_SESSION["item_progression_counter"] = 0;
 	
-	$itemArray[0] = 1;
-	$c = 0;
-	while($c < 4)	
+	$itemArray = array();
+	$counter = count($itemArray);	
+	while(count($itemArray) < 4)	
 	{
 		$item = checkItemProgression($conn,$user_id);
 
 		if ($item != 0)
 		{
-			$itemArray[$c] = $item;
+			array_push($itemArray,"$item");
 		}
-		$c++;
 	}
 	$itemString = $itemArray[0];
 	$itemString .= ":";
@@ -611,6 +607,7 @@ function setRawData($conn,$user_id)
 
 function checkItemProgression($conn,$user_id)
 {
+//select start_time, item_types_id from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id;
 	return 4;
 } 
 
