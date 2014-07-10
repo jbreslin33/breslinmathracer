@@ -477,6 +477,9 @@ function newLearningStandard($conn,$user_id)
 
 	if ($_SESSION["ref_id"] == 'evaluation')
 	{
+		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'k.cc','');";
+  		$result = pg_query($conn,$query);
+
 		while ($nextID == '')
 		{
 			$nextID = getNextNotMasteredLearningStandard($conn,$user_id);
@@ -549,6 +552,9 @@ function newLearningStandard($conn,$user_id)
 	}
 	else
 	{
+		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval','');";
+  		$result = pg_query($conn,$query);
+
 		$nextID = 'evaluation';
       
 		//do the insert...
@@ -567,12 +573,46 @@ function newLearningStandard($conn,$user_id)
                 $_SESSION["level"] = 1;
                 $_SESSION["levels"] = 1;
                 $_SESSION["progression"] = 2;
-                $_SESSION["standard"] = "evaluation";
-               	$_SESSION["ref_id"] = "evaluation";
-               	$_SESSION["item_type_id_raw_data"] = "1:2:3:4";
+                $_SESSION["standard"] = 'evaluation';
+               	$_SESSION["ref_id"] = 'evaluation';
 	
+		setRawData($conn,$user_id);	
+
 	}
 }
+
+function setRawData($conn,$user_id)
+{
+	//right here you need to query db to get rawdata for questions.
+	$_SESSION["item_progression_counter"] = 0;
+	
+	$itemArray[0] = 1;
+	$c = 0;
+	while($c < 4)	
+	{
+		$item = checkItemProgression($conn,$user_id);
+
+		if ($item != 0)
+		{
+			$itemArray[$c] = $item;
+		}
+		$c++;
+	}
+	$itemString = $itemArray[0];
+	$itemString .= ":";
+	$itemString .= $itemArray[1];
+	$itemString .= ":";
+	$itemString .= $itemArray[2];
+	$itemString .= ":";
+	$itemString .= $itemArray[3];
+	
+       	$_SESSION["item_type_id_raw_data"] = $itemString; 
+}
+
+function checkItemProgression($conn,$user_id)
+{
+	return 4;
+} 
 
 function rewindCurrentLearningStandard($conn,$user_id)
 {
