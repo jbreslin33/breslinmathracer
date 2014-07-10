@@ -20,7 +20,8 @@ var Application = new Class(
 		this.mLevels = levels;
 		this.mProgression = progression;
 		this.mStandard = standard;
-		this.mFailedAttempts = failed_attempts;
+		this.mItemTypeIDRawData = '';
+		this.mItemTypeIDArray = 0;
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
@@ -222,7 +223,7 @@ var Application = new Class(
 					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 					APPLICATION.mProgression = responseArray[4];
 					APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mFailedAttempts = responseArray[6];
+					APPLICATION.mItemTypeIDRawData = responseArray[6];
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -230,6 +231,12 @@ var Application = new Class(
 					if (APPLICATION.mRef_id == "evaluation")
 					{
 						APPLICATION.log('evaluation data');
+						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
+						APPLICATION.mItemTypeIDArray = itemarray; 
+						for (var i = 0; i < itemarray.length; i++)
+						{
+							APPLICATION.log('i:' + APPLICATION.mItemTypeIDArray[i]);
+						}
 					} 
 					else
 					{
@@ -275,7 +282,7 @@ var Application = new Class(
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                                 	APPLICATION.mProgression = responseArray[4];
                                 	APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mFailedAttempts = responseArray[6];
+					APPLICATION.mItemTypeIDRawData = responseArray[6];
                                 	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
