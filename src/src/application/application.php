@@ -7,7 +7,7 @@ var Application = new Class(
 	initialize: function()
         {
 		//logging
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//personal info
 		this.mUsername = username;
@@ -228,8 +228,9 @@ var Application = new Class(
 					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 
-					if (APPLICATION.mRef_id == "evaluation")
+					if (APPLICATION.mRef_id == 'evaluation')
 					{
+						APPLICATION.log('evaluation:' + APPLICATION.mRef_id);
 						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
 						for (var i = 0; i < itemarray.length; i++)
 						{
@@ -237,6 +238,10 @@ var Application = new Class(
 						}
 						APPLICATION.mItemTypeIDArray = itemarray; 
 					} 
+					else
+					{
+						APPLICATION.log('k.cc:' + APPLICATION.mRef_id);
+					}
 				}
 			}
                 }

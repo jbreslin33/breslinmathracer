@@ -9,7 +9,7 @@ var Game = new Class(
 		this.mApplication = application;
 		
 		//logs
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 	
 		//left over variable from old code but still needed until we make full switch	
 		this.mReadyForNormalApplication = false;

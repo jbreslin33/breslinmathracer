@@ -6,7 +6,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 
 		//GAME
 		this.mGame = game;
@@ -262,10 +262,8 @@ var Sheet = new Class(
 
         showBossShapes: function()
         {
-		APPLICATION.log('showBoss');
                 for (var i = 0; i < this.mBossShapeArray.length; i++)
                 {
-			APPLICATION.log('showBoss in loop');
                         this.mBossShapeArray[i].setVisibility(true);
                 }
         },
