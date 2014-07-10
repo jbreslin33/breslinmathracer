@@ -22,7 +22,7 @@ $returnString .= $_SESSION["progression"];
 $returnString .= ",";
 $returnString .= $_SESSION["levels"];
 $returnString .= ",";
-$returnString .= $_SESSION["failed_attempts"];
+$returnString .= $_SESSION["item_type_id_raw_data"];
 echo $returnString;
 
 ?>
