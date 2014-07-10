@@ -95,7 +95,6 @@ var Sheet = new Class(
 			item = this.mItemArray[0];
                         item.destructor();
 			this.mItemArray.splice(0,1);
-			APPLICATION.log('destroyItems loop');
                 }
 
                 //destroy question array
