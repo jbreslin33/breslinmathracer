@@ -3,29 +3,13 @@
 var k_cc_a_1 = new Class(
 {
 
-Extends: Game,
+Extends: GameSheet,
 
 	initialize: function(application)
 	{
        		this.parent(application);
 	
 		this.mSheet = new sk_cc_a_1(this);	
-	},
-
-	destructor: function()
-	{
-		this.parent();
-		this.mSheet.destructor();
-	},
-
-	update: function()
-	{
-		this.parent();
-	
-		if (this.mSheet)
-		{	
-			this.mSheet.update();
-		}
 	}
 });
 

@@ -151,12 +151,15 @@ var Item = new Class(
 
 	update: function()
         {
-                //state machine
-                this.mStateMachine.update();
-
-		if (this.mClock)
+		if (this.mSheet)
 		{
-			this.mClock.update();
+                	//state machine
+                	this.mStateMachine.update();
+
+			if (this.mClock)
+			{
+				this.mClock.update();
+			}
 		}
         },
 

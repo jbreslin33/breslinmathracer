@@ -57,13 +57,16 @@ var Sheet = new Class(
 	update: function()
 	{
  		//state machine
-                this.mStateMachine.update();
-
-		for (i = 0; i < this.mItemArray.length; i++)
+		if (this.mGame)
 		{
-			if (this.mItemArray[i])
+                	this.mStateMachine.update();
+
+			for (i = 0; i < this.mItemArray.length; i++)
 			{
-				this.mItemArray[i].update();
+				if (this.mItemArray[i])
+				{
+					this.mItemArray[i].update();
+				}
 			}
 		}
 	},
