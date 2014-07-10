@@ -233,7 +233,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 }
 function insertLevelAttempt($conn,$user_id)
 {
-        //insert into levelattempts (start_time,user_id,level,ref_id) VALUES (CURRENT_TIMESTAMP,1,1,'CA9EE2E34F384E95A5FA26769C5864B8');
         $insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
         $insert .= ",";
@@ -589,7 +588,7 @@ function newLearningStandard($conn,$user_id)
                 $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
                 $insert .= $_SESSION["user_id"];
                 $insert .= ",";
-                $insert .= $_SESSION["level"];
+                $insert .= 1;
                 $insert .= ",'";
                 $insert .= $nextID;
                 $insert .= "',2);";
@@ -598,7 +597,7 @@ function newLearningStandard($conn,$user_id)
                 dbErrorCheck($conn,$insertResult);
 
                 //update session vars with some hard coding
-                $_SESSION["level"] = 0;
+                $_SESSION["level"] = 1;
                 $_SESSION["levels"] = 1;
                 $_SESSION["progression"] = 2;
                 $_SESSION["standard"] = "evaluation";
