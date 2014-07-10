@@ -226,6 +226,15 @@ var Application = new Class(
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+
+					if (APPLICATION.mRef_id == "evaluation")
+					{
+						APPLICATION.log('evaluation data');
+					} 
+					else
+					{
+						APPLICATION.log('reg data');
+					}
 				}
 			}
                 }
