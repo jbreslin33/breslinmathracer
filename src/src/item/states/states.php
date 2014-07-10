@@ -117,10 +117,12 @@ exit: function(item)
 		if (item.mStatus == 2)
 		{
 			APPLICATION.sendLevelAttempt(item.mType,2);
+			APPLICATION.log('sending 2');	
 		}
 		else
 		{
 			APPLICATION.sendLevelAttempt(item.mType,1);
+			APPLICATION.log('sending 1');	
 		}
 	}
 	else

@@ -69,17 +69,17 @@ execute: function(sheet)
 	if (sheet.getItem().mStatus == 1)
         {
         	sheet.correctAnswer();
+		if (sheet.isSheetComplete())
+        	{
+			//set the ITEM to null so another item dont drop. this may get rid of need for buf question.
+			sheet.mItem = 0;
+                	sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED_SHEET);
+        	}
         }
         else if (sheet.getItem().mStatus == 2)
         {
                	sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
 	}
-	if (sheet.isSheetComplete())
-        {
-		//set the ITEM to null so another item dont drop. this may get rid of need for buf question.
-		sheet.mItem = 0;
-                sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED_SHEET);
-        }
 },
 
 exit: function(sheet)
