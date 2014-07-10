@@ -153,7 +153,6 @@ var Application = new Class(
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					APPLICATION.log('APPLICATION.mRef_id:' + APPLICATION.mRef_id);
                 		}
 			}
 		}
@@ -230,7 +229,6 @@ var Application = new Class(
 
 					if (APPLICATION.mRef_id == 'evaluation')
 					{
-						APPLICATION.log('evaluation:' + APPLICATION.mRef_id);
 						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
 						for (var i = 0; i < itemarray.length; i++)
 						{
@@ -240,7 +238,6 @@ var Application = new Class(
 					} 
 					else
 					{
-						APPLICATION.log('k.cc:' + APPLICATION.mRef_id);
 					}
 				}
 			}
