@@ -156,7 +156,7 @@ CREATE TABLE levelattempts (
     	user_id integer NOT NULL,
     	level integer NOT NULL, 
     	learning_standards_id text NOT NULL,  
-	transaction_code integer DEFAULT 0 NOT NULL,
+	transaction_code integer DEFAULT 3 NOT NULL,
 	score integer DEFAULT 0 NOT NULL,
 	score_needed integer DEFAULT 0 NOT NULL,
 	PRIMARY KEY (id),

@@ -10,9 +10,9 @@ if ($_SESSION["level"] == NULL)
 {
 	if ($_SESSION["subject_id"] == 1)
 	{
-		$insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+		$insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
 		$insert .= $_SESSION["user_id"]; 	
-		$insert .= ",1,'k.cc.a.1',2);"; 
+		$insert .= ",1,'k.cc.a.1');"; 
 
         	//get db result
         	$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
@@ -26,9 +26,9 @@ if ($_SESSION["level"] == NULL)
 	}
         if ($_SESSION["subject_id"] == 2)
         {
-                $insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+                $insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
                 $insert .= $_SESSION["user_id"];
-                $insert .= ",1,'rl.k.1',2);";
+                $insert .= ",1,'rl.k.1');";
 
                 //get db result
                 $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());

@@ -779,7 +779,7 @@ function setLevelSessionVariables($conn,$user_id)
                 $_SESSION["level"]            = $levelVar;
         }
 	//failed
-	if ($_SESSION["transaction_code"] == 0)
+	if ($_SESSION["transaction_code"] == 2)
 	{
 		if ($_SESSION["level"] > 1)
 		{
