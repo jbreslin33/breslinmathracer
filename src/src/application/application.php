@@ -230,18 +230,13 @@ var Application = new Class(
 
 					if (APPLICATION.mRef_id == "evaluation")
 					{
-						APPLICATION.log('evaluation data');
 						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
-						APPLICATION.mItemTypeIDArray = itemarray; 
 						for (var i = 0; i < itemarray.length; i++)
 						{
-							APPLICATION.log('i:' + APPLICATION.mItemTypeIDArray[i]);
+							itemarray[i] = parseInt(itemarray[i]);
 						}
+						APPLICATION.mItemTypeIDArray = itemarray; 
 					} 
-					else
-					{
-						APPLICATION.log('reg data');
-					}
 				}
 			}
                 }
@@ -394,6 +389,19 @@ var Application = new Class(
 				}
                                	this.mGameName = "k_cc_a_1";
                                	this.mGame = new k_cc_a_1(APPLICATION);
+			}
+                }
+		if (this.mRef_id == 'evaluation')
+		{ 
+             		if (this.mGameName != "evaluation")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "evaluation";
+                               	this.mGame = new evaluation(APPLICATION);
 			}
                 }
 		if (this.mRef_id == 'k.cc.a.2')
