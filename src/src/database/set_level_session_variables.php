@@ -657,6 +657,14 @@ function setRawData($conn,$user_id)
 	} 
 	
        	$_SESSION["item_type_id_raw_data"] = $itemString; 
+
+	//if you have no questions say that you did an evaluation and send back thru setLevelSessionVariablesAdvance
+	if (count($itemArray) < 1)
+	{
+       		$_SESSION["ref_id"] = 'evaluation'; 
+		setLevelSessionVariablesAdvance($conn,$user_id);
+	}
+
 }
 
 function checkItemProgression($conn,$user_id)
