@@ -54,7 +54,7 @@ Extends: Sheet,
 
 		for (s = 0; s < this.mScoreNeeded; s++)
 		{	
-			rand = 1 + Math.floor(Math.random()*10);
+			rand = 1 + Math.floor(Math.random()*1);
 
 			if(rand == 1)
 				this.addItem(new i_4_nbt_a_1_t_1(this));

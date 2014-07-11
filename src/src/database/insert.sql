@@ -119,6 +119,7 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.3',
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4',3,'Understand the relationship between numbers and quantities; connect counting to cardinality.');
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.a',3,'When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.');
 insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.1',3,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.');
+insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.2',3,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
 
 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('rl.k.1','rl.k.1',1,10); 
@@ -128,6 +129,7 @@ insert into learning_standards (id,core_standards_id,progression,levels) values 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.2','k.cc.a.2',3,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',4,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',5,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',5,4); 
 
 insert into item_types(id,progression,learning_standards_id,description) values (1,1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
 insert into item_types(id,progression,learning_standards_id,description) values (2,2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
