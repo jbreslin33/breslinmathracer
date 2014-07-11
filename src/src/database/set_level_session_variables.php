@@ -594,13 +594,18 @@ function setRawData($conn,$user_id)
 			array_push($itemArray,"$item");
 		}
 	}
-	$itemString = $itemArray[0];
-	$itemString .= ":";
-	$itemString .= $itemArray[1];
-	$itemString .= ":";
-	$itemString .= $itemArray[2];
-	$itemString .= ":";
-	$itemString .= $itemArray[3];
+	
+	$itemString = "";
+
+	if (count($itemArray) > 0)
+	{
+		$itemString .= $itemArray[0];
+	}
+	for ($i = 1; $i < count($itemArray); $i++)
+	{
+		$itemString .= ":";
+		$itemString .= $itemArray[$i];
+	} 
 	
        	$_SESSION["item_type_id_raw_data"] = $itemString; 
 }
@@ -608,7 +613,7 @@ function setRawData($conn,$user_id)
 function checkItemProgression($conn,$user_id)
 {
 //select start_time, item_types_id from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id;
-	return 4;
+	return 2;
 } 
 
 function rewindCurrentLearningStandard($conn,$user_id)
