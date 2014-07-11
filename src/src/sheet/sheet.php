@@ -48,6 +48,7 @@ var Sheet = new Class(
                 this.mStateMachine.changeState(this.mINIT_SHEET);
 
 		this.mItem = 0;
+		this.mFeaturedItemID = 4;
        
          	this.createItems();
                 this.createShapes();
@@ -138,12 +139,24 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
+        	if (APPLICATION.mLevel > APPLICATION.mLevels)
+                {
+                        this.setScoreNeeded(APPLICATION.mLevels);
+                }
+                else
+                {
+                        this.setScoreNeeded(APPLICATION.mLevel);
+                }
+	},
 
+	setTypeWrong: function(typeID)
+	{
+		this.mTypeWrong = typeID;
 	},
 
 	randomize: function(degree)
 	{
-		var size = parseInt(this.mItemArray.length - 1);	
+		var size = parseInt(this.mItemArray.length);	
 		for (var i = 0; i < degree; i++)
 		{
 			var swapElementNumberA = Math.floor((Math.random()*size));
@@ -155,16 +168,13 @@ var Sheet = new Class(
 			this.mItemArray[swapElementNumberA] = tempItemB;
 			this.mItemArray[swapElementNumberB] = tempItemA;
 		}
-		//redo setting mItem since you shuffled
- 		this.mItem = this.mItemArray[0];
 
 		// when done swap the mTypeWrong to first spot. 
-/*
-		if (this.mGame.mTypeWrong != '')
+		if (this.mTypeWrong != '')
 		{
 			for (i = 0; i < size; i++)
 			{
-				if (this.mItemArray[i].getType() == this.mGame.mTypeWrong)
+				if (this.mItemArray[i].getType() == this.mTypeWrong)
 				{
 					wrongItem = this.mItemArray[i]; 
 					questionInFirstSlot = this.mItemArray[0]; 
@@ -173,7 +183,9 @@ var Sheet = new Class(
 				}
 			}
 		}		
-*/
+		
+		//redo setting mItem since you shuffled
+ 		this.mItem = this.mItemArray[0];
 	},
 
 	/********************** SHAPES ******************/
