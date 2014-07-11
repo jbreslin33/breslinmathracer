@@ -549,9 +549,6 @@ function newLearningStandard($conn,$user_id)
 	}
 	else
 	{
-		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval','');";
-  		$result = pg_query($conn,$query);
-
 		$nextID = 'evaluation';
       
 		//do the insert...
@@ -611,22 +608,33 @@ function setRawData($conn,$user_id)
                 	dbErrorCheck($conn,$result2);
         	
 			$num2 = pg_num_rows($result2);
-		
+
 			if ($num2 > 0)
 			{
-				$mastered = true;		
+				if ($num2 > 9) //more than 9 so check
+				{
+					$mastered = true;		
 				
-				for ($i = 0; $i < $num2; $i++)
-				{	
-               				$transaction_code = pg_Result($result2, 0, 'transaction_code');
-					if ($transaction_code != 1)
+					for ($i = 0; $i < $num2; $i++)
+					{	
+               					$transaction_code = pg_Result($result2, 0, 'transaction_code');
+						if ($transaction_code != 1)
+						{
+							$mastered = false;		
+						} 	
+					}
+					if (!$mastered)
 					{
-						$mastered = false;		
-					} 	
+						array_push($itemArray,"$item_types_id");
+                				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','');";
+                				$result = pg_query($conn,$equery);
+					}
 				}
-				if ($mastered)
+				else //less than 10 so just add it
 				{
 					array_push($itemArray,"$item_types_id");
+                			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','');";
+                			$result = pg_query($conn,$equery);
 				}
 			}	
 		}	
