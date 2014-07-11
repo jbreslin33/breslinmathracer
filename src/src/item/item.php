@@ -178,6 +178,10 @@ var Item = new Class(
 				correctAnswerFound = true;	
 			} 
 		}
+		if (correctAnswerFound == false)
+		{
+			this.mSheet.setTypeWrong(this.mType);
+		}
 		return correctAnswerFound;
 	},
 

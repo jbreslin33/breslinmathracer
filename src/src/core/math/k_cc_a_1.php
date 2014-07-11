@@ -21,20 +21,12 @@ Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
+		this.mFeaturedItemID = 4;
         },
 
         createItems: function()
         {
                 this.parent();
-              
-		if (APPLICATION.mLevel > APPLICATION.mLevels)
-		{
-			this.setScoreNeeded(APPLICATION.mLevels); 
-		}
-		else
-		{
-			this.setScoreNeeded(APPLICATION.mLevel); 
-		}
 
 		this.addItem(new i_k_cc_a_1_t_1(this));
 		this.addItem(new i_k_cc_a_1_t_2(this));
