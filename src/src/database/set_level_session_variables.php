@@ -581,17 +581,58 @@ function newLearningStandard($conn,$user_id)
 function setRawData($conn,$user_id)
 {
 	//right here you need to query db to get rawdata for questions.
-	$_SESSION["item_progression_counter"] = 0;
+	$progression_counter = 0;
 	
 	$itemArray = array();
-	$counter = count($itemArray);	
-	while(count($itemArray) < 4)	
+	$good = true;
+	while($good)	
 	{
-		$item = checkItemProgression($conn,$user_id);
-
-		if ($item != 0)
+		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id where progression > ";
+		$query .= $progression_counter; 
+		$query .= " order by progression asc limit 1;";
+                
+		$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+                dbErrorCheck($conn,$result);
+        	
+		$num = pg_num_rows($result);
+        
+		if ($num > 0)
+        	{
+               		//get the id from user table
+               		$item_types_id = pg_Result($result, 0, 'item_types_id');
+               		$progression_counter = pg_Result($result, 0, 'progression');
+                
+			//now do another query with type	
+			$query2 = "select start_time, item_types_id, transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id where item_types_id = ";
+			$query2 .= $item_types_id;
+			$query2 .= " order by start_time asc limit 10;";		
+		
+			$result2 = pg_query($conn,$query2) or die('Could not connect: ' . pg_last_error());
+                	dbErrorCheck($conn,$result2);
+        	
+			$num2 = pg_num_rows($result2);
+		
+			if ($num2 > 0)
+			{
+				$mastered = true;		
+				
+				for ($i = 0; $i < $num2; $i++)
+				{	
+               				$transaction_code = pg_Result($result2, 0, 'transaction_code');
+					if ($transaction_code != 1)
+					{
+						$mastered = false;		
+					} 	
+				}
+				if ($mastered)
+				{
+					array_push($itemArray,"$item_types_id");
+				}
+			}	
+		}	
+		else
 		{
-			array_push($itemArray,"$item");
+			$good = false;
 		}
 	}
 	
@@ -613,6 +654,7 @@ function setRawData($conn,$user_id)
 function checkItemProgression($conn,$user_id)
 {
 //select start_time, item_types_id from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id;
+//select start_time, item_types_id, transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id where progression > 0 order by progression asc limit 1;
 	return 2;
 } 
 
