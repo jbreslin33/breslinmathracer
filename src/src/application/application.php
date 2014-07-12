@@ -194,6 +194,7 @@ var Application = new Class(
 
 	remediate: function(learningstandard)
         {
+		APPLICATION.log('learningstandard:' + learningstandard);
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

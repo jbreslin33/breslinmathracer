@@ -112,14 +112,56 @@ function getLevels($conn,$user_id)
 function remediate($conn,$user_id,$learningstandard)
 {
 
-//fake session vars
-$_SESSION["ref_id"] = 'k.cc.a.1';
-$_SESSION["level"] = 1;
-$_SESSION["standard"] = 'k.cc.a.1';
-$_SESSION["progression"] = 1;
-$_SESSION["levels"] = 4;
-$_SESSION["item_type_id_raw_data"] = '1:2:3:4';
+        $equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','$learningstandard');";
+        $result = pg_query($conn,$equery);
+ 	$select = "select id, core_standards_id, levels, progression from learning_standards where id = '";
+        $select .= $learningstandard;
+        $select .= "';";
 
+        $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$selectResult);
+
+        //get numer of rows
+        $num = pg_num_rows($selectResult);
+
+        if ($num > 0)
+        {
+        	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','');";
+        	$result = pg_query($conn,$equery);
+                //get the vars from user table
+                $levels = pg_Result($selectResult, 0, 'levels');
+                $ref_id = pg_Result($selectResult, 0, 'id');
+                $progression = pg_Result($selectResult, 0, 'progression');
+                $standard = pg_Result($selectResult, 0, 'core_standards_id');
+        	
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','');";
+        	$result = pg_query($conn,$equery);
+
+		$_SESSION["ref_id"] = $ref_id;
+		$_SESSION["level"] = 2; 
+		$_SESSION["standard"] = $learningstandard;
+		$_SESSION["progression"] = $progression;
+		$_SESSION["levels"] = $levels;
+		$_SESSION["item_type_id_raw_data"] = '1:2:3:4';
+		
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'d','');";
+        	$result = pg_query($conn,$equery);
+ 
+                //do the insert...
+                $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+                $insert .= $_SESSION["user_id"];
+                $insert .= ",";
+                $insert .= $_SESSION["level"];
+                $insert .= ",'";
+                $insert .= $_SESSION["ref_id"];
+                $insert .= "',3);";
+
+                $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+                dbErrorCheck($conn,$insertResult);
+		
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'e','');";
+        	$result = pg_query($conn,$equery);
+        }
 }
 
 function changeLevel($conn,$user_id)
@@ -639,15 +681,11 @@ function setRawData($conn,$user_id)
 					if (!$mastered)
 					{
 						array_push($itemArray,"$item_types_id");
-                				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','');";
-                				$result = pg_query($conn,$equery);
 					}
 				}
 				else //less than 10 so just add it
 				{
 					array_push($itemArray,"$item_types_id");
-                			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','');";
-                			$result = pg_query($conn,$equery);
 				}
 			}	
 		}	

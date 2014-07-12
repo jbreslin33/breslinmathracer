@@ -8,7 +8,7 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 
-$learningstandard = $_GET["itemtypesid"];
+$learningstandard = $_GET["learningstandard"];
 
 remediate($conn,$_SESSION["user_id"],$learningstandard);
 
@@ -28,4 +28,3 @@ $returnString .= $_SESSION["item_type_id_raw_data"];
 echo $returnString;
 
 ?>
-
