@@ -38,6 +38,7 @@ Extends: Sheet,
         {
                 this.parent(game);
 		this.setScoreNeeded(APPLICATION.mItemTypeIDArray.length);
+		this.mLearningStandard = 'evaluation';
         },
 
         createItems: function()
