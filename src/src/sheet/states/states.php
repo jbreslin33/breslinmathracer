@@ -78,7 +78,14 @@ execute: function(sheet)
         }
         else if (sheet.getItem().mStatus == 2)
         {
-               	sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
+		if (sheet.mLearningStandard == "evaluation")
+		{
+               		sheet.mStateMachine.changeState(sheet.mEVALUATION_FAILED_SHEET);
+		}	
+		else
+		{
+               		sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
+		}
 	}
 },
 
@@ -166,6 +173,42 @@ exit: function(sheet)
 }
 
 });
+
+var EVALUATION_FAILED_SHEET = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(sheet)
+{
+        if (sheet.mStateLogs)
+        {
+                APPLICATION.log('SHEET::EVALUATION_FAILED_SHEET');
+        }
+        //APPLICATION.mStateMachine.changeState(APPLICATION.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
+},
+
+execute: function(sheet)
+{
+        //wait on word from item that it is done showing correct answer...
+/*
+        if (sheet.mItem.mStateMachine.currentState() == sheet.mItem.mINCORRECT_ITEM)
+        {
+                sheet.mStateMachine.changeState(sheet.mEND_SHEET);
+        }
+*/
+},
+
+exit: function(sheet)
+{
+        //sheet.hideVictoryShapes();
+}
+
+});
+
 
 var END_SHEET = new Class(
 {

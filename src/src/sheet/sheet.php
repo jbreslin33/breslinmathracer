@@ -6,7 +6,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//GAME
 		this.mGame = game;
@@ -42,6 +42,7 @@ var Sheet = new Class(
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
                 this.mLEVEL_FAILED_SHEET = new LEVEL_FAILED_SHEET(this);
+                this.mEVALUATION_FAILED_SHEET = new EVALUATION_FAILED_SHEET(this);
                 this.mEND_SHEET          = new END_SHEET(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);
@@ -49,6 +50,7 @@ var Sheet = new Class(
 
 		this.mItem = 0;
 		this.mFeaturedItemID = 4;
+		this.mLearningStandard = '';  
        
          	this.createItems();
                 this.createShapes();
