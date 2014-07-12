@@ -109,7 +109,7 @@ function getLevels($conn,$user_id)
 	}
 }
 
-function remediate($conn,$user_id,$learningstandard)
+function remediate($conn,$user_id,$learningstandard,$typeid)
 {
  	$select = "select id, core_standards_id, levels, progression from learning_standards where id = '";
         $select .= $learningstandard;
@@ -134,7 +134,7 @@ function remediate($conn,$user_id,$learningstandard)
 		$_SESSION["standard"] = $learningstandard;
 		$_SESSION["progression"] = $progression;
 		$_SESSION["levels"] = $levels;
-		$_SESSION["item_type_id_raw_data"] = '1:2:3:4';
+		$_SESSION["item_type_id_raw_data"] = $typeid;
 		
                 //do the insert...
                 $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
