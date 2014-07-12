@@ -158,18 +158,18 @@ var Application = new Class(
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
- 					if (APPLICATION.mRef_id == 'evaluation')
-                                        {
+ 				//	if (APPLICATION.mRef_id == 'evaluation')
+                                //        {
                                                 var itemarray = APPLICATION.mItemTypeIDRawData.split(":");
                                                 for (var i = 0; i < itemarray.length; i++)
                                                 {
                                                         itemarray[i] = parseInt(itemarray[i]);
                                                 }
                                                 APPLICATION.mItemTypeIDArray = itemarray;
-                                        }
-                                        else
-                                        {
-                                        }
+                                 //       }
+                                  //      else
+                                   //     {
+                                    //    }
 
                 		}
 			}
@@ -208,7 +208,7 @@ var Application = new Class(
                 xmlhttp.send();
         },
 
-	remediate: function(learningstandard)
+	remediate: function(learningstandard,typeid)
         {
 		APPLICATION.log('learningstandard:' + learningstandard);
                 var xmlhttp;
@@ -261,7 +261,7 @@ var Application = new Class(
 				}
 			}
                 }
-                xmlhttp.open("GET","../../src/database/remediate.php?learningstandard=" + learningstandard,true);
+                xmlhttp.open("GET","../../src/database/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
                 xmlhttp.send();
         },
 

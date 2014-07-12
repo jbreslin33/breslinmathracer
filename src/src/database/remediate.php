@@ -9,8 +9,9 @@ $conn = dbConnect();
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 
 $learningstandard = $_GET["learningstandard"];
+$typeid = $_GET["typeid"];
 
-remediate($conn,$_SESSION["user_id"],$learningstandard);
+remediate($conn,$_SESSION["user_id"],$learningstandard,$typeid);
 
 //fill php vars
 $returnString = "101,"; 
