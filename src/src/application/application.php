@@ -25,6 +25,7 @@ var Application = new Class(
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
+		this.mEvaluationFailed = false;
 
 		this.mWaitingOnLevelData = false;
 
@@ -86,6 +87,7 @@ var Application = new Class(
                 this.mGET_LEVEL_DATA_APPLICATION        = new GET_LEVEL_DATA_APPLICATION(this);
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
                 this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
+                this.mREMEDIATE_APPLICATION                 = new REMEDIATE_APPLICATION(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
                 this.mStateMachine.changeState(this.mINIT_APPLICATION);
@@ -187,6 +189,62 @@ var Application = new Class(
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.open("POST","../../src/database/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.send();
+        },
+
+	remediate: function(learningstandard)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+            		if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                        	var response = xmlhttp.responseText; 
+				var responseArray = response.split(","); 
+				var code = responseArray[0];
+				var codeNumber = parseInt(code);
+
+				if (codeNumber == 101)
+				{
+					APPLICATION.mRef_id = responseArray[1];
+					APPLICATION.mLevel = responseArray[2];
+					APPLICATION.mStandard = responseArray[3];
+					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+					APPLICATION.mProgression = responseArray[4];
+					APPLICATION.mLevels = responseArray[5];
+					APPLICATION.mItemTypeIDRawData = responseArray[6];
+					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+
+					if (APPLICATION.mRef_id == 'evaluation')
+					{
+						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
+						for (var i = 0; i < itemarray.length; i++)
+						{
+							itemarray[i] = parseInt(itemarray[i]);
+						}
+						APPLICATION.mItemTypeIDArray = itemarray; 
+					} 
+					else
+					{
+					}
+				}
+			}
+                }
+                xmlhttp.open("GET","../../src/database/remediate.php?learningstandard=" + learningstandard,true);
                 xmlhttp.send();
         },
 

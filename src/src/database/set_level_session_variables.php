@@ -109,6 +109,19 @@ function getLevels($conn,$user_id)
 	}
 }
 
+function remediate($conn,$user_id,$learningstandard)
+{
+
+//fake session vars
+$_SESSION["ref_id"] = 'k.cc.a.1';
+$_SESSION["level"] = 1;
+$_SESSION["standard"] = 'k.cc.a.1';
+$_SESSION["progression"] = 1;
+$_SESSION["levels"] = 4;
+$_SESSION["item_type_id_raw_data"] = '1:2:3:4';
+
+}
+
 function changeLevel($conn,$user_id)
 {
  	$select = "select id, core_standards_id, levels, progression from learning_standards where id = '";
