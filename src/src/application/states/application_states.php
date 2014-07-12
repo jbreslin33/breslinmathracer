@@ -81,10 +81,16 @@ execute: function(application)
 	{
 		application.mStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
 	}
+	
+	if (application.mEvaluationFailed)
+	{
+		application.mStateMachine.changeState(application.mREMEDIATE_APPLICATION);
+	}
 },
 exit: function(application)
 {
 	application.mLevelCompleted = false;
+	application.mEvaluationFailed = false;
 }
 
 });
@@ -184,3 +190,38 @@ exit: function(application)
 }
 
 });
+
+var REMEDIATE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::REMEDIATE_APPLICATION');
+        }
+        //tell db remediate student on standard they answered wrong
+        application.remediate(application.mGame.mSheet.getItem().mStandard);
+},
+
+execute: function(application)
+{
+        if (application.mGame.mReadyForNormalApplication)
+        {
+                application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+        application.mGame.mReadyForNormalApplication = false;
+        application.mHud.setLevel(application.mLevel,application.mLevels);
+}
+
+});
+

@@ -188,18 +188,17 @@ enter: function(sheet)
         {
                 APPLICATION.log('SHEET::EVALUATION_FAILED_SHEET');
         }
-        //APPLICATION.mStateMachine.changeState(APPLICATION.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION);
+	APPLICATION.mEvaluationFailed = true;
 },
 
 execute: function(sheet)
 {
         //wait on word from item that it is done showing correct answer...
-/*
         if (sheet.mItem.mStateMachine.currentState() == sheet.mItem.mINCORRECT_ITEM)
         {
                 sheet.mStateMachine.changeState(sheet.mEND_SHEET);
         }
-*/
+
 },
 
 exit: function(sheet)
