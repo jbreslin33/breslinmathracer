@@ -158,19 +158,17 @@ var Application = new Class(
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
- 				//	if (APPLICATION.mRef_id == 'evaluation')
-                                //        {
-                                                var itemarray = APPLICATION.mItemTypeIDRawData.split(":");
-                                                for (var i = 0; i < itemarray.length; i++)
-                                                {
-                                                        itemarray[i] = parseInt(itemarray[i]);
-                                                }
-                                                APPLICATION.mItemTypeIDArray = itemarray;
-                                 //       }
-                                  //      else
-                                   //     {
-                                    //    }
 
+					//lets empty the arrays
+					APPLICATION.mItemTypeIDArray = 0;
+                                        var itemarray = 0;
+                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
+					
+                                        for (var i = 0; i < itemarray.length; i++)
+                                        {
+                                        	itemarray[i] = parseInt(itemarray[i]);
+                                        }
+                                        APPLICATION.mItemTypeIDArray = itemarray;
                 		}
 			}
 		}
@@ -245,19 +243,17 @@ var Application = new Class(
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-
-					if (APPLICATION.mRef_id == 'evaluation')
-					{
-						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
-						for (var i = 0; i < itemarray.length; i++)
-						{
-							itemarray[i] = parseInt(itemarray[i]);
-						}
-						APPLICATION.mItemTypeIDArray = itemarray; 
-					} 
-					else
-					{
-					}
+					
+					//lets empty the arrays
+					APPLICATION.mItemTypeIDArray = 0;
+                                        var itemarray = 0;
+                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
+					
+                                        for (var i = 0; i < itemarray.length; i++)
+                                        {
+                                        	itemarray[i] = parseInt(itemarray[i]);
+                                        }
+                                        APPLICATION.mItemTypeIDArray = itemarray;
 				}
 			}
                 }
@@ -301,19 +297,17 @@ var Application = new Class(
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
 					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-
-					if (APPLICATION.mRef_id == 'evaluation')
-					{
-						var itemarray = APPLICATION.mItemTypeIDRawData.split(":"); 
-						for (var i = 0; i < itemarray.length; i++)
-						{
-							itemarray[i] = parseInt(itemarray[i]);
-						}
-						APPLICATION.mItemTypeIDArray = itemarray; 
-					} 
-					else
-					{
-					}
+					
+					//lets empty the arrays
+					APPLICATION.mItemTypeIDArray = 0;
+                                        var itemarray = 0;
+                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
+					
+                                        for (var i = 0; i < itemarray.length; i++)
+                                        {
+                                        	itemarray[i] = parseInt(itemarray[i]);
+                                        }
+                                        APPLICATION.mItemTypeIDArray = itemarray;
 				}
 			}
                 }
@@ -358,6 +352,17 @@ var Application = new Class(
                                 	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+					
+					//lets empty the arrays
+					APPLICATION.mItemTypeIDArray = 0;
+                                        var itemarray = 0;
+                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
+					
+                                        for (var i = 0; i < itemarray.length; i++)
+                                        {
+                                        	itemarray[i] = parseInt(itemarray[i]);
+                                        }
+                                        APPLICATION.mItemTypeIDArray = itemarray;
 				}
                         }
                 }
