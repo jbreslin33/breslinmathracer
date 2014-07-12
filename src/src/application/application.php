@@ -139,22 +139,38 @@ var Application = new Class(
 			} 
 			else
  			{
-                        	var response = xmlhttp.responseText; 
-				var responseArray = response.split(","); 
-				var code = responseArray[0];
+        
+				var response = xmlhttp.responseText;
+                                var responseArray = response.split(",");
+                                var code = responseArray[0];
+                                var codeNumber = parseInt(code);
 
-				if (code == "100")
-				{
+                                if (codeNumber == 101)
+                                {
+					APPLICATION.log('getLevelData:code 101');
 					APPLICATION.mRef_id = responseArray[1];
 					APPLICATION.mLevel = responseArray[2];
-					APPLICATION.mLevels = responseArray[3];
-					APPLICATION.mLevels = responseArray[3];
+                                	APPLICATION.mStandard = responseArray[3];
                                 	APPLICATION.mProgression = responseArray[4];
-                                	APPLICATION.mStandard = responseArray[5];
+					APPLICATION.mLevels = responseArray[5];
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+					APPLICATION.mItemTypeIDRawData = responseArray[6];
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+ 					if (APPLICATION.mRef_id == 'evaluation')
+                                        {
+                                                var itemarray = APPLICATION.mItemTypeIDRawData.split(":");
+                                                for (var i = 0; i < itemarray.length; i++)
+                                                {
+                                                        itemarray[i] = parseInt(itemarray[i]);
+                                                }
+                                                APPLICATION.mItemTypeIDArray = itemarray;
+                                        }
+                                        else
+                                        {
+                                        }
+
                 		}
 			}
 		}

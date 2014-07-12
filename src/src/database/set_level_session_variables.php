@@ -604,30 +604,34 @@ function newLearningStandard($conn,$user_id)
 	}
 	else
 	{
-		$nextID = 'evaluation';
-      
-		//do the insert...
-                $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
-                $insert .= $_SESSION["user_id"];
-                $insert .= ",";
-                $insert .= 1;
-                $insert .= ",'";
-                $insert .= $nextID;
-                $insert .= "',2);";
-
-                $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$insertResult);
-
-                //update session vars with some hard coding
-                $_SESSION["level"] = 1;
-                $_SESSION["levels"] = 1;
-                $_SESSION["progression"] = 2;
-                $_SESSION["standard"] = 'evaluation';
-               	$_SESSION["ref_id"] = 'evaluation';
-	
-		setRawData($conn,$user_id);	
-
+		setEvaluation($conn,$user_id);
 	}
+}
+
+function setEvaluation($conn,$user_id)
+{
+	$nextID = 'evaluation';
+      
+	//do the insert...
+        $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+        $insert .= $_SESSION["user_id"];
+        $insert .= ",";
+        $insert .= 1;
+        $insert .= ",'";
+        $insert .= $nextID;
+        $insert .= "',2);";
+
+        $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
+        dbErrorCheck($conn,$insertResult);
+
+        //update session vars with some hard coding
+        $_SESSION["level"] = 1;
+        $_SESSION["levels"] = 1;
+        $_SESSION["progression"] = 2;
+        $_SESSION["standard"] = 'evaluation';
+       	$_SESSION["ref_id"] = 'evaluation';
+	
+	setRawData($conn,$user_id);	
 }
 
 function setRawData($conn,$user_id)
@@ -801,29 +805,40 @@ function setLevelSessionVariables($conn,$user_id)
         //get numer of rows
         $num = pg_num_rows($result);
 
+	$ref_id = 0;
+
         if ($num > 0)
         {
-                //get the id from user table
-                $transaction_code = pg_Result($result, 0, 'transaction_code');
                 $ref_id           = pg_Result($result, 0, 'learning_standards_id');
-                $level            = pg_Result($result, 0, 'level');
-                
                 $_SESSION["ref_id"]           = $ref_id;
-		$_SESSION["transaction_code"] = $transaction_code;
-                $_SESSION["level"]            = $level;
-	}
-        else
-        {
-                echo "error record for query";
-        }
 
+		if ($ref_id == 'evaluation')
+		{
+		
+			setEvaluation($conn,$user_id);
+		}
+		else
+		{
+       			$transaction_code = pg_Result($result, 0, 'transaction_code');
+       			$level            = pg_Result($result, 0, 'level');
+			$_SESSION["transaction_code"] = $transaction_code;
+       			$_SESSION["level"]            = $level;
+	
+			setRegularGame($conn,$user_id);
+		}
+	}
+}
+
+function setRegularGame($conn,$user_id)
+{
 	//passed
 	if ($_SESSION["transaction_code"] == 1)
 	{
  		$levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
 		$levelVar++;
-                $_SESSION["level"]            = $levelVar;
-        }
+               	$_SESSION["level"]            = $levelVar;
+       	}
+			
 	//failed
 	if ($_SESSION["transaction_code"] == 2)
 	{
@@ -833,34 +848,35 @@ function setLevelSessionVariables($conn,$user_id)
 			$levelVar--;
                 	$_SESSION["level"]            = $levelVar;
 		}
-        }
-	$query = "select * from learning_standards where id = '";
-        $query .= $_SESSION["ref_id"];
-        $query .= "';";
+       	}
 	
-        //get db result
-        $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
+	$query = "select * from learning_standards where id = '";
+       	$query .= $_SESSION["ref_id"];
+       	$query .= "';";
 
-        //get numer of rows
-        $num = pg_num_rows($result);
+	//get db result
+       	$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+       	dbErrorCheck($conn,$result);
 
-        if ($num > 0)
-        {
-                //get the id from user table
-                $standard = pg_Result($result, 0, 'core_standards_id');
-                $progression = pg_Result($result, 0, 'progression');
-                $levels = pg_Result($result, 0, 'levels');
+	//get numer of rows
+       	$num = pg_num_rows($result);
 
-                //set level_id
-                $_SESSION["standard"] = $standard;
-                $_SESSION["progression"] = $progression;
-                $_SESSION["levels"] = $levels;
-        }
-        else
-        {
-                echo "error no user";
-        }
+       	if ($num > 0)
+       	{
+       		//get the id from user table
+               	$standard = pg_Result($result, 0, 'core_standards_id');
+               	$progression = pg_Result($result, 0, 'progression');
+               	$levels = pg_Result($result, 0, 'levels');
+
+               	//set level_id
+               	$_SESSION["standard"] = $standard;
+               	$_SESSION["progression"] = $progression;
+               	$_SESSION["levels"] = $levels;
+       	}
+       	else
+       	{
+               	echo "error no user";
+       	}
 }
 
 function selectLevels($conn,$id)

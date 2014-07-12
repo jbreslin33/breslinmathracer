@@ -43,16 +43,19 @@ if ($_SESSION["level"] == NULL)
 	
 }
 
-//fill php vars 
-$returnString .= "100,";  
+//fill php vars
+$returnString = "101,";
 $returnString .= $_SESSION["ref_id"];
 $returnString .= ",";
 $returnString .= $_SESSION["level"];
 $returnString .= ",";
-$returnString .= $_SESSION["levels"];
+$returnString .= $_SESSION["standard"];
 $returnString .= ",";
 $returnString .= $_SESSION["progression"];
 $returnString .= ",";
-$returnString .= $_SESSION["standard"];
+$returnString .= $_SESSION["levels"];
+$returnString .= ",";
+$returnString .= $_SESSION["item_type_id_raw_data"];
 echo $returnString;
 ?>
+
