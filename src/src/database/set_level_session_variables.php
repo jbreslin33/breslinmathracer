@@ -135,6 +135,11 @@ function remediate($conn,$user_id,$learningstandard,$typeid)
 		$_SESSION["progression"] = $progression;
 		$_SESSION["levels"] = $levels;
 		$_SESSION["item_type_id_raw_data"] = $typeid;
+		$rawData = $_SESSION["item_type_id_raw_data"];
+		
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','$rawData');";
+  		$result = pg_query($conn,$equery);
+	
 		
                 //do the insert...
                 $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
@@ -698,6 +703,10 @@ function setRawData($conn,$user_id)
 	} 
 	
        	$_SESSION["item_type_id_raw_data"] = $itemString; 
+       	$rawData = $_SESSION["item_type_id_raw_data"]; 
+
+	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','$rawData');";
+  	$result = pg_query($connection,$query);
 
 	//if you have no questions say that you did an evaluation and send back thru setLevelSessionVariablesAdvance
 	if (count($itemArray) < 1)
