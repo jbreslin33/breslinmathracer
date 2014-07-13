@@ -49,7 +49,6 @@ var Sheet = new Class(
                 this.mStateMachine.changeState(this.mINIT_SHEET);
 
 		this.mItem = 0;
-		this.mFeaturedItemID = 4;
 		this.mLearningStandard = '';  
        
          	this.createItems();

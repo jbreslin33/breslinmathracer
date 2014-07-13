@@ -28,19 +28,85 @@ Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
-		this.mFeaturedItemID = 4;
         },
 
         createItems: function()
         {
                 this.parent();
+ 
+		var remediateTheType = false;
+                if (APPLICATION.mItemTypeIDArray.length > 0)
+                {
+                        if (APPLICATION.mItemTypeIDArray[0])
+                        {
+                                remediateTheType = true;
+                        }
+                }
 
-		this.addItem(new i_k_cc_a_1_t_1(this));
-		this.addItem(new i_k_cc_a_1_t_2(this));
-		this.addItem(new i_k_cc_a_1_t_3(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
+		if (remediateTheType)
+		{
+			while (this.mItemArray.length < this.getScoreNeeded())
+			{
+                		var isRemediate = Math.floor(Math.random()*2);
+				if (isRemediate == 0)
+				{
+                			var randomItemType = Math.floor(Math.random()*4)+1;
+					if (randomItemType == 1)
+					{
+						APPLICATION.log('a');
+						this.addItem(new i_k_cc_a_1_t_1(this));
+					}  
+					if (randomItemType == 2)
+					{
+						APPLICATION.log('b');
+						this.addItem(new i_k_cc_a_1_t_2(this));
+					}  
+					if (randomItemType == 3)
+					{
+						APPLICATION.log('c');
+						this.addItem(new i_k_cc_a_1_t_3(this));
+					} 	 
+					if (randomItemType == 4)
+					{
+						APPLICATION.log('d');
+						this.addItem(new i_k_cc_a_1_t_4(this));
+					}  
+				}
+				else
+				{	
+                        		if (APPLICATION.mItemTypeIDArray[0] == 1)
+					{
+						APPLICATION.log('e');
+						this.addItem(new i_k_cc_a_1_t_1(this));
+					}  
+                        		if (APPLICATION.mItemTypeIDArray[0] == 2)
+					{
+						APPLICATION.log('f');
+						this.addItem(new i_k_cc_a_1_t_2(this));
+					}  
+                        		if (APPLICATION.mItemTypeIDArray[0] == 3)
+					{
+						APPLICATION.log('g');
+						this.addItem(new i_k_cc_a_1_t_3(this));
+					}  
+                        		if (APPLICATION.mItemTypeIDArray[0] == 4)
+					{
+						APPLICATION.log('h');
+						this.addItem(new i_k_cc_a_1_t_4(this));
+					}  
+				}
+			}
+		}
+		else
+		{
+			APPLICATION.log('i');
+			this.addItem(new i_k_cc_a_1_t_1(this));
+			this.addItem(new i_k_cc_a_1_t_2(this));
+			this.addItem(new i_k_cc_a_1_t_3(this));
+			this.addItem(new i_k_cc_a_1_t_4(this));
 		
-		this.randomize(10);
+		}
+		//this.randomize(10);
         }
 });
 
