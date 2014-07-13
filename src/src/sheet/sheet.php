@@ -170,20 +170,57 @@ var Sheet = new Class(
 			this.mItemArray[swapElementNumberB] = tempItemA;
 		}
 
+		//what if we do 50% one you just got mTypeWrong and 50% remediateType 
+		var randomChance = Math.floor(Math.random()*2);
+
 		// when done swap the mTypeWrong to first spot. 
-		if (this.mTypeWrong != '')
-		{
-			for (i = 0; i < size; i++)
+		if (randomChance == 0)
+		{ 
+			if (this.mTypeWrong != '')
 			{
-				if (this.mItemArray[i].getType() == this.mTypeWrong)
+				for (i = 0; i < size; i++)
 				{
-					wrongItem = this.mItemArray[i]; 
-					questionInFirstSlot = this.mItemArray[0]; 
-					this.mItemArray[0] = wrongItem;
-					this.mItemArray[i] = questionInFirstSlot; 
+					if (this.mItemArray[i].getType() == this.mTypeWrong)
+					{
+						APPLICATION.log('redo type:' + this.mItemArray[i].getType());
+						wrongItem = this.mItemArray[i]; 
+						questionInFirstSlot = this.mItemArray[0]; 
+						this.mItemArray[0] = wrongItem;
+						this.mItemArray[i] = questionInFirstSlot; 
+					}
 				}
-			}
-		}		
+			}		
+		}
+		else
+		{
+			APPLICATION.log('remediate type:a');
+ 			var remediateTheType = false;
+                	if (APPLICATION.mItemTypeIDArray.length > 0)
+                	{
+				APPLICATION.log('remediate type:b');
+                        	if (APPLICATION.mItemTypeIDArray[0])
+                        	{
+					APPLICATION.log('remediate type:c');
+                                	remediateTheType = true;
+                        	}
+                	}
+			if (remediateTheType == true)
+			{
+				APPLICATION.log('remediate type:d');
+				for (var i = 0; i < size; i++)
+				{
+					APPLICATION.log('remediate type:e');
+					if (this.mItemArray[i].getType() == APPLICATION.mItemTypeIDArray[0])
+					{
+						APPLICATION.log('remediate type:' + this.mItemArray[i].getType());
+						remediateItem = this.mItemArray[i]; 
+						questionInFirstSlot = this.mItemArray[0]; 
+						this.mItemArray[0] = remediateItem;
+						this.mItemArray[i] = questionInFirstSlot; 
+					}
+				}
+			}		
+		}
 		
 		//redo setting mItem since you shuffled
  		this.mItem = this.mItemArray[0];
