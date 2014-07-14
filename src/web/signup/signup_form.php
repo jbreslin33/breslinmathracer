@@ -15,18 +15,7 @@ echo "<br>";
 
       	$mess = $_GET["message"];
 
-	if ($mess == "name_taken")
-        {
-                echo "That username is taken, Please try another.";
-        }
-        if ($mess == "no_name")
-        {
-                echo "You forgot a username. Please fill one out.";
-        }
-        if ($mess == "no_spaces")
-        {
-                echo "You cannot have spaces in username. Please try again.";
-        }
+	echo $mess;
 ?>
 	<p><b> SIGN UP: </p></b>
 	
