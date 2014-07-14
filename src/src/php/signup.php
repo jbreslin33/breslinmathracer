@@ -9,6 +9,11 @@ function __construct()
 	$this->mDatabaseConnection = new DatabaseConnection();
 }
 
+function __destruct()
+{
+
+}
+
 public function insertIntoUsers($username,$password,$first_name,$last_name)
 {
         $query = "INSERT INTO users (username, password, first_name, last_name, school_id) VALUES ('";

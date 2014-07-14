@@ -69,7 +69,5 @@ else
 	$_SESSION["Login"] = "YES";
        	header("Location: /web/home/home.php");
        		
-	//close db connection as we have the only var we needed - the id
-       	pg_close();
 }
 ?>
