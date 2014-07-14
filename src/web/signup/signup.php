@@ -1,14 +1,15 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_users.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_spaces.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_user.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php"); 
 
-//db connection
-$conn = dbConnect();
-        
+include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+
+$db = new DatabaseConnection();
+$conn = $db->getConn();
+
 //start new session     
 session_start();
 	

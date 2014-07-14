@@ -28,7 +28,6 @@ echo "<br><b><u>My Students:<u><b><br>";
 $query = "select * from users;";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 ?>
 
