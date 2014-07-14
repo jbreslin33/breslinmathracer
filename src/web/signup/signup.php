@@ -5,11 +5,11 @@ include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/signup.php");
 
+session_start();
 
 $signup = new Signup();
 
 //start new session     
-session_start();
 	
 //set school_name, username and password
 $_SESSION["username"] = $_POST["username"];
