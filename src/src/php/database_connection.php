@@ -2,7 +2,6 @@
 
 class DatabaseConnection
 {
-    private $prepared = array();
     private $connection;
 
 function __construct()
@@ -11,9 +10,25 @@ function __construct()
         $this->connection = pg_connect($connectionString);
 }
 
+function __destruct()
+{
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'destruct','');";
+  	$result = pg_query($this->connection,$equery);
+
+	$this->closeConnection();
+}
+
 public function getConn()
 {
         return $this->connection;
+}
+
+public function closeConnection()
+{
+	if ($this->connection)
+	{
+		pg_close($this->connection);
+	}
 }
 
 public function selectUserID($username,$password)
