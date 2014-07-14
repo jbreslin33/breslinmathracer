@@ -12,8 +12,4 @@ $_SESSION["first_name"] = $_POST["firstname"];
 $_SESSION["last_name"]   = $_POST["lastname"];
 
 $signup = new Signup();
-
-$signup->fireUp();
-
-       		
 ?>
