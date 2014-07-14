@@ -5,8 +5,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/signup.php");
 
-$db = new DatabaseConnection();
-$conn = $db->getConn();
 
 $signup = new Signup();
 
@@ -51,7 +49,8 @@ else
 {
 	//insert user
 	$signup->insertIntoUsers($_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
-	$user_id = $db->selectUserID($_SESSION["username"], $_SESSION["password"]);
+	$databaseConnection = new DatabaseConnection();
+	$user_id = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
 	if ($user_id)
 	{	 
                	//set sessions 
