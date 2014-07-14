@@ -1,14 +1,14 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/database/insert_into_users.php"); 
 include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_spaces.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/check_for_user.php"); 
-include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php"); 
 
 include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/signup.php");
 
 $db = new DatabaseConnection();
 $conn = $db->getConn();
+
+$signup = new Signup($db);
 
 //start new session     
 session_start();
@@ -22,7 +22,7 @@ $_SESSION["last_name"]   = $_POST["lastname"];
 $userNameString = $_SESSION["username"];
 
 $space = checkForSpaces($userNameString);
-$taken = checkForUser($conn,$_SESSION["username"]);
+$taken = $signup->checkForUser($_SESSION["username"]);
 
 if ($taken || $space || $_SESSION["username"] == '')
 {
@@ -50,8 +50,8 @@ if ($taken || $space || $_SESSION["username"] == '')
 else	
 {
 	//insert user
-	insertIntoUsers($conn,$_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
-	$user_id = selectUserID($conn, $_SESSION["username"], $_SESSION["password"]);
+	$signup->insertIntoUsers($_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
+	$user_id = $db->selectUserID($_SESSION["username"], $_SESSION["password"]);
 	if ($user_id)
 	{	 
                	//set sessions 
