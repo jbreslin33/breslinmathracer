@@ -3,30 +3,15 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php");
-include(getenv("DOCUMENT_ROOT") . "/src/php/postgredb.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 
 
 //db connection
 //$databaseconnection = new SimpleClass();
 //$conn = $databaseconnection->getVar();
 
-class PgCall
-{
-    private $prepared = array();
-    private $connection;
-
-    // The contructor takes an existing connection, or a string to create a connection
-    function __construct($c) {
-        $this->connection = pg_connect($c);
-    }
-
-	public function getConn() 
-{
-	return $this->connection;
-}
-}
 $connstring = "host=localhost dbname=jamesanthonybreslin user=postgres password=mibesfat";
-$pg = new PgCall($connstring);
+$pg = new DatabaseConnection($connstring);
 $conn = $pg->getConn();
 
 //$conn = dbConnect();
