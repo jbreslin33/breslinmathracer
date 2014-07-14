@@ -7,15 +7,15 @@ class Signup
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
+	$this->processSignUp();
 }
 
 function __destruct()
 {
 
-
 }
 
-public function fireUp()
+public function processSignUp()
 {
 	//this will exit out  
 	if ($this->checkInput())
@@ -34,8 +34,7 @@ public function fireUp()
                 	$_SESSION["Login"] = "NO";
         	}
 
-        	//set session levels
-
+        	//SESSION
         	$sessions = new Sessions();
         	$sessions->setSessionVariables();
 
