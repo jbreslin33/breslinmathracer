@@ -16,7 +16,6 @@ if ($_SESSION["level"] == NULL)
 
         	//get db result
         	$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-        	dbErrorCheck($conn,$insertResult);
 
 		$_SESSION["ref_id"] = 'k.cc.a.1';
                 $_SESSION["standard"] = 'k.cc.a.1';
@@ -32,7 +31,6 @@ if ($_SESSION["level"] == NULL)
 
                 //get db result
                 $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$insertResult);
 
                 $_SESSION["ref_id"] = 'rl.k.1';
                 $_SESSION["standard"] = 'rl.k.1';

@@ -19,7 +19,6 @@ $query .= $_SESSION["username"];
 $query .= "';";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 pg_close($conn);
 ?>
 

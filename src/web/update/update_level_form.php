@@ -76,7 +76,6 @@ $query .= " order by username;";
 echo "hello query";
 echo $query;
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 for($i = 0; $i < $numrows; $i++) 
@@ -94,7 +93,6 @@ for($i = 0; $i < $numrows; $i++)
 $query = "select id from learning_standards";
 $query .= " order by progression;";
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 for($i = 0; $i < $numrows; $i++)
@@ -124,7 +122,6 @@ $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';

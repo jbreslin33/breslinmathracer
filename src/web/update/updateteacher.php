@@ -23,7 +23,6 @@ $update .= $_SESSION["user_id"];
 $update .= ";";
 
 $updateResult = pg_query($conn,$update);
-$errorCheck = dbErrorCheck($conn,$updateResult);
 	
 $response = "Success";
 

@@ -13,7 +13,6 @@ function insertIntoUsers($conn,$username,$password,$first_name,$last_name)
         $query .= ");";
 
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-       	dbErrorCheck($conn,$result);
 }
 function insertIntoUsersWithSchool($conn,$username,$password,$first_name,$last_name,$school_id)
 {
@@ -30,7 +29,6 @@ function insertIntoUsersWithSchool($conn,$username,$password,$first_name,$last_n
         $query .= ");";
 
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
 }
 
 ?>

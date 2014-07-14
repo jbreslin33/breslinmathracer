@@ -138,7 +138,6 @@ $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo "<option value=\"all\">all</option>";

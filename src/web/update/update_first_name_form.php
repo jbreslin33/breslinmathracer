@@ -31,7 +31,6 @@ $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 for($i = 0; $i < $numrows; $i++) 
@@ -58,7 +57,6 @@ $query .= $_SESSION["user_id"];
 $query .= " order by username;";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';

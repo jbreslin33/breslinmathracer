@@ -9,7 +9,6 @@ function getNextUsernumber($conn)
 	$query .= ";";
 
 	$result = pg_query($query);
-	dbErrorCheck($conn,$result);
 	$numberOfRows = pg_num_rows($result);
 
 	//add number of rows + 1 to get next number.
