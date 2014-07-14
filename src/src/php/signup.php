@@ -60,13 +60,8 @@ public function checkInput()
 	$num = count($stringArray);
 	$space = false; 
 
-	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','$num');";
- 	$result = pg_query($this->mDatabaseConnection->getConn(),$query);
-	
 	if ($num > 1)
 	{
-		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','$num');";
- 		$result = pg_query($this->mDatabaseConnection->getConn(),$query);
 		$space = true;
 	}
 
@@ -74,9 +69,6 @@ public function checkInput()
 
 	if ($taken || $space || $_SESSION["username"] == '')
 	{
-		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','$num');";
- 		$result = pg_query($this->mDatabaseConnection->getConn(),$query);
-
         	if ($taken)
         	{
 			$inputGood = false;
@@ -84,8 +76,6 @@ public function checkInput()
         	}
         	if ($space)
         	{
-			$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'d','$num');";
- 			$result = pg_query($this->mDatabaseConnection->getConn(),$query);
 			$inputGood = false;
 			$_SESSION["error_text"] = "do_not_use_spaces_in_user_name";
         	}

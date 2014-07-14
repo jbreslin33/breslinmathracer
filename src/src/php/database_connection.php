@@ -12,9 +12,6 @@ function __construct()
 
 function __destruct()
 {
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'destruct','');";
-  	$result = pg_query($this->connection,$equery);
-
 	$this->closeConnection();
 }
 
@@ -59,5 +56,4 @@ public function selectUserID($username,$password)
 }
 
 }
-
 ?>

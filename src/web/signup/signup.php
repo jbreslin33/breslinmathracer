@@ -5,7 +5,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/php/signup.php");
 
 session_start();
 
-//set school_name, username and password
 $_SESSION["username"] = $_POST["username"];
 $_SESSION["password"] = $_POST["password"];
 $_SESSION["first_name"] = $_POST["firstname"];
