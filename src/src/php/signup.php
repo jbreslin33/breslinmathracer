@@ -21,7 +21,7 @@ public function processSignUp()
 	if ($this->checkInput())
 	{
         	//insert user
-        	$this->insertIntoUsers($_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
+        	$this->insertIntoUsers();
         	$databaseConnection = new DatabaseConnection();
         	$user_id = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
         	if ($user_id)
@@ -98,16 +98,16 @@ public function checkInput()
 	return $inputGood;
 }
 
-public function insertIntoUsers($username,$password,$first_name,$last_name)
+public function insertIntoUsers()
 {
         $query = "INSERT INTO users (username, password, first_name, last_name, school_id) VALUES ('";
-        $query .= $username;
+        $query .= $_SESSION["username"];
         $query .= "','";
-        $query .= $password;
+        $query .= $_SESSION["password"];
         $query .= "','";
-        $query .= $first_name;
+        $query .= $_SESSION["first_name"];
         $query .= "','";
-        $query .= $last_name;
+        $query .= $_SESSION["last_name"];
         $query .= "',1";
         $query .= ");";
 
