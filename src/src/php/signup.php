@@ -12,6 +12,66 @@ function __construct()
 function __destruct()
 {
 
+
+}
+
+public function fireUp()
+{
+	$userNameString = $_SESSION["username"];
+
+	$space = checkForSpaces($userNameString);
+	$taken = $this->checkForUser($_SESSION["username"]);
+
+        //insert user
+        $this->insertIntoUsers($_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
+        $databaseConnection = new DatabaseConnection();
+        $user_id = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
+        if ($user_id)
+        {
+                //set sessions
+                $_SESSION["user_id"] = $user_id;
+        }
+        else
+        {
+                $_SESSION["Login"] = "NO";
+        }
+
+        //set session levels
+
+        $sessions = new Sessions();
+        $sessions->setSessionVariables();
+
+        $_SESSION["Login"] = "YES";
+        header("Location: /web/home/home.php");
+}
+
+public function checkInput()
+{
+
+if ($taken || $space || $_SESSION["username"] == '')
+{
+        if ($taken)
+        {
+                header("Location: /web/signup/signup_form.php?message=name_taken");
+        }
+        if ($space)
+        {
+                header("Location: /web/signup/signup_form.php?message=no_spaces");
+        }
+        if ($_SESSION["username"] == '')
+        {
+                header("Location: /web/signup/signup_form.php?message=no_name");
+        }
+        if ($_SESSION["first_name"] == '')
+        {
+                header("Location: /web/signup/signup_form.php?message=no_first_name");
+        }
+        if ($_SESSION["last_name"] == '')
+        {
+                header("Location: /web/signup/signup_form.php?message=no_last_name");
+        }
+}
+	return true;
 }
 
 public function insertIntoUsers($username,$password,$first_name,$last_name)
