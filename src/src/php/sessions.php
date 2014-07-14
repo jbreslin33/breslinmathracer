@@ -11,7 +11,10 @@ function __construct($databaseconnection)
 
 public function setSessionVariables()
 {
-	$user_id = selectUserID($this->mDatabaseConnection->getConn(), $_SESSION["username"],$_SESSION["password"]);
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
+  	$result = pg_query($this->mDatabaseConnection->getConn(),$query);
+
+	$user_id = $this->mDatabaseConnection->selectUserID($_SESSION["username"],$_SESSION["password"]);
 	
 	$query = "select first_name, last_name from users where id = ";
         $query .= $user_id;
@@ -74,7 +77,7 @@ public function setSessionVariables()
 			$_SESSION["transaction_code"] = $transaction_code;
        			$_SESSION["level"]            = $level;
 	
-			setRegularGame($this->mDatabaseConnection->getConn(),$user_id);
+			setRegularGame();
 		}
 	}
 }
