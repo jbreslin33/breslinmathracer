@@ -4,9 +4,10 @@ class Sessions
 {
     private $mDatabaseConnection;
 
-function __construct($databaseconnection)
+function __construct()
 {
-	$this->mDatabaseConnection = $databaseconnection;
+  	$this->mDatabaseConnection = new DatabaseConnection();
+
 }
 
 public function setSessionVariables()

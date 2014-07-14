@@ -64,7 +64,7 @@ else
 	
 	//set session levels
 
-	$sessions = new Sessions($db);
+	$sessions = new Sessions();
 	$sessions->setSessionVariables();
 
 	$_SESSION["Login"] = "YES";
