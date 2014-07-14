@@ -17,61 +17,96 @@ function __destruct()
 
 public function fireUp()
 {
-	$userNameString = $_SESSION["username"];
+	//this will exit out  
+	if ($this->checkInput())
+	{
+        	//insert user
+        	$this->insertIntoUsers($_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
+        	$databaseConnection = new DatabaseConnection();
+        	$user_id = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
+        	if ($user_id)
+        	{
+                	//set sessions
+                	$_SESSION["user_id"] = $user_id;
+        	}
+        	else
+        	{
+                	$_SESSION["Login"] = "NO";
+        	}
 
-	$space = checkForSpaces($userNameString);
-	$taken = $this->checkForUser($_SESSION["username"]);
+        	//set session levels
 
-        //insert user
-        $this->insertIntoUsers($_SESSION["username"], $_SESSION["password"], $_SESSION["first_name"], $_SESSION["last_name"]);
-        $databaseConnection = new DatabaseConnection();
-        $user_id = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
-        if ($user_id)
-        {
-                //set sessions
-                $_SESSION["user_id"] = $user_id;
-        }
-        else
-        {
-                $_SESSION["Login"] = "NO";
-        }
+        	$sessions = new Sessions();
+        	$sessions->setSessionVariables();
 
-        //set session levels
-
-        $sessions = new Sessions();
-        $sessions->setSessionVariables();
-
-        $_SESSION["Login"] = "YES";
-        header("Location: /web/home/home.php");
+        	$_SESSION["Login"] = "YES";
+        	header("Location: /web/home/home.php");
+	}
+	else
+	{
+		$error_text = $_SESSION["error_text"];
+		$headerString = "Location: /web/signup/signup_form.php?message=";
+		$headerString .= $error_text;
+        	header($headerString);
+	}
 }
 
 public function checkInput()
 {
+	$_SESSION["error_text"] = "";
+	$inputGood = true;
+	
+	$userNameString = $_SESSION["username"];
+	$stringArray = explode( ' ', $userNameString);
+	$num = count($stringArray);
+	$space = false; 
 
-if ($taken || $space || $_SESSION["username"] == '')
-{
-        if ($taken)
-        {
-                header("Location: /web/signup/signup_form.php?message=name_taken");
-        }
-        if ($space)
-        {
-                header("Location: /web/signup/signup_form.php?message=no_spaces");
-        }
-        if ($_SESSION["username"] == '')
-        {
-                header("Location: /web/signup/signup_form.php?message=no_name");
-        }
-        if ($_SESSION["first_name"] == '')
-        {
-                header("Location: /web/signup/signup_form.php?message=no_first_name");
-        }
-        if ($_SESSION["last_name"] == '')
-        {
-                header("Location: /web/signup/signup_form.php?message=no_last_name");
-        }
-}
-	return true;
+	$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','$num');";
+ 	$result = pg_query($this->mDatabaseConnection->getConn(),$query);
+	
+	if ($num > 1)
+	{
+		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'b','$num');";
+ 		$result = pg_query($this->mDatabaseConnection->getConn(),$query);
+		$space = true;
+	}
+
+	$taken = $this->checkForUser($_SESSION["username"]);
+
+	if ($taken || $space || $_SESSION["username"] == '')
+	{
+		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'c','$num');";
+ 		$result = pg_query($this->mDatabaseConnection->getConn(),$query);
+
+        	if ($taken)
+        	{
+			$inputGood = false;
+			$_SESSION["error_text"] = "name_taken";
+        	}
+        	if ($space)
+        	{
+			$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'d','$num');";
+ 			$result = pg_query($this->mDatabaseConnection->getConn(),$query);
+			$inputGood = false;
+			$_SESSION["error_text"] = "do_not_use_spaces_in_user_name";
+        	}
+        	if ($_SESSION["username"] == '')
+        	{
+			$inputGood = false;
+			$_SESSION["error_text"] = "you_did_not_put_a_user_name";
+        	}
+        	if ($_SESSION["first_name"] == '')
+        	{
+			$inputGood = false;
+			$_SESSION["error_text"] = "you_did_not_put_a_first_name";
+        	}
+        	if ($_SESSION["last_name"] == '')
+        	{
+			$inputGood = false;
+			$_SESSION["error_text"] = "you_did_not_put_a_last_name";
+        	}
+	}
+	return $inputGood;
 }
 
 public function insertIntoUsers($username,$password,$first_name,$last_name)
