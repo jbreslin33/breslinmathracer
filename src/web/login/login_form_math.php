@@ -12,10 +12,6 @@
 <?php
 session_start();
 
-//db connection
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
-$conn = dbConnect();
-
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_login_form.php");
 echo "<br>";
 
