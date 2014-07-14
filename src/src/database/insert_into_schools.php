@@ -13,8 +13,5 @@ function insertIntoSchools($conn,$school_name)
 
                 // insert into schools......
                 $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$result);
-
-
 }
 ?>
