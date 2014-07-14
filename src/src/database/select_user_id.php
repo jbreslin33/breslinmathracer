@@ -9,7 +9,6 @@ function selectUserID($conn,$username,$password)
 
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
 
         //get numer of rows
         $num = pg_num_rows($result);
