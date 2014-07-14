@@ -23,7 +23,6 @@ $update .= $_POST["id"];
 $update .= "';";
 
 $updateResult = pg_query($conn,$update);
-$errorCheck = dbErrorCheck($conn,$updateResult);
 	
 $response = "Success";
 

@@ -57,7 +57,6 @@ for($ri = 0; $ri < $numrows; $ri++)
 	$query .= ";";
 
 	$resultInner = pg_query($conn,$query);
-	dbErrorCheck($conn,$resultInner);
 	$numrowsInner = pg_numrows($resultInner);
 
 	for($i = 0; $i < $numrowsInner; $i++)

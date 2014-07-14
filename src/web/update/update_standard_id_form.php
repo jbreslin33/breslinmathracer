@@ -21,7 +21,6 @@ echo "<br>";
 <?php
 $query = "select id from learning_standards order by progression;";
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 ?>
         <p><b> Select Standard: </p></b>
@@ -51,7 +50,6 @@ pg_free_result($result);
 <?php
 $query = "select id, core_standards_id from learning_standards order by progression;";
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';

@@ -26,7 +26,6 @@ echo "<br>";
 <?php
 $query = "select id, username from users order by username;";
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 
 for($i = 0; $i < $numrows; $i++) 

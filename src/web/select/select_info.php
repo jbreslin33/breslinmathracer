@@ -23,7 +23,6 @@ $query .= $_SESSION["user_id"];
 $query .= ";";
 
 $result = pg_query($conn,$query);
-dbErrorCheck($conn,$result);
 $numrows = pg_numrows($result);
 $row = pg_fetch_array($result, 0);
 pg_close($conn);
