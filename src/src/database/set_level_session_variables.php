@@ -10,7 +10,6 @@ function getLevelsReport($conn,$user_id)
   	$select = "select progression, id, levels from learning_standards order by progression;";
 
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$selectResult);
 
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -44,7 +43,6 @@ function getLevelsReport($conn,$user_id)
 		$select .= "' order by progression asc, start_time desc limit 1;";
 
         	$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        	dbErrorCheck($conn,$selectResult);
 
         	//get numer of rows
         	$num = pg_num_rows($selectResult);
@@ -92,7 +90,6 @@ function getLevels($conn,$user_id)
         $select .= "';";
 
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$selectResult);
 
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -116,7 +113,6 @@ function remediate($conn,$user_id,$learningstandard,$typeid)
         $select .= "';";
 
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$selectResult);
 
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -151,7 +147,6 @@ function remediate($conn,$user_id,$learningstandard,$typeid)
                 $insert .= "',3);";
 
                 $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$insertResult);
         }
 }
 
@@ -162,7 +157,6 @@ function changeLevel($conn,$user_id)
         $select .= "';";
 
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$selectResult);
 
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -185,7 +179,6 @@ function changeLevel($conn,$user_id)
                 $insert .= "',3);";
 		
                 $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$insertResult);
 	}
 }
 
@@ -196,7 +189,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 	$select .= "';";
 	
 	$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-	dbErrorCheck($conn,$selectResult);
 
  	//get numer of rows
         $num = pg_num_rows($selectResult);
@@ -218,7 +210,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		$select .= "' order by start_time desc limit 1;";
 	
 		$selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-		dbErrorCheck($conn,$selectResult);
        		$num = pg_num_rows($selectResult);
         
 		if ($num > 0)
@@ -260,7 +251,6 @@ function setLevelSessionVariablesChange($conn,$user_id)
 		$insert .= "',3);";
 	
 		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-		dbErrorCheck($conn,$insertResult);
 
 		//update session vars
         	$_SESSION["levels"] = $levels;
@@ -284,7 +274,6 @@ function insertLevelAttempt($conn,$user_id)
 
         //get db result
         $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$insertResult);
 
         //get attempt id
         $select = "select id from levelattempts where user_id = ";
@@ -297,7 +286,6 @@ function insertLevelAttempt($conn,$user_id)
 
         //get db result
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$selectResult);
 
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -328,7 +316,6 @@ function insertItemAttempt($conn,$user_id)
 
         //get db result
         $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$insertResult);
 
 	//get level_attempt id
   	$select = "select id from item_attempts where level_attempts_id = ";
@@ -337,7 +324,6 @@ function insertItemAttempt($conn,$user_id)
 
         //get db result
         $selectResult = pg_query($conn,$select) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$selectResult);
 	
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -364,7 +350,6 @@ function advanceCurrentLearningStandard($conn,$user_id)
 	$update .=  ";"; 
                
 	$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
-       	dbErrorCheck($conn,$updateResult);
 }
 
 function setLevelsProgression($conn,$user_id)
@@ -376,7 +361,6 @@ function setLevelsProgression($conn,$user_id)
 
 	//get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
 
         //get numer of rows
         $num = pg_num_rows($result);
@@ -430,7 +414,6 @@ function getNextNotMasteredLearningStandard($conn,$user_id)
  	
 	//get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
 	
 	$num = pg_num_rows($result);
 	
@@ -451,7 +434,6 @@ function getNextNotMasteredLearningStandard($conn,$user_id)
 
         	//get db result
         	$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        	dbErrorCheck($conn,$result);
 
         	//get numer of rows
        	 	$num = pg_num_rows($result);
@@ -487,7 +469,6 @@ function getNextNotMasteredLearningStandard($conn,$user_id)
 
         	//get db result
         	$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        	dbErrorCheck($conn,$result);
 
         	//get numer of rows
         	$num = pg_num_rows($result);
@@ -534,7 +515,6 @@ function newLearningStandard($conn,$user_id)
 		
 		//get db result
         	$result2 = pg_query($conn,$query2) or die('Could not connect: ' . pg_last_error());
-        	dbErrorCheck($conn,$result2); 
 		//get numer of rows
         	$num2 = pg_num_rows($result2);
         
@@ -560,7 +540,6 @@ function newLearningStandard($conn,$user_id)
                		$selectLastLevelAttempt .= "' order by start_time desc limit 1;";
 
                		$selectLastLevelAttemptResult = pg_query($conn,$selectLastLevelAttempt) or die('Could not connect: ' . pg_last_error());
-               		dbErrorCheck($conn,$selectLastLevelAttemptResult);
                		$numLastLevelAttemptRows = pg_num_rows($selectLastLevelAttemptResult);
 		
 			if ($numLastLevelAttemptRows > 0)
@@ -590,7 +569,6 @@ function newLearningStandard($conn,$user_id)
 			
 			//get db result
         		$insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-        		dbErrorCheck($conn,$insertResult);
 		} 
 	}
 	else
@@ -613,7 +591,6 @@ function setEvaluation($conn,$user_id)
         $insert .= "',2);";
 
         $insertResult = pg_query($conn,$insert) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$insertResult);
 
         //update session vars with some hard coding
         $_SESSION["level"] = 1;
@@ -639,7 +616,6 @@ function setRawData($conn,$user_id)
 		$query .= " order by progression asc limit 1;";
                 
 		$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-                dbErrorCheck($conn,$result);
         	
 		$num = pg_num_rows($result);
         
@@ -655,7 +631,6 @@ function setRawData($conn,$user_id)
 			$query2 .= " order by start_time asc limit 10;";		
 		
 			$result2 = pg_query($conn,$query2) or die('Could not connect: ' . pg_last_error());
-                	dbErrorCheck($conn,$result2);
         	
 			$num2 = pg_num_rows($result2);
 
@@ -732,7 +707,6 @@ function rewindCurrentLearningStandard($conn,$user_id)
 	$update .=  ";"; 
                
 	$updateResult = pg_query($conn,$update) or die('Could not connect: ' . pg_last_error());
-       	dbErrorCheck($conn,$updateResult);
 }
 
 function bumpLevelDown($conn,$user_id,$levelVar)
@@ -763,7 +737,6 @@ function setLevelSessionVariables($conn,$user_id)
 
 	//get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
 
         //get numer of rows
         $num = pg_num_rows($result);
@@ -795,7 +768,6 @@ function setLevelSessionVariables($conn,$user_id)
 	
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
                 
         //get numer of rows
         $num = pg_num_rows($result);
@@ -851,7 +823,6 @@ function setRegularGame($conn,$user_id)
 
 	//get db result
        	$result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-       	dbErrorCheck($conn,$result);
 
 	//get numer of rows
        	$num = pg_num_rows($result);
@@ -882,7 +853,6 @@ function selectLevels($conn,$id)
 
         //get db result
         $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
-        dbErrorCheck($conn,$result);
 
         //get numer of rows
         $num = pg_num_rows($result);

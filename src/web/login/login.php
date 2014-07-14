@@ -1,20 +1,11 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
 
 include(getenv("DOCUMENT_ROOT") . "/src/database/select_user_id.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 
-
-//db connection
-//$databaseconnection = new SimpleClass();
-//$conn = $databaseconnection->getVar();
-
-$connstring = "host=localhost dbname=jamesanthonybreslin user=postgres password=mibesfat";
-$pg = new DatabaseConnection($connstring);
-$conn = $pg->getConn();
-
-//$conn = dbConnect();
+$db = new DatabaseConnection();
+$conn = $db->getConn();
 
 //start new session
 session_start();
