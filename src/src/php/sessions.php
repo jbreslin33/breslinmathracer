@@ -12,9 +12,6 @@ function __construct()
 
 public function setSessionVariables()
 {
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-  	$result = pg_query($this->mDatabaseConnection->getConn(),$query);
-
 	$user_id = $this->mDatabaseConnection->selectUserID($_SESSION["username"],$_SESSION["password"]);
 	
 	$query = "select first_name, last_name from users where id = ";
