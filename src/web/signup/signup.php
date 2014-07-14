@@ -8,7 +8,7 @@ include(getenv("DOCUMENT_ROOT") . "/src/php/signup.php");
 $db = new DatabaseConnection();
 $conn = $db->getConn();
 
-$signup = new Signup($db);
+$signup = new Signup();
 
 //start new session     
 session_start();

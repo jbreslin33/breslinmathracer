@@ -4,9 +4,9 @@ class Signup
 {
     private $mDatabaseConnection;
 
-function __construct($databaseconnection)
+function __construct()
 {
-	$this->mDatabaseConnection = $databaseconnection;
+	$this->mDatabaseConnection = new DatabaseConnection();
 }
 
 public function insertIntoUsers($username,$password,$first_name,$last_name)
