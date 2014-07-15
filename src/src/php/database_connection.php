@@ -12,20 +12,12 @@ function __construct()
 
 function __destruct()
 {
-	$this->closeConnection();
+
 }
 
 public function getConn()
 {
         return $this->connection;
-}
-
-public function closeConnection()
-{
-	if ($this->connection)
-	{
-		pg_close($this->connection);
-	}
 }
 
 public function selectUserID($username,$password)

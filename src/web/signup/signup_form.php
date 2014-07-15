@@ -13,7 +13,8 @@
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_signup_form.php");
 echo "<br>";
 
-      	$mess = $_GET["message"];
+	$mess = 0;
+      	$mess = isset($_GET["message"]);
 
 	echo $mess;
 ?>
