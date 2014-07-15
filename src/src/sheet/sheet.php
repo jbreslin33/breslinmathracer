@@ -193,6 +193,7 @@ var Sheet = new Class(
 		}
 		else
 		{
+/*
 			APPLICATION.log('remediate type:a');
  			var remediateTheType = false;
                 	if (APPLICATION.mItemTypeIDArray.length > 0)
@@ -220,6 +221,7 @@ var Sheet = new Class(
 					}
 				}
 			}		
+*/
 		}
 		
 		//redo setting mItem since you shuffled
