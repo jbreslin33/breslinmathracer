@@ -7,7 +7,6 @@ class Sessions
 function __construct()
 {
   	$this->mDatabaseConnection = new DatabaseConnection();
-
 }
 
 public function setSessionVariables()
@@ -28,12 +27,13 @@ public function setSessionVariables()
         $num = pg_num_rows($result);
 
 	$ref_id = 0;
-
+	
         if ($num > 0)
         {
+
                 $ref_id           = pg_Result($result, 0, 'learning_standards_id');
                 $_SESSION["ref_id"]           = $ref_id;
-
+		
 		if ($ref_id == 'evaluation')
 		{
 		
@@ -42,12 +42,13 @@ public function setSessionVariables()
 		}
 		else
 		{
+
        			$transaction_code = pg_Result($result, 0, 'transaction_code');
        			$level            = pg_Result($result, 0, 'level');
 			$_SESSION["transaction_code"] = $transaction_code;
        			$_SESSION["level"]            = $level;
 	
-			setRegularGame();
+			$this->setRegularGame();
 		}
 	}
 }
@@ -72,6 +73,7 @@ public function setRegularGame()
                 	$_SESSION["level"]            = $levelVar;
 		}
        	}
+	$ref = $_SESSION["ref_id"];
 	
 	$query = "select * from learning_standards where id = '";
        	$query .= $_SESSION["ref_id"];
@@ -100,8 +102,5 @@ public function setRegularGame()
                	echo "error no user";
        	}
 }
-
-
 }
-
 ?>
