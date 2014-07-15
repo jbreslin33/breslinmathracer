@@ -347,12 +347,13 @@ var Application = new Class(
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                                 	APPLICATION.mProgression = responseArray[4];
                                 	APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mItemTypeIDRawData = responseArray[6];
+					//APPLICATION.mItemTypeIDRawData = responseArray[6];
                                 	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
 					
 					//lets empty the arrays
+/*
 					APPLICATION.mItemTypeIDArray = 0;
                                         var itemarray = 0;
                                         itemarray = APPLICATION.mItemTypeIDRawData.split(":");
@@ -362,6 +363,7 @@ var Application = new Class(
                                         	itemarray[i] = parseInt(itemarray[i]);
                                         }
                                         APPLICATION.mItemTypeIDArray = itemarray;
+*/
 				}
                         }
                 }
