@@ -366,7 +366,7 @@ var Application = new Class(
 				}
                         }
                 }
-                xmlhttp.open("GET","../../src/database/goto_last_level_ajax.php",true);
+                xmlhttp.open("GET","../../src/database/advance.php",true);
                 xmlhttp.send();
         },
  	
