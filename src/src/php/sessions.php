@@ -30,15 +30,13 @@ public function setSessionVariables()
 	
         if ($num > 0)
         {
-
                 $ref_id           = pg_Result($result, 0, 'learning_standards_id');
                 $_SESSION["ref_id"]           = $ref_id;
 		
 		if ($ref_id == 'evaluation')
 		{
-		
 			//do nothing for now
-			//setEvaluation($this->mDatabaseConnection->getConn(),$user_id);
+			$evaluation = new Evaluation();
 		}
 		else
 		{
