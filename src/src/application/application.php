@@ -10,16 +10,16 @@ var Application = new Class(
 		this.mStateLogs = true;
 
 		//personal info
-		this.mUsername = username;
-		this.mFirstName = firstname;
-		this.mLastName = lastname;
+		this.mUsername = '';
+		this.mFirstName = '';
+		this.mLastName = '';
 
 		/*********** LEVEL *******************
-		this.mRef_id = ref_id;
-		this.mLevel = level;
-		this.mLevels = levels;
-		this.mProgression = progression;
-		this.mStandard = standard;
+		this.mRef_id = '';
+		this.mLevel = 0;
+		this.mLevels = 0;
+		this.mProgression = 0;
+		this.mStandard = '';
 		this.mItemTypeIDRawData = '';
 		this.mItemTypeIDArray = 0;
 
