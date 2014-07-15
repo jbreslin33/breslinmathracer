@@ -2,11 +2,12 @@
 
 include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/advance.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/evaluation.php");
 
 //start new session
 session_start();
 
-$advance = Advance();
+$advance = new Advance();
 
 //fill php vars
 $returnString = "101,"; 
