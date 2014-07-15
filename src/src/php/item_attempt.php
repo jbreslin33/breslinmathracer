@@ -24,10 +24,10 @@ public function process()
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
         //get item_attempt id
-        $select = "select id from item_attempts where level_attempts_id = ";
+        $select = "select id from item_attempts where levelattempts_id = ";
         $select .= $_SESSION["attempt_id"];
-        $select .= "' ORDER BY start_time DESC;";
-
+        $select .= " ORDER BY start_time DESC;";
+ 
         //get db result
         $selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
 
