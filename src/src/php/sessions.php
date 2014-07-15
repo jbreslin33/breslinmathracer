@@ -12,40 +12,11 @@ function __construct()
 
 public function setSessionVariables()
 {
-/*
-	$user_id = $this->mDatabaseConnection->selectUserID($_SESSION["username"],$_SESSION["password"]);
-	
-	$query = "select first_name, last_name from users where id = ";
-        $query .= $user_id;
-        $query .= ";";
-
-	//get db result
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-
-        //get numer of rows
-        $num = pg_num_rows($result);
-
-        if ($num > 0)
-        {
-                //get the id from user table
-                $first_name = pg_Result($result, 0, 'first_name');
-                $last_name = pg_Result($result, 0, 'last_name');
-
-                //set level_id
-                $_SESSION["first_name"] = $first_name;
-                $_SESSION["last_name"] = $last_name;
-                $_SESSION["user_id"] = $user_id;
-        }
-        else
-        {
-                echo "error no user";
-        }
-*/
 	if ($_SESSION["subject_id"] == NULL)
 	{
 		$_SESSION["subject_id"] = 1;
 	}
-        
+
 	$query  = "select levelattempts.transaction_code, levelattempts.learning_standards_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.id=levelattempts.learning_standards_id JOIN core_standards ON core_standards.id=learning_standards.core_standards_id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id JOIN core_domains_subjects_grades ON core_domains_subjects_grades.id=core_clusters.core_domains_subjects_grades_id JOIN core_subjects_grades ON core_subjects_grades.id=core_domains_subjects_grades.core_subjects_grades_id JOIN core_subjects ON core_subjects.id=core_subjects_grades.core_subjects_id where user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
