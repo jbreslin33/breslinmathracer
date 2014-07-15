@@ -132,7 +132,7 @@ public function getNextNotMasteredLearningStandard()
         $query .= " order by progression asc LIMIT 1;";
 
         //get db result
-        $result = pg_query($conn,$query) or die('Could not connect: ' . pg_last_error());
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
         $num = pg_num_rows($result);
 
