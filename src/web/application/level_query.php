@@ -22,6 +22,10 @@ if ($_SESSION["level"] == NULL)
 		$_SESSION["level"] = 1;
 		$_SESSION["levels"] = 4;
 		$_SESSION["progression"] = 1.000;
+
+		$query = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'insert lev','');";
+                $result = pg_query($conn,$query);
+
 	}
         if ($_SESSION["subject_id"] == 2)
         {
