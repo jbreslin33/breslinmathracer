@@ -10,13 +10,6 @@ Extends: GameSheet,
        		this.parent(application);
 	
 		this.mSheet = new sk_cc_a_1(this);	
-		for (var i = 0; i < APPLICATION.mItemTypeIDArray.length; i++)
-		{
-			if (APPLICATION.mItemTypeIDArray[i])
-			{
-				APPLICATION.log('APPLICATION.mItemTypeIDArray[i]:' + APPLICATION.mItemTypeIDArray[i]);
-			}
-		}
 	}
 });
 
