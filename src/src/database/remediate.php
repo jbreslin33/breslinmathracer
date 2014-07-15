@@ -1,17 +1,15 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/remediate.php");
 
 //start new session
 session_start();
 
-$conn = dbConnect();
-
-include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php"); 
-
 $learningstandard = $_GET["learningstandard"];
 $typeid = $_GET["typeid"];
 
-remediate($conn,$_SESSION["user_id"],$learningstandard,$typeid);
+$remediate = new Remediate();
+$remediate->remediateback($learningstandard,$typeid);
 
 //fill php vars
 $returnString = "101,"; 
