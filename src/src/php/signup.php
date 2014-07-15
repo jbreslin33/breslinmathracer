@@ -22,24 +22,27 @@ public function processSignUp()
 	{
         	//insert user
         	$this->insertIntoUsers();
+
         	$databaseConnection = new DatabaseConnection();
-        	$user_id = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
-        	if ($user_id)
-        	{
-                	//set sessions
-                	$_SESSION["user_id"] = $user_id;
-        	}
-        	else
+        	$_SESSION["user_id"] = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
+
+        	if ($_SESSION["user_id"] == 0)
         	{
                 	$_SESSION["Login"] = "NO";
+			$error_text = $_SESSION["error_text"];
+			$headerString = "Location: /web/signup/signup_form.php?message=";
+			$headerString .= $error_text;
+        		header($headerString);
         	}
+		else
+		{
+        		//SESSION
+        		$sessions = new Sessions();
+        		$sessions->setSessionVariables();
 
-        	//SESSION
-        	$sessions = new Sessions();
-        	$sessions->setSessionVariables();
-
-        	$_SESSION["Login"] = "YES";
-        	header("Location: /web/home/home.php");
+        		$_SESSION["Login"] = "YES";
+        		header("Location: /web/home/home.php");
+		}
 	}
 	else
 	{

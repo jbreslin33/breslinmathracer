@@ -12,6 +12,7 @@ function __construct()
 
 public function setSessionVariables()
 {
+/*
 	$user_id = $this->mDatabaseConnection->selectUserID($_SESSION["username"],$_SESSION["password"]);
 	
 	$query = "select first_name, last_name from users where id = ";
@@ -39,7 +40,7 @@ public function setSessionVariables()
         {
                 echo "error no user";
         }
-
+*/
 	if ($_SESSION["subject_id"] == NULL)
 	{
 		$_SESSION["subject_id"] = 1;
