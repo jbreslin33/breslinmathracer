@@ -11,7 +11,7 @@ function __construct()
 
 public function setSessionVariables()
 {
-	if ($_SESSION["subject_id"] == NULL)
+	if (isset($_SESSION["subject_id"]) == false)
 	{
 		$_SESSION["subject_id"] = 1;
 	}

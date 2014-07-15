@@ -18,7 +18,8 @@ echo "<br>";
 	//and set Login to NO
 	$_SESSION["Login"] = "NO";
 
-      	$mess = $_GET["message"];
+	$mess = 0;
+      	$mess = isset($_GET["message"]);
 	
 	if ($mess == "no_user")
 	{
