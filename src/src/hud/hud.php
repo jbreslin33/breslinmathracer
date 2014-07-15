@@ -20,9 +20,9 @@ var Hud = new Class(
         this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/index.html"> LOGOUT</a> </font>');
 	
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
-	this.setStandard(standard);
+	this.setStandard('');
         this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
-	this.setProgression(progression);
+	this.setProgression('');
 	
 	this.mLevel = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
         this.mLevel.setText('<font size="2"> Level : ' + this.mApplication.mLevel + '/' + this.mApplication.mLevels + '</font>');

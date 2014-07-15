@@ -41,10 +41,6 @@ public function remediateback($learningstandard,$typeid)
 		$_SESSION["item_type_id_raw_data"] = $typeid;
 		$rawData = $_SESSION["item_type_id_raw_data"];
 		
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','$rawData');";
-  		$result = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	
-		
                 //do the insert...
                 $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
                 $insert .= $_SESSION["user_id"];
