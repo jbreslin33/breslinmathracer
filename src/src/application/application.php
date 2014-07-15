@@ -147,7 +147,6 @@ var Application = new Class(
 
                                 if (codeNumber == 101)
                                 {
-					APPLICATION.log('getLevelData:code 101');
 					APPLICATION.mRef_id = responseArray[1];
 					APPLICATION.mLevel = responseArray[2];
                                 	APPLICATION.mStandard = responseArray[3];
