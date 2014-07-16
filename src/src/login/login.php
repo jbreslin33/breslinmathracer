@@ -18,6 +18,7 @@ Extends: Game,
                 this.mUsernameTextBox = new Shape(200,50,400,100,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
+      		this.mUsernameTextBox.mMesh.focus();
 
                 this.mPasswordLabel = new Shape(200,50,300,165,this,"","","");
                 this.mPasswordLabel.setText('Password:');

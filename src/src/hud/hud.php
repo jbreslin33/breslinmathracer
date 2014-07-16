@@ -25,7 +25,8 @@ var Hud = new Class(
 	this.setProgression('');
 	
 	this.mLevel = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
-        this.mLevel.setText('<font size="2"> Level : ' + this.mApplication.mLevel + '/' + this.mApplication.mLevels + '</font>');
+	this.mLevel.setText('<font size="2"> Level : </font>');
+        //this.mLevel.setText('<font size="2"> Level : ' + this.mApplication.mLevel + '/' + this.mApplication.mLevels + '</font>');
 
         this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
         this.mScore.setText('<font size="2"> Score : </font>');
