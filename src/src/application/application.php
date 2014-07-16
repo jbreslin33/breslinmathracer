@@ -124,6 +124,50 @@ var Application = new Class(
 		this.mGame = 0;	
 	},
 
+        signup: function(username,password,first_name,last_name)
+        {
+        var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                                var response = xmlhttp.responseText;
+                                var responseArray = response.split(",");
+                                var code = responseArray[0];
+                                var codeNumber = parseInt(code);
+
+                                if (codeNumber == 101)
+                                {
+                                        APPLICATION.mRef_id = responseArray[1];
+                                        APPLICATION.mLevel = responseArray[2];
+                                        APPLICATION.mStandard = responseArray[3];
+                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                        APPLICATION.mProgression = responseArray[4];
+                                        APPLICATION.mLevels = responseArray[5];
+                                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+
+                                }
+                        }
+                }
+                xmlhttp.open("GET","../../src/database/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
+                xmlhttp.send();
+	},
+
+
 	getLevelData: function()
         {
                 var xmlhttp;
@@ -159,7 +203,15 @@ var Application = new Class(
                                 	APPLICATION.mProgression = responseArray[4];
 					APPLICATION.mLevels = responseArray[5];
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-					//APPLICATION.mItemTypeIDRawData = responseArray[6];
+					var l = responseArray[6];
+					if (l == "YES")
+					{
+						APPLICATION.mLoggedIn = true;
+					}
+					else
+					{
+						APPLICATION.mLoggedIn = false;
+					}
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);

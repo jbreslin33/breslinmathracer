@@ -85,6 +85,12 @@ Extends: Game,
         {
 		//APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
 		APPLICATION.log('hit signup button');
+		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
+		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
+		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
+		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
+
+		APPLICATION.signup(username,password,first_name,last_name);
         },
 
         hitLoginButton: function()
