@@ -22,7 +22,7 @@ public function process()
 	{
         	//set sessions
         	$_SESSION["user_id"] = $user_id;
-        	$_SESSION["Login"] = "YES";
+        	$_SESSION["LOGGED_IN"] = 1;
 
         	//SESSION
         	$sessions = new Sessions();
@@ -31,25 +31,9 @@ public function process()
 	}
 	else
 	{
-        	$_SESSION["Login"] = "NO";
+        	$_SESSION["LOGGED_IN"] = 0;
         	$problem = "no_user";
         	$_SESSION["user_id"] = 0;
-	}
-
-	if ($problem == "")
-	{
-        	header("Location: /web/home/home.php");
-	}
-	else
-	{
-        	if ($_SESSION["subject_id"] == 1)
-        	{
-                	header("Location: login_form_math.php?message=$problem");
-       		}
-        	if ($_SESSION["subject_id"] == 2)
-        	{
-                	header("Location: login_form_ela.php?message=$problem");
-        	}
 	}
 }
 
