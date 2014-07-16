@@ -10,16 +10,9 @@ Extends: Game,
        		this.parent(application);
 
 		APPLICATION.log('login::constructor');	
+
                 this.mUsernameTextBox = new Shape(200,50,125,150,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mUsernameTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
-                }
-                else
-                {
-                        this.mUsernameTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
-                }
                 this.mShapeArray.push(this.mUsernameTextBox);
 
                 this.mPasswordTextBox = new Shape(200,50,125,220,this,"INPUT","","");
@@ -79,6 +72,7 @@ Extends: Game,
                 if (e.key == 'enter')
                 {
                         //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+			APPLICATION.log('hit enter');
                 }
         },
 
@@ -87,6 +81,7 @@ Extends: Game,
                 if (e.keyCode == 13)
                 {
                         //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
+			APPLICATION.log('hit enter');
                 }
         }
 
