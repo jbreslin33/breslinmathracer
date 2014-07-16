@@ -11,11 +11,11 @@ Extends: Game,
 
 		APPLICATION.log('login::constructor');	
 
-                this.mUsernameTextBox = new Shape(200,50,125,150,this,"INPUT","","");
+                this.mUsernameTextBox = new Shape(200,50,400,100,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
 
-                this.mPasswordTextBox = new Shape(200,50,125,220,this,"INPUT","","");
+                this.mPasswordTextBox = new Shape(200,50,400,165,this,"INPUT","","");
                 this.mPasswordTextBox.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
@@ -28,7 +28,7 @@ Extends: Game,
                 this.mShapeArray.push(this.mPasswordTextBox);
        
 		//LOGIN BUTTON
-                this.mLoginButton = new Shape(200,50,125,300,this,"BUTTON","","");
+                this.mLoginButton = new Shape(200,50,400,230,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mLoginButton.mMesh.attachEvent("onclick",this.hitLoginButton);
@@ -42,7 +42,7 @@ Extends: Game,
 
 
                 //SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,500,350,this,"BUTTON","","");
+                this.mSignupButton = new Shape(200,50,650,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);

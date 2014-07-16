@@ -10,19 +10,20 @@ Extends: Game,
        		this.parent(application);
 
 		APPLICATION.log('signup::constructor');	
-                this.mUsernameTextBox = new Shape(200,50,125,150,this,"INPUT","","");
+200,50,400,100
+                this.mUsernameTextBox = new Shape(200,50,400,100,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
 
-                this.mPasswordTextBox = new Shape(200,50,125,220,this,"INPUT","","");
+                this.mPasswordTextBox = new Shape(200,50,400,165,this,"INPUT","","");
                 this.mPasswordTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mPasswordTextBox);
 
-  		this.mFirstNameTextBox = new Shape(200,50,125,290,this,"INPUT","","");
+  		this.mFirstNameTextBox = new Shape(200,50,400,230,this,"INPUT","","");
                 this.mFirstNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mFirstNameTextBox);
   		
-		this.mLastNameTextBox = new Shape(200,50,125,360,this,"INPUT","","");
+		this.mLastNameTextBox = new Shape(200,50,400,295,this,"INPUT","","");
                 this.mLastNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mLastNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -36,7 +37,7 @@ Extends: Game,
 
        
 		//SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,125,430,this,"BUTTON","","");
+                this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
@@ -50,7 +51,7 @@ Extends: Game,
 
 
                 //LOGIN BUTTON
-                this.mLoginButton = new Shape(200,50,500,350,this,"BUTTON","","");
+                this.mLoginButton = new Shape(200,50,650,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mLoginButton.mMesh.attachEvent("onclick",this.hitLoginButton);
