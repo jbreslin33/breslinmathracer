@@ -42,7 +42,7 @@ enter: function(application)
 
 execute: function(application)
 {
-	application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+	application.mStateMachine.changeState(application.mLOGIN_APPLICATION);
 },
 
 exit: function(application)
@@ -50,6 +50,86 @@ exit: function(application)
 }
 
 });
+
+var LOGIN_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	application.mLoggedIn = false;
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::INIT_APPLICATION');
+	}
+	application.mRef_id = 'login';
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "login";
+        application.mGame = new login(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mLoggedIn == true)
+	{
+		application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var SIGNUP_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        application.mLoggedIn = false;
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::SIGNUP_APPLICATION');
+        }
+        application.mRef_id = 'signup';
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "signup";
+        application.mGame = new signup(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mLoggedIn == true)
+        {
+                application.mStateMachine.changeState(application.mNORMAL_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
 
 var NORMAL_APPLICATION = new Class(
 {

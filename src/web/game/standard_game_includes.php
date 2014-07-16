@@ -9,6 +9,8 @@
 <script type="text/javascript" src="/src/application/states/application_states.php"></script>
 
 <script type="text/javascript" src="/src/game/game.php"></script>
+<script type="text/javascript" src="/src/login/login.php"></script>
+<script type="text/javascript" src="/src/signup/signup.php"></script>
 <script type="text/javascript" src="/src/core/math/game_sheet.php"></script>
 <script type="text/javascript" src="/src/game/quiz_game.php"></script>
 <script type="text/javascript" src="/src/game/states/states.php"></script>

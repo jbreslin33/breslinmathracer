@@ -14,8 +14,11 @@ var Application = new Class(
 		this.mFirstName = '';
 		this.mLastName = '';
 
+		/*********** LOGIN *******************
+		this.mLoggedIn = false;
+
 		/*********** LEVEL *******************
-		this.mRef_id = '';
+		this.mRef_id = 'login';
 		this.mLevel = 0;
 		this.mLevels = 0;
 		this.mProgression = 0;
@@ -83,6 +86,8 @@ var Application = new Class(
 
                 this.mGLOBAL_APPLICATION                = new GLOBAL_APPLICATION       (this);
                 this.mINIT_APPLICATION                  = new INIT_APPLICATION         (this);
+                this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
+                this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
                 this.mNORMAL_APPLICATION                = new NORMAL_APPLICATION       (this);
                 this.mGET_LEVEL_DATA_APPLICATION        = new GET_LEVEL_DATA_APPLICATION(this);
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
@@ -148,6 +153,7 @@ var Application = new Class(
                                 if (codeNumber == 101)
                                 {
 					APPLICATION.mRef_id = responseArray[1];
+					this.APPLICATION.log('getLevelData:' + APPLICATION.mRef_id);
 					APPLICATION.mLevel = responseArray[2];
                                 	APPLICATION.mStandard = responseArray[3];
                                 	APPLICATION.mProgression = responseArray[4];
@@ -235,6 +241,7 @@ var Application = new Class(
 				if (codeNumber == 101)
 				{
 					APPLICATION.mRef_id = responseArray[1];
+					this.APPLICATION.log('remediate:' + APPLICATION.mRef_id);
 					APPLICATION.mLevel = responseArray[2];
 					APPLICATION.mStandard = responseArray[3];
 					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -289,6 +296,7 @@ var Application = new Class(
 				if (codeNumber == 101)
 				{
 					APPLICATION.mRef_id = responseArray[1];
+					this.APPLICATION.log('advanceToNextLevel:' + APPLICATION.mRef_id);
 					APPLICATION.mLevel = responseArray[2];
 					APPLICATION.mStandard = responseArray[3];
 					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -346,6 +354,7 @@ var Application = new Class(
 				if (codeNumber == 101)
                        	 	{
                                 	APPLICATION.mRef_id = responseArray[1];
+					this.APPLICATION.log('advanceToLastLevel:' + APPLICATION.mRef_id);
                                 	APPLICATION.mLevel = responseArray[2];
                                 	APPLICATION.mStandard = responseArray[3];
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -445,10 +454,6 @@ var Application = new Class(
 	// are we running the right game??
 	gameDecider: function()
 	{
-		if (this.mRef_id == 0)
-		{
-		}
-		
 		//ela
 		if (this.mRef_id == 'rl.k.1')
 		{ 
