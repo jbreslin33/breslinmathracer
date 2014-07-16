@@ -26,10 +26,18 @@ Extends: Game,
                 this.mPasswordTextBox = new Shape(200,50,400,165,this,"INPUT","","");
                 this.mPasswordTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mPasswordTextBox);
+		
+		this.mFirstNameLabel = new Shape(200,50,300,230,this,"","","");
+                this.mFirstNameLabel.setText('First Name:');
+                this.mShapeArray.push(this.mFirstNameLabel);
 
   		this.mFirstNameTextBox = new Shape(200,50,400,230,this,"INPUT","","");
                 this.mFirstNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mFirstNameTextBox);
+		
+		this.mLastNameLabel = new Shape(200,50,300,295,this,"","","");
+                this.mLastNameLabel.setText('Last Name:');
+                this.mShapeArray.push(this.mLastNameLabel);
   		
 		this.mLastNameTextBox = new Shape(200,50,400,295,this,"INPUT","","");
                 this.mLastNameTextBox.mMesh.value = '';
