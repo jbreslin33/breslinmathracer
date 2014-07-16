@@ -10,5 +10,5 @@
 <script type="text/javascript" src="/src/mootools/mootools-core-1.4.5-full-compat.js"></script>
 
 <?php
-include(getenv("DOCUMENT_ROOT") . "/web/login/check_login.php");
+//include(getenv("DOCUMENT_ROOT") . "/web/login/check_login.php");
 ?>
