@@ -17,6 +17,20 @@ function __destruct()
 
 public function processSignUp()
 {
+  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
+  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+	$u = $_SESSION["username"];
+	$p = $_SESSION["password"];
+	$f = $_SESSION["first_name"];
+	$l = $_SESSION["last_name"];
+  	
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$u','$p');";
+  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$f','$l');";
+  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 	//this will exit out  
 	if ($this->checkInput())
 	{
@@ -29,10 +43,6 @@ public function processSignUp()
         	if ($_SESSION["user_id"] == 0)
         	{
                 	$_SESSION["Login"] = "NO";
-			$error_text = $_SESSION["error_text"];
-			$headerString = "Location: /web/signup/signup_form.php?message=";
-			$headerString .= $error_text;
-        		header($headerString);
         	}
 		else
 		{
@@ -41,15 +51,11 @@ public function processSignUp()
         		$sessions->setSessionVariables();
 
         		$_SESSION["Login"] = "YES";
-        		header("Location: /web/home/home.php");
 		}
 	}
 	else
 	{
-		$error_text = $_SESSION["error_text"];
-		$headerString = "Location: /web/signup/signup_form.php?message=";
-		$headerString .= $error_text;
-        	header($headerString);
+                $_SESSION["Login"] = "NO";
 	}
 }
 
