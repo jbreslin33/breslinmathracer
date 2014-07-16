@@ -156,6 +156,16 @@ var Application = new Class(
                                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                                         APPLICATION.mProgression = responseArray[4];
                                         APPLICATION.mLevels = responseArray[5];
+ 					APPLICATION.mLoggedIn = responseArray[6];
+					if (APPLICATION.mLoggedIn)		
+					{
+						APPLICATION.log('you logged in!');
+                                        }
+                                        else
+                                        {
+						APPLICATION.log('you are not logged in!');
+                                        }
+
                                         APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -203,15 +213,6 @@ var Application = new Class(
                                 	APPLICATION.mProgression = responseArray[4];
 					APPLICATION.mLevels = responseArray[5];
 					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-					var l = responseArray[6];
-					if (l == "YES")
-					{
-						APPLICATION.mLoggedIn = true;
-					}
-					else
-					{
-						APPLICATION.mLoggedIn = false;
-					}
 					APPLICATION.mWaitingOnLevelData = false;
                                 	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
