@@ -207,7 +207,6 @@ var Application = new Class(
                                 if (codeNumber == 101)
                                 {
 					APPLICATION.mRef_id = responseArray[1];
-					this.APPLICATION.log('getLevelData:' + APPLICATION.mRef_id);
 					APPLICATION.mLevel = responseArray[2];
                                 	APPLICATION.mStandard = responseArray[3];
                                 	APPLICATION.mProgression = responseArray[4];
@@ -294,7 +293,6 @@ var Application = new Class(
 				if (codeNumber == 101)
 				{
 					APPLICATION.mRef_id = responseArray[1];
-					this.APPLICATION.log('remediate:' + APPLICATION.mRef_id);
 					APPLICATION.mLevel = responseArray[2];
 					APPLICATION.mStandard = responseArray[3];
 					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -349,7 +347,6 @@ var Application = new Class(
 				if (codeNumber == 101)
 				{
 					APPLICATION.mRef_id = responseArray[1];
-					this.APPLICATION.log('advanceToNextLevel:' + APPLICATION.mRef_id);
 					APPLICATION.mLevel = responseArray[2];
 					APPLICATION.mStandard = responseArray[3];
 					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
@@ -407,7 +404,6 @@ var Application = new Class(
 				if (codeNumber == 101)
                        	 	{
                                 	APPLICATION.mRef_id = responseArray[1];
-					this.APPLICATION.log('advanceToLastLevel:' + APPLICATION.mRef_id);
                                 	APPLICATION.mLevel = responseArray[2];
                                 	APPLICATION.mStandard = responseArray[3];
                                 	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
