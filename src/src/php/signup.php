@@ -7,7 +7,9 @@ class Signup
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->processSignUp();
+
+
+	$this->process();
 }
 
 function __destruct()
@@ -15,20 +17,14 @@ function __destruct()
 
 }
 
-public function processSignUp()
+public function process()
 {
-  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','a');";
   	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 	$u = $_SESSION["username"];
-	$p = $_SESSION["password"];
-	$f = $_SESSION["first_name"];
-	$l = $_SESSION["last_name"];
-  	
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$u','$p');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$f','$l');";
+ 
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$u','username');";
   	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 	//this will exit out  
@@ -39,6 +35,7 @@ public function processSignUp()
 
         	$databaseConnection = new DatabaseConnection();
         	$_SESSION["user_id"] = $databaseConnection->selectUserID($_SESSION["username"], $_SESSION["password"]);
+	
 
         	if ($_SESSION["user_id"] == 0)
         	{
@@ -46,9 +43,7 @@ public function processSignUp()
         	}
 		else
 		{
-        		//SESSION
-        		$sessions = new Sessions();
-        		$sessions->setSessionVariables();
+			$this->insertFirstLevelAttempt();
 
         		$_SESSION["Login"] = "YES";
 		}
@@ -59,52 +54,69 @@ public function processSignUp()
 	}
 }
 
+public function insertFirstLevelAttempt()
+{ 
+	$insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
+        $insert .= $_SESSION["user_id"];
+        $insert .= ",1,'k.cc.a.1');";
+
+        //get db result
+       	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+
+        $_SESSION["ref_id"] = 'k.cc.a.1';
+        $_SESSION["standard"] = 'k.cc.a.1';
+        $_SESSION["level"] = 1;
+       	$_SESSION["levels"] = 4;
+        $_SESSION["progression"] = 1.000;
+        $_SESSION["subject_id"] = 1;
+}
+
 public function checkInput()
 {
-	$_SESSION["error_text"] = "";
-	$inputGood = true;
-	
-	$userNameString = $_SESSION["username"];
-	$stringArray = explode( ' ', $userNameString);
-	$num = count($stringArray);
-	$space = false; 
+        $_SESSION["error_text"] = "";
+        $inputGood = true;
+        
+        $userNameString = $_SESSION["username"];
+        $stringArray = explode( ' ', $userNameString);
+        $num = count($stringArray);
+        $space = false; 
 
-	if ($num > 1)
-	{
-		$space = true;
-	}
+        if ($num > 1)
+        {
+                $space = true;
+        }
 
-	$taken = $this->checkForUser($_SESSION["username"]);
+        $taken = $this->checkForUser($_SESSION["username"]);
 
-	if ($taken || $space || $_SESSION["username"] == '')
-	{
-        	if ($taken)
-        	{
-			$inputGood = false;
-			$_SESSION["error_text"] = "name_taken";
-        	}
-        	if ($space)
-        	{
-			$inputGood = false;
-			$_SESSION["error_text"] = "do_not_use_spaces_in_user_name";
-        	}
-        	if ($_SESSION["username"] == '')
-        	{
-			$inputGood = false;
-			$_SESSION["error_text"] = "you_did_not_put_a_user_name";
-        	}
-        	if ($_SESSION["first_name"] == '')
-        	{
-			$inputGood = false;
-			$_SESSION["error_text"] = "you_did_not_put_a_first_name";
-        	}
-        	if ($_SESSION["last_name"] == '')
-        	{
-			$inputGood = false;
-			$_SESSION["error_text"] = "you_did_not_put_a_last_name";
-        	}
-	}
-	return $inputGood;
+        if ($taken || $space || $_SESSION["username"] == '')
+        {
+                if ($taken)
+                {
+                        $inputGood = false;
+                        $_SESSION["error_text"] = "name_taken";
+                }
+                if ($space)
+                {
+                        $inputGood = false;
+                        $_SESSION["error_text"] = "do_not_use_spaces_in_user_name";
+                }
+                if ($_SESSION["username"] == '')
+                {
+                        $inputGood = false;
+                        $_SESSION["error_text"] = "you_did_not_put_a_user_name";
+                }
+                if ($_SESSION["first_name"] == '')
+                {
+                        $inputGood = false;
+                        $_SESSION["error_text"] = "you_did_not_put_a_first_name";
+                }
+                if ($_SESSION["last_name"] == '')
+                {
+                        $inputGood = false;
+                        $_SESSION["error_text"] = "you_did_not_put_a_last_name";
+                }
+        }
+        return $inputGood;
 }
 
 public function insertIntoUsers()

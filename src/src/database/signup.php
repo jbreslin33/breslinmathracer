@@ -1,17 +1,21 @@
 <?php
 include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
-include(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/signup.php");
 
 //start new session
 session_start();
 
-$_SESSION["username"] = $_GET["username"];
-$_SESSION["password"] = $_GET["password"];
+$_SESSION["username"]   = $_GET["username"];
+$_SESSION["password"]   = $_GET["password"];
 $_SESSION["first_name"] = $_GET["first_name"];
-$_SESSION["last_name"] = $_GET["last_name"];
+$_SESSION["last_name"]  = $_GET["last_name"];
+$_SESSION["ref_id"]  = 'k.cc.a.1';
+$_SESSION["level"]  = 1;
+$_SESSION["standard"]  = 'k.cc.a.1';
+$_SESSION["progression"]  = 1;
+$_SESSION["levels"]  = 4;
+$_SESSION["LOGIN"]  = 'YES';
 
-//$level_attempt = new LevelAttempt();
 $signup = new SignUp();
 
 //fill php vars
