@@ -39,18 +39,18 @@ public function process()
 
         	if ($_SESSION["user_id"] == 0)
         	{
-                	$_SESSION["Login"] = "NO";
+                	$_SESSION["LOGGED_IN"] = 0;
         	}
 		else
 		{
 			$this->insertFirstLevelAttempt();
 
-        		$_SESSION["Login"] = "YES";
+        		$_SESSION["LOGGED_IN"] = 1;
 		}
 	}
 	else
 	{
-                $_SESSION["Login"] = "NO";
+                $_SESSION["LOGGED_IN"] = 0;
 	}
 }
 
