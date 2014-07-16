@@ -64,17 +64,18 @@ Extends: Game,
                 this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
 	},
 
-        hitSignupButton: function()
+        hitLoginButton: function()
+        {
+                var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
+                var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
+
+                APPLICATION.login(username,password);
+        },
+        
+	hitSignupButton: function()
         {
 		APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
         },
-        
-	hitLoginButton: function()
-        {
-		//APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
-		APPLICATION.log('hit login button');
-        },
-
 
         inputKeyHit: function(e)
         {

@@ -173,10 +173,62 @@ var Application = new Class(
                                 }
                         }
                 }
-                xmlhttp.open("GET","../../src/database/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
+                xmlhttp.open("GET","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
                 xmlhttp.send();
 	},
 
+        login: function(username,password)
+        {
+        var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                                var response = xmlhttp.responseText;
+                                var responseArray = response.split(",");
+                                var code = responseArray[0];
+                                var codeNumber = parseInt(code);
+
+                                if (codeNumber == 101)
+                                {
+                                        APPLICATION.mRef_id = responseArray[1];
+                                        APPLICATION.mLevel = responseArray[2];
+                                        APPLICATION.mStandard = responseArray[3];
+                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                        APPLICATION.mProgression = responseArray[4];
+                                        APPLICATION.mLevels = responseArray[5];
+                                        APPLICATION.mLoggedIn = responseArray[6];
+                                        if (APPLICATION.mLoggedIn)
+                                        {
+                                                APPLICATION.log('you logged in!');
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.log('you are not logged in!');
+                                        }
+
+                                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+
+                                }
+                        }
+                }
+                xmlhttp.open("GET","../../web/php/login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.send();
+        },
 
 	getLevelData: function()
         {
