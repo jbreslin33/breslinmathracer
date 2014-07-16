@@ -6,7 +6,9 @@
 <script type="text/javascript" src="/src/fsm/state_machine.php"></script>
 
 <script type="text/javascript" src="/src/application/application.php"></script>
+<script type="text/javascript" src="/src/application/core_application.php"></script>
 <script type="text/javascript" src="/src/application/states/application_states.php"></script>
+<script type="text/javascript" src="/src/application/states/core_application_states.php"></script>
 
 <script type="text/javascript" src="/src/game/game.php"></script>
 <script type="text/javascript" src="/src/login/login.php"></script>
