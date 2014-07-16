@@ -52,7 +52,6 @@ Extends: Game,
                         this.mLastNameTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
 
-       
 		//SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")

@@ -23,7 +23,7 @@ var APPLICATION;
 
 window.addEvent('domready', function()
 {
-	APPLICATION = new Application();
+	APPLICATION = new CoreApplication();
 <?php
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_bottom.php");
 ?>
