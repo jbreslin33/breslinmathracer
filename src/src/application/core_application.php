@@ -93,18 +93,14 @@ Extends: Application,
                                         APPLICATION.mProgression = responseArray[4];
                                         APPLICATION.mLevels = responseArray[5];
  					APPLICATION.mLoggedIn = responseArray[6];
-					if (APPLICATION.mLoggedIn)		
-					{
-						APPLICATION.log('you logged in!');
-                                        }
-                                        else
-                                        {
-						APPLICATION.log('you are not logged in!');
-                                        }
+ 					APPLICATION.mUsername = responseArray[7];
+ 					APPLICATION.mFirstName = responseArray[8];
+ 					APPLICATION.mLastName = responseArray[9];
 
                                         APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
                                 }
                         }
@@ -146,14 +142,6 @@ Extends: Application,
                                         APPLICATION.mProgression = responseArray[4];
                                         APPLICATION.mLevels = responseArray[5];
                                         APPLICATION.mLoggedIn = responseArray[6];
-                                        if (APPLICATION.mLoggedIn)
-                                        {
-                                                APPLICATION.log('you logged in!');
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.log('you are not logged in!');
-                                        }
 
                                         APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
