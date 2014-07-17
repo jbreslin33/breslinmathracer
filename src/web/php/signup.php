@@ -25,6 +25,12 @@ $returnString .= ",";
 $returnString .= $_SESSION["levels"];
 $returnString .= ",";
 $returnString .= $_SESSION["LOGGED_IN"];
+$returnString .= ",";
+$returnString .= $_SESSION["username"];
+$returnString .= ",";
+$returnString .= $_SESSION["first_name"];
+$returnString .= ",";
+$returnString .= $_SESSION["last_name"];
 echo $returnString;
 
 ?>

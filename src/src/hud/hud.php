@@ -77,6 +77,11 @@ var Hud = new Class(
 	{
         	this.mLevel.setText('<font size="2"> Level: ' + level + '/' + levels + '</font>');
 	},
+	
+	setUsername: function(firstname,lastname)
+	{
+  		this.mUsername.setText('<font size="1">User:' + firstname + ' ' + lastname + '</font>');
+	},
 
 	setQuestion: function(question)
 	{
