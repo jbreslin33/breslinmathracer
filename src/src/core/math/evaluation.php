@@ -50,7 +50,6 @@ Extends: Sheet,
                 this.parent();
 	
 		var s = APPLICATION.mEvaluationData.split(":");	
-		APPLICATION.log('createItems length:' + s.length);	
 		
 		this.setScoreNeeded(s.length);
               

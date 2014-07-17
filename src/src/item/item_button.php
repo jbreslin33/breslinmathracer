@@ -57,6 +57,5 @@ Extends: Shape,
         buttonHit: function()
         {
                 APPLICATION.mGame.mSheet.mItem.mUserAnswer = '' + APPLICATION.mGame.mSheet.mItem.getAnswer();
-		APPLICATION.log('b:' + APPLICATION.mGame.mSheet.mItem.getAnswer());
         }
 });
