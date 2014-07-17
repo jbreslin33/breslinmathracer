@@ -9,8 +9,6 @@ Extends: Game,
 	{
        		this.parent(application);
 
-		APPLICATION.log('signup::constructor');	
-	
 		//username	
 		this.mUsernameLabel = new Shape(200,50,300,100,this,"","","");
                 this.mUsernameLabel.setText('Username:');
