@@ -116,7 +116,8 @@ public function setRawData()
 	if (count($itemArray) < 1)
 	{
        		$_SESSION["ref_id"] = 'evaluation'; 
-		$this->setLevelSessionVariablesAdvance();
+		//$this->setLevelSessionVariablesAdvance();
+		$advance = new Advance();	
 	}
 }
 
