@@ -7,7 +7,7 @@ var Application = new Class(
 	initialize: function()
         {
 		//logging
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		/********* GAME *******************/ 
 		this.mGame = 0;
