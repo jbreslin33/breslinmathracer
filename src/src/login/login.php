@@ -9,8 +9,6 @@ Extends: Game,
 	{
        		this.parent(application);
 
-		APPLICATION.log('login::constructor');	
-               
 		this.mUsernameLabel = new Shape(200,50,300,100,this,"","","");
                 this.mUsernameLabel.setText('Username:');
                 this.mShapeArray.push(this.mUsernameLabel);
@@ -71,6 +69,8 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mSignupButton);
                 this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
+                
+		APPLICATION.checkLogin();
 	},
 
         //***tab to next
