@@ -17,7 +17,7 @@ var Hud = new Class(
         this.mHome.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/home/home.php"> HOME</a> </font>');
 
 	this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
-        this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/index.html"> LOGOUT</a> </font>');
+        this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/php/logout.php"> LOGOUT</a> </font>');
 	
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
 	this.setStandard('');
