@@ -129,14 +129,13 @@ var Item = new Class(
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
 	destroyShapes: function()
         {
+		this.mSheet.mGame.destroyShapes();
+
                 //shapes and array
                 while (this.mShapeArray.length > 0)
                 {
 			shape = this.mShapeArray[0];	
 
-			//destroy it just once at the local(item) level
-                        shape.destructor();
-		
 			//remove from item shape array
 			this.removeShape(shape);
                 }

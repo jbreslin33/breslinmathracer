@@ -37,7 +37,8 @@ Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
-		this.setScoreNeeded(APPLICATION.mItemTypeIDArray.length);
+		//this.setScoreNeeded(APPLICATION.mItemTypeIDArray.length);
+		this.setScoreNeeded(4);
 		this.mLearningStandard = 'evaluation';
         },
 
@@ -45,6 +46,11 @@ Extends: Sheet,
         {
                 this.parent();
               
+		this.addItem(new i_k_cc_a_1_t_1(this));
+		this.addItem(new i_k_cc_a_1_t_2(this));
+		this.addItem(new i_k_cc_a_1_t_3(this));
+		this.addItem(new i_k_cc_a_1_t_4(this));
+/*
 		for (var i = 0; i < APPLICATION.mItemTypeIDArray.length; i++)
 		{	
 			if ( APPLICATION.mItemTypeIDArray[i] == "1")
@@ -64,6 +70,7 @@ Extends: Sheet,
 				this.addItem(new i_k_cc_a_1_t_4(this));
 			}
 		}
+*/
 		//this.randomize(10);
         }
 });
