@@ -108,9 +108,63 @@ Extends: Application,
                 xmlhttp.send();
 	},
 
+	checkLogin: function()
+	{
+               	var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (typeof(xmlhttp.responseText)=="unknown")
+                        {
+                                return("");
+                        }
+                        else
+                        {
+                                var response = xmlhttp.responseText;
+                                var responseArray = response.split(",");
+                                var code = responseArray[0];
+                                var codeNumber = parseInt(code);
+
+                                if (codeNumber == 101)
+                                {
+					APPLICATION.log("101 returned");
+                                        APPLICATION.mRef_id = responseArray[1];
+                                        APPLICATION.mLevel = responseArray[2];
+                                        APPLICATION.mStandard = responseArray[3];
+                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                        APPLICATION.mProgression = responseArray[4];
+                                        APPLICATION.mLevels = responseArray[5];
+                                        APPLICATION.mLoggedIn = responseArray[6];
+                                        APPLICATION.mUsername = responseArray[7];
+                                        APPLICATION.mFirstName = responseArray[8];
+                                        APPLICATION.mLastName = responseArray[9];
+
+                                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+                                }
+				if (codeNumber == 102)
+				{
+					APPLICATION.log("102 returned");
+					//not loggedIn
+				}
+                        }
+                }
+                xmlhttp.open("GET","../../web/php/check_login.php",true);
+                xmlhttp.send();
+	},
+
         login: function(username,password)
         {
-        var xmlhttp;
+        	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
                         xmlhttp=new XMLHttpRequest();

@@ -14,5 +14,9 @@ if ($_SESSION["Login"] != "YES")
          //       header("Location: /web/login/login_form_ela.php");
         //}
 }
+else
+{
+	//do nothing
+}
 
 ?>

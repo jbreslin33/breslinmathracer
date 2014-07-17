@@ -1,9 +1,19 @@
-<?php
-//------------standard top of file
-include(getenv("DOCUMENT_ROOT") . "/web/application/standard_title_mootools.php");
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<html>
+<head>
+<title>ABC AND YOU</title>
 
+<!-- mootools -->
+<script type="text/javascript" src="/src/raphael/raphael-min.js"></script>
+<script type="text/javascript" src="/src/raphael/g.raphael-min.js"></script>
+<script type="text/javascript" src="/src/raphael/g.bar-min.js"></script>
+<script type="text/javascript" src="/src/mootools/mootools-core-1.4.5-full-compat.js"></script>
+
+<?php
+//include(getenv("DOCUMENT_ROOT") . "/web/php/check_login.php");
 include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
 ?>
+
 <style>
 body 
 {
