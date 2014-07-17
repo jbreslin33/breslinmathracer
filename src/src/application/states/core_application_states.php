@@ -149,11 +149,12 @@ enter: function(application)
 execute: function(application)
 {
 	//you might not have a game if this your first time or you just went to a level that requires new game
+/*
 	if (application.mGame == 0)
         {
 		application.mCoreStateMachine.changeState(application.mGET_LEVEL_DATA_APPLICATION);
         }
-
+*/
 	if (application.mLevelCompleted)
 	{
 		application.mCoreStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);

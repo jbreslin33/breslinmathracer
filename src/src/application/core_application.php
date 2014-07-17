@@ -84,6 +84,12 @@ Extends: Application,
                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                	}
+		//not logged in
+                if (codeNumber == 102)
+                {
+                	APPLICATION.log("102 returned");
+                	//not loggedIn
+		}
 	},
 
         signup: function(username,password,first_name,last_name)
@@ -131,36 +137,8 @@ Extends: Application,
                         }
                         else
                         {
-                                var response = xmlhttp.responseText;
-                                var responseArray = response.split(",");
-                                var code = responseArray[0];
-                                var codeNumber = parseInt(code);
-
-                                if (codeNumber == 101)
-                                {
-					APPLICATION.log("101 returned");
-                                        APPLICATION.mRef_id = responseArray[1];
-                                        APPLICATION.mLevel = responseArray[2];
-                                        APPLICATION.mStandard = responseArray[3];
-                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                        APPLICATION.mProgression = responseArray[4];
-                                        APPLICATION.mLevels = responseArray[5];
-                                        APPLICATION.mLoggedIn = responseArray[6];
-                                        APPLICATION.mUsername = responseArray[7];
-                                        APPLICATION.mFirstName = responseArray[8];
-                                        APPLICATION.mLastName = responseArray[9];
-
-                                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-                                }
-				if (codeNumber == 102)
-				{
-					APPLICATION.log("102 returned");
-					//not loggedIn
-				}
-                        }
+				APPLICATION.parseResponse(xmlhttp.responseText);
+			}
                 }
                 xmlhttp.open("GET","../../web/php/check_login.php",true);
                 xmlhttp.send();
@@ -185,29 +163,7 @@ Extends: Application,
                         }
                         else
                         {
-                                var response = xmlhttp.responseText;
-                                var responseArray = response.split(",");
-                                var code = responseArray[0];
-                                var codeNumber = parseInt(code);
-
-                                if (codeNumber == 101)
-                                {
-                                        APPLICATION.mRef_id = responseArray[1];
-                                        APPLICATION.mLevel = responseArray[2];
-                                        APPLICATION.mStandard = responseArray[3];
-                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                        APPLICATION.mProgression = responseArray[4];
-                                        APPLICATION.mLevels = responseArray[5];
-                                        APPLICATION.mLoggedIn = responseArray[6];
-                                      	APPLICATION.mUsername = responseArray[7];
-                                        APPLICATION.mFirstName = responseArray[8];
-                                        APPLICATION.mLastName = responseArray[9];
-
-                                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-                                }
+				APPLICATION.parseResponse(xmlhttp.responseText);
                         }
                 }
                 xmlhttp.open("GET","../../web/php/login.php?username=" + username + "&password=" + password,true);

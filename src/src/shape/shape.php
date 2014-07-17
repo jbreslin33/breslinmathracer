@@ -73,8 +73,14 @@ Extends: Polygon,
        	/****** DESTRUCTOR ******************/
         destructor: function()
         {
- 		this.mDiv.mDiv.removeChild(this.mMesh);
-                document.body.removeChild(this.mDiv.mDiv);
+		if (this.mDiv)
+		{
+			if (this.mDiv.mDiv)
+			{
+ 				//this.mDiv.mDiv.removeChild(...);
+			}
+		}
+                //document.body.removeChild(this.mDiv.mDiv);
         },
 
 	/********* ANIMATION ******************/
