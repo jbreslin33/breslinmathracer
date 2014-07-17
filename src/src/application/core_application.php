@@ -33,8 +33,7 @@ Extends: Application,
 		this.mLevels = 0;
 		this.mProgression = 0;
 		this.mStandard = '';
-		this.mItemTypeIDRawData = '';
-		this.mItemTypeIDArray = 0;
+		this.mEvaluationArray = new Array();
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
@@ -78,7 +77,10 @@ Extends: Application,
                 var responseArray = response.split(",");
                 var code = responseArray[0];
                 var codeNumber = parseInt(code);
-
+		if (codeNumber > 100 && codeNumber < 200)
+		{
+			APPLICATION.log('code:' + codeNumber);
+		}
         	if (codeNumber == APPLICATION.FULL)
                 {
                 	APPLICATION.mRef_id = responseArray[1];
@@ -116,11 +118,20 @@ Extends: Application,
                 }
                 if (codeNumber == APPLICATION.EVALUATION)
 		{
+                        APPLICATION.mRef_id = responseArray[1];
+                        APPLICATION.mLevel = responseArray[2];
+                        APPLICATION.mStandard = responseArray[3];
+                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                        APPLICATION.mProgression = responseArray[4];
+                        APPLICATION.mLevels = responseArray[5];
 
+                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 		}
                 if (codeNumber == APPLICATION.REMEDIATE)
 		{
-
 		}
 	},
 

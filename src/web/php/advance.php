@@ -10,16 +10,35 @@ session_start();
 $advance = new Advance();
 
 //fill php vars
-$returnString = "103,"; 
-$returnString .= $_SESSION["ref_id"];
-$returnString .= ",";
-$returnString .= $_SESSION["level"];
-$returnString .= ",";
-$returnString .= $_SESSION["standard"];
-$returnString .= ",";
-$returnString .= $_SESSION["progression"];
-$returnString .= ",";
-$returnString .= $_SESSION["levels"];
+
+$returnString = "";
+
+if ($_SESSION["ref_id"] == 'evaluation')
+{
+	$returnString = "104,";
+	$returnString .= $_SESSION["ref_id"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["level"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["standard"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["progression"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["levels"];
+}
+else
+{	
+        $returnString = "103,";
+        $returnString .= $_SESSION["ref_id"];
+        $returnString .= ",";
+        $returnString .= $_SESSION["level"];
+        $returnString .= ",";
+        $returnString .= $_SESSION["standard"];
+        $returnString .= ",";
+        $returnString .= $_SESSION["progression"];
+        $returnString .= ",";
+        $returnString .= $_SESSION["levels"];
+}
 echo $returnString;
 
 ?>
