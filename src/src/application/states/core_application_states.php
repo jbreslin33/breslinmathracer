@@ -61,7 +61,7 @@ enter: function(application)
 	application.mLoggedIn = false;
 	if (application.mStateLogs)
 	{
-		application.log('APPLICATION::INIT_CORE_APPLICATION');
+		application.log('APPLICATION::LOGIN_APPLICATION');
 	}
 	application.mRef_id = 'login';
         if (application.mGame)

@@ -77,10 +77,10 @@ Extends: Polygon,
 		{
 			if (this.mDiv.mDiv)
 			{
- 				//this.mDiv.mDiv.removeChild(...);
+ 				this.mDiv.mDiv.removeChild(this.mMesh);
 			}
 		}
-                //document.body.removeChild(this.mDiv.mDiv);
+                document.body.removeChild(this.mDiv.mDiv);
         },
 
 	/********* ANIMATION ******************/
