@@ -102,21 +102,30 @@ public function setRawData()
 	if (count($itemArray) > 0)
 	{
 		$itemString .= $itemArray[0];
-	}
-	for ($i = 1; $i < count($itemArray); $i++)
-	{
 		$itemString .= ":";
+	}
+
+	$totalCount = count($itemArray);
+
+	for ($i = 1; $i < $totalCount; $i++)
+	{
 		$itemString .= $itemArray[$i];
+		if ($i < $totalCount - 1)
+		{ 
+			$itemString .= ":";
+		}
 	} 
 	
        	$_SESSION["item_type_id_raw_data"] = $itemString; 
        	$rawData = $_SESSION["item_type_id_raw_data"]; 
+  
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rawData','rawData');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 	//if you have no questions say that you did an evaluation and send back thru setLevelSessionVariablesAdvance
 	if (count($itemArray) < 1)
 	{
        		$_SESSION["ref_id"] = 'evaluation'; 
-		//$this->setLevelSessionVariablesAdvance();
 		$advance = new Advance();	
 	}
 }
