@@ -144,7 +144,6 @@ var Game = new Class(
 		this.mShapeArray.push(shape);
 	},
 
-
         //this will clean up all shapes in this item and it will take this items shapes out of game array
         destroyShapes: function()
         {
@@ -175,66 +174,6 @@ var Game = new Class(
                         }
                 }
         },
-
-/*
-	removeShape: function(shape)
-	{
-		//shapes and array
-                for (g = 0; g < this.mShapeArray.length; g++)
-                {
-			if (shape == this.mShapeArray[g])
-			{
-				//first remove it from array...
-                        	//destroy it just once at the local(item) level
-				if (shape)
-				{
-                        		shape.destructor();
-				}
-				this.mShapeArray.splice(g,1);
-			}
-		}
-	},
-	
-	destroyShapes: function()
-	{
-		APPLICATION.log('Game::destroyShapes');
-		while(this.mShapeArray.length > 0)
-		{
-			APPLICATION.log('Game::destroyShapes loop');
-			this.removeShape(this.mShapeArray[0]);
-		}
-	},
-
-        destroyShapes: function()
-        {
-                //shapes and array
-                while (this.mShapeArray.length > 0)
-                {
-                        shape = this.mShapeArray[0];
-
-                        //destroy it just once at the local(item) level
-                        shape.destructor();
-
-                        //remove from item shape array
-                        this.removeShape(shape);
-                }
-                this.mShapeArray = 0;
-                this.mShapeArray = new Array();
-        },
-
-        removeShape: function(shape)
-        {
-                //remove from this shape array
-                for (r = 0; r < this.mShapeArray.length; r++)
-                {
-                        if (shape == this.mShapeArray[r])
-                        {
-                                //first remove it from array...
-                                this.mShapeArray.splice(r,1);
-                        }
-                }
-        },
-*/
 
 	gameOver: function()
 	{
