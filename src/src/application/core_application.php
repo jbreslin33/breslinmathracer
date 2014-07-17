@@ -12,6 +12,13 @@ Extends: Application,
 		//logging
 		this.mStateLogs = true;
 
+		//parse codes
+		this.FULL = 101;
+		this.NOT_LOGGED_IN    = 102;
+		this.GAME = 103;
+		this.EVALUATION = 104;
+		this.REMEDIATE = 105;
+
 		//personal info
 		this.mUsername = '';
 		this.mFirstName = '';
@@ -58,14 +65,21 @@ Extends: Application,
         {
 		this.mCoreStateMachine.update();
         },
-
+/*
+		//parse codes
+		this.FULL = 101;
+		this.NOT_LOGGED_IN    = 102;
+		this.GAME = 103;
+		this.EVALUATION = 104;
+		this.REMEDIATE = 105;
+*/
 	parseResponse: function(response)
 	{
                 var responseArray = response.split(",");
                 var code = responseArray[0];
                 var codeNumber = parseInt(code);
 
-        	if (codeNumber == 101)
+        	if (codeNumber == APPLICATION.FULL)
                 {
                 	APPLICATION.mRef_id = responseArray[1];
                         APPLICATION.mLevel = responseArray[2];
@@ -83,13 +97,10 @@ Extends: Application,
                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                	}
-		//not logged in
-                if (codeNumber == 102)
+                if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                 {
-                	APPLICATION.log("102 returned");
-                	//not loggedIn
 		}
-                if (codeNumber == 103)
+                if (codeNumber == APPLICATION.GAME)
                 {
                         APPLICATION.mRef_id = responseArray[1];
                         APPLICATION.mLevel = responseArray[2];
@@ -103,7 +114,14 @@ Extends: Application,
                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                 }
+                if (codeNumber == APPLICATION.EVALUATION)
+		{
 
+		}
+                if (codeNumber == APPLICATION.REMEDIATE)
+		{
+
+		}
 	},
 
         signup: function(username,password,first_name,last_name)
