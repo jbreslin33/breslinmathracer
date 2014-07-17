@@ -5,11 +5,13 @@ var evaluation = new Class(
 
 Extends: Game,
 
-	initialize: function(application)
+	initialize: function(application,rawdata)
 	{
        		this.parent(application);
 	
-		this.mSheet = new s_evaluation(this);	
+		this.mSheet = new s_evaluation(this,rawdata);	
+		this.mSheet.createItems();
+		this.mSheet.createShapes();
 	},
 
 	destructor: function()
@@ -34,43 +36,43 @@ Extends: Game,
 var s_evaluation = new Class(
 {
 Extends: Sheet,
-        initialize: function(game)
+        initialize: function(game,rawdata)
         {
                 this.parent(game);
-		//this.setScoreNeeded(APPLICATION.mItemTypeIDArray.length);
-		this.setScoreNeeded(4);
+		
 		this.mLearningStandard = 'evaluation';
+		
+		APPLICATION.mEvaluationData = rawdata;
         },
 
         createItems: function()
         {
                 this.parent();
+	
+		var s = APPLICATION.mEvaluationData.split(":");	
+		APPLICATION.log('createItems length:' + s.length);	
+		
+		this.setScoreNeeded(s.length);
               
-		this.addItem(new i_k_cc_a_1_t_1(this));
-		this.addItem(new i_k_cc_a_1_t_2(this));
-		this.addItem(new i_k_cc_a_1_t_3(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
-/*
-		for (var i = 0; i < APPLICATION.mItemTypeIDArray.length; i++)
+		for (var i = 0; i < s.length; i++)
 		{	
-			if ( APPLICATION.mItemTypeIDArray[i] == "1")
+			if ( s[i] == "1")
 			{
 				this.addItem(new i_k_cc_a_1_t_1(this));
 			}
-			if ( APPLICATION.mItemTypeIDArray[i] == "2")
+			if ( s[i] == "2")
 			{
 				this.addItem(new i_k_cc_a_1_t_2(this));
 			}
-			if ( APPLICATION.mItemTypeIDArray[i] == "3")
+			if ( s[i] == "3")
 			{
 				this.addItem(new i_k_cc_a_1_t_3(this));
 			}
-			if ( APPLICATION.mItemTypeIDArray[i] == "4")
+			if ( s[i] == "4")
 			{
 				this.addItem(new i_k_cc_a_1_t_4(this));
 			}
 		}
-*/
 		//this.randomize(10);
         }
 });

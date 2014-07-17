@@ -10,6 +10,8 @@ Extends: GameSheet,
        		this.parent(application);
 	
 		this.mSheet = new sk_cc_a_3(this);	
+                this.mSheet.createItems();
+                this.mSheet.createShapes();
 	}
 });
 

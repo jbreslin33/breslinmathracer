@@ -50,9 +50,6 @@ var Sheet = new Class(
 
 		this.mItem = 0;
 		this.mLearningStandard = '';  
-       
-         	this.createItems();
-                this.createShapes();
         },
 
 	/*********** CLASS ADMIN ************/
@@ -86,6 +83,7 @@ var Sheet = new Class(
 		this.mMarker = 0;
 
 		this.createItems();
+		this.createShapes();
 	},
 
 	/************** ITEMS ******************/
