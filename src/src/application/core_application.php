@@ -46,7 +46,6 @@ Extends: Application,
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
                 this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
-                this.mGET_LEVEL_DATA_APPLICATION        = new GET_LEVEL_DATA_APPLICATION(this);
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
                 this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
                 this.mREMEDIATE_APPLICATION                 = new REMEDIATE_APPLICATION(this);
@@ -90,6 +89,21 @@ Extends: Application,
                 	APPLICATION.log("102 returned");
                 	//not loggedIn
 		}
+                if (codeNumber == 103)
+                {
+                        APPLICATION.mRef_id = responseArray[1];
+                        APPLICATION.mLevel = responseArray[2];
+                        APPLICATION.mStandard = responseArray[3];
+                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                        APPLICATION.mProgression = responseArray[4];
+                        APPLICATION.mLevels = responseArray[5];
+
+                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
+                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
+                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
+                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+                }
+
 	},
 
         signup: function(username,password,first_name,last_name)
@@ -170,63 +184,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	getLevelData: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-			if (typeof(xmlhttp.responseText)=="unknown")
- 			{
-				return("");
-			} 
-			else
- 			{
-        
-				var response = xmlhttp.responseText;
-                                var responseArray = response.split(",");
-                                var code = responseArray[0];
-                                var codeNumber = parseInt(code);
-
-                                if (codeNumber == 101)
-                                {
-					APPLICATION.mRef_id = responseArray[1];
-					APPLICATION.mLevel = responseArray[2];
-                                	APPLICATION.mStandard = responseArray[3];
-                                	APPLICATION.mProgression = responseArray[4];
-					APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-					APPLICATION.mWaitingOnLevelData = false;
-                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-
-					//lets empty the arrays
-/*
-					APPLICATION.mItemTypeIDArray = 0;
-                                        var itemarray = 0;
-                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
-					
-                                        for (var i = 0; i < itemarray.length; i++)
-                                        {
-                                        	itemarray[i] = parseInt(itemarray[i]);
-                                        }
-                                        APPLICATION.mItemTypeIDArray = itemarray;
-*/
-                		}
-			}
-		}
-                xmlhttp.open("GET","../../web/application/level_query.php",true);
-                xmlhttp.send();
-        },
-
 	sendLevelAttempt: function(itemtypesid,transactioncode)
         {
                 var xmlhttp;
@@ -238,7 +195,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../src/database/send_level_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.open("POST","../../web/php/send_level_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
                 xmlhttp.send();
         },
 	
@@ -253,7 +210,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../src/database/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
                 xmlhttp.send();
         },
 
@@ -277,38 +234,10 @@ Extends: Application,
                         }
                         else
                         {
-                        	var response = xmlhttp.responseText; 
-				var responseArray = response.split(","); 
-				var code = responseArray[0];
-				var codeNumber = parseInt(code);
-
-				if (codeNumber == 101)
-				{
-					APPLICATION.mRef_id = responseArray[1];
-					APPLICATION.mLevel = responseArray[2];
-					APPLICATION.mStandard = responseArray[3];
-					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					APPLICATION.mProgression = responseArray[4];
-					APPLICATION.mLevels = responseArray[5];
-					APPLICATION.mItemTypeIDRawData = responseArray[6];
-					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					
-					//lets empty the arrays
-					APPLICATION.mItemTypeIDArray = 0;
-                                        var itemarray = 0;
-                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
-					
-                                        for (var i = 0; i < itemarray.length; i++)
-                                        {
-                                        	itemarray[i] = parseInt(itemarray[i]);
-                                        }
-                                        APPLICATION.mItemTypeIDArray = itemarray;
-				}
+				APPLICATION.parseResponse(xmlhttp.responseText);
 			}
                 }
-                xmlhttp.open("GET","../../src/database/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
+                xmlhttp.open("GET","../../web/php/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
                 xmlhttp.send();
         },
 
@@ -331,40 +260,10 @@ Extends: Application,
                         }
                         else
                         {
-                        	var response = xmlhttp.responseText; 
-				var responseArray = response.split(","); 
-				var code = responseArray[0];
-				var codeNumber = parseInt(code);
-
-				if (codeNumber == 101)
-				{
-					APPLICATION.mRef_id = responseArray[1];
-					APPLICATION.mLevel = responseArray[2];
-					APPLICATION.mStandard = responseArray[3];
-					APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					APPLICATION.mProgression = responseArray[4];
-					APPLICATION.mLevels = responseArray[5];
-					//APPLICATION.mItemTypeIDRawData = responseArray[6];
-					APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-					APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					
-					//lets empty the arrays
-/*
-					APPLICATION.mItemTypeIDArray = 0;
-                                        var itemarray = 0;
-                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
-					
-                                        for (var i = 0; i < itemarray.length; i++)
-                                        {
-                                        	itemarray[i] = parseInt(itemarray[i]);
-                                        }
-                                        APPLICATION.mItemTypeIDArray = itemarray;
-*/
-				}
+				APPLICATION.parseResponse(xmlhttp.responseText);
 			}
                 }
-                xmlhttp.open("GET","../../src/database/advance.php",true);
+                xmlhttp.open("GET","../../web/php/advance.php",true);
                 xmlhttp.send();
         },
 
@@ -388,40 +287,10 @@ Extends: Application,
                         }
                         else
                         {
-                        	var response = xmlhttp.responseText;
-                        	var responseArray = response.split(",");
-				var code = responseArray[0];
-				var codeNumber = parseInt(code);
-
-				if (codeNumber == 101)
-                       	 	{
-                                	APPLICATION.mRef_id = responseArray[1];
-                                	APPLICATION.mLevel = responseArray[2];
-                                	APPLICATION.mStandard = responseArray[3];
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                                	APPLICATION.mProgression = responseArray[4];
-                                	APPLICATION.mLevels = responseArray[5];
-					//APPLICATION.mItemTypeIDRawData = responseArray[6];
-                                	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                                	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                                	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-					
-					//lets empty the arrays
-/*
-					APPLICATION.mItemTypeIDArray = 0;
-                                        var itemarray = 0;
-                                        itemarray = APPLICATION.mItemTypeIDRawData.split(":");
-					
-                                        for (var i = 0; i < itemarray.length; i++)
-                                        {
-                                        	itemarray[i] = parseInt(itemarray[i]);
-                                        }
-                                        APPLICATION.mItemTypeIDArray = itemarray;
-*/
-				}
+				APPLICATION.parseResponse(xmlhttp.responseText);
                         }
                 }
-                xmlhttp.open("GET","../../src/database/rewind.php",true);
+                xmlhttp.open("GET","../../web/php/rewind.php",true);
                 xmlhttp.send();
         },
  	
