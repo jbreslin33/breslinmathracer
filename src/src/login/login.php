@@ -70,7 +70,6 @@ Extends: Game,
                 this.mShapeArray.push(this.mSignupButton);
                 this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
                
-		APPLICATION.log('login::constructor checkLogin called'); 
 		APPLICATION.checkLogin();
 	},
 

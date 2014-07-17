@@ -5,7 +5,7 @@ var Item = new Class(
 {
         initialize: function(sheet)
         {
-		this.mStateLogs = true;		
+		this.mStateLogs = false;		
 
 		this.mID = 0;
 		
@@ -172,6 +172,7 @@ var Item = new Class(
 		correctAnswerFound = false;
 		for (i = 0; i <  this.mAnswerArray.length; i++)
 		{
+			APPLICATION.log('u:' + this.mUserAnswer + ':a:' + this.mAnswerArray[i]);	
 			if (this.mUserAnswer == this.mAnswerArray[i])
 			{
 				correctAnswerFound = true;	

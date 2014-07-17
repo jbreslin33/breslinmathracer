@@ -10,7 +10,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//parse codes
 		this.FULL = 101;
@@ -72,7 +72,7 @@ Extends: Application,
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
-			APPLICATION.log('code:' + codeNumber);
+			//APPLICATION.log('code:' + codeNumber);
 		}
         	if (codeNumber == APPLICATION.FULL)
                 {
