@@ -19,6 +19,15 @@ Extends: Game,
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
       		this.mUsernameTextBox.mMesh.focus();
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mUsernameTextBox.mMesh.attachEvent('onkeypress',this.usernameTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mUsernameTextBox.mMesh.addEvent('keypress',this.usernameTextBoxFirefoxHit);
+                }
+
 
                 this.mPasswordLabel = new Shape(200,50,300,165,this,"","","");
                 this.mPasswordLabel.setText('Password:');
@@ -63,6 +72,28 @@ Extends: Game,
                 this.mShapeArray.push(this.mSignupButton);
                 this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
 	},
+
+        //***tab to next
+
+        //username
+        usernameTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mPasswordTextBox.mMesh.focus();
+                }
+        },
+
+        usernameTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mPasswordTextBox.mMesh.focus();
+                }
+        },
+
+
+
 
         hitLoginButton: function()
         {
