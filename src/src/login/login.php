@@ -35,16 +35,16 @@ Extends: Game,
 
                 this.mPasswordTextBox = new Shape(200,50,400,165,this,"INPUT","","");
                 this.mPasswordTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mPasswordTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mPasswordTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+                        this.mPasswordTextBox.mMesh.attachEvent('onkeypress',this.passwordTextBoxMicrosoftHit);
                 }
                 else
                 {
-                        this.mPasswordTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mPasswordTextBox.mMesh.addEvent('keypress',this.passwordTextBoxFirefoxHit);
                 }
-                this.mShapeArray.push(this.mPasswordTextBox);
-       
+ 
 		//LOGIN BUTTON
                 this.mLoginButton = new Shape(200,50,400,230,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -92,38 +92,38 @@ Extends: Game,
                 }
         },
 
+       	//sendLogin
+        passwordTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.sendLogin();
+                }
+        },
 
-
+        passwordTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.sendLogin();
+                }
+        },
 
         hitLoginButton: function()
+        {
+                APPLICATION.mGame.sendLogin();
+        },
+
+        sendLogin: function()
         {
                 var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
                 var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 
                 APPLICATION.login(username,password);
         },
-        
+
 	hitSignupButton: function()
         {
 		APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
-        },
-
-        inputKeyHit: function(e)
-        {
-                if (e.key == 'enter')
-                {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-			APPLICATION.log('hit enter');
-                }
-        },
-
-        inputKeyHitEnter: function(e)
-        {
-                if (e.keyCode == 13)
-                {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-			APPLICATION.log('hit enter');
-                }
         }
-
 });
