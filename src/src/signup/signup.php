@@ -45,11 +45,11 @@ Extends: Game,
                 this.mShapeArray.push(this.mLastNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mLastNameTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+                        this.mLastNameTextBox.mMesh.attachEvent('onkeypress',this.lastNameTextBoxMicrosoftHit);
                 }
                 else
                 {
-                        this.mLastNameTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mLastNameTextBox.mMesh.addEvent('keypress',this.lastNameTextBoxFirefoxHit);
                 }
 
 		//SIGNUP BUTTON
@@ -80,38 +80,44 @@ Extends: Game,
                 this.mLoginButton.mMesh.innerHTML = 'Login';
 	},
 	
+
+
+
+	//sendSignup 
+        lastNameTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+			APPLICATION.mGame.sendSignup();
+                }
+        },
+
+        lastNameTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+			APPLICATION.mGame.sendSignup();
+                }
+        },
+	
 	hitSignupButton: function()
         {
+		APPLICATION.mGame.sendSignup();
+        },
+	
+	sendSignup: function()
+	{
 		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
 		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
 		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
 		
 		APPLICATION.signup(username,password,first_name,last_name);
-        },
+	},
 
+	//goto login screen
         hitLoginButton: function()
         {
 		APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
-        },
-
-
-        inputKeyHit: function(e)
-        {
-                if (e.key == 'enter')
-                {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-			APPLICATION.log('hit enter');
-                }
-        },
-
-        inputKeyHitEnter: function(e)
-        {
-                if (e.keyCode == 13)
-                {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mNumAnswer.mMesh.value;
-			APPLICATION.log('hit enter');
-                }
         }
-
 });
