@@ -33,7 +33,7 @@ Extends: Application,
 		this.mLevels = 0;
 		this.mProgression = 0;
 		this.mStandard = '';
-		this.mEvaluationArray = new Array();
+		this.mEvaluationData = 0;
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
@@ -64,14 +64,7 @@ Extends: Application,
         {
 		this.mCoreStateMachine.update();
         },
-/*
-		//parse codes
-		this.FULL = 101;
-		this.NOT_LOGGED_IN    = 102;
-		this.GAME = 103;
-		this.EVALUATION = 104;
-		this.REMEDIATE = 105;
-*/
+	
 	parseResponse: function(response)
 	{
                 var responseArray = response.split(",");
@@ -129,6 +122,15 @@ Extends: Application,
                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+		
+			//just create the evaluation right here	
+			if (this.mGame)
+			{
+				this.mGame.destructor();
+				this.mGame = 0;
+			}
+                        APPLICATION.mGameName = "evaluation";
+                        APPLICATION.mGame = new evaluation(APPLICATION,responseArray[6]);
 		}
                 if (codeNumber == APPLICATION.REMEDIATE)
 		{
@@ -354,19 +356,6 @@ Extends: Application,
 				}
                                	this.mGameName = "k_cc_a_1";
                                	this.mGame = new k_cc_a_1(APPLICATION);
-			}
-                }
-		if (this.mRef_id == 'evaluation')
-		{ 
-             		if (this.mGameName != "evaluation")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "evaluation";
-                               	this.mGame = new evaluation(APPLICATION);
 			}
                 }
 		if (this.mRef_id == 'k.cc.a.2')
