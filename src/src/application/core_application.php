@@ -62,7 +62,7 @@ Extends: Application,
 
         signup: function(username,password,first_name,last_name)
         {
-        var xmlhttp;
+        	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
                         xmlhttp=new XMLHttpRequest();

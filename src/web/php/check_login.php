@@ -28,6 +28,7 @@ if ( isset($_SESSION["LOGGED_IN"]) )
 }
 else
 {
-	$returnString = "102";
+	$returnString = "102,1";
+	echo $returnString;
 }
 ?>
