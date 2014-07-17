@@ -285,13 +285,19 @@ Extends: Application,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-            		if (typeof(xmlhttp.responseText)=="unknown")
-                        {
-                                return("");
-                        }
-                        else
-                        {
-				APPLICATION.parseResponse(xmlhttp.responseText);
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+      			{
+        			if (xmlhttp.responseText)
+         			{
+            				if (typeof(xmlhttp.responseText)=="unknown")
+                        		{
+                                		return("");
+                        		}
+                        		else
+                        		{
+						APPLICATION.parseResponse(xmlhttp.responseText);
+					}
+				}
 			}
                 }
                 xmlhttp.open("GET","../../web/php/advance.php",true);
