@@ -101,7 +101,6 @@ Extends: Application,
                                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                                         APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
                                 }
                         }
                 }
@@ -142,11 +141,14 @@ Extends: Application,
                                         APPLICATION.mProgression = responseArray[4];
                                         APPLICATION.mLevels = responseArray[5];
                                         APPLICATION.mLoggedIn = responseArray[6];
+                                      	APPLICATION.mUsername = responseArray[7];
+                                        APPLICATION.mFirstName = responseArray[8];
+                                        APPLICATION.mLastName = responseArray[9];
 
                                         APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-
+                                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                                 }
                         }
                 }
