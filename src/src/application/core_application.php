@@ -150,13 +150,19 @@ Extends: Application,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        if (typeof(xmlhttp.responseText)=="unknown")
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         {
-                                return("");
-                        }
-                        else
-                        {
-				APPLICATION.parseResponse(xmlhttp.responseText);
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
                         }
                 }
                 xmlhttp.open("GET","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
@@ -176,15 +182,21 @@ Extends: Application,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        if (typeof(xmlhttp.responseText)=="unknown")
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         {
-                                return("");
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
                         }
-                        else
-                        {
-				APPLICATION.parseResponse(xmlhttp.responseText);
-			}
-                }
+		}
                 xmlhttp.open("GET","../../web/php/check_login.php",true);
                 xmlhttp.send();
 	},
@@ -202,13 +214,19 @@ Extends: Application,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                        if (typeof(xmlhttp.responseText)=="unknown")
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         {
-                                return("");
-                        }
-                        else
-                        {
-				APPLICATION.parseResponse(xmlhttp.responseText);
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
                         }
                 }
                 xmlhttp.open("GET","../../web/php/login.php?username=" + username + "&password=" + password,true);
@@ -259,15 +277,21 @@ Extends: Application,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-            		if (typeof(xmlhttp.responseText)=="unknown")
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         {
-                                return("");
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
                         }
-                        else
-                        {
-				APPLICATION.parseResponse(xmlhttp.responseText);
-			}
-                }
+		}
                 xmlhttp.open("GET","../../web/php/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
                 xmlhttp.send();
         },
@@ -318,15 +342,21 @@ Extends: Application,
                 }
                 xmlhttp.onreadystatechange=function()
                 {
-                    	if (typeof(xmlhttp.responseText)=="unknown")
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                         {
-                                return("");
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
                         }
-                        else
-                        {
-				APPLICATION.parseResponse(xmlhttp.responseText);
-                        }
-                }
+		}
                 xmlhttp.open("GET","../../web/php/rewind.php",true);
                 xmlhttp.send();
         },
