@@ -8,8 +8,7 @@ session_start();
 $learningstandard = $_GET["learningstandard"];
 $typeid = $_GET["typeid"];
 
-$remediate = new Remediate();
-$remediate->remediateback($learningstandard,$typeid);
+$remediate = new Remediate($learningstandard,$typeid);
 
 //fill php vars
 $returnString = "103,"; 
