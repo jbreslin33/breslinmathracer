@@ -7,15 +7,11 @@ class Sessions
 function __construct()
 {
   	$this->mDatabaseConnection = new DatabaseConnection();
+	$this->process();
 }
 
-public function setSessionVariables()
+public function process()
 {
- 
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'setSessionVariables','');";
-        $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-
 	if (isset($_SESSION["subject_id"]) == false)
 	{
 		$_SESSION["subject_id"] = 1;
