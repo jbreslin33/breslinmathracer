@@ -53,9 +53,6 @@ public function setRawData()
 	
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 		
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-        	
 		$num = pg_num_rows($result);
         
 		if ($num > 0)
@@ -75,9 +72,6 @@ public function setRawData()
 			
 			$result2 = pg_query($this->mDatabaseConnection->getConn(),$query2) or die('Could not connect: ' . pg_last_error());
 	
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query2','query2');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-        	
 			$num2 = pg_num_rows($result2);
 
 			//if we have 10 lets check if we mastered all ten
@@ -132,9 +126,6 @@ public function setRawData()
        	$_SESSION["item_type_id_raw_data"] = $itemString; 
        	$rawData = $_SESSION["item_type_id_raw_data"]; 
   
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rawData','rawData');";
-	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
 	//if you have no questions say that you did an evaluation and send back thru setLevelSessionVariablesAdvance
 	if (count($itemArray) < 1)
 	{
