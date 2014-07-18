@@ -265,7 +265,6 @@ Extends: Application,
 
 	remediate: function(learningstandard,typeid)
         {
-		APPLICATION.log('learningstandard:' + learningstandard);
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

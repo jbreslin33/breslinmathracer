@@ -180,7 +180,7 @@ var Sheet = new Class(
 				{
 					if (this.mItemArray[i].getType() == this.mTypeWrong)
 					{
-						APPLICATION.log('redo type:' + this.mItemArray[i].getType());
+						//APPLICATION.log('redo type:' + this.mItemArray[i].getType());
 						wrongItem = this.mItemArray[i]; 
 						questionInFirstSlot = this.mItemArray[0]; 
 						this.mItemArray[0] = wrongItem;
