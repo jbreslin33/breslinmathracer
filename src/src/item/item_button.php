@@ -13,11 +13,33 @@ Extends: Shape,
 		//event handling 
 		if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mMesh.attachEvent("onclick",this.buttonHit);
+			if (message == 'A')
+			{
+				this.mMesh.attachEvent("onclick",this.buttonHitA);
+			}
+			if (message == 'B')
+			{
+				this.mMesh.attachEvent("onclick",this.buttonHitB);
+			}
+			if (message == 'C')
+			{
+				this.mMesh.attachEvent("onclick",this.buttonHitC);
+			}
                 }
                 else
                 {
-                        this.mMesh.addEvent('click',this.buttonHit);
+			if (message == 'A')
+			{
+                        	this.mMesh.addEvent('click',this.buttonHitA);
+			}
+			if (message == 'B')
+			{
+                        	this.mMesh.addEvent('click',this.buttonHitB);
+			}
+			if (message == 'C')
+			{
+                        	this.mMesh.addEvent('click',this.buttonHitC);
+			}	
                 }
         },
 
@@ -54,8 +76,16 @@ Extends: Shape,
 	},
 
 	//-------- EVENT HANDLING 
-        buttonHit: function()
+        buttonHitA: function()
         {
-                APPLICATION.mGame.mSheet.mItem.mUserAnswer = '' + APPLICATION.mGame.mSheet.mItem.getAnswer();
+                APPLICATION.mGame.mSheet.mItem.fireThis('A');
+        },
+        buttonHitB: function()
+        {
+                APPLICATION.mGame.mSheet.mItem.fireThis('B');
+        },
+        buttonHitC: function()
+        {
+                APPLICATION.mGame.mSheet.mItem.fireThis('C');
         }
 });
