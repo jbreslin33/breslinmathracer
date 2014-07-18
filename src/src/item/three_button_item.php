@@ -34,7 +34,6 @@ Extends: Item,
 	
 	fireThis: function(message)
 	{
-		APPLICATION.log('message:' + message);
 		if (message == "A")
 		{
 			this.setUserAnswer(this.mButtonA.getAnswer());	
