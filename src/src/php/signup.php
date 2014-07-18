@@ -20,14 +20,6 @@ function __destruct()
 
 public function process()
 {
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','a');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-	$u = $_SESSION["username"];
- 
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$u','username');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
 	//this will exit out  
 	if ($this->checkInput())
 	{
