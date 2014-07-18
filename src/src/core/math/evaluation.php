@@ -1,6 +1,6 @@
 /* EVALUATION: If student is correct on all evaluation questions this class will act like all other classes. If a student gets one wrong however we will take action. We will send student back to that standard but will will set a featured type in that learning standard. */ 
 
-var evaluation = new Class(
+var Evaluation = new Class(
 {
 
 Extends: Game,

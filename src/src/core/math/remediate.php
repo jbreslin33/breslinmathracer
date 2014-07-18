@@ -3,7 +3,7 @@ Will consist of up to ten levels, depends on need to remediate. Will start at pr
 when it has 10 or has checked up the highest level question asked. then it will insert a levelattempt at level 1 with x needed.     
 */ 
 
-var remediate = new Class(
+var Remediate = new Class(
 {
 
 Extends: Game,
@@ -12,7 +12,7 @@ Extends: Game,
 	{
        		this.parent(application);
 	
-		this.mSheet = new s_evaluation(this,rawdata);	
+		this.mSheet = new s_remediate(this,rawdata);	
 		this.mSheet.createItems();
 		this.mSheet.createShapes();
 	},
@@ -36,23 +36,23 @@ Extends: Game,
 
 /* SHEET: */
 
-var s_evaluation = new Class(
+var s_remediate = new Class(
 {
 Extends: Sheet,
         initialize: function(game,rawdata)
         {
                 this.parent(game);
 		
-		this.mLearningStandard = 'evaluation';
+		this.mLearningStandard = 'remediate';
 		
-		APPLICATION.mEvaluationData = rawdata;
+		APPLICATION.mRemediateData = rawdata;
         },
 
         createItems: function()
         {
                 this.parent();
 	
-		var s = APPLICATION.mEvaluationData.split(":");	
+		var s = APPLICATION.mRemediateData.split(":");	
 		
 		this.setScoreNeeded(s.length);
               

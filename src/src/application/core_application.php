@@ -34,6 +34,7 @@ Extends: Application,
 		this.mProgression = 0;
 		this.mStandard = '';
 		this.mEvaluationData = 0;
+		this.mRemediateData = 0;
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
@@ -130,7 +131,7 @@ Extends: Application,
 				this.mGame = 0;
 			}
                         APPLICATION.mGameName = "evaluation";
-                        APPLICATION.mGame = new evaluation(APPLICATION,responseArray[6]);
+                        APPLICATION.mGame = new Evaluation(APPLICATION,responseArray[6]);
 		}
                 if (codeNumber == APPLICATION.REMEDIATE)
 		{
