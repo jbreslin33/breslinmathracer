@@ -42,7 +42,6 @@ public function process()
 
         	//SESSION
         	$sessions = new Sessions();
-        	$sessions->setSessionVariables();
         }
         else
         {
