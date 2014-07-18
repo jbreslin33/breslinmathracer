@@ -215,7 +215,7 @@ enter: function(application)
 	{
 		application.log('APPLICATION::REWIND_TO_PREVIOUS_LEVEL_APPLICATION');
 	}
-	//tell db to advance you
+	//tell db to rewind you
         application.advanceToLastLevel();
 	application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 },

@@ -165,7 +165,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("GET","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
+                xmlhttp.open("POST","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
                 xmlhttp.send();
 	},
 
@@ -197,7 +197,7 @@ Extends: Application,
                                 }
                         }
 		}
-                xmlhttp.open("GET","../../web/php/check_login.php",true);
+                xmlhttp.open("POST","../../web/php/check_login.php",true);
                 xmlhttp.send();
 	},
 
@@ -229,7 +229,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("GET","../../web/php/login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 
@@ -291,7 +291,7 @@ Extends: Application,
                                 }
                         }
 		}
-                xmlhttp.open("GET","../../web/php/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
+                xmlhttp.open("POST","../../web/php/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
                 xmlhttp.send();
         },
 
@@ -323,7 +323,7 @@ Extends: Application,
 				}
 			}
                 }
-                xmlhttp.open("GET","../../web/php/advance.php",true);
+                xmlhttp.open("POST","../../web/php/advance.php",true);
                 xmlhttp.send();
         },
 
@@ -356,7 +356,7 @@ Extends: Application,
                                 }
                         }
 		}
-                xmlhttp.open("GET","../../web/php/rewind.php",true);
+                xmlhttp.open("POST","../../web/php/rewind.php",true);
                 xmlhttp.send();
         },
  	
