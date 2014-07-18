@@ -1,5 +1,4 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/remediate.php");
 
 //start new session

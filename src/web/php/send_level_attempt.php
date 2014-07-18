@@ -1,5 +1,4 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/level_attempt.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 

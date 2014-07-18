@@ -1,4 +1,6 @@
 <?php
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
 class Login 
 {
