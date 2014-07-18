@@ -58,7 +58,13 @@ public function setRawData()
                		//get the id from user table
                		$item_types_id = pg_Result($result, 0, 'item_types_id');
                		$progression_counter = pg_Result($result, 0, 'progression');
-                
+               
+
+/*
+the query2 should be this with the inclusion of user_id among other things.
+select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where item_types_id = 1 order by start_time asc limit 10;
+*/
+ 
 			//now do another query with type	
 			$query2 = "select start_time, item_types_id, transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id where item_types_id = ";
 			$query2 .= $item_types_id;
