@@ -20,17 +20,34 @@ Extends: Item,
 		this.mQuestionLabel.setText(this.mQuestion);
 
                 //BUTTON A
-                this.mButtonA = new ItemButton(150,50,100,250,this.mSheet.mGame,"BUTTON","","");
+                this.mButtonA = new ItemButton(150,50,100,250,this.mSheet.mGame,"BUTTON","","A");
                 this.addButton(this.mButtonA);
 
                 //BUTTON B 
-                this.mButtonB = new ItemButton(150,50,380,250,this.mSheet.mGame,"BUTTON","","");
+                this.mButtonB = new ItemButton(150,50,380,250,this.mSheet.mGame,"BUTTON","","B");
                 this.addButton(this.mButtonB);
 
                 //BUTTON C 
-                this.mButtonC = new ItemButton(150,50,675,250,this.mSheet.mGame,"BUTTON","","");
+                this.mButtonC = new ItemButton(150,50,675,250,this.mSheet.mGame,"BUTTON","","C");
                 this.addButton(this.mButtonC);
         },
+	
+	fireThis: function(message)
+	{
+		APPLICATION.log('message:' + message);
+		if (message == "A")
+		{
+			this.setUserAnswer(this.mButtonA.getAnswer());	
+		}
+		if (message == "B")
+		{
+			this.setUserAnswer(this.mButtonB.getAnswer());	
+		}
+		if (message == "C")
+		{
+			this.setUserAnswer(this.mButtonC.getAnswer());	
+		}
+	},
 	
 	addButton: function(button)
 	{
@@ -40,6 +57,7 @@ Extends: Item,
 
 	shuffle: function(degree)
 	{
+/*
 		for (i=0; i < degree; i++)
 		{
         		indexFROM = Math.floor(Math.random()*3);
@@ -50,6 +68,7 @@ Extends: Item,
 			this.mButtonArray[indexFROM].setAnswer(answerTO); 
 			this.mButtonArray[indexTO].setAnswer(answerFROM); 
 		}
+*/
 	},
 
 	showQuestion: function()
