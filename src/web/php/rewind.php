@@ -1,6 +1,4 @@
 <?php
-
-include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include(getenv("DOCUMENT_ROOT") . "/src/php/rewind.php");
 
 //start new session

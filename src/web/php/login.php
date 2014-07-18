@@ -1,7 +1,5 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
-include(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
-include(getenv("DOCUMENT_ROOT") . "/src/php/login.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/login.php");
 
 //start new session
 session_start();
