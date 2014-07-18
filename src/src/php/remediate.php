@@ -1,20 +1,15 @@
 <?php
-
 class Remediate 
 {
     private $mDatabaseConnection;
 
-function __construct()
+function __construct($learningstandard,$typeid)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->process();
+	$this->process($learningstandard,$typeid);
 }
 
-public function process()
-{
-
-}
-public function remediateback($learningstandard,$typeid)
+public function process($learningstandard,$typeid)
 {
  	$select = "select id, core_standards_id, levels, progression from learning_standards where id = '";
         $select .= $learningstandard;
@@ -53,7 +48,6 @@ public function remediateback($learningstandard,$typeid)
                 $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
         }
 }
-
 //end of class
 }
 ?>
