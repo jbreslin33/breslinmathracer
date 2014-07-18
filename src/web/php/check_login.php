@@ -24,6 +24,8 @@ if ( isset($_SESSION["LOGGED_IN"]) )
 	$returnString .= $_SESSION["first_name"];
 	$returnString .= ",";
 	$returnString .= $_SESSION["last_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["raw_data"];
 	echo $returnString;
 }
 else

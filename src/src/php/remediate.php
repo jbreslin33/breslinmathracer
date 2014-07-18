@@ -35,8 +35,8 @@ public function process($learningstandard,$typeid)
 		$_SESSION["standard"] = $learningstandard;
 		$_SESSION["progression"] = $progression;
 		$_SESSION["levels"] = $levels;
-		$_SESSION["item_type_id_raw_data"] = $typeid;
-		$rawData = $_SESSION["item_type_id_raw_data"];
+		$_SESSION["raw_data"] = $typeid;
+		$rawData = $_SESSION["raw_data"];
 		
                 //do the insert...
                 $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";

@@ -5,11 +5,11 @@ var Evaluation = new Class(
 
 Extends: Game,
 
-	initialize: function(application,rawdata)
+	initialize: function(application)
 	{
        		this.parent(application);
 	
-		this.mSheet = new s_evaluation(this,rawdata);	
+		this.mSheet = new s_evaluation(this);	
 		this.mSheet.createItems();
 		this.mSheet.createShapes();
 	},
@@ -36,20 +36,18 @@ Extends: Game,
 var s_evaluation = new Class(
 {
 Extends: Sheet,
-        initialize: function(game,rawdata)
+        initialize: function(game)
         {
                 this.parent(game);
 		
 		this.mLearningStandard = 'evaluation';
-		
-		APPLICATION.mEvaluationData = rawdata;
         },
 
         createItems: function()
         {
                 this.parent();
 	
-		var s = APPLICATION.mEvaluationData.split(":");	
+		var s = APPLICATION.mRawData.split(":");	
 		
 		this.setScoreNeeded(s.length);
               
