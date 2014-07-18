@@ -48,55 +48,58 @@ public function setRawData()
 		$query .= " AND user_id = ";
 		$query .= $_SESSION["user_id"];
 		$query .= " order by progression asc limit 1;";
-                
+	
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+		
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         	
 		$num = pg_num_rows($result);
         
 		if ($num > 0)
         	{
-               		//get the id from user table
-               		$item_types_id = pg_Result($result, 0, 'item_types_id');
+			//set the progression counter for the next loop thru
                		$progression_counter = pg_Result($result, 0, 'progression');
-               
 
-/*
-the query2 should be this with the inclusion of user_id among other things.
-select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where item_types_id = 1 order by start_time asc limit 10;
-*/
- 
-			//now do another query with type	
-			$query2 = "select start_time, item_types_id, transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id where item_types_id = ";
+               		//get the id from user table to use in next query
+               		$item_types_id = pg_Result($result, 0, 'item_types_id');
+               
+			//now do another query with on just the item_type and user_id and just grab the last 10 by start_time	
+			$query2 = "select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where item_types_id = ";
 			$query2 .= $item_types_id;
+			$query2 .= " AND user_id = ";
+			$query2 .= $_SESSION["user_id"];
 			$query2 .= " order by start_time asc limit 10;";		
-		
+			
 			$result2 = pg_query($this->mDatabaseConnection->getConn(),$query2) or die('Could not connect: ' . pg_last_error());
+	
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query2','query2');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         	
 			$num2 = pg_num_rows($result2);
 
-			if ($num2 > 0)
+			//if we have 10 lets check if we mastered all ten
+			if ($num2 == 10) 
 			{
-				if ($num2 > 9) //more than 9 so check
-				{
-					$mastered = true;		
+				$masteredAllTen = true;		
 				
-					for ($i = 0; $i < $num2; $i++)
-					{	
-               					$transaction_code = pg_Result($result2, 0, 'transaction_code');
-						if ($transaction_code != 1)
-						{
-							$mastered = false;		
-						} 	
-					}
-					if (!$mastered)
+				for ($i = 0; $i < $num2; $i++)
+				{	
+               				$transaction_code = pg_Result($result2, 0, 'transaction_code');
+					if ($transaction_code != 1)
 					{
-						array_push($itemArray,"$item_types_id");
-					}
+						$masteredAllTen = false;		
+					} 	
 				}
-				else //less than 10 so just add it
+				if (!$masteredAllTen)
 				{
 					array_push($itemArray,"$item_types_id");
 				}
+			}
+			//less than 10 so we could not have mastered 10 so just add it to array.
+			else 
+			{
+				array_push($itemArray,"$item_types_id");
 			}	
 		}	
 		else
