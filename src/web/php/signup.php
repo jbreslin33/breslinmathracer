@@ -30,6 +30,8 @@ $returnString .= ",";
 $returnString .= $_SESSION["first_name"];
 $returnString .= ",";
 $returnString .= $_SESSION["last_name"];
+$returnString .= ",";
+$returnString .= $_SESSION["raw_data"];
 echo $returnString;
 
 ?>

@@ -8,8 +8,6 @@ class Signup
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-
-
 	$this->process();
 }
 
@@ -62,6 +60,7 @@ public function insertFirstLevelAttempt()
        	$_SESSION["levels"] = 4;
         $_SESSION["progression"] = 1.000;
         $_SESSION["subject_id"] = 1;
+        $_SESSION["raw_data"] = NULL;
 }
 
 public function checkInput()

@@ -41,6 +41,7 @@ public function process()
                 $_SESSION["last_name"] = $last_name;
                 $_SESSION["user_id"] = $user_id;
         	$_SESSION["LOGGED_IN"] = 1;
+        	$_SESSION["raw_data"] = NULL; 
 
         	//SESSION
         	$sessions = new Sessions();

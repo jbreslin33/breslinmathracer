@@ -33,8 +33,7 @@ Extends: Application,
 		this.mLevels = 0;
 		this.mProgression = 0;
 		this.mStandard = '';
-		this.mEvaluationData = 0;
-		this.mRemediateData = 0;
+		this.mRawData = 0;
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
@@ -73,7 +72,7 @@ Extends: Application,
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
-			//APPLICATION.log('code:' + codeNumber);
+			APPLICATION.log('code:' + codeNumber);
 		}
         	if (codeNumber == APPLICATION.FULL)
                 {
@@ -87,55 +86,14 @@ Extends: Application,
                        	APPLICATION.mUsername = responseArray[7];
                         APPLICATION.mFirstName = responseArray[8];
                         APPLICATION.mLastName = responseArray[9];
+                        APPLICATION.mRawData = responseArray[10];
 
                         APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                         APPLICATION.mHud.setProgression(APPLICATION.mProgression);
                         APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                	}
-                if (codeNumber == APPLICATION.NOT_LOGGED_IN)
-                {
-		}
-                if (codeNumber == APPLICATION.GAME)
-                {
-                        APPLICATION.mRef_id = responseArray[1];
-                        APPLICATION.mLevel = responseArray[2];
-                        APPLICATION.mStandard = responseArray[3];
-                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                        APPLICATION.mProgression = responseArray[4];
-                        APPLICATION.mLevels = responseArray[5];
-
-                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-                }
-                if (codeNumber == APPLICATION.EVALUATION)
-		{
-                        APPLICATION.mRef_id = responseArray[1];
-                        APPLICATION.mLevel = responseArray[2];
-                        APPLICATION.mStandard = responseArray[3];
-                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                        APPLICATION.mProgression = responseArray[4];
-                        APPLICATION.mLevels = responseArray[5];
-
-                        APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                        APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                        APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-		
-			//just create the evaluation right here	
-			if (this.mGame)
-			{
-				this.mGame.destructor();
-				this.mGame = 0;
-			}
-                        APPLICATION.mGameName = "evaluation";
-                        APPLICATION.mGame = new Evaluation(APPLICATION,responseArray[6]);
-		}
-                if (codeNumber == APPLICATION.REMEDIATE)
-		{
-		}
+		APPLICATION.log('APPLICATION.mRef_id:' + APPLICATION.mRef_id);
 	},
 
         signup: function(username,password,first_name,last_name)
@@ -381,6 +339,19 @@ Extends: Application,
                 }
 	
 		//math
+		if (this.mRef_id == 'evaluation')
+		{ 
+             		if (this.mGameName != "evaluation")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "evaluation";
+                               	this.mGame = new Evaluation(APPLICATION);
+			}
+                }
 		if (this.mRef_id == 'k.cc.a.1')
 		{ 
              		if (this.mGameName != "k_cc_a_1")

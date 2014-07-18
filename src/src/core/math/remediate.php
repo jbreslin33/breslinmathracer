@@ -8,11 +8,11 @@ var Remediate = new Class(
 
 Extends: Game,
 
-	initialize: function(application,rawdata)
+	initialize: function(application)
 	{
        		this.parent(application);
 	
-		this.mSheet = new s_remediate(this,rawdata);	
+		this.mSheet = new s_remediate(this);	
 		this.mSheet.createItems();
 		this.mSheet.createShapes();
 	},
@@ -39,20 +39,18 @@ Extends: Game,
 var s_remediate = new Class(
 {
 Extends: Sheet,
-        initialize: function(game,rawdata)
+        initialize: function(game)
         {
                 this.parent(game);
 		
 		this.mLearningStandard = 'remediate';
-		
-		APPLICATION.mRemediateData = rawdata;
         },
 
         createItems: function()
         {
                 this.parent();
 	
-		var s = APPLICATION.mRemediateData.split(":");	
+		var s = APPLICATION.mRawData.split(":");	
 		
 		this.setScoreNeeded(s.length);
               
