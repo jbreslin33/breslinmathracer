@@ -33,7 +33,7 @@ public function process()
 
         $this->setRawData();
 }
-
+//you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
 	//right here you need to query db to get rawdata for questions.
@@ -43,8 +43,10 @@ public function setRawData()
 	$good = true;
 	while($good)	
 	{
-		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id where progression > ";
+		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where progression > ";
 		$query .= $progression_counter; 
+		$query .= " AND user_id = ";
+		$query .= $_SESSION["user_id"];
 		$query .= " order by progression asc limit 1;";
                 
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
