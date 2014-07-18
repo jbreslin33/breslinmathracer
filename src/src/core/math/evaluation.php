@@ -41,34 +41,24 @@ Extends: Sheet,
                 this.parent(game);
 		
 		this.mLearningStandard = 'evaluation';
+
+		this.picker = new Picker(this);
         },
 
         createItems: function()
         {
                 this.parent();
 	
-		var s = APPLICATION.mRawData.split(":");	
+		var itemIDArray = APPLICATION.mRawData.split(":");	
 		
-		this.setScoreNeeded(s.length);
+		this.setScoreNeeded(itemIDArray.length);
+			
+		APPLICATION.log('itemIDArray.length:' + itemIDArray.length);
               
-		for (var i = 0; i < s.length; i++)
+		for (var i = 0; i < itemIDArray.length; i++)
 		{	
-			if ( s[i] == "1")
-			{
-				this.addItem(new i_k_cc_a_1_t_1(this));
-			}
-			if ( s[i] == "2")
-			{
-				this.addItem(new i_k_cc_a_1_t_2(this));
-			}
-			if ( s[i] == "3")
-			{
-				this.addItem(new i_k_cc_a_1_t_3(this));
-			}
-			if ( s[i] == "4")
-			{
-				this.addItem(new i_k_cc_a_1_t_4(this));
-			}
+			APPLICATION.log('itemIDArray[i]:' + itemIDArray[i]);
+			this.addItem(this.picker.getItem(itemIDArray[i]));
 		}
 		//this.randomize(10);
         }
