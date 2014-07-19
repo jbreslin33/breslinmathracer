@@ -5,13 +5,15 @@ class Remediate
 {
     private $mDatabaseConnection;
 
-function __construct($learningstandard,$typeid)
+function __construct($typeid)
 {
+	$this->mTypeID = $typeid;
+
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->process($learningstandard,$typeid);
+	$this->process();
 }
 //if you have to do 3 levels. that would be 1,2,3=6 correct in a row which would be small enuf as to be managable for student but still keep question in the rotation for evaluations
-public function process($learningstandard,$typeid)
+public function process()
 {
         $nextID = 'remediate';
 
@@ -29,13 +31,13 @@ public function process($learningstandard,$typeid)
         $_SESSION["standard"] = 'remediate';
         $_SESSION["ref_id"] = 'remediate';
 
-        $this->setRawData($learningstandard,$typeid);
+        $this->setRawData();
 }
 //you are not using user id in selects that is why it skipped eval....
-public function setRawData($learningstandard,$typeid)
+public function setRawData()
 {
 	$itemString = "";
-	$itemString .= $typeid;
+	$itemString .= $this->mTypeID;
 	$itemString .= ":";
 	
        	$_SESSION["raw_data"] = $itemString; 

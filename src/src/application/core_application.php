@@ -220,7 +220,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	remediate: function(learningstandard,typeid)
+	remediate: function(typeid)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -248,7 +248,7 @@ Extends: Application,
                                 }
                         }
 		}
-                xmlhttp.open("POST","../../web/php/remediate.php?learningstandard=" + learningstandard + "&typeid=" + typeid,true);
+                xmlhttp.open("POST","../../web/php/remediate.php?typeid=" + typeid,true);
                 xmlhttp.send();
         },
 
