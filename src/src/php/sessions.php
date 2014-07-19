@@ -1,6 +1,7 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluation.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/remediate.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/standard.php");
 
 //this class is for when you first login or signup it is not used other wise 
@@ -43,9 +44,16 @@ public function process()
 		$_SESSION["transaction_code"] = $transaction_code;
        		$_SESSION["level"]            = $level;
 	
-		if ($ref_id == 'evaluation')
+		if ($ref_id == 'evaluation' || $ref_id == 'remediate')
 		{
-			$evaluation = new Evaluation();
+			if ($ref_id == 'evaluation')
+			{
+				$evaluation = new Evaluation();
+			}
+			if ($ref_id == 'remediate')
+			{
+				$remediate = new Remediate(0);
+			}
 		}
 		else
 		{

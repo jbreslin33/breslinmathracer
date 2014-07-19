@@ -1,0 +1,2 @@
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
