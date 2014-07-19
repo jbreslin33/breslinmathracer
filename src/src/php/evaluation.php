@@ -23,7 +23,7 @@ public function process()
         $insert .= 1;
         $insert .= ",'";
         $insert .= $nextID;
-        $insert .= "',2);";
+        $insert .= "',3);";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
         //update session vars with some hard coding
