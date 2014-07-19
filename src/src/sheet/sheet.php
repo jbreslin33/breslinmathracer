@@ -93,7 +93,10 @@ var Sheet = new Class(
 		while(this.mItemArray.length > 0)
                 {
 			var item = this.mItemArray[0];
-                        item.destructor();
+			if (item)
+			{
+                        	item.destructor();
+			}
 			this.mItemArray.splice(0,1);
                 }
 

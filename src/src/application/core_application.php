@@ -350,6 +350,19 @@ Extends: Application,
                                	this.mGame = new Evaluation(APPLICATION);
 			}
                 }
+		if (this.mRef_id == 'remediate')
+		{ 
+             		if (this.mGameName != "remediate")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "remediate";
+                               	this.mGame = new Remediate(APPLICATION);
+			}
+                }
 		if (this.mRef_id == 'k.cc.a.1')
 		{ 
              		if (this.mGameName != "k_cc_a_1")
