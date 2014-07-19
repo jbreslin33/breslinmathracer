@@ -244,8 +244,8 @@ enter: function(application)
         {
                 application.log('APPLICATION::REMEDIATE_APPLICATION');
         }
-        //tell db remediate student on standard they answered wrong
-        application.remediate(application.mGame.mSheet.getItem().mStandard,application.mGame.mSheet.getItem().mType);
+        //tell db remediate student on item type answered wrong
+        application.remediate(application.mGame.mSheet.getItem().mType);
 },
 
 execute: function(application)
