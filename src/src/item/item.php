@@ -7,8 +7,6 @@ var Item = new Class(
         {
 		this.mStateLogs = false;		
 
-		this.mID = 0;
-		
 		this.mSheet = sheet;
 	
 		//question
@@ -32,8 +30,10 @@ var Item = new Class(
 
 		this.mShapeArray   = new Array();
 		this.mQuestionShapeArray   = new Array();
-        
+       
+		//type 
 		this.mType = 0; //uncategorized
+		this.mInfo = ''; 
 
 		//times 
 		this.mThresholdTime = 0;
@@ -307,6 +307,12 @@ var Item = new Class(
 	{
 
 	},	
+
+
+	showQuestion: function()
+	{
+	//	APPLICATION.mHud.setInfo('Standard:' + this.mSheet.mStandardDescription + ' Type:' + this.mInfo);	
+	},
 
 	showQuestionShapes: function()
 	{

@@ -180,6 +180,11 @@ Extends: Polygon,
                 return this.mMesh.innerHTML;
         },
 
+	setFontSize: function(s)
+	{
+		this.mMesh.style.fontSize=s;	
+	},
+
 	/********* COLOR ******************/
 	setBackGroundColor: function(c)
 	{
