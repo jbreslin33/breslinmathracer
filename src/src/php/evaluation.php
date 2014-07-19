@@ -136,8 +136,6 @@ public function setRawData()
 		$advance = new Advance();	
 	}
 }
-
-
 //end of class
 }
 ?>

@@ -1,6 +1,5 @@
-/* REMEDIATE: 
-Will consist of up to ten levels, depends on need to remediate. Will start at progression 0 in item_types and find any non-mastered question types.
-when it has 10 or has checked up the highest level question asked. then it will insert a levelattempt at level 1 with x needed.     
+/* Remediate: 
+Ask 3 levels of the same question type. This will mean at most student will get 6 in a row correct which will still leave type available to evaluation.
 */ 
 
 var Remediate = new Class(
@@ -44,34 +43,24 @@ Extends: Sheet,
                 this.parent(game);
 		
 		this.mLearningStandard = 'remediate';
+
+		this.picker = new Picker(this);
         },
 
         createItems: function()
         {
                 this.parent();
 	
-		var s = APPLICATION.mRawData.split(":");	
+		var itemIDArray = APPLICATION.mRawData.split(":");	
+		var itemID = itemIDArray[0];
 		
-		this.setScoreNeeded(s.length);
-              
-		for (var i = 0; i < s.length; i++)
+		//this.setScoreNeeded(itemIDArray.length);
+		this.setScoreNeeded(APPLICATION.mLevel);
+			
+		for (var i = 0; i < this.getScoreNeeded(); i++)
 		{	
-			if ( s[i] == "1")
-			{
-				this.addItem(new i_k_cc_a_1_t_1(this));
-			}
-			if ( s[i] == "2")
-			{
-				this.addItem(new i_k_cc_a_1_t_2(this));
-			}
-			if ( s[i] == "3")
-			{
-				this.addItem(new i_k_cc_a_1_t_3(this));
-			}
-			if ( s[i] == "4")
-			{
-				this.addItem(new i_k_cc_a_1_t_4(this));
-			}
+			APPLICATION.log('itemID:' + itemID);
+			this.addItem(this.picker.getItem(itemID));
 		}
 		//this.randomize(10);
         }

@@ -28,6 +28,7 @@ insert into core_grades(id,description) values (11,'10');
 insert into core_grades(id,description) values (12,'11'); 
 insert into core_grades(id,description) values (13,'12'); 
 insert into core_grades(id,description) values (10000,'evaluation'); 
+insert into core_grades(id,description) values (10001,'remediate'); 
 
 insert into core_domains(id,description) values (1,'Counting and Cardinality'); 
 insert into core_domains(id,description) values (2,'Operations and Algebraic Thinking'); 
@@ -41,6 +42,7 @@ insert into core_domains(id,description) values (9,'Expressions and Equations');
 insert into core_domains(id,description) values (10,'Statistics and Probability'); 
 insert into core_domains(id,description) values (11,'Functions'); 
 insert into core_domains(id,description) values (10000,'Evaluation'); 
+insert into core_domains(id,description) values (10001,'Remediate'); 
 
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (1,1,1); -- (s:m g:k)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values (2,2,1); -- (s:e g:k)
@@ -68,8 +70,8 @@ insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values(23,1
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values(24,2,12); -- (s:e g:11)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values(25,1,13); -- (s:m g:12)
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values(26,2,13); -- (s:e g:12)
-
 insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values(10000,1,10000); -- (s:m g:evaluation)
+insert into core_subjects_grades(id,core_subjects_id,core_grades_id) values(10001,1,10001); -- (s:m g:remediate)
 
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (1,1,1); -- k.cc  
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (2,2,2); -- k.oa  
@@ -99,8 +101,8 @@ insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (26,6,12); -- 5.f 
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (27,4,12); -- 5.md 
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (28,5,12); -- 5.g 
-
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (10000,10000,10000); --evaluation 
+insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (10001,10001,10001); --remediate
 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,1,'Count to tell the number of objects.');
@@ -112,6 +114,7 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Identify and describe shapes.');
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10000,10000,'evaluation');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10001,10001,'remediate');
 
 --MATH
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.1',1,'Count to 100 by ones and by tens.');
@@ -123,6 +126,7 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.a
 insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.1',2,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.');
 insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.2',2,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
 insert into core_standards (id,core_clusters_id,description) values ('evaluation',10000,'Evaluation');
+insert into core_standards (id,core_clusters_id,description) values ('remediate',10001,'Remediate');
 
 
 
@@ -131,7 +135,8 @@ insert into learning_standards (id,core_standards_id,progression,levels) values 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',3,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',4,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',5,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',10000,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',10000,1); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('remediate','remediate',10001,3); 
 
 insert into item_types(id,progression,learning_standards_id,description) values (1,1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
 insert into item_types(id,progression,learning_standards_id,description) values (2,2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');

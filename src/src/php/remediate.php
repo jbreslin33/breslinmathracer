@@ -10,45 +10,39 @@ function __construct($learningstandard,$typeid)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->process($learningstandard,$typeid);
 }
-
+//if you have to do 3 levels. that would be 1,2,3=6 correct in a row which would be small enuf as to be managable for student but still keep question in the rotation for evaluations
 public function process($learningstandard,$typeid)
 {
- 	$select = "select id, core_standards_id, levels, progression from learning_standards where id = '";
-        $select .= $learningstandard;
-        $select .= "';";
+        $nextID = 'remediate';
 
-        $selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
+        //do the insert...
+        $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+        $insert .= $_SESSION["user_id"];
+        $insert .= ",1,'remediate',3);";
 
-        //get numer of rows
-        $num = pg_num_rows($selectResult);
+        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
-        if ($num > 0)
-        {
-                //get the vars from user table
-                $levels = pg_Result($selectResult, 0, 'levels');
-                $ref_id = pg_Result($selectResult, 0, 'id');
-                $progression = pg_Result($selectResult, 0, 'progression');
-                $standard = pg_Result($selectResult, 0, 'core_standards_id');
-        	
-		$_SESSION["ref_id"] = $ref_id;
-		$_SESSION["level"] = 2; 
-		$_SESSION["standard"] = $learningstandard;
-		$_SESSION["progression"] = $progression;
-		$_SESSION["levels"] = $levels;
-		$_SESSION["raw_data"] = $typeid;
-		$rawData = $_SESSION["raw_data"];
-		
-                //do the insert...
-                $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
-                $insert .= $_SESSION["user_id"];
-                $insert .= ",";
-                $insert .= $_SESSION["level"];
-                $insert .= ",'";
-                $insert .= $_SESSION["ref_id"];
-                $insert .= "',3);";
+        //update session vars with some hard coding
+        $_SESSION["level"] = 1;
+        $_SESSION["levels"] = 3; //remediate is always 3 levels....
+        $_SESSION["progression"] = 10001;
+        $_SESSION["standard"] = 'remediate';
+        $_SESSION["ref_id"] = 'remediate';
 
-                $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
-        }
+        $this->setRawData($learningstandard,$typeid);
+}
+//you are not using user id in selects that is why it skipped eval....
+public function setRawData($learningstandard,$typeid)
+{
+	$itemString = "";
+	$itemString .= $typeid;
+	$itemString .= ":";
+	
+       	$_SESSION["raw_data"] = $itemString; 
+       	$rawData = $_SESSION["raw_data"]; 
+
+  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rawData','rawData');";
+  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 }
 //end of class
 }
