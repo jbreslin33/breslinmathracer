@@ -72,6 +72,7 @@ Extends: Item,
 
 	showQuestion: function()
 	{
+		this.parent();
 		if (this.mQuestionLabel)
 		{
 			this.mQuestionLabel.setText(this.mQuestion);

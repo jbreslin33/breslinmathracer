@@ -50,6 +50,7 @@ var Sheet = new Class(
 
 		this.mItem = 0;
 		this.mLearningStandard = '';  
+		this.mStandardDescription = '';
         },
 
 	/*********** CLASS ADMIN ************/

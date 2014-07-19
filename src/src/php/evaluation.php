@@ -29,7 +29,7 @@ public function process()
         //update session vars with some hard coding
         $_SESSION["level"] = 1;
         $_SESSION["levels"] = 1;
-        $_SESSION["progression"] = 2;
+        $_SESSION["progression"] = 10000; //that is the evaluation 
         $_SESSION["standard"] = 'evaluation';
         $_SESSION["ref_id"] = 'evaluation';
 

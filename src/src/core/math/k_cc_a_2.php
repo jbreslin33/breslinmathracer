@@ -58,7 +58,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mStandard = 'k.cc.a.2';
-                this.mType = 1;
+                this.mType = 101;
 
 		var x = Math.floor(Math.random()*100);
 		var a = parseInt(x+1);
@@ -92,7 +92,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mStandard = 'k.cc.a.2';
-                this.mType = 2;
+                this.mType = 102;
 
                 var x = Math.floor(Math.random()*98);
                 var a = parseInt(x+1);
@@ -130,7 +130,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mStandard = 'k.cc.a.2';
-                this.mType = 3;
+                this.mType = 103;
 
                 var x = Math.floor(Math.random()*98);
 		var a = parseInt(x+1);
@@ -168,7 +168,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mStandard = 'k.cc.a.2';
-                this.mType = 4;
+                this.mType = 104;
 
                 var a = Math.floor(Math.random()*98);
                 var b = 0;
