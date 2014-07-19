@@ -35,21 +35,43 @@ function __construct($typeid)
 //if you have to do 3 levels. that would be 1,2,3=6 correct in a row which would be small enuf as to be managable for student but still keep question in the rotation for evaluations
 public function process()
 {
-        $nextID = 'remediate';
+        $_SESSION["ref_id"] = 'remediate';
+
+        //BEGIN NEW CODE
+        //right here you need to check the level of the ref_id you are about to send them to.
+        $selectLastLevelAttempt = "select level, transaction_code from levelattempts where user_id = ";
+        $selectLastLevelAttempt .= $_SESSION["user_id"];
+        $selectLastLevelAttempt .= " and learning_standards_id = '";
+        $selectLastLevelAttempt .= $_SESSION["ref_id"];
+        $selectLastLevelAttempt .= "' order by start_time desc limit 1;";
+
+       	$selectLastLevelAttemptResult = pg_query($this->mDatabaseConnection->getConn(),$selectLastLevelAttempt) or die('Could not connect: ' . pg_last_error());
+        $numLastLevelAttemptRows = pg_num_rows($selectLastLevelAttemptResult);
+
+        if ($numLastLevelAttemptRows > 0)
+        {
+        	$level      = pg_Result($selectLastLevelAttemptResult, 0, 'level');
+                $_SESSION["level"] = $level;
+        }
+        else
+        {
+        	$_SESSION["level"] = 1;
+        }
+        //END NEW CODE
 
         //do the insert...
         $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
-        $insert .= ",1,'remediate',3);";
+        $insert .= ",";
+        $insert .= $_SESSION["level"];
+        $insert .= ",'remediate',3);";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
         //update session vars with some hard coding
-        $_SESSION["level"] = 1;
         $_SESSION["levels"] = 3; //remediate is always 3 levels....
         $_SESSION["progression"] = 10001;
         $_SESSION["standard"] = 'remediate';
-        $_SESSION["ref_id"] = 'remediate';
 
         $this->setRawData();
 }
