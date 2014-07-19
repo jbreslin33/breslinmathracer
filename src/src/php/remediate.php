@@ -7,9 +7,29 @@ class Remediate
 
 function __construct($typeid)
 {
+	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
-	$this->mDatabaseConnection = new DatabaseConnection();
+	if ($this->mTypeID == 0)
+	{
+       		$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where levelattempts.user_id = ";
+        	$query .= $_SESSION["user_id"];
+        	$query .= " order by item_attempts.start_time desc limit 1;";
+
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
+  		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+        	//get db result
+        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        	$num = pg_num_rows($result);
+
+        	if ($num > 0)
+        	{
+                	$this->mTypeID = pg_Result($result, 0, 'item_types_id');
+		}
+	}
+
 	$this->process();
 }
 //if you have to do 3 levels. that would be 1,2,3=6 correct in a row which would be small enuf as to be managable for student but still keep question in the rotation for evaluations
