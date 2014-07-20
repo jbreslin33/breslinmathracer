@@ -30,6 +30,11 @@ Extends: Item,
                 //BUTTON C 
                 this.mButtonC = new ItemButton(150,50,675,250,this.mSheet.mGame,"BUTTON","","C");
                 this.addButton(this.mButtonC);
+                
+                //BUTTON S 
+                this.mButtonS = new ItemButton(150,40,675,422,this.mSheet.mGame,"BUTTON","","S");
+                this.addButton(this.mButtonS);
+		this.mButtonS.setOutOfBoundsCheck(false);
         },
 	
 	fireThis: function(message)
@@ -45,6 +50,11 @@ Extends: Item,
 		if (message == "C")
 		{
 			this.setUserAnswer(this.mButtonC.getAnswer());	
+		}
+		if (message == "S")
+		{
+			//this.setUserAnswer(this.mButtonC.getAnswer());	
+			APPLICATION.log('T:' + this.mInfo)	
 		}
 	},
 	
