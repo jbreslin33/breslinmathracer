@@ -50,15 +50,34 @@ public function process()
 
         if ($numLastLevelAttemptRows > 0)
         {
-        	$level      = pg_Result($selectLastLevelAttemptResult, 0, 'level');
-                $_SESSION["level"] = $level;
+        	$levelVar               = pg_Result($selectLastLevelAttemptResult, 0, 'level');
+        	$transaction_codeVar = pg_Result($selectLastLevelAttemptResult, 0, 'transaction_code');
+                $_SESSION["level"] = $levelVar;
+                
+		//passed
+                if ($transaction_codeVar == 1)
+                {
+                	$levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
+               	        $levelVar++;
+                	$_SESSION["level"] = $level;
+                }
+                //failed
+                if ($transaction_codeVar == 2)
+                {
+                	if ($levelVar > 1)
+                        {
+                                $levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
+                       	        $levelVar--;
+                		$_SESSION["level"] = $level;
+                        }
+                }
         }
         else
         {
         	$_SESSION["level"] = 1;
         }
         //END NEW CODE
-
+   
         //do the insert...
         $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
