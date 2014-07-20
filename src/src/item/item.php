@@ -55,6 +55,8 @@ var Item = new Class(
 		this.mContinueCorrectButton = 0; 
 		this.mContinueIncorrectButton = 0; 
 
+		//show standards and type description buttons
+
 		//states
                 this.mStateMachine = new StateMachine(this);
 
@@ -78,6 +80,7 @@ var Item = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
+
 	},
 
 	setTheFocus: function()
@@ -274,19 +277,7 @@ var Item = new Class(
 	
 	showContinueCorrect: function()
 	{
-                for (i=0; i < this.mButtonArray.length; i++)
-                {
-                        if (this.mButtonArray[i].getAnswer() != this.getAnswer())
-                        {
-                                this.mButtonArray[i].setVisibility(false);
-                                //this.mButtonArray[i].mFire = true;
-                                //this.mButtonArray[i].mMesh.fade('.1');
-                        }
-                        if (this.mButtonArray[i].getAnswer() == this.getAnswer())
-                        {
-                                this.mButtonArray[i].setBackGroundColor("green");
-                        }
-		}
+	
 	},
 	
 	hideContinueCorrect: function()
@@ -311,7 +302,7 @@ var Item = new Class(
 
 	showQuestion: function()
 	{
-	//	APPLICATION.mHud.setInfo('Standard:' + this.mSheet.mStandardDescription + ' Type:' + this.mInfo);	
+	
 	},
 
 	showQuestionShapes: function()
