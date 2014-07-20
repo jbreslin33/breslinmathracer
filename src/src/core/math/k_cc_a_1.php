@@ -23,6 +23,7 @@ Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
+                this.mLearningStandard = 'k.cc.a.1';
 		this.mStandardDescription = 'Use the four operations to solve word problems involving distances, intervals of time, liquid volumes, masses of objects, and money, including problems involving simple fractions or decimals, and problems that require expressing measurements given in a larger unit in terms of a smaller unit. Represent measurement quantities using diagrams such as number line diagrams that feature a measurement scale.';
         },
 
