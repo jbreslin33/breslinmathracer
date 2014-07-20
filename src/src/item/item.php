@@ -57,6 +57,7 @@ var Item = new Class(
 
 		//show standards and type description buttons
 		this.mToggleStandardInfoButton = 0;
+		this.mStandardInfoButton = 0;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -129,11 +130,17 @@ var Item = new Class(
 		this.mContinueIncorrectButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueIncorrectButton);
 		
-		//mToggleStandardInfo
+		//mToggleStandardInfoButton
                 this.mToggleStandardInfoButton = new ToggleStandardInfoButton(150,40,650,422,this.mSheet.mGame,"BUTTON","","");
 		this.mToggleStandardInfoButton.mMesh.innerHTML = 'STANDARD INFO';
                 this.addShape(this.mToggleStandardInfoButton);
 		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
+		
+		//mStandardInfoButton
+                this.mStandardInfoButton = new StandardInfoButton(200,200,200,200,this.mSheet.mGame,"BUTTON","","");
+		this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ':' + this.mSheet.mLearningStandardDescription;
+                this.addShape(this.mStandardInfoButton);
+		this.mStandardInfoButton.setOutOfBoundsCheck(false);
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array

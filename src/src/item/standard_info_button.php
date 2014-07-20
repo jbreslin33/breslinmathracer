@@ -1,4 +1,4 @@
-var ToggleStandardInfoButton = new Class(
+var StandardInfoButton = new Class(
 {
 Extends: Shape,
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
@@ -23,11 +23,15 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-		//if (APPLICATION.mGame.mSheet.mItem.mStandardInfoButton.getVisibility())
-		if (APPLICATION.mGame.mSheet.getItem())
+/*
+		if (this.getVisibility())
 		{
-			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
-			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(true);
-		}	
+			this.setVisibility(false);
+		}
+		else
+		{
+			this.setVisibility(true);
+		}
+*/
         }
 });

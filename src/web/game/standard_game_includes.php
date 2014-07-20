@@ -53,6 +53,7 @@
 <script type="text/javascript" src="/src/item/continue_correct_button.php"></script>
 <script type="text/javascript" src="/src/item/continue_incorrect_button.php"></script>
 <script type="text/javascript" src="/src/item/toggle_standard_info_button.php"></script>
+<script type="text/javascript" src="/src/item/standard_info_button.php"></script>
 <script type="text/javascript" src="/src/item/collide_item.php"></script>
 <script type="text/javascript" src="/src/item/states/states.php"></script>
 <script type="text/javascript" src="/src/question/question.php"></script>
