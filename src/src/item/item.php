@@ -138,7 +138,8 @@ var Item = new Class(
 		
 		//mStandardInfoButton
                 this.mStandardInfoButton = new StandardInfoButton(200,200,200,200,this.mSheet.mGame,"BUTTON","","");
-		this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ':' + this.mSheet.mLearningStandardDescription;
+		//this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ':' + this.mSheet.mLearningStandardDescription;
+		this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ': ' + this.mSheet.mStandardDescription;
                 this.addShape(this.mStandardInfoButton);
 		this.mStandardInfoButton.setOutOfBoundsCheck(false);
 	},

@@ -33,6 +33,7 @@ Extends: Shape,
 		{
 			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
 			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(true);
+			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.mDiv.mDiv.style.zIndex="100";
 		}
         }
 });
