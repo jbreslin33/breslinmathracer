@@ -56,6 +56,7 @@ var Item = new Class(
 		this.mContinueIncorrectButton = 0; 
 
 		//show standards and type description buttons
+		this.mToggleStandardInfoButton = 0;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -127,6 +128,12 @@ var Item = new Class(
                 this.mContinueIncorrectButton = new ContinueIncorrectButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
 		this.mContinueIncorrectButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueIncorrectButton);
+		
+		//mToggleStandardInfo
+                this.mToggleStandardInfoButton = new ToggleStandardInfoButton(150,40,650,422,this.mSheet.mGame,"BUTTON","","");
+		this.mToggleStandardInfoButton.mMesh.innerHTML = 'STANDARD INFO';
+                this.addShape(this.mToggleStandardInfoButton);
+		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -302,7 +309,7 @@ var Item = new Class(
 
 	showQuestion: function()
 	{
-	
+		this.mToggleStandardInfoButton.setVisibility(true);
 	},
 
 	showQuestionShapes: function()
