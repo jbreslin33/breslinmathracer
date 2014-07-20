@@ -24,7 +24,7 @@ Extends: Shape,
         buttonHit: function()
         {
 		//if (APPLICATION.mGame.mSheet.mItem.mStandardInfoButton.getVisibility())
-		if (APPLICATION.mGame.mSheet.getItem())
+		if (APPLICATION.mGame.mSheet.getItem().mStandardInfoButton)
 		{
 			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
 			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(true);
