@@ -24,10 +24,15 @@ Extends: Shape,
         buttonHit: function()
         {
 		//if (APPLICATION.mGame.mSheet.mItem.mStandardInfoButton.getVisibility())
-		if (APPLICATION.mGame.mSheet.getItem().mStandardInfoButton)
+		if (APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.getVisibility())
+		{
+			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
+			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(false);
+		}	
+		else
 		{
 			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
 			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(true);
-		}	
+		}
         }
 });
