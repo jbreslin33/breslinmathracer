@@ -25,6 +25,10 @@ Extends: Shape,
 			{
 				this.mMesh.attachEvent("onclick",this.buttonHitC);
 			}
+			if (message == 'S')
+			{
+				this.mMesh.attachEvent("onclick",this.buttonHitS);
+			}
                 }
                 else
                 {
@@ -39,6 +43,10 @@ Extends: Shape,
 			if (message == 'C')
 			{
                         	this.mMesh.addEvent('click',this.buttonHitC);
+			}	
+			if (message == 'S')
+			{
+                        	this.mMesh.addEvent('click',this.buttonHitS);
 			}	
                 }
         },
@@ -87,5 +95,9 @@ Extends: Shape,
         buttonHitC: function()
         {
                 APPLICATION.mGame.mSheet.mItem.fireThis('C');
+        },
+        buttonHitS: function()
+        {
+                APPLICATION.mGame.mSheet.mItem.fireThis('S');
         }
 });

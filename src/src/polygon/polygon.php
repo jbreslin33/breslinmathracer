@@ -28,6 +28,8 @@ var Polygon = new Class(
                 //collision on or off
                 this.mCollidable = false;
                 this.mCollisionOn = false;
+		this.mOutOfBoundsCheck = true;
+	
 
                 //collisionDistance
                 this.mCollisionDistance = this.mWidth * 6.5;
@@ -87,23 +89,31 @@ var Polygon = new Class(
 
         checkForOutOfBounds: function()
         {
-                if (this.mPosition.mY < this.mGame.mBounds.mNorth)
-                {
-                        this.mPosition.mY = this.mGame.mBounds.mNorth;
-                }
-                if (this.mPosition.mX > this.mGame.mBounds.mEast)
-                {
-                        this.mPosition.mX = this.mGame.mBounds.mEast;
-                }
-                if (this.mPosition.mY > this.mGame.mBounds.mSouth)
-                {
-                        this.mPosition.mY = this.mGame.mBounds.mSouth;
-                }
-                if (this.mPosition.mX < this.mGame.mBounds.mWest)
-                {
-                        this.mPosition.mX = this.mGame.mBounds.mWest;
-                }
+		if (this.mOutOfBoundsCheck)
+		{
+                	if (this.mPosition.mY < this.mGame.mBounds.mNorth)
+                	{
+                        	this.mPosition.mY = this.mGame.mBounds.mNorth;
+                	}
+                	if (this.mPosition.mX > this.mGame.mBounds.mEast)
+                	{
+                        	this.mPosition.mX = this.mGame.mBounds.mEast;
+                	}
+                	if (this.mPosition.mY > this.mGame.mBounds.mSouth)
+                	{
+                        	this.mPosition.mY = this.mGame.mBounds.mSouth;
+                	}
+                	if (this.mPosition.mX < this.mGame.mBounds.mWest)
+                	{
+                        	this.mPosition.mX = this.mGame.mBounds.mWest;
+                	}
+		}
         },
+
+	setOutOfBoundsCheck: function(b)
+	{
+		this.mOutOfBoundsCheck = b;
+	},
 
 	/****** MOUNTING ******************/
         createMountPoint: function(slot,x,y)
