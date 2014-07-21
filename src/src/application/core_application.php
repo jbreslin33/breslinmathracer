@@ -10,7 +10,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true;
+		this.mStateLogs = false;
 
 		//parse codes
 		this.FULL = 101;

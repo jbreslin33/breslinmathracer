@@ -5,7 +5,7 @@ var Item = new Class(
 {
         initialize: function(sheet)
         {
-		this.mStateLogs = false;		
+		this.mStateLogs = true;		
 
 		this.mSheet = sheet;
 	
@@ -58,6 +58,7 @@ var Item = new Class(
 		//show standards and type description buttons
 		this.mToggleStandardInfoButton = 0;
 		this.mStandardInfoButton = 0;
+		this.mShowStandard = false;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -76,6 +77,9 @@ var Item = new Class(
 		this.mSHOW_CORRECT_ANSWER_ITEM = new SHOW_CORRECT_ANSWER_ITEM(this);
                 this.mCONTINUE_INCORRECT = new CONTINUE_INCORRECT(this);
                 this.mINCORRECT_ITEM = new INCORRECT_ITEM(this);
+
+		//report states
+                this.mSHOW_STANDARD = new SHOW_STANDARD(this);
 
 		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
@@ -273,6 +277,16 @@ var Item = new Class(
                 {
                         this.mShapeArray[i].setVisibility(true);
                 }
+	},
+
+	showStandard: function()
+	{	
+		this.mStandardInfoButton.setVisibility(true);
+	},
+	
+	hideStandard: function()
+	{	
+		this.mStandardInfoButton.setVisibility(false);
 	},
 
 	showAnswerInputs: function()

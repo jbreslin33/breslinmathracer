@@ -26,13 +26,16 @@ Extends: Shape,
 		//if (APPLICATION.mGame.mSheet.mItem.mStandardInfoButton.getVisibility())
 		if (APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.getVisibility())
 		{
-			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
-			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(false);
+			//APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
+			//APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(false);
+			APPLICATION.mGame.mSheet.getItem().mShowStandard = false;
 		}	
 		else
 		{
-			APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
-			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(true);
+			//APPLICATION.log('Standardinfo:' + APPLICATION.mGame.mSheet.mStandardDescription);
+			//APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.setVisibility(true);
+			APPLICATION.mGame.mSheet.getItem().mShowStandard = true;
+			
 			APPLICATION.mGame.mSheet.getItem().mStandardInfoButton.mDiv.mDiv.style.zIndex="100";
 		}
         }
