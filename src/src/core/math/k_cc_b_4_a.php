@@ -78,6 +78,10 @@ Extends: ThreeButtonItem,
 		for (i = a; i > 0; i--)
 		{
 			aText = aText + '' + parseInt(a-i+1); 
+			if (i > 1)
+			{
+				aText = aText + ',';
+			} 
 		}
                 this.setAnswer('' + aText,0);
                 this.mButtonA.setAnswer(this.getAnswer());
