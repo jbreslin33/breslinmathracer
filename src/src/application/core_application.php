@@ -10,7 +10,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false;
+		this.mStateLogs = true; 
 
 		//parse codes
 		this.FULL = 101;
@@ -480,17 +480,17 @@ Extends: Application,
 			}
                 }
 
-		if (this.mRef_id == '7B20214AA4AA445AA720062C6F1B5C58')
+		if (this.mRef_id == 'k.cc.b.4.a')
 		{ 
-             		if (this.mGameName != "k_cc_b_4a")
+             		if (this.mGameName != "k_cc_b_4_a")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "k_cc_b_4a";
-                               	this.mGame = new k_cc_b_4a(APPLICATION);
+                               	this.mGameName = "k_cc_b_4_a";
+                               	this.mGame = new k_cc_b_4_a(APPLICATION);
 			}
                 }
 
