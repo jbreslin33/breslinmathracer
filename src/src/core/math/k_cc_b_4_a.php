@@ -59,7 +59,7 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 301;
 
-		var a = Math.floor(Math.random()*16)+5;
+		var a = Math.floor(Math.random()*5)+5;
 		var b = 0;
 		var c = 0;
 		this.mTotal = a;
