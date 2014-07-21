@@ -59,7 +59,6 @@ Extends: Sheet,
 			
 		for (var i = 0; i < this.getScoreNeeded(); i++)
 		{	
-			APPLICATION.log('itemID:' + itemID);
 			this.addItem(this.picker.getItem(itemID));
 		}
 		//this.randomize(10);

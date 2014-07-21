@@ -298,7 +298,6 @@ Extends: Application,
 
 	getItemDescription: function(typeid)
         {
-		APPLICATION.log('getItemDes');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
