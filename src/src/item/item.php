@@ -14,7 +14,6 @@ var Item = new Class(
 
 		//answer
 		this.mAnswerArray = new Array();
-		//this.mAnswerArray.push(answer);
 		
 		//tip
 		this.mTipArray = new Array();
