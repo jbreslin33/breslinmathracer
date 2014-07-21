@@ -23,7 +23,6 @@ Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
-                this.mLearningStandard = 'k.cc.a.1';
         },
 
         createItems: function()
@@ -49,9 +48,8 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                //this.mStandard = 'k.cc.a.1';
+
                 this.mType = 1;
-		//this.mTypeDescription = 'This type will ask what comes next after a number from 0-99.';
 
 		var x = Math.floor(Math.random()*100);
 		var a = parseInt(x+1);
@@ -84,9 +82,8 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                //this.mStandard = 'k.cc.a.1';
+
                 this.mType = 2;
-		//this.mTypeDescription = 'This type will ask what comes next after a number ending in 9 from 0-99.';
 
                 var x = Math.floor((Math.random()*10)+1);
 		x = parseInt(x * 10);
@@ -121,9 +118,8 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-               // this.mStandard = 'k.cc.a.1';
+
                 this.mType = 3;
-		//this.mTypeDescription = 'This type will ask what comes next after a number ending in 0 from 0-99.';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
@@ -157,9 +153,8 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                //this.mStandard = 'k.cc.a.1';
+
                 this.mType = 4;
-		//this.mTypeDescription = 'When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100.';	
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
