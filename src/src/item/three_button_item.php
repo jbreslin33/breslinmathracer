@@ -56,7 +56,6 @@ Extends: Item,
 
 	shuffle: function(degree)
 	{
-
 		for (i=0; i < degree; i++)
 		{
         		indexFROM = Math.floor(Math.random()*3);
@@ -67,7 +66,6 @@ Extends: Item,
 			this.mButtonArray[indexFROM].setAnswer(answerTO); 
 			this.mButtonArray[indexTO].setAnswer(answerFROM); 
 		}
-
 	},
 
 	showQuestion: function()
