@@ -171,6 +171,7 @@ enter: function(item)
 	item.hideQuestion();
 	item.hideAnswerInputs();
 	item.hideQuestionShapes();
+        item.hideToggleItemInfoButton();
 
         item.showStandard();
 },
@@ -181,17 +182,12 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
         }
-/*
-	if (item.mShowItem == false)
-	{
-                item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
-        }
-*/
 },
 
 exit: function(item)
 {
         item.hideStandard();
+        item.showToggleItemInfoButton();
 }
 
 });
@@ -213,6 +209,7 @@ enter: function(item)
         item.hideQuestion();
         item.hideAnswerInputs();
         item.hideQuestionShapes();
+        item.hideToggleStandardInfoButton();
 
         item.showItem();
 },
@@ -228,6 +225,7 @@ execute: function(item)
 exit: function(item)
 {
         item.hideItem();
+        item.showToggleStandardInfoButton();
 }
 
 });
