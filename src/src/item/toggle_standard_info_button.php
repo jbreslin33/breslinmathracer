@@ -26,10 +26,12 @@ Extends: Shape,
 		if (APPLICATION.mGame.mSheet.getItem().mShowStandard == true)
 		{
 			APPLICATION.mGame.mSheet.getItem().mShowStandard = false;
+			APPLICATION.log('false');
 		}	
 		else
 		{
 			APPLICATION.mGame.mSheet.getItem().mShowStandard = true;
+			APPLICATION.log('true');
 		}
         }
 });
