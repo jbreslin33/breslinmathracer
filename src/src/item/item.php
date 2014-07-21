@@ -141,8 +141,7 @@ var Item = new Class(
 		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
 		
 		//mStandardInfoButton
-                this.mStandardInfoButton = new StandardInfoButton(600,200,400,200,this.mSheet.mGame,"BUTTON","","");
-		//this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ':' + this.mSheet.mLearningStandardDescription;
+                this.mStandardInfoButton = new StandardInfoButton(200,200,400,200,this.mSheet.mGame,"BUTTON","","");
 		this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ': ' + this.mSheet.mStandardDescription;
                 this.addShape(this.mStandardInfoButton);
 		this.mStandardInfoButton.setOutOfBoundsCheck(false);
@@ -294,6 +293,11 @@ var Item = new Class(
 
 	},
 	
+	hideAnswerInputs: function()
+	{
+
+	},
+	
 	showCorrectAnswer: function()
 	{
 
@@ -328,10 +332,14 @@ var Item = new Class(
 
 	},	
 
-
 	showQuestion: function()
 	{
 		this.mToggleStandardInfoButton.setVisibility(true);
+	},
+	
+	hideQuestion: function()
+	{
+	
 	},
 
 	showQuestionShapes: function()

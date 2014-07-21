@@ -161,9 +161,9 @@ enter: function(item)
         {
                 APPLICATION.log('ITEM::SHOW_STANDARD');
         }
-	//item.hideQuestion();
-	//item.hideAnswerInputs();
-	//item.hideQuestionShapes();
+	item.hideQuestion();
+	item.hideAnswerInputs();
+	item.hideQuestionShapes();
 
         item.showStandard();
 },
@@ -287,6 +287,12 @@ enter: function(item)
         	item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
 	}
 
+	//make sure these are showing first as you might have re-entered this state from a report state
+	item.showQuestion();
+	item.showAnswerInputs();
+	item.showQuestionShapes();
+
+	//this changes colors and hides surperfulous
 	item.showCorrectAnswer();
 },
 
@@ -330,6 +336,12 @@ enter: function(item)
 	{
         	item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 	}
+
+	//make sure these are showing first as you might have re-entered this state from a report state
+	item.showQuestion();
+	item.showAnswerInputs();
+	item.showQuestionShapes();
+	item.showCorrectAnswer();
 
         item.showContinueIncorrect();
 },
