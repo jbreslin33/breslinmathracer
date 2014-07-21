@@ -24,7 +24,6 @@ Extends: Sheet,
         {
                 this.parent(game);
                 this.mLearningStandard = 'k.cc.a.1';
-		this.mStandardDescription = 'Use the four operations to solve word problems involving distances, intervals of time, liquid volumes, masses of objects, and money, including problems involving simple fractions or decimals, and problems that require expressing measurements given in a larger unit in terms of a smaller unit. Represent measurement quantities using diagrams such as number line diagrams that feature a measurement scale.';
         },
 
         createItems: function()
@@ -50,9 +49,9 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+                //this.mStandard = 'k.cc.a.1';
                 this.mType = 1;
-		this.mInfo = 'This type will ask what comes next after a number from 0-99.';
+		//this.mTypeDescription = 'This type will ask what comes next after a number from 0-99.';
 
 		var x = Math.floor(Math.random()*100);
 		var a = parseInt(x+1);
@@ -85,9 +84,9 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+                //this.mStandard = 'k.cc.a.1';
                 this.mType = 2;
-		this.mInfo = 'This type will ask what comes next after a number ending in 9 from 0-99.';
+		//this.mTypeDescription = 'This type will ask what comes next after a number ending in 9 from 0-99.';
 
                 var x = Math.floor((Math.random()*10)+1);
 		x = parseInt(x * 10);
@@ -122,9 +121,9 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+               // this.mStandard = 'k.cc.a.1';
                 this.mType = 3;
-		this.mInfo = 'This type will ask what comes next after a number ending in 0 from 0-99.';
+		//this.mTypeDescription = 'This type will ask what comes next after a number ending in 0 from 0-99.';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
@@ -158,9 +157,9 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.1';
+                //this.mStandard = 'k.cc.a.1';
                 this.mType = 4;
-		this.mInfo = 'When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100.';	
+		//this.mTypeDescription = 'When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100.';	
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);

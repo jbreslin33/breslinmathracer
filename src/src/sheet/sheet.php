@@ -49,8 +49,6 @@ var Sheet = new Class(
                 this.mStateMachine.changeState(this.mINIT_SHEET);
 
 		this.mItem = 0;
-		this.mLearningStandard = '';  
-		this.mStandardDescription = '';
         },
 
 	/*********** CLASS ADMIN ************/
