@@ -79,8 +79,16 @@ Extends: Item,
 			this.mQuestionLabel.setVisibility(true);
 		}
 	}, 
+	
+	hideQuestion: function()
+	{
+		this.parent();
+		if (this.mQuestionLabel)
+		{
+			this.mQuestionLabel.setVisibility(false);
+		}
+	}, 
 
-	//virtual functions that can show and hide buttons??	
 	showAnswerInputs: function()
 	{
 		for (i = 0; i < this.mButtonArray.length; i++)
@@ -88,6 +96,15 @@ Extends: Item,
 			this.mButtonArray[i].setVisibility(true);
 		}
 	},
+    
+	hideAnswerInputs: function()
+        {
+                for (i = 0; i < this.mButtonArray.length; i++)
+                {
+                        this.mButtonArray[i].setVisibility(false);
+                }
+        },
+
 
         showContinueCorrect: function()
         {
