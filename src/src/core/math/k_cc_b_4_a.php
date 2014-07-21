@@ -72,10 +72,15 @@ Extends: ThreeButtonItem,
 			c = parseInt(a+c);
 		}
 
-		this.setQuestion('How many kids?');
-                this.setAnswer(a,0);
-
-                this.mButtonA.setAnswer(a);
+		this.setQuestion('What numbers would you say while couting the kids?');
+	
+		var aText = '';	
+		for (i = a; i > 0; i--)
+		{
+			aText = aText + '' + parseInt(a-i+1); 
+		}
+                this.setAnswer('' + aText,0);
+                this.mButtonA.setAnswer(this.getAnswer());
                 this.mButtonB.setAnswer(b);
                 this.mButtonC.setAnswer(c);
                 this.shuffle(10);
@@ -86,10 +91,7 @@ Extends: ThreeButtonItem,
 		var x = 0;
 		var y = 300;
 
-		var answer = this.getAnswer(); 
-		answer = parseInt(answer);	
-
-		for (var i = 0; i < answer; i++)
+		for (var i = 0; i < this.mTotal; i++)
 		{
 			if (i == 10) 
 			{
