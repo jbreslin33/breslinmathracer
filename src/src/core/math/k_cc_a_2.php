@@ -41,7 +41,6 @@ Extends: Sheet,
 		this.addItem(new i_k_cc_a_2_t_1(this));
 		this.addItem(new i_k_cc_a_2_t_2(this));
 		this.addItem(new i_k_cc_a_2_t_3(this));
-		this.addItem(new i_k_cc_a_2_t_4(this));
 		
 		this.randomize(10);
         }
@@ -49,48 +48,15 @@ Extends: Sheet,
 
 /* ITEMS: */ 
 
-/* TYPE_DESCRIPTION: i_k_cc_a_2_t_1: This type will ask what comes next after a number from 0-99. */
+/* TYPE_DESCRIPTION: This type will ask what 2 numbers come next after a number from 0-99. */
 
-var i_k_cc_a_2_t_1 = new Class(
+var i_101 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
                 this.mType = 101;
-
-		var x = Math.floor(Math.random()*100);
-		var a = parseInt(x+1);
-		var b = 0;
-		var c = 0; 
-
-		while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-		{
-			b = Math.floor(Math.random()*7)-3;
-			b = parseInt(a+b);
-			c = Math.floor(Math.random()*7)-3;
-			c = parseInt(a+c);
-		}
-
-		this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
-
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
-        }
-});
-
-/* TYPE_DESCRIPTION: i_k_cc_a_2_t_2: This type will ask what 2 numbers come next after a number from 0-99. */
-
-var i_k_cc_a_2_t_2 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mType = 102;
 
                 var x = Math.floor(Math.random()*98);
                 var a = parseInt(x+1);
@@ -119,15 +85,15 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_2_t_3: This type will ask what 3 numbers come next after a number from 0-99. */
+/* TYPE_DESCRIPTION: This type will ask what 3 numbers come next after a number from 0-99. */
 
-var i_k_cc_a_2_t_3 = new Class(
+var i_102 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 103;
+                this.mType = 102;
 
                 var x = Math.floor(Math.random()*98);
 		var a = parseInt(x+1);
@@ -156,15 +122,15 @@ Extends: ThreeButtonItem,
         }
 });
 
-/ *TYPE_DESCRIPTION: i_k_cc_a_2_t_4: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100. */
+/ *TYPE_DESCRIPTION: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100. */
 
-var i_k_cc_a_2_t_4 = new Class(
+var i_103 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 104;
+                this.mType = 103;
 
                 var a = Math.floor(Math.random()*98);
                 var b = 0;
