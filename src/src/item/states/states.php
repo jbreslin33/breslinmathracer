@@ -50,6 +50,7 @@ execute: function(item)
 
 exit: function(item)
 {
+	item.createQuestionShapes();
 }
 
 });
@@ -69,12 +70,14 @@ enter: function(item)
 		APPLICATION.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
  
-	//times
-       	item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
+	//start timer but only once
+	if (item.mQuestionStartTime == 0)
+	{
+       		item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
+	}
 	
 	item.showQuestion();
 	item.showAnswerInputs();
-	item.createQuestionShapes();
 	item.showQuestionShapes();
  
 	//try to set focus
@@ -107,6 +110,11 @@ execute: function(item)
                 	item.mStateMachine.changeState(item.mSHOW_CORRECT_ANSWER_ITEM);
                 }
 	}                   
+
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
@@ -139,6 +147,43 @@ exit: function(item)
 
 });
 
+var SHOW_STANDARD = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                APPLICATION.log('ITEM::SHOW_STANDARD');
+        }
+	//item.hideQuestion();
+	//item.hideAnswerInputs();
+	//item.hideQuestionShapes();
+
+        item.showStandard();
+},
+
+execute: function(item)
+{
+	if (item.mShowStandard == false)
+	{
+                item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
+        }
+},
+
+exit: function(item)
+{
+        item.hideStandard();
+}
+
+});
+
+
 var CONTINUE_CORRECT = new Class(
 {
 Extends: State,
@@ -153,10 +198,12 @@ enter: function(item)
         {
                 APPLICATION.log('ITEM::CONTINUE_CORRECT');
         }
- 	item.mShowContinueCorrectStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+ 	if (item.mShowContinueCorrectStartTime == 0)
+	{
+ 		item.mShowContinueCorrectStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+	}
 
 	item.mSheet.mGame.incrementScore();
-        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
 
         item.showContinueCorrect();
 },
@@ -167,12 +214,10 @@ execute: function(item)
         {
                	item.mStateMachine.changeState(item.mCORRECT_ITEM);
         }
-/*
-        if (item.mContinueCorrect == true)
-        {
-                item.mStateMachine.changeState(item.mCORRECT_ITEM);
-        }
-*/
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
@@ -208,6 +253,10 @@ execute: function(item)
 	{
 		item.mStateMachine.changeState(item.mINIT_ITEM);
 	}
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
@@ -231,7 +280,12 @@ enter: function(item)
 	{
 		APPLICATION.log('ITEM::SHOW_CORRECT_ANSWER_ITEM');
 	}
-        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
+
+        if (item.mCorrectAnswerStartTime == 0)  
+	{
+		APPLICATION.log('not here beeter');
+        	item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
+	}
 
 	item.showCorrectAnswer();
 },
@@ -242,10 +296,18 @@ execute: function(item)
         {
                	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
         }
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
 {
+        if (item.mContinueIncorrect == true)
+	{
+
+	}
 }
 
 });
@@ -264,7 +326,10 @@ enter: function(item)
         {
                 APPLICATION.log('ITEM::CONTINUE_INCORRECT');
         }
-        item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+        if (item.mCorrectAnswerStartTime == 0);  
+	{
+        	item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+	}
 
         item.showContinueIncorrect();
 },
@@ -275,6 +340,10 @@ execute: function(item)
         {
                 item.mStateMachine.changeState(item.mINCORRECT_ITEM);
         }
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
@@ -310,6 +379,10 @@ execute: function(item)
         {
                 item.mStateMachine.changeState(item.mINIT_ITEM);
         }
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
@@ -339,6 +412,10 @@ enter: function(item)
 execute: function(item)
 {
         item.outOfTimeExecute();
+	if (item.mShowStandard)
+	{
+                item.mStateMachine.changeState(item.mSHOW_STANDARD);
+	}
 },
 
 exit: function(item)
