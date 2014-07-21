@@ -57,7 +57,7 @@ var Item = new Class(
 
 		//show standards and type description buttons
 		this.mToggleStandardInfoButton = 0;
-		this.mStandardInfoButton = 0;
+		this.mStandardInfo = 0;
 		this.mShowStandard = false;
 
 		//states
@@ -140,11 +140,10 @@ var Item = new Class(
                 this.addShape(this.mToggleStandardInfoButton);
 		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
 		
-		//mStandardInfoButton
-                this.mStandardInfoButton = new StandardInfoButton(200,200,400,200,this.mSheet.mGame,"BUTTON","","");
-		this.mStandardInfoButton.mMesh.innerHTML = '' + this.mSheet.mLearningStandard + ': ' + this.mSheet.mStandardDescription;
-                this.addShape(this.mStandardInfoButton);
-		this.mStandardInfoButton.setOutOfBoundsCheck(false);
+		//mStandardInfo
+                this.mStandardInfo = new Shape(200,200,400,200,this.mSheet.mGame,"","","");
+		this.mStandardInfo.setText('' + this.mSheet.mLearningStandard + ': ' + this.mSheet.mStandardDescription);
+                this.addShape(this.mStandardInfo);
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -280,12 +279,12 @@ var Item = new Class(
 
 	showStandard: function()
 	{	
-		this.mStandardInfoButton.setVisibility(true);
+		this.mStandardInfo.setVisibility(true);
 	},
 	
 	hideStandard: function()
 	{	
-		this.mStandardInfoButton.setVisibility(false);
+		this.mStandardInfo.setVisibility(false);
 	},
 
 	showAnswerInputs: function()
