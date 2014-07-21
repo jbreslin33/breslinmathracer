@@ -129,9 +129,9 @@ insert into core_standards (id,core_clusters_id,description) values ('evaluation
 insert into core_standards (id,core_clusters_id,description) values ('remediate',10001,'Remediate');
 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.1','k.cc.a.1',1,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.2','k.cc.a.2',2,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.2','k.cc.a.2',2,3); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',3,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4a','k.cc.b.4a',4,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.a','k.cc.b.4.a',4,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',5,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',6,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',10000,1); 
@@ -143,7 +143,6 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 insert into item_types(id,progression,learning_standards_id,description) values (3,3,'k.cc.a.1','This type will ask what comes next after a number ending in 0 from 0-99.');
 insert into item_types(id,progression,learning_standards_id,description) values (4,4,'k.cc.a.1','When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100.');
 --k.cc.a.2
-insert into item_types(id,progression,learning_standards_id,description) values (101,101,'k.cc.a.2','');
-insert into item_types(id,progression,learning_standards_id,description) values (102,102,'k.cc.a.2','');
-insert into item_types(id,progression,learning_standards_id,description) values (103,103,'k.cc.a.2','');
-insert into item_types(id,progression,learning_standards_id,description) values (104,104,'k.cc.a.2','');
+insert into item_types(id,progression,learning_standards_id,description) values (101,101,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
+insert into item_types(id,progression,learning_standards_id,description) values (102,102,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
+insert into item_types(id,progression,learning_standards_id,description) values (103,103,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
