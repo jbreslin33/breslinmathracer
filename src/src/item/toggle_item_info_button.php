@@ -26,12 +26,10 @@ Extends: Shape,
 		if (APPLICATION.mGame.mSheet.getItem().mShowItem == true)
 		{
 			APPLICATION.mGame.mSheet.getItem().mShowItem = false;
-			APPLICATION.log('hit false');
 		}	
 		else
 		{
 			APPLICATION.mGame.mSheet.getItem().mShowItem = true;
-			APPLICATION.log('hit true');
 		}
         }
 });

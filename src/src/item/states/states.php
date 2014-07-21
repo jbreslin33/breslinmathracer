@@ -339,7 +339,6 @@ enter: function(item)
 
         if (item.mCorrectAnswerStartTime == 0)  
 	{
-		APPLICATION.log('not here beeter');
         	item.mCorrectAnswerStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
 	}
 
