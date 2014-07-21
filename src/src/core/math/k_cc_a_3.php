@@ -38,10 +38,10 @@ Extends: Sheet,
                         this.setScoreNeeded(APPLICATION.mLevel); 
                 }
 
-		this.addItem(new i_k_cc_a_3_t_1(this));
-		this.addItem(new i_k_cc_a_3_t_2(this));
-		this.addItem(new i_k_cc_a_3_t_3(this));
-		this.addItem(new i_k_cc_a_3_t_4(this));
+		this.addItem(new i_201(this));
+		this.addItem(new i_202(this));
+		this.addItem(new i_203(this));
+		this.addItem(new i_204(this));
 		
 		this.randomize(10);
         }
@@ -49,9 +49,9 @@ Extends: Sheet,
 
 / * ITEMS: */
 
-/* TYPE_DESCRIPTION: i_k_cc_a_3_t_1: Count the objects up to 20. */
+/* TYPE_DESCRIPTION: Count the objects up to 20. */
 
-var i_k_cc_a_3_t_1 = new Class(
+var i_201 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -101,9 +101,9 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_3_t_2: Count the objects up to 20. Make answer zero. */
+/* TYPE_DESCRIPTION: Count the objects up to 20. Make answer zero. */
 
-var i_k_cc_a_3_t_2 = new Class(
+var i_202 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -134,9 +134,9 @@ Extends: ThreeButtonItem,
 });
 / * ITEMS: */
 
-/* TYPE_DESCRIPTION: i_k_cc_a_3_t_3: Count the objects up to 20. make sure answer is between 11-15 */
+/* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 11-15 */
 
-var i_k_cc_a_3_t_3 = new Class(
+var i_203 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -186,9 +186,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_3_t_4: Count the objects up to 20. make sure answer is between 16-20 */
+/* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 16-20 */
 
-var i_k_cc_a_3_t_4 = new Class(
+var i_204 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)

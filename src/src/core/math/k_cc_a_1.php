@@ -29,10 +29,10 @@ Extends: Sheet,
         {
                 this.parent();
  
-		this.addItem(new i_k_cc_a_1_t_1(this));
-		this.addItem(new i_k_cc_a_1_t_2(this));
-		this.addItem(new i_k_cc_a_1_t_3(this));
-		this.addItem(new i_k_cc_a_1_t_4(this));
+		this.addItem(new i_1(this));
+		this.addItem(new i_2(this));
+		this.addItem(new i_3(this));
+		this.addItem(new i_4(this));
 		
 		this.randomize(10);
         }
@@ -40,9 +40,9 @@ Extends: Sheet,
 
 /* ITEMS: */
 
-/* TYPE_DESCRIPTION: i_k_cc_a_1_t_1: This type will ask what comes next after a number from 0-99. */
+/* TYPE_DESCRIPTION: This type will ask what comes next after a number from 0-99. */
 
-var i_k_cc_a_1_t_1 = new Class(
+var i_1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -74,9 +74,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_1_t_2: This type will ask what comes next after a number ending in 9 from 0-99. */
+/* TYPE_DESCRIPTION: i_2: This type will ask what comes next after a number ending in 9 from 0-99. */
 
-var i_k_cc_a_1_t_2 = new Class(
+var i_2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -110,9 +110,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_1_t_3: This type will ask what comes next after a number ending in 0 from 0-99. */
+/* TYPE_DESCRIPTION: i_3: This type will ask what comes next after a number ending in 0 from 0-99. */
 
-var i_k_cc_a_1_t_3 = new Class(
+var i_3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
@@ -145,9 +145,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_k_cc_a_1_t_4:  When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
+/* TYPE_DESCRIPTION: i_4:  When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
 
-var i_k_cc_a_1_t_4 = new Class(
+var i_4 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
