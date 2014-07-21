@@ -33,8 +33,8 @@ var Item = new Class(
        
 		//type 
 		this.mStandardDescription = '';
+		this.mItemDescription = '';
 		this.mType = 0; //uncategorized
-		this.mTypeDescription = ''; 
 
 		//times 
 		this.mThresholdTime = 0;
@@ -60,6 +60,9 @@ var Item = new Class(
 		this.mToggleStandardInfoButton = 0;
 		this.mStandardInfo = 0;
 		this.mShowStandard = false;
+		this.mToggleItemInfoButton = 0;
+		this.mItemInfo = 0;
+		this.mShowItem = false;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -81,6 +84,7 @@ var Item = new Class(
 
 		//report states
                 this.mSHOW_STANDARD = new SHOW_STANDARD(this);
+                this.mSHOW_ITEM = new SHOW_ITEM(this);
 
 		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
@@ -143,8 +147,17 @@ var Item = new Class(
 		
 		//mStandardInfo
                 this.mStandardInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
-		//this.mStandardInfo.setText('');
                 this.addShape(this.mStandardInfo);
+		
+		//mToggleItemInfoButton
+                this.mToggleItemInfoButton = new ToggleItemInfoButton(150,40,450,422,this.mSheet.mGame,"BUTTON","","");
+		this.mToggleItemInfoButton.mMesh.innerHTML = 'ITEM INFO';
+                this.addShape(this.mToggleItemInfoButton);
+		this.mToggleItemInfoButton.setOutOfBoundsCheck(false);
+		
+		//mItemInfo
+                this.mItemInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
+                this.addShape(this.mItemInfo);
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -293,6 +306,21 @@ var Item = new Class(
 	{	
 		this.mStandardInfo.setVisibility(false);
 	},
+	
+	showItem: function()
+	{	
+		if (this.mItemDescription == '')
+		{
+			APPLICATION.getItemDescription(this.mType);
+		}
+		
+		this.mItemInfo.setVisibility(true);
+	},
+
+	hideItem: function()
+	{	
+		this.mItemInfo.setVisibility(false);
+	},
 
 	showAnswerInputs: function()
 	{
@@ -341,6 +369,7 @@ var Item = new Class(
 	showQuestion: function()
 	{
 		this.mToggleStandardInfoButton.setVisibility(true);
+		this.mToggleItemInfoButton.setVisibility(true);
 	},
 	
 	hideQuestion: function()
