@@ -64,29 +64,40 @@ Extends: ThreeButtonItem,
 		var c = 0;
 		this.mTotal = a;
 
-		while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-		{
-			b = Math.floor(Math.random()*7)-3;
-			b = parseInt(a+b);
-			c = Math.floor(Math.random()*7)-3;
-			c = parseInt(a+c);
-		}
+		var aText = ''
+		var bText = ''
+		var cText = ''
+		var bArray = 0;
+		var cArray = 0;
 
 		this.setQuestion('What numbers would you say while couting the kids?');
 	
-		var aText = '';	
-		for (i = a; i > 0; i--)
+		while (aText == bText || aText == cText || bText == cText)
 		{
-			aText = aText + '' + parseInt(a-i+1); 
-			if (i > 1)
+			aText = '';
+			bText = '';
+			cText = '';
+
+			for (i = a; i > 0; i--)
 			{
-				aText = aText + ',';
-			} 
+				aText = aText + '' + parseInt(a-i+1); 
+				if (i > 1)
+				{
+					aText = aText + ',';
+				}	 
+			}
+			bText = aText;
+			cText = aText;
+
+			bText = bText.replace("" + Math.floor(Math.random()*bText.length),"" + Math.floor(Math.random()*bText.length)); 
+			cText = cText.replace("" + Math.floor(Math.random()*cText.length),"" + Math.floor(Math.random()*cText.length)); 
 		}
+		
+
                 this.setAnswer('' + aText,0);
                 this.mButtonA.setAnswer(this.getAnswer());
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonB.setAnswer(bText);
+                this.mButtonC.setAnswer(cText);
                 this.shuffle(10);
         },
     	
