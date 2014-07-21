@@ -26,13 +26,11 @@ var Sheet = new Class(
                 this.mShowLevelPassedThresholdTime = 1000;
                 this.mShowLevelFailedThresholdTime = 1000;
 
-                this.mFailedAttemptsThreshold = 0;
-
 		//question
 		this.mMarker = 0;
 
 		//score
-		this.mScoreNeeded = 6;
+		this.mScoreNeeded = 0;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -170,58 +168,19 @@ var Sheet = new Class(
 			this.mItemArray[swapElementNumberB] = tempItemA;
 		}
 
-		//what if we do 50% one you just got mTypeWrong and 50% remediateType 
-		var randomChance = Math.floor(Math.random()*2);
-
-		// when done swap the mTypeWrong to first spot. 
-		if (randomChance == 0)
-		{ 
-			if (this.mTypeWrong != '')
-			{
-				for (i = 0; i < size; i++)
-				{
-					if (this.mItemArray[i].getType() == this.mTypeWrong)
-					{
-						//APPLICATION.log('redo type:' + this.mItemArray[i].getType());
-						wrongItem = this.mItemArray[i]; 
-						questionInFirstSlot = this.mItemArray[0]; 
-						this.mItemArray[0] = wrongItem;
-						this.mItemArray[i] = questionInFirstSlot; 
-					}
-				}
-			}		
-		}
-		else
+		if (this.mTypeWrong != '')
 		{
-/*
-			APPLICATION.log('remediate type:a');
- 			var remediateTheType = false;
-                	if (APPLICATION.mItemTypeIDArray.length > 0)
-                	{
-				APPLICATION.log('remediate type:b');
-                        	if (APPLICATION.mItemTypeIDArray[0])
-                        	{
-					APPLICATION.log('remediate type:c');
-                                	remediateTheType = true;
-                        	}
-                	}
-			if (remediateTheType == true)
+			for (i = 0; i < size; i++)
 			{
-				APPLICATION.log('remediate type:d');
-				for (var i = 0; i < size; i++)
+				if (this.mItemArray[i].getType() == this.mTypeWrong)
 				{
-					APPLICATION.log('remediate type:e');
-					if (this.mItemArray[i].getType() == APPLICATION.mItemTypeIDArray[0])
-					{
-						APPLICATION.log('remediate type:' + this.mItemArray[i].getType());
-						remediateItem = this.mItemArray[i]; 
-						questionInFirstSlot = this.mItemArray[0]; 
-						this.mItemArray[0] = remediateItem;
-						this.mItemArray[i] = questionInFirstSlot; 
-					}
+					//APPLICATION.log('redo type:' + this.mItemArray[i].getType());
+					wrongItem = this.mItemArray[i]; 
+					questionInFirstSlot = this.mItemArray[0]; 
+					this.mItemArray[0] = wrongItem;
+					this.mItemArray[i] = questionInFirstSlot; 
 				}
 			}		
-*/
 		}
 		
 		//redo setting mItem since you shuffled

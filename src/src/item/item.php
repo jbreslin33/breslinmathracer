@@ -368,13 +368,33 @@ var Item = new Class(
 
 	showQuestion: function()
 	{
-		this.mToggleStandardInfoButton.setVisibility(true);
-		this.mToggleItemInfoButton.setVisibility(true);
+		this.showToggleItemInfoButton();
+		this.showToggleStandardInfoButton();
 	},
 	
 	hideQuestion: function()
 	{
 	
+	},
+	
+	showToggleStandardInfoButton: function()
+	{
+		this.mToggleStandardInfoButton.setVisibility(true);
+	},
+
+	hideToggleStandardInfoButton: function()
+	{
+		this.mToggleStandardInfoButton.setVisibility(false);
+	},
+
+	showToggleItemInfoButton: function()
+	{
+		this.mToggleItemInfoButton.setVisibility(true);
+	},
+
+	hideToggleItemInfoButton: function()
+	{
+		this.mToggleItemInfoButton.setVisibility(false);
 	},
 
 	showQuestionShapes: function()
