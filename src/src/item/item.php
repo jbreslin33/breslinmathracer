@@ -32,8 +32,9 @@ var Item = new Class(
 		this.mQuestionShapeArray   = new Array();
        
 		//type 
+		this.mStandardDescription = '';
 		this.mType = 0; //uncategorized
-		this.mInfo = ''; 
+		this.mTypeDescription = ''; 
 
 		//times 
 		this.mThresholdTime = 0;
@@ -142,7 +143,7 @@ var Item = new Class(
 		
 		//mStandardInfo
                 this.mStandardInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
-		this.mStandardInfo.setText('' + this.mSheet.mLearningStandard + ': ' + this.mSheet.mStandardDescription);
+		//this.mStandardInfo.setText('');
                 this.addShape(this.mStandardInfo);
 	},
 
@@ -276,9 +277,15 @@ var Item = new Class(
                         this.mShapeArray[i].setVisibility(true);
                 }
 	},
-
+	
+	//ajax here??
 	showStandard: function()
 	{	
+		if (this.mStandardDescription == '')
+		{
+			APPLICATION.getStandardDescription(this.mType);
+		}
+		
 		this.mStandardInfo.setVisibility(true);
 	},
 	

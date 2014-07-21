@@ -18,6 +18,7 @@ Extends: Application,
 		this.GAME = 103;
 		this.EVALUATION = 104;
 		this.REMEDIATE = 105;
+		this.STANDARD_DESCRIPTION = 106;
 
 		//personal info
 		this.mUsername = '';
@@ -91,6 +92,11 @@ Extends: Application,
                         	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                		}
+			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
+                        {
+                                APPLICATION.mGame.mSheet.mItem.mStandardDescription = responseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mStandardInfo.setText(responseArray[1]);
+                        }
 		}
 	},
 
@@ -251,6 +257,39 @@ Extends: Application,
                 xmlhttp.open("POST","../../web/php/remediate.php?typeid=" + typeid,true);
                 xmlhttp.send();
         },
+
+       	getStandardDescription: function(typeid)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/get_standard_description.php?typeid=" + typeid,true);
+                xmlhttp.send();
+        },
+
 
 	advanceToNextLevel: function()
         {
