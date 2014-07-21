@@ -179,5 +179,3 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-
-
