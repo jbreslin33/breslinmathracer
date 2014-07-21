@@ -141,7 +141,7 @@ var Item = new Class(
 		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
 		
 		//mStandardInfo
-                this.mStandardInfo = new Shape(200,200,400,200,this.mSheet.mGame,"","","");
+                this.mStandardInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
 		this.mStandardInfo.setText('' + this.mSheet.mLearningStandard + ': ' + this.mSheet.mStandardDescription);
                 this.addShape(this.mStandardInfo);
 	},
