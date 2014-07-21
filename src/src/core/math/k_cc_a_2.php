@@ -57,7 +57,6 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
                 this.mType = 101;
 
 		var x = Math.floor(Math.random()*100);
@@ -91,7 +90,6 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
                 this.mType = 102;
 
                 var x = Math.floor(Math.random()*98);
@@ -129,7 +127,6 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
                 this.mType = 103;
 
                 var x = Math.floor(Math.random()*98);
@@ -167,7 +164,6 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.2';
                 this.mType = 104;
 
                 var a = Math.floor(Math.random()*98);
@@ -192,4 +188,3 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-
