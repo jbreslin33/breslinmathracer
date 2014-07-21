@@ -57,8 +57,7 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.3';
-                this.mType = 1;
+                this.mType = 201;
 
 		var a = Math.floor(Math.random()*21);
 		var b = 0;
@@ -110,8 +109,7 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.3';
-                this.mType = 2;
+                this.mType = 202;
 
                 var a = 0;
                 var b = 0;
@@ -144,8 +142,7 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.3';
-                this.mType = 3;
+                this.mType = 203;
 
                 var a = Math.floor(Math.random()*5)+11;
                 var b = 0;
@@ -197,8 +194,7 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mStandard = 'k.cc.a.3';
-                this.mType = 4;
+                this.mType = 204;
 
                 var a = Math.floor(Math.random()*5)+16;
                 var b = 0;
@@ -241,5 +237,3 @@ Extends: ThreeButtonItem,
                 }
         }
 });
-
-
