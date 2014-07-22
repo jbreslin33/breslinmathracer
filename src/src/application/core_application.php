@@ -522,7 +522,7 @@ Extends: Application,
 			}
 		}
 
-		if (this.mRef_id == 'k_cc_c_6')
+		if (this.mRef_id == 'k.cc.c.6')
 		{ 
              		if (this.mGameName != "k_cc_c_6")
                        	{
@@ -535,7 +535,7 @@ Extends: Application,
                                	this.mGame = new k_cc_c_6(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'k_cc_c_7')
+		if (this.mRef_id == 'k.cc.c.7')
 		{ 
              		if (this.mGameName != "k_cc_c_7")
                        	{
@@ -548,7 +548,7 @@ Extends: Application,
                                	this.mGame = new k_cc_c_7(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'k_oa_a_1')
+		if (this.mRef_id == 'k.oa.a.1')
 		{ 
              		if (this.mGameName != "k_oa_a_1")
                        	{
@@ -561,7 +561,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_1(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'k_oa_a_2')
+		if (this.mRef_id == 'k.oa.a.2')
 		{ 
              		if (this.mGameName != "k_oa_a_2")
                        	{
@@ -574,7 +574,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_2(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'k_oa_a_3')
+		if (this.mRef_id == 'k.oa.a.3')
 		{ 
              		if (this.mGameName != "k_oa_a_3")
                        	{
@@ -587,7 +587,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_3(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'k_oa_a_4')
+		if (this.mRef_id == 'k.oa.a.4')
 		{ 
              		if (this.mGameName != "k_oa_a_4")
                        	{
@@ -601,7 +601,7 @@ Extends: Application,
 			}
 		}
 		
-		if (this.mRef_id == 'k_oa_a_5')
+		if (this.mRef_id == 'k.oa.a.5')
 		{ 
              		if (this.mGameName != "k_oa_a_5")
                        	{
@@ -614,7 +614,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_5(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_nbt_a_1')
+		if (this.mRef_id == 'k.nbt.a.1')
 		{ 
              		if (this.mGameName != "k_nbt_a_1")
                        	{
@@ -627,7 +627,7 @@ Extends: Application,
                                	this.mGame = new k_nbt_a_1(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_md_a_1')
+		if (this.mRef_id == 'k.md.a.1')
 		{ 
              		if (this.mGameName != "k_md_a_1")
                        	{
@@ -640,7 +640,7 @@ Extends: Application,
                                	this.mGame = new k_md_a_1(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_md_a_2')
+		if (this.mRef_id == 'k.md.a.2')
 		{ 
              		if (this.mGameName != "k_md_a_2")
                        	{
@@ -653,7 +653,7 @@ Extends: Application,
                                	this.mGame = new k_md_a_2(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_md_b_3')
+		if (this.mRef_id == 'k.md.b.3')
 		{ 
              		if (this.mGameName != "k_md_b_3")
                        	{
@@ -666,7 +666,7 @@ Extends: Application,
                                	this.mGame = new k_md_b_3(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_g_a_1')
+		if (this.mRef_id == 'k.g.a.1')
 		{ 
              		if (this.mGameName != "k_g_a_1")
                        	{
@@ -679,7 +679,7 @@ Extends: Application,
                                	this.mGame = new k_g_a_1(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_g_a_2')
+		if (this.mRef_id == 'k.g.a.2')
 		{ 
              		if (this.mGameName != "k_g_a_2")
                        	{
@@ -692,7 +692,7 @@ Extends: Application,
                                	this.mGame = new k_g_a_2(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_g_a_3')
+		if (this.mRef_id == 'k.g.a.3')
 		{ 
              		if (this.mGameName != "k_g_a_3")
                        	{
@@ -705,7 +705,7 @@ Extends: Application,
                                	this.mGame = new k_g_a_3(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'k_g_b_4')
+		if (this.mRef_id == 'k.g.b.4')
 		{ 
              		if (this.mGameName != "k_g_b_4")
                        	{

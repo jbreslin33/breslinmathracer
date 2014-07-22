@@ -181,3 +181,6 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 insert into item_types(id,progression,learning_standards_id,description) values (602,602,'k.cc.b.5','Count the objects up to 20 in a line.');
 insert into item_types(id,progression,learning_standards_id,description) values (603,603,'k.cc.b.5','Count the objects up to 20 in a circle.');
 insert into item_types(id,progression,learning_standards_id,description) values (604,604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
+
+--k.cc.c.6
+insert into item_types(id,progression,learning_standards_id,description) values (701,701,'k.cc.c.6','Compare 2 groups with a difference of less than 2.');
