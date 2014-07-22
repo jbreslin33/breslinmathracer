@@ -61,8 +61,19 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setPosition(380,100);
                 this.mButtonC.setPosition(675,100);
 
-		var a = Math.floor(Math.random()*21);
-		a = 20;
+		var a = Math.floor(Math.random()*3);
+		if (a == 0)
+		{
+			a = 4;
+		}
+		if (a == 1)
+		{
+			a = 8;
+		}
+		if (a == 2)
+		{
+			a = 20;
+		}
 		var b = 0;
 		var c = 0; 
 
