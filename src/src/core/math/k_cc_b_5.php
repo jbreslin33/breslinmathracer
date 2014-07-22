@@ -62,7 +62,7 @@ Extends: ThreeButtonItem,
                 this.mButtonC.setPosition(675,100);
 
 		var a = Math.floor(Math.random()*21);
-		a = 11;
+		a = 20;
 		var b = 0;
 		var c = 0; 
 
@@ -111,7 +111,7 @@ this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+50),this.mSheet.
 this.addQuestionShape(new Shape(50,50,parseInt(x-50),y,this.mSheet.mGame,"/images/bus/kid.png","",""));
 this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
 			}
-			if (answer == 11) 
+			if (answer == 20) 
 			{
 this.addQuestionShape(new Shape(50,50,x,parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
 this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
@@ -124,6 +124,11 @@ this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+100),this.mSheet
 this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
 this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
 this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
 			}
 		}
 	}
