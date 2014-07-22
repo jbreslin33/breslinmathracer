@@ -508,7 +508,7 @@ Extends: Application,
 			}
                 }
 
-		if (this.mRef_id == '6F4455B55B4240F3B4738DD9DB3EAF40')
+		if (this.mRef_id == 'k.cc.b.5')
 		{ 
              		if (this.mGameName != "k_cc_b_5")
                        	{
@@ -522,7 +522,7 @@ Extends: Application,
 			}
 		}
 
-		if (this.mRef_id == '66626D8AEE4E474B8CFEC8A4B68AA51C')
+		if (this.mRef_id == 'k_cc_c_6')
 		{ 
              		if (this.mGameName != "k_cc_c_6")
                        	{
@@ -535,7 +535,7 @@ Extends: Application,
                                	this.mGame = new k_cc_c_6(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'C9B9CAD5BDE84CE2A7A0C441A3DF1A2D')
+		if (this.mRef_id == 'k_cc_c_7')
 		{ 
              		if (this.mGameName != "k_cc_c_7")
                        	{
@@ -548,7 +548,7 @@ Extends: Application,
                                	this.mGame = new k_cc_c_7(APPLICATION);
 			}
 		}
-		if (this.mRef_id == 'C815B29CD8F546BBBB4C647B9D163942')
+		if (this.mRef_id == 'k_oa_a_1')
 		{ 
              		if (this.mGameName != "k_oa_a_1")
                        	{
@@ -561,7 +561,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_1(APPLICATION);
 			}
 		}
-		if (this.mRef_id == '695A7607FE8A4E27AB80652C45C84FA8')
+		if (this.mRef_id == 'k_oa_a_2')
 		{ 
              		if (this.mGameName != "k_oa_a_2")
                        	{
@@ -574,7 +574,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_2(APPLICATION);
 			}
 		}
-		if (this.mRef_id == '9EC218587C01452C9EB49F52EB2DD1DD')
+		if (this.mRef_id == 'k_oa_a_3')
 		{ 
              		if (this.mGameName != "k_oa_a_3")
                        	{
@@ -587,7 +587,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_3(APPLICATION);
 			}
 		}
-		if (this.mRef_id == '0CFFCBC851984A4281C23D34FC400445')
+		if (this.mRef_id == 'k_oa_a_4')
 		{ 
              		if (this.mGameName != "k_oa_a_4")
                        	{
@@ -601,7 +601,7 @@ Extends: Application,
 			}
 		}
 		
-		if (this.mRef_id == '1353E9D5614D460FA32E67853B6BA6D8')
+		if (this.mRef_id == 'k_oa_a_5')
 		{ 
              		if (this.mGameName != "k_oa_a_5")
                        	{
@@ -614,7 +614,7 @@ Extends: Application,
                                	this.mGame = new k_oa_a_5(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'ED150B29EFD14FF8B655FA3F2CA4FE6D')
+		if (this.mRef_id == 'k_nbt_a_1')
 		{ 
              		if (this.mGameName != "k_nbt_a_1")
                        	{
@@ -627,7 +627,7 @@ Extends: Application,
                                	this.mGame = new k_nbt_a_1(APPLICATION);
 			}
                 }
-		if (this.mRef_id == '017AAEA9D22543A59A60C697FEBADD1B')
+		if (this.mRef_id == 'k_md_a_1')
 		{ 
              		if (this.mGameName != "k_md_a_1")
                        	{
@@ -640,7 +640,7 @@ Extends: Application,
                                	this.mGame = new k_md_a_1(APPLICATION);
 			}
                 }
-		if (this.mRef_id == '4D3953649C704D4CAFC97E99C7A83EE9')
+		if (this.mRef_id == 'k_md_a_2')
 		{ 
              		if (this.mGameName != "k_md_a_2")
                        	{
@@ -653,7 +653,7 @@ Extends: Application,
                                	this.mGame = new k_md_a_2(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'C655A9B714CB481EB9D88759DD9BD0D1')
+		if (this.mRef_id == 'k_md_b_3')
 		{ 
              		if (this.mGameName != "k_md_b_3")
                        	{
@@ -666,7 +666,7 @@ Extends: Application,
                                	this.mGame = new k_md_b_3(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'D55BE0EDAFBC47B0BBDB1B88F9DF8781')
+		if (this.mRef_id == 'k_g_a_1')
 		{ 
              		if (this.mGameName != "k_g_a_1")
                        	{
@@ -679,7 +679,7 @@ Extends: Application,
                                	this.mGame = new k_g_a_1(APPLICATION);
 			}
                 }
-		if (this.mRef_id == '4F0A52E0906841DFA13739BFC87B330B')
+		if (this.mRef_id == 'k_g_a_2')
 		{ 
              		if (this.mGameName != "k_g_a_2")
                        	{
@@ -692,7 +692,7 @@ Extends: Application,
                                	this.mGame = new k_g_a_2(APPLICATION);
 			}
                 }
-		if (this.mRef_id == '01938BB1EE4E47319738DAC239A2B141')
+		if (this.mRef_id == 'k_g_a_3')
 		{ 
              		if (this.mGameName != "k_g_a_3")
                        	{
@@ -705,7 +705,7 @@ Extends: Application,
                                	this.mGame = new k_g_a_3(APPLICATION);
 			}
                 }
-		if (this.mRef_id == 'C712BAA86FEF4BFAB703AD2EB402B2DE')
+		if (this.mRef_id == 'k_g_b_4')
 		{ 
              		if (this.mGameName != "k_g_b_4")
                        	{
