@@ -86,5 +86,6 @@
 <script type="text/javascript" src="/src/core/math/k_cc_b_4_a.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_b_4_b.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_c_6.php"></script>
 <script type="text/javascript" src="/src/core/math/g4_nbt_a_1.php"></script>
 <script type="text/javascript" src="/src/core/math/g4_nbt_a_2.php"></script>
