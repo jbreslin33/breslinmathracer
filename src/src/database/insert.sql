@@ -179,3 +179,4 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 --k.cc.b.5
 insert into item_types(id,progression,learning_standards_id,description) values (601,601,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
 insert into item_types(id,progression,learning_standards_id,description) values (602,602,'k.cc.b.5','Count the objects up to 20 in a line.');
+insert into item_types(id,progression,learning_standards_id,description) values (603,603,'k.cc.b.5','Count the objects up to 20 in a circle.');
