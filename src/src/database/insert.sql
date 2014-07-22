@@ -158,3 +158,8 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 insert into item_types(id,progression,learning_standards_id,description) values (202,202,'k.cc.a.3','Count the objects up to 20. Make answer zero. ');
 insert into item_types(id,progression,learning_standards_id,description) values (203,203,'k.cc.a.3','Count the objects up to 20. make sure answer is between 11-15');
 insert into item_types(id,progression,learning_standards_id,description) values (204,204,'k.cc.a.3','Count the objects up to 20. make sure answer is between 16-20');
+
+
+--k.cc.b.4.a
+insert into item_types(id,progression,learning_standards_id,description) values (301,301,'k.cc.b.4.a','Match counting sequence with number of objects.');
+insert into item_types(id,progression,learning_standards_id,description) values (302,302,'k.cc.b.4.a','When given counting words in order pick the group with that many items.');
