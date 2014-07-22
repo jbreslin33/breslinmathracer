@@ -494,17 +494,17 @@ Extends: Application,
 			}
                 }
 
-		if (this.mRef_id == '3DEE205D86BC461FA4271EF4BD190A0C')
+		if (this.mRef_id == 'k.cc.b.4.b')
 		{ 
-             		if (this.mGameName != "k_cc_b_4b")
+             		if (this.mGameName != "k_cc_b_4_b")
                        	{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
 					this.mGame = 0;
 				}
-                               	this.mGameName = "k_cc_b_4b";
-                               	this.mGame = new k_cc_b_4b(APPLICATION);
+                               	this.mGameName = "k_cc_b_4_b";
+                               	this.mGame = new k_cc_b_4_b(APPLICATION);
 			}
                 }
 
