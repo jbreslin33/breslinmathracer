@@ -164,17 +164,38 @@ Extends: ThreeButtonItem,
 		rightLetterIndex = Math.floor(Math.random()*3);
 		if (rightLetterIndex == 0)
 		{
-               		this.setQuestion('Lucy counted. ' + mNumberNameArray[this.a] + ' kids. Which group A,B or C shows the kids Lucy counted.');
+			if (this.a == 1)
+			{ 
+               			this.setQuestion(mNumberNameArray[this.a] + ' kid.');
+			}
+			else
+			{
+               			this.setQuestion(mNumberNameArray[this.a] + ' kids.');
+			}
                 	this.setAnswer('A',0);
 		}
 		if (rightLetterIndex == 1)
 		{
-               		this.setQuestion('Lucy counted. ' + mNumberNameArray[this.b] + ' kids. Which group A,B or C shows the kids Lucy counted.');
+			if (this.b == 1)
+			{ 
+               			this.setQuestion(mNumberNameArray[this.b] + ' kid.');
+			}
+			else
+			{
+               			this.setQuestion(mNumberNameArray[this.b] + ' kids.');
+			}
                 	this.setAnswer('B',0);
 		}
 		if (rightLetterIndex == 2)
 		{
-               		this.setQuestion('Lucy counted. ' + mNumberNameArray[this.c] + ' kids. Which group A,B or C shows the kids Lucy counted.');
+			if (this.c == 1)
+			{ 
+               			this.setQuestion(mNumberNameArray[this.c] + ' kid.');
+			}
+			else
+			{
+               			this.setQuestion(mNumberNameArray[this.c] + ' kids.');
+			}
                 	this.setAnswer('C',0);
 		}
                 this.mButtonA.setAnswer('A');
@@ -186,6 +207,7 @@ Extends: ThreeButtonItem,
         {      
                 var x = 0;
                 var y = 250;
+		var bt = 45
 
 		//a
                 for (var i = 0; i < this.a; i++)
@@ -193,23 +215,18 @@ Extends: ThreeButtonItem,
                         if (i == 4)
                         {
                                 x = 0;
-                                y = 325;
+                                y = 300;
                         }
                         if (i == 8)
                         {
                                 x = 0;
-                                y = 325;
+                                y = 350;
                         }
-                        if (i == 12)
-                        {
-                                x = 0;
-                                y = 400;
-                        }
-                        x = parseInt(x + 50);  
+                        x = parseInt(x + bt);  
                         this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
                 }
                 
-		var x = 280;
+		var x = 260;
                 var y = 250;
                
 		//b 
@@ -217,44 +234,34 @@ Extends: ThreeButtonItem,
                 {
                         if (i == 4)
                         {
-                                x = 0;
-                                y = 325;
+                                x = 260;
+                                y = 300;
                         }
                         if (i == 8)
                         {
-                                x = 0;
-                                y = 325;
+                                x = 260;
+                                y = 350;
                         }
-                        if (i == 12)
-                        {
-                                x = 0;
-                                y = 400;
-                        }
-                        x = parseInt(x + 50); 
+                        x = parseInt(x + bt); 
                         this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
                 }
-                var x = 575;
+                var x = 550;
                 var y = 250;
 
-                //b
+                //c
                 for (var i = 0; i < this.c; i++)
                 {
                         if (i == 4)
                         {
-                                x = 0;
-                                y = 325;
+                                x = 550;
+                                y = 300;
                         }
                         if (i == 8)
                         {
-                                x = 0;
-                                y = 325;
+                                x = 550;
+                                y = 350;
                         }
-                        if (i == 12)
-                        {
-                                x = 0;
-                                y = 400;
-                        }
-                        x = parseInt(x + 50);
+                        x = parseInt(x + bt);
                         this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
                 }
         }
