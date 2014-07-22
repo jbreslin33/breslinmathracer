@@ -139,12 +139,12 @@ insert into learning_standards (id,core_standards_id,progression,levels) values 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.a','k.cc.b.4.a',4,2); 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.b','k.cc.b.4.b',5,2); 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.c','k.cc.b.4.c',6,2); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.5','k.cc.b.5',7,2); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.5','k.cc.b.5',7,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.6','k.cc.c.6',8,3); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.7','k.cc.c.7',9,3); 
 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',5,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',6,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',401,4); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',402,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',10000,1); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('remediate','remediate',10001,3); 
 
@@ -180,3 +180,4 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 insert into item_types(id,progression,learning_standards_id,description) values (601,601,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
 insert into item_types(id,progression,learning_standards_id,description) values (602,602,'k.cc.b.5','Count the objects up to 20 in a line.');
 insert into item_types(id,progression,learning_standards_id,description) values (603,603,'k.cc.b.5','Count the objects up to 20 in a circle.');
+insert into item_types(id,progression,learning_standards_id,description) values (604,604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
