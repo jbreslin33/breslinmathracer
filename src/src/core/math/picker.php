@@ -73,6 +73,24 @@ getItem: function(id)
 	{
 		return new i_302(this.mSheet);
 	}
+	
+	//k.cc.b.4.b
+	if (id == 401)
+	{
+		return new i_401(this.mSheet);
+	}
+	if (id == 402)
+	{
+		return new i_402(this.mSheet);
+	}
+	if (id == 403)
+	{
+		return new i_403(this.mSheet);
+	}
+	if (id == 404)
+	{
+		return new i_404(this.mSheet);
+	}
 }
 		
 });
