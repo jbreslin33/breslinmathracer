@@ -55,6 +55,11 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 601;
+    
+		//BUTTON A
+                this.mButtonA.setPosition(100,100);
+                this.mButtonB.setPosition(380,100);
+                this.mButtonC.setPosition(675,100);
 
 		var a = Math.floor(Math.random()*21);
 		var b = 0;
