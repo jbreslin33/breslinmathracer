@@ -15,7 +15,7 @@ Extends: Item,
 		this.parent();
 
                 //question Label
-                this.mQuestionLabel = new Shape(400,50,225,95,this.mSheet.mGame,"","","");
+                this.mQuestionLabel = new Shape(730,50,400,55,this.mSheet.mGame,"","","");
                 this.addShape(this.mQuestionLabel);
 		this.mQuestionLabel.setText(this.mQuestion);
 
