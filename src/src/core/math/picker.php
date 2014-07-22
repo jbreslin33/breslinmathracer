@@ -63,6 +63,16 @@ getItem: function(id)
 	{
 		return new i_204(this.mSheet);
 	}
+	
+	//k.cc.b.4.a
+	if (id == 301)
+	{
+		return new i_301(this.mSheet);
+	}
+	if (id == 302)
+	{
+		return new i_302(this.mSheet);
+	}
 }
 		
 });

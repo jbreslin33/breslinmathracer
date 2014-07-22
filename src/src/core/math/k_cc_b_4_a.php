@@ -47,7 +47,7 @@ Extends: Sheet,
 
 / * ITEMS: */
 
-/* TYPE_DESCRIPTION: Count the objects up to 20. */
+/* TYPE_DESCRIPTION: Match counting sequence with number of objects. */
 
 var i_301 = new Class(
 {
