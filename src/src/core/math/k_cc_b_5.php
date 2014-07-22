@@ -60,7 +60,7 @@ initialize: function(sheet)
         this.mButtonB.setPosition(380,100);
         this.mButtonC.setPosition(675,100);
 
-	var a = Math.floor(Math.random()*21);
+	var a = Math.floor(Math.random()*11);
 	var b = 0;
 	var c = 0; 
 
@@ -89,38 +89,38 @@ createQuestionShapes: function()
 	xArray = new Array();
 	yArray = new Array();
 
-	xArray.push(50);
+	xArray.push(400);
 	yArray.push(200);
-
-	xArray.push(100);
-	yArray.push(150);
 
 	xArray.push(150);
 	yArray.push(200);
+	
+	xArray.push(350);
+	yArray.push(150);
 
 	xArray.push(200);
 	yArray.push(250);
 	
+	xArray.push(300);
+	yArray.push(300);
+	
 	xArray.push(250);
 	yArray.push(300);
 	
-	xArray.push(300);
-	yArray.push(350);
-	
-	xArray.push(350);
-	yArray.push(150);
-	
-	xArray.push(400);
+	xArray.push(50);
 	yArray.push(200);
+	
+	xArray.push(300);
+	yArray.push(150);
 	
 	xArray.push(450);
 	yArray.push(250);
 	
-	xArray.push(500);
-	yArray.push(300);
-	
 	xArray.push(550);
 	yArray.push(350);
+	
+	xArray.push(500);
+	yArray.push(100);
 
 	for (var i = 0; i < answer; i++)
 	{
