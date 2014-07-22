@@ -49,7 +49,7 @@ Extends: Sheet,
 
 / * ITEMS: */
 
-/* TYPE_DESCRIPTION: Determine what numbers to say when counting a group of objects. */
+/* TYPE_DESCRIPTION: Count the objects up to 20. */
 
 var i_201 = new Class(
 {
@@ -101,7 +101,7 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 11-15 */
+/* TYPE_DESCRIPTION: Count the objects up to 20. Make answer zero. */
 
 var i_202 = new Class(
 {
@@ -111,18 +111,38 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 202;
 
-		this.mNumberNameArray = new Array();
-		this.mNumberNameArray[0] = "zero";
-		this.mNumberNameArray[1] = "one";
-		this.mNumberNameArray[2] = "one, two";
-		this.mNumberNameArray[3] = "one, two, three";
-		this.mNumberNameArray[4] = "one, two, three, four";
-		this.mNumberNameArray[5] = "one, two, three, four, five";
-		this.mNumberNameArray[6] = "one, two, three, four, five, six";
-		this.mNumberNameArray[7] = "one, two, three, four, five, six, seven";
-		this.mNumberNameArray[8] = "one, two, three, four, five, six, seven, eight";
-		this.mNumberNameArray[9] = "one, two, three, four, five, six, seven, eight, nine";
-		this.mNumberNameArray[10] = "one, two, three, four, five, six, seven, eight, nine, ten";
+                var a = 0;
+                var b = 0;
+                var c = 0;
+
+                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                {
+                        b = Math.floor(Math.random()*7)-3;
+                        b = parseInt(a+b);
+                        c = Math.floor(Math.random()*7)-3;
+                        c = parseInt(a+c);
+                }
+
+                this.setQuestion('How many kids?');
+                this.setAnswer(a,0);
+
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
+                this.shuffle(10);
+        }
+});
+/ * ITEMS: */
+
+/* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 11-15 */
+
+var i_203 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = 203;
 
                 var a = Math.floor(Math.random()*5)+11;
                 var b = 0;
