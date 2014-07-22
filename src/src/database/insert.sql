@@ -136,9 +136,9 @@ insert into core_standards (id,core_clusters_id,description) values ('remediate'
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.1','k.cc.a.1',1,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.2','k.cc.a.2',2,3); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',3,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.a','k.cc.b.4.a',4,2); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.b','k.cc.b.4.b',5,2); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.c','k.cc.b.4.c',6,2); 
+--insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.a','k.cc.b.4.a',4,2); 
+--insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.b','k.cc.b.4.b',5,2); 
+--insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.c','k.cc.b.4.c',6,2); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.5','k.cc.b.5',7,2); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.6','k.cc.c.6',8,3); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.7','k.cc.c.7',9,3); 
@@ -167,12 +167,14 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 
 
 --k.cc.b.4.a
-insert into item_types(id,progression,learning_standards_id,description) values (301,301,'k.cc.b.4.a','Match counting sequence with number of objects.');
-insert into item_types(id,progression,learning_standards_id,description) values (302,302,'k.cc.b.4.a','When given counting words in order pick the group with that many items.');
+--insert into item_types(id,progression,learning_standards_id,description) values (301,301,'k.cc.b.4.a','Match counting sequence with number of objects.');
+--insert into item_types(id,progression,learning_standards_id,description) values (302,302,'k.cc.b.4.a','When given counting words in order pick the group with that many items.');
 
 --k.cc.b.4.b
-insert into item_types(id,progression,learning_standards_id,description) values (401,401,'k.cc.b.4.b','Count the objects up to 20.');
-insert into item_types(id,progression,learning_standards_id,description) values (402,402,'k.cc.b.4.b','Count the objects up to 20. Make answer zero. ');
-insert into item_types(id,progression,learning_standards_id,description) values (403,403,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 11-15');
-insert into item_types(id,progression,learning_standards_id,description) values (404,404,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 16-20');
+--insert into item_types(id,progression,learning_standards_id,description) values (401,401,'k.cc.b.4.b','Count the objects up to 20.');
+--insert into item_types(id,progression,learning_standards_id,description) values (402,402,'k.cc.b.4.b','Count the objects up to 20. Make answer zero. ');
+--insert into item_types(id,progression,learning_standards_id,description) values (403,403,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 11-15');
+--insert into item_types(id,progression,learning_standards_id,description) values (404,404,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 16-20');
 
+--k.cc.b.5
+insert into item_types(id,progression,learning_standards_id,description) values (601,601,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
