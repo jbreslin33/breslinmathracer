@@ -76,6 +76,7 @@
 
 <script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
 
+<script type="text/javascript" src="/src/core/math/normal.php"></script>
 <script type="text/javascript" src="/src/core/math/evaluation.php"></script>
 <script type="text/javascript" src="/src/core/math/remediate.php"></script>
 <script type="text/javascript" src="/src/core/math/fast.php"></script>
