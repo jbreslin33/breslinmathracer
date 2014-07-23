@@ -142,7 +142,6 @@ CREATE TABLE core_standards (
 --==================================================================
 CREATE TABLE learning_standards (
         id text NOT NULL UNIQUE,
-	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard	
 	PRIMARY KEY (id)	
 );	
