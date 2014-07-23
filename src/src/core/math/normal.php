@@ -12,7 +12,7 @@ Extends: Game,
 	{
        		this.parent(application);
 	
-		this.mSheet = new s_evaluation(this);	
+		this.mSheet = new s_normal(this);	
 		this.mSheet.createItems();
 		this.mSheet.createShapes();
 	},
@@ -36,14 +36,14 @@ Extends: Game,
 
 /* SHEET: */
 
-var s_evaluation = new Class(
+var s_normal = new Class(
 {
 Extends: Sheet,
         initialize: function(game)
         {
                 this.parent(game);
 		
-		this.mLearningStandard = 'evaluation';
+		this.mLearningStandard = 'normal';
 
 		this.picker = new Picker(this);
         },

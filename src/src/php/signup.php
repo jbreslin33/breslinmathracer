@@ -49,18 +49,18 @@ public function insertFirstLevelAttempt()
 { 
 	$insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
-        $insert .= ",1,'k.cc.a.1');";
+        $insert .= ",1,'normal');";
 
         //get db result
        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
-        $_SESSION["ref_id"] = 'k.cc.a.1';
-        $_SESSION["standard"] = 'k.cc.a.1';
+        $_SESSION["ref_id"] = 'normal';
+        $_SESSION["standard"] = 'normal';
         $_SESSION["level"] = 1;
-       	$_SESSION["levels"] = 4;
+       	$_SESSION["levels"] = 1;
         $_SESSION["progression"] = 1.000;
         $_SESSION["subject_id"] = 1;
-        $_SESSION["raw_data"] = NULL;
+        $_SESSION["raw_data"] = '1:2:3:4';
 }
 
 public function checkInput()
