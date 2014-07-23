@@ -46,13 +46,11 @@ public function process()
         if ($num > 0)
         {
                 //get the id from user table
-                $standard = pg_Result($result, 0, 'core_standards_id');
-                $progression = pg_Result($result, 0, 'progression');
                 $levels = pg_Result($result, 0, 'levels');
 
                 //set level_id
-                $_SESSION["standard"] = $standard;
-                $_SESSION["progression"] = $progression;
+                $_SESSION["standard"] = "none";
+                $_SESSION["progression"] = "1";
                 $_SESSION["levels"] = $levels;
         }
         else

@@ -3,6 +3,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluation.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/remediate.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/standard.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
 
 //this class is for when you first login or signup it is not used other wise 
 class Sessions
@@ -22,7 +23,8 @@ public function process()
 		$_SESSION["subject_id"] = 1;
 	}
 
-	$query  = "select levelattempts.transaction_code, levelattempts.learning_standards_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.id=levelattempts.learning_standards_id JOIN core_standards ON core_standards.id=learning_standards.core_standards_id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id JOIN core_domains_subjects_grades ON core_domains_subjects_grades.id=core_clusters.core_domains_subjects_grades_id JOIN core_subjects_grades ON core_subjects_grades.id=core_domains_subjects_grades.core_subjects_grades_id JOIN core_subjects ON core_subjects.id=core_subjects_grades.core_subjects_id where user_id = ";
+	//$query  = "select levelattempts.transaction_code, levelattempts.learning_standards_id, levelattempts.level from levelattempts INNER JOIN learning_standards ON learning_standards.id=levelattempts.learning_standards_id JOIN core_standards ON core_standards.id=learning_standards.core_standards_id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id JOIN core_domains_subjects_grades ON core_domains_subjects_grades.id=core_clusters.core_domains_subjects_grades_id JOIN core_subjects_grades ON core_subjects_grades.id=core_domains_subjects_grades.core_subjects_grades_id JOIN core_subjects ON core_subjects.id=core_subjects_grades.core_subjects_id where user_id = ";
+	$query = "select * from levelattempts where user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
 	
@@ -44,20 +46,17 @@ public function process()
 		$_SESSION["transaction_code"] = $transaction_code;
        		$_SESSION["level"]            = $level;
 	
-		if ($ref_id == 'evaluation' || $ref_id == 'remediate')
+		if ($ref_id == 'evaluation')
 		{
-			if ($ref_id == 'evaluation')
-			{
-				$evaluation = new Evaluation();
-			}
-			if ($ref_id == 'remediate')
-			{
-				$remediate = new Remediate(0);
-			}
+			$evaluation = new Evaluation();
 		}
-		else
+		if ($ref_id == 'remediate')
 		{
-			$standard = new Standard();
+			$remediate = new Remediate(0);
+		}
+		if ($ref_id == 'normal')
+		{
+			$normal = new Normal();
 		}
 	}
 }
