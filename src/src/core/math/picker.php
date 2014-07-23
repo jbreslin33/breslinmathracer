@@ -64,32 +64,28 @@ getItem: function(id)
 		return new i_204(this.mSheet);
 	}
 	
-	//k.cc.b.4.a
-	if (id == 301)
+	//k.cc.b.5
+	if (id == 601)
 	{
-		return new i_301(this.mSheet);
+		return new i_601(this.mSheet);
 	}
-	if (id == 302)
+	if (id == 602)
 	{
-		return new i_302(this.mSheet);
+		return new i_602(this.mSheet);
+	}
+	if (id == 603)
+	{
+		return new i_602(this.mSheet);
+	}
+	if (id == 604)
+	{
+		return new i_604(this.mSheet);
 	}
 	
-	//k.cc.b.4.b
-	if (id == 401)
+	//k.cc.c.6
+	if (id == 701)
 	{
-		return new i_401(this.mSheet);
-	}
-	if (id == 402)
-	{
-		return new i_402(this.mSheet);
-	}
-	if (id == 403)
-	{
-		return new i_403(this.mSheet);
-	}
-	if (id == 404)
-	{
-		return new i_404(this.mSheet);
+		return new i_701(this.mSheet);
 	}
 }
 		
