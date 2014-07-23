@@ -78,19 +78,14 @@ Extends: Application,
                 	{
                 		APPLICATION.mRef_id = responseArray[1];
                         	APPLICATION.mLevel = responseArray[2];
-                        	APPLICATION.mStandard = responseArray[3];
-                        	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
-                        	APPLICATION.mProgression = responseArray[4];
-                        	APPLICATION.mLevels = responseArray[5];
-                        	APPLICATION.mLoggedIn = responseArray[6];
-                       		APPLICATION.mUsername = responseArray[7];
-                        	APPLICATION.mFirstName = responseArray[8];
-                        	APPLICATION.mLastName = responseArray[9];
-                        	APPLICATION.mRawData = responseArray[10];
+                        	APPLICATION.mLevels = responseArray[3];
+                        	APPLICATION.mLoggedIn = responseArray[4];
+                       		APPLICATION.mUsername = responseArray[5];
+                        	APPLICATION.mFirstName = responseArray[6];
+                        	APPLICATION.mLastName = responseArray[7];
+                        	APPLICATION.mRawData = responseArray[8];
 
                         	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
-                        	APPLICATION.mHud.setProgression(APPLICATION.mProgression);
-                        	APPLICATION.mHud.setStandard(APPLICATION.mStandard);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
