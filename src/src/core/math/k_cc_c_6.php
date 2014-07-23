@@ -77,7 +77,7 @@ Extends: ThreeButtonItem,
 		}
 
                 this.mButtonA.setAnswer('Is greater than.');
-                this.mButtonB.setAnswer('Is eagual to.');
+                this.mButtonB.setAnswer('Is equal to.');
                 this.mButtonC.setAnswer('Is less than.');
         },
     	
