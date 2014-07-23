@@ -62,50 +62,55 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setPosition(380,200);
                 this.mButtonC.setPosition(380,300);
 
-		var a = Math.floor(Math.random()*2);
-		var b = Math.floor(Math.random()*2);
-		if (a == 0)
-		{
-			a = 8;
-		}
-		if (a == 1)
-		{
-			a = 12;
-		}
-		var b = 0;
-		var c = 0; 
+		this.a = Math.floor(Math.random()*20+1);
+		this.b = Math.floor(Math.random()*20+1);
 
-		while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+		this.setQuestion('Compare.');
+		if (this.a > this.b)
 		{
-			b = Math.floor(Math.random()*7)-3;
-			b = parseInt(a+b);
-			c = Math.floor(Math.random()*7)-3;
-			c = parseInt(a+c);
+                	this.setAnswer('Is greater than.',0);
+		}
+		if (this.a == this.b)
+		{
+                	this.setAnswer('Is equal to.',0);
+ 		}
+		if (this.a < this.b)
+		{
+                	this.setAnswer('Is less than.',0);
 		}
 
-		this.setQuestion('How many kids?');
-                this.setAnswer(a,0);
+		this.setQuestion('Compare.');
+                this.setAnswer(this.a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
+                this.mButtonA.setAnswer('Is greater than.');
+                this.mButtonB.setAnswer('Is eagual to.');
+                this.mButtonC.setAnswer('Is less than.');
         },
     	
 	createQuestionShapes: function()
 	{	
-		var x = 400;
-		var y = 260;
-
-		var answer = this.getAnswer(); 
-		answer = parseInt(answer);	
-
-		for (var i = 0; i < answer; i++)
+		APPLICATION.log(this.a + ':' + this.b)
+		var x = 40;
+		var y = 100;
+		for (var i = 0; i < this.a; i++)
 		{
-			if (answer == 8) 
+			if (i == 5) 
 			{
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-85),this.mSheet.mGame,"/images/bus/kid.png","",""));
+				x = 40;
+				var y = 150;
 			}
+			if (i == 10) 
+			{
+				x = 40;
+				var y = 200;
+			}
+			if (i == 15) 
+			{
+				x = 40;
+				var y = 250;
+			}
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+			x = x + 50;
 		}
 	}
 });
