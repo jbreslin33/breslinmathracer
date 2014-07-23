@@ -109,7 +109,10 @@ public function setRawData()
 	if (count($itemArray) > 0)
 	{
 		$itemString .= $itemArray[0];
-		$itemString .= ":";
+		if (count($itemArray) > 1)
+		{		
+			$itemString .= ":";
+		}
 	}
 
 	$totalCount = count($itemArray);
