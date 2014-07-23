@@ -74,18 +74,82 @@ public function process()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
-	$itemString = "";
-	$itemString .= $this->mTypeID;
-	$itemString .= ":";
+ 	//right here you need to query db to get rawdata for questions.
+        $progression_counter = 0;
+
+        $itemArray = array();
+
+	while ( count($itemArray) < 11)
+	{
+		$query = "select id from item_types where progression > "; 
+		$query .= $progression_counter; 
+		$query .= " order by progression asc limit 1;";
+ 
+		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+                $num = pg_num_rows($result);
+
+                if ($num > 0)
+                {
+                        //this id is either going in array or not
+                        $item_types_id = pg_Result($result, 0, 'id');
+		
+			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id where item_attempts.item_types_id = "; 
+			$query .= $item_types_id; 
+			$query .= " AND levelattempts.user_id = ";
+        		$query .= $_SESSION["user_id"];
+			$query .= "order by item_attempts.start_time asc limit 10;";
+		
+			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+                	$num = pg_num_rows($result);
 	
-       	$_SESSION["raw_data"] = $itemString; 
-       	$rawData = $_SESSION["raw_data"]; 
+    			//if we have 10 lets check if we mastered all ten
+                        if ($num == 10)
+                        {
+                                $masteredAllTen = true;
 
-	//temp hard code...
-       	$_SESSION["raw_data"] = "1:2:3:4:101:102:103:104:201:202"; 
+                                for ($i = 0; $i < $num; $i++)
+                                {
+                                        $transaction_code = pg_Result($result, 0, 'transaction_code');
+                                        if ($transaction_code != 1)
+                                        {
+                                                $masteredAllTen = false;
+                                        }
+                                }
+                                if (!$masteredAllTen)
+                                {
+                                        array_push($itemArray,"$item_types_id");
+                                }
+                        }
+                        //less than 10 so we could not have mastered 10 so just add it to array.
+                        else
+                        {
+                                array_push($itemArray,"$item_types_id");
+                        }
+		}
+	}	
+        $itemString = "";
 
-  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rawData','rawData');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+        if (count($itemArray) > 0)
+        {
+                $itemString .= $itemArray[0];
+                if (count($itemArray) > 1)
+                {
+                        $itemString .= ":";
+                }
+        }
+
+        $totalCount = count($itemArray);
+
+        for ($i = 1; $i < $totalCount; $i++)
+        {
+                $itemString .= $itemArray[$i];
+                if ($i < $totalCount - 1)
+                {
+                        $itemString .= ":";
+                }
+        }
+
+        $_SESSION["raw_data"] = $itemString;
 }
 //end of class
 }

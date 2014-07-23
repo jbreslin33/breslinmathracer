@@ -127,10 +127,6 @@ public function setRawData()
 	} 
 	
        	$_SESSION["raw_data"] = $itemString; 
-       	$rawData = $_SESSION["raw_data"]; 
-
-  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rawData','rawData');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
   
 	//if you have no questions say that you did an evaluation and send back thru setLevelSessionVariablesAdvance
 	if (count($itemArray) < 1)
