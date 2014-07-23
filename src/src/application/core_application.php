@@ -414,6 +414,19 @@ Extends: Application,
                 }
 	
 		//math
+		if (this.mRef_id == 'normal')
+		{ 
+             		if (this.mGameName != "normal")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "normal";
+                               	this.mGame = new Normal(APPLICATION);
+			}
+                }
 		if (this.mRef_id == 'evaluation')
 		{ 
              		if (this.mGameName != "evaluation")
