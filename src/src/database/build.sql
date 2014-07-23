@@ -144,9 +144,7 @@ CREATE TABLE learning_standards (
         id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard	
-	core_standards_id text NOT NULL,
-	PRIMARY KEY (id),	
-	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
+	PRIMARY KEY (id)	
 );	
 
 CREATE TABLE levelattempts (

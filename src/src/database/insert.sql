@@ -139,21 +139,20 @@ insert into core_standards (id,core_clusters_id,description) values ('evaluation
 insert into core_standards (id,core_clusters_id,description) values ('remediate',10001,'Remediate');
 insert into core_standards (id,core_clusters_id,description) values ('normal',10002,'Normal');
 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.1','k.cc.a.1',1,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.2','k.cc.a.2',2,3); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.a.3','k.cc.a.3',3,4); 
---insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.a','k.cc.b.4.a',4,2); 
---insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.b','k.cc.b.4.b',5,2); 
---insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.c','k.cc.b.4.c',6,2); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.5','k.cc.b.5',7,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.6','k.cc.c.6',8,1); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.7','k.cc.c.7',9,1); 
-
-insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',401,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',402,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('evaluation','evaluation',10000,1); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('remediate','remediate',10001,3); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('normal','normal',10002,1); 
+insert into learning_standards (id,progression,levels) values ('k.cc.a.1',1,4); 
+insert into learning_standards (id,progression,levels) values ('k.cc.a.2',2,3); 
+insert into learning_standards (id,progression,levels) values ('k.cc.a.3',3,4); 
+--insert into learning_standards (id,progression,levels) values ('k.cc.b.4.a',4,2); 
+--insert into learning_standards (id,progression,levels) values ('k.cc.b.4.b',5,2); 
+--insert into learning_standards (id,progression,levels) values ('k.cc.b.4.c',6,2); 
+insert into learning_standards (id,progression,levels) values ('k.cc.b.5',7,4); 
+insert into learning_standards (id,progression,levels) values ('k.cc.c.6',8,1); 
+insert into learning_standards (id,progression,levels) values ('k.cc.c.7',9,1); 
+insert into learning_standards (id,progression,levels) values ('g4.nbt.a.1',401,4); 
+insert into learning_standards (id,progression,levels) values ('g4.nbt.a.2',402,4); 
+insert into learning_standards (id,progression,levels) values ('evaluation',10000,1); 
+insert into learning_standards (id,progression,levels) values ('remediate',10001,3); 
+insert into learning_standards (id,progression,levels) values ('normal',10002,1); 
 
 --k.cc.a.1
 insert into item_types(id,progression,core_standards_id,description) values (1,1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
