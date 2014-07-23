@@ -1,6 +1,6 @@
 /* GAME: */
 
-var k_cc_c_6 = new Class(
+var k_cc_c_7 = new Class(
 {
 
 Extends: GameSheet,
@@ -9,7 +9,7 @@ Extends: GameSheet,
 	{
        		this.parent(application);
 	
-		this.mSheet = new sk_cc_c_6(this);	
+		this.mSheet = new sk_cc_c_7(this);	
                 this.mSheet.createItems();
                 this.mSheet.createShapes();
 	}
@@ -17,7 +17,7 @@ Extends: GameSheet,
 
 /* SHEET: */ 
 
-var sk_cc_c_6 = new Class(
+var sk_cc_c_7 = new Class(
 {
 Extends: Sheet,
 	initialize: function(game)
@@ -29,6 +29,15 @@ Extends: Sheet,
         {
                 this.parent();
               
+                if (APPLICATION.mLevel > APPLICATION.mLevels)
+                {
+                        this.setScoreNeeded(APPLICATION.mLevels);
+                }
+                else
+                {
+                        this.setScoreNeeded(APPLICATION.mLevel); 
+                }
+
 		this.addItem(new i_701(this));
 		
 		this.randomize(10);
@@ -37,21 +46,21 @@ Extends: Sheet,
 
 / * ITEMS: */
 
-var i_701 = new Class(
+var i_801 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 701;
+                this.mType = 801;
     
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
                 this.mButtonB.setPosition(380,200);
                 this.mButtonC.setPosition(380,300);
 
-		this.a = Math.floor(Math.random()*10+1);
-		this.b = Math.floor(Math.random()*10+1);
+		this.a = Math.floor(Math.random()*20+1);
+		this.b = Math.floor(Math.random()*20+1);
 
 		this.setQuestion('Compare.');
 		if (this.a > this.b)
@@ -74,29 +83,13 @@ Extends: ThreeButtonItem,
     	
 	createQuestionShapes: function()
 	{	
-		var x = 40;
-		var y = 100;
-		for (var i = 0; i < this.a; i++)
-		{
-			if (i == 5) 
-			{
-				x = 40;
-				var y = 150;
-			}
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
-			x = x + 50;
-		}
-		var x = 500;
-		var y = 100;
-		for (var i = 0; i < this.b; i++)
-		{
-			if (i == 5) 
-			{
-				x = 500;
-				var y = 150;
-			}
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
-			x = x + 50;
-		}
+		var shapeA = new Shape(50,200,x,y,this.mSheet.mGame,"/images/bus/kid.png","","");
+		var shapeB = new Shape(500,200,x,y,this.mSheet.mGame,"/images/bus/kid.png","","");
+	
+		shapeA.setText(this.a);
+		shapeB.setText(this.b);
+
+		this.addQuestionShape(shapeA);	
+		this.addQuestionShape(shapeB);	
 	}
 });

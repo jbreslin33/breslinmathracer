@@ -141,7 +141,7 @@ insert into learning_standards (id,core_standards_id,progression,levels) values 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.c','k.cc.b.4.c',6,2); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.5','k.cc.b.5',7,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.6','k.cc.c.6',8,1); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.7','k.cc.c.7',9,3); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.7','k.cc.c.7',9,1); 
 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',401,4); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.2','g4.nbt.a.2',402,4); 
