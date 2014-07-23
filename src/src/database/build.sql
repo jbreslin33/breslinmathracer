@@ -179,5 +179,6 @@ CREATE TABLE item_attempts (
 	item_types_id integer DEFAULT 0 NOT NULL, -- 0 means no type identified
         transaction_code integer DEFAULT 0 NOT NULL, --were you correct?? 0 not answered yet   1 correct    2 incorrect
         PRIMARY KEY (id),
-	FOREIGN KEY (levelattempts_id) REFERENCES levelattempts(id)
+	FOREIGN KEY (levelattempts_id) REFERENCES levelattempts(id),
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id)
 );

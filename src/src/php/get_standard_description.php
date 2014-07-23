@@ -10,7 +10,7 @@ function __construct($typeid)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
-     	$query = "select core_standards.description from core_standards JOIN learning_standards ON learning_standards.core_standards_id=core_standards.id JOIN item_types ON item_types.learning_standards_id=learning_standards.id where item_types.id = ";
+     	$query = "select core_standards.description from core_standards JOIN item_types ON item_types.core_standards_id=core_standards.id where item_types.id = ";
        	$query .= $this->mTypeID;
        	$query .= ";";
 
