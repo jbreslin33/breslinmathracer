@@ -29,16 +29,7 @@ Extends: Sheet,
         {
                 this.parent();
               
-                if (APPLICATION.mLevel > APPLICATION.mLevels)
-                {
-                        this.setScoreNeeded(APPLICATION.mLevels);
-                }
-                else
-                {
-                        this.setScoreNeeded(APPLICATION.mLevel); 
-                }
-
-		this.addItem(new i_701(this));
+		this.addItem(new i_801(this));
 		
 		this.randomize(10);
         }
@@ -59,8 +50,8 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setPosition(380,200);
                 this.mButtonC.setPosition(380,300);
 
-		this.a = Math.floor(Math.random()*20+1);
-		this.b = Math.floor(Math.random()*20+1);
+		this.a = Math.floor(Math.random()*10+1);
+		this.b = Math.floor(Math.random()*10+1);
 
 		this.setQuestion('Compare.');
 		if (this.a > this.b)
@@ -83,8 +74,8 @@ Extends: ThreeButtonItem,
     	
 	createQuestionShapes: function()
 	{	
-		var shapeA = new Shape(50,200,x,y,this.mSheet.mGame,"/images/bus/kid.png","","");
-		var shapeB = new Shape(500,200,x,y,this.mSheet.mGame,"/images/bus/kid.png","","");
+		var shapeA = new Shape(50,50,240,200,this.mSheet.mGame,"","","");
+		var shapeB = new Shape(50,50,530,200,this.mSheet.mGame,"","","");
 	
 		shapeA.setText(this.a);
 		shapeB.setText(this.b);
