@@ -39,9 +39,6 @@ Extends: Sheet,
                 }
 
 		this.addItem(new i_701(this));
-		this.addItem(new i_701(this));
-		this.addItem(new i_701(this));
-		this.addItem(new i_701(this));
 		
 		this.randomize(10);
         }
@@ -79,9 +76,6 @@ Extends: ThreeButtonItem,
                 	this.setAnswer('Is less than.',0);
 		}
 
-		this.setQuestion('Compare.');
-                this.setAnswer(this.a,0);
-
                 this.mButtonA.setAnswer('Is greater than.');
                 this.mButtonB.setAnswer('Is eagual to.');
                 this.mButtonC.setAnswer('Is less than.');
@@ -89,7 +83,6 @@ Extends: ThreeButtonItem,
     	
 	createQuestionShapes: function()
 	{	
-		APPLICATION.log(this.a + ':' + this.b)
 		var x = 40;
 		var y = 100;
 		for (var i = 0; i < this.a; i++)
@@ -107,6 +100,28 @@ Extends: ThreeButtonItem,
 			if (i == 15) 
 			{
 				x = 40;
+				var y = 250;
+			}
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+			x = x + 50;
+		}
+		var x = 500;
+		var y = 100;
+		for (var i = 0; i < this.b; i++)
+		{
+			if (i == 5) 
+			{
+				x = 500;
+				var y = 150;
+			}
+			if (i == 10) 
+			{
+				x = 500;
+				var y = 200;
+			}
+			if (i == 15) 
+			{
+				x = 500; 
 				var y = 250;
 			}
 			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));

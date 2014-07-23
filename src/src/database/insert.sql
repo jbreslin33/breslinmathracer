@@ -140,7 +140,7 @@ insert into learning_standards (id,core_standards_id,progression,levels) values 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.b','k.cc.b.4.b',5,2); 
 --insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.4.c','k.cc.b.4.c',6,2); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.b.5','k.cc.b.5',7,4); 
-insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.6','k.cc.c.6',8,3); 
+insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.6','k.cc.c.6',8,1); 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('k.cc.c.7','k.cc.c.7',9,3); 
 
 insert into learning_standards (id,core_standards_id,progression,levels) values ('g4.nbt.a.1','g4.nbt.a.1',401,4); 
@@ -183,4 +183,4 @@ insert into item_types(id,progression,learning_standards_id,description) values 
 insert into item_types(id,progression,learning_standards_id,description) values (604,604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
 
 --k.cc.c.6
-insert into item_types(id,progression,learning_standards_id,description) values (701,701,'k.cc.c.6','Compare 2 groups with a difference of less than 2.');
+insert into item_types(id,progression,learning_standards_id,description) values (701,701,'k.cc.c.6','Compare 2 groups of of items with greater than, equal to or less than.');

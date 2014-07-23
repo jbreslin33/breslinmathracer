@@ -55,6 +55,7 @@ Extends: Sheet,
 			
 		for (var i = 0; i < itemIDArray.length; i++)
 		{	
+			APPLICATION.log('i:' + itemIDArray[i]);
 			this.addItem(this.picker.getItem(itemIDArray[i]));
 		}
 		//this.randomize(10);
