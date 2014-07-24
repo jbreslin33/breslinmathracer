@@ -6,7 +6,7 @@ DROP TABLE item_attempts;
 
 DROP TABLE item_types;
 DROP TABLE levelattempts;
-DROP TABLE learning_standard_attempts;
+DROP TABLE learning_standards_attempts;
 
 DROP TABLE learning_standards;
 
@@ -146,7 +146,7 @@ CREATE TABLE learning_standards (
 	PRIMARY KEY (id)	
 );	
 
-CREATE TABLE learning_standard_attempts (
+CREATE TABLE learning_standards_attempts (
 	id SERIAL,
     	start_time timestamp,
     	end_time timestamp,
@@ -165,12 +165,12 @@ CREATE TABLE levelattempts (
     	start_time timestamp,
     	end_time timestamp,
     	level integer NOT NULL, 
-    	learning_standard_attempts_id integer NOT NULL,  
+    	learning_standards_attempts_id integer NOT NULL,  
 	transaction_code integer DEFAULT 3 NOT NULL,
 	score integer DEFAULT 0 NOT NULL,
 	score_needed integer DEFAULT 0 NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (learning_standard_attempts_id) REFERENCES learning_standard_attempts(id)
+	FOREIGN KEY (learning_standards_attempts_id) REFERENCES learning_standards_attempts(id)
 );
 
 

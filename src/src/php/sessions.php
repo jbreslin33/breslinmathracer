@@ -22,29 +22,22 @@ public function process()
 	{
 		$_SESSION["subject_id"] = 1;
 	}
-
-	$query = "select * from levelattempts where user_id = ";
+	$query = "select id, learning_standards_id from learning_standards_attempts where user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
 	
-        //get db result
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
                 
-        //get numer of rows
         $num = pg_num_rows($result);
 
-	$ref_id = 0;
-	
         if ($num > 0)
         {
-                $ref_id           = pg_Result($result, 0, 'learning_standards_id');
-       		$transaction_code = pg_Result($result, 0, 'transaction_code');
-       		$level            = pg_Result($result, 0, 'level');
+                $learning_standards_attempts_id               = pg_Result($result, 0, 'id');
+                $ref_id                                       = pg_Result($result, 0, 'learning_standards_id');
 
+		$_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
                 $_SESSION["ref_id"]  = $ref_id;
-		$_SESSION["transaction_code"] = $transaction_code;
-       		$_SESSION["level"]            = $level;
-	
+
 		if ($ref_id == 'evaluation')
 		{
 			$evaluation = new Evaluation();

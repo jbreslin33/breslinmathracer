@@ -20,11 +20,9 @@ public function process()
 
         //BEGIN NEW CODE
         //right here you need to check the level of the ref_id you are about to send them to.
-        $selectLastLevelAttempt = "select level, transaction_code from levelattempts where user_id = ";
-        $selectLastLevelAttempt .= $_SESSION["user_id"];
-        $selectLastLevelAttempt .= " and learning_standards_id = '";
-        $selectLastLevelAttempt .= $_SESSION["ref_id"];
-        $selectLastLevelAttempt .= "' order by start_time desc limit 1;";
+        $selectLastLevelAttempt = "select level, transaction_code from levelattempts where learning_standards_attempts_id = ";
+        $selectLastLevelAttempt .= $_SESSION["learning_standards_attempts_id"];
+        $selectLastLevelAttempt .= " order by start_time desc limit 1;";
 
        	$selectLastLevelAttemptResult = pg_query($this->mDatabaseConnection->getConn(),$selectLastLevelAttempt) or die('Could not connect: ' . pg_last_error());
         $numLastLevelAttemptRows = pg_num_rows($selectLastLevelAttemptResult);
@@ -59,12 +57,12 @@ public function process()
         }
         //END NEW CODE
    
-        //do the insert...
-        $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["user_id"];
-        $insert .= ",";
+        //do the insert... do you have to do this?? now that you have learning_standards_attempts table???
+        $insert = "insert into levelattempts (start_time, level, learning_standards_attempts_id, transaction_code) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["level"];
-        $insert .= ",'normal',3);";
+        $insert .= ",";
+        $insert .= $_SESSION["learning_standards_attempts_id"];
+        $insert .= ",3);";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
@@ -96,9 +94,9 @@ public function setRawData()
                         $item_types_id = pg_Result($result, 0, 'id');
                         $progression_counter = pg_Result($result, 0, 'progression');
 		
-			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id where item_attempts.item_types_id = "; 
+			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = "; 
 			$query .= $item_types_id; 
-			$query .= " AND levelattempts.user_id = ";
+			$query .= " AND learning_standards_attempts.user_id = ";
         		$query .= $_SESSION["user_id"];
 			$query .= "order by item_attempts.start_time asc limit 10;";
 		

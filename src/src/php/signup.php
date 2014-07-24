@@ -48,14 +48,14 @@ public function process()
 public function insertFirstLevelAttempt()
 { 
 	//insert learning_standard_attempt
-	$insert = "insert into learning_standard_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
+	$insert = "insert into learning_standards_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
         $insert .= ",'normal');";
 
        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
 	//get learning_standard_attempt id
-	$query = "select id from learning_standard_attempts where user_id = ";
+	$query = "select id from learning_standards_attempts where user_id = ";
         $query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";	
        	
@@ -67,12 +67,12 @@ public function insertFirstLevelAttempt()
         {
 
                 //get the attempt_id
-                $learning_standard_attempt_id = pg_Result($result, 0, 'id');
+                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
 
                 //set level_id
-                $_SESSION["learning_standard_attempt_id"] = $learning_standard_attempt_id;
+                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
 		
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standard_attempt_id');";
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standards_attempts_id');";
 		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
         }
