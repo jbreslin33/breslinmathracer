@@ -77,6 +77,7 @@ Extends: Application,
         		if (codeNumber == APPLICATION.FULL)
                 	{
                 		APPLICATION.mRef_id = responseArray[1];
+				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                         	APPLICATION.mLevel = responseArray[2];
                         	APPLICATION.mLevels = responseArray[3];
                         	APPLICATION.mLoggedIn = responseArray[4];
