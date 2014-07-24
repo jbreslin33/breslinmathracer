@@ -13,19 +13,19 @@ function __construct()
 
 public function process()
 {
- 	$insert = "insert into levelattempts (start_time,level,learning_standard_attempts_id) VALUES (CURRENT_TIMESTAMP,";
+ 	$insert = "insert into levelattempts (start_time,level,learning_standards_attempts_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["level"];
         $insert .= ",";
-        $insert .= $_SESSION["learning_standard_attempt_id"];
+        $insert .= $_SESSION["learning_standards_attempts_id"];
         $insert .= ");";
 
         //get db result
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
         //get attempt id
-        $select = "select id from levelattempts where user_id = ";
+        $select = "select levelattempts.id from levelattempts JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where user_id = ";
         $select .= $_SESSION["user_id"];
-        $select .= "' ORDER BY start_time DESC;";
+        $select .= " ORDER BY levelattempts.start_time DESC;";
 
         //get db result
         $selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
