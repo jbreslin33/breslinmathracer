@@ -138,14 +138,19 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
+		APPLICATION.mLevel  = parseInt(APPLICATION.mLevel);
+		APPLICATION.mLevels = parseInt(APPLICATION.mLevels);
         	if (APPLICATION.mLevel > APPLICATION.mLevels)
                 {
+			APPLICATION.log('mLevel greater');
                         this.setScoreNeeded(APPLICATION.mLevels);
                 }
                 else
                 {
+			APPLICATION.log('mLevel less');
                         this.setScoreNeeded(APPLICATION.mLevel);
                 }
+		APPLICATION.log(APPLICATION.mLevel + ':' + APPLICATION.mLevels);
 	},
 
 	setTypeWrong: function(typeID)
