@@ -13,13 +13,11 @@ function __construct()
 
 public function process()
 {
- 	$insert = "insert into levelattempts (start_time,user_id,level,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["user_id"];
-        $insert .= ",";
+ 	$insert = "insert into levelattempts (start_time,level,learning_standard_attempts_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["level"];
-        $insert .= ",'";
-        $insert .= $_SESSION["ref_id"];
-        $insert .= "');";
+        $insert .= ",";
+        $insert .= $_SESSION["learning_standard_attempt_id"];
+        $insert .= ");";
 
         //get db result
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
@@ -27,10 +25,6 @@ public function process()
         //get attempt id
         $select = "select id from levelattempts where user_id = ";
         $select .= $_SESSION["user_id"];
-        $select .= " AND level = ";
-        $select .= $_SESSION["level"];
-        $select .= " AND learning_standards_id = '";
-        $select .= $_SESSION["ref_id"];
         $select .= "' ORDER BY start_time DESC;";
 
         //get db result
