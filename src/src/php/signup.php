@@ -65,7 +65,6 @@ public function insertFirstLevelAttempt()
 
         if ($num > 0)
         {
-
                 //get the attempt_id
                 $learning_standards_attempts_id = pg_Result($result, 0, 'id');
 
@@ -74,17 +73,14 @@ public function insertFirstLevelAttempt()
 		
 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standards_attempts_id');";
 		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
         }
 
 	//set sessions for signup
         $_SESSION["ref_id"] = 'normal';
-        $_SESSION["standard"] = 'normal';
         $_SESSION["level"] = 1;
-       	$_SESSION["levels"] = 1;
-        $_SESSION["progression"] = 1.000;
+       	$_SESSION["levels"] = 10;
         $_SESSION["subject_id"] = 1;
-        $_SESSION["raw_data"] = '1:2:3:4';
+        $_SESSION["raw_data"] = '1:2:3:4:101:102:103:201:202:203';
 }
 
 public function checkInput()
