@@ -57,17 +57,8 @@ public function process()
         }
         //END NEW CODE
    
-        //do the insert... do you have to do this?? now that you have learning_standards_attempts table???
-        $insert = "insert into levelattempts (start_time, level, learning_standards_attempts_id, transaction_code) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["level"];
-        $insert .= ",";
-        $insert .= $_SESSION["learning_standards_attempts_id"];
-        $insert .= ",3);";
-
-        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
-
         //update session vars with some hard coding
-        $_SESSION["levels"] = 3; //normal is always 10 levels....
+        $_SESSION["levels"] = 10; //normal is always 10 levels....
 
         $this->setRawData();
 }
