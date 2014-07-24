@@ -38,7 +38,7 @@ public function process()
                 {
                 	$levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
                	        $levelVar++;
-                	$_SESSION["level"] = $level;
+                	$_SESSION["level"] = $levelVar;
                 }
                 //failed
                 if ($transaction_codeVar == 2)
@@ -47,7 +47,7 @@ public function process()
                         {
                                 $levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
                        	        $levelVar--;
-                		$_SESSION["level"] = $level;
+                		$_SESSION["level"] = $levelVar;
                         }
                 }
         }
