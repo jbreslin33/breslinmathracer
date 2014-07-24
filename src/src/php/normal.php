@@ -81,7 +81,7 @@ public function setRawData()
 
 	while ( count($itemArray) < 11)
 	{
-		$query = "select id from item_types where progression > "; 
+		$query = "select id, progression from item_types where progression > "; 
 		$query .= $progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
@@ -92,6 +92,7 @@ public function setRawData()
                 {
                         //this id is either going in array or not
                         $item_types_id = pg_Result($result, 0, 'id');
+                        $progression_counter = pg_Result($result, 0, 'progression');
 		
 			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id where item_attempts.item_types_id = "; 
 			$query .= $item_types_id; 
@@ -101,7 +102,7 @@ public function setRawData()
 		
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                 	$num = pg_num_rows($result);
-	
+
     			//if we have 10 lets check if we mastered all ten
                         if ($num == 10)
                         {
