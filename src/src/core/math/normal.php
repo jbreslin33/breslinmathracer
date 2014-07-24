@@ -54,13 +54,10 @@ Extends: Sheet,
 	
 		var itemIDArray = APPLICATION.mRawData.split(":");	
 		
-		this.setScoreNeeded(itemIDArray.length);
-			
 		for (var i = 0; i < itemIDArray.length; i++)
 		{	
-			APPLICATION.log('i:' + itemIDArray[i]);
 			this.addItem(this.picker.getItem(itemIDArray[i]));
 		}
-		//this.randomize(10);
+		this.randomize(10);
         }
 });
