@@ -87,6 +87,15 @@ getItem: function(id)
 	{
 		return new i_701(this.mSheet);
 	}
+	
+	//4.nbt.a.2
+	if (id == 999991)
+	{
+		return new i_999991(this.mSheet);
+	}
+
+
+	
 }
 		
 });

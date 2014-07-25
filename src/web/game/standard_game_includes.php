@@ -82,3 +82,4 @@
 <script type="text/javascript" src="/src/core/math/fast.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/jim.php"></script>
+<script type="text/javascript" src="/src/core/math/brian.php"></script>

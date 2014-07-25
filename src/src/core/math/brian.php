@@ -1,4 +1,6 @@
-/* TYPE_DESCRIPTION: i_4_nbt_a_2_t_1: This type will give the name and ask for number. */
+/* TYPE_DESCRIPTION: 
+
+*/
 
 var i_999991 = new Class(
 {
@@ -6,7 +8,6 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                //this.mStandard = '4.nbt.a.2';
                 this.mType = 999991;
 
 		var thousands;
