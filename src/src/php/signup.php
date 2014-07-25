@@ -68,7 +68,7 @@ public function insertFirstLevelAttempt()
                 //get the attempt_id
                 $learning_standards_attempts_id = pg_Result($result, 0, 'id');
 
-                //set level_id
+               	//set level_id
                 $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
 		
 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standards_attempts_id');";
@@ -80,7 +80,7 @@ public function insertFirstLevelAttempt()
         $_SESSION["level"] = 1;
        	$_SESSION["levels"] = 10;
         $_SESSION["subject_id"] = 1;
-        $_SESSION["raw_data"] = '1:2:3:4:101:102:103:201:202:203';
+        $_SESSION["raw_data"] = '999991';
 }
 
 public function checkInput()

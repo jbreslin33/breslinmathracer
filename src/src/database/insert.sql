@@ -118,8 +118,8 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.c
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.5',2,'Count to answer "how many?" questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1-20, count out that many objects.');
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.6',3,'Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies.');
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',3,'Compare two numbers between 1 and 10 presented as written numerals.');
-insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.1',2,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.');
-insert into core_standards (id,core_clusters_id,description) values ('g4.nbt.a.2',2,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.1',1,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.');
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.2',1,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
 
 insert into learning_standards (id,levels) values ('evaluation',1); 
 insert into learning_standards (id,levels) values ('remediate',3); 
@@ -164,3 +164,6 @@ insert into item_types(id,progression,core_standards_id,description) values (701
 
 --k.cc.c.7
 insert into item_types(id,progression,core_standards_id,description) values (801,801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
+
+--4.nbt.a.2
+insert into item_types(id,progression,core_standards_id,description) values (999991,999991,'4.nbt.a.2','4th grade something or other');
