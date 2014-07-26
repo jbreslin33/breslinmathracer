@@ -85,9 +85,9 @@ public function setRawData()
                         $item_types_id = pg_Result($result, 0, 'id');
                         $progression_counter = pg_Result($result, 0, 'progression');
 		
-			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = "; 
+			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = '"; 
 			$query .= $item_types_id; 
-			$query .= " AND learning_standards_attempts.user_id = ";
+			$query .= "' AND learning_standards_attempts.user_id = ";
         		$query .= $_SESSION["user_id"];
 			$query .= "order by item_attempts.start_time asc limit 10;";
 		
