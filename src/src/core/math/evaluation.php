@@ -42,22 +42,35 @@ Extends: Sheet,
 		
 		this.mLearningStandard = 'evaluation';
 
-		this.picker = new Picker(this);
+                this.mPicker      = new Picker(this);
+                this.mPickerBrian = new PickerBrian(this);
+                this.mPickerJim   = new PickerJim(this);
         },
 
         createItems: function()
         {
                 this.parent();
-	
-		var itemIDArray = APPLICATION.mRawData.split(":");	
-		
-		this.setScoreNeeded(itemIDArray.length);
-			
-		for (var i = 0; i < itemIDArray.length; i++)
-		{	
-			APPLICATION.log('i:' + itemIDArray[i]);
-			this.addItem(this.picker.getItem(itemIDArray[i]));
-		}
-		//this.randomize(10);
-        }
+                var itemIDArray = APPLICATION.mRawData.split(":");
+
+                for (var i = 0; i < itemIDArray.length; i++)
+                {
+                        var pick = this.mPicker.getItem(itemIDArray[i]);
+                        if (pick != 0)
+                        {
+                                this.addItem(pick);
+                        }
+
+                        var brianPick = this.mPickerBrian.getItem(itemIDArray[i]);
+                        if (brianPick != 0)
+                        {
+                                this.addItem(brianPick);
+                        }
+
+                        var jimPick = this.mPickerJim.getItem(itemIDArray[i]);
+                        if (jimPick != 0)
+                        {
+                                this.addItem(jimPick);
+                        }
+                }
+	}
 });
