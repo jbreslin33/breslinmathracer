@@ -33,6 +33,7 @@ var Item = new Class(
 		//type 
 		this.mStandardDescription = '';
 		this.mItemDescription = '';
+		this.mPracticeDescription = '';
 		this.mType = 0; //uncategorized
 
 		//times 
@@ -55,13 +56,20 @@ var Item = new Class(
 		this.mContinueCorrectButton = 0; 
 		this.mContinueIncorrectButton = 0; 
 
-		//show standards and type description buttons
+		//show standards 
 		this.mToggleStandardInfoButton = 0;
 		this.mStandardInfo = 0;
 		this.mShowStandard = false;
+			
+		//show types
 		this.mToggleItemInfoButton = 0;
 		this.mItemInfo = 0;
 		this.mShowItem = false;
+
+		//show practice
+		this.mTogglePracticeInfoButton = 0;
+		this.mPracticeInfo = 0;
+		this.mShowPractice = false;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -84,6 +92,7 @@ var Item = new Class(
 		//report states
                 this.mSHOW_STANDARD = new SHOW_STANDARD(this);
                 this.mSHOW_ITEM = new SHOW_ITEM(this);
+                this.mSHOW_PRACTICE = new SHOW_PRACTICE(this);
 
 		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
@@ -157,6 +166,17 @@ var Item = new Class(
 		//mItemInfo
                 this.mItemInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
                 this.addShape(this.mItemInfo);
+
+               	//mTogglePracticeInfoButton
+                this.mTogglePracticeInfoButton = new TogglePracticeInfoButton(150,40,250,422,this.mSheet.mGame,"BUTTON","","");
+                this.mTogglePracticeInfoButton.mMesh.innerHTML = 'PRACTICE INFO';
+                this.addShape(this.mTogglePracticeInfoButton);
+                this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
+
+                //mPracticeInfo
+                this.mPracticeInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
+                this.addShape(this.mPracticeInfo);
+
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -321,6 +341,22 @@ var Item = new Class(
 		this.mItemInfo.setVisibility(false);
 	},
 
+       	showPractice: function()
+        {      
+                if (this.mPracticeDescription == '')
+                {
+                        //APPLICATION.getPracticeDescription(this.mType);
+			APPLICATION.log('hit practice');
+                }
+
+                this.mPracticeInfo.setVisibility(true);
+        },
+
+        hidePractice: function()
+        {      
+                this.mPracticeInfo.setVisibility(false);
+        },
+
 	showAnswerInputs: function()
 	{
 
@@ -369,6 +405,7 @@ var Item = new Class(
 	{
 		this.showToggleItemInfoButton();
 		this.showToggleStandardInfoButton();
+		this.showTogglePracticeInfoButton();
 	},
 	
 	hideQuestion: function()
@@ -395,6 +432,16 @@ var Item = new Class(
 	{
 		this.mToggleItemInfoButton.setVisibility(false);
 	},
+
+        showTogglePracticeInfoButton: function()
+        {
+                this.mTogglePracticeInfoButton.setVisibility(true);
+        },
+
+        hideTogglePracticeInfoButton: function()
+        {
+                this.mTogglePracticeInfoButton.setVisibility(false);
+        },
 
 	showQuestionShapes: function()
 	{

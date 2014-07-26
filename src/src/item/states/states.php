@@ -119,6 +119,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
 	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+	}
 },
 
 exit: function(item)
@@ -172,6 +176,7 @@ enter: function(item)
 	item.hideAnswerInputs();
 	item.hideQuestionShapes();
         item.hideToggleItemInfoButton();
+        item.hideTogglePracticeInfoButton();
 
         item.showStandard();
 },
@@ -188,6 +193,7 @@ exit: function(item)
 {
         item.hideStandard();
         item.showToggleItemInfoButton();
+        item.showTogglePracticeInfoButton();
 }
 
 });
@@ -210,6 +216,7 @@ enter: function(item)
         item.hideAnswerInputs();
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
+        item.hideTogglePracticeInfoButton();
 
         item.showItem();
 },
@@ -226,9 +233,51 @@ exit: function(item)
 {
         item.hideItem();
         item.showToggleStandardInfoButton();
+        item.showTogglePracticeInfoButton();
 }
 
 });
+
+var SHOW_PRACTICE = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                APPLICATION.log('ITEM::SHOW_ITEM');
+        }
+        item.hideQuestion();
+        item.hideAnswerInputs();
+        item.hideQuestionShapes();
+        item.hideToggleStandardInfoButton();
+        item.hideToggleItemInfoButton();
+
+        item.showPractice();
+},
+
+execute: function(item)
+{
+        if (item.mShowPractice == false)
+        {
+                item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
+        }
+},
+
+exit: function(item)
+{
+        item.hidePractice();
+        item.showToggleStandardInfoButton();
+        item.showToggleItemInfoButton();
+}
+
+});
+
 
 var CONTINUE_CORRECT = new Class(
 {
@@ -267,6 +316,10 @@ execute: function(item)
 	if (item.mShowItem)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
+	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
 },
 
@@ -310,6 +363,10 @@ execute: function(item)
 	if (item.mShowItem)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
+	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
 },
 
@@ -362,6 +419,10 @@ execute: function(item)
 	if (item.mShowItem)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
+	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
 },
 
@@ -417,6 +478,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
 	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+	}
 },
 
 exit: function(item)
@@ -460,6 +525,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
 	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+	}
 },
 
 exit: function(item)
@@ -496,6 +565,10 @@ execute: function(item)
 	if (item.mShowItem)
 	{
                 item.mStateMachine.changeState(item.mSHOW_ITEM);
+	}
+	if (item.mShowPractice)
+	{
+                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
 },
 
