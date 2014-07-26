@@ -12,24 +12,22 @@ initialize: function(sheet)
 
 getItem: function(id)
 {
-	id = parseInt(id);		
-
 	//k.cc.a.1
-	if (id == 1)
+	if (id == 'k.cc.a.1_1')
 	{
-		return new i_1(this.mSheet);
+		return new i_k_cc_a_1__1(this.mSheet);
 	}
-	if (id == 2)
+	if (id == 'k.cc.a.1_2')
 	{
-		return new i_2(this.mSheet);
+		return new i_k_cc_a_1__2(this.mSheet);
 	}
-	if (id == 3)
+	if (id == 'k.cc.a.1_3')
 	{
-		return new i_3(this.mSheet);
+		return new i_k_cc_a_1__3(this.mSheet);
 	}
-	if (id == 4)
+	if (id == 'k.cc.a.1_4')
 	{
-		return new i_4(this.mSheet);
+		return new i_k_cc_a_1__4(this.mSheet);
 	}
 
 	//k.cc.a.2
