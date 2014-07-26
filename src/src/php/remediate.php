@@ -10,6 +10,9 @@ function __construct($typeid)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'remediate','$this->mTypeID');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 	if ($this->mTypeID == 0)
 	{
        		$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where levelattempts.user_id = ";

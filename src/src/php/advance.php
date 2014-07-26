@@ -20,19 +20,12 @@ public function process()
         $levelVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["level"]);
         $levelsVar = (int) preg_replace('/[^0-9]/', '', $_SESSION["levels"]);
 
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$levelVar','$levelsVar');";
-	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	
         if ($levelVar < $levelsVar)
         {
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'bumpLevelUp','');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
                 $this->bumpLevelUp($levelVar);
         }
         else
         {
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'newLearningStandard','');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
                 $newLearningStandard = $this->newLearningStandard();
         }
 }
@@ -58,20 +51,14 @@ public function newLearningStandard()
 {
         if ($_SESSION["ref_id"] == 'evaluation')
         {
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'evaluation','new Normal');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		return new Normal(1);
 	}
         if ($_SESSION["ref_id"] == 'remediate')
         {
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'remediate','new Evaluation');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		return new Evaluation();
         }
         if ($_SESSION["ref_id"] == 'normal')
         {
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal','new Evaluation');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		return new Evaluation();
 	}
 }
