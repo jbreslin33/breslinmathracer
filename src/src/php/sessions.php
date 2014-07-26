@@ -48,7 +48,7 @@ public function process()
 		}
 		if ($ref_id == 'normal')
 		{
-			$normal = new Normal();
+			$normal = new Normal(0);
 		}
 	}
 }

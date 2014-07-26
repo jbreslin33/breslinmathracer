@@ -6,15 +6,58 @@ This class should allow student to feel confident. First levels should go to inf
 class Normal 
 {
     private $mDatabaseConnection;
-
-function __construct()
+//pass parameter startNew 0 or 1
+function __construct($startNew)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 
-	$this->process();
+	if ($startNew == 1)
+	{
+		$this->insertNewAttempt();
+	}
+	else
+	{
+		$this->continueAttempt();
+	}
 }
 
-public function process()
+public function insertNewAttempt()
+{
+       	//insert learning_standard_attempt
+        $insert = "insert into learning_standards_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
+        $insert .= $_SESSION["user_id"];
+        $insert .= ",'normal');";
+
+        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+
+        //get learning_standard_attempt id
+        $query = "select id from learning_standards_attempts where user_id = ";
+        $query .= $_SESSION["user_id"];
+        $query .= " order by start_time desc limit 1;";
+
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the attempt_id
+                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
+
+                //set level_id
+                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+        }
+
+        //set sessions for signup
+        $_SESSION["ref_id"] = 'normal';
+        $_SESSION["level"] = 1;
+        $_SESSION["levels"] = 10;
+        $_SESSION["subject_id"] = 1;
+
+        $this->setRawData();
+}
+
+public function continueAttempt()
 {
         $_SESSION["ref_id"] = 'normal';
 
