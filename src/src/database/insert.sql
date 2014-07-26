@@ -126,44 +126,44 @@ insert into learning_standards (id,levels) values ('remediate',3);
 insert into learning_standards (id,levels) values ('normal',10); 
 
 --k.cc.a.1
-insert into item_types(id,progression,core_standards_id,description) values (1,1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
-insert into item_types(id,progression,core_standards_id,description) values (2,2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
-insert into item_types(id,progression,core_standards_id,description) values (3,3,'k.cc.a.1','This type will ask what comes next after a number ending in 0 from 0-99.');
-insert into item_types(id,progression,core_standards_id,description) values (4,4,'k.cc.a.1','When counting by ten from numbers that end in zero. What comes next. Numbers range from 0-100.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_2',2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_3',3,'k.cc.a.1','This type will ask what comes next after a number ending in 0 from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_4',4,'k.cc.a.1','When counting by ten from numbers that end in zero. What comes next. Numbers range from 0-100.');
 
 --k.cc.a.2
-insert into item_types(id,progression,core_standards_id,description) values (101,101,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
-insert into item_types(id,progression,core_standards_id,description) values (102,102,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
-insert into item_types(id,progression,core_standards_id,description) values (103,103,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_1',101,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_2',102,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_3',103,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
 
 --k.cc.a.3
-insert into item_types(id,progression,core_standards_id,description) values (201,201,'k.cc.a.3','Count the objects up to 20.');
-insert into item_types(id,progression,core_standards_id,description) values (202,202,'k.cc.a.3','Count the objects up to 20. Make answer zero. ');
-insert into item_types(id,progression,core_standards_id,description) values (203,203,'k.cc.a.3','Count the objects up to 20. make sure answer is between 11-15');
-insert into item_types(id,progression,core_standards_id,description) values (204,204,'k.cc.a.3','Count the objects up to 20. make sure answer is between 16-20');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_1',201,'k.cc.a.3','Count the objects up to 20.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_2',202,'k.cc.a.3','Count the objects up to 20. Make answer zero. ');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_3',203,'k.cc.a.3','Count the objects up to 20. make sure answer is between 11-15');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_4',204,'k.cc.a.3','Count the objects up to 20. make sure answer is between 16-20');
 
 
 --k.cc.b.4.a
---insert into item_types(id,progression,core_standards_id,description) values (301,301,'k.cc.b.4.a','Match counting sequence with number of objects.');
---insert into item_types(id,progression,core_standards_id,description) values (302,302,'k.cc.b.4.a','When given counting words in order pick the group with that many items.');
+--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.a_1',301,'k.cc.b.4.a','Match counting sequence with number of objects.');
+--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.a_2',302,'k.cc.b.4.a','When given counting words in order pick the group with that many items.');
 
 --k.cc.b.4.b
---insert into item_types(id,progression,core_standards_id,description) values (401,401,'k.cc.b.4.b','Count the objects up to 20.');
---insert into item_types(id,progression,core_standards_id,description) values (402,402,'k.cc.b.4.b','Count the objects up to 20. Make answer zero. ');
---insert into item_types(id,progression,core_standards_id,description) values (403,403,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 11-15');
---insert into item_types(id,progression,core_standards_id,description) values (404,404,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 16-20');
+--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_1',401,'k.cc.b.4.b','Count the objects up to 20.');
+--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_2',402,'k.cc.b.4.b','Count the objects up to 20. Make answer zero. ');
+--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_3',403,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 11-15');
+--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_4',404,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 16-20');
 
 --k.cc.b.5
-insert into item_types(id,progression,core_standards_id,description) values (601,601,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
-insert into item_types(id,progression,core_standards_id,description) values (602,602,'k.cc.b.5','Count the objects up to 20 in a line.');
-insert into item_types(id,progression,core_standards_id,description) values (603,603,'k.cc.b.5','Count the objects up to 20 in a circle.');
-insert into item_types(id,progression,core_standards_id,description) values (604,604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',601,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',602,'k.cc.b.5','Count the objects up to 20 in a line.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',603,'k.cc.b.5','Count the objects up to 20 in a circle.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
 
 --k.cc.c.6
-insert into item_types(id,progression,core_standards_id,description) values (701,701,'k.cc.c.6','Compare 2 groups of of items from 1-10 with greater than, equal to or less than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',701,'k.cc.c.6','Compare 2 groups of of items from 1-10 with greater than, equal to or less than.');
 
 --k.cc.c.7
-insert into item_types(id,progression,core_standards_id,description) values (801,801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
 
 --4.nbt.a.2
-insert into item_types(id,progression,core_standards_id,description) values (999991,999991,'4.nbt.a.2','4th grade something or other');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',9999,'4.nbt.a.2','4th grade something or other');

@@ -175,7 +175,7 @@ CREATE TABLE levelattempts (
 
 
 CREATE TABLE item_types (
-        id integer NOT NULL UNIQUE,
+        id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
 	core_standards_id text NOT NULL,
 	active_code integer NOT NULL DEFAULT 1, -- 0 not active, 1 active to let you know its not in application any more
@@ -189,7 +189,7 @@ CREATE TABLE item_attempts (
         start_time timestamp,
         end_time timestamp,
 	levelattempts_id integer NOT NULL,
-	item_types_id integer DEFAULT 0 NOT NULL, -- 0 means no type identified
+	item_types_id text NOT NULL, 
         transaction_code integer DEFAULT 0 NOT NULL, --were you correct?? 0 not answered yet   1 correct    2 incorrect
         PRIMARY KEY (id),
 	FOREIGN KEY (levelattempts_id) REFERENCES levelattempts(id),

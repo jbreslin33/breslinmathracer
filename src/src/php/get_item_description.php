@@ -10,9 +10,9 @@ function __construct($typeid)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
-     	$query = "select description from item_types where id = ";
+     	$query = "select description from item_types where id = '";
        	$query .= $this->mTypeID;
-       	$query .= ";";
+       	$query .= "';";
 
 	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
   	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);

@@ -10,9 +10,9 @@ function __construct($typeid)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
-     	$query = "select core_standards.description from core_standards JOIN item_types ON item_types.core_standards_id=core_standards.id where item_types.id = ";
+     	$query = "select core_standards.description from core_standards JOIN item_types ON item_types.core_standards_id=core_standards.id where item_types.id = '";
        	$query .= $this->mTypeID;
-       	$query .= ";";
+       	$query .= "';";
 
 	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
   	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);

@@ -17,9 +17,9 @@ public function process()
         $insert .= $_SESSION["attempt_id"];
         $insert .= ",";
         $insert .= $_SESSION["item_transaction_code"];
-        $insert .= ",";
+        $insert .= ",'";
         $insert .= $_SESSION["item_types_id"];
-        $insert .= ");";
+        $insert .= "');";
 
         //get db result
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());

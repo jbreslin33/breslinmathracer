@@ -1,13 +1,13 @@
 /* TYPE_DESCRIPTION: This type will ask what comes next after a number from 0-99. */
 
-var i_1 = new Class(
+var i_k_cc_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 1;
+                this.mType = 'k.cc.a.1_1';
 
 		var x = Math.floor(Math.random()*100);
 		var a = parseInt(x+1);
@@ -32,16 +32,16 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_2: This type will ask what comes next after a number ending in 9 from 0-99. */
+/* TYPE_DESCRIPTION: This type will ask what comes next after a number ending in 9 from 0-99. */
 
-var i_2 = new Class(
+var i_k_cc_a_1__2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 2;
+                this.mType = 'k.cc.a.1_2';
 
                 var x = Math.floor((Math.random()*10)+1);
 		x = parseInt(x * 10);
@@ -70,14 +70,14 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: i_3: This type will ask what comes next after a number ending in 0 from 0-99. */
 
-var i_3 = new Class(
+var i_k_cc_a_1__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 3;
+                this.mType = 'k.cc.a.1_3';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
@@ -103,16 +103,16 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4:  When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
+/* TYPE_DESCRIPTION: When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
 
-var i_4 = new Class(
+var i_k_cc_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 4;
+                this.mType = 'k.cc.a.1_4';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
