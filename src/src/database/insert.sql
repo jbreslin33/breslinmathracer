@@ -123,7 +123,7 @@ insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.2'
 
 insert into learning_standards (id,levels) values ('evaluation',1); 
 insert into learning_standards (id,levels) values ('remediate',3); 
-insert into learning_standards (id,levels) values ('normal',10); 
+insert into learning_standards (id,levels) values ('normal',1); 
 
 --k.cc.a.1
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');

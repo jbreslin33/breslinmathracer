@@ -14,28 +14,43 @@ function __construct()
 
 public function process()
 {
-        $nextID = 'evaluation';
-
-        //do the insert...
-        $insert = "insert into levelattempts (start_time, user_id,level,learning_standards_id,transaction_code) VALUES (CURRENT_TIMESTAMP,";
+       	//insert learning_standard_attempt
+        $insert = "insert into learning_standards_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
-        $insert .= ",";
-        $insert .= 1;
-        $insert .= ",'";
-        $insert .= $nextID;
-        $insert .= "',3);";
+        $insert .= ",'evaluation');";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
-        //update session vars with some hard coding
+
+     	//get learning_standard_attempt id
+        $query = "select id from learning_standards_attempts where user_id = ";
+        $query .= $_SESSION["user_id"];
+        $query .= " order by start_time desc limit 1;";
+
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the attempt_id
+                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
+
+                //set level_id
+                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+
+                $equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standards_attempts_id');";
+                $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+        }
+
+        //set sessions for signup
+        $_SESSION["ref_id"] = 'evaluation';
         $_SESSION["level"] = 1;
         $_SESSION["levels"] = 1;
-        $_SESSION["progression"] = 10000; //that is the evaluation 
-        $_SESSION["standard"] = 'evaluation';
-        $_SESSION["ref_id"] = 'evaluation';
+        $_SESSION["subject_id"] = 1;
 
         $this->setRawData();
 }
-//you are not using user id in selects that is why it skipped eval....
+
 public function setRawData()
 {
 	//right here you need to query db to get rawdata for questions.
@@ -64,9 +79,9 @@ public function setRawData()
                		$item_types_id = pg_Result($result, 0, 'item_types_id');
                
 			//now do another query with on just the item_type and user_id and just grab the last 10 by start_time	
-			$query2 = "select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where item_types_id = ";
+			$query2 = "select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where item_types_id = '";
 			$query2 .= $item_types_id;
-			$query2 .= " AND user_id = ";
+			$query2 .= "' AND user_id = ";
 			$query2 .= $_SESSION["user_id"];
 			$query2 .= " order by start_time asc limit 10;";		
 			
