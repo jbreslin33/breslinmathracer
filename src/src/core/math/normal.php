@@ -58,6 +58,6 @@ Extends: Sheet,
 		{	
 			this.addItem(this.picker.getItem(itemIDArray[i]));
 		}
-		this.randomize(10);
+		//this.randomize(10);
         }
 });

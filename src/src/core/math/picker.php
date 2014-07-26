@@ -31,68 +31,72 @@ getItem: function(id)
 	}
 
 	//k.cc.a.2
-	if (id == 101)
+	if (id == 'k.cc.a.2_1')
 	{
-		return new i_101(this.mSheet);
+		return new i_k_cc_a_2__1(this.mSheet);
 	}
-	if (id == 102)
+	if (id == 'k.cc.a.2_2')
 	{
-		return new i_102(this.mSheet);
+		return new i_k_cc_a_2__2(this.mSheet);
 	}
-	if (id == 103)
+	if (id == 'k.cc.a.2_3')
 	{
-		return new i_103(this.mSheet);
-	}
+		return new i_k_cc_a_2__3(this.mSheet);
+	}	
 
 	//k.cc.a.3
-	if (id == 201)
+	if (id == 'k.cc.a.3_1')
 	{
-		return new i_201(this.mSheet);
+		return new i_k_cc_a_3__1(this.mSheet);
 	}
-	if (id == 202)
+	if (id == 'k.cc.a.3_2')
 	{
-		return new i_202(this.mSheet);
+		return new i_k_cc_a_3__2(this.mSheet);
 	}
-	if (id == 203)
+	if (id == 'k.cc.a.3_3')
 	{
-		return new i_203(this.mSheet);
+		return new i_k_cc_a_3__3(this.mSheet);
 	}
-	if (id == 204)
+	if (id == 'k.cc.a.3_4')
 	{
-		return new i_204(this.mSheet);
+		return new i_k_cc_a_3__4(this.mSheet);
 	}
-	
+
 	//k.cc.b.5
-	if (id == 601)
+	if (id == 'k.cc.b.5_1')
 	{
-		return new i_601(this.mSheet);
+		return new i_k_cc_b_5__1(this.mSheet);
 	}
-	if (id == 602)
+	if (id == 'k.cc.b.5_2')
 	{
-		return new i_602(this.mSheet);
+		return new i_k_cc_b_5__2(this.mSheet);
 	}
-	if (id == 603)
+	if (id == 'k.cc.b.5_3')
 	{
-		return new i_602(this.mSheet);
+		return new i_k_cc_b_5__3(this.mSheet);
 	}
-	if (id == 604)
+	if (id == 'k.cc.b.5_4')
 	{
-		return new i_604(this.mSheet);
+		return new i_k_cc_b_5__4(this.mSheet);
+	}
+
+	//k.cc.c.6
+	if (id == 'k.cc.c.6_1')
+	{
+		return new i_k_cc_c_6__1(this.mSheet);
 	}
 	
-	//k.cc.c.6
-	if (id == 701)
+	//k.cc.c.7
+	if (id == 'k.cc.c.7_1')
 	{
-		return new i_701(this.mSheet);
+		return new i_k_cc_c_7__1(this.mSheet);
 	}
 	
 	//4.nbt.a.2
-	if (id == 999991)
+	if (id == '4.nbt.a.2_1')
 	{
-		return new i_999991(this.mSheet);
+		return new i_4_nbt_a_2_1(this.mSheet);
 	}
-
-
 	
 }
 		

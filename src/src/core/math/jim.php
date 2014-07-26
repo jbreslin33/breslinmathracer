@@ -68,7 +68,7 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_3: This type will ask what comes next after a number ending in 0 from 0-99. */
+/* TYPE_DESCRIPTION: This type will ask what comes next after a number ending in 0 from 0-99. */
 
 var i_k_cc_a_1__3 = new Class(
 {
@@ -140,13 +140,13 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: This type will ask what 2 numbers come next after a number from 0-99. */
 
-var i_101 = new Class(
+var i_k_cc_a_2__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 101;
+                this.mType = 'k.cc.a.2_1';
 
                 var x = Math.floor(Math.random()*98);
                 var a = parseInt(x+1);
@@ -177,13 +177,13 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: This type will ask what 3 numbers come next after a number from 0-99. */
 
-var i_102 = new Class(
+var i_k_cc_a_2__2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 102;
+                this.mType = 'k.cc.a.2_2';
 
                 var x = Math.floor(Math.random()*98);
 		var a = parseInt(x+1);
@@ -214,13 +214,13 @@ Extends: ThreeButtonItem,
 
 / *TYPE_DESCRIPTION: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100. */
 
-var i_103 = new Class(
+var i_k_cc_a_2__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 103;
+                this.mType = 'k.cc.a.2_3';
 
                 var a = Math.floor(Math.random()*98);
                 var b = 0;
@@ -247,13 +247,13 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: Count the objects up to 20. */
 
-var i_201 = new Class(
+var i_k_cc_a_3__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 201;
+                this.mType = 'k.cc.a.3_1';
 
 		var a = Math.floor(Math.random()*21);
 		var b = 0;
@@ -299,13 +299,13 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: Count the objects up to 20. Make answer zero. */
 
-var i_202 = new Class(
+var i_k_cc_a_3__2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 202;
+                this.mType = 'k.cc.a.3_2';
 
                 var a = 0;
                 var b = 0;
@@ -332,13 +332,13 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 11-15 */
 
-var i_203 = new Class(
+var i_k_cc_a_3__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 203;
+                this.mType = 'k.cc.a.3_3';
 
                 var a = Math.floor(Math.random()*5)+11;
                 var b = 0;
@@ -384,13 +384,13 @@ Extends: ThreeButtonItem,
 
 /* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 16-20 */
 
-var i_204 = new Class(
+var i_k_cc_a_3__4 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 204;
+                this.mType = 'k.cc.a.3_4';
 
                 var a = Math.floor(Math.random()*5)+16;
                 var b = 0;
@@ -434,13 +434,13 @@ Extends: ThreeButtonItem,
         }
 });
 
-var i_604 = new Class(
+var i_k_cc_b_5__4 = new Class(
 {
 Extends: ThreeButtonItem,
 initialize: function(sheet)
 {
 	this.parent(sheet);
-        this.mType = 604;
+        this.mType = 'k.cc.b.5_4';
     
 	//BUTTON A
        	this.mButtonA.setPosition(100,100);
@@ -516,13 +516,13 @@ createQuestionShapes: function()
 }
 });
 
-var i_603 = new Class(
+var i_k_cc_b_5__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 603;
+                this.mType = 'k.cc.b.5_3';
     
 		//BUTTON A
                 this.mButtonA.setPosition(100,100);
@@ -598,13 +598,13 @@ this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-85),this.mSheet.
 	}
 });
 
-var i_602 = new Class(
+var i_k_cc_b_5__2 = new Class(
 {
 Extends: ThreeButtonItem,
 initialize: function(sheet)
 {
         this.parent(sheet);
-        this.mType = 602;
+        this.mType = 'k.cc.b.5_2';
    
 	//BUTTON A
         this.mButtonA.setPosition(100,100);
@@ -650,13 +650,13 @@ createQuestionShapes: function()
 
 /* TYPE_DESCRIPTION: Count the objects up to 20 in a rectangular array. */
 
-var i_601 = new Class(
+var i_k_cc_b_5__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 601;
+                this.mType = 'k.cc.b.5_1';
     
 		//BUTTON A
                 this.mButtonA.setPosition(100,100);
@@ -747,13 +747,13 @@ this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-100),this.mSheet
 	}
 });
 
-var i_701 = new Class(
+var i_k_cc_c_6__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 701;
+                this.mType = 'k.cc.c.6_1';
     
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
@@ -811,13 +811,13 @@ Extends: ThreeButtonItem,
 	}
 });
 
-var i_801 = new Class(
+var i_k_cc_c_7__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 801;
+                this.mType = 'k.cc.c.7_1';
     
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
