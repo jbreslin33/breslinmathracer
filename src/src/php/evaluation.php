@@ -37,9 +37,6 @@ public function process()
 
                 //set level_id
                 $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
-
-                $equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standards_attempts_id');";
-                $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         }
 
         //set sessions for signup
@@ -60,7 +57,7 @@ public function setRawData()
 	$good = true;
 	while($good)	
 	{
-		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where progression > ";
+		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN levelattempts ON levelattempts.learning_standards_attempts_id=learning_standards_attempts.id where progression > ";
 		$query .= $progression_counter; 
 		$query .= " AND user_id = ";
 		$query .= $_SESSION["user_id"];
@@ -79,7 +76,7 @@ public function setRawData()
                		$item_types_id = pg_Result($result, 0, 'item_types_id');
                
 			//now do another query with on just the item_type and user_id and just grab the last 10 by start_time	
-			$query2 = "select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id where item_types_id = '";
+			$query2 = "select item_attempts.start_time, item_types_id, item_attempts.transaction_code, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN levelattempts ON levelattempts.learning_standards_attempts_id=learning_standards_attempts.id where item_types_id = '";
 			$query2 .= $item_types_id;
 			$query2 .= "' AND user_id = ";
 			$query2 .= $_SESSION["user_id"];

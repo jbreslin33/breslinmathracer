@@ -70,9 +70,6 @@ public function insertFirstLevelAttempt()
 
                	//set level_id
                 $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
-		
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'lid','$learning_standards_attempts_id');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         }
 
 	//set sessions for signup
