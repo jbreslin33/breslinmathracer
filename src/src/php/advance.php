@@ -60,7 +60,7 @@ public function newLearningStandard()
         {
 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'evaluation','new Normal');";
 		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-		return new Normal();
+		return new Normal(1);
 	}
         if ($_SESSION["ref_id"] == 'remediate')
         {
