@@ -44,7 +44,8 @@ public function process()
 		}
 		if ($ref_id == 'remediate')
 		{
-			$remediate = new Remediate(0);
+			//pass 0 in for start new and 0 for type id as we are returning to remediate.
+			$remediate = new Remediate(0,0);
 		}
 		if ($ref_id == 'normal')
 		{
