@@ -2,13 +2,13 @@
 
 */
 
-var i_999991 = new Class(
+var i_k_nbt_a_2__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 999991;
+                this.mType = '4.nbt.a.2_1';
 
 		var thousands;
 		var hundreds;

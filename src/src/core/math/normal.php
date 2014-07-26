@@ -45,7 +45,9 @@ Extends: Sheet,
 		
 		this.mLearningStandard = 'normal';
 
-		this.picker = new Picker(this);
+		this.mPicker      = new Picker(this);
+		this.mPickerBrian = new PickerBrian(this);
+		this.mPickerJim   = new PickerJim(this);
         },
 
         createItems: function()
@@ -56,8 +58,24 @@ Extends: Sheet,
 		
 		for (var i = 0; i < itemIDArray.length; i++)
 		{	
-			this.addItem(this.picker.getItem(itemIDArray[i]));
+			var pick = this.mPicker.getItem(itemIDArray[i]);
+			if (pick != 0)
+			{
+				this.addItem(pick);
+			}
+
+			var brianPick = this.mPickerBrian.getItem(itemIDArray[i]);
+			if (brianPick != 0)
+			{
+				this.addItem(brianPick);
+			}
+
+			var jimPick = this.mPickerJim.getItem(itemIDArray[i]);
+			if (jimPick != 0)
+			{
+				this.addItem(jimPick);
+			}
+
 		}
-		//this.randomize(10);
         }
 });

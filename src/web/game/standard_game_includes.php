@@ -81,5 +81,8 @@
 <script type="text/javascript" src="/src/core/math/remediate.php"></script>
 <script type="text/javascript" src="/src/core/math/fast.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
-<script type="text/javascript" src="/src/core/math/jim.php"></script>
-<script type="text/javascript" src="/src/core/math/brian.php"></script>
+<script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
+<script type="text/javascript" src="/src/core/math/picker_jim.php"></script>
+<script type="text/javascript" src="/src/core/math/items.php"></script>
+<script type="text/javascript" src="/src/core/math/items_brian.php"></script>
+<script type="text/javascript" src="/src/core/math/items_jim.php"></script>
