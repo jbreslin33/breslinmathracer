@@ -16,9 +16,6 @@ function __construct($typeid)
         	$query .= $_SESSION["user_id"];
         	$query .= " order by item_attempts.start_time desc limit 1;";
 
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
-  		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
         	//get db result
         	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
@@ -103,9 +100,6 @@ public function setRawData()
 	
        	$_SESSION["raw_data"] = $itemString; 
        	$rawData = $_SESSION["raw_data"]; 
-
-  	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rawData','rawData');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 }
 //end of class
 }

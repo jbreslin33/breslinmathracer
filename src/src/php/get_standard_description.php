@@ -14,9 +14,6 @@ function __construct($typeid)
        	$query .= $this->mTypeID;
        	$query .= "';";
 
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
-  	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
        	//get db result
        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
