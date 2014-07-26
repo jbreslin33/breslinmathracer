@@ -52,28 +52,35 @@ Extends: Sheet,
         createItems: function()
         {
                 this.parent();
-                
+               
+		//lets get the item. There will be only one for remediate but we will add up to 3 times depending on score needed. 
 		var itemIDArray = APPLICATION.mRawData.split(":");
+                for (var i = 0; i < this.getScoreNeeded(); i++)
+		{
+			//check generic
+                	var pick = this.mPicker.getItem(itemIDArray[0]);
+		
+			//check brian
+                	if (pick == 0)
+                	{
+                        	pick = this.mPickerBrian.getItem(itemIDArray[0]);
+			}
+			
+			//check jim
+                	if (pick == 0)
+                	{
+                        	pick = this.mPickerJim.getItem(itemIDArray[0]);
+			}
 
-                for (var i = 0; i < itemIDArray.length; i++)
-                {
-                        var pick = this.mPicker.getItem(itemIDArray[i]);
-                        if (pick != 0)
-                        {
-                                this.addItem(pick);
-                        }
-
-                        var brianPick = this.mPickerBrian.getItem(itemIDArray[i]);
-                        if (brianPick != 0)
-                        {
-                                this.addItem(brianPick);
-                        }
-
-                        var jimPick = this.mPickerJim.getItem(itemIDArray[i]);
-                        if (jimPick != 0)
-                        {
-                                this.addItem(jimPick);
-                        }
-                }
+			//by now we should have an item...
+			if (pick) 
+			{
+                		this.addItem(pick);
+			}
+			else
+			{
+				APPLICATION.log('no item picked by pickers!');
+			}
+		}
         }
 });
