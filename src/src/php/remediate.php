@@ -5,15 +5,12 @@ class Remediate
 {
     private $mDatabaseConnection;
 
-function __construct($typeid)
+function __construct($startNew, $typeid)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'remediate','$this->mTypeID');";
-	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-	//if the type id is 0 that means you are in the middle of a remediate session and we are sending you back....so do not insert new record but query to get a type id instead
+	//if no typeid then get one
 	if ($this->mTypeID == 0)
 	{
 		//get the item_type_id of the last asked question as that will be what you where previously remediating.
@@ -30,6 +27,10 @@ function __construct($typeid)
         	{
                 	$this->mTypeID = pg_Result($result, 0, 'item_types_id');
 		}
+	}
+
+	if ($startNew)
+	{
                 $this->insertNewAttempt();
 	}
 	else
