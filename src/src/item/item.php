@@ -174,7 +174,7 @@ var Item = new Class(
                 this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
 
                 //mPracticeInfo
-                this.mPracticeInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
+                this.mPracticeInfo = new Shape(200,50,400,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mPracticeInfo);
 
 	},
@@ -345,8 +345,7 @@ var Item = new Class(
         {      
                 if (this.mPracticeDescription == '')
                 {
-                        //APPLICATION.getPracticeDescription(this.mType);
-			APPLICATION.log('hit practice');
+                        APPLICATION.getPracticeDescription(this.mType);
                 }
 
                 this.mPracticeInfo.setVisibility(true);
@@ -457,5 +456,18 @@ var Item = new Class(
                 {
                         this.mQuestionShapeArray[i].setVisibility(false);
                 }
+	},
+
+	fillPracticeSelect: function()
+	{
+		var array = this.mPracticeDescription.split(":");
+
+                for (var i = 0; i < array.length; i++)
+                {
+			var option = document.createElement("option");
+    			option.value = array[i];
+    			option.text = array[i];
+    			this.mPracticeInfo.mMesh.appendChild(option);		
+		}
 	}
 });

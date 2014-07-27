@@ -28,6 +28,7 @@ Extends: Polygon,
                         this.mMesh.style.width = this.mWidth+'px'; 
                         this.mMesh.style.height = this.mHeight+'px'; 
                 }
+
                 else if (this.mSrc == "BUTTON")
                 {
                         //button to attach to our div "vessel"
@@ -35,7 +36,15 @@ Extends: Polygon,
                         this.mMesh.style.width = this.mWidth+'px'; 
                         this.mMesh.style.height = this.mHeight+'px'; 
                 }
- 
+
+                else if (this.mSrc == "SELECT")
+                {
+                        //button to attach to our div "vessel"
+                        this.mMesh  = document.createElement("SELECT");
+                        this.mMesh.style.width = this.mWidth+'px'; 
+                        this.mMesh.style.height = this.mHeight+'px'; 
+                }
+
 		else if (this.mSrc == "AUDIO")
                 {
                         //audio object to attach to our div "vessel"
