@@ -69,6 +69,7 @@ var Item = new Class(
 		//show practice
 		this.mTogglePracticeInfoButton = 0;
 		this.mPracticeInfo = 0;
+		this.mPracticeInfoButton = 0;
 		this.mShowPractice = false;
 
 		//states
@@ -174,8 +175,12 @@ var Item = new Class(
                 this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
 
                 //mPracticeInfo
-                this.mPracticeInfo = new Shape(200,50,400,225,this.mSheet.mGame,"SELECT","","");
+                this.mPracticeInfo = new Shape(200,50,100,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mPracticeInfo);
+                
+		this.mPracticeInfoButton = new SubmitPracticeItemButton(200,50,400,225,this.mSheet.mGame,"BUTTON","","");
+                this.mPracticeInfoButton.mMesh.innerHTML = 'PRACTICE ITEM';
+                this.addShape(this.mPracticeInfoButton);
 
 	},
 
@@ -349,11 +354,13 @@ var Item = new Class(
                 }
 
                 this.mPracticeInfo.setVisibility(true);
+                this.mPracticeInfoButton.setVisibility(true);
         },
 
         hidePractice: function()
         {      
                 this.mPracticeInfo.setVisibility(false);
+                this.mPracticeInfoButton.setVisibility(false);
         },
 
 	showAnswerInputs: function()

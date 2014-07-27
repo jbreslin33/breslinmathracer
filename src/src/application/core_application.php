@@ -103,7 +103,6 @@ Extends: Application,
 			if (codeNumber == APPLICATION.PRACTICE_DESCRIPTION)
                         {
                                 APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
-				APPLICATION.log('array:' + APPLICATION.mGame.mSheet.mItem.mPracticeDescription);
                                 APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
 		}
