@@ -20,6 +20,7 @@ Extends: Application,
 		this.REMEDIATE = 105;
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
+		this.PRACTICE_DESCRIPTION = 108;
 
 		//personal info
 		this.mUsername = '';
@@ -98,6 +99,12 @@ Extends: Application,
                         {
                                 APPLICATION.mGame.mSheet.mItem.mItemDescription = responseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.mItemInfo.setText(responseArray[1]);
+                        }
+			if (codeNumber == APPLICATION.PRACTICE_DESCRIPTION)
+                        {
+                                APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
+				APPLICATION.log('array:' + APPLICATION.mGame.mSheet.mItem.mPracticeDescription);
+                                APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
 		}
 	},
@@ -291,7 +298,7 @@ Extends: Application,
                 xmlhttp.open("POST","../../web/php/get_standard_description.php?typeid=" + typeid,true);
                 xmlhttp.send();
         },
-
+	
 	getItemDescription: function(typeid)
         {
                 var xmlhttp;
@@ -324,6 +331,37 @@ Extends: Application,
                 xmlhttp.send();
         },
 
+	getPracticeDescription: function(typeid)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/get_practice_description.php",true);
+                xmlhttp.send();
+        },
 
 	advanceToNextLevel: function()
         {
