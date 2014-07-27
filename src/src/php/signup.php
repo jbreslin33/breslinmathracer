@@ -78,8 +78,8 @@ public function insertFirstLevelAttempt()
        	$_SESSION["levels"] = 1;
         $_SESSION["subject_id"] = 1;
         //$_SESSION["raw_data"] = 'k.cc.a.1_1:k.cc.a.1_2:k.cc.a.1_3:k.cc.a.1_4:k.cc.a.2_1:k.cc.a.3_2:k.cc.a.3_3:k.cc.a.3_1:k.cc.a.3_2:k.cc.a.3_3';
-        $_SESSION["raw_data"] = 'k.cc.a.1_2';
-
+        $_SESSION["raw_data"] = 'k.cc.a.1_1';
+	//$_SESSION["raw_data"] = '4.nbt.a.2_5';
 }
 
 public function checkInput()
