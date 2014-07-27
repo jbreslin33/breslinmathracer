@@ -22,7 +22,7 @@ function __construct()
        	{
  		for ($i = 0; $i < $num; $i++)
 		{
-               		$id = pg_Result($result, 0, 'id');
+               		$id = pg_Result($result, $i, 'id');
  			array_push($itemArray,"$id");
 		}
 	}
