@@ -2,7 +2,7 @@
 
 */
 
-var i_k_nbt_a_2__1 = new Class(
+var i_4_nbt_a_2__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
