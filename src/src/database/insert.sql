@@ -166,4 +166,8 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
 
 --4.nbt.a.2
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',9999,'4.nbt.a.2','4th grade something or other');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',99991,'4.nbt.a.2','4th grade something or other');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_2',99992,'4.nbt.a.2','4th grade something or other');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_3',99993,'4.nbt.a.2','4th grade something or other');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_4',99994,'4.nbt.a.2','4th grade something or other');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_5',99995,'4.nbt.a.2','4th grade something or other');
