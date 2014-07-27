@@ -250,7 +250,7 @@ enter: function(item)
 {
         if (item.mStateLogs)
         {
-                APPLICATION.log('ITEM::SHOW_ITEM');
+                APPLICATION.log('ITEM::SHOW_PRACTICE');
         }
         item.hideQuestion();
         item.hideAnswerInputs();
