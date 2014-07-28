@@ -5,7 +5,7 @@ class Practice
 {
     private $mDatabaseConnection;
 
-function __construct($startNew, $typeid, $leavePractice)
+function __construct($startNew, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 
@@ -15,30 +15,6 @@ function __construct($startNew, $typeid, $leavePractice)
 	}
 	else
 	{
-		$this->mTypeID = $typeid;
-
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'idpractice','$this->mTypeID');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-		//if no typeid then get one
-		if ($this->mTypeID == 0)
-		{
-			//get the item_type_id of the last asked question as that will be what you where previously practicing.
-       			$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where learning_standards_attempts.user_id = ";
-        		$query .= $_SESSION["user_id"];
-        		$query .= " order by item_attempts.start_time desc limit 1;";
-
-        		//get db result
-        		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-
-        		$num = pg_num_rows($result);
-
-        		if ($num > 0)
-        		{
-                		$this->mTypeID = pg_Result($result, 0, 'item_types_id');
-			}
-		}
-
 		if ($startNew)
 		{
                 	$this->insertNewAttempt();
