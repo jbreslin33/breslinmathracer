@@ -1,5 +1,60 @@
 /* TYPE_DESCRIPTION: When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
 
+var i_k_oa_a_1__1 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.cc.oa.1_1';
+
+                var x = Math.floor((Math.random()*9)+1);
+                x = parseInt(x * 10);
+                var a = parseInt(x+10);
+                var b = 0;
+                var c = 0;
+
+                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                {
+                        b = Math.floor(Math.random()*7)-3;
+                        b = parseInt(a+b);
+                        c = Math.floor(Math.random()*7)-3;
+                        c = parseInt(a+c);
+                }
+
+                this.setQuestion('When couning by tens what comes after ' + x + '?');
+                this.setAnswer(parseInt(a),0);
+
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
+                this.shuffle(10);
+        },
+
+        createQuestionShapes: function()
+        {
+                var x = 0;
+                var y = 300;
+
+                var answer = this.getAnswer();
+                answer = parseInt(answer);
+
+                for (var i = 0; i < answer; i++)
+                {
+                        if (i == 10)
+                        {
+                                x = 0;
+                                y = 375;
+                        }
+                        x = parseInt(x + 70);
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+                }
+        }
+
+});
+
+
 var i_k_cc_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,

@@ -44,6 +44,12 @@ getItem: function(id)
 		return new i_k_cc_c_7__1(this.mSheet);
 	}
 
+        //k.oa.a.1
+        if (id == 'k.oa.a.1_1')
+        {
+                return new i_k_oa_a_1__1(this.mSheet);
+        }
+
 	return 0;	
 }
 		
