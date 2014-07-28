@@ -12,6 +12,8 @@ initialize: function(sheet)
 
 getItem: function(id)
 {
+        id = id.replace(/^\s+|\s+$/g,'')
+
 	//4.nbt.a.2
 	if (id == '4.nbt.a.2_1')
 	{
