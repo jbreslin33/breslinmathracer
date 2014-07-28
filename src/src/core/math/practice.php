@@ -56,8 +56,10 @@ Extends: Sheet,
                
 		//lets get the item. There will be only one for practice but we will add up to 3 times depending on score needed. 
 		var itemIDArray = APPLICATION.mRawData.split(":");
+		APPLICATION.log('itemIDArray[0]:' + itemIDArray[0]);
                 for (var i = 0; i < this.getScoreNeeded(); i++)
 		{
+			APPLICATION.log('in for itemIDArray[0]:' + itemIDArray[0]);
 			//check generic
                 	var pick = this.mPicker.getItem(itemIDArray[0]);
 		
