@@ -5,40 +5,48 @@ class Practice
 {
     private $mDatabaseConnection;
 
-function __construct($startNew, $typeid)
+function __construct($startNew, $typeid, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mTypeID = $typeid;
 
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'idpractice','$this->mTypeID');";
-	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-	//if no typeid then get one
-	if ($this->mTypeID == 0)
+	if ($leavePractice)
 	{
-		//get the item_type_id of the last asked question as that will be what you where previously practicing.
-       		$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where learning_standards_attempts.user_id = ";
-        	$query .= $_SESSION["user_id"];
-        	$query .= " order by item_attempts.start_time desc limit 1;";
-
-        	//get db result
-        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-
-        	$num = pg_num_rows($result);
-
-        	if ($num > 0)
-        	{
-                	$this->mTypeID = pg_Result($result, 0, 'item_types_id');
-		}
-	}
-
-	if ($startNew)
-	{
-                $this->insertNewAttempt();
+		$this->leavePractice();
 	}
 	else
 	{
-                $this->continueAttempt();
+		$this->mTypeID = $typeid;
+
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'idpractice','$this->mTypeID');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+		//if no typeid then get one
+		if ($this->mTypeID == 0)
+		{
+			//get the item_type_id of the last asked question as that will be what you where previously practicing.
+       			$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where learning_standards_attempts.user_id = ";
+        		$query .= $_SESSION["user_id"];
+        		$query .= " order by item_attempts.start_time desc limit 1;";
+
+        		//get db result
+        		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        		$num = pg_num_rows($result);
+
+        		if ($num > 0)
+        		{
+                		$this->mTypeID = pg_Result($result, 0, 'item_types_id');
+			}
+		}
+
+		if ($startNew)
+		{
+                	$this->insertNewAttempt();
+		}
+		else
+		{
+                	$this->continueAttempt();
+		}
 	}
 }
 
@@ -136,6 +144,47 @@ public function setRawData()
 	
        	$_SESSION["raw_data"] = $itemString; 
        	$rawData = $_SESSION["raw_data"]; 
+}
+
+public function leavePractice()
+{
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'calling leave practice','');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+  	//get learning_standard_attempt id
+        $query = "select * from learning_standards_attempts where user_id = ";
+        $query .= $_SESSION["user_id"];
+        $query .= " AND learning_standards_id != 'practice' order by start_time desc limit 1;";
+
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the attempt_id
+                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
+
+                //set level_id
+                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+
+                $ref_id                                       = pg_Result($result, 0, 'learning_standards_id');
+                $_SESSION["ref_id"]  = $ref_id;
+
+                if ($ref_id == 'evaluation')
+                {
+                        $evaluation = new Evaluation();
+                }
+                if ($ref_id == 'remediate')
+                {
+                        //pass 0 in for start new and 0 for type id as we are returning to remediate.
+                        $remediate = new Remediate(0,0);
+                }
+                if ($ref_id == 'normal')
+                {
+                        $normal = new Normal(0);
+                }
+        }
 }
 //end of class
 }

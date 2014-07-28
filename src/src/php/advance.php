@@ -2,6 +2,7 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluation.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/practice.php");
 
 class Advance 
 {
@@ -60,6 +61,15 @@ public function newLearningStandard()
         if ($_SESSION["ref_id"] == 'normal')
         {
 		return new Evaluation();
+	}
+	//practice needs to do so work to find out where to go next.
+        if ($_SESSION["ref_id"] == 'practice')
+        {
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'func newLering','prac');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+		//params of 0,0,1 will tell practice class to figure out where to go based on you last learning standard attempt that wasnt practice
+		return new Practice(0,0,1);
 	}
 }
 
