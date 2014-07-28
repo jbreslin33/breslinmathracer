@@ -24,15 +24,6 @@ Extends: Shape,
         buttonHit: function()
         {
 		APPLICATION.log('submit');
-		/*
-		if (APPLICATION.mGame.mSheet.getItem().mShowPractice == true)
-		{
-			APPLICATION.mGame.mSheet.getItem().mShowPractice = false;
-		}	
-		else
-		{
-			APPLICATION.mGame.mSheet.getItem().mShowPractice = true;
-		}
-		*/
+		APPLICATION.mGotoPractice = true;
         }
 });

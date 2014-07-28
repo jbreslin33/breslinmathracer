@@ -41,6 +41,7 @@ Extends: Application,
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;
+		this.mGotoPractice = false;
 
 		this.mWaitingOnLevelData = false;
 
@@ -58,6 +59,7 @@ Extends: Application,
                 this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
                 this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
                 this.mREMEDIATE_APPLICATION                 = new REMEDIATE_APPLICATION(this);
+                this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);

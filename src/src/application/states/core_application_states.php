@@ -161,6 +161,11 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mREMEDIATE_APPLICATION);
 	}
+	
+	if (application.mGotoPractice)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
 },
 exit: function(application)
 {
@@ -267,3 +272,38 @@ exit: function(application)
 
 });
 
+var PRACTICE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::PRACTICE_APPLICATION');
+        }
+        //tell db remediate student on item type answered wrong
+        //application.practice(application.mGame.mSheet.getItem().mType);
+},
+
+execute: function(application)
+{
+/*
+        if (application.mGame.mReadyForNormalApplication)
+        {
+                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+        }
+*/
+},
+
+exit: function(application)
+{
+        application.mGame.mReadyForNormalApplication = false;
+        application.mHud.setLevel(application.mLevel,application.mLevels);
+}
+
+});
