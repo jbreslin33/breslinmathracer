@@ -42,7 +42,7 @@ Extends: Application,
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;
 		this.mGotoPractice = false;
-		this.mWaitOnReturn = false;
+		this.mWaitForReturn = false;
 
 		this.mWaitingOnLevelData = false;
 
@@ -95,7 +95,7 @@ Extends: Application,
                         	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
-				APPLICATION.mWaitOnReturn = false; 
+				APPLICATION.mWaitForReturn = false; 
 
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
