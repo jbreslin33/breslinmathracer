@@ -87,6 +87,13 @@ execute: function(sheet)
                		sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
 		}
 	}
+/*
+	if (APPLICATION.mWaitOnPractice == true)
+	{
+               	sheet.mStateMachine.changeState(sheet.mPRACTICE_SHEET);
+	}
+*/
+
 },
 
 exit: function(sheet)
@@ -208,6 +215,36 @@ exit: function(sheet)
 
 });
 
+var PRACTICE_SHEET = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(sheet)
+{
+        if (sheet.mStateLogs)
+        {
+                APPLICATION.log('SHEET::PRACTICE_SHEET');
+        }
+},
+
+execute: function(sheet)
+{
+       // if (APPLICATION.mWaitOnPractice == false)
+        //{
+                sheet.mStateMachine.changeState(sheet.mEND_SHEET);
+        //}
+},
+
+exit: function(sheet)
+{
+        //sheet.hideVictoryShapes();
+}
+
+});
 
 var END_SHEET = new Class(
 {

@@ -16,8 +16,6 @@ execute: function(application)
         {
                 application.mGame.update();
         }
-	//get a new game if neccesary
-	application.gameDecider();
 },
 
 exit: function(application)
@@ -147,6 +145,8 @@ enter: function(application)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION');
 	}
+	//get a new game if neccesary
+	application.gameDecider();
 },
 
 execute: function(application)
@@ -171,6 +171,7 @@ exit: function(application)
 {
 	application.mLevelCompleted = false;
 	application.mEvaluationFailed = false;
+	application.mGotoPractice = false;
 }
 
 });
@@ -282,23 +283,26 @@ initialize: function()
 
 enter: function(application)
 {
-	application.mGotoPractice = false;
         if (application.mStateLogs)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
-        //tell db  practice student on item type 
-        application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
+        
+	application.practice();
+
+	//could we just go there directly do we need game decider???
+        if (application.mGame)
+       	{ 
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }      
+        application.mGameName = "practice";
+        application.mGame = new Practice(APPLICATION);
 },
 
 execute: function(application)
 {
-	
-//        if (application.mGame.mReadyForNormalApplication)
- //       {
-                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-  //      }
-
+	application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 },
 
 exit: function(application)

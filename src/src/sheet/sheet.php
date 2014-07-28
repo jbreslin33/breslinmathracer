@@ -41,6 +41,7 @@ var Sheet = new Class(
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
                 this.mLEVEL_FAILED_SHEET = new LEVEL_FAILED_SHEET(this);
                 this.mEVALUATION_FAILED_SHEET = new EVALUATION_FAILED_SHEET(this);
+                this.mPRACTICE_SHEET = new PRACTICE_SHEET(this);
                 this.mEND_SHEET          = new END_SHEET(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_SHEET);

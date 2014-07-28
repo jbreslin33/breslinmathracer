@@ -42,6 +42,7 @@ Extends: Application,
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;
 		this.mGotoPractice = false;
+		this.mWaitOnPractice = false;
 
 		this.mWaitingOnLevelData = false;
 
@@ -91,6 +92,11 @@ Extends: Application,
 
                         	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+				if (APPLICATION.mRef_id == 'practice')
+				{
+					APPLICATION.mWaitOnPractice = false;
+				}
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
@@ -268,7 +274,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-        practice: function(typeid)
+        practice: function(itemtypesid,transactioncode)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -279,24 +285,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid,true);
+                xmlhttp.open("POST","../../web/php/practice.php",true);
                 xmlhttp.send();
         },
 
