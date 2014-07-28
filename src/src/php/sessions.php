@@ -22,8 +22,9 @@ public function process()
 	{
 		$_SESSION["subject_id"] = 1;
 	}
-	//$query = "select id, learning_standards_id from learning_standards_attempts where learning_standards_id != 'practice' AND user_id = ";
-	$query = "select id, learning_standards_id from learning_standards_attempts where user_id = ";
+
+	//get the latest one that is not complete
+	$query = "select id, learning_standards_id from learning_standards_attempts where end_time is null AND user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
 	
@@ -38,8 +39,6 @@ public function process()
 
 		$_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
                 $_SESSION["ref_id"]  = $ref_id;
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'learning_stanrdard','$learning_standards_attempts_id');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 		if ($ref_id == 'evaluation')
 		{
