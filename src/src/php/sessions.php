@@ -22,7 +22,8 @@ public function process()
 	{
 		$_SESSION["subject_id"] = 1;
 	}
-	$query = "select id, learning_standards_id from learning_standards_attempts where learning_standards_id != 'practice' AND user_id = ";
+	//$query = "select id, learning_standards_id from learning_standards_attempts where learning_standards_id != 'practice' AND user_id = ";
+	$query = "select id, learning_standards_id from learning_standards_attempts where user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
 	
@@ -52,6 +53,10 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		if ($ref_id == 'normal')
 		{
 			$normal = new Normal(0);
+		}
+		if ($ref_id == 'practice')
+		{
+			$practice = new Practice(0,0,0);
 		}
 	}
 }
