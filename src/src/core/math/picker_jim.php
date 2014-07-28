@@ -12,6 +12,8 @@ initialize: function(sheet)
 
 getItem: function(id)
 {
+        id = id.replace(/^\s+|\s+$/g,'')
+
 	//k.cc.b.5
 	if (id == 'k.cc.b.5_1')
 	{
