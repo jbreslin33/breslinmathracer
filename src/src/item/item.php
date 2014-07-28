@@ -5,7 +5,7 @@ var Item = new Class(
 {
         initialize: function(sheet)
         {
-		this.mStateLogs = true;		
+		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
 	
@@ -183,7 +183,7 @@ var Item = new Class(
                 this.mPracticeInfoButton.mMesh.innerHTML = 'PRACTICE ITEM';
                 this.addShape(this.mPracticeInfoButton);
 		
-		this.mLeavePracticeButton = new LeavePracticeButton(200,50,440,225,this.mSheet.mGame,"BUTTON","","");
+		this.mLeavePracticeButton = new LeavePracticeButton(200,50,575,225,this.mSheet.mGame,"BUTTON","","");
                 this.mLeavePracticeButton.mMesh.innerHTML = 'LEAVE PRACTICE';
                 this.addShape(this.mLeavePracticeButton);
 
