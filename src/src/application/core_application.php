@@ -470,5 +470,18 @@ Extends: Application,
                                	this.mGame = new Remediate(APPLICATION);
 			}
                 }
+		if (this.mRef_id == 'practice')
+		{ 
+             		if (this.mGameName != "practice")
+                       	{
+				if (this.mGame)
+				{
+					this.mGame.destructor();
+					this.mGame = 0;
+				}
+                               	this.mGameName = "practice";
+                               	this.mGame = new Practice(APPLICATION);
+			}
+                }
 	}
 });
