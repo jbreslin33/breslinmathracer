@@ -5,9 +5,10 @@ class Practice
 {
     private $mDatabaseConnection;
 
-function __construct($startNew, $leavePractice)
+function __construct($typeid, $startNew, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
+	$this->mTypeID = $typeid;
 
 	if ($leavePractice)
 	{
@@ -119,14 +120,9 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'setRawd','');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	$itemString = "";
-	$itemString .= $this->mTypeID;
-	$itemString .= ":";
-	
-       	$_SESSION["raw_data"] = $itemString; 
-       	$rawData = $_SESSION["raw_data"]; 
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$this->mTypeID','typeid');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+       	$_SESSION["raw_data"] = $this->mTypeID; 
 }
 
 public function leavePractice()
