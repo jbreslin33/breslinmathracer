@@ -274,7 +274,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-        practice: function(itemtypesid,transactioncode)
+	practice: function(typeid)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -285,7 +285,24 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../web/php/practice.php",true);
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+		}
+                xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid,true);
                 xmlhttp.send();
         },
 
