@@ -42,7 +42,7 @@ enter: function(item)
 execute: function(item)
 {
 	//if your THE ITEM then go to wait state
-	if (item.mSheet.mItem == item)
+	if (item.mSheet.mItem == item && item.mSheet.mStateMachine.currentState() == item.mSheet.mNORMAL_SHEET)
 	{
 		item.mStateMachine.changeState(item.mWAITING_ON_ANSWER_ITEM);
 	}
@@ -82,6 +82,9 @@ enter: function(item)
  
 	//try to set focus
 	item.setTheFocus();
+
+	//show item type id in Game hud
+	APPLICATION.mHud.setProgression(item.mType);	
 },
 
 execute: function(item)
