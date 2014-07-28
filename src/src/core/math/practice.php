@@ -10,7 +10,8 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-	
+
+		APPLICATION.log('practice const');	
 		this.mSheet = new s_practice(this);	
 		this.mSheet.createItems();
 		this.mSheet.createShapes();

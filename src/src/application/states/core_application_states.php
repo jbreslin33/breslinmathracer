@@ -287,14 +287,14 @@ enter: function(application)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
-	application.mWaitForReturn = false;
+	application.mWaitForReturn = true;
       	application.log('typeidselect:' + application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);  
 	application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
 },
 
 execute: function(application)
 {
-	if (application.mWaitForReturn)
+	if (application.mWaitForReturn == false)
 	{
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 	}
