@@ -90,6 +90,7 @@ Extends: Application,
                         	APPLICATION.mFirstName = responseArray[6];
                         	APPLICATION.mLastName = responseArray[7];
                         	APPLICATION.mRawData = responseArray[8];
+				APPLICATION.log('rawData:' + APPLICATION.mRawData); 
 
                         	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
