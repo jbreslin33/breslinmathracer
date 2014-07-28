@@ -59,7 +59,7 @@ Extends: Application,
                 this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
                 this.mREMEDIATE_APPLICATION                 = new REMEDIATE_APPLICATION(this);
 
-                this.mCoreStateMachine.setGlobalState(this.mGLOBAL_APPLICATION);
+                this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);
         },
  	

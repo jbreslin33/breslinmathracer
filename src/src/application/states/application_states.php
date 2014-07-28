@@ -12,10 +12,6 @@ enter: function(application)
 
 execute: function(application)
 {
-	if (application.mGame)
-	{
-		application.mGame.update();
-	}
 },
 
 exit: function(application)
