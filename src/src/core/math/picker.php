@@ -13,7 +13,6 @@ initialize: function(sheet)
 getItem: function(id)
 {
 	id = id.replace(/^\s+|\s+$/g,'')
-	APPLICATION.log('id in getItem:' + id + 'end');
 	//k.cc.a.1
 	if (id == 'k.cc.a.1_1')
 	{
@@ -29,7 +28,6 @@ getItem: function(id)
 	}
 	if (id == 'k.cc.a.1_4')
 	{
-		APPLICATION.log('id is good');
 		return new i_k_cc_a_1__4(this.mSheet);
 	}
 
