@@ -81,6 +81,7 @@
 <script type="text/javascript" src="/src/core/math/normal.php"></script>
 <script type="text/javascript" src="/src/core/math/evaluation.php"></script>
 <script type="text/javascript" src="/src/core/math/remediate.php"></script>
+<script type="text/javascript" src="/src/core/math/practice.php"></script>
 <script type="text/javascript" src="/src/core/math/fast.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
