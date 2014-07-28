@@ -142,6 +142,13 @@ public function setRawData()
 
 public function leavePractice()
 {
+	// lets close out this practice
+        $update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
+        $update .= $_SESSION["learning_standards_attempts_id"];
+        $update .=  ";";
+
+        $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+
   	//get learning_standard_attempt id
         $query = "select * from learning_standards_attempts where user_id = ";
         $query .= $_SESSION["user_id"];
