@@ -282,28 +282,28 @@ initialize: function()
 
 enter: function(application)
 {
+	application.mGotoPractice = false;
         if (application.mStateLogs)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
         //tell db  practice student on item type 
-	APPLICATION.log('id from seelc:' + application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text); 
         application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
 },
 
 execute: function(application)
 {
-/*
-        if (application.mGame.mReadyForNormalApplication)
-        {
+	
+//        if (application.mGame.mReadyForNormalApplication)
+ //       {
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-        }
-*/
+  //      }
+
 },
 
 exit: function(application)
 {
-        application.mGame.mReadyForNormalApplication = false;
+       	application.mGame.mReadyForNormalApplication = false;
         application.mHud.setLevel(application.mLevel,application.mLevels);
 }
 
