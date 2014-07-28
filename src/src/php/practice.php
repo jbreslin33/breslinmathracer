@@ -28,6 +28,9 @@ function __construct($startNew, $leavePractice)
 
 public function insertNewAttempt()
 {
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'insert new','');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
       	//insert learning_standard_attempt
         $insert = "insert into learning_standards_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
@@ -64,6 +67,8 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'continue att','');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         $_SESSION["ref_id"] = 'practice';
 
         //BEGIN NEW CODE
@@ -114,6 +119,8 @@ public function continueAttempt()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'setRawd','');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	$itemString = "";
 	$itemString .= $this->mTypeID;
 	$itemString .= ":";
@@ -158,6 +165,9 @@ public function leavePractice()
                 }
                 if ($ref_id == 'normal')
                 {
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'in normal','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
                         $normal = new Normal(0);
                 }
         }

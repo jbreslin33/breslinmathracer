@@ -42,7 +42,7 @@ Extends: Application,
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;
 		this.mGotoPractice = false;
-		this.mWaitOnPractice = false;
+		this.mWaitOnReturn = false;
 
 		this.mWaitingOnLevelData = false;
 
@@ -81,6 +81,7 @@ Extends: Application,
         		if (codeNumber == APPLICATION.FULL)
                 	{
                 		APPLICATION.mRef_id = responseArray[1];
+				APPLICATION.log('recieved refID:' + APPLICATION.mRef_id); 
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                         	APPLICATION.mLevel = responseArray[2];
                         	APPLICATION.mLevels = responseArray[3];
@@ -93,10 +94,8 @@ Extends: Application,
                         	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
-				if (APPLICATION.mRef_id == 'practice')
-				{
-					APPLICATION.mWaitOnPractice = false;
-				}
+				APPLICATION.mWaitOnReturn = false; 
+
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
