@@ -286,8 +286,9 @@ enter: function(application)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
-        //tell db remediate student on item type answered wrong
-        //application.practice(application.mGame.mSheet.getItem().mType);
+        //tell db  practice student on item type 
+	APPLICATION.log('id from seelc:' + application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text); 
+        application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
 },
 
 execute: function(application)
