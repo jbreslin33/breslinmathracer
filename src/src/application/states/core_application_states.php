@@ -12,7 +12,12 @@ enter: function(application)
 
 execute: function(application)
 {
-
+        if (application.mGame)
+        {
+                application.mGame.update();
+        }
+	//get a new game if neccesary
+	application.gameDecider();
 },
 
 exit: function(application)
@@ -142,8 +147,6 @@ enter: function(application)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION');
 	}
-	//get a new game if neccesary
-	application.gameDecider();
 },
 
 execute: function(application)
