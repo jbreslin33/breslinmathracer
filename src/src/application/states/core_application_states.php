@@ -287,13 +287,17 @@ enter: function(application)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
+	application.mWaitForReturn = false;
       	application.log('typeidselect:' + application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);  
 	application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
 },
 
 execute: function(application)
 {
-	application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	if (application.mWaitForReturn)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
 },
 
 exit: function(application)
