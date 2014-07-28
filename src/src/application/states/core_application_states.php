@@ -166,12 +166,18 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
 	}
+	
+	if (application.mLeavePractice)
+	{
+		application.mCoreStateMachine.changeState(application.mLEAVE_PRACTICE_APPLICATION);
+	}
 },
 exit: function(application)
 {
 	application.mLevelCompleted = false;
 	application.mEvaluationFailed = false;
 	application.mGotoPractice = false;
+	application.mLeavePractice = false;
 }
 
 });
@@ -288,7 +294,6 @@ enter: function(application)
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
 	application.mWaitForReturn = true;
-      	application.log('typeidselect:' + application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);  
 	application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
 },
 
@@ -307,3 +312,38 @@ exit: function(application)
 }
 
 });
+
+var LEAVE_PRACTICE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::PRACTICE_APPLICATION');
+        }
+        application.mWaitForReturn = true;
+        application.leavePractice();
+},
+
+execute: function(application)
+{
+        if (application.mWaitForReturn == false)
+        {
+                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+        application.mGame.mReadyForNormalApplication = false;
+        application.mHud.setLevel(application.mLevel,application.mLevels);
+}
+
+});
+

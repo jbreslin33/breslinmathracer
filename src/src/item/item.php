@@ -70,6 +70,7 @@ var Item = new Class(
 		this.mTogglePracticeInfoButton = 0;
 		this.mPracticeInfo = 0;
 		this.mPracticeInfoButton = 0;
+		this.mLeavePracticeButton = 0;
 		this.mShowPractice = false;
 
 		//states
@@ -175,12 +176,16 @@ var Item = new Class(
                 this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
 
                 //mPracticeInfo
-                this.mPracticeInfo = new Shape(200,50,150,225,this.mSheet.mGame,"SELECT","","");
+                this.mPracticeInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mPracticeInfo);
                 
-		this.mPracticeInfoButton = new SubmitPracticeItemButton(200,50,400,225,this.mSheet.mGame,"BUTTON","","");
+		this.mPracticeInfoButton = new SubmitPracticeItemButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mPracticeInfoButton.mMesh.innerHTML = 'PRACTICE ITEM';
                 this.addShape(this.mPracticeInfoButton);
+		
+		this.mLeavePracticeButton = new LeavePracticeButton(200,50,440,225,this.mSheet.mGame,"BUTTON","","");
+                this.mLeavePracticeButton.mMesh.innerHTML = 'LEAVE PRACTICE';
+                this.addShape(this.mLeavePracticeButton);
 
 	},
 
@@ -355,12 +360,14 @@ var Item = new Class(
 
                 this.mPracticeInfo.setVisibility(true);
                 this.mPracticeInfoButton.setVisibility(true);
+                this.mLeavePracticeButton.setVisibility(true);
         },
 
         hidePractice: function()
         {      
                 this.mPracticeInfo.setVisibility(false);
                 this.mPracticeInfoButton.setVisibility(false);
+                this.mLeavePracticeButton.setVisibility(false);
         },
 
 	showAnswerInputs: function()

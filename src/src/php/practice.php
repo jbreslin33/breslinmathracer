@@ -1,5 +1,8 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluation.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/remediate.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
 
 class Practice 
 {

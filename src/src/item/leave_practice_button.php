@@ -1,4 +1,4 @@
-var SubmitPracticeItemButton = new Class(
+var LeavePracticeButton = new Class(
 {
 Extends: Shape,
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
@@ -23,6 +23,6 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-		APPLICATION.mGotoPractice = true;
+		APPLICATION.mLeavePractice = true;
         }
 });

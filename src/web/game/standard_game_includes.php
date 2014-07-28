@@ -56,6 +56,7 @@
 <script type="text/javascript" src="/src/item/toggle_item_info_button.php"></script>
 <script type="text/javascript" src="/src/item/toggle_practice_info_button.php"></script>
 <script type="text/javascript" src="/src/item/submit_practice_item_button.php"></script>
+<script type="text/javascript" src="/src/item/leave_practice_button.php"></script>
 <script type="text/javascript" src="/src/item/collide_item.php"></script>
 <script type="text/javascript" src="/src/item/states/states.php"></script>
 <script type="text/javascript" src="/src/question/question.php"></script>
