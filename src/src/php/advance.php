@@ -48,8 +48,20 @@ public function bumpLevelUp($levelVar)
         $_SESSION["level"] = $levelVar;
 }
 
+public function updateLearningStandardsAttempts()
+{
+        //update levelattempts to say we passed. keep in mind transaction_code 1 is same as level bump.
+        $update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
+        $update .= $_SESSION["learning_standards_attempts_id"];
+        $update .=  ";";
+
+        $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+}
+
 public function newLearningStandard()
 {
+	$this->updateLearningStandardsAttempts();
+
         if ($_SESSION["ref_id"] == 'evaluation')
         {
 		return new Normal(1);
