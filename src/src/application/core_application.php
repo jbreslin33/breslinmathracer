@@ -42,6 +42,7 @@ Extends: Application,
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;
 		this.mGotoPractice = false;
+		this.mLeavePractice = false;
 		this.mWaitForReturn = false;
 
 		this.mWaitingOnLevelData = false;
@@ -61,6 +62,7 @@ Extends: Application,
                 this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
                 this.mREMEDIATE_APPLICATION                 = new REMEDIATE_APPLICATION(this);
                 this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
+                this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);
@@ -303,6 +305,38 @@ Extends: Application,
                         }
 		}
                 xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid,true);
+                xmlhttp.send();
+        },
+
+        leavePractice: function(typeid)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/leave_practice.php",true);
                 xmlhttp.send();
         },
 
