@@ -57,11 +57,14 @@ public function setRawData()
 	$good = true;
 	while($good)	
 	{
-		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON levelattempts.learning_standards_attempts_id=learning_standards_attempts.id where progression > ";
+		$query = "select item_types_id, progression from item_attempts INNER JOIN item_types ON item_attempts.item_types_id=item_types.id JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON levelattempts.learning_standards_attempts_id=learning_standards_attempts.id JOIN learning_standards ON learning_standards.id=learning_standards_attempts.learning_standards_id where learning_standards.id != 'practice' AND learning_standards.id != 'remediate' AND progression > ";
 		$query .= $progression_counter; 
 		$query .= " AND user_id = ";
 		$query .= $_SESSION["user_id"];
 		$query .= " order by progression asc limit 1;";
+
+//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$query','query');";
+//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 		
