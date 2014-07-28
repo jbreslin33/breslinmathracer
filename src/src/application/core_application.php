@@ -512,8 +512,8 @@ Extends: Application,
                 }
 		if (this.mRef_id == 'practice')
 		{ 
-             		if (this.mGameName != "practice")
-                       	{
+             		//if (this.mGameName != "practice")
+                       	//{
 				if (this.mGame)
 				{
 					this.mGame.destructor();
@@ -521,7 +521,7 @@ Extends: Application,
 				}
                                	this.mGameName = "practice";
                                	this.mGame = new Practice(APPLICATION);
-			}
+			//}
                 }
 	}
 });
