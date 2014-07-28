@@ -175,7 +175,7 @@ var Item = new Class(
                 this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
 
                 //mPracticeInfo
-                this.mPracticeInfo = new Shape(200,50,100,225,this.mSheet.mGame,"SELECT","","");
+                this.mPracticeInfo = new Shape(200,50,150,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mPracticeInfo);
                 
 		this.mPracticeInfoButton = new SubmitPracticeItemButton(200,50,400,225,this.mSheet.mGame,"BUTTON","","");
