@@ -38,7 +38,44 @@ var NameMachine = new Class(
 		this.mDayOfWeekArray.push("Thursday");
 		this.mDayOfWeekArray.push("Friday");
 		this.mDayOfWeekArray.push("Saturday");
+
+		//played activities
+		this.mPlayedActivityArray = new Array();
+		this.mUsedPlayedActivityElementArray = new Array();
+		this.mPlayedActivityArray.push("Soccer");
+		this.mPlayedActivityArray.push("Baseball");
+		this.mPlayedActivityArray.push("Football");
+		this.mPlayedActivityArray.push("Hockey");
+		
+
 	},
+
+        getPlayedActivity: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mPlayedActivityArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedPlayedActivityElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedPlayedActivieyElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedPlayedActivityElementArray.push(randomElement);
+                return this.mPlayedActivityArray[randomElement];
+        },
 
         getDayOfWeek: function()
         {
