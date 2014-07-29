@@ -80,6 +80,9 @@ Extends: ThreeButtonItem,
                 this.mName = this.mNameMachine.getName('girl');
                 this.mNameTwo = this.mNameMachine.getName('girl');
                 this.mThing = this.mNameMachine.getThing();
+                this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
+		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
+		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
 
                 this.a = '';
                 this.b = '';
@@ -109,6 +112,12 @@ Extends: ThreeButtonItem,
 		{	
                 	this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
 		}
+		if (randomProblem == 1)
+		{
+			this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' a total of ' + this.z + ' on ' + this.mDayOfWeekOne + ' and ' + this.mDayOfWeekTwo + '. ' +  this.mNameMachine.getPronoun(this.mName,1) + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' minutes on ' + this.mDayOfWeekONe + '. How many minutes did he play on ' + this.mDayOfWeekTwo + '? Which equation shows this problem?');   
+		}
+
+		
                 
 		this.setAnswer(this.c,0);
 
