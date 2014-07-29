@@ -49,6 +49,12 @@ getItem: function(id)
         {
                 return new i_k_oa_a_1__1(this.mSheet);
         }
+        
+        if (id == 'k.oa.a.1_2')
+        {
+		APPLICATION.log('if id:' + id);
+                return new i_k_oa_a_1__2(this.mSheet);
+        }
 
 	return 0;	
 }
