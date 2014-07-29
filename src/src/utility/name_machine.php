@@ -42,10 +42,10 @@ var NameMachine = new Class(
 		//played activities
 		this.mPlayedActivityArray = new Array();
 		this.mUsedPlayedActivityElementArray = new Array();
-		this.mPlayedActivityArray.push("Soccer");
-		this.mPlayedActivityArray.push("Baseball");
-		this.mPlayedActivityArray.push("Football");
-		this.mPlayedActivityArray.push("Hockey");
+		this.mPlayedActivityArray.push("soccer");
+		this.mPlayedActivityArray.push("baseball");
+		this.mPlayedActivityArray.push("football");
+		this.mPlayedActivityArray.push("hockey");
 
 		this.mTimeIncrementArray = new Array();
 		this.mUsedTimeIncrementElementArray = new Array();
@@ -58,9 +58,78 @@ var NameMachine = new Class(
 		this.mTimeIncrementArray.push("years");
 		this.mTimeIncrementArray.push("decades");
 		this.mTimeIncrementArray.push("centuries");
-		
+	
+		//fruit
+		this.mFruitArray = new Array();
+		this.mUsedFruitElementArray = new Array();
+		this.mFruitArray.push("apples");
+		this.mFruitArray.push("bananas");
+		this.mFruitArray.push("oranges");
+		this.mFruitArray.push("plums");
+
+		//vegetables	
+		this.mVegetableArray = new Array();
+		this.mUsedVegetableElementArray = new Array();
+		this.mVegetableArray.push("onions");
+		this.mVegetableArray.push("mushrooms");
+		this.mVegetableArray.push("potatoes");
 
 	},
+
+        getVegetable: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mVegetableArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedVegetableElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedVegetableElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedVegetableElementArray.push(randomElement);
+                return this.mVegetableArray[randomElement];
+        },
+
+        getFruit: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mFruitArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedFruitElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedFruitElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedFruitElementArray.push(randomElement);
+                return this.mFruitArray[randomElement];
+        },
+
 
         getTimeIncrement: function(from,till)
         {
@@ -119,7 +188,7 @@ var NameMachine = new Class(
                         var noDup = false;
                         for (i=0; i < this.mUsedPlayedActivityElementArray.length; i++)
                         {
-                                if (randomElement == this.mUsedPlayedActivieyElementArray[i])
+                                if (randomElement == this.mUsedPlayedActivityElementArray[i])
                                 {
                                         noDup = true;
                                 }

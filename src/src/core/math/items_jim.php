@@ -10,10 +10,12 @@ Extends: ThreeButtonItem,
 
                 this.mNameMachine = new NameMachine();
                 this.mName = this.mNameMachine.getName('girl');
+                this.mNameTwo = this.mNameMachine.getName('boy');
                 this.mDayOne = this.mNameMachine.getDayOfWeek();
                 this.mDayTwo = this.mNameMachine.getDayOfWeek();
                 this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
-                this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','days');
+                this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
+                this.mFruit = this.mNameMachine.getFruit();
 
                 this.a = '';
                 this.b = '';
@@ -36,7 +38,20 @@ Extends: ThreeButtonItem,
                         this.c = this.x + ' - ' + this.y + ' = ' + ' _';
                 }
 
-                this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOne + ' and '  + this.y + ' ' + this.mTimeIncrement + ' on ' + this.mDayTwo + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mName) + ' play on ' + this.mDayOne + ' than ' + this.mDayTwo + '? Which equation shows this problem?');
+		//adding more variety		
+                var randomProblem = Math.floor((Math.random()*7)+2);
+                randomProblem = 1;
+		if (randomProblem == 0)
+		{	
+                	this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOne + ' and '  + this.y + ' ' + this.mTimeIncrement + ' on ' + this.mDayTwo + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mName) + ' play on ' + this.mDayOne + ' than ' + this.mDayTwo + '? Which equation shows this problem?');
+		}
+
+		//john ate 7 strawberries and sam ate 5 strawberries. How may more strawberries did john eat than sam? Which equati.....
+		if (randomProblem == 1) 
+		{
+                	this.setQuestion(this.mName + ' ate ' + this.x + ' ' + this.mFruit + ' and ' + this.mNameTwo + ' ate ' + this.y + ' ' + this.mFruit + '. How many more pieces of fruit did ' + this.mName + ' eat than ' + this.mNameTwo + '? Which equation shows this problem?');
+		}
+
                 this.setAnswer(this.c,0);
 
                 this.mButtonA.setAnswer(this.a);
