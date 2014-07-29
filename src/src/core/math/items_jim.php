@@ -421,8 +421,8 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.a.3_1';
 
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
 
 		var a = Math.floor(Math.random()*21);
 		var b = 0;
@@ -476,8 +476,8 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.a.3_2';
 
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
 
                 var a = 0;
                 var b = 0;
@@ -512,8 +512,8 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.a.3_3';
 
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
 
                 var a = Math.floor(Math.random()*5)+11;
                 var b = 0;
@@ -567,8 +567,8 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.a.3_4';
 
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
 
                 var a = Math.floor(Math.random()*5)+16;
                 var b = 0;
@@ -620,8 +620,8 @@ initialize: function(sheet)
 	this.parent(sheet);
         this.mType = 'k.cc.b.5_4';
 
-        this.mPictureMachine = new PictureMachine();
-        this.mPictureLink = this.mPictureMachine.getPictureLink();
+        this.mNameMachine = new NameMachine();
+        this.mPictureLink = this.mNameMachine.getPictureLink();
  
 	//BUTTON A
        	this.mButtonA.setPosition(100,100);
@@ -705,8 +705,8 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.b.5_3';
    
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
  
 		//BUTTON A
                 this.mButtonA.setPosition(100,100);
@@ -790,8 +790,8 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = 'k.cc.b.5_2';
   
-        this.mPictureMachine = new PictureMachine();
-        this.mPictureLink = this.mPictureMachine.getPictureLink();
+        this.mNameMachine = new NameMachine();
+        this.mPictureLink = this.mNameMachine.getPictureLink();
  
 	//BUTTON A
         this.mButtonA.setPosition(100,100);
@@ -845,8 +845,8 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.b.5_1';
    
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
 
 		//BUTTON A
                 this.mButtonA.setPosition(100,100);
@@ -945,9 +945,9 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.c.6_1';
 
-	        this.mPictureMachine = new PictureMachine();
-        	this.mPictureLinkLeft = this.mPictureMachine.getPictureLink();
-        	this.mPictureLinkRight = this.mPictureMachine.getPictureLink();
+	        this.mNameMachine = new NameMachine();
+        	this.mPictureLinkLeft = this.mNameMachine.getPictureLink();
+        	this.mPictureLinkRight = this.mNameMachine.getPictureLink();
  
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
@@ -1013,9 +1013,6 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = 'k.cc.c.7_1';
 
-        	this.mPictureMachine = new PictureMachine();
-        	this.mPictureLink = this.mPictureMachine.getPictureLink();
-    
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
                 this.mButtonB.setPosition(380,200);
