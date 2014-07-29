@@ -223,8 +223,8 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.oa.a.1_1';
              
-		this.mPictureMachine = new PictureMachine();
-		this.mPictureLink = this.mPictureMachine.getPictureLink();
+		this.mNameMachine = new NameMachine();
+		this.mPictureLink = this.mNameMachine.getPictureLink();
  
 		this.a = 0;
 		this.b = 0;
@@ -240,16 +240,7 @@ Extends: ThreeButtonItem,
 			//variables
                 	this.x = Math.floor((Math.random()*5)+1);
                 	this.y = Math.floor((Math.random()*5)+1);
-
-			//correct answer
-			if (this.sign == 0)
-			{
-				this.c = this.x + this.y;  
-			}
-			else
-			{
-				this.c = this.x - this.y;  
-			}
+			this.c = this.x + this.y;  
 	
 			//wrong answers 
 			this.a = Math.floor(Math.random()*6);
@@ -272,7 +263,6 @@ Extends: ThreeButtonItem,
 		var space = 50;
 
 		var i = 0;
-		APPLICATION.log(this.x + ':' + this.y + '=' + this.c);
 		while (i < this.x)
                 {
                         x = parseInt(x + space);
@@ -280,18 +270,9 @@ Extends: ThreeButtonItem,
 			i++;
                 }
 	
-		if (this.sign == 0)
-		{
-                        x = parseInt(x + space);
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/plus.png","",""));	
-			i++;
-		}
-		else
-		{
-                        x = parseInt(x + space);
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/minus.png","",""));	
-			i++;
-		}
+                x = parseInt(x + space);
+		this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/plus.png","",""));	
+		
 		i = 0;
 		while (i < this.y)
                 {
