@@ -8,7 +8,11 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
 
                 this.mType = 'k.oa.a.1_1';
-              
+             
+		this.mPictureMachine = new PictureMachine();
+
+		this.mPictureLink = this.mPictureMachine.getPictureLink();
+ 
 		this.a = 0;
 		this.b = 0;
 		this.c = -1;
@@ -59,7 +63,7 @@ Extends: ThreeButtonItem,
 		while (i < this.x)
                 {
                         x = parseInt(x + space);
-                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
 			i++;
                 }
 	
@@ -79,7 +83,7 @@ Extends: ThreeButtonItem,
 		while (i < this.y)
                 {
                         x = parseInt(x + space);
-                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
 			i++;
                 }
                 x = parseInt(x + space);
