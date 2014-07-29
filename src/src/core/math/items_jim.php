@@ -1,4 +1,59 @@
-/* TYPE_DESCRIPTION: When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
+/* TYPE_DESCRIPTION: Pick the number sentence that represents the word description. */
+var i_k_oa_a_1__2 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.oa.a.1_2';
+
+                this.mPictureMachine = new PictureMachine();
+                this.mPictureLink = this.mPictureMachine.getPictureLink();
+
+                this.a = 0;
+                this.b = 0;
+                this.c = -1;
+
+                this.x = 0;
+                this.y = 0;
+
+                this.sign = Math.floor(Math.random()*2);
+
+                while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
+                {
+                        //variables
+                        this.x = Math.floor((Math.random()*5)+1);
+                        this.y = Math.floor((Math.random()*5)+1);
+
+                        //correct answer
+                        if (this.sign == 0)
+                        {
+                                this.c = this.x + this.y;
+                        }
+                        else
+                        {
+                                this.c = this.x - this.y;
+                        }
+
+                        //wrong answers
+                        this.a = Math.floor(Math.random()*6);
+                        this.b = Math.floor(Math.random()*6);
+                }
+
+                this.setQuestion('Solve.');
+                this.setAnswer(parseInt(this.c),0);
+
+                this.mButtonA.setAnswer(this.a);
+                this.mButtonB.setAnswer(this.b);
+                this.mButtonC.setAnswer(this.c);
+                this.shuffle(10);
+        }
+});
+
+
+
+/* TYPE_DESCRIPTION: Add and subtract with 5 using pictures and symbols. */
 
 var i_k_oa_a_1__1 = new Class(
 {
