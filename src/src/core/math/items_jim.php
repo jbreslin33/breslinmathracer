@@ -107,8 +107,7 @@ Extends: ThreeButtonItem,
                 }
 
 		//adding more variety		
-                var randomProblem = Math.floor(Math.random()*3);
-                randomProblem = 1;
+                var randomProblem = Math.floor(Math.random()*2);
 		if (randomProblem == 0)
 		{	
                 	this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
