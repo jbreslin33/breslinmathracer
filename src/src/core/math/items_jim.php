@@ -18,30 +18,19 @@ Extends: ThreeButtonItem,
                 this.x = 0;
                 this.y = 0;
 
-                this.sign = Math.floor(Math.random()*2);
-
                 while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
                 {
                         //variables
                         this.x = Math.floor((Math.random()*5)+1);
                         this.y = Math.floor((Math.random()*5)+1);
-
-                        //correct answer
-                        if (this.sign == 0)
-                        {
-                                this.c = this.x + this.y;
-                        }
-                        else
-                        {
-                                this.c = this.x - this.y;
-                        }
+                        this.c = this.x + this.y;
 
                         //wrong answers
                         this.a = Math.floor(Math.random()*6);
                         this.b = Math.floor(Math.random()*6);
                 }
 
-                this.setQuestion(this.mName);
+                this.setQuestion(this.mName + ' grew ' + this.c + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year?');
                 this.setAnswer(parseInt(this.c),0);
 
                 this.mButtonA.setAnswer(this.a);

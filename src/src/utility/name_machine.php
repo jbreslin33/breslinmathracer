@@ -19,6 +19,38 @@ var NameMachine = new Class(
 		this.mGirlNameArray.push("Doris"); 
 	},
 
+	getPronoun: function(name,uppercase)
+	{
+		for (i=0; i < this.mBoyNameArray.length; i++)
+		{
+			if (name == this.mBoyNameArray[i])
+			{
+				if (uppercase == 0)
+				{
+					return 'he';
+				}
+				else
+				{
+					return 'He';
+				}
+			}
+		}
+                for (i=0; i < this.mGirlNameArray.length; i++)
+                {
+                        if (name == this.mGirlNameArray[i])
+                        {
+                                if (uppercase == 0)
+                                {
+                                        return 'she';
+                                }
+                                else
+                                {
+                                        return 'She';
+                                }
+                        }
+                }
+	},
+
 	getName: function(gender)
 	{
 		var keepGoing = true; 	
