@@ -40,10 +40,10 @@ Extends: ThreeButtonItem,
 
 		//adding more variety		
                 var randomProblem = Math.floor((Math.random()*7)+2);
-                randomProblem = 1;
+                randomProblem = 2;
 		if (randomProblem == 0)
 		{	
-                	this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOne + ' and '  + this.y + ' ' + this.mTimeIncrement + ' on ' + this.mDayTwo + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mName) + ' play on ' + this.mDayOne + ' than ' + this.mDayTwo + '? Which equation shows this problem?');
+                	this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOne + ' and '  + this.y + ' ' + this.mTimeIncrement + ' on ' + this.mDayTwo + '. How many more ' + this.mTimeIncrement + ' does ' + this.mNameMachine.getPronoun(this.mName) + ' play on ' + this.mDayOne + ' than ' + this.mDayTwo + '? Which equation shows this problem?');
 		}
 
 		//john ate 7 strawberries and sam ate 5 strawberries. How may more strawberries did john eat than sam? Which equati.....
@@ -51,6 +51,11 @@ Extends: ThreeButtonItem,
 		{
                 	this.setQuestion(this.mName + ' ate ' + this.x + ' ' + this.mFruit + ' and ' + this.mNameTwo + ' ate ' + this.y + ' ' + this.mFruit + '. How many more pieces of fruit did ' + this.mName + ' eat than ' + this.mNameTwo + '? Which equation shows this problem?');
 		}
+		if (randomProblem == 2) 
+		{
+                	this.setQuestion(this.mName + ' has ' + this.x + ' ' + this.mFruit + ' and ' + this.mNameTwo + ' has ' + this.y + ' ' + this.mFruit + '. How many more ' + this.mFruit + ' did ' + this.mName + ' have than ' + this.mNameTwo + '? Which equation shows this problem?');
+		}
+
 
                 this.setAnswer(this.c,0);
 
