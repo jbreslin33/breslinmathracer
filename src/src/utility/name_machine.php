@@ -46,9 +46,66 @@ var NameMachine = new Class(
 		this.mPlayedActivityArray.push("Baseball");
 		this.mPlayedActivityArray.push("Football");
 		this.mPlayedActivityArray.push("Hockey");
+
+		this.mTimeIncrementArray = new Array();
+		this.mUsedTimeIncrementElementArray = new Array();
+		this.mTimeIncrementArray.push("seconds");
+		this.mTimeIncrementArray.push("minutes");
+		this.mTimeIncrementArray.push("hours");
+		this.mTimeIncrementArray.push("days");
+		this.mTimeIncrementArray.push("weeks");
+		this.mTimeIncrementArray.push("months");
+		this.mTimeIncrementArray.push("years");
+		this.mTimeIncrementArray.push("decades");
+		this.mTimeIncrementArray.push("centuries");
 		
 
 	},
+
+        getTimeIncrement: function(from,till)
+        {
+
+		//get from and till elements
+		var fromElement = 0;
+		var tillElement = 0;
+
+               	for (i=0; i < this.mTimeIncrementArray.length; i++)
+		{
+			if (from == this.mTimeIncrementArray[i])
+			{
+				fromElement = i;
+			} 
+			if (till == this.mTimeIncrementArray[i])
+			{
+				tillElement = i;
+			} 
+		}
+
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mTimeIncrementArray.length;
+			var span = parseInt(tillElement - fromElement);
+                        randomElement = Math.floor((Math.random()*span)+fromElement);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedTimeIncrementElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedTimeIncrementElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedTimeIncrementElementArray.push(randomElement);
+                return this.mTimeIncrementArray[randomElement];
+        },
 
         getPlayedActivity: function()
         {
