@@ -1,12 +1,12 @@
-/* TYPE_DESCRIPTION: Pick the number sentence that represents the word description. */
-var i_k_oa_a_1__2 = new Class(
+/* TYPE_DESCRIPTION: Pick the number sentence that represents the subtraction word description. */
+var i_k_oa_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 'k.oa.a.1_2';
+                this.mType = 'k.oa.a.1_4';
 
                 this.mNameMachine = new NameMachine();
                 this.mName = this.mNameMachine.getName('girl');
@@ -17,14 +17,58 @@ Extends: ThreeButtonItem,
 
                 this.x = 0;
                 this.y = 0;
-                this.z = 0;
+                this.z = -1;
 
                 while (this.a == this.b || this.a == this.c || this.b == this.c || this.z < 0 || this.z > 10)
                 {
                         //variables
                         this.x = Math.floor((Math.random()*7)+2);
                         this.y = Math.floor((Math.random()*7)+2);
-			this.z = this.x + this.z;
+                        this.z = this.x + this.y;
+
+                        //wrong answers
+                        this.a = this.x + ' = ' + this.y + ' + ' + ' _'
+                        this.b = this.y + ' = ' + this.x + ' + ' + ' _'
+                        this.c = this.z + ' = ' + this.x + ' + ' + ' _';
+                }
+
+                this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
+                this.setAnswer(this.c,0);
+
+                this.mButtonA.setAnswer(this.a);
+                this.mButtonB.setAnswer(this.b);
+                this.mButtonC.setAnswer(this.c);
+                this.shuffle(10);
+        }
+});
+
+/* TYPE_DESCRIPTION: Pick the number sentence that represents the addition word description. */
+var i_k_oa_a_1__3 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.oa.a.1_3';
+
+                this.mNameMachine = new NameMachine();
+                this.mName = this.mNameMachine.getName('girl');
+
+                this.a = '';
+                this.b = '';
+                this.c = '';
+
+                this.x = 0;
+                this.y = 0;
+                this.z = -1;
+
+                while (this.a == this.b || this.a == this.c || this.b == this.c || this.z < 0 || this.z > 10)
+                {
+                        //variables
+                        this.x = Math.floor((Math.random()*7)+2);
+                        this.y = Math.floor((Math.random()*7)+2);
+			this.z = this.x + this.y;
 
                         //wrong answers
                         this.a = this.x + ' = ' + this.y + ' + ' + ' _' 
@@ -33,7 +77,7 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer(this.c,0);
 
                 this.mButtonA.setAnswer(this.a);
                 this.mButtonB.setAnswer(this.b);
@@ -43,8 +87,99 @@ Extends: ThreeButtonItem,
 });
 
 
+/* TYPE_DESCRIPTION: Subtract with 5 using pictures and symbols. */
 
-/* TYPE_DESCRIPTION: Add and subtract with 5 using pictures and symbols. */
+var i_k_oa_a_1__2 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.oa.a.1_2';
+             
+		this.mPictureMachine = new PictureMachine();
+		this.mPictureLink = this.mPictureMachine.getPictureLink();
+ 
+		this.a = 0;
+		this.b = 0;
+		this.c = -1;
+
+		this.x = 0;	 
+		this.y = 0;	 
+
+		this.sign = Math.floor(Math.random()*2);
+
+		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
+		{
+			//variables
+                	this.x = Math.floor((Math.random()*5)+1);
+                	this.y = Math.floor((Math.random()*5)+1);
+
+			//correct answer
+			if (this.sign == 0)
+			{
+				this.c = this.x + this.y;  
+			}
+			else
+			{
+				this.c = this.x - this.y;  
+			}
+	
+			//wrong answers 
+			this.a = Math.floor(Math.random()*6);
+			this.b = Math.floor(Math.random()*6);
+                }
+
+                this.setQuestion('Solve.');
+                this.setAnswer(parseInt(this.c),0);
+
+                this.mButtonA.setAnswer(this.a);
+                this.mButtonB.setAnswer(this.b);
+                this.mButtonC.setAnswer(this.c);
+                this.shuffle(10);
+        },
+        
+	createQuestionShapes: function()
+        {
+                var x = 0;
+                var y = 100;
+		var space = 50;
+
+		var i = 0;
+		APPLICATION.log(this.x + ':' + this.y + '=' + this.c);
+		while (i < this.x)
+                {
+                        x = parseInt(x + space);
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+			i++;
+                }
+	
+		if (this.sign == 0)
+		{
+                        x = parseInt(x + space);
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/plus.png","",""));	
+			i++;
+		}
+		else
+		{
+                        x = parseInt(x + space);
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/minus.png","",""));	
+			i++;
+		}
+		i = 0;
+		while (i < this.y)
+                {
+                        x = parseInt(x + space);
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+			i++;
+                }
+                x = parseInt(x + space);
+		this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/equal.png","",""));	
+        }
+});
+
+/* TYPE_DESCRIPTION: Add within 5 using pictures and symbols. */
 
 var i_k_oa_a_1__1 = new Class(
 {
