@@ -141,23 +141,12 @@ Extends: ThreeButtonItem,
 		this.x = 0;	 
 		this.y = 0;	 
 
-		this.sign = Math.floor(Math.random()*2);
-
 		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
 		{
 			//variables
                 	this.x = Math.floor((Math.random()*5)+1);
                 	this.y = Math.floor((Math.random()*5)+1);
-
-			//correct answer
-			if (this.sign == 0)
-			{
-				this.c = this.x + this.y;  
-			}
-			else
-			{
-				this.c = this.x - this.y;  
-			}
+			this.c = this.x - this.y;  
 	
 			//wrong answers 
 			this.a = Math.floor(Math.random()*6);
@@ -188,18 +177,9 @@ Extends: ThreeButtonItem,
 			i++;
                 }
 	
-		if (this.sign == 0)
-		{
-                        x = parseInt(x + space);
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/plus.png","",""));	
-			i++;
-		}
-		else
-		{
-                        x = parseInt(x + space);
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/minus.png","",""));	
-			i++;
-		}
+                x = parseInt(x + space);
+		this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/minus.png","",""));	
+		
 		i = 0;
 		while (i < this.y)
                 {
