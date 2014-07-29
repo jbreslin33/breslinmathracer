@@ -11,26 +11,28 @@ Extends: ThreeButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.mName = this.mNameMachine.getName('girl');
 
-                this.a = 0;
-                this.b = 0;
-                this.c = -1;
+                this.a = '';
+                this.b = '';
+                this.c = '';
 
                 this.x = 0;
                 this.y = 0;
+                this.z = 0;
 
-                while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
+                while (this.a == this.b || this.a == this.c || this.b == this.c || this.z < 0 || this.z > 10)
                 {
                         //variables
-                        this.x = Math.floor((Math.random()*5)+1);
-                        this.y = Math.floor((Math.random()*5)+1);
-                        this.c = this.x + this.y;
+                        this.x = Math.floor((Math.random()*7)+2);
+                        this.y = Math.floor((Math.random()*7)+2);
+			this.z = this.x + this.z;
 
                         //wrong answers
-                        this.a = Math.floor(Math.random()*6);
-                        this.b = Math.floor(Math.random()*6);
+                        this.a = this.x + ' = ' + this.y + ' + ' + ' _' 
+                        this.b = this.y + ' = ' + this.x + ' + ' + ' _' 
+                	this.c = this.z + ' = ' + this.x + ' + ' + ' _';
                 }
 
-                this.setQuestion(this.mName + ' grew ' + this.c + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year?');
+                this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
                 this.setAnswer(parseInt(this.c),0);
 
                 this.mButtonA.setAnswer(this.a);
