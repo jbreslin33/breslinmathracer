@@ -27,7 +27,45 @@ var NameMachine = new Class(
 		this.mGirlNameArray.push("Becky"); 
 		this.mGirlNameArray.push("Cathy"); 
 		this.mGirlNameArray.push("Doris"); 
+
+		//days of week
+		this.mDayOfWeekArray = new Array();
+		this.mUsedDayOfWeekElementArray = new Array();
+		this.mDayOfWeekArray.push("Sunday");
+		this.mDayOfWeekArray.push("Monday");
+		this.mDayOfWeekArray.push("Tuesday");
+		this.mDayOfWeekArray.push("Wednesday");
+		this.mDayOfWeekArray.push("Thursday");
+		this.mDayOfWeekArray.push("Friday");
+		this.mDayOfWeekArray.push("Saturday");
 	},
+
+        getDayOfWeek: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mDayOfWeekArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedDayOfWeekElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedDayOfWeekElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedDayOfWeekElementArray.push(randomElement);
+                return this.mDayOfWeekArray[randomElement];
+        },
 
         getPictureLink: function()
         {

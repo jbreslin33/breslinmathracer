@@ -10,6 +10,8 @@ Extends: ThreeButtonItem,
 
                 this.mNameMachine = new NameMachine();
                 this.mName = this.mNameMachine.getName('girl');
+                this.mDayOne = this.mNameMachine.getDayOfWeek();
+                this.mDayTwo = this.mNameMachine.getDayOfWeek();
 
                 this.a = '';
                 this.b = '';
@@ -32,7 +34,7 @@ Extends: ThreeButtonItem,
                         this.c = this.x + ' - ' + this.y + ' = ' + ' _';
                 }
 
-                this.setQuestion(this.mName + ' played soccer for ' + this.x + ' hours on Sunday and ' + this.y + ' hours on Monday. How many more hours did ' + this.mNameMachine.getPronoun(this.mName) + ' play on Sunday than Monday? Which equation shows this problem?');
+                this.setQuestion(this.mName + ' played soccer for ' + this.x + ' hours on ' + this.mDayOne + ' and '  + this.y + ' hours on ' + this.mDayTwo + '. How many more hours did ' + this.mNameMachine.getPronoun(this.mName) + ' play on ' + this.mDayOne + ' than ' + this.mDayTwo + '? Which equation shows this problem?');
                 this.setAnswer(this.c,0);
 
                 this.mButtonA.setAnswer(this.a);
