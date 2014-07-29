@@ -16,6 +16,7 @@ Extends: ThreeButtonItem,
                 this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
                 this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
                 this.mFruit = this.mNameMachine.getFruit();
+                this.mThing = this.mNameMachine.getThing();
 
                 this.a = '';
                 this.b = '';
@@ -53,7 +54,7 @@ Extends: ThreeButtonItem,
 		}
 		if (randomProblem == 2) 
 		{
-                	this.setQuestion(this.mName + ' has ' + this.x + ' ' + this.mFruit + ' and ' + this.mNameTwo + ' has ' + this.y + ' ' + this.mFruit + '. How many more ' + this.mFruit + ' did ' + this.mName + ' have than ' + this.mNameTwo + '? Which equation shows this problem?');
+                	this.setQuestion(this.mName + ' has ' + this.x + ' ' + this.mThing + ' and ' + this.mNameTwo + ' has ' + this.y + ' ' + this.mThing + '. How many more ' + this.mThing + ' does ' + this.mName + ' have than ' + this.mNameTwo + '? Which equation shows this problem?');
 		}
 
 

@@ -74,7 +74,44 @@ var NameMachine = new Class(
 		this.mVegetableArray.push("mushrooms");
 		this.mVegetableArray.push("potatoes");
 
+		//things
+		this.mThingArray = new Array();
+		this.mUsedThingElementArray = new Array();
+		this.mThingArray.push("cards");
+		this.mThingArray.push("sticks");
+		this.mThingArray.push("balls");
+		this.mThingArray.push("blocks");
+		this.mThingArray.push("rocks");
+		this.mThingArray.push("balloons");
+
 	},
+
+        getThing: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mThingArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedThingElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedThingElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedThingElementArray.push(randomElement);
+                return this.mThingArray[randomElement];
+        },
 
         getVegetable: function()
         {
