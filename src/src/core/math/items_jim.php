@@ -9,14 +9,13 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.oa.a.1_1';
               
-		this.a = parseInt(0);
-		this.b = parseInt(0);
-		this.c = parseInt(-1);
+		this.a = 0;
+		this.b = 0;
+		this.c = -1;
 
-		this.x = parseInt(0);	 
-		this.y = parseInt(0);	 
+		this.x = 0;	 
+		this.y = 0;	 
 
-		//while (this.a == this.b || this.a == this.c || this.b == this.c)
 		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
 		{
 			APPLICATION.log(this.a + ':' + this.b + ',' + this.c + ':' + this.x + ',' + this.y);
