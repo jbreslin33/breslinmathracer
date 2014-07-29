@@ -78,6 +78,8 @@ Extends: ThreeButtonItem,
 
                 this.mNameMachine = new NameMachine();
                 this.mName = this.mNameMachine.getName('girl');
+                this.mNameTwo = this.mNameMachine.getName('girl');
+                this.mThing = this.mNameMachine.getThing();
 
                 this.a = '';
                 this.b = '';
@@ -106,10 +108,6 @@ Extends: ThreeButtonItem,
 		if (randomProblem == 0)
 		{	
                 	this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
-		}
-		if (randomProblem == 1)
-		{	
-                	this.setQuestion(this.mName + ' and ' + this.mNameTwo + ' have ' + this.z + ' total ' + this.mName + ' has ' + this.x + ' ' + this.mThing + '. How many ' + this.mThing + ' does the girls have togethe? Which equation shows this problem?');
 		}
                 
 		this.setAnswer(this.c,0);
