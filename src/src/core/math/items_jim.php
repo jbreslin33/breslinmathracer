@@ -83,6 +83,7 @@ Extends: ThreeButtonItem,
                 this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
 		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
 		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
+		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
 
                 this.a = '';
                 this.b = '';
@@ -114,7 +115,7 @@ Extends: ThreeButtonItem,
 		}
 		if (randomProblem == 1)
 		{
-			this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' a total of ' + this.z + ' minutes on ' + this.mDayOfWeekOne + ' and ' + this.mDayOfWeekTwo + '. ' +  this.mNameMachine.getPronoun(this.mName,1) + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' minutes on ' + this.mDayOfWeekOne + '. How many minutes did ' + this.mNameMachine.getPronoun(this.mName,0) + ' play on ' + this.mDayOfWeekTwo + '? Which equation shows this problem?');   
+			this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' a total of ' + this.z + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + ' and ' + this.mDayOfWeekTwo + '. ' +  this.mNameMachine.getPronoun(this.mName,1) + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + '. How many ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mName,0) + ' play on ' + this.mDayOfWeekTwo + '? Which equation shows this problem?');   
 		}
 
 		
