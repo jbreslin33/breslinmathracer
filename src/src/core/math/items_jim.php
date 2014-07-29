@@ -51,7 +51,7 @@ Extends: ThreeButtonItem,
 	createQuestionShapes: function()
         {
                 var x = 0;
-                var y = 300;
+                var y = 100;
 		var space = 50;
 
 		var i = 0;
