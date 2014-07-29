@@ -2,6 +2,16 @@ var NameMachine = new Class(
 {
         initialize: function ()
         {
+		//pictures
+                this.mPictureLinkArray = new Array();
+                this.mUsedPictureLinkElementArray = new Array();
+
+                this.mPictureLinkArray.push("/images/bus/kid.png");
+                this.mPictureLinkArray.push("/images/monster/red_monster.png");
+                this.mPictureLinkArray.push("/images/treasure/gold_coin_head.png");
+                this.mPictureLinkArray.push("/images/treasure/chest.png");
+
+		//people names	
        		this.mNameArray = new Array();
 
 		this.mUsedNameArray = new Array();
@@ -18,6 +28,33 @@ var NameMachine = new Class(
 		this.mGirlNameArray.push("Cathy"); 
 		this.mGirlNameArray.push("Doris"); 
 	},
+
+        getPictureLink: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mPictureLinkArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedPictureLinkElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedPictureLinkElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedPictureLinkElementArray.push(randomElement);
+                return this.mPictureLinkArray[randomElement];
+        },
 
 	getPronoun: function(name,uppercase)
 	{

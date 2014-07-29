@@ -98,8 +98,8 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.oa.a.1_2';
              
-		this.mPictureMachine = new PictureMachine();
-		this.mPictureLink = this.mPictureMachine.getPictureLink();
+		this.mNameMachine = new NameMachine();
+		this.mPictureLink = this.mNameMachine.getPictureLink();
  
 		this.a = 0;
 		this.b = 0;
