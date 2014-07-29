@@ -13,9 +13,16 @@ function __construct($typeid, $startNew, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
-		
+
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'typeid','$this->mTypeID');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	
 	//if no typeid then get one
-	if ($this->mTypeID == 0)
+	if (strlen($this->mTypeID) > 0)
+	{
+
+	}
+	else
 	{
 		//get the item_type_id of the last asked question as that will be what you where previously practicing.
        		$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where learning_standards_attempts.user_id = ";
@@ -35,6 +42,9 @@ function __construct($typeid, $startNew, $leavePractice)
 		{
 			//no attempts made...... go back to previus and close out this one....
 	        	// lets close out this practice cause it was never attempted
+			//shouild not go here..
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         		$update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
         		$update .= $_SESSION["learning_standards_attempts_id"];
         		$update .=  ";";
@@ -43,6 +53,7 @@ function __construct($typeid, $startNew, $leavePractice)
 			//then go to sessions again...
                 	//SESSION
                 	$sessions = new Sessions();
+			return 0;
 		}
 	}
 
@@ -156,6 +167,10 @@ public function setRawData()
 
 public function leavePractice()
 {
+	$ls = $_SESSION["learning_standards_attempts_id"];
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'leavePractice','$ls');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 	// lets close out this practice
         $update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
         $update .= $_SESSION["learning_standards_attempts_id"];
