@@ -5,6 +5,8 @@ var NameMachine = new Class(
        		this.mNameArray = new Array();
 
 		this.mUsedNameArray = new Array();
+		this.mBoyNameArray = new Array();
+		this.mGirlNameArray = new Array();
 			
 		this.mBoyNameArray.push("Alan"); 
 		this.mBoyNameArray.push("Brad"); 
@@ -29,14 +31,14 @@ var NameMachine = new Class(
 			{
 				var length = this.mBoyNameArray.length;
 				randomElement = Math.floor(Math.random()*length);			
-				randomName = this.mBoyName[randomElement]; 
+				randomName = this.mBoyNameArray[randomElement]; 
 				
 			}
 			else
 			{
 				var length = this.mGirlNameArray.length;
 				randomElement = Math.floor(Math.random()*length);			
-				randomName = this.mGirlName[randomElement]; 
+				randomName = this.mGirlNameArray[randomElement]; 
 			}
 
 			var noBoyDup = false;  

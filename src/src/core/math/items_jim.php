@@ -8,8 +8,8 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.oa.a.1_2';
 
-                this.mPictureMachine = new PictureMachine();
-                this.mPictureLink = this.mPictureMachine.getPictureLink();
+                this.mNameMachine = new NameMachine();
+                this.mName = this.mNameMachine.getName();
 
                 this.a = 0;
                 this.b = 0;
@@ -41,7 +41,7 @@ Extends: ThreeButtonItem,
                         this.b = Math.floor(Math.random()*6);
                 }
 
-                this.setQuestion('Solve.');
+                this.setQuestion('Solve.' + this.mName);
                 this.setAnswer(parseInt(this.c),0);
 
                 this.mButtonA.setAnswer(this.a);
