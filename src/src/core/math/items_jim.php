@@ -9,7 +9,7 @@ Extends: ThreeButtonItem,
                 this.mType = 'k.oa.a.1_2';
 
                 this.mNameMachine = new NameMachine();
-                this.mName = this.mNameMachine.getName();
+                this.mName = this.mNameMachine.getName('girl');
 
                 this.a = 0;
                 this.b = 0;
@@ -41,7 +41,7 @@ Extends: ThreeButtonItem,
                         this.b = Math.floor(Math.random()*6);
                 }
 
-                this.setQuestion('Solve.' + this.mName);
+                this.setQuestion(this.mName);
                 this.setAnswer(parseInt(this.c),0);
 
                 this.mButtonA.setAnswer(this.a);
