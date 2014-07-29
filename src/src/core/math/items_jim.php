@@ -21,8 +21,8 @@ Extends: ThreeButtonItem,
 		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
 		{
 			//variables
-                	this.x = Math.floor(Math.random()*6);
-                	this.y = Math.floor(Math.random()*6);
+                	this.x = Math.floor((Math.random()*5)+1);
+                	this.y = Math.floor((Math.random()*5)+1);
 
 			//correct answer
 			if (this.sign == 0)
@@ -47,63 +47,45 @@ Extends: ThreeButtonItem,
                 this.mButtonC.setAnswer(this.c);
                 this.shuffle(10);
         },
-/*
-            var i = 0;
-                                while(i < addendA)
-                                {
-                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-                                        i++;
-                                }
-
-                                //sign
-                                if (sign == "+")
-                                {
-                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 10)]);
-                                        i++;
-                                }
-                                if (sign == "-")
-                                {
-                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 20)]);
-                                        i++;
-                                }
-                                while(i < parseInt(addendB + addendA + 1))
-                                {
-                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
-                                        i++;
-                                }
-                                question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 30)]);
-*/
-        createQuestionShapes: function()
+        
+	createQuestionShapes: function()
         {
                 var x = 0;
                 var y = 300;
+		var space = 50;
 
 		var i = 0;
-		while (i < this.c)
+		APPLICATION.log(this.x + ':' + this.y + '=' + this.c);
+		while (i < this.x)
                 {
-                        x = parseInt(x + 70);
+                        x = parseInt(x + space);
                         this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
 			i++;
                 }
 	
 		if (this.sign == 0)
 		{
-                        x = parseInt(x + 70);
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/minus.png","",""));	
+                        x = parseInt(x + space);
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/plus.png","",""));	
 			i++;
 		}
 		else
 		{
-                        x = parseInt(x + 70);
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/plus.png","",""));	
+                        x = parseInt(x + space);
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/minus.png","",""));	
 			i++;
 		}
-		
-
+		i = 0;
+		while (i < this.y)
+                {
+                        x = parseInt(x + space);
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+			i++;
+                }
+                x = parseInt(x + space);
+		this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/symbols/equal.png","",""));	
         }
-
 });
-
 
 var i_k_cc_a_1__4 = new Class(
 {
