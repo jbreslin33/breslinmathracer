@@ -19,20 +19,32 @@ var NameMachine = new Class(
 		this.mGirlNameArray.push("Doris"); 
 	},
 
-	getName: function()
+	getName: function(gender)
 	{
 		var keepGoing = true; 	
 		var randomElement = 0;
-		var randomGender = Math.floor(Math.random()*2);
+		var randomGender = 0;
 		var randomName = '';
 		while (keepGoing)
 		{
+			if (gender == '')
+			{ 
+				randomGender = Math.floor(Math.random()*2);
+			}
+			else if (gender == 'boy')
+			{
+				randomGender = 0;
+			}				
+			else if (gender == 'girl')
+			{
+				randomGender = 1;
+			}				
+
 			if (randomGender == 0)
 			{
 				var length = this.mBoyNameArray.length;
 				randomElement = Math.floor(Math.random()*length);			
 				randomName = this.mBoyNameArray[randomElement]; 
-				
 			}
 			else
 			{
