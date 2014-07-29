@@ -14,9 +14,6 @@ function __construct($typeid, $startNew, $leavePractice)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'typeid','$this->mTypeID');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	
 	//if no typeid then get one
 	if (strlen($this->mTypeID) > 0)
 	{
@@ -43,8 +40,6 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			//no attempts made...... go back to previus and close out this one....
 	        	// lets close out this practice cause it was never attempted
 			//shouild not go here..
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'a','');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         		$update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
         		$update .= $_SESSION["learning_standards_attempts_id"];
         		$update .=  ";";
@@ -167,10 +162,6 @@ public function setRawData()
 
 public function leavePractice()
 {
-	$ls = $_SESSION["learning_standards_attempts_id"];
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'leavePractice','$ls');";
-	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
 	// lets close out this practice
         $update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
         $update .= $_SESSION["learning_standards_attempts_id"];
