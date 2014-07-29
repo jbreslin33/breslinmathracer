@@ -55,7 +55,7 @@ public function process()
 		}
 		if ($ref_id == 'practice')
 		{
-			$practice = new Practice(0,0,0);
+			$practice = new Practice('',0,0);
 		}
 	}
 }

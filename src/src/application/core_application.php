@@ -83,6 +83,7 @@ Extends: Application,
         		if (codeNumber == APPLICATION.FULL)
                 	{
                 		APPLICATION.mRef_id = responseArray[1];
+				APPLICATION.log('ref:' + APPLICATION.mRef_id);
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                         	APPLICATION.mLevel = responseArray[2];
                         	APPLICATION.mLevels = responseArray[3];
@@ -91,6 +92,7 @@ Extends: Application,
                         	APPLICATION.mFirstName = responseArray[6];
                         	APPLICATION.mLastName = responseArray[7];
                         	APPLICATION.mRawData = responseArray[8];
+				APPLICATION.log('raw:' + APPLICATION.mRawData);
 
                         	APPLICATION.mHud.setLevel(APPLICATION.mLevel, APPLICATION.mLevels);
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
