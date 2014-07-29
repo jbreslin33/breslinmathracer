@@ -1,4 +1,4 @@
-/* TYPE_DESCRIPTION: Pick the number sentence that represents the subtraction word description. */
+/* TYPE_DESCRIPTION: Pick the number sentence that represents the subtraction word description. Missing Subtrahend */
 var i_k_oa_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -40,8 +40,7 @@ Extends: ThreeButtonItem,
                 }
 
 		//adding more variety		
-                var randomProblem = Math.floor((Math.random()*7)+2);
-                randomProblem = 2;
+                var randomProblem = Math.floor(Math.random()*3);
 		if (randomProblem == 0)
 		{	
                 	this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOne + ' and '  + this.y + ' ' + this.mTimeIncrement + ' on ' + this.mDayTwo + '. How many more ' + this.mTimeIncrement + ' does ' + this.mNameMachine.getPronoun(this.mName) + ' play on ' + this.mDayOne + ' than ' + this.mDayTwo + '? Which equation shows this problem?');
@@ -67,7 +66,7 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Pick the number sentence that represents the addition word description. */
+/* TYPE_DESCRIPTION: Pick the number sentence that represents the addition word description. Missing addend. */
 var i_k_oa_a_1__3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -101,8 +100,19 @@ Extends: ThreeButtonItem,
                 	this.c = this.z + ' = ' + this.x + ' + ' + ' _';
                 }
 
-                this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
-                this.setAnswer(this.c,0);
+		//adding more variety		
+                var randomProblem = Math.floor(Math.random()*3);
+                randomProblem = 1;
+		if (randomProblem == 0)
+		{	
+                	this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
+		}
+		if (randomProblem == 1)
+		{	
+                	this.setQuestion(this.mName + ' and ' + this.mNameTwo + ' have ' + this.z + ' total ' + this.mName + ' has ' + this.x + ' ' + this.mThing + '. How many ' + this.mThing + ' does the girls have togethe? Which equation shows this problem?');
+		}
+                
+		this.setAnswer(this.c,0);
 
                 this.mButtonA.setAnswer(this.a);
                 this.mButtonB.setAnswer(this.b);
