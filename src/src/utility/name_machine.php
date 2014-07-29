@@ -86,7 +86,7 @@ var NameMachine = new Class(
                 while (keepGoing)
                 {
                         var length = this.mTimeIncrementArray.length;
-			var span = parseInt(tillElement - fromElement);
+			var span = parseInt(tillElement - fromElement + 1);
                         randomElement = Math.floor((Math.random()*span)+fromElement);
 
                         var noDup = false;
