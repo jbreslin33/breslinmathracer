@@ -1,3 +1,594 @@
+/* TYPE_DESCRIPTION: i_4_md_a_3__1: multiply numbers up to 2 digits */
+
+var i_4_md_a_3__1 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+            this.parent(sheet);
+				this.mUserAnswerLabel.setVisibility(true);
+				
+            this.mType = '4.md.a.3_1';          	
+
+				var varA = 0;
+				var varB = 0;
+				var varC = 0;
+
+			// pick length
+			varA = 1 + Math.floor(Math.random()*12);		
+
+			// pick width
+			varB = 1 + Math.floor(Math.random()*12);	
+				
+			varC = parseInt(varA * varB);
+								                       
+				this.setQuestion('What is the area of a rectangle that has a length of ' + varA + ' and a width of ' + varB + '?');
+            this.setAnswer(varC,0);             
+        }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_1: multiply numbers up to 2 digits */
+
+var i_4_nbt_b_5__1 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+            this.parent(sheet);
+            this.mType = '4.nbt.b.5_1';          	
+
+				var varA = 0;
+				var varB = 0;
+				var varC = 0;
+
+				var start = 0;
+				var end = 0;
+				var rand = 0;
+		
+			// get start number based on 2 digits
+			start = 10;
+
+			// get end number based on 2 digits
+			end = 100;
+
+			// pick 1st number from start to end range
+			varA = start + Math.floor(Math.random()*(end-start));		
+
+			// pick 2nd number from start to end range
+			varB = start + Math.floor(Math.random()*(end-start));		
+				
+			varC = parseInt(varA * varB);
+								                       
+				this.setQuestion('' + varA + ' * ' +  varB + ' = ');
+            this.setAnswer(varC,0);             
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_2: divide numbers up to 2 digits */
+
+var i_4_nbt_b_5__2 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+            this.parent(sheet);
+            this.mType = '4.nbt.b.5_2';          	
+
+				var varA = 0;
+				var varB = 0;
+				var varC = 0;
+
+				var start = 0;
+				var end = 0;
+				var rand = 0;
+		
+			// pick number of digits (1 - 4)
+			rand = 1 + Math.floor((Math.random()*4));
+
+			// get start number based on digits
+			start = Math.pow(10, rand-1);
+
+			// get end number based on digits
+			end = Math.pow(10, rand);
+
+			// pick number from start to end range
+			varA = start + Math.floor(Math.random()*(end-start));	
+
+			// pick one digit number
+			varB = Math.floor(Math.random()*10);	
+				
+			varC = parseInt(varA * varB);
+											                       
+				this.setQuestion('' + varA + ' * ' +  varB + ' = ');
+            this.setAnswer(varC,0);             
+        }
+});
+
+
+
+
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_b_4_t_1: adding numbers up to 6 digits */
+
+var i_4_nbt_b_4__1 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+            this.parent(sheet);
+            this.mType = '4.nbt.b.4_1';          	
+
+				var varA = 0;
+				var varB = 0;
+				var varC = 0;
+
+				var start = 0;
+				var end = 0;
+				var rand = 0;
+	
+				// pick number of digits (2 - 6)
+				rand = 2 + Math.floor((Math.random()*5));
+
+				// get end number based on digits
+				end = Math.pow(10, rand);
+				// get start number based on digits
+				start = Math.pow(10, rand-1);
+
+				// pick number from start to end range
+				varA = start + Math.floor(Math.random()*(end-start));
+
+				rand = 2 + Math.floor((Math.random()*5));
+
+				end = Math.pow(10, rand);
+				start = Math.pow(10, rand-1);
+		
+				varB = start + Math.floor(Math.random()*(end-start));
+		
+				varC = parseInt(varA + varB);
+			                       
+				this.setQuestion('' + varA + ' + ' +  varB + ' = ');
+            this.setAnswer(varC,0);             
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_b_4_t_2: subtracting numbers up to 6 digits */
+
+var i_4_nbt_b_4__2 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+            this.parent(sheet);
+            this.mType = '4.nbt.b.4_2';          	
+
+				var varA = 0;
+				var varB = 0;
+				var varC = 0;
+
+				var start = 0;
+				var end = 0;
+				var rand = 0;
+	
+				
+				rand = 2 + Math.floor((Math.random()*5));
+
+				start = Math.pow(10, rand-1);
+
+				end = Math.pow(10, rand);
+				
+				varA = start + Math.floor(Math.random()*(end-start));	
+
+				rand = 2 + Math.floor((Math.random()*5));
+
+				start = Math.pow(10, rand-1);
+				end = Math.pow(10, rand);
+	
+				varB = start + Math.floor(Math.random()*(end-start));
+
+				varC = parseInt(varA - varB);
+
+			                       
+				this.setQuestion('' + varA + ' - ' +  varB + ' = ');
+            this.setAnswer(varC,0);             
+        }
+});
+
+
+
+
+
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_1: This type will ask which digit is in the ones column. */
+
+var i_4_nbt_a_1__1 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_1';          
+
+		var place = 0;
+
+		var number = '';
+
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
+
+		var answer = 0;
+		var rand = 0;
+
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'ones';
+		answer = ones;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
+                //this.mButtonA.setAnswer(a);
+                //this.mButtonB.setAnswer(b);
+                //this.mButtonC.setAnswer(c);
+                //this.shuffle(10);
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_2: This type will ask which digit is in the tens column. */
+
+var i_4_nbt_a_1__2 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_2';
+
+		var place = 0;
+
+		var number = '';
+
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
+
+		var answer = 0;
+		var rand = 0;
+
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'tens';
+		answer = tens;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_3: This type will ask which digit is in the hundreds column. */
+
+var i_4_nbt_a_1__3 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_3';
+
+		var place = 0;
+
+		var number = '';
+
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
+
+		var answer = 0;
+		var rand = 0;
+
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'hundreds';
+		answer = hundreds;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_4: This type will ask which digit is in the thousands column. */
+
+var i_4_nbt_a_1__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_4';
+
+		var place = 0;
+
+		var number = '';
+
+		var ones = 0;
+		var tens = 0;
+		var hundreds = 0;
+		var thousands = 0;
+
+		var answer = 0;
+		var rand = 0;
+
+		rand = 1 + Math.floor((Math.random()*9));
+		ones = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		tens = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		hundreds = rand;
+		rand = 1 + Math.floor((Math.random()*9));
+		thousands = rand;
+
+		rand = 1 + Math.floor((Math.random()*4));
+				
+		place = 'thousands';
+		answer = thousands;
+
+		number = '' + thousands + ',' + hundreds + tens + ones;
+                  
+		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_5: This type will give thousands and ask for hundreds. */
+
+var i_4_nbt_a_1__5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_5';
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'thousands';
+		varC = 'hundreds';
+
+		answer = varA * 10;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_6: This type will give thousands and ask for tens. */
+
+var i_4_nbt_a_1__6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_6';
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'thousands';
+		varC = 'tens';
+
+		answer = varA * 100;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_7: This type will give thousands and ask for ones. */
+
+var i_4_nbt_a_1__7 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_7';
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'thousands';
+		varC = 'ones';
+
+		answer = varA * 1000;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_8: This type will give hundreds and ask for tens. */
+
+var i_4_nbt_a_1__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_8';
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'hundreds';
+		varC = 'tens';
+
+		answer = varA * 10;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_9: This type will give hundreds and ask for ones. */
+
+var i_4_nbt_a_1__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_9';
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'hundreds';
+		varC = 'ones';
+
+		answer = varA * 100;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_10: This type will give tens and ask for ones. */
+
+var i_4_nbt_a_1__10 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.nbt.a.1_10';
+
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+
+		var answer = 0;
+
+		varA = 1 + Math.floor(Math.random()*9);
+		varB = 'tens';
+		varC = 'ones';
+
+		answer = varA * 10;
+                  
+		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
+                this.setAnswer(answer,0);
+
+        }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* TYPE_DESCRIPTION: 
 
 */

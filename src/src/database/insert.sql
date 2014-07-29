@@ -118,8 +118,6 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.c
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.5',2,'Count to answer "how many?" questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1-20, count out that many objects.');
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.6',3,'Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies.');
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',3,'Compare two numbers between 1 and 10 presented as written numerals.');
-insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.1',1,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.');
-insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.2',1,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
 
 insert into learning_standards (id,levels) values ('evaluation',1); 
 insert into learning_standards (id,levels) values ('remediate',3); 
@@ -165,10 +163,3 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 
 --k.cc.c.7
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
-
---4.nbt.a.2
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',99991,'4.nbt.a.2','This type will give the name and ask for number');
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_2',99992,'4.nbt.a.2','This type will give the number and ask for name');
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_3',99993,'4.nbt.a.2','This type will give number and ask for expanded form');
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_4',99994,'4.nbt.a.2','This type will give expanded form and ask for number');
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_5',99995,'4.nbt.a.2','This type will will ask >, <, = based on place value');
