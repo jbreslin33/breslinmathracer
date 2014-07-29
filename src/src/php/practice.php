@@ -3,6 +3,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluation.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/remediate.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
 class Practice 
 {
@@ -29,6 +30,19 @@ function __construct($typeid, $startNew, $leavePractice)
        		if ($num > 0)
        		{
                		$this->mTypeID = pg_Result($result, 0, 'item_types_id');
+		}
+		else 
+		{
+			//no attempts made...... go back to previus and close out this one....
+	        	// lets close out this practice cause it was never attempted
+        		$update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
+        		$update .= $_SESSION["learning_standards_attempts_id"];
+        		$update .=  ";";
+        		$updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+	
+			//then go to sessions again...
+                	//SESSION
+                	$sessions = new Sessions();
 		}
 	}
 
