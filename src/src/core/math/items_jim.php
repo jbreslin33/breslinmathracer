@@ -24,15 +24,15 @@ Extends: ThreeButtonItem,
                         //variables
                         this.x = Math.floor((Math.random()*7)+2);
                         this.y = Math.floor((Math.random()*7)+2);
-                        this.z = this.x + this.y;
+                        this.z = this.x - this.y;
 
                         //wrong answers
-                        this.a = this.x + ' = ' + this.y + ' + ' + ' _'
-                        this.b = this.y + ' = ' + this.x + ' + ' + ' _'
-                        this.c = this.z + ' = ' + this.x + ' + ' + ' _';
+                        this.a = this.x + ' + ' + this.y + ' = ' + ' _'
+                        this.b = this.y + ' - ' + this.x + ' = ' + ' _'
+                        this.c = this.x + ' - ' + this.y + ' = ' + ' _';
                 }
 
-                this.setQuestion(this.mName + ' grew ' + this.z + ' inches in two years. ' + this.mNameMachine.getPronoun(this.mName,1) + ' grew ' + this.x + ' inches the first year. How many inches did she grow the second year? Which equation shows this problem?');
+                this.setQuestion(this.mName + ' played soccer for ' + this.x + ' hours on Sunday and ' + this.y + ' hours on Monday. How many more hours did ' + this.mNameMachine.getPronoun(this.mName) + ' play on Sunday than Monday? Which equation shows this problem?');
                 this.setAnswer(this.c,0);
 
                 this.mButtonA.setAnswer(this.a);
