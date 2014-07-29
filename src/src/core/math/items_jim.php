@@ -18,7 +18,6 @@ Extends: ThreeButtonItem,
 
 		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
 		{
-			APPLICATION.log(this.a + ':' + this.b + ',' + this.c + ':' + this.x + ',' + this.y);
 			//variables
                 	this.x = Math.floor(Math.random()*6);
                 	this.y = Math.floor(Math.random()*6);
@@ -47,24 +46,44 @@ Extends: ThreeButtonItem,
                 this.mButtonC.setAnswer(this.c);
                 this.shuffle(10);
         },
+/*
+            var i = 0;
+                                while(i < addendA)
+                                {
+                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                        i++;
+                                }
 
+                                //sign
+                                if (sign == "+")
+                                {
+                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 10)]);
+                                        i++;
+                                }
+                                if (sign == "-")
+                                {
+                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 20)]);
+                                        i++;
+                                }
+                                while(i < parseInt(addendB + addendA + 1))
+                                {
+                                        question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars)]);
+                                        i++;
+                                }
+                                question.mShapeArray.push(this.mShapeArray[parseInt(i + this.mTotalGuiBars + this.mTotalInputBars + 30)]);
+*/
         createQuestionShapes: function()
         {
                 var x = 0;
                 var y = 300;
 
-                var answer = this.getAnswer();
-                answer = parseInt(answer);
-
-                for (var i = 0; i < answer; i++)
+		var i = 0;
+		while (i < this.c)
                 {
-                        if (i == 10)
-                        {
-                                x = 0;
-                                y = 375;
-                        }
                         x = parseInt(x + 70);
                         this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+                        x = 0;
+			i++;
                 }
         }
 
