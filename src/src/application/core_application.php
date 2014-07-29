@@ -544,6 +544,7 @@ Extends: Application,
                 }
 		if (this.mRef_id == 'practice')
 		{ 
+		//this is why practice wizzes by the wrong answer. you need to fix this tommorow...
              		//if (this.mGameName != "practice")
                        	//{
 				if (this.mGame)
