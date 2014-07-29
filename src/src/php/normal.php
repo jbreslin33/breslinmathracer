@@ -96,7 +96,14 @@ public function continueAttempt()
         }
         else
         {
+		///there are no levelattempts so act like signup for just this one.
+        	//set sessions for signup
+        	$_SESSION["ref_id"] = 'normal';
         	$_SESSION["level"] = 1;
+        	$_SESSION["levels"] = 10;
+        	$_SESSION["subject_id"] = 1;
+
+        	$this->setRawData();
         }
         //END NEW CODE
    

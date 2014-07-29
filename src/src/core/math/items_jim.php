@@ -7,28 +7,45 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
 
-                this.mType = 'k.cc.oa.1_1';
+                this.mType = 'k.oa.a.1_1';
+              
+		this.a = parseInt(0);
+		this.b = parseInt(0);
+		this.c = parseInt(-1);
 
-                var x = Math.floor((Math.random()*9)+1);
-                x = parseInt(x * 10);
-                var a = parseInt(x+10);
-                var b = 0;
-                var c = 0;
+		this.x = parseInt(0);	 
+		this.y = parseInt(0);	 
 
-                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-                {
-                        b = Math.floor(Math.random()*7)-3;
-                        b = parseInt(a+b);
-                        c = Math.floor(Math.random()*7)-3;
-                        c = parseInt(a+c);
+		//while (this.a == this.b || this.a == this.c || this.b == this.c)
+		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5)
+		{
+			APPLICATION.log(this.a + ':' + this.b + ',' + this.c + ':' + this.x + ',' + this.y);
+			//variables
+                	this.x = Math.floor(Math.random()*6);
+                	this.y = Math.floor(Math.random()*6);
+
+			//correct answer
+                	var sign = Math.floor(Math.random()*2);
+			if (sign == 0)
+			{
+				this.c = this.x + this.y;  
+			}
+			else
+			{
+				this.c = this.x - this.y;  
+			}
+	
+			//wrong answers 
+			this.a = Math.floor(Math.random()*6);
+			this.b = Math.floor(Math.random()*6);
                 }
 
-                this.setQuestion('When couning by tens what comes after ' + x + '?');
-                this.setAnswer(parseInt(a),0);
+                this.setQuestion('Solve.');
+                this.setAnswer(parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer(this.a);
+                this.mButtonB.setAnswer(this.b);
+                this.mButtonC.setAnswer(this.c);
                 this.shuffle(10);
         },
 
