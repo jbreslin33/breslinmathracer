@@ -11,6 +11,8 @@ Extends: ThreeButtonItem,
                 this.mType = '5.oa.a.2_3';
 		this.mNameMachine = new NameMachine(); 
 		this.mFruit = this.mNameMachine.getFruit(); 
+		this.mSchool = this.mNameMachine.getSchool();
+		this.mGrade = this.mNameMachine.getGrade('1st','8th');
 
                 rNum = Math.floor(Math.random()*2);
 		rNum = 0;
@@ -21,10 +23,10 @@ Extends: ThreeButtonItem,
 			this.c = '';
 
 			this.x = Math.floor((Math.random()*5)+18);
-			this.x = Math.floor((Math.random()*5)+18);
+			this.y = Math.floor((Math.random()*5)+18);
 			this.z = Math.floor((Math.random()*4)+2);
 
-                        this.setQuestion('At Visitation Elementary School, there are 2 5th grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. Mr. Roache wants to give each 5th grader ' + this.z + ' ' + this.mFruit + '. What matches?');
+                        this.setQuestion('At ' + this.mSchool + ', there are two ' + this.mGrade + ' grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. Mr. Roache wants to give each ' + this.mGrade + ' grader ' + this.z + ' ' + this.mFruit + '. What matches?');
                         this.setAnswer('5(6/2)',0);
 
                         this.mButtonA.setAnswer(this.getAnswer());

@@ -47,6 +47,7 @@ var NameMachine = new Class(
 		this.mPlayedActivityArray.push("football");
 		this.mPlayedActivityArray.push("hockey");
 
+		//time increment
 		this.mTimeIncrementArray = new Array();
 		this.mUsedTimeIncrementElementArray = new Array();
 		this.mTimeIncrementArray.push("seconds");
@@ -84,7 +85,52 @@ var NameMachine = new Class(
 		this.mThingArray.push("rocks");
 		this.mThingArray.push("balloons");
 
+		//schools
+		this.mSchoolArray = new Array();
+		this.mUsedSchoolElementArray = new Array();
+		this.mSchoolArray.push("Saint Anselm Elementary School");
+		this.mSchoolArray.push("Visitation BVM Elementary School");
+		this.mSchoolArray.push("Saint Anne Elementary School");
+
+		//grade
+                this.mGradeArray = new Array();
+                this.mUsedGradeElementArray = new Array();
+                this.mGradeArray.push("1st");
+                this.mGradeArray.push("2nd");
+                this.mGradeArray.push("3rd");
+                this.mGradeArray.push("4th");
+                this.mGradeArray.push("5th");
+                this.mGradeArray.push("6th");
+                this.mGradeArray.push("7th");
+                this.mGradeArray.push("8th");
 	},
+       
+	getSchool: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mSchoolArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedSchoolElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedSchoolElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedSchoolElementArray.push(randomElement);
+                return this.mSchoolArray[randomElement];
+        },
 
         getThing: function()
         {
@@ -167,10 +213,53 @@ var NameMachine = new Class(
                 return this.mFruitArray[randomElement];
         },
 
+        getGrade: function(from,till)
+        {
+		//get from and till elements
+		var fromElement = 0;
+		var tillElement = 0;
+
+               	for (i=0; i < this.mGradeArray.length; i++)
+		{
+			if (from == this.mGradeArray[i])
+			{
+				fromElement = i;
+			} 
+			if (till == this.mGradeArray[i])
+			{
+				tillElement = i;
+			} 
+		}
+
+                var keepGoing = true;
+                var randomElement = 0;
+
+                while (keepGoing)
+                {
+                        var length = this.mGradeArray.length;
+			var span = parseInt(tillElement - fromElement + 1);
+                        randomElement = Math.floor((Math.random()*span)+fromElement);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedGradeElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedGradeElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedGradeElementArray.push(randomElement);
+                return this.mGradeArray[randomElement];
+        },
 
         getTimeIncrement: function(from,till)
         {
-
 		//get from and till elements
 		var fromElement = 0;
 		var tillElement = 0;
@@ -189,6 +278,7 @@ var NameMachine = new Class(
 
                 var keepGoing = true;
                 var randomElement = 0;
+
                 while (keepGoing)
                 {
                         var length = this.mTimeIncrementArray.length;
