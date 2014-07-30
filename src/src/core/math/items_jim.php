@@ -1,4 +1,6 @@
-/* TYPE_DESCRIPTION: This will .... */
+/*  5.oa.a.1 */
+
+/* TYPE_DESCRIPTION: one set of paranthesis and a subtraction multiplication (a+b) + c */
 var i_5_oa_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -8,21 +10,27 @@ Extends: ThreeButtonItem,
 
                 this.mType = '5.oa.a.1_1';
 
-                var x = Math.floor(Math.random()*100);
-                var a = parseInt(x+1);
-                var b = 0;
-                var c = 0;
+                var a = '';
+                var b = '';
+                var c = '';
 
-                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+		var x = 0;
+		var y = 0;
+		var z = 0;
+
+                while (a == b || a == c || b == c)
                 {
-                        b = Math.floor(Math.random()*7)-3;
-                        b = parseInt(a+b);
-                        c = Math.floor(Math.random()*7)-3;
-                        c = parseInt(a+c);
+                        x = Math.floor(Math.random()*10);
+                        y = Math.floor(Math.random()*10);
+                        z = Math.floor(Math.random()*10);
+                	c = parseInt((x + y) + z);
+
+			a = Math.floor((Math.random()*5)+parseInt(c-3)); 
+			b = Math.floor((Math.random()*5)+parseInt(c-3)); 
                 }
 
-                this.setQuestion('5th gradeWhat comes after ' + x + '?');
-                this.setAnswer(a,0);
+                this.setQuestion( '(' + x + ' + ' + y + ') + ' + z + ')' );
+                this.setAnswer(c,0);
 
                 this.mButtonA.setAnswer(a);
                 this.mButtonB.setAnswer(b);
