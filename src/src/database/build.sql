@@ -7,10 +7,16 @@ DROP TABLE item_attempts;
 DROP TABLE item_types_operation_types;
 DROP TABLE item_types_problem_types;
 DROP TABLE item_types_speed_types;
+DROP TABLE item_types_step_types;
+DROP TABLE item_types_carry_types;
+DROP TABLE item_types_borrow_types;
 
 DROP TABLE operation_types;
 DROP TABLE problem_types;
 DROP TABLE speed_types;
+DROP TABLE step_types;
+DROP TABLE carry_types;
+DROP TABLE borrow_types;
 
 DROP TABLE item_types;
 DROP TABLE levelattempts;
@@ -183,19 +189,40 @@ CREATE TABLE levelattempts (
 );
 
 
+--addition,subtraction,mult,div,parens,exponents
 CREATE TABLE operation_types (
 	id SERIAL,
 	description text,	
         PRIMARY KEY (id)
 );
 
+--word,calcuation
 CREATE TABLE problem_types (
 	id SERIAL,
 	description text,	
         PRIMARY KEY (id)
 );
 
+--fast,slow
 CREATE TABLE speed_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE step_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE carry_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE borrow_types (
 	id SERIAL,
 	description text,	
         PRIMARY KEY (id)
@@ -235,6 +262,33 @@ CREATE TABLE item_types_speed_types (
 	speed_types_id integer NOT NULL,
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
 	FOREIGN KEY (speed_types_id) REFERENCES speed_types(id),
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE item_types_step_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	step_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (step_types_id) REFERENCES step_types(id),
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE item_types_carry_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	carry_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (carry_types_id) REFERENCES carry_types(id),
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE item_types_borrow_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	borrow_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (borrow_types_id) REFERENCES borrow_types(id),
         PRIMARY KEY (id)
 );
 
