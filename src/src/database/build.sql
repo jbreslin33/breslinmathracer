@@ -24,6 +24,7 @@ DROP TABLE remainder_types;
 --linkage
 DROP TABLE practice_buddy; --you need these make practice more effiecient without adding too many links as other tables will.
 --natural groupings are already the core_standards keep in mind... 
+DROP TABLE prerequisite;
 
 DROP TABLE item_types;
 DROP TABLE levelattempts;
@@ -325,6 +326,18 @@ CREATE TABLE practice_buddy (
 	FOREIGN KEY (item_type_buddy_id) REFERENCES item_types(id),
         PRIMARY KEY (id)
 );
+--working on 2nd grade word problems..having trouble lets try prerequisite of 1st grade word problems.
+--having trouble???
+--select item_type_prerequisite_id from prerequisite where item_type id = '2.oa.a.1_14';
+CREATE TABLE prerequisite (
+	id SERIAL,
+	item_type_id text,	
+	item_type_prerequisite_id text,	
+	FOREIGN KEY (item_type_id) REFERENCES item_types(id),
+	FOREIGN KEY (item_type_prerequisite_id) REFERENCES item_types(id),
+        PRIMARY KEY (id)
+);
+
 
 CREATE TABLE item_attempts (
         id SERIAL,
