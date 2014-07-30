@@ -10,7 +10,6 @@ delete from core_clusters;
 
 delete from item_types;
 
-
 insert into core_subjects(id,description) values (1,'Math'); 
 insert into core_subjects(id,description) values (2,'ELA'); 
 
