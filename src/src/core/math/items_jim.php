@@ -20,7 +20,7 @@ Extends: ThreeButtonItem,
 		this.mNameThree = this.mNameMachine.getName();
 
                 rNum = Math.floor(Math.random()*2);
-		rNum = 0;
+		rNum = 2;
                 
 		this.a = '';
                 this.b = '';
@@ -29,6 +29,26 @@ Extends: ThreeButtonItem,
                 this.x = 0;
                 this.y = 0;
                 this.z = 0;
+ 		
+		//(x-y)/2
+                if (rNum == 2)
+                {
+                        this.w = 0;
+
+                        while(this.w < 2)
+                        {
+                                this.x = Math.floor((Math.random()*18)+2);
+                                this.y = Math.floor((Math.random()*18)+2);
+                                this.z = Math.floor((Math.random()*4)+2);
+                                this.w = (this.x-this.y)/this.z;
+
+                                this.setQuestion(this.mNameOne + ' had ' + this.mFruit + ', ' + this.x + ' of them were rotten so she threw them out. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Which expression solves this?');
+                        this.setAnswer('('+this.x+'-'+this.y+')'+this.z,0);
+
+                                this.b = '('+this.z+'+'+this.y+')'+this.x;
+                                this.c = '('+this.x+'x'+this.y+')'+this.z;
+                        }
+                }
  
 		//(x-y)2
                 if (rNum == 1)
