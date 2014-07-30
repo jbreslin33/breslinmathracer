@@ -75,6 +75,10 @@ getItem: function(id)
         {
                 return new i_5_oa_a_1__2(this.mSheet);
         }
+	if (id == '5.oa.a.1_3')
+        {
+                return new i_5_oa_a_1__3(this.mSheet);
+        }
 
 
 	return 0;	
