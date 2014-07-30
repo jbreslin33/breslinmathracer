@@ -14,9 +14,13 @@ Extends: ThreeButtonItem,
 		this.mSchool = this.mNameMachine.getSchool();
 		this.mGrade = this.mNameMachine.getGrade('1st','8th');
 		this.mAdult = this.mNameMachine.getAdult('man');
+		this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
+		this.mNameOne = this.mNameMachine.getName();
+		this.mNameTwo = this.mNameMachine.getName();
+		this.mNameThree = this.mNameMachine.getName();
 
                 rNum = Math.floor(Math.random()*2);
-		rNum = 0;
+		rNum = 1;
 
 		//(x+y)2
                 if (rNum == 0)
@@ -36,6 +40,27 @@ Extends: ThreeButtonItem,
                         this.mButtonB.setAnswer('('+this.z+'+'+this.y+')'+this.x);
                         this.mButtonC.setAnswer('('+this.x+'x'+this.y+')'+this.z);
                 }
+ 
+		//lucy scored 4 points  becky score 2 less than lucy. tommy score 2 times as much as becky...
+		//(x-y)2
+                if (rNum == 1)
+                {
+                        this.a = '';
+                        this.b = '';
+                        this.c = '';
+
+                        this.x = Math.floor((Math.random()*5)+18);
+                        this.y = Math.floor((Math.random()*5)+18);
+                        this.z = Math.floor((Math.random()*4)+2);
+
+                        this.setQuestion('While playing ' + this.mPlayedActivity + ' ' + this.mNameOne + ' ' + this.x + ' points. ' + this.mNameTwo + ' scored ' + this.y + ' less than ' + this.mNameOne + '. ' + this.mNameThree + ' scored ' + this.z + ' times as many as ' + this.mNameTwo + '. Which expression solves this?');
+                        this.setAnswer('('+this.x+'+'+this.y+')'+this.z,0);
+
+                        this.mButtonA.setAnswer(this.getAnswer());
+                        this.mButtonB.setAnswer('('+this.z+'+'+this.y+')'+this.x);
+                        this.mButtonC.setAnswer('('+this.x+'x'+this.y+')'+this.z);
+                }
+
                 this.shuffle(10);
         }
 });
