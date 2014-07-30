@@ -17,6 +17,8 @@ Extends: ThreeButtonItem,
 
                 rNum = Math.floor(Math.random()*2);
 		rNum = 0;
+
+		//(x+y)2
                 if (rNum == 0)
                 {
 			this.a = '';
@@ -27,12 +29,12 @@ Extends: ThreeButtonItem,
 			this.y = Math.floor((Math.random()*5)+18);
 			this.z = Math.floor((Math.random()*4)+2);
 
-                        this.setQuestion('At ' + this.mSchool + ', there are two ' + this.mGrade + ' grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. ' + this.mAdult + ' wants to give each ' + this.mGrade + ' grader ' + this.z + ' ' + this.mFruit + '. What matches?');
-                        this.setAnswer('5(6/2)',0);
+                        this.setQuestion('At ' + this.mSchool + ', there are two ' + this.mGrade + ' grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. ' + this.mAdult + ' wants to give each ' + this.mGrade + ' grader ' + this.z + ' ' + this.mFruit + '. What expression solves this?');
+                        this.setAnswer('('+this.x+'+'+this.y+')'+this.z,0);
 
                         this.mButtonA.setAnswer(this.getAnswer());
-                        this.mButtonB.setAnswer('5/2x6');
-                        this.mButtonC.setAnswer('6x2/5');
+                        this.mButtonB.setAnswer('('+this.z+'+'+this.y+')'+this.x);
+                        this.mButtonC.setAnswer('('+this.x+'x'+this.y+')'+this.z);
                 }
                 if (rNum == 1)
                 {
