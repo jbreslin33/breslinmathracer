@@ -1,6 +1,9 @@
 /*  5.oa.a.2 */
 
 /* TYPE_DESCRIPTION: Match equations to number sentences  */
+// 10(6/3)
+// Divide 6 by 3, and then multiply by 10.
+//this might be a hardcode type
 var i_5_oa_a_2__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -9,33 +12,18 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
 
                 this.mType = '5.oa.a.2_1';
+                rNum = Math.floor(Math.random()*2);
+		rNum = 0;
+		if (rNum == 0)
+		{
+                	this.setQuestion('Which matches this?  5(6/2)');
+                	this.setAnswer('Divide 6 by 2 then multiply by 5.',0);
 
-                var a = '';
-                var b = '';
-                var c = '';
-
-                var x = 0;
-                var y = 0;
-                var z = 0;
-
-                while (a == b || a == c || b == c || y + z > 10)
-                {
-                        x = Math.floor(Math.random()*10);
-                        y = Math.floor(Math.random()*10);
-                        z = Math.floor(Math.random()*10);
-                        c = parseInt( x * (y + z ));
-
-                        a = Math.floor((Math.random()*5)+parseInt(c-3));
-                        b = Math.floor((Math.random()*5)+parseInt(c-3));
-                }
-
-                this.setQuestion('hello ' + x + '(' + y + ' + ' + z + ')' );
-                this.setAnswer(c,0);
-
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
-                this.shuffle(10);
+                	this.mButtonA.setAnswer(this.getAnswer());
+                	this.mButtonB.setAnswer('Add 6 and 2 then multiply by 5');
+                	this.mButtonC.setAnswer('Divide 5 by 6 then multiply by 2');
+                	this.shuffle(10);
+		}
         }
 });
 
