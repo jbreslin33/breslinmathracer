@@ -36,16 +36,6 @@ Extends: ThreeButtonItem,
                         this.mButtonB.setAnswer('('+this.z+'+'+this.y+')'+this.x);
                         this.mButtonC.setAnswer('('+this.x+'x'+this.y+')'+this.z);
                 }
-                if (rNum == 1)
-                {
-                        this.setQuestion('Which matches this? Divide 45 by 9 then subtract 3.');
-                        this.setAnswer('(45/9)/2',0);
-
-                        this.mButtonA.setAnswer(this.getAnswer());
-                        this.mButtonB.setAnswer('9x45/2');
-                        this.mButtonC.setAnswer('(9x2/45');
-                }
-
                 this.shuffle(10);
         }
 });
