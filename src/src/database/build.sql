@@ -12,6 +12,7 @@ DROP TABLE item_types_step_types;
 DROP TABLE item_types_carry_types;
 DROP TABLE item_types_borrow_types;
 DROP TABLE item_types_remainder_types;
+DROP TABLE item_types_counting_types;
 
 DROP TABLE operation_types;
 DROP TABLE problem_types;
@@ -20,6 +21,7 @@ DROP TABLE step_types;
 DROP TABLE carry_types;
 DROP TABLE borrow_types;
 DROP TABLE remainder_types;
+DROP TABLE counting_types;
 
 --linkage
 DROP TABLE practice_buddy; --you need these make practice more effiecient without adding too many links as other tables will.
@@ -241,6 +243,11 @@ CREATE TABLE remainder_types (
         PRIMARY KEY (id)
 );
 
+CREATE TABLE counting_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
 
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
@@ -312,6 +319,15 @@ CREATE TABLE item_types_remainder_types (
 	remainder_types_id integer NOT NULL,
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
 	FOREIGN KEY (remainder_types_id) REFERENCES remainder_types(id),
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE item_types_counting_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	counting_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (counting_types_id) REFERENCES counting_types(id),
         PRIMARY KEY (id)
 );
 
