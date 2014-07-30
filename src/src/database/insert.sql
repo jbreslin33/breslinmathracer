@@ -124,11 +124,23 @@ insert into learning_standards (id,levels) values ('practice',3);
 insert into learning_standards (id,levels) values ('normal',1); 
 
 --     FINER TYPES 
+--borrow_types
 insert into borrow_types(description) values ('borrow from 1 to 9');
 insert into borrow_types(description) values ('borrow from zero');
 insert into borrow_types(description) values ('borrow from two or more zeros in a row');
 insert into borrow_types(description) values ('no borrow');
 	
+--carry_types
+insert into carry_types(description) values ('carry');
+insert into carry_types(description) values ('no carry');
+
+--operation_types
+insert into carry_types(description) values ('parenthesis');
+insert into carry_types(description) values ('exponents');
+insert into carry_types(description) values ('multiplication');
+insert into carry_types(description) values ('division');
+insert into carry_types(description) values ('addition');
+insert into carry_types(description) values ('subtraction');
 
 --k.cc.a.1
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
