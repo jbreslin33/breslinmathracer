@@ -12,8 +12,10 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
 
                 this.mType = '5.oa.a.2_1';
-                rNum = Math.floor(Math.random()*2);
-		rNum = 0;
+                
+		rNum = Math.floor(Math.random()*2);
+		rNum = 1;
+
 		if (rNum == 0)
 		{
                 	this.setQuestion('Which matches this?  5(6/2)');
@@ -22,8 +24,18 @@ Extends: ThreeButtonItem,
                 	this.mButtonA.setAnswer(this.getAnswer());
                 	this.mButtonB.setAnswer('Add 6 and 2 then multiply by 5');
                 	this.mButtonC.setAnswer('Divide 5 by 6 then multiply by 2');
-                	this.shuffle(10);
 		}
+                if (rNum == 1)
+                {
+                        this.setQuestion('Which matches this?  (45/9)-3');
+                        this.setAnswer('Divide 45 by 9 then subtract 3.',0);
+
+                        this.mButtonA.setAnswer(this.getAnswer());
+                        this.mButtonB.setAnswer('Add 45 and 9 then subtract 3');
+                        this.mButtonC.setAnswer('Subtract 3 then Divide 45 by 9');
+                }
+
+                this.shuffle(10);
         }
 });
 
