@@ -4,6 +4,9 @@
 DROP TABLE error_log; 
 DROP TABLE item_attempts;
 
+DROP TABLE item_types_operation_types;
+DROP TABLE operation_types;
+
 DROP TABLE item_types;
 DROP TABLE levelattempts;
 DROP TABLE learning_standards_attempts;
@@ -22,6 +25,7 @@ DROP TABLE core_grades;
 DROP TABLE core_subjects;
 
 DROP TABLE users;
+
 
 --****************************************************************
 --***************************************************************
@@ -174,6 +178,12 @@ CREATE TABLE levelattempts (
 );
 
 
+CREATE TABLE operation_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
@@ -182,6 +192,15 @@ CREATE TABLE item_types (
 	description text,	
         PRIMARY KEY (id),
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
+);
+
+CREATE TABLE item_types_operation_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	operation_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (operation_types_id) REFERENCES operation_types(id),
+        PRIMARY KEY (id)
 );
 
 CREATE TABLE item_attempts (
