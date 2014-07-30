@@ -135,12 +135,30 @@ insert into carry_types(description) values ('carry');
 insert into carry_types(description) values ('no carry');
 
 --operation_types
-insert into carry_types(description) values ('parenthesis');
-insert into carry_types(description) values ('exponents');
-insert into carry_types(description) values ('multiplication');
-insert into carry_types(description) values ('division');
-insert into carry_types(description) values ('addition');
-insert into carry_types(description) values ('subtraction');
+insert into operation_types(description) values ('parenthesis');
+insert into operation_types(description) values ('exponents');
+insert into operation_types(description) values ('multiplication');
+insert into operation_types(description) values ('division');
+insert into operation_types(description) values ('addition');
+insert into operation_types(description) values ('subtraction');
+
+--problem_types
+insert into problem_types(description) values ('word');
+insert into problem_types(description) values ('calculation');
+
+--remainder_types
+insert into remainder_types(description) values ('remainders');
+insert into remainder_types(description) values ('no remainders');
+
+--speed_types
+insert into speed_types(description) values ('fast');
+insert into speed_types(description) values ('slow');
+
+--step_types
+insert into step_types(description) values ('one step');
+insert into step_types(description) values ('two step');
+insert into step_types(description) values ('three step');
+insert into step_types(description) values ('four or more steps');
 
 --k.cc.a.1
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');

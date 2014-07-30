@@ -4,6 +4,7 @@
 DROP TABLE error_log; 
 DROP TABLE item_attempts;
 
+--finer types
 DROP TABLE item_types_operation_types;
 DROP TABLE item_types_problem_types;
 DROP TABLE item_types_speed_types;
@@ -19,6 +20,10 @@ DROP TABLE step_types;
 DROP TABLE carry_types;
 DROP TABLE borrow_types;
 DROP TABLE remainder_types;
+
+--linkage
+DROP TABLE practice_buddy; --you need these make practice more effiecient without adding too many links as other tables will.
+--natural groupings are already the core_standards keep in mind... 
 
 DROP TABLE item_types;
 DROP TABLE levelattempts;
@@ -235,6 +240,7 @@ CREATE TABLE remainder_types (
         PRIMARY KEY (id)
 );
 
+
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
@@ -305,6 +311,18 @@ CREATE TABLE item_types_remainder_types (
 	remainder_types_id integer NOT NULL,
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
 	FOREIGN KEY (remainder_types_id) REFERENCES remainder_types(id),
+        PRIMARY KEY (id)
+);
+
+---------- WE TALKIN BOUT PRACTICE
+--select item_type_buddy_id from practice_buddy where item_type_id = 'k_cc_a_1_4'; 
+--practice buddy 
+CREATE TABLE practice_buddy (
+	id SERIAL,
+	item_type_id text,	
+	item_type_buddy_id text,	
+	FOREIGN KEY (item_type_id) REFERENCES item_types(id),
+	FOREIGN KEY (item_type_buddy_id) REFERENCES item_types(id),
         PRIMARY KEY (id)
 );
 
