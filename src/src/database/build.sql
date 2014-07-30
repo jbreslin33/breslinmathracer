@@ -5,7 +5,10 @@ DROP TABLE error_log;
 DROP TABLE item_attempts;
 
 DROP TABLE item_types_operation_types;
+DROP TABLE item_types_problem_types;
+
 DROP TABLE operation_types;
+DROP TABLE problem_types;
 
 DROP TABLE item_types;
 DROP TABLE levelattempts;
@@ -184,6 +187,12 @@ CREATE TABLE operation_types (
         PRIMARY KEY (id)
 );
 
+CREATE TABLE problem_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
@@ -200,6 +209,15 @@ CREATE TABLE item_types_operation_types (
 	operation_types_id integer NOT NULL,
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
 	FOREIGN KEY (operation_types_id) REFERENCES operation_types(id),
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE item_types_problem_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	problem_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (problem_types_id) REFERENCES problem_types(id),
         PRIMARY KEY (id)
 );
 
