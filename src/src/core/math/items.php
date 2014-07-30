@@ -1,5 +1,4 @@
 /* TYPE_DESCRIPTION: This type will ask what comes next after a number from 0-99. */
-
 var i_k_cc_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -33,7 +32,6 @@ Extends: ThreeButtonItem,
 });
 
 /* TYPE_DESCRIPTION: This type will ask what comes next after a number ending in 9 from 0-99. */
-
 var i_k_cc_a_1__2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -69,7 +67,6 @@ Extends: ThreeButtonItem,
 });
 
 /* TYPE_DESCRIPTION: This type will ask what comes next after a number ending in 0 from 0-99. */
-
 var i_k_cc_a_1__3 = new Class(
 {
 Extends: ThreeButtonItem,
