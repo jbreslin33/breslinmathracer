@@ -64,6 +64,15 @@ getItem: function(id)
         {
                 return new i_k_oa_a_1__4(this.mSheet);
         }
+
+
+	/*** GRADE 5 ***/
+	if (id == '5.oa.a.1_1')
+        {
+                return new i_5_oa_a_1__1(this.mSheet);
+        }
+
+
 	return 0;	
 }
 		
