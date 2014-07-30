@@ -5,3 +5,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_4',5003,'5.oa.a.1','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_5',5004,'5.oa.a.1','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_6',5005,'5.oa.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_7',5006,'5.oa.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_8',5007,'5.oa.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_9',5008,'5.oa.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_10',5009,'5.oa.a.1','');
