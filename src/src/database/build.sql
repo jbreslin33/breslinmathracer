@@ -10,6 +10,7 @@ DROP TABLE item_types_speed_types;
 DROP TABLE item_types_step_types;
 DROP TABLE item_types_carry_types;
 DROP TABLE item_types_borrow_types;
+DROP TABLE item_types_remainder_types;
 
 DROP TABLE operation_types;
 DROP TABLE problem_types;
@@ -17,6 +18,7 @@ DROP TABLE speed_types;
 DROP TABLE step_types;
 DROP TABLE carry_types;
 DROP TABLE borrow_types;
+DROP TABLE remainder_types;
 
 DROP TABLE item_types;
 DROP TABLE levelattempts;
@@ -29,7 +31,6 @@ DROP TABLE core_clusters;
 
 DROP TABLE core_domains_subjects_grades;
 DROP TABLE core_domains;
-
 
 DROP TABLE core_subjects_grades;
 DROP TABLE core_grades;
@@ -228,6 +229,12 @@ CREATE TABLE borrow_types (
         PRIMARY KEY (id)
 );
 
+CREATE TABLE remainder_types (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
 	progression NUMERIC(9,3) NOT NULL, -- for us to determine order
@@ -289,6 +296,15 @@ CREATE TABLE item_types_borrow_types (
 	borrow_types_id integer NOT NULL,
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
 	FOREIGN KEY (borrow_types_id) REFERENCES borrow_types(id),
+        PRIMARY KEY (id)
+);
+
+CREATE TABLE item_types_remainder_types (
+	id SERIAL,
+	item_types_id text NOT NULL,
+	remainder_types_id integer NOT NULL,
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+	FOREIGN KEY (remainder_types_id) REFERENCES remainder_types(id),
         PRIMARY KEY (id)
 );
 
