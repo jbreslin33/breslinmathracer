@@ -1,5 +1,50 @@
 /*  5.oa.a.2 */
 
+/* TYPE_DESCRIPTION: Match word problem to equation sentence. */
+var i_5_oa_a_2__3 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = '5.oa.a.2_3';
+		this.mNameMachine = new NameMachine(); 
+		this.mFruit = this.mNameMachine.getFruit(); 
+
+                rNum = Math.floor(Math.random()*2);
+		rNum = 0;
+                if (rNum == 0)
+                {
+			this.a = '';
+			this.b = '';
+			this.c = '';
+
+			this.x = Math.floor((Math.random()*5)+18);
+			this.x = Math.floor((Math.random()*5)+18);
+			this.z = Math.floor((Math.random()*4)+2);
+
+                        this.setQuestion('At Visitation Elementary School, there are 2 5th grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. Mr. Roache wants to give each 5th grader ' + this.z + ' ' + this.mFruit + '. What matches?');
+                        this.setAnswer('5(6/2)',0);
+
+                        this.mButtonA.setAnswer(this.getAnswer());
+                        this.mButtonB.setAnswer('5/2x6');
+                        this.mButtonC.setAnswer('6x2/5');
+                }
+                if (rNum == 1)
+                {
+                        this.setQuestion('Which matches this? Divide 45 by 9 then subtract 3.');
+                        this.setAnswer('(45/9)/2',0);
+
+                        this.mButtonA.setAnswer(this.getAnswer());
+                        this.mButtonB.setAnswer('9x45/2');
+                        this.mButtonC.setAnswer('(9x2/45');
+                }
+
+                this.shuffle(10);
+        }
+});
+
 /* TYPE_DESCRIPTION: Match number sentence to equation  */
 var i_5_oa_a_2__2 = new Class(
 {
