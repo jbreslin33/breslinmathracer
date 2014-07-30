@@ -124,6 +124,13 @@ insert into learning_standards (id,levels) values ('remediate',3);
 insert into learning_standards (id,levels) values ('practice',3); 
 insert into learning_standards (id,levels) values ('normal',1); 
 
+--     FINER TYPES 
+insert into borrow_types(description) values ('borrow from 1 to 9');
+insert into borrow_types(description) values ('borrow from zero');
+insert into borrow_types(description) values ('borrow from two or more zeros in a row');
+insert into borrow_types(description) values ('no borrow');
+	
+
 --k.cc.a.1
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_2',2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
