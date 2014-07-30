@@ -11,9 +11,7 @@ var NameMachine = new Class(
                 this.mPictureLinkArray.push("/images/treasure/gold_coin_head.png");
                 this.mPictureLinkArray.push("/images/treasure/chest.png");
 
-		//people names	
-       		this.mNameArray = new Array();
-
+		//kid names	
 		this.mUsedNameArray = new Array();
 		this.mBoyNameArray = new Array();
 		this.mGirlNameArray = new Array();
@@ -103,6 +101,27 @@ var NameMachine = new Class(
                 this.mGradeArray.push("6th");
                 this.mGradeArray.push("7th");
                 this.mGradeArray.push("8th");
+ 
+		//adult names
+                this.mUsedAdultArray = new Array();
+                this.mManArray = new Array();
+                this.mWomanArray = new Array();
+
+                this.mManArray.push("Mr. Breslin");
+                this.mManArray.push("Mr. Roache");
+                this.mManArray.push("Mr. Dubois");
+                this.mManArray.push("Mr. Corcoran");
+                this.mManArray.push("Mr. OBrien");
+                this.mManArray.push("Mr. Nucera");
+                this.mManArray.push("Mr. Coleman");
+
+                this.mWomanArray.push("Ms. Mcginnis");
+                this.mWomanArray.push("Ms. Farrell");
+                this.mWomanArray.push("Mrs. Donahue");
+                this.mWomanArray.push("Ms. Cox");
+                this.mWomanArray.push("Mrs. Corcoran");
+                this.mWomanArray.push("Mrs. Uholik");
+                this.mWomanArray.push("Mrs. Vera");
 	},
        
 	getSchool: function()
@@ -414,6 +433,63 @@ var NameMachine = new Class(
                                 }
                         }
                 }
+	},
+	
+	getAdult: function(gender)
+	{
+		var keepGoing = true; 	
+		var randomElement = 0;
+		var randomGender = 0;
+		var randomName = '';
+		while (keepGoing)
+		{
+			if (gender == '')
+			{ 
+				randomGender = Math.floor(Math.random()*2);
+			}
+			else if (gender == 'man')
+			{
+				randomGender = 0;
+			}				
+			else if (gender == 'woman')
+			{
+				randomGender = 1;
+			}				
+
+			if (randomGender == 0)
+			{
+				var length = this.mManArray.length;
+				randomElement = Math.floor(Math.random()*length);			
+				randomName = this.mManArray[randomElement]; 
+			}
+			else
+			{
+				var length = this.mWomanArray.length;
+				randomElement = Math.floor(Math.random()*length);			
+				randomName = this.mWomanArray[randomElement]; 
+			}
+
+			var noManDup = false;  
+			var noWomanDup = false;  
+			for (i=0; i < this.mUsedAdultArray.length; i++)
+			{
+				if (randomElement == this.mUsedAdultArray[i])  
+				{
+					noManDup = true;	
+				}
+				if (randomElement == this.mUsedAdultArray[i])  
+				{
+					noWomanDup = true;	
+				}
+			}	
+
+			if (noManDup == false && noWomanDup == false)
+			{
+				keepGoing = false;	
+			}
+		}
+		this.mUsedAdultArray.push(randomName); 
+		return randomName; 
 	},
 
 	getName: function(gender)
