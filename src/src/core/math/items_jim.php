@@ -20,7 +20,7 @@ Extends: ThreeButtonItem,
 		this.mNameThree = this.mNameMachine.getName();
 
                 rNum = Math.floor(Math.random()*2);
-		rNum = 1;
+		rNum = 0;
                 
 		this.a = '';
                 this.b = '';
@@ -37,9 +37,9 @@ Extends: ThreeButtonItem,
 
 			while(this.w < 2)
 			{
-                        	this.x = Math.floor((Math.random()*5)+18);
-                        	this.y = Math.floor((Math.random()*5)+18);
-                        	this.z = Math.floor((Math.random()*4)+2);
+				this.x = Math.floor((Math.random()*18)+2);
+				this.y = Math.floor((Math.random()*18)+2);
+				this.z = Math.floor((Math.random()*4)+2);
 				this.w = (this.x-this.y)*this.z;
 
                         	this.setQuestion('While playing ' + this.mPlayedActivity + ' ' + this.mNameOne + ' scored ' + this.x + ' points. ' + this.mNameTwo + ' scored ' + this.y + ' less than ' + this.mNameOne + '. ' + this.mNameThree + ' scored ' + this.z + ' times as many as ' + this.mNameTwo + '. Which expression solves this?');
@@ -53,9 +53,9 @@ Extends: ThreeButtonItem,
 		//(x+y)2
                 if (rNum == 0)
                 {
-			this.x = Math.floor((Math.random()*18)+2);
-			this.y = Math.floor((Math.random()*18)+2);
-			this.z = Math.floor((Math.random()*4)+2);
+                        this.x = Math.floor((Math.random()*5)+18);
+                        this.y = Math.floor((Math.random()*5)+18);
+                        this.z = Math.floor((Math.random()*4)+2);
 
                         this.setQuestion('At ' + this.mSchool + ', there are two ' + this.mGrade + ' grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. ' + this.mAdult + ' wants to give each ' + this.mGrade + ' grader ' + this.z + ' ' + this.mFruit + '. What expression solves this?');
                         this.setAnswer('('+this.x+'+'+this.y+')'+this.z,0);
