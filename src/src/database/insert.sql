@@ -160,6 +160,11 @@ insert into step_types(description) values ('two step');
 insert into step_types(description) values ('three step');
 insert into step_types(description) values ('four or more steps');
 
+--counting_types
+insert into counting_types(description) values ('from ending in 9');
+insert into counting_types(description) values ('from ending in 0');
+
+
 --k.cc.a.1
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_2',2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
@@ -206,3 +211,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',11,'k.oa.a.1','Subtract within 5 with pictures to help.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_3',12,'k.oa.a.1','Pick the number sentence that represents the addition word problem.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_4',13,'k.oa.a.1','Pick the number sentence that represents the subtraction word problem.');
+
+
+--PRACTICE BUDDY
+
+--PREREQUISITE
+
+--ITEM_TYPE_COUNTING_TYPE
+--insert into item_type_counting_type(
