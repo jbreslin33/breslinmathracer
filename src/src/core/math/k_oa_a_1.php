@@ -143,6 +143,7 @@ Extends: ThreeButtonItem,
 });
 
 /* TYPE_DESCRIPTION: Pick the number sentence that represents the addition word description. Missing addend. */
+/*
 var i_k_oa_a_1__3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -200,8 +201,9 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-
+*/
 /* TYPE_DESCRIPTION:  */
+/*
 var i_k_oa_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -268,3 +270,4 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
+*/
