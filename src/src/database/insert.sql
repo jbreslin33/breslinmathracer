@@ -152,17 +152,18 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 --k.cc.a.1
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.1',1,'Count to 100 by ones and by tens.');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','What comes next after a number from 0-99 that does not end in 0 or 9.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_2',2,'k.cc.a.1','What comes next after a number ending in 9 from 0-99.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_3',3,'k.cc.a.1','What comes next after a number ending in 0 from 0-99.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_4',4,'k.cc.a.1','What comes next when counting by ten from numbers that end in zero up to 100.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1.101,'k.cc.a.1','What comes next when counting by ten from numbers that end in zero up to 100.');
 
 --k.cc.a.2
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.2',1,'Count forward beginning from a given number within the known sequence (instead of having to begin at 1).');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_1',101,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_2',102,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_3',103,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_1',1.201,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_2',1.202,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_3',1.203,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_4',1.204,'k.cc.a.2','db');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_5',1.205,'k.cc.a.2','db');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_6',1.206,'k.cc.a.2','db');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_7',1.207,'k.cc.a.2','db');
 
 --k.cc.a.3
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.3',1,'Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects).');

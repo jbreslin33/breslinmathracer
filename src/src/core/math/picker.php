@@ -18,18 +18,6 @@ getItem: function(id)
 	{
 		return new i_k_cc_a_1__1(this.mSheet);
 	}
-	if (id == 'k.cc.a.1_2')
-	{
-		return new i_k_cc_a_1__2(this.mSheet);
-	}
-	if (id == 'k.cc.a.1_3')
-	{
-		return new i_k_cc_a_1__3(this.mSheet);
-	}
-	if (id == 'k.cc.a.1_4')
-	{
-		return new i_k_cc_a_1__4(this.mSheet);
-	}
 
 	//k.cc.a.2
 	if (id == 'k.cc.a.2_1')
@@ -43,6 +31,22 @@ getItem: function(id)
 	if (id == 'k.cc.a.2_3')
 	{
 		return new i_k_cc_a_2__3(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_4')
+	{
+		return new i_k_cc_a_2__4(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_5')
+	{
+		return new i_k_cc_a_2__5(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_6')
+	{
+		return new i_k_cc_a_2__6(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_7')
+	{
+		return new i_k_cc_a_2__7(this.mSheet);
 	}	
 
 	//k.cc.a.3
