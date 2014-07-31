@@ -230,12 +230,13 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
 --------------------------------------CLUSTER------------------------------------------- 
 --k.oa.a.1
-insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',1,'Represent addition and subtraction with objects, fingers, mental images, drawings1, sounds (e.g., claps), acting out situations, verbal explanations, expressions, or equations.');
-	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',4.101,'k.oa.a.1','Add within 5 with pictures to help.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_3',4.103,'k.oa.a.1','Pick the number sentence that represents the addition word problem.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_4',4.104,'k.oa.a.1','Pick the number sentence that represents the subtraction word problem.');
+insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',4,'Represent addition and subtraction with objects, fingers, mental images, drawings1, sounds (e.g., claps), acting out situations, verbal explanations, expressions, or equations.');
+	--types I am leaving these out. This is something that should be done in traditional class....
+	--insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',4.101,'k.oa.a.1','Add within 5 with pictures to help.');
+	--insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help.');
+
+--k.oa.a.2
+insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.2',4,'Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
