@@ -14,25 +14,25 @@ getItem: function(id)
 {
         id = id.replace(/^\s+|\s+$/g,'')
 
-        //k.oa.a.1
-        if (id == 'k.oa.a.1_1')
+        //k.oa.a.2
+        if (id == 'k.oa.a.2_1')
         {
-                return new i_k_oa_a_1__1(this.mSheet);
+                return new i_k_oa_a_2__1(this.mSheet);
         }
         
-        if (id == 'k.oa.a.1_2')
+        if (id == 'k.oa.a.2_2')
         {
-                return new i_k_oa_a_1__2(this.mSheet);
+                return new i_k_oa_a_2__2(this.mSheet);
         }
 
-        if (id == 'k.oa.a.1_3')
+        if (id == 'k.oa.a.2_3')
         {
-                return new i_k_oa_a_1__3(this.mSheet);
+                return new i_k_oa_a_2__3(this.mSheet);
         }
         
-	if (id == 'k.oa.a.1_4')
+	if (id == 'k.oa.a.2_4')
         {
-                return new i_k_oa_a_1__4(this.mSheet);
+                return new i_k_oa_a_2__4(this.mSheet);
         }
 
 
