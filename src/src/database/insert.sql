@@ -140,8 +140,11 @@ insert into step_types(description) values ('three step');
 insert into step_types(description) values ('four or more steps');
 
 --counting_types
-insert into counting_types(description) values ('from ending in 9');
-insert into counting_types(description) values ('from ending in 0');
+insert into counting_types(description) values ('start at 0');
+insert into counting_types(description) values ('start at 9');
+insert into counting_types(description) values ('start at 10');
+insert into counting_types(description) values ('start at number ending in 9 that is greater than 10 but less than 100');
+insert into counting_types(description) values ('start at number ending in 0 that is greater than 10 but less than 100');
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
