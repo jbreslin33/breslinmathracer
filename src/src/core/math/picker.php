@@ -111,6 +111,28 @@ getItem: function(id)
         {
                 return new i_k_cc_c_6__1(this.mSheet);
         }
+        if (id == 'k.cc.c.6_2')
+        {
+                return new i_k_cc_c_6__2(this.mSheet);
+        }
+        if (id == 'k.cc.c.6_3')
+        {
+                return new i_k_cc_c_6__3(this.mSheet);
+        }
+
+        //k.cc.c.7
+        if (id == 'k.cc.c.7_1')
+        {
+                return new i_k_cc_c_7__1(this.mSheet);
+        }
+        if (id == 'k.cc.c.7_2')
+        {
+                return new i_k_cc_c_7__2(this.mSheet);
+        }
+        if (id == 'k.cc.c.7_3')
+        {
+                return new i_k_cc_c_7__3(this.mSheet);
+        }
 
 	return 0;	
 }

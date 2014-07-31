@@ -173,10 +173,10 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.2',
 --k.cc.a.3
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.3',1,'Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects).');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_1',201,'k.cc.a.3','Count the objects up to 20.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_2',202,'k.cc.a.3','Count the objects up to 20. Make answer zero. ');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_3',203,'k.cc.a.3','Count the objects up to 20. make sure answer is between 11-15');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_4',204,'k.cc.a.3','Count the objects up to 20. make sure answer is between 16-20');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_1',1.301,'k.cc.a.3','Count the objects up to 20.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_2',1.302,'k.cc.a.3','Count the objects up to 20. Make answer zero. ');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_3',1.303,'k.cc.a.3','Count the objects up to 20. make sure answer is between 11-15');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_4',1.304,'k.cc.a.3','Count the objects up to 20. make sure answer is between 16-20');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
@@ -188,29 +188,25 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4',
 
 --k.cc.b.4.a
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.a',2,'When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.');
-	--types
-	--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.a_1',301,'k.cc.b.4.a','Match counting sequence with number of objects.');
-	--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.a_2',302,'k.cc.b.4.a','When given counting words in order pick the group with that many items.');
+	--types NONE YET NOT DOING 
+
 
 --k.cc.b.4.b
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.b',2,'Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.');
-	--types
-	--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_1',401,'k.cc.b.4.b','Count the objects up to 20.');
-	--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_2',402,'k.cc.b.4.b','Count the objects up to 20. Make answer zero. ');
-	--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_3',403,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 11-15');
-	--insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.b_4',404,'k.cc.b.4.b','Count the objects up to 20. make sure answer is between 16-20');
+	--types NONE YET NOT DOING 
+
 
 --k.cc.b.4.c
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.c',2,'Understand that each successive number name refers to a quantity that is one larger.');
-	--types NONE YET NEED SOME
+	--types NONE YET NOT DOING 
 
 --k.cc.b.5
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.5',2,'Count to answer "how many?" questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1-20, count out that many objects.');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',601,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',602,'k.cc.b.5','Count the objects up to 20 in a line.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',603,'k.cc.b.5','Count the objects up to 20 in a circle.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',2.01,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',2.02,'k.cc.b.5','Count the objects up to 20 in a line.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',2.03,'k.cc.b.5','Count the objects up to 20 in a circle.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',2.04,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
@@ -219,14 +215,16 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 --k.cc.c.6
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.6',3,'Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies.');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',701,'k.cc.c.6','Compare 2 groups of of items from 1-10 with greater than, equal to or less than.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',3.101,'k.cc.c.6','Compare 10 objects with greater than.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',3.102,'k.cc.c.6','Compare 10 objects with equal to.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',3.103,'k.cc.c.6','Compare 10 objects with less than.');
 
 --k.cc.c.7
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',3,'Compare two numbers between 1 and 10 presented as written numerals.');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
-
-
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',3.201,'k.cc.c.7','Compare 2 numbers with greater than.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',3.202,'k.cc.c.7','Compare 2 numbers with equal to.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',3.203,'k.cc.c.7','Compare 2 numbers with less than.');
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
@@ -234,10 +232,10 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 --k.oa.a.1
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',1,'Represent addition and subtraction with objects, fingers, mental images, drawings1, sounds (e.g., claps), acting out situations, verbal explanations, expressions, or equations.');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',10,'k.oa.a.1','Add within 5 with pictures to help.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',11,'k.oa.a.1','Subtract within 5 with pictures to help.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_3',12,'k.oa.a.1','Pick the number sentence that represents the addition word problem.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_4',13,'k.oa.a.1','Pick the number sentence that represents the subtraction word problem.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',4.101,'k.oa.a.1','Add within 5 with pictures to help.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_3',4.103,'k.oa.a.1','Pick the number sentence that represents the addition word problem.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_4',4.104,'k.oa.a.1','Pick the number sentence that represents the subtraction word problem.');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
