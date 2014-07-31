@@ -1,60 +1,14 @@
-/* GAME: */
-
-var k_cc_b_5 = new Class(
-{
-
-Extends: GameSheet,
-
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new sk_cc_b_5(this);	
-                this.mSheet.createItems();
-                this.mSheet.createShapes();
-	}
-});
-
-/* SHEET: */ 
-
-var sk_cc_b_5 = new Class(
-{
-Extends: Sheet,
-	initialize: function(game)
-        {
-                this.parent(game);
-        },
-
-        createItems: function()
-        {
-                this.parent();
-              
-                if (APPLICATION.mLevel > APPLICATION.mLevels)
-                {
-                        this.setScoreNeeded(APPLICATION.mLevels);
-                }
-                else
-                {
-                        this.setScoreNeeded(APPLICATION.mLevel); 
-                }
-
-		this.addItem(new i_604(this));
-		this.addItem(new i_604(this));
-		
-		this.randomize(10);
-        }
-});
-
-/ * ITEMS: */
-
-var i_604 = new Class(
+var i_k_cc_b_5__4 = new Class(
 {
 Extends: ThreeButtonItem,
 initialize: function(sheet)
 {
 	this.parent(sheet);
-        this.mType = 604;
-    
+        this.mType = 'k.cc.b.5_4';
+
+        this.mNameMachine = new NameMachine();
+        this.mPictureLink = this.mNameMachine.getPictureLink();
+ 
 	//BUTTON A
        	this.mButtonA.setPosition(100,100);
         this.mButtonB.setPosition(380,100);
@@ -72,7 +26,7 @@ initialize: function(sheet)
 		c = parseInt(a+c);
 	}
 
-	this.setQuestion('How many kids?');
+	this.setQuestion('How many?');
         this.setAnswer(a,0);
 
         this.mButtonA.setAnswer(a);
@@ -124,19 +78,22 @@ createQuestionShapes: function()
 
 	for (var i = 0; i < answer; i++)
 	{
-		this.addQuestionShape(new Shape(50,50,parseInt(xArray[i]),parseInt(yArray[i]),this.mSheet.mGame,"/images/bus/kid.png","",""));
+		this.addQuestionShape(new Shape(50,50,parseInt(xArray[i]),parseInt(yArray[i]),this.mSheet.mGame,this.mPictureLink,"",""));
 	}
 }
 });
 
-var i_603 = new Class(
+var i_k_cc_b_5__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 603;
-    
+                this.mType = 'k.cc.b.5_3';
+   
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
+ 
 		//BUTTON A
                 this.mButtonA.setPosition(100,100);
                 this.mButtonB.setPosition(380,100);
@@ -162,7 +119,7 @@ Extends: ThreeButtonItem,
 			c = parseInt(a+c);
 		}
 
-		this.setQuestion('How many kids?');
+		this.setQuestion('How many');
                 this.setAnswer(a,0);
 
                 this.mButtonA.setAnswer(a);
@@ -183,42 +140,45 @@ Extends: ThreeButtonItem,
 		{
 			if (answer == 8) 
 			{
-this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+37),parseInt(y-37),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+37),parseInt(y+37),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-37),parseInt(y+37),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-37),parseInt(y-37),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+37),parseInt(y-37),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+37),parseInt(y+37),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-37),parseInt(y+37),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-37),parseInt(y-37),this.mSheet.mGame,this.mPictureLink,"",""));
 			}
 			if (answer == 12) 
 			{
-this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-85),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+80),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+80),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+85),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+85),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-80),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-80),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-85),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-85),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+80),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+80),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+85),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+85),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-80),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-80),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-85),this.mSheet.mGame,this.mPictureLink,"",""));
 			}
 		}
 	}
 });
 
-var i_602 = new Class(
+var i_k_cc_b_5__2 = new Class(
 {
 Extends: ThreeButtonItem,
 initialize: function(sheet)
 {
         this.parent(sheet);
-        this.mType = 602;
-   
+        this.mType = 'k.cc.b.5_2';
+  
+        this.mNameMachine = new NameMachine();
+        this.mPictureLink = this.mNameMachine.getPictureLink();
+ 
 	//BUTTON A
         this.mButtonA.setPosition(100,100);
         this.mButtonB.setPosition(380,100);
@@ -236,7 +196,7 @@ initialize: function(sheet)
 		c = parseInt(a+c);
 	}
 
-	this.setQuestion('How many kids?');
+	this.setQuestion('How many?');
         this.setAnswer(a,0);
 
        	this.mButtonA.setAnswer(a);
@@ -255,7 +215,7 @@ createQuestionShapes: function()
 
 	for (var i = 0; i < answer; i++)
 	{
-		this.addQuestionShape(new Shape(45,45,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+		this.addQuestionShape(new Shape(45,45,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
 		x = x + 37;
 	}
 }
@@ -263,14 +223,17 @@ createQuestionShapes: function()
 
 /* TYPE_DESCRIPTION: Count the objects up to 20 in a rectangular array. */
 
-var i_601 = new Class(
+var i_k_cc_b_5__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 601;
-    
+                this.mType = 'k.cc.b.5_1';
+   
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
+
 		//BUTTON A
                 this.mButtonA.setPosition(100,100);
                 this.mButtonB.setPosition(380,100);
@@ -300,7 +263,7 @@ Extends: ThreeButtonItem,
 			c = parseInt(a+c);
 		}
 
-		this.setQuestion('How many kids?');
+		this.setQuestion('How many?');
                 this.setAnswer(a,0);
 
                 this.mButtonA.setAnswer(a);
@@ -321,40 +284,40 @@ Extends: ThreeButtonItem,
 		{
 			if (answer == 4)
 			{
-this.addQuestionShape(new Shape(50,50,x,parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),y,this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,x,parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,x,parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),y,this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,x,parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),y,this.mSheet.mGame,this.mPictureLink,"",""));
 			}	
 			if (answer == 8) 
 			{
-this.addQuestionShape(new Shape(50,50,x,parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),y,this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,x,parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),y,this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,x,parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),y,this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,x,parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),y,this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
 			}
 			if (answer == 20) 
 			{
-this.addQuestionShape(new Shape(50,50,x,parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+100),y,this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y+100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y+50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y-50),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
-this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-100),this.mSheet.mGame,"/images/bus/kid.png","",""));
+this.addQuestionShape(new Shape(50,50,x,parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+100),y,this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+100),parseInt(y+100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y+100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x),parseInt(y+100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y+100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y+50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-100),parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
+this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
 			}
 		}
 	}
