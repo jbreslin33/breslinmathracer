@@ -139,6 +139,13 @@ var NameMachine = new Class(
 		this.mAddedArray.push("found");
 		this.mAddedArray.push("borrowed");
 		this.mAddedArray.push("added");
+		
+		//subtracted	
+		this.mSubtractedArray = new Array();
+		this.mUsedSubtractedElementArray = new Array();
+		this.mSubtractedArray.push("gave away");	
+		this.mSubtractedArray.push("lost");	
+		this.mSubtractedArray.push("threw away");	
 	},
        
 	getSchool: function()
@@ -618,6 +625,34 @@ var NameMachine = new Class(
                 }
                 this.mUsedAddedElementArray.push(randomElement);
                 return this.mAddedArray[randomElement];
+        },
+
+	getSubtracted: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mSubtractedArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedSubtractedElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedSubtractedElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedSubtractedElementArray.push(randomElement);
+                return this.mSubtractedArray[randomElement];
         }
+
 });
 
