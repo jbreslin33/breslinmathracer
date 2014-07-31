@@ -1,50 +1,11 @@
-/* GAME: */
-
-var k_cc_c_7 = new Class(
-{
-
-Extends: GameSheet,
-
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new sk_cc_c_7(this);	
-                this.mSheet.createItems();
-                this.mSheet.createShapes();
-	}
-});
-
-/* SHEET: */ 
-
-var sk_cc_c_7 = new Class(
-{
-Extends: Sheet,
-	initialize: function(game)
-        {
-                this.parent(game);
-        },
-
-        createItems: function()
-        {
-                this.parent();
-              
-		this.addItem(new i_801(this));
-		
-		this.randomize(10);
-        }
-});
-
-/ * ITEMS: */
-
-var i_801 = new Class(
+var i_k_cc_c_7__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 801;
-    
+                this.mType = 'k.cc.c.7_1';
+
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
                 this.mButtonB.setPosition(380,200);
