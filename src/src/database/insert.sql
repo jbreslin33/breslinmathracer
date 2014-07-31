@@ -149,10 +149,10 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 --k.cc.a.1
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.1',1,'Count to 100 by ones and by tens.');
 	--types
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','This type will ask what comes next after a number from 0-99 that does not end in 0 or 9.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_2',2,'k.cc.a.1','This type will ask what comes next after a number ending in 9 from 0-99.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_3',3,'k.cc.a.1','This type will ask what comes next after a number ending in 0 from 0-99.');
-	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_4',4,'k.cc.a.1','When counting by ten from numbers that end in zero. What comes next. Numbers range from 0-100.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1,'k.cc.a.1','What comes next after a number from 0-99 that does not end in 0 or 9.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_2',2,'k.cc.a.1','What comes next after a number ending in 9 from 0-99.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_3',3,'k.cc.a.1','What comes next after a number ending in 0 from 0-99.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_4',4,'k.cc.a.1','What comes next when counting by ten from numbers that end in zero up to 100.');
 
 --k.cc.a.2
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.2',1,'Count forward beginning from a given number within the known sequence (instead of having to begin at 1).');
