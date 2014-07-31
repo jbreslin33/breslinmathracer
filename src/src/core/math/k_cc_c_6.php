@@ -1,50 +1,15 @@
-/* GAME: */
-
-var k_cc_c_6 = new Class(
-{
-
-Extends: GameSheet,
-
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new sk_cc_c_6(this);	
-                this.mSheet.createItems();
-                this.mSheet.createShapes();
-	}
-});
-
-/* SHEET: */ 
-
-var sk_cc_c_6 = new Class(
-{
-Extends: Sheet,
-	initialize: function(game)
-        {
-                this.parent(game);
-        },
-
-        createItems: function()
-        {
-                this.parent();
-              
-		this.addItem(new i_701(this));
-		
-		this.randomize(10);
-        }
-});
-
-/ * ITEMS: */
-
-var i_701 = new Class(
+var i_k_cc_c_6__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 701;
-    
+                this.mType = 'k.cc.c.6_1';
+
+	        this.mNameMachine = new NameMachine();
+        	this.mPictureLinkLeft = this.mNameMachine.getPictureLink();
+        	this.mPictureLinkRight = this.mNameMachine.getPictureLink();
+ 
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
                 this.mButtonB.setPosition(380,200);
@@ -83,7 +48,7 @@ Extends: ThreeButtonItem,
 				x = 40;
 				var y = 150;
 			}
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLinkLeft,"",""));
 			x = x + 50;
 		}
 		var x = 500;
@@ -95,7 +60,7 @@ Extends: ThreeButtonItem,
 				x = 500;
 				var y = 150;
 			}
-			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,"/images/bus/kid.png","",""));
+			this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLinkRight,"",""));
 			x = x + 50;
 		}
 	}
