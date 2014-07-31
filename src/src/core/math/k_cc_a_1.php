@@ -1,55 +1,12 @@
-/* GAME: */
-
-var k_cc_a_1 = new Class(
-{
-
-Extends: GameSheet,
-
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new sk_cc_a_1(this);	
-		this.mSheet.createItems();
-		this.mSheet.createShapes();
-	}
-});
-
-/* SHEET: */
-
-var sk_cc_a_1 = new Class(
-{
-Extends: Sheet,
-        initialize: function(game)
-        {
-                this.parent(game);
-        },
-
-        createItems: function()
-        {
-                this.parent();
- 
-		this.addItem(new i_1(this));
-		this.addItem(new i_2(this));
-		this.addItem(new i_3(this));
-		this.addItem(new i_4(this));
-		
-		this.randomize(10);
-        }
-});
-
-/* ITEMS: */
-
-/* TYPE_DESCRIPTION: This type will ask what comes next after a number from 0-99. */
-
-var i_1 = new Class(
+/* TYPE_DESCRIPTION: What comes next after a number from 0-99 that does not end in 0 or 9. */
+var i_k_cc_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 1;
+                this.mType = 'k.cc.a.1_1';
 
 		var x = Math.floor(Math.random()*100);
 		var a = parseInt(x+1);
@@ -74,16 +31,15 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_2: This type will ask what comes next after a number ending in 9 from 0-99. */
-
-var i_2 = new Class(
+/* TYPE_DESCRIPTION: What comes next after a number ending in 9 from 0-99. */
+var i_k_cc_a_1__2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 2;
+                this.mType = 'k.cc.a.1_2';
 
                 var x = Math.floor((Math.random()*10)+1);
 		x = parseInt(x * 10);
@@ -110,16 +66,15 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_3: This type will ask what comes next after a number ending in 0 from 0-99. */
-
-var i_3 = new Class(
+/* TYPE_DESCRIPTION: What comes next after a number ending in 0 from 0-99. */
+var i_k_cc_a_1__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 3;
+                this.mType = 'k.cc.a.1_3';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
@@ -145,16 +100,15 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4:  When couning by ten from numbers that end in zero. What comes next. Numbers range from 0-100. */
-
-var i_4 = new Class(
+/* TYPE_DESCRIPTION: What comes next when counting by ten from numbers that end in zero up to 100. */
+var i_k_cc_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 4;
+                this.mType = 'k.cc.a.1_4';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
@@ -179,3 +133,4 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
+
