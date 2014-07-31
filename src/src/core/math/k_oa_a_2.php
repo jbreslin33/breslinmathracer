@@ -17,19 +17,19 @@ Extends: ThreeButtonItem,
 		this.x = 0;	 
 		this.y = 0;	 
 
-		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 10 || this.x > 10)
+		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 10 || this.x > 10 || this.a < 0 || this.b < 0)
 		{
 			//variables
                 	this.x = Math.floor(Math.random()*11);
                 	this.y = Math.floor(Math.random()*11);
-			this.c = parseInt(this.x + this.y);  
+			this.c = parseInt(this.x - this.y);  
 	
 			//wrong answers 
 			this.a = Math.floor(Math.random()*5)+parseInt(this.c-3);
 			this.b = Math.floor(Math.random()*5)+parseInt(this.c-3);
                 }
 
-                this.setQuestion(this.x + ' + ' + this.y + ' =');
+                this.setQuestion(this.x + ' - ' + this.y + ' =');
                 this.setAnswer(parseInt(this.c),0);
 
                 this.mButtonA.setAnswer(this.a);
