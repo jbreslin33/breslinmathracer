@@ -216,7 +216,6 @@ Extends: ThreeButtonItem,
                 var factorOfTen = Math.floor((Math.random()*9)+1);
 		factorOfTen = factorOfTen * 10;
                 x = parseInt(factorOfTen + 9);
-                x = parseInt(x-1);
                 var a = parseInt(x+1);
                 var b = 0;
                 var c = 0;
