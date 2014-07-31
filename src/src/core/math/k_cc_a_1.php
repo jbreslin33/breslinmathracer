@@ -8,7 +8,10 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.cc.a.1_1';
 
-		var x = Math.floor(Math.random()*100);
+		var endNumber = Math.floor((Math.random()*8)+1);
+		var booster = Math.floor(Math.random()*10);
+		booster = booster * 10; //should be 0,10,20,30,etc..
+		var x = booster + endNumber;	
 		var a = parseInt(x+1);
 		var b = 0;
 		var c = 0; 
