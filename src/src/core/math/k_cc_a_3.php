@@ -1,4 +1,4 @@
-/* TYPE_DESCRIPTION: Count the objects up to 20. */
+/* TYPE_DESCRIPTION: Count the objects from 1 - 10. */
 var i_k_cc_a_3__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -10,7 +10,7 @@ Extends: ThreeButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.mPictureLink = this.mNameMachine.getPictureLink();
 
-		var a = Math.floor(Math.random()*21);
+		var a = Math.floor((Math.random()*9)+1);
 		var b = 0;
 		var c = 0; 
 
@@ -52,7 +52,7 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: Count the objects up to 20. Make answer zero. */
+/* TYPE_DESCRIPTION: Count zero objects. */
 var i_k_cc_a_3__2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -87,7 +87,7 @@ Extends: ThreeButtonItem,
 });
 / * ITEMS: */
 
-/* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 11-15 */
+/* TYPE_DESCRIPTION: Count objects from 11-15 */
 var i_k_cc_a_3__3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -141,7 +141,7 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Count the objects up to 20. make sure answer is between 16-20 */
+/* TYPE_DESCRIPTION: Count objects from 16-20 */
 
 var i_k_cc_a_3__4 = new Class(
 {
