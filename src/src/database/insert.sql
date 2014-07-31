@@ -95,15 +95,6 @@ insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (27,4,12); -- 5.md 
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (28,5,12); -- 5.g 
 
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,1,'Count to tell the number of objects.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (3,1,'Compare numbers.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,4,'Classify objects and count the number of objects in each category.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Identify and describe shapes.');
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
 
 --MATH
 
@@ -154,7 +145,9 @@ insert into step_types(description) values ('four or more steps');
 insert into counting_types(description) values ('from ending in 9');
 insert into counting_types(description) values ('from ending in 0');
 
-
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
+--------------------------------------CLUSTER------------------------------------------- 
 --k.cc.a.1
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.1',1,'Count to 100 by ones and by tens.');
 	--types
@@ -179,6 +172,9 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.3',
 	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.3_4',204,'k.cc.a.3','Count the objects up to 20. make sure answer is between 16-20');
 
 
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,1,'Count to tell the number of objects.');
+--------------------------------------CLUSTER------------------------------------------- 
 --k.cc.b.4
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4',2,'Understand the relationship between numbers and quantities; connect counting to cardinality.');
 	--types NONE this is actually a heading with a,b,c subheadings below
@@ -209,6 +205,10 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.5',
 	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',603,'k.cc.b.5','Count the objects up to 20 in a circle.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',604,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
 
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (3,1,'Compare numbers.');
+--------------------------------------CLUSTER------------------------------------------- 
 --k.cc.c.6
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.6',3,'Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies.');
 	--types
@@ -219,6 +219,11 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',
 	--types
 	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',801,'k.cc.c.7','Compare 2 numbers from 1-10 with greater than, equal to or less than.');
 
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
+--------------------------------------CLUSTER------------------------------------------- 
 --k.oa.a.1
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',1,'Represent addition and subtraction with objects, fingers, mental images, drawings1, sounds (e.g., claps), acting out situations, verbal explanations, expressions, or equations.');
 	--types
@@ -226,6 +231,33 @@ insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',11,'k.oa.a.1','Subtract within 5 with pictures to help.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_3',12,'k.oa.a.1','Pick the number sentence that represents the addition word problem.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_4',13,'k.oa.a.1','Pick the number sentence that represents the subtraction word problem.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,4,'Classify objects and count the number of objects in each category.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Identify and describe shapes.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
+--------------------------------------CLUSTER------------------------------------------- 
+
 
 
 --PRACTICE BUDDY
