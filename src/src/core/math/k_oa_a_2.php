@@ -15,6 +15,7 @@ Extends: ThreeButtonItem,
 		this.mThing = this.mNameMachine.getThing();
 		this.mOwned = this.mNameMachine.getOwned();
 		this.mAdded = this.mNameMachine.getAdded();
+		this.mSubtracted = this.mNameMachine.getSubtracted();
              
 		this.a = 0;
 		this.b = 0;
@@ -45,7 +46,7 @@ Extends: ThreeButtonItem,
 		roll = 0;
 		if (roll == 0)
 		{
-                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mAdded + ' ' + this.y + ' more ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
+                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mSubtracted + ' ' + this.y + ' ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
 		}
 
 
