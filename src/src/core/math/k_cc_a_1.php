@@ -1,4 +1,4 @@
-/* TYPE_DESCRIPTION: What comes next when counting by ten from numbers that end in zero up to 100. */
+/* TYPE_DESCRIPTION: What comes next when counting by ten from numbers that end in zero from 10 to 100. */
 var i_k_cc_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
