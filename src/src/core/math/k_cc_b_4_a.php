@@ -1,54 +1,5 @@
-/* GAME: */
-
-var k_cc_b_4_a = new Class(
-{
-
-Extends: GameSheet,
-
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new sk_cc_b_4_a(this);	
-                this.mSheet.createItems();
-                this.mSheet.createShapes();
-	}
-});
-
-/* SHEET: */ 
-
-var sk_cc_b_4_a = new Class(
-{
-Extends: Sheet,
-        initialize: function(game)
-        {
-                this.parent(game);
-        },
-
-        createItems: function()
-        {
-                this.parent();
-              
-                if (APPLICATION.mLevel > APPLICATION.mLevels)
-                {
-                        this.setScoreNeeded(APPLICATION.mLevels);
-                }
-                else
-                {
-                        this.setScoreNeeded(APPLICATION.mLevel); 
-                }
-
-		this.addItem(new i_301(this));
-		this.addItem(new i_302(this));
-		
-		this.randomize(10);
-        }
-});
-
-/ * ITEMS: */
-
 /* TYPE_DESCRIPTION: Match counting sequence with number of objects. */
-
+/*
 var i_301 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -117,9 +68,9 @@ Extends: ThreeButtonItem,
 		}
 	}
 });
-
+*/
 /* TYPE_DESCRIPTION: When given counting words in order pick the group with that many items. */
-
+/*
 var i_302 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -264,3 +215,4 @@ Extends: ThreeButtonItem,
                 }
         }
 });
+*/
