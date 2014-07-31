@@ -112,3 +112,18 @@
 <script type="text/javascript" src="/src/core/math/k_oa_a_4.php"></script>
 <script type="text/javascript" src="/src/core/math/k_oa_a_5.php"></script>
 
+<script type="text/javascript" src="/src/core/math/k_nbt_a_1.php"></script>
+
+<script type="text/javascript" src="/src/core/math/k_md_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/k_md_a_2.php"></script>
+
+<script type="text/javascript" src="/src/core/math/k_md_b_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/k_g_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/k_g_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/k_g_a_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/k_g_b_4.php"></script>
+<script type="text/javascript" src="/src/core/math/k_g_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/k_g_b_6.php"></script>
+
