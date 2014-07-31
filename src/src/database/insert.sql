@@ -122,12 +122,12 @@ insert into operation_types(description) values ('addition');
 insert into operation_types(description) values ('subtraction');
 
 --problem_types
-insert into problem_types(description) values ('word');
 insert into problem_types(description) values ('calculation');
+insert into problem_types(description) values ('word');
 
 --remainder_types
-insert into remainder_types(description) values ('remainders');
 insert into remainder_types(description) values ('no remainders');
+insert into remainder_types(description) values ('remainders');
 
 --speed_types
 insert into speed_types(description) values ('fast');
@@ -243,9 +243,17 @@ insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',
 --k.oa.a.2
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.2',4,'Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_1',4.201,'k.oa.a.2','Add within 10.');
+		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.2_1',5);
+		insert into item_types_problem_types(item_types_id, problem_types_id) values ('k.oa.a.2_1',1);
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_2',4.202,'k.oa.a.2','Subtract within 10.');
+		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.2_2',6);
+		insert into item_types_problem_types(item_types_id, problem_types_id) values ('k.oa.a.2_2',1);
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_3',4.203,'k.oa.a.2','Addition word problems within 10.');
+		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.2_3',5);
+		insert into item_types_problem_types(item_types_id, problem_types_id) values ('k.oa.a.2_3',2);
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_4',4.204,'k.oa.a.2','Subtraction word problems within 10.');
+		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.2_4',6);
+		insert into item_types_problem_types(item_types_id, problem_types_id) values ('k.oa.a.2_4',2);
 
 
 --------------------------------------CLUSTER------------------------------------------- 
