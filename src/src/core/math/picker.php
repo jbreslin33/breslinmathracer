@@ -48,6 +48,18 @@ getItem: function(id)
 	{
 		return new i_k_cc_a_2__7(this.mSheet);
 	}	
+	if (id == 'k.cc.a.2_8')
+	{
+		return new i_k_cc_a_2__8(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_9')
+	{
+		return new i_k_cc_a_2__9(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_10')
+	{
+		return new i_k_cc_a_2__10(this.mSheet);
+	}	
 
 	//k.cc.a.3
 	if (id == 'k.cc.a.3_1')
