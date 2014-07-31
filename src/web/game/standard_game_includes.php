@@ -97,4 +97,18 @@
 <script type="text/javascript" src="/src/core/math/k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_3.php"></script>
 
+<script type="text/javascript" src="/src/core/math/k_cc_b_4_a.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_b_4_b.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_b_4_c.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_b_5.php"></script>
+
+<script type="text/javascript" src="/src/core/math/k_cc_c_6.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_c_7.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/k_oa_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/k_oa_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/k_oa_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/k_oa_a_4.php"></script>
+<script type="text/javascript" src="/src/core/math/k_oa_a_5.php"></script>
 
