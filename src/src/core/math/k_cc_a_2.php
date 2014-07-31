@@ -1,62 +1,11 @@
-/* GAME: */
-
-var k_cc_a_2 = new Class(
-{
-
-Extends: GameSheet,
-
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new sk_cc_a_2(this);	
-                this.mSheet.createItems();
-                this.mSheet.createShapes();
-	}
-});
-
-/* SHEET */
-
-var sk_cc_a_2 = new Class(
-{
-Extends: Sheet,
-        initialize: function(game)
-        {
-                this.parent(game);
-        },
-
-        createItems: function()
-        {
-                this.parent();
-              
-                if (APPLICATION.mLevel > APPLICATION.mLevels)
-                {
-                        this.setScoreNeeded(APPLICATION.mLevels);
-                }
-                else
-                {
-                        this.setScoreNeeded(APPLICATION.mLevel); 
-                }
-
-		this.addItem(new i_101(this));
-		this.addItem(new i_102(this));
-		this.addItem(new i_103(this));
-		
-		this.randomize(10);
-        }
-});
-
-/* ITEMS: */ 
-
 /* TYPE_DESCRIPTION: This type will ask what 2 numbers come next after a number from 0-99. */
-
-var i_101 = new Class(
+var i_k_cc_a_2__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 101;
+                this.mType = 'k.cc.a.2_1';
 
                 var x = Math.floor(Math.random()*98);
                 var a = parseInt(x+1);
@@ -86,14 +35,13 @@ Extends: ThreeButtonItem,
 });
 
 /* TYPE_DESCRIPTION: This type will ask what 3 numbers come next after a number from 0-99. */
-
-var i_102 = new Class(
+var i_k_cc_a_2__2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 102;
+                this.mType = 'k.cc.a.2_2';
 
                 var x = Math.floor(Math.random()*98);
 		var a = parseInt(x+1);
@@ -123,14 +71,13 @@ Extends: ThreeButtonItem,
 });
 
 / *TYPE_DESCRIPTION: This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100. */
-
-var i_103 = new Class(
+var i_k_cc_a_2__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 103;
+                this.mType = 'k.cc.a.2_3';
 
                 var a = Math.floor(Math.random()*98);
                 var b = 0;
