@@ -205,7 +205,7 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: What comes next after a number ending in 0 from 0-99. */
+/* TYPE_DESCRIPTION: What comes next after a number ending in 9 from 11-99. */
 var i_k_cc_a_2__7 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -214,6 +214,42 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
 
                 this.mType = 'k.cc.a.2_7';
+
+                var x = Math.floor((Math.random()*10)+1);
+                x = parseInt(x * 10);
+                x = parseInt(x-1);
+                var a = parseInt(x+1);
+                var b = 0;
+                var c = 0;
+
+                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                {
+                        b = Math.floor(Math.random()*7)-3;
+                        b = parseInt(a+b);
+                        c = Math.floor(Math.random()*7)-3;
+                        c = parseInt(a+c);
+                }
+
+                this.setQuestion('What comes after ' + x + '?');
+                this.setAnswer(parseInt(a),0);
+
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
+                this.shuffle(10);
+        }
+});
+
+
+/* TYPE_DESCRIPTION: What comes next after zero. */
+var i_k_cc_a_2__8 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.cc.a.2_8';
 
                 var x = Math.floor((Math.random()*9)+1);
                 x = parseInt(x * 10);
@@ -238,3 +274,72 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
+
+/* TYPE_DESCRIPTION: What comes next after 10. */
+var i_k_cc_a_2__9 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.cc.a.2_9';
+
+                var x = Math.floor((Math.random()*9)+1);
+                x = parseInt(x * 10);
+                var a = parseInt(x+1);
+                var b = 0;
+                var c = 0;
+
+                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                {
+                        b = Math.floor(Math.random()*7)-3;
+                        b = parseInt(a+b);
+                        c = Math.floor(Math.random()*7)-3;
+                        c = parseInt(a+c);
+                }
+
+                this.setQuestion('What comes after ' + x + '?');
+                this.setAnswer(parseInt(a),0);
+
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
+                this.shuffle(10);
+        }
+});
+
+/* TYPE_DESCRIPTION: What comes next after number ending in zero from 11-99. */
+var i_k_cc_a_2__10 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.cc.a.2_10';
+
+                var x = Math.floor((Math.random()*9)+1);
+                x = parseInt(x * 10);
+                var a = parseInt(x+1);
+                var b = 0;
+                var c = 0;
+
+                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                {
+                        b = Math.floor(Math.random()*7)-3;
+                        b = parseInt(a+b);
+                        c = Math.floor(Math.random()*7)-3;
+                        c = parseInt(a+c);
+                }
+
+                this.setQuestion('What comes after ' + x + '?');
+                this.setAnswer(parseInt(a),0);
+
+                this.mButtonA.setAnswer(a);
+                this.mButtonB.setAnswer(b);
+                this.mButtonC.setAnswer(c);
+                this.shuffle(10);
+        }
+});
+
