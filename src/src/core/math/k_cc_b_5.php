@@ -1,3 +1,4 @@
+/* TYPE_DESCRIPTION: Count the objects up to 10 in a scattered configuration. */
 var i_k_cc_b_5__4 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -83,6 +84,8 @@ createQuestionShapes: function()
 }
 });
 
+
+/* TYPE_DESCRIPTION: Count the objects up to 20 in a circle. */
 var i_k_cc_b_5__3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -168,6 +171,7 @@ this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-85),this.mSheet.
 	}
 });
 
+/* TYPE_DESCRIPTION: Count the objects up to 20 in a line. */
 var i_k_cc_b_5__2 = new Class(
 {
 Extends: ThreeButtonItem,
