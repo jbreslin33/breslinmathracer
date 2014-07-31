@@ -122,6 +122,23 @@ var NameMachine = new Class(
                 this.mWomanArray.push("Mrs. Corcoran");
                 this.mWomanArray.push("Mrs. Uholik");
                 this.mWomanArray.push("Mrs. Vera");
+
+		//owned
+		this.mOwnedArray = new Array();
+		this.mUsedOwnedElementArray = new Array();
+		this.mOwnedArray.push("had");
+		this.mOwnedArray.push("borrowed");
+		this.mOwnedArray.push("found");
+		this.mOwnedArray.push("owned");
+
+		//added	
+		this.mAddedArray = new Array();
+		this.mUsedAddedElementArray = new Array();
+		this.mAddedArray.push("got");
+		this.mAddedArray.push("bought");
+		this.mAddedArray.push("found");
+		this.mAddedArray.push("borrowed");
+		this.mAddedArray.push("added");
 	},
        
 	getSchool: function()
@@ -547,6 +564,60 @@ var NameMachine = new Class(
 		}
 		this.mUsedNameArray.push(randomName); 
 		return randomName; 
-	}
+	},
+
+        getOwned: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mOwnedArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedOwnedElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedOwnedElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedOwnedElementArray.push(randomElement);
+                return this.mOwnedArray[randomElement];
+        },
+
+        getAdded: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mAddedArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedAddedElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedAddedElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedAddedElementArray.push(randomElement);
+                return this.mAddedArray[randomElement];
+        }
 });
 

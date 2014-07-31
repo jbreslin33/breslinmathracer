@@ -12,6 +12,9 @@ Extends: ThreeButtonItem,
 		this.mNameMachine = new NameMachine();
 		this.mNameOne = this.mNameMachine.getName();
 		this.mNameTwo = this.mNameMachine.getName();
+		this.mThing = this.mNameMachine.getThing();
+		this.mOwned = this.mNameMachine.getOwned();
+		this.mAdded = this.mNameMachine.getAdded();
              
 		this.a = 0;
 		this.b = 0;
@@ -23,8 +26,8 @@ Extends: ThreeButtonItem,
 		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c > 10 || this.a < 0 || this.b < 0)
 		{
 			//variables
-                	this.x = Math.floor(Math.random()*11);
-                	this.y = Math.floor(Math.random()*11);
+                	this.x = Math.floor(Math.random()*9)+2;
+                	this.y = Math.floor(Math.random()*9)+2;
 			this.c = parseInt(this.x + this.y);  
 	
 			//wrong answers 
@@ -38,12 +41,12 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer(this.b);
                 this.mButtonC.setAnswer(this.c);
 
-
+//found,got,bought,
                 var roll = Math.floor(Math.random()*11);
 		roll = 0;
 		if (roll == 0)
 		{
-                	this.setQuestion(this.mNameOne + ' had ' + this.x + ' + ' + this.y + ' =');
+                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mAdded + ' ' + this.y + ' more ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
 		}
 
 
