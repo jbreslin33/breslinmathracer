@@ -170,7 +170,7 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: What comes next after a number ending in 9 from 0-99. */
+/* TYPE_DESCRIPTION: What comes next after 9. */
 var i_k_cc_a_2__6 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -180,9 +180,7 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.cc.a.2_6';
 
-                var x = Math.floor((Math.random()*10)+1);
-		x = parseInt(x * 10);
-		x = parseInt(x-1);
+		var x = 9;
 		var a = parseInt(x+1);
                 var b = 0;
                 var c = 0;
@@ -195,7 +193,7 @@ Extends: ThreeButtonItem,
                         c = parseInt(a+c);
                 }
 
-                this.setQuestion('What comes after ' + x + '?');
+                this.setQuestion('What comes after 9?');
                 this.setAnswer(parseInt(a),0);
 
                 this.mButtonA.setAnswer(a);
@@ -215,8 +213,9 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.cc.a.2_7';
 
-                var x = Math.floor((Math.random()*10)+1);
-                x = parseInt(x * 10);
+                var factorOfTen = Math.floor((Math.random()*9)+1);
+		factorOfTen = factorOfTen * 10;
+                x = parseInt(factorOfTen + 9);
                 x = parseInt(x-1);
                 var a = parseInt(x+1);
                 var b = 0;
@@ -251,8 +250,7 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.cc.a.2_8';
 
-                var x = Math.floor((Math.random()*9)+1);
-                x = parseInt(x * 10);
+                var x = 0;
                 var a = parseInt(x+1);
                 var b = 0;
                 var c = 0;
@@ -265,7 +263,7 @@ Extends: ThreeButtonItem,
                         c = parseInt(a+c);
                 }
 
-                this.setQuestion('What comes after ' + x + '?');
+                this.setQuestion('What comes after 0?');
                 this.setAnswer(parseInt(a),0);
 
                 this.mButtonA.setAnswer(a);
@@ -285,8 +283,7 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.cc.a.2_9';
 
-                var x = Math.floor((Math.random()*9)+1);
-                x = parseInt(x * 10);
+                var x = 10;
                 var a = parseInt(x+1);
                 var b = 0;
                 var c = 0;
@@ -299,7 +296,7 @@ Extends: ThreeButtonItem,
                         c = parseInt(a+c);
                 }
 
-                this.setQuestion('What comes after ' + x + '?');
+                this.setQuestion('What comes after 10?');
                 this.setAnswer(parseInt(a),0);
 
                 this.mButtonA.setAnswer(a);
@@ -319,7 +316,7 @@ Extends: ThreeButtonItem,
 
                 this.mType = 'k.cc.a.2_10';
 
-                var x = Math.floor((Math.random()*9)+1);
+                var x = Math.floor((Math.random()*7)+2);
                 x = parseInt(x * 10);
                 var a = parseInt(x+1);
                 var b = 0;
