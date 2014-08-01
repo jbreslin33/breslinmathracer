@@ -127,3 +127,31 @@
 <script type="text/javascript" src="/src/core/math/k_g_b_5.php"></script>
 <script type="text/javascript" src="/src/core/math/k_g_b_6.php"></script>
 
+
+
+<script type="text/javascript" src="/src/core/math/g1_oa_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_oa_a_2.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_oa_b_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_oa_b_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_oa_c_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_oa_c_6.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_oa_d_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_oa_d_8.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g1_nbt_a_1.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_nbt_b_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_nbt_b_2_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_nbt_b_2_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_nbt_b_2_c.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_nbt_b_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_nbt_c_4.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_nbt_c_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_nbt_c_6.php"></script>
+
