@@ -16,16 +16,16 @@ Extends: ThreeButtonItem,
 		this.x = 0;	 
 		this.y = 0;	 
 
-		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 10 || this.x > 10 || this.a < 0 || this.b < 0)
+		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5 || this.x > 10 || this.a < 0 || this.b < 0)
 		{
 			//variables
-                	this.x = Math.floor(Math.random()*11);
-                	this.y = Math.floor(Math.random()*11);
+                	this.x = Math.floor(Math.random()*6);
+                	this.y = Math.floor(Math.random()*6);
 			this.c = parseInt(this.x - this.y);  
 	
 			//wrong answers 
-			this.a = Math.floor(Math.random()*5)+parseInt(this.c-3);
-			this.b = Math.floor(Math.random()*5)+parseInt(this.c-3);
+			this.a = Math.floor(Math.random()*5);
+			this.b = Math.floor(Math.random()*5);
                 }
 
                 this.setQuestion(this.x + ' - ' + this.y + ' =');
