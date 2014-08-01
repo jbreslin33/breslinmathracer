@@ -16,7 +16,12 @@ Extends: ThreeButtonItem,
 		this.x = 0;	 
 		this.y = 0;	 
 
-		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5 || this.x > 10 || this.a < 0 || this.b < 0)
+		this.xa = Math.floor((Math.random()*10)+1);
+		this.ya = Math.floor((Math.random()*10)+1);
+		this.xb = Math.floor((Math.random()*10)+1);
+		this.yb = Math.floor((Math.random()*10)+1);
+
+		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5 || this.x > 10 || this.a < 0 || this.b < 0 || parseInt(this.xa + this.ya) == parseInt(this.x + this.y) || parseInt(this.xb + this.yb) == parseInt(this.x + this.y))
 		{
 			//variables
                 	this.x = Math.floor((Math.random()*9)+1);
@@ -24,13 +29,12 @@ Extends: ThreeButtonItem,
 			this.c = parseInt(this.x + this.y) + ' = ' + this.y + ' + ' + this.x;  
 	
 			//wrong answers 
-			this.a = Math.floor(Math.random()*6);
-			this.b = Math.floor(Math.random()*6);
+			this.a = parseInt(this.x + this.y) + ' = ' + this.xa + ' + ' + this.ya;  
+			this.b = parseInt(this.x + this.y) + ' = ' + this.xb + ' + ' + this.yb;  
                 }
 
-                //this.setQuestion(this.x + ' - ' + this.y + ' =');
                 this.setQuestion('What is ' + parseInt(this.x + this.y) + ' equal to?');
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer(this.c,0);
 
                 this.mButtonA.setAnswer(this.a);
                 this.mButtonB.setAnswer(this.b);
