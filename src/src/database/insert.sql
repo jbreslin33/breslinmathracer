@@ -255,6 +255,15 @@ insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.2',
 		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.2_4',6);
 		insert into item_types_problem_types(item_types_id, problem_types_id) values ('k.oa.a.2_4',2);
 
+--k.oa.a.3
+--SKIPPING
+insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.3',4,'Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).');
+
+
+--k.oa.a.4
+insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.4',4,'For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_1',4.401,'k.oa.a.4','');
+
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
