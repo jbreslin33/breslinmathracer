@@ -472,17 +472,121 @@ insert into core_standards (id,core_clusters_id,description) values ('1.g.a.2',2
 
 insert into core_standards (id,core_clusters_id,description) values ('1.g.a.3',20,'Partition circles and rectangles into two and four equal shares, describe the shares using the words halves, fourths, and quarters, and use the phrases half of, fourth of, and quarter of. Describe the whole as two of, or four of the shares. Understand for these examples that decomposing into more equal shares creates smaller shares.');
 
+------------------------------------------------ g2 ----------------------------------
 
+------------------------------------------------ oa ----------------------------10------
 
-------------------------COPY THIS
 --------------------------------------CLUSTER------------------------------------------- 
---insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10,6,'');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (21,10,'Reason with shapes and their attributes.');
 --------------------------------------CLUSTER------------------------------------------- 
---insert into core_standards (id,core_clusters_id,description) values ('k.g.b.6',9,'');
 
---PRACTICE BUDDY
+insert into core_standards (id,core_clusters_id,description) values ('2.oa.a.1',21,'Use addition and subtraction within 100 to solve one- and two-step word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.');
 
---PREREQUISITE
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (22,10,'Add and subtract within 20.');
+--------------------------------------CLUSTER------------------------------------------- 
 
---ITEM_TYPE_COUNTING_TYPE
---insert into item_type_counting_type(
+insert into core_standards (id,core_clusters_id,description) values ('2.oa.b.2',22,'Fluently add and subtract within 20 using mental strategies. By end of Grade 2, know from memory all sums of two one-digit numbers.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (23,10,'Work with equal groups of objects to gain foundations for multiplication.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.oa.c.3',23,'Determine whether a group of objects (up to 20) has an odd or even number of members, e.g., by pairing objects or counting them by 2s; write an equation to express an even number as a sum of two equal addends.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.oa.c.4',23,'Use addition to find the total number of objects arranged in rectangular arrays with up to 5 rows and up to 5 columns; write an equation to express the total as a sum of equal addends.');
+
+-----------------------------------------------nbt--------------- 11
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (24,11,'Understand place value.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.a.1',24,'Understand that the three digits of a three-digit number represent amounts of hundreds, tens, and ones; e.g., 706 equals 7 hundreds, 0 tens, and 6 ones. Understand the following as special cases:');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.a.1.a',24,'100 can be thought of as a bundle of ten tens — called a "hundred."');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.a.1.b',24,'The numbers 100, 200, 300, 400, 500, 600, 700, 800, 900 refer to one, two, three, four, five, six, seven, eight, or nine hundreds (and 0 tens and 0 ones).');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.a.2',24,'Count within 1000; skip-count by 5s, 10s, and 100s.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.a.3',24,'Read and write numbers to 1000 using base-ten numerals, number names, and expanded form.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.a.4',24,'Compare two three-digit numbers based on meanings of the hundreds, tens, and ones digits, using >, =, and < symbols to record the results of comparisons.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (25,11,'Use place value understanding and properties of operations to add and subtract.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.b.5',25,'Fluently add and subtract within 100 using strategies based on place value, properties of operations, and/or the relationship between addition and subtraction.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.b.6',25,'Add up to four two-digit numbers using strategies based on place value and properties of operations.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.b.7',25,'Add and subtract within 1000, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method. Understand that in adding or subtracting three-digit numbers, one adds or subtracts hundreds and hundreds, tens and tens, ones and ones; and sometimes it is necessary to compose or decompose tens or hundreds.');
+
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.b.8',25,'Mentally add 10 or 100 to a given number 100-900, and mentally subtract 10 or 100 from a given number 100-900.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.nbt.b.9',25,'Explain why addition and subtraction strategies work, using place value and the properties of operations.');
+
+
+-----------------------------------------------md----------------------------12
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (26,12,'Measure and estimate lengths in standard units.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.a.1',26,'Measure the length of an object by selecting and using appropriate tools such as rulers, yardsticks, meter sticks, and measuring tapes.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.a.2',26,'Measure the length of an object twice, using length units of different lengths for the two measurements; describe how the two measurements relate to the size of the unit chosen.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.a.3',26,'Estimate lengths using units of inches, feet, centimeters, and meters.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.a.4',26,'Measure to determine how much longer one object is than another, expressing the length difference in terms of a standard length unit.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (27,12,'Relate addition and subtraction to length.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.b.5',27,'Use addition and subtraction within 100 to solve word problems involving lengths that are given in the same units, e.g., by using drawings (such as drawings of rulers) and equations with a symbol for the unknown number to represent the problem.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.b.6',27,'Represent whole numbers as lengths from 0 on a number line diagram with equally spaced points corresponding to the numbers 0, 1, 2, ..., and represent whole-number sums and differences within 100 on a number line diagram.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (28,12,'Work with time and money.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.c.7',28,'Tell and write time from analog and digital clocks to the nearest five minutes, using a.m. and p.m.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.c.8',28,'Solve word problems involving dollar bills, quarters, dimes, nickels, and pennies, using $ and ¢ symbols appropriately. Example: If you have 2 dimes and 3 pennies, how many cents do you have?');
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (29,12,'Represent and interpret data.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.d.9',29,'Generate measurement data by measuring lengths of several objects to the nearest whole unit, or by making repeated measurements of the same object. Show the measurements by making a line plot, where the horizontal scale is marked off in whole-number units.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.md.d.10',29,'Draw a picture graph and a bar graph (with single-unit scale) to represent a data set with up to four categories. Solve simple put-together, take-apart, and compare problems1 using information presented in a bar graph.');
+
+
+------------------------------------------------------- g ------------ 13
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (30,13,'Reason with shapes and their attributes.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('2.g.a.1',30,'Recognize and draw shapes having specified attributes, such as a given number of angles or a given number of equal faces.1 Identify triangles, quadrilaterals, pentagons, hexagons, and cubes.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.g.a.2',30,'Partition a rectangle into rows and columns of same-size squares and count to find the total number of them.');
+
+insert into core_standards (id,core_clusters_id,description) values ('2.g.a.3',30,'Partition circles and rectangles into two, three, or four equal shares, describe the shares using the words halves, thirds, half of, a third of, etc., and describe the whole as two halves, three thirds, four fourths. Recognize that equal shares of identical wholes need not have the same shape.');
+
+
+
+
+
