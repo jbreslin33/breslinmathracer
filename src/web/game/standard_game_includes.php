@@ -155,3 +155,51 @@
 <script type="text/javascript" src="/src/core/math/g1_nbt_c_5.php"></script>
 <script type="text/javascript" src="/src/core/math/g1_nbt_c_6.php"></script>
 
+
+
+<script type="text/javascript" src="/src/core/math/g2_oa_a_1.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g2_oa_b_2.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g2_oa_c_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_oa_c_4.php"></script>
+
+
+
+<script type="text/javascript" src="/src/core/math/g2_nbt_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_a_1_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_a_1_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_a_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g2_nbt_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_b_6.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_b_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_b_8.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_nbt_b_9.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g2_md_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_md_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_md_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_md_a_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g2_md_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_md_b_6.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g2_md_c_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_md_c_8.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g2_md_d_9.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_md_d_10.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g2_g_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_g_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g2_g_a_3.php"></script>
+
+
+
+
+
