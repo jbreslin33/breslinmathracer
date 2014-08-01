@@ -52,6 +52,12 @@ getItem: function(id)
                 return new i_k_oa_a_5__2(this.mSheet);
         }
 
+	//k.nbt.a.1
+        if (id == 'k.nbt.a.1_1')
+        {
+                return new i_k_nbt_a_1__1(this.mSheet);
+        }
+
 	/*** GRADE 5 ***/
 
 	//5.oa.a.1
