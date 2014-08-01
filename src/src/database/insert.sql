@@ -267,12 +267,18 @@ insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.4',
 --k.oa.a.5
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.5',4,'Fluently add and subtract within 5.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.5_1',4.501,'k.oa.a.5','Add within 5.');
+		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.5_1',5);
+		insert into item_types_speed_types(item_types_id, speed_types_id) values ('k.oa.a.5_1',1);
 	insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.5_2',4.502,'k.oa.a.5','Subtract within 5.');
+		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.5_2',6);
+		insert into item_types_speed_types(item_types_id, speed_types_id) values ('k.oa.a.5_2',1);
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
 --------------------------------------CLUSTER------------------------------------------- 
-
+--k.nbt.a.1
+insert into core_standards (id,core_clusters_id,description) values ('k.nbt.a.1',5,'Compose and decompose numbers from 11 to 19 into ten ones and some further ones, e.g., by using objects or drawings, and record each composition or decomposition by a drawing or equation (such as 18 = 10 + 8); understand that these numbers are composed of ten ones and one, two, three, four, five, six, seven, eight, or nine ones.');
+	insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_1',4.502,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
