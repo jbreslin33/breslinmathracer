@@ -283,22 +283,54 @@ insert into core_standards (id,core_clusters_id,description) values ('k.nbt.a.1'
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
 --------------------------------------CLUSTER------------------------------------------- 
+--k.md.a.1
+insert into core_standards (id,core_clusters_id,description) values ('k.md.a.1',6,'Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
+	-- NO TYPES
+--k.md.a.2
+insert into core_standards (id,core_clusters_id,description) values ('k.md.a.2',6,'Directly compare two objects with a measurable attribute in common, to see which object has "more of"/"less of" the attribute, and describe the difference. For example, directly compare the heights of two children and describe one child as taller/shorter.');
+	-- NO TYPES
 
 
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,4,'Classify objects and count the number of objects in each category.');
 --------------------------------------CLUSTER------------------------------------------- 
+insert into core_standards (id,core_clusters_id,description) values ('k.md.b.3',7,'Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
+	-- NO TYPES
+
 
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Identify and describe shapes.');
 --------------------------------------CLUSTER------------------------------------------- 
+--k.g.a.1
+insert into core_standards (id,core_clusters_id,description) values ('k.g.a.1',8,'Describe objects in the environment using names of shapes, and describe the relative positions of these objects using terms such as above, below, beside, in front of, behind, and next to.');
+	-- NO TYPES
+
+--k.g.a.2
+insert into core_standards (id,core_clusters_id,description) values ('k.g.a.2',8,'Correctly name shapes regardless of their orientations or overall size.');
+	-- NO TYPES
+
+--k.g.a.3
+insert into core_standards (id,core_clusters_id,description) values ('k.g.a.3',8,'Identify shapes as two-dimensional (lying in a plane, "flat") or three-dimensional ("solid").');
+	-- NO TYPES
+
 
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
 --------------------------------------CLUSTER------------------------------------------- 
+--k.g.b.4
+insert into core_standards (id,core_clusters_id,description) values ('k.g.b.4',8,'Analyze and compare two- and three-dimensional shapes, in different sizes and orientations, using informal language to describe their similarities, differences, parts (e.g., number of sides and vertices/"corners") and other attributes (e.g., having sides of equal length).');
+	-- NO TYPES
+
+--k.g.b.5
+insert into core_standards (id,core_clusters_id,description) values ('k.g.b.5',8,'Model shapes in the world by building shapes from components (e.g., sticks and clay balls) and drawing shapes.');
+	-- NO TYPES
+
+--k.g.b.6
+insert into core_standards (id,core_clusters_id,description) values ('k.g.b.6',8,'Compose simple shapes to form larger shapes. For example, "Can you join these two triangles with full sides touching to make a rectangle?"');
+	-- NO TYPE
 
 
 
