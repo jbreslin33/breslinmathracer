@@ -1,5 +1,5 @@
 
-/* TYPE_DESCRIPTION: Subtract with sum and minuend within 5. */
+/* TYPE_DESCRIPTION: Pick out what equation containing 10 is equal to number. */
 var i_k_nbt_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -19,9 +19,9 @@ Extends: ThreeButtonItem,
 		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5 || this.x > 10 || this.a < 0 || this.b < 0)
 		{
 			//variables
-                	this.x = Math.floor(Math.random()*6);
-                	this.y = Math.floor(Math.random()*6);
-			this.c = parseInt(this.x - this.y);  
+                	this.x = Math.floor((Math.random()*9)+1);
+                	this.y = 10; 
+			this.c = parseInt(this.x + this.y) + ' = ' + this.y + ' + ' + this.x;  
 	
 			//wrong answers 
 			this.a = Math.floor(Math.random()*6);
@@ -29,7 +29,7 @@ Extends: ThreeButtonItem,
                 }
 
                 //this.setQuestion(this.x + ' - ' + this.y + ' =');
-                this.setQuestion('What is ' + this.c + ' equal to?');
+                this.setQuestion('What is ' + parseInt(this.x + this.y) + ' equal to?');
                 this.setAnswer(parseInt(this.c),0);
 
                 this.mButtonA.setAnswer(this.a);
