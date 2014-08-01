@@ -868,8 +868,14 @@ insert into core_standards (id,core_clusters_id,description) values ('4.md.c.7',
 -----------------------------------------g ---------- 23
 
 --------------------------------------CLUSTER------------------------------------------- 
-insert into core_clusters(id,core_domains_subjects_grades_id,description) values (53,23,'');
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (53,23,'Draw and identify lines and angles, and classify shapes by properties of their lines and angles.');
 --------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.g.a.1',53,'Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel lines. Identify these in two-dimensional figures.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.g.a.2',53,'Classify two-dimensional figures based on the presence or absence of parallel or perpendicular lines, or the presence or absence of angles of a specified size. Recognize right triangles as a category, and identify right triangles.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.g.a.3',53,'Recognize a line of symmetry for a two-dimensional figure as a line across the figure such that the figure can be folded along the line into matching parts. Identify line-symmetric figures and draw lines of symmetry.');
 
 
 
