@@ -257,6 +257,67 @@
 
 
 
+<script type="text/javascript" src="/src/core/math/g4_oa_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_oa_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_oa_a_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_oa_b_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_oa_c_5.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g4_nbt_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nbt_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nbt_a_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_nbt_b_4.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nbt_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nbt_b_6.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g4_nf_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_a_2.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g4_nf_b_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_3_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_3_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_3_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_3_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_nf_b_4.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_4_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_4_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_b_4_c.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_nf_c_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_c_6.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_nf_c_7.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g4_md_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_md_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_md_a_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_md_b_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_md_c_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_md_c_5_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_md_c_5_b.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g4_md_c_6.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g4_md_c_7.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g4_g_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_g_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g4_g_a_3.php"></script>
+
+
+
+
 
 
 
