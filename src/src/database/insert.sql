@@ -630,6 +630,96 @@ insert into core_standards (id,core_clusters_id,description) values ('3.oa.d.8',
 
 insert into core_standards (id,core_clusters_id,description) values ('3.oa.d.9',34,'Identify arithmetic patterns (including patterns in the addition table or multiplication table), and explain them using properties of operations. For example, observe that 4 times a number is always even, and explain why 4 times a number can be decomposed into two equal addends.');
 
+----------------------------------------NBT----------- 15
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (35,15,'Use place value understanding and properties of operations to perform multi-digit arithmetic.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nbt.a.1',35,'Use place value understanding to round whole numbers to the nearest 10 or 100.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nbt.a.2',35,'Fluently add and subtract within 1000 using strategies and algorithms based on place value, properties of operations, and/or the relationship between addition and subtraction.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nbt.a.3',35,'Multiply one-digit whole numbers by multiples of 10 in the range 10-90 (e.g., 9 × 80, 5 × 60) using strategies based on place value and properties of operations.');
+
+-----------------------------------------NF--------------16
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (36,16,'Develop understanding of fractions as numbers.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.1',36,'Understand a fraction 1/b as the quantity formed by 1 part when a whole is partitioned into b equal parts; understand a fraction a/b as the quantity formed by a parts of size 1/b.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.2',36,'Understand a fraction as a number on the number line; represent fractions on a number line diagram.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.2.a',36,'Represent a fraction 1/b on a number line diagram by defining the interval from 0 to 1 as the whole and partitioning it into b equal parts. Recognize that each part has size 1/b and that the endpoint of the part based at 0 locates the number 1/b on the number line.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.2.b',36,'Represent a fraction a/b on a number line diagram by marking off a lengths 1/b from 0. Recognize that the resulting interval has size a/b and that its endpoint locates the number a/b on the number line.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.3',36,'Explain equivalence of fractions in special cases, and compare fractions by reasoning about their size.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.3.a',36,'Understand two fractions as equivalent (equal) if they are the same size, or the same point on a number line.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.3.b',36,'Recognize and generate simple equivalent fractions, e.g., 1/2 = 2/4, 4/6 = 2/3. Explain why the fractions are equivalent, e.g., by using a visual fraction model.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.3.c',36,'Express whole numbers as fractions, and recognize fractions that are equivalent to whole numbers. Examples: Express 3 in the form 3 = 3/1; recognize that 6/1 = 6; locate 4/4 and 1 at the same point of a number line diagram.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.nf.a.3.d',36,'Compare two fractions with the same numerator or the same denominator by reasoning about their size. Recognize that comparisons are valid only when the two fractions refer to the same whole. Record the results of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual fraction model.');
+
+
+
+
+
+
+---------------------------------------------md --------------------17
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (37,17,'Solve problems involving measurement and estimation.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.a.1',37,'Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.a.2',37,'Measure and estimate liquid volumes and masses of objects using standard units of grams (g), kilograms (kg), and liters (l).1 Add, subtract, multiply, or divide to solve one-step word problems involving masses or volumes that are given in the same units, e.g., by using drawings (such as a beaker with a measurement scale) to represent the problem.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (38,17,'Represent and interpret data.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.b.3',38,'Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories. Solve one- and two-step "how many more" and "how many less" problems using information presented in scaled bar graphs. For example, draw a bar graph in which each square in the bar graph might represent 5 pets.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.b.4',38,'Generate measurement data by measuring lengths using rulers marked with halves and fourths of an inch. Show the data by making a line plot, where the horizontal scale is marked off in appropriate units— whole numbers, halves, or quarters.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (39,17,'Geometric measurement: understand concepts of area and relate area to multiplication and to addition.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.5',39,'Recognize area as an attribute of plane figures and understand concepts of area measurement.');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.5.a',39,'A square with side length 1 unit, called "a unit square," is said to have "one square unit" of area, and can be used to measure area.');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.5.b',39,'A plane figure which can be covered without gaps or overlaps by n unit squares is said to have an area of n square units.');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.6',39,'Measure areas by counting unit squares (square cm, square m, square in, square ft, and improvised units).');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.7',39,'Relate area to the operations of multiplication and addition.');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.7.a',39,'Find the area of a rectangle with whole-number side lengths by tiling it, and show that the area is the same as would be found by multiplying the side lengths.');
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.7.b',39,'Multiply side lengths to find areas of rectangles with whole-number side lengths in the context of solving real world and mathematical problems, and represent whole-number products as rectangular areas in mathematical reasoning.');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.7.c',39,'Use tiling to show in a concrete case that the area of a rectangle with whole-number side lengths a and b + c is the sum of a × b and a × c. Use area models to represent the distributive property in mathematical reasoning.');
+insert into core_standards (id,core_clusters_id,description) values ('3.md.c.7.d',39,'Recognize area as additive. Find areas of rectilinear figures by decomposing them into non-overlapping rectangles and adding the areas of the non-overlapping parts, applying this technique to solve real world problems.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (40,17,'Geometric measurement: recognize perimeter.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('3.md.d.8',40,'Solve real world and mathematical problems involving perimeters of polygons, including finding the perimeter given the side lengths, finding an unknown side length, and exhibiting rectangles with the same perimeter and different areas or with the same area and different perimeters.');
+
+
+
+
+
+
 
 
 
