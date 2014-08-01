@@ -1,10 +1,3 @@
-insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.1',1,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right.');
-insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.2',1,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
-insert into core_standards (id,core_clusters_id,description) values ('4.nbt.b.4',1,' Fluently add and subtract multi-digit whole numbers using the standard algorithm.');
-insert into core_standards (id,core_clusters_id,description) values ('4.nbt.b.5',1,' Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.');
-insert into core_standards (id,core_clusters_id,description) values ('4.md.a.3',1,' Apply the area and perimeter formulas for rectangles in real world and mathematical problems.');
-
-
 --4.nbt.a.1
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_1',11001,'4.nbt.a.1','This type will ask which digit is in the ones column');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_2',11002,'4.nbt.a.1','This type will ask which digit is in the tens column');

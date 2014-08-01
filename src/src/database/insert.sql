@@ -757,10 +757,119 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 insert into core_standards (id,core_clusters_id,description) values ('4.oa.c.5',44,'Generate a number or shape pattern that follows a given rule. Identify apparent features of the pattern that were not explicit in the rule itself. For example, given the rule "Add 3" and the starting number 1, generate terms in the resulting sequence and observe that the terms appear to alternate between odd and even numbers. Explain informally why the numbers will continue to alternate in this way.');
 
 
+-------------------------------------------------NBT--------20 
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (45,20,'Generalize place value understanding for multi-digit whole numbers.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.1',45,'Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right. For example, recognize that 700 ÷ 70 = 10 by applying concepts of place value and division.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.2',45,'Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.a.3',45,'Use place value understanding to round multi-digit whole numbers to any place.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (46,20,'Use place value understanding and properties of operations to perform multi-digit arithmetic.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.b.4',46,'Fluently add and subtract multi-digit whole numbers using the standard algorithm.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.b.5',46,'Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nbt.b.6',46,'Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.');
+
+-----------------------------------------------NF 21
 
 
 
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (47,21,'Extend understanding of fraction equivalence and ordering.');
+--------------------------------------CLUSTER------------------------------------------- 
 
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.a.1',47,'Explain why a fraction a/b is equivalent to a fraction (n × a)/(n × b) by using visual fraction models, with attention to how the number and size of the parts differ even though the two fractions themselves are the same size. Use this principle to recognize and generate equivalent fractions.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.a.2',47,'Compare two fractions with different numerators and different denominators, e.g., by creating common denominators or numerators, or by comparing to a benchmark fraction such as 1/2. Recognize that comparisons are valid only when the two fractions refer to the same whole. Record the results of comparisons with symbols >, =, or <, and justify the conclusions, e.g., by using a visual fraction model.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (48,21,'Build fractions from unit fractions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3',48,'Understand a fraction a/b with a > 1 as a sum of fractions 1/b.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3.a',48,'Understand addition and subtraction of fractions as joining and separating parts referring to the same whole.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3.b',48,'Decompose a fraction into a sum of fractions with the same denominator in more than one way, recording each decomposition by an equation. Justify decompositions, e.g., by using a visual fraction model. Examples: 3/8 = 1/8 + 1/8 + 1/8 ; 3/8 = 1/8 + 2/8 ; 2 1/8 = 1 + 1 + 1/8 = 8/8 + 8/8 + 1/8.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3.c',48,'Add and subtract mixed numbers with like denominators, e.g., by replacing each mixed number with an equivalent fraction, and/or by using properties of operations and the relationship between addition and subtraction.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3.d',48,'Solve word problems involving addition and subtraction of fractions referring to the same whole and having like denominators, e.g., by using visual fraction models and equations to represent the problem.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.4',48,'Apply and extend previous understandings of multiplication to multiply a fraction by a whole number.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.4.a',48,'Understand a fraction a/b as a multiple of 1/b. For example, use a visual fraction model to represent 5/4 as the product 5 × (1/4), recording the conclusion by the equation 5/4 = 5 × (1/4).');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.4.b',48,'Understand a multiple of a/b as a multiple of 1/b, and use this understanding to multiply a fraction by a whole number. For example, use a visual fraction model to express 3 × (2/5) as 6 × (1/5), recognizing this product as 6/5. (In general, n × (a/b) = (n × a)/b.)');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.4.c',48,'Solve word problems involving multiplication of a fraction by a whole number, e.g., by using visual fraction models and equations to represent the problem. For example, if each person at a party will eat 3/8 of a pound of roast beef, and there will be 5 people at the party, how many pounds of roast beef will be needed? Between what two whole numbers does your answer lie?');
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (49,21,'Understand decimal notation for fractions, and compare decimal fractions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.c.5',49,'Express a fraction with denominator 10 as an equivalent fraction with denominator 100, and use this technique to add two fractions with respective denominators 10 and 100.2 For example, express 3/10 as 30/100, and add 3/10 + 4/100 = 34/100.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.c.6',49,'Use decimal notation for fractions with denominators 10 or 100. For example, rewrite 0.62 as 62/100; describe a length as 0.62 meters; locate 0.62 on a number line diagram.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.c.7',49,'Compare two decimals to hundredths by reasoning about their size. Recognize that comparisons are valid only when the two decimals refer to the same whole. Record the results of comparisons with the symbols >, =, or <, and justify the conclusions, e.g., by using a visual model.');
+
+----------------------------------------------md ---------- 22
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (50,22,'Solve problems involving measurement and conversion of measurements.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.a.1',50,'Know relative sizes of measurement units within one system of units including km, m, cm; kg, g; lb, oz.; l, ml; hr, min, sec. Within a single system of measurement, express measurements in a larger unit in terms of a smaller unit. Record measurement equivalents in a two-column table. For example, know that 1 ft is 12 times as long as 1 in. Express the length of a 4 ft snake as 48 in. Generate a conversion table for feet and inches listing the number pairs (1, 12), (2, 24), (3, 36), ...');
+
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.a.2',50,'Use the four operations to solve word problems involving distances, intervals of time, liquid volumes, masses of objects, and money, including problems involving simple fractions or decimals, and problems that require expressing measurements given in a larger unit in terms of a smaller unit. Represent measurement quantities using diagrams such as number line diagrams that feature a measurement scale.');
+
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.a.3',50,'Apply the area and perimeter formulas for rectangles in real world and mathematical problems. For example, find the width of a rectangular room given the area of the flooring and the length, by viewing the area formula as a multiplication equation with an unknown factor.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (51,22,'Represent and interpret data.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.b.4',51,'Make a line plot to display a data set of measurements in fractions of a unit (1/2, 1/4, 1/8). Solve problems involving addition and subtraction of fractions by using information presented in line plots. For example, from a line plot find and interpret the difference in length between the longest and shortest specimens in an insect collection.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (52,22,'Geometric measurement: understand concepts of angle and measure angles.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.c.5',52,'Recognize angles as geometric shapes that are formed wherever two rays share a common endpoint, and understand concepts of angle measurement:');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.c.5.a',52,'An angle is measured with reference to a circle with its center at the common endpoint of the rays, by considering the fraction of the circular arc between the points where the two rays intersect the circle. An angle that turns through 1/360 of a circle is called a "one-degree angle," and can be used to measure angles.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.c.5.b',52,'An angle that turns through n one-degree angles is said to have an angle measure of n degrees.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.c.6',52,'Measure angles in whole-number degrees using a protractor. Sketch angles of specified measure.');
+
+insert into core_standards (id,core_clusters_id,description) values ('4.md.c.7',52,'Recognize angle measure as additive. When an angle is decomposed into non-overlapping parts, the angle measure of the whole is the sum of the angle measures of the parts. Solve addition and subtraction problems to find unknown angles on a diagram in real world and mathematical problems, e.g., by using an equation with a symbol for the unknown angle measure.');
+
+
+
+-----------------------------------------g ---------- 23
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (53,23,'');
+--------------------------------------CLUSTER------------------------------------------- 
 
 
 
