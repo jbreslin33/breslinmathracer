@@ -146,6 +146,11 @@ insert into counting_types(description) values ('start at 10');
 insert into counting_types(description) values ('start at number ending in 9 that is greater than 10 but less than 100');
 insert into counting_types(description) values ('start at number ending in 0 that is greater than 10 but less than 100');
 
+
+-------------------------------------- KINDERGARTEN --------------------------------------------
+
+-------------------------------------- CC --------------------------------------------
+
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
 --------------------------------------CLUSTER------------------------------------------- 
@@ -231,6 +236,12 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',
 	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',3.202,'k.cc.c.7','Compare 2 numbers with equal to.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',3.203,'k.cc.c.7','Compare 2 numbers with less than.');
 
+
+
+-------------------------------------- OA --------------------------------------------
+
+
+
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
 --------------------------------------CLUSTER------------------------------------------- 
@@ -273,12 +284,21 @@ insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.5',
 		insert into item_types_operation_types(item_types_id, operation_types_id) values ('k.oa.a.5_2',6);
 		insert into item_types_speed_types(item_types_id, speed_types_id) values ('k.oa.a.5_2',1);
 
+
+
+-------------------------------------- NBT --------------------------------------------
+
+
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
 --------------------------------------CLUSTER------------------------------------------- 
 --k.nbt.a.1
 insert into core_standards (id,core_clusters_id,description) values ('k.nbt.a.1',5,'Compose and decompose numbers from 11 to 19 into ten ones and some further ones, e.g., by using objects or drawings, and record each composition or decomposition by a drawing or equation (such as 18 = 10 + 8); understand that these numbers are composed of ten ones and one, two, three, four, five, six, seven, eight, or nine ones.');
 	insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_1',4.502,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');
+
+
+-------------------------------------- MD --------------------------------------------
+
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
@@ -298,6 +318,7 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 insert into core_standards (id,core_clusters_id,description) values ('k.md.b.3',7,'Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
 	-- NO TYPES
 
+-------------------------------------- G --------------------------------------------
 
 
 --------------------------------------CLUSTER------------------------------------------- 
@@ -321,18 +342,107 @@ insert into core_standards (id,core_clusters_id,description) values ('k.g.a.3',8
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
 --------------------------------------CLUSTER------------------------------------------- 
 --k.g.b.4
-insert into core_standards (id,core_clusters_id,description) values ('k.g.b.4',8,'Analyze and compare two- and three-dimensional shapes, in different sizes and orientations, using informal language to describe their similarities, differences, parts (e.g., number of sides and vertices/"corners") and other attributes (e.g., having sides of equal length).');
+insert into core_standards (id,core_clusters_id,description) values ('k.g.b.4',9,'Analyze and compare two- and three-dimensional shapes, in different sizes and orientations, using informal language to describe their similarities, differences, parts (e.g., number of sides and vertices/"corners") and other attributes (e.g., having sides of equal length).');
 	-- NO TYPES
 
 --k.g.b.5
-insert into core_standards (id,core_clusters_id,description) values ('k.g.b.5',8,'Model shapes in the world by building shapes from components (e.g., sticks and clay balls) and drawing shapes.');
+insert into core_standards (id,core_clusters_id,description) values ('k.g.b.5',9,'Model shapes in the world by building shapes from components (e.g., sticks and clay balls) and drawing shapes.');
 	-- NO TYPES
 
 --k.g.b.6
-insert into core_standards (id,core_clusters_id,description) values ('k.g.b.6',8,'Compose simple shapes to form larger shapes. For example, "Can you join these two triangles with full sides touching to make a rectangle?"');
+insert into core_standards (id,core_clusters_id,description) values ('k.g.b.6',9,'Compose simple shapes to form larger shapes. For example, "Can you join these two triangles with full sides touching to make a rectangle?"');
 	-- NO TYPE
+------------------------------GRADE 1------------------------------
 
 
+-------------------------------------- OA --------------------------------------------
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10,6,'Represent and solve problems involving addition and subtraction.');
+--------------------------------------CLUSTER------------------------------------------- 
+--k.oa.a.1
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.a.1',10,'Use addition and subtraction within 20 to solve word problems involving situations of adding to, taking from, putting together, taking apart, and comparing, with unknowns in all positions, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.');
+
+--k.oa.a.2
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.a.2',10,'Solve word problems that call for addition of three whole numbers whose sum is less than or equal to 20, e.g., by using objects, drawings, and equations with a symbol for the unknown number to represent the problem.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (11,6,'Understand and apply properties of operations and the relationship between addition and subtraction.');
+--------------------------------------CLUSTER------------------------------------------- 
+--1.oa.b.3
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.b.3',11,'Apply properties of operations as strategies to add and subtract.2 Examples: If 8 + 3 = 11 is known, then 3 + 8 = 11 is also known. (Commutative property of addition.) To add 2 + 6 + 4, the second two numbers can be added to make a ten, so 2 + 6 + 4 = 2 + 10 = 12. (Associative property of addition.)');
+
+--1.oa.b.4
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.b.4',11,'Understand subtraction as an unknown-addend problem. For example, subtract 10 - 8 by finding the number that makes 10 when added to 8.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (12,6,'Add and subtract within 20.');
+--------------------------------------CLUSTER------------------------------------------- 
+--1.oa.c.5
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.c.5',12,'Relate counting to addition and subtraction (e.g., by counting on 2 to add 2).');
+
+--1.oa.c.6
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.c.6',12,'Add and subtract within 20, demonstrating fluency for addition and subtraction within 10. Use strategies such as counting on; making ten (e.g., 8 + 6 = 8 + 2 + 4 = 10 + 4 = 14); decomposing a number leading to a ten (e.g., 13 - 4 = 13 - 3 - 1 = 10 - 1 = 9); using the relationship between addition and subtraction (e.g., knowing that 8 + 4 = 12, one knows 12 - 8 = 4); and creating equivalent but easier or known sums (e.g., adding 6 + 7 by creating the known equivalent 6 + 6 + 1 = 12 + 1 = 13).');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (13,6,'Work with addition and subtraction equations.');
+--------------------------------------CLUSTER------------------------------------------- 
+--1.oa.d.7
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.d.7',13,'Understand the meaning of the equal sign, and determine if equations involving addition and subtraction are true or false. For example, which of the following equations are true and which are false? 6 = 6, 7 = 8 - 1, 5 + 2 = 2 + 5, 4 + 1 = 5 + 2.');
+
+--1.oa.d.8
+insert into core_standards (id,core_clusters_id,description) values ('1.oa.d.8',13,'Determine the unknown whole number in an addition or subtraction equation relating three whole numbers. For example, determine the unknown number that makes the equation true in each of the equations 8 + ? = 11, 5 = _ - 3, 6 + 6 = _.');
+
+
+-------------------------------------- NBT --------------------------------------7------
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (14,7,'Extend the counting sequence.');
+--------------------------------------CLUSTER------------------------------------------- 
+--1.nbt.a.1
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.a.1',14,'Count to 120, starting at any number less than 120. In this range, read and write numerals and represent a number of objects with a written numeral.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (15,7,'Understand place value.');
+--------------------------------------CLUSTER------------------------------------------- 
+--1.nbt.b.2
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.b.2',15,'Understand that the two digits of a two-digit number represent amounts of tens and ones. Understand the following as special cases:');
+
+--1.nbt.b.2.a
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.b.2.a',15,'10 can be thought of as a bundle of ten ones — called a "ten."');
+
+--1.nbt.b.2.b
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.b.2.b',15,'The numbers from 11 to 19 are composed of a ten and one, two, three, four, five, six, seven, eight, or nine ones.');
+
+--1.nbt.b.2.c
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.b.2.c',15,'The numbers 10, 20, 30, 40, 50, 60, 70, 80, 90 refer to one, two, three, four, five, six, seven, eight, or nine tens (and 0 ones).');
+
+--1.nbt.b.3
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.b.3',15,'Compare two two-digit numbers based on meanings of the tens and ones digits, recording the results of comparisons with the symbols >, =, and <.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (16,7,'Use place value understanding and properties of operations to add and subtract.');
+--------------------------------------CLUSTER------------------------------------------- 
+--1.nbt.c.4
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.c.4',16,'Add within 100, including adding a two-digit number and a one-digit number, and adding a two-digit number and a multiple of 10, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used. Understand that in adding two-digit numbers, one adds tens and tens, ones and ones; and sometimes it is necessary to compose a ten.');
+
+
+--1.nbt.c.5
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.c.5',16,'Given a two-digit number, mentally find 10 more or 10 less than the number, without having to count; explain the reasoning used.');
+
+--1.nbt.c.6
+insert into core_standards (id,core_clusters_id,description) values ('1.nbt.c.6',16,'Subtract multiples of 10 in the range 10-90 from multiples of 10 in the range 10-90 (positive or zero differences), using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used.');
+
+
+------------------------COPY THIS
+--------------------------------------CLUSTER------------------------------------------- 
+--insert into core_clusters(id,core_domains_subjects_grades_id,description) values (10,6,'');
+--------------------------------------CLUSTER------------------------------------------- 
+--insert into core_standards (id,core_clusters_id,description) values ('k.g.b.6',9,'');
 
 --PRACTICE BUDDY
 
