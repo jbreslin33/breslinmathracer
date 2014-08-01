@@ -16,7 +16,7 @@ Extends: ThreeButtonItem,
 		this.x = 0;	 
 		this.y = 0;	 
 
-		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c != 10 || this.a < 0 || this.b < 0 || this.x > 10)
+		while (this.a == this.b || this.a == this.y || this.b == this.y || this.c != 10 || this.a < 0 || this.b < 0)
 		{
 			//variables
                 	this.x = Math.floor(Math.random()*9)+2;
@@ -24,15 +24,15 @@ Extends: ThreeButtonItem,
 			this.c = parseInt(this.x + this.y);  
 	
 			//wrong answers 
-			this.a = Math.floor(Math.random()*5)+parseInt(this.c-3);
-			this.b = Math.floor(Math.random()*5)+parseInt(this.c-3);
+                	this.a = Math.floor(Math.random()*11);
+                	this.b = Math.floor(Math.random()*11);
                 }
 
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer(parseInt(this.y),0);
 
                 this.mButtonA.setAnswer(this.a);
                 this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonC.setAnswer(this.y);
 
 		this.setQuestion(this.x + ' + _ = 10'); 
                 this.shuffle(10);
