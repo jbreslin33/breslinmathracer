@@ -970,6 +970,44 @@ insert into core_standards (id,core_clusters_id,description) values ('5.nf.b.7.c
 
 
 
+-----------------------------------------md ---------- 27
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (60,27,'Convert like measurement units within a given measurement system.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.a.1',60,'Convert among different-sized standard measurement units within a given measurement system (e.g., convert 5 cm to 0.05 m), and use these conversions in solving multi-step, real world problems.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (61,27,'Represent and interpret data.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.b.1',61,'Make a line plot to display a data set of measurements in fractions of a unit (1/2, 1/4, 1/8). Use operations on fractions for this grade to solve problems involving information presented in line plots. For example, given different measurements of liquid in identical beakers, find the amount of liquid each beaker would contain if the total amount in all the beakers were redistributed equally.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (62,27,'Geometric measurement: understand concepts of volume.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.3',62,'Recognize volume as an attribute of solid figures and understand concepts of volume measurement.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.3.a',62,'A cube with side length 1 unit, called a "unit cube," is said to have "one cubic unit" of volume, and can be used to measure volume.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.3.b',62,'A solid figure which can be packed without gaps or overlaps using n unit cubes is said to have a volume of n cubic units.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.4',62,'Measure volumes by counting unit cubes, using cubic cm, cubic in, cubic ft, and improvised units.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.5',62,'Relate volume to the operations of multiplication and addition and solve real world and mathematical problems involving volume.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.5.a',62,'Find the volume of a right rectangular prism with whole-number side lengths by packing it with unit cubes, and show that the volume is the same as would be found by multiplying the edge lengths, equivalently by multiplying the height by the area of the base. Represent threefold whole-number products as volumes, e.g., to represent the associative property of multiplication.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.5.b',62,'Apply the formulas V = l × w × h and V = b × h for rectangular prisms to find volumes of right rectangular prisms with whole-number edge lengths in the context of solving real world and mathematical problems.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.md.c.5.c',62,'Recognize volume as additive. Find volumes of solid figures composed of two non-overlapping right rectangular prisms by adding the volumes of the non-overlapping parts, applying this technique to solve real world problems.');
+
+
+
 
 
 
