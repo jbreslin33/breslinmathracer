@@ -1008,9 +1008,24 @@ insert into core_standards (id,core_clusters_id,description) values ('5.md.c.5.c
 
 
 
+-----------------------------------------g ---------- 28
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (63,28,'Graph points on the coordinate plane to solve real-world and mathematical problems.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.g.a.1',63,'Use a pair of perpendicular number lines, called axes, to define a coordinate system, with the intersection of the lines (the origin) arranged to coincide with the 0 on each line and a given point in the plane located by using an ordered pair of numbers, called its coordinates. Understand that the first number indicates how far to travel from the origin in the direction of one axis, and the second number indicates how far to travel in the direction of the second axis, with the convention that the names of the two axes and the coordinates correspond (e.g., x-axis and x-coordinate, y-axis and y-coordinate).');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.g.a.2',63,'Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation.');
 
 
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (64,28,'Classify two-dimensional figures into categories based on their properties.');
+--------------------------------------CLUSTER------------------------------------------- 
 
+insert into core_standards (id,core_clusters_id,description) values ('5.g.b.3',64,'Understand that attributes belonging to a category of two-dimensional figures also belong to all subcategories of that category. For example, all rectangles have four right angles and squares are rectangles, so all squares have four right angles.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.g.b.4',64,'Classify two-dimensional figures in a hierarchy based on properties.');
 
 
 
