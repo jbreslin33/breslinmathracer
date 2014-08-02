@@ -898,6 +898,42 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 insert into core_standards (id,core_clusters_id,description) values ('5.oa.b.3',55,'Generate two numerical patterns using two given rules. Identify apparent relationships between corresponding terms. Form ordered pairs consisting of corresponding terms from the two patterns, and graph the ordered pairs on a coordinate plane. For example, given the rule "Add 3" and the starting number 0, and given the rule "Add 6" and the starting number 0, generate terms in the resulting sequences, and observe that the terms in one sequence are twice the corresponding terms in the other sequence. Explain informally why this is so.');
 
 
+-----------------------------------------nbt ---------- 25
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (56,25,'Understand the place value system.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.a.1',56,'Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and 1/10 of what it represents in the place to its left.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.a.2',56,'Explain patterns in the number of zeros of the product when multiplying a number by powers of 10, and explain patterns in the placement of the decimal point when a decimal is multiplied or divided by a power of 10. Use whole-number exponents to denote powers of 10.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.a.3',56,'Read, write, and compare decimals to thousandths.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.a.3.a',56,'Read and write decimals to thousandths using base-ten numerals, number names, and expanded form, e.g., 347.392 = 3 × 100 + 4 × 10 + 7 × 1 + 3 × (1/10) + 9 × (1/100) + 2 × (1/1000).');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.a.3.b',56,'Compare two decimals to thousandths based on meanings of the digits in each place, using >, =, and < symbols to record the results of comparisons.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.a.4',56,'Use place value understanding to round decimals to any place.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (57,25,'Perform operations with multi-digit whole numbers and with decimals to hundredths.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.b.5',57,'Fluently multiply multi-digit whole numbers using the standard algorithm.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.b.6',57,'Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.nbt.b.7',57,'Add, subtract, multiply, and divide decimals to hundredths, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between addition and subtraction; relate the strategy to a written method and explain the reasoning used.');
+
+
+
+
+
+
+
+
+
 
 
 
