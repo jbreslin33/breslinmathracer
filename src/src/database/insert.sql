@@ -878,4 +878,27 @@ insert into core_standards (id,core_clusters_id,description) values ('4.g.a.2',5
 insert into core_standards (id,core_clusters_id,description) values ('4.g.a.3',53,'Recognize a line of symmetry for a two-dimensional figure as a line across the figure such that the figure can be folded along the line into matching parts. Identify line-symmetric figures and draw lines of symmetry.');
 
 
+-----------------------------------------GRADE 5 ----------
+
+-----------------------------------------oa ---------- 24
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (54,24,'Write and interpret numerical expressions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('5.oa.a.1',54,'Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols.');
+
+insert into core_standards (id,core_clusters_id,description) values ('5.oa.a.2',54,'Write simple expressions that record calculations with numbers, and interpret numerical expressions without evaluating them. For example, express the calculation "add 8 and 7, then multiply by 2" as 2 × (8 + 7). Recognize that 3 × (18932 + 921) is three times as large as 18932 + 921, without having to calculate the indicated sum or product.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (55,24,'Analyze patterns and relationships.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('5.oa.b.3',55,'Generate two numerical patterns using two given rules. Identify apparent relationships between corresponding terms. Form ordered pairs consisting of corresponding terms from the two patterns, and graph the ordered pairs on a coordinate plane. For example, given the rule "Add 3" and the starting number 0, and given the rule "Add 6" and the starting number 0, generate terms in the resulting sequences, and observe that the terms in one sequence are twice the corresponding terms in the other sequence. Explain informally why this is so.');
+
+
+
+
+
 
