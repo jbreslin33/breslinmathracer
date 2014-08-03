@@ -8,16 +8,24 @@
 
 
 2 p
-: (a)(b) 
-	: c(a)(b) 
-	: (a)c(b) 
-	: (a)(b)c 
+5: (a)(b) 
+	6: c(a)(b) 
+	7: (a)c(b) 
+	8: (a)(b)c 
 	
-	: c(a)d(b) 
-	: (a)c(b)d 
-	: c(a)(b)d 
+	9: c(a)d(b) 
+	10: (a)c(b)d 
+	11: c(a)(b)d 
 
-	: c(a)d(b)e
+	12: c(a)d(b)e
+2p INNERS
+13: ((a)) 
+	14: (b(a)) 
+	15: (b(a)c) 
+	16: d(b(a)c) 
+	17: d(b(a)c)e 
+
+
 
 inner needs to be done.. i dont think i need so many of the 2p type.... or it might not do any harm to have them...
 
@@ -34,7 +42,42 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 
 ********/
-/* TYPE_DESCRIPTION: c(a)b */
+/* TYPE_DESCRIPTION: (a)(b) */
+var i_5_oa_a_1__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_5';
+        this.mQuestionLabel.setSize(225,50);
+        this.mQuestionLabel.setPosition(250,95);
+
+        var x = 0;
+        var r = 1;
+
+        while (x < 1 || r != 0)
+        {
+                var a1 = Math.floor(Math.random()*5)+15;
+                var a2 = Math.floor(Math.random()*3)+2;
+
+                var b1 = Math.floor((Math.random()*40)+10);
+                var b2 = Math.floor((Math.random()*20)+10);
+
+                var a12 = parseInt(  a1 * a2 );
+                var b12 = parseInt(  b1 + b2 );
+                r = a12 % b12;
+
+                x = parseInt( (a1 * a2) / (  b1 + b2 )  );
+
+                this.setQuestion( '(' + a1 + ' x ' + a2 + ') / (' + b1 + ' + ' + b2 + ')' );
+                this.setAnswer(x,0);
+        }
+}
+});
+/* TYPE_DESCRIPTION: b(a)c */
 var i_5_oa_a_1__4 = new Class(
 {
 Extends: TextItem,
