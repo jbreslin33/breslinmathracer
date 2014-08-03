@@ -26,4 +26,13 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',13002,'4.nbt.b.5','multiply numbers up to 4 digits');
 
 --4.md.a.3
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',14001,'4.md.a.3','calculate area of a rectangle');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',14001,'4.md.a.3','calculate area of a rectangle (non-square)');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',14002,'4.md.a.3','calculate area of a square');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_3',14003,'4.md.a.3','calculate length of a rectangle (non-square) given width and area');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_4',14004,'4.md.a.3','calculate width of a rectangle (non-square) given length and area');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_5',14005,'4.md.a.3','calculate side of a square given area');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_6',14006,'4.md.a.3','calculate perimeter of a rectangle (non-square)');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_7',14007,'4.md.a.3','calculate perimeter of a square');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_8',14008,'4.md.a.3','calculate side of a square given perimeter');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_9',14009,'4.md.a.3','calculate length of a rectangle (non-square) given width and perimeter');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_10',14010,'4.md.a.3','calculate width of a rectangle (non-square) given length and perimeter');
