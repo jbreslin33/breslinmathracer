@@ -61,7 +61,7 @@ initialize: function(sheet)
                 var a1 = Math.floor((Math.random()*40)+10);
                 var a2 = Math.floor((Math.random()*20)+10);
 
-                var ac = parseInt(c1 - c2 * (a1 + a2));
+                var ac = parseInt(c2 * (a1 + a2));
                 r = ac % b1;
 
                 x = parseInt( c1 - c2 * (  a1 + a2 ) / b1 + b2 );
