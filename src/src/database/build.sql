@@ -34,6 +34,8 @@ DROP TABLE learning_standards_attempts;
 
 DROP TABLE learning_standards;
 
+DROP TABLE users;
+
 DROP TABLE core_standards;
 DROP TABLE core_clusters;
 
@@ -44,7 +46,6 @@ DROP TABLE core_subjects_grades;
 DROP TABLE core_grades;
 DROP TABLE core_subjects;
 
-DROP TABLE users;
 
 
 --****************************************************************
@@ -74,35 +75,6 @@ SET default_with_oids = false;
 --******************  CREATE TABLES *************************
 --**************************************************************
 --**************************************************************
-
---==================================================================
---=========================== HELPER  ========================
---==================================================================
-
---ERROR_LOG
-CREATE TABLE error_log
-(
-	id SERIAL,
-    	error text,
-    	error_time timestamp,
-    	username text,
-	PRIMARY KEY (id) 	
-);
-
---USERS
-CREATE TABLE users (
-	id SERIAL,
-    	username text, 
-    	password text,
-    	first_name text,
-    	middle_name1 text,
-    	middle_name2 text,
-    	middle_name3 text,
-    	last_name text,
-    	school_id integer NOT NULL,
-	PRIMARY KEY (id) 	
-	--FOREIGN KEY (school_id) REFERENCES users(id)
-);
 
 --==================================================================
 --==================== CORE CURRICULUM  ========================
@@ -158,6 +130,36 @@ CREATE TABLE core_standards (
 	core_clusters_id integer NOT NULL,
 	PRIMARY KEY (id),	
         FOREIGN KEY (core_clusters_id) REFERENCES core_clusters(id)
+);
+
+--==================================================================
+--=========================== HELPER  ========================
+--==================================================================
+
+--ERROR_LOG
+CREATE TABLE error_log
+(
+	id SERIAL,
+    	error text,
+    	error_time timestamp,
+    	username text,
+	PRIMARY KEY (id) 	
+);
+
+--USERS
+CREATE TABLE users (
+	id SERIAL,
+    	username text, 
+    	password text,
+    	first_name text,
+    	middle_name1 text,
+    	middle_name2 text,
+    	middle_name3 text,
+    	last_name text,
+    	core_grades_id integer NOT NULL,
+    	school_id integer NOT NULL,
+	PRIMARY KEY (id),	
+	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id)
 );
 
 
