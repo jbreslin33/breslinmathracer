@@ -94,6 +94,7 @@ Extends: Item,
 	
 	showQuestion: function()
 	{
+		this.parent();
 		if (this.mQuestionLabel)
 		{
 			this.mQuestionLabel.setText(this.mQuestion);
@@ -102,6 +103,7 @@ Extends: Item,
 	}, 
 	hideQuestion: function()
 	{
+		this.parent();
 		if (this.mQuestionLabel)
 		{
 			this.mQuestionLabel.setVisibility(false);
