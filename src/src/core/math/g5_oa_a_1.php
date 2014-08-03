@@ -18,6 +18,36 @@
 
 	: c(a)d(b)e
 ********/
+/* TYPE_DESCRIPTION: (a)b */
+var i_5_oa_a_1__3 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_3';
+        this.mQuestionLabel.setSize(200,50);
+        this.mQuestionLabel.setPosition(300,95);
+
+        var x = 0;
+
+        while (x < 1)
+        {
+                var b1 = Math.floor(Math.random()*3)+2;
+                var b2 = Math.floor(Math.random()*5)+15;
+
+                var a1 = Math.floor((Math.random()*40)+10);
+                var a2 = Math.floor((Math.random()*20)+10);
+                x = parseInt( (  a1 + a2 ) / b1 + b2 );
+
+                this.setQuestion('(' + a1 + ' + ' + a2 + ') / ' + b1 + ' + ' +  b2);
+                this.setAnswer(x,0);
+        }
+}
+});
+
 /* TYPE_DESCRIPTION: b(a) */
 var i_5_oa_a_1__2 = new Class(
 {
