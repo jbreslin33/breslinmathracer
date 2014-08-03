@@ -10,11 +10,11 @@ Extends: Game,
        		this.parent(application);
 
 		//username	
-		this.mUsernameLabel = new Shape(200,50,300,100,this,"","","");
+		this.mUsernameLabel = new Shape(200,40,300,80,this,"","","");
                 this.mUsernameLabel.setText('Username:');
                 this.mShapeArray.push(this.mUsernameLabel);
                 
-		this.mUsernameTextBox = new Shape(200,50,400,100,this,"INPUT","","");
+		this.mUsernameTextBox = new Shape(200,40,400,80,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
 		this.mUsernameTextBox.mMesh.focus();	
@@ -28,11 +28,11 @@ Extends: Game,
                 }
 
 		//password	
-		this.mPasswordLabel = new Shape(200,50,300,165,this,"","","");
+		this.mPasswordLabel = new Shape(200,40,300,135,this,"","","");
                 this.mPasswordLabel.setText('Password:');
                 this.mShapeArray.push(this.mPasswordLabel);
 
-                this.mPasswordTextBox = new Shape(200,50,400,165,this,"INPUT","","");
+                this.mPasswordTextBox = new Shape(200,40,400,135,this,"INPUT","","");
                 this.mPasswordTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mPasswordTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -45,11 +45,11 @@ Extends: Game,
                 }
 
 		//firstName	
-		this.mFirstNameLabel = new Shape(200,50,300,230,this,"","","");
+		this.mFirstNameLabel = new Shape(200,40,300,190,this,"","","");
                 this.mFirstNameLabel.setText('First Name:');
                 this.mShapeArray.push(this.mFirstNameLabel);
 
-  		this.mFirstNameTextBox = new Shape(200,50,400,230,this,"INPUT","","");
+  		this.mFirstNameTextBox = new Shape(200,40,400,190,this,"INPUT","","");
                 this.mFirstNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mFirstNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -62,11 +62,11 @@ Extends: Game,
                 }
 	
 		//lastName	
-		this.mLastNameLabel = new Shape(200,50,300,295,this,"","","");
+		this.mLastNameLabel = new Shape(200,40,300,245,this,"","","");
                 this.mLastNameLabel.setText('Last Name:');
                 this.mShapeArray.push(this.mLastNameLabel);
   		
-		this.mLastNameTextBox = new Shape(200,50,400,295,this,"INPUT","","");
+		this.mLastNameTextBox = new Shape(200,40,400,245,this,"INPUT","","");
                 this.mLastNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mLastNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -78,11 +78,12 @@ Extends: Game,
                         this.mLastNameTextBox.mMesh.addEvent('keypress',this.lastNameTextBoxFirefoxHit);
                 }
 
-		//grade ...this should be a drop down. does not have to come from db though it can be hardcoded.
-		//for now it will be text though
+		//grade
+		this.mGradeLabel = new Shape(200,40,300,300,this,"","","");
+                this.mGradeLabel.setText('Grade:');
+                this.mShapeArray.push(this.mGradeLabel);
                
-		//mPracticeInfo
-                this.mGradeSelect = new Shape(200,50,200,295,this,"SELECT","","");
+                this.mGradeSelect = new Shape(200,40,400,300,this,"SELECT","","");
                 this.addShape(this.mGradeSelect);
 
                 var optionK = document.createElement("option");
