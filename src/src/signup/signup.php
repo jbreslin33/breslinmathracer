@@ -225,8 +225,8 @@ Extends: Game,
 		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
 		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		var grade_id = APPLICATION.mGame.mGradeSelect.mMesh.options[APPLICATION.mGame.mGradeSelect.mMesh.selectedIndex].text;
-		APPLICATION.signup(username,password,first_name,last_name,grade_id);
+		var core_grades_id = APPLICATION.mGame.mGradeSelect.mMesh.options[APPLICATION.mGame.mGradeSelect.mMesh.selectedIndex].text;
+		APPLICATION.signup(username,password,first_name,last_name,core_grades_id);
 	},
 
 	//goto login screen
