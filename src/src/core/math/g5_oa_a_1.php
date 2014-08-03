@@ -43,6 +43,44 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 ********/
 /* TYPE_DESCRIPTION: c(a)(b) */
+var i_5_oa_a_1__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_7';
+        this.mQuestionLabel.setSize(225,50);
+        this.mQuestionLabel.setPosition(250,95);
+
+        var x = 0;
+        var r = 1;
+
+        while (x < 1 || r != 0)
+        {
+                var a1 = Math.floor(Math.random()*8)+2;
+                var a2 = Math.floor(Math.random()*8)+2;
+
+                var b1 = Math.floor((Math.random()*5)+1);
+                var b2 = Math.floor((Math.random()*5)+1);
+
+                var c1 = Math.floor((Math.random()*5)+16);
+                var c2 = Math.floor((Math.random()*5)+10);
+
+                var a12c1 = parseInt(  (a1 * a2) * c1 );
+                var b12c2 = parseInt(  c2 * (b1 + b2) );
+                r = a12c1 % b12c2;
+
+                x = parseInt( ((a1 * a2) * c1) / (c2 * (  b1 + b2 ))  );
+
+                this.setQuestion( '(' + a1 + ' x ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
+                this.setAnswer(x,0);
+        }
+}
+});
+/* TYPE_DESCRIPTION: c(a)(b) */
 var i_5_oa_a_1__6 = new Class(
 {
 Extends: TextItem,
