@@ -78,6 +78,44 @@ Extends: Game,
                         this.mLastNameTextBox.mMesh.addEvent('keypress',this.lastNameTextBoxFirefoxHit);
                 }
 
+		//grade ...this should be a drop down. does not have to come from db though it can be hardcoded.
+		//for now it will be text though
+               
+		//mPracticeInfo
+                this.mGradeSelect = new Shape(200,50,200,295,this,"SELECT","","");
+                this.addShape(this.mGradeSelect);
+
+                var optionK = document.createElement("option");
+                optionK.value = 1;  
+                optionK.text = 'k';   
+                this.mGradeSelect.mMesh.appendChild(optionK);
+                
+		var option1 = document.createElement("option");
+                option1.value = 2;  
+                option1.text = '1';   
+                this.mGradeSelect.mMesh.appendChild(option1);
+		
+		var option2 = document.createElement("option");
+                option2.value = 3;  
+                option2.text = '2';   
+                this.mGradeSelect.mMesh.appendChild(option2);
+
+		var option3 = document.createElement("option");
+                option3.value = 4;  
+                option3.text = '3';   
+                this.mGradeSelect.mMesh.appendChild(option3);
+		
+		var option4 = document.createElement("option");
+                option4.value = 5;  
+                option4.text = '4';   
+                this.mGradeSelect.mMesh.appendChild(option4);
+		
+		var option5 = document.createElement("option");
+                option5.value = 6;  
+                option5.text = '5';   
+                this.mGradeSelect.mMesh.appendChild(option5);
+	
+
 		//SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
