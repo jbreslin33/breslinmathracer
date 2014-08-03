@@ -32,14 +32,19 @@ initialize: function(sheet)
         this.mQuestionLabel.setPosition(300,95);
 
         var x = 0;
+	var r = 1;
 
-        while (x < 1)
+        while (x < 1 || r != 0)
         {
                 var b1 = Math.floor(Math.random()*3)+2;
                 var b2 = Math.floor(Math.random()*5)+15;
 
                 var a1 = Math.floor((Math.random()*40)+10);
                 var a2 = Math.floor((Math.random()*20)+10);
+
+		var a3 = parseInt(a1 + a2);
+		r = a3 % b1;  
+
                 x = parseInt( (  a1 + a2 ) / b1 + b2 );
 
                 this.setQuestion('(' + a1 + ' + ' + a2 + ') / ' + b1 + ' + ' +  b2);
