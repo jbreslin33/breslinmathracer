@@ -60,11 +60,11 @@ initialize: function(sheet)
 
         while (x < 1 || r != 0)
         {
-                var a1 = Math.floor(Math.random()*5)+15;
-                var a2 = Math.floor(Math.random()*3)+2;
+                var a1 = Math.floor(Math.random()*8)+2;
+                var a2 = Math.floor(Math.random()*8)+2;
 
-                var b1 = Math.floor((Math.random()*40)+10);
-                var b2 = Math.floor((Math.random()*20)+10);
+                var b1 = Math.floor((Math.random()*5)+1);
+                var b2 = Math.floor((Math.random()*5)+1);
 
                 var a12 = parseInt(  a1 * a2 );
                 var b12 = parseInt(  b1 + b2 );
