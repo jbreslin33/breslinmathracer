@@ -132,7 +132,7 @@ public function checkInput()
 
 public function insertIntoUsers()
 {
-        $query = "INSERT INTO users (username, password, first_name, last_name, school_id) VALUES ('";
+        $query = "INSERT INTO users (username, password, first_name, last_name, school_id, core_grades_id) VALUES ('";
         $query .= $_SESSION["username"];
         $query .= "','";
         $query .= $_SESSION["password"];
@@ -140,7 +140,8 @@ public function insertIntoUsers()
         $query .= $_SESSION["first_name"];
         $query .= "','";
         $query .= $_SESSION["last_name"];
-        $query .= "',1";
+        $query .= "',1,";
+        $query .= $_SESSION["core_grades_id"];
         $query .= ");";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());

@@ -116,7 +116,7 @@ Extends: Application,
 		}
 	},
 
-        signup: function(username,password,first_name,last_name)
+        signup: function(username,password,first_name,last_name,core_grades_id)
         {
         	var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -144,7 +144,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
+                xmlhttp.open("POST","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name + "&core_grades_id=" + core_grades_id,true);
                 xmlhttp.send();
 	},
 
