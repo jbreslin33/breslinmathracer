@@ -42,6 +42,49 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 
 ********/
+/* TYPE_DESCRIPTION:  */
+	//12: c(a)d(b)e
+var i_5_oa_a_1__12 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_12';
+        this.mQuestionLabel.setSize(325,50);
+        this.mQuestionLabel.setPosition(200,95);
+	this.mAnswerTextBox.setPosition(525,100);
+
+        var x = 0;
+        var r = 1;
+
+        while (x < 1 || r != 0)
+        {
+		//12: c(a)d(b)e
+                var a1 = Math.floor(Math.random()*100)+50;
+                var a2 = Math.floor(Math.random()*48)+2;
+
+                var b1 = Math.floor((Math.random()*5)+1);
+                var b2 = Math.floor((Math.random()*5)+1);
+
+                var c1 = Math.floor((Math.random()*100)+100);
+                
+		var d1 = Math.floor((Math.random()*5)+10);
+                var d2 = Math.floor((Math.random()*5)+1);
+
+		var a12b12d1 = parseInt( (a1 - a2) * (b1 + b2) * d1 );  
+
+                r = c1 % a12b12d1;
+                
+                x = parseInt( c1 / ((a1 - a2) * (b1 + b2) * d1) - d2 );
+
+                this.setQuestion( c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2 );
+                this.setAnswer(x,0);
+        }
+}
+});
 /* TYPE_DESCRIPTION: c(a)d(b) */
 var i_5_oa_a_1__11 = new Class(
 	//11: c(a)(b)d 
@@ -69,7 +112,7 @@ initialize: function(sheet)
                 var b1 = Math.floor((Math.random()*5)+1);
                 var b2 = Math.floor((Math.random()*5)+1);
 
-                var c1 = Math.floor((Math.random()*100)+100);
+                var c1 = Math.floor((Math.random()*900)+100);
                 
 		var d1 = Math.floor((Math.random()*5)+10);
                 var d2 = Math.floor((Math.random()*5)+1);
