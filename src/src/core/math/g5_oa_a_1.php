@@ -19,11 +19,15 @@
 
 	12: c(a)d(b)e
 2p INNERS
-13: ((a)) 
-	14: (b(a)) 
-	15: (b(a)c) 
-	16: d(b(a)c) 
-	17: d(b(a)c)e 
+//13: ((a)) 
+	//14: (b(a)) 
+	//15: (b(a)c) 
+	13: ((a)b)c 
+	14: (c(a)b)d 
+	15: c((a)b)d
+	16: c(b(a)) 
+	17: d(b(a)c) 
+	18: d(b(a)c)e 
 
 
 
@@ -44,6 +48,7 @@ this might be toughest i need to give maybe through in one with braces and brack
 ********/
 /* TYPE_DESCRIPTION:  */
 	//12: c(a)d(b)e
+//this might be marked as huge multiplication...in db
 var i_5_oa_a_1__12 = new Class(
 {
 Extends: TextItem,
