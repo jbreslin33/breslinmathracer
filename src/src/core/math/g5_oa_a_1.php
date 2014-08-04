@@ -43,6 +43,7 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 ********/
 /* TYPE_DESCRIPTION: c(a)d(b) */
+	//10: (a)c(b)d 
 var i_5_oa_a_1__10 = new Class(
 {
 Extends: TextItem,
@@ -61,23 +62,25 @@ initialize: function(sheet)
 
         while (x < 1 || r != 0)
         {
-                var a1 = Math.floor(Math.random()*8)+2;
-                var a2 = Math.floor(Math.random()*8)+2;
+                var a1 = Math.floor(Math.random()*100)+50;
+                var a2 = Math.floor(Math.random()*48)+2;
 
                 var b1 = Math.floor((Math.random()*5)+1);
                 var b2 = Math.floor((Math.random()*5)+1);
 
-                var c1 = Math.floor((Math.random()*10)+1);
+                var c1 = Math.floor((Math.random()*8)+2);
                 var c2 = Math.floor((Math.random()*10)+1);
                 
-		var d1 = Math.floor((Math.random()*5)+1);
+		var d1 = Math.floor((Math.random()*5)+10);
                 var d2 = Math.floor((Math.random()*5)+1);
 
-                r = c1 % c2;
-                
-                x = parseInt( c1 - c2 * (a1 + a2) - d1 + d2 * (b1 + b2) + c1 / c2 );
+		var a12 = parseInt( (a1 - a2) );  
 
-                this.setQuestion('h' +  c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') - ' +  d1 + ' + ' + d2 + ' (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
+                r = a12 % c1;
+                
+                x = parseInt( (a1 - a2) / c1 + c2 * (b1 + b2) * d1 - d2 );
+
+                this.setQuestion( '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2 + ')');
                 this.setAnswer(x,0);
         }
 }
