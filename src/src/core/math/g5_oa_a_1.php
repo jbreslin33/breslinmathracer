@@ -69,7 +69,7 @@ initialize: function(sheet)
                 var b1 = Math.floor((Math.random()*5)+1);
                 var b2 = Math.floor((Math.random()*5)+1);
 
-                var c1 = Math.floor((Math.random()*100)+100);
+                var c1 = Math.floor((Math.random()*900)+100);
                 
 		var d1 = Math.floor((Math.random()*5)+10);
                 var d2 = Math.floor((Math.random()*5)+1);
