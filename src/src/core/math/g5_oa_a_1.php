@@ -75,9 +75,9 @@ initialize: function(sheet)
 
                 r = c1 % c2;
                 
-                x = parseInt( c1 - c2 * (a1 * a2) - d1 + d2 * (b1 + b2) + c1 / c2 );
+                x = parseInt( c1 - c2 * (a1 + a2) - d1 + d2 * (b1 + b2) + c1 / c2 );
 
-                this.setQuestion( c1 + ' - ' + c2 + ' (' + a1 + ' x ' + a2 + ') - ' +  d1 + ' + ' + d2 + ' (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
+                this.setQuestion( c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') - ' +  d1 + ' + ' + d2 + ' (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
                 this.setAnswer(x,0);
         }
 }
