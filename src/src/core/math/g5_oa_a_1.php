@@ -112,9 +112,9 @@ initialize: function(sheet)
 
                 r = c1 % c2;
 
-                x = parseInt( (a1 * a2) * (b1 + b2) + c1 / c2 );
+                x = parseInt( (a1 - a2) * (b1 + b2) + c1 / c2 );
 
-                this.setQuestion( '(' + a1 + ' x ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
+                this.setQuestion( '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
                 this.setAnswer(x,0);
         }
 }
@@ -146,13 +146,13 @@ initialize: function(sheet)
                 var c1 = Math.floor((Math.random()*5)+16);
                 var c2 = Math.floor((Math.random()*5)+10);
 
-                var a12c1 = parseInt(  (a1 * a2) * c1 );
+                var a12c1 = parseInt(  (a1 - a2) * c1 );
                 var b12c2 = parseInt(  c2 * (b1 + b2) );
                 r = a12c1 % b12c2;
 
-                x = parseInt( ((a1 * a2) * c1) / (c2 * (  b1 + b2 ))  );
+                x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
 
-                this.setQuestion( '(' + a1 + ' x ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
+                this.setQuestion( '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
                 this.setAnswer(x,0);
         }
 }
