@@ -213,19 +213,19 @@ initialize: function(sheet)
 
         while (x < 1 || r != 0)
         {
-                var a1 = Math.floor(Math.random()*8)+2;
-                var a2 = Math.floor(Math.random()*8)+2;
+                var a1 = Math.floor(Math.random()*48)+2;
+                var a2 = Math.floor(Math.random()*48)+2;
 
                 var b1 = Math.floor((Math.random()*5)+1);
                 var b2 = Math.floor((Math.random()*5)+1);
 
-                var a12 = parseInt(  a1 * a2 );
-                var b12 = parseInt(  b1 + b2 );
+                var a12 = parseInt(  a1 + a2 );
+                var b12 = parseInt(  b1 - b2 );
                 r = a12 % b12;
 
-                x = parseInt( (a1 * a2) / (  b1 + b2 )  );
+                x = parseInt( (a1 + a2) / (  b1 - b2 )  );
 
-                this.setQuestion( '(' + a1 + ' x ' + a2 + ') / (' + b1 + ' + ' + b2 + ')' );
+                this.setQuestion( '(' + a1 + ' + ' + a2 + ') / (' + b1 + ' - ' + b2 + ')' );
                 this.setAnswer(x,0);
         }
 }
