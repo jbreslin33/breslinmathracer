@@ -72,15 +72,16 @@ initialize: function(sheet)
                 var c1 = Math.floor((Math.random()*900)+100);
                 
 		var d1 = Math.floor((Math.random()*5)+10);
-                var d2 = Math.floor((Math.random()*5)+1);
+		
+		var e1 = Math.floor((Math.random()*5)+10);
 
-		var a12b12d1 = parseInt( (a1 - a2) * (b1 + b2) * d1 );  
+		var a12b12c1d1 = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) );  
 
-                r = c1 % a12b12d1;
+                r = a12b12c1d1 % e1;
                 
-                x = parseInt( c1 / ((a1 - a2) * (b1 + b2) * d1) - d2 );
+                x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
 
-                this.setQuestion( c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2 );
+                this.setQuestion( c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
                 this.setAnswer(x,0);
         }
 }
