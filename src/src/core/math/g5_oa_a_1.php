@@ -257,12 +257,13 @@ initialize: function(sheet)
                 var a1 = Math.floor((Math.random()*40)+10);
                 var a2 = Math.floor((Math.random()*20)+10);
 
-                var ac = parseInt(c2 * (a1 + a2));
-                r = ac % b1;
+                var a12c2 = parseInt(c2 * (a1 + a2) );
+                var b1 = parseInt(b1);
+                r = a12c2 % b1;
 
                 x = parseInt( c1 - c2 * (  a1 + a2 ) / b1 + b2 );
 
-                this.setQuestion(c1 + ' - ' + c2 + ' x (' + a1 + ' + ' + a2 + ') / ' + b1 + ' + ' +  b2);
+                this.setQuestion(c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') / ' + b1 + ' + ' +  b2);
                 this.setAnswer(x,0);
         }
 }
