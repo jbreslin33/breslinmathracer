@@ -124,6 +124,11 @@ getItem: function(id)
 		return new i_4_nbt_b_5__2(this.mSheet);
 	}
 
+  if (id == '4.nbt.b.6_1')
+	{
+		return new i_4_nbt_b_6__1(this.mSheet);
+	}
+
 	if (id == '4.md.a.3_1')
 	{
 		return new i_4_md_a_3__1(this.mSheet);

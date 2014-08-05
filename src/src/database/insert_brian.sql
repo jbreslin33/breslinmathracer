@@ -25,6 +25,9 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_1',13001,'4.nbt.b.5','multiply numbers up to 2 digits');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',13002,'4.nbt.b.5','multiply numbers up to 4 digits');
 
+--4.nbt.b.6
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_1',13001,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+
 --4.md.a.3
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',14001,'4.md.a.3','calculate area of a rectangle (non-square)');
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',14002,'4.md.a.3','calculate area of a square');

@@ -17,7 +17,7 @@ Extends: TextItem,
 				var rand = 0;
 	
 				// pick number of digits (2 - 6)
-				rand = 2 + Math.floor((Math.random()*5));
+				rand = 3 + Math.floor((Math.random()*2));
 
 				// get end number based on digits
 				end = Math.pow(10, rand);
@@ -27,7 +27,7 @@ Extends: TextItem,
 				// pick number from start to end range
 				varA = start + Math.floor(Math.random()*(end-start));
 
-				rand = 2 + Math.floor((Math.random()*5));
+				rand = 3 + Math.floor((Math.random()*2));
 
 				end = Math.pow(10, rand);
 				start = Math.pow(10, rand-1);
@@ -37,7 +37,10 @@ Extends: TextItem,
 				varC = parseInt(varA + varB);
 			                       
 				this.setQuestion('' + varA + ' + ' +  varB + ' = ');
-            this.setAnswer(varC,0);             
+            this.setAnswer(varC,0);
+
+				this.mQuestionLabel.setPosition(330, 120);
+				this.mQuestionLabel.setSize(200, 100);      
         }
 });
 
@@ -55,13 +58,15 @@ Extends: TextItem,
 				var varA = 0;
 				var varB = 0;
 				var varC = 0;
+				var big = 0;
+				var small = 0;
 
 				var start = 0;
 				var end = 0;
 				var rand = 0;
 	
 				
-				rand = 2 + Math.floor((Math.random()*5));
+				rand = 3 + Math.floor((Math.random()*2));
 
 				start = Math.pow(10, rand-1);
 
@@ -69,18 +74,32 @@ Extends: TextItem,
 				
 				varA = start + Math.floor(Math.random()*(end-start));	
 
-				rand = 2 + Math.floor((Math.random()*5));
+				rand = 3 + Math.floor((Math.random()*2));
 
 				start = Math.pow(10, rand-1);
 				end = Math.pow(10, rand);
 	
 				varB = start + Math.floor(Math.random()*(end-start));
 
-				varC = parseInt(varA - varB);
+				if (varA > varB)
+				{
+					big = varA;
+					small = varB;
+				}
+				else
+				{
+					big = varB;
+					small = varA;
+				}
+
+				varC = parseInt(big - small);
 
 			                       
-				this.setQuestion('' + varA + ' - ' +  varB + ' = ');
-            this.setAnswer(varC,0);             
+				this.setQuestion('' + big + ' - ' +  small + ' = ');
+            this.setAnswer(varC,0);    
+
+				this.mQuestionLabel.setPosition(330, 120);
+				this.mQuestionLabel.setSize(200, 100);               
         }
 });
 

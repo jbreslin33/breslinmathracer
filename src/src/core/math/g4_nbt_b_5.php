@@ -1,4 +1,4 @@
-/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_1: multiply numbers up to 2 digits */
+/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_1: multiply 2 digit numbers  */
 
 var i_4_nbt_b_5__1 = new Class(
 {
@@ -35,7 +35,7 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_2: divide numbers up to 2 digits */
+/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_2: Multiply a whole number of up to four digits by a one-digit whole number  */
 
 var i_4_nbt_b_5__2 = new Class(
 {
@@ -66,7 +66,7 @@ Extends: TextItem,
 			varA = start + Math.floor(Math.random()*(end-start));	
 
 			// pick one digit number
-			varB = Math.floor(Math.random()*10);	
+			varB = 2 + Math.floor(Math.random()*8);	
 				
 			varC = parseInt(varA * varB);
 											                       
