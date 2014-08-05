@@ -63,30 +63,20 @@ initialize: function(sheet)
 	this.mAnswerTextBox.setPosition(525,100);
 
         var x = 0;
-        var r = 1;
-
-        while (x < 1 || r != 0)
+        
+	while (x < 1)
         {
 		//13: ((a)b)c 
-                var a1 = Math.floor(Math.random()*100)+50;
-                var a2 = Math.floor(Math.random()*48)+2;
+                var a1 = Math.floor(Math.random()*5)+1;
+                var a2 = Math.floor(Math.random()*5)+1;
 
-                var b1 = Math.floor((Math.random()*5)+1);
-                var b2 = Math.floor((Math.random()*5)+1);
+                var b1 = Math.floor((Math.random()*8)+2);
 
-                var c1 = Math.floor((Math.random()*900)+100);
+                var c1 = Math.floor((Math.random()*8)+2);
                 
-		var d1 = Math.floor((Math.random()*5)+10);
-		
-		var e1 = Math.floor((Math.random()*5)+10);
+                x = parseInt( ((a1 + a2) * b1) * c1   );
 
-		var a12b12c1d1 = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) );  
-
-                r = a12b12c1d1 % e1;
-                
-                x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
-
-                this.setQuestion( c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
+                this.setQuestion( '((' + a1 + ' + ' + a2 + ') ' + b1 + ') ' + c1 );
                 this.setAnswer(x,0);
         }
 }
