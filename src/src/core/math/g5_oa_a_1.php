@@ -47,6 +47,52 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 ********/
 /* TYPE_DESCRIPTION:  */
+//this might be marked as huge multiplication...in db
+	//13: ((a)b)c 
+var i_5_oa_a_1__13 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_13';
+        this.mQuestionLabel.setSize(325,50);
+        this.mQuestionLabel.setPosition(200,95);
+	this.mAnswerTextBox.setPosition(525,100);
+
+        var x = 0;
+        var r = 1;
+
+        while (x < 1 || r != 0)
+        {
+		//13: ((a)b)c 
+                var a1 = Math.floor(Math.random()*100)+50;
+                var a2 = Math.floor(Math.random()*48)+2;
+
+                var b1 = Math.floor((Math.random()*5)+1);
+                var b2 = Math.floor((Math.random()*5)+1);
+
+                var c1 = Math.floor((Math.random()*900)+100);
+                
+		var d1 = Math.floor((Math.random()*5)+10);
+		
+		var e1 = Math.floor((Math.random()*5)+10);
+
+		var a12b12c1d1 = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) );  
+
+                r = a12b12c1d1 % e1;
+                
+                x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
+
+                this.setQuestion( c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
+                this.setAnswer(x,0);
+        }
+}
+});
+
+/* TYPE_DESCRIPTION:  */
 	//12: c(a)d(b)e
 //this might be marked as huge multiplication...in db
 var i_5_oa_a_1__12 = new Class(
@@ -91,6 +137,7 @@ initialize: function(sheet)
         }
 }
 });
+
 /* TYPE_DESCRIPTION: c(a)d(b) */
 var i_5_oa_a_1__11 = new Class(
 	//11: c(a)(b)d 
