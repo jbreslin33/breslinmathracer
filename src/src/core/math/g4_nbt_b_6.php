@@ -2,7 +2,7 @@
 
 var i_4_nbt_b_6__1 = new Class(
 {
-Extends: TextItem,
+Extends: TextItem2,
    initialize: function(sheet)
    {
       this.parent(sheet);
