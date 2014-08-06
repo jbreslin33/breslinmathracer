@@ -433,8 +433,8 @@ initialize: function(sheet)
                 var b1 = Math.floor((Math.random()*5)+1);
                 var b2 = Math.floor((Math.random()*5)+1);
 
-                var c1 = Math.floor((Math.random()*10)+1);
-                var c2 = Math.floor((Math.random()*10)+1);
+                var c1 = Math.floor((Math.random()*10)+5);
+                var c2 = Math.floor((Math.random()*4)+1);
                 
 		var d1 = Math.floor((Math.random()*5)+1);
                 var d2 = Math.floor((Math.random()*5)+1);
