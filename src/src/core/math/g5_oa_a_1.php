@@ -62,8 +62,8 @@ initialize: function(sheet)
 	this.mAnswerTextBox.setPosition(525,100);
 
         var x = 0;
-        
-	while (x < 1)
+       	var r = 1; 
+	while (x < 1 || r != 0)
         {
 		//16: c(b(a)) 
                 var a1 = Math.floor(Math.random()*5)+1;
@@ -75,9 +75,13 @@ initialize: function(sheet)
                 
 		var d1 = Math.floor((Math.random()*8)+2);
 
-                x = parseInt(   c1 * ( b1 - (a1 - a2))    );
+                x = parseInt(   c1 * ( b1 / (a1 - a2))    );
 
-                this.setQuestion( c1 + '(' + b1 + ' - (' + a1 + '-' + a2 + '))' );
+		var a12 = parseInt( a1 - a2); 
+		
+		r = b1 % a12; 
+
+                this.setQuestion( c1 + '(' + b1 + ' / (' + a1 + '-' + a2 + '))' );
                 this.setAnswer(x,0);
         }
 }
