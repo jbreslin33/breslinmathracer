@@ -71,13 +71,13 @@ initialize: function(sheet)
 
                 var b1 = Math.floor((Math.random()*8)+2);
 
-                var c1 = Math.floor((Math.random()*100)+900);
+                var c1 = Math.floor((Math.random()*8)+2);
                 
 		var d1 = Math.floor((Math.random()*8)+2);
 
-                x = parseInt(   c1 - ( (a1 + a2) * b1) - d1     );
+                x = parseInt(   c1 * ( b1 - (a1 - a2))    );
 
-                this.setQuestion( '(' + c1 + ' - ' + '((' + a1 + ' + ' + a2 + ') ' + b1 + ') - ' + d1 );
+                this.setQuestion( c1 + '(' + b1 + ' - (' + a1 + '-' + a2 + '))' );
                 this.setAnswer(x,0);
         }
 }
