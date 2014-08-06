@@ -139,8 +139,8 @@ initialize: function(sheet)
 	while (x < 1 || r != 0)
         {
 		//16: c(b(a)) 
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
+                var a1 = Math.floor(Math.random()*10)+5;
+                var a2 = Math.floor(Math.random()*5)+3;
 
                 var b1 = Math.floor((Math.random()*8)+2);
 
