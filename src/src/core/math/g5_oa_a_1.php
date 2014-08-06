@@ -102,7 +102,7 @@ initialize: function(sheet)
 	while (x < 1)
         {
 		//17: d(b(a)c) 
-                var a1 = Math.floor(Math.random()*5)+1;
+                var a1 = Math.floor(Math.random()*5)+6;
                 var a2 = Math.floor(Math.random()*5)+1;
 
                 var b1 = Math.floor((Math.random()*8)+2);
