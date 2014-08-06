@@ -64,18 +64,20 @@ initialize: function(sheet)
         var x = 0;
 	while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
+                var a1 = Math.floor(Math.random()*10)+5;
+                var a2 = Math.floor(Math.random()*4)+1;
 
                 var b1 = Math.floor((Math.random()*8)+2);
 
                 var c1 = Math.floor((Math.random()*8)+2);
                 
-		var d1 = Math.floor((Math.random()*50)+50);
+		var d1 = Math.floor((Math.random()*250)+50);
+	
+		var e1 = Math.floor((Math.random()*10)+1);
 
-                x = parseInt(   d1 - (b1 * (a1 - a2) + c1)   );
+                x = parseInt(   d1 - (b1 * (a1 - a2) + c1) - e1   );
 
-                this.setQuestion( d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ')'   );
+                this.setQuestion( d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
                 this.setAnswer(x,0);
         }
 }
