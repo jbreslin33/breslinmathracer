@@ -47,6 +47,48 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 ********/
 /* TYPE_DESCRIPTION:  */
+//	14: (c(a)b)d 
+var i_5_oa_a_1__14 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_14';
+        this.mQuestionLabel.setSize(325,50);
+        this.mQuestionLabel.setPosition(200,95);
+	this.mAnswerTextBox.setPosition(525,100);
+
+        var x = 0;
+        var r = 1;
+        
+	while (x < 1 || r != 0)
+        {
+		//14: (c(a)b)d 
+                var a1 = Math.floor(Math.random()*5)+1;
+                var a2 = Math.floor(Math.random()*5)+1;
+
+                var b1 = Math.floor((Math.random()*8)+2);
+
+                var c1 = Math.floor((Math.random()*100)+900);
+                
+		var d1 = Math.floor((Math.random()*8)+2);
+
+		var c1a12b1 = parseInt( (c1 - (a1 + a2) + b1) );  
+
+		r = c1a12b1 % d1;
+                
+                x = parseInt( (c1 - (a1 + a2) + b1) / d1 );
+
+                this.setQuestion( '(' + c1 + ' - ' + '(' + a1 + ' + ' + a2 + ') + ' + b1 + ' / ' + d1 + ')'  );
+                this.setAnswer(x,0);
+        }
+}
+});
+
+/* TYPE_DESCRIPTION:  */
 //this might be marked as huge multiplication...in db
 	//13: ((a)b)c 
 var i_5_oa_a_1__13 = new Class(
