@@ -82,11 +82,11 @@ initialize: function(sheet)
                 
 		var d1 = Math.floor((Math.random()*250)+50);
 	
-		var e1 = Math.floor((Math.random()*10)+1);
+		var e1 = Math.floor((Math.random()*100)+900);
 
-                x = parseInt(   d1 - (b1 * (a1 - a2) + c1) - e1   );
+                x = parseInt(    e1 - ( d1 + ( b1 + (a1 - a2) * c1 ))      );
 
-                this.setQuestion( d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
+                this.setQuestion(  e1 + ' - ' + '(' + d1 + ' + (' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + '))'     );
                 this.setAnswer(x,0);
         }
 }
