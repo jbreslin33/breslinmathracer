@@ -55,6 +55,44 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 ********/
 /* TYPE_DESCRIPTION:  */
+   	//19:  e(d(b(a)c)) 
+var i_5_oa_a_1__19 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_19';
+        this.mQuestionLabel.setSize(325,50);
+        this.mQuestionLabel.setPosition(200,95);
+	this.mAnswerTextBox.setPosition(525,100);
+
+        var x = 0;
+	while (x < 1)
+        {
+   		//19:  e(d(b(a)c)) 
+                var a1 = Math.floor(Math.random()*10)+5;
+                var a2 = Math.floor(Math.random()*4)+1;
+
+                var b1 = Math.floor((Math.random()*8)+2);
+
+                var c1 = Math.floor((Math.random()*8)+2);
+                
+		var d1 = Math.floor((Math.random()*250)+50);
+	
+		var e1 = Math.floor((Math.random()*10)+1);
+
+                x = parseInt(   d1 - (b1 * (a1 - a2) + c1) - e1   );
+
+                this.setQuestion( d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
+                this.setAnswer(x,0);
+        }
+}
+});
+
+/* TYPE_DESCRIPTION:  */
 	//18: d(b(a)c)e 
 var i_5_oa_a_1__18 = new Class(
 {
