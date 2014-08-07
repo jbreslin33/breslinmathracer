@@ -77,21 +77,20 @@ initialize: function(sheet)
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*4)+1;
 
-                var b1 = Math.floor((Math.random()*10)+200);
+                var b1 = Math.floor((Math.random()*2)+8);
 
-                var c1 = Math.floor((Math.random()*8)+2);
+                var c1 = Math.floor((Math.random()*2)+2);
                 
 		var d1 = Math.floor((Math.random()*8)+2);
 	
                 var e1 = Math.floor(Math.random()*10)+5;
-                var e2 = Math.floor(Math.random()*4)+1;
 
-                x = parseInt(           e1 - e2 * (  ( b1 * ( a1 - a2) / c1 )    + d1 )               );
+                x = parseInt(           e1 * (     (b1 * ( a1 - a2) / c1)  * d1 )               );
 		var b1a12 = parseInt( b1 * ( a1 - a2) );
 
 		r = b1a12 % c1; 
 
-                this.setQuestion(  '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
+                this.setQuestion(   e1 + '((' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ')' + d1 + ')'       );
                 this.setAnswer(x,0);
         }
 }
