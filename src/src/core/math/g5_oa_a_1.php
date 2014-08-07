@@ -29,7 +29,15 @@
 	17: d(b(a)c) 
 	18: d(b(a)c)e 
 
+3 inners
 
+   	19:  e(d(b(a)c)) 
+   	20:  (d(b(a)c))e 
+
+   	21:  e((b(a)c)d) 
+   	22:  ((b(a)c)d)e 
+
+   	23:  f(d(b(a)c)e)g
 
 inner needs to be done.. i dont think i need so many of the 2p type.... or it might not do any harm to have them...
 
