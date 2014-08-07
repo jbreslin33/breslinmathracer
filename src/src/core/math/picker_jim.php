@@ -145,6 +145,14 @@ getItem: function(id)
         {
                 return new i_5_oa_a_1__21(this.mSheet);
         }
+	if (id == '5.oa.a.1_22')
+        {
+                return new i_5_oa_a_1__22(this.mSheet);
+        }
+	if (id == '5.oa.a.1_23')
+        {
+                return new i_5_oa_a_1__23(this.mSheet);
+        }
 
         //5.oa.a.2
         if (id == '5.oa.a.2_1')
