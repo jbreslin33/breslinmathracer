@@ -70,7 +70,8 @@ initialize: function(sheet)
 	this.mAnswerTextBox.setPosition(525,100);
 
         var x = 0;
-	while (x < 1)
+        var r = 1;
+	while (x < 1 || r != 0)
         {
    		//21:  e((b(a)c)d) 
                 var a1 = Math.floor(Math.random()*10)+5;
@@ -80,11 +81,15 @@ initialize: function(sheet)
 
                 var c1 = Math.floor((Math.random()*8)+2);
                 
-		var d1 = Math.floor((Math.random()*10)+1);
+		var d1 = Math.floor((Math.random()*8)+2);
 	
-		var e1 = Math.floor((Math.random()*2)+2);
+                var e1 = Math.floor(Math.random()*10)+5;
+                var e2 = Math.floor(Math.random()*4)+1;
 
-                x = parseInt(  (d1 + (b1 - ( a1 + a2) * c1 )) * e1 );
+                x = parseInt(           e1 - e2 * (  ( b1 * ( a1 - a2) / c1 )    + d1 )               );
+		var b1a12 = parseInt( b1 * ( a1 - a2) );
+
+		r = b1a12 % c1; 
 
                 this.setQuestion(  '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
                 this.setAnswer(x,0);
