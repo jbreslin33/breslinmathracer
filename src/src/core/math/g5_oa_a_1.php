@@ -85,9 +85,9 @@ initialize: function(sheet)
 		var e1 = Math.floor(Math.random()*10)+5;
                 var e2 = Math.floor(Math.random()*4)+1;
 
-                x = parseInt(    (( b1 + (a1 + a2) * c1 ) - d1 ) + e1 - e2  );
+                x = parseInt(    (( b1 * (a1 + a2) * c1 ) - d1 ) + e1 - e2  );
 
-                this.setQuestion(   'hel'       );
+                this.setQuestion(   '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
                 this.setAnswer(x,0);
         }
 }
