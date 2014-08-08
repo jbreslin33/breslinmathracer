@@ -21,13 +21,11 @@ NOTES: if i where to add something it would be braces and brackets, the question
 	12: c(a)d(b)e
 2p INNERS
 //13: ((a)) 
-	//14: (b(a)) 
-	//15: (b(a)c) 
-	13: ((a)b)c 
+	13: [(a)b]c 
 	14: (c(a)b)d 
-	15: c((a)b)d
-	16: c(b(a)) 
-	17: d(b(a)c) 
+	15: c[(a)b]d
+	16: c[b(a)] 
+	17: d[b(a)c] 
 	18: d(b(a)c)e 
 
 3 inners
@@ -38,7 +36,13 @@ NOTES: if i where to add something it would be braces and brackets, the question
    	21:  e((b(a)c)d) 
    	22:  ((b(a)c)d)e 
 
-   	23:  f(d(b(a)c)e)g
+   	23:  f(d(b(a)c)e)g 
+
+   	//with braces and brackets	
+   	
+   	19:  e{d[b(a)c]} 
+   	21:  e{[(b(a)c]d} 
+	23:  f{d[b(a)c]e}g 
 
 inner needs to be done.. i dont think i need so many of the 2p type.... or it might not do any harm to have them...
 
