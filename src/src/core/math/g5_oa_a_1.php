@@ -30,19 +30,16 @@ NOTES: if i where to add something it would be braces and brackets, the question
 
 3 inners
 
-   	19:  e(d(b(a)c)) 
+   	19:  e{d[b(a)c]} 
    	20:  (d(b(a)c))e 
 
-   	21:  e((b(a)c)d) 
+   	21:  e{[(b(a)c]d} 
    	22:  ((b(a)c)d)e 
 
-   	23:  f(d(b(a)c)e)g 
+	23:  f{d[b(a)c]e}g 
 
    	//with braces and brackets	
    	
-   	19:  e{d[b(a)c]} 
-   	21:  e{[(b(a)c]d} 
-	23:  f{d[b(a)c]e}g 
 
 inner needs to be done.. i dont think i need so many of the 2p type.... or it might not do any harm to have them...
 
@@ -97,7 +94,7 @@ initialize: function(sheet)
    		//23:  f(d(b(a)c)e)g
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
-                this.setQuestion(              f1 + '(' + d1 + '(' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ')' + e1 + ')' + g1          );
+                this.setQuestion(              f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1          );
                 this.setAnswer(x,0);
         }
 }
@@ -176,7 +173,7 @@ initialize: function(sheet)
 
 		r = b1a12 % c1; 
 
-                this.setQuestion(   e1 + '((' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ')' + d1 + ')'       );
+                this.setQuestion(   e1 + '{[' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ']' + d1 + '}'       );
                 this.setAnswer(x,0);
         }
 }
@@ -252,7 +249,7 @@ initialize: function(sheet)
 
                 x = parseInt(    e1 - ( d1 + ( b1 + (a1 - a2) * c1 ))      );
 
-                this.setQuestion(  e1 + ' - ' + '(' + d1 + ' + (' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + '))'     );
+                this.setQuestion(  e1 + ' - ' + '{' + d1 + ' + [' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + ']}'     );
                 this.setAnswer(x,0);
         }
 }
@@ -325,7 +322,7 @@ initialize: function(sheet)
 
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1)   );
 
-                this.setQuestion( d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ')'   );
+                this.setQuestion( d1 + ' - ' + '[' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ']'   );
                 this.setAnswer(x,0);
         }
 }
@@ -403,7 +400,7 @@ initialize: function(sheet)
 
                 x = parseInt(   c1 - ( (a1 + a2) * b1) - d1     );
 
-                this.setQuestion( '(' + c1 + ' - ' + '((' + a1 + ' + ' + a2 + ') ' + b1 + ') - ' + d1 );
+                this.setQuestion( c1 + ' - ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] - ' + d1 );
                 this.setAnswer(x,0);
         }
 }
@@ -481,7 +478,7 @@ initialize: function(sheet)
                 
                 x = parseInt( ((a1 + a2) * b1) * c1   );
 
-                this.setQuestion( '((' + a1 + ' + ' + a2 + ') ' + b1 + ') ' + c1 );
+                this.setQuestion( '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] ' + c1 );
                 this.setAnswer(x,0);
         }
 }
