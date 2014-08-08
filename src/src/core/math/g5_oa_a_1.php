@@ -1,4 +1,5 @@
 /*********
+NOTES: if i where to add something it would be braces and brackets, the question is do i add them to existing items or create some new ones?
 1 p
 1: (a) = (7*2) = (6/2) = (34+9)
 	2: b(a) = 7(3) = 8 + 6(5+8) = 13 - 8(15/3) 
