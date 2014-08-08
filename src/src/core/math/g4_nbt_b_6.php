@@ -38,15 +38,13 @@ Extends: TextItem2,
 			varC = parseInt(Math.floor(varA / varB));
 
 			varD =  parseInt(varA % varB);
-					
-			//question = new Question('' + varA + ' / ' +  varB + ' = ', '' + varC);
-      //this.mQuiz.mQuestionArray.push(question);
-			//question.mAnswerArray.push(varD);
-			//question.mHeadingArray.push('Quotient');
-			//question.mHeadingArray.push('Remainder');
 								                       
 				this.setQuestion('' + varA + ' / ' +  varB + ' = ');
-        this.setAnswer(varC,0);             
+        this.setAnswer('' + varC,0);
+        this.setAnswer('' + varD,1);   
+
+        this.mHeadingAnswerLabel.setText('Quotient');
+        this.mHeadingAnswerLabel2.setText('Remainder');        
    }
 });
 
