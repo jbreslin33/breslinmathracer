@@ -1,5 +1,13 @@
 /*********
 NOTES: if i where to add something it would be braces and brackets, the question is do i add them to existing items or create some new ones?
+ok took care of that....
+but what about fractions???
+the workbook has fractions the standard states:
+Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols.
+so would that include fractions???
+I think using fractions could be a check on whether or not fractions are known. so i think they are fair game.
+//maybe make every 3rd type have fractions. Or maybe even types???? or how bout divisible by 3?? maybe 4 as that  would preclude braces...
+//use only 4th grade fractions....
 1 p
 1: (a) = (7*2) = (6/2) = (34+9)
 	2: b(a) = 7(3) = 8 + 6(5+8) = 13 - 8(15/3) 
@@ -10,9 +18,9 @@ NOTES: if i where to add something it would be braces and brackets, the question
 
 2 p
 5: (a)(b) 
-	6: c(a)(b) 
-	7: (a)c(b) 
-	8: (a)(b)c 
+	6: c(a)(b) //af 
+	7: (a)c(b)   
+	8: (a)(b)c   
 	
 	9: c(a)d(b) 
 	10: (a)c(b)d 
