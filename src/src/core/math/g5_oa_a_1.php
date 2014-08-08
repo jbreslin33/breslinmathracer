@@ -72,22 +72,27 @@ initialize: function(sheet)
         var x = 0;
 	while (x < 1)
         {
-   		//23:  f(d(b(a)c)e)g
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*4)+1;
 
-                var b1 = Math.floor((Math.random()*2)+8);
+                var b1 = Math.floor((Math.random()*20)+50);
+                var b2 = Math.floor((Math.random()*2)+2);
 
                 var c1 = Math.floor((Math.random()*2)+2);
                 
-		var d1 = Math.floor((Math.random()*8)+2);
+		var d1 = Math.floor((Math.random()*2)+2);
                 
 		var e1 = Math.floor(Math.random()*10)+5;
                 var e2 = Math.floor(Math.random()*4)+1;
+		
+		var f1 = Math.floor(Math.random()*2)+2;
+		
+		var g1 = Math.floor(Math.random()*2)+2;
 
-                x = parseInt(    (( b1 * (a1 + a2) * c1 ) - d1 ) + e1 - e2  );
+   		//23:  f(d(b(a)c)e)g
+                x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
-                this.setQuestion(   '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
+                this.setQuestion(   'x:' + x          );
                 this.setAnswer(x,0);
         }
 }
