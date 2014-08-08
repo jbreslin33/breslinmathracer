@@ -92,7 +92,7 @@ initialize: function(sheet)
    		//23:  f(d(b(a)c)e)g
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
-                this.setQuestion(   'x:' + x          );
+                this.setQuestion(              f1 + '(' + d1 + '(' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ')' + e1 + ')' + g1          );
                 this.setAnswer(x,0);
         }
 }
