@@ -847,7 +847,7 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: b(a) */
+/* TYPE_DESCRIPTION: b(a), multiplication, add fractions, multiply fraction by whole number */
 var i_5_oa_a_1__1 = new Class(
 {
 Extends: TextItem,
@@ -862,7 +862,7 @@ initialize: function(sheet)
  
         var b1 = Math.floor(Math.random()*8)+2;
 	
-        var a1 = Math.floor((Math.random()*4)+1);
+        var a1 = Math.floor((Math.random()*3)+1);
         var a2 = Math.floor((Math.random()*4)+1);
         var ad = Math.floor((Math.random()*3)+8);
                	
