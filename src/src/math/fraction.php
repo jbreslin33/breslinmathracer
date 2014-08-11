@@ -6,6 +6,8 @@ var Fraction = new Class(
 		this.mDenominator = parseInt(d);
 
 		this.mGCD = 0;
+
+		this.reduce();
         },
 
 	reduce: function()
