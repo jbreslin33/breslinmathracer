@@ -9,40 +9,33 @@ I think using fractions could be a check on whether or not fractions are known. 
 //maybe make every 3rd type have fractions. Or maybe even types???? or how bout divisible by 3?? maybe 4 as that  would preclude braces...
 //use only 4th grade fractions....
 1 p
-	1: b(a) = 7(3) = 8 + 6(5+8) = 13 - 8(15/3) 
-	2: (a)b = (14-3)3 + 4 = (7 - 3) - 5 / 5 
-	3: b(a)c = 10-3(14-3)3 + 4 = 3+7(7 - 3) - 5 / 5 
-
-
-
+	1: b(a)  //+ 
+	2: (a)b  
+	3: b(a)c  
 2 p
-4: (a)(b) 
-	5: c(a)(b) //af 
+	4: (a)(b) //mix 
+	5: c(a)(b) 
 	6: (a)c(b)   
-	7: (a)(b)c   
+	7: (a)(b)c //x 
 	
 	8: c(a)d(b) 
-	9: (a)c(b)d 
-	10: c(a)(b)d 
+	9: (a)c(b)d   
+	10: c(a)(b)d  //+ 
 
-	11: c(a)d(b)e
+	11: c(a)d(b)e 
 2p INNERS
-	12: [(a)b]c 
-	13: (c(a)b)d 
+	12: [(a)b]c   
+	13: (c(a)b)d //mix 
 	14: c[(a)b]d
-	15: c[b(a)] 
-	16: d[b(a)c] 
-	17: d(b(a)c)e 
-
+	15: c[b(a)]   
+	16: d[b(a)c] //x 
+	17: d(b(a)c)e  
 3 inners
-
    	18:  e{d[b(a)c]} 
-   	19:  (d(b(a)c))e 
-
-   	20:  e{[(b(a)c]d} 
-   	21:  ((b(a)c)d)e 
-
-	22:  f{d[b(a)c]e}g 
+   	19:  (d(b(a)c))e //+ 
+   	20:  e{[(b(a)c]d}  
+   	21:  ((b(a)c)d)e   
+	22:  f{d[b(a)c]e}g  //mix 
 
    	//with braces and brackets	
    	
