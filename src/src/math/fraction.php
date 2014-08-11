@@ -34,7 +34,6 @@ var Fraction = new Class(
 			return this.mNumerator + '/' + this.mDenominator
 		}
 	}
-
 });
 
 
