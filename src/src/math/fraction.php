@@ -19,6 +19,18 @@ var Fraction = new Class(
 	gcd: function(numerator,denominator)
 	{
 		return denominator ? this.gcd(denominator,numerator%denominator) : numerator; 
+	},
+
+	getString: function()
+	{
+		if (this.mDenominator == 1)
+		{
+			return this.mNumerator; 
+		}
+		else
+		{
+			return this.mNumerator + '/' + this.mDenominator
+		}
 	}
 
 });
