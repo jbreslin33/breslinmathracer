@@ -866,19 +866,28 @@ initialize: function(sheet)
  	this.mQuestionLabel.setSize(200,50);
  	this.mQuestionLabel.setPosition(300,95);
  
-	var x = 0;	
+        var b1 = Math.floor(Math.random()*8)+2;
 	
-	while (x < 1)
-	{	
-               	var b1 = Math.floor(Math.random()*100)+2000;
-                var b2 = Math.floor(Math.random()*10)+1;
-	
-                var a1 = Math.floor((Math.random()*8)+2);
-                var a2 = Math.floor((Math.random()*8)+2);
-               	x = parseInt(  b1 - b2 * (  a1 + a2 )  );
+        var a1 = Math.floor((Math.random()*8)+2);
+        var a2 = Math.floor((Math.random()*8)+2);
+        var ad = Math.floor((Math.random()*8)+2);
+               	
+	var n = parseInt(  b1 * (  a1 + a2 )   );
+	var d = ad; 
 
-                this.setQuestion(b1 + ' - ' +  b2 + '(' + a1 + ' + ' + a2 + ')'  );
-                this.setAnswer(x,0);
-        }
+	r = n % ad; 
+
+        this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
+		
+	if (r == 0)
+	{
+		var x = parseInt(n/d); 
+               	this.setAnswer(x,0);
+	}
+	else
+	{
+		//var x = parseInt(n/d);
+               	this.setAnswer(n + '/' + d,0);
+	}
 }
 });
