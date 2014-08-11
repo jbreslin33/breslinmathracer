@@ -870,8 +870,22 @@ initialize: function(sheet)
 	var d = ad; 
 
 	r = n % ad; 
+	var x = n/ad;
+
+	fraction = new Fraction(n,ad);	
+	fraction.reduce();
+	APPLICATION.log('numerator:' + fraction.mNumerator);
+	APPLICATION.log('denominator:' + fraction.mDenominator);
+
+	if (r == 0)
+	{
+        	this.setAnswer(x,0);
+	} 
+	else	
+	{
+        	this.setAnswer(n + '/' + d,0);
+	} 
 
         this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
-        this.setAnswer(n + '/' + d,0);
 }
 });
