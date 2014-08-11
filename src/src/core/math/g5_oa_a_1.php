@@ -878,7 +878,8 @@ initialize: function(sheet)
 	r = n % ad; 
 
         this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
-		
+        this.setAnswer(n + '/' + d,0);
+	/*	
 	if (r == 0)
 	{
 		var x = parseInt(n/d); 
@@ -889,5 +890,6 @@ initialize: function(sheet)
 		//var x = parseInt(n/d);
                	this.setAnswer(n + '/' + d,0);
 	}
+*/
 }
 });
