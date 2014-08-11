@@ -862,9 +862,9 @@ initialize: function(sheet)
  
         var b1 = Math.floor(Math.random()*8)+2;
 	
-        var a1 = Math.floor((Math.random()*8)+2);
-        var a2 = Math.floor((Math.random()*8)+2);
-        var ad = Math.floor((Math.random()*8)+2);
+        var a1 = Math.floor((Math.random()*4)+1);
+        var a2 = Math.floor((Math.random()*4)+1);
+        var ad = Math.floor((Math.random()*3)+8);
                	
 	var n = parseInt(  b1 * (  a1 + a2 )   );
 
