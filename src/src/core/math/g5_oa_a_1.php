@@ -867,26 +867,10 @@ initialize: function(sheet)
         var ad = Math.floor((Math.random()*8)+2);
                	
 	var n = parseInt(  b1 * (  a1 + a2 )   );
-	var d = ad; 
-
-	r = n % ad; 
-	var x = n/ad;
 
 	fraction = new Fraction(n,ad);	
-	fraction.reduce();
-	APPLICATION.log('STRING:' + fraction.getString());
-	APPLICATION.log('numerator:' + fraction.mNumerator);
-	APPLICATION.log('denominator:' + fraction.mDenominator);
-
-	if (r == 0)
-	{
-        	this.setAnswer(x,0);
-	} 
-	else	
-	{
-        	this.setAnswer(n + '/' + d,0);
-	} 
-
+	
+	this.setAnswer(fraction.getString(),0);
         this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
 }
 });
