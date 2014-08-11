@@ -9,42 +9,40 @@ I think using fractions could be a check on whether or not fractions are known. 
 //maybe make every 3rd type have fractions. Or maybe even types???? or how bout divisible by 3?? maybe 4 as that  would preclude braces...
 //use only 4th grade fractions....
 1 p
-1: (a) = (7*2) = (6/2) = (34+9)
-	2: b(a) = 7(3) = 8 + 6(5+8) = 13 - 8(15/3) 
-	3: (a)b = (14-3)3 + 4 = (7 - 3) - 5 / 5 
-	4: b(a)c = 10-3(14-3)3 + 4 = 3+7(7 - 3) - 5 / 5 
+	1: b(a) = 7(3) = 8 + 6(5+8) = 13 - 8(15/3) 
+	2: (a)b = (14-3)3 + 4 = (7 - 3) - 5 / 5 
+	3: b(a)c = 10-3(14-3)3 + 4 = 3+7(7 - 3) - 5 / 5 
 
 
 
 2 p
-5: (a)(b) 
-	6: c(a)(b) //af 
-	7: (a)c(b)   
-	8: (a)(b)c   
+4: (a)(b) 
+	5: c(a)(b) //af 
+	6: (a)c(b)   
+	7: (a)(b)c   
 	
-	9: c(a)d(b) 
-	10: (a)c(b)d 
-	11: c(a)(b)d 
+	8: c(a)d(b) 
+	9: (a)c(b)d 
+	10: c(a)(b)d 
 
-	12: c(a)d(b)e
+	11: c(a)d(b)e
 2p INNERS
-//13: ((a)) 
-	13: [(a)b]c 
-	14: (c(a)b)d 
-	15: c[(a)b]d
-	16: c[b(a)] 
-	17: d[b(a)c] 
-	18: d(b(a)c)e 
+	12: [(a)b]c 
+	13: (c(a)b)d 
+	14: c[(a)b]d
+	15: c[b(a)] 
+	16: d[b(a)c] 
+	17: d(b(a)c)e 
 
 3 inners
 
-   	19:  e{d[b(a)c]} 
-   	20:  (d(b(a)c))e 
+   	18:  e{d[b(a)c]} 
+   	19:  (d(b(a)c))e 
 
-   	21:  e{[(b(a)c]d} 
-   	22:  ((b(a)c)d)e 
+   	20:  e{[(b(a)c]d} 
+   	21:  ((b(a)c)d)e 
 
-	23:  f{d[b(a)c]e}g 
+	22:  f{d[b(a)c]e}g 
 
    	//with braces and brackets	
    	
@@ -64,9 +62,8 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 
 ********/
-/* TYPE_DESCRIPTION:  */
-   	//23:  f(d(b(a)c)e)g
-var i_5_oa_a_1__23 = new Class(
+/* TYPE_DESCRIPTION:   f(d(b(a)c)e)g */
+var i_5_oa_a_1__22 = new Class(
 {
 Extends: TextItem,
 
@@ -74,7 +71,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_23';
+        this.mType = '5.oa.a.1_22';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -99,7 +96,6 @@ initialize: function(sheet)
 		
 		var g1 = Math.floor(Math.random()*2)+2;
 
-   		//23:  f(d(b(a)c)e)g
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
                 this.setQuestion(              f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1          );
@@ -107,9 +103,8 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION:  */
-var i_5_oa_a_1__22 = new Class(
-   	//22:  ((b(a)c)d)e 
+/* TYPE_DESCRIPTION:  ((b(a)c)d)e  */
+var i_5_oa_a_1__21 = new Class(
 {
 Extends: TextItem,
 
@@ -117,7 +112,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_22';
+        this.mType = '5.oa.a.1_21';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -125,7 +120,6 @@ initialize: function(sheet)
         var x = 0;
 	while (x < 1)
         {
-   		//22:  ((b(a)c)d)e 
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*4)+1;
 
@@ -145,9 +139,8 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION:  */
-   	//21:  e((b(a)c)d) 
-var i_5_oa_a_1__21 = new Class(
+/* TYPE_DESCRIPTION:    e((b(a)c)d)  */
+var i_5_oa_a_1__20 = new Class(
 {
 Extends: TextItem,
 
@@ -155,7 +148,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_21';
+        this.mType = '5.oa.a.1_20';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -164,7 +157,6 @@ initialize: function(sheet)
         var r = 1;
 	while (x < 1 || r != 0)
         {
-   		//21:  e((b(a)c)d) 
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*4)+1;
 
@@ -187,17 +179,16 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-var i_5_oa_a_1__20 = new Class(
+/* TYPE_DESCRIPTION:    (d(b(a)c))e  */
+var i_5_oa_a_1__19 = new Class(
 {
-   	//20:  (d(b(a)c))e 
 Extends: TextItem,
 
 initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_20';
+        this.mType = '5.oa.a.1_19';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -205,7 +196,6 @@ initialize: function(sheet)
         var x = 0;
 	while (x < 1)
         {
-   		//20:  (d(b(a)c))e 
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*4)+1;
 
@@ -225,9 +215,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-   	//19:  e(d(b(a)c)) 
-var i_5_oa_a_1__19 = new Class(
+/* TYPE_DESCRIPTION:   e(d(b(a)c))  */
+var i_5_oa_a_1__18 = new Class(
 {
 Extends: TextItem,
 
@@ -235,7 +224,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_19';
+        this.mType = '5.oa.a.1_18';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -243,7 +232,6 @@ initialize: function(sheet)
         var x = 0;
 	while (x < 1)
         {
-   		//19:  e(d(b(a)c)) 
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*4)+1;
 
@@ -263,9 +251,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-	//18: d(b(a)c)e 
-var i_5_oa_a_1__18 = new Class(
+/* TYPE_DESCRIPTION:  d(b(a)c)e  */
+var i_5_oa_a_1__17 = new Class(
 {
 Extends: TextItem,
 
@@ -273,7 +260,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_18';
+        this.mType = '5.oa.a.1_17';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -300,9 +287,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-	//17: d(b(a)c) 
-var i_5_oa_a_1__17 = new Class(
+/* TYPE_DESCRIPTION:   d(b(a)c) */
+var i_5_oa_a_1__16 = new Class(
 {
 Extends: TextItem,
 
@@ -310,7 +296,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_17';
+        this.mType = '5.oa.a.1_16';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -318,7 +304,6 @@ initialize: function(sheet)
         var x = 0;
 	while (x < 1)
         {
-		//17: d(b(a)c) 
                 var a1 = Math.floor(Math.random()*5)+6;
                 var a2 = Math.floor(Math.random()*5)+1;
 
@@ -336,9 +321,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-	//16: c(b(a)) 
-var i_5_oa_a_1__16 = new Class(
+/* TYPE_DESCRIPTION:  c(b(a)) */
+var i_5_oa_a_1__15 = new Class(
 {
 Extends: TextItem,
 
@@ -346,7 +330,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_16';
+        this.mType = '5.oa.a.1_15';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -355,7 +339,6 @@ initialize: function(sheet)
        	var r = 1; 
 	while (x < 1 || r != 0)
         {
-		//16: c(b(a)) 
                 var a1 = Math.floor(Math.random()*10)+5;
                 var a2 = Math.floor(Math.random()*5)+3;
 
@@ -377,9 +360,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-	//15: c((a)b)d
-var i_5_oa_a_1__15 = new Class(
+/* TYPE_DESCRIPTION:  c((a)b)d */
+var i_5_oa_a_1__14 = new Class(
 {
 Extends: TextItem,
 
@@ -387,7 +369,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_15';
+        this.mType = '5.oa.a.1_14';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -396,7 +378,6 @@ initialize: function(sheet)
         
 	while (x < 1)
         {
-		//15: c((a)b)d
                 var a1 = Math.floor(Math.random()*5)+1;
                 var a2 = Math.floor(Math.random()*5)+1;
 
@@ -414,9 +395,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-//	14: (c(a)b)d 
-var i_5_oa_a_1__14 = new Class(
+/* TYPE_DESCRIPTION:  (c(a)b)d  */
+var i_5_oa_a_1__13 = new Class(
 {
 Extends: TextItem,
 
@@ -424,7 +404,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_14';
+        this.mType = '5.oa.a.1_13';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -434,7 +414,6 @@ initialize: function(sheet)
         
 	while (x < 1 || r != 0)
         {
-		//14: (c(a)b)d 
                 var a1 = Math.floor(Math.random()*5)+1;
                 var a2 = Math.floor(Math.random()*5)+1;
 
@@ -456,44 +435,7 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  */
-//this might be marked as huge multiplication...in db
-	//13: ((a)b)c 
-var i_5_oa_a_1__13 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet);
-
-        this.mType = '5.oa.a.1_13';
-        this.mQuestionLabel.setSize(325,50);
-        this.mQuestionLabel.setPosition(200,95);
-	this.mAnswerTextBox.setPosition(525,100);
-
-        var x = 0;
-        
-	while (x < 1)
-        {
-		//13: ((a)b)c 
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
-
-                var b1 = Math.floor((Math.random()*8)+2);
-
-                var c1 = Math.floor((Math.random()*8)+2);
-                
-                x = parseInt( ((a1 + a2) * b1) * c1   );
-
-                this.setQuestion( '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] ' + c1 );
-                this.setAnswer(x,0);
-        }
-}
-});
-
-/* TYPE_DESCRIPTION:  */
-	//12: c(a)d(b)e
+/* TYPE_DESCRIPTION:  ((a)b)c  */
 //this might be marked as huge multiplication...in db
 var i_5_oa_a_1__12 = new Class(
 {
@@ -509,11 +451,44 @@ initialize: function(sheet)
 	this.mAnswerTextBox.setPosition(525,100);
 
         var x = 0;
+        
+	while (x < 1)
+        {
+                var a1 = Math.floor(Math.random()*5)+1;
+                var a2 = Math.floor(Math.random()*5)+1;
+
+                var b1 = Math.floor((Math.random()*8)+2);
+
+                var c1 = Math.floor((Math.random()*8)+2);
+                
+                x = parseInt( ((a1 + a2) * b1) * c1   );
+
+                this.setQuestion( '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] ' + c1 );
+                this.setAnswer(x,0);
+        }
+}
+});
+
+/* TYPE_DESCRIPTION: c(a)d(b)e  */
+//this might be marked as huge multiplication...in db
+var i_5_oa_a_1__11 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_11';
+        this.mQuestionLabel.setSize(325,50);
+        this.mQuestionLabel.setPosition(200,95);
+	this.mAnswerTextBox.setPosition(525,100);
+
+        var x = 0;
         var r = 1;
 
         while (x < 1 || r != 0)
         {
-		//12: c(a)d(b)e
                 var a1 = Math.floor(Math.random()*100)+50;
                 var a2 = Math.floor(Math.random()*48)+2;
 
@@ -538,9 +513,8 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: c(a)d(b) */
-var i_5_oa_a_1__11 = new Class(
-	//11: c(a)(b)d 
+/* TYPE_DESCRIPTION: c(a)(b)d */
+var i_5_oa_a_1__10 = new Class(
 {
 Extends: TextItem,
 
@@ -548,7 +522,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_11';
+        this.mType = '5.oa.a.1_10';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -558,7 +532,6 @@ initialize: function(sheet)
 
         while (x < 1 || r != 0)
         {
-		//11: c(a)(b)d 
                 var a1 = Math.floor(Math.random()*100)+50;
                 var a2 = Math.floor(Math.random()*48)+2;
 
@@ -581,9 +554,9 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION: c(a)d(b) */
-	//10: (a)c(b)d 
-var i_5_oa_a_1__10 = new Class(
+/* TYPE_DESCRIPTION: (a)c(b)d */
+
+var i_5_oa_a_1__9 = new Class(
 {
 Extends: TextItem,
 
@@ -591,7 +564,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_10';
+        this.mType = '5.oa.a.1_9';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -626,7 +599,7 @@ initialize: function(sheet)
 });
 
 /* TYPE_DESCRIPTION: c(a)d(b) */
-var i_5_oa_a_1__9 = new Class(
+var i_5_oa_a_1__8 = new Class(
 {
 Extends: TextItem,
 
@@ -634,7 +607,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_9';
+        this.mType = '5.oa.a.1_8';
         this.mQuestionLabel.setSize(325,50);
         this.mQuestionLabel.setPosition(200,95);
 	this.mAnswerTextBox.setPosition(525,100);
@@ -667,42 +640,6 @@ initialize: function(sheet)
 });
 
 /* TYPE_DESCRIPTION: c(a)(b) */
-var i_5_oa_a_1__8 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet);
-
-        this.mType = '5.oa.a.1_8';
-        this.mQuestionLabel.setSize(225,50);
-        this.mQuestionLabel.setPosition(250,95);
-
-        var x = 0;
-        var r = 1;
-
-        while (x < 1 || r != 0)
-        {
-                var a1 = Math.floor(Math.random()*8)+2;
-                var a2 = Math.floor(Math.random()*8)+2;
-
-                var b1 = Math.floor((Math.random()*5)+1);
-                var b2 = Math.floor((Math.random()*5)+1);
-
-                var c1 = Math.floor((Math.random()*5)+16);
-                var c2 = Math.floor((Math.random()*5)+10);
-
-                r = c1 % c2;
-
-                x = parseInt( (a1 - a2) * (b1 + b2) + c1 / c2 );
-
-                this.setQuestion( '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
-                this.setAnswer(x,0);
-        }
-}
-});
-/* TYPE_DESCRIPTION: c(a)(b) */
 var i_5_oa_a_1__7 = new Class(
 {
 Extends: TextItem,
@@ -729,13 +666,11 @@ initialize: function(sheet)
                 var c1 = Math.floor((Math.random()*5)+16);
                 var c2 = Math.floor((Math.random()*5)+10);
 
-                var a12c1 = parseInt(  (a1 - a2) * c1 );
-                var b12c2 = parseInt(  c2 * (b1 + b2) );
-                r = a12c1 % b12c2;
+                r = c1 % c2;
 
-                x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
+                x = parseInt( (a1 - a2) * (b1 + b2) + c1 / c2 );
 
-                this.setQuestion( '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
+                this.setQuestion( '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
                 this.setAnswer(x,0);
         }
 }
@@ -767,6 +702,44 @@ initialize: function(sheet)
                 var c1 = Math.floor((Math.random()*5)+16);
                 var c2 = Math.floor((Math.random()*5)+10);
 
+                var a12c1 = parseInt(  (a1 - a2) * c1 );
+                var b12c2 = parseInt(  c2 * (b1 + b2) );
+                r = a12c1 % b12c2;
+
+                x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
+
+                this.setQuestion( '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
+                this.setAnswer(x,0);
+        }
+}
+});
+/* TYPE_DESCRIPTION: c(a)(b) */
+var i_5_oa_a_1__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.oa.a.1_5';
+        this.mQuestionLabel.setSize(225,50);
+        this.mQuestionLabel.setPosition(250,95);
+
+        var x = 0;
+        var r = 1;
+
+        while (x < 1 || r != 0)
+        {
+                var a1 = Math.floor(Math.random()*8)+2;
+                var a2 = Math.floor(Math.random()*8)+2;
+
+                var b1 = Math.floor((Math.random()*5)+1);
+                var b2 = Math.floor((Math.random()*5)+1);
+
+                var c1 = Math.floor((Math.random()*5)+16);
+                var c2 = Math.floor((Math.random()*5)+10);
+
                 var a12 = parseInt(  a1 + a2 );
                 var b12 = parseInt(  b1 + b2 );
                 r = a12 % b12;
@@ -779,7 +752,7 @@ initialize: function(sheet)
 }
 });
 /* TYPE_DESCRIPTION: (a)(b) */
-var i_5_oa_a_1__5 = new Class(
+var i_5_oa_a_1__4 = new Class(
 {
 Extends: TextItem,
 
@@ -787,7 +760,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_5';
+        this.mType = '5.oa.a.1_4';
         this.mQuestionLabel.setSize(225,50);
         this.mQuestionLabel.setPosition(250,95);
 
@@ -814,7 +787,7 @@ initialize: function(sheet)
 }
 });
 /* TYPE_DESCRIPTION: b(a)c */
-var i_5_oa_a_1__4 = new Class(
+var i_5_oa_a_1__3 = new Class(
 {
 Extends: TextItem,
 
@@ -822,7 +795,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_4';
+        this.mType = '5.oa.a.1_3';
         this.mQuestionLabel.setSize(225,50);
         this.mQuestionLabel.setPosition(250,95);
 
@@ -853,7 +826,7 @@ initialize: function(sheet)
 });
 
 /* TYPE_DESCRIPTION: (a)b */
-var i_5_oa_a_1__3 = new Class(
+var i_5_oa_a_1__2 = new Class(
 {
 Extends: TextItem,
 
@@ -861,7 +834,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.oa.a.1_3';
+        this.mType = '5.oa.a.1_2';
         this.mQuestionLabel.setSize(200,50);
         this.mQuestionLabel.setPosition(300,95);
 
@@ -888,7 +861,7 @@ initialize: function(sheet)
 });
 
 /* TYPE_DESCRIPTION: b(a) */
-var i_5_oa_a_1__2 = new Class(
+var i_5_oa_a_1__1 = new Class(
 {
 Extends: TextItem,
 
@@ -896,7 +869,7 @@ initialize: function(sheet)
 {
 	this.parent(sheet);
 
-        this.mType = '5.oa.a.1_2';
+        this.mType = '5.oa.a.1_1';
  	this.mQuestionLabel.setSize(200,50);
  	this.mQuestionLabel.setPosition(300,95);
  
@@ -915,23 +888,4 @@ initialize: function(sheet)
                 this.setAnswer(x,0);
         }
 }
-});
-
-/* TYPE_DESCRIPTION: (a) */
-var i_5_oa_a_1__1 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-
-                this.mType = '5.oa.a.1_1';
-		
-                var a1 = Math.floor(Math.random()*10);
-                var a2 = Math.floor(Math.random()*10);
-               	var x = parseInt(a1 * a2);
-
-                this.setQuestion( '(' + a1 + ' x ' + a2 + ')'  );
-                this.setAnswer(x,0);
-        }
 });
