@@ -786,29 +786,19 @@ initialize: function(sheet)
         this.mQuestionLabel.setSize(225,50);
         this.mQuestionLabel.setPosition(250,95);
 
-        var x = 0;
-        var r = 1;
+        var a1 = Math.floor((Math.random()*3)+1);
+        var a2 = Math.floor((Math.random()*4)+1);
+        var ad = Math.floor((Math.random()*3)+8);
+       	
+	var b1 = Math.floor(Math.random()*3)+2;
+	var c1 = Math.floor(Math.random()*3)+2;
 
-        while (x < 1 || r != 0)
-        {
-                var c1 = Math.floor(Math.random()*5)+15;
-                var c2 = Math.floor(Math.random()*3)+2;
+	var n = parseInt( b1 * (  a1 + a2 ) * c1  );
+		
+	var fraction = new Fraction(n,ad);	
 
-                var b1 = Math.floor(Math.random()*3)+2;
-                var b2 = Math.floor(Math.random()*5)+15;
-
-                var a1 = Math.floor((Math.random()*40)+10);
-                var a2 = Math.floor((Math.random()*20)+10);
-
-                var a12c2 = parseInt(c2 * (a1 + a2) );
-                var b1 = parseInt(b1);
-                r = a12c2 % b1;
-
-                x = parseInt( c1 - c2 * (  a1 + a2 ) / b1 + b2 );
-
-                this.setQuestion(c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') / ' + b1 + ' + ' +  b2);
-                this.setAnswer(x,0);
-        }
+	this.setAnswer(fraction.getString(),0);
+        this.setQuestion(b1 + ' (' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ') ' + c1);
 }
 });
 
