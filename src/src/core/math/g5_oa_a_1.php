@@ -874,6 +874,7 @@ initialize: function(sheet)
 
 	fraction = new Fraction(n,ad);	
 	fraction.reduce();
+	APPLICATION.log('STRING:' + fraction.getString());
 	APPLICATION.log('numerator:' + fraction.mNumerator);
 	APPLICATION.log('denominator:' + fraction.mDenominator);
 
