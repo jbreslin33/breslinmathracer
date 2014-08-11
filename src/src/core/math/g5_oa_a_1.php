@@ -9,11 +9,11 @@ I think using fractions could be a check on whether or not fractions are known. 
 //maybe make every 3rd type have fractions. Or maybe even types???? or how bout divisible by 3?? maybe 4 as that  would preclude braces...
 //use only 4th grade fractions....
 1 p
-	1: b(a)  //+ 
+	1: b(a)  // add and multiple fractions 
 	2: (a)b  
 	3: b(a)c  
 2 p
-	4: (a)(b) //mix 
+	4: (a)(b) // 
 	5: c(a)(b) 
 	6: (a)c(b)   
 	7: (a)(b)c //x 
@@ -756,27 +756,21 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_4';
         this.mQuestionLabel.setSize(225,50);
         this.mQuestionLabel.setPosition(250,95);
+        
+	var a1 = Math.floor(Math.random()*8)+2;
+        var a2 = Math.floor(Math.random()*8)+2;
+        var ad = Math.floor((Math.random()*8)+2);
+                
+	var b1 = Math.floor((Math.random()*8)+3);
+        var b2 = Math.floor((Math.random()*2)+1);
+              	
+	var n = parseInt(    (a1 + a2 ) * (b1 - b2)   );
+	var d = ad; 
 
-        var x = 0;
-        var r = 1;
+	r = n % ad; 
 
-        while (x < 1 || r != 0)
-        {
-                var a1 = Math.floor(Math.random()*48)+2;
-                var a2 = Math.floor(Math.random()*48)+2;
-
-                var b1 = Math.floor((Math.random()*5)+1);
-                var b2 = Math.floor((Math.random()*5)+1);
-
-                var a12 = parseInt(  a1 + a2 );
-                var b12 = parseInt(  b1 - b2 );
-                r = a12 % b12;
-
-                x = parseInt( (a1 + a2) / (  b1 - b2 )  );
-
-                this.setQuestion( '(' + a1 + ' + ' + a2 + ') / (' + b1 + ' - ' + b2 + ')' );
-                this.setAnswer(x,0);
-        }
+        this.setQuestion( '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ') (' + b1 + ' - ' + b2 + ')' );
+      	this.setAnswer(n + '/' + d,0);
 }
 });
 /* TYPE_DESCRIPTION: b(a)c */
@@ -879,6 +873,5 @@ initialize: function(sheet)
 
         this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
         this.setAnswer(n + '/' + d,0);
-
 }
 });
