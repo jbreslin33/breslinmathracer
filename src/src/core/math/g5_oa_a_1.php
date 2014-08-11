@@ -825,29 +825,21 @@ initialize: function(sheet)
         this.mQuestionLabel.setSize(200,50);
         this.mQuestionLabel.setPosition(300,95);
 
-        var x = 0;
-	var r = 1;
+        var a1 = Math.floor((Math.random()*5)+10);
+       	var a2 = Math.floor((Math.random()*5)+1);
+       	var ad = Math.floor((Math.random()*3)+8);
 
-        while (x < 1 || r != 0)
-        {
-                var b1 = Math.floor(Math.random()*3)+2;
-                var b2 = Math.floor(Math.random()*5)+15;
+       	var b1 = Math.floor(Math.random()*3)+2;
+	var n = parseInt(  (  a1 - a2 ) * b1  );
+		
+	var fraction = new Fraction(n,ad);	
 
-                var a1 = Math.floor((Math.random()*40)+10);
-                var a2 = Math.floor((Math.random()*20)+10);
-
-		var a3 = parseInt(a1 + a2);
-		r = a3 % b1;  
-
-                x = parseInt( (  a1 + a2 ) / b1 + b2 );
-
-                this.setQuestion('(' + a1 + ' + ' + a2 + ') / ' + b1 + ' + ' +  b2);
-                this.setAnswer(x,0);
-        }
+	this.setAnswer(fraction.getString(),0);
+        this.setQuestion('(' + a1 + '/' + ad + ' - ' + a2 + '/' + ad + ') ' + b1);
 }
 });
 
-/* TYPE_DESCRIPTION: b(a), multiplication, add fractions, multiply fraction by whole number */
+/* TYPE_DESCRIPTION: b(a), multiplication, add fractions like denominators, multiply fraction by whole number, reduce fractions, reduce fractions with numerator larger than denominator */
 var i_5_oa_a_1__1 = new Class(
 {
 Extends: TextItem,
@@ -859,16 +851,16 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_1';
  	this.mQuestionLabel.setSize(200,50);
  	this.mQuestionLabel.setPosition(300,95);
- 
-        var b1 = Math.floor(Math.random()*8)+2;
 	
         var a1 = Math.floor((Math.random()*3)+1);
         var a2 = Math.floor((Math.random()*4)+1);
         var ad = Math.floor((Math.random()*3)+8);
+
+        var b1 = Math.floor(Math.random()*8)+2;
                	
 	var n = parseInt(  b1 * (  a1 + a2 )   );
 
-	fraction = new Fraction(n,ad);	
+	var fraction = new Fraction(n,ad);	
 	
 	this.setAnswer(fraction.getString(),0);
         this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
