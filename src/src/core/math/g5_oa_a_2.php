@@ -1,98 +1,30 @@
 /*  5.oa.a.2 */
 
 /* TYPE_DESCRIPTION: Match word problem to equation sentence. */
-var i_5_oa_a_2__3 = new Class(
+var i_5_oa_a_2__10 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet);
+		this.parent(sheet,475,300,260,195,225,50,640,90);
 
-                this.mType = '5.oa.a.2_3';
+                this.mType = '5.oa.a.2_10';
 		this.mNameMachine = new NameMachine(); 
 		this.mFruit = this.mNameMachine.getFruit(); 
-		this.mSchool = this.mNameMachine.getSchool();
-		this.mGrade = this.mNameMachine.getGrade('1st','8th');
-		this.mAdult = this.mNameMachine.getAdult('man');
-		this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
 		this.mNameOne = this.mNameMachine.getName();
-		this.mNameTwo = this.mNameMachine.getName();
-		this.mNameThree = this.mNameMachine.getName();
 
-                rNum = Math.floor(Math.random()*3);
-		rNum = 1;
+		//(x-y)/z
+		this.x = Math.floor((Math.random()*5)+6);
+		this.y = Math.floor((Math.random()*5)+1);
+
+		this.xy = parseInt(this.x - this.y);
+
+		this.missingFactor = Math.floor((Math.random()*8)+2);
+		this.z = parseInt(this.missingFactor * this.xy);
+
+                this.setQuestion(this.mNameOne + ' had ' + this.x + ' ' + this.mFruit + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Write an expression that represents this.');
                 
-		this.a = '';
-                this.b = '';
-                this.c = '';
-
-                this.x = 0;
-                this.y = 0;
-                this.z = 0;
- 		
-		//(x-y)/2
-                if (rNum == 2)
-                {
-                        this.w = 0;
-
-                        while(this.w < 2)
-                        {
-				var missingFactor = Math.floor((Math.random()*8)+2);
-				this.z = Math.floor((Math.random()*8)+2);
-				var left = parseInt(missingFactor * this.z);
-				//rotten
-				this.y = Math.floor((Math.random()*8)+2);
-				this.x = left + this.y;  	
-			
-                                this.w = (this.x-this.y)/this.z;
-
-                                this.setQuestion(this.mNameOne + ' had ' + this.x + ' ' + this.mFruit + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Which expression solves this?');
-                        this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
-
-                                this.b = '('+this.z+'+'+this.y+')'+this.x;
-                                this.c = '('+this.x+'x'+this.y+')'+this.z;
-                        }
-                }
- 
-		//(x-y)2
-                if (rNum == 1)
-                {
-			this.w = 0;
-
-			while(this.w < 2)
-			{
-				this.x = Math.floor((Math.random()*18)+2);
-				this.y = Math.floor((Math.random()*18)+2);
-				this.z = Math.floor((Math.random()*4)+2);
-				this.w = (this.x-this.y)*this.z;
-
-                        	this.setQuestion('While playing ' + this.mPlayedActivity + ' ' + this.mNameOne + ' scored ' + this.x + ' points. ' + this.mNameTwo + ' scored ' + this.y + ' less than ' + this.mNameOne + '. ' + this.mNameThree + ' scored ' + this.z + ' times as many as ' + this.mNameTwo + '. Which expression solves this for ' +  this.mNameThree + '?');
-                        this.setAnswer('('+this.x+'-'+this.y+')'+this.z,0);
-
-                		this.b = '('+this.z+'+'+this.y+')'+this.x;
-                		this.c = '('+this.x+'x'+this.y+')'+this.z;
-			}
-                }
-		
-		//(x+y)2
-                if (rNum == 0)
-                {
-                        this.x = Math.floor((Math.random()*5)+18);
-                        this.y = Math.floor((Math.random()*5)+18);
-                        this.z = Math.floor((Math.random()*4)+2);
-
-                        this.setQuestion('At ' + this.mSchool + ', there are two ' + this.mGrade + ' grade classes. One has ' + this.x + ' students and the other has ' + this.y + ' students. ' + this.mAdult + ' wants to give each ' + this.mGrade + ' grader ' + this.z + ' ' + this.mFruit + '. What expression solves this?');
-                        this.setAnswer('('+this.x+'+'+this.y+')'+this.z,0);
-
-			this.b = '('+this.z+'+'+this.y+')'+this.x;
-			this.c = '('+this.x+'x'+this.y+')'+this.z; 
-                }
-
-                this.mButtonA.setAnswer(this.getAnswer());
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
-
-                this.shuffle(10);
+		this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
         }
 });
 
@@ -110,7 +42,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this. ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
+                this.setQuestion('Write an expression that matches this: ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
         }
@@ -133,7 +65,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this. Add ' + a + ' and ' + b + ' then multiply by ' + c + '.');
+                this.setQuestion('Write an expression that matches this: Add ' + a + ' and ' + b + ' then multiply by ' + c + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
         }

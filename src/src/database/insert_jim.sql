@@ -22,7 +22,6 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_21',5021,'5.oa.a.1','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5022,'5.oa.a.1','');
 
-
 --5.oa.a.2
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_1',5201,'5.oa.a.2','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_2',5202,'5.oa.a.2','');
@@ -34,3 +33,13 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_8',5208,'5.oa.a.2','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_9',5209,'5.oa.a.2','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5210,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5211,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_12',5212,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_13',5213,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_14',5214,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_15',5215,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_16',5216,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_17',5217,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_18',5218,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_19',5219,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_20',5220,'5.oa.a.2','');
