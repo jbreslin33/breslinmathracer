@@ -128,6 +128,31 @@ getItem: function(id)
 	{
 		return new i_4_nbt_b_6__1(this.mSheet);
 	}
+  if (id == '4.nbt.b.6_2')
+	{
+		return new i_4_nbt_b_6__2(this.mSheet);
+	}
+  if (id == '4.nbt.b.6_3')
+	{
+		return new i_4_nbt_b_6__3(this.mSheet);
+	}
+
+  if (id == '4.nf.a.1_1')
+	{
+		return new i_4_nf_a_1__1(this.mSheet);
+	}
+  if (id == '4.nf.a.1_2')
+	{
+		return new i_4_nf_a_1__2(this.mSheet);
+	}
+  if (id == '4.nf.a.1_3')
+	{
+		return new i_4_nf_a_1__3(this.mSheet);
+	}
+  if (id == '4.nf.a.1_4')
+	{
+		return new i_4_nf_a_1__4(this.mSheet);
+	}
 
 	if (id == '4.md.a.3_1')
 	{
