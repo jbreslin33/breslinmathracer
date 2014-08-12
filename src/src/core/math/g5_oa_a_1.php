@@ -832,11 +832,11 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: b(a), multiplication, add fractions like denominators, multiply fraction by whole number, reduce fractions, reduce fractions with numerator larger than denominator */
 var i_5_oa_a_1__1 = new Class(
 {
-Extends: TextItemBig,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet);
+	this.parent(sheet,100,50,325,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_1';
 	

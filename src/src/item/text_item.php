@@ -4,9 +4,15 @@ TextItem: this class just is barebones question and answer box to hit enter in.
 var TextItem = new Class(
 {
 Extends: Item,
-        initialize: function(sheet)
+        initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
         {
 		this.parent(sheet);
+
+		this.mQuestionLabel.setSize(qw,qh);
+		this.mQuestionLabel.setPosition(qx,qy);
+		
+		this.mAnswerTextBox.setSize(tw,th);
+		this.mAnswerTextBox.setPosition(tx,ty);
 	},
 
 	setTheFocus: function()
@@ -19,14 +25,14 @@ Extends: Item,
 		this.parent();
 
                 //question Label
-                this.mQuestionLabel = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
+                this.mQuestionLabel = new Shape(this.mQuestionWidth,this.mQuestionHeight,this.mQuestionX,this.mQuestionY,this.mSheet.mGame,"","","");
                 this.addShape(this.mQuestionLabel);
                 this.mQuestionLabel.mCollidable = false;
                 this.mQuestionLabel.mCollisionOn = false;
 		this.mQuestionLabel.setText(this.mQuestion);
 
  		//answer Input
-                this.mAnswerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
+                this.mAnswerTextBox = new Shape(this.mTextWidth,this.mTextHeight,this.mTextX,this.mTextY,this.mSheet.mGame,"INPUT","","");
                 this.mAnswerTextBox.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
