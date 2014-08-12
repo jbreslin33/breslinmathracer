@@ -49,7 +49,6 @@
 
 <script type="text/javascript" src="/src/item/item.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
-<script type="text/javascript" src="/src/item/text_item_big.php"></script>
 <script type="text/javascript" src="/src/item/text_item2.php"></script>
 <script type="text/javascript" src="/src/item/three_button_item.php"></script>
 <script type="text/javascript" src="/src/item/item_button.php"></script>

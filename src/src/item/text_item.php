@@ -10,7 +10,6 @@ Extends: Item,
 
 		if (qw == '')
 		{
-			APPLICATION.log('no params');
 			this.mQuestionLabel.setSize(100,50);
 			this.mQuestionLabel.setPosition(325,95);
 		
@@ -19,7 +18,6 @@ Extends: Item,
 		}
 		else
 		{
-			APPLICATION.log('params');
 			this.mQuestionLabel.setSize(qw,qh);
 			this.mQuestionLabel.setPosition(qx,qy);
 		
@@ -37,7 +35,6 @@ Extends: Item,
         {
 		this.parent();
 	
-		APPLICATION.log('create');
                 //question Label
                 this.mQuestionLabel = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
                 this.addShape(this.mQuestionLabel);
