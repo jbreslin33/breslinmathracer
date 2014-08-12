@@ -21,7 +21,6 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_20',5020,'5.oa.a.1','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_21',5021,'5.oa.a.1','');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5022,'5.oa.a.1','');
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_23',5023,'5.oa.a.1','');
 
 
 --5.oa.a.2
