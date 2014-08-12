@@ -26,7 +26,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',13002,'4.nbt.b.5','multiply numbers up to 4 digits');
 
 --4.nbt.b.6
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_1',13001,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_1',15001,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_2',15002,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_3',15003,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+
+--4.nf.a.1
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_1',16001,'4.nf.a.1','put fraction in higher form by finding missing denominator');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_2',16002,'4.nf.a.1','put fraction in higher form by finding missing numerator');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_3',16003,'4.nf.a.1','put fraction in lower form by finding missing denominator');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_4',16004,'4.nf.a.1','put fraction in lower form by finding missing numerator');
 
 --4.md.a.3
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',14001,'4.md.a.3','calculate area of a rectangle (non-square)');
