@@ -99,10 +99,10 @@ Extends: ThreeButtonItem,
 /* TYPE_DESCRIPTION: Match number sentence to equation. Words used: times, sum.   */
 var i_5_oa_a_2__2 = new Class(
 {
-Extends: TextItemBig,
+Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet);
+		this.parent(sheet,200,50,225,95,100,50,425,100);
 
                 this.mType = '5.oa.a.2_2';
 
@@ -122,7 +122,7 @@ var i_5_oa_a_2__1 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet);
+		this.parent(sheet,200,50,225,95,100,50,425,100);
 
                 this.mType = '5.oa.a.2_1';
         	this.mQuestionLabel.setSize(325,50);
