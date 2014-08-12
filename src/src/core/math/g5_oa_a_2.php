@@ -96,15 +96,38 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Match number sentence to equation  */
+/* TYPE_DESCRIPTION: Match number sentence to equation. Words used: times, sum.   */
 var i_5_oa_a_2__2 = new Class(
+{
+Extends: TextItemBig,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = '5.oa.a.2_2';
+
+               	var a = Math.floor(Math.random()*8+2);
+               	var b = Math.floor(Math.random()*8+2);
+               	var c = Math.floor(Math.random()*8+2);
+
+                this.setQuestion('Write an expression that matches this. ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
+                this.setAnswer('(' + a + '+' + b + ')' + c,0);
+                this.setAnswer(c + '(' + a + '+' + b + ')',1);
+        }
+});
+
+/* TYPE_DESCRIPTION: Write expression based off numerical expression. Words used add, multiply.  */
+var i_5_oa_a_2__1 = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = '5.oa.a.2_2';
+                this.mType = '5.oa.a.2_1';
+        	this.mQuestionLabel.setSize(325,50);
+        	this.mQuestionLabel.setPosition(200,95);
+        	this.mAnswerTextBox.setPosition(525,100);
 
                	var a = Math.floor(Math.random()*8+2);
                	var b = Math.floor(Math.random()*8+2);
@@ -116,38 +139,3 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Match equations to number sentences  */
-var i_5_oa_a_2__1 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-
-                this.mType = '5.oa.a.2_1';
-                
-		rNum = Math.floor(Math.random()*2);
-		rNum = 1;
-
-		if (rNum == 0)
-		{
-                	this.setQuestion('Which matches this?  5(6/2)');
-                	this.setAnswer('Divide 6 by 2 then multiply by 5.',0);
-
-                	this.mButtonA.setAnswer(this.getAnswer());
-                	this.mButtonB.setAnswer('Add 6 and 2 then multiply by 5');
-                	this.mButtonC.setAnswer('Divide 5 by 6 then multiply by 2');
-		}
-                if (rNum == 1)
-                {
-                        this.setQuestion('Which matches this?  (45/9)-3');
-                        this.setAnswer('Divide 45 by 9 then subtract 3.',0);
-
-                        this.mButtonA.setAnswer(this.getAnswer());
-                        this.mButtonB.setAnswer('Add 45 and 9 then subtract 3');
-                        this.mButtonC.setAnswer('Subtract 3 then Divide 45 by 9');
-                }
-
-                this.shuffle(10);
-        }
-});
