@@ -58,7 +58,7 @@ this might be toughest i need to give maybe through in one with braces and brack
 /* TYPE_DESCRIPTION:   f(d(b(a)c)e)g */
 var i_5_oa_a_1__22 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -99,7 +99,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:  ((b(a)c)d)e  */
 var i_5_oa_a_1__21 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -135,7 +135,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:    e((b(a)c)d)  */
 var i_5_oa_a_1__20 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -175,7 +175,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:    (d(b(a)c))e  */
 var i_5_oa_a_1__19 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -211,7 +211,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:   e(d(b(a)c))  */
 var i_5_oa_a_1__18 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -247,7 +247,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:  d(b(a)c)e  */
 var i_5_oa_a_1__17 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -283,7 +283,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:   d(b(a)c) */
 var i_5_oa_a_1__16 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -317,7 +317,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:  c(b(a)) */
 var i_5_oa_a_1__15 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -356,7 +356,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:  c((a)b)d */
 var i_5_oa_a_1__14 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -391,7 +391,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION:  (c(a)b)d  */
 var i_5_oa_a_1__13 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -432,7 +432,7 @@ initialize: function(sheet)
 //this might be marked as huge multiplication...in db
 var i_5_oa_a_1__12 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -466,7 +466,7 @@ initialize: function(sheet)
 //this might be marked as huge multiplication...in db
 var i_5_oa_a_1__11 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -509,7 +509,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: c(a)(b)d */
 var i_5_oa_a_1__10 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -551,7 +551,7 @@ initialize: function(sheet)
 
 var i_5_oa_a_1__9 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -594,7 +594,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: c(a)d(b) */
 var i_5_oa_a_1__8 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -635,7 +635,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: c(a)(b) */
 var i_5_oa_a_1__7 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -671,7 +671,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: c(a)(b) */
 var i_5_oa_a_1__6 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -709,7 +709,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: c(a)(b) */
 var i_5_oa_a_1__5 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -747,7 +747,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: (a)(b) */
 var i_5_oa_a_1__4 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -776,7 +776,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: b(a)c */
 var i_5_oa_a_1__3 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -805,7 +805,7 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: (a)b */
 var i_5_oa_a_1__2 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
@@ -832,15 +832,13 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: b(a), multiplication, add fractions like denominators, multiply fraction by whole number, reduce fractions, reduce fractions with numerator larger than denominator */
 var i_5_oa_a_1__1 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemBig,
 
 initialize: function(sheet)
 {
 	this.parent(sheet);
 
         this.mType = '5.oa.a.1_1';
- 	this.mQuestionLabel.setSize(200,50);
- 	this.mQuestionLabel.setPosition(300,95);
 	
         var a1 = Math.floor((Math.random()*3)+1);
         var a2 = Math.floor((Math.random()*4)+1);
