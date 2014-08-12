@@ -518,12 +518,13 @@ var NameMachine = new Class(
 
 	getName: function(gender)
 	{
-		var keepGoing = true; 	
+		var dup = true; 	
 		var randomElement = 0;
 		var randomGender = 0;
 		var randomName = '';
-		while (keepGoing)
+		while (dup)
 		{
+			dup = false;
 			if (gender == '')
 			{ 
 				randomGender = Math.floor(Math.random()*2);
@@ -550,24 +551,14 @@ var NameMachine = new Class(
 				randomName = this.mGirlNameArray[randomElement]; 
 			}
 
-			var noBoyDup = false;  
-			var noGirlDup = false;  
+			var dup = false;  
 			for (i=0; i < this.mUsedNameArray.length; i++)
 			{
-				if (randomElement == this.mUsedNameArray[i])  
+				if (randomName == this.mUsedNameArray[i])  
 				{
-					noBoyDup = true;	
-				}
-				if (randomElement == this.mUsedNameArray[i])  
-				{
-					noGirlDup = true;	
+					dup = true;	
 				}
 			}	
-
-			if (noBoyDup == false && noGirlDup == false)
-			{
-				keepGoing = false;	
-			}
 		}
 		this.mUsedNameArray.push(randomName); 
 		return randomName; 

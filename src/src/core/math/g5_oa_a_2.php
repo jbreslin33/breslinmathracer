@@ -19,8 +19,8 @@ Extends: ThreeButtonItem,
 		this.mNameTwo = this.mNameMachine.getName();
 		this.mNameThree = this.mNameMachine.getName();
 
-                rNum = Math.floor(Math.random()*2);
-		rNum = 2;
+                rNum = Math.floor(Math.random()*3);
+		rNum = 1;
                 
 		this.a = '';
                 this.b = '';
@@ -66,7 +66,7 @@ Extends: ThreeButtonItem,
 				this.z = Math.floor((Math.random()*4)+2);
 				this.w = (this.x-this.y)*this.z;
 
-                        	this.setQuestion('While playing ' + this.mPlayedActivity + ' ' + this.mNameOne + ' scored ' + this.x + ' points. ' + this.mNameTwo + ' scored ' + this.y + ' less than ' + this.mNameOne + '. ' + this.mNameThree + ' scored ' + this.z + ' times as many as ' + this.mNameTwo + '. Which expression solves this?');
+                        	this.setQuestion('While playing ' + this.mPlayedActivity + ' ' + this.mNameOne + ' scored ' + this.x + ' points. ' + this.mNameTwo + ' scored ' + this.y + ' less than ' + this.mNameOne + '. ' + this.mNameThree + ' scored ' + this.z + ' times as many as ' + this.mNameTwo + '. Which expression solves this for ' +  this.mNameThree + '?');
                         this.setAnswer('('+this.x+'-'+this.y+')'+this.z,0);
 
                 		this.b = '('+this.z+'+'+this.y+')'+this.x;
