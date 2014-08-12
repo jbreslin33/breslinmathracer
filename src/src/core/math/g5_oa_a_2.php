@@ -99,34 +99,20 @@ Extends: ThreeButtonItem,
 /* TYPE_DESCRIPTION: Match number sentence to equation  */
 var i_5_oa_a_2__2 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
                 this.mType = '5.oa.a.2_2';
 
-                rNum = Math.floor(Math.random()*2);
-                if (rNum == 0)
-                {
-                        this.setQuestion('Which equation matches this?  Divide 6 by 2 then multiply by 5.');
-                        this.setAnswer('5(6/2)',0);
+               	var a = Math.floor(Math.random()*8+2);
+               	var b = Math.floor(Math.random()*8+2);
+               	var c = Math.floor(Math.random()*8+2);
 
-                        this.mButtonA.setAnswer(this.getAnswer());
-                        this.mButtonB.setAnswer('5/2x6');
-                        this.mButtonC.setAnswer('6x2/5');
-                }
-                if (rNum == 1)
-                {
-                        this.setQuestion('Which matches this? Divide 45 by 9 then subtract 3.');
-                        this.setAnswer('(45/9)/2',0);
-
-                        this.mButtonA.setAnswer(this.getAnswer());
-                        this.mButtonB.setAnswer('9x45/2');
-                        this.mButtonC.setAnswer('(9x2/45');
-                }
-
-                this.shuffle(10);
+                this.setQuestion('Write an expression that matches this. Add ' + a + ' and ' + b + ' then multiply by ' + c + '.');
+                this.setAnswer('(' + a + '+' + b + ')' + c,0);
+                this.setAnswer(c + '(' + a + '+' + b + ')',1);
         }
 });
 
