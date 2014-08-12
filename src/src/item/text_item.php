@@ -10,19 +10,21 @@ Extends: Item,
 
 		if (qw == '')
 		{
-			this.mQuestionLabel.setSize(qw,qh);
-			this.mQuestionLabel.setPosition(qx,qy);
-		
-			this.mAnswerTextBox.setSize(tw,th);
-			this.mAnswerTextBox.setPosition(tx,ty);
-		}
-		else
-		{
+			APPLICATION.log('no params');
 			this.mQuestionLabel.setSize(100,50);
 			this.mQuestionLabel.setPosition(325,95);
 		
 			this.mAnswerTextBox.setSize(100,50);
 			this.mAnswerTextBox.setPosition(425,100);
+		}
+		else
+		{
+			APPLICATION.log('params');
+			this.mQuestionLabel.setSize(qw,qh);
+			this.mQuestionLabel.setPosition(qx,qy);
+		
+			this.mAnswerTextBox.setSize(tw,th);
+			this.mAnswerTextBox.setPosition(tx,ty);
 		}
 	},
 
@@ -34,16 +36,17 @@ Extends: Item,
 	createShapes: function()
         {
 		this.parent();
-
+	
+		APPLICATION.log('create');
                 //question Label
-                this.mQuestionLabel = new Shape(this.mQuestionWidth,this.mQuestionHeight,this.mQuestionX,this.mQuestionY,this.mSheet.mGame,"","","");
+                this.mQuestionLabel = new Shape(100,50,325,95,this.mSheet.mGame,"","","");
                 this.addShape(this.mQuestionLabel);
                 this.mQuestionLabel.mCollidable = false;
                 this.mQuestionLabel.mCollisionOn = false;
 		this.mQuestionLabel.setText(this.mQuestion);
 
  		//answer Input
-                this.mAnswerTextBox = new Shape(this.mTextWidth,this.mTextHeight,this.mTextX,this.mTextY,this.mSheet.mGame,"INPUT","","");
+                this.mAnswerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mAnswerTextBox.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {

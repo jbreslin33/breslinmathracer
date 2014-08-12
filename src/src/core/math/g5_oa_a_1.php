@@ -709,15 +709,13 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: c(a)(b) */
 var i_5_oa_a_1__5 = new Class(
 {
-Extends: TextItemBig,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet);
+	this.parent(sheet,100,50,325,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_5';
-        this.mQuestionLabel.setSize(225,50);
-        this.mQuestionLabel.setPosition(250,95);
 
         var x = 0;
         var r = 1;
@@ -747,15 +745,13 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: (a)(b) */
 var i_5_oa_a_1__4 = new Class(
 {
-Extends: TextItemBig,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet);
+	this.parent(sheet,100,50,325,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_4';
-        this.mQuestionLabel.setSize(225,50);
-        this.mQuestionLabel.setPosition(250,95);
         
 	var a1 = Math.floor(Math.random()*8)+2;
         var a2 = Math.floor(Math.random()*8)+2;
@@ -776,15 +772,13 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: b(a)c */
 var i_5_oa_a_1__3 = new Class(
 {
-Extends: TextItemBig,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet);
+	this.parent(sheet,100,50,325,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_3';
-        this.mQuestionLabel.setSize(225,50);
-        this.mQuestionLabel.setPosition(250,95);
 
         var a1 = Math.floor((Math.random()*3)+1);
         var a2 = Math.floor((Math.random()*4)+1);
@@ -809,7 +803,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet);
+	this.parent(sheet,300,50,0,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_2';
 
@@ -834,7 +828,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,100,50,325,95,100,50,425,100);
+	this.parent(sheet,150,50,125,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_1';
 	
