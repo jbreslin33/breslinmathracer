@@ -805,15 +805,13 @@ initialize: function(sheet)
 /* TYPE_DESCRIPTION: (a)b */
 var i_5_oa_a_1__2 = new Class(
 {
-Extends: TextItemBig,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
         this.parent(sheet);
 
         this.mType = '5.oa.a.1_2';
-        this.mQuestionLabel.setSize(200,50);
-        this.mQuestionLabel.setPosition(300,95);
 
         var a1 = Math.floor((Math.random()*5)+10);
        	var a2 = Math.floor((Math.random()*5)+1);

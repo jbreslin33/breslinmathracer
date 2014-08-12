@@ -8,11 +8,22 @@ Extends: Item,
         {
 		this.parent(sheet);
 
-		this.mQuestionLabel.setSize(qw,qh);
-		this.mQuestionLabel.setPosition(qx,qy);
+		if (qw == '')
+		{
+			this.mQuestionLabel.setSize(qw,qh);
+			this.mQuestionLabel.setPosition(qx,qy);
 		
-		this.mAnswerTextBox.setSize(tw,th);
-		this.mAnswerTextBox.setPosition(tx,ty);
+			this.mAnswerTextBox.setSize(tw,th);
+			this.mAnswerTextBox.setPosition(tx,ty);
+		}
+		else
+		{
+			this.mQuestionLabel.setSize(100,50);
+			this.mQuestionLabel.setPosition(325,95);
+		
+			this.mAnswerTextBox.setSize(100,50);
+			this.mAnswerTextBox.setPosition(425,100);
+		}
 	},
 
 	setTheFocus: function()
