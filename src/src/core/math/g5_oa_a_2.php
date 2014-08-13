@@ -1,6 +1,34 @@
 /*  5.oa.a.2 */
 
 /* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
+var i_5_oa_a_2__13 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
+
+                this.mType = '5.oa.a.2_13';
+                this.mNameMachine = new NameMachine();
+                this.mNameOne = this.mNameMachine.getName();
+                this.mNameTwo = this.mNameMachine.getName();
+                this.mThing = this.mNameMachine.getThing();
+
+                this.x = Math.floor((Math.random()*8)+2);
+                this.y = Math.floor((Math.random()*8)+2);
+                this.z = Math.floor((Math.random()*8)+2);
+
+                this.setQuestion(this.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.mThing + '. ' + this.mNameTwo + ' has ' + this.z + ' times that many ' + this.mThing + '. Write an expression that represents this.');
+                this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
+                this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
+                
+		this.setAnswer(this.z + '(' + this.x + '+' +  this.y + ')',2);
+		this.setAnswer(this.z + '(' + this.y + '+' +  this.x + ')',3);
+        }
+});
+
+
+/* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
 var i_5_oa_a_2__12 = new Class(
 {
 Extends: TextItem,
