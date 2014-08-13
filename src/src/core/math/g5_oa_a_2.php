@@ -27,7 +27,6 @@ Extends: TextItem,
         }
 });
 
-
 /* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
 var i_5_oa_a_2__12 = new Class(
 {
@@ -107,7 +106,7 @@ var i_5_oa_a_2__4 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-		this.parent(sheet,200,50,225,95,100,50,425,100);
+                this.parent(sheet,475,300,260,195,225,50,640,90);
 
                 this.mType = '5.oa.a.2_4';
 
@@ -115,9 +114,8 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
-                this.setAnswer('(' + a + '+' + b + ')' + c,0);
-                this.setAnswer(c + '(' + a + '+' + b + ')',1);
+                this.setQuestion('Write an expression that matches this: ' + a + ' less than the product of ' + b + ' and ' + c  );
+                this.setAnswer(b + 'x' + c + '-' + a,0);
         }
 });
 
