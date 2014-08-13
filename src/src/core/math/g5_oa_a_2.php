@@ -1,6 +1,32 @@
 /*  5.oa.a.2 */
 
-/* TYPE_DESCRIPTION: Match word problem to equation sentence. */
+/* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
+var i_5_oa_a_2__11 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
+
+                this.mType = '5.oa.a.2_11';
+                this.mNameMachine = new NameMachine();
+                this.mFruit = this.mNameMachine.getFruit();
+                this.mNameOne = this.mNameMachine.getName();
+                this.mSchool = this.mNameMachine.getName();
+                this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
+
+                this.factor = Math.floor((Math.random()*8)+2);
+                this.z = Math.floor((Math.random()*8)+2);
+                this.y = Math.floor((Math.random()*8)+2)
+                this.x = parseInt( (this.factor * this.z) + this.y );
+
+                this.setQuestion('Before lunch the cafeteria at ' + this.mSchool + ' had ' + this.x + ' ' + this.mFruit + ' , after lunch the school had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.mPlayedActivity + ' team. Write an expression that represents this.');
+
+                this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
+        }
+});
+
+/* TYPE_DESCRIPTION: Write expression based on word problem. Words: gave the rest out, threw out */
 var i_5_oa_a_2__10 = new Class(
 {
 Extends: TextItem,
@@ -13,14 +39,10 @@ Extends: TextItem,
 		this.mFruit = this.mNameMachine.getFruit(); 
 		this.mNameOne = this.mNameMachine.getName();
 
-		//(x-y)/z
-		this.x = Math.floor((Math.random()*5)+6);
-		this.y = Math.floor((Math.random()*5)+1);
-
-		this.xy = parseInt(this.x - this.y);
-
-		this.missingFactor = Math.floor((Math.random()*8)+2);
-		this.z = parseInt(this.missingFactor * this.xy);
+		this.factor = Math.floor((Math.random()*8)+2);
+		this.z = Math.floor((Math.random()*8)+2);
+		this.y = Math.floor((Math.random()*8)+2) 		
+		this.x = parseInt( (this.factor * this.z) + this.y );
 
                 this.setQuestion(this.mNameOne + ' had ' + this.x + ' ' + this.mFruit + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Write an expression that represents this.');
                 
