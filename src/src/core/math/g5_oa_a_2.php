@@ -1,6 +1,6 @@
 /*  5.oa.a.2 */
 
-/* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
+/* TYPE_DESCRIPTION: Write expression based on word problem. Words: more than, times that many */
 var i_5_oa_a_2__13 = new Class(
 {
 Extends: TextItem,
