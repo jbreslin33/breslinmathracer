@@ -366,7 +366,6 @@ var Item = new Class(
 		{
                		this.mPracticeInfo.setVisibility(true);
                		this.mPracticeInfoButton.setVisibility(true);
-                	this.mLeavePracticeButton.setVisibility(true);
 		}
         },
 
