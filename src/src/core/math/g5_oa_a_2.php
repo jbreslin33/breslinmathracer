@@ -1,6 +1,29 @@
 /*  5.oa.a.2 */
 
 /* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
+var i_5_oa_a_2__12 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
+
+                this.mType = '5.oa.a.2_12';
+                this.mNameMachine = new NameMachine();
+                this.mNameOne = this.mNameMachine.getName();
+                this.mNameTwo = this.mNameMachine.getName();
+                this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
+
+                this.x = 60; 
+                this.y = Math.floor((Math.random()*8)+2);
+                this.z = Math.floor((Math.random()*8)+2);
+
+		this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.y + ' minutes fewer than an hour. ' + this.mNameTwo + ' played for ' + this.z + ' times as long as ' + this.mNameOne + '. Write an expression that represents this.');   
+                this.setAnswer('(60-' + this.y + ')' + this.z,0);
+        }
+});
+
+/* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
 var i_5_oa_a_2__11 = new Class(
 {
 Extends: TextItem,
