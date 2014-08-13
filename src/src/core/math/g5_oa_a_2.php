@@ -101,6 +101,25 @@ Extends: TextItem,
 });
 
 /* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
+var i_5_oa_a_2__5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
+
+                this.mType = '5.oa.a.2_5';
+
+               	var a = Math.floor(Math.random()*8+2);
+               	var b = Math.floor(Math.random()*8+2);
+               	var c = Math.floor(Math.random()*8+2);
+
+                this.setQuestion('Write an expression that matches this: The product of ' + a + ' and ' + b + ' decreased by ' + c  );
+                this.setAnswer(a + 'x' + b + '-' + c,0);
+        }
+});
+
+/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
 var i_5_oa_a_2__4 = new Class(
 {
 Extends: TextItem,
