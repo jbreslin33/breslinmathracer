@@ -5,7 +5,7 @@ var Item = new Class(
 {
         initialize: function(sheet)
         {
-		this.mStateLogs = true;		
+		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
 	
@@ -358,9 +358,16 @@ var Item = new Class(
                         APPLICATION.getPracticeDescription(this.mType);
                 }
 
-                this.mPracticeInfo.setVisibility(true);
-                this.mPracticeInfoButton.setVisibility(true);
-                this.mLeavePracticeButton.setVisibility(true);
+		if (APPLICATION.mRef_id == 'practice')
+		{
+                	this.mLeavePracticeButton.setVisibility(true);
+		}
+		else
+		{
+               		this.mPracticeInfo.setVisibility(true);
+               		this.mPracticeInfoButton.setVisibility(true);
+                	this.mLeavePracticeButton.setVisibility(true);
+		}
         },
 
         hidePractice: function()
