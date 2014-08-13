@@ -12,7 +12,7 @@ Extends: TextItem,
                 this.mNameMachine = new NameMachine();
                 this.mFruit = this.mNameMachine.getFruit();
                 this.mNameOne = this.mNameMachine.getName();
-                this.mSchool = this.mNameMachine.getName();
+                this.mSchool = this.mNameMachine.getSchool();
                 this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
 
                 this.factor = Math.floor((Math.random()*8)+2);
@@ -20,7 +20,7 @@ Extends: TextItem,
                 this.y = Math.floor((Math.random()*8)+2)
                 this.x = parseInt( (this.factor * this.z) + this.y );
 
-                this.setQuestion('Before lunch the cafeteria at ' + this.mSchool + ' had ' + this.x + ' ' + this.mFruit + ' , after lunch the school had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.mPlayedActivity + ' team. Write an expression that represents this.');
+                this.setQuestion('Before lunch the cafeteria at ' + this.mSchool + ' had ' + this.x + ' ' + this.mFruit + '. After lunch the cafeteria had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.mPlayedActivity + ' team. Write an expression that represents this.');
 
                 this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
         }
