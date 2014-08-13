@@ -21,6 +21,7 @@ Extends: Application,
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
+		this.STUDENT_ITEM_STATS = 109;
 
 		//personal info
 		this.mUsername = '';
@@ -112,6 +113,12 @@ Extends: Application,
                         {
                                 APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
+                        }
+			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
+                        {
+				APPLICATION.log('student_item_stats:' + responseArray[i]);
+                                //APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
+                                //APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
 		}
 	},
@@ -431,6 +438,38 @@ Extends: Application,
                         }
                 }
                 xmlhttp.open("POST","../../web/php/get_practice_description.php",true);
+                xmlhttp.send();
+        },
+	
+	getStudentItemStats: function(typeid)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/get_student_item_stats.php",true);
                 xmlhttp.send();
         },
 
