@@ -101,6 +101,28 @@ Extends: TextItem,
 });
 
 /* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
+var i_5_oa_a_2__6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
+
+                this.mType = '5.oa.a.2_6';
+
+               	var f = Math.floor(Math.random()*8+2);
+               	var b = Math.floor(Math.random()*8+2);
+               	var a = parseInt(b*f);
+               	var c = Math.floor(Math.random()*8+2);
+
+                this.setQuestion('Write an expression that matches this: The quotient of ' + a + ' and ' + b + ' increased by ' + c  );
+                this.setAnswer(a + '/' + b + '+' + c,0);
+                this.setAnswer(c + '+' + a + '/' + b,0);
+        }
+});
+
+
+/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
 var i_5_oa_a_2__5 = new Class(
 {
 Extends: TextItem,
