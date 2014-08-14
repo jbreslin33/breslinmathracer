@@ -211,7 +211,6 @@ execute: function(application)
 exit: function(application)
 {
 	application.mGame.mReadyForNormalApplication = false;
- 	application.mHud.setLevel(application.mLevel,application.mLevels);	
 }
 
 });
@@ -274,7 +273,6 @@ execute: function(application)
 exit: function(application)
 {
         application.mGame.mReadyForNormalApplication = false;
-        application.mHud.setLevel(application.mLevel,application.mLevels);
 }
 
 });
@@ -308,7 +306,6 @@ execute: function(application)
 exit: function(application)
 {
        	application.mGame.mReadyForNormalApplication = false;
-        application.mHud.setLevel(application.mLevel,application.mLevels);
 }
 
 });
@@ -342,7 +339,6 @@ execute: function(application)
 exit: function(application)
 {
         application.mGame.mReadyForNormalApplication = false;
-        application.mHud.setLevel(application.mLevel,application.mLevels);
 }
 
 });

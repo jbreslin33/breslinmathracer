@@ -6,7 +6,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//GAME
 		this.mGame = game;
@@ -28,7 +28,7 @@ var Sheet = new Class(
 	 	this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelFailedStartTime = 0;
 
-                this.mShowLevelPassedThresholdTime = 1000;
+                this.mShowLevelPassedThresholdTime = 5000;
                 this.mShowLevelFailedThresholdTime = 1000;
 
 		//question
@@ -144,17 +144,6 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
-		APPLICATION.mLevel  = parseInt(APPLICATION.mLevel);
-		APPLICATION.mLevels = parseInt(APPLICATION.mLevels);
-        	if (APPLICATION.mLevel > APPLICATION.mLevels)
-                {
-                        this.setScoreNeeded(APPLICATION.mLevels);
-                }
-                else
-                {
-                        this.setScoreNeeded(APPLICATION.mLevel);
-                }
-
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
                 for (var i = 0; i < itemIDArray.length; i++)
@@ -331,7 +320,12 @@ var Sheet = new Class(
 	correctAnswer: function()
 	{
 		this.mMarker++;
-
+		this.mItem = this.getItem();
+	},
+	
+	incorrectAnswer: function()
+	{
+		this.mMarker++;
 		this.mItem = this.getItem();
 	},
 
@@ -351,7 +345,6 @@ var Sheet = new Class(
 	setScoreNeeded: function(scoreNeeded)
         {
                 this.mScoreNeeded = scoreNeeded;
-                this.mGame.mApplication.mHud.setScoreNeeded(scoreNeeded);
         },
 	
 	getScoreNeeded: function()
