@@ -151,9 +151,9 @@ public function setRawData()
 		$query .= " order by progression asc limit 1;";
  
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-                $num = pg_num_rows($result);
+                $numberOfResults = pg_num_rows($result);
 
-                if ($num > 0)
+                if ($numberOfResults > 0)
                 {
                         //this id is either going in array or not
                         $item_types_id = pg_Result($result, 0, 'id');
@@ -169,27 +169,23 @@ public function setRawData()
                 	$num = pg_num_rows($result);
 
     			//if we have 10 lets check if we mastered all ten
-                        if ($num == 10)
+			$streak = 0;
+                        for ($i = 0; $i < $num; $i++)
                         {
-                                $masteredAllTen = true;
-
-                                for ($i = 0; $i < $num; $i++)
+                        	$transaction_code = pg_Result($result, 0, 'transaction_code');
+                                if ($transaction_code != 1)
                                 {
-                                        $transaction_code = pg_Result($result, 0, 'transaction_code');
-                                        if ($transaction_code != 1)
-                                        {
-                                                $masteredAllTen = false;
-                                        }
+                                	$streak = 0;
                                 }
-                                if (!$masteredAllTen)
-                                {
-                                        array_push($itemArray,"$item_types_id");
-                                }
+				else
+				{
+					$streak++;
+				}
                         }
-                        //less than 10 so we could not have mastered 10 so just add it to array.
-                        else
+                       	if ($streak < 10) 
                         {
                                 array_push($itemArray,"$item_types_id");
+                                array_push($itemArray,"$streak");
                         }
 		}
 	}	
