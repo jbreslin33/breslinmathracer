@@ -87,7 +87,7 @@ enter: function(item)
 	APPLICATION.mHud.setProgression(item.mType);	
 
 	//hud question number	
-	APPLICATION.mHud.setQuestionNumber(item.mSheet.mMarker,10);	
+	APPLICATION.mHud.setQuestionNumber(parseInt(item.mSheet.mMarker + 1),10);	
 },
 
 execute: function(item)
@@ -354,6 +354,7 @@ enter: function(item)
         item.mStatus = 1;
         item.hideShapes();
 	item.hideQuestionShapes();
+	item.mSheet.correctAnswer();
 },
 
 execute: function(item)
