@@ -77,7 +77,49 @@ public function insertFirstLevelAttempt()
         $_SESSION["level"] = 1;
        	$_SESSION["levels"] = 10;
         $_SESSION["subject_id"] = 1;
-        $_SESSION["raw_data"] = '5.oa.a.1_1:7:5.oa.a.1_2:7:5.oa.a.1_3:7:5.oa.a.1_4:7:5.oa.a.1_1:7:5.oa.a.1_1:7:5.oa.a.1_2:7:5.oa.a.1_3:7:5.oa.a.1_4:7:5.oa.a.1_1:7';
+	
+	$this->setRawData();
+}
+
+public function setRawData()
+{
+	$query = "select item_types.id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_standards.core_clusters_id=core_clusters.id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id JOIN core_subjects_grades ON core_domains_subjects_grades.core_subjects_grades_id=core_subjects_grades.id JOIN core_grades ON core_subjects_grades.core_grades_id=core_grades.id WHERE core_grades.id = 6 LIMIT 10;";	
+
+       	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $num = pg_num_rows($result);
+        
+	$itemArray = array();
+
+	for ($i = 0; $i < $num; $i++)
+        {
+        	$id = pg_Result($result, $i, 'id');
+                array_push($itemArray,"$id");
+                array_push($itemArray,"0");
+	}
+  
+	$itemString = "";
+
+        if (count($itemArray) > 0)
+        {
+                $itemString .= $itemArray[0];
+                if (count($itemArray) > 1)
+                {
+                        $itemString .= ":";
+                }
+        }
+
+        $totalCount = count($itemArray);
+
+        for ($i = 1; $i < $totalCount; $i++)
+        {
+                $itemString .= $itemArray[$i];
+                if ($i < $totalCount - 1)
+                {
+                        $itemString .= ":";
+                }
+        }
+
+        $_SESSION["raw_data"] = $itemString;
 }
 
 public function checkInput()
