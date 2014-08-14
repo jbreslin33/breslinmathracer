@@ -117,14 +117,36 @@ public function continueAttempt()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
- 	//right here you need to query db to get rawdata for questions.
         $progression_counter = 0;
+
+	//lets get the progression of proper grade...
+	$query = "select item_types.progression from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_standards.core_clusters_id=core_clusters.id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id JOIN core_subjects_grades ON core_domains_subjects_grades.core_subjects_grades_id=core_subjects_grades.id JOIN core_grades ON core_subjects_grades.core_grades_id=core_grades.id WHERE core_grades.id = ";
+	$query .= $_SESSION["core_grades_id"];
+        $query .= " LIMIT 1;";
+		
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $num = pg_num_rows($result);
+        if ($num > 0)
+        {
+        	//this id is either going in array or not
+                $progression_counter = pg_Result($result, 0, 'progression');
+	}
 
         $itemArray = array();
 
+	$firstTime = true;
+
 	while ( count($itemArray) < 11)
 	{
-		$query = "select id, progression from item_types where progression > "; 
+		$query = '';	
+		if ($firstTime)
+		{
+			$query .= "select id, progression from item_types where progression = "; 
+		}
+		else
+		{
+			$query .= "select id, progression from item_types where progression > "; 
+		}
 		$query .= $progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
