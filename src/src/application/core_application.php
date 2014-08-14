@@ -15,9 +15,6 @@ Extends: Application,
 		//parse codes
 		this.FULL = 101;
 		this.NOT_LOGGED_IN    = 102;
-		this.GAME = 103;
-		this.EVALUATION = 104;
-		this.REMEDIATE = 105;
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
