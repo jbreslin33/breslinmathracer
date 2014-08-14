@@ -20,6 +20,9 @@ var Item = new Class(
 
 		//status	
 		this.mStatus = 0; //notAttempted=0,correct=1,incorrect=2
+		
+		//stats
+		this.mStreak = 0;
 
 		//userAnswer
 		this.mUserAnswer = '';
