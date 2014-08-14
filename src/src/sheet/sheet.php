@@ -156,10 +156,12 @@ var Sheet = new Class(
                 }
 
                 var itemIDArray = APPLICATION.mRawData.split(":");
+		APPLICATION.log('len:' + itemIDArray.length);
 
                 for (var i = 0; i < itemIDArray.length; i++)
                 {
 			var pick = 0;
+			APPLICATION.log('itemIDArray:' + itemIDArray[i]);
 
 			if (pick == 0)
 			{
@@ -178,6 +180,10 @@ var Sheet = new Class(
 			if (pick != 0)
 			{
 				this.addItem(pick);
+			
+				//add the streak from raw_data and increment as itemIDs are every other element in array. 
+				pick.mStreak = itemIDArray[parseInt(i+1)];	
+				i++;	
 			}
 			else
 			{

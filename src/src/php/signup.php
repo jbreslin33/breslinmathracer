@@ -75,11 +75,9 @@ public function insertFirstLevelAttempt()
 	//set sessions for signup
         $_SESSION["ref_id"] = 'normal';
         $_SESSION["level"] = 1;
-       	$_SESSION["levels"] = 1;
+       	$_SESSION["levels"] = 10;
         $_SESSION["subject_id"] = 1;
-        //$_SESSION["raw_data"] = 'k.cc.a.1_1:k.cc.a.1_2:k.cc.a.1_3:k.cc.a.1_4:k.cc.a.2_1:k.cc.a.3_2:k.cc.a.3_3:k.cc.a.3_1:k.cc.a.3_2:k.cc.a.3_3';
-        $_SESSION["raw_data"] = 'k.cc.a.1_1';
-	//$_SESSION["raw_data"] = '4.nbt.a.2_5';
+        $_SESSION["raw_data"] = '5.oa.a.1_1:7:5.oa.a.1_2:7:5.oa.a.1_3:7:5.oa.a.1_4:7:5.oa.a.1_1:7:5.oa.a.1_1:7:5.oa.a.1_2:7:5.oa.a.1_3:7:5.oa.a.1_4:7:5.oa.a.1_1:7';
 }
 
 public function checkInput()
