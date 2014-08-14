@@ -69,8 +69,6 @@ enter: function(item)
 	{
 		APPLICATION.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
-
-	APPLICATION.log('streak:' + item.mStreak);
  
 	//start timer but only once
 	if (item.mQuestionStartTime == 0)

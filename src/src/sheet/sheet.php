@@ -156,12 +156,10 @@ var Sheet = new Class(
                 }
 
                 var itemIDArray = APPLICATION.mRawData.split(":");
-		APPLICATION.log('len:' + itemIDArray.length);
 
                 for (var i = 0; i < itemIDArray.length; i++)
                 {
 			var pick = 0;
-			APPLICATION.log('itemIDArray:' + itemIDArray[i]);
 
 			if (pick == 0)
 			{
