@@ -66,6 +66,17 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
+/*
+	if (sheet.getItem().mStatus == 1)
+	{
+		sheet.correctAnswer();
+	}
+        else if (sheet.getItem().mStatus == 2)
+	{
+		sheet.incorrectAnswer();
+	}
+*/
+/*
 	if (sheet.getItem().mStatus == 1)
         {
         	sheet.correctAnswer();
@@ -90,6 +101,7 @@ execute: function(sheet)
                		sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
 		}
 	}
+*/
 },
 
 exit: function(sheet)

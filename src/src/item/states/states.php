@@ -85,6 +85,9 @@ enter: function(item)
 
 	//show item type id in Game hud
 	APPLICATION.mHud.setProgression(item.mType);	
+
+	//hud question number	
+	APPLICATION.mHud.setQuestionNumber(item.mSheet.mMarker,10);	
 },
 
 execute: function(item)
@@ -512,6 +515,8 @@ enter: function(item)
                 APPLICATION.log('ITEM::INCORRECT_ITEM');
         }
 	item.hideShapes();
+	
+	item.mSheet.incorrectAnswer();
 },
 
 execute: function(item)
