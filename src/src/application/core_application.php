@@ -552,7 +552,7 @@ Extends: Application,
 					this.mGame = 0;
 				}
                                	this.mGameName = "normal";
-                               	this.mGame = new Normal(APPLICATION);
+                               	this.mGame = new CoreGame(APPLICATION);
 			}
                 }
 		if (this.mRef_id == 'evaluation')
@@ -565,7 +565,7 @@ Extends: Application,
 					this.mGame = 0;
 				}
                                	this.mGameName = "evaluation";
-                               	this.mGame = new Evaluation(APPLICATION);
+                               	this.mGame = new CoreGame(APPLICATION);
 			}
                 }
 		if (this.mRef_id == 'remediate')
@@ -578,7 +578,7 @@ Extends: Application,
 					this.mGame = 0;
 				}
                                	this.mGameName = "remediate";
-                               	this.mGame = new Remediate(APPLICATION);
+                               	this.mGame = new CoreGame(APPLICATION);
 			}
                 }
 		if (this.mRef_id == 'practice')
@@ -592,7 +592,7 @@ Extends: Application,
 					this.mGame = 0;
 				}
                                	this.mGameName = "practice";
-                               	this.mGame = new Practice(APPLICATION);
+                               	this.mGame = new CoreGame(APPLICATION);
 			}
                 }
 	}

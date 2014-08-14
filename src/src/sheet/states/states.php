@@ -78,7 +78,7 @@ execute: function(sheet)
         }
         else if (sheet.getItem().mStatus == 2)
         {
-		if (sheet.mLearningStandard == "evaluation")
+		if (sheet.mGame.mGameName == "evaluation")
 		{
                		sheet.mStateMachine.changeState(sheet.mEVALUATION_FAILED_SHEET);
 		}	
