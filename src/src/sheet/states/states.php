@@ -69,6 +69,9 @@ execute: function(sheet)
 	if (sheet.getItem().mStatus == 1)
         {
         	sheet.correctAnswer();
+
+		//here is where we deal with level completing...so we need to interupt this and do something else based off mastery.
+
 		if (sheet.isSheetComplete())
         	{
 			//set the ITEM to null so another item dont drop. this may get rid of need for buf question.
@@ -87,13 +90,6 @@ execute: function(sheet)
                		sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
 		}
 	}
-/*
-	if (APPLICATION.mWaitOnPractice == true)
-	{
-               	sheet.mStateMachine.changeState(sheet.mPRACTICE_SHEET);
-	}
-*/
-
 },
 
 exit: function(sheet)
