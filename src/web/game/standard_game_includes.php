@@ -15,11 +15,7 @@
 <script type="text/javascript" src="/src/login/login.php"></script>
 <script type="text/javascript" src="/src/signup/signup.php"></script>
 <script type="text/javascript" src="/src/core/math/game_sheet.php"></script>
-<script type="text/javascript" src="/src/game/quiz_game.php"></script>
 <script type="text/javascript" src="/src/game/states/states.php"></script>
-
-<script type="text/javascript" src="/src/game/ambitious_game.php"></script>
-<script type="text/javascript" src="/src/game/states/ambitious_states.php"></script>
 
 <script type="text/javascript" src="/src/animation/animation.php"></script>
 <script type="text/javascript" src="/src/animation/animation_advanced.php"></script>
