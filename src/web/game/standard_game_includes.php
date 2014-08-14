@@ -65,7 +65,6 @@
 
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
-<script type="text/javascript" src="/src/quiz/quiz.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
 
