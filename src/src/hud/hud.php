@@ -30,7 +30,7 @@ var Hud = new Class(
         this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
         this.mScore.setText('<font size="2"> Score : </font>');
 
-        this.mScoreNeeded = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
+        this.mItemTypeStats = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
 
 	this.mUsername = new Shape     (180, ySize,590,  yCoord,"","","#F8CDF8","boundary");
         this.mUsername.setText('<font size="1">User:' + this.mApplication.mFirstName + ' ' + this.mApplication.mLastName + '</font>');
@@ -57,9 +57,9 @@ var Hud = new Class(
 
         },
 	
-	setScoreNeeded: function(scoreNeeded)
+	setItemTypeStats: function(streak,total)
 	{
-        	this.mScoreNeeded.setText('<font size="2"> Goal: ' + scoreNeeded +  '</font>');
+        	this.mItemTypeStats.setText('<font size="2"> Type: ' + streak + '/' + total + '</font>');
 	},
 	
 	setStandard: function(s)
