@@ -142,6 +142,7 @@ public function setRawData()
 		if ($firstTime)
 		{
 			$query .= "select id, progression from item_types where progression = "; 
+			$firstTime = false;
 		}
 		else
 		{
