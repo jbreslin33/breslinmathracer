@@ -159,24 +159,30 @@ var Sheet = new Class(
 
                 for (var i = 0; i < itemIDArray.length; i++)
                 {
-                        var pick = this.mPicker.getItem(itemIDArray[i]);
-                        if (pick != 0)
-                        {
-                                this.addItem(pick);
-                        }
+			var pick = 0;
 
-                        var brianPick = this.mPickerBrian.getItem(itemIDArray[i]);
-                        if (brianPick != 0)
-                        {
-                                this.addItem(brianPick);
-                        }
+			if (pick == 0)
+			{
+                        	pick = this.mPicker.getItem(itemIDArray[i]);
+			}
+			if (pick == 0)
+			{
+                        	pick = this.mPickerBrian.getItem(itemIDArray[i]);
+			}
+			if (pick == 0)
+			{
+                        	pick = this.mPickerJim.getItem(itemIDArray[i]);
+			}
 
-                        var jimPick = this.mPickerJim.getItem(itemIDArray[i]);
-                        if (jimPick != 0)
-                        {
-                                this.addItem(jimPick);
-                        }
-
+			//if you got an item then add it to sheet
+			if (pick != 0)
+			{
+				this.addItem(pick);
+			}
+			else
+			{
+				APPLICATION.log('no item picked by pickers!');
+			}
                 }
 
 	},
