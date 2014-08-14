@@ -19,6 +19,11 @@ var Sheet = new Class(
 		this.mVictoryShapeArray = new Array();
 		this.mBossShapeArray = new Array();
 
+		/***** PICKERS ****/
+                this.mPicker      = new Picker(this);
+                this.mPickerBrian = new PickerBrian(this);
+                this.mPickerJim   = new PickerJim(this);
+
                 /**************** TIME ************/
 	 	this.mShowLevelPassedStartTime = 0;
                 this.mShowLevelFailedStartTime = 0;
@@ -149,6 +154,31 @@ var Sheet = new Class(
                 {
                         this.setScoreNeeded(APPLICATION.mLevel);
                 }
+
+                var itemIDArray = APPLICATION.mRawData.split(":");
+
+                for (var i = 0; i < itemIDArray.length; i++)
+                {
+                        var pick = this.mPicker.getItem(itemIDArray[i]);
+                        if (pick != 0)
+                        {
+                                this.addItem(pick);
+                        }
+
+                        var brianPick = this.mPickerBrian.getItem(itemIDArray[i]);
+                        if (brianPick != 0)
+                        {
+                                this.addItem(brianPick);
+                        }
+
+                        var jimPick = this.mPickerJim.getItem(itemIDArray[i]);
+                        if (jimPick != 0)
+                        {
+                                this.addItem(jimPick);
+                        }
+
+                }
+
 	},
 
 	setTypeWrong: function(typeID)
