@@ -123,7 +123,8 @@ var Sheet = new Class(
 	//returns question object	
 	getItem: function()
 	{
-		if (this.mItemArray.length > this.mMarker)
+		var item = this.mItemArray[this.mMarker];
+		if (item)
 		{
 			return this.mItemArray[this.mMarker];
 		}
