@@ -69,55 +69,57 @@ execute: function(sheet)
 	if (sheet.mItem)
 	{
 
-
 	}
 	else
 	{
-		APPLICATION.log('no item');
-		APPLICATION.normal();	
+                sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);
 	}
-/*
-	if (sheet.getItem().mStatus == 1)
-	{
-		sheet.correctAnswer();
-	}
-        else if (sheet.getItem().mStatus == 2)
-	{
-		sheet.incorrectAnswer();
-	}
-*/
-/*
-	if (sheet.getItem().mStatus == 1)
-        {
-        	sheet.correctAnswer();
-
-		//here is where we deal with level completing...so we need to interupt this and do something else based off mastery.
-
-		if (sheet.isSheetComplete())
-        	{
-			//set the ITEM to null so another item dont drop. this may get rid of need for buf question.
-			sheet.mItem = 0;
-                	sheet.mStateMachine.changeState(sheet.mLEVEL_PASSED_SHEET);
-        	}
-        }
-        else if (sheet.getItem().mStatus == 2)
-        {
-		if (sheet.mGame.mGameName == "evaluation")
-		{
-               		sheet.mStateMachine.changeState(sheet.mEVALUATION_FAILED_SHEET);
-		}	
-		else
-		{
-               		sheet.mStateMachine.changeState(sheet.mLEVEL_FAILED_SHEET);
-		}
-	}
-*/
 },
 
 exit: function(sheet)
 {
 }
 });
+
+var FINISHED_SHEET = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(sheet)
+{
+        if (sheet.mStateLogs)
+        {
+                APPLICATION.log('SHEET::FINISHED_SHEET');
+        }
+  
+        //times
+        sheet.mStartTime = sheet.mGame.mTimeSinceEpoch;
+
+        //gui bar
+        sheet.showVictoryShapes();
+        //sheet.showBossShapes();
+},
+
+execute: function(sheet)
+{
+        if (sheet.mGame.mTimeSinceEpoch > sheet.mStartTime + sheet.mThresholdTime)
+        {
+                sheet.mStateMachine.changeState(sheet.mEND_SHEET);
+        }
+},
+
+exit: function(sheet)
+{
+        sheet.hideVictoryShapes();
+        sheet.hideBossShapes();
+}
+
+});
+
 
 var LEVEL_PASSED_SHEET = new Class(
 {
@@ -137,7 +139,7 @@ enter: function(sheet)
 	APPLICATION.mLevelCompleted = true;
 
         //times
-        sheet.mShowLevelPassedStartTime = sheet.mGame.mTimeSinceEpoch;
+        sheet.mStartTime = sheet.mGame.mTimeSinceEpoch;
 
         //gui bar
 	if (parseInt(APPLICATION.mLevel) < parseInt(APPLICATION.mLevels))
@@ -152,7 +154,7 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
-	if (sheet.mGame.mTimeSinceEpoch > sheet.mShowLevelPassedStartTime + sheet.mShowLevelPassedThresholdTime)
+	if (sheet.mGame.mTimeSinceEpoch > sheet.mStartTime + sheet.mThresholdTime)
         {
                 sheet.mStateMachine.changeState(sheet.mEND_SHEET);
         }
@@ -282,6 +284,7 @@ enter: function(sheet)
         sheet.reset();
 	sheet.mGame.setScore(0);
         sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
+	APPLICATION.normal();
 },
 
 execute: function(sheet)

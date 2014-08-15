@@ -25,11 +25,8 @@ var Sheet = new Class(
                 this.mPickerJim   = new PickerJim(this);
 
                 /**************** TIME ************/
-	 	this.mShowLevelPassedStartTime = 0;
-                this.mShowLevelFailedStartTime = 0;
-
-                this.mShowLevelPassedThresholdTime = 5000;
-                this.mShowLevelFailedThresholdTime = 1000;
+	 	this.mStartTime = 0;
+                this.mThresholdTime = 10000;
 
 		//question
 		this.mMarker = 0;
@@ -43,6 +40,7 @@ var Sheet = new Class(
                 this.mGLOBAL_SHEET       = new GLOBAL_SHEET      (this);
                 this.mINIT_SHEET         = new INIT_SHEET        (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
+                this.mFINISHED_SHEET     = new FINISHED_SHEET      (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
                 this.mLEVEL_FAILED_SHEET = new LEVEL_FAILED_SHEET(this);
                 this.mEVALUATION_FAILED_SHEET = new EVALUATION_FAILED_SHEET(this);
@@ -329,36 +327,12 @@ var Sheet = new Class(
 	{
 		this.mMarker++;
 		this.mItem = this.getItem(); 
-/*
-		var item = this.getItem();
-		if (item)
-		{
-			this.mItem = item; 
-		}
-		else
-		{
-			APPLICATION.log('we need to start a new normal...');
-			APPLICATION.normal();
-		}
-*/
 	},
 	
 	incorrectAnswer: function()
 	{
 		this.mMarker++;
 		this.mItem = this.getItem(); 
-/*
-		var item = this.getItem();
-		if (item)
-		{
-			this.mItem = item; 
-		}
-		else
-		{
-			APPLICATION.log('we need to start a new normal...');
-			APPLICATION.normal();
-		}
-*/
 	},
 
 	/******************* SHEET *********************/	
