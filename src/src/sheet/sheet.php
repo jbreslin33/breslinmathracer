@@ -123,7 +123,14 @@ var Sheet = new Class(
 	//returns question object	
 	getItem: function()
 	{
-		return this.mItemArray[this.mMarker];
+		if (this.mItemArray.length > this.mMarker)
+		{
+			return this.mItemArray[this.mMarker];
+		}
+		else
+		{
+			return 0;	
+		}
 	},
 	
 	//returns question object	
@@ -320,13 +327,31 @@ var Sheet = new Class(
 	correctAnswer: function()
 	{
 		this.mMarker++;
-		this.mItem = this.getItem();
+		var item = this.getItem();
+		if (item)
+		{
+			this.mItem = item; 
+		}
+		else
+		{
+			APPLICATION.log('we need to start a new normal...');
+			APPLICATION.normal();
+		}
 	},
 	
 	incorrectAnswer: function()
 	{
 		this.mMarker++;
-		this.mItem = this.getItem();
+		var item = this.getItem();
+		if (item)
+		{
+			this.mItem = item; 
+		}
+		else
+		{
+			APPLICATION.log('we need to start a new normal...');
+			APPLICATION.normal();
+		}
 	},
 
 	/******************* SHEET *********************/	
