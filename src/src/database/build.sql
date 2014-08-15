@@ -5,23 +5,9 @@ DROP TABLE error_log;
 DROP TABLE item_attempts;
 
 --finer types
-DROP TABLE item_types_operation_types;
-DROP TABLE item_types_problem_types;
-DROP TABLE item_types_speed_types;
-DROP TABLE item_types_step_types;
-DROP TABLE item_types_carry_types;
-DROP TABLE item_types_borrow_types;
-DROP TABLE item_types_remainder_types;
-DROP TABLE item_types_counting_types;
+DROP TABLE finer_types_item_types;
 
-DROP TABLE operation_types;
-DROP TABLE problem_types;
-DROP TABLE speed_types;
-DROP TABLE step_types;
-DROP TABLE carry_types;
-DROP TABLE borrow_types;
-DROP TABLE remainder_types;
-DROP TABLE counting_types;
+DROP TABLE finer_types;
 
 --linkage
 DROP TABLE practice_buddy; --you need these make practice more effiecient without adding too many links as other tables will.
@@ -201,51 +187,7 @@ CREATE TABLE levelattempts (
 
 
 --addition,subtraction,mult,div,parens,exponents
-CREATE TABLE operation_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
---word,calcuation
-CREATE TABLE problem_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
---fast,slow
-CREATE TABLE speed_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE step_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE carry_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE borrow_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE remainder_types (
-	id SERIAL,
-	description text,	
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE counting_types (
+CREATE TABLE finer_types (
 	id SERIAL,
 	description text,	
         PRIMARY KEY (id)
@@ -262,77 +204,15 @@ CREATE TABLE item_types (
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );
 
-CREATE TABLE item_types_operation_types (
+CREATE TABLE finer_types_item_types (
 	id SERIAL,
+	finer_types_id integer NOT NULL,
 	item_types_id text NOT NULL,
-	operation_types_id integer NOT NULL,
+	FOREIGN KEY (finer_types_id) REFERENCES finer_types(id),
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (operation_types_id) REFERENCES operation_types(id),
         PRIMARY KEY (id)
 );
 
-CREATE TABLE item_types_problem_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	problem_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (problem_types_id) REFERENCES problem_types(id),
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE item_types_speed_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	speed_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (speed_types_id) REFERENCES speed_types(id),
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE item_types_step_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	step_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (step_types_id) REFERENCES step_types(id),
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE item_types_carry_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	carry_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (carry_types_id) REFERENCES carry_types(id),
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE item_types_borrow_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	borrow_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (borrow_types_id) REFERENCES borrow_types(id),
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE item_types_remainder_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	remainder_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (remainder_types_id) REFERENCES remainder_types(id),
-        PRIMARY KEY (id)
-);
-
-CREATE TABLE item_types_counting_types (
-	id SERIAL,
-	item_types_id text NOT NULL,
-	counting_types_id integer NOT NULL,
-	FOREIGN KEY (item_types_id) REFERENCES item_types(id),
-	FOREIGN KEY (counting_types_id) REFERENCES counting_types(id),
-        PRIMARY KEY (id)
-);
 
 ---------- WE TALKIN BOUT PRACTICE
 --select item_type_buddy_id from practice_buddy where item_type_id = 'k_cc_a_1_4'; 
