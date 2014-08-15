@@ -97,7 +97,11 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION:  ((b(a)c)d)e  */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_21',5022,'5.oa.a.1','((b(a)c)d)e');
+*/
+
 var i_5_oa_a_1__21 = new Class(
 {
 Extends: TextItem,
@@ -130,7 +134,11 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION:    e((b(a)c)d)  */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_20',5022,'5.oa.a.1',' e((b(a)c)d)');
+*/
+
 var i_5_oa_a_1__20 = new Class(
 {
 Extends: TextItem,
@@ -167,7 +175,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:    (d(b(a)c))e  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_19',5022,'5.oa.a.1','(d(b(a)c))e');
+*/
+
 var i_5_oa_a_1__19 = new Class(
 {
 Extends: TextItem,
@@ -200,7 +211,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:   e(d(b(a)c))  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_18',5022,'5.oa.a.1','e(d(b(a)c))');
+*/
+
 var i_5_oa_a_1__18 = new Class(
 {
 Extends: TextItem,
@@ -233,7 +247,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  d(b(a)c)e  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_17',5022,'5.oa.a.1','d(b(a)c)e');
+*/
+
 var i_5_oa_a_1__17 = new Class(
 {
 Extends: TextItem,
@@ -266,7 +283,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:   d(b(a)c) */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_16',5022,'5.oa.a.1','d(b(a)c)');
+*/
+
 var i_5_oa_a_1__16 = new Class(
 {
 Extends: TextItem,
@@ -297,7 +317,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  c(b(a)) */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_15',5022,'5.oa.a.1',' c(b(a))');
+*/
+
 var i_5_oa_a_1__15 = new Class(
 {
 Extends: TextItem,
@@ -333,7 +356,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  c((a)b)d */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_14',5022,'5.oa.a.1','c((a)b)d');
+*/
+
 var i_5_oa_a_1__14 = new Class(
 {
 Extends: TextItem,
@@ -365,7 +391,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  (c(a)b)d  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_13',5022,'5.oa.a.1','(c(a)b)d');
+*/
+
 var i_5_oa_a_1__13 = new Class(
 {
 Extends: TextItem,
@@ -402,7 +431,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION:  ((a)b)c  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_12',5022,'5.oa.a.1','((a)b)c');
+*/
+
 //this might be marked as huge multiplication...in db
 var i_5_oa_a_1__12 = new Class(
 {
@@ -433,7 +465,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: c(a)d(b)e  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_11',5022,'5.oa.a.1','c(a)d(b)e');
+*/
+
 //this might be marked as huge multiplication...in db
 var i_5_oa_a_1__11 = new Class(
 {
@@ -474,7 +509,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: c(a)(b)d */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_10',5022,'5.oa.a.1','c(a)(b)d');
+*/
+
 var i_5_oa_a_1__10 = new Class(
 {
 Extends: TextItem,
@@ -512,7 +550,10 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION: (a)c(b)d */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_9',5022,'5.oa.a.1','(a)c(b)d');
+*/
 
 var i_5_oa_a_1__9 = new Class(
 {
@@ -553,7 +594,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: c(a)d(b) */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_8',5022,'5.oa.a.1','c(a)d(b)');
+*/
+
 var i_5_oa_a_1__8 = new Class(
 {
 Extends: TextItem,
@@ -591,7 +635,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: c(a)(b) */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_7',5022,'5.oa.a.1','c(a)(b)');
+*/
+
 var i_5_oa_a_1__7 = new Class(
 {
 Extends: TextItem,
@@ -625,7 +672,11 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION: c(a)(b) */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_6',5022,'5.oa.a.1','c(a)(b)');
+*/
+
 var i_5_oa_a_1__6 = new Class(
 {
 Extends: TextItem,
@@ -661,7 +712,11 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION: c(a)(b) */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_5',5022,'5.oa.a.1','c(a)(b)');
+*/
+
 var i_5_oa_a_1__5 = new Class(
 {
 Extends: TextItem,
@@ -697,7 +752,11 @@ initialize: function(sheet)
         }
 }
 });
-/* TYPE_DESCRIPTION: (a)(b) */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_4',5022,'5.oa.a.1','(a)(b)');
+*/
+
 var i_5_oa_a_1__4 = new Class(
 {
 Extends: TextItem,
@@ -724,7 +783,11 @@ initialize: function(sheet)
       	this.setAnswer(n + '/' + d,0);
 }
 });
-/* TYPE_DESCRIPTION: b(a)c */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_3',5022,'5.oa.a.1','b(a)c');
+*/
+
 var i_5_oa_a_1__3 = new Class(
 {
 Extends: TextItem,
@@ -751,7 +814,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: (a)b */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_2',5022,'5.oa.a.1','(a)b');
+*/
+
 var i_5_oa_a_1__2 = new Class(
 {
 Extends: TextItem,
@@ -776,7 +842,10 @@ initialize: function(sheet)
 }
 });
 
-/* TYPE_DESCRIPTION: b(a), multiplication, add fractions like denominators, multiply fraction by whole number, reduce fractions, reduce fractions with numerator larger than denominator */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_1',5022,'5.oa.a.1','b(a)');
+*/
+
 var i_5_oa_a_1__1 = new Class(
 {
 Extends: TextItem,
