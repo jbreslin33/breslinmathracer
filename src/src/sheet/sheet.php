@@ -328,6 +328,8 @@ var Sheet = new Class(
 	correctAnswer: function()
 	{
 		this.mMarker++;
+		this.mItem = this.getItem(); 
+/*
 		var item = this.getItem();
 		if (item)
 		{
@@ -338,11 +340,14 @@ var Sheet = new Class(
 			APPLICATION.log('we need to start a new normal...');
 			APPLICATION.normal();
 		}
+*/
 	},
 	
 	incorrectAnswer: function()
 	{
 		this.mMarker++;
+		this.mItem = this.getItem(); 
+/*
 		var item = this.getItem();
 		if (item)
 		{
@@ -353,6 +358,7 @@ var Sheet = new Class(
 			APPLICATION.log('we need to start a new normal...');
 			APPLICATION.normal();
 		}
+*/
 	},
 
 	/******************* SHEET *********************/	
