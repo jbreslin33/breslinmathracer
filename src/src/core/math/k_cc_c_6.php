@@ -1,4 +1,8 @@
-/* TYPE_DESCRIPTION: Greater than for up to 10 objects */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',3.101,'k.cc.c.6','Compare 10 objects with greater than.');
+*/
+
 var i_k_cc_c_6__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -61,7 +65,10 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: Equal to for up to 10 objects */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',3.102,'k.cc.c.6','Compare 10 objects with equal to.');
+*/
+
 var i_k_cc_c_6__2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -118,7 +125,10 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: Less than for up to 10 objects */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',3.103,'k.cc.c.6','Compare 10 objects with less than.');
+*/
+
 var i_k_cc_c_6__3 = new Class(
 {
 Extends: ThreeButtonItem,
