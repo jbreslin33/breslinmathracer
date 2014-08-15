@@ -574,16 +574,13 @@ Extends: Application,
 	// are we running the right game??
 	gameDecider: function()
 	{
-		APPLICATION.log('gameDecider');
 		//if already have a game destroy it.
 		if (this.mGame)
 		{
-			APPLICATION.log('destroy');
 			this.mGame.destructor();
 			this.mGame = 0;
 		}
 		//make a new one
-		APPLICATION.log('new game');
                 this.mGame = new CoreGame(APPLICATION);
 	}
 });
