@@ -1,6 +1,9 @@
 /*  5.oa.a.2 */
 
-/* TYPE_DESCRIPTION: Write expression based on word problem. Words: more than, times that many */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_13',5.0213,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
+*/
+
 var i_5_oa_a_2__13 = new Class(
 {
 Extends: TextItem,
@@ -27,7 +30,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_12',5.0212,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted');
+*/
+
 var i_5_oa_a_2__12 = new Class(
 {
 Extends: TextItem,
@@ -50,7 +56,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based on word problem. Words: divided, subtracted */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted ');
+*/
+
 var i_5_oa_a_2__11 = new Class(
 {
 Extends: TextItem,
@@ -76,7 +85,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based on word problem. Words: gave the rest out, threw out */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','');
+*/
+
 var i_5_oa_a_2__10 = new Class(
 {
 Extends: TextItem,
@@ -100,7 +112,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_6',5.0206,'5.oa.a.2','Write expression based off sentence expression. Words used: product of , seven less.');
+*/
+
 var i_5_oa_a_2__6 = new Class(
 {
 Extends: TextItem,
@@ -122,7 +137,10 @@ Extends: TextItem,
 });
 
 
-/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_5',5.0205,'5.oa.a.2','Write expression based off sentence expression. Words used: product of , seven less.');
+*/
+
 var i_5_oa_a_2__5 = new Class(
 {
 Extends: TextItem,
@@ -141,7 +159,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: product of , seven less.   */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_4',5.0204,'5.oa.a.2','Write expression based off sentence expression. Words used: product of , seven less.');
+*/
+
 var i_5_oa_a_2__4 = new Class(
 {
 Extends: TextItem,
@@ -160,7 +181,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: difference, times .   */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_3',5.0203,'5.oa.a.2','Write expression based off sentence expression. Words used: difference, times .');
+*/
+
 var i_5_oa_a_2__3 = new Class(
 {
 Extends: TextItem,
@@ -180,7 +204,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used: times, sum.   */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_2',5.0202,'5.oa.a.2','Write expression based off sentence expression. Words used: times, sum.');
+*/
+
 var i_5_oa_a_2__2 = new Class(
 {
 Extends: TextItem,
@@ -200,7 +227,10 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Write expression based off sentence expression. Words used add, multiply.  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_1',5.0201,'5.oa.a.2','Write expression based off sentence expression. Words used add, multiply.');
+*/
+
 var i_5_oa_a_2__1 = new Class(
 {
 Extends: TextItem,
