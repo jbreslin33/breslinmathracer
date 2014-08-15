@@ -164,7 +164,8 @@ public function setRawData()
 			$query .= $item_types_id; 
 			$query .= "' AND learning_standards_attempts.user_id = ";
         		$query .= $_SESSION["user_id"];
-			$query .= "order by item_attempts.start_time asc limit 10;";
+			$query .= " AND learning_standards_attempts.learning_standards_id != 'practice'";
+			$query .= " order by item_attempts.start_time asc limit 10;";
 		
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                 	$num = pg_num_rows($result);
