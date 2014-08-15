@@ -55,6 +55,8 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 
 ********/
+//SQL insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5022,'5.oa.a.1','');
+
 /* TYPE_DESCRIPTION:   f(d(b(a)c)e)g */
 var i_5_oa_a_1__22 = new Class(
 {
