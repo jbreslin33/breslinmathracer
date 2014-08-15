@@ -93,6 +93,9 @@ Extends: Application,
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
+		
+				//for now if you get a full i gonna say run a new game.	
+				APPLICATION.gameDecider();
 
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
@@ -274,6 +277,39 @@ Extends: Application,
                         }
 		}
                 xmlhttp.open("POST","../../web/php/remediate.php?typeid=" + typeid,true);
+                xmlhttp.send();
+        },
+
+        normal: function()
+        {
+		APPLICATION.log('APPLICATION::normal called');
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/normal.php",true);
                 xmlhttp.send();
         },
 
@@ -538,58 +574,16 @@ Extends: Application,
 	// are we running the right game??
 	gameDecider: function()
 	{
-		if (this.mRef_id == 'normal')
-		{ 
-             		if (this.mGameName != "normal")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "normal";
-                               	this.mGame = new CoreGame(APPLICATION);
-			}
-                }
-		if (this.mRef_id == 'evaluation')
-		{ 
-             		if (this.mGameName != "evaluation")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "evaluation";
-                               	this.mGame = new CoreGame(APPLICATION);
-			}
-                }
-		if (this.mRef_id == 'remediate')
-		{ 
-             		if (this.mGameName != "remediate")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "remediate";
-                               	this.mGame = new CoreGame(APPLICATION);
-			}
-                }
-		if (this.mRef_id == 'practice')
-		{ 
-		//this is why practice wizzes by the wrong answer. you need to fix this tommorow...
-             		if (this.mGameName != "practice")
-                       	{
-				if (this.mGame)
-				{
-					this.mGame.destructor();
-					this.mGame = 0;
-				}
-                               	this.mGameName = "practice";
-                               	this.mGame = new CoreGame(APPLICATION);
-			}
-                }
+		APPLICATION.log('gameDecider');
+		//if already have a game destroy it.
+		if (this.mGame)
+		{
+			APPLICATION.log('destroy');
+			this.mGame.destructor();
+			this.mGame = 0;
+		}
+		//make a new one
+		APPLICATION.log('new game');
+                this.mGame = new CoreGame(APPLICATION);
 	}
 });

@@ -47,7 +47,7 @@ var Item = new Class(
 
                 //times for show correct
                 this.mCorrectAnswerStartTime = 0;
-                this.mCorrectAnswerThresholdTime = 10000;
+                this.mCorrectAnswerThresholdTime = 2000;
 
 		//times for showContinueCorrect
                 this.mShowContinueCorrectStartTime = 0;
