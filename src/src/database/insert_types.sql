@@ -36,6 +36,16 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_9',1.209,'k.cc.a.2','What comes next after 10.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_10',1.210,'k.cc.a.2','What comes next after number ending in zero from 11-99.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_1',4.401,'k.oa.a.4','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_13',5.0213,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_12',5.0212,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted ');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_6',5.0206,'5.oa.a.2','Write expression based off sentence expression. Words used: product of , seven less.');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_5',5.0205,'5.oa.a.2','Write expression based off sentence expression. Words used: product of , seven less.');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_4',5.0204,'5.oa.a.2','Write expression based off sentence expression. Words used: product of , seven less.');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_3',5.0203,'5.oa.a.2','Write expression based off sentence expression. Words used: difference, times .');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_2',5.0202,'5.oa.a.2','Write expression based off sentence expression. Words used: times, sum.');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_1',5.0201,'5.oa.a.2','Write expression based off sentence expression. Words used add, multiply.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',3.101,'k.cc.c.6','Compare 10 objects with greater than.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',3.102,'k.cc.c.6','Compare 10 objects with equal to.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',3.103,'k.cc.c.6','Compare 10 objects with less than.');
