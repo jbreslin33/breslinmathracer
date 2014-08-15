@@ -1,0 +1,1 @@
+just run ./erm.sh

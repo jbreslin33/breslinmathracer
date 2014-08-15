@@ -1,0 +1,3 @@
+this one works....and won't mess up hg stuff.
+perl -e "s/\/updateall//g;" -pi $(find /home/jbreslin/public_html/updateall -name "*.sql" -type f)
+
