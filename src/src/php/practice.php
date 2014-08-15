@@ -160,8 +160,13 @@ public function setRawData()
 	$raw = '';
 	for($i=0; $i<10; $i++)
 	{
+		if ($i > 0)
+		{
+			$raw .= ":";
+		}
 		$raw .= $this->mTypeID; 
-		$raw .= ":0";
+		$raw .= ":";
+		$raw .= "0";
 	}
        	$_SESSION["raw_data"] = $raw; 
 }
