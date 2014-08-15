@@ -66,6 +66,16 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
+	if (sheet.mItem)
+	{
+
+
+	}
+	else
+	{
+		APPLICATION.log('no item');
+		APPLICATION.normal();	
+	}
 /*
 	if (sheet.getItem().mStatus == 1)
 	{
