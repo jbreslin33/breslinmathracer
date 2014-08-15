@@ -36,6 +36,9 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_3',16003,'4.nf.a.1','put fraction in lower form by finding missing denominator');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_4',16004,'4.nf.a.1','put fraction in lower form by finding missing numerator');
 
+--4.nf.a.2
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.2_1',17001,'4.nf.a.1','Compare two fractions with different numerators and denominators');
+
 --4.md.a.3
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',14001,'4.md.a.3','calculate area of a rectangle (non-square)');
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',14002,'4.md.a.3','calculate area of a square');
