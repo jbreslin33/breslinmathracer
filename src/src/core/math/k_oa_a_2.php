@@ -1,5 +1,8 @@
 
-/* TYPE_DESCRIPTION: Subtraction word problems with sum and minuend within 10. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_4',4.204,'k.oa.a.2','Subtraction word problems within 10.');
+*/
+
 var i_k_oa_a_2__4 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -53,7 +56,11 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-/* TYPE_DESCRIPTION: Addition word problems with sum within 10. */
+
+/*        
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_3',4.203,'k.oa.a.2','Addition word problems within 10.');
+*/
+
 var i_k_oa_a_2__3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -107,7 +114,10 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Subtract with sum and minuend within 10. */
+/*        
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_2',4.202,'k.oa.a.2','Subtract within 10.');
+*/
+
 var i_k_oa_a_2__2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -146,7 +156,10 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Add with sum within 10. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_1',4.201,'k.oa.a.2','Add within 10.');
+*/
+
 var i_k_oa_a_2__1 = new Class(
 {
 Extends: ThreeButtonItem,

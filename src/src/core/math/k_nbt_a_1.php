@@ -1,5 +1,8 @@
 
-/* TYPE_DESCRIPTION: Pick out what equation containing 10 is equal to number. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_1',4.502,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');
+*/
+
 var i_k_nbt_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -42,4 +45,3 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-

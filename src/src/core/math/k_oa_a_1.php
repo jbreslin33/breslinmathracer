@@ -1,5 +1,8 @@
-//add here
-/* TYPE_DESCRIPTION: Add within 5 using pictures and symbols. */
+
+/*  
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',4.101,'k.oa.a.1','Add within 5 with pictures to help.');
+*/
+
 var i_k_oa_a_1__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -71,7 +74,10 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Subtract with 5 using pictures and symbols. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help
+*/
+
 var i_k_oa_a_1__2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -142,8 +148,6 @@ Extends: ThreeButtonItem,
         }
 });
 
-/* TYPE_DESCRIPTION: Pick the number sentence that represents the addition word description. Missing addend. */
-/*
 var i_k_oa_a_1__3 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -201,9 +205,7 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-*/
-/* TYPE_DESCRIPTION:  */
-/*
+
 var i_k_oa_a_1__4 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -270,4 +272,3 @@ Extends: ThreeButtonItem,
                 this.shuffle(10);
         }
 });
-*/

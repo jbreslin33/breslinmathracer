@@ -1,4 +1,8 @@
-/* TYPE_DESCRIPTION: Greater than for 2 numbers up to 10.*/
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',3.201,'k.cc.c.7','Compare 2 numbers with greater than.');
+*/
+
 var i_k_cc_c_7__1 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -42,7 +46,10 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: Equal to for 2 numbers up to 10.*/
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',3.202,'k.cc.c.7','Compare 2 numbers with equal to.');
+*/
+
 var i_k_cc_c_7__2 = new Class(
 {
 Extends: ThreeButtonItem,
@@ -80,7 +87,10 @@ Extends: ThreeButtonItem,
 	}
 });
 
-/* TYPE_DESCRIPTION: Less than for 2 numbers up to 10.*/
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',3.203,'k.cc.c.7','Compare 2 numbers with less than.');
+*/
+
 var i_k_cc_c_7__3 = new Class(
 {
 Extends: ThreeButtonItem,
