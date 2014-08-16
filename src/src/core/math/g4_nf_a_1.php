@@ -1,4 +1,7 @@
-/* TYPE_DESCRIPTION: i_4_nf_a_1: put fraction in higher form by finding missing denominator  */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_1',4.1201,'4.nf.a.1','put fraction in higher form by finding missing denominator');
+*/
 
 var i_4_nf_a_1__1 = new Class(
 {
@@ -44,10 +47,9 @@ Extends: TextItem,
    }
 });
 
-
-
-
-/* TYPE_DESCRIPTION: i_4_nf_a_2: put fraction in higher form by finding missing numerator  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_2',4.1202,'4.nf.a.1','put fraction in higher form by finding missing numerator');
+*/
 
 var i_4_nf_a_1__2 = new Class(
 {
@@ -93,9 +95,9 @@ Extends: TextItem,
    }
 });
 
-
-
-/* TYPE_DESCRIPTION: i_4_nf_a_3: put fraction in lower form by finding missing denominator  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_3',4.1203,'4.nf.a.1','put fraction in lower form by finding missing denominator');
+*/
 
 var i_4_nf_a_1__3 = new Class(
 {
@@ -141,8 +143,9 @@ Extends: TextItem,
    }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nf_a_4: put fraction in lower form by finding missing numerator  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_4',4.1204,'4.nf.a.1','put fraction in lower form by finding missing numerator');
+*/
 
 var i_4_nf_a_1__4 = new Class(
 {
@@ -187,5 +190,3 @@ Extends: TextItem,
       this.mQuestionLabel.setPosition(275,95);  
    }
 });
-
-//add
