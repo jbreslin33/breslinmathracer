@@ -1,4 +1,7 @@
-/* TYPE_DESCRIPTION: i_4_md_a_3__6: calculate perimeter of a rectangle (non-square)  */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_6',4.2806,'4.md.a.3','calculate perimeter of a rectangle (non-square)');
+*/
 
 var i_4_md_a_3__6 = new Class(
 {
@@ -80,14 +83,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__7: calculate perimeter of a square  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_7',4.2807,'4.md.a.3','calculate perimeter of a square');
+*/
 
 var i_4_md_a_3__7 = new Class(
 {
@@ -149,10 +147,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__8: calculate side of a square given perimeter  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_8',4.2808,'4.md.a.3','calculate side of a square given perimeter');
+*/
 
 var i_4_md_a_3__8 = new Class(
 {
@@ -214,11 +211,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__9: calculate length of a rectangle (non-square) given width and perimeter */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_9',4.2809,'4.md.a.3','calculate length of a rectangle (non-square) given width and perimeter');
+*/
 
 var i_4_md_a_3__9 = new Class(
 {
@@ -300,9 +295,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__10: calculate width of a rectangle (non-square) given length and perimeter */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_10',4.2810,'4.md.a.3','calculate width of a rectangle (non-square) given length and perimeter');
+*/
 
 var i_4_md_a_3__10 = new Class(
 {
@@ -384,11 +379,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__1: calculate area of a rectangle (non-square)  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',4.2801,'4.md.a.3','calculate area of a rectangle (non-square)');
+*/
 
 var i_4_md_a_3__1 = new Class(
 {
@@ -470,10 +463,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__2: calculate area of a square  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',4.2802,'4.md.a.3','calculate area of a square');
+*/
 
 var i_4_md_a_3__2 = new Class(
 {
@@ -535,15 +527,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-
-
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__5: calculate side of a square given area  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_5',4.2805,'4.md.a.3','calculate side of a square given area');
+*/
 
 var i_4_md_a_3__5 = new Class(
 {
@@ -605,18 +591,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-
-
-
-
-
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__3: calculate length of a rectangle (non-square) given width and area */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_3',4.2803,'4.md.a.3','calculate length of a rectangle (non-square) given width and area');
+*/
 
 var i_4_md_a_3__3 = new Class(
 {
@@ -698,14 +675,9 @@ Extends: TextItem,
 			}
 });
 
-
-
-
-
-
-
-
-/* TYPE_DESCRIPTION: i_4_md_a_3__4: calculate width of a rectangle (non-square) given length and area */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_4',4.2804,'4.md.a.3','calculate width of a rectangle (non-square) given length and area');
+*/
 
 var i_4_md_a_3__4 = new Class(
 {
@@ -786,7 +758,3 @@ Extends: TextItem,
 				
 			}
 });
-
-
-
-//add

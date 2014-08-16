@@ -64,6 +64,16 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',0.1001,'k.cc.c.7','Compare 2 numbers with greater than.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',0.1002,'k.cc.c.7','Compare 2 numbers with equal to.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',0.1003,'k.cc.c.7','Compare 2 numbers with less than.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_6',4.2806,'4.md.a.3','calculate perimeter of a rectangle (non-square)');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_7',4.2807,'4.md.a.3','calculate perimeter of a square');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_8',4.2808,'4.md.a.3','calculate side of a square given perimeter');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_9',4.2809,'4.md.a.3','calculate length of a rectangle (non-square) given width and perimeter');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_10',4.2810,'4.md.a.3','calculate width of a rectangle (non-square) given length and perimeter');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',4.2801,'4.md.a.3','calculate area of a rectangle (non-square)');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',4.2802,'4.md.a.3','calculate area of a square');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_5',4.2805,'4.md.a.3','calculate side of a square given area');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_3',4.2803,'4.md.a.3','calculate length of a rectangle (non-square) given width and area');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_4',4.2804,'4.md.a.3','calculate width of a rectangle (non-square) given length and area');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.5_2',0.1502,'k.oa.a.5','Subtract within 5.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.5_1',0.1501,'k.oa.a.5','Add within 5.');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_1',4.0601,'4.nbt.a.1','This type will ask which digit is in the ones column');
@@ -78,6 +88,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_10',4.0610,'4.nbt.a.1','This type will give tens and ask for ones');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_1',4.0901,'4.nbt.b.4','adding numbers up to 6 digits');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_2',4.0902,'4.nbt.b.4','subtracting numbers up to 6 digits');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.2_1',4.1301,'4.nf.a.1','Compare two fractions with different numerators and denominators');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',4.0701,'4.nbt.a.2','This type will give the name and ask for number');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_2',4.0702,'4.nbt.a.2','This type will give the number and ask for name');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_3',4.0703,'4.nbt.a.2','This type will give number and ask for expanded form');
