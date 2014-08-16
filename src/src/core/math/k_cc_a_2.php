@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_1',1.201,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_1',0.0201,'k.cc.a.2','This type will ask what 2 numbers come next after a number from 0-99.');
 */
 
 var i_k_cc_a_2__1 = new Class(
@@ -38,7 +38,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_2',1.202,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_2',0.0202,'k.cc.a.2','This type will ask what 3 numbers come next after a number from 0-99.');
 */
 
 var i_k_cc_a_2__2 = new Class(
@@ -77,7 +77,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_3',1.203,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_3',0.0203,'k.cc.a.2','This type will ask what the missing number is. e.g. What is the missing number? 1,2,3,_,5,6,7. This will be done up to 100.');
 */
 
 var i_k_cc_a_2__3 = new Class(
@@ -112,7 +112,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-        insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_4',1.204,'k.cc.a.2','What comes next after a number from 0-10 that does not end in 0 or 9.');
+        insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_4',0.0204,'k.cc.a.2','What comes next after a number from 0-10 that does not end in 0 or 9.');
 */
 
 var i_k_cc_a_2__4 = new Class(
@@ -148,7 +148,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-        insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_5',1.205,'k.cc.a.2','What comes next after a number from 11-99 that does not end in 0 or 9.');
+        insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_5',0.0205,'k.cc.a.2','What comes next after a number from 11-99 that does not end in 0 or 9.');
 */
 
 var i_k_cc_a_2__5 = new Class(
@@ -187,7 +187,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_6',1.206,'k.cc.a.2','What comes next after 9.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_6',0.0206,'k.cc.a.2','What comes next after 9.');
 */
 
 var i_k_cc_a_2__6 = new Class(
@@ -223,7 +223,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_7',1.207,'k.cc.a.2','What comes next after a number ending in 9 from 11-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_7',0.0207,'k.cc.a.2','What comes next after a number ending in 9 from 11-99.');
 */
 
 var i_k_cc_a_2__7 = new Class(
@@ -261,7 +261,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_8',1.208,'k.cc.a.2','What comes next after zero.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_8',0.0208,'k.cc.a.2','What comes next after zero.');
 */
 
 var i_k_cc_a_2__8 = new Class(
@@ -297,7 +297,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_9',1.209,'k.cc.a.2','What comes next after 10.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_9',0.0209,'k.cc.a.2','What comes next after 10.');
 */
 
 var i_k_cc_a_2__9 = new Class(
@@ -333,7 +333,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_10',1.210,'k.cc.a.2','What comes next after number ending in zero from 11-99.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_10',0.0210,'k.cc.a.2','What comes next after number ending in zero from 11-99.');
 */
 
 var i_k_cc_a_2__10 = new Class(
