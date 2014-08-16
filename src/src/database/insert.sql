@@ -154,48 +154,48 @@ insert into finer_types(description) values ('start at number ending in 0 that i
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (1,1,'Know number names and the count sequence.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.cc.a.1
+--1
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.1',1,'Count to 100 by ones and by tens.');
 
---k.cc.a.2
+--2
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.2',1,'Count forward beginning from a given number within the known sequence (instead of having to begin at 1).');
 
---k.cc.a.3
+--3
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.a.3',1,'Write numbers from 0 to 20. Represent a number of objects with a written numeral 0-20 (with 0 representing a count of no objects).');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (2,1,'Count to tell the number of objects.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.cc.b.4
+--4
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4',2,'Understand the relationship between numbers and quantities; connect counting to cardinality.');
 	--types NONE this is actually a heading with a,b,c subheadings below
 
---k.cc.b.4.a
+--5
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.a',2,'When counting objects, say the number names in the standard order, pairing each object with one and only one number name and each number name with one and only one object.');
 	--types NONE YET NOT DOING 
 
 
---k.cc.b.4.b
+--6
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.b',2,'Understand that the last number name said tells the number of objects counted. The number of objects is the same regardless of their arrangement or the order in which they were counted.');
 	--types NONE YET NOT DOING 
 
 
---k.cc.b.4.c
+--7
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.4.c',2,'Understand that each successive number name refers to a quantity that is one larger.');
 	--types NONE YET NOT DOING 
 
---k.cc.b.5
+--8
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.b.5',2,'Count to answer "how many?" questions about as many as 20 things arranged in a line, a rectangular array, or a circle, or as many as 10 things in a scattered configuration; given a number from 1-20, count out that many objects.');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (3,1,'Compare numbers.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.cc.c.6
+--9
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.6',3,'Identify whether the number of objects in one group is greater than, less than, or equal to the number of objects in another group, e.g., by using matching and counting strategies.');
 
---k.cc.c.7
+--10
 insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',3,'Compare two numbers between 1 and 10 presented as written numerals.');
 
 -------------------------------------- OA --------------------------------------------
@@ -205,21 +205,21 @@ insert into core_standards (id,core_clusters_id,description) values ('k.cc.c.7',
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (4,2,'Understand addition, and understand subtraction.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.oa.a.1
+--11
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.1',4,'Represent addition and subtraction with objects, fingers, mental images, drawings1, sounds (e.g., claps), acting out situations, verbal explanations, expressions, or equations.');
 
---k.oa.a.2
+--12
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.2',4,'Solve addition and subtraction word problems, and add and subtract within 10, e.g., by using objects or drawings to represent the problem.');
 
---k.oa.a.3
+--13
 --SKIPPING
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.3',4,'Decompose numbers less than or equal to 10 into pairs in more than one way, e.g., by using objects or drawings, and record each decomposition by a drawing or equation (e.g., 5 = 2 + 3 and 5 = 4 + 1).');
 
 
---k.oa.a.4
+--14
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.4',4,'For any number from 1 to 9, find the number that makes 10 when added to the given number, e.g., by using objects or drawings, and record the answer with a drawing or equation.');
 
---k.oa.a.5
+--15
 insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.5',4,'Fluently add and subtract within 5.');
 
 
@@ -230,7 +230,7 @@ insert into core_standards (id,core_clusters_id,description) values ('k.oa.a.5',
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (5,3,'Work with numbers 11-19 to gain foundations for place value.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.nbt.a.1
+--16
 insert into core_standards (id,core_clusters_id,description) values ('k.nbt.a.1',5,'Compose and decompose numbers from 11 to 19 into ten ones and some further ones, e.g., by using objects or drawings, and record each composition or decomposition by a drawing or equation (such as 18 = 10 + 8); understand that these numbers are composed of ten ones and one, two, three, four, five, six, seven, eight, or nine ones.');
 
 
@@ -240,10 +240,10 @@ insert into core_standards (id,core_clusters_id,description) values ('k.nbt.a.1'
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (6,4,'Describe and compare measurable attributes.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.md.a.1
+--17
 insert into core_standards (id,core_clusters_id,description) values ('k.md.a.1',6,'Describe measurable attributes of objects, such as length or weight. Describe several measurable attributes of a single object.');
 	-- NO TYPES
---k.md.a.2
+--18
 insert into core_standards (id,core_clusters_id,description) values ('k.md.a.2',6,'Directly compare two objects with a measurable attribute in common, to see which object has "more of"/"less of" the attribute, and describe the difference. For example, directly compare the heights of two children and describe one child as taller/shorter.');
 	-- NO TYPES
 
@@ -252,6 +252,7 @@ insert into core_standards (id,core_clusters_id,description) values ('k.md.a.2',
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (7,4,'Classify objects and count the number of objects in each category.');
 --------------------------------------CLUSTER------------------------------------------- 
+--19
 insert into core_standards (id,core_clusters_id,description) values ('k.md.b.3',7,'Classify objects into given categories; count the numbers of objects in each category and sort the categories by count.');
 	-- NO TYPES
 
@@ -261,15 +262,15 @@ insert into core_standards (id,core_clusters_id,description) values ('k.md.b.3',
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (8,5,'Identify and describe shapes.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.g.a.1
+--20
 insert into core_standards (id,core_clusters_id,description) values ('k.g.a.1',8,'Describe objects in the environment using names of shapes, and describe the relative positions of these objects using terms such as above, below, beside, in front of, behind, and next to.');
 	-- NO TYPES
 
---k.g.a.2
+--21
 insert into core_standards (id,core_clusters_id,description) values ('k.g.a.2',8,'Correctly name shapes regardless of their orientations or overall size.');
 	-- NO TYPES
 
---k.g.a.3
+--22
 insert into core_standards (id,core_clusters_id,description) values ('k.g.a.3',8,'Identify shapes as two-dimensional (lying in a plane, "flat") or three-dimensional ("solid").');
 	-- NO TYPES
 
@@ -278,15 +279,15 @@ insert into core_standards (id,core_clusters_id,description) values ('k.g.a.3',8
 --------------------------------------CLUSTER------------------------------------------- 
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (9,5,'Analyze, compare, create, and compose shapes.');
 --------------------------------------CLUSTER------------------------------------------- 
---k.g.b.4
+--23
 insert into core_standards (id,core_clusters_id,description) values ('k.g.b.4',9,'Analyze and compare two- and three-dimensional shapes, in different sizes and orientations, using informal language to describe their similarities, differences, parts (e.g., number of sides and vertices/"corners") and other attributes (e.g., having sides of equal length).');
 	-- NO TYPES
 
---k.g.b.5
+--24
 insert into core_standards (id,core_clusters_id,description) values ('k.g.b.5',9,'Model shapes in the world by building shapes from components (e.g., sticks and clay balls) and drawing shapes.');
 	-- NO TYPES
 
---k.g.b.6
+--25
 insert into core_standards (id,core_clusters_id,description) values ('k.g.b.6',9,'Compose simple shapes to form larger shapes. For example, "Can you join these two triangles with full sides touching to make a rectangle?"');
 	-- NO TYPE
 ------------------------------GRADE 1------------------------------
