@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',2.04,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',0.0804,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
 */
 
 var i_k_cc_b_5__4 = new Class(
@@ -89,7 +89,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',2.03,'k.cc.b.5','Count the objects up to 20 in a circle.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',0.0803,'k.cc.b.5','Count the objects up to 20 in a circle.');
 */
 
 var i_k_cc_b_5__3 = new Class(
@@ -178,7 +178,7 @@ this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-85),this.mSheet.
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',2.02,'k.cc.b.5','Count the objects up to 20 in a line.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',0.0802,'k.cc.b.5','Count the objects up to 20 in a line.');
 */
 
 var i_k_cc_b_5__2 = new Class(
@@ -235,7 +235,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',2.01,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',0.0801,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
 */
 
 var i_k_cc_b_5__1 = new Class(

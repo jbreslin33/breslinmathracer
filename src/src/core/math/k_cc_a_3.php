@@ -1,4 +1,4 @@
-/* TYPE_DESCRIPTION: Count the objects from 1 - 10. */
+
 var i_k_cc_a_3__1 = new Class(
 {
 Extends: ThreeButtonItem,

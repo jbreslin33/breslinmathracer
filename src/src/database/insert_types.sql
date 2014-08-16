@@ -49,10 +49,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',3.101,'k.cc.c.6','Compare 10 objects with greater than.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',3.102,'k.cc.c.6','Compare 10 objects with equal to.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',3.103,'k.cc.c.6','Compare 10 objects with less than.');
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',2.04,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',2.03,'k.cc.b.5','Count the objects up to 20 in a circle.');
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',2.02,'k.cc.b.5','Count the objects up to 20 in a line.');
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',2.01,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_4',0.0804,'k.cc.b.5','Count the objects up to 10 in scattered pattern.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_3',0.0803,'k.cc.b.5','Count the objects up to 20 in a circle.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_2',0.0802,'k.cc.b.5','Count the objects up to 20 in a line.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.5_1',0.0801,'k.cc.b.5','Count the objects up to 20 in a rectangular array.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1.0101,'k.cc.a.1','What comes next when counting by ten from numbers that end in zero from 10 to 100.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',3.201,'k.cc.c.7','Compare 2 numbers with greater than.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',3.202,'k.cc.c.7','Compare 2 numbers with equal to.');
@@ -69,5 +69,5 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_8',4.0608,'4.nbt.a.1','This type will give hundreds and ask for tens');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_9',4.0609,'4.nbt.a.1','This type will give hundreds and ask for ones');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_10',4.0610,'4.nbt.a.1','This type will give tens and ask for ones');
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',4.101,'k.oa.a.1','Add within 5 with pictures to help.');
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',0.1101,'k.oa.a.1','Add within 5 with pictures to help.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',0.1102,'k.oa.a.1','Subtract within 5 with pictures to help');
