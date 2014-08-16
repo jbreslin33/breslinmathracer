@@ -1,5 +1,5 @@
 /* 
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',1.0101,'k.cc.a.1','What comes next when counting by ten from numbers that end in zero from 10 to 100.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.1_1',0.0101,'k.cc.a.1','What comes next when counting by ten from numbers that end in zero from 10 to 100.');
 */
 var i_k_cc_a_1__1 = new Class(
 {
