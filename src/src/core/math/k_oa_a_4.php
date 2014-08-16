@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_1',4.401,'k.oa.a.4','');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_1',0.1401,'k.oa.a.4','');
 */
 
 var i_k_oa_a_4__1 = new Class(

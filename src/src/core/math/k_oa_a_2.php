@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_4',4.204,'k.oa.a.2','Subtraction word problems within 10.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_4',0.1204,'k.oa.a.2','Subtraction word problems within 10.');
 */
 
 var i_k_oa_a_2__4 = new Class(
@@ -58,7 +58,7 @@ Extends: ThreeButtonItem,
 });
 
 /*        
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_3',4.203,'k.oa.a.2','Addition word problems within 10.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_3',0.1203,'k.oa.a.2','Addition word problems within 10.');
 */
 
 var i_k_oa_a_2__3 = new Class(
@@ -115,7 +115,7 @@ Extends: ThreeButtonItem,
 });
 
 /*        
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_2',4.202,'k.oa.a.2','Subtract within 10.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_2',0.1202,'k.oa.a.2','Subtract within 10.');
 */
 
 var i_k_oa_a_2__2 = new Class(
@@ -157,7 +157,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_1',4.201,'k.oa.a.2','Add within 10.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.2_1',0.1201,'k.oa.a.2','Add within 10.');
 */
 
 var i_k_oa_a_2__1 = new Class(

@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',3.201,'k.cc.c.7','Compare 2 numbers with greater than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',0.1001,'k.cc.c.7','Compare 2 numbers with greater than.');
 */
 
 var i_k_cc_c_7__1 = new Class(
@@ -47,7 +47,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',3.202,'k.cc.c.7','Compare 2 numbers with equal to.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_2',0.1002,'k.cc.c.7','Compare 2 numbers with equal to.');
 */
 
 var i_k_cc_c_7__2 = new Class(
@@ -88,7 +88,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',3.203,'k.cc.c.7','Compare 2 numbers with less than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',0.1003,'k.cc.c.7','Compare 2 numbers with less than.');
 */
 
 var i_k_cc_c_7__3 = new Class(
