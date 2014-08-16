@@ -57,7 +57,7 @@ this might be toughest i need to give maybe through in one with braces and brack
 ********/
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5022,'5.oa.a.1','f(d(b(a)c)e)g');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5.0122,'5.oa.a.1','f(d(b(a)c)e)g');
 */
 
 var i_5_oa_a_1__22 = new Class(
@@ -99,7 +99,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_21',5022,'5.oa.a.1','((b(a)c)d)e');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_21',5.0121,'5.oa.a.1','((b(a)c)d)e');
 */
 
 var i_5_oa_a_1__21 = new Class(
@@ -136,7 +136,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_20',5022,'5.oa.a.1',' e((b(a)c)d)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_20',5.0120,'5.oa.a.1',' e((b(a)c)d)');
 */
 
 var i_5_oa_a_1__20 = new Class(
@@ -176,7 +176,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_19',5022,'5.oa.a.1','(d(b(a)c))e');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_19',5.0119,'5.oa.a.1','(d(b(a)c))e');
 */
 
 var i_5_oa_a_1__19 = new Class(
@@ -212,7 +212,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_18',5022,'5.oa.a.1','e(d(b(a)c))');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_18',5.0118,'5.oa.a.1','e(d(b(a)c))');
 */
 
 var i_5_oa_a_1__18 = new Class(
@@ -248,7 +248,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_17',5022,'5.oa.a.1','d(b(a)c)e');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_17',5.0117,'5.oa.a.1','d(b(a)c)e');
 */
 
 var i_5_oa_a_1__17 = new Class(
@@ -284,7 +284,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_16',5022,'5.oa.a.1','d(b(a)c)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_16',5.0116,'5.oa.a.1','d(b(a)c)');
 */
 
 var i_5_oa_a_1__16 = new Class(
@@ -318,7 +318,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_15',5022,'5.oa.a.1',' c(b(a))');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_15',5.0115,'5.oa.a.1',' c(b(a))');
 */
 
 var i_5_oa_a_1__15 = new Class(
@@ -357,7 +357,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_14',5022,'5.oa.a.1','c((a)b)d');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_14',5.0114,'5.oa.a.1','c((a)b)d');
 */
 
 var i_5_oa_a_1__14 = new Class(
@@ -392,7 +392,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_13',5022,'5.oa.a.1','(c(a)b)d');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_13',5.0113,'5.oa.a.1','(c(a)b)d');
 */
 
 var i_5_oa_a_1__13 = new Class(
@@ -432,7 +432,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_12',5022,'5.oa.a.1','((a)b)c');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_12',5.0112,'5.oa.a.1','((a)b)c');
 */
 
 //this might be marked as huge multiplication...in db
@@ -466,7 +466,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_11',5022,'5.oa.a.1','c(a)d(b)e');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_11',5.0111,'5.oa.a.1','c(a)d(b)e');
 */
 
 //this might be marked as huge multiplication...in db
@@ -510,7 +510,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_10',5022,'5.oa.a.1','c(a)(b)d');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_10',5.0110,'5.oa.a.1','c(a)(b)d');
 */
 
 var i_5_oa_a_1__10 = new Class(
@@ -552,7 +552,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_9',5022,'5.oa.a.1','(a)c(b)d');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_9',5.0109,'5.oa.a.1','(a)c(b)d');
 */
 
 var i_5_oa_a_1__9 = new Class(
@@ -595,7 +595,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_8',5022,'5.oa.a.1','c(a)d(b)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_8',5.0108,'5.oa.a.1','c(a)d(b)');
 */
 
 var i_5_oa_a_1__8 = new Class(
@@ -636,7 +636,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_7',5022,'5.oa.a.1','c(a)(b)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_7',5.0107,'5.oa.a.1','c(a)(b)');
 */
 
 var i_5_oa_a_1__7 = new Class(
@@ -674,7 +674,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_6',5022,'5.oa.a.1','c(a)(b)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_6',5.0106,'5.oa.a.1','c(a)(b)');
 */
 
 var i_5_oa_a_1__6 = new Class(
@@ -714,7 +714,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_5',5022,'5.oa.a.1','c(a)(b)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_5',5.0105,'5.oa.a.1','c(a)(b)');
 */
 
 var i_5_oa_a_1__5 = new Class(
@@ -754,7 +754,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_4',5022,'5.oa.a.1','(a)(b)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_4',5.0104,'5.oa.a.1','(a)(b)');
 */
 
 var i_5_oa_a_1__4 = new Class(
@@ -785,7 +785,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_3',5022,'5.oa.a.1','b(a)c');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_3',5.0103,'5.oa.a.1','b(a)c');
 */
 
 var i_5_oa_a_1__3 = new Class(
@@ -815,7 +815,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_2',5022,'5.oa.a.1','(a)b');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_2',5.0102,'5.oa.a.1','(a)b');
 */
 
 var i_5_oa_a_1__2 = new Class(
@@ -843,7 +843,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_1',5022,'5.oa.a.1','b(a)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_1',5.0101,'5.oa.a.1','b(a)');
 */
 
 var i_5_oa_a_1__1 = new Class(
