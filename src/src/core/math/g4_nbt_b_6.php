@@ -1,4 +1,7 @@
-/* TYPE_DESCRIPTION: i_4_nbt_b_6_t_1: divide number up to 4 digit by one digit number  */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_1',4.1101,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+*/
 
 var i_4_nbt_b_6__1 = new Class(
 {
@@ -48,9 +51,9 @@ Extends: TextItem2,
    }
 });
 
-
-
-/* TYPE_DESCRIPTION: i_4_nbt_b_6_t_2: divide number up to 4 digit by one digit number  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_2',4.1102,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+*/
 
 var i_4_nbt_b_6__2 = new Class(
 {
@@ -100,9 +103,9 @@ Extends: ThreeButtonItem,
    }
 });
 
-
-
-/* TYPE_DESCRIPTION: i_4_nbt_b_6_t_3: divide number up to 4 digit by one digit number  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_3',4.1103,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+*/
 
 var i_4_nbt_b_6__3 = new Class(
 {
@@ -160,9 +163,3 @@ Extends: ThreeButtonItem,
        this.shuffle(1);this.shuffle(1);
    }
 });
-
-
-
-//add
-
-//add

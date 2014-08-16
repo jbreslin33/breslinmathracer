@@ -1,4 +1,7 @@
-/* TYPE_DESCRIPTION: i_4_nbt_b_4_t_1: adding numbers up to 6 digits */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_1',4.0901,'4.nbt.b.4','adding numbers up to 6 digits');
+*/
 
 var i_4_nbt_b_4__1 = new Class(
 {
@@ -44,8 +47,9 @@ Extends: TextItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_b_4_t_2: subtracting numbers up to 6 digits */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_2',4.0902,'4.nbt.b.4','subtracting numbers up to 6 digits');
+*/
 
 var i_4_nbt_b_4__2 = new Class(
 {
@@ -102,6 +106,3 @@ Extends: TextItem,
 				this.mQuestionLabel.setSize(200, 100);               
         }
 });
-
-
-//add
