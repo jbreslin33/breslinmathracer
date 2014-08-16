@@ -1,5 +1,6 @@
-/* TYPE_DESCRIPTION: 
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',4.0701,'4.nbt.a.2','This type will give the name and ask for number');
 */
 
 var i_4_nbt_a_2__1 = new Class(
@@ -119,8 +120,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_2_t_2: This type will give the number and ask for name. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_2',4.0702,'4.nbt.a.2','This type will give the number and ask for name');
+*/
 
 var i_4_nbt_a_2__2 = new Class(
 {
@@ -280,8 +282,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_2_t_3: This type will give number and ask for expanded form. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_3',4.0703,'4.nbt.a.2','This type will give number and ask for expanded form');
+*/
 
 var i_4_nbt_a_2__3 = new Class(
 {
@@ -387,8 +390,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_2_t_4: This type will give expanded form and ask for number. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_4',4.0704,'4.nbt.a.2','This type will give expanded form and ask for number');
+*/
 
 var i_4_nbt_a_2__4 = new Class(
 {
@@ -464,8 +468,9 @@ Extends: ThreeButtonItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_2_t_5: This type will will ask >, <, =. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_5',4.0705,'4.nbt.a.2','This type will will ask >, <, = based on place value');
+*/
 
 var i_4_nbt_a_2__5 = new Class(
 {
@@ -535,6 +540,3 @@ Extends: ThreeButtonItem,
 
         }
 });
-
-//add
-
