@@ -1,4 +1,7 @@
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_1: This type will ask which digit is in the ones column. */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_1',4.0601,'4.nbt.a.1','This type will ask which digit is in the ones column');
+*/
 
 var i_4_nbt_a_1__1 = new Class(
 {
@@ -46,8 +49,9 @@ Extends: TextItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_2: This type will ask which digit is in the tens column. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_2',4.0602,'4.nbt.a.1','This type will ask which digit is in the tens column');
+*/
 
 var i_4_nbt_a_1__2 = new Class(
 {
@@ -91,8 +95,9 @@ Extends: TextItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_3: This type will ask which digit is in the hundreds column. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_3',4.0603,'4.nbt.a.1','This type will ask which digit is in the hundreds column');
+*/
 
 var i_4_nbt_a_1__3 = new Class(
 {
@@ -136,8 +141,9 @@ Extends: TextItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_4: This type will ask which digit is in the thousands column. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_4',4.0604,'4.nbt.a.1','This type will ask which digit is in the thousands column');
+*/
 
 var i_4_nbt_a_1__4 = new Class(
 {
@@ -181,8 +187,9 @@ Extends: TextItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_5: This type will give thousands and ask for hundreds. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_5',4.0605,'4.nbt.a.1','This type will give thousands and ask for hundreds');
+*/
 
 var i_4_nbt_a_1__5 = new Class(
 {
@@ -211,7 +218,9 @@ Extends: TextItem,
 });
 
 
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_6: This type will give thousands and ask for tens. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_6',4.0606,'4.nbt.a.1','This type will give thousands and ask for tens');
+*/
 
 var i_4_nbt_a_1__6 = new Class(
 {
@@ -239,8 +248,9 @@ Extends: TextItem,
         }
 });
 
-
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_7: This type will give thousands and ask for ones. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_7',4.0607,'4.nbt.a.1','This type will give thousands and ask for ones');
+*/
 
 var i_4_nbt_a_1__7 = new Class(
 {
@@ -268,7 +278,9 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_8: This type will give hundreds and ask for tens. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_8',4.0608,'4.nbt.a.1','This type will give hundreds and ask for tens');
+*/
 
 var i_4_nbt_a_1__8 = new Class(
 {
@@ -296,7 +308,9 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_9: This type will give hundreds and ask for ones. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_9',4.0609,'4.nbt.a.1','This type will give hundreds and ask for ones');
+*/
 
 var i_4_nbt_a_1__9 = new Class(
 {
@@ -324,7 +338,9 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4_nbt_a_1_t_10: This type will give tens and ask for ones. */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_10',4.0610,'4.nbt.a.1','This type will give tens and ask for ones');
+*/
 
 var i_4_nbt_a_1__10 = new Class(
 {
@@ -351,6 +367,3 @@ Extends: TextItem,
 
         }
 });
-
-//add
-
