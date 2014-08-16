@@ -1,4 +1,6 @@
-/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_1: multiply 2 digit numbers  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_1',4.1001,'4.nbt.b.5','multiply numbers up to 2 digits');
+*/
 
 var i_4_nbt_b_5__1 = new Class(
 {
@@ -35,7 +37,9 @@ Extends: TextItem,
         }
 });
 
-/* TYPE_DESCRIPTION: i_4_nbt_b_5_t_2: Multiply a whole number of up to four digits by a one-digit whole number  */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',4.1002,'4.nbt.b.5','multiply numbers up to 4 digits');
+*/
 
 var i_4_nbt_b_5__2 = new Class(
 {
@@ -74,6 +78,3 @@ Extends: TextItem,
             this.setAnswer(varC,0);             
         }
 });
-
-
-//add

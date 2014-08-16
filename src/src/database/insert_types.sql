@@ -36,6 +36,9 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_9',0.0209,'k.cc.a.2','What comes next after 10.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.a.2_10',0.0210,'k.cc.a.2','What comes next after number ending in zero from 11-99.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_1',0.1401,'k.oa.a.4','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_1',4.1101,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_2',4.1102,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_3',4.1103,'4.nbt.b.6','divide number up to 4 digit by one digit number');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_13',5.0213,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_12',5.0212,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted ');
@@ -69,10 +72,14 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_8',4.0608,'4.nbt.a.1','This type will give hundreds and ask for tens');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_9',4.0609,'4.nbt.a.1','This type will give hundreds and ask for ones');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_10',4.0610,'4.nbt.a.1','This type will give tens and ask for ones');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_1',4.0901,'4.nbt.b.4','adding numbers up to 6 digits');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_2',4.0902,'4.nbt.b.4','subtracting numbers up to 6 digits');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_1',4.0701,'4.nbt.a.2','This type will give the name and ask for number');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_2',4.0702,'4.nbt.a.2','This type will give the number and ask for name');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_3',4.0703,'4.nbt.a.2','This type will give number and ask for expanded form');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_4',4.0704,'4.nbt.a.2','This type will give expanded form and ask for number');
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_5',4.0705,'4.nbt.a.2','This type will will ask >, <, = based on place value');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_1',4.1001,'4.nbt.b.5','multiply numbers up to 2 digits');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',4.1002,'4.nbt.b.5','multiply numbers up to 4 digits');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_1',0.1101,'k.oa.a.1','Add within 5 with pictures to help.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',0.1102,'k.oa.a.1','Subtract within 5 with pictures to help');
