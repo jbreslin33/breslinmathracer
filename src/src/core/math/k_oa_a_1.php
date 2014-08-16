@@ -75,7 +75,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.1_2',4.102,'k.oa.a.1','Subtract within 5 with pictures to help');
 */
 
 var i_k_oa_a_1__2 = new Class(
