@@ -49,6 +49,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_3',5.0203,'5.oa.a.2','Write expression based off sentence expression. Words used: difference, times .');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_2',5.0202,'5.oa.a.2','Write expression based off sentence expression. Words used: times, sum.');
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_1',5.0201,'5.oa.a.2','Write expression based off sentence expression. Words used add, multiply.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_1',4.1201,'4.nf.a.1','put fraction in higher form by finding missing denominator');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_2',4.1202,'4.nf.a.1','put fraction in higher form by finding missing numerator');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_3',4.1203,'4.nf.a.1','put fraction in lower form by finding missing denominator');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_4',4.1204,'4.nf.a.1','put fraction in lower form by finding missing numerator');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',0.0901,'k.cc.c.6','Compare 10 objects with greater than.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',0.0902,'k.cc.c.6','Compare 10 objects with equal to.');
 insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',0.0903,'k.cc.c.6','Compare 10 objects with less than.');
