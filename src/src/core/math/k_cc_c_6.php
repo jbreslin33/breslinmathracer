@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',3.101,'k.cc.c.6','Compare 10 objects with greater than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_1',0.0901,'k.cc.c.6','Compare 10 objects with greater than.');
 */
 
 var i_k_cc_c_6__1 = new Class(
@@ -66,7 +66,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',3.102,'k.cc.c.6','Compare 10 objects with equal to.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_2',0.0902,'k.cc.c.6','Compare 10 objects with equal to.');
 */
 
 var i_k_cc_c_6__2 = new Class(
@@ -126,7 +126,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',3.103,'k.cc.c.6','Compare 10 objects with less than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.6_3',0.0903,'k.cc.c.6','Compare 10 objects with less than.');
 */
 
 var i_k_cc_c_6__3 = new Class(
