@@ -95,7 +95,6 @@ Extends: Item,
         {
                 if (e.keyCode == 13)
                 {
-                       	// APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
