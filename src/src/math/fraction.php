@@ -1,13 +1,16 @@
 var Fraction = new Class(
 {
-        initialize: function(n,d)
+        initialize: function(n,d,reduce)
         {
 		this.mNumerator   = parseInt(n);
 		this.mDenominator = parseInt(d);
 
 		this.mGCD = 0;
 
-		this.reduce();
+		if (reduce)
+		{
+			this.reduce();
+		}
         },
 
 	reduce: function()
@@ -31,9 +34,8 @@ var Fraction = new Class(
 		}
 		else
 		{
-			return this.mNumerator + '/' + this.mDenominator
+			return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
+			//return this.mNumerator + '/' + this.mDenominator
 		}
 	}
 });
-
-
