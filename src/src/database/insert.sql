@@ -737,7 +737,7 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 --14
 insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3',48,'Understand a fraction a/b with a > 1 as a sum of fractions 1/b.');
 --15
-insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3.a',48,'Understand addition and subtraction of fractions as joining and separating parts referring to the same whole.');
+insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3a',48,'Understand addition and subtraction of fractions as joining and separating parts referring to the same whole.');
 --16
 insert into core_standards (id,core_clusters_id,description) values ('4.nf.b.3.b',48,'Decompose a fraction into a sum of fractions with the same denominator in more than one way, recording each decomposition by an equation. Justify decompositions, e.g., by using a visual fraction model. Examples: 3/8 = 1/8 + 1/8 + 1/8 ; 3/8 = 1/8 + 2/8 ; 2 1/8 = 1 + 1 + 1/8 = 8/8 + 8/8 + 1/8.');
 --17
