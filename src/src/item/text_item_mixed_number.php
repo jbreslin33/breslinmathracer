@@ -1,10 +1,10 @@
 /*
-TextItemMixedNumber: this class handles mixed numbers as user answers.
+TextItemMixedNumber: this class input of mixed numbers for answers.
 */
 var TextItemMixedNumber = new Class(
 {
 Extends: Item,
-        initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
+        initialize: function(sheet,qw,qh,qx,qy,iw,ih,ix,iy,nw,nh,nx,ny,dw,dh,dx,dy)
         {
 		this.parent(sheet);
 
@@ -13,8 +13,14 @@ Extends: Item,
 			this.mQuestionLabel.setSize(100,50);
 			this.mQuestionLabel.setPosition(325,95);
 		
-			this.mAnswerTextBox.setSize(100,50);
-			this.mAnswerTextBox.setPosition(425,100);
+			this.mIntegerTextBox.setSize(100,50);
+			this.mIntegerTextBox.setPosition(425,100);
+			
+			this.mNumeratorTextBox.setSize(100,50);
+			this.mNumeratorTextBox.setPosition(550,100);
+			
+			this.mDenominatorTextBox.setSize(100,50);
+			this.mDenominatorTextBox.setPosition(550,225);
 		}
 		else
 		{
@@ -43,17 +49,20 @@ Extends: Item,
 		this.mQuestionLabel.setText(this.mQuestion);
 
  		//answer Input
-                this.mAnswerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
-                this.mAnswerTextBox.mMesh.value = '';
+                this.mIntegerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
+                this.mIntegerTextBox.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mAnswerTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+                        this.mIntegerTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
                 }
                 else
                 {
-                        this.mAnswerTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mIntegerTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
-                this.addShape(this.mAnswerTextBox);
+                this.addShape(this.mIntegerTextBox);
+
+
+
 		
 		//user Answer label
                 this.mUserAnswerLabel = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
@@ -166,6 +175,8 @@ Extends: Item,
 			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()); 
 			this.mCorrectAnswerLabel.setVisibility(true);
 		}
+		this.hideAnswerInputs();
+		this.showUserAnswer();
         },
 
         hideCorrectAnswer: function()
