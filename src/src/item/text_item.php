@@ -166,6 +166,8 @@ Extends: Item,
 			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()); 
 			this.mCorrectAnswerLabel.setVisibility(true);
 		}
+		this.hideAnswerInputs();
+		this.showUserAnswer();
         },
 
         hideCorrectAnswer: function()
