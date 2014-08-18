@@ -7,7 +7,6 @@ Extends: Item,
         //initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy,bh,bw,bx,by)
         initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy)
         {
-                this.mRaphael = Raphael(10, 35, 760, 405);
 		this.parent(sheet);
 	
 
@@ -20,7 +19,7 @@ Extends: Item,
 			this.mNumeratorTextBox.setPosition(550,100);
 			
 			//this.mFractionBar.setSize(100,300);
-			this.mFractionBar.setPosition(550,100);
+			this.mFractionBar.setPosition(650,100);
 			
 			this.mDenominatorTextBox.setSize(100,50);
 			this.mDenominatorTextBox.setPosition(550,225);
@@ -61,8 +60,7 @@ Extends: Item,
                 this.mNumeratorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mNumeratorTextBox.mMesh.value = '';
                 this.addShape(this.mNumeratorTextBox);
-
-		this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,300,100,400,100,"#0000FF",false)
+                
 
  		//denominatorTextBox 
                 this.mDenominatorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
@@ -92,6 +90,9 @@ Extends: Item,
                 this.mCorrectAnswerLabel.mCollisionOn = false;
                 this.mCorrectAnswerLabel.setText(this.mQuestion);
 		this.mCorrectAnswerLabel.setVisibility(false);
+		
+		this.mRaphael = Raphael(300,130,100,5);
+		this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,0,0,100,0,"#000000",false)
         },
 
 	inputKeyHit: function(e)
@@ -164,6 +165,10 @@ Extends: Item,
 		{
 			this.mDenominatorTextBox.setVisibility(true);
 		}
+		if (this.mFractionBar)
+		{
+			this.mFractionBar.setVisibility(true);
+		}
 	},
 
 	hideAnswerInputs: function()
@@ -175,6 +180,10 @@ Extends: Item,
 		if (this.mDenominatorTextBox)
 		{
 			this.mDenominatorTextBox.setVisibility(false);
+		}
+		if (this.mFractionBar)
+		{
+			this.mFractionBar.setVisibility(false);
 		}
 	},
 

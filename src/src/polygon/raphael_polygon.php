@@ -36,10 +36,12 @@ Extends: Polygon,
 	{
              	if (b)
                 {
+			APPLICATION.log('setvis:show');
                         this.mPolygon.show();
                 }
                 else
                 {
+			APPLICATION.log('setvis:hide');
                         this.mPolygon.hide();
                 }
 	},
