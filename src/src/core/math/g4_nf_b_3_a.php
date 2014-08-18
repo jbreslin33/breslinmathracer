@@ -53,7 +53,7 @@ Extends: TextItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_2',4.1401,'4.nf.b.3a','subtract 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_2',4.1402,'4.nf.b.3a','subtract 2 fractions with like denominators');
 */
 
 var i_4_nf_b_3a__2 = new Class(
@@ -104,7 +104,7 @@ Extends: TextItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_3',4.1401,'4.nf.b.3a','add 3 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_3',4.1403,'4.nf.b.3a','add 3 fractions with like denominators');
 */
 
 var i_4_nf_b_3a__3 = new Class(
