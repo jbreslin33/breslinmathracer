@@ -20,7 +20,7 @@ Extends: Item,
 			this.mNumeratorTextBox.setPosition(550,100);
 			
 			//this.mFractionBar.setSize(100,300);
-			//this.mFractionBar.setPosition(550,100);
+			this.mFractionBar.setPosition(550,100);
 			
 			this.mDenominatorTextBox.setSize(100,50);
 			this.mDenominatorTextBox.setPosition(550,225);
@@ -62,7 +62,7 @@ Extends: Item,
                 this.mNumeratorTextBox.mMesh.value = '';
                 this.addShape(this.mNumeratorTextBox);
 
-		this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,100,300,100,250,"#0000FF",false)
+		this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,300,100,400,100,"#0000FF",false)
 
  		//denominatorTextBox 
                 this.mDenominatorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
