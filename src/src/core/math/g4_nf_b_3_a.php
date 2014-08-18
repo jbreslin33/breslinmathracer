@@ -1,11 +1,11 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_1',4.1401,'4.nf.b.3a','Compare two fractions with different numerators and denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_1',4.1401,'4.nf.b.3a','add 2 fractions with like denominators');
 */
 
 var i_4_nf_b_3a__1 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
    initialize: function(sheet)
    {
       this.parent(sheet);
@@ -24,67 +24,139 @@ Extends: ThreeButtonItem,
 
 		var question;
 		var answer;
-		var diff = 0;
-		
-	  if(rand == 0)
-		{
 
-			// pick random number (1 - 9)
-			varA = 1 + Math.floor((Math.random()*9));
 
-			// pick random number from 2-12 (greater than varA)
-			varB = varA + (1 + Math.floor((Math.random()*(12-varA))));
+			// get bottom number
+			varB = 6 + Math.floor(Math.random()*22);
 
-			varC = 1 + Math.floor((Math.random()*9));
-			varD = varC + (1 + Math.floor((Math.random()*(12-varA))));
+			// get top number
+			max = Math.floor(varB/2);
+			varA = 1 + Math.floor((Math.random()*(max-1)));
 
-			if(varA == varC && varB == varD)
-			   varA = varA + 1;
+			varC = 1 + Math.floor((Math.random()*max));
+			varD = varB;
 
-		 }
-		 else
-		 {
-
-			// pick random number (1 - 5)
-			varA = 1 + Math.floor((Math.random()*5));
-
-			// pick random number from 2-10 (greater than varA)
-			varB = varA + (1 + Math.floor((Math.random()*(10-varA))));
-
-			// pick random number (2 - 4) as a multiplier
-			varN = 2 + Math.floor((Math.random()*3));
-
-			varC = varA * varN;
-			varD = varB * varN;
-
-		 }
-
-			diff = varA/varB - varC/varD;
-
-			if(diff > 0)
-			   answer = 'greater than';
-			else if(diff < 0)
-			   answer = 'less than';
-			else
-			   answer = 'equal to';
+			answer = varA + varC;
 			
-			question = '' + varA + ' / ' +  varB + ' is ? ' + '' + varC + ' / ' +  varD;
+			question = '' + varA + ' / ' +  varB + ' + ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD;
 
 			this.setQuestion(question);
       this.setAnswer('' + answer,0);
 
-      this.mButtonA.setAnswer('greater than');
-      this.mButtonB.setAnswer('less than');
-      this.mButtonC.setAnswer('equal to');
-      //this.shuffle(1);
-
-      //this.mQuestionLabel.setSize(200,50);
-      //this.mQuestionLabel.setPosition(275,95);
+      this.mQuestionLabel.setSize(200,50);
+      this.mQuestionLabel.setPosition(275,125);
    }
 });
 
 
 
-//add
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_2',4.1401,'4.nf.b.3a','subtract 2 fractions with like denominators');
+*/
+
+var i_4_nf_b_3a__2 = new Class(
+{
+Extends: TextItem,
+   initialize: function(sheet)
+   {
+      this.parent(sheet);
+      this.mType = '4.nf.b.3a_2';
+       	
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+		var varD = 0;
+		var varN = 0;
+
+
+		var start = 0;
+		var end = 0;
+		var rand = 0;
+
+		var question;
+		var answer;
+
+
+			// get bottom number
+			varB = 6 + Math.floor(Math.random()*22);
+
+			// get top number
+			varA = 2 + Math.floor(Math.random()*(varB-2));
+			
+			varC = 1 + Math.floor(Math.random()*(varA-1));
+			//1 + Math.floor((Math.random()*max));
+			varD = varB;
+
+			answer = varA - varC;
+			
+			question = '' + varA + ' / ' +  varB + ' - ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD;
+
+			this.setQuestion(question);
+      this.setAnswer('' + answer,0);
+
+      this.mQuestionLabel.setSize(200,50);
+      this.mQuestionLabel.setPosition(275,125);
+   }
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_3',4.1401,'4.nf.b.3a','add 3 fractions with like denominators');
+*/
+
+var i_4_nf_b_3a__3 = new Class(
+{
+Extends: TextItem,
+   initialize: function(sheet)
+   {
+      this.parent(sheet);
+      this.mType = '4.nf.b.3a_3';
+       	
+		var varA = 0;
+		var varB = 0;
+		var varC = 0;
+		var varD = 0;
+    var varE = 0;
+		var varN = 0;
+
+
+		var start = 0;
+		var end = 0;
+		var rand = 0;
+
+		var question;
+		var answer;
+
+
+			// get bottom number
+			varB = 9 + Math.floor(Math.random()*20);
+
+			// get top number
+			max = Math.floor(varB/3);
+			varA = 1 + Math.floor((Math.random()*(max-1)));
+
+			varC = 1 + Math.floor((Math.random()*max));
+
+      varE = 1 + Math.floor((Math.random()*max));
+
+			varD = varB;
+
+			answer = varA + varC + varE;
+			
+			question = '' + varA + '/' +  varB + ' + ' + varC + '/' +  varD + ' + ' + varE + '/' +  varD + ' =' + ' ?/' + varD;
+
+			this.setQuestion(question);
+      this.setAnswer('' + answer,0);
+
+      this.mQuestionLabel.setSize(220,50);
+      this.mQuestionLabel.setPosition(255,145);
+   }
+});
+
+
+
 
 //add
