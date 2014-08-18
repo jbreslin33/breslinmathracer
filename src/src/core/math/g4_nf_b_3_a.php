@@ -3,13 +3,13 @@
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_1',4.1401,'4.nf.b.3a','Compare two fractions with different numerators and denominators');
 */
 
-var i_4_nf_a_2__1 = new Class(
+var i_4_nf_b_3a__1 = new Class(
 {
 Extends: ThreeButtonItem,
    initialize: function(sheet)
    {
       this.parent(sheet);
-      this.mType = '4.nf.a.2_1';
+      this.mType = '4.nf.b.3a_1';
        	
 		var varA = 0;
 		var varB = 0;

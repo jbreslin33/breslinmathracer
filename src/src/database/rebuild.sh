@@ -7,5 +7,5 @@ else
 touch src/database/insert_types.sql
 fi
 > src/database/insert_types.sql
-grep -rhI --exclude="*\.orig"  --exclude-dir=database 'insert into item_types' ./ >> src/database/insert_types.sql
+grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into item_types' ./ >> src/database/insert_types.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/insert_types.sql
