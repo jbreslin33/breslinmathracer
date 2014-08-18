@@ -869,7 +869,6 @@ initialize: function(sheet)
 	var answer = new Fraction(n,ad);	
 	
 	this.setAnswer(answer.getString(),0);
-	APPLICATION.log('ANSWER:' + this.getAnswer());
         this.setQuestion(b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
 }
 });
