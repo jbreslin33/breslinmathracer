@@ -4,9 +4,12 @@ TextItemFraction: this class input of fractions for answers.
 var TextItemFraction = new Class(
 {
 Extends: Item,
+        //initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy,bh,bw,bx,by)
         initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy)
         {
+                this.mRaphael = Raphael(10, 35, 760, 405);
 		this.parent(sheet);
+	
 
 		if (qw == '')
 		{
@@ -15,6 +18,9 @@ Extends: Item,
 		
 			this.mNumeratorTextBox.setSize(100,50);
 			this.mNumeratorTextBox.setPosition(550,100);
+			
+			//this.mFractionBar.setSize(100,300);
+			//this.mFractionBar.setPosition(550,100);
 			
 			this.mDenominatorTextBox.setSize(100,50);
 			this.mDenominatorTextBox.setPosition(550,225);
@@ -26,6 +32,9 @@ Extends: Item,
 		
 			this.mNumeratorTextBox.setSize(nw,nh);
 			this.mNumeratorTextBox.setPosition(nx,ny);
+			
+			//this.mFractionBar.setSize(bh,bh);
+			//this.mFractionBar.setPosition(bx,by);
 			
 			this.mDenominatorTextBox.setSize(dw,dh);
 			this.mDenominatorTextBox.setPosition(dx,dy);
@@ -52,6 +61,8 @@ Extends: Item,
                 this.mNumeratorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mNumeratorTextBox.mMesh.value = '';
                 this.addShape(this.mNumeratorTextBox);
+
+		this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,100,300,100,250,"#0000FF",false)
 
  		//denominatorTextBox 
                 this.mDenominatorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
