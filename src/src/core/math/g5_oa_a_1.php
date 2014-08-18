@@ -871,7 +871,5 @@ initialize: function(sheet)
 	this.setAnswer(answer.getString(),0);
 	APPLICATION.log('ANSWER:' + this.getAnswer());
         this.setQuestion(b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
-        //this.setQuestion(b1 + '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ')'  );
-        //this.setQuestion('<sup>1</sup>&frasl;<sub>10</sub>'  );
 }
 });

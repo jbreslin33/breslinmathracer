@@ -51,16 +51,6 @@ Extends: Item,
  		//numeratorTextBox 
                 this.mNumeratorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mNumeratorTextBox.mMesh.value = '';
-/*
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mNumeratorTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
-                }
-                else
-                {
-                        this.mNumeratorTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
-                }
-*/
                 this.addShape(this.mNumeratorTextBox);
 
  		//denominatorTextBox 
@@ -104,7 +94,11 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value); 
+						//ANSWER:<sup>24</sup>&frasl;<sub>9</sub>
+						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
+						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
+						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 					}
 				}
 			}
