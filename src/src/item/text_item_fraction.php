@@ -94,7 +94,6 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						//ANSWER:<sup>24</sup>&frasl;<sub>9</sub>
 						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
 						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
@@ -115,7 +114,10 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value); 
+						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
+						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
+						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 					}
 				}
 			}
