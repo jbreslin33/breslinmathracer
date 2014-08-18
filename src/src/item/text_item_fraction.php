@@ -104,7 +104,7 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						//APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value); 
 					}
 				}
 			}
@@ -121,7 +121,7 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						//APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
+						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value); 
 					}
 				}
 			}
