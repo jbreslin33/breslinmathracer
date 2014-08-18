@@ -323,24 +323,10 @@ var Item = new Class(
 
 	getAnswer: function(index)
 	{
-		if (index == '')
-		{
-			APPLICATION.log('a');
-			return this.mAnswerArray[0];	
-		}
 		if (index == null)
 		{
-			APPLICATION.log('b');
 			return this.mAnswerArray[0];	
 		}
-		if (index == 0)
-		{
-			APPLICATION.log('c');
-			return this.mAnswerArray[0];	
-		}
-
-		APPLICATION.log('d');
-			
 		return this.mAnswerArray[index];
 	},
 
