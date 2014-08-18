@@ -24,14 +24,17 @@ Extends: Item,
 			this.mQuestionLabel.setSize(qw,qh);
 			this.mQuestionLabel.setPosition(qx,qy);
 		
-			this.mAnswerTextBox.setSize(tw,th);
-			this.mAnswerTextBox.setPosition(tx,ty);
+			this.mNumeratorTextBox.setSize(nw,nh);
+			this.mNumeratorTextBox.setPosition(nx,ny);
+			
+			this.mDenominatorTextBox.setSize(dw,dh);
+			this.mDenominatorTextBox.setPosition(dx,dy);
 		}
 	},
 
 	setTheFocus: function()
 	{
-		this.mAnswerTextBox.mMesh.focus();
+		this.mNumeratorTextBox.mMesh.focus();
 	},
  
 	createShapes: function()
@@ -146,16 +149,25 @@ Extends: Item,
 	//virtual functions that can show and hide buttons??	
 	showAnswerInputs: function()
 	{
-		if (this.mAnswerTextBox)
+		if (this.mNumeratorTextBox)
 		{
-			this.mAnswerTextBox.setVisibility(true);
+			this.mNumeratorTextBox.setVisibility(true);
+		}
+		if (this.mDenominatorTextBox)
+		{
+			this.mDenominatorTextBox.setVisibility(true);
 		}
 	},
+
 	hideAnswerInputs: function()
 	{
-		if (this.mAnswerTextBox)
+		if (this.mNumeratorTextBox)
 		{
-			this.mAnswerTextBox.setVisibility(false);
+			this.mNumeratorTextBox.setVisibility(false);
+		}
+		if (this.mDenominatorTextBox)
+		{
+			this.mDenominatorTextBox.setVisibility(false);
 		}
 	},
 

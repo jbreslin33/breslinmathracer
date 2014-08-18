@@ -848,11 +848,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_1__1 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100);
+	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,100);
 
         this.mType = '5.oa.a.1_1';
 	
