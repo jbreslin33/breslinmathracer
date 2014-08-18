@@ -59,11 +59,6 @@
 <script type="text/javascript" src="/src/item/leave_practice_button.php"></script>
 <script type="text/javascript" src="/src/item/collide_item.php"></script>
 <script type="text/javascript" src="/src/item/states/states.php"></script>
-<script type="text/javascript" src="/src/question/question.php"></script>
-<script type="text/javascript" src="/src/question/question_compare.php"></script>
-<script type="text/javascript" src="/src/question/question_word.php"></script>
-<script type="text/javascript" src="/src/question/question_money.php"></script>
-<script type="text/javascript" src="/src/question/question_time.php"></script>
 
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
