@@ -172,6 +172,11 @@ getItem: function(id)
 		return new i_4_nf_b_3a__3(this.mSheet);
 	}
 
+  if (id == '4.nf.b.3b_1')
+	{
+		return new i_4_nf_b_3b__1(this.mSheet);
+	}
+
 
 	if (id == '4.md.a.3_1')
 	{
