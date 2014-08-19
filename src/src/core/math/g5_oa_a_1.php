@@ -839,12 +839,8 @@ initialize: function(sheet)
 	var a2d = new Fraction(a2,ad);	
 	var answer = new Fraction(n,ad);	
 		
-	//var fraction = new Fraction(n,ad);	
 	this.setAnswer(answer.getString(),0);
         this.setQuestion(b1 + '(' + a1d.getString() + ' - ' + a2d.getString() + ')'  );
-
-	//this.setAnswer(fraction.getString(),0);
-        //this.setQuestion('(' + a1 + '/' + ad + ' - ' + a2 + '/' + ad + ') ' + b1);
 }
 });
 
