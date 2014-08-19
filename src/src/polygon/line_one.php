@@ -17,7 +17,6 @@ Extends: RaphaelPolygon,
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 		
 		this.mPolygon = this.mRaphael.path("" + this.mPathString);
-		//this.mPolygon.attr ("stroke", "#0000FF");
 		this.mPolygon.attr ("stroke", this.mStroke);
 
 		this.mPolygon.mPolygon = this;
