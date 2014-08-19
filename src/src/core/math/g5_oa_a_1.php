@@ -1,4 +1,44 @@
 /*********
+prerequisites from 4th grade:
+
+OA:
+------
+
+4.oa.a.2 : Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison. 
+
+4.oa.a.3 : Solve multistep word problems posed with whole numbers and having whole-number answers using the four operations, including problems in which remainders must be interpreted. Represent these problems using equations with a letter standing for the unknown quantity. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.
+
+
+NBT:
+-------
+
+4.nbt.a.3 : Use place value understanding to round multi-digit whole numbers to any place.
+
+4.nbt.b.4 :
+Fluently add and subtract multi-digit whole numbers using the standard algorithm.
+
+4.nbt.b.5 :
+Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.
+
+4.nbt.b.6 :
+Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.
+
+
+NF:
+-----
+4.nf.b.3.a : Understand addition and subtraction of fractions as joining and separating parts referring to the same whole. 
+
+4.nf.b.3.c : Add and subtract mixed numbers with like denominators, e.g., by replacing each mixed number with an equivalent fraction, and/or by using properties of operations and the relationship between addition and subtraction.  
+
+4.nf.b.3.d : Solve word problems involving addition and subtraction of fractions referring to the same whole and having like denominators, e.g., by using visual fraction models and equations to represent the problem.
+
+4.nf.b.4.b : Understand a multiple of a/b as a multiple of 1/b, and use this understanding to multiply a fraction by a whole number. For example, use a visual fraction model to express 3 × (2/5) as 6 × (1/5), recognizing this product as 6/5. (In general, n × (a/b) = (n × a)/b.)
+
+4.nf.b.4.b : Solve word problems involving multiplication of a fraction by a whole number, e.g., by using visual fraction models and equations to represent the problem. For example, if each person at a party will eat 3/8 of a pound of roast beef, and there will be 5 people at the party, how many pounds of roast beef will be needed? Between what two whole numbers does your answer lie? 
+
+
+
+
 NOTES: if i where to add something it would be braces and brackets, the question is do i add them to existing items or create some new ones?
 ok took care of that....
 but what about fractions???
