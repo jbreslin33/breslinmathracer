@@ -25,7 +25,9 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. How many ' + this.mThing + ' does ' + this.mNameTwo + ' have?');
-                this.setAnswer(this.c,0);
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. How many ' + this.mThing + ' does ' + this.mNameTwo + ' have? Use + for addition, - for subtraction, * for multiplication and / for division.'); 
+                //this.setAnswer(this.c,0);
+		
+                this.setAnswer('' + this.x,0);
         }
 });
