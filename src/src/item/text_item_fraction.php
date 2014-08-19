@@ -91,6 +91,7 @@ Extends: Item,
 		this.mCorrectAnswerLabel.setVisibility(false);
 		
 		this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,0,0,150,0,"#000000",false)
+                this.addShape(this.mFractionBar);
 		this.mFractionBar.setVisibility(false);
         },
 
