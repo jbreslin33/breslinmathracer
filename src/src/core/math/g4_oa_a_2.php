@@ -25,7 +25,8 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameTwo,1));
+                //this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameTwo,1));
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many as ' + this.mNameOne   );
                 this.setAnswer(this.c,0);
         }
 });
