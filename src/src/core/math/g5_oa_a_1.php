@@ -820,11 +820,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_1__2 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100);
+	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
 
         this.mType = '5.oa.a.1_2';
 
@@ -834,11 +834,17 @@ initialize: function(sheet)
 
        	var b1 = Math.floor(Math.random()*3)+2;
 	var n = parseInt(  (  a1 - a2 ) * b1  );
+	
+	var a1d = new Fraction(a1,ad);	
+	var a2d = new Fraction(a2,ad);	
+	var answer = new Fraction(n,ad);	
 		
-	var fraction = new Fraction(n,ad);	
+	//var fraction = new Fraction(n,ad);	
+	this.setAnswer(answer.getString(),0);
+        this.setQuestion(b1 + '(' + a1d.getString() + ' - ' + a2d.getString() + ')'  );
 
-	this.setAnswer(fraction.getString(),0);
-        this.setQuestion('(' + a1 + '/' + ad + ' - ' + a2 + '/' + ad + ') ' + b1);
+	//this.setAnswer(fraction.getString(),0);
+        //this.setQuestion('(' + a1 + '/' + ad + ' - ' + a2 + '/' + ad + ') ' + b1);
 }
 });
 
