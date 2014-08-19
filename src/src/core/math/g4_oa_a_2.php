@@ -7,7 +7,7 @@ var i_4_oa_a_2__1 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-        	this.parent(sheet,200,50,225,95,100,50,425,100);
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '4.oa.a.2_1';
 
@@ -26,7 +26,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 
                 //this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameTwo,1));
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many as ' + this.mNameOne   );
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. How many ' + this.mThing + ' does ' + this.mNameTwo + ' have?');
                 this.setAnswer(this.c,0);
         }
 });
