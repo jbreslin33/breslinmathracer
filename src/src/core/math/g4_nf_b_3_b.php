@@ -1,14 +1,14 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3b_1',4.1501,'4.nf.b.3a','add 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.b_1',4.1501,'4.nf.b.3.b','add 2 fractions with like denominators');
 */
 
-var i_4_nf_b_3b__1 = new Class(
+var i_4_nf_b_3_b__1 = new Class(
 {
 Extends: TextItem,
    initialize: function(sheet)
    {
       this.parent(sheet);
-      this.mType = '4.nf.b.3b_1';
+      this.mType = '4.nf.b.3_b_1';
        	
 		var varA = 0;
 		var varB = 0;
@@ -51,7 +51,3 @@ Extends: TextItem,
       this.mQuestionLabel.setPosition(255,145);
    }
 });
-
-
-
-//add

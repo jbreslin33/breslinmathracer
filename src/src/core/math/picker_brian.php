@@ -159,22 +159,22 @@ getItem: function(id)
 		return new i_4_nf_a_2__1(this.mSheet);
 	}
 
-  if (id == '4.nf.b.3a_1')
+  if (id == '4.nf.b.3.a_1')
 	{
-		return new i_4_nf_b_3a__1(this.mSheet);
+		return new i_4_nf_b_3_a__1(this.mSheet);
 	}
-  if (id == '4.nf.b.3a_2')
+  if (id == '4.nf.b.3.a_2')
 	{
-		return new i_4_nf_b_3a__2(this.mSheet);
+		return new i_4_nf_b_3_a__2(this.mSheet);
 	}
-  if (id == '4.nf.b.3a_3')
+  if (id == '4.nf.b.3.a_3')
 	{
-		return new i_4_nf_b_3a__3(this.mSheet);
+		return new i_4_nf_b_3_a__3(this.mSheet);
 	}
 
-  if (id == '4.nf.b.3b_1')
+  if (id == '4.nf.b.3.b_1')
 	{
-		return new i_4_nf_b_3b__1(this.mSheet);
+		return new i_4_nf_b_3_b__1(this.mSheet);
 	}
 
 

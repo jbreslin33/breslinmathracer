@@ -1,15 +1,15 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_1',4.1401,'4.nf.b.3a','add 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_1',4.1401,'4.nf.b.3.a','add 2 fractions with like denominators');
 */
 
-var i_4_nf_b_3a__1 = new Class(
+var i_4_nf_b_3_a__1 = new Class(
 {
 Extends: TextItem,
    initialize: function(sheet)
    {
       this.parent(sheet);
-      this.mType = '4.nf.b.3a_1';
+      this.mType = '4.nf.b.3.a_1';
        	
 		var varA = 0;
 		var varB = 0;
@@ -48,21 +48,17 @@ Extends: TextItem,
    }
 });
 
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_2',4.1402,'4.nf.b.3a','subtract 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_2',4.1402,'4.nf.b.3.a','subtract 2 fractions with like denominators');
 */
 
-var i_4_nf_b_3a__2 = new Class(
+var i_4_nf_b_3_a__2 = new Class(
 {
 Extends: TextItem,
    initialize: function(sheet)
    {
       this.parent(sheet);
-      this.mType = '4.nf.b.3a_2';
+      this.mType = '4.nf.b.3.a_2';
        	
 		var varA = 0;
 		var varB = 0;
@@ -104,16 +100,16 @@ Extends: TextItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3a_3',4.1403,'4.nf.b.3a','add 3 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_3',4.1403,'4.nf.b.3.a','add 3 fractions with like denominators');
 */
 
-var i_4_nf_b_3a__3 = new Class(
+var i_4_nf_b_3_a__3 = new Class(
 {
 Extends: TextItem,
    initialize: function(sheet)
    {
       this.parent(sheet);
-      this.mType = '4.nf.b.3a_3';
+      this.mType = '4.nf.b.3.a_3';
        	
 		var varA = 0;
 		var varB = 0;
@@ -155,8 +151,3 @@ Extends: TextItem,
       this.mQuestionLabel.setPosition(255,145);
    }
 });
-
-
-
-
-//add
