@@ -11,11 +11,11 @@ fi
 grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into item_types' ./ >> src/database/insert_types.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/insert_types.sql
 
-if [ -e src/database/prerequisite.sql ]; 
+if [ -e src/database/prerequisites.sql ]; 
 then
-rm src/database/prerequisite.sql
+rm src/database/prerequisites.sql
 else
-touch src/database/prerequisite.sql
+touch src/database/prerequisites.sql
 fi
 > src/database/insert_types.sql
 grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into prerequisites' ./ >> src/database/prerequisites.sql

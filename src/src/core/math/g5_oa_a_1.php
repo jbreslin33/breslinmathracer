@@ -846,6 +846,7 @@ initialize: function(sheet)
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_1',5.0101,'5.oa.a.1','b(a)');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_1','4.nf.b.3.a_1');
 */
 
 var i_5_oa_a_1__1 = new Class(
