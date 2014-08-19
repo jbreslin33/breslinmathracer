@@ -38,19 +38,10 @@ Extends: Polygon,
              	if (b)
                 {
 			APPLICATION.log('setvis:show');
-			if (this.mPolygon)
-			{
-				APPLICATION.log('exists');
-			}
                         this.mPolygon.show();
                 }
                 else
                 {
-			APPLICATION.log('setvis:hide');
-			if (this.mPolygon)
-			{
-				APPLICATION.log('exists');
-			}
                         this.mPolygon.hide();
                 }
 
