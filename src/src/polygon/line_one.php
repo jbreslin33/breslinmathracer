@@ -48,26 +48,5 @@ Extends: RaphaelPolygon,
 
                 this.mLastX = dx;
                 this.mLastY = dy;
-	},
-
-       	render: function()
-        {
-                this.mPolygon.attr({x: this.mPosition.mX, y: this.mPosition.mY});
-        },
-
-	setVisibility: function(b)
-	{
-		
-		if (b)
-		{
-	
-			APPLICATION.log('s');
-			this.mPolygon.show();
-		}		
-		else
-		{
-			APPLICATION.log('h');
-			this.mPolygon.hide();
-		}		
 	}
 });
