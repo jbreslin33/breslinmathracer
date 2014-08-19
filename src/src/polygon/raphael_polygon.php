@@ -34,17 +34,14 @@ Extends: Polygon,
 
 	setVisibility: function(b)
 	{
-
              	if (b)
                 {
-			APPLICATION.log('setvis:show');
                         this.mPolygon.show();
                 }
                 else
                 {
                         this.mPolygon.hide();
                 }
-
 	},
 
 	dragMove: function(dx,dy)
