@@ -11,11 +11,6 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
                 this.mType = '4.oa.a.2_3';
 
-                //BUTTON A
-                this.mButtonA.setPosition(380,100);
-                this.mButtonB.setPosition(380,200);
-                this.mButtonC.setPosition(380,300);
-
                 this.a = 0;
                 this.b = 0;
 
@@ -25,12 +20,12 @@ Extends: ThreeButtonItem,
                         this.b = Math.floor(Math.random()*10+1);
                 }
 
-                this.setQuestion('Compare.');
-                this.setAnswer('Is greater than.',0);
+                this.setQuestion('Toby has 5 times more than Joby is an example of:');
+                this.setAnswer('Multiplicative Comparison',0);
 
-                this.mButtonA.setAnswer('Is greater than.');
-                this.mButtonB.setAnswer('Is equal to.');
-                this.mButtonC.setAnswer('Is less than.');
+                this.mButtonC.setAnswer('Additive Comparison');
+                this.mButtonB.setAnswer('Neither');
+                this.mButtonA.setAnswer('Multiplicative Comparison');
         },
 
         createQuestionShapes: function()
