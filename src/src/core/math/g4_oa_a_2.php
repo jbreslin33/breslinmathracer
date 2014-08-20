@@ -1,3 +1,47 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_2',4.0202,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Division operation.' );
+*/
+
+var i_4_oa_a_2__2 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '4.oa.a.2_2';
+
+                //move gui
+                this.mUserAnswerLabel.setPosition(125,200);
+                this.mCorrectAnswerLabel.setPosition(425,200);
+
+                this.mNameMachine = new NameMachine();
+                this.mNameOne     = this.mNameMachine.getName();
+                this.mNameTwo     = this.mNameMachine.getName();
+                this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+
+		this.a = 0;
+		this.b = 0;
+		this.c = 0;
+		this.r = 1;
+
+		while (this.r != 0)
+		{	
+                	//variables
+                	this.a = Math.floor(Math.random()*90)+10;
+                	this.b = Math.floor(Math.random()*8)+2;
+                	this.c = parseInt(this.a / this.b);
+			this.r = this.a % this.b;
+		}
+
+                this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
+
+                this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
+                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,2);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_1',4.0201,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Multiplication operation.' );
 */
@@ -36,38 +80,4 @@ Extends: TextItem,
         }
 });
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_2',4.0202,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Division operation.' );
-*/
-
-var i_4_oa_a_2__2 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '4.oa.a.2_2';
-
-                //move gui
-                this.mUserAnswerLabel.setPosition(125,200);
-                this.mCorrectAnswerLabel.setPosition(425,200);
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
-
-                //variables
-                this.a = Math.floor(Math.random()*9)+1;
-                this.a = this.a * 10;
-                this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
-
-                this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
-
-                this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
-                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,2);
-        }
-});
 
