@@ -1,4 +1,3 @@
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_2',4.0202,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Division operation.' );
 */
@@ -20,6 +19,12 @@ Extends: TextItem,
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
                 this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+                
+		this.mSchool     = this.mNameMachine.getSchool();
+		this.mVegetables     = this.mNameMachine.getVegetable();
+
+		this.mRoomOne = Math.floor(Math.random()*10)+40; 
+		this.mRoomTwo = Math.floor(Math.random()*10)+20; 
 
 		this.a = 0;
 		this.b = 0;
@@ -35,8 +40,18 @@ Extends: TextItem,
 			this.r = this.a % this.b;
 		}
 
-                this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
+						
+                this.random = Math.floor(Math.random()*2);
+		this.random = 1;
+		if (this.random == 0)
+		{
+                	this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
+		}
+		else if (this.random == 1)
+		{
+                	this.setQuestion('At ' + this.mSchool + ' room ' + this.mRoomOne + ' ate ' + this.a + ' ' + this.mVegetables + '. Room '  + this.mRoomOne + ' ate ' + this.b + ' times as many ' + this.mVegetables + ' as room ' + this.mRoomTwo + '. How many ' + this.mVegetables + ' did room ' + this.mRoomTwo + ' eat? Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
 
+		}
                 this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
                 this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,2);
         }
