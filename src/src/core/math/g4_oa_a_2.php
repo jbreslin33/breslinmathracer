@@ -9,35 +9,22 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
+
                 this.mType = '4.oa.a.2_3';
 
-                this.a = 0;
-                this.b = 0;
+		this.mNameMachine = new NameMachine();
+		this.mNameOne = this.mNameMachine.getName();
+		this.mNameTwo = this.mNameMachine.getName();
+		this.mThings  = this.mNameMachine.getThing();
 
-                while (this.a <= this.b)
-                {
-                        this.a = Math.floor(Math.random()*10+1);
-                        this.b = Math.floor(Math.random()*10+1);
-                }
+                this.a = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Toby has 5 times more than Joby is an example of:');
+                this.setQuestion(this.mNameOne + ' has ' + this.a + ' times more ' + this.mThings + ' than ' + this.mNameTwo + ' is an example of:');
                 this.setAnswer('Multiplicative Comparison',0);
 
                 this.mButtonC.setAnswer('Additive Comparison');
                 this.mButtonB.setAnswer('Neither');
                 this.mButtonA.setAnswer('Multiplicative Comparison');
-        },
-
-        createQuestionShapes: function()
-        {
-                var shapeA = new Shape(50,50,240,200,this.mSheet.mGame,"","","");
-                var shapeB = new Shape(50,50,530,200,this.mSheet.mGame,"","","");
-
-                shapeA.setText(this.a);
-                shapeB.setText(this.b);
-
-                this.addQuestionShape(shapeA);
-                this.addQuestionShape(shapeB);
         }
 });
 
