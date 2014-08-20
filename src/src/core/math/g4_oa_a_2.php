@@ -1,5 +1,11 @@
 
 /*
+prerequisites:
+
+
+*/
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_5',4.0205,'4.oa.a.2','Multiplicative or Additive Comparison. Neither.');
 */
 
@@ -28,6 +34,7 @@ Extends: ThreeButtonItem,
                 this.mButtonA.setAnswer('Multiplicative Comparison');
         }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_4',4.0204,'4.oa.a.2','Multiplicative or Additive Comparison. Additive comparison.');
 */
@@ -147,7 +154,8 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_1',4.0201,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Multiplication operation.' );
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_1',4.0201,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Multiplication operation. 1 digit by multiple of 10' );
+--insert into prerequisites (item_type_id, prerequisite_id) values ('4.oa.a.1_1','3.nbt.b.3.a_1');
 */
 
 var i_4_oa_a_2__1 = new Class(
@@ -175,6 +183,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
+		
                 this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write an equation that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12'); 
 
                 this.setAnswer('' + this.a + '*' + this.b + '=' + this.c ,0);
