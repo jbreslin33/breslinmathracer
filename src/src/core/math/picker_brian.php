@@ -177,6 +177,23 @@ getItem: function(id)
 		return new i_4_nf_b_3_b__1(this.mSheet);
 	}
 
+  if (id == '4.nf.b.3.c_1')
+	{
+		return new i_4_nf_b_3_c__1(this.mSheet);
+	}
+  if (id == '4.nf.b.3.c_2')
+	{
+		return new i_4_nf_b_3_c__2(this.mSheet);
+	}
+
+  if (id == '4.nf.b.3.d_1')
+	{
+		return new i_4_nf_b_3_d__1(this.mSheet);
+	}
+  if (id == '4.nf.b.3.d_2')
+	{
+		return new i_4_nf_b_3_d__2(this.mSheet);
+	}
 
 	if (id == '4.md.a.3_1')
 	{
