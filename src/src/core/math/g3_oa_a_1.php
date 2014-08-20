@@ -25,6 +25,7 @@ Extends: TextItem,
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
                 this.mThing       = this.mNameMachine.getThing();
+                this.mFruit       = this.mNameMachine.getFruit();
                 this.mOwned       = this.mNameMachine.getOwned();
                 this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
                 this.mGrade      = this.mNameMachine.getGrade();
@@ -35,8 +36,15 @@ Extends: TextItem,
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
 	
-                random = Math.floor(Math.random()*2);
-		random = 2;	
+                random = Math.floor(Math.random()*4);
+		random = 3;	
+		
+		if (random == 3)
+		{
+			var nameString = 'Abbey, Brad, Carey';
+			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' friends. Do not use spaces. Example Answer: 2x3');    	
+
+		}
 
 		if (random == 2)
 		{
