@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.b_1',4.1501,'4.nf.b.3.b','add 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.b_1',4.1501,'4.nf.b.3.b','find missing numerator');
 */
 
 var i_4_nf_b_3_b__1 = new Class(
