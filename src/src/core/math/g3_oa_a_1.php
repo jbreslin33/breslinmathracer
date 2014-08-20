@@ -27,13 +27,21 @@ Extends: TextItem,
                 this.mThing       = this.mNameMachine.getThing();
                 this.mOwned       = this.mNameMachine.getOwned();
                 this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+                this.mGrade      = this.mNameMachine.getGrade();
+                this.mSchool      = this.mNameMachine.getSchool();
+                this.mRoomOne      = Math.floor(Math.random()*90)+9 
 
                	//variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
 	
                 random = Math.floor(Math.random()*2);
-		random = 1;	
+		random = 2;	
+
+		if (random == 2)
+		{
+			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '. Do not use spaces. Example Answer: 2x3');   
+		}
 
 		if (random == 1)
 		{
