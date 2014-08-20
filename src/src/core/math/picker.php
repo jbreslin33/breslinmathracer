@@ -133,6 +133,13 @@ getItem: function(id)
         {
                 return new i_k_cc_c_7__3(this.mSheet);
         }
+	
+	//-----------3rd GRADE---------
+        //3.nbt.a.3
+        if (id == '3.nbt.a.3_1')
+        {
+                return new i_3_nbt_a_1__1(this.mSheet);
+        }
 
 	//-----------4th GRADE---------
         //4.oa.a.2

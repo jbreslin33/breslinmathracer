@@ -1,6 +1,13 @@
 
 /*
 prerequisites:
+Since this standard only deals with multiplicative comparison we will only deal with 3rd grade multiplication and division standards
+
+3.oa.a.3 : Use multiplication and division within 100 to solve word problems in situations involving equal groups, arrays, and measurement quantities, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem.
+
+3.nbt.a.1 : Use place value understanding to round whole numbers to the nearest 10 or 100.
+
+3.nbt.a.3 : Multiply one-digit whole numbers by multiples of 10 in the range 10-90 (e.g., 9 × 80, 5 × 60) using strategies based on place value and properties of operations. 
 
 
 */
@@ -155,7 +162,7 @@ Extends: TextItem,
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_1',4.0201,'4.oa.a.2','Word problem. Answer in equation form. Multiplicative comparision. Multiplication operation. 1 digit by multiple of 10' );
---insert into prerequisites (item_type_id, prerequisite_id) values ('4.oa.a.1_1','3.nbt.b.3.a_1');
+--insert into prerequisites (item_type_id, prerequisite_id) values ('4.oa.a.1_1','3.nbt.a.3.a_1');
 */
 
 var i_4_oa_a_2__1 = new Class(
