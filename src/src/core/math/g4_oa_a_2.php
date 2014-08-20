@@ -29,7 +29,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write an equation that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces.'); 
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write an equation that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12'); 
 
                 this.setAnswer('' + this.a + '*' + this.b + '=' + this.c ,0);
                 this.setAnswer('' + this.b + '*' + this.a + '=' + this.c ,1);
@@ -37,20 +37,3 @@ Extends: TextItem,
                 this.setAnswer('' + this.c + '=' + this.b + '*' + this.a ,3);
         }
 });
-/*
-		//user Answer label
-                this.mUserAnswerLabel = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
-                this.addShape(this.mUserAnswerLabel);
-                this.mUserAnswerLabel.mCollidable = false;
-                this.mUserAnswerLabel.mCollisionOn = false;
-                this.mUserAnswerLabel.setText(this.mQuestion);
-                this.mUserAnswerLabel.setVisibility(false);
-
-                //correctAnswer Label
-                this.mCorrectAnswerLabel = new Shape(100,50,425,200,this.mSheet.mGame,"","","");
-                this.addShape(this.mCorrectAnswerLabel);
-                this.mCorrectAnswerLabel.mCollidable = false;
-                this.mCorrectAnswerLabel.mCollisionOn = false;
-                this.mCorrectAnswerLabel.setText(this.mQuestion);
-                this.mCorrectAnswerLabel.setVisibility(false);
-*/
