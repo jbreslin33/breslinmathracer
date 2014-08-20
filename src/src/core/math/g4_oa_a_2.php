@@ -1,6 +1,34 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_3',4.0203,'4.oa.a.2','Multiplicative or Additive Comparison. Multiplicative.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_4',4.0204,'4.oa.a.2','Multiplicative or Additive Comparison. Additive comparison.');
+*/
+
+var i_4_oa_a_2__4 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = '4.oa.a.2_4';
+
+                this.mNameMachine = new NameMachine();
+                this.mNameOne = this.mNameMachine.getName();
+                this.mNameTwo = this.mNameMachine.getName();
+                this.mThings  = this.mNameMachine.getThing();
+
+                this.a = Math.floor(Math.random()*8+2);
+
+                this.setQuestion(this.mNameOne + ' has ' + this.a + ' more ' + this.mThings + ' than ' + this.mNameTwo + ' is an example of:');
+                this.setAnswer('Additive Comparison',0);
+
+                this.mButtonC.setAnswer('Additive Comparison');
+                this.mButtonB.setAnswer('Neither');
+                this.mButtonA.setAnswer('Multiplicative Comparison');
+        }
+});
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_3',4.0203,'4.oa.a.2','Multiplicative or Additive Comparison. Multiplicative comparison.');
 */
 
 var i_4_oa_a_2__3 = new Class(
