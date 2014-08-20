@@ -118,20 +118,10 @@ Extends: TextItem,
                 
 		this.mAdult     = this.mNameMachine.getAdult();
 
-		this.a = 0;
-		this.b = 0;
-		this.c = 0;
-		this.r = 1;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+                this.a = parseInt(this.b * this.c);
 
-		while (this.r != 0)
-		{	
-                	//variables
-                	this.a = Math.floor(Math.random()*90)+10;
-                	this.b = Math.floor(Math.random()*8)+2;
-                	this.c = parseInt(this.a / this.b);
-			this.r = this.a % this.b;
-		}
-						
                 this.random = Math.floor(Math.random()*2);
 		this.random = 2;
 		
