@@ -37,7 +37,6 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
 	
                 random = Math.floor(Math.random()*4);
-		random = 3;	
 		
 		if (random == 3)
 		{
