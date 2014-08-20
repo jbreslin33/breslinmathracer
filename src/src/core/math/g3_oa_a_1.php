@@ -28,18 +28,12 @@ Extends: TextItem,
                 this.mOwned       = this.mNameMachine.getOwned();
 
                	//variables
-                this.a = Math.floor(Math.random()*9)+1;
-		this.a = this.a * 10;
+                this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
 		
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write an expression that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Remember an equation has an equal sign. Use + for addition, - for subtraction, x for multiplication and / for division. Do not use spaces. Example Answer: 1+2=3'); 
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Do not use spaces. Example Answer: 2x3'); 
 
-                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c ,0);
-                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c ,1);
-                this.setAnswer('' + this.c + '=' + this.a + '*' + this.b ,2);
-                this.setAnswer('' + this.c + '=' + this.b + '*' + this.a ,3);
+                this.setAnswer('' + this.a + 'x' + this.b ,0);
+                this.setAnswer('' + this.b + 'x' + this.a ,0);
         }
 });
-
-
