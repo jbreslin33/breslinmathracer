@@ -34,6 +34,6 @@ Extends: TextItem,
                 this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Do not use spaces. Example Answer: 2x3'); 
 
                 this.setAnswer('' + this.a + 'x' + this.b ,0);
-                this.setAnswer('' + this.b + 'x' + this.a ,0);
+                this.setAnswer('' + this.b + 'x' + this.a ,1);
         }
 });
