@@ -26,12 +26,24 @@ Extends: TextItem,
                 this.mNameTwo     = this.mNameMachine.getName();
                 this.mThing       = this.mNameMachine.getThing();
                 this.mOwned       = this.mNameMachine.getOwned();
+                this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
 
                	//variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
-		
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Do not use spaces. Example Answer: 2x3'); 
+	
+                random = Math.floor(Math.random()*2);
+		random = 1;	
+
+		if (random == 1)
+		{
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a number sentence that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '. Do not use spaces. Example Answer: 2x3'); 
+		} 
+
+		if (random == 0)
+		{
+                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Do not use spaces. Example Answer: 2x3'); 
+		}
 
                 this.setAnswer('' + this.a + 'x' + this.b ,0);
                 this.setAnswer('' + this.b + 'x' + this.a ,1);
