@@ -20,11 +20,29 @@ var NameMachine = new Class(
 		this.mBoyNameArray.push("Brad"); 
 		this.mBoyNameArray.push("Charles"); 
 		this.mBoyNameArray.push("Dave"); 
+		this.mBoyNameArray.push("Ethan"); 
+		this.mBoyNameArray.push("Fred"); 
+		this.mBoyNameArray.push("Gerry"); 
+		this.mBoyNameArray.push("Harry"); 
+		this.mBoyNameArray.push("Ivan"); 
+		this.mBoyNameArray.push("Jim"); 
+		this.mBoyNameArray.push("Kevin"); 
+		this.mBoyNameArray.push("Luke"); 
+		this.mBoyNameArray.push("Mike"); 
 		
 		this.mGirlNameArray.push("Alice"); 
 		this.mGirlNameArray.push("Becky"); 
 		this.mGirlNameArray.push("Cathy"); 
 		this.mGirlNameArray.push("Doris"); 
+		this.mGirlNameArray.push("Eve"); 
+		this.mGirlNameArray.push("Fabiana"); 
+		this.mGirlNameArray.push("Grace"); 
+		this.mGirlNameArray.push("Heidi"); 
+		this.mGirlNameArray.push("Isabella"); 
+		this.mGirlNameArray.push("Jessica"); 
+		this.mGirlNameArray.push("Kate"); 
+		this.mGirlNameArray.push("Lucy"); 
+		this.mGirlNameArray.push("Maria"); 
 
 		//days of week
 		this.mDayOfWeekArray = new Array();
