@@ -135,6 +135,30 @@ getItem: function(id)
         }
 	
 	//-----------3rd GRADE---------
+        //3.oa.a.1
+        if (id == '3.oa.a.1_1')
+        {
+                return new i_3_oa_a_1__1(this.mSheet);
+        }
+        if (id == '3.oa.a.1_2')
+        {
+                return new i_3_oa_a_1__2(this.mSheet);
+        }
+        if (id == '3.oa.a.1_3')
+        {
+                return new i_3_oa_a_1__3(this.mSheet);
+        }
+
+        //3.oa.a.3
+        if (id == '3.oa.a.3_1')
+        {
+                return new i_3_oa_a_3__1(this.mSheet);
+        }
+        if (id == '3.oa.a.3_2')
+        {
+                return new i_3_oa_a_3__2(this.mSheet);
+        }
+
         //3.nbt.a.3
         if (id == '3.nbt.a.3_1')
         {
