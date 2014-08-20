@@ -72,6 +72,17 @@ var NameMachine = new Class(
 		this.mVegetableArray.push("onions");
 		this.mVegetableArray.push("mushrooms");
 		this.mVegetableArray.push("potatoes");
+		
+		//color
+		this.mColorArray = new Array();
+		this.mUsedColorElementArray = new Array();
+		this.mColorArray.push("red");
+		this.mColorArray.push("white");
+		this.mColorArray.push("blue");
+		this.mColorArray.push("green");
+		this.mColorArray.push("purple");
+		this.mColorArray.push("orange");
+		this.mColorArray.push("brown");
 
 		//things
 		this.mThingArray = new Array();
@@ -254,6 +265,33 @@ var NameMachine = new Class(
                 }
                 this.mUsedFruitElementArray.push(randomElement);
                 return this.mFruitArray[randomElement];
+        },
+
+        getColor: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mColorArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedColorElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedColorElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedColorElementArray.push(randomElement);
+                return this.mColorArray[randomElement];
         },
 
         getGrade: function(from,till)
