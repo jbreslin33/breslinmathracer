@@ -495,6 +495,34 @@ var NameMachine = new Class(
                                 }
                         }
                 }
+                for (i=0; i < this.mManArray.length; i++)
+                {
+                        if (name == this.mManArray[i])
+                        {
+                                if (uppercase == 0)
+                                {
+                                        return 'he';
+                                }
+                                else
+                                {
+                                        return 'He';
+                                }
+                        }
+                }
+                for (i=0; i < this.mWomanArray.length; i++)
+                {
+                        if (name == this.mWomanArray[i])
+                        {
+                                if (uppercase == 0)
+                                {
+                                        return 'she';
+                                }
+                                else
+                                {
+                                        return 'She';
+                                }
+                        }
+                }
 	},
 	
 	getAdult: function(gender)
