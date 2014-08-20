@@ -41,22 +41,8 @@ Extends: TextItem,
 		
 		if (random == 3)
 		{
-			var nameString = '';
-			for (var i = 0; i < this.a; i++)
-			{
-				if (i == 0)
-				{
-					nameString = nameString + this.mNameMachine.getName();
-				}
-				else if (i > 0 && i < parseInt(this.a - 1)) 
-				{		
-					nameString = nameString + ', ' + this.mNameMachine.getName();	
-				}
-				else
-				{
-					nameString = nameString + ' and ' + this.mNameMachine.getName();	
-				}
-			}
+			var nameString = this.mNameMachine.getNameString(this.a);
+			
 			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends. Do not use spaces. Example Answer: 2x3');    	
 
 		}

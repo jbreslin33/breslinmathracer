@@ -703,6 +703,27 @@ var NameMachine = new Class(
 		this.mUsedNameArray.push(randomName); 
 		return randomName; 
 	},
+  	
+	getNameString: function(numberOfNames) 
+	{
+		var nameString = '';
+                for (var i = 0; i < numberOfNames; i++)
+                {
+                	if (i == 0)
+                        {
+                                nameString = nameString + this.getName();
+                        }
+                        else if (i > 0 && i < parseInt(numberOfNames - 1))
+                        {
+                                nameString = nameString + ', ' + this.getName();
+                        }
+                        else
+                        {
+                                nameString = nameString + ' and ' + this.getName();
+                        }
+                }
+		return nameString;
+	},
 
         getOwned: function()
         {
