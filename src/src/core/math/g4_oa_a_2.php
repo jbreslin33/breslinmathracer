@@ -109,10 +109,14 @@ Extends: TextItem,
                 this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
                 
 		this.mSchool     = this.mNameMachine.getSchool();
-		this.mVegetables     = this.mNameMachine.getVegetable();
+		this.mVegetableOne     = this.mNameMachine.getVegetable();
+		this.mVegetableTwo     = this.mNameMachine.getVegetable();
+		this.mFruit     = this.mNameMachine.getFruit();
 
 		this.mRoomOne = Math.floor(Math.random()*10)+40; 
 		this.mRoomTwo = Math.floor(Math.random()*10)+20; 
+                
+		this.mAdult     = this.mNameMachine.getAdult();
 
 		this.a = 0;
 		this.b = 0;
@@ -127,19 +131,26 @@ Extends: TextItem,
                 	this.c = parseInt(this.a / this.b);
 			this.r = this.a % this.b;
 		}
-
 						
                 this.random = Math.floor(Math.random()*2);
-		this.random = 1;
-		if (this.random == 0)
+		this.random = 2;
+		
+		if (this.random == 2) 
+		{
+			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' '  + this.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.mVegetableTwo +  '. Write an equation that can be used to solve how many ' + this.mVegetableTwo +  ' are in the garden. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12')     
+		}
+		
+		if (this.random == 1)
 		{
                 	this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
 		}
-		else if (this.random == 1)
+		
+		if (this.random == 0)
 		{
-                	this.setQuestion('At ' + this.mSchool + ' room ' + this.mRoomOne + ' ate ' + this.a + ' ' + this.mVegetables + '. Room '  + this.mRoomOne + ' ate ' + this.b + ' times as many ' + this.mVegetables + ' as room ' + this.mRoomTwo + '. How many ' + this.mVegetables + ' did room ' + this.mRoomTwo + ' eat? Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
+                	this.setQuestion('At ' + this.mSchool + ' room ' + this.mRoomOne + ' ate ' + this.a + ' ' + this.mFruit + '. Room '  + this.mRoomOne + ' ate ' + this.b + ' times as many ' + this.mFruit + ' as room ' + this.mRoomTwo + '. How many ' + this.mFruit + ' did room ' + this.mRoomTwo + ' eat? Write an equation that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12');
 
 		}
+
                 this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
                 this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,2);
         }
