@@ -164,17 +164,14 @@ Extends: Item,
 		if (this.mCorrectAnswerLabel)
 		{
 			var answer = '';
-			APPLICATION.log('l:' + this.mAnswerArray.length); 
 			for (i=0; i < this.mAnswerArray.length; i++)	
 			{
 				if (i == 0)
 				{
-					APPLICATION.log('ia:' + i);
 					answer = answer + '' + this.getAnswer();		
 				}
 				else
 				{
-					APPLICATION.log('ib:' + i);
 					answer = answer + ' OR ' + this.getAnswer(i);		
 				}
 			}
