@@ -465,7 +465,7 @@ var NameMachine = new Class(
                 return this.mPictureLinkArray[randomElement];
         },
 
-	getPronoun: function(name,uppercase)
+	getPronoun: function(name,uppercase,possesive)
 	{
 		for (i=0; i < this.mBoyNameArray.length; i++)
 		{
@@ -473,11 +473,25 @@ var NameMachine = new Class(
 			{
 				if (uppercase == 0)
 				{
-					return 'he';
+					if (possesive)
+					{
+						return 'his';
+					}
+					else
+					{
+						return 'he';
+					}
 				}
 				else
 				{
-					return 'He';
+					if (possesive)
+					{
+						return 'His';
+					}
+					else
+					{
+						return 'He';
+					}
 				}
 			}
 		}
@@ -487,11 +501,25 @@ var NameMachine = new Class(
                         {
                                 if (uppercase == 0)
                                 {
-                                        return 'she';
+					if (possesive)
+					{
+						return 'her';
+					}
+					else
+					{
+						return 'she';
+					}
                                 }
                                 else
                                 {
-                                        return 'She';
+					if (possesive)
+					{
+						return 'Her';
+					}
+					else
+					{
+						return 'She';
+					}
                                 }
                         }
                 }
@@ -501,11 +529,25 @@ var NameMachine = new Class(
                         {
                                 if (uppercase == 0)
                                 {
-                                        return 'he';
+					if (possesive)
+					{
+						return 'his';
+					}
+					else
+					{
+						return 'he';
+					}
                                 }
                                 else
                                 {
-                                        return 'He';
+					if (possesive)
+					{
+						return 'His';
+					}
+					else
+					{
+						return 'He';
+					}
                                 }
                         }
                 }
@@ -515,11 +557,25 @@ var NameMachine = new Class(
                         {
                                 if (uppercase == 0)
                                 {
-                                        return 'she';
+					if (possesive)
+					{
+						return 'her';
+					}
+					else
+					{
+						return 'she';
+					}
                                 }
                                 else
                                 {
-                                        return 'She';
+					if (possesive)
+					{
+						return 'Her';
+					}
+					else
+					{
+						return 'She';
+					}
                                 }
                         }
                 }
