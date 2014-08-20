@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_5',4.0205,'4.oa.a.2','Multiplicative or Additive Comparison. Neither.');
+*/
+
+var i_4_oa_a_2__5 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = '4.oa.a.2_5';
+
+                this.mNameMachine = new NameMachine();
+                this.mNameOne = this.mNameMachine.getName();
+                this.mNameTwo = this.mNameMachine.getName();
+                this.mThingOne  = this.mNameMachine.getThing();
+                this.mThingTwo = this.mNameMachine.getThing();
+                this.mColorOne  = this.mNameMachine.getColor();
+                this.mColorTwo  = this.mNameMachine.getColor();
+
+                this.setQuestion(this.mNameOne + ' has ' + this.mColorOne + ' ' + this.mThingOne + ' and ' + this.mNameTwo + ' has ' + this.mColorTwo + ' ' + this.mThingTwo + ' is an example of:');
+                this.setAnswer('Neither',0);
+
+                this.mButtonC.setAnswer('Additive Comparison');
+                this.mButtonB.setAnswer('Neither');
+                this.mButtonA.setAnswer('Multiplicative Comparison');
+        }
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_4',4.0204,'4.oa.a.2','Multiplicative or Additive Comparison. Additive comparison.');
 */
 
@@ -27,6 +56,7 @@ Extends: ThreeButtonItem,
                 this.mButtonA.setAnswer('Multiplicative Comparison');
         }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_3',4.0203,'4.oa.a.2','Multiplicative or Additive Comparison. Multiplicative comparison.');
 */
