@@ -40,11 +40,11 @@ Extends: TextItem,
                 this.a = parseInt(this.b * this.c);
 
                 this.random = Math.floor(Math.random()*2);
-		this.random = 0;
+		this.random = 2;
 		
 		if (this.random == 2) 
 		{
-			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' '  + this.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.mVegetableTwo +  ' in ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' garden. Write an equation that can be used to solve how many ' + this.mVegetableTwo +  ' are in the garden. Remember an equation has an equal sign. Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 3+4=12')     
+			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' ' + this.mVegetableOne + '. ' + this.mNameMachine.getPronoun(this.mAdult,1,0) + ' gave out '  + this.mVegetableOne + ' equally among ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' ' + this.b + ' friends. Write a number sentence that can be used to solve how many ' + this.mVegetableOne + ' each friend got. Use / for division. Do not use spaces. Example Answer: 35/7');   
 		}
 		
 		if (this.random == 1)
@@ -58,7 +58,6 @@ Extends: TextItem,
 
 		}
 
-                this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
-                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,2);
+                this.setAnswer('' + this.a + '/' + this.b,0);
         }
 });
