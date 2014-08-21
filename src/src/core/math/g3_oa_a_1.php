@@ -5,6 +5,56 @@ none finished
 */
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_2',3.0102,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
+*/
+
+var i_3_oa_a_1__2 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_2';
+
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
+
+                //move gui
+                this.mUserAnswerLabel.setPosition(125,200);
+                this.mCorrectAnswerLabel.setPosition(425,200);
+
+                //variables
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+
+                this.setQuestion('Write a multiplicative number sentence that goes with the picture. Example answer: 5x4');
+
+                this.setAnswer('' + this.a + 'x' + this.b ,0);
+                this.setAnswer('' + this.b + 'x' + this.c ,1);
+	},
+
+        createQuestionShapes: function()
+        {
+                var x = 0;
+                var y = 300;
+
+		var a = parseInt(this.a); 
+	
+                for (var i = 0; i < a; i++)
+                {
+                        if (i == 10)
+                        {
+                                x = 0;
+                                y = 375;
+                        }
+                        x = parseInt(x + 70);
+                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+                }
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_1',3.0101,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10.' );
 */
 
