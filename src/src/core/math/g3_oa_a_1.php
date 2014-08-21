@@ -28,7 +28,7 @@ Extends: TextItem,
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
 
-                this.setQuestion('Write a multiplicative number sentence that goes with the picture. Example answer: 5*4');
+                this.setQuestion('Write a number sentence that goes with the picture. ' + this.mNameMachine.getOperationInstructionExpression());
 
                 this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
@@ -88,28 +88,29 @@ Extends: TextItem,
 
 	
                 random = Math.floor(Math.random()*4);
+		random = 3;
 		
 		if (random == 3)
 		{
 			var nameString = this.mNameMachine.getNameString(this.a);
 			
-			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends. Do not use spaces. Use * for multiplication. Example Answer: 2*3');    	
+			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends. ' +  this.mNameMachine.getOperationInstructionExpression());    	
 
 		}
 
 		if (random == 2)
 		{
-			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '. Do not use spaces. Use * for multiplication. Example Answer: 2*3');   
+			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '. ' + this.mNameMachine.getOperationInstructionExpression());   
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a number sentence that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '. Do not use spaces. Use * for multiplication. Example Answer: 2*3'); 
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a number sentence that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '. ' + this.mNameMachine.getOperationInstructionExpression()); 
 		} 
 
 		if (random == 0)
 		{
-                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. Do not use spaces. Use * for multiplication. Example Answer: 2*3'); 
+                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. ' + this.mNameMachine.getOperationInstructionExpression()); 
 		}
 
                 this.setAnswer('' + this.a + '*' + this.b ,0);
