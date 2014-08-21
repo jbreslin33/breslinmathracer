@@ -16,13 +16,13 @@ Extends: TextItem,
                 this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '3.oa.a.1_2';
+		
+		//move gui
+		this.mUserAnswerLabel.setPosition(625,150);
+		this.mCorrectAnswerLabel.setPosition(625,250);
 
                 this.mNameMachine = new NameMachine();
                 this.mPictureLink = this.mNameMachine.getPictureLink();
-
-                //move gui
-                this.mUserAnswerLabel.setPosition(125,200);
-                this.mCorrectAnswerLabel.setPosition(425,200);
 
                 //variables
                 this.a = Math.floor(Math.random()*8)+2;
@@ -31,9 +31,7 @@ Extends: TextItem,
                 this.setQuestion('Write a multiplicative number sentence that goes with the picture. Example answer: 5x4');
 
                 this.setAnswer('' + this.a + 'x' + this.b ,0);
-                this.setAnswer('' + this.b + 'x' + this.c ,1);
-		
-		APPLICATION.log('a:' + this.a + ' b:' + this.b);
+                this.setAnswer('' + this.b + 'x' + this.a ,1);
 	},
 
         createQuestionShapes: function()
@@ -45,11 +43,11 @@ Extends: TextItem,
 	
                 for (var i = 0; i < a; i++)
                 {
-			var x = 25; 
+			var x = 30; 
                 	for (var z = 0; z < b; z++)
 			{
                         	this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
-                        	x = parseInt(x + 70);
+                        	x = parseInt(x + 30);
 			}
 			y = y + 25; 	
                 }
