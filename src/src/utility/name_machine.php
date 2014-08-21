@@ -175,6 +175,20 @@ var NameMachine = new Class(
 		this.mSubtractedArray.push("gave away");	
 		this.mSubtractedArray.push("lost");	
 		this.mSubtractedArray.push("threw away");	
+
+		//operationString	
+		this.mOperationInstructionExpression = 'Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 1+2';	
+		this.mOperationInstructionEquation = 'Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 1+2=3';	
+	},
+
+	getOperationInstructionExpression: function()
+	{
+		return this.mOperationInstructionExpression;	
+	},
+	
+	getOperationInstructionEquation: function()
+	{
+		return this.mOperationInstructionEquation;	
 	},
        
 	getSchool: function()
