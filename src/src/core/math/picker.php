@@ -168,6 +168,12 @@ getItem: function(id)
         }
 
 	//-----------4th GRADE---------
+        //4.oa.a.1
+        if (id == '4.oa.a.1_1')
+        {
+                return new i_4_oa_a_1__1(this.mSheet);
+        }
+
         //4.oa.a.2
         if (id == '4.oa.a.2_1')
         {
