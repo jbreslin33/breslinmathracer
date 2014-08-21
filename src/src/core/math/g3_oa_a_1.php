@@ -36,7 +36,7 @@ Extends: TextItem,
 
         createQuestionShapes: function()
         {
-                var y = 125;
+                var y = 135;
 
 		var a = parseInt(this.a); 
 		var b = parseInt(this.b); 
@@ -85,17 +85,14 @@ Extends: TextItem,
                	//variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
-
 	
                 random = Math.floor(Math.random()*4);
-		random = 3;
 		
 		if (random == 3)
 		{
 			var nameString = this.mNameMachine.getNameString(this.a);
 			
 			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends. ' +  this.mNameMachine.getOperationInstructionExpression());    	
-
 		}
 
 		if (random == 2)
