@@ -173,6 +173,18 @@ getItem: function(id)
         {
                 return new i_4_oa_a_1__1(this.mSheet);
         }
+        if (id == '4.oa.a.1_2')
+        {
+                return new i_4_oa_a_1__2(this.mSheet);
+        }
+        if (id == '4.oa.a.1_3')
+        {
+                return new i_4_oa_a_1__3(this.mSheet);
+        }
+        if (id == '4.oa.a.1_4')
+        {
+                return new i_4_oa_a_1__4(this.mSheet);
+        }
 
         //4.oa.a.2
         if (id == '4.oa.a.2_1')
