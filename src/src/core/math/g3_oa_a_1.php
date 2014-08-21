@@ -32,24 +32,26 @@ Extends: TextItem,
 
                 this.setAnswer('' + this.a + 'x' + this.b ,0);
                 this.setAnswer('' + this.b + 'x' + this.c ,1);
+		
+		APPLICATION.log('a:' + this.a + ' b:' + this.b);
 	},
 
         createQuestionShapes: function()
         {
-                var x = 0;
-                var y = 300;
+                var y = 125;
 
 		var a = parseInt(this.a); 
+		var b = parseInt(this.b); 
 	
                 for (var i = 0; i < a; i++)
                 {
-                        if (i == 10)
-                        {
-                                x = 0;
-                                y = 375;
-                        }
-                        x = parseInt(x + 70);
-                        this.addQuestionShape(new Shape(50,50,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+			var x = 25; 
+                	for (var z = 0; z < b; z++)
+			{
+                        	this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+                        	x = parseInt(x + 70);
+			}
+			y = y + 25; 	
                 }
         }
 });
@@ -85,6 +87,7 @@ Extends: TextItem,
                	//variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
+
 	
                 random = Math.floor(Math.random()*4);
 		
