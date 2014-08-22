@@ -1,80 +1,50 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_1',4.1001,'4.nbt.b.5','multiply numbers up to 2 digits');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_1',4.1001,'4.nbt.b.5','Multiply numbers 1 digit by 2 digits.');
 */
 
 var i_4_nbt_b_5__1 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-            this.parent(sheet);
-            this.mType = '4.nbt.b.5_1';          	
 
-				var varA = 0;
-				var varB = 0;
-				var varC = 0;
+initialize: function(sheet)
+{
+       	this.parent(sheet);
+        this.mType = '4.nbt.b.5_1';          	
 
-				var start = 0;
-				var end = 0;
-				var rand = 0;
-		
-			// get start number based on 2 digits
-			start = 10;
+        //move gui
+        this.mUserAnswerLabel.setPosition(125,200);
 
-			// get end number based on 2 digits
-			end = 100;
+	this.a = Math.floor(Math.random()*8)+2;
+	this.b = Math.floor(Math.random()*90)+10;
+	this.c = parseInt(this.a * this.b);
 
-			// pick 1st number from start to end range
-			varA = start + Math.floor(Math.random()*(end-start));		
-
-			// pick 2nd number from start to end range
-			varB = start + Math.floor(Math.random()*(end-start));		
-				
-			varC = parseInt(varA * varB);
-								                       
-				this.setQuestion('' + varA + ' * ' +  varB + ' = ');
-            this.setAnswer(varC,0);             
-        }
+	this.setQuestion('' + this.a + '*' +  this.b + '=');
+        this.setAnswer(this.c,0);             
+}
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',4.1002,'4.nbt.b.5','multiply numbers up to 4 digits');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.5_2',4.1002,'4.nbt.b.5','Multiply numbers 1 digit by 3 digits.');
 */
 
 var i_4_nbt_b_5__2 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-            this.parent(sheet);
-            this.mType = '4.nbt.b.5_2';          	
 
-				var varA = 0;
-				var varB = 0;
-				var varC = 0;
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '4.nbt.b.5_2';
 
-				var start = 0;
-				var end = 0;
-				var rand = 0;
-		
-			// pick number of digits (1 - 4)
-			rand = 1 + Math.floor((Math.random()*4));
+        //move gui
+        this.mUserAnswerLabel.setPosition(125,200);
 
-			// get start number based on digits
-			start = Math.pow(10, rand-1);
+        this.a = Math.floor(Math.random()*8)+2;
+        this.b = Math.floor(Math.random()*900)+100;
+	this.c = parseInt(this.a * this.b);
 
-			// get end number based on digits
-			end = Math.pow(10, rand);
-
-			// pick number from start to end range
-			varA = start + Math.floor(Math.random()*(end-start));	
-
-			// pick one digit number
-			varB = 2 + Math.floor(Math.random()*8);	
-				
-			varC = parseInt(varA * varB);
-											                       
-				this.setQuestion('' + varA + ' * ' +  varB + ' = ');
-            this.setAnswer(varC,0);             
-        }
+        this.setQuestion('' + this.a + '*' +  this.b + '=');
+        this.setAnswer(this.c,0);
+}
 });
+
