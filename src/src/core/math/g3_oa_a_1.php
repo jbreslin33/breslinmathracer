@@ -5,6 +5,112 @@ none finished
 */
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_4',3.0104,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
+*/
+
+var i_3_oa_a_1__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_4';
+
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
+
+                //variables
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+
+                var question = 'Write a multiplication expression that represents';
+
+		for (i = 0; i < this.b; i++)
+		{		
+			if (i == 0)
+			{
+				question = question + ' ' + this.a; 	
+			}
+			if (i > 0)
+			{
+				question = question + '+' + this.a; 	
+			}
+		}
+
+                this.setAnswer('' + this.a + '*' + this.b ,0);
+                this.setAnswer('' + this.b + '*' + this.a ,1);
+                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
+                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
+                this.setAnswer('' + this.b + '*' + this.a + '=',4);
+                this.setAnswer('' + this.a + '*' + this.b + '=',5);
+
+                this.setAnswer('' + this.a + 'x' + this.b ,6);
+                this.setAnswer('' + this.b + 'x' + this.a ,7);
+                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
+                this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
+                this.setAnswer('' + this.b + 'x' + this.a + '=',10);
+                this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+
+		this.setQuestion('' + question);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_3',3.0103,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
+*/
+
+var i_3_oa_a_1__3 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_3';
+
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
+
+                //variables
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+
+                var question = 'Write a multiplication number sentence sentence that represents';
+
+		for (i = 0; i < this.b; i++)
+		{		
+			if (i == 0)
+			{
+				question = question + ' ' + this.a; 	
+			}
+			if (i > 0)
+			{
+				question = question + '+' + this.a; 	
+			}
+		}
+
+                this.setAnswer('' + this.a + '*' + this.b ,0);
+                this.setAnswer('' + this.b + '*' + this.a ,1);
+                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
+                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
+                this.setAnswer('' + this.b + '*' + this.a + '=',4);
+                this.setAnswer('' + this.a + '*' + this.b + '=',5);
+
+                this.setAnswer('' + this.a + 'x' + this.b ,6);
+                this.setAnswer('' + this.b + 'x' + this.a ,7);
+                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
+                this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
+                this.setAnswer('' + this.b + 'x' + this.a + '=',10);
+                this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+
+		this.setQuestion('' + question);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_2',3.0102,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
 */
 
