@@ -98,7 +98,11 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5.0122,'5.oa.a.1','f(d(b(a)c)e)g');
-insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nf.b.3.a_1');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nbt.b.5_1');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nbt.b.5_2');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nbt.b.5_3');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nbt.b.5_4');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nbt.b.5_5');
 */
 
 var i_5_oa_a_1__22 = new Class(
