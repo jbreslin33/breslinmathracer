@@ -57,9 +57,19 @@ getItem: function(id)
         {
                 return new i_k_nbt_a_1__1(this.mSheet);
         }
+	
+	/*** GRADE 3 ***/
+	//3.oa.a.1
+	if (id == '3.oa.a.1_3')
+        {
+                return new i_3_oa_a_1__3(this.mSheet);
+        }
+	if (id == '3.oa.a.1_4')
+        {
+                return new i_3_oa_a_1__4(this.mSheet);
+        }
 
 	/*** GRADE 5 ***/
-
 	//5.oa.a.1
 	if (id == '5.oa.a.1_1')
         {
