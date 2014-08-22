@@ -4,6 +4,7 @@ prereqs:
 
 
 */
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_1',4.1401,'4.nf.b.3.a','Add 2 fractions with like denominators. answer is proper fraction.');
 */
@@ -28,43 +29,6 @@ initialize: function(sheet)
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion(ac.getString() + '+' + bc.getString());
-
-       /*	
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varN = 0;
-
-
-		var start = 0;
-		var end = 0;
-		var rand = 0;
-
-		var question;
-		var answer;
-
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			max = Math.floor(varB/2);
-			varA = 1 + Math.floor((Math.random()*(max-1)));
-
-			varC = 1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA + varC;
-			
-			question = '' + varA + ' / ' +  varB + ' + ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD;
-
-			this.setQuestion(question);
-      this.setAnswer('' + answer,0);
-
-      this.mQuestionLabel.setSize(200,50);
-      this.mQuestionLabel.setPosition(275,125);
-*/
 }
 });
 
@@ -74,47 +38,25 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_nf_b_3_a__2 = new Class(
 {
-Extends: TextItem,
-   initialize: function(sheet)
-   {
-      this.parent(sheet);
-      this.mType = '4.nf.b.3.a_2';
-       	
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varN = 0;
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.mType = '4.nf.b.3.a_2';
 
+	var a = Math.floor((Math.random()*15)+10);
+        var b = Math.floor((Math.random()*5)+5);
+        var c = Math.floor((Math.random()*10)+20);
 
-		var start = 0;
-		var end = 0;
-		var rand = 0;
+        var n = parseInt(a - b);
 
-		var question;
-		var answer;
+        var ac = new Fraction(a,c);
+        var bc = new Fraction(b,c);
+        var answer = new Fraction(n,c);
 
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			varA = 2 + Math.floor(Math.random()*(varB-2));
-			
-			varC = 1 + Math.floor(Math.random()*(varA-1));
-			//1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA - varC;
-			
-			question = '' + varA + ' / ' +  varB + ' - ' + '' + varC + ' / ' +  varD + '=' + ' ?/ ' + varD;
-
-			this.setQuestion(question);
-      this.setAnswer('' + answer,0);
-
-      this.mQuestionLabel.setSize(200,50);
-      this.mQuestionLabel.setPosition(275,125);
-   }
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion(ac.getString() + '-' + bc.getString());
+}
 });
 
 
