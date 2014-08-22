@@ -56,7 +56,8 @@ Extends: Item,
                 this.addShape(this.mAnswerTextBox);
 		
 		//user Answer label
-                this.mUserAnswerLabel = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
+                this.mUserAnswerLabel = new Shape(100,50,125,200,this.mSheet.mGame,"","","");
+
                 this.addShape(this.mUserAnswerLabel);
                 this.mUserAnswerLabel.mCollidable = false;
                 this.mUserAnswerLabel.mCollisionOn = false;

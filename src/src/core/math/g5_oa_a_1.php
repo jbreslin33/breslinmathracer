@@ -111,7 +111,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,255,95,100,50,625,100);
 
         this.mType = '5.oa.a.1_22';
 
@@ -137,7 +137,7 @@ initialize: function(sheet)
 
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
-                this.setQuestion(  f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1          );
+                this.setQuestion(  f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1 + '='     );
                 this.setAnswer(x,0);
         }
 }
@@ -153,7 +153,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,255,95,100,50,625,100);
 
         this.mType = '5.oa.a.1_21';
 
