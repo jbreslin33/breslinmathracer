@@ -1,16 +1,35 @@
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_1',4.1401,'4.nf.b.3.a','add 2 fractions with like denominators');
+prereqs:  
+//addition and subtraction: for these fractions though we will keep them as proper fractions....thus the term in standard "part of the same whole".
+
+
+*/
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_1',4.1401,'4.nf.b.3.a','Add 2 fractions with like denominators. answer is proper fraction.');
 */
 
 var i_4_nf_b_3_a__1 = new Class(
 {
-Extends: TextItem,
-   initialize: function(sheet)
-   {
-      this.parent(sheet);
-      this.mType = '4.nf.b.3.a_1';
-       	
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.mType = '4.nf.b.3.a_1';
+
+	var a = Math.floor((Math.random()*5)+1);
+        var b = Math.floor((Math.random()*5)+1);
+        var c = Math.floor((Math.random()*10)+10);
+
+        var n = parseInt(a + b);
+
+        var ac = new Fraction(a,c);
+        var bc = new Fraction(b,c);
+        var answer = new Fraction(n,c);
+
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion(ac.getString() + '+' + bc.getString());
+
+       /*	
 		var varA = 0;
 		var varB = 0;
 		var varC = 0;
@@ -45,7 +64,8 @@ Extends: TextItem,
 
       this.mQuestionLabel.setSize(200,50);
       this.mQuestionLabel.setPosition(275,125);
-   }
+*/
+}
 });
 
 /*
