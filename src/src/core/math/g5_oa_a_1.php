@@ -98,6 +98,7 @@ this might be toughest i need to give maybe through in one with braces and brack
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_22',5.0122,'5.oa.a.1','f(d(b(a)c)e)g');
+insert into prerequisites (item_type_id, prerequisite_id) values ('5.oa.a.1_22','4.nf.b.3.a_1');
 */
 
 var i_5_oa_a_1__22 = new Class(
@@ -132,7 +133,7 @@ initialize: function(sheet)
 
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
-                this.setQuestion(              f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1          );
+                this.setQuestion(  f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1          );
                 this.setAnswer(x,0);
         }
 }
@@ -177,6 +178,7 @@ initialize: function(sheet)
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_20',5.0120,'5.oa.a.1',' e((b(a)c)d)');
+
 */
 
 var i_5_oa_a_1__20 = new Class(
