@@ -5,59 +5,6 @@ none finished
 */
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_4',3.0104,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
-*/
-
-var i_3_oa_a_1__4 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '3.oa.a.1_4';
-
-                this.mNameMachine = new NameMachine();
-                this.mPictureLink = this.mNameMachine.getPictureLink();
-
-                //variables
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
-                this.c = Math.floor(Math.random()*8)+2;
-
-                var question = 'Write a multiplication expression that represents';
-
-		for (i = 0; i < this.b; i++)
-		{		
-			if (i == 0)
-			{
-				question = question + ' ' + this.a; 	
-			}
-			if (i > 0)
-			{
-				question = question + '+' + this.a; 	
-			}
-		}
-
-                this.setAnswer('' + this.a + '*' + this.b ,0);
-                this.setAnswer('' + this.b + '*' + this.a ,1);
-                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-                this.setAnswer('' + this.b + '*' + this.a + '=',4);
-                this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-                this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-                this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-                this.setAnswer('' + this.a + 'x' + this.b + '=',11);
-
-		this.setQuestion('' + question);
-        }
-});
-
-/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_3',3.0103,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
 */
 
@@ -77,8 +24,18 @@ Extends: TextItem,
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = Math.floor(Math.random()*8)+2;
+                
+		var random = Math.floor(Math.random()*2);
 
-                var question = 'Write a multiplication number sentence sentence that represents';
+		var question = '';
+		if (random == 1)
+		{
+                	question = 'Write a multiplication number sentence that represents';
+		}
+		if (random == 0)
+		{
+                	question = 'Write a multiplication expression that represents';
+		}
 
 		for (i = 0; i < this.b; i++)
 		{		
@@ -133,8 +90,17 @@ Extends: TextItem,
                 //variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
-
-                this.setQuestion('Write a number sentence that represents the picture.');
+                this.c = parseInt(this.a * this.b);
+                
+		var random = Math.floor(Math.random()*2);
+		if (random == 1)
+		{
+                	this.setQuestion('Write a number sentence that represents the picture.');
+		}
+		if (random == 0)
+		{
+                	this.setQuestion('Write a multiplication expression that represents the picture.');
+		}
 
 		this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
@@ -206,22 +172,22 @@ Extends: TextItem,
 		{
 			var nameString = this.mNameMachine.getNameString(this.a);
 			
-			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends.');    	
+			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a multiplication expression that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends.');    	
 		}
 
 		if (random == 2)
 		{
-			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '.');   
+			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a multiplication number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '.');   
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a number sentence that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '.'); 
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a multiplication expression that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '.'); 
 		} 
 
 		if (random == 0)
 		{
-                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has.'); 
+                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a multiplication number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has.'); 
 		}
 
                 this.setAnswer('' + this.a + '*' + this.b ,0);
