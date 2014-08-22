@@ -111,14 +111,14 @@ Extends: TextItem,
                 this.setAnswer('' + this.b + '*' + this.a ,1);
 		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
 		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-		this.setAnswer('' + this.b + '*' + this.a + '=');
-		this.setAnswer('' + this.a + '*' + this.b + '=');
+		this.setAnswer('' + this.b + '*' + this.a + '=',4);
+		this.setAnswer('' + this.a + '*' + this.b + '=',5);
 
-                this.setAnswer('' + this.a + 'x' + this.b ,4);
-                this.setAnswer('' + this.b + 'x' + this.a ,5);
-		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,6);
-		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,7);
-		this.setAnswer('' + this.b + 'x' + this.a + '=');
-		this.setAnswer('' + this.a + 'x' + this.b + '=');
+                this.setAnswer('' + this.a + 'x' + this.b ,6);
+                this.setAnswer('' + this.b + 'x' + this.a ,7);
+		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
+		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
+		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
+		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
         }
 });
