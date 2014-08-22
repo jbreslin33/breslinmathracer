@@ -231,35 +231,13 @@ var Item = new Class(
  	//return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
 	setUserAnswer: function(userAnswer)
 	{
-/*
-		var convertedAnswer = ''; 
-		//convert slashes to fractions....	
+		//strip all whitespace
+		var userStrippedAnswer = userAnswer.replace(/ /g,'');	
 
-		//split at the spaces if any
-		var splitOnSpaces = userAnswer.split(" ");	
-	
-		for (i=0; i < splitOnSpaces.length; i++)
-		{	
-			//get index of slash if any 
-			var splitOnSlash = splitOnSpaces[i].split("/");
+		//to lowercase	
+		var lowerCase = userStrippedAnswer.toLowerCase();	
 
-
-			if (splitOnSlash.length > 0)
-			{
-				var numerator   = splitOnSlash[0];
-				var denominator = splitOnSlash[1];
-				var fraction = new Fraction(numerator,denominator);
-				convertedAnswer = convertedAnswer + fraction;   
-			}
-			else
-			{
-				//nothing to do
-				convertedAnswer = '' + convertedAnswer + splitOnSlash;
-			}
-		}
-*/
-	
-		this.mUserAnswer = userAnswer;
+		this.mUserAnswer = lowerCase;
 	},
 	
 	checkUserAnswer: function()
