@@ -49,33 +49,33 @@ I think using fractions could be a check on whether or not fractions are known. 
 //maybe make every 3rd type have fractions. Or maybe even types???? or how bout divisible by 3?? maybe 4 as that  would preclude braces...
 //use only 4th grade fractions....
 1 p
-	1: b(a)  // add and multiple fractions 
+	1: b(a)   
 	2: (a)b  
 	3: b(a)c  
 2 p
-	4: (a)(b) // 
+	4: (a)(b)  
 	5: c(a)(b) 
 	6: (a)c(b)   
-	7: (a)(b)c //x 
+	7: (a)(b)c  
 	
 	8: c(a)d(b) 
 	9: (a)c(b)d   
-	10: c(a)(b)d  //+ 
+	10: c(a)(b)d   
 
 	11: c(a)d(b)e 
 2p INNERS
 	12: [(a)b]c   
-	13: (c(a)b)d //mix 
+	13: (c(a)b)d  
 	14: c[(a)b]d
 	15: c[b(a)]   
-	16: d[b(a)c] //x 
+	16: d[b(a)c]  
 	17: d(b(a)c)e  
 3 inners
    	18:  e{d[b(a)c]} 
-   	19:  (d(b(a)c))e //+ 
+   	19:  (d(b(a)c))e  
    	20:  e{[(b(a)c]d}  
    	21:  ((b(a)c)d)e   
-	22:  f{d[b(a)c]e}g  //mix 
+	22:  f{d[b(a)c]e}g   
 
    	//with braces and brackets	
    	
