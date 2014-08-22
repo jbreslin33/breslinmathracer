@@ -111,17 +111,26 @@ getItem: function(id)
 		return new i_4_nbt_b_4__2(this.mSheet);
 	}
 
-
-
 	//4.nbt.b.5
 	if (id == '4.nbt.b.5_1')
 	{
 		return new i_4_nbt_b_5__1(this.mSheet);
 	}
-
 	if (id == '4.nbt.b.5_2')
 	{
 		return new i_4_nbt_b_5__2(this.mSheet);
+	}
+	if (id == '4.nbt.b.5_3')
+	{
+		return new i_4_nbt_b_5__3(this.mSheet);
+	}
+	if (id == '4.nbt.b.5_4')
+	{
+		return new i_4_nbt_b_5__4(this.mSheet);
+	}
+	if (id == '4.nbt.b.5_5')
+	{
+		return new i_4_nbt_b_5__5(this.mSheet);
 	}
 
   if (id == '4.nbt.b.6_1')
