@@ -28,7 +28,7 @@ Extends: TextItem,
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
 
-                this.setQuestion('Write a number sentence that goes with the picture. ' + this.mNameMachine.getOperationInstructionExpression());
+                this.setQuestion('Write a number sentence that represents the picture.');
 
                 this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
@@ -67,10 +67,6 @@ Extends: TextItem,
 
                 this.mType = '3.oa.a.1_1';
 
-		//move gui
-		this.mUserAnswerLabel.setPosition(125,200);
-		this.mCorrectAnswerLabel.setPosition(425,200);
-
                 this.mNameMachine = new NameMachine();
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
@@ -85,6 +81,7 @@ Extends: TextItem,
                	//variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
 	
                 random = Math.floor(Math.random()*4);
 		
@@ -92,25 +89,36 @@ Extends: TextItem,
 		{
 			var nameString = this.mNameMachine.getNameString(this.a);
 			
-			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends. ' +  this.mNameMachine.getOperationInstructionExpression());    	
+			this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a number sentence that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends.');    	
 		}
 
 		if (random == 2)
 		{
-			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '. ' + this.mNameMachine.getOperationInstructionExpression());   
+			this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '.');   
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a number sentence that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '. ' + this.mNameMachine.getOperationInstructionExpression()); 
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a number sentence that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '.'); 
 		} 
 
 		if (random == 0)
 		{
-                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. ' + this.mNameMachine.getOperationInstructionExpression()); 
+                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has.'); 
 		}
 
                 this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
+		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
+		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
+		this.setAnswer('' + this.b + '*' + this.a + '=');
+		this.setAnswer('' + this.a + '*' + this.b + '=');
+
+                this.setAnswer('' + this.a + 'x' + this.b ,4);
+                this.setAnswer('' + this.b + 'x' + this.a ,5);
+		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,6);
+		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,7);
+		this.setAnswer('' + this.b + 'x' + this.a + '=');
+		this.setAnswer('' + this.a + 'x' + this.b + '=');
         }
 });
