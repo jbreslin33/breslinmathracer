@@ -21,6 +21,9 @@ Extends: TextItem,
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
                 this.mThings      = this.mNameMachine.getThing();
+                
+		this.mSchoolOne      = this.mNameMachine.getSchool();
+		this.mSchoolTwo      = this.mNameMachine.getSchool();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
@@ -30,14 +33,14 @@ Extends: TextItem,
                 random = Math.floor(Math.random()*2);
 		random = 1;
 		
-		if (random == 0)
+		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' than ' + this.mNameTwo);    	
+			this.setQuestion(this.mSchoolOne + ' has ' + this.b + ' students. ' + this.mSchoolTwo + ' has ' + this.a + ' students. How many more students does ' + this.mSchoolTwo + ' have than ' + this.mSchoolOne + '?');    	
 		}
 
 		if (random == 0)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' than ' + this.mNameTwo);    	
+			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' have than ' + this.mNameTwo + '?');    	
 		}
 
                 this.setAnswer(this.c,0);
