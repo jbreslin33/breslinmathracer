@@ -62,6 +62,13 @@ var NameMachine = new Class(
 		this.mPlayedActivityArray.push("baseball");
 		this.mPlayedActivityArray.push("football");
 		this.mPlayedActivityArray.push("hockey");
+		this.mPlayedActivityArray.push("video games");
+		this.mPlayedActivityArray.push("chess");
+		this.mPlayedActivityArray.push("checkers");
+		this.mPlayedActivityArray.push("dominoes");
+		this.mPlayedActivityArray.push("monopoly");
+		this.mPlayedActivityArray.push("tic tac toe");
+		this.mPlayedActivityArray.push("dogde ball");
 
 		//time increment
 		this.mTimeIncrementArray = new Array();

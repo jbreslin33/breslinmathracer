@@ -5,7 +5,7 @@ none finished
 */
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_1',2.0101,'2.oa.a.1','How many more.' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_1',2.0101,'2.oa.a.1','How many more. One step.' );
 */
 
 var i_2_oa_a_1__1 = new Class(
@@ -29,6 +29,9 @@ Extends: TextItem,
 	
 		this.mVegetableOne = this.mNameMachine.getVegetable();
 		this.mVegetableTwo = this.mNameMachine.getVegetable();
+		
+		this.mFruitOne = this.mNameMachine.getFruit();
+		this.mFruitTwo = this.mNameMachine.getFruit();
 
 		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
 		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
@@ -40,7 +43,12 @@ Extends: TextItem,
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*2);
-		random = 3;
+		random = 4;
+		
+		if (random == 4)
+		{
+			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitTwo + '. How many more ' + this.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell than ' + this.mFruitTwo + '?');        
+		}
 		
 		if (random == 3)
 		{
