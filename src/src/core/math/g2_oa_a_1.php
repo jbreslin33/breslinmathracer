@@ -31,6 +31,7 @@ Extends: TextItem,
 	
 		this.mVegetableOne = this.mNameMachine.getVegetable();
 		this.mVegetableTwo = this.mNameMachine.getVegetable();
+		this.mVegetableThree = this.mNameMachine.getVegetable();
 		
 		this.mFruitOne = this.mNameMachine.getFruit();
 		this.mFruitTwo = this.mNameMachine.getFruit();
