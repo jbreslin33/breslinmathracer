@@ -25,13 +25,32 @@ Extends: TextItem,
 		this.mSchoolOne      = this.mNameMachine.getSchool();
 		this.mSchoolTwo      = this.mNameMachine.getSchool();
 
+		this.mAdultOne = this.mNameMachine.getAdult();
+	
+		this.mVegetableOne = this.mNameMachine.getVegetable();
+		this.mVegetableTwo = this.mNameMachine.getVegetable();
+
+		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
+		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
+		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
                 this.b = Math.floor(Math.random()*28)+12;
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*2);
-		random = 1;
+		random = 3;
+		
+		if (random == 3)
+		{
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + ' how many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
+		}
+	
+		if (random == 2)
+		{
+			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + ' and ' + this.b + ' ' + this.mVegetableTwo + '. How many more ' + this.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have than ' + this.mVegetableTwo + '?');  	
+		}
 		
 		if (random == 1)
 		{
