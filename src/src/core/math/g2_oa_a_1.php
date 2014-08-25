@@ -38,6 +38,7 @@ Extends: TextItem,
 
 		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
 		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
+		this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();	
 		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
 
                	//variables
@@ -56,7 +57,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.c + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.mTimeIncrement + '. He played ' + this.mPlayedActivityThree + ' for ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' and ' + this.mPlayedActivityThree + ' than ' + this.mPlayedActivityOne + '?');  	
 		}
 	
 		if (random == 3)
