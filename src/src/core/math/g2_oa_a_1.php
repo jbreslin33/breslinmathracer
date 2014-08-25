@@ -47,7 +47,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a + this.b - this.c);
 	
                 random = Math.floor(Math.random()*2);
-		random = 1;
+		random = 3;
 		
 		if (random == 4)
 		{
@@ -61,7 +61,7 @@ Extends: TextItem,
 	
 		if (random == 2)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + ' and ' + this.b + ' ' + this.mVegetableTwo + '. How many more ' + this.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have than ' + this.mVegetableTwo + '?');  	
+			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + ', ' + this.c + ' ' + this.mVegetableTwo + ' and ' + this.b + ' ' + this.mVegetableThree + '. How many more ' + this.mVegetableOne + ' and ' + this.mVegetableThree + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have than ' + this.mVegetableTwo + '?');  	
 		}
 		
 		if (random == 1)
