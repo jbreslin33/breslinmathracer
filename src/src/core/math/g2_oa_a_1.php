@@ -25,6 +25,7 @@ Extends: TextItem,
                 
 		this.mSchoolOne      = this.mNameMachine.getSchool();
 		this.mSchoolTwo      = this.mNameMachine.getSchool();
+		this.mSchoolThree      = this.mNameMachine.getSchool();
 
 		this.mAdultOne = this.mNameMachine.getAdult();
 	
@@ -45,7 +46,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a + this.b - this.c);
 	
                 random = Math.floor(Math.random()*2);
-		random = 0;
+		random = 1;
 		
 		if (random == 4)
 		{
@@ -64,7 +65,7 @@ Extends: TextItem,
 		
 		if (random == 1)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.b + ' students. ' + this.mSchoolTwo + ' has ' + this.a + ' students. How many more students does ' + this.mSchoolTwo + ' have than ' + this.mSchoolOne + '?');    	
+			this.setQuestion(this.mSchoolOne + ' has ' + this.c + ' students. ' + this.mSchoolTwo + ' has ' + this.a + ' students. ' + this.mSchoolThree + ' has ' + this.b  + ' students. How many more students does ' + this.mSchoolTwo + ' and ' + this.mSchoolThree + ' have than ' + this.mSchoolOne + '?');    	
 		}
 
 		if (random == 0)
