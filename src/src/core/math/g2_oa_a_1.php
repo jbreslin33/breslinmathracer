@@ -20,6 +20,7 @@ Extends: TextItem,
                 this.mNameMachine = new NameMachine();
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
+                this.mNameThree     = this.mNameMachine.getName();
                 this.mThings      = this.mNameMachine.getThing();
                 
 		this.mSchoolOne      = this.mNameMachine.getSchool();
@@ -38,11 +39,13 @@ Extends: TextItem,
 		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = parseInt(this.a - this.b);
+                this.a = Math.floor(Math.random()*50)+35;
+                this.b = Math.floor(Math.random()*8)+6;
+                this.c = Math.floor(Math.random()*18)+10;
+                this.d = parseInt(this.a + this.b - this.c);
 	
                 random = Math.floor(Math.random()*2);
+		random = 0;
 		
 		if (random == 4)
 		{
@@ -66,10 +69,10 @@ Extends: TextItem,
 
 		if (random == 0)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' have than ' + this.mNameTwo + '?');    	
+			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. ' + this.mNameThree + ' has ' + this.c + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' and ' + this.mNameTwo + ' have than ' + this.mNameThree + '?');    	
 		}
 
-                this.setAnswer(this.c,0);
+                this.setAnswer(this.d,0);
         }
 });
 
