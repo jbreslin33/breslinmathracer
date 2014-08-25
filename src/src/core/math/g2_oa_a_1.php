@@ -49,7 +49,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a + this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 5;
+		random = 1;
 	
 		//bca	
 		if (random == 5)
@@ -59,7 +59,7 @@ Extends: TextItem,
 		//cba	
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.c + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.mTimeIncrement + '. He played ' + this.mPlayedActivityThree + ' for ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' and ' + this.mPlayedActivityThree + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.c + ' ' + this.mTimeIncrement + ', ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.mTimeIncrement + ' and ' + this.mPlayedActivityThree + ' for ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' and ' + this.mPlayedActivityThree + ' than ' + this.mPlayedActivityOne + '?');  	
 		}
 		//acb	
 		if (random == 3)
@@ -69,12 +69,12 @@ Extends: TextItem,
 		//cab	
 		if (random == 2)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.c + ' students. ' + this.mSchoolTwo + ' has ' + this.a + ' students. ' + this.mSchoolThree + ' has ' + this.b  + ' students. How many more students does ' + this.mSchoolTwo + ' and ' + this.mSchoolThree + ' have than ' + this.mSchoolOne + '?');    	
+			this.setQuestion(this.mSchoolOne + ' has ' + this.c + ' students, ' + this.mSchoolTwo + ' has ' + this.a + ' and ' + this.mSchoolThree + ' has ' + this.b  + '. How many more students does ' + this.mSchoolTwo + ' and ' + this.mSchoolThree + ' have than ' + this.mSchoolOne + '?');    	
 		}
 		//abc
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. ' + this.mNameThree + ' has ' + this.c + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' and ' + this.mNameTwo + ' have than ' + this.mNameThree + '?');    	
+			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ', ' + this.mNameTwo + ' has ' + this.b + ' and ' + this.mNameThree + ' has ' + this.c + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' and ' + this.mNameTwo + ' have than ' + this.mNameThree + '?');    	
 		}
 
                 this.setAnswer(this.d,0);
