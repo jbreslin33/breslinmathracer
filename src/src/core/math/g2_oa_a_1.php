@@ -54,7 +54,7 @@ Extends: TextItem,
 		//bca	
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.c + ' ' + this.mFruitTwo + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.mFruitThree + '. How many more ' + this.mFruitOne + ' and ' + this.mFruitThree + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell than ' + this.mFruitTwo + '?');        
+			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitOne + ', ' + this.c + ' ' + this.mFruitTwo + ' and ' + this.a + ' ' + this.mFruitThree + '. How many more ' + this.mFruitOne + ' and ' + this.mFruitThree + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell than ' + this.mFruitTwo + '?');        
 		}
 		//cba	
 		if (random == 4)
