@@ -56,7 +56,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + ' how many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
 		}
 	
 		if (random == 3)
@@ -125,7 +125,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + ' how many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
 		}
 	
 		if (random == 3)
