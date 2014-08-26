@@ -52,11 +52,11 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 4; 
+		random = 5; 
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.mFruitOne + '. How many ' + this.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');        
+			this.setQuestion('For Breakfast ' + this.mAnimalOne + ' ate '  + this.b + ' ' + this.mFruitOne + '. For Lunch the ' + this.mAnimalOne + ' ate ' + this.c + ' ' + this.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.mFruitOne + ' then how many ' + this.mFruitOne + ' do the ' + this.mAnimalOne + ' have left for dinner?');        
 		}
 		
 		if (random == 4)
@@ -66,7 +66,7 @@ Extends: TextItem,
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mAnimalOne +  ' ate ' + this.b + ' ' + this.mVegetableOne + ' and ' + this.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
+			this.setQuestion(this.mAdultOne + ' has a farm with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mAnimalOne +  ' ate ' + this.b + ' ' + this.mVegetableOne + ' and ' + this.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
 		}
 		
 		if (random == 2)
