@@ -45,7 +45,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 5; 
+		random = 1; 
 		
 		if (random == 5)
 		{
@@ -69,7 +69,7 @@ Extends: TextItem,
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + '. ' + this.mName     );    	
+			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + ' and ' + this.mNameThree + ' ' + this.c + ' ' + this.mThings + '. Before he gave away ' + this.mThings + ' ' + this.mNameOne + ' had ' + this.a + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
 		}
 
                 this.setAnswer(this.c,0);
