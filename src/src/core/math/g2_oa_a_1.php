@@ -20,6 +20,7 @@ Extends: TextItem,
                 this.mNameMachine = new NameMachine();
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
+                this.mNameThree     = this.mNameMachine.getName();
                 this.mThings      = this.mNameMachine.getThing();
                 
 		this.mSchoolOne      = this.mNameMachine.getSchool();
@@ -40,7 +41,8 @@ Extends: TextItem,
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
                 this.b = Math.floor(Math.random()*28)+12;
-                this.c = parseInt(this.a - this.b);
+                this.c = Math.floor(Math.random()*28)+12;
+                this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
 		random = 5; 
@@ -67,7 +69,7 @@ Extends: TextItem,
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave '  + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
+			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + '. ' + this.mName     );    	
 		}
 
                 this.setAnswer(this.c,0);
