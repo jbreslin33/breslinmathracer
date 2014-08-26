@@ -43,11 +43,11 @@ Extends: TextItem,
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 4; 
+		random = 5; 
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitTwo + '. How many more ' + this.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell than ' + this.mFruitTwo + '?');        
+			this.setQuestion(this.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.mFruitOne + '. How many ' + this.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');        
 		}
 		
 		if (random == 4)
