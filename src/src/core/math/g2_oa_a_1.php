@@ -4,6 +4,88 @@ prerequisites:
 none finished
 */
 //to do: altogether, total
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_5',2.0105,'2.oa.a.1','Two step. hard.' );
+*/
+
+var i_2_oa_a_1__5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '2.oa.a.1_5';
+
+                this.mNameMachine = new NameMachine();
+                this.mNameOne     = this.mNameMachine.getName();
+                this.mNameTwo     = this.mNameMachine.getName();
+                this.mNameThree     = this.mNameMachine.getName();
+                this.mThings      = this.mNameMachine.getThing();
+                
+		this.mSchoolOne      = this.mNameMachine.getSchool();
+		this.mSchoolTwo      = this.mNameMachine.getSchool();
+		this.mSchoolThree      = this.mNameMachine.getSchool();
+
+		this.mAdultOne = this.mNameMachine.getAdult();
+	
+		this.mVegetableOne = this.mNameMachine.getVegetable();
+		this.mVegetableTwo = this.mNameMachine.getVegetable();
+		
+		this.mFruitOne = this.mNameMachine.getFruit();
+		this.mFruitTwo = this.mNameMachine.getFruit();
+
+		this.mAnimalOne = this.mNameMachine.getAnimal();
+		this.mAnimalTwo = this.mNameMachine.getAnimal();
+		this.mAnimalThree = this.mNameMachine.getAnimal();
+
+		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
+		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
+		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+
+		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
+		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
+
+               	//variables
+                this.a = Math.floor(Math.random()*50)+50;
+                this.b = Math.floor(Math.random()*28)+12;
+                this.c = Math.floor(Math.random()*28)+12;
+                this.d = parseInt(this.a - this.b - this.c);
+	
+                random = Math.floor(Math.random()*5)+1;
+		random = 5; 
+		
+		if (random == 5)
+		{
+                	this.d = parseInt(this.b + this.b + this.c);
+			this.setQuestion('There are ' + this.b + ' ' + this.mAnimalOne + '. There are ' + this.c + ' more ' + this.mAnimalTwo + ' than ' + this.mAnimalOne + '. How many animals are there altogether?');        
+		}
+		
+		if (random == 4)
+		{
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + ' and ' + this.c + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekTwo + '. How many ' + this.mTimeIncrement + ' do they have left to play?');    	
+		}
+	
+		if (random == 3)
+		{
+			this.setQuestion(this.mAdultOne + ' has a farm with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mAnimalOne +  ' ate ' + this.b + ' ' + this.mVegetableOne + ' and ' + this.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
+		}
+		
+		if (random == 2)
+		{
+                	this.d = parseInt(this.a - this.b + this.c);
+			this.setQuestion(this.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.mSchoolOne + '  and go to ' + this.mSchoolTwo + '. ' + this.c + ' students leave ' + this.mSchoolThree + ' and come to ' +  this.mSchoolOne + '. How many students will ' + this.mSchoolOne + ' have left?');    	
+		}
+
+		if (random == 1)
+		{
+			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + ' and ' + this.mNameThree + ' ' + this.c + ' ' + this.mThings + '. Before he gave away ' + this.mThings + ' ' + this.mNameOne + ' had ' + this.a + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
+		}
+
+                this.setAnswer(this.d,0);
+        }
+});
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_4',2.0104,'2.oa.a.1','How many left. Two step.' );
 */
