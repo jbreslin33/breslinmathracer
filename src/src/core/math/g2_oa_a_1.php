@@ -43,7 +43,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 1;
+		random = 2;
 		
 		if (random == 5)
 		{
@@ -62,7 +62,7 @@ Extends: TextItem,
 		
 		if (random == 2)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.b + ' students. ' + this.mSchoolTwo + ' has ' + this.a + ' students. How many more students does ' + this.mSchoolTwo + ' have than ' + this.mSchoolOne + '?');    	
+			this.setQuestion(this.mSchoolOne + ' has ' + this.a + ' students. If ' + this.b + ' leave and go to ' + this.mSchoolTwo + ' than how many students will ' + this.mSchoolOne + ' have left?');    	
 		}
 
 		if (random == 1)
