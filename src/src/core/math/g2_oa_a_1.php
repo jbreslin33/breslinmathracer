@@ -3,7 +3,7 @@
 prerequisites:
 none finished
 */
-
+//to do: altogether, total
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_4',2.0104,'2.oa.a.1','How many left. Two step.' );
 */
@@ -25,6 +25,7 @@ Extends: TextItem,
                 
 		this.mSchoolOne      = this.mNameMachine.getSchool();
 		this.mSchoolTwo      = this.mNameMachine.getSchool();
+		this.mSchoolThree      = this.mNameMachine.getSchool();
 
 		this.mAdultOne = this.mNameMachine.getAdult();
 	
@@ -45,7 +46,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 1; 
+		random = 2; 
 		
 		if (random == 5)
 		{
@@ -64,7 +65,8 @@ Extends: TextItem,
 		
 		if (random == 2)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.a + ' students. If ' + this.b + ' leave and go to ' + this.mSchoolTwo + ' than how many students will ' + this.mSchoolOne + ' have left?');    	
+                	this.d = parseInt(this.a - this.b + this.c);
+			this.setQuestion(this.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.mSchoolOne + '  and go to ' + this.mSchoolTwo + '. ' + this.c + ' students leave ' + this.mSchoolThree + ' and come to ' +  this.mSchoolOne + '. How many students will ' + this.mSchoolOne + ' have left?');    	
 		}
 
 		if (random == 1)
