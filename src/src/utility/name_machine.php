@@ -82,6 +82,22 @@ var NameMachine = new Class(
 		this.mTimeIncrementArray.push("years");
 		this.mTimeIncrementArray.push("decades");
 		this.mTimeIncrementArray.push("centuries");
+		
+		//animals
+		this.mAnimalArray = new Array();
+		this.mUsedAnimalElementArray = new Array();
+		this.mAnimalArray.push("apes");
+		this.mAnimalArray.push("bears");
+		this.mAnimalArray.push("cats");
+		this.mAnimalArray.push("ducks");
+		this.mAnimalArray.push("elephants");
+		this.mAnimalArray.push("frogs");
+		this.mAnimalArray.push("girrafes");
+		this.mAnimalArray.push("monkeys");
+		this.mAnimalArray.push("birds");
+		this.mAnimalArray.push("sharks");
+		this.mAnimalArray.push("cows");
+		this.mAnimalArray.push("zebras");
 	
 		//fruit
 		this.mFruitArray = new Array();
@@ -250,6 +266,33 @@ var NameMachine = new Class(
                 }
                 this.mUsedThingElementArray.push(randomElement);
                 return this.mThingArray[randomElement];
+        },
+    
+	getAnimal: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mAnimalArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedAnimalElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedAnimalElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedAnimalElementArray.push(randomElement);
+                return this.mAnimalArray[randomElement];
         },
 
         getVegetable: function()
