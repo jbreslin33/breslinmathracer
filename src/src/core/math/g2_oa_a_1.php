@@ -72,7 +72,7 @@ Extends: TextItem,
 			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + ' and ' + this.mNameThree + ' ' + this.c + ' ' + this.mThings + '. Before he gave away ' + this.mThings + ' ' + this.mNameOne + ' had ' + this.a + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
 		}
 
-                this.setAnswer(this.c,0);
+                this.setAnswer(this.d,0);
         }
 });
 
