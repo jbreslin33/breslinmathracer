@@ -43,7 +43,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 2;
+		random = 4; 
 		
 		if (random == 5)
 		{
@@ -52,12 +52,12 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.mTimeIncrement + ' than how many ' + this.mTimeIncrement + ' do they have left to play?');    	
 		}
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + ' and ' + this.b + ' ' + this.mVegetableTwo + '. How many more ' + this.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have than ' + this.mVegetableTwo + '?');  	
+			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
 		}
 		
 		if (random == 2)
