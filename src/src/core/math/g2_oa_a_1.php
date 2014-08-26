@@ -35,9 +35,15 @@ Extends: TextItem,
 		this.mFruitOne = this.mNameMachine.getFruit();
 		this.mFruitTwo = this.mNameMachine.getFruit();
 
+		this.mAnimalOne = this.mNameMachine.getAnimal();
+		this.mAnimalTwo = this.mNameMachine.getAnimal();
+
 		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
 		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
 		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+
+		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
+		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
@@ -46,7 +52,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 2; 
+		random = 4; 
 		
 		if (random == 5)
 		{
@@ -55,12 +61,12 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.mTimeIncrement + ' than how many ' + this.mTimeIncrement + ' do they have left to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + ' and ' + this.c + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekTwo + '. How many ' + this.mTimeIncrement + ' do they have left to play?');    	
 		}
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
+			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mAnimalOne +  ' ate ' + this.b + ' ' + this.mVegetableOne + ' and ' + this.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
 		}
 		
 		if (random == 2)
