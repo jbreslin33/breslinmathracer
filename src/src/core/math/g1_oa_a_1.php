@@ -5,7 +5,7 @@ none finished
 */
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.1_2',1.0102,'1.oa.a.1','.Subtraction.' );
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.1_2',1.0102,'1.oa.a.1','.How many left.' );
 */
 
 var i_1_oa_a_1__2 = new Class(
@@ -61,8 +61,7 @@ Extends: TextItem,
 		
 		if (random == 2)
 		{
-			//this.setQuestion(this.mSchoolOne + ' has ' + this.a + ' students. If ' + this.b + ' leave and go to ' + this.mSchoolTwo + ' than how many students will ' + this.mSchoolOne + ' have left?');    	
-			this.setQuestion(this.b + ' students left ' + this.mSchoolOne + ' and started going to ' + this.mSchoolTwo + '. If ' + this.mSchoolOne + ' had ' + this.a + ' students to begin with than how many does ' + this.mSchoolOne + ' have left?'  );    	
+			this.setQuestion(this.b + ' students left ' + this.mSchoolOne + ' and started going to ' + this.mSchoolTwo + '. If ' + this.mSchoolOne + ' had ' + this.a + ' students to begin with than how many students does ' + this.mSchoolOne + ' have left?'  );    	
 		}
 
 		if (random == 1)
@@ -76,7 +75,7 @@ Extends: TextItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.1_1',1.0101,'1.oa.a.1','Addition.' );
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.1_1',1.0101,'1.oa.a.1','How many more.' );
 */
 
 var i_1_oa_a_1__1 = new Class(
