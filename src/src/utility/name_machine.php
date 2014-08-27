@@ -207,6 +207,13 @@ var NameMachine = new Class(
 		this.mSumArray.push("in total");	
 		this.mSumArray.push("in sum");	
 		this.mSumArray.push("total");	
+		
+		//left	
+		this.mLeftArray = new Array();
+		this.mUsedLeftElementArray = new Array();
+		this.mLeftArray.push("left");	
+		this.mLeftArray.push("remaining");	
+		this.mLeftArray.push("still");	
 
 
 		//operationString	
@@ -905,7 +912,35 @@ var NameMachine = new Class(
                 }
                 this.mUsedSumElementArray.push(randomElement);
                 return this.mSumArray[randomElement];
+        },
+        
+	getLeft: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mLeftArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedLeftElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedLeftElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedLeftElementArray.push(randomElement);
+                return this.mLeftArray[randomElement];
         }
+
 });
 
 var NameSampler = new Class(
@@ -958,5 +993,6 @@ var NameSampler = new Class(
 		this.mColorThree = this.mNameMachine.getColor();
 
                 this.mSum = this.mNameMachine.getSum();
+                this.mLeft = this.mNameMachine.getLeft();
 	}
 });
