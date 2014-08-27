@@ -235,8 +235,7 @@ Extends: TextItem,
 		
 		if (random == 2)
 		{
-			//this.setQuestion(this.mSchoolOne + ' has ' + this.a + ' students. If ' + this.b + ' leave and go to ' + this.mSchoolTwo + ' than how many students will ' + this.mSchoolOne + ' have left?');    	
-			this.setQuestion(this.b + ' students left ' + this.mSchoolOne + ' and started going to ' + this.mSchoolTwo + '. If ' + this.mSchoolOne + ' had ' + this.a + ' students to begin with than how many does ' + this.mSchoolOne + ' have left?'  );    	
+			this.setQuestion(this.b + ' students left ' + this.mSchoolOne + ' and started going to ' + this.mSchoolTwo + '. If ' + this.mSchoolOne + ' had ' + this.a + ' students to begin with than how many students does ' + this.mSchoolOne + ' have left?'  );    	
 		}
 
 		if (random == 1)
