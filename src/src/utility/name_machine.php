@@ -906,7 +906,4 @@ var NameMachine = new Class(
                 this.mUsedSumElementArray.push(randomElement);
                 return this.mSumArray[randomElement];
         }
-
-
 });
-
