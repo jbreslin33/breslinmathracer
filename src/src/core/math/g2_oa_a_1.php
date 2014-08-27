@@ -26,7 +26,6 @@ Extends: TextItem,
                 this.d = parseInt(this.a + this.b + this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 1;
 		
 		if (random == 5)
 		{
@@ -70,7 +69,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_6';
 
-                this.mNameSampler = new NameSampler();
+                this.ns = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*20)+30;
@@ -78,7 +77,6 @@ Extends: TextItem,
                 this.c = parseInt(this.a + this.b);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 1;
 		
 		if (random == 5)
 		{
@@ -104,7 +102,6 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' do they have ' + this.ns.mSum + '?');    	
 		}
-
                 this.setAnswer(this.c,0);
         }
 });
@@ -121,38 +118,8 @@ Extends: TextItem,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '2.oa.a.1_5';
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mNameThree     = this.mNameMachine.getName();
-                this.mThings      = this.mNameMachine.getThing();
                 
-		this.mSchoolOne      = this.mNameMachine.getSchool();
-		this.mSchoolTwo      = this.mNameMachine.getSchool();
-		this.mSchoolThree      = this.mNameMachine.getSchool();
-
-		this.mAdultOne = this.mNameMachine.getAdult();
-	
-		this.mVegetableOne = this.mNameMachine.getVegetable();
-		this.mVegetableTwo = this.mNameMachine.getVegetable();
-		
-		this.mFruitOne = this.mNameMachine.getFruit();
-		this.mFruitTwo = this.mNameMachine.getFruit();
-		
-		this.mColorOne = this.mNameMachine.getColor();
-		this.mColorTwo = this.mNameMachine.getColor();
-
-		this.mAnimalOne = this.mNameMachine.getAnimal();
-		this.mAnimalTwo = this.mNameMachine.getAnimal();
-		this.mAnimalThree = this.mNameMachine.getAnimal();
-
-		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
-
-		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
-		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
+		this.ns = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
@@ -161,18 +128,17 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 1; 
 		
 		if (random == 5)
 		{
                 	this.d = parseInt(this.b + this.b + this.c);
-			this.setQuestion('There are ' + this.b + ' ' + this.mAnimalOne + '. There are ' + this.c + ' more ' + this.mAnimalTwo + ' than ' + this.mAnimalOne + '. How many animals are there altogether?');        
+			this.setQuestion('There are ' + this.b + ' ' + this.ns.mAnimalOne + '. There are ' + this.c + ' more ' + this.ns.mAnimalTwo + ' than ' + this.ns.mAnimalOne + '. How many animals are there altogether?');        
 		}
 		
 		if (random == 4)
 		{
                 	this.d = parseInt(this.a - this.b);
-			this.setQuestion(this.mNameOne + ' and ' + this.mNameTwo + ' are on the same team called the ' + this.mAnimalOne + '. The ' + this.mAnimalOne + ' scored ' + ' ' + this.a + ' points total. ' + this.mNameOne + ' scored ' + this.b + ' points. ' + this.mNameTwo + ' scored the rest of the points for the ' + this.mAnimalOne + '. How many points did ' + this.mNameTwo + ' score.'     ) ;    	
+			this.setQuestion(this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same team called the ' + this.ns.mAnimalOne + '. The ' + this.ns.mAnimalOne + ' scored ' + ' ' + this.a + ' points total. ' + this.ns.mNameOne + ' scored ' + this.b + ' points. ' + this.ns.mNameTwo + ' scored the rest of the points for the ' + this.ns.mAnimalOne + '. How many points did ' + this.ns.mNameTwo + ' score.'     ) ;    	
 		}
 	
 		if (random == 3)
@@ -180,7 +146,7 @@ Extends: TextItem,
                 	this.a = Math.floor(Math.random()*20)+30;
                 	this.b = Math.floor(Math.random()*20)+15;
                 	this.d = parseInt(this.a + this.a - this.b);
-			this.setQuestion(this.mNameOne + ' planted ' + this.a + ' ' + this.mVegetableOne + '. ' + this.mNameTwo + ' planted ' + this.b + ' less ' + this.mVegetableOne + ' than ' + this.mNameOne + '. How many ' + this.mVegetableOne + ' did they plant in total?' );  	
+			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' less ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in total?' );  	
 		}
 		
 		if (random == 2)
@@ -188,7 +154,7 @@ Extends: TextItem,
                 	this.a = Math.floor(Math.random()*10)+20;
                 	this.b = Math.floor(Math.random()*20)+15;
                 	this.d = parseInt(this.b + this.b + this.a);
-			this.setQuestion('There are ' + this.b + ' ' + this.mColorOne + ' ' + this.mThings + '. There are ' + this.a + ' more ' + this.mColorTwo + ' ' + this.mThings + ' than ' + this.mColorOne + ' ' + this.mThings + '. How many ' + this.mThings + ' are there altogether?');    	
+			this.setQuestion('There are ' + this.b + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.a + ' more ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there altogether?');    	
 		}
 
 		if (random == 1)
@@ -196,9 +162,8 @@ Extends: TextItem,
                 	this.a = Math.floor(Math.random()*20)+35;
                 	this.b = Math.floor(Math.random()*10)+20;
                 	this.d = parseInt(this.a - this.b + this.a);
-			this.setQuestion(this.mNameOne + ' spent ' + this.a + ' ' + this.mTimeIncrement + ' playing ' + this.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.mTimeIncrement + ' less playing ' + this.mPlayedActivityTwo + '. How many ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' spend playing total?'); 	
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' less playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing total?'); 	
 		}
-
                 this.setAnswer(this.d,0);
         }
 });
@@ -214,34 +179,8 @@ Extends: TextItem,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '2.oa.a.1_4';
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mNameThree     = this.mNameMachine.getName();
-                this.mThings      = this.mNameMachine.getThing();
-                
-		this.mSchoolOne      = this.mNameMachine.getSchool();
-		this.mSchoolTwo      = this.mNameMachine.getSchool();
-		this.mSchoolThree      = this.mNameMachine.getSchool();
-
-		this.mAdultOne = this.mNameMachine.getAdult();
-	
-		this.mVegetableOne = this.mNameMachine.getVegetable();
-		this.mVegetableTwo = this.mNameMachine.getVegetable();
 		
-		this.mFruitOne = this.mNameMachine.getFruit();
-		this.mFruitTwo = this.mNameMachine.getFruit();
-
-		this.mAnimalOne = this.mNameMachine.getAnimal();
-		this.mAnimalTwo = this.mNameMachine.getAnimal();
-
-		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
-
-		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
-		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
+		this.ns = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
@@ -250,32 +189,31 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 5; 
 		
 		if (random == 5)
 		{
-			this.setQuestion('For Breakfast ' + this.mAnimalOne + ' ate '  + this.b + ' ' + this.mFruitOne + '. For Lunch the ' + this.mAnimalOne + ' ate ' + this.c + ' ' + this.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.mFruitOne + ' then how many ' + this.mFruitOne + ' do the ' + this.mAnimalOne + ' have left for dinner?');        
+			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. For Lunch the ' + this.ns.mAnimalOne + ' ate ' + this.c + ' ' + this.ns.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have left for dinner?');        
 		}
 		
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + ' and ' + this.c + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekTwo + '. How many ' + this.mTimeIncrement + ' do they have left to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' and ' + this.c + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mTimeIncrement + ' do they have left to play?');    	
 		}
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a farm with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mAnimalOne +  ' ate ' + this.b + ' ' + this.mVegetableOne + ' and ' + this.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a farm with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.ns.mAnimalOne +  ' ate ' + this.b + ' ' + this.ns.mVegetableOne + ' and ' + this.ns.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have left?');  	
 		}
 		
 		if (random == 2)
 		{
                 	this.d = parseInt(this.a - this.b + this.c);
-			this.setQuestion(this.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.mSchoolOne + '  and go to ' + this.mSchoolTwo + '. ' + this.c + ' students leave ' + this.mSchoolThree + ' and come to ' +  this.mSchoolOne + '. How many students will ' + this.mSchoolOne + ' have left?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.ns.mSchoolOne + '  and go to ' + this.ns.mSchoolTwo + '. ' + this.c + ' students leave ' + this.ns.mSchoolThree + ' and come to ' +  this.ns.mSchoolOne + '. How many students will ' + this.mSchoolOne + ' have left?');    	
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + ' and ' + this.mNameThree + ' ' + this.c + ' ' + this.mThings + '. Before he gave away ' + this.mThings + ' ' + this.mNameOne + ' had ' + this.a + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
+			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
 		}
 
                 this.setAnswer(this.d,0);
@@ -294,26 +232,8 @@ Extends: TextItem,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '2.oa.a.1_3';
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mThings      = this.mNameMachine.getThing();
-                
-		this.mSchoolOne      = this.mNameMachine.getSchool();
-		this.mSchoolTwo      = this.mNameMachine.getSchool();
-
-		this.mAdultOne = this.mNameMachine.getAdult();
-	
-		this.mVegetableOne = this.mNameMachine.getVegetable();
-		this.mVegetableTwo = this.mNameMachine.getVegetable();
 		
-		this.mFruitOne = this.mNameMachine.getFruit();
-		this.mFruitTwo = this.mNameMachine.getFruit();
-
-		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+		this.ns = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
@@ -321,7 +241,6 @@ Extends: TextItem,
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 2; 
 		
 		if (random == 5)
 		{
@@ -364,31 +283,8 @@ Extends: TextItem,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '2.oa.a.1_2';
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mNameThree     = this.mNameMachine.getName();
-                this.mThings      = this.mNameMachine.getThing();
-                
-		this.mSchoolOne      = this.mNameMachine.getSchool();
-		this.mSchoolTwo      = this.mNameMachine.getSchool();
-		this.mSchoolThree      = this.mNameMachine.getSchool();
-
-		this.mAdultOne = this.mNameMachine.getAdult();
-	
-		this.mVegetableOne = this.mNameMachine.getVegetable();
-		this.mVegetableTwo = this.mNameMachine.getVegetable();
-		this.mVegetableThree = this.mNameMachine.getVegetable();
 		
-		this.mFruitOne = this.mNameMachine.getFruit();
-		this.mFruitTwo = this.mNameMachine.getFruit();
-		this.mFruitThree = this.mNameMachine.getFruit();
-
-		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+		this.ns = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+35;
@@ -440,26 +336,8 @@ Extends: TextItem,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '2.oa.a.1_1';
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mThings      = this.mNameMachine.getThing();
-                
-		this.mSchoolOne      = this.mNameMachine.getSchool();
-		this.mSchoolTwo      = this.mNameMachine.getSchool();
-
-		this.mAdultOne = this.mNameMachine.getAdult();
-	
-		this.mVegetableOne = this.mNameMachine.getVegetable();
-		this.mVegetableTwo = this.mNameMachine.getVegetable();
 		
-		this.mFruitOne = this.mNameMachine.getFruit();
-		this.mFruitTwo = this.mNameMachine.getFruit();
-
-		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+		this.ns = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*50)+50;
