@@ -20,6 +20,8 @@ Extends: TextItem,
                 this.mNameMachine = new NameMachine();
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
+                this.mNameThree     = this.mNameMachine.getName();
+
                 this.mThings      = this.mNameMachine.getThing();
                 
 		this.mSchoolOne      = this.mNameMachine.getSchool();
@@ -46,13 +48,13 @@ Extends: TextItem,
 		this.mSum = this.mNameMachine.getSum();
 
                	//variables
-                this.a = Math.floor(Math.random()*10)+24;
-                this.b = Math.floor(Math.random()*10)+24;
-                this.c = Math.floor(Math.random()*10)+24;
+                this.a = Math.floor(Math.random()*20)+11;
+                this.b = Math.floor(Math.random()*20)+11;
+                this.c = Math.floor(Math.random()*20)+11;
                 this.d = parseInt(this.a + this.b + this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 2;
+		random = 1;
 		
 		if (random == 5)
 		{
@@ -76,7 +78,7 @@ Extends: TextItem,
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many ' + this.mThings + ' do they have ' + this.mSum + '?');    	
+			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ', ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + ' and ' + this.mNameThree + ' has ' + this.c + ' ' + this.mThings + '  . How many ' + this.mThings + ' do they have ' + this.mSum + '?');    	
 		}
 
                 this.setAnswer(this.d,0);
