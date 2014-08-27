@@ -3,7 +3,6 @@
 prerequisites:
 none finished
 */
-//to do: altogether, total
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_5',2.0105,'2.oa.a.1','Two step. hard.' );
@@ -45,7 +44,7 @@ Extends: TextItem,
 
 		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
 		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
+		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
 
 		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
 		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
@@ -57,7 +56,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 2; 
+		random = 1; 
 		
 		if (random == 5)
 		{
@@ -89,7 +88,10 @@ Extends: TextItem,
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' gave ' + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + ' and ' + this.mNameThree + ' ' + this.c + ' ' + this.mThings + '. Before he gave away ' + this.mThings + ' ' + this.mNameOne + ' had ' + this.a + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
+                	this.a = Math.floor(Math.random()*20)+35;
+                	this.b = Math.floor(Math.random()*10)+20;
+                	this.d = parseInt(this.a - this.b + this.a);
+			this.setQuestion(this.mNameOne + ' spent ' + this.a + ' ' + this.mTimeIncrement + ' playing ' + this.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.mTimeIncrement + ' less playing ' + this.mPlayedActivityTwo + '. How many ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' spend playing total?'); 	
 		}
 
                 this.setAnswer(this.d,0);
