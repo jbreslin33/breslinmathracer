@@ -907,3 +907,39 @@ var NameMachine = new Class(
                 return this.mSumArray[randomElement];
         }
 });
+
+var NameSampler = new Class(
+{
+        initialize: function ()
+        {
+                this.mNameMachine = new NameMachine();
+                this.mNameOne     = this.mNameMachine.getName();
+                this.mNameTwo     = this.mNameMachine.getName();
+                this.mNameThree     = this.mNameMachine.getName();
+
+                this.mThings      = this.mNameMachine.getThing();
+
+                this.mSchoolOne      = this.mNameMachine.getSchool();
+                this.mSchoolTwo      = this.mNameMachine.getSchool();
+
+                this.mAdultOne = this.mNameMachine.getAdult();
+
+                this.mVegetableOne = this.mNameMachine.getVegetable();
+                this.mVegetableTwo = this.mNameMachine.getVegetable();
+                this.mVegetableThree = this.mNameMachine.getVegetable();
+
+                this.mFruitOne = this.mNameMachine.getFruit();
+                this.mFruitTwo = this.mNameMachine.getFruit();
+
+                this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();
+                this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();
+                this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();
+                this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
+
+                this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
+                this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
+                this.mDayOfWeekThree = this.mNameMachine.getDayOfWeek();
+
+                this.mSum = this.mNameMachine.getSum();
+	}
+});
