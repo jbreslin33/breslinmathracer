@@ -35,6 +35,9 @@ Extends: TextItem,
 		
 		this.mFruitOne = this.mNameMachine.getFruit();
 		this.mFruitTwo = this.mNameMachine.getFruit();
+		
+		this.mColorOne = this.mNameMachine.getColor();
+		this.mColorTwo = this.mNameMachine.getColor();
 
 		this.mAnimalOne = this.mNameMachine.getAnimal();
 		this.mAnimalTwo = this.mNameMachine.getAnimal();
@@ -54,7 +57,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 3; 
+		random = 2; 
 		
 		if (random == 5)
 		{
@@ -78,8 +81,10 @@ Extends: TextItem,
 		
 		if (random == 2)
 		{
-                	this.d = parseInt(this.a - this.b + this.c);
-			this.setQuestion(this.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.mSchoolOne + '  and go to ' + this.mSchoolTwo + '. ' + this.c + ' students leave ' + this.mSchoolThree + ' and come to ' +  this.mSchoolOne + '. How many students will ' + this.mSchoolOne + ' have left?');    	
+                	this.a = Math.floor(Math.random()*10)+20;
+                	this.b = Math.floor(Math.random()*20)+15;
+                	this.d = parseInt(this.b + this.b + this.a);
+			this.setQuestion('There are ' + this.b + ' ' + this.mColorOne + ' ' + this.mThings + '. There are ' + this.a + ' more ' + this.mColorTwo + ' ' + this.mThings + ' than ' + this.mColorOne + ' ' + this.mThings + '. How many ' + this.mThings + ' are there altogether?');    	
 		}
 
 		if (random == 1)
