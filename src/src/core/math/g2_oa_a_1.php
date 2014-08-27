@@ -54,7 +54,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 4; 
+		random = 3; 
 		
 		if (random == 5)
 		{
@@ -70,7 +70,10 @@ Extends: TextItem,
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a farm with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mAnimalOne +  ' ate ' + this.b + ' ' + this.mVegetableOne + ' and ' + this.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
+                	this.a = Math.floor(Math.random()*20)+30;
+                	this.b = Math.floor(Math.random()*20)+15;
+                	this.d = parseInt(this.a + this.a - this.b);
+			this.setQuestion(this.mNameOne + ' planted ' + this.a + ' ' + this.mVegetableOne + '. ' + this.mNameTwo + ' planted ' + this.b + ' less ' + this.mVegetableOne + ' than ' + this.mNameOne + '. How many ' + this.mVegetableOne + ' did they plant in total?' );  	
 		}
 		
 		if (random == 2)
