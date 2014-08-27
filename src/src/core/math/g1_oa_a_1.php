@@ -109,8 +109,8 @@ Extends: TextItem,
 		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
+                this.a = Math.floor(Math.random()*8)+13;
+                this.b = Math.floor(Math.random()*5)+5;
                 this.c = parseInt(this.a - this.b);
 	
                 random = Math.floor(Math.random()*5)+1;
