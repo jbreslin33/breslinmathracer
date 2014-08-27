@@ -199,6 +199,16 @@ var NameMachine = new Class(
 		this.mSubtractedArray.push("lost");	
 		this.mSubtractedArray.push("threw away");	
 
+		//sum	
+		this.mSumArray = new Array();
+		this.mUsedSumElementArray = new Array();
+		this.mSumArray.push("in all");	
+		this.mSumArray.push("altogether");	
+		this.mSumArray.push("in total");	
+		this.mSumArray.push("in sum");	
+		this.mSumArray.push("total");	
+
+
 		//operationString	
 		this.mOperationInstructionExpression = 'Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 1+2';	
 		this.mOperationInstructionEquation = 'Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 1+2=3';	
@@ -868,7 +878,35 @@ var NameMachine = new Class(
                 }
                 this.mUsedSubtractedElementArray.push(randomElement);
                 return this.mSubtractedArray[randomElement];
+        },
+
+        getSum: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mSumArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedSumElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedSumElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedSumElementArray.push(randomElement);
+                return this.mSumArray[randomElement];
         }
+
 
 });
 
