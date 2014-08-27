@@ -58,6 +58,17 @@ getItem: function(id)
                 return new i_k_nbt_a_1__1(this.mSheet);
         }
 	
+	/*** GRADE 1 ***/
+	//1.oa.a.1
+	if (id == '1.oa.a.1_1')
+        {
+                return new i_1_oa_a_1__1(this.mSheet);
+	}
+	if (id == '1.oa.a.1_2')
+        {
+                return new i_1_oa_a_1__2(this.mSheet);
+	}
+	
 	/*** GRADE 2 ***/
 	//2.oa.a.1
 	if (id == '2.oa.a.1_1')
