@@ -70,30 +70,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_6';
 
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mThings      = this.mNameMachine.getThing();
-                
-		this.mSchoolOne      = this.mNameMachine.getSchool();
-		this.mSchoolTwo      = this.mNameMachine.getSchool();
-
-		this.mAdultOne = this.mNameMachine.getAdult();
-	
-		this.mVegetableOne = this.mNameMachine.getVegetable();
-		this.mVegetableTwo = this.mNameMachine.getVegetable();
-		
-		this.mFruitOne = this.mNameMachine.getFruit();
-		this.mFruitTwo = this.mNameMachine.getFruit();
-
-		this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();	
-		this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();	
-		this.mTimeIncrement = this.mNameMachine.getTimeIncrement('seconds','hours');
-	
-		this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
-		this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
-
-		this.mSum = this.mNameMachine.getSum();
+                this.mNameSampler = new NameSampler();
 
                	//variables
                 this.a = Math.floor(Math.random()*20)+30;
@@ -105,27 +82,27 @@ Extends: TextItem,
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.mFruitOne + ' on ' + this.mDayOfWeekOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitOne + ' on ' + this.mDayOfWeekTwo + '. How many ' + this.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell ' + this.mSum + '?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell ' + this.ns.mSum + '?');        
 		}
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + '. How long did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mSum + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mSum + '?');  	
 		}
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' planted ' + this.a + ' ' + this.mVegetableOne + ' and ' + this.b + ' ' + this.mVegetableTwo + '. How many vegetables did he plant ' + this.mSum + '?');  	
+			this.setQuestion(this.ns.mAdultOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many vegetables did he plant ' + this.ns.mSum + '?');  	
 		}
 		
 		if (random == 2)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.b + ' girls and ' + this.a + ' boys. How many students does ' + this.mSchoolTwo + ' have ' + this.mSum + '?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.b + ' girls and ' + this.a + ' boys. How many students does ' + this.ns.mSchoolTwo + ' have ' + this.ns.mSum + '?');    	
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many ' + this.mThings + ' do they have ' + this.mSum + '?');    	
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' do they have ' + this.ns.mSum + '?');    	
 		}
 
                 this.setAnswer(this.c,0);
