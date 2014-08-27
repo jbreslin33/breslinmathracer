@@ -913,16 +913,23 @@ var NameSampler = new Class(
         initialize: function ()
         {
                 this.mNameMachine = new NameMachine();
+
                 this.mNameOne     = this.mNameMachine.getName();
                 this.mNameTwo     = this.mNameMachine.getName();
                 this.mNameThree     = this.mNameMachine.getName();
 
                 this.mThings      = this.mNameMachine.getThing();
+                this.mThingOne      = this.mNameMachine.getThing();
+                this.mThingTwo      = this.mNameMachine.getThing();
+                this.mThingThree      = this.mNameMachine.getThing();
 
                 this.mSchoolOne      = this.mNameMachine.getSchool();
                 this.mSchoolTwo      = this.mNameMachine.getSchool();
+                this.mSchoolThree      = this.mNameMachine.getSchool();
 
                 this.mAdultOne = this.mNameMachine.getAdult();
+                this.mAdultTwo = this.mNameMachine.getAdult();
+                this.mAdultThree = this.mNameMachine.getAdult();
 
                 this.mVegetableOne = this.mNameMachine.getVegetable();
                 this.mVegetableTwo = this.mNameMachine.getVegetable();
@@ -930,15 +937,25 @@ var NameSampler = new Class(
 
                 this.mFruitOne = this.mNameMachine.getFruit();
                 this.mFruitTwo = this.mNameMachine.getFruit();
+                this.mFruitThree = this.mNameMachine.getFruit();
 
                 this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();
+
                 this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
 
                 this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekThree = this.mNameMachine.getDayOfWeek();
+
+		this.mAnimalOne = this.mNameMachine.getAnimal();
+		this.mAnimalTwo = this.mNameMachine.getAnimal();
+		this.mAnimalThree = this.mNameMachine.getAnimal();
+		
+		this.mColorOne = this.mNameMachine.getColor();
+		this.mColorTwo = this.mNameMachine.getColor();
+		this.mColorThree = this.mNameMachine.getColor();
 
                 this.mSum = this.mNameMachine.getSum();
 	}

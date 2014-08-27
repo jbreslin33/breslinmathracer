@@ -17,6 +17,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_7';
 
+		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
                	//variables
@@ -29,7 +30,7 @@ Extends: TextItem,
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekOne + ', ' + this.b + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekTwo + ' and ' + this.c + ' on ' + this.ns.mDayOfWeekThree + '. How many ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell ' + this.ns.mSum + '?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekOne + ', ' + this.b + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekTwo + ' and ' + this.c + ' on ' + this.ns.mDayOfWeekThree + '. How many ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell ' + this.ns.mSum + '?');        
 		}
 		
 		if (random == 4)
@@ -69,6 +70,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_6';
 
+		this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
                	//variables
@@ -119,6 +121,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_5';
                 
+		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
                	//variables
@@ -180,6 +183,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_4';
 		
+		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
                	//variables
@@ -208,12 +212,12 @@ Extends: TextItem,
 		if (random == 2)
 		{
                 	this.d = parseInt(this.a - this.b + this.c);
-			this.setQuestion(this.ns.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.ns.mSchoolOne + '  and go to ' + this.ns.mSchoolTwo + '. ' + this.c + ' students leave ' + this.ns.mSchoolThree + ' and come to ' +  this.ns.mSchoolOne + '. How many students will ' + this.mSchoolOne + ' have left?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.ns.mSchoolOne + '  and go to ' + this.ns.mSchoolTwo + '. ' + this.c + ' students leave ' + this.ns.mSchoolThree + ' and come to ' +  this.ns.mSchoolOne + '. How many students will ' + this.ns.mSchoolOne + ' have left?');    	
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
+			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have left?');    	
 		}
 
                 this.setAnswer(this.d,0);
@@ -233,6 +237,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_3';
 		
+		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
                	//variables
@@ -244,27 +249,27 @@ Extends: TextItem,
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.mFruitOne + '. How many ' + this.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.ns.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have left?');        
 		}
 		
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.mTimeIncrement + ' than how many ' + this.mTimeIncrement + ' do they have left to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' than how many ' + this.ns.mTimeIncrement + ' do they have left to play?');    	
 		}
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have left?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have left?');  	
 		}
 		
 		if (random == 2)
 		{
-			this.setQuestion(this.b + ' students left ' + this.mSchoolOne + ' and started going to ' + this.mSchoolTwo + '. If ' + this.mSchoolOne + ' had ' + this.a + ' students to begin with than how many students does ' + this.mSchoolOne + ' have left?'  );    	
+			this.setQuestion(this.b + ' students left ' + this.ns.mSchoolOne + ' and started going to ' + this.ns.mSchoolTwo + '. If ' + this.ns.mSchoolOne + ' had ' + this.a + ' students to begin with than how many students does ' + this.ns.mSchoolOne + ' have left?'  );    	
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave '  + this.mNameTwo + ' ' + this.b + ' ' + this.mThings + '. How many ' + this.mThings + ' does ' + this.mNameOne + ' have left?');    	
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gave '  + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have left?');    	
 		}
 
                 this.setAnswer(this.c,0);
@@ -284,6 +289,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_2';
 		
+		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
                	//variables
@@ -297,27 +303,27 @@ Extends: TextItem,
 		//bca	
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitOne + ', ' + this.c + ' ' + this.mFruitTwo + ' and ' + this.a + ' ' + this.mFruitThree + '. How many more ' + this.mFruitOne + ' and ' + this.mFruitThree + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell than ' + this.mFruitTwo + '?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitOne + ', ' + this.c + ' ' + this.ns.mFruitTwo + ' and ' + this.a + ' ' + this.ns.mFruitThree + '. How many more ' + this.ns.mFruitOne + ' and ' + this.ns.mFruitThree + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell than ' + this.ns.mFruitTwo + '?');        
 		}
 		//cba	
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.c + ' ' + this.mTimeIncrement + ', ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.mTimeIncrement + ' and ' + this.mPlayedActivityThree + ' for ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' and ' + this.mPlayedActivityThree + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.c + ' ' + this.ns.mTimeIncrement + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' and ' + this.ns.mPlayedActivityThree + ' than ' + this.ns.mPlayedActivityOne + '?');  	
 		}
 		//acb	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + ', ' + this.c + ' ' + this.mVegetableTwo + ' and ' + this.b + ' ' + this.mVegetableThree + '. How many more ' + this.mVegetableOne + ' and ' + this.mVegetableThree + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have than ' + this.mVegetableTwo + '?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ', ' + this.c + ' ' + this.ns.mVegetableTwo + ' and ' + this.b + ' ' + this.ns.mVegetableThree + '. How many more ' + this.ns.mVegetableOne + ' and ' + this.ns.mVegetableThree + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableTwo + '?');  	
 		}
 		//cab	
 		if (random == 2)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.c + ' students, ' + this.mSchoolTwo + ' has ' + this.a + ' and ' + this.mSchoolThree + ' has ' + this.b  + '. How many more students does ' + this.mSchoolTwo + ' and ' + this.mSchoolThree + ' have than ' + this.mSchoolOne + '?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.c + ' students, ' + this.ns.mSchoolTwo + ' has ' + this.a + ' and ' + this.ns.mSchoolThree + ' has ' + this.b  + '. How many more students does ' + this.ns.mSchoolTwo + ' and ' + this.ns.mSchoolThree + ' have than ' + this.ns.mSchoolOne + '?');    	
 		}
 		//abc
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ', ' + this.mNameTwo + ' has ' + this.b + ' and ' + this.mNameThree + ' has ' + this.c + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' and ' + this.mNameTwo + ' have than ' + this.mNameThree + '?');    	
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + ', ' + this.ns.mNameTwo + ' has ' + this.b + ' and ' + this.ns.mNameThree + ' has ' + this.c + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' have than ' + this.ns.mNameThree + '?');    	
 		}
 
                 this.setAnswer(this.d,0);
@@ -337,6 +343,7 @@ Extends: TextItem,
 
                 this.mType = '2.oa.a.1_1';
 		
+		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
                	//variables
@@ -348,29 +355,29 @@ Extends: TextItem,
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.mFruitTwo + '. How many more ' + this.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' sell than ' + this.mFruitTwo + '?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitTwo + '. How many more ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell than ' + this.ns.mFruitTwo + '?');        
 		}
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivityOne + ' for ' + this.b + ' ' + this.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.mTimeIncrement + '. How many more ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' play ' + this.mPlayedActivityTwo + ' than ' + this.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' than ' + this.ns.mPlayedActivityOne + '?');  	
+
 		}
 	
 		if (random == 3)
 		{
-			this.setQuestion(this.mAdultOne + ' has a garden with ' + this.a + ' ' + this.mVegetableOne + ' and ' + this.b + ' ' + this.mVegetableTwo + '. How many more ' + this.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.mAdultOne,0,0) + ' have than ' + this.mVegetableTwo + '?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many more ' + this.ns.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableTwo + '?');  	
 		}
 		
 		if (random == 2)
 		{
-			this.setQuestion(this.mSchoolOne + ' has ' + this.b + ' students. ' + this.mSchoolTwo + ' has ' + this.a + ' students. How many more students does ' + this.mSchoolTwo + ' have than ' + this.mSchoolOne + '?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.b + ' students. ' + this.ns.mSchoolTwo + ' has ' + this.a + ' students. How many more students does ' + this.ns.mSchoolTwo + ' have than ' + this.ns.mSchoolOne + '?');    	
 		}
 
 		if (random == 1)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + '. ' + this.mNameTwo + ' has ' + this.b + ' ' + this.mThings + '. How many more ' + this.mThings + ' does ' + this.mNameOne + ' have than ' + this.mNameTwo + '?');    	
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have than ' + this.ns.mNameTwo + '?');    	
 		}
-
                 this.setAnswer(this.c,0);
         }
 });
