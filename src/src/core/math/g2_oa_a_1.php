@@ -54,7 +54,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b - this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 5; 
+		random = 4; 
 		
 		if (random == 5)
 		{
@@ -64,7 +64,8 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.mTimeIncrement + ' of ' + this.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + ' and ' + this.c + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekTwo + '. How many ' + this.mTimeIncrement + ' do they have left to play?');    	
+                	this.d = parseInt(this.a - this.b);
+			this.setQuestion(this.mNameOne + ' and ' + this.mNameTwo + ' are on the same team called the ' + this.mAnimalOne + '. The ' + this.mAnimalOne + ' scored ' + ' ' + this.a + ' points total. ' + this.mNameOne + ' scored ' + this.b + ' points. ' + this.mNameTwo + ' scored the rest of the points for the ' + this.mAnimalOne + '. How many points did ' + this.mNameTwo + ' score.'     ) ;    	
 		}
 	
 		if (random == 3)
