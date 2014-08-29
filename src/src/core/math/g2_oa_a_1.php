@@ -268,7 +268,6 @@ Extends: TextItem,
                	//variables
 		if (order == 'ab')		
 		{
-			APPLICATION.log('ab');
                 	this.a = Math.floor(Math.random()*50)+50;
                 	this.b = Math.floor(Math.random()*28)+12;
               	  	this.c = parseInt(this.a - this.b);
@@ -277,7 +276,6 @@ Extends: TextItem,
 		}
 		if (order == 'ba')		
 		{
-			APPLICATION.log('ba');
                 	this.b = Math.floor(Math.random()*50)+50;
                 	this.a = Math.floor(Math.random()*28)+12;
               	  	this.c = parseInt(this.b - this.a);
@@ -286,7 +284,7 @@ Extends: TextItem,
 		}
 	
                 random = Math.floor(Math.random()*5)+1;
-                random = 5;
+                random = 4;
 		
 		if (random == 5)
 		{
@@ -294,19 +292,19 @@ Extends: TextItem,
 		}
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' than ' + this.ns.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityArray[a] + ' than ' + this.ns.mPlayedActivityArray[b] + '?');  	
 		}
 		if (random == 3)
 		{
-			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many more ' + this.ns.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableTwo + '?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many more ' + this.ns.mVegetableArray[a] + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableArray[b] + '?');  	
 		}
 		if (random == 2)
 		{
-			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.b + ' students. ' + this.ns.mSchoolTwo + ' has ' + this.a + ' students. How many more students does ' + this.ns.mSchoolTwo + ' have than ' + this.ns.mSchoolOne + '?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.a + ' students. ' + this.ns.mSchoolTwo + ' has ' + this.b + ' students. How many more students does ' + this.ns.mSchoolArray[a] + ' have than ' + this.ns.mSchoolArray[b] + '?');    	
 		}
 		if (random == 1)
 		{
-			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have than ' + this.ns.mNameTwo + '?');    	
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameArray[a] + ' have than ' + this.ns.mNameArray[b] + '?');    	
 		}
                 this.setAnswer(this.c,0);
         }
@@ -408,7 +406,7 @@ var i_2_oa_a_1__17 = new Class(
 Extends: OneStepCompare,
         initialize: function(sheet)
         {
-        	this.parent(sheet,'ab');
+        	this.parent(sheet,'ba');
                 this.mType = '2.oa.a.1_17';
         }
 });
