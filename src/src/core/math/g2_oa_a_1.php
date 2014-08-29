@@ -304,6 +304,7 @@ Extends: TextItem,
         }
 });
 
+
 var TwoStepApApB = new Class(
 {
 Extends: TextItem,
@@ -331,12 +332,10 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same team called the ' + this.ns.mAnimalOne + '. ' + this.ns.mNameOne + ' scored ' + ' ' + this.a + ' points. ' + this.ns.mNameTwo + ' scored ' + this.b + ' more points than ' + this.ns.mNameOne + '. How many points did ' + this.ns.mAnimalOne + ' score ' + this.mSum + '?'     ) ;    	
 		}
-	
 		if (random == 3)
 		{
 			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' more ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in ' + this.mSum + '?' );  	
 		}
-		
 		if (random == 2)
 		{
 			this.setQuestion('There are ' + this.a + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.b + ' more ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there ' + this.mSum + '?');    	
@@ -344,6 +343,50 @@ Extends: TextItem,
 		if (random == 1)
 		{
 			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' more playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
+		}
+                this.setAnswer(this.c,0);
+        }
+});
+
+var TwoStepApAmB = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet,less,sum)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		this.mLess = less;
+		this.mSum = sum;
+
+		this.mNameMachine = new NameMachine();
+		this.ns = new NameSampler();
+
+               	//variables
+                this.a = Math.floor(Math.random()*14)+35;
+                this.b = Math.floor(Math.random()*15)+15;
+                this.c = parseInt(this.a + this.a - this.b);
+	
+                random = Math.floor(Math.random()*5)+1;
+		
+		if (random == 5)
+		{
+			this.setQuestion('There are ' + this.a + ' ' + this.ns.mAnimalOne + '. There are ' + this.b + ' ' + this.mLess + ' ' + this.ns.mAnimalTwo + ' than ' + this.ns.mAnimalOne + '. How many animals are there ' + ' ' + this.mSum + '?');        
+		}
+		if (random == 4)
+		{
+			this.setQuestion(this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same team called the ' + this.ns.mAnimalOne + '. ' + this.ns.mNameOne + ' scored ' + ' ' + this.a + ' points. ' + this.ns.mNameTwo + ' scored ' + this.b + ' ' + this.mLess + ' points than ' + this.ns.mNameOne + '. How many points did ' + this.ns.mAnimalOne + ' score ' + this.mSum + '?'     ) ;    	
+		}
+		if (random == 3)
+		{
+			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' ' + this.mLess + ' ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in ' + this.mSum + '?' );  	
+		}
+		if (random == 2)
+		{
+			this.setQuestion('There are ' + this.a + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.b + ' ' + this.mLess + ' ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there ' + this.mSum + '?');    	
+		}
+		if (random == 1)
+		{
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' ' + this.mLess + ' playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
 		}
                 this.setAnswer(this.c,0);
         }
@@ -387,7 +430,7 @@ Extends: TextItem,
                 	this.a = Math.floor(Math.random()*20)+30;
                 	this.b = Math.floor(Math.random()*20)+15;
                 	this.d = parseInt(this.a + this.a - this.b);
-			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' less ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in total?' );  	
+			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' ' + this.mLess + ' ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in total?' );  	
 		}
 		
 		if (random == 2)
@@ -395,7 +438,7 @@ Extends: TextItem,
                 	this.a = Math.floor(Math.random()*10)+20;
                 	this.b = Math.floor(Math.random()*20)+15;
                 	this.d = parseInt(this.b + this.b + this.a);
-			this.setQuestion('There are ' + this.b + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.a + ' more ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there altogether?');    	
+			this.setQuestion('There are ' + this.b + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.a + ' ' + this.mLess + ' ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there altogether?');    	
 		}
 
 		if (random == 1)
@@ -403,12 +446,27 @@ Extends: TextItem,
                 	this.a = Math.floor(Math.random()*20)+35;
                 	this.b = Math.floor(Math.random()*10)+20;
                 	this.d = parseInt(this.a - this.b + this.a);
-			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' less playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing total?'); 	
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' ' + this.mLess + ' playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing total?'); 	
 		}
                 this.setAnswer(this.d,0);
         }
 });
 */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_16',2.0116,'2.oa.a.1','Two step. a+a-b');
+*/
+
+var i_2_oa_a_1__16 = new Class(
+{
+Extends: TwoStepApAmB,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'less','altogether');
+                this.mType = '2.oa.a.1_16';
+        }
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_15',2.0115,'2.oa.a.1','Two step. a+a+b');
