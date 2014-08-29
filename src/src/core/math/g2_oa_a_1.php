@@ -408,7 +408,7 @@ var i_2_oa_a_1__17 = new Class(
 Extends: OneStepCompare,
         initialize: function(sheet)
         {
-        	this.parent(sheet,'ba');
+        	this.parent(sheet,'ab');
                 this.mType = '2.oa.a.1_17';
         }
 });
