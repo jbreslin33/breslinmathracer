@@ -241,7 +241,7 @@ Extends: TextItem,
 		}
 
                 random = Math.floor(Math.random()*5)+1;
-		random = 5;
+		random = 1;
 	
 		if (random == 5)
 		{
@@ -249,22 +249,19 @@ Extends: TextItem,
 		}
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.c + ' ' + this.ns.mTimeIncrement + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' and ' + this.ns.mPlayedActivityThree + ' than ' + this.ns.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.c + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityArray[a] + ' and ' + this.ns.mPlayedActivityArray[b] + ' than ' + this.ns.mPlayedActivityArray[c] + '?');  	
 		}
-		//acb	
 		if (random == 3)
 		{
-			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ', ' + this.c + ' ' + this.ns.mVegetableTwo + ' and ' + this.b + ' ' + this.ns.mVegetableThree + '. How many more ' + this.ns.mVegetableOne + ' and ' + this.ns.mVegetableThree + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableTwo + '?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ', ' + this.b + ' ' + this.ns.mVegetableTwo + ' and ' + this.c + ' ' + this.ns.mVegetableThree + '. How many more ' + this.ns.mVegetableArray[a] + ' and ' + this.ns.mVegetableArray[b] + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableArray[c] + '?');  	
 		}
-		//cab	
 		if (random == 2)
 		{
-			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.c + ' students, ' + this.ns.mSchoolTwo + ' has ' + this.a + ' and ' + this.ns.mSchoolThree + ' has ' + this.b  + '. How many more students does ' + this.ns.mSchoolTwo + ' and ' + this.ns.mSchoolThree + ' have than ' + this.ns.mSchoolOne + '?');    	
+			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.a + ' students, ' + this.ns.mSchoolTwo + ' has ' + this.b + ' and ' + this.ns.mSchoolThree + ' has ' + this.c  + '. How many more students does ' + this.ns.mSchoolArray[a] + ' and ' + this.ns.mSchoolArray[b] + ' have than ' + this.ns.mSchoolArray[c] + '?');    	
 		}
-		//abc
 		if (random == 1)
 		{
-			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + ', ' + this.ns.mNameTwo + ' has ' + this.b + ' and ' + this.ns.mNameThree + ' has ' + this.c + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' have than ' + this.ns.mNameThree + '?');    	
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + ', ' + this.ns.mNameTwo + ' has ' + this.b + ' and ' + this.ns.mNameThree + ' has ' + this.c + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameArray[a] + ' and ' + this.ns.mNameArray[b] + ' have than ' + this.ns.mNameArray[c] + '?');    	
 		}
 
                 this.setAnswer(this.d,0);
