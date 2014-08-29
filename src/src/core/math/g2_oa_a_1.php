@@ -198,14 +198,10 @@ Extends: TextItem,
         }
 });
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_2',2.0102,'2.oa.a.1','How many more. Two step.' );
-*/
-
-var i_2_oa_a_1__2 = new Class(
+var TwoStepCompare = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
+        initialize: function(sheet,order)
         {
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
@@ -213,21 +209,44 @@ Extends: TextItem,
 		
 		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
+		
+		var a = 0;  
+		var b = 0;  
+
+               	this.a = Math.floor(Math.random()*20)+22;
+               	this.b = Math.floor(Math.random()*20)+22;
+               	this.c = Math.floor(Math.random()*20)+22;
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+35;
-                this.b = Math.floor(Math.random()*8)+6;
-                this.c = Math.floor(Math.random()*18)+10;
-                this.d = parseInt(this.a + this.b - this.c);
-	
+		if (order == 'abmc')		
+		{
+              	  	this.d = parseInt(this.a + this.b - this.c);
+			a = 0;
+			b = 1;
+			c = 2;
+		}
+		if (order == 'acmb')		
+		{
+              	  	this.d = parseInt(this.a + this.c - this.b);
+			a = 0;
+			b = 2;
+			c = 1;
+		}
+		if (order == 'bcma')		
+		{
+              	  	this.d = parseInt(this.b + this.c - this.a);
+			a = 2;
+			b = 0;
+			c = 1;
+		}
+
                 random = Math.floor(Math.random()*5)+1;
+		random = 5;
 	
-		//bca	
 		if (random == 5)
 		{
-			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitOne + ', ' + this.c + ' ' + this.ns.mFruitTwo + ' and ' + this.a + ' ' + this.ns.mFruitThree + '. How many more ' + this.ns.mFruitOne + ' and ' + this.ns.mFruitThree + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell than ' + this.ns.mFruitTwo + '?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + ', ' + this.b + ' ' + this.ns.mFruitTwo + ' and ' + this.c + ' ' + this.ns.mFruitThree + '. How many more ' + this.ns.mFruitArray[a] + ' and ' + this.ns.mFruitArray[b] + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell than ' + this.ns.mFruitArray[c] + '?');        
 		}
-		//cba	
 		if (random == 4)
 		{
 			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.c + ' ' + this.ns.mTimeIncrement + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' and ' + this.ns.mPlayedActivityThree + ' than ' + this.ns.mPlayedActivityOne + '?');  	
@@ -396,6 +415,21 @@ Extends: TextItem,
                 this.setAnswer(this.c,0);
         }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_19',2.0119,'2.oa.a.1','Two step. Compare. abmc');
+*/
+
+var i_2_oa_a_1__19 = new Class(
+{
+Extends: TwoStepCompare,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'abmc');
+                this.mType = '2.oa.a.1_19';
+        }
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_18',2.0118,'2.oa.a.1','One step. Compare. ba');
