@@ -974,6 +974,11 @@ var NameSampler = new Class(
                 this.mFruitTwo = this.mNameMachine.getFruit();
                 this.mFruitThree = this.mNameMachine.getFruit();
 
+		this.mFruitArray = new Array(); 
+		this.mFruitArray.push(this.mFruitOne);
+		this.mFruitArray.push(this.mFruitTwo);
+		this.mFruitArray.push(this.mFruitThree);
+
                 this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();

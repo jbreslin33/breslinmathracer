@@ -252,32 +252,45 @@ Extends: TextItem,
         }
 });
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_1',2.0101,'2.oa.a.1','How many more. One step.' );
-*/
-
-var i_2_oa_a_1__1 = new Class(
+var OneStepCompare = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
+        initialize: function(sheet,order)
         {
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
-                this.mType = '2.oa.a.1_1';
-		
 		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
 
+		var a = 0;  
+		var b = 0;  
+
                	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = parseInt(this.a - this.b);
+		if (order == 'ab')		
+		{
+			APPLICATION.log('ab');
+                	this.a = Math.floor(Math.random()*50)+50;
+                	this.b = Math.floor(Math.random()*28)+12;
+              	  	this.c = parseInt(this.a - this.b);
+			a = 0;
+			b = 1;
+		}
+		if (order == 'ba')		
+		{
+			APPLICATION.log('ba');
+                	this.b = Math.floor(Math.random()*50)+50;
+                	this.a = Math.floor(Math.random()*28)+12;
+              	  	this.c = parseInt(this.b - this.a);
+			a = 1;
+			b = 0;
+		}
 	
                 random = Math.floor(Math.random()*5)+1;
+                random = 5;
 		
 		if (random == 5)
 		{
-			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitTwo + '. How many more ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell than ' + this.ns.mFruitTwo + '?');        
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitTwo + '. How many more ' + this.ns.mFruitArray[a] + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell than ' + this.ns.mFruitArray[b] + '?');        
 		}
 		if (random == 4)
 		{
@@ -298,7 +311,6 @@ Extends: TextItem,
                 this.setAnswer(this.c,0);
         }
 });
-
 
 var TwoStepApApB = new Class(
 {
@@ -388,6 +400,20 @@ Extends: TextItem,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_17',2.0117,'2.oa.a.1','One step. Compare. ab');
+*/
+
+var i_2_oa_a_1__17 = new Class(
+{
+Extends: OneStepCompare,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'ba');
+                this.mType = '2.oa.a.1_17';
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_16',2.0116,'2.oa.a.1','Two step. a+a-b');
 */
 
@@ -400,7 +426,6 @@ Extends: TwoStepApAmB,
                 this.mType = '2.oa.a.1_16';
         }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_15',2.0115,'2.oa.a.1','Two step. a+a+b');
