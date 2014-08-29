@@ -4,7 +4,6 @@ prerequisites:
 none finished
 */
 
-
 var TwoStepAddition = new Class(
 {
 Extends: TextItem,
@@ -57,7 +56,67 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_7',2.0107,'2.oa.a.1','Two step. Addition.' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_11',2.0111,'2.oa.a.1','Two step. Addition. in all' );
+*/
+
+var i_2_oa_a_1__11 = new Class(
+{
+Extends: TwoStepAddition,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'in all');
+
+                this.mType = '2.oa.a.1_11';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_10',2.0110,'2.oa.a.1','Two step. Addition. in total' );
+*/
+
+var i_2_oa_a_1__10 = new Class(
+{
+Extends: TwoStepAddition,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'in total');
+
+                this.mType = '2.oa.a.1_10';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_9',2.0109,'2.oa.a.1','Two step. Addition. total' );
+*/
+
+var i_2_oa_a_1__9 = new Class(
+{
+Extends: TwoStepAddition,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'total');
+
+                this.mType = '2.oa.a.1_9';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_8',2.0108,'2.oa.a.1','Two step. Addition. in sum' );
+*/
+
+var i_2_oa_a_1__8 = new Class(
+{
+Extends: TwoStepAddition,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'in sum');
+
+                this.mType = '2.oa.a.1_8';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_7',2.0107,'2.oa.a.1','Two step. Addition. Altogether' );
 */
 
 var i_2_oa_a_1__7 = new Class(
