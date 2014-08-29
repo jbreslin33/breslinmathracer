@@ -68,7 +68,7 @@ var NameMachine = new Class(
 		this.mPlayedActivityArray.push("dominoes");
 		this.mPlayedActivityArray.push("monopoly");
 		this.mPlayedActivityArray.push("tic tac toe");
-		this.mPlayedActivityArray.push("dogde ball");
+		this.mPlayedActivityArray.push("dodge ball");
 
 		//time increment
 		this.mTimeIncrementArray = new Array();
@@ -953,22 +953,47 @@ var NameSampler = new Class(
                 this.mNameTwo     = this.mNameMachine.getName();
                 this.mNameThree     = this.mNameMachine.getName();
 
+		this.mNameArray = new Array(); 
+		this.mNameArray.push(this.mNameOne);
+		this.mNameArray.push(this.mNameTwo);
+		this.mNameArray.push(this.mNameThree);
+
                 this.mThings      = this.mNameMachine.getThing();
                 this.mThingOne      = this.mNameMachine.getThing();
                 this.mThingTwo      = this.mNameMachine.getThing();
                 this.mThingThree      = this.mNameMachine.getThing();
+		
+		this.mThingArray = new Array(); 
+		this.mThingArray.push(this.mThingOne);
+		this.mThingArray.push(this.mThingTwo);
+		this.mThingArray.push(this.mThingThree);
 
                 this.mSchoolOne      = this.mNameMachine.getSchool();
                 this.mSchoolTwo      = this.mNameMachine.getSchool();
                 this.mSchoolThree      = this.mNameMachine.getSchool();
+		
+		this.mSchoolArray = new Array(); 
+		this.mSchoolArray.push(this.mSchoolOne);
+		this.mSchoolArray.push(this.mSchoolTwo);
+		this.mSchoolArray.push(this.mSchoolThree);
 
                 this.mAdultOne = this.mNameMachine.getAdult();
                 this.mAdultTwo = this.mNameMachine.getAdult();
                 this.mAdultThree = this.mNameMachine.getAdult();
+		
+		this.mAdultArray = new Array(); 
+		this.mAdultArray.push(this.mAdultOne);
+		this.mAdultArray.push(this.mAdultTwo);
+		this.mAdultArray.push(this.mAdultThree);
 
                 this.mVegetableOne = this.mNameMachine.getVegetable();
                 this.mVegetableTwo = this.mNameMachine.getVegetable();
                 this.mVegetableThree = this.mNameMachine.getVegetable();
+		
+		this.mVegetableArray = new Array(); 
+		this.mVegetableArray.push(this.mVegetableOne);
+		this.mVegetableArray.push(this.mVegetableTwo);
+		this.mVegetableArray.push(this.mVegetableThree);
 
                 this.mFruitOne = this.mNameMachine.getFruit();
                 this.mFruitTwo = this.mNameMachine.getFruit();
@@ -982,20 +1007,40 @@ var NameSampler = new Class(
                 this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();
+		
+		this.mPlayedActivityArray = new Array(); 
+		this.mPlayedActivityArray.push(this.mPlayedActivityOne);
+		this.mPlayedActivityArray.push(this.mPlayedActivityTwo);
+		this.mPlayedActivityArray.push(this.mPlayedActivityThree);
 
                 this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
 
                 this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekThree = this.mNameMachine.getDayOfWeek();
+		
+		this.mDayOfWeekArray = new Array(); 
+		this.mDayOfWeekArray.push(this.mDayOfWeekOne);
+		this.mDayOfWeekArray.push(this.mDayOfWeekTwo);
+		this.mDayOfWeekArray.push(this.mDayOfWeekThree);
 
 		this.mAnimalOne = this.mNameMachine.getAnimal();
 		this.mAnimalTwo = this.mNameMachine.getAnimal();
 		this.mAnimalThree = this.mNameMachine.getAnimal();
 		
-		this.mColorOne = this.mNameMachine.getColor();
-		this.mColorTwo = this.mNameMachine.getColor();
+		this.mAnimalArray = new Array(); 
+		this.mAnimalArray.push(this.mAnimalOne);
+		this.mAnimalArray.push(this.mAnimalTwo);
+		this.mAnimalArray.push(this.mAnimalThree);
+		
+		this.mColorOne   = this.mNameMachine.getColor();
+		this.mColorTwo   = this.mNameMachine.getColor();
 		this.mColorThree = this.mNameMachine.getColor();
+		
+		this.mColorArray = new Array(); 
+		this.mColorArray.push(this.mColorOne);
+		this.mColorArray.push(this.mColorTwo);
+		this.mColorArray.push(this.mColorThree);
 
                 this.mSum = this.mNameMachine.getSum();
                 this.mLeft = this.mNameMachine.getLeft();
