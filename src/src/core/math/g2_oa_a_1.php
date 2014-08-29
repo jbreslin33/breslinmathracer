@@ -198,180 +198,6 @@ Extends: TextItem,
         }
 });
 
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_13',2.0113,'2.oa.a.1','One step. TakingFrom. left' );
-*/
-
-var i_2_oa_a_1__13 = new Class(
-{
-Extends: OneStepTakingFrom,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'left');
-                this.mType = '2.oa.a.1_13';
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_14',2.0114,'2.oa.a.1','Two step. TakingFrom. left' );
-*/
-
-var i_2_oa_a_1__14 = new Class(
-{
-Extends: TwoStepTakingFrom,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'left');
-                this.mType = '2.oa.a.1_14';
-        }
-});
-
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_12',2.0112,'2.oa.a.1','One step. Addition. altogether' );
-*/
-
-var i_2_oa_a_1__12 = new Class(
-{
-Extends: OneStepPuttingTogether,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'altogether');
-                this.mType = '2.oa.a.1_12';
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_11',2.0111,'2.oa.a.1','Two step. Addition. in all' );
-*/
-
-var i_2_oa_a_1__11 = new Class(
-{
-Extends: TwoStepPuttingTogether,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'in all');
-                this.mType = '2.oa.a.1_11';
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_10',2.0110,'2.oa.a.1','Two step. Addition. in total' );
-*/
-
-var i_2_oa_a_1__10 = new Class(
-{
-Extends: TwoStepPuttingTogether,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'in total');
-                this.mType = '2.oa.a.1_10';
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_9',2.0109,'2.oa.a.1','Two step. Addition. total' );
-*/
-var i_2_oa_a_1__9 = new Class(
-{
-Extends: TwoStepPuttingTogether,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'total');
-                this.mType = '2.oa.a.1_9';
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_8',2.0108,'2.oa.a.1','Two step. Addition. in sum' );
-*/
-var i_2_oa_a_1__8 = new Class(
-{
-Extends: TwoStepPuttingTogether,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'in sum');
-                this.mType = '2.oa.a.1_8';
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_7',2.0107,'2.oa.a.1','Two step. Addition. Altogether' );
-*/
-var i_2_oa_a_1__7 = new Class(
-{
-Extends: TwoStepPuttingTogether,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,'altogether');
-                this.mType = '2.oa.a.1_7';
-        }
-});
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_5',2.0105,'2.oa.a.1','Two step. hard.' );
-*/
-var i_2_oa_a_1__5 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '2.oa.a.1_5';
-                
-		this.mNameMachine = new NameMachine();
-		this.ns = new NameSampler();
-
-               	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = Math.floor(Math.random()*28)+12;
-                this.d = parseInt(this.a - this.b - this.c);
-	
-                random = Math.floor(Math.random()*5)+1;
-		
-		if (random == 5)
-		{
-                	this.d = parseInt(this.b + this.b + this.c);
-			this.setQuestion('There are ' + this.b + ' ' + this.ns.mAnimalOne + '. There are ' + this.c + ' more ' + this.ns.mAnimalTwo + ' than ' + this.ns.mAnimalOne + '. How many animals are there altogether?');        
-		}
-		
-		if (random == 4)
-		{
-                	this.d = parseInt(this.a - this.b);
-			this.setQuestion(this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same team called the ' + this.ns.mAnimalOne + '. The ' + this.ns.mAnimalOne + ' scored ' + ' ' + this.a + ' points total. ' + this.ns.mNameOne + ' scored ' + this.b + ' points. ' + this.ns.mNameTwo + ' scored the rest of the points for the ' + this.ns.mAnimalOne + '. How many points did ' + this.ns.mNameTwo + ' score.'     ) ;    	
-		}
-	
-		if (random == 3)
-		{
-                	this.a = Math.floor(Math.random()*20)+30;
-                	this.b = Math.floor(Math.random()*20)+15;
-                	this.d = parseInt(this.a + this.a - this.b);
-			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' less ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in total?' );  	
-		}
-		
-		if (random == 2)
-		{
-                	this.a = Math.floor(Math.random()*10)+20;
-                	this.b = Math.floor(Math.random()*20)+15;
-                	this.d = parseInt(this.b + this.b + this.a);
-			this.setQuestion('There are ' + this.b + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.a + ' more ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there altogether?');    	
-		}
-
-		if (random == 1)
-		{
-                	this.a = Math.floor(Math.random()*20)+35;
-                	this.b = Math.floor(Math.random()*10)+20;
-                	this.d = parseInt(this.a - this.b + this.a);
-			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' less playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing total?'); 	
-		}
-                this.setAnswer(this.d,0);
-        }
-});
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_2',2.0102,'2.oa.a.1','How many more. Two step.' );
 */
@@ -477,3 +303,238 @@ Extends: TextItem,
                 this.setAnswer(this.c,0);
         }
 });
+
+var TwoStepApApB = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet,sum)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		this.mSum = sum;
+
+		this.mNameMachine = new NameMachine();
+		this.ns = new NameSampler();
+
+               	//variables
+                this.a = Math.floor(Math.random()*15)+15;
+                this.b = Math.floor(Math.random()*15)+15;
+                this.c = parseInt(this.a + this.a + this.b);
+	
+                random = Math.floor(Math.random()*5)+1;
+		
+		if (random == 5)
+		{
+			this.setQuestion('There are ' + this.a + ' ' + this.ns.mAnimalOne + '. There are ' + this.b + ' more ' + this.ns.mAnimalTwo + ' than ' + this.ns.mAnimalOne + '. How many animals are there ' + ' ' + this.mSum + '?');        
+		}
+		if (random == 4)
+		{
+			this.setQuestion(this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same team called the ' + this.ns.mAnimalOne + '. ' + this.ns.mNameOne + ' scored ' + ' ' + this.a + ' points. ' + this.ns.mNameTwo + ' scored ' + this.b + ' more points than ' + this.ns.mNameOne + '. How many points did ' + this.ns.mAnimalOne + ' score ' + this.mSum + '?'     ) ;    	
+		}
+	
+		if (random == 3)
+		{
+			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' more ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in total?' );  	
+		}
+		
+		if (random == 2)
+		{
+			this.setQuestion('There are ' + this.a + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.b + ' more ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there altogether?');    	
+		}
+		if (random == 1)
+		{
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' more playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing total?'); 	
+		}
+                this.setAnswer(this.c,0);
+        }
+});
+
+/*
+var TwoStepApApB = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet,sum)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		this.mSum = sum;
+
+		this.mNameMachine = new NameMachine();
+		this.ns = new NameSampler();
+
+               	//variables
+                this.a = Math.floor(Math.random()*50)+50;
+                this.b = Math.floor(Math.random()*28)+12;
+                this.c = Math.floor(Math.random()*28)+12;
+                this.d = parseInt(this.a - this.b - this.c);
+	
+                random = Math.floor(Math.random()*5)+1;
+		
+		if (random == 5)
+		{
+                	this.d = parseInt(this.b + this.b + this.c);
+			this.setQuestion('There are ' + this.b + ' ' + this.ns.mAnimalOne + '. There are ' + this.c + ' ' + this.mCompare + ' ' + this.ns.mAnimalTwo + ' than ' + this.ns.mAnimalOne + '. How many animals are there + ' ' + this.mSum + '?');        
+		}
+		
+		if (random == 4)
+		{
+                	this.d = parseInt(this.a - this.b);
+			this.setQuestion(this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same team called the ' + this.ns.mAnimalOne + '. The ' + this.ns.mAnimalOne + ' scored ' + ' ' + this.a + ' points total. ' + this.ns.mNameOne + ' scored ' + this.b + ' points. ' + this.ns.mNameTwo + ' scored the rest of the points for the ' + this.ns.mAnimalOne + '. How many points did ' + this.ns.mNameTwo + ' score.'     ) ;    	
+		}
+	
+		if (random == 3)
+		{
+                	this.a = Math.floor(Math.random()*20)+30;
+                	this.b = Math.floor(Math.random()*20)+15;
+                	this.d = parseInt(this.a + this.a - this.b);
+			this.setQuestion(this.ns.mNameOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameTwo + ' planted ' + this.b + ' less ' + this.ns.mVegetableOne + ' than ' + this.ns.mNameOne + '. How many ' + this.ns.mVegetableOne + ' did they plant in total?' );  	
+		}
+		
+		if (random == 2)
+		{
+                	this.a = Math.floor(Math.random()*10)+20;
+                	this.b = Math.floor(Math.random()*20)+15;
+                	this.d = parseInt(this.b + this.b + this.a);
+			this.setQuestion('There are ' + this.b + ' ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. There are ' + this.a + ' more ' + this.ns.mColorTwo + ' ' + this.ns.mThings + ' than ' + this.ns.mColorOne + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' are there altogether?');    	
+		}
+
+		if (random == 1)
+		{
+                	this.a = Math.floor(Math.random()*20)+35;
+                	this.b = Math.floor(Math.random()*10)+20;
+                	this.d = parseInt(this.a - this.b + this.a);
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' less playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing total?'); 	
+		}
+                this.setAnswer(this.d,0);
+        }
+});
+*/
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_15',2.0115,'2.oa.a.1','Two step. a+a+b');
+*/
+
+var i_2_oa_a_1__15 = new Class(
+{
+Extends: TwoStepApApB,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'altogether');
+                this.mType = '2.oa.a.1_15';
+        }
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_14',2.0114,'2.oa.a.1','One step. TakingFrom. left' );
+*/
+
+var i_2_oa_a_1__14 = new Class(
+{
+Extends: OneStepTakingFrom,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'left');
+                this.mType = '2.oa.a.1_14';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_13',2.0113,'2.oa.a.1','Two step. TakingFrom. left' );
+*/
+
+var i_2_oa_a_1__13 = new Class(
+{
+Extends: TwoStepTakingFrom,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'left');
+                this.mType = '2.oa.a.1_13';
+        }
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_12',2.0112,'2.oa.a.1','One step. Addition. altogether' );
+*/
+
+var i_2_oa_a_1__12 = new Class(
+{
+Extends: OneStepPuttingTogether,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'altogether');
+                this.mType = '2.oa.a.1_12';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_11',2.0111,'2.oa.a.1','Two step. Addition. in all' );
+*/
+
+var i_2_oa_a_1__11 = new Class(
+{
+Extends: TwoStepPuttingTogether,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'in all');
+                this.mType = '2.oa.a.1_11';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_10',2.0110,'2.oa.a.1','Two step. Addition. in total' );
+*/
+
+var i_2_oa_a_1__10 = new Class(
+{
+Extends: TwoStepPuttingTogether,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'in total');
+                this.mType = '2.oa.a.1_10';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_9',2.0109,'2.oa.a.1','Two step. Addition. total' );
+*/
+var i_2_oa_a_1__9 = new Class(
+{
+Extends: TwoStepPuttingTogether,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'total');
+                this.mType = '2.oa.a.1_9';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_8',2.0108,'2.oa.a.1','Two step. Addition. in sum' );
+*/
+var i_2_oa_a_1__8 = new Class(
+{
+Extends: TwoStepPuttingTogether,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'in sum');
+                this.mType = '2.oa.a.1_8';
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_7',2.0107,'2.oa.a.1','Two step. Addition. Altogether' );
+*/
+var i_2_oa_a_1__7 = new Class(
+{
+Extends: TwoStepPuttingTogether,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'altogether');
+                this.mType = '2.oa.a.1_7';
+        }
+});
+
+
+
