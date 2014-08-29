@@ -422,7 +422,7 @@ var i_2_oa_a_1__19 = new Class(
 Extends: TwoStepCompare,
         initialize: function(sheet)
         {
-        	this.parent(sheet,'abmc');
+        	this.parent(sheet,'acmb');
                 this.mType = '2.oa.a.1_19';
         }
 });
