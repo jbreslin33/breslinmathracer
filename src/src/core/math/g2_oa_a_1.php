@@ -213,6 +213,21 @@ Extends: OneStepTakingFrom,
         }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_14',2.0114,'2.oa.a.1','Two step. TakingFrom. left' );
+*/
+
+var i_2_oa_a_1__14 = new Class(
+{
+Extends: TwoStepTakingFrom,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'left');
+                this.mType = '2.oa.a.1_14';
+        }
+});
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_12',2.0112,'2.oa.a.1','One step. Addition. altogether' );
