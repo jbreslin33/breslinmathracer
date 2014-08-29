@@ -398,6 +398,20 @@ Extends: TextItem,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_18',2.0118,'2.oa.a.1','One step. Compare. ba');
+*/
+
+var i_2_oa_a_1__18 = new Class(
+{
+Extends: OneStepCompare,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'ba');
+                this.mType = '2.oa.a.1_18';
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_17',2.0117,'2.oa.a.1','One step. Compare. ab');
 */
 
@@ -406,7 +420,7 @@ var i_2_oa_a_1__17 = new Class(
 Extends: OneStepCompare,
         initialize: function(sheet)
         {
-        	this.parent(sheet,'ba');
+        	this.parent(sheet,'ab');
                 this.mType = '2.oa.a.1_17';
         }
 });
