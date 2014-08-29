@@ -4,7 +4,7 @@ prerequisites:
 none finished
 */
 
-var TwoStepAddition = new Class(
+var TwoStepPuttingTogether = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet,sum)
@@ -53,7 +53,7 @@ Extends: TextItem,
         }
 });
 
-var OneStepAddition = new Class(
+var OneStepPuttingTogether = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet,sum)
@@ -100,13 +100,127 @@ Extends: TextItem,
         }
 });
 
+var OneStepTakingFrom = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet,left)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		this.mLeft = left; 
+
+		this.mNameMachine = new NameMachine();
+		this.ns = new NameSampler();
+
+               	//variables
+                this.a = Math.floor(Math.random()*50)+50;
+                this.b = Math.floor(Math.random()*28)+12;
+                this.c = parseInt(this.a - this.b);
+	
+                random = Math.floor(Math.random()*5)+1;
+		
+		if (random == 5)
+		{
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.ns.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.mLeft + '?');        
+		}
+		
+		if (random == 4)
+		{
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' than how many ' + this.ns.mTimeIncrement + ' do they have ' + this.mLeft + ' to play?');    	
+		}
+	
+		if (random == 3)
+		{
+			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.mLeft + '?');  	
+		}
+		
+		if (random == 2)
+		{
+			this.setQuestion(this.b + ' students left ' + this.ns.mSchoolOne + ' and started going to ' + this.ns.mSchoolTwo + '. If ' + this.ns.mSchoolOne + ' had ' + this.a + ' students to begin with than how many students does ' + this.ns.mSchoolOne + ' have ' + this.mLeft + '?'  );    	
+		}
+
+		if (random == 1)
+		{
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gave '  + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.mLeft + '?');    	
+		}
+
+                this.setAnswer(this.c,0);
+        }
+});
+
+var TwoStepTakingFrom = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet,left)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		this.mNameMachine = new NameMachine();
+		this.ns = new NameSampler();
+
+		this.mLeft = left;
+
+               	//variables
+                this.a = Math.floor(Math.random()*50)+50;
+                this.b = Math.floor(Math.random()*28)+12;
+                this.c = Math.floor(Math.random()*28)+12;
+                this.d = parseInt(this.a - this.b - this.c);
+	
+                random = Math.floor(Math.random()*5)+1;
+		
+		if (random == 5)
+		{
+			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. For Lunch the ' + this.ns.mAnimalOne + ' ate ' + this.c + ' ' + this.ns.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
+		}
+		
+		if (random == 4)
+		{
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' and ' + this.c + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
+		}
+	
+		if (random == 3)
+		{
+			this.setQuestion(this.ns.mAdultOne + ' has a farm with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.ns.mAnimalOne +  ' ate ' + this.b + ' ' + this.ns.mVegetableOne + ' and ' + this.ns.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.ns.mLeft + '?');  	
+		}
+		
+		if (random == 2)
+		{
+                	this.d = parseInt(this.a - this.b + this.c);
+			this.setQuestion(this.ns.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.ns.mSchoolOne + '  and go to ' + this.ns.mSchoolTwo + '. ' + this.c + ' students leave ' + this.ns.mSchoolThree + ' and come to ' +  this.ns.mSchoolOne + '. How many students will ' + this.ns.mSchoolOne + ' have ' + this.ns.mLeft + '?');    	
+		}
+
+		if (random == 1)
+		{
+			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.ns.mLeft + '?');    	
+		}
+
+                this.setAnswer(this.d,0);
+        }
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_13',2.0113,'2.oa.a.1','One step. TakingFrom. left' );
+*/
+
+var i_2_oa_a_1__13 = new Class(
+{
+Extends: OneStepTakingFrom,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'left');
+                this.mType = '2.oa.a.1_13';
+        }
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_12',2.0112,'2.oa.a.1','One step. Addition. altogether' );
 */
 
 var i_2_oa_a_1__12 = new Class(
 {
-Extends: OneStepAddition,
+Extends: OneStepPuttingTogether,
         initialize: function(sheet)
         {
         	this.parent(sheet,'altogether');
@@ -120,7 +234,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 
 var i_2_oa_a_1__11 = new Class(
 {
-Extends: TwoStepAddition,
+Extends: TwoStepPuttingTogether,
         initialize: function(sheet)
         {
         	this.parent(sheet,'in all');
@@ -134,7 +248,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 
 var i_2_oa_a_1__10 = new Class(
 {
-Extends: TwoStepAddition,
+Extends: TwoStepPuttingTogether,
         initialize: function(sheet)
         {
         	this.parent(sheet,'in total');
@@ -147,7 +261,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 */
 var i_2_oa_a_1__9 = new Class(
 {
-Extends: TwoStepAddition,
+Extends: TwoStepPuttingTogether,
         initialize: function(sheet)
         {
         	this.parent(sheet,'total');
@@ -160,7 +274,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 */
 var i_2_oa_a_1__8 = new Class(
 {
-Extends: TwoStepAddition,
+Extends: TwoStepPuttingTogether,
         initialize: function(sheet)
         {
         	this.parent(sheet,'in sum');
@@ -173,7 +287,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 */
 var i_2_oa_a_1__7 = new Class(
 {
-Extends: TwoStepAddition,
+Extends: TwoStepPuttingTogether,
         initialize: function(sheet)
         {
         	this.parent(sheet,'altogether');
@@ -243,112 +357,6 @@ Extends: TextItem,
                 this.setAnswer(this.d,0);
         }
 });
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_4',2.0104,'2.oa.a.1','How many left. Two step.' );
-*/
-
-var i_2_oa_a_1__4 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '2.oa.a.1_4';
-		
-		this.mNameMachine = new NameMachine();
-		this.ns = new NameSampler();
-
-               	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = Math.floor(Math.random()*28)+12;
-                this.d = parseInt(this.a - this.b - this.c);
-	
-                random = Math.floor(Math.random()*5)+1;
-		
-		if (random == 5)
-		{
-			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. For Lunch the ' + this.ns.mAnimalOne + ' ate ' + this.c + ' ' + this.ns.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
-		}
-		
-		if (random == 4)
-		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' and ' + this.c + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
-		}
-	
-		if (random == 3)
-		{
-			this.setQuestion(this.ns.mAdultOne + ' has a farm with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.ns.mAnimalOne +  ' ate ' + this.b + ' ' + this.ns.mVegetableOne + ' and ' + this.ns.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.ns.mLeft + '?');  	
-		}
-		
-		if (random == 2)
-		{
-                	this.d = parseInt(this.a - this.b + this.c);
-			this.setQuestion(this.ns.mSchoolOne + ' had ' + this.a + ' students. ' + this.b + ' students leave ' + this.ns.mSchoolOne + '  and go to ' + this.ns.mSchoolTwo + '. ' + this.c + ' students leave ' + this.ns.mSchoolThree + ' and come to ' +  this.ns.mSchoolOne + '. How many students will ' + this.ns.mSchoolOne + ' have ' + this.ns.mLeft + '?');    	
-		}
-
-		if (random == 1)
-		{
-			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.ns.mLeft + '?');    	
-		}
-
-                this.setAnswer(this.d,0);
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_3',2.0103,'2.oa.a.1','How many left. One step.' );
-*/
-
-var i_2_oa_a_1__3 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '2.oa.a.1_3';
-		
-		this.mNameMachine = new NameMachine();
-		this.ns = new NameSampler();
-
-               	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = parseInt(this.a - this.b);
-	
-                random = Math.floor(Math.random()*5)+1;
-		
-		if (random == 5)
-		{
-			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.ns.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.mLeft + '?');        
-		}
-		
-		if (random == 4)
-		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' than how many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
-		}
-	
-		if (random == 3)
-		{
-			this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.mLeft + '?');  	
-		}
-		
-		if (random == 2)
-		{
-			this.setQuestion(this.b + ' students left ' + this.ns.mSchoolOne + ' and started going to ' + this.ns.mSchoolTwo + '. If ' + this.ns.mSchoolOne + ' had ' + this.a + ' students to begin with than how many students does ' + this.ns.mSchoolOne + ' have ' + this.ns.mLeft + '?'  );    	
-		}
-
-		if (random == 1)
-		{
-			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gave '  + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.ns.mLeft + '?');    	
-		}
-
-                this.setAnswer(this.c,0);
-        }
-});
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_2',2.0102,'2.oa.a.1','How many more. Two step.' );
 */
