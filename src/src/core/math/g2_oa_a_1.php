@@ -11,8 +11,6 @@ Extends: TextItem,
         {
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
-                this.mType = '2.oa.a.1_7';
-
 		this.mSum = sum;
 
 		this.mNameMachine = new NameMachine();
@@ -55,6 +53,67 @@ Extends: TextItem,
         }
 });
 
+var OneStepAddition = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet,sum)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		this.mSum = sum;
+
+		this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+               	//variables
+                this.a = Math.floor(Math.random()*20)+30;
+                this.b = Math.floor(Math.random()*20)+30;
+                this.c = parseInt(this.a + this.b);
+	
+                random = Math.floor(Math.random()*5)+1;
+		
+		if (random == 5)
+		{
+			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell ' + this.mSum + '?');        
+		}
+		
+		if (random == 4)
+		{
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.mSum + '?');  	
+		}
+	
+		if (random == 3)
+		{
+			this.setQuestion(this.ns.mAdultOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many vegetables did he plant ' + this.mSum + '?');  	
+		}
+		
+		if (random == 2)
+		{
+			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.b + ' girls and ' + this.a + ' boys. How many students does ' + this.ns.mSchoolTwo + ' have ' + this.mSum + '?');    	
+		}
+
+		if (random == 1)
+		{
+			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' do they have ' + this.mSum + '?');    	
+		}
+                this.setAnswer(this.c,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_12',2.0112,'2.oa.a.1','One step. Addition. altogether' );
+*/
+
+var i_2_oa_a_1__12 = new Class(
+{
+Extends: OneStepAddition,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'altogether');
+                this.mType = '2.oa.a.1_12';
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_11',2.0111,'2.oa.a.1','Two step. Addition. in all' );
 */
@@ -65,7 +124,6 @@ Extends: TwoStepAddition,
         initialize: function(sheet)
         {
         	this.parent(sheet,'in all');
-
                 this.mType = '2.oa.a.1_11';
         }
 });
@@ -80,7 +138,6 @@ Extends: TwoStepAddition,
         initialize: function(sheet)
         {
         	this.parent(sheet,'in total');
-
                 this.mType = '2.oa.a.1_10';
         }
 });
@@ -88,14 +145,12 @@ Extends: TwoStepAddition,
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_9',2.0109,'2.oa.a.1','Two step. Addition. total' );
 */
-
 var i_2_oa_a_1__9 = new Class(
 {
 Extends: TwoStepAddition,
         initialize: function(sheet)
         {
         	this.parent(sheet,'total');
-
                 this.mType = '2.oa.a.1_9';
         }
 });
@@ -103,14 +158,12 @@ Extends: TwoStepAddition,
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_8',2.0108,'2.oa.a.1','Two step. Addition. in sum' );
 */
-
 var i_2_oa_a_1__8 = new Class(
 {
 Extends: TwoStepAddition,
         initialize: function(sheet)
         {
         	this.parent(sheet,'in sum');
-
                 this.mType = '2.oa.a.1_8';
         }
 });
@@ -118,73 +171,20 @@ Extends: TwoStepAddition,
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_7',2.0107,'2.oa.a.1','Two step. Addition. Altogether' );
 */
-
 var i_2_oa_a_1__7 = new Class(
 {
 Extends: TwoStepAddition,
         initialize: function(sheet)
         {
         	this.parent(sheet,'altogether');
-
                 this.mType = '2.oa.a.1_7';
         }
 });
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_6',2.0106,'2.oa.a.1','One step. Addition.' );
-*/
-
-var i_2_oa_a_1__6 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '2.oa.a.1_6';
-
-		this.mNameMachine = new NameMachine();
-                this.ns = new NameSampler();
-
-               	//variables
-                this.a = Math.floor(Math.random()*20)+30;
-                this.b = Math.floor(Math.random()*20)+30;
-                this.c = parseInt(this.a + this.b);
-	
-                random = Math.floor(Math.random()*5)+1;
-		
-		if (random == 5)
-		{
-			this.setQuestion(this.ns.mNameOne + ' has a fruit stand. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.a + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sold ' + this.b + ' ' + this.ns.mFruitOne + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mFruitOne + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell ' + this.ns.mSum + '?');        
-		}
-		
-		if (random == 4)
-		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mSum + '?');  	
-		}
-	
-		if (random == 3)
-		{
-			this.setQuestion(this.ns.mAdultOne + ' planted ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many vegetables did he plant ' + this.ns.mSum + '?');  	
-		}
-		
-		if (random == 2)
-		{
-			this.setQuestion(this.ns.mSchoolOne + ' has ' + this.b + ' girls and ' + this.a + ' boys. How many students does ' + this.ns.mSchoolTwo + ' have ' + this.ns.mSum + '?');    	
-		}
-
-		if (random == 1)
-		{
-			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' do they have ' + this.ns.mSum + '?');    	
-		}
-                this.setAnswer(this.c,0);
-        }
-});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_5',2.0105,'2.oa.a.1','Two step. hard.' );
 */
-
 var i_2_oa_a_1__5 = new Class(
 {
 Extends: TextItem,
