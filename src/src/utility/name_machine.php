@@ -135,6 +135,16 @@ var NameMachine = new Class(
 		this.mThingArray.push("rocks");
 		this.mThingArray.push("balloons");
 
+    //school supplies
+		this.mSuppliesArray = new Array();
+		this.mUsedSuppliesElementArray = new Array();
+		this.mSuppliesArray.push("staplers");
+		this.mSuppliesArray.push("erasers");
+		this.mSuppliesArray.push("calculators");
+		this.mSuppliesArray.push("notebooks");
+		this.mSuppliesArray.push("textbooks");
+		this.mSuppliesArray.push("scales");
+
 		//schools
 		this.mSchoolArray = new Array();
 		this.mUsedSchoolElementArray = new Array();
@@ -256,6 +266,33 @@ var NameMachine = new Class(
                 }
                 this.mUsedSchoolElementArray.push(randomElement);
                 return this.mSchoolArray[randomElement];
+        },
+
+        getSupply: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mSuppliesArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedSuppliesElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedSuppliesElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedSuppliesElementArray.push(randomElement);
+                return this.mSuppliesArray[randomElement];
         },
 
         getThing: function()

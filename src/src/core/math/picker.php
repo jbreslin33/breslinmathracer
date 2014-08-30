@@ -150,6 +150,11 @@ getItem: function(id)
         {
                 return new i_3_oa_a_2__1(this.mSheet);
         }
+        if (id == '3.oa.a.2_2')
+        {
+                return new i_3_oa_a_2__2(this.mSheet);
+        }
+
 
         //3.oa.a.3
         if (id == '3.oa.a.3_1')
