@@ -167,7 +167,7 @@ Extends: TextItem,
                 this.d = parseInt(this.a - this.b + this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
-		random = 4;
+		random = 3;
 		
 		if (random == 5)
 		{
@@ -179,7 +179,7 @@ Extends: TextItem,
 		}
 		if (random == 3)
 		{
-			this.setQuestion(this.ns.mAdultOne + ' has a farm with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.ns.mAnimalOne +  ' ate ' + this.b + ' ' + this.ns.mVegetableOne + ' and ' + this.ns.mAnimalTwo + ' ate ' + this.c + ' than how many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.ns.mLeft + '?');  	
+			this.setQuestion(this.ns.mAdultOne + ' has a farm with ' + this.a + ' ' + this.ns.mVegetableOne + '. ' + this.b + ' of the ' + this.ns.mVegetableOne + ' were eaten by ' + this.ns.mAnimalOne + '. ' + this.ns.mAdultOne + ' grew ' + this.c + ' more ' + this.ns.mVegetableOne + '. How many ' + this.ns.mVegetableOne + ' will '  +  this.ns.mAdultOne + ' have ' + this.ns.mLeft + '?');  	
 		}
 		if (random == 2)
 		{
