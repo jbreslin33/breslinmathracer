@@ -212,6 +212,7 @@ Extends: TextItem,
 		
 		var a = 0;  
 		var b = 0;  
+		var c = 0;  
 
                	this.a = Math.floor(Math.random()*20)+22;
                	this.b = Math.floor(Math.random()*20)+22;
@@ -220,6 +221,7 @@ Extends: TextItem,
                	//variables
 		if (order == 'abmc')		
 		{
+			APPLICATION.log('abmc');
               	  	this.d = parseInt(this.a + this.b - this.c);
 			a = 0;
 			b = 1;
@@ -227,6 +229,7 @@ Extends: TextItem,
 		}
 		if (order == 'acmb')		
 		{
+			APPLICATION.log('acmb');
               	  	this.d = parseInt(this.a + this.c - this.b);
 			a = 0;
 			b = 2;
@@ -234,14 +237,15 @@ Extends: TextItem,
 		}
 		if (order == 'bcma')		
 		{
+			APPLICATION.log('bcma');
               	  	this.d = parseInt(this.b + this.c - this.a);
-			a = 2;
-			b = 0;
-			c = 1;
+			a = 1;
+			b = 2  
+			c = 0;
 		}
 
                 random = Math.floor(Math.random()*5)+1;
-		random = 1;
+		random = 5;
 	
 		if (random == 5)
 		{
@@ -422,7 +426,7 @@ var i_2_oa_a_1__19 = new Class(
 Extends: TwoStepCompare,
         initialize: function(sheet)
         {
-        	this.parent(sheet,'acmb');
+        	this.parent(sheet,'bcma');
                 this.mType = '2.oa.a.1_19';
         }
 });
