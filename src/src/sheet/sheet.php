@@ -152,7 +152,7 @@ var Sheet = new Class(
 	{
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
-                for (var i = 0; i < itemIDArray.length; i++)
+                for (var i = 0; i < itemIDArray.length; i++)              
                 {
 			var pick = 0;
 
