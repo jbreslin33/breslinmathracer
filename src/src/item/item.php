@@ -497,6 +497,9 @@ var Item = new Class(
                 {
                         this.mQuestionShapeArray[i].setVisibility(false);
                 }
+
+      if (raphael != 0)
+        raphael.clear();
 	},
 
 	fillPracticeSelect: function()
