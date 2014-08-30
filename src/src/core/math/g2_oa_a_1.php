@@ -161,20 +161,21 @@ Extends: TextItem,
 		this.mLeft = left;
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+50;
+                this.a = Math.floor(Math.random()*50)+25;
                 this.b = Math.floor(Math.random()*28)+12;
                 this.c = Math.floor(Math.random()*28)+12;
-                this.d = parseInt(this.a - this.b - this.c);
+                this.d = parseInt(this.a - this.b + this.c);
 	
                 random = Math.floor(Math.random()*5)+1;
+		random = 4;
 		
 		if (random == 5)
 		{
-			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. For Lunch the ' + this.ns.mAnimalOne + ' ate ' + this.c + ' ' + this.ns.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
+			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. After breakfast ' + this.ns.mAnimalTwo + ' gave ' + this.c + ' ' + this.ns.mFruitOne + ' to the ' + this.ns.mAnimalOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
 		}
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' and ' + this.c + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' . Then on ' + this.ns.mDayOfWeekTwo + ' because they were good they gained an extra ' + this.c + ' ' + this.ns.mTimeIncrement + '. How many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
 		}
 		if (random == 3)
 		{
@@ -457,6 +458,21 @@ Extends: TextItem,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_20',2.0120,'2.oa.a.1','Two step. TakdingFrom and Adding To.');
+*/
+
+var i_2_oa_a_1__20 = new Class(
+{
+Extends: TwoStepTakingFromAndAddingTo,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,'acmb');
+                this.mType = '2.oa.a.1_20';
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_19',2.0119,'2.oa.a.1','Two step. Compare. abmc');
 */
 
@@ -469,7 +485,6 @@ Extends: TwoStepCompare,
                 this.mType = '2.oa.a.1_19';
         }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_18',2.0118,'2.oa.a.1','One step. Compare. ba');
