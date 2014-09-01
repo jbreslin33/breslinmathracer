@@ -61,58 +61,11 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
-        $_SESSION["ref_id"] = 'normal';
-
-        //BEGIN NEW CODE
-        //right here you need to check the level of the ref_id you are about to send them to.
-        $selectLastLevelAttempt = "select level, transaction_code from levelattempts where learning_standards_attempts_id = ";
-        $selectLastLevelAttempt .= $_SESSION["learning_standards_attempts_id"];
-        $selectLastLevelAttempt .= " order by start_time desc limit 1;";
-
-       	$selectLastLevelAttemptResult = pg_query($this->mDatabaseConnection->getConn(),$selectLastLevelAttempt) or die('Could not connect: ' . pg_last_error());
-        $numLastLevelAttemptRows = pg_num_rows($selectLastLevelAttemptResult);
-
-        if ($numLastLevelAttemptRows > 0)
-        {
-        	$levelVar               = pg_Result($selectLastLevelAttemptResult, 0, 'level');
-        	$transaction_codeVar = pg_Result($selectLastLevelAttemptResult, 0, 'transaction_code');
-                $_SESSION["level"] = $levelVar;
-                
-		//passed
-                if ($transaction_codeVar == 1)
-                {
-                	$levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
-               	        $levelVar++;
-                	$_SESSION["level"] = $levelVar;
-                }
-                //failed
-                if ($transaction_codeVar == 2)
-                {
-                	if ($levelVar > 1)
-                        {
-                                $levelVar = (int) preg_replace('/[^0-9]/', '', $levelVar);
-                       	        $levelVar--;
-                		$_SESSION["level"] = $levelVar;
-                        }
-                }
-        }
-        else
-        {
-		///there are no levelattempts so act like signup for just this one.
-        	//set sessions for signup
-        	$_SESSION["ref_id"] = 'normal';
-        	$_SESSION["level"] = 1;
-        	$_SESSION["levels"] = 10;
-        	$_SESSION["subject_id"] = 1;
-
-        	$this->setRawData();
-        }
-        //END NEW CODE
-   
         //update session vars with some hard coding
         $_SESSION["levels"] = 10; //normal is always 10 levels....
-
-        $this->setRawData();
+        $_SESSION["subject_id"] = 1;
+        
+	$this->setRawData();
 }
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
