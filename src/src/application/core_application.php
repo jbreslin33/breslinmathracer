@@ -574,6 +574,7 @@ Extends: Application,
 	// are we running the right game??
 	gameDecider: function()
 	{
+
 		//if already have a game destroy it.
 		if (this.mGame)
 		{

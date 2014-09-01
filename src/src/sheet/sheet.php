@@ -1,10 +1,12 @@
 /*
  A Sheet should contain items(questions) it should facilitate randomizing, ordering items. it should deal with advancing levels....and other application related things.   
 */
+
 var Sheet = new Class(
 {
         initialize: function(game)
         {
+
 		//logs
 		this.mStateLogs = false; 
 
