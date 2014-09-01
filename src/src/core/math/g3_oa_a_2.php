@@ -101,7 +101,7 @@ Extends: TextItem,
 
                 //this.mRaphael = Raphael(350,137,150,5);
                 //this.mRaphael = Raphael(this.Xpad,this.Ypad,700,700);
-                raphael = Raphael(this.Xpad,this.Ypad,700,700);
+                raphael = Raphael(this.Xpad,this.Ypad,700,350);
 
       // this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,0,0,0,0,"#000000",false);
 		
@@ -199,7 +199,13 @@ console.log('b: ' + b);
 
 checkUserAnswer: function()
 {
+
+//console.log("checkUserAnswer");
+  // raphael.remove();
+
+ // raphael.setViewBox(10,10, 10,10);
    raphael.clear();
+  
    this.parent();
 }
 
