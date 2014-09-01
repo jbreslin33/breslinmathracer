@@ -95,7 +95,7 @@ Extends: Application,
 				APPLICATION.mWaitForReturn = false; 
 		
 				//for now if you get a full i gonna say run a new game.	
-				APPLICATION.gameDecider();
+				//APPLICATION.gameDecider();
 
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
