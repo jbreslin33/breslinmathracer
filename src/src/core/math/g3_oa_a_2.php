@@ -89,19 +89,19 @@ var i_3_oa_a_2__2 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,600,50,330,75,100,50,685,80);
+                this.parent(sheet,600,50,330,75,100,50,685,80);              
 
                 this.mType = '3.oa.a.2_2';
   
                 this.Xpad = 10;
                 this.Ypad = 35;
 
-                if (raphael != 0)
-                  raphael.clear();
+                //if (raphael != 0)
+                  //raphael.clear();
 
                 //this.mRaphael = Raphael(350,137,150,5);
                 //this.mRaphael = Raphael(this.Xpad,this.Ypad,700,700);
-                raphael = Raphael(this.Xpad,this.Ypad,700,350);
+                //raphael = Raphael(this.Xpad,this.Ypad,700,350);
 
       // this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,0,0,0,0,"#000000",false);
 		
@@ -139,6 +139,8 @@ Extends: TextItem,
 
 createQuestionShapes: function()
 {
+    // raphael.clear();
+  
     var y = 135;
     var x = 0;
 
@@ -191,7 +193,9 @@ console.log('b: ' + b);
 
       //this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,x,y,x+length,y,"#000000",false);
    
-        this.mFractionBar = new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false);
+     //raphael.clear();
+
+// this.mFractionBar = new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false);
     }
   
 },
@@ -204,7 +208,7 @@ checkUserAnswer: function()
   // raphael.remove();
 
  // raphael.setViewBox(10,10, 10,10);
-   raphael.clear();
+  // raphael.clear();
   
    this.parent();
 }

@@ -2,16 +2,11 @@
 barebones item class. Should this even have a gui????? I think it should be an abstract class with just an question and answer. let those that implent/extend it provide the gui.
 */
 
-raphael = 0;
-
 var Item = new Class(
 {
         initialize: function(sheet)
         {
 
-    if (raphael != 0)
-        raphael.clear();
-    
 		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
@@ -496,10 +491,7 @@ var Item = new Class(
    		for (i = 0; i < this.mQuestionShapeArray.length; i++)
                 {
                         this.mQuestionShapeArray[i].setVisibility(false);
-                }
-
-      if (raphael != 0)
-        raphael.clear();     
+                }  
 	},
 
 	fillPracticeSelect: function()
