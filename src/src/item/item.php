@@ -499,7 +499,7 @@ var Item = new Class(
                 }
 
       if (raphael != 0)
-        raphael.clear();
+        raphael.clear();     
 	},
 
 	fillPracticeSelect: function()
