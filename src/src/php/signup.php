@@ -34,7 +34,7 @@ public function process()
         	}
 		else
 		{
-			$this->insertFirstLevelAttempt();
+			$this->insertFirstEvaluationsAttempt();
 
         		$_SESSION["LOGGED_IN"] = 1;
 		}
@@ -45,17 +45,15 @@ public function process()
 	}
 }
 
-public function insertFirstLevelAttempt()
+public function insertFirstEvaluationsAttempt()
 { 
-	//insert learning_standard_attempt
-	$insert = "insert into learning_standards_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
+	$insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
-        $insert .= ",'normal');";
+        $insert .= ",1);";
 
        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
-	//get learning_standard_attempt id
-	$query = "select id from learning_standards_attempts where user_id = ";
+	$query = "select id from evaluations_attempts where user_id = ";
         $query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";	
        	
@@ -66,16 +64,14 @@ public function insertFirstLevelAttempt()
         if ($num > 0)
         {
                 //get the attempt_id
-                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
+                $evaluations_attempts_id = pg_Result($result, 0, 'id');
 
                	//set level_id
-                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+                $_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
         }
 
 	//set sessions for signup
         $_SESSION["ref_id"] = 'normal';
-        $_SESSION["level"] = 1;
-       	$_SESSION["levels"] = 10;
         $_SESSION["subject_id"] = 1;
 	
 	$this->setRawData();
@@ -86,7 +82,7 @@ public function setRawData()
 	$query = "select item_types.id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_standards.core_clusters_id=core_clusters.id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id JOIN core_subjects_grades ON core_domains_subjects_grades.core_subjects_grades_id=core_subjects_grades.id JOIN core_grades ON core_subjects_grades.core_grades_id=core_grades.id WHERE core_grades.id = ";
 	$query .= $_SESSION["core_grades_id"]; 
 	$query .= " ORDER BY progression"; 
-	$query .= " LIMIT 10;";
+	$query .= " LIMIT 1;";
 
        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
         $num = pg_num_rows($result);

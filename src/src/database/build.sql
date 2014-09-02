@@ -13,12 +13,11 @@ DROP TABLE finer_types;
 DROP TABLE practice_buddy; --you need these make practice more effiecient without adding too many links as other tables will.
 --natural groupings are already the core_standards keep in mind... 
 DROP TABLE prerequisites;
+DROP TABLE evaluations;
+
+DROP TABLE evaluations_attempts;
 
 DROP TABLE item_types;
-DROP TABLE levelattempts;
-DROP TABLE learning_standards_attempts;
-
-DROP TABLE learning_standards;
 
 DROP TABLE users;
 
@@ -152,45 +151,31 @@ CREATE TABLE users (
 --==================================================================
 --==================== LEARNING CURRICULUM  ========================
 --==================================================================
-CREATE TABLE learning_standards (
-        id text NOT NULL UNIQUE,
-	levels integer NOT NULL, -- for us to determine number of levels till next LearningStandard	
-	PRIMARY KEY (id)	
-);	
-
-CREATE TABLE learning_standards_attempts (
-	id SERIAL,
-    	start_time timestamp,
-    	end_time timestamp,
-    	user_id integer NOT NULL,
-    	learning_standards_id text NOT NULL,  
-	transaction_code integer DEFAULT 3 NOT NULL,
-	score integer DEFAULT 0 NOT NULL,
-	score_needed integer DEFAULT 0 NOT NULL,
-	PRIMARY KEY (id),
-	FOREIGN KEY (user_id) REFERENCES users(id),
-	FOREIGN KEY (learning_standards_id) REFERENCES learning_standards(id)
-);
-
-CREATE TABLE levelattempts (
-	id SERIAL,
-    	start_time timestamp,
-    	end_time timestamp,
-    	level integer NOT NULL, 
-    	learning_standards_attempts_id integer NOT NULL,  
-	transaction_code integer DEFAULT 3 NOT NULL,
-	score integer DEFAULT 0 NOT NULL,
-	score_needed integer DEFAULT 0 NOT NULL,
-	PRIMARY KEY (id),
-	FOREIGN KEY (learning_standards_attempts_id) REFERENCES learning_standards_attempts(id)
-);
-
 
 --addition,subtraction,mult,div,parens,exponents
 CREATE TABLE finer_types (
 	id SERIAL,
 	description text,	
         PRIMARY KEY (id)
+);
+
+--normal,practice
+CREATE TABLE evaluations (
+	id SERIAL,
+	description text,	
+        PRIMARY KEY (id)
+);
+
+--for now this will be everytime you switch up... later you could add number of questions score needed etc...
+CREATE TABLE evaluations_attempts (
+	id SERIAL,
+        start_time timestamp,
+        end_time timestamp,
+	evaluations_id integer NOT NULL,	
+    	user_id integer NOT NULL,
+        PRIMARY KEY (id),
+	FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
+	FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE item_types (
@@ -242,10 +227,10 @@ CREATE TABLE item_attempts (
         id SERIAL,
         start_time timestamp,
         end_time timestamp,
-	levelattempts_id integer NOT NULL,
+	evaluations_attempts_id integer NOT NULL, 
 	item_types_id text NOT NULL, 
         transaction_code integer DEFAULT 0 NOT NULL, --were you correct?? 0 not answered yet   1 correct    2 incorrect
         PRIMARY KEY (id),
-	FOREIGN KEY (levelattempts_id) REFERENCES levelattempts(id),
+	FOREIGN KEY (evaluations_attempts_id) REFERENCES evaluations_attempts(id),
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id)
 );
