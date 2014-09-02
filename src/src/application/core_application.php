@@ -82,13 +82,11 @@ Extends: Application,
                 	{
                 		APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                        	APPLICATION.mLevel = responseArray[2];
-                        	APPLICATION.mLevels = responseArray[3];
-                        	APPLICATION.mLoggedIn = responseArray[4];
-                       		APPLICATION.mUsername = responseArray[5];
-                        	APPLICATION.mFirstName = responseArray[6];
-                        	APPLICATION.mLastName = responseArray[7];
-                        	APPLICATION.mRawData = responseArray[8];
+                        	APPLICATION.mLoggedIn = responseArray[2];
+                       		APPLICATION.mUsername = responseArray[3];
+                        	APPLICATION.mFirstName = responseArray[4];
+                        	APPLICATION.mLastName = responseArray[5];
+                        	APPLICATION.mRawData = responseArray[6];
 
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 

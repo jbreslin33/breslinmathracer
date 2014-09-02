@@ -12,6 +12,8 @@ class Normal
 function __construct($startNew)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
+        
+	$this->progression_counter = 0;
 
 	if ($startNew == 1)
 	{
@@ -68,9 +70,9 @@ public function continueAttempt()
 	$this->setRawData();
 }
 //you are not using user id in selects that is why it skipped eval....
-public function setRawData()
+public function initializeProgressionCounter()
 {
-        $progression_counter = 0;
+        $this->progression_counter = 0;
 
 	//lets get the progression of proper grade...
 	$query = "select item_types.progression from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_standards.core_clusters_id=core_clusters.id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id JOIN core_subjects_grades ON core_domains_subjects_grades.core_subjects_grades_id=core_subjects_grades.id JOIN core_grades ON core_subjects_grades.core_grades_id=core_grades.id WHERE core_grades.id = ";
@@ -83,8 +85,13 @@ public function setRawData()
         if ($num > 0)
         {
         	//this id is either going in array or not
-                $progression_counter = pg_Result($result, 0, 'progression');
+                $this->progression_counter = pg_Result($result, 0, 'progression');
 	}
+}
+
+public function setRawData()
+{
+	$this->initializeProgressionCounter();
 
         $itemArray = array();
 
@@ -102,47 +109,88 @@ public function setRawData()
 		{
 			$query .= "select id, progression from item_types where progression > "; 
 		}
-		$query .= $progression_counter; 
+		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                 $numberOfResults = pg_num_rows($result);
 
+		$practice_date = 0;
+
                 if ($numberOfResults > 0)
                 {
                         //this id is either going in array or not
                         $item_types_id = pg_Result($result, 0, 'id');
-                        $progression_counter = pg_Result($result, 0, 'progression');
-		
+              		$this->progression_counter = pg_Result($result, 0, 'progression');
+	
 			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = '"; 
 			$query .= $item_types_id; 
 			$query .= "' AND learning_standards_attempts.user_id = ";
-        		$query .= $_SESSION["user_id"];
-			$query .= " AND learning_standards_attempts.learning_standards_id != 'practice'";
-			$query .= " order by item_attempts.start_time asc limit 10;";
-		
+       			$query .= $_SESSION["user_id"];
+			$query .= " AND learning_standards_attempts.learning_standards_id = 'practice'";
+			$query .= " order by item_attempts.start_time asc limit 1;";
+	
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-                	$num = pg_num_rows($result);
+               		$num = pg_num_rows($result);
+	
+			if ($num > 0)	
+			{
+              			$practice_date = pg_Result($result, 0, 'start_time');
+			}
 
-    			//if we have 10 lets check if we mastered all ten
-			$streak = 0;
-                        for ($i = 0; $i < $num; $i++)
-                        {
-                        	$transaction_code = pg_Result($result, 0, 'transaction_code');
-                                if ($transaction_code != 1)
-                                {
-                                	$streak = 0;
-                                }
-				else
+	                $query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = '";
+       	               	$query .= $item_types_id;
+                       	$query .= "' AND learning_standards_attempts.user_id = ";
+                       	$query .= $_SESSION["user_id"];
+			
+			if ($practice_date == 0)
+			{
+                        	$query .= " order by item_attempts.start_time asc;";
+			}
+			else
+			{
+                        	$query .= " AND item_attempts.start_time > '";
+				$query .= $practice_date;
+                        	$query .= "' order by item_attempts.start_time asc;";
+			}
+			
+			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+               		$num = pg_num_rows($result);
+
+			$right = 0;
+			$wrong = 0;
+
+			if ($num > 0)
+			{
+  				for ($i = 0; $i < $num; $i++)
 				{
-					$streak++;
+					$transaction_code = pg_Result($result, $i, 'transaction_code');
+					if ($transaction_code == 1) 
+					{
+						$right++;		
+					}	
+					else
+					{
+						$wrong++;		
+					}
 				}
-                        }
-                       	if ($streak < 10) 
-                        {
-                                array_push($itemArray,"$item_types_id");
-                                array_push($itemArray,"$streak");
-                        }
+			}
+			$mark = 0;
+			$numerator = intval($right); 	
+			$denominator = intval($right) + intval($wrong); 	
+
+			if ($denominator > 0) 
+			{
+				$mark = $numerator / $denominator;	
+				$mark = $mark * 100;
+				$mark = intval($mark);
+			}
+
+ 			if ($mark < 70)	
+			{
+				array_push($itemArray,"$item_types_id");
+ 				array_push($itemArray,"$mark");
+			}
 		}
 	}	
         $itemString = "";
