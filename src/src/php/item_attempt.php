@@ -8,16 +8,13 @@ class ItemAttempt
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->insert();
 }
 
 public function insert()
 {
  	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["evaluations_attempts_id"];
-        $insert .= ",";
-        $insert .= $_SESSION["item_transaction_code"];
-        $insert .= ",'";
+        $insert .= ",0,'";
         $insert .= $_SESSION["item_types_id"];
         $insert .= "');";
 
@@ -55,8 +52,8 @@ public function update()
 	$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
         $insert .= $_SESSION["item_transaction_code"];
 	$insert .= " WHERE id = ";		
-        $insert .= $_SESSION["item_attempts_id"];
-        $insert .= ");";
+        $insert .= $_SESSION["item_attempt_id"];
+        $insert .= ";";
 
         //get db result
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());

@@ -1,5 +1,7 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
+
 
 class Signup
 {
@@ -35,8 +37,10 @@ public function process()
 		else
 		{
 			$this->insertFirstEvaluationsAttempt();
-
         		$_SESSION["LOGGED_IN"] = 1;
+			$item_attempt = new ItemAttempt();
+			$item_attempt->insert();
+
 		}
 	}
 	else
@@ -93,6 +97,7 @@ public function setRawData()
 	for ($i = 0; $i < $num; $i++)
         {
         	$id = pg_Result($result, $i, 'id');
+        	$_SESSION["item_types_id"] = $id;
                 array_push($itemArray,"$id");
                 array_push($itemArray,"0");
 	}
