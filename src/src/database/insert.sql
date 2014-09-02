@@ -96,11 +96,9 @@ insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (28,5,12); -- 5.g 
 
 
---LEARNING_STANDARDS :right now these are essentially our games  
-insert into learning_standards (id,levels) values ('evaluation',1); 
-insert into learning_standards (id,levels) values ('remediate',3); 
-insert into learning_standards (id,levels) values ('practice',3); 
-insert into learning_standards (id,levels) values ('normal',1); 
+--ITEM_MODE: 
+insert into evaluations (description) values ('normal'); 
+insert into evaluations (description) values ('practice'); 
 
 --     FINER TYPES 
 --borrow_types

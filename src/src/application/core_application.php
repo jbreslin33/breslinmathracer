@@ -216,7 +216,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	sendLevelAttempt: function(itemtypesid,transactioncode)
+	sendEvaluationsAttempts: function(itemtypesid,transactioncode)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -227,7 +227,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../web/php/send_level_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.open("POST","../../web/php/send_evaluations_attempts.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
                 xmlhttp.send();
         },
 	
