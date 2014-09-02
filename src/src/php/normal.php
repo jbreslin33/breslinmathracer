@@ -88,7 +88,7 @@ public function initializeProgressionCounter()
                 $this->progression_counter = pg_Result($result, 0, 'progression');
 	}
 }
-
+//i am going to remember the last thing i asked and only ask 1 question at a time.
 public function setRawData()
 {
 	$this->initializeProgressionCounter();
