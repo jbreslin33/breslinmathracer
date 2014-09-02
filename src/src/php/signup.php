@@ -47,6 +47,7 @@ public function process()
 
 public function insertFirstEvaluationsAttempt()
 { 
+	//prime the pump
 	$insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
         $insert .= ",1);";

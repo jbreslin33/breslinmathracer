@@ -27,15 +27,13 @@ function __construct($startNew)
 
 public function insertNewAttempt()
 {
-       	//insert learning_standard_attempt
-        $insert = "insert into learning_standards_attempts (start_time,user_id,learning_standards_id) VALUES (CURRENT_TIMESTAMP,";
+        $insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
-        $insert .= ",'normal');";
+        $insert .= ",1);";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
-        //get learning_standard_attempt id
-        $query = "select id from learning_standards_attempts where user_id = ";
+        $query = "select id from evaluations_attempts where user_id = ";
         $query .= $_SESSION["user_id"];
         $query .= " order by start_time desc limit 1;";
 
@@ -46,10 +44,10 @@ public function insertNewAttempt()
         if ($num > 0)
         {
                 //get the attempt_id
-                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
+                $evaluations_attempts_id = pg_Result($result, 0, 'id');
 
                 //set level_id
-                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+                $_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
         }
 
         //set sessions for signup
@@ -63,8 +61,6 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
-        //update session vars with some hard coding
-        $_SESSION["levels"] = 10; //normal is always 10 levels....
         $_SESSION["subject_id"] = 1;
         
 	$this->setRawData();
@@ -123,11 +119,12 @@ public function setRawData()
                         $item_types_id = pg_Result($result, 0, 'id');
               		$this->progression_counter = pg_Result($result, 0, 'progression');
 	
-			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = '"; 
+			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts";
+			$query .= " ON evaluations_attempts.id=item_attempts.evaluations_attempts_id WHERE item_attempts.item_types_id = '"; 
 			$query .= $item_types_id; 
-			$query .= "' AND learning_standards_attempts.user_id = ";
+			$query .= "' AND evaluations_attempts.user_id = ";
        			$query .= $_SESSION["user_id"];
-			$query .= " AND learning_standards_attempts.learning_standards_id = 'practice'";
+			$query .= " AND evaluations_attempts.evaluations_id = 2";
 			$query .= " order by item_attempts.start_time asc limit 1;";
 	
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -138,9 +135,9 @@ public function setRawData()
               			$practice_date = pg_Result($result, 0, 'start_time');
 			}
 
-	                $query = "select item_attempts.item_types_id, item_attempts.transaction_code from levelattempts JOIN item_attempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where item_attempts.item_types_id = '";
+	                $query = "select item_attempts.item_types_id, item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
        	               	$query .= $item_types_id;
-                       	$query .= "' AND learning_standards_attempts.user_id = ";
+                       	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
 			
 			if ($practice_date == 0)
