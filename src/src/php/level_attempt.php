@@ -13,9 +13,7 @@ function __construct()
 
 public function process()
 {
- 	$insert = "insert into levelattempts (start_time,level,learning_standards_attempts_id) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["level"];
-        $insert .= ",";
+ 	$insert = "insert into levelattempts (start_time,level,learning_standards_attempts_id) VALUES (CURRENT_TIMESTAMP,1,";
         $insert .= $_SESSION["learning_standards_attempts_id"];
         $insert .= ");";
 

@@ -3,10 +3,6 @@
 $returnString = "101,";
 $returnString .= $_SESSION["ref_id"];
 $returnString .= ",";
-$returnString .= $_SESSION["level"];
-$returnString .= ",";
-$returnString .= $_SESSION["levels"];
-$returnString .= ",";
 $returnString .= $_SESSION["LOGGED_IN"];
 $returnString .= ",";
 $returnString .= $_SESSION["username"];
