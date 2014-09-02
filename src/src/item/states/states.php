@@ -136,6 +136,7 @@ exit: function(item)
 {
    	if (item.mUserAnswer != '')
 	{
+/*
 		if (item == item.mSheet.mItemArray[0])
 		{
 			//item is the first in array on Sheet so send attempt
@@ -148,8 +149,10 @@ exit: function(item)
 				APPLICATION.sendLevelAttempt(item.mType,1);
 			}
 		}
-		else
-		{
+*/
+//		else
+		
+	//	{
 			//just send item attempt first item attempt was sent with sendLevelAttempt
             		if (item.mStatus == 2)
                 	{
@@ -159,7 +162,7 @@ exit: function(item)
                 	{
                         	APPLICATION.sendItemAttempt(item.mType,1);
                 	}
-		}
+	//	}
 	}
 }
 

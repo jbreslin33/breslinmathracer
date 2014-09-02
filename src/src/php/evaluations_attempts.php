@@ -14,7 +14,7 @@ function __construct()
 public function process()
 {
  	$insert = "insert into evaluations_attempts (start_time,evaluations_id,user_id) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["evaluations_id"];
+        $insert .= $_SESSION["evaluations_attempts_id"];
         $insert .= ",";
         $insert .= $_SESSION["user_id"];
         $insert .= ");";
