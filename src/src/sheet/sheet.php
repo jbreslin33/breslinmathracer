@@ -8,7 +8,7 @@ var Sheet = new Class(
         {
 
 		//logs
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//GAME
 		this.mGame = game;

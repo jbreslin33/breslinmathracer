@@ -1,6 +1,7 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
 /*
 This class should allow student to feel confident. First levels should go to infinity... or not exist at all. 2nd should we remediate as soon as a student gets one wrong??? well we do ask it on next level... what about 3 levels??? i think we need another table... we need a one to track when you were sent to a learning standard then we still use levelattempts table.:wq:wq:wq
 --scratch that except for the confidence and infinity stuff.
@@ -18,7 +19,9 @@ function __construct($startNew)
 
 	if ($startNew == 1)
 	{
-		$this->insertEvaluationsAttempts();
+		//close old evaluation_attempts.......
+		$evaluations_attempts = new EvaluationsAttempts();
+		$evaluations_attempts->update();
         
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
