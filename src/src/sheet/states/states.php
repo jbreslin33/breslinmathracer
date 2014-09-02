@@ -78,6 +78,8 @@ execute: function(sheet)
 
 exit: function(sheet)
 {
+	//we should close out the evaluation_attempt
+	//APPLICATION.udpateEvaluationAttempt
 }
 });
 
@@ -101,7 +103,6 @@ enter: function(sheet)
 
         //gui bar
         sheet.showVictoryShapes();
-        //sheet.showBossShapes();
 },
 
 execute: function(sheet)
