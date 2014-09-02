@@ -39,8 +39,6 @@ public function insert()
         //set sessions for signup
         $_SESSION["ref_id"] = 'normal';
         $_SESSION["subject_id"] = 1;
-
-        $this->setRawData();
 }
 
 public function update()

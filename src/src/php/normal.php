@@ -22,6 +22,9 @@ function __construct($startNew)
 		//close old evaluation_attempts.......
 		$evaluations_attempts = new EvaluationsAttempts();
 		$evaluations_attempts->update();
+
+		//$_SESSION["evaluations_attempts_id"] = 1;
+		$evaluations_attempts->insert();
         
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
