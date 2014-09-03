@@ -14,7 +14,7 @@ public function insert()
         $insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
         $insert .= ",";
-        $insert .= $_SESSION["evaluations_attempts_id"];
+        $insert .= $_SESSION["evaluations_id"];
         $insert .= ");";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
