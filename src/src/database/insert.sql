@@ -997,7 +997,62 @@ insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.2',
 insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3',65,'Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.');
 
 insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.a',65,'Make tables of equivalent ratios relating quantities with whole-number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios.');
+
 insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.b',65,'Solve unit rate problems including those involving unit pricing and constant speed. For example, if it took 7 hours to mow 4 lawns, then at that rate, how many lawns could be mowed in 35 hours? At what rate were lawns being mowed?');
+
 insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.c',65,'Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity); solve problems involving finding the whole, given a part and the percent.');
+
 insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.d',65,'Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities.');
+
+
+-----------------------------------------ns ----------30 
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (66,30,'Apply and extend previous understandings of multiplication and division to divide fractions by fractions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.a.1',66,'Interpret and compute quotients of fractions, and solve word problems involving division of fractions by fractions, e.g., by using visual fraction models and equations to represent the problem. For example, create a story context for (2/3) ÷ (3/4) and use a visual fraction model to show the quotient; use the relationship between multiplication and division to explain that (2/3) ÷ (3/4) = 8/9 because 3/4 of 8/9 is 2/3. (In general, (a/b) ÷ (c/d) = ad/bc.) How much chocolate will each person get if 3 people share 1/2 lb of chocolate equally? How many 3/4-cup servings are in 2/3 of a cup of yogurt? How wide is a rectangular strip of land with length 3/4 mi and area 1/2 square mi?.');
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (67,30,'Compute fluently with multi-digit numbers and find common factors and multiples.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.b.2',67,'Fluently divide multi-digit numbers using the standard algorithm.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.b.3',67,'Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.b.4',67,'Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12. Use the distributive property to express a sum of two whole numbers 1-100 with a common factor as a multiple of a sum of two whole numbers with no common factor. For example, express 36 + 8 as 4 (9 + 2)..');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (68,30,'Apply and extend previous understandings of numbers to the system of rational numbers.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.5',68,'Understand that positive and negative numbers are used together to describe quantities having opposite directions or values (e.g., temperature above/below zero, elevation above/below sea level, credits/debits, positive/negative electric charge); use positive and negative numbers to represent quantities in real-world contexts, explaining the meaning of 0 in each situation.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.6',68,'Understand a rational number as a point on the number line. Extend number line diagrams and coordinate axes familiar from previous grades to represent points on the line and in the plane with negative number coordinates.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.6.a',68,'Recognize opposite signs of numbers as indicating locations on opposite sides of 0 on the number line; recognize that the opposite of the opposite of a number is the number itself, e.g., -(-3) = 3, and that 0 is its own opposite.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.6.b',68,'Understand signs of numbers in ordered pairs as indicating locations in quadrants of the coordinate plane; recognize that when two ordered pairs differ only by signs, the locations of the points are related by reflections across one or both axes.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.6.c',68,'Find and position integers and other rational numbers on a horizontal or vertical number line diagram; find and position pairs of integers and other rational numbers on a coordinate plane.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.7',68,'Understand ordering and absolute value of rational numbers.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.7.a',68,'Interpret statements of inequality as statements about the relative position of two numbers on a number line diagram. For example, interpret -3 > -7 as a statement that -3 is located to the right of -7 on a number line oriented from left to right.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.7.b',68,'Write, interpret, and explain statements of order for rational numbers in real-world contexts. For example, write -3 oC > -7 oC to express the fact that -3 oC is warmer than -7 oC.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.7.c',68,'Understand the absolute value of a rational number as its distance from 0 on the number line; interpret absolute value as magnitude for a positive or negative quantity in a real-world situation. For example, for an account balance of -30 dollars, write |-30| = 30 to describe the size of the debt in dollars.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.7.d',68,'Distinguish comparisons of absolute value from statements about order. For example, recognize that an account balance less than -30 dollars represents a debt greater than 30 dollars.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.8',68,'Solve real-world and mathematical problems by graphing points in all four quadrants of the coordinate plane. Include use of coordinates and absolute value to find distances between points with the same first coordinate or the same second coordinate.');
+
+
+
+
 
