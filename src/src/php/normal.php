@@ -61,7 +61,7 @@ public function setRawData()
 
 	$firstTime = true;
 
-	while ( count($itemArray) < 11)
+	while ( count($itemArray) < 1)
 	{
 		$query = '';	
 		if ($firstTime)
@@ -130,6 +130,7 @@ public function setRawData()
   				for ($i = 0; $i < $num; $i++)
 				{
 					$transaction_code = pg_Result($result, $i, 'transaction_code');
+					$transaction_code = intval($transaction_code);
 					if ($transaction_code == 1) 
 					{
 						$right++;		
@@ -149,12 +150,21 @@ public function setRawData()
 				$mark = $numerator / $denominator;	
 				$mark = $mark * 100;
 				$mark = intval($mark);
+
 			}
 
  			if ($mark < 70)	
 			{
 				array_push($itemArray,"$item_types_id");
  				array_push($itemArray,"$mark");
+	
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','$mark');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+			}
+			else	
+			{
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','$mark');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		}
 	}	
