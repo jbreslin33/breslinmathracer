@@ -152,7 +152,6 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
-		APPLICATION.log('Sheet::createItems:' + APPLICATION.mRawData);
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
                 for (var i = 0; i < itemIDArray.length; i++)              

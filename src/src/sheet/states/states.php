@@ -78,8 +78,7 @@ execute: function(sheet)
 
 exit: function(sheet)
 {
-	//we should close out the evaluation_attempt
-	//APPLICATION.udpateEvaluationAttempt
+	APPLICATION.normal();
 }
 });
 
@@ -285,7 +284,6 @@ enter: function(sheet)
         sheet.reset();
 	sheet.mGame.setScore(0);
         sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
-	APPLICATION.normal();
 },
 
 execute: function(sheet)
