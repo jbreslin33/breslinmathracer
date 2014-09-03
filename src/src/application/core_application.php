@@ -88,6 +88,8 @@ Extends: Application,
                         	APPLICATION.mLastName = responseArray[5];
                         	APPLICATION.mRawData = responseArray[6];
 
+				APPLICATION.log('mRawData:' + APPLICATION.mRawData); 
+
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
@@ -280,7 +282,6 @@ Extends: Application,
 
         normal: function()
         {
-		APPLICATION.log('APPLICATION::normal called');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
