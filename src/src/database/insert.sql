@@ -981,4 +981,23 @@ insert into core_standards (id,core_clusters_id,description) values ('5.g.b.3',6
 insert into core_standards (id,core_clusters_id,description) values ('5.g.b.4',64,'Classify two-dimensional figures in a hierarchy based on properties.');
 
 
+-----------------------------------------GRADE 6 ---------- 
+
+-----------------------------------------rp ---------- 29
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (65,29,'Understand ratio concepts and use ratio reasoning to solve problems.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.1',65,'Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities. For example, "The ratio of wings to beaks in the bird house at the zoo was 2:1, because for every 2 wings there was 1 beak." "For every vote candidate A received, candidate C received nearly three votes."');
+
+
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.2',65,'Understand the concept of a unit rate a/b associated with a ratio a:b with b ≠ 0, and use rate language in the context of a ratio relationship. For example, "This recipe has a ratio of 3 cups of flour to 4 cups of sugar, so there is 3/4 cup of flour for each cup of sugar." "We paid $75 for 15 hamburgers, which is a rate of $5 per hamburger."1');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3',65,'Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.a',65,'Make tables of equivalent ratios relating quantities with whole-number measurements, find missing values in the tables, and plot the pairs of values on the coordinate plane. Use tables to compare ratios.');
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.b',65,'Solve unit rate problems including those involving unit pricing and constant speed. For example, if it took 7 hours to mow 4 lawns, then at that rate, how many lawns could be mowed in 35 hours? At what rate were lawns being mowed?');
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.c',65,'Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity); solve problems involving finding the whole, given a part and the percent.');
+insert into core_standards (id,core_clusters_id,description) values ('6.rp.a.3.d',65,'Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities.');
 
