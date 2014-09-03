@@ -1110,3 +1110,37 @@ insert into core_standards (id,core_clusters_id,description) values ('6.g.a.3',7
 
 insert into core_standards (id,core_clusters_id,description) values ('6.g.a.4',72,'Represent three-dimensional figures using nets made up of rectangles and triangles, and use the nets to find the surface area of these figures. Apply these techniques in the context of solving real-world and mathematical problems.');
 
+-----------------------------------------sp ----------33
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (73,33,'Develop understanding of statistical variability.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.a.1',73,'Recognize a statistical question as one that anticipates variability in the data related to the question and accounts for it in the answers. For example, "How old am I?" is not a statistical question, but "How old are the students in my school?" is a statistical question because one anticipates variability in students ages.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.a.2',73,'Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.a.3',73,'Recognize that a measure of center for a numerical data set summarizes all of its values with a single number, while a measure of variation describes how its values vary with a single number.');
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (74,33,'Summarize and describe distributions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.4',74,'Display numerical data in plots on a number line, including dot plots, histograms, and box plots.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.5',74,'Summarize numerical data sets in relation to their context, such as by:');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.5.a',74,'Reporting the number of observations.');
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.5.b',74,'Describing the nature of the attribute under investigation, including how it was measured and its units of measurement.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.5.c',74,'Giving quantitative measures of center (median and/or mean) and variability (interquartile range and/or mean absolute deviation), as well as describing any overall pattern and any striking deviations from the overall pattern with reference to the context in which the data were gathered.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.5.d',74,'Relating the choice of measures of center and variability to the shape of the data distribution and the context in which the data were gathered.');
+
+
+
+
+
