@@ -1168,3 +1168,31 @@ insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.3',
 
 
 
+-----------------------------------------ns ----------35
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (76,35,'Apply and extend previous understandings of operations with fractions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.1',76,'Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.1.a',76,'Describe situations in which opposite quantities combine to make 0. For example, a hydrogen atom has 0 charge because its two constituents are oppositely charged.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.1.b',76,'Understand p + q as the number located a distance |q| from p, in the positive or negative direction depending on whether q is positive or negative. Show that a number and its opposite have a sum of 0 (are additive inverses). Interpret sums of rational numbers by describing real-world contexts.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.1.c',76,'Understand subtraction of rational numbers as adding the additive inverse, p - q = p + (-q). Show that the distance between two rational numbers on the number line is the absolute value of their difference, and apply this principle in real-world contexts.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.1.d',76,'Apply properties of operations as strategies to add and subtract rational numbers.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.2',76,'Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.2.a',76,'Understand that multiplication is extended from fractions to rational numbers by requiring that operations continue to satisfy the properties of operations, particularly the distributive property, leading to products such as (-1)(-1) = 1 and the rules for multiplying signed numbers. Interpret products of rational numbers by describing real-world contexts.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.2.b',76,'Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If p and q are integers, then -(p/q) = (-p)/q = p/(-q). Interpret quotients of rational numbers by describing real-world contexts.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.2.c',76,'Apply properties of operations as strategies to multiply and divide rational numbers.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.2.d',76,'Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.3',76,'Solve real-world and mathematical problems involving the four operations with rational numbers.1');
+
