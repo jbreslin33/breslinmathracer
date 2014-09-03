@@ -172,6 +172,9 @@ public function setRawData()
         $itemString .= $mark;
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
+	
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$itemString','setting raw data');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 }
 //end of class
 }

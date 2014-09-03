@@ -8,7 +8,7 @@ var Sheet = new Class(
         {
 
 		//logs
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 
 		//GAME
 		this.mGame = game;
@@ -152,6 +152,7 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
+		APPLICATION.log('Sheet::createItems:' + APPLICATION.mRawData);
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
                 for (var i = 0; i < itemIDArray.length; i++)              
