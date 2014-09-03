@@ -23,7 +23,7 @@ function __construct($startNew)
 		$evaluations_attempts = new EvaluationsAttempts();
 		$evaluations_attempts->update();
 
-		//$_SESSION["evaluations_attempts_id"] = 1;
+		$_SESSION["evaluations_id"] = 1;
 		$evaluations_attempts->insert();
         
 		$item_attempt = new ItemAttempt();
