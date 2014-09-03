@@ -1096,4 +1096,17 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 insert into core_standards (id,core_clusters_id,description) values ('6.ee.c.9',71,'Use variables to represent two quantities in a real-world problem that change in relationship to one another; write an equation to express one quantity, thought of as the dependent variable, in terms of the other quantity, thought of as the independent variable. Analyze the relationship between the dependent and independent variables using graphs and tables, and relate these to the equation. For example, in a problem involving motion at constant speed, list and graph ordered pairs of distances and times, and write the equation d = 65t to represent the relationship between distance and time.');
 
 
+-----------------------------------------g ----------32
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (72,32,'Solve real-world and mathematical problems involving area, surface area, and volume.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.g.a.1',72,'Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.g.a.2',72,'Find the volume of a right rectangular prism with fractional edge lengths by packing it with unit cubes of the appropriate unit fraction edge lengths, and show that the volume is the same as would be found by multiplying the edge lengths of the prism. Apply the formulas V = l w h and V = b h to find volumes of right rectangular prisms with fractional edge lengths in the context of solving real-world and mathematical problems.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.g.a.3',72,'Draw polygons in the coordinate plane given coordinates for the vertices; use coordinates to find the length of a side joining points with the same first coordinate or the same second coordinate. Apply these techniques in the context of solving real-world and mathematical problems.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.g.a.4',72,'Represent three-dimensional figures using nets made up of rectangles and triangles, and use the nets to find the surface area of these figures. Apply these techniques in the context of solving real-world and mathematical problems.');
 
