@@ -88,8 +88,6 @@ Extends: Application,
                         	APPLICATION.mLastName = responseArray[5];
                         	APPLICATION.mRawData = responseArray[6];
 
-				APPLICATION.log('mRawData:' + APPLICATION.mRawData); 
-
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
@@ -115,7 +113,6 @@ Extends: Application,
                         }
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
                         {
-				APPLICATION.log('student_item_stats:' + responseArray[i]);
                                 //APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
                                 //APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
