@@ -25,12 +25,12 @@ function __construct($startNew)
 
 		$_SESSION["evaluations_id"] = 1;
 		$evaluations_attempts->insert();
+	
+		$this->setRawData();
         
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
-	
 	}
-	$this->setRawData();
 }
 
 public function initializeProgressionCounter()
@@ -56,13 +56,14 @@ public function initializeProgressionCounter()
 public function setRawData()
 {
 	$this->initializeProgressionCounter();
-
-        $itemArray = array();
-
 	$firstTime = true;
+	$item_types_id_to_ask = '';	
 
-	while ( count($itemArray) < 1)
+	while ($item_types_id_to_ask == '')
 	{
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id_to_ask','while');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 		$query = '';	
 		if ($firstTime)
 		{
@@ -135,13 +136,13 @@ public function setRawData()
 					{
 						$right++;		
 					}	
-					else
+					if ($transaction_code == 2) 
 					{
 						$wrong++;		
 					}
 				}
 			}
-			$mark = 0;
+			$mark = intval(0);
 			$numerator = intval($right); 	
 			$denominator = intval($right) + intval($wrong); 	
 
@@ -150,47 +151,27 @@ public function setRawData()
 				$mark = $numerator / $denominator;	
 				$mark = $mark * 100;
 				$mark = intval($mark);
-
 			}
 
  			if ($mark < 70)	
 			{
-				array_push($itemArray,"$item_types_id");
- 				array_push($itemArray,"$mark");
+				$item_types_id_to_ask = $item_types_id;
 	
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','$mark');";
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','less');";
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 			else	
 			{
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','$mark');";
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','more');";
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		}
 	}	
-        $itemString = "";
-
-        if (count($itemArray) > 0)
-        {
-                $itemString .= $itemArray[0];
-                if (count($itemArray) > 1)
-                {
-                        $itemString .= ":";
-                }
-        }
-
-        $totalCount = count($itemArray);
-
-        for ($i = 1; $i < $totalCount; $i++)
-        {
-                $itemString .= $itemArray[$i];
-                if ($i < $totalCount - 1)
-                {
-                        $itemString .= ":";
-                }
-        }
-
+        $itemString = $item_types_id_to_ask;
+        $itemString .= ":";
+        $itemString .= $mark;
         $_SESSION["raw_data"] = $itemString;
+        $_SESSION["item_types_id"] = $item_types_id_to_ask;
 }
 //end of class
 }
