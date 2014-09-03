@@ -1142,5 +1142,29 @@ insert into core_standards (id,core_clusters_id,description) values ('6.sp.b.5.d
 
 
 
+-----------------------------------------GRADE 7 ---------
+
+-----------------------------------------rp ----------34
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (75,34,'Analyze proportional relationships and use them to solve real-world and mathematical problems.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.1',75,'Compute unit rates associated with ratios of fractions, including ratios of lengths, areas and other quantities measured in like or different units. For example, if a person walks 1/2 mile in each 1/4 hour, compute the unit rate as the complex fraction 1/2/1/4 miles per hour, equivalently 2 miles per hour.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.2',75,'Recognize and represent proportional relationships between quantities.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.2.a',75,'Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.2.b',75,'Identify the constant of proportionality (unit rate) in tables, graphs, equations, diagrams, and verbal descriptions of proportional relationships.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.2.c',75,'Represent proportional relationships by equations. For example, if total cost t is proportional to the number n of items purchased at a constant price p, the relationship between the total cost and the number of items can be expressed as t = pn.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.2.d',75,'Explain what a point (x, y) on the graph of a proportional relationship means in terms of the situation, with special attention to the points (0, 0) and (1, r) where r is the unit rate.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.rp.a.3',75,'Use proportional relationships to solve multistep ratio and percent problems. Examples: simple interest, tax, markups and markdowns, gratuities and commissions, fees, percent increase and decrease, percent error.');
+
+
 
 
