@@ -1053,6 +1053,47 @@ insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.7.d
 insert into core_standards (id,core_clusters_id,description) values ('6.ns.c.8',68,'Solve real-world and mathematical problems by graphing points in all four quadrants of the coordinate plane. Include use of coordinates and absolute value to find distances between points with the same first coordinate or the same second coordinate.');
 
 
+-----------------------------------------ee ----------31 
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (69,31,'Apply and extend previous understandings of arithmetic to algebraic expressions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.1',69,'Write and evaluate numerical expressions involving whole-number exponents.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.2',69,'Write, read, and evaluate expressions in which letters stand for numbers.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.2.a',69,'Write expressions that record operations with numbers and with letters standing for numbers. For example, express the calculation "Subtract y from 5" as 5 - y.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.2.b',69,'Identify parts of an expression using mathematical terms (sum, term, product, factor, quotient, coefficient); view one or more parts of an expression as a single entity. For example, describe the expression 2 (8 + 7) as a product of two factors; view (8 + 7) as both a single entity and a sum of two terms.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.2.c',69,'Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations). For example, use the formulas V = s3 and A = 6 s2 to find the volume and surface area of a cube with sides of length s = 1/2.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.3',69,'Apply the properties of operations to generate equivalent expressions. For example, apply the distributive property to the expression 3 (2 + x) to produce the equivalent expression 6 + 3x; apply the distributive property to the expression 24x + 18y to produce the equivalent expression 6 (4x + 3y); apply properties of operations to y + y + y to produce the equivalent expression 3y.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.a.4',69,'Identify when two expressions are equivalent (i.e., when the two expressions name the same number regardless of which value is substituted into them). For example, the expressions y + y + y and 3y are equivalent because they name the same number regardless of which number y stands for..');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (70,31,'Reason about and solve one-variable equations and inequalities.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.b.5',70,'Understand solving an equation or inequality as a process of answering a question: which values from a specified set, if any, make the equation or inequality true? Use substitution to determine whether a given number in a specified set makes an equation or inequality true.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.b.6',70,'Use variables to represent numbers and write expressions when solving a real-world or mathematical problem; understand that a variable can represent an unknown number, or, depending on the purpose at hand, any number in a specified set.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.b.7',70,'Solve real-world and mathematical problems by writing and solving equations of the form x + p = q and px = q for cases in which p, q and x are all nonnegative rational numbers.');
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.b.8',70,'Write an inequality of the form x > c or x < c to represent a constraint or condition in a real-world or mathematical problem. Recognize that inequalities of the form x > c or x < c have infinitely many solutions; represent solutions of such inequalities on number line diagrams.');
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (71,31,'Represent and analyze quantitative relationships between dependent and independent variables.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('6.ee.c.9',71,'Use variables to represent two quantities in a real-world problem that change in relationship to one another; write an equation to express one quantity, thought of as the dependent variable, in terms of the other quantity, thought of as the independent variable. Analyze the relationship between the dependent and independent variables using graphs and tables, and relate these to the equation. For example, in a problem involving motion at constant speed, list and graph ordered pairs of distances and times, and write the equation d = 65t to represent the relationship between distance and time.');
 
 
 
