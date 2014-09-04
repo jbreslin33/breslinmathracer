@@ -1196,3 +1196,28 @@ insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.2.d
 
 insert into core_standards (id,core_clusters_id,description) values ('7.ns.a.3',76,'Solve real-world and mathematical problems involving the four operations with rational numbers.1');
 
+
+-----------------------------------------ee ----------36
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (77,36,'Use properties of operations to generate equivalent expressions.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ee.a.1',77,'Apply properties of operations as strategies to add, subtract, factor, and expand linear expressions with rational coefficients.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ee.a.2',77,'Understand that rewriting an expression in different forms in a problem context can shed light on the problem and how the quantities in it are related. For example, a + 0.05a = 1.05a means that "increase by 5%" is the same as "multiply by 1.05."');
+
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (78,36,'Solve real-life and mathematical problems using numerical and algebraic expressions and equations.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.3',78,'Solve multi-step real-life and mathematical problems posed with positive and negative rational numbers in any form (whole numbers, fractions, and decimals), using tools strategically. Apply properties of operations to calculate with numbers in any form; convert between forms as appropriate; and assess the reasonableness of answers using mental computation and estimation strategies. For example: If a woman making $25 an hour gets a 10% raise, she will make an additional 1/10 of her salary an hour, or $2.50, for a new salary of $27.50. If you want to place a towel bar 9 3/4 inches long in the center of a door that is 27 1/2 inches wide, you will need to place the bar about 9 inches from each edge; this estimate can be used as a check on the exact computation.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.4',78,'Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.4.a',78,'Solve word problems leading to equations of the form px + q = r and p(x + q) = r, where p, q, and r are specific rational numbers. Solve equations of these forms fluently. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.4.b',78,'Solve word problems leading to inequalities of the form px + q > r or px + q < r, where p, q, and r are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid $50 per week plus $3 per sale. This week you want your pay to be at least $100. Write an inequality for the number of sales you need to make, and describe the solutions.');
