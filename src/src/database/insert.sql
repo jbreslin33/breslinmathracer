@@ -1363,3 +1363,44 @@ insert into core_standards (id,core_clusters_id,description) values ('8.f.b.4',8
 
 insert into core_standards (id,core_clusters_id,description) values ('8.f.b.5',89,'Describe qualitatively the functional relationship between two quantities by analyzing a graph (e.g., where the function is increasing or decreasing, linear or nonlinear). Sketch a graph that exhibits the qualitative features of a function that has been described verbally.');
 
+
+-----------------------------------------g ----------41
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (90,41,'Understand congruence and similarity using physical models, transparencies, or geometry software.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.1',90,'Verify experimentally the properties of rotations, reflections, and translations:');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.1.a',90,'Lines are taken to lines, and line segments to line segments of the same length');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.1.b',90,'Angles are taken to angles of the same measure.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.1.c',90,'Parallel lines are taken to parallel lines.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.2',90,'Understand that a two-dimensional figure is congruent to another if the second can be obtained from the first by a sequence of rotations, reflections, and translations; given two congruent figures, describe a sequence that exhibits the congruence between them.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.3',90,'Describe the effect of dilations, translations, rotations, and reflections on two-dimensional figures using coordinates.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.4',90,'Understand that a two-dimensional figure is similar to another if the second can be obtained from the first by a sequence of rotations, reflections, translations, and dilations; given two similar two-dimensional figures, describe a sequence that exhibits the similarity between them.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.a.5',90,'Use informal arguments to establish facts about the angle sum and exterior angle of triangles, about the angles created when parallel lines are cut by a transversal, and the angle-angle criterion for similarity of triangles. For example, arrange three copies of the same triangle so that the sum of the three angles appears to form a line, and give an argument in terms of transversals why this is so.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (91,41,'Understand and apply the Pythagorean Theorem.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.b.6',91,'Explain a proof of the Pythagorean Theorem and its converse.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.b.7',91,'Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.b.8',91,'Apply the Pythagorean Theorem to find the distance between two points in a coordinate system.');
+
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (92,41,'Solve real-world and mathematical problems involving volume of cylinders, cones, and spheres.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('8.g.c.9',92,'Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems.');
