@@ -1221,3 +1221,26 @@ insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.4',
 insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.4.a',78,'Solve word problems leading to equations of the form px + q = r and p(x + q) = r, where p, q, and r are specific rational numbers. Solve equations of these forms fluently. Compare an algebraic solution to an arithmetic solution, identifying the sequence of the operations used in each approach. For example, the perimeter of a rectangle is 54 cm. Its length is 6 cm. What is its width?');
 
 insert into core_standards (id,core_clusters_id,description) values ('7.ee.b.4.b',78,'Solve word problems leading to inequalities of the form px + q > r or px + q < r, where p, q, and r are specific rational numbers. Graph the solution set of the inequality and interpret it in the context of the problem. For example: As a salesperson, you are paid $50 per week plus $3 per sale. This week you want your pay to be at least $100. Write an inequality for the number of sales you need to make, and describe the solutions.');
+
+-----------------------------------------g ----------36
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (79,36,'Draw construct, and describe geometrical figures and describe the relationships between them.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('7.g.a.1',79,'Solve problems involving scale drawings of geometric figures, including computing actual lengths and areas from a scale drawing and reproducing a scale drawing at a different scale.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.g.a.2',79,'Draw (freehand, with ruler and protractor, and with technology) geometric shapes with given conditions. Focus on constructing triangles from three measures of angles or sides, noticing when the conditions determine a unique triangle, more than one triangle, or no triangle.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.g.a.3',79,'Describe the two-dimensional figures that result from slicing three-dimensional figures, as in plane sections of right rectangular prisms and right rectangular pyramids.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (80,36,'Draw construct, and describe geometrical figures and describe the relationships between them.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('7.g.b.4',36,'Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle.');
+insert into core_standards (id,core_clusters_id,description) values ('7.g.b.5',36,'Use facts about supplementary, complementary, vertical, and adjacent angles in a multi-step problem to write and solve simple equations for an unknown angle in a figure.');
+insert into core_standards (id,core_clusters_id,description) values ('7.g.b.6',36,'Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.');
+
+
