@@ -1404,3 +1404,20 @@ insert into core_clusters(id,core_domains_subjects_grades_id,description) values
 
 
 insert into core_standards (id,core_clusters_id,description) values ('8.g.c.9',92,'Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems.');
+
+-----------------------------------------sp ----------42
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (93,42,'Investigate patterns of association in bivariate data.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+
+insert into core_standards (id,core_clusters_id,description) values ('8.sp.a.1',93,'Construct and interpret scatter plots for bivariate measurement data to investigate patterns of association between two quantities. Describe patterns such as clustering, outliers, positive or negative association, linear association, and nonlinear association.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.sp.a.2',93,'Know that straight lines are widely used to model relationships between two quantitative variables. For scatter plots that suggest a linear association, informally fit a straight line, and informally assess the model fit by judging the closeness of the data points to the line.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.sp.a.3',93,'Use the equation of a linear model to solve problems in the context of bivariate measurement data, interpreting the slope and intercept. For example, in a linear model for a biology experiment, interpret a slope of 1.5 cm/hr as meaning that an additional hour of sunlight each day is associated with an additional 1.5 cm in mature plant height.');
+
+insert into core_standards (id,core_clusters_id,description) values ('8.sp.a.4',93,'Understand that patterns of association can also be seen in bivariate categorical data by displaying frequencies and relative frequencies in a two-way table. Construct and interpret a two-way table summarizing data on two categorical variables collected from the same subjects. Use relative frequencies calculated for rows or columns to describe possible association between the two variables. For example, collect data from students in your class on whether or not they have a curfew on school nights and whether or not they have assigned chores at home. Is there evidence that those who have a curfew also tend to have chores?');
+
+
