@@ -1239,8 +1239,35 @@ insert into core_standards (id,core_clusters_id,description) values ('7.g.a.3',7
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (80,36,'Draw construct, and describe geometrical figures and describe the relationships between them.');
 --------------------------------------CLUSTER------------------------------------------- 
 
-insert into core_standards (id,core_clusters_id,description) values ('7.g.b.4',36,'Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle.');
-insert into core_standards (id,core_clusters_id,description) values ('7.g.b.5',36,'Use facts about supplementary, complementary, vertical, and adjacent angles in a multi-step problem to write and solve simple equations for an unknown angle in a figure.');
-insert into core_standards (id,core_clusters_id,description) values ('7.g.b.6',36,'Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.');
+insert into core_standards (id,core_clusters_id,description) values ('7.g.b.4',80,'Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.g.b.5',80,'Use facts about supplementary, complementary, vertical, and adjacent angles in a multi-step problem to write and solve simple equations for an unknown angle in a figure.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.g.b.6',80,'Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.');
+
+
+-----------------------------------------sp ----------37
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (81,37,'Use random sampling to draw inferences about a population.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.a.1',81,'Understand that statistics can be used to gain information about a population by examining a sample of the population; generalizations about a population from a sample are valid only if the sample is representative of that population. Understand that random sampling tends to produce representative samples and support valid inferences.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.a.2',81,'Use data from a random sample to draw inferences about a population with an unknown characteristic of interest. Generate multiple samples (or simulated samples) of the same size to gauge the variation in estimates or predictions. For example, estimate the mean word length in a book by randomly sampling words from the book; predict the winner of a school election based on randomly sampled survey data. Gauge how far off the estimate or prediction might be.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (82,37,'Draw informal comparative inferences about two populations.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.b.3',82,'Informally assess the degree of visual overlap of two numerical data distributions with similar variabilities, measuring the difference between the centers by expressing it as a multiple of a measure of variability. For example, the mean height of players on the basketball team is 10 cm greater than the mean height of players on the soccer team, about twice the variability (mean absolute deviation) on either team; on a dot plot, the separation between the two distributions of heights is noticeable.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.b.4',82,'Use measures of center and measures of variability for numerical data from random samples to draw informal comparative inferences about two populations. For example, decide whether the words in a chapter of a seventh-grade science book are generally longer than the words in a chapter of a fourth-grade science book.');
+
+--------------------------------------CLUSTER------------------------------------------- 
+insert into core_clusters(id,core_domains_subjects_grades_id,description) values (83,37,'Investigate chance processes and develop, use, and evaluate probability models.');
+--------------------------------------CLUSTER------------------------------------------- 
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.b.4',83,'');
 
 
