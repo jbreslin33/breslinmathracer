@@ -1268,6 +1268,20 @@ insert into core_standards (id,core_clusters_id,description) values ('7.sp.b.4',
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (83,37,'Investigate chance processes and develop, use, and evaluate probability models.');
 --------------------------------------CLUSTER------------------------------------------- 
 
-insert into core_standards (id,core_clusters_id,description) values ('7.sp.b.4',83,'');
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.5',83,'Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring. Larger numbers indicate greater likelihood. A probability near 0 indicates an unlikely event, a probability around 1/2 indicates an event that is neither unlikely nor likely, and a probability near 1 indicates a likely event.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.6',83,'Approximate the probability of a chance event by collecting data on the chance process that produces it and observing its long-run relative frequency, and predict the approximate relative frequency given the probability. For example, when rolling a number cube 600 times, predict that a 3 or 6 would be rolled roughly 200 times, but probably not exactly 200 times.');
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.7',83,'Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.7.a',83,'Develop a uniform probability model by assigning equal probability to all outcomes, and use the model to determine probabilities of events. For example, if a student is selected at random from a class, find the probability that Jane will be selected and the probability that a girl will be selected.');
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.7.b',83,'Develop a probability model (which may not be uniform) by observing frequencies in data generated from a chance process. For example, find the approximate probability that a spinning penny will land heads up or that a tossed paper cup will land open-end down. Do the outcomes for the spinning penny appear to be equally likely based on the observed frequencies?');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.8',83,'Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.');
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.8.a',83,'Understand that, just as with simple events, the probability of a compound event is the fraction of outcomes in the sample space for which the compound event occurs.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.8.b',83,'Represent sample spaces for compound events using methods such as organized lists, tables and tree diagrams. For an event described in everyday language (e.g., "rolling double sixes"), identify the outcomes in the sample space which compose the event.');
+
+insert into core_standards (id,core_clusters_id,description) values ('7.sp.c.8.c',83,'Design and use a simulation to generate frequencies for compound events. For example, use random digits as a simulation tool to approximate the answer to the question: If 40% of donors have type A blood, what is the probability that it will take at least 4 donors to find one with type A blood?');
+
 
 
