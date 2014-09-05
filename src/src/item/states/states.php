@@ -269,6 +269,10 @@ enter: function(item)
         item.hideToggleItemInfoButton();
 
         item.showPractice();
+
+        if(raphael != 0)
+          raphael.setSize(10,10);
+
 },
 
 execute: function(item)
@@ -284,6 +288,9 @@ exit: function(item)
         item.hidePractice();
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
+
+        if(raphael != 0)
+          raphael.setSize(700,350);
 }
 
 });

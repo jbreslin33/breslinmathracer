@@ -1,3 +1,6 @@
+raphael = 0;
+divLines = [];
+
 /*
 prerequisites:
 none yet
@@ -136,7 +139,6 @@ Extends: TextItem,
 
 	},
 
-
 createQuestionShapes: function()
 {
     // raphael.clear();
@@ -184,6 +186,9 @@ console.log('b: ' + b);
        a = 5;
     }
 
+    var test = 0;
+
+    raphael = Raphael(this.Xpad,this.Ypad,700,350);
     
     for (var i = 0; i < (a-1); i++)
     {               
@@ -191,11 +196,17 @@ console.log('b: ' + b);
 
         y = 135 + i*60 + 30 - this.Ypad;
 
-      //this.mFractionBar = new LineOne (this.mSheet.mGame,this.mRaphael,x,y,x+length,y,"#000000",false);
-   
-     //raphael.clear();
+      this.addQuestionShape(new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false));
 
-// this.mFractionBar = new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false);
+      //(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
+
+      //test = new Rectangle(50,20,475,300,this.mSheet.mGame,raphael,.3,1,1,"none",.5,true);
+
+     //test = divLines[i].mRaphael.rect(100,100,100,100);
+		 //this.mPolygon.attr ("stroke", this.mStroke);
+
+   
+
     }
   
 },
@@ -203,12 +214,7 @@ console.log('b: ' + b);
 
 checkUserAnswer: function()
 {
-
-//console.log("checkUserAnswer");
-  // raphael.remove();
-
- // raphael.setViewBox(10,10, 10,10);
-  // raphael.clear();
+   raphael.remove();
   
    this.parent();
 }
