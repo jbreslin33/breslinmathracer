@@ -367,6 +367,21 @@
 <script type="text/javascript" src="/src/core/math/g5_g_b_4.php"></script>
 
 
+<script type="text/javascript" src="/src/core/math/g6_rp_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_rp_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_rp_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_rp_a_3_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_rp_a_3_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_rp_a_3_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_rp_a_3_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_ns_a_1.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_ns_b_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_b_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_b_4.php"></script>
+
+
 
 
 
