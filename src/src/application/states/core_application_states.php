@@ -320,6 +320,10 @@ initialize: function()
 
 enter: function(application)
 {
+        if (raphael != 0)
+          raphael.remove();
+
+
         if (application.mStateLogs)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
