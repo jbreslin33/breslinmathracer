@@ -290,7 +290,7 @@ exit: function(item)
         item.showToggleItemInfoButton();
 
         if(raphael != 0)
-          raphael.setSize(700,350);
+          raphael.setSize(630,360);
 }
 
 });
