@@ -494,6 +494,32 @@
 <script type="text/javascript" src="/src/core/math/g7_sp_c_8_c.php"></script>
 
 
+<script type="text/javascript" src="/src/core/math/g8_ns_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ns_a_2.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g8_ee_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_a_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g8_ee_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_b_6.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g8_ee_c_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_c_7_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_c_7_b.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g8_ee_c_8.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_c_8_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_c_8_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g8_ee_c_8_c.php"></script>
+
+
+
+
+
+
+
 
 
 
