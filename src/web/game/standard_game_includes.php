@@ -381,6 +381,139 @@
 <script type="text/javascript" src="/src/core/math/g6_ns_b_3.php"></script>
 <script type="text/javascript" src="/src/core/math/g6_ns_b_4.php"></script>
 
+<script type="text/javascript" src="/src/core/math/g6_ns_c_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_6.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_6_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_6_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_6_c.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_ns_c_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_7_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_7_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_7_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_c_7_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_ns_c_8.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g6_ee_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_a_2_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_a_2_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_a_2_c.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_ee_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_a_4.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g6_ee_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_b_6.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_b_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_b_8.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_ee_c_9.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g6_g_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_g_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_g_a_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_g_a_4.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g6_sp_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_a_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_sp_b_4.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_b_5.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_sp_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_b_5_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_b_5_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_b_5_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_b_5_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_rp_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_rp_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_rp_a_2_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_rp_a_2_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_rp_a_2_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_rp_a_2_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_rp_a_3.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g7_ns_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_1_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_1_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_1_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_1_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_ns_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_2_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_2_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_2_c.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ns_a_2_d.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_ns_a_3.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g7_ee_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ee_a_2.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_ee_b_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ee_b_4.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ee_b_4_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_ee_b_4_b.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g7_g_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_g_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_g_a_3.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_g_b_4.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_g_b_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_g_b_6.php"></script>
+
+
+<script type="text/javascript" src="/src/core/math/g7_sp_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_a_2.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_sp_b_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_b_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_sp_c_5.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_6.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_7.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_7_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_7_b.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g7_sp_c_8.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_8_a.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_8_b.php"></script>
+<script type="text/javascript" src="/src/core/math/g7_sp_c_8_c.php"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
