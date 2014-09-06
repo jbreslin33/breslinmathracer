@@ -116,8 +116,8 @@ Extends: TextItem,
                 this.mPictureLink = this.mNameMachine.getPictureLink();
 
                 //variables
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
+                this.a = Math.floor(Math.random()*7)+2;
+                this.b = Math.floor(Math.random()*7)+2;
                 this.c = parseInt(this.a * this.b);
                 
 		var random = Math.floor(Math.random()*1);
@@ -179,28 +179,36 @@ console.log('a: ' + a);
 console.log('b: ' + b);
 
     length = (30*b);
-
+/*
     if (a > 5)
     {
        length = (2*length) + 100;
        a = 5;
     }
-
+*/
     var test = 0;
 
-    raphael = Raphael(this.Xpad,this.Ypad,700,350);
+    raphael = Raphael(this.Xpad,this.Ypad,630,360);
+
+    y = 105 - this.Ypad;
     
-    for (var i = 0; i < (a-1); i++)
+    for (var i = 0; i < a; i++)
     {               
         x = 25 - this.Xpad;
 
-        y = 135 + i*60 + 30 - this.Ypad;
+        if (i > 4)
+         x = 30 - this.Xpad + length + 60;
 
-      this.addQuestionShape(new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false));
+         if (i == 5)
+          y = 105 - this.Ypad;
+
+        y = y + 60;
+
+     // this.addQuestionShape(new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false));
 
       //(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
 
-      //test = new Rectangle(50,20,475,300,this.mSheet.mGame,raphael,.3,1,1,"none",.5,true);
+this.addQuestionShape(new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false));
 
      //test = divLines[i].mRaphael.rect(100,100,100,100);
 		 //this.mPolygon.attr ("stroke", this.mStroke);
@@ -217,6 +225,49 @@ checkUserAnswer: function()
    raphael.remove();
   
    this.parent();
-}
+},
+
+
+showCorrectAnswer: function()
+{
+		if (this.mCorrectAnswerLabel)
+		{
+			var answer = '';
+			for (i=0; i < this.mAnswerArray.length; i++)	
+			{
+				if (i == 0)
+				{
+					answer = answer + '' + this.getAnswer();		
+				}
+				else
+				{
+					answer = answer + ' OR ' + this.getAnswer(i);		
+				}
+			}
+			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + answer); 
+			this.mCorrectAnswerLabel.setVisibility(true);
+		}
+		this.hideAnswerInputs();
+		this.showUserAnswer();
+
+    this.mCorrectAnswerLabel.setPosition(650,200);
+    this.mCorrectAnswerLabel.setSize(200,100);
+},
+
+//this.mCorrectAnswerLabel = new Shape(300,50,525,200,this.mSheet.mGame,"","","");
+
+ //this.mUserAnswerLabel = new Shape(200,50,125,200,this.mSheet.mGame,"","","");
+
+showUserAnswer: function()
+{
+		if (this.mUserAnswerLabel)
+		{
+                	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
+                	this.mUserAnswerLabel.setVisibility(true);
+		}
+
+    this.mUserAnswerLabel.setPosition(650,100);
+    //this.mCorrectAnswerLabel.setSize(200,100);
+} 
 
 });
