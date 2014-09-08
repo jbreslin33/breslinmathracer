@@ -40,8 +40,6 @@ class Normal
 
 
 {
-    private $mDatabaseConnection;
-//pass parameter startNew 0 or 1
 function __construct($startNew)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
@@ -63,7 +61,7 @@ function __construct($startNew)
         	$item_attempt->insert();
 	}
 }
-
+//this could just as easily be set to a finer level such as domain, cluster, standard. Then we could start wherever we want.
 public function initializeProgressionCounter()
 {
         $this->progression_counter = 0;
