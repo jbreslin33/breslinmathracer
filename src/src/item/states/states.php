@@ -506,6 +506,9 @@ exit: function(item)
 {
         item.hideContinueIncorrect();
 	item.hideCorrectAnswer();
+
+  if(raphael != 0)
+     raphael.remove();
 }
 
 });
