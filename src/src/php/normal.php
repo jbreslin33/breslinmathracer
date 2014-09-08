@@ -4,10 +4,41 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
 /*
 This class should allow student to feel confident. First levels should go to infinity... or not exist at all. 2nd should we remediate as soon as a student gets one wrong??? well we do ask it on next level... what about 3 levels??? i think we need another table... we need a one to track when you were sent to a learning standard then we still use levelattempts table.:wq:wq:wq
+
 --scratch that except for the confidence and infinity stuff.
+
+new thinking:
+------------
+when you get one wrong you go to practice. which resets your percent.
+if you get one correct after practice you have 100%. with a 1 confidence level.
+
+none correct in a row is a 0 confidence level.
+
+ask in order of confidence level with progression tie breaker.
+
+never been asked is a -1 confidence level
+
+if no zeros than ask a -1 confidence level which is a new type
+
+so basically on first run you will encounter a never before asked quesiton a -1 so ask it.
+if correct.
+then 
+skip it and ask 2nd type cause its -1
+lets say you get it wrong.
+then practice
+then skip 1 
+goto 2 again cause its a 0 confidence level.
+
+unless at any point we roll a 20% in which case we ask the question with the lowest confidence level above 0;
+
+
+you  are done when we put you on next grade.... 
+
 
 */
 class Normal 
+
+
 {
     private $mDatabaseConnection;
 //pass parameter startNew 0 or 1
