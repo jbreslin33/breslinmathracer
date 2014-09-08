@@ -208,7 +208,14 @@ console.log('b: ' + b);
 
       //(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
 
-this.addQuestionShape(new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false));
+var box = new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false);
+
+box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#0ff", "stroke-width": 2});
+
+
+
+
+this.addQuestionShape(box);
 
      //test = divLines[i].mRaphael.rect(100,100,100,100);
 		 //this.mPolygon.attr ("stroke", this.mStroke);
@@ -222,7 +229,7 @@ this.addQuestionShape(new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael
 
 checkUserAnswer: function()
 {
-   raphael.remove();
+  // raphael.remove();
   
    this.parent();
 },
