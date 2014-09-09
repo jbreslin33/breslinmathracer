@@ -152,7 +152,7 @@ public function setRawData()
 
 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$count_of_mastered_items','');";
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	
+/*	
 				if ($count_of_mastered_items > 0)
 				{	
 					$rand_mastered = rand(0,1);			
@@ -163,6 +163,7 @@ public function setRawData()
 						$item_types_id_to_ask = $mastered_item_types_id_array[$rand_mastered_id];
 					}
 				}
+*/
 			}
 			else //lets roll the dice for the mastered ones by first adding them to an array
 			{
