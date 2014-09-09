@@ -92,9 +92,7 @@ public function setRawData()
 
 	while ($item_types_id_to_ask == '')
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id_to_ask','while');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
+		/*********get type_id to be evaluated for mastery level 	************/	
 		$query = '';	
 		if ($firstTime)
 		{
@@ -115,11 +113,11 @@ public function setRawData()
 
                 if ($numberOfResults > 0)
                 {
-                        //this id is either going in array or not
+			/********* get pracice_date which is the last date you practiced this item. Reason: we reset your grading after you practice ************/	
                         $item_types_id = pg_Result($result, 0, 'id');
               		$this->progression_counter = pg_Result($result, 0, 'progression');
 	
-			$query = "select item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts";
+			$query = "select item_attempts.start_time from item_attempts JOIN evaluations_attempts";
 			$query .= " ON evaluations_attempts.id=item_attempts.evaluations_attempts_id WHERE item_attempts.item_types_id = '"; 
 			$query .= $item_types_id; 
 			$query .= "' AND evaluations_attempts.user_id = ";
