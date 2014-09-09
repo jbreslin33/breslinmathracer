@@ -113,7 +113,7 @@ public function setRawData()
 
                 if ($numberOfResults > 0)
                 {
-			/********* get pracice_date which is the last date you practiced this item. Reason: we reset your grading after you practice ************/	
+			/********* get practice_date which is the last date you practiced this item. Reason: we reset your grading after you practice ************/	
                         $item_types_id = pg_Result($result, 0, 'id');
               		$this->progression_counter = pg_Result($result, 0, 'progression');
 	
@@ -122,7 +122,7 @@ public function setRawData()
 			$query .= $item_types_id; 
 			$query .= "' AND evaluations_attempts.user_id = ";
        			$query .= $_SESSION["user_id"];
-			$query .= " AND evaluations_attempts.evaluations_id = 2";
+			$query .= " AND evaluations_attempts.evaluations_id = 2"; //slight cheat but practice is id of 2
 			$query .= " order by item_attempts.start_time asc limit 1;";
 	
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -133,7 +133,8 @@ public function setRawData()
               			$practice_date = pg_Result($result, 0, 'start_time');
 			}
 
-	                $query = "select item_attempts.item_types_id, item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
+			/********* get the transaction codes of everything after the last practice. ******************/
+	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
        	               	$query .= $item_types_id;
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
