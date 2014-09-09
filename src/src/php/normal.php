@@ -96,12 +96,12 @@ public function setRawData()
 		$query = '';	
 		if ($firstTime)
 		{
-			$query .= "select id, progression from item_types where progression = "; 
+			$query .= "select id, progression, mastery from item_types where progression = "; 
 			$firstTime = false;
 		}
 		else
 		{
-			$query .= "select id, progression from item_types where progression > "; 
+			$query .= "select id, progression, mastery from item_types where progression > "; 
 		}
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
@@ -109,52 +109,24 @@ public function setRawData()
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                 $numberOfResults = pg_num_rows($result);
 
-		$practice_date = 0;
-
                 if ($numberOfResults > 0)
                 {
-			/********* get practice_date which is the last date you practiced this item. Reason: we reset your grading after you practice ************/	
-                        $item_types_id = pg_Result($result, 0, 'id');
-              		$this->progression_counter = pg_Result($result, 0, 'progression');
-	
-			$query = "select item_attempts.start_time from item_attempts JOIN evaluations_attempts";
-			$query .= " ON evaluations_attempts.id=item_attempts.evaluations_attempts_id WHERE item_attempts.item_types_id = '"; 
-			$query .= $item_types_id; 
-			$query .= "' AND evaluations_attempts.user_id = ";
-       			$query .= $_SESSION["user_id"];
-			$query .= " AND evaluations_attempts.evaluations_id = 2"; //slight cheat but practice is id of 2
-			$query .= " order by item_attempts.start_time asc limit 1;";
-	
-			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-               		$num = pg_num_rows($result);
-	
-			if ($num > 0)	
-			{
-              			$practice_date = pg_Result($result, 0, 'start_time');
-			}
+			$mastery = pg_Result($result, 0, 'mastery');
+			$item_types_id = pg_Result($result, 0, 'id');
 
-			/********* get the transaction codes of everything after the last practice. ******************/
+			/********* get the transaction codes of the amount of mastery ******************/
 	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
        	               	$query .= $item_types_id;
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
-			
-			if ($practice_date == 0)
-			{
-                        	$query .= " order by item_attempts.start_time asc;";
-			}
-			else
-			{
-                        	$query .= " AND item_attempts.start_time > '";
-				$query .= $practice_date;
-                        	$query .= "' order by item_attempts.start_time asc;";
-			}
-			
+                       	$query .= " order by item_attempts.start_time asc limit ";
+			$query .= $mastery; 
+			$query .= ";"; 
+													
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                		$num = pg_num_rows($result);
 
 			$right = 0;
-			$wrong = 0;
 
 			if ($num > 0)
 			{
@@ -166,45 +138,20 @@ public function setRawData()
 					{
 						$right++;		
 					}	
-					if ($transaction_code == 2) 
-					{
-						$wrong++;		
-					}
 				}
 			}
-			$mark = intval(0);
-			$numerator = intval($right); 	
-			$denominator = intval($right) + intval($wrong); 	
 
-			if ($denominator > 0) 
-			{
-				$mark = $numerator / $denominator;	
-				$mark = $mark * 100;
-				$mark = intval($mark);
-			}
-
- 			if ($mark < 70)	
+ 			if ($right < 10)	
 			{
 				$item_types_id_to_ask = $item_types_id;
-	
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','less');";
-				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-			}
-			else	
-			{
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id','more');";
-				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		}
 	}	
         $itemString = $item_types_id_to_ask;
         $itemString .= ":";
-        $itemString .= $mark;
+        $itemString .= $right;
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
-	
-	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$itemString','setting raw data');";
-	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 }
 //end of class
 }
