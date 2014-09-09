@@ -92,7 +92,7 @@ public function setRawData()
 
 	while ($item_types_id_to_ask == '')
 	{
-		/*********get type_id to be evaluated for mastery level 	************/	
+		/*********get type_id to be evaluated for mastery level -- this is the earliest progression of whatever level you started student at	************/	
 		$query = '';	
 		if ($firstTime)
 		{
