@@ -89,6 +89,7 @@ public function setRawData()
 	$this->initializeProgressionCounter();
 	$firstTime = true;
 	$item_types_id_to_ask = '';	
+	$mastered_item_types_id_array = array();
 
 	while ($item_types_id_to_ask == '')
 	{
@@ -144,6 +145,28 @@ public function setRawData()
  			if ($right < 10)	
 			{
 				$item_types_id_to_ask = $item_types_id;
+			
+				//ok we got one but lets see if we want ask a mastered one instead
+				$count_of_mastered_items = count($mastered_item_types_id_array);
+				$count_of_mastered_items = intval($count_of_mastered_items);
+
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$count_of_mastered_items','');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	
+				if ($count_of_mastered_items > 0)
+				{	
+					$rand_mastered = rand(0,1);			
+					if ($rand_mastered == 1)
+					{
+						//ask mastered one
+						$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1))			
+						$item_types_id_to_ask = $mastered_item_types_id_array[$rand_mastered_id];
+					}
+				}
+			}
+			else //lets roll the dice for the mastered ones by first adding them to an array
+			{
+				array_push($mastered_item_types_id_array,"$item_types_id");				
 			}
 		}
 	}	

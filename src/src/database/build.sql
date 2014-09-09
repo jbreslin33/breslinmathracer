@@ -184,7 +184,7 @@ CREATE TABLE item_types (
 	core_standards_id text NOT NULL,
 	active_code integer NOT NULL DEFAULT 1, -- 0 not active, 1 active to let you know its not in application any more
 	description text,	
-	mastery integer DEFAULT 10,	
+	mastery integer DEFAULT 2,	
         PRIMARY KEY (id),
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );
