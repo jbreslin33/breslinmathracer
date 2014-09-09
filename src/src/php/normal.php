@@ -34,6 +34,8 @@ unless at any point we roll a 20% in which case we ask the question with the low
 
 you  are done when we put you on next grade.... 
 
+this is the select for drop down for standard choice.
+SELECT  id, core_clusters_id from core_standards order by core_clusters_id, id ;
 
 */
 class Normal 
