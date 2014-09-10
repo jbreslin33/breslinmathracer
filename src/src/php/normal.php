@@ -84,6 +84,10 @@ public function initializeProgressionCounter()
         {
         	//this id is either going in array or not
                 $this->progression_counter = pg_Result($result, 0, 'progression');
+
+		//temp hack
+		$this->progression_counter = floatval($this->progression_counter) - floatval(0.0001);
+		//round(floatval($result),5);
 	}
 }
 
@@ -148,7 +152,7 @@ public function setRawData()
 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'id','$item_types_id_to_ask');";
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			
-				//ok we got one but lets see if we want ask a mastered one instead
+				//ok we got one but lets see if we want to ask a mastered one instead
 				$count_of_mastered_items = count($mastered_item_types_id_array);
 
 				if ($count_of_mastered_items > 0)
