@@ -96,13 +96,26 @@ public function setRawData()
 {
 	$this->initializeProgressionCounter();
 	$item_types_id_to_ask = '';	
-	$mastered_item_types_id_array = array();
-	$mastered_item_types_right_array = array();
-	$grade_mastery = 0;
-	$domain_mastery = 0;
-	$cluster_mastery = 0;
-	$standard_mastery = 0;
+
 	$type_mastery = 0;
+	$type_mastery_array = array();
+	$type_mastery_right_array = array();
+
+	$grade_mastery = 0;
+	$grade_mastery_array = array();
+	$grade_mastery_right_array = array();
+
+	$domain_mastery = 0;
+	$domain_mastery_array = array();
+	$domain_mastery_right_array = array();
+
+	$cluster_mastery = 0;
+	$cluster_mastery_array = array();
+	$cluster_mastery_right_array = array();
+
+	$standard_mastery = 0;
+	$standard_mastery_array = array();
+	$standard_mastery_right_array = array();
 
 	while ($item_types_id_to_ask == '')
 	{
@@ -118,10 +131,20 @@ public function setRawData()
                 if ($numberOfResults > 0)
                 {
 			$grade_mastery = pg_Result($result, 0, 'grade_mastery');
+			$grade_mastery = intval($grade_mastery);
+
 			$domain_mastery = pg_Result($result, 0, 'domain_mastery');
+			$domain_mastery = intval($domain_mastery);
+
 			$cluster_mastery = pg_Result($result, 0, 'cluster_mastery');
+			$cluster_mastery = intval($cluster_mastery);
+
 			$standard_mastery = pg_Result($result, 0, 'standard_mastery');
+			$standard_mastery = intval($standard_mastery);
+
 			$type_mastery = pg_Result($result, 0, 'type_mastery');
+			$type_mastery = intval($type_mastery);
+
 			$item_types_id = pg_Result($result, 0, 'id');
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
 
@@ -154,7 +177,6 @@ public function setRawData()
 				}
 			}
 		
-			$type_mastery = intval($type_mastery);
  			if ($right < $type_mastery)	
 			{
 				$item_types_id_to_ask = $item_types_id;
@@ -162,7 +184,7 @@ public function setRawData()
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			
 				//ok we got one but lets see if we want to ask a mastered one instead
-				$count_of_mastered_items = count($mastered_item_types_id_array);
+				$count_of_mastered_items = count($type_mastery_array);
 
 				if ($count_of_mastered_items > 0)
 				{	
@@ -173,14 +195,14 @@ public function setRawData()
 					{
 						//ask mastered one
 						$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));			
-						$item_types_id_to_ask = $mastered_item_types_id_array[$rand_mastered_id];
+						$item_types_id_to_ask = $type_mastery_array[$rand_mastered_id];
 						$right = $mastered_item_types_right_array[$rand_mastered_id];
 					}
 				}
 			}
 			else //mastered so add to mastered arrays
 			{
-				$mastered_item_types_id_array[]	= $item_types_id; 			
+				$type_mastery_array[] = $item_types_id; 			
 				$mastered_item_types_right_array[] = $right; 			
 			}
 		}
