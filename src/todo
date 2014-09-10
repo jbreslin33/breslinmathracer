@@ -1,3 +1,9 @@
+Basically we work on a set a starting level concept.
+you set a starting level for the student then it will continue to ask the student mastered questions beginning at starting level
+we could also have seperate settings. A mastered setting which is 10. Then a move on to next standard setting which is 5. Then a moveontonexttypesetting setting which is 3.
+
+-----------------------------
+
 just make application_math and application_ela then you don't have to include every darn file. then you can set subject session and javascript var.
 -----------
 we have an evaluation game class which is a test of all non-mastered items.
