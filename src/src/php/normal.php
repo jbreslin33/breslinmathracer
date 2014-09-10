@@ -119,9 +119,9 @@ public function setRawData()
 
 	while ($item_types_id_to_ask == '')
 	{
-		/*********get type_id to be evaluated for mastery level -- this is the earliest progression of whatever level you started student at	************/	
+		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
 		$query = '';	
-		$query .= "select id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery from item_types where progression > "; 
+		$query .= "select item_types.id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery, item_types.core_standards_id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
@@ -147,6 +147,8 @@ public function setRawData()
 
 			$item_types_id = pg_Result($result, 0, 'id');
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
+			
+			$core_standards_id = pg_Result($result, 0, 'core_standards_id');
 
 			/********* get the transaction codes of the amount of mastery ******************/
 	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
@@ -176,7 +178,8 @@ public function setRawData()
 					}	
 				}
 			}
-		
+	
+			//we may ask new type if ...its not sending to a new standard then we would need to check standard
  			if ($right < $type_mastery)	
 			{
 				$item_types_id_to_ask = $item_types_id;
