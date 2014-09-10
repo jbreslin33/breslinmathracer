@@ -98,13 +98,17 @@ public function setRawData()
 	$item_types_id_to_ask = '';	
 	$mastered_item_types_id_array = array();
 	$mastered_item_types_right_array = array();
-	$mastery = 0;
+	$grade_mastery = 0;
+	$domain_mastery = 0;
+	$cluster_mastery = 0;
+	$standard_mastery = 0;
+	$type_mastery = 0;
 
 	while ($item_types_id_to_ask == '')
 	{
 		/*********get type_id to be evaluated for mastery level -- this is the earliest progression of whatever level you started student at	************/	
 		$query = '';	
-		$query .= "select id, progression, mastery from item_types where progression > "; 
+		$query .= "select id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery from item_types where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
@@ -113,7 +117,11 @@ public function setRawData()
 
                 if ($numberOfResults > 0)
                 {
-			$mastery = pg_Result($result, 0, 'mastery');
+			$grade_mastery = pg_Result($result, 0, 'grade_mastery');
+			$domain_mastery = pg_Result($result, 0, 'domain_mastery');
+			$cluster_mastery = pg_Result($result, 0, 'cluster_mastery');
+			$standard_mastery = pg_Result($result, 0, 'standard_mastery');
+			$type_mastery = pg_Result($result, 0, 'type_mastery');
 			$item_types_id = pg_Result($result, 0, 'id');
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
 
@@ -145,8 +153,8 @@ public function setRawData()
 				}
 			}
 		
-			$mastery = intval($mastery);
- 			if ($right < $mastery)	
+			$type_mastery = intval($type_mastery);
+ 			if ($right < $type_mastery)	
 			{
 				$item_types_id_to_ask = $item_types_id;
 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'id','$item_types_id_to_ask');";
