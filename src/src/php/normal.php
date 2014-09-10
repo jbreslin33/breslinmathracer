@@ -130,6 +130,7 @@ public function setRawData()
        	               	$query .= $item_types_id;
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
+                       	$query .= " AND evaluations_attempts.evaluations_id = 1";  
                        	$query .= " order by item_attempts.start_time desc limit ";
 			$query .= $grade_mastery; 
 			$query .= ";"; 
