@@ -91,24 +91,16 @@ public function initializeProgressionCounter()
 public function setRawData()
 {
 	$this->initializeProgressionCounter();
-	$firstTime = true;
 	$item_types_id_to_ask = '';	
 	$mastered_item_types_id_array = array();
 	$mastered_item_types_right_array = array();
+	$mastery = 0;
 
 	while ($item_types_id_to_ask == '')
 	{
 		/*********get type_id to be evaluated for mastery level -- this is the earliest progression of whatever level you started student at	************/	
 		$query = '';	
-		if ($firstTime)
-		{
-			$query .= "select id, progression, mastery from item_types where progression = "; 
-			$firstTime = false;
-		}
-		else
-		{
-			$query .= "select id, progression, mastery from item_types where progression > "; 
-		}
+		$query .= "select id, progression, mastery from item_types where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
@@ -119,6 +111,7 @@ public function setRawData()
                 {
 			$mastery = pg_Result($result, 0, 'mastery');
 			$item_types_id = pg_Result($result, 0, 'id');
+                	$this->progression_counter = pg_Result($result, 0, 'progression');
 
 			/********* get the transaction codes of the amount of mastery ******************/
 	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
@@ -152,12 +145,16 @@ public function setRawData()
  			if ($right < $mastery)	
 			{
 				$item_types_id_to_ask = $item_types_id;
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'id','$item_types_id_to_ask');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			
 				//ok we got one but lets see if we want ask a mastered one instead
 				$count_of_mastered_items = count($mastered_item_types_id_array);
 
 				if ($count_of_mastered_items > 0)
 				{	
+					$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$count_of_mastered_items','$item_types_id_to_ask');";
+					$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					$rand_mastered = rand(0,1);			
 					if ($rand_mastered == 1)
 					{
@@ -165,13 +162,6 @@ public function setRawData()
 						$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));			
 						$item_types_id_to_ask = $mastered_item_types_id_array[$rand_mastered_id];
 						$right = $mastered_item_types_right_array[$rand_mastered_id];
-						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$count_of_mastered_items','mastered');";
-						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-					}
-					else
-					{
-						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$count_of_mastered_items','unmastered');";
-						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					}
 				}
 			}
