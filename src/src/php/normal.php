@@ -131,7 +131,7 @@ public function setRawData()
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
                        	$query .= " order by item_attempts.start_time desc limit ";
-			$query .= $mastery; 
+			$query .= $grade_mastery; 
 			$query .= ";"; 
 													
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
