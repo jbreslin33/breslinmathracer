@@ -121,7 +121,7 @@ public function setRawData()
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
 		$query = '';	
-		$query .= "select item_types.id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery, item_types.core_standards_id, core_standards.core_clusters_id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id where progression > "; 
+		$query .= "select item_types.id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery, item_types.core_standards_id, core_standards.core_clusters_id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
