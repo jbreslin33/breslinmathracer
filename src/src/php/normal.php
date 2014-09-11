@@ -121,7 +121,7 @@ public function setRawData()
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
 		$query = '';	
-		$query .= "select item_types.id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery, item_types.core_standards_id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id where progression > "; 
+		$query .= "select item_types.id, progression, grade_mastery, domain_mastery, cluster_mastery, standard_mastery, type_mastery, item_types.core_standards_id, core_standards.core_clusters_id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_clusters.id=core_standards.core_clusters_id where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
@@ -149,6 +149,7 @@ public function setRawData()
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
 			
 			$core_standards_id = pg_Result($result, 0, 'core_standards_id');
+			$core_clusters_id = pg_Result($result, 0, 'core_clusters_id');
 
 			/********* get the transaction codes of the amount of mastery ******************/
 	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
