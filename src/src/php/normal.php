@@ -96,6 +96,8 @@ public function setRawData()
 {
 	$this->initializeProgressionCounter();
 	$item_types_id_to_ask = '';	
+	$standard_to_check_old = '';	
+	$standard_to_check_new = '';	
 
 	$type_mastery = 0;
 	$standard_mastery = 0;
@@ -111,6 +113,12 @@ public function setRawData()
 	$grade_id_array = array();
 
 	$right_array = array();
+
+
+	//we could check 1 standard at a time, then cluster etc
+
+	//this would get you the standard:
+	//select core_standards.id from core_standards JOIN item_types ON core_standards.id=item_types.core_standards_id where progression > 5 order by progression limit 1;
 
 	while ($item_types_id_to_ask == '')
 	{
