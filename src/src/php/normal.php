@@ -72,10 +72,9 @@ public function initializeProgressionCounter()
 {
         $this->progression_counter = 0;
 
-	//lets get the progression of proper grade...
-	$query = "select item_types.progression from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_standards.core_clusters_id=core_clusters.id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id JOIN core_subjects_grades ON core_domains_subjects_grades.core_subjects_grades_id=core_subjects_grades.id JOIN core_grades ON core_subjects_grades.core_grades_id=core_grades.id WHERE core_grades.id = ";
-	$query .= $_SESSION["core_grades_id"];
-	$query .= " ORDER BY item_types.progression";
+	$query = "select progression from item_types where core_standards_id = '";
+	$query .= $_SESSION["core_standards_id"];
+	$query .= "' ORDER BY item_types.progression";
         $query .= " LIMIT 1;";
 		
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
