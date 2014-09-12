@@ -141,8 +141,8 @@ CREATE TABLE users (
     	middle_name2 text,
     	middle_name3 text,
     	last_name text,
-    	core_grades_id integer NOT NULL,
-    	core_standards_id integer NOT NULL,
+    	core_grades_id integer,
+    	core_standards_id text,
     	school_id integer NOT NULL,
 	PRIMARY KEY (id),	
 	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id)

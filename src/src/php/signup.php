@@ -84,9 +84,9 @@ public function insertFirstEvaluationsAttempt()
 
 public function setRawData()
 {
-	$query = "select item_types.id from item_types JOIN core_standards ON item_types.core_standards_id=core_standards.id JOIN core_clusters ON core_standards.core_clusters_id=core_clusters.id JOIN core_domains_subjects_grades ON core_clusters.core_domains_subjects_grades_id=core_domains_subjects_grades.id JOIN core_subjects_grades ON core_domains_subjects_grades.core_subjects_grades_id=core_subjects_grades.id JOIN core_grades ON core_subjects_grades.core_grades_id=core_grades.id WHERE core_grades.id = ";
-	$query .= $_SESSION["core_grades_id"]; 
-	$query .= " ORDER BY progression"; 
+	$query = "select item_types.id from item_types where core_standards_id = '";
+	$query .= $_SESSION["core_standards_id"]; 
+	$query .= "' ORDER BY progression"; 
 	$query .= " LIMIT 1;";
 
        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -177,7 +177,7 @@ public function checkInput()
 
 public function insertIntoUsers()
 {
-        $query = "INSERT INTO users (username, password, first_name, last_name, school_id, core_grades_id) VALUES ('";
+        $query = "INSERT INTO users (username, password, first_name, last_name, school_id, core_standards_id) VALUES ('";
         $query .= $_SESSION["username"];
         $query .= "','";
         $query .= $_SESSION["password"];
@@ -185,9 +185,9 @@ public function insertIntoUsers()
         $query .= $_SESSION["first_name"];
         $query .= "','";
         $query .= $_SESSION["last_name"];
-        $query .= "',1,";
-        $query .= $_SESSION["core_grades_id"];
-        $query .= ");";
+        $query .= "',1,'";
+        $query .= $_SESSION["core_standards_id"];
+        $query .= "');";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 }

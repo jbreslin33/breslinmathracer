@@ -83,40 +83,27 @@ Extends: Game,
                 this.mGradeLabel.setText('Grade:');
                 this.mShapeArray.push(this.mGradeLabel);
                
-                this.mGradeSelect = new Shape(200,40,400,300,this,"SELECT","","");
-                this.addShape(this.mGradeSelect);
+                this.mStandardSelect = new Shape(200,40,400,300,this,"SELECT","","");
+                this.addShape(this.mStandardSelect);
 
-                var optionK = document.createElement("option");
-                optionK.value = 1;  
-                optionK.text = 'k';   
-                this.mGradeSelect.mMesh.appendChild(optionK);
+                var option5_oa_a_1 = document.createElement("option");
+		var x = '5.oa.a.1';
+                option5_oa_a_1.value = x;  
+                option5_oa_a_1.text = '5.oa.a.1';   
+                this.mStandardSelect.mMesh.appendChild(option5_oa_a_1);
                 
-		var option1 = document.createElement("option");
-                option1.value = 2;  
-                option1.text = '1';   
-                this.mGradeSelect.mMesh.appendChild(option1);
-		
-		var option2 = document.createElement("option");
-                option2.value = 3;  
-                option2.text = '2';   
-                this.mGradeSelect.mMesh.appendChild(option2);
-
-		var option3 = document.createElement("option");
-                option3.value = 4;  
-                option3.text = '3';   
-                this.mGradeSelect.mMesh.appendChild(option3);
-		
-		var option4 = document.createElement("option");
-                option4.value = 5;  
-                option4.text = '4';   
-                this.mGradeSelect.mMesh.appendChild(option4);
-		
-		var option5 = document.createElement("option");
-                option5.value = 6;  
-                option5.text = '5';   
-                this.mGradeSelect.mMesh.appendChild(option5);
-	
-
+                var option5_oa_a_2 = document.createElement("option");
+		x = '5.oa.a.2';
+                option5_oa_a_2.value = x;  
+                option5_oa_a_2.text = '5.oa.a.2';   
+                this.mStandardSelect.mMesh.appendChild(option5_oa_a_2);
+                
+                var option5_oa_b_3 = document.createElement("option");
+		x = '5.oa.b.3';
+                option5_oa_b_3.value = x;  
+                option5_oa_b_3.text = '5.oa.b.3';   
+                this.mStandardSelect.mMesh.appendChild(option5_oa_b_3);
+                
 		//SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -226,8 +213,8 @@ Extends: Game,
 		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
 		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		var core_grades_id = APPLICATION.mGame.mGradeSelect.mMesh.options[APPLICATION.mGame.mGradeSelect.mMesh.selectedIndex].value;
-		APPLICATION.signup(username,password,first_name,last_name,core_grades_id);
+		var core_standards_id = APPLICATION.mGame.mStandardSelect.mMesh.options[APPLICATION.mGame.mStandardSelect.mMesh.selectedIndex].value;
+		APPLICATION.signup(username,password,first_name,last_name,core_standards_id);
 	},
 
 	//goto login screen
