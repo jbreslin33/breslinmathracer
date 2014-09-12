@@ -98,24 +98,19 @@ public function setRawData()
 	$item_types_id_to_ask = '';	
 
 	$type_mastery = 0;
-	$type_mastery_array = array();
-	$type_mastery_right_array = array();
-
-	$grade_mastery = 0;
-	$grade_mastery_array = array();
-	$grade_mastery_right_array = array();
-
-	$domain_mastery = 0;
-	$domain_mastery_array = array();
-	$domain_mastery_right_array = array();
-
-	$cluster_mastery = 0;
-	$cluster_mastery_array = array();
-	$cluster_mastery_right_array = array();
-
 	$standard_mastery = 0;
-	$standard_mastery_array = array();
-	$standard_mastery_right_array = array();
+	$cluster_mastery = 0;
+	$domain_mastery = 0;
+	$grade_mastery = 0;
+
+	//we could store every types stats in arrays
+	$type_id_array = array();
+	$cluster_id_array = array();
+	$standard_id_array = array();
+	$domain_id_array = array();
+	$grade_id_array = array();
+
+	$right_array = array();
 
 	while ($item_types_id_to_ask == '')
 	{
@@ -145,17 +140,18 @@ public function setRawData()
 			$type_mastery = pg_Result($result, 0, 'type_mastery');
 			$type_mastery = intval($type_mastery);
 
-			$item_types_id = pg_Result($result, 0, 'id');
+			$type_id     = pg_Result($result, 0, 'id');
+			$type_id_array[]     = $type_id;
+			$standard_id_array[] = pg_Result($result, 0, 'core_standards_id');
+			$cluster_id_array[]  = pg_Result($result, 0, 'core_clusters_id');
+			$domain_id_array[]   = pg_Result($result, 0, 'core_domains_subjects_grades_id');
+			$grade_id_array[]    = pg_Result($result, 0, 'core_subjects_grades_id');
+
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
-			
-			$core_standards_id = pg_Result($result, 0, 'core_standards_id');
-			$core_clusters_id = pg_Result($result, 0, 'core_clusters_id');
-			$core_domains_subjects_grades_id = pg_Result($result, 0, 'core_domains_subjects_grades_id');
-			$core_subjects_grades_id = pg_Result($result, 0, 'core_subjects_grades_id');
 
 			/********* get the transaction codes of the amount of mastery ******************/
 	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
-       	               	$query .= $item_types_id;
+       	               	$query .= $type_id;
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
                        	$query .= " AND evaluations_attempts.evaluations_id = 1";  
@@ -181,21 +177,23 @@ public function setRawData()
 					}	
 				}
 			}
-	
-			//we may ask new type if ...its not sending to a new standard then we would need to check standard
+			
+			$right_array[] = $right;
+
+			//check for type first cause if we have one just go there...	
  			if ($right < $type_mastery)	
 			{
-				$item_types_id_to_ask = $item_types_id;
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'id','$item_types_id_to_ask');";
-				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-			
+				$item_types_id_to_ask = $type_id;
+			}
+/*	
+			$randomNumber = 0;	
+			if (randomNumber == 1)
+			{	
 				//ok we got one but lets see if we want to ask a mastered one instead
 				$count_of_mastered_items = count($type_mastery_array);
 
 				if ($count_of_mastered_items > 0)
 				{	
-					$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$count_of_mastered_items','$item_types_id_to_ask');";
-					$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					$rand_mastered = rand(0,1);			
 					if ($rand_mastered == 1)
 					{
@@ -206,11 +204,14 @@ public function setRawData()
 					}
 				}
 			}
+*/
+/*
 			else //mastered so add to mastered arrays
 			{
 				$type_mastery_array[] = $item_types_id; 			
 				$mastered_item_types_right_array[] = $right; 			
 			}
+*/
 		}
 	}	
         $itemString = $item_types_id_to_ask;
