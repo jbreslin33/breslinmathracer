@@ -162,9 +162,12 @@ public function setRawData()
 			}
 			else //mastered so add to mastered arrays
 			{
-				$mastery_array[] = $type_id; 			
+				$master_array[]       = $type_id; 			
 				$master_right_array[] = $right; 			
 			}
+			//generic array for all types looped thru
+			$type_id_array[]       = $type_id; 			
+			$right_array[] = $right; 			
 			
 			$randomNumber = rand(0,1);			
 			if ($randomNumber == 1)
@@ -175,9 +178,11 @@ public function setRawData()
 				if ($count_of_mastered_items > 0)
 				{	
 					//ask mastered one
-					$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));			
+					$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));		
+
+					//change this variable and we exit loop with an id to send to client
 					$item_types_id_to_ask = $master_array[$rand_mastered_id];
-					$right = $mastered_right_array[$rand_mastered_id];
+					$right = $master_right_array[$rand_mastered_id];
 				}
 			}
 		}
