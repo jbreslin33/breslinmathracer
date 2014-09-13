@@ -28,7 +28,7 @@ var Sheet = new Class(
 
                 /**************** TIME ************/
 	 	this.mStartTime = 0;
-                this.mThresholdTime = 10000;
+                this.mThresholdTime = 2000;
 
 		//question
 		this.mMarker = 0;
