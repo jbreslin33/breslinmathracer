@@ -159,7 +159,7 @@ public function setRawData()
 			//check for type first cause if we have one just go there...	
  			if ($right < $type_mastery)	
 			{
-				$randomNumber = mt_rand(0,100);			
+				$randomNumber = rand(0,100);			
 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$randomNumber','randomNumber');";
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 				
@@ -175,7 +175,7 @@ public function setRawData()
 					if ($count_of_mastered_items > 0)
 					{		
 						//ask mastered one
-						$rand_mastered_id = mt_rand(0, intval($count_of_mastered_items - 1));		
+						$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));		
 						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rand_mastered_id','rand_mastered_id');";
 						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
@@ -186,7 +186,7 @@ public function setRawData()
 					else
 					{
 						$item_types_id_to_ask = $type_id;
-						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rand_mastered_id','rand_mastered_id only at begin ');";
+						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','begin ');";
 						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					}
 				}
