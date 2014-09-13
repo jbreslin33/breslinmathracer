@@ -96,7 +96,7 @@ public function setRawData()
 	$this->initializeProgressionCounter();
 	$item_types_id_to_ask = '';	
 
-	$grade_mastery = 0;
+	$type_mastery = 0;
 
 	//we could store every types stats in arrays
 	$type_id_array = array();
@@ -107,7 +107,7 @@ public function setRawData()
 	while ($item_types_id_to_ask == '')
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
-		$query = "select id, progression, grade_mastery from item_types where progression > "; 
+		$query = "select id, progression, type_mastery from item_types where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= " order by progression asc limit 1;";
  
@@ -116,8 +116,8 @@ public function setRawData()
 
                 if ($numberOfResults > 0)
                 {
-			$grade_mastery = pg_Result($result, 0, 'grade_mastery');
-			$grade_mastery = intval($grade_mastery);
+			$type_mastery = pg_Result($result, 0, 'type_mastery');
+			$type_mastery = intval($type_mastery);
 
 			$type_id     = pg_Result($result, 0, 'id');
 			$type_id_array[]     = $type_id;
@@ -131,7 +131,7 @@ public function setRawData()
                        	$query .= $_SESSION["user_id"];
                        	$query .= " AND evaluations_attempts.evaluations_id = 1";  
                        	$query .= " order by item_attempts.start_time desc limit ";
-			$query .= $grade_mastery; 
+			$query .= $type_mastery; 
 			$query .= ";"; 
 													
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -156,7 +156,7 @@ public function setRawData()
 			$right_array[] = $right;
 
 			//check for type first cause if we have one just go there...	
- 			if ($right < $grade_mastery)	
+ 			if ($right < $type_mastery)	
 			{
 				$item_types_id_to_ask = $type_id;
 			}
@@ -182,7 +182,7 @@ public function setRawData()
 
 					//change this variable and we exit loop with an id to send to client
 					$item_types_id_to_ask = $type_master_array[$rand_mastered_id];
-					$right = $master_right_array[$rand_mastered_id];
+					$right = $type_master_right_array[$rand_mastered_id];
 				}
 			}
 		}
