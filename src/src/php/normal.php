@@ -51,9 +51,6 @@ function __construct($startNew)
 
 	if ($startNew == 1)
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal','startNew');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
 		//close old evaluation_attempts.......
 		$evaluations_attempts = new EvaluationsAttempts();
 		$evaluations_attempts->update();
@@ -154,36 +151,50 @@ public function setRawData()
 			}
 			
 			$right_array[] = $right;
+			
+			//generic array for all types looped thru
+			$type_id_array[]       = $type_id; 			
+			$right_array[] = $right; 			
 
 			//check for type first cause if we have one just go there...	
  			if ($right < $type_mastery)	
 			{
-				$item_types_id_to_ask = $type_id;
+				$randomNumber = mt_rand(0,100);			
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$randomNumber','randomNumber');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+				
+				if ($randomNumber <= 50)
+				{
+					$item_types_id_to_ask = $type_id;
+				}
+				else
+				{	
+					//ok we got one but lets see if we want to ask a mastered one instead
+					$count_of_mastered_items = intval(count($type_master_array));
+
+					if ($count_of_mastered_items > 0)
+					{		
+						//ask mastered one
+						$rand_mastered_id = mt_rand(0, intval($count_of_mastered_items - 1));		
+						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rand_mastered_id','rand_mastered_id');";
+						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+						//change this variable and we exit loop with an id to send to client
+						$item_types_id_to_ask = $type_master_array[$rand_mastered_id];
+						$right = $type_master_right_array[$rand_mastered_id];
+					}
+					else
+					{
+						$item_types_id_to_ask = $type_id;
+						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rand_mastered_id','rand_mastered_id only at begin ');";
+						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+					}
+				}
 			}
 			else //mastered so add to mastered arrays
 			{
 				$type_master_array[]       = $type_id; 			
 				$type_master_right_array[] = $right; 			
-			}
-			//generic array for all types looped thru
-			$type_id_array[]       = $type_id; 			
-			$right_array[] = $right; 			
-			
-			$randomNumber = rand(0,1);			
-			if ($randomNumber == 1)
-			{	
-				//ok we got one but lets see if we want to ask a mastered one instead
-				$count_of_mastered_items = intval(count($type_master_array));
-
-				if ($count_of_mastered_items > 0)
-				{	
-					//ask mastered one
-					$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));		
-
-					//change this variable and we exit loop with an id to send to client
-					$item_types_id_to_ask = $type_master_array[$rand_mastered_id];
-					$right = $type_master_right_array[$rand_mastered_id];
-				}
 			}
 		}
 	}	
