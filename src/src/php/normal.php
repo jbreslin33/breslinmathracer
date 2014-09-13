@@ -101,6 +101,8 @@ public function setRawData()
 	//we could store every types stats in arrays
 	$type_id_array = array();
 	$right_array = array();
+	$master_array = array();
+	$master_right_array = array();
 
 	while ($item_types_id_to_ask == '')
 	{
@@ -158,33 +160,26 @@ public function setRawData()
 			{
 				$item_types_id_to_ask = $type_id;
 			}
-/*	
-			$randomNumber = 0;	
-			if (randomNumber == 1)
+			else //mastered so add to mastered arrays
+			{
+				$mastery_array[] = $type_id; 			
+				$master_right_array[] = $right; 			
+			}
+			
+			$randomNumber = rand(0,1);			
+			if ($randomNumber == 1)
 			{	
 				//ok we got one but lets see if we want to ask a mastered one instead
-				$count_of_mastered_items = count($type_mastery_array);
+				$count_of_mastered_items = intval(count($master_array));
 
 				if ($count_of_mastered_items > 0)
 				{	
-					$rand_mastered = rand(0,1);			
-					if ($rand_mastered == 1)
-					{
-						//ask mastered one
-						$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));			
-						$item_types_id_to_ask = $type_mastery_array[$rand_mastered_id];
-						$right = $mastered_item_types_right_array[$rand_mastered_id];
-					}
+					//ask mastered one
+					$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));			
+					$item_types_id_to_ask = $master_array[$rand_mastered_id];
+					$right = $mastered_right_array[$rand_mastered_id];
 				}
 			}
-*/
-/*
-			else //mastered so add to mastered arrays
-			{
-				$type_mastery_array[] = $item_types_id; 			
-				$mastered_item_types_right_array[] = $right; 			
-			}
-*/
 		}
 	}	
         $itemString = $item_types_id_to_ask;
