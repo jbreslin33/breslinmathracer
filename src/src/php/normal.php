@@ -94,13 +94,10 @@ public function setRawData()
 	$item_types_id_to_ask = '';	
 
 	$type_mastery = 0;
-
-	//we could store every types stats in arrays
-	$type_id_array = array();
-	$right_array = array();
 	$type_master_array = array();
 	$type_master_right_array = array();
 
+//go thru one standard at a time
 	while ($item_types_id_to_ask == '')
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
@@ -117,7 +114,6 @@ public function setRawData()
 			$type_mastery = intval($type_mastery);
 
 			$type_id     = pg_Result($result, 0, 'id');
-			$type_id_array[]     = $type_id;
 
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
 
@@ -127,9 +123,10 @@ public function setRawData()
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
                        	$query .= " AND evaluations_attempts.evaluations_id = 1";  
-                       	$query .= " order by item_attempts.start_time desc limit ";
-			$query .= $type_mastery; 
-			$query .= ";"; 
+                     //  	$query .= " order by item_attempts.start_time desc limit ";
+		//	$query .= $type_mastery; 
+                       	$query .= " order by item_attempts.start_time;";
+			//$query .= ";"; 
 													
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                		$num = pg_num_rows($result);
@@ -146,48 +143,48 @@ public function setRawData()
 					if ($transaction_code == 1) 
 					{
 						$right++;		
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$right','$type_id')";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					}	
 				}
 			}
-			
-			$right_array[] = $right;
-			
-			//generic array for all types looped thru
-			$type_id_array[]       = $type_id; 			
-			$right_array[] = $right; 			
+			$right = intval($right);
 
 			//check for type first cause if we have one just go there...	
  			if ($right < $type_mastery)	
 			{
-				$randomNumber = rand(0,100);			
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$randomNumber','randomNumber');";
-				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-				
-				if ($randomNumber <= 50)
+				//ok we got one but lets see if we want to ask a mastered one instead
+				$count_of_mastered_items = intval(count($type_master_array));
+				if ($count_of_mastered_items == 0)
 				{
-					$item_types_id_to_ask = $type_id;
+					$item_types_id_to_ask = $type_id; //keep asking as you have not hit threshold
 				}
 				else
-				{	
-					//ok we got one but lets see if we want to ask a mastered one instead
-					$count_of_mastered_items = intval(count($type_master_array));
-
-					if ($count_of_mastered_items > 0)
-					{		
-						//ask mastered one
-						$rand_mastered_id = rand(0, intval($count_of_mastered_items - 1));		
-						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$rand_mastered_id','rand_mastered_id');";
-						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-						//change this variable and we exit loop with an id to send to client
-						$item_types_id_to_ask = $type_master_array[$rand_mastered_id];
-						$right = $type_master_right_array[$rand_mastered_id];
-					}
-					else
+				{
+					$randomNumber = rand(0,100);
+					if ($randomNumber <= 50) //ask not passed 
 					{
 						$item_types_id_to_ask = $type_id;
-						$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','begin ');";
-						$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+					}
+					else //ask passed
+					{	
+						//bubble sort
+						$lowest = 100;	
+						$e = 0; //element of lowest 	
+						for ($i = 0; $i < $count_of_mastered_items; $i++)
+						{			
+							
+							if (intval($type_master_right_array[$i]) < intval($lowest))
+							{
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$type_master_right_array[$i]','$lowest');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+								$e = $i;	
+								$lowest = $type_master_right_array[$i];
+							}
+						}
+						$item_types_id_to_ask = $type_master_array[$e];
+						$right                = $type_master_right_array[$e];
 					}
 				}
 			}
@@ -195,6 +192,8 @@ public function setRawData()
 			{
 				$type_master_array[]       = $type_id; 			
 				$type_master_right_array[] = $right; 			
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$right','$type_id')";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		}
 	}	
