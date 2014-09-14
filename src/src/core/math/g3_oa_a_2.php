@@ -123,19 +123,16 @@ Extends: TextItem,
 		var random = Math.floor(Math.random()*1);
 		if (random == 0)
 		{
-                	this.setQuestion('Write a number sentence that represents the picture.');
+                	this.setQuestion('Write a division expression that can be used to figure out how many objects are in each box.');
 		}
 		if (random == 1)
 		{
-                	this.setQuestion('Write a multiplication expression that represents the picture.');
+                	this.setQuestion('Write a division expression that represents the picture.');
 		}
 
-		this.setAnswer('' + this.c + '/' + this.b ,0);
-    this.setAnswer('' + this.c + '/' + this.a ,1);
-		this.setAnswer('' + this.c + '/' + this.a + '=' + this.b,2);
-		this.setAnswer('' + this.c + '/' + this.b + '=' + this.a,3);
-		this.setAnswer('' + this.c + '/' + this.a + '=',4);
-		this.setAnswer('' + this.c + '/' + this.b + '=',5);
+    this.setAnswer('' + this.c + '/' + this.a ,0);
+		this.setAnswer('' + this.c + '/' + this.a + '=',1);
+    this.setAnswer('' + this.c + '/' + this.a + '=' + this.b,2);
 
 	},
 
@@ -150,16 +147,11 @@ createQuestionShapes: function()
 		var b = parseInt(this.b); 
     
     var length = 0;
-
-    //this.mFractionBar.dragMove(100,100);
-    //this.addShape(this.mFractionBar);
-		//this.mFractionBar.setVisibility(true);
-
 	
     for (var i = 0; i < a; i++)
     {
        if (i > 4)
-          x = (30*b) + 100;
+          x = (30*b) + 60;
        else
           x = 30;
 
@@ -175,17 +167,9 @@ createQuestionShapes: function()
 			 y = y + 60; 	
     }
 
-console.log('a: ' + a);
-console.log('b: ' + b);
 
     length = (30*b);
-/*
-    if (a > 5)
-    {
-       length = (2*length) + 100;
-       a = 5;
-    }
-*/
+
     var test = 0;
 
     raphael = Raphael(this.Xpad,this.Ypad,630,360);
@@ -197,31 +181,19 @@ console.log('b: ' + b);
         x = 25 - this.Xpad;
 
         if (i > 4)
-         x = 30 - this.Xpad + length + 60;
+         x = 30 - this.Xpad + length + 20;
 
          if (i == 5)
           y = 105 - this.Ypad;
 
         y = y + 60;
 
-     // this.addQuestionShape(new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false));
-
-      //(width,height,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
-
 var box = new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false);
 
 box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#0ff", "stroke-width": 2});
 
-
-
-
 this.addQuestionShape(box);
-
-     //test = divLines[i].mRaphael.rect(100,100,100,100);
-		 //this.mPolygon.attr ("stroke", this.mStroke);
-
    
-
     }
   
 },
@@ -229,8 +201,6 @@ this.addQuestionShape(box);
 
 checkUserAnswer: function()
 {
-  // raphael.remove();
-  
    this.parent();
 },
 
@@ -257,13 +227,9 @@ showCorrectAnswer: function()
 		this.hideAnswerInputs();
 		this.showUserAnswer();
 
-    this.mCorrectAnswerLabel.setPosition(650,200);
+    this.mCorrectAnswerLabel.setPosition(650,230);
     this.mCorrectAnswerLabel.setSize(200,100);
 },
-
-//this.mCorrectAnswerLabel = new Shape(300,50,525,200,this.mSheet.mGame,"","","");
-
- //this.mUserAnswerLabel = new Shape(200,50,125,200,this.mSheet.mGame,"","","");
 
 showUserAnswer: function()
 {
@@ -273,7 +239,7 @@ showUserAnswer: function()
                 	this.mUserAnswerLabel.setVisibility(true);
 		}
 
-    this.mUserAnswerLabel.setPosition(650,100);
+    this.mUserAnswerLabel.setPosition(650,130);
     //this.mCorrectAnswerLabel.setSize(200,100);
 } 
 
