@@ -122,6 +122,7 @@ public function continueAttempt()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
+	$_SESSION["item_types_id"] = $this->mTypeID;
 	$raw = $this->mTypeID; 
 	$raw .= ":";
 	$raw .= "0";
