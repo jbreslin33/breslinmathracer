@@ -13,6 +13,8 @@ function __construct($typeid, $startNew, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$this->mTypeID','type_id');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 	//if no typeid then get one
 	if (strlen($this->mTypeID) > 0)
@@ -157,9 +159,6 @@ public function leavePractice()
 
                 if ($ref_id == 'normal')
                 {
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal','if');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-		
                         $normal = new Normal(0);
                 }
         }
