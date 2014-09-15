@@ -101,6 +101,10 @@ public function insertNewAttempt()
         $_SESSION["subject_id"] = 1;
 
         $this->setRawData();
+ 
+	$item_attempt = new ItemAttempt();
+        $item_attempt->insert();
+
 }
 
 public function continueAttempt()
@@ -108,22 +112,17 @@ public function continueAttempt()
         $_SESSION["ref_id"] = 'practice';
 
         $this->setRawData();
+	
+	$item_attempt = new ItemAttempt();
+        $item_attempt->insert();
 }
 
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
-	$raw = '';
-	for($i=0; $i<10; $i++)
-	{
-		if ($i > 0)
-		{
-			$raw .= ":";
-		}
-		$raw .= $this->mTypeID; 
-		$raw .= ":";
-		$raw .= "0";
-	}
+	$raw = $this->mTypeID; 
+	$raw .= ":";
+	$raw .= "0";
        	$_SESSION["raw_data"] = $raw; 
 }
 
