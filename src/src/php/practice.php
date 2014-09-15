@@ -158,6 +158,9 @@ public function leavePractice()
 
                 if ($ref_id == 'normal')
                 {
+$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal','if');";
+$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+		
                         $normal = new Normal(0);
                 }
         }
