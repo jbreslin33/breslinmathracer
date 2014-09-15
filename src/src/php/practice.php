@@ -130,16 +130,16 @@ public function setRawData()
 public function leavePractice()
 {
 	// lets close out this practice
-        $update = "update learning_standards_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
-        $update .= $_SESSION["learning_standards_attempts_id"];
+        $update = "update evaluations_attempts set end_time = CURRENT_TIMESTAMP WHERE id = ";
+        $update .= $_SESSION["evaluations_attempts_id"];
         $update .=  ";";
 
         $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 
-  	//get learning_standard_attempt id
-        $query = "select * from learning_standards_attempts where user_id = ";
+  	//get evaluations_attempts id
+        $query = "select evaluations_attempts.id, evaluations.description from evaluations_attempts JOIN evaluations ON evaluations_attempts.evaluations_id=evaluations.id where user_id = ";
         $query .= $_SESSION["user_id"];
-        $query .= " AND learning_standards_id != 'practice' order by start_time desc limit 1;";
+        $query .= " AND evaluations_id != 2 order by start_time desc limit 1;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
@@ -148,23 +148,14 @@ public function leavePractice()
         if ($num > 0)
         {
                 //get the attempt_id
-                $learning_standards_attempts_id = pg_Result($result, 0, 'id');
+                $evaluations_attempts_id = pg_Result($result, 0, 'id');
 
                 //set level_id
-                $_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+                $_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
 
-                $ref_id                                       = pg_Result($result, 0, 'learning_standards_id');
+                $ref_id                                       = pg_Result($result, 0, 'description');
                 $_SESSION["ref_id"]  = $ref_id;
 
-                if ($ref_id == 'evaluation')
-                {
-                        $evaluation = new Evaluation();
-                }
-                if ($ref_id == 'remediate')
-                {
-                        //pass 0 in for start new and 0 for type id as we are returning to remediate.
-                        $remediate = new Remediate(0,0);
-                }
                 if ($ref_id == 'normal')
                 {
                         $normal = new Normal(0);

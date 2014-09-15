@@ -805,11 +805,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_1__4 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100);
+	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
 
         this.mType = '5.oa.a.1_4';
         
@@ -821,12 +821,14 @@ initialize: function(sheet)
         var b2 = Math.floor((Math.random()*2)+1);
               	
 	var n = parseInt(    (a1 + a2 ) * (b1 - b2)   );
-	var d = ad; 
+	
+	var fraction = new Fraction(n,ad);	
 
-	r = n % ad; 
+	var a1_f = new Fraction(a1,ad);	
+	var a2_f = new Fraction(a2,ad);	
 
-        this.setQuestion( '(' + a1 + '/' + ad + ' + ' + a2 + '/' + ad + ') (' + b1 + ' - ' + b2 + ')' );
-      	this.setAnswer(n + '/' + d,0);
+        this.setQuestion( '(' + a1_f.getString() + '+' + a2_f.getString() + ') (' + b1 + ' - ' + b2 + ')' );
+	this.setAnswer(fraction.getString(),0);
 }
 });
 
@@ -853,12 +855,13 @@ initialize: function(sheet)
 
 	var n = parseInt( b1 * (  a1 + a2 ) * c1  );
 		
-	var a1d = new Fraction(a1,ad);	
-	var a2d = new Fraction(a2,ad);	
 	var fraction = new Fraction(n,ad);	
+	
+	var a1_f = new Fraction(a1,ad);	
+	var a2_f = new Fraction(a2,ad);	
 
 	this.setAnswer(fraction.getString(),0);
-        this.setQuestion(b1 + ' (' + a1d.getString() + '+' + a2d.getString() + ') ' + c1);
+        this.setQuestion(b1 + ' (' + a1_f.getString() + '+' + a2_f.getString() + ') ' + c1);
 }
 });
 
