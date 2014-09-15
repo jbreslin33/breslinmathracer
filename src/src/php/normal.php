@@ -97,7 +97,6 @@ public function setRawData()
 	$type_master_array = array();
 	$type_master_right_array = array();
 
-//go thru one standard at a time
 	while ($item_types_id_to_ask == '')
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
@@ -123,10 +122,7 @@ public function setRawData()
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
                        	$query .= " AND evaluations_attempts.evaluations_id = 1";  
-                     //  	$query .= " order by item_attempts.start_time desc limit ";
-		//	$query .= $type_mastery; 
                        	$query .= " order by item_attempts.start_time;";
-			//$query .= ";"; 
 													
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                		$num = pg_num_rows($result);
@@ -143,9 +139,12 @@ public function setRawData()
 					if ($transaction_code == 1) 
 					{
 						$right++;		
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$right','$type_id')";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					}	
+					if ($transaction_code == 2) 
+					{
+						$right = 0;		
+					}	
+					
 				}
 			}
 			$right = intval($right);
@@ -176,9 +175,6 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 							
 							if (intval($type_master_right_array[$i]) < intval($lowest))
 							{
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$type_master_right_array[$i]','$lowest');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
 								$e = $i;	
 								$lowest = $type_master_right_array[$i];
 							}
@@ -192,8 +188,6 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			{
 				$type_master_array[]       = $type_id; 			
 				$type_master_right_array[] = $right; 			
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$right','$type_id')";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		}
 	}	
