@@ -23,6 +23,8 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
 	else
 	{
+//use this: select item_types_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where user_id = 1 order by item_attempts.start_time desc LIMIT 1;
+
 		//get the item_type_id of the last asked question as that will be what you where previously practicing.
        		$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where evaluations_attempts.user_id = ";
        		$query .= $_SESSION["user_id"];
