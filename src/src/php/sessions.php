@@ -22,9 +22,8 @@ public function process()
 	{
 		$_SESSION["subject_id"] = 1;
 	}
-
-	//get the latest one that is not complete
-	$query = "select id, learning_standards_id from learning_standards_attempts where end_time is null AND user_id = ";
+	//get the latest evaluations_attempts one that is not complete
+	$query = "select evaluations_attempts.id, evaluations.description from evaluations_attempts JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.end_time is null AND user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
 	
@@ -34,21 +33,12 @@ public function process()
 
         if ($num > 0)
         {
-                $learning_standards_attempts_id               = pg_Result($result, 0, 'id');
-                $ref_id                                       = pg_Result($result, 0, 'learning_standards_id');
+                $evaluations_attempts_id = pg_Result($result, 0, 'id');
+                $ref_id                  = pg_Result($result, 0, 'description');
 
-		$_SESSION["learning_standards_attempts_id"] = $learning_standards_attempts_id;
+		$_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
                 $_SESSION["ref_id"]  = $ref_id;
 
-		if ($ref_id == 'evaluation')
-		{
-			$evaluation = new Evaluation();
-		}
-		if ($ref_id == 'remediate')
-		{
-			//pass 0 in for start new and 0 for type id as we are returning to remediate.
-			$remediate = new Remediate(0,0);
-		}
 		if ($ref_id == 'normal')
 		{
 			$normal = new Normal(0);
