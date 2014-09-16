@@ -17,7 +17,7 @@ public function process()
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
-        $query = "select id, first_name, last_name, core_grades_id from users where username = '";
+        $query = "select id, first_name, last_name, core_standards_id from users where username = '";
         $query .= $_SESSION["username"];
         $query .= "' AND password = '";
         $query .= $_SESSION["password"];
@@ -35,7 +35,7 @@ public function process()
                 $first_name = pg_Result($result, 0, 'first_name');
                 $last_name = pg_Result($result, 0, 'last_name');
                 $user_id = pg_Result($result, 0, 'id');
-                $core_grades_id = pg_Result($result, 0, 'core_grades_id');
+                $core_standards_id = pg_Result($result, 0, 'core_standards_id');
 
 		//set sessions
                 $_SESSION["first_name"] = $first_name;
@@ -43,7 +43,7 @@ public function process()
                 $_SESSION["user_id"] = $user_id;
         	$_SESSION["LOGGED_IN"] = 1;
         	$_SESSION["raw_data"] = NULL; 
-                $_SESSION["core_grades_id"] = $core_grades_id;
+                $_SESSION["core_standards_id"] = $core_standards_id;
 
         	//SESSION
         	$sessions = new Sessions();
