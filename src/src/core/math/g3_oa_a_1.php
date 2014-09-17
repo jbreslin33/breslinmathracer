@@ -4,6 +4,28 @@ none finished
 */
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_10',3.0110,'3.oa.a.1','Identify the Product.' );
+*/
+
+var i_3_oa_a_1__10 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_10';
+                
+		this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
+		
+		this.setQuestion('Enter the product in this multiplication equation: ' + this.a + 'x' + this.b + '=' + this.c); 
+                this.setAnswer(this.c,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_9',3.0109,'3.oa.a.1','Identify a factor.' );
 */
 
