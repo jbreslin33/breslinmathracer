@@ -4,7 +4,7 @@ none finished
 */
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_9',3.0109,'3.oa.a.1','Identify factors.' );
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_9',3.0109,'3.oa.a.1','Identify a factor.' );
 */
 
 var i_3_oa_a_1__9 = new Class(
@@ -15,13 +15,16 @@ Extends: TextItem,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '3.oa.a.1_9';
-
+                
+		this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
 		
-		this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a multiplication expression that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '.'); 
+		this.setQuestion('Name 1 factor in this multiplication equation: ' + this.a + 'x' + this.b + '=' + this.c); 
+                this.setAnswer(this.a,0);
+                this.setAnswer(this.b,1);
         }
 });
-
-/*
 
 var i_3_oa_a_1__word = new Class(
 {
