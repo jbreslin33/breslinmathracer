@@ -72,18 +72,12 @@ Extends: TextItem,
         }
 });
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_3',3.0103,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
-*/
-
-var i_3_oa_a_1__3 = new Class(
+var i_3_oa_a_1__repeated = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '3.oa.a.1_3';
 
                 this.mNameMachine = new NameMachine();
                 this.mPictureLink = this.mNameMachine.getPictureLink();
@@ -95,25 +89,17 @@ Extends: TextItem,
                 
 		var random = Math.floor(Math.random()*2);
 
-		var question = '';
-		if (random == 1)
-		{
-                	question = 'Write a multiplication number sentence that represents';
-		}
-		if (random == 0)
-		{
-                	question = 'Write a multiplication expression that represents';
-		}
+		this.expression = '';
 
 		for (i = 0; i < this.b; i++)
 		{		
 			if (i == 0)
 			{
-				question = question + ' ' + this.a; 	
+				this.expression = this.expression + ' ' + this.a; 	
 			}
 			if (i > 0)
 			{
-				question = question + '+' + this.a; 	
+				this.expression = this.expression + '+' + this.a; 	
 			}
 		}
 
@@ -131,7 +117,98 @@ Extends: TextItem,
                 this.setAnswer('' + this.b + 'x' + this.a + '=',10);
                 this.setAnswer('' + this.a + 'x' + this.b + '=',11);
 
-		this.setQuestion('' + question);
+		this.setQuestion('' + this.expression); //this is incomplete
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_3',3.0103,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
+*/
+
+var i_3_oa_a_1__4 = new Class(
+{
+Extends: i_3_oa_a_1__repeated,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_4';
+                this.question = 'Write a multiplication expression that represents';
+		this.setQuestion('' + this.question + this.expression );
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_3',3.0103,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
+*/
+
+var i_3_oa_a_1__3 = new Class(
+{
+Extends: i_3_oa_a_1__repeated,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_3';
+                this.question = 'Write a multiplication number sentence that represents';
+		this.setQuestion('' + this.question + this.expression );
+        }
+});
+
+
+var i_3_oa_a_1__picture = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+		//move gui
+		this.mUserAnswerLabel.setPosition(625,150);
+		this.mCorrectAnswerLabel.setPosition(625,250);
+
+                this.mNameMachine = new NameMachine();
+                this.mPictureLink = this.mNameMachine.getPictureLink();
+
+                //variables
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
+                
+                this.setQuestion('YOU NEED A QUESTION IN CHILD!');
+
+		this.setAnswer('' + this.a + '*' + this.b ,0);
+                this.setAnswer('' + this.b + '*' + this.a ,1);
+		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
+		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
+		this.setAnswer('' + this.b + '*' + this.a + '=',4);
+		this.setAnswer('' + this.a + '*' + this.b + '=',5);
+
+                this.setAnswer('' + this.a + 'x' + this.b ,6);
+                this.setAnswer('' + this.b + 'x' + this.a ,7);
+		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
+		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
+		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
+		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+	},
+
+        createQuestionShapes: function()
+        {
+                var y = 135;
+
+		var a = parseInt(this.a); 
+		var b = parseInt(this.b); 
+	
+                for (var i = 0; i < a; i++)
+                {
+			var x = 30; 
+                	for (var z = 0; z < b; z++)
+			{
+                        	this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+                        	x = parseInt(x + 30);
+			}
+			y = y + 25; 	
+                }
         }
 });
 
@@ -141,60 +218,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('3.
 
 var i_3_oa_a_1__2 = new Class(
 {
-Extends: TextItem,
+Extends: i_3_oa_a_1__picture,
         initialize: function(sheet)
         {
                 this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '3.oa.a.1_2';
 		
-		//move gui
-		this.mUserAnswerLabel.setPosition(625,150);
-		this.mCorrectAnswerLabel.setPosition(625,250);
-
-                this.mNameMachine = new NameMachine();
-                this.mPictureLink = this.mNameMachine.getPictureLink();
-
-                //variables
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
-                
                 this.setQuestion('Write a number sentence that represents the picture.');
-
-		this.setAnswer('' + this.a + '*' + this.b ,0);
-                this.setAnswer('' + this.b + '*' + this.a ,1);
-		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-		this.setAnswer('' + this.b + '*' + this.a + '=',4);
-		this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
-	},
-
-        createQuestionShapes: function()
-        {
-                var y = 135;
-
-		var a = parseInt(this.a); 
-		var b = parseInt(this.b); 
-	
-                for (var i = 0; i < a; i++)
-                {
-			var x = 30; 
-                	for (var z = 0; z < b; z++)
-			{
-                        	this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
-                        	x = parseInt(x + 30);
-			}
-			y = y + 25; 	
-                }
-        }
+	}
 });
 
 /*
@@ -203,59 +235,14 @@ insert into item_types(id,progression,core_standards_id,description) values ('3.
 
 var i_3_oa_a_1__1 = new Class(
 {
-Extends: TextItem,
+Extends: i_3_oa_a_1__picture,
         initialize: function(sheet)
         {
                 this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '3.oa.a.1_1';
 		
-		//move gui
-		this.mUserAnswerLabel.setPosition(625,150);
-		this.mCorrectAnswerLabel.setPosition(625,250);
-
-                this.mNameMachine = new NameMachine();
-                this.mPictureLink = this.mNameMachine.getPictureLink();
-
-                //variables
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
-                
                 this.setQuestion('Write a multiplication expression that represents the picture.');
-
-		this.setAnswer('' + this.a + '*' + this.b ,0);
-                this.setAnswer('' + this.b + '*' + this.a ,1);
-		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-		this.setAnswer('' + this.b + '*' + this.a + '=',4);
-		this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
-	},
-
-        createQuestionShapes: function()
-        {
-                var y = 135;
-
-		var a = parseInt(this.a); 
-		var b = parseInt(this.b); 
-	
-                for (var i = 0; i < a; i++)
-                {
-			var x = 30; 
-                	for (var z = 0; z < b; z++)
-			{
-                        	this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
-                        	x = parseInt(x + 30);
-			}
-			y = y + 25; 	
-                }
-        }
+	}
 });
 

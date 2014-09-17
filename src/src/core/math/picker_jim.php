@@ -162,6 +162,10 @@ getItem: function(id)
         {
                 return new i_3_oa_a_1__4(this.mSheet);
         }
+	if (id == '3.oa.a.1_5')
+        {
+                return new i_3_oa_a_1__5(this.mSheet);
+        }
 
 	/*** GRADE 5 ***/
 	//5.oa.a.1
