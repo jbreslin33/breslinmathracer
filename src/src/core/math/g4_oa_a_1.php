@@ -36,22 +36,48 @@ Extends: i_4_oa_a_1__word,
         initialize: function(sheet)
         {
                 this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.setAnswer('' + this.a + '*' + this.b ,0);
-                this.setAnswer('' + this.b + '*' + this.a ,1);
-                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-                this.setAnswer('' + this.b + '*' + this.a + '=',4);
-                this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-                this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-                this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-                this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+                
+		this.setAnswer(this.b + 'x' + this.a ,0);
+                this.setAnswer(this.b + 'X' + this.a ,1);
+                this.setAnswer(this.b + '*' + this.a ,2);
         }
 });
+
+var i_4_oa_a_1__word_equation = new Class(
+{
+Extends: i_4_oa_a_1__word,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+                
+                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,0);
+                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,1);
+		this.setAnswer(this.c + '=' + this.b + '*' + this.a,2);
+		this.setAnswer(this.c + '=' + this.a + '*' + this.b,3);
+                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,4);
+                this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,5);
+		this.setAnswer(this.c + '=' + this.b + 'x' + this.a,6);
+		this.setAnswer(this.c + '=' + this.a + 'x' + this.b,7);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_6',4.0106,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
+*/
+
+var i_4_oa_a_1__6 = new Class(
+{
+Extends: i_4_oa_a_1__word_equation,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '4.oa.a.1_6';
+
+                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. Write a multiplication equation to represent how many ' + this.mThing + ' they have altogether.');
+        }
+});
+
 
 
 
@@ -68,10 +94,7 @@ Extends: i_4_oa_a_1__word_communative,
 
                 this.mType = '4.oa.a.1_5';
 
-                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThingOne + '. ' + this.mNameMachine.getPronoun(this.mName,0) + ' friend has ' + this.b + ' times as many ' + this.mThingOne + ' than ' + this.mNameOne + '. They wrote the multiplication expression : ' + this.a + 'x' + this.b + ' to represent how many ' + this.mThingOne + ' they had altogether. What is another way to represent using multiplication how many ' + this.mThingOne + ' they have altogether.');
-                this.setAnswer(this.b + 'x' + this.a ,0);
-                this.setAnswer(this.b + 'X' + this.a ,0);
-                this.setAnswer(this.b + '*' + this.a ,0);
+                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. They wrote the multiplication expression  ' + this.a + 'x' + this.b + ' to represent how many ' + this.mThing + ' they have altogether. Using the communative property of multiplication what is another way to represent how many ' + this.mThing + ' they have altogether.');
         }
 });
 
