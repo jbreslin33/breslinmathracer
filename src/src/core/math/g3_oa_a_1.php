@@ -4,7 +4,7 @@ prerequisites:
 none finished
 */
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_1',3.0101,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10.' );
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_5',3.0105,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10.' );
 */
 
 var i_3_oa_a_1__5 = new Class(
@@ -122,7 +122,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_3',3.0103,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_4',3.0104,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Repeated addition. Multiplication Expression' );
 */
 
 var i_3_oa_a_1__4 = new Class(
@@ -230,7 +230,7 @@ Extends: i_3_oa_a_1__picture,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_2',3.0102,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_1',3.0101,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
 */
 
 var i_3_oa_a_1__1 = new Class(
