@@ -2,38 +2,6 @@
 /*
 prerequisites:
 none finished
-*/
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_5',3.0105,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10.' );
-*/
-
-var i_3_oa_a_1__5 = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-        	this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                this.mType = '3.oa.a.1_5';
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mThing       = this.mNameMachine.getThing();
-                this.mFruit       = this.mNameMachine.getFruit();
-                this.mOwned       = this.mNameMachine.getOwned();
-                this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
-                this.mGrade      = this.mNameMachine.getGrade();
-                this.mSchool      = this.mNameMachine.getSchool();
-                this.mRoomOne      = Math.floor(Math.random()*90)+9 
-
-               	//variables
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
-	
-                random = Math.floor(Math.random()*4);
-		
 		if (random == 3)
 		{
 			var nameString = this.mNameMachine.getNameString(this.a);
@@ -55,7 +23,31 @@ Extends: TextItem,
 		{
                 	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a multiplication number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has.'); 
 		}
+*/
 
+var i_3_oa_a_1__word = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mNameMachine = new NameMachine();
+                this.mNameOne     = this.mNameMachine.getName();
+                this.mNameTwo     = this.mNameMachine.getName();
+                this.mThing       = this.mNameMachine.getThing();
+                this.mFruit       = this.mNameMachine.getFruit();
+                this.mOwned       = this.mNameMachine.getOwned();
+                this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+                this.mGrade      = this.mNameMachine.getGrade();
+                this.mSchool      = this.mNameMachine.getSchool();
+                this.mRoomOne      = Math.floor(Math.random()*90)+9 
+
+               	//variables
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
+	
                 this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
 		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
@@ -69,6 +61,25 @@ Extends: TextItem,
 		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
 		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
 		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_5',3.0105,'3.oa.a.1','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10.' );
+*/
+
+var i_3_oa_a_1__5 = new Class(
+{
+Extends: i_3_oa_a_1__word,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_5';
+
+		var nameString = this.mNameMachine.getNameString(this.a);
+			
+		this.setQuestion(this.mNameOne + ' had friends named ' + nameString + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' gave each friend ' + this.b + ' ' + this.mFruit + '. Write a multiplication expression that can be used to solve how many ' + this.mFruit + ' ' + this.mNameOne + ' gave to ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friends.');    	
         }
 });
 
