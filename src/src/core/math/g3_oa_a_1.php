@@ -3,6 +3,26 @@ prerequisites:
 none finished
 */
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.1_9',3.0109,'3.oa.a.1','Identify factors.' );
+*/
+
+var i_3_oa_a_1__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+        	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.1_9';
+
+		
+		this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day for ' + this.b + ' days.  Write a multiplication expression that can be used to solve how many minutes ' + this.mNameOne + ' played ' + this.mPlayedActivity + '.'); 
+        }
+});
+
+/*
+
 var i_3_oa_a_1__word = new Class(
 {
 Extends: TextItem,
