@@ -10,7 +10,8 @@ Extends: TextItem,
                 this.mCorrectAnswerLabel.setPosition(625,250);
 
                 this.mNameMachine = new NameMachine();
-                this.mPictureLink = this.mNameMachine.getPictureLink();
+                this.mPictureLinkOne = this.mNameMachine.getPictureLink();
+                this.mPictureLinkTwo = this.mNameMachine.getPictureLink();
 
                 //variables
                 this.a = Math.floor(Math.random()*8)+2;
@@ -40,17 +41,20 @@ Extends: TextItem,
 
                 var a = parseInt(this.a);
                 var b = parseInt(this.b);
-
+                this.addQuestionShape(new Shape(25,25,100,135,this.mSheet.mGame,this.mPictureLinkOne,"",""));
+                this.addQuestionShape(new Shape(25,25,300,135,this.mSheet.mGame,this.mPictureLinkTwo,"",""));
+/*
                 for (var i = 0; i < a; i++)
                 {
                         var x = 30;
                         for (var z = 0; z < b; z++)
                         {
-                                this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+                                this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLinkOne,"",""));
                                 x = parseInt(x + 30);
                         }
                         y = y + 25;
                 }
+*/
         }
 });
 
