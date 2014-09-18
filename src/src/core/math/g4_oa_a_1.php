@@ -78,9 +78,6 @@ Extends: i_4_oa_a_1__word_equation,
         }
 });
 
-
-
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_5',4.0105,'4.oa.a.1','Word Problem. Multiplication. Communative Property. ' );
 */
