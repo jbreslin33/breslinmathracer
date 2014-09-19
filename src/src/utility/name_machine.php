@@ -616,7 +616,7 @@ var NameMachine = new Class(
 		{
 			return 'gold coins';
 		}
-		if (link == "/images/treasure/treasure chest.png")
+		if (link == "/images/treasure/chest.png")
 		{
 			return 'treasure chests';
 		}
