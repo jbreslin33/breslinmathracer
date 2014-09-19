@@ -603,14 +603,23 @@ var NameMachine = new Class(
 
 	getPictureName: function(link)
 	{
-/*
-                this.mPictureLinkArray.push("/images/bus/kid.png");
-                this.mPictureLinkArray.push("/images/monster/red_monster.png");
-                this.mPictureLinkArray.push("/images/treasure/gold_coin_head.png");
-                this.mPictureLinkArray.push("/images/treasure/chest.png");
-*/
-		//if (link == 
 
+		if (link == "/images/bus/kid.png")
+		{
+			return 'kids';
+		}
+		if (link == "/images/monster/red_monster.png")
+		{
+			return 'red monsters';
+		}
+		if (link == "/images/treasure/gold_coin_head.png")
+		{
+			return 'gold coins';
+		}
+		if (link == "/images/treasure/treasure chest.png")
+		{
+			return 'treasure chests';
+		}
 	},
 
 	getPronoun: function(name,uppercase,possesive)
