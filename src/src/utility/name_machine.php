@@ -601,6 +601,18 @@ var NameMachine = new Class(
                 return this.mPictureLinkArray[randomElement];
         },
 
+	getPictureName: function(link)
+	{
+/*
+                this.mPictureLinkArray.push("/images/bus/kid.png");
+                this.mPictureLinkArray.push("/images/monster/red_monster.png");
+                this.mPictureLinkArray.push("/images/treasure/gold_coin_head.png");
+                this.mPictureLinkArray.push("/images/treasure/chest.png");
+*/
+		//if (link == 
+
+	},
+
 	getPronoun: function(name,uppercase,possesive)
 	{
 		for (i=0; i < this.mBoyNameArray.length; i++)
