@@ -33,7 +33,9 @@ Extends: TextItem,
 
 		this.setAnswer('$' + this.bm,0);
 		this.setAnswer('$' + this.bm + 'per lb',1);
-		this.setAnswer('' + this.bm,2);
-		this.setAnswer('' + this.bm + 'per lb',3);
+		this.setAnswer('$' + this.bm + 'per pound',2);
+		this.setAnswer('' + this.bm,3);
+		this.setAnswer('' + this.bm + 'per lb',4);
+		this.setAnswer('' + this.bm + 'per pound',5);
         }
 });
