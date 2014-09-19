@@ -31,8 +31,22 @@ Extends: TextItem,
 
                 var a = parseInt(this.a);
                 var b = parseInt(this.b);
-                this.addQuestionShape(new Shape(25,25,100,135,this.mSheet.mGame,this.mPictureLinkOne,"",""));
-                this.addQuestionShape(new Shape(25,25,300,135,this.mSheet.mGame,this.mPictureLinkTwo,"",""));
+		a = 10;
+		b = 10;
+
+                var x = 50;
+                for (var i = 0; i < a; i++)
+		{
+                	this.addQuestionShape(new Shape(25,25,x,135,this.mSheet.mGame,this.mPictureLinkOne,"",""));
+                        x = parseInt(x + 30);
+		}
+
+                var x = 400;
+                for (var i = 0; i < b; i++)
+		{
+                	this.addQuestionShape(new Shape(25,25,x,135,this.mSheet.mGame,this.mPictureLinkTwo,"",""));
+                        x = parseInt(x + 30);
+		}
 /*
                 for (var i = 0; i < a; i++)
                 {
@@ -61,7 +75,7 @@ Extends: i_6_rp_a_1__picture,
 
                 this.mType = '6.rp.a.1_1';
 
-                this.setQuestion('Write the ratio of ' + this.mNameMachine.getPictureName(this.mPictureLinkOne) + ' to ' +  this.mNameMachine.getPictureName(this.mPictureLinkTwo));
+                this.setQuestion('What is the ratio of ' + this.mNameMachine.getPictureName(this.mPictureLinkOne) + ' to ' +  this.mNameMachine.getPictureName(this.mPictureLinkTwo) + '?');
         }
 });
 
