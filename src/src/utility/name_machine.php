@@ -69,6 +69,15 @@ var NameMachine = new Class(
 		this.mPlayedActivityArray.push("monopoly");
 		this.mPlayedActivityArray.push("tic tac toe");
 		this.mPlayedActivityArray.push("dodge ball");
+		
+		//point activities
+		this.mPointActivityArray = new Array();
+		this.mUsedPointActivityElementArray = new Array();
+		this.mPointActivityArray.push("soccer");
+		this.mPointActivityArray.push("basketball");
+		this.mPointActivityArray.push("football");
+		this.mPointActivityArray.push("hockey");
+		this.mPointActivityArray.push("video games");
 
 		//time increment
 		this.mTimeIncrementArray = new Array();
@@ -546,6 +555,34 @@ var NameMachine = new Class(
                 this.mUsedPlayedActivityElementArray.push(randomElement);
                 return this.mPlayedActivityArray[randomElement];
         },
+
+     	getPointActivity: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mPointActivityArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedPointActivityElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedPointActivityElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false) 
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedPointActivityElementArray.push(randomElement);
+                return this.mPointActivityArray[randomElement];
+        },
+
 
         getDayOfWeek: function()
         {
@@ -1065,11 +1102,20 @@ var NameSampler = new Class(
                 this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityThree = this.mNameMachine.getPlayedActivity();
-		
+                
 		this.mPlayedActivityArray = new Array(); 
 		this.mPlayedActivityArray.push(this.mPlayedActivityOne);
 		this.mPlayedActivityArray.push(this.mPlayedActivityTwo);
 		this.mPlayedActivityArray.push(this.mPlayedActivityThree);
+		
+		this.mPointActivityOne = this.mNameMachine.getPlayedActivity();
+                this.mPointActivityTwo = this.mNameMachine.getPlayedActivity();
+                this.mPointActivityThree = this.mNameMachine.getPlayedActivity();
+	
+		this.mPointActivityArray = new Array(); 
+		this.mPointActivityArray.push(this.mPointActivityOne);
+		this.mPointActivityArray.push(this.mPointActivityTwo);
+		this.mPointActivityArray.push(this.mPointActivityThree);
 
                 this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
 
