@@ -18,9 +18,10 @@ Extends: TextItem,
 		this.b = Math.floor(Math.random()*8)+2;
 		this.c = parseInt(this.a * this.b);
 
-		this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPointActivityOne + ' for ' + this.c + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' scored ' + this.b + ' points total.  What is the unit rate of minutes to points?'); 	
+		this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPointActivityOne + ' for ' + this.c + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' scored ' + this.b + ' points total.  What is the unit rate of minutes to points? Do not simplify answer. Write in the form a/b:unitrate. Example: 4/1:1'); 	
 
-		this.setAnswer(this.c + ':' + this.b,0);
+		this.mFraction = new Fraction(this.c,this.b,1);
+		this.setAnswer(this.c + '/' + this.b + ':1',0);
         }
 });
 
