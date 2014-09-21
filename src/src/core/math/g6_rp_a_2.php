@@ -21,13 +21,12 @@ initialize: function(sheet)
 
         this.mFraction = new Fraction(this.c,this.b,1);
         this.setAnswer(this.mFraction.getString(),0);
-        this.setAnswer(this.mFraction.getString() + ' points per game ',1);
-        this.setAnswer(this.mFraction.getString() + ' points per game of ' + this.ns.mPointActivityOne,2);
+        this.setAnswer(this.mFraction.getString() + ' points per minute ',1);
+        this.setAnswer(this.mFraction.getString() + ' points per minute ' + this.ns.mPointActivityOne,2);
         this.setAnswer(this.mFraction.getString() + ':1',3);
-        this.setAnswer(this.mFraction.getString() + ' points : 1 game',4);
-        this.setAnswer(this.mFraction.getString() + ' points : 1 game of ' + this.ns.mPointActivityOne,5);
-        this.setAnswer(this.mFraction.getString() + ' points : game',6);
-        this.setAnswer(this.mFraction.getString() + ' points : game of ' + this.ns.mPointActivityOne,7);
+        this.setAnswer(this.mFraction.getString() + ' points : 1 minute',4);
+        this.setAnswer(this.mFraction.getString() + ' points : 1 minute of ' + this.ns.mPointActivityOne,5);
+        this.setAnswer(this.mFraction.getString() + ' points : minute',6);
 }
 });
 
