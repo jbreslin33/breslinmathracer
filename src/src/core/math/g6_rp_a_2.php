@@ -23,6 +23,11 @@ initialize: function(sheet)
         this.setAnswer(this.mFraction.getString(),0);
         this.setAnswer(this.mFraction.getString() + ' points per game ',1);
         this.setAnswer(this.mFraction.getString() + ' points per game of ' + this.ns.mPointActivityOne,2);
+        this.setAnswer(this.mFraction.getString() + ':1',3);
+        this.setAnswer(this.mFraction.getString() + ' points : 1 game',4);
+        this.setAnswer(this.mFraction.getString() + ' points : 1 game of ' + this.ns.mPointActivityOne,5);
+        this.setAnswer(this.mFraction.getString() + ' points : game',6);
+        this.setAnswer(this.mFraction.getString() + ' points : game of ' + this.ns.mPointActivityOne,7);
 }
 });
 
