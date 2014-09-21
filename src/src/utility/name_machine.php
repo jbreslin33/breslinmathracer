@@ -92,6 +92,17 @@ var NameMachine = new Class(
 		this.mTimeIncrementArray.push("decades");
 		this.mTimeIncrementArray.push("centuries");
 		
+		//distance increment
+		this.mDistanceIncrementArray = new Array();
+		this.mUsedDistanceIncrementElementArray = new Array();
+		this.mDistanceIncrementArray.push("centimeters");
+		this.mDistanceIncrementArray.push("inches");
+		this.mDistanceIncrementArray.push("feet");
+		this.mDistanceIncrementArray.push("meters");
+		this.mDistanceIncrementArray.push("yards");
+		this.mDistanceIncrementArray.push("kilometers");
+		this.mDistanceIncrementArray.push("miles");
+		
 		//animals
 		this.mAnimalArray = new Array();
 		this.mUsedAnimalElementArray = new Array();
@@ -483,8 +494,8 @@ var NameMachine = new Class(
                 this.mUsedGradeElementArray.push(randomElement);
                 return this.mGradeArray[randomElement];
         },
-
-        getTimeIncrement: function(from,till)
+        
+	getTimeIncrement: function(from,till)
         {
 		//get from and till elements
 		var fromElement = 0;
@@ -528,6 +539,83 @@ var NameMachine = new Class(
                 this.mUsedTimeIncrementElementArray.push(randomElement);
                 return this.mTimeIncrementArray[randomElement];
         },
+
+        getDistanceIncrement: function(from,till)
+        {
+		//get from and till elements
+		var fromElement = 0;
+		var tillElement = 0;
+
+               	for (i=0; i < this.mDistanceIncrementArray.length; i++)
+		{
+			if (from == this.mDistanceIncrementArray[i])
+			{
+				fromElement = i;
+			} 
+			if (till == this.mDistanceIncrementArray[i])
+			{
+				tillElement = i;
+			} 
+		}
+
+                var keepGoing = true;
+                var randomElement = 0;
+
+                while (keepGoing)
+                {
+                        var length = this.mDistanceIncrementArray.length;
+			var span = parseInt(tillElement - fromElement + 1);
+                        randomElement = Math.floor((Math.random()*span)+fromElement);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedDistanceIncrementElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedDistanceIncrementElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedDistanceIncrementElementArray.push(randomElement);
+                return this.mDistanceIncrementArray[randomElement];
+        },
+
+	getDistanceAbbreviation: function(distance)
+	{
+		if (distance == 'centimeters')
+		{
+			return 'cm';
+		}
+		if (distance == 'inches')
+		{
+			return 'in';
+		}
+		if (distance == 'feet')
+		{
+			return 'ft';
+		}
+		if (distance == 'meters')
+		{
+			return 'm';
+		}
+		if (distance == 'yards')
+		{
+			return 'yd';
+		}
+		if (distance == 'kilometers')
+		{
+			return 'km';
+		}
+		if (distance == 'miles')
+		{
+			return 'mi';
+		}
+	},
 
         getPlayedActivity: function()
         {
@@ -1116,8 +1204,14 @@ var NameSampler = new Class(
 		this.mPointActivityArray.push(this.mPointActivityOne);
 		this.mPointActivityArray.push(this.mPointActivityTwo);
 		this.mPointActivityArray.push(this.mPointActivityThree);
+ 
+                this.mTimeIncrementSmall = this.mNameMachine.getTimeIncrement('seconds','hours');
+                this.mTimeIncrementMedium = this.mNameMachine.getTimeIncrement('days','years');
+                this.mTimeIncrementLarge = this.mNameMachine.getTimeIncrement('decades','centuries');
 
-                this.mTimeIncrement = this.mNameMachine.getTimeIncrement('minutes','hours');
+                this.mDistanceIncrementSmall = this.mNameMachine.getDistanceIncrement('centimeters','inches');
+                this.mDistanceIncrementMedium = this.mNameMachine.getDistanceIncrement('feet','yards');
+                this.mDistanceIncrementLarge = this.mNameMachine.getDistanceIncrement('kilometers','miles');
 
                 this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
