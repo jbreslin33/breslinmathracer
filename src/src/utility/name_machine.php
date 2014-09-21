@@ -540,6 +540,43 @@ var NameMachine = new Class(
                 return this.mTimeIncrementArray[randomElement];
         },
 
+	getSingular: function(word)
+	{
+		if (word == 'seconds')
+		{
+			return 'second';	
+		}
+		if (word == 'hours')
+		{
+			return 'hour';	
+		}
+		if (word == 'days')
+		{
+			return 'day';	
+		}
+		if (word == 'weeks')
+		{
+			return 'week';	
+		}
+		if (word == 'months')
+		{
+			return 'month';	
+		}
+		if (word == 'years')
+		{
+			return 'year';	
+		}
+		if (word == 'decades')
+		{
+			return 'decade';	
+		}
+		if (word == 'centuries')
+		{
+			return 'centurie';	
+		}
+		return word;
+	}, 
+
         getDistanceIncrement: function(from,till)
         {
 		//get from and till elements

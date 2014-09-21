@@ -45,7 +45,7 @@ initialize: function(sheet)
 	this.b = Math.floor(Math.random()*8)+2;
 	this.c = parseInt(this.a * this.b);
 
-	this.setQuestion(this.ns.mNameOne + ' traveled ' + this.c + ' ' + this.ns.mDistanceIncrementLarge + ' in ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. What is '  + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' average speed per ' + this.ns.mTimeIncrementSmall + '?'); 	
+	this.setQuestion(this.ns.mNameOne + ' traveled ' + this.c + ' ' + this.ns.mDistanceIncrementLarge + ' in ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. What is '  + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' average speed per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall) + '?'); 	
 
 	this.mFraction = new Fraction(this.c,this.b,1);
 	this.setAnswer(this.mFraction.getString(),0);
