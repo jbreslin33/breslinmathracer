@@ -49,8 +49,10 @@ initialize: function(sheet)
 
 	this.mFraction = new Fraction(this.c,this.b,1);
 	this.setAnswer(this.mFraction.getString(),0);
-	this.setAnswer(this.mFraction.getString() + ' points per game ',1);
-	this.setAnswer(this.mFraction.getString() + ' points per game of ' + this.ns.mPointActivityOne,2);
+	this.setAnswer(this.mFraction.getString() + ' per',1);
+	this.setAnswer(this.mFraction.getString() + ' per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall),2);
+	this.setAnswer(this.mFraction.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' per',3);
+	this.setAnswer(this.mFraction.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall),4);
 }
 });
 

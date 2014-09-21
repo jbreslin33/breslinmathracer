@@ -546,6 +546,10 @@ var NameMachine = new Class(
 		{
 			return 'second';	
 		}
+		if (word == 'minutes')
+		{
+			return 'minute';	
+		}
 		if (word == 'hours')
 		{
 			return 'hour';	
