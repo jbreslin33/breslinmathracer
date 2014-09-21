@@ -45,7 +45,7 @@ initialize: function(sheet)
 	this.b = Math.floor(Math.random()*8)+2;
 	this.c = parseInt(this.a * this.b);
 
-	this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPointActivityOne + ' for ' + this.c + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' scored ' + this.b + ' points total.  What is the unit rate of minutes to points?'); 	
+	this.setQuestion(this.ns.mNameOne + ' traveled ' + this.c + ' ' + this.ns.mDistanceIncrementLarge + ' in ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. What is '  + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' average speed per ' + this.ns.mTimeIncrementSmall + '?'); 	
 
 	this.mFraction = new Fraction(this.c,this.b,1);
 	this.setAnswer(this.mFraction.getString(),0);
