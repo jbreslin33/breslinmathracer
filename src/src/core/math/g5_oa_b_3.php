@@ -35,7 +35,10 @@ initialize: function(sheet)
         this.parent(sheet,200,50,225,95,100,50,425,100);
 
         this.mType = '5.oa.b.3_1';
-
+//var r = Raphael("simpleExample");
+var r = Raphael(10, 50, 640, 480);
+r.linechart(0, 0, 99, 99, [1,2,3,4,5], [[1,2,3,4,5], [1,3,9,16,25], [100,50,25,12,6]], {smooth: true, colors: ['#F00', '#0F0', '#FF0'], symbol: 'circle'});
+/*
 var r = Raphael("simpleExample");
   var chart = r.g.linechart(
     10, 10,      // top left anchor
@@ -59,6 +62,7 @@ var r = Raphael("simpleExample");
          "#555599"        // the second line is blue
        ]
      });
+*/
 
 
         var x = 0;
