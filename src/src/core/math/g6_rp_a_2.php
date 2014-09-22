@@ -22,7 +22,7 @@ initialize: function(sheet)
         this.mFraction = new Fraction(this.c,this.b,1);
         this.setAnswer(this.mFraction.getString(),0);
         this.setAnswer(this.mFraction.getString() + ' points per minute ',1);
-        this.setAnswer(this.mFraction.getString() + ' points per minute ' + this.ns.mPointActivityOne,2);
+        this.setAnswer(this.mFraction.getString() + ' points per minute of ' + this.ns.mPointActivityOne,2);
         this.setAnswer(this.mFraction.getString() + ':1',3);
         this.setAnswer(this.mFraction.getString() + ' points : 1 minute',4);
         this.setAnswer(this.mFraction.getString() + ' points : 1 minute of ' + this.ns.mPointActivityOne,5);
