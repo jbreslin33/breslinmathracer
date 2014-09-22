@@ -7,13 +7,8 @@
 <script type="text/javascript" src="/src/raphael/raphael-min.js"></script>
 <script type="text/javascript" src="/src/raphael/g.raphael-min.js"></script>
 <script type="text/javascript" src="/src/raphael/g.bar-min.js"></script>
+<script type="text/javascript" src="/src/raphael/g.line-min.js"></script>
 <script type="text/javascript" src="/src/mootools/mootools-core-1.4.5-full-compat.js"></script>
-<script src="https://www.exratione.com/assets/raphael.1.5.2.min.js"
-    type="text/javascript" charset="utf-8"></script> 
-<script src="https://www.exratione.com/assets/g.raphael.0.4.1.min.js"
-    type="text/javascript" charset="utf-8"></script> 
-<script src="https://www.exratione.com/assets/g.line.0.4.2.altered.js"
-    type="text/javascript" charset="utf-8"></script> 
 
 <style type="text/css"> 
 .chartWrapper {
