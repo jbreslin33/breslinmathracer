@@ -185,11 +185,11 @@ CREATE TABLE item_types (
 	core_standards_id text NOT NULL,
 	active_code integer NOT NULL DEFAULT 1, -- 0 not active, 1 active to let you know its not in application any more
 	description text,	
-	grade_mastery integer DEFAULT 2, --never ask again unless during evaluation	
-	domain_mastery integer DEFAULT 8, --never ask again unless during evaluation	
-	cluster_mastery integer DEFAULT 6, --never ask again unless during evaluation	
-	standard_mastery integer DEFAULT 4, --this will allow student to be asked a new question from a new standard once they have passed this threshold on all types	
-	type_mastery integer DEFAULT 2, --this will allow movement to a new type...	
+	grade_mastery integer DEFAULT 25, --never ask again unless during evaluation	
+	domain_mastery integer DEFAULT 20, --never ask again unless during evaluation	
+	cluster_mastery integer DEFAULT 15, --never ask again unless during evaluation	
+	standard_mastery integer DEFAULT 10, --this will allow student to be asked a new question from a new standard once they have passed this threshold on all types	
+	type_mastery integer DEFAULT 6, --this will allow movement to a new type...	
         PRIMARY KEY (id),
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );
