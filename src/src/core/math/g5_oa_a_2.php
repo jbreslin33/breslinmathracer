@@ -121,7 +121,7 @@ var i_5_oa_a_2__6 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,475,300,260,195,225,50,640,90);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
                 this.mType = '5.oa.a.2_6';
 
@@ -146,7 +146,7 @@ var i_5_oa_a_2__5 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,475,300,260,195,225,50,640,90);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
                 this.mType = '5.oa.a.2_5';
 
@@ -168,7 +168,7 @@ var i_5_oa_a_2__4 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,475,300,260,195,225,50,640,90);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
                 this.mType = '5.oa.a.2_4';
 
@@ -190,7 +190,7 @@ var i_5_oa_a_2__3 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,475,300,260,195,225,50,640,90);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
                 this.mType = '5.oa.a.2_3';
 
@@ -201,6 +201,12 @@ Extends: TextItem,
                 this.setQuestion('Write an expression that matches this: The difference of ' + a + ' and ' + b + ' times ' + c );
                 this.setAnswer('(' + a + '-' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '-' + b + ')',1);
+                
+		this.setAnswer('(' + a + '-' + b + ')x' + c,0);
+                this.setAnswer(c + 'x(' + a + '-' + b + ')',1);
+		
+		this.setAnswer('(' + a + '-' + b + ')*' + c,0);
+                this.setAnswer(c + '*(' + a + '-' + b + ')',1);
         }
 });
 
@@ -213,7 +219,7 @@ var i_5_oa_a_2__2 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-		this.parent(sheet,200,50,225,95,100,50,425,100);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
                 this.mType = '5.oa.a.2_2';
 
@@ -224,6 +230,18 @@ Extends: TextItem,
                 this.setQuestion('Write an expression that matches this: ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
+                this.setAnswer('(' + b + '+' + a + ')' + c,2);
+                this.setAnswer(c + '(' + b + '+' + a + ')',3);
+                
+		this.setAnswer('(' + a + '+' + b + ')x' + c,0);
+                this.setAnswer(c + 'x(' + a + '+' + b + ')',1);
+                this.setAnswer('(' + b + '+' + a + ')x' + c,2);
+                this.setAnswer(c + 'x(' + b + '+' + a + ')',3);
+		
+		this.setAnswer('(' + a + '+' + b + ')*' + c,0);
+                this.setAnswer(c + '*(' + a + '+' + b + ')',1);
+                this.setAnswer('(' + b + '+' + a + ')*' + c,2);
+                this.setAnswer(c + '*(' + b + '+' + a + ')',3);
         }
 });
 
@@ -236,7 +254,7 @@ var i_5_oa_a_2__1 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-		this.parent(sheet,200,50,225,95,100,50,425,100);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
                 this.mType = '5.oa.a.2_1';
         	this.mQuestionLabel.setSize(325,50);
