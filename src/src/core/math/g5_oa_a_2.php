@@ -178,6 +178,10 @@ Extends: TextItem,
 
                 this.setQuestion('Write an expression that matches this: ' + a + ' less than the product of ' + b + ' and ' + c  );
                 this.setAnswer(b + 'x' + c + '-' + a,0);
+                this.setAnswer(b + '*' + c + '-' + a,1);
+                
+		this.setAnswer(c + 'x' + b + '-' + a,2);
+                this.setAnswer(c + '*' + b + '-' + a,3);
         }
 });
 
@@ -202,11 +206,11 @@ Extends: TextItem,
                 this.setAnswer('(' + a + '-' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '-' + b + ')',1);
                 
-		this.setAnswer('(' + a + '-' + b + ')x' + c,0);
-                this.setAnswer(c + 'x(' + a + '-' + b + ')',1);
+		this.setAnswer('(' + a + '-' + b + ')x' + c,2);
+                this.setAnswer(c + 'x(' + a + '-' + b + ')',3);
 		
-		this.setAnswer('(' + a + '-' + b + ')*' + c,0);
-                this.setAnswer(c + '*(' + a + '-' + b + ')',1);
+		this.setAnswer('(' + a + '-' + b + ')*' + c,4);
+                this.setAnswer(c + '*(' + a + '-' + b + ')',5);
         }
 });
 
