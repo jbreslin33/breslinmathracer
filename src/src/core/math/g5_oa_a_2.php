@@ -1,17 +1,17 @@
 /*  5.oa.a.2 */
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_13',5.0213,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
 */
 
-var i_5_oa_a_2__13 = new Class(
+var i_5_oa_a_2__10 = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet,475,300,260,195,225,50,640,90);
 
-                this.mType = '5.oa.a.2_13';
+                this.mType = '5.oa.a.2_10';
                 this.mNameMachine = new NameMachine();
                 this.mNameOne = this.mNameMachine.getName();
                 this.mNameTwo = this.mNameMachine.getName();
@@ -31,17 +31,17 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_12',5.0212,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_9',5.0209,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted');
 */
 
-var i_5_oa_a_2__12 = new Class(
+var i_5_oa_a_2__9 = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet,475,300,260,195,225,50,640,90);
 
-                this.mType = '5.oa.a.2_12';
+                this.mType = '5.oa.a.2_9';
                 this.mNameMachine = new NameMachine();
                 this.mNameOne = this.mNameMachine.getName();
                 this.mNameTwo = this.mNameMachine.getName();
@@ -57,17 +57,17 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted ');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_8',5.0208,'5.oa.a.2','Write expression based on word problem. Words: divided, subtracted ');
 */
 
-var i_5_oa_a_2__11 = new Class(
+var i_5_oa_a_2__8 = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet,475,300,260,195,225,50,640,90);
 
-                this.mType = '5.oa.a.2_11';
+                this.mType = '5.oa.a.2_8';
                 this.mNameMachine = new NameMachine();
                 this.mFruit = this.mNameMachine.getFruit();
                 this.mNameOne = this.mNameMachine.getName();
@@ -86,17 +86,17 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_7',5.0207,'5.oa.a.2','');
 */
 
-var i_5_oa_a_2__10 = new Class(
+var i_5_oa_a_2__7 = new Class(
 {
 Extends: TextItem,
         initialize: function(sheet)
         {
-		this.parent(sheet,475,300,260,195,225,50,640,90);
+		this.parent(sheet,450,50,250,95, 200,50,625,100);
 
-                this.mType = '5.oa.a.2_10';
+                this.mType = '5.oa.a.2_7';
 		this.mNameMachine = new NameMachine(); 
 		this.mFruit = this.mNameMachine.getFruit(); 
 		this.mNameOne = this.mNameMachine.getName();
