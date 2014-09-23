@@ -260,7 +260,6 @@ getItem: function(id)
 		return new i_4_md_a_3__10(this.mSheet);
 	}
 
-	
 	return 0;	
 }
 		

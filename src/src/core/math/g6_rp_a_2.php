@@ -101,3 +101,4 @@ initialize: function(sheet)
 	this.setAnswer('' + this.bm + 'per pound',5);
 }
 });
+
