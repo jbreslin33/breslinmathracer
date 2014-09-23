@@ -250,6 +250,18 @@ Extends: TextItem,
                 this.setQuestion('Write an expression that matches this: Add ' + a + ' and ' + b + ' then multiply by ' + c + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
+                this.setAnswer('(' + b + '+' + a + ')' + c,2);
+                this.setAnswer(c + '(' + b + '+' + a + ')',3);
+
+                this.setAnswer('(' + a + '+' + b + ')x' + c,4);
+                this.setAnswer(c + 'x(' + a + '+' + b + ')',5);
+                this.setAnswer('(' + b + '+' + a + ')x' + c,6);
+                this.setAnswer(c + 'x(' + b + '+' + a + ')',7);
+
+                this.setAnswer('(' + a + '+' + b + ')*' + c,8);
+                this.setAnswer(c + '*(' + a + '+' + b + ')',9);
+                this.setAnswer('(' + b + '+' + a + ')*' + c,10);
+                this.setAnswer(c + '*(' + b + '+' + a + ')',11);
         }
 });
 
