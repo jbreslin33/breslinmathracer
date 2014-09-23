@@ -132,7 +132,7 @@ Extends: TextItem,
 
                 this.setQuestion('Write an expression that matches this: The quotient of ' + a + ' and ' + b + ' increased by ' + c  );
                 this.setAnswer(a + '/' + b + '+' + c,0);
-                this.setAnswer(c + '+' + a + '/' + b,0);
+                this.setAnswer(c + '+' + a + '/' + b,1);
         }
 });
 
