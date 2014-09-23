@@ -156,6 +156,10 @@ Extends: TextItem,
 
                 this.setQuestion('Write an expression that matches this: The product of ' + a + ' and ' + b + ' decreased by ' + c  );
                 this.setAnswer(a + 'x' + b + '-' + c,0);
+                this.setAnswer(a + 'x' + b + '-' + c,1);
+                
+		this.setAnswer(b + '*' + a + '-' + c,2);
+                this.setAnswer(b + '*' + a + '-' + c,3);
         }
 });
 
