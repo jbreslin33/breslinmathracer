@@ -261,6 +261,78 @@ var NameMachine = new Class(
                 {
                         return 'two';
                 }
+                if (number == 3)
+                {
+                        return 'three';
+                }
+                if (number == 4)
+                {
+                        return 'four';
+                }
+                if (number == 5)
+                {
+                        return 'five';
+                }
+                if (number == 6)
+                {
+                        return 'six';
+                }
+                if (number == 7)
+                {
+                        return 'seven';
+                }
+                if (number == 8)
+                {
+                        return 'eight';
+                }
+                if (number == 9)
+                {
+                        return 'nine';
+                }
+                if (number == 10)
+                {
+                        return 'ten';
+                }
+	},
+
+	getDenominatorName: function(number)
+	{
+		if (number == 2)
+		{
+			return 'halves'
+		}	
+		if (number == 3)
+		{
+			return 'thirds'
+		}	
+		if (number == 4)
+		{
+			return 'fourths'
+		}	
+		if (number == 5)
+		{
+			return 'fifths'
+		}	
+		if (number == 6)
+		{
+			return 'sixths'
+		}	
+		if (number == 7)
+		{
+			return 'sevenths'
+		}	
+		if (number == 8)
+		{
+			return 'eighths'
+		}	
+		if (number == 9)
+		{
+			return 'ninths'
+		}	
+		if (number == 10)
+		{
+			return 'tenths'
+		}	
 	},
 
 	getOperationInstructionExpression: function()

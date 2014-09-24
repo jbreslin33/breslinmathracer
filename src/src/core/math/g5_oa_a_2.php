@@ -19,9 +19,8 @@ Extends: TextItem,
                 this.b = Math.floor((Math.random()*8)+2);
                 this.n = Math.floor((Math.random()*8)+2);
                 this.d = Math.floor((Math.random()*8)+2);
-		this.n = 1;
 
-                this.setQuestion(this.a + ' more than ' + this.mNameMachine.getNumberName(this.n));
+                this.setQuestion(this.a + ' more than ' + this.mNameMachine.getNumberName(this.n) + ' ' + this.mNameMachine.getDenominatorName(this.d));
 
 		this.setAnswer(this.a + ' + (' + this.b + 'x' +  this.n + '/' + this.d + ')',0);
         }
