@@ -22,11 +22,21 @@ Extends: TextItem,
                 this.z = Math.floor((Math.random()*8)+2);
 
                 this.setQuestion(this.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.mThing + '. ' + this.mNameTwo + ' has ' + this.z + ' times that many ' + this.mThing + '. Write an expression that represents this.');
+
                 this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
                 this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
-                
 		this.setAnswer(this.z + '(' + this.x + '+' +  this.y + ')',2);
 		this.setAnswer(this.z + '(' + this.y + '+' +  this.x + ')',3);
+                
+		this.setAnswer('(' + this.x + '+' +  this.y + ')x' + this.z,4);
+                this.setAnswer('(' + this.y + '+' +  this.x + ')x' + this.z,5);
+		this.setAnswer(this.z + 'x(' + this.x + '+' +  this.y + ')',6);
+		this.setAnswer(this.z + 'x(' + this.y + '+' +  this.x + ')',7);
+		
+		this.setAnswer('(' + this.x + '+' +  this.y + ')*' + this.z,8);
+                this.setAnswer('(' + this.y + '+' +  this.x + ')*' + this.z,9);
+		this.setAnswer(this.z + '*(' + this.x + '+' +  this.y + ')',10);
+		this.setAnswer(this.z + '*(' + this.y + '+' +  this.x + ')',11);
         }
 });
 
