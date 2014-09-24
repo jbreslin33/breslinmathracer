@@ -46,6 +46,7 @@
 <script type="text/javascript" src="/src/item/item.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
 <script type="text/javascript" src="/src/item/text_item_fraction.php"></script>
+<script type="text/javascript" src="/src/item/text_item_fraction_expression_one.php"></script>
 <script type="text/javascript" src="/src/item/text_item_mixed_number.php"></script>
 <script type="text/javascript" src="/src/item/text_item2.php"></script>
 <script type="text/javascript" src="/src/item/three_button_item.php"></script>
