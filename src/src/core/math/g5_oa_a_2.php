@@ -52,15 +52,13 @@ Extends: TextItem,
 
                 this.mType = '5.oa.a.2_10';
                 this.mNameMachine = new NameMachine();
-                this.mNameOne = this.mNameMachine.getName();
-                this.mNameTwo = this.mNameMachine.getName();
-                this.mThing = this.mNameMachine.getThing();
+                this.ns = new NameSampler();
 
                 this.x = Math.floor((Math.random()*8)+2);
                 this.y = Math.floor((Math.random()*8)+2);
                 this.z = Math.floor((Math.random()*8)+2);
 
-                this.setQuestion(this.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.mThing + '. ' + this.mNameTwo + ' has ' + this.z + ' times that many ' + this.mThing + '. Write an expression that represents this.');
+                this.setQuestion(this.ns.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.z + ' times that many ' + this.ns.mThingOne + '. Write an expression that represents this.');
 
                 this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
                 this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
@@ -92,15 +90,13 @@ Extends: TextItem,
 
                 this.mType = '5.oa.a.2_9';
                 this.mNameMachine = new NameMachine();
-                this.mNameOne = this.mNameMachine.getName();
-                this.mNameTwo = this.mNameMachine.getName();
-                this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
+                this.ns = new NameSampler();
 
                 this.x = 60; 
                 this.y = Math.floor((Math.random()*8)+2);
                 this.z = Math.floor((Math.random()*8)+2);
 
-		this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.y + ' minutes fewer than an hour. ' + this.mNameTwo + ' played for ' + this.z + ' times as long as ' + this.mNameOne + '. Write an expression that represents this.');   
+		this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.y + ' minutes fewer than an hour. ' + this.ns.mNameTwo + ' played for ' + this.z + ' times as long as ' + this.ns.mNameOne + '. Write an expression that represents this.');   
                 this.setAnswer('(60-' + this.y + ')' + this.z,0);
                 this.setAnswer(this.z + '(60-' + this.y + ')',1);
                 
@@ -125,17 +121,14 @@ Extends: TextItem,
 
                 this.mType = '5.oa.a.2_8';
                 this.mNameMachine = new NameMachine();
-                this.mFruit = this.mNameMachine.getFruit();
-                this.mNameOne = this.mNameMachine.getName();
-                this.mSchool = this.mNameMachine.getSchool();
-                this.mPlayedActivity = this.mNameMachine.getPlayedActivity();
+                this.ns = new NameSampler();
 
                 this.factor = Math.floor((Math.random()*8)+2);
                 this.z = Math.floor((Math.random()*8)+2);
                 this.y = Math.floor((Math.random()*8)+2)
                 this.x = parseInt( (this.factor * this.z) + this.y );
 
-                this.setQuestion('Before lunch the cafeteria at ' + this.mSchool + ' had ' + this.x + ' ' + this.mFruit + '. After lunch the cafeteria had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.mPlayedActivity + ' team. Write an expression that represents this.');
+                this.setQuestion('Before lunch the cafeteria at ' + this.ns.mSchoolOne + ' had ' + this.x + ' ' + this.ns.mFruitOne + '. After lunch the cafeteria had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.ns.mPlayedActivityOne + ' team. Write an expression that represents this.');
 
                 this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
         }
@@ -154,15 +147,14 @@ Extends: TextItem,
 
                 this.mType = '5.oa.a.2_7';
 		this.mNameMachine = new NameMachine(); 
-		this.mFruit = this.mNameMachine.getFruit(); 
-		this.mNameOne = this.mNameMachine.getName();
+                this.ns = new NameSampler();
 
 		this.factor = Math.floor((Math.random()*8)+2);
 		this.z = Math.floor((Math.random()*8)+2);
 		this.y = Math.floor((Math.random()*8)+2) 		
 		this.x = parseInt( (this.factor * this.z) + this.y );
 
-                this.setQuestion(this.mNameOne + ' had ' + this.x + ' ' + this.mFruit + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Write an expression that represents this.');
+                this.setQuestion(this.ns.mNameOne + ' had ' + this.x + ' ' + this.ns.mFruitOne + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Write an expression that represents this.');
                 
 		this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
         }
