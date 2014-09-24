@@ -85,7 +85,13 @@ Extends: Game,
                
                 this.mStandardSelect = new Shape(200,40,400,300,this,"SELECT","","");
                 this.addShape(this.mStandardSelect);
-
+                
+		var option5_oa_a_1 = document.createElement("option");
+		var x = '5.oa.a.1';
+                option5_oa_a_1.value = x;  
+                option5_oa_a_1.text = '5.oa.a.1';   
+                this.mStandardSelect.mMesh.appendChild(option5_oa_a_1);
+/*
                 var option5_oa_a_1 = document.createElement("option");
 		var x = '5.oa.a.1';
                 option5_oa_a_1.value = x;  
@@ -97,7 +103,7 @@ Extends: Game,
                 option5_oa_a_2.value = x;  
                 option5_oa_a_2.text = '5.oa.a.2';   
                 this.mStandardSelect.mMesh.appendChild(option5_oa_a_2);
-                
+ */               
                 var option5_oa_b_3 = document.createElement("option");
 		x = '5.oa.b.3';
                 option5_oa_b_3.value = x;  
