@@ -53,6 +53,13 @@ Extends: TextItem,
 
 		this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.y + ' minutes fewer than an hour. ' + this.mNameTwo + ' played for ' + this.z + ' times as long as ' + this.mNameOne + '. Write an expression that represents this.');   
                 this.setAnswer('(60-' + this.y + ')' + this.z,0);
+                this.setAnswer(this.z + '(60-' + this.y + ')',1);
+                
+		this.setAnswer('(60-' + this.y + ')x' + this.z,2);
+                this.setAnswer(this.z + 'x(60-' + this.y + ')',3);
+		
+		this.setAnswer('(60-' + this.y + ')*' + this.z,4);
+                this.setAnswer(this.z + '*(60-' + this.y + ')',5);
         }
 });
 
