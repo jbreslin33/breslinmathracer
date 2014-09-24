@@ -6,10 +6,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_2__11 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFractionExpressionOne,
         initialize: function(sheet)
         {
-		this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+		//this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+ 		this.parent(sheet,150,50,125,95, 100,50,425,100, 100,50,425,175, 100,50,325,100, 100,50,525,100);
 
                 this.mType = '5.oa.a.2_11';
                 this.mNameMachine = new NameMachine();
