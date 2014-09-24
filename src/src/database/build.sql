@@ -181,7 +181,7 @@ CREATE TABLE evaluations_attempts (
 
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
-	progression NUMERIC(8,4) NOT NULL, -- for us to determine order
+	progression NUMERIC(12,10) NOT NULL, -- for us to determine order
 	core_standards_id text NOT NULL,
 	active_code integer NOT NULL DEFAULT 1, -- 0 not active, 1 active to let you know its not in application any more
 	description text,	
