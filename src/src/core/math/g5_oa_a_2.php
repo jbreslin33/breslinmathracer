@@ -13,15 +13,13 @@ Extends: TextItemFractionExpressionOne,
 
                 this.mType = '5.oa.a.2_11';
                 this.mNameMachine = new NameMachine();
-                this.mNameOne = this.mNameMachine.getName();
-                this.mNameTwo = this.mNameMachine.getName();
-                this.mThing = this.mNameMachine.getThing();
+                this.ns = new NameSampler();
 
                 this.x = Math.floor((Math.random()*8)+2);
                 this.y = Math.floor((Math.random()*8)+2);
                 this.z = Math.floor((Math.random()*8)+2);
 
-                this.setQuestion(this.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.mThing + '. ' + this.mNameTwo + ' has ' + this.z + ' times that many ' + this.mThing + '. Write an expression that represents this.');
+                this.setQuestion(this.ns.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.z + ' times that many ' + this.ns.mThingOne + '. Write an expression that represents this.');
 
                 this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
                 this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
