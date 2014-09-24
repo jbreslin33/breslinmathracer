@@ -1,7 +1,36 @@
 /*  5.oa.a.2 */
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Fractions. Words: more than, times that many');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_12',5.0212,'5.oa.a.2','Write expression based on word problem. Fractions. Words: less than, product');
+*/
+
+var i_5_oa_a_2__12 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
+
+                this.mType = '5.oa.a.2_12';
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.a = Math.floor((Math.random()*8)+2);
+                this.b = Math.floor((Math.random()*8)+2);
+                this.n = Math.floor((Math.random()*8)+2);
+                this.d = Math.floor((Math.random()*8)+2);
+
+                this.setQuestion('Write a numerical expression for the phrase ' + this.a + ' less than the product of ' + this.b + ' and ' + this.mNameMachine.getNumberName(this.n) + ' ' + this.mNameMachine.getDenominatorName(this.d));
+
+		this.setAnswer('(' + this.b + 'x' +  this.n + '/' + this.d + ')-' + this.a,0);
+		this.setAnswer('(' + this.n + '/' +  this.d + 'x' + this.b + ')-' + this.a,1);
+		this.setAnswer('(' + this.b + '*' +  this.n + '/' + this.d + ')-' + this.a,2);
+		this.setAnswer('(' + this.n + '/' +  this.d + '*' + this.b + ')-' + this.a,3);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Fractions. Words: groups, more than');
 */
 
 var i_5_oa_a_2__11 = new Class(
@@ -33,7 +62,6 @@ Extends: TextItem,
 		this.setAnswer('(' + this.n + '/' +  this.d + 'x' + this.b + ')+' + this.a,5);
 		this.setAnswer('(' + this.b + '*' +  this.n + '/' + this.d + ')+' + this.a,6);
 		this.setAnswer('(' + this.n + '/' +  this.d + '*' + this.b + ')+' + this.a,7);
-		
         }
 });
 
