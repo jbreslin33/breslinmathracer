@@ -1,6 +1,47 @@
 /*  5.oa.a.2 */
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Fractions. Words: more than, times that many');
+*/
+
+var i_5_oa_a_2__11 = new Class(
+{
+Extends: TextItemFractionExpressionOne,
+        initialize: function(sheet)
+        {
+		this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+
+                this.mType = '5.oa.a.2_11';
+                this.mNameMachine = new NameMachine();
+                this.mNameOne = this.mNameMachine.getName();
+                this.mNameTwo = this.mNameMachine.getName();
+                this.mThing = this.mNameMachine.getThing();
+
+                this.x = Math.floor((Math.random()*8)+2);
+                this.y = Math.floor((Math.random()*8)+2);
+                this.z = Math.floor((Math.random()*8)+2);
+
+                this.setQuestion(this.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.mThing + '. ' + this.mNameTwo + ' has ' + this.z + ' times that many ' + this.mThing + '. Write an expression that represents this.');
+
+                this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
+                this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
+		this.setAnswer(this.z + '(' + this.x + '+' +  this.y + ')',2);
+		this.setAnswer(this.z + '(' + this.y + '+' +  this.x + ')',3);
+                
+		this.setAnswer('(' + this.x + '+' +  this.y + ')x' + this.z,4);
+                this.setAnswer('(' + this.y + '+' +  this.x + ')x' + this.z,5);
+		this.setAnswer(this.z + 'x(' + this.x + '+' +  this.y + ')',6);
+		this.setAnswer(this.z + 'x(' + this.y + '+' +  this.x + ')',7);
+		
+		this.setAnswer('(' + this.x + '+' +  this.y + ')*' + this.z,8);
+                this.setAnswer('(' + this.y + '+' +  this.x + ')*' + this.z,9);
+		this.setAnswer(this.z + '*(' + this.x + '+' +  this.y + ')',10);
+		this.setAnswer(this.z + '*(' + this.y + '+' +  this.x + ')',11);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
 */
 
