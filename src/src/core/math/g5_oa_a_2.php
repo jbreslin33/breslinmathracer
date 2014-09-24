@@ -26,9 +26,13 @@ Extends: TextItem,
 
 		this.setAnswer(this.a + '+(' + this.b + 'x' +  this.n + '/' + this.d + ')',0);
 		this.setAnswer(this.a + '+(' + this.n + '/' +  this.d + 'x' + this.b + ')',1);
-		
 		this.setAnswer(this.a + '+(' + this.b + '*' +  this.n + '/' + this.d + ')',2);
 		this.setAnswer(this.a + '+(' + this.n + '/' +  this.d + '*' + this.b + ')',3);
+		
+		this.setAnswer('(' + this.b + 'x' +  this.n + '/' + this.d + ')+' + this.a,4);
+		this.setAnswer('(' + this.n + '/' +  this.d + 'x' + this.b + ')+' + this.a,5);
+		this.setAnswer('(' + this.b + '*' +  this.n + '/' + this.d + ')+' + this.a,6);
+		this.setAnswer('(' + this.n + '/' +  this.d + '*' + this.b + ')+' + this.a,7);
 		
         }
 });
