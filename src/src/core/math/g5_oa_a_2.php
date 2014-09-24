@@ -20,9 +20,11 @@ Extends: TextItem,
                 this.n = Math.floor((Math.random()*8)+2);
                 this.d = Math.floor((Math.random()*8)+2);
 
-                this.setQuestion(this.a + ' more than ' + this.mNameMachine.getNumberName(this.n) + ' ' + this.mNameMachine.getDenominatorName(this.d));
+                this.setQuestion('Write a numerical expression for the phrase: ' + this.a + ' more than ' + this.b + ' groups of ' + this.mNameMachine.getNumberName(this.n) + ' ' + this.mNameMachine.getDenominatorName(this.d));
 
 		this.setAnswer(this.a + ' + (' + this.b + 'x' +  this.n + '/' + this.d + ')',0);
+		this.setAnswer(this.a + ' + (' + this.n + '/' +  this.d + 'x' + this.b + ')',1);
+		
         }
 });
 
