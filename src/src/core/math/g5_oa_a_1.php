@@ -937,7 +937,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,350,50,225,95,150,50,525,100);
+	this.parent(sheet,375,50,220,75,150,50,525,100);
 
         this.mType = '5.oa.a.1_0_50';
 
@@ -949,9 +949,9 @@ initialize: function(sheet)
         this.c = Math.floor((Math.random()*8)+2);
         this.d = parseInt( this.a + this.b + this.c); 
 
-        this.setQuestion(this.ns.mNameOne + ' played for ' + this.d + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes, ' + this.ns.mPlayedActivityTwo + ' for ' + this.b + ' minutes and the rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '. Write an expression to find how many minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree);
+        this.setQuestion(this.ns.mNameOne + ' played for ' + this.d + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes, ' + this.ns.mPlayedActivityTwo + ' for ' + this.b + ' minutes and the rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '. Write a numerical expression to find how many minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '.');
         
 	this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
-	this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
+	this.setAnswer(this.d + '-' + this.a + '-' + this.b,1);
 }
 });
