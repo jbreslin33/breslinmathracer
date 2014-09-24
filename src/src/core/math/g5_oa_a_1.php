@@ -947,11 +947,22 @@ initialize: function(sheet)
         this.a = Math.floor((Math.random()*8)+2);
         this.b = Math.floor((Math.random()*8)+2);
         this.c = Math.floor((Math.random()*8)+2);
-        //this.d = parseInt( this.c * (this.a + this.b));
 
-	this.setQuestion(this.ns.mNameOne + ' had a small fruit stand with ' + this.a + ' ' + this.ns.mFruitOne + ' and ' + this.b + ' ' + this.ns.mFruitTwo + '. ' + this.ns.mNameTwo + ' has a large fruit stand with ' + this.c + ' times as many ' + ' ' + this.ns.mFruitOne + ' and ' + this.ns.mFruitTwo + '. Write a numerical expression to show how many more pieces of fruit ' + this.ns.mNameTwo + ' has in ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' fruit stand.');
+	this.setQuestion(this.ns.mNameOne + ' has a small fruit stand with ' + this.a + ' ' + this.ns.mFruitOne + ' and ' + this.b + ' ' + this.ns.mFruitTwo + '. ' + this.ns.mNameTwo + ' has a large fruit stand with ' + this.c + ' times as many ' + ' ' + this.ns.mFruitOne + ' and ' + this.ns.mFruitTwo + '. Write a numerical expression to show how many more pieces of fruit ' + this.ns.mNameTwo + ' has in ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' fruit stand.');
 
         this.setAnswer(this.c + '(' + this.a + '+' + this.b + ')',0);
+        this.setAnswer(this.c + 'x(' + this.a + '+' + this.b + ')',1);
+        this.setAnswer(this.c + '*(' + this.a + '+' + this.b + ')',2);
+        this.setAnswer(this.c + '(' + this.b + '+' + this.a + ')',3);
+        this.setAnswer(this.c + 'x(' + this.b + '+' + this.a + ')',4);
+        this.setAnswer(this.c + '*(' + this.b + '+' + this.a + ')',5);
+        
+	this.setAnswer('(' + this.a + '+' + this.b + ')' + this.c,6);
+	this.setAnswer('(' + this.a + '+' + this.b + ')x' + this.c,7);
+	this.setAnswer('(' + this.a + '+' + this.b + ')*' + this.c,8);
+	this.setAnswer('(' + this.b + '+' + this.a + ')' + this.c,9);
+	this.setAnswer('(' + this.b + '+' + this.a + ')x' + this.c,10);
+	this.setAnswer('(' + this.b + '+' + this.a + ')*' + this.c,11);
 }
 });
 
