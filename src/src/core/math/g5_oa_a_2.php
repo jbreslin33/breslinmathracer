@@ -6,7 +6,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_2__11 = new Class(
 {
-Extends: TextItemFractionExpressionOne,
+Extends: TextItem,
         initialize: function(sheet)
         {
 		this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
@@ -15,26 +15,15 @@ Extends: TextItemFractionExpressionOne,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.x = Math.floor((Math.random()*8)+2);
-                this.y = Math.floor((Math.random()*8)+2);
-                this.z = Math.floor((Math.random()*8)+2);
+                this.a = Math.floor((Math.random()*8)+2);
+                this.b = Math.floor((Math.random()*8)+2);
+                this.n = Math.floor((Math.random()*8)+2);
+                this.d = Math.floor((Math.random()*8)+2);
+		this.n = 1;
 
-                this.setQuestion(this.ns.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.z + ' times that many ' + this.ns.mThingOne + '. Write an expression that represents this.');
+                this.setQuestion(this.a + ' more than ' + this.mNameMachine.getNumberName(this.n));
 
-                this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
-                this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
-		this.setAnswer(this.z + '(' + this.x + '+' +  this.y + ')',2);
-		this.setAnswer(this.z + '(' + this.y + '+' +  this.x + ')',3);
-                
-		this.setAnswer('(' + this.x + '+' +  this.y + ')x' + this.z,4);
-                this.setAnswer('(' + this.y + '+' +  this.x + ')x' + this.z,5);
-		this.setAnswer(this.z + 'x(' + this.x + '+' +  this.y + ')',6);
-		this.setAnswer(this.z + 'x(' + this.y + '+' +  this.x + ')',7);
-		
-		this.setAnswer('(' + this.x + '+' +  this.y + ')*' + this.z,8);
-                this.setAnswer('(' + this.y + '+' +  this.x + ')*' + this.z,9);
-		this.setAnswer(this.z + '*(' + this.x + '+' +  this.y + ')',10);
-		this.setAnswer(this.z + '*(' + this.y + '+' +  this.x + ')',11);
+		this.setAnswer(this.a + ' + (' + this.b + 'x' +  this.n + '/' + this.d + ')',0);
         }
 });
 

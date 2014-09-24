@@ -251,6 +251,18 @@ var NameMachine = new Class(
 		this.mOperationInstructionEquation = 'Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 1+2=3';	
 	},
 
+	getNumberName: function(number)
+	{
+  		if (number == 1)
+                {
+                        return 'one';
+                }
+                if (number == 2)
+                {
+                        return 'two';
+                }
+	},
+
 	getOperationInstructionExpression: function()
 	{
 		return this.mOperationInstructionExpression;	
