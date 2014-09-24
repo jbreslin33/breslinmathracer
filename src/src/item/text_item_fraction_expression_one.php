@@ -4,8 +4,7 @@ TextItemFraction: this class input of fractions for answers.
 var TextItemFractionExpressionOne = new Class(
 {
 Extends: Item,
-        //initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy,bh,bw,bx,by)
-        initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy)
+        initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy,eaw,eah,eax,eay,ebw,ebh,ebx,eby)
         {
 		this.mRaphael = Raphael(350,137,150,5);
 		this.parent(sheet);
@@ -14,35 +13,41 @@ Extends: Item,
 		{
 			this.mQuestionLabel.setSize(100,50);
 			this.mQuestionLabel.setPosition(325,95);
-		
+	
+			this.mExpressionATextBox.setSize(100,50);
+			this.mExpressionATextBox.setPosition(400,100);
+	
 			this.mNumeratorTextBox.setSize(100,50);
 			this.mNumeratorTextBox.setPosition(550,100);
 			
-			//this.mFractionBar.setSize(100,300);
-			//this.mFractionBar.setPosition(650,100);
-			
 			this.mDenominatorTextBox.setSize(100,50);
 			this.mDenominatorTextBox.setPosition(550,225);
+			
+			this.mExpressionBTextBox.setSize(100,50);
+			this.mExpressionBTextBox.setPosition(650,100);
 		}
 		else
 		{
 			this.mQuestionLabel.setSize(qw,qh);
 			this.mQuestionLabel.setPosition(qx,qy);
+			
+			this.mExpressionATextBox.setSize(eaw,eah);
+			this.mExpressionATextBox.setPosition(eax,eay);
 		
 			this.mNumeratorTextBox.setSize(nw,nh);
 			this.mNumeratorTextBox.setPosition(nx,ny);
 			
-			//this.mFractionBar.setSize(bh,bh);
-			//this.mFractionBar.setPosition(bx,by);
-			
 			this.mDenominatorTextBox.setSize(dw,dh);
 			this.mDenominatorTextBox.setPosition(dx,dy);
+			
+			this.mExpressionBTextBox.setSize(ebw,ebh);
+			this.mExpressionBTextBox.setPosition(ebx,eby);
 		}
 	},
 
 	setTheFocus: function()
 	{
-		this.mNumeratorTextBox.mMesh.focus();
+		this.mExpressionATextBox.mMesh.focus();
 	},
  
 	createShapes: function()
@@ -55,6 +60,11 @@ Extends: Item,
                 this.mQuestionLabel.mCollidable = false;
                 this.mQuestionLabel.mCollisionOn = false;
 		this.mQuestionLabel.setText(this.mQuestion);
+ 		
+		//expressionATextBox 
+                this.mExpressionATextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
+                this.mExpressionATextBox.mMesh.value = '';
+                this.addShape(this.mExpressionATextBox);
 
  		//numeratorTextBox 
                 this.mNumeratorTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
@@ -73,6 +83,11 @@ Extends: Item,
                         this.mDenominatorTextBox.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
                 this.addShape(this.mDenominatorTextBox);
+		
+		//expressionBTextBox 
+                this.mExpressionBTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
+                this.mExpressionBTextBox.mMesh.value = '';
+                this.addShape(this.mExpressionBTextBox);
 		
 		//user Answer label
                 this.mUserAnswerLabel = new Shape(100,50,425,100,this.mSheet.mGame,"","","");
@@ -99,7 +114,6 @@ Extends: Item,
         {
                 if (e.key == 'enter')
                 {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
@@ -157,6 +171,10 @@ Extends: Item,
 	//virtual functions that can show and hide buttons??	
 	showAnswerInputs: function()
 	{
+		if (this.mExpressionATextBox)
+		{
+			this.mExpressionATextBox.setVisibility(true);
+		}
 		if (this.mNumeratorTextBox)
 		{
 			this.mNumeratorTextBox.setVisibility(true);
@@ -164,6 +182,10 @@ Extends: Item,
 		if (this.mDenominatorTextBox)
 		{
 			this.mDenominatorTextBox.setVisibility(true);
+		}
+		if (this.mExpressionBTextBox)
+		{
+			this.mExpressionBTextBox.setVisibility(true);
 		}
 		if (this.mFractionBar)
 		{
@@ -173,6 +195,10 @@ Extends: Item,
 
 	hideAnswerInputs: function()
 	{
+		if (this.mExpressionATextBox)
+		{
+			this.mExpressionATextBox.setVisibility(false);
+		}
 		if (this.mNumeratorTextBox)
 		{
 			this.mNumeratorTextBox.setVisibility(false);
@@ -180,6 +206,10 @@ Extends: Item,
 		if (this.mDenominatorTextBox)
 		{
 			this.mDenominatorTextBox.setVisibility(false);
+		}
+		if (this.mExpressionBTextBox)
+		{
+			this.mExpressionBTextBox.setVisibility(false);
 		}
 		if (this.mFractionBar)
 		{
