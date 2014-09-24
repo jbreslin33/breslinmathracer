@@ -6,11 +6,12 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_2__11 = new Class(
 {
-Extends: TextItemFractionExpressionOne,
+Extends: TextItem,
         initialize: function(sheet)
         {
+                this.parent(sheet,475,300,260,195,225,50,640,90);
 		//this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
- 		this.parent(sheet,150,50,125,95, 100,50,425,100, 100,50,425,175, 100,50,325,100, 100,50,525,100);
+ 		//this.parent(sheet,150,50,125,95, 100,50,425,100, 100,50,425,175, 100,50,325,100, 100,50,525,100);
 
                 this.mType = '5.oa.a.2_11';
                 this.mNameMachine = new NameMachine();
@@ -21,10 +22,13 @@ Extends: TextItemFractionExpressionOne,
                 this.n = Math.floor((Math.random()*8)+2);
                 this.d = Math.floor((Math.random()*8)+2);
 
-                this.setQuestion('Write a numerical expression for the phrase: ' + this.a + ' more than ' + this.b + ' groups of ' + this.mNameMachine.getNumberName(this.n) + ' ' + this.mNameMachine.getDenominatorName(this.d));
+                this.setQuestion('Write a numerical expression for the phrase ' + this.a + ' more than ' + this.b + ' groups of ' + this.mNameMachine.getNumberName(this.n) + ' ' + this.mNameMachine.getDenominatorName(this.d));
 
-		this.setAnswer(this.a + ' + (' + this.b + 'x' +  this.n + '/' + this.d + ')',0);
-		this.setAnswer(this.a + ' + (' + this.n + '/' +  this.d + 'x' + this.b + ')',1);
+		this.setAnswer(this.a + '+(' + this.b + 'x' +  this.n + '/' + this.d + ')',0);
+		this.setAnswer(this.a + '+(' + this.n + '/' +  this.d + 'x' + this.b + ')',1);
+		
+		this.setAnswer(this.a + '+(' + this.b + '*' +  this.n + '/' + this.d + ')',2);
+		this.setAnswer(this.a + '+(' + this.n + '/' +  this.d + '*' + this.b + ')',3);
 		
         }
 });
