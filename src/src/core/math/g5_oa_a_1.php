@@ -933,24 +933,25 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_a_1__0_50 = new Class(
 {
-Extends: TextItemFraction,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.parent(sheet,350,50,225,95,150,50,525,100);
 
         this.mType = '5.oa.a.1_0_50';
 
 	this.mNameMachine = new NameMachine();
 	this.ns = new NameSampler();
 
-        this.a = Math.floor((Math.random()*3)+1);
-        this.b = Math.floor((Math.random()*4)+1);
-        this.c = Math.floor((Math.random()*3)+8);
+        this.a = Math.floor((Math.random()*8)+2);
+        this.b = Math.floor((Math.random()*8)+2);
+        this.c = Math.floor((Math.random()*8)+2);
         this.d = parseInt( this.a + this.b + this.c); 
 
-        this.setQuestion(this.mNameOne + ' played for ' + this.d + ' ' + this.mTimeIncrementSmall + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityOne + ' for ' + this.a + ' ' + this.mTimeIncrementSmall);
+        this.setQuestion(this.ns.mNameOne + ' played for ' + this.d + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes, ' + this.ns.mPlayedActivityTwo + ' for ' + this.b + ' minutes and the rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '. Write an expression to find how many minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree);
         
-	this.setAnswer('answer man',0);
+	this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
+	this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
 }
 });
