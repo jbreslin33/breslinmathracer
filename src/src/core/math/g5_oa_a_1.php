@@ -941,20 +941,16 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_0_50';
 
-        var a1 = Math.floor((Math.random()*3)+1);
-        var a2 = Math.floor((Math.random()*4)+1);
-        var ad = Math.floor((Math.random()*3)+8);
+	this.mNameMachine = new NameMachine();
+	this.ns = new NameSampler();
 
-        var b1 = Math.floor(Math.random()*8)+2;
+        this.a = Math.floor((Math.random()*3)+1);
+        this.b = Math.floor((Math.random()*4)+1);
+        this.c = Math.floor((Math.random()*3)+8);
+        this.d = parseInt( this.a + this.b + this.c); 
 
-        var n = parseInt(  b1 * (  a1 + a2 )   );
-
-        var a1d = new Fraction(a1,ad);
-        var a2d = new Fraction(a2,ad);
-        var answer = new Fraction(n,ad);
-
-        this.setAnswer(answer.getString(),0);
-        this.setQuestion(b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
+        this.setQuestion(this.mNameOne + ' played for ' + this.d + ' ' + this.mTimeIncrementSmall + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' played ' + this.mPlayedActivityOne + ' for ' + this.a + ' ' + this.mTimeIncrementSmall);
+        
+	this.setAnswer('answer man',0);
 }
 });
-
