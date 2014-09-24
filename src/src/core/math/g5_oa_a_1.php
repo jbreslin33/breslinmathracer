@@ -928,7 +928,35 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_50',5.010050,'5.oa.a.1','b(a)');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_51',5.010051,'5.oa.a.1','Write expression based off word description.');
+*/
+
+var i_5_oa_a_1__0_51 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_51';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.a = Math.floor((Math.random()*8)+2);
+        this.b = Math.floor((Math.random()*8)+2);
+        this.c = Math.floor((Math.random()*8)+2);
+        //this.d = parseInt( this.c * (this.a + this.b));
+
+	this.setQuestion(this.ns.mNameOne + ' had a small fruit stand with ' + this.a + ' ' + this.ns.mFruitOne + ' and ' + this.b + ' ' + this.ns.mFruitTwo + '. ' + this.ns.mNameTwo + ' has a large fruit stand with ' + this.c + ' times as many ' + ' ' + this.ns.mFruitOne + ' and ' + this.ns.mFruitTwo + '. Write a numerical expression to show how many more pieces of fruit ' + this.ns.mNameTwo + ' has in ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' fruit stand.');
+
+        this.setAnswer(this.c + '(' + this.a + '+' + this.b + ')',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_50',5.010050,'5.oa.a.1','Write expression based off word description.');
 */
 
 var i_5_oa_a_1__0_50 = new Class(
@@ -937,21 +965,22 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,375,50,220,75,150,50,525,100);
 
         this.mType = '5.oa.a.1_0_50';
 
-	this.mNameMachine = new NameMachine();
-	this.ns = new NameSampler();
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
 
         this.a = Math.floor((Math.random()*8)+2);
         this.b = Math.floor((Math.random()*8)+2);
         this.c = Math.floor((Math.random()*8)+2);
-        this.d = parseInt( this.a + this.b + this.c); 
+        this.d = parseInt( this.a + this.b + this.c);
 
         this.setQuestion(this.ns.mNameOne + ' played for ' + this.d + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes, ' + this.ns.mPlayedActivityTwo + ' for ' + this.b + ' minutes and the rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '. Write a numerical expression to find how many minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '.');
-        
-	this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
-	this.setAnswer(this.d + '-' + this.a + '-' + this.b,1);
+
+        this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
+        this.setAnswer(this.d + '-' + this.a + '-' + this.b,1);
 }
 });
+
