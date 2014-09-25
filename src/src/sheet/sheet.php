@@ -177,8 +177,12 @@ var Sheet = new Class(
 				this.addItem(pick);
 			
 				//add the streak from raw_data and increment as itemIDs are every other element in array. 
-				pick.mStreak = itemIDArray[parseInt(i+1)];	
 				i++;	
+				pick.mStreak = itemIDArray[i];	
+				i++;
+				pick.mProgressedTypeID = itemIDArray[i];	
+				APPLICATION.log('mProgressedTypeID:' + pick.mProgressedTypeID);
+				
 			}
 			else
 			{
