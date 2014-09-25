@@ -92,6 +92,7 @@ public function setRawData()
 {
 	$this->initializeProgressionCounter();
 	$item_types_id_to_ask = '';	
+	$item_types_id_progressed = '';	
 
 	$type_mastery = 0;
 	$type_master_array = array();
@@ -170,6 +171,8 @@ public function setRawData()
 				$type_master_array[]       = $type_id; 			
 				$type_master_right_array[] = $right; 			
 			}
+			$item_types_id_progressed = $type_id;	
+			//$type_id     = pg_Result($result, 0, 'id');
 		}	
 	}			
 	
@@ -195,11 +198,14 @@ public function setRawData()
 			$right                = $type_master_right_array[$e];
 		}
 	}	
-        $itemString = $item_types_id_to_ask;
+        $itemString = $item_types_id_to_ask; //ask
         $itemString .= ":";
-        $itemString .= $right;
+        $itemString .= $right; 
+        $itemString .= ":";
+        $itemString = $item_types_id_progressed; //progressed
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
+        $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
 }
 //end of class
 }

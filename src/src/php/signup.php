@@ -91,38 +91,16 @@ public function setRawData()
 
        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
         $num = pg_num_rows($result);
-        
-	$itemArray = array();
-
-	for ($i = 0; $i < $num; $i++)
-        {
-        	$id = pg_Result($result, $i, 'id');
+       
+	if ($num > 0)
+	{ 
+        	$id = pg_Result($result, 0, 'id');
         	$_SESSION["item_types_id"] = $id;
-                array_push($itemArray,"$id");
-                array_push($itemArray,"0");
 	}
   
-	$itemString = "";
-
-        if (count($itemArray) > 0)
-        {
-                $itemString .= $itemArray[0];
-                if (count($itemArray) > 1)
-                {
-                        $itemString .= ":";
-                }
-        }
-
-        $totalCount = count($itemArray);
-
-        for ($i = 1; $i < $totalCount; $i++)
-        {
-                $itemString .= $itemArray[$i];
-                if ($i < $totalCount - 1)
-                {
-                        $itemString .= ":";
-                }
-        }
+	$itemString = $id;
+	$itemString .= ":0:";
+	$itemString .= $id;
 
         $_SESSION["raw_data"] = $itemString;
 }
