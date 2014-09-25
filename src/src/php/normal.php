@@ -202,7 +202,7 @@ public function setRawData()
         $itemString .= ":";
         $itemString .= $right; 
         $itemString .= ":";
-        $itemString = $item_types_id_progressed; //progressed
+        $itemString .= $item_types_id_progressed; //progressed
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
