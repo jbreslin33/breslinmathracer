@@ -98,6 +98,7 @@ public function setRawData()
 	$type_master_right_array = array();
 
 	$keep_going = true;
+	$right = 0;
 
 	while ($keep_going)
 	{
@@ -174,20 +175,11 @@ public function setRawData()
 	
 	//ok we are done keeping going so we reached uncharted so.. 
 	$count_of_mastered_items = intval(count($type_master_array));
-	if ($count_of_mastered_items == 0)
-	{
-		//then leave item_types_id_to_ask alone	
-	}
-	else
+	if ($count_of_mastered_items > 0)
 	{
 		$randomNumber = rand(0,100);
 		if ($randomNumber <= 50) //ask not passed 
 		{
-			//do nothing....
-			//$item_types_id_to_ask = $type_id;
-		}
-		else //ask passed
-		{	
 			//bubble sort
 			$lowest = 100;	
 			$e = 0; //element of lowest 	
