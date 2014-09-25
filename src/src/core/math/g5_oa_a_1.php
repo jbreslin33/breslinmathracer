@@ -111,7 +111,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,300,50,255,95,100,50,625,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_22';
 
@@ -153,7 +153,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,300,50,255,95,100,50,625,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_21';
 
@@ -174,7 +174,7 @@ initialize: function(sheet)
 
                 x = parseInt(    (( b1 * (a1 + a2) * c1 ) - d1 ) + e1 - e2  );
 
-                this.setQuestion('Evaluate:' + '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
+                this.setQuestion('Evaluate: ' + '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
                 this.setAnswer(x,0);
         }
 }
@@ -191,7 +191,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_20';
 
@@ -215,7 +215,7 @@ initialize: function(sheet)
 
 		r = b1a12 % c1; 
 
-                this.setQuestion('Evaluate:' + e1 + '{[' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ']' + d1 + '}'       );
+                this.setQuestion('Evaluate: ' + e1 + '{[' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ']' + d1 + '}'       );
                 this.setAnswer(x,0);
         }
 }
@@ -231,7 +231,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_19';
 
@@ -251,7 +251,7 @@ initialize: function(sheet)
 
                 x = parseInt(  (d1 + (b1 - ( a1 + a2) * c1 )) * e1 );
 
-                this.setQuestion('Evaluate:' + '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
+                this.setQuestion('Evaluate: ' + '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
                 this.setAnswer(x,0);
         }
 }
@@ -267,7 +267,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_18';
 
@@ -287,7 +287,7 @@ initialize: function(sheet)
 
                 x = parseInt(    e1 - ( d1 + ( b1 + (a1 - a2) * c1 ))      );
 
-                this.setQuestion('Evaluate:' + e1 + ' - ' + '{' + d1 + ' + [' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + ']}'     );
+                this.setQuestion('Evaluate: ' + e1 + ' - ' + '{' + d1 + ' + [' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + ']}'     );
                 this.setAnswer(x,0);
         }
 }
@@ -303,7 +303,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_17';
 
@@ -323,7 +323,7 @@ initialize: function(sheet)
 
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1) - e1   );
 
-                this.setQuestion('Evaluate:' + d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
+                this.setQuestion('Evaluate: ' + d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
                 this.setAnswer(x,0);
         }
 }
@@ -339,7 +339,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_16';
 
@@ -357,7 +357,7 @@ initialize: function(sheet)
 
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1)   );
 
-                this.setQuestion('Evaluate:' + d1 + ' - ' + '[' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ']'   );
+                this.setQuestion('Evaluate: ' + d1 + ' - ' + '[' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ']'   );
                 this.setAnswer(x,0);
         }
 }
@@ -373,7 +373,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_15';
 
@@ -396,7 +396,7 @@ initialize: function(sheet)
 		
 		r = b1 % a12; 
 
-                this.setQuestion('Evaluate:' + c1 + '(' + b1 + ' / (' + a1 + '-' + a2 + '))' );
+                this.setQuestion('Evaluate: ' + c1 + '(' + b1 + ' / (' + a1 + '-' + a2 + '))' );
                 this.setAnswer(x,0);
         }
 }
