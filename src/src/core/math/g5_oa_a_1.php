@@ -137,7 +137,7 @@ initialize: function(sheet)
 
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
-                this.setQuestion(  f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1 + '='     );
+                this.setQuestion('Evalute:' + f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1 + '='     );
                 this.setAnswer(x,0);
         }
 }
@@ -174,7 +174,7 @@ initialize: function(sheet)
 
                 x = parseInt(    (( b1 * (a1 + a2) * c1 ) - d1 ) + e1 - e2  );
 
-                this.setQuestion(   '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
+                this.setQuestion('Evaluate:' + '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
                 this.setAnswer(x,0);
         }
 }
@@ -215,7 +215,7 @@ initialize: function(sheet)
 
 		r = b1a12 % c1; 
 
-                this.setQuestion(   e1 + '{[' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ']' + d1 + '}'       );
+                this.setQuestion('Evaluate:' + e1 + '{[' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ']' + d1 + '}'       );
                 this.setAnswer(x,0);
         }
 }
@@ -251,7 +251,7 @@ initialize: function(sheet)
 
                 x = parseInt(  (d1 + (b1 - ( a1 + a2) * c1 )) * e1 );
 
-                this.setQuestion(  '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
+                this.setQuestion('Evaluate:' + '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
                 this.setAnswer(x,0);
         }
 }
@@ -287,7 +287,7 @@ initialize: function(sheet)
 
                 x = parseInt(    e1 - ( d1 + ( b1 + (a1 - a2) * c1 ))      );
 
-                this.setQuestion(  e1 + ' - ' + '{' + d1 + ' + [' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + ']}'     );
+                this.setQuestion('Evaluate:' + e1 + ' - ' + '{' + d1 + ' + [' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + ']}'     );
                 this.setAnswer(x,0);
         }
 }
@@ -323,7 +323,7 @@ initialize: function(sheet)
 
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1) - e1   );
 
-                this.setQuestion( d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
+                this.setQuestion('Evaluate:' + d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
                 this.setAnswer(x,0);
         }
 }
@@ -357,7 +357,7 @@ initialize: function(sheet)
 
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1)   );
 
-                this.setQuestion( d1 + ' - ' + '[' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ']'   );
+                this.setQuestion('Evaluate:' + d1 + ' - ' + '[' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ']'   );
                 this.setAnswer(x,0);
         }
 }
@@ -396,7 +396,7 @@ initialize: function(sheet)
 		
 		r = b1 % a12; 
 
-                this.setQuestion( c1 + '(' + b1 + ' / (' + a1 + '-' + a2 + '))' );
+                this.setQuestion('Evaluate:' + c1 + '(' + b1 + ' / (' + a1 + '-' + a2 + '))' );
                 this.setAnswer(x,0);
         }
 }
@@ -431,7 +431,7 @@ initialize: function(sheet)
 
                 x = parseInt(   c1 - ( (a1 + a2) * b1) - d1     );
 
-                this.setQuestion( c1 + ' - ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] - ' + d1 );
+                this.setQuestion('Evaluate:' + c1 + ' - ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] - ' + d1 );
                 this.setAnswer(x,0);
         }
 }
@@ -471,7 +471,7 @@ initialize: function(sheet)
                 
                 x = parseInt( (c1 - (a1 + a2) + b1) / d1 );
 
-                this.setQuestion( '(' + c1 + ' - ' + '(' + a1 + ' + ' + a2 + ') + ' + b1 + ' / ' + d1 + ')'  );
+                this.setQuestion('Evaluate:' + '(' + c1 + ' - ' + '(' + a1 + ' + ' + a2 + ') + ' + b1 + ' / ' + d1 + ')'  );
                 this.setAnswer(x,0);
         }
 }
@@ -505,7 +505,7 @@ initialize: function(sheet)
                 
                 x = parseInt( ((a1 + a2) * b1) * c1   );
 
-                this.setQuestion( '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] ' + c1 );
+                this.setQuestion('Evaluate:' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] ' + c1 );
                 this.setAnswer(x,0);
         }
 }
@@ -549,7 +549,7 @@ initialize: function(sheet)
                 
                 x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
 
-                this.setQuestion( c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
+                this.setQuestion('Evaluate:' + c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
                 this.setAnswer(x,0);
         }
 }
@@ -591,7 +591,7 @@ initialize: function(sheet)
                 
                 x = parseInt( c1 / ((a1 - a2) * (b1 + b2) * d1) - d2 );
 
-                this.setQuestion( c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2 );
+                this.setQuestion('Evaluate:' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2 );
                 this.setAnswer(x,0);
         }
 }
@@ -634,7 +634,7 @@ initialize: function(sheet)
                 
                 x = parseInt( (a1 - a2) / c1 + c2 * (b1 + b2) * d1 - d2 );
 
-                this.setQuestion( '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2 + ')');
+                this.setQuestion('Evaluate:' + '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2 + ')');
                 this.setAnswer(x,0);
         }
 }
@@ -675,7 +675,7 @@ initialize: function(sheet)
                 
                 x = parseInt( c1 - c2 * (a1 + a2) - d1 + d2 * (b1 + b2) + c1 / c2 );
 
-                this.setQuestion( c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') - ' +  d1 + ' + ' + d2 + ' (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
+                this.setQuestion('Evaluate:' + c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') - ' +  d1 + ' + ' + d2 + ' (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
                 this.setAnswer(x,0);
         }
 }
@@ -713,7 +713,7 @@ initialize: function(sheet)
 
                 x = parseInt( (a1 - a2) * (b1 + b2) + c1 / c2 );
 
-                this.setQuestion( '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
+                this.setQuestion('Evaluate:' + '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
                 this.setAnswer(x,0);
         }
 }
@@ -729,7 +729,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_6';
 
@@ -753,7 +753,7 @@ initialize: function(sheet)
 
                 x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
 
-                this.setQuestion( '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
+                this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
                 this.setAnswer(x,0);
         }
 }
@@ -769,7 +769,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.oa.a.1_5';
 
@@ -793,7 +793,7 @@ initialize: function(sheet)
 
                 x = parseInt( c1 - c2 + (a1 + a2) / (  b1 + b2 )  );
 
-                this.setQuestion( c1 + ' - ' + c2 + ' + ' + '(' + a1 + ' + ' + a2 + ') / (' + b1 + ' + ' + b2 + ')' );
+                this.setQuestion('Evaluate: ' + c1 + ' - ' + c2 + ' + ' + '(' + a1 + ' + ' + a2 + ') / (' + b1 + ' + ' + b2 + ')' );
                 this.setAnswer(x,0);
         }
 }
@@ -809,7 +809,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
 
         this.mType = '5.oa.a.1_4';
         
@@ -827,7 +827,7 @@ initialize: function(sheet)
 	var a1_f = new Fraction(a1,ad);	
 	var a2_f = new Fraction(a2,ad);	
 
-        this.setQuestion( '(' + a1_f.getString() + '+' + a2_f.getString() + ') (' + b1 + ' - ' + b2 + ')' );
+        this.setQuestion('Evaluate. Do not Simplify: ' + '(' + a1_f.getString() + '+' + a2_f.getString() + ') (' + b1 + ' - ' + b2 + ')' );
 	this.setAnswer(fraction.getString(),0);
 }
 });
@@ -842,7 +842,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
 
         this.mType = '5.oa.a.1_3';
 
@@ -861,7 +861,7 @@ initialize: function(sheet)
 	var a2_f = new Fraction(a2,ad);	
 
 	this.setAnswer(fraction.getString(),0);
-        this.setQuestion(b1 + ' (' + a1_f.getString() + '+' + a2_f.getString() + ') ' + c1);
+        this.setQuestion('Evaluate. Do not Simplify: ' + b1 + ' (' + a1_f.getString() + '+' + a2_f.getString() + ') ' + c1);
 }
 });
 
@@ -906,7 +906,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,250,50,155,95,100,50,425,100,100,50,425,175);
+	this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
 
         this.mType = '5.oa.a.1_1';
 	
@@ -994,4 +994,3 @@ initialize: function(sheet)
         this.setAnswer(this.d + '-' + this.a + '-' + this.b,1);
 }
 });
-
