@@ -25,6 +25,9 @@ var Item = new Class(
 		
 		//stats
 		this.mStreak = 0;
+		
+		//stats
+		this.mProgressedTypeID = '';
 
 		//userAnswer
 		this.mUserAnswer = '';
