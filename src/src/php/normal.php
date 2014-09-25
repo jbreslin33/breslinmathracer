@@ -97,7 +97,9 @@ public function setRawData()
 	$type_master_array = array();
 	$type_master_right_array = array();
 
-	while ($item_types_id_to_ask == '')
+	$keep_going = true;
+
+	while ($keep_going)
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
 		$query = "select id, progression, type_mastery from item_types where progression > "; 
@@ -144,51 +146,61 @@ public function setRawData()
 					{
 						$right = 0;		
 					}	
-					
 				}
 			}
+			else
+			{
+				//we got nothing....so we reached in db an item_type never before asked in normal.
+				$keep_going = false;
+			}
+		
 			$right = intval($right);
 
-			//check for type first cause if we have one just go there...	
+			//if not mastered and we dont have a non mastered type yet
  			if ($right < $type_mastery)	
 			{
-				//ok we got one but lets see if we want to ask a mastered one instead
-				$count_of_mastered_items = intval(count($type_master_array));
-				if ($count_of_mastered_items == 0)
+				if ($item_types_id_to_ask == '')
 				{
 					$item_types_id_to_ask = $type_id; //keep asking as you have not hit threshold
 				}
-				else
-				{
-					$randomNumber = rand(0,100);
-					if ($randomNumber <= 50) //ask not passed 
-					{
-						$item_types_id_to_ask = $type_id;
-					}
-					else //ask passed
-					{	
-						//bubble sort
-						$lowest = 100;	
-						$e = 0; //element of lowest 	
-						for ($i = 0; $i < $count_of_mastered_items; $i++)
-						{			
-							
-							if (intval($type_master_right_array[$i]) < intval($lowest))
-							{
-								$e = $i;	
-								$lowest = $type_master_right_array[$i];
-							}
-						}
-						$item_types_id_to_ask = $type_master_array[$e];
-						$right                = $type_master_right_array[$e];
-					}
-				}
 			}
-			else //mastered so add to mastered arrays
+			else //type mastered so add to mastered arrays
 			{
 				$type_master_array[]       = $type_id; 			
 				$type_master_right_array[] = $right; 			
 			}
+		}	
+	}			
+	
+	//ok we are done keeping going so we reached uncharted so.. 
+	$count_of_mastered_items = intval(count($type_master_array));
+	if ($count_of_mastered_items == 0)
+	{
+		//then leave item_types_id_to_ask alone	
+	}
+	else
+	{
+		$randomNumber = rand(0,100);
+		if ($randomNumber <= 50) //ask not passed 
+		{
+			//do nothing....
+			//$item_types_id_to_ask = $type_id;
+		}
+		else //ask passed
+		{	
+			//bubble sort
+			$lowest = 100;	
+			$e = 0; //element of lowest 	
+			for ($i = 0; $i < $count_of_mastered_items; $i++)
+			{			
+				if (intval($type_master_right_array[$i]) < intval($lowest))
+				{
+					$e = $i;	
+					$lowest = $type_master_right_array[$i];
+				}
+			}
+			$item_types_id_to_ask = $type_master_array[$e];
+			$right                = $type_master_right_array[$e];
 		}
 	}	
         $itemString = $item_types_id_to_ask;
