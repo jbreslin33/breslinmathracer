@@ -875,7 +875,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.parent(sheet,250,50,155,95,100,50,425,100,100,50,425,175);
 
         this.mType = '5.oa.a.1_2';
 
@@ -891,7 +891,7 @@ initialize: function(sheet)
 	var answer = new Fraction(n,ad);	
 		
 	this.setAnswer(answer.getString(),0);
-        this.setQuestion(b1 + '(' + a1d.getString() + ' - ' + a2d.getString() + ')'  );
+        this.setQuestion('Evaluate. Do not simplify: ' + b1 + '(' + a1d.getString() + ' - ' + a2d.getString() + ')'  );
 }
 });
 
@@ -906,7 +906,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.parent(sheet,250,50,155,95,100,50,425,100,100,50,425,175);
 
         this.mType = '5.oa.a.1_1';
 	
@@ -923,7 +923,7 @@ initialize: function(sheet)
 	var answer = new Fraction(n,ad);	
 	
 	this.setAnswer(answer.getString(),0);
-        this.setQuestion(b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
+        this.setQuestion('Evaluate. Do not Simplify: ' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
 }
 });
 
