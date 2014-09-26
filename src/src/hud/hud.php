@@ -59,7 +59,7 @@ var Hud = new Class(
 	
 	setItemTypeStats: function(streak)
 	{
-        	this.mItemTypeStats.setText('<font size="1"> Streak: ' + streak + '</font>');
+        	this.mItemTypeStats.setText('<font size="1">' + streak + '</font>');
 	},
 	
 	setStandard: function(s)
