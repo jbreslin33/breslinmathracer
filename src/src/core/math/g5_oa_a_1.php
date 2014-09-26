@@ -946,7 +946,7 @@ initialize: function(sheet)
         this.b = Math.floor((Math.random()*8)+2);
         this.c = Math.floor((Math.random()*8)+2);
 
-	this.setQuestion(this.ns.mNameOne + ' studies for ' + this.a + ' minutes a day. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' studies ' + this.ns.mSubjectOne + ' for ' + this.b + ' and ' + this.ns.mSubjectTwo + ' for ' + this.c + ' minutes. The rest of the time ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + '. Write an expression to find the number of minutes ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' studies during a 5 day school week.');       
+	this.setQuestion(this.ns.mNameOne + ' studies for ' + this.a + ' minutes a day. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' studies ' + this.ns.mSubjectOne + ' for ' + this.b + ' minutes and ' + this.ns.mSubjectTwo + ' for ' + this.c + ' minutes. The rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + '. Write an expression to find the number of minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies during a 5 day school week.');       
 
         this.setAnswer(this.c + '(' + this.a + '+' + this.b + ')',0);
         this.setAnswer(this.c + 'x(' + this.a + '+' + this.b + ')',1);
