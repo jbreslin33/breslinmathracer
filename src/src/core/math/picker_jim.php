@@ -228,6 +228,10 @@ getItem: function(id)
         {
                 return new i_5_oa_a_1__0_51(this.mSheet);
         }
+	if (id == '5.oa.a.1_0_52')
+        {
+                return new i_5_oa_a_1__0_52(this.mSheet);
+        }
 	if (id == '5.oa.a.1_1')
         {
                 return new i_5_oa_a_1__1(this.mSheet);
