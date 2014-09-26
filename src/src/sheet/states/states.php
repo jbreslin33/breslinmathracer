@@ -282,7 +282,7 @@ enter: function(sheet)
         }
 	sheet.mGame.mReadyForNormalApplication = true;
         sheet.reset();
-	sheet.mGame.setScore(0);
+	//sheet.mGame.setScore(0);
         sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
 },
 
