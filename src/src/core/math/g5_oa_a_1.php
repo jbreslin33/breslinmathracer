@@ -946,21 +946,12 @@ initialize: function(sheet)
         this.b = Math.floor((Math.random()*8)+2);
         this.c = Math.floor((Math.random()*8)+2);
 
-	this.setQuestion(this.ns.mNameOne + ' studies for ' + this.a + ' minutes a day. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' studies ' + this.ns.mSubjectOne + ' for ' + this.b + ' minutes and ' + this.ns.mSubjectTwo + ' for ' + this.c + ' minutes. The rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + '. Write an expression to find the number of minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies during a 5 day school week.');       
+	this.d = parseInt(this.a + this.b + this.c);
 
-        this.setAnswer(this.c + '(' + this.a + '+' + this.b + ')',0);
-        this.setAnswer(this.c + 'x(' + this.a + '+' + this.b + ')',1);
-        this.setAnswer(this.c + '*(' + this.a + '+' + this.b + ')',2);
-        this.setAnswer(this.c + '(' + this.b + '+' + this.a + ')',3);
-        this.setAnswer(this.c + 'x(' + this.b + '+' + this.a + ')',4);
-        this.setAnswer(this.c + '*(' + this.b + '+' + this.a + ')',5);
+	this.setQuestion(this.ns.mNameOne + ' studies for ' + this.d + ' minutes a day. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' studies ' + this.ns.mSubjectOne + ' for ' + this.a + ' minutes and ' + this.ns.mSubjectTwo + ' for ' + this.b + ' minutes. The rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + '. Write a numerical expression using parenthesis and brackets to find the number of minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + ' during a 5 day school week.');       
+//[19-(3+9)]5
+        this.setAnswer('[' + this.d + '-(' + this.a + '+' + this.b + ')]5',0);
 
-        this.setAnswer('(' + this.a + '+' + this.b + ')' + this.c,6);
-        this.setAnswer('(' + this.a + '+' + this.b + ')x' + this.c,7);
-        this.setAnswer('(' + this.a + '+' + this.b + ')*' + this.c,8);
-        this.setAnswer('(' + this.b + '+' + this.a + ')' + this.c,9);
-        this.setAnswer('(' + this.b + '+' + this.a + ')x' + this.c,10);
-        this.setAnswer('(' + this.b + '+' + this.a + ')*' + this.c,11);
 }
 });
 
