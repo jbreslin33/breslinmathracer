@@ -1051,6 +1051,8 @@ initialize: function(sheet)
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
         this.mType = '5.oa.a.1_0_40';
+	
+	this.mChopWhiteSpace = false;
 
 	this.setQuestion('What is the name for a mathematical phrase containing only numbers and one or more operation symbols?'); 
         this.setAnswer('Numerical Expression',0);
