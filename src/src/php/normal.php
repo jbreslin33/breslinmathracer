@@ -150,6 +150,7 @@ public function setRawData()
 						$right = 0;		
 					}	
 				}
+				$item_types_id_progressed = $type_id;	
 			}
 			else
 			{
@@ -172,8 +173,6 @@ public function setRawData()
 				$type_master_array[]       = $type_id; 			
 				$type_master_right_array[] = $right; 			
 			}
-			$item_types_id_progressed = $type_id;	
-			//$type_id     = pg_Result($result, 0, 'id');
 		}	
 	}			
 	
