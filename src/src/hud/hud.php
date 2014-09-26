@@ -24,8 +24,8 @@ var Hud = new Class(
         this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
 	this.setProgression('');
 	
-	this.mQuestionNumber = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
-	this.mQuestionNumber.setText('<font size="1"> Question: </font>');
+	this.mProgressedTypeID = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
+	this.mProgressedTypeID.setText('<font size="1"> Question: </font>');
 
         this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
         this.mScore.setText('<font size="1"> </font>');
@@ -57,25 +57,24 @@ var Hud = new Class(
 
         },
 	
-	setItemTypeStats: function(streak,total)
+	setItemTypeStats: function(streak)
 	{
-        	this.mItemTypeStats.setText('<font size="1"> Streak: ' + streak + '/10' + '</font>');
+        	this.mItemTypeStats.setText('<font size="1"> Streak: ' + streak + '</font>');
 	},
 	
 	setStandard: function(s)
 	{
-        	this.mStandard.setText('<font size="1"> Standard:' + s +  '</font>');
+        	this.mStandard.setText('<font size="1"> Game:' + s +  '</font>');
 	},
 
 	setProgression: function(p)
 	{
-        	this.mProgression.setText('<font size="1"> Game:' + p +  '</font>');
+        	this.mProgression.setText('<font size="1">' + p +  '</font>');
 	},
 
-	setQuestionNumber: function(number,total)
+	setProgressedTypeID: function(type_id)
 	{
-        	//this.mQuestionNumber.setText('<font size="1"> Question: ' + number + '/' + total + '</font>');
-        	this.mQuestionNumber.setText('<font size="1"> </font>');
+        	this.mProgressedTypeID.setText('<font size="1">' + type_id + '</font>');
 	},
 	
 	setUsername: function(firstname,lastname)

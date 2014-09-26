@@ -87,8 +87,8 @@ enter: function(item)
 	APPLICATION.mHud.setProgression(item.mType);	
 
 	//hud question number	
-	APPLICATION.mHud.setQuestionNumber(parseInt(item.mSheet.mMarker + 1),10);	
-	APPLICATION.mHud.setItemTypeStats(item.mStreak,10);	
+	APPLICATION.mHud.setProgressedTypeID(item.mProgressedTypeID);	
+	APPLICATION.mHud.setItemTypeStats(item.mStreak);	
 },
 
 execute: function(item)
