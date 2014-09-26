@@ -7,7 +7,7 @@ var Item = new Class(
         initialize: function(sheet)
         {
 
-		this.mStateLogs = true;		
+		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
 	

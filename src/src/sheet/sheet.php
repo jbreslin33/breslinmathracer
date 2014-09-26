@@ -8,7 +8,7 @@ var Sheet = new Class(
         {
 
 		//logs
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 
 		//GAME
 		this.mGame = game;
@@ -183,8 +183,6 @@ var Sheet = new Class(
 				pick.mProgressedTypeID = itemIDArray[i];	
 				i++;
 				this.mGame.mScore = itemIDArray[i];
-				APPLICATION.log('score:' + this.mGame.mScore);
-
 			}
 			else
 			{
