@@ -215,17 +215,28 @@ public function setRawData()
 		}
 	}	
 	
-	$streak = $streak;
+	$stats = "s";
+	$stats .= $streak;
 	
 	$count_of_types = intval(count($type_array));
 	for ($i = 0; $i < $count_of_types; $i++)
 	{
 		if ($item_types_id_to_ask == $type_array[$i])
 		{
-			$streak .= "_";
-			$streak .= $right_array[$i];
-			$streak .= "_";
-			$streak .= $wrong_array[$i];
+			$stats .= "r";
+			$stats .= $right_array[$i];
+			$stats .= "w";
+			$stats .= $wrong_array[$i];
+
+			$total = intval($right_array[$i] + $wrong_array[$i]);	
+			$percent = 0;
+			if ($total != 0)
+			{
+				$percent = floatval($right_array[$i] / $total); 
+				$percent = round( $percent, 2);
+			}
+			$stats .= "p";
+			$stats .= $percent;
 		}		 
 	}
 	
@@ -237,7 +248,7 @@ public function setRawData()
 
         $itemString = $item_types_id_to_ask; //ask
         $itemString .= ":";
-        $itemString .= $streak; 
+        $itemString .= $stats; 
         $itemString .= ":";
         $itemString .= $item_types_id_progressed; //progressed
         $itemString .= ":";
