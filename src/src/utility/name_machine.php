@@ -127,6 +127,15 @@ var NameMachine = new Class(
 		this.mFruitArray.push("oranges");
 		this.mFruitArray.push("plums");
 
+       		//subject
+                this.mSubjectArray = new Array();
+                this.mUsedSubjectElementArray = new Array();
+                this.mSubjectArray.push("english");
+                this.mSubjectArray.push("math");
+                this.mSubjectArray.push("spelling");
+                this.mSubjectArray.push("history");
+                this.mSubjectArray.push("religion");
+
 		//vegetables	
 		this.mVegetableArray = new Array();
 		this.mUsedVegetableElementArray = new Array();
@@ -505,6 +514,33 @@ var NameMachine = new Class(
                 }
                 this.mUsedFruitElementArray.push(randomElement);
                 return this.mFruitArray[randomElement];
+        },
+       
+	getSubject: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mSubjectArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedSubjectElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedSubjectElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedSubjectElementArray.push(randomElement);
+                return this.mSubjectArray[randomElement];
         },
 
         getColor: function()
@@ -1311,6 +1347,15 @@ var NameSampler = new Class(
 		this.mFruitArray.push(this.mFruitOne);
 		this.mFruitArray.push(this.mFruitTwo);
 		this.mFruitArray.push(this.mFruitThree);
+
+                this.mSubjectOne = this.mNameMachine.getSubject();
+                this.mSubjectTwo = this.mNameMachine.getSubject();
+                this.mSubjectThree = this.mNameMachine.getSubject();
+
+                this.mSubjectArray = new Array();
+                this.mSubjectArray.push(this.mSubjectOne);
+                this.mSubjectArray.push(this.mSubjectTwo);
+                this.mSubjectArray.push(this.mSubjectThree);
 
                 this.mPlayedActivityOne = this.mNameMachine.getPlayedActivity();
                 this.mPlayedActivityTwo = this.mNameMachine.getPlayedActivity();
