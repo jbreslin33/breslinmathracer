@@ -101,6 +101,7 @@ public function setRawData()
 	$itemString = $id;
 	$itemString .= ":0:";
 	$itemString .= $id;
+	$itemString .= ":0";
 
         $_SESSION["raw_data"] = $itemString;
 }
