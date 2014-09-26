@@ -93,13 +93,20 @@ public function setRawData()
 	$this->initializeProgressionCounter();
 	$item_types_id_to_ask = '';	
 	$item_types_id_progressed = '';	
+	
+	$type_array = array();
+	$right_array = array();
+	$wrong_array = array();
 
 	$type_mastery = 0;
 	$type_master_array = array();
 	$type_master_right_array = array();
+	
 
 	$keep_going = true;
 	$streak = 0;
+	$right = 0;
+	$wrong = 0;
 	$score = 0;
 
 	while ($keep_going)
@@ -117,7 +124,7 @@ public function setRawData()
 			$type_mastery = pg_Result($result, 0, 'type_mastery');
 			$type_mastery = intval($type_mastery);
 
-			$type_id     = pg_Result($result, 0, 'id');
+			$type_id      = pg_Result($result, 0, 'id');
 
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
 
@@ -134,6 +141,8 @@ public function setRawData()
 
 			$streak = 0;
 			$streak = intval($streak);
+			$right = 0;
+			$wrong = 0;
 
 			if ($num > 0)
 			{
@@ -144,10 +153,12 @@ public function setRawData()
 					if ($transaction_code == 1) 
 					{
 						$streak++;		
+						$right++;
 					}	
 					if ($transaction_code == 2) 
 					{
 						$streak = 0;		
+						$wrong++;
 					}	
 				}
 				$item_types_id_progressed = $type_id;	
@@ -157,6 +168,11 @@ public function setRawData()
 				//we got nothing....so we reached in db an item_type never before asked in normal.
 				$keep_going = false;
 			}
+		
+			//everyone arrays	
+			$type_array[]  = $type_id; 			
+			$right_array[] = $right; 			
+			$wrong_array[] = $wrong; 			
 		
 			$streak = intval($streak);
 
@@ -198,9 +214,26 @@ public function setRawData()
 			$streak                = $type_master_right_array[$e];
 		}
 	}	
+	
+	$streak = $streak;
+	
+	$count_of_types = intval(count($type_array));
+	for ($i = 0; $i < $count_of_types; $i++)
+	{
+		if ($item_types_id_to_ask == $type_array[$i])
+		{
+			$streak .= "_";
+			$streak .= $right_array[$i];
+			$streak .= "_";
+			$streak .= $wrong_array[$i];
+		}		 
+	}
+	
+
 
 	//calc score
 	$score = intval(count($type_master_array));
+
 
         $itemString = $item_types_id_to_ask; //ask
         $itemString .= ":";
