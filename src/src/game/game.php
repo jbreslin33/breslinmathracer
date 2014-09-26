@@ -402,7 +402,6 @@ var Game = new Class(
 
         incrementScore: function()
         {
-                this.mScore++;
                 APPLICATION.mHud.mScore.setText('<font size="1"> Score : ' + this.mScore + '</font>');
         },
   

@@ -181,15 +181,14 @@ var Sheet = new Class(
 				pick.mStreak = itemIDArray[i];	
 				i++;
 				pick.mProgressedTypeID = itemIDArray[i];	
-				APPLICATION.log('mProgressedTypeID:' + pick.mProgressedTypeID);
-				
+				i++;
+				this.mGame.mScore = itemIDArray[i];
 			}
 			else
 			{
 				APPLICATION.log('no item picked by pickers!');
 			}
                 }
-
 	},
 
 	setTypeWrong: function(typeID)

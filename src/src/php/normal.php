@@ -100,6 +100,7 @@ public function setRawData()
 
 	$keep_going = true;
 	$right = 0;
+	$score = 0;
 
 	while ($keep_going)
 	{
@@ -198,11 +199,17 @@ public function setRawData()
 			$right                = $type_master_right_array[$e];
 		}
 	}	
+
+	//calc score
+	$score = intval(count($type_master_array));
+
         $itemString = $item_types_id_to_ask; //ask
         $itemString .= ":";
         $itemString .= $right; 
         $itemString .= ":";
         $itemString .= $item_types_id_progressed; //progressed
+        $itemString .= ":";
+        $itemString .= $score; //score
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
