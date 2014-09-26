@@ -99,7 +99,7 @@ public function setRawData()
 	$type_master_right_array = array();
 
 	$keep_going = true;
-	$right = 0;
+	$streak = 0;
 	$score = 0;
 
 	while ($keep_going)
@@ -132,8 +132,8 @@ public function setRawData()
 			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
                		$num = pg_num_rows($result);
 
-			$right = 0;
-			$right = intval($right);
+			$streak = 0;
+			$streak = intval($streak);
 
 			if ($num > 0)
 			{
@@ -143,11 +143,11 @@ public function setRawData()
 					$transaction_code = intval($transaction_code);
 					if ($transaction_code == 1) 
 					{
-						$right++;		
+						$streak++;		
 					}	
 					if ($transaction_code == 2) 
 					{
-						$right = 0;		
+						$streak = 0;		
 					}	
 				}
 				$item_types_id_progressed = $type_id;	
@@ -158,10 +158,10 @@ public function setRawData()
 				$keep_going = false;
 			}
 		
-			$right = intval($right);
+			$streak = intval($streak);
 
 			//if not mastered and we dont have a non mastered type yet
- 			if ($right < $type_mastery)	
+ 			if ($streak < $type_mastery)	
 			{
 				if ($item_types_id_to_ask == '')
 				{
@@ -171,7 +171,7 @@ public function setRawData()
 			else //type mastered so add to mastered arrays
 			{
 				$type_master_array[]       = $type_id; 			
-				$type_master_right_array[] = $right; 			
+				$type_master_right_array[] = $streak; 			
 			}
 		}	
 	}			
@@ -195,7 +195,7 @@ public function setRawData()
 				}
 			}
 			$item_types_id_to_ask = $type_master_array[$e];
-			$right                = $type_master_right_array[$e];
+			$streak                = $type_master_right_array[$e];
 		}
 	}	
 
@@ -204,7 +204,7 @@ public function setRawData()
 
         $itemString = $item_types_id_to_ask; //ask
         $itemString .= ":";
-        $itemString .= $right; 
+        $itemString .= $streak; 
         $itemString .= ":";
         $itemString .= $item_types_id_progressed; //progressed
         $itemString .= ":";
