@@ -951,6 +951,22 @@ initialize: function(sheet)
 	this.setQuestion(this.ns.mNameOne + ' studies for ' + this.d + ' minutes a day. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' studies ' + this.ns.mSubjectOne + ' for ' + this.a + ' minutes and ' + this.ns.mSubjectTwo + ' for ' + this.b + ' minutes. The rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + '. Write a numerical expression using parenthesis and brackets to find the number of minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' studies ' + this.ns.mSubjectThree + ' during a 5 day school week.');       
 //[19-(3+9)]5
         this.setAnswer('[' + this.d + '-(' + this.a + '+' + this.b + ')]5',0);
+        this.setAnswer('5[' + this.d + '-(' + this.a + '+' + this.b + ')]',1);
+
+        this.setAnswer('[' + this.d + '-(' + this.b + '+' + this.a + ')]5',2);
+        this.setAnswer('5[' + this.d + '-(' + this.b + '+' + this.a + ')]',3);
+        
+	this.setAnswer('[' + this.d + '-(' + this.a + '+' + this.b + ')]x5',4);
+        this.setAnswer('5x[' + this.d + '-(' + this.a + '+' + this.b + ')]',5);
+
+        this.setAnswer('[' + this.d + '-(' + this.b + '+' + this.a + ')]x5',6);
+        this.setAnswer('5x[' + this.d + '-(' + this.b + '+' + this.a + ')]',7);
+	
+	this.setAnswer('[' + this.d + '-(' + this.a + '+' + this.b + ')]*5',8);
+        this.setAnswer('5*[' + this.d + '-(' + this.a + '+' + this.b + ')]',9);
+
+        this.setAnswer('[' + this.d + '-(' + this.b + '+' + this.a + ')]*5',10);
+        this.setAnswer('5*[' + this.d + '-(' + this.b + '+' + this.a + ')]',11);
 
 }
 });
