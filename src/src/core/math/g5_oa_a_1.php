@@ -1037,3 +1037,23 @@ initialize: function(sheet)
         this.setAnswer(this.d + '-(' + this.b + '+' + this.a + ')',1);
 }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_40',5.010040,'5.oa.a.1','Write expression based off word description.');
+*/
+
+var i_5_oa_a_1__0_40 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_40';
+
+	this.setQuestion('What is the name for a mathematical phrase containing only numbers and one or more operation symbols?'); 
+        this.setAnswer('Numerical Expression',0);
+}
+});
+
