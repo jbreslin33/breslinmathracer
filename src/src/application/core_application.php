@@ -279,7 +279,6 @@ Extends: Application,
 
         normal: function()
         {
-		APPLICATION.log('APPLICATION::normal');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
