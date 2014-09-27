@@ -10,6 +10,10 @@ var Item = new Class(
 		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
+
+		//answer control vars
+		this.mChopWhiteSpace = true;
+		this.mIgnoreCase = true;
 	
 		//question
 		this.mQuestion = '';
@@ -237,12 +241,19 @@ var Item = new Class(
 	setUserAnswer: function(userAnswer)
 	{
 		//strip all whitespace
-		var userStrippedAnswer = userAnswer.replace(/ /g,'');	
+		var answer = userAnswer;	
+		if (this.mChopWhiteSpace == true)
+		{
+			answer = answer.replace(/ /g,'');	
+		}
 
 		//to lowercase	
-		var lowerCase = userStrippedAnswer.toLowerCase();	
+		if (this.mIgnoreCase == true)
+		{
+			answer = answer.toLowerCase();	
+		}
 
-		this.mUserAnswer = lowerCase;
+		this.mUserAnswer = answer;
 	},
 	
 	checkUserAnswer: function()
