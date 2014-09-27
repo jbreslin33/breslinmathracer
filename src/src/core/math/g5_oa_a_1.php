@@ -1055,7 +1055,7 @@ initialize: function(sheet)
 	this.mChopWhiteSpace = false;
 
 	this.setQuestion('What is the name for a mathematical phrase containing only numbers and one or more operation symbols?'); 
-        this.setAnswer('Numerical Expression',0);
+        this.setAnswer('numerical expression',0);
 }
 });
 
