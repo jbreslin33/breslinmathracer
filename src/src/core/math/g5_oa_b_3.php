@@ -44,61 +44,108 @@ r.linechart(0, 0, 99, 99, [1,2,3,4,5], [[1,2,3,4,5], [1,3,9,16,25], [100,50,25,1
 //var r = Raphael("simpleExample");
 //var linechart = r.g.linechart(10,10,300,220,[1,2,3,4,5],[10,20,15,35,30], {"colors":["#444"],
 
-
+// graph coords
+var startX = 10;
+var endX = 310;
+var startY = 10;
+var endY = 310;
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+var pointsX = [2, 4, 6];
+var pointsY = [2, 4, 6];
 
 //var r = Raphael('graph');
-var r = Raphael(10, 50, 640, 480);
-  var chart = r.linechart(
-    10, 10,      // top left anchor
-    300, 300,    // bottom right anchor
-    [
-      [0, 1, 2, 3],        // red line x-values
-      [0, 1, 2, 3]    // blue line x-values
-    ],
-    [
-      [0, 1, 2, 3], // red line y-values
-      [0, 1, 2, 3]      // blue line y-values
-    ],
-    {
-       nostroke: false,   // lines between points are drawn
-       axis: "0 0 1 1",   // draw axes on the left and bottom
-       axisxstep: 10,
-       axisystep: 10,
-       symbol: 'circle',    // use a filled circle as the point symbol
-       smooth: true,      // curve the lines to smooth turns on the chart
-       dash: "-",          //draw the lines dashed
-       colors: [
-         "#995555",       // the first line is red
-         "#555599"        // the second line is blue
-       ]
-     });
+var rX1 = 10;
+var rY1 = 50;
+var rX2 = 640;
+var rY2 = 480;
 
- var axisItems = chart.axis[0].text.items;
+var r = Raphael(rX1, rY1, rX2, rY2);
 
- for( var i = 0; i < axisItems.length; i++ ) {
-                           axisItems[i].attr("text", i); 
-                        } 
 
-var axisItems = chart.axis[1].text.items;
+var chart = new LineChart (this.mSheet.mGame,r,startX, startY, endX, endY,pointsX,pointsY,range,"#000000",false);
 
- for( var i = 0; i < axisItems.length; i++ ) {                         
-                           axisItems[i].attr("text", i); 
-                        } 
+this.addQuestionShape(chart);
 
 // Draw horizontal gridlines
-for (var i = 0; i < chart.axis[1].text.items.length; i++) {
-    r.path(['M', 10, chart.axis[1].text.items[i].attrs.y, 'H', 300 + 10]).attr({
+for (var i = 0; i < chart.mPolygon.axis[1].text.items.length; i++) {
+    r.path(['M', startX, chart.mPolygon.axis[1].text.items[i].attrs.y, 'H', endX]).attr({
         stroke : '#995555'
     }).toBack();
 }
 
 
-// Draw horizontal gridlines
-for (var i = 0; i < chart.axis[0].text.items.length; i++) {
-    r.path(['M', chart.axis[0].text.items[i].attrs.x, 300, 'V', -(300 + 10)]).attr({
+// Draw vertical gridlines
+for (var i = 0; i < chart.mPolygon.axis[0].text.items.length; i++) {
+    r.path(['M', chart.mPolygon.axis[0].text.items[i].attrs.x, endY, 'V', startY]).attr({
         stroke : '#995555'
     }).toBack();
 }
+
+// draw letters at points
+for( var i = 0; i < pointsX.length; i++ ) {
+       var posX = startX+rX1 + (pointsX[i])*(width/range[1]);
+       var posY = endY+rY1 - (pointsY[i])*(height/range[1]);  
+
+       letter = new Shape(10,10,posX,posY,this.mSheet.mGame,"","","");
+        
+       if(i == 0)
+          letter.setText('A');
+       if(i == 1)
+          letter.setText('B');
+       if(i == 2)
+          letter.setText('C');
+
+       this.addQuestionShape(letter);
+
+   } 
+
+// table coords
+var tableWidth = 150;
+var tableHeight = 200;
+var tableX = 330;
+var tableY = 125;
+var cols = 3;
+var rows = 4;
+
+// table perimeter
+var box = new Rectangle(tableWidth,tableHeight,tableX,tableY,this.mSheet.mGame,r,.5,.5,.5,"#000",.3,false);
+
+box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#000", "stroke-width": 2});
+
+this.addQuestionShape(box);
+
+// Draw horizontal table lines
+for (var i = 0; i < rows; i++) {
+    //var line = r.path(['M', tableX, tableY + (i+1)*tableHeight/rows, 'H', 330 + 150]).attr({
+       // stroke : '#995555'
+   // }).toBack();
+
+    var y = tableY + (i+1)*tableHeight/rows;
+    var line = new LineOne (this.mSheet.mGame,r,tableX, y, tableX+tableWidth, y,"#000000",false);
+
+    this.addQuestionShape(line);
+}
+
+
+// Draw vertical table lines
+for (var i = 0; i < 3; i++) {
+   // r.path(['M', 330 + (i+1)*50, 125, 'V', 200+125]).attr({
+       // stroke : '#995555'
+   // }).toBack();
+
+    var x = tableX + (i+1)*tableWidth/cols;
+
+    var line = new LineOne (this.mSheet.mGame,r,x, tableY, x, tableY+tableHeight,"#000000",false);
+
+    this.addQuestionShape(line);
+}
+
+
+ //raphael.clear();
+// this.mFractionBar = new LineOne (this.mSheet.mGame,raphael,x,y,x+length,y,"#000000",false);
+
 
 
 
@@ -118,7 +165,7 @@ for (var i = 0; i < chart.axis[0].text.items.length; i++) {
 
                 x = parseInt(  (d1 + (b1 - ( a1 + a2) * c1 )) * e1 );
 
-                this.setQuestion(  '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
+                this.setQuestion('');
                 this.setAnswer(x,0);
         }
 }
