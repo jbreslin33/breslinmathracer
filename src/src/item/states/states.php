@@ -109,6 +109,7 @@ execute: function(item)
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
+                        item.mStatus = 1;
                 	item.mStateMachine.changeState(item.mCONTINUE_CORRECT);
                 }
                 else
@@ -136,15 +137,7 @@ exit: function(item)
 {
    	if (item.mUserAnswer != '')
 	{
-		//just send item attempt first item attempt was sent with sendLevelAttempt
-            	if (item.mStatus == 2)
-                {
-                       	APPLICATION.sendItemAttempt(item.mType,2);
-                }
-                else
-                {
-                       	APPLICATION.sendItemAttempt(item.mType,1);
-                }
+                APPLICATION.sendItemAttempt(item.mType,item.mStatus);
 	}
 }
 });
