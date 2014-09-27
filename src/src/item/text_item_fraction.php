@@ -99,7 +99,6 @@ Extends: Item,
         {
                 if (e.key == 'enter')
                 {
-                        //APPLICATION.mGame.mUserAnswer = APPLICATION.mGame.mAnswerTextBox.mMesh.value;
 			if (APPLICATION.mGame)
 			{
 				if (APPLICATION.mGame.mSheet)
