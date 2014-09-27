@@ -136,36 +136,17 @@ exit: function(item)
 {
    	if (item.mUserAnswer != '')
 	{
-/*
-		if (item == item.mSheet.mItemArray[0])
-		{
-			//item is the first in array on Sheet so send attempt
-			if (item.mStatus == 2)
-			{
-				APPLICATION.sendLevelAttempt(item.mType,2);
-			}
-			else
-			{
-				APPLICATION.sendLevelAttempt(item.mType,1);
-			}
-		}
-*/
-//		else
-		
-	//	{
-			//just send item attempt first item attempt was sent with sendLevelAttempt
-            		if (item.mStatus == 2)
-                	{
-                        	APPLICATION.sendItemAttempt(item.mType,2);
-                	}
-                	else
-                	{
-                        	APPLICATION.sendItemAttempt(item.mType,1);
-                	}
-	//	}
+		//just send item attempt first item attempt was sent with sendLevelAttempt
+            	if (item.mStatus == 2)
+                {
+                       	APPLICATION.sendItemAttempt(item.mType,2);
+                }
+                else
+                {
+                       	APPLICATION.sendItemAttempt(item.mType,1);
+                }
 	}
 }
-
 });
 
 var SHOW_STANDARD = new Class(
