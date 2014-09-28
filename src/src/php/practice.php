@@ -11,49 +11,6 @@ function __construct($typeid, $startNew, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$this->mTypeID','type_id');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-	//if no typeid then get one
-	if (strlen($this->mTypeID) > 0)
-	{
-
-	}
-	else
-	{
-//use this: select item_types_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where user_id = 1 order by item_attempts.start_time desc LIMIT 1;
-
-		//get the item_type_id of the last asked question as that will be what you where previously practicing.
-       		$query = "select item_attempts.item_types_id from item_attempts JOIN levelattempts ON levelattempts.id=item_attempts.levelattempts_id JOIN learning_standards_attempts ON learning_standards_attempts.id=levelattempts.learning_standards_attempts_id where evaluations_attempts.user_id = ";
-       		$query .= $_SESSION["user_id"];
-       		$query .= " order by item_attempts.start_time desc limit 1;";
-
-       		//get db result
-       		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-
-       		$num = pg_num_rows($result);
-
-       		if ($num > 0)
-       		{
-               		$this->mTypeID = pg_Result($result, 0, 'item_types_id');
-			$_SESSION["item_types_id"] = $this->mTypeID;
-		}
-		else 
-		{
-			//no attempts made...... go back to previus and close out this one....
-	        	// lets close out this practice cause it was never attempted
-			//shouild not go here..
-        		$update = "update evaluations_attempts set end_time = CURRENT_TIMESTAMP, transaction_code = 1 WHERE id = ";
-        		$update .= $_SESSION["learning_standards_attempts_id"];
-        		$update .=  ";";
-        		$updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
-	
-			//then go to sessions again...
-                	//SESSION
-                	$sessions = new Sessions();
-			return 0;
-		}
-	}
 
 	if ($leavePractice)
 	{
