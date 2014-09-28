@@ -424,6 +424,10 @@ var Item = new Class(
 
         showCore: function()
         {
+                if (this.mCoreDescription == '')
+                {
+                        APPLICATION.getCoreDescription(this.mType);
+                }
                 this.mCoreInfo.setVisibility(true);
                 this.mCoreInfoButton.setVisibility(true);
         },
@@ -565,5 +569,19 @@ var Item = new Class(
     			option.text = array[i];
     			this.mPracticeInfo.mMesh.appendChild(option);		
 		}
-	}
+	},
+     
+	fillCoreSelect: function()
+        {
+                var array = this.mCoreDescription.split(":");
+
+                for (var i = 0; i < array.length; i++)
+                {
+                        var option = document.createElement("option");
+                        option.value = array[i];
+                        option.text = array[i];
+                        this.mCoreInfo.mMesh.appendChild(option);
+                }
+        }
+
 });
