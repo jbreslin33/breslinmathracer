@@ -18,6 +18,7 @@ Extends: Application,
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
+		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
 
 		//personal info
@@ -104,6 +105,11 @@ Extends: Application,
                         {
                                 APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
+                        }
+			if (codeNumber == APPLICATION.CORE_DESCRIPTION)
+                        {
+                                APPLICATION.mGame.mSheet.mItem.mCoreDescription = responseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
                         {
@@ -420,6 +426,38 @@ Extends: Application,
                         }
                 }
                 xmlhttp.open("POST","../../web/php/get_practice_description.php",true);
+                xmlhttp.send();
+        },
+        
+	getCoreDescription: function(typeid)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/get_core_description.php",true);
                 xmlhttp.send();
         },
 	
