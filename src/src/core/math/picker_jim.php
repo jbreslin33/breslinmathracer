@@ -191,6 +191,20 @@ getItem: function(id)
                 return new i_3_oa_a_1__11(this.mSheet);
         }
 
+	//3.oa.c.7	
+	if (id == '3.oa.c.7_1')
+        {
+                return new i_3_oa_c_7__1(this.mSheet);
+        }
+	if (id == '3.oa.c.7_2')
+        {
+                return new i_3_oa_c_7__2(this.mSheet);
+        }
+	if (id == '3.oa.c.7_3')
+        {
+                return new i_3_oa_c_7__3(this.mSheet);
+        }
+
 	//-----------4th GRADE---------
         //4.oa.a.1
         if (id == '4.oa.a.1_5')
