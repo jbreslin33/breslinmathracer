@@ -1,7 +1,7 @@
 var LineChart = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,pointsX,pointsY,range,s,d)
+        initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY1,s,d)
         {
 		//find center for mPosition...
 		sX = x1 + x2 / 3;
@@ -13,6 +13,9 @@ Extends: RaphaelPolygon,
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
+
+    this.vLines = new Array()
+    this.hLines = new Array()
 		
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 		
@@ -54,8 +57,42 @@ Extends: RaphaelPolygon,
                            this.axisItems2[i].attr("text", i); 
                         } 
 
+var width = x2 - x1;
+var height = y2 - y1;
 
-		//this.mPolygon.attr ("stroke", this.mStroke);
+// draw letters at points
+for( var i = 0; i < pointsX.length; i++ ) {
+       var posX = x1+rX1 + (pointsX[i])*(width/range[1]);
+       var posY = y2+rY1 - (pointsY[i])*(height/range[1]);  
+
+       letter = new Shape(10,10,posX,posY,this.mGame,"","","");
+        
+       if(i == 0)
+          letter.setText('A');
+       if(i == 1)
+          letter.setText('B');
+       if(i == 2)
+          letter.setText('C');
+
+       item.addQuestionShape(letter);
+
+   } 
+
+
+    // Draw horizontal gridlines
+for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
+    this.hLines[i] = this.mRaphael.path(['M', x1, this.mPolygon.axis[1].text.items[i].attrs.y, 'H', x2]).attr({
+        stroke : '#995555'
+    }).toBack();
+}
+
+
+// Draw vertical gridlines
+for (var i = 0; i < this.mPolygon.axis[0].text.items.length; i++) {
+    this.vLines[i] = this.mRaphael.path(['M', this.mPolygon.axis[0].text.items[i].attrs.x, y2, 'V', y1]).attr({
+        stroke : '#995555'
+    }).toBack();
+}
 
 		this.mPolygon.mPolygon = this;
 
@@ -63,25 +100,75 @@ Extends: RaphaelPolygon,
 		{
  			this.mPolygon.drag(this.move, this.start, this.up);
 		}
-	},
+	
 
 
 
 
+// table coords
+var tableWidth = 150;
+var tableHeight = 200;
+var tableX = 330;
+var tableY = 125;
+var cols = 3;
+var rows = 4;
+
+// table perimeter
+var box = new Rectangle(tableWidth,tableHeight,tableX,tableY,this.mGame,raphael,.5,.5,.5,"#000",.3,false);
+
+box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#000", "stroke-width": 2});
+
+item.addQuestionShape(box);
+
+// Draw horizontal table lines
+for (var i = 0; i < rows; i++) {
+
+    var y = tableY + (i+1)*tableHeight/rows;
+    var line = new LineOne (this.mGame,raphael,tableX, y, tableX+tableWidth, y,"#000000",false);
+
+    item.addQuestionShape(line);
+}
 
 
+// Draw vertical table lines
+for (var i = 0; i < 3; i++) {
 
+    var x = tableX + (i+1)*tableWidth/cols;
+
+    var line = new LineOne (this.mGame,raphael,x, tableY, x, tableY+tableHeight,"#000000",false);
+
+    item.addQuestionShape(line);
+}
+
+
+},
 
 
 setVisibility: function(b)
 	{
              	if (b)
                 {
-                        this.mPolygon.show();
+                        this.mPolygon.show();                        
+
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.axisItems1[i].attr("text", i); 
+                        } 
+
+                       for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                           this.axisItems2[i].attr("text", i); 
+                        } 
+
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.vLines[i].show();                          
+                        } 
+
+                        for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                           this.hLines[i].show(); 
+                        } 
                 }
                 else
                 {
-                        this.mPolygon.hide();
+                        this.mPolygon.hide();                  
 
                        for( var i = 0; i < this.axisItems1.length; i++ ) {
                            this.axisItems1[i].attr("text", ""); 
@@ -89,6 +176,14 @@ setVisibility: function(b)
 
                        for( var i = 0; i < this.axisItems2.length; i++ ) {                         
                            this.axisItems2[i].attr("text", ""); 
+                        } 
+
+                       for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.vLines[i].hide();                          
+                        } 
+
+                        for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                           this.hLines[i].hide(); 
                         } 
                 }
 	},

@@ -63,84 +63,10 @@ var rY2 = 480;
 
 var r = Raphael(rX1, rY1, rX2, rY2);
 
-
-var chart = new LineChart (this.mSheet.mGame,r,startX, startY, endX, endY,pointsX,pointsY,range,"#000000",false);
+var chart = new LineChart (this.mSheet.mGame,this,r,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
 
 this.addQuestionShape(chart);
 
-// Draw horizontal gridlines
-for (var i = 0; i < chart.mPolygon.axis[1].text.items.length; i++) {
-    r.path(['M', startX, chart.mPolygon.axis[1].text.items[i].attrs.y, 'H', endX]).attr({
-        stroke : '#995555'
-    }).toBack();
-}
-
-
-// Draw vertical gridlines
-for (var i = 0; i < chart.mPolygon.axis[0].text.items.length; i++) {
-    r.path(['M', chart.mPolygon.axis[0].text.items[i].attrs.x, endY, 'V', startY]).attr({
-        stroke : '#995555'
-    }).toBack();
-}
-
-// draw letters at points
-for( var i = 0; i < pointsX.length; i++ ) {
-       var posX = startX+rX1 + (pointsX[i])*(width/range[1]);
-       var posY = endY+rY1 - (pointsY[i])*(height/range[1]);  
-
-       letter = new Shape(10,10,posX,posY,this.mSheet.mGame,"","","");
-        
-       if(i == 0)
-          letter.setText('A');
-       if(i == 1)
-          letter.setText('B');
-       if(i == 2)
-          letter.setText('C');
-
-       this.addQuestionShape(letter);
-
-   } 
-
-// table coords
-var tableWidth = 150;
-var tableHeight = 200;
-var tableX = 330;
-var tableY = 125;
-var cols = 3;
-var rows = 4;
-
-// table perimeter
-var box = new Rectangle(tableWidth,tableHeight,tableX,tableY,this.mSheet.mGame,r,.5,.5,.5,"#000",.3,false);
-
-box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#000", "stroke-width": 2});
-
-this.addQuestionShape(box);
-
-// Draw horizontal table lines
-for (var i = 0; i < rows; i++) {
-    //var line = r.path(['M', tableX, tableY + (i+1)*tableHeight/rows, 'H', 330 + 150]).attr({
-       // stroke : '#995555'
-   // }).toBack();
-
-    var y = tableY + (i+1)*tableHeight/rows;
-    var line = new LineOne (this.mSheet.mGame,r,tableX, y, tableX+tableWidth, y,"#000000",false);
-
-    this.addQuestionShape(line);
-}
-
-
-// Draw vertical table lines
-for (var i = 0; i < 3; i++) {
-   // r.path(['M', 330 + (i+1)*50, 125, 'V', 200+125]).attr({
-       // stroke : '#995555'
-   // }).toBack();
-
-    var x = tableX + (i+1)*tableWidth/cols;
-
-    var line = new LineOne (this.mSheet.mGame,r,x, tableY, x, tableY+tableHeight,"#000000",false);
-
-    this.addQuestionShape(line);
-}
 
 
  //raphael.clear();
