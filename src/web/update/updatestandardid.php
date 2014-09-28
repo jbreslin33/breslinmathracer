@@ -1,27 +1,18 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 
 //start new session
 session_start();
+$standardid = $_POST['standardid'];
+$databaseConnection = new DatabaseConnection();
 
-$conn = dbConnect();
+$update = "update users SET core_standards_id = '";
+$update .= $standardid;
+$update .= "';";
 
-include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php");
+$updateResult = pg_query($databaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 
-setLevelSessionVariablesChange($conn,$_SESSION["user_id"]);
-
-//fill php vars
-$returnString = "101,";
-$returnString .= $_SESSION["ref_id"];
-$returnString .= ",";
-$returnString .= $_SESSION["level"];
-$returnString .= ",";
-$returnString .= $_SESSION["standard"];
-$returnString .= ",";
-$returnString .= $_SESSION["progression"];
-$returnString .= ",";
-$returnString .= $_SESSION["levels"];
-echo $returnString;
 header("Location: /web/home/home.php");
-?>
 
+?>
