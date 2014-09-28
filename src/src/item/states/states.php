@@ -132,6 +132,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
 },
 
 exit: function(item)
@@ -164,6 +168,7 @@ enter: function(item)
 	item.hideQuestionShapes();
         item.hideToggleItemInfoButton();
         item.hideTogglePracticeInfoButton();
+        item.hideToggleCoreInfoButton();
 
         item.showStandard();
 },
@@ -181,6 +186,7 @@ exit: function(item)
         item.hideStandard();
         item.showToggleItemInfoButton();
         item.showTogglePracticeInfoButton();
+        item.showToggleCoreInfoButton();
 }
 
 });
@@ -204,6 +210,7 @@ enter: function(item)
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
         item.hideTogglePracticeInfoButton();
+        item.hideToggleCoreInfoButton();
 
         item.showItem();
 },
@@ -221,6 +228,7 @@ exit: function(item)
         item.hideItem();
         item.showToggleStandardInfoButton();
         item.showTogglePracticeInfoButton();
+        item.showToggleCoreInfoButton();
 }
 
 });
@@ -244,12 +252,14 @@ enter: function(item)
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
         item.hideToggleItemInfoButton();
+        item.hideToggleCoreInfoButton();
 
         item.showPractice();
 
         if(raphael != 0)
-          raphael.setSize(10,10);
-
+	{
+        	raphael.setSize(10,10);
+	}
 },
 
 execute: function(item)
@@ -265,6 +275,57 @@ exit: function(item)
         item.hidePractice();
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
+        item.showToggleCoreInfoButton();
+
+        if(raphael != 0)
+          raphael.setSize(630,360);
+}
+
+});
+
+var SHOW_CORE = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                APPLICATION.log('ITEM::SHOW_CORE');
+        }
+        item.hideQuestion();
+        item.hideAnswerInputs();
+        item.hideQuestionShapes();
+        item.hideToggleStandardInfoButton();
+        item.hideToggleItemInfoButton();
+        item.hideTogglePracticeInfoButton();
+
+        item.showCore();
+
+        if(raphael != 0)
+	{
+        	raphael.setSize(10,10);
+	}
+},
+
+execute: function(item)
+{
+        if (item.mShowCore == false)
+        {
+                item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
+        }
+},
+
+exit: function(item)
+{
+        item.hideCore();
+        item.showToggleStandardInfoButton();
+        item.showToggleItemInfoButton();
+        item.showTogglePracticeInfoButton();
 
         if(raphael != 0)
           raphael.setSize(630,360);
@@ -315,6 +376,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
 },
 
 exit: function(item)
@@ -362,6 +427,10 @@ execute: function(item)
 	if (item.mShowPractice)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
 	}
 },
 
@@ -418,6 +487,10 @@ execute: function(item)
 	if (item.mShowPractice)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
 	}
 },
 
@@ -477,6 +550,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
 },
 
 exit: function(item)
@@ -529,6 +606,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
 	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
 },
 
 exit: function(item)
@@ -569,6 +650,10 @@ execute: function(item)
 	if (item.mShowPractice)
 	{
                 item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+	}
+	if (item.mShowCore)
+	{
+                item.mStateMachine.changeState(item.mSHOW_CORE);
 	}
 },
 
