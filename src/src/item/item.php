@@ -46,6 +46,7 @@ var Item = new Class(
 		this.mStandardDescription = '';
 		this.mItemDescription = '';
 		this.mPracticeDescription = '';
+		this.mCoreDescription = '';
 		this.mType = 0; //uncategorized
 
 		//times 
@@ -85,6 +86,12 @@ var Item = new Class(
 		this.mLeavePracticeButton = 0;
 		this.mShowPractice = false;
 
+		//show coreStandard
+		this.mToggleCoreInfoButton = 0;
+		this.mCoreInfo = 0;
+		this.mCoreInfoButton = 0;
+		this.mShowCore = false;
+
 		//states
                 this.mStateMachine = new StateMachine(this);
 
@@ -107,6 +114,7 @@ var Item = new Class(
                 this.mSHOW_STANDARD = new SHOW_STANDARD(this);
                 this.mSHOW_ITEM = new SHOW_ITEM(this);
                 this.mSHOW_PRACTICE = new SHOW_PRACTICE(this);
+                this.mSHOW_CORE = new SHOW_CORE(this);
 
 		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
@@ -198,6 +206,21 @@ var Item = new Class(
 		this.mLeavePracticeButton = new LeavePracticeButton(200,50,575,225,this.mSheet.mGame,"BUTTON","","");
                 this.mLeavePracticeButton.mMesh.innerHTML = 'LEAVE PRACTICE';
                 this.addShape(this.mLeavePracticeButton);
+
+		//CORE
+                this.mToggleCoreInfoButton = new ToggleCoreInfoButton(150,40,50,422,this.mSheet.mGame,"BUTTON","","");
+                this.mToggleCoreInfoButton.mMesh.innerHTML = 'CORE INFO';
+                this.addShape(this.mToggleCoreInfoButton);
+                this.mToggleCoreInfoButton.setOutOfBoundsCheck(false);
+
+                //mCoreInfo
+                this.mCoreInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
+                this.addShape(this.mCoreInfo);
+
+                this.mCoreInfoButton = new SubmitCoreItemButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
+                this.mCoreInfoButton.mMesh.innerHTML = 'CORE ITEM';
+                this.addShape(this.mCoreInfoButton);
+
 
 	},
 
@@ -399,11 +422,23 @@ var Item = new Class(
 		}
         },
 
+        showCore: function()
+        {
+                this.mCoreInfo.setVisibility(true);
+                this.mCoreInfoButton.setVisibility(true);
+        },
+
         hidePractice: function()
         {      
                 this.mPracticeInfo.setVisibility(false);
                 this.mPracticeInfoButton.setVisibility(false);
                 this.mLeavePracticeButton.setVisibility(false);
+        },
+
+        hideCore: function()
+        {
+                this.mCoreInfo.setVisibility(false);
+                this.mCoreInfoButton.setVisibility(false);
         },
 
 	showAnswerInputs: function()
@@ -455,6 +490,7 @@ var Item = new Class(
 		this.showToggleItemInfoButton();
 		this.showToggleStandardInfoButton();
 		this.showTogglePracticeInfoButton();
+		this.showToggleCoreInfoButton();
 	},
 	
 	hideQuestion: function()
@@ -490,6 +526,16 @@ var Item = new Class(
         hideTogglePracticeInfoButton: function()
         {
                 this.mTogglePracticeInfoButton.setVisibility(false);
+        },
+
+        showToggleCoreInfoButton: function()
+        {
+                this.mToggleCoreInfoButton.setVisibility(true);
+        },
+
+        hideToggleCoreInfoButton: function()
+        {
+                this.mToggleCoreInfoButton.setVisibility(false);
         },
 
 	showQuestionShapes: function()
