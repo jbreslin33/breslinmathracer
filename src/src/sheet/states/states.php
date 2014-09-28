@@ -78,7 +78,14 @@ execute: function(sheet)
 
 exit: function(sheet)
 {
-	APPLICATION.normal();
+	if (APPLICATION.mRef_id == 'normal')
+	{
+		APPLICATION.normal();
+	}
+	else if (APPLICATION.mRef_id == 'practice')
+	{
+		APPLICATION.practice();
+	}	
 }
 });
 
