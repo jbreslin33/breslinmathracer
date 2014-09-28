@@ -10,7 +10,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//parse codes
 		this.FULL = 101;
@@ -56,9 +56,6 @@ Extends: Application,
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
                 this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
-                this.mADVANCE_TO_NEXT_LEVEL_APPLICATION = new ADVANCE_TO_NEXT_LEVEL_APPLICATION(this);
-                this.mREWIND_TO_PREVIOUS_LEVEL_APPLICATION = new REWIND_TO_PREVIOUS_LEVEL_APPLICATION(this);
-                this.mREMEDIATE_APPLICATION                 = new REMEDIATE_APPLICATION(this);
                 this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
                 this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
 
@@ -242,38 +239,6 @@ Extends: Application,
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
-                xmlhttp.send();
-        },
-
-	remediate: function(typeid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-		}
-                xmlhttp.open("POST","../../web/php/remediate.php?typeid=" + typeid,true);
                 xmlhttp.send();
         },
 
@@ -501,71 +466,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	advanceToNextLevel: function()
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-      			{
-        			if (xmlhttp.responseText)
-         			{
-            				if (typeof(xmlhttp.responseText)=="unknown")
-                        		{
-                                		return("");
-                        		}
-                        		else
-                        		{
-						APPLICATION.parseResponse(xmlhttp.responseText);
-					}
-				}
-			}
-                }
-                xmlhttp.open("POST","../../web/php/advance.php",true);
-                xmlhttp.send();
-        },
-
-       	advanceToLastLevel: function()
-        {
-                var xmlhttp;
-
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-		}
-                xmlhttp.open("POST","../../web/php/rewind.php",true);
-                xmlhttp.send();
-        },
- 	
 	/**************** GAME DECIDER *******/
 	// are we running the right game??
 	gameDecider: function()
