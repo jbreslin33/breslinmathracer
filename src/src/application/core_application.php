@@ -35,6 +35,7 @@ Extends: Application,
 		this.mProgression = 0;
 		this.mStandard = '';
 		this.mRawData = 0;
+		this.mType = '';
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
@@ -283,7 +284,14 @@ Extends: Application,
                                 }
                         }
 		}
-                xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid,true);
+		if (this.mRef_id == 'practice')
+		{
+                	xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid + "&start_new=0",true);
+		}
+		else
+		{
+                	xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid + "&start_new=1",true);
+		}	
                 xmlhttp.send();
         },
 

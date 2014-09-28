@@ -84,7 +84,7 @@ exit: function(sheet)
 	}
 	else if (APPLICATION.mRef_id == 'practice')
 	{
-		APPLICATION.practice();
+		APPLICATION.practice(APPLICATION.mType);
 	}	
 }
 });
