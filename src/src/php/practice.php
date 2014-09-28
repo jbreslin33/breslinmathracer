@@ -36,6 +36,7 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
        		if ($num > 0)
        		{
                		$this->mTypeID = pg_Result($result, 0, 'item_types_id');
+			$_SESSION["item_types_id"] = $this->mTypeID;
 		}
 		else 
 		{

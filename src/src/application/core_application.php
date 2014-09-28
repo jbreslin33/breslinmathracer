@@ -88,10 +88,6 @@ Extends: Application,
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
-		
-				//for now if you get a full i gonna say run a new game.	
-				//APPLICATION.gameDecider();
-
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
@@ -212,21 +208,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	sendEvaluationsAttempts: function(itemtypesid,transactioncode)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.open("POST","../../web/php/send_evaluations_attempts.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
-                xmlhttp.send();
-        },
-	
 	sendItemAttempt: function(itemtypesid,transactioncode)
         {
                 var xmlhttp;
@@ -470,7 +451,6 @@ Extends: Application,
 	// are we running the right game??
 	gameDecider: function()
 	{
-
 		//if already have a game destroy it.
 		if (this.mGame)
 		{
