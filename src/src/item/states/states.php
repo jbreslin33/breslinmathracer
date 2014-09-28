@@ -85,6 +85,7 @@ enter: function(item)
 
 	//show item type id in Game hud
 	APPLICATION.mHud.setProgression(item.mType);	
+	APPLICATION.mType = item.mType;	
 
 	//hud question number	
 	APPLICATION.mHud.setProgressedTypeID(item.mProgressedTypeID);	
