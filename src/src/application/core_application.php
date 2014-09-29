@@ -59,6 +59,7 @@ Extends: Application,
                 this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
                 this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
+                this.mCORE_APPLICATION                 = new CORE_APPLICATION(this);
                 this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
@@ -300,6 +301,39 @@ Extends: Application,
 		}	
                 xmlhttp.send();
         },
+       
+	core: function(standardid)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/update/updatestandardid.php?standardid=" + standardid,true);
+                xmlhttp.send();
+        },
+
 
         leavePractice: function(typeid)
         {

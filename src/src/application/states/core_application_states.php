@@ -166,6 +166,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
 	}
+	if (application.mGotoCore)
+	{
+		application.mCoreStateMachine.changeState(application.mCORE_APPLICATION);
+	}
 	
 	if (application.mLeavePractice)
 	{
@@ -214,6 +218,40 @@ exit: function(application)
 }
 
 });
+
+var CORE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::CORE_APPLICATION');
+        }
+        application.mWaitForReturn = true;
+        application.core(application.mGame.mSheet.getItem().mCoreInfo.mMesh.options[application.mGame.mSheet.getItem().mCoreInfo.mMesh.selectedIndex].text);
+},
+
+execute: function(application)
+{
+        if (application.mWaitForReturn == false)
+        {
+                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+        application.mGame.mReadyForNormalApplication = false;
+}
+
+});
+
 
 var LEAVE_PRACTICE_APPLICATION = new Class(
 {

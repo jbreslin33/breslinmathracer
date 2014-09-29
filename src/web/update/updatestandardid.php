@@ -1,10 +1,10 @@
 <?php
-include(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 
 //start new session
 session_start();
-$standardid = $_POST['standardid'];
+$standardid = $_GET["standardid"];
+
 $databaseConnection = new DatabaseConnection();
 
 $update = "update users SET core_standards_id = '";
