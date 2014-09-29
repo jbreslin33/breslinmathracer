@@ -1,5 +1,6 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
 
 //start new session
 session_start();
@@ -13,6 +14,8 @@ $update .= "';";
 
 $updateResult = pg_query($databaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 
-header("Location: /web/home/home.php");
+//do normal php
+$normal = new Normal(1);
 
+include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
 ?>
