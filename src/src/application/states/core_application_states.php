@@ -249,6 +249,7 @@ execute: function(application)
 exit: function(application)
 {
         application.mGame.mReadyForNormalApplication = false;
+        application.normal();
 }
 
 });
