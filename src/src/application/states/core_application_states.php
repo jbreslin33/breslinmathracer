@@ -181,6 +181,7 @@ exit: function(application)
 	application.mLevelCompleted = false;
 	application.mEvaluationFailed = false;
 	application.mGotoPractice = false;
+	application.mGotoCore = false;
 	application.mLeavePractice = false;
 }
 
