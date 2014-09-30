@@ -9,6 +9,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_1';
+	this.mThresholdTime = 5000;
         this.setQuestion('2 x 2');
         this.setAnswer('4',0);
 }
