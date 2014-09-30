@@ -20,6 +20,7 @@ Extends: Application,
 		this.PRACTICE_DESCRIPTION = 108;
 		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
+		this.UPDATED_STANDARD_ID = 111;
 
 		//personal info
 		this.mUsername = '';
@@ -87,6 +88,8 @@ Extends: Application,
                         	APPLICATION.mFirstName = responseArray[4];
                         	APPLICATION.mLastName = responseArray[5];
                         	APPLICATION.mRawData = responseArray[6];
+		
+				APPLICATION.log('mRawData:' + APPLICATION.mRawData); 
 
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
@@ -116,6 +119,13 @@ Extends: Application,
                         {
                                 //APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
                                 //APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
+                        }
+			if (codeNumber == APPLICATION.UPDATED_STANDARD_ID)
+                        {
+				APPLICATION.mWaitForReturn = false; 
+				APPLICATION.log('UPDATED_STANDARD_ID') ; 
+                                //APPLICATION.mGame.mSheet.mItem.mCoreDescription = responseArray[1];
+                                //APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }
 		}
 	},
