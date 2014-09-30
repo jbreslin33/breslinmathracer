@@ -7,9 +7,9 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_1';
-        this.setQuestion('2x2');
+        this.setQuestion('2 x 2');
         this.setAnswer('4',0);
 }
 });
@@ -23,7 +23,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_2';
         this.setQuestion('2x3');
         this.setAnswer('6',0);
@@ -39,7 +39,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_3';
         this.setQuestion('3x2');
         this.setAnswer('6',0);
@@ -55,7 +55,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_4';
         this.setQuestion('2x4');
         this.setAnswer('8',0);
@@ -71,7 +71,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_5';
         this.setQuestion('4x2');
         this.setAnswer('8',0);
@@ -87,7 +87,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_6';
         this.setQuestion('2x5');
         this.setAnswer('10',0);
@@ -103,7 +103,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mType = '3.oa.c.7_7';
         this.setQuestion('5x2');
         this.setAnswer('10',0);
