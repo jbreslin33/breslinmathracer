@@ -142,7 +142,6 @@ exit: function(item)
 {
    	if (item.mUserAnswer != '')
 	{
-		APPLICATION.log('mType:' + item.mType);
                 APPLICATION.sendItemAttempt(item.mType,item.mStatus);
 		
 	}
