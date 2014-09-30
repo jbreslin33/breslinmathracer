@@ -643,3 +643,462 @@ initialize: function(sheet)
         this.setAnswer('28',0);
 }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_39',3.0739,'3.oa.c.7','7x4');
+*/
+var i_3_oa_c_7__39 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_39';
+	this.mThresholdTime = 5000;
+        this.setQuestion('7x4');
+        this.setAnswer('28',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_40',3.0740,'3.oa.c.7','4x8');
+*/
+var i_3_oa_c_7__40 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_40';
+	this.mThresholdTime = 5000;
+        this.setQuestion('4x8');
+        this.setAnswer('32',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_41',3.0741,'3.oa.c.7','8x4');
+*/
+var i_3_oa_c_7__41 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_41';
+	this.mThresholdTime = 5000;
+        this.setQuestion('8x4');
+        this.setAnswer('32',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_42',3.0742,'3.oa.c.7','4x9');
+*/
+var i_3_oa_c_7__42 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_42';
+	this.mThresholdTime = 5000;
+        this.setQuestion('4x9');
+        this.setAnswer('36',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_43',3.0743,'3.oa.c.7','9x4');
+*/
+var i_3_oa_c_7__43 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_43';
+	this.mThresholdTime = 5000;
+        this.setQuestion('9x4');
+        this.setAnswer('36',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_44',3.0744,'3.oa.c.7','4x10');
+*/
+var i_3_oa_c_7__44 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_44';
+	this.mThresholdTime = 5000;
+        this.setQuestion('4x10');
+        this.setAnswer('40',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_45',3.0745,'3.oa.c.7','10x4');
+*/
+var i_3_oa_c_7__45 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_45';
+	this.mThresholdTime = 5000;
+        this.setQuestion('10x4');
+        this.setAnswer('40',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_46',3.0746,'3.oa.c.7','5x5');
+*/
+var i_3_oa_c_7__46 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_46';
+	this.mThresholdTime = 5000;
+        this.setQuestion('5x5');
+        this.setAnswer('25',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_47',3.0747,'3.oa.c.7','5x6');
+*/
+var i_3_oa_c_7__47 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_47';
+	this.mThresholdTime = 5000;
+        this.setQuestion('5x6');
+        this.setAnswer('30',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_48',3.0748,'3.oa.c.7','6x5');
+*/
+var i_3_oa_c_7__48 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_48';
+	this.mThresholdTime = 5000;
+        this.setQuestion('6x5');
+        this.setAnswer('30',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_49',3.0749,'3.oa.c.7','5x7');
+*/
+var i_3_oa_c_7__49 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_49';
+	this.mThresholdTime = 5000;
+        this.setQuestion('5x7');
+        this.setAnswer('35',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_50',3.0750,'3.oa.c.7','7x5');
+*/
+var i_3_oa_c_7__50 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_50';
+	this.mThresholdTime = 5000;
+        this.setQuestion('7x5');
+        this.setAnswer('35',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_51',3.0751,'3.oa.c.7','5x8');
+*/
+var i_3_oa_c_7__51 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_51';
+	this.mThresholdTime = 5000;
+        this.setQuestion('5x8');
+        this.setAnswer('40',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_52',3.0752,'3.oa.c.7','8x5');
+*/
+var i_3_oa_c_7__52 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_52';
+	this.mThresholdTime = 5000;
+        this.setQuestion('8x5');
+        this.setAnswer('40',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_53',3.0753,'3.oa.c.7','5x9');
+*/
+var i_3_oa_c_7__53 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_53';
+	this.mThresholdTime = 5000;
+        this.setQuestion('5x9');
+        this.setAnswer('45',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_54',3.0754,'3.oa.c.7','9x5');
+*/
+var i_3_oa_c_7__54 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_54';
+	this.mThresholdTime = 5000;
+        this.setQuestion('9x5');
+        this.setAnswer('45',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_55',3.0755,'3.oa.c.7','5x10');
+*/
+var i_3_oa_c_7__55 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_55';
+	this.mThresholdTime = 5000;
+        this.setQuestion('5x10');
+        this.setAnswer('50',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_56',3.0756,'3.oa.c.7','10x5');
+*/
+var i_3_oa_c_7__56 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_56';
+	this.mThresholdTime = 5000;
+        this.setQuestion('10x5');
+        this.setAnswer('50',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_57',3.0757,'3.oa.c.7','6x6');
+*/
+var i_3_oa_c_7__57 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_57';
+	this.mThresholdTime = 5000;
+        this.setQuestion('6x6');
+        this.setAnswer('36',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_58',3.0758,'3.oa.c.7','6x7');
+*/
+var i_3_oa_c_7__58 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_58';
+	this.mThresholdTime = 5000;
+        this.setQuestion('6x7');
+        this.setAnswer('42',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_59',3.0759,'3.oa.c.7','7x6');
+*/
+var i_3_oa_c_7__59 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_59';
+	this.mThresholdTime = 5000;
+        this.setQuestion('7x6');
+        this.setAnswer('42',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_60',3.0760,'3.oa.c.7','6x8');
+*/
+var i_3_oa_c_7__60 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_60';
+	this.mThresholdTime = 5000;
+        this.setQuestion('6x8');
+        this.setAnswer('48',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_61',3.0761,'3.oa.c.7','8x6');
+*/
+var i_3_oa_c_7__61 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_61';
+	this.mThresholdTime = 5000;
+        this.setQuestion('8x6');
+        this.setAnswer('48',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_62',3.0762,'3.oa.c.7','6x9');
+*/
+var i_3_oa_c_7__62 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_62';
+	this.mThresholdTime = 5000;
+        this.setQuestion('6x9');
+        this.setAnswer('54',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_63',3.0763,'3.oa.c.7','9x6');
+*/
+var i_3_oa_c_7__63 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_63';
+	this.mThresholdTime = 5000;
+        this.setQuestion('9x6');
+        this.setAnswer('54',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_64',3.0764,'3.oa.c.7','6x10');
+*/
+var i_3_oa_c_7__64 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_64';
+	this.mThresholdTime = 5000;
+        this.setQuestion('6x10');
+        this.setAnswer('60',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_65',3.0765,'3.oa.c.7','10x6');
+*/
+var i_3_oa_c_7__65 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.mType = '3.oa.c.7_65';
+	this.mThresholdTime = 5000;
+        this.setQuestion('10x6');
+        this.setAnswer('60',0);
+}
+});
