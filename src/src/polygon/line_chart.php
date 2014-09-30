@@ -94,12 +94,13 @@ for (var i = 0; i < this.mPolygon.axis[0].text.items.length; i++) {
     }).toBack();
 }
 
-		this.mPolygon.mPolygon = this;
 
-		if (this.mDrag)
-		{
- 			this.mPolygon.drag(this.move, this.start, this.up);
-		}
+this.mPolygon.mPolygon = this;
+
+if (this.mDrag)
+{
+ 		this.mPolygon.drag(this.move, this.start, this.up);
+}
 	
 
 
@@ -111,7 +112,9 @@ var tableHeight = 200;
 var tableX = 330;
 var tableY = 125;
 var cols = 3;
-var rows = 4;
+var rows = 5;
+var colWidth = tableWidth/cols;
+var rowHeight = tableHeight/rows; 
 
 // table perimeter
 var box = new Rectangle(tableWidth,tableHeight,tableX,tableY,this.mGame,raphael,.5,.5,.5,"#000",.3,false);
@@ -138,6 +141,28 @@ for (var i = 0; i < 3; i++) {
     var line = new LineOne (this.mGame,raphael,x, tableY, x, tableY+tableHeight,"#000000",false);
 
     item.addQuestionShape(line);
+}
+
+// Fill in table
+var startX = tableX + colWidth/2;
+var startY = tableY + rowHeight/2;
+var tweakX = 4;
+var tweakY = -10;
+
+var table = [["Point","X","Y"],["A", ''+pointsX[0], ''+pointsY[0]],["B",pointsX[1], pointsY[1]],["C",pointsX[2], pointsY[2]],["D","",""]];
+
+var y = tableY+rY1+(rowHeight/2)+tweakY;
+var x = tableX+rX1+(colWidth/2)+tweakX;
+
+for (var i = 0; i < 5; i++) {
+
+  for (var j = 0; j < 3; j++) {
+
+     colHead1 = new Shape(50,25,x+(j*50),y+(i*40),this.mGame,"","","");
+     colHead1.setText(table[i][j]);
+
+     item.addQuestionShape(colHead1);
+  }
 }
 
 
