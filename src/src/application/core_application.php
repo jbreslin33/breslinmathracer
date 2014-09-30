@@ -10,7 +10,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 
 		//parse codes
 		this.FULL = 101;
@@ -89,8 +89,6 @@ Extends: Application,
                         	APPLICATION.mLastName = responseArray[5];
                         	APPLICATION.mRawData = responseArray[6];
 		
-				APPLICATION.log('mRawData:' + APPLICATION.mRawData); 
-
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
@@ -123,7 +121,6 @@ Extends: Application,
 			if (codeNumber == APPLICATION.UPDATED_STANDARD_ID)
                         {
 				APPLICATION.mWaitForReturn = false; 
-				APPLICATION.log('UPDATED_STANDARD_ID') ; 
                                 //APPLICATION.mGame.mSheet.mItem.mCoreDescription = responseArray[1];
                                 //APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }

@@ -23,7 +23,6 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-		APPLICATION.log('core hit');
 		APPLICATION.mGotoCore = true;
         }
 });
