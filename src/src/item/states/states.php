@@ -102,6 +102,7 @@ execute: function(item)
         else if (APPLICATION.mGame.mTimeSinceEpoch > item.mQuestionStartTime + item.mThresholdTime)
         {
         	item.mOutOfTime = true;
+                item.mStatus = 2;
                 item.mStateMachine.changeState(item.mOUT_OF_TIME_ITEM);
 	}
 
@@ -141,11 +142,7 @@ execute: function(item)
 
 exit: function(item)
 {
-   	if (item.mUserAnswer != '')
-	{
-                APPLICATION.sendItemAttempt(item.mType,item.mStatus);
-		
-	}
+	APPLICATION.sendItemAttempt(item.mType,item.mStatus);
 }
 });
 
