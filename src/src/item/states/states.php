@@ -74,7 +74,6 @@ enter: function(item)
 	if (item.mQuestionStartTime == 0)
 	{
        		item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
-		APPLICATION.log('mQuestionStartTime:' + item.mQuestionStartTime); 
 	}
 	
 	item.showQuestion();
