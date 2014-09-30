@@ -74,6 +74,7 @@ enter: function(item)
 	if (item.mQuestionStartTime == 0)
 	{
        		item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
+		APPLICATION.log('mQuestionStartTime:' + item.mQuestionStartTime); 
 	}
 	
 	item.showQuestion();
@@ -101,7 +102,7 @@ execute: function(item)
         else if (APPLICATION.mGame.mTimeSinceEpoch > item.mQuestionStartTime + item.mThresholdTime)
         {
         	item.mOutOfTime = true;
-                item.mStateMachine.changeState(item.mOUT_OF_TIME);
+                item.mStateMachine.changeState(item.mOUT_OF_TIME_ITEM);
 	}
 
 	//you should check mUserAnswer in item here....
@@ -632,33 +633,15 @@ enter: function(item)
 	{
 		APPLICATION.log('ITEM::OUT_OF_TIME_ITEM');
 	}
-        item.outOfTimeEnter();
 },
 
 execute: function(item)
 {
-        item.outOfTimeExecute();
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
+ 	item.mStateMachine.changeState(item.mSHOW_CORRECT_ANSWER_ITEM);
 },
 
 exit: function(item)
 {
-        item.outOfTimeExit();
 }
 
 });
