@@ -30,7 +30,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write expression based on word problem. Fractions. Words: groups, more than');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_11',5.0211,'5.oa.a.2','Write a numerical expression based on word problem. Fractions. Words: groups, more than');
 */
 
 var i_5_oa_a_2__11 = new Class(
@@ -67,7 +67,7 @@ Extends: TextItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','Write expression based on word problem. Words: more than, times that many');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_10',5.0210,'5.oa.a.2','Write a numerical expression based on word problem. Words: more than, times that many');
 */
 
 var i_5_oa_a_2__10 = new Class(
@@ -85,7 +85,7 @@ Extends: TextItem,
                 this.y = Math.floor((Math.random()*8)+2);
                 this.z = Math.floor((Math.random()*8)+2);
 
-                this.setQuestion(this.ns.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.z + ' times that many ' + this.ns.mThingOne + '. Write an expression that represents this.');
+                this.setQuestion(this.ns.mNameOne + ' has ' + this.x + ' more than ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.z + ' times that many ' + this.ns.mThingOne + '. Write a numerical expression that represents this.');
 
                 this.setAnswer('(' + this.x + '+' +  this.y + ')' + this.z,0);
                 this.setAnswer('(' + this.y + '+' +  this.x + ')' + this.z,1);
@@ -123,7 +123,7 @@ Extends: TextItem,
                 this.y = Math.floor((Math.random()*8)+2);
                 this.z = Math.floor((Math.random()*8)+2);
 
-		this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.y + ' minutes fewer than an hour. ' + this.ns.mNameTwo + ' played for ' + this.z + ' times as long as ' + this.ns.mNameOne + '. Write an expression that represents this.');   
+		this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.y + ' minutes fewer than an hour. ' + this.ns.mNameTwo + ' played for ' + this.z + ' times as long as ' + this.ns.mNameOne + '. Write a numerical expression that represents this.');   
                 this.setAnswer('(60-' + this.y + ')' + this.z,0);
                 this.setAnswer(this.z + '(60-' + this.y + ')',1);
                 
@@ -155,7 +155,7 @@ Extends: TextItem,
                 this.y = Math.floor((Math.random()*8)+2)
                 this.x = parseInt( (this.factor * this.z) + this.y );
 
-                this.setQuestion('Before lunch the cafeteria at ' + this.ns.mSchoolOne + ' had ' + this.x + ' ' + this.ns.mFruitOne + '. After lunch the cafeteria had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.ns.mPlayedActivityOne + ' team. Write an expression that represents this.');
+                this.setQuestion('Before lunch the cafeteria at ' + this.ns.mSchoolOne + ' had ' + this.x + ' ' + this.ns.mFruitOne + '. After lunch the cafeteria had ' + this.y + ' less. The remaining were divided among the ' + this.z + ' players on the ' + this.ns.mPlayedActivityOne + ' team. Write a numerical expression that represents this.');
 
                 this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
         }
@@ -181,7 +181,7 @@ Extends: TextItem,
 		this.y = Math.floor((Math.random()*8)+2) 		
 		this.x = parseInt( (this.factor * this.z) + this.y );
 
-                this.setQuestion(this.ns.mNameOne + ' had ' + this.x + ' ' + this.ns.mFruitOne + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Write an expression that represents this.');
+                this.setQuestion(this.ns.mNameOne + ' had ' + this.x + ' ' + this.ns.mFruitOne + ', ' + this.y + ' of them were rotten so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0) + ' threw them out. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1) + ' gave the rest out evenly to ' + this.z + ' friends. Write a numerical expression that represents this.');
                 
 		this.setAnswer('('+this.x+'-'+this.y+')/'+this.z,0);
         }
@@ -205,7 +205,7 @@ Extends: TextItem,
                	var a = parseInt(b*f);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: The quotient of ' + a + ' and ' + b + ' increased by ' + c  );
+                this.setQuestion('Write a numerical expression that matches this: The quotient of ' + a + ' and ' + b + ' increased by ' + c  );
                 this.setAnswer(a + '/' + b + '+' + c,0);
                 this.setAnswer(c + '+' + a + '/' + b,1);
         }
@@ -229,7 +229,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: The product of ' + a + ' and ' + b + ' decreased by ' + c  );
+                this.setQuestion('Write a numerical expression that matches this: The product of ' + a + ' and ' + b + ' decreased by ' + c  );
                 this.setAnswer(a + 'x' + b + '-' + c,0);
                 this.setAnswer(a + 'x' + b + '-' + c,1);
                 
@@ -255,7 +255,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: ' + a + ' less than the product of ' + b + ' and ' + c  );
+                this.setQuestion('Write a numerical expression that matches this: ' + a + ' less than the product of ' + b + ' and ' + c  );
                 this.setAnswer(b + 'x' + c + '-' + a,0);
                 this.setAnswer(b + '*' + c + '-' + a,1);
                 
@@ -281,7 +281,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*5+1);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: The difference of ' + a + ' and ' + b + ' times ' + c );
+                this.setQuestion('Write a numerical expression that matches this: The difference of ' + a + ' and ' + b + ' times ' + c );
                 this.setAnswer('(' + a + '-' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '-' + b + ')',1);
                 
@@ -310,7 +310,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
+                this.setQuestion('Write a numerical expression that matches this: ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
                 this.setAnswer('(' + b + '+' + a + ')' + c,2);
@@ -348,7 +348,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write an expression that matches this: Add ' + a + ' and ' + b + ' then multiply by ' + c + '.');
+                this.setQuestion('Write a numerical expression that matches this: Add ' + a + ' and ' + b + ' then multiply by ' + c + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
                 this.setAnswer('(' + b + '+' + a + ')' + c,2);
