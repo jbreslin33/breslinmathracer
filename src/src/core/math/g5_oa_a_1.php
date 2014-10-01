@@ -1039,7 +1039,106 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_40',5.010040,'5.oa.a.1','Write expression based off word description.');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_45',5.010045,'5.oa.a.1','Braces.');
+*/
+
+var i_5_oa_a_1__0_45 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_45';
+	
+	this.setQuestion('When you need to group part of an expression containing parenthesis and brackets you should use what grouping symbol?'); 
+        this.setAnswer('brace',0);
+        this.setAnswer('braces',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_44',5.010044,'5.oa.a.1','Brackets.');
+*/
+
+var i_5_oa_a_1__0_44 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_44';
+	
+	this.setQuestion('When you need to group part of an expression containing parenthesis you should use what grouping symbol?'); 
+        this.setAnswer('brackets',0);
+        this.setAnswer('bracket',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_43',5.010043,'5.oa.a.1','Pemdas.');
+*/
+
+var i_5_oa_a_1__0_43 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_43';
+	
+	this.setQuestion('Name the order of operations. Use letters instead of names. For example use m for multiply.'); 
+        this.setAnswer('pemdas',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_42',5.010042,'5.oa.a.1','Grouping symbols definition.');
+*/
+
+var i_5_oa_a_1__0_42 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_42';
+	
+	this.mChopWhiteSpace = false;
+
+	this.setQuestion('Parenthesis, brackets and braces are examples of?'); 
+        this.setAnswer('grouping symbols',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_41',5.010041,'5.oa.a.1','Evaluate defination');
+*/
+
+var i_5_oa_a_1__0_41 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_41';
+	
+	this.setQuestion('What is the word that means to find the value of an expression?'); 
+        this.setAnswer('evaluate',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_40',5.010040,'5.oa.a.1','Numerical expression definition.');
 */
 
 var i_5_oa_a_1__0_40 = new Class(
@@ -1059,3 +1158,40 @@ initialize: function(sheet)
 }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_39',5.010039,'5.oa.a.1','Expression definition.');
+*/
+
+var i_5_oa_a_1__0_39 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_39';
+	
+	this.setQuestion('What is the name for a mathematical phrase containing numbers, letters and one or more operation symbols?'); 
+        this.setAnswer('expression',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_39',5.010039,'5.oa.a.1','Equation definition.');
+*/
+
+var i_5_oa_a_1__0_38 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_38';
+	
+	this.setQuestion('A written statement indicating the equality of two expressions. It consists of a sequence of symbols that is split into left and right sides joined by an equal sign.'); 
+        this.setAnswer('equation',0);
+}
+});
