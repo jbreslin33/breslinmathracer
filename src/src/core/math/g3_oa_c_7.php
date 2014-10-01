@@ -11,8 +11,6 @@ initialize: function(sheet)
         this.mType = '3.oa.c.7_1';
 	this.mThresholdTime = 5000;
 
-	this.mClockTimer = new ClockTimer(APPLICATION);
-
         this.setQuestion('2 x 2');
         this.setAnswer('4',0);
 }
