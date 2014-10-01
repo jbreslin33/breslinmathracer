@@ -83,28 +83,30 @@ Extends: Timer,
 		}
 */
  //APPLICATION.mGame.mSheet.mItem
- 		if (this.mApplication.mGame.mSheet.mItem.mStateMachine.mCurrentState == this.mApplication.mGame.mSheet.mItem.mWAITING_ON_ANSWER)
-                {
-                        if (this.mApplication.mGame.mSheet.mItem.mThresholdTime == 0)
-                        {
-                                this.hide();
-                        }
-                        else
-                        {
-                                this.show();
-                                this.mFirstTimeWaitingOnAnswer == false;
-                                if (this.mApplication.mGame.mSheet.mItem.mQuestionStartTime > 0)
-                                {
-                                        this.mThresh = parseInt(this.mApplication.mGame.mSheet.mItem.mThresholdTime/1000);
-                                        this.mValueInSeconds = parseInt(360/this.mThresh);
+ 		if (this.mApplication.mGame.mSheet.mItem)
+		{
+ 			if (this.mApplication.mGame.mSheet.mItem.mStateMachine.mCurrentState == this.mApplication.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM)
+                	{
+                        	if (this.mApplication.mGame.mSheet.mItem.mThresholdTime == 0)
+                        	{
+                                	this.hide();
+                        	}
+                        	else
+                       		{
+                                	this.show();
+                                	this.mFirstTimeWaitingOnAnswer == false;
+                                	if (this.mApplication.mGame.mSheet.mItem.mQuestionStartTime > 0)
+                                	{
+                                        	this.mThresh = parseInt(this.mApplication.mGame.mSheet.mItem.mThresholdTime/1000);
+                                        	this.mValueInSeconds = parseInt(360/this.mThresh);
 
-                                        this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mSheet.mItem.mQuestionStartTime);
-                                        this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
-                                        this.setTimer();
-                                }
-                        }
-                }
-
+                                        	this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mSheet.mItem.mQuestionStartTime);
+                                        	this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
+                                        	this.setTimer();
+                                	}
+                        	}
+                	}
+		}
 		else //just reset clock
 		{
                         this.minute_hand.transform("");

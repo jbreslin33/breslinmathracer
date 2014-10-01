@@ -9,6 +9,8 @@ var Item = new Class(
 		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
+		
+		this.mClock = new ClockTimer(APPLICATION);
 
 		//answer control vars
 		this.mChopWhiteSpace = true;
@@ -121,6 +123,7 @@ var Item = new Class(
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
 
+
 	},
 
 	setTheFocus: function()
@@ -219,8 +222,6 @@ var Item = new Class(
                 this.mCoreInfoButton = new SubmitCoreItemButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mCoreInfoButton.mMesh.innerHTML = 'CORE ITEM';
                 this.addShape(this.mCoreInfoButton);
-
-
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
