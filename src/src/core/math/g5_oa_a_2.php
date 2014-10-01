@@ -378,7 +378,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_43;
+        this.mType = '5.oa.a.1_0_43';
 
         this.setQuestion('What do we call the result of dividing one number from another?');
         this.setAnswer('quotient',0);
@@ -398,7 +398,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_42;
+        this.mType = '5.oa.a.1_0_42';
 
         this.setQuestion('What do we call the result of multiplying one number with another?');
         this.setAnswer('product',0);
