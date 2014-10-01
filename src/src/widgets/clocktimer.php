@@ -83,7 +83,7 @@ Extends: Timer,
 
         createTimer: function()
         {
-                this.canvas = Raphael(550,200,200,200);
+                this.canvas = Raphael(550,150,200,200);
                 this.clock = this.canvas.circle(100,100,95);
                 this.clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
                 for(i=0;i<12;i++)
