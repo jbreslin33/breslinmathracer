@@ -14,78 +14,41 @@ Extends: Timer,
 	update: function()
 	{
 		this.parent();
-/*
-		if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mFIRST_TIME)
+ 		if (this.mApplication.mGame.mSheet.mItem)
 		{
-			if (this.mApplication.mGame.mThresholdTime == 0)
-			{
-				this.hide();
-			}
-			else
-			{
-				this.show();
-			}
-		}
-
-		if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mWAITING_ON_ANSWER)
-                {
-			if (this.mApplication.mGame.mThresholdTime == 0)
-			{
-				this.hide();
-			}
-			else
-			{
-				this.show();
-				this.mFirstTimeWaitingOnAnswer == false; 
-				if (this.mApplication.mGame.mQuestionStartTime > 0)
+			if (this.mApplication.mGame.mSheet.mItem.mStateMachine.mCurrentState == this.mApplication.mGame.mSheet.mItem.mSHOW_CORRECT_ANSWER_ITEM)
+                	{
+				if (this.mApplication.mGame.mSheet.mItem.mCorrectAnswerThresholdTime == 0)
 				{
-					this.mThresh = parseInt(this.mApplication.mGame.mThresholdTime/1000);
+					this.hide();
+				}
+				else
+				{
+					this.show();
+					this.mThresh = parseInt(this.mApplication.mGame.mSheet.mItem.mCorrectAnswerThresholdTime/1000);
 					this.mValueInSeconds = parseInt(360/this.mThresh); 
-
-					this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - this.mApplication.mGame.mQuestionStartTime);	
+					this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - parseInt(this.mApplication.mGame.mSheet.mItem.mCorrectAnswerStartTime));	
 					this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
 					this.setTimer();
 				}
 			}
-		}
-
-		else if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mSHOW_CORRECT_ANSWER)
-                {
-			if (this.mApplication.mGame.mCorrectAnswerThresholdTime == 0)
-			{
-				this.hide();
+			else if (this.mApplication.mGame.mSheet.mItem.mStateMachine.mCurrentState == this.mApplication.mGame.mOUT_OF_TIME_ITEM)
+                	{
+				if (this.mApplication.mGame.mSheet.mItem.mCorrectAnswerThresholdTime == 0)
+				{	
+					this.hide();
+				}
+				else
+				{
+					this.show();
+					this.mThresh = parseInt(this.mApplication.mGame.mSheet.mItem.mCorrectAnswerThresholdTime/1000);
+					this.mValueInSeconds = parseInt(360/this.mThresh); 
+					this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - parseInt(this.mApplication.mGame.mCorrectAnswerStartTime));	
+					this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
+					this.setTimer();
+				}
 			}
-			else
-			{
-				this.show();
-				this.mThresh = parseInt(this.mApplication.mGame.mCorrectAnswerThresholdTime/1000);
-				this.mValueInSeconds = parseInt(360/this.mThresh); 
-				this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - parseInt(this.mApplication.mGame.mCorrectAnswerStartTime));	
-				this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
-				this.setTimer();
-			}
-		}
-		else if (this.mApplication.mGame.mStateMachine.mCurrentState == this.mApplication.mGame.mOUT_OF_TIME)
-                {
-			if (this.mApplication.mGame.mCorrectAnswerThresholdTime == 0)
-			{	
-				this.hide();
-			}
-			else
-			{
-				this.show();
-				this.mThresh = parseInt(this.mApplication.mGame.mCorrectAnswerThresholdTime/1000);
-				this.mValueInSeconds = parseInt(360/this.mThresh); 
-				this.mElapsedTime = parseInt(this.mApplication.mGame.mTimeSinceEpoch - parseInt(this.mApplication.mGame.mCorrectAnswerStartTime));	
-				this.mElapsedTime  = parseInt(this.mElapsedTime / 1000);
-				this.setTimer();
-			}
-		}
-*/
- //APPLICATION.mGame.mSheet.mItem
- 		if (this.mApplication.mGame.mSheet.mItem)
-		{
- 			if (this.mApplication.mGame.mSheet.mItem.mStateMachine.mCurrentState == this.mApplication.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM)
+ 			else if (this.mApplication.mGame.mSheet.mItem.mStateMachine.mCurrentState == this.mApplication.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM)
                 	{
                         	if (this.mApplication.mGame.mSheet.mItem.mThresholdTime == 0)
                         	{
