@@ -556,6 +556,14 @@ getItem: function(id)
 
 	/*** GRADE 5 ***/
 	//5.oa.a.1
+	if (id == '5.oa.a.1_0_38')
+        {
+                return new i_5_oa_a_1__0_38(this.mSheet);
+        }
+	if (id == '5.oa.a.1_0_39')
+        {
+                return new i_5_oa_a_1__0_39(this.mSheet);
+        }
 	if (id == '5.oa.a.1_0_40')
         {
                 return new i_5_oa_a_1__0_40(this.mSheet);
@@ -575,6 +583,10 @@ getItem: function(id)
 	if (id == '5.oa.a.1_0_44')
         {
                 return new i_5_oa_a_1__0_44(this.mSheet);
+        }
+	if (id == '5.oa.a.1_0_45')
+        {
+                return new i_5_oa_a_1__0_45(this.mSheet);
         }
 	if (id == '5.oa.a.1_0_50')
         {
