@@ -1178,7 +1178,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_39',5.010039,'5.oa.a.1','Equation definition.');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.1_0_38',5.010038,'5.oa.a.1','Equation definition.');
 */
 
 var i_5_oa_a_1__0_38 = new Class(
