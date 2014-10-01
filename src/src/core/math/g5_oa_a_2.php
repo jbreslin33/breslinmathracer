@@ -366,3 +366,83 @@ Extends: TextItem,
         }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_43',5.020043,'5.oa.a.2','Quotient definition.');
+*/
+
+var i_5_oa_a_1__0_43 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_43;
+
+        this.setQuestion('What do we call the result of dividing one number from another?');
+        this.setAnswer('quotient',0);
+        this.setAnswer('a quotient',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_42',5.020042,'5.oa.a.2','Product definition.');
+*/
+
+var i_5_oa_a_1__0_42 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_42;
+
+        this.setQuestion('What do we call the result of multiplying one number with another?');
+        this.setAnswer('product',0);
+        this.setAnswer('a product',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_41',5.020041,'5.oa.a.2','Difference definition.');
+*/
+
+var i_5_oa_a_1__0_41 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_41';
+
+        this.setQuestion('What do we call the result of subtracting one number from another?');
+        this.setAnswer('difference',0);
+        this.setAnswer('a difference',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_40',5.020040,'5.oa.a.2','Sum definition.');
+*/
+
+var i_5_oa_a_1__0_40 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.1_0_40';
+
+        this.setQuestion('What do we call the result of adding two or more numbers?');
+        this.setAnswer('sum',0);
+        this.setAnswer('a sum',1);
+}
+});
+
