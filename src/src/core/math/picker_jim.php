@@ -714,6 +714,23 @@ getItem: function(id)
         }
 
         //5.oa.a.2
+  	if (id == '5.oa.a.2_0_40')
+        {
+                return new i_5_oa_a_2__0_40(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_41')
+        {
+                return new i_5_oa_a_2__0_41(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_42')
+        {
+                return new i_5_oa_a_2__0_42(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_43')
+        {
+                return new i_5_oa_a_2__0_43(this.mSheet);
+        }
+
         if (id == '5.oa.a.2_1')
         {
                 return new i_5_oa_a_2__1(this.mSheet);
