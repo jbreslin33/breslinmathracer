@@ -14,7 +14,7 @@ var Hud = new Class(
         var ySize = 35;
         var yCoord = 0;
         this.mHome = new Shape(40, ySize,  0,  yCoord,"","","#F8CDF8","boundary");
-        this.mHome.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/home/home.php"> HOME</a> </font>');
+        //this.mHome.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/home/home.php"> HOME</a> </font>');
 
 	this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
         this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/php/logout.php"> LOGOUT</a> </font>');
