@@ -11,7 +11,9 @@ $databaseConnection = new DatabaseConnection();
 
 $update = "update users SET core_standards_id = '";
 $update .= $standardid;
-$update .= "';";
+$update .= "' WHERE id = ";
+$update .= $_SESSION["user_id"];
+$update .= ';';
 
 $updateResult = pg_query($databaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 
