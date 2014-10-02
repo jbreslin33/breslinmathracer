@@ -370,7 +370,7 @@ Extends: TextItem,
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_43',5.020043,'5.oa.a.2','Quotient definition.');
 */
 
-var i_5_oa_a_1__0_43 = new Class(
+var i_5_oa_a_2__0_43 = new Class(
 {
 Extends: TextItem,
 
@@ -378,7 +378,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_43';
+        this.mType = '5.oa.a.2_0_43';
 
         this.setQuestion('What do we call the result of dividing one number from another?');
         this.setAnswer('quotient',0);
@@ -390,7 +390,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_42',5.020042,'5.oa.a.2','Product definition.');
 */
 
-var i_5_oa_a_1__0_42 = new Class(
+var i_5_oa_a_2__0_42 = new Class(
 {
 Extends: TextItem,
 
@@ -398,7 +398,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_42';
+        this.mType = '5.oa.a.2_0_42';
 
         this.setQuestion('What do we call the result of multiplying one number with another?');
         this.setAnswer('product',0);
@@ -410,7 +410,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_41',5.020041,'5.oa.a.2','Difference definition.');
 */
 
-var i_5_oa_a_1__0_41 = new Class(
+var i_5_oa_a_2__0_41 = new Class(
 {
 Extends: TextItem,
 
@@ -418,7 +418,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_41';
+        this.mType = '5.oa.a.2_0_41';
 
         this.setQuestion('What do we call the result of subtracting one number from another?');
         this.setAnswer('difference',0);
@@ -430,7 +430,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_40',5.020040,'5.oa.a.2','Sum definition.');
 */
 
-var i_5_oa_a_1__0_40 = new Class(
+var i_5_oa_a_2__0_40 = new Class(
 {
 Extends: TextItem,
 
@@ -438,7 +438,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_40';
+        this.mType = '5.oa.a.2_0_40';
 
         this.setQuestion('What do we call the result of adding two or more numbers?');
         this.setAnswer('sum',0);
@@ -447,10 +447,10 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_20',5.020020,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_29',5.020029,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_20 = new Class(
+var i_5_oa_a_2__0_29 = new Class(
 {
 Extends: TextItem,
 
@@ -458,7 +458,178 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_20';
+        this.mType = '5.oa.a.2_0_29';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words quotient of?');
+        this.setAnswer('division',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_28',5.020028,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_28 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_28';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the wor divides?');
+        this.setAnswer('division',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_27',5.020027,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_27 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_27';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word divided by?');
+        this.setAnswer('division',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_26',5.020026,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_26 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_26';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word divide?');
+        this.setAnswer('division',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_25',5.020025,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_25 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_25';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words times the product of?');
+        this.setAnswer('multiplication',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_24',5.020024,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_24 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_24';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words times as much as?');
+        this.setAnswer('multiplication',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_23',5.020023,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_23 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_23';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word times?');
+        this.setAnswer('multiplication',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_22',5.020022,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_22 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_22';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word multiplied by?');
+        this.setAnswer('multiplication',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_21',5.020021,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_21 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_21';
+
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word multiply?');
+        this.setAnswer('multiplication',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_20',5.020020,'5.oa.a.2','');
+*/
+
+var i_5_oa_a_2__0_20 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.oa.a.2_0_20';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word minus?');
         this.setAnswer('subtraction',0);
@@ -469,7 +640,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_19',5.020019,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_19 = new Class(
+var i_5_oa_a_2__0_19 = new Class(
 {
 Extends: TextItem,
 
@@ -477,7 +648,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_19';
+        this.mType = '5.oa.a.2_0_19';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words take away?');
         this.setAnswer('subtraction',0);
@@ -488,7 +659,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_18',5.020018,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_18 = new Class(
+var i_5_oa_a_2__0_18 = new Class(
 {
 Extends: TextItem,
 
@@ -496,7 +667,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_18';
+        this.mType = '5.oa.a.2_0_18';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words the difference of?');
         this.setAnswer('subtraction',0);
@@ -507,7 +678,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_17',5.020017,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_17 = new Class(
+var i_5_oa_a_2__0_17 = new Class(
 {
 Extends: TextItem,
 
@@ -515,7 +686,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_17';
+        this.mType = '5.oa.a.2_0_17';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word less?');
         this.setAnswer('subtraction',0);
@@ -526,7 +697,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_16',5.020016,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_16 = new Class(
+var i_5_oa_a_2__0_16 = new Class(
 {
 Extends: TextItem,
 
@@ -534,7 +705,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_16';
+        this.mType = '5.oa.a.2_0_16';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words less than?');
         this.setAnswer('subtraction',0);
@@ -545,7 +716,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_15',5.020015,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_15 = new Class(
+var i_5_oa_a_2__0_15 = new Class(
 {
 Extends: TextItem,
 
@@ -553,7 +724,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_15';
+        this.mType = '5.oa.a.2_0_15';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word subtract?');
         this.setAnswer('subtraction',0);
@@ -564,7 +735,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_14',5.020014,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_14 = new Class(
+var i_5_oa_a_2__0_14 = new Class(
 {
 Extends: TextItem,
 
@@ -572,7 +743,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_14';
+        this.mType = '5.oa.a.2_0_14';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word plus?');
         this.setAnswer('addition',0);
@@ -583,7 +754,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_13',5.020013,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_13 = new Class(
+var i_5_oa_a_2__0_13 = new Class(
 {
 Extends: TextItem,
 
@@ -591,7 +762,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_13';
+        this.mType = '5.oa.a._0_13';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words the total of?');
         this.setAnswer('addition',0);
@@ -601,7 +772,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_12',5.020012,'5.oa.a.2','');
 */
 
-var i_5_oa_a_1__0_12 = new Class(
+var i_5_oa_a_2__0_12 = new Class(
 {
 Extends: TextItem,
 
@@ -609,7 +780,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_12';
+        this.mType = '5.oa.a.2_0_12';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words the sum of?');
         this.setAnswer('addition',0);
@@ -620,7 +791,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_11',5.020011,'5.oa.a.2','add.');
 */
 
-var i_5_oa_a_1__0_11 = new Class(
+var i_5_oa_a_2__0_11 = new Class(
 {
 Extends: TextItem,
 
@@ -628,7 +799,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_11';
+        this.mType = '5.oa.a.2_0_11';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words more than?');
         this.setAnswer('addition',0);
@@ -639,7 +810,7 @@ initialize: function(sheet)
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_10',5.020010,'5.oa.a.2','add.');
 */
 
-var i_5_oa_a_1__0_10 = new Class(
+var i_5_oa_a_2__0_10 = new Class(
 {
 Extends: TextItem,
 
@@ -647,7 +818,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a.1_0_10';
+        this.mType = '5.oa.a.2_0_10';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word add?');
         this.setAnswer('addition',0);

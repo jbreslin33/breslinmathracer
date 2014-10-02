@@ -714,6 +714,87 @@ getItem: function(id)
         }
 
         //5.oa.a.2
+  	if (id == '5.oa.a.2_0_10')
+        {
+                return new i_5_oa_a_2__0_10(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_11')
+        {
+                return new i_5_oa_a_2__0_11(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_12')
+        {
+                return new i_5_oa_a_2__0_12(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_13')
+        {
+                return new i_5_oa_a_2__0_13(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_14')
+        {
+                return new i_5_oa_a_2__0_14(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_15')
+        {
+                return new i_5_oa_a_2__0_15(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_16')
+        {
+                return new i_5_oa_a_2__0_16(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_17')
+        {
+                return new i_5_oa_a_2__0_17(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_18')
+        {
+                return new i_5_oa_a_2__0_18(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_19')
+        {
+                return new i_5_oa_a_2__0_19(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_20')
+        {
+                return new i_5_oa_a_2__0_20(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_21')
+        {
+                return new i_5_oa_a_2__0_21(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_22')
+        {
+                return new i_5_oa_a_2__0_22(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_23')
+        {
+                return new i_5_oa_a_2__0_23(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_24')
+        {
+                return new i_5_oa_a_2__0_24(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_25')
+        {
+                return new i_5_oa_a_2__0_25(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_26')
+        {
+                return new i_5_oa_a_2__0_26(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_27')
+        {
+                return new i_5_oa_a_2__0_27(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_28')
+        {
+                return new i_5_oa_a_2__0_28(this.mSheet);
+        }
+  	if (id == '5.oa.a.2_0_29')
+        {
+                return new i_5_oa_a_2__0_29(this.mSheet);
+        }
+
   	if (id == '5.oa.a.2_0_40')
         {
                 return new i_5_oa_a_2__0_40(this.mSheet);
