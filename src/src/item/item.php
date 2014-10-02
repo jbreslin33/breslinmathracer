@@ -9,6 +9,8 @@ var Item = new Class(
 		this.mStateLogs = false;		
 
 		this.mSheet = sheet;
+
+    this.raphael = 0;
 		
 		this.mClock = new ClockTimer(APPLICATION);
 

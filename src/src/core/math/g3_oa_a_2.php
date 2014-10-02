@@ -1,6 +1,3 @@
-raphael = 0;
-divLines = [];
-
 /*
 prerequisites:
 none yet

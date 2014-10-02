@@ -252,9 +252,9 @@ enter: function(item)
 
         item.showPractice();
 
-        if(raphael != 0)
+        if(item.raphael != 0)
 	{
-        	raphael.setSize(10,10);
+        	item.raphael.setSize(10,10);
 	}
 },
 
@@ -273,8 +273,9 @@ exit: function(item)
         item.showToggleItemInfoButton();
         item.showToggleCoreInfoButton();
 
-        if(raphael != 0)
-          raphael.setSize(630,360);
+        if(item.raphael != 0)
+          item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
+
 }
 
 });
@@ -302,9 +303,9 @@ enter: function(item)
 
         item.showCore();
 
-        if(raphael != 0)
+        if(item.raphael != 0)
 	{
-        	raphael.setSize(10,10);
+        	item.raphael.setSize(10,10);
 	}
 },
 
@@ -323,8 +324,8 @@ exit: function(item)
         item.showToggleItemInfoButton();
         item.showTogglePracticeInfoButton();
 
-        if(raphael != 0)
-          raphael.setSize(630,360);
+        if(item.raphael != 0)
+          item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
 }
 
 });
@@ -554,11 +555,11 @@ execute: function(item)
 
 exit: function(item)
 {
-        item.hideContinueIncorrect();
+  item.hideContinueIncorrect();
 	item.hideCorrectAnswer();
 
-  if(raphael != 0)
-     raphael.remove();
+  if(item.raphael != 0)
+     item.raphael.remove();
 }
 
 });
