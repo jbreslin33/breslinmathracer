@@ -196,26 +196,45 @@ public function setRawData()
 	$count_of_mastered_items = intval(count($type_master_array));
 	if ($count_of_mastered_items > 0) //after pump is primed this is where item is decided 
 	{
-		if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if we already have a new one move on else dothis 
+		if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if false this is either old one or brand new one we should be ok with that because if its new then game flows and if its old then its a remediation of previusly type mastered item  if we just did that then do this.....  
 		{
 			//PICK ITEM FROM ARRAYS
 			//bubble sort
-			$lowest = 100;	
-			$e = 0; //element of lowest 	
-			for ($i = 0; $i < $count_of_mastered_items; $i++)
-			{				
-				if ($_SESSION["item_type_last"] != $type_master_array[$i]) 
-				{
-					if (intval($type_master_right_array[$i]) < intval($lowest))
+			$randomNumber = rand(0,100);
+			if ($randomNumber <= 50) //ask lowest 	
+			{
+				$lowest = 100;	
+				$e = 0; //element of lowest 	
+				for ($i = 0; $i < $count_of_mastered_items; $i++)
+				{				
+					if ($_SESSION["item_type_last"] != $type_master_array[$i]) 
 					{
-						$e = $i;	
-						$lowest = $type_master_right_array[$i];
+						if (intval($type_master_right_array[$i]) < intval($lowest))
+						{
+							$e = $i;	
+							$lowest = $type_master_right_array[$i];
+						}
 					}
 				}
+				$item_types_id_to_ask = $type_master_array[$e];
+				$streak                = $type_master_right_array[$e];
 			}
-			$item_types_id_to_ask = $type_master_array[$e];
-			$newguy = $item_types_id_to_ask; //set new guy so it has chance of diff from last
-			$streak                = $type_master_right_array[$e];
+			else //go bananas to add some variety
+			{
+				$keepon = true;
+				while ($keepon)
+				{
+					$count_of_type_array = intval(count($type_array));
+					$randomNumber = rand(0,intval($count_of_type_array-1));
+				
+					if ($_SESSION["item_type_last"] != $type_array[$randomNumber])
+					{
+						$item_types_id_to_ask = $type_array[$randomNumber];
+						$streak                = 0; //hack
+						$keepon = false;
+					} 
+				}
+			}
 		}	
 	}
 
