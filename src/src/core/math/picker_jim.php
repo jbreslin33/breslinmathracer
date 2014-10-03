@@ -899,6 +899,16 @@ getItem: function(id)
                 return new i_5_oa_b_3__1(this.mSheet);
         }
 	
+	//5.nbt.a.1 
+	if (id == '5.nbt.a.1_1')
+        {
+                return new i_5_nbt_a_1__1(this.mSheet);
+        }
+	if (id == '5.nbt.a.1_2')
+        {
+                return new i_5_nbt_a_1__2(this.mSheet);
+        }
+	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
 	if (id == '6.rp.a.1_1')
