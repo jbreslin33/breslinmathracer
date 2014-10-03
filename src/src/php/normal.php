@@ -199,27 +199,23 @@ public function setRawData()
 		if ($_SESSION["item_type_last"] == $item_types_id_to_ask)
 		{
 			//PICK ITEM FROM ARRAYS
-			$randomNumber = rand(0,100);
-			if ($randomNumber <= 50) //ask not passed 
-			{
-				//bubble sort
-				$lowest = 100;	
-				$e = 0; //element of lowest 	
-				for ($i = 0; $i < $count_of_mastered_items; $i++)
-				{				
-					if ($_SESSION["item_type_last"] != $type_master_array[$i]) 
+			//bubble sort
+			$lowest = 100;	
+			$e = 0; //element of lowest 	
+			for ($i = 0; $i < $count_of_mastered_items; $i++)
+			{				
+				if ($_SESSION["item_type_last"] != $type_master_array[$i]) 
+				{
+					if (intval($type_master_right_array[$i]) < intval($lowest))
 					{
-						if (intval($type_master_right_array[$i]) < intval($lowest))
-						{
-							$e = $i;	
-							$lowest = $type_master_right_array[$i];
-						}
+						$e = $i;	
+						$lowest = $type_master_right_array[$i];
 					}
 				}
-				$item_types_id_to_ask = $type_master_array[$e];
-				$newguy = $item_types_id_to_ask; //set new guy so it has chance of diff from last
-				$streak                = $type_master_right_array[$e];
 			}
+			$item_types_id_to_ask = $type_master_array[$e];
+			$newguy = $item_types_id_to_ask; //set new guy so it has chance of diff from last
+			$streak                = $type_master_right_array[$e];
 		}	
 	}
 
