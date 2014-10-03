@@ -176,7 +176,7 @@ public function setRawData()
 		
 			$streak = intval($streak);
 
-			//if not mastered and we dont have a non mastered type yet
+			//if not mastered and we dont have a non mastered type yet so this will give you the oldest unmastered one
  			if ($streak < $type_mastery)	
 			{
 				if ($item_types_id_to_ask == '')
@@ -194,9 +194,9 @@ public function setRawData()
 	
 	//ok we are done keeping going so we reached uncharted so.. 
 	$count_of_mastered_items = intval(count($type_master_array));
-	if ($count_of_mastered_items > 0)
+	if ($count_of_mastered_items > 0) //after pump is primed this is where item is decided 
 	{
-		if ($_SESSION["item_type_last"] == $item_types_id_to_ask)
+		if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if we already have a new one move on else dothis 
 		{
 			//PICK ITEM FROM ARRAYS
 			//bubble sort
