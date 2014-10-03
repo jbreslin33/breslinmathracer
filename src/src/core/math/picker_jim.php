@@ -936,6 +936,47 @@ getItem: function(id)
         {
                 return new i_5_nbt_a_1__9(this.mSheet);
         }
+       	if (id == '5.nbt.a.1_10')
+        {
+                return new i_5_nbt_a_1__10(this.mSheet);
+        }
+       	if (id == '5.nbt.a.1_11')
+        {
+                return new i_5_nbt_a_1__11(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_12')
+        {
+                return new i_5_nbt_a_1__12(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_13')
+        {
+                return new i_5_nbt_a_1__13(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_14')
+        {
+                return new i_5_nbt_a_1__14(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_15')
+        {
+                return new i_5_nbt_a_1__15(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_16')
+        {
+                return new i_5_nbt_a_1__16(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_17')
+        {
+                return new i_5_nbt_a_1__17(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_18')
+        {
+                return new i_5_nbt_a_1__18(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_19')
+        {
+                return new i_5_nbt_a_1__19(this.mSheet);
+        }
+
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1

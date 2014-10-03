@@ -1,5 +1,25 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_10',5.0410,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__10 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+
+        this.mType = '5.nbt.a.1_10';
+
+        this.setQuestion('What is the value of the digit 1 in the number 123456.789');
+	
+	var answer = new Fraction(100000,1);
+        this.setAnswer(answer.getString(),0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_9',5.0409,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__9 = new Class(
