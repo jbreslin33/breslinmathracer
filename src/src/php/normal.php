@@ -196,25 +196,34 @@ public function setRawData()
 	$count_of_mastered_items = intval(count($type_master_array));
 	if ($count_of_mastered_items > 0)
 	{
-		$randomNumber = rand(0,100);
-		if ($randomNumber <= 50) //ask not passed 
+		if ($_SESSION["item_type_last"] == $item_types_id_to_ask)
 		{
-			//bubble sort
-			$lowest = 100;	
-			$e = 0; //element of lowest 	
-			for ($i = 0; $i < $count_of_mastered_items; $i++)
-			{			
-				if (intval($type_master_right_array[$i]) < intval($lowest))
-				{
-					$e = $i;	
-					$lowest = $type_master_right_array[$i];
+			//PICK ITEM FROM ARRAYS
+			$randomNumber = rand(0,100);
+			if ($randomNumber <= 50) //ask not passed 
+			{
+				//bubble sort
+				$lowest = 100;	
+				$e = 0; //element of lowest 	
+				for ($i = 0; $i < $count_of_mastered_items; $i++)
+				{				
+					if ($_SESSION["item_type_last"] != $type_master_array[$i]) 
+					{
+						if (intval($type_master_right_array[$i]) < intval($lowest))
+						{
+							$e = $i;	
+							$lowest = $type_master_right_array[$i];
+						}
+					}
 				}
+				$item_types_id_to_ask = $type_master_array[$e];
+				$newguy = $item_types_id_to_ask; //set new guy so it has chance of diff from last
+				$streak                = $type_master_right_array[$e];
 			}
-			$item_types_id_to_ask = $type_master_array[$e];
-			$streak                = $type_master_right_array[$e];
-		}
-	}	
-	
+		}	
+	}
+
+	//STATS	
 	$stats = "s";
 	$stats .= $streak;
 	
@@ -245,8 +254,8 @@ public function setRawData()
 	//calc score
 	$score = intval(count($type_master_array));
 
-
-        $itemString = $item_types_id_to_ask; //ask
+	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
+        $itemString =  $item_types_id_to_ask; //ask this one
         $itemString .= ":";
         $itemString .= $stats; 
         $itemString .= ":";
