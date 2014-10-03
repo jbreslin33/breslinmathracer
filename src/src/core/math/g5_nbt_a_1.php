@@ -11,7 +11,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_1';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 1 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 1 in it called?');
         this.setAnswer('hundred thousands',0);
         this.setAnswer('hundred thousands place',1);
         this.setAnswer('hundred thousand',2);
@@ -32,7 +32,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_2';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 2 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 2 in it called?');
         this.setAnswer('ten thousands',0);
         this.setAnswer('ten thousands place',1);
         this.setAnswer('ten thousand',2);
@@ -53,7 +53,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_3';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 3 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 3 in it called?');
         this.setAnswer('thousands',0);
         this.setAnswer('thousands place',1);
 }
@@ -72,7 +72,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_4';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 4 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 4 in it called?');
         this.setAnswer('hundreds',0);
         this.setAnswer('hundreds place',1);
 }
@@ -91,7 +91,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_5';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 5 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 5 in it called?');
         this.setAnswer('tens',0);
         this.setAnswer('tens place',1);
 }
@@ -110,7 +110,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_6';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 6 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 6 in it called?');
         this.setAnswer('ones',0);
         this.setAnswer('ones place',1);
 }
@@ -129,7 +129,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_7';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 7 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 7 in it called?');
         this.setAnswer('tenths',0);
         this.setAnswer('tenths place',1);
 }
@@ -148,7 +148,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_8';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 8 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 8 in it called?');
         this.setAnswer('hundreths',0);
         this.setAnswer('hundreths place',1);
 }
@@ -167,7 +167,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_9';
 
-        this.setQuestion('In the number 123456.789 what is the place with the the digit 9 in it called?');
+        this.setQuestion('In the number 123456.789 what is the place with the digit 9 in it called?');
         this.setAnswer('thousandths',0);
         this.setAnswer('thousandths place',1);
 }
