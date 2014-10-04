@@ -751,10 +751,11 @@ initialize: function(sheet)
                 var b12c2 = parseInt(  c2 * (b1 + b2) );
                 r = a12c1 % b12c2;
 
-                x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
-
+                //x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
+                x = parseInt((a1 - a2) * c1/c2 * (b1 + b2));
+                
                 this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
