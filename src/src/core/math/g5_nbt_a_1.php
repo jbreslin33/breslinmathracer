@@ -29,10 +29,17 @@ initialize: function(sheet)
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
         this.mType = '5.nbt.a.1_10';
+	var hundredthousands = Math.floor(Math.random()*9)+1;
+	var tenthousands = Math.floor(Math.random()*9)+1;
+	var thousands = Math.floor(Math.random()*9)+1;
+	var hundreds = Math.floor(Math.random()*9)+1;
+	var tens = Math.floor(Math.random()*9)+1;
+	var ones = Math.floor(Math.random()*9)+1;
+	var answer = parseInt(100000 * hundredthousands); 
         
-	this.setQuestion('What is the value of the digit 1 in the number 123456.789');
-        this.setAnswer('100000',0);
-        this.setAnswer('100,000',1);
+	this.setQuestion('What is the value of the red digit in the number ' + '<span style="color: #f00;">' + hundredthousands + '</span>' + '' + tenthousands + '' + thousands + '' + hundreds + '' + tens + '' + ones);
+
+        this.setAnswer('' + answer,0);
 }
 });
 
