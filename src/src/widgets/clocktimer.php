@@ -78,7 +78,14 @@ Extends: Timer,
 
 	destroy: function()
 	{
-		canvas.remove();
+		try
+		{
+			this.canvas.remove();
+		}
+		catch(error)
+		{
+
+		}	
 	},
 
         createTimer: function()

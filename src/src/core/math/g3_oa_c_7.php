@@ -1,16 +1,26 @@
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_1',3.0701,'3.oa.c.7','2x2');
-*/
-var i_3_oa_c_7__1 = new Class(
+var TimesTables = new Class(
 {
 Extends: TextItem,
 
 initialize: function(sheet)
 {
         this.parent(sheet,50,50,370,75,50,50,425,75);
-        this.mType = '3.oa.c.7_1';
-	this.mThresholdTime = 5000;
+        this.mThresholdTime = 5000;
+        this.mClock = new ClockTimer(APPLICATION);
+}
+});
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_1',3.0701,'3.oa.c.7','2x2');
+*/
+var i_3_oa_c_7__1 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_1';
         this.setQuestion('2 x 2');
         this.setAnswer('4',0);
 }
@@ -21,13 +31,12 @@ insert into item_types(id,progression,core_standards_id,description) values ('3.
 */
 var i_3_oa_c_7__2 = new Class(
 {
-Extends: TextItem,
+Extends: TimesTables,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,50,50,370,75,50,50,425,75);
+        this.parent(sheet);
         this.mType = '3.oa.c.7_2';
-	this.mThresholdTime = 5000;
         this.setQuestion('2x3');
         this.setAnswer('6',0);
 }

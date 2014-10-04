@@ -12,7 +12,7 @@ var Item = new Class(
 
     this.raphael = 0;
 		
-		this.mClock = new ClockTimer(APPLICATION);
+		this.mClock = 0;
 
 		//answer control vars
 		this.mChopWhiteSpace = true;
@@ -242,6 +242,12 @@ var Item = new Class(
                 }
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
+			
+		APPLICATION.log('destroy');
+		if (this.mClock)
+		{
+			this.mClock.destroy();
+		}
         },
 
 	destructor: function()
