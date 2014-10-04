@@ -17,6 +17,7 @@ var Item = new Class(
 		//answer control vars
 		this.mChopWhiteSpace = true;
 		this.mIgnoreCase = true;
+		this.mStripCommas = true;
 	
 		//question
 		this.mQuestion = '';
@@ -267,6 +268,7 @@ var Item = new Class(
 	{
 		//strip all whitespace
 		var answer = userAnswer;	
+
 		if (this.mChopWhiteSpace == true)
 		{
 			answer = answer.replace(/ /g,'');	
@@ -277,6 +279,13 @@ var Item = new Class(
 		{
 			answer = answer.toLowerCase();	
 		}
+
+		//strip commas
+		if (this.mStripCommas == true)
+		{
+			answer = answer.replace(/,/g,'');	
+		}
+		
 
 		this.mUserAnswer = answer;
 	},
