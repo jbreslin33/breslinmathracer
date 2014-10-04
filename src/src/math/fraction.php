@@ -30,8 +30,8 @@ var Fraction = new Class(
 	{
 		if (this.mDenominator == 1)
 		{
-			//return this.mNumerator; 
-			return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
+			return this.mNumerator; 
+			//return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
 		}
 		else
 		{

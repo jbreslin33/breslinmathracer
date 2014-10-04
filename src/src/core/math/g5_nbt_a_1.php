@@ -1,21 +1,38 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_11',5.0411,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__11 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.1_11';
+
+        this.setQuestion('What is the value of the digit 2 in the number 123456.789');
+        this.setAnswer('20000',0);
+        this.setAnswer('20,000',1);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_10',5.0410,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__10 = new Class(
 {
-Extends: TextItemFraction,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+        this.parent(sheet,375,50,220,75,150,50,525,100);
 
         this.mType = '5.nbt.a.1_10';
-
-        this.setQuestion('What is the value of the digit 1 in the number 123456.789');
-
-	var answer = new Fraction(100000,1);
-        this.setAnswer(answer.getString(),0);
+        
+	this.setQuestion('What is the value of the digit 1 in the number 123456.789');
+        this.setAnswer('100000',0);
+        this.setAnswer('100,000',1);
 }
 });
 
