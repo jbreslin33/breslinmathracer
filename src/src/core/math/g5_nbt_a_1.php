@@ -1,8 +1,4 @@
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_11',5.0411,'5.nbt.a.1','');
-*/
-var i_5_nbt_a_1__11 = new Class(
+var PlaceValueWholeNumberColors = new Class(
 {
 Extends: TextItem,
 
@@ -10,34 +6,32 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.nbt.a.1_11';
-
-        this.setQuestion('What is the value of the digit 2 in the number 123456.789');
-        this.setAnswer('20000',0);
-        this.setAnswer('20,000',1);
+        this.hundredthousands = Math.floor(Math.random()*9)+1;
+        this.tenthousands = Math.floor(Math.random()*9)+1;
+        this.thousands = Math.floor(Math.random()*9)+1;
+        this.hundreds = Math.floor(Math.random()*9)+1;
+        this.tens = Math.floor(Math.random()*9)+1;
+        this.ones = Math.floor(Math.random()*9)+1;
 }
 });
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_10',5.0410,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__10 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_10';
-	var hundredthousands = Math.floor(Math.random()*9)+1;
-	var tenthousands = Math.floor(Math.random()*9)+1;
-	var thousands = Math.floor(Math.random()*9)+1;
-	var hundreds = Math.floor(Math.random()*9)+1;
-	var tens = Math.floor(Math.random()*9)+1;
-	var ones = Math.floor(Math.random()*9)+1;
-	var answer = parseInt(100000 * hundredthousands); 
+
+	var answer = parseInt(100000 * this.hundredthousands); 
         
-	this.setQuestion('What is the value of the red digit in the number ' + '<span style="color: #f00;">' + hundredthousands + '</span>' + '' + tenthousands + '' + thousands + ',' + hundreds + '' + tens + '' + ones);
+	this.setQuestion('What is the value of the red digit in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + '' + this.tenthousands + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
 
         this.setAnswer('' + answer,0);
 }
