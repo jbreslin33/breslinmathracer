@@ -260,6 +260,23 @@ getItem: function(id)
 		return new i_4_md_a_3__10(this.mSheet);
 	}
 
+
+//5.oa.b.3 
+	if (id == '5.oa.b.3_2')
+        {
+                return new i_5_oa_b_3__2(this.mSheet);
+        }
+
+if (id == '5.oa.b.3_3')
+        {
+                return new i_5_oa_b_3__3(this.mSheet);
+        }
+
+if (id == '5.oa.b.3_4')
+        {
+                return new i_5_oa_b_3__4(this.mSheet);
+        }
+
 	return 0;	
 }
 		
