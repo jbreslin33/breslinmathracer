@@ -13,7 +13,7 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.1_10';
 
         this.setQuestion('What is the value of the digit 1 in the number 123456.789');
-	
+
 	var answer = new Fraction(100000,1);
         this.setAnswer(answer.getString(),0);
 }
