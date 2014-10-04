@@ -37,7 +37,7 @@ initialize: function(sheet)
 	var ones = Math.floor(Math.random()*9)+1;
 	var answer = parseInt(100000 * hundredthousands); 
         
-	this.setQuestion('What is the value of the red digit in the number ' + '<span style="color: #f00;">' + hundredthousands + '</span>' + '' + tenthousands + '' + thousands + '' + hundreds + '' + tens + '' + ones);
+	this.setQuestion('What is the value of the red digit in the number ' + '<span style="color: #f00;">' + hundredthousands + '</span>' + '' + tenthousands + '' + thousands + ',' + hundreds + '' + tens + '' + ones);
 
         this.setAnswer('' + answer,0);
 }
