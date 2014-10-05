@@ -243,7 +243,6 @@ var Item = new Class(
                 this.mShapeArray = 0;
                 this.mShapeArray = new Array();
 			
-		APPLICATION.log('destroy');
 		if (this.mClock)
 		{
 			this.mClock.destroy();
