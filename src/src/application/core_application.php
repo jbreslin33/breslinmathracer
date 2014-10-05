@@ -344,6 +344,7 @@ Extends: Application,
 
         leavePractice: function(typeid)
         {
+		APPLICATION.log('leave');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

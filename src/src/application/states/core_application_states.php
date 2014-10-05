@@ -265,8 +265,8 @@ initialize: function()
 
 enter: function(application)
 {
-      if(raphael != 0)
-          raphael.setSize(10,10);
+      //if(raphael != 0)
+       //   raphael.setSize(10,10);
 
         if (application.mStateLogs)
         {
