@@ -5,7 +5,7 @@
 <li><a href="/web/update/update.php">Update</a></li>
 <li><a href="/web/select/select.php">Selects</a></li>
 <li><a href="/web/stats/stats.php">Stats</a></li>
-<li><a href="/web/login/login_form.php">Logout</a></li>
+<li><a href="/web/php/logout.php">Logout</a></li>
 </ul>
 
 
