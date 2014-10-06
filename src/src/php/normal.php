@@ -63,6 +63,10 @@ function __construct($startNew)
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
 	}
+	else
+	{
+		$this->setRawData();
+	}
 }
 //this could just as easily be set to a finer level such as domain, cluster, standard. Then we could start wherever we want.
 public function initializeProgressionCounter()
