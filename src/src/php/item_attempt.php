@@ -19,9 +19,6 @@ public function insert()
         $insert .= $_SESSION["item_types_id"];
         $insert .= "');";
 
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'id','$it');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
         //get db result
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
