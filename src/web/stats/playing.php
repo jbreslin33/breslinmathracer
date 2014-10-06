@@ -48,15 +48,25 @@ pg_free_result($result);
 <p><b> Common Core Standards: </p></b>
 
 <?php
-$query = "select id, description from core_standards order by core_clusters_id, id;";
+//$query = "select id, description from core_standards order by core_clusters_id, id;";
+$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id order BY item_attempts.start_time desc;";
+
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Standard';
+        echo '<td> StartTime';
         echo '</td>';
-        echo '<td> Description';
+        echo '<td> Username';
+        echo '</td>';
+        echo '<td> Firstname';
+        echo '</td>';
+        echo '<td> Lastname';
+        echo '</td>';
+        echo '<td> ItemType';
+        echo '</td>';
+        echo '<td> Code';
         echo '</td>';
         echo '</tr>';
 for($i = 0; $i < $numrows; $i++) 
@@ -69,6 +79,18 @@ for($i = 0; $i < $numrows; $i++)
         echo '</td>';
         echo '<td>';
         echo $row[1];
+        echo '</td>';
+        echo '<td>';
+        echo $row[2];
+        echo '</td>';
+        echo '<td>';
+        echo $row[3];
+        echo '</td>';
+        echo '<td>';
+        echo $row[4];
+        echo '</td>';
+        echo '<td>';
+        echo $row[5];
         echo '</td>';
         echo '</tr>';
 }
