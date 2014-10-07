@@ -245,12 +245,16 @@ public function setRawData()
 			}
 			else if ($randomNumber > 66) //ask highest progressed 
 			{
-				if ($item_types_id_to_ask == '')
+				if ($item_types_id_progressed == '')
 				{
         				$item_types_id_to_ask = $type_array[0]; //default
+					$streak                = 0; //hack
 				}
-        			$item_types_id_to_ask = $item_types_id_progressed; //progressed
-				$streak                = 0; //hack
+				else
+				{
+        				$item_types_id_to_ask = $item_types_id_progressed; //progressed
+					$streak                = 0; //hack
+				}
 			}
 		}	
 	}
