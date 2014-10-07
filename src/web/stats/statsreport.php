@@ -23,12 +23,9 @@ echo "<br>";
 
 <?php
 $username = $_GET["username"];
-$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN item_types ON item_types.id=item_attempts.item_types_id JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
-$query .= $username;
-$query .= "' order by item_types.progression desc;";
-
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
+$progression_start   = $_GET["progression_start"];
+$progression_end     = $_GET["progression_end"];
+$progression_counter = $progression_start;
 
 echo '<table border=\"1\">';
         echo '<tr>';
@@ -45,6 +42,35 @@ echo '<table border=\"1\">';
         echo '<td> Code';
         echo '</td>';
         echo '</tr>';
+
+while ($progression_counter < $progression_end)  
+{
+
+$query = "select id, progression from item_types where progression > ";
+$query .= $progression_counter;
+$query .= " order by progression LIMIT 1";
+
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+$currenttypeid = 0; 
+
+if ($numrows > 0) 
+{
+        $row = pg_fetch_array($result, 0);
+	$currenttypeid = $row[0];
+	$progression_counter = $row[1];
+}
+
+$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN item_types ON item_types.id=item_attempts.item_types_id JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
+$query .= $username;
+$query .= "' AND item_types.id = '";
+$query .= $currenttypeid;
+$query .= "' order by item_attempts.start_time desc;";
+
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
 for($i = 0; $i < $numrows; $i++) 
 {
         $row = pg_fetch_array($result, $i);
@@ -69,6 +95,7 @@ for($i = 0; $i < $numrows; $i++)
         echo $row[5];
         echo '</td>';
         echo '</tr>';
+}
 }
 pg_free_result($result);
 echo '</table>';

@@ -21,6 +21,8 @@ echo "<br>";
         <p><b> Enter username: </p></b>
         <form method="get" action="/web/stats/statsreport.php">
 Username: <input type="text" name="username"><br>
+progression_start: <input type="text" name="progression_start"><br>
+progression_end: <input type="text" name="progression_end"><br>
         <p><input type="submit" value="UPDATE" /></p>
         </form>
 </body>
