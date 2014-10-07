@@ -248,15 +248,20 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 			else if ($randomNumber > 66) //ask highest progressed 
 			{
-				if ($item_types_id_progressed == '')
+				while ($keepon)
 				{
-        				$item_types_id_to_ask = $type_array[0]; //default
-					$streak                = 0; //hack
-				}
-				else
-				{
-        				$item_types_id_to_ask = $item_types_id_progressed; //progressed
-					$streak                = 0; //hack
+					if ($item_types_id_progressed == '')
+					{
+        					$item_types_id_to_ask = $type_array[0]; //default
+						$streak                = 0; //hack
+						$keepon = false;
+					}
+					else
+					{
+        					$item_types_id_to_ask = $item_types_id_progressed; //progressed
+						$streak                = 0; //hack
+						$keepon = false;
+					}
 				}
 			}
 		}	
