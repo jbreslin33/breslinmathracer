@@ -154,7 +154,7 @@ showUserAnswer: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_7',3.0207,'4.oa.a.2','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_7',4.0207,'4.oa.a.2','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
 */
 
 var i_4_oa_a_2__7 = new Class(
