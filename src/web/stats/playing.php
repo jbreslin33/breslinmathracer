@@ -25,7 +25,7 @@ echo "<br>";
 $timefrom = $_GET["timefrom"];
 $query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '";
 $query .= $timefrom;
-$query .= "' order BY item_attempts.start_time desc;";
+$query .= "' order BY users.last_name, item_attempts.start_time desc;";
 
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
