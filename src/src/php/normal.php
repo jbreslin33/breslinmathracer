@@ -200,12 +200,16 @@ public function setRawData()
 	$count_of_mastered_items = intval(count($type_master_array));
 	if ($count_of_mastered_items > 0) //after pump is primed this is where item is decided 
 	{
-		if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if false this is either old one or brand new one we should be ok with that because if its new then game flows and if its old then its a remediation of previusly type mastered item  if we just did that then do this.....  
+		if ( !isset($_SESSION["item_type_last"]) )
+		{
+
+		}
+		else if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if false this is either old one or brand new one we should be ok with that because if its new then game flows and if its old then its a remediation of previusly type mastered item  if we just did that then do this.....  
 		{
 			//PICK ITEM FROM ARRAYS
 			//bubble sort
 			$randomNumber = rand(0,100);
-			if ($randomNumber <= 50) //ask lowest 	
+			if ($randomNumber <= 33) //ask lowest 	
 			{
 				$lowest = 100;	
 				$e = 0; //element of lowest 	
@@ -223,7 +227,7 @@ public function setRawData()
 				$item_types_id_to_ask = $type_master_array[$e];
 				$streak                = $type_master_right_array[$e];
 			}
-			else //go bananas to add some variety
+			else if ($randomNumber > 33 && $randomNumber <= 66) //go bananas to add some variety
 			{
 				$keepon = true;
 				while ($keepon)
@@ -238,6 +242,15 @@ public function setRawData()
 						$keepon = false;
 					} 
 				}
+			}
+			else if ($randomNumber > 66) //ask highest progressed 
+			{
+				if ($item_types_id_to_ask == '')
+				{
+        				$item_types_id_to_ask = $type_array[0]; //default
+				}
+        			$item_types_id_to_ask = $item_types_id_progressed; //progressed
+				$streak                = 0; //hack
 			}
 		}	
 	}
