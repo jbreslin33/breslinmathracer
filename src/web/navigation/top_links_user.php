@@ -3,7 +3,7 @@
 <li><a href="/web/select/select.php">Selects</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 
-<li><a href="/web/stats/playing.php">Homework Report</a></li>
+<li><a href="/web/stats/enter_homework_date.php">Homework Report</a></li>
 
 <li><a href="/web/update/update_standard_id_form.php">Update Standard ID</a></li>
 <li><a href="/web/update/update_level_form.php">Update Level</a></li>

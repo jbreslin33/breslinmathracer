@@ -10,13 +10,6 @@
 <body>
 <?php
 session_start();
-$timefrom = '';
-if (empty($_GET)) {
-}
-else
-{
-	$timefrom = $_GET["timefrom"];
-}
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
@@ -25,31 +18,14 @@ $conn = dbConnect();
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
-        <p><b> Type date in form of: 2014-10-06 15:00:00 </p></b>
-        
-        <form method="post" action="/web/stats/playing.php">
 
-Time From: <input type="text" name="timefrom"><br>
-        <p><input type="submit" value="UPDATE" /></p>
-        </form>
-
-<p><b> Common Core Standards: </p></b>
+<p><b> HOME WORK REPORT: </p></b>
 
 <?php
-$query = '';
-if ($timefrom == '')
-{
-	$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2014-10-06 15:00:00' order BY item_attempts.start_time desc;"; 
-}
-else
-{
-	$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '";
+$timefrom = $_GET["timefrom"];
+$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '";
 $query .= $timefrom;
 $query .= "' order BY item_attempts.start_time desc;";
-}
-
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$timefrom','');";
-$eresult = pg_query($conn,$equery);
 
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
@@ -95,9 +71,7 @@ for($i = 0; $i < $numrows; $i++)
         echo '</tr>';
 }
 pg_free_result($result);
-
 echo '</table>';
 ?>
-
 </body>
 </html>
