@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.2_1',4.1301,'4.nf.a.1','Compare two fractions with different numerators and denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.2_1',4.1301,'4.nf.a.2','Compare two fractions with different numerators and denominators');
 */
 
 var i_4_nf_a_2__1 = new Class(
