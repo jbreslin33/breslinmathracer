@@ -212,6 +212,7 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			//PICK ITEM FROM ARRAYS
 			//bubble sort
 			$randomNumber = rand(0,100);
+/*
 			if ($randomNumber <= 33) //ask lowest 	
 			{
 				$lowest = 100;	
@@ -230,7 +231,8 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 				$item_types_id_to_ask = $type_master_array[$e];
 				$streak                = $type_master_right_array[$e];
 			}
-			else if ($randomNumber > 33 && $randomNumber <= 66) //go bananas to add some variety
+*/
+			if ($randomNumber <= 50) //go bananas to add some variety
 			{
 				$keepon = true;
 				while ($keepon)
@@ -246,23 +248,35 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					} 
 				}
 			}
-			else if ($randomNumber > 66) //ask highest progressed 
+			else if ($randomNumber > 50) //ask highest progressed 
 			{
-				while ($keepon)
+				if ($item_types_id_progressed == '')
 				{
-					if ($item_types_id_progressed == '')
-					{
-        					$item_types_id_to_ask = $type_array[0]; //default
-						$streak                = 0; //hack
-						$keepon = false;
-					}
-					else
-					{
-        					$item_types_id_to_ask = $item_types_id_progressed; //progressed
-						$streak                = 0; //hack
-						$keepon = false;
-					}
+        				$item_types_id_to_ask = $type_array[0]; //default
+					$streak                = 0; //hack
 				}
+				else
+				{
+        				$item_types_id_to_ask = $item_types_id_progressed; //progressed
+					$streak                = 0; //hack
+				}
+
+				if ($_SESSION["item_type_last"] == $item_types_id_to_ask) 
+				{
+ 					$keepon = true;
+                                	while ($keepon)
+                                	{
+                                        	$count_of_type_array = intval(count($type_array));
+                                        	$randomNumber = rand(0,intval($count_of_type_array-1));
+
+                                        	if ($_SESSION["item_type_last"] != $type_array[$randomNumber])
+                                        	{
+                                                	$item_types_id_to_ask = $type_array[$randomNumber];
+                                                	$streak                = 0; //hack
+                                                	$keepon = false;
+                                        	}
+					}
+                                }
 			}
 		}	
 	}
