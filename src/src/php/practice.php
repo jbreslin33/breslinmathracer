@@ -17,7 +17,7 @@ function __construct($typeid, $startNew, $leavePractice)
         	//get learning_standard_attempt id
 		$query = "select item_attempts.item_types_id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where user_id = ";
 		$query .= $_SESSION["user_id"];
-        	$query .= " order by start_time desc limit 1;";
+        	$query .= " order by item_attempts.start_time desc limit 1;";
         
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
         
@@ -26,7 +26,7 @@ function __construct($typeid, $startNew, $leavePractice)
         	if ($num > 0)
         	{
                 	//get the attempt_id
-                	$item_types_id = pg_Result($result, 0, 'tiem_types_id');
+                	$item_types_id = pg_Result($result, 0, 'item_types_id');
 
                 	//set level_id
                 	$_SESSION["item_types_id"] = $item_types_id;
