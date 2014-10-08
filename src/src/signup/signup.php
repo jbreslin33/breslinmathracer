@@ -103,13 +103,13 @@ Extends: Game,
                 option5_oa_a_2.value = x;  
                 option5_oa_a_2.text = '5.oa.a.2';   
                 this.mStandardSelect.mMesh.appendChild(option5_oa_a_2);
- */               
                 var option5_oa_b_3 = document.createElement("option");
 		x = '5.oa.b.3';
                 option5_oa_b_3.value = x;  
                 option5_oa_b_3.text = '5.oa.b.3';   
                 this.mStandardSelect.mMesh.appendChild(option5_oa_b_3);
                 
+ */               
 		//SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
