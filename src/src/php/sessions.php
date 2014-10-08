@@ -2,6 +2,7 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/standard.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/practice.php");
 
 //this class is for when you first login or signup it is not used other wise 
 class Sessions
