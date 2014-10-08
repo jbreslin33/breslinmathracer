@@ -147,7 +147,7 @@ if ($total_last_ten != 0)
         echo '</td>';
         echo '<td>';
         echo $percent_last_ten;
-        echo '</td>';
+        echo '%</td>';
         echo '<td>';
         echo $percent;
         echo '%</td>';
