@@ -11,7 +11,7 @@ function __construct($typeid, $startNew, $leavePractice)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
-
+//need to check typeid if null get one
 	if ($leavePractice)
 	{
 		$this->leavePractice();
