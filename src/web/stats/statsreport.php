@@ -27,24 +27,33 @@ $progression_start   = $_GET["progression_start"];
 $progression_end     = $_GET["progression_end"];
 $progression_counter = $progression_start;
 
+//last ones at end
+$type_array = array();
+$right_array = array();
+$wrong_array = array();
+$streak_array = array();
+
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> StartTime';
+        echo '<td> Type';
         echo '</td>';
-        echo '<td> Username';
+        echo '<td> Streak';
         echo '</td>';
-        echo '<td> Firstname';
+        echo '<td> Right';
         echo '</td>';
-        echo '<td> Lastname';
+        echo '<td> Wrong';
         echo '</td>';
-        echo '<td> ItemType';
+        echo '<td> Last Ten Percent';
         echo '</td>';
-        echo '<td> Code';
+        echo '<td> Total Percent';
         echo '</td>';
         echo '</tr>';
 
 while ($progression_counter < $progression_end)  
 {
+$wrong = 0;
+$right = 0;
+$streak = 0;
 
 $query = "select id, progression from item_types where progression > ";
 $query .= $progression_counter;
@@ -62,9 +71,9 @@ if ($numrows > 0)
 	$progression_counter = $row[1];
 }
 
-$query = "select item_attempts.start_time, users.username, users.first_name, users.last_name, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN item_types ON item_types.id=item_attempts.item_types_id JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
+$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
 $query .= $username;
-$query .= "' AND item_types.id = '";
+$query .= "' AND item_attempts.item_types_id = '";
 $query .= $currenttypeid;
 $query .= "' order by item_attempts.start_time desc;";
 
@@ -74,28 +83,43 @@ $numrows = pg_numrows($result);
 for($i = 0; $i < $numrows; $i++) 
 {
         $row = pg_fetch_array($result, $i);
+	$transaction_code = $row[0];
+
+	if ($transaction_code == 1)
+	{
+		$right++;
+		$streak++;
+	}
+	if ($transaction_code == 2)
+	{
+		$wrong++;
+		$streak = 0;
+	}
+}
+$wrong_array[]  = $wrong;
+$right_array[]  = $right;
+$streak_array[] = $streak;
 
         echo '<tr>';
         echo '<td>';
-        echo $row[0];
+        echo $currenttypeid;
         echo '</td>';
         echo '<td>';
-        echo $row[1];
+        echo $streak;
         echo '</td>';
         echo '<td>';
-        echo $row[2];
+        echo $right;
         echo '</td>';
         echo '<td>';
-        echo $row[3];
+        echo $wrong;
         echo '</td>';
         echo '<td>';
-        echo $row[4];
+        echo $wrong;
         echo '</td>';
         echo '<td>';
-        echo $row[5];
+        echo $wrong;
         echo '</td>';
         echo '</tr>';
-}
 }
 pg_free_result($result);
 echo '</table>';
