@@ -106,6 +106,7 @@ if ($total != 0)
 {
 	$percent = floatval($right / $total);
         $percent = round( $percent, 2);
+	$percent = $percent * 100;
 }
         echo '<tr>';
         echo '<td>';
@@ -125,7 +126,7 @@ if ($total != 0)
         echo '</td>';
         echo '<td>';
         echo $percent;
-        echo '</td>';
+        echo '%</td>';
         echo '</tr>';
 }
 pg_free_result($result);
