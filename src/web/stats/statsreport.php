@@ -100,6 +100,13 @@ $wrong_array[]  = $wrong;
 $right_array[]  = $right;
 $streak_array[] = $streak;
 
+$total = intval($right + $wrong);
+$percent = 0;
+if ($total != 0)
+{
+	$percent = floatval($right / $total);
+        $percent = round( $percent, 2);
+}
         echo '<tr>';
         echo '<td>';
         echo $currenttypeid;
@@ -117,7 +124,7 @@ $streak_array[] = $streak;
         echo $wrong;
         echo '</td>';
         echo '<td>';
-        echo $wrong;
+        echo $percent;
         echo '</td>';
         echo '</tr>';
 }
