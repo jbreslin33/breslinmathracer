@@ -54,6 +54,9 @@ while ($progression_counter < $progression_end)
 $wrong = 0;
 $right = 0;
 $streak = 0;
+$wrong_last_ten = 0;
+$right_last_ten = 0;
+$streak_last_ten = 0;
 
 $query = "select id, progression from item_types where progression > ";
 $query .= $progression_counter;
@@ -89,11 +92,23 @@ for($i = 0; $i < $numrows; $i++)
 	{
 		$right++;
 		$streak++;
+
+		if ($i < 10)
+		{
+			$right_last_ten++;
+			$streak_last_ten++;
+		}
 	}
 	if ($transaction_code == 2)
 	{
 		$wrong++;
 		$streak = 0;
+
+		if ($i < 10)
+		{
+			$wrong_last_ten++;
+			$streak_last_ten = 0;
+		}
 	}
 }
 $wrong_array[]  = $wrong;
@@ -107,6 +122,15 @@ if ($total != 0)
 	$percent = floatval($right / $total);
         $percent = round( $percent, 2);
 	$percent = $percent * 100;
+}
+
+$total_last_ten = intval($right_last_ten + $wrong_last_ten);
+$percent_last_ten = 0;
+if ($total_last_ten != 0)
+{
+        $percent_last_ten = floatval($right_last_ten / $total_last_ten);
+        $percent_last_ten = round( $percent_last_ten, 2);
+        $percent_last_ten = $percent_last_ten * 100;
 }
         echo '<tr>';
         echo '<td>';
@@ -122,7 +146,7 @@ if ($total != 0)
         echo $wrong;
         echo '</td>';
         echo '<td>';
-        echo $wrong;
+        echo $percent_last_ten;
         echo '</td>';
         echo '<td>';
         echo $percent;
