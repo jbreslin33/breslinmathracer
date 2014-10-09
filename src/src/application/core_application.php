@@ -10,7 +10,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//parse codes
 		this.FULL = 101;
@@ -240,6 +240,7 @@ Extends: Application,
 
         normal: function()
         {
+		APPLICATION.log('normal');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -272,6 +273,7 @@ Extends: Application,
 
 	practice: function(typeid)
         {
+		APPLICATION.log('practice');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

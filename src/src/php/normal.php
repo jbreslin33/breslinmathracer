@@ -212,26 +212,6 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			//PICK ITEM FROM ARRAYS
 			//bubble sort
 			$randomNumber = rand(0,100);
-/*
-			if ($randomNumber <= 33) //ask lowest 	
-			{
-				$lowest = 100;	
-				$e = 0; //element of lowest 	
-				for ($i = 0; $i < $count_of_mastered_items; $i++)
-				{				
-					if ($_SESSION["item_type_last"] != $type_master_array[$i]) 
-					{
-						if (intval($type_master_right_array[$i]) < intval($lowest))
-						{
-							$e = $i;	
-							$lowest = $type_master_right_array[$i];
-						}
-					}
-				}
-				$item_types_id_to_ask = $type_master_array[$e];
-				$streak                = $type_master_right_array[$e];
-			}
-*/
 			if ($randomNumber <= 50) //go bananas to add some variety
 			{
 				$keepon = true;
