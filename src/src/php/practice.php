@@ -91,6 +91,7 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
+
         $_SESSION["ref_id"] = 'practice';
 
         $this->setRawData();
@@ -102,6 +103,32 @@ public function continueAttempt()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
+	//tables hack
+
+        $query = "select core_standards_id from item_types where id = '";
+        $query .= $this->mTypeID;
+        $query .= "';";
+        
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+	$num = pg_num_rows($result);
+
+	$core_standards_id = '';
+
+        if ($num > 0)
+        {
+                $core_standards_id = pg_Result($result, 0, 'core_standards_id');
+	}
+
+	if ($core_standards_id == '3.oa.c.7')
+	{
+		//lets randomize ....
+		$randomNumber = rand(1,81);
+		$randid = $core_standards_id;
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+
 	$_SESSION["item_types_id"] = $this->mTypeID;
 	$raw = $this->mTypeID; 
 	$raw .= ":";
