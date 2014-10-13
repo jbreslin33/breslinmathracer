@@ -91,7 +91,7 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
-
+//right here......is alexis sanchez error i think...
         $_SESSION["ref_id"] = 'practice';
 
         $this->setRawData();
