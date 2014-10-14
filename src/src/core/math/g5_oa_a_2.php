@@ -310,7 +310,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*8+2);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write a numerical expression that matches this: ' + a + ' times the sum of  ' + a + ' and ' + b + '.');
+                this.setQuestion('Write a numerical expression that matches this: ' + c + ' times the sum of  ' + a + ' and ' + b + '.');
                 this.setAnswer('(' + a + '+' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '+' + b + ')',1);
                 this.setAnswer('(' + b + '+' + a + ')' + c,2);
