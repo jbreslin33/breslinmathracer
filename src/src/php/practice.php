@@ -26,10 +26,10 @@ function __construct($typeid, $startNew, $leavePractice)
         	if ($num > 0)
         	{
                 	//get the attempt_id
-                	$item_types_id = pg_Result($result, 0, 'item_types_id');
+                	$this->mTypeID = pg_Result($result, 0, 'item_types_id');
 
                 	//set level_id
-                	$_SESSION["item_types_id"] = $item_types_id;
+                	$_SESSION["item_types_id"] = $this->mTypeID;
         	}
 	}
 
