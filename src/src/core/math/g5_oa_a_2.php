@@ -261,6 +261,12 @@ Extends: TextItem,
                 
 		this.setAnswer(c + 'x' + b + '-' + a,2);
                 this.setAnswer(c + '*' + b + '-' + a,3);
+                
+		this.setAnswer('(' + b + 'x' + c + ')-' + a,4);
+                this.setAnswer('(' + b + '*' + c + ')-' + a,5);
+                
+		this.setAnswer('(' + c + 'x' + b + ')-' + a,6);
+                this.setAnswer('(' + c + '*' + b + ')-' + a,7);
         }
 });
 
