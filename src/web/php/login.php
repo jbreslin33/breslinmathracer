@@ -9,6 +9,16 @@ $_SESSION["password"]   = $_GET["password"];
 
 $login = new Login();
 
-include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
+if ($_SESSION["LOGGED_IN"] == 1)
+{
+	include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
+}
+else if ($_SESSION["LOGGED_IN"] == 0)
+{
+	//include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
+	//header("Location: /web/application/application.php");
+//	header("Location: /web/application/application.php");
+	header("Location: http://google.com/");
+}
 
 ?>
