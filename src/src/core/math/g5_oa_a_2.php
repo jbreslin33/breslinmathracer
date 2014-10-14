@@ -208,6 +208,9 @@ Extends: TextItem,
                 this.setQuestion('Write a numerical expression that matches this: The quotient of ' + a + ' and ' + b + ' increased by ' + c  );
                 this.setAnswer(a + '/' + b + '+' + c,0);
                 this.setAnswer(c + '+' + a + '/' + b,1);
+                
+		this.setAnswer('(' + a + '/' + b + '+' + c,0);
+                this.setAnswer(c + '+(' + a + '/' + b + ')',1);
         }
 });
 
@@ -235,6 +238,12 @@ Extends: TextItem,
                 
 		this.setAnswer(b + '*' + a + '-' + c,2);
                 this.setAnswer(b + '*' + a + '-' + c,3);
+                
+		this.setAnswer('(' + a + 'x' + b + ')-' + c,4);
+                this.setAnswer('(' + a + 'x' + b + ')-' + c,5);
+                
+		this.setAnswer('(' + b + '*' + a + ')-' + c,6);
+                this.setAnswer('(' + b + '*' + a + ')-' + c,7);
         }
 });
 
