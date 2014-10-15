@@ -15,7 +15,14 @@ if ($_SESSION["LOGGED_IN"] == 1)
 }
 else
 {
-	include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_not_logged_in.php");
+	if ($login->mBadUsername == 1)
+	{
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_bad_username.php");
+	}	
+	if ($login->mBadPassword == 1)
+	{
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_bad_password.php");
+	}	
 }
 
 ?>
