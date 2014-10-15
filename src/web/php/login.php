@@ -13,12 +13,9 @@ if ($_SESSION["LOGGED_IN"] == 1)
 {
 	include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
 }
-else if ($_SESSION["LOGGED_IN"] == 0)
+else
 {
-	//include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
-	//header("Location: /web/application/application.php");
-//	header("Location: /web/application/application.php");
-	header("Location: http://google.com/");
+	include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_not_logged_in.php");
 }
 
 ?>

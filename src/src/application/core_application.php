@@ -79,6 +79,10 @@ Extends: Application,
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
+			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
+                        {
+                                APPLICATION.log('not logged in');
+			}
         		if (codeNumber == APPLICATION.FULL)
                 	{
                 		APPLICATION.mRef_id = responseArray[1];
