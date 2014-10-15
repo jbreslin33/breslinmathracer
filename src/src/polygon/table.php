@@ -32,7 +32,7 @@ var tableY = 125;
 var cols = 3;
 var rows = 5;
 var colWidth = tableWidth/cols;
-var rowHeight = tableHeight/rows; 
+var rowHeight = tableHeight/(rows+4); 
 */
 
 var tableWidth = x2;
@@ -40,7 +40,7 @@ var tableHeight = y2;
 var tableX = x1;
 var tableY = y1;
 var colWidth = tableWidth/cols;
-var rowHeight = tableHeight/rows; 
+var rowHeight = tableHeight/(rows+1); 
 
 // table perimeter
 
@@ -59,7 +59,11 @@ item.addQuestionShape(box);
 // Draw horizontal table lines
 for (var i = 0; i < rows; i++) {
 
-    var y = tableY + (i+1)*tableHeight/rows;
+    if (i == 0)
+       y = tableY + (i+1)*rowHeight*2; // headings are bigger
+    else
+       y = tableY + (i+2)*rowHeight;
+       
     var line = new LineOne (this.mGame,raphael,tableX, y, tableX+tableWidth, y,"#000000",false);
 
     item.addQuestionShape(line);
@@ -81,6 +85,11 @@ var startX = tableX + colWidth/2;
 var startY = tableY + rowHeight/2;
 var tweakX = 4;
 var tweakY = -10;
+var sizeX = 50;
+var sizeY = 25;
+var posX = 50;
+var posY = 25;
+var data = 0;
 
 var y = tableY+rY1+(rowHeight/2)+tweakY;
 var x = tableX+rX1+(colWidth/2)+tweakX;
@@ -89,10 +98,35 @@ for (var i = 0; i < rows; i++) {
 
   for (var j = 0; j < cols; j++) {
 
-     colHead1 = new Shape(50,25,x+(j*colWidth),y+(i*rowHeight),this.mGame,"","","");
-     colHead1.setText(table[i][j]);
+     if (i == 0 && j == 0)
+     { 
+        posX = x+(j*colWidth);
+        posY = y+((i+1)*rowHeight)-20;
+     }
+     else
+     { 
+        posX = x+(j*colWidth);
+        posY = y+((i+1)*rowHeight);
+     }
 
-     item.addQuestionShape(colHead1);
+     if (i == 0 && j != 0)
+     { 
+        sizeX = parseInt(colWidth);
+        sizeY = parseInt(rowHeight*2);
+
+        posX = x+(j*colWidth);
+        posY = y+((i+1)*rowHeight) - 20;
+     }
+     else
+     { 
+        sizeX = 50;
+        sizeY = 25;
+     }
+
+     data = new Shape(sizeX,sizeY,posX,posY,this.mGame,"","","");
+     data.setText(table[i][j]);
+
+     item.addQuestionShape(data);
   }
 }
 

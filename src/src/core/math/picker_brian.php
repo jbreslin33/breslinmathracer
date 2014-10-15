@@ -282,6 +282,11 @@ if (id == '5.oa.b.3_5')
                 return new i_5_oa_b_3__5(this.mSheet);
         }
 
+if (id == '5.oa.b.3_6')
+        {
+                return new i_5_oa_b_3__6(this.mSheet);
+        }
+
 
 	return 0;	
 }
