@@ -25,6 +25,7 @@ initialize: function(sheet)
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_11',5.0411,'5.nbt.a.1','');
 */
+/*
 var i_5_nbt_a_1__11 = new Class(
 {
 Extends: PlaceValueWholeNumberColors,
@@ -42,7 +43,30 @@ initialize: function(sheet)
         this.setAnswer('' + answer,0);
 }
 });
+*/
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_10',5.0410,'5.nbt.a.1','');
+*/
+/*
+var i_5_nbt_a_1__10 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_10';
+
+	var answer = parseInt(100000 * this.hundredthousands); 
+        
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + '' + this.hundredthousandths);
+
+        this.setAnswer('' + answer,0);
+}
+});
+*/
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_10',5.0410,'5.nbt.a.1','');
@@ -57,11 +81,9 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_10';
 
-	var answer = parseInt(100000 * this.hundredthousands); 
-        
-	this.setQuestion('What is the value of the red digit in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + '' + this.tenthousands + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
-
-        this.setAnswer('' + answer,0);
+        this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + '' + this.hundredthousandths);
+        this.setAnswer('ten thousandths',0);
+        this.setAnswer('ten thousandths place',1);
 }
 });
 
