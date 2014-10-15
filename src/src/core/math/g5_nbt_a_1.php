@@ -89,15 +89,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__8 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_8';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 8 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + '' + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('hundreths',0);
         this.setAnswer('hundreths place',1);
 }
@@ -109,15 +109,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__7 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_7';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 7 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + '' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('tenths',0);
         this.setAnswer('tenths place',1);
 }
