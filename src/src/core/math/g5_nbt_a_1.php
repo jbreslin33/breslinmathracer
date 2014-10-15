@@ -70,15 +70,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__9 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_9';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 9 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + '<span style="color: #f00;">' + this.thousandths + '</span>' + '' + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('thousandths',0);
         this.setAnswer('thousandths place',1);
 }
