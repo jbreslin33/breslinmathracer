@@ -9,6 +9,8 @@ class Login
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
+	$this->mBadUsername = 0;
+	$this->mBadPassword = 0;
 	$this->process();
 }
 
@@ -17,10 +19,8 @@ public function process()
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
-        $query = "select id, first_name, last_name, core_standards_id from users where username = '";
+        $query = "select username from users where username = '";
         $query .= $_SESSION["username"];
-        $query .= "' AND password = '";
-        $query .= $_SESSION["password"];
         $query .= "';";
         
 	//get db result
@@ -31,27 +31,48 @@ public function process()
 
         if ($num > 0)
         {
-                //get the id from user table
-                $first_name = pg_Result($result, 0, 'first_name');
-                $last_name = pg_Result($result, 0, 'last_name');
-                $user_id = pg_Result($result, 0, 'id');
-                $core_standards_id = pg_Result($result, 0, 'core_standards_id');
+		$query2 = "select id, password, first_name, last_name, core_standards_id from users where username = '";
+        	$query2 .= $_SESSION["username"];
+        	$query2 .= "' AND password = '";
+        	$query2 .= $_SESSION["password"];
+        	$query2 .= "';";
+	
+		//get db result
+        	$result2 = pg_query($this->mDatabaseConnection->getConn(),$query2) or die('Could not connect: ' . pg_last_error());
 
-		//set sessions
-                $_SESSION["first_name"] = $first_name;
-                $_SESSION["last_name"] = $last_name;
-                $_SESSION["user_id"] = $user_id;
-        	$_SESSION["LOGGED_IN"] = 1;
-        	$_SESSION["raw_data"] = NULL; 
-                $_SESSION["core_standards_id"] = $core_standards_id;
+        	//get numer of rows
+        	$num2 = pg_num_rows($result2);
+        
+		if ($num2 > 0)
+		{
+			//set sessions
+                	$_SESSION["first_name"] = $first_name;
+                	$_SESSION["last_name"] = $last_name;
+                	$_SESSION["user_id"] = $user_id;
+        		$_SESSION["LOGGED_IN"] = 1;
+        		$_SESSION["raw_data"] = NULL; 
+                	$_SESSION["core_standards_id"] = $core_standards_id;
+                
+			//get the id from user table
+                	$first_name = pg_Result($result, 0, 'first_name');
+                	$last_name = pg_Result($result, 0, 'last_name');
+                	$user_id = pg_Result($result, 0, 'id');
+                	$core_standards_id = pg_Result($result, 0, 'core_standards_id');
 
-        	//SESSION
-        	$sessions = new Sessions();
+        		//SESSION
+        		$sessions = new Sessions();
+		}
+		else
+		{
+        		$_SESSION["LOGGED_IN"] = 0;
+        		$this->mBadPassword = 1;
+        		$_SESSION["user_id"] = 0;
+		}
         }
         else
         {
         	$_SESSION["LOGGED_IN"] = 0;
-        	$problem = "no_user";
+        	$this->mBadUsername = 1;
         	$_SESSION["user_id"] = 0;
         }
 }

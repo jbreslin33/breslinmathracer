@@ -14,7 +14,9 @@ Extends: Application,
 
 		//parse codes
 		this.FULL = 101;
-		this.NOT_LOGGED_IN    = 102;
+		this.NOT_LOGGED_IN = 102;
+		this.BAD_USERNAME = 103;
+		this.BAD_PASSWORD = 104;
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
@@ -82,6 +84,14 @@ Extends: Application,
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
                                 APPLICATION.log('not logged in');
+			}
+			if (codeNumber == APPLICATION.BAD_USERNAME)
+                        {
+                                APPLICATION.log('bad username');
+			}
+			if (codeNumber == APPLICATION.BAD_PASSWORD)
+                        {
+                                APPLICATION.log('bad password');
 			}
         		if (codeNumber == APPLICATION.FULL)
                 	{
