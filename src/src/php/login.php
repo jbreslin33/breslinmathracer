@@ -45,6 +45,12 @@ public function process()
         
 		if ($num2 > 0)
 		{
+			//get the id from user table
+                	$first_name = pg_Result($result2, 0, 'first_name');
+                	$last_name = pg_Result($result2, 0, 'last_name');
+                	$user_id = pg_Result($result2, 0, 'id');
+                	$core_standards_id = pg_Result($result2, 0, 'core_standards_id');
+
 			//set sessions
                 	$_SESSION["first_name"] = $first_name;
                 	$_SESSION["last_name"] = $last_name;
@@ -52,12 +58,6 @@ public function process()
         		$_SESSION["LOGGED_IN"] = 1;
         		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["core_standards_id"] = $core_standards_id;
-                
-			//get the id from user table
-                	$first_name = pg_Result($result, 0, 'first_name');
-                	$last_name = pg_Result($result, 0, 'last_name');
-                	$user_id = pg_Result($result, 0, 'id');
-                	$core_standards_id = pg_Result($result, 0, 'core_standards_id');
 
         		//SESSION
         		$sessions = new Sessions();
@@ -66,6 +66,7 @@ public function process()
 		{
         		$_SESSION["LOGGED_IN"] = 0;
         		$this->mBadPassword = 1;
+        		$this->mBadUsername = 0;
         		$_SESSION["user_id"] = 0;
 		}
         }
@@ -73,6 +74,7 @@ public function process()
         {
         	$_SESSION["LOGGED_IN"] = 0;
         	$this->mBadUsername = 1;
+        	$this->mBadPassword = 0;
         	$_SESSION["user_id"] = 0;
         }
 }

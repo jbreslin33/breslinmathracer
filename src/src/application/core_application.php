@@ -83,17 +83,17 @@ Extends: Application,
 		{
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
-                                APPLICATION.log('not logged in');
+			
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
-                                APPLICATION.log('bad username');
-				APPLICATION.mGame.mServerLabel.setText('bad username!!!');
-				//'<span style="color: #f00;">' + this.tenthousands + '</span>'
+				var v = 'BAD USERNAME';
+				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
-                                APPLICATION.log('bad password');
+				var v = 'BAD PASSWORD';
+				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 			}
         		if (codeNumber == APPLICATION.FULL)
                 	{
