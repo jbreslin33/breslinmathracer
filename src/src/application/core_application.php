@@ -88,6 +88,8 @@ Extends: Application,
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
                                 APPLICATION.log('bad username');
+				APPLICATION.mGame.mServerLabel.setText('bad username!!!');
+				//'<span style="color: #f00;">' + this.tenthousands + '</span>'
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
