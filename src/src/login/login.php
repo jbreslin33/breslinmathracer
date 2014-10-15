@@ -8,6 +8,10 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
+                
+		this.mServerLabel = new Shape(200,50,400,50,this,"","","");
+                this.mServerLabel.setText('');
+                this.mShapeArray.push(this.mServerLabel);
 
 		this.mUsernameLabel = new Shape(200,50,300,100,this,"","","");
                 this.mUsernameLabel.setText('Username:');
