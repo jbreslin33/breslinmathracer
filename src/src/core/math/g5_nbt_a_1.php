@@ -14,6 +14,11 @@ initialize: function(sheet)
         this.hundreds = Math.floor(Math.random()*9)+1;
         this.tens = Math.floor(Math.random()*9)+1;
         this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+        this.hundreths = Math.floor(Math.random()*9)+1;
+        this.thousandths = Math.floor(Math.random()*9)+1;
+        this.tenthousandths = Math.floor(Math.random()*9)+1;
+        this.hundredthousandths = Math.floor(Math.random()*9)+1;
 }
 });
 
@@ -221,15 +226,16 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__1 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_1';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 1 in it called?');
+   	//this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
         this.setAnswer('hundred thousands',0);
         this.setAnswer('hundred thousands place',1);
         this.setAnswer('hundred thousand',2);
@@ -237,4 +243,20 @@ initialize: function(sheet)
 }
 });
 
+/*
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_11';
+
+        var answer = parseInt(10000 * this.tenthousands);
+
+        this.setQuestion('What is the value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
+
+        this.setAnswer('' + answer,0);
+
+*/
 
