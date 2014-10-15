@@ -128,15 +128,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__6 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_6';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 6 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '' + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('ones',0);
         this.setAnswer('ones place',1);
 }
@@ -147,15 +147,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__5 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_5';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 5 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('tens',0);
         this.setAnswer('tens place',1);
 }
@@ -166,15 +166,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__4 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_4';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 4 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + '<span style="color: #f00;">' + this.hundreds + '</span>' + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('hundreds',0);
         this.setAnswer('hundreds place',1);
 }
@@ -186,15 +186,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__3 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_3';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 3 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + '' + '<span style="color: #f00;">' + this.thousands + '</span>' + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('thousands',0);
         this.setAnswer('thousands place',1);
 }
@@ -205,15 +205,15 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nbt_a_1__2 = new Class(
 {
-Extends: TextItem,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
         this.mType = '5.nbt.a.1_2';
 
-        this.setQuestion('In the number 123456.789 what is the place with the digit 2 in it called?');
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('ten thousands',0);
         this.setAnswer('ten thousands place',1);
         this.setAnswer('ten thousand',2);
@@ -234,29 +234,10 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_1';
 
-   	//this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
-   	this.setQuestion('What is the place value of the red digit called in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('hundred thousands',0);
         this.setAnswer('hundred thousands place',1);
         this.setAnswer('hundred thousand',2);
         this.setAnswer('hundred thousand place',3);
 }
 });
-
-/*
-Extends: PlaceValueWholeNumberColors,
-
-initialize: function(sheet)
-{
-        this.parent(sheet);
-
-        this.mType = '5.nbt.a.1_11';
-
-        var answer = parseInt(10000 * this.tenthousands);
-
-        this.setQuestion('What is the value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
-
-        this.setAnswer('' + answer,0);
-
-*/
-
