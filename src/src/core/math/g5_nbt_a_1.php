@@ -6,6 +6,8 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
+	this.mChopWhiteSpace = false;
+
         this.hundredthousands = Math.floor(Math.random()*9)+1;
         this.tenthousands = Math.floor(Math.random()*9)+1;
         this.thousands = Math.floor(Math.random()*9)+1;
