@@ -21,52 +21,50 @@ initialize: function(sheet)
         this.hundredthousandths = Math.floor(Math.random()*9)+1;
 }
 });
+/*
+this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
+
+        this.mType = '5.oa.a.1_1';
+
+        var a1 = Math.floor((Math.random()*3)+1);
+        var a2 = Math.floor((Math.random()*4)+1);
+        var ad = Math.floor((Math.random()*3)+8);
+
+        var b1 = Math.floor(Math.random()*8)+2;
+
+        var n = parseInt(  b1 * (  a1 + a2 )   );
+
+        var a1d = new Fraction(a1,ad);
+        var a2d = new Fraction(a2,ad);
+        var answer = new Fraction(n,ad);
+
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion('Evaluate. Do not Simplify: ' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
+*/
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_11',5.0411,'5.nbt.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_12',5.0412,'5.nbt.a.1','');
 */
-/*
-var i_5_nbt_a_1__11 = new Class(
+var i_5_nbt_a_1__12 = new Class(
 {
-Extends: PlaceValueWholeNumberColors,
+Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet);
+        //this.parent(sheet);
+	this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
 
-        this.mType = '5.nbt.a.1_11';
+        this.mType = '5.nbt.a.1_12';
 
-        var answer = parseInt(10000 * this.tenthousands);
+	this.setQuestion('Write the simplest fraction that is ten times less than 1.'); 
+	
+	var n = 1;
+	var d = 10;
 
-        this.setQuestion('What is the value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
-
-        this.setAnswer('' + answer,0);
+        var answer = new Fraction(n,d);
+        this.setAnswer(answer.getString(),0);
 }
 });
-*/
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_10',5.0410,'5.nbt.a.1','');
-*/
-/*
-var i_5_nbt_a_1__10 = new Class(
-{
-Extends: PlaceValueWholeNumberColors,
-
-initialize: function(sheet)
-{
-        this.parent(sheet);
-
-        this.mType = '5.nbt.a.1_10';
-
-	var answer = parseInt(100000 * this.hundredthousands); 
-        
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + '' + this.hundredthousandths);
-
-        this.setAnswer('' + answer,0);
-}
-});
-*/
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_11',5.0411,'5.nbt.a.1','');
