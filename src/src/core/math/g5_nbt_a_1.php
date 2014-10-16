@@ -21,6 +21,7 @@ initialize: function(sheet)
         this.hundredthousandths = Math.floor(Math.random()*9)+1;
 }
 });
+
 /*
 this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
 
@@ -41,6 +42,52 @@ this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
         this.setAnswer(answer.getString(),0);
         this.setQuestion('Evaluate. Do not Simplify: ' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
 */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_20',5.0420,'5.nbt.a.1','');
+*/
+
+var i_5_nbt_a_1__20 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.1_20';
+
+        var n = 1;
+        var d = 100;
+        
+	var fraction = new Fraction(1,10);
+        var answer = new Fraction(n,d);
+        
+	this.setQuestion('Write the simplest fraction that is ten times less than ' + fraction.getString());
+        this.setAnswer(answer.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_13',5.0413,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__13 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+
+        this.mType = '5.nbt.a.1_13';
+
+        this.setQuestion('Write the decimal that is ten times less than 1.');
+
+        this.setAnswer('.01',0);
+        this.setAnswer('0.01',1);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_12',5.0412,'5.nbt.a.1','');
