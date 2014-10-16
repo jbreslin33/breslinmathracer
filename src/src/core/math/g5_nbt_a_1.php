@@ -69,6 +69,53 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_17',5.0417,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__17 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        //this.parent(sheet);
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
+
+        this.mType = '5.nbt.a.1_17';
+
+        var n = 1;
+        var d = 10;
+
+        var fraction = new Fraction(1,100);
+        var answer = new Fraction(n,d);
+
+        this.setQuestion('Write the simplest fraction that is ten times more than ' + fraction.getString());
+        this.setAnswer(answer.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_16',5.0416,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__16 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+
+        this.mType = '5.nbt.a.1_16';
+
+        var fraction = new Fraction(1,100);
+        this.setQuestion('Write the decimal that is ten times more than ' + fraction.getString());
+
+        this.setAnswer('.01',0);
+        this.setAnswer('0.01',1);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_15',5.0415,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__15 = new Class(
