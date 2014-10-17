@@ -23,6 +23,64 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_23',5.0423,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__23 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_23';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        this.setAnswer(this.ones,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_22',5.0422,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__22 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_22';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        this.setAnswer(this.tens + '0',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_21',5.0421,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__21 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_21';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + '<span style="color: #f00;">' + this.hundreds + '</span>' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        this.setAnswer('' + this.hundreds + '00',0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_20',5.0420,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__20 = new Class(
