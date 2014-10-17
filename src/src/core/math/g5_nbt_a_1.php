@@ -23,6 +23,27 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_20',5.0420,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__20 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_20';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + '<span style="color: #f00;">' + this.thousands + '</span>' + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        var answer = parseInt(this.thousands * 1000);
+        this.setAnswer('' + answer,0);
+        this.setAnswer('' + this.thousands + ',000',1);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_19',5.0419,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__19 = new Class(
@@ -42,8 +63,6 @@ initialize: function(sheet)
         this.setAnswer('' + this.tenthousands + '0,000',1);
 }
 });
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_18',5.0418,'5.nbt.a.1','hundred thousand');
