@@ -47,6 +47,48 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_27',5.0427,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__27 = new Class(
+{
+Extends: PlaceValueWholeNumberColorsFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_27';
+
+        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
+
+        var answer = new Fraction(this.hundreths,100);
+
+        this.setAnswer(answer.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_26',5.0426,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__26 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_26';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        this.setAnswer('.0' + this.hundreths,0);
+        this.setAnswer('0.0' + this.hundreths,1);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_25',5.0425,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__25 = new Class(
@@ -59,7 +101,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_25';
 
-        this.setQuestion('What is the simplest fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the simplest fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
         
 	var answer = new Fraction(this.tenths,10);
 
