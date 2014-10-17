@@ -28,7 +28,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
 
         this.mChopWhiteSpace = false;
 
@@ -43,6 +43,27 @@ initialize: function(sheet)
         this.thousandths = Math.floor(Math.random()*9)+1;
         this.tenthousandths = Math.floor(Math.random()*9)+1;
         this.hundredthousandths = Math.floor(Math.random()*9)+1;
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_25',5.0425,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__25 = new Class(
+{
+Extends: PlaceValueWholeNumberColorsFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_25';
+
+        this.setQuestion('What is the simplest fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        
+	var answer = new Fraction(this.tenths,10);
+
+        this.setAnswer(answer.getString(),0);
 }
 });
 
