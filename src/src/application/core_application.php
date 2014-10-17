@@ -17,6 +17,7 @@ Extends: Application,
 		this.NOT_LOGGED_IN = 102;
 		this.BAD_USERNAME = 103;
 		this.BAD_PASSWORD = 104;
+		this.TIMED_OUT = 105;
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
@@ -93,6 +94,12 @@ Extends: Application,
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
 				var v = 'BAD PASSWORD';
+				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+			}
+			if (codeNumber == APPLICATION.TIMED_OUT)
+                        {
+				var v = 'TIMED OUT PLEASE LOGIN AGAIN';
+ 				APPLICATION.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 			}
         		if (codeNumber == APPLICATION.FULL)

@@ -9,4 +9,3 @@ $normal = new Normal(1);
 
 include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
 ?>
-
