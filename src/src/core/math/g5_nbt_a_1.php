@@ -47,6 +47,47 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_31',5.0431,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__31 = new Class(
+{
+Extends: PlaceValueWholeNumberColorsFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_31';
+
+        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths + ' Do not simplify.');
+
+        var answer = new Fraction(this.thousandths,10000);
+
+        this.setAnswer(answer.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_30',5.0430,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__30 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_30';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths);
+
+        this.setAnswer('.000' + this.tenthousandths,0);
+        this.setAnswer('0.000' + this.tenthousandths,1);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_29',5.0429,'5.nbt.a.1','');
 */
 var i_5_nbt_a_1__29 = new Class(
