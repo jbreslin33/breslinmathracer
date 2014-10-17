@@ -178,8 +178,8 @@ initialize: function(sheet)
 
         this.setQuestion('Write the decimal that is ten times less than 1.');
 
-        this.setAnswer('.01',0);
-        this.setAnswer('0.01',1);
+        this.setAnswer('.1',0);
+        this.setAnswer('0.1',1);
 }
 });
 
