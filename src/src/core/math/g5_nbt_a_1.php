@@ -23,50 +23,49 @@ initialize: function(sheet)
 });
 
 /*
-this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
-
-        this.mType = '5.oa.a.1_1';
-
-        var a1 = Math.floor((Math.random()*3)+1);
-        var a2 = Math.floor((Math.random()*4)+1);
-        var ad = Math.floor((Math.random()*3)+8);
-
-        var b1 = Math.floor(Math.random()*8)+2;
-
-        var n = parseInt(  b1 * (  a1 + a2 )   );
-
-        var a1d = new Fraction(a1,ad);
-        var a2d = new Fraction(a2,ad);
-        var answer = new Fraction(n,ad);
-
-        this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate. Do not Simplify: ' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ')'  );
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_19',5.0419,'5.nbt.a.1','');
 */
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_20',5.0420,'5.nbt.a.1','');
-*/
-
-var i_5_nbt_a_1__20 = new Class(
+var i_5_nbt_a_1__19 = new Class(
 {
-Extends: TextItemFraction,
+Extends: PlaceValueWholeNumberColors,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet);
 
-        this.mType = '5.nbt.a.1_20';
+        this.mType = '5.nbt.a.1_19';
 
-        var n = 1;
-        var d = 100;
-        
-	var fraction = new Fraction(1,10);
-        var answer = new Fraction(n,d);
-        
-	this.setQuestion('Write the simplest fraction that is ten times less than ' + fraction.getString());
-        this.setAnswer(answer.getString(),0);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        var answer = parseInt(this.tenthousands * 10000);
+        this.setAnswer('' + answer,0);
+        this.setAnswer('' + this.tenthousands + '0,000',1);
 }
 });
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_18',5.0418,'5.nbt.a.1','hundred thousand');
+*/
+var i_5_nbt_a_1__18 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_18';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+       
+	var answer = parseInt(this.hundredthousands * 100000); 
+	this.setAnswer('' + answer,0);
+	this.setAnswer('' + this.hundredthousands + '00,000',1);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_17',5.0417,'5.nbt.a.1','');
