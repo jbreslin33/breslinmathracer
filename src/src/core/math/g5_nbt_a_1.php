@@ -22,6 +22,51 @@ initialize: function(sheet)
 }
 });
 
+var PlaceValueWholeNumberColorsFraction = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mChopWhiteSpace = false;
+
+        this.hundredthousands = Math.floor(Math.random()*9)+1;
+        this.tenthousands = Math.floor(Math.random()*9)+1;
+        this.thousands = Math.floor(Math.random()*9)+1;
+        this.hundreds = Math.floor(Math.random()*9)+1;
+        this.tens = Math.floor(Math.random()*9)+1;
+        this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+        this.hundreths = Math.floor(Math.random()*9)+1;
+        this.thousandths = Math.floor(Math.random()*9)+1;
+        this.tenthousandths = Math.floor(Math.random()*9)+1;
+        this.hundredthousandths = Math.floor(Math.random()*9)+1;
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_24',5.0424,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__24 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_24';
+
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
+        this.setAnswer('.' + this.tenths,0);
+        this.setAnswer('0.' + this.tenths,1);
+}
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_23',5.0423,'5.nbt.a.1','');
 */
