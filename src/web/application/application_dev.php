@@ -1,7 +1,7 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <html>
 <head>
-<title>mathcore.org</title>
+<title>mathcore.org DEV</title>
 
 <!-- mootools -->
 <script type="text/javascript" src="/src/raphael/raphael-min.js"></script>
