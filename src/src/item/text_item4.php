@@ -165,5 +165,7 @@ Extends: TextItem,
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.mHeadingAnswerLabel.getText() + ' ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    }
+    },
+
+
 });

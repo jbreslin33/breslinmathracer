@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 var Game = new Class(
 {
 	initialize: function(application)
