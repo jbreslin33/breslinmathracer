@@ -21,7 +21,7 @@
  
 <div id="simpleExample" class="chartWrapper"></div> 
 <?php
-include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes.php");
+include(getenv("DOCUMENT_ROOT") . "/web/game/standard_game_includes_dev.php");
 ?>
 
 <style>
