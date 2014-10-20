@@ -7,6 +7,13 @@ sudo -u postgres psql -d jamesanthonybreslin -f src/database/build.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/insert.sql
 fi
 
+if [ -e min.php ]; 
+then
+rm min.php
+else
+touch min.php
+fi
+
 if [ -e src/database/insert_types.sql ]; 
 then
 rm src/database/insert_types.sql
@@ -27,5 +34,31 @@ fi
 grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into prerequisites' ./ >> src/database/prerequisites.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/prerequisites.sql
 
+echo core
+cat src/core/math/*.php >> min.php
+cat src/math/*.php >> min.php
+cat src/bounds/*.php >> min.php
+cat src/fsm/*.php >> min.php
+cat src/application/*.php >> min.php
+cat src/application/states/*.php >> min.php
+cat src/game/*.php >> min.php
+cat src/game/states/*.php >> min.php
+cat src/login/*.php >> min.php
+cat src/signup/*.php >> min.php
+cat src/shape/*.php >> min.php
+cat src/polygon/*.php >> min.php
+cat src/div/*.php >> min.php
+cat src/item/*.php >> min.php
+cat src/sheet/*.php >> min.php
+cat src/sheet/states/*.php >> min.php
+cat src/hud/*.php >> min.php
+cat src/widgets/*.php >> min.php
+cat src/wordproblems/*.php >> min.php
+cat src/utility/*.php >> min.php
 
 
+
+
+
+
+echo 
