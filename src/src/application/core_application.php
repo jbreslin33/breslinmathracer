@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 var CoreApplication = new Class(
 {
 Extends: Application,

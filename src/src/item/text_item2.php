@@ -157,14 +157,15 @@ Extends: TextItem,
 
 
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{	 
-        	this.mCorrectAnswerLabel.setSize(500, 100);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.mHeadingAnswerLabel.getText() + ' ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+    showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(500, 100);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.mHeadingAnswerLabel.getText() + ' ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
+
 
 });

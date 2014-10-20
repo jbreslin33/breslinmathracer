@@ -75,18 +75,23 @@ this.mQuestionLabel.setPosition(625,180);
 },
 
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-	  	this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-	  	this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
+
 
 });
+
+
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_2',5.0302,'5.oa.b.3','graphs');
@@ -164,18 +169,23 @@ this.mQuestionLabel.setPosition(625,180);
 
 },
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
+
 
 });
+
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_3',5.0303,'5.oa.b.3','graphs');
@@ -253,18 +263,23 @@ this.mQuestionLabel.setPosition(625,180);
 
 },
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
+
 
 });
+
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_4',5.0304,'5.oa.b.3','graphs');
@@ -343,16 +358,17 @@ this.mQuestionLabel.setPosition(625,180);
 },
 
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
+
 
 });
 
@@ -472,18 +488,29 @@ this.mHeadingAnswerLabel2.setSize(75,25);
 },
 
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
+
 
 });
+
+
+
+
+
+
+
+
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_6',5.0306,'5.oa.b.3','graphs');
@@ -791,16 +818,16 @@ getSlope: function()
 },
 
 
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-}
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+		  }
+    },
 
 
 });
