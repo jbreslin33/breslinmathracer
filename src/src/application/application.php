@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 var Application = new Class(
 {
 	initialize: function()
