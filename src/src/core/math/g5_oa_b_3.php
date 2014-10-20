@@ -517,7 +517,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_oa_b_3__6 = new Class(
 {
-Extends: TextItem2,
+Extends: TextItem4,
 
 initialize: function(sheet)
 {
@@ -525,17 +525,44 @@ initialize: function(sheet)
 
         this.mType = '5.oa.b.3_6';
 
-this.mAnswerTextBox.setPosition(575,210);
-this.mAnswerTextBox2.setPosition(635,210);
+this.mAnswerTextBox.setPosition(575,150);
+this.mAnswerTextBox2.setPosition(635,150);
 this.mAnswerTextBox.setSize(50,50);
 this.mAnswerTextBox2.setSize(50,50);
  
 this.mHeadingAnswerLabel.setText('X');
 this.mHeadingAnswerLabel2.setText('Y'); 
-this.mHeadingAnswerLabel.setPosition(580,155);
-this.mHeadingAnswerLabel2.setPosition(640,155); 
+this.mHeadingAnswerLabel.setPosition(580,105);
+this.mHeadingAnswerLabel2.setPosition(640,105); 
 this.mHeadingAnswerLabel.setSize(25,25);
 this.mHeadingAnswerLabel2.setSize(25,25); 
+
+this.mAnswerTextBox3.setPosition(575,225);
+this.mAnswerTextBox4.setPosition(635,225);
+this.mAnswerTextBox3.setSize(50,50);
+this.mAnswerTextBox4.setSize(50,50);
+ 
+this.mHeadingAnswerLabel3.setText('X');
+this.mHeadingAnswerLabel4.setText('Y'); 
+this.mHeadingAnswerLabel3.setPosition(580,180);
+this.mHeadingAnswerLabel4.setPosition(640,180); 
+this.mHeadingAnswerLabel3.setSize(25,25);
+this.mHeadingAnswerLabel4.setSize(25,25); 
+
+this.mAnswerLabel = new Shape(100,50,500,150,this.mSheet.mGame,"","","");
+this.addShape(this.mAnswerLabel);
+this.mAnswerLabel.mCollidable = false;
+this.mAnswerLabel.mCollisionOn = false;
+this.mAnswerLabel.setText('Blue Line');
+this.mAnswerLabel.setVisibility(false);
+
+this.mAnswerLabel2 = new Shape(100,50,500,225,this.mSheet.mGame,"","","");
+this.addShape(this.mAnswerLabel2);
+this.mAnswerLabel2.mCollidable = false;
+this.mAnswerLabel2.mCollisionOn = false;
+this.mAnswerLabel2.setText('Red Line');
+this.mAnswerLabel2.setVisibility(false);
+
 
 // graph coords
 var startX = 10;
@@ -574,7 +601,7 @@ if(r == 0)
   pointsX[0] = Math.floor(Math.random()*9);
   pointsY[0] = Math.floor(Math.random()*9);
 
-  if(pointsX[0] < 3)
+  if(pointsX[0] < 2)
     this.limit = 0;
   else if(pointsX[0] < 5)
     this.limit = 1;
@@ -583,7 +610,7 @@ if(r == 0)
 
   slopeX = this.getSlope();
 
-  if(pointsY[0] < 3)
+  if(pointsY[0] < 2)
     this.limit = 0;
   else if(pointsY[0] < 5)
     this.limit = 1;
@@ -595,10 +622,10 @@ if(r == 0)
 
 if(r == 1)
 {
-  pointsX[0] = Math.floor((Math.random()*9)+2);
+  pointsX[0] = Math.floor((Math.random()*8)+3);
   pointsY[0] = Math.floor((Math.random()*9));
 
-  if(pointsX[0] > 7)
+  if(pointsX[0] > 8)
     this.limit = 0;
   else if(pointsX[0] > 5)
     this.limit = 1;
@@ -607,7 +634,7 @@ if(r == 1)
 
   slopeX = -this.getSlope();
 
-  if(pointsY[0] < 3)
+  if(pointsY[0] < 2)
     this.limit = 0;
   else if(pointsY[0] < 5)
     this.limit = 1;
@@ -621,9 +648,9 @@ if(r == 1)
 if(r == 2)
 {
   pointsX[0] = Math.floor(Math.random()*9);
-  pointsY[0] = Math.floor((Math.random()*9)+2);
+  pointsY[0] = Math.floor((Math.random()*8)+3);
 
-   if(pointsX[0] < 3)
+   if(pointsX[0] < 2)
     this.limit = 0;
   else if(pointsX[0] < 5)
     this.limit = 1;
@@ -633,7 +660,7 @@ if(r == 2)
 
   slopeX = this.getSlope();
 
-  if(pointsY[0] > 7)
+  if(pointsY[0] > 8)
     this.limit = 0;
   else if(pointsY[0] > 5)
     this.limit = 1;
@@ -645,10 +672,10 @@ if(r == 2)
 
 if(r == 3)
 {
-  pointsX[0] = Math.floor((Math.random()*9)+2);
-  pointsY[0] = Math.floor((Math.random()*9)+2);
+  pointsX[0] = Math.floor((Math.random()*8)+3);
+  pointsY[0] = Math.floor((Math.random()*8)+3);
 
-   if(pointsX[0] > 7)
+   if(pointsX[0] > 8)
     this.limit = 0;
   else if(pointsX[0] > 5)
     this.limit = 1;
@@ -658,7 +685,7 @@ if(r == 3)
 
   slopeX = -this.getSlope();
 
-  if(pointsY[0] > 7)
+  if(pointsY[0] > 8)
     this.limit = 0;
   else if(pointsY[0] > 5)
     this.limit = 1;
@@ -681,8 +708,8 @@ var sX = slopeX;
 var sY = slopeY;
 
 
-
-while ((sX == slopeX && sY == slopeY) || (sX == -slopeX && sY == -slopeY))
+// so the lines don't overlap
+while (sX/sY == slopeX/slopeY)
 {
 
 n = Math.floor(Math.random()*4);
@@ -692,7 +719,7 @@ if(n == 0)
   pointsX2[0] = Math.floor(Math.random()*9);
   pointsY2[0] = Math.floor(Math.random()*9);
 
-  if(pointsX2[0] < 3)
+  if(pointsX2[0] < 2)
     this.limit = 0;
   else if(pointsX2[0] < 5)
     this.limit = 1;
@@ -701,7 +728,7 @@ if(n == 0)
 
   slopeX = this.getSlope();
 
-  if(pointsY2[0] < 3)
+  if(pointsY2[0] < 2)
     this.limit = 0;
   else if(pointsY2[0] < 5)
     this.limit = 1;
@@ -713,10 +740,10 @@ if(n == 0)
 
 if(n == 1)
 {
-  pointsX2[0] = Math.floor((Math.random()*9)+2);
+  pointsX2[0] = Math.floor((Math.random()*8)+3);
   pointsY2[0] = Math.floor((Math.random()*9));
 
-  if(pointsX2[0] > 7)
+  if(pointsX2[0] > 8)
     this.limit = 0;
   else if(pointsX2[0] > 5)
     this.limit = 1;
@@ -725,7 +752,7 @@ if(n == 1)
 
   slopeX = -this.getSlope();
 
-  if(pointsY2[0] < 3)
+  if(pointsY2[0] < 2)
     this.limit = 0;
   else if(pointsY2[0] < 5)
     this.limit = 1;
@@ -739,9 +766,9 @@ if(n == 1)
 if(n == 2)
 {
   pointsX2[0] = Math.floor(Math.random()*9);
-  pointsY2[0] = Math.floor((Math.random()*9)+2);
+  pointsY2[0] = Math.floor((Math.random()*8)+3);
 
-   if(pointsX2[0] < 3)
+   if(pointsX2[0] < 2)
     this.limit = 0;
   else if(pointsX2[0] < 5)
     this.limit = 1;
@@ -751,7 +778,7 @@ if(n == 2)
 
   slopeX = this.getSlope();
 
-  if(pointsY2[0] > 7)
+  if(pointsY2[0] > 8)
     this.limit = 0;
   else if(pointsY2[0] > 5)
     this.limit = 1;
@@ -763,10 +790,10 @@ if(n == 2)
 
 if(n == 3)
 {
-  pointsX2[0] = Math.floor((Math.random()*9)+2);
-  pointsY2[0] = Math.floor((Math.random()*9)+2);
+  pointsX2[0] = Math.floor((Math.random()*8)+3);
+  pointsY2[0] = Math.floor((Math.random()*8)+3);
 
-   if(pointsX2[0] > 7)
+   if(pointsX2[0] > 8)
     this.limit = 0;
   else if(pointsX2[0] > 5)
     this.limit = 1;
@@ -776,7 +803,7 @@ if(n == 3)
 
   slopeX = -this.getSlope();
 
-  if(pointsY2[0] > 7)
+  if(pointsY2[0] > 8)
     this.limit = 0;
   else if(pointsY2[0] > 5)
     this.limit = 1;
@@ -799,14 +826,16 @@ var y2 = pointsY2[2] + slopeY;
 
 this.setQuestion('Look at the coordinate plane. Based on the pattern, what are the next coordinates for each line?');
 this.setAnswer('' + x,0);
-this.setAnswer('' + y,1);  
+this.setAnswer('' + y,1);
+this.setAnswer('' + x2,2);
+this.setAnswer('' + y2,3);    
 
 var chart = new LineChartTwo (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,pointsX2,pointsY2,range,rX1,rY1,"#000000",false);
 
 this.addQuestionShape(chart);
 
-this.mQuestionLabel.setSize(220,50);
-this.mQuestionLabel.setPosition(525,80);
+this.mQuestionLabel.setSize(320,50);
+this.mQuestionLabel.setPosition(525,60);
 
 },
 
@@ -823,7 +852,7 @@ getSlope: function()
 		  if (this.mCorrectAnswerLabel)
 		  {
          this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
+        this.mCorrectAnswerLabel.setPosition(500,325);
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
@@ -831,6 +860,5 @@ getSlope: function()
 
 
 });
-
 
 
