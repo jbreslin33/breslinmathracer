@@ -35,7 +35,40 @@ grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into prerequisites'
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/prerequisites.sql
 
 echo minimize javascript to min.js file
+
 cat src/math/point2D.php >> min.js
+cat src/math/fraction.php >> min.js
+
+cat src/bounds/bounds.php >> min.js
+
+cat src/fsm/state.php >> min.js
+cat src/fsm/state_machine.php >> min.js
+
+cat src/application/application.php >> min.js
+cat src/application/core_application.php >> min.js
+cat src/application/states/application_states.php >> min.js
+cat src/application/states/core_application_states.php >> min.js
+
+cat src/game/game.php >> min.js
+cat src/login/login.php >> min.js
+cat src/signup/signup.php >> min.js
+cat src/core/math/game_sheet.php >> min.js
+cat src/game/states/states.php >> min.js
+
+cat src/animation/animation.php >> min.js
+cat src/animation/animation_advanced.php >> min.js
+
+cat src/polygon/polygon.php >> min.js
+
+cat src/polygon/raphael_polygon.php >> min.js
+
+cat src/shape/shape.php >> min.js
+
+
+
+
+
+
 
 
 

@@ -1,29 +1,5 @@
 <script type="text/javascript" src="/min.js"></script>
-<script type="text/javascript" src="/src/math/fraction.php"></script>
 
-<script type="text/javascript" src="/src/bounds/bounds.php"></script>
-
-<script type="text/javascript" src="/src/fsm/state.php"></script>
-<script type="text/javascript" src="/src/fsm/state_machine.php"></script>
-
-<script type="text/javascript" src="/src/application/application.php"></script>
-<script type="text/javascript" src="/src/application/core_application.php"></script>
-<script type="text/javascript" src="/src/application/states/application_states.php"></script>
-<script type="text/javascript" src="/src/application/states/core_application_states.php"></script>
-
-<script type="text/javascript" src="/src/game/game.php"></script>
-<script type="text/javascript" src="/src/login/login.php"></script>
-<script type="text/javascript" src="/src/signup/signup.php"></script>
-<script type="text/javascript" src="/src/core/math/game_sheet.php"></script>
-<script type="text/javascript" src="/src/game/states/states.php"></script>
-
-<script type="text/javascript" src="/src/animation/animation.php"></script>
-<script type="text/javascript" src="/src/animation/animation_advanced.php"></script>
-
-<script type="text/javascript" src="/src/polygon/polygon.php"></script>
-<script type="text/javascript" src="/src/polygon/raphael_polygon.php"></script>
-
-<script type="text/javascript" src="/src/shape/shape.php"></script>
 <script type="text/javascript" src="/src/polygon/circle.php"></script>
 <script type="text/javascript" src="/src/polygon/triangle.php"></script>
 <script type="text/javascript" src="/src/polygon/pentagon.php"></script>
