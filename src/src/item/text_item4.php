@@ -1,14 +1,15 @@
 /*
 TextItem: this class just is barebones question and answer box to hit enter in.
 */
-var TextItem2 = new Class(
+var TextItem4 = new Class(
 {
-Extends: TextItem,
+Extends: TextItem2,
         initialize: function(sheet)
         {
 
-          //userAnswer2
-		this.mUserAnswer2 = '';
+          
+		this.mUserAnswer3 = '';
+		this.mUserAnswer4 = '';
 
 		this.parent(sheet);
 	},	
@@ -17,34 +18,47 @@ Extends: TextItem,
         {
 		this.parent();
               
-    //answer Heading label
-                this.mHeadingAnswerLabel = new Shape(100,50,430,30,this.mSheet.mGame,"","","");
-                this.addShape(this.mHeadingAnswerLabel);
-                this.mHeadingAnswerLabel.mCollidable = false;
-                this.mHeadingAnswerLabel.mCollisionOn = false;
-                this.mHeadingAnswerLabel.setText(' ');
-		            this.mHeadingAnswerLabel.setVisibility(false);
+    //answer Heading label 3
+                this.mHeadingAnswerLabel3 = new Shape(100,50,430,180,this.mSheet.mGame,"","","");
+                this.addShape(this.mHeadingAnswerLabel3);
+                this.mHeadingAnswerLabel3.mCollidable = false;
+                this.mHeadingAnswerLabel3.mCollisionOn = false;
+                this.mHeadingAnswerLabel3.setText(' ');
+		            this.mHeadingAnswerLabel3.setVisibility(false);
 
-      //answer Heading2 label
-                this.mHeadingAnswerLabel2 = new Shape(100,50,530,30,this.mSheet.mGame,"","","");
-                this.addShape(this.mHeadingAnswerLabel2);
-                this.mHeadingAnswerLabel2.mCollidable = false;
-                this.mHeadingAnswerLabel2.mCollisionOn = false;
-                this.mHeadingAnswerLabel2.setText(' ');
-		            this.mHeadingAnswerLabel2.setVisibility(false);
+      //answer Heading label 4
+                this.mHeadingAnswerLabel4 = new Shape(100,50,530,180,this.mSheet.mGame,"","","");
+                this.addShape(this.mHeadingAnswerLabel4);
+                this.mHeadingAnswerLabel4.mCollidable = false;
+                this.mHeadingAnswerLabel4.mCollisionOn = false;
+                this.mHeadingAnswerLabel4.setText(' ');
+		            this.mHeadingAnswerLabel4.setVisibility(false);
 
-      //answer Input2
-                this.mAnswerTextBox2 = new Shape(100,50,525,100,this.mSheet.mGame,"INPUT","","");
-                this.mAnswerTextBox2.mMesh.value = '';
+      //answer Input 3
+                this.mAnswerTextBox3 = new Shape(50,50,575,350,this.mSheet.mGame,"INPUT","","");
+                this.mAnswerTextBox3.mMesh.value = '';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mAnswerTextBox2.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+                        this.mAnswerTextBox3.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
                 }
                 else
                 {
-                        this.mAnswerTextBox2.mMesh.addEvent('keypress',this.inputKeyHit);
+                        this.mAnswerTextBox3.mMesh.addEvent('keypress',this.inputKeyHit);
                 }
-                this.addShape(this.mAnswerTextBox2);
+                this.addShape(this.mAnswerTextBox3);
+
+      //answer Input 4
+                this.mAnswerTextBox4 = new Shape(50,50,640,350,this.mSheet.mGame,"INPUT","","");
+                this.mAnswerTextBox4.mMesh.value = '';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mAnswerTextBox4.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+                }
+                else
+                {
+                        this.mAnswerTextBox4.mMesh.addEvent('keypress',this.inputKeyHit);
+                }
+                this.addShape(this.mAnswerTextBox4);
 
         },
 
@@ -63,6 +77,8 @@ Extends: TextItem,
 					{
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
             APPLICATION.mGame.mSheet.getItem().setUserAnswer2(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox2.mMesh.value); 
+            APPLICATION.mGame.mSheet.getItem().setUserAnswer3(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox3.mMesh.value); 
+            APPLICATION.mGame.mSheet.getItem().setUserAnswer4(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox4.mMesh.value); 
 					}
 				}
 			}
@@ -84,6 +100,8 @@ Extends: TextItem,
 					{
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
             APPLICATION.mGame.mSheet.getItem().setUserAnswer2(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox2.mMesh.value); 
+            APPLICATION.mGame.mSheet.getItem().setUserAnswer3(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox3.mMesh.value); 
+            APPLICATION.mGame.mSheet.getItem().setUserAnswer4(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox4.mMesh.value); 
 					}
 				}
 			}
@@ -91,16 +109,21 @@ Extends: TextItem,
         },
 
 
-	setUserAnswer2: function(userAnswer2)
+	setUserAnswer3: function(userAnswer3)
 	{
-		this.mUserAnswer2 = userAnswer2;
+		this.mUserAnswer3 = userAnswer3;
+	},
+
+  setUserAnswer4: function(userAnswer4)
+	{
+		this.mUserAnswer4 = userAnswer4;
 	},
 	
 	checkUserAnswer: function()
 	{
 		correctAnswerFound = false;
 		
-			if (this.mUserAnswer == this.mAnswerArray[0] && this.mUserAnswer2 == this.mAnswerArray[1])
+			if (this.mUserAnswer == this.mAnswerArray[0] && this.mUserAnswer2 == this.mAnswerArray[1] && this.mUserAnswer3 == this.mAnswerArray[2] && this.mUserAnswer4 == this.mAnswerArray[3])
 			{
 				correctAnswerFound = true;	
 			} 
@@ -118,19 +141,34 @@ Extends: TextItem,
 	{
     this.parent();
   
-    if (this.mAnswerTextBox2)
+    if (this.mAnswerTextBox3)
 		{
-			this.mAnswerTextBox2.setVisibility(true);
+			this.mAnswerTextBox3.setVisibility(true);
 		}
 
-    if (this.mHeadingAnswerLabel)
+    if (this.mAnswerTextBox4)
 		{
-			this.mHeadingAnswerLabel.setVisibility(true);
+			this.mAnswerTextBox4.setVisibility(true);
 		}
 
-    if (this.mHeadingAnswerLabel2)
+    if (this.mHeadingAnswerLabel3)
 		{
-			this.mHeadingAnswerLabel2.setVisibility(true);
+			this.mHeadingAnswerLabel3.setVisibility(true);
+		}
+
+    if (this.mHeadingAnswerLabel4)
+		{
+			this.mHeadingAnswerLabel4.setVisibility(true);
+		}
+
+    if (this.mAnswerLabel)
+		{
+			this.mAnswerLabel.setVisibility(true);
+		}
+
+    if (this.mAnswerLabel2)
+		{
+			this.mAnswerLabel2.setVisibility(true);
 		}
 	},
 
@@ -139,19 +177,34 @@ Extends: TextItem,
 
     this.parent();
 		
-    if (this.mAnswerTextBox2)
+    if (this.mAnswerTextBox3)
 		{
-			this.mAnswerTextBox2.setVisibility(false);
+			this.mAnswerTextBox3.setVisibility(false);
 		}
 
-    if (this.mHeadingAnswerLabel)
+    if (this.mAnswerTextBox4)
 		{
-			this.mHeadingAnswerLabel.setVisibility(false);
+			this.mAnswerTextBox4.setVisibility(false);
+		}
+
+    if (this.mHeadingAnswerLabel3)
+		{
+			this.mHeadingAnswerLabel3.setVisibility(false);
 		}    
 
-    if (this.mHeadingAnswerLabel2)
+    if (this.mHeadingAnswerLabel4)
 		{
-			this.mHeadingAnswerLabel2.setVisibility(false);
+			this.mHeadingAnswerLabel4.setVisibility(false);
+		}
+
+    if (this.mAnswerLabel)
+		{
+			this.mAnswerLabel.setVisibility(false);
+		}
+
+    if (this.mAnswerLabel2)
+		{
+			this.mAnswerLabel2.setVisibility(false);
 		}
 	},
 
