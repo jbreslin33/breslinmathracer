@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/min.js"></script>
+<script type="text/javascript" src="/src/math/point2D.php"></script>
 <script type="text/javascript" src="/src/math/fraction.php"></script>
 
 <script type="text/javascript" src="/src/bounds/bounds.php"></script>

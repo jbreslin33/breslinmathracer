@@ -7,6 +7,13 @@ sudo -u postgres psql -d jamesanthonybreslin -f src/database/build.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/insert.sql
 fi
 
+if [ -e min.js ]; 
+then
+rm min.js
+else
+touch min.js
+fi
+
 if [ -e src/database/insert_types.sql ]; 
 then
 rm src/database/insert_types.sql
@@ -26,6 +33,12 @@ fi
 > src/database/prerequisites.sql
 grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into prerequisites' ./ >> src/database/prerequisites.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/prerequisites.sql
+
+echo minimize javascript to min.js file
+cat src/math/point2D.php >> min.js
+
+
+
 
 
 
