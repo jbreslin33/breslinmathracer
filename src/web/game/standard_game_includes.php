@@ -1,26 +1,5 @@
 <script type="text/javascript" src="/min.js"></script>
 
-<script type="text/javascript" src="/src/polygon/circle.php"></script>
-<script type="text/javascript" src="/src/polygon/triangle.php"></script>
-<script type="text/javascript" src="/src/polygon/pentagon.php"></script>
-<script type="text/javascript" src="/src/polygon/hexagon.php"></script>
-<script type="text/javascript" src="/src/polygon/cube.php"></script>
-<script type="text/javascript" src="/src/polygon/arc.php"></script>
-<script type="text/javascript" src="/src/polygon/rectangle.php"></script>
-<script type="text/javascript" src="/src/polygon/parallelogram.php"></script>
-<script type="text/javascript" src="/src/polygon/rhombus.php"></script>
-<script type="text/javascript" src="/src/polygon/line_one.php"></script>
-<script type="text/javascript" src="/src/polygon/line_chart.php"></script>
-<script type="text/javascript" src="/src/polygon/table.php"></script>
-<script type="text/javascript" src="/src/polygon/ruler_centimeter.php"></script>
-<script type="text/javascript" src="/src/polygon/ruler_inch.php"></script>
-<script type="text/javascript" src="/src/polygon/ruler_quarterinch.php"></script>
-<script type="text/javascript" src="/src/polygon/volume_liter.php"></script>
-<script type="text/javascript" src="/src/shape/shape_ai.php"></script>
-<script type="text/javascript" src="/src/shape/shape_victory.php"></script>
-
-<script type="text/javascript" src="/src/div/div.php"></script>
-
 <script type="text/javascript" src="/src/item/item.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
 <script type="text/javascript" src="/src/item/text_item_fraction.php"></script>

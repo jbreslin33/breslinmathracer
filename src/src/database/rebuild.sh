@@ -63,6 +63,28 @@ cat src/polygon/polygon.php >> min.js
 cat src/polygon/raphael_polygon.php >> min.js
 
 cat src/shape/shape.php >> min.js
+cat src/polygon/circle.php >> min.js
+cat src/polygon/triangle.php >> min.js
+cat src/polygon/pentagon.php >> min.js
+cat src/polygon/hexagon.php >> min.js
+cat src/polygon/cube.php >> min.js
+cat src/polygon/arc.php >> min.js
+cat src/polygon/rectangle.php >> min.js
+cat src/polygon/parallelogram.php >> min.js
+cat src/polygon/rhombus.php >> min.js
+cat src/polygon/line_one.php >> min.js
+cat src/polygon/line_chart.php >> min.js
+cat src/polygon/table.php >> min.js
+cat src/polygon/ruler_centimeter.php >> min.js
+cat src/polygon/ruler_inch.php >> min.js
+cat src/polygon/ruler_quarterinch.php >> min.js
+cat src/polygon/volume_liter.php >> min.js
+
+cat src/shape/shape_ai.php >> min.js
+cat src/shape/shape_victory.php >> min.js
+
+cat src/div/div.php >> min.js
+
 
 
 
