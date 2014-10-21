@@ -8,7 +8,7 @@
 <script type="text/javascript" src="/src/raphael/g.raphael-min.js"></script>
 <script type="text/javascript" src="/src/raphael/g.bar-min.js"></script>
 <script type="text/javascript" src="/src/raphael/g.line-min.js"></script>
-<script type="text/javascript" src="/src/mootools/mootools-core-1.4.5-full-compat.js"></script>
+<script type="text/javascript" src="/src/mootools/mootools-core-1.5.1-full-compat-yc.js"></script>
 
 <style type="text/css"> 
 .chartWrapper {
