@@ -1,9 +1,5 @@
 <script type="text/javascript" src="/min.js"></script>
 
-<script type="text/javascript" src="/src/item/text_item4.php"></script>
-<script type="text/javascript" src="/src/item/three_button_item.php"></script>
-<script type="text/javascript" src="/src/item/item_button.php"></script>
-<script type="text/javascript" src="/src/item/continue_correct_button.php"></script>
 <script type="text/javascript" src="/src/item/continue_incorrect_button.php"></script>
 <script type="text/javascript" src="/src/item/toggle_standard_info_button.php"></script>
 <script type="text/javascript" src="/src/item/toggle_item_info_button.php"></script>
