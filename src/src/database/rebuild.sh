@@ -131,5 +131,7 @@ cat src/core/math/items_jim.php >> min.js
 
 cat src/utility/name_machine.php >> min.js
 
+cat src/core/math/*.php >> min.js
+
 gcc jsmin.c -o jsmin
 ./jsmin <min.js >min.php ""
