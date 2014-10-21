@@ -44,12 +44,16 @@ public function insert()
 public function update()
 {
 	$insert = '';
-	if (isset($_SESSION["evaluations_attempts_id"]))
+
+	if (isset($_SESSION["evaluations_attempts_id"])
 	{
-        	$insert .= "update evaluations_attempts SET end_time = CURRENT_TIMESTAMP";
-        	$insert .= " WHERE id = ";
-        	$insert .= $_SESSION["evaluations_attempts_id"];
-        	$insert .= ";";
+		if (isset($_SESSION["evaluations_attempts_id"]))
+		{
+        		$insert .= "update evaluations_attempts SET end_time = CURRENT_TIMESTAMP";
+        		$insert .= " WHERE id = ";
+        		$insert .= $_SESSION["evaluations_attempts_id"];
+        		$insert .= ";";
+		}
 	}
 
         //get db result
