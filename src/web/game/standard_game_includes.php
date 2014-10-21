@@ -1,4 +1,4 @@
-<script type="text/javascript" src="/min.js"></script>
+<script type="text/javascript" src="/min.php"></script>
 
 <script type="text/javascript" src="/src/core/math/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_2.php"></script>
