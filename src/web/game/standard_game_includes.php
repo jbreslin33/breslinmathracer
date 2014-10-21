@@ -1,23 +1,5 @@
 <script type="text/javascript" src="/min.js"></script>
 
-<script type="text/javascript" src="/src/widgets/timer.php"></script>
-<script type="text/javascript" src="/src/widgets/clocktimer.php"></script>
-<script type="text/javascript" src="/src/widgets/clock.php"></script>
-<script type="text/javascript" src="/src/item/clock_item.php"></script>
-<script type="text/javascript" src="/src/widgets/circles.php"></script>
-
-<script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
-
-<script type="text/javascript" src="/src/core/math/core_game.php"></script>
-<script type="text/javascript" src="/src/core/math/picker.php"></script>
-<script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
-<script type="text/javascript" src="/src/core/math/picker_jim.php"></script>
-<script type="text/javascript" src="/src/core/math/items.php"></script>
-<script type="text/javascript" src="/src/core/math/items_brian.php"></script>
-<script type="text/javascript" src="/src/core/math/items_jim.php"></script>
-
-<script type="text/javascript" src="/src/utility/name_machine.php"></script>
-
 <script type="text/javascript" src="/src/core/math/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_2.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_3.php"></script>
