@@ -89,6 +89,10 @@ cat src/item/item.php >> min.js
 cat src/item/text_item.php >> min.js
 cat src/item/text_item_fraction.php >> min.js
 cat src/item/text_item2.php >> min.js
+cat src/item/text_item4.php >> min.js
+cat src/item/three_button_item.php >> min.js
+cat src/item/item_button.php >> min.js
+cat src/item/continue_correct_button.php >> min.js
 
 
 
