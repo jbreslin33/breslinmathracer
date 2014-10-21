@@ -93,6 +93,23 @@ cat src/item/text_item4.php >> min.js
 cat src/item/three_button_item.php >> min.js
 cat src/item/item_button.php >> min.js
 cat src/item/continue_correct_button.php >> min.js
+cat src/item/continue_incorrect_button.php >> min.js
+cat src/item/toggle_standard_info_button.php >> min.js
+cat src/item/toggle_item_info_button.php >> min.js
+cat src/item/toggle_practice_info_button.php >> min.js
+cat src/item/submit_practice_item_button.php >> min.js
+cat src/item/toggle_core_info_button.php >> min.js
+cat src/item/submit_core_item_button.php >> min.js
+cat src/item/leave_practice_button.php >> min.js
+cat src/item/states/states.php >> min.js
+
+cat src/sheet/sheet.php >> min.js
+cat src/sheet/states/states.php >> min.js
+
+cat src/hud/hud.php >> min.js
+
+
+
 
 
 
