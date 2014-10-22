@@ -1,22 +1,18 @@
-//add
-//just throwing this here for now...
 /*
-var i_5_nbt_a_2__11 = new Class(
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_1',5.0501,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__1 = new Class(
 {
-Extends: PlaceValueWholeNumberColors,
+Extends: TextItem,
 
 initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '5.nbt.a.2_11';
+        this.mType = '5.nbt.a.2_1';
 
-        var answer = parseInt(10000 * this.tenthousands);
+	this.setQuestion('questionddd');
 
-        this.setQuestion('What is the value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones);
-
-        this.setAnswer('' + answer,0);
+        this.setAnswer('6',0);
 }
 });
-*/
-
