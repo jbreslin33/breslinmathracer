@@ -11,8 +11,18 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.2_1';
 
-	this.setQuestion('10<sup>3</sup>' + ' is a power of 10. Write an equivalent mulitiplication expression using only tens.');
+	this.mBase = Math.floor(Math.random()*7)+2;
+	this.mExponent = Math.floor(Math.random()*9)+1;
 
-        this.setAnswer('10x10',0);
+	this.setQuestion(this.mBase + '<sup>' + this.mExponent + '</sup>' + ' is a power of 10. Write an equivalent mulitiplication expression using only tens.');
+
+	var answerOne = '10';	
+	for (i=1; i < parseInt(this.mExponent); i++)
+	{
+		var str = 'x10'; 
+		answerOne = answerOne.concat(str);
+	}
+        
+	this.setAnswer('' + answerOne,0);
 }
 });
