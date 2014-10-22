@@ -7,12 +7,12 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet);
+  	this.parent(sheet,300,50,175,95,100,50,425,100);
 
         this.mType = '5.nbt.a.2_1';
 
-	this.setQuestion('questionddd');
+	this.setQuestion('10<sup>3</sup>' + ' is a power of 10. Write an equivalent mulitiplication expression using only tens.');
 
-        this.setAnswer('6',0);
+        this.setAnswer('10x10',0);
 }
 });
