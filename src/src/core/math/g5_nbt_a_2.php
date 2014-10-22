@@ -23,6 +23,14 @@ initialize: function(sheet)
 		answerOne = answerOne.concat(str);
 	}
         
+	var answerTwo = '10';	
+	for (i=1; i < parseInt(this.mExponent); i++)
+	{
+		var str = '*10'; 
+		answerTwo = answerTwo.concat(str);
+	}
+        
 	this.setAnswer('' + answerOne,0);
+	this.setAnswer('' + answerTwo,1);
 }
 });
