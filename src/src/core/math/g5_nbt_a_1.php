@@ -438,8 +438,8 @@ initialize: function(sheet)
         var fraction = new Fraction(1,10);
         this.setQuestion('Write the decimal that is ten times less than ' + fraction.getString());
 
-        this.setAnswer('.001',0);
-        this.setAnswer('0.001',1);
+        this.setAnswer('.01',0);
+        this.setAnswer('0.01',1);
 }
 });
 
