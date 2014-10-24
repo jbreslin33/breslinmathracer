@@ -494,7 +494,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_28';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the wor divides?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word divides?');
         this.setAnswer('division',0);
 }
 });
