@@ -14,13 +14,13 @@ function __construct()
   	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->process();
 }
-
 public function process()
 {
 	if (isset($_SESSION["subject_id"]) == false)
 	{
 		$_SESSION["subject_id"] = 1;
 	}
+//wei is not getting a value here becuase he finished the latest evaluation attempts
 	//get the latest evaluations_attempts one that is not complete
 	$query = "select evaluations_attempts.id, evaluations.description from evaluations_attempts JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.end_time is null AND user_id = ";
 	$query .= $_SESSION["user_id"];
@@ -46,6 +46,10 @@ public function process()
 		{
 			$practice = new Practice('',0,0);
 		}
+	}
+	else
+	{
+		$normal = new Normal(1);
 	}
 }
 //end class
