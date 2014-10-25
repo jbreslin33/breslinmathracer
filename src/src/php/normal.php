@@ -2,46 +2,10 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
-/*
-This class should allow student to feel confident. First levels should go to infinity... or not exist at all. 2nd should we remediate as soon as a student gets one wrong??? well we do ask it on next level... what about 3 levels??? i think we need another table... we need a one to track when you were sent to a learning standard then we still use levelattempts table.:wq:wq:wq
 
---scratch that except for the confidence and infinity stuff.
-
-new thinking:
-------------
-when you get one wrong you go to practice. which resets your percent.
-if you get one correct after practice you have 100%. with a 1 confidence level.
-
-none correct in a row is a 0 confidence level.
-
-ask in order of confidence level with progression tie breaker.
-
-never been asked is a -1 confidence level
-
-if no zeros than ask a -1 confidence level which is a new type
-
-so basically on first run you will encounter a never before asked quesiton a -1 so ask it.
-if correct.
-then 
-skip it and ask 2nd type cause its -1
-lets say you get it wrong.
-then practice
-then skip 1 
-goto 2 again cause its a 0 confidence level.
-
-unless at any point we roll a 20% in which case we ask the question with the lowest confidence level above 0;
-
-
-you  are done when we put you on next grade.... 
-
-this is the select for drop down for standard choice.
-SELECT  id, core_clusters_id from core_standards order by core_clusters_id, id ;
-
-*/
 class Normal 
-
-
 {
+
 function __construct($startNew)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
@@ -97,6 +61,7 @@ public function setRawData()
 	$this->initializeProgressionCounter();
 	$item_types_id_to_ask = '';	
 	$item_types_id_progressed = '';	
+	$core_standards_id_progressed = '';	
 	
 	$type_array = array();
 	$right_array = array();
@@ -132,8 +97,8 @@ public function setRawData()
 
                 	$this->progression_counter = pg_Result($result, 0, 'progression');
 
-			/********* get the transaction codes of the amount of mastery ******************/
-	                $query = "select item_attempts.transaction_code from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.item_types_id = '";
+			/********* get the transaction codes of the amount of mastery and the core_standards_id of the highest level to be used later for score ******************/
+	                $query = "select item_attempts.transaction_code, item_types.core_standards_id from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_types.id=item_attempts.item_types_id where item_attempts.item_types_id = '";
        	               	$query .= $type_id;
                        	$query .= "' AND evaluations_attempts.user_id = ";
                        	$query .= $_SESSION["user_id"];
@@ -153,6 +118,7 @@ public function setRawData()
   				for ($i = 0; $i < $num; $i++)
 				{
 					$transaction_code = pg_Result($result, $i, 'transaction_code');
+					$core_standards_id_progressed = pg_Result($result, $i, 'core_standards_id');
 					$transaction_code = intval($transaction_code);
 					if ($transaction_code == 1) 
 					{
@@ -286,8 +252,16 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			$stats .= $percent;
 		}		 
 	}
-	
 
+	$count_of_item_types_in_standard = 0;
+	
+	//get denominator for score
+ 	$query = "select progression from item_types where core_standards_id = '";
+        $query .= $core_standards_id_progressed;
+        $query .= "' ORDER BY progression;";
+
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $count_of_item_types_in_standard = pg_num_rows($result);
 
 	//calc score
 	$score = intval(count($type_master_array));
@@ -300,6 +274,8 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         $itemString .= $item_types_id_progressed; //progressed
         $itemString .= ":";
         $itemString .= $score; //score
+        $itemString .= "/";
+        $itemString .= $count_of_item_types_in_standard;
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
