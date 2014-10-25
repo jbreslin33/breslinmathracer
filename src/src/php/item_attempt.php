@@ -49,15 +49,33 @@ public function insert()
 
 public function update()
 {
-	//update item_attempts SET start_time = CURRENT_TIMESTAMP, transaction_code = 0 WHERE id = 5;
-	$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
-        $insert .= $_SESSION["item_transaction_code"];
-	$insert .= " WHERE id = ";		
-        $insert .= $_SESSION["item_attempt_id"];
-        $insert .= ";";
 
-        //get db result
-        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
+        $query .= $_SESSION["user_id"];
+        $query .= " order by item_attempts.start_time desc limit 1;";
+
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the id from user table
+                $item_attempt_id = pg_Result($result, 0, 'id');
+
+                //set level_id
+                $_SESSION["item_attempt_id"] = $item_attempt_id;
+
+		//update item_attempts SET start_time = CURRENT_TIMESTAMP, transaction_code = 0 WHERE id = 5;
+		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
+        	$insert .= $_SESSION["item_transaction_code"];
+		$insert .= " WHERE id = ";		
+        	$insert .= $_SESSION["item_attempt_id"];
+        	$insert .= ";";
+
+        	//get db result
+        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+	}
 }
 
 }
