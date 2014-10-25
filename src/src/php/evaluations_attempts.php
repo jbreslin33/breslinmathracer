@@ -51,10 +51,10 @@ public function update()
         	$insert .= " WHERE id = ";
         	$insert .= $_SESSION["evaluations_attempts_id"];
         	$insert .= ";";
-	}
 
-        //get db result
-        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+        	//get db result
+        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+	}
 }
 }
 ?>
