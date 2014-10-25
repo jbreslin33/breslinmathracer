@@ -209,7 +209,7 @@ Extends: TextItem,
                 this.setAnswer(a + '/' + b + '+' + c,0);
                 this.setAnswer(c + '+' + a + '/' + b,1);
                 
-		this.setAnswer('(' + a + '/' + b + '+' + c,2);
+		this.setAnswer('(' + a + '/' + b + ')+' + c,2);
                 this.setAnswer(c + '+(' + a + '/' + b + ')',3);
         }
 });

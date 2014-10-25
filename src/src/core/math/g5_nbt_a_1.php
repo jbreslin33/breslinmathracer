@@ -80,7 +80,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_32';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>');
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>');
 
         this.setAnswer('.0000' + this.hundredthousandths,0);
         this.setAnswer('0.0000' + this.hundredthousandths,1);
