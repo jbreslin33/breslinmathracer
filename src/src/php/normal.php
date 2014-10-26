@@ -262,9 +262,17 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
         $count_of_item_types_in_standard = pg_num_rows($result);
-
+	
 	//calc score
 	$score = intval(count($type_master_array));
+		
+	$progress_percent = "";	
+	if ($count_of_item_types_in_standard != 0)
+	{
+		$progress_percent = floatval($score / $count_of_item_types_in_standard); 
+		$progress_percent = $progress_percent * 100;
+		$progress_percent = round($progress_percent, 0, PHP_ROUND_HALF_UP);
+	}
 
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
         $itemString =  $item_types_id_to_ask; //ask this one
@@ -276,6 +284,9 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         $itemString .= $score; //score
         $itemString .= "/";
         $itemString .= $count_of_item_types_in_standard;
+        $itemString .= "=";
+        $itemString .= $progress_percent;
+        $itemString .= "%";
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
