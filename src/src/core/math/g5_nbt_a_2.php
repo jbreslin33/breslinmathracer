@@ -20,22 +20,16 @@ initialize: function(sheet)
 
         this.setQuestion('Find the product: ' + this.ones + '.' + this.tenths + this.hundreths + ' x ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
-        var answerOne = '10';
-        for (i=1; i < parseInt(this.mExponent); i++)
-        {
-                var str = 'x10';
-                answerOne = answerOne.concat(str);
-        }
+	var multiplier = 1; 
+        for (i=0; i < parseInt(this.mExponent); i++)
+	{
+		multiplier = multiplier * 10;	
+	}
 
-        var answerTwo = '10';
-        for (i=1; i < parseInt(this.mExponent); i++)
-        {
-                var str = '*10';
-                answerTwo = answerTwo.concat(str);
-        }
+	var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
+	var answer = multiplier * number;	 
 
-        this.setAnswer('' + answerOne,0);
-        this.setAnswer('' + answerTwo,1);
+        this.setAnswer('' + answer,0);
 }
 });
 
