@@ -1,4 +1,22 @@
 
+function toFixed(x) {
+  if (Math.abs(x) < 1.0) {
+    var e = parseInt(x.toString().split('e-')[1]);
+    if (e) {
+        x *= Math.pow(10,e-1);
+        x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+    }
+  } else {
+    var e = parseInt(x.toString().split('+')[1]);
+    if (e > 20) {
+        e -= 20;
+        x /= Math.pow(10,e);
+        x += (new Array(e+1)).join('0');
+    }
+  }
+  return x;
+}
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_11',5.0511,'5.nbt.a.2','');
 */
@@ -25,8 +43,10 @@ initialize: function(sheet)
                 multiplier = multiplier * 10;
         }
 
-        var number = parseFloat(this.ones);
+        var number = parseInt(this.ones);
         var answer = number / multiplier;
+	answer = parseFloat(answer);
+	answer = toFixed(answer);
 
         this.setAnswer('' + answer,0);
 }
@@ -164,6 +184,7 @@ initialize: function(sheet)
 
         var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths + this.thousandths);
         var answer = number / multiplier;
+	answer = toFixed(answer);
 
         this.setAnswer('' + answer,0);
 }
@@ -337,6 +358,7 @@ initialize: function(sheet)
 
         var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
         var answer = number / multiplier;
+	answer = toFixed(answer);
 
         this.setAnswer('' + answer,0);
 }
