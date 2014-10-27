@@ -1,7 +1,7 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_3',5.0503,'5.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_4',5.0504,'5.nbt.a.2','');
 */
-var i_5_nbt_a_2__3 = new Class(
+var i_5_nbt_a_2__4 = new Class(
 {
 Extends: TextItem,
 
@@ -9,7 +9,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
-        this.mType = '5.nbt.a.2_3';
+        this.mType = '5.nbt.a.2_4';
 
         this.mBase = 10;
         this.mExponent = Math.floor(Math.random()*9)+1;
@@ -26,6 +26,40 @@ initialize: function(sheet)
 }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_3',5.0503,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__3 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.2_3';
+
+        this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+        this.hundreths = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = Math.floor(Math.random()*9)+1;
+
+        this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + ' / ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+
+        var multiplier = 1;
+        for (i=0; i < parseInt(this.mExponent); i++)
+        {
+                multiplier = multiplier / 10;
+        }
+
+        var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
+        var answer = multiplier * number;
+
+        this.setAnswer('' + answer,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_2',5.0502,'5.nbt.a.2','');
