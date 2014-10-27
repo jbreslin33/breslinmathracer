@@ -46,7 +46,7 @@ initialize: function(sheet)
         this.mBase = 10;
         this.mExponent = Math.floor(Math.random()*9)+1;
 
-        this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + ' / ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+        this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
         var multiplier = 1;
         for (i=0; i < parseInt(this.mExponent); i++)
