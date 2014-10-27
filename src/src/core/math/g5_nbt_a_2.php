@@ -1,5 +1,72 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_9',5.0509,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__9 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.2_9';
+
+        this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = Math.floor(Math.random()*9)+1;
+
+        this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+
+        var multiplier = 1;
+        for (i=0; i < parseInt(this.mExponent); i++)
+        {
+                multiplier = multiplier * 10;
+        }
+
+        var number = parseFloat(this.ones + '.' + this.tenths);
+        var answer = number / multiplier;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_8',5.0508,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.2_8';
+
+        this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = Math.floor(Math.random()*9)+1;
+
+        this.setQuestion('Find the product: ' + this.ones + '.' + this.tenths + ' x ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+
+	var multiplier = 1; 
+        for (i=0; i < parseInt(this.mExponent); i++)
+	{
+		multiplier = multiplier * 10;	
+	}
+
+	var number = parseFloat(this.ones + '.' + this.tenths);
+	var answer = multiplier * number;	 
+
+        this.setAnswer('' + answer,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_7',5.0507,'5.nbt.a.2','');
 */
 var i_5_nbt_a_2__7 = new Class(
