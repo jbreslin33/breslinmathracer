@@ -16,9 +16,192 @@ function toFixed(x) {
   }
   return x;
 }
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_26',5.0526,'5.nbt.a.2','.1-1000');
+*/
+var i_5_nbt_a_2__26 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_26';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 4;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.' + this.number + ' &times ' + '__' + ' = ' + this.number + '000 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_19',5.0519,'5.nbt.a.2','.1-1');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_25',5.0525,'5.nbt.a.2','.1-100');
+*/
+var i_5_nbt_a_2__25 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_25';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 3;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.' + this.number + ' &times ' + '__' + ' = ' + this.number + '00 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_24',5.0524,'5.nbt.a.2','.1-10');
+*/
+var i_5_nbt_a_2__24 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_24';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 2;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.' + this.number + ' &times ' + '__' + ' = ' + this.number + '0 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_23',5.0523,'5.nbt.a.2','.1-1');
+*/
+var i_5_nbt_a_2__23 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_23';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.' + this.number + ' &times ' + '__' + ' = ' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_22',5.0522,'5.nbt.a.2','.01-1000');
+*/
+var i_5_nbt_a_2__22 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_22';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 5;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.0' + this.number + ' &times ' + '__' + ' = ' + this.number + '000 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_21',5.0521,'5.nbt.a.2','.01-100');
+*/
+var i_5_nbt_a_2__21 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_21';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 4;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.0' + this.number + ' &times ' + '__' + ' = ' + this.number + '00 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_20',5.0520,'5.nbt.a.2','.01-10');
+*/
+var i_5_nbt_a_2__20 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_20';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 3;
+
+        this.setQuestion('What power of 10 will make this true: ' + '0.0' + this.number + ' &times ' + '__' + ' = ' + this.number + '0 Sample Answer: 10^4');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_19',5.0519,'5.nbt.a.2','.01-1');
 */
 var i_5_nbt_a_2__19 = new Class(
 {
@@ -35,7 +218,7 @@ initialize: function(sheet)
         this.mBase = 10;
         this.mExponent = 2;
 
-        this.setQuestion('What power of 10 will make this true: ' + '0.' + this.number + ' &times ' + '__' + ' = ' + this.number + ' Sample Answer: 10^4');
+        this.setQuestion('What power of 10 will make this true: ' + '0.0' + this.number + ' &times ' + '__' + ' = ' + this.number + ' Sample Answer: 10^4');
 
         var answer = '' + this.mBase + '^' + this.mExponent;
 
@@ -72,7 +255,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_17',5.0517,'5.nbt.a.2','.001-100');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_17',5.0517,'5.nbt.a.2','.001-1000');
 */
 var i_5_nbt_a_2__17 = new Class(
 {
