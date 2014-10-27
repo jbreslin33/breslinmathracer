@@ -1,4 +1,78 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_5',5.0505,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.2_5';
+
+        this.mBase = 10;
+        this.mExponent = Math.floor(Math.random()*9)+1;
+
+        this.setQuestion('Write the following the way you would say it words: ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+
+	
+	var power = '';
+
+	if (this.mExponent == 0)
+	{
+		power = 'zero';
+	}
+	if (this.mExponent == 1)
+	{
+		power = 'first';
+	}
+	if (this.mExponent == 2)
+	{
+		power = 'second';
+	}
+	if (this.mExponent == 3)
+	{
+		power = 'third';
+	}
+	if (this.mExponent == 4)
+	{
+		power = 'fourth';
+	}
+	if (this.mExponent == 5)
+	{
+		power = 'fifth';
+	}
+	if (this.mExponent == 6)
+	{
+		power = 'sixth';
+	}
+	if (this.mExponent == 7)
+	{
+		power = 'seventh';
+	}
+	if (this.mExponent == 8)
+	{
+		power = 'eigth';
+	}
+	if (this.mExponent == 9)
+	{
+		power = 'ninth';
+	}
+	if (this.mExponent == 10)
+	{
+		power = 'tenth';
+	}
+
+        answer = 'ten to the ' + power + ' power';
+
+        this.setAnswer('' + answer,0);
+        this.setAnswer('' + answer + '.',1);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_4',5.0504,'5.nbt.a.2','');
 */
 var i_5_nbt_a_2__4 = new Class(
