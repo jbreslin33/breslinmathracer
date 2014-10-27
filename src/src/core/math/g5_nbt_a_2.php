@@ -115,6 +115,7 @@ initialize: function(sheet)
 
         var number = parseFloat(this.ones + '.' + this.tenths);
         var answer = number / multiplier;
+	answer = toFixed(answer);
 
         this.setAnswer('' + answer,0);
 }
