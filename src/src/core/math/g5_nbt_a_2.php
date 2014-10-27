@@ -16,6 +16,34 @@ function toFixed(x) {
   }
   return x;
 }
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_27',5.0527,'5.nbt.a.2','1-10');
+*/
+var i_5_nbt_a_2__27 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_27';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + ' &times ' + '__' + ' = ' + this.number + '0 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_26',5.0526,'5.nbt.a.2','.1-1000');
 */
