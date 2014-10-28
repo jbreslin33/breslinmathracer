@@ -466,7 +466,7 @@ initialize: function(sheet)
         this.hundreths = Math.floor(Math.random()*9)+1;
 
         this.mBase = parseInt(10);
-        this.mExponent = parseInt(Math.floor(Math.random()*2)+1);
+        this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
 
         this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
@@ -482,8 +482,34 @@ initialize: function(sheet)
 	{
 		answer = '0' + '.' + '0' +  this.ones + this.tenths + this.hundreths;
 	}
-
-	
+	if (this.mExponent == 3)
+	{
+		answer = '0' + '.' + '00' +  this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 4)
+	{
+		answer = '0' + '.' + '000' +  this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 5)
+	{
+		answer = '0' + '.' + '0000' +  this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 6)
+	{
+		answer = '0' + '.' + '00000' +  this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 7)
+	{
+		answer = '0' + '.' + '000000' +  this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 8)
+	{
+		answer = '0' + '.' + '0000000' +  this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 9)
+	{
+		answer = '0' + '.' + '00000000' +  this.ones + this.tenths + this.hundreths;
+	}
 
         this.setAnswer('' + answer,0);
 }
