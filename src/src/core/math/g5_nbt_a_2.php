@@ -18,6 +18,297 @@ function toFixed(x) {
 }
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_49',5.0549,'5.nbt.a.2','1-.1');
+*/
+var i_5_nbt_a_2__48 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_48';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + ' &divide ' + '__' + ' = 0.' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_48',5.0548,'5.nbt.a.2','1-.1');
+*/
+var i_5_nbt_a_2__48 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_48';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + ' &divide ' + '__' + ' = 0.' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_47',5.0547,'5.nbt.a.2','10-.001');
+*/
+var i_5_nbt_a_2__47 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_47';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 4;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '0 &divide ' + '__' + ' = 0.00' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_46',5.0546,'5.nbt.a.2','10-.01');
+*/
+var i_5_nbt_a_2__46 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_46';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 3;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '0 &divide ' + '__' + ' = 0.0' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_45',5.0545,'5.nbt.a.2','10-.1');
+*/
+var i_5_nbt_a_2__45 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_45';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 2;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '0 &divide ' + '__' + ' = 0.' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_44',5.0544,'5.nbt.a.2','10-1');
+*/
+var i_5_nbt_a_2__44 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_44';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '0 &divide ' + '__' + ' = ' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_43',5.0543,'5.nbt.a.2','100-.001');
+*/
+var i_5_nbt_a_2__43 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_43';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 5;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '00 &divide ' + '__' + ' = 0.00' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_42',5.0542,'5.nbt.a.2','100-.01');
+*/
+var i_5_nbt_a_2__42 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_42';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 4;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '00 &divide ' + '__' + ' = 0.0' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_41',5.0541,'5.nbt.a.2','100-.1');
+*/
+var i_5_nbt_a_2__41 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_41';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 3;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '00 &divide ' + '__' + ' = 0.' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_40',5.0540,'5.nbt.a.2','100-1');
+*/
+var i_5_nbt_a_2__40 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_40';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 2;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '00 &divide ' + '__' + ' = ' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_39',5.0539,'5.nbt.a.2','100-10');
+*/
+var i_5_nbt_a_2__39 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_39';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '00 &divide ' + '__' + ' = ' + this.number + '0 Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_38',5.0538,'5.nbt.a.2','1000-.001');
 */
 var i_5_nbt_a_2__38 = new Class(
