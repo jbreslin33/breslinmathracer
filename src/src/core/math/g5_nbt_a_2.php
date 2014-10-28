@@ -18,6 +18,112 @@ function toFixed(x) {
 }
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_38',5.0538,'5.nbt.a.2','1000-.001');
+*/
+var i_5_nbt_a_2__38 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_38';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 6;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '000 &divide ' + '__' + ' = 0.00' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_37',5.0537,'5.nbt.a.2','1000-.01');
+*/
+var i_5_nbt_a_2__37 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_37';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 5;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '000 &divide ' + '__' + ' = 0.0' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_36',5.0536,'5.nbt.a.2','1000-.1');
+*/
+var i_5_nbt_a_2__36 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_36';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 4;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '000 &divide ' + '__' + ' = 0.' + this.number + ' Sample Answer: 10^2');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_35',5.0535,'5.nbt.a.2','1000-1');
+*/
+var i_5_nbt_a_2__35 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_35';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 3;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '000 &divide ' + '__' + ' = ' + this.number + ' Sample Answer: 10^4');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_34',5.0534,'5.nbt.a.2','1000-10');
 */
 var i_5_nbt_a_2__34 = new Class(

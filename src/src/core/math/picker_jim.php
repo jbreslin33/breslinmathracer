@@ -1182,6 +1182,50 @@ getItem: function(id)
         {
                 return new i_5_nbt_a_2__37(this.mSheet);
         }
+	if (id == '5.nbt.a.2_38')
+        {
+                return new i_5_nbt_a_2__38(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_39')
+        {
+                return new i_5_nbt_a_2__39(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_40')
+        {
+                return new i_5_nbt_a_2__40(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_41')
+        {
+                return new i_5_nbt_a_2__41(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_42')
+        {
+                return new i_5_nbt_a_2__42(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_43')
+        {
+                return new i_5_nbt_a_2__43(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_44')
+        {
+                return new i_5_nbt_a_2__44(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_45')
+        {
+                return new i_5_nbt_a_2__45(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_46')
+        {
+                return new i_5_nbt_a_2__46(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_47')
+        {
+                return new i_5_nbt_a_2__47(this.mSheet);
+        }
+	if (id == '5.nbt.a.2_48')
+        {
+                return new i_5_nbt_a_2__48(this.mSheet);
+        }
 
 	
 	/*** GRADE 6 ***/
