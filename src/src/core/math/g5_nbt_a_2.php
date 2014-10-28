@@ -18,7 +18,7 @@ function toFixed(x) {
 }
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_13',5.0513,'5.nbt.a.2','.001-.1');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_13',5.0513,'5.nbt.a.2','');
 */
 var i_5_nbt_a_2__13 = new Class(
 {
@@ -29,13 +29,45 @@ initialize: function(sheet)
         this.parent(sheet,600,50,320,95, 50,50,712,100);
 
         this.mType = '5.nbt.a.2_13';
+        
+	this.mBase = 10;
+        this.mExponent = Math.floor(Math.random()*9)+1;
 
-        this.number = Math.floor(Math.random()*9)+1;
+        this.place = parseInt(Math.floor(Math.random()*6));
 
-        this.mBase = 10;
-        this.mExponent = 2;
+	this.number = Math.floor(Math.random()*9)+1;
+	this.a = 0; 
 
-        this.setQuestion('What power of 10 will make this true: ' + '0.00' + this.number + ' &times ' + '__' + ' = 0.' + this.number + ' Sample Answer: 10^4');
+
+	if (this.place == 0)
+	{
+		this.a = parseInt(this.number + '000');
+	}
+	if (this.place == 1)
+	{
+		this.a = parseInt(this.number + '00');
+	}
+	if (this.place == 2)
+	{
+		this.a = parseInt(this.number + '0');
+	}
+	if (this.place == 3)
+	{
+		this.a = parseInt(this.number + '');
+	}
+	if (this.place == 4)
+	{
+		this.a = parseFloat('0.' + this.number);
+	}
+	if (this.place == 5)
+	{
+		this.a = parseFloat('0.0' + this.number);
+	}
+	
+	this.b = this.a / Math.pow(10,this.mExponent);
+	this.b = toFixed(this.b);
+
+        this.setQuestion('What power of 10 will make this true: ' + this.a + ' &divide ' + '__' + ' = ' + this.b + ' Sample Answer: 10^4');
 
 	var answer = '' + this.mBase + '^' + this.mExponent; 
 
