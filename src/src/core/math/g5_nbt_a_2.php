@@ -434,8 +434,6 @@ initialize: function(sheet)
 
         this.setQuestion('Find the product: ' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '&times' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
-        var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
-
 	var answer = '';
 
 	if (this.mExponent == 1)
