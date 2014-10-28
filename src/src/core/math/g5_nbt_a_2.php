@@ -433,16 +433,48 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.2_4';
 
-        this.mBase = 10;
-        this.mExponent = Math.floor(Math.random()*9)+1;
+        this.mBase = parseInt(10);
+        this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
 
         this.setQuestion('Find the product: ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
-        var answer = 1;
-        for (i=0; i < parseInt(this.mExponent); i++)
-        {
-                answer = answer * 10;
-        }
+	var answer = '';
+	if (this.mExponent == 1)
+	{
+		answer = '10' 	
+	}
+	if (this.mExponent == 2)
+	{
+		answer = '100' 	
+	}
+	if (this.mExponent == 3)
+	{
+		answer = '1000' 	
+	}
+	if (this.mExponent == 4)
+	{
+		answer = '10000' 	
+	}
+	if (this.mExponent == 5)
+	{
+		answer = '100000' 	
+	}
+	if (this.mExponent == 6)
+	{
+		answer = '1000000' 	
+	}
+	if (this.mExponent == 7)
+	{
+		answer = '10000000' 	
+	}
+	if (this.mExponent == 8)
+	{
+		answer = '100000000' 	
+	}
+	if (this.mExponent == 9)
+	{
+		answer = '1000000000' 	
+	}
 
         this.setAnswer('' + answer,0);
 }
