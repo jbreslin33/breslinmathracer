@@ -362,8 +362,7 @@ initialize: function(sheet)
         this.mBase = 10;
         this.mExponent = Math.floor(Math.random()*9)+1;
 
-        this.setQuestion('Write the following the way you would say it words: ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
-
+        this.setQuestion('Write the following the way you would say it in words: ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 	
 	var power = '';
 
