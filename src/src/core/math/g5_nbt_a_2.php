@@ -515,6 +515,7 @@ initialize: function(sheet)
 }
 });
 
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_2',5.0502,'5.nbt.a.2','');
 */
@@ -532,20 +533,51 @@ initialize: function(sheet)
         this.tenths = Math.floor(Math.random()*9)+1;
         this.hundreths = Math.floor(Math.random()*9)+1;
 
-        this.mBase = 10;
-        this.mExponent = Math.floor(Math.random()*9)+1;
+        this.mBase = parseInt(10);
+        this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
 
-        this.setQuestion('Find the product: ' + this.ones + '.' + this.tenths + this.hundreths + ' x ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+        this.setQuestion('Find the product: ' + this.ones + '.' + this.tenths + this.hundreths +  '&times' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
-	var multiplier = 1; 
-        for (i=0; i < parseInt(this.mExponent); i++)
+        var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
+
+	var answer = '';
+
+	if (this.mExponent == 1)
 	{
-		multiplier = multiplier * 10;	
+		answer = '' + this.ones + this.tenths + '.' + this.hundreths;
 	}
-
-	var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
-	var answer = multiplier * number;	 
-	answer = toFixed(answer);	
+	if (this.mExponent == 2)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 3)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '0';
+	}
+	if (this.mExponent == 4)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '00';
+	}
+	if (this.mExponent == 5)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '000';
+	}
+	if (this.mExponent == 6)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '0000';
+	}
+	if (this.mExponent == 7)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '00000';
+	}
+	if (this.mExponent == 8)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '000000';
+	}
+	if (this.mExponent == 9)
+	{
+		answer = '' + this.ones + this.tenths + this.hundreths + '0000000';
+	}
 
         this.setAnswer('' + answer,0);
 }
