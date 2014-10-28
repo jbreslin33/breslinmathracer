@@ -30,7 +30,6 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.2_13';
 
-
         this.number = Math.floor(Math.random()*9)+1;
 
         this.mBase = 10;
@@ -58,27 +57,46 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.2_12';
 
         this.place = Math.floor(Math.random()*6);
-	this.a
+	this.number = Math.floor(Math.random()*9)+1;
+	this.a = ''; 
+
 	if (this.place == 0)
 	{
 		this.a = parseInt(this.number + '000');
+		this.a = parseInt(this.a);
 	}
 	if (this.place == 1)
 	{
 		this.a = parseInt(this.number + '00');
+		this.a = parseInt(this.a);
 	}
-	if (this.place == )
+	if (this.place == 2)
 	{
-		this.a = parseInt(this.number + '00');
+		this.a = parseInt(this.number + '0');
+		this.a = parseInt(this.a);
 	}
-
-
-        this.number = Math.floor(Math.random()*9)+1;
-
+	if (this.place == 3)
+	{
+		this.a = parseInt(this.number + '');
+		this.a = parseInt(this.a);
+	}
+	if (this.place == 4)
+	{
+		this.a = parseInt('0.' + this.number);
+		this.a = parseFloat(this.a);
+	}
+	if (this.place == 5)
+	{
+		this.a = parseInt('0.0' + this.number);
+		this.a = parseFloat(this.a);
+	}
+        
         this.mBase = 10;
         this.mExponent = Math.floor(Math.random()*9)+1;
 
-        this.setQuestion('What power of 10 will make this true: ' + '0.00' + this.number + ' &times ' + '__' + ' = 0.0' + this.number + ' Sample Answer: 10^4');
+	this.b = this.a * Math.pow(10,this.mExponent);
+
+        this.setQuestion('What power of 10 will make this true: ' + this.a + ' &times ' + '__' + ' = ' + this.b + ' Sample Answer: 10^4');
 
 	var answer = '' + this.mBase + '^' + this.mExponent; 
 
