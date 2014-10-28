@@ -16,6 +16,85 @@ function toFixed(x) {
   }
   return x;
 }
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_31',5.0531,'5.nbt.a.2','10-1000');
+*/
+var i_5_nbt_a_2__31 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_31';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 2;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '0 &times ' + '__' + ' = ' + this.number + '000 Sample Answer: 10^4');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_30',5.0530,'5.nbt.a.2','10-100');
+*/
+var i_5_nbt_a_2__30 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,650,50,345,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_30';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 1;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + '0 &times ' + '__' + ' = ' + this.number + '00 Sample Answer: 10^4');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_29',5.0529,'5.nbt.a.2','1-1000');
+*/
+var i_5_nbt_a_2__29 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,320,95, 50,50,712,100);
+
+        this.mType = '5.nbt.a.2_29';
+
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.mBase = 10;
+        this.mExponent = 3;
+
+        this.setQuestion('What power of 10 will make this true: ' + '' + this.number + ' &times ' + '__' + ' = ' + this.number + '000 Sample Answer: 10^4');
+
+        var answer = '' + this.mBase + '^' + this.mExponent;
+
+        this.setAnswer('' + answer,0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_28',5.0528,'5.nbt.a.2','1-100');
