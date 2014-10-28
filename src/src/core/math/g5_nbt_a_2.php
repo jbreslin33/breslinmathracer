@@ -465,20 +465,25 @@ initialize: function(sheet)
         this.tenths = Math.floor(Math.random()*9)+1;
         this.hundreths = Math.floor(Math.random()*9)+1;
 
-        this.mBase = 10;
-        this.mExponent = Math.floor(Math.random()*9)+1;
+        this.mBase = parseInt(10);
+        this.mExponent = parseInt(Math.floor(Math.random()*2)+1);
 
         this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
-        var multiplier = 1;
-        for (i=0; i < parseInt(this.mExponent); i++)
-        {
-                multiplier = multiplier * 10;
-        }
-
         var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
-        var answer = number / multiplier;
-	answer = toFixed(answer);
+
+	var answer = '';
+
+	if (this.mExponent == 1)
+	{
+		answer = '0' + '.' + this.ones + this.tenths + this.hundreths;
+	}
+	if (this.mExponent == 2)
+	{
+		answer = '0' + '.' + '0' +  this.ones + this.tenths + this.hundreths;
+	}
+
+	
 
         this.setAnswer('' + answer,0);
 }
@@ -514,6 +519,7 @@ initialize: function(sheet)
 
 	var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths);
 	var answer = multiplier * number;	 
+	answer = toFixed(answer);	
 
         this.setAnswer('' + answer,0);
 }
