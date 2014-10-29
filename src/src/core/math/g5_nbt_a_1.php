@@ -1,3 +1,64 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_37',5.0437,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__37 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.1_37';
+	this.mChopWhiteSpace = true;
+
+        this.setQuestion('One tenth is ____________ the value of one . Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
+
+        this.setAnswer('one tenth',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_36',5.0436,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__36 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.1_36';
+	this.mChopWhiteSpace = true;
+
+        this.setQuestion('One is ____________ the value of one tenth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
+
+        this.setAnswer('ten times',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_35',5.0435,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__35 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.1_35';
+	this.mChopWhiteSpace = true;
+
+        this.setQuestion('One hundreth is ____________ the value of one tenth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
+
+        this.setAnswer('one tenth',0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_34',5.0434,'5.nbt.a.1','');
@@ -11,6 +72,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_34';
+	this.mChopWhiteSpace = true;
 
         this.setQuestion('One tenth is ____________ the value of one hundreth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
 
