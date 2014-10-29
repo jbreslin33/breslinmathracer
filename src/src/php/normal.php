@@ -262,7 +262,8 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	//get denominator for score
  	$query = "select id, progression from item_types where core_standards_id = '";
         $query .= $core_standards_id_progressed;
-        $query .= "' ORDER BY progression;";
+	$query .= "' AND active_code = 1 ";
+        $query .= " ORDER BY progression;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
         $count_of_item_types_in_standard = pg_num_rows($result);
