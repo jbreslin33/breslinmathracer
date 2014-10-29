@@ -151,21 +151,51 @@ initialize: function(sheet)
 
         this.ones = Math.floor(Math.random()*9)+1;
 
-        this.mBase = 10;
-        this.mExponent = Math.floor(Math.random()*9)+1;
+        this.mBase = parseInt(10);
+        this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
 
         this.setQuestion('Find the qoutient: ' + this.ones + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
-        var multiplier = 1;
-        for (i=0; i < parseInt(this.mExponent); i++)
-        {
-                multiplier = multiplier * 10;
-        }
+        var number = parseFloat(this.ones);
 
-        var number = parseInt(this.ones);
-        var answer = number / multiplier;
-	answer = parseFloat(answer);
-	answer = toFixed(answer);
+	var answer = '';
+
+	if (this.mExponent == 1)
+	{
+		answer = '0' + '.' + this.ones;
+	}
+	if (this.mExponent == 2)
+	{
+		answer = '0' + '.' + '0' + this.ones;
+	}
+	if (this.mExponent == 3)
+	{
+		answer = '0' + '.' + '00' +  this.ones;
+	}
+	if (this.mExponent == 4)
+	{
+		answer = '0' + '.' + '000' +  this.ones;
+	}
+	if (this.mExponent == 5)
+	{
+		answer = '0' + '.' + '0000' +  this.ones;
+	}
+	if (this.mExponent == 6)
+	{
+		answer = '0' + '.' + '00000' +  this.ones;
+	}
+	if (this.mExponent == 7)
+	{
+		answer = '0' + '.' + '000000' +  this.ones;
+	}
+	if (this.mExponent == 8)
+	{
+		answer = '0' + '.' + '0000000' +  this.ones;
+	}
+	if (this.mExponent == 9)
+	{
+		answer = '0' + '.' + '00000000' +  this.ones;
+	}
 
         this.setAnswer('' + answer,0);
 }
@@ -185,9 +215,6 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.2_10';
 
         this.ones = Math.floor(Math.random()*9)+1;
-        this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
-        this.thousandths = Math.floor(Math.random()*9)+1;
 
         this.mBase = parseInt(10);
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
@@ -254,8 +281,6 @@ initialize: function(sheet)
 
         this.ones = Math.floor(Math.random()*9)+1;
         this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
-        this.thousandths = Math.floor(Math.random()*9)+1;
 
         this.mBase = parseInt(10);
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
@@ -322,8 +347,6 @@ initialize: function(sheet)
 
         this.ones = Math.floor(Math.random()*9)+1;
         this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
-        this.thousandths = Math.floor(Math.random()*9)+1;
 
         this.mBase = parseInt(10);
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
