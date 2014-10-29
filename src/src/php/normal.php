@@ -256,12 +256,29 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	$count_of_item_types_in_standard = 0;
 	
 	//get denominator for score
- 	$query = "select progression from item_types where core_standards_id = '";
+ 	$query = "select id, progression from item_types where core_standards_id = '";
         $query .= $core_standards_id_progressed;
         $query .= "' ORDER BY progression;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
         $count_of_item_types_in_standard = pg_num_rows($result);
+
+   	$num = pg_num_rows($result);
+
+	$standard_score_counter = 0;
+	$standard_score = 0;
+        if ($num > 0)
+        {
+        	for ($i = 0; $i < $num; $i++)
+                {
+                	$id = pg_Result($result, $i, 'id');
+			$standard_score_counter++;
+                        if ($id == $item_types_id_progressed)
+                        {
+                        	$standard_score = $standard_score_counter;
+                        }
+		}
+	}
 	
 	//calc score
 	$score = intval(count($type_master_array));
@@ -269,7 +286,7 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	$progress_percent = "";	
 	if ($count_of_item_types_in_standard != 0)
 	{
-		$progress_percent = floatval($score / $count_of_item_types_in_standard); 
+		$progress_percent = floatval($standard_score / $count_of_item_types_in_standard); 
 		$progress_percent = $progress_percent * 100;
 		$progress_percent = round($progress_percent, 0, PHP_ROUND_HALF_UP);
 	}
@@ -281,7 +298,7 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         $itemString .= ":";
         $itemString .= $item_types_id_progressed; //progressed
         $itemString .= ":";
-        $itemString .= $score; //score
+        $itemString .= $standard_score; //score
         $itemString .= "/";
         $itemString .= $count_of_item_types_in_standard;
         $itemString .= "=";
