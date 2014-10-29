@@ -1,4 +1,71 @@
 
+var PlaceValueWholeNumberColors = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+	this.mChopWhiteSpace = false;
+
+        this.hundredthousands = Math.floor(Math.random()*9)+1;
+        this.tenthousands = Math.floor(Math.random()*9)+1;
+        this.thousands = Math.floor(Math.random()*9)+1;
+        this.hundreds = Math.floor(Math.random()*9)+1;
+        this.tens = Math.floor(Math.random()*9)+1;
+        this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+        this.hundreths = Math.floor(Math.random()*9)+1;
+        this.thousandths = Math.floor(Math.random()*9)+1;
+        this.tenthousandths = Math.floor(Math.random()*9)+1;
+        this.hundredthousandths = Math.floor(Math.random()*9)+1;
+}
+});
+
+var PlaceValueWholeNumberColorsFraction = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+
+        this.mChopWhiteSpace = false;
+
+        this.hundredthousands = Math.floor(Math.random()*9)+1;
+        this.tenthousands = Math.floor(Math.random()*9)+1;
+        this.thousands = Math.floor(Math.random()*9)+1;
+        this.hundreds = Math.floor(Math.random()*9)+1;
+        this.tens = Math.floor(Math.random()*9)+1;
+        this.ones = Math.floor(Math.random()*9)+1;
+        this.tenths = Math.floor(Math.random()*9)+1;
+        this.hundreths = Math.floor(Math.random()*9)+1;
+        this.thousandths = Math.floor(Math.random()*9)+1;
+        this.tenthousandths = Math.floor(Math.random()*9)+1;
+        this.hundredthousandths = Math.floor(Math.random()*9)+1;
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_42',5.0442,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__42 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_42';
+
+	this.setQuestion('What digit is in the ten thousands place: ' + this.tenthousands + this.thousands + this.hundreds + this.tens + this.ones + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + ''); 
+        this.setAnswer('' + this.tenthousands,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_41',5.0441,'5.nbt.a.1','');
 */
@@ -168,55 +235,6 @@ initialize: function(sheet)
         this.setAnswer('ten times',0);
 }
 });
-
-var PlaceValueWholeNumberColors = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,375,50,220,75,150,50,525,100);
-
-	this.mChopWhiteSpace = false;
-
-        this.hundredthousands = Math.floor(Math.random()*9)+1;
-        this.tenthousands = Math.floor(Math.random()*9)+1;
-        this.thousands = Math.floor(Math.random()*9)+1;
-        this.hundreds = Math.floor(Math.random()*9)+1;
-        this.tens = Math.floor(Math.random()*9)+1;
-        this.ones = Math.floor(Math.random()*9)+1;
-        this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
-        this.thousandths = Math.floor(Math.random()*9)+1;
-        this.tenthousandths = Math.floor(Math.random()*9)+1;
-        this.hundredthousandths = Math.floor(Math.random()*9)+1;
-}
-});
-
-var PlaceValueWholeNumberColorsFraction = new Class(
-{
-Extends: TextItemFraction,
-
-initialize: function(sheet)
-{
-	this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
-
-        this.mChopWhiteSpace = false;
-
-        this.hundredthousands = Math.floor(Math.random()*9)+1;
-        this.tenthousands = Math.floor(Math.random()*9)+1;
-        this.thousands = Math.floor(Math.random()*9)+1;
-        this.hundreds = Math.floor(Math.random()*9)+1;
-        this.tens = Math.floor(Math.random()*9)+1;
-        this.ones = Math.floor(Math.random()*9)+1;
-        this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
-        this.thousandths = Math.floor(Math.random()*9)+1;
-        this.tenthousandths = Math.floor(Math.random()*9)+1;
-        this.hundredthousandths = Math.floor(Math.random()*9)+1;
-}
-});
-
 
 
 /*
