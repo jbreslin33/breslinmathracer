@@ -88,46 +88,98 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.2_12';
 
-        this.place = Math.floor(Math.random()*6);
-	this.number = Math.floor(Math.random()*9)+1;
+        this.place = parseInt(Math.floor(Math.random()*6));
+        this.mBase = 10;
+        this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
+        this.mExponent = parseInt(1);
+	this.number = parseInt(Math.floor(Math.random()*9)+1);
 	this.a = ''; 
 
 	if (this.place == 0)
 	{
-		this.a = parseInt(this.number + '000');
-		this.a = parseInt(this.a);
+		this.a = this.number + '000';
 	}
 	if (this.place == 1)
 	{
-		this.a = parseInt(this.number + '00');
-		this.a = parseInt(this.a);
+		this.a = this.number + '00';
 	}
 	if (this.place == 2)
 	{
-		this.a = parseInt(this.number + '0');
-		this.a = parseInt(this.a);
+		this.a = this.number + '0';
 	}
 	if (this.place == 3)
 	{
-		this.a = parseInt(this.number + '');
-		this.a = parseInt(this.a);
+		this.a = this.number + '';
 	}
 	if (this.place == 4)
 	{
-		this.a = parseInt('0.' + this.number);
-		this.a = parseFloat(this.a);
+		this.a = '0.' + this.number;
 	}
 	if (this.place == 5)
 	{
-		this.a = parseInt('0.0' + this.number);
-		this.a = parseFloat(this.a);
+		this.a = '0.0' + this.number;
+	}
+
+	if (this.mExponent == 1)
+	{
+		if (this.place == 0)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 1)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 2)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 3)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 4)
+		{
+			this.b = '' + this.number;
+		}
+		if (this.place == 5)
+		{
+			this.b = '0.' + this.number;
+		}
+	}
+	if (this.mExponent == 2)
+	{
+		this.b = '' + this.a + '00';
+	}
+	if (this.mExponent == 3)
+	{
+		this.b = '' + this.a + '000';
+	}
+	if (this.mExponent == 4)
+	{
+		this.b = '' + this.a + '0000';
+	}
+	if (this.mExponent == 5)
+	{
+		this.b = '' + this.a + '00000';
+	}
+	if (this.mExponent == 6)
+	{
+		this.b = '' + this.a + '000000';
+	}
+	if (this.mExponent == 7)
+	{
+		this.b = '' + this.a + '0000000';
+	}
+	if (this.mExponent == 8)
+	{
+		this.b = '' + this.a + '00000000';
+	}
+	if (this.mExponent == 9)
+	{
+		this.b = '' + this.a + '000000000';
 	}
         
-        this.mBase = 10;
-        this.mExponent = Math.floor(Math.random()*9)+1;
-
-	this.b = this.a * Math.pow(10,this.mExponent);
-
         this.setQuestion('What power of 10 will make this true: ' + this.a + ' &times ' + '__' + ' = ' + this.b + ' Sample Answer: 10^4');
 
 	var answer = '' + this.mBase + '^' + this.mExponent; 
