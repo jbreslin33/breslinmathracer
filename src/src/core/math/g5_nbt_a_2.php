@@ -1032,6 +1032,8 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.2_5';
+ 
+	this.mChopWhiteSpace = false;
 
         this.mBase = 10;
         this.mExponent = Math.floor(Math.random()*9)+1;
@@ -1074,7 +1076,7 @@ initialize: function(sheet)
 	}
 	if (this.mExponent == 8)
 	{
-		power = 'eigth';
+		power = 'eighth';
 	}
 	if (this.mExponent == 9)
 	{
