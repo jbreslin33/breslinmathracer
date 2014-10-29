@@ -78,6 +78,21 @@ for( var i = 0; i < pointsX.length; i++ ) {
 
    } 
 
+// draw x label
+var Xaxis = new Shape(5,5,x2+20,y2+25,this.mGame,"","","");
+Xaxis.setText('x');
+item.addQuestionShape(Xaxis);
+Xaxis.setOutOfBoundsCheck(false);
+Xaxis.mMesh.style.fontSize = 14;
+Xaxis.mMesh.style.color = "yellow";
+
+// draw y label
+var Yaxis = new Shape(1,1,x1+15,y1+20,this.mGame,"","#555599","");
+Yaxis.setText('y');
+item.addQuestionShape(Yaxis);
+Yaxis.setOutOfBoundsCheck(false);
+Yaxis.mMesh.style.fontSize = 14;
+Yaxis.mMesh.style.color = "yellow";
 
     // Draw horizontal gridlines
 for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
@@ -94,23 +109,18 @@ for (var i = 0; i < this.mPolygon.axis[0].text.items.length; i++) {
     }).toBack();
 }
 
-
 this.mPolygon.mPolygon = this;
 
 if (this.mDrag)
 {
  		this.mPolygon.drag(this.move, this.start, this.up);
 }
-	
-
-
-
 
 // table coords
 var tableWidth = 150;
 var tableHeight = 200;
 var tableX = 330;
-var tableY = 125;
+var tableY = 50;
 var cols = 3;
 var rows = 5;
 var colWidth = tableWidth/cols;
@@ -348,7 +358,21 @@ for( var i = 0; i < pointsX2.length; i++ ) {
 
    } 
 
+// draw x label
+var Xaxis = new Shape(5,5,x2+20,y2+25,this.mGame,"","","");
+Xaxis.setText('x');
+item.addQuestionShape(Xaxis);
+Xaxis.setOutOfBoundsCheck(false);
+Xaxis.mMesh.style.fontSize = 14;
+Xaxis.mMesh.style.color = "yellow";
 
+// draw y label
+var Yaxis = new Shape(1,1,x1+15,y1+20,this.mGame,"","#555599","");
+Yaxis.setText('y');
+item.addQuestionShape(Yaxis);
+Yaxis.setOutOfBoundsCheck(false);
+Yaxis.mMesh.style.fontSize = 14;
+Yaxis.mMesh.style.color = "yellow";
 
     // Draw horizontal gridlines
 for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {

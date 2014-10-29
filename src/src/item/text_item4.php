@@ -108,6 +108,15 @@ Extends: TextItem2,
                 }
         },
 
+  getAnswerThree: function()
+	{
+		return this.mAnswerArray[2];
+	},
+
+  getAnswerFour: function()
+	{
+		return this.mAnswerArray[3];
+	},
 
 	setUserAnswer3: function(userAnswer3)
 	{
