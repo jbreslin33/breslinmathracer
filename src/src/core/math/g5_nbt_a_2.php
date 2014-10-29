@@ -32,6 +32,7 @@ initialize: function(sheet)
         this.place = parseInt(Math.floor(Math.random()*6));
         this.mBase = 10;
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
+	this.mExponent = parseInt(1);
 	this.number = parseInt(Math.floor(Math.random()*9)+1);
 	this.a = ''; 
 
@@ -64,27 +65,27 @@ initialize: function(sheet)
 	{
 		if (this.place == 0)
 		{
-			this.b = '' + this.a + '0';
+			this.b = '' + this.number + '00';
 		}
 		if (this.place == 1)
 		{
-			this.b = '' + this.a + '0';
+			this.b = '' + this.number + '0';
 		}
 		if (this.place == 2)
 		{
-			this.b = '' + this.a + '0';
+			this.b = '' + this.number;
 		}
 		if (this.place == 3)
 		{
-			this.b = '' + this.a + '0';
+			this.b = '0.' + this.number;
 		}
 		if (this.place == 4)
 		{
-			this.b = '' + this.number;
+			this.b = '0.0' + this.number;
 		}
 		if (this.place == 5)
 		{
-			this.b = '0.' + this.number;
+			this.b = '0.00' + this.number;
 		}
 	}
 	if (this.mExponent == 2)
