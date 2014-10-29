@@ -89,10 +89,8 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.2_12';
 
         this.place = parseInt(Math.floor(Math.random()*6));
-        this.place = parseInt(5);
         this.mBase = 10;
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
-        this.mExponent = parseInt(2);
 	this.number = parseInt(Math.floor(Math.random()*9)+1);
 	this.a = ''; 
 
@@ -177,31 +175,198 @@ initialize: function(sheet)
 	}
 	if (this.mExponent == 3)
 	{
-		this.b = '' + this.a + '000';
+               	if (this.place == 0)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '00';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '0';
+                }
 	}
 	if (this.mExponent == 4)
 	{
-		this.b = '' + this.a + '0000';
+     		if (this.place == 0)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '00';
+                }
+
 	}
 	if (this.mExponent == 5)
 	{
-		this.b = '' + this.a + '00000';
+     		if (this.place == 0)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '0000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '000';
+                }
+
 	}
 	if (this.mExponent == 6)
 	{
-		this.b = '' + this.a + '000000';
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '00000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '0000';
+                }
+
 	}
 	if (this.mExponent == 7)
 	{
-		this.b = '' + this.a + '0000000';
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '000000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '00000';
+                }
+
 	}
 	if (this.mExponent == 8)
 	{
-		this.b = '' + this.a + '00000000';
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '0000000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '000000';
+                }
+
 	}
 	if (this.mExponent == 9)
 	{
-		this.b = '' + this.a + '000000000';
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '00000000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '0000000';
+                }
+
 	}
         
         this.setQuestion('What power of 10 will make this true: ' + this.a + ' &times ' + '__' + ' = ' + this.b + ' Sample Answer: 10^4');
