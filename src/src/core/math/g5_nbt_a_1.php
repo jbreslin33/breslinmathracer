@@ -1,3 +1,23 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_34',5.0434,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__34 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.1_34';
+
+        this.setQuestion('One tenth is ____________ the value of one hundreth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
+
+        this.setAnswer('ten times',0);
+}
+});
+
 var PlaceValueWholeNumberColors = new Class(
 {
 Extends: TextItem,
@@ -45,6 +65,8 @@ initialize: function(sheet)
         this.hundredthousandths = Math.floor(Math.random()*9)+1;
 }
 });
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_33',5.0433,'5.nbt.a.1','');

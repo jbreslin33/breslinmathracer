@@ -1032,6 +1032,38 @@ getItem: function(id)
         {
                 return new i_5_nbt_a_1__33(this.mSheet);
         }
+        if (id == '5.nbt.a.1_34')
+        {
+                return new i_5_nbt_a_1__34(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_35')
+        {
+                return new i_5_nbt_a_1__35(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_36')
+        {
+                return new i_5_nbt_a_1__36(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_37')
+        {
+                return new i_5_nbt_a_1__37(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_38')
+        {
+                return new i_5_nbt_a_1__38(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_39')
+        {
+                return new i_5_nbt_a_1__39(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_40')
+        {
+                return new i_5_nbt_a_1__40(this.mSheet);
+        }
+        if (id == '5.nbt.a.1_41')
+        {
+                return new i_5_nbt_a_1__41(this.mSheet);
+        }
 	
 	//5.nbt.a.2 
 	if (id == '5.nbt.a.2_1')
