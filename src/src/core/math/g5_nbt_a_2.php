@@ -905,9 +905,7 @@ initialize: function(sheet)
         this.mBase = parseInt(10);
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
 
-        this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
-
-        var number = parseFloat(this.ones + '.' + this.tenths + this.hundreths + this.thousandths);
+        this.setQuestion('Find the qoutient: ' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
 
 	var answer = '';
 
