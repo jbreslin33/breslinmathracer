@@ -32,7 +32,6 @@ initialize: function(sheet)
         this.place = parseInt(Math.floor(Math.random()*6));
         this.mBase = 10;
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
-	this.mExponent = parseInt(2);
 	this.number = parseInt(Math.floor(Math.random()*9)+1);
 	this.a = ''; 
 
@@ -118,30 +117,198 @@ initialize: function(sheet)
 	}
 	if (this.mExponent == 3)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.0' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.00' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.0000' + this.number;
+                }
 	
 	}
 	if (this.mExponent == 4)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '0.' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.0' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.00' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.000' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.0000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.00000' + this.number;
+                }
 
 	}
 	if (this.mExponent == 5)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '0.0' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.00' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.000' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.0000' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.00000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.000000' + this.number;
+                }
 
 	}
 	if (this.mExponent == 6)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '0.00' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.000' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.0000' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.00000' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.000000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.0000000' + this.number;
+                }
 
 	}
 	if (this.mExponent == 7)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '0.000' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.0000' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.00000' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.000000' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.0000000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.00000000' + this.number;
+                }
 
 	}
 	if (this.mExponent == 8)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '0.0000' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.00000' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.000000' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.0000000' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.00000000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.000000000' + this.number;
+                }
 
 	}
 	if (this.mExponent == 9)
 	{
+                if (this.place == 0)
+                {
+                        this.b = '0.00000' + this.number + '';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '0.000000' + this.number + '';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '0.0000000' + this.number;
+                }
+                if (this.place == 3)
+                {
+                        this.b = '0.00000000' + this.number;
+                }
+                if (this.place == 4)
+                {
+                        this.b = '0.000000000' + this.number;
+                }
+                if (this.place == 5)
+                {
+                        this.b = '0.0000000000' + this.number;
+                }
 
 	}
         
