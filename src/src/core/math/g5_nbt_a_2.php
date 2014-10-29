@@ -89,9 +89,10 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.2_12';
 
         this.place = parseInt(Math.floor(Math.random()*6));
+        this.place = parseInt(5);
         this.mBase = 10;
         this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
-        this.mExponent = parseInt(1);
+        this.mExponent = parseInt(2);
 	this.number = parseInt(Math.floor(Math.random()*9)+1);
 	this.a = ''; 
 
@@ -149,7 +150,30 @@ initialize: function(sheet)
 	}
 	if (this.mExponent == 2)
 	{
-		this.b = '' + this.a + '00';
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '0';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number;
+                }
 	}
 	if (this.mExponent == 3)
 	{
