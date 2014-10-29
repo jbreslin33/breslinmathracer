@@ -16,7 +16,6 @@ function toFixed(x) {
   }
   return x;
 }
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_13',5.0513,'5.nbt.a.2','');
 */
@@ -29,44 +28,288 @@ initialize: function(sheet)
         this.parent(sheet,600,50,320,95, 50,50,712,100);
 
         this.mType = '5.nbt.a.2_13';
-        
-	this.mBase = 10;
-        this.mExponent = Math.floor(Math.random()*9)+1;
 
         this.place = parseInt(Math.floor(Math.random()*6));
-
-	this.number = Math.floor(Math.random()*9)+1;
-	this.a = 0; 
-
+        this.mBase = 10;
+        this.mExponent = parseInt(Math.floor(Math.random()*9)+1);
+	this.number = parseInt(Math.floor(Math.random()*9)+1);
+	this.a = ''; 
 
 	if (this.place == 0)
 	{
-		this.a = parseInt(this.number + '000');
+		this.a = this.number + '000';
 	}
 	if (this.place == 1)
 	{
-		this.a = parseInt(this.number + '00');
+		this.a = this.number + '00';
 	}
 	if (this.place == 2)
 	{
-		this.a = parseInt(this.number + '0');
+		this.a = this.number + '0';
 	}
 	if (this.place == 3)
 	{
-		this.a = parseInt(this.number + '');
+		this.a = this.number + '';
 	}
 	if (this.place == 4)
 	{
-		this.a = parseFloat('0.' + this.number);
+		this.a = '0.' + this.number;
 	}
 	if (this.place == 5)
 	{
-		this.a = parseFloat('0.0' + this.number);
+		this.a = '0.0' + this.number;
 	}
-	
-	this.b = this.a / Math.pow(10,this.mExponent);
-	this.b = toFixed(this.b);
 
+	if (this.mExponent == 1)
+	{
+		if (this.place == 0)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 1)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 2)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 3)
+		{
+			this.b = '' + this.a + '0';
+		}
+		if (this.place == 4)
+		{
+			this.b = '' + this.number;
+		}
+		if (this.place == 5)
+		{
+			this.b = '0.' + this.number;
+		}
+	}
+	if (this.mExponent == 2)
+	{
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '00';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '0';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number;
+                }
+	}
+	if (this.mExponent == 3)
+	{
+               	if (this.place == 0)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '00';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '0';
+                }
+	}
+	if (this.mExponent == 4)
+	{
+     		if (this.place == 0)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '0000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '00';
+                }
+
+	}
+	if (this.mExponent == 5)
+	{
+     		if (this.place == 0)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '00000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '0000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '000';
+                }
+
+	}
+	if (this.mExponent == 6)
+	{
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '00000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '0000';
+                }
+
+	}
+	if (this.mExponent == 7)
+	{
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '0000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '000000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '00000';
+                }
+
+	}
+	if (this.mExponent == 8)
+	{
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '00000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '0000000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '000000';
+                }
+
+	}
+	if (this.mExponent == 9)
+	{
+                if (this.place == 0)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 1)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 2)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 3)
+                {
+                        this.b = '' + this.a + '000000000';
+                }
+                if (this.place == 4)
+                {
+                        this.b = '' + this.number + '00000000';
+                }
+                if (this.place == 5)
+                {
+                        this.b = '' + this.number + '0000000';
+                }
+
+	}
+        
         this.setQuestion('What power of 10 will make this true: ' + this.a + ' &divide ' + '__' + ' = ' + this.b + ' Sample Answer: 10^4');
 
 	var answer = '' + this.mBase + '^' + this.mExponent; 
