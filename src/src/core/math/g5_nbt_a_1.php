@@ -1,3 +1,28 @@
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_38',5.0438,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__38 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 300,50,525,100);
+
+        this.mType = '5.nbt.a.1_38';
+	this.mChopWhiteSpace = true;
+        this.number = Math.floor(Math.random()*9)+1;
+
+        this.setQuestion('0.0' + this.number + ' is ____________ the value of ' + '0.' + this.number + ' Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
+
+        this.setAnswer('one tenth',0);
+}
+});
+
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_37',5.0437,'5.nbt.a.1','');
 */
