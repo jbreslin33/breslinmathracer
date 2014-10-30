@@ -242,7 +242,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_41';
-        this.mChopWhiteSpace = true;
+        this.mChopWhiteSpace = false;
         this.number = Math.floor(Math.random()*9)+1;
 
         this.setQuestion('' + this.number + ' is ____________ the value of ' + '0.' + this.number + ' Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
@@ -264,7 +264,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_40';
-        this.mChopWhiteSpace = true;
+        this.mChopWhiteSpace = false;
         this.number = Math.floor(Math.random()*9)+1;
 
         this.setQuestion('0.' + this.number + ' is ____________ the value of ' + this.number + ' Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
@@ -285,7 +285,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_39';
-        this.mChopWhiteSpace = true;
+        this.mChopWhiteSpace = false;
         this.number = Math.floor(Math.random()*9)+1;
 
         this.setQuestion('0.' + this.number + ' is ____________ the value of ' + '0.0' + this.number + ' Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
@@ -307,7 +307,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_38';
-	this.mChopWhiteSpace = true;
+	this.mChopWhiteSpace = false;
         this.number = Math.floor(Math.random()*9)+1;
 
         this.setQuestion('0.0' + this.number + ' is ____________ the value of ' + '0.' + this.number + ' Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
@@ -330,7 +330,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_37';
-	this.mChopWhiteSpace = true;
+	this.mChopWhiteSpace = false;
 
         this.setQuestion('One tenth is ____________ the value of one . Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
 
@@ -351,7 +351,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_36';
-	this.mChopWhiteSpace = true;
+	this.mChopWhiteSpace = false;
 
         this.setQuestion('One is ____________ the value of one tenth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
 
@@ -371,7 +371,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_35';
-	this.mChopWhiteSpace = true;
+	this.mChopWhiteSpace = false;
 
         this.setQuestion('One hundreth is ____________ the value of one tenth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
 
@@ -392,7 +392,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,95, 300,50,525,100);
 
         this.mType = '5.nbt.a.1_34';
-	this.mChopWhiteSpace = true;
+	this.mChopWhiteSpace = false;
 
         this.setQuestion('One tenth is ____________ the value of one hundreth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
 
