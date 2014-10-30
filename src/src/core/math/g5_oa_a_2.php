@@ -703,7 +703,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_17';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word less?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word less?');
         this.setAnswer('subtraction',0);
 }
 });
@@ -722,7 +722,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_16';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words less than?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words less than?');
         this.setAnswer('subtraction',0);
 }
 });
@@ -741,7 +741,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_15';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word subtract?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word subtract?');
         this.setAnswer('subtraction',0);
 }
 });
@@ -760,7 +760,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_14';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word plus?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word plus?');
         this.setAnswer('addition',0);
 }
 });
@@ -779,7 +779,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a._0_13';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words the total of?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words the total of?');
         this.setAnswer('addition',0);
 }
 });
@@ -797,7 +797,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_12';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words the sum of?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words the sum of?');
         this.setAnswer('addition',0);
 }
 });
@@ -816,7 +816,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_11';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the words more than?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words more than?');
         this.setAnswer('addition',0);
 }
 });
@@ -835,7 +835,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.2_0_10';
 
-        this.setQuestion('What operation, addition, subtraction, multiplication or divistion uses the word add?');
+        this.setQuestion('What operation, addition, subtraction, multiplication or division uses the word add?');
         this.setAnswer('addition',0);
 }
 });
