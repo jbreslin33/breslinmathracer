@@ -47,6 +47,170 @@ initialize: function(sheet)
 }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_51',5.0451,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__51 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_51';
+
+        this.setQuestion('What digit is in the hundredthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.hundredthousandths,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_50',5.0450,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__50 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_50';
+
+        this.setQuestion('What digit is in the tenthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.tenthousandths,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_49',5.0449,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__49 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_49';
+
+        this.setQuestion('What digit is in the thousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.thousandths,0);
+}
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_48',5.0448,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__48 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_48';
+
+        this.setQuestion('What digit is in the hundreths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.hundreths,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_47',5.0447,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__47 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_47';
+
+        this.setQuestion('What digit is in the tenths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.tenths,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_46',5.0446,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__46 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_46';
+
+        this.setQuestion('What digit is in the ones place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.ones,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_45',5.0445,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__45 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_45';
+
+        this.setQuestion('What digit is in the tens place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.tens,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_44',5.0444,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__44 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_44';
+
+        this.setQuestion('What digit is in the hundreds place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.hundreds,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_43',5.0443,'5.nbt.a.1','');
+*/
+var i_5_nbt_a_1__43 = new Class(
+{
+Extends: PlaceValueWholeNumberColors,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.a.1_43';
+
+        this.setQuestion('What digit is in the thousands place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.thousands,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.1_42',5.0442,'5.nbt.a.1','');
