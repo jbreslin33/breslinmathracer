@@ -61,7 +61,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_42';
 
-	this.setQuestion('What digit is in the ten thousands place: ' + this.tenthousands + this.thousands + this.hundreds + this.tens + this.ones + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + ''); 
+	this.setQuestion('What digit is in the ten thousands place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + ''); 
         this.setAnswer('' + this.tenthousands,0);
 }
 });
