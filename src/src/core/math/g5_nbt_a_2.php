@@ -33,16 +33,14 @@ initialize: function(sheet)
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
 
-        this.a = Math.floor((Math.random()*8)+2);
-        this.b = Math.floor((Math.random()*8)+2);
-        this.c = Math.floor((Math.random()*8)+2);
-        this.d = parseInt( this.a + this.b + this.c);
+        this.a = Math.floor((Math.random()*88)+2);
+	this.a = parseInt(this.a * 1000); 
 
-        this.setQuestion(this.ns.mNameOne + ' played for ' + this.d + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes, ' + this.ns.mPlayedActivityTwo + ' for ' + this.b + ' minutes and the rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '. Write a numerical expression using parenthesis to find how many minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '.');
+        this.b = parseInt(this.a / 10);
 
-        this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
-        this.setAnswer(this.d + '-(' + this.b + '+' + this.a + ')',1);
+	this.setQuestion(this.ns.mNameOne + ' scored ' + this.a + ' points. ' + this.ns.mNameTwo + ' scored one tenth as much as ' + this.ns.mNameOne + '. How many points did ' + this.ns.mNameTwo + ' score?');  
 
+        this.setAnswer(this.b,0);
 }
 });
 
