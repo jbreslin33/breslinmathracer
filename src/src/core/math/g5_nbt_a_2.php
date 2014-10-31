@@ -16,6 +16,36 @@ function toFixed(x) {
   }
   return x;
 }
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_14',5.0514,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__14 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+	this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.2_14';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.a = Math.floor((Math.random()*8)+2);
+        this.b = Math.floor((Math.random()*8)+2);
+        this.c = Math.floor((Math.random()*8)+2);
+        this.d = parseInt( this.a + this.b + this.c);
+
+        this.setQuestion(this.ns.mNameOne + ' played for ' + this.d + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes, ' + this.ns.mPlayedActivityTwo + ' for ' + this.b + ' minutes and the rest of the time ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '. Write a numerical expression using parenthesis to find how many minutes ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityThree + '.');
+
+        this.setAnswer(this.d + '-(' + this.a + '+' + this.b + ')',0);
+        this.setAnswer(this.d + '-(' + this.b + '+' + this.a + ')',1);
+
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_13',5.0513,'5.nbt.a.2','');
 */
