@@ -16,6 +16,38 @@ function toFixed(x) {
   }
   return x;
 }
+//  this.setQuestion('Find the qoutient: ' + this.ones + ' &divide ' + this.mBase + '<sup>' + this.mExponent + '</sup>');
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_15',5.0515,'5.nbt.a.2','');
+*/
+var i_5_nbt_a_2__15 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.2_15';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.thousands = Math.floor((Math.random()*8)+1);
+        this.a = Math.floor((Math.random()*8)+1);
+        this.hundreds = Math.floor((Math.random()*8)+1);
+        this.b = Math.floor((Math.random()*8)+1);
+        this.tens = Math.floor((Math.random()*8)+1);
+        this.c = Math.floor((Math.random()*8)+1);
+        this.ones = Math.floor((Math.random()*8)+1);
+        this.d = Math.floor((Math.random()*8)+1);
+
+	this.setQuestion(this.thousands + ' &times ' + this.a + ' + ' + this.hundreds + ' &times ' + this.b + ' + ' + this.tens + ' &times ' + this.c + ' + ' + this.ones + ' &times ' + this.d); 
+
+        this.setAnswer(this.b,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.2_14',5.0514,'5.nbt.a.2','');
