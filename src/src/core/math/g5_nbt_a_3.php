@@ -17,6 +17,9 @@ initialize: function(sheet)
 
         this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths);
         this.setAnswer('' + this.tenths + ' x ' + '1/10 + ' + this.hundreths + ' x ' + '1/100',0);
+        this.setAnswer('' + this.tenths + ' * ' + '1/10 + ' + this.hundreths + ' * ' + '1/100',1);
+        
+        this.setAnswer('' + this.tenths + '/10 + ' + this.hundreths + '/100',2);
 }
 });
 
