@@ -15,7 +15,7 @@ initialize: function(sheet)
         this.tenths =  Math.floor((Math.random()*9)+1);
         this.hundreths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths;
+        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths);
         this.setAnswer('' + this.tenths + ' x ' + '1/10 + ' + this.hundreths + ' x ' + '1/100',0);
 }
 });
