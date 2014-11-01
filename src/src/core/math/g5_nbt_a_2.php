@@ -35,17 +35,17 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         this.thousands = Math.floor((Math.random()*8)+1);
-        this.a = Math.floor((Math.random()*8)+1);
+        this.a = parseInt(this.thousands * 1000);
         this.hundreds = Math.floor((Math.random()*8)+1);
-        this.b = Math.floor((Math.random()*8)+1);
+        this.b = parseInt(this.hundreds * 100);
         this.tens = Math.floor((Math.random()*8)+1);
-        this.c = Math.floor((Math.random()*8)+1);
+        this.c = parseInt(this.tens * 10);
         this.ones = Math.floor((Math.random()*8)+1);
-        this.d = Math.floor((Math.random()*8)+1);
+        this.d = this.ones;
 
-	this.setQuestion(this.thousands + ' &times ' + this.a + ' + ' + this.hundreds + ' &times ' + this.b + ' + ' + this.tens + ' &times ' + this.c + ' + ' + this.ones + ' &times ' + this.d); 
+	this.setQuestion('Evaluate: ' + this.thousands + ' &times 1,000 + ' + this.hundreds + ' &times 100 + ' + this.tens + ' &times 10 + ' + this.ones); 
 
-        this.setAnswer(this.b,0);
+        this.setAnswer(parseInt(this.a + this.b + this.c + this.d),0);
 }
 });
 
