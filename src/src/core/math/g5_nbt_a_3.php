@@ -12,21 +12,36 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.3_1';
 
-        this.mNameMachine = new NameMachine();
-        this.ns = new NameSampler();
+	var n =  Math.floor((Math.random()*99)+1);
+	var d = 100;
+	
+ 	var fraction = new Fraction(n,d);
 
-        this.thousands = Math.floor((Math.random()*8)+1);
-        this.a = parseInt(this.thousands * 1000);
-        this.hundreds = Math.floor((Math.random()*8)+1);
-        this.b = parseInt(this.hundreds * 100);
-        this.tens = Math.floor((Math.random()*8)+1);
-        this.c = parseInt(this.tens * 10);
-        this.ones = Math.floor((Math.random()*8)+1);
-        this.d = this.ones;
+        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setAnswer('0.' + n,0);
+}
+});
 
-        this.setQuestion('Evaluate: ' + this.thousands + ' &times 1,000 + ' + this.hundreds + ' &times 100 + ' + this.tens + ' &times 10 + ' + this.ones);
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_2',5.0602,'5.nbt.a.3','add zero for tenths');
+*/
+var i_5_nbt_a_3__2 = new Class(
+{
+Extends: TextItem,
 
-        this.setAnswer(parseInt(this.a + this.b + this.c + this.d),0);
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.3_2';
+
+        var n =  Math.floor((Math.random()*9)+1);
+        var d = 100;
+
+        var fraction = new Fraction(n,d);
+
+        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setAnswer('0.0' + n,0);
 }
 });
 
