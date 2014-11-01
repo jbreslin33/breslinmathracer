@@ -1,6 +1,27 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_5',5.0605,'5.nbt.a.3','add zero for tenths');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_6',5.0606,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__6 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.3_6';
+
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths;
+        this.setAnswer('' + this.tenths + ' x ' + '1/10 + ' + this.hundreths + ' x ' + '1/100',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_5',5.0605,'5.nbt.a.3','add zero');
 */
 var i_5_nbt_a_3__5 = new Class(
 {
@@ -23,7 +44,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_4',5.0604,'5.nbt.a.3','add zero for tenths');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_4',5.0604,'5.nbt.a.3','add zero');
 */
 var i_5_nbt_a_3__4 = new Class(
 {
