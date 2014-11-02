@@ -1,3 +1,32 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_14',5.0614,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__14 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_14';
+
+        this.ns = new NameMachine();
+
+        this.tenths = Math.floor((Math.random()*9)+1);
+        this.hundreths = Math.floor((Math.random()*9)+1);
+
+	this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+
+	this.fraction = new Fraction(this.tenths_hundreths,100); 	
+
+        this.setQuestion('Convert to a decimal: ' + this.fraction.getString(),0);
+
+        this.setAnswer('0.' + this.tenths + this.hundreths,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_13',5.0613,'5.nbt.a.3','');
 */
@@ -13,22 +42,20 @@ initialize: function(sheet)
 
         this.ns = new NameMachine();
 
-        this.tens =  Math.floor((Math.random()*9)+1);
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  0;
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-	this.tenths_fraction = new Fraction(1,10);
-	this.hundreths_fraction = new Fraction(1,100);
-	this.thousandths_fraction = new Fraction(1,1000);
+        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
 
-        this.setQuestion('' + 'Evaluate: ' + this.tens + ' &times 10 + ' + this.ones + ' &times 1 + ' + this.tenths + ' &times ' + this.tenths_fraction.getString() + ' + ' + this.hundreths + ' &times ' + this.hundreths_fraction.getString() + ' + ' + this.thousandths + ' &times ' + this.thousandths_fraction.getString(),0);
+        this.ones = this.ns.getNumberName(this.ones);
+        this.tenths = '' + this.ns.getNumberName(this.tenths);
+        this.thousandths = '' + this.ns.getNumberName(this.thousandths);
 
-        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.ones + ' and ' + this.tenths + ' hundred ' + this.thousandths + ' thousandths',0);
 }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_12',5.0612,'5.nbt.a.3','');
@@ -172,9 +199,11 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,575,50,320,75,120,50,670,100);
+        this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3_8';
+
+        this.ns = new NameMachine();
 
         this.tens =  Math.floor((Math.random()*9)+1);
         this.ones =  Math.floor((Math.random()*9)+1);
@@ -182,11 +211,16 @@ initialize: function(sheet)
         this.hundreths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Evaluate: ' + this.tens + ' &times ' + ' 10 + ' + this.ones + ' &times ' + ' 1 + ' + this.tenths + ' &times ' + ' 1/10 + ' + this.hundreths + ' &times ' + ' 1/100 + ' + this.thousandths + ' &times 1/1000');
+	this.tenths_fraction = new Fraction(1,10);
+	this.hundreths_fraction = new Fraction(1,100);
+	this.thousandths_fraction = new Fraction(1,1000);
 
-	this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0); 
+        this.setQuestion('' + 'Evaluate: ' + this.tens + ' &times 10 + ' + this.ones + ' &times 1 + ' + this.tenths + ' &times ' + this.tenths_fraction.getString() + ' + ' + this.hundreths + ' &times ' + this.hundreths_fraction.getString() + ' + ' + this.thousandths + ' &times ' + this.thousandths_fraction.getString(),0);
+
+        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
 }
 });
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_7',5.0607,'5.nbt.a.3','');
