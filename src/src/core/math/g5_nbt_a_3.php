@@ -1,3 +1,32 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_12',5.0612,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__12 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_12';
+
+        this.ns = new NameMachine();
+
+        this.ones =  Math.floor((Math.random()*9)+1);
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  0;
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
+
+        this.ones = this.ns.getNumberName(this.ones);
+        this.tenths = '' + this.ns.getNumberName(this.tenths);
+	this.thousandths = '' + this.ns.getNumberName(this.thousandths);
+
+        this.setAnswer('' + this.ones + ' and ' + this.tenths + ' hundred ' + this.thousandths + ' thousandths',0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_11',5.0611,'5.nbt.a.3','');
