@@ -1,3 +1,27 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_8',5.0608,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,120,50,670,100);
+
+        this.mType = '5.nbt.a.3_8';
+
+        this.tens =  Math.floor((Math.random()*9)+1);
+        this.ones =  Math.floor((Math.random()*9)+1);
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('Evaluate: ' + this.tens + ' &times ' + ' 10 + ' + this.ones + ' &times ' + ' 1 + ' + this.tenths + ' &times ' + ' 1/10 + ' + this.hundreths + ' &times ' + ' 1/100 + ' + this.thousandths + ' &times 1/1000');
+
+	this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0); 
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_7',5.0607,'5.nbt.a.3','');
