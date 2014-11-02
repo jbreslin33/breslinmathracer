@@ -302,6 +302,86 @@ var NameMachine = new Class(
                 {
                         return 'ten';
                 }
+                if (number == 11)
+                {
+                        return 'eleven';
+                }
+                if (number == 12)
+                {
+                        return 'twelve';
+               	} 
+                if (number == 13)
+                {
+                        return 'thirteen';
+                }
+                if (number == 14)
+                {
+                        return 'fourteen';
+                }
+                if (number == 15)
+                {
+                        return 'thirteen';
+                }
+                if (number == 16)
+                {
+                        return 'thirteen';
+                }
+                if (number == 17)
+                {
+                        return 'thirteen';
+                }
+                if (number == 18)
+                {
+                        return 'thirteen';
+                }
+                if (number == 19)
+                {
+                        return 'thirteen';
+                }
+                if (number == 20)
+                {
+                        return 'twenty';
+                }
+                if (number == 21)
+                {
+                        return 'twenty-one';
+                }
+                if (number == 22)
+                {
+                        return 'twenty-two';
+                }
+                if (number == 23)
+                {
+                        return 'twenty-three';
+                }
+                if (number == 24)
+                {
+                        return 'twenty-four';
+                }
+                if (number == 25)
+                {
+                        return 'twenty-five';
+                }
+                if (number == 26)
+                {
+                        return 'twenty-six';
+                }
+                if (number == 27)
+                {
+                        return 'twenty-seven';
+                }
+                if (number == 28)
+                {
+                        return 'twenty-eight';
+                }
+                if (number == 29)
+                {
+                        return 'twenty-nine';
+                }
+                if (number == 30)
+                {
+                        return 'thirty';
+                }
 	},
 
 	getDenominatorName: function(number)
