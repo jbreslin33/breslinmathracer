@@ -1,3 +1,33 @@
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_10',5.0610,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__10 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_10';
+
+	this.ns = new NameMachine();
+
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('0.0' + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+
+	var hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+	
+	hundreths_thousandths = this.ns.getNumberName(hundreths_thousandths); 	
+
+	this.setAnswer('' + hundreths_thousandths + ' thousandths',0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_9',5.0609,'5.nbt.a.3','');
 */

@@ -320,23 +320,23 @@ var NameMachine = new Class(
                 }
                 if (number == 15)
                 {
-                        return 'thirteen';
+                        return 'fifteen';
                 }
                 if (number == 16)
                 {
-                        return 'thirteen';
+                        return 'sixteen';
                 }
                 if (number == 17)
                 {
-                        return 'thirteen';
+                        return 'seventeen';
                 }
                 if (number == 18)
                 {
-                        return 'thirteen';
+                        return 'eighteen';
                 }
                 if (number == 19)
                 {
-                        return 'thirteen';
+                        return 'nineteen';
                 }
 
                 if (number > 20 && number < 30)
