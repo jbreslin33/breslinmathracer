@@ -1,3 +1,62 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_16',5.0616,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__16 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_15';
+
+        this.ns = new NameMachine();
+
+        this.ones = Math.floor((Math.random()*9)+1);
+        this.tenths = Math.floor((Math.random()*9)+1);
+        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.thousandths = Math.floor((Math.random()*9)+1);
+
+        this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
+
+        this.fraction = new Fraction(this.tenths_hundreths_thousandths,1000);
+
+        this.setQuestion('Convert to a decimal: ' + this.ones + this.fraction.getString(),0);
+
+        this.setAnswer('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_15',5.0615,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__15 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_15';
+
+        this.ns = new NameMachine();
+
+        this.ones = Math.floor((Math.random()*9)+1);
+        this.tens = Math.floor((Math.random()*9)+1);
+        this.tenths = Math.floor((Math.random()*9)+1);
+        this.hundreths = Math.floor((Math.random()*9)+1);
+
+        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+
+        this.fraction = new Fraction(this.tenths_hundreths,100);
+
+        this.setQuestion('Convert to a decimal: ' + this.tens + this.ones + this.fraction.getString(),0);
+
+        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_14',5.0614,'5.nbt.a.3','');
