@@ -1,4 +1,36 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_13',5.0613,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__13 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_13';
+
+        this.ns = new NameMachine();
+
+        this.tens =  Math.floor((Math.random()*9)+1);
+        this.ones =  Math.floor((Math.random()*9)+1);
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+	this.tenths_fraction = new Fraction(1,10);
+	this.hundreths_fraction = new Fraction(1,100);
+	this.thousandths_fraction = new Fraction(1,1000);
+
+        this.setQuestion('' + 'Evaluate: ' + this.tens + ' &times 10 + ' + this.ones + ' &times 1 + ' + this.tenths + ' &times ' + this.tenths_fraction.getString() + ' + ' + this.hundreths + ' &times ' + this.hundreths_fraction.getString() + ' + ' + this.thousandths + ' &times ' + this.thousandths_fraction.getString(),0);
+
+        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_12',5.0612,'5.nbt.a.3','');
 */
 var i_5_nbt_a_3__12 = new Class(
