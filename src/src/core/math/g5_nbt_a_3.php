@@ -1,4 +1,46 @@
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_11',5.0611,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__11 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_11';
+
+	this.ns = new NameMachine();
+
+        this.tens =  Math.floor((Math.random()*9)+1);
+        this.ones =  Math.floor((Math.random()*9)+1);
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
+
+	var tens_ones = parseInt(this.tens * 10 + this.ones);	
+	var hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+	var tenths_hundreths_thousandths = '';
+	
+	tens_ones = this.ns.getNumberName(tens_ones); 
+
+	if (this.tenths == 0)
+	{
+		 tenths_hundreths_thousandths = this.ns.getNumberName(hundreths_thousandths);	
+	} 
+	else
+	{
+		 tenths_hundreths_thousandths = '' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(hundreths_thousandths); 	
+	}
+
+	this.setAnswer('' + tens_ones + ' and ' + tenths_hundreths_thousandths + ' thousandths',0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_10',5.0610,'5.nbt.a.3','');
