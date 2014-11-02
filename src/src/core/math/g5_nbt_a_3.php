@@ -9,7 +9,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.a.3_15';
+        this.mType = '5.nbt.a.3_16';
 
         this.ns = new NameMachine();
 
