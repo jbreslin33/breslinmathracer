@@ -1,4 +1,28 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_9',5.0609,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__9 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_9';
+
+        this.tens =  Math.floor((Math.random()*9)+1);
+        this.ones =  Math.floor((Math.random()*9)+1);
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
+	this.setAnswer('ddd',0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_8',5.0608,'5.nbt.a.3','');
 */
 var i_5_nbt_a_3__8 = new Class(
