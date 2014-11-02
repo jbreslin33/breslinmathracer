@@ -1,5 +1,30 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_7',5.0607,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,375,50,220,75,150,50,525,100);
+
+        this.mType = '5.nbt.a.3_7';
+
+        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths + this.thousandths);
+        this.setAnswer('' + this.tenths + ' x ' + '1/10 + ' + this.hundreths + ' x ' + '1/100 + ' + this.thousandths + ' x ' + '1/1000',0);
+        this.setAnswer('' + this.tenths + ' * ' + '1/10 + ' + this.hundreths + ' * ' + '1/100 + ' + this.thousandths + ' x ' + '1/1000',1);
+        
+        this.setAnswer('' + this.tenths + '/10 + ' + this.hundreths + '/100 + ' + this.thousandths + '/1000',2);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_6',5.0606,'5.nbt.a.3','');
 */
 var i_5_nbt_a_3__6 = new Class(
