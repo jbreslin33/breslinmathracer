@@ -338,61 +338,73 @@ var NameMachine = new Class(
                 {
                         return 'thirteen';
                 }
-                if (number == 20)
-                {
-                        return 'twenty';
-                }
+
                 if (number > 20 && number < 30)
                 {
                         return 'twenty-' + this.getNumberName(parseInt(number - 20));
                 }
+                if (number > 30 && number < 40)
+                {
+                        return 'thirty-' + this.getNumberName(parseInt(number - 30));
+                }
+                if (number > 40 && number < 50)
+                {
+                        return 'forty-' + this.getNumberName(parseInt(number - 40));
+                }
+                if (number > 50 && number < 60)
+                {
+                        return 'fifty-' + this.getNumberName(parseInt(number - 50));
+                }
+                if (number > 60 && number < 70)
+                {
+                        return 'sixty-' + this.getNumberName(parseInt(number - 60));
+                }
+                if (number > 70 && number < 80)
+                {
+                        return 'seventy-' + this.getNumberName(parseInt(number - 70));
+                }
+                if (number > 80 && number < 90)
+                {
+                        return 'eighty-' + this.getNumberName(parseInt(number - 80));
+                }
+                if (number > 90 && number < 100)
+                {
+                        return 'ninety-' + this.getNumberName(parseInt(number - 90));
+                }
+                
+		if (number == 20)
+                {
+                        return 'twenty';
+                }
+                if (number == 30)
+                {
+                        return 'thirty';
+                }
+                if (number == 40)
+                {
+                        return 'forty';
+                }
+                if (number == 50)
+                {
+                        return 'fifty';
+                }
+                if (number == 60)
+                {
+                        return 'sixty';
+                }
+                if (number == 70)
+                {
+                        return 'seventy';
+                }
+                if (number == 80)
+                {
+                        return 'eighty';
+                }
+                if (number == 90)
+                {
+                        return 'ninety';
+                }
 	
-                if (number == 30)
-                {
-                        return 'thirty';
-                }
-/*
-                if (number == 21)
-                {
-                        return 'twenty-one';
-                }
-                if (number == 22)
-                {
-                        return 'twenty-two';
-                }
-                if (number == 23)
-                {
-                        return 'twenty-three';
-                }
-                if (number == 24)
-                {
-                        return 'twenty-four';
-                }
-                if (number == 25)
-                {
-                        return 'twenty-five';
-                }
-                if (number == 26)
-                {
-                        return 'twenty-six';
-                }
-                if (number == 27)
-                {
-                        return 'twenty-seven';
-                }
-                if (number == 28)
-                {
-                        return 'twenty-eight';
-                }
-                if (number == 29)
-                {
-                        return 'twenty-nine';
-                }
-                if (number == 30)
-                {
-                        return 'thirty';
-                }
-*/
 	},
 
 	getDenominatorName: function(number)
