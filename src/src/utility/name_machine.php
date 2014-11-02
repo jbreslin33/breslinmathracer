@@ -342,6 +342,16 @@ var NameMachine = new Class(
                 {
                         return 'twenty';
                 }
+                if (number > 20 && number < 30)
+                {
+                        return 'twenty-' + this.getNumberName(parseInt(number - 20));
+                }
+	
+                if (number == 30)
+                {
+                        return 'thirty';
+                }
+/*
                 if (number == 21)
                 {
                         return 'twenty-one';
@@ -382,6 +392,7 @@ var NameMachine = new Class(
                 {
                         return 'thirty';
                 }
+*/
 	},
 
 	getDenominatorName: function(number)

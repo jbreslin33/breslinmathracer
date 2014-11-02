@@ -14,6 +14,7 @@ initialize: function(sheet)
 	this.ns = new NameMachine();
 
         this.tens =  Math.floor((Math.random()*2)+1);
+	this.tens = 2;
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
         this.hundreths =  Math.floor((Math.random()*2)+1);
