@@ -15,18 +15,19 @@ initialize: function(sheet)
 
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
-        this.tenths = Math.floor((Math.random()*9)+1);
+        this.tenths = 0;
         this.hundreths = Math.floor((Math.random()*9)+1);
+        this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
-        this.tenths_hundreths = this.ns.getNumberName(this.tenths_hundreths);
+        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+        this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
         
 	this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.tens_ones = this.ns.getNumberName(this.tens_ones);
 
-        this.setQuestion('Convert to a decimal: ' + this.tens_ones + ' and ' + this.tenths_hundreths + ' thousandths',0);
+        this.setQuestion('Convert to a decimal: ' + this.tens_ones + ' and ' + this.hundreths_thousandths + ' thousandths',0);
 
-        this.setAnswer('' + this.tens + '' + this.ones + '.0' + this.tenths + this.hundreths,0);
+        this.setAnswer('' + this.tens + '' + this.ones + '.0' + this.hundreths + this.thousandths,0);
 }
 });
 
