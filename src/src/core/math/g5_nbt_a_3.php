@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_18',5.0618,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__18 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_18';
+
+        this.ns = new NameMachine();
+
+        this.tenths = Math.floor((Math.random()*9)+1);
+        this.hundreths = Math.floor((Math.random()*9)+1);
+
+        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+	this.tenths_hundreths = this.ns.getNumberName(this.tenths_hundreths);
+
+        this.setQuestion('Convert to a decimal: ' + this.tenths_hundreths + ' hundreths',0);
+
+	this.setAnswer('0.' + this.tenths + this.hundreths,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_17',5.0617,'5.nbt.a.3','');
 */
 var i_5_nbt_a_3__17 = new Class(
