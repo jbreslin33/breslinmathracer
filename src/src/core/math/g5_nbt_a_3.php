@@ -24,7 +24,6 @@ initialize: function(sheet)
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.tens_ones = this.ns.getNumberName(this.tens_ones);
 
-
         this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
 
         this.setAnswer('' + '0.' + this.tenths + this.hundreths + this.thousandths,0);
