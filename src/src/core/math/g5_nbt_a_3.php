@@ -21,23 +21,20 @@ initialize: function(sheet)
         this.hundreths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.hundreds_tens = parseInt(this.hundreds * 10 + this.tens);
-        this.hundreds_tens = this.ns.getNumberName(this.hundreds_tens);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.tens_oness = this.ns.getNumberName(this.tens_ones);
 
         this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
         this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
 
-        this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.tens_ones = this.ns.getNumberName(this.tens_ones);
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
 
-        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
-
-        this.setAnswer('' + '0.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
 }
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_0',5.0620,'5.nbt.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_20',5.0620,'5.nbt.a.3','');
 */
 var i_5_nbt_a_3__20 = new Class(
 {
