@@ -15,7 +15,7 @@ initialize: function(sheet)
 
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
-        this.tenths = Math.floor((Math.random()*9)+1);
+        this.tenths = 0;
         this.hundreths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
@@ -24,7 +24,7 @@ initialize: function(sheet)
 
         this.setQuestion('Write the decimal as you would say it in words: ' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(this.hundreths_thousandths) + ' thousandths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.hundreths_thousandths) + ' thousandths',0);
 }
 });
 
