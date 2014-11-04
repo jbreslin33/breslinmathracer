@@ -1,5 +1,33 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_23',5.0623,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__23 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_23';
+
+        this.ns = new NameMachine();
+
+        this.ones = Math.floor((Math.random()*9)+1);
+        this.tenths = Math.floor((Math.random()*9)+1);
+        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.thousandths = Math.floor((Math.random()*9)+1);
+
+        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+        this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
+
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
+
+        this.setAnswer('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_22',5.0622,'5.nbt.a.3','');
 */
 var i_5_nbt_a_3__22 = new Class(
@@ -45,7 +73,6 @@ initialize: function(sheet)
         this.thousandths = Math.floor((Math.random()*9)+1);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.tens_oness = this.ns.getNumberName(this.tens_ones);
 
         this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
         this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
