@@ -1,3 +1,25 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_24',5.0624,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__24 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_24';
+
+        this.ns = new NameMachine();
+
+        this.hundreths = Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('Write the decimal as you would say it in words: 0.0' + this.hundreths,0);
+
+        this.setAnswer('' + this.ns.getNumberName(this.hundreths) + ' hundreths',0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_23',5.0623,'5.nbt.a.3','');
