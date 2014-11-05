@@ -234,16 +234,16 @@ Extends: TextItem,
 
                 this.setQuestion('Write a numerical expression that matches this: The product of ' + a + ' and ' + b + ' decreased by ' + c  );
                 this.setAnswer(a + 'x' + b + '-' + c,0);
-                this.setAnswer(a + 'x' + b + '-' + c,1);
+                this.setAnswer(b + 'x' + a + '-' + c,1);
                 
 		this.setAnswer(b + '*' + a + '-' + c,2);
-                this.setAnswer(b + '*' + a + '-' + c,3);
+                this.setAnswer(a + '*' + b + '-' + c,3);
                 
 		this.setAnswer('(' + a + 'x' + b + ')-' + c,4);
-                this.setAnswer('(' + a + 'x' + b + ')-' + c,5);
+                this.setAnswer('(' + b + 'x' + a + ')-' + c,5);
                 
 		this.setAnswer('(' + b + '*' + a + ')-' + c,6);
-                this.setAnswer('(' + b + '*' + a + ')-' + c,7);
+                this.setAnswer('(' + a + '*' + b + ')-' + c,7);
         }
 });
 
