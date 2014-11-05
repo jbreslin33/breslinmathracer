@@ -1186,25 +1186,26 @@ var NameMachine = new Class(
 
 	getName: function(gender)
 	{
+		var randomGender = 0;
+		if (gender == '' || gender == null)
+		{ 
+			randomGender = Math.floor(Math.random()*2);
+		}
+		else if (gender == 'boy')
+		{
+			randomGender = 0;
+		}				
+		else if (gender == 'girl')
+		{
+			randomGender = 1;
+		}				
+
 		var dup = true; 	
 		var randomElement = 0;
-		var randomGender = 0;
 		var randomName = '';
 		while (dup)
 		{
 			dup = false;
-			if (gender == '')
-			{ 
-				randomGender = Math.floor(Math.random()*2);
-			}
-			else if (gender == 'boy')
-			{
-				randomGender = 0;
-			}				
-			else if (gender == 'girl')
-			{
-				randomGender = 1;
-			}				
 
 			if (randomGender == 0)
 			{
