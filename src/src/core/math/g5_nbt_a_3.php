@@ -1,3 +1,33 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_27',5.0627,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__27 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_27';
+
+        this.ns = new NameMachine();
+
+        this.hundreds = Math.floor((Math.random()*9)+1);
+        this.tens = Math.floor((Math.random()*9)+1);
+        this.ones = Math.floor((Math.random()*9)+1);
+        this.tenths = Math.floor((Math.random()*9)+1);
+        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.thousandths = Math.floor((Math.random()*9)+1);
+
+        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+
+        this.setQuestion('Write the decimal as you would say it in words: ' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+
+        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(this.hundreths_thousandths) + ' thousandths',0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_26',5.0626,'5.nbt.a.3','');
