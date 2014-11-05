@@ -452,6 +452,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
+	this.mChopWhiteSpace = false;
 
         this.mType = '5.oa.a.2_0_40';
 
