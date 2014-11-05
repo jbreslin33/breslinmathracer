@@ -437,8 +437,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>');
 
-        this.setAnswer('.0000' + this.hundredthousandths,0);
-        this.setAnswer('0.0000' + this.hundredthousandths,1);
+        this.setAnswer('0.0000' + this.hundredthousandths,0);
 }
 });
 
@@ -478,8 +477,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths);
 
-        this.setAnswer('.000' + this.tenthousandths,0);
-        this.setAnswer('0.000' + this.tenthousandths,1);
+        this.setAnswer('0.000' + this.tenthousandths,0);
 }
 });
 
@@ -519,8 +517,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + '<span style="color: #f00;">' + this.thousandths + '</span>' + this.tenthousandths + this.hundredthousandths);
 
-        this.setAnswer('.00' + this.thousandths,0);
-        this.setAnswer('0.00' + this.thousandths,1);
+        this.setAnswer('0.00' + this.thousandths,0);
 }
 });
 
@@ -560,8 +557,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
-        this.setAnswer('.0' + this.hundreths,0);
-        this.setAnswer('0.0' + this.hundreths,1);
+        this.setAnswer('0.0' + this.hundreths,0);
 }
 });
 
@@ -602,8 +598,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
-        this.setAnswer('.' + this.tenths,0);
-        this.setAnswer('0.' + this.tenths,1);
+        this.setAnswer('0.' + this.tenths,0);
 }
 });
 
@@ -792,8 +787,7 @@ initialize: function(sheet)
         var fraction = new Fraction(1,10);
         this.setQuestion('Write the decimal that is ten times less than ' + fraction.getString());
 
-        this.setAnswer('.01',0);
-        this.setAnswer('0.01',1);
+        this.setAnswer('0.01',0);
 }
 });
 
@@ -839,8 +833,7 @@ initialize: function(sheet)
 
         this.setQuestion('Write the decimal that is ten times less than 1.');
 
-        this.setAnswer('.1',0);
-        this.setAnswer('0.1',1);
+        this.setAnswer('0.1',0);
 }
 });
 
