@@ -771,8 +771,7 @@ initialize: function(sheet)
         var fraction = new Fraction(1,100);
         this.setQuestion('Write the decimal that is ten times more than ' + fraction.getString());
 
-        this.setAnswer('.01',0);
-        this.setAnswer('0.01',1);
+        this.setAnswer('0.1',0);
 }
 });
 
