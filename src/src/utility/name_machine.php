@@ -1260,8 +1260,6 @@ var NameMachine = new Class(
 				randomElement = Math.floor(Math.random()*length);			
 				randomName = this.mGirlNameArray[randomElement]; 
 			}
-			APPLICATION.log('randomElement:' + randomElement);
-			APPLICATION.log('randomName:' + randomName);
 
 			for (i=0; i < this.mUsedNameArray.length; i++)
 			{
