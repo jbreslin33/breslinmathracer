@@ -1,3 +1,29 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_32',5.0632,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__32 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_32';
+
+        this.ns = new NameSampler();
+
+        this.tenths= Math.floor((Math.random()*9)+1);
+        this.hundreths= Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+
+        this.setQuestion('' + this.ns.mNameOne + ' won ' + this.tenths_hundreths + ' ' + this.ns.mPlayedActivityOne + ' games out of 100. What is this amount represented as a decimal?',0);
+
+        this.setAnswer('0.' + this.tenths_hundreths,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_31',5.0631,'5.nbt.a.3','');
 */
