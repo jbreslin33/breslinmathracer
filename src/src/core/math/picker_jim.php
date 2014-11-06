@@ -1311,154 +1311,154 @@ getItem: function(id)
                 return new i_5_nbt_a_2__48(this.mSheet);
         }
 
-	//5.nbt.a.3	
-	if (id == '5.nbt.a.3_1')
+	//5.nbt.a.3.a	
+	if (id == '5.nbt.a.3.a_1')
         {
-                return new i_5_nbt_a_3__1(this.mSheet);
+                return new i_5_nbt_a_3_a__1(this.mSheet);
         }
-	if (id == '5.nbt.a.3_2')
+	if (id == '5.nbt.a.3.a_2')
         {
-                return new i_5_nbt_a_3__2(this.mSheet);
+                return new i_5_nbt_a_3_a__2(this.mSheet);
         }
-	if (id == '5.nbt.a.3_3')
+	if (id == '5.nbt.a.3.a_3')
         {
-                return new i_5_nbt_a_3__3(this.mSheet);
+                return new i_5_nbt_a_3_a__3(this.mSheet);
         }
-	if (id == '5.nbt.a.3_4')
+	if (id == '5.nbt.a.3.a_4')
         {
-                return new i_5_nbt_a_3__4(this.mSheet);
+                return new i_5_nbt_a_3_a__4(this.mSheet);
         }
-	if (id == '5.nbt.a.3_5')
+	if (id == '5.nbt.a.3.a_5')
         {
-                return new i_5_nbt_a_3__5(this.mSheet);
+                return new i_5_nbt_a_3_a__5(this.mSheet);
         }
-	if (id == '5.nbt.a.3_6')
+	if (id == '5.nbt.a.3.a_6')
         {
-                return new i_5_nbt_a_3__6(this.mSheet);
+                return new i_5_nbt_a_3_a__6(this.mSheet);
         }
-	if (id == '5.nbt.a.3_7')
+	if (id == '5.nbt.a.3.a_7')
         {
-                return new i_5_nbt_a_3__7(this.mSheet);
+                return new i_5_nbt_a_3_a__7(this.mSheet);
         }
-	if (id == '5.nbt.a.3_8')
+	if (id == '5.nbt.a.3.a_8')
         {
-                return new i_5_nbt_a_3__8(this.mSheet);
+                return new i_5_nbt_a_3_a__8(this.mSheet);
         }
-	if (id == '5.nbt.a.3_9')
+	if (id == '5.nbt.a.3.a_9')
         {
-                return new i_5_nbt_a_3__9(this.mSheet);
+                return new i_5_nbt_a_3_a__9(this.mSheet);
         }
-	if (id == '5.nbt.a.3_10')
+	if (id == '5.nbt.a.3.a_10')
         {
-                return new i_5_nbt_a_3__10(this.mSheet);
+                return new i_5_nbt_a_3_a__10(this.mSheet);
         }
-	if (id == '5.nbt.a.3_11')
+	if (id == '5.nbt.a.3.a_11')
         {
-                return new i_5_nbt_a_3__11(this.mSheet);
+                return new i_5_nbt_a_3_a__11(this.mSheet);
         }
-	if (id == '5.nbt.a.3_12')
+	if (id == '5.nbt.a.3.a_12')
         {
-                return new i_5_nbt_a_3__12(this.mSheet);
+                return new i_5_nbt_a_3_a__12(this.mSheet);
         }
-	if (id == '5.nbt.a.3_13')
+	if (id == '5.nbt.a.3.a_13')
         {
-                return new i_5_nbt_a_3__13(this.mSheet);
+                return new i_5_nbt_a_3_a__13(this.mSheet);
         }
-	if (id == '5.nbt.a.3_14')
+	if (id == '5.nbt.a.3.a_14')
         {
-                return new i_5_nbt_a_3__14(this.mSheet);
+                return new i_5_nbt_a_3_a__14(this.mSheet);
         }
-	if (id == '5.nbt.a.3_15')
+	if (id == '5.nbt.a.3.a_15')
         {
-                return new i_5_nbt_a_3__15(this.mSheet);
+                return new i_5_nbt_a_3_a__15(this.mSheet);
         }
-	if (id == '5.nbt.a.3_16')
+	if (id == '5.nbt.a.3.a_16')
         {
-                return new i_5_nbt_a_3__16(this.mSheet);
+                return new i_5_nbt_a_3_a__16(this.mSheet);
         }
-	if (id == '5.nbt.a.3_17')
+	if (id == '5.nbt.a.3.a_17')
         {
-                return new i_5_nbt_a_3__17(this.mSheet);
+                return new i_5_nbt_a_3_a__17(this.mSheet);
         }
-	if (id == '5.nbt.a.3_18')
+	if (id == '5.nbt.a.3.a_18')
         {
-                return new i_5_nbt_a_3__18(this.mSheet);
+                return new i_5_nbt_a_3_a__18(this.mSheet);
         }
-	if (id == '5.nbt.a.3_19')
+	if (id == '5.nbt.a.3.a_19')
         {
-                return new i_5_nbt_a_3__19(this.mSheet);
+                return new i_5_nbt_a_3_a__19(this.mSheet);
         }
-	if (id == '5.nbt.a.3_20')
+	if (id == '5.nbt.a.3.a_20')
         {
-                return new i_5_nbt_a_3__20(this.mSheet);
+                return new i_5_nbt_a_3_a__20(this.mSheet);
         }
-	if (id == '5.nbt.a.3_21')
+	if (id == '5.nbt.a.3.a_21')
         {
-                return new i_5_nbt_a_3__21(this.mSheet);
+                return new i_5_nbt_a_3_a__21(this.mSheet);
         }
-	if (id == '5.nbt.a.3_22')
+	if (id == '5.nbt.a.3.a_22')
         {
-                return new i_5_nbt_a_3__22(this.mSheet);
+                return new i_5_nbt_a_3_a__22(this.mSheet);
         }
-	if (id == '5.nbt.a.3_23')
+	if (id == '5.nbt.a.3.a_23')
         {
-                return new i_5_nbt_a_3__23(this.mSheet);
+                return new i_5_nbt_a_3_a__23(this.mSheet);
         }
-	if (id == '5.nbt.a.3_24')
+	if (id == '5.nbt.a.3.a_24')
         {
-                return new i_5_nbt_a_3__24(this.mSheet);
+                return new i_5_nbt_a_3_a__24(this.mSheet);
         }
-	if (id == '5.nbt.a.3_25')
+	if (id == '5.nbt.a.3.a_25')
         {
-                return new i_5_nbt_a_3__25(this.mSheet);
+                return new i_5_nbt_a_3_a__25(this.mSheet);
         }
-	if (id == '5.nbt.a.3_26')
+	if (id == '5.nbt.a.3.a_26')
         {
-                return new i_5_nbt_a_3__26(this.mSheet);
+                return new i_5_nbt_a_3_a__26(this.mSheet);
         }
-	if (id == '5.nbt.a.3_27')
+	if (id == '5.nbt.a.3.a_27')
         {
-                return new i_5_nbt_a_3__27(this.mSheet);
+                return new i_5_nbt_a_3_a__27(this.mSheet);
         }
-	if (id == '5.nbt.a.3_28')
+	if (id == '5.nbt.a.3.a_28')
         {
-                return new i_5_nbt_a_3__28(this.mSheet);
+                return new i_5_nbt_a_3_a__28(this.mSheet);
         }
-	if (id == '5.nbt.a.3_29')
+	if (id == '5.nbt.a.3.a_29')
         {
-                return new i_5_nbt_a_3__29(this.mSheet);
+                return new i_5_nbt_a_3_a__29(this.mSheet);
         }
-	if (id == '5.nbt.a.3_30')
+	if (id == '5.nbt.a.3.a_30')
         {
-                return new i_5_nbt_a_3__30(this.mSheet);
+                return new i_5_nbt_a_3_a__30(this.mSheet);
         }
-	if (id == '5.nbt.a.3_31')
+	if (id == '5.nbt.a.3.a_31')
         {
-                return new i_5_nbt_a_3__31(this.mSheet);
+                return new i_5_nbt_a_3_a__31(this.mSheet);
         }
-	if (id == '5.nbt.a.3_32')
+	if (id == '5.nbt.a.3.a_32')
         {
-                return new i_5_nbt_a_3__32(this.mSheet);
+                return new i_5_nbt_a_3_a__32(this.mSheet);
         }
-	if (id == '5.nbt.a.3_33')
+	if (id == '5.nbt.a.3.a_33')
         {
-                return new i_5_nbt_a_3__33(this.mSheet);
+                return new i_5_nbt_a_3_a__33(this.mSheet);
         }
-	if (id == '5.nbt.a.3_34')
+	if (id == '5.nbt.a.3.a_34')
         {
-                return new i_5_nbt_a_3__34(this.mSheet);
+                return new i_5_nbt_a_3_a__34(this.mSheet);
         }
-	if (id == '5.nbt.a.3_35')
+	if (id == '5.nbt.a.3.a_35')
         {
-                return new i_5_nbt_a_3__35(this.mSheet);
+                return new i_5_nbt_a_3_a__35(this.mSheet);
         }
-	if (id == '5.nbt.a.3_36')
+	if (id == '5.nbt.a.3.a_36')
         {
-                return new i_5_nbt_a_3__36(this.mSheet);
+                return new i_5_nbt_a_3_a__36(this.mSheet);
        	} 
-	if (id == '5.nbt.a.3_37')
+	if (id == '5.nbt.a.3.a_37')
         {
-                return new i_5_nbt_a_3__37(this.mSheet);
+                return new i_5_nbt_a_3_a__37(this.mSheet);
         }
 
 	
