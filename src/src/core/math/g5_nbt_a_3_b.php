@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_1',5.0701,'5.nbt.a.3.b','');
 */
@@ -13,13 +14,18 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.tenths= Math.floor((Math.random()*9)+1);
-        this.hundreths= Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+        this.tenths_a      = Math.floor((Math.random()*9)+1);
+        this.hundreths_a   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.thousandths_a * 100 + this.tenths_a * 10 + this.hundreths_a);
+        
+	this.tenths_b      = Math.floor((Math.random()*9)+1);
+        this.hundreths_b   = Math.floor((Math.random()*9)+1);
+        this.thousandths_b = Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths_thousandths_b = parseInt(this.thousandths_b * 100 + this.tenths_b * 10 + this.hundreths_b);
 
-        this.setQuestion('' + this.ns.mNameOne + ' weighs a bug on a scale and it comes to ' + this.tenths_hundreths + ' thousandths of a gram. What is this amount represented as a decimal?',0);
+        this.setQuestion('' + this.ns.mNameOne + ' has a batting average of 0.' + this.tenths_hundreths_thousandths_a + ' and ' + this.ns.mNameTwo + ' who has the higher batting average?',0);
 
         this.setAnswer('0.0' + this.tenths_hundreths,0);
 }
 });
-
