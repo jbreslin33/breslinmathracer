@@ -1,3 +1,28 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_33',5.0633,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__33 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_33';
+
+        this.ns = new NameSampler();
+
+        this.tenths= Math.floor((Math.random()*9)+1);
+        this.hundreths= Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+
+        this.setQuestion('' + this.ns.mNameOne + ' weighs a bug on a scale and it comes to ' + this.tenths_hundreths + ' thousandths of a gram. What is this amount represented as a decimal?',0);
+
+        this.setAnswer('0.0' + this.tenths_hundreths,0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_32',5.0632,'5.nbt.a.3','');
