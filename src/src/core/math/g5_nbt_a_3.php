@@ -1,3 +1,26 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_31',5.0631,'5.nbt.a.3','');
+*/
+var i_5_nbt_a_3__31 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3_31';
+
+        this.ns = new NameSampler();
+
+        this.thousandths= Math.floor((Math.random()*9)+1);
+
+        this.setQuestion('' + this.ns.mNameOne + ' raced ' + this.ns.mNameTwo + '. ' + this.ns.mNameOne + ' won the race by ' + this.ns.mNameMachine.getNumberName(this.thousandths) + ' thousandths of a second. What is this amount written as a decimal?',0);
+
+        this.setAnswer('0.00' + this.thousandths,0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3_30',5.0630,'5.nbt.a.3','');
