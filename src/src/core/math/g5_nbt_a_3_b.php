@@ -14,18 +14,15 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.tenths_a      = Math.floor((Math.random()*9)+1);
-        this.hundreths_a   = Math.floor((Math.random()*9)+1);
-        this.thousandths_a = Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths_thousandths_a = parseInt(this.thousandths_a * 100 + this.tenths_a * 10 + this.hundreths_a);
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*5)+5);
+        this.thousandths_b = Math.floor((Math.random()*4)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
+        this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
         
-	this.tenths_b      = Math.floor((Math.random()*9)+1);
-        this.hundreths_b   = Math.floor((Math.random()*9)+1);
-        this.thousandths_b = Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths_thousandths_b = parseInt(this.thousandths_b * 100 + this.tenths_b * 10 + this.hundreths_b);
+        this.setQuestion('' + this.ns.mNameOne + ' has a batting average of 0.' + this.tenths_hundreths_thousandths_a + ' and ' + this.ns.mNameTwo + ' has a batting average of 0.' + this.tenths_hundreths_thousandths_b + '. Write the higher batting average.',0);
 
-        this.setQuestion('' + this.ns.mNameOne + ' has a batting average of 0.' + this.tenths_hundreths_thousandths_a + ' and ' + this.ns.mNameTwo + ' who has the higher batting average?',0);
-
-        this.setAnswer('0.0' + this.tenths_hundreths,0);
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_a,0);
 }
 });
