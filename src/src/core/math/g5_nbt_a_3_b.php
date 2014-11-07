@@ -1,4 +1,149 @@
 
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_6',5.0706,'5.nbt.a.3.b','');
+*/
+var i_5_nbt_a_3_b__6 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3.b_6';
+
+        this.ns = new NameSampler();
+
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*5)+5);
+        this.thousandths_b = Math.floor((Math.random()*4)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
+        this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
+
+        this.setQuestion('What is the shorter distance 0.' + this.tenths_hundreths_thousandths_a + ' ' + this.ns.mDistanceIncrementLarge + ' or 0.' + this.tenths_hundreths_thousandths_b + ' ' + this.ns.mDistanceIncrementLarge + '.',0);
+
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_b,0);
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_b + ' ' + this.ns.mDistanceIncrementLarge,1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_5',5.0705,'5.nbt.a.3.b','');
+*/
+var i_5_nbt_a_3_b__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3.b_5';
+
+        this.ns = new NameSampler();
+
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*5)+5);
+        this.thousandths_b = Math.floor((Math.random()*4)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
+        this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
+
+        this.setQuestion('What is the smaller distance 0.' + this.tenths_hundreths_thousandths_a + ' ' + this.ns.mDistanceIncrementMedium + ' or 0.' + this.tenths_hundreths_thousandths_b + ' ' + this.ns.mDistanceIncrementMedium + '.',0);
+
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_b,0);
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_b + ' ' + this.ns.mDistanceIncrementMedium,1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_4',5.0704,'5.nbt.a.3.b','');
+*/
+var i_5_nbt_a_3_b__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3.b_4';
+
+        this.ns = new NameSampler();
+
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*5)+5);
+        this.thousandths_b = Math.floor((Math.random()*4)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
+        this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
+
+        this.setQuestion('What is the further distance 0.' + this.tenths_hundreths_thousandths_b + ' ' + this.ns.mDistanceIncrementSmall + ' or 0.' + this.tenths_hundreths_thousandths_a + ' ' + this.ns.mDistanceIncrementSmall + '.',0);
+
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_a,0);
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_a + ' ' + this.ns.mDistanceIncrementSmall,1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_3',5.0703,'5.nbt.a.3.b','');
+*/
+var i_5_nbt_a_3_b__3 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3.b_3';
+
+        this.ns = new NameSampler();
+
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*5)+5);
+        this.thousandths_b = Math.floor((Math.random()*4)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
+        this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
+
+        this.setQuestion('What is the further distance 0.' + this.tenths_hundreths_thousandths_a + ' ' + this.ns.mDistanceIncrementMedium + ' or 0.' + this.tenths_hundreths_thousandths_b + ' ' + this.ns.mDistanceIncrementMedium + '.',0);
+
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_a,0);
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_a + ' miles',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_2',5.0702,'5.nbt.a.3.b','');
+*/
+var i_5_nbt_a_3_b__2 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.3.b_2';
+
+        this.ns = new NameSampler();
+
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths_a = Math.floor((Math.random()*5)+5);
+        this.thousandths_b = Math.floor((Math.random()*4)+1);
+        this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
+        this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
+
+        this.setQuestion('' + this.ns.mNameOne + ' has a batting average of 0.' + this.tenths_hundreths_thousandths_b + ' and ' + this.ns.mNameTwo + ' has a batting average of 0.' + this.tenths_hundreths_thousandths_a + '. Write the higher batting average.',0);
+
+        this.setAnswer('0.' + this.tenths_hundreths_thousandths_a,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.3.b_1',5.0701,'5.nbt.a.3.b','');
 */
@@ -26,3 +171,4 @@ initialize: function(sheet)
         this.setAnswer('0.' + this.tenths_hundreths_thousandths_a,0);
 }
 });
+
