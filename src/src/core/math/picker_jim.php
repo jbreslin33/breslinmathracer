@@ -1506,6 +1506,18 @@ getItem: function(id)
         {
                 return new i_5_nbt_a_3_b__11(this.mSheet);
         }
+	if (id == '5.nbt.a.3.b_12')
+        {
+                return new i_5_nbt_a_3_b__12(this.mSheet);
+        }
+	if (id == '5.nbt.a.3.b_13')
+        {
+                return new i_5_nbt_a_3_b__13(this.mSheet);
+        }
+	if (id == '5.nbt.a.3.b_14')
+        {
+                return new i_5_nbt_a_3_b__14(this.mSheet);
+        }
 
 	
 	/*** GRADE 6 ***/
