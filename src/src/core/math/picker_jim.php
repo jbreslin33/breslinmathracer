@@ -1519,6 +1519,56 @@ getItem: function(id)
                 return new i_5_nbt_a_3_b__14(this.mSheet);
         }
 
+	//5.nbt.a.4
+   	if (id == '5.nbt.a.4_1')
+        {
+                return new i_5_nbt_a_4__1(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_2')
+        {
+                return new i_5_nbt_a_4__2(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_3')
+        {
+                return new i_5_nbt_a_4__3(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_4')
+        {
+                return new i_5_nbt_a_4__4(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_5')
+        {
+                return new i_5_nbt_a_4__5(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_6')
+        {
+                return new i_5_nbt_a_4__6(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_7')
+        {
+                return new i_5_nbt_a_4__7(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_8')
+        {
+                return new i_5_nbt_a_4__8(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_9')
+        {
+                return new i_5_nbt_a_4__9(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_10')
+        {
+                return new i_5_nbt_a_4__10(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_11')
+        {
+                return new i_5_nbt_a_4__11(this.mSheet);
+        }
+   	if (id == '5.nbt.a.4_12')
+        {
+                return new i_5_nbt_a_4__12(this.mSheet);
+        }
+
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
