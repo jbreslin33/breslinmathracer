@@ -81,9 +81,6 @@ public function setRawData()
 	while ($keep_going)
 	{
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
-		//is this where i would check to see if type is active?
-		//update item_types SET active_code = 2 where core_standards_id = '5.oa.a.1' AND progression > 5.0104000000;
-		//update users set core_standards_id = '5.oa.a.1' where core_standards_id = '5.oa.a.2';
 		$query = "select id, progression, type_mastery from item_types where progression > "; 
 		$query .= $this->progression_counter; 
 		$query .= ' AND active_code = 1 ';
