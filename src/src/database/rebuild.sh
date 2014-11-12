@@ -135,3 +135,5 @@ cat src/core/math/*.php >> min.js
 
 gcc jsmin.c -o jsmin
 ./jsmin <min.js >min.php ""
+echo run db patches 
+sudo -u postgres psql -d jamesanthonybreslin -f src/database/patches.sql
