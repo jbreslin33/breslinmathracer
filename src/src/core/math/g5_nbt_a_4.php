@@ -9,7 +9,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.a.4_1';
+        this.mType = '5.nbt.a.4_2';
 
         this.ns = new NameSampler();
 
@@ -24,6 +24,7 @@ initialize: function(sheet)
 
         this.ones = 0;
 	this.tens = parseInt(this.tens);
+	this.tens++;
 
         answer = parseInt(this.tens * 10 + this.ones);
 
