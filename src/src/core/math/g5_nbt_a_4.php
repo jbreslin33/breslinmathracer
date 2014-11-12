@@ -23,7 +23,21 @@ initialize: function(sheet)
 
         this.setQuestion('' + this.ns.mNameOne + ' weighed some ' + this.ns.mThingOne  + '. The scale read ' + this.tens + this.ones + '.' + this.tenths_hundreths_thousandths + ' grams. Round the total to the nearest gram.',0);
 
-        this.setAnswer('no',0);
+	this.tenths = parseInt(this.tenths);
+
+	var answer = 0;
+	if (this.tenths > 4)
+	{
+		this.ones = parseInt(this.ones);
+		this.ones++;
+	}
+		
+	answer = parseInt(this.tens * 10 + this.ones);		
+        	
+	this.setAnswer('' + answer,0);
+	this.setAnswer('' + answer + ' grams',1);
+	this.setAnswer('' + answer + ' grams.',2);
+	this.setAnswer('' + answer + ' g',3);
 }
 });
 
