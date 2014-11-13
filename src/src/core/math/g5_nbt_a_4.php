@@ -1,5 +1,57 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_5',5.0805,'5.nbt.a.4','round then add');
+*/
+var i_5_nbt_a_4__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.4_5';
+
+        this.ns = new NameSampler();
+
+        this.tens_a        = Math.floor((Math.random()*9)+1);
+        this.ones_a        = Math.floor((Math.random()*8)+1);
+        this.tenths_a      = Math.floor((Math.random()*9)+1);
+        this.hundreths_a   = Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths_a = parseInt(this.tenths_a * 10 + this.hundreths_a);
+        
+	this.tens_b        = Math.floor((Math.random()*9)+1);
+        this.ones_b        = Math.floor((Math.random()*8)+1);
+        this.tenths_b      = Math.floor((Math.random()*9)+1);
+        this.hundreths_b   = Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths_b = parseInt(this.tenths_b * 10 + this.hundreths_b);
+
+	this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.ns.mFruitOne + ' for $' + this.tens_a + this.ones_a + '.' + this.tenths_hundreths_a + ' and ' + this.ns.mFruitTwo + ' for $' + this.tens_a + this.ones_a + '.' + this.tenths_hundreths_b + '. Round both amounts to the nearest dollar then add them to find the estimated total.');                     
+	
+	this.tenths_a = parseInt(this.tenths_a);
+	if (this.tenths_a > 4)
+	{
+		this.ones_a = parseInt(this.ones_a);
+		this.ones_a++;
+	}
+	this.tenths_b = parseInt(this.tenths_b);
+	if (this.tenths_b > 4)
+	{
+		this.ones_b = parseInt(this.ones_b);
+		this.ones_b++;
+	}
+		
+	var answer_a = 0;
+	answer_a = parseInt(this.tens_a * 10 + this.ones_a);		
+	
+	var answer_b = 0;
+	answer_b = parseInt(this.tens_b * 10 + this.ones_b);		
+        	
+	this.setAnswer('' + answer_a,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_4',5.0804,'5.nbt.a.4','nines round to tenths ');
 */
 var i_5_nbt_a_4__4 = new Class(
