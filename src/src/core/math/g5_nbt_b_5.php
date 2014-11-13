@@ -1,3 +1,4 @@
+//2x1,2x2,3x1,3x2,3x3,
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_1',5.0901,'5.nbt.b.5','');
 */
