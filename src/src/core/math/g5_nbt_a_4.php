@@ -24,7 +24,7 @@ initialize: function(sheet)
         this.hundreths_b   = Math.floor((Math.random()*9)+1);
         this.tenths_hundreths_b = parseInt(this.tenths_b * 10 + this.hundreths_b);
 
-	this.setQuestion('The length of a rectangular field is ' + this.ones_a + '.' + this.tenths_hundreths_a + ' and the width is ' + this.ones_b + '.' + this.tenths_hundreths_b + '. Round both amounts to the nearest whole number then add calculate the area of the field.');                     
+	this.setQuestion('The length of a rectangular field is ' + this.ones_a + '.' + this.tenths_hundreths_a + ' yards and the width is ' + this.ones_b + '.' + this.tenths_hundreths_b + ' yards. Round both amounts to the nearest whole number then calculate the area of the field.');                     
 	
 	this.tenths_a = parseInt(this.tenths_a);
 	if (this.tenths_a > 4)
@@ -44,8 +44,15 @@ initialize: function(sheet)
 	var answer = parseInt(answer_a * answer_b);
         	
 	this.setAnswer('' + answer,0);
+	this.setAnswer('' + answer + ' square yards',1);
+	this.setAnswer('' + answer + ' sq yds',2);
+	this.setAnswer('' + answer + ' sq yd',3);
+	this.setAnswer('' + answer + ' square yards.',4);
+	this.setAnswer('' + answer + ' sq yds.',5);
+	this.setAnswer('' + answer + ' sq yd.',6);
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_5',5.0805,'5.nbt.a.4','round then add');
 */
