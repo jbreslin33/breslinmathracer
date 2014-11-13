@@ -1,5 +1,44 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_8',5.0808,'5.nbt.a.4','no nines round to tenths ');
+*/
+var i_5_nbt_a_4__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.4_8';
+
+        this.ns = new NameSampler();
+
+        this.tens        = Math.floor((Math.random()*9)+1);
+        this.ones        = Math.floor((Math.random()*8)+1);
+        this.tenths      = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.thousandths = Math.floor((Math.random()*5)+5);
+        this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
+
+	this.setQuestion('Round to the nearest tenth: ' + this.tens + this.ones + '.' + this.tenths_hundreths_thousandths);                     
+	this.tenths = parseInt(this.tenths);
+
+	var answer = 0;
+	if (this.hundreths > 4)
+	{
+		this.tenths = parseInt(this.tenths);
+		this.tenths++;
+	}
+		
+	answer = parseInt(this.tens * 10 + this.ones);		
+	answer = '' + answer + '.' + this.tenths; 
+        	
+	this.setAnswer('' + answer,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_7',5.0807,'5.nbt.a.4','estimate then find perimeter');
 */
 var i_5_nbt_a_4__7 = new Class(
