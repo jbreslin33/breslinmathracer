@@ -296,7 +296,7 @@ Extends: TextItem,
                	var b = Math.floor(Math.random()*5+1);
                	var c = Math.floor(Math.random()*8+2);
 
-                this.setQuestion('Write a numerical expression that matches this: The difference of ' + a + ' and ' + b + ' times ' + c );
+                this.setQuestion('Write a numerical expression that matches this: ' + c + ' times the difference of ' + a + ' and ' + b);
                 this.setAnswer('(' + a + '-' + b + ')' + c,0);
                 this.setAnswer(c + '(' + a + '-' + b + ')',1);
                 
