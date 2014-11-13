@@ -113,8 +113,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3.a_29';
-
         this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.thousandths = Math.floor((Math.random()*9)+1);
 
@@ -136,8 +136,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3.a_28';
-
         this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.tenths = Math.floor((Math.random()*9)+1);
         this.hundreths = Math.floor((Math.random()*9)+1);
@@ -164,6 +164,7 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_27';
 
         this.ns = new NameMachine();
+ 	this.mChopWhiteSpace = false;
 
         this.hundreds = Math.floor((Math.random()*9)+1);
         this.tens = Math.floor((Math.random()*9)+1);
@@ -195,6 +196,7 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_26';
 
         this.ns = new NameMachine();
+ 	this.mChopWhiteSpace = false;
 
         this.tenths = Math.floor((Math.random()*9)+1);
         this.hundreths = Math.floor((Math.random()*9)+1);
@@ -220,8 +222,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3.a_25';
-
         this.ns = new NameMachine();
+ 	this.mChopWhiteSpace = false;
 
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
@@ -250,8 +252,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3.a_24';
-
         this.ns = new NameMachine();
+ 	this.mChopWhiteSpace = false;
 
         this.hundreths = Math.floor((Math.random()*9)+1);
 
@@ -570,13 +572,14 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_13';
 
         this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
         this.hundreths =  0;
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
         this.ones = this.ns.getNumberName(this.ones);
         this.tenths = '' + this.ns.getNumberName(this.tenths);
@@ -598,15 +601,15 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3.a_12';
-
         this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
         this.hundreths =  0;
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
         this.ones = this.ns.getNumberName(this.ones);
         this.tenths = '' + this.ns.getNumberName(this.tenths);
@@ -628,15 +631,15 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.3.a_11';
-
 	this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.hundreds =  Math.floor((Math.random()*9)+1);
         this.tens =  Math.floor((Math.random()*9)+1);
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + ' Write the previus number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + ' Write the previous number in words as it would be said aloud.',0);
 
 	var tens_ones = parseInt(this.tens * 10 + this.ones);	
 	
@@ -663,6 +666,7 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_10';
 
 	this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.hundreths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
@@ -687,10 +691,11 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
+ 
 
         this.mType = '5.nbt.a.3.a_9';
-
 	this.ns = new NameMachine();
+	this.mChopWhiteSpace = false;
 
         this.tens =  Math.floor((Math.random()*9)+1);
         this.ones =  Math.floor((Math.random()*9)+1);
@@ -698,7 +703,7 @@ initialize: function(sheet)
         this.hundreths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previus number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
 	var tens_ones = parseInt(this.tens * 10 + this.ones);	
 	var hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
