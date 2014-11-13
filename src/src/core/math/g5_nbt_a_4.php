@@ -26,7 +26,7 @@ initialize: function(sheet)
         this.hundreths_b   = Math.floor((Math.random()*9)+1);
         this.tenths_hundreths_b = parseInt(this.tenths_b * 10 + this.hundreths_b);
 
-	this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.ns.mFruitOne + ' for $' + this.tens_a + this.ones_a + '.' + this.tenths_hundreths_a + ' and ' + this.ns.mFruitTwo + ' for $' + this.tens_a + this.ones_a + '.' + this.tenths_hundreths_b + '. Round both amounts to the nearest dollar then add them to find the estimated total.');                     
+	this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.ns.mFruitOne + ' for $' + this.tens_a + this.ones_a + '.' + this.tenths_hundreths_a + ' and ' + this.ns.mFruitTwo + ' for $' + this.tens_b + this.ones_b + '.' + this.tenths_hundreths_b + '. Round both amounts to the nearest dollar then add them to find the estimated total.');                     
 	
 	this.tenths_a = parseInt(this.tenths_a);
 	if (this.tenths_a > 4)
@@ -41,13 +41,12 @@ initialize: function(sheet)
 		this.ones_b++;
 	}
 		
-	var answer_a = 0;
-	answer_a = parseInt(this.tens_a * 10 + this.ones_a);		
-	
-	var answer_b = 0;
-	answer_b = parseInt(this.tens_b * 10 + this.ones_b);		
+	var answer_a = parseInt(this.tens_a * 10 + this.ones_a);		
+	var answer_b = parseInt(this.tens_b * 10 + this.ones_b);		
+	var answer = parseInt(answer_a + answer_b);
         	
-	this.setAnswer('' + answer_a,0);
+	this.setAnswer('$' + answer,0);
+	this.setAnswer('' + answer,1);
 }
 });
 
