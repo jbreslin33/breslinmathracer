@@ -1,5 +1,52 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_6',5.0806,'5.nbt.a.4','estimate then find area');
+*/
+var i_5_nbt_a_4__6 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.a.4_6';
+
+        this.ns = new NameSampler();
+
+        this.ones_a        = Math.floor((Math.random()*7)+2);
+        this.tenths_a      = Math.floor((Math.random()*9)+1);
+        this.hundreths_a   = Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths_a = parseInt(this.tenths_a * 10 + this.hundreths_a);
+        
+        this.ones_b        = Math.floor((Math.random()*7)+2);
+        this.tenths_b      = Math.floor((Math.random()*9)+1);
+        this.hundreths_b   = Math.floor((Math.random()*9)+1);
+        this.tenths_hundreths_b = parseInt(this.tenths_b * 10 + this.hundreths_b);
+
+	this.setQuestion('The length of a rectangular field is ' + this.ones_a + '.' + this.tenths_hundreths_a + ' and the width is ' + this.ones_b + '.' + this.tenths_hundreths_b + '. Round both amounts to the nearest whole number then add calculate the area of the field.');                     
+	
+	this.tenths_a = parseInt(this.tenths_a);
+	if (this.tenths_a > 4)
+	{
+		this.ones_a = parseInt(this.ones_a);
+		this.ones_a++;
+	}
+	this.tenths_b = parseInt(this.tenths_b);
+	if (this.tenths_b > 4)
+	{
+		this.ones_b = parseInt(this.ones_b);
+		this.ones_b++;
+	}
+		
+	var answer_a = parseInt(this.ones_a);		
+	var answer_b = parseInt(this.ones_b);		
+	var answer = parseInt(answer_a * answer_b);
+        	
+	this.setAnswer('' + answer,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.a.4_5',5.0805,'5.nbt.a.4','round then add');
 */
 var i_5_nbt_a_4__5 = new Class(
