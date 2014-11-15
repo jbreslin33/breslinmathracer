@@ -243,6 +243,15 @@ var Item = new Class(
 		//mTimesInfo
                 this.mTimesTablesInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mTimesTablesInfo);
+
+		//just fill it here...
+		for (i=2; i < 10; i++)
+		{
+  			var option = document.createElement("option");
+                	option.value = '' + i;
+                	option.text = '' + i;
+                	this.mTimesTablesInfo.mMesh.appendChild(option);
+		}
                 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
