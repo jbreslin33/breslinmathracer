@@ -363,6 +363,44 @@ Extends: Application,
                 xmlhttp.send();
         },
 
+	timestables: function(tablenumber)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                if (this.mRef_id == 'timestables')
+                {
+                        xmlhttp.open("POST","../../web/php/timestables.php?typeid=" + typeid + "&start_new=0",true);
+                }
+                else
+                {
+                        xmlhttp.open("POST","../../web/php/timestables.php?typeid=" + typeid + "&start_new=1",true);
+                }
+                xmlhttp.send();
+        },
 
         leavePractice: function(typeid)
         {
