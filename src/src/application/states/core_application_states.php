@@ -187,6 +187,7 @@ exit: function(application)
 	application.mEvaluationFailed = false;
 	application.mGotoPractice = false;
 	application.mGotoCore = false;
+	application.mGotoTimesTables = false;
 	application.mLeavePractice = false;
 }
 
