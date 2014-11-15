@@ -393,11 +393,11 @@ Extends: Application,
                 }
                 if (this.mRef_id == 'timestables')
                 {
-                        xmlhttp.open("POST","../../web/php/timestables.php?typeid=" + typeid + "&start_new=0",true);
+                        xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
                 }
                 else
                 {
-                        xmlhttp.open("POST","../../web/php/timestables.php?typeid=" + typeid + "&start_new=1",true);
+                        xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
                 }
                 xmlhttp.send();
         },
