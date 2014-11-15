@@ -175,8 +175,8 @@ var Item = new Class(
                 this.addShape(this.mContinueIncorrectButton);
 		
 		//mToggleStandardInfoButton
-                this.mToggleStandardInfoButton = new ToggleStandardInfoButton(150,40,650,422,this.mSheet.mGame,"BUTTON","","");
-		this.mToggleStandardInfoButton.mMesh.innerHTML = 'STANDARD INFO';
+                this.mToggleStandardInfoButton = new ToggleStandardInfoButton(100,40,270,422,this.mSheet.mGame,"BUTTON","","");
+		this.mToggleStandardInfoButton.mMesh.innerHTML = 'STANDARD';
                 this.addShape(this.mToggleStandardInfoButton);
 		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
 		
@@ -185,8 +185,8 @@ var Item = new Class(
                 this.addShape(this.mStandardInfo);
 		
 		//mToggleItemInfoButton
-                this.mToggleItemInfoButton = new ToggleItemInfoButton(150,40,450,422,this.mSheet.mGame,"BUTTON","","");
-		this.mToggleItemInfoButton.mMesh.innerHTML = 'ITEM INFO';
+                this.mToggleItemInfoButton = new ToggleItemInfoButton(45,40,175,422,this.mSheet.mGame,"BUTTON","","");
+		this.mToggleItemInfoButton.mMesh.innerHTML = 'ITEM';
                 this.addShape(this.mToggleItemInfoButton);
 		this.mToggleItemInfoButton.setOutOfBoundsCheck(false);
 		
@@ -195,8 +195,8 @@ var Item = new Class(
                 this.addShape(this.mItemInfo);
 
                	//mTogglePracticeInfoButton
-                this.mTogglePracticeInfoButton = new TogglePracticeInfoButton(150,40,250,422,this.mSheet.mGame,"BUTTON","","");
-                this.mTogglePracticeInfoButton.mMesh.innerHTML = 'PRACTICE INFO';
+                this.mTogglePracticeInfoButton = new TogglePracticeInfoButton(75,40,100,422,this.mSheet.mGame,"BUTTON","","");
+                this.mTogglePracticeInfoButton.mMesh.innerHTML = 'PRACTICE';
                 this.addShape(this.mTogglePracticeInfoButton);
                 this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
 
@@ -213,8 +213,8 @@ var Item = new Class(
                 this.addShape(this.mLeavePracticeButton);
 
 		//CORE
-                this.mToggleCoreInfoButton = new ToggleCoreInfoButton(150,40,50,422,this.mSheet.mGame,"BUTTON","","");
-                this.mToggleCoreInfoButton.mMesh.innerHTML = 'CORE INFO';
+                this.mToggleCoreInfoButton = new ToggleCoreInfoButton(45,40,30,422,this.mSheet.mGame,"BUTTON","","");
+                this.mToggleCoreInfoButton.mMesh.innerHTML = 'CORE';
                 this.addShape(this.mToggleCoreInfoButton);
                 this.mToggleCoreInfoButton.setOutOfBoundsCheck(false);
 
@@ -225,6 +225,14 @@ var Item = new Class(
                 this.mCoreInfoButton = new SubmitCoreItemButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mCoreInfoButton.mMesh.innerHTML = 'CORE ITEM';
                 this.addShape(this.mCoreInfoButton);
+		
+		//TIMES TABLES
+                this.mToggleTimesTablesButton = new ToggleTimesTablesButton(165,40,300,422,this.mSheet.mGame,"BUTTON","","");
+                this.mToggleTimesTablesButton.mMesh.innerHTML = 'XTABLES';
+                this.addShape(this.mToggleTimesTablesButton);
+                this.mToggleTimesTablesButton.setOutOfBoundsCheck(false);
+
+
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
