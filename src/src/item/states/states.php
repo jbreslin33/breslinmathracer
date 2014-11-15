@@ -137,6 +137,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_CORE);
 	}
+	if (item.mShowTimesTables)
+	{
+                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
+	}
 },
 
 exit: function(item)
@@ -165,6 +169,7 @@ enter: function(item)
         item.hideToggleItemInfoButton();
         item.hideTogglePracticeInfoButton();
         item.hideToggleCoreInfoButton();
+        item.hideToggleTimesTablesInfoButton();
 
         item.showStandard();
 },
@@ -183,6 +188,7 @@ exit: function(item)
         item.showToggleItemInfoButton();
         item.showTogglePracticeInfoButton();
         item.showToggleCoreInfoButton();
+        item.showToggleTimesTablesInfoButton();
 }
 
 });
@@ -207,6 +213,7 @@ enter: function(item)
         item.hideToggleStandardInfoButton();
         item.hideTogglePracticeInfoButton();
         item.hideToggleCoreInfoButton();
+        item.hideToggleTimesTablesInfoButton();
 
         item.showItem();
 },
@@ -225,6 +232,7 @@ exit: function(item)
         item.showToggleStandardInfoButton();
         item.showTogglePracticeInfoButton();
         item.showToggleCoreInfoButton();
+        item.showToggleTimesTablesInfoButton();
 }
 
 });
@@ -249,6 +257,7 @@ enter: function(item)
         item.hideToggleStandardInfoButton();
         item.hideToggleItemInfoButton();
         item.hideToggleCoreInfoButton();
+        item.hideToggleTimesTablesInfoButton();
 
         item.showPractice();
 
@@ -272,10 +281,10 @@ exit: function(item)
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
         item.showToggleCoreInfoButton();
+        item.showToggleTimesTablesInfoButton();
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
-
 }
 
 });
@@ -300,6 +309,7 @@ enter: function(item)
         item.hideToggleStandardInfoButton();
         item.hideToggleItemInfoButton();
         item.hideTogglePracticeInfoButton();
+        item.hideToggleTimesTablesInfoButton();
 
         item.showCore();
 
@@ -323,6 +333,7 @@ exit: function(item)
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
         item.showTogglePracticeInfoButton();
+        item.showToggleTimesTablesInfoButton();
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
@@ -330,6 +341,57 @@ exit: function(item)
 
 });
 
+var SHOW_TIMES_TABLES = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                APPLICATION.log('ITEM::SHOW_TIMES_TABLES');
+        }
+        item.hideQuestion();
+        item.hideAnswerInputs();
+        item.hideQuestionShapes();
+        item.hideToggleStandardInfoButton();
+        item.hideToggleItemInfoButton();
+        item.hideTogglePracticeInfoButton();
+        item.hideToggleCoreInfoButton();
+
+        item.showTimesTables();
+
+        if(item.raphael != 0)
+	{
+        	item.raphael.setSize(10,10);
+	}
+},
+
+execute: function(item)
+{
+        if (item.mShowTimesTables == false)
+        {
+                item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
+        }
+},
+
+exit: function(item)
+{
+        item.hideTimesTables();
+        item.showToggleStandardInfoButton();
+        item.showToggleItemInfoButton();
+        item.showTogglePracticeInfoButton();
+        item.showToggleCoreInfoButton();
+
+        if(item.raphael != 0)
+          item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
+}
+
+});
 
 var CONTINUE_CORRECT = new Class(
 {
@@ -376,6 +438,10 @@ execute: function(item)
 	if (item.mShowCore)
 	{
                 item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
+	if (item.mShowTimesTables)
+	{
+                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
 	}
 },
 
@@ -428,6 +494,10 @@ execute: function(item)
 	if (item.mShowCore)
 	{
                 item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
+	if (item.mShowTimesTables)
+	{
+                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
 	}
 },
 
@@ -488,6 +558,10 @@ execute: function(item)
 	if (item.mShowCore)
 	{
                 item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
+	if (item.mShowTimesTables)
+	{
+                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
 	}
 },
 
@@ -551,6 +625,10 @@ execute: function(item)
 	{
                 item.mStateMachine.changeState(item.mSHOW_CORE);
 	}
+	if (item.mShowTimesTables)
+	{
+                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
+	}
 },
 
 exit: function(item)
@@ -606,6 +684,10 @@ execute: function(item)
 	if (item.mShowCore)
 	{
                 item.mStateMachine.changeState(item.mSHOW_CORE);
+	}
+	if (item.mShowTimesTables)
+	{
+                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
 	}
 },
 
