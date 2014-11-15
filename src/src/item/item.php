@@ -444,7 +444,7 @@ var Item = new Class(
 	{	
 		this.mItemInfo.setVisibility(false);
 	},
-
+	
        	showPractice: function()
         {      
                 if (this.mPracticeDescription == '')
@@ -475,10 +475,9 @@ var Item = new Class(
         
 	showTimesTables: function()
         {
-                this.mCoreInfo.setVisibility(true);
-                this.mCoreInfoButton.setVisibility(true);
+                this.mTimesTablesInfo.setVisibility(true);
+                this.mTimesTablesInfoButton.setVisibility(true);
         },
-
 
         hidePractice: function()
         {      
@@ -491,6 +490,12 @@ var Item = new Class(
         {
                 this.mCoreInfo.setVisibility(false);
                 this.mCoreInfoButton.setVisibility(false);
+        },
+
+        hideTimesTables: function()
+        {
+                this.mTimesTablesInfo.setVisibility(false);
+                this.mTimesTablesInfoButton.setVisibility(false);
         },
 
 	showAnswerInputs: function()
@@ -543,6 +548,7 @@ var Item = new Class(
 		this.showToggleStandardInfoButton();
 		this.showTogglePracticeInfoButton();
 		this.showToggleCoreInfoButton();
+		this.showToggleTimesTablesInfoButton();
 	},
 	
 	hideQuestion: function()
@@ -588,6 +594,16 @@ var Item = new Class(
         hideToggleCoreInfoButton: function()
         {
                 this.mToggleCoreInfoButton.setVisibility(false);
+        },
+
+        showToggleTimesTablesInfoButton: function()
+        {
+                this.mToggleTimesTablesInfoButton.setVisibility(true);
+        },
+
+        hideToggleTimesTablesInfoButton: function()
+        {
+                this.mToggleTimesTablesInfoButton.setVisibility(false);
         },
 
 	showQuestionShapes: function()
