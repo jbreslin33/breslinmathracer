@@ -23,7 +23,6 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-		APPLICATION.log('times tables hit.');
 		if (APPLICATION.mGame.mSheet.getItem().mShowTimesTables == true)
 		{
 			APPLICATION.mGame.mSheet.getItem().mShowTimesTables = false;
