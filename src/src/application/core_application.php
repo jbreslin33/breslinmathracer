@@ -42,6 +42,8 @@ Extends: Application,
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;
 		this.mGotoPractice = false;
+		this.mGotoCore = false;
+		this.mGotoTimesTables = false;
 		this.mLeavePractice = false;
 		this.mWaitForReturn = false;
 
@@ -61,6 +63,7 @@ Extends: Application,
                 this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
                 this.mCORE_APPLICATION                 = new CORE_APPLICATION(this);
                 this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
+                this.mTIMES_TABLES_APPLICATION                 = new TIMES_TABLES_APPLICATION(this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);

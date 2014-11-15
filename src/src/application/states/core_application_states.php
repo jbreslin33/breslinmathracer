@@ -175,6 +175,11 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mLEAVE_PRACTICE_APPLICATION);
 	}
+	
+	if (application.mGotoTimesTables)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_APPLICATION);
+	}
 },
 exit: function(application)
 {
@@ -236,6 +241,40 @@ enter: function(application)
         }
         application.mWaitForReturn = true;
         application.core(application.mGame.mSheet.getItem().mCoreInfo.mMesh.options[application.mGame.mSheet.getItem().mCoreInfo.mMesh.selectedIndex].text);
+},
+
+execute: function(application)
+{
+        if (application.mWaitForReturn == false)
+        {
+                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+        application.mGame.mReadyForNormalApplication = false;
+        //application.normal();
+}
+
+});
+
+var TIMES_TABLES_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_APPLICATION');
+        }
+        application.mWaitForReturn = true;
+        application.core(application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].text);
 },
 
 execute: function(application)

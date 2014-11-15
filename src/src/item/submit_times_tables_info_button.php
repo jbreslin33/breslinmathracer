@@ -1,4 +1,4 @@
-var ToggleTimesTablesButton = new Class(
+var SubmitTimesTablesInfoButton = new Class(
 {
 Extends: Shape,
         initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message)
@@ -23,13 +23,6 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-		if (APPLICATION.mGame.mSheet.getItem().mShowPractice == true)
-		{
-			APPLICATION.mGame.mSheet.getItem().mShowPractice = false;
-		}	
-		else
-		{
-			APPLICATION.mGame.mSheet.getItem().mShowPractice = true;
-		}
+		APPLICATION.mGotoTimesTables = true;
         }
 });

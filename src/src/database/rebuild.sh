@@ -108,6 +108,8 @@ cat src/item/submit_practice_item_button.php >> min.js
 cat src/item/toggle_core_info_button.php >> min.js
 cat src/item/submit_core_item_button.php >> min.js
 cat src/item/leave_practice_button.php >> min.js
+cat src/item/toggle_times_tables_info_button.php >> min.js
+cat src/item/submit_times_tables_info_button.php >> min.js
 cat src/item/states/states.php >> min.js
 
 cat src/sheet/sheet.php >> min.js
