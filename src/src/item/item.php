@@ -51,6 +51,7 @@ var Item = new Class(
 		this.mItemDescription = '';
 		this.mPracticeDescription = '';
 		this.mCoreDescription = '';
+		this.mTimesTablesDescription = '';
 		this.mType = 0; //uncategorized
 
 		//times 
@@ -96,6 +97,13 @@ var Item = new Class(
 		this.mCoreInfoButton = 0;
 		this.mShowCore = false;
 
+		//show times tables
+		this.mToggleTimesTableInfoButton = 0;
+		this.mTimesTablesInfo = 0;
+		this.mTimesTablesInfoButton = 0;
+		this.mShowTimesTables = 0;
+		
+
 		//states
                 this.mStateMachine = new StateMachine(this);
 
@@ -119,14 +127,13 @@ var Item = new Class(
                 this.mSHOW_ITEM = new SHOW_ITEM(this);
                 this.mSHOW_PRACTICE = new SHOW_PRACTICE(this);
                 this.mSHOW_CORE = new SHOW_CORE(this);
+                this.mSHOW_TIMES_TABLES = new SHOW_TIMES_TABLES(this);
 
 		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
-
-
 	},
 
 	setTheFocus: function()
@@ -225,12 +232,22 @@ var Item = new Class(
                 this.mCoreInfoButton = new SubmitCoreItemButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mCoreInfoButton.mMesh.innerHTML = 'CORE ITEM';
                 this.addShape(this.mCoreInfoButton);
-		
+                
 		//TIMES TABLES
-                this.mToggleTimesTablesButton = new ToggleTimesTablesButton(165,40,300,422,this.mSheet.mGame,"BUTTON","","");
-                this.mToggleTimesTablesButton.mMesh.innerHTML = 'XTABLES';
-                this.addShape(this.mToggleTimesTablesButton);
-                this.mToggleTimesTablesButton.setOutOfBoundsCheck(false);
+		
+                this.mToggleTimesTablesInfoButton = new ToggleTimesTablesInfoButton(165,40,400,422,this.mSheet.mGame,"BUTTON","","");
+                this.mToggleTimesTablesInfoButton.mMesh.innerHTML = 'XTABLES';
+                this.addShape(this.mToggleTimesTablesInfoButton);
+                this.mToggleTimesTablesInfoButton.setOutOfBoundsCheck(false);
+		
+		//mTimesInfo
+                this.mTimesTablesInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
+                this.addShape(this.mTimesTablesInfo);
+                
+		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
+                this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
+                this.addShape(this.mTimesTablesInfoButton);
+
 
 
 	},
@@ -455,6 +472,13 @@ var Item = new Class(
                 this.mCoreInfo.setVisibility(true);
                 this.mCoreInfoButton.setVisibility(true);
         },
+        
+	showTimesTables: function()
+        {
+                this.mCoreInfo.setVisibility(true);
+                this.mCoreInfoButton.setVisibility(true);
+        },
+
 
         hidePractice: function()
         {      
