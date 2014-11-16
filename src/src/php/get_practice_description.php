@@ -9,7 +9,8 @@ function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 
-     	$query = "select id from item_types order by progression;";
+	//skip inactive and speed types as speed types will be done in a special section
+     	$query = "select id from item_types WHERE active_code = 1 AND speed = 0 order by progression;";
 
        	//get db result
        	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
