@@ -116,7 +116,15 @@ insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades
 --ITEM_MODE: 
 insert into evaluations (description) values ('normal'); 
 insert into evaluations (description) values ('practice'); 
-insert into evaluations (description) values ('times_tables'); 
+insert into evaluations (description) values ('timestables_2'); 
+insert into evaluations (description) values ('timestables_3'); 
+insert into evaluations (description) values ('timestables_4'); 
+insert into evaluations (description) values ('timestables_5'); 
+insert into evaluations (description) values ('timestables_6'); 
+insert into evaluations (description) values ('timestables_7'); 
+insert into evaluations (description) values ('timestables_8'); 
+insert into evaluations (description) values ('timestables_9'); 
+insert into evaluations (description) values ('timestables'); 
 
 --     FINER TYPES 
 --borrow_types

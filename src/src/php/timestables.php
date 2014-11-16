@@ -46,7 +46,7 @@ public function insertNewAttempt()
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
-        //get learning_standard_attempt id
+        //get evaluations_attempts_id
         $query = "select id from evaluations_attempts where user_id = ";
         $query .= $_SESSION["user_id"];
         $query .= " order by start_time desc limit 1;";
@@ -65,20 +65,18 @@ public function insertNewAttempt()
         }
 
         //set sessions for signup
-        $_SESSION["ref_id"] = 'timestables' + $this->mTableNumber;
+        $_SESSION["ref_id"] = 'timestables_' + $this->mTableNumber;
         $_SESSION["subject_id"] = 1;
 
         $this->setRawData();
  
 	$item_attempt = new ItemAttempt();
         $item_attempt->insert();
-
 }
 
 public function continueAttempt()
 {
-//right here......is alexis sanchez error i think...
-        $_SESSION["ref_id"] = 'practice';
+        $_SESSION["ref_id"] = 'timestables_' + $this->mTableNumber;
 
         $this->setRawData();
 	
