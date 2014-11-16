@@ -83,7 +83,7 @@ public function setRawData()
 		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
 		$query = "select id, progression, type_mastery from item_types where progression > "; 
 		$query .= $this->progression_counter; 
-		$query .= ' AND active_code = 1 ';
+		$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
 		$query .= " order by progression asc limit 1;";
  
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
