@@ -117,10 +117,10 @@ public function leave()
 
         $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 
-  	//get evaluations_attempts id
+  	//get evaluations_attempts id of the last normal that has not been complete  ....
         $query = "select evaluations_attempts.id, evaluations.description from evaluations_attempts JOIN evaluations ON evaluations_attempts.evaluations_id=evaluations.id where user_id = ";
         $query .= $_SESSION["user_id"];
-        $query .= " AND evaluations_id != 2 order by start_time desc limit 1;";
+        $query .= " AND evaluations_id == 1 order by start_time desc limit 1;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
@@ -138,6 +138,10 @@ public function leave()
                 $_SESSION["ref_id"]  = $ref_id;
 
                 if ($ref_id == 'normal')
+                {
+                        $normal = new Normal(0);
+                }
+                if ($ref_id == 'practice')
                 {
                         $normal = new Normal(0);
                 }
