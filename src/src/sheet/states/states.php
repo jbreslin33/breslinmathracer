@@ -86,6 +86,38 @@ exit: function(sheet)
 	{
 		APPLICATION.practice(APPLICATION.mType);
 	}	
+	else if (APPLICATION.mRef_id == 'timestables_2')
+	{
+		APPLICATION.timestables('2');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_3')
+	{
+		APPLICATION.timestables('3');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_4')
+	{
+		APPLICATION.timestables('4');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_5')
+	{
+		APPLICATION.timestables('5');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_6')
+	{
+		APPLICATION.timestables('6');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_7')
+	{
+		APPLICATION.timestables('7');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_8')
+	{
+		APPLICATION.timestables('8');
+	}	
+	else if (APPLICATION.mRef_id == 'timestables_9')
+	{
+		APPLICATION.timestables('9');
+	}	
 }
 });
 

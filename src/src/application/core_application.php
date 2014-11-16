@@ -394,12 +394,10 @@ Extends: Application,
                 if (this.mRef_id == 'timestables_2' || this.mRef_id == 'timestables_3' || this.mRef_id == 'timestables_4' || this.mRef_id == 'timestables_5' || this.mRef_id == 'timestables_6' || this.mRef_id == 'timestables_7' || this.mRef_id == 'timestables_8' || this.mRef_id == 'timestables_9' )
                 {
                         xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-			APPLICATION.log('old');
                 }
                 else
                 {
                         xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-			APPLICATION.log('new');
                 }
                 xmlhttp.send();
         },
