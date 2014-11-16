@@ -7,36 +7,20 @@ class TimesTables
 {
     private $mDatabaseConnection;
 
-function __construct($typeid, $startNew, $leavePractice)
+function __construct($tableNumber, $startNew, $leave)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mTypeID = $typeid;
+	$this->mTableNumber = $tableNumber;
 
-	if ($this->mTypeID == '')
+	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
+	$this->mEvaluationsID = intval($this->mTableNumber);
+	$this->mEvaluationsID = intval($this->mEvaluationsID + 1);
+	$this->mTypeID = 0;
+
+	//need to check typeid if null get one
+	if ($leave)
 	{
-        	//get learning_standard_attempt id
-		$query = "select item_attempts.item_types_id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where user_id = ";
-		$query .= $_SESSION["user_id"];
-        	$query .= " order by item_attempts.start_time desc limit 1;";
-        
-		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-        
-		$num = pg_num_rows($result);
-
-        	if ($num > 0)
-        	{
-                	//get the attempt_id
-                	$this->mTypeID = pg_Result($result, 0, 'item_types_id');
-
-                	//set level_id
-                	$_SESSION["item_types_id"] = $this->mTypeID;
-        	}
-	}
-
-//need to check typeid if null get one
-	if ($leavePractice)
-	{
-		$this->leavePractice();
+		$this->leave();
 	}
 	else
 	{
@@ -56,7 +40,9 @@ public function insertNewAttempt()
       	//insert learning_standard_attempt
         $insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $_SESSION["user_id"];
-        $insert .= ",2);";
+        $insert .= ",";
+        $insert .= $this->mEvaluationsID; 
+        $insert .= ");";
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
@@ -79,7 +65,7 @@ public function insertNewAttempt()
         }
 
         //set sessions for signup
-        $_SESSION["ref_id"] = 'practice';
+        $_SESSION["ref_id"] = 'timestables' + $this->mTableNumber;
         $_SESSION["subject_id"] = 1;
 
         $this->setRawData();
@@ -103,27 +89,11 @@ public function continueAttempt()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
-	//tables hack
-
-        $query = "select core_standards_id from item_types where id = '";
-        $query .= $this->mTypeID;
-        $query .= "';";
-        
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-	$num = pg_num_rows($result);
-
-	$core_standards_id = '';
-
-        if ($num > 0)
-        {
-                $core_standards_id = pg_Result($result, 0, 'core_standards_id');
-	}
-
-	if ($core_standards_id == '3.oa.c.7')
-	{
-		//lets randomize ....
-		$randomNumber = rand(1,81);
-		$randid = $core_standards_id;
+	//lets randomize ....
+	if ($this->mTableNumber == 2)
+	{ 
+		$randomNumber = rand(1,17);
+		$randid = '3.oa.c.7';
 		$randid .= "_"; 
 		$randid .= $randomNumber; 
 		$this->mTypeID = $randid;
@@ -136,7 +106,7 @@ public function setRawData()
        	$_SESSION["raw_data"] = $raw; 
 }
 
-public function leavePractice()
+public function leave()
 {
 	// lets close out this practice
         $update = "update evaluations_attempts set end_time = CURRENT_TIMESTAMP WHERE id = ";
