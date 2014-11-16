@@ -65,7 +65,9 @@ public function insertNewAttempt()
         }
 
         //set sessions for signup
-        $_SESSION["ref_id"] = 'timestables_' + $this->mTableNumber;
+	$refid = 'timestables_';	
+	$refid .= $this->mTableNumber;
+        $_SESSION["ref_id"] = $refid;
         $_SESSION["subject_id"] = 1;
 
         $this->setRawData();
@@ -76,7 +78,9 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
-        $_SESSION["ref_id"] = 'timestables_' + $this->mTableNumber;
+	$refid = 'timestables_';	
+	$refid .= $this->mTableNumber;
+        $_SESSION["ref_id"] = $refid;
 
         $this->setRawData();
 	
