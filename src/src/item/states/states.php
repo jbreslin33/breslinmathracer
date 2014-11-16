@@ -165,6 +165,7 @@ enter: function(item)
         }
 	item.hideQuestion();
 	item.hideAnswerInputs();
+	item.hideUserAnswer();
 	item.hideQuestionShapes();
         item.hideToggleItemInfoButton();
         item.hideTogglePracticeInfoButton();
@@ -209,6 +210,7 @@ enter: function(item)
         }
         item.hideQuestion();
         item.hideAnswerInputs();
+        item.hideUserAnswer();
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
         item.hideTogglePracticeInfoButton();
@@ -253,6 +255,7 @@ enter: function(item)
         }
         item.hideQuestion();
         item.hideAnswerInputs();
+        item.hideUserAnswer();
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
         item.hideToggleItemInfoButton();
@@ -305,6 +308,7 @@ enter: function(item)
         }
         item.hideQuestion();
         item.hideAnswerInputs();
+        item.hideUserAnswer();
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
         item.hideToggleItemInfoButton();
@@ -357,6 +361,7 @@ enter: function(item)
         }
         item.hideQuestion();
         item.hideAnswerInputs();
+        item.hideUserAnswer();
         item.hideQuestionShapes();
         item.hideToggleStandardInfoButton();
         item.hideToggleItemInfoButton();
