@@ -9,7 +9,7 @@ function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	//$this->querydb();
-        $_SESSION["core_description"] = "3.oa.a.1:4.oa.a.1:5.oa.a.1";
+        $_SESSION["core_description"] = "5.oa.a.1";
 }
 
 public function querydb()
