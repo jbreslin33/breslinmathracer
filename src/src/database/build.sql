@@ -190,6 +190,7 @@ CREATE TABLE item_types (
 	cluster_mastery integer DEFAULT 6, --never ask again unless during evaluation	
 	standard_mastery integer DEFAULT 4, --this will allow student to be asked a new question from a new standard once they have passed this threshold on all types	
 	type_mastery integer DEFAULT 2, --this will allow movement to a new type...	
+	speed integer NOT NULL DEFAULT 0,
         PRIMARY KEY (id),
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );
