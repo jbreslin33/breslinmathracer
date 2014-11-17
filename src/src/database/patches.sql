@@ -1,5 +1,14 @@
 update item_types SET active_code = 2 WHERE core_standards_id = '5.nbt.a.3';
 update item_types SET type_mastery = 4 WHERE core_standards_id = '3.oa.c.7';
-alter table item_types add speed integer NOT NULL DEFAULT 0;
 update item_types set speed = 5 where core_standards_id = '3.oa.c.7';
 update users set core_standards_id = '5.oa.a.1';
+insert into evaluations (description) values ('timestables_2');
+insert into evaluations (description) values ('timestables_3');
+insert into evaluations (description) values ('timestables_4');
+insert into evaluations (description) values ('timestables_5');
+insert into evaluations (description) values ('timestables_6');
+insert into evaluations (description) values ('timestables_7');
+insert into evaluations (description) values ('timestables_8');
+insert into evaluations (description) values ('timestables_9');
+insert into evaluations (description) values ('timestables');
+alter table item_types add speed integer NOT NULL DEFAULT 0;
