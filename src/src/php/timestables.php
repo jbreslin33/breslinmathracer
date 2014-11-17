@@ -100,6 +100,79 @@ public function setRawData()
 		$randid .= $randomNumber; 
 		$this->mTypeID = $randid;
 	}
+        if ($this->mTableNumber == 3)
+        {
+		/*
+                $randomNumber = rand(16,32);
+		$randomNumber = intval($randomNumber);  
+		if ($randomNumber == 16)
+		{
+			$randomNumber = 2;
+		}
+		if ($randomNumber == 17)
+		{
+			$randomNumber = 3;
+		}
+                $randid = '3.oa.c.7';
+                $randid .= "_";
+                $randid .= $randomNumber;
+                $this->mTypeID = $randid;
+		*/
+                $randomNumber = rand(18,32);
+                $randid = '3.oa.c.7';
+                $randid .= "_";
+                $randid .= $randomNumber;
+                $this->mTypeID = $randid;
+        }
+	if ($this->mTableNumber == 4)
+	{ 
+		$randomNumber = rand(33,45);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+	if ($this->mTableNumber == 5)
+	{ 
+		$randomNumber = rand(46,56);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+	if ($this->mTableNumber == 6)
+	{ 
+		$randomNumber = rand(57,65);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+	if ($this->mTableNumber == 7)
+	{ 
+		$randomNumber = rand(66,72);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+	if ($this->mTableNumber == 8)
+	{ 
+		$randomNumber = rand(73,77);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+	if ($this->mTableNumber == 9)
+	{ 
+		$randomNumber = rand(78,81);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
+
 
 	$_SESSION["item_types_id"] = $this->mTypeID;
 	$raw = $this->mTypeID; 
