@@ -512,6 +512,16 @@ var Item = new Class(
 
 	},
 	
+	hideUserAnswer: function()
+	{
+
+	},
+
+	showUserAnswer: function()
+	{
+
+	},
+	
 	hideAnswerInputs: function()
 	{
 
