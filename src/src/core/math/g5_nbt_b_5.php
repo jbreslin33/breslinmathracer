@@ -1,6 +1,6 @@
 //2x1,2x2,3x1,3x2,3x3,
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_1',5.0901,'5.nbt.b.5','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_1',5.0901,'5.nbt.b.5','2 by 1');
 */
 var i_5_nbt_b_5__1 = new Class(
 {
@@ -14,22 +14,12 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.tens        = Math.floor((Math.random()*9)+1);
-        this.ones        = Math.floor((Math.random()*9)+1);
-        this.tenths      = 9;
-        this.hundreths   = Math.floor((Math.random()*5)+5);
-        this.thousandths = Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
+        this.x        = Math.floor((Math.random()*90)+10);
+        this.y        = Math.floor((Math.random()*8)+2);
 
-        this.setQuestion('Round to the nearest tenth: ' + this.tens + this.ones + '.' + this.tenths_hundreths_thousandths);
-        this.tenths = parseInt(0);
-        this.ones = parseInt(this.ones);
-        this.ones++;
+        this.setQuestion('Find the Product: ' + this.x + ' &times ' + this.y + '');
+        this.answer = parseInt(this.x * this.y);
 
-        answer = parseInt(this.tens * 10 + this.ones);
-        answer = '' + answer;
-
-        this.setAnswer('' + answer,0);
+        this.setAnswer('' + this.answer,0);
 }
 });
-
