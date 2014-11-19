@@ -1,5 +1,132 @@
 //2x1,2x2,3x1,3x2,3x3,
 
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_10',5.0910,'5.nbt.b.5','2 by 3');
+*/
+var i_5_nbt_b_5__10 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.5_10';
+
+        this.ns = new NameSampler();
+
+        this.x = Math.floor((Math.random()*900)+100);
+        this.y = Math.floor((Math.random()*90)+10);
+
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.x + ' times as many ' + this.ns.mThingOne + ' as ' + this.ns.mNameOne + '. How many ' + this.ns.mThingOne + ' does ' + this.ns.mNameOne + ' have?');
+        this.answer = parseInt(this.x * this.y);
+
+        this.setAnswer('' + this.answer,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_9',5.0909,'5.nbt.b.5','3 by 2');
+*/
+var i_5_nbt_b_5__9 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.5_9';
+
+        this.ns = new NameSampler();
+
+        this.x = Math.floor((Math.random()*900)+100);
+        this.y = Math.floor((Math.random()*90)+10);
+
+        this.setQuestion('One lap on a racetrack is ' + this.x + ' this.ns.mDistanceIncrementMedium + '. If ' + this.ns.mNameOne + ' runs ' + this.y + ' times around the track how far in meters will ' + this.ns.mNameMachine.getProunoun(this.ns.mNameOne,0,0) + ' have ran?');
+        this.answer = parseInt(this.x * this.y);
+
+        this.setAnswer('' + this.answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_8',5.0908,'5.nbt.b.5','2 by 2');
+*/
+var i_5_nbt_b_5__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.5_8';
+
+        this.ns = new NameSampler();
+
+        this.x        = Math.floor((Math.random()*90)+10);
+        this.y        = Math.floor((Math.random()*90)+10);
+
+        this.setQuestion('Find the Product: ' + this.x + ' &times ' + this.y + '');
+        this.answer = parseInt(this.x * this.y);
+
+        this.setAnswer('' + this.answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_7',5.0907,'5.nbt.b.5','1 by 3');
+*/
+var i_5_nbt_b_5__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.5_7';
+
+        this.ns = new NameSampler();
+
+        this.x        = Math.floor((Math.random()*900)+100);
+        this.y        = Math.floor((Math.random()*8)+2);
+
+        this.setQuestion('Find the Product: ' + this.y + ' &times ' + this.x + '');
+        this.answer = parseInt(this.x * this.y);
+
+        this.setAnswer('' + this.answer,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_6',5.0906,'5.nbt.b.5','3 by 1');
+*/
+var i_5_nbt_b_5__6 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.5_6';
+
+        this.ns = new NameSampler();
+
+        this.x        = Math.floor((Math.random()*900)+100);
+        this.y        = Math.floor((Math.random()*8)+2);
+
+        this.setQuestion('Find the Product: ' + this.x + ' &times ' + this.y + '');
+        this.answer = parseInt(this.x * this.y);
+
+        this.setAnswer('' + this.answer,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_5',5.0905,'5.nbt.b.5','2 by 3');
 */
