@@ -765,7 +765,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,375,50,220,75,150,50,525,100);
+        this.parent(sheet,375,50,220,75,350,50,525,150);
 
         this.mType = '5.nbt.a.3.a_7';
 
@@ -774,10 +774,9 @@ initialize: function(sheet)
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
         this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths + this.thousandths);
-        this.setAnswer('' + this.tenths + ' x ' + '1/10 + ' + this.hundreths + ' x ' + '1/100 + ' + this.thousandths + ' x ' + '1/1000',0);
-        this.setAnswer('' + this.tenths + ' * ' + '1/10 + ' + this.hundreths + ' * ' + '1/100 + ' + this.thousandths + ' x ' + '1/1000',1);
-        
-        this.setAnswer('' + this.tenths + '/10 + ' + this.hundreths + '/100 + ' + this.thousandths + '/1000',2);
+        this.setAnswer('' + this.tenths + 'x' + '1/10+' + this.hundreths + 'x' + '1/100+' + this.thousandths + 'x' + '1/1000',0);
+        this.setAnswer('' + this.tenths + '*' + '1/10+' + this.hundreths + '*' + '1/100+' + this.thousandths + 'x' + '1/1000',1);
+        this.setAnswer('' + this.tenths + '/10+' + this.hundreths + '/100+' + this.thousandths + '/1000',2);
 }
 });
 
@@ -798,10 +797,10 @@ initialize: function(sheet)
         this.hundreths =  Math.floor((Math.random()*9)+1);
 
         this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths);
-        this.setAnswer('' + this.tenths + ' x ' + '1/10 + ' + this.hundreths + ' x ' + '1/100',0);
-        this.setAnswer('' + this.tenths + ' * ' + '1/10 + ' + this.hundreths + ' * ' + '1/100',1);
+        this.setAnswer('' + this.tenths + 'x' + '1/10+' + this.hundreths + 'x' + '1/100',0);
+        this.setAnswer('' + this.tenths + '*' + '1/10+' + this.hundreths + '*' + '1/100',1);
         
-        this.setAnswer('' + this.tenths + '/10 + ' + this.hundreths + '/100',2);
+        this.setAnswer('' + this.tenths + '/10+' + this.hundreths + '/100',2);
 }
 });
 
