@@ -83,23 +83,26 @@ Extends: Application,
 		{
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
-			
+				this.mSent = false;		
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
 				var v = 'BAD USERNAME';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+				this.mSent = false;		
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
 				var v = 'BAD PASSWORD';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+				this.mSent = false;		
 			}
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
 				var v = 'TIMED OUT PLEASE LOGIN AGAIN';
  				APPLICATION.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+				this.mSent = false;		
 			}
         		if (codeNumber == APPLICATION.FULL)
                 	{
@@ -114,6 +117,7 @@ Extends: Application,
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
+				this.mSent = false;		
                		}
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {

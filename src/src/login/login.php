@@ -8,6 +8,8 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
+
+		this.mSent = false;
                 
 		this.mServerLabel = new Shape(200,50,400,50,this,"","","");
                 this.mServerLabel.setText('');
@@ -120,10 +122,18 @@ Extends: Game,
 
         sendLogin: function()
         {
-                var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
-                var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
+		if (this.mSent == false)
+		{
+			this.mSent = true;
+                	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
+                	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 
-                APPLICATION.login(username,password);
+                	APPLICATION.login(username,password);
+		}
+		else
+		{
+
+		}
         },
 
 	hitSignupButton: function()
