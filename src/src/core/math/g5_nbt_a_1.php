@@ -16,7 +16,7 @@ initialize: function(sheet)
         this.tens = Math.floor(Math.random()*9)+1;
         this.ones = Math.floor(Math.random()*9)+1;
         this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
+        this.hundredths = Math.floor(Math.random()*9)+1;
         this.thousandths = Math.floor(Math.random()*9)+1;
         this.tenthousandths = Math.floor(Math.random()*9)+1;
         this.hundredthousandths = Math.floor(Math.random()*9)+1;
@@ -40,7 +40,7 @@ initialize: function(sheet)
         this.tens = Math.floor(Math.random()*9)+1;
         this.ones = Math.floor(Math.random()*9)+1;
         this.tenths = Math.floor(Math.random()*9)+1;
-        this.hundreths = Math.floor(Math.random()*9)+1;
+        this.hundredths = Math.floor(Math.random()*9)+1;
         this.thousandths = Math.floor(Math.random()*9)+1;
         this.tenthousandths = Math.floor(Math.random()*9)+1;
         this.hundredthousandths = Math.floor(Math.random()*9)+1;
@@ -60,7 +60,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_51';
 
-        this.setQuestion('What digit is in the hundredthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the hundredthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.hundredthousandths,0);
 }
 });
@@ -78,7 +78,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_50';
 
-        this.setQuestion('What digit is in the tenthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the tenthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.tenthousandths,0);
 }
 });
@@ -96,7 +96,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_49';
 
-        this.setQuestion('What digit is in the thousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the thousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.thousandths,0);
 }
 });
@@ -116,8 +116,8 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_48';
 
-        this.setQuestion('What digit is in the hundreths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
-        this.setAnswer('' + this.hundreths,0);
+        this.setQuestion('What digit is in the hundredths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setAnswer('' + this.hundredths,0);
 }
 });
 
@@ -134,7 +134,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_47';
 
-        this.setQuestion('What digit is in the tenths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the tenths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.tenths,0);
 }
 });
@@ -153,7 +153,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_46';
 
-        this.setQuestion('What digit is in the ones place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the ones place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.ones,0);
 }
 });
@@ -171,7 +171,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_45';
 
-        this.setQuestion('What digit is in the tens place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the tens place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.tens,0);
 }
 });
@@ -189,7 +189,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_44';
 
-        this.setQuestion('What digit is in the hundreds place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the hundreds place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.hundreds,0);
 }
 });
@@ -207,7 +207,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_43';
 
-        this.setQuestion('What digit is in the thousands place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the thousands place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.thousands,0);
 }
 });
@@ -225,7 +225,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_42';
 
-	this.setQuestion('What digit is in the ten thousands place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + ''); 
+	this.setQuestion('What digit is in the ten thousands place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + ''); 
         this.setAnswer('' + this.tenthousands,0);
 }
 });
@@ -414,7 +414,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_33';
 
-        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>' + ' Do not simplify.');
+        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>' + ' Do not simplify.');
 
         var answer = new Fraction(this.hundredthousandths,100000);
 
@@ -435,7 +435,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_32';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>');
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>');
 
         this.setAnswer('0.0000' + this.hundredthousandths,0);
 }
@@ -454,7 +454,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_31';
 
-        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths + ' Do not simplify.');
+        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths + ' Do not simplify.');
 
         var answer = new Fraction(this.tenthousandths,10000);
 
@@ -475,7 +475,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_30';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths);
 
         this.setAnswer('0.000' + this.tenthousandths,0);
 }
@@ -494,7 +494,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_29';
 
-        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + '<span style="color: #f00;">' + this.thousandths + '</span>' + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
+        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + '<span style="color: #f00;">' + this.thousandths + '</span>' + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
 
         var answer = new Fraction(this.thousandths,1000);
 
@@ -515,7 +515,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_28';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + '<span style="color: #f00;">' + this.thousandths + '</span>' + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + '<span style="color: #f00;">' + this.thousandths + '</span>' + this.tenthousandths + this.hundredthousandths);
 
         this.setAnswer('0.00' + this.thousandths,0);
 }
@@ -534,9 +534,9 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_27';
 
-        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
+        this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundredths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
 
-        var answer = new Fraction(this.hundreths,100);
+        var answer = new Fraction(this.hundredths,100);
 
         this.setAnswer(answer.getString(),0);
 }
@@ -555,9 +555,9 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_26';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundredths + '</span>' + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
-        this.setAnswer('0.0' + this.hundreths,0);
+        this.setAnswer('0.0' + this.hundredths,0);
 }
 });
 
@@ -575,7 +575,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_25';
 
-        this.setQuestion('What is the simplest fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
+        this.setQuestion('What is the simplest fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
         
 	var answer = new Fraction(this.tenths,10);
 
@@ -596,7 +596,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_24';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
         this.setAnswer('0.' + this.tenths,0);
 }
@@ -616,7 +616,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_23';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
         this.setAnswer(this.ones,0);
 }
@@ -635,7 +635,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_22';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
         this.setAnswer(this.tens + '0',0);
 }
@@ -654,7 +654,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_21';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + '<span style="color: #f00;">' + this.hundreds + '</span>' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + '<span style="color: #f00;">' + this.hundreds + '</span>' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
         this.setAnswer('' + this.hundreds + '00',0);
 }
@@ -674,7 +674,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_20';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + '<span style="color: #f00;">' + this.thousands + '</span>' + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + '<span style="color: #f00;">' + this.thousands + '</span>' + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
         var answer = parseInt(this.thousands * 1000);
         this.setAnswer('' + answer,0);
@@ -695,7 +695,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_19';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
         var answer = parseInt(this.tenthousands * 10000);
         this.setAnswer('' + answer,0);
@@ -716,7 +716,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_18';
 
-        this.setQuestion('What is the numerical value of the red digit in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setQuestion('What is the numerical value of the red digit in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
        
 	var answer = parseInt(this.hundredthousands * 100000); 
 	this.setAnswer('' + answer,0);
@@ -875,7 +875,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_11';
 
-        this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>' + '');
+        this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + '<span style="color: #f00;">' + this.hundredthousandths + '</span>' + '');
         this.setAnswer('hundred thousandths',0);
         this.setAnswer('hundred thousandths place',1);
 }
@@ -895,7 +895,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_10';
 
-        this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + '' + this.hundredthousandths);
+        this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + '' + this.hundredthousandths);
         this.setAnswer('ten thousandths',0);
         this.setAnswer('ten thousandths place',1);
 }
@@ -914,7 +914,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_9';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + '<span style="color: #f00;">' + this.thousandths + '</span>' + '' + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + '<span style="color: #f00;">' + this.thousandths + '</span>' + '' + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('thousandths',0);
         this.setAnswer('thousandths place',1);
 }
@@ -933,9 +933,9 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_8';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundreths + '</span>' + '' + this.thousandths + this.tenthousandths + this.hundredthousandths);
-        this.setAnswer('hundreths',0);
-        this.setAnswer('hundreths place',1);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + '<span style="color: #f00;">' + this.hundredths + '</span>' + '' + this.thousandths + this.tenthousandths + this.hundredthousandths);
+        this.setAnswer('hundredths',0);
+        this.setAnswer('hundredths place',1);
 }
 });
 
@@ -953,7 +953,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_7';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + '' + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + '' + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('tenths',0);
         this.setAnswer('tenths place',1);
 }
@@ -972,7 +972,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_6';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '' + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '' + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('ones',0);
         this.setAnswer('ones place',1);
 }
@@ -991,7 +991,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_5';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('tens',0);
         this.setAnswer('tens place',1);
 }
@@ -1010,7 +1010,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_4';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + '<span style="color: #f00;">' + this.hundreds + '</span>' + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + '<span style="color: #f00;">' + this.hundreds + '</span>' + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('hundreds',0);
         this.setAnswer('hundreds place',1);
 }
@@ -1030,7 +1030,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_3';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + '' + '<span style="color: #f00;">' + this.thousands + '</span>' + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + this.tenthousands + '' + '<span style="color: #f00;">' + this.thousands + '</span>' + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('thousands',0);
         this.setAnswer('thousands place',1);
 }
@@ -1049,7 +1049,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_2';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('ten thousands',0);
         this.setAnswer('ten thousands place',1);
         this.setAnswer('ten thousand',2);
@@ -1070,7 +1070,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_1';
 
-   	this.setQuestion('What is the place value of the red digit called in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+   	this.setQuestion('What is the place value of the red digit called in the number ' + '<span style="color: #f00;">' + this.hundredthousands + '</span>' + this.tenthousands + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
         this.setAnswer('hundred thousands',0);
         this.setAnswer('hundred thousands place',1);
         this.setAnswer('hundred thousand',2);

@@ -14,12 +14,12 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         this.tenths= Math.floor((Math.random()*9)+1);
-        this.hundreths= Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+        this.hundredths= Math.floor((Math.random()*9)+1);
+        this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
-        this.setQuestion('' + this.ns.mNameOne + ' weighs a bug on a scale and it comes to ' + this.tenths_hundreths + ' thousandths of a gram. What is this amount represented as a decimal?',0);
+        this.setQuestion('' + this.ns.mNameOne + ' weighs a bug on a scale and it comes to ' + this.tenths_hundredths + ' thousandths of a gram. What is this amount represented as a decimal?',0);
 
-        this.setAnswer('0.0' + this.tenths_hundreths,0);
+        this.setAnswer('0.0' + this.tenths_hundredths,0);
 }
 });
 
@@ -40,12 +40,12 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         this.tenths= Math.floor((Math.random()*9)+1);
-        this.hundreths= Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+        this.hundredths= Math.floor((Math.random()*9)+1);
+        this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
-        this.setQuestion('' + this.ns.mNameOne + ' won ' + this.tenths_hundreths + ' ' + this.ns.mPlayedActivityOne + ' games out of 100. What is this amount represented as a decimal?',0);
+        this.setQuestion('' + this.ns.mNameOne + ' won ' + this.tenths_hundredths + ' ' + this.ns.mPlayedActivityOne + ' games out of 100. What is this amount represented as a decimal?',0);
 
-        this.setAnswer('0.' + this.tenths_hundreths,0);
+        this.setAnswer('0.' + this.tenths_hundredths,0);
 }
 });
 
@@ -90,14 +90,14 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+        this.hundredths = Math.floor((Math.random()*9)+1);
+        this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
-	this.fraction = new Fraction(this.tenths_hundreths,1000);
+	this.fraction = new Fraction(this.tenths_hundredths,1000);
 
         this.setQuestion('' + this.ns.mNameOne + ' has a pokeman card that is ' + this.fraction.getString() + ' of an inch wide. What is this amount written as a decimal?',0);
 
-        this.setAnswer('0.0' + this.tenths_hundreths,0);
+        this.setAnswer('0.0' + this.tenths_hundredths,0);
 }
 });
 
@@ -140,13 +140,13 @@ initialize: function(sheet)
 	this.mChopWhiteSpace = false;
 
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
 
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+        this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
-        this.setQuestion('Write the decimal as you would say it in words: 0.' + this.tenths + this.hundreths + '0',0);
+        this.setQuestion('Write the decimal as you would say it in words: 0.' + this.tenths + this.hundredths + '0',0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.tenths_hundreths) + ' hundreths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.tenths_hundredths) + ' hundredths',0);
 }
 });
 
@@ -170,15 +170,15 @@ initialize: function(sheet)
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
 
-        this.setQuestion('Write the decimal as you would say it in words: ' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setQuestion('Write the decimal as you would say it in words: ' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(this.hundreths_thousandths) + ' thousandths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(this.hundredths_thousandths) + ' thousandths',0);
 }
 });
 
@@ -199,14 +199,14 @@ initialize: function(sheet)
  	this.mChopWhiteSpace = false;
 
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
 
-        this.setQuestion('Write the decimal as you would say it in words: 0.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setQuestion('Write the decimal as you would say it in words: 0.' + this.tenths + this.hundredths + this.thousandths,0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(this.hundreths_thousandths) + ' thousandths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(this.hundredths_thousandths) + ' thousandths',0);
 }
 });
 
@@ -228,15 +228,15 @@ initialize: function(sheet)
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = 0;
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
-	this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+	this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
 
-        this.setQuestion('Write the decimal as you would say it in words: ' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setQuestion('Write the decimal as you would say it in words: ' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.hundreths_thousandths) + ' thousandths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.hundredths_thousandths) + ' thousandths',0);
 }
 });
 
@@ -255,11 +255,11 @@ initialize: function(sheet)
         this.ns = new NameMachine();
  	this.mChopWhiteSpace = false;
 
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Write the decimal as you would say it in words: 0.0' + this.hundreths,0);
+        this.setQuestion('Write the decimal as you would say it in words: 0.0' + this.hundredths,0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.hundreths) + ' hundreths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.hundredths) + ' hundredths',0);
 }
 });
 
@@ -280,15 +280,15 @@ initialize: function(sheet)
 
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
-        this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
+        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
+        this.hundredths_thousandths = this.ns.getNumberName(this.hundredths_thousandths);
 
-        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundredths_thousandths + ' thousandths',0);
 
-        this.setAnswer('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 }
 });
 /*
@@ -306,11 +306,11 @@ initialize: function(sheet)
 
         this.ns = new NameMachine();
 
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundreths) + ' hundredeths ',0);
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundredths) + ' hundredeths ',0);
 
-        this.setAnswer('0.0' + this.hundreths,0);
+        this.setAnswer('0.0' + this.hundredths,0);
 }
 });
 
@@ -333,17 +333,17 @@ initialize: function(sheet)
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
 
-        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
-        this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
+        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
+        this.hundredths_thousandths = this.ns.getNumberName(this.hundredths_thousandths);
 
-        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundredths_thousandths + ' thousandths',0);
 
-        this.setAnswer('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 }
 });
 
@@ -363,18 +363,18 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
-        this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
+        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
+        this.hundredths_thousandths = this.ns.getNumberName(this.hundredths_thousandths);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.tens_ones = this.ns.getNumberName(this.tens_ones);
 
-        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundreths_thousandths + ' thousandths',0);
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.hundredths_thousandths + ' thousandths',0);
 
-        this.setAnswer('' + '0.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + '0.' + this.tenths + this.hundredths + this.thousandths,0);
 }
 });
 
@@ -396,18 +396,18 @@ initialize: function(sheet)
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = 0;
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
-        this.hundreths_thousandths = this.ns.getNumberName(this.hundreths_thousandths);
+        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
+        this.hundredths_thousandths = this.ns.getNumberName(this.hundredths_thousandths);
         
 	this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.tens_ones = this.ns.getNumberName(this.tens_ones);
 
-        this.setQuestion('Convert to a decimal: ' + this.tens_ones + ' and ' + this.hundreths_thousandths + ' thousandths',0);
+        this.setQuestion('Convert to a decimal: ' + this.tens_ones + ' and ' + this.hundredths_thousandths + ' thousandths',0);
 
-        this.setAnswer('' + this.tens + '' + this.ones + '.0' + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.tens + '' + this.ones + '.0' + this.hundredths + this.thousandths,0);
 }
 });
 
@@ -427,14 +427,14 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
 
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
-	this.tenths_hundreths = this.ns.getNumberName(this.tenths_hundreths);
+        this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
+	this.tenths_hundredths = this.ns.getNumberName(this.tenths_hundredths);
 
-        this.setQuestion('Convert to a decimal: ' + this.tenths_hundreths + ' hundreths',0);
+        this.setQuestion('Convert to a decimal: ' + this.tenths_hundredths + ' hundredths',0);
 
-	this.setAnswer('0.' + this.tenths + this.hundreths,0);
+	this.setAnswer('0.' + this.tenths + this.hundredths,0);
 }
 });
 
@@ -457,16 +457,16 @@ initialize: function(sheet)
         this.tens = Math.floor((Math.random()*9)+1);
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
+        this.tenths_hundredths_thousandths = parseInt(this.tenths * 100 + this.hundredths * 10 + this.thousandths);
 
-        this.fraction = new Fraction(this.tenths_hundreths_thousandths,1000);
+        this.fraction = new Fraction(this.tenths_hundredths_thousandths,1000);
 
         this.setQuestion('Convert to a decimal: ' + this.hundreds + this.tens + this.ones + this.fraction.getString(),0);
 
-        this.setAnswer('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 }
 });
 
@@ -487,16 +487,16 @@ initialize: function(sheet)
 
         this.ones = Math.floor((Math.random()*9)+1);
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
         this.thousandths = Math.floor((Math.random()*9)+1);
 
-        this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
+        this.tenths_hundredths_thousandths = parseInt(this.tenths * 100 + this.hundredths * 10 + this.thousandths);
 
-        this.fraction = new Fraction(this.tenths_hundreths_thousandths,1000);
+        this.fraction = new Fraction(this.tenths_hundredths_thousandths,1000);
 
         this.setQuestion('Convert to a decimal: ' + this.ones + this.fraction.getString(),0);
 
-        this.setAnswer('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 }
 });
 
@@ -518,15 +518,15 @@ initialize: function(sheet)
         this.ones = Math.floor((Math.random()*9)+1);
         this.tens = Math.floor((Math.random()*9)+1);
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
 
-        this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+        this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
-        this.fraction = new Fraction(this.tenths_hundreths,100);
+        this.fraction = new Fraction(this.tenths_hundredths,100);
 
         this.setQuestion('Convert to a decimal: ' + this.tens + this.ones + this.fraction.getString(),0);
 
-        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths,0);
+        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundredths,0);
 }
 });
 
@@ -546,15 +546,15 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 
         this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundreths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*9)+1);
 
-	this.tenths_hundreths = parseInt(this.tenths * 10 + this.hundreths);
+	this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
-	this.fraction = new Fraction(this.tenths_hundreths,100); 	
+	this.fraction = new Fraction(this.tenths_hundredths,100); 	
 
         this.setQuestion('Convert to a decimal: ' + this.fraction.getString(),0);
 
-        this.setAnswer('0.' + this.tenths + this.hundreths,0);
+        this.setAnswer('0.' + this.tenths + this.hundredths,0);
 }
 });
 
@@ -576,10 +576,10 @@ initialize: function(sheet)
 
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  0;
+        this.hundredths =  0;
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
         this.ones = this.ns.getNumberName(this.ones);
         this.tenths = '' + this.ns.getNumberName(this.tenths);
@@ -606,10 +606,10 @@ initialize: function(sheet)
 
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  0;
+        this.hundredths =  0;
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
         this.ones = this.ns.getNumberName(this.ones);
         this.tenths = '' + this.ns.getNumberName(this.tenths);
@@ -668,16 +668,16 @@ initialize: function(sheet)
 	this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.hundredths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('0.0' + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('0.0' + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
-	var hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
+	var hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
 	
-	hundreths_thousandths = this.ns.getNumberName(hundreths_thousandths); 	
+	hundredths_thousandths = this.ns.getNumberName(hundredths_thousandths); 	
 
-	this.setAnswer('' + hundreths_thousandths + ' thousandths',0);
+	this.setAnswer('' + hundredths_thousandths + ' thousandths',0);
 }
 });
 
@@ -700,27 +700,27 @@ initialize: function(sheet)
         this.tens =  Math.floor((Math.random()*9)+1);
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.hundredths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
 	var tens_ones = parseInt(this.tens * 10 + this.ones);	
-	var hundreths_thousandths = parseInt(this.hundreths * 10 + this.thousandths);
-	var tenths_hundreths_thousandths = '';
+	var hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
+	var tenths_hundredths_thousandths = '';
 	
 	tens_ones = this.ns.getNumberName(tens_ones); 
 
 	if (this.tenths == 0)
 	{
-		 tenths_hundreths_thousandths = this.ns.getNumberName(hundreths_thousandths);	
+		 tenths_hundredths_thousandths = this.ns.getNumberName(hundredths_thousandths);	
 	} 
 	else
 	{
-		 tenths_hundreths_thousandths = '' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(hundreths_thousandths); 	
+		 tenths_hundredths_thousandths = '' + this.ns.getNumberName(this.tenths) + ' hundred ' + this.ns.getNumberName(hundredths_thousandths); 	
 	}
 
-	this.setAnswer('' + tens_ones + ' and ' + tenths_hundreths_thousandths + ' thousandths',0);
+	this.setAnswer('' + tens_ones + ' and ' + tenths_hundredths_thousandths + ' thousandths',0);
 }
 });
 
@@ -742,16 +742,16 @@ initialize: function(sheet)
         this.tens =  Math.floor((Math.random()*9)+1);
         this.ones =  Math.floor((Math.random()*9)+1);
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.hundredths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
 	this.tenths_fraction = new Fraction(1,10);
-	this.hundreths_fraction = new Fraction(1,100);
+	this.hundredths_fraction = new Fraction(1,100);
 	this.thousandths_fraction = new Fraction(1,1000);
 
-        this.setQuestion('' + 'Evaluate: ' + this.tens + ' &times 10 + ' + this.ones + ' &times 1 + ' + this.tenths + ' &times ' + this.tenths_fraction.getString() + ' + ' + this.hundreths + ' &times ' + this.hundreths_fraction.getString() + ' + ' + this.thousandths + ' &times ' + this.thousandths_fraction.getString(),0);
+        this.setQuestion('' + 'Evaluate: ' + this.tens + ' &times 10 + ' + this.ones + ' &times 1 + ' + this.tenths + ' &times ' + this.tenths_fraction.getString() + ' + ' + this.hundredths + ' &times ' + this.hundredths_fraction.getString() + ' + ' + this.thousandths + ' &times ' + this.thousandths_fraction.getString(),0);
 
-        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundreths + this.thousandths,0);
+        this.setAnswer('' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 }
 });
 
@@ -770,13 +770,13 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_7';
 
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.hundredths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths + this.thousandths);
-        this.setAnswer('' + this.tenths + 'x' + '1/10+' + this.hundreths + 'x' + '1/100+' + this.thousandths + 'x' + '1/1000',0);
-        this.setAnswer('' + this.tenths + '*' + '1/10+' + this.hundreths + '*' + '1/100+' + this.thousandths + 'x' + '1/1000',1);
-        this.setAnswer('' + this.tenths + '/10+' + this.hundreths + '/100+' + this.thousandths + '/1000',2);
+        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundredths + this.thousandths);
+        this.setAnswer('' + this.tenths + 'x' + '1/10+' + this.hundredths + 'x' + '1/100+' + this.thousandths + 'x' + '1/1000',0);
+        this.setAnswer('' + this.tenths + '*' + '1/10+' + this.hundredths + '*' + '1/100+' + this.thousandths + 'x' + '1/1000',1);
+        this.setAnswer('' + this.tenths + '/10+' + this.hundredths + '/100+' + this.thousandths + '/1000',2);
 }
 });
 
@@ -794,13 +794,13 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_6';
 
         this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundreths =  Math.floor((Math.random()*9)+1);
+        this.hundredths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundreths);
-        this.setAnswer('' + this.tenths + 'x' + '1/10+' + this.hundreths + 'x' + '1/100',0);
-        this.setAnswer('' + this.tenths + '*' + '1/10+' + this.hundreths + '*' + '1/100',1);
+        this.setQuestion('Write in expanded form using fractions: 0.' + this.tenths + this.hundredths);
+        this.setAnswer('' + this.tenths + 'x' + '1/10+' + this.hundredths + 'x' + '1/100',0);
+        this.setAnswer('' + this.tenths + '*' + '1/10+' + this.hundredths + '*' + '1/100',1);
         
-        this.setAnswer('' + this.tenths + '/10+' + this.hundreths + '/100',2);
+        this.setAnswer('' + this.tenths + '/10+' + this.hundredths + '/100',2);
 }
 });
 
