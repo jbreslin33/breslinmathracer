@@ -106,6 +106,7 @@ initialize: function(sheet)
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer + ' points',1);
 }
 });
 
@@ -127,10 +128,12 @@ initialize: function(sheet)
         this.x        = Math.floor((Math.random()*900)+100);
         this.y        = Math.floor((Math.random()*8)+2);
 
-        this.setQuestion('Find the Product: ' + this.x + ' &times ' + this.y + '');
+        this.setQuestion('' + this.ns.mNameOne + ' rode ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' bike ' + this.x + ' ' + this.ns.mDistanceIncrementMedium + '. ' + this.ns.mNameTwo + ' rode ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' bike ' + this.y + ' times further than ' + this.ns.mNameOne + '. How many ' + this.ns.mDistanceIncrementMedium + ' did ' + this.ns.mNameTwo + ' ride ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' bike.');
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer + ' ' + this.ns.mDistanceIncrementMedium,1);
+        this.setAnswer('' + this.answer + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
 }
 });
 
