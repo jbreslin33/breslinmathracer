@@ -23,6 +23,7 @@ initialize: function(sheet)
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer + ' ' + this.ns.mThingOne,1);
 }
 });
 
@@ -45,10 +46,13 @@ initialize: function(sheet)
         this.x = Math.floor((Math.random()*900)+100);
         this.y = Math.floor((Math.random()*90)+10);
 
-        this.setQuestion('One lap on a racetrack is ' + this.x + ' this.ns.mDistanceIncrementMedium + '. If ' + this.ns.mNameOne + ' runs ' + this.y + ' times around the track how far in meters will ' + this.ns.mNameMachine.getProunoun(this.ns.mNameOne,0,0) + ' have ran?');
+        this.setQuestion('One lap on a track is ' + this.x + ' ' + this.ns.mDistanceIncrementMedium + '. If ' + this.ns.mNameOne + ' runs ' + this.y + ' times around the track how far in meters will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ran?');
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer + ' m',1);
+        this.setAnswer('' + this.answer + ' meter',2);
+        this.setAnswer('' + this.answer + ' meters',3);
 }
 });
 
