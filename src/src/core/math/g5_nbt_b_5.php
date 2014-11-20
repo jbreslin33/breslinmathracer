@@ -74,10 +74,15 @@ initialize: function(sheet)
         this.x        = Math.floor((Math.random()*90)+10);
         this.y        = Math.floor((Math.random()*90)+10);
 
-        this.setQuestion('Find the Product: ' + this.x + ' &times ' + this.y + '');
+        //this.setQuestion('Find the Product: ' + this.x + ' &times ' + this.y + '');
+
+        this.setQuestion('' + this.ns.mNameOne + ' sold ' + this.x + ' ' + this.ns.mFruitOne + '. ' + this.ns.mNameTwo + ' sold ' + this.y + ' times more ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' did ' + this.ns.mNameTwo + ' sell?');
+
+        this.answer = parseInt(this.x * this.y);
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer + ' ' + this.ns.mFruiteOne,1);
 }
 });
 
