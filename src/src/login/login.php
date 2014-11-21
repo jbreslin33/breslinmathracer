@@ -76,7 +76,7 @@ Extends: Game,
                 this.mShapeArray.push(this.mSignupButton);
                 this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
                
-		APPLICATION.checkLogin();
+		//APPLICATION.checkLogin();
 	},
 
         //***tab to next
