@@ -26,6 +26,9 @@ public function process()
 	//get db result
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
+//	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'login_a','');";
+//	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
         //get numer of rows
         $num = pg_num_rows($result);
 
@@ -39,6 +42,9 @@ public function process()
 	
 		//get db result
         	$result2 = pg_query($this->mDatabaseConnection->getConn(),$query2) or die('Could not connect: ' . pg_last_error());
+	
+//		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'login_b','');";
+//		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
         	//get numer of rows
         	$num2 = pg_num_rows($result2);

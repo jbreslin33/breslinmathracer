@@ -220,7 +220,12 @@ Extends: Application,
         login: function(username,password)
         {
 		//gets called right away
-		APPLICATION.log('username:' + username);
+		APPLICATION.mGame.mLoginButton.setVisibility(false);
+		APPLICATION.mGame.mSignupButton.setVisibility(false);
+		APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+		APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+		APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+		APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
 		var v = 'PLEASE WAIT LOGGING IN';
 		APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
         	var xmlhttp;
@@ -246,7 +251,6 @@ Extends: Application,
                                         {
                                                 APPLICATION.parseResponse(xmlhttp.responseText);
 						//takes a bit....
-						APPLICATION.log('parse response');
                                         }
                                 }
                         }

@@ -15,6 +15,9 @@ function __construct($startNew)
 
 	if ($startNew == 1)
 	{
+		//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal_new','');";
+		//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 		//close old evaluation_attempts.......
 		$evaluations_attempts = new EvaluationsAttempts();
 		$evaluations_attempts->update();
@@ -29,6 +32,8 @@ function __construct($startNew)
 	}
 	else
 	{
+		//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal_old','');";
+		//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		$this->setRawData();
 	}
 }
@@ -173,8 +178,8 @@ public function setRawData()
 		else if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if false this is either old one or brand new one we should be ok with that because if its new then game flows and if its old then its a remediation of previusly type mastered item  if we just did that then do this.....  
 		{
 			$typelast = $_SESSION["item_type_last"];
-$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id_to_ask','$typelast');";
-$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id_to_ask','$typelast');";
+//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			//PICK ITEM FROM ARRAYS
 			//bubble sort
 			$randomNumber = rand(0,100);

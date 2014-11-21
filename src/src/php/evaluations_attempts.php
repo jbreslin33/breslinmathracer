@@ -19,11 +19,17 @@ public function insert()
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
+	//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval_a','');";
+	//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
         $query = "select id from evaluations_attempts where user_id = ";
         $query .= $_SESSION["user_id"];
         $query .= " order by start_time desc limit 1;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+	
+	//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval_b','');";
+	//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
         $num = pg_num_rows($result);
 
@@ -54,6 +60,8 @@ public function update()
 
         	//get db result
         	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+		//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval_c','');";
+		//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
 }
 }
