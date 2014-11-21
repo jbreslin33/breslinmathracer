@@ -20,6 +20,7 @@ Extends: Application,
 		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
 		this.UPDATED_STANDARD_ID = 111;
+		this.LOGGED_IN = 112;
 
 		//personal info
 		this.mUsername = '';
@@ -135,6 +136,28 @@ Extends: Application,
 				APPLICATION.mWaitForReturn = false; 
 				this.mSent = false;		
                		}
+
+           		if (codeNumber == APPLICATION.LOGGED_IN)
+                        {
+                                //APPLICATION.mRef_id = responseArray[1];
+                                //APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                                APPLICATION.mLoggedIn = responseArray[1];
+                                APPLICATION.mUsername = responseArray[2];
+                                APPLICATION.mFirstName = responseArray[3];
+                                APPLICATION.mLastName = responseArray[4];
+                                //APPLICATION.mRawData = responseArray[6];
+
+                                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+                                APPLICATION.mWaitForReturn = false;
+                                this.mSent = false;
+
+
+				//then we need to query for other stuff....
+				APPLICATION.log('call normal');
+				APPLICATION.normal();
+                        }
+
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
                                 APPLICATION.mGame.mSheet.mItem.mStandardDescription = responseArray[1];

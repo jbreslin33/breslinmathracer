@@ -11,7 +11,7 @@ $login = new Login();
 
 if ($_SESSION["LOGGED_IN"] == 1)
 {
-	include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
+	include_once(getenv("DOCUMENT_ROOT") . "/web/php/login_return_string.php");
 }
 else
 {
