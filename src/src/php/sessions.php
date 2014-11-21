@@ -46,6 +46,42 @@ public function process()
 		{
 			$practice = new Practice('',0,0);
 		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(2,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(3,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(4,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(5,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(6,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(7,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(8,1,0);
+		}
+		if ($ref_id == 'timestables_2')
+		{
+			$timestables = new TimesTables(9,1,0);
+		}
+		if ($ref_id == 'timestables')
+		{
+			$timestables = new TimesTables(2,1,0);
+		}
 	}
 	else
 	{
