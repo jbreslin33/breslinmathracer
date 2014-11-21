@@ -304,7 +304,6 @@ var Item = new Class(
 
 	setUserAnswer: function(userAnswer)
 	{
-		APPLICATION.log('u:' + userAnswer);
 		//strip all whitespace
 		var answer = userAnswer;	
 
@@ -327,16 +326,13 @@ var Item = new Class(
 		
 
 		this.mUserAnswer = answer;
-		APPLICATION.log('a:' + this.mUserAnswer);
 	},
 	
 	checkUserAnswer: function()
 	{
-		APPLICATION.log('' + this.mUserAnswer); 
 		correctAnswerFound = false;
 		for (i = 0; i <  this.mAnswerArray.length; i++)
 		{
-			APPLICATION.log('' + i + ':' + this.mAnswerArray[i]); 
 			if (this.mUserAnswer == this.mAnswerArray[i])
 			{
 				correctAnswerFound = true;	
