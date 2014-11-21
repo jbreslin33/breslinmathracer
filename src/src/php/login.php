@@ -45,6 +45,10 @@ public function process()
         
 		if ($num2 > 0)
 		{
+        		$_SESSION["LOGGED_IN"] = 1;
+        		$this->mBadPassword = 0;
+        		$this->mBadUsername = 0;
+
 			//get the id from user table
                 	$first_name = pg_Result($result2, 0, 'first_name');
                 	$last_name = pg_Result($result2, 0, 'last_name');
