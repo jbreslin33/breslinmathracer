@@ -64,13 +64,12 @@ public function setRawData()
 	$core_standards_id_progressed = '';	
 	
 	$type_array = array();
+	$streak_array = array();
 	$right_array = array();
 	$wrong_array = array();
 
 	$type_mastery = 0;
 	$type_master_array = array();
-	$type_master_right_array = array();
-	
 
 	$keep_going = true;
 	$streak = 0;
@@ -142,10 +141,11 @@ public function setRawData()
 		
 			//everyone arrays	
 			$type_array[]  = $type_id; 			
+			$streak = intval($streak);
+			$streak_array[] = $streak; 			
 			$right_array[] = $right; 			
 			$wrong_array[] = $wrong; 			
 		
-			$streak = intval($streak);
 
 			//if not mastered and we dont have a non mastered type yet so this will give you the oldest unmastered one
  			if ($streak < $type_mastery)	
@@ -158,7 +158,6 @@ public function setRawData()
 			else //type mastered so add to mastered arrays
 			{
 				$type_master_array[]       = $type_id; 			
-				$type_master_right_array[] = $streak; 			
 			}
 		}	
 	}			
@@ -190,7 +189,6 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 					if ($_SESSION["item_type_last"] != $type_array[$randomNumber])
 					{
 						$item_types_id_to_ask = $type_array[$randomNumber];
-						$streak                = 0; //hack
 						$keepon = false;
 					} 
 				}
@@ -200,12 +198,10 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 				if ($item_types_id_progressed == '')
 				{
         				$item_types_id_to_ask = $type_array[0]; //default
-					$streak                = 0; //hack
 				}
 				else
 				{
         				$item_types_id_to_ask = $item_types_id_progressed; //progressed
-					$streak                = 0; //hack
 				}
 
 				if ($_SESSION["item_type_last"] == $item_types_id_to_ask) 
@@ -219,7 +215,6 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
                                         	if ($_SESSION["item_type_last"] != $type_array[$randomNumber])
                                         	{
                                                 	$item_types_id_to_ask = $type_array[$randomNumber];
-                                                	$streak                = 0; //hack
                                                 	$keepon = false;
                                         	}
 					}
@@ -230,13 +225,13 @@ $eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 	//STATS	
 	$stats = "s";
-	$stats .= $streak;
 	
 	$count_of_types = intval(count($type_array));
 	for ($i = 0; $i < $count_of_types; $i++)
 	{
 		if ($item_types_id_to_ask == $type_array[$i])
 		{
+			$stats .= $streak_array[$i];
 			$stats .= "r";
 			$stats .= $right_array[$i];
 			$stats .= "w";
