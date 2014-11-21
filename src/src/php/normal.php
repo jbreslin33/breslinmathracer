@@ -294,11 +294,11 @@ public function setRawData()
 	}
 
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
+	
+	//pink
         $itemString =  $item_types_id_to_ask; //ask this one
-        $itemString .= ":";
-        $itemString .= $count_of_types; 
-        $itemString .= ":";
-        $itemString .= $item_types_id_progressed; //progressed
+
+	//blue
         $itemString .= ":";
         $itemString .= $standard_score; //score
         $itemString .= "/";
@@ -307,6 +307,15 @@ public function setRawData()
         $itemString .= $progress_percent;
         $itemString .= "%";
         $itemString .= $stats; 
+
+	//yellow	
+        $itemString .= ":";
+        $itemString .= $item_types_id_progressed; //progressed
+
+	//green
+        $itemString .= ":";
+        $itemString .= $count_of_types; 
+
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
