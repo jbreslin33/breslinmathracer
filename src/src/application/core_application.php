@@ -87,15 +87,31 @@ Extends: Application,
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
+ 				APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
 				var v = 'BAD USERNAME';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
+/*
+				APPLICATION.mGame.mLoginButton.setVisibility(true);
+				APPLICATION.mGame.mUsernameLabel.setVisibility(true);
+				APPLICATION.mGame.mUsernameTextBox.setVisibility(true);
+				APPLICATION.mGame.mPasswordLabel.setVisibility(true);
+				APPLICATION.mGame.mPasswordTextBox.setVisibility(true);
+*/
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
+ 				APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
 				var v = 'BAD PASSWORD';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
+/*		
+				APPLICATION.mGame.mLoginButton.setVisibility(true);
+				APPLICATION.mGame.mUsernameLabel.setVisibility(true);
+				APPLICATION.mGame.mUsernameTextBox.setVisibility(true);
+				APPLICATION.mGame.mPasswordLabel.setVisibility(true);
+				APPLICATION.mGame.mPasswordTextBox.setVisibility(true);
+*/
 			}
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
@@ -221,7 +237,6 @@ Extends: Application,
         {
 		//gets called right away
 		APPLICATION.mGame.mLoginButton.setVisibility(false);
-		APPLICATION.mGame.mSignupButton.setVisibility(false);
 		APPLICATION.mGame.mUsernameLabel.setVisibility(false);
 		APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
 		APPLICATION.mGame.mPasswordLabel.setVisibility(false);
