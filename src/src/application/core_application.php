@@ -38,6 +38,7 @@ Extends: Application,
 		this.mStandard = '';
 		this.mRawData = 0;
 		this.mType = '';
+		this.mLastType = '';
 
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
