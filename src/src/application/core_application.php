@@ -219,6 +219,10 @@ Extends: Application,
 
         login: function(username,password)
         {
+		//gets called right away
+		APPLICATION.log('username:' + username);
+		var v = 'PLEASE WAIT LOGGING IN';
+		APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -241,6 +245,8 @@ Extends: Application,
                                         else
                                         {
                                                 APPLICATION.parseResponse(xmlhttp.responseText);
+						//takes a bit....
+						APPLICATION.log('parse response');
                                         }
                                 }
                         }
