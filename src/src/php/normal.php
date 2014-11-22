@@ -64,27 +64,12 @@ public function initializeProgressionCounter()
 public function setRawData()
 {
 	$this->initializeProgressionCounter();
-	$item_types_id_to_ask = '';	
-	$item_types_id_progressed = '';	
-	$core_standards_id_progressed = '';	
-	
-	$type_array = array();
-	$streak_array = array();
-	$right_array = array();
-	$wrong_array = array();
 
 	$type_mastery_array = array();
-	$type_id_array = array();
+	$type_array = array();
 	
-	$type_master_array = array();
-
-	$keep_going = true;
-	$streak = 0;
-	$right = 0;
-	$wrong = 0;
-	$score = 0;
-
 	/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
+	//eventually this should only be done once!
 	$query = "select id, progression, type_mastery from item_types where progression > "; 
 	$query .= $this->progression_counter; 
 	$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
@@ -98,210 +83,40 @@ public function setRawData()
 		$type_mastery = pg_Result($result, $i, 'type_mastery');
 		$type_mastery_array[] = intval($type_mastery);
 
-		$type_id_array[] = pg_Result($result, $i, 'id');
+		$type_array[] = pg_Result($result, $i, 'id');
 	}
 
-	$t = intval(0);	
-	while ($t < $numberOfResults || $keep_going)
-	{
-		//you need to do 1 query instead of looping....
-	       	$query = "select item_attempts.transaction_code, item_types.core_standards_id from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_types.id=item_attempts.item_types_id where item_attempts.item_types_id = '";
-       	        $query .= $type_id_array[$t];
-                $query .= "' AND evaluations_attempts.user_id = ";
-                $query .= $_SESSION["user_id"];
-                $query .= " AND evaluations_attempts.evaluations_id = 1";  
-                $query .= " order by item_attempts.start_time;";
+	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+        $query .= $_SESSION["user_id"];
+        $query .= " order by item_attempts.start_time desc;";
 													
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$type_id_array[$t]','before');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
 		
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$type_id_array[$t]','after');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+        $num = pg_num_rows($result);
 
-               	$num = pg_num_rows($result);
-
-		$streak = 0;
-		$streak = intval($streak);
-		$right = 0;
-		$wrong = 0;
-
-		if ($num > 0)
-		{
-  			for ($i = 0; $i < $num; $i++)
-			{
-				$transaction_code = pg_Result($result, $i, 'transaction_code');
-				$core_standards_id_progressed = pg_Result($result, $i, 'core_standards_id');
-				$transaction_code = intval($transaction_code);
-				if ($transaction_code == 1) 
-				{
-					$streak++;		
-					$right++;
-				}	
-				if ($transaction_code == 2) 
-				{
-					$streak = 0;		
-					$wrong++;
-				}	
-			}
-			$item_types_id_progressed = $type_id_array[$t];	
-		}
-		else
-		{
-			//we got nothing....so we reached in db an item_type never before asked in normal.
-			$keep_going = false;
-		}
-	
-		//everyone arrays	
-		$type_array[]  = $type_id_array[$t]; 			
-		$streak = intval($streak);
-		$streak_array[] = $streak; 			
-		$right_array[] = $right; 			
-		$wrong_array[] = $wrong; 			
-	
-
-		//if not mastered and we dont have a non mastered type yet so this will give you the oldest unmastered one
- 		if ($streak < $type_mastery_array[$t])	
-		{
-			if ($item_types_id_to_ask == '')
-			{
-				$item_types_id_to_ask = $type_id_array[$t]; //keep asking as you have not hit threshold
-			}
-		}
-		else //type mastered so add to mastered arrays
-		{
-			$type_master_array[]       = $type_id_array[$t]; 			
-		}
-		$t++;
-	}	
-	
-	//ok we are done keeping going so we reached uncharted so.. 
-	$count_of_mastered_items = intval(count($type_master_array));
-	if ($count_of_mastered_items > 0) //after pump is primed this is where item is decided 
+	if ($num > 0)
 	{
-		if ( !isset($_SESSION["item_type_last"]) )
+  		for ($i = 0; $i < $num; $i++)
 		{
-
+/*
+			$transaction_code = pg_Result($result, $i, 'transaction_code');
+			$core_standards_id_progressed = pg_Result($result, $i, 'core_standards_id');
+			$transaction_code = intval($transaction_code);
+			if ($transaction_code == 1) 
+			{
+				$streak++;		
+				$right++;
+			}	
+			if ($transaction_code == 2) 
+			{
+				$streak = 0;		
+				$wrong++;
+			}	
+*/
 		}
-		else if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if false this is either old one or brand new one we should be ok with that because if its new then game flows and if its old then its a remediation of previusly type mastered item  if we just did that then do this.....  
-		{
-			$typelast = $_SESSION["item_type_last"];
-//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_types_id_to_ask','$typelast');";
-//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-			//PICK ITEM FROM ARRAYS
-			//bubble sort
-			$randomNumber = rand(0,100);
-			if ($randomNumber <= 50) //go bananas to add some variety
-			{
-				$keepon = true;
-				while ($keepon)
-				{
-					$count_of_type_array = intval(count($type_array));
-					$randomNumber = rand(0,intval($count_of_type_array-1));
-				
-					if ($_SESSION["item_type_last"] != $type_array[$randomNumber])
-					{
-						$item_types_id_to_ask = $type_array[$randomNumber];
-						$keepon = false;
-					} 
-				}
-			}
-			else if ($randomNumber > 50) //ask highest progressed 
-			{
-				if ($item_types_id_progressed == '')
-				{
-        				$item_types_id_to_ask = $type_array[0]; //default
-				}
-				else
-				{
-        				$item_types_id_to_ask = $item_types_id_progressed; //progressed
-				}
-
-				if ($_SESSION["item_type_last"] == $item_types_id_to_ask) 
-				{
- 					$keepon = true;
-                                	while ($keepon)
-                                	{
-                                        	$count_of_type_array = intval(count($type_array));
-                                        	$randomNumber = rand(0,intval($count_of_type_array-1));
-
-                                        	if ($_SESSION["item_type_last"] != $type_array[$randomNumber])
-                                        	{
-                                                	$item_types_id_to_ask = $type_array[$randomNumber];
-                                                	$keepon = false;
-                                        	}
-					}
-                                }
-			}
-		}	
-	}
-
-	//STATS	
-	$stats = "s";
-	
-	$count_of_types = intval(count($type_array));
-	for ($i = 0; $i < $count_of_types; $i++)
-	{
-		if ($item_types_id_to_ask == $type_array[$i])
-		{
-			$stats .= $streak_array[$i];
-			$stats .= "r";
-			$stats .= $right_array[$i];
-			$stats .= "w";
-			$stats .= $wrong_array[$i];
-
-			$total = intval($right_array[$i] + $wrong_array[$i]);	
-			$percent = 0;
-			if ($total != 0)
-			{
-				$percent = floatval($right_array[$i] / $total); 
-				$percent = round( $percent, 2);
-			}
-			$stats .= "p";
-			$stats .= $percent;
-		}		 
-	}
-
-	$count_of_item_types_in_standard = 0;
-	
-	//get denominator for score
- 	$query = "select id, progression from item_types where core_standards_id = '";
-        $query .= $core_standards_id_progressed;
-	$query .= "' AND active_code = 1 ";
-        $query .= " ORDER BY progression;";
-
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-        $count_of_item_types_in_standard = pg_num_rows($result);
-
-   	$num = pg_num_rows($result);
-
-	$standard_score_counter = 0;
-	$standard_score = 0;
-        if ($num > 0)
-        {
-        	for ($i = 0; $i < $num; $i++)
-                {
-                	$id = pg_Result($result, $i, 'id');
-			$standard_score_counter++;
-                        if ($id == $item_types_id_progressed)
-                        {
-                        	$standard_score = $standard_score_counter;
-                        }
-		}
+		$item_types_id_progressed = $type_id_array[$t];	
 	}
 	
-	//calc score
-	$score = intval(count($type_master_array));
-		
-	$progress_percent = "";	
-	if ($count_of_item_types_in_standard != 0)
-	{
-		$progress_percent = floatval($standard_score / $count_of_item_types_in_standard); 
-		$progress_percent = $progress_percent * 100;
-		$progress_percent = round($progress_percent, 0, PHP_ROUND_HALF_UP);
-	}
-
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
 	
 	//pink
@@ -309,21 +124,14 @@ public function setRawData()
 
 	//blue
         $itemString .= ":";
-        $itemString .= $standard_score; //score
-        $itemString .= "/";
-        $itemString .= $count_of_item_types_in_standard;
-        $itemString .= "=";
-        $itemString .= $progress_percent;
-        $itemString .= "%";
-        $itemString .= $stats; 
-
+        $itemString .= "blue";
 	//yellow	
         $itemString .= ":";
-        $itemString .= $item_types_id_progressed; //progressed
+        $itemString .= "yellow";
 
 	//green
         $itemString .= ":";
-        $itemString .= $count_of_types; 
+        $itemString .= "green"; 
 
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
@@ -331,4 +139,35 @@ public function setRawData()
 }
 //end of class
 }
+/*
+        $_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
+
+        //pink
+        $itemString =  $item_types_id_to_ask; //ask this one
+
+        //blue
+        $itemString .= ":";
+        $itemString .= $standard_score; //score
+        $itemString .= "/";
+        $itemString .= $count_of_item_types_in_standard;
+        $itemString .= "=";
+        $itemString .= $progress_percent;
+        $itemString .= "%";
+        $itemString .= $stats;
+
+        //yellow
+        $itemString .= ":";
+        $itemString .= $item_types_id_progressed; //progressed
+
+        //green
+        $itemString .= ":";
+        $itemString .= $count_of_types;
+
+        $_SESSION["raw_data"] = $itemString;
+        $_SESSION["item_types_id"] = $item_types_id_to_ask;
+        $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
+
+*/
 ?>
+
+
