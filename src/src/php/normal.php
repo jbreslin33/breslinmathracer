@@ -100,30 +100,45 @@ public function setRawData()
 		
         $num = pg_num_rows($result);
 
-	if ($num > 0)
+	//fill arrays
+  	for ($i = 0; $i < $num; $i++)
 	{
-  		for ($i = 0; $i < $num; $i++)
-		{
-			$start_time_array[]       = pg_Result($result, $i, 'start_time');
-			$item_array[]             = pg_Result($result, $i, 'item_types_id');
-			$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-			$type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
-			$core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
+		$start_time_array[]       = pg_Result($result, $i, 'start_time');
+		$item_array[]             = pg_Result($result, $i, 'item_types_id');
+		$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
+		$type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
+		$core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 
-		}
-  		
-		for ($i = 0; $i < intval(count($start_time_array)); $i++)
-		{
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$i]','');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-		}
-
-		//$item_types_id_progressed = $type_array[$t];	
-		$item_types_id_to_ask = '5.oa.a.1_0_38';	
-		$item_types_id_progressed = '5.oa.a.1_0_38';	
 	}
 
+	/******    variety ****/ 
+	$randomNumber = rand(0,100);
+
+	if ($randomNumber >= 0 && $randomNumber < 50)
+	{
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','0-49');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+	}	
+	if ($randomNumber >= 50 && $randomNumber <= 100)
+	{
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','50-100');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	}	
+/*	
+	for ($i = 0; $i < intval(count($start_time_array)); $i++)
+	{
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$i]','');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	}
+*/
+	//$item_types_id_progressed = $type_array[$t];	
+	$item_types_id_to_ask = '5.oa.a.1_0_38';	
+	$item_types_id_progressed = '5.oa.a.1_0_38';	
+
+
 	/** anaylse **/
+
 
 
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
