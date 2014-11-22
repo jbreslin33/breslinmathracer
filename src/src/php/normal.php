@@ -73,7 +73,9 @@ public function setRawData()
 	$right_array = array();
 	$wrong_array = array();
 
-	$type_mastery = 0;
+	$type_mastery_array = array();
+	$type_id_array = array();
+	
 	$type_master_array = array();
 
 	$keep_going = true;
@@ -82,90 +84,97 @@ public function setRawData()
 	$wrong = 0;
 	$score = 0;
 
-	while ($keep_going)
+	/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
+	$query = "select id, progression, type_mastery from item_types where progression > "; 
+	$query .= $this->progression_counter; 
+	$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
+	$query .= " order by progression asc;";
+
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+       	$numberOfResults = pg_num_rows($result);
+                
+	for($i=0; $i < $numberOfResults; $i++)
+        {
+		$type_mastery = pg_Result($result, $i, 'type_mastery');
+		$type_mastery_array[] = intval($type_mastery);
+
+		$type_id_array[] = pg_Result($result, $i, 'id');
+	}
+
+	$t = intval(0);	
+	while ($t < $numberOfResults || $keep_going)
 	{
-		/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
-		$query = "select id, progression, type_mastery from item_types where progression > "; 
-		$query .= $this->progression_counter; 
-		$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
-		$query .= " order by progression asc limit 1;";
- 
-		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-                $numberOfResults = pg_num_rows($result);
-
-                if ($numberOfResults > 0)
-                {
-			$type_mastery = pg_Result($result, 0, 'type_mastery');
-			$type_mastery = intval($type_mastery);
-
-			$type_id      = pg_Result($result, 0, 'id');
-
-                	$this->progression_counter = pg_Result($result, 0, 'progression');
-
-			/********* get the transaction codes of the amount of mastery and the core_standards_id of the highest level to be used later for score ******************/
-	                $query = "select item_attempts.transaction_code, item_types.core_standards_id from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_types.id=item_attempts.item_types_id where item_attempts.item_types_id = '";
-       	               	$query .= $type_id;
-                       	$query .= "' AND evaluations_attempts.user_id = ";
-                       	$query .= $_SESSION["user_id"];
-                       	$query .= " AND evaluations_attempts.evaluations_id = 1";  
-                       	$query .= " order by item_attempts.start_time;";
+		//you need to do 1 query instead of looping....
+	       	$query = "select item_attempts.transaction_code, item_types.core_standards_id from evaluations_attempts JOIN item_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_types.id=item_attempts.item_types_id where item_attempts.item_types_id = '";
+       	        $query .= $type_id_array[$t];
+                $query .= "' AND evaluations_attempts.user_id = ";
+                $query .= $_SESSION["user_id"];
+                $query .= " AND evaluations_attempts.evaluations_id = 1";  
+                $query .= " order by item_attempts.start_time;";
 													
-			$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-               		$num = pg_num_rows($result);
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$type_id_array[$t]','before');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
-			$streak = 0;
-			$streak = intval($streak);
-			$right = 0;
-			$wrong = 0;
-
-			if ($num > 0)
-			{
-  				for ($i = 0; $i < $num; $i++)
-				{
-					$transaction_code = pg_Result($result, $i, 'transaction_code');
-					$core_standards_id_progressed = pg_Result($result, $i, 'core_standards_id');
-					$transaction_code = intval($transaction_code);
-					if ($transaction_code == 1) 
-					{
-						$streak++;		
-						$right++;
-					}	
-					if ($transaction_code == 2) 
-					{
-						$streak = 0;		
-						$wrong++;
-					}	
-				}
-				$item_types_id_progressed = $type_id;	
-			}
-			else
-			{
-				//we got nothing....so we reached in db an item_type never before asked in normal.
-				$keep_going = false;
-			}
+		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
 		
-			//everyone arrays	
-			$type_array[]  = $type_id; 			
-			$streak = intval($streak);
-			$streak_array[] = $streak; 			
-			$right_array[] = $right; 			
-			$wrong_array[] = $wrong; 			
-		
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$type_id_array[$t]','after');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
-			//if not mastered and we dont have a non mastered type yet so this will give you the oldest unmastered one
- 			if ($streak < $type_mastery)	
+               	$num = pg_num_rows($result);
+
+		$streak = 0;
+		$streak = intval($streak);
+		$right = 0;
+		$wrong = 0;
+
+		if ($num > 0)
+		{
+  			for ($i = 0; $i < $num; $i++)
 			{
-				if ($item_types_id_to_ask == '')
+				$transaction_code = pg_Result($result, $i, 'transaction_code');
+				$core_standards_id_progressed = pg_Result($result, $i, 'core_standards_id');
+				$transaction_code = intval($transaction_code);
+				if ($transaction_code == 1) 
 				{
-					$item_types_id_to_ask = $type_id; //keep asking as you have not hit threshold
-				}
+					$streak++;		
+					$right++;
+				}	
+				if ($transaction_code == 2) 
+				{
+					$streak = 0;		
+					$wrong++;
+				}	
 			}
-			else //type mastered so add to mastered arrays
+			$item_types_id_progressed = $type_id_array[$t];	
+		}
+		else
+		{
+			//we got nothing....so we reached in db an item_type never before asked in normal.
+			$keep_going = false;
+		}
+	
+		//everyone arrays	
+		$type_array[]  = $type_id_array[$t]; 			
+		$streak = intval($streak);
+		$streak_array[] = $streak; 			
+		$right_array[] = $right; 			
+		$wrong_array[] = $wrong; 			
+	
+
+		//if not mastered and we dont have a non mastered type yet so this will give you the oldest unmastered one
+ 		if ($streak < $type_mastery_array[$t])	
+		{
+			if ($item_types_id_to_ask == '')
 			{
-				$type_master_array[]       = $type_id; 			
+				$item_types_id_to_ask = $type_id_array[$t]; //keep asking as you have not hit threshold
 			}
-		}	
-	}			
+		}
+		else //type mastered so add to mastered arrays
+		{
+			$type_master_array[]       = $type_id_array[$t]; 			
+		}
+		$t++;
+	}	
 	
 	//ok we are done keeping going so we reached uncharted so.. 
 	$count_of_mastered_items = intval(count($type_master_array));
