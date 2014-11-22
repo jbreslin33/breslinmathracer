@@ -114,13 +114,12 @@ public function setRawData()
 	/******    variety ****/ 
 	$randomNumber = rand(0,100);
 
-	
-
 	//always ask first unmastered unless it was asked last time
 
 	//go thru id array in ram array
+	$unmastered_id = '';
 	$i = 0;
-	while ($i <= intval(count($this->id_array) - 1))
+	while ($i <= intval(count($this->id_array) - 1) && $unmastered_id == '')
 	{ 
 		$id = $this->id_array[$i];
 
@@ -129,7 +128,6 @@ public function setRawData()
 		$count = intval(count($start_time_array)); 	
 		$done = false;
 		$c = 0;
-		$unmastered_id = '';
 		$found_array = array(); 
 
 		while( $done == false && intval(count($found_array)) < 2 && $unmastered_id == '') 
