@@ -119,8 +119,9 @@ public function setRawData()
 	//always ask first unmastered unless it was asked last time
 
 	//go thru id array in ram array
-	for ($i = 0; $i < intval(count($this->id_array)); $i++)
-	{
+	$i = 0;
+	while ($i <= intval(count($this->id_array) - 1))
+	{ 
 		$id = $this->id_array[$i];
 
 		//compare id_array to every all matches of id in attemptarray(which is already in time order 	
@@ -152,6 +153,7 @@ public function setRawData()
 				$done = true;
 			}	 
 		}
+		$i++;
 	}
 
 
