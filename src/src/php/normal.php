@@ -65,11 +65,11 @@ public function setRawData()
 {
 	$this->initializeProgressionCounter();
 	
-	$start_time_array = array();
-	$item_array = array();
+	$start_time_array       = array();
+	$item_array             = array();
 	$transaction_code_array = array();
-	$type_mastery_array = array();
-	$core_standards_array = array();
+	$type_mastery_array     = array();
+	$core_standards_array   = array();
 	
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
@@ -85,10 +85,10 @@ public function setRawData()
 	{
   		for ($i = 0; $i < $num; $i++)
 		{
-			$start_time_array[] = pg_Result($result, $i, 'start_time');
-			$item_array[] = pg_Result($result, $i, 'item_types_id');
+			$start_time_array[]       = pg_Result($result, $i, 'start_time');
+			$item_array[]             = pg_Result($result, $i, 'item_types_id');
 			$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-			$type_mastery_array[] = pg_Result($result, $i, 'type_mastery');
+			$type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
 			$core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 		}
 
@@ -96,6 +96,10 @@ public function setRawData()
 		$item_types_id_to_ask = '5.oa.a.1_0_38';	
 		$item_types_id_progressed = '5.oa.a.1_0_38';	
 	}
+
+	/** anaylse **/
+
+
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
 	
 	//pink
