@@ -157,24 +157,10 @@ var Sheet = new Class(
 			APPLICATION.log('no mRawData! lets give it one');
 			APPLICATION.mRawData = '5.oa.a.1_0_38';
 		}
-
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
                 for (var i = 0; i < itemIDArray.length; i++)              
                 {
-			if (itemIDArray[i] == APPLICATION.mLastType)
-			{
-   				var r = Math.floor(Math.random()*2);
-				if (r == 0)
-				{
-					itemIDArray[i] = '5.oa.a.1_38';
-				}
-				if (r == 0)
-				{
-					itemIDArray[i] = '5.oa.a.1_39';
-				}
-			} 
-
 			var pick = 0;
 
 			if (pick == 0)
@@ -191,11 +177,10 @@ var Sheet = new Class(
 			}
 
 			//if you got an item then add it to sheet
-
 			if (pick != 0)
 			{
 				this.addItem(pick);
-		
+			
 				//add the streak from raw_data and increment as itemIDs are every other element in array. 
 				i++;	
 				pick.mStreak = itemIDArray[i];	
@@ -203,14 +188,11 @@ var Sheet = new Class(
 				pick.mProgressedTypeID = itemIDArray[i];	
 				i++;
 				this.mGame.mScore = itemIDArray[i];
-
-				APPLICATION.mLastType = pick.mType;
 			}
 			else
 			{
 				APPLICATION.log('no item picked by pickers!');
 			}
-
                 }
 	},
 
