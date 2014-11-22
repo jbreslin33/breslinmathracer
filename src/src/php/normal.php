@@ -114,9 +114,12 @@ public function setRawData()
 			}	
 */
 		}
-		$item_types_id_progressed = $type_id_array[$t];	
+
+		//$item_types_id_progressed = $type_array[$t];	
+		$item_types_id_to_ask = '5.oa.a.1_0_38';	
+		$item_types_id_progressed = '5.oa.a.1_0_38';	
+		
 	}
-	
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
 	
 	//pink
