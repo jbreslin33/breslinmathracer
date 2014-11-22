@@ -28,16 +28,10 @@ public function process()
 	
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
-	//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'sessions_a','');";
-	//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-                
         $num = pg_num_rows($result);
 
         if ($num > 0)
         {
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'old normal','');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
                 $evaluations_attempts_id = pg_Result($result, 0, 'id');
                 $ref_id                  = pg_Result($result, 0, 'description');
 
@@ -91,8 +85,6 @@ public function process()
 	}
 	else
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'new normal','');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		$normal = new Normal(1);
 	}
 }
