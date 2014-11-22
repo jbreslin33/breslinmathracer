@@ -152,11 +152,6 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
-		if (!APPLICATION.mRawData)
-		{
-			APPLICATION.log('no mRawData! lets give it one');
-			APPLICATION.mRawData = '5.oa.a.1_0_38';
-		}
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
                 for (var i = 0; i < itemIDArray.length; i++)              

@@ -2,7 +2,6 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
-//this class should only handle logins it is too busy right now!
 class Login 
 {
     private $mDatabaseConnection;
@@ -27,6 +26,9 @@ public function process()
 	//get db result
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
+//	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'login_a','');";
+//	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
         //get numer of rows
         $num = pg_num_rows($result);
 
@@ -41,6 +43,9 @@ public function process()
 		//get db result
         	$result2 = pg_query($this->mDatabaseConnection->getConn(),$query2) or die('Could not connect: ' . pg_last_error());
 	
+//		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'login_b','');";
+//		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
         	//get numer of rows
         	$num2 = pg_num_rows($result2);
         
@@ -61,11 +66,11 @@ public function process()
                 	$_SESSION["last_name"] = $last_name;
                 	$_SESSION["user_id"] = $user_id;
         		$_SESSION["LOGGED_IN"] = 1;
-        		//$_SESSION["raw_data"] = NULL; 
+        		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["core_standards_id"] = $core_standards_id;
 
         		//SESSION
-        		//$sessions = new Sessions();
+        		$sessions = new Sessions();
 		}
 		else
 		{
