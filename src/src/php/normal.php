@@ -109,6 +109,13 @@ public function setRawData()
 			$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
 			$type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
 			$core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
+
+		}
+  		
+		for ($i = 0; $i < intval(count($start_time_array)); $i++)
+		{
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$i]','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		}
 
 		//$item_types_id_progressed = $type_array[$t];	
