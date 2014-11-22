@@ -12,12 +12,13 @@ function __construct($startNew)
         
 	$this->progression_counter = 0;
 	
+	$this->id_array                = array();
+	$this->progression_array       = array();
+	$this->core_standards_id_array = array();
+	$this->type_mastery_array      = array();
 
 	if ($startNew == 1)
 	{
-		//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal_new','');";
-		//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
 		//close old evaluation_attempts.......
 		$evaluations_attempts = new EvaluationsAttempts();
 		$evaluations_attempts->update();
@@ -32,8 +33,6 @@ function __construct($startNew)
 	}
 	else
 	{
-		//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'normal_old','');";
-		//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		$this->setRawData();
 	}
 }
@@ -60,10 +59,30 @@ public function initializeProgressionCounter()
 	}
 }
 
+public function setTypesPoolArray()
+{
+	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
+	$query .= $this->progression_counter; 
+	$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
+	$query .= " order by progression asc;";
+
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+       	$numberOfResults = pg_num_rows($result);
+                
+	for($i=0; $i < $numberOfResults; $i++)
+        {
+		$this->id_array[]              = pg_Result($result, $i, 'id');	
+		$this->progression_array[]     = pg_Result($result, $i, 'progression');	
+		$this->core_standards_id_array = pg_Result($result, $i, 'core_standards_id');
+		$this->type_mastery_array      = pg_Result($result, $i, 'type_mastery');
+	}
+}
+
 //i am going to remember the last thing i asked and only ask 1 question at a time.
 public function setRawData()
 {
 	$this->initializeProgressionCounter();
+	$this->setTypesPoolArray();
 	
 	$start_time_array       = array();
 	$item_array             = array();
