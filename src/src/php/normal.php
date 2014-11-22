@@ -124,15 +124,26 @@ public function setRawData()
 		$id = $this->id_array[$i];
 
 		//compare id_array to every all matches of id in attemptarray(which is already in time order 	
+
 		$count = intval(count($start_time_array)); 	
 		$done = false;
 		$c = 0;
-		while($done == false) 
+		$unmastered_id = '';
+		$found_array = array(); 
+
+		while( $done == false && intval(count($found_array)) < 2 && $unmastered_id == '') 
 		{
 			if ($id == $item_array[$c])
 			{
 				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$c]','$start_time_array[$c]');";
 				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
+				if ($transaction_code_array[$c] != 1)
+				{
+					$unmastered_id = $id;
+				}
+				
+				$found_array[] = $transaction_code_array[$c];
 			} 	
 
 			$c++;
@@ -140,7 +151,6 @@ public function setRawData()
 			{
 				$done = true;
 			}	 
-
 		}
 	}
 
