@@ -64,30 +64,17 @@ public function initializeProgressionCounter()
 public function setRawData()
 {
 	$this->initializeProgressionCounter();
-
-	$type_mastery_array = array();
-	$type_array = array();
 	
-	/*********get type_id to be evaluated for mastery also grab standard,cluster,domain,grade ************/	
-	//eventually this should only be done once!
-	$query = "select id, progression, type_mastery from item_types where progression > "; 
-	$query .= $this->progression_counter; 
-	$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
-	$query .= " order by progression asc;";
-
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-       	$numberOfResults = pg_num_rows($result);
-                
-	for($i=0; $i < $numberOfResults; $i++)
-        {
-		$type_mastery = pg_Result($result, $i, 'type_mastery');
-		$type_mastery_array[] = intval($type_mastery);
-
-		$type_array[] = pg_Result($result, $i, 'id');
-	}
-
-	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+	$start_time_array = array();
+	$item_array = array();
+	$transaction_code_array = array();
+	$type_mastery_array = array();
+	$core_standards_array = array();
+	
+	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
+	$query .= " AND item_types.active_code = 1 AND item_types.speed = 0 AND item_types.progression > "; 
+	$query .= $this->progression_counter; 
         $query .= " order by item_attempts.start_time desc;";
 													
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -98,27 +85,16 @@ public function setRawData()
 	{
   		for ($i = 0; $i < $num; $i++)
 		{
-/*
-			$transaction_code = pg_Result($result, $i, 'transaction_code');
-			$core_standards_id_progressed = pg_Result($result, $i, 'core_standards_id');
-			$transaction_code = intval($transaction_code);
-			if ($transaction_code == 1) 
-			{
-				$streak++;		
-				$right++;
-			}	
-			if ($transaction_code == 2) 
-			{
-				$streak = 0;		
-				$wrong++;
-			}	
-*/
+			$start_time_array[] = pg_Result($result, $i, 'start_time');
+			$item_array[] = pg_Result($result, $i, 'item_types_id');
+			$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
+			$type_mastery_array[] = pg_Result($result, $i, 'type_mastery');
+			$core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 		}
 
 		//$item_types_id_progressed = $type_array[$t];	
 		$item_types_id_to_ask = '5.oa.a.1_0_38';	
 		$item_types_id_progressed = '5.oa.a.1_0_38';	
-		
 	}
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
 	
@@ -128,6 +104,7 @@ public function setRawData()
 	//blue
         $itemString .= ":";
         $itemString .= "blue";
+
 	//yellow	
         $itemString .= ":";
         $itemString .= "yellow";
