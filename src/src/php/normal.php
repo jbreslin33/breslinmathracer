@@ -114,17 +114,56 @@ public function setRawData()
 	/******    variety ****/ 
 	$randomNumber = rand(0,100);
 
+	
+
+	//always ask first unmastered unless it was asked last time
+
+	//go thru id array in ram array
+	for ($i = 0; $i < intval(count($this->id_array)); $i++)
+	{
+		$id = $this->id_array[$i];
+
+		//compare id_array to every all matches of id in attemptarray(which is already in time order 	
+		$count = intval(count($start_time_array)); 	
+		$done = false;
+		$c = 0;
+		while($done == false) 
+		{
+			if ($id == $item_array[$c])
+			{
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$c]','$start_time_array[$c]');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+			} 	
+
+			$c++;
+			if ($c >= $count)
+			{
+				$done = true;
+			}	 
+
+		}
+	}
+
+
+	//check to see if it was asked last.....
+	if ( !isset($_SESSION["item_type_last"]) )
+	{
+	}
+	else if ($_SESSION["item_type_last"] == $item_types_id_to_ask)
+	{
+
+	}
+
+
 	if ($randomNumber >= 0 && $randomNumber < 50)
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','0-49');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
 	}	
+
 	if ($randomNumber >= 50 && $randomNumber <= 100)
 	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','50-100');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}	
+
 /*	
 	for ($i = 0; $i < intval(count($start_time_array)); $i++)
 	{
