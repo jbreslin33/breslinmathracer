@@ -154,6 +154,14 @@ public function setRawData()
 		$i++;
 	}
 
+	if ($unmastered_id != '')
+	{	
+		$item_types_id_to_ask = $unmastered_id;	
+	}
+	else
+	{
+		$item_types_id_to_ask = '5.oa.a.1_0_38';	
+	}
 
 	//check to see if it was asked last.....
 	if ( !isset($_SESSION["item_type_last"]) )
@@ -182,7 +190,6 @@ public function setRawData()
 	}
 */
 	//$item_types_id_progressed = $type_array[$t];	
-	$item_types_id_to_ask = '5.oa.a.1_0_38';	
 	$item_types_id_progressed = '5.oa.a.1_0_38';	
 
 
