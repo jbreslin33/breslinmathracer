@@ -11,7 +11,14 @@ function __construct()
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mBadUsername = 0;
 	$this->mBadPassword = 0;
+
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'process','before');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 	$this->process();
+
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'process','after');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 }
 
 public function process()
@@ -24,10 +31,11 @@ public function process()
         $query .= "';";
         
 	//get db result
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'alison','before');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-
-//	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'login_a','');";
-//	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'alison','after');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
         //get numer of rows
         $num = pg_num_rows($result);
