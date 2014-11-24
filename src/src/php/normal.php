@@ -159,24 +159,20 @@ public function setRawData()
 	{	
 		$item_types_id_to_ask = $unmastered_id;	
 	}
-	else 
-	{
-		//chance to do something else like go bannanas
-		$item_types_id_to_ask = '5.oa.a.1_0_38';	
-	}
 
 	//check to see if it was asked last.....
 	if ( !isset($_SESSION["item_type_last"]) )
 	{
+		//go with above from earliest unmastered
 	}
-	else if ($_SESSION["item_type_last"] == $item_types_id_to_ask)
+	else if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if  no dup then go bananas
 	{
 		//go bananas lets get all previously asked questions....in normal
 		$previous_id_array = array();
  		$i = 0;
 		while ($i <= intval(count($this->id_array) - 1))
         	{
-                	$id = $this->id_array[$i];
+               		$id = $this->id_array[$i];
 			$c = 0;
 			$exists = false;
 			while ($c <= intval(count($item_array) - 1) && $exists == false)
@@ -196,29 +192,28 @@ public function setRawData()
 		$item_types_id_to_ask = $previous_id_array[$r];
 	}
 
-	if ($randomNumber >= 0 && $randomNumber < 50)
-	{
-
-	}	
-
-	if ($randomNumber >= 50 && $randomNumber <= 100)
-	{
-	}	
-
-/*	
-	for ($i = 0; $i < intval(count($start_time_array)); $i++)
-	{
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$i]','');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	//score
+        $score_array = array();
+        $i = 0;
+        while ($i <= intval(count($this->id_array) - 1))
+        {
+        	$id = $this->id_array[$i];
+                $c = 0; 
+                $exists = false;
+                while ($c <= intval(count($item_array) - 1) && $exists == false)
+                {
+                	if ($this->id_array[$i] == $item_array[$c])
+                        {
+                        	$score_array[] = $this->id_array[$i];
+                                $exists = true; 
+                        }
+                        $c++;   
+                }
+                $i++;   
 	}
-*/
-	//$item_types_id_progressed = $type_array[$t];	
-	$item_types_id_progressed = '5.oa.a.1_0_38';	
 
 
 	/** anaylse **/
-
-
 
 	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
 	
@@ -235,7 +230,7 @@ public function setRawData()
 
 	//green
         $itemString .= ":";
-        $itemString .= "green"; 
+        $itemString .= intval(count($score_array)); 
 
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $item_types_id_to_ask;
