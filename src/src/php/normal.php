@@ -190,6 +190,10 @@ public function setRawData()
 			}
 			$i++;
 		}
+
+		//ok you have an array take size and get a random one
+		$r = rand( 0,intval(count($previous_id_array)) );
+		$item_types_id_to_ask = $previous_id_array[$r];
 	}
 
 	if ($randomNumber >= 0 && $randomNumber < 50)
