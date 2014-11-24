@@ -11,11 +11,19 @@ function __construct($startNew)
 	$this->mDatabaseConnection = new DatabaseConnection();
         
 	$this->progression_counter = 0;
-	
+
+	//types array	
 	$this->id_array                = array();
 	$this->progression_array       = array();
 	$this->core_standards_id_array = array();
 	$this->type_mastery_array      = array();
+
+	//attempts array 	
+	$this->start_time_array       = array();
+	$this->item_array             = array();
+	$this->transaction_code_array = array();
+	$this->type_mastery_array     = array();
+	$this->core_standards_array   = array();
 
 	if ($startNew == 1)
 	{
@@ -59,7 +67,7 @@ public function initializeProgressionCounter()
 	}
 }
 
-public function setTypesPoolArray()
+public function fillTypesArray()
 {
 	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
 	$query .= $this->progression_counter; 
@@ -77,19 +85,9 @@ public function setTypesPoolArray()
 		$this->type_mastery_array      = pg_Result($result, $i, 'type_mastery');
 	}
 }
-
-//i am going to remember the last thing i asked and only ask 1 question at a time.
-public function setRawData()
+	
+public function fillTypesArray()
 {
-	$this->initializeProgressionCounter();
-	$this->setTypesPoolArray();
-	
-	$start_time_array       = array();
-	$item_array             = array();
-	$transaction_code_array = array();
-	$type_mastery_array     = array();
-	$core_standards_array   = array();
-	
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
 	$query .= " AND item_types.active_code = 1 AND item_types.speed = 0 AND item_types.progression > "; 
@@ -103,67 +101,55 @@ public function setRawData()
 	//fill arrays
   	for ($i = 0; $i < $num; $i++)
 	{
-		$start_time_array[]       = pg_Result($result, $i, 'start_time');
-		$item_array[]             = pg_Result($result, $i, 'item_types_id');
-		$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-		$type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
-		$core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
-
+		$this->start_time_array[]       = pg_Result($result, $i, 'start_time');
+		$this->item_array[]             = pg_Result($result, $i, 'item_types_id');
+		$this->transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
+		$this->type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
+		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
+}
 
-	/******    variety ****/ 
-	$randomNumber = rand(0,100);
-
+//i am going to remember the last thing i asked and only ask 1 question at a time.
+public function setRawData()
+{
+	$this->initializeProgressionCounter();
+	$this->fillTypesArray();
+	$this->fillAttemptsArray();
 	
-	//#1 always ask first unmastered unless it was asked last time
-	$unmastered_id = '';
+	$this->item_types_id_to_ask = '';
+
+	//ask 1st one that is not mastered
+
 	$i = 0;
-	while ($i <= intval(count($this->id_array) - 1) && $unmastered_id == '')
+
+	//loop thru item array until you reache end or find a item to ask
+	while ($i <= intval(count($this->id_array) - 1) && $this->item_types_id_to_ask == '')
 	{ 
-		$id = $this->id_array[$i];
+		$mini_transaction_code_array = array(); 
 
-		//compare id_array to every all matches of id in attemptarray(which is already in time order 	
-
-		$count = intval(count($start_time_array)); 	
-		$done = false;
 		$c = 0;
-		$found_array = array(); 
-
-		while( $done == false && intval(count($found_array)) < 2 && $unmastered_id == '') 
+		while( intval(count($mini_transaction_code_array)) < 2) 
 		{
-			if ($id == $item_array[$c])
+			if ($this->id_array[$i] == $item_array[$c])
 			{
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'$item_array[$c]','$start_time_array[$c]');";
-				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-
-				if ($transaction_code_array[$c] != 1)
-				{
-					$unmastered_id = $id;
-				}
-				
-				$found_array[] = $transaction_code_array[$c];
-			} 	
-
+				$mini_transaction_code_array[] = transaction_code_array[$c]
+			}
 			$c++;
-			if ($c >= $count)
-			{
-				$done = true;
-			}	 
 		}
+
+		//evaluate
+		if (
+
 		$i++;
 	}
 
-
-	//you found something this could be an old one or the most recent either way you advance you chance to advance....
-	if ($unmastered_id != '')
-	{	
-		$item_types_id_to_ask = $unmastered_id;	
-	}
-
 	//check to see if it was asked last.....
+/*
 	if ( !isset($_SESSION["item_type_last"]) )
 	{
 		//go with above from earliest unmastered
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
 	else if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if  no dup then go bananas
 	{
@@ -191,7 +177,7 @@ public function setRawData()
 		$r = rand( 0,intval(count($previous_id_array)) );
 		$item_types_id_to_ask = $previous_id_array[$r];
 	}
-
+*/
 	//score
         $score_array = array();
         $i = 0;
