@@ -114,9 +114,8 @@ public function setRawData()
 	/******    variety ****/ 
 	$randomNumber = rand(0,100);
 
-	//always ask first unmastered unless it was asked last time
-
-	//go thru id array in ram array
+	
+	//#1 always ask first unmastered unless it was asked last time
 	$unmastered_id = '';
 	$i = 0;
 	while ($i <= intval(count($this->id_array) - 1) && $unmastered_id == '')
@@ -154,12 +153,15 @@ public function setRawData()
 		$i++;
 	}
 
+
+	//you found something this could be an old one or the most recent either way you advance you chance to advance....
 	if ($unmastered_id != '')
 	{	
 		$item_types_id_to_ask = $unmastered_id;	
 	}
-	else
+	else 
 	{
+		//chance to do something else like go bannanas
 		$item_types_id_to_ask = '5.oa.a.1_0_38';	
 	}
 
@@ -169,9 +171,26 @@ public function setRawData()
 	}
 	else if ($_SESSION["item_type_last"] == $item_types_id_to_ask)
 	{
-
+		//go bananas lets get all previously asked questions....in normal
+		$previous_id_array = array();
+ 		$i = 0;
+		while ($i <= intval(count($this->id_array) - 1))
+        	{
+                	$id = $this->id_array[$i];
+			$c = 0;
+			$exists = false;
+			while ($c <= intval(count($item_array) - 1) && $exists == false)
+			{
+				if ($this->id_array[$i] == $item_array[$c])
+				{
+					$previous_id_array[] = $this->id_array[$i];
+					$exists = true;
+				}
+				$c++;
+			}
+			$i++;
+		}
 	}
-
 
 	if ($randomNumber >= 0 && $randomNumber < 50)
 	{
