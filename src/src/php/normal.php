@@ -11,6 +11,7 @@ function __construct($startNew)
 	$this->mDatabaseConnection = new DatabaseConnection();
         
 	$this->progression_counter = 0;
+	$this->progression_counter_limit = 0;
 
 	//types array	
 	$this->id_array                = array();
@@ -52,7 +53,6 @@ function __construct($startNew)
 //this could just as easily be set to a finer level such as domain, cluster, standard. Then we could start wherever we want.
 public function initializeProgressionCounter()
 {
-        $this->progression_counter = 0;
 
 	$query = "select progression from item_types where core_standards_id = '";
 	$query .= $_SESSION["core_standards_id"];
@@ -70,13 +70,16 @@ public function initializeProgressionCounter()
 		$this->progression_counter = floatval($this->progression_counter) - floatval(0.0001);
 		//round(floatval($result),5);
 	}
+	$this->progression_counter_limit = floatval($this->progression_counter + 1);
 }
 
 public function fillTypesArray()
 {
 	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
 	$query .= $this->progression_counter; 
-	$query .= ' AND active_code = 1 AND speed = 0'; //skip unactive and speed standards
+	$query .= " AND progression < "; //stay in grade 
+	$query .= $this->progression_counter_limit; 
+	$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards
 	$query .= " order by progression asc;";
 
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -204,9 +207,11 @@ public function setRawData()
 	//score
         $score_array = array();
         $i = 0;
+	$high_standard = '';
         while ($i <= intval(count($this->id_array) - 1))
         {
-        	$id = $this->id_array[$i];
+        	$high_standard = $this->id_array[$i];
+		
                 $c = 0; 
                 $exists = false;
                 while ($c <= intval(count($this->item_array) - 1) && $exists == false)
@@ -235,7 +240,7 @@ public function setRawData()
 
 	//yellow	
         $itemString .= ":";
-        $itemString .= "yellow";
+        $itemString .= "$high_standard";
 
 	//green
         $itemString .= ":";
