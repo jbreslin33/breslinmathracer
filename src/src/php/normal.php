@@ -24,6 +24,8 @@ function __construct($startNew)
 	$this->transaction_code_array = array();
 	$this->type_mastery_array     = array();
 	$this->core_standards_array   = array();
+	
+	$this->item_types_id_to_ask = '';
 
 	if ($startNew == 1)
 	{
@@ -86,7 +88,7 @@ public function fillTypesArray()
 	}
 }
 	
-public function fillTypesArray()
+public function fillAttemptsArray()
 {
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
@@ -104,7 +106,7 @@ public function fillTypesArray()
 		$this->start_time_array[]       = pg_Result($result, $i, 'start_time');
 		$this->item_array[]             = pg_Result($result, $i, 'item_types_id');
 		$this->transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-		$this->type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
+		//$this->type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
 		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
 }
@@ -117,41 +119,54 @@ public function setRawData()
 	$this->fillAttemptsArray();
 	
 	$this->item_types_id_to_ask = '';
+	
 
 	//ask 1st one that is not mastered
 
 	$i = 0;
 
-	//loop thru item array until you reache end or find a item to ask
+	//loop thru item array until you reach end or find a item to ask
 	while ($i <= intval(count($this->id_array) - 1) && $this->item_types_id_to_ask == '')
 	{ 
 		$mini_transaction_code_array = array(); 
 
 		$c = 0;
-		while( intval(count($mini_transaction_code_array)) < 2) 
+
+		//loop attempt array and dump into arrays then you can eval after 
+		while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < 2 )
 		{
-			if ($this->id_array[$i] == $item_array[$c])
+			//check for match of ids if so add to code array
+			if ($this->id_array[$i] == $this->item_array[$c])
 			{
-				$mini_transaction_code_array[] = transaction_code_array[$c]
+				$mini_transaction_code_array[] = $this->transaction_code_array[$c];
 			}
-			$c++;
+			$c++; //increment for typearrays
 		}
 
-		//evaluate
-		if (
-
+		//if less than 2 than type has not been asked enuf so make it ask type
+		if ( intval(count($mini_transaction_code_array)) < 2 )
+		{
+			$this->item_types_id_to_ask = $this->id_array[$i];
+		} 
+		else  //we have 2 to check
+		{
+			//if either is not 1 then its not type mastered so make it ask type
+			if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
+			{
+				$this->item_types_id_to_ask = $this->id_array[$i];
+			}
+		} 
 		$i++;
 	}
 
 	//check to see if it was asked last.....
 /*
-	if ( !isset($_SESSION["item_type_last"]) )
-	{
+	if ( !isset($_SESSION["item_type_last"]) ) {
 		//go with above from earliest unmastered
 		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','');";
 		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
-	else if ($_SESSION["item_type_last"] == $item_types_id_to_ask) //if  no dup then go bananas
+	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if  no dup then go bananas
 	{
 		//go bananas lets get all previously asked questions....in normal
 		$previous_id_array = array();
@@ -175,7 +190,7 @@ public function setRawData()
 
 		//ok you have an array take size and get a random one
 		$r = rand( 0,intval(count($previous_id_array)) );
-		$item_types_id_to_ask = $previous_id_array[$r];
+		$this->item_types_id_to_ask = $previous_id_array[$r];
 	}
 */
 	//score
@@ -186,9 +201,9 @@ public function setRawData()
         	$id = $this->id_array[$i];
                 $c = 0; 
                 $exists = false;
-                while ($c <= intval(count($item_array) - 1) && $exists == false)
+                while ($c <= intval(count($this->item_array) - 1) && $exists == false)
                 {
-                	if ($this->id_array[$i] == $item_array[$c])
+                	if ($this->id_array[$i] == $this->item_array[$c])
                         {
                         	$score_array[] = $this->id_array[$i];
                                 $exists = true; 
@@ -201,10 +216,10 @@ public function setRawData()
 
 	/** anaylse **/
 
-	$_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
+	$_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
 	
 	//pink
-        $itemString =  $item_types_id_to_ask; //ask this one
+        $itemString =  $this->item_types_id_to_ask; //ask this one
 
 	//blue
         $itemString .= ":";
@@ -219,16 +234,16 @@ public function setRawData()
         $itemString .= intval(count($score_array)); 
 
         $_SESSION["raw_data"] = $itemString;
-        $_SESSION["item_types_id"] = $item_types_id_to_ask;
-        $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
+        $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
+        $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
 }
 //end of class
 }
 /*
-        $_SESSION["item_type_last"] = $item_types_id_to_ask; //set this new one to last in sessions
+        $_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
 
         //pink
-        $itemString =  $item_types_id_to_ask; //ask this one
+        $itemString =  $this->item_types_id_to_ask; //ask this one
 
         //blue
         $itemString .= ":";
@@ -249,8 +264,8 @@ public function setRawData()
         $itemString .= $count_of_types;
 
         $_SESSION["raw_data"] = $itemString;
-        $_SESSION["item_types_id"] = $item_types_id_to_ask;
-        $_SESSION["item_types_id_progressed"] = $item_types_id_to_ask;
+        $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
+        $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
 
 */
 ?>
