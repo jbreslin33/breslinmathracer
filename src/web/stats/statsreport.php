@@ -47,6 +47,11 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Total Percent';
         echo '</td>';
+        echo '<td> lastOne';
+        echo '</td>';
+        echo '</td>';
+        echo '<td> NextToLastOne';
+        echo '</td>';
         echo '</tr>';
 
 while ($progression_counter < $progression_end)  
@@ -66,6 +71,8 @@ $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
 $currenttypeid = 0; 
+$lastOne = '';
+$nextToLastOne = '';
 
 if ($numrows > 0) 
 {
@@ -110,6 +117,16 @@ for($i = 0; $i < $numrows; $i++)
 			$streak_last_ten = 0;
 		}
 	}
+
+	if ($i == 0)
+	{
+		$lastOne = $transaction_code;		
+	}
+	if ($i == 1)
+	{
+		$nextToLastOne = $transaction_code;		
+	}
+
 }
 $wrong_array[]  = $wrong;
 $right_array[]  = $right;
@@ -151,6 +168,12 @@ if ($total_last_ten != 0)
         echo '<td>';
         echo $percent;
         echo '%</td>';
+        echo '<td>';
+        echo $lastOne;
+        echo '</td>';
+        echo '<td>';
+        echo $nextToLastOne;
+        echo '</td>';
         echo '</tr>';
 }
 pg_free_result($result);
