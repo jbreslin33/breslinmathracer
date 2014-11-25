@@ -150,6 +150,8 @@ public function setRawData()
 		if ( intval(count($mini_transaction_code_array)) < 2 )
 		{
 			$this->item_types_id_to_ask = $this->id_array[$i];
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'less than 2','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		} 
 		else  //we have 2 to check
 		{
@@ -157,31 +159,32 @@ public function setRawData()
 			if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
 			{
 				$this->item_types_id_to_ask = $this->id_array[$i];
+				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'no streak','');";
+				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		} 
 		$i++;
 	}
 
 	//check to see if it was asked last.....
-/*
+
 	if ( !isset($_SESSION["item_type_last"]) ) {
 		//go with above from earliest unmastered
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'','');";
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'no item_type_last','');";
 		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
-	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if  no dup then go bananas
+	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
 		//go bananas lets get all previously asked questions....in normal
 		$previous_id_array = array();
  		$i = 0;
 		while ($i <= intval(count($this->id_array) - 1))
         	{
-               		$id = $this->id_array[$i];
 			$c = 0;
 			$exists = false;
-			while ($c <= intval(count($item_array) - 1) && $exists == false)
+			while ($c <= intval(count($this->item_array) - 1) && $exists == false)
 			{
-				if ($this->id_array[$i] == $item_array[$c])
+				if ($this->id_array[$i] == $this->item_array[$c])
 				{
 					$previous_id_array[] = $this->id_array[$i];
 					$exists = true;
@@ -194,8 +197,10 @@ public function setRawData()
 		//ok you have an array take size and get a random one
 		$r = rand( 0,intval(count($previous_id_array)) );
 		$this->item_types_id_to_ask = $previous_id_array[$r];
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'bananas','$previous_id_array[$r]');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
-*/
+	
 	//score
         $score_array = array();
         $i = 0;
