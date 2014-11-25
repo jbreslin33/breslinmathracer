@@ -44,6 +44,9 @@ function __construct($startNew)
 	else
 	{
 		$this->setRawData();
+		
+		$item_attempt = new ItemAttempt();
+        	$item_attempt->insert();
 	}
 }
 //this could just as easily be set to a finer level such as domain, cluster, standard. Then we could start wherever we want.

@@ -66,7 +66,6 @@ public function update()
                 //set level_id
                 $_SESSION["item_attempt_id"] = $item_attempt_id;
 
-		//update item_attempts SET start_time = CURRENT_TIMESTAMP, transaction_code = 0 WHERE id = 5;
 		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
         	$insert .= $_SESSION["item_transaction_code"];
 		$insert .= " WHERE id = ";		
