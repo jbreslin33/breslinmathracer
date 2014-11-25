@@ -210,7 +210,6 @@ public function setRawData()
 	$high_standard = '';
         while ($i <= intval(count($this->id_array) - 1))
         {
-        	$high_standard = $this->id_array[$i];
 		
                 $c = 0; 
                 $exists = false;
@@ -218,6 +217,7 @@ public function setRawData()
                 {
                 	if ($this->id_array[$i] == $this->item_array[$c])
                         {
+        			$high_standard = $this->id_array[$i];
                         	$score_array[] = $this->id_array[$i];
                                 $exists = true; 
                         }
