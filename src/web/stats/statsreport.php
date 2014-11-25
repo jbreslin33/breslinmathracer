@@ -120,13 +120,34 @@ for($i = 0; $i < $numrows; $i++)
 
 	if ($i == 0)
 	{
-		$lastOne = $transaction_code;		
+		if ($transaction_code == 0) 
+		{
+			$lastOne = '<font color="black">empty</font>';		
+		}
+		if ($transaction_code == 1) 
+		{
+			$lastOne = '<font color="green">right</font>';		
+		}
+		if ($transaction_code == 2) 
+		{
+			$lastOne = '<font color="red">wrong</font>';		
+		}
 	}
 	if ($i == 1)
 	{
-		$nextToLastOne = $transaction_code;		
+		if ($transaction_code == 0) 
+		{
+			$nextToLastOne = '<font color="black">empty</font>';		
+		}
+		if ($transaction_code == 1) 
+		{
+			$nextToLastOne = '<font color="green">right</font>';		
+		}
+		if ($transaction_code == 2) 
+		{
+			$nextToLastOne = '<font color="red">wrong</font>';		
+		}
 	}
-
 }
 $wrong_array[]  = $wrong;
 $right_array[]  = $right;
