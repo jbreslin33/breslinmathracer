@@ -47,7 +47,7 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Total Percent';
         echo '</td>';
-        echo '<td> lastOne';
+        echo '<td> LastOne';
         echo '</td>';
         echo '</td>';
         echo '<td> NextToLastOne';
@@ -56,121 +56,121 @@ echo '<table border=\"1\">';
 
 while ($progression_counter < $progression_end)  
 {
-$wrong = 0;
-$right = 0;
-$streak = 0;
-$wrong_last_ten = 0;
-$right_last_ten = 0;
-$streak_last_ten = 0;
+	$wrong = 0;
+	$right = 0;
+	$streak = 0;
+	$wrong_last_ten = 0;
+	$right_last_ten = 0;
+	$streak_last_ten = 0;
 
-$query = "select id, progression from item_types where progression > ";
-$query .= $progression_counter;
-$query .= " order by progression LIMIT 1";
+	$query = "select id, progression from item_types where progression > ";
+	$query .= $progression_counter;
+	$query .= " order by progression LIMIT 1";
 
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
+	$result = pg_query($conn,$query);
+	$numrows = pg_numrows($result);
 
-$currenttypeid = 0; 
-$lastOne = '';
-$nextToLastOne = '';
+	$currenttypeid = 0; 
+	$lastOne = '';
+	$nextToLastOne = '';
 
-if ($numrows > 0) 
-{
-        $row = pg_fetch_array($result, 0);
-	$currenttypeid = $row[0];
-	$progression_counter = $row[1];
-}
-
-$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
-$query .= $username;
-$query .= "' AND item_attempts.item_types_id = '";
-$query .= $currenttypeid;
-$query .= "' order by item_attempts.start_time desc;";
-
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-for($i = 0; $i < $numrows; $i++) 
-{
-        $row = pg_fetch_array($result, $i);
-	$transaction_code = $row[0];
-
-	if ($transaction_code == 1)
+	if ($numrows > 0) 
 	{
-		$right++;
-		$streak++;
-
-		if ($i < 10)
-		{
-			$right_last_ten++;
-			$streak_last_ten++;
-		}
-	}
-	if ($transaction_code == 2)
-	{
-		$wrong++;
-		$streak = 0;
-
-		if ($i < 10)
-		{
-			$wrong_last_ten++;
-			$streak_last_ten = 0;
-		}
+        	$row = pg_fetch_array($result, 0);
+		$currenttypeid = $row[0];
+		$progression_counter = $row[1];
 	}
 
-	if ($i == 0)
+	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
+	$query .= $username;
+	$query .= "' AND item_attempts.item_types_id = '";
+	$query .= $currenttypeid;
+	$query .= "' order by item_attempts.start_time desc;";
+
+	$result = pg_query($conn,$query);
+	$numrows = pg_numrows($result);
+
+	for($i = 0; $i < $numrows; $i++) 
 	{
-		if ($transaction_code == 0) 
+        	$row = pg_fetch_array($result, $i);
+		$transaction_code = $row[0];
+
+		if ($transaction_code == 1)
 		{
-			$lastOne = '<font color="black">empty</font>';		
+			$right++;
+			$streak++;
+
+			if ($i < 10)
+			{
+				$right_last_ten++;
+				$streak_last_ten++;
+			}
 		}
-		if ($transaction_code == 1) 
+		if ($transaction_code == 2)
 		{
-			$lastOne = '<font color="green">right</font>';		
+			$wrong++;
+			$streak = 0;
+
+			if ($i < 10)
+			{
+				$wrong_last_ten++;
+				$streak_last_ten = 0;
+			}
 		}
-		if ($transaction_code == 2) 
+
+		if ($i == 0)
 		{
-			$lastOne = '<font color="red">wrong</font>';		
+			if ($transaction_code == 0) 
+			{
+				$lastOne = '<font color="black">empty</font>';		
+			}
+			if ($transaction_code == 1) 
+			{
+				$lastOne = '<font color="green">right</font>';		
+			}
+			if ($transaction_code == 2) 
+			{
+				$lastOne = '<font color="red">wrong</font>';		
+			}
+		}
+		if ($i == 1)
+		{
+			if ($transaction_code == 0) 
+			{
+				$nextToLastOne = '<font color="black">empty</font>';		
+			}
+			if ($transaction_code == 1) 
+			{
+				$nextToLastOne = '<font color="green">right</font>';		
+			}
+			if ($transaction_code == 2) 
+			{
+				$nextToLastOne = '<font color="red">wrong</font>';		
+			}
 		}
 	}
-	if ($i == 1)
+	$wrong_array[]  = $wrong;
+	$right_array[]  = $right;
+	$streak_array[] = $streak;
+
+	$total = intval($right + $wrong);
+	$percent = 0;
+	if ($total != 0)
 	{
-		if ($transaction_code == 0) 
-		{
-			$nextToLastOne = '<font color="black">empty</font>';		
-		}
-		if ($transaction_code == 1) 
-		{
-			$nextToLastOne = '<font color="green">right</font>';		
-		}
-		if ($transaction_code == 2) 
-		{
-			$nextToLastOne = '<font color="red">wrong</font>';		
-		}
+		$percent = floatval($right / $total);
+        	$percent = round( $percent, 2);
+		$percent = $percent * 100;
 	}
-}
-$wrong_array[]  = $wrong;
-$right_array[]  = $right;
-$streak_array[] = $streak;
 
-$total = intval($right + $wrong);
-$percent = 0;
-if ($total != 0)
-{
-	$percent = floatval($right / $total);
-        $percent = round( $percent, 2);
-	$percent = $percent * 100;
-}
-
-$total_last_ten = intval($right_last_ten + $wrong_last_ten);
-$percent_last_ten = 0;
-if ($total_last_ten != 0)
-{
-        $percent_last_ten = floatval($right_last_ten / $total_last_ten);
-        $percent_last_ten = round( $percent_last_ten, 2);
-        $percent_last_ten = $percent_last_ten * 100;
-}
-        echo '<tr>';
+	$total_last_ten = intval($right_last_ten + $wrong_last_ten);
+	$percent_last_ten = 0;
+	if ($total_last_ten != 0)
+	{
+        	$percent_last_ten = floatval($right_last_ten / $total_last_ten);
+        	$percent_last_ten = round( $percent_last_ten, 2);
+        	$percent_last_ten = $percent_last_ten * 100;
+	}
+       	echo '<tr>';
         echo '<td>';
         echo $currenttypeid;
         echo '</td>';
