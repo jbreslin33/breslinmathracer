@@ -153,8 +153,6 @@ public function setRawData()
 		if ( intval(count($mini_transaction_code_array)) < 2 )
 		{
 			$this->item_types_id_to_ask = $this->id_array[$i];
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'less than 2','');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		} 
 		else  //we have 2 to check
 		{
@@ -162,8 +160,6 @@ public function setRawData()
 			if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
 			{
 				$this->item_types_id_to_ask = $this->id_array[$i];
-				$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'no streak','');";
-				$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			}
 		} 
 		$i++;
@@ -173,8 +169,6 @@ public function setRawData()
 
 	if ( !isset($_SESSION["item_type_last"]) ) {
 		//go with above from earliest unmastered
-		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'no item_type_last','');";
-		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
@@ -198,7 +192,6 @@ public function setRawData()
 		}
 
 		$bananas = rand( 0,100);
-		$bananas = 90;
 		$bananas = intval($bananas);
 	
 		//true bananas
@@ -274,9 +267,6 @@ public function setRawData()
 		// this should be least percent correct
 		if ($bananas > 75 && $bananas <= 100)
 		{
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'least percent correct','');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-		
 			$least_id = '';
                         $leastPercent = 1000;
                         $currentPercent = 0;
