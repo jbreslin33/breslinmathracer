@@ -116,7 +116,7 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.thousandths = Math.floor((Math.random()*9)+1);
+        this.thousandths = Math.floor((Math.random()*8)+2);
 
         this.setQuestion('Write the decimal as you would say it in words: 0.00' + this.thousandths,0);
 
@@ -139,8 +139,8 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundredths = Math.floor((Math.random()*9)+1);
+        this.tenths = Math.floor((Math.random()*8)+2);
+        this.hundredths = Math.floor((Math.random()*8)+2);
 
         this.tenths_hundredths = parseInt(this.tenths * 10 + this.hundredths);
 
@@ -166,12 +166,12 @@ initialize: function(sheet)
         this.ns = new NameMachine();
  	this.mChopWhiteSpace = false;
 
-        this.hundreds = Math.floor((Math.random()*9)+1);
-        this.tens = Math.floor((Math.random()*9)+1);
-        this.ones = Math.floor((Math.random()*9)+1);
-        this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundredths = Math.floor((Math.random()*9)+1);
-        this.thousandths = Math.floor((Math.random()*9)+1);
+        this.hundreds = Math.floor((Math.random()*8)+2);
+        this.tens = Math.floor((Math.random()*8)+2);
+        this.ones = Math.floor((Math.random()*8)+2);
+        this.tenths = Math.floor((Math.random()*8)+2);
+        this.hundredths = Math.floor((Math.random()*8)+2);
+        this.thousandths = Math.floor((Math.random()*8)+2);
 
         this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
@@ -198,9 +198,9 @@ initialize: function(sheet)
         this.ns = new NameMachine();
  	this.mChopWhiteSpace = false;
 
-        this.tenths = Math.floor((Math.random()*9)+1);
-        this.hundredths = Math.floor((Math.random()*9)+1);
-        this.thousandths = Math.floor((Math.random()*9)+1);
+        this.tenths = Math.floor((Math.random()*8)+2);
+        this.hundredths = Math.floor((Math.random()*8)+2);
+        this.thousandths = Math.floor((Math.random()*8)+2);
 
         this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
 
@@ -225,11 +225,11 @@ initialize: function(sheet)
         this.ns = new NameMachine();
  	this.mChopWhiteSpace = false;
 
-        this.tens = Math.floor((Math.random()*9)+1);
-        this.ones = Math.floor((Math.random()*9)+1);
+        this.tens = Math.floor((Math.random()*8)+2);
+        this.ones = Math.floor((Math.random()*8)+2);
         this.tenths = 0;
-        this.hundredths = Math.floor((Math.random()*9)+1);
-        this.thousandths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*8)+2);
+        this.thousandths = Math.floor((Math.random()*8)+2);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
 	this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
@@ -255,7 +255,7 @@ initialize: function(sheet)
         this.ns = new NameMachine();
  	this.mChopWhiteSpace = false;
 
-        this.hundredths = Math.floor((Math.random()*9)+1);
+        this.hundredths = Math.floor((Math.random()*8)+2);
 
         this.setQuestion('Write the decimal as you would say it in words: 0.0' + this.hundredths,0);
 
@@ -574,10 +574,10 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.ones =  Math.floor((Math.random()*9)+1);
-        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.ones =  Math.floor((Math.random()*8)+2);
+        this.tenths =  Math.floor((Math.random()*8)+2);
         this.hundredths =  0;
-        this.thousandths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*8)+2);
 
         this.setQuestion('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
@@ -604,10 +604,10 @@ initialize: function(sheet)
         this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.ones =  Math.floor((Math.random()*9)+1);
-        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.ones =  Math.floor((Math.random()*8)+2);
+        this.tenths =  Math.floor((Math.random()*8)+2);
         this.hundredths =  0;
-        this.thousandths =  Math.floor((Math.random()*9)+1);
+        this.thousandths =  Math.floor((Math.random()*8)+2);
 
         this.setQuestion('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
@@ -634,10 +634,10 @@ initialize: function(sheet)
 	this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.hundreds =  Math.floor((Math.random()*9)+1);
-        this.tens =  Math.floor((Math.random()*9)+1);
-        this.ones =  Math.floor((Math.random()*9)+1);
-        this.tenths =  Math.floor((Math.random()*9)+1);
+        this.hundreds =  Math.floor((Math.random()*8)+2);
+        this.tens =  Math.floor((Math.random()*8)+2);
+        this.ones =  Math.floor((Math.random()*8)+2);
+        this.tenths =  Math.floor((Math.random()*8)+2);
 
         this.setQuestion('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + ' Write the previous number in words as it would be said aloud.',0);
 
@@ -697,11 +697,11 @@ initialize: function(sheet)
 	this.ns = new NameMachine();
 	this.mChopWhiteSpace = false;
 
-        this.tens =  Math.floor((Math.random()*9)+1);
-        this.ones =  Math.floor((Math.random()*9)+1);
-        this.tenths =  Math.floor((Math.random()*9)+1);
-        this.hundredths =  Math.floor((Math.random()*9)+1);
-        this.thousandths =  Math.floor((Math.random()*9)+1);
+        this.tens =  Math.floor((Math.random()*8)+2);
+        this.ones =  Math.floor((Math.random()*8)+2);
+        this.tenths =  Math.floor((Math.random()*8)+2);
+        this.hundredths =  Math.floor((Math.random()*8)+2);
+        this.thousandths =  Math.floor((Math.random()*8)+2);
 
         this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
 
