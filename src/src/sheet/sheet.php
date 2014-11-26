@@ -263,9 +263,9 @@ var Sheet = new Class(
         createVictoryShapes: function()
         {
                 //victory shapes
-                this.addVictoryShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/bus/kid.png","",""));
-                this.addVictoryShape(new ShapeVictory(50,50,300,300,this.mGame,"/images/bus/kid.png","",""));
-                this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/bus/kid.png","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/bus/turkey_thumbs_up.jpg","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,300,300,this.mGame,"/images/bus/turkey1.gif","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/bus/horn.jpeg","",""));
 
                 this.hideVictoryShapes();
         },
