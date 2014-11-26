@@ -13,9 +13,15 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.x        = Math.floor((Math.random()*90)+10);
-        this.y        = Math.floor((Math.random()*900)+100);
-        this.z        = parseInt(this.x * this.y);
+	this.x = 0;
+	this.y = 0;
+	this.z = parseInt(1111); 
+	while(this.z > 999 || this.z < 100 )
+	{ 
+        	this.x        = Math.floor((Math.random()*90)+10);
+        	this.y        = Math.floor((Math.random()*90)+10);
+        	this.z        = parseInt(this.x * this.y);
+	}
 
         this.setQuestion('Find the Quotient: ' + this.z + ' &divide ' + this.x + '');
         this.answer = parseInt(this.y);
