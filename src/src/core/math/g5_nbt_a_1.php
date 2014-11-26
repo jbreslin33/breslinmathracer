@@ -373,7 +373,7 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.1_35';
 	this.mChopWhiteSpace = false;
 
-        this.setQuestion('One hundreth is ____________ the value of one tenth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
+        this.setQuestion('One hundredth is ____________ the value of one tenth. Use ' + '<span style="color: #f00;">' + 'one tenth ' + '</span>' + ' or ' + '<span style="color: #f00;">' + ' ten times ' + '</span>' + ' as the answer.');
 
         this.setAnswer('one tenth',0);
 }
