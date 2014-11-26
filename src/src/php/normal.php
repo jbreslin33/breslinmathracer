@@ -333,9 +333,9 @@ public function setRawData()
         $score_array = array();
         $i = 0;
 	$high_standard = '';
+	$high_progression = '';
         while ($i <= intval(count($this->id_array) - 1))
         {
-		
                 $c = 0; 
                 $exists = false;
                 while ($c <= intval(count($this->item_array) - 1) && $exists == false)
@@ -343,6 +343,7 @@ public function setRawData()
                 	if ($this->id_array[$i] == $this->item_array[$c])
                         {
         			$high_standard = $this->id_array[$i];
+        			$high_progression = $this->progression_array[$i];
                         	$score_array[] = $this->id_array[$i];
                                 $exists = true; 
                         }
@@ -350,7 +351,6 @@ public function setRawData()
                 }
                 $i++;   
 	}
-
 
 	/** anaylse **/
 
@@ -361,7 +361,7 @@ public function setRawData()
 
 	//blue
         $itemString .= ":";
-        $itemString .= "blue";
+        $itemString .= "$high_progression";
 
 	//yellow	
         $itemString .= ":";
