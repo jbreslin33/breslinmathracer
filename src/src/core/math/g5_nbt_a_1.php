@@ -60,7 +60,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_51';
 
-        this.setQuestion('What digit is in the hundredthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the hundred thousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.hundredthousandths,0);
 }
 });
@@ -78,7 +78,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_50';
 
-        this.setQuestion('What digit is in the tenthousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
+        this.setQuestion('What digit is in the ten thousandths place: ' + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + '');
         this.setAnswer('' + this.tenthousandths,0);
 }
 });
