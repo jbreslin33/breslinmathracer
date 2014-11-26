@@ -198,18 +198,18 @@ public function setRawData()
 		}
 
 		$bananas = rand( 0,100);
-		$bananas = 77;
+		$bananas = 90;
 		$bananas = intval($bananas);
 	
 		//true bananas
-		if ($bananas > -1 && $bananas <= 33)
+		if ($bananas > -1 && $bananas <= 25)
 		{ 
 			$r = rand( 0,intval(count($previous_id_array)) );
 			$this->item_types_id_to_ask = $previous_id_array[$r];
 		}
 
 		// this should be least asked
-		if ($bananas > 33 && $bananas <= 66)
+		if ($bananas > 25 && $bananas <= 50)
 		{
 			$least_id = '';
 			$leastCount = 9999;
@@ -239,11 +239,8 @@ public function setRawData()
 		}
 
 		// this should be least correct
-		if ($bananas > 66 && $bananas <= 100)
+		if ($bananas > 50 && $bananas <= 75)
 		{
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'least correct','');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
- $least_id = '';
 			$least_id = '';
                         $leastCount = 9999;
                         $currentCount = 0;
@@ -267,6 +264,63 @@ public function setRawData()
                                 if ($currentCount < $leastCount) //we have a new chump
                                 {
                                         $leastCount = $currentCount;
+                                        $least_id = $previous_id_array[$p];
+                                }
+                                $p++;
+                        }
+                        $this->item_types_id_to_ask = $least_id;
+		}
+
+		// this should be least percent correct
+		if ($bananas > 75 && $bananas <= 100)
+		{
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'least percent correct','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+		
+			$least_id = '';
+                        $leastPercent = 1000;
+                        $currentPercent = 0;
+			$right = 0;
+			$wrong = 0;
+
+                        $p = 0;
+                        while ($p <= intval(count($previous_id_array) - 1))
+                        {
+                                $currentPercent = 0;
+				$right = 0; 
+				$wrong = 0; 
+
+                                $i = 0;
+                                while ($i <= intval(count($this->item_array) - 1))
+                                {
+                                        if ($previous_id_array[$p] == $this->item_array[$i])
+                                        {
+						if ($this->transaction_code_array[$i] == 1)
+						{
+                                                	$right++;
+						}
+						if ($this->transaction_code_array[$i] == 2)
+						{
+                                                	$wrong++;
+						}
+                                        }
+                                        $i++;
+                                }
+
+				//calc
+				$total = intval($right + $wrong);
+				if ($wrong == 0)
+				{
+					$currentPercent = 100;	
+				}
+				else
+				{
+					$currentPercent = floatval($right / $wrong);  
+					$currentPercent = round( $currentPercent, 2);
+				}
+                                if ($currentPercent < $leastPercent) //we have a new chump
+                                {
+                                        $leastPercent = $currentPercent;
                                         $least_id = $previous_id_array[$p];
                                 }
                                 $p++;
