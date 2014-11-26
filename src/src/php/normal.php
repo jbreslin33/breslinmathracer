@@ -112,7 +112,7 @@ public function fillAttemptsArray()
 		$this->start_time_array[]       = pg_Result($result, $i, 'start_time');
 		$this->item_array[]             = pg_Result($result, $i, 'item_types_id');
 		$this->transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-		//$this->type_mastery_array[]     = pg_Result($result, $i, 'type_mastery');
+		//$this->type_mastery_array[]   = pg_Result($result, $i, 'type_mastery');
 		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
 }
@@ -198,7 +198,7 @@ public function setRawData()
 		}
 
 		$bananas = rand( 0,100);
-		$bananas = 50;
+		$bananas = 77;
 		$bananas = intval($bananas);
 	
 		//true bananas
@@ -207,11 +207,10 @@ public function setRawData()
 			$r = rand( 0,intval(count($previous_id_array)) );
 			$this->item_types_id_to_ask = $previous_id_array[$r];
 		}
+
 		// this should be least asked
 		if ($bananas > 33 && $bananas <= 66)
 		{
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'least asked','');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 			$least_id = '';
 			$leastCount = 9999;
 			$currentCount = 0;
@@ -238,11 +237,41 @@ public function setRawData()
 			}
 			$this->item_types_id_to_ask = $least_id;
 		}
-		// this should be least percent correct
+
+		// this should be least correct
 		if ($bananas > 66 && $bananas <= 100)
 		{
-			$r = rand( 0,intval(count($previous_id_array)) );
-			$this->item_types_id_to_ask = $previous_id_array[$r];
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'least correct','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+ $least_id = '';
+			$least_id = '';
+                        $leastCount = 9999;
+                        $currentCount = 0;
+
+                        $p = 0;
+                        while ($p <= intval(count($previous_id_array) - 1))
+                        {
+                                $currentCount = 0;
+                                $i = 0;
+                                while ($i <= intval(count($this->item_array) - 1))
+                                {
+                                        if ($previous_id_array[$p] == $this->item_array[$i])
+                                        {
+						if ($this->transaction_code_array[$i] == 1)
+						{
+                                                	$currentCount++;
+						}
+                                        }
+                                        $i++;
+                                }
+                                if ($currentCount < $leastCount) //we have a new chump
+                                {
+                                        $leastCount = $currentCount;
+                                        $least_id = $previous_id_array[$p];
+                                }
+                                $p++;
+                        }
+                        $this->item_types_id_to_ask = $least_id;
 		}
 	}
 	
