@@ -575,7 +575,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_25';
 
-        this.setQuestion('What is the simplest fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
+        this.setQuestion('What is fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + '<span style="color: #f00;">' + this.tenths + '</span>' + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths + ' Do not simplify.');
         
 	var answer = new Fraction(this.tenths,10);
 
@@ -745,7 +745,7 @@ initialize: function(sheet)
         var fraction = new Fraction(1,100);
         var answer = new Fraction(n,d);
 
-        this.setQuestion('Write the simplest fraction that is ten times more than ' + fraction.getString());
+        this.setQuestion('Write the fraction that is ten times more than ' + fraction.getString()) + ' Do not simplify.';
         this.setAnswer(answer.getString(),0);
 }
 });
@@ -813,7 +813,7 @@ initialize: function(sheet)
         var fraction = new Fraction(1,10);
         var answer = new Fraction(n,d);
 
-	this.setQuestion('Write the simplest fraction that is ten times less than ' + fraction.getString()); 
+	this.setQuestion('Write the fraction that is ten times less than ' + fraction.getString() + ' Do not simplify.' ); 
         this.setAnswer(answer.getString(),0);
 }
 });
@@ -852,7 +852,7 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.a.1_12';
 
-	this.setQuestion('Write the simplest fraction that is ten times less than 1.'); 
+	this.setQuestion('Write the fraction that is ten times less than 1.'); 
 	
 	var n = 1;
 	var d = 10;
