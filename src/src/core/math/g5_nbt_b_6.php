@@ -1,5 +1,37 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_4',5.1004,'5.nbt.b.6','4 d 2 remainder');
+*/
+var i_5_nbt_b_6__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.6_4';
+
+        this.ns = new NameSampler();
+
+	this.x = 0;
+	this.y = 0;
+	this.q = 0;
+	this.r = 0;
+	while( this.r == 0)
+	{
+       		this.x = Math.floor((Math.random()*90)+10);
+        	this.y = Math.floor((Math.random()*9000)+1000);
+		this.q = Math.floor(this.y/this.x);
+		this.r = this.y % this.x;
+	}
+
+        this.setQuestion('Find the Quotient: ' + this.y + ' &divide ' + this.x + ' If a remainder exists write in the form 57r3');
+        this.setAnswer('' + this.q + 'r' + this.r,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_3',5.1003,'5.nbt.b.6','4 d 2 no remainder');
 */
 var i_5_nbt_b_6__3 = new Class(
