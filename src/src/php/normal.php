@@ -342,6 +342,9 @@ public function setRawData()
                 $i++;   
 	}
 
+	//trim progression
+	$high_progression = substr($high_progression,2,2);
+
 	/*** cleanup ****/
 
 	$mastered_array = array();
