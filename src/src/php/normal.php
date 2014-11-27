@@ -342,6 +342,55 @@ public function setRawData()
                 $i++;   
 	}
 
+	/*** cleanup ****/
+
+	$mastered_array = array();
+	$unmastered_array = array();
+	$unasked_array = array();
+
+ 	//loop thru item array until you reach end
+	$i = 0;
+        while ($i <= intval(count($this->id_array) - 1))
+	{
+		$mini_transaction_code_array = array();
+
+                $c = 0;
+
+                //loop attempt array and dump into arrays then you can eval after
+                while ($c <= intval(count($this->item_array) - 1))
+                {
+                        //check for match of ids if so add to code array
+                        if ($this->id_array[$i] == $this->item_array[$c])
+                        {
+                                $mini_transaction_code_array[] = $this->transaction_code_array[$c];
+                        }
+                        $c++; //increment for typearrays
+                }
+		
+		//analysis
+                if ( intval(count($mini_transaction_code_array)) == 0 )
+		{
+			$unasked_array[] = $this->id_array[$i];	
+		}
+                if ( intval(count($mini_transaction_code_array)) == 1 )
+                {
+			$unmastered_array[] = $this->id_array[$i];	
+                }
+                if ( intval(count($mini_transaction_code_array)) > 1 )
+                {
+                        //if either is not 1 then its not type mastered so make it ask type
+                        if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
+                        {
+				$unmastered_array[] = $this->id_array[$i];	
+                        }
+			else //mastered
+			{
+				$mastered_array[] = $this->id_array[$i];	
+			}
+                }
+                $i++;
+	}
+
 	/** anaylse **/
 
 	$_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
