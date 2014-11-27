@@ -183,6 +183,7 @@ var Sheet = new Class(
 				pick.mProgressedTypeID = itemIDArray[i];	
 				i++;
 				this.mGame.mScore = itemIDArray[i];
+				this.mGame.setScore(this.mGame.mScore);
 			}
 			else
 			{

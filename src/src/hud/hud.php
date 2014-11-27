@@ -28,7 +28,7 @@ var Hud = new Class(
 	this.mProgressedTypeID.setText('<font size="1"> Question: </font>');
 
         this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
-        this.mScore.setText('<font size="1"> </font>');
+        //this.mScore.setText('<font size="1"> </font>');
 
         this.mItemTypeStats = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
 
