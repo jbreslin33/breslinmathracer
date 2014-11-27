@@ -8,7 +8,7 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-
+		
 		this.mSent = false;
                 
 		this.mServerLabel = new Shape(200,50,400,50,this,"","","");
