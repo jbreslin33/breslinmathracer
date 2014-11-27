@@ -13,12 +13,12 @@ var Hud = new Class(
 	/******************* BOUNDARY WALLS AND HUD COMBO ***********/
         var ySize = 35;
         var yCoord = 0;
-        this.mHome = new Shape(40, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
+        this.mHome = new Shape(90, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
 	//this.mHome.mMesh.onchange="homeSelected";
 	this.mHome.mMesh.onchange = this.homeSelected;
 
-	this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
-        this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/php/logout.php"> LOGOUT</a> </font>');
+	//this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
+        //this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/php/logout.php"> LOGOUT</a> </font>');
 	
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
 	this.setStandard('');
