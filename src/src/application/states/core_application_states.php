@@ -62,6 +62,7 @@ initialize: function()
 enter: function(application)
 {
 	application.mLoggedIn = false;
+
 	if (application.mStateLogs)
 	{
 		application.log('APPLICATION::LOGIN_APPLICATION');
@@ -74,6 +75,9 @@ enter: function(application)
         }
         application.mGameName = "login";
         application.mGame = new login(APPLICATION);
+ 
+	//lets hide homeselect
+       	APPLICATION.mHud.mHome.setVisibility(false);
 },
 
 execute: function(application)
@@ -86,6 +90,8 @@ execute: function(application)
 
 exit: function(application)
 {
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
 }
 
 });
@@ -113,6 +119,9 @@ enter: function(application)
         }
         application.mGameName = "signup";
         application.mGame = new signup(APPLICATION);
+	
+	//lets hide homeselect
+       	APPLICATION.mHud.mHome.setVisibility(false);
 },
 
 execute: function(application)
@@ -125,6 +134,8 @@ execute: function(application)
 
 exit: function(application)
 {
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
 }
 
 });
