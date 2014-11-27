@@ -7,3 +7,4 @@ delete from item_types where progression  > 8;
 alter table users add last_activity timestamp;
 alter table users add score integer NOT NULL default 0;
 alter table users add unmastered integer NOT NULL default 0;
+alter table users add lesson integer NOT NULL default 1;
