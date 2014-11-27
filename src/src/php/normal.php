@@ -403,10 +403,10 @@ public function setRawData()
 
 	//blue
         $itemString .= ":";
-        //$itemString .= "L:";
+        $itemString .= "L=";
         $itemString .= "$high_progression";
-        //$itemString .= "U:";
-	//$itemString .= count($unmastered_array);
+        $itemString .= " U=";
+	$itemString .= count($unmastered_array);
 
 	//yellow	
         $itemString .= ":";
