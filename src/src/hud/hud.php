@@ -63,6 +63,8 @@ var Hud = new Class(
 	homeSelected: function()
 	{
 		APPLICATION.log('home selected');
+		window.location.href = "/web/php/logout.php";
+		//window.location.href = "http://stackoverflow.com";
 	},
  
 	fillHomeSelect: function()
