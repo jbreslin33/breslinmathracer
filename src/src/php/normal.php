@@ -394,10 +394,18 @@ public function setRawData()
                 $i++;
 	}
 	
-	/**  for teacher real time data  */
-	/*********   what if i update db right here with score and unmastered total then we could ajax that...
-	*******/
+	/*********************  for teacher real time data  *************/
+	
+	$update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
+	$update .= intval(count($score_array)); 
+	$update .= ", unmastered = "; 
+	$update .= count($unmastered_array);
+        $update .= " WHERE id = ";
+        $update .= $_SESSION["user_id"];
+        $update .= ";";
 
+	$updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+	
 	/** anaylse **/
 
 	$_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
