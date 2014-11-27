@@ -144,6 +144,11 @@ CREATE TABLE users (
     	core_grades_id integer,
     	core_standards_id text,
     	school_id integer NOT NULL,
+     	last_activity timestamp,
+        score integer NOT NULL default 0,
+        unmastered integer NOT NULL default 0,
+        lesson integer NOT NULL default 1,
+
 	PRIMARY KEY (id),	
 	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id)
 );
