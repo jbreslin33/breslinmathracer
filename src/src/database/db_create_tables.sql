@@ -65,6 +65,9 @@ CREATE TABLE users (
     	middle_name3 text,
     	last_name text,
     	school_id integer NOT NULL,
+    	last_activity timestamp,
+    	score integer NOT NULL default 0,
+    	umastered integer NOT NULL default 0,
 	PRIMARY KEY (id) 	
 	--FOREIGN KEY (school_id) REFERENCES users(id)
 );
