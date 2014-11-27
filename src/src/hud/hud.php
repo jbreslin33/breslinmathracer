@@ -17,9 +17,6 @@ var Hud = new Class(
 	//this.mHome.mMesh.onchange="homeSelected";
 	this.mHome.mMesh.onchange = this.homeSelected;
 
-	//this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
-        //this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/php/logout.php"> LOGOUT</a> </font>');
-	
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
 	this.setStandard('');
         this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
@@ -29,7 +26,6 @@ var Hud = new Class(
 	this.mProgressedTypeID.setText('<font size="1"> Question: </font>');
 
         this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
-        //this.mScore.setText('<font size="1"> </font>');
 
         this.mItemTypeStats = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
 
@@ -73,6 +69,19 @@ var Hud = new Class(
 			window.location.href = "/web/php/logout.php";
 			APPLICATION.log('Logout');
 		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Core")
+		{
+			APPLICATION.log('Core');
+			//APPLICATION.mGotoCore = true;
+  			if (APPLICATION.mGame.mSheet.getItem().mShowCore == true)
+                	{
+                        	APPLICATION.mGame.mSheet.getItem().mShowCore = false;
+                	}
+                	else
+                	{
+                        	APPLICATION.mGame.mSheet.getItem().mShowCore = true;
+                	}
+		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Reports")
 		{
 			window.location.href = "/web/home/home.php";
@@ -86,6 +95,7 @@ var Hud = new Class(
                 var homeSelectArray = new Array(); 
 		homeSelectArray.push('Play');
 		homeSelectArray.push('Logout');
+		homeSelectArray.push('Core');
 		homeSelectArray.push('Reports');
 
                 for (var i = 0; i < homeSelectArray.length; i++)
