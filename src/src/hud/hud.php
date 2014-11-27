@@ -63,8 +63,22 @@ var Hud = new Class(
 	homeSelected: function()
 	{
 		APPLICATION.log('home selected');
-		window.location.href = "/web/php/logout.php";
-		//window.location.href = "http://stackoverflow.com";
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Play")
+		{
+			window.location.href = "/web/application/application.php";
+			APPLICATION.log('Play');
+		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Logout")
+		{
+			window.location.href = "/web/php/logout.php";
+			APPLICATION.log('Logout');
+		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Reports")
+		{
+			window.location.href = "/web/home/home.php";
+			APPLICATION.log('Reports');
+		}
+		
 	},
  
 	fillHomeSelect: function()
