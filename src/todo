@@ -1,3 +1,7 @@
+no buffer instead make use mastery to take out some questions. 
+---
+5 item buffer in case kid is stuck. also show total above buffer..and total stuck in general...
+-----------------
 Basically we work on a set a starting level concept.
 you set a starting level for the student then it will continue to ask the student mastered questions beginning at starting level
 we could also have seperate settings. A mastered setting which is 10. Then a move on to next standard setting which is 5. Then a moveontonexttypesetting setting which is 3.
