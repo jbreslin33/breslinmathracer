@@ -13,8 +13,9 @@ var Hud = new Class(
 	/******************* BOUNDARY WALLS AND HUD COMBO ***********/
         var ySize = 35;
         var yCoord = 0;
-        this.mHome = new Shape(40, ySize,  0,  yCoord,"","","#F8CDF8","boundary");
-        this.mHome.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/home/home.php"> REPORTS</a> </font>');
+        this.mHome = new Shape(40, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
+	//this.mHome.mMesh.onchange="homeSelected";
+	this.mHome.mMesh.onchange = this.homeSelected;
 
 	this.mLogout = new Shape     (50, ySize,40,  yCoord,"","","red","boundary");
         this.mLogout.setText('<font size="1"> <a href="<?php getenv("DOCUMENT_ROOT")?>/web/php/logout.php"> LOGOUT</a> </font>');
@@ -55,6 +56,29 @@ var Hud = new Class(
         westBounds  = new Shape         ( 10, 50,  0,335,"","","#F19BF1","boundary");
         westBounds  = new Shape         ( 10, 20,  0,385,"","","#F08EF0","boundary");
 
+	this.fillHomeSelect();
+
+        },
+
+	homeSelected: function()
+	{
+		APPLICATION.log('home selected');
+	},
+ 
+	fillHomeSelect: function()
+        {
+                var homeSelectArray = new Array(); 
+		homeSelectArray.push('Play');
+		homeSelectArray.push('Logout');
+		homeSelectArray.push('Reports');
+
+                for (var i = 0; i < homeSelectArray.length; i++)
+                {
+                        var option = document.createElement("option");
+                        option.value = homeSelectArray[i];
+                        option.text = homeSelectArray[i];
+                        this.mHome.mMesh.appendChild(option);
+                }
         },
 	
 	setItemTypeStats: function(streak)
