@@ -13,6 +13,41 @@ enter: function(item)
 
 execute: function(item)
 {
+       	if (item.mShowStandard)
+        {
+                if (item.mStateMachine.mCurrentState != item.mSHOW_STANDARD)
+		{
+                	item.mStateMachine.changeState(item.mSHOW_STANDARD);
+		}
+        }
+        if (item.mShowItem)
+        {
+                if (item.mStateMachine.mCurrentState != item.mSHOW_ITEM)
+		{
+                	item.mStateMachine.changeState(item.mSHOW_ITEM);
+		}
+        }
+        if (item.mShowPractice)
+        {
+                if (item.mStateMachine.mCurrentState != item.mSHOW_PRACTICE)
+		{
+                	item.mStateMachine.changeState(item.mSHOW_PRACTICE);
+		}
+        }
+        if (item.mShowCore)
+        {
+                if (item.mStateMachine.mCurrentState != item.mSHOW_CORE)
+		{
+                	item.mStateMachine.changeState(item.mSHOW_CORE);
+		}
+        }
+        if (item.mShowTimesTables)
+        {
+                if (item.mStateMachine.mCurrentState != item.mSHOW_TIMES_TABLES)
+		{
+                	item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
+		}
+        }
 },
 
 exit: function(item)
@@ -120,27 +155,6 @@ execute: function(item)
                 	item.mStateMachine.changeState(item.mSHOW_CORRECT_ANSWER_ITEM);
                 }
 	}                   
-
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
-	if (item.mShowTimesTables)
-	{
-                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
-	}
 },
 
 exit: function(item)
@@ -333,7 +347,6 @@ execute: function(item)
 
 exit: function(item)
 {
-	item.mShowCore = false;
         item.hideCore();
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
@@ -342,6 +355,8 @@ exit: function(item)
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
+	
+	item.mShowCore = false;
 }
 
 });
@@ -387,7 +402,6 @@ execute: function(item)
 
 exit: function(item)
 {
-	item.mShowTimesTables = false;
         item.hideTimesTables();
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
@@ -396,6 +410,8 @@ exit: function(item)
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
+	
+	item.mShowTimesTables = false;
 }
 
 });
