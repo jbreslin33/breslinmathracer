@@ -61,30 +61,36 @@ var Hud = new Class(
 		APPLICATION.log('home selected');
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Play")
 		{
-			APPLICATION.log('Play');
 			APPLICATION.mGame.mSheet.mItem.mStateMachine.changeState(APPLICATION.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM);
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Core")
 		{
-			APPLICATION.log('Core');
                         APPLICATION.mGame.mSheet.getItem().mShowCore = true;
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "XTables")
 		{
-			APPLICATION.log('XTables');
                         APPLICATION.mGame.mSheet.getItem().mShowTimesTables = true;
+		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Practice")
+		{
+                        APPLICATION.mGame.mSheet.getItem().mShowPractice = true;
+		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Item Description")
+		{
+                        APPLICATION.mGame.mSheet.getItem().mShowItem = true;
+		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Standard Description")
+		{
+                        APPLICATION.mGame.mSheet.getItem().mShowStandard = true;
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Reports")
 		{
 			window.location.href = "/web/home/home.php";
-			APPLICATION.log('Reports');
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Logout")
 		{
 			window.location.href = "/web/php/logout.php";
-			APPLICATION.log('Logout');
 		}
-		
 	},
  
 	fillHomeSelect: function()
