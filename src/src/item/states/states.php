@@ -104,8 +104,13 @@ enter: function(item)
 	{
 		APPLICATION.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	}
- 
-	//start timer but only once
+   	
+	if (item.mUserAnswer != '')
+	{
+		//goto init. 
+		item.mStateMachine.changeState(item.mINIT_ITEM);
+	}
+	
 	if (item.mQuestionStartTime == 0)
 	{
        		item.mQuestionStartTime = APPLICATION.mGame.mTimeSinceEpoch; //restart timer
@@ -408,26 +413,6 @@ execute: function(item)
         {
                	item.mStateMachine.changeState(item.mCORRECT_ITEM);
         }
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
-	if (item.mShowTimesTables)
-	{
-                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
-	}
 },
 
 exit: function(item)
@@ -464,26 +449,6 @@ execute: function(item)
 	{
 		item.mStateMachine.changeState(item.mINIT_ITEM);
 	}
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
-	if (item.mShowTimesTables)
-	{
-                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
-	}
 },
 
 exit: function(item)
@@ -491,7 +456,6 @@ exit: function(item)
 }
 
 });
-
 
 var SHOW_CORRECT_ANSWER_ITEM = new Class(
 {
@@ -528,26 +492,6 @@ execute: function(item)
         {
                	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
         }
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
-	if (item.mShowTimesTables)
-	{
-                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
-	}
 },
 
 exit: function(item)
@@ -594,26 +538,6 @@ execute: function(item)
         {
                 item.mStateMachine.changeState(item.mINCORRECT_ITEM);
         }
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
-	if (item.mShowTimesTables)
-	{
-                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
-	}
 },
 
 exit: function(item)
@@ -623,6 +547,8 @@ exit: function(item)
 
   if(item.raphael != 0)
      item.raphael.remove();
+
+	item.mContinueIncorrect = false;
 }
 
 });
@@ -654,34 +580,12 @@ execute: function(item)
         {
                 item.mStateMachine.changeState(item.mINIT_ITEM);
         }
-	if (item.mShowStandard)
-	{
-                item.mStateMachine.changeState(item.mSHOW_STANDARD);
-	}
-	if (item.mShowItem)
-	{
-                item.mStateMachine.changeState(item.mSHOW_ITEM);
-	}
-	if (item.mShowPractice)
-	{
-                item.mStateMachine.changeState(item.mSHOW_PRACTICE);
-	}
-	if (item.mShowCore)
-	{
-                item.mStateMachine.changeState(item.mSHOW_CORE);
-	}
-	if (item.mShowTimesTables)
-	{
-                item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
-	}
 },
 
 exit: function(item)
 {
 }
 });
-
-
 
 var OUT_OF_TIME_ITEM = new Class(
 {

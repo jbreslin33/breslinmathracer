@@ -53,7 +53,6 @@ var Hud = new Class(
         westBounds  = new Shape         ( 10, 20,  0,385,"","","#F08EF0","boundary");
 
 	this.fillHomeSelect();
-
         },
 
 	homeSelected: function()
