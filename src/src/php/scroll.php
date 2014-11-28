@@ -38,13 +38,50 @@ public function setScroll()
 	
 	for($i=0; $i < intval(count($place_array)); $i++)
 	{
+		//found you
 		if ($id_array[$i] == $_SESSION["user_id"])
 		{
+			//first place
+			if ($place_array[$i] == 1)
+			{
+				$itemString .= "YOUR IN FIRST PLACE!!! ";
+			}
+			else
+			{
+				$itemString .= $place_array[$intval($i - 1)];
+				$itemString .= " ";
+				$itemString .= $first_name_array[$intval($i - 1)];
+				$itemString .= " ";
+				$itemString .= $last_name_array[$intval($i - 1)];
+				$itemString .= " ";
+				$itemString .= " ";
+			}
+			//2nd place you
 			$itemString .= $place_array[$i];
+			$itemString .= " ";
 			$itemString .= $first_name_array[$i];
+			$itemString .= " ";
+			$itemString .= $last_name_array[$i];
+			$itemString .= " ";
+			$itemString .= " ";
+			
+			if ($place == $place_array[$i]) //your in last so there is no one else
+			{
+
+			}
+			else
+			{
+				//3rd
+				$itemString .= $place_array[intval($i + 1)];
+				$itemString .= " ";
+				$itemString .= $first_name_array[intval($i + 1)];
+				$itemString .= " ";
+				$itemString .= $last_name_array[intval($i + 1)];
+				$itemString .= " ";
+				$itemString .= " ";
+			}
 		}
 	}
-
 
         $_SESSION["scroll"] = $itemString;
 }
