@@ -65,28 +65,20 @@ var Hud = new Class(
 			APPLICATION.log('Play');
 			APPLICATION.mGame.mSheet.mItem.mStateMachine.changeState(APPLICATION.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM);
 		}
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Logout")
-		{
-			window.location.href = "/web/php/logout.php";
-			APPLICATION.log('Logout');
-		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Core")
 		{
 			APPLICATION.log('Core');
-			//APPLICATION.mGotoCore = true;
-  			if (APPLICATION.mGame.mSheet.getItem().mShowCore == true)
-                	{
-                        	APPLICATION.mGame.mSheet.getItem().mShowCore = false;
-                	}
-                	else
-                	{
-                        	APPLICATION.mGame.mSheet.getItem().mShowCore = true;
-                	}
+                        APPLICATION.mGame.mSheet.getItem().mShowCore = true;
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Reports")
 		{
 			window.location.href = "/web/home/home.php";
 			APPLICATION.log('Reports');
+		}
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Logout")
+		{
+			window.location.href = "/web/php/logout.php";
+			APPLICATION.log('Logout');
 		}
 		
 	},
@@ -95,9 +87,13 @@ var Hud = new Class(
         {
                 var homeSelectArray = new Array(); 
 		homeSelectArray.push('Play');
-		homeSelectArray.push('Logout');
 		homeSelectArray.push('Core');
+		homeSelectArray.push('XTables');
+		homeSelectArray.push('Practice');
+		homeSelectArray.push('Item Description');
+		homeSelectArray.push('Standard Description');
 		homeSelectArray.push('Reports');
+		homeSelectArray.push('Logout');
 
                 for (var i = 0; i < homeSelectArray.length; i++)
                 {
