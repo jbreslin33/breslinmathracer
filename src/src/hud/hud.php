@@ -41,7 +41,8 @@ var Hud = new Class(
         eastBounds  = new Shape         ( 10, 50,760,335,"","","#F19BF1","boundary");
         eastBounds  = new Shape         ( 10, 20,760,385,"","","#F08EF0","boundary");
 
-        this.mQuestion = new Shape (770, ySize,  0,405,"","","violet","boundary");
+        this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boundary");
+	this.mScroll.setText('Texas Radio and the Big Beat');
 
         westBounds  = new Shape         ( 10, 50,  0, 35,"","","#F8CDF8","boundary");
         westBounds  = new Shape         ( 10, 50,  0, 85,"","","#F6C0F6","boundary");
@@ -137,9 +138,9 @@ var Hud = new Class(
   		this.mUsername.setText('<font size="1">User:' + firstname + ' ' + lastname + '</font>');
 	},
 
-	setQuestion: function(question)
+	setScroll: function(scroll)
 	{
-        	this.mQuestion.setText('<font size="1"> Question: ' + question + '</font>');
+        	this.mScroll.setText('<font size="1">'  + scroll + '</font>');
 	}
 });
 
