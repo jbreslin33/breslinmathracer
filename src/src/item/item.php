@@ -10,7 +10,7 @@ var Item = new Class(
 
 		this.mSheet = sheet;
 
-    this.raphael = 0;
+    		this.raphael = 0;
 		
 		this.mClock = 0;
 
