@@ -61,8 +61,9 @@ var Hud = new Class(
 		APPLICATION.log('home selected');
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Play")
 		{
-			window.location.href = "/web/application/application.php";
+			//window.location.href = "/web/application/application.php";
 			APPLICATION.log('Play');
+			APPLICATION.mGame.mSheet.mItem.mStateMachine.changeState(APPLICATION.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM);
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Logout")
 		{
