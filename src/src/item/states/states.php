@@ -387,6 +387,7 @@ execute: function(item)
 
 exit: function(item)
 {
+	item.mShowTimesTables = false;
         item.hideTimesTables();
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
