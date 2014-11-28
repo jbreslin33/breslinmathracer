@@ -25,6 +25,7 @@ var Game = new Class(
                 this.mTimeSinceEpoch = 0;
                 this.mLastTimeSinceEpoch = 0;
                 this.mDeltaTime = 0;
+                this.mScrollTime = 0;
 		this.mGameTime = 0;
 
 		/********* BOUNDS *******************/ 
@@ -53,12 +54,19 @@ var Game = new Class(
                 this.mTimeSinceEpoch = e.getTime();
 
                 //set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
-                this.mDeltaTime = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
+                this.mDeltaTime  = this.mTimeSinceEpoch - this.mLastTimeSinceEpoch;
 
                 if(this.mDeltaTime < 50000)
                 {
                         this.mGameTime = this.mGameTime + this.mDeltaTime;
+			this.mScrollTime = this.mScrollTime + this.mDeltaTime;
                 }
+		//getScroll
+		if (this.mScrollTime > 10000)
+		{
+			APPLICATION.getScroll();
+			this.mScrollTime = 0;
+		}
 
                 //check Keys from application
                 if (this.mKeysOn)
@@ -84,6 +92,8 @@ var Game = new Class(
                 {
                         this.mShapeArray[i].render();
                 }
+
+
 
 		//state machine
                 this.mStateMachine.update();
@@ -115,6 +125,7 @@ var Game = new Class(
                 this.mTimeSinceEpoch = 0;
                 this.mLastTimeSinceEpoch = 0;
                 this.mDeltaTime = 0;
+		this.mScrollTime = 0;
                 this.mGameTime = 0;
 
 		this.createShapes();

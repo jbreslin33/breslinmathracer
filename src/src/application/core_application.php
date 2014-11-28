@@ -20,6 +20,7 @@ Extends: Application,
 		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
 		this.UPDATED_STANDARD_ID = 111;
+		this.SCROLL = 112;
 
 		//personal info
 		this.mUsername = '';
@@ -157,15 +158,17 @@ Extends: Application,
                         }
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
                         {
-                                //APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
-                                //APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
 			if (codeNumber == APPLICATION.UPDATED_STANDARD_ID)
                         {
 				APPLICATION.mWaitForReturn = false; 
-                                //APPLICATION.mGame.mSheet.mItem.mCoreDescription = responseArray[1];
-                                //APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }
+			if (codeNumber == APPLICATION.SCROLL)
+			{
+				APPLICATION.log('got scroll');
+				APPLICATION.log('its' + responseArray[1]);
+				APPLICATION.mHud.mScroll.setText(responseArray[1]); 
+			}
 		}
 	},
 
@@ -273,6 +276,40 @@ Extends: Application,
                 xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
+
+        getScroll: function()
+        {
+		APPLICATION.log('scroll sent');
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/scroll.php",true);
+                xmlhttp.send();
+        },
+
 
 	sendItemAttempt: function(itemtypesid,transactioncode)
         {
