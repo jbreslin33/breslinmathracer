@@ -333,6 +333,7 @@ execute: function(item)
 
 exit: function(item)
 {
+	item.mShowCore = false;
         item.hideCore();
         item.showToggleStandardInfoButton();
         item.showToggleItemInfoButton();
