@@ -57,7 +57,6 @@ var Hud = new Class(
 
 	homeSelected: function()
 	{
-		APPLICATION.log('home selected');
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Play")
 		{
 			APPLICATION.mGame.mSheet.mItem.mStateMachine.changeState(APPLICATION.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM);
