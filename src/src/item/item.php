@@ -75,34 +75,28 @@ var Item = new Class(
 		this.mContinueIncorrectButton = 0; 
 
 		//show standards 
-		this.mToggleStandardInfoButton = 0;
 		this.mStandardInfo = 0;
 		this.mShowStandard = false;
 			
 		//show types
-		this.mToggleItemInfoButton = 0;
 		this.mItemInfo = 0;
 		this.mShowItem = false;
 
 		//show practice
-		this.mTogglePracticeInfoButton = 0;
 		this.mPracticeInfo = 0;
 		this.mPracticeInfoButton = 0;
 		this.mLeavePracticeButton = 0;
 		this.mShowPractice = false;
 
 		//show coreStandard
-		this.mToggleCoreInfoButton = 0;
 		this.mCoreInfo = 0;
 		this.mCoreInfoButton = 0;
 		this.mShowCore = false;
 
 		//show times tables
-		this.mToggleTimesTableInfoButton = 0;
 		this.mTimesTablesInfo = 0;
 		this.mTimesTablesInfoButton = 0;
 		this.mShowTimesTables = 0;
-		
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -181,31 +175,13 @@ var Item = new Class(
 		this.mContinueIncorrectButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueIncorrectButton);
 		
-		//mToggleStandardInfoButton
-                this.mToggleStandardInfoButton = new ToggleStandardInfoButton(100,40,270,422,this.mSheet.mGame,"BUTTON","","");
-		this.mToggleStandardInfoButton.mMesh.innerHTML = 'STANDARD';
-                this.addShape(this.mToggleStandardInfoButton);
-		this.mToggleStandardInfoButton.setOutOfBoundsCheck(false);
-		
 		//mStandardInfo
                 this.mStandardInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
                 this.addShape(this.mStandardInfo);
 		
-		//mToggleItemInfoButton
-                this.mToggleItemInfoButton = new ToggleItemInfoButton(45,40,175,422,this.mSheet.mGame,"BUTTON","","");
-		this.mToggleItemInfoButton.mMesh.innerHTML = 'ITEM';
-                this.addShape(this.mToggleItemInfoButton);
-		this.mToggleItemInfoButton.setOutOfBoundsCheck(false);
-		
 		//mItemInfo
                 this.mItemInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
                 this.addShape(this.mItemInfo);
-
-               	//mTogglePracticeInfoButton
-                this.mTogglePracticeInfoButton = new TogglePracticeInfoButton(75,40,100,422,this.mSheet.mGame,"BUTTON","","");
-                this.mTogglePracticeInfoButton.mMesh.innerHTML = 'PRACTICE';
-                this.addShape(this.mTogglePracticeInfoButton);
-                this.mTogglePracticeInfoButton.setOutOfBoundsCheck(false);
 
                 //mPracticeInfo
                 this.mPracticeInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
@@ -220,11 +196,6 @@ var Item = new Class(
                 this.addShape(this.mLeavePracticeButton);
 
 		//CORE
-                this.mToggleCoreInfoButton = new ToggleCoreInfoButton(45,40,30,422,this.mSheet.mGame,"BUTTON","","");
-                this.mToggleCoreInfoButton.mMesh.innerHTML = 'CORE';
-                this.addShape(this.mToggleCoreInfoButton);
-                this.mToggleCoreInfoButton.setOutOfBoundsCheck(false);
-
                 //mCoreInfo
                 this.mCoreInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mCoreInfo);
@@ -234,12 +205,6 @@ var Item = new Class(
                 this.addShape(this.mCoreInfoButton);
                 
 		//TIMES TABLES
-		
-                this.mToggleTimesTablesInfoButton = new ToggleTimesTablesInfoButton(165,40,400,422,this.mSheet.mGame,"BUTTON","","");
-                this.mToggleTimesTablesInfoButton.mMesh.innerHTML = 'XTABLES';
-                this.addShape(this.mToggleTimesTablesInfoButton);
-                this.mToggleTimesTablesInfoButton.setOutOfBoundsCheck(false);
-		
 		//mTimesInfo
                 this.mTimesTablesInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mTimesTablesInfo);
@@ -562,68 +527,13 @@ var Item = new Class(
 
 	showQuestion: function()
 	{
-		this.showToggleItemInfoButton();
-		this.showToggleStandardInfoButton();
-		this.showTogglePracticeInfoButton();
-		this.showToggleCoreInfoButton();
-		this.showToggleTimesTablesInfoButton();
+
 	},
 	
 	hideQuestion: function()
 	{
-	
 	},
 	
-	showToggleStandardInfoButton: function()
-	{
-		this.mToggleStandardInfoButton.setVisibility(true);
-	},
-
-	hideToggleStandardInfoButton: function()
-	{
-		this.mToggleStandardInfoButton.setVisibility(false);
-	},
-
-	showToggleItemInfoButton: function()
-	{
-		this.mToggleItemInfoButton.setVisibility(true);
-	},
-
-	hideToggleItemInfoButton: function()
-	{
-		this.mToggleItemInfoButton.setVisibility(false);
-	},
-
-        showTogglePracticeInfoButton: function()
-        {
-                this.mTogglePracticeInfoButton.setVisibility(true);
-        },
-
-        hideTogglePracticeInfoButton: function()
-        {
-                this.mTogglePracticeInfoButton.setVisibility(false);
-        },
-
-        showToggleCoreInfoButton: function()
-        {
-                this.mToggleCoreInfoButton.setVisibility(true);
-        },
-
-        hideToggleCoreInfoButton: function()
-        {
-                this.mToggleCoreInfoButton.setVisibility(false);
-        },
-
-        showToggleTimesTablesInfoButton: function()
-        {
-                this.mToggleTimesTablesInfoButton.setVisibility(true);
-        },
-
-        hideToggleTimesTablesInfoButton: function()
-        {
-                this.mToggleTimesTablesInfoButton.setVisibility(false);
-        },
-
 	showQuestionShapes: function()
 	{
    		for (i = 0; i < this.mQuestionShapeArray.length; i++)
