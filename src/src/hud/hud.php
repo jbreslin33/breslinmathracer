@@ -14,7 +14,6 @@ var Hud = new Class(
         var ySize = 35;
         var yCoord = 0;
         this.mHome = new Shape(90, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
-	//this.mHome.mMesh.onchange="homeSelected";
 	this.mHome.mMesh.onchange = this.homeSelected;
 
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
@@ -42,7 +41,7 @@ var Hud = new Class(
         eastBounds  = new Shape         ( 10, 20,760,385,"","","#F08EF0","boundary");
 
         this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boundary");
-	this.mScroll.setText('Texas Radio and the Big Beat');
+	this.mScroll.setText('<marquee> Texas Radio and the Big Beat</marquee>');
 
         westBounds  = new Shape         ( 10, 50,  0, 35,"","","#F8CDF8","boundary");
         westBounds  = new Shape         ( 10, 50,  0, 85,"","","#F6C0F6","boundary");
@@ -140,7 +139,7 @@ var Hud = new Class(
 
 	setScroll: function(scroll)
 	{
-        	this.mScroll.setText('<font size="1">'  + scroll + '</font>');
+        	this.mScroll.setText('<marquee width="400" height="50">'  + scroll + '</marquee>');
 	}
 });
 
