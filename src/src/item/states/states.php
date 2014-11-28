@@ -181,11 +181,6 @@ enter: function(item)
 	item.hideAnswerInputs();
 	item.hideUserAnswer();
 	item.hideQuestionShapes();
-        item.hideToggleItemInfoButton();
-        item.hideTogglePracticeInfoButton();
-        item.hideToggleCoreInfoButton();
-        item.hideToggleTimesTablesInfoButton();
-
         item.showStandard();
 },
 
@@ -200,11 +195,6 @@ execute: function(item)
 exit: function(item)
 {
         item.hideStandard();
-        item.showToggleItemInfoButton();
-        item.showTogglePracticeInfoButton();
-        item.showToggleCoreInfoButton();
-        item.showToggleTimesTablesInfoButton();
-
 	item.mShowStandard = false;
 }
 
@@ -228,11 +218,6 @@ enter: function(item)
         item.hideAnswerInputs();
         item.hideUserAnswer();
         item.hideQuestionShapes();
-        item.hideToggleStandardInfoButton();
-        item.hideTogglePracticeInfoButton();
-        item.hideToggleCoreInfoButton();
-        item.hideToggleTimesTablesInfoButton();
-
         item.showItem();
 },
 
@@ -247,11 +232,6 @@ execute: function(item)
 exit: function(item)
 {
         item.hideItem();
-        item.showToggleStandardInfoButton();
-        item.showTogglePracticeInfoButton();
-        item.showToggleCoreInfoButton();
-        item.showToggleTimesTablesInfoButton();
-	
 	item.mShowItem = false;
 }
 
@@ -275,11 +255,6 @@ enter: function(item)
         item.hideAnswerInputs();
         item.hideUserAnswer();
         item.hideQuestionShapes();
-        item.hideToggleStandardInfoButton();
-        item.hideToggleItemInfoButton();
-        item.hideToggleCoreInfoButton();
-        item.hideToggleTimesTablesInfoButton();
-
         item.showPractice();
 
         if(item.raphael != 0)
@@ -299,10 +274,6 @@ execute: function(item)
 exit: function(item)
 {
         item.hidePractice();
-        item.showToggleStandardInfoButton();
-        item.showToggleItemInfoButton();
-        item.showToggleCoreInfoButton();
-        item.showToggleTimesTablesInfoButton();
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
@@ -330,10 +301,6 @@ enter: function(item)
         item.hideAnswerInputs();
         item.hideUserAnswer();
         item.hideQuestionShapes();
-        item.hideToggleStandardInfoButton();
-        item.hideToggleItemInfoButton();
-        item.hideTogglePracticeInfoButton();
-        item.hideToggleTimesTablesInfoButton();
 
         item.showCore();
 
@@ -355,10 +322,6 @@ execute: function(item)
 exit: function(item)
 {
         item.hideCore();
-        item.showToggleStandardInfoButton();
-        item.showToggleItemInfoButton();
-        item.showTogglePracticeInfoButton();
-        item.showToggleTimesTablesInfoButton();
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
@@ -386,11 +349,6 @@ enter: function(item)
         item.hideAnswerInputs();
         item.hideUserAnswer();
         item.hideQuestionShapes();
-        item.hideToggleStandardInfoButton();
-        item.hideToggleItemInfoButton();
-        item.hideTogglePracticeInfoButton();
-        item.hideToggleCoreInfoButton();
-
         item.showTimesTables();
 
         if(item.raphael != 0)
@@ -411,10 +369,6 @@ execute: function(item)
 exit: function(item)
 {
         item.hideTimesTables();
-        item.showToggleStandardInfoButton();
-        item.showToggleItemInfoButton();
-        item.showTogglePracticeInfoButton();
-        item.showToggleCoreInfoButton();
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
