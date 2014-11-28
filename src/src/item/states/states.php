@@ -204,6 +204,8 @@ exit: function(item)
         item.showTogglePracticeInfoButton();
         item.showToggleCoreInfoButton();
         item.showToggleTimesTablesInfoButton();
+
+	item.mShowStandard = false;
 }
 
 });
@@ -249,6 +251,8 @@ exit: function(item)
         item.showTogglePracticeInfoButton();
         item.showToggleCoreInfoButton();
         item.showToggleTimesTablesInfoButton();
+	
+	item.mShowItem = false;
 }
 
 });
@@ -302,6 +306,8 @@ exit: function(item)
 
         if(item.raphael != 0)
           item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
+
+	item.mShowPractice = false;
 }
 
 });
@@ -335,6 +341,7 @@ enter: function(item)
 	{
         	item.raphael.setSize(10,10);
 	}
+
 },
 
 execute: function(item)
@@ -390,6 +397,7 @@ enter: function(item)
 	{
         	item.raphael.setSize(10,10);
 	}
+	
 },
 
 execute: function(item)
