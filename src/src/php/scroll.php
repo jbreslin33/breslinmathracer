@@ -59,11 +59,11 @@ public function setScroll()
 			}
 			else
 			{
-				$itemString .= $place_array[$intval($i - 1)];
+				$itemString .= $place_array[intval($i - 1)];
 				$itemString .= " ";
-				$itemString .= $first_name_array[$intval($i - 1)];
+				$itemString .= $first_name_array[intval($i - 1)];
 				$itemString .= " ";
-				$itemString .= $last_name_array[$intval($i - 1)];
+				$itemString .= $last_name_array[intval($i - 1)];
 				$itemString .= " ";
 				$itemString .= " ";
 			}

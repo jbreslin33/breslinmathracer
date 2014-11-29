@@ -165,8 +165,6 @@ Extends: Application,
                         }
 			if (codeNumber == APPLICATION.SCROLL)
 			{
-				APPLICATION.log('got scroll');
-				APPLICATION.log('its' + responseArray[1]);
 				APPLICATION.mHud.mScroll.setText(responseArray[1]); 
 			}
 		}
@@ -279,7 +277,6 @@ Extends: Application,
 
         getScroll: function()
         {
-		APPLICATION.log('scroll sent');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
