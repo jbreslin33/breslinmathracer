@@ -64,7 +64,9 @@ public function setScroll()
 				$itemString .= $first_name_array[intval($i - 1)];
 				$itemString .= " ";
 				$itemString .= $last_name_array[intval($i - 1)];
-				$itemString .= " ";
+				$itemString .= "(";
+				$itemString .= $score_array[intval($i - 1)];
+				$itemString .= ") ";
 				$itemString .= " ";
 			}
 			//2nd place you
@@ -73,7 +75,9 @@ public function setScroll()
 			$itemString .= $first_name_array[$i];
 			$itemString .= " ";
 			$itemString .= $last_name_array[$i];
-			$itemString .= " ";
+			$itemString .= "(";
+			$itemString .= $score_array[$i];
+			$itemString .= ") ";
 			$itemString .= " ";
 			
 			if ($place == $place_array[$i]) //your in last so there is no one else
@@ -88,7 +92,9 @@ public function setScroll()
 				$itemString .= $first_name_array[intval($i + 1)];
 				$itemString .= " ";
 				$itemString .= $last_name_array[intval($i + 1)];
-				$itemString .= " ";
+				$itemString .= "(";
+				$itemString .= $score_array[intval($i + 1)];
+				$itemString .= ") ";
 				$itemString .= " ";
 			}
 		}
