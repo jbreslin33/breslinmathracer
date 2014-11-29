@@ -39,7 +39,18 @@ public function setScroll()
 	for($i=0; $i < intval(count($place_array)); $i++)
 	{
 		//found you
-		if ($id_array[$i] == $_SESSION["user_id"])
+		$mark_id = 0;
+		if (!isset($_SESSION["user_id"]))
+		{
+			$mark_id = $id_array[0];
+		}
+		else
+		{
+			$mark_id = $_SESSION["user_id"];
+		}
+
+		//now check with mark id
+		if ($id_array[$i] == $mark_id)
 		{
 			//first place
 			if ($place_array[$i] == 1)
