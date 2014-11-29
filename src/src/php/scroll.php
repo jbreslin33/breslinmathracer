@@ -55,7 +55,7 @@ public function setScroll()
 			//first place
 			if ($place_array[$i] == 1)
 			{
-				$itemString .= "YOUR IN FIRST PLACE!!! ";
+				//$itemString .= "YOUR IN FIRST PLACE!!! ";
 			}
 			else
 			{
