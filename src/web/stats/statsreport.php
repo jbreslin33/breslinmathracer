@@ -65,7 +65,8 @@ while ($progression_counter < $progression_end)
 
 	$query = "select id, progression from item_types where progression > ";
 	$query .= $progression_counter;
-	$query .= " AND active_code = 1 AND speed = 0";
+	//$query .= " AND active_code = 1 AND speed = 0";
+	$query .= " AND active_code = 1";
 	$query .= " order by progression LIMIT 1";
 
 	$result = pg_query($conn,$query);
