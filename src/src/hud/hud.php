@@ -73,11 +73,11 @@ var Hud = new Class(
 		{
                         APPLICATION.mGame.mSheet.getItem().mShowPractice = true;
 		}
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Item Description")
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Item description")
 		{
                         APPLICATION.mGame.mSheet.getItem().mShowItem = true;
 		}
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Standard Description")
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Standard description")
 		{
                         APPLICATION.mGame.mSheet.getItem().mShowStandard = true;
 		}
@@ -85,7 +85,7 @@ var Hud = new Class(
 		{
 			window.location.href = "/web/home/home.php";
 		}
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Logout")
+		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Sign out")
 		{
 			window.location.href = "/web/php/logout.php";
 		}
@@ -98,10 +98,10 @@ var Hud = new Class(
 		homeSelectArray.push('Core');
 		homeSelectArray.push('XTables');
 		homeSelectArray.push('Practice');
-		homeSelectArray.push('Item Description');
-		homeSelectArray.push('Standard Description');
+		homeSelectArray.push('Item description');
+		homeSelectArray.push('Standard description');
 		homeSelectArray.push('Reports');
-		homeSelectArray.push('Logout');
+		homeSelectArray.push('Sign out');
 
                 for (var i = 0; i < homeSelectArray.length; i++)
                 {

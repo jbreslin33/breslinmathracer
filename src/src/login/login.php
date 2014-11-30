@@ -60,7 +60,7 @@ Extends: Game,
                         this.mLoginButton.mMesh.addEvent('click',this.hitLoginButton);
                 }
                 this.mShapeArray.push(this.mLoginButton);
-                this.mLoginButton.mMesh.innerHTML = 'LOGIN';
+                this.mLoginButton.mMesh.innerHTML = 'SIGN IN';
 
 
                 //SIGNUP BUTTON
