@@ -74,7 +74,7 @@ Extends: Game,
                         this.mSignupButton.mMesh.addEvent('click',this.hitSignupButton);
                 }
                 this.mShapeArray.push(this.mSignupButton);
-                this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
+                this.mSignupButton.mMesh.innerHTML = 'Create an account';
                
 		//APPLICATION.checkLogin();
 	},
