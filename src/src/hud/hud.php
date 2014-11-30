@@ -25,14 +25,12 @@ var Hud = new Class(
 	this.setProgression('');
 	
 	this.mProgressedTypeID = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
-	this.mProgressedTypeID.setText('<font size="1"> Question: </font>');
 
         this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
 
         this.mItemTypeStats = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
 
 	this.mUsername = new Shape     (180, ySize,590,  yCoord,"","","#F8CDF8","boundary");
-        this.mUsername.setText('<font size="1">User:' + this.mApplication.mFirstName + ' ' + this.mApplication.mLastName + '</font>');
         
 	eastBounds  = new Shape         ( 10, 50,760, 35,"","","#F8CDF8","boundary");
         eastBounds  = new Shape         ( 10, 50,760, 85,"","","#F6C0F6","boundary");
