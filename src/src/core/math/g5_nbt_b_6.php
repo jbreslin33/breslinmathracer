@@ -1,3 +1,37 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_8',5.1008,'5.nbt.b.6','4 d 2 remainder word problem');
+*/
+var i_5_nbt_b_6__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.6_8';
+
+        this.ns = new NameSampler();
+
+        this.x = 0;
+        this.y = 0;
+        this.q = 0;
+        this.r = 0;
+        while( this.r == 0)
+        {
+                this.x = Math.floor((Math.random()*90)+10);
+                this.y = Math.floor((Math.random()*9000)+1000);
+                this.q = Math.floor(this.y/this.x);
+                this.r = this.y % this.x;
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' shared ' + this.y + ' ' + this.ns.mFruitOne + ' equally with ' + this.x + ' people. How many ' + this.ns.mFruitOne + ' are left over?');
+        this.setAnswer('' + this.r,0);
+        this.setAnswer('' + this.r + ' ' + this.ns.mFruitOne,1);
+        this.setAnswer('' + this.r + ' ' + this.ns.mFruitOne + ' left',2);
+        this.setAnswer('' + this.r + ' ' + this.ns.mFruitOne + ' left over',3);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_7',5.1007,'5.nbt.b.6','4 d 2 no remainder word problem');
