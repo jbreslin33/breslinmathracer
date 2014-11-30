@@ -138,7 +138,7 @@ var Hud = new Class(
 
 	setScroll: function(scroll)
 	{
-        	this.mScroll.setText(''  + scroll + '');
+        	this.mScroll.setText('<font size="1">'  + scroll + '</font>');
 	}
 });
 

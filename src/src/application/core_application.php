@@ -165,7 +165,7 @@ Extends: Application,
                         }
 			if (codeNumber == APPLICATION.SCROLL)
 			{
-				APPLICATION.mHud.mScroll.setText(responseArray[1]); 
+				APPLICATION.mHud.setScroll(responseArray[1]); 
 			}
 		}
 	},
