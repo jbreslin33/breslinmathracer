@@ -121,7 +121,7 @@ Extends: Game,
                         this.mSignupButton.mMesh.addEvent('click',this.hitSignupButton);
                 }
                 this.mShapeArray.push(this.mSignupButton);
-                this.mSignupButton.mMesh.innerHTML = 'SIGNUP';
+                this.mSignupButton.mMesh.innerHTML = 'Create an account';
 
 
                 //LOGIN BUTTON
@@ -135,7 +135,7 @@ Extends: Game,
                         this.mLoginButton.mMesh.addEvent('click',this.hitLoginButton);
                 }
                 this.mShapeArray.push(this.mLoginButton);
-                this.mLoginButton.mMesh.innerHTML = 'Login';
+                this.mLoginButton.mMesh.innerHTML = 'Sign in';
 	},
 
 	//***tab to next
