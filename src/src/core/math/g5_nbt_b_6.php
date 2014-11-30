@@ -1,5 +1,39 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_7',5.1007,'5.nbt.b.6','4 d 2 no remainder word problem');
+*/
+var i_5_nbt_b_6__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.6_7';
+
+        this.ns = new NameSampler();
+
+        this.x = 0;
+        this.y = 0;
+        this.z = parseInt(11111);
+        while(this.z > 9999 || this.z < 1000 )
+        {
+                this.x        = Math.floor((Math.random()*90)+10);
+                this.y        = Math.floor((Math.random()*900)+100);
+                this.z        = parseInt(this.x * this.y);
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + this.z + ' flower seeds. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' put ' + this.x + ' each into garden pots. How many garden pots did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use?');
+        this.answer = parseInt(this.y);
+
+        this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer + ' pots',1);
+        this.setAnswer('' + this.answer + ' garden pots',2);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_6',5.1006,'5.nbt.b.6','3 d 2 remainder word problem');
 */
 var i_5_nbt_b_6__6 = new Class(
