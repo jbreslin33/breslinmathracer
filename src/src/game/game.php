@@ -404,12 +404,18 @@ var Game = new Class(
         setScore: function(score)
         {
                 this.mScore = score;
-                APPLICATION.mHud.mScore.setText('<font size="1">Score: ' + this.mScore + '</font>');
+		if (this.mScore !=  0)
+		{
+                	APPLICATION.mHud.mScore.setText('<font size="1">Score: ' + this.mScore + '</font>');
+		}
         },
 
         incrementScore: function()
         {
-                APPLICATION.mHud.mScore.setText('<font size="1"> Score : ' + this.mScore + '</font>');
+		if (this.mScore !=  0)
+		{
+                	APPLICATION.mHud.mScore.setText('<font size="1"> Score : ' + this.mScore + '</font>');
+		}
         },
   
 	//states

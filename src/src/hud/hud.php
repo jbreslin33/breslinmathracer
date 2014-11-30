@@ -20,9 +20,8 @@ var Hud = new Class(
 	this.mHome.mMesh.onchange = this.homeSelected;
 
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
-	this.setStandard('');
-        this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
-	this.setProgression('');
+       
+	 this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
 	
 	this.mProgressedTypeID = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
 
@@ -42,7 +41,6 @@ var Hud = new Class(
         eastBounds  = new Shape         ( 10, 20,760,385,"","","#F08EF0","boundary");
 
         this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boundary");
-	this.mScroll.setText('');
 
         westBounds  = new Shape         ( 10, 50,  0, 35,"","","#F8CDF8","boundary");
         westBounds  = new Shape         ( 10, 50,  0, 85,"","","#F6C0F6","boundary");
