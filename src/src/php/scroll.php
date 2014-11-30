@@ -7,7 +7,25 @@ class Scroll
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->setScroll();
+
+	if (!isset($_SESSION["ref_id"]))
+	{
+		//do nothing....	
+		date_default_timezone_set("UTC"); 
+		$_SESSION["scroll"] = "UTC:".time();
+	}
+	else
+	{
+		if ($_SESSION["ref_id"] == 'normal'  )
+		{
+			$this->setScroll();
+		}
+		else
+		{
+       			 $_SESSION["scroll"] = "not normal";
+		}
+
+	}
 }
 public function setScroll()
 {
@@ -35,6 +53,7 @@ public function setScroll()
 		$score_array[]  = pg_Result($result, $i, 'score');	
 		$place++;
 	}
+
 	
 	for($i=0; $i < intval(count($place_array)); $i++)
 	{
@@ -86,16 +105,19 @@ public function setScroll()
 			}
 			else
 			{
-				//3rd
-				$itemString .= $place_array[intval($i + 1)];
-				$itemString .= " ";
-				$itemString .= $first_name_array[intval($i + 1)];
-				$itemString .= " ";
-				$itemString .= $last_name_array[intval($i + 1)];
-				$itemString .= "(";
-				$itemString .= $score_array[intval($i + 1)];
-				$itemString .= ") ";
-				$itemString .= " ";
+				if ( intval(count($place_array)) > 2)	
+				{
+					//3rd
+					$itemString .= $place_array[intval($i + 1)];
+					$itemString .= " ";
+					$itemString .= $first_name_array[intval($i + 1)];
+					$itemString .= " ";
+					$itemString .= $last_name_array[intval($i + 1)];
+					$itemString .= "(";
+					$itemString .= $score_array[intval($i + 1)];
+					$itemString .= ") ";
+					$itemString .= " ";
+				}
 			}
 		}
 	}
