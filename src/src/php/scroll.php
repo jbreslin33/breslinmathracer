@@ -20,12 +20,22 @@ function __construct()
 		{
 			$this->setScroll();
 		}
+		if ($_SESSION["ref_id"] == 'timestables_2') 
+		{
+       			 //$_SESSION["scroll"] = "not normal";
+			$this->timesTablesTwo();
+		}
 		else
 		{
        			 $_SESSION["scroll"] = "not normal";
 		}
 
 	}
+}
+public function timesTablesTwo()
+{
+
+       	$_SESSION["scroll"] = "times tables two dog";
 }
 public function setScroll()
 {
