@@ -13,6 +13,9 @@ var Hud = new Class(
 	/******************* BOUNDARY WALLS AND HUD COMBO ***********/
         var ySize = 35;
         var yCoord = 0;
+        
+	this.mHomeBaseColor = new Shape(90, ySize,  0,   yCoord,"","","#F8CDF8","boundary");
+
         this.mHome = new Shape(90, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
 	this.mHome.mMesh.onchange = this.homeSelected;
 
