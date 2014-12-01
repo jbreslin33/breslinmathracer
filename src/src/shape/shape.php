@@ -37,6 +37,15 @@ Extends: Polygon,
                         this.mMesh.style.height = this.mHeight+'px'; 
                 }
 
+                else if (this.mSrc == "DIV")
+                {
+                        //button to attach to our div "vessel"
+                        this.mMesh  = document.createElement("DIV");
+                        this.mMesh.style.width = this.mWidth+'px';
+                        this.mMesh.style.height = this.mHeight+'px';
+                }
+
+
                 else if (this.mSrc == "SELECT")
                 {
                         //button to attach to our div "vessel"
