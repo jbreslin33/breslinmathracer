@@ -3,7 +3,7 @@ var BreslinTable = new Class(
 {
 initialize: function(dataArray)
 {
-	this.mTable = new Shape(20, 40,  200, 300,"","TABLE","#F8CDF8","boundary");
+	this.mTable = new Shape(200, 400,  20, 30,"","TABLE","#F8CDF8","boundary");
 
 
 	this.mNumberOfCols = dataArray.length;
@@ -13,6 +13,18 @@ initialize: function(dataArray)
 	APPLICATION.log(this.mNumberOfRows);	
 
 	//just use col1 as length for all
+
+	for (r=0; r<this.mNumberOfRows; r++)
+	{
+		var row = this.mTable.mMesh.insertRow(0);
+		for (c=0; c<this.mNumberOfCols; c++)
+		{
+			var cell = row.insertCell(c);
+			//cell.innerHTML = dataArray[r][c];
+			cell.innerHTML = "h";
+		}
+	}
+	
 /*
 	for (i=0; i<col1.length; i++)
 	{
