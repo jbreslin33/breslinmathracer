@@ -30,30 +30,267 @@ initialize: function(sheet)
 	this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mThresholdTime = 5000;
         this.mClock = new ClockTimer(APPLICATION);
-	
-	this.mOne = new Shape(50, 50,  20, 50,"","DIV","#F8CDF8","");
-	this.mOne.setText('1');
+
+	//1	
+	this.mOne = new Shape(100, 40,  200, 100,"","DIV","#F8CDF8","");
 	this.mOne.mMesh.onclick = this.hitOne;
+	
+	this.mOne = new Shape(100, 60,  200, 140,"","DIV","#F8CDF8","");
+	this.mOne.mMesh.innerHTML = '1';
+	this.mOne.mMesh.onclick = this.hitOne;
+	this.mOne.mMesh.style.textAlign="center";	
+	
+	//2	
+	this.mTwo = new Shape(100, 40,  300, 100,"","DIV","#F8CDF8","");
+	this.mTwo.mMesh.onclick = this.hitTwo;
+
+	this.mTwo = new Shape(100, 60,  300, 140,"","DIV","#F8CDF8","");
+	this.mTwo.mMesh.innerHTML = '2';
+	this.mTwo.mMesh.onclick = this.hitTwo;
+	this.mTwo.mMesh.style.textAlign="center";	
+	
+	//3	
+	this.mThree = new Shape(100, 40,  400, 100,"","DIV","#F8CDF8","");
+	this.mThree.mMesh.onclick = this.hitThree;
+
+	this.mThree = new Shape(100, 60,  400, 140,"","DIV","#F8CDF8","");
+	this.mThree.mMesh.innerHTML = '3';
+	this.mThree.mMesh.onclick = this.hitThree;
+	this.mThree.mMesh.style.textAlign="center";	
+	
+	//4	
+	this.mFour = new Shape(100, 40,  200, 200,"","DIV","#F8CDF8","");
+	this.mFour.mMesh.onclick = this.hitFour;
+
+	this.mFour = new Shape(100, 60,  200, 240,"","DIV","#F8CDF8","");
+	this.mFour.mMesh.innerHTML = '4';
+	this.mFour.mMesh.onclick = this.hitFour;
+	this.mFour.mMesh.style.textAlign="center";	
+	
+	//5	
+	this.mFive = new Shape(100, 40,  300, 200,"","DIV","#F8CDF8","");
+	this.mFive.mMesh.onclick = this.hitFive;
+
+	this.mFive = new Shape(100, 60,  300, 240,"","DIV","#F8CDF8","");
+	this.mFive.mMesh.innerHTML = '5';
+	this.mFive.mMesh.onclick = this.hitFive;
+	this.mFive.mMesh.style.textAlign="center";	
+	
+	//6	
+	this.mSix = new Shape(100, 40,  400, 200,"","DIV","#F8CDF8","");
+	this.mSix.mMesh.onclick = this.hitSix;
+
+	this.mSix = new Shape(100, 60,  400, 240,"","DIV","#F8CDF8","");
+	this.mSix.mMesh.innerHTML = '6';
+	this.mSix.mMesh.onclick = this.hitSix;
+	this.mSix.mMesh.style.textAlign="center";	
+	
+	//7
+	this.mSeven = new Shape(100, 40,  200, 300,"","DIV","#F8CDF8","");
+	this.mSeven.mMesh.onclick = this.hitSeven;
+
+	this.mSeven = new Shape(100, 60,  200, 340,"","DIV","#F8CDF8","");
+	this.mSeven.mMesh.innerHTML = '7';
+	this.mSeven.mMesh.onclick = this.hitSeven;
+	this.mSeven.mMesh.style.textAlign="center";	
+	
+	//8
+	this.mEight = new Shape(100, 40,  300, 300,"","DIV","#F8CDF8","");
+	this.mEight.mMesh.onclick = this.hitEight;
+
+	this.mEight = new Shape(100, 60,  300, 340,"","DIV","#F8CDF8","");
+	this.mEight.mMesh.innerHTML = '8';
+	this.mEight.mMesh.onclick = this.hitEight;
+	this.mEight.mMesh.style.textAlign="center";	
+	
+	//9
+	this.mNine = new Shape(100, 40,  400, 300,"","DIV","#F8CDF8","");
+	this.mNine.mMesh.onclick = this.hitNine;
+
+	this.mNine = new Shape(100, 60,  400, 340,"","DIV","#F8CDF8","");
+	this.mNine.mMesh.innerHTML = '9';
+	this.mNine.mMesh.onclick = this.hitNine;
+	this.mNine.mMesh.style.textAlign="center";	
+	
+	//0
+	this.mZero = new Shape(100, 40,  500, 300,"","DIV","#F8CDF8","");
+	this.mZero.mMesh.onclick = this.hitZero;
+
+	this.mZero = new Shape(100, 60,  500, 340,"","DIV","#F8CDF8","");
+	this.mZero.mMesh.innerHTML = '0';
+	this.mZero.mMesh.onclick = this.hitZero;
+	this.mZero.mMesh.style.textAlign="center";	
+},
+
+isItRightYet: function()
+{
+	if (APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value == APPLICATION.mGame.mSheet.getItem().mAnswerArray[0])
+	{
+		//lets submit	
+		APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value);
+	} 
 },
 
 hitOne: function()
 {
-	//APPLICATION.mGame.mSheet.mItem.mAnswerTextBox.setText('' + APPLICATION.mGame.mSheet.mItem.mAnswerTextBox.getText() + '1');   
-	//APPLICATION.mGame.mSheet.mItem.mAnswerTextBox.setText('hh');   
-	//APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.setText('hh');
         if (APPLICATION.mGame)
         {
         	if (APPLICATION.mGame.mSheet)
                 {
                 	if (APPLICATION.mGame.mSheet.getItem())
                         {
-				//APPLICATION.log('hit one');
 				var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value; 
                                	APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '1';
+				APPLICATION.mGame.mSheet.getItem().isItRightYet();	
                         }
                 }
 	}
+},
+
+hitTwo: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '2';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitThree: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '3';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitFour: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '4';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitFive: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '5';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitSix: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '6';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitSeven: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '7';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitEight: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '8';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitNine: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '9';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
+},
+
+hitZero: function()
+{
+        if (APPLICATION.mGame)
+        {
+                if (APPLICATION.mGame.mSheet)
+                {
+                        if (APPLICATION.mGame.mSheet.getItem())
+                        {
+                                var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value;
+                                APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '0';
+                                APPLICATION.mGame.mSheet.getItem().isItRightYet();
+                        }
+                }
+        }
 }
+
 
 });
 /*
