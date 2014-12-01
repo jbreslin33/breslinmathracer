@@ -54,9 +54,20 @@ public function timesTablesTwo()
 	
 	for($i=0; $i < intval(count($description_array)); $i++)
 	{
+		if ($transaction_code_array[$i] == 0)
+		{
+			$itemString .= '<font color="white">';
+		}
+		if ($transaction_code_array[$i] == 1)
+		{
+			$itemString .= '<font color="green">';
+		}
+		if ($transaction_code_array[$i] == 2)
+		{
+			$itemString .= '<font color="red">';
+		}
 		$itemString .=  $description_array[$i];
-		$itemString .=  ":";
-		$itemString .=  $transaction_code_array[$i];
+		$itemString .= '</font>';
 		$itemString .=  " ";
 	}
 
