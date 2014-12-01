@@ -44,6 +44,22 @@ Extends: Polygon,
                         this.mMesh.style.width = this.mWidth+'px'; 
                         this.mMesh.style.height = this.mHeight+'px'; 
                 }
+                else if (this.mSrc == "TABLE")
+                {
+                        //table to attach to our div "vessel"
+                        this.mMesh  = document.createElement("TABLE");
+                        this.mMesh.style.width = this.mWidth+'px'; 
+                        this.mMesh.style.height = this.mHeight+'px'; 
+
+			this.mTR = document.createElement("TR");
+			this.mMesh.appendChild(this.mTR);
+			
+			this.mTD = document.createElement("TD");
+			this.mTextNode = document.createTextNode("Hello");
+			this.mTD.appendChild(this.mTextNode);
+
+			this.mTR.appendChild(this.mTD);
+                }
 
 		else if (this.mSrc == "AUDIO")
                 {
