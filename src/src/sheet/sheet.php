@@ -6,6 +6,7 @@ var Sheet = new Class(
 {
         initialize: function(game)
         {
+		APPLICATION.log('new sheet');
 
 		//logs
 		this.mStateLogs = false; 

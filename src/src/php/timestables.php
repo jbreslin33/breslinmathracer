@@ -102,22 +102,6 @@ public function setRawData()
 	}
         if ($this->mTableNumber == 3)
         {
-		/*
-                $randomNumber = rand(16,32);
-		$randomNumber = intval($randomNumber);  
-		if ($randomNumber == 16)
-		{
-			$randomNumber = 2;
-		}
-		if ($randomNumber == 17)
-		{
-			$randomNumber = 3;
-		}
-                $randid = '3.oa.c.7';
-                $randid .= "_";
-                $randid .= $randomNumber;
-                $this->mTypeID = $randid;
-		*/
                 $randomNumber = rand(18,32);
                 $randid = '3.oa.c.7';
                 $randid .= "_";
