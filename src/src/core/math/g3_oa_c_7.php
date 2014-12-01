@@ -8,9 +8,6 @@ initialize: function(dataArray)
 	this.mNumberOfCols = dataArray.length;
 	this.mNumberOfRows = dataArray[0].length;
 	
-	APPLICATION.log(this.mNumberOfCols);	
-	APPLICATION.log(this.mNumberOfRows);	
-
 	for (r=this.mNumberOfRows -1; r>=0; r--)
 	{
 		var row = this.mTable.mMesh.insertRow(0);
