@@ -35,93 +35,102 @@ initialize: function(sheet)
 	this.mUserAnswerLabel.setPosition(120,75);
 	this.mContinueCorrectButton.setPosition(678,394);
 	this.mContinueIncorrectButton.setPosition(678,394);
+/*
+this.mQuestionLabel.setSize(100,50);
+                        this.mQuestionLabel.setPosition(325,95);
+
+                        this.mAnswerTextBox.setSize(100,50);
+                        this.mAnswerTextBox.setPosition(425,100);
+*/
+	this.mQuestionLabel.setPosition(280,75);
+	this.mAnswerTextBox.setPosition(325,75);
 
 	//1	
-	this.mOne = new Shape(100, 40,  200, 100,"","DIV","#EFEFFB","");
+	this.mOne = new Shape(100, 40,  150, 100,"","DIV","#EFEFFB","");
 	this.mOne.mMesh.onclick = this.hitOne;
 	
-	this.mOne = new Shape(100, 60,  200, 140,"","DIV","#EFEFFB","");
+	this.mOne = new Shape(100, 60,  150, 140,"","DIV","#EFEFFB","");
 	this.mOne.mMesh.innerHTML = '1';
 	this.mOne.mMesh.onclick = this.hitOne;
 	this.mOne.mMesh.style.textAlign="center";	
 	
 	//2	
-	this.mTwo = new Shape(100, 40,  300, 100,"","DIV","#E0E0F8","");
+	this.mTwo = new Shape(100, 40,  250, 100,"","DIV","#E0E0F8","");
 	this.mTwo.mMesh.onclick = this.hitTwo;
 
-	this.mTwo = new Shape(100, 60,  300, 140,"","DIV","#E0E0F8","");
+	this.mTwo = new Shape(100, 60,  250, 140,"","DIV","#E0E0F8","");
 	this.mTwo.mMesh.innerHTML = '2';
 	this.mTwo.mMesh.onclick = this.hitTwo;
 	this.mTwo.mMesh.style.textAlign="center";	
 	
 	//3	
-	this.mThree = new Shape(100, 40,  400, 100,"","DIV","#CECEF6","");
+	this.mThree = new Shape(100, 40,  350, 100,"","DIV","#CECEF6","");
 	this.mThree.mMesh.onclick = this.hitThree;
 
-	this.mThree = new Shape(100, 60,  400, 140,"","DIV","#CECEF6","");
+	this.mThree = new Shape(100, 60,  350, 140,"","DIV","#CECEF6","");
 	this.mThree.mMesh.innerHTML = '3';
 	this.mThree.mMesh.onclick = this.hitThree;
 	this.mThree.mMesh.style.textAlign="center";	
 	
 	//4	
-	this.mFour = new Shape(100, 40,  200, 200,"","DIV","#A9A9F5","");
+	this.mFour = new Shape(100, 40,  150, 200,"","DIV","#A9A9F5","");
 	this.mFour.mMesh.onclick = this.hitFour;
 
-	this.mFour = new Shape(100, 60,  200, 240,"","DIV","#A9A9F5","");
+	this.mFour = new Shape(100, 60,  150, 240,"","DIV","#A9A9F5","");
 	this.mFour.mMesh.innerHTML = '4';
 	this.mFour.mMesh.onclick = this.hitFour;
 	this.mFour.mMesh.style.textAlign="center";	
 	
 	//5	
-	this.mFive = new Shape(100, 40,  300, 200,"","DIV","#8181F7","");
+	this.mFive = new Shape(100, 40, 250, 200,"","DIV","#8181F7","");
 	this.mFive.mMesh.onclick = this.hitFive;
 
-	this.mFive = new Shape(100, 60,  300, 240,"","DIV","#8181F7","");
+	this.mFive = new Shape(100, 60, 250, 240,"","DIV","#8181F7","");
 	this.mFive.mMesh.innerHTML = '5';
 	this.mFive.mMesh.onclick = this.hitFive;
 	this.mFive.mMesh.style.textAlign="center";	
 	
 	//6	
-	this.mSix = new Shape(100, 40,  400, 200,"","DIV","#5858FA","");
+	this.mSix = new Shape(100, 40,  350, 200,"","DIV","#5858FA","");
 	this.mSix.mMesh.onclick = this.hitSix;
 
-	this.mSix = new Shape(100, 60,  400, 240,"","DIV","#5858FA","");
+	this.mSix = new Shape(100, 60,  350, 240,"","DIV","#5858FA","");
 	this.mSix.mMesh.innerHTML = '6';
 	this.mSix.mMesh.onclick = this.hitSix;
 	this.mSix.mMesh.style.textAlign="center";	
 	
 	//7
-	this.mSeven = new Shape(100, 40,  200, 300,"","DIV","#2E2EFE","");
+	this.mSeven = new Shape(100, 40,  150, 300,"","DIV","#2E2EFE","");
 	this.mSeven.mMesh.onclick = this.hitSeven;
 
-	this.mSeven = new Shape(100, 60,  200, 340,"","DIV","#2E2EFE","");
+	this.mSeven = new Shape(100, 60,  150, 340,"","DIV","#2E2EFE","");
 	this.mSeven.mMesh.innerHTML = '7';
 	this.mSeven.mMesh.onclick = this.hitSeven;
 	this.mSeven.mMesh.style.textAlign="center";	
 	
 	//8
-	this.mEight = new Shape(100, 40,  300, 300,"","DIV","#0000FF","");
+	this.mEight = new Shape(100, 40,  250, 300,"","DIV","#0000FF","");
 	this.mEight.mMesh.onclick = this.hitEight;
 
-	this.mEight = new Shape(100, 60,  300, 340,"","DIV","#0000FF","");
+	this.mEight = new Shape(100, 60,  250, 340,"","DIV","#0000FF","");
 	this.mEight.mMesh.innerHTML = '8';
 	this.mEight.mMesh.onclick = this.hitEight;
 	this.mEight.mMesh.style.textAlign="center";	
 	
 	//9
-	this.mNine = new Shape(100, 40,  400, 300,"","DIV","#0101DF","");
+	this.mNine = new Shape(100, 40,  350, 300,"","DIV","#0101DF","");
 	this.mNine.mMesh.onclick = this.hitNine;
 
-	this.mNine = new Shape(100, 60,  400, 340,"","DIV","#0101DF","");
+	this.mNine = new Shape(100, 60,  350, 340,"","DIV","#0101DF","");
 	this.mNine.mMesh.innerHTML = '9';
 	this.mNine.mMesh.onclick = this.hitNine;
 	this.mNine.mMesh.style.textAlign="center";	
 	
 	//0
-	this.mZero = new Shape(100, 40,  500, 300,"","DIV","#0404B4","");
+	this.mZero = new Shape(100, 40,  450, 300,"","DIV","#0404B4","");
 	this.mZero.mMesh.onclick = this.hitZero;
 
-	this.mZero = new Shape(100, 60,  500, 340,"","DIV","#0404B4","");
+	this.mZero = new Shape(100, 60,  450, 340,"","DIV","#0404B4","");
 	this.mZero.mMesh.innerHTML = '0';
 	this.mZero.mMesh.onclick = this.hitZero;
 	this.mZero.mMesh.style.textAlign="center";	
