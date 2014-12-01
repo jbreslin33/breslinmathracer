@@ -1,3 +1,38 @@
+
+var BreslinTable = new Class(
+{
+initialize: function(dataArray)
+{
+	this.mTable = new Shape(20, 40,  200, 300,"","TABLE","#F8CDF8","boundary");
+
+	APPLICATION.log(dataArray.length);	
+	//APPLICATION.log(dataArray.length);	
+
+	//just use col1 as length for all
+/*
+	for (i=0; i<col1.length; i++)
+	{
+  		this.mRowArray.push = document.createElement("TR");
+        	this.mTable.mMesh.appendChild(this.mRowArray[i]);
+	
+		if (col1 != null)
+		{	
+        		this.mColArray.push = document.createElement("TD");
+
+		}
+
+	}
+
+        this.mColArray.push = document.createElement("TD");
+
+        this.mTextNode = document.createTextNode("Hello Table");
+        this.mTD.appendChild(this.mTextNode);
+
+        this.mTR.appendChild(this.mTD);
+*/
+}
+});
+
 var TimesTables = new Class(
 {
 Extends: TextItem,
@@ -8,15 +43,52 @@ initialize: function(sheet)
         this.mThresholdTime = 5000;
         this.mClock = new ClockTimer(APPLICATION);
 
-	this.mTable = new Shape(20, 40,  200, 300,"","TABLE","#F8CDF8","boundary");
-  	this.mTR = document.createElement("TR");
-        this.mTable.mMesh.appendChild(this.mTR);
+	this.mDataArray = new Array();
+	this.mColOneArray = new Array();
+	this.mColTwoArray = new Array();
 
-        this.mTD = document.createElement("TD");
-        this.mTextNode = document.createTextNode("Hello Table");
-        this.mTD.appendChild(this.mTextNode);
+	this.mColOneArray.push('Question'); 		
+	this.mColOneArray.push('2x2'); 		
+	this.mColOneArray.push('2x3'); 		
+	this.mColOneArray.push('3x2'); 		
+	this.mColOneArray.push('2x4'); 		
+	this.mColOneArray.push('4x2'); 		
+	this.mColOneArray.push('2x5'); 		
+	this.mColOneArray.push('5x2'); 		
+	this.mColOneArray.push('2x6'); 		
+	this.mColOneArray.push('6x2'); 		
+	this.mColOneArray.push('2x7'); 		
+	this.mColOneArray.push('7x2'); 		
+	this.mColOneArray.push('2x8'); 		
+	this.mColOneArray.push('8x2'); 		
+	this.mColOneArray.push('2x9'); 		
+	this.mColOneArray.push('9x2'); 		
+	this.mColOneArray.push('2x10'); 		
+	this.mColOneArray.push('10x2'); 		
+	
+	this.mColTwoArray.push('Percent'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('80'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('70'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('80'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('30'); 		
+	this.mColTwoArray.push('10'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('20'); 		
+	this.mColTwoArray.push('90'); 		
+	this.mColTwoArray.push('90'); 		
+	
+	this.mDataArray.push(this.mColOneArray);
+	this.mDataArray.push(this.mColTwoArray);
 
-        this.mTR.appendChild(this.mTD);
+	this.mBreslinTable = new BreslinTable(this.mDataArray);
 }
 });
 
@@ -33,6 +105,7 @@ initialize: function(sheet)
         this.mType = '3.oa.c.7_1';
         this.setQuestion('2 x 2');
         this.setAnswer('4',0);
+
 }
 });
 
