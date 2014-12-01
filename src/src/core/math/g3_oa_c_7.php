@@ -31,14 +31,28 @@ initialize: function(sheet)
         this.mThresholdTime = 5000;
         this.mClock = new ClockTimer(APPLICATION);
 	
-	this.mOne = new Shape(50, 50,  20, 50,"","","#F8CDF8","boundary");
+	this.mOne = new Shape(50, 50,  20, 50,"","DIV","#F8CDF8","");
 	this.mOne.setText('1');
 	this.mOne.mMesh.onclick = this.hitOne;
 },
 
 hitOne: function()
 {
-	APPLICATION.log('hit one');
+	//APPLICATION.mGame.mSheet.mItem.mAnswerTextBox.setText('' + APPLICATION.mGame.mSheet.mItem.mAnswerTextBox.getText() + '1');   
+	//APPLICATION.mGame.mSheet.mItem.mAnswerTextBox.setText('hh');   
+	//APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.setText('hh');
+        if (APPLICATION.mGame)
+        {
+        	if (APPLICATION.mGame.mSheet)
+                {
+                	if (APPLICATION.mGame.mSheet.getItem())
+                        {
+				//APPLICATION.log('hit one');
+				var v = APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value; 
+                               	APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value = '' + v + '1';
+                        }
+                }
+	}
 }
 
 });
