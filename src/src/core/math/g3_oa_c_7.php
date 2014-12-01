@@ -12,9 +12,7 @@ initialize: function(dataArray)
 	APPLICATION.log(this.mNumberOfCols);	
 	APPLICATION.log(this.mNumberOfRows);	
 
-	//just use col1 as length for all
-
-	for (r=0; r<this.mNumberOfRows; r++)
+	for (r=this.mNumberOfRows; r>0; --r)
 	{
 		var row = this.mTable.mMesh.insertRow(0);
 		for (c=0; c<this.mNumberOfCols; c++)
