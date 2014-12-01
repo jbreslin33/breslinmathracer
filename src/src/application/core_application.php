@@ -39,6 +39,8 @@ Extends: Application,
 		this.mRawData = 0;
 		this.mType = '';
 
+		this.mData = 0;
+
 		this.mLevelCompleted = false;
 		this.mLevelFailed = false;
 		this.mEvaluationFailed = false;

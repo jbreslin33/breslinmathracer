@@ -11,8 +11,8 @@ function __construct()
 	if (!isset($_SESSION["ref_id"]))
 	{
 		//do nothing....	
-		date_default_timezone_set("UTC"); 
-		$_SESSION["scroll"] = "UTC:".time();
+		//	date_default_timezone_set("UTC"); 
+		//	$_SESSION["scroll"] = "UTC:".time();
 	}
 	else
 	{
@@ -20,24 +20,15 @@ function __construct()
 		{
 			$this->setScroll();
 		}
-		if ($_SESSION["ref_id"] == 'timestables_2') 
-		{
-       			 //$_SESSION["scroll"] = "not normal";
-			$this->timesTablesTwo();
-		}
 		else
 		{
-       			 $_SESSION["scroll"] = "not normal";
+			//do nothing
 		}
-
 	}
 }
 public function timesTablesTwo()
 {
-
-       	//$_SESSION["scroll"] = "22:90|23:90|32:90|24:90|42:90|25:90|52:90|26:90|62:90|27:90|72:90|28:90|82:90|29:90|92:90|210:90|102:90";
-       	//$_SESSION["scroll"] = "22:90 23:90 32:90 24:90 42:90 25:90 52:90 26:90 62:90 27:90 72:90 28:90 82:90 29:90 92:90 210:90 102:90";
-       	$_SESSION["scroll"] = "2x2:90 2x3:90 3x2:90 2x4:90 4x2:90 2x5:90 5x2:90 2x6:90 6x2:90 2x7:90 7x2:90 2x8:90 8x2:90 2x9:90 9x2:90 2x10:90 10x2:90";
+       	//$_SESSION["scroll"] = "2x2:90 2x3:90 3x2:90 2x4:90 4x2:90 2x5:90 5x2:90 2x6:90 6x2:90 2x7:90 7x2:90 2x8:90 8x2:90 2x9:90 9x2:90 2x10:90 10x2:90";
 }
 public function setScroll()
 {
