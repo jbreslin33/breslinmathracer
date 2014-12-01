@@ -53,7 +53,6 @@ var Hud = new Class(
 
 	this.fillHomeSelect();
         
-	this.mTestTable = new Shape(100, 100,  100,  100,"","TABLE","#F8CDF8","boundary");
 
         },
 
