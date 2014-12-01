@@ -21,7 +21,7 @@ var Hud = new Class(
 
         this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
        
-	 this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
+	this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
 	
 	this.mProgressedTypeID = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
 
@@ -52,6 +52,9 @@ var Hud = new Class(
         westBounds  = new Shape         ( 10, 20,  0,385,"","","#F08EF0","boundary");
 
 	this.fillHomeSelect();
+        
+	this.mTestTable = new Shape(100, 100,  100,  100,"","TABLE","#F8CDF8","boundary");
+
         },
 
 	homeSelected: function()
