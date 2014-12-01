@@ -22,16 +22,47 @@ function __construct()
 		{
 			$this->setScroll();
 		}
-		else
+		if ($_SESSION["ref_id"] == 'timestables_2'  )
 		{
-			$this->setScroll();
+			$this->timesTablesTwo();
 		}
 	}
 }
+
+// i think you should just send a string of 1s and 2s and 0s then you will get a feel for how they are doing..
+//just make sure its the right table....
+
 public function timesTablesTwo()
 {
-       	//$_SESSION["scroll"] = "2x2:90 2x3:90 3x2:90 2x4:90 4x2:90 2x5:90 5x2:90 2x6:90 6x2:90 2x7:90 7x2:90 2x8:90 8x2:90 2x9:90 9x2:90 2x10:90 10x2:90";
+	$description_array = array();
+	$transaction_code_array = array();
+
+	$query = "select description, transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id WHERE progression > 3.07 AND progression < 3.0719 AND evaluations_attempts.user_id = ";
+	$query .= $_SESSION["user_id"]; 
+	$query .= " ORDER BY item_attempts.start_time desc";
+	$query .= " LIMIT 25";
+
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+       	$numberOfResults = pg_num_rows($result);
+	
+	for($i=0; $i < $numberOfResults; $i++)
+	{
+		$description_array[] = pg_Result($result, $i, 'description');	
+		$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');	
+	}
+	$itemString = ""; 
+	
+	for($i=0; $i < intval(count($description_array)); $i++)
+	{
+		$itemString .=  $description_array[$i];
+		$itemString .=  ":";
+		$itemString .=  $transaction_code_array[$i];
+		$itemString .=  " ";
+	}
+
+        $_SESSION["scroll"] = $itemString;
 }
+
 public function setScroll()
 {
 
