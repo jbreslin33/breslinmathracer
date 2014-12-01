@@ -30,6 +30,18 @@ initialize: function(sheet)
 	this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mThresholdTime = 5000;
         this.mClock = new ClockTimer(APPLICATION);
+	
+	this.mOne = new Shape(50, 50,  20, 50,"","","#F8CDF8","boundary");
+	this.mOne.setText('1');
+	this.mOne.mMesh.onclick = this.hitOne;
+},
+
+hitOne: function()
+{
+	APPLICATION.log('hit one');
+}
+
+});
 /*
 
 	this.mColOneArray = new Array();
@@ -79,8 +91,6 @@ initialize: function(sheet)
 
 	this.mBreslinTable = new BreslinTable(this.mSheet.mGame.mApplication.mData);
 */
-}
-});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_1',3.0701,'3.oa.c.7','2x2');
