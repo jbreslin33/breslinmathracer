@@ -40,95 +40,113 @@ initialize: function(sheet)
 	this.mAnswerTextBox.setPosition(325,75);
 
 	//1	
-	this.mOneA = new Shape(100, 40,  150, 100,"","DIV","#EFEFFB","");
-	//this.mOneA.mMesh.onclick = this.hitOne;
-        //this.addShape(this.mOneA);
-        //this.mQuestionLabel.mCollidable = false;
-        //       this.mQuestionLabel.mCollisionOn = false;
-
+	this.mOneA = new Shape(100, 40,  150, 100,this.mSheet.mGame,"DIV","#EFEFFB","");
+	this.mOneA.mMesh.onclick = this.hitOne;
+        this.addShape(this.mOneA);
+        this.mOneA.mCollidable = false;
+        this.mOneA.mCollisionOn = false;
 	
-	this.mOneB = new Shape(100, 60,  150, 140,"","DIV","#EFEFFB","");
+	this.mOneB = new Shape(100, 60,  150, 140,this.mSheet.mGame,"DIV","#EFEFFB","");
+        this.addShape(this.mOneB);
 	this.mOneB.mMesh.innerHTML = '1';
 	this.mOneB.mMesh.onclick = this.hitOne;
 	this.mOneB.mMesh.style.textAlign="center";	
 	
 	//2	
-	this.mTwoA = new Shape(100, 40,  250, 100,"","DIV","#E0E0F8","");
+	this.mTwoA = new Shape(100, 40,  250, 100,this.mSheet.mGame,"DIV","#E0E0F8","");
+        this.addShape(this.mTwoA);
 	this.mTwoA.mMesh.onclick = this.hitTwo;
 
-	this.mTwoB = new Shape(100, 60,  250, 140,"","DIV","#E0E0F8","");
+	this.mTwoB = new Shape(100, 60,  250, 140,this.mSheet.mGame,"DIV","#E0E0F8","");
+        this.addShape(this.mTwoB);
 	this.mTwoB.mMesh.innerHTML = '2';
 	this.mTwoB.mMesh.onclick = this.hitTwo;
 	this.mTwoB.mMesh.style.textAlign="center";	
 	
 	//3	
-	this.mThreeA = new Shape(100, 40,  350, 100,"","DIV","#CECEF6","");
+	this.mThreeA = new Shape(100, 40,  350, 100,this.mSheet.mGame,"DIV","#CECEF6","");
+        this.addShape(this.mThreeA);
 	this.mThreeA.mMesh.onclick = this.hitThree;
 
-	this.mThreeB = new Shape(100, 60,  350, 140,"","DIV","#CECEF6","");
+	this.mThreeB = new Shape(100, 60,  350, 140,this.mSheet.mGame,"DIV","#CECEF6","");
+        this.addShape(this.mThreeB);
 	this.mThreeB.mMesh.innerHTML = '3';
 	this.mThreeB.mMesh.onclick = this.hitThree;
 	this.mThreeB.mMesh.style.textAlign="center";	
 	
 	//4	
-	this.mFourA = new Shape(100, 40,  150, 200,"","DIV","#A9A9F5","");
+	this.mFourA = new Shape(100, 40,  150, 200,this.mSheet.mGame,"DIV","#A9A9F5","");
+        this.addShape(this.mFourA);
 	this.mFourA.mMesh.onclick = this.hitFour;
 
-	this.mFourB = new Shape(100, 60,  150, 240,"","DIV","#A9A9F5","");
+	this.mFourB = new Shape(100, 60,  150, 240,this.mSheet.mGame,"DIV","#A9A9F5","");
+        this.addShape(this.mFourB);
 	this.mFourB.mMesh.innerHTML = '4';
 	this.mFourB.mMesh.onclick = this.hitFour;
 	this.mFourB.mMesh.style.textAlign="center";	
 	
 	//5	
-	this.mFiveA = new Shape(100, 40, 250, 200,"","DIV","#8181F7","");
+	this.mFiveA = new Shape(100, 40, 250, 200,this.mSheet.mGame,"DIV","#8181F7","");
+        this.addShape(this.mFiveA);
 	this.mFiveA.mMesh.onclick = this.hitFive;
 
-	this.mFiveB = new Shape(100, 60, 250, 240,"","DIV","#8181F7","");
+	this.mFiveB = new Shape(100, 60, 250, 240,this.mSheet.mGame,"DIV","#8181F7","");
+        this.addShape(this.mFiveB);
 	this.mFiveB.mMesh.innerHTML = '5';
 	this.mFiveB.mMesh.onclick = this.hitFive;
 	this.mFiveB.mMesh.style.textAlign="center";	
 	
 	//6	
-	this.mSixA = new Shape(100, 40,  350, 200,"","DIV","#5858FA","");
+	this.mSixA = new Shape(100, 40,  350, 200,this.mSheet.mGame,"DIV","#5858FA","");
+        this.addShape(this.mSixA);
 	this.mSixA.mMesh.onclick = this.hitSix;
 
-	this.mSixB = new Shape(100, 60,  350, 240,"","DIV","#5858FA","");
+	this.mSixB = new Shape(100, 60,  350, 240,this.mSheet.mGame,"DIV","#5858FA","");
+        this.addShape(this.mSixB);
 	this.mSixB.mMesh.innerHTML = '6';
 	this.mSixB.mMesh.onclick = this.hitSix;
 	this.mSixB.mMesh.style.textAlign="center";	
 	
 	//7
-	this.mSevenA = new Shape(100, 40,  150, 300,"","DIV","#2E2EFE","");
+	this.mSevenA = new Shape(100, 40,  150, 300,this.mSheet.mGame,"DIV","#2E2EFE","");
+        this.addShape(this.mSevenA);
 	this.mSevenA.mMesh.onclick = this.hitSeven;
 
-	this.mSevenB = new Shape(100, 60,  150, 340,"","DIV","#2E2EFE","");
+	this.mSevenB = new Shape(100, 60,  150, 340,this.mSheet.mGame,"DIV","#2E2EFE","");
+        this.addShape(this.mSevenB);
 	this.mSevenB.mMesh.innerHTML = '7';
 	this.mSevenB.mMesh.onclick = this.hitSeven;
 	this.mSevenB.mMesh.style.textAlign="center";	
 	
 	//8
-	this.mEightA = new Shape(100, 40,  250, 300,"","DIV","#0000FF","");
+	this.mEightA = new Shape(100, 40,  250, 300,this.mSheet.mGame,"DIV","#0000FF","");
+        this.addShape(this.mEightA);
 	this.mEightA.mMesh.onclick = this.hitEight;
 
-	this.mEightB = new Shape(100, 60,  250, 340,"","DIV","#0000FF","");
+	this.mEightB = new Shape(100, 60,  250, 340,this.mSheet.mGame,"DIV","#0000FF","");
+        this.addShape(this.mEightB);
 	this.mEightB.mMesh.innerHTML = '8';
 	this.mEightB.mMesh.onclick = this.hitEight;
 	this.mEightB.mMesh.style.textAlign="center";	
 	
 	//9
-	this.mNineA = new Shape(100, 40,  350, 300,"","DIV","#0101DF","");
+	this.mNineA = new Shape(100, 40,  350, 300,this.mSheet.mGame,"DIV","#0101DF","");
+        this.addShape(this.mNineA);
 	this.mNineA.mMesh.onclick = this.hitNine;
 
-	this.mNineB = new Shape(100, 60,  350, 340,"","DIV","#0101DF","");
+	this.mNineB = new Shape(100, 60,  350, 340,this.mSheet.mGame,"DIV","#0101DF","");
+        this.addShape(this.mNineB);
 	this.mNineB.mMesh.innerHTML = '9';
 	this.mNineB.mMesh.onclick = this.hitNine;
 	this.mNineB.mMesh.style.textAlign="center";	
 	
 	//0
-	this.mZeroA = new Shape(100, 40,  450, 300,"","DIV","#0404B4","");
+	this.mZeroA = new Shape(100, 40,  450, 300,this.mSheet.mGame,"DIV","#0404B4","");
+        this.addShape(this.mZeroA);
 	this.mZeroA.mMesh.onclick = this.hitZero;
 
-	this.mZeroB = new Shape(100, 60,  450, 340,"","DIV","#0404B4","");
+	this.mZeroB = new Shape(100, 60,  450, 340,this.mSheet.mGame,"DIV","#0404B4","");
+        this.addShape(this.mZeroB);
 	this.mZeroB.mMesh.innerHTML = '0';
 	this.mZeroB.mMesh.onclick = this.hitZero;
 	this.mZeroB.mMesh.style.textAlign="center";	
@@ -163,9 +181,6 @@ showAnswerInputs: function()
 	APPLICATION.log('showAnswerInputs');
 	this.parent();
 
-	//this.mOneA.mMesh.style.display = 'block';
-
-/*
 	if (this.mOneA)
         {
         	this.mOneA.setVisibility(true);
@@ -246,7 +261,6 @@ showAnswerInputs: function()
         {
                 this.mZeroB.setVisibility(true);
         }
-*/
 },
 
 hideAnswerInputs: function()
@@ -254,7 +268,7 @@ hideAnswerInputs: function()
 	APPLICATION.log('hideAnswerInputs');
 	this.parent();
 	//this.mOneA.mMesh.style.display = 'none';
-/*
+
 	if (this.mOneA)
         {
         	this.mOneA.setVisibility(false);
@@ -335,9 +349,7 @@ hideAnswerInputs: function()
         {
                 this.mZeroB.setVisibility(false);
         }
-*/
 },
-
 
 isItRightYet: function()
 {
