@@ -3,8 +3,7 @@ var BreslinTable = new Class(
 {
 initialize: function(dataArray)
 {
-	this.mTable = new Shape(200, 300,  20, 50,"","TABLE","#F8CDF8","boundary");
-
+	this.mTable = new Shape(100, 300,  20, 50,"","TABLE","#F8CDF8","boundary");
 
 	this.mNumberOfCols = dataArray.length;
 	this.mNumberOfRows = dataArray[0].length;
@@ -12,7 +11,7 @@ initialize: function(dataArray)
 	APPLICATION.log(this.mNumberOfCols);	
 	APPLICATION.log(this.mNumberOfRows);	
 
-	for (r=this.mNumberOfRows; r>0; --r)
+	for (r=this.mNumberOfRows -1; r>=0; r--)
 	{
 		var row = this.mTable.mMesh.insertRow(0);
 		for (c=0; c<this.mNumberOfCols; c++)
@@ -20,32 +19,8 @@ initialize: function(dataArray)
 			var cell = row.insertCell(c);
 			cell.innerHTML = dataArray[c][r];
 			cell.style.fontSize = "8px";
-			//cell.innerHTML = "h";
-			//APPLICATION.log('d:' + dataArray[c][r];
 		}
 	}
-	
-/*
-	for (i=0; i<col1.length; i++)
-	{
-  		this.mRowArray.push = document.createElement("TR");
-        	this.mTable.mMesh.appendChild(this.mRowArray[i]);
-	
-		if (col1 != null)
-		{	
-        		this.mColArray.push = document.createElement("TD");
-
-		}
-
-	}
-
-        this.mColArray.push = document.createElement("TD");
-
-        this.mTextNode = document.createTextNode("Hello Table");
-        this.mTD.appendChild(this.mTextNode);
-
-        this.mTR.appendChild(this.mTD);
-*/
 }
 });
 
