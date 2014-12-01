@@ -5,8 +5,12 @@ initialize: function(dataArray)
 {
 	this.mTable = new Shape(20, 40,  200, 300,"","TABLE","#F8CDF8","boundary");
 
-	APPLICATION.log(dataArray.length);	
-	//APPLICATION.log(dataArray.length);	
+
+	this.mNumberOfCols = dataArray.length;
+	this.mNumberOfRows = dataArray[0].length;
+	
+	APPLICATION.log(this.mNumberOfCols);	
+	APPLICATION.log(this.mNumberOfRows);	
 
 	//just use col1 as length for all
 /*
