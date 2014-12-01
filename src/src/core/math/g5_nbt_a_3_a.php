@@ -95,7 +95,7 @@ initialize: function(sheet)
 
 	this.fraction = new Fraction(this.tenths_hundredths,1000);
 
-        this.setQuestion('' + this.ns.mNameOne + ' has a pokeman card that is ' + this.fraction.getString() + ' of an inch wide. What is this amount written as a decimal?',0);
+        this.setQuestion('' + this.ns.mNameOne + ' has a pokemon card that is ' + this.fraction.getString() + ' of an inch wide. What is this amount written as a decimal?',0);
 
         this.setAnswer('0.0' + this.tenths_hundredths,0);
 }

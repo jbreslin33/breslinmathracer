@@ -1043,11 +1043,11 @@ initialize: function(sheet)
 	}
 	if (this.mExponent == 2)
 	{
-		answer = '' + this.ones + this.tenths + this.hundreths + this.thousandths;
+		answer = '' + this.ones + this.tenths + this.hundreths + '.' + this.thousandths;
 	}
 	if (this.mExponent == 3)
 	{
-		answer = '' + this.ones + this.tenths + this.hundreths +  this.thousandths + '';
+		answer = '' + this.ones + this.tenths + this.hundreths + this.thousandths + '';
 	}
 	if (this.mExponent == 4)
 	{
