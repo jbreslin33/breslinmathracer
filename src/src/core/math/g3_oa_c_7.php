@@ -30,6 +30,7 @@ initialize: function(sheet)
 	this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mThresholdTime = 5000;
         this.mClock = new ClockTimer(APPLICATION);
+/*
 
 	this.mColOneArray = new Array();
 	this.mColTwoArray = new Array();
@@ -77,6 +78,7 @@ initialize: function(sheet)
 	this.mSheet.mGame.mApplication.mData.push(this.mColTwoArray);
 
 	this.mBreslinTable = new BreslinTable(this.mSheet.mGame.mApplication.mData);
+*/
 }
 });
 
