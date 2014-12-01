@@ -20,8 +20,9 @@ initialize: function(dataArray)
 		for (c=0; c<this.mNumberOfCols; c++)
 		{
 			var cell = row.insertCell(c);
-			//cell.innerHTML = dataArray[r][c];
-			cell.innerHTML = "h";
+			cell.innerHTML = dataArray[c][r];
+			//cell.innerHTML = "h";
+			//APPLICATION.log('d:' + dataArray[c][r];
 		}
 	}
 	
