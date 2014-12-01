@@ -50,7 +50,7 @@ Extends: Polygon,
                         this.mMesh  = document.createElement("TABLE");
                         this.mMesh.style.width = this.mWidth+'px'; 
                         this.mMesh.style.height = this.mHeight+'px'; 
-
+/*
 			this.mTR = document.createElement("TR");
 			this.mMesh.appendChild(this.mTR);
 			
@@ -59,6 +59,7 @@ Extends: Polygon,
 			this.mTD.appendChild(this.mTextNode);
 
 			this.mTR.appendChild(this.mTD);
+*/
                 }
 
 		else if (this.mSrc == "AUDIO")
