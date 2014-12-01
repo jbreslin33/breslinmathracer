@@ -39,6 +39,9 @@ public function process()
 		$_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
                 $_SESSION["ref_id"]  = $ref_id;
 
+		$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'ref_id','$ref_id');";
+		$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);		
+
 		if ($ref_id == 'normal')
 		{
 			$normal = new Normal(0);
