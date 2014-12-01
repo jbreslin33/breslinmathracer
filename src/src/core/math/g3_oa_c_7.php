@@ -7,6 +7,16 @@ initialize: function(sheet)
 	this.parent(sheet,50,50,370,75,50,50,425,75);
         this.mThresholdTime = 5000;
         this.mClock = new ClockTimer(APPLICATION);
+
+	this.mTable = new Shape(20, 40,  200, 300,"","TABLE","#F8CDF8","boundary");
+  	this.mTR = document.createElement("TR");
+        this.mTable.mMesh.appendChild(this.mTR);
+
+        this.mTD = document.createElement("TD");
+        this.mTextNode = document.createTextNode("Hello Table");
+        this.mTD.appendChild(this.mTextNode);
+
+        this.mTR.appendChild(this.mTD);
 }
 });
 
