@@ -13,6 +13,8 @@ function __construct()
 		//do nothing....	
 		//	date_default_timezone_set("UTC"); 
 		//	$_SESSION["scroll"] = "UTC:".time();
+			//$_SESSION["scroll"] = "UTC:".time();
+			$this->setScroll();
 	}
 	else
 	{
@@ -22,7 +24,7 @@ function __construct()
 		}
 		else
 		{
-			//do nothing
+			$this->setScroll();
 		}
 	}
 }
