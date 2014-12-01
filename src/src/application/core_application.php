@@ -430,6 +430,7 @@ Extends: Application,
 
 	timestables: function(tablenumber)
         {
+		APPLICATION.log('timestables');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -456,14 +457,101 @@ Extends: Application,
                                 }
                         }
                 }
-                if (this.mRef_id == 'timestables_2' || this.mRef_id == 'timestables_3' || this.mRef_id == 'timestables_4' || this.mRef_id == 'timestables_5' || this.mRef_id == 'timestables_6' || this.mRef_id == 'timestables_7' || this.mRef_id == 'timestables_8' || this.mRef_id == 'timestables_9' )
+
+                if (this.mRef_id == 'timestables_2')
                 {
-                        xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                }
-                else
+			if (tablenumber == '2')
+			{
+                        	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+			}
+                	else
+                	{
+                        	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                	}
+		}
+                if (this.mRef_id == 'timestables_3') 
                 {
-                        xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        if (tablenumber == '3')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
                 }
+                if (this.mRef_id == 'timestables_4')
+                {
+                        if (tablenumber == '4')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+                if (this.mRef_id == 'timestables_5')
+                {
+                        if (tablenumber == '5')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+                if (this.mRef_id == 'timestables_6')
+                {
+                        if (tablenumber == '6')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+                if (this.mRef_id == 'timestables_7')
+                {
+                        if (tablenumber == '7')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+                if (this.mRef_id == 'timestables_8')
+                {
+                        if (tablenumber == '8')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+                if (this.mRef_id == 'timestables_9')
+                {
+                        if (tablenumber == '9')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+                if (this.mRef_id == 'timestables')
+                {
+                	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                }
+
+
                 xmlhttp.send();
         },
 
