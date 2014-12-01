@@ -62,7 +62,7 @@ var Game = new Class(
 			this.mScrollTime = this.mScrollTime + this.mDeltaTime;
                 }
 		//getScroll
-		if (this.mScrollTime > 5000)
+		if (this.mScrollTime > 40000)
 		{
 			APPLICATION.getScroll();
 			this.mScrollTime = 0;
