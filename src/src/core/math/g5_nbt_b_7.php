@@ -34,9 +34,35 @@ initialize: function(sheet)
         this.a = Math.floor(Math.random()*10);
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
+        
+	this.decimalPart = parseInt(this.a * 10 + this.b + this.c * 10);
+
+	this.answer = 0; 
+	if (this.decimalPart > 99)
+	{
+		this.decimalPart = parseInt(this.decimalPart - 100);
+		if (this.decimalPart < 10)
+		{
+			this.answer = '1.0' + this.decimalPart; 
+		}
+		else
+		{
+			this.answer = '1.' + this.decimalPart;   
+		}	
+	}
+	else
+	{
+		if (this.decimalPart < 10)
+		{
+			this.answer = '0.0' + this.decimalPart; 
+		}
+		else
+		{
+			this.answer = '0.' + this.decimalPart;   
+		}	
+	}
 
         this.setQuestion('Find the sum: 0.' + this.a + this.b + ' + 0.' + this.c + '');
-        this.answer = parseInt(this.a * 10 + this.b + this.c * 10);
 
         this.setAnswer('' + this.answer,0);
 }
