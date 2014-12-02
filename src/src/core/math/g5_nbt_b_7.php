@@ -1,5 +1,23 @@
+/* ok we are going with...
+
+0.xx
+0.x
+
+xx.x 
+x.x
+
+x.x
+0.xx
+
+x.xx 
+x.x
+
+xx.xx
+x.xx
+
+*/ 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_1',5.1101,'5.nbt.b.7','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_1',5.1101,'5.nbt.b.7','0.xx+0.x');
 */
 var i_5_nbt_b_7__1 = new Class(
 {
@@ -13,18 +31,12 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.x = 0;
-        this.y = 0;
-        this.z = parseInt(1111);
-        while(this.z > 999 || this.z < 100 )
-        {
-                this.x        = Math.floor((Math.random()*90)+10);
-                this.y        = Math.floor((Math.random()*90)+10);
-                this.z        = parseInt(this.x * this.y);
-        }
+        this.a = Math.floor(Math.random()*10);
+        this.b = Math.floor(Math.random()*10);
+        this.c = Math.floor(Math.random()*10);
 
-        this.setQuestion('Find the Quotient: ' + this.z + ' &divide ' + this.x + '');
-        this.answer = parseInt(this.y);
+        this.setQuestion('Find the sum: 0.' + this.a + this.b + ' + 0.' + this.c + '');
+        this.answer = parseInt(this.a * 10 + this.b + this.c * 10);
 
         this.setAnswer('' + this.answer,0);
 }
