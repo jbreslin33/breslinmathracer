@@ -39,6 +39,7 @@ initialize: function(sheet)
         this.e = Math.floor(Math.random()*10);
         
 	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10);
+	this.wholePart = parseInt(this.b * 10 + this.c + this.e * 10);
 
 	this.answer = 0; 
 	if (this.decimalPart > 99)
