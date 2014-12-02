@@ -550,6 +550,14 @@ Extends: Application,
                 {
                 	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
                 }
+                if (this.mRef_id == 'normal')
+                {
+                	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                }
+                if (this.mRef_id == 'practice')
+                {
+                	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                }
 
 
                 xmlhttp.send();
