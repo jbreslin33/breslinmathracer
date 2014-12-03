@@ -178,7 +178,6 @@ initialize: function(sheet)
 //virtual functions that can show and hide buttons??
 showAnswerInputs: function()
 {
-	APPLICATION.log('showAnswerInputs');
 	this.parent();
 
 	if (this.mOneA)
@@ -265,9 +264,7 @@ showAnswerInputs: function()
 
 hideAnswerInputs: function()
 {
-	APPLICATION.log('hideAnswerInputs');
 	this.parent();
-	//this.mOneA.mMesh.style.display = 'none';
 
 	if (this.mOneA)
         {
