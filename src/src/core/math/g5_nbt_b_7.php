@@ -63,7 +63,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('In a video game ' + this.ns.mNameOne + ' built a fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + ' to live in. If the length of the yard is 0.' + this.a + this.b + ' and the width is ' + ' 0.' + this.c + ' then what is the perimeter of the yard?');
+        this.setQuestion('In a video game ' + this.ns.mNameOne + ' built a fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + ' to live in. If the length of the yard is 0.' + this.a + this.b + ' ' + this.ns.mDistanceIncrementMedium + ' and the width is ' + ' 0.' + this.c + ' ' +  this.ns.mDistanceIncrementMedium + ' then what is the perimeter of the yard?');
 
         this.setAnswer('' + this.answer,0);
 }
