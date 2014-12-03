@@ -266,6 +266,8 @@ var Sheet = new Class(
                 this.addVictoryShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/christmas/snowman.png","",""));
                 this.addVictoryShape(new ShapeVictory(50,50,300,300,this.mGame,"/images/christmas/christmas-tree.png","",""));
                 this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/christmas/santa1.png","",""));
+                
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/santa1.png","",""));
 
                 this.hideVictoryShapes();
         },
@@ -289,6 +291,10 @@ var Sheet = new Class(
                 for (var i = 0; i < this.mVictoryShapeArray.length; i++)
                 {
                         this.mVictoryShapeArray[i].setVisibility(true);
+			if (i == 3)
+			{
+				this.mVictoryShapeArray[i].setPosition(300,100);	
+			}
                 }
         },
  
