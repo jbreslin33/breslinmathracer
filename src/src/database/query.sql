@@ -1,0 +1,2 @@
+select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.user_id = 30 AND evaluations_attempts.evaluations_id = 1 order by item_attempts.start_time desc;
+
