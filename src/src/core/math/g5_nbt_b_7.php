@@ -40,8 +40,8 @@ initialize: function(sheet)
         this.f = Math.floor(Math.random()*10);
         this.g = Math.floor(Math.random()*10);
         
-	this.decimalPart = parseInt(this.c * 10 + this.d + this.e * 10);
-	this.wholePart = parseInt(this.a + this.d);
+	this.decimalPart = parseInt(this.c * 10 + this.d + this.f * 10 + this.g);
+	this.wholePart = parseInt(this.a * 10 + this.b + this.e);
 
 	this.answer = 0; 
 	if (this.decimalPart > 99)
