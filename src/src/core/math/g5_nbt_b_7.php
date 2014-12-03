@@ -39,31 +39,67 @@ initialize: function(sheet)
         this.e = Math.floor(Math.random()*10);
         
 	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10);
-	this.wholePart = parseInt(this.b * 10 + this.c + this.e * 10);
+	this.wholePart = parseInt(this.a + this.d);
 
 	this.answer = 0; 
 	if (this.decimalPart > 99)
 	{
+		APPLICATION.log('1');
 		this.decimalPart = parseInt(this.decimalPart - 100);
+		this.wholePart++; //add one for carry 
+
 		if (this.decimalPart < 10)
 		{
-			this.answer = '1.0' + this.decimalPart; 
+			APPLICATION.log('2');
+			if (parseInt(this.decimalPart) == 0)
+			{
+				APPLICATION.log('3');
+				this.answer = '' + this.wholePart; 	 
+			}
+			else
+			{
+				APPLICATION.log('4');
+				this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10	 
+			}
 		}
 		else
 		{
-			this.answer = '1.' + this.decimalPart;   
+			APPLICATION.log('5');
+			if (this.decimalPart % 10 == 0)	
+			{
+				APPLICATION.log('6');
+				this.decimalPart = parseInt(this.decimalPart / 10);
+			}
+			this.answer = '' + this.wholePart + '.' + this.decimalPart; 	 
 		}	
 	}
 	else
 	{
-		if (this.decimalPart < 10)
-		{
-			this.answer = '0.0' + this.decimalPart; 
-		}
-		else
-		{
-			this.answer = '0.' + this.decimalPart;   
-		}	
+		APPLICATION.log('7');
+                if (this.decimalPart < 10)
+                {
+			APPLICATION.log('8');
+                        if (parseInt(this.decimalPart) == 0)
+                        {
+				APPLICATION.log('9');
+                                this.answer = '' + this.wholePart;                                              
+                        }
+                        else
+                        {
+				APPLICATION.log('10');
+                                this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10
+                        }
+                }
+                else
+                {
+			APPLICATION.log('11');
+			if (this.decimalPart % 10 == 0)	
+                        {
+				APPLICATION.log('12');
+				this.decimalPart = parseInt(this.decimalPart / 10);
+                        }
+                        this.answer = '' + this.wholePart + '.' + this.decimalPart;
+                }
 	}
 
         this.setQuestion('Find the sum: ' + this.a + '.' + this.b + this.c + ' + ' + this.d + '.' + this.e);
