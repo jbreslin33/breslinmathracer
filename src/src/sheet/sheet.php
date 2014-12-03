@@ -264,10 +264,29 @@ var Sheet = new Class(
         {
                 //victory shapes
                 this.addVictoryShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/christmas/snowman.png","",""));
-                this.addVictoryShape(new ShapeVictory(50,50,300,300,this.mGame,"/images/christmas/christmas-tree.png","",""));
-                this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/christmas/santa1.png","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,200,300,this.mGame,"/images/christmas/christmas-tree.png","",""));
+                this.addVictoryShape(new ShapeVictory(50,50,300,300,this.mGame,"/images/christmas/santa1.png","",""));
+                //this.addVictoryShape(new ShapeVictory(50,50,400,300,this.mGame,"/images/christmas/candycane.png","",""));
+                //this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/christmas/elf.jpg","",""));
+                //this.addVictoryShape(new ShapeVictory(50,50,500,300,this.mGame,"/images/christmas/reindeer.gif","",""));
                 
-		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/santa1.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/christmas/snowball.png","",""));
 
                 this.hideVictoryShapes();
         },
@@ -291,9 +310,24 @@ var Sheet = new Class(
                 for (var i = 0; i < this.mVictoryShapeArray.length; i++)
                 {
                         this.mVictoryShapeArray[i].setVisibility(true);
-			if (i == 3)
+			if (i == 0)
 			{
-				this.mVictoryShapeArray[i].setPosition(300,100);	
+				this.mVictoryShapeArray[i].setPosition(100,500);	
+			}
+			if (i == 1)
+			{
+				this.mVictoryShapeArray[i].setPosition(300,500);	
+			}
+			if (i == 2)
+			{
+				this.mVictoryShapeArray[i].setPosition(500,500);	
+			}
+			if (i > 2)
+			{
+  				var x = Math.floor(Math.random()*600);
+  				var y = Math.floor(Math.random()*200);
+
+				this.mVictoryShapeArray[i].setPosition(x,y);	
 			}
                 }
         },
