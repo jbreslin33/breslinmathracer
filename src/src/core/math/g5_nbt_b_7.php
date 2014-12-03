@@ -36,10 +36,34 @@ initialize: function(sheet)
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
 
-        this.decimalPart = parseInt(this.a * 10 + this.b + this.c * 10);
+        this.decimalPart = parseInt( (this.a * 10 + this.b + this.c * 10) + (this.a * 10 + this.b + this.c * 10) );
 
         this.answer = 0;
-        if (this.decimalPart > 99)
+        if (this.decimalPart > 299)
+        {
+                this.decimalPart = parseInt(this.decimalPart - 300);
+                if (this.decimalPart < 10)
+                {
+                        this.answer = '3.0' + this.decimalPart;
+                }
+                else
+                {
+                        this.answer = '3.' + this.decimalPart;
+                }
+        }
+        else if (this.decimalPart > 199)
+        {
+                this.decimalPart = parseInt(this.decimalPart - 200);
+                if (this.decimalPart < 10)
+                {
+                        this.answer = '2.0' + this.decimalPart;
+                }
+                else
+                {
+                        this.answer = '2.' + this.decimalPart;
+                }
+        }
+       	else if (this.decimalPart > 99)
         {
                 this.decimalPart = parseInt(this.decimalPart - 100);
                 if (this.decimalPart < 10)
@@ -51,8 +75,8 @@ initialize: function(sheet)
                         this.answer = '1.' + this.decimalPart;
                 }
         }
-        else
-        {
+        else if (this.decimalPart <= 99)
+	{
                 if (this.decimalPart < 10)
                 {
                         this.answer = '0.0' + this.decimalPart;
