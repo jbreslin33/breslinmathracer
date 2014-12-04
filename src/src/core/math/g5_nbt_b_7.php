@@ -54,6 +54,12 @@ initialize: function(sheet)
 		
                 	this.answer = '' + ones + '.' + tenths;
         	}
+        	else // we have pure 3 digit number  
+		{
+			var hundreds = this.part / 100; 
+			var tensAndOnes = this.part % 100; 
+			this.answer = '' + hundreds + '.' + tensAndOnes;
+		}
 	}
         else if (this.part <= 99) // we are 3 digits
         {
@@ -62,12 +68,13 @@ initialize: function(sheet)
                         var tensAndOnes = this.part / 10;
                         var ones = tensAndOnes / 10;
                         var tenths = tensAndOnes % 10;
-
                         this.answer = '' + ones + '.' + tenths;
                 }
-		else
+        	else // we have pure 3 digit number  
 		{
-
+			var hundreds = this.part / 100; 
+			var tensAndOnes = this.part % 100; 
+			this.answer = '' + hundreds + '.' + tensAndOnes;
 		}
         }
 
