@@ -1,21 +1,53 @@
-/* ok we are going with...
 
-0.xx
-0.x
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_7',5.1107,'5.nbt.b.7','0.xx-0.x');
+*/
+var i_5_nbt_b_7__7 = new Class(
+{
+Extends: TextItem,
 
-xx.x 
-x.x
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
 
-x.x
-0.xx
+        this.mType = '5.nbt.b.7_7';
 
-x.xx 
-x.x
+        this.ns = new NameSampler();
 
-xx.xx
-x.xx
+        this.a = 0;
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
 
-*/ 
+        this.decimalPartA = 0;
+        this.decimalPartB = 1;
+	
+	while (this.decimalPartA < this.decimalPartB)
+	{
+        	this.a = Math.floor(Math.random()*10);
+        	this.b = Math.floor(Math.random()*10);
+        	this.c = Math.floor(Math.random()*10);
+        	this.d = 0;
+        
+		this.decimalPartA = parseInt(this.a * 10 + this.b);
+        	this.decimalPartB = parseInt(this.c * 10);
+		this.decimalPart =  parseInt(this.decimalPartA - this.decimalPartB);
+	}
+
+        if (this.decimalPart < 10)
+        {
+                this.answer = '0.0' + this.decimalPart;
+        }
+        else
+        {
+              	this.answer = '0.' + this.decimalPart;
+        }
+
+        this.setQuestion('Find the difference: 0.' + this.a + this.b + ' - 0.' + this.c + '');
+
+        this.setAnswer('' + this.answer,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_6',5.1106,'5.nbt.b.7','0.xx+0.x');
