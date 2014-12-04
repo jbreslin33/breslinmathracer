@@ -17,32 +17,62 @@ initialize: function(sheet)
         this.b = 0;
         this.c = 0;
         this.d = 0;
+        this.e = 0;
+        this.f = 0;
 
-        this.decimalPartA = 0;
-        this.decimalPartB = 1;
+        this.partA = 0;
+        this.partB = 1;
+        this.part = 0;
 
-        while (this.decimalPartA < this.decimalPartB)
+        while (this.partA < this.partB)
         {
                 this.a = Math.floor(Math.random()*10);
                 this.b = Math.floor(Math.random()*10);
                 this.c = Math.floor(Math.random()*10);
-                this.d = 0;
+                this.d = Math.floor(Math.random()*10);
+                this.e = Math.floor(Math.random()*10);
+                this.f = 0;
 
-                this.decimalPartA = parseInt(this.a * 10 + this.b);
-                this.decimalPartB = parseInt(this.c * 10);
-                this.decimalPart =  parseInt(this.decimalPartA - this.decimalPartB);
+                this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
+                this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
+                this.part =  parseInt(this.partA - this.partB);
         }
 
-        if (this.decimalPart < 10)
+	APPLICATION.log('part:' + this.part);
+
+	if (this.part > 99) // we are 3 digits 
+	{
+        	if (this.part % 100 == 0) // we have a whole number
+        	{
+                	this.answer = '' + this.part;
+        	}
+        	else if (this.part % 10 == 0) // we have a multiple of 10  
+        	{
+			var tensAndOnes = this.part / 10; 
+			var ones = tensAndOnes / 10;
+			var tenths = tensAndOnes % 10;
+		
+                	this.answer = '' + ones + '.' + tenths;
+        	}
+	}
+        else if (this.part <= 99) // we are 3 digits
         {
-                this.answer = '0.0' + this.decimalPart;
-        }
-        else
-        {
-                this.answer = '0.' + this.decimalPart;
+                if (this.part % 10 == 0) // we have a multiple of 10
+                {
+                        var tensAndOnes = this.part / 10;
+                        var ones = tensAndOnes / 10;
+                        var tenths = tensAndOnes % 10;
+
+                        this.answer = '' + ones + '.' + tenths;
+                }
+		else
+		{
+
+		}
         }
 
-        this.setQuestion('Find the difference: 0.' + this.a + this.b + ' - 0.' + this.c + '');
+
+        this.setQuestion('Find the difference: ' + this.a + '.' + this.b + this.c + ' - ' + this.d + '.' + this.e);
 
         this.setAnswer('' + this.answer,0);
 }
