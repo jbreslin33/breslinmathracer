@@ -38,8 +38,6 @@ initialize: function(sheet)
                 this.part =  parseInt(this.partA - this.partB);
         }
 
-	APPLICATION.log('part:' + this.part);
-
 	if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
@@ -48,7 +46,7 @@ initialize: function(sheet)
         	}
         	else if (this.part % 10 == 0) // we have a multiple of 10  
         	{
-			var tensAndOnes = this.part / 10; 
+			var tensAndOnes = parseInt(this.part / 10); 
 			var ones = tensAndOnes / 10;
 			var tenths = tensAndOnes % 10;
 		
@@ -56,7 +54,7 @@ initialize: function(sheet)
         	}
         	else // we have pure 3 digit number  
 		{
-			var hundreds = this.part / 100; 
+			var hundreds = parseInt(this.part / 100); 
 			var tensAndOnes = this.part % 100; 
 			this.answer = '' + hundreds + '.' + tensAndOnes;
 		}
@@ -65,19 +63,18 @@ initialize: function(sheet)
         {
                 if (this.part % 10 == 0) // we have a multiple of 10
                 {
-                        var tensAndOnes = this.part / 10;
-                        var ones = tensAndOnes / 10;
+                        var tensAndOnes = parseInt(this.part / 10);
+                        var ones = parseInt(tensAndOnes / 10);
                         var tenths = tensAndOnes % 10;
                         this.answer = '' + ones + '.' + tenths;
                 }
         	else // we have pure 3 digit number  
 		{
-			var hundreds = this.part / 100; 
+			var hundreds = parseInt(this.part / 100); 
 			var tensAndOnes = this.part % 100; 
 			this.answer = '' + hundreds + '.' + tensAndOnes;
 		}
         }
-
 
         this.setQuestion('Find the difference: ' + this.a + '.' + this.b + this.c + ' - ' + this.d + '.' + this.e);
 
