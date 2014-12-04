@@ -1,4 +1,3 @@
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_9',5.1109,'5.nbt.b.7','x.x-0.xx');
 */
@@ -77,7 +76,7 @@ initialize: function(sheet)
 		}
         }
 
-        this.setQuestion('Find the difference: ' + this.a + '.' + this.b + '0' + ' - 0.' + this.e + '.' + this.f);
+        this.setQuestion('Find the difference: ' + this.a + '.' + this.b + ' - 0.' + this.e + this.f);
 
         this.setAnswer('' + this.answer,0);
 }
