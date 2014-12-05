@@ -40,9 +40,45 @@ initialize: function(sheet)
 	APPLICATION.log('partA:' + this.partA);
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
-	this.part = 780;
 
-	if (this.part > 99) // we are 3 digits 
+	this.part = 1234;
+
+        if (this.part > 999) // we are 3 digits
+        {
+                if (this.part % 1000 == 0) // we have a whole number
+                {
+                        var tenths = parseInt(this.part / 1000);
+                        this.answer = '0.' + tenths;
+                }
+                else if (this.part % 100 == 0) // we have a multiple of 100
+                {
+                        var tenthsAndHundredths = parseInt(this.part / 100);
+                        var tenths = parseInt(tenthsAndHundredths / 10);
+                        var hundredths = tenthsAndHundredths % 10;
+
+                        this.answer = '0.' + tenths + hundredths;
+                }
+                else if (this.part % 10 == 0) // we have a multiple of 10
+                {
+                        var tenthsAndHundredths = parseInt(this.part / 10);
+                        var tenths = parseInt(tenthsAndHundredths / 10);
+                        var hundredths = tenthsAndHundredths % 10;
+
+                        this.answer = '0.' + tenths + hundredths;
+                }
+                else // we have pure 4 digit number
+                {
+                        var ones = parseInt(this.part / 1000);
+                        var tenthsAndHundredthsAndThousandths = this.part % 1000;
+                        var tenths = parseInt(tenthsAndHundredthsAndThousandths / 100);
+                        var hundredthsAndThousandths = tenthsAndHundredthsAndThousandths % 100;
+			var hundredths = parseInt(hundredthsAndThousandths / 10);
+			var thousandths = hundredthsAndThousandths % 10;	
+                        this.answer = ones + '.' + tenths + hundredths + thousandths;
+                }
+        }
+
+	else if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
         	{
