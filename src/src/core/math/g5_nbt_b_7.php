@@ -86,6 +86,7 @@ initialize: function(sheet)
         this.setAnswer('' + this.answer,0);
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_9',5.1109,'5.nbt.b.7','x.xx-x.x');
 */
@@ -97,7 +98,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.b.7_09';
+        this.mType = '5.nbt.b.7_9';
 
         this.ns = new NameSampler();
 
