@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.b.7_09';
+        this.mType = '5.nbt.b.7_10';
 
         this.ns = new NameSampler();
 
@@ -28,11 +28,14 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
+	this.part = 700;
+
 	if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
         	{
-                	this.answer = '0.' + this.part;
+			var hundredths = parseInt(this.part / 100); 
+                	this.answer = '0.' + hundredths;
         	}
         	else if (this.part % 10 == 0) // we have a multiple of 10  
         	{
@@ -44,9 +47,11 @@ initialize: function(sheet)
         	}
         	else // we have pure 3 digit number  
 		{
-			var hundreds = parseInt(this.part / 100); 
-			var tensAndOnes = this.part % 100; 
-			this.answer = '0.' + hundreds + tensAndOnes;
+			var tenths = parseInt(this.part / 100); 
+			var hundredthsAndThousandths = this.part % 100; 
+			var tens = parseInt(hundredthsAndThousandths / 10); 
+			var ones = tens % 10; 
+			this.answer = '0.' + hundreds + tens + ones;
 		}
 	}
         else if (this.part <= 99) // 2 digits 
@@ -66,8 +71,7 @@ initialize: function(sheet)
 		}
         }
 
-        this.setQuestion('' + this.ns.mNameOne + ' ran a race in ' + this.a + '.' + this.b + this.c + ' seconds on Friday. Then on Saturday ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ran the same race ' + this.d + '.' + this.e + ' seconds faster. What was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' time on Saturday?');
-
+        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
         this.setAnswer('' + this.answer,0);
 }
 });
