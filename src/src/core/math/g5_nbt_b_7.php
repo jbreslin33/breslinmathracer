@@ -1,5 +1,91 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_11',5.1111,'5.nbt.b.7','0.55x5.5');
+*/
+var i_5_nbt_b_7__11 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.7_11';
+        this.ns = new NameSampler();
+
+        this.a = 0;
+        this.b = Math.floor(Math.random()*10);
+        this.c = Math.floor(Math.random()*10);
+
+        this.d = Math.floor(Math.random()*10);
+        this.e = Math.floor(Math.random()*10);
+
+        this.partA = parseInt(               this.b * 10 + this.c);
+        this.partB = parseInt(this.d * 100 + this.e * 10         );
+        this.part =  parseInt(this.partA * this.partB);
+
+	while (this.part == 0)
+	{
+        	this.a = 0;
+        	this.b = Math.floor(Math.random()*10);
+        	this.c = Math.floor(Math.random()*10);
+        	this.d = 0;
+        	this.e = Math.floor(Math.random()*10);
+
+        	this.partA = parseInt(this.b * 10 + this.c);
+        	this.partB = parseInt(              this.e);
+        	this.part =  parseInt(this.partA * this.partB);
+	}
+		
+	APPLICATION.log('partA:' + this.partA);
+	APPLICATION.log('partB:' + this.partB);
+	APPLICATION.log('part:' + this.part);
+	this.part = 780;
+
+	if (this.part > 99) // we are 3 digits 
+	{
+        	if (this.part % 100 == 0) // we have a whole number
+        	{
+			var hundredths = parseInt(this.part / 100); 
+                	this.answer = '0.' + hundredths;
+        	}
+        	else if (this.part % 10 == 0) // we have a multiple of 10  
+        	{
+			var tenthsAndHundredths = parseInt(this.part / 10); 
+			var tenths = parseInt(tenthsAndHundredths / 10);
+			var hundredths = tenthsAndHundredths % 10;
+		
+                	this.answer = '0.' + tenths + hundredths;
+        	}
+        	else // we have pure 3 digit number  
+		{
+			var tenths = parseInt(this.part / 100); 
+			var hundredthsAndThousandths = this.part % 100; 
+			var hundredths = parseInt(hundredthsAndThousandths / 10); 
+			var thousandths = hundredthsAndThousandths % 10; 
+			this.answer = '0.' + tenths + hundredths + thousandths;
+		}
+	}
+        else if (this.part <= 99) // 2 digits 
+        {
+                if (this.part % 10 == 0) // we have a multiple of 10
+                {
+                        var hundredths = parseInt(this.part / 10);
+                        this.answer = '0.0' + hundredths;
+                }
+        	else // we have pure 2 digit number  
+		{
+                        var hundredths = parseInt(this.part / 10);
+			var thousandths = this.part % 10; 
+			this.answer = '0.0' + hundredths + thousandths;
+		}
+        }
+
+        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
+        this.setAnswer('' + this.answer,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_10',5.1110,'5.nbt.b.7','0.55x0.5');
 */
 var i_5_nbt_b_7__10 = new Class(
