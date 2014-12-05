@@ -41,7 +41,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 780;
+	this.part = 782;
 
 	if (this.part > 99) // we are 3 digits 
 	{
@@ -62,9 +62,9 @@ initialize: function(sheet)
 		{
 			var tenths = parseInt(this.part / 100); 
 			var hundredthsAndThousandths = this.part % 100; 
-			var tens = parseInt(hundredthsAndThousandths / 10); 
-			var ones = tens % 10; 
-			this.answer = '0.' + hundreds + tens + ones;
+			var hundredths = parseInt(hundredthsAndThousandths / 10); 
+			var thousandths = hundredthsAndThousandths % 10; 
+			this.answer = '0.' + tenths + hundredths + thousandths;
 		}
 	}
         else if (this.part <= 99) // 2 digits 
