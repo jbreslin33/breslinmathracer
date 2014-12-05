@@ -77,7 +77,7 @@ initialize: function(sheet)
 		}
         }
 
-        this.setQuestion('Find the difference: ' + this.a + '.' + this.b + this.c + ' - ' + this.d + '.' + this.e);
+        this.setQuestion('' + this.ns.mNameOne + ' ran a race in ' + this.a + '.' + this.b + this.c + ' seconds on Friday. Then on Saturday ' + this.ns.mNameMachine.getProunoun(this.ns.mNameOne,0,0) + ' ran the same race ' + this.d + '.' + this.e + ' seconds faster. What was ' + this.ns.mNameMachine.getProunoun(this.ns.mNameOne,0,1) + ' time on Saturday?');
 
         this.setAnswer('' + this.answer,0);
 }
@@ -421,7 +421,7 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*2)+5;
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
         this.d = Math.floor(Math.random()*10);
@@ -481,10 +481,11 @@ initialize: function(sheet)
                 }
 	}
 
-	this.setQuestion('' + this.ns.mNameOne + ' had $' + this.a + this.b + '.' + this.c + this.d + ' then ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' lost a tooth and put it under his pillow. In the morning the tooth fairy had left him $' + this.e + '.' + this.f + this.g + ' How much money does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have now?');
+	this.setQuestion('Last year ' + this.ns.mNameOne + ' was ' + this.a + this.b + '.' + this.c + this.d + ' inches tall. This year ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' grew ' + this.e + '.' + this.f + this.g + ' inches so far. How many inches tall is ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' now?');
 
         this.setAnswer('' + this.answer,0);
-        this.setAnswer('$' + this.answer,1);
+        this.setAnswer('' + this.answer + ' inches',1);
+        this.setAnswer('' + this.answer + ' in.',2);
 }
 });
 
