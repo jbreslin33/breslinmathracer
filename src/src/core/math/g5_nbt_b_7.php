@@ -1,8 +1,8 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_10',5.1110,'5.nbt.b.7','x.xx-x.x');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_9',5.1109,'5.nbt.b.7','x.xx-x.x');
 */
-var i_5_nbt_b_7__10 = new Class(
+var i_5_nbt_b_7__09 = new Class(
 {
 Extends: TextItem,
 
@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.b.7_10';
+        this.mType = '5.nbt.b.7_09';
 
         this.ns = new NameSampler();
 
@@ -84,9 +84,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_9',5.1109,'5.nbt.b.7','x.x-0.xx');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_8',5.1108,'5.nbt.b.7','x.x-0.xx');
 */
-var i_5_nbt_b_7__9 = new Class(
+var i_5_nbt_b_7__8 = new Class(
 {
 Extends: TextItem,
 
@@ -94,7 +94,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.b.7_9';
+        this.mType = '5.nbt.b.7_8';
 
         this.ns = new NameSampler();
 
@@ -168,9 +168,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_8',5.1108,'5.nbt.b.7','xx.xx-x.x');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_7',5.1107,'5.nbt.b.7','xx.xx-x.x');
 */
-var i_5_nbt_b_7__8 = new Class(
+var i_5_nbt_b_7__7 = new Class(
 {
 Extends: TextItem,
 
@@ -178,7 +178,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.b.7_8';
+        this.mType = '5.nbt.b.7_7';
 
         this.ns = new NameSampler();
 
@@ -280,9 +280,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_7',5.1107,'5.nbt.b.7','0.xx-0.x');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_6',5.1106,'5.nbt.b.7','0.xx-0.x');
 */
-var i_5_nbt_b_7__7 = new Class(
+var i_5_nbt_b_7__6 = new Class(
 {
 Extends: TextItem,
 
@@ -290,7 +290,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '5.nbt.b.7_7';
+        this.mType = '5.nbt.b.7_6';
 
         this.ns = new NameSampler();
 
@@ -328,83 +328,6 @@ initialize: function(sheet)
         this.setAnswer('' + this.answer,0);
 }
 });
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_6',5.1106,'5.nbt.b.7','0.xx+0.x');
-*/
-var i_5_nbt_b_7__6 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,575,50,320,75,720,50,380,150);
-
-        this.mType = '5.nbt.b.7_6';
-
-        this.ns = new NameSampler();
-
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-
-        this.decimalPart = parseInt( (this.a * 10 + this.b + this.c * 10) + (this.a * 10 + this.b + this.c * 10) );
-
-        this.answer = 0;
-        if (this.decimalPart > 299)
-        {
-                this.decimalPart = parseInt(this.decimalPart - 300);
-                if (this.decimalPart < 10)
-                {
-                        this.answer = '3.0' + this.decimalPart;
-                }
-                else
-                {
-                        this.answer = '3.' + this.decimalPart;
-                }
-        }
-        else if (this.decimalPart > 199)
-        {
-                this.decimalPart = parseInt(this.decimalPart - 200);
-                if (this.decimalPart < 10)
-                {
-                        this.answer = '2.0' + this.decimalPart;
-                }
-                else
-                {
-                        this.answer = '2.' + this.decimalPart;
-                }
-        }
-       	else if (this.decimalPart > 99)
-        {
-                this.decimalPart = parseInt(this.decimalPart - 100);
-                if (this.decimalPart < 10)
-                {
-                        this.answer = '1.0' + this.decimalPart;
-                }
-                else
-                {
-                        this.answer = '1.' + this.decimalPart;
-                }
-        }
-        else if (this.decimalPart <= 99)
-	{
-                if (this.decimalPart < 10)
-                {
-                        this.answer = '0.0' + this.decimalPart;
-                }
-                else
-                {
-                        this.answer = '0.' + this.decimalPart;
-                }
-        }
-
-        this.setQuestion('In a video game ' + this.ns.mNameOne + ' built a fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + ' to live in. If the length of the yard is 0.' + this.a + this.b + ' ' + this.ns.mDistanceIncrementMedium + ' and the width is ' + ' 0.' + this.c + ' ' +  this.ns.mDistanceIncrementMedium + ' then what is the perimeter of the yard?');
-
-        this.setAnswer('' + this.answer,0);
-}
-});
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_5',5.1105,'5.nbt.b.7','xx.xx+x.xx');
