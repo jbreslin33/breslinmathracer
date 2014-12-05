@@ -481,9 +481,10 @@ initialize: function(sheet)
                 }
 	}
 
-        this.setQuestion('Find the sum: ' + this.a + this.b + '.' + this.c + this.d + ' + ' + this.e + '.' + this.f + this.g);
+	this.setQuestion('' + this.ns.mNameOne + ' had $' + this.a + this.b + '.' + this.c + this.d + ' then ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' lost a tooth and put it under his pillow. In the morning the tooth fairy had left him $' + this.e + '.' + this.f + this.g + ' How much money does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have now?');
 
         this.setAnswer('' + this.answer,0);
+        this.setAnswer('$' + this.answer,1);
 }
 });
 
@@ -716,9 +717,7 @@ initialize: function(sheet)
                         this.answer = '' + this.wholePart + '.' + this.decimalPart;
                 }
 	}
-
-        this.setQuestion('Find the sum: ' + this.a + '.' + this.b + this.c + ' + ' + this.d + '.' + this.e);
-
+	this.setQuestion('Find the sum: ' + this.a + '.' + this.b + this.c + ' + ' + this.d + '.' + this.e);
         this.setAnswer('' + this.answer,0);
 }
 });
