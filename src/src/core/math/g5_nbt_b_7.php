@@ -433,11 +433,66 @@ initialize: function(sheet)
         this.d = Math.floor(Math.random()*10);
         this.e = Math.floor(Math.random()*10);
         
-	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10);
-	this.wholePart = parseInt(this.a + this.d);
+	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10 + this.b * 10 + this.c + this.e * 10);
+	this.wholePart = parseInt(this.a + this.d + this.a + this.d);
 
 	this.answer = 0; 
-	if (this.decimalPart > 99)
+       	if (this.decimalPart > 299)
+        {
+                this.decimalPart = parseInt(this.decimalPart - 100);
+                this.wholePart++; //add one for carry
+                this.wholePart++; //add one more for carry
+                this.wholePart++; //add one more for carry
+
+                if (this.decimalPart < 10)
+                {
+                        if (parseInt(this.decimalPart) == 0)
+                        {
+                                this.answer = '' + this.wholePart;
+                        }
+                        else
+                        {
+                                this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10
+                        }
+                }
+                else
+                {
+                        if (this.decimalPart % 10 == 0)
+                        {
+                                this.decimalPart = parseInt(this.decimalPart / 10);
+                        }
+                        this.answer = '' + this.wholePart + '.' + this.decimalPart;
+                }
+        }
+
+        else if (this.decimalPart > 199)
+        {
+                this.decimalPart = parseInt(this.decimalPart - 100);
+                this.wholePart++; //add one for carry
+                this.wholePart++; //add one more for carry
+
+                if (this.decimalPart < 10)
+                {
+                        if (parseInt(this.decimalPart) == 0)
+                        {
+                                this.answer = '' + this.wholePart;      
+                        }
+                        else
+                        {
+                                this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10
+                        }
+                }
+                else
+                {
+                        if (this.decimalPart % 10 == 0)
+                        {
+                                this.decimalPart = parseInt(this.decimalPart / 10);
+                        }
+                        this.answer = '' + this.wholePart + '.' + this.decimalPart;
+                }      
+        }
+
+	else if (this.decimalPart > 99)
 	{
 		this.decimalPart = parseInt(this.decimalPart - 100);
 		this.wholePart++; //add one for carry 
