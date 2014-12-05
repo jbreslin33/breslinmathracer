@@ -24,11 +24,24 @@ initialize: function(sheet)
         this.partB = parseInt(              this.e);
         this.part =  parseInt(this.partA * this.partB);
 
+	while (this.part == 0)
+	{
+        	this.a = 0;
+        	this.b = Math.floor(Math.random()*10);
+        	this.c = Math.floor(Math.random()*10);
+        	this.d = 0;
+        	this.e = Math.floor(Math.random()*10);
+
+        	this.partA = parseInt(this.b * 10 + this.c);
+        	this.partB = parseInt(              this.e);
+        	this.part =  parseInt(this.partA * this.partB);
+	}
+		
 	APPLICATION.log('partA:' + this.partA);
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 700;
+	this.part = 780;
 
 	if (this.part > 99) // we are 3 digits 
 	{
