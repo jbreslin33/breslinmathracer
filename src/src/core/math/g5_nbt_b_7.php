@@ -21,7 +21,7 @@ initialize: function(sheet)
         this.e = Math.floor(Math.random()*10);
 
         this.partA = parseInt(this.b * 10 + this.c);
-        this.partB = parseInt(this.e * 10         );
+        this.partB = parseInt(              this.e);
         this.part =  parseInt(this.partA * this.partB);
 
 	APPLICATION.log('partA:' + this.partA);
@@ -32,37 +32,37 @@ initialize: function(sheet)
 	{
         	if (this.part % 100 == 0) // we have a whole number
         	{
-                	this.answer = '' + this.part;
+                	this.answer = '0.' + this.part;
         	}
         	else if (this.part % 10 == 0) // we have a multiple of 10  
         	{
 			var tensAndOnes = parseInt(this.part / 10); 
-			var ones = tensAndOnes / 10;
+			var ones = parseInt(tensAndOnes / 10);
 			var tenths = tensAndOnes % 10;
 		
-                	this.answer = '' + ones + '.' + tenths;
+                	this.answer = '0.' + ones + tenths;
         	}
         	else // we have pure 3 digit number  
 		{
 			var hundreds = parseInt(this.part / 100); 
 			var tensAndOnes = this.part % 100; 
-			this.answer = '' + hundreds + '.' + tensAndOnes;
+			this.answer = '0.' + hundreds + tensAndOnes;
 		}
 	}
-        else if (this.part <= 99) // we are 3 digits
+        else if (this.part <= 99) // 2 digits 
         {
                 if (this.part % 10 == 0) // we have a multiple of 10
                 {
                         var tensAndOnes = parseInt(this.part / 10);
                         var ones = parseInt(tensAndOnes / 10);
                         var tenths = tensAndOnes % 10;
-                        this.answer = '' + ones + '.' + tenths;
+                        this.answer = '0.0' + ones + tenths;
                 }
-        	else // we have pure 3 digit number  
+        	else // we have pure 2 digit number  
 		{
-			var hundreds = parseInt(this.part / 100); 
-			var tensAndOnes = this.part % 100; 
-			this.answer = '' + hundreds + '.' + tensAndOnes;
+			var tens = parseInt(this.part / 10); 
+			var ones = this.part % 10; 
+			this.answer = '0.0' + tens + ones;
 		}
         }
 
@@ -120,7 +120,7 @@ initialize: function(sheet)
         	else if (this.part % 10 == 0) // we have a multiple of 10  
         	{
 			var tensAndOnes = parseInt(this.part / 10); 
-			var ones = tensAndOnes / 10;
+			var ones = parseInt(tensAndOnes / 10);
 			var tenths = tensAndOnes % 10;
 		
                 	this.answer = '' + ones + '.' + tenths;
@@ -294,7 +294,7 @@ initialize: function(sheet)
                 else if (this.part % 10 == 0) // we have a multiple of 10
                 {
                         var tensAndOnes = parseInt(this.part / 10);
-                        var ones = tensAndOnes / 10;
+                        var ones = parseInt(tensAndOnes / 10);
                         var tenths = tensAndOnes % 10;
 
                         this.answer = '' + ones + '.' + tenths;
@@ -316,7 +316,7 @@ initialize: function(sheet)
         	else if (this.part % 10 == 0) // we have a multiple of 10  
         	{
 			var tensAndOnes = parseInt(this.part / 10); 
-			var ones = tensAndOnes / 10;
+			var ones = parseInt(tensAndOnes / 10);
 			var tenths = tensAndOnes % 10;
 		
                 	this.answer = '' + ones + '.' + tenths;
