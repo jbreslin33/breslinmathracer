@@ -2,7 +2,7 @@
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_9',5.1109,'5.nbt.b.7','x.xx-x.x');
 */
-var i_5_nbt_b_7__09 = new Class(
+var i_5_nbt_b_7__9 = new Class(
 {
 Extends: TextItem,
 
@@ -77,7 +77,7 @@ initialize: function(sheet)
 		}
         }
 
-        this.setQuestion('' + this.ns.mNameOne + ' ran a race in ' + this.a + '.' + this.b + this.c + ' seconds on Friday. Then on Saturday ' + this.ns.mNameMachine.getProunoun(this.ns.mNameOne,0,0) + ' ran the same race ' + this.d + '.' + this.e + ' seconds faster. What was ' + this.ns.mNameMachine.getProunoun(this.ns.mNameOne,0,1) + ' time on Saturday?');
+        this.setQuestion('' + this.ns.mNameOne + ' ran a race in ' + this.a + '.' + this.b + this.c + ' seconds on Friday. Then on Saturday ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ran the same race ' + this.d + '.' + this.e + ' seconds faster. What was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' time on Saturday?');
 
         this.setAnswer('' + this.answer,0);
 }
