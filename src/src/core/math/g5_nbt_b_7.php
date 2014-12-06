@@ -41,9 +41,52 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 1234;
+	this.part = 12000;
+        
+	if (this.part > 9999) // we are 5 digits
+        {
+                if (this.part % 10000 == 0) // we have a whole number
+                {
+                        var tens = parseInt(this.part / 10000);
+                        this.answer = '' + tens + '0';
+                }
+                else if (this.part % 1000 == 0) // we have a multiple of 1000
+                {
+			APPLICATION.log('h');
+                        var tens = parseInt(this.part / 10000);
+                        var tensAndOnes = parseInt(this.part / 1000);
+			var ones = parseInt(tensAndOnes / 10);
+                        this.answer = '' + tens + ones;
+                }
+                else if (this.part % 100 == 0) // we have a multiple of 100
+                {
+                        var tenthsAndHundredths = parseInt(this.part / 100);
+                        var tenths = parseInt(tenthsAndHundredths / 10);
+                        var hundredths = tenthsAndHundredths % 10;
 
-        if (this.part > 999) // we are 3 digits
+                        this.answer = '0.' + tenths + hundredths;
+                }
+                else if (this.part % 10 == 0) // we have a multiple of 10
+                {
+                        var tenthsAndHundredths = parseInt(this.part / 10);
+                        var tenths = parseInt(tenthsAndHundredths / 10);
+                        var hundredths = tenthsAndHundredths % 10;
+
+                        this.answer = '0.' + tenths + hundredths;
+                }
+                else // we have pure 4 digit number
+                {
+                        var ones = parseInt(this.part / 1000);
+                        var tenthsAndHundredthsAndThousandths = this.part % 1000;
+                        var tenths = parseInt(tenthsAndHundredthsAndThousandths / 100);
+                        var hundredthsAndThousandths = tenthsAndHundredthsAndThousandths % 100;
+			var hundredths = parseInt(hundredthsAndThousandths / 10);
+			var thousandths = hundredthsAndThousandths % 10;	
+                        this.answer = ones + '.' + tenths + hundredths + thousandths;
+                }
+        }
+
+        else if (this.part > 999) // we are 4 digits
         {
                 if (this.part % 1000 == 0) // we have a whole number
                 {
