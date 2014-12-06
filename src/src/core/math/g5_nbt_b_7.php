@@ -41,7 +41,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 12340;
+	this.part = 12345;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -82,15 +82,23 @@ initialize: function(sheet)
                         this.answer = '' + tens + ones + '.' + tenths + hundredths;
                 
 		}
-                else // we have pure 4 digit number
+                else // we have pure 5 digit number
                 {
-                        var ones = parseInt(this.part / 1000);
-                        var tenthsAndHundredthsAndThousandths = this.part % 1000;
-                        var tenths = parseInt(tenthsAndHundredthsAndThousandths / 100);
-                        var hundredthsAndThousandths = tenthsAndHundredthsAndThousandths % 100;
-			var hundredths = parseInt(hundredthsAndThousandths / 10);
-			var thousandths = hundredthsAndThousandths % 10;	
-                        this.answer = ones + '.' + tenths + hundredths + thousandths;
+                        var tens = parseInt(this.part / 10000);
+                        var tensAndOnes = parseInt(this.part / 1000);
+			var ones = tensAndOnes % 10;
+
+			var tenths = this.part % 1000 
+			tenths = parseInt(tenths / 100);
+
+			var hundredths = this.part % 100 
+			hundredths = parseInt(hundredths / 10);
+			
+			var thousandths = this.part % 10 
+			thousandths = parseInt(thousandths / 1);
+
+                        this.answer = '' + tens + ones + '.' + tenths + hundredths + thousandths;
+
                 }
         }
 
