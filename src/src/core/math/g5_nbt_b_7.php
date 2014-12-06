@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_11',5.1111,'5.nbt.b.7','0.55x5.5');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_11',5.1111,'5.nbt.b.7','5.55x5.5');
 */
 var i_5_nbt_b_7__11 = new Class(
 {
@@ -13,15 +13,15 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_11';
         this.ns = new NameSampler();
 
-        this.a = 0;
+        this.a = Math.floor(Math.random()*10);
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
 
         this.d = Math.floor(Math.random()*10);
         this.e = Math.floor(Math.random()*10);
 
-        this.partA = parseInt(               this.b * 10 + this.c);
-        this.partB = parseInt(this.d * 100 + this.e * 10         );
+        this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
+        this.partB = parseInt(               this.d * 10 + this.e);
         this.part =  parseInt(this.partA * this.partB);
 
 	while (this.part == 0)
@@ -41,7 +41,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 1234;
+	this.part = 123;
         
 	if (this.part > 9999) // we are 5 digits
         {
