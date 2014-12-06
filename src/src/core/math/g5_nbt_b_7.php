@@ -41,7 +41,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 12300;
+	this.part = 12340;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -69,12 +69,19 @@ initialize: function(sheet)
                 }
                 else if (this.part % 10 == 0) // we have a multiple of 10
                 {
-                        var tenthsAndHundredths = parseInt(this.part / 10);
-                        var tenths = parseInt(tenthsAndHundredths / 10);
-                        var hundredths = tenthsAndHundredths % 10;
+                        var tens = parseInt(this.part / 10000);
+                        var tensAndOnes = parseInt(this.part / 1000);
+			var ones = tensAndOnes % 10;
 
-                        this.answer = '0.' + tenths + hundredths;
-                }
+			var tenths = this.part % 1000 
+			tenths = parseInt(tenths / 100);
+
+			var hundredths = this.part % 100 
+			hundredths = parseInt(hundredths / 10);
+
+                        this.answer = '' + tens + ones + '.' + tenths + hundredths;
+                
+		}
                 else // we have pure 4 digit number
                 {
                         var ones = parseInt(this.part / 1000);
