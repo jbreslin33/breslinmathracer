@@ -41,7 +41,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 12345;
+	this.part = 1234;
         
 	if (this.part > 9999) // we are 5 digits
         {
