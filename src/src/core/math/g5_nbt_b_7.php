@@ -43,7 +43,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 111;
+	this.part = 3;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -184,14 +184,19 @@ initialize: function(sheet)
         {
                 if (this.part % 10 == 0) // we have a multiple of 10
                 {
-                        var hundredths = parseInt(this.part / 10);
-                        this.answer = '0.0' + hundredths;
+                        var thousandths = parseInt(this.part / 10);
+                        this.answer = '0.00' + thousandths;
                 }
-        	else // we have pure 2 digit number  
+        	else if (this.part >= 10) // we have pure 2 digit number  
 		{
-                        var hundredths = parseInt(this.part / 10);
-			var thousandths = this.part % 10; 
-			this.answer = '0.0' + hundredths + thousandths;
+                        var thousandths = parseInt(this.part / 10);
+
+			var tenthousandths = this.part % 10;
+                        this.answer = '0.00' + thousandths + tenthousandths;
+		}
+		else //we have a 1 digit number
+		{
+			this.answer = '0.000' + this.part;
 		}
         }
 
