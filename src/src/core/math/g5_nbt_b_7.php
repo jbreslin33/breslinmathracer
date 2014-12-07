@@ -43,7 +43,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 110;
+	this.part = 111;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -149,7 +149,7 @@ initialize: function(sheet)
 			this.answer = '0.' + tenths + hundredths + thousandths + tenthousandths;
                 }
         }
-	//110
+	//111
 	else if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
@@ -159,7 +159,6 @@ initialize: function(sheet)
         	}
         	else if (this.part % 10 == 0) // we have a multiple of 10  110 
         	{
-			APPLICATION.log('bres:' + this.part);	
 			var hundredths = parseInt(this.part / 100); 
                 	this.answer = '0.0' + hundredths;
 		
@@ -170,11 +169,15 @@ initialize: function(sheet)
         	}
         	else // we have pure 3 digit number  
 		{
-			var tenths = parseInt(this.part / 100); 
-			var hundredthsAndThousandths = this.part % 100; 
-			var hundredths = parseInt(hundredthsAndThousandths / 10); 
-			var thousandths = hundredthsAndThousandths % 10; 
-			this.answer = '0.' + tenths + hundredths + thousandths;
+			var hundredths = parseInt(this.part / 100); 
+                	this.answer = '0.0' + hundredths;
+		
+			var thousandths = this.part % 100;	
+			thousandths = parseInt(thousandths / 10);
+
+			var tenthousandths = this.part % 10;  
+
+                	this.answer = '0.0' + hundredths + thousandths + tenthousandths;
 		}
 	}
         else if (this.part <= 99) // 2 digits 
