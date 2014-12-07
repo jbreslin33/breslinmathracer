@@ -43,7 +43,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 12000;
+	this.part = 12300;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -61,13 +61,14 @@ initialize: function(sheet)
                 }
                 else if (this.part % 100 == 0) // we have a multiple of 100
                 {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = tensAndOnes % 10;
+                        var ones = parseInt(this.part / 10000); //1
+                        var onesAndTenths = parseInt(this.part / 1000); //12
+			var tenths = onesAndTenths % 10;
+			var tenthsAndHundredths = this.part % 10000; 
+			tenthsAndHundredths = parseInt(tenthsAndHundredths / 100); 
+			var hundredths = tenthsAndHundredths % 10; 
 
-			var tenths = this.part % 1000 
-			tenths = parseInt(tenths / 100);
-                        this.answer = '' + tens + ones + '.' + tenths;
+                        this.answer = '' + ones + '.' + tenths + hundredths;
                 }
                 else if (this.part % 10 == 0) // we have a multiple of 10
                 {
