@@ -43,23 +43,23 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 12300;
+	this.part = 12340;
         
 	if (this.part > 9999) // we are 5 digits
         {
-                if (this.part % 10000 == 0) // we have a multiple of 10,000 
+                if (this.part % 10000 == 0) // we have a multiple of 10,000 1 
                 {
                         var ones = parseInt(this.part / 10000);
                         this.answer = '' + ones;
                 }
-                else if (this.part % 1000 == 0) // we have a multiple of 1000
+                else if (this.part % 1000 == 0) // we have a multiple of 1000 1.2
                 {
                         var ones = parseInt(this.part / 10000); //1
                         var onesAndTenths = parseInt(this.part / 1000); //12
 			var tenths = onesAndTenths % 10;
                         this.answer = '' + ones + '.' + tenths;
                 }
-                else if (this.part % 100 == 0) // we have a multiple of 100
+                else if (this.part % 100 == 0) // we have a multiple of 100 1.23
                 {
                         var ones = parseInt(this.part / 10000); //1
                         var onesAndTenths = parseInt(this.part / 1000); //12
@@ -70,19 +70,21 @@ initialize: function(sheet)
 
                         this.answer = '' + ones + '.' + tenths + hundredths;
                 }
-                else if (this.part % 10 == 0) // we have a multiple of 10
+                else if (this.part % 10 == 0) // we have a multiple of 10 1.234
                 {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = tensAndOnes % 10;
+                        var ones = parseInt(this.part / 10000); //1
+                        var onesAndTenths = parseInt(this.part / 1000); //12
+			var tenths = onesAndTenths % 10;
 
-			var tenths = this.part % 1000 
-			tenths = parseInt(tenths / 100);
+			var tenthsAndHundredths = this.part % 10000; 
+			tenthsAndHundredths = parseInt(tenthsAndHundredths / 100); 
+			var hundredths = tenthsAndHundredths % 10; 
 
-			var hundredths = this.part % 100 
-			hundredths = parseInt(hundredths / 10);
+			var hundredthsAndThousandths = this.part % 1000; 	
+			hundredthsAndThousandths = parseInt(hundredthsAndThousandths / 10); 
+			var thousandths = hundredthsAndThousandths % 10;
 
-                        this.answer = '' + tens + ones + '.' + tenths + hundredths;
+                        this.answer = '' + ones + '.' + tenths + hundredths + thousandths;
                 
 		}
                 else // we have pure 5 digit number
