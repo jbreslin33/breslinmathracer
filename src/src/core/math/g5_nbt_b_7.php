@@ -43,7 +43,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 12340;
+	this.part = 12345;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -87,22 +87,26 @@ initialize: function(sheet)
                         this.answer = '' + ones + '.' + tenths + hundredths + thousandths;
                 
 		}
-                else // we have pure 5 digit number
+                else // we have pure 5 digit number 1.2345
                 {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = tensAndOnes % 10;
+                        var ones = parseInt(this.part / 10000); //1
+                        var onesAndTenths = parseInt(this.part / 1000); //12
+                        var tenths = onesAndTenths % 10;
 
-			var tenths = this.part % 1000 
-			tenths = parseInt(tenths / 100);
+                        var tenthsAndHundredths = this.part % 10000;
+                        tenthsAndHundredths = parseInt(tenthsAndHundredths / 100);
+                        var hundredths = tenthsAndHundredths % 10;
 
-			var hundredths = this.part % 100 
-			hundredths = parseInt(hundredths / 10);
-			
-			var thousandths = this.part % 10 
-			thousandths = parseInt(thousandths / 1);
+                        var hundredthsAndThousandths = this.part % 1000;
+                        hundredthsAndThousandths = parseInt(hundredthsAndThousandths / 10);
+                        var thousandths = hundredthsAndThousandths % 10;
+                       	12,345 
+			var thousandthsAndTenthousandths = this.part % 100;
+			APPLICATION.log('thousandthsAndTenthousandths:' + thousandthsAndTenthousandths);
+                        var tenthousandths = thousandthsAndTenthousandths % 10;
+			APPLICATION.log('tenthousandths:' + tenthousandths);
 
-                        this.answer = '' + tens + ones + '.' + tenths + hundredths + thousandths;
+                        this.answer = '' + ones + '.' + tenths + hundredths + thousandths + tenthousandths;
                 }
         }
 
