@@ -43,7 +43,7 @@ initialize: function(sheet)
 	APPLICATION.log('partB:' + this.partB);
 	APPLICATION.log('part:' + this.part);
 
-	this.part = 1200;
+	this.part = 1230;
         
 	if (this.part > 9999) // we are 5 digits
         {
@@ -109,12 +109,12 @@ initialize: function(sheet)
 	//1234
         else if (this.part > 999) // we are 4 digits
         {
-                if (this.part % 1000 == 0) // we have a whole number
+                if (this.part % 1000 == 0) // we have a whole number  0.1
                 {
                         var tenths = parseInt(this.part / 1000);
                         this.answer = '0.' + tenths;
                 }
-                else if (this.part % 100 == 0) // we have a multiple of 100
+                else if (this.part % 100 == 0) // we have a multiple of 100 0.12
                 {
                         var tenthsAndHundredths = parseInt(this.part / 100);
                         var tenths = parseInt(tenthsAndHundredths / 10);
@@ -122,13 +122,19 @@ initialize: function(sheet)
 
                         this.answer = '0.' + tenths + hundredths;
                 }
-                else if (this.part % 10 == 0) // we have a multiple of 10
+                else if (this.part % 10 == 0) // we have a multiple of 10 0.123
                 {
-                        var tenthsAndHundredths = parseInt(this.part / 10);
+			//1230
+                        var tenthsAndHundredths = parseInt(this.part / 100);
                         var tenths = parseInt(tenthsAndHundredths / 10);
                         var hundredths = tenthsAndHundredths % 10;
+                        
+                        //var hundredthsAndThousandths = parseInt(this.part / 100);
+                       // var tenths = parseInt(tenthsAndHundredths / 10);
+                        var thousandths = this.part % 100;
+			thousandths = parseInt(thousandths / 10);
 
-                        this.answer = '0.' + tenths + hundredths;
+                        this.answer = '0.' + tenths + hundredths + thousandths;
                 }
                 else // we have pure 4 digit number
                 {
