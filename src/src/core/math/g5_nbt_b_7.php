@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_1',5.1115,'5.nbt.b.7','0.55/0.5');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_15',5.1115,'5.nbt.b.7','0.55/0.5');
 */
 var i_5_nbt_b_7__15 = new Class(
 {
@@ -14,6 +14,8 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
+
+	//while (this.answer.length
         this.a = 0;
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
@@ -84,6 +86,9 @@ initialize: function(sheet)
 
         this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
         this.setAnswer('' + this.answer,0);
+
+	var precision = (this.answer + "").split(".")[1].length;
+	APPLICATION.log('precision:' + precision);
 }
 });
 /*
