@@ -14,8 +14,9 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-
-	//while (this.answer.length
+	this.precision = 3;
+	while (this.precision > 2)
+	{
         this.a = 0;
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
@@ -39,12 +40,6 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 		
-	APPLICATION.log('partA:' + this.partA);
-	APPLICATION.log('partB:' + this.partB);
-	APPLICATION.log('part:' + this.part);
-
-	//this.part = 70;
-
 	if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
@@ -83,12 +78,11 @@ initialize: function(sheet)
 			this.answer = '0.0' + hundredths + thousandths;
 		}
         }
-
+	this.precision = (this.answer + "").split(".")[1].length;
+	APPLICATION.log('precision:' + this.precision);
+	}
         this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
         this.setAnswer('' + this.answer,0);
-
-	var precision = (this.answer + "").split(".")[1].length;
-	APPLICATION.log('precision:' + precision);
 }
 });
 /*
