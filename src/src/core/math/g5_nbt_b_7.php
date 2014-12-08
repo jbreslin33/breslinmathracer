@@ -970,6 +970,11 @@ initialize: function(sheet)
         	this.partB = parseInt(              this.e);
         	this.part =  parseInt(this.partA * this.partB);
 	}
+
+	//this.partA = 7; 
+	//this.partB = 5; 
+        //this.part =  parseInt(this.partA * this.partB);
+	//this.part = 2700;
 		
 	if (this.part > 99) // we are 3 digits 
 	{
