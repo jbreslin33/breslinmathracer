@@ -80,9 +80,42 @@ initialize: function(sheet)
         }
 	this.precision = (this.answer + "").split(".")[1].length;
 	APPLICATION.log('precision:' + this.precision);
+	
+        var r = Math.floor(Math.random()*2);
+	r = 0;
+	
+	if (r == 0)
+	{
+		this.e = parseInt(this.e);
+		if (this.e == 0) 
+		{
+			this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.a + '.' + this.b + this.c);
+        		this.setAnswer('' + this.d,0);
+		}
+		else
+		{
+			this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.a + '.' + this.b + this.c);
+        		this.setAnswer('' + this.d + '.' + this.e,0);
+		}
 	}
-        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
-        this.setAnswer('' + this.answer,0);
+	else
+	{
+
+	}
+	
+	}// end while precision 
+	
+	//works
+	//if (this.precision 
+        //this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.a + '.' + this.b + this.c);
+        //this.setAnswer('' + this.d + '.' + this.e,0);
+
+	//try this	
+        //this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.d + '.' + this.e);
+        //this.setAnswer('' + this.a + '.' + this.b + this.c,0);
+
+	//this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
+        //this.setAnswer('' + this.answer,0);
 }
 });
 /*
