@@ -163,11 +163,6 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 		
-	APPLICATION.log('partA:' + this.partA);
-	APPLICATION.log('partB:' + this.partB);
-	APPLICATION.log('part:' + this.part);
-
-	this.part = 123456;
         if (this.part > 99999) // we are 6 digits
         {
                 if (this.part % 100000 == 0) // we have a multiple of 100,000 1
@@ -450,12 +445,6 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 		
-	APPLICATION.log('partA:' + this.partA);
-	APPLICATION.log('partB:' + this.partB);
-	APPLICATION.log('part:' + this.part);
-
-	this.part = 12345;
-        
 	if (this.part > 9999) // we are 5 digits
         {
                 if (this.part % 10000 == 0) // we have a whole number
@@ -630,12 +619,6 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 		
-	APPLICATION.log('partA:' + this.partA);
-	APPLICATION.log('partB:' + this.partB);
-	APPLICATION.log('part:' + this.part);
-
-	this.part = 12345;
-        
 	if (this.part > 9999) // we are 5 digits
         {
                 if (this.part % 10000 == 0) // we have a whole number
@@ -812,12 +795,6 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 		
-	APPLICATION.log('partA:' + this.partA);
-	APPLICATION.log('partB:' + this.partB);
-	APPLICATION.log('part:' + this.part);
-
-	this.part = 123;
-        
 	if (this.part > 9999) // we are 5 digits
         {
                 if (this.part % 10000 == 0) // we have a whole number
@@ -994,12 +971,6 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 		
-	APPLICATION.log('partA:' + this.partA);
-	APPLICATION.log('partB:' + this.partB);
-	APPLICATION.log('part:' + this.part);
-
-	//this.part = 70;
-
 	if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
