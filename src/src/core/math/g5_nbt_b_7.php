@@ -16,7 +16,7 @@ initialize: function(factorA,factorB,decimalPlaces)
 
 process:  function()
 {
-	this.mWholeNumberAnswer = 23;	
+	this.mWholeNumberAnswer = 230;	
 	var s = '' + this.mWholeNumberAnswer;	
 	APPLICATION.log('this.mWholeNumberAnswer.length:' + s.length);
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
@@ -30,6 +30,7 @@ process:  function()
 			bufferZeroes = '' + bufferZeroes + '0';
 		}
 		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
+		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = '0.' + decimalPart;
 	}
 	else //lets split it
@@ -41,8 +42,30 @@ process:  function()
 	}
 
 	//lets strip excess zeroes...from decimal part....
+},
 
+stripTrailingZeroes: function(s)
+{
+	s = '' + s;	
+	var i = 0;	
+	originalLength = s.length;	
+	var encounteredNonZero = false;
+	var strippedPart = '';
+	while (encounteredNonZero == false || i < originalLength )
+	{
+		if ( s[parseInt(s.length - i)] == 0)	 //delete
+		{
+			s = s.substring(0, s.length - 1);
+		}
+		else
+		{
+			encounteredNonZero = true;	
+		}
+		i++;
+	}
+	return s; 
 }
+
 });
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_15',5.1115,'5.nbt.b.7','0.55/0.5');
