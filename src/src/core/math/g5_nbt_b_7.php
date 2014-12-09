@@ -25,20 +25,34 @@ process:  function()
 	APPLICATION.log('whole:' + this.mAnswer);
 	var s = '' + this.mAnswer;
 	var length = s.length;	 
-		
-	var w = s.substring(0,this.mDecimalPlacesSecond); 
-	var d = s.substring(1,length);
+	
+	var w = 0; 
+	var d = 0;
+	
+	if (length == 1)	
+	{
+		d = s.substring(0,this.mDecimalPlacesSecond); 
+	}
+	else
+	{
+		w = s.substring(0,this.mDecimalPlacesSecond); 
+		d = s.substring(1,length);
+	}
+
 	APPLICATION.log('w:' + w);
 	APPLICATION.log('d:' + d);
 	d = this.stripTrailingZeroes(d);
 	APPLICATION.log('dt:' + d);
 
-	if (w == 0)
+	if (w != 0 && d == 0) //whole number
 	{
-		
+		this.mAnswer = '' + d;
+	}
+	else if (w == 0 && d != 0) //just decimal
+	{
 		this.mAnswer = '0.' + d;
 	}
-	else
+	else //normal 
 	{
 		this.mAnswer = '' + w + '.' + d;
 	}
