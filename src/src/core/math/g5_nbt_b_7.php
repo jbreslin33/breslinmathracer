@@ -5,17 +5,26 @@ initialize: function(factorA,factorB,decimalPlaces)
 {
 	this.mFactorA = factorA;
 	this.mFactorB = factorB;
-	
+
 	this.mDecimalPlaces = decimalPlaces;	
+
+	this.mFactorA * Math.pow(10,decimalPlaces);
+	this.mFactorB * Math.pow(10,decimalPlaces);
 	
 	this.mAnswer = 0;
-	this.mWholeNumberAnswer =  parseInt(this.mFactorA * this.mFactorB);
+
+	APPLICATION.log('A:' + this.mFactorA);
+	APPLICATION.log('B:' + this.mFactorB);
+
+	this.mWholeNumberAnswer =  parseInt(this.mFactorA / this.mFactorB);
 
 	this.process();
 },
 
 process:  function()
 {
+	this.mAnswer = '' + this.mWholeNumberAnswer;
+/*
 	var s = '' + this.mWholeNumberAnswer;	
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
 	{
@@ -37,6 +46,7 @@ process:  function()
 		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = wholePart + '.' + decimalPart;
 	}
+*/
 },
 
 stripTrailingZeroes: function(s)
