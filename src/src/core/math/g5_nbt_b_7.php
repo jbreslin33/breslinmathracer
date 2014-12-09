@@ -226,9 +226,9 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 
-	this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,3);
+	this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,4);
 
-        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
+        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + this.f);
         this.setAnswer('' + this.mMultiplyDecimals.mAnswer,0);
 }
 });
