@@ -1,4 +1,67 @@
 
+var DivideDecimals = new Class(
+{
+initialize: function(factorA,factorB,decimalPlaces)
+{
+	this.mFactorA = factorA;
+	this.mFactorB = factorB;
+	
+	this.mDecimalPlaces = decimalPlaces;	
+	
+	this.mAnswer = 0;
+	this.mWholeNumberAnswer =  parseInt(this.mFactorA * this.mFactorB);
+
+	this.process();
+},
+
+process:  function()
+{
+	var s = '' + this.mWholeNumberAnswer;	
+	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
+	{
+		//lets add buffer zeros depending on size compared to decimal places needed
+		var numberOfBufferZeroes = parseInt(this.mDecimalPlaces - s.length);	
+		var bufferZeroes = '';
+		for (i = 0; i < numberOfBufferZeroes; i++)
+		{	
+			bufferZeroes = '' + bufferZeroes + '0';
+		}
+		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
+		decimalPart = this.stripTrailingZeroes(decimalPart);
+		this.mAnswer = '0.' + decimalPart;
+	}
+	else //lets split it
+	{
+		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
+		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
+		decimalPart = this.stripTrailingZeroes(decimalPart);
+		this.mAnswer = wholePart + '.' + decimalPart;
+	}
+},
+
+stripTrailingZeroes: function(s)
+{
+	s = '' + s;	
+	var i = 0;	
+	originalLength = s.length;	
+	var encounteredNonZero = false;
+	var strippedPart = '';
+	while (encounteredNonZero == false || i < originalLength )
+	{
+		if ( s[parseInt(s.length - i)] == 0)	 //delete
+		{
+			s = s.substring(0, s.length - 1);
+		}
+		else
+		{
+			encounteredNonZero = true;	
+		}
+		i++;
+	}
+	return s; 
+}
+});
+
 var MultiplyDecimals = new Class(
 {
 initialize: function(factorA,factorB,decimalPlaces)
@@ -62,6 +125,7 @@ stripTrailingZeroes: function(s)
 }
 
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_15',5.1115,'5.nbt.b.7','0.55/0.5');
 */
@@ -75,14 +139,10 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_15';
 
-        this.ns = new NameSampler();
-
-	this.precision = 3;
-	while (this.precision > 2)
-	{
         this.a = 0;
         this.b = Math.floor(Math.random()*10);
         this.c = Math.floor(Math.random()*10);
+
         this.d = 0;
         this.e = Math.floor(Math.random()*10);
 
@@ -101,32 +161,15 @@ initialize: function(sheet)
         	this.partB = parseInt(              this.e);
 	}
 	
-	this.precisionPartA = (this.partA + "").split(".")[1].length;
-	this.precisionPartB = (this.partA + "").split(".")[1].length;
-
-	if (this.precisionA > this.precisionB)
-	{
-		this.partA = this.partA * Math.pow(10,this.precisionA);
-		this.partB = this.partB * Math.pow(10,this.precisionA);
-	}	
-	if (this.precisionA == this.precisionB)
-	{
-		this.partA = this.partA * Math.pow(10,this.precisionA);
-		this.partB = this.partB * Math.pow(10,this.precisionB);
-	}	
-	if (this.precisionA < this.precisionB)
-	{
-		this.partA = this.partA * Math.pow(10,this.precisionB);
-		this.partB = this.partB * Math.pow(10,this.precisionB);
-	}	
-        	
-	this.part =  parseInt(this.partA / this.partB);
+	//this.part =  parseInt(this.partA / this.partB);
+	
+	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,2);
         
-	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e + this.f);
-        this.setAnswer('' + this.part,0);
-
+	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
+        this.setAnswer('' + this.mDivideDecimals.mAnswer,0);
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_14',5.1114,'5.nbt.b.7','5.55x5.55');
 */
