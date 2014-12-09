@@ -39,7 +39,7 @@ process:  function()
 	else
 	{
 		w = s.substring(0,parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond)); 
-		d = s.substring(1,length);
+		d = s.substring(parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond),length);
 	}
 
 	APPLICATION.log('w:' + w);
