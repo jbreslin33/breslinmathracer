@@ -16,7 +16,7 @@ initialize: function(factorA,factorB,decimalPlaces)
 
 process:  function()
 {
-	this.mWholeNumberAnswer = 1234;	
+	this.mWholeNumberAnswer = 23;	
 	var s = '' + this.mWholeNumberAnswer;	
 	APPLICATION.log('this.mWholeNumberAnswer.length:' + s.length);
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
@@ -29,7 +29,8 @@ process:  function()
 		{	
 			bufferZeroes = '' + bufferZeroes + '0';
 		}
-		this.mAnswer = '0.' + bufferZeroes + this.mWholeNumberAnswer;
+		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
+		this.mAnswer = '0.' + decimalPart;
 	}
 	else //lets split it
 	{
@@ -38,6 +39,9 @@ process:  function()
 		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
 		this.mAnswer = wholePart + '.' + decimalPart;
 	}
+
+	//lets strip excess zeroes...from decimal part....
+
 }
 });
 /*
