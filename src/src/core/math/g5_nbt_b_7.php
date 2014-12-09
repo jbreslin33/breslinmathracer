@@ -16,12 +16,9 @@ initialize: function(factorA,factorB,decimalPlaces)
 
 process:  function()
 {
-	this.mWholeNumberAnswer = 1230;	
 	var s = '' + this.mWholeNumberAnswer;	
-	APPLICATION.log('this.mWholeNumberAnswer.length:' + s.length);
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
 	{
-		APPLICATION.log('a');
 		//lets add buffer zeros depending on size compared to decimal places needed
 		var numberOfBufferZeroes = parseInt(this.mDecimalPlaces - s.length);	
 		var bufferZeroes = '';
@@ -35,14 +32,11 @@ process:  function()
 	}
 	else //lets split it
 	{
-		APPLICATION.log('b');
 		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
 		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
 		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = wholePart + '.' + decimalPart;
 	}
-
-	//lets strip excess zeroes...from decimal part....
 },
 
 stripTrailingZeroes: function(s)
@@ -848,7 +842,6 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_11';
-        this.ns = new NameSampler();
 
         this.a = Math.floor(Math.random()*10);
         this.b = Math.floor(Math.random()*10);
@@ -875,158 +868,10 @@ initialize: function(sheet)
         	this.part =  parseInt(this.partA * this.partB);
 	}
 
-	this.part = 123;
-		
-	if (this.part > 9999) // we are 5 digits
-        {
-                if (this.part % 10000 == 0) // we have a whole number
-                {
-                        var tens = parseInt(this.part / 10000);
-                        this.answer = '' + tens + '0';
-                }
-                else if (this.part % 1000 == 0) // we have a multiple of 1000
-                {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = parseInt(tensAndOnes / 10);
-                        this.answer = '' + tens + ones;
-                }
-                else if (this.part % 100 == 0) // we have a multiple of 100
-                {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = tensAndOnes % 10;
-
-			var tenths = this.part % 1000 
-			tenths = parseInt(tenths / 100);
-                        this.answer = '' + tens + ones + '.' + tenths;
-                }
-                else if (this.part % 10 == 0) // we have a multiple of 10
-                {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = tensAndOnes % 10;
-
-			var tenths = this.part % 1000 
-			tenths = parseInt(tenths / 100);
-
-			var hundredths = this.part % 100 
-			hundredths = parseInt(hundredths / 10);
-
-                        this.answer = '' + tens + ones + '.' + tenths + hundredths;
-                
-		}
-                else // we have pure 5 digit number
-                {
-                        var tens = parseInt(this.part / 10000);
-                        var tensAndOnes = parseInt(this.part / 1000);
-			var ones = tensAndOnes % 10;
-
-			var tenths = this.part % 1000 
-			tenths = parseInt(tenths / 100);
-
-			var hundredths = this.part % 100 
-			hundredths = parseInt(hundredths / 10);
-			
-			var thousandths = this.part % 10 
-			thousandths = parseInt(thousandths / 1);
-
-                        this.answer = '' + tens + ones + '.' + tenths + hundredths + thousandths;
-
-                }
-        }
-
-        else if (this.part > 999) // we are 4 digits
-        {
-                if (this.part % 1000 == 0) // we have a whole number
-                {
-                        var ones = parseInt(this.part / 1000);
-                        this.answer = '' + ones;
-                }
-                else if (this.part % 100 == 0) // we have a multiple of 100
-                {
-                        var ones = parseInt(this.part / 1000);
-
-			var tenths = this.part % 1000; 
-			tenths = parseInt(tenths / 100);
-
-                        this.answer = '' + ones + '.' + tenths;
-                }
-                else if (this.part % 10 == 0) // we have a multiple of 10
-                {
-                        var ones = parseInt(this.part / 1000);
-
-			var tenths = this.part % 1000; 
-			tenths = parseInt(tenths / 100);
-
-			var hundredths = this.part % 100;
-			hundredths = parseIn(hundredths / 10);
-
-                        this.answer = '' + ones + '.' + tenths + hundredths;
-                }
-                else // we have pure 4 digit number
-		{
-                        var ones = parseInt(this.part / 1000);
-
-			var tenths = this.part % 1000; 
-			tenths = parseInt(tenths / 100);
-
-			var hundredths = this.part % 100;
-			hundredths = parseInt(hundredths / 10);
-			
-			var thousandths = this.part % 10;
-
-                        this.answer = ones + '.' + tenths + hundredths + thousandths;
-                }
-        }
-
-	else if (this.part > 99) // we are 3 digits 
-	{
-        	if (this.part % 100 == 0) // we have a whole number
-        	{
-			var tenths = parseInt(this.part / 100); 
-                	this.answer = '0.' + tenths;
-        	}
-        	else if (this.part % 10 == 0) // we have a multiple of 10  
-        	{
-			var tenths = parseInt(this.part / 100); 
-                	this.answer = '0.' + tenths;
-			
-			var hundredths = this.part % 100;
-			hundredths = parseInt(hundredths / 10);
-			
-                	this.answer = '0.' + tenths + hundredths;
-        	}
-        	else // we have pure 3 digit number  
-		{
-			var tenths = parseInt(this.part / 100); 
-                	this.answer = '0.' + tenths;
-			
-			var hundredths = this.part % 100;
-			hundredths = parseInt(hundredths / 10);
-			
-			var thousandths = this.part % 10;
-
-			this.answer = '0.' + tenths + hundredths + thousandths;
-		}
-	}
-        else if (this.part <= 99) // 2 digits 
-        {
-                if (this.part % 10 == 0) // we have a multiple of 10
-                {
-                        var hundredths = parseInt(this.part / 10);
-                        this.answer = '0.0' + hundredths;
-                }
-        	else // we have pure 2 digit number  
-		{
-                        var hundredths = parseInt(this.part / 10);
-			var thousandths = this.part % 10; 
-			this.answer = '0.0' + hundredths + thousandths;
-		}
-        }
+	this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,3);
 
         this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
-        this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.mMultiplyDecimals.mAnswer,0);
 }
 });
 
@@ -1042,8 +887,6 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_10';
-
-        this.ns = new NameSampler();
 
         this.a = 0;
         this.b = Math.floor(Math.random()*10);
