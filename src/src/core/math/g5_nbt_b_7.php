@@ -1,4 +1,5 @@
 
+
 var DivideDecimals = new Class(
 {
 initialize: function(factorA,factorB,decimalPlacesFirst,decimalPlacesSecond)
@@ -28,14 +29,16 @@ process:  function()
 	
 	var w = 0; 
 	var d = 0;
-	
-	if (length == 1)	
+
+	this.mDividendWholeNumbers = 1;
+
+	if (length == parseInt(this.mDecimalPlacesSecond + this.mDecimalPlacesFirst))	
 	{
-		d = s.substring(0,this.mDecimalPlacesSecond); 
+		d = s.substring(0,parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond)); 
 	}
 	else
 	{
-		w = s.substring(0,this.mDecimalPlacesSecond); 
+		w = s.substring(0,parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond)); 
 		d = s.substring(1,length);
 	}
 
@@ -148,6 +151,53 @@ stripTrailingZeroes: function(s)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_16',5.1116,'5.nbt.b.7','5.55/5.5');
+*/
+var i_5_nbt_b_7__16 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.7_16';
+
+        this.a = Math.floor(Math.random()*10);
+        this.b = Math.floor(Math.random()*10);
+        this.c = Math.floor(Math.random()*10);
+
+        this.d = Math.floor(Math.random()*10);
+        this.e = Math.floor(Math.random()*10);
+
+        this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
+        this.partB = parseInt(               this.d * 10 + this.e);
+	
+	var r = this.partA % this.partB;  
+
+	while (r != 0) 
+	{
+        	this.a = Math.floor(Math.random()*10);
+        	this.b = Math.floor(Math.random()*10);
+        	this.c = Math.floor(Math.random()*10);
+
+        	this.d = Math.floor(Math.random()*10);
+        	this.e = Math.floor(Math.random()*10);
+
+        	this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
+        	this.partB = parseInt(               this.d * 10 + this.e);
+	
+		var r = this.partA % this.partB;  
+	}
+	
+	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,1,1);
+        
+	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
+        this.setAnswer('' + this.mDivideDecimals.mAnswer,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_15',5.1115,'5.nbt.b.7','0.55/0.5');
 */
 var i_5_nbt_b_7__15 = new Class(
@@ -186,7 +236,7 @@ initialize: function(sheet)
 		var r = this.partA % this.partB;  
 	}
 	
-	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,1,1);
+	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,0,1);
         
 	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.mDivideDecimals.mAnswer,0);
