@@ -27,16 +27,10 @@ process:  function()
 	this.mAnswer = '' + this.mWholeNumberAnswer;
 	var s = '' + this.mAnswer;
 	var length = s.length;	 
-	APPLICATION.log('leng:' + length);
-
-	//var w = s.substring(0,this.decimalPlacesSecond); 
-	//var d = s.substring(this.decimalPlacesSecond,length); 
-	
-//	var w = s.substring(0,1); 
-//	var d = s.substring(1,2);
 
 	var w = s.substring(0,this.mDecimalPlacesSecond); 
 	var d = s.substring(1,length);
+	d = this.stripTrailingZeroes(d);
 	
 	this.mAnswer = '' + w + '.' + d;
 /*
