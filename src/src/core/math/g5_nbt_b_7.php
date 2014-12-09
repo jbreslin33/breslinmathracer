@@ -25,7 +25,17 @@ initialize: function(factorA,factorB,decimalPlacesFirst,decimalPlacesSecond)
 process:  function()
 {
 	this.mAnswer = '' + this.mWholeNumberAnswer;
+	var s = '' + this.mAnswer;
+	var length = s.length;	 
+	APPLICATION.log('leng:' + length);
+
+	//var w = s.substring(0,this.decimalPlacesSecond); 
+	//var d = s.substring(this.decimalPlacesSecond,length); 
 	
+	var w = s.substring(0,1); 
+	var d = s.substring(1,2);
+	
+	this.mAnswer = '' + w + '.' + d;
 /*
 	var s = '' + this.mWholeNumberAnswer;	
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
