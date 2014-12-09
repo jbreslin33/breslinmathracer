@@ -88,9 +88,8 @@ initialize: function(sheet)
 
         this.partA = parseInt(this.b * 10 + this.c);
         this.partB = parseInt(              this.e);
-        this.part =  parseInt(this.partA * this.partB);
 
-	while (this.part == 0)
+	while (this.partB == 0)
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -100,90 +99,32 @@ initialize: function(sheet)
 
         	this.partA = parseInt(this.b * 10 + this.c);
         	this.partB = parseInt(              this.e);
-        	this.part =  parseInt(this.partA * this.partB);
-	}
-		
-	if (this.part > 99) // we are 3 digits 
-	{
-        	if (this.part % 100 == 0) // we have a whole number
-        	{
-			var hundredths = parseInt(this.part / 100); 
-                	this.answer = '0.' + hundredths;
-        	}
-        	else if (this.part % 10 == 0) // we have a multiple of 10  
-        	{
-			var tensAndOnes = parseInt(this.part / 10); 
-			var ones = parseInt(tensAndOnes / 10);
-			var tenths = tensAndOnes % 10;
-		
-                	this.answer = '0.' + ones + tenths;
-        	}
-        	else // we have pure 3 digit number  
-		{
-			var tenths = parseInt(this.part / 100); 
-			var hundredthsAndThousandths = this.part % 100; 
-			var hundredths = parseInt(hundredthsAndThousandths / 10); 
-			var thousandths = hundredthsAndThousandths % 10; 
-			this.answer = '0.' + tenths + hundredths + thousandths;
-		}
-	}
-        else if (this.part <= 99) // 2 digits 
-        {
-                if (this.part % 10 == 0) // we have a multiple of 10
-                {
-                        var hundredths = parseInt(this.part / 10);
-                        this.answer = '0.0' + hundredths;
-                }
-        	else // we have pure 2 digit number  
-		{
-                        var hundredths = parseInt(this.part / 10);
-			var thousandths = this.part % 10; 
-			this.answer = '0.0' + hundredths + thousandths;
-		}
-        }
-	this.precision = (this.answer + "").split(".")[1].length;
-	
-        var r = Math.floor(Math.random()*2);
-	if (r == 0)
-	{
-		this.e = parseInt(this.e);
-		if (this.e == 0) 
-		{
-			this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.a + '.' + this.b + this.c);
-        		this.setAnswer('' + this.d,0);
-		}
-		else
-		{
-			this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.a + '.' + this.b + this.c);
-        		this.setAnswer('' + this.d + '.' + this.e,0);
-		}
-	}
-	else
-	{
-		this.c = parseInt(this.c);
-		if (this.c == 0)
-		{
-			this.b = parseInt(this.b);
-			if (this.b == 0)
-			{
-        			this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.d + '.' + this.e);
-        			this.setAnswer('' + this.a,0);
-			}
-			else
-			{
-        			this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.d + '.' + this.e);
-        			this.setAnswer('' + this.a + '.' + this.b,0);
-			}
- 
-		}
-		else //ur good
-		{
-        		this.setQuestion('Find the quotient: ' + this.answer + ' &divide ' + this.d + '.' + this.e);
-        		this.setAnswer('' + this.a + '.' + this.b + this.c,0);
-		}
 	}
 	
-	}// end while precision 
+	this.precisionPartA = (this.partA + "").split(".")[1].length;
+	this.precisionPartB = (this.partA + "").split(".")[1].length;
+
+	if (this.precisionA > this.precisionB)
+	{
+		this.partA = this.partA * Math.pow(10,this.precisionA);
+		this.partB = this.partB * Math.pow(10,this.precisionA);
+	}	
+	if (this.precisionA == this.precisionB)
+	{
+		this.partA = this.partA * Math.pow(10,this.precisionA);
+		this.partB = this.partB * Math.pow(10,this.precisionB);
+	}	
+	if (this.precisionA < this.precisionB)
+	{
+		this.partA = this.partA * Math.pow(10,this.precisionB);
+		this.partB = this.partB * Math.pow(10,this.precisionB);
+	}	
+        	
+	this.part =  parseInt(this.partA / this.partB);
+        
+	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e + this.f);
+        this.setAnswer('' + this.part,0);
+
 }
 });
 /*
