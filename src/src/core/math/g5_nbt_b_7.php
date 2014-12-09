@@ -14,9 +14,6 @@ initialize: function(factorA,factorB,decimalPlacesFirst,decimalPlacesSecond)
 	
 	this.mAnswer = 0;
 
-	APPLICATION.log('A:' + this.mFactorA);
-	APPLICATION.log('B:' + this.mFactorB);
-
 	this.mWholeNumberAnswer =  parseInt(this.mFactorA / this.mFactorB);
 
 	this.process();
@@ -25,37 +22,28 @@ initialize: function(factorA,factorB,decimalPlacesFirst,decimalPlacesSecond)
 process:  function()
 {
 	this.mAnswer = '' + this.mWholeNumberAnswer;
+	APPLICATION.log('whole:' + this.mAnswer);
 	var s = '' + this.mAnswer;
 	var length = s.length;	 
-
+		
 	var w = s.substring(0,this.mDecimalPlacesSecond); 
 	var d = s.substring(1,length);
+	APPLICATION.log('w:' + w);
+	APPLICATION.log('d:' + d);
 	d = this.stripTrailingZeroes(d);
+	APPLICATION.log('dt:' + d);
+
+	if (w == 0)
+	{
+		
+		this.mAnswer = '0.' + d;
+	}
+	else
+	{
+		this.mAnswer = '' + w + '.' + d;
+	}
+	APPLICATION.log('answer real:' + this.mAnswer);
 	
-	this.mAnswer = '' + w + '.' + d;
-/*
-	var s = '' + this.mWholeNumberAnswer;	
-	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
-	{
-		//lets add buffer zeros depending on size compared to decimal places needed
-		var numberOfBufferZeroes = parseInt(this.mDecimalPlaces - s.length);	
-		var bufferZeroes = '';
-		for (i = 0; i < numberOfBufferZeroes; i++)
-		{	
-			bufferZeroes = '' + bufferZeroes + '0';
-		}
-		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
-		decimalPart = this.stripTrailingZeroes(decimalPart);
-		this.mAnswer = '0.' + decimalPart;
-	}
-	else //lets split it
-	{
-		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
-		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
-		decimalPart = this.stripTrailingZeroes(decimalPart);
-		this.mAnswer = wholePart + '.' + decimalPart;
-	}
-*/
 },
 
 stripTrailingZeroes: function(s)
