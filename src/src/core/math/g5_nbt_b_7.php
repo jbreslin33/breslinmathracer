@@ -32,8 +32,11 @@ process:  function()
 	//var w = s.substring(0,this.decimalPlacesSecond); 
 	//var d = s.substring(this.decimalPlacesSecond,length); 
 	
-	var w = s.substring(0,1); 
-	var d = s.substring(1,2);
+//	var w = s.substring(0,1); 
+//	var d = s.substring(1,2);
+
+	var w = s.substring(0,this.mDecimalPlacesSecond); 
+	var d = s.substring(1,length);
 	
 	this.mAnswer = '' + w + '.' + d;
 /*
