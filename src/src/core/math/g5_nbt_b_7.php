@@ -1,15 +1,16 @@
 
 var DivideDecimals = new Class(
 {
-initialize: function(factorA,factorB,decimalPlaces)
+initialize: function(factorA,factorB,decimalPlacesFirst,decimalPlacesSecond)
 {
 	this.mFactorA = factorA;
 	this.mFactorB = factorB;
 
-	this.mDecimalPlaces = decimalPlaces;	
+	this.mDecimalPlacesFirst  = decimalPlacesFirst;	
+	this.mDecimalPlacesSecond = decimalPlacesSecond;	
 
-	this.mFactorA * Math.pow(10,decimalPlaces);
-	this.mFactorB * Math.pow(10,decimalPlaces);
+	this.mFactorA * Math.pow(10,decimalPlacesFirst);
+	this.mFactorB * Math.pow(10,decimalPlacesFirst);
 	
 	this.mAnswer = 0;
 
@@ -24,6 +25,7 @@ initialize: function(factorA,factorB,decimalPlaces)
 process:  function()
 {
 	this.mAnswer = '' + this.mWholeNumberAnswer;
+	
 /*
 	var s = '' + this.mWholeNumberAnswer;	
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
@@ -158,8 +160,10 @@ initialize: function(sheet)
 
         this.partA = parseInt(this.b * 10 + this.c);
         this.partB = parseInt(              this.e);
+	
+	var r = this.partA % this.partB;  
 
-	while (this.partB == 0)
+	while (r != 0) 
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -169,11 +173,11 @@ initialize: function(sheet)
 
         	this.partA = parseInt(this.b * 10 + this.c);
         	this.partB = parseInt(              this.e);
+	
+		var r = this.partA % this.partB;  
 	}
 	
-	//this.part =  parseInt(this.partA / this.partB);
-	
-	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,2);
+	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,1,1);
         
 	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.mDivideDecimals.mAnswer,0);
