@@ -16,7 +16,7 @@ initialize: function(factorA,factorB,decimalPlaces)
 
 process:  function()
 {
-	this.mWholeNumberAnswer = 230;	
+	this.mWholeNumberAnswer = 1230;	
 	var s = '' + this.mWholeNumberAnswer;	
 	APPLICATION.log('this.mWholeNumberAnswer.length:' + s.length);
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
@@ -38,6 +38,7 @@ process:  function()
 		APPLICATION.log('b');
 		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
 		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
+		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = wholePart + '.' + decimalPart;
 	}
 
