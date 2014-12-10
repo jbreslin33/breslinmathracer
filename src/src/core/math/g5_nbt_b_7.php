@@ -99,7 +99,6 @@ initialize: function(factorA,factorB,decimalPlaces)
 	this.mWholeNumberAnswer =  parseInt(this.mFactorA * this.mFactorB);
 
 	APPLICATION.log('this.mWholeNumberAnswer:' + this.mWholeNumberAnswer);	
-	
 
 	this.process();
 },
