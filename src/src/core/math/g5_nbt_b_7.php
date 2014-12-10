@@ -1,86 +1,4 @@
 
-
-var DivideDecimals = new Class(
-{
-initialize: function(factorA,factorB,decimalPlacesFirst,decimalPlacesSecond)
-{
-	this.mFactorA = factorA;
-	this.mFactorB = factorB;
-
-	this.mDecimalPlacesFirst  = decimalPlacesFirst;	
-	this.mDecimalPlacesSecond = decimalPlacesSecond;	
-
-	this.mFactorA * Math.pow(10,decimalPlacesFirst);
-	this.mFactorB * Math.pow(10,decimalPlacesFirst);
-	
-	this.mAnswer = 0;
-
-	this.mWholeNumberAnswer =  parseInt(this.mFactorA / this.mFactorB);
-
-	this.process();
-},
-
-process:  function()
-{
-	this.mAnswer = '' + this.mWholeNumberAnswer;
-	var s = '' + this.mAnswer;
-	var length = s.length;	 
-	
-	var w = 0; 
-	var d = 0;
-
-	this.mDividendWholeNumbers = 1;
-
-	if (length == parseInt(this.mDecimalPlacesSecond + this.mDecimalPlacesFirst))	
-	{
-		d = s.substring(0,parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond)); 
-	}
-	else
-	{
-		w = s.substring(0,parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond)); 
-		d = s.substring(parseInt(this.mDecimalPlacesFirst + this.mDecimalPlacesSecond),length);
-	}
-
-	d = this.stripTrailingZeroes(d);
-
-	if (w != 0 && d == 0) //whole number
-	{
-		this.mAnswer = '' + d;
-	}
-	else if (w == 0 && d != 0) //just decimal
-	{
-		this.mAnswer = '0.' + d;
-	}
-	else //normal 
-	{
-		this.mAnswer = '' + w + '.' + d;
-	}
-	
-},
-
-stripTrailingZeroes: function(s)
-{
-	s = '' + s;	
-	var i = 0;	
-	originalLength = s.length;	
-	var encounteredNonZero = false;
-	var strippedPart = '';
-	while (encounteredNonZero == false || i < originalLength )
-	{
-		if ( s[parseInt(s.length - i)] == 0)	 //delete
-		{
-			s = s.substring(0, s.length - 1);
-		}
-		else
-		{
-			encounteredNonZero = true;	
-		}
-		i++;
-	}
-	return s; 
-}
-});
-
 var MultiplyDecimals = new Class(
 {
 initialize: function(factorA,factorB,decimalPlaces)
@@ -147,6 +65,75 @@ stripTrailingZeroes: function(s)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_16',5.1116,'5.nbt.b.7','5.55/5.5');
+*/
+var i_5_nbt_b_7__16 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.7_16';
+
+        this.a = 0;
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
+        this.e = 0;
+
+        this.divisor  = 0;
+        this.quotient = 0;
+        this.dividend = 0;
+	this.remainder = 1;
+
+	this.precisionOfDividend = 3;
+	this.mWholeNumberStringLength = 3;
+
+	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
+	{
+        	this.a = Math.floor(Math.random()*10);
+        	this.b = Math.floor(Math.random()*10);
+        	this.c = Math.floor(Math.random()*10);
+        	this.d = Math.floor(Math.random()*10);
+        	this.e = Math.floor(Math.random()*10);
+
+        	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
+        	this.divisor   = parseInt(               this.d * 10 + this.e);
+		this.quotient  = parseInt(this.dividend / this.divisor);
+		this.remainder = this.dividend % this.divisor;
+	}
+	
+
+	//we must move decimal
+	var s = '' + this.quotient;	
+	var w = '';
+	var d = '';
+	if (s.length > 0)
+	{
+		w = s.substring(0,1) //choosing 1 because the divisor is 1 decimal chooose appropriately
+	} 
+	if (s.length > 1)
+	{ 
+		d = s.substring(1,s.length) //choosing 1 becuase the divisor is 1 decimal chooose appropriately
+	}
+
+	if (d == 0)
+	{
+		this.answer = '' + w;
+	}
+	else
+	{
+		this.answer = '' + w + '.' + d;
+	}
+
+        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
+        this.setAnswer('' + this.answer,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_15',5.1115,'5.nbt.b.7','0.55/0.5');
 */
 var i_5_nbt_b_7__15 = new Class(
@@ -191,8 +178,8 @@ initialize: function(sheet)
 
 	//we must move decimal
 	var s = '' + this.quotient;	
-	var w = '';
-	var d = '';
+	var w = '0';
+	var d = '0';
 	if (s.length > 0)
 	{
 		w = s.substring(0,1) //choosing 1 becuase the divisor is 1 decimal chooose appropriately
@@ -202,13 +189,24 @@ initialize: function(sheet)
 		d = s.substring(1,s.length) //choosing 1 becuase the divisor is 1 decimal chooose appropriately
 	}
 
-	if (d == 0)
+	if (w == 0 && d == 0)
 	{
-		this.answer = '' + w;
+		this.answer = '0';
 	}
-	else
+
+	if (w != 0 && d != 0) 
 	{
 		this.answer = '' + w + '.' + d;
+	}
+	
+	if (w == 0 && d != 0) 
+	{
+		this.answer = '0.' + d;
+	}
+	
+	if (w != 0 && d == 0) 
+	{
+		this.answer = '' + w;
 	}
 
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
