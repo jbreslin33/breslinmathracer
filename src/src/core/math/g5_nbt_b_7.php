@@ -117,6 +117,7 @@ process:  function()
 		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = '0.' + decimalPart;
 	}
+//error here
 	else //lets split it
 	{
 		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
@@ -151,53 +152,6 @@ stripTrailingZeroes: function(s)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_16',5.1116,'5.nbt.b.7','5.55/5.5');
-*/
-var i_5_nbt_b_7__16 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,575,50,320,75,720,50,380,150);
-
-        this.mType = '5.nbt.b.7_16';
-
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
-
-        this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
-        this.partB = parseInt(               this.d * 10 + this.e);
-	
-	var r = this.partA % this.partB;  
-
-	while (r != 0) 
-	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
-
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
-
-        	this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
-        	this.partB = parseInt(               this.d * 10 + this.e);
-	
-		var r = this.partA % this.partB;  
-	}
-	
-	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,1,1);
-        
-	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
-        this.setAnswer('' + this.mDivideDecimals.mAnswer,0);
-}
-});
-
-/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_15',5.1115,'5.nbt.b.7','0.55/0.5');
 */
 var i_5_nbt_b_7__15 = new Class(
@@ -211,18 +165,18 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_15';
 
         this.a = 0;
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-
+        this.b = 0;
+        this.c = 0;
         this.d = 0;
         this.e = Math.floor(Math.random()*10);
 
-        this.partA = parseInt(this.b * 10 + this.c);
-        this.partB = parseInt(              this.e);
-	
-	var r = this.partA % this.partB;  
+        this.divisor  = 0;
+        this.quotient = 0;
+        this.dividend = 0;
 
-	while (r != 0) 
+	this.precisionOfDividend = 3;
+
+	while (this.divisor != 0 && this.precisionOfDividend > 2)
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -230,16 +184,24 @@ initialize: function(sheet)
         	this.d = 0;
         	this.e = Math.floor(Math.random()*10);
 
-        	this.partA = parseInt(this.b * 10 + this.c);
-        	this.partB = parseInt(              this.e);
+        	this.divisor  = parseInt(this.b * 10 + this.c);
+        	this.quotient = parseInt(              this.e);
 	
-		var r = this.partA % this.partB;  
+		this.mMultiplyDecimals = new MultiplyDecimals(this.divisor,this.quotient,3);
+		this.dividend = this.mMultiplyDecimals.mAnswer;
+
+		if (this.dividend.indexOf(".") > -1)
+		{
+			this.precisionOfDividend = (this.dividend + "").split(".")[1].length;
+		}
+		else	
+		{
+			this.precisionOfDividend = 0;
+		}
+
 	}
-	
-	this.mDivideDecimals = new DivideDecimals(this.partA,this.partB,0,1);
-        
-	this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
-        this.setAnswer('' + this.mDivideDecimals.mAnswer,0);
+        this.setQuestion('Find the quotient: ' + this.dividend + ' &divide 0.' + this.e);
+        this.setAnswer('' + this.a + '.' + this.b + this.c,0);
 }
 });
 
