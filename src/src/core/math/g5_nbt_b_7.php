@@ -206,8 +206,28 @@ initialize: function(sheet)
 		this.remainder = this.dividend % this.divisor;
 	}
 	
-	
-	this.answer = this.quotient;
+
+	//we must move decimal
+	var s = '' + this.quotient;	
+	var w = '';
+	var d = '';
+	if (s.length > 0)
+	{
+		w = s.substring(0,1) //choosing 1 becuase the divisor is 1 decimal chooose appropriately
+	} 
+	if (s.length > 1)
+	{ 
+		d = s.substring(1,s.length) //choosing 1 becuase the divisor is 1 decimal chooose appropriately
+	}
+
+	if (d == 0)
+	{
+		this.answer = '' + w;
+	}
+	else
+	{
+		this.answer = '' + w + '.' + d;
+	}
 
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.answer,0);
