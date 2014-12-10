@@ -98,14 +98,19 @@ initialize: function(factorA,factorB,decimalPlaces)
 	this.mAnswer = 0;
 	this.mWholeNumberAnswer =  parseInt(this.mFactorA * this.mFactorB);
 
+	APPLICATION.log('this.mWholeNumberAnswer:' + this.mWholeNumberAnswer);	
+	
+
 	this.process();
 },
 
 process:  function()
 {
+	APPLICATION.log('process');	
 	var s = '' + this.mWholeNumberAnswer;	
 	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
 	{
+		APPLICATION.log('a');	
 		//lets add buffer zeros depending on size compared to decimal places needed
 		var numberOfBufferZeroes = parseInt(this.mDecimalPlaces - s.length);	
 		var bufferZeroes = '';
@@ -120,10 +125,13 @@ process:  function()
 //error here
 	else //lets split it
 	{
+		APPLICATION.log('b');	
 		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
 		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
 		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = wholePart + '.' + decimalPart;
+		APPLICATION.log('wholePart:' + wholePart);	
+		APPLICATION.log('decimalPart:' + decimalPart);	
 	}
 },
 
@@ -168,15 +176,16 @@ initialize: function(sheet)
         this.b = 0;
         this.c = 0;
         this.d = 0;
-        this.e = Math.floor(Math.random()*10);
+        this.e = 0;
 
         this.divisor  = 0;
         this.quotient = 0;
         this.dividend = 0;
 
 	this.precisionOfDividend = 3;
+	APPLICATION.log('const');
 
-	while (this.divisor != 0 && this.precisionOfDividend > 2)
+	while (this.divisor == 0 || this.precisionOfDividend > 2)
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
