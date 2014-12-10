@@ -183,9 +183,8 @@ initialize: function(sheet)
         this.dividend = 0;
 
 	this.precisionOfDividend = 3;
-	APPLICATION.log('const');
 
-	while (this.divisor == 0 || this.precisionOfDividend > 2)
+	while (this.divisor == 0 || this.e == 0 || this.precisionOfDividend > 2)
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -195,9 +194,14 @@ initialize: function(sheet)
 
         	this.divisor  = parseInt(this.b * 10 + this.c);
         	this.quotient = parseInt(              this.e);
+		
+		APPLICATION.log('this.divisor:' + this.divisor); 	
+		APPLICATION.log('this.quotient:' + this.quotient); 	
 	
 		this.mMultiplyDecimals = new MultiplyDecimals(this.divisor,this.quotient,3);
 		this.dividend = this.mMultiplyDecimals.mAnswer;
+
+		APPLICATION.log('this.dividend:' + this.dividend); 	
 
 		if (this.dividend.indexOf(".") > -1)
 		{
