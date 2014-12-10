@@ -187,11 +187,12 @@ initialize: function(sheet)
         this.divisor  = 0;
         this.quotient = 0;
         this.dividend = 0;
+	this.remainder = 1;
 
 	this.precisionOfDividend = 3;
 	this.mWholeNumberStringLength = 3;
 
-	while (this.divisor == 0 || this.e == 0 || this.precisionOfDividend > 2 || this.mWholeNumberStringLength > 2 )
+	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -199,10 +200,11 @@ initialize: function(sheet)
         	this.d = 0;
         	this.e = Math.floor(Math.random()*10);
 
-        	this.quotient = parseInt(this.b * 10 + this.c);
+        	this.dividend = parseInt(this.b * 10 + this.c);
         	this.divisor  = parseInt(              this.e);
+		this.quotient = parseInt(this.dividend / divisor);
+		this.quotient = this.dividend % divisor;
 	
-		this.mWholeNumber = parseInt(this.divisor * this.quotient);
 		this.mWholeNumberString = '' + this.mWholeNumber;
 		this.mWholeNumberStringLength = this.mWholeNumberString.length;
 	
