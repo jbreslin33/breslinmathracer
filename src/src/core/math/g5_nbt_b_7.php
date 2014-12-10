@@ -200,34 +200,17 @@ initialize: function(sheet)
         	this.d = 0;
         	this.e = Math.floor(Math.random()*10);
 
-        	this.dividend = parseInt(this.b * 10 + this.c);
-        	this.divisor  = parseInt(              this.e);
-		this.quotient = parseInt(this.dividend / divisor);
-		this.quotient = this.dividend % divisor;
-	
-		this.mWholeNumberString = '' + this.mWholeNumber;
-		this.mWholeNumberStringLength = this.mWholeNumberString.length;
-	
-		APPLICATION.log('this.quotient:' + this.quotient); 	
-		APPLICATION.log('this.divisor:' + this.divisor); 	
-	
-		this.mMultiplyDecimals = new MultiplyDecimals(this.divisor,this.quotient,3);
-		this.dividend = this.mMultiplyDecimals.mAnswer;
-
-		APPLICATION.log('this.dividend:' + this.dividend); 	
-
-		if (this.dividend.indexOf(".") > -1)
-		{
-			this.precisionOfDividend = (this.dividend + "").split(".")[1].length;
-		}
-		else	
-		{
-			this.precisionOfDividend = 0;
-		}
-
+        	this.dividend  = parseInt(this.b * 10 + this.c);
+        	this.divisor   = parseInt(              this.e);
+		this.quotient  = parseInt(this.dividend / this.divisor);
+		this.remainder = this.dividend % this.divisor;
 	}
-        this.setQuestion('Find the quotient: ' + this.dividend + ' &divide ' + this.d + '.' + this.e);
-        this.setAnswer('' + this.a + '.' + this.b + this.c,0);
+	
+	
+	this.answer = this.quotient;
+
+        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
+        this.setAnswer('' + this.answer,0);
 }
 });
 
