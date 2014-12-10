@@ -118,6 +118,7 @@ process:  function()
 			bufferZeroes = '' + bufferZeroes + '0';
 		}
 		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
+		APPLICATION.log('decimalPart:' + decimalPart);	
 		decimalPart = this.stripTrailingZeroes(decimalPart);
 		this.mAnswer = '0.' + decimalPart;
 	}
@@ -136,23 +137,27 @@ process:  function()
 
 stripTrailingZeroes: function(s)
 {
+	APPLICATION.log('s:' + s);
 	s = '' + s;	
 	var i = 0;	
-	originalLength = s.length;	
+	var originalLength = s.length;	
 	var encounteredNonZero = false;
 	var strippedPart = '';
 	while (encounteredNonZero == false || i < originalLength )
 	{
 		if ( s[parseInt(s.length - i)] == 0)	 //delete
 		{
+			APPLICATION.log('s If:' + s);
 			s = s.substring(0, s.length - 1);
 		}
 		else
 		{
+			APPLICATION.log('s else:' + s);
 			encounteredNonZero = true;	
 		}
 		i++;
 	}
+	APPLICATION.log('s2:' + s);
 	return s; 
 }
 
@@ -170,6 +175,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_15';
+		
+	APPLICATION.log('----------------------------------------'); 	
 
         this.a = 0;
         this.b = 0;
@@ -182,8 +189,9 @@ initialize: function(sheet)
         this.dividend = 0;
 
 	this.precisionOfDividend = 3;
+	this.mWholeNumberStringLength = 3;
 
-	while (this.divisor == 0 || this.e == 0 || this.precisionOfDividend > 2)
+	while (this.divisor == 0 || this.e == 0 || this.precisionOfDividend > 2 || this.mWholeNumberStringLength > 2 )
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -191,11 +199,15 @@ initialize: function(sheet)
         	this.d = 0;
         	this.e = Math.floor(Math.random()*10);
 
-        	this.divisor  = parseInt(this.b * 10 + this.c);
-        	this.quotient = parseInt(              this.e);
-		
-		APPLICATION.log('this.divisor:' + this.divisor); 	
+        	this.quotient = parseInt(this.b * 10 + this.c);
+        	this.divisor  = parseInt(              this.e);
+	
+		this.mWholeNumber = parseInt(this.divisor * this.quotient);
+		this.mWholeNumberString = '' + this.mWholeNumber;
+		this.mWholeNumberStringLength = this.mWholeNumberString.length;
+	
 		APPLICATION.log('this.quotient:' + this.quotient); 	
+		APPLICATION.log('this.divisor:' + this.divisor); 	
 	
 		this.mMultiplyDecimals = new MultiplyDecimals(this.divisor,this.quotient,3);
 		this.dividend = this.mMultiplyDecimals.mAnswer;
@@ -212,7 +224,7 @@ initialize: function(sheet)
 		}
 
 	}
-        this.setQuestion('Find the quotient: ' + this.dividend + ' &divide 0.' + this.e);
+        this.setQuestion('Find the quotient: ' + this.dividend + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.a + '.' + this.b + this.c,0);
 }
 });
