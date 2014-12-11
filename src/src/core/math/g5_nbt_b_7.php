@@ -83,10 +83,17 @@ initialize: function(sheet)
         	this.divisor   = parseInt(               this.d * 10 + this.e);
 		this.quotient  = parseInt(this.dividend / this.divisor);
 		this.remainder = this.dividend % this.divisor;
+		
+		APPLICATION.log('dividend:' + this.dividend);
+		APPLICATION.log('divisor:'  + this.divisor);
+		APPLICATION.log('quotient:'  + this.quotient);
+		APPLICATION.log('remainder:'  + this.remainder);
 	}
 	
 	//answer will slide all the way over to right of dividend so if its 3 spaces it will be equal to div etc
 	var q = '' + this.quotient;
+	APPLICATION.log('q:'  + q);
+	//q = q * 10  
 
 	if (q.length == 0)
 	{
@@ -94,29 +101,15 @@ initialize: function(sheet)
 	}	
 	if (q.length == 1)
 	{
-		this.answer = '0.' + this.quotient;	
+		this.answer = '' + this.quotient;	
 	}	
 	if (q.length == 2)
 	{
-		if (q[1] == 0)
-		{
-			this.answer = '' + q[0];	
-		}
-		else
-		{
-			this.answer = '' + q[0] + '.' + q[1];	
-		}
+		this.answer = '' + this.quotient;	
 	}	
 	if (q.length == 3)
 	{
-		if (q[2] == 0)
-		{
-			this.answer = '' + q[0] + q[1];	
-		}
-		else
-		{
-			this.answer = '' + q[0] + q[1] + '.' + q[2];	
-		}
+		this.answer = '' + this.quotient;	
 	}	
 	
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + ' &divide ' + this.c + '.' + this.d + this.e);
