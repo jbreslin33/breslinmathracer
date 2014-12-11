@@ -3,6 +3,8 @@ var MultiplyDecimals = new Class(
 {
 initialize: function(factorA,factorB,decimalPlaces)
 {
+	this.mUtility = new Utility();
+
 	this.mFactorA = factorA;
 	this.mFactorB = factorB;
 	
@@ -27,41 +29,17 @@ process:  function()
 			bufferZeroes = '' + bufferZeroes + '0';
 		}
 		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
-		decimalPart = this.stripTrailingZeroes(decimalPart);
+		decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
 		this.mAnswer = '0.' + decimalPart;
 	}
-//error here
 	else //lets split it
 	{
 		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
 		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
-		decimalPart = this.stripTrailingZeroes(decimalPart);
+		decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
 		this.mAnswer = wholePart + '.' + decimalPart;
 	}
-},
-
-stripTrailingZeroes: function(s)
-{
-	s = '' + s;	
-	var i = 0;	
-	var originalLength = s.length;	
-	var encounteredNonZero = false;
-	var strippedPart = '';
-	while (encounteredNonZero == false || i < originalLength )
-	{
-		if ( s[parseInt(s.length - i)] == 0)	 //delete
-		{
-			s = s.substring(0, s.length - 1);
-		}
-		else
-		{
-			encounteredNonZero = true;	
-		}
-		i++;
-	}
-	return s; 
 }
-
 });
 
 /*
@@ -76,6 +54,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_16';
+	
+	this.mUtility = new Utility();
 
 	this.answer = 'setme';
 
@@ -123,6 +103,8 @@ initialize: function(sheet)
 	{
 		this.answer = '' + q[0] + q[1] + '.' + q[2];	
 	}	
+	
+	this.answer = this.mUtility.stripTrailingZeroes(this.answer);
 
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.answer,0);
