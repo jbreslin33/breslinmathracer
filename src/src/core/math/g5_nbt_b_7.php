@@ -74,11 +74,12 @@ initialize: function(sheet)
 	{
         	this.a = Math.floor(Math.random()*10);
         	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+
+        	this.c = 0;
         	this.d = Math.floor(Math.random()*10);
         	this.e = Math.floor(Math.random()*10);
 
-        	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
+        	this.dividend  = parseInt(this.a * 100 + this.b * 10         );
         	this.divisor   = parseInt(               this.d * 10 + this.e);
 		this.quotient  = parseInt(this.dividend / this.divisor);
 		this.remainder = this.dividend % this.divisor;
@@ -118,7 +119,7 @@ initialize: function(sheet)
 		}
 	}	
 	
-        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
+        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + ' &divide ' + this.c + '.' + this.d + this.e);
         this.setAnswer('' + this.answer,0);
 }
 });
