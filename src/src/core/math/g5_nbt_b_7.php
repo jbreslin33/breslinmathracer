@@ -77,6 +77,8 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_16';
 
+	this.answer = 'setme';
+
         this.a = 0;
         this.b = 0;
         this.c = 0;
@@ -87,9 +89,6 @@ initialize: function(sheet)
         this.quotient = 0;
         this.dividend = 0;
 	this.remainder = 1;
-
-	this.precisionOfDividend = 3;
-	this.mWholeNumberStringLength = 3;
 
 	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
 	{
@@ -105,28 +104,25 @@ initialize: function(sheet)
 		this.remainder = this.dividend % this.divisor;
 	}
 	
+	//answer will slide all the way over to right of dividend so if its 3 spaces it will be equal to div etc
+	var q = '' + this.quotient;
 
-	//we must move decimal
-	var s = '' + this.quotient;	
-	var w = '';
-	var d = '';
-	if (s.length > 0)
+	if (q.length == 0)
 	{
-		w = s.substring(0,1) //choosing 1 because the divisor is 1 decimal chooose appropriately
-	} 
-	if (s.length > 1)
-	{ 
-		d = s.substring(1,s.length) //choosing 1 becuase the divisor is 1 decimal chooose appropriately
-	}
-
-	if (d == 0)
+		//	
+	}	
+	if (q.length == 1)
 	{
-		this.answer = '' + w;
-	}
-	else
+		this.answer = '0.' + this.quotient;	
+	}	
+	if (q.length == 2)
 	{
-		this.answer = '' + w + '.' + d;
-	}
+		this.answer = '' + q[0] + '.' + q[1];	
+	}	
+	if (q.length == 3)
+	{
+		this.answer = '' + q[0] + q[1] + '.' + q[2];	
+	}	
 
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.answer,0);
