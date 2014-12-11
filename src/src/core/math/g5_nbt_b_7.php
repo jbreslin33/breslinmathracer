@@ -97,15 +97,27 @@ initialize: function(sheet)
 	}	
 	if (q.length == 2)
 	{
-		this.answer = '' + q[0] + '.' + q[1];	
+		if (q[1] == 0)
+		{
+			this.answer = '' + q[0];	
+		}
+		else
+		{
+			this.answer = '' + q[0] + '.' + q[1];	
+		}
 	}	
 	if (q.length == 3)
 	{
-		this.answer = '' + q[0] + q[1] + '.' + q[2];	
+		if (q[2] == 0)
+		{
+			this.answer = '' + q[0] + q[1];	
+		}
+		else
+		{
+			this.answer = '' + q[0] + q[1] + '.' + q[2];	
+		}
 	}	
 	
-	this.answer = this.mUtility.stripTrailingZeroes(this.answer);
-
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.answer,0);
 }
