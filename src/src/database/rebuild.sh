@@ -45,6 +45,7 @@ echo minimize javascript to min.js file
 
 cat src/math/point2D.php >> min.js
 cat src/math/fraction.php >> min.js
+cat src/math/utility.php >> min.js
 
 cat src/bounds/bounds.php >> min.js
 
