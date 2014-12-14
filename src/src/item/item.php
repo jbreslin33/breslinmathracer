@@ -284,21 +284,17 @@ var Item = new Class(
 			u = parseInt(s[0] + s[1] + s[2]); 			
 		}
 	
-		if (u > 4) //5+
+		if (u > 5)
 		{	
 			document.body.style.backgroundColor="red";
 		}
-		else if (u < 5 && u > 1)//2,3,4
+		else if (u < 6 && u > 2)//3,4,5
 		{	
 			document.body.style.backgroundColor="orange";
 		}
-		if (u == 1) 
+		if (u < 3) 
 		{
-			document.body.style.backgroundColor="#00FFFF";
-		}
-		if (u == 0) 
-		{
-			document.body.style.backgroundColor="#66FF33";
+			document.body.style.backgroundColor="#848484";
 		}
         },
 
