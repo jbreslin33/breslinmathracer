@@ -83,6 +83,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.4_7';
+ 	this.mChopWhiteSpace = false;
 
         this.ns = new NameSampler();
 
@@ -135,6 +136,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.4_6';
+ 	this.mChopWhiteSpace = false;
 
         this.ns = new NameSampler();
 
@@ -240,6 +242,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.4_4';
+ 	this.mChopWhiteSpace = false;
 
         this.ns = new NameSampler();
 
@@ -284,6 +287,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.4_3';
+ 	this.mChopWhiteSpace = false;
 
         this.ns = new NameSampler();
 
@@ -328,6 +332,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.4_2';
+ 	this.mChopWhiteSpace = false;
 
         this.ns = new NameSampler();
 
@@ -366,6 +371,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.a.4_1';
+ 	this.mChopWhiteSpace = false;
 
         this.ns = new NameSampler();
 
