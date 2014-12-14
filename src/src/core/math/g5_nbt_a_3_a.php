@@ -822,7 +822,7 @@ initialize: function(sheet)
 
         var fraction = new Fraction(n,d);
 
-        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setQuestion('Write in decimal form. Do not simplify: ' + fraction.getString());
         this.setAnswer('0.00' + n,0);
 }
 });
@@ -845,7 +845,7 @@ initialize: function(sheet)
 
         var fraction = new Fraction(n,d);
 
-        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setQuestion('Write in decimal form. Do not simplify: ' + fraction.getString());
         this.setAnswer('0.0' + n,0);
 }
 });
@@ -868,7 +868,7 @@ initialize: function(sheet)
 	
  	var fraction = new Fraction(n,d);
 
-        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setQuestion('Write in decimal form. Do not simplify:' + fraction.getString());
         this.setAnswer('0.' + n,0);
 }
 });
@@ -891,7 +891,7 @@ initialize: function(sheet)
 
         var fraction = new Fraction(n,d);
 
-        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setQuestion('Write in decimal form. Do not simplify: ' + fraction.getString());
         this.setAnswer('0.0' + n,0);
 }
 });
@@ -914,7 +914,7 @@ initialize: function(sheet)
 	
  	var fraction = new Fraction(n,d);
 
-        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setQuestion('Write in decimal form. Do not simplify: ' + fraction.getString());
         this.setAnswer('0.' + n,0);
 }
 });
