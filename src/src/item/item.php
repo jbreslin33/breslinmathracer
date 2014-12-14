@@ -265,6 +265,37 @@ var Item = new Class(
 				this.mClock.update();
 			}
 		}
+
+		//lets make screen red if they are over a certain U score
+		var str = APPLICATION.mHud.mItemTypeStats.getText();	
+		var strArray = str.split("U="); 
+		var s = strArray[1];
+		var u = 0;
+		if (s.length == 8) //single digits
+		{
+			u = parseInt(s[0]); 			
+		}
+		if (s.length == 9) //double digits
+		{
+			u = parseInt(s[0] + s[1]); 			
+		}
+		if (s.length == 10) //trip digits
+		{
+			u = parseInt(s[0] + s[1] + s[2]); 			
+		}
+	
+		if (u > 5)
+		{	
+			document.body.style.backgroundColor="red";
+		}
+		else if (u < 6 && u > 2)//3,4,5
+		{	
+			document.body.style.backgroundColor="orange";
+		}
+		if (u < 3) 
+		{
+			document.body.style.backgroundColor="#848484";
+		}
         },
 
 	setUserAnswer: function(userAnswer)
