@@ -579,7 +579,7 @@ initialize: function(sheet)
         this.hundredths =  0;
         this.thousandths =  Math.floor((Math.random()*8)+2);
 
-        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('Write the number in words as it would be said aloud: ' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 
         this.ones = this.ns.getNumberName(this.ones);
         this.tenths = '' + this.ns.getNumberName(this.tenths);
@@ -609,7 +609,7 @@ initialize: function(sheet)
         this.hundredths =  0;
         this.thousandths =  Math.floor((Math.random()*8)+2);
 
-        this.setQuestion('' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('Write the number in words as it would be said aloud: ' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 
         this.ones = this.ns.getNumberName(this.ones);
         this.tenths = '' + this.ns.getNumberName(this.tenths);
@@ -639,7 +639,7 @@ initialize: function(sheet)
         this.ones =  Math.floor((Math.random()*8)+2);
         this.tenths =  Math.floor((Math.random()*8)+2);
 
-        this.setQuestion('' + this.hundreds + this.tens + this.ones + '.' + this.tenths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('Write the number in words as it would be said aloud: ' + this.hundreds + this.tens + this.ones + '.' + this.tenths,0);
 
 	var tens_ones = parseInt(this.tens * 10 + this.ones);	
 	
@@ -671,7 +671,7 @@ initialize: function(sheet)
         this.hundredths =  Math.floor((Math.random()*9)+1);
         this.thousandths =  Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('0.0' + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('Write the number in words as it would be said aloud: ' + '0.0' + this.hundredths + this.thousandths,0);
 
 	var hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
 	
@@ -703,7 +703,7 @@ initialize: function(sheet)
         this.hundredths =  Math.floor((Math.random()*8)+2);
         this.thousandths =  Math.floor((Math.random()*8)+2);
 
-        this.setQuestion('' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + ' Write the previous number in words as it would be said aloud.',0);
+        this.setQuestion('Write the number in words as it would be said aloud: ' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
 
 	var tens_ones = parseInt(this.tens * 10 + this.ones);	
 	var hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
