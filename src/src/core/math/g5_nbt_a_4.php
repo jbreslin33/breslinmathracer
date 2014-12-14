@@ -294,7 +294,7 @@ initialize: function(sheet)
         this.tens        = Math.floor((Math.random()*9)+1);
         this.ones        = Math.floor((Math.random()*8)+1);
         this.tenths      = Math.floor((Math.random()*9)+1);
-        this.hundreths   = Math.floor((Math.random()*9)+1);
+        this.hundreths   = Math.floor((Math.random()*8)+1);
         this.thousandths = Math.floor((Math.random()*5)+5);
         this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
 
