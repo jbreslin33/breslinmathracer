@@ -290,15 +290,15 @@ var Item = new Class(
 	
 				if (u > 4) //5+
 				{		
-					document.body.style.backgroundColor="red";
+					document.body.style.backgroundColor="orange";
 				}
 				else if (u < 5 && u > 1)//2,3,4
 				{		
-					document.body.style.backgroundColor="orange";
+					document.body.style.backgroundColor="blue";
 				}
 				if (u == 1) 
 				{
-					document.body.style.backgroundColor="#00FFFF";
+					document.body.style.backgroundColor="#66FF33";
 				}
 				if (u == 0) 
 				{
