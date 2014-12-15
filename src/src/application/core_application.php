@@ -430,7 +430,6 @@ Extends: Application,
 
 	timestables: function(tablenumber)
         {
-		APPLICATION.log('timestables');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

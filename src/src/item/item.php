@@ -268,37 +268,43 @@ var Item = new Class(
 
 		//lets make screen red if they are over a certain U score
 		var str = APPLICATION.mHud.mItemTypeStats.getText();	
-		var strArray = str.split("U="); 
-		var s = strArray[1];
-		var u = 0;
-		if (s.length == 8) //single digits
+		if (str)
 		{
-			u = parseInt(s[0]); 			
-		}
-		if (s.length == 9) //double digits
-		{
-			u = parseInt(s[0] + s[1]); 			
-		}
-		if (s.length == 10) //trip digits
-		{
-			u = parseInt(s[0] + s[1] + s[2]); 			
-		}
+			var strArray = str.split("U="); 
+			if (strArray.length > 1)
+			{
+				var s = strArray[1];
+				var u = 0;
+				if (s.length == 8) //single digits
+				{
+					u = parseInt(s[0]); 			
+				}
+				if (s.length == 9) //double digits
+				{
+					u = parseInt(s[0] + s[1]); 			
+				}
+				if (s.length == 10) //trip digits
+				{
+					u = parseInt(s[0] + s[1] + s[2]); 			
+				}
 	
-		if (u > 4) //5+
-		{	
-			document.body.style.backgroundColor="red";
-		}
-		else if (u < 5 && u > 1)//2,3,4
-		{	
-			document.body.style.backgroundColor="orange";
-		}
-		if (u == 1) 
-		{
-			document.body.style.backgroundColor="#00FFFF";
-		}
-		if (u == 0) 
-		{
-			document.body.style.backgroundColor="#66FF33";
+				if (u > 4) //5+
+				{		
+					document.body.style.backgroundColor="red";
+				}
+				else if (u < 5 && u > 1)//2,3,4
+				{		
+					document.body.style.backgroundColor="orange";
+				}
+				if (u == 1) 
+				{
+					document.body.style.backgroundColor="#00FFFF";
+				}
+				if (u == 0) 
+				{
+					document.body.style.backgroundColor="#66FF33";
+				}
+			}
 		}
         },
 
