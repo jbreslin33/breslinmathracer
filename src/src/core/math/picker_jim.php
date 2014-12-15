@@ -1850,6 +1850,17 @@ getItem: function(id)
         {
                 return new i_5_nbt_b_7__31(this.mSheet);
         }
+	
+
+	//5.nf.a.1	
+	if (id == '5.nf.a.1_1')
+        {
+                return new i_5_nf_a_1__1(this.mSheet);
+        }
+	if (id == '5.nf.a.1_2')
+        {
+                return new i_5_nf_a_1__2(this.mSheet);
+        }
 
 	/*** GRADE 6 ***/
 	//6.rp.a.1
