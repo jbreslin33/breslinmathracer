@@ -3,67 +3,28 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_a_1__1 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,575,50,320,75,720,50,380,150);
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
 
         this.mType = '5.nf.a.1_1';
-	
-	this.mUtility = new Utility();
 
-	this.answer = 'setme';
+        var a1 = Math.floor((Math.random()*3)+1);
+        var a2 = Math.floor((Math.random()*4)+1);
+        var ad = Math.floor((Math.random()*3)+8);
 
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
-        this.f = 0;
+        var b1 = Math.floor(Math.random()*8)+2;
 
-        this.divisor  = 0;
-        this.quotient = 0;
-        this.dividend = 0;
-	this.remainder = 1;
+        var n = parseInt(  b1 * (  a1 + a2 )   );
 
-	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
-	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
-        	this.f = Math.floor(Math.random()*10);
+        var a1d = new Fraction(a1,ad);
+        var a2d = new Fraction(a2,ad);
+        var answer = new Fraction(n,ad);
 
-        	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
-        	this.divisor   = parseInt(this.d * 100 + this.e * 10 + this.f);
-		this.quotient  = parseInt(this.dividend / this.divisor);
-		this.remainder = this.dividend % this.divisor;
-	}
-	
-	//answer will slide all the way over to right of dividend so if its 3 spaces it will be equal to div etc
-	var q = '' + this.quotient;
-
-	if (q.length == 0)
-	{
-		//	
-	}	
-	if (q.length == 1)
-	{
-		this.answer = '' + this.quotient;	
-	}	
-	if (q.length == 2)
-	{
-		this.answer = '' + this.quotient;	
-	}	
-	if (q.length == 3)
-	{
-		this.answer = '' + this.quotient;	
-	}	
-	
-        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e + this.f);
-        this.setAnswer('' + this.answer,0);
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate. Do not Simplify.');
 }
 });
 
