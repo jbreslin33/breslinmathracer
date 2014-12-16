@@ -11,20 +11,20 @@ initialize: function(sheet)
 
         this.mType = '5.nf.a.1_1';
 
-        var a1 = Math.floor((Math.random()*3)+1);
-        var a2 = Math.floor((Math.random()*4)+1);
-        var ad = Math.floor((Math.random()*3)+8);
+        var an = Math.floor((Math.random()*9)+1);
+        var ad = Math.floor((Math.random()*9)+1);
+        var bn = Math.floor((Math.random()*9)+1);
+        var bd = Math.floor((Math.random()*9)+1);
 
-        var b1 = Math.floor(Math.random()*8)+2;
+        var fractionA = new Fraction(an,ad);
+        var fractionB = new Fraction(bn,bd);
+        //var answer = new Fraction(n,ad);
 
-        var n = parseInt(  b1 * (  a1 + a2 )   );
-
-        var a1d = new Fraction(a1,ad);
-        var a2d = new Fraction(a2,ad);
-        var answer = new Fraction(n,ad);
-
-        this.setAnswer(answer.getString(),0);
-        this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate. Do not Simplify.');
+        this.setAnswer(fractionA.getString(),0);
+        this.setQuestion('Evaluate and simplify:' + fractionA.getString() + ' + ' + fractionB.getString());
+	
+	fractionA.add(fractionB);
+	
 }
 });
 
