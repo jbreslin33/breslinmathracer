@@ -19,7 +19,7 @@ initialize: function(sheet)
         this.x = Math.floor((Math.random()*900)+100);
         this.y = Math.floor((Math.random()*90)+10);
 
-        this.setQuestion('' + this.ns.mNameOne + ' has ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.x + ' times as many ' + this.ns.mThingOne + ' as ' + this.ns.mNameOne + '. How many ' + this.ns.mThingOne + ' does ' + this.ns.mNameOne + ' have?');
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + this.y + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.x + ' times as many ' + this.ns.mThingOne + ' as ' + this.ns.mNameOne + '. How many ' + this.ns.mThingOne + ' does ' + this.ns.mNameTwo + ' have?');
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
