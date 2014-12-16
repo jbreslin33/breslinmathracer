@@ -71,5 +71,19 @@ var Fraction = new Class(
 	
 		var lcm = this.getLeastCommonMultiple(denominatorArray);	
 		APPLICATION.log('lcm:' + lcm);
+
+		var am = parseInt(lcm / this.mDenominator); 	
+		var bm = parseInt(lcm / fraction.mDenominator); 	
+		
+		var an = parseInt(am * this.mNumerator);
+		var bn = parseInt(bm * fraction.mNumerator);
+	
+		var ad = lcm; 	
+		var bd = lcm; 	
+
+		var sn = parseInt(an + bn);
+
+		var fractionSum = new Fraction(sn,lcm,true);  	
+		return fractionSum;
 	}
 });
