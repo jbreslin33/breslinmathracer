@@ -294,13 +294,9 @@ var Item = new Class(
 				}
 				else if (u < 5 && u > 1)//2,3,4
 				{		
-					document.body.style.backgroundColor="blue";
+					document.body.style.backgroundColor="00FFFF";
 				}
-				if (u == 1) 
-				{
-					document.body.style.backgroundColor="#66FF33";
-				}
-				if (u == 0) 
+				if (u < 2) 
 				{
 					document.body.style.backgroundColor="#66FF33";
 				}
