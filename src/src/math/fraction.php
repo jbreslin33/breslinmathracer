@@ -63,27 +63,36 @@ var Fraction = new Class(
     		return r;
         },
 
+	getCommonMultipleTwo: function(array)
+	{
+		var cm = parseInt(array[0] * array[1]);	 	
+		return cm;
+	},
+
 	add: function(fraction)
 	{
 		denominatorArray = new Array();
-		denominatorArray.push(2);				
-		denominatorArray.push(4);				
-	
-		var lcm = this.getLeastCommonMultiple(denominatorArray);	
-		APPLICATION.log('lcm:' + lcm);
+		denominatorArray.push(parseInt(this.mDenominator));				
+		denominatorArray.push(parseInt(fraction.mDenominator));				
 
-		var am = parseInt(lcm / this.mDenominator); 	
-		var bm = parseInt(lcm / fraction.mDenominator); 	
+		APPLICATION.log('a:' + this.mDenominator);
+		APPLICATION.log('b:' + fraction.mDenominator);
+	
+		var cm = this.getCommonMultipleTwo(denominatorArray);	
+		APPLICATION.log('cm:' + cm);
+
+		var am = parseInt(cm / this.mDenominator); 	
+		var bm = parseInt(cm / fraction.mDenominator); 	
 		
 		var an = parseInt(am * this.mNumerator);
 		var bn = parseInt(bm * fraction.mNumerator);
 	
-		var ad = lcm; 	
-		var bd = lcm; 	
+		var ad = cm; 	
+		var bd = cm; 	
 
 		var sn = parseInt(an + bn);
 
-		var fractionSum = new Fraction(sn,lcm,true);  	
+		var fractionSum = new Fraction(sn,cm,true);  	
 		return fractionSum;
 	}
 });
