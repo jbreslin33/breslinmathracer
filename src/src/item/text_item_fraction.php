@@ -9,13 +9,16 @@ Extends: Item,
 		this.mRaphael = Raphael(350,137,150,5);
 		this.parent(sheet);
 
-		if (autoreduce == '')		
+		this.mAutoReduce = true;
+		if (autoreduce == true)		
 		{
-			this.mAutoReduce = false;
+			APPLICATION.log('autoreduce:true')	
+			this.mAutoReduce = true;
 		}
 		else
 		{
-			this.mAutoReduce = autoreduce;
+			APPLICATION.log('autoreduce:false')	
+			this.mAutoReduce = false;
 		}
 
 		if (qw == '')
@@ -109,6 +112,15 @@ Extends: Item,
 					{
 						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
+						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
+						{
+							
+							var fraction = new Fraction(numerator,denominator,true);
+							numerator = fraction.mNumerator;	
+							denominator = fraction.mDenominator;	
+							APPLICATION.log('numerator:' + numerator);				
+							APPLICATION.log('denominator:' + denominator);				
+						}
 						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 					}
@@ -129,6 +141,14 @@ Extends: Item,
 					{
 						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
+						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
+                                                {
+                                                        var fraction = new Fraction(numerator,denominator,true);
+                                                        numerator = fraction.mNumerator;
+                                                        denominator = fraction.mDenominator;
+							APPLICATION.log('numerator:' + numerator);				
+							APPLICATION.log('denominator:' + denominator);				
+                                                }
 						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 					}

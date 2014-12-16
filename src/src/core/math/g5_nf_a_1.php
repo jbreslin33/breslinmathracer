@@ -7,7 +7,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.1_2';
 
@@ -44,7 +44,7 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175);
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.1_1';
 
