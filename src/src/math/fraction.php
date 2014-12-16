@@ -38,5 +38,38 @@ var Fraction = new Class(
 			return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
 			//return this.mNumerator + '/' + this.mDenominator
 		}
+	},
+
+	getLeastCommonMultiple: function(o)
+	{
+    		for(var i, j, n, d, r = 1; (n = o.pop()) != undefined;)
+		{
+        		while(n > 1)
+			{
+            			if(n % 2)
+				{
+                			for (i = 3, j = Math.floor(Math.sqrt(n)); i <= j && n % i; i += 2);
+					{
+                				d = i <= j ? i : n;
+            				}
+				}
+            			else
+				{
+                			d = 2;
+            				for(n /= d, r *= d, i = o.length; i; !(o[--i] % d) && (o[i] /= d) == 1 && o.splice(i, 1));
+				}
+			}
+		}
+    		return r;
+        },
+
+	add: function(fraction)
+	{
+		denominatorArray = new Array();
+		denominatorArray.push(2);				
+		denominatorArray.push(4);				
+	
+		var lcm = this.getLeastCommonMultiple(denominatorArray);	
+		APPLICATION.log('lcm:' + lcm);
 	}
 });
