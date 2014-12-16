@@ -79,7 +79,7 @@ initialize: function(sheet)
 
         this.setQuestion('' + this.ns.mNameOne  + ' has a phone that is ' + '0.' + this.tenths_hundreths_thousandths_a + ' inches thick and ' + this.ns.mNameTwo + ' has a phone that is 0.' + this.tenths_hundreths_thousandths_b + ' inches thick. Who has the thinner phone?',0);
 
-        this.setAnswer('' + this.ns.mNameOne,0);
+        this.setAnswer('' + this.ns.mNameTwo,0);
         this.setAnswer('0.' + this.tenths_hundreths_thousandths_b,1);
 }
 });
