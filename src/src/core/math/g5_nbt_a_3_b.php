@@ -20,7 +20,7 @@ initialize: function(sheet)
         this.tenths_hundreths_thousandths_a = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_a);
         this.tenths_hundreths_thousandths_b = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths_b);
 
-        this.setQuestion('' + this.ns.mNameOne  + ' makes a basketball hoop that can fit a ball in it that is 0.' + this.tenths_hundreths_thousandths_b + ' feet in diameter. ' + this.ns.mNameTwo + ' has a ball that is 0.' + this.tenths_hundreths_thousandths_a + ' inches thick in diameter. Will the ball ' + this.ns.mNameTwo + ' has fit in the hoop? Answer yes or no.',0);
+        this.setQuestion('' + this.ns.mNameOne  + ' makes a basketball hoop that can fit a ball in it that is 0.' + this.tenths_hundreths_thousandths_b + ' inches in diameter. ' + this.ns.mNameTwo + ' has a ball that is 0.' + this.tenths_hundreths_thousandths_a + ' inches thick in diameter. Will the ball ' + this.ns.mNameTwo + ' has fit in the hoop? Answer yes or no.',0);
 
         this.setAnswer('no',0);
 }
