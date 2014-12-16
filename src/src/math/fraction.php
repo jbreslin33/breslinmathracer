@@ -40,33 +40,13 @@ var Fraction = new Class(
 		}
 	},
 
-	getLeastCommonMultiple: function(o)
+	getCommonMultiple: function(array)
 	{
-    		for(var i, j, n, d, r = 1; (n = o.pop()) != undefined;)
+		if (array.length == 2)
 		{
-        		while(n > 1)
-			{
-            			if(n % 2)
-				{
-                			for (i = 3, j = Math.floor(Math.sqrt(n)); i <= j && n % i; i += 2);
-					{
-                				d = i <= j ? i : n;
-            				}
-				}
-            			else
-				{
-                			d = 2;
-            				for(n /= d, r *= d, i = o.length; i; !(o[--i] % d) && (o[i] /= d) == 1 && o.splice(i, 1));
-				}
-			}
+			var cm = parseInt(array[0] * array[1]);	 	
+			return cm;
 		}
-    		return r;
-        },
-
-	getCommonMultipleTwo: function(array)
-	{
-		var cm = parseInt(array[0] * array[1]);	 	
-		return cm;
 	},
 
 	add: function(fraction)
@@ -75,11 +55,7 @@ var Fraction = new Class(
 		denominatorArray.push(parseInt(this.mDenominator));				
 		denominatorArray.push(parseInt(fraction.mDenominator));				
 
-		APPLICATION.log('a:' + this.mDenominator);
-		APPLICATION.log('b:' + fraction.mDenominator);
-	
-		var cm = this.getCommonMultipleTwo(denominatorArray);	
-		APPLICATION.log('cm:' + cm);
+		var cm = this.getCommonMultiple(denominatorArray);	
 
 		var am = parseInt(cm / this.mDenominator); 	
 		var bm = parseInt(cm / fraction.mDenominator); 	

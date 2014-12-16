@@ -18,14 +18,12 @@ initialize: function(sheet)
 
         var fractionA = new Fraction(an,ad);
         var fractionB = new Fraction(bn,bd);
-        //var answer = new Fraction(n,ad);
-	
+
+	//fraction class will simplyfy	
 	var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate and simplify:' + fractionA.getString() + ' + ' + fractionB.getString());
-	
-	
+        this.setQuestion('Evaluate: ' + fractionA.getString() + ' + ' + fractionB.getString());
 }
 });
 
