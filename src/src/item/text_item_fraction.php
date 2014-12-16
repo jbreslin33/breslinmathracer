@@ -4,11 +4,19 @@ TextItemFraction: this class input of fractions for answers.
 var TextItemFraction = new Class(
 {
 Extends: Item,
-        //initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy,bh,bw,bx,by)
-        initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy)
+        initialize: function(sheet,qw,qh,qx,qy,nw,nh,nx,ny,dw,dh,dx,dy,autoreduce)
         {
 		this.mRaphael = Raphael(350,137,150,5);
 		this.parent(sheet);
+
+		if (autoreduce == '')		
+		{
+			this.mAutoReduce = false;
+		}
+		else
+		{
+			this.mAutoReduce = autoreduce;
+		}
 
 		if (qw == '')
 		{
@@ -17,9 +25,6 @@ Extends: Item,
 		
 			this.mNumeratorTextBox.setSize(100,50);
 			this.mNumeratorTextBox.setPosition(550,100);
-			
-			//this.mFractionBar.setSize(100,300);
-			//this.mFractionBar.setPosition(650,100);
 			
 			this.mDenominatorTextBox.setSize(100,50);
 			this.mDenominatorTextBox.setPosition(550,225);
@@ -31,9 +36,6 @@ Extends: Item,
 		
 			this.mNumeratorTextBox.setSize(nw,nh);
 			this.mNumeratorTextBox.setPosition(nx,ny);
-			
-			//this.mFractionBar.setSize(bh,bh);
-			//this.mFractionBar.setPosition(bx,by);
 			
 			this.mDenominatorTextBox.setSize(dw,dh);
 			this.mDenominatorTextBox.setPosition(dx,dy);
