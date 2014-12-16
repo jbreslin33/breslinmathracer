@@ -11,13 +11,20 @@ initialize: function(sheet)
 
         this.mType = '5.nf.a.1_2';
 
-        var an = Math.floor((Math.random()*9)+1);
-        var ad = Math.floor((Math.random()*9)+1);
-        var bn = Math.floor((Math.random()*9)+1);
-        var bd = Math.floor((Math.random()*9)+1);
+	var an = 0;
+	var ad = 0;
+	var bn = 0;
+	var bd = 0;
+	while (bn == bd)
+	{
+        	an = Math.floor((Math.random()*9)+1);
+        	ad = 1;
+        	bn = Math.floor((Math.random()*9)+1);
+        	bd = Math.floor((Math.random()*9)+1);
+	}
 
         var fractionA = new Fraction(an,ad);
-        var fractionB = new Fraction(bn,bd);
+        var fractionB = new Fraction(bn,bd,false);
 
         //fraction class will simplyfy
         var answer = fractionA.add(fractionB);
