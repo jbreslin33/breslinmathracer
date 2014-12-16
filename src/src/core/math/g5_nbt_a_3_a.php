@@ -308,7 +308,7 @@ initialize: function(sheet)
 
         this.hundredths = Math.floor((Math.random()*9)+1);
 
-        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundredths) + ' hundredeths ',0);
+        this.setQuestion('Convert to a decimal: ' + this.ns.getNumberName(this.hundredths) + ' hundredths ',0);
 
         this.setAnswer('0.0' + this.hundredths,0);
 }
