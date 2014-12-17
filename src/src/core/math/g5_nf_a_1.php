@@ -15,7 +15,7 @@ initialize: function(sheet)
         var ad = 1;
         var bn = 1;
         var bd = 1;
-        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0 || parseInt(an / ad) < parseInt(bn / bd))
+        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0 || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd)
         {
                 an = Math.floor((Math.random()*9)+10);
                 ad = Math.floor((Math.random()*9)+1);
@@ -50,7 +50,7 @@ initialize: function(sheet)
         var ad = 1;
         var bn = 0;
         var bd = 0;
-        while (an < ad || an % ad == 0 || parseInt(an / ad) < parseInt(bn / bd))
+        while (an < ad || an % ad == 0 || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd)
         {
                 an = Math.floor((Math.random()*9)+10);
                 ad = Math.floor((Math.random()*9)+1);
@@ -85,7 +85,7 @@ initialize: function(sheet)
         var ad = 0;
         var bn = 0;
         var bd = 0;
-        while (bn == bd || parseInt(an / ad) < parseInt(bn / bd))
+        while (bn == bd || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd )
         {
                 an = Math.floor((Math.random()*9)+1);
                 ad = 1;
@@ -120,7 +120,7 @@ initialize: function(sheet)
         var ad = 0;
         var bn = 0;
         var bd = 0;
-        while (an == ad || bn == bd || parseInt(an / ad) < parseInt(bn / bd))
+        while (an == ad || bn == bd || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd)
         {
                 an = Math.floor((Math.random()*9)+1);
                 ad = Math.floor((Math.random()*9)+1);
@@ -156,7 +156,7 @@ initialize: function(sheet)
         var ad = 1;
         var bn = 1;
         var bd = 1;
-        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0)
+        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0 || ad == bd)
         {
                 an = Math.floor((Math.random()*9)+10);
                 ad = Math.floor((Math.random()*9)+1);
@@ -192,7 +192,7 @@ initialize: function(sheet)
         var ad = 1;
         var bn = 0;
         var bd = 0;
-        while (an < ad || an % ad == 0)
+        while (an < ad || an % ad == 0 || ad == bd)
         {
                 an = Math.floor((Math.random()*9)+10);
                 ad = Math.floor((Math.random()*9)+1);
@@ -229,7 +229,7 @@ initialize: function(sheet)
 	var ad = 0;
 	var bn = 0;
 	var bd = 0;
-	while (bn == bd)
+	while (bn == bd || ad == bd)
 	{
         	an = Math.floor((Math.random()*9)+1);
         	ad = 1;
@@ -266,7 +266,7 @@ initialize: function(sheet)
 	var ad = 0;
 	var bn = 0;
 	var bd = 0;
-	while (an == ad || bn == bd)
+	while (an == ad || bn == bd || ad == bd)
 	{
         	an = Math.floor((Math.random()*9)+1);
         	ad = Math.floor((Math.random()*9)+1);
