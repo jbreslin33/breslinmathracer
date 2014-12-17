@@ -13,13 +13,13 @@ initialize: function(sheet)
 
         var an = 1;
         var ad = 1;
-        var bn = 0;
-        var bd = 0;
-        while (an < ad || an % ad == 0 || bn < bd || bn % bd)
+        var bn = 1;
+        var bd = 1;
+        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0)
         {
                 an = Math.floor((Math.random()*9)+10);
                 ad = Math.floor((Math.random()*9)+1);
-                bn = Math.floor((Math.random()*9)+1);
+                bn = Math.floor((Math.random()*9)+10);
                 bd = Math.floor((Math.random()*9)+1);
         }
 
