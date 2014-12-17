@@ -262,6 +262,8 @@ initialize: function(sheet)
 
         this.mType = '5.nf.a.2_1';
 
+	this.ns = new NameSampler();
+
 	var an = 0;
 	var ad = 0;
 	var bn = 0;
@@ -280,7 +282,7 @@ initialize: function(sheet)
 	var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getString() + ' + ' + fractionB.getString());
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getString() + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' had ' + fractionB.getString() + ' ' + this.ns.mThingOne + '. How many ' + this.ns.mThingOne + ' did they have altogether?');
 }
 });
 
