@@ -11,10 +11,10 @@ initialize: function(sheet)
 
         this.mType = '5.nf.a.1_3';
 
-        var an = 15;
-        var ad = 7;
-        var bn = 3;
-        var bd = 4;
+        var an = 1;
+        var ad = 1;
+        var bn = 0;
+        var bd = 0;
         while (an < ad || an % ad == 0)
         {
                 an = Math.floor((Math.random()*9)+10);
