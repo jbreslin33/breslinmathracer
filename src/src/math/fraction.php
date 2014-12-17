@@ -4,7 +4,8 @@ var Fraction = new Class(
         {
 		this.mNumerator   = parseInt(n);
 		this.mDenominator = parseInt(d);
-
+		this.mWholeNumber = 0;
+		this.mMixedNumerator = 0;
 		this.mGCD = 0;
 
 		if (reduce)
@@ -31,14 +32,34 @@ var Fraction = new Class(
 		if (this.mDenominator == 1)
 		{
 			return this.mNumerator; 
-			//return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
 		}
 		else
 		{
 			return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
-			//return this.mNumerator + '/' + this.mDenominator
 		}
 	},
+
+        getMixedNumber: function()
+        {
+                if (this.mDenominator == 1)
+                {
+                        return this.mNumerator;
+                }
+                else
+                {
+			if (this.mDenominator >= this.mNumberator)
+			{
+                        	return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
+			}
+			else
+			{
+				this.mWholeNumber = parseInt(this.mNumerator / this.mDenominator); 
+				this.mMixedNumerator = parseInt(this.mNumerator % this.mDenominator); 
+                        	return '' + this.mWholeNumber + '<sup>' + this.mMixedNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
+			}
+                }
+        },
+
 
 	getCommonMultiple: function(array)
 	{
