@@ -1,4 +1,39 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.1_8',5.1208,'5.nf.a.1','subtract mixed number and mixed number');
+*/
+var i_5_nf_a_1__8 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+
+        this.mType = '5.nf.a.1_8';
+
+        var an = 1;
+        var ad = 1;
+        var bn = 1;
+        var bd = 1;
+        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0 || parseInt(an / ad) < parseInt(bn / bd))
+        {
+                an = Math.floor((Math.random()*9)+10);
+                ad = Math.floor((Math.random()*9)+1);
+                bn = Math.floor((Math.random()*9)+10);
+                bd = Math.floor((Math.random()*9)+1);
+        }
+
+        var fractionA = new Fraction(an,ad,false);
+        var fractionB = new Fraction(bn,bd,false);
+
+        var answer = fractionA.subtract(fractionB);
+
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber());
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.1_7',5.1207,'5.nf.a.1','subtract mixed number and fraction');
 */
 var i_5_nf_a_1__7 = new Class(
@@ -15,7 +50,7 @@ initialize: function(sheet)
         var ad = 1;
         var bn = 0;
         var bd = 0;
-        while (an < ad || an % ad == 0)
+        while (an < ad || an % ad == 0 || parseInt(an / ad) < parseInt(bn / bd))
         {
                 an = Math.floor((Math.random()*9)+10);
                 ad = Math.floor((Math.random()*9)+1);
@@ -50,7 +85,7 @@ initialize: function(sheet)
         var ad = 0;
         var bn = 0;
         var bd = 0;
-        while (bn == bd)
+        while (bn == bd || parseInt(an / ad) < parseInt(bn / bd))
         {
                 an = Math.floor((Math.random()*9)+1);
                 ad = 1;
@@ -85,7 +120,7 @@ initialize: function(sheet)
         var ad = 0;
         var bn = 0;
         var bd = 0;
-        while (an == ad || bn == bd)
+        while (an == ad || bn == bd || parseInt(an / ad) < parseInt(bn / bd))
         {
                 an = Math.floor((Math.random()*9)+1);
                 ad = Math.floor((Math.random()*9)+1);
