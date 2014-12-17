@@ -91,5 +91,29 @@ var Fraction = new Class(
 
 		var fractionSum = new Fraction(sn,cm,true);  	
 		return fractionSum;
-	}
+	},
+
+        subtract: function(fraction)
+        {
+                denominatorArray = new Array();
+                denominatorArray.push(parseInt(this.mDenominator));
+                denominatorArray.push(parseInt(fraction.mDenominator));
+
+                var cm = this.getCommonMultiple(denominatorArray);
+
+                var am = parseInt(cm / this.mDenominator);
+                var bm = parseInt(cm / fraction.mDenominator);
+
+                var an = parseInt(am * this.mNumerator);
+                var bn = parseInt(bm * fraction.mNumerator);
+
+                var ad = cm;
+                var bd = cm;
+
+                var sn = parseInt(an - bn);
+
+                var fractionSum = new Fraction(sn,cm,true);
+                return fractionSum;
+        }
+
 });
