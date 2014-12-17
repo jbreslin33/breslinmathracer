@@ -1890,6 +1890,45 @@ getItem: function(id)
                 return new i_5_nf_a_1__9(this.mSheet);
         }
 
+	//5.nf.a.2
+        if (id == '5.nf.a.2_1')
+        {
+                return new i_5_nf_a_2__1(this.mSheet);
+        }
+        if (id == '5.nf.a.2_2')
+        {
+                return new i_5_nf_a_2__2(this.mSheet);
+        }
+        if (id == '5.nf.a.2_3')
+        {
+                return new i_5_nf_a_2__3(this.mSheet);
+        }
+        if (id == '5.nf.a.2_4')
+        {
+                return new i_5_nf_a_2__4(this.mSheet);
+        }
+        if (id == '5.nf.a.2_5')
+        {
+                return new i_5_nf_a_2__5(this.mSheet);
+        }
+        if (id == '5.nf.a.2_6')
+        {
+                return new i_5_nf_a_2__6(this.mSheet);
+        }
+        if (id == '5.nf.a.2_7')
+        {
+                return new i_5_nf_a_2__7(this.mSheet);
+        }
+        if (id == '5.nf.a.2_8')
+        {
+                return new i_5_nf_a_2__8(this.mSheet);
+        }
+        if (id == '5.nf.a.2_9')
+        {
+                return new i_5_nf_a_2__9(this.mSheet);
+        }
+
+
 	/*** GRADE 6 ***/
 	//6.rp.a.1
 	if (id == '6.rp.a.1_1')
