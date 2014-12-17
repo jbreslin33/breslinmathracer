@@ -224,6 +224,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_2';
+	this.ns = new NameSampler();
 
 	var an = 0;
 	var ad = 0;
@@ -231,7 +232,7 @@ initialize: function(sheet)
 	var bd = 0;
 	while (bn == bd || ad == bd)
 	{
-        	an = Math.floor((Math.random()*9)+1);
+        	an = Math.floor((Math.random()*8)+2);
         	ad = 1;
         	bn = Math.floor((Math.random()*9)+1);
         	bd = Math.floor((Math.random()*9)+1);
@@ -244,7 +245,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getString() + ' + ' + fractionB.getString());
+        this.setQuestion('' + this.ns.mNameOne + ' prepared ' + fractionA.getString() + ' servings of ' + this.ns.mFruitOne + ' and ' + fractionB.getString() + ' servings of ' + this.ns.mVegetableOne + '. What is the sum total of servings ' + this.ns.mNameOne + ' prepared.'  );
 }
 });
 
