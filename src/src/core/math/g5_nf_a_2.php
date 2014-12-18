@@ -187,6 +187,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_3';
+	this.ns = new NameSampler();
 
         var an = 1;
         var ad = 1;
@@ -207,7 +208,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' + ' + fractionB.getString());
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getMixedNumber() + ' gallons of gas in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' car. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' bought ' + fractionB.getString() + ' more gallons at the gas station. How many gallons of gas are in the car now?');
 }
 });
 
@@ -245,7 +246,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' prepared ' + fractionA.getString() + ' servings of ' + this.ns.mFruitOne + ' and ' + fractionB.getString() + ' servings of ' + this.ns.mVegetableOne + '. What is the sum total of servings ' + this.ns.mNameOne + ' prepared.'  );
+        this.setQuestion('' + this.ns.mNameOne + ' prepared ' + fractionA.getString() + ' servings of ' + this.ns.mFruitOne + ' and ' + fractionB.getString() + ' servings of ' + this.ns.mVegetableOne + '. What is the sum total of servings ' + this.ns.mNameOne + ' prepared?'  );
 }
 });
 
