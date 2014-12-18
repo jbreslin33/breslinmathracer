@@ -151,6 +151,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_4';
+	this.ns = new NameSampler();
 
         var an = 1;
         var ad = 1;
@@ -171,7 +172,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' + ' + fractionB.getMixedNumber());
+        this.setQuestion('Yesterday the ' + this.ns.mAnimalOne + ' in the Zoo drank ' + fractionA.getMixedNumber() + ' liters of water in the morning. Then they drank ' + fractionB.getMixedNumber() + ' liters more liters the rest of the day. How many litres of water did the ' + this.ns.mAnimalOne + ' drink yesterday?');
 }
 });
 
