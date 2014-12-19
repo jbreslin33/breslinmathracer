@@ -172,7 +172,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Yesterday the ' + this.ns.mAnimalOne + ' in the Zoo drank ' + fractionA.getMixedNumber() + ' liters of water in the morning. Then they drank ' + fractionB.getMixedNumber() + ' liters more liters the rest of the day. How many litres of water did the ' + this.ns.mAnimalOne + ' drink yesterday?');
+        this.setQuestion('Yesterday the ' + this.ns.mAnimalOne + ' in the Zoo drank ' + fractionA.getMixedNumber() + ' liters of water in the morning. Then they drank ' + fractionB.getMixedNumber() + ' liters more liters the rest of the day. How many liters of water did the ' + this.ns.mAnimalOne + ' drink yesterday?');
 }
 });
 
