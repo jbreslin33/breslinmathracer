@@ -138,7 +138,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' was carrying ' + fractionA.getString() + ' gallons of water back from a well to his house. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spilled ' + fractionB.getString() + ' of the water out on while carrying it. How much was left after spilling it?'    );
+        this.setQuestion('' + this.ns.mNameOne + ' was carrying ' + fractionA.getString() + ' gallons of water back from a well to ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spilled ' + fractionB.getString() + ' gallons of the water while carrying it. How much was left after the spilling?'    );
 }
 });
 
