@@ -10,6 +10,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_8';
+	this.ns = new NameSampler();
 
         var an = 1;
         var ad = 1;
@@ -45,6 +46,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_7';
+	this.ns = new NameSampler();
 
         var an = 1;
         var ad = 1;
@@ -80,6 +82,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_6';
+	this.ns = new NameSampler();
 
         var an = 0;
         var ad = 0;
@@ -115,6 +118,7 @@ initialize: function(sheet)
         this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.a.2_5';
+	this.ns = new NameSampler();
 
         var an = 0;
         var ad = 0;
@@ -134,7 +138,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getString() + ' - ' + fractionB.getString());
+        this.setQuestion('' + this.ns.mNameOne + ' was carrying ' + fractionA.getString() + ' gallons of water back from a well to his house. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spilled ' + fractionB.getString() + ' of the water out on while carrying it. How much was left after spilling it?'    );
 }
 });
 
