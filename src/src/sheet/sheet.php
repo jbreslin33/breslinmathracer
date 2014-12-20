@@ -175,14 +175,30 @@ var Sheet = new Class(
 			{
 				this.addItem(pick);
 			
-				//add the streak from raw_data and increment as itemIDs are every other element in array. 
-				i++;	
-				pick.mStreak = itemIDArray[i];	
-				i++;
-				pick.mProgressedTypeID = itemIDArray[i];	
-				i++;
-				this.mGame.mScore = itemIDArray[i];
-				this.mGame.setScore(this.mGame.mScore);
+				if (APPLICATION.mRef_id == 'timestables')
+				{
+					APPLICATION.log('tablestimes...');
+					//add streak from raw_data andincrement as itemIDs are every other element in array. 
+					i++;	
+					pick.mStreak = itemIDArray[i];	
+					i++;
+					pick.mProgressedTypeID = itemIDArray[i];	
+					i++;
+					this.mGame.mScore = itemIDArray[i];
+					this.mGame.setScore(this.mGame.mScore);
+				}
+				else
+				{
+					APPLICATION.log('something else..');
+					//add streak from raw_data andincrement as itemIDs are every other element in array. 
+					i++;	
+					pick.mStreak = itemIDArray[i];	
+					i++;
+					pick.mProgressedTypeID = itemIDArray[i];	
+					i++;
+					this.mGame.mScore = itemIDArray[i];
+					this.mGame.setScore(this.mGame.mScore);
+				}
 			}
 			else
 			{
