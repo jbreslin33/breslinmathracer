@@ -181,12 +181,32 @@ public function setRawData()
                 $randid .= $randomNumber;
                 $this->mTypeID = $randid;
         }
+   
+	//pink
+        $itemString =  $this->mTypeID; //ask this one
+
+        //blue
+        $itemString .= ":";
+        $itemString .= "Today=";
+        //$itemString .= "$high_progression";
+        $itemString .= "7";
+        //$itemString .= count($unmastered_array);
+
+        //yellow
+        $itemString .= ":";
+        //$itemString .= "$high_standard";
+        $itemString .= "ALL TIME=";
+        $itemString .= "13";
+
+        //green
+        $itemString .= ":";
+        $itemString .= "3";
+        //$itemString .= intval(count($score_array));
+
+        $_SESSION["raw_data"] = $itemString;
 
 	$_SESSION["item_types_id"] = $this->mTypeID;
-	$raw = $this->mTypeID; 
-	$raw .= ":";
-	$raw .= "0";
-       	$_SESSION["raw_data"] = $raw; 
+       	$_SESSION["raw_data"] = $itemString; 
 }
 
 public function leave()
