@@ -102,6 +102,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
+        this.setAnswer(answer.getString() + ' ' + this.ns.mLiquidVolumeOne,1);
         this.setQuestion('' + this.ns.mNameOne + ' bought ' + fractionA.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' guests drank ' + fractionB.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. How many ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left over?');
 }
 });
@@ -138,7 +139,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' was carrying ' + fractionA.getString() + ' gallons of water back from a well to ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spilled ' + fractionB.getString() + ' gallons of the water while carrying it. How much was left after the spilling?'    );
+        this.setQuestion('' + this.ns.mNameOne + ' was carrying ' + fractionA.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of water back from a well to ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spilled ' + fractionB.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of the water while carrying it. How many ' + this.ns.mLiquidVolumeOne + ' were left after the spilling?'    );
 }
 });
 
