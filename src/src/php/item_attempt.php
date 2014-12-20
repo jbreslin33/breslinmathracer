@@ -68,14 +68,18 @@ public function update()
 			$_SESSION["timestables_score_today"] = $_SESSION["timestables_score"];	
 		}
 
-        	if (intval($_SESSION["item_transaction_code"]) == 2 || intval($_SESSION["item_transaction_code"]) == 0)
-		{
-			$_SESSION["timestables_score"] = 0;	
-		}
         	if (intval($_SESSION["item_transaction_code"]) == 1)
 		{
 			$score++;
 			$_SESSION["timestables_score"] = $score;	
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'s1','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+		}
+		else
+		{
+			$_SESSION["timestables_score"] = 0;	
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'s20','');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 		}
 		
 	}

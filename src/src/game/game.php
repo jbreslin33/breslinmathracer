@@ -404,7 +404,11 @@ var Game = new Class(
         setScore: function(score)
         {
                 this.mScore = score;
-		if (this.mScore !=  0)
+		if (APPLICATION.mRef_id == 'timestables')
+		{
+                	APPLICATION.mHud.mScore.setText('<font size="1">Score: ' + this.mScore + '</font>');
+		} 
+		else if (this.mScore !=  0)
 		{
                 	APPLICATION.mHud.mScore.setText('<font size="1">Score: ' + this.mScore + '</font>');
 		}
