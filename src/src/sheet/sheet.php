@@ -177,7 +177,6 @@ var Sheet = new Class(
 			
 				if (APPLICATION.mRef_id == 'timestables')
 				{
-					APPLICATION.log('tablestimes...');
 					//add streak from raw_data andincrement as itemIDs are every other element in array. 
 					i++;	
 					pick.mStreak = itemIDArray[i];	
@@ -189,7 +188,6 @@ var Sheet = new Class(
 				}
 				else
 				{
-					APPLICATION.log('something else..');
 					//add streak from raw_data andincrement as itemIDs are every other element in array. 
 					i++;	
 					pick.mStreak = itemIDArray[i];	
