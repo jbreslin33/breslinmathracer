@@ -210,7 +210,7 @@ var Item = new Class(
                 this.addShape(this.mTimesTablesInfo);
 
 		//just fill it here...
-		for (i=2; i < 10; i++)
+		for (i=2; i < 11; i++)
 		{
   			var option = document.createElement("option");
                 	option.value = '' + i;
