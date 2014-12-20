@@ -49,6 +49,14 @@ public function insert()
 
 public function update()
 {
+	//for timestables
+	if ($_SESSION["ref_id"] == "timestables")
+	{
+        	if (intval($_SESSION["item_transaction_code"]) == 2)
+		{
+			$_SESSION["timestables_score"] = 0;	
+		}
+	}
 
 	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
         $query .= $_SESSION["user_id"];
