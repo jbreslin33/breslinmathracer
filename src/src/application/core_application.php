@@ -549,12 +549,10 @@ Extends: Application,
                 {
                         if (tablenumber == '10')
                         {
-				APPLICATION.log('old');
                                 xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
                         }
                         else
                         {
-				APPLICATION.log('new');
                                 xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
                         }
                 }
