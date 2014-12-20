@@ -90,7 +90,7 @@ initialize: function(sheet)
         var bd = 0;
         while (bn == bd || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd )
         {
-                an = Math.floor((Math.random()*9)+1);
+                an = Math.floor((Math.random()*8)+2);
                 ad = 1;
                 bn = Math.floor((Math.random()*9)+1);
                 bd = Math.floor((Math.random()*9)+1);
@@ -102,7 +102,6 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setAnswer(answer.getString() + ' ' + this.ns.mLiquidVolumeOne,1);
         this.setQuestion('' + this.ns.mNameOne + ' bought ' + fractionA.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' guests drank ' + fractionB.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. How many ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left over?');
 }
 });
