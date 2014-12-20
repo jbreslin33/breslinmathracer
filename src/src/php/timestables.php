@@ -195,15 +195,20 @@ public function setRawData()
         //blue
         $itemString .= ":";
         $itemString .= "Today=";
-        //$itemString .= "$high_progression";
-        $itemString .= "7";
-        //$itemString .= count($unmastered_array);
+        if (isset($_SESSION["timestables_score_today"]))
+        {
+                $itemString .= $_SESSION["timestables_score_today"];
+        }
+        else
+        {
+                $itemString .= "0";
+        }
 
         //yellow
         $itemString .= ":";
-        //$itemString .= "$high_standard";
         $itemString .= "ALL TIME=";
         $itemString .= "13";
+//get today score if higher than alltime in db then which you will set in sessions then update db...
 
         //green
         $itemString .= ":";
