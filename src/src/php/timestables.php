@@ -27,10 +27,17 @@ function __construct($tableNumber, $startNew, $leave)
 		if ($startNew)
 		{
                 	$this->insertNewAttempt();
+			$_SESSION["timestables_score"] = 0;
+
 		}
 		else
 		{
                 	$this->continueAttempt();
+			
+			$score = $_SESSION["timestables_score"];
+			$score = intval($score);
+			$score++;
+			$_SESSION["timestables_score"] = $score;
 		}
 	}
 }
@@ -200,7 +207,15 @@ public function setRawData()
 
         //green
         $itemString .= ":";
-        $itemString .= "3";
+	if (isset($_SESSION["timestables_score"]))
+	{
+        	$itemString .= $_SESSION["timestables_score"];
+	}
+	else
+	{
+        	$itemString .= "0";
+	}
+	
         //$itemString .= intval(count($score_array));
 
         $_SESSION["raw_data"] = $itemString;
