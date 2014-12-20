@@ -118,6 +118,10 @@ exit: function(sheet)
 	{
 		APPLICATION.timestables('9');
 	}	
+	else if (APPLICATION.mRef_id == 'timestables')
+	{
+		APPLICATION.timestables('10');
+	}	
 }
 });
 
