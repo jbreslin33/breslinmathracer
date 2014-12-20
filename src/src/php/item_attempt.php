@@ -54,6 +54,7 @@ public function update()
 	{
         	if (intval($_SESSION["item_transaction_code"]) == 2)
 		{
+			$_SESSION["timestables_score_today"] = $_SESSION["timestables_score"];	
 			$_SESSION["timestables_score"] = 0;	
 		}
 	}
