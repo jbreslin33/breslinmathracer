@@ -206,7 +206,7 @@ var NameMachine = new Class(
 		this.mThingArray.push("rocks");
 		this.mThingArray.push("balloons");
 
-    //school supplies
+    		//school supplies
 		this.mSuppliesArray = new Array();
 		this.mUsedSuppliesElementArray = new Array();
 		this.mSuppliesArray.push("staplers");
@@ -295,7 +295,22 @@ var NameMachine = new Class(
 		this.mLeftArray.push("left");	
 		this.mLeftArray.push("remaining");	
 		this.mLeftArray.push("still");	
-
+	
+		//drinks	
+		this.mDrinkArray = new Array();
+		this.mUsedDrinkElementArray = new Array();
+		this.mDrinkArray.push("apple juice");	
+		this.mDrinkArray.push("orange juice");	
+		this.mDrinkArray.push("grape juice");	
+		this.mDrinkArray.push("water");	
+		
+		//liquidVolume	
+		this.mLiquidVolumeArray = new Array();
+		this.mUsedLiquidVolumeElementArray = new Array();
+		this.mLiquidVolumeArray.push("cups");	
+		this.mLiquidVolumeArray.push("quarts");	
+		this.mLiquidVolumeArray.push("liters");	
+		this.mLiquidVolumeArray.push("gallons");	
 
 		//operationString	
 		this.mOperationInstructionExpression = 'Use + for addition, - for subtraction, * for multiplication and / for division. Do not use spaces. Example Answer: 1+2';	
@@ -803,6 +818,60 @@ var NameMachine = new Class(
                 }
                 this.mUsedTimeIncrementElementArray.push(randomElement);
                 return this.mTimeIncrementArray[randomElement];
+        },
+      
+	getDrink: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mDrinkArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedDrinkElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedDrinkElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedDrinkElementArray.push(randomElement);
+                return this.mDrinkArray[randomElement];
+        },
+ 
+	getLiquidVolume: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mLiquidVolumeArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedLiquidVolumeElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedLiquidVolumeElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedLiquidVolumeElementArray.push(randomElement);
+                return this.mLiquidVolumeArray[randomElement];
         },
 
 	getSingular: function(word)
@@ -1556,5 +1625,21 @@ var NameSampler = new Class(
 
                 this.mSum = this.mNameMachine.getSum();
                 this.mLeft = this.mNameMachine.getLeft();
+		
+		this.mLiquidVolumeOne = this.mNameMachine.getLiquidVolume();
+		this.mLiquidVolumeTwo = this.mNameMachine.getLiquidVolume();
+		this.mLiquidVolumeThree = this.mNameMachine.getLiquidVolume();
+		this.mLiquidVolumeArray = new Array(); 
+		this.mLiquidVolumeArray.push(this.mLiquidVolumeOne);
+		this.mLiquidVolumeArray.push(this.mLiquidVolumeTwo);
+		this.mLiquidVolumeArray.push(this.mLiquidVolumeThree);
+		
+		this.mDrinkOne = this.mNameMachine.getDrink();
+		this.mDrinkTwo = this.mNameMachine.getDrink();
+		this.mDrinkThree = this.mNameMachine.getDrink();
+		this.mDrinkArray = new Array(); 
+		this.mDrinkArray.push(this.mDrinkOne);
+		this.mDrinkArray.push(this.mDrinkTwo);
+		this.mDrinkArray.push(this.mDrinkThree);
 	}
 });
