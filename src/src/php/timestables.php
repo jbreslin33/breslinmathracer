@@ -27,17 +27,17 @@ function __construct($tableNumber, $startNew, $leave)
 		if ($startNew)
 		{
                 	$this->insertNewAttempt();
-			$_SESSION["timestables_score"] = 0;
+			//$_SESSION["timestables_score"] = 0;
 
 		}
 		else
 		{
                 	$this->continueAttempt();
 			
-			$score = $_SESSION["timestables_score"];
-			$score = intval($score);
-			$score++;
-			$_SESSION["timestables_score"] = $score;
+			//$score = $_SESSION["timestables_score"];
+			//$score = intval($score);
+			//$score++;
+			//$_SESSION["timestables_score"] = $score;
 		}
 	}
 }
