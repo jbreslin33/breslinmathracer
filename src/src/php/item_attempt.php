@@ -52,11 +52,32 @@ public function update()
 	//for timestables
 	if ($_SESSION["ref_id"] == "timestables")
 	{
-        	if (intval($_SESSION["item_transaction_code"]) == 2)
+		if (!isset($_SESSION["timestables_score"]))
+		{
+			$_SESSION["timestables_score"] = 0;
+		}
+		if (!isset($_SESSION["timestables_score_today"]))
+		{
+			$_SESSION["timestables_score_today"] = 0;
+		}
+			
+		$score = intval($_SESSION["timestables_score"]);
+		$today = intval($_SESSION["timestables_score_today"]);
+		if ($score  > $today)
 		{
 			$_SESSION["timestables_score_today"] = $_SESSION["timestables_score"];	
+		}
+
+        	if (intval($_SESSION["item_transaction_code"]) == 2 || intval($_SESSION["item_transaction_code"]) == 0)
+		{
 			$_SESSION["timestables_score"] = 0;	
 		}
+        	if (intval($_SESSION["item_transaction_code"]) == 1)
+		{
+			$score++;
+			$_SESSION["timestables_score"] = $score;	
+		}
+		
 	}
 
 	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
