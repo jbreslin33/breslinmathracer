@@ -73,7 +73,7 @@ public function update()
 		{
 			$_SESSION["timestables_score"] = 0;	
 		}
-		if ($score  > $today)
+		if ($score > $today)
 		{
 			$_SESSION["timestables_score_today"] = $_SESSION["timestables_score"];	
 		}
