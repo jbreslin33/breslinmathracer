@@ -12,6 +12,11 @@ function __construct($tableNumber, $startNew, $leave)
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTableNumber = $tableNumber;
 	
+	if (!isset($_SESSION["workit"]))
+	{
+                $_SESSION["workit"] = 1;
+	}
+	
 	if (!isset($_SESSION["timestables_score"]))
 	{
                 $_SESSION["timestables_score"] = 0;
@@ -214,23 +219,27 @@ public function setRawData()
 		this way student cant memorize order...
 		how do you get to new one you will have to dynamically expand when they get there...
 	*/
+
+	/*	
+		how bout ask them questions see how high they get..then whatever they get wrong will be the workit_type	
+	*/
 	
         if ($this->mTableNumber == 10)
         {
-		$this->mTimesTablesArray = array(); 	
-		for ($i = 0; $i < intval($_SESSION["timestables_score_today"] + 1); $i++)
+		$randomNumber = 0;
+		$randomChance = rand(1,2);
+		if ($randomChance == 1) //ask random
 		{
-			$this->mTimesTablesArray[] = $this->mTimesTablesPoolArray[$i];	
-		}
-		for ($i = 0; $i < intval($_SESSION["timestables_score_today"] + 1); $i++)
+			$randomNumber = rand(1,81);
+		}	
+		if ($randomChance == 2) //ask workit 
 		{
-			$this->mTimesTablesArray[] = $this->mTimesTablesPoolArray[intval($_SESSION["timestables_score_today"])];	
+			$randomNumber = intval($_SESSION["workit"]);		
 		}
                 
-	//	$randomNumber = rand(1,11);
                 $randid = '3.oa.c.7';
                 $randid .= "_";
-		$randid .= $this->mTimesTablesArray[intval($_SESSION["timestables_score"])]; 
+		$randid .= $randomNumber; 
                 $this->mTypeID = $randid;
         }
    
