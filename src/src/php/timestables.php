@@ -11,6 +11,40 @@ function __construct($tableNumber, $startNew, $leave)
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTableNumber = $tableNumber;
+	
+	if (!isset($_SESSION["timestables_score"]))
+	{
+                $_SESSION["timestables_score"] = 0;
+	}
+
+	if (!isset($_SESSION["timestables_score_today"]))
+	{
+                $_SESSION["timestables_score_today"] = 0;
+	}
+	
+	$this->mTimesTablesArray = array(); 
+        if (!isset($_SESSION["timestables_array"]))
+        {
+                $_SESSION["timestables_array"] = $this->mTimesTablesArray;
+        }
+	else
+	{
+                $this->mTimesTablesArray = $_SESSION["timestables_array"];
+	}
+	
+	$this->mTimesTablesPoolArray = array(); 
+        if (!isset($_SESSION["timestables_pool_array"]))
+        {
+		for ($i = 1; $i < 82; $i++)
+		{
+			$this->mTimesTablesPoolArray[] = intVal($i); 
+		}
+                $_SESSION["timestables_pool_array"] = $this->mTimesTablesPoolArray;
+        }
+	else
+	{
+                $this->mTimesTablesPoolArray = $_SESSION["timestables_pool_array"];
+	}
 
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
 	$this->mEvaluationsID = intval($this->mTableNumber);
@@ -174,12 +208,29 @@ public function setRawData()
 		$randid .= $randomNumber; 
 		$this->mTypeID = $randid;
 	}
+	/* what i want is to simulate what i did with israel.....ask 1 then 2 then 3 but rememember the 3 i asked...
+		so i will still make an optimal order starting with hardest ones...
+		but they will be added during session with a marker. after one is wrong we will reshuffle available ones.... 	
+		this way student cant memorize order...
+		how do you get to new one you will have to dynamically expand when they get there...
+	*/
+	
         if ($this->mTableNumber == 10)
         {
-                $randomNumber = rand(1,11);
+		$this->mTimesTablesArray = array(); 	
+		for ($i = 0; $i < intval($_SESSION["timestables_score_today"] + 1); $i++)
+		{
+			$this->mTimesTablesArray[] = $this->mTimesTablesPoolArray[$i];	
+		}
+		for ($i = 0; $i < intval($_SESSION["timestables_score_today"] + 1); $i++)
+		{
+			$this->mTimesTablesArray[] = $this->mTimesTablesPoolArray[intval($_SESSION["timestables_score_today"])];	
+		}
+                
+	//	$randomNumber = rand(1,11);
                 $randid = '3.oa.c.7';
                 $randid .= "_";
-                $randid .= $randomNumber;
+		$randid .= $this->mTimesTablesArray[intval($_SESSION["timestables_score"])]; 
                 $this->mTypeID = $randid;
         }
    
@@ -189,20 +240,14 @@ public function setRawData()
         //blue
         $itemString .= ":";
         $itemString .= "Today=";
-        if (isset($_SESSION["timestables_score_today"]))
-        {
-                $itemString .= $_SESSION["timestables_score_today"];
-        }
-        else
-        {
-                $itemString .= "0";
-        }
+        $itemString .= $_SESSION["timestables_score_today"];
 
         //yellow
         $itemString .= ":";
         $itemString .= "ALL TIME=";
         $itemString .= "13";
-//get today score if higher than alltime in db then which you will set in sessions then update db...
+
+	//get today score if higher than alltime in db then which you will set in sessions then update db...
 
         //green
         $itemString .= ":";
@@ -221,6 +266,12 @@ public function setRawData()
 
 	$_SESSION["item_types_id"] = $this->mTypeID;
        	$_SESSION["raw_data"] = $itemString; 
+}
+
+public function setSessions()
+{
+	$_SESSION["timestables_array"] = $this->timesTablesArray;
+	$_SESSION["timestables_asked_array"] = $this->timesTablesAskedArray;
 }
 
 public function leave()
