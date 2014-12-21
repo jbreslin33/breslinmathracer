@@ -27,30 +27,6 @@ function __construct($tableNumber, $startNew, $leave)
                 $_SESSION["timestables_score_today"] = 0;
 	}
 	
-	$this->mTimesTablesArray = array(); 
-        if (!isset($_SESSION["timestables_array"]))
-        {
-                $_SESSION["timestables_array"] = $this->mTimesTablesArray;
-        }
-	else
-	{
-                $this->mTimesTablesArray = $_SESSION["timestables_array"];
-	}
-	
-	$this->mTimesTablesPoolArray = array(); 
-        if (!isset($_SESSION["timestables_pool_array"]))
-        {
-		for ($i = 1; $i < 82; $i++)
-		{
-			$this->mTimesTablesPoolArray[] = intVal($i); 
-		}
-                $_SESSION["timestables_pool_array"] = $this->mTimesTablesPoolArray;
-        }
-	else
-	{
-                $this->mTimesTablesPoolArray = $_SESSION["timestables_pool_array"];
-	}
-
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
 	$this->mEvaluationsID = intval($this->mTableNumber);
 	$this->mEvaluationsID = intval($this->mEvaluationsID + 1);
