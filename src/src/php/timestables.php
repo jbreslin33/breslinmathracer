@@ -275,6 +275,7 @@ public function setRawData()
         $itemString .= $alltime;
 
 	//get today score if higher than alltime in db then which you will set in sessions then update db...
+	//you should show leaders....
 
         //green
         $itemString .= ":";
