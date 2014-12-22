@@ -67,9 +67,15 @@ public function initializeProgressionCounter()
 
 		//temp hack
 		$this->progression_counter = floatval($this->progression_counter) - floatval(0.0001);
-		//round(floatval($result),5);
 	}
-	$this->progression_counter_limit = floatval($this->progression_counter + 1);
+	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
+	{
+		$this->progression_counter_limit = floatval($this->progression_counter + 0.01);
+	}	
+	else
+	{
+		$this->progression_counter_limit = floatval($this->progression_counter + 1);
+	}
 }
 
 public function fillTypesArray()
@@ -78,7 +84,14 @@ public function fillTypesArray()
 	$query .= $this->progression_counter; 
 	$query .= " AND progression < "; //stay in grade 
 	$query .= $this->progression_counter_limit; 
-	$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards
+	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
+	{
+		$query .= " AND active_code = 1 AND speed != 0"; //skip unactive and speed standards
+	}
+	else
+	{
+		$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards
+	}
 	$query .= " order by progression asc;";
 
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -97,7 +110,14 @@ public function fillAttemptsArray()
 {
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
-	$query .= " AND item_types.active_code = 1 AND item_types.speed = 0 AND item_types.progression > "; 
+	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
+	{
+		$query .= " AND item_types.active_code = 1 AND item_types.speed != 0 AND item_types.progression > "; 
+	}
+	else
+	{
+		$query .= " AND item_types.active_code = 1 AND item_types.speed = 0 AND item_types.progression > "; 
+	}
 	$query .= $this->progression_counter; 
         $query .= " order by item_attempts.start_time desc;";
 													
