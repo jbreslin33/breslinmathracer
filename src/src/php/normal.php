@@ -136,8 +136,8 @@ public function setRawData()
 
 		$c = 0;
 
-		//loop attempt array and dump into arrays then you can eval after 
-		while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < 2 )
+		//loop attempt array and dump into arrays then you can eval after..need to use mastery 
+		while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
 		{
 			//check for match of ids if so add to code array
 			if ($this->id_array[$i] == $this->item_array[$c])
@@ -147,15 +147,14 @@ public function setRawData()
 			$c++; //increment for typearrays
 		}
 
-		//if less than 2 than type has not been asked enuf so make it ask type
-		if ( intval(count($mini_transaction_code_array)) < 2 )
+		//if less than mastery than type has not been asked enuf so make it ask type
+		if ( intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]) )
 		{
 			$this->item_types_id_to_ask = $this->id_array[$i];
 		} 
-		else  //we have 2 to check
+		else  //we have over mastery to check
 		{
-			//if either is not 1 then its not type mastered so make it ask type
-			//$this->type_mastery_array      = pg_Result($result, $i, 'type_mastery');
+			//if any is not 1 then its not type mastered so make it ask type
 			for ($t=0; $t < $this->type_mastery_array[$i]; $t++)
 			{
 				if ($mini_transaction_code_array[$t] != 1)
@@ -163,12 +162,6 @@ public function setRawData()
 					$this->item_types_id_to_ask = $this->id_array[$i];
 				}
 			} 
-			/*
-			if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
-			{
-				$this->item_types_id_to_ask = $this->id_array[$i];
-			}
-			*/
 		} 
 		$i++;
 	}
