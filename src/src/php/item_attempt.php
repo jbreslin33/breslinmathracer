@@ -72,6 +72,7 @@ public function update()
 		else
 		{
 			$_SESSION["timestables_score"] = 0;	
+			$_SESSION["workit"] = $_SESSION["item_types_id"];	
 		}
 		if ($score > $today)
 		{
