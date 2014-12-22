@@ -125,7 +125,6 @@ Extends: Application,
 			}
         		if (codeNumber == APPLICATION.FULL)
                 	{
-				APPLICATION.log('hh');
                 		APPLICATION.mRef_id = responseArray[1];
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                         	APPLICATION.mLoggedIn = responseArray[2];
@@ -133,7 +132,6 @@ Extends: Application,
                         	APPLICATION.mFirstName = responseArray[4];
                         	APPLICATION.mLastName = responseArray[5];
                         	APPLICATION.mRawData = responseArray[6];
-				APPLICATION.log('mRawData:' + APPLICATION.mRawData);
 		
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
@@ -329,7 +327,6 @@ Extends: Application,
 
         normal: function()
         {
-		APPLICATION.log('normal');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -433,7 +430,6 @@ Extends: Application,
 
 	timestables: function(tablenumber)
         {
-		APPLICATION.log('timesatables');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

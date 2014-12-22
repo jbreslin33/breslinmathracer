@@ -12,12 +12,10 @@ Extends: Item,
 		this.mAutoReduce = true;
 		if (autoreduce == true)		
 		{
-			APPLICATION.log('autoreduce:true')	
 			this.mAutoReduce = true;
 		}
 		else
 		{
-			APPLICATION.log('autoreduce:false')	
 			this.mAutoReduce = false;
 		}
 
@@ -118,8 +116,6 @@ Extends: Item,
 							var fraction = new Fraction(numerator,denominator,true);
 							numerator = fraction.mNumerator;	
 							denominator = fraction.mDenominator;	
-							APPLICATION.log('numerator:' + numerator);				
-							APPLICATION.log('denominator:' + denominator);				
 						}
 						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
@@ -146,8 +142,6 @@ Extends: Item,
                                                         var fraction = new Fraction(numerator,denominator,true);
                                                         numerator = fraction.mNumerator;
                                                         denominator = fraction.mDenominator;
-							APPLICATION.log('numerator:' + numerator);				
-							APPLICATION.log('denominator:' + denominator);				
                                                 }
 						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
