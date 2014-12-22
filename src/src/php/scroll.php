@@ -185,7 +185,22 @@ public function setScroll()
 	$last_name_array = array();
 	$score_array = array();
 
-	$query = "select id, first_name, last_name, score from users order by score desc";
+	$query = "";
+	if (isset($_SESSION["core_standards_id"]))	
+	{
+		if ($_SESSION["core_standards_id"] == '3.oa.c.7')
+		{
+			$query .= "select id, first_name, last_name, score from users where core_standards_id = '3.oa.c.7' order by score desc";
+		}
+		if ($_SESSION["core_standards_id"] == '5.oa.a.1')
+		{
+			$query .= "select id, first_name, last_name, score from users where core_standards_id = '5.oa.a.1' order by score desc";
+		}
+	}
+	else
+	{
+		$query .= "select id, first_name, last_name, score from users order by score desc";
+	}
 
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
        	$numberOfResults = pg_num_rows($result);
@@ -257,15 +272,18 @@ public function setScroll()
 				if ( intval(count($place_array)) > 2)	
 				{
 					//3rd
-					$itemString .= $place_array[intval($i + 1)];
-					$itemString .= " ";
-					$itemString .= $first_name_array[intval($i + 1)];
-					$itemString .= " ";
-					$itemString .= $last_name_array[intval($i + 1)];
-					$itemString .= "(";
-					$itemString .= $score_array[intval($i + 1)];
-					$itemString .= ") ";
-					$itemString .= " ";
+					if (count($place_array) > intval($i + 1)) 
+					{
+						$itemString .= $place_array[intval($i + 1)];
+						$itemString .= " ";
+						$itemString .= $first_name_array[intval($i + 1)];
+						$itemString .= " ";
+						$itemString .= $last_name_array[intval($i + 1)];
+						$itemString .= "(";
+						$itemString .= $score_array[intval($i + 1)];
+						$itemString .= ") ";
+						$itemString .= " ";
+					}
 				}
 			}
 		}
