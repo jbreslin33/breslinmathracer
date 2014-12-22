@@ -23,7 +23,6 @@ function __construct($startNew)
 	$this->start_time_array       = array();
 	$this->item_array             = array();
 	$this->transaction_code_array = array();
-	$this->type_mastery_array     = array();
 	$this->core_standards_array   = array();
 	
 	$this->item_types_id_to_ask = '';
@@ -87,10 +86,10 @@ public function fillTypesArray()
                 
 	for($i=0; $i < $numberOfResults; $i++)
         {
-		$this->id_array[]              = pg_Result($result, $i, 'id');	
-		$this->progression_array[]     = pg_Result($result, $i, 'progression');	
-		$this->core_standards_id_array = pg_Result($result, $i, 'core_standards_id');
-		$this->type_mastery_array      = pg_Result($result, $i, 'type_mastery');
+		$this->id_array[]                = pg_Result($result, $i, 'id');	
+		$this->progression_array[]       = pg_Result($result, $i, 'progression');	
+		$this->core_standards_id_array[] = pg_Result($result, $i, 'core_standards_id');
+		$this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
 	}
 }
 	
@@ -156,10 +155,20 @@ public function setRawData()
 		else  //we have 2 to check
 		{
 			//if either is not 1 then its not type mastered so make it ask type
+			//$this->type_mastery_array      = pg_Result($result, $i, 'type_mastery');
+			for ($t=0; $t < $this->type_mastery_array[$i]; $t++)
+			{
+				if ($mini_transaction_code_array[$t] != 1)
+				{
+					$this->item_types_id_to_ask = $this->id_array[$i];
+				}
+			} 
+			/*
 			if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
 			{
 				$this->item_types_id_to_ask = $this->id_array[$i];
 			}
+			*/
 		} 
 		$i++;
 	}
