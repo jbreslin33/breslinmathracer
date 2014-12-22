@@ -14,7 +14,7 @@ function __construct($tableNumber, $startNew, $leave)
 	
 	if (!isset($_SESSION["workit"]))
 	{
-                $_SESSION["workit"] = 1;
+                $_SESSION["workit"] = '3.oa.c.7_1';
 	}
 	
 	if (!isset($_SESSION["timestables_score"]))
@@ -207,16 +207,15 @@ public function setRawData()
 		if ($randomChance == 1) //ask random
 		{
 			$randomNumber = rand(1,81);
+                	$randid = '3.oa.c.7';
+                	$randid .= "_";
+			$randid .= $randomNumber; 
+                	$this->mTypeID = $randid;
 		}	
 		if ($randomChance == 2) //ask workit 
 		{
-			$randomNumber = intval($_SESSION["workit"]);		
+                	$this->mTypeID = $_SESSION["workit"];
 		}
-                
-                $randid = '3.oa.c.7';
-                $randid .= "_";
-		$randid .= $randomNumber; 
-                $this->mTypeID = $randid;
         }
    
 	//pink
