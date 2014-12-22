@@ -218,7 +218,7 @@ public function setRawData()
 		//true bananas
 		if ($bananas > -1 && $bananas <= 25)
 		{ 
-			$r = rand( 0,intval(count($previous_id_array)) );
+			$r = rand( 0,intval(count($previous_id_array)-1) );
 			$this->item_types_id_to_ask = $previous_id_array[$r];
 		}
 
