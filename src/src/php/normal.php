@@ -112,7 +112,6 @@ public function fillAttemptsArray()
 		$this->start_time_array[]       = pg_Result($result, $i, 'start_time');
 		$this->item_array[]             = pg_Result($result, $i, 'item_types_id');
 		$this->transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-		//$this->type_mastery_array[]   = pg_Result($result, $i, 'type_mastery');
 		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
 }
