@@ -74,6 +74,7 @@ public function update()
 			$_SESSION["timestables_score"] = 0;	
 			$_SESSION["workit"] = $_SESSION["item_types_id"];	
 		}
+
 		if ($score > $today)
 		{
 			$_SESSION["timestables_score_today"] = $_SESSION["timestables_score"];	

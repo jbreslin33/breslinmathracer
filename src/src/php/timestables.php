@@ -27,6 +27,11 @@ function __construct($tableNumber, $startNew, $leave)
                 $_SESSION["timestables_score_today"] = 0;
 	}
 	
+	if (!isset($_SESSION["timestables_score_alltime"]))
+	{
+		$this->getAllTime();
+	}
+	
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
 	$this->mEvaluationsID = intval($this->mTableNumber);
 	$this->mEvaluationsID = intval($this->mEvaluationsID + 1);
@@ -49,6 +54,35 @@ function __construct($tableNumber, $startNew, $leave)
                 	$this->continueAttempt();
 		}
 	}
+}
+
+public function getAllTime()
+{
+ 	//get evaluations_attempts_id
+        $query = "select alltime from users where id = ";
+        $query .= $_SESSION["user_id"];
+        $query .= ";";
+
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the attempt_id
+                $this->mAllTime = pg_Result($result, 0, 'alltime');
+		$_SESSION["timestables_score_alltime"] = $this->mAllTime;
+        }
+}
+public function updateAllTime()
+{
+        $update = "update users set alltime = ";
+        $update .= $_SESSION["timestables_score_alltime"];
+	$update .= " where id = ";
+        $update .= $_SESSION["user_id"];
+        $update .=  ";";
+
+        $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 }
 
 public function insertNewAttempt()
@@ -226,10 +260,19 @@ public function setRawData()
         $itemString .= "Today=";
         $itemString .= $_SESSION["timestables_score_today"];
 
+	$score = intval($_SESSION["timestables_score"]);
+	$alltime = intval($_SESSION["timestables_score_alltime"]);
+	if ($score > $alltime)
+	{
+		$alltime = $score;
+		$_SESSION["timestables_score_alltime"] = $alltime;
+		$this->updateAllTime();
+	}
+
         //yellow
         $itemString .= ":";
         $itemString .= "ALL TIME=";
-        $itemString .= "13";
+        $itemString .= $alltime;
 
 	//get today score if higher than alltime in db then which you will set in sessions then update db...
 
@@ -244,8 +287,6 @@ public function setRawData()
         	$itemString .= "0";
 	}
 	
-        //$itemString .= intval(count($score_array));
-
         $_SESSION["raw_data"] = $itemString;
 
 	$_SESSION["item_types_id"] = $this->mTypeID;
