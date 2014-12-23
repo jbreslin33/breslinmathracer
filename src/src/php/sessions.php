@@ -83,6 +83,10 @@ public function process()
 		{
 			$timestables = new TimesTables(2,1,0);
 		}
+		if ($ref_id == 'The Izzy')
+		{
+			$timestables = new TimesTables(11,1,0);
+		}
 	}
 	else
 	{
