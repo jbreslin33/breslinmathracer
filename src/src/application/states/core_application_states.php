@@ -286,7 +286,7 @@ enter: function(application)
                 application.log('APPLICATION::TIMES_TABLES_APPLICATION');
         }
         application.mWaitForReturn = true;
-        application.timestables(application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].text);
+        application.timestables(application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].value);
 },
 
 execute: function(application)
