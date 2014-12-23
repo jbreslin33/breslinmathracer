@@ -26,6 +26,10 @@ function __construct()
 		{
 			$this->setScroll('alltime');
 		}
+		if ($_SESSION["ref_id"] == 'The Izzy')
+		{
+			$this->setScroll('alltimeizzy');
+		}
 	}
 }
 
