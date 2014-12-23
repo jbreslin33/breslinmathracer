@@ -29,7 +29,14 @@ function __construct($tableNumber, $startNew, $leave)
 	
 	if (!isset($_SESSION["timestables_score_alltime"]))
 	{
-		$this->getAllTime();
+        	if ($_SESSION["ref_id"] == 'timestables')
+		{
+			$this->getAllTime('alltime');
+		}
+        	if ($_SESSION["ref_id"] == 'The Izzy')
+		{
+			$this->getAllTime('alltimeizzy');
+		}
 	}
 	
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
@@ -56,10 +63,12 @@ function __construct($tableNumber, $startNew, $leave)
 	}
 }
 
-public function getAllTime()
+public function getAllTime($alltime)
 {
  	//get evaluations_attempts_id
-        $query = "select alltime from users where id = ";
+        $query = "select ";
+	$query .= $alltime;	
+	$query .= " from users where id = ";
         $query .= $_SESSION["user_id"];
         $query .= ";";
 
@@ -70,7 +79,7 @@ public function getAllTime()
         if ($num > 0)
         {
                 //get the attempt_id
-                $this->mAllTime = pg_Result($result, 0, 'alltime');
+                $this->mAllTime = pg_Result($result, 0, $alltime);
 		$_SESSION["timestables_score_alltime"] = $this->mAllTime;
         }
 }
