@@ -127,6 +127,11 @@ public function insertNewAttempt()
 		$refid .= $this->mTableNumber;
         	$_SESSION["ref_id"] = $refid;
 	}
+	if (intval($this->mTableNumber) == 11)
+	{
+        	$_SESSION["ref_id"] = 'The Izzy';
+	}
+
         $_SESSION["subject_id"] = 1;
 
         $this->setRawData();
@@ -137,7 +142,11 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
-        if ($this->mTableNumber == 10)
+	if (intval($this->mTableNumber) == 11)
+	{
+        	$_SESSION["ref_id"] = 'The Izzy';
+	}
+        else if ($this->mTableNumber == 10)
         {
                 $refid = 'timestables'; 
         	$_SESSION["ref_id"] = $refid;
@@ -251,6 +260,15 @@ public function setRawData()
                 	$this->mTypeID = $_SESSION["workit"];
 		}
         }
+	
+	if ($this->mTableNumber == 11)
+	{ 
+		$randomNumber = rand(70,79);
+		$randid = '3.oa.c.7';
+		$randid .= "_"; 
+		$randid .= $randomNumber; 
+		$this->mTypeID = $randid;
+	}
    
 	//pink
         $itemString =  $this->mTypeID; //ask this one

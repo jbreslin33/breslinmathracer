@@ -217,10 +217,16 @@ var Item = new Class(
                 	option.text = 'Old School ' + i;
                 	this.mTimesTablesInfo.mMesh.appendChild(option);
 		}
-  		var option = document.createElement("option");
-                option.value = '10';
-                option.text = 'Final Battle';
-                this.mTimesTablesInfo.mMesh.appendChild(option);
+		var optionB = document.createElement("option");
+                optionB.value = '11';
+                optionB.text = 'The Izzy';
+                this.mTimesTablesInfo.mMesh.appendChild(optionB);
+
+  		var optionA = document.createElement("option");
+                optionA.value = '10';
+                optionA.text = 'Final Battle';
+                this.mTimesTablesInfo.mMesh.appendChild(optionA);
+  		
                 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';

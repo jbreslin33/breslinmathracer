@@ -122,6 +122,10 @@ exit: function(sheet)
 	{
 		APPLICATION.timestables('10');
 	}	
+	else if (APPLICATION.mRef_id == 'The Izzy')
+	{
+		APPLICATION.timestables('11');
+	}	
 }
 });
 
