@@ -10,17 +10,13 @@ function __construct()
 
 	if (!isset($_SESSION["ref_id"]))
 	{
-		//do nothing....	
-		//	date_default_timezone_set("UTC"); 
-		//	$_SESSION["scroll"] = "UTC:".time();
-			//$_SESSION["scroll"] = "UTC:".time();
-			$this->setScroll();
+		$this->setScroll('score');
 	}
 	else
 	{
 		if ($_SESSION["ref_id"] == 'normal')
 		{
-			$this->setScroll();
+			$this->setScroll('score');
 		}
 		if ($_SESSION["ref_id"] == 'timestables_2'  )
 		{
@@ -28,7 +24,7 @@ function __construct()
 		}
 		if ($_SESSION["ref_id"] == 'timestables')
 		{
-			$this->setTimesTablesScroll();
+			$this->setScroll('alltime');
 		}
 	}
 }
@@ -78,105 +74,7 @@ public function timesTablesTwo()
         $_SESSION["scroll"] = $itemString;
 }
 
-public function setTimesTablesScroll()
-{
-
-	$place_array = array();
-	$id_array = array();
-	$first_name_array = array();
-	$last_name_array = array();
-	$score_array = array();
-
-	$query = "select id, first_name, last_name, alltime from users order by alltime desc";
-
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-       	$numberOfResults = pg_num_rows($result);
-
-	$itemString = ""; 
-
-	$place = 1;
-	for($i=0; $i < $numberOfResults; $i++)
-        {
-		$place_array[]      = $place;
-		$id_array[] = pg_Result($result, $i, 'id');	
-		$first_name_array[] = pg_Result($result, $i, 'first_name');	
-		$last_name_array[]  = pg_Result($result, $i, 'last_name');	
-		$score_array[]  = pg_Result($result, $i, 'alltime');	
-		$place++;
-	}
-
-	
-	for($i=0; $i < intval(count($place_array)); $i++)
-	{
-		//found you
-		$mark_id = 0;
-		if (!isset($_SESSION["user_id"]))
-		{
-			$mark_id = $id_array[0];
-		}
-		else
-		{
-			$mark_id = $_SESSION["user_id"];
-		}
-
-		//now check with mark id
-		if ($id_array[$i] == $mark_id)
-		{
-			//first place
-			if ($place_array[$i] == 1)
-			{
-				//$itemString .= "YOUR IN FIRST PLACE!!! ";
-			}
-			else
-			{
-				$itemString .= $place_array[intval($i - 1)];
-				$itemString .= " ";
-				$itemString .= $first_name_array[intval($i - 1)];
-				$itemString .= " ";
-				$itemString .= $last_name_array[intval($i - 1)];
-				$itemString .= "(";
-				$itemString .= $score_array[intval($i - 1)];
-				$itemString .= ") ";
-				$itemString .= " ";
-			}
-			//2nd place you
-			$itemString .= $place_array[$i];
-			$itemString .= " ";
-			$itemString .= $first_name_array[$i];
-			$itemString .= " ";
-			$itemString .= $last_name_array[$i];
-			$itemString .= "(";
-			$itemString .= $score_array[$i];
-			$itemString .= ") ";
-			$itemString .= " ";
-			
-			if ($place == $place_array[$i]) //your in last so there is no one else
-			{
-
-			}
-			else
-			{
-				if ( intval(count($place_array)) > 2)	
-				{
-					//3rd
-					$itemString .= $place_array[intval($i + 1)];
-					$itemString .= " ";
-					$itemString .= $first_name_array[intval($i + 1)];
-					$itemString .= " ";
-					$itemString .= $last_name_array[intval($i + 1)];
-					$itemString .= "(";
-					$itemString .= $score_array[intval($i + 1)];
-					$itemString .= ") ";
-					$itemString .= " ";
-				}
-			}
-		}
-	}
-
-        $_SESSION["scroll"] = $itemString;
-}
-
-public function setScroll()
+public function setScroll($scoreField)
 {
 
 	$place_array = array();
@@ -190,16 +88,28 @@ public function setScroll()
 	{
 		if ($_SESSION["core_standards_id"] == '3.oa.c.7')
 		{
-			$query .= "select id, first_name, last_name, score from users where core_standards_id = '3.oa.c.7' order by score desc";
+			$query .= "select id, first_name, last_name, ";
+			$query .= $scoreField;
+			$query .= " from users where core_standards_id = '3.oa.c.7' order by ";
+			$query .= $scoreField;
+			$query .= " desc;";
 		}
 		if ($_SESSION["core_standards_id"] == '5.oa.a.1')
 		{
-			$query .= "select id, first_name, last_name, score from users where core_standards_id = '5.oa.a.1' order by score desc";
+			$query .= "select id, first_name, last_name, ";
+			$query .= $scoreField;
+			$query .= " from users where core_standards_id = '5.oa.a.1' order by ";
+			$query .= $scoreField;
+			$query .= " desc;";
 		}
 	}
 	else
 	{
-		$query .= "select id, first_name, last_name, score from users order by score desc";
+		$query .= "select id, first_name, last_name, ";
+		$query .= $scoreField;
+		$query .= " from users order by ";
+		$query .= $scoreField;
+		$query .= " desc;";
 	}
 
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -214,7 +124,7 @@ public function setScroll()
 		$id_array[] = pg_Result($result, $i, 'id');	
 		$first_name_array[] = pg_Result($result, $i, 'first_name');	
 		$last_name_array[]  = pg_Result($result, $i, 'last_name');	
-		$score_array[]  = pg_Result($result, $i, 'score');	
+		$score_array[]  = pg_Result($result, $i, $scoreField);	
 		$place++;
 	}
 

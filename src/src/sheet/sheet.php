@@ -175,7 +175,7 @@ var Sheet = new Class(
 			{
 				this.addItem(pick);
 			
-				if (APPLICATION.mRef_id == 'timestables')
+				if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy')
 				{
 					//add streak from raw_data andincrement as itemIDs are every other element in array. 
 					i++;	
