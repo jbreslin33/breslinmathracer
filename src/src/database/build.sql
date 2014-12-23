@@ -149,6 +149,7 @@ CREATE TABLE users (
         unmastered integer NOT NULL default 0,
         lesson integer NOT NULL default 1,
         alltime integer NOT NULL default 0,
+        alltimeizzy integer NOT NULL default 0,
 
 	PRIMARY KEY (id),	
 	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id)
