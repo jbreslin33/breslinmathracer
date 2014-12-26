@@ -125,7 +125,7 @@ insert into evaluations (description) values ('timestables_7');
 insert into evaluations (description) values ('timestables_8'); 
 insert into evaluations (description) values ('timestables_9'); 
 insert into evaluations (description) values ('timestables'); 
-insert into evaluations (description) values ('izzy'); 
+insert into evaluations (description) values ('The Izzy'); 
 
 --     FINER TYPES 
 --borrow_types

@@ -404,7 +404,7 @@ var Game = new Class(
         setScore: function(score)
         {
                 this.mScore = score;
-		if (APPLICATION.mRef_id == 'timestables')
+		if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' )
 		{
                 	APPLICATION.mHud.mScore.setText('<font size="1">Score: ' + this.mScore + '</font>');
 		} 
