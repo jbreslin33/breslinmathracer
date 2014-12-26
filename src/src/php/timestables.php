@@ -304,7 +304,7 @@ public function setRawData()
         	$itemString .= $_SESSION["timestables_score_today"];
 		$score = intval($_SESSION["timestables_score"]);
 	}
-	if ($_SESSION["ref_id"] == 'theizzy')
+	if ($_SESSION["ref_id"] == 'The Izzy')
 	{
         	$itemString .= $_SESSION["timestables_score_today_theizzy"];
 		$score = intval($_SESSION["timestables_score_theizzy"]);
@@ -350,7 +350,7 @@ public function setRawData()
         		$itemString .= $_SESSION["timestables_score"];
 		}
 	}
-	else if ($_SESSION["ref_id"] == 'theizzy')
+	else if ($_SESSION["ref_id"] == 'The Izzy')
 	{
 		if (isset($_SESSION["timestables_score_theizzy"]))
 		{
