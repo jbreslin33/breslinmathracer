@@ -21,22 +21,27 @@ function __construct($tableNumber, $startNew, $leave)
 	{
                 $_SESSION["timestables_score"] = 0;
 	}
+	if (!isset($_SESSION["timestables_score_theizzy"]))
+	{
+                $_SESSION["timestables_score_theizzy"] = 0;
+	}
 
 	if (!isset($_SESSION["timestables_score_today"]))
 	{
                 $_SESSION["timestables_score_today"] = 0;
 	}
+	if (!isset($_SESSION["timestables_score_today_theizzy"]))
+	{
+                $_SESSION["timestables_score_today_theizzy"] = 0;
+	}
 	
 	if (!isset($_SESSION["timestables_score_alltime"]))
 	{
-        	if ($_SESSION["ref_id"] == 'timestables')
-		{
-			$this->getAllTime('alltime');
-		}
-        	if ($_SESSION["ref_id"] == 'The Izzy')
-		{
-			$this->getAllTime('alltimeizzy');
-		}
+		$_SESSION["timestables_score_alltime"] = $this->getAllTime('alltime');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_theizzy"]))
+	{	
+		$_SESSION["timestables_score_alltime_theizzy"] = $this->getAllTime('alltimeizzy');
 	}
 	
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
@@ -78,15 +83,23 @@ public function getAllTime($alltime)
 
         if ($num > 0)
         {
-                //get the attempt_id
                 $this->mAllTime = pg_Result($result, 0, $alltime);
-		$_SESSION["timestables_score_alltime"] = $this->mAllTime;
         }
+	return $this->mAllTime;
 }
-public function updateAllTime()
+public function updateAllTime($alltime)
 {
-        $update = "update users set alltime = ";
-        $update .= $_SESSION["timestables_score_alltime"];
+	$update = '';
+	if ($alltime == 'timestables')
+	{
+        	$update .= "update users set alltime = ";
+        	$update .= $_SESSION["timestables_score_alltime"];
+	}
+	if ($alltime == 'theizzy')
+	{
+        	$update .= "update users set alltimeizzy = ";
+        	$update .= $_SESSION["timestables_score_alltime_theizzy"];
+	}
 	$update .= " where id = ";
         $update .= $_SESSION["user_id"];
         $update .=  ";";
@@ -285,15 +298,39 @@ public function setRawData()
         //blue
         $itemString .= ":";
         $itemString .= "Today=";
-        $itemString .= $_SESSION["timestables_score_today"];
-
-	$score = intval($_SESSION["timestables_score"]);
-	$alltime = intval($_SESSION["timestables_score_alltime"]);
-	if ($score > $alltime)
+	$score = '';
+	if ($_SESSION["ref_id"] == 'timestables')
 	{
-		$alltime = $score;
-		$_SESSION["timestables_score_alltime"] = $alltime;
-		$this->updateAllTime();
+        	$itemString .= $_SESSION["timestables_score_today"];
+		$score = intval($_SESSION["timestables_score"]);
+	}
+	if ($_SESSION["ref_id"] == 'theizzy')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_theizzy"];
+		$score = intval($_SESSION["timestables_score_theizzy"]);
+	}
+
+	$alltime = '';
+	if ($_SESSION["ref_id"] == 'timestables')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime"] = $alltime;
+			$this->updateAllTime('timestables');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'The Izzy')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_theizzy"]);
+
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_theizzy"] = $alltime;
+			$this->updateAllTime('theizzy');
+		}
 	}
 
         //yellow
@@ -306,9 +343,19 @@ public function setRawData()
 
         //green
         $itemString .= ":";
-	if (isset($_SESSION["timestables_score"]))
+	if ($_SESSION["ref_id"] == 'timestables')
 	{
-        	$itemString .= $_SESSION["timestables_score"];
+		if (isset($_SESSION["timestables_score"]))
+		{
+        		$itemString .= $_SESSION["timestables_score"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'theizzy')
+	{
+		if (isset($_SESSION["timestables_score_theizzy"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_theizzy"];
+		}
 	}
 	else
 	{
