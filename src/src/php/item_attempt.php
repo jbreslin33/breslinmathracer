@@ -80,6 +80,38 @@ public function update()
 			$_SESSION["timestables_score_today"] = $_SESSION["timestables_score"];	
 		}
 	}
+       	//for theizzy
+        if ($_SESSION["ref_id"] == "The Izzy")
+        {
+                if (!isset($_SESSION["timestables_score_theizzy"]))
+                {
+                        $_SESSION["timestables_score_theizzy"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_theizzy"]))
+                {
+                        $_SESSION["timestables_score_today_theizzy"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_theizzy"]);
+                $today = intval($_SESSION["timestables_score_today_theizzy"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_theizzy"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_theizzy"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_theizzy"] = $_SESSION["timestables_score_theizzy"];
+                }
+        }
+
 
 	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
         $query .= $_SESSION["user_id"];
