@@ -30,7 +30,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber());
+        this.setQuestion('In a race ' + this.ns.mNameOne + ' has run ' + fractionA.getMixedNumber() + ' laps. ' + this.ns.mNameTwo + ' has run ' + fractionB.getMixedNumber() + ' laps. How much further ahead is ' + this.ns.mNameOne + '?');
 }
 });
 
@@ -66,7 +66,6 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 
         this.setAnswer(answer.getString(),0);
-        //this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' - ' + fractionB.getString());
         this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getString() + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ate ' + fractionB.getString() + ' of the ' + this.ns.mVegetableOne + '. How much does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left?');
 }
 });
