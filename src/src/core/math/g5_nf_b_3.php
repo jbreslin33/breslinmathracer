@@ -1,3 +1,33 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.3_3',5.1403,'5.nf.b.3','regular fraction');
+*/
+var i_5_nf_b_3__3 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+
+        this.mType = '5.nf.b.3_3';
+        this.ns = new NameSampler();
+
+        var n = 1;
+        var d = 0;
+        while (n > d)
+        {
+                n = Math.floor((Math.random()*19)+1);
+                d = Math.floor((Math.random()*19)+1);
+        }
+
+        var answer = new Fraction(n,d);
+
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne + ' wants to have a relay race. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to total length of the race to be ' + this.ns.mDistanceIncrementLarge + '. He wants each team to have ' + d + ' runners on it. How far should each runner race?');
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.3_3',5.1403,'5.nf.b.3','regular fraction');
 */
