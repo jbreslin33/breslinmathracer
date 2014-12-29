@@ -1,30 +1,30 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.3_3',5.1403,'5.nf.b.3','regular fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.3_4',5.1404,'5.nf.b.3','improper fraction');
 */
-var i_5_nf_b_3__3 = new Class(
+var i_5_nf_b_3__4 = new Class(
 {
 Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+        this.parent(sheet,300,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
-        this.mType = '5.nf.b.3_3';
+        this.mType = '5.nf.b.3_4';
         this.ns = new NameSampler();
 
-        var n = 1;
-        var d = 0;
-        while (n > d)
+        var n = 0;
+        var d = 1;
+        while (n <= d)
         {
-                n = Math.floor((Math.random()*19)+1);
-                d = Math.floor((Math.random()*19)+1);
+                n = Math.floor((Math.random()*18)+2);
+                d = Math.floor((Math.random()*18)+2);
         }
 
         var answer = new Fraction(n,d);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' wants to have a relay race. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to total length of the race to be ' + this.ns.mDistanceIncrementLarge + '. He wants each team to have ' + d + ' runners on it. How far should each runner race?');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to have a relay race. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants the total length of the race to be ' + n + ' ' + this.ns.mDistanceIncrementLarge + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants each team to have ' + d + ' runners on it and each runner to travel the same distance. How many ' + this.ns.mDistanceIncrementLarge + ' should each relay runner race?');
 }
 });
 
@@ -44,10 +44,10 @@ initialize: function(sheet)
 
         var n = 1;
         var d = 0;
-        while (n > d)
+        while (n >= d)
         {
-                n = Math.floor((Math.random()*19)+1);
-                d = Math.floor((Math.random()*19)+1);
+                n = Math.floor((Math.random()*18)+2);
+                d = Math.floor((Math.random()*18)+2);
         }
 
         var answer = new Fraction(n,d);
@@ -73,10 +73,10 @@ initialize: function(sheet)
 
         var n = 0;
         var d = 1; 
-        while (d > n)
+        while (d >= n)
         {
-                n = Math.floor((Math.random()*19)+1);
-                d = Math.floor((Math.random()*19)+1);
+                n = Math.floor((Math.random()*18)+2);
+                d = Math.floor((Math.random()*18)+2);
         }
 
         var answer = new Fraction(n,d);
@@ -101,10 +101,10 @@ initialize: function(sheet)
 
         var n = 1;
         var d = 0;
-        while (n > d)
+        while (n >= d)
         {
-                n = Math.floor((Math.random()*19)+1);
-                d = Math.floor((Math.random()*19)+1);
+                n = Math.floor((Math.random()*18)+2);
+                d = Math.floor((Math.random()*18)+2);
         }
 
         var answer = new Fraction(n,d);
