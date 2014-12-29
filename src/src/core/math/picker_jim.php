@@ -1928,6 +1928,43 @@ getItem: function(id)
                 return new i_5_nf_a_2__9(this.mSheet);
         }
 
+      	//5.nf.b.3
+        if (id == '5.nf.b.3_1')
+        {
+                return new i_5_nf_b_3__1(this.mSheet);
+        }
+        if (id == '5.nf.b.3_2')
+        {
+                return new i_5_nf_b_3__2(this.mSheet);
+       	} 
+        if (id == '5.nf.b.3_3')
+        {
+                return new i_5_nf_b_3__3(this.mSheet);
+        }
+        if (id == '5.nf.b.3_4')
+        {
+                return new i_5_nf_b_3__4(this.mSheet);
+        }
+        if (id == '5.nf.b.3_5')
+        {
+                return new i_5_nf_b_3__5(this.mSheet);
+        }
+        if (id == '5.nf.b.3_6')
+        {
+                return new i_5_nf_b_3__6(this.mSheet);
+        }
+        if (id == '5.nf.b.3_7')
+        {
+                return new i_5_nf_b_3__7(this.mSheet);
+        }
+        if (id == '5.nf.b.3_8')
+        {
+                return new i_5_nf_b_3__8(this.mSheet);
+        }
+        if (id == '5.nf.b.3_9')
+        {
+                return new i_5_nf_b_3__9(this.mSheet);
+        }
 
 	/*** GRADE 6 ***/
 	//6.rp.a.1
