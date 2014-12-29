@@ -206,6 +206,15 @@ var NameMachine = new Class(
 		this.mThingArray.push("rocks");
 		this.mThingArray.push("balloons");
 
+ 		//mRope
+                this.mRopeArray = new Array();
+                this.mUsedRopeElementArray = new Array();
+                this.mRopeArray.push("rope");
+                this.mRopeArray.push("thread");
+                this.mRopeArray.push("yarn");
+                this.mRopeArray.push("string");
+
+
     		//school supplies
 		this.mSuppliesArray = new Array();
 		this.mUsedSuppliesElementArray = new Array();
@@ -594,7 +603,34 @@ var NameMachine = new Class(
                 this.mUsedThingElementArray.push(randomElement);
                 return this.mThingArray[randomElement];
         },
-    
+
+        getRope: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mRopeArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedRopeElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedRopeElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedRopeElementArray.push(randomElement);
+                return this.mRopeArray[randomElement];
+        },
+ 
 	getAnimal: function()
         {
                 var keepGoing = true;
@@ -1506,6 +1542,7 @@ var NameSampler = new Class(
         {
                 this.mNameMachine = new NameMachine();
 
+		//names
                 this.mNameOne   = this.mNameMachine.getName();
                 this.mNameTwo   = this.mNameMachine.getName();
                 this.mNameThree = this.mNameMachine.getName();
@@ -1515,7 +1552,8 @@ var NameSampler = new Class(
 		this.mNameArray.push(this.mNameTwo);
 		this.mNameArray.push(this.mNameThree);
 
-                this.mThings      = this.mNameMachine.getThing();
+               	//things 
+		this.mThings      = this.mNameMachine.getThing();
                 this.mThingOne      = this.mNameMachine.getThing();
                 this.mThingTwo      = this.mNameMachine.getThing();
                 this.mThingThree      = this.mNameMachine.getThing();
@@ -1525,6 +1563,19 @@ var NameSampler = new Class(
 		this.mThingArray.push(this.mThingTwo);
 		this.mThingArray.push(this.mThingThree);
 
+                //rope
+                this.mRope      = this.mNameMachine.getRope();
+                this.mRopeOne   = this.mNameMachine.getRope();
+                this.mRopeTwo   = this.mNameMachine.getRope();
+                this.mRopeThree = this.mNameMachine.getRope();
+
+                this.mRopeArray = new Array();
+                this.mRopeArray.push(this.mRopeOne);
+                this.mRopeArray.push(this.mRopeTwo);
+                this.mRopeArray.push(this.mRopeThree);
+
+
+		//schools
                 this.mSchoolOne      = this.mNameMachine.getSchool();
                 this.mSchoolTwo      = this.mNameMachine.getSchool();
                 this.mSchoolThree      = this.mNameMachine.getSchool();
