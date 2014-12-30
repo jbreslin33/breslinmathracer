@@ -16,7 +16,7 @@ initialize: function(sheet)
         db = Math.floor((Math.random()*8)+2);
 
         var fractionb = new Fraction(nb,db);
-        var answer = new Fraction(parseInt(a*nb),db);
+        var answer = new Fraction(parseInt(a*nb),db,true);
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('Write the quotient as a fraction: ' + a + ' &times ' + fractionb.getString());
