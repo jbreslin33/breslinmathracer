@@ -53,7 +53,7 @@ initialize: function(sheet)
         var answer = new Fraction(n,d);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' has ' + n + ' ' + this.ns.mDistanceIncrementMedium + ' of ' + this.ns.mRope + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to split it into ' + d + ' pieces. How long will each piece be?');
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + n + ' ' + this.ns.mDistanceIncrementMedium + ' of ' + this.ns.mRope + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to split it with ' + parseInt(d-1) + '  friends. How long will each piece be?');
 }
 });
 
