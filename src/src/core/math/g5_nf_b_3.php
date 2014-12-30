@@ -21,7 +21,7 @@ initialize: function(sheet)
                 d = Math.floor((Math.random()*18)+2);
         }
 
-        var answer = new Fraction(n,d);
+        var answer = new Fraction(n,d,true);
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' wants to have a relay race. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants the total length of the race to be ' + n + ' ' + this.ns.mDistanceIncrementLarge + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants each team to have ' + d + ' runners on it and each runner to travel the same distance. How many ' + this.ns.mDistanceIncrementLarge + ' should each relay runner race?');
@@ -50,7 +50,7 @@ initialize: function(sheet)
                 d = Math.floor((Math.random()*18)+2);
         }
 
-        var answer = new Fraction(n,d);
+        var answer = new Fraction(n,d,true);
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' has ' + n + ' ' + this.ns.mDistanceIncrementMedium + ' of ' + this.ns.mRope + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to split it equally among ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,2) + ' and ' + parseInt(d-1) + '  friends. How long will each piece be?');
@@ -79,7 +79,7 @@ initialize: function(sheet)
                 d = Math.floor((Math.random()*18)+2);
         }
 
-        var answer = new Fraction(n,d);
+        var answer = new Fraction(n,d,true);
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('Write the quotient as a fraction: ' + n + ' &divide ' + d);
@@ -107,7 +107,7 @@ initialize: function(sheet)
                 d = Math.floor((Math.random()*18)+2);
         }
 
-        var answer = new Fraction(n,d);
+        var answer = new Fraction(n,d,true);
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('Write the quotient as a fraction: ' + n + ' &divide ' + d);
