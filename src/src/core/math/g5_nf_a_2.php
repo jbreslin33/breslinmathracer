@@ -28,6 +28,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(bn,bd,false);
 
         var answer = fractionA.subtract(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('In a race ' + this.ns.mNameOne + ' has run ' + fractionA.getMixedNumber() + ' laps. ' + this.ns.mNameTwo + ' has run ' + fractionB.getMixedNumber() + ' laps. How much further ahead is ' + this.ns.mNameOne + '?');
@@ -64,6 +65,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(bn,bd,false);
 
         var answer = fractionA.subtract(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getString() + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ate ' + fractionB.getString() + ' of the ' + this.ns.mVegetableOne + '. How much does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left?');
@@ -100,6 +102,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(bn,bd,false);
 
         var answer = fractionA.subtract(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' bought ' + fractionA.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' guests drank ' + fractionB.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. How many ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left over?');
@@ -136,6 +139,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(bn,bd);
 
         var answer = fractionA.subtract(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' was carrying ' + fractionA.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of water back from a well to ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spilled ' + fractionB.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of the water while carrying it. How many ' + this.ns.mLiquidVolumeOne + ' were left after the spilling?'    );
@@ -174,6 +178,7 @@ initialize: function(sheet)
 
         //fraction class will simplyfy
         var answer = fractionA.add(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('Yesterday the ' + this.ns.mAnimalOne + ' in the Zoo drank ' + fractionA.getMixedNumber() + ' liters of water in the morning. Then they drank ' + fractionB.getMixedNumber() + ' liters more liters the rest of the day. How many liters of water did the ' + this.ns.mAnimalOne + ' drink yesterday?');
@@ -211,6 +216,7 @@ initialize: function(sheet)
 
         //fraction class will simplyfy
         var answer = fractionA.add(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getMixedNumber() + ' gallons of gas in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' car. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' bought ' + fractionB.getString() + ' more gallons at the gas station. How many gallons of gas are in the car now?');
@@ -249,6 +255,7 @@ initialize: function(sheet)
 
         //fraction class will simplyfy
         var answer = fractionA.add(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' prepared ' + fractionA.getString() + ' servings of ' + this.ns.mFruitOne + ' and ' + fractionB.getString() + ' servings of ' + this.ns.mVegetableOne + '. What is the sum total of servings ' + this.ns.mNameOne + ' prepared?'  );
@@ -287,6 +294,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(bn,bd);
 
 	var answer = fractionA.add(fractionB);
+	answer.reduce();
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getString() + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' had ' + fractionB.getString() + ' ' + this.ns.mThingOne + '. How many ' + this.ns.mThingOne + ' did they have altogether?');
