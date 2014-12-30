@@ -1945,25 +1945,15 @@ getItem: function(id)
         {
                 return new i_5_nf_b_3__4(this.mSheet);
         }
-        if (id == '5.nf.b.3_5')
+   
+	//5.nf.b.4
+        if (id == '5.nf.b.4_1')
         {
-                return new i_5_nf_b_3__5(this.mSheet);
+                return new i_5_nf_b_4__1(this.mSheet);
         }
-        if (id == '5.nf.b.3_6')
+        if (id == '5.nf.b.4_2')
         {
-                return new i_5_nf_b_3__6(this.mSheet);
-        }
-        if (id == '5.nf.b.3_7')
-        {
-                return new i_5_nf_b_3__7(this.mSheet);
-        }
-        if (id == '5.nf.b.3_8')
-        {
-                return new i_5_nf_b_3__8(this.mSheet);
-        }
-        if (id == '5.nf.b.3_9')
-        {
-                return new i_5_nf_b_3__9(this.mSheet);
+                return new i_5_nf_b_4__2(this.mSheet);
         }
 
 	/*** GRADE 6 ***/
