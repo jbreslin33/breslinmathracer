@@ -1166,24 +1166,32 @@ var NameMachine = new Class(
 			{
 				if (uppercase == 0)
 				{
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'his';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'he';
+					}
+					if (possesive == 2)
+					{
+						return 'himself';
 					}
 				}
 				else
 				{
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'His';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'He';
+					}
+					if (possesive == 2)
+					{
+						return 'Himself';
 					}
 				}
 			}
@@ -1194,24 +1202,32 @@ var NameMachine = new Class(
                         {
                                 if (uppercase == 0)
                                 {
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'her';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'she';
+					}
+					if (possesive == 2)
+					{
+						return 'herself';
 					}
                                 }
                                 else
                                 {
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'Her';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'She';
+					}
+					if (possesive == 2)
+					{
+						return 'Herself';
 					}
                                 }
                         }
@@ -1222,24 +1238,32 @@ var NameMachine = new Class(
                         {
                                 if (uppercase == 0)
                                 {
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'his';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'he';
+					}
+					if (possesive == 2)
+					{
+						return 'himself';
 					}
                                 }
                                 else
                                 {
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'His';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'He';
+					}
+					if (possesive == 1)
+					{
+						return 'Himself';
 					}
                                 }
                         }
@@ -1250,24 +1274,32 @@ var NameMachine = new Class(
                         {
                                 if (uppercase == 0)
                                 {
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'her';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'she';
+					}
+					if (possesive == 2)
+					{
+						return 'herself';
 					}
                                 }
                                 else
                                 {
-					if (possesive)
+					if (possesive == 0)
 					{
 						return 'Her';
 					}
-					else
+					if (possesive == 1)
 					{
 						return 'She';
+					}
+					if (possesive == 2)
+					{
+						return 'Herself';
 					}
                                 }
                         }
