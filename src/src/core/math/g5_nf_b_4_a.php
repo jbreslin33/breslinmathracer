@@ -12,10 +12,11 @@ initialize: function(sheet)
 
         this.mType = '5.nf.b.4.a_1';
 
-        var x = 0;
-        var r = 1;
+        var a = 0;
+        var nb = 1;
+        var db = 0;
 
-        while (x < 1 || r != 0)
+        while (nb >= db || )
         {
                 var a1 = Math.floor(Math.random()*8)+2;
                 var a2 = Math.floor(Math.random()*8)+2;
