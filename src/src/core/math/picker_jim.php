@@ -1956,6 +1956,16 @@ getItem: function(id)
                 return new i_5_nf_b_4__2(this.mSheet);
         }
 
+   	//5.nf.b.4.a
+        if (id == '5.nf.b.4.a_1')
+        {
+                return new i_5_nf_b_4_a__1(this.mSheet);
+        }
+        if (id == '5.nf.b.4.a_2')
+        {
+                return new i_5_nf_b_4_a__2(this.mSheet);
+        }
+	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
 	if (id == '6.rp.a.1_1')
