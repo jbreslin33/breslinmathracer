@@ -12,12 +12,21 @@ initialize: function(sheet)
         this.mType = '5.nf.b.4.a_1';
  	this.ns = new NameSampler();
 
-        a = Math.floor((Math.random()*8)+2);
-        nb = Math.floor((Math.random()*8)+2);
-        db = Math.floor((Math.random()*8)+2);
+	var a = 0;
+	var nb = 0;
+	var db = 0;
+	var n = 0;
 
-        var fractionb = new Fraction(nb,db);
-        var answer = new Fraction(parseInt(a*nb),db,true);
+	while (n % db != 0 || n == 0)
+	{
+        	a = Math.floor((Math.random()*8)+2);
+        	nb = Math.floor((Math.random()*8)+2);
+        	db = Math.floor((Math.random()*8)+2);
+		n = parseInt(a * nb);
+	}
+
+       	var fractionb = new Fraction(nb,db);
+       	var answer = new Fraction(parseInt(a*nb),db,true);
 
         this.setAnswer(answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' ' + this.ns.mThingOne + '. ' + fractionb.getString() + ' of them are ' + this.ns.mColorOne + '. How many ' + this.ns.mThingOne + ' are ' + this.ns.mColorOne);
