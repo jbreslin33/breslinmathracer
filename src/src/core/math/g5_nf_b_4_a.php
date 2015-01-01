@@ -29,7 +29,7 @@ initialize: function(sheet)
         var answer = new Fraction(parseInt(a*nb),db,true);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mVegetableOne + '. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne +  ' ate ' +  fractionb.getString() + ' of the them. How many ' + this.ns.mVegetableOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + ' eat?');
+        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mVegetableOne + '. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne +  ' ate ' +  fractionb.getString() + ' of the them. How many ' + this.ns.mVegetableOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.ns.mFamilyOne + ' eat?');
 }
 });
 
