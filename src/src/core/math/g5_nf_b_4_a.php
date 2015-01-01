@@ -1,4 +1,33 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.4.a_3',5.1603,'5.nf.b.4.a','fraction x fraction word problem');
+*/
+var i_5_nf_b_4_a__3 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+
+        this.mType = '5.nf.b.4.a_3';
+        this.ns = new NameSampler();
+
+        na = Math.floor((Math.random()*8)+2);
+        da = Math.floor((Math.random()*8)+2);
+        nb = Math.floor((Math.random()*8)+2);
+        db = Math.floor((Math.random()*8)+2);
+
+        var fractiona = new Fraction(na,da);
+        var fractionb = new Fraction(nb,db);
+        var answer = new Fraction(parseInt(na*nb),parseInt(da*db),true);
+
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne  + fractiona.getString() + ' &times ' + fractionb.getString());
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.4.a_2',5.1602,'5.nf.b.4.a','1-20. whole number answer');
 */
 var i_5_nf_b_4_a__2 = new Class(
