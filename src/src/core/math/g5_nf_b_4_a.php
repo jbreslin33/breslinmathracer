@@ -17,7 +17,7 @@ initialize: function(sheet)
 	var db = 0;
 	var n = 0;
 
-	while (n % db != 0 || n == 0)
+	while (n % db != 0 || n == 0 || nb >= db || a == db || a == nb)
 	{
         	a = Math.floor((Math.random()*8)+2);
         	nb = Math.floor((Math.random()*8)+2);
