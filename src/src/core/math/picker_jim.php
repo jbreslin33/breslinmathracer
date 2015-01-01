@@ -1965,6 +1965,18 @@ getItem: function(id)
         {
                 return new i_5_nf_b_4_a__2(this.mSheet);
         }
+        if (id == '5.nf.b.4.a_3')
+        {
+                return new i_5_nf_b_4_a__3(this.mSheet);
+        }
+        if (id == '5.nf.b.4.a_4')
+        {
+                return new i_5_nf_b_4_a__4(this.mSheet);
+        }
+        if (id == '5.nf.b.4.a_5')
+        {
+                return new i_5_nf_b_4_a__5(this.mSheet);
+        }
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
