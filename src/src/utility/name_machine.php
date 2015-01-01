@@ -195,6 +195,23 @@ var NameMachine = new Class(
 		this.mColorArray.push("purple");
 		this.mColorArray.push("orange");
 		this.mColorArray.push("brown");
+            
+		//family
+                this.mFamilyArray = new Array();
+                this.mUsedFamilyElementArray = new Array();
+                this.mFamilyArray.push("brother");
+                this.mFamilyArray.push("sister");
+                this.mFamilyArray.push("uncle");
+                this.mFamilyArray.push("aunt");
+                this.mFamilyArray.push("mom");
+                this.mFamilyArray.push("dad");
+                this.mFamilyArray.push("poppy");
+                this.mFamilyArray.push("grandmom");
+                this.mFamilyArray.push("granddad");
+                this.mFamilyArray.push("niece");
+                this.mFamilyArray.push("nephew");
+                this.mFamilyArray.push("cousin");
+                this.mFamilyArray.push("father");
 
 		//things
 		this.mThingArray = new Array();
@@ -764,6 +781,33 @@ var NameMachine = new Class(
                 }
                 this.mUsedColorElementArray.push(randomElement);
                 return this.mColorArray[randomElement];
+        },
+
+        getFamily: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mFamilyArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedFamilyElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedFamilyElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedFamilyElementArray.push(randomElement);
+                return this.mFamilyArray[randomElement];
         },
 
         getGrade: function(from,till)
@@ -1696,7 +1740,8 @@ var NameSampler = new Class(
 		this.mAnimalArray.push(this.mAnimalOne);
 		this.mAnimalArray.push(this.mAnimalTwo);
 		this.mAnimalArray.push(this.mAnimalThree);
-		
+	
+		//color	
 		this.mColorOne   = this.mNameMachine.getColor();
 		this.mColorTwo   = this.mNameMachine.getColor();
 		this.mColorThree = this.mNameMachine.getColor();
@@ -1705,6 +1750,16 @@ var NameSampler = new Class(
 		this.mColorArray.push(this.mColorOne);
 		this.mColorArray.push(this.mColorTwo);
 		this.mColorArray.push(this.mColorThree);
+
+	        //family
+                this.mFamilyOne   = this.mNameMachine.getFamily();
+                this.mFamilyTwo   = this.mNameMachine.getFamily();
+                this.mFamilyThree = this.mNameMachine.getFamily();
+
+                this.mFamilyArray = new Array();
+                this.mFamilyArray.push(this.mFamilyOne);
+                this.mFamilyArray.push(this.mFamilyTwo);
+                this.mFamilyArray.push(this.mFamilyThree);
 
                 this.mSum = this.mNameMachine.getSum();
                 this.mLeft = this.mNameMachine.getLeft();
