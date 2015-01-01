@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.4.a_2',5.1602,'5.nf.b.4.a','1-10. whole number answer');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.4.a_2',5.1602,'5.nf.b.4.a','1-20. whole number answer');
 */
 var i_5_nf_b_4_a__2 = new Class(
 {
