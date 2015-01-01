@@ -1,0 +1,122 @@
+<html>
+<body>
+
+<style>
+DIV.movable { position:absolute; }
+</style>
+
+<div id="wizard1" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard2" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard3" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard4" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard5" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard6" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard7" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard8" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard9" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard10" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard11" class="movable"><img src="wizard_north.png" /></div>
+<div id="wizard12" class="movable"><img src="wizard_north.png" /></div>
+
+<script language=javascript>
+
+
+/**************** POSITIONS ************/
+var xPosition = 0; 
+var yPosition = 200;
+
+/**************** VELOCITY ************/
+var xVelocity = 0;
+var yVelocity = 0;
+
+/**************** SPEED ************/
+var speed = .1;
+
+/**************** TIME ************/
+var timeSinceEpoch = 0;
+var lastTimeSinceEpoch = 0;
+var deltaTime = 0;
+
+/**************** SET INITIAL POSITION AND INITIALIZE TIME SINCE EPOCH************/
+for (i = 1; i < 13; i++)
+{
+	yPosition = yPosition * 50; 
+	document.getElementById("wizard" + i).style.left = xPosition + 'px';
+	document.getElementById("wizard" + i).style.top  = yPosition + 'px';
+}
+
+t = new Date();
+timeSinceEpoch = t.getTime();
+
+/**************** START UPDATING ************/
+var int=self.setInterval("update()",1);
+
+/**************** UPDATE ************/
+function update()
+{
+	setKeys();
+
+	timeStuff();	
+
+	updateVelocity();
+
+	updatePosition();
+	
+	modifyPosition();	
+
+	render();
+
+}
+
+function setKeys()
+{
+	//set key
+	xKey = 1;
+	yKey = 0;
+}
+
+function timeStuff()
+{
+	//get time since epoch and set lasttime
+	e = new Date();
+        lastTimeSinceEpoch = timeSinceEpoch;
+        timeSinceEpoch = e.getTime();
+        
+	//set deltatime as function of timeSinceEpoch and LastTimeSinceEpoch diff
+        deltaTime = timeSinceEpoch - lastTimeSinceEpoch;
+}
+
+function updateVelocity()
+{
+	//update velocity
+	xVelocity = xKey * deltaTime * speed; 
+	yVelocity = yKey * deltaTime * speed; 
+}
+
+function updatePosition()
+{
+	// update position based on current velocity 
+	xPosition += xVelocity;
+	yPosition += yVelocity;
+}
+
+function modifyPosition()
+{
+	//modify for style position 
+	modx = xPosition+'px';
+	mody = yPosition+'px';
+}
+function render()
+{
+	//render at new position	
+	for (i = 1; i < 13; i++)
+	{
+		document.getElementById("wizard").style.left = modx;
+		document.getElementById("wizard").style.top  = mody;
+	}
+}
+
+</script>
+
+</body>
+</html> 
