@@ -19,9 +19,9 @@ initialize: function(sheet)
 
         while (n % db != 0 || n == 0 || nb >= db || a == db || a == nb)
         {
-                a = Math.floor((Math.random()*8)+2);
-                nb = Math.floor((Math.random()*8)+2);
-                db = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*18)+2);
+                nb = Math.floor((Math.random()*18)+2);
+                db = Math.floor((Math.random()*18)+2);
                 n = parseInt(a * nb);
         }
 
