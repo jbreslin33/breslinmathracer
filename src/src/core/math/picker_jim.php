@@ -2017,6 +2017,38 @@ getItem: function(id)
         {
                 return new i_5_nf_b_5_a__4(this.mSheet);
         }
+        if (id == '5.nf.b.5.a_5')
+        {
+                return new i_5_nf_b_5_a__5(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_6')
+        {
+                return new i_5_nf_b_5_a__6(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_7')
+        {
+                return new i_5_nf_b_5_a__7(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_8')
+        {
+                return new i_5_nf_b_5_a__8(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_9')
+        {
+                return new i_5_nf_b_5_a__9(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_10')
+        {
+                return new i_5_nf_b_5_a__10(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_11')
+        {
+                return new i_5_nf_b_5_a__11(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_12')
+        {
+                return new i_5_nf_b_5_a__12(this.mSheet);
+        }
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
