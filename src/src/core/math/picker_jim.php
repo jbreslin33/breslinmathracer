@@ -1977,6 +1977,28 @@ getItem: function(id)
         {
                 return new i_5_nf_b_4_a__5(this.mSheet);
         }
+ 
+	//5.nf.b.4.b
+        if (id == '5.nf.b.4.b_1')
+        {
+                return new i_5_nf_b_4_b__1(this.mSheet);
+        }
+        if (id == '5.nf.b.4.b_2')
+        {
+                return new i_5_nf_b_4_b__2(this.mSheet);
+        }
+        if (id == '5.nf.b.4.b_3')
+        {
+                return new i_5_nf_b_4_b__3(this.mSheet);
+        }
+        if (id == '5.nf.b.4.b_4')
+        {
+                return new i_5_nf_b_4_b__4(this.mSheet);
+        }
+        if (id == '5.nf.b.4.b_5')
+        {
+                return new i_5_nf_b_4_b__5(this.mSheet);
+        }
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
