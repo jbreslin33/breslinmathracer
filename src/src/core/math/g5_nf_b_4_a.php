@@ -1,3 +1,39 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.4.a_4',5.1604,'5.nf.b.4.a','fraction x fraction word problem');
+*/
+var i_5_nf_b_4_a__4 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+
+        this.mType = '5.nf.b.4.a_4';
+        this.ns = new NameSampler();
+        var na = 0;
+        var da = 0;
+        var nb = 0;
+        var db = 0;
+	while (na <= nb || nb >= db)
+        {
+                na = Math.floor((Math.random()*8)+2);
+                da = Math.floor((Math.random()*8)+2);
+                nb = Math.floor((Math.random()*8)+2);
+                db = Math.floor((Math.random()*8)+2);
+        }
+
+        var fractiona = new Fraction(na,da);
+        var fractionb = new Fraction(nb,db);
+        var answer = new Fraction(parseInt(na*nb),parseInt(da*db),true);
+
+        this.setAnswer(answer.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractiona.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne + ' drank ' + fractionb.getString() + ' of it. How many ' + this.ns.mLiquidVolumeOne + ' of '  + this.ns.mDrinkOne + ' does ' + this.ns.mNameOne + ' have left?'   );
+}
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.4.a_3',5.1603,'5.nf.b.4.a','fraction x fraction word problem');
 */
@@ -15,7 +51,7 @@ initialize: function(sheet)
 	var da = 0;
 	var nb = 0;
 	var db = 0;
-	while (nb >= db)
+	while (na >= nb || nb >= db)
 	{
         	na = Math.floor((Math.random()*8)+2);
         	da = Math.floor((Math.random()*8)+2);
