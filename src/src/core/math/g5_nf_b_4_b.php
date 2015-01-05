@@ -28,7 +28,7 @@ initialize: function(sheet)
         var answer = new Fraction(parseInt(na*nb),parseInt(da*db),true);
 
         this.setAnswer(answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractiona.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne + ' drank ' + fractionb.getString() + ' of it. How many ' + this.ns.mLiquidVolumeOne + ' of '  + this.ns.mDrinkOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.ns.mFamilyOne + ' drink?'  );
+        this.setQuestion('' + this.ns.mNameOne + ' had a rectangular board that was ' + fractiona.getString() + ' ' + this.ns.mDistanceIncrementSmall + ' in length and ' + fractionb.getString() + ' ' + this.ns.mDistanceIncrementSmall + ' wide. What is the area of the board in ' + this.ns.mDistanceIncrementSmall + ' squared?');
 }
 });
 
