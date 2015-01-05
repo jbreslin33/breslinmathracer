@@ -30,11 +30,11 @@ Extends: ThreeButtonItem,
 		this.mFractionA = new Fraction(na,da,false);
 
                 this.setQuestion('Compare.');
-                this.setAnswer('Is greater than.',0);
+                this.setAnswer('=',0);
 
-                this.mButtonA.setAnswer('Is greater than.');
-                this.mButtonB.setAnswer('Is equal to.');
-                this.mButtonC.setAnswer('Is less than.');
+                this.mButtonA.setAnswer('&gt;');
+                this.mButtonB.setAnswer('=');
+                this.mButtonC.setAnswer('$lt');
         },
 
         createQuestionShapes: function()
