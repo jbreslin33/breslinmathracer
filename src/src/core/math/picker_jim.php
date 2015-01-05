@@ -1999,6 +1999,24 @@ getItem: function(id)
         {
                 return new i_5_nf_b_4_b__5(this.mSheet);
         }
+
+        //5.nf.b.5.a
+        if (id == '5.nf.b.5.a_1')
+        {
+                return new i_5_nf_b_5_a__1(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_2')
+        {
+                return new i_5_nf_b_5_a__2(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_3')
+        {
+                return new i_5_nf_b_5_a__3(this.mSheet);
+        }
+        if (id == '5.nf.b.5.a_4')
+        {
+                return new i_5_nf_b_5_a__4(this.mSheet);
+        }
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
