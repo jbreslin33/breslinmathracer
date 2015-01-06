@@ -1,5 +1,53 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.5.a_5',5.1805,'5.nf.b.5.a','scaling. compare. fraction by fraction by fraction. >');
+*/
+var i_5_nf_b_5_a__5 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '5.nf.b.5.a_5';
+
+                //BUTTON A
+                this.mButtonA.setPosition(380,100);
+                this.mButtonB.setPosition(380,200);
+                this.mButtonC.setPosition(380,300);
+
+                var na = Math.floor(Math.random()*18+2);
+                var da = na;
+                var nb = Math.floor(Math.random()*18+2);
+                var db = Math.floor(Math.random()*18+2);
+                var nc = nb;
+                var dc = db;
+
+                this.mFractionA = new Fraction(na,da,false);
+                this.mFractionB = new Fraction(nb,db,false);
+                this.mFractionC = new Fraction(nc,dc,false);
+
+                this.setQuestion('Compare.');
+                this.setAnswer('=',0);
+
+                this.mButtonA.setAnswer('&gt;');
+                this.mButtonB.setAnswer('=');
+                this.mButtonC.setAnswer('&lt;');
+        },
+
+        createQuestionShapes: function()
+        {
+                var shapeA = new Shape(100,100,240,200,this.mSheet.mGame,"","","");
+                var shapeB = new Shape(100,100,530,200,this.mSheet.mGame,"","","");
+
+                shapeA.setText(this.mFractionB.getString() + ' &times ' + this.mFractionA.getString());
+                shapeB.setText(this.mFractionC.getString())
+
+                this.addQuestionShape(shapeA);
+                this.addQuestionShape(shapeB);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.5.a_4',5.1804,'5.nf.b.5.a','scaling. compare. fraction by fraction by fraction. >');
 */
 var i_5_nf_b_5_a__4 = new Class(
