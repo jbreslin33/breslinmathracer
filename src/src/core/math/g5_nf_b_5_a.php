@@ -17,21 +17,26 @@ Extends: ThreeButtonItem,
 
                 var na = 0;
                 var da = 0;
-                this.b = 0;
-                this.c = 0;
-
-                while (na >= da)
+                var nb = 0;
+                var db = 0;
+                var nc = 0;
+                var dc = 0;
+                while (na <= da)
                 {
                         na = Math.floor(Math.random()*18+2);
                         da = Math.floor(Math.random()*18+2);
-                        this.b = Math.floor(Math.random()*18+2);
-                        this.c = this.b;
-                }
+                        nb = Math.floor(Math.random()*18+2);
+                        db = Math.floor(Math.random()*18+2);
+               		nc = nb; 
+               		dc = db; 
+		}
 
                 this.mFractionA = new Fraction(na,da,false);
+                this.mFractionB = new Fraction(nb,db,false);
+                this.mFractionC = new Fraction(nc,dc,false);
 
                 this.setQuestion('Compare.');
-                this.setAnswer('&lt;',0);
+                this.setAnswer('&gt;',0);
 
                 this.mButtonA.setAnswer('&gt;');
                 this.mButtonB.setAnswer('=');
@@ -43,8 +48,8 @@ Extends: ThreeButtonItem,
                 var shapeA = new Shape(100,100,240,200,this.mSheet.mGame,"","","");
                 var shapeB = new Shape(100,100,530,200,this.mSheet.mGame,"","","");
 
-                shapeA.setText(this.b + ' &times ' + this.mFractionA.getString());
-                shapeB.setText(this.c);
+                shapeA.setText(this.mFractionB.getString() + ' &times ' + this.mFractionA.getString());
+                shapeB.setText(this.mFractionC.getString())
 
                 this.addQuestionShape(shapeA);
                 this.addQuestionShape(shapeB);
