@@ -20,7 +20,7 @@ Extends: ThreeButtonItem,
                 var db = 0;
                 var nc = 0;
                 var dc = 0;
-                while (na >= da)
+                while (na <= da)
                 {
                         na = Math.floor(Math.random()*18+2);
                         da = Math.floor(Math.random()*18+2);
@@ -35,7 +35,7 @@ Extends: ThreeButtonItem,
                 this.mFractionC = new Fraction(nc,dc,false);
 
                 this.setQuestion('Compare.');
-                this.setAnswer('&lt;',0);
+                this.setAnswer('&gt;',0);
 
                 this.mButtonA.setAnswer('&gt;');
                 this.mButtonB.setAnswer('=');
