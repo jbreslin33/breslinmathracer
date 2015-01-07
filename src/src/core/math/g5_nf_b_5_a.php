@@ -3,16 +3,12 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_5_a__7 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet);
+        	this.parent(sheet,575,50,320,75,720,50,380,150);
                 this.mType = '5.nf.b.5.a_7';
-
-                //BUTTON A
-                this.mButtonA.setPosition(380,100);
-                this.mButtonB.setPosition(380,200);
-                this.mButtonC.setPosition(380,300);
+        	this.ns = new NameSampler();
 
                 var na = 0;
                 var da = 0;
@@ -34,24 +30,8 @@ Extends: ThreeButtonItem,
                 this.mFractionB = new Fraction(nb,db,false);
                 this.mFractionC = new Fraction(nc,dc,false);
 
-                this.setQuestion('Compare.');
+                this.setQuestion('' + this.mFractionA.getString() + ' Compare.');
                 this.setAnswer('&gt;',0);
-
-                this.mButtonA.setAnswer('&gt;');
-                this.mButtonB.setAnswer('=');
-                this.mButtonC.setAnswer('&lt;');
-        },
-
-        createQuestionShapes: function()
-        {
-                var shapeA = new Shape(100,100,240,200,this.mSheet.mGame,"","","");
-                var shapeB = new Shape(100,100,530,200,this.mSheet.mGame,"","","");
-
-                shapeA.setText(this.mFractionB.getString() + ' &times ' + this.mFractionA.getString());
-                shapeB.setText(this.mFractionC.getString())
-
-                this.addQuestionShape(shapeA);
-                this.addQuestionShape(shapeB);
         }
 });
 
