@@ -19,7 +19,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 
-<p><b> SCHOOL LEADER BOARD: </p></b>
+<p><b> ROOM 34 LEADER BOARD: </p></b>
 
 <?php
 
@@ -43,7 +43,7 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = "select last_activity, first_name, last_name, score, unmastered from users where room_id = 33 order by score desc;";
+	$query = "select last_activity, first_name, last_name, score, unmastered from users where room_id = 34 order by score desc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
