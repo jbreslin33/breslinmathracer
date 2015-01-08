@@ -30,8 +30,8 @@ Extends: TextItem,
                 this.mFractionB = new Fraction(nb,db,false);
                 this.mFractionC = new Fraction(nc,dc,false);
 
-                this.setQuestion('' + this.ns.mNameOne + ' ran ' + this.mFractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '.' + this.ns.mNameTwo + ' ran ' + this.mFractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. ' +  this.ns.mNameThree + ' ran ' + this.mFractionC.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. Who ran the furthest?');
-                this.setAnswer('&gt;',0);
+                this.setQuestion('' + this.ns.mNameOne + ' ran ' + this.mFractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. ' + this.ns.mNameTwo + ' ran ' + this.mFractionB.getString() + ' as far as ' + this.ns.mNameOne + '. ' +  this.ns.mNameThree + ' ran ' + this.mFractionC.getString() + ' as far as ' + this.ns.mNameOne + '. Who ran the furthest?');
+                this.setAnswer('' + this.ns.mNameTwo,0);
         }
 });
 
