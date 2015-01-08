@@ -1204,6 +1204,10 @@ var NameMachine = new Class(
 
 	getPronoun: function(name,uppercase,possesive)
 	{
+		if (!possesive)
+		{
+			possesive = 0;
+		}
 		for (i=0; i < this.mBoyNameArray.length; i++)
 		{
 			if (name == this.mBoyNameArray[i])
