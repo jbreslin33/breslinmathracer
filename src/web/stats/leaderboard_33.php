@@ -19,7 +19,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 
-<p><b> SCHOOL LEADER BOARD: </p></b>
+<p><b> ROOM 33 LEADER BOARD: </p></b>
 
 <?php
 
