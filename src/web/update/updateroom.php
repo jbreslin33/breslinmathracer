@@ -16,9 +16,9 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/set_level_session_variables.php
 
 $response = "";
 
-$update = "update users SET last_name = '";
-$update .= $_POST["last_name"];
-$update .= "' where id = '";
+$update = "update users SET room_id = ";
+$update .= $_POST["room_id"];
+$update .= " where id = '";
 $update .= $_POST["id"];
 $update .= "';";
 
