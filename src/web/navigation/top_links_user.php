@@ -13,6 +13,7 @@
 <li><a href="/web/update/update_password_form.php">Update Password</a></li>
 <li><a href="/web/update/update_first_name_form.php">Update First Name</a></li>
 <li><a href="/web/update/update_last_name_form.php">Update Last Name</a></li>
+<li><a href="/web/update/update_room_form.php">Update Room</a></li>
 <li><a href="/web/update/update_teacher_form.php">Update Teacher</a></li>
 <li><a href="/web/insert/upload.php">Upload School From Linux</a></li>
 </ul>
