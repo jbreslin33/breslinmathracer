@@ -342,10 +342,21 @@ var Item = new Class(
 		correctAnswerFound = false;
 		for (i = 0; i <  this.mAnswerArray.length; i++)
 		{
-			if (this.mUserAnswer == this.mAnswerArray[i])
+			//ignorecase
+			if (this.mIgnoreCase == true)
 			{
-				correctAnswerFound = true;	
-			} 
+				if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
+				{
+					correctAnswerFound = true;	
+				}	 
+			}
+			else
+			{
+				if (this.mUserAnswer == this.mAnswerArray[i])
+				{
+					correctAnswerFound = true;	
+				}	 
+			}
 		}
 		if (correctAnswerFound == false)
 		{
