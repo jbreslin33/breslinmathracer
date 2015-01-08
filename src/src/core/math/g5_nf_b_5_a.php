@@ -16,21 +16,21 @@ Extends: TextItem,
                 var db = 0;
                 var nc = 0;
                 var dc = 0;
-                while (na <= da)
+                while (nb <= db || nc >= dc)
                 {
                         na = Math.floor(Math.random()*18+2);
                         da = Math.floor(Math.random()*18+2);
                         nb = Math.floor(Math.random()*18+2);
                         db = Math.floor(Math.random()*18+2);
-                        nc = nb;
-                        dc = db;
+                        nc = Math.floor(Math.random()*18+2);
+                        dc = Math.floor(Math.random()*18+2);
                 }
 
                 this.mFractionA = new Fraction(na,da,false);
                 this.mFractionB = new Fraction(nb,db,false);
                 this.mFractionC = new Fraction(nc,dc,false);
 
-                this.setQuestion('' + this.mFractionA.getString() + ' Compare.');
+                this.setQuestion('' + this.ns.mNameOne + ' ran ' + this.mFractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '.' + this.ns.mNameTwo + ' ran ' + this.mFractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. ' +  this.ns.mNameThree + ' ran ' + this.mFractionC.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. Who ran the furthest?');
                 this.setAnswer('&gt;',0);
         }
 });
