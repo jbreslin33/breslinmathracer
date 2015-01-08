@@ -618,7 +618,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + '<span style="color: #f00;">' + this.ones + '</span>' + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
-        this.setAnswer(this.ones,0);
+        this.setAnswer('' + this.ones,0);
 }
 });
 
