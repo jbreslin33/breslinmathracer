@@ -6,7 +6,9 @@
 <li><a href="/web/stats/enter_homework_date.php">Homework Report</a></li>
 <li><a href="/web/stats/enter_statsreport_user.php">Stats Report</a></li>
 <li><a href="/web/stats/realtime.php">RealTimeHelp</a></li>
-<li><a href="/web/stats/leaderboard.php">Leader Board</a></li>
+<li><a href="/web/stats/leaderboard.php">School Leader Board</a></li>
+<li><a href="/web/stats/leaderboard_33.php">Room 33 Leader Board</a></li>
+<li><a href="/web/stats/leaderboard_34.php">Room 34 Leader Board</a></li>
 <li><a href="/web/update/update_standard_id_form.php">Update Standard ID</a></li>
 <li><a href="/web/update/update_level_form.php">Update Level</a></li>
 <li><a href="/web/update/update_username_form.php">Update Username</a></li>

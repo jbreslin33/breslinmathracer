@@ -43,7 +43,7 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = "select last_activity, first_name, last_name, score, unmastered from users order by score desc;";
+	$query = "select last_activity, first_name, last_name, score, unmastered from users where room_id = 33 order by score desc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
