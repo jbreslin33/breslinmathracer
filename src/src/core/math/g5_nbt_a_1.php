@@ -418,7 +418,7 @@ initialize: function(sheet)
 
         var answer = new Fraction(this.hundredthousandths,100000);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -458,7 +458,7 @@ initialize: function(sheet)
 
         var answer = new Fraction(this.tenthousandths,10000);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -498,7 +498,7 @@ initialize: function(sheet)
 
         var answer = new Fraction(this.thousandths,1000);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -538,7 +538,7 @@ initialize: function(sheet)
 
         var answer = new Fraction(this.hundredths,100);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -579,7 +579,7 @@ initialize: function(sheet)
         
 	var answer = new Fraction(this.tenths,10);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -637,7 +637,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the numerical value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + '<span style="color: #f00;">' + this.tens + '</span>' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
 
-        this.setAnswer(this.tens + '0',0);
+        this.setAnswer('' + this.tens + '0',0);
 }
 });
 
@@ -746,7 +746,7 @@ initialize: function(sheet)
         var answer = new Fraction(n,d);
 
         this.setQuestion('Write the fraction that is ten times more than ' + fraction.getString()) + ' Do not simplify.';
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -814,7 +814,7 @@ initialize: function(sheet)
         var answer = new Fraction(n,d);
 
 	this.setQuestion('Write the fraction that is ten times less than ' + fraction.getString() + ' Do not simplify.' ); 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -858,7 +858,7 @@ initialize: function(sheet)
 	var d = 10;
 
         var answer = new Fraction(n,d);
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
