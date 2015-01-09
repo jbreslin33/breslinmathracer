@@ -1,4 +1,78 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.5.a_9',5.1809,'5.nf.b.5.a','scaling. compare. word. middle least');
+*/
+var i_5_nf_b_5_a__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,575,50,320,75,720,50,380,150);
+                this.mType = '5.nf.b.5.a_9';
+                this.ns = new NameSampler();
+
+                var na = 0;
+                var da = 0;
+                var nb = 0;
+                var db = 0;
+                var nc = 0;
+                var dc = 0;
+                while (nb <= db || nc >= dc)
+                {
+                        na = Math.floor(Math.random()*18+2);
+                        da = Math.floor(Math.random()*18+2);
+                        nb = Math.floor(Math.random()*18+2);
+                        db = Math.floor(Math.random()*18+2);
+                        nc = Math.floor(Math.random()*18+2);
+                        dc = Math.floor(Math.random()*18+2);
+                }
+
+                this.mFractionA = new Fraction(na,da,false);
+                this.mFractionB = new Fraction(nb,db,false);
+                this.mFractionC = new Fraction(nc,dc,false);
+
+                this.setQuestion('' + this.ns.mNameOne + ' ran ' + this.mFractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. ' + this.ns.mNameTwo + ' ran ' + this.mFractionB.getString() + ' as far as ' + this.ns.mNameOne + '. ' +  this.ns.mNameThree + ' ran ' + this.mFractionC.getString() + ' as far as ' + this.ns.mNameOne + '. Who ran the least?');
+                this.setAnswer('' + this.ns.mNameThree,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.5.a_8',5.1808,'5.nf.b.5.a','scaling. compare. word. second most');
+*/
+var i_5_nf_b_5_a__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,575,50,320,75,720,50,380,150);
+                this.mType = '5.nf.b.5.a_8';
+                this.ns = new NameSampler();
+
+                var na = 0;
+                var da = 0;
+                var nb = 0;
+                var db = 0;
+                var nc = 0;
+                var dc = 0;
+                while (nb <= db || nc >= dc)
+                {
+                        na = Math.floor(Math.random()*18+2);
+                        da = Math.floor(Math.random()*18+2);
+                        nb = Math.floor(Math.random()*18+2);
+                        db = Math.floor(Math.random()*18+2);
+                        nc = Math.floor(Math.random()*18+2);
+                        dc = Math.floor(Math.random()*18+2);
+                }
+
+                this.mFractionA = new Fraction(na,da,false);
+                this.mFractionB = new Fraction(nb,db,false);
+                this.mFractionC = new Fraction(nc,dc,false);
+
+                this.setQuestion('' + this.ns.mNameOne + ' ran ' + this.mFractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. ' + this.ns.mNameTwo + ' ran ' + this.mFractionB.getString() + ' as far as ' + this.ns.mNameOne + '. ' +  this.ns.mNameThree + ' ran ' + this.mFractionC.getString() + ' as far as ' + this.ns.mNameOne + '. Who ran the second most?');
+                this.setAnswer('' + this.ns.mNameOne,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.5.a_7',5.1807,'5.nf.b.5.a','scaling. compare. word');
 */
 var i_5_nf_b_5_a__7 = new Class(
