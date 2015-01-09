@@ -1,0 +1,47 @@
+addition should be 1 question 0 + 0 for first level.
+then 2 questions 0 + 0 and 0 + 1    for 2nd level
+etc... order should be random.....half the questions should come from current level....other half from below...
+if wrong go back to that level??? or just a level???? what if we used 10 correct?? let's ask away.
+then when you get 10 correct at that level you advance....so if you are at 5 + 6 we ask you that half the time until you get 10 in a row on that game. then we advance you. NO GAMES IF YOU ALREADY HAD A LEVEL_TRANSACTION AT THAT LEVEL>>>>
+
+as soon as you get one wrong we need to know what level question that was and send you to that level???
+then that is your new level but you can be asked anything up to your max level....
+
+
+bascially they should all work like this. we should once in a while check old level then send you back for remediation...
+
+
+ok new idea.
+0+0
+0+1
+0+2
+0+3
+0+4
+0+5
+0+6
+0+7
+0+8 
+0+9
+0+10
+0+0
+1+0
+2+0
+3+0
+4+0
+5+0
+6+0
+7+0
+8+0 
+9+0
+10+0
+
+
+1+1
+
+0+2
+2+0
+
+1+2
+2+1
+
+make a princess game with dungeon with crowns and
