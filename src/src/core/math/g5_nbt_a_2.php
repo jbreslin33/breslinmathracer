@@ -45,7 +45,7 @@ initialize: function(sheet)
 
 	this.setQuestion('Evaluate: ' + this.thousands + ' &times 1,000 + ' + this.hundreds + ' &times 100 + ' + this.tens + ' &times 10 + ' + this.ones); 
 
-        this.setAnswer(parseInt(this.a + this.b + this.c + this.d),0);
+        this.setAnswer('' + parseInt(this.a + this.b + this.c + this.d),0);
 }
 });
 
@@ -72,7 +72,7 @@ initialize: function(sheet)
 
 	this.setQuestion(this.ns.mNameOne + ' scored ' + this.a + ' points. ' + this.ns.mNameTwo + ' scored one tenth as much as ' + this.ns.mNameOne + '. How many points did ' + this.ns.mNameTwo + ' score?');  
 
-        this.setAnswer(this.b,0);
+        this.setAnswer('' + this.b,0);
 }
 });
 
