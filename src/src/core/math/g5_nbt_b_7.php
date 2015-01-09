@@ -1118,7 +1118,7 @@ initialize: function(sheet)
                 }
 	}
 
-        this.setQuestion('In a video game called minetest ' + this.ns.mNameOne + ' builds a fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + '. If the length of the yard is ' + this.a + '.' + this.b + this.c + ' ' + this.ns.mDistanceIncrementMedium + ' and the width of the yard is ' + this.d + '.' + this.e + ' ' + this.ns.mDistanceIncrementMedium + ' then what is the perimeter of the yard?');
+        this.setQuestion('In a video game called minetest ' + this.ns.mNameOne + ' builds a rectangular fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + '. If the length of the yard is ' + this.a + '.' + this.b + this.c + ' ' + this.ns.mDistanceIncrementMedium + ' and the width of the yard is ' + this.d + '.' + this.e + ' ' + this.ns.mDistanceIncrementMedium + ' then what is the perimeter of the yard?');
 
         this.setAnswer('' + this.answer,0);
 }
