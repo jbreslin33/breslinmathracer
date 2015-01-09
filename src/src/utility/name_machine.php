@@ -1216,11 +1216,11 @@ var NameMachine = new Class(
 				{
 					if (possesive == 0)
 					{
-						return 'his';
+						return 'he';
 					}
 					if (possesive == 1)
 					{
-						return 'he';
+						return 'his';
 					}
 					if (possesive == 2)
 					{
@@ -1231,11 +1231,11 @@ var NameMachine = new Class(
 				{
 					if (possesive == 0)
 					{
-						return 'His';
+						return 'He';
 					}
 					if (possesive == 1)
 					{
-						return 'He';
+						return 'His';
 					}
 					if (possesive == 2)
 					{
@@ -1252,11 +1252,11 @@ var NameMachine = new Class(
                                 {
 					if (possesive == 0)
 					{
-						return 'her';
+						return 'she';
 					}
 					if (possesive == 1)
 					{
-						return 'she';
+						return 'her';
 					}
 					if (possesive == 2)
 					{
@@ -1267,11 +1267,11 @@ var NameMachine = new Class(
                                 {
 					if (possesive == 0)
 					{
-						return 'Her';
+						return 'She';
 					}
 					if (possesive == 1)
 					{
-						return 'She';
+						return 'Her';
 					}
 					if (possesive == 2)
 					{
@@ -1288,11 +1288,11 @@ var NameMachine = new Class(
                                 {
 					if (possesive == 0)
 					{
-						return 'his';
+						return 'he';
 					}
 					if (possesive == 1)
 					{
-						return 'he';
+						return 'his';
 					}
 					if (possesive == 2)
 					{
@@ -1303,11 +1303,11 @@ var NameMachine = new Class(
                                 {
 					if (possesive == 0)
 					{
-						return 'His';
+						return 'He';
 					}
 					if (possesive == 1)
 					{
-						return 'He';
+						return 'His';
 					}
 					if (possesive == 1)
 					{
@@ -1324,11 +1324,11 @@ var NameMachine = new Class(
                                 {
 					if (possesive == 0)
 					{
-						return 'her';
+						return 'she';
 					}
 					if (possesive == 1)
 					{
-						return 'she';
+						return 'her';
 					}
 					if (possesive == 2)
 					{
@@ -1339,11 +1339,11 @@ var NameMachine = new Class(
                                 {
 					if (possesive == 0)
 					{
-						return 'Her';
+						return 'She';
 					}
 					if (possesive == 1)
 					{
-						return 'She';
+						return 'Her';
 					}
 					if (possesive == 2)
 					{
