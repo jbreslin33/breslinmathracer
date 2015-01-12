@@ -35,7 +35,7 @@ Extends: ThreeButtonItem,
 
                 this.mButtonA.setAnswer('&gt;');
                 this.mButtonB.setAnswer('=');
-                this.mButtonC.setAnswer('$lt;');
+                this.mButtonC.setAnswer('&lt;');
         },
 
         createQuestionShapes: function()
