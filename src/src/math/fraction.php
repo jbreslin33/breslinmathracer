@@ -114,6 +114,23 @@ var Fraction = new Class(
 
                 var fractionSum = new Fraction(sn,cm,true);
                 return fractionSum;
-        }
+        },
 
+        multiply: function(fraction)
+        {
+                var n = parseInt(this.mNumerator * fraction.mNumerator);
+                var d = parseInt(this.mDenominator * fraction.mDenominator);
+
+                var fraction = new Fraction(n,d,true);
+                return fraction;
+        },
+      
+	divide: function(fraction)
+        {
+                var n = parseInt(this.mNumerator * fraction.mDenominator);
+                var d = parseInt(this.mDenominator * fraction.mNumerator);
+
+                var fraction = new Fraction(n,d,true);
+                return fraction;
+        }
 });
