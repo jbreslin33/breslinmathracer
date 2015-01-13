@@ -10,22 +10,20 @@ Extends: TextItem,
                 this.mType = '5.nf.b.6_1';
    		this.ns = new NameSampler();
 
-                var na = 0;
-                var da = 0;
-                var b = 0;
-
-                while (na >= da)
-                {
-                        na = Math.floor(Math.random()*8+2);
-                        da = Math.floor(Math.random()*8+2);
-                        b = Math.floor(Math.random()*8+2);
-                }
-
-                var fractionA = new Fraction(na,da,false);
-                var fractionB = new Fraction(b,1,false);
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
 		var answer = fractionA.multiply(fractionB);
 
-                this.setQuestion('' + this.ns.mNameOne + ' sold ' + b + ' pieces of fruit today. ' + fractionA.getString() + ' were ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sell today?');
+                while (fractionA.mNumerator >= fractionA.mDenominator || parseInt(answer.mNumerator % answer.mDenominator) != 0 )
+                {
+                        fractionA.mNumerator = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator = Math.floor(Math.random()*8+2);
+			answer = fractionA.multiply(fractionB);
+                }
+
+
+                this.setQuestion('' + this.ns.mNameOne + ' sold ' + fractionB.mNumerator + ' pieces of fruit today. ' + fractionA.getString() + ' were ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sell today?');
 
                 this.setAnswer('' + answer.getString(),0);
         }
