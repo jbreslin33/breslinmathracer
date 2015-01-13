@@ -29,7 +29,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber());
 }
 });
@@ -65,7 +65,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' - ' + fractionB.getString());
 }
 });
@@ -101,7 +101,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getString() + ' - ' + fractionB.getString());
 }
 });
@@ -137,7 +137,7 @@ initialize: function(sheet)
         var answer = fractionA.subtract(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getString() + ' - ' + fractionB.getString());
 }
 });
@@ -175,7 +175,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' + ' + fractionB.getMixedNumber());
 }
 });
@@ -212,7 +212,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' + ' + fractionB.getString());
 }
 });
@@ -250,7 +250,7 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getString() + ' + ' + fractionB.getString());
 }
 });
@@ -287,7 +287,7 @@ initialize: function(sheet)
 	var answer = fractionA.add(fractionB);
 	answer.reduce();
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Evaluate: ' + fractionA.getString() + ' + ' + fractionB.getString());
 }
 });
