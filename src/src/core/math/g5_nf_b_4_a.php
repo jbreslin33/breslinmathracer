@@ -30,7 +30,7 @@ initialize: function(sheet)
         var answer = fractiona.subtract(answerTemp); 
 	
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' had ' + fractiona.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne + ' drank ' + fractionb.getString() + ' of it. How many ' + this.ns.mLiquidVolumeOne + ' of '  + this.ns.mDrinkOne + ' does ' + this.ns.mNameOne + ' have left?'   );
 }
 });
@@ -65,7 +65,7 @@ initialize: function(sheet)
         var fractionb = new Fraction(nb,db);
         var answer = new Fraction(parseInt(na*nb),parseInt(da*db),true);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' had ' + fractiona.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne + ' drank ' + fractionb.getString() + ' of it. How many ' + this.ns.mLiquidVolumeOne + ' of '  + this.ns.mDrinkOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.ns.mFamilyOne + ' drink?'  );
 }
 });
@@ -101,7 +101,7 @@ initialize: function(sheet)
         var fractionb = new Fraction(nb,db);
         var answer = new Fraction(parseInt(a*nb),db,true);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' ' + this.ns.mVegetableOne + '. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne +  ' ate ' +  fractionb.getString() + ' of them. How many ' + this.ns.mVegetableOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.ns.mFamilyOne + ' eat?');
 }
 });
@@ -137,7 +137,7 @@ initialize: function(sheet)
        	var fractionb = new Fraction(nb,db);
        	var answer = new Fraction(parseInt(a*nb),db,true);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' ' + this.ns.mThingOne + '. ' + fractionb.getString() + ' of them are ' + this.ns.mColorOne + '. How many ' + this.ns.mThingOne + ' are ' + this.ns.mColorOne);
 }
 });
