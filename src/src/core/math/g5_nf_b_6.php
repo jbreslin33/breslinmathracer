@@ -15,7 +15,7 @@ Extends: TextItem,
                 var fractionB = new Fraction(1,1,false);
 		var answer = fractionA.multiply(fractionB);
 
-                while (fractionA.mNumerator >= fractionA.mDenominator || parseInt(answer.mNumerator % answer.mDenominator) != 0 )
+                while (fractionA.mNumerator >= fractionA.mDenominator || fractionA.mDenominator == fractionB.mNumerator || parseInt(answer.mNumerator % answer.mDenominator) != 0 )
                 {
                         fractionA.mNumerator = Math.floor(Math.random()*8+2);
                         fractionA.mDenominator = Math.floor(Math.random()*8+2);
