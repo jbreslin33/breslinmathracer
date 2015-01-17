@@ -21,6 +21,7 @@ Extends: TextItemMixedNumber,
                         fractionA.mDenominator = Math.floor(Math.random()*8+2);
                         fractionB.mNumerator = Math.floor(Math.random()*8+2);
                         answer = fractionA.multiply(fractionB);
+			answer.reduce();
                 }
 
                 this.setQuestion('' + this.ns.mNameOne + ' sold ' + fractionB.mNumerator + ' pieces of fruit today. ' + fractionA.getString() + ' were ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sell today?');

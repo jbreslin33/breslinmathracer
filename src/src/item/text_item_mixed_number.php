@@ -51,7 +51,7 @@ Extends: Item,
 
 	setTheFocus: function()
 	{
-		this.mNumeratorTextBox.mMesh.focus();
+		this.mWholeNumberTextBox.mMesh.focus();
 	},
  
 	createShapes: function()
@@ -119,11 +119,19 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
-						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
+						var wholenumber = APPLICATION.mGame.mSheet.getItem().mWholeNumberTextBox.mMesh.value;	
+						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value;	
+						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value;	
 						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
 						{
-							
+							APPLICATION.log('enter');
+							var t = parseInt(denominator*wholenumber); 
+							APPLICATION.log('t:'+ t);
+							var n = parseInt(numerator); 
+							APPLICATION.log('n:'+ n);
+							var tn = parseInt( t + n);  
+							APPLICATION.log('tn:'+ tn);
+							numerator = tn;		
 							var fraction = new Fraction(numerator,denominator,true);
 							numerator = fraction.mNumerator;	
 							denominator = fraction.mDenominator;	
@@ -146,10 +154,16 @@ Extends: Item,
 				{
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
-						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
-						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
+						var wholenumber = APPLICATION.mGame.mSheet.getItem().mWholeNumberTextBox.mMesh.value;	
+						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value;	
+						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value;	
 						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
                                                 {
+							APPLICATION.log('13');
+							var t = parseInt(denominator*wholenumber); 
+							var n = parseInt(numerator); 
+							var tn = parseInt( t + n);  
+							numerator = n;		
                                                         var fraction = new Fraction(numerator,denominator,true);
                                                         numerator = fraction.mNumerator;
                                                         denominator = fraction.mDenominator;
