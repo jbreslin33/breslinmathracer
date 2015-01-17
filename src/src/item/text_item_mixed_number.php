@@ -6,7 +6,7 @@ var TextItemMixedNumber = new Class(
 Extends: Item,
         initialize: function(sheet, qw,qh,qx,qy, ww,wh,wx,wy, nw,nh,nx,ny, dw,dh,dx,dy, autoreduce)
         {
-		this.mRaphael = Raphael(350,137,150,5);
+		this.mRaphael = Raphael(550,137,150,5);
 		this.parent(sheet);
 
 		this.mAutoReduce = true;
