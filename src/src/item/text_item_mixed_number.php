@@ -124,14 +124,11 @@ Extends: Item,
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value;	
 						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
 						{
-							APPLICATION.log('enter');
 							var t = parseInt(denominator*wholenumber); 
-							APPLICATION.log('t:'+ t);
 							var n = parseInt(numerator); 
-							APPLICATION.log('n:'+ n);
 							var tn = parseInt( t + n);  
-							APPLICATION.log('tn:'+ tn);
 							numerator = tn;		
+
 							var fraction = new Fraction(numerator,denominator,true);
 							numerator = fraction.mNumerator;	
 							denominator = fraction.mDenominator;	
@@ -159,11 +156,11 @@ Extends: Item,
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value;	
 						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
                                                 {
-							APPLICATION.log('13');
 							var t = parseInt(denominator*wholenumber); 
 							var n = parseInt(numerator); 
 							var tn = parseInt( t + n);  
-							numerator = n;		
+							numerator = tn;		
+
                                                         var fraction = new Fraction(numerator,denominator,true);
                                                         numerator = fraction.mNumerator;
                                                         denominator = fraction.mDenominator;
