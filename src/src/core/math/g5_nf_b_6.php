@@ -6,7 +6,7 @@ var i_5_nf_b_6__2 = new Class(
 Extends: TextItemMixedNumber,
         initialize: function(sheet)
         {
-     		this.parent(sheet, 250,50,200,95, 100,50,325,75, 100,50,425,100, 100,50,425,175,true);
+     		this.parent(sheet, 250,50,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
                 this.mType = '5.nf.b.6_2';
                 this.ns = new NameSampler();
