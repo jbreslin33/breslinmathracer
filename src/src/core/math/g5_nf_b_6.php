@@ -1,3 +1,40 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_3',5.2003,'5.nf.b.6','');
+*/
+var i_5_nf_b_6__3 = new Class(
+{
+Extends: TextItemMixedNumber,
+        initialize: function(sheet)
+        {
+     		this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+                this.mType = '5.nf.b.6_3';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
+                var fractionC = new Fraction(Math.floor(Math.random()*8+2),1,false);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
+                {
+                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionB.mDenominator = Math.floor(Math.random()*8+2);
+                        answer = fractionA.multiply(fractionB);
+			answer.reduce();
+                }
+
+                this.setQuestion('Three kids built castles in a video game. ' + this.ns.mNameOne + ' built ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' castle ' + fractionA.getString() + ' as tall as ' + this.ns.mNameTwo + '. ' + this.ns.mNameThree + ' built ' + this.ns.mNameMachine.getPronoun(this.ns.mNameThree,0,1) + ' casltle ' + fractionB.getMixedNumber() + ' as tall as ' + this.ns.mNameOne + '. ' + this.ns.mNameTwo + ' built ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' castle ' + fractionC.mNumerator + ' feet tall. What is the height of the castle ' + this.ns.mNameThree + ' built?');
+				
+		var tempFraction = fractionA.multiply(fractionB);
+		var answer = tempFraction.multiply(fractionC);
+
+                this.setAnswer('' + answer.getMixedNumber() + ' feet.' + this.ns.mDistanceIncrementMedium,0);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_2',5.2002,'5.nf.b.6','');
 */
