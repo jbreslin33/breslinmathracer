@@ -6,7 +6,7 @@ var i_5_nf_b_6__2 = new Class(
 Extends: TextItemMixedNumber,
         initialize: function(sheet)
         {
-     		this.parent(sheet, 250,50,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+     		this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
                 this.mType = '5.nf.b.6_2';
                 this.ns = new NameSampler();
@@ -15,7 +15,7 @@ Extends: TextItemMixedNumber,
                 var fractionB = new Fraction(1,1,false);
                 var answer = fractionA.multiply(fractionB);
 
-                while (fractionA.mNumerator >= fractionA.mDenominator || fractionA.mDenominator == fractionB.mNumerator || parseInt(answer.mNumerator % answer.mDenominator) != 0 )
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
                 {
                         fractionA.mNumerator   = Math.floor(Math.random()*8+2);
                         fractionA.mDenominator = Math.floor(Math.random()*8+2);
@@ -25,8 +25,8 @@ Extends: TextItemMixedNumber,
 			answer.reduce();
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' is playing in a rectangular sandbox that has a length of ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' and a width of ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementMedium + '. What is the area in ' + this.ns.mDistanceIncrementMedium + ' squared?');
-                this.setAnswer('' + answer.getString(),0);
+                this.setQuestion('' + this.ns.mNameOne + ' is playing in a rectangular sandbox that has a length of ' + fractionA.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' and a width of ' + fractionB.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + '. What is the area in ' + this.ns.mDistanceIncrementMedium + ' squared?');
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium,0);
         }
 });
 
