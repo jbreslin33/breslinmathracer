@@ -15,21 +15,36 @@ initialize: function(sheet)
         var a = 0;
         var nb = 0;
         var db = 0;
-        var n = 0;
+        var nc = 0;
+        var dc = 0;
+        var numb = 0;
+        var numc = 0;
+	var answer = 0;
 
-        while (n % db != 0 || n == 0 || nb >= db || a == db || a == nb)
+        while (numb % db != 0 || numb == 0 || numc % dc != 0 || numc == 0 || nb >= db || a == db || a == nb || nc >= dc || a == dc || a == nc || answer < 1)
         {
                 a = Math.floor((Math.random()*18)+2);
                 nb = Math.floor((Math.random()*18)+2);
                 db = Math.floor((Math.random()*18)+2);
-                n = parseInt(a * nb);
+                nc = Math.floor((Math.random()*18)+2);
+                dc = Math.floor((Math.random()*18)+2);
+                numb = parseInt(a * nb);
+                numc = parseInt(a * nc);
+
+        	var fractiona = new Fraction(a,1);
+        	var fractionb = new Fraction(nb,db);
+        	var fractionc = new Fraction(nc,dc);
+
+        	var answerb = fractionb.multiply(fractiona); 
+        	var answerc = fractionc.multiply(fractiona); 
+		answerb.reduce();
+		answerc.reduce();
+
+		var answer = parseInt( a - (answerb.mNumerator + answerc.mNumerator) ); 	
         }
-
-        var fractionb = new Fraction(nb,db);
-        var answer = new Fraction(parseInt(a*nb),db,true);
-
-        this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' ' + this.ns.mVegetableOne + '. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne +  ' ate ' +  fractionb.getString() + ' of them. How many ' + this.ns.mVegetableOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + ' eat?');
+	
+        this.setAnswer('' + answer,0);
+        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' pieces of fruit. ' + fractionb.getString() + ' of them were ' + this.ns.mFruitOne + '. ' + fractionc.getString() + ' of them were ' + this.ns.mFruitTwo + '. The rest were ' + this.ns.mFruitThree + '. How many were ' + this.ns.mFruitThree + '?'  );
 
 }
 });
