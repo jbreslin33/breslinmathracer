@@ -164,7 +164,10 @@ execute: function(item)
 
 exit: function(item)
 {
-	APPLICATION.sendItemAttempt(item.mType,item.mStatus);
+	APPLICATION.log('question:' + item.mQuestion);
+	var question = '' + item.mQuestion;
+	var res = question.replace(/&/g," || chr(38) || ");
+	APPLICATION.sendItemAttempt(item.mType,item.mStatus,res);
 }
 });
 
