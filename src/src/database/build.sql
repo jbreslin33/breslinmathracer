@@ -246,6 +246,9 @@ CREATE TABLE item_attempts (
 	evaluations_attempts_id integer NOT NULL, 
 	item_types_id text NOT NULL, 
         transaction_code integer DEFAULT 0 NOT NULL, --were you correct?? 0 not answered yet   1 correct    2 incorrect
+	question text, 
+	answers text, 
+	user_answer text, 
         PRIMARY KEY (id),
 	FOREIGN KEY (evaluations_attempts_id) REFERENCES evaluations_attempts(id),
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id)

@@ -131,7 +131,9 @@ public function update()
 
 		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
         	$insert .= $_SESSION["item_transaction_code"];
-		$insert .= " WHERE id = ";		
+		$insert .= ", question = '"; 
+        	$insert .= $_SESSION["item_question"];
+		$insert .= "' WHERE id = ";		
         	$insert .= $_SESSION["item_attempt_id"];
         	$insert .= ";";
 

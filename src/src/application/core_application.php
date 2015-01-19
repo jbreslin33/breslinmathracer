@@ -310,7 +310,7 @@ Extends: Application,
         },
 
 
-	sendItemAttempt: function(itemtypesid,transactioncode)
+	sendItemAttempt: function(itemtypesid,transactioncode,question)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -321,7 +321,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode,true);
+                xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question,true);
                 xmlhttp.send();
         },
 
