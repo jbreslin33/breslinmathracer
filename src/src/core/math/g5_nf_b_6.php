@@ -14,7 +14,6 @@ Extends: TextItemMixedNumber,
 
                 var fractionA = new Fraction(1,1,false);
                 var fractionB = new Fraction(1,1,false);
-                var fractionC = new Fraction(Math.floor(Math.random()*8+2),1,false);
 
                 while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
                 {
@@ -26,14 +25,13 @@ Extends: TextItemMixedNumber,
 			answer.reduce();
                 }
 
-                this.setQuestion('Three kids built castles in a video game. ' + this.ns.mNameOne + ' built ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' castle ' + fractionA.getString() + ' as tall as ' + this.ns.mNameTwo + '. ' + this.ns.mNameThree + ' built ' + this.ns.mNameMachine.getPronoun(this.ns.mNameThree,0,1) + ' casltle ' + fractionB.getMixedNumber() + ' as tall as ' + this.ns.mNameOne + '. ' + this.ns.mNameTwo + ' built ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' castle ' + fractionC.mNumerator + ' ' + this.ns.mDistanceIncrementMedium + ' tall. What is the height of the castle ' + this.ns.mNameThree + ' built?');
+                this.setQuestion(this.ns.mNameOne + ' controls a character in a video game that is ' + fractionA.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall + ' tall. ' + this.ns.mNameTwo + ' has a character that is ' + fractionB.getMixedNumber() + ' times as tall as the character of ' + this.ns.mNameOne + '. How tall is the character controlled by ' + this.ns.mNameTwo + '?');
 				
-		var tempFraction = fractionA.multiply(fractionB);
-		var answer = tempFraction.multiply(fractionC);
+		var answer = fractionA.multiply(fractionB);
 
                 this.setAnswer('' + answer.getMixedNumber(),0);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium,1);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall,1);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementSmall),2);
         }
 });
 
