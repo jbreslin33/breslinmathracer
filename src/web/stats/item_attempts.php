@@ -25,15 +25,15 @@ echo "<br>";
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Rank';
+        echo '<td> Start Time';
         echo '</td>';
-        echo '<td> First Name';
+        echo '<td> Item Type ';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td> mark';
         echo '</td>';
-        echo '<td> Score';
+        echo '<td> Question';
         echo '</td>';
-        echo '<td> Unmastered';
+        echo '<td> Answers';
         echo '</td>';
         echo '</tr>';
 
@@ -43,18 +43,18 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = "select last_activity, first_name, last_name, score, unmastered from users where room_id = 33 and banned_id = 0 order by score desc;";
+	$query = "select start_time, item_types_id, transaction_code, question, answers, user_answer from item_attempts order by start_time desc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
 	for($i = 0; $i < $numrows; $i++) 
 	{
         	$row = pg_fetch_array($result, $i);
-		$lastAnswerTime = $row[0];
-		$firstName = $row[1];
-		$lastName = $row[2];
-		$score = $row[3];
-		$unmastered = $row[4];
+		$start_time = $row[0];
+		$item_types_id = $row[1];
+		$transaction_code = $row[2];
+		$question = $row[3];
+		$answers = $row[4];
        	
 		echo '<tr>';
         	echo '<td>';
