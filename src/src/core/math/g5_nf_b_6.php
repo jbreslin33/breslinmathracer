@@ -1,3 +1,40 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_6',5.2006,'5.nf.b.6','');
+*/
+var i_5_nf_b_6__6 = new Class(
+{
+Extends: TextItemMixedNumber,
+        initialize: function(sheet)
+        {
+                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+                this.mType = '5.nf.b.6_6';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
+                {
+                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionB.mDenominator = Math.floor(Math.random()*8+2);
+                        answer = fractionA.multiply(fractionB);
+                        answer.reduce();
+                }
+
+                this.setQuestion(this.ns.mNameOne + ' controls a character in a video game that is ' + fractionA.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall + ' tall. ' + this.ns.mNameTwo + ' has a character that is ' + fractionB.getMixedNumber() + ' times as tall as the character of ' + this.ns.mNameOne + '. How tall is the character controlled by ' + this.ns.mNameTwo + '?');
+
+                var answer = fractionA.multiply(fractionB);
+
+                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall,1);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementSmall),2);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_5',5.2005,'5.nf.b.6','');
 */
