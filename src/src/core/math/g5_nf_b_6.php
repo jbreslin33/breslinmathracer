@@ -1,3 +1,38 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_5',5.2005,'5.nf.b.6','');
+*/
+var i_5_nf_b_6__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+	this.parent(sheet,575,50,320,75,100,50,380,150);
+
+	this.mType = '5.nf.b.6_5';
+        this.ns = new NameSampler();
+
+        var a = 0;
+        var nb = 0;
+        var db = 0;
+        var n = 0;
+
+        while (n % db != 0 || n == 0 || nb >= db || a == db || a == nb)
+        {
+                a = Math.floor((Math.random()*18)+2);
+                nb = Math.floor((Math.random()*18)+2);
+                db = Math.floor((Math.random()*18)+2);
+                n = parseInt(a * nb);
+        }
+
+        var fractionb = new Fraction(nb,db);
+        var answer = new Fraction(parseInt(a*nb),db,true);
+
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' ' + this.ns.mVegetableOne + '. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne +  ' ate ' +  fractionb.getString() + ' of them. How many ' + this.ns.mVegetableOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + ' eat?');
+
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_4',5.2004,'5.nf.b.6','');
