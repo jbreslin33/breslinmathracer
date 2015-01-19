@@ -25,7 +25,7 @@ Extends: TextItemMixedNumber,
                         answer.reduce();
                 }
 
-                this.setQuestion(this.ns.mNameOne + ' controls a character in a video game that is ' + fractionA.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall + ' tall. ' + this.ns.mNameTwo + ' has a character that is ' + fractionB.getMixedNumber() + ' times as tall as the character of ' + this.ns.mNameOne + '. How tall is the character controlled by ' + this.ns.mNameTwo + '?');
+                this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around her block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How far does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' run per week?');
 
                 var answer = fractionA.multiply(fractionB);
 
