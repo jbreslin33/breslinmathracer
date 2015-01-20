@@ -129,10 +129,14 @@ public function update()
                 //set level_id
                 $_SESSION["item_attempt_id"] = $item_attempt_id;
 
+		$questionTxt = $_SESSION["item_question"];
+
+		$questionTxt = htmlentities($questionTxt, ENT_QUOTES);
+
 		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
         	$insert .= $_SESSION["item_transaction_code"];
-		$insert .= ", question = '"; 
-        	$insert .= $_SESSION["item_question"];
+		$insert .= ", question = '";
+        	$insert .= $questionTxt;
 		$insert .= "', answers = '"; 
         	$insert .= $_SESSION["item_answers"];
 		$insert .= "', user_answer = '"; 
