@@ -25,6 +25,7 @@ echo "<br>";
 
 echo '<table border=\"1\">';
         echo '<tr>';
+
         echo '<td> Start Time';
         echo '</td>';
         echo '<td> Item Type ';
@@ -35,6 +36,9 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Answers';
         echo '</td>';
+        echo '<td> User Answers';
+        echo '</td>';
+
         echo '</tr>';
 
 	$lastAnswerTime = '';
@@ -55,8 +59,10 @@ echo '<table border=\"1\">';
 		$transaction_code = $row[2];
 		$question = $row[3];
 		$answers = $row[4];
+		$user_answer = $row[4];
        	
 		echo '<tr>';
+
         	echo '<td>';
         	echo $start_time;
         	echo '</td>';
@@ -72,6 +78,10 @@ echo '<table border=\"1\">';
         	echo '<td>';
         	echo $answers;
         	echo '</td>';
+        	echo '<td>';
+        	echo $user_answer;
+        	echo '</td>';
+
         	echo '</tr>';
 	}
 
