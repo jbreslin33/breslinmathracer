@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>ITEM ATTEMPTS REAL TIME</title>
+        <title>ITEM ATTEMPTS REAL TIME -- UPDATES AUTOMAGICALLY EVERY 30 SECONDS</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 <meta http-equiv="refresh" content="30">
 </head>
@@ -16,8 +16,6 @@ session_start();
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 ?>
-<p><b> REAL TIME ITEM ATTEMPTS (Refreshes automatically every 30 seconds) </p></b>
-
 <?php
 
 echo '<table border=\"1\">';
