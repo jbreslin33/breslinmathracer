@@ -17,16 +17,9 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 
-$firstname = $_SESSION["first_name"];
-$lastname = $_SESSION["last_name"];
-echo '<p><b> ITEM ATTEMPTS: ';
-echo $firstname;
-echo ' ';
-echo $lastname;
-echo '</p></b>';
 
 ?>
-
+<p><b> ITEM ATTEMPTS: </p></b>
 
 <?php
 
@@ -52,9 +45,8 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where evaluations_attempts.user_id = ";
-	$query .= $_SESSION["user_id"];
-	$query .= " order by start_time desc;";
+	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  ";
+	$query .= " order by start_time desc LIMIT 20;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
