@@ -40,9 +40,6 @@ var Item = new Class(
 		//userAnswer
 		this.mUserAnswer = '';
 
-  		//answer pool
-                this.mAnswerPool = new Array();
-
 		this.mShapeArray   = new Array();
 		this.mQuestionShapeArray   = new Array();
        
