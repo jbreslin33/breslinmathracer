@@ -133,6 +133,10 @@ public function update()
         	$insert .= $_SESSION["item_transaction_code"];
 		$insert .= ", question = '"; 
         	$insert .= $_SESSION["item_question"];
+		$insert .= "', answers = '"; 
+        	$insert .= $_SESSION["item_answers"];
+		$insert .= "', user_answer = '"; 
+        	$insert .= $_SESSION["item_answer"];
 		$insert .= "' WHERE id = ";		
         	$insert .= $_SESSION["item_attempt_id"];
         	$insert .= ";";

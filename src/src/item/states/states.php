@@ -164,10 +164,18 @@ execute: function(item)
 
 exit: function(item)
 {
-	APPLICATION.log('question:' + item.mQuestion);
+	// strip out ampersands
 	var question = '' + item.mQuestion;
 	var res = question.replace(/&/g," || chr(38) || ");
-	APPLICATION.sendItemAttempt(item.mType,item.mStatus,res);
+
+	//get real answers from array
+	var answers = '';
+	for (i=0; i < item.mAnswerArray.length; i++)
+	{
+		answers = '' + answers + item.mAnswerArray[i];	
+	}
+
+	APPLICATION.sendItemAttempt(item.mType,item.mStatus,res,answers,item.mUserAnswer);
 }
 });
 
