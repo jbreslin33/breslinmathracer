@@ -62,22 +62,25 @@ echo '<table border=\"1\">';
 		$user_answer = $row[5];
        	
 		echo '<tr>';
-		$bcolor = 'White';
-		if ($transaction_code == 0)
+
+		$bcolor = 'Green';
+		if ($transaction_code == "0")
 		{
 			$bcolor = 'White';
 		}
-		if ($transaction_code == 1)
+		if ($transaction_code == "1")
 		{
 			$bcolor = 'Green';
 		}
-		if ($transaction_code == 2)
+		if ($transaction_code == "2")
 		{
 			$bcolor = 'Red';
 		}
 
 
-        	echo '<td bgcolor="$bcolor">';
+        	echo '<td bgcolor="';
+		echo $bcolor;
+		echo '">';
         	echo $start_time;
         	echo '</td>';
         	echo '<td>';
@@ -101,7 +104,7 @@ echo '<table border=\"1\">';
 
 	pg_free_result($result);
 	echo '</table>';
-echo '<font color="red">Jefferson Delorbe has been temporarily banned from leader board.</font>';
+echo '<font color="green">Jefferson Delorbe has been temporarily banned from leader board.</font>';
 ?>
 </body>
 </html>
