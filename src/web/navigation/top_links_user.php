@@ -10,6 +10,7 @@
 <li><a href="/web/stats/leaderboard_33.php">Room 33 Leader Board</a></li>
 <li><a href="/web/stats/leaderboard_34.php">Room 34 Leader Board</a></li>
 <li><a href="/web/stats/item_attempts.php">Item Attempts</a></li>
+<li><a href="/web/stats/item_attempts_realtime.php">Item Attempts RealTime</a></li>
 <li><a href="/web/update/update_standard_id_form.php">Update Standard ID</a></li>
 <li><a href="/web/update/update_level_form.php">Update Level</a></li>
 <li><a href="/web/update/update_username_form.php">Update Username</a></li>
