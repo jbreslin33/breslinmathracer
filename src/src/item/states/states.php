@@ -172,7 +172,14 @@ exit: function(item)
 	var answers = '';
 	for (i=0; i < item.mAnswerArray.length; i++)
 	{	
-		answers = '' + answers + ' OR ' + item.mAnswerArray[i];	
+		if (i == 0)
+		{
+			answers = '' + answers + item.mAnswerArray[i];	
+		}
+		else
+		{
+			answers = '' + answers + ' OR ' + item.mAnswerArray[i];	
+		}
 	}
 
 	APPLICATION.sendItemAttempt(item.mType,item.mStatus,res,answers,item.mUserAnswer);
