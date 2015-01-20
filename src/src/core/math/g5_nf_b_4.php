@@ -20,7 +20,7 @@ initialize: function(sheet)
         var fractionb = new Fraction(nb,db);
         var answer = new Fraction(parseInt(na*nb),parseInt(da*db),true);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Find the product: ' + fractiona.getString() + ' &times ' + fractionb.getString());
 }
 });
@@ -45,7 +45,7 @@ initialize: function(sheet)
         var fractionb = new Fraction(nb,db);
         var answer = new Fraction(parseInt(a*nb),db,true);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion('Find the product: ' + a + ' &times ' + fractionb.getString());
 }
 });
