@@ -166,7 +166,9 @@ exit: function(item)
 {
 	// strip out ampersands
 	var question = '' + item.mQuestion;
-	var res = question.replace(/&/g," || chr(38) || ");
+	var res = question.replace(/&/g,"");
+	res = res.replace(/#/g,"");
+	APPLICATION.log('mQuestion:' + res);
 
 	//get real answers from array
 	var answers = '';
