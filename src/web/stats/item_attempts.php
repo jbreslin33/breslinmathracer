@@ -16,10 +16,17 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
-echo "<br>";
+
+$firstname = $_SESSION["first_name"];
+$lastname = $_SESSION["last_name"];
+echo '<p><b> ITEM ATTEMPTS: ';
+echo $firstname;
+echo ' ';
+echo $lastname;
+echo '</p></b>';
+
 ?>
 
-<p><b> ROOM 33 LEADER BOARD: </p></b>
 
 <?php
 
@@ -77,7 +84,6 @@ echo '<table border=\"1\">';
 			$bcolor = 'Red';
 		}
 
-
         	echo '<td bgcolor="';
 		echo $bcolor;
 		echo '">';
@@ -109,7 +115,6 @@ echo '<table border=\"1\">';
 
 	pg_free_result($result);
 	echo '</table>';
-echo '<font color="green">Jefferson Delorbe has been temporarily banned from leader board.</font>';
 ?>
 </body>
 </html>
