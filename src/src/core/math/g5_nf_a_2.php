@@ -102,6 +102,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(bn,bd,false);
 
         var answer = fractionA.subtract(fractionB);
+	answer = new Fraction(4,1,true);  
 	answer.reduce();
 
         this.setAnswer('' + answer.getString(),0);

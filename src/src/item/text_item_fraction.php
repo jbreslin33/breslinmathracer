@@ -112,13 +112,28 @@ Extends: Item,
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
 						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
 						{
-							
 							var fraction = new Fraction(numerator,denominator,true);
 							numerator = fraction.mNumerator;	
 							denominator = fraction.mDenominator;	
+							var d = parseInt(denominator);
+							if (d == 1)
+							{
+								var answer = '' + numerator;			
+							}
+							else
+							{
+								var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
+							}
+							APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 						}
-						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
+						else
+						{
+							var fraction = new Fraction(numerator,denominator,true);
+							numerator = fraction.mNumerator;	
+							denominator = fraction.mDenominator;	
+							var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
+							APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
+						}
 					}
 				}
 			}
@@ -137,14 +152,30 @@ Extends: Item,
 					{
 						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value 	
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value	
-						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
+				 		if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
                                                 {
                                                         var fraction = new Fraction(numerator,denominator,true);
                                                         numerator = fraction.mNumerator;
                                                         denominator = fraction.mDenominator;
+                                                        var d = parseInt(denominator);
+                                                        if (d == 1)
+                                                        {
+                                                                var answer = '' + numerator;                                                     
+                                                        }
+                                                        else
+                                                        {
+                                                                var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';
+                                                        }
+                                                        APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer);
                                                 }
-						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
+                                                else
+                                                {
+                                                        var fraction = new Fraction(numerator,denominator,true);
+                                                        numerator = fraction.mNumerator;        
+                                                        denominator = fraction.mDenominator;    
+                                                        var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';
+                                                        APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer);
+                                                }
 					}
 				}
 			}
