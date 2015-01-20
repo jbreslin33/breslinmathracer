@@ -26,7 +26,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo '<table border=\"1\">';
         echo '<tr>';
 
-        echo '<td> Start Time';
+        echo '<td> Start Time and Name';
         echo '</td>';
         echo '<td> Item Type ';
         echo '</td>';
@@ -45,7 +45,7 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  ";
+	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id ";
 	$query .= " order by start_time desc LIMIT 20;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
@@ -59,6 +59,8 @@ echo '<table border=\"1\">';
 		$question = $row[3];
 		$answers = $row[4];
 		$user_answer = $row[5];
+		$first_name = $row[6];
+		$last_name = $row[7];
        	
 		echo '<tr>';
 
@@ -80,6 +82,8 @@ echo '<table border=\"1\">';
 		echo $bcolor;
 		echo '">';
         	echo $start_time;
+        	echo $first_name;
+        	echo $last_name;
         	echo '</td>';
         	echo '<td bgcolor="';
 		echo $bcolor;
