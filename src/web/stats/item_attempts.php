@@ -59,7 +59,7 @@ echo '<table border=\"1\">';
 		$transaction_code = $row[2];
 		$question = $row[3];
 		$answers = $row[4];
-		$user_answer = $row[4];
+		$user_answer = $row[5];
        	
 		echo '<tr>';
 
