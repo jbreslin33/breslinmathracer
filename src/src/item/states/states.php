@@ -171,8 +171,8 @@ exit: function(item)
 	//get real answers from array
 	var answers = '';
 	for (i=0; i < item.mAnswerArray.length; i++)
-	{
-		answers = '' + answers + item.mAnswerArray[i];	
+	{	
+		answers = '' + answers + ' OR ' + item.mAnswerArray[i];	
 	}
 
 	APPLICATION.sendItemAttempt(item.mType,item.mStatus,res,answers,item.mUserAnswer);
