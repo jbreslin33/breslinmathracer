@@ -62,8 +62,22 @@ echo '<table border=\"1\">';
 		$user_answer = $row[5];
        	
 		echo '<tr>';
+		$bcolor = 'White';
+		if ($transaction_code == 0)
+		{
+			$bcolor = 'White';
+		}
+		if ($transaction_code == 1)
+		{
+			$bcolor = 'Green';
+		}
+		if ($transaction_code == 2)
+		{
+			$bcolor = 'Red';
+		}
 
-        	echo '<td>';
+
+        	echo '<td bgcolor="$bcolor">';
         	echo $start_time;
         	echo '</td>';
         	echo '<td>';
