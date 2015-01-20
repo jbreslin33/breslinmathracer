@@ -26,10 +26,15 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo '<table border=\"1\">';
         echo '<tr>';
 
-        echo '<td> Start Time and Name';
+        echo '<td> Start Time';
         echo '</td>';
+        
+	echo '<td> Name';
+        echo '</td>';
+
         echo '<td> Item Type ';
         echo '</td>';
+
         echo '<td> Question';
         echo '</td>';
         echo '<td> Answers';
@@ -82,24 +87,34 @@ echo '<table border=\"1\">';
 		echo $bcolor;
 		echo '">';
         	echo $start_time;
+        	echo '</td>';
+        	
+		echo '<td bgcolor="';
+		echo $bcolor;
+		echo '">';
         	echo $first_name;
+        	echo " ";
         	echo $last_name;
         	echo '</td>';
+
         	echo '<td bgcolor="';
 		echo $bcolor;
 		echo '">';
         	echo $item_types_id;
         	echo '</td>';
+
         	echo '<td bgcolor="';
 		echo $bcolor;
 		echo '"><p>';
         	echo $question;
         	echo '</p></td>';
+
         	echo '<td bgcolor="';
 		echo $bcolor;
 		echo '">';
         	echo $answers;
         	echo '</td>';
+
         	echo '<td bgcolor="';
 		echo $bcolor;
 		echo '">';
