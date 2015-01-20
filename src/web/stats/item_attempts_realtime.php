@@ -3,8 +3,9 @@
 <html>
 
 <head>
-        <title>LEADER BOARD</title>
+        <title>ITEM ATTEMPTS REAL TIME</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
+<meta http-equiv="refresh" content="30">
 </head>
 
 <body>
@@ -14,12 +15,8 @@ session_start();
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
-
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
-
-
 ?>
-<p><b> ITEM ATTEMPTS: </p></b>
+<p><b> REAL TIME ITEM ATTEMPTS (Refreshes automatically every 30 seconds) </p></b>
 
 <?php
 
