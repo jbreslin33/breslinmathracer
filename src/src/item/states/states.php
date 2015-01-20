@@ -164,12 +164,11 @@ execute: function(item)
 
 exit: function(item)
 {
-	// strip out ampersands
+	// strip out problem chars from question
 	var question = '' + item.mQuestion;
-	var res = question.replace(/&/g,"");
-	res = res.replace(/#/g,"");
-	APPLICATION.log('mQuestion:' + res);
-
+	question = question.replace(/&/g,"");
+	question = question.replace(/#/g,"");
+	
 	//get real answers from array
 	var answers = '';
 	for (i=0; i < item.mAnswerArray.length; i++)
@@ -183,8 +182,16 @@ exit: function(item)
 			answers = '' + answers + ' OR ' + item.mAnswerArray[i];	
 		}
 	}
+	// strip out problem chars from answer 
+	answers = answers.replace(/&/g,"");
+	answers = answers.replace(/#/g,"");
+	
+	// strip out problem chars from answer 
+	var answer = '' + item.mUserAnswer;
+	answer = answer.replace(/&/g,"");
+	answer = answer.replace(/#/g,"");
 
-	APPLICATION.sendItemAttempt(item.mType,item.mStatus,res,answers,item.mUserAnswer);
+	APPLICATION.sendItemAttempt(item.mType,item.mStatus,question,answers,answer);
 }
 });
 

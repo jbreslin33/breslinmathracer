@@ -130,17 +130,22 @@ public function update()
                 $_SESSION["item_attempt_id"] = $item_attempt_id;
 
 		$questionTxt = $_SESSION["item_question"];
-
 		$questionTxt = htmlentities($questionTxt, ENT_QUOTES);
+		
+		$answersTxt = $_SESSION["item_answers"];
+		$answersTxt = htmlentities($answersTxt, ENT_QUOTES);
+		
+		$answerTxt = $_SESSION["item_answer"];
+		$answerTxt = htmlentities($answerTxt, ENT_QUOTES);
 
 		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
         	$insert .= $_SESSION["item_transaction_code"];
 		$insert .= ", question = '";
         	$insert .= $questionTxt;
 		$insert .= "', answers = '"; 
-        	$insert .= $_SESSION["item_answers"];
+        	$insert .= $answersTxt;
 		$insert .= "', user_answer = '"; 
-        	$insert .= $_SESSION["item_answer"];
+        	$insert .= $answerTxt;
 		$insert .= "' WHERE id = ";		
         	$insert .= $_SESSION["item_attempt_id"];
         	$insert .= ";";
