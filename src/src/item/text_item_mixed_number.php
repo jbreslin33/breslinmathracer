@@ -264,6 +264,8 @@ Extends: Item,
  */       
 	showCorrectAnswer: function()
         {
+		this.mCorrectAnswerLabel.setSize(150,200);
+                this.mCorrectAnswerLabel.setPosition(425,250);
                 if (this.mCorrectAnswerLabel)
                 {
                         var answer = '';
