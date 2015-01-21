@@ -122,6 +122,7 @@ Extends: Item,
 						var wholenumber = APPLICATION.mGame.mSheet.getItem().mWholeNumberTextBox.mMesh.value;	
 						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value;	
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value;	
+						var fraction = 0;
 						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
 						{
 							var t = parseInt(denominator*wholenumber); 
@@ -129,11 +130,11 @@ Extends: Item,
 							var tn = parseInt( t + n);  
 							numerator = tn;		
 
-							var fraction = new Fraction(numerator,denominator,true);
+							fraction = new Fraction(numerator,denominator,true);
 							numerator = fraction.mNumerator;	
 							denominator = fraction.mDenominator;	
 						}
-						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
+						answer = fraction.getMixedNumber(); 
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 					}
 				}
@@ -154,19 +155,20 @@ Extends: Item,
 						var wholenumber = APPLICATION.mGame.mSheet.getItem().mWholeNumberTextBox.mMesh.value;	
 						var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value;	
 						var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value;	
-						if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
+   						var fraction = 0;
+                                                if (APPLICATION.mGame.mSheet.getItem().mAutoReduce)
                                                 {
-							var t = parseInt(denominator*wholenumber); 
-							var n = parseInt(numerator); 
-							var tn = parseInt( t + n);  
-							numerator = tn;		
+                                                        var t = parseInt(denominator*wholenumber);
+                                                        var n = parseInt(numerator);
+                                                        var tn = parseInt( t + n);
+                                                        numerator = tn;
 
-                                                        var fraction = new Fraction(numerator,denominator,true);
-                                                        numerator = fraction.mNumerator;
-                                                        denominator = fraction.mDenominator;
+                                                        fraction = new Fraction(numerator,denominator,true);
+                                                        numerator = fraction.mNumerator;      
+                                                        denominator = fraction.mDenominator;     
                                                 }
-						var answer = '<sup>' + numerator + '</sup>&frasl;<sub>' + denominator + '</sub>';			
-						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
+                                                answer = fraction.getMixedNumber();                 
+                                                APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer);
 					}
 				}
 			}
