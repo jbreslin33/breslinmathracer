@@ -248,7 +248,7 @@ Extends: Item,
                 	this.mUserAnswerLabel.setVisibility(false);
 		}
 	}, 
-
+/*
         showCorrectAnswer: function()
         {
 		if (this.mCorrectAnswerLabel)
@@ -258,6 +258,29 @@ Extends: Item,
 		}
 		this.hideAnswerInputs();
 		this.showUserAnswer();
+        },
+ */       
+	showCorrectAnswer: function()
+        {
+                if (this.mCorrectAnswerLabel)
+                {
+                        var answer = '';
+                        for (i=0; i < this.mAnswerArray.length; i++)
+                        {
+                                if (i == 0)
+                                {
+                                        answer = answer + '' + this.getAnswer();
+                                }
+                                else
+                                {
+                                        answer = answer + ' OR ' + this.getAnswer(i);
+                                }
+                        }
+                        this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + answer);
+                        this.mCorrectAnswerLabel.setVisibility(true);
+                }
+                this.hideAnswerInputs();
+                this.showUserAnswer();
         },
 
         hideCorrectAnswer: function()
