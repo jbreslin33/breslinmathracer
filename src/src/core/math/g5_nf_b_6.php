@@ -17,7 +17,7 @@ Extends: TextItemMixedNumber,
 
                 while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
                 {
-                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mNumerator   = Math.floor(Math.random()*18+2);
                         fractionA.mDenominator = Math.floor(Math.random()*8+2);
                         fractionB.mNumerator   = Math.floor(Math.random()*8+2);
                         fractionB.mDenominator = Math.floor(Math.random()*8+2);
@@ -25,13 +25,15 @@ Extends: TextItemMixedNumber,
                         answer.reduce();
                 }
 
-                this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around her block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How far does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' run per week?');
+                this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around her block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How many ' + this.ns.mDistanceIncrementLarge + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run per week?');
 
-                var answer = fractionA.multiply(fractionB);
+		var weekday = new Fraction(5,1,false);
+                var fraction = fractionA.multiply(fractionB);
+		answer = fraction.multiply(weekday);
 
                 this.setAnswer('' + answer.getMixedNumber(),0);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall,1);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementSmall),2);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementLarge,1);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementLarge),2);
         }
 });
 
