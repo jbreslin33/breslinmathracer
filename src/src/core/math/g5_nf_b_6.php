@@ -193,7 +193,13 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('' + this.ns.mNameOne + ' is playing in a rectangular sandbox that has a length of ' + fractionA.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' and a width of ' + fractionB.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + '. What is the area in ' + this.ns.mDistanceIncrementMedium + ' squared?');
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium,0);
+                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium,1);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' squared',3);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium) + ' squared',4);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' sq',5);
+                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium) + ' sq',6);
         }
 });
 
