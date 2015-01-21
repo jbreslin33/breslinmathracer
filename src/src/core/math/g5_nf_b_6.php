@@ -1,5 +1,42 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_9',5.2009,'5.nf.b.6','');
+*/
+var i_5_nf_b_6__9 = new Class(
+{
+Extends: TextItemMixedNumber,
+        initialize: function(sheet)
+        {
+                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+                this.mType = '5.nf.b.6_9';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
+                var fractionC = new Fraction(1,1,false);
+                var answer = fractionA.multiply(fractionB);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1)
+                {
+                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator   = Math.floor(Math.random()*28+2);
+                        fractionB.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionC.mNumerator   = Math.floor(Math.random()*8+2);
+                        answer = fractionA.multiply(fractionB);
+                        answer = fractionC.multiply(answer);
+                        answer.reduce();
+                }
+
+                this.setQuestion('Find the Product: ' + fractionA.getString() + ' &times ' + fractionB.getString() + ' &times ' + fractionC.mNumerator);
+                this.setAnswer('' + answer.getMixedNumber(),0);
+        }
+});
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_8',5.2008,'5.nf.b.6','');
 */
 var i_5_nf_b_6__8 = new Class(
