@@ -15,7 +15,9 @@ Extends: TextItemMixedNumber,
                 var fractionA = new Fraction(1,1,false);
                 var fractionB = new Fraction(1,1,false);
 
-                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
+		var answer = new Fraction(1,1,true);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1 )
                 {
                         fractionA.mNumerator   = Math.floor(Math.random()*18+2);
                         fractionA.mDenominator = Math.floor(Math.random()*8+2);
@@ -23,13 +25,14 @@ Extends: TextItemMixedNumber,
                         fractionB.mDenominator = Math.floor(Math.random()*8+2);
                         answer = fractionA.multiply(fractionB);
                         answer.reduce();
+
+			var weekday = new Fraction(5,1,false);
+                	var fraction = fractionA.multiply(fractionB);
+			answer = fraction.multiply(weekday);
+			answer.reduce();
                 }
-
-                this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around her block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How many ' + this.ns.mDistanceIncrementLarge + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run per week?');
-
-		var weekday = new Fraction(5,1,false);
-                var fraction = fractionA.multiply(fractionB);
-		answer = fraction.multiply(weekday);
+                
+		this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around her block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How many ' + this.ns.mDistanceIncrementLarge + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run per week?');
 
                 this.setAnswer('' + answer.getMixedNumber(),0);
                 this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementLarge,1);
@@ -179,7 +182,7 @@ Extends: TextItemMixedNumber,
                 var fractionB = new Fraction(1,1,false);
                 var answer = fractionA.multiply(fractionB);
 
-                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator)
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1)
                 {
                         fractionA.mNumerator   = Math.floor(Math.random()*8+2);
                         fractionA.mDenominator = Math.floor(Math.random()*8+2);
