@@ -52,7 +52,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the perimeter of a rectangle that has a length of ' + length +  ' ' + this.units + ' and a width of ' + width + ' ' + this.units + '?');
-            this.setAnswer(varC,0);   
+            this.setAnswer('' + varC,0);   
         
         },
 
@@ -116,7 +116,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the perimeter of a square that has sides ' + varA +  ' ' + this.units + ' in lenth?');
-            this.setAnswer(varC,0);   
+            this.setAnswer('' + varC,0);   
         
         },
 
@@ -180,7 +180,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the length of a side of a square that has a perimeter of ' + varC +  ' ' + this.units + ' ?');
-            this.setAnswer(varA,0);   
+            this.setAnswer('' + varA,0);   
         
         },
 
@@ -264,7 +264,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the length of a rectangle that has a width of ' + width +  ' ' + this.units + ' and a perimeter of ' + varC + ' ' + this.units + '?');
-            this.setAnswer(length,0);   
+            this.setAnswer('' + length,0);   
         
         },
 
@@ -348,7 +348,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the width of a rectangle that has a length of ' + length +  ' ' + this.units + ' and a perimeter of ' + varC + ' ' + this.units + '?');
-            this.setAnswer(width,0);   
+            this.setAnswer('' + width,0);   
         
         },
 
@@ -432,7 +432,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the area of a rectangle that has a length of ' + length +  ' ' + this.units + ' and a width of ' + width + ' ' + this.units + '?');
-            this.setAnswer(varC,0);   
+            this.setAnswer('' + varC,0);   
         
         },
 
@@ -496,7 +496,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the area of a square that has sides ' + varA +  ' ' + this.units + ' in lenth?');
-            this.setAnswer(varC,0);   
+            this.setAnswer('' + varC,0);   
         
         },
 
@@ -560,7 +560,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the length of a side of a square that has an area of ' + varC +  ' square ' + this.units + ' ?');
-            this.setAnswer(varA,0);   
+            this.setAnswer('' + varA,0);   
         
         },
 
@@ -644,7 +644,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the length of a rectangle that has a width of ' + width +  ' ' + this.units + ' and an area of ' + varC + ' square ' + this.units + '?');
-            this.setAnswer(varB,0);   
+            this.setAnswer('' + varB,0);   
         
         },
 
@@ -728,7 +728,7 @@ Extends: TextItem,
 				this.units = 'inches';
 								                       
 				this.setQuestion('What is the width of a rectangle that has a length of ' + length +  ' ' + this.units + ' and an area of ' + varC + ' square ' + this.units + '?');
-            this.setAnswer(varB,0);   
+            this.setAnswer('' + varB,0);   
         
         },
 
