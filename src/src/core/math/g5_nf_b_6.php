@@ -1,5 +1,36 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_12',5.2012,'5.nf.b.6','');
+*/
+var i_5_nf_b_6__12 = new Class(
+{
+Extends: TextItemMixedNumber,
+        initialize: function(sheet)
+        {
+                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+                this.mType = '5.nf.b.6_12';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
+                var answer = fractionA.multiply(fractionB);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1)
+                {
+                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator   = Math.floor(Math.random()*8+2);
+                        answer = fractionA.multiply(fractionB);
+                        answer.reduce();
+                }
+
+                this.setQuestion('' + this.ns.mNameOne + ' is making a dessert. The recipe calls for ' + fractionA.getMixedNumber() + ' tablespoons of sugar per serving. How many tablespoons would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' need for ' + fractionB.mNumerator + ' servings?');
+                this.setAnswer('' + answer.getMixedNumber(),0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_11',5.2011,'5.nf.b.6','');
 */
 var i_5_nf_b_6__11 = new Class(
