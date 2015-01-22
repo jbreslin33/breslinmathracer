@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_11',5.2011,'5.nf.b.6','');
+*/
+var i_5_nf_b_6__11 = new Class(
+{
+Extends: TextItemMixedNumber,
+        initialize: function(sheet)
+        {
+                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+                this.mType = '5.nf.b.6_11';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
+                var fractionC = new Fraction(1,1,false);
+                var answer = fractionA.multiply(fractionB);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionB.mNumerator % fractionB.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1)
+                {
+                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator   = Math.floor(Math.random()*28+2);
+                        fractionB.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionC.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionC.mDenominator = Math.floor(Math.random()*8+2);
+                        answer = fractionB.add(fractionC);
+                        answer = fractionA.multiply(answer);
+                        answer.reduce();
+                }
+
+                this.setQuestion('Find the Product: ' + fractionA.getMixedNumber() + '(' + fractionB.getString() + ' + ' + fractionC.getString() + ')');
+                this.setAnswer('' + answer.getMixedNumber(),0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.6_10',5.2010,'5.nf.b.6','');
 */
 var i_5_nf_b_6__10 = new Class(
@@ -9,7 +45,7 @@ Extends: TextItemMixedNumber,
         {
                 this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-                this.mType = '5.nf.b.6_9';
+                this.mType = '5.nf.b.6_10';
                 this.ns = new NameSampler();
 
                 var fractionA = new Fraction(1,1,false);
