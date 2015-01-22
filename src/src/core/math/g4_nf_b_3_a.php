@@ -27,7 +27,7 @@ initialize: function(sheet)
         var bc = new Fraction(b,c);
         var answer = new Fraction(n,c);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion(ac.getString() + '+' + bc.getString() + '=');
 }
 });
@@ -54,7 +54,7 @@ initialize: function(sheet)
         var bc = new Fraction(b,c);
         var answer = new Fraction(n,c);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion(ac.getString() + '-' + bc.getString() + '=');
 }
 });
@@ -85,7 +85,7 @@ initialize: function(sheet)
         var cd = new Fraction(c,d);
         var answer = new Fraction(n,d);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion(ad.getString() + '+' + bd.getString() + '+' + cd.getString() + '=');
 }
 });
@@ -114,7 +114,7 @@ initialize: function(sheet)
         var cd = new Fraction(c,d);
         var answer = new Fraction(n,d);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion(ad.getString() + '-' + bd.getString() + '+' + cd.getString() + '=');
 }
 });
@@ -143,7 +143,7 @@ initialize: function(sheet)
         var cd = new Fraction(c,d);
         var answer = new Fraction(n,d);
 
-        this.setAnswer(answer.getString(),0);
+        this.setAnswer('' + answer.getString(),0);
         this.setQuestion(ad.getString() + '+' + bd.getString() + '-' + cd.getString() + '=');
 }
 });
