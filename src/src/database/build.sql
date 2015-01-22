@@ -153,7 +153,7 @@ CREATE TABLE users (
         room_id integer NOT NULL default 0,
         team_id integer NOT NULL default 0,
         banned_id integer NOT NULL default 0,
-
+        work_it_id text,
 	PRIMARY KEY (id),	
 	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id)
 );
