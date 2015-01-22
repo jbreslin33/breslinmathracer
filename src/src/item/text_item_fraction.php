@@ -16,7 +16,7 @@ Extends: Item,
 		}
 		else
 		{
-			this.mAutoReduce = false;
+			//this.mAutoReduce = false;
 		}
 
 		if (qw == '')
