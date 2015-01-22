@@ -456,7 +456,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the fractional value of the red digit in the number ' + this.hundredthousands + this.tenthousands + this.thousands + ',' + this.hundreds + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + '<span style="color: #f00;">' + this.tenthousandths + '</span>' + this.hundredthousandths + ' Do not simplify.');
 
-        var answer = new Fraction(this.tenthousandths,10000);
+        var answer = new Fraction(this.tenthousandths,10000,true);
 
         this.setAnswer('' + answer.getString(),0);
 }

@@ -8,10 +8,15 @@ var Fraction = new Class(
 		this.mMixedNumerator = 0;
 		this.mGCD = 0;
 
-		if (reduce)
+		if (!reduce)
 		{
 			this.reduce();
 		}
+		else
+		{
+			this.reduce();
+		}
+		
         },
 
 	reduce: function()
