@@ -25,8 +25,8 @@ Extends: TextItemMixedNumber,
                         fractionB.mDenominator = Math.floor(Math.random()*8+2);
                         fractionC.mNumerator   = Math.floor(Math.random()*8+2);
                         fractionC.mDenominator = Math.floor(Math.random()*8+2);
-                        answer = fractionA.multiply(fractionB);
-                        answer = fractionC.multiply(answer);
+                        answer = fractionB.add(fractionC);
+                        answer = fractionA.multiply(answer);
                         answer.reduce();
                 }
 
