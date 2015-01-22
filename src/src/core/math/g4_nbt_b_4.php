@@ -40,7 +40,7 @@ Extends: TextItem,
 				varC = parseInt(varA + varB);
 			                       
 				this.setQuestion('' + varA + ' + ' +  varB + ' = ');
-            this.setAnswer(varC,0);
+            this.setAnswer('' + varC,0);
 
 				this.mQuestionLabel.setPosition(330, 120);
 				this.mQuestionLabel.setSize(200, 100);      
@@ -100,7 +100,7 @@ Extends: TextItem,
 
 			                       
 				this.setQuestion('' + big + ' - ' +  small + ' = ');
-            this.setAnswer(varC,0);    
+            this.setAnswer('' + varC,0);    
 
 				this.mQuestionLabel.setPosition(330, 120);
 				this.mQuestionLabel.setSize(200, 100);               

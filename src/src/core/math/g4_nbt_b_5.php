@@ -20,7 +20,7 @@ initialize: function(sheet)
 	this.c = parseInt(this.a * this.b);
 
         this.setQuestion('' + this.a + '*' +  this.b + '=');
-        this.setAnswer(this.c,0);
+        this.setAnswer('' + this.c,0);
 }
 });
 
@@ -45,7 +45,7 @@ initialize: function(sheet)
 	this.c = parseInt(this.a * this.b);
 
         this.setQuestion('' + this.a + '*' +  this.b + '=');
-        this.setAnswer(this.c,0);
+        this.setAnswer('' + this.c,0);
 }
 });
 
@@ -70,7 +70,7 @@ initialize: function(sheet)
 	this.c = parseInt(this.a * this.b);
 
         this.setQuestion('' + this.a + '*' +  this.b + '=');
-        this.setAnswer(this.c,0);
+        this.setAnswer('' + this.c,0);
 }
 });
 
@@ -95,7 +95,7 @@ initialize: function(sheet)
 	this.c = parseInt(this.a * this.b);
 
         this.setQuestion('' + this.a + '*' +  this.b + '=');
-        this.setAnswer(this.c,0);
+        this.setAnswer('' + this.c,0);
 }
 });
 
@@ -120,7 +120,7 @@ initialize: function(sheet)
 	this.c = parseInt(this.a * this.b);
 
 	this.setQuestion('' + this.a + '*' +  this.b + '=');
-        this.setAnswer(this.c,0);             
+        this.setAnswer('' + this.c,0);             
 }
 });
 

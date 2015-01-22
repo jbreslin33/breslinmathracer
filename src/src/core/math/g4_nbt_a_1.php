@@ -40,7 +40,7 @@ Extends: TextItem,
 		number = '' + thousands + ',' + hundreds + tens + ones;
                   
 		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
                 //this.mButtonA.setAnswer(a);
                 //this.mButtonB.setAnswer(b);
@@ -90,7 +90,7 @@ Extends: TextItem,
 		number = '' + thousands + ',' + hundreds + tens + ones;
                   
 		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -136,7 +136,7 @@ Extends: TextItem,
 		number = '' + thousands + ',' + hundreds + tens + ones;
                   
 		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -182,7 +182,7 @@ Extends: TextItem,
 		number = '' + thousands + ',' + hundreds + tens + ones;
                   
 		this.setQuestion('In the number ' + number + ' which digit is in the ' + place + ' column?');
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -212,7 +212,7 @@ Extends: TextItem,
 		answer = varA * 10;
                   
 		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -243,7 +243,7 @@ Extends: TextItem,
 		answer = varA * 100;
                   
 		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -273,7 +273,7 @@ Extends: TextItem,
 		answer = varA * 1000;
                   
 		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -303,7 +303,7 @@ Extends: TextItem,
 		answer = varA * 10;
                   
 		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -333,7 +333,7 @@ Extends: TextItem,
 		answer = varA * 100;
                   
 		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
@@ -363,7 +363,7 @@ Extends: TextItem,
 		answer = varA * 10;
                   
 		this.setQuestion('' + varA + ' ' + varB + ' = ? ' + varC);
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
         }
 });
