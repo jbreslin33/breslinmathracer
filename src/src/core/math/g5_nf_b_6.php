@@ -25,7 +25,7 @@ Extends: TextItemMixedNumber,
                         answer.reduce();
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' is making a dessert. The recipe calls for ' + fractionA.getMixedNumber() + ' tablespoons of sugar per serving. How many tablespoons would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' need for ' + fractionB.mNumerator + ' servings?');
+                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. tablespoons of sugar per serving. How many tablespoons would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' need for ' + fractionB.mNumerator + ' servings?');
                 this.setAnswer('' + answer.getMixedNumber(),0);
         }
 });
