@@ -111,11 +111,11 @@ Extends: ThreeButtonItem,
                 // How do you write this number using digits?
 		// How do you write this number using words?  
 		this.setQuestion('What is ' + words + ' in number form?');
-                this.setAnswer(digits,0);
+                this.setAnswer('' + digits,0);
 
-                this.mButtonA.setAnswer(digits);
-                this.mButtonB.setAnswer(digits1);
-                this.mButtonC.setAnswer(digits2);
+                this.mButtonA.setAnswer('' + digits);
+                this.mButtonB.setAnswer('' + digits1);
+                this.mButtonC.setAnswer('' + digits2);
                 this.shuffle(1);
         }
 });
@@ -268,11 +268,11 @@ Extends: ThreeButtonItem,
                 // How do you write this number using digits?
 		// How do you write this number using words?  
 		this.setQuestion('What is ' + digits + ' in word form?');
-                this.setAnswer(words,0);
+                this.setAnswer('' + words,0);
 
-                this.mButtonA.setAnswer(words);
-                this.mButtonB.setAnswer(words1);
-                this.mButtonC.setAnswer(words2);
+                this.mButtonA.setAnswer('' + words);
+                this.mButtonB.setAnswer('' + words1);
+                this.mButtonC.setAnswer('' + words2);
                 this.shuffle(1);
 
 		this.mButtonA.setSize(165,100);
@@ -368,18 +368,18 @@ Extends: ThreeButtonItem,
             }
 	   
 		this.setQuestion('What is ' + number + ' in expanded form?');
-                this.setAnswer(expanded[0],0);
+                this.setAnswer('' + expanded[0],0);
 
-		this.mButtonA.setAnswer(expanded[0]);
+		this.mButtonA.setAnswer('' + expanded[0]);
 		rand = 1 + Math.floor((Math.random()*6));
-                this.mButtonB.setAnswer(expanded[rand]);
+                this.mButtonB.setAnswer('' + expanded[rand]);
 
 		do {
     			rand2 = 1 + Math.floor((Math.random()*6));
 		}
 		while (rand == rand2);		
 
-                this.mButtonC.setAnswer(expanded[rand2]);
+                this.mButtonC.setAnswer('' + expanded[rand2]);
 
 		this.mButtonA.setSize(175,100);
                 this.mButtonB.setSize(175,100);
@@ -446,18 +446,18 @@ Extends: ThreeButtonItem,
 		//number[6] = '' + thousands + '000' + ',' + hundreds + tens + ones;
                   
 		this.setQuestion('What is ' + expanded + ' in number form?');
-                this.setAnswer(number[0],0);
+                this.setAnswer('' + number[0],0);
 
-		this.mButtonA.setAnswer(number[0]);
+		this.mButtonA.setAnswer('' + number[0]);
 		rand = 1 + Math.floor((Math.random()*5));
-                this.mButtonB.setAnswer(number[rand]);
+                this.mButtonB.setAnswer('' + number[rand]);
 
 		do {
     			rand2 = 1 + Math.floor((Math.random()*5));
 		}
 		while (rand == rand2);		
 
-                this.mButtonC.setAnswer(number[rand2]);
+                this.mButtonC.setAnswer('' + number[rand2]);
 
 		this.mButtonA.setSize(165,100);
                 this.mButtonB.setSize(165,100);
@@ -528,7 +528,7 @@ Extends: ThreeButtonItem,
 		else
 			answer = 'equal to';
 
-                this.setAnswer(answer,0);
+                this.setAnswer('' + answer,0);
 
 		this.mButtonA.setAnswer('greater than');
                 this.mButtonB.setAnswer('less than');
