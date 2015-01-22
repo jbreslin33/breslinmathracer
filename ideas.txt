@@ -1,0 +1,53 @@
+ideas
+------------------
+you fight when you come into contact with another player.
+
+if it was zombie tag. i
+basic rules..
+pros: no one is ever out, math is only done in battle and not when moving.
+join in middle your it.
+game auto restarts when everyone is caught.
+maybe be able to say no to a battle....
+only ask math when you battle someone...
+this would eliminate having to do math and move at same time.
+you can only fight one person at a time....
+battle results obviously should be saved in db. 
+you will still get belts like other game...
+last person with no defeats is the champion of that game....
+if you join late you are not eligible for champion but you can still battle.
+ability to send canned messages.....
+play up the belts because some kids will have trouble winning battles but will get prestige by gaining belts....
+when you gain belts and/or? win battles do you gain treasure or xp points to buy armor or weapons?????
+battle: use dnd stats
+ac = dexterity/belt--level.........
+str = damage
+add in randomness so battles are random. so i need a 2 seconds to hit base chance but then factor in ac dexterity and a random roll.
+
+
+getting questions to clients???
+1: on collision send colliding clients a sendQuestion function or a prepare for battle message?.  
+---should clients get all questions at once? or should they get one at time?
+all at once???
+
+tell them wrong then show correct answer...then ask them same question 3 times. then new one, then same.... 
+
+you should have a learning question, which is the new one. this should be asked 50% of the time. Then 50% of the time you should ask already passed questions.
+
+
+how do you determine that a question has been passed. answered in less then 2 seconds 100 times in a row.
+
+send all at once?? pros: less db reading....client will get questions on login and then only get new ones if he passes a level....
+speed advantage and accurate timing...
+methods: could i just send an id?
+
+
+
+
+cons: update for enemy? 
+how will we keep score of battle without sending back and forth with server? reading is easy anyway it's just writing that's expensive so as long as we are not writing alot...
+can i record every answer? 
+you should ony write at the end of the battle.....?or better yet end of game????
+this way game is responsible for keeping all data.....So that being said I should be able to simply load all questions in a vector in game....store level of client in var on server....then pick random questions from lower levels for 50% of questions.... other 50 is again the current level we are tryinhg to master... 
+
+1: get levels for clients...
+
