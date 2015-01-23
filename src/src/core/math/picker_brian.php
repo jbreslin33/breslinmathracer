@@ -132,7 +132,8 @@ getItem: function(id)
 	{
 		return new i_4_nbt_b_5__5(this.mSheet);
 	}
-
+	
+	//4.nbt.b.5
   if (id == '4.nbt.b.6_1')
 	{
 		return new i_4_nbt_b_6__1(this.mSheet);
@@ -144,6 +145,26 @@ getItem: function(id)
   if (id == '4.nbt.b.6_3')
 	{
 		return new i_4_nbt_b_6__3(this.mSheet);
+	}
+  if (id == '4.nbt.b.6_4')
+	{
+		return new i_4_nbt_b_6__4(this.mSheet);
+	}
+  if (id == '4.nbt.b.6_5')
+	{
+		return new i_4_nbt_b_6__5(this.mSheet);
+	}
+  if (id == '4.nbt.b.6_6')
+	{
+		return new i_4_nbt_b_6__6(this.mSheet);
+	}
+  if (id == '4.nbt.b.6_7')
+	{
+		return new i_4_nbt_b_6__7(this.mSheet);
+	}
+  if (id == '4.nbt.b.6_8')
+	{
+		return new i_4_nbt_b_6__8(this.mSheet);
 	}
 
   if (id == '4.nf.a.1_1')
