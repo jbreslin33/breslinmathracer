@@ -69,7 +69,7 @@ initialize: function(sheet)
         this.b = Math.floor(Math.random()*8999)+1000;
 	this.c = parseInt(this.a * this.b);
 
-        this.setQuestion('' + this.a + ' & times ' +  this.b + '=');
+        this.setQuestion('' + this.a + ' &times ' +  this.b + '=');
         this.setAnswer('' + this.c,0);
 }
 });
