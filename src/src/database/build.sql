@@ -207,13 +207,12 @@ CREATE TABLE item_types (
 
 CREATE TABLE remediate (
         id SERIAL,
-	item_types_id text NOT NULL,
-	user_id integer NOT NULL,
+        core_standards_id text NOT NULL,
+        user_id integer NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+        FOREIGN KEY (core_standards_id) REFERENCES core_standards(id),
         FOREIGN KEY (user_id) REFERENCES users(id)
 );
-
 
 CREATE TABLE finer_types_item_types (
 	id SERIAL,
