@@ -7,4 +7,4 @@ CREATE TABLE remediate (
         FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-insert into remediate (item_types_id,user_id) values ('4.oa.a.1_1',14);
+insert into remediate (item_types_id,user_id) values ('4.oa.a.1_1',49);
