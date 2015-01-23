@@ -13,22 +13,12 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.tens        = Math.floor((Math.random()*9)+1);
-        this.ones        = Math.floor((Math.random()*9)+1);
-        this.tenths      = 9;
-        this.hundreths   = Math.floor((Math.random()*5)+5);
-        this.thousandths = Math.floor((Math.random()*9)+1);
-        this.tenths_hundreths_thousandths = parseInt(this.tenths * 100 + this.hundreths * 10 + this.thousandths);
+        var a = Math.floor((Math.random()*4)+6);
+        var b = Math.floor((Math.random()*4)+6);
+	var c = parseInt(a*b);
 
-        this.setQuestion('Round to the nearest tenth: ' + this.tens + this.ones + '.' + this.tenths_hundreths_thousandths);
-        this.tenths = parseInt(0);
-        this.ones = parseInt(this.ones);
-        this.ones++;
-
-        answer = parseInt(this.tens * 10 + this.ones);
-        answer = '' + answer;
-
-        this.setAnswer('' + answer,0);
+        this.setQuestion('Which number makes the equation true? ' + a + ' &times __ = ' + c);
+        this.setAnswer('' + b,0);
 }
 });
 
