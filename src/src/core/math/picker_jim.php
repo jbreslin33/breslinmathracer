@@ -2168,6 +2168,31 @@ getItem: function(id)
                 return new i_5_nf_b_6__14(this.mSheet);
         }
 
+	//5.nf.b.7.a
+        if (id == '5.nf.b.7.a_1')
+        {
+                return new i_5_nf_b_7_a__1(this.mSheet);
+        }
+        if (id == '5.nf.b.7.a_2')
+        {
+                return new i_5_nf_b_7_a__2(this.mSheet);
+        }
+        if (id == '5.nf.b.7.a_3')
+        {
+                return new i_5_nf_b_7_a__3(this.mSheet);
+        }
+        if (id == '5.nf.b.7.a_4')
+        {
+                return new i_5_nf_b_7_a__4(this.mSheet);
+        }
+        if (id == '5.nf.b.7.a_5')
+        {
+                return new i_5_nf_b_7_a__5(this.mSheet);
+        }
+        if (id == '5.nf.b.7.a_6')
+        {
+                return new i_5_nf_b_7_a__6(this.mSheet);
+        }
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1
