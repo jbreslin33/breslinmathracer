@@ -25,11 +25,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('When couning by tens what comes after ' + x + '?');
-                this.setAnswer(parseInt(a),0);
+                this.setAnswer('' + parseInt(a),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });

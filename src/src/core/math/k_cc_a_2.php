@@ -28,11 +28,11 @@ Extends: ThreeButtonItem,
                 c = c + ',' + parseInt(c+1);
 
                 this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -67,11 +67,11 @@ Extends: ThreeButtonItem,
                 c = c + ',' + parseInt(c+1) + ',' + parseInt(c+2);
                 
 		this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -102,11 +102,11 @@ Extends: ThreeButtonItem,
 
                 this.setQuestion('What is the missing number? ' + parseInt(a-3) + ',' + parseInt(a-2) + ',' + parseInt(a-1) + ',_,' + parseInt(a+1) + ',' + parseInt(a+2) + ',' + parseInt(a+3));
 
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -138,11 +138,11 @@ Extends: ThreeButtonItem,
 		}
 
 		this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -177,11 +177,11 @@ Extends: ThreeButtonItem,
 		}
 
 		this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -213,11 +213,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('What comes after 9?');
-                this.setAnswer(parseInt(a),0);
+                this.setAnswer('' + parseInt(a),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -251,11 +251,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(parseInt(a),0);
+                this.setAnswer('' + parseInt(a),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -287,11 +287,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('What comes after 0?');
-                this.setAnswer(parseInt(a),0);
+                this.setAnswer('' + parseInt(a),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -323,11 +323,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('What comes after 10?');
-                this.setAnswer(parseInt(a),0);
+                this.setAnswer('' + parseInt(a),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });
@@ -360,11 +360,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer(parseInt(a),0);
+                this.setAnswer('' + parseInt(a),0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         }
 });

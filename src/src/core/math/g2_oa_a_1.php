@@ -49,7 +49,7 @@ Extends: TextItem,
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + ', ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' has ' + this.c + ' ' + this.ns.mThings + '  . How many ' + this.ns.mThings + ' do they have ' + this.mSum + '?');    	
 		}
 
-                this.setAnswer(this.d,0);
+                this.setAnswer('' + this.d,0);
         }
 });
 
@@ -96,7 +96,7 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' do they have ' + this.mSum + '?');    	
 		}
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 
@@ -144,7 +144,7 @@ Extends: TextItem,
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gave '  + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.mLeft + '?');    	
 		}
 
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 
@@ -190,7 +190,7 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.ns.mLeft + '?');    	
 		}
-                this.setAnswer(this.d,0);
+                this.setAnswer('' + this.d,0);
         }
 });
 
@@ -234,7 +234,7 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' gave ' + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + ' and ' + this.ns.mNameThree + ' ' + this.c + ' ' + this.ns.mThings + '. Before he gave away ' + this.ns.mThings + ' ' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.ns.mLeft + '?');    	
 		}
-                this.setAnswer(this.d,0);
+                this.setAnswer('' + this.d,0);
         }
 });
 
@@ -308,7 +308,7 @@ Extends: TextItem,
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + ', ' + this.ns.mNameTwo + ' has ' + this.b + ' and ' + this.ns.mNameThree + ' has ' + this.c + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameArray[a] + ' and ' + this.ns.mNameArray[b] + ' have than ' + this.ns.mNameArray[c] + '?');    	
 		}
 
-                this.setAnswer(this.d,0);
+                this.setAnswer('' + this.d,0);
         }
 });
 
@@ -366,7 +366,7 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameArray[a] + ' have than ' + this.ns.mNameArray[b] + '?');    	
 		}
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 
@@ -409,7 +409,7 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' more playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
 		}
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 
@@ -453,7 +453,7 @@ Extends: TextItem,
 		{
 			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' ' + this.mLess + ' playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
 		}
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 

@@ -45,9 +45,9 @@ Extends: ThreeButtonItem,
 		
 
                 this.setAnswer('' + aText,0);
-                this.mButtonA.setAnswer(this.getAnswer());
-                this.mButtonB.setAnswer(bText);
-                this.mButtonC.setAnswer(cText);
+                this.mButtonA.setAnswer('' + this.getAnswer());
+                this.mButtonB.setAnswer('' + bText);
+                this.mButtonC.setAnswer('' + cText);
                 this.shuffle(10);
         },
     	
