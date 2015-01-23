@@ -52,7 +52,7 @@ Extends: TextItem,
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gave '  + this.ns.mNameTwo + ' ' + this.b + ' ' + this.ns.mThings + '. How many ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have ' + this.ns.mLeft + '?');    	
 		}
 
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 
@@ -105,6 +105,6 @@ Extends: TextItem,
 			this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThings + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThings + '. How many more ' + this.ns.mThings + ' does ' + this.ns.mNameOne + ' have than ' + this.ns.mNameTwo + '?');    	
 		}
 
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });

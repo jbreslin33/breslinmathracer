@@ -32,11 +32,11 @@ initialize: function(sheet)
 	}
 
 	this.setQuestion('How many?');
-        this.setAnswer(a,0);
+        this.setAnswer('' + a,0);
 
-        this.mButtonA.setAnswer(a);
-        this.mButtonB.setAnswer(b);
-        this.mButtonC.setAnswer(c);
+        this.mButtonA.setAnswer('' + a);
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
         this.shuffle(10);
 },
     	
@@ -129,11 +129,11 @@ Extends: ThreeButtonItem,
 		}
 
 		this.setQuestion('How many');
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         },
     	
@@ -210,11 +210,11 @@ initialize: function(sheet)
 	}
 
 	this.setQuestion('How many?');
-        this.setAnswer(a,0);
+        this.setAnswer('' + a,0);
 
-       	this.mButtonA.setAnswer(a);
-        this.mButtonB.setAnswer(b);
-        this.mButtonC.setAnswer(c);
+       	this.mButtonA.setAnswer('' + a);
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
 	this.shuffle(10);
 },
     	
@@ -279,11 +279,11 @@ Extends: ThreeButtonItem,
 		}
 
 		this.setQuestion('How many?');
-                this.setAnswer(a,0);
+                this.setAnswer('' + a,0);
 
-                this.mButtonA.setAnswer(a);
-                this.mButtonB.setAnswer(b);
-                this.mButtonC.setAnswer(c);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
                 this.shuffle(10);
         },
     	
