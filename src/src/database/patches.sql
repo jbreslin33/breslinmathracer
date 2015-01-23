@@ -8,6 +8,45 @@ CREATE TABLE remediate (
         FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+--4.nbt.b.6
+
+--quinones_jaceylyne
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',63);
+
+--nick_lewandowski
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',47);
+
+--lilo_richard
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',16);
+
+--mejia_milogros
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',19);
+
+--rodriques_brianna
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',24);
+
+--lopez_ashanti
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',22);
+
+--breslin_luke
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',73);
+
+--marsilio_carleghte
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',75);
+
+--troung_donathan
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',9);
+
+--lin_suzi
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',76);
+
+--diaz_dan
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',45);
+
+--tailef_sammer
+--insert into remediate (core_standards_id,user_id) values ('4.nbt.b.6',);
+
+
 --4.nbt.b.5
 
 --hernandez_catherine
