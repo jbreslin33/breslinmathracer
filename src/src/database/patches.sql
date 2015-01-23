@@ -8,4 +8,7 @@ CREATE TABLE remediate (
         FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+--martinez_christopher
 insert into remediate (core_standards_id,user_id) values ('4.nbt.b.5',49);
+--rivera_jayden
+insert into remediate (core_standards_id,user_id) values ('4.nbt.b.5',44);
