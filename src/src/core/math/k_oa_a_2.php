@@ -39,11 +39,11 @@ Extends: ThreeButtonItem,
 			this.b = Math.floor(Math.random()*5)+parseInt(this.c-3);
                 }
 
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer('' + parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
 
                 var roll = Math.floor(Math.random()*11);
 		roll = 0;
@@ -96,11 +96,11 @@ Extends: ThreeButtonItem,
 			this.b = Math.floor(Math.random()*5)+parseInt(this.c-3);
                 }
 
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer('' + parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
 
                 var roll = Math.floor(Math.random()*11);
 		roll = 0;
@@ -147,11 +147,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion(this.x + ' - ' + this.y + ' =');
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer('' + parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
                 this.shuffle(10);
         }
 });
@@ -189,11 +189,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion(this.x + ' + ' + this.y + ' =');
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer('' + parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
                 this.shuffle(10);
         }
 });

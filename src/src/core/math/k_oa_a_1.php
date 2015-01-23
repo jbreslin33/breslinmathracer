@@ -37,11 +37,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('Solve.');
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer('' + parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
                 this.shuffle(10);
         },
         
@@ -110,11 +110,11 @@ Extends: ThreeButtonItem,
                 }
 
                 this.setQuestion('Solve.');
-                this.setAnswer(parseInt(this.c),0);
+                this.setAnswer('' + parseInt(this.c),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
                 this.shuffle(10);
         },
         
@@ -197,11 +197,11 @@ Extends: ThreeButtonItem,
 		{
 			this.setQuestion(this.mName + ' played ' + this.mPlayedActivity + ' a total of ' + this.z + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + ' and ' + this.mDayOfWeekTwo + '. ' +  this.mNameMachine.getPronoun(this.mName,1) + ' played ' + this.mPlayedActivity + ' for ' + this.x + ' ' + this.mTimeIncrement + ' on ' + this.mDayOfWeekOne + '. How many ' + this.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.mName,0) + ' play on ' + this.mDayOfWeekTwo + '? Which equation shows this problem?');   
 		}
-		this.setAnswer(this.c,0);
+		this.setAnswer('' + this.c,0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
                 this.shuffle(10);
         }
 });
@@ -264,11 +264,11 @@ Extends: ThreeButtonItem,
 		}
 
 
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' + this.c);
                 this.shuffle(10);
         }
 });
