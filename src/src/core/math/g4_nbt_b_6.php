@@ -1,56 +1,5 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_2',4.1102,'4.nbt.b.6','divide number up to 4 digit by one digit number');
-*/
-
-var i_4_nbt_b_6__2 = new Class(
-{
-Extends: ThreeButtonItem,
-   initialize: function(sheet)
-   {
-      this.parent(sheet);
-      this.mType = '4.nbt.b.6_2';
-       	
-		  var varA = 0;
-		  var varB = 0;
-		  var varC = 0;
-		  var varD = 0;
-
-		  var varE = 0;
-		  var varF = 0;
-		  var varG = 0;
-
-		
-			// pick divisor
-			varA = 2 + Math.floor((Math.random()*8));
-
-      do {
-            // pick another 1-digit number
-			      varB = 2 + Math.floor((Math.random()*8));
-      }
-      while ((varA * varB) < 10);			
-
-			// get partial dividend
-			varC = varA * varB * 10;
-
-      // piece together dividend based on these values
-			varD = varA + varC;
-
-      varE = varA * varB;
-
-      varF = (Math.floor(varD/100) * 100) + varA;
-								                       
-			this.setQuestion('Which of the following can be used to find the quotient ' + varD + ' / ' + varA + '?');
-
-      this.setAnswer('(' + varC + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')',0); 
-
-      this.mButtonA.setAnswer('(' + varC + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')');
-      this.mButtonB.setAnswer('(' + varE + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')');
-      this.mButtonC.setAnswer('(' + varF + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')');
-      this.shuffle(1);
-   }
-});
-/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_3',4.1103,'4.nbt.b.6','divide number up to 4 digit by one digit number');
 */
 
@@ -110,6 +59,59 @@ Extends: ThreeButtonItem,
        this.shuffle(1);this.shuffle(1);
    }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_2',4.1102,'4.nbt.b.6','divide number up to 4 digit by one digit number');
+*/
+
+var i_4_nbt_b_6__2 = new Class(
+{
+Extends: ThreeButtonItem,
+   initialize: function(sheet)
+   {
+      this.parent(sheet);
+      this.mType = '4.nbt.b.6_2';
+       	
+		  var varA = 0;
+		  var varB = 0;
+		  var varC = 0;
+		  var varD = 0;
+
+		  var varE = 0;
+		  var varF = 0;
+		  var varG = 0;
+
+		
+			// pick divisor
+			varA = 2 + Math.floor((Math.random()*8));
+
+      do {
+            // pick another 1-digit number
+			      varB = 2 + Math.floor((Math.random()*8));
+      }
+      while ((varA * varB) < 10);			
+
+			// get partial dividend
+			varC = varA * varB * 10;
+
+      // piece together dividend based on these values
+			varD = varA + varC;
+
+      varE = varA * varB;
+
+      varF = (Math.floor(varD/100) * 100) + varA;
+								                       
+			this.setQuestion('Which of the following can be used to find the quotient ' + varD + ' / ' + varA + '?');
+
+      this.setAnswer('(' + varC + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')',0); 
+
+      this.mButtonA.setAnswer('(' + varC + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')');
+      this.mButtonB.setAnswer('(' + varE + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')');
+      this.mButtonC.setAnswer('(' + varF + ' / ' + varA + ')' + ' + ' + '(' + varA + ' / ' + varA + ')');
+      this.shuffle(1);
+   }
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_1',4.1101,'4.nbt.b.6','divide number up to 4 digit by one digit number');
