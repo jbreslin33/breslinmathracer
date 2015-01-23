@@ -83,7 +83,22 @@ public function fillTypesArray()
 {
 	//remediate types
 	//select item_types.id from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = 49;
+	
+	$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
+        $query .= $_SESSION["user_id"];
+	$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards
+	$query .= " order by progression asc;";
 
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $numberOfResults = pg_num_rows($result);
+
+        for($i=0; $i < $numberOfResults; $i++)
+        {
+                $this->id_array[]                = pg_Result($result, $i, 'id');
+                $this->progression_array[]       = pg_Result($result, $i, 'progression');
+                $this->core_standards_id_array[] = pg_Result($result, $i, 'core_standards_id');
+                $this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
+        }
 
 	//normal base types..
 	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
@@ -114,17 +129,19 @@ public function fillTypesArray()
 	
 public function fillAttemptsArray()
 {
+	//fill remediate attempts
+
+	//fill normal attempts
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
 	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
 	{
-		$query .= " AND item_types.active_code = 1 AND item_types.speed != 0 AND item_types.progression > "; 
+		$query .= " AND item_types.active_code = 1 AND item_types.speed != 0";  
 	}
 	else
 	{
-		$query .= " AND item_types.active_code = 1 AND item_types.speed = 0 AND item_types.progression > "; 
+		$query .= " AND item_types.active_code = 1 AND item_types.speed = 0"; 
 	}
-	$query .= $this->progression_counter; 
         $query .= " order by item_attempts.start_time desc;";
 													
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -155,7 +172,8 @@ public function setRawData()
 
 	$i = 0;
 
-	//loop thru item array until you reach end or find a item to ask
+	//loop thru id array until you reach end or find a item to ask ..this is why you can grab all attempts regardless of progression as long as they where normal as they will never get checked in following code.
+
 	while ($i <= intval(count($this->id_array) - 1) && $this->item_types_id_to_ask == '')
 	{ 
 		$mini_transaction_code_array = array(); 
