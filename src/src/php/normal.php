@@ -49,7 +49,8 @@ function __construct($startNew)
         	$item_attempt->insert();
 	}
 }
-//this could just as easily be set to a finer level such as domain, cluster, standard. Then we could start wherever we want.
+
+//standard to start the base at we get the counter for base questions
 public function initializeProgressionCounter()
 {
 
@@ -80,6 +81,11 @@ public function initializeProgressionCounter()
 
 public function fillTypesArray()
 {
+	//remediate types
+	//select item_types.id from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = 49;
+
+
+	//normal base types..
 	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
 	$query .= $this->progression_counter; 
 	$query .= " AND progression < "; //stay in grade 
