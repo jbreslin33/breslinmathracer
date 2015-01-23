@@ -138,7 +138,7 @@ initialize: function(sheet)
                 x = parseInt(   f1 * ( d1 * (b1 - b2 * (a1 - a2) * c1) * e1 ) * g1   );
 
                 this.setQuestion('Evalute:' + f1 + '{' + d1 + '[' + b1 + ' - ' + b2 + '(' + a1 + ' - ' + a2 + ')' + c1 + ']' + e1 + '}' + g1 + '='     );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -175,7 +175,7 @@ initialize: function(sheet)
                 x = parseInt(    (( b1 * (a1 + a2) * c1 ) - d1 ) + e1 - e2  );
 
                 this.setQuestion('Evaluate: ' + '((' + b1 + '(' + a1 + ' + ' + a2 + ')' + c1 + ') - ' + d1 + ') + ' + e1 + ' - ' + e2          );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -216,7 +216,7 @@ initialize: function(sheet)
 		r = b1a12 % c1; 
 
                 this.setQuestion('Evaluate: ' + e1 + '{[' + b1 + '(' + a1 + ' - ' + a2 + ') /' + c1 + ']' + d1 + '}'       );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -252,7 +252,7 @@ initialize: function(sheet)
                 x = parseInt(  (d1 + (b1 - ( a1 + a2) * c1 )) * e1 );
 
                 this.setQuestion('Evaluate: ' + '(' + d1 + ' + ' + '(' + b1 + ' - (' + a1 + ' + ' + a2 + ')' + c1 + '))' + e1          );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -288,7 +288,7 @@ initialize: function(sheet)
                 x = parseInt(    e1 - ( d1 + ( b1 + (a1 - a2) * c1 ))      );
 
                 this.setQuestion('Evaluate: ' + e1 + ' - ' + '{' + d1 + ' + [' + b1 + ' + (' + a1 + ' - ' + a2 + ')' + c1 + ']}'     );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -324,7 +324,7 @@ initialize: function(sheet)
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1) - e1   );
 
                 this.setQuestion('Evaluate: ' + d1 + ' - ' + '(' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ') - ' + e1    );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -358,7 +358,7 @@ initialize: function(sheet)
                 x = parseInt(   d1 - (b1 * (a1 - a2) + c1)   );
 
                 this.setQuestion('Evaluate: ' + d1 + ' - ' + '[' + b1 + '(' + a1 + ' - ' + a2 + ') + ' + c1 + ']'   );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -397,7 +397,7 @@ initialize: function(sheet)
 		r = b1 % a12; 
 
                 this.setQuestion('Evaluate: ' + c1 + '(' + b1 + ' / (' + a1 + '-' + a2 + '))' );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -432,7 +432,7 @@ initialize: function(sheet)
                 x = parseInt(   c1 - ( (a1 + a2) * b1) - d1     );
 
                 this.setQuestion('Evaluate: ' + c1 + ' - ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] - ' + d1 );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -472,7 +472,7 @@ initialize: function(sheet)
                 x = parseInt( (c1 - (a1 + a2) + b1) / d1 );
 
                 this.setQuestion('Evaluate: ' + '(' + c1 + ' - ' + '(' + a1 + ' + ' + a2 + ') + ' + b1 + ' / ' + d1 + ')'  );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -506,7 +506,7 @@ initialize: function(sheet)
                 x = parseInt( ((a1 + a2) * b1) * c1   );
 
                 this.setQuestion('Evaluate: ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] ' + c1 );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -550,7 +550,7 @@ initialize: function(sheet)
                 x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
 
                 this.setQuestion('Evaluate: ' + c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -592,7 +592,7 @@ initialize: function(sheet)
                 x = parseInt( c1 / ((a1 - a2) * (b1 + b2) * d1) - d2 );
 
                 this.setQuestion('Evaluate: ' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2 );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -635,7 +635,7 @@ initialize: function(sheet)
                 x = parseInt( (a1 - a2) / c1 + c2 * (b1 + b2) * d1 - d2 );
 
                 this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2 + ')');
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -676,7 +676,7 @@ initialize: function(sheet)
                 x = parseInt( c1 - c2 * (a1 + a2) - d1 + d2 * (b1 + b2) + c1 / c2 );
 
                 this.setQuestion('Evaluate: ' + c1 + ' - ' + c2 + ' (' + a1 + ' + ' + a2 + ') - ' +  d1 + ' + ' + d2 + ' (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -714,7 +714,7 @@ initialize: function(sheet)
                 x = parseInt( (a1 - a2) * (b1 + b2) + c1 / c2 );
 
                 this.setQuestion('Evaluate:' + '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -795,7 +795,7 @@ initialize: function(sheet)
                 x = parseInt( c1 - c2 + (a1 + a2) / (  b1 + b2 )  );
 
                 this.setQuestion('' + c1 + ' - ' + c2 + ' + ' + '(' + a1 + ' + ' + a2 + ') / (' + b1 + ' + ' + b2 + ') Evaluate' );
-                this.setAnswer(x,0);
+                this.setAnswer('' + x,0);
         }
 }
 });
@@ -829,7 +829,7 @@ initialize: function(sheet)
 	var a2_f = new Fraction(a2,ad);	
 
         this.setQuestion('' + '(' + a1_f.getString() + '+' + a2_f.getString() + ') (' + b1 + ' - ' + b2 + ') Evaluate. Do not simplify:' );
-	this.setAnswer(fraction.getString(),0);
+	this.setAnswer('' + fraction.getString(),0);
 }
 });
 
@@ -861,7 +861,7 @@ initialize: function(sheet)
 	var a1_f = new Fraction(a1,ad);	
 	var a2_f = new Fraction(a2,ad);	
 
-	this.setAnswer(fraction.getString(),0);
+	this.setAnswer('' + fraction.getString(),0);
         this.setQuestion('' + b1 + ' (' + a1_f.getString() + '+' + a2_f.getString() + ') ' + c1 + ' Evaluate. Do not simplify:');
 }
 });
@@ -891,7 +891,7 @@ initialize: function(sheet)
 	var a2d = new Fraction(a2,ad);	
 	var answer = new Fraction(n,ad);	
 		
-	this.setAnswer(answer.getString(),0);
+	this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' + b1 + '(' + a1d.getString() + ' - ' + a2d.getString() + ') Evaluate. Do not simplify:'  );
 }
 });
@@ -923,7 +923,7 @@ initialize: function(sheet)
 	var a2d = new Fraction(a2,ad);	
 	var answer = new Fraction(n,ad);	
 	
-	this.setAnswer(answer.getString(),0);
+	this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate. Do not Simplify.');
 }
 });
