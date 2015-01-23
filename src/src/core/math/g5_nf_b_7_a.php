@@ -11,17 +11,19 @@ Extends: TextItemMixedNumber,
                 this.mType = '5.nf.b.7.a_1';
                 this.ns = new NameSampler();
 
+                var whole = new Fraction(1,1,true);
                 var fractionA = new Fraction(1,1,true);
-                var fractionB = new Fraction(1,1,false);
-                var answer = fractionA.multiply(fractionB);
-
                 fractionA.mDenominator = Math.floor(Math.random()*8+2);
-		fractionC = fractionB.subtract(fractionA); 
-                answer = fractionA.multiply(fractionB);
+
+		var fractionB = new Fraction(3,1,false);
+
+		fractionC = whole.subtract(fractionA); 
+
+		answer = fractionA.divide(fractionB); 
                 answer.reduce();
 
                 this.setQuestion('' + this.ns.mNameOne + ' shares a closet with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' siblings. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gets to use ' + fractionA.getString() + ' of it to store ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' play stuff. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' siblings use the other ' + fractionC.getString() + ' to store their stuff. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' equally splits ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' closet space among ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mPlayedActivityOne + ', ' + this.ns.mPlayedActivityTwo + ' and ' + this.ns.mPlayedActivityThree + ' equipment. What fraction of the entire closet does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mPlayedActivityTwo + ' equipment take up?'   );
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
