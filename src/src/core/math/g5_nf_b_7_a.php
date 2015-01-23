@@ -20,7 +20,7 @@ Extends: TextItemMixedNumber,
                 answer = fractionA.multiply(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' has his own bedroom closet. He uses ' + fractionA.getString() + ' of it to store his sports equipment. He uses the other ' + fractionC.getString() + ' to store ' + this.ns.mThingOne + '. ');
+                this.setQuestion('' + this.ns.mNameOne + ' shares a closet with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' siblings. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gets to use ' + fractionA.getString() + ' of it to store ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' play stuff. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' siblings use the other ' + fractionC.getString() + ' to store their stuff. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' equally splits ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' closet space among ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mPlayedActivityOne + ', ' + this.ns.mPlayedActivityTwo + ' and ' + this.ns.mPlayedActivityThree + ' equipment. What fraction of the entire closet does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mPlayedActivityTwo + ' equipment take up?'   );
                 this.setAnswer('' + answer.getMixedNumber(),0);
         }
 });
