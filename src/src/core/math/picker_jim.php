@@ -218,6 +218,7 @@ getItem: function(id)
         }
 
 
+
 	//3.oa.c.7	
 	if (id == '3.oa.c.7_1')
         {
@@ -550,6 +551,24 @@ getItem: function(id)
 	if (id == '3.oa.c.7_83')
         {
                 return new i_3_oa_c_7__83(this.mSheet);
+        }
+  	
+	//3.md.b.3
+        if (id == '3.md.b.3_1')
+        {
+                return new i_3_md_b_3__1(this.mSheet);
+        }
+        if (id == '3.md.b.3_2')
+        {
+                return new i_3_md_b_3__2(this.mSheet);
+        }
+        if (id == '3.md.b.3_3')
+        {
+                return new i_3_md_b_3__3(this.mSheet);
+        }
+        if (id == '3.md.b.3_4')
+        {
+                return new i_3_md_b_3__4(this.mSheet);
         }
 
 
