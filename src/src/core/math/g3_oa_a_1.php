@@ -21,7 +21,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 		
 		this.setQuestion('Enter the product in this multiplication equation: ' + this.a + 'x' + this.b + '=' + this.c); 
-                this.setAnswer(this.c,0);
+                this.setAnswer('' + this.c,0);
         }
 });
 
@@ -43,8 +43,8 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 		
 		this.setQuestion('Name 1 factor in this multiplication equation: ' + this.a + 'x' + this.b + '=' + this.c); 
-                this.setAnswer(this.a,0);
-                this.setAnswer(this.b,1);
+                this.setAnswer('' + this.a,0);
+                this.setAnswer('' + this.b,1);
         }
 });
 

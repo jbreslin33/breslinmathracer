@@ -19,7 +19,7 @@ Extends: TextItem,
 
 		this.setQuestion(this.a + 'x' + this.b + '=');
 
-                this.setAnswer(this.c ,0);
+                this.setAnswer('' + this.c ,0);
         }
 });
 
