@@ -52,12 +52,12 @@ Extends: i_4_oa_a_1__word,
                 
                 this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,0);
                 this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,1);
-		this.setAnswer(this.c + '=' + this.b + '*' + this.a,2);
-		this.setAnswer(this.c + '=' + this.a + '*' + this.b,3);
+		this.setAnswer('' + this.c + '=' + this.b + '*' + this.a,2);
+		this.setAnswer('' + this.c + '=' + this.a + '*' + this.b,3);
                 this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,4);
                 this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,5);
-		this.setAnswer(this.c + '=' + this.b + 'x' + this.a,6);
-		this.setAnswer(this.c + '=' + this.a + 'x' + this.b,7);
+		this.setAnswer('' + this.c + '=' + this.b + 'x' + this.a,6);
+		this.setAnswer('' + this.c + '=' + this.a + 'x' + this.b,7);
         }
 });
 
@@ -91,7 +91,7 @@ Extends: i_4_oa_a_1__word_communative,
 
                 this.mType = '4.oa.a.1_5';
 
-                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. They wrote the multiplication expression  ' + this.a + 'x' + this.b + ' to represent how many ' + this.mThing + ' they have altogether. Using the communative property of multiplication what is another way to represent how many ' + this.mThing + ' they have altogether.');
+                this.setQuestion('' + this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. They wrote the multiplication expression  ' + this.a + 'x' + this.b + ' to represent how many ' + this.mThing + ' they have altogether. Using the communative property of multiplication what is another way to represent how many ' + this.mThing + ' they have altogether.');
         }
 });
 
@@ -118,7 +118,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 
                 this.setQuestion('The equation: ' + this.a + '*' + this.b + '=' + this.c + ' means that ' + this.c + ' is ' + this.b + ' times greater than what number?');
-                this.setAnswer(this.a ,0);
+                this.setAnswer('' + this.a ,0);
         }
 });
 
@@ -144,7 +144,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 
                 this.setQuestion('The equation: ' + this.a + '*' + this.b + '=' + this.c + ' means that ' + this.c + ' is ' + this.a + ' times greater than what number?');
-                this.setAnswer(this.b ,0);
+                this.setAnswer('' + this.b ,0);
         }
 });
 
@@ -170,7 +170,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 
                 this.setQuestion('The equation: ' + this.c + '=' + this.a + '*' + this.b + ' means that ' + this.c + ' is ' + this.b + ' times greater than what number?');
-                this.setAnswer(this.a,0);
+                this.setAnswer('' + this.a,0);
         }
 });
 
@@ -196,10 +196,6 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 	
 		this.setQuestion('The equation: ' + this.c + '=' + this.a + '*' + this.b + ' means that ' + this.c + ' is ' + this.a + ' times greater than what number?');			 
-                this.setAnswer(this.b ,0);
+                this.setAnswer('' + this.b ,0);
         }
 });
-
-
-
-
