@@ -8,7 +8,7 @@ class GetCoreDescription
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-        $_SESSION["core_description"] = "3.oa.c.7:4.nbt.b.5:5.oa.a.1";
+        $_SESSION["core_description"] = "3.oa.a.1:3.oa.c.7:4.oa.a.1:4.nbt.b.5:5.oa.a.1";
 }
 
 public function querydb()
