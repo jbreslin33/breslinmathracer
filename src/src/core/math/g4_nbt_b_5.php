@@ -19,7 +19,7 @@ initialize: function(sheet)
 	this.b = Math.floor(Math.random()*90)+10;
 	this.c = parseInt(this.a * this.b);
 
-        this.setQuestion('' + this.a + '*' +  this.b + '=');
+        this.setQuestion('' + this.a + ' &times ' +  this.b + '=');
         this.setAnswer('' + this.c,0);
 }
 });
@@ -44,7 +44,7 @@ initialize: function(sheet)
         this.b = Math.floor(Math.random()*8)+2;
 	this.c = parseInt(this.a * this.b);
 
-        this.setQuestion('' + this.a + '*' +  this.b + '=');
+        this.setQuestion('' + this.a + ' &times ' +  this.b + '=');
         this.setAnswer('' + this.c,0);
 }
 });
@@ -69,7 +69,7 @@ initialize: function(sheet)
         this.b = Math.floor(Math.random()*8999)+1000;
 	this.c = parseInt(this.a * this.b);
 
-        this.setQuestion('' + this.a + '*' +  this.b + '=');
+        this.setQuestion('' + this.a + ' & times ' +  this.b + '=');
         this.setAnswer('' + this.c,0);
 }
 });
@@ -94,7 +94,7 @@ initialize: function(sheet)
         this.b = Math.floor(Math.random()*900)+100;
 	this.c = parseInt(this.a * this.b);
 
-        this.setQuestion('' + this.a + '*' +  this.b + '=');
+        this.setQuestion('' + this.a + ' &times ' +  this.b + '=');
         this.setAnswer('' + this.c,0);
 }
 });
@@ -119,7 +119,7 @@ initialize: function(sheet)
 	this.b = Math.floor(Math.random()*90)+10;
 	this.c = parseInt(this.a * this.b);
 
-	this.setQuestion('' + this.a + '*' +  this.b + '=');
+	this.setQuestion('' + this.a + ' &times ' +  this.b + '=');
         this.setAnswer('' + this.c,0);             
 }
 });
