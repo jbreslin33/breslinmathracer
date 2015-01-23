@@ -370,7 +370,7 @@ initialize: function(sheet)
         this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
         this.part =  parseInt(this.partA * this.partB);
 
-	while (this.part == 0)
+	while (this.part == 0 || this.part > 99999 )
 	{
         	this.a = Math.floor(Math.random()*10);
         	this.b = Math.floor(Math.random()*10);
