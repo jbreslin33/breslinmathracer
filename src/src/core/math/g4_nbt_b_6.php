@@ -1,5 +1,73 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_5',4.1105,'4.nbt.b.6','divide 3 by 1 with remainder');
+*/
+
+var i_4_nbt_b_6__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.b.6_5';
+
+        this.ns = new NameSampler();
+
+	var a = 0;
+        var b = 0;
+        var q = 0;
+        var r = 0;
+        while( r == 0)
+        {
+                a = Math.floor((Math.random()*7)+3);
+                b = Math.floor((Math.random()*899)+101);
+                q = parseInt(b/a);
+                r = b % a;
+        }
+
+        this.setQuestion('Find the Quotient: ' + b + ' &divide ' + a + ' If a remainder exists write in the form 57r3');
+        this.setAnswer('' + q + 'r' + r,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_4',4.1104,'4.nbt.b.6','divide 3 by 1 without remainder');
+*/
+
+var i_4_nbt_b_6__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.b.6_4';
+
+        this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 0;
+        var q = 0;
+        var r = 1;
+        while( r != 0)
+        {
+                a = Math.floor((Math.random()*7)+3);
+                b = Math.floor((Math.random()*899)+101);
+                q = parseInt(b/a);
+                r = b % a;
+        }
+
+        this.setQuestion('Find the Quotient: ' + b + ' &divide ' + a + ' If a remainder exists write in the form 57r3');
+        this.setAnswer('' + q,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_3',4.1103,'4.nbt.b.6','divide number up to 4 digit by one digit number');
 */
 
