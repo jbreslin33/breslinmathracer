@@ -191,6 +191,33 @@ getItem: function(id)
                 return new i_3_oa_a_1__11(this.mSheet);
         }
 
+  	//3.oa.a.4
+        if (id == '3.oa.a.4_1')
+        {
+                return new i_3_oa_a_4__1(this.mSheet);
+        }
+        if (id == '3.oa.a.4_2')
+        {
+                return new i_3_oa_a_4__2(this.mSheet);
+        }
+        if (id == '3.oa.a.4_3')
+        {
+                return new i_3_oa_a_4__3(this.mSheet);
+        }
+        if (id == '3.oa.a.4_4')
+        {
+                return new i_3_oa_a_4__4(this.mSheet);
+        }
+        if (id == '3.oa.a.4_5')
+        {
+                return new i_3_oa_a_4__5(this.mSheet);
+        }
+        if (id == '3.oa.a.4_6')
+        {
+                return new i_3_oa_a_4__6(this.mSheet);
+        }
+
+
 	//3.oa.c.7	
 	if (id == '3.oa.c.7_1')
         {
