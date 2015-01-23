@@ -205,6 +205,16 @@ CREATE TABLE item_types (
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );
 
+CREATE TABLE remediate (
+        id SERIAL,
+	item_types_id text NOT NULL,
+	user_id integer NOT NULL,
+        PRIMARY KEY (id),
+        FOREIGN KEY (item_types_id) REFERENCES item_types(id),
+        FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
 CREATE TABLE finer_types_item_types (
 	id SERIAL,
 	finer_types_id integer NOT NULL,
