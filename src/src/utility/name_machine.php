@@ -71,6 +71,7 @@ var NameMachine = new Class(
 		this.mGirlNameArray.push("Clangerys"); 
 		this.mGirlNameArray.push("Kayla"); 
 		this.mGirlNameArray.push("Catherine"); 
+		this.mGirlNameArray.push("Angry Baby"); 
 		this.mGirlNameArray.push("Carleigh"); 
 		this.mGirlNameArray.push("Suzi"); 
 		this.mGirlNameArray.push("Alice"); 
