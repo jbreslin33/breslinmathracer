@@ -4,26 +4,24 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_7_a__2 = new Class(
 {
-Extends: TextItemMixedNumber,
+Extends: TextItemFraction,
         initialize: function(sheet)
         {
-                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+		this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
                 this.mType = '5.nf.b.7.a_2';
                 this.ns = new NameSampler();
 
-                var whole = new Fraction(1,1,true);
                 var fractionA = new Fraction(1,1,true);
                 fractionA.mDenominator = Math.floor(Math.random()*8+2);
 
-                var fractionB = new Fraction(3,1,false);
-
-                fractionC = whole.subtract(fractionA);
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
 
                 answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-		this.setQuestion('' + this.ns.mNameOne + ' had some ' + this.ns.mRopeOne + ' that was ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementSmall + ' long.');    
+		this.setQuestion('' + this.ns.mNameOne + ' had some ' + this.ns.mRopeOne + ' that was ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' long. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cut it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');    
                 this.setAnswer('' + answer.getString(),0);
         }
 });
@@ -33,10 +31,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_7_a__1 = new Class(
 {
-Extends: TextItemMixedNumber,
+Extends: TextItemFraction,
         initialize: function(sheet)
         {
-                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+		this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
                 this.mType = '5.nf.b.7.a_1';
                 this.ns = new NameSampler();
