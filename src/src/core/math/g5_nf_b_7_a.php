@@ -7,7 +7,7 @@ var i_5_nf_b_7_a__2 = new Class(
 Extends: TextItemFraction,
         initialize: function(sheet)
         {
-		this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+		this.parent(sheet,350,50,195,95, 100,50,425,100, 100,50,425,175,true);
 
                 this.mType = '5.nf.b.7.a_2';
                 this.ns = new NameSampler();
