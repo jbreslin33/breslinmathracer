@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.a_3',5.2103,'5.nf.b.7.a','');
 */
@@ -20,7 +21,7 @@ Extends: TextItemFraction,
                 answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' is given an allowance every week for doing chores. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' divides the allowance into ' + fractionB.mNumerator + ' parts. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0));
+                this.setQuestion('' + this.ns.mNameOne + ' earns an allowance every week by doing chores around ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' saves ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' allowance into ' + fractionB.mNumerator + ' equal parts. One of those parts is for colored pencils. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' is saving for ' + fractionB.mNumerator + ' different colors, one of which is ' + this.ns.mColorOne + ', that are equal in cost. What fraction of the whole allowance is ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' saving for the ' + this.ns.mColorOne + ' pencils?');
                 this.setAnswer('' + answer.getString(),0);
         }
 });
