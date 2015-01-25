@@ -20,7 +20,7 @@ Extends: TextItemFraction,
                 answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' had some ' + this.ns.mRopeOne + ' that was ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' long. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cut it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');
+                this.setQuestion('' + this.ns.mNameOne + ' is given an allowance every week for doing chores. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' divides the allowance into ' + fractionB.mNumerator + ' parts. ');
                 this.setAnswer('' + answer.getString(),0);
         }
 });
