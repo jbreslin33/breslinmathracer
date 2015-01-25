@@ -16,12 +16,12 @@ Extends: TextItemFraction,
                 fractionA.mDenominator = Math.floor(Math.random()*8+2);
 
                 var fractionB = new Fraction(1,1,false);
-                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+                fractionB.mDenominator = Math.floor(Math.random()*8+2);
 
-                answer = fractionA.divide(fractionB);
+                answer = fractionA.multiply(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' earns an allowance every week by doing chores around ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' saves ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' allowance into ' + fractionB.mNumerator + ' equal parts. One of those parts is for colored pencils. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' is saving for ' + fractionB.mNumerator + ' different colors, one of which is ' + this.ns.mColorOne + ', that are equal in cost. What fraction of the whole allowance is ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' saving for the ' + this.ns.mColorOne + ' pencils?');
+                this.setQuestion('' + this.ns.mNameOne + ' earns an allowance every week by doing chores around ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' house. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' saves ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' allowance into ' + fractionA.mDenominator + ' equal parts. One of those parts is for colored pencils. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' is saving for ' + fractionB.mDenominator + ' different colors, one of which is ' + this.ns.mColorOne + ', that are equal in cost. What fraction of the whole allowance is ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' saving for the ' + this.ns.mColorOne + ' pencils?');
                 this.setAnswer('' + answer.getString(),0);
         }
 });
