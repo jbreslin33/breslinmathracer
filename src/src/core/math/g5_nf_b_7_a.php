@@ -20,7 +20,7 @@ Extends: TextItemFraction,
                 answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' is given an allowance every week for doing chores. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' divides the allowance into ' + fractionB.mNumerator + ' parts. ');
+                this.setQuestion('' + this.ns.mNameOne + ' is given an allowance every week for doing chores. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' divides the allowance into ' + fractionB.mNumerator + ' parts. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0));
                 this.setAnswer('' + answer.getString(),0);
         }
 });
