@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_3',5.2203,'5.nf.b.7.b','');
+*/
+var i_5_nf_b_7_b__3 = new Class(
+{
+Extends: TextItemFraction,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+
+                this.mType = '5.nf.b.7.b_3';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,4,true);
+
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+
+                answer = fractionB.divide(fractionA);
+                answer.reduce();
+
+                this.setQuestion('One quart of ' + this.ns.mDrinkOne + ' is equivalent to ' + fractionA.getString() + ' gallon. How many quarts are in ' + fractionB.mNumerator + ' gallons?');
+                this.setAnswer('' + answer.getString(),0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_2',5.2202,'5.nf.b.7.b','');
 */
 var i_5_nf_b_7_b__2 = new Class(
