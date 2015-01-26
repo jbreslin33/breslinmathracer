@@ -21,7 +21,7 @@ Extends: TextItemFraction,
                 answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-		this.setQuestion('' + this.ns.mNameOne + ' has ' + fractionA.mNumerator + ' ' + this.ns.mVegetableOne + '. Each ' + this.ns.mVegetableOne + ' is cut into ' + this.ns.mNameMachine.getDenominatorName(fractionB.mDenominator) + '. How many pieces of ' + this.ns.mVegetableOne + ' does ' + this.ns.mNameOne + ' have now?');    
+		this.setQuestion('' + this.ns.mNameOne + ' has ' + fractionA.mNumerator + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cuts each of the ' + this.ns.mVegetableOne + ' into ' + this.ns.mNameMachine.getDenominatorName(fractionB.mDenominator) + '. How many pieces of ' + this.ns.mVegetableOne + ' does ' + this.ns.mNameOne + ' have now?');    
                 this.setAnswer('' + answer.getString(),0);
         }
 });
