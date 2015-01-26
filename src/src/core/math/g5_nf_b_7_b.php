@@ -16,12 +16,12 @@ Extends: TextItemFraction,
                 fractionA.mNumerator = Math.floor(Math.random()*8+2);
 
                 var fractionB = new Fraction(1,1,false);
-                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+                fractionB.mDenominator = Math.floor(Math.random()*8+2);
 
-                answer = fractionB.divide(fractionA);
+                answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' has ' + fractionA.mNumerator + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne  );
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + fractionA.mNumerator + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.getString() + ' ' + this.ns.mLiquidVolumeOne + ' size servings of ' + this.ns.mDrinkOne + ' then how many can ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make total?'       );
                 this.setAnswer('' + answer.getString(),0);
         }
 });
