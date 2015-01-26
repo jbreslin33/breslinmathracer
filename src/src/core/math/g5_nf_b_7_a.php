@@ -16,15 +16,16 @@ Extends: TextItemFraction,
                 fractionA.mDenominator = Math.floor(Math.random()*8+2);
 
                 var fractionB = new Fraction(1,1,false);
-                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+                fractionB.mDenominator = Math.floor(Math.random()*8+2);
 
-                answer = fractionA.divide(fractionB);
+                answer = fractionA.multiply(fractionB);
                 answer.reduce();
 
-		this.setQuestion('' + this.ns.mNameOne + ' had some ' + this.ns.mRopeOne + ' that was ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' long. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cut it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');    
+		this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + parseInt(fractionA.mDenominator - 1)  + ' friends had ' + fractionB.getString() + ' of a whole pizza to share equally among them. What fraction of the pizza will each get?');    
                 this.setAnswer('' + answer.getString(),0);
         }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.a_3',5.2103,'5.nf.b.7.a','');
 */
