@@ -21,7 +21,7 @@ Extends: TextItemFraction,
                 answer = fractionA.multiply(fractionB);
                 answer.reduce();
 
-		this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + parseInt(fractionA.mDenominator - 1)  + ' friends had ' + fractionB.getString() + ' of a whole pizza to share equally among them. What fraction of the pizza will each get?');    
+		this.setQuestion('' + this.ns.mNameOne + ' has ' + this.ns.mVegetableOne + '. Each ' + this.ns.mVegetableOne + ' is cut into ' + this.ns.mNameMachine.getDenominatorName(fractionA.mDenominator));    
                 this.setAnswer('' + answer.getString(),0);
         }
 });
