@@ -13,16 +13,17 @@ Extends: TextItemFraction,
                 this.ns = new NameSampler();
 
                 var fractionA = new Fraction(1,1,true);
-                fractionA.mNumerator = Math.floor(Math.random()*8+2);
+                fractionA.mDenominator = Math.floor(Math.random()*8+2);
 
                 var fractionB = new Fraction(1,1,false);
-                fractionB.mDenominator = Math.floor(Math.random()*8+2);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
 
-                answer = fractionA.divide(fractionB);
+                answer = fractionB.divide(fractionA);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' has ' + fractionA.mNumerator + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cuts each of the ' + this.ns.mVegetableOne + ' into ' + this.ns.mNameMachine.getDenominatorName(fractionB.mDenominator) + '. How many pieces of ' + this.ns.mVegetableOne + ' does ' + this.ns.mNameOne + ' have now?');
+                this.setQuestion('' + this.ns.mNameOne + ' uses ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' of ' + this.ns.mRopeOne + ' to put around the perimeter of each of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' drawings. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' has ' + fractionB.mNumerator + ' ' + this.ns.mDistanceIncrementMedium + ' of ' + this.ns.mRopeOne + ' then how many drawings can ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' put ' + this.ns.mRopeOne + ' around the perimeter on?');
                 this.setAnswer('' + answer.getString(),0);
+                this.setAnswer('' + answer.getString() + ' drawings',1);
         }
 });
 
