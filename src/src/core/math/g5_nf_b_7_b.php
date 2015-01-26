@@ -13,7 +13,7 @@ Extends: TextItemFraction,
                 this.ns = new NameSampler();
 
                 var fractionA = new Fraction(1,1,true);
-                fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                fractionA.mNumerator = Math.floor(Math.random()*8+2);
 
                 var fractionB = new Fraction(1,1,false);
                 fractionB.mDenominator = Math.floor(Math.random()*8+2);
@@ -21,7 +21,7 @@ Extends: TextItemFraction,
                 answer = fractionA.multiply(fractionB);
                 answer.reduce();
 
-		this.setQuestion('' + this.ns.mNameOne + ' has ' + this.ns.mVegetableOne + '. Each ' + this.ns.mVegetableOne + ' is cut into ' + this.ns.mNameMachine.getDenominatorName(fractionA.mDenominator));    
+		this.setQuestion('' + this.ns.mNameOne + ' has ' + fractionA.mNumerator + ' ' this.ns.mVegetableOne + '. Each ' + this.ns.mVegetableOne + ' is cut into ' + this.ns.mNameMachine.getDenominatorName(fractionA.mDenominator) + '. How many pieces ' + this.ns.mVegetableOne + ' does ' + this.ns.mNameOne + ' have now?');    
                 this.setAnswer('' + answer.getString(),0);
         }
 });
