@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.a_4',5.2104,'5.nf.b.7.a','');
+*/
+var i_5_nf_b_7_a__4 = new Class(
+{
+Extends: TextItemFraction,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+
+                this.mType = '5.nf.b.7.a_4';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,true);
+                fractionA.mDenominator = Math.floor(Math.random()*8+2);
+
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+
+                answer = fractionA.divide(fractionB);
+                answer.reduce();
+
+		this.setQuestion('' + this.ns.mNameOne + ' had some ' + this.ns.mRopeOne + ' that was ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' long. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cut it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');    
+                this.setAnswer('' + answer.getString(),0);
+        }
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.a_3',5.2103,'5.nf.b.7.a','');
 */
 var i_5_nf_b_7_a__3 = new Class(
