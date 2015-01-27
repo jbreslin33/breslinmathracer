@@ -6,7 +6,6 @@ var i_4_md_a_1__1 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-               // this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
         	this.parent(sheet,300,50,175,95,100,50,425,100);
 
 
