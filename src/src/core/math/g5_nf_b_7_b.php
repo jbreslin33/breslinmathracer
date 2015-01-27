@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_7',5.2207,'5.nf.b.7.b','');
+*/
+var i_5_nf_b_7_b__7 = new Class(
+{
+Extends: TextItemFraction,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+
+                this.mType = '5.nf.b.7.b_7';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,true);
+                fractionA.mDenominator = Math.floor(Math.random()*8+2);
+
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+
+                answer = fractionB.divide(fractionA);
+                answer.reduce();
+
+                this.setQuestion('If a group of ' + this.ns.mAnimalOne + ' move at a speed of ' + fractionA.getString() + ' mile an hour. How many hours will it take for the ' + this.ns.mAnimalOne + ' to go ' + fractionB.mNumerator + ' miles?');
+                this.setAnswer('' + answer.getString(),0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_6',5.2206,'5.nf.b.7.b','');
 */
 var i_5_nf_b_7_b__6 = new Class(
