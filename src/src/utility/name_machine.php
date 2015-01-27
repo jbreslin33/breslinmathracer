@@ -177,6 +177,7 @@ var NameMachine = new Class(
                 this.mSubjectArray.push("math");
                 this.mSubjectArray.push("spelling");
                 this.mSubjectArray.push("history");
+                this.mSubjectArray.push("art");
                 this.mSubjectArray.push("religion");
 
 		//vegetables	
