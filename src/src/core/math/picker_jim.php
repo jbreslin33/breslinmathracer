@@ -2257,6 +2257,22 @@ getItem: function(id)
         {
                 return new i_5_nf_b_7_b__7(this.mSheet);
         }
+        if (id == '5.nf.b.7.b_8')
+        {
+                return new i_5_nf_b_7_b__8(this.mSheet);
+        }
+        if (id == '5.nf.b.7.b_9')
+        {
+                return new i_5_nf_b_7_b__9(this.mSheet);
+        }
+        if (id == '5.nf.b.7.b_10')
+        {
+                return new i_5_nf_b_7_b__10(this.mSheet);
+        }
+        if (id == '5.nf.b.7.b_11')
+        {
+                return new i_5_nf_b_7_b__11(this.mSheet);
+        }
 
 	
 	/*** GRADE 6 ***/
