@@ -1,3 +1,31 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_6',5.2206,'5.nf.b.7.b','');
+*/
+var i_5_nf_b_7_b__6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.nf.b.7.b_6';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,true);
+                fractionA.mNumerator = Math.floor(Math.random()*8+2);
+
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mDenominator = Math.floor(Math.random()*8+2);
+
+                answer = fractionA.divide(fractionB);
+                answer.reduce();
+
+                this.setQuestion('Evaluate the expression: ' +  fractionA.mNumerator + ' &divide ' + fractionB.getString());
+                this.setAnswer('' + answer.getString(),0);
+        }
+});
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_5',5.2205,'5.nf.b.7.b','');
@@ -8,7 +36,6 @@ Extends: TextItem,
         initialize: function(sheet)
         {
              	this.parent(sheet,300,50,175,95,100,50,425,100);
-
 
                 this.mType = '5.nf.b.7.b_5';
                 this.ns = new NameSampler();
