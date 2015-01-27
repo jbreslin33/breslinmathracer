@@ -1,5 +1,33 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_9',5.2209,'5.nf.b.7.b','');
+*/
+var i_5_nf_b_7_b__9 = new Class(
+{
+Extends: TextItemFraction,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+
+                this.mType = '5.nf.b.7.b_9';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,true);
+                fractionA.mDenominator = Math.floor(Math.random()*8+2);
+
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+
+                answer = fractionB.divide(fractionA);
+                answer.reduce();
+
+                this.setQuestion('' + this.ns.mNameOne + ' is making banana smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' of a banana for each smoothie. How many smoothies can ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make with ' + fractionB.mNumerator + ' bananas?');
+ 
+                this.setAnswer('' + answer.getString(),0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.b_8',5.2208,'5.nf.b.7.b','');
 */
 var i_5_nf_b_7_b__8 = new Class(
