@@ -1,5 +1,23 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_4',4.2404,'4.md.a.1','');
+*/
+var i_4_md_a_1__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_4';
+
+                this.setQuestion('How many inches in foot?');
+                this.setAnswer('' + 12,0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_3',4.2403,'4.md.a.1','');
 */
 var i_4_md_a_1__3 = new Class(
@@ -90,4 +108,5 @@ Extends: TextItem,
                 this.setAnswer('' + answer.getString() + ' quarts',1);
         }
 });
+
 
