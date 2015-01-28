@@ -1,5 +1,107 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_14',4.2414,'4.md.a.1','');
+*/
+var i_4_md_a_1__14 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_14';
+
+                this.setQuestion('How many days in a week?');
+                this.setAnswer('' + 7,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_13',4.2413,'4.md.a.1','');
+*/
+var i_4_md_a_1__13 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_13';
+
+                this.setQuestion('How many hours in a day?');
+                this.setAnswer('' + 24,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_13',4.2413,'4.md.a.1','');
+*/
+var i_4_md_a_1__13 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_13';
+
+                this.setQuestion('How many minutes in an hour?');
+                this.setAnswer('' + 60,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_12',4.2412,'4.md.a.1','');
+*/
+var i_4_md_a_1__12 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_12';
+
+                this.setQuestion('How many seconds in a minute?');
+                this.setAnswer('' + 60,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_11',4.2411,'4.md.a.1','');
+*/
+var i_4_md_a_1__11 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_11';
+
+                this.setQuestion('How many quarts in a gallon?');
+                this.setAnswer('' + 4,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_10',4.2410,'4.md.a.1','');
+*/
+var i_4_md_a_1__10 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_10';
+
+                this.setQuestion('How many pints in a quart?');
+                this.setAnswer('' + 2,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_9',4.2409,'4.md.a.1','');
 */
 var i_4_md_a_1__9 = new Class(
