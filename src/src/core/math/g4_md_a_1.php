@@ -1,5 +1,90 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_9',4.2409,'4.md.a.1','');
+*/
+var i_4_md_a_1__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_9';
+
+                this.setQuestion('How many cups in a pint?');
+                this.setAnswer('' + 8,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_8',4.2408,'4.md.a.1','');
+*/
+var i_4_md_a_1__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_8';
+
+                this.setQuestion('How many ounces in a cup?');
+                this.setAnswer('' + 8,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_7',4.2407,'4.md.a.1','');
+*/
+var i_4_md_a_1__7 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_7';
+
+                this.setQuestion('How many pounds in a ton?');
+                this.setAnswer('' + 2000,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_6',4.2406,'4.md.a.1','');
+*/
+var i_4_md_a_1__6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_6';
+
+                this.setQuestion('How many ounces in a pound?');
+                this.setAnswer('' + 16,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_5',4.2405,'4.md.a.1','');
+*/
+var i_4_md_a_1__5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_5';
+
+                this.setQuestion('How many feet in a yard?');
+                this.setAnswer('' + 3,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_4',4.2404,'4.md.a.1','');
 */
 var i_4_md_a_1__4 = new Class(
@@ -11,7 +96,7 @@ Extends: TextItem,
 
                 this.mType = '4.md.a.1_4';
 
-                this.setQuestion('How many inches in foot?');
+                this.setQuestion('How many inches in a foot?');
                 this.setAnswer('' + 12,0);
         }
 });
