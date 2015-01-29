@@ -1,5 +1,119 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_25',4.2425,'4.md.a.1','');
+*/
+var i_4_md_a_1__25 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_25';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 2000);
+
+                this.setQuestion('How many pounds in ' + a + ' tons?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_24',4.2424,'4.md.a.1','');
+*/
+var i_4_md_a_1__24 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_24';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 16);
+
+                this.setQuestion('How many ounces in ' + a + ' pounds?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_23',4.2423,'4.md.a.1','');
+*/
+var i_4_md_a_1__23 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_23';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 4);
+
+                this.setQuestion('How many quarts in ' + a + ' gallons?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_22',4.2422,'4.md.a.1','');
+*/
+var i_4_md_a_1__22 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_22';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 2);
+
+                this.setQuestion('How many pints in ' + a + ' quarts?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_21',4.2421,'4.md.a.1','');
+*/
+var i_4_md_a_1__21 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_21';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 2);
+
+                this.setQuestion('How many cups in ' + a + ' pints?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_20',4.2420,'4.md.a.1','');
+*/
+var i_4_md_a_1__20 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_20';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 8);
+
+                this.setQuestion('How many ounces in ' + a + ' cups?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_19',4.2419,'4.md.a.1','');
 */
 var i_4_md_a_1__19 = new Class(
