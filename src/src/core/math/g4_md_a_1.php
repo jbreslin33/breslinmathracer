@@ -1,5 +1,100 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_34',4.2434,'4.md.a.1','');
+*/
+var i_4_md_a_1__34 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_34';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 1000);
+
+                this.setQuestion('How many grams in ' + a + ' kilograms?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_33',4.2433,'4.md.a.1','');
+*/
+var i_4_md_a_1__33 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_33';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 1000);
+
+                this.setQuestion('How many mililiters in ' + a + ' liters?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_32',4.2432,'4.md.a.1','');
+*/
+var i_4_md_a_1__32 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_32';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 10);
+
+                this.setQuestion('How many milimeters in ' + a + ' centimeters?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_31',4.2431,'4.md.a.1','');
+*/
+var i_4_md_a_1__31 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_31';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 100);
+
+                this.setQuestion('How many centimeters in ' + a + ' meters?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_30',4.2430,'4.md.a.1','');
+*/
+var i_4_md_a_1__30 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_30';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 1000);
+
+                this.setQuestion('How many meters in ' + a + ' kilometers?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_29',4.2429,'4.md.a.1','');
 */
 var i_4_md_a_1__29 = new Class(
