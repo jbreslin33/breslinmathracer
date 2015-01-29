@@ -1,5 +1,81 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_29',4.2429,'4.md.a.1','');
+*/
+var i_4_md_a_1__29 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_29';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 7);
+
+                this.setQuestion('How many days in ' + a + ' weeks?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_28',4.2428,'4.md.a.1','');
+*/
+var i_4_md_a_1__28 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_28';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 24);
+
+                this.setQuestion('How many hours in ' + a + ' days?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_27',4.2427,'4.md.a.1','');
+*/
+var i_4_md_a_1__27 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_27';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 60);
+
+                this.setQuestion('How many minutes in ' + a + ' hours?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_26',4.2426,'4.md.a.1','');
+*/
+var i_4_md_a_1__26 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.1_26';
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 60);
+
+                this.setQuestion('How many seconds in ' + a + ' minutes?');
+                this.setAnswer('' + answer,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.1_25',4.2425,'4.md.a.1','');
 */
 var i_4_md_a_1__25 = new Class(
