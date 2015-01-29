@@ -111,3 +111,7 @@ insert into remediate (core_standards_id,user_id) values ('4.nbt.b.5',67);
 
 --martinez_christopher
 insert into remediate (core_standards_id,user_id) values ('4.nbt.b.5',49);
+
+--4.md.a.1
+--barret_kayla
+insert into remediate (core_standards_id,user_id) values ('4.md.a.1',87);
