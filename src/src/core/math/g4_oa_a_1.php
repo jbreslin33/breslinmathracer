@@ -62,6 +62,29 @@ Extends: i_4_oa_a_1__word,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_8',4.0108,'4.oa.a.1','' );
+*/
+
+var i_4_oa_a_1__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '4.oa.a.1_8';
+
+                //variables
+                var a = Math.floor(Math.random()*8)+2;
+                var b = Math.floor(Math.random()*8)+2;
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + c + ' is __ times as many as ' + a);
+                this.setAnswer('' + b,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_7',4.0107,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
 */
 
