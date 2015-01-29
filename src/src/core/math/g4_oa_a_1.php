@@ -62,6 +62,25 @@ Extends: i_4_oa_a_1__word,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_7',4.0107,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
+*/
+
+var i_4_oa_a_1__7 = new Class(
+{
+Extends: i_4_oa_a_1__word_equation,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '4.oa.a.1_7';
+        	this.ns = new NameSampler();
+
+                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' has ' + this.c + '  ' + this.ns.mFruitTwo + '. Write a multiplication equation to represent the comparison.');
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_6',4.0106,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
 */
 
