@@ -1,4 +1,33 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_4',4.2504,'4.md.a.2','');
+*/
+var i_4_md_a_2__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.2_4';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,true);
+                fractionA.mNumerator = Math.floor(Math.random()*8+2);
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mNumerator = Math.floor(Math.random()*8+2);
+
+                var meters = parseInt(fractionA.mNumerator * 1000);
+
+                answer = parseInt(meters / 2);
+
+                this.setQuestion('' + this.ns.mNameOne + ' is half way done running in a ' + fractionA.mNumerator + ' kilometer race. How many meters does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have to go to get to the finish line?');
+
+                this.setAnswer('' + answer,0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_3',4.2503,'4.md.a.2','');
 */
 var i_4_md_a_2__3 = new Class(
