@@ -209,6 +209,15 @@ var NameMachine = new Class(
                 this.mPurchaseArray.push("gloves");
                 this.mPurchaseArray.push("mittens");
                 this.mPurchaseArray.push("a scarf");
+
+                //book
+                this.mBookArray = new Array();
+                this.mUsedBookElementArray = new Array();
+                this.mBookArray.push("Harry Potter");
+                this.mBookArray.push("Diary of a wimpy kid");
+                this.mBookArray.push("The hobbit");
+                this.mBookArray.push("Charlottes web");
+
  
 		//family
                 this.mFamilyArray = new Array();
@@ -822,6 +831,33 @@ var NameMachine = new Class(
                 }
                 this.mUsedPurchaseElementArray.push(randomElement);
                 return this.mPurchaseArray[randomElement];
+        },
+
+        getBook: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mBookArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedBookElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedBookElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedBookElementArray.push(randomElement);
+                return this.mBookArray[randomElement];
         },
 
         getFamily: function()
@@ -1805,6 +1841,16 @@ var NameSampler = new Class(
                 this.mPurchaseArray.push(this.mPurchaseOne);
                 this.mPurchaseArray.push(this.mPurchaseTwo);
                 this.mPurchaseArray.push(this.mPurchaseThree);
+                
+		//book
+                this.mBookOne   = this.mNameMachine.getBook();
+                this.mBookTwo   = this.mNameMachine.getBook();
+                this.mBookThree = this.mNameMachine.getBook();
+
+                this.mBookArray = new Array();
+                this.mBookArray.push(this.mBookOne);
+                this.mBookArray.push(this.mBookTwo);
+                this.mBookArray.push(this.mBookThree);
 
 	        //family
                 this.mFamilyOne   = this.mNameMachine.getFamily();

@@ -75,7 +75,7 @@ Extends: i_4_oa_a_1__word_equation,
                 this.mType = '4.oa.a.1_13';
                 this.ns = new NameSampler();
 
-                this.setQuestion(this.mNameOne + ' wants to buy ' + this.ns.mPurchaseOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' scored ' + this.b + ' times as many points playing ' + this.ns.mPointActivityOne + ' on ' + this.ns.mDayOfWeekTwo + '. Write a multiplication equation to represent this.');
+                this.setQuestion(this.mNameOne + ' has read ' + this.a + ' pages of a chapter of ' + this.ns.mBookOne + '. There are ' + this.b + ' times that many pages left in the chapter. Write a multiplication equation to represent the total amount of pages in the chapter.');
         }
 });
 
