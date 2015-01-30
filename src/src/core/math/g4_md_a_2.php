@@ -1,3 +1,35 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_5',4.2505,'4.md.a.2','');
+*/
+var i_4_md_a_2__5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.a.2_5';
+                this.ns = new NameSampler();
+	
+		var a = 0;
+		var b = 0;
+		var r = 1;
+		while (r != 0)	
+		{
+                	a = Math.floor(Math.random()*8+2);
+                	b = Math.floor(Math.random()*8+2);
+
+                	var grams = parseInt(b * 1000);
+                	answer = parseInt(grams / a);
+			r = parseInt(grams % a);
+		}
+                this.setQuestion('' + this.ns.mNameOne + ' has some ' + this.ns.mThingOne + ' that each have a mass of ' + a + ' grams. If all the ' + this.ns.mThingOne + ' together have a total mass of ' + b + ' kilograms then how many ' + this.ns.mThingOne + ' does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have?');
+
+                this.setAnswer('' + answer,0);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_4',4.2504,'4.md.a.2','');
 */
