@@ -113,7 +113,6 @@ insert into remediate (core_standards_id,user_id) values ('4.nbt.b.5',67);
 insert into remediate (core_standards_id,user_id) values ('4.nbt.b.5',49);
 
 --4.md.a.1
---everyone but jenny
 
 --almonte_catherine
 insert into remediate (core_standards_id,user_id) values ('4.md.a.1',34);
@@ -243,4 +242,136 @@ insert into remediate (core_standards_id,user_id) values ('4.md.a.1',70);
 
 --vu_anthony
 insert into remediate (core_standards_id,user_id) values ('4.md.a.1',31);
+
+--4.md.a.2
+
+--almonte_catherine
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',34);
+
+--ayala_juan
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',55);
+
+--barrett_kayla
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',87);
+
+--bernady_antonio
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',50);
+
+--breslin_luke
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',73);
+
+--burgos_leilani
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',20);
+
+--collazo_miguel
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',13);
+
+--delorbe_jefferson
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',52);
+
+--diaz_daniel
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',45);
+
+--dowling_desmond
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',51);
+
+--fred_fabiana
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',28);
+
+--gibson_reece
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',71);
+
+--jimenez_isael
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',29);
+
+--le_tam
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',74);
+
+--le_vivian
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',72);
+
+--le_jenny
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',30);
+
+--lewandowski_nick
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',47);
+
+--lillo_richard
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',7);
+
+--lin_suzi
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',76);
+
+--lopez_ashanti
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',22);
+
+--lugo_israel
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',54);
+
+--marsillio_carleigh
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',75);
+
+--martinez_christopher
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',49);
+
+--mejia_milagros
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',19);
+
+--montiel_valerie
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',41);
+
+--nguyen_minthai
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',46);
+
+--nguyen_scott
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',2);
+
+--nolasco_charil
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',33);
+
+--peralta_clangerys
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',53);
+
+--portilla_juliza
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',43);
+
+--quinones_jocelyne
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',63);
+
+--ramos_brian
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',1);
+
+--rivera_jayden
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',44);
+
+--rivera_ashley
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',48);
+
+--rodriquez_brianna
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',24);
+
+--santiago_abrianna
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',67);
+
+--serrano_christopher
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',27);
+
+--taileaf_saimeer
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',62);
+
+--terrero_adrian
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',21);
+
+--truong_donathan
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',9);
+
+--valentin_cecilia
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',26);
+
+--velez_alexiander
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',70);
+
+--vu_anthony
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',31);
+
 
