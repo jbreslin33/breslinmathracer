@@ -62,6 +62,24 @@ Extends: i_4_oa_a_1__word,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_14',4.0114,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
+*/
+
+var i_4_oa_a_1__14 = new Class(
+{
+Extends: i_4_oa_a_1__word_equation,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '4.oa.a.1_14';
+                this.ns = new NameSampler();
+
+                this.setQuestion('' + this.mNameOne + ' has ' + this.a + ' ' + this.ns.mColorOne + ' crayons. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' has ' + this.b + ' times that many ' + this.ns.mColorTwo + ' crayons. Write a multiplication equation to represent the comparison.');
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_13',4.0113,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
 */
 
