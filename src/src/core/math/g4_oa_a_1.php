@@ -62,6 +62,24 @@ Extends: i_4_oa_a_1__word,
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_13',4.0113,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
+*/
+
+var i_4_oa_a_1__13 = new Class(
+{
+Extends: i_4_oa_a_1__word_equation,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '4.oa.a.1_13';
+                this.ns = new NameSampler();
+
+                this.setQuestion(this.mNameOne + ' wants to buy ' + this.ns.mPurchaseOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' scored ' + this.b + ' times as many points playing ' + this.ns.mPointActivityOne + ' on ' + this.ns.mDayOfWeekTwo + '. Write a multiplication equation to represent this.');
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_12',4.0112,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
 */
 
@@ -75,10 +93,13 @@ Extends: i_4_oa_a_1__word_equation,
                 this.mType = '4.oa.a.1_12';
                 this.ns = new NameSampler();
 
-                this.setQuestion(this.mNameOne + ' wants to buy ' + this.ns.mPurchaseOne + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' scored ' + this.b + ' times as many points playing ' + this.ns.mPointActivityOne + ' on ' + this.ns.mDayOfWeekTwo + '. Write a multiplication equation to represent this.');
+                this.setQuestion(this.mNameOne + ' wants to buy ' + this.ns.mPurchaseOne + ' that cost ' + this.c + '$. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' has ' + this.a + '$. Write a multiplication equation to represent this.');
         }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.1_11',4.0111,'4.oa.a.1','Word Problem. Multiplication. Put in equation form. ' );
+*/
 
 var i_4_oa_a_1__11 = new Class(
 {
