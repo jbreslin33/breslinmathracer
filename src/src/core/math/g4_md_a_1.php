@@ -298,7 +298,7 @@ Extends: TextItem,
 		var a = Math.floor((Math.random()*8)+2); 
 		var answer = parseInt(a * 3);
 
-                this.setQuestion('How many feet in ' + a + ' yard?');
+                this.setQuestion('How many feet in ' + a + ' yards?');
                 this.setAnswer('' + answer,0);
         }
 });
