@@ -1,5 +1,46 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_8',4.2508,'4.md.a.2','');
+*/
+var i_4_md_a_2__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_8';
+                this.ns = new NameSampler();
+
+		this.mChopWhiteSpace = false;
+		var a = 0;
+		var b = 0;
+		var c = 0;
+
+		while (c == b) 
+		{ 
+                	a = Math.floor(Math.random()*8+2);
+			c = parseInt(a*1000); 
+			var mod = parseInt(c - 1000);
+                	b = Math.floor(Math.random()*2000+mod);
+                	
+			answer = parseInt(b);
+
+                	this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' liters of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameTwo + ' has ' + b + ' milliliters of ' + this.ns.mDrinkTwo + '. Who has the largest volume of liquid?');
+	
+			if (c > b)
+			{
+                		this.setAnswer('' + this.ns.mNameOne,0);
+			}
+			if (b > c)
+			{
+                		this.setAnswer('' + this.ns.mNameTwo,0);
+			}
+		}
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_7',4.2507,'4.md.a.2','');
 */
 var i_4_md_a_2__7 = new Class(
