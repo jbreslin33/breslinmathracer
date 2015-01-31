@@ -545,7 +545,8 @@ initialize: function(sheet)
         this.partB = parseInt(              this.e);
         this.part =  parseInt(this.partA * this.partB);
 
-	while (this.part == 0)
+	var floatAnswer = 0; 
+	while (this.part == 0 || floatAnswer < 0.0001)
 	{
         	this.a = 0;
         	this.b = Math.floor(Math.random()*10);
@@ -556,12 +557,14 @@ initialize: function(sheet)
         	this.partA = parseInt(this.b * 10 + this.c);
         	this.partB = parseInt(              this.e);
         	this.part =  parseInt(this.partA * this.partB);
+
+		this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,3);
+
+        	this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
+        	this.setAnswer('' + this.mMultiplyDecimals.mAnswer,0);
+		
+		floatAnswer = parseFloat(this.mMultiplyDecimals.mAnswer);
 	}
-
-	this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,3);
-
-        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
-        this.setAnswer('' + this.mMultiplyDecimals.mAnswer,0);
 }
 });
 
