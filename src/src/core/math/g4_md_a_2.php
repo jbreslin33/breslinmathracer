@@ -12,22 +12,12 @@ Extends: TextItem,
                 this.mType = '4.md.a.2_7';
                 this.ns = new NameSampler();
 
-                var a = 0;
-                var b = 0;
-                var r = 1;
-                while (r != 0)
-                {
-                        a = Math.floor(Math.random()*8+2);
-                        a = 1;
-                        b = Math.floor(Math.random()*8+2);
+                var a = 1;
+                var b = Math.floor(Math.random()*8+2);
 
-                        var grams = parseInt(a * 1000);
-                        var tb = parseInt(b + 1);
-                        answer = parseInt(grams * tb);
-                        r = parseInt(grams % a);
-                }
-                this.setQuestion('' + this.ns.mNameOne + ' has a textbook for ' + this.ns.mSubjectOne + ' that has a mass of ' + a + ' kilogram. All of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1)  + ' other ' + b + ' textbooks have the same mass. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' takes home all ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' textbooks what will be the total mass of them all in grams?');
-
+                answer = parseInt(b);
+                
+		this.setQuestion('A mililiter of ' + this.ns.mDrinkOne + ' has a mass of ' + a + ' gram. ' + this.ns.mNameOne + ' goes to the store for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1)  + ' ' + this.ns.mFamilyOne + ' to purchase ' + b + ' liters of ' + this.ns.mDrinkOne + '. What is the mass in kilograms of the ' + this.ns.mDrinkOne + ' ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will carry back to ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + '.');
                 this.setAnswer('' + answer,0);
         }
 });
