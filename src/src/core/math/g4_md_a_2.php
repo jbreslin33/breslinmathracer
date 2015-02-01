@@ -1,3 +1,34 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_9',4.2509,'4.md.a.2','');
+*/
+var i_4_md_a_2__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_9';
+                this.ns = new NameSampler();
+
+                var a = 0;
+                var b = 0;
+                var r = 1;
+                while (r != 0)
+                {
+                        a = Math.floor(Math.random()*8+2);
+                        b = Math.floor(Math.random()*8+2);
+
+                        var grams = parseInt(a * 1000);
+                        answer = parseInt(grams / b);
+                        r = parseInt(grams % b);
+                }
+                this.setQuestion('' + this.ns.mNameOne + ' buys some ' + this.ns.mFruitOne + ' that have a total mass of ' + a + ' kilograms. Each of the individual ' + this.ns.mFruitOne + ' has the same mass. There are ' + b + ' individual ' + ' ' + this.ns.mFruitOne + '. What is the mass of one of the ' + this.ns.mFruitOne + ' in grams?');
+
+                this.setAnswer('' + answer,0);
+        }
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_8',4.2508,'4.md.a.2','');
