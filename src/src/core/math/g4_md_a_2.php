@@ -1,3 +1,33 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_12',4.2512,'4.md.a.2','');
+*/
+var i_4_md_a_2__12 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_12';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var a_hour = Math.floor(Math.random()*12+1);
+                var a_minute = Math.floor(Math.random()*60);
+
+                var b_hour = 0;
+                var b_minute = 30;
+
+                var from = new Time(a_hour,a_minute);
+                var during = new Time(b_hour,b_minute);
+
+                var till = from.add(during);
+
+                this.setQuestion('' + this.ns.mNameOne + ' started playing ' + this.ns.mPlayedActivityOne + ' with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend at ' + from.getString() + '  They stopped playing a half hour later. What time did they stop?');
+
+                this.setAnswer('' + till.getString(),0);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_11',4.2511,'4.md.a.2','');
