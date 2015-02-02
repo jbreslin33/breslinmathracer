@@ -11,16 +11,18 @@ Extends: TextItem,
 
                 this.mType = '4.md.a.2_11';
                 this.ns = new NameSampler();
-		this.ac = new AnalogClock(10,13,27);
 
                 var a_hour = Math.floor(Math.random()*12+1);
                 var a_minute = Math.floor(Math.random()*60);
                 var b_hour = Math.floor(Math.random()*12+1);
                 var b_minute = Math.floor(Math.random()*60);
+		var from = new Time(a_hour,a_minute);
+		var during = new Time(a_hour,b_minute);
+		var till = new Time(12,12);
 
-                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + a_hour + ':' + this.ac.convertMinute(a_minute) + ' P.M. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + b_hour + ':' + this.ac.convertMinute(b_minute) + '. When time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
+                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + from.mHour + ':' + from.mMinute + ' P.M. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + during.mHour + ':' + during.mMinute + '. When time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
 
-                this.setAnswer('' + a_hour,0);
+                this.setAnswer('' + till.mHour + ':' + till.mMinute + ' P.M.',0);
         }
 });
 
