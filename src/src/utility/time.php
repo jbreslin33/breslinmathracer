@@ -19,6 +19,7 @@ var Time = new Class(
 	
 		if (minute > 59)
 		{
+			minute = parseInt(minute - 60);
 			hour++;
 		}
 	
