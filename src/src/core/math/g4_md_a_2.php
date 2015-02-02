@@ -11,6 +11,7 @@ Extends: TextItem,
 
                 this.mType = '4.md.a.2_11';
                 this.ns = new NameSampler();
+		this.mChopWhiteSpace = false;
 
                 var a_hour = Math.floor(Math.random()*12+1);
                 var a_minute = Math.floor(Math.random()*60);
@@ -23,7 +24,7 @@ Extends: TextItem,
 
 		var till = from.add(during);
 
-                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + from.getString() + ' ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + during.mHour + ' and ' + during.mMinute + ' minutes. What time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
+                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + from.getString() + ' ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + during.mHour + ' hour and ' + parseInt(during.mMinute) + ' minutes. What time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
 
                 this.setAnswer('' + till.getString(),0);
         }
