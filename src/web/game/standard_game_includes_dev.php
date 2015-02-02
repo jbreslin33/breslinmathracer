@@ -84,6 +84,7 @@
 <script type="text/javascript" src="/src/core/math/items_jim.php"></script>
 
 <script type="text/javascript" src="/src/utility/name_machine.php"></script>
+<script type="text/javascript" src="/src/utility/analog_clock.php"></script>
 
 <script type="text/javascript" src="/src/core/math/k_cc_a_1.php"></script>
 <script type="text/javascript" src="/src/core/math/k_cc_a_2.php"></script>
