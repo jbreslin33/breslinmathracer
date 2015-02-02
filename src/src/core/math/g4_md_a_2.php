@@ -1,3 +1,36 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_13',4.2513,'4.md.a.2','');
+*/
+var i_4_md_a_2__13 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_13';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var a_hour = Math.floor(Math.random()*12+1);
+                var a_minute = Math.floor(Math.random()*60);
+
+                var b_hour = 0;
+                var b_minute = 15;
+
+                var till = new Time(a_hour,a_minute);
+                var during = new Time(b_hour,b_minute);
+
+                var from = till.subtract(during);
+
+                this.setQuestion('' + this.ns.mNameOne + ' stopped playing ' + this.ns.mPlayedActivityOne + ' with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend at ' + till.getString() + '  They played for three quarters of an hour. What time did they start playing?');
+
+                this.setAnswer('' + from.getString(),0);
+        }
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_12',4.2512,'4.md.a.2','');
 */
