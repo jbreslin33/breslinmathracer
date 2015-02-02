@@ -32,77 +32,59 @@ var AnalogClock = new Class(
 			this.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100"); 
 		}
 	},
-/*	
-	createQuestions: function()
+	
+	convertMinute: function(minute)
         {
-		this.parent();
-
-		this.mQuiz.resetQuestionArray();
-
-		for (i=0; i < this.mScoreNeeded; i++)
+		minute = parseInt(minute);
+		var m = 0;
+		//exact hour
+		if (minute == 0)
 		{
-			var h = '' + Math.floor((Math.random()*12)+1);	
-			var m = '00';	
-			randomChance = Math.floor((Math.random()*59));	
-			
-			//exact hour
-			if (randomChance == 0)
-			{
-				m = '00';	
-			}
-			if (randomChance == 1)
-			{
-				m = '01';	
-			}
-			if (randomChance == 2)
-			{
-				m = '02';	
-			}
-			if (randomChance == 3)
-			{
-				m = '03';	
-			}
-			if (randomChance == 4)
-			{
-				m = '04';	
-			}
-			if (randomChance == 5)
-			{
-				m = '05';	
-			}
-			if (randomChance == 6)
-			{
-				m = '06';	
-			}
-			if (randomChance == 7)
-			{
-				m = '07';	
-			}
-			if (randomChance == 8)
-			{
-				m = '08';	
-			}
-			if (randomChance == 9)
-			{
-				m = '09';	
-			}
-			if (randomChance > 9 && randomChance < 60)
-			{
-				m = randomChance;	
-			}
-		
-			var question = new Question('What time is it?', '' + h + ':' + m);
-			this.mQuiz.mQuestionArray.push(question);
+			m = '00';	
 		}
+		if (minute == 1)
+		{
+			m = '01';	
+		}
+		if (minute == 2)
+		{
+			m = '02';	
+		}
+		if (minute == 3)
+		{
+			m = '03';	
+		}
+		if (minute == 4)
+		{
+			m = '04';	
+		}
+		if (minute == 5)
+		{
+			m = '05';	
+		}
+		if (minute == 6)
+		{
+			m = '06';	
+		}
+		if (minute == 7)
+		{
+			m = '07';	
+		}
+		if (minute == 8)
+		{
+			m = '08';	
+		}
+		if (minute == 9)
+		{
+			m = '09';	
+		}
+		if (minute > 9 && minute < 60)
+		{
+			m = minute;	
+		}
+		return m;
 	},
-
-	createWorld: function()
-	{
-		this.parent();
-
-		this.createClock(12,59);	
-	},
-*/	
+	
 	createClock: function(hours,minutes,seconds)
 	{
 		
