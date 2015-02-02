@@ -13,21 +13,14 @@ Extends: TextItem,
                 this.ns = new NameSampler();
 		this.ac = new AnalogClock(10,13,27);
 
-                var a = 0;
-                var b = 0;
-                var r = 1;
-                while (r != 0)
-                {
-                        a = Math.floor(Math.random()*8+2);
-                        b = Math.floor(Math.random()*8+2);
+                var a_hour = Math.floor(Math.random()*12+1);
+                var a_minute = Math.floor(Math.random()*60);
+                var b_hour = Math.floor(Math.random()*12+1);
+                var b_minute = Math.floor(Math.random()*60);
 
-                        var grams = parseInt(a * 1000);
-                        answer = parseInt(grams / b);
-                        r = parseInt(grams % b);
-                }
-                this.setQuestion('' + this.ns.mNameOne + ' is ' + this.ns.mFruitOne + ' that have a total mass of ' + a + ' kilograms. Each of the individual ' + this.ns.mFruitOne + ' has the same mass. There are ' + b + ' individual ' + ' ' + this.ns.mFruitOne + '. What is the mass of one of the ' + this.ns.mFruitOne + ' in grams?');
+                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + a_hour + ':' + this.ac.convertMinute(a_minute) + ' P.M. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + b_hour + ':' + this.ac.convertMinute(b_minute) + '. When time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
 
-                this.setAnswer('' + answer,0);
+                this.setAnswer('' + a_hour,0);
         }
 });
 
