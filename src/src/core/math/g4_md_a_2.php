@@ -14,15 +14,18 @@ Extends: TextItem,
 
                 var a_hour = Math.floor(Math.random()*12+1);
                 var a_minute = Math.floor(Math.random()*60);
-                var b_hour = Math.floor(Math.random()*12+1);
+
+                var b_hour = Math.floor(Math.random()*2+1);
                 var b_minute = Math.floor(Math.random()*60);
+
 		var from = new Time(a_hour,a_minute);
-		var during = new Time(a_hour,b_minute);
-		var till = new Time(12,12);
+		var during = new Time(b_hour,b_minute);
 
-                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + from.mHour + ':' + from.mMinute + ' P.M. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + during.mHour + ':' + during.mMinute + '. When time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
+		var till = from.add(during);
 
-                this.setAnswer('' + till.mHour + ':' + till.mMinute + ' P.M.',0);
+                this.setQuestion('' + this.ns.mNameOne + ' went to ' + this.ns.mPlayedActivityOne + ' practice at ' + from.getString() + ' ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' practice lasts for ' + during.mHour + ' and ' + during.mMinute + ' minutes. What time does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' practice end?');
+
+                this.setAnswer('' + till.getString(),0);
         }
 });
 

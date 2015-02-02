@@ -6,10 +6,42 @@ var Time = new Class(
 		this.mMinute = this.convertMinute(minutes);
 	},
 	
-	subtract: function(from,till)
+	subtract: function(subtract)
 	{
 		var time = new Time(10,13);
 		return time; 
+	},
+	
+	add: function(add)
+	{
+		var minute = parseInt(this.mMinute + add.mMinute);
+		var hour = parseInt(this.mHour + add.mHour);
+	
+		if (minute > 59)
+		{
+			hour++;
+		}
+	
+		var time  = new Time(hour,minute);
+		return time; 
+	},
+
+	getString: function()
+	{
+		var s = '';
+		if (this.mHour < 12)
+		{
+			s = '' + this.mHour + ':' + this.mMinute + ' A.M.';		
+		}
+		if (this.mHour == 12)
+		{
+			s = '' + this.mHour + ':' + this.mMinute + ' P.M.';		
+		}
+		if (this.mHour > 12)
+		{
+			s = '' + parseInt(this.mHour - 12) + ':' + this.mMinute + ' P.M.';		
+		}
+		return s;
 	},
 	
 	convertMinute: function(minute)
