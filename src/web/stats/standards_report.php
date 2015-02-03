@@ -30,7 +30,7 @@ $last_name_array = array();
 	
 $query = "select id, first_name, last_name from users where core_standards_id = '";
 $query .= "5.oa.a.1";
-$query .= "' AND score > 50 order by last_name asc;";
+$query .= "' AND score > 50 order by score desc;";
 
 $result = pg_query($conn,$query);
 $numStudents = pg_numrows($result);
