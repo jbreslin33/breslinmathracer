@@ -8,12 +8,12 @@ var Time = new Class(
 	
 	subtract: function(subtract)
 	{
-		var minute = parseInt(this.mMinute + subtract.mMinute);
+		var minute = parseInt(this.mMinute - subtract.mMinute);
 		var hour = parseInt(this.mHour - subtract.mHour);
 	
-		if (minute > 59)
+		if (minute < 0)
 		{
-			minute = parseInt(minute - 60);
+			minute = parseInt( 60 - Math.abs(minute) );
 			hour--;
 		}
 	
