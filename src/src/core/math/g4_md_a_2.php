@@ -1,5 +1,36 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_15',4.2515,'4.md.a.2','');
+*/
+var i_4_md_a_2__15 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+       	this.ns = new NameSampler();
+        this.mType = '4.md.a.2_15';
+
+       	var fractionA = new Fraction(1,1,false);
+       	var fractionB = new Fraction(1,1,false);
+       	var answer = fractionA.multiply(fractionB);
+
+       	while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1)
+       	{
+		fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+       		fractionA.mDenominator = Math.floor(Math.random()*8+2);
+               	fractionB.mNumerator   = Math.floor(Math.random()*8+2);
+                answer = fractionA.multiply(fractionB);
+        	answer.reduce();
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. tablespoons of sugar per serving. How many tablespoons would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' need for ' + fractionB.mNumerator + ' servings?');
+        this.setAnswer('' + answer.getMixedNumber(),0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_14',4.2514,'4.md.a.2','');
 */
 var i_4_md_a_2__14 = new Class(

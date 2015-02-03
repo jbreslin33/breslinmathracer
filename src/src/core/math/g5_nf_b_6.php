@@ -25,7 +25,7 @@ Extends: TextItemMixedNumber,
                         answer.reduce();
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. tablespoons of sugar per serving. How many tablespoons would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' need for ' + fractionB.mNumerator + ' servings?');
+                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.mNumerator + ' dollars an hour. How much money will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make in a week?');
                 this.setAnswer('' + answer.getMixedNumber(),0);
         }
 });
