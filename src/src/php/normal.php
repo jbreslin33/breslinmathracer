@@ -82,8 +82,6 @@ public function initializeProgressionCounter()
 public function fillTypesArray()
 {
 	//remediate types
-	//select item_types.id from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = 49;
-	
 	$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
         $query .= $_SESSION["user_id"];
 	$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards

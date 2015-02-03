@@ -23,6 +23,18 @@ echo "<br>";
 
 <?php
 
+$q = "select id from item_types where progression > 4.99 AND progression < 6 order by progression asc;";
+$r = pg_query($conn,$q);
+$n = pg_numrows($r);
+
+//loopthru item types for user
+for($a = 0; $a < $n; $a++)
+{
+	$row = pg_fetch_array($result, $j);
+        $user_id_array[] = $row[0];
+        $last_name_array[] = $row[1];
+}
+
 $user_id_array = array();
 $first_name_array = array();
 $last_name_array = array();
@@ -56,6 +68,21 @@ $last_name_array = array();
 
 	for($i = 0; $i < $numrows; $i++)
 	{ 
+
+		//lets interject right here....
+ 		$query = "select id from item_types where progression > 4.99 AND progression < 6 order by progression asc;";
+		$result = pg_query($conn,$query);
+		$nrows = pg_numrows($result);
+
+		//loopthru item types for user	
+		for($j = 0; $j < $nrows; $j++)
+		{
+        		$row = pg_fetch_array($result, $j);
+			$user_id_array[] = $row[0];
+			$last_name_array[] = $row[1];
+		}
+
+
        		echo '<tr>';
         	echo '<td>';
         	echo $user_id_array[$i];
