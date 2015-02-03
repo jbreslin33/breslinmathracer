@@ -110,7 +110,7 @@ Extends: TextItem,
                 var a_hour = Math.floor(Math.random()*12+1);
                 var a_minute = Math.floor(Math.random()*60);
 
-                var b_hour = Math.floor(Math.random()*2+1);
+                var b_hour = Math.floor(Math.random()*3+2);
                 var b_minute = Math.floor(Math.random()*60);
 
 		var from = new Time(a_hour,a_minute);

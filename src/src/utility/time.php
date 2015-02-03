@@ -3,7 +3,7 @@ var Time = new Class(
 	initialize: function(hours,minutes)
 	{
 		this.mHour = hours;
-		this.mMinute = this.convertMinute(minutes);
+		this.mMinute = minutes;
 	},
 	
 	subtract: function(subtract)
@@ -41,15 +41,15 @@ var Time = new Class(
 		var s = '';
 		if (this.mHour < 12)
 		{
-			s = '' + this.mHour + ':' + this.mMinute + ' A.M.';		
+			s = '' + this.mHour + ':' + this.convertMinute(this.mMinute) + ' A.M.';		
 		}
 		if (this.mHour == 12)
 		{
-			s = '' + this.mHour + ':' + this.mMinute + ' P.M.';		
+			s = '' + this.mHour + ':' + this.convertMinute(this.mMinute) + ' P.M.';		
 		}
 		if (this.mHour > 12)
 		{
-			s = '' + parseInt(this.mHour - 12) + ':' + this.mMinute + ' P.M.';		
+			s = '' + parseInt(this.mHour - 12) + ':' + this.convertMinute(this.mMinute) + ' P.M.';		
 		}
 		return s;
 	},
