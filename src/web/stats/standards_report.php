@@ -23,18 +23,6 @@ echo "<br>";
 
 <?php
 
-//item types for 5th
-$q = "select id from item_types where progression > 4.99 AND progression < 6 order by progression asc;";
-$r = pg_query($conn,$q);
-$n = pg_numrows($r);
-
-for($a = 0; $a < $n; $a++)
-{
-	$row = pg_fetch_array($result, $j);
-        $user_id_array[] = $row[0];
-        $last_name_array[] = $row[1];
-}
-
 //students for 5th
 $user_id_array = array();
 $first_name_array = array();
