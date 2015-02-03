@@ -24,7 +24,7 @@ Extends: TextItem,
 
                 var from = till.subtract(during);
 
-                this.setQuestion('' + this.ns.mNameOne + ' stopped playing ' + this.ns.mPlayedActivityOne + ' with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend at ' + till.getString() + '  They played for three quarters of an hour. What time did they start playing?');
+                this.setQuestion('' + this.ns.mNameOne + ' stopped playing ' + this.ns.mPlayedActivityOne + ' with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend at ' + till.getString() + '  They played for one quarter of an hour. What time did they start playing?');
 
                 this.setAnswer('' + from.getString(),0);
         }
