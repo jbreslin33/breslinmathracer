@@ -271,6 +271,9 @@ insert into remediate (core_standards_id,user_id) values ('4.md.a.1',43);
 --quinones_jocelyne
 insert into remediate (core_standards_id,user_id) values ('4.md.a.1',63);
 
+--qiang_wei
+insert into remediate (core_standards_id,user_id) values ('4.md.a.1',15);
+
 --ramos_brian
 insert into remediate (core_standards_id,user_id) values ('4.md.a.1',1);
 
@@ -401,6 +404,9 @@ insert into remediate (core_standards_id,user_id) values ('4.md.a.2',43);
 
 --quinones_jocelyne
 insert into remediate (core_standards_id,user_id) values ('4.md.a.2',63);
+
+--qiang_wei
+insert into remediate (core_standards_id,user_id) values ('4.md.a.2',15);
 
 --ramos_brian
 insert into remediate (core_standards_id,user_id) values ('4.md.a.2',1);
