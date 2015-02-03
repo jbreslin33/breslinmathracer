@@ -66,6 +66,8 @@ echo '<td> Last Name';
 echo '</td>';
 echo '<td> Type ID';
 echo '</td>';
+echo '<td> Score';
+echo '</td>';
 echo '</tr>';
 
 
@@ -86,6 +88,15 @@ echo '</tr>';
 			$typeid = $row[0];
 		}
 
+		$score = 0;	
+		for($k = 0; $k < sizeof($item_type_id_array); $k++)
+		{
+			if ($item_type_id_array[$k] == $typeid)
+			{
+				$score = $k;
+			}
+		}
+
        		echo '<tr>';
         	echo '<td>';
         	echo $user_id_array[$i];
@@ -98,6 +109,9 @@ echo '</tr>';
         	echo '</td>';
         	echo '<td>';
         	echo $typeid;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $score;
         	echo '</td>';
         	echo '</tr>';
 	}
