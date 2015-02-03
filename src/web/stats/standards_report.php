@@ -62,7 +62,7 @@ echo '</tr>';
 
 		$query = "select item_types_id from item_attempts JOIN item_types ON item_types.id=item_attempts.item_types_id JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = "; 
 		$query .= $user_id_array[$i]; 	
-		$query .= " order by progression desc LIMIT 1;";
+		$query .= " AND progression > 4.99 AND progression < 6 order by progression desc LIMIT 1;";
 
 		$result = pg_query($conn,$query);
 		$nrows = pg_numrows($result);
