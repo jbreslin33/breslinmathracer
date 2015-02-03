@@ -43,6 +43,18 @@ for($i = 0; $i < $numStudents; $i++)
 	$first_name_array[] = $row[2];
 }
 
+//item types
+$query = "select id from item_types where progression > 4.99 AND progression < 6 AND active_code = 1 order by progression asc;";
+
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        $item_type_id_array[] = $row[0];
+}
+
 //html for table
 echo '<table border=\"1\">';
 echo '<tr>';
@@ -62,7 +74,7 @@ echo '</tr>';
 
 		$query = "select item_types_id from item_attempts JOIN item_types ON item_types.id=item_attempts.item_types_id JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = "; 
 		$query .= $user_id_array[$i]; 	
-		$query .= " AND progression > 4.99 AND progression < 6 order by progression desc LIMIT 1;";
+		$query .= " AND progression > 4.99 AND progression < 6 AND item_types.active_code = 1 order by progression desc LIMIT 1;";
 
 		$result = pg_query($conn,$query);
 		$nrows = pg_numrows($result);
@@ -71,7 +83,6 @@ echo '</tr>';
 		if ($nrows > 0)
 		{
         		$row = pg_fetch_array($result, 0);
-			$typer_id_array[] = $row[0];
 			$typeid = $row[0];
 		}
 
