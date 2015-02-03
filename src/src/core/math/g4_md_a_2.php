@@ -149,7 +149,7 @@ Extends: TextItem,
                         answer = parseInt(grams / b);
                         r = parseInt(grams % b);
                 }
-                this.setQuestion('' + this.ns.mNameOne + ' is ' + this.ns.mFruitOne + ' that have a total mass of ' + a + ' kilograms. Each of the individual ' + this.ns.mFruitOne + ' has the same mass. There are ' + b + ' individual ' + ' ' + this.ns.mFruitOne + '. What is the mass of one of the ' + this.ns.mFruitOne + ' in grams?');
+                this.setQuestion('' + this.ns.mNameOne + ' has some ' + this.ns.mFruitOne + ' that have a total mass of ' + a + ' kilograms. Each of the individual ' + this.ns.mFruitOne + ' has the same mass. There are ' + b + ' individual ' + ' ' + this.ns.mFruitOne + '. What is the mass of one of the ' + this.ns.mFruitOne + ' in grams?');
 
                 this.setAnswer('' + answer,0);
         }
