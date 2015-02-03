@@ -8,7 +8,16 @@ var Time = new Class(
 	
 	subtract: function(subtract)
 	{
-		var time = new Time(10,13);
+		var minute = parseInt(this.mMinute + subtract.mMinute);
+		var hour = parseInt(this.mHour - subtract.mHour);
+	
+		if (minute > 59)
+		{
+			minute = parseInt(minute - 60);
+			hour--;
+		}
+	
+		var time  = new Time(hour,minute);
 		return time; 
 	},
 	
