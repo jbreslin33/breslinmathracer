@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_15',4.2515,'4.md.a.2','');
 */
@@ -12,7 +13,7 @@ Extends: TextItemFraction,
                 this.ns = new NameSampler();
 
                 var fractionA = new Fraction(1,1,true);
-                fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                fractionA.mNumerator = Math.floor(Math.random()*8+2);
 
                 var fractionB = new Fraction(1,1,false);
                 fractionB.mNumerator = Math.floor(Math.random()*8+2);
@@ -20,7 +21,7 @@ Extends: TextItemFraction,
                 answer = fractionA.divide(fractionB);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mNameOne + ' had some ' + this.ns.mRopeOne + ' that was ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' long. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cut it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');
+                this.setQuestion('' + this.ns.mNameOne + ' built a ' + fractionA.mNumerator + ' yards long garden in a video game. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' split it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');
                 this.setAnswer('' + answer.getString(),0);
         }
 });
