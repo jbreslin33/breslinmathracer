@@ -6,7 +6,7 @@ var i_4_md_a_2__19 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.parent(sheet,300,50,175,65,100,50,425,100);
+	this.parent(sheet,450,200,255,145,100,50,580,100);
 
         this.mType = '4.md.a.2_19';
         this.ns = new NameSampler();
