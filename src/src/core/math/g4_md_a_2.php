@@ -16,6 +16,9 @@ Extends: TextItem,
                 var c = 0;
                 var d = 0;
                 var r = 1;
+
+		var f = new Fraction(3,8); 
+
                 while (r != 0)
                 {
                         a = Math.floor(Math.random()*8+2);
@@ -26,7 +29,7 @@ Extends: TextItem,
                         c = parseInt(g / b);
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' traveled ' + a + ' kilometers ' + ' to see ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + '. and ' + b + ' kilometers ' + this.ns.mPlayedActivityOne + ' practice. After practice ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.ns.mFamilyOne + ' drives everyone home. They drive ' + a + ' kilometers to drop off ' + this.ns.mNameTwo + ', ' + b + ' kilometers to drop off ' + this.ns.mNameThree + ' and ' + c + ' kilometers to drop off ' + this.ns.mNameThree + '. The air conditioner in the car was on for 0.' + d + ' of the trip to drop everyone off. How many meters of the trip to drop everyone off was the air conditioner on?');
+                this.setQuestion('' + this.ns.mNameOne + ' traveled ' + a + ' kilometers ' + ' to see ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then traveled ' + b + ' kilometers to ' + this.ns.mPlayedActivityOne + ' practice. After practice ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' traveled ' + c + ' kilometers to get back home. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' walked ' + ' ' + f.getString() + ' of the total distance and ran the rest. How many meters did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run?');
                 this.setAnswer('' + b,0);
         }
 });
