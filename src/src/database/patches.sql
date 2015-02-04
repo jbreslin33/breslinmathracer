@@ -7,7 +7,7 @@ CREATE TABLE remediate (
         FOREIGN KEY (core_standards_id) REFERENCES core_standards(id),
         FOREIGN KEY (user_id) REFERENCES users(id)
 );
-
+ALTER TABLE users ADD CONSTRAINT nodups UNIQUE (username);
 --4.nbt.b.6
 
 --quinones_jaceylyne
