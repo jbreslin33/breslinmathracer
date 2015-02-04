@@ -134,7 +134,7 @@ CREATE TABLE error_log
 --USERS
 CREATE TABLE users (
 	id SERIAL,
-    	username text, 
+    	username text UNIQUE, 
     	password text,
     	first_name text,
     	middle_name1 text,
