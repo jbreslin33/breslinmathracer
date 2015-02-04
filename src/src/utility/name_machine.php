@@ -513,43 +513,87 @@ var NameMachine = new Class(
 	
 	},
 
+	getPlace: function(number)
+	{
+		if (number == 1)
+		{
+			return 'first';
+		}	
+		if (number == 2)
+		{
+			return 'second';
+		}	
+		if (number == 3)
+		{
+			return 'third';
+		}	
+		if (number == 4)
+		{
+			return 'fourth';
+		}	
+		if (number == 5)
+		{
+			return 'fifth';
+		}	
+		if (number == 6)
+		{
+			return 'sixth';
+		}	
+		if (number == 7)
+		{
+			return 'seventh';
+		}	
+		if (number == 8)
+		{
+			return 'eigth';
+		}	
+		if (number == 9)
+		{
+			return 'ninth';
+		}	
+		if (number == 10)
+		{
+			return 'tenth';
+		}	
+	},
+
 	getDenominatorName: function(number)
 	{
 		if (number == 2)
 		{
-			return 'halves'
+			return 'halves';
 		}	
 		if (number == 3)
 		{
-			return 'thirds'
+			return 'thirds';
 		}	
 		if (number == 4)
 		{
-			return 'fourths'
+			return 'fourths';
 		}	
 		if (number == 5)
 		{
-			return 'fifths'
+			return 'fifths';
 		}	
 		if (number == 6)
 		{
-			return 'sixths'
+			return 'sixths';
 		}	
 		if (number == 7)
 		{
-			return 'sevenths'
+			return 'sevenths';
 		}	
 		if (number == 8)
 		{
-			return 'eighths'
+			return 'eighths';
 		}	
 		if (number == 9)
 		{
-			return 'ninths'
+			return 'ninths';
 		}	
 		if (number == 10)
 		{
-			return 'tenths'
+			return 'tenths';
 		}	
 	},
 
