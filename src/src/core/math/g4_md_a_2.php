@@ -4,34 +4,44 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_a_2__19 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,65,100,50,425,100);
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,65,100,50,425,100);
 
-                this.mType = '4.md.a.2_19';
-                this.ns = new NameSampler();
+        this.mType = '4.md.a.2_19';
+        this.ns = new NameSampler();
 
-                var a = 0;
-                var b = 0;
-                var c = 0;
-                var d = 0;
-                var r = 1;
+        var a = Math.floor(Math.random()*2+2);
+        var b = Math.floor(Math.random()*2+2);
+        var c = Math.floor(Math.random()*2+2);
+	var n = 0;
+	var d = 0;
+	var answer        = new Fraction(1,3); 
+	var fractionOne   = new Fraction(3,2);
+	var fractionTwo   = new Fraction(3,2);
+	var fractionThree = new Fraction(3,2);
+	var fractionFour  = new Fraction(1000,1);
 
-		var f = new Fraction(3,8); 
+	while (n >= d || answer.mDenominator != 1 || fractionThree.mDenominator != 1)
+	{
+		//part of run
+               	n = Math.floor(Math.random()*8+2);
+               	d = Math.floor(Math.random()*8+2);
+		fractionOne = new Fraction(n,d); 
 
-                while (r != 0)
-                {
-                        a = Math.floor(Math.random()*8+2);
-                        b = Math.floor(Math.random()*8+2);
+		//kilometers
+		var k = parseInt(a + b + c);
+		fractionTwo = new Fraction(k,1);		
 
-                        var g = parseInt(a * 1000);
-                        r = parseInt(g % b);
-                        c = parseInt(g / b);
-                }
+		//run x kilometers
+		fractionThree = fractionOne.multiply(fractionTwo);
+        	
+		answer = fractionThree.multiply(fractionFour);
 
-                this.setQuestion('' + this.ns.mNameOne + ' traveled ' + a + ' kilometers ' + ' to see ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then traveled ' + b + ' kilometers to ' + this.ns.mPlayedActivityOne + ' practice. After practice ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' traveled ' + c + ' kilometers to get back home. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' walked ' + ' ' + f.getString() + ' of the total distance and ran the rest. How many meters did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run?');
-                this.setAnswer('' + b,0);
-        }
+        	this.setQuestion('' + this.ns.mNameOne + ' traveled ' + a + ' kilometers ' + ' to see ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then traveled ' + b + ' kilometers to ' + this.ns.mPlayedActivityOne + ' practice. After practice ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' traveled ' + c + ' kilometers to get back home. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' walked ' + ' ' + fractionOne.getString() + ' of the total distance and ran the rest. How many meters did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run?');
+                this.setAnswer('' + answer.getString(),0);
+	}
+}
 });
 
 
