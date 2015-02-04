@@ -13,18 +13,26 @@ Extends: TextItemMixedNumber,
                 this.ns = new NameSampler();
                 this.mChopWhiteSpace = false;
 
-                var a_hour = Math.floor(Math.random()*12+1);
+                var a = Math.floor(Math.random()*3+2);
+                var b = Math.floor(Math.random()*30+30);
+                var c = Math.floor(Math.random()*3+2);
+
+                var a_hour = Math.floor(Math.random()*2+13);
                 var a_minute = Math.floor(Math.random()*60);
 
-                var b_hour = 0;
-                var b_minute = 45;
-
                 var till = new Time(a_hour,a_minute);
-                var during = new Time(b_hour,b_minute);
+
+		//during
+		var one = parseInt(b + c);
+		var two = parseInt(a - 1);
+		var three = parseInt(one * two); 
+		var h = parseInt(three / 60);
+		var m = parseInt(three % 60);  	
+                var during = new Time(h,m);
 
                 var from = till.subtract(during);
 
-                this.setQuestion('' + this.ns.mNameOne + ' stopped playing ' + this.ns.mPlayedActivityOne + ' with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend at ' + till.getString() + '  They played for three quarters of an hour. What time did they start playing?');
+                this.setQuestion('' + this.ns.mNameOne + ' plays in a ' + this.ns.mPlayedActivityOne + ' league. On ' + this.ns.mDayOfWeekOne + ' the league plays ' + a + ' matches. They play the matches one at a time. The ' + this.ns.mNameMachine.getPlace(a) + ' match starts at ' + till.getString() + ' Each match lasts ' + b + ' minutes and there is a ' + c + ' minute ' + ' break in between each match. What time did the first match start?');
 
                 this.setAnswer('' + from.getString(),0);
 	}
