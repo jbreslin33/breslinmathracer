@@ -27,14 +27,18 @@ initialize: function(sheet)
 		//part of run
                	n = Math.floor(Math.random()*8+2);
                	d = Math.floor(Math.random()*8+2);
+
+		nRun = parseInt(d - n);	
+	
 		fractionOne = new Fraction(n,d); 
+		fractionRun = new Fraction(nRun,d); 
 
 		//kilometers
 		var k = parseInt(a + b + c);
 		fractionTwo = new Fraction(k,1);		
 
 		//run x kilometers
-		fractionThree = fractionOne.multiply(fractionTwo);
+		fractionThree = fractionRun.multiply(fractionTwo);
         	
 		answer = fractionThree.multiply(fractionFour);
 
