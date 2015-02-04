@@ -25,7 +25,7 @@ Extends: TextItemMixedNumber,
                         answer.reduce();
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.mNumerator + ' dollars an hour. How many dolloars will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make in a week?');
+                this.setQuestion('' + this.ns.mNameOne + ' is making ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' world famous fruit dessert. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getMixedNumber() + ' cups of ' + this.ns.mFruitOne + ' for every gallon of ' + this.ns.mDrinkOne + '. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' has ' + fractionB.mNumerator + ' gallons of ' + this.ns.mDrinkOne + ' then how many cups of ' + this.ns.mFruitOne + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need?');
                 this.setAnswer('' + answer.getMixedNumber(),0);
 	}
 });
