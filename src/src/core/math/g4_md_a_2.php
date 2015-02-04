@@ -1,3 +1,36 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_19',4.2519,'4.md.a.2','');
+*/
+var i_4_md_a_2__19 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_19';
+                this.ns = new NameSampler();
+
+                var a = 0;
+                var b = 0;
+                var c = 0;
+                var d = 0;
+                var r = 1;
+                while (r != 0)
+                {
+                        a = Math.floor(Math.random()*8+2);
+                        b = Math.floor(Math.random()*8+2);
+
+                        var g = parseInt(a * 1000);
+                        r = parseInt(g % b);
+                        c = parseInt(g / b);
+                }
+
+                this.setQuestion('' + this.ns.mNameOne + ' traveled ' + a + ' kilometers ' + ' to see ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + '. and ' + b + ' kilometers ' + this.ns.mPlayedActivityOne + ' practice. After practice ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.ns.mFamilyOne + ' drives everyone home. They drive ' + a + ' kilometers to drop off ' + this.ns.mNameTwo + ', ' + b + ' kilometers to drop off ' + this.ns.mNameThree + ' and ' + c + ' kilometers to drop off ' + this.ns.mNameThree + '. The air conditioner in the car was on for 0.' + d + ' of the trip to drop everyone off. How many meters of the trip to drop everyone off was the air conditioner on?');
+                this.setAnswer('' + b,0);
+        }
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_18',4.2518,'4.md.a.2','');
