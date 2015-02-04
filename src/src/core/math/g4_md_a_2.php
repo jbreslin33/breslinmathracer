@@ -4,25 +4,31 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 */
 var i_4_md_a_2__15 = new Class(
 {
-Extends: TextItemFraction,
+Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+                this.parent(sheet,300,50,175,65,100,50,425,100);
 
                 this.mType = '4.md.a.2_15';
                 this.ns = new NameSampler();
 
-                var fractionA = new Fraction(1,1,true);
-                fractionA.mNumerator = Math.floor(Math.random()*8+2);
+		var a = 0;
+                var b = 0;
+                var r = 1;
+                while (r != 0)
+                {
+                        a = Math.floor(Math.random()*8+2);
+                        b = Math.floor(Math.random()*8+2);
+			
+			var f = parseInt(a * 3);	
+                        r = parseInt(f % b);
+                }
+                answer = parseInt(f / b);
 
-                var fractionB = new Fraction(1,1,false);
-                fractionB.mNumerator = Math.floor(Math.random()*8+2);
-
-                answer = fractionA.divide(fractionB);
-                answer.reduce();
-
-                this.setQuestion('' + this.ns.mNameOne + ' built a ' + fractionA.mNumerator + ' yards long garden in a video game. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' split it into ' + fractionB.mNumerator + ' pieces for an art project. How many ' + this.ns.mDistanceIncrementMedium + ' long is each piece?');
-                this.setAnswer('' + answer.getString(),0);
+                this.setQuestion('' + this.ns.mNameOne + ' built a ' + a + ' yards long garden in a video game. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' split it into ' + b + ' sections to plant different vegetables. One of the sections will be for ' + this.ns.mVegetableOne + '. How many feet long is the section for ' + this.ns.mVegetableOne + '?');
+                this.setAnswer('' + answer,0);
+                this.setAnswer('' + answer + ' ft',1);
+                this.setAnswer('' + answer + ' feet',2);
         }
 });
 
