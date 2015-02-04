@@ -1,5 +1,36 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_16',4.2516,'4.md.a.2','');
+*/
+var i_4_md_a_2__16 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_16';
+                this.ns = new NameSampler();
+
+		var a = 0;
+                var b = 0;
+                var r = 1;
+                while (r != 0)
+		{
+                	a = Math.floor(Math.random()*8+2);
+                        b = Math.floor(Math.random()*8+2);
+
+                        var g = parseInt(a * 1000);
+                        r = parseInt(g % b);
+                	c = parseInt(g / b);
+                }
+
+                this.setQuestion('' + this.ns.mNameOne + ' eats ' + a + ' kilograms of ' + this.ns.mFruitOne + ' a week. Each of the ' + this.ns.mFruitOne + ' has the same mass of ' + c + ' grams. How many ' + this.ns.mFruitOne + ' does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' eat in a week?');
+                this.setAnswer('' + b,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_15',4.2515,'4.md.a.2','');
 */
 var i_4_md_a_2__15 = new Class(
@@ -22,8 +53,8 @@ Extends: TextItem,
 			
 			var f = parseInt(a * 3);	
                         r = parseInt(f % b);
+                	answer = parseInt(f / b);
                 }
-                answer = parseInt(f / b);
 
                 this.setQuestion('' + this.ns.mNameOne + ' built a ' + a + ' yards long garden in a video game. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' split it into ' + b + ' sections to plant different vegetables. One of the sections will be for ' + this.ns.mVegetableOne + '. How many feet long is the section for ' + this.ns.mVegetableOne + '?');
                 this.setAnswer('' + answer,0);
