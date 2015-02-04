@@ -1,5 +1,36 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_17',4.2517,'4.md.a.2','');
+*/
+var i_4_md_a_2__17 = new Class(
+{
+Extends: TextItemMixedNumber,
+        initialize: function(sheet)
+        {
+                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+                this.mType = '4.md.a.2_17';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,false);
+                var fractionB = new Fraction(1,1,false);
+                var answer = fractionA.multiply(fractionB);
+
+                while (fractionA.mNumerator % fractionA.mDenominator == 0 || fractionA.mNumerator <= fractionA.mDenominator || fractionB.mNumerator <= fractionB.mDenominator || fractionA.mDenominator == fractionB.mNumerator || answer.mDenominator == 1)
+                {
+                        fractionA.mNumerator   = Math.floor(Math.random()*8+2);
+                        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+                        fractionB.mNumerator   = Math.floor(Math.random()*8+2);
+                        answer = fractionA.multiply(fractionB);
+                        answer.reduce();
+                }
+
+                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.mNumerator + ' dollars an hour. How many dolloars will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make in a week?');
+                this.setAnswer('' + answer.getMixedNumber(),0);
+	}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_16',4.2516,'4.md.a.2','');
 */
 var i_4_md_a_2__16 = new Class(
