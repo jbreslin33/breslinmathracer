@@ -247,8 +247,9 @@ Extends: i_4_oa_a_1__word_communative,
                 this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '4.oa.a.1_5';
+		this.ns = new NameSampler();
 
-                this.setQuestion('' + this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. They wrote the multiplication expression  ' + this.a + 'x' + this.b + ' to represent how many ' + this.mThing + ' they have altogether. Using the communative property of multiplication what is another way to represent how many ' + this.mThing + ' they have altogether.');
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThingOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' friend ' + this.ns.mNameTwo + ' has ' + this.b + ' times as many ' + this.ns.mThingOne + ' as ' + this.ns.mNameOne + '. They wrote the multiplication expression  ' + this.a + 'x' + this.b + ' to represent how many more ' + this.ns.mThingOne + ' ' + this.ns.mNameTwo + ' has than ' +  this.ns.mNameOne + '. Using the communative property of multiplication what is another way to represent how many times more ' + this.ns.mThingOne + ' ' + this.ns.mNameTwo + ' has than ' + this.ns.mNameOne + '?');
         }
 });
 
