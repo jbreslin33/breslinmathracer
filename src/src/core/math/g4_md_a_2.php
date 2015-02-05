@@ -16,19 +16,19 @@ Extends: TextItem,
                 var b = 0;
                 var c = 0;
                 var d = 0;
-                var d = 0;
+                var e = 0;
                 var r = 1;
                 while (r != 0)
                 {
                         a = Math.floor(Math.random()*8+2);
                         b = Math.floor(Math.random()*8+2);
-			c = parseInt(a * b); 
-			d = parseInt(a + c); 
-			e = parseInt(d / 3);
-			r = parseInt(d % 3);
+			c = parseInt(b + 1); 
+			d = parseInt(a * 1000); 
+			e = parseInt(d / c);
+			r = parseInt(d % c);
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' is doing a project for ' + this.ns.mSubjectOne + ' class. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + ' is using ' + a + ' feet of ' + this.ns.mColorOne + ' ' + this.ns.mRopeOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' is using ' + b + ' times as much ' + this.ns.mColorTwo + ' ' + this.ns.mRopeOne + '. What is the total amount of yards of ' + this.ns.mRopeOne + ' ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses?');
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' kilograms of ' + this.ns.mFruitOne + ' and wants to share them equally with ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,2) + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + b +  ' friends. How many grams will each share of ' + this.ns.mFruitOne + ' be?');
                 this.setAnswer('' + e,0);
         }
 });
