@@ -25,7 +25,7 @@ Extends: TextItem,
                         c = parseInt(g / b);
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' eats ' + a + ' kilograms of ' + this.ns.mFruitOne + ' a week. Each of the ' + this.ns.mFruitOne + ' has the same mass of ' + c + ' grams. How many ' + this.ns.mFruitOne + ' does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' eat in a week?');
+                this.setQuestion('' + this.ns.mNameOne + ' is doing a ' + this.ns.mSubjectOne + ' project. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + ' is using ' + a + ' feet of ' + this.ns.mColorOne + ' ' + this.ns.mStringOne + '. '     );
                 this.setAnswer('' + b,0);
         }
 });
