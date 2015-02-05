@@ -1,5 +1,39 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_21',4.2521,'4.md.a.2','');
+*/
+var i_4_md_a_2__21 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,65,100,50,425,100);
+
+                this.mType = '4.md.a.2_21';
+                this.ns = new NameSampler();
+
+                var a = 0;
+                var b = 0;
+                var c = 0;
+                var d = 0;
+                var d = 0;
+                var r = 1;
+                while (r != 0)
+                {
+                        a = Math.floor(Math.random()*8+2);
+                        b = Math.floor(Math.random()*8+2);
+			c = parseInt(a * b); 
+			d = parseInt(a + c); 
+			e = parseInt(d / 3);
+			r = parseInt(d % 3);
+                }
+
+                this.setQuestion('' + this.ns.mNameOne + ' is doing a project for ' + this.ns.mSubjectOne + ' class. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + ' is using ' + a + ' feet of ' + this.ns.mColorOne + ' ' + this.ns.mRopeOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' is using ' + b + ' times as much ' + this.ns.mColorTwo + ' ' + this.ns.mRopeOne + '. What is the total amount of yards of ' + this.ns.mRopeOne + ' ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses?');
+                this.setAnswer('' + e,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_20',4.2520,'4.md.a.2','');
 */
 var i_4_md_a_2__20 = new Class(
