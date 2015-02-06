@@ -1,3 +1,41 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_22',4.2522,'4.md.a.2','');
+*/
+var i_4_md_a_2__22 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+       		this.parent(sheet,450,200,255,145,100,50,580,100);
+
+                this.mType = '4.md.a.2_22';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var a = Math.floor(Math.random()*3+2);
+                var b = Math.floor(Math.random()*30+30);
+                var c = Math.floor(Math.random()*3+2);
+
+                var a_hour = Math.floor(Math.random()*2+13);
+                var a_minute = Math.floor(Math.random()*60);
+
+                var till = new Time(a_hour,a_minute);
+
+                //during
+                var one = parseInt(b + c);
+                var two = parseInt(a - 1);
+                var three = parseInt(one * two);
+                var h = parseInt(three / 60);
+                var m = parseInt(three % 60);
+                var during = new Time(h,m);
+
+                var from = till.subtract(during);
+
+                this.setQuestion('' + this.ns.mNameOne + ' plays in a ' + this.ns.mPlayedActivityOne + ' league. On ' + this.ns.mDayOfWeekOne + ' the league plays ' + a + ' matches. They play the matches one at a time. The ' + this.ns.mNameMachine.getPlace(a) + ' match starts at ' + till.getString() + ' Each match lasts ' + b + ' minutes and there is a ' + c + ' minute ' + ' break in between each match. What time did the first match start?');
+
+                this.setAnswer('' + from.getString(),0);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_21',4.2521,'4.md.a.2','');
@@ -123,10 +161,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 */
 var i_4_md_a_2__18 = new Class(
 {
-Extends: TextItemMixedNumber,
+Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+       		this.parent(sheet,450,200,255,145,100,50,580,100);
 
                 this.mType = '4.md.a.2_18';
                 this.ns = new NameSampler();
