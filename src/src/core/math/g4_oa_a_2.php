@@ -73,7 +73,7 @@ createQuestionShapes: function()
 
     	var test = 0;
 
-    	raphael = Raphael(this.Xpad,this.Ypad,630,360);
+    	raphael = Raphael(this.Xpad,this.Ypad,550,360);
 
     	y = 105 - this.Ypad;
     
@@ -96,44 +96,6 @@ createQuestionShapes: function()
 		this.addQuestionShape(box);
     	}
 },
-/*
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-		var answer = '';
-		for (i=0; i < this.mAnswerArray.length; i++)	
-		{
-			if (i == 0)
-			{
-				answer = answer + '' + this.getAnswer();		
-			}
-			else
-			{
-				answer = answer + ' OR ' + this.getAnswer(i);		
-			}
-		}
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + answer); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
-	this.hideAnswerInputs();
-	this.showUserAnswer();
-
-    	this.mCorrectAnswerLabel.setPosition(650,230);
-    	this.mCorrectAnswerLabel.setSize(200,100);
-},
-
-showUserAnswer: function()
-{
-	if (this.mUserAnswerLabel)
-	{
-               	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
-               	this.mUserAnswerLabel.setVisibility(true);
-	}
-
-    	this.mUserAnswerLabel.setPosition(650,130);
-} 
-*/
 });
 
 /*
