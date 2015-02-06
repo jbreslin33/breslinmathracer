@@ -194,29 +194,21 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_a_2__16 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,65,100,50,425,100);
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,65,100,50,425,100);
 
-                this.mType = '4.md.a.2_16';
-                this.ns = new NameSampler();
+        this.mType = '4.md.a.2_16';
+        this.ns = new NameSampler();
 
-		var a = 0;
-                var b = 0;
-                var r = 1;
-                while (r != 0)
-		{
-                	a = Math.floor(Math.random()*8+2);
-                        b = Math.floor(Math.random()*8+2);
+      	var k = Math.floor(Math.random()*8+2);
 
-                        var g = parseInt(a * 1000);
-                        r = parseInt(g % b);
-                	c = parseInt(g / b);
-                }
+        var g = parseInt(k * 1000);
+	var c = parseInt(g * 7); 
 
-                this.setQuestion('' + this.ns.mNameOne + ' eats ' + a + ' kilograms of ' + this.ns.mFruitOne + ' a week. Each of the ' + this.ns.mFruitOne + ' has the same mass of ' + c + ' grams. How many ' + this.ns.mFruitOne + ' does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' eat in a week?');
-                this.setAnswer('' + b,0);
-        }
+     	this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' family eat ' + k + ' kilograms of ' + this.ns.mFruitOne + ' a day. How many grams of ' + this.ns.mFruitOne + ' do they eat in a week?');
+        this.setAnswer('' + c,0);
+}
 });
 
 /*
