@@ -96,7 +96,7 @@ createQuestionShapes: function()
 		this.addQuestionShape(box);
     	}
 },
-
+/*
 showCorrectAnswer: function()
 {
 	if (this.mCorrectAnswerLabel)
@@ -133,7 +133,7 @@ showUserAnswer: function()
 
     	this.mUserAnswerLabel.setPosition(650,130);
 } 
-
+*/
 });
 
 /*
