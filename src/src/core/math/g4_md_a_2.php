@@ -1,3 +1,32 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_23',4.2523,'4.md.a.2','');
+*/
+var i_4_md_a_2__23 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,450,200,255,145,100,50,580,100);
+
+                this.mType = '4.md.a.2_23';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*30+30);
+
+                var c = parseInt(a * b);
+                var d = parseInt(c / 60); // low end hours
+                var e = parseInt(d + 1); // goal hours
+                var f = parseInt(e * 60);
+                var g = parseInt(f - c);
+
+                this.setQuestion('' + this.ns.mNameOne + ' is a youtuber. This week ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' made ' + a + ' videos so far each with a length of ' + b + ' minutes. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' goal each week is make ' + e + ' hours of videos then how many more minutes of video does need to make this week?');
+
+                this.setAnswer('' + g,0);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_22',4.2522,'4.md.a.2','');
 */
