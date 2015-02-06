@@ -11,19 +11,22 @@ Extends: TextItem,
 
                 this.mType = '4.md.a.2_24';
                 this.ns = new NameSampler();
+                
+		var a = Math.floor(Math.random()*7+3);  //length in yards of one lane
+		var b = parseInt(a * 3); //len in feet of one lane   
+		
+		var d = Math.floor(Math.random()*7+3);  //denon which is number of divisions
 
-                var a = Math.floor(Math.random()*7+3); //kids
-                var b = Math.floor(Math.random()*7+3); //money each
-                var c = parseInt(a * b); //total cost of goods
-                var d = parseInt(c / 2); //about half the cost which will be cost of game in dollars
-                var e = parseInt(c - d); //in game purchase temp
-                var f = parseInt(e - 1); //hack off dolloar from ingame
-                var g = Math.floor(Math.random()*65+10); //cents for game
-                var h = parseInt(100 - g) //cents for in game purchase
+		var e = new Fraction(1,d); //part of highway
 
-                this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + parseInt(a - 1) + ' friends chip in equally for a video game. The game costs $' + d + '.' + g + ' but there is also an in game purchase they make that costs $' + f + '.' + h + '. How much will they each pay?');
 
-                this.setAnswer('$' + b,0);
+		var f = parseInt(b * d);
+		
+
+
+                this.setQuestion('' + this.ns.mNameOne + ' plays a video game which takes place in a city called Los Locos. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' sometimes drives on a highway while trying to complete missions in the game. If ' + e.getString() + ' of the highway is ' + a + ' yards wide then how many feet wide is the highway?');
+
+                this.setAnswer('' + f,0);
         }
 });
 
