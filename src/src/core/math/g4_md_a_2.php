@@ -10,30 +10,19 @@ Extends: TextItem,
 
                 this.mType = '4.md.a.2_22';
                 this.ns = new NameSampler();
-                this.mChopWhiteSpace = false;
 
-                var a = Math.floor(Math.random()*3+2);
+                var a = Math.floor(Math.random()*8+2);
                 var b = Math.floor(Math.random()*30+30);
-                var c = Math.floor(Math.random()*3+2);
 
-                var a_hour = Math.floor(Math.random()*2+13);
-                var a_minute = Math.floor(Math.random()*60);
+                var c = parseInt(a * b);
+                var d = parseInt(c / 60); // low end hours 
+                var e = parseInt(d + 1); // goal hours 
+		var f = parseInt(e * 60);
+		var g = parseInt(f - c);
 
-                var till = new Time(a_hour,a_minute);
+                this.setQuestion('' + this.ns.mNameOne + ' is a youtuber. This week ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' made ' + a + ' videos so far each with a length of ' + b + ' minutes. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' goal each week is make ' + e + ' hours of videos then how many more minutes of video does need to make this week?');
 
-                //during
-                var one = parseInt(b + c);
-                var two = parseInt(a - 1);
-                var three = parseInt(one * two);
-                var h = parseInt(three / 60);
-                var m = parseInt(three % 60);
-                var during = new Time(h,m);
-
-                var from = till.subtract(during);
-
-                this.setQuestion('' + this.ns.mNameOne + ' is a youtuber. This week ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' made ' + a + ' videos so far each with a length of ' + b + ' minutes. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' goal each week is make ' + c + ' hours of videos then how many more minutes of video does need to make this week?');
-
-                this.setAnswer('' + from.getString(),0);
+                this.setAnswer('' + g,0);
         }
 });
 
