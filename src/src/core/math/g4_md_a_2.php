@@ -12,18 +12,18 @@ Extends: TextItem,
                 this.mType = '4.md.a.2_23';
                 this.ns = new NameSampler();
 
-                var a = Math.floor(Math.random()*8+2);
-                var b = Math.floor(Math.random()*30+30);
+                var a = Math.floor(Math.random()*7+3); //kids
+                var b = Math.floor(Math.random()*7+3); //money each
+		var c = parseInt(a * b); //total cost of goods
+		var d = parseInt(c / 2); //about half the cost which will be cost of game in dollars
+		var e = parseInt(c - d); //in game purchase temp 
+		var f = parseInt(e - 1); //hack off dolloar from ingame
+                var g = Math.floor(Math.random()*65+10); //cents for game
+		var h = parseInt(100 - g) //cents for in game purchase 
 
-                var c = parseInt(a * b);
-                var d = parseInt(c / 60); // low end hours
-                var e = parseInt(d + 1); // goal hours
-                var f = parseInt(e * 60);
-                var g = parseInt(f - c);
+                this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + parseInt(a - 1) + ' friends chip in equally for a video game. The game costs $' + d + '.' + g + ' but there is also an in game purchase they make that costs $' + f + '.' + h + '. How much will they each pay?');
 
-                this.setQuestion('' + this.ns.mNameOne + ' is a youtuber. This week ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' made ' + a + ' videos so far each with a length of ' + b + ' minutes. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' goal each week is make ' + e + ' hours of videos then how many more minutes of video does need to make this week?');
-
-                this.setAnswer('' + g,0);
+                this.setAnswer('$' + b,0);
         }
 });
 
