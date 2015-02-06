@@ -104,13 +104,6 @@ this.addQuestionShape(box);
   
 },
 
-
-checkUserAnswer: function()
-{
-   this.parent();
-},
-
-
 showCorrectAnswer: function()
 {
 		if (this.mCorrectAnswerLabel)
