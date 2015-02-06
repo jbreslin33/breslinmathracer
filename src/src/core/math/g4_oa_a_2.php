@@ -99,45 +99,42 @@ createQuestionShapes: function()
 
 showCorrectAnswer: function()
 {
-		if (this.mCorrectAnswerLabel)
+	if (this.mCorrectAnswerLabel)
+	{
+		var answer = '';
+		for (i=0; i < this.mAnswerArray.length; i++)	
 		{
-			var answer = '';
-			for (i=0; i < this.mAnswerArray.length; i++)	
+			if (i == 0)
 			{
-				if (i == 0)
-				{
-					answer = answer + '' + this.getAnswer();		
-				}
-				else
-				{
-					answer = answer + ' OR ' + this.getAnswer(i);		
-				}
+				answer = answer + '' + this.getAnswer();		
 			}
-			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + answer); 
-			this.mCorrectAnswerLabel.setVisibility(true);
+			else
+			{
+				answer = answer + ' OR ' + this.getAnswer(i);		
+			}
 		}
-		this.hideAnswerInputs();
-		this.showUserAnswer();
+		this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + answer); 
+		this.mCorrectAnswerLabel.setVisibility(true);
+	}
+	this.hideAnswerInputs();
+	this.showUserAnswer();
 
-    this.mCorrectAnswerLabel.setPosition(650,230);
-    this.mCorrectAnswerLabel.setSize(200,100);
+    	this.mCorrectAnswerLabel.setPosition(650,230);
+    	this.mCorrectAnswerLabel.setSize(200,100);
 },
 
 showUserAnswer: function()
 {
-		if (this.mUserAnswerLabel)
-		{
-                	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
-                	this.mUserAnswerLabel.setVisibility(true);
-		}
+	if (this.mUserAnswerLabel)
+	{
+               	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
+               	this.mUserAnswerLabel.setVisibility(true);
+	}
 
-    this.mUserAnswerLabel.setPosition(650,130);
-    //this.mCorrectAnswerLabel.setSize(200,100);
+    	this.mUserAnswerLabel.setPosition(650,130);
 } 
 
 });
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_7',4.0207,'4.oa.a.2','Word Problem. Multiplication. Interprete(not solve). Factors between 1-10. Picure.' );
