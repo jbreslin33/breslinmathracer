@@ -31,7 +31,7 @@ Extends: TextItem,
 
                 var from = till.subtract(during);
 
-                this.setQuestion('' + this.ns.mNameOne + ' plays in a ' + this.ns.mPlayedActivityOne + ' league. On ' + this.ns.mDayOfWeekOne + ' the league plays ' + a + ' matches. They play the matches one at a time. The ' + this.ns.mNameMachine.getPlace(a) + ' match starts at ' + till.getString() + ' Each match lasts ' + b + ' minutes and there is a ' + c + ' minute ' + ' break in between each match. What time did the first match start?');
+                this.setQuestion('' + this.ns.mNameOne + ' is a youtuber. This week ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' made ' + a + ' videos so far each with a length of ' + b + ' minutes. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' goal each week is make ' + c + ' hours of videos then how many more minutes of video does need to make this week?');
 
                 this.setAnswer('' + from.getString(),0);
         }
