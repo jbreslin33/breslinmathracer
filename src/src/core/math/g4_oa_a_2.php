@@ -5,103 +5,96 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_oa_a_2__8 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,600,50,330,75,100,50,685,80);              
+initialize: function(sheet)
+{
+	this.parent(sheet,600,50,330,75,100,50,685,80);              
 
-                this.mType = '4.oa.a.2_8';
-  
-                this.Xpad = 10;
-                this.Ypad = 35;
+        this.mType = '4.oa.a.2_8';
+ 
+        this.Xpad = 10;
+        this.Ypad = 35;
 
-		//move gui
-		this.mUserAnswerLabel.setPosition(625,150);
-		this.mCorrectAnswerLabel.setPosition(625,250);
+	//move gui
+	this.mUserAnswerLabel.setPosition(625,150);
+	this.mCorrectAnswerLabel.setPosition(625,250);
 
-                this.mNameMachine = new NameMachine();
-                this.mPictureLink = this.mNameMachine.getPictureLink();
+        this.mNameMachine = new NameMachine();
+        this.mPictureLink = this.mNameMachine.getPictureLink();
 
-                //variables
-                this.a = Math.floor(Math.random()*7)+2;
-                this.b = Math.floor(Math.random()*7)+2;
-                this.c = parseInt(this.a * this.b);
-                
-		var random = Math.floor(Math.random()*1);
-		if (random == 0)
-		{
-                	this.setQuestion('Write a division expression that can be used to figure out how many objects are in each grouping.');
-		}
-		if (random == 1)
-		{
-                	this.setQuestion('Write a division expression that represents the picture.');
-		}
+        //variables
+        this.a = Math.floor(Math.random()*7)+2;
+        this.b = Math.floor(Math.random()*7)+2;
+        this.c = parseInt(this.a * this.b);
+               
+	var random = Math.floor(Math.random()*1);
+	if (random == 0)
+	{	
+              	this.setQuestion('Write a division expression that can be used to figure out how many objects are in each grouping.');
+	}
+	if (random == 1)
+	{
+               	this.setQuestion('Write a division expression that represents the picture.');
+	}
 
-    this.setAnswer('' + this.c + '/' + this.a ,0);
-		this.setAnswer('' + this.c + '/' + this.a + '=',1);
-    this.setAnswer('' + this.c + '/' + this.a + '=' + this.b,2);
-
-	},
+    	this.setAnswer('' + this.c + '/' + this.a ,0);
+},
 
 createQuestionShapes: function()
 {
-    // raphael.clear();
+	// raphael.clear();
   
-    var y = 135;
-    var x = 0;
+    	var y = 135;
+    	var x = 0;
 
-		var a = parseInt(this.a); 
-		var b = parseInt(this.b); 
+	var a = parseInt(this.a); 
+	var b = parseInt(this.b); 
     
-    var length = 0;
+    	var length = 0;
 	
-    for (var i = 0; i < a; i++)
-    {
-       if (i > 4)
-          x = (30*b) + 60;
-       else
-          x = 30;
+    	for (var i = 0; i < a; i++)
+    	{
+       		if (i > 4)
+          		x = (30*b) + 60;
+       		else
+          		x = 30;
 
-       if (i == 5)
-          y = 135;
+       		if (i == 5)
+          		y = 135;
 
-       for (var z = 0; z < b; z++)
-			 {
-          this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
-          x = parseInt(x + 30);
-			 }
+       		for (var z = 0; z < b; z++)
+		{
+        		this.addQuestionShape(new Shape(25,25,x,y,this.mSheet.mGame,this.mPictureLink,"",""));
+          		x = parseInt(x + 30);
+		}
+		y = y + 60; 	
+	}
 
-			 y = y + 60; 	
-    }
+	length = (30*b);
 
+    	var test = 0;
 
-    length = (30*b);
+    	raphael = Raphael(this.Xpad,this.Ypad,630,360);
 
-    var test = 0;
-
-    raphael = Raphael(this.Xpad,this.Ypad,630,360);
-
-    y = 105 - this.Ypad;
+    	y = 105 - this.Ypad;
     
-    for (var i = 0; i < a; i++)
-    {               
-        x = 25 - this.Xpad;
+    	for (var i = 0; i < a; i++)
+    	{               
+        	x = 25 - this.Xpad;
 
-        if (i > 4)
-         x = 30 - this.Xpad + length + 20;
+        	if (i > 4)
+         	x = 30 - this.Xpad + length + 20;
 
-         if (i == 5)
-          y = 105 - this.Ypad;
+         	if (i == 5)
+          	y = 105 - this.Ypad;
 
-        y = y + 60;
+        	y = y + 60;
 
-var box = new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false);
+		var box = new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false);
 
-box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#444444", "stroke-width": 2});
+		box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#444444", "stroke-width": 2});
 
-this.addQuestionShape(box);
-   
-    }
-  
+		this.addQuestionShape(box);
+    	}
 },
 
 showCorrectAnswer: function()
