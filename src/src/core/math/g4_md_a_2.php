@@ -1,5 +1,28 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_25',4.2525,'4.md.a.2','');
+*/
+var i_4_md_a_2__25 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,450,200,255,145,100,50,580,100);
+
+                this.mType = '4.md.a.2_25';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*50+25);  
+                var b = Math.floor(Math.random()*50+25); 
+                var c = parseInt(a + b); 
+                var d = parseInt(c * 16); 
+
+                this.setQuestion('' + this.ns.mNameOne + ' weighs ' + a + ' pounds and ' + this.ns.mNameTwo + ' weighs ' + b + ' pounds. How many ounces do they weigh ' + this.ns.mNameMachine.getSum() + '?');
+                this.setAnswer('' + d,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_24',4.2524,'4.md.a.2','');
 */
 var i_4_md_a_2__24 = new Class(
