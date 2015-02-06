@@ -29,7 +29,7 @@ Extends: TextItem,
 		var random = Math.floor(Math.random()*1);
 		if (random == 0)
 		{
-                	this.setQuestion('Write a division expression that can be used to figure out how many objects are in each box.');
+                	this.setQuestion('Write a division expression that can be used to figure out how many objects are in each grouping.');
 		}
 		if (random == 1)
 		{
@@ -96,7 +96,7 @@ createQuestionShapes: function()
 
 var box = new Rectangle(length,30,x-5,y-45,this.mSheet.mGame,raphael,.5,.5,.5,"#000",.3,false);
 
-box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#0ff", "stroke-width": 2});
+box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#444444", "stroke-width": 2});
 
 this.addQuestionShape(box);
    
