@@ -12,13 +12,12 @@ Extends: TextItem,
                 this.mType = '4.oa.a.2_9';
                 this.ns = new NameSampler();
 
-                var a = Math.floor(Math.random()*50+25);
-                var b = Math.floor(Math.random()*50+25);
-                var c = parseInt(a + b);
-                var d = parseInt(c * 16);
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
 
-                this.setQuestion('' + this.ns.mNameOne + ' weighs ' + a + ' pounds and ' + this.ns.mNameTwo + ' weighs ' + b + ' pounds. How many ounces do they weigh ' + this.ns.mNameMachine.getSum() + '?');
-                this.setAnswer('' + d,0);
+                this.setQuestion('' + this.ns.mNameOne + ' has $' + a + '. ' + this.ns.mNameTwo + ' has ' + b + ' times as much money as ' + this.ns.mNameOne + '. How much money does ' + this.ns.mNameTwo + ' have?');
+                this.setAnswer('$' + c,0);
         }
 });
 
