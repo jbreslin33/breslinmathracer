@@ -16,7 +16,7 @@ Extends: TextItem,
                 var b = Math.floor(Math.random()*8+2);
                 var c = parseInt(a * b);
 
-                this.setQuestion('' + this.ns.mNameOne + ' scored ' + c + ' points playing ' + this.ns.mPlayedActivityOne + '. ' + this.ns.mNameOne + ' scored ' + a + ' times as much as ' + this.ns.mNameTwo + '. How many points did ' + this.ns.mNameTwo + ' score?');
+                this.setQuestion('For ' + c + ' days ' + this.ns.mNameOne + ' kept track of what days the temperature went above 50 degrees. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' recorded ' + a + ' days that the temperature went above 50. How many times the number of days the temperature was above 50 degrees is the total days recorded by ' + this.ns.mNameOne + '?');
                 this.setAnswer('' + b,0);
         }
 });
