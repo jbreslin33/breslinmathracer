@@ -1,5 +1,26 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_11',4.0211,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__11 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,450,200,255,145,100,50,580,100);
+
+                this.mType = '4.oa.a.2_11';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' scored ' + c + ' points playing ' + this.ns.mPlayedActivityOne + '. ' + this.ns.mNameOne + ' scored ' + a + ' times as much as ' + this.ns.mNameTwo + '. How many points did ' + this.ns.mNameTwo + ' score?');
+                this.setAnswer('' + b,0);
+        }
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_10',4.0210,'4.oa.a.2','');
 */
 var i_4_oa_a_2__10 = new Class(
