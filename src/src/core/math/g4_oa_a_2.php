@@ -1,3 +1,28 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_9',4.0209,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,450,200,255,145,100,50,580,100);
+
+                this.mType = '4.oa.a.2_9';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*50+25);
+                var b = Math.floor(Math.random()*50+25);
+                var c = parseInt(a + b);
+                var d = parseInt(c * 16);
+
+                this.setQuestion('' + this.ns.mNameOne + ' weighs ' + a + ' pounds and ' + this.ns.mNameTwo + ' weighs ' + b + ' pounds. How many ounces do they weigh ' + this.ns.mNameMachine.getSum() + '?');
+                this.setAnswer('' + d,0);
+        }
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_8',4.0208,'4.oa.a.2','Word Problem. Division. Interprete(not solve). Factors between 1-10. Picure.' );
 */
