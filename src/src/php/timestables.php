@@ -287,19 +287,19 @@ public function setRawData()
 	if ($this->mTableNumber == 11)
 	{ 
 		$question = 0;
+		$randomNumber = rand(0,100);
     
 		//possible workit 
-		$randomNumber = rand(0,100);
                 if ($question == 0 && $randomNumber < 10)
                 {
                 	$this->mTypeID = $_SESSION["workit"];
-
 		}
-		else
+	
+		//the toughest ones ...which is main purpose of the izzy
+                else if ($question == 0 && $randomNumber > 9 && $randomNumber < 80)
 		{
                         //7x6
-                        $randomNumber = rand(0,100);
-                        if ($question == 0 && $randomNumber < 10)
+                        if ($question == 0 && $randomNumber > 9 && $randomNumber < 20)
                         {
                                 $r = rand(1,2);
                                 if ($r == 1)
@@ -312,16 +312,8 @@ public function setRawData()
                                 }
                         }
 
-                        //7x7
-                        $randomNumber = rand(0,100);
-                        if ($question == 0 && $randomNumber < 5)
-                        {
-                                $question = 66; //7x7
-                        }
-
 			//7x8
-			$randomNumber = rand(0,100);
-			if ($question == 0 && $randomNumber < 10)
+                        if ($question == 0 && $randomNumber > 19 && $randomNumber < 30)
 			{
 				$r = rand(1,2);
 				if ($r == 1)
@@ -335,8 +327,7 @@ public function setRawData()
 			}	 
 
                         //7x9
-                        $randomNumber = rand(0,100);
-                        if ($question == 0 && $randomNumber < 10)
+                        if ($question == 0 && $randomNumber > 29 && $randomNumber < 40)
                         {
                                 $r = rand(1,2);
                                 if ($r == 1)
@@ -350,8 +341,7 @@ public function setRawData()
                         }
 
                         //6x8
-                        $randomNumber = rand(0,100);
-                        if ($question == 0 && $randomNumber < 10)
+                        if ($question == 0 && $randomNumber > 39 && $randomNumber < 50)
                         {
                                 $r = rand(1,2);
                                 if ($r == 1)
@@ -365,8 +355,7 @@ public function setRawData()
                         }
 
                         //8x9
-                        $randomNumber = rand(0,100);
-                        if ($question == 0 && $randomNumber < 10)
+                        if ($question == 0 && $randomNumber > 49 && $randomNumber < 60)
                         {
                                 $r = rand(1,2);
                                 if ($r == 1)
@@ -378,19 +367,72 @@ public function setRawData()
                                         $question = 75; //9x8
                                 }
                         }
-
-			//fall thru ask random
-			if ($question == 0)
-			{
-  				$question = rand(1,81);
-			}
-
+                       
+			//6x9
+                        if ($question == 0 && $randomNumber > 59 && $randomNumber < 70)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 62; //6x9
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 63; //9x6
+                                }
+                        }
+			
 			//make typeid
 			$randid = '3.oa.c.7';
 			$randid .= "_"; 
 			$randid .= $question; 
 			$this->mTypeID = $randid;
 		}
+
+		//big doubles
+                else if ($question == 0 && $randomNumber > 69 && $randomNumber < 80)
+		{
+			//6x6
+                        if ($question == 0 && $randomNumber > 69 && $randomNumber < 72)
+                        {
+                                $question = 57; //7x7
+                        }
+                        
+			//7x7
+                        if ($question == 0 && $randomNumber > 71  && $randomNumber < 74)
+                        {
+                                $question = 66; //7x7
+                        }
+                        
+			//8x8
+                        if ($question == 0 && $randomNumber > 73  && $randomNumber < 77)
+                        {
+                                $question = 73; //8x8
+                        }
+                       
+			//9x9
+                        if ($question == 0 && $randomNumber > 76  && $randomNumber < 80)
+                        {
+                                $question = 78; //9x9
+                        }
+			
+			//make typeid
+			$randid = '3.oa.c.7';
+			$randid .= "_"; 
+			$randid .= $question; 
+			$this->mTypeID = $randid;
+		}
+		//darwin for the rest for now
+		else
+		{
+              		$question = rand(1,81);
+			
+			//make typeid
+			$randid = '3.oa.c.7';
+			$randid .= "_"; 
+			$randid .= $question; 
+			$this->mTypeID = $randid;
+		}	
 	}
    
 	//pink
