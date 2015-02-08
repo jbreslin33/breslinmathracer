@@ -282,33 +282,47 @@ public function setRawData()
                 	$this->mTypeID = $_SESSION["workit"];
 		}
         }
-	
+
+	//the izzy		
 	if ($this->mTableNumber == 11)
 	{ 
-		$question = 1;
-		$randomNumber = rand(0,2000);
-		if ($randomNumber > -1 && $randomNumber < 500)
-		{
-			$question = 67; 	
-		}	 
-		if ($randomNumber > 499 && $randomNumber < 1001) 
-		{
-			$question = 69; 	
-		}	 
-		if ($randomNumber > 1000)
-		{
+		$question = 0;
+    
+		//possible workit 
+		$randomNumber = rand(0,100);
+                if ($question == 0 && $randomNumber < 25)
+                {
                 	$this->mTypeID = $_SESSION["workit"];
-			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'workit','$this->mTypeID');";
-			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+
 		}
 		else
 		{
-			$question = 69; 	
+			$randomNumber = rand(0,100);
+			if ($question == 0 && $randomNumber < 50)
+			{
+				$r = rand(1,2);
+				if ($r == 1)
+				{
+					$question = 67; //7x8	
+				}
+				else if ($r == 2)
+				{
+					$question = 68; //8x7	
+				}
+			}	 
+		
+			//fall thru ask random
+			if ($question == 0)
+			{
+  				$question = rand(1,81);
+			}
+
+			//make typeid
+			$randid = '3.oa.c.7';
+			$randid .= "_"; 
+			$randid .= $question; 
+			$this->mTypeID = $randid;
 		}
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $question; 
-		$this->mTypeID = $randid;
 	}
    
 	//pink
