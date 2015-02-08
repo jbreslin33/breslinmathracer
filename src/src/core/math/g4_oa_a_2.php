@@ -1,4 +1,27 @@
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_18',4.0218,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__18 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_18';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' is reading a book. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' has read ' + a + ' pages so far. The book has ' + b + ' times as many pages than ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' has read. How many pages does the book have?');
+                this.setAnswer('' + c,0);
+        }
+});
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_17',4.0217,'4.oa.a.2','');
