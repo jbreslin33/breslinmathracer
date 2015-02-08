@@ -1,5 +1,27 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_21',4.0221,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__21 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_21';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' goes to the zoo. There are ' + a + ' ' + this.ns.mAnimalOne + ' there. There are ' + b + ' times as many ' + this.ns.mAnimalTwo + ' than ' + this.ns.mAnimalOne + '. How many ' + this.ns.mAnimalTwo + ' are there?');
+                this.setAnswer('' + c,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_20',4.0220,'4.oa.a.2','');
 */
 var i_4_oa_a_2__20 = new Class(
@@ -16,10 +38,11 @@ Extends: TextItem,
                 var b = Math.floor(Math.random()*8+2);
                 var c = parseInt(a * b);
 
-                this.setQuestion('' + this.ns.mNameOne + ' builds a rectangular room in a video game. The room is ' + a + ' ' + this.ns.mDistanceIncrementMedium + ' long. The length of the room is ' + b + ' times the size of the width. What is the length of the room?');
+                this.setQuestion('' + this.ns.mNameOne + ' plays ' + this.ns.mNameTwo + ' in ' + this.ns.mPointActivityOne + '. ' + this.ns.mNameOne + ' scores ' + a + ' points. ' + this.ns.mNameTwo + ' wins by scoring ' + b + ' times as many points. How many points did ' + this.ns.mNameTwo + ' score in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' winning effort?');
                 this.setAnswer('' + c,0);
         }
 });
+
 
 
 /*
