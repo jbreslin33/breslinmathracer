@@ -296,7 +296,7 @@ public function setRawData()
 		}
 	
 		//the toughest ones ...which is main purpose of the izzy
-                else if ($question == 0 && $randomNumber > 9 && $randomNumber < 80)
+                else if ($question == 0 && $randomNumber > 9 && $randomNumber < 70)
 		{
                         //7x6
                         if ($question == 0 && $randomNumber > 9 && $randomNumber < 20)
