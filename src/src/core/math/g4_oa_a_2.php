@@ -1,5 +1,26 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_24',4.0224,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__24 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_24';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' came to school on a day where a lot of students were absent in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' class. There are ' + a + ' students in class today. There are ' + b + ' times as many desks. How many desks are there?');
+                this.setAnswer('' + c,0);
+        }
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_23',4.0223,'4.oa.a.2','');
 */
 var i_4_oa_a_2__23 = new Class(

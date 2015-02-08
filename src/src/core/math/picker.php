@@ -284,8 +284,34 @@ getItem: function(id)
         {
                 return new i_4_oa_a_2__23(this.mSheet);
         }
-
-
+        if (id == '4.oa.a.2_24')
+        {
+                return new i_4_oa_a_2__24(this.mSheet);
+        }
+        if (id == '4.oa.a.2_25')
+        {
+                return new i_4_oa_a_2__25(this.mSheet);
+        }
+        if (id == '4.oa.a.2_26')
+        {
+                return new i_4_oa_a_2__26(this.mSheet);
+        }
+        if (id == '4.oa.a.2_27')
+        {
+                return new i_4_oa_a_2__27(this.mSheet);
+        }
+        if (id == '4.oa.a.2_28')
+        {
+                return new i_4_oa_a_2__28(this.mSheet);
+        }
+        if (id == '4.oa.a.2_29')
+        {
+                return new i_4_oa_a_2__29(this.mSheet);
+        }
+        if (id == '4.oa.a.2_30')
+        {
+                return new i_4_oa_a_2__30(this.mSheet);
+        }
 
 	return 0;	
 }
