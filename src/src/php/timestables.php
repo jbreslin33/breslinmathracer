@@ -268,8 +268,8 @@ public function setRawData()
         if ($this->mTableNumber == 10)
         {
 		$randomNumber = 0;
-		$randomChance = rand(1,2);
-		if ($randomChance == 1) //ask random
+		$randomChance = rand(0,100);
+		if ($randomChance < 80)  //ask random
 		{
 			$randomNumber = rand(1,81);
                 	$randid = '3.oa.c.7';
@@ -277,7 +277,7 @@ public function setRawData()
 			$randid .= $randomNumber; 
                 	$this->mTypeID = $randid;
 		}	
-		if ($randomChance == 2) //ask workit 
+		else //ask workit 
 		{
                 	$this->mTypeID = $_SESSION["workit"];
 		}
@@ -290,15 +290,38 @@ public function setRawData()
     
 		//possible workit 
 		$randomNumber = rand(0,100);
-                if ($question == 0 && $randomNumber < 25)
+                if ($question == 0 && $randomNumber < 10)
                 {
                 	$this->mTypeID = $_SESSION["workit"];
 
 		}
 		else
 		{
+                        //7x6
+                        $randomNumber = rand(0,100);
+                        if ($question == 0 && $randomNumber < 10)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 58; //6x7
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 59; //7x6
+                                }
+                        }
+
+                        //7x7
+                        $randomNumber = rand(0,100);
+                        if ($question == 0 && $randomNumber < 5)
+                        {
+                                $question = 66; //7x7
+                        }
+
+			//7x8
 			$randomNumber = rand(0,100);
-			if ($question == 0 && $randomNumber < 50)
+			if ($question == 0 && $randomNumber < 10)
 			{
 				$r = rand(1,2);
 				if ($r == 1)
@@ -310,7 +333,52 @@ public function setRawData()
 					$question = 68; //8x7	
 				}
 			}	 
-		
+
+                        //7x9
+                        $randomNumber = rand(0,100);
+                        if ($question == 0 && $randomNumber < 10)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 69; //7x9
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 70; //9x7
+                                }
+                        }
+
+                        //6x8
+                        $randomNumber = rand(0,100);
+                        if ($question == 0 && $randomNumber < 10)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 60; //6x8
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 61; //8x6
+                                }
+                        }
+
+                        //8x9
+                        $randomNumber = rand(0,100);
+                        if ($question == 0 && $randomNumber < 10)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 74; //8x9
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 75; //9x8
+                                }
+                        }
+
 			//fall thru ask random
 			if ($question == 0)
 			{
