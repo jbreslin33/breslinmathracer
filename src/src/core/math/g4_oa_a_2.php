@@ -1,4 +1,28 @@
 
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_17',4.0217,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__17 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_17';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' is making a salad. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + a + ' ' + this.ns.mVegetableOne + ' and ' + b + ' times as many ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use?');
+                this.setAnswer('' + c,0);
+        }
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_16',4.0216,'4.oa.a.2','');
 */
