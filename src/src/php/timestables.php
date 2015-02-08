@@ -14,7 +14,7 @@ function __construct($tableNumber, $startNew, $leave)
 	
 	if (!isset($_SESSION["workit"]))
 	{
-                $_SESSION["workit"] = '3.oa.c.7_1';
+                $_SESSION["workit"] = '3.oa.c.7_67'; //7x8
 	}
 	
 	if (!isset($_SESSION["timestables_score"]))
