@@ -285,10 +285,29 @@ public function setRawData()
 	
 	if ($this->mTableNumber == 11)
 	{ 
-		$randomNumber = rand(70,79);
+		$question = 1;
+		$randomNumber = rand(0,2000);
+		if ($randomNumber > -1 && $randomNumber < 500)
+		{
+			$question = 67; 	
+		}	 
+		if ($randomNumber > 499 && $randomNumber < 1001) 
+		{
+			$question = 69; 	
+		}	 
+		if ($randomNumber > 1000)
+		{
+                	$this->mTypeID = $_SESSION["workit"];
+			$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'workit','$this->mTypeID');";
+			$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+		}
+		else
+		{
+			$question = 69; 	
+		}
 		$randid = '3.oa.c.7';
 		$randid .= "_"; 
-		$randid .= $randomNumber; 
+		$randid .= $question; 
 		$this->mTypeID = $randid;
 	}
    
