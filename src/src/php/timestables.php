@@ -389,6 +389,8 @@ public function setRawData()
 			$this->mTypeID = $randid;
 		}
 
+
+
 		//big doubles
                 else if ($question == 0 && $randomNumber > 69 && $randomNumber < 80)
 		{
@@ -421,6 +423,101 @@ public function setRawData()
 			$randid .= "_"; 
 			$randid .= $question; 
 			$this->mTypeID = $randid;
+		}
+
+                //the toughest ones ...which is main purpose of the izzy
+                else if ($question == 0 && $randomNumber > 79 && $randomNumber < 98)
+                {
+                        //4x8
+                        if ($question == 0 && $randomNumber > 79 && $randomNumber < 83)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 40; //4x8
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 41; //8x4
+                                }
+                        }
+
+                        //4x6
+                        if ($question == 0 && $randomNumber > 82 && $randomNumber < 86)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 36; //4x6
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 37; //6x4
+                                }
+                        }
+
+                        //4x7
+                        if ($question == 0 && $randomNumber > 85 && $randomNumber < 89)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 38; //4x7
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 39; //7x4
+                                }
+                        }
+
+		        //4x9
+                        if ($question == 0 && $randomNumber > 88 && $randomNumber < 92)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 42; //4x9
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 43; //9x4
+                                }
+                        }
+      
+                  	//3x8
+                        if ($question == 0 && $randomNumber > 91 && $randomNumber < 95)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 27; //3x8
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 28; //8x3
+                                }
+                        }
+
+                        //3x9
+                        if ($question == 0 && $randomNumber > 94 && $randomNumber < 98)
+                        {
+                                $r = rand(1,2);
+                                if ($r == 1)
+                                {
+                                        $question = 29; //3x9
+                                }
+                                else if ($r == 2)
+                                {
+                                        $question = 30; //9x3
+                                }
+                        }
+	
+			//make typeid
+			$randid = '3.oa.c.7';
+			$randid .= "_"; 
+			$randid .= $question; 
+			$this->mTypeID = $randid;
+
 		}
 		//darwin for the rest for now
 		else
