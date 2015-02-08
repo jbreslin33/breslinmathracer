@@ -1,5 +1,28 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_19',4.0219,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__19 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_19';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' builds a rectangular room in a video game. The room is ' + a + ' ' + this.ns.mDistanceIncrementMedium + ' long. The length of the room is ' + b + ' times the size of the width. What is the length of the room?');
+                this.setAnswer('' + c,0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_18',4.0218,'4.oa.a.2','');
 */
 var i_4_oa_a_2__18 = new Class(
