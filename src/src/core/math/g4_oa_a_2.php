@@ -1,5 +1,27 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_22',4.0222,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__22 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_22';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+2);
+                var b = Math.floor(Math.random()*8+2);
+                var c = parseInt(a * b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' lives in a city where it snowed ' + a + ' inches. ' + this.ns.mNameTwo + ' lives in a city where it snowed  ' + b + ' times that amount. How many inches did it snow in the city where ' + this.ns.mNameTwo + ' lives?');
+                this.setAnswer('' + c,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_21',4.0221,'4.oa.a.2','');
 */
 var i_4_oa_a_2__21 = new Class(
