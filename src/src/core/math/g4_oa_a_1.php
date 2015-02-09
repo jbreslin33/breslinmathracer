@@ -36,17 +36,17 @@ Extends: i_4_oa_a_1__word,
         initialize: function(sheet)
         {
                 this.parent(sheet,600,50,330,75,100,50,685,80);
-               
-		while (this.a == this.b) 
+		
+		while(this.a == this.b)
 		{
                 	this.a = Math.floor(Math.random()*8)+2;
                 	this.b = Math.floor(Math.random()*8)+2;
-                	this.c = parseInt(this.a * this.b);
-
-			this.setAnswer(this.b + 'x' + this.a ,0);
-                	this.setAnswer(this.b + 'X' + this.a ,1);
-                	this.setAnswer(this.b + '*' + this.a ,2);
 		}
+               	this.c = parseInt(this.a * this.b);
+
+		this.setAnswer(this.b + 'x' + this.a ,0);
+               	this.setAnswer(this.b + 'X' + this.a ,1);
+               	this.setAnswer(this.b + '*' + this.a ,2);
         }
 });
 
