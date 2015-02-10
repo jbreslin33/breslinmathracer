@@ -13,23 +13,21 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
 	var a = 0;
-	var b = 0;
+	var b = 3;
 	var c = 0;
-	var d = 0;
+	var d = 13;
 	var e = 13;
-	var f = 13;
 
-	while(e % 8 != 0)
+	while(d % c != 0)
 	{		
-                a = Math.floor(Math.random()*10+20);
-                b = Math.floor(Math.random()*10+20);
-                c = Math.floor(Math.random()*2+2);
-                d = Math.floor(Math.random()*2+2);
-		e = parseInt(a + b + c + d);
-		f = parseInt(e / 8);
+                a = Math.floor(Math.random()*20+60);
+                b = Math.floor(Math.random()*10+15);
+                c = Math.floor(Math.random()*8+2);
+		d = parseInt(a - b);
+		e = parseInt(d / c);
 	}
-        this.setQuestion('' + this.ns.mNameOne + ' had ' + a + ' video games for his fun box game console. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' does not play ' + b + ' of the games anymore so he gave them to his friends. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne + ' gave him boxes to keep his games in. Each box can hold ' + c + ' games. How many boxes will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' need to store his remaining games?'   );
-        this.setAnswer('' + f,0);
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + a + ' video games for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' fun times game console. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' does not play ' + b + ' of the games anymore so ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' gave them to ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friends. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' has boxes to keep the games in. Each box can hold ' + c + ' games. How many boxes will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need to store ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' remaining games?'   );
+        this.setAnswer('' + e,0);
 }
 });
 
