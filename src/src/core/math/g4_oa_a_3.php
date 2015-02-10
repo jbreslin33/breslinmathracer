@@ -1,5 +1,28 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_4',4.0304,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__4 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,450,200,255,145,100,50,580,100);
+
+       	this.mType = '4.oa.a.3_4';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*50+350);
+        var b = Math.floor(Math.random()*10+15);
+        var c = parseInt(a - b);
+	var d = parseInt(a + c);
+
+        this.setQuestion('At ' + this.ns.mSchoolOne + ' there are ' + a + ' students in the ' + this.n. 'tickets. On Saturday they sold ' + b + ' fewer tickets than on Friday. How many tickets did they sell ' + ' ' + this.ns.mSum + '?');
+        this.setAnswer('' + d,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_3',4.0303,'4.oa.a.3','');
 */
 var i_4_oa_a_3__3 = new Class(
