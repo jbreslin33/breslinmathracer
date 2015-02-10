@@ -334,8 +334,8 @@ Extends: TextItem,
                 var c = parseInt(a * b);
 		var d = parseInt(c - a);
 
-                this.setQuestion('' + this.ns.mNameOne + ' has $' + a + '. ' + this.ns.mNameTwo + ' has $' + c + '. How much more money does ' + this.ns.mNameTwo + ' have?');
-                this.setAnswer('$' + d,0);
+                this.setQuestion('' + this.ns.mNameOne + ' has $' + a + '. ' + this.ns.mNameTwo + ' has $' + c + '. How many more dollars does ' + this.ns.mNameTwo + ' have?');
+                this.setAnswer('' + d,0);
         }
 });
 
@@ -356,8 +356,8 @@ Extends: TextItem,
                 var b = Math.floor(Math.random()*8+2);
                 var c = parseInt(a * b);
 
-                this.setQuestion('' + this.ns.mNameOne + ' has $' + a + '. ' + this.ns.mNameTwo + ' has ' + b + ' times as much money as ' + this.ns.mNameOne + '. How much money does ' + this.ns.mNameTwo + ' have?');
-                this.setAnswer('$' + c,0);
+                this.setQuestion('' + this.ns.mNameOne + ' has $' + a + '. ' + this.ns.mNameTwo + ' has ' + b + ' times as much money as ' + this.ns.mNameOne + '. How many dollars does ' + this.ns.mNameTwo + ' have?');
+                this.setAnswer('' + c,0);
         }
 });
 
