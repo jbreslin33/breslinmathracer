@@ -12,13 +12,23 @@ initialize: function(sheet)
        	this.mType = '4.oa.a.3_4';
         this.ns = new NameSampler();
 
-        var a = Math.floor(Math.random()*50+350);
-        var b = Math.floor(Math.random()*10+15);
-        var c = parseInt(a - b);
-	var d = parseInt(a + c);
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+
+	while (e < 1 || e >= c)
+	{
+        	a = Math.floor(Math.random()*60+20);
+        	b = Math.floor(Math.random()*8+2);
+        	c = Math.floor(Math.random()*8+2);
+		d = parseInt(b * c);
+		e = parseInt(a - d); 
+	}
 
         this.setQuestion('At ' + this.ns.mSchoolOne + ' there are ' + a + ' students in the ' + this.ns.mPlayedActivityOne + ' club. The club president makes ' + b + ' teams of ' + c + ' students. The left over students will act as referees. How many students will be referees?');
-        this.setAnswer('' + d,0);
+        this.setAnswer('' + e,0);
 }
 });
 
