@@ -347,10 +347,8 @@ Extends: TextItem,
                 	answer = parseInt(f / b);
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' built a ' + a + ' yards long garden in a video game. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' split it into ' + b + ' sections to plant different vegetables. One of the sections will be for ' + this.ns.mVegetableOne + '. How many feet long is the section for ' + this.ns.mVegetableOne + '?');
+                this.setQuestion('' + this.ns.mNameOne + ' built a ' + a + ' yard long garden in a video game. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' split it into ' + b + ' equal sections to plant different vegetables. One of the sections will be for ' + this.ns.mVegetableOne + '. How many feet long is the section for ' + this.ns.mVegetableOne + '?');
                 this.setAnswer('' + answer,0);
-                this.setAnswer('' + answer + ' ft',1);
-                this.setAnswer('' + answer + ' feet',2);
         }
 });
 
