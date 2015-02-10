@@ -35,7 +35,7 @@ initialize: function(sheet)
 		h = parseInt(f % e);
 	}
 
-        this.setQuestion('' + this.ns.mNameOne + ' has some colored pencils that ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wants to share equally with ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,2) + ' and ' + d + ' friends. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' has ' + a + ' ' + this.ns.mColorOne + ' pencils, ' + b + ' ' + this.ns.mColorTwo + ' pencils and ' + c + ' ' + this.ns.mColorThree + ' pencils. How many pencils will each person get?');
+        this.setQuestion('' + this.ns.mNameOne + ' has completed ' + a + ' levels in ' + this.ns.mVideoGameOne + ' so far. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' plans to conquer ' + b + ' levels a day over the next ' + c + ' days. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' does this how many levels will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have completed?');
         this.setAnswer('' + g,0);
 }
 });

@@ -177,7 +177,18 @@ var NameMachine = new Class(
 		this.mColorArray.push("purple");
 		this.mColorArray.push("orange");
 		this.mColorArray.push("brown");
-           
+
+                //videoGame
+                this.mVideoGameArray = new Array();
+                this.mUsedVideoGameElementArray = new Array();
+                this.mVideoGameArray.push("Space Invaders");
+                this.mVideoGameArray.push("Pacman");
+                this.mVideoGameArray.push("Asteroids");
+                this.mVideoGameArray.push("Frogger");
+                this.mVideoGameArray.push("Bezerker");
+                this.mVideoGameArray.push("Running Fred");
+                this.mVideoGameArray.push("Excite Bike");
+
   		//purchase
                 this.mPurchaseArray = new Array();
                 this.mUsedPurchaseElementArray = new Array();
@@ -829,7 +840,34 @@ var NameMachine = new Class(
                 this.mUsedColorElementArray.push(randomElement);
                 return this.mColorArray[randomElement];
         },
-        
+
+        getVideoGame: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mVideoGameArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedVideoGameElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedVideoGameElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedVideoGameElementArray.push(randomElement);
+                return this.mVideoGameArray[randomElement];
+        },
+ 
 	getPurchase: function()
         {
                 var keepGoing = true;
@@ -841,7 +879,7 @@ var NameMachine = new Class(
 
                         var noDup = false;
                         for (i=0; i < this.mUsedPurchaseElementArray.length; i++)
-                        {
+			{
                                 if (randomElement == this.mUsedPurchaseElementArray[i])
                                 {
                                         noDup = true;
@@ -1855,6 +1893,16 @@ var NameSampler = new Class(
 		this.mColorArray.push(this.mColorOne);
 		this.mColorArray.push(this.mColorTwo);
 		this.mColorArray.push(this.mColorThree);
+
+                //color
+                this.mVideoGameOne   = this.mNameMachine.getVideoGame();
+                this.mVideoGameTwo   = this.mNameMachine.getVideoGame();
+                this.mVideoGameThree = this.mNameMachine.getVideoGame();
+
+                this.mVideoGameArray = new Array();
+                this.mVideoGameArray.push(this.mVideoGameOne);
+                this.mVideoGameArray.push(this.mVideoGameTwo);
+                this.mVideoGameArray.push(this.mVideoGameThree);
 
                 //purchase
                 this.mPurchaseOne   = this.mNameMachine.getPurchase();
