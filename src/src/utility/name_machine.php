@@ -53,7 +53,7 @@ var NameMachine = new Class(
 		this.mGirlNameArray.push("Juliza"); 
 		this.mGirlNameArray.push("Jacelynne"); 
 		this.mGirlNameArray.push("Abrianna"); 
-		this.mGirlNameArray.push("Ashanti"); 
+		this.mGirlNameArray.push("Ashanty"); 
 		this.mGirlNameArray.push("Grace"); 
 		this.mGirlNameArray.push("Clangerys"); 
 		this.mGirlNameArray.push("Kayla"); 
@@ -194,9 +194,9 @@ var NameMachine = new Class(
                 this.mBookArray = new Array();
                 this.mUsedBookElementArray = new Array();
                 this.mBookArray.push("Harry Potter");
-                this.mBookArray.push("Diary of a wimpy kid");
-                this.mBookArray.push("The hobbit");
-                this.mBookArray.push("Charlottes web");
+                this.mBookArray.push("Diary Of A Wimpy Kid");
+                this.mBookArray.push("The Hobbit");
+                this.mBookArray.push("Encyclopedia Brown");
 
  
 		//family
