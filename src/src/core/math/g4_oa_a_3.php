@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_4',4.0304,'4.oa.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_4',4.0304,'4.oa.a.3','ms');
 */
 var i_4_oa_a_3__4 = new Class(
 {
@@ -17,7 +17,7 @@ initialize: function(sheet)
         var c = parseInt(a - b);
 	var d = parseInt(a + c);
 
-        this.setQuestion('At ' + this.ns.mSchoolOne + ' there are ' + a + ' students in the ' + this.n. 'tickets. On Saturday they sold ' + b + ' fewer tickets than on Friday. How many tickets did they sell ' + ' ' + this.ns.mSum + '?');
+        this.setQuestion('At ' + this.ns.mSchoolOne + ' there are ' + a + ' students in the ' + this.ns.mPlayedActivityOne + ' club. The club president makes ' + b + ' teams of ' + c + ' students. The left over students will act as referees. How many students will be referees?');
         this.setAnswer('' + d,0);
 }
 });
