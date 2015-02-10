@@ -1,5 +1,46 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_5',4.0305,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,450,200,255,145,100,50,580,100);
+
+       	this.mType = '4.oa.a.3_5';
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var g = 0;
+	var h = 1;
+
+	while (h != 0 || g > 10)
+	{
+        	a = Math.floor(Math.random()*10+20);
+        	b = Math.floor(Math.random()*10+20);
+        	c = Math.floor(Math.random()*10+20);
+
+        	d = Math.floor(Math.random()*8+2);
+		e = parseInt(d + 1);	
+
+		f = parseInt(a + b + c);
+		g = parseInt(f / e); 
+		h = parseInt(f % e);
+	}
+
+        this.setQuestion('' + this.ns.mNameOne + ' has some colored pencils that ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wants to share equally with ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,2) + ' and ' + d + ' friends. ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' has ' + a + ' ' + this.ns.mColorOne + ' pencils, ' + b + ' ' + this.ns.mColorTwo + ' pencils and ' + c + ' ' + this.ns.mColorThree + ' pencils. How many pencils will each person get?');
+        this.setAnswer('' + g,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_4',4.0304,'4.oa.a.3','ms');
 */
 var i_4_oa_a_3__4 = new Class(
