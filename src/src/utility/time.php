@@ -41,7 +41,14 @@ var Time = new Class(
 		var s = '';
 		if (this.mHour < 12)
 		{
-			s = '' + this.mHour + ':' + this.convertMinute(this.mMinute) + ' A.M.';		
+			if (this.mHour == 0)
+			{
+				s = '' + 12 + ':' + this.convertMinute(this.mMinute) + ' A.M.';		
+			}
+			else
+			{
+				s = '' + this.mHour + ':' + this.convertMinute(this.mMinute) + ' A.M.';		
+			}
 		}
 		if (this.mHour == 12)
 		{
