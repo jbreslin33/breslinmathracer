@@ -12,31 +12,15 @@ initialize: function(sheet)
        	this.mType = '4.oa.a.3_6';
         this.ns = new NameSampler();
 
-	var a = 0;
-	var b = 0;
-	var c = 0;
-	var d = 0;
-	var e = 0;
-	var f = 0;
-	var g = 0;
-	var h = 1;
+        a = Math.floor(Math.random()*10+20);
+        b = Math.floor(Math.random()*8+2);
+        c = Math.floor(Math.random()*8+2);
 
-	while (h != 0 || g > 10)
-	{
-        	a = Math.floor(Math.random()*10+20);
-        	b = Math.floor(Math.random()*10+20);
-        	c = Math.floor(Math.random()*10+20);
-
-        	d = Math.floor(Math.random()*8+2);
-		e = parseInt(d + 1);	
-
-		f = parseInt(a + b + c);
-		g = parseInt(f / e); 
-		h = parseInt(f % e);
-	}
+	e = parseInt(b * c);	
+	f = parseInt(a + e);	
 
         this.setQuestion('' + this.ns.mNameOne + ' has completed ' + a + ' levels in ' + this.ns.mVideoGameOne + ' so far. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' plans to conquer ' + b + ' levels a day over the next ' + c + ' days. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' does this how many levels will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have completed?');
-        this.setAnswer('' + g,0);
+        this.setAnswer('' + f,0);
 }
 });
 
