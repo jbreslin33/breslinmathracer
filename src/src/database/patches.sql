@@ -199,6 +199,102 @@ insert into remediate (core_standards_id,user_id) values ('4.oa.a.2',26);
 --vu_anthony
 insert into remediate (core_standards_id,user_id) values ('4.oa.a.2',31);
 
+--4.oa.a.2
+
+--barret_kaylah
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',87);
+
+--bernardy_antonio
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',50);
+
+--burgos_leliani
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',20);
+
+--collazo_miguel
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',13);
+
+--delorbe_jefferson
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',52);
+
+--dowling_desmond
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',51);
+
+--fred_fabiana
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',28);
+
+--hernandez_catherine
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',34);
+
+--gibson_reece
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',71);
+
+--lilo_richard
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',16);
+
+--lopez_ashanti
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',22);
+
+--lugo_israel
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',54);
+
+--marsilio_carleght
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',75);
+
+--martinez_christopher
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',49);
+
+--mejia_milogros
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',19);
+
+--montiel_valerie
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',41);
+
+--negron_christina
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',17);
+
+--nguyen_mintai
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',46);
+
+--nolasco_charil
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',33);
+
+--portilla_juliza
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',43);
+
+--qiang_wei
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',15);
+
+--quinones_jaceylyne
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',63);
+
+--rivera_ashley
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',48);
+
+--rivera_jayden
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',44);
+
+--rodriques_brianna
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',24);
+
+--santiago_abrianna
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',67);
+
+--serrano_christopher
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',27);
+
+--tailef_sammer
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',62);
+
+--terrero_adrian
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',21);
+
+--valentin_ceciliaa
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',26);
+
+--vu_anthony
+insert into remediate (core_standards_id,user_id) values ('4.oa.a.3',31);
+
+
 
 --4.nbt.b.5
 --hernandez_catherine
