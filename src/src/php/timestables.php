@@ -200,10 +200,23 @@ public function setRawData()
 	}
         if ($this->mTableNumber == 3)
         {
-                $randomNumber = rand(18,32);
-                $randid = '3.oa.c.7';
-                $randid .= "_";
-                $randid .= $randomNumber;
+		$type = 0;
+                $randomNumber = rand(16,32);
+		if ($randomNumber == 16)
+		{
+			$type = 2;
+		}
+		else if ($randomNumber == 17)
+		{
+			$type = 3;
+		}
+		else
+		{
+			$type = $randomNumber;
+		}
+               	$randid = '3.oa.c.7';
+               	$randid .= "_";
+               	$randid .= $type;
                 $this->mTypeID = $randid;
         }
 	if ($this->mTableNumber == 4)
