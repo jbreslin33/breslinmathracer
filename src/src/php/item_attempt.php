@@ -111,6 +111,38 @@ public function update()
                         $_SESSION["timestables_score_today_theizzy"] = $_SESSION["timestables_score_theizzy"];
                 }
         }
+
+        //for two
+        if ($_SESSION["ref_id"] == "timestables_2")
+        {
+                if (!isset($_SESSION["timestables_score_two"]))
+                {
+                        $_SESSION["timestables_score_two"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_two"]))
+                {
+                        $_SESSION["timestables_score_today_two"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_two"]);
+                $today = intval($_SESSION["timestables_score_today_two"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_two"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_two"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_two"] = $_SESSION["timestables_score_two"];
+                }
+        }
         //for three
         if ($_SESSION["ref_id"] == "timestables_3")
         {
@@ -140,6 +172,223 @@ public function update()
                 if ($score > $today)
                 {
                         $_SESSION["timestables_score_today_three"] = $_SESSION["timestables_score_three"];
+                }
+        }
+        //for four
+        if ($_SESSION["ref_id"] == "timestables_4")
+        {
+                if (!isset($_SESSION["timestables_score_four"]))
+                {
+                        $_SESSION["timestables_score_four"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_four"]))
+                {
+                        $_SESSION["timestables_score_today_four"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_four"]);
+                $today = intval($_SESSION["timestables_score_today_four"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_four"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_four"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_four"] = $_SESSION["timestables_score_four"];
+                }
+        }
+        //for five
+        if ($_SESSION["ref_id"] == "timestables_3")
+        {
+                if (!isset($_SESSION["timestables_score_five"]))
+                {
+                        $_SESSION["timestables_score_five"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_five"]))
+                {
+                        $_SESSION["timestables_score_today_five"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_five"]);
+                $today = intval($_SESSION["timestables_score_today_five"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_five"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_five"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_five"] = $_SESSION["timestables_score_five"];
+                }
+        }
+        //for six
+        if ($_SESSION["ref_id"] == "timestables_6")
+        {
+                if (!isset($_SESSION["timestables_score_six"]))
+                {
+                        $_SESSION["timestables_score_six"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_six"]))
+                {
+                        $_SESSION["timestables_score_today_six"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_six"]);
+                $today = intval($_SESSION["timestables_score_today_six"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_six"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_six"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_six"] = $_SESSION["timestables_score_six"];
+                }
+        }
+        //for seven
+        if ($_SESSION["ref_id"] == "timestables_7")
+        {
+                if (!isset($_SESSION["timestables_score_seven"]))
+                {
+                        $_SESSION["timestables_score_seven"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_seven"]))
+                {
+                        $_SESSION["timestables_score_today_seven"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_seven"]);
+                $today = intval($_SESSION["timestables_score_today_seven"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_seven"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_seven"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_seven"] = $_SESSION["timestables_score_seven"];
+                }
+        }
+        //for eight
+        if ($_SESSION["ref_id"] == "timestables_8")
+        {
+                if (!isset($_SESSION["timestables_score_eight"]))
+                {
+                        $_SESSION["timestables_score_eight"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_eight"]))
+                {
+                        $_SESSION["timestables_score_today_eight"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_eight"]);
+                $today = intval($_SESSION["timestables_score_today_eight"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_eight"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_eight"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_eight"] = $_SESSION["timestables_score_eight"];
+                }
+        }
+        //for nine
+        if ($_SESSION["ref_id"] == "timestables_9")
+        {
+                if (!isset($_SESSION["timestables_score_nine"]))
+                {
+                        $_SESSION["timestables_score_nine"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_nine"]))
+                {
+                        $_SESSION["timestables_score_today_nine"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_nine"]);
+                $today = intval($_SESSION["timestables_score_today_nine"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_nine"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_nine"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_nine"] = $_SESSION["timestables_score_nine"];
+                }
+        }
+        //for ten
+        if ($_SESSION["ref_id"] == "timestables_10")
+        {
+                if (!isset($_SESSION["timestables_score_ten"]))
+                {
+                        $_SESSION["timestables_score_ten"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_ten"]))
+                {
+                        $_SESSION["timestables_score_today_ten"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_ten"]);
+                $today = intval($_SESSION["timestables_score_today_ten"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_ten"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_ten"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_ten"] = $_SESSION["timestables_score_ten"];
                 }
         }
 
