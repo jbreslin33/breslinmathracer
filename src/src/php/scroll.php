@@ -18,7 +18,7 @@ function __construct()
 		{
 			$this->setScroll('score');
 		}
-		if ($_SESSION["ref_id"] == 'timestables_2'  )
+		if ($_SESSION["ref_id"] == 'timestables_2')
 		{
 			$this->timesTablesTwo();
 		}
@@ -90,6 +90,7 @@ public function setScroll($scoreField)
 	$query = "";
 	if (isset($_SESSION["core_standards_id"]))	
 	{
+/*
 		if ($_SESSION["core_standards_id"] == '3.oa.c.7')
 		{
 			$query .= "select id, first_name, last_name, ";
@@ -106,9 +107,10 @@ public function setScroll($scoreField)
 			$query .= $scoreField;
 			$query .= " desc;";
 		}
-	}
-	else
-	{
+*/
+//	}
+//	else
+//	{
 		$query .= "select id, first_name, last_name, ";
 		$query .= $scoreField;
 		$query .= " from users order by ";
