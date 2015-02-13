@@ -158,7 +158,9 @@ public function insertNewAttempt()
 	{
 		//make new array since we are creating a new evaluations attempts 
 		$table_array = array();
+		$table_array[] = 83;
 		$table_array[] = 3;
+		$table_array[] = 18;
 		$table_array[] = 19;
 		$table_array[] = 21;
 		$table_array[] = 23;

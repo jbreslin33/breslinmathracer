@@ -1865,3 +1865,153 @@ initialize: function(sheet)
         this.setAnswer('100',0);
 }
 });
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_82',3.0782,'3.oa.c.7','2x1');
+*/
+var i_3_oa_c_7__82 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_82';
+        this.setQuestion('2x1');
+        this.setAnswer('2',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_83',3.0783,'3.oa.c.7','3x1');
+*/
+var i_3_oa_c_7__83 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_83';
+        this.setQuestion('3x1');
+        this.setAnswer('3',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_84',3.0784,'3.oa.c.7','4x1');
+*/
+var i_3_oa_c_7__84 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_84';
+        this.setQuestion('4x1');
+        this.setAnswer('4',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_85',3.0785,'3.oa.c.7','5x1');
+*/
+var i_3_oa_c_7__85 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_85';
+        this.setQuestion('5x1');
+        this.setAnswer('5',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_86',3.0786,'3.oa.c.7','6x1');
+*/
+var i_3_oa_c_7__86 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_86';
+        this.setQuestion('6x1');
+        this.setAnswer('6',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_87',3.0787,'3.oa.c.7','7x1');
+*/
+var i_3_oa_c_7__87 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_87';
+        this.setQuestion('7x1');
+        this.setAnswer('7',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_88',3.0788,'3.oa.c.7','8x1');
+*/
+var i_3_oa_c_7__88 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_88';
+        this.setQuestion('8x1');
+        this.setAnswer('8',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_89',3.0789,'3.oa.c.7','9x1');
+*/
+var i_3_oa_c_7__89 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_89';
+        this.setQuestion('9x1');
+        this.setAnswer('9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_90',3.0790,'3.oa.c.7','10x1');
+*/
+var i_3_oa_c_7__90 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_90';
+        this.setQuestion('10x1');
+        this.setAnswer('10',0);
+}
+});
+
