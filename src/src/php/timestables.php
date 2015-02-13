@@ -199,10 +199,6 @@ public function insertNewAttempt()
 		//ref id 
 		$refid = 'timestables_3';
         	$_SESSION["ref_id"] = $refid;
-
-		//workit primer
-		//$workit = '3.oa.c.7_27';
-		//$_SESSION["workit"] = $workit;
 	}
 	else
 	{
@@ -266,7 +262,7 @@ public function setRawData()
                	
 		$randid = '3.oa.c.7';
                	$randid .= "_";
-		if ($table_counter < 10) 
+		if ($table_counter < 20) 
 		{
                		$randid .= $_SESSION["table_array"][$table_counter];
                		$this->mTypeID = $randid;
