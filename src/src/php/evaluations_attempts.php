@@ -19,8 +19,8 @@ public function insert()
 
         $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
-	//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval_a','');";
-	//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
+	$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval_a','');";
+	$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
 
         $query = "select id from evaluations_attempts where user_id = ";
         $query .= $_SESSION["user_id"];

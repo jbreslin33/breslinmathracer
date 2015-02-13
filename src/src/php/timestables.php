@@ -140,7 +140,38 @@ public function insertNewAttempt()
 
 	if (intval($this->mTableNumber) == 10)
 	{
-		$refid = 'timestables';	
+
+		//refid
+		$refid = 'timestables';
+        	$_SESSION["ref_id"] = $refid;
+	}
+/*
+	//level 17,34,51,68 or just level 34 is tops.
+         $randomNumber = rand(16,32);
+                if ($randomNumber == 16)
+                {
+                        $type = 2;
+                }
+                else if ($randomNumber == 17)
+*/
+	else if (intval($this->mTableNumber) == 3)
+	{
+		//make new array since we are creating a new evaluations attempts 
+		$table_array = array();
+		$table_array[] = 3;
+		$table_array[] = 19;
+		$table_array[] = 21;
+		$table_array[] = 23;
+		$table_array[] = 25;
+		$table_array[] = 27;
+		$table_array[] = 29;
+		$table_array[] = 31;
+
+		$_SESSION["table_array"] = $table_array; 
+		$_SESSION["table_counter"] = 0; 
+	
+		//ref id 
+		$refid = 'timestables_3';
         	$_SESSION["ref_id"] = $refid;
 	}
 	else
@@ -200,24 +231,15 @@ public function setRawData()
 	}
         if ($this->mTableNumber == 3)
         {
-		$type = 0;
-                $randomNumber = rand(16,32);
-		if ($randomNumber == 16)
-		{
-			$type = 2;
-		}
-		else if ($randomNumber == 17)
-		{
-			$type = 3;
-		}
-		else
-		{
-			$type = $randomNumber;
-		}
-               	$randid = '3.oa.c.7';
+		$table_counter = intval($_SESSION["table_counter"]);	
+               	
+		$randid = '3.oa.c.7';
                	$randid .= "_";
-               	$randid .= $type;
+               	$randid .= $_SESSION["table_array"][$table_counter];
                 $this->mTypeID = $randid;
+
+		$table_counter++;
+		$_SESSION["table_counter"] = $table_counter;
         }
 	if ($this->mTableNumber == 4)
 	{ 
