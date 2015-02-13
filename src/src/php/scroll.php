@@ -8,6 +8,8 @@ function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 
+	$this->setScroll('score');
+
 	if (!isset($_SESSION["ref_id"]))
 	{
 		$this->setScroll('score');
@@ -18,14 +20,49 @@ function __construct()
 		{
 			$this->setScroll('score');
 		}
+
 		if ($_SESSION["ref_id"] == 'timestables_2')
 		{
-			$this->timesTablesTwo();
+			$this->setScroll('alltimetwo');
 		}
+		if ($_SESSION["ref_id"] == 'timestables_3')
+		{
+			$this->setScroll('alltimethree');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_4')
+		{
+			$this->setScroll('alltimefour');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_5')
+		{
+			$this->setScroll('alltimefive');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_6')
+		{
+			$this->setScroll('alltimesix');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_7')
+		{
+			$this->setScroll('alltimeseven');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_8')
+		{
+			$this->setScroll('alltimeeight');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_9')
+		{
+			$this->setScroll('alltimenine');
+		}
+		if ($_SESSION["ref_id"] == 'timestables_10')
+		{
+			$this->setScroll('alltimeten');
+		}
+
 		if ($_SESSION["ref_id"] == 'timestables')
 		{
 			$this->setScroll('alltime');
 		}
+
 		if ($_SESSION["ref_id"] == 'The Izzy')
 		{
 			$this->setScroll('alltimeizzy');
@@ -35,7 +72,7 @@ function __construct()
 
 // i think you should just send a string of 1s and 2s and 0s then you will get a feel for how they are doing..
 //just make sure its the right table....
-
+/*
 public function timesTablesTwo()
 {
 	$description_array = array();
@@ -77,7 +114,7 @@ public function timesTablesTwo()
 
         $_SESSION["scroll"] = $itemString;
 }
-
+*/
 public function setScroll($scoreField)
 {
 
