@@ -206,7 +206,7 @@ public function update()
                 }
         }
         //for five
-        if ($_SESSION["ref_id"] == "timestables_3")
+        if ($_SESSION["ref_id"] == "timestables_5")
         {
                 if (!isset($_SESSION["timestables_score_five"]))
                 {
