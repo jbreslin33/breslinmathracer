@@ -371,6 +371,43 @@ public function insertNewAttempt()
 		$refid = 'timestables_3';
         	$_SESSION["ref_id"] = $refid;
 	}
+
+        else if (intval($this->mTableNumber) == 4)
+        {
+                //make new array since we are creating a new evaluations attempts
+                $table_array = array();
+                $table_array[] = 84;
+                $table_array[] = 5;
+                $table_array[] = 20;
+                $table_array[] = 33;
+                $table_array[] = 34;
+                $table_array[] = 36;
+                $table_array[] = 38;
+                $table_array[] = 40;
+                $table_array[] = 42;
+                $table_array[] = 44;
+
+                //start over with number in front
+                $table_array[] = 94;
+                $table_array[] = 4;
+                $table_array[] = 19;
+                $table_array[] = 33;
+                $table_array[] = 35;
+                $table_array[] = 37;
+                $table_array[] = 39;
+                $table_array[] = 41;
+                $table_array[] = 43;
+                $table_array[] = 45; 
+;
+
+                $_SESSION["table_array"] = $table_array;
+                $_SESSION["table_counter"] = 0;
+
+                //ref id
+                $refid = 'timestables_4';
+                $_SESSION["ref_id"] = $refid;
+        }
+
 	else
 	{
 		$refid = 'timestables_';	
