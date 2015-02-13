@@ -9,6 +9,7 @@
 <li><a href="/web/stats/leaderboard.php">School Leader Board</a></li>
 <li><a href="/web/stats/leaderboard_33.php">Room 33 Leader Board</a></li>
 <li><a href="/web/stats/leaderboard_34.php">Room 34 Leader Board</a></li>
+<li><a href="/web/stats/leaderboard_tt_2.php">XTABLE 2 Leader Board</a></li>
 <li><a href="/web/stats/standards_report.php">Standards Report</a></li>
 <li><a href="/web/stats/item_attempts.php">Item Attempts</a></li>
 <li><a href="/web/stats/item_attempts_realtime.php">Item Attempts RealTime</a></li>
