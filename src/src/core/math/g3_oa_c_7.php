@@ -2015,3 +2015,165 @@ initialize: function(sheet)
 }
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_91',3.0791,'3.oa.c.7','1x1');
+*/
+var i_3_oa_c_7__91 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_91';
+        this.setQuestion('1x1');
+        this.setAnswer('1',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_92',3.0792,'3.oa.c.7','1x2');
+*/
+var i_3_oa_c_7__92 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_92';
+        this.setQuestion('1x2');
+        this.setAnswer('2',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_93',3.0793,'3.oa.c.7','1x3');
+*/
+var i_3_oa_c_7__93 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_93';
+        this.setQuestion('1x3');
+        this.setAnswer('3',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_94',3.0794,'3.oa.c.7','1x4');
+*/
+var i_3_oa_c_7__94 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_94';
+        this.setQuestion('1x4');
+        this.setAnswer('4',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_95',3.0795,'3.oa.c.7','1x5');
+*/
+var i_3_oa_c_7__95 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_95';
+        this.setQuestion('1x5');
+        this.setAnswer('5',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_96',3.0796,'3.oa.c.7','1x6');
+*/
+var i_3_oa_c_7__96 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_96';
+        this.setQuestion('1x6');
+        this.setAnswer('6',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_97',3.0797,'3.oa.c.7','1x7');
+*/
+var i_3_oa_c_7__97 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_97';
+        this.setQuestion('1x7');
+        this.setAnswer('7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_98',3.0798,'3.oa.c.7','1x8');
+*/
+var i_3_oa_c_7__98 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_98';
+        this.setQuestion('1x8');
+        this.setAnswer('8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_99',3.0799,'3.oa.c.7','1x9');
+*/
+var i_3_oa_c_7__99 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_99';
+        this.setQuestion('1x9');
+        this.setAnswer('9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_991',3.07991,'3.oa.c.7','1x10');
+*/
+var i_3_oa_c_7__991 = new Class(
+{
+Extends: TimesTables,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '3.oa.c.7_991';
+        this.setQuestion('1x10');
+        this.setAnswer('10',0);
+}
+});
