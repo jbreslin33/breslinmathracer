@@ -8,7 +8,15 @@ CREATE TABLE remediate (
         FOREIGN KEY (user_id) REFERENCES users(id)
 );
 ALTER TABLE users ADD CONSTRAINT nodups UNIQUE (username);
+ALTER TABLE users ADD alltimetwo integer NOT NULL default 0;
 ALTER TABLE users ADD alltimethree integer NOT NULL default 0;
+ALTER TABLE users ADD alltimefour integer NOT NULL default 0;
+ALTER TABLE users ADD alltimefive integer NOT NULL default 0;
+ALTER TABLE users ADD alltimesix integer NOT NULL default 0;
+ALTER TABLE users ADD alltimeseven integer NOT NULL default 0;
+ALTER TABLE users ADD alltimeeight integer NOT NULL default 0;
+ALTER TABLE users ADD alltimenine integer NOT NULL default 0;
+ALTER TABLE users ADD alltimeten integer NOT NULL default 0;
 
 --4.oa.a.1
 

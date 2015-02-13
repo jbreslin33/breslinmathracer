@@ -27,9 +27,41 @@ function __construct($tableNumber, $startNew, $leave)
 	{
                 $_SESSION["timestables_score_theizzy"] = 0;
 	}
+	if (!isset($_SESSION["timestables_score_two"]))
+	{
+                $_SESSION["timestables_score_two"] = 0;
+	}
 	if (!isset($_SESSION["timestables_score_three"]))
 	{
                 $_SESSION["timestables_score_three"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_four"]))
+	{
+                $_SESSION["timestables_score_four"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_five"]))
+	{
+                $_SESSION["timestables_score_five"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_six"]))
+	{
+                $_SESSION["timestables_score_six"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_seven"]))
+	{
+                $_SESSION["timestables_score_seven"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_eight"]))
+	{
+                $_SESSION["timestables_score_eight"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_nine"]))
+	{
+                $_SESSION["timestables_score_nine"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_ten"]))
+	{
+                $_SESSION["timestables_score_ten"] = 0;
 	}
 
 	//today
@@ -41,9 +73,41 @@ function __construct($tableNumber, $startNew, $leave)
 	{
                 $_SESSION["timestables_score_today_theizzy"] = 0;
 	}
+	if (!isset($_SESSION["timestables_score_today_two"]))
+	{
+                $_SESSION["timestables_score_today_two"] = 0;
+	}
 	if (!isset($_SESSION["timestables_score_today_three"]))
 	{
                 $_SESSION["timestables_score_today_three"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_four"]))
+	{
+                $_SESSION["timestables_score_today_four"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_five"]))
+	{
+                $_SESSION["timestables_score_today_five"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_six"]))
+	{
+                $_SESSION["timestables_score_today_six"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_seven"]))
+	{
+                $_SESSION["timestables_score_today_seven"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_eight"]))
+	{
+                $_SESSION["timestables_score_today_eight"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_nine"]))
+	{
+                $_SESSION["timestables_score_today_nine"] = 0;
+	}
+	if (!isset($_SESSION["timestables_score_today_ten"]))
+	{
+                $_SESSION["timestables_score_today_ten"] = 0;
 	}
 
 	//alltime	
@@ -55,9 +119,41 @@ function __construct($tableNumber, $startNew, $leave)
 	{	
 		$_SESSION["timestables_score_alltime_theizzy"] = $this->getAllTime('alltimeizzy');
 	}
+	if (!isset($_SESSION["timestables_score_alltime_two"]))
+	{	
+		$_SESSION["timestables_score_alltime_two"] = $this->getAllTime('alltimetwo');
+	}
 	if (!isset($_SESSION["timestables_score_alltime_three"]))
 	{	
 		$_SESSION["timestables_score_alltime_three"] = $this->getAllTime('alltimethree');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_four"]))
+	{	
+		$_SESSION["timestables_score_alltime_four"] = $this->getAllTime('alltimefour');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_five"]))
+	{	
+		$_SESSION["timestables_score_alltime_five"] = $this->getAllTime('alltimefive');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_six"]))
+	{	
+		$_SESSION["timestables_score_alltime_six"] = $this->getAllTime('alltimesix');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_seven"]))
+	{	
+		$_SESSION["timestables_score_alltime_seven"] = $this->getAllTime('alltimeseven');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_eight"]))
+	{	
+		$_SESSION["timestables_score_alltime_eight"] = $this->getAllTime('alltimeeight');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_nine"]))
+	{	
+		$_SESSION["timestables_score_alltime_nine"] = $this->getAllTime('alltimenine');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_ten"]))
+	{	
+		$_SESSION["timestables_score_alltime_ten"] = $this->getAllTime('alltimeten');
 	}
 	
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
@@ -120,6 +216,41 @@ public function updateAllTime($alltime)
 	{
         	$update .= "update users set alltimethree = ";
         	$update .= $_SESSION["timestables_score_alltime_three"];
+	}
+	if ($alltime == 'four')
+	{
+        	$update .= "update users set alltimefour = ";
+        	$update .= $_SESSION["timestables_score_alltime_four"];
+	}
+	if ($alltime == 'five')
+	{
+        	$update .= "update users set alltimefive = ";
+        	$update .= $_SESSION["timestables_score_alltime_five"];
+	}
+	if ($alltime == 'six')
+	{
+        	$update .= "update users set alltimesix = ";
+        	$update .= $_SESSION["timestables_score_alltime_six"];
+	}
+	if ($alltime == 'seven')
+	{
+        	$update .= "update users set alltimeseven = ";
+        	$update .= $_SESSION["timestables_score_alltime_seven"];
+	}
+	if ($alltime == 'eight')
+	{
+        	$update .= "update users set alltimeeight = ";
+        	$update .= $_SESSION["timestables_score_alltime_eight"];
+	}
+	if ($alltime == 'nine')
+	{
+        	$update .= "update users set alltimenine = ";
+        	$update .= $_SESSION["timestables_score_alltime_nine"];
+	}
+	if ($alltime == 'ten')
+	{
+        	$update .= "update users set alltimeten = ";
+        	$update .= $_SESSION["timestables_score_alltime_ten"];
 	}
 	$update .= " where id = ";
         $update .= $_SESSION["user_id"];
@@ -246,17 +377,7 @@ public function continueAttempt()
 //you are not using user id in selects that is why it skipped eval....
 public function setRawData()
 {
-	//lets randomize ....
-	if ($this->mTableNumber == 2)
-	{ 
-		$randomNumber = rand(1,17);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-
-        if ($this->mTableNumber == 3)
+        if ($this->mTableNumber > 1 && $this->mTableNumber < 10)
         {
 		$table_counter = intval($_SESSION["table_counter"]);	
                	
@@ -286,65 +407,6 @@ public function setRawData()
 		$_SESSION["table_counter"] = $table_counter;
         }
 
-	if ($this->mTableNumber == 4)
-	{ 
-		$randomNumber = rand(33,45);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-	if ($this->mTableNumber == 5)
-	{ 
-		$randomNumber = rand(46,56);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-	if ($this->mTableNumber == 6)
-	{ 
-		$randomNumber = rand(57,65);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-	if ($this->mTableNumber == 7)
-	{ 
-		$randomNumber = rand(66,72);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-	if ($this->mTableNumber == 8)
-	{ 
-		$randomNumber = rand(73,77);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-	if ($this->mTableNumber == 9)
-	{ 
-		$randomNumber = rand(78,81);
-		$randid = '3.oa.c.7';
-		$randid .= "_"; 
-		$randid .= $randomNumber; 
-		$this->mTypeID = $randid;
-	}
-	/* what i want is to simulate what i did with israel.....ask 1 then 2 then 3 but rememember the 3 i asked...
-		so i will still make an optimal order starting with hardest ones...
-		but they will be added during session with a marker. after one is wrong we will reshuffle available ones.... 	
-		this way student cant memorize order...
-		how do you get to new one you will have to dynamically expand when they get there...
-	*/
-
-	/*	
-		how bout ask them questions see how high they get..then whatever they get wrong will be the workit_type	
-	*/
-	
         if ($this->mTableNumber == 10)
         {
 		$randomNumber = 0;
@@ -635,6 +697,41 @@ public function setRawData()
         	$itemString .= $_SESSION["timestables_score_today_three"];
 		$score = intval($_SESSION["timestables_score_three"]);
 	}
+	if ($_SESSION["ref_id"] == 'timestables_4')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_four"];
+		$score = intval($_SESSION["timestables_score_four"]);
+	}
+	if ($_SESSION["ref_id"] == 'timestables_5')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_five"];
+		$score = intval($_SESSION["timestables_score_five"]);
+	}
+	if ($_SESSION["ref_id"] == 'timestables_6')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_six"];
+		$score = intval($_SESSION["timestables_score_six"]);
+	}
+	if ($_SESSION["ref_id"] == 'timestables_7')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_seven"];
+		$score = intval($_SESSION["timestables_score_seven"]);
+	}
+	if ($_SESSION["ref_id"] == 'timestables_8')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_eight"];
+		$score = intval($_SESSION["timestables_score_eight"]);
+	}
+	if ($_SESSION["ref_id"] == 'timestables_9')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_nine"];
+		$score = intval($_SESSION["timestables_score_nine"]);
+	}
+	if ($_SESSION["ref_id"] == 'timestables_10')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_ten"];
+		$score = intval($_SESSION["timestables_score_ten"]);
+	}
 
 	$alltime = '';
 	if ($_SESSION["ref_id"] == 'timestables')
@@ -650,7 +747,6 @@ public function setRawData()
 	if ($_SESSION["ref_id"] == 'The Izzy')
 	{
 		$alltime = intval($_SESSION["timestables_score_alltime_theizzy"]);
-
 		if ($score > $alltime)
 		{
 			$alltime = $score;
@@ -661,12 +757,81 @@ public function setRawData()
 	if ($_SESSION["ref_id"] == 'timestables_3')
 	{
 		$alltime = intval($_SESSION["timestables_score_alltime_three"]);
-
 		if ($score > $alltime)
 		{
 			$alltime = $score;
 			$_SESSION["timestables_score_alltime_three"] = $alltime;
 			$this->updateAllTime('three');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_4')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_four"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_four"] = $alltime;
+			$this->updateAllTime('four');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_5')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_five"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_five"] = $alltime;
+			$this->updateAllTime('five');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_6')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_six"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_six"] = $alltime;
+			$this->updateAllTime('six');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_7')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_seven"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_seven"] = $alltime;
+			$this->updateAllTime('seven');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_8')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_eight"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_eight"] = $alltime;
+			$this->updateAllTime('eight');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_9')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_nine"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_nine"] = $alltime;
+			$this->updateAllTime('nine');
+		}
+	}
+	if ($_SESSION["ref_id"] == 'timestables_10')
+	{
+		$alltime = intval($_SESSION["timestables_score_alltime_ten"]);
+		if ($score > $alltime)
+		{
+			$alltime = $score;
+			$_SESSION["timestables_score_alltime_ten"] = $alltime;
+			$this->updateAllTime('ten');
 		}
 	}
 
@@ -699,6 +864,55 @@ public function setRawData()
 		if (isset($_SESSION["timestables_score_three"]))
 		{
         		$itemString .= $_SESSION["timestables_score_three"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_4')
+	{
+		if (isset($_SESSION["timestables_score_four"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_four"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_5')
+	{
+		if (isset($_SESSION["timestables_score_five"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_five"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_6')
+	{
+		if (isset($_SESSION["timestables_score_six"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_six"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_7')
+	{
+		if (isset($_SESSION["timestables_score_seven"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_seven"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_8')
+	{
+		if (isset($_SESSION["timestables_score_eight"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_eight"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_9')
+	{
+		if (isset($_SESSION["timestables_score_nine"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_nine"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'timestables_10')
+	{
+		if (isset($_SESSION["timestables_score_ten"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_ten"];
 		}
 	}
 	else
