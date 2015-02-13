@@ -169,6 +169,26 @@ public function insertNewAttempt()
 		$table_array[] = 29;
 		$table_array[] = 31;
 
+		//start over with number in front	
+		$table_array[] = 93;
+		$table_array[] = 2;
+		$table_array[] = 18;
+		$table_array[] = 20;
+		$table_array[] = 22;
+		$table_array[] = 24;
+		$table_array[] = 26;
+		$table_array[] = 28;
+		$table_array[] = 30;
+		$table_array[] = 32;
+
+
+		//for next one what about
+
+		//3x1 or 3x2
+		//3x1 or 3x2
+
+		//3x1 or 3x2
+
 		$_SESSION["table_array"] = $table_array; 
 		$_SESSION["table_counter"] = 0; 
 	
