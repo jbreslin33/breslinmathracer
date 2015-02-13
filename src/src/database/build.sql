@@ -150,6 +150,7 @@ CREATE TABLE users (
         lesson integer NOT NULL default 1,
         alltime integer NOT NULL default 0,
         alltimeizzy integer NOT NULL default 0,
+        alltimethree integer NOT NULL default 0,
         room_id integer NOT NULL default 0,
         team_id integer NOT NULL default 0,
         banned_id integer NOT NULL default 0,
