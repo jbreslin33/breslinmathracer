@@ -2618,6 +2618,60 @@ getItem: function(id)
         {
                 return new i_5_nf_b_7_b__11(this.mSheet);
         }
+       
+	//5.nf.b.7.c 
+	if (id == '5.nf.b.7.c_1')
+        {
+                return new i_5_nf_b_7_c__1(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_2')
+        {
+                return new i_5_nf_b_7_c__2(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_3')
+        {
+                return new i_5_nf_b_7_c__3(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_4')
+        {
+                return new i_5_nf_b_7_c__4(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_5')
+        {
+                return new i_5_nf_b_7_c__5(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_6')
+        {
+                return new i_5_nf_b_7_c__6(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_7')
+        {
+                return new i_5_nf_b_7_c__7(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_8')
+        {
+                return new i_5_nf_b_7_c__8(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_9')
+        {
+                return new i_5_nf_b_7_c__9(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_10')
+        {
+                return new i_5_nf_b_7_c__10(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_11')
+        {
+                return new i_5_nf_b_7_c__11(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_12')
+        {
+                return new i_5_nf_b_7_c__12(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_13')
+        {
+                return new i_5_nf_b_7_c__13(this.mSheet);
+        }
 
 	
 	/*** GRADE 6 ***/
