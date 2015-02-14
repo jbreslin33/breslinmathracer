@@ -9,8 +9,6 @@ $_SESSION["password"]   = $_GET["password"];
 $_SESSION["first_name"] = $_GET["first_name"];
 $_SESSION["last_name"]  = $_GET["last_name"];
 $_SESSION["core_standards_id"]  = $_GET["core_standards_id"];
-//temp hack to send everyone to times tables
-//$_SESSION["core_standards_id"]  = '3.oa.c.7';
 
 $signup = new SignUp();
 include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
