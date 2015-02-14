@@ -246,3 +246,129 @@ Extends: TextItem,
 
 
 });
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_6',5.2406,'5.md.a.1','');
+*/
+var i_5_md_a_1__6 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_6';
+
+    this.ns = new NameSampler();
+
+		var a = Math.floor((Math.random()*10)+10) * 3; 
+
+    var b = Math.floor((Math.random()*10)+10) * 3; 
+		
+    var c = Math.floor((Math.random()*10)+15);
+
+    var answer = ((a*2) + (b*2))/3;
+    answer = answer * c;
+
+                this.setQuestion('' + this.ns.mNameOne + ' is building a fence around the perimeter of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' yard, which is shaped like a rectangle. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' yard is ' + a + ' feet long and ' + b + ' feet wide. One yard of fencing costs ' + c + ' dollars. How much will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend on fencing?');
+
+                this.setAnswer('' + answer,0);
+        }
+
+
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_7',5.2407,'5.md.a.1','');
+*/
+var i_5_md_a_1__7 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_7';
+
+    this.ns = new NameSampler();
+
+		var a = Math.floor((Math.random()*10)+10); 
+
+    var answer = a * 16;
+
+                this.setQuestion('The capacity of a water cooler is ' + a + ' gallons. How many cups can the water cooler hold?');
+
+                this.setAnswer('' + answer,0);
+        }
+
+
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_8',5.2408,'5.md.a.1','');
+*/
+var i_5_md_a_1__8 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_8';
+
+    this.ns = new NameSampler();
+
+		var a = Math.floor((Math.random()*6)+4);
+
+    var b = Math.floor((Math.random()*3)+1);
+
+    var answer = a * b * 2000;
+
+                this.setQuestion(a + ' of the houses on maple street are getting their driveways paved. It takes ' + b + ' tons of concrete to pave each driveway. How many pounds of concrete will be used in all?');
+
+                this.setAnswer('' + answer,0);
+        }
+
+
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_9',5.2409,'5.md.a.1','');
+*/
+var i_5_md_a_1__9 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_9';
+
+    this.ns = new NameSampler();
+
+		var a = Math.floor((Math.random()*4)+1);
+
+    var b = Math.floor(Math.random()*3);
+    b = (b*5) + 20;
+
+    var answer = (a*300) / b;
+
+                this.setQuestion('' + this.ns.mNameOne + ' ran the ' + a + '00-yard dash at the track meet. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ran at a rate of  ' + b + ' feet per second. How long did it take to finish the race in seconds?');
+
+                this.setAnswer('' + answer,0);
+        }
+
+
+});
