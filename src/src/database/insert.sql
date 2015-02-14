@@ -946,7 +946,7 @@ insert into core_standards (id,core_clusters_id,description) values ('5.md.a.1',
 insert into core_clusters(id,core_domains_subjects_grades_id,description) values (61,27,'Represent and interpret data.');
 --------------------------------------CLUSTER------------------------------------------- 
 
-insert into core_standards (id,core_clusters_id,description) values ('5.md.b.1',61,'Make a line plot to display a data set of measurements in fractions of a unit (1/2, 1/4, 1/8). Use operations on fractions for this grade to solve problems involving information presented in line plots. For example, given different measurements of liquid in identical beakers, find the amount of liquid each beaker would contain if the total amount in all the beakers were redistributed equally.');
+insert into core_standards (id,core_clusters_id,description) values ('5.md.b.2',61,'Make a line plot to display a data set of measurements in fractions of a unit (1/2, 1/4, 1/8). Use operations on fractions for this grade to solve problems involving information presented in line plots. For example, given different measurements of liquid in identical beakers, find the amount of liquid each beaker would contain if the total amount in all the beakers were redistributed equally.');
 
 
 --------------------------------------CLUSTER------------------------------------------- 
