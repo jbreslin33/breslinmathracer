@@ -332,6 +332,32 @@ if (id == '5.md.a.1_5')
         {
                 return new i_5_md_a_1__5(this.mSheet);
         }
+if (id == '5.md.a.1_6')
+        {
+                return new i_5_md_a_1__6(this.mSheet);
+        }
+if (id == '5.md.a.1_7')
+        {
+                return new i_5_md_a_1__7(this.mSheet);
+        }
+if (id == '5.md.a.1_8')
+        {
+                return new i_5_md_a_1__8(this.mSheet);
+        }
+if (id == '5.md.a.1_9')
+        {
+                return new i_5_md_a_1__9(this.mSheet);
+        }
+
+
+
+
+if (id == '5.md.b.2_1')
+        {
+                return new i_5_md_b_2__1(this.mSheet);
+        }
+
+	return 0;	
 
 	return 0;	
 }
