@@ -11,7 +11,12 @@
 <?php
 session_start();
 
+//db connection
+include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+$conn = dbConnect();
+
 $core_standard_id = 0;
+$id = 0;
 
 if (isset($_POST["core_standard_id"]))
 {
@@ -27,9 +32,21 @@ else
 
 }
 
-//db connection
-include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
-$conn = dbConnect();
+if (isset($_POST["id"]))
+{
+        $id = $_POST["id"];
+
+	$insert = "insert into remediate (core_standards_id,user_id) values ('";
+	$insert .= $core_standard_id;
+	$insert .= "',";
+	$insert .= $id;
+	$insert .= ");";
+
+	$result = pg_query($conn,$insert);
+
+        ///$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+}
+
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
@@ -37,7 +54,7 @@ echo "<br>";
 
         <p><b> Select Username: </p></b>
 
-        <form method="post" action="/web/stats/remediate_33.php">
+        <form method="post" action="/web/stats/remediate_33.php?do_update=YES">
 
 <select id="core_standard_id" name="core_standard_id" onchange="loadAgain()">
 <?php
@@ -91,7 +108,7 @@ for($i = 0; $i < $numrows; $i++)
 	$s .= $row[4];
 	$s .= ",";   
 	$s .= $row[5];
-        echo "<option value=\"$row[0]\"> $s </option>";
+        echo "<option value=\"$row[3]\"> $s </option>";
 }
 ?>
 
