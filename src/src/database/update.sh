@@ -130,3 +130,5 @@ gcc jsmin.c -o jsmin
 ./jsmin <min.js >min.php ""
 echo run db patches 
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/patches.sql
+sudo -u postgres psql -d jamesanthonybreslin -f src/database/patches_brian.sql
+sudo -u postgres psql -d jamesanthonybreslin -f src/database/patches_jim.sql
