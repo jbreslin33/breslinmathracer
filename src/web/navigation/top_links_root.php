@@ -19,4 +19,5 @@
 <li><a href="/web/update/update_teacher_form.php">Update Teacher</a></li>
 <li><a href="/web/insert/upload.php">Upload School From Linux</a></li>
 <li><a href="/web/stats/remediate_33.php">Remediate 33</a></li>
+<li><a href="/web/stats/remediate.php">Remediate</a></li>
 </ul>
