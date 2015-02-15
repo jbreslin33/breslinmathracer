@@ -11,6 +11,13 @@
 <?php
 session_start();
 
+$type_id = 0;
+if (isset($_GET['type_id'])) {
+	$type_id = $_GET['type_id'];
+}else{
+    // Fallback behaviour goes here
+}
+
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
@@ -22,6 +29,36 @@ echo "<br>";
         <p><b> Select Username: </p></b>
 
         <form method="post" action="/web/stats/remediate_33.php">
+
+<select id="type_id" name="type_id" onchange="loadAgain()">
+<?php
+$query = "select id from item_types order by progression asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+	if ($row[0] == $type_id)
+	{
+        	echo "<option selected=\"selected\" value=\"$row[0]\"> $row[0] </option>";
+	}	
+	else
+	{
+        	echo "<option value=\"$row[0]\"> $row[0] </option>";
+	}
+}
+?>
+
+</select>
+
+<script>
+function loadAgain() {
+    	var x = document.getElementById("type_id").value;
+	document.location.href = '/web/stats/remediate_33.php?type_id=' + x; 
+}
+</script>
+
 
 <select name="id">
 
@@ -49,6 +86,7 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 
 </select>
+
         <p><input type="submit" value="UPDATE" /></p>
 
         </form>
