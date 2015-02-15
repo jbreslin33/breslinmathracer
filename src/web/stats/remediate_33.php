@@ -78,7 +78,7 @@ for($i = 0; $i < $numrows; $i++)
 	$score = '';
 	$unmastered = '';
 
-	$query = "select id, username, first_name, last_name, score, unmastered from users where room_id = 33 and banned_id = 0 order by score desc;";
+	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id where room_id = 33 AND remediate.core_standards_id = '4.oa.a.1' order by score desc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
