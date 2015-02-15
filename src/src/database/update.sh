@@ -1,12 +1,4 @@
-if [ "$1" = "skip" ];
-then
-echo skipping build and insert
-else
-echo running build and insert
-sudo -u postgres psql -d jamesanthonybreslin -f src/database/build.sql
-sudo -u postgres psql -d jamesanthonybreslin -f src/database/insert.sql
-fi
-
+echo update javascript and database with new types 
 if [ -e min.js ]; 
 then
 rm min.js
