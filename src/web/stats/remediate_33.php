@@ -11,9 +11,9 @@
 <?php
 session_start();
 
-$type_id = 0;
-if (isset($_GET['type_id'])) {
-	$type_id = $_GET['type_id'];
+$core_standard_id = 0;
+if (isset($_GET['core_standard_id'])) {
+	$core_standard_id = $_GET['core_standard_id'];
 }else{
     // Fallback behaviour goes here
 }
@@ -30,16 +30,16 @@ echo "<br>";
 
         <form method="post" action="/web/stats/remediate_33.php">
 
-<select id="type_id" name="type_id" onchange="loadAgain()">
+<select id="core_standard_id" name="core_standard_id" onchange="loadAgain()">
 <?php
-$query = "select id from item_types order by progression asc;";
+$query = "select id from core_standards order by id asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
-	if ($row[0] == $type_id)
+	if ($row[0] == $core_standard_id)
 	{
         	echo "<option selected=\"selected\" value=\"$row[0]\"> $row[0] </option>";
 	}	
@@ -54,8 +54,8 @@ for($i = 0; $i < $numrows; $i++)
 
 <script>
 function loadAgain() {
-    	var x = document.getElementById("type_id").value;
-	document.location.href = '/web/stats/remediate_33.php?type_id=' + x; 
+    	var x = document.getElementById("core_standard_id").value;
+	document.location.href = '/web/stats/remediate_33.php?core_standard_id=' + x; 
 }
 </script>
 
@@ -63,7 +63,7 @@ function loadAgain() {
 <select name="id">
 
 <?php
-$query = "select last_name, first_name, username, id from users where room_id = 33 order by last_name asc;";
+$query = "select last_name, first_name, username, id, score, unmastered from users where room_id = 33 order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -78,9 +78,9 @@ for($i = 0; $i < $numrows; $i++)
 	$s .= ",";   
 	$s .= $row[3];
 	$s .= ",";   
-	$s .= $row[3];
-	$s .= ",";   
 	$s .= $row[4];
+	$s .= ",";   
+	$s .= $row[5];
         echo "<option value=\"$row[0]\"> $s </option>";
 }
 ?>
@@ -96,13 +96,13 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 	echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> id';
-        echo '</td>';
-        echo '<td> username';
+        echo '<td> Last Name';
         echo '</td>';
         echo '<td> First Name';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td> Username';
+        echo '</td>';
+        echo '<td> ID';
         echo '</td>';
         echo '<td> Score';
         echo '</td>';
@@ -116,7 +116,9 @@ for($i = 0; $i < $numrows; $i++)
 	$score = '';
 	$unmastered = '';
 
-	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id where room_id = 33 AND remediate.core_standards_id = '4.oa.a.1' order by score desc;";
+	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id where room_id = 33 AND remediate.core_standards_id = '";
+	$query .= $core_standard_id;
+	$query .= "' order by score desc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
@@ -132,16 +134,16 @@ for($i = 0; $i < $numrows; $i++)
        	
 		echo '<tr>';
         	echo '<td>';
-        	echo $id;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $username;
+        	echo $lastName;
         	echo '</td>';
         	echo '<td>';
         	echo $firstName;
         	echo '</td>';
         	echo '<td>';
-        	echo $lastName;
+        	echo $username;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $id;
         	echo '</td>';
         	echo '<td>';
         	echo $score;
