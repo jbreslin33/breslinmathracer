@@ -1,4 +1,3 @@
-echo update javascript and database with new types 
 if [ -e min.js ]; 
 then
 rm min.js
@@ -32,8 +31,6 @@ fi
 > src/database/prerequisites.sql
 grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into prerequisites' ./ >> src/database/prerequisites.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/prerequisites.sql
-
-echo minimize javascript to min.js file
 
 cat src/math/point2D.php >> min.js
 cat src/math/fraction.php >> min.js

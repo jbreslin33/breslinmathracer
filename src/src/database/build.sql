@@ -252,6 +252,7 @@ CREATE TABLE prerequisites (
 	id SERIAL,
 	item_type_id text,	
 	prerequisite_id text,	
+	UNIQUE(item_type_id,prerequisite_id),
 	FOREIGN KEY (item_type_id) REFERENCES item_types(id),
 	FOREIGN KEY (prerequisite_id) REFERENCES item_types(id),
         PRIMARY KEY (id)
