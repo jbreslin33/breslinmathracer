@@ -114,7 +114,14 @@ for($i = 0; $i < $numrows; $i++)
 
 </select>
 
-        <p><input type="submit" value="ADD" /></p>
+<select id="add_remove">
+<option>ADD</option> 
+<option>REMOVE</option> 
+
+</select>
+
+
+        <p><input type="submit" value="UPDATE" /></p>
 
         </form>
 
