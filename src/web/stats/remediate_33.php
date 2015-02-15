@@ -12,9 +12,22 @@
 session_start();
 
 $core_standard_id = 0;
-if (isset($_GET['core_standard_id'])) {
+
+if (isset($_POST["core_standard_id"]))
+{
+	$core_standard_id = $_POST["core_standard_id"];
+}
+else
+{
+    // Fallback behaviour goes here
+}
+
+if (isset($_GET['core_standard_id']))
+{
 	$core_standard_id = $_GET['core_standard_id'];
-}else{
+}
+else
+{
     // Fallback behaviour goes here
 }
 
