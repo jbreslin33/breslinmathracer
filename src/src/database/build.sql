@@ -171,7 +171,6 @@ CREATE TABLE teams (
         PRIMARY KEY (id)
 );
 
-
 --USERS
 CREATE TABLE users (
 	id SERIAL,
