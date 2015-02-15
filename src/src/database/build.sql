@@ -131,6 +131,47 @@ CREATE TABLE error_log
 	PRIMARY KEY (id) 	
 );
 
+-- a free agent user should have a school and teacher automagically create for them with same username and passwod they must put in an email though even if not valid.
+-- if you create a school then you can add teachers and students and change passwords etc.
+
+--SCHOOL
+CREATE TABLE schools (
+        id SERIAL,
+        name text UNIQUE,
+        password text,
+	PRIMARY KEY (id)
+);
+
+--TEACHER
+CREATE TABLE teachers (
+        id SERIAL,
+        name text,
+        password text,
+        school_id integer,
+        PRIMARY KEY (id),
+        FOREIGN KEY(school_id) REFERENCES schools(id)
+);
+
+--ROOM
+CREATE TABLE rooms (
+        id SERIAL,
+        name text NOT NULL,
+        school_id integer NOT NULL,
+        teacher_id integer,
+        PRIMARY KEY (id),
+        UNIQUE (name,school_id),
+        FOREIGN KEY(school_id) REFERENCES schools(id),
+        FOREIGN KEY(teacher_id) REFERENCES teachers(id)
+);
+
+--TEAM
+CREATE TABLE teams (
+        id SERIAL,
+	name text UNIQUE,
+        PRIMARY KEY (id)
+);
+
+
 --USERS
 CREATE TABLE users (
 	id SERIAL,
@@ -143,7 +184,10 @@ CREATE TABLE users (
     	last_name text,
     	core_grades_id integer,
     	core_standards_id text,
-    	school_id integer NOT NULL,
+    	school_id integer,
+    	teacher_id integer,
+        room_id integer,
+        team_id integer,
      	last_activity timestamp,
         score integer NOT NULL default 0,
         unmastered integer NOT NULL default 0,
@@ -159,13 +203,16 @@ CREATE TABLE users (
         alltimeeight integer NOT NULL default 0,
         alltimenine integer NOT NULL default 0,
         alltimeten integer NOT NULL default 0,
-        room_id integer NOT NULL default 0,
-        team_id integer NOT NULL default 0,
         banned_id integer NOT NULL default 0,
         work_it_id text,
 	PRIMARY KEY (id),	
-	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id)
+	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id),
+	FOREIGN KEY (school_id) REFERENCES schools(id),
+	FOREIGN KEY (teacher_id) REFERENCES teachers(id),
+	FOREIGN KEY (room_id) REFERENCES rooms(id),
+	FOREIGN KEY (team_id) REFERENCES teams(id)
 );
+
 
 
 --==================================================================

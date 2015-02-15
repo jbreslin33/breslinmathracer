@@ -77,7 +77,6 @@ echo '<table border=\"1\">';
 
 	pg_free_result($result);
 	echo '</table>';
-echo '<font color="red">Jefferson Delorbe has been temporarily banned from leader board.</font>';
 ?>
 </body>
 </html>
