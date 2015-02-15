@@ -145,7 +145,7 @@ for($i = 0; $i < $numrows; $i++)
 
 	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id where room_id = 33 AND remediate.core_standards_id = '";
 	$query .= $core_standard_id;
-	$query .= "' order by score desc;";
+	$query .= "' order by last_name asc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
