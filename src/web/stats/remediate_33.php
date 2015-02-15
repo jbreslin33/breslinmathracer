@@ -54,7 +54,7 @@ echo "<br>";
 
         <p><b> Select Username: </p></b>
 
-        <form method="post" action="/web/stats/remediate_33.php?do_update=YES">
+        <form method="post" action="/web/stats/remediate_33.php">
 
 <select id="core_standard_id" name="core_standard_id" onchange="loadAgain()">
 <?php
@@ -114,7 +114,7 @@ for($i = 0; $i < $numrows; $i++)
 
 </select>
 
-        <p><input type="submit" value="UPDATE" /></p>
+        <p><input type="submit" value="ADD" /></p>
 
         </form>
 
