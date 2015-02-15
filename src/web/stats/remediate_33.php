@@ -36,15 +36,38 @@ if (isset($_POST["id"]))
 {
         $id = $_POST["id"];
 
-	$insert = "insert into remediate (core_standards_id,user_id) values ('";
-	$insert .= $core_standard_id;
-	$insert .= "',";
-	$insert .= $id;
-	$insert .= ");";
+	if (isset($_POST["add_remove"]))
+	{
+        	$add_remove = $_POST["add_remove"];
+		$sql = "";
+		if ($add_remove == 1)
+		{
+			$sql .= "insert into remediate (core_standards_id,user_id) values ('";
+			$sql .= $core_standard_id;
+			$sql .= "',";
+			$sql .= $id;
+			$sql .= ");";
 
-	$result = pg_query($conn,$insert);
+		}
+		else if ($add_remove == 2)
+		{
+			$sql .= "delete from remediate where core_standards_id = '"; 
+			$sql .= $core_standard_id;
+			$sql .= "' AND user_id = ";
+			$sql .= $id;
+			$sql .= ";";
 
-        ///$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+		}
+		else
+		{
+			$sql .= "insert into remediate (core_standards_id,user_id) values ('";
+			$sql .= $core_standard_id;
+			$sql .= "',";
+			$sql .= $id;
+			$sql .= ");";
+		}
+		$result = pg_query($conn,$sql);
+	}
 }
 
 
@@ -114,9 +137,9 @@ for($i = 0; $i < $numrows; $i++)
 
 </select>
 
-<select id="add_remove">
-<option>ADD</option> 
-<option>REMOVE</option> 
+<select name="add_remove">
+<option value="1">ADD</option> 
+<option value="2">REMOVE</option> 
 
 </select>
 
