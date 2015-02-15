@@ -17,18 +17,14 @@ if (isset($_POST["core_standard_id"]))
 {
 	$core_standard_id = $_POST["core_standard_id"];
 }
-else
-{
-    // Fallback behaviour goes here
-}
 
-if (isset($_GET['core_standard_id']))
+else if (isset($_GET['core_standard_id']))
 {
 	$core_standard_id = $_GET['core_standard_id'];
 }
 else
 {
-    // Fallback behaviour goes here
+
 }
 
 //db connection
@@ -66,7 +62,8 @@ for($i = 0; $i < $numrows; $i++)
 </select>
 
 <script>
-function loadAgain() {
+function loadAgain()
+{
     	var x = document.getElementById("core_standard_id").value;
 	document.location.href = '/web/stats/remediate_33.php?core_standard_id=' + x; 
 }
