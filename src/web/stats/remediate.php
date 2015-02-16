@@ -71,7 +71,7 @@ if (isset($_POST["id"]))
 }
 
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
 ?>
 
@@ -113,7 +113,7 @@ function loadAgain()
 <select name="id">
 
 <?php
-$query = "select last_name, first_name, username, id, score, unmastered from users where room_id = 33 order by last_name asc;";
+$query = "select last_name, first_name, username, id, score, unmastered from users order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -173,7 +173,7 @@ for($i = 0; $i < $numrows; $i++)
 	$score = '';
 	$unmastered = '';
 
-	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id where room_id = 33 AND remediate.core_standards_id = '";
+	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id AND remediate.core_standards_id = '";
 	$query .= $core_standard_id;
 	$query .= "' order by last_name asc;";
 	$result = pg_query($conn,$query);
