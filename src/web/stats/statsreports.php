@@ -17,9 +17,10 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
-$user_id = 73;
+$user_id = 0;
 $progression_start = 4;
 $progression_end = 6;
+$user_id_array = array();
 
 if (isset($_POST["user_id"]))
 {
@@ -98,6 +99,7 @@ for($i = 0; $i < $numrows; $i++)
         $s .= ",";
         $s .= $row[5];
         echo "<option value=\"$row[3]\"> $s </option>";
+	$user_id_array[] = $row[3];
 }
 ?>
 
@@ -196,6 +198,11 @@ while ($progression_counter < $progression_end)
         	$row = pg_fetch_array($result, 0);
 		$currenttypeid = $row[0];
 		$progression_counter = $row[1];
+	}
+	
+	if ($user_id == 0)
+	{
+		$user_id = $user_id_array[0];
 	}
 
 	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
