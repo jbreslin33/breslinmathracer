@@ -1,5 +1,5 @@
 <ul>
-<li><a href="mathcore.org">Back to Student Login</a></li>
+<li><a href="http://mathcore.org">Back to Student Login</a></li>
 </ul>
 
 
