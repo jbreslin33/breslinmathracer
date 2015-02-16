@@ -102,6 +102,17 @@ for($i = 0; $i < $numrows; $i++)
 	$user_id_array[] = $row[3];
 }
 ?>
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $room_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+        $id_array[] = $row[0];
+
 
 </select>
 
@@ -139,7 +150,7 @@ for($i = 0; $i < $numrows; $i++)
 
 
 
-<p><b> STATS REPORT: </p></b>
+<p id="statsreport"><b> STATS REPORT: </p></b>
 
 <?php
 $progression_counter = $progression_start;
