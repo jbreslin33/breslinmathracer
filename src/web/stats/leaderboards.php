@@ -98,8 +98,6 @@ echo '<table border=\"1\">';
         $score = '';
         $unmastered = '';
 
-	error_log($room_id);
-
 	if ($room_id == 0)
 	{
 		$room_id = $id_array[0];
