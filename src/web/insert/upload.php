@@ -10,7 +10,7 @@
 <?php
 session_start();
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
 ?>
 
