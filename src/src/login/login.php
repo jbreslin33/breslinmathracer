@@ -154,7 +154,6 @@ Extends: Game,
 
 	hitSchoolButton: function()
         {
-		APPLICATION.log('hit school');
 		window.location.replace("/web/login/school_login.php");
         }
 });
