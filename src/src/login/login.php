@@ -75,8 +75,19 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mSignupButton);
                 this.mSignupButton.mMesh.innerHTML = 'Create an account';
-               
-		//APPLICATION.checkLogin();
+
+                //SCHOOL BUTTON
+                this.mSchoolButton = new Shape(200,50,650,300,this,"BUTTON","","");
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mSchoolButton.mMesh.attachEvent("onclick",this.hitSchoolButton);
+                }
+                else
+                {
+                        this.mSchoolButton.mMesh.addEvent('click',this.hitSchoolButton);
+                }
+                this.mShapeArray.push(this.mSchoolButton);
+                this.mSchoolButton.mMesh.innerHTML = 'School Page';
 	},
 
         //***tab to next
@@ -139,5 +150,10 @@ Extends: Game,
 	hitSignupButton: function()
         {
 		APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
+        },
+
+	hitSchoolButton: function()
+        {
+		APPLICATION.log('hit school');
         }
 });

@@ -91,25 +91,7 @@ Extends: Game,
                 option5_oa_a_1.value = x;  
                 option5_oa_a_1.text = '5.oa.a.1';   
                 this.mStandardSelect.mMesh.appendChild(option5_oa_a_1);
-/*
-                var option5_oa_a_1 = document.createElement("option");
-		var x = '5.oa.a.1';
-                option5_oa_a_1.value = x;  
-                option5_oa_a_1.text = '5.oa.a.1';   
-                this.mStandardSelect.mMesh.appendChild(option5_oa_a_1);
-                
-                var option5_oa_a_2 = document.createElement("option");
-		x = '5.oa.a.2';
-                option5_oa_a_2.value = x;  
-                option5_oa_a_2.text = '5.oa.a.2';   
-                this.mStandardSelect.mMesh.appendChild(option5_oa_a_2);
-                var option5_oa_b_3 = document.createElement("option");
-		x = '5.oa.b.3';
-                option5_oa_b_3.value = x;  
-                option5_oa_b_3.text = '5.oa.b.3';   
-                this.mStandardSelect.mMesh.appendChild(option5_oa_b_3);
-                
- */               
+		
 		//SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -136,6 +118,20 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mLoginButton);
                 this.mLoginButton.mMesh.innerHTML = 'Sign in';
+
+                //SCHOOL BUTTON
+                this.mSchoolButton = new Shape(200,50,650,300,this,"BUTTON","","");
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mSchoolButton.mMesh.attachEvent("onclick",this.hitSchoolButton);
+                }
+                else
+                {
+                        this.mSchoolButton.mMesh.addEvent('click',this.hitSchoolButton);
+                }
+                this.mShapeArray.push(this.mSchoolButton);
+                this.mSchoolButton.mMesh.innerHTML = 'School Page';
+
 	},
 
 	//***tab to next
@@ -227,5 +223,10 @@ Extends: Game,
         hitLoginButton: function()
         {
 		APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+        },
+        hitSchoolButton: function()
+        {
+                APPLICATION.log('hit school');
         }
+
 });
