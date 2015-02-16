@@ -11,7 +11,7 @@
 
 <?php
 
-//include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_school_login_form.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_school_login_form.php");
 ?>
 	
 	<form method="post" action="/web/php/school_login.php">
