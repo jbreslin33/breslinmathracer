@@ -36,9 +36,9 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
 ?>
 
-        <p><b> Select Room: </p></b>
+<p><b> Select Room: </p></b>
 
-        <form method="post" action="/web/stats/leaderboards.php">
+<form method="post" action="/web/stats/leaderboards.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -47,6 +47,7 @@ $query .= intval($_SESSION["school_id"]);
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
+$id_array = array();
 
 for($i = 0; $i < $numrows; $i++)
 {
@@ -59,7 +60,9 @@ for($i = 0; $i < $numrows; $i++)
 	{
         	echo "<option value=\"$row[0]\"> $row[1] </option>";
 	}
+	$id_array[] = $row[0];
 }
+
 ?>
 
 </select>
@@ -94,6 +97,13 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
         $unmastered = '';
+
+	error_log($room_id);
+
+	if ($room_id == 0)
+	{
+		$room_id = $id_array[0];
+	}
 
         $query = "select last_activity, first_name, last_name, score, unmastered from users where banned_id = 0 AND school_id = ";
         $query .= $_SESSION["school_id"];
