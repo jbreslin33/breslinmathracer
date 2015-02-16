@@ -21,8 +21,24 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_school_login_fo
 	Password:
  	<input type="text" name="password">
 
-	<input type="submit">
+	<input type="submit" value="login">
 
 	</form>
+<br>
+<br>
+---OR---
+<br>
+<br>
+        <form method="post" action="/web/php/school_create.php">
+
+        Name:
+         <input type="text" name="username">
+        Password:
+        <input type="text" name="password">
+
+        <input type="submit" value="create school account">
+
+        </form>
+
 </body>
 </html>
