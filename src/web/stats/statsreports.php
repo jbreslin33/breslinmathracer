@@ -23,18 +23,33 @@ $progression_end = 6;
 
 if (isset($_POST["user_id"]))
 {
-	$txt = "if user_id:"; 
+	$txt = "post if user_id:"; 
 	$txt .= $user_id;
 	error_log($txt);
         $user_id = $_POST["user_id"];
 }
 else
 {
-	$txt = "els user_id:"; 
+	$txt = "post else user_id:"; 
 	$txt .= $user_id;
 	error_log($txt);
 
 }
+if (isset($_GET["user_id"]))
+{
+        $txt = "get if user_id:";
+        $txt .= $user_id;
+        error_log($txt);
+        $user_id = $_GET["user_id"];
+}
+else
+{
+        $txt = "get else user_id:";
+        $txt .= $user_id;
+        error_log($txt);
+
+}
+
 if (isset($_POST["progression_start"]))
 {
         $progression_start = $_POST["progression_start"];
@@ -51,6 +66,7 @@ function loadAgain()
 {
         var x = document.getElementById("user_id").value;
         document.location.href = '/web/stats/statsreports.php?user_id=' + x;
+	console.log('x:' + x);
 }
 </script>
 
