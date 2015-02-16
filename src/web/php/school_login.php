@@ -9,7 +9,7 @@ $login = new SchoolLogin();
 
 if ($_SESSION["LOGGED_IN"] == 1)
 {
-	header("LOCATION: /web/stats/leaderboard.php");
+	header("LOCATION: /web/stats/leaderboards.php");
 }
 else
 {
