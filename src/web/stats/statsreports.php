@@ -17,7 +17,7 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
-$user_id = 0;
+$user_id = 73;
 $progression_start = 4;
 $progression_end = 6;
 
@@ -176,9 +176,12 @@ while ($progression_counter < $progression_end)
 		$progression_counter = $row[1];
 	}
 
-	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = '";
+	$errortxt = "error:";
+	$errortxt .= $user_id;
+	error_log($errortxt);
+	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
 	$query .= $user_id;
-	$query .= "' AND item_attempts.item_types_id = '";
+	$query .= " AND item_attempts.item_types_id = '";
 	$query .= $currenttypeid;
 	$query .= "' order by item_attempts.start_time desc;";
 
