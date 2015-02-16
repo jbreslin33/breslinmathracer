@@ -32,7 +32,7 @@ else
 
 }
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
 ?>
 
