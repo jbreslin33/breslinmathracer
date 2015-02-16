@@ -43,7 +43,9 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = "select last_activity, first_name, last_name, score, unmastered from users where banned_id = 0 order by score desc;";
+	$query = "select last_activity, first_name, last_name, score, unmastered from users where banned_id = 0 AND school_id = ";
+	$query .= $_SESSION["school_id"];
+	$query .= " order by score desc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
