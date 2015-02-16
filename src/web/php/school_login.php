@@ -1,5 +1,6 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/school_login.php");
+session_start();
 
 $_SESSION["username"] = $_POST["username"];
 $_SESSION["password"] = $_POST["password"];

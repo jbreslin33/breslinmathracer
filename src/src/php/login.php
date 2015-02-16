@@ -32,7 +32,7 @@ public function process()
 
         if ($num > 0)
         {
-		$query2 = "select id, password, first_name, last_name, core_standards_id from users where username = '";
+		$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id from users where username = '";
         	$query2 .= $_SESSION["username"];
         	$query2 .= "' AND password = '";
         	$query2 .= $_SESSION["password"];
@@ -55,6 +55,10 @@ public function process()
                 	$last_name = pg_Result($result2, 0, 'last_name');
                 	$user_id = pg_Result($result2, 0, 'id');
                 	$core_standards_id = pg_Result($result2, 0, 'core_standards_id');
+                	$school_id = pg_Result($result2, 0, 'school_id');
+                	$teacher_id = pg_Result($result2, 0, 'teacher_id');
+                	$room_id = pg_Result($result2, 0, 'room_id');
+                	$team_id = pg_Result($result2, 0, 'team_id');
 
 			//set sessions
                 	$_SESSION["first_name"] = $first_name;
@@ -63,6 +67,10 @@ public function process()
         		$_SESSION["LOGGED_IN"] = 1;
         		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["core_standards_id"] = $core_standards_id;
+                	$_SESSION["school_id"] = $school_id;
+                	$_SESSION["teacher_id"] = $teacher_id;
+                	$_SESSION["room_id"] = $room_id;
+                	$_SESSION["team_id"] = $team_id;
 
         		//SESSION
         		$sessions = new Sessions();
