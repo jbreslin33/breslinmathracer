@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>REMEDIATE 33</title>
+        <title>REMEDIATE</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -77,7 +77,7 @@ echo "<br>";
 
         <p><b> Select Username: </p></b>
 
-        <form method="post" action="/web/stats/remediate_33.php">
+        <form method="post" action="/web/stats/remediate.php">
 
 <select id="core_standard_id" name="core_standard_id" onchange="loadAgain()">
 <?php
@@ -105,7 +105,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var x = document.getElementById("core_standard_id").value;
-	document.location.href = '/web/stats/remediate_33.php?core_standard_id=' + x; 
+	document.location.href = '/web/stats/remediate.php?core_standard_id=' + x; 
 }
 </script>
 
@@ -148,7 +148,7 @@ for($i = 0; $i < $numrows; $i++)
 
         </form>
 
-<p><b> REMEDIATE 33: </p></b>
+<p><b> REMEDIATE: </p></b>
 
 <?php
 	echo '<table border=\"1\">';
