@@ -23,10 +23,16 @@ $progression_end = 6;
 
 if (isset($_POST["user_id"]))
 {
+	$txt = "if user_id:"; 
+	$txt .= $user_id;
+	error_log($txt);
         $user_id = $_POST["user_id"];
 }
 else
 {
+	$txt = "els user_id:"; 
+	$txt .= $user_id;
+	error_log($txt);
 
 }
 if (isset($_POST["progression_start"]))
@@ -176,9 +182,6 @@ while ($progression_counter < $progression_end)
 		$progression_counter = $row[1];
 	}
 
-	$errortxt = "error:";
-	$errortxt .= $user_id;
-	error_log($errortxt);
 	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
 	$query .= $user_id;
 	$query .= " AND item_attempts.item_types_id = '";
