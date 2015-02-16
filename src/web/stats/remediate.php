@@ -113,7 +113,9 @@ function loadAgain()
 <select name="id">
 
 <?php
-$query = "select last_name, first_name, username, id, score, unmastered from users order by last_name asc;";
+$query = "select last_name, first_name, username, id, score, unmastered from users where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -175,7 +177,9 @@ for($i = 0; $i < $numrows; $i++)
 
 	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id AND remediate.core_standards_id = '";
 	$query .= $core_standard_id;
-	$query .= "' order by last_name asc;";
+	$query .= "' AND school_id = ";
+	$query .= $_SESSION["school_id"];
+	$query .= " order by last_name asc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
