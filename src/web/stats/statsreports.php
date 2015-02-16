@@ -17,9 +17,42 @@ $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
+$user_id = 0;
+$progression_start = 4;
+$progression_end = 6;
+
+if (isset($_POST["user_id"]))
+{
+        $user_id = $_POST["user_id"];
+}
+else
+{
+
+}
+if (isset($_POST["progression_start"]))
+{
+        $progression_start = $_POST["progression_start"];
+}
+if (isset($_POST["progression_end"]))
+{
+        $progression_end = $_POST["progression_end"];
+}
+
 ?>
 
-<select name="id">
+<script>
+function loadAgain()
+{
+        var x = document.getElementById("user_id").value;
+        document.location.href = '/web/stats/statsreports.php?user_id=' + x;
+}
+</script>
+
+        <form method="post" action="/web/stats/statsreports.php">
+
+
+
+<select id="user_id" name="user_id" onchange="loadAgain()">
 
 <?php
 $query = "select last_name, first_name, username, id, score, unmastered from users where school_id = ";
@@ -48,13 +81,43 @@ for($i = 0; $i < $numrows; $i++)
 
 </select>
 
+<select name="progression_start">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+
+</select>
+
+</select>
+
+<select name="progression_end">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+
+</select>
+
+        <p><input type="submit" value="UPDATE" /></p>
+
+        </form>
+
+
 
 <p><b> STATS REPORT: </p></b>
 
 <?php
-$username = $_GET["username"];
-$progression_start   = $_GET["progression_start"];
-$progression_end     = $_GET["progression_end"];
 $progression_counter = $progression_start;
 
 //last ones at end
@@ -113,8 +176,8 @@ while ($progression_counter < $progression_end)
 		$progression_counter = $row[1];
 	}
 
-	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.username = '";
-	$query .= $username;
+	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = '";
+	$query .= $user_id;
 	$query .= "' AND item_attempts.item_types_id = '";
 	$query .= $currenttypeid;
 	$query .= "' order by item_attempts.start_time desc;";
