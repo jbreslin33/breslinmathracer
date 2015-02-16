@@ -53,11 +53,11 @@ for($i = 0; $i < $numrows; $i++)
         $row = pg_fetch_array($result, $i);
 	if ($row[0] == $room_id)
 	{
-        	echo "<option selected=\"selected\" value=\"$row[0]\"> $row[0] </option>";
+        	echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
 	}	
 	else
 	{
-        	echo "<option value=\"$row[0]\"> $row[0] </option>";
+        	echo "<option value=\"$row[0]\"> $row[1] </option>";
 	}
 }
 ?>
@@ -67,8 +67,8 @@ for($i = 0; $i < $numrows; $i++)
 <script>
 function loadAgain()
 {
-    	var x = document.getElementById("core_standard_id").value;
-	document.location.href = '/web/stats/remediate.php?room_id=' + x; 
+    	var x = document.getElementById("room_id").value;
+	document.location.href = '/web/stats/leaderboards.php?room_id=' + x; 
 }
 </script>
 
