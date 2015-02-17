@@ -105,6 +105,10 @@ for ($i=0; $i < 9; $i++)
 	{
                 echo "<option selected=\"selected\" value=\"$i\"> $i </option>";
 	}
+	else
+	{
+        	echo "<option value=\"$i\"> $i </option>";
+	}
 }
 ?>
 </select>
@@ -116,6 +120,10 @@ for ($i=0; $i < 9; $i++)
         if ($i == $progression_end)
 	{
                 echo "<option selected=\"selected\" value=\"$i\"> $i </option>";
+	}
+	else
+	{
+        	echo "<option value=\"$i\"> $i </option>";
 	}
 }
 ?>
