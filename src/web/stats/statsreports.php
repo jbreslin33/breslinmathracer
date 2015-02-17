@@ -35,9 +35,18 @@ if (isset($_POST["progression_start"]))
 {
         $progression_start = $_POST["progression_start"];
 }
+if (isset($_GET["progression_start"]))
+{
+        $progression_start = $_GET["progression_start"];
+}
+
 if (isset($_POST["progression_end"]))
 {
         $progression_end = $_POST["progression_end"];
+}
+if (isset($_GET["progression_end"]))
+{
+        $progression_end = $_GET["progression_end"];
 }
 
 ?>
@@ -86,36 +95,32 @@ for($i = 0; $i < $numrows; $i++)
 	$user_id_array[] = $row[3];
 }
 ?>
-
 </select>
 
 <select name="progression_start">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-
-</select>
-
+<?php
+for ($i=0; $i < 9; $i++)
+{
+        if ($i == $progression_start)
+	{
+                echo "<option selected=\"selected\" value=\"$i\"> $i </option>";
+	}
+}
+?>
 </select>
 
 <select name="progression_end">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-
+<?php
+for ($i=0; $i < 9; $i++)
+{
+        if ($i == $progression_end)
+	{
+                echo "<option selected=\"selected\" value=\"$i\"> $i </option>";
+	}
+}
+?>
 </select>
+
 
         <p><input type="submit" value="UPDATE" /></p>
 
