@@ -28,7 +28,7 @@ if (isset($_POST["user_id"]))
 }
 if (isset($_GET["user_id"]))
 {
-        $user_id = $_GET["user_id"];
+        $user_id = $_POST["user_id"];
 }
 
 if (isset($_POST["progression_start"]))
@@ -51,17 +51,9 @@ if (isset($_GET["progression_end"]))
 
 ?>
 
-<script>
-function loadAgain()
-{
-        var x = document.getElementById("user_id").value;
-        document.location.href = '/web/stats/statsreports.php?user_id=' + x;
-}
-</script>
-
         <form method="post" action="/web/stats/statsreports.php">
 
-<select id="user_id" name="user_id" onchange="loadAgain()">
+<select id="user_id" name="user_id">
 
 <?php
 $query = "select last_name, first_name, username, id, score, unmastered from users where school_id = ";
