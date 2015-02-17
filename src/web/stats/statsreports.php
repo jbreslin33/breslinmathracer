@@ -193,7 +193,7 @@ while ($progression_counter < $progression_end)
 	
 	if ($user_id == 0)
 	{
-		$user_id = $user_id_array[0];
+		$user_id = "NULL";
 	}
 
 	$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
