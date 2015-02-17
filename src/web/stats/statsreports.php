@@ -234,7 +234,7 @@ else if ($report_type == "small")
 		}
 		if ($wrong > 0)
 		{
-			$paintMe = '<font color="black">';
+			$paintMe = '<font color="red">';
 			$paintMe .= $currenttypeid;
 			$paintMe .= '</font>';		
 		}	
@@ -252,7 +252,9 @@ else if ($report_type == "small")
 		}	
 		else
 		{
-			$paintMe = '<font color="blue">$currenttypeid</font>';		
+			$paintMe = '<font color="blue">';
+			$paintMe .= $currenttypeid;
+			$paintMe .= '</font>';		
 		}
 
        		echo '<tr>';
