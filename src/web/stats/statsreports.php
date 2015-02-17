@@ -186,7 +186,7 @@ else if ($report_type == "small")
 		$description = 'des';
 		$paintMe = '';
 
-		$query = "select id, progression from item_types where progression > ";
+		$query = "select id, progression, description from item_types where progression > ";
 		$query .= $progression_counter;
 		$query .= " AND active_code = 1";
 		$query .= " order by progression LIMIT 1";
@@ -203,6 +203,7 @@ else if ($report_type == "small")
         		$row = pg_fetch_array($result, 0);
 			$currenttypeid = $row[0];
 			$progression_counter = $row[1];
+			$description = $row[2];
 		}
 	
 		$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
