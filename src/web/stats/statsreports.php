@@ -174,23 +174,21 @@ else if ($report_type == "small")
         echo '<tr>';
         echo '<td> Type';
         echo '</td>';
-        echo '<td> Description';
-        echo '</td>';
         echo '<td> Question';
         echo '</td>';
-        echo '<td> Answer';
+        echo '<td> Answers';
+        echo '</td>';
+        echo '<td> User Answer';
         echo '</td>';
         echo '</tr>';
 
 	while ($progression_counter < $progression_end)  
 	{
-		$empty = 0;
 		$wrong = 0;
-		$right = 0;
-		$description = 'des';
 		$paintMe = '';
 		$question = '';
 		$answers = '';
+		$user_answer = '';
 
 		$query = "select id, progression, description from item_types where progression > ";
 		$query .= $progression_counter;
@@ -210,7 +208,109 @@ else if ($report_type == "small")
 			$description = $row[2];
 		}
 	
-		$query = "select item_attempts.transaction_code, item_attempts.question, item_attempts.answers from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
+		$query = "select item_attempts.transaction_code, item_attempts.question, item_attempts.answers, item_attempts.user_answer from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
+		$query .= $user_id;
+		$query .= " AND item_attempts.item_types_id = '";
+		$query .= $currenttypeid;
+		$query .= "' order by item_attempts.start_time desc LIMIT 2;";
+
+		$result = pg_query($conn,$query);
+		$numrows = pg_numrows($result);
+
+		for($i = 0; $i < $numrows; $i++) 
+		{
+        		$row = pg_fetch_array($result, $i);
+			$transaction_code = $row[0];
+
+			if ($transaction_code == 2)
+			{
+				if ($wrong > 0)
+				{
+
+				}
+				else
+				{
+					$wrong++;
+					$question = $row[1];
+					$answers  = $row[2];
+					$user_answer  = $row[3];
+				}
+			}
+		}
+		if ($wrong > 0)
+		{
+			$paintMe = '<font color="red">';
+			$paintMe .= $currenttypeid;
+			$paintMe .= '</font>';		
+		}	
+
+       		echo '<tr>';
+        	echo '<td>';
+        	echo $paintMe;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $question;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $answers;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $user_answer;
+        	echo '</td>';
+       	 	echo '</tr>';
+	}
+	pg_free_result($result);
+	echo '</table>';
+}
+
+else if ($report_type == "description_questions_answers_all")
+{ 
+	$progression_counter = $progression_start;
+
+	echo '<table border=\"1\">';
+        echo '<tr>';
+        echo '<td> Type';
+        echo '</td>';
+        echo '<td> Description';
+        echo '</td>';
+        echo '<td> Question';
+        echo '</td>';
+        echo '<td> Answers';
+        echo '</td>';
+        echo '<td> User Answer';
+        echo '</td>';
+        echo '</tr>';
+
+	while ($progression_counter < $progression_end)  
+	{
+		$empty = 0;
+		$wrong = 0;
+		$right = 0;
+		$description = 'des';
+		$paintMe = '';
+		$question = '';
+		$answers = '';
+		$user_answer = '';
+
+		$query = "select id, progression, description from item_types where progression > ";
+		$query .= $progression_counter;
+		$query .= " AND active_code = 1";
+		$query .= " order by progression LIMIT 1";
+
+		$result = pg_query($conn,$query);
+		$numrows = pg_numrows($result);
+
+		$currenttypeid = 0; 
+
+		if ($numrows > 0) 
+		{
+        		$row = pg_fetch_array($result, 0);
+			$currenttypeid = $row[0];
+			$progression_counter = $row[1];
+			$description = $row[2];
+		}
+	
+		$query = "select item_attempts.transaction_code, item_attempts.question, item_attempts.answers, item_attempts.user_answer from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
 		$query .= $user_id;
 		$query .= " AND item_attempts.item_types_id = '";
 		$query .= $currenttypeid;
@@ -243,6 +343,7 @@ else if ($report_type == "small")
 					$wrong++;
 					$question = $row[1];
 					$answers  = $row[2];
+					$user_answer  = $row[3];
 				}
 			}
 		}
@@ -283,6 +384,9 @@ else if ($report_type == "small")
         	echo '</td>';
         	echo '<td>';
         	echo $answers;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $user_answer;
         	echo '</td>';
        	 	echo '</tr>';
 	}
