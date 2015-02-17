@@ -24,31 +24,11 @@ $user_id_array = array();
 
 if (isset($_POST["user_id"]))
 {
-	$txt = "post if user_id:"; 
-	$txt .= $user_id;
-	error_log($txt);
         $user_id = $_POST["user_id"];
-}
-else
-{
-	$txt = "post else user_id:"; 
-	$txt .= $user_id;
-	error_log($txt);
-
 }
 if (isset($_GET["user_id"]))
 {
-        $txt = "get if user_id:";
-        $txt .= $user_id;
-        error_log($txt);
         $user_id = $_GET["user_id"];
-}
-else
-{
-        $txt = "get else user_id:";
-        $txt .= $user_id;
-        error_log($txt);
-
 }
 
 if (isset($_POST["progression_start"]))
@@ -67,13 +47,10 @@ function loadAgain()
 {
         var x = document.getElementById("user_id").value;
         document.location.href = '/web/stats/statsreports.php?user_id=' + x;
-	console.log('x:' + x);
 }
 </script>
 
         <form method="post" action="/web/stats/statsreports.php">
-
-
 
 <select id="user_id" name="user_id" onchange="loadAgain()">
 
@@ -98,21 +75,17 @@ for($i = 0; $i < $numrows; $i++)
         $s .= $row[4];
         $s .= ",";
         $s .= $row[5];
-        echo "<option value=\"$row[3]\"> $s </option>";
+        if ($row[3] == $user_id)
+	{
+                echo "<option selected=\"selected\" value=\"$row[3]\"> $s </option>";
+	}
+	else
+	{
+        	echo "<option value=\"$row[3]\"> $s </option>";
+	}
 	$user_id_array[] = $row[3];
 }
 ?>
-        $row = pg_fetch_array($result, $i);
-        if ($row[0] == $room_id)
-        {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
-        }
-        else
-        {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
-        }
-        $id_array[] = $row[0];
-
 
 </select>
 
