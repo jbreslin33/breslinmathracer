@@ -170,41 +170,21 @@ else if ($report_type == "small")
 { 
 	$progression_counter = $progression_start;
 
-	//last ones at end
-	$type_array = array();
-	$right_array = array();
-	$wrong_array = array();
-	$streak_array = array();
-
 	echo '<table border=\"1\">';
         echo '<tr>';
         echo '<td> Type';
         echo '</td>';
-        echo '<td> Streak';
-        echo '</td>';
-        echo '<td> Right';
-        echo '</td>';
-        echo '<td> Wrong';
-        echo '</td>';
-        echo '<td> Last Ten Percent';
-        echo '</td>';
-        echo '<td> Total Percent';
-        echo '</td>';
-        echo '<td> LastOne';
-        echo '</td>';
-        echo '</td>';
-        echo '<td> NextToLastOne';
+        echo '<td> Description';
         echo '</td>';
         echo '</tr>';
 
 	while ($progression_counter < $progression_end)  
 	{
+		$empty = 0;
 		$wrong = 0;
 		$right = 0;
-		$streak = 0;
-		$wrong_last_ten = 0;
-		$right_last_ten = 0;
-		$streak_last_ten = 0;
+		$description = 'des';
+		$paintMe = '';
 
 		$query = "select id, progression from item_types where progression > ";
 		$query .= $progression_counter;
@@ -229,7 +209,7 @@ else if ($report_type == "small")
 		$query .= $user_id;
 		$query .= " AND item_attempts.item_types_id = '";
 		$query .= $currenttypeid;
-		$query .= "' order by item_attempts.start_time desc;";
+		$query .= "' order by item_attempts.start_time desc LIMIT 2;";
 
 		$result = pg_query($conn,$query);
 		$numrows = pg_numrows($result);
@@ -239,106 +219,49 @@ else if ($report_type == "small")
         		$row = pg_fetch_array($result, $i);
 			$transaction_code = $row[0];
 
+			if ($transaction_code == 0)
+			{
+				$empty++;
+			}
 			if ($transaction_code == 1)
 			{
 				$right++;
-				$streak++;
-
-				if ($i < 10)
-				{
-					$right_last_ten++;
-					$streak_last_ten++;
-				}
 			}
 			if ($transaction_code == 2)
 			{
 				$wrong++;
-				$streak = 0;
-
-				if ($i < 10)
-				{
-					$wrong_last_ten++;
-					$streak_last_ten = 0;
-				}
-			}
-
-			if ($i == 0)
-			{
-				if ($transaction_code == 0) 
-				{
-					$lastOne = '<font color="black">empty</font>';		
-				}
-				if ($transaction_code == 1) 
-				{
-					$lastOne = '<font color="green">right</font>';		
-				}
-				if ($transaction_code == 2) 
-				{
-					$lastOne = '<font color="red">wrong</font>';		
-				}
-			}
-			if ($i == 1)
-			{
-				if ($transaction_code == 0) 
-				{
-					$nextToLastOne = '<font color="black">empty</font>';		
-				}
-				if ($transaction_code == 1) 
-				{
-					$nextToLastOne = '<font color="green">right</font>';		
-				}
-				if ($transaction_code == 2) 
-				{
-					$nextToLastOne = '<font color="red">wrong</font>';		
-				}
 			}
 		}
-		$wrong_array[]  = $wrong;
-		$right_array[]  = $right;
-		$streak_array[] = $streak;
-
-		$total = intval($right + $wrong);
-		$percent = 0;
-		if ($total != 0)
+		if ($wrong > 0)
 		{
-			$percent = floatval($right / $total);
-       		 	$percent = round( $percent, 2);
-			$percent = $percent * 100;
+			$paintMe = '<font color="black">';
+			$paintMe .= $currenttypeid;
+			$paintMe .= '</font>';		
+		}	
+		else if ($empty > 0)
+		{
+			$paintMe = '<font color="black">';
+			$paintMe .= $currenttypeid;
+			$paintMe .= '</font>';		
+		}	
+		else if ($right == 2) 
+		{
+			$paintMe = '<font color="green">';
+			$paintMe .= $currenttypeid;
+			$paintMe .= '</font>';		
+		}	
+		else
+		{
+			$paintMe = '<font color="blue">$currenttypeid</font>';		
 		}
 
-		$total_last_ten = intval($right_last_ten + $wrong_last_ten);
-		$percent_last_ten = 0;
-		if ($total_last_ten != 0)
-		{
-        		$percent_last_ten = floatval($right_last_ten / $total_last_ten);
-       		 	$percent_last_ten = round( $percent_last_ten, 2);
-       		 	$percent_last_ten = $percent_last_ten * 100;
-		}
        		echo '<tr>';
         	echo '<td>';
-        	echo $currenttypeid;
+        	echo $paintMe;
         	echo '</td>';
         	echo '<td>';
-        	echo $streak;
+        	echo $description;
         	echo '</td>';
-        	echo '<td>';
-        	echo $right;
-        	echo '</td>';
-        	echo '<td>';
-       	 	echo $wrong;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $percent_last_ten;
-        	echo '%</td>';
-        	echo '<td>';
-       	 	echo $percent;
-        	echo '%</td>';
-       	 	echo '<td>';
-        	echo $lastOne;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $nextToLastOne;
-      	  	echo '</td>';
        	 	echo '</tr>';
 	}
 	pg_free_result($result);
