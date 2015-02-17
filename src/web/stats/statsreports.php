@@ -243,21 +243,23 @@ else if ($report_type == "small")
 			$paintMe .= $currenttypeid;
 			$paintMe .= '</font>';		
 		}	
-
-       		echo '<tr>';
-        	echo '<td>';
-        	echo $paintMe;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $question;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $answers;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $user_answer;
-        	echo '</td>';
-       	 	echo '</tr>';
+		if ($wrong > 0)
+		{
+       			echo '<tr>';
+        		echo '<td>';
+        		echo $paintMe;
+        		echo '</td>';
+        		echo '<td>';
+        		echo $question;
+        		echo '</td>';
+        		echo '<td>';
+        		echo $answers;
+        		echo '</td>';
+        		echo '<td>';
+        		echo $user_answer;
+        		echo '</td>';
+       	 		echo '</tr>';
+		}
 	}
 	pg_free_result($result);
 	echo '</table>';
