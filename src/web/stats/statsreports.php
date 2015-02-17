@@ -176,6 +176,10 @@ else if ($report_type == "small")
         echo '</td>';
         echo '<td> Description';
         echo '</td>';
+        echo '<td> Question';
+        echo '</td>';
+        echo '<td> Answer';
+        echo '</td>';
         echo '</tr>';
 
 	while ($progression_counter < $progression_end)  
@@ -185,6 +189,8 @@ else if ($report_type == "small")
 		$right = 0;
 		$description = 'des';
 		$paintMe = '';
+		$question = '';
+		$answers = '';
 
 		$query = "select id, progression, description from item_types where progression > ";
 		$query .= $progression_counter;
@@ -195,8 +201,6 @@ else if ($report_type == "small")
 		$numrows = pg_numrows($result);
 
 		$currenttypeid = 0; 
-		$lastOne = '';
-		$nextToLastOne = '';
 
 		if ($numrows > 0) 
 		{
@@ -206,7 +210,7 @@ else if ($report_type == "small")
 			$description = $row[2];
 		}
 	
-		$query = "select item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
+		$query = "select item_attempts.transaction_code, item_attempts.question, item_attempts.answers from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
 		$query .= $user_id;
 		$query .= " AND item_attempts.item_types_id = '";
 		$query .= $currenttypeid;
@@ -230,7 +234,16 @@ else if ($report_type == "small")
 			}
 			if ($transaction_code == 2)
 			{
-				$wrong++;
+				if ($wrong > 0)
+				{
+
+				}
+				else
+				{
+					$wrong++;
+					$question = $row[1];
+					$answers  = $row[2];
+				}
 			}
 		}
 		if ($wrong > 0)
@@ -264,6 +277,12 @@ else if ($report_type == "small")
         	echo '</td>';
         	echo '<td>';
         	echo $description;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $question;
+        	echo '</td>';
+        	echo '<td>';
+        	echo $answers;
         	echo '</td>';
        	 	echo '</tr>';
 	}
