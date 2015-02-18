@@ -13,6 +13,8 @@ session_start();
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+include(getenv("DOCUMENT_ROOT") . "/src/php/utility.php");
+
 $conn = dbConnect();
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
@@ -235,26 +237,7 @@ else if ($report_type == "small")
 					$answers  = $row[2];
 					$user_answer  = $row[3];
 					
-					//lets edit the user_answer
-					$mystr=  $user_answer;
-
-					//frasl
-   					$pattern = '/frasl/';
-   					$replace = '&frasl'; 
-   					$mystr = preg_replace($pattern, $replace, $mystr);
-
-					//<sup>
-   					$pattern = '/&lt;sup&gt;/';
-   					$replace = ''; 
-   					$mystr = preg_replace($pattern, $replace, $mystr);
-		
-
-
-
-   					$user_answer = $mystr; 
-					error_log($user_answer);
-					//$user_answer = str_replace("frasl","&frasl","frasl");	
-		
+					$user_answer = convertToWeb($user_answer);
 				}
 			}
 		}

@@ -49,6 +49,7 @@ $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 $id_array = array();
 
+echo "<option selected=\"selected\" value=\"0\"> \"Select Room\" </option>";
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
@@ -78,6 +79,18 @@ function loadAgain()
 
 <?php
 
+if ($room_id == 0)
+{
+	//$room_id = $id_array[0];
+}
+
+if ($room_id == 0)
+{
+
+}
+else
+{
+
 echo '<table border=\"1\">';
         echo '<tr>';
         echo '<td> Rank';
@@ -98,10 +111,6 @@ echo '<table border=\"1\">';
         $score = '';
         $unmastered = '';
 
-	if ($room_id == 0)
-	{
-		$room_id = $id_array[0];
-	}
 
         $query = "select last_activity, first_name, last_name, score, unmastered from users where banned_id = 0 AND school_id = ";
         $query .= $_SESSION["school_id"];
@@ -141,6 +150,7 @@ echo '<table border=\"1\">';
 
         pg_free_result($result);
         echo '</table>';
+}
 ?>
 
 
