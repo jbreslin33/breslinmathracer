@@ -419,6 +419,9 @@ public function update()
 		$answerTxt = $_SESSION["item_answer"];
 		$answerTxt = htmlentities($answerTxt, ENT_QUOTES);
 
+		
+
+
 		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
         	$insert .= $_SESSION["item_transaction_code"];
 		$insert .= ", question = '";

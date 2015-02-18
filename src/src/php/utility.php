@@ -13,8 +13,13 @@ function convertToWeb($string)
         $string = preg_replace($pattern, $replace, $string);
 	
 	// <
-        $pattern = '/frasl;/';
+        $pattern = '/breslinampersandfrasl;/';
         $replace = '&frasl;';
+        $string = preg_replace($pattern, $replace, $string);
+	
+	// + 
+        $pattern = '/breslinaddition/';
+        $replace = '+';
         $string = preg_replace($pattern, $replace, $string);
 	
 	return $string;
