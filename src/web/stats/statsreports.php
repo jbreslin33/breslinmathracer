@@ -233,10 +233,14 @@ else if ($report_type == "small")
 				else
 				{
 					$wrong++;
+
 					$question = $row[1];
+					$question = convertToWeb($question);
+
 					$answers  = $row[2];
+					$answers  = convertToWeb($answers);
+
 					$user_answer  = $row[3];
-					
 					$user_answer = convertToWeb($user_answer);
 				}
 			}
