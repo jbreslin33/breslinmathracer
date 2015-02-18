@@ -166,8 +166,9 @@ exit: function(item)
 {
 	// strip out problem chars from question
 	var question = '' + item.mQuestion;
-	question = question.replace(/&/g,"");
-	question = question.replace(/#/g,"");
+	question = question.replace(/&/g,"breslinampersand");
+	question = question.replace(/\+/g,"breslinaddition");
+	question = question.replace(/#/g,"breslinpound");
 	
 	//get real answers from array
 	var answers = '';
@@ -183,13 +184,15 @@ exit: function(item)
 		}
 	}
 	// strip out problem chars from answer 
-	answers = answers.replace(/&/g,"");
-	answers = answers.replace(/#/g,"");
+	answers = answers.replace(/&/g,"breslinampersand");
+	answers = answers.replace(/\+/g,"breslinaddition");
+	answers = answers.replace(/#/g,"breslinpound");
 	
 	// strip out problem chars from answer 
 	var answer = '' + item.mUserAnswer;
-	answer = answer.replace(/&/g,"");
-	answer = answer.replace(/#/g,"");
+	answer = answer.replace(/&/g,"breslinampersand");
+	answer = answer.replace(/\+/g,"breslinaddition");
+	answer = answer.replace(/#/g,"breslinpound");
 
 	APPLICATION.sendItemAttempt(item.mType,item.mStatus,question,answers,answer);
 }
