@@ -61,7 +61,8 @@ Extends: i_4_oa_a_1__word,
                 this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,1);
 		this.setAnswer('' + this.c + '=' + this.b + '*' + this.a,2);
 		this.setAnswer('' + this.c + '=' + this.a + '*' + this.b,3);
-                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,4);
+                
+		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,4);
                 this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,5);
 		this.setAnswer('' + this.c + '=' + this.b + 'x' + this.a,6);
 		this.setAnswer('' + this.c + '=' + this.a + 'x' + this.b,7);
@@ -282,7 +283,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
-                this.setQuestion('The equation: ' + this.a + '*' + this.b + '=' + this.c + ' means that ' + this.c + ' is ' + this.b + ' times greater than what number?');
+                this.setQuestion('The equation: ' + this.a + ' &times ' + this.b + '=' + this.c + ' means that ' + this.c + ' is ' + this.b + ' times greater than what number?');
                 this.setAnswer('' + this.a ,0);
         }
 });
@@ -308,7 +309,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
-                this.setQuestion('The equation: ' + this.a + '*' + this.b + '=' + this.c + ' means that ' + this.c + ' is ' + this.a + ' times greater than what number?');
+                this.setQuestion('The equation: ' + this.a + ' &times ' + this.b + '=' + this.c + ' means that ' + this.c + ' is ' + this.a + ' times greater than what number?');
                 this.setAnswer('' + this.b ,0);
         }
 });
@@ -334,7 +335,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 
-                this.setQuestion('The equation: ' + this.c + '=' + this.a + '*' + this.b + ' means that ' + this.c + ' is ' + this.b + ' times greater than what number?');
+                this.setQuestion('The equation: ' + this.c + '=' + this.a + ' &times ' + this.b + ' means that ' + this.c + ' is ' + this.b + ' times greater than what number?');
                 this.setAnswer('' + this.a,0);
         }
 });
@@ -360,7 +361,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = parseInt(this.a * this.b);
 	
-		this.setQuestion('The equation: ' + this.c + '=' + this.a + '*' + this.b + ' means that ' + this.c + ' is ' + this.a + ' times greater than what number?');			 
+		this.setQuestion('The equation: ' + this.c + '=' + this.a + ' &times ' + this.b + ' means that ' + this.c + ' is ' + this.a + ' times greater than what number?');			 
                 this.setAnswer('' + this.b ,0);
         }
 });
