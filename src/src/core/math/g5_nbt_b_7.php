@@ -8,9 +8,6 @@ initialize: function(factorA,factorB,decimalPlaces)
 	this.mFactorA = factorA;
 	this.mFactorB = factorB;
 
-	this.mFactorA = 353;
-	this.mFactorB = 85;
-	
 	this.mDecimalPlaces = decimalPlaces;	
 	
 	this.mAnswer = 0;
@@ -85,12 +82,12 @@ initialize: function(sheet)
 
 	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
-        	this.f = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
+        	this.f = Math.floor(Math.random()*9+1);
 
         	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
         	this.divisor   = parseInt(this.d * 100 + this.e * 10 + this.f);
@@ -154,12 +151,12 @@ initialize: function(sheet)
 
 	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
 
         	this.c = 0;
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
 
         	this.dividend  = parseInt(this.a * 100 + this.b * 10         );
         	this.divisor   = parseInt(               this.d * 10 + this.e);
@@ -223,11 +220,11 @@ initialize: function(sheet)
 
 	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
 
         	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
         	this.divisor   = parseInt(               this.d * 10 + this.e);
@@ -305,10 +302,10 @@ initialize: function(sheet)
 	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
 	{
         	this.a = 0;
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
         	this.d = 0;
-        	this.e = Math.floor(Math.random()*10);
+        	this.e = Math.floor(Math.random()*9+1);
 
         	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
         	this.divisor   = parseInt(               this.d * 10 + this.e);
@@ -370,13 +367,13 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_14';
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
 
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
-        this.f = Math.floor(Math.random()*10);
+        this.d = Math.floor(Math.random()*9+1);
+        this.e = Math.floor(Math.random()*9+1);
+        this.f = Math.floor(Math.random()*9+1);
 
         this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
         this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
@@ -384,12 +381,12 @@ initialize: function(sheet)
 
 	while (this.part == 0 || this.part > 99999 )
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
 
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
         
 		this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
         	this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
@@ -416,12 +413,12 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_13';
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
 
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
+        this.d = Math.floor(Math.random()*9+1);
+        this.e = Math.floor(Math.random()*9+1);
 
         this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
         this.partB = parseInt(               this.d * 10 + this.e);
@@ -429,12 +426,12 @@ initialize: function(sheet)
 
 	while (this.part == 0)
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
 
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
         
 		this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
         	this.partB = parseInt(               this.d * 10 + this.e);
@@ -460,11 +457,11 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_12';
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
 
-        this.c = Math.floor(Math.random()*10);
-        this.d = Math.floor(Math.random()*10);
+        this.c = Math.floor(Math.random()*9+1);
+        this.d = Math.floor(Math.random()*9+1);
 
         this.partA = parseInt(this.a * 10 + this.b);
         this.partB = parseInt(this.c * 10 + this.d);
@@ -472,11 +469,11 @@ initialize: function(sheet)
 
 	while (this.part == 0)
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
 
-        	this.c = Math.floor(Math.random()*10);
-        	this.d = Math.floor(Math.random()*10);
+        	this.c = Math.floor(Math.random()*9+1);
+        	this.d = Math.floor(Math.random()*9+1);
         
         	this.partA = parseInt(this.a * 10 + this.b);
         	this.partB = parseInt(this.c * 10 + this.d);
@@ -502,12 +499,12 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_11';
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
 
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
+        this.d = Math.floor(Math.random()*9+1);
+        this.e = Math.floor(Math.random()*9+1);
 
         this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
         this.partB = parseInt(               this.d * 10 + this.e);
@@ -515,12 +512,12 @@ initialize: function(sheet)
 
 	while (this.part == 0)
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
 
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
 
         	this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
         	this.partB = parseInt(               this.d * 10 + this.e);
@@ -548,10 +545,10 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_10';
 
         this.a = 0;
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
         this.d = 0;
-        this.e = Math.floor(Math.random()*10);
+        this.e = Math.floor(Math.random()*9+1);
 
         this.partA = parseInt(this.b * 10 + this.c);
         this.partB = parseInt(              this.e);
@@ -561,10 +558,10 @@ initialize: function(sheet)
 	while (this.part == 0 || floatAnswer < 0.0001)
 	{
         	this.a = 0;
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
         	this.d = 0;
-        	this.e = Math.floor(Math.random()*10);
+        	this.e = Math.floor(Math.random()*9+1);
 
         	this.partA = parseInt(this.b * 10 + this.c);
         	this.partB = parseInt(              this.e);
@@ -608,11 +605,11 @@ initialize: function(sheet)
 
         while (this.partA < this.partB)
         {
-                this.a = Math.floor(Math.random()*10);
-                this.b = Math.floor(Math.random()*10);
-                this.c = Math.floor(Math.random()*10);
-                this.d = Math.floor(Math.random()*10);
-                this.e = Math.floor(Math.random()*10);
+                this.a = Math.floor(Math.random()*9+1);
+                this.b = Math.floor(Math.random()*9+1);
+                this.c = Math.floor(Math.random()*9+1);
+                this.d = Math.floor(Math.random()*9+1);
+                this.e = Math.floor(Math.random()*9+1);
                 this.f = 0;
 
                 this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
@@ -692,12 +689,12 @@ initialize: function(sheet)
 
         while (this.partA < this.partB)
         {
-                this.a = Math.floor(Math.random()*10);
-                this.b = Math.floor(Math.random()*10);
+                this.a = Math.floor(Math.random()*9+1);
+                this.b = Math.floor(Math.random()*9+1);
                 this.c = 0;
                 this.d = 0;
-                this.e = Math.floor(Math.random()*10);
-                this.f = Math.floor(Math.random()*10);
+                this.e = Math.floor(Math.random()*9+1);
+                this.f = Math.floor(Math.random()*9+1);
 
                 this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
                 this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
@@ -776,14 +773,14 @@ initialize: function(sheet)
 
         while (this.partA < this.partB)
         {
-                this.a = Math.floor(Math.random()*10);
-                this.b = Math.floor(Math.random()*10);
-                this.c = Math.floor(Math.random()*10);
-                this.d = Math.floor(Math.random()*10);
+                this.a = Math.floor(Math.random()*9+1);
+                this.b = Math.floor(Math.random()*9+1);
+                this.c = Math.floor(Math.random()*9+1);
+                this.d = Math.floor(Math.random()*9+1);
 
                 this.e = 0;
-                this.f = Math.floor(Math.random()*10);
-                this.g = Math.floor(Math.random()*10);
+                this.f = Math.floor(Math.random()*9+1);
+                this.g = Math.floor(Math.random()*9+1);
                 this.h = 0;
 
                 this.partA = parseInt(this.a * 1000 + this.b * 100 + this.c * 10 + this.d);
@@ -885,9 +882,9 @@ initialize: function(sheet)
 	
 	while (this.decimalPartA < this.decimalPartB)
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
         	this.d = 0;
         
 		this.decimalPartA = parseInt(this.a * 10 + this.b);
@@ -926,12 +923,12 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         this.a = Math.floor(Math.random()*2)+5;
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
-        this.f = Math.floor(Math.random()*10);
-        this.g = Math.floor(Math.random()*10);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
+        this.d = Math.floor(Math.random()*9+1);
+        this.e = Math.floor(Math.random()*9+1);
+        this.f = Math.floor(Math.random()*9+1);
+        this.g = Math.floor(Math.random()*9+1);
         
 	this.decimalPart = parseInt(this.c * 10 + this.d + this.f * 10 + this.g);
 	this.wholePart = parseInt(this.a * 10 + this.b + this.e);
@@ -1008,22 +1005,22 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
+        this.d = Math.floor(Math.random()*9+1);
+        this.e = Math.floor(Math.random()*9+1);
 
 	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10 + this.b * 10 + this.c + this.e * 10);
 	this.wholePart = parseInt(this.a + this.d + this.a + this.d);
 
 	if (this.a == 0 && this.b == 0 && this.c == 0 || this.d == 0 && this.e == 0)
 	{
-        	this.a = Math.floor(Math.random()*10);
-        	this.b = Math.floor(Math.random()*10);
-        	this.c = Math.floor(Math.random()*10);
-        	this.d = Math.floor(Math.random()*10);
-        	this.e = Math.floor(Math.random()*10);
+        	this.a = Math.floor(Math.random()*9+1);
+        	this.b = Math.floor(Math.random()*9+1);
+        	this.c = Math.floor(Math.random()*9+1);
+        	this.d = Math.floor(Math.random()*9+1);
+        	this.e = Math.floor(Math.random()*9+1);
 
         	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10 + this.b * 10 + this.c + this.e * 10);
         	this.wholePart = parseInt(this.a + this.d + this.a + this.d);
@@ -1154,10 +1151,10 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-        this.d = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
+        this.d = Math.floor(Math.random()*9+1);
         
 	this.decimalPart = parseInt(this.b * 10 + this.c * 10 + this.d);
 	this.wholePart = parseInt(this.a);
@@ -1232,11 +1229,11 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
-        this.d = Math.floor(Math.random()*10);
-        this.e = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
+        this.d = Math.floor(Math.random()*9+1);
+        this.e = Math.floor(Math.random()*9+1);
         
 	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10);
 	this.wholePart = parseInt(this.a + this.d);
@@ -1309,9 +1306,9 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*10);
-        this.b = Math.floor(Math.random()*10);
-        this.c = Math.floor(Math.random()*10);
+        this.a = Math.floor(Math.random()*9+1);
+        this.b = Math.floor(Math.random()*9+1);
+        this.c = Math.floor(Math.random()*9+1);
 
         this.decimalPart = parseInt(this.a * 10 + this.b + this.c * 10);
 
