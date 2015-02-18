@@ -234,14 +234,33 @@ else if ($report_type == "small")
 					$question = $row[1];
 					$answers  = $row[2];
 					$user_answer  = $row[3];
+					
+					//lets edit the user_answer
+					$mystr=  $user_answer;
+
+					//frasl
+   					$pattern = '/frasl/';
+   					$replace = '&frasl'; 
+   					$mystr = preg_replace($pattern, $replace, $mystr);
+
+					//<sup>
+   					$pattern = '/&lt;sup&gt;/';
+   					$replace = ''; 
+   					$mystr = preg_replace($pattern, $replace, $mystr);
+		
+
+
+
+   					$user_answer = $mystr; 
+					error_log($user_answer);
+					//$user_answer = str_replace("frasl","&frasl","frasl");	
+		
 				}
 			}
 		}
 		if ($wrong > 0)
 		{
-			//$paintMe = '<font color="red">';
 			$paintMe .= $currenttypeid;
-			//$paintMe .= '</font>';		
 		}	
 		if ($wrong > 0)
 		{
@@ -258,7 +277,7 @@ else if ($report_type == "small")
         		echo '<td>';
 			echo '<font color="red">';
         		echo $user_answer;
-			echo '</font';
+			echo '</font>';
         		echo '</td>';
        	 		echo '</tr>';
 		}
