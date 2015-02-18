@@ -156,7 +156,7 @@ public function checkInput()
 
 public function insertIntoUsers()
 {
-        $query = "INSERT INTO users (username, password, first_name, last_name, school_id, core_standards_id) VALUES ('";
+        $query = "INSERT INTO users (username, password, first_name, last_name, core_standards_id, school_id, room_id) VALUES ('";
         $query .= $_SESSION["username"];
         $query .= "','";
         $query .= $_SESSION["password"];
@@ -164,16 +164,16 @@ public function insertIntoUsers()
         $query .= $_SESSION["first_name"];
         $query .= "','";
         $query .= $_SESSION["last_name"];
-        $query .= "',1,'";
+        $query .= "','";
         $query .= $_SESSION["core_standards_id"];
-        $query .= "');";
+        $query .= "',NULL,NULL);";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 }
 
 public function insertIntoUsersWithSchool($username,$password,$first_name,$last_name,$school_id)
 {
-        $query = "INSERT INTO users (username, password, first_name, last_name, school_id) VALUES ('";
+        $query = "INSERT INTO users (username, password, first_name, last_name, school_id, room_id) VALUES ('";
         $query .= $username;
         $query .= "','";
         $query .= $password;
@@ -182,8 +182,7 @@ public function insertIntoUsersWithSchool($username,$password,$first_name,$last_
         $query .= "','";
         $query .= $last_name;
         $query .= "',";
-        $query .= $school_id;
-        $query .= ");";
+        $query .= "NULL,NULL);";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 }
