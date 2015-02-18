@@ -7,6 +7,9 @@ initialize: function(factorA,factorB,decimalPlaces)
 
 	this.mFactorA = factorA;
 	this.mFactorB = factorB;
+
+	this.mFactorA = 353;
+	this.mFactorB = 85;
 	
 	this.mDecimalPlaces = decimalPlaces;	
 	
@@ -35,9 +38,18 @@ process:  function()
 	else //lets split it
 	{
 		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
-		var decimalPart = s.substring(parseInt(s.length - this.mDecimalPlaces),parseInt(s.length));	
-		decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
-		this.mAnswer = wholePart + '.' + decimalPart;
+		var decimalPart = s.substring(parseInt(wholePart.length),parseInt(s.length));	
+
+		var decimalPartInt = parseInt(decimalPart);
+		if (decimalPartInt == 0)
+		{
+			this.mAnswer = wholePart;
+		}
+		else
+		{
+			decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
+			this.mAnswer = wholePart + '.' + decimalPart;
+		}
 	}
 }
 });
