@@ -1,6 +1,9 @@
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.b.2_1',5.0301,'5.md.b.2','graphs');
 */
+
+
+/*
 var i_5_md_b_2__1 = new Class(
 {
 Extends: TextItem2,
@@ -89,5 +92,5 @@ this.mQuestionLabel.setPosition(625,180);
 
 });
 
-
+*/
 
