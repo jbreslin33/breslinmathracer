@@ -478,6 +478,78 @@ public function insertNewAttempt()
                 $refid = 'timestables_6';
                 $_SESSION["ref_id"] = $refid;
         }
+        else if (intval($this->mTableNumber) == 7)
+        {
+                //make new array since we are creating a new evaluations attempts
+                $table_array = array();
+                $table_array[] = 87;
+                $table_array[] = 11;
+                $table_array[] = 26;
+                $table_array[] = 39;
+                $table_array[] = 50;
+                $table_array[] = 59;
+                $table_array[] = 66;
+                $table_array[] = 67;
+                $table_array[] = 69;
+                $table_array[] = 71;
+
+                //start over with number in front
+                $table_array[] = 97;
+                $table_array[] = 10;
+                $table_array[] = 25;
+                $table_array[] = 38;
+                $table_array[] = 49;
+                $table_array[] = 58;
+                $table_array[] = 66;
+                $table_array[] = 68;
+                $table_array[] = 70;
+                $table_array[] = 72;
+;
+
+                $_SESSION["table_array"] = $table_array;
+                $_SESSION["table_counter"] = 0;
+
+                //ref id
+                $refid = 'timestables_7';
+                $_SESSION["ref_id"] = $refid;
+        }
+
+        else if (intval($this->mTableNumber) == 8)
+        {
+                //make new array since we are creating a new evaluations attempts
+                $table_array = array();
+                $table_array[] = 88;
+                $table_array[] = 13;
+                $table_array[] = 28;
+                $table_array[] = 41;
+                $table_array[] = 52;
+                $table_array[] = 61;
+                $table_array[] = 68;
+                $table_array[] = 73;
+                $table_array[] = 74;
+                $table_array[] = 76;
+
+                //start over with number in front
+                $table_array[] = 98;
+                $table_array[] = 12;
+                $table_array[] = 27;
+                $table_array[] = 40;
+                $table_array[] = 51;
+                $table_array[] = 60;
+                $table_array[] = 67;
+                $table_array[] = 73;
+                $table_array[] = 75;
+                $table_array[] = 72;
+;
+
+                $_SESSION["table_array"] = $table_array;
+                $_SESSION["table_counter"] = 0;
+
+                //ref id
+                $refid = 'timestables_8';
+                $_SESSION["ref_id"] = $refid;
+        }
+
 	else
 	{
 		$refid = 'timestables_';	
