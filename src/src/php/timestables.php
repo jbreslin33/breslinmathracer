@@ -443,8 +443,41 @@ public function insertNewAttempt()
                 $refid = 'timestables_5';
                 $_SESSION["ref_id"] = $refid;
         }
+        else if (intval($this->mTableNumber) == 6)
+        {
+                //make new array since we are creating a new evaluations attempts
+                $table_array = array();
+                $table_array[] = 86;
+                $table_array[] = 9;
+                $table_array[] = 24;
+                $table_array[] = 37;
+                $table_array[] = 48;
+                $table_array[] = 57;
+                $table_array[] = 58;
+                $table_array[] = 60;
+                $table_array[] = 62;
+                $table_array[] = 64;
 
+                //start over with number in front
+                $table_array[] = 96;
+                $table_array[] = 8;
+                $table_array[] = 23;
+                $table_array[] = 36;
+                $table_array[] = 47;
+                $table_array[] = 57;
+                $table_array[] = 59;
+                $table_array[] = 61;
+                $table_array[] = 63;
+                $table_array[] = 64;
+;
 
+                $_SESSION["table_array"] = $table_array;
+                $_SESSION["table_counter"] = 0;
+
+                //ref id
+                $refid = 'timestables_6';
+                $_SESSION["ref_id"] = $refid;
+        }
 	else
 	{
 		$refid = 'timestables_';	
