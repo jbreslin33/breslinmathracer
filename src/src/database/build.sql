@@ -148,6 +148,7 @@ CREATE TABLE teachers (
         name text,
         password text,
         school_id integer,
+        UNIQUE (name,school_id),
         PRIMARY KEY (id),
         FOREIGN KEY(school_id) REFERENCES schools(id)
 );
@@ -183,10 +184,10 @@ CREATE TABLE users (
     	last_name text,
     	core_grades_id integer,
     	core_standards_id text,
-    	school_id integer DEFAULT NULL,
-    	teacher_id integer DEFAULT NULL,
-        room_id integer DEFAULT NULL,
-        team_id integer DEFAULT NULL,
+    	school_id integer DEFAULT 1, 
+    	teacher_id integer DEFAULT 1,
+        room_id integer DEFAULT 1,
+        team_id integer DEFAULT 1,
      	last_activity timestamp,
         score integer NOT NULL default 0,
         unmastered integer NOT NULL default 0,
