@@ -787,7 +787,6 @@ initialize: function(sheet)
                 this.partB = parseInt(this.e * 1000 + this.f * 100 + this.g * 10 + this.h);
                 this.part =  parseInt(this.partA - this.partB);
         }
-	this.part = 3503;
         if (this.part > 999) // we are 4 digits
         {
                 if (this.part % 1000 == 0) // we have a whole number
