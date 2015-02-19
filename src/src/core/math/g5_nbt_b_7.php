@@ -787,7 +787,8 @@ initialize: function(sheet)
                 this.partB = parseInt(this.e * 1000 + this.f * 100 + this.g * 10 + this.h);
                 this.part =  parseInt(this.partA - this.partB);
         }
-        if (this.part > 999) // we are 3 digits
+	this.part = 3503;
+        if (this.part > 999) // we are 4 digits
         {
                 if (this.part % 1000 == 0) // we have a whole number
                 {
@@ -809,11 +810,18 @@ initialize: function(sheet)
                 {
                         var hundreds = parseInt(this.part / 100);
                         var tensAndOnes = this.part % 100;
-                        this.answer = '' + hundreds + '.' + tensAndOnes;
+			if (tensAndOnes < 10)
+			{
+                        	this.answer = '' + hundreds + '.0' + tensAndOnes;
+			}
+			else
+			{
+                        	this.answer = '' + hundreds + '.' + tensAndOnes;
+			}
                 }
         }
 
-	if (this.part > 99) // we are 3 digits 
+	else if (this.part > 99) // we are 3 digits 
 	{
         	if (this.part % 100 == 0) // we have a whole number
         	{
