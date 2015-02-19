@@ -17,17 +17,18 @@ $conn = dbConnect();
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
-	<p><b> Select Username: </p></b>
+	<p><b> Select School: </p></b>
 	
 	<form method="post" action="/web/update/updateteacher.php">
 
 <select name="id">
 
 <?php
-$query = "select id, username from users order by username;";
+$query = "select id, name from school order by name;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
+echo "<option value=\"0">"Select School"</option>";
 for($i = 0; $i < $numrows; $i++) 
 {
       	$row = pg_fetch_array($result, $i);

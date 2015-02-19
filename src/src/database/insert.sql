@@ -171,6 +171,18 @@ insert into finer_types(description) values ('start at 10');
 insert into finer_types(description) values ('start at number ending in 9 that is greater than 10 but less than 100');
 insert into finer_types(description) values ('start at number ending in 0 that is greater than 10 but less than 100');
 
+--schools
+insert into schools (name,password) values ('mathcore elementary','34gigidya_8');
+
+--teachers
+insert into teachers (name,password,school_id) values ('Professor Bob','drtu866',1);
+
+--rooms
+insert into rooms (name,school_id,teacher_id) values ('13',1,1);
+
+--teams
+insert into teams (name) values ('Numerical Ninjas');
+
 
 -------------------------------------- KINDERGARTEN --------------------------------------------
 
