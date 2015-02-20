@@ -36,20 +36,19 @@ getMoney: function()
 
 add: function(decimal)
 {
-	APPLICATION.log('a:' + this.mDecimal);
-	APPLICATION.log('b:' + decimal.mDecimal);
 	var a = parseFloat(this.mDecimal);
 	var b = parseFloat(decimal.mDecimal);
 	var sum = parseFloat(a + b);	
-	APPLICATION.log('sum:' + sum);
 	var d = new Decimal(sum);
 	return d;
 },
 
 subtract: function(decimal)
 {
-	var difference = parseFloat(this.mDecimal - decimal.mDecimal);	
-	var d = new Decimal(difference);
+	var a = parseFloat(this.mDecimal);
+	var b = parseFloat(decimal.mDecimal);
+	var sum = parseFloat(a - b);	
+	var d = new Decimal(sum);
 	return d;
 },
 	
