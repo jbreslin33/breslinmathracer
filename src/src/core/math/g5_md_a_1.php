@@ -510,9 +510,186 @@ Extends: TextItem,
            
         }
 
-//.toFixed(1)
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_13',5.2413,'5.md.a.1','');
+*/
+var i_5_md_a_1__13 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_13';
+
+    this.ns = new NameSampler();
+
+    var a = Math.floor(Math.random()*50)+50;
+    var b = (Math.floor(Math.random()*200)+400)*10;
+
+    var answer = b/1000 * a;
+    answer = answer.toFixed(2)
+
+ this.setQuestion('' + this.ns.mNameOne + ' has an iced tea stand. One glass of iced tea has ' + b + ' milligrams of sugar. One weekend, ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sells ' + a + ' glasses of iced tea. How many grams of sugar does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use that weekend?');
+
+                this.setAnswer('' + answer,0);
+           
+        },
+
+/* overrode this function to allow user to enter fraction, improper fraction, decimal, mixed number, whole number - as long as it is correct */
+
+	checkUserAnswer: function()
+	{
+
+			var str = '';
+			var res = '';
+			var whole;
+			var frac;
+			var res2;
+			var decimal;
+      var correctAnswer;
+      var userAnswer;
+
+			//console.log('' + this.mUserAnswer);
+
+			str = '' + this.mUserAnswer;
+			res = str.split(" ");
+
+      // fraction or whole - no mixed number
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+        // fraction - else it's a whole and we just leave it as is
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+        // either way set this to zero so we don't get error
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			userAnswer = (whole + decimal) * 1.0;
+			
+			//console.log(userAnswer);
+
+			//str = this.mQuiz.getQuestion().mAnswerArray[0];
+      str = this.mAnswerArray[0];
+      res = str.split(" ");
+
+      // fraction or whole - no mixed number
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+        // fraction - else it's a whole and we just leave it as is
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+        // either way set this to zero so we don't get error
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			correctAnswer = (whole + decimal) * 1.0;
+
+		correctAnswerFound = false;
+		
+		if (userAnswer == correctAnswer)
+		{
+			correctAnswerFound = true;	
+		} 
+	
+		if (correctAnswerFound == false)
+		{
+			this.mSheet.setTypeWrong(this.mType);
+		}
+		return correctAnswerFound;
+	}
+
 
 });
 
 
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_14',5.2414,'5.md.a.1','');
+*/
+var i_5_md_a_1__14 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_14';
+
+    this.ns = new NameSampler();
+
+    var a = Math.floor(Math.random()*21)+30;
+    var b = a*52;
+
+    var answer = a*1000;
+
+ this.setQuestion('' + this.ns.mNameOne + ' rides ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' bike everyday and keeps track of how far ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' rides. Last year ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' rode ' + b + ' kilometers. On average, how many meters did ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ride each week?');
+
+                this.setAnswer('' + answer,0);
+           
+        }
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_15',5.2415,'5.md.a.1','');
+*/
+var i_5_md_a_1__15 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_15';
+
+    this.ns = new NameSampler();
+
+    var a = Math.floor(Math.random()*21)+120;
+    a = a/100;
+    var b = Math.floor(Math.random()*21)+21;
+    var c = (Math.floor(Math.random()*21)+21)*10;
+
+    var answer = (a*100) - b - (c/10);
+
+ this.setQuestion('' + this.ns.mNameOne + ' has a ribbon strip that is ' + a + ' meters long. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cuts off a piece that is ' + b + ' centimeters. Then ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' cuts off a piece that is ' + c + ' millimeters. How many centimeters of ribbon are left?');
+
+                this.setAnswer('' + answer,0);
+           
+        }
+});
