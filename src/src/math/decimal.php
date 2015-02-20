@@ -9,26 +9,59 @@ initialize: function(c,m,stripZeroes)
 
 getString: function()
 {
-	var t = '' + this.mCharacteristic + '.' + this.mMantissa;
-	var f = parseFloat(t);
-	return f;	
+	var t = '';
+	if (this.mMantissa == 0)
+	{
+		var t = '' + this.mCharacteristic;
+	}		
+	else
+	{
+		var t = '' + this.mCharacteristic + '.' + this.stripTrailingZeroes(this.mMantissa);
+	}
+	
+	return t;	
 },
 
 getMoney: function()
 {
-	var f = '';
+        var t = '';
+        if (this.mMantissa == 0)  
+        {
+                var t = '' + this.mCharacteristic;
+        }
+        else
+        {
+                var t = '' + this.mCharacteristic + '.' + this.stripTrailingZeroes(this.mMantissa);
+        }
+
+        return t;
+},
+
+
+/*
+getMoney: function()
+{
+	var t = '' + this.mCharacteristic + '.' + this.stripTrailingZeroes(this.mMantissa);
+	return t;	
+var t = '';
 	if (this.mMantissa < 10)
 	{
-		var t = '' + this.mCharacteristic + '.0' + this.mMantissa;
-		f = parseFloat(t);
+		APPLICATION.log('if 1');
+		t = '' + this.mCharacteristic + '.0' + this.mMantissa;
+	}
+	if (this.mMantissa % 10 == 0 && this.mMantiss < 100)
+	{
+		APPLICATION.log('if 2');
+		t = '' + this.mCharacteristic + '.' + this.mMantissa + '0';
 	}
 	else
 	{
-		var t = '' + this.mCharacteristic + '.' + this.mMantissa;
-		f = parseFloat(t);
+		APPLICATION.log('if 3');
+		t = '' + this.mCharacteristic + '.' + this.mMantissa;
 	}
-	return f;	
+	return t;	
 },
+*/
 
 add: function(decimal)
 {
@@ -73,10 +106,11 @@ multiply: function(decimal)
                         bufferZeroes = '' + bufferZeroes + '0';
                 }
                 var decimalPart = '' + bufferZeroes + wholeNumberAnswer;
-                decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
+                decimalPart = this.stripTrailingZeroes(decimalPart);
 
 		answer.mCharacteristic = '0';
 		answer.mMantissa = decimalPart;
+		APPLICATION.log('decimalPart:' + decimalPart);
         }
         else //lets split it
         {
@@ -91,10 +125,11 @@ multiply: function(decimal)
                 }
                 else
                 {
-                        decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
+                        decimalPart = this.stripTrailingZeroes(decimalPart);
 			answer.mCharacteristic = wholePart;
 			answer.mMantissa = decimalPart;
                 }
+		APPLICATION.log('decimalPart:' + decimalPart);
         }
 	return answer
 },
