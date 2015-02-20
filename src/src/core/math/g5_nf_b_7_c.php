@@ -4,44 +4,34 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_7_c__1 = new Class(
 {
-Extends: TextItemFraction,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+Extends: TextItem,
+initialize: function(sheet)
+{
+this.parent(sheet,575,50,320,75,100,50,670,100);
 
-                this.mType = '5.nf.b.7.c_1';
-                this.ns = new NameSampler();
+	this.mType = '5.nf.b.7.c_1';
+	this.ns = new NameSampler();
 
-                var fractionA = new Fraction(1,1,true);
-                fractionA.mDenominator = Math.floor(Math.random()*8+2);
-                
-		var fractionB = new Fraction(1,1,true);
-                fractionB.mNumerator= Math.floor(Math.random()*8+2);
+        var fractionA = new Fraction(1,1,true);
+        fractionA.mDenominator = Math.floor(Math.random()*8+2);
+               
+	var fractionB = new Fraction(1,1,true);
+        fractionB.mNumerator= Math.floor(Math.random()*8+2);
 
-		var c = Math.floor(Math.random()*8+2);
-		var m = Math.floor(Math.random()*90+10);
-		var decimalPerBatch = new Decimal(c,m,1);  
+	var c = Math.floor(Math.random()*8+2);
+	var m = Math.floor(Math.random()*90+10);
+	var decimalPerBatch = new Decimal(c,m,1);  
 
-		fractionC = fractionB.divide(fractionA);
+	fractionC = fractionB.divide(fractionA);
 
-		var decimalBatches = new Decimal(fractionC.mNumerator,0,1);
+	var decimalBatches = new Decimal(fractionC.mNumerator,0,1);
 
-		var answer = decimalBatches.multiply(decimalPerBatch);		
+	var answer = decimalBatches.multiply(decimalPerBatch);		
 	
-		/*	
-		var decimalA = new Decimal(2,2,1);  
-		var decimalB = new Decimal(2,2,1);  
+        this.setQuestion('' + this.ns.mNameOne + ' is making smoothies for a fund raiser for ' + this.ns.mSchoolOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' of a bag of ' + this.ns.mFruitOne + ' for each batch of smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' makes $' +  decimalPerBatch.getMoney() + ' for each batch of smoothies ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sells. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' used ' + fractionB.mNumerator + ' bags of ' + this.ns.mFruitOne + '. How much money did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' raise so far?');
 
-		decimalC = decimalA.multiply(decimalB);
-		APPLICATION.log('' + decimalA.getString() + '*' + decimalB.getString());
-		APPLICATION.log('decimalC:' + decimalC.getString());
-		*/
-
-
-                this.setQuestion('' + this.ns.mNameOne + ' is making smoothies for a fund raiser for ' + this.ns.mSchoolOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' of a bag of ' + this.ns.mFruitOne + ' for each batch of smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' makes $' +  decimalPerBatch.getString() + ' for each batch of smoothies ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sells. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' used ' + fractionB.mNumerator + ' bags of ' + this.ns.mFruitOne + '. How much money did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' raise so far?');
-
-                this.setAnswer('$' + answer.getString(),0);
-                this.setAnswer('' + answer.getString(),1);
-        }
+        this.setAnswer('$' + answer.getMoney(),0);
+        this.setAnswer('' + answer.getMoney(),1);
+}
 });
 
