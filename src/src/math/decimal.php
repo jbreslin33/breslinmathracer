@@ -14,6 +14,22 @@ getString: function()
 	return f;	
 },
 
+getMoney: function()
+{
+	var f = '';
+	if (this.mMantissa < 10)
+	{
+		var t = '' + this.mCharacteristic + '.0' + this.mMantissa;
+		f = parseFloat(t);
+	}
+	else
+	{
+		var t = '' + this.mCharacteristic + '.' + this.mMantissa;
+		f = parseFloat(t);
+	}
+	return f;	
+},
+
 add: function(decimal)
 {
 	
