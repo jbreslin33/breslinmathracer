@@ -23,6 +23,7 @@ getString: function()
 	
 	return t;	
 },
+
 getMoney: function()
 {
 	var t = '';
@@ -32,9 +33,19 @@ getMoney: function()
 	}		
 	else
 	{
-		var t = '' + this.mCharacteristic + '.' + this.mMantissa;
-		t = parseFloat(t);
-		t = this.stripTrailingZeroes(t);
+		if (this.mantissa % 10 == 0)
+		{
+			var t = '' + this.mCharacteristic + '.' + this.mMantissa;
+			t = parseFloat(t);
+			t = this.stripTrailingZeroes(t);
+			t = t + '0'; //add back trailing zero tens
+		}
+		else
+		{ 
+			var t = '' + this.mCharacteristic + '.' + this.mMantissa;
+			t = parseFloat(t);
+			t = this.stripTrailingZeroes(t);
+		}
 	}
 	
 	return t;	
