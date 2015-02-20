@@ -1311,8 +1311,22 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_1';
 
-        this.ns = new NameSampler();
+        var a = Math.floor(Math.random()*99+1);
+	a = parseFloat(a / 100);
 
+        var b = Math.floor(Math.random()*9+1);
+	b = parseFloat(b / 10);
+
+	decimalA = new Decimal(a);	
+	decimalB = new Decimal(b);	
+
+	var answer = decimalA.add(decimalB);  
+
+        this.setQuestion('Find the sum: ' + decimalA.getString() + ' + ' + decimalB.getString());
+
+        this.setAnswer('' + answer.getString(),0);
+
+/*
         this.a = Math.floor(Math.random()*9+1);
         this.b = Math.floor(Math.random()*9+1);
         this.c = Math.floor(Math.random()*9+1);
@@ -1347,6 +1361,7 @@ initialize: function(sheet)
         this.setQuestion('Find the sum: 0.' + this.a + this.b + ' + 0.' + this.c + '');
 
         this.setAnswer('' + this.answer,0);
+*/
 }
 });
 
