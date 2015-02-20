@@ -34,6 +34,7 @@ sudo -u postgres psql -d jamesanthonybreslin -f src/database/prerequisites.sql
 
 cat src/math/point2D.php >> min.js
 cat src/math/fraction.php >> min.js
+cat src/math/decimal.php >> min.js
 cat src/math/utility.php >> min.js
 
 cat src/bounds/bounds.php >> min.js
