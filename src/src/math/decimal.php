@@ -22,7 +22,7 @@ initialize: function(decimal)
 	}
 	else
 	{
-		this.mNumber = this.Decimal;
+	///	this.mNumber = this.Decimal;
 	}
 	
 	APPLICATION.log('mDecimalPlace:' + this.mDecimalPlace);
@@ -87,6 +87,25 @@ subtract: function(decimal)
 	
 multiply: function(decimal)
 {
+	var rawProduct = parseInt(this.mNumber * decimal.mNumber);
+	APPLICATION.log('rawProduct:' + rawProduct);	
+	
+	//now use powers of 10 to move decimal place
+	var decimalPlaces = parseInt(this.mDecimalPlaces + decimal.mDecimalPlaces);
+	APPLICATION.log('decimalPlaces sum:' + decimalPlaces);	
+	
+	if (decimalPlaces > 0)
+	{
+		var power = Math.pow(10,decimalPlaces);
+		var decimalProduct = parseFloat(rawProduct / power);
+		APPLICATION.log('decimalProduct:' + decimalProduct);	
+		var decimalAnswerProduct = new Decimal(decimalProduct);	
+		return decimalAnswerProduct;
+	}
+	else
+	{
+		return rawProduct;
+	}
 /*
 	var dbLength = db.length;
 
