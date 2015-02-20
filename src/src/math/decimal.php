@@ -33,6 +33,9 @@ initialize: function(decimal)
 
 getString: function()
 {
+	return this.mDecimal;
+/*
+
 	var t = '';
 	if (this.mMantissa == 0)
 	{
@@ -46,10 +49,13 @@ getString: function()
 	}
 	
 	return t;	
+*/
 },
 
 getMoney: function()
 {
+	return this.mDecimal;
+/*
 	var t = '';
 	if (this.mMantissa == 0)
 	{
@@ -73,6 +79,7 @@ getMoney: function()
 	}
 	
 	return t;	
+*/
 },
 
 add: function(decimal)
