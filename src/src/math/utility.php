@@ -18,7 +18,6 @@ stripTrailingZeroes: function(s)
         var originalLength = s.length;
         var encounteredNonZero = false;
         var strippedPart = '';
-	APPLICATION.log('s:' + s);
         while (encounteredNonZero == false)
         {
                 if ( s[parseInt(s.length - i)] == 0)     //delete

@@ -27,6 +27,15 @@ Extends: TextItemFraction,
                 answer = fractionB.divide(fractionA);
                 answer.reduce();
 
+
+		var decimalA = new Decimal(2,2,1);  
+		var decimalB = new Decimal(2,2,1);  
+
+		decimalC = decimalA.multiply(decimalB);
+		APPLICATION.log('' + decimalA.getString() + '*' + decimalB.getString());
+		APPLICATION.log('decimalC:' + decimalC.getString());
+
+
                 this.setQuestion('' + this.ns.mNameOne + ' is making smoothies for a fund raiser for ' + this.ns.mSchoolOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' of a bag of ' + this.ns.mFruitOne + ' for each batch of smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' makes $' +  decimal.getString() + ' for each batch of smoothies ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sells. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' used ' + e + ' bags of ' + this.ns.mFruitOne + '. How much money did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' raise so far?');
 
                 this.setAnswer('' + answer.getString(),0);
