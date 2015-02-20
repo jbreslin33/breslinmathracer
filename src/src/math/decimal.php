@@ -106,11 +106,9 @@ multiply: function(decimal)
                         bufferZeroes = '' + bufferZeroes + '0';
                 }
                 var decimalPart = '' + bufferZeroes + wholeNumberAnswer;
-                decimalPart = this.stripTrailingZeroes(decimalPart);
 
 		answer.mCharacteristic = '0';
 		answer.mMantissa = decimalPart;
-		APPLICATION.log('decimalPart:' + decimalPart);
         }
         else //lets split it
         {
@@ -125,11 +123,9 @@ multiply: function(decimal)
                 }
                 else
                 {
-                        decimalPart = this.stripTrailingZeroes(decimalPart);
 			answer.mCharacteristic = wholePart;
 			answer.mMantissa = decimalPart;
                 }
-		APPLICATION.log('decimalPart:' + decimalPart);
         }
 	return answer
 },
@@ -139,8 +135,14 @@ divide: function(decimal)
 
 },
 
-stripTrailingZeroes: function(s)
+stripTrailingZeroes: function(n)
 {
+	APPLICATION.log('n:' + n);
+	var noZeroes = n.toString() 
+	APPLICATION.log('noZeroes:' + noZeroes);
+	return noZeroes;
+/*
+	APPLICATION.log('s1:' + s);
        	if (parseInt(s) == 0)
        	{
                	return s;
@@ -153,9 +155,12 @@ stripTrailingZeroes: function(s)
         var strippedPart = '';
         while (encounteredNonZero == false)
         {
-                if ( s[parseInt(s.length - i)] == 0)     //delete
+		APPLICATION.log('s2:' + s);
+		APPLICATION.log( 'le:' + s[ parseInt(s.length - i) ] ) ;
+                if ( s[parseInt(s.length - i)] == '0')     //delete
                 {
                         s = s.substring(0, s.length - 1);
+			APPLICATION.log('s3:' + s);
                 }
                 else
                 {
@@ -163,7 +168,9 @@ stripTrailingZeroes: function(s)
                 }
                 i++;
         }
+	APPLICATION.log('s4:' + s);
         return s;
+*/
 }
 
 

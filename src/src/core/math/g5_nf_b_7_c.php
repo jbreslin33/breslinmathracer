@@ -20,7 +20,7 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 
         var c = Math.floor(Math.random()*8+2);
         var m = Math.floor(Math.random()*90+10);
-	m = 60;
+	//m = 60;
         var decimalPerBatch = new Decimal(c,m,1);
 
         fractionC = fractionB.divide(fractionA);
