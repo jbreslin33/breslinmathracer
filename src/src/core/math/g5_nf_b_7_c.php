@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_1',5.2301,'5.nf.b.7.c','');
 */
@@ -16,11 +17,16 @@ Extends: TextItemFraction,
 
                 var fractionB = new Fraction(1,1,false);
                 fractionB.mNumerator = Math.floor(Math.random()*8+2);
+                
+		var c = Math.floor(Math.random()*8+2);
+		var d = Math.floor(Math.random()*90+10);
+		
+		var e = Math.floor(Math.random()*8+2);
 
                 answer = fractionB.divide(fractionA);
                 answer.reduce();
 
-                this.setQuestion('' + this.ns.mAdultOne + ' is planning for a class ' + this.ns.mSubjectOne + ' project. Each student can do the assignment with ' + fractionA.getString() + ' page of ' + this.ns.mColorOne + ' construction paper. If ' + this.ns.mAdultOne + ' has ' + fractionB.mNumerator + ' pages of ' + this.ns.mColorOne + ' construction paper then how many assignments can be done?');
+                this.setQuestion('' + this.ns.mNameOne + ' is making smoothies for a fund raiser for ' + this.ns.mSchoolOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' of a bag of ' + this.ns.mFruitOne + ' for each batch of smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' makes $' +  c + '.' + d + ' for each batch of smoothies ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sells. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' used ' + e + ' bags of ' + this.ns.mFruitOne + '. How much money did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' raise so far?');
 
                 this.setAnswer('' + answer.getString(),0);
         }
