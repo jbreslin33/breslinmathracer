@@ -18,10 +18,9 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 	var fractionB = new Fraction(1,1,true);
         fractionB.mNumerator= Math.floor(Math.random()*8+2);
 
-	var c = Math.floor(Math.random()*8+2);
-	var m = Math.floor(Math.random()*90+10);
-	var dec = '' + c + '.' + m;
-	var decimalPerBatch = new Decimal(dec);  
+	var r = Math.floor(Math.random()*900+100);
+	var m = parseFloat(r / 100); 
+	var decimalPerBatch = new Decimal(m);  
 
 	fractionC = fractionB.divide(fractionA);
 
