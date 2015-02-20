@@ -3,9 +3,10 @@ var Decimal = new Class(
 
 initialize: function(decimal)
 {
-	this.mDecimal = '' +decimal;
+	this.mDecimal = '' + decimal;
 	this.mNumber  = '' + decimal; 
 	this.mDecimalPlaces = 0;
+	this.mDecimalPlace = 0;
 	this.mWithDecimalPoint = 0;
 	this.mCharacteristic = 0;
 	this.mMantissa = 0;
@@ -16,6 +17,7 @@ initialize: function(decimal)
 	if (this.mDecimalPlace != -1)
 	{
 		var numberArray = this.mNumber.split("."); 
+		this.mDecimalPlaces = numberArray[1].length;	
 		this.mNumber = '' + numberArray[0] + '' + numberArray[1];
 	}
 	else
@@ -24,6 +26,7 @@ initialize: function(decimal)
 	}
 	
 	APPLICATION.log('mDecimalPlace:' + this.mDecimalPlace);
+	APPLICATION.log('mDecimalPlaces:' + this.mDecimalPlaces);
 	APPLICATION.log('mDecimal:' + this.mDecimal);
 	APPLICATION.log('mNumber:' + this.mNumber);
 },
@@ -84,18 +87,7 @@ subtract: function(decimal)
 	
 multiply: function(decimal)
 {
-        this.mUtility = new Utility();
-
-	var a = '' + this.mCharacteristic + '' + this.mMantissa; 
-	var b = '' + decimal.mCharacteristic + '' + decimal.mMantissa; 
-
-        factorA = parseInt(a);
-        factorB = parseInt(b);
-
-	var da = '' + this.mMantissa;
-	var db = '' + decimal.mMantissa;
-
-	var daLength = da.length;
+/*
 	var dbLength = db.length;
 
 	var decimalPlaces = parseInt(daLength + dbLength);
@@ -137,6 +129,7 @@ multiply: function(decimal)
                 }
         }
 	return answer
+*/
 },
 
 divide: function(decimal)
