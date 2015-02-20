@@ -1234,67 +1234,19 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_2';
 
-        this.ns = new NameSampler();
+        var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+        decimalA = new Decimal(a);
 
-        this.a = Math.floor(Math.random()*9+1);
-        this.b = Math.floor(Math.random()*9+1);
-        this.c = Math.floor(Math.random()*9+1);
-        this.d = Math.floor(Math.random()*9+1);
-        this.e = Math.floor(Math.random()*9+1);
-        
-	this.decimalPart = parseInt(this.b * 10 + this.c + this.e * 10);
-	this.wholePart = parseInt(this.a + this.d);
+        var b = Math.floor(Math.random()*89+10);
+        b = parseFloat(b / 10);
+        decimalB = new Decimal(b);
 
-	this.answer = 0; 
-	if (this.decimalPart > 99)
-	{
-		this.decimalPart = parseInt(this.decimalPart - 100);
-		this.wholePart++; //add one for carry 
+        var answer = decimalA.add(decimalB);
 
-		if (this.decimalPart < 10)
-		{
-			if (parseInt(this.decimalPart) == 0)
-			{
-				this.answer = '' + this.wholePart; 	 
-			}
-			else
-			{
-				this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10	 
-			}
-		}
-		else
-		{
-			if (this.decimalPart % 10 == 0)	
-			{
-				this.decimalPart = parseInt(this.decimalPart / 10);
-			}
-			this.answer = '' + this.wholePart + '.' + this.decimalPart; 	 
-		}	
-	}
-	else
-	{
-                if (this.decimalPart < 10)
-                {
-                        if (parseInt(this.decimalPart) == 0)
-                        {
-                                this.answer = '' + this.wholePart;                                              
-                        }
-                        else
-                        {
-                                this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10
-                        }
-                }
-                else
-                {
-			if (this.decimalPart % 10 == 0)	
-                        {
-				this.decimalPart = parseInt(this.decimalPart / 10);
-                        }
-                        this.answer = '' + this.wholePart + '.' + this.decimalPart;
-                }
-	}
-	this.setQuestion('Find the sum: ' + this.a + '.' + this.b + this.c + ' + ' + this.d + '.' + this.e);
-        this.setAnswer('' + this.answer,0);
+        this.setQuestion('Find the sum: ' + decimalA.getString() + ' + ' + decimalB.getString());
+
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
@@ -1313,11 +1265,10 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*99+1);
 	a = parseFloat(a / 100);
+	decimalA = new Decimal(a);	
 
         var b = Math.floor(Math.random()*9+1);
 	b = parseFloat(b / 10);
-
-	decimalA = new Decimal(a);	
 	decimalB = new Decimal(b);	
 
 	var answer = decimalA.add(decimalB);  
@@ -1325,43 +1276,6 @@ initialize: function(sheet)
         this.setQuestion('Find the sum: ' + decimalA.getString() + ' + ' + decimalB.getString());
 
         this.setAnswer('' + answer.getString(),0);
-
-/*
-        this.a = Math.floor(Math.random()*9+1);
-        this.b = Math.floor(Math.random()*9+1);
-        this.c = Math.floor(Math.random()*9+1);
-
-        this.decimalPart = parseInt(this.a * 10 + this.b + this.c * 10);
-
-        this.answer = 0;
-        if (this.decimalPart > 99)
-        {
-                this.decimalPart = parseInt(this.decimalPart - 100);
-                if (this.decimalPart < 10)
-                {
-                        this.answer = '1.0' + this.decimalPart;
-                }
-                else
-                {
-                        this.answer = '1.' + this.decimalPart;
-                }
-        }
-        else
-        {
-                if (this.decimalPart < 10)
-                {
-                        this.answer = '0.0' + this.decimalPart;
-                }
-                else
-                {
-                        this.answer = '0.' + this.decimalPart;
-                }
-        }
-
-        this.setQuestion('Find the sum: 0.' + this.a + this.b + ' + 0.' + this.c + '');
-
-        this.setAnswer('' + this.answer,0);
-*/
 }
 });
 
