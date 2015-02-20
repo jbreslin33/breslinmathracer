@@ -54,7 +54,9 @@ getString: function()
 
 getMoney: function()
 {
-	return this.mDecimal;
+	var d = parseFloat(this.mDecimal); 
+	var fix = d.toFixed(2);
+	return fix;
 /*
 	var t = '';
 	if (this.mMantissa == 0)
