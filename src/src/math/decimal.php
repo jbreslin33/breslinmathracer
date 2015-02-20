@@ -16,52 +16,29 @@ getString: function()
 	}		
 	else
 	{
-		var t = '' + this.mCharacteristic + '.' + this.stripTrailingZeroes(this.mMantissa);
+		var t = '' + this.mCharacteristic + '.' + this.mMantissa;
+		t = parseFloat(t);
+		t = this.stripTrailingZeroes(t);
 	}
 	
 	return t;	
 },
-
 getMoney: function()
 {
-        var t = '';
-        if (this.mMantissa == 0)  
-        {
-                var t = '' + this.mCharacteristic;
-        }
-        else
-        {
-                var t = '' + this.mCharacteristic + '.' + this.stripTrailingZeroes(this.mMantissa);
-        }
-
-        return t;
-},
-
-
-/*
-getMoney: function()
-{
-	var t = '' + this.mCharacteristic + '.' + this.stripTrailingZeroes(this.mMantissa);
-	return t;	
-var t = '';
-	if (this.mMantissa < 10)
+	var t = '';
+	if (this.mMantissa == 0)
 	{
-		APPLICATION.log('if 1');
-		t = '' + this.mCharacteristic + '.0' + this.mMantissa;
-	}
-	if (this.mMantissa % 10 == 0 && this.mMantiss < 100)
-	{
-		APPLICATION.log('if 2');
-		t = '' + this.mCharacteristic + '.' + this.mMantissa + '0';
-	}
+		var t = '' + this.mCharacteristic;
+	}		
 	else
 	{
-		APPLICATION.log('if 3');
-		t = '' + this.mCharacteristic + '.' + this.mMantissa;
+		var t = '' + this.mCharacteristic + '.' + this.mMantissa;
+		t = parseFloat(t);
+		t = this.stripTrailingZeroes(t);
 	}
+	
 	return t;	
 },
-*/
 
 add: function(decimal)
 {
