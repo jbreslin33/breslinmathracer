@@ -1,10 +1,31 @@
 var Decimal = new Class(
 {
 
-initialize: function(c,m,stripZeroes)
+initialize: function(decimal)
 {
-	this.mCharacteristic = parseInt(c);
-	this.mMantissa = parseInt(m);
+	this.mDecimal = '' +decimal;
+	this.mNumber  = '' + decimal; 
+	this.mDecimalPlaces = 0;
+	this.mWithDecimalPoint = 0;
+	this.mCharacteristic = 0;
+	this.mMantissa = 0;
+
+	this.mDecimalPlace       = this.mDecimal.indexOf("."); //-1 means no decimalplace
+
+	//make the number without decimal place
+	if (this.mDecimalPlace != -1)
+	{
+		var numberArray = this.mNumber.split("."); 
+		this.mNumber = '' + numberArray[0] + '' + numberArray[1];
+	}
+	else
+	{
+		this.mNumber = this.Decimal;
+	}
+	
+	APPLICATION.log('mDecimalPlace:' + this.mDecimalPlace);
+	APPLICATION.log('mDecimal:' + this.mDecimal);
+	APPLICATION.log('mNumber:' + this.mNumber);
 },
 
 getString: function()
@@ -125,12 +146,9 @@ divide: function(decimal)
 
 stripTrailingZeroes: function(n)
 {
-	APPLICATION.log('n:' + n);
 	var noZeroes = n.toString() 
-	APPLICATION.log('noZeroes:' + noZeroes);
 	return noZeroes;
 /*
-	APPLICATION.log('s1:' + s);
        	if (parseInt(s) == 0)
        	{
                	return s;
@@ -143,12 +161,9 @@ stripTrailingZeroes: function(n)
         var strippedPart = '';
         while (encounteredNonZero == false)
         {
-		APPLICATION.log('s2:' + s);
-		APPLICATION.log( 'le:' + s[ parseInt(s.length - i) ] ) ;
                 if ( s[parseInt(s.length - i)] == '0')     //delete
                 {
                         s = s.substring(0, s.length - 1);
-			APPLICATION.log('s3:' + s);
                 }
                 else
                 {
@@ -156,7 +171,6 @@ stripTrailingZeroes: function(n)
                 }
                 i++;
         }
-	APPLICATION.log('s4:' + s);
         return s;
 */
 }
