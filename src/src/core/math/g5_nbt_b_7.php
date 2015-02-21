@@ -589,75 +589,26 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_9';
-
         this.ns = new NameSampler();
 
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
-        this.f = 0;
-
-        this.partA = 0;
-        this.partB = 1;
-        this.part = 0;
-
-        while (this.partA < this.partB)
+        var decimalA = new Decimal(1);
+        var decimalB = new Decimal(2);
+        while (parseFloat(decimalA.mDecimal) <= parseFloat(decimalB.mDecimal))
         {
-                this.a = Math.floor(Math.random()*9+1);
-                this.b = Math.floor(Math.random()*9+1);
-                this.c = Math.floor(Math.random()*9+1);
-                this.d = Math.floor(Math.random()*9+1);
-                this.e = Math.floor(Math.random()*9+1);
-                this.f = 0;
+                var a = Math.floor(Math.random()*899+100);
+                a = parseFloat(a / 100);
+                decimalA = new Decimal(a);
 
-                this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
-                this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
-                this.part =  parseInt(this.partA - this.partB);
+                var b = Math.floor(Math.random()*89+10);
+                b = parseFloat(b / 10);
+                decimalB = new Decimal(b);
         }
 
-	if (this.part > 99) // we are 3 digits 
-	{
-        	if (this.part % 100 == 0) // we have a whole number
-        	{
-                	this.answer = '' + this.part;
-        	}
-        	else if (this.part % 10 == 0) // we have a multiple of 10  
-        	{
-			var tensAndOnes = parseInt(this.part / 10); 
-			var ones = parseInt(tensAndOnes / 10);
-			var tenths = tensAndOnes % 10;
-		
-                	this.answer = '' + ones + '.' + tenths;
-        	}
-        	else // we have pure 3 digit number  
-		{
-			var hundreds = parseInt(this.part / 100); 
-			var tensAndOnes = this.part % 100; 
-			this.answer = '' + hundreds + '.' + tensAndOnes;
-		}
-	}
-        else if (this.part <= 99) // we are 3 digits
-        {
-                if (this.part % 10 == 0) // we have a multiple of 10
-                {
-                        var tensAndOnes = parseInt(this.part / 10);
-                        var ones = parseInt(tensAndOnes / 10);
-                        var tenths = tensAndOnes % 10;
-                        this.answer = '' + ones + '.' + tenths;
-                }
-        	else // we have pure 3 digit number  
-		{
-			var hundreds = parseInt(this.part / 100); 
-			var tensAndOnes = this.part % 100; 
-			this.answer = '' + hundreds + '.' + tensAndOnes;
-		}
-        }
+        var answer = decimalA.subtract(decimalB);
 
-        this.setQuestion('' + this.ns.mNameOne + ' ran a race in ' + this.a + '.' + this.b + this.c + ' seconds on Friday. Then on Saturday ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ran the same race ' + this.d + '.' + this.e + ' seconds faster. What was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' time on Saturday?');
+        this.setQuestion('' + this.ns.mNameOne + ' ran a race in ' + decimalA.getString() + ' seconds on Friday. Then on Saturday ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ran the same race ' + decimalB.getString() + ' seconds faster. What was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' time on Saturday?');
 
-        this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
