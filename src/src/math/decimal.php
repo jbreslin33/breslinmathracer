@@ -3,11 +3,18 @@ var Decimal = new Class(
 
 initialize: function(decimal)
 {
-	this.mDecimal = '' + decimal;
-	this.mNumber  = '' + decimal; 
+
+	//actual number
+	this.mDecimal = parseFloat(decimal);
+	this.mNumber  = parseFloat(decimal);
+	this.mDecimal = this.mDecimal.toString();
+	this.mNumber  = this.mNumber.toString();
+
+	//decimal places
 	this.mDecimalPlaces = 0;
 	this.mDecimalPlace = 0;
-	this.mWithDecimalPoint = 0;
+
+	//whole and fractional parts
 	this.mCharacteristic = 0;
 	this.mMantissa = 0;
 
@@ -36,8 +43,6 @@ getMoney: function()
 
 add: function(decimal)
 {
-		
-
 	var a = parseFloat(this.mDecimal);
 	var b = parseFloat(decimal.mDecimal);
 	var sum = parseFloat(a + b);	
