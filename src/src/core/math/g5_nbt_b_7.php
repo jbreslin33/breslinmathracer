@@ -1009,7 +1009,27 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_4';
+	this.ns = new NameSampler();
 
+        var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+        decimalA = new Decimal(a);
+
+        var b = Math.floor(Math.random()*89+10);
+        b = parseFloat(b / 10);
+        decimalB = new Decimal(b);
+
+        var twosides = decimalA.add(decimalB);
+	
+	var answer = twosides.add(twosides);
+
+        
+	this.setQuestion('In a video game called minetest ' + this.ns.mNameOne + ' builds a rectangular fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + '. If the length of the yard is ' + decimalA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' and the width of the yard is ' + decimalB.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' then what is the perimeter of the yard?');
+
+
+        this.setAnswer('' + answer.getString(),0);
+
+/*
         this.ns = new NameSampler();
 
         this.a = Math.floor(Math.random()*9+1);
@@ -1140,6 +1160,7 @@ initialize: function(sheet)
         this.setQuestion('In a video game called minetest ' + this.ns.mNameOne + ' builds a rectangular fenced in yard for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mAnimalOne + '. If the length of the yard is ' + this.a + '.' + this.b + this.c + ' ' + this.ns.mDistanceIncrementMedium + ' and the width of the yard is ' + this.d + '.' + this.e + ' ' + this.ns.mDistanceIncrementMedium + ' then what is the perimeter of the yard?');
 
         this.setAnswer('' + this.answer,0);
+*/
 }
 });
 

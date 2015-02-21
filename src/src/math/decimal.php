@@ -36,10 +36,32 @@ getMoney: function()
 
 add: function(decimal)
 {
+		
+
 	var a = parseFloat(this.mDecimal);
 	var b = parseFloat(decimal.mDecimal);
 	var sum = parseFloat(a + b);	
-	var d = new Decimal(sum);
+	
+	//lets get places for tofixed
+	var a_fix = parseFloat(this.mDecimalPlaces); 
+	var b_fix = parseFloat(decimal.mDecimalPlaces); 
+	var fix = 0;
+	if (a_fix > b_fix && a_fix != 0)
+	{
+		fix = parseInt(a_fix);
+	}
+	if (a_fix < b_fix && b_fix != 0)
+	{
+		fix = parseInt(b_fix);
+	}
+	if (a_fix == b_fix && a_fix != 0 && b_fix != 0)
+	{
+		fix = parseInt(a_fix);
+	}
+
+	var  fixedNumber = sum.toFixed(fix);	
+
+	var d = new Decimal(fixedNumber);
 	return d;
 },
 
