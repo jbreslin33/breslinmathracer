@@ -877,6 +877,27 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_6';
 
+	var decimalA = new Decimal(1);
+	var decimalB = new Decimal(2);
+	while (parseFloat(decimalA.mDecimal) <= parseFloat(decimalB.mDecimal))
+	{
+        	var a = Math.floor(Math.random()*89+10);
+        	a = parseFloat(a / 100);
+        	decimalA = new Decimal(a);
+
+        	var b = Math.floor(Math.random()*9+1);
+        	b = parseFloat(b / 10);
+        	decimalB = new Decimal(b);
+		
+		APPLICATION.log('a:' + decimalA.mDecimal);	
+		APPLICATION.log('b:' + decimalB.mDecimal);	
+	}
+
+        var answer = decimalA.subtract(decimalB);
+
+        this.setQuestion('Find the difference: ' + decimalA.getString() + ' - ' + decimalB.getString() + '');
+        this.setAnswer('' + answer.getString(),0);
+/*
         this.ns = new NameSampler();
 
         this.a = 0;
@@ -911,6 +932,7 @@ initialize: function(sheet)
         this.setQuestion('Find the difference: 0.' + this.a + this.b + ' - 0.' + this.c + '');
 
         this.setAnswer('' + this.answer,0);
+*/
 }
 });
 
@@ -931,11 +953,11 @@ initialize: function(sheet)
 
 	var a = Math.floor(Math.random()*899+100);
         a = parseFloat(a / 100);
-        decimalA = new Decimal(a);
+        var decimalA = new Decimal(a);
 
         var b = Math.floor(Math.random()*89+10);
         b = parseFloat(b / 10);
-        decimalB = new Decimal(b);
+        var decimalB = new Decimal(b);
 
         var answer = decimalA.add(decimalB);
 
@@ -963,11 +985,11 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*899+100);
         a = parseFloat(a / 100);
-        decimalA = new Decimal(a);
+        var decimalA = new Decimal(a);
 
         var b = Math.floor(Math.random()*89+10);
         b = parseFloat(b / 10);
-        decimalB = new Decimal(b);
+        var decimalB = new Decimal(b);
 
         var twosides = decimalA.add(decimalB);
 	
@@ -994,11 +1016,11 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*89+10);
         a = parseFloat(a / 10);
-        decimalA = new Decimal(a);
+        var decimalA = new Decimal(a);
 
         var b = Math.floor(Math.random()*89+10);
         b = parseFloat(b / 100);
-        decimalB = new Decimal(b);
+        var decimalB = new Decimal(b);
 
         var answer = decimalA.add(decimalB);
 
@@ -1023,11 +1045,11 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*899+100);
         a = parseFloat(a / 100);
-        decimalA = new Decimal(a);
+        var decimalA = new Decimal(a);
 
         var b = Math.floor(Math.random()*89+10);
         b = parseFloat(b / 10);
-        decimalB = new Decimal(b);
+        var decimalB = new Decimal(b);
 
         var answer = decimalA.add(decimalB);
 
@@ -1052,11 +1074,11 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*99+1);
 	a = parseFloat(a / 100);
-	decimalA = new Decimal(a);	
+	var decimalA = new Decimal(a);	
 
         var b = Math.floor(Math.random()*9+1);
 	b = parseFloat(b / 10);
-	decimalB = new Decimal(b);	
+	var decimalB = new Decimal(b);	
 
 	var answer = decimalA.add(decimalB);  
 
