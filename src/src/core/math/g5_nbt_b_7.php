@@ -929,71 +929,21 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*2)+5;
-        this.b = Math.floor(Math.random()*9+1);
-        this.c = Math.floor(Math.random()*9+1);
-        this.d = Math.floor(Math.random()*9+1);
-        this.e = Math.floor(Math.random()*9+1);
-        this.f = Math.floor(Math.random()*9+1);
-        this.g = Math.floor(Math.random()*9+1);
-        
-	this.decimalPart = parseInt(this.c * 10 + this.d + this.f * 10 + this.g);
-	this.wholePart = parseInt(this.a * 10 + this.b + this.e);
+	var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+        decimalA = new Decimal(a);
 
-	this.answer = 0; 
-	if (this.decimalPart > 99)
-	{
-		this.decimalPart = parseInt(this.decimalPart - 100);
-		this.wholePart++; //add one for carry 
+        var b = Math.floor(Math.random()*89+10);
+        b = parseFloat(b / 10);
+        decimalB = new Decimal(b);
 
-		if (this.decimalPart < 10)
-		{
-			if (parseInt(this.decimalPart) == 0)
-			{
-				this.answer = '' + this.wholePart; 	 
-			}
-			else
-			{
-				this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10	 
-			}
-		}
-		else
-		{
-			if (this.decimalPart % 10 == 0)	
-			{
-				this.decimalPart = parseInt(this.decimalPart / 10);
-			}
-			this.answer = '' + this.wholePart + '.' + this.decimalPart; 	 
-		}	
-	}
-	else
-	{
-                if (this.decimalPart < 10)
-                {
-                        if (parseInt(this.decimalPart) == 0)
-                        {
-                                this.answer = '' + this.wholePart;                                              
-                        }
-                        else
-                        {
-                                this.answer = '' + this.wholePart + '.0' + this.decimalPart; //add a zero in tenths cause its less than 10
-                        }
-                }
-                else
-                {
-			if (this.decimalPart % 10 == 0)	
-                        {
-				this.decimalPart = parseInt(this.decimalPart / 10);
-                        }
-                        this.answer = '' + this.wholePart + '.' + this.decimalPart;
-                }
-	}
+        var answer = decimalA.add(decimalB);
 
-	this.setQuestion('Last year ' + this.ns.mNameOne + ' was ' + this.a + this.b + '.' + this.c + this.d + ' inches tall. This year ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' grew ' + this.e + '.' + this.f + this.g + ' inches so far. How many inches tall is ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' now?');
+	this.setQuestion('Last year ' + this.ns.mNameOne + ' was ' + decimalA.getString() + ' inches tall. This year ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' grew ' + decimalB.getString() + ' inches so far. How many inches tall is ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' now?');
 
-        this.setAnswer('' + this.answer,0);
-        this.setAnswer('' + this.answer + ' inches',1);
-        this.setAnswer('' + this.answer + ' in.',2);
+        this.setAnswer('' + answer.getString(),0);
+        this.setAnswer('' + answer.getString() + ' inches',1);
+        this.setAnswer('' + answer.getString() + ' in.',2);
 }
 });
 
