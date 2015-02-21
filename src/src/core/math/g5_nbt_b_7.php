@@ -674,74 +674,23 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_8';
 
-        this.ns = new NameSampler();
-
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
-        this.f = 0;
-
-        this.partA = 0;
-        this.partB = 1;
-        this.part = 0;
-
-        while (this.partA < this.partB)
+        var decimalA = new Decimal(1);
+        var decimalB = new Decimal(2);
+        while (parseFloat(decimalA.mDecimal) <= parseFloat(decimalB.mDecimal))
         {
-                this.a = Math.floor(Math.random()*9+1);
-                this.b = Math.floor(Math.random()*9+1);
-                this.c = 0;
-                this.d = 0;
-                this.e = Math.floor(Math.random()*9+1);
-                this.f = Math.floor(Math.random()*9+1);
+                var a = Math.floor(Math.random()*89+10);
+                a = parseFloat(a / 10);
+                decimalA = new Decimal(a);
 
-                this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
-                this.partB = parseInt(this.d * 100 + this.e * 10 + this.f);
-                this.part =  parseInt(this.partA - this.partB);
+                var b = Math.floor(Math.random()*89+10);
+                b = parseFloat(b / 100);
+                decimalB = new Decimal(b);
         }
 
-	if (this.part > 99) // we are 3 digits 
-	{
-        	if (this.part % 100 == 0) // we have a whole number
-        	{
-                	this.answer = '' + this.part;
-        	}
-        	else if (this.part % 10 == 0) // we have a multiple of 10  
-        	{
-			var tensAndOnes = parseInt(this.part / 10); 
-			var ones = parseInt(tensAndOnes / 10);
-			var tenths = tensAndOnes % 10;
-		
-                	this.answer = '' + ones + '.' + tenths;
-        	}
-        	else // we have pure 3 digit number  
-		{
-			var hundreds = parseInt(this.part / 100); 
-			var tensAndOnes = this.part % 100; 
-			var tens = parseInt(tensAndOnes / 10); 
-			var ones = tensAndOnes % 10; 
-			this.answer = '' + hundreds + '.' + tens + ones;
-		}
-	}
-        else if (this.part <= 99) // we are 3 digits
-        {
-		if (this.part < 10) //we have a 1 digit number
-		{
-                        this.answer = '0.0' + this.part;
-		}
-                else if (this.part % 10 == 0) // we have a multiple of 10
-                {
-                        var tensAndOnes = parseInt(this.part / 10);
-                        var ones = parseInt(tensAndOnes / 10);
-                        var tenths = tensAndOnes % 10;
-                        this.answer = '' + ones + '.' + tenths;
-                }
-        }
+        var answer = decimalA.subtract(decimalB);
 
-        this.setQuestion('Find the difference: ' + this.a + '.' + this.b + ' - 0.' + this.e + this.f);
-
-        this.setAnswer('' + this.answer,0);
+        this.setQuestion('Find the difference: ' + decimalA.getString() + ' - ' + decimalB.getString() + '');
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
