@@ -544,6 +544,21 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_10';
 
+        var a = Math.floor(Math.random()*99+1);
+        a = parseFloat(a / 100);
+        var decimalA = new Decimal(a);
+
+        var b = Math.floor(Math.random()*9+1);
+        b = parseFloat(b / 10);
+        var decimalB = new Decimal(b);
+
+        var answer = decimalA.multiply(decimalB);
+
+        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
+
+        this.setAnswer('' + answer.getString(),0);
+
+/*
         this.a = 0;
         this.b = Math.floor(Math.random()*9+1);
         this.c = Math.floor(Math.random()*9+1);
@@ -574,6 +589,7 @@ initialize: function(sheet)
 		
 		floatAnswer = parseFloat(this.mMultiplyDecimals.mAnswer);
 	}
+*/
 }
 });
 
