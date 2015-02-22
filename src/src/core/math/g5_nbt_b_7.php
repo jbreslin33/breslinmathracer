@@ -457,33 +457,19 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_12';
 
-        this.a = Math.floor(Math.random()*9+1);
-        this.b = Math.floor(Math.random()*9+1);
+        var a = Math.floor(Math.random()*89+10);
+        a = parseFloat(a / 10);
+        var decimalA = new Decimal(a);
 
-        this.c = Math.floor(Math.random()*9+1);
-        this.d = Math.floor(Math.random()*9+1);
+        var b = Math.floor(Math.random()*89+10);
+        b = parseFloat(b / 100);
+        var decimalB = new Decimal(b);
 
-        this.partA = parseInt(this.a * 10 + this.b);
-        this.partB = parseInt(this.c * 10 + this.d);
-        this.part =  parseInt(this.partA * this.partB);
+        var answer = decimalA.multiply(decimalB);
 
-	while (this.part == 0)
-	{
-        	this.a = Math.floor(Math.random()*9+1);
-        	this.b = Math.floor(Math.random()*9+1);
+        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
 
-        	this.c = Math.floor(Math.random()*9+1);
-        	this.d = Math.floor(Math.random()*9+1);
-        
-        	this.partA = parseInt(this.a * 10 + this.b);
-        	this.partB = parseInt(this.c * 10 + this.d);
-        	this.part =  parseInt(this.partA * this.partB);
-	}
-		
-	this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,3);
-
-        this.setQuestion('Find the product: ' + this.a + '.' + this.b + ' &times ' + '0.' + this.c + this.d);
-        this.setAnswer('' + this.mMultiplyDecimals.mAnswer,0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 /*
