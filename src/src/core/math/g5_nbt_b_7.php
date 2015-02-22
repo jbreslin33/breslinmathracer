@@ -202,72 +202,20 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_16';
-	
-	this.mUtility = new Utility();
 
-	this.answer = 'setme';
+        var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+        var decimalA = new Decimal(a);
 
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
+        var b = Math.floor(Math.random()*9+1);
+        b = parseFloat(b / 10);
+        var decimalB = new Decimal(b);
 
-        this.divisor  = 0;
-        this.quotient = 0;
-        this.dividend = 0;
-	this.remainder = 1;
+        var answer = decimalA.multiply(decimalB);
 
-	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
-	{
-        	this.a = Math.floor(Math.random()*9+1);
-        	this.b = Math.floor(Math.random()*9+1);
-        	this.c = Math.floor(Math.random()*9+1);
-        	this.d = Math.floor(Math.random()*9+1);
-        	this.e = Math.floor(Math.random()*9+1);
+        this.setQuestion('Find the product: ' + answer.getString() + ' &divide ' + decimalB.getString());
 
-        	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
-        	this.divisor   = parseInt(               this.d * 10 + this.e);
-		this.quotient  = parseInt(this.dividend / this.divisor);
-		this.remainder = this.dividend % this.divisor;
-	}
-	
-	//answer will slide all the way over to right of dividend so if its 3 spaces it will be equal to div etc
-	var q = '' + this.quotient;
-
-	if (q.length == 0)
-	{
-		//	
-	}	
-	if (q.length == 1)
-	{
-		this.answer = '0.' + this.quotient;	
-	}	
-	if (q.length == 2)
-	{
-		if (q[1] == 0)
-		{
-			this.answer = '' + q[0];	
-		}
-		else
-		{
-			this.answer = '' + q[0] + '.' + q[1];	
-		}
-	}	
-	if (q.length == 3)
-	{
-		if (q[2] == 0)
-		{
-			this.answer = '' + q[0] + q[1];	
-		}
-		else
-		{
-			this.answer = '' + q[0] + q[1] + '.' + q[2];	
-		}
-	}	
-	
-        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
-        this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + decimalA.getString(),0);
 }
 });
 
@@ -292,9 +240,9 @@ initialize: function(sheet)
         b = parseFloat(b / 10);
         var decimalB = new Decimal(b);
 
-        var answer = decimalA.multiply(decimalB);
+        var decimalC = decimalA.multiply(decimalB);
 
-        this.setQuestion('Find the product: ' + answer.getString() + ' &divide ' + decimalB.getString());
+        this.setQuestion('Find the product: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
 
         this.setAnswer('' + decimalA.getString(),0);
 }
