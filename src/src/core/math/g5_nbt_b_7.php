@@ -292,11 +292,11 @@ initialize: function(sheet)
         b = parseFloat(b / 10);
         var decimalB = new Decimal(b);
 
-        var answer = decimalA.divide(decimalB);
+        var answer = decimalA.multiply(decimalB);
 
-        this.setQuestion('Find the product: ' + decimalA.getString() + ' &divide ' + decimalB.getString());
+        this.setQuestion('Find the product: ' + answer.getString() + ' &divide ' + decimalB.getString());
 
-        this.setAnswer('' + answer.getString(),0);
+        this.setAnswer('' + decimalA.getString(),0);
 }
 });
 
