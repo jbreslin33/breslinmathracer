@@ -135,10 +135,13 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_17';
 
         var decimalC = new Decimal('123456');
-        var compare = 0;
+        var decimalB = new Decimal('123456');
+
+        var compareC = 0;
+        var compareB = 0;
 
         //might need be bigger compare
-        while(decimalC.mNumber.length >= compare)
+        while(decimalC.mNumber.length >= compareC || compareB != 3 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
         {
                 var a = Math.floor(Math.random()*89+10);
                 a = parseFloat(a / 10);
@@ -146,19 +149,21 @@ initialize: function(sheet)
 
                 var b = Math.floor(Math.random()*89+10);
                 b = parseFloat(b / 100);
-                var decimalB = new Decimal(b);
+                decimalB = new Decimal(b);
 
                 decimalC = decimalA.multiply(decimalB);
 
                 //lets update compare
                 if (decimalC.mDecimalPlace == -1)
                 {
-                        compare = 4;
+                        compareC = 2;
                 }
                 else
                 {
-                        compare = 5;
+                        compareC = 3;
                 }
+                var temp = decimalB.mDecimal.toString();
+                compareB = temp.length;
 
                 this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
                 this.setAnswer('' + decimalA.getString(),0);
