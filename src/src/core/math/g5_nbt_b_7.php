@@ -203,19 +203,33 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_16';
 
-        var a = Math.floor(Math.random()*899+100);
-        a = parseFloat(a / 100);
-        var decimalA = new Decimal(a);
+	var decimalC = new Decimal('123456');
+	
+	var compare = 0;
+	if (this.mDecimalPlace == -1)
+	{
+		compare = 4;
+	}
+	else
+	{
+		compare = 5;
+	}
+	
+	while(decimalC.mNumber.length > compare)  
+	{
+        	var a = Math.floor(Math.random()*899+100);
+        	a = parseFloat(a / 100);
+        	var decimalA = new Decimal(a);
 
-        var b = Math.floor(Math.random()*89+10);
-        b = parseFloat(b / 10);
-        var decimalB = new Decimal(b);
+        	var b = Math.floor(Math.random()*89+10);
+       	 	b = parseFloat(b / 10);
+        	var decimalB = new Decimal(b);
 
-        var decimalC = decimalA.multiply(decimalB);
+        	decimalC = decimalA.multiply(decimalB);
 
-        this.setQuestion('Find the product: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
-
-        this.setAnswer('' + decimalA.getString(),0);
+       	 	this.setQuestion('Find the product: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
+        	this.setAnswer('' + decimalA.getString(),0);
+	}
 }
 });
 
