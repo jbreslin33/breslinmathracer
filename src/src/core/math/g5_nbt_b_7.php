@@ -237,7 +237,7 @@ initialize: function(sheet)
 
         //might need be bigger compare
         //while(decimalC.mNumber.length >= compareC || compareB < 3 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal) >= 10)
-        while(decimalC.mNumber.length >= compareC || parseFloat(decimalC.mDecimal) >= 1)
+        while(decimalC.mNumber.length != compareC || parseFloat(decimalC.mDecimal) >= 1)
         {
                 var a = Math.floor(Math.random()*89+10);
                 a = parseFloat(a / 100);
