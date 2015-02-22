@@ -411,37 +411,20 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_13';
-        this.ns = new NameSampler();
 
-        this.a = Math.floor(Math.random()*9+1);
-        this.b = Math.floor(Math.random()*9+1);
-        this.c = Math.floor(Math.random()*9+1);
+        var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+        var decimalA = new Decimal(a);
 
-        this.d = Math.floor(Math.random()*9+1);
-        this.e = Math.floor(Math.random()*9+1);
+        var b = Math.floor(Math.random()*89+10);
+        b = parseFloat(b / 10);
+        var decimalB = new Decimal(b);
 
-        this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
-        this.partB = parseInt(               this.d * 10 + this.e);
-        this.part =  parseInt(this.partA * this.partB);
+        var answer = decimalA.multiply(decimalB);
 
-	while (this.part == 0)
-	{
-        	this.a = Math.floor(Math.random()*9+1);
-        	this.b = Math.floor(Math.random()*9+1);
-        	this.c = Math.floor(Math.random()*9+1);
+        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
 
-        	this.d = Math.floor(Math.random()*9+1);
-        	this.e = Math.floor(Math.random()*9+1);
-        
-		this.partA = parseInt(this.a * 100 + this.b * 10 + this.c);
-        	this.partB = parseInt(               this.d * 10 + this.e);
-        	this.part =  parseInt(this.partA * this.partB);
-	}
-		
-	this.mMultiplyDecimals = new MultiplyDecimals(this.partA,this.partB,3);
-
-        this.setQuestion('Find the product: ' + this.a + '.' + this.b + this.c + ' &times ' + this.d + '.' + this.e + '');
-        this.setAnswer('' + this.mMultiplyDecimals.mAnswer,0);
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 /*
