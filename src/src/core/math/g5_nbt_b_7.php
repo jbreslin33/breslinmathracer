@@ -229,19 +229,42 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_15';
 
-        var a = Math.floor(Math.random()*89+10);
-        a = parseFloat(a / 100);
-        var decimalA = new Decimal(a);
+        var decimalC = new Decimal('123456');
+        var decimalB = new Decimal('123456');
 
-        var b = Math.floor(Math.random()*9+1);
-        b = parseFloat(b / 10);
-        var decimalB = new Decimal(b);
+        var compareC = 0;
+        var compareB = 0;
 
-        var decimalC = decimalA.multiply(decimalB);
+        //might need be bigger compare
+        //while(decimalC.mNumber.length >= compareC || compareB < 3 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal) >= 10)
+        while(decimalC.mNumber.length >= compareC || parseFloat(decimalC.mDecimal) >= 1)
+        {
+                var a = Math.floor(Math.random()*89+10);
+                a = parseFloat(a / 100);
+                var decimalA = new Decimal(a);
 
-        this.setQuestion('Find the product: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
+                var b = Math.floor(Math.random()*9+1);
+                b = parseFloat(b / 10);
+                decimalB = new Decimal(b);
 
-        this.setAnswer('' + decimalA.getString(),0);
+                decimalC = decimalA.multiply(decimalB);
+
+                //lets update compare
+                if (decimalC.mDecimalPlace == -1)
+                {
+                        compareC = 2;
+                }
+                else
+                {
+                        compareC = 3;
+                }
+                var temp = decimalB.mDecimal.toString();
+                compareB = temp.length;
+
+                this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
+                this.setAnswer('' + decimalA.getString(),0);
+        }
+
 }
 });
 
