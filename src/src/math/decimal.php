@@ -121,15 +121,17 @@ multiply: function(decimal)
 
 divide: function(decimal)
 {
-        var rawProduct = parseInt(this.mNumber / decimal.mNumber);
+        var rawProduct   =  parseInt(this.mNumber / decimal.mNumber);
+	var rawRemainder =  parseInt(this.mNumber % decimal.mNumber); 	
 
         //now use powers of 10 to move decimal place
         var decimalPlaces = parseInt(this.mDecimalPlaces - decimal.mDecimalPlaces);
+	var fullAnswer = '' + rawProduct + '' + rawRemainder;
 
         if (decimalPlaces > 0)
         {
                 var power = Math.pow(10,decimalPlaces);
-                var decimalProduct = parseFloat(rawProduct / power);
+                var decimalProduct = parseFloat(fullAnswer / power);
                 var decimalAnswerProduct = new Decimal(decimalProduct);
                 return decimalAnswerProduct;
         }
