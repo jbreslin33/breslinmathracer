@@ -206,16 +206,9 @@ initialize: function(sheet)
 	var decimalC = new Decimal('123456');
 	
 	var compare = 0;
-	if (this.mDecimalPlace == -1)
-	{
-		compare = 4;
-	}
-	else
-	{
-		compare = 5;
-	}
-	
-	while(decimalC.mNumber.length > compare)  
+
+	//might need be bigger compare
+	while(decimalC.mNumber.length >= compare)  
 	{
         	var a = Math.floor(Math.random()*899+100);
         	a = parseFloat(a / 100);
@@ -226,6 +219,16 @@ initialize: function(sheet)
         	var decimalB = new Decimal(b);
 
         	decimalC = decimalA.multiply(decimalB);
+
+		//lets update compare	
+		if (decimalC.mDecimalPlace == -1)
+		{
+			compare = 4;
+		}
+		else
+		{
+			compare = 5;
+		}
 
        	 	this.setQuestion('Find the product: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
         	this.setAnswer('' + decimalA.getString(),0);
