@@ -63,60 +63,42 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_18';
+
+        var decimalC = new Decimal('123456');
+        var decimalB = new Decimal('123456');
+
+        var compareC = 0;
+        var compareB = 0;
+
+        //might need be bigger compare
+        while(decimalC.mNumber.length >= compareC || compareB != 4 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
+        {
+                var a = Math.floor(Math.random()*89+10);
+                a = parseFloat(a / 10);
+                var decimalA = new Decimal(a);
+
+                var b = Math.floor(Math.random()*89+10);
+                b = parseFloat(b / 100);
+                decimalB = new Decimal(b);
+
+                decimalC = decimalA.multiply(decimalB);
+
+                //lets update compare
+                if (decimalC.mDecimalPlace == -1)
+                {
+                        compareC = 2;
+                }
+                else
+                {
+                        compareC = 3;
+                }
+                var temp = decimalB.mDecimal.toString();
+                compareB = temp.length;
+
+                this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
+                this.setAnswer('' + decimalA.getString(),0);
+        }
 	
-	this.mUtility = new Utility();
-
-	this.answer = 'setme';
-
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
-        this.f = 0;
-
-        this.divisor  = 0;
-        this.quotient = 0;
-        this.dividend = 0;
-	this.remainder = 1;
-
-	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
-	{
-        	this.a = Math.floor(Math.random()*9+1);
-        	this.b = Math.floor(Math.random()*9+1);
-        	this.c = Math.floor(Math.random()*9+1);
-        	this.d = Math.floor(Math.random()*9+1);
-        	this.e = Math.floor(Math.random()*9+1);
-        	this.f = Math.floor(Math.random()*9+1);
-
-        	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
-        	this.divisor   = parseInt(this.d * 100 + this.e * 10 + this.f);
-		this.quotient  = parseInt(this.dividend / this.divisor);
-		this.remainder = this.dividend % this.divisor;
-	}
-	
-	//answer will slide all the way over to right of dividend so if its 3 spaces it will be equal to div etc
-	var q = '' + this.quotient;
-
-	if (q.length == 0)
-	{
-		//	
-	}	
-	if (q.length == 1)
-	{
-		this.answer = '' + this.quotient;	
-	}	
-	if (q.length == 2)
-	{
-		this.answer = '' + this.quotient;	
-	}	
-	if (q.length == 3)
-	{
-		this.answer = '' + this.quotient;	
-	}	
-	
-        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e + this.f);
-        this.setAnswer('' + this.answer,0);
 }
 });
 
