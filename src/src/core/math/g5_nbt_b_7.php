@@ -207,13 +207,13 @@ initialize: function(sheet)
         a = parseFloat(a / 100);
         var decimalA = new Decimal(a);
 
-        var b = Math.floor(Math.random()*9+1);
+        var b = Math.floor(Math.random()*89+10);
         b = parseFloat(b / 10);
         var decimalB = new Decimal(b);
 
-        var answer = decimalA.multiply(decimalB);
+        var decimalC = decimalA.multiply(decimalB);
 
-        this.setQuestion('Find the product: ' + answer.getString() + ' &divide ' + decimalB.getString());
+        this.setQuestion('Find the product: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
 
         this.setAnswer('' + decimalA.getString(),0);
 }
@@ -231,8 +231,8 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_15';
-        var a = Math.floor(Math.random()*89+10);
 
+        var a = Math.floor(Math.random()*89+10);
         a = parseFloat(a / 100);
         var decimalA = new Decimal(a);
 
