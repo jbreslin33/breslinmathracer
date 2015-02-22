@@ -283,6 +283,22 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_15';
+        var a = Math.floor(Math.random()*899+100);
+
+        a = parseFloat(a / 100);
+        var decimalA = new Decimal(a);
+
+        var b = Math.floor(Math.random()*899+100);
+        b = parseFloat(b / 100);
+        var decimalB = new Decimal(b);
+
+        var answer = decimalA.multiply(decimalB);
+
+        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
+
+        this.setAnswer('' + answer.getString(),0);
+
+/*
 	
 	this.mUtility = new Utility();
 
@@ -349,6 +365,7 @@ initialize: function(sheet)
 	
         this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
         this.setAnswer('' + this.answer,0);
+*/
 }
 });
 
