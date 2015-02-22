@@ -283,92 +283,22 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.nbt.b.7_15';
-        var a = Math.floor(Math.random()*899+100);
+        var a = Math.floor(Math.random()*89+10);
 
         a = parseFloat(a / 100);
         var decimalA = new Decimal(a);
 
-        var b = Math.floor(Math.random()*899+100);
-        b = parseFloat(b / 100);
+        var b = Math.floor(Math.random()*9+1);
+        b = parseFloat(b / 10);
         var decimalB = new Decimal(b);
 
-        var answer = decimalA.multiply(decimalB);
+        var answer = decimalA.divide(decimalB);
 
-        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
+        this.setQuestion('Find the product: ' + decimalA.getString() + ' &divide ' + decimalB.getString());
 
         this.setAnswer('' + answer.getString(),0);
-
-/*
-	
-	this.mUtility = new Utility();
-
-	this.answer = 'setme';
-
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
-
-        this.divisor  = 0;
-        this.quotient = 0;
-        this.dividend = 0;
-	this.remainder = 1;
-
-	while (this.divisor == 0 || this.dividend == 0 || this.remainder != 0  )
-	{
-        	this.a = 0;
-        	this.b = Math.floor(Math.random()*9+1);
-        	this.c = Math.floor(Math.random()*9+1);
-        	this.d = 0;
-        	this.e = Math.floor(Math.random()*9+1);
-
-        	this.dividend  = parseInt(this.a * 100 + this.b * 10 + this.c);
-        	this.divisor   = parseInt(               this.d * 10 + this.e);
-		this.quotient  = parseInt(this.dividend / this.divisor);
-		this.remainder = this.dividend % this.divisor;
-	}
-	
-	//answer will slide all the way over to right of dividend so if its 3 spaces it will be equal to div etc
-	var q = '' + this.quotient;
-
-	if (q.length == 0)
-	{
-		//	
-	}	
-	if (q.length == 1)
-	{
-		this.answer = '0.' + this.quotient;	
-	}	
-	if (q.length == 2)
-	{
-		if (q[1] == 0)
-		{
-			this.answer = '' + q[0];	
-		}
-		else
-		{
-			this.answer = '' + q[0] + '.' + q[1];	
-		}
-	}	
-	if (q.length == 3)
-	{
-		if (q[2] == 0)
-		{
-			this.answer = '' + q[0] + q[1];	
-		}
-		else
-		{
-			this.answer = '' + q[0] + q[1] + '.' + q[2];	
-		}
-	}	
-	
-        this.setQuestion('Find the quotient: ' + this.a + '.' + this.b + this.c + ' &divide ' + this.d + '.' + this.e);
-        this.setAnswer('' + this.answer,0);
-*/
 }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_14',5.1114,'5.nbt.b.7','5.55x5.55');
