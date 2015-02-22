@@ -141,7 +141,7 @@ initialize: function(sheet)
         var compareB = 0;
 
         //might need be bigger compare
-        while(decimalC.mNumber.length >= compareC || compareB != 3 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
+        while(decimalC.mNumber.length >= compareC || compareB != 4 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
         {
                 var a = Math.floor(Math.random()*89+10);
                 a = parseFloat(a / 10);
