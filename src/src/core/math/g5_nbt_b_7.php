@@ -1,58 +1,64 @@
-
-var MultiplyDecimals = new Class(
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_19',5.1119,'5.nbt.b.7','5.55/0.55');
+*/
+var i_5_nbt_b_7__19 = new Class(
 {
-initialize: function(factorA,factorB,decimalPlaces)
+Extends: TextItem,
+
+initialize: function(sheet)
 {
-	this.mUtility = new Utility();
+        this.parent(sheet,575,50,320,75,720,50,380,150);
 
-	this.mFactorA = factorA;
-	this.mFactorB = factorB;
+        this.mType = '5.nbt.b.7_19';
 
-	this.mDecimalPlaces = decimalPlaces;	
-	
-	this.mAnswer = 0;
-	this.mWholeNumberAnswer =  parseInt(this.mFactorA * this.mFactorB);
+        var decimalC = new Decimal('123456');
+        var decimalB = new Decimal('123456');
 
-	this.process();
-},
+        var compareC = 0;
+        var compareB = 0;
 
-process:  function()
-{
-	var s = '' + this.mWholeNumberAnswer;	
-	if (s.length <= this.mDecimalPlaces) // we have just a decimal  
-	{
-		//lets add buffer zeros depending on size compared to decimal places needed
-		var numberOfBufferZeroes = parseInt(this.mDecimalPlaces - s.length);	
-		var bufferZeroes = '';
-		for (i = 0; i < numberOfBufferZeroes; i++)
-		{	
-			bufferZeroes = '' + bufferZeroes + '0';
-		}
-		var decimalPart = '' + bufferZeroes + this.mWholeNumberAnswer; 	
-		decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
-		this.mAnswer = '0.' + decimalPart;
-	}
-	else //lets split it
-	{
-		var wholePart   = s.substring(0,parseInt(s.length - this.mDecimalPlaces));	
-		var decimalPart = s.substring(parseInt(wholePart.length),parseInt(s.length));	
+        //might need be bigger compare
+        while(decimalB.mNumber.length != compareB || parseFloat(decimalB.mDecimal) >= 1 || decimalC.mNumber.length != compareC || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
+        {
+                var a = Math.floor(Math.random()*899+100);
+                a = parseFloat(a / 100);
+                var decimalA = new Decimal(a);
 
-		var decimalPartInt = parseInt(decimalPart);
-		if (decimalPartInt == 0)
-		{
-			this.mAnswer = wholePart;
-		}
-		else
-		{
-			decimalPart = this.mUtility.stripTrailingZeroes(decimalPart);
-			this.mAnswer = wholePart + '.' + decimalPart;
-		}
-	}
+                var b = Math.floor(Math.random()*89+10);
+                b = parseFloat(b / 100);
+                decimalB = new Decimal(b);
+
+                decimalC = decimalA.multiply(decimalB);
+
+                //lets update compare
+                if (decimalC.mDecimalPlace == -1)
+                {
+                        compareC = 3;
+                }
+                else
+                {
+                        compareC = 4;
+                }
+
+                //lets update compare
+                if (decimalB.mDecimalPlace == -1)
+                {
+                        compareB = 2;
+                }
+                else
+                {
+                        compareB = 3;
+                }
+
+                this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
+                this.setAnswer('' + decimalA.getString(),0);
+        }
+
 }
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_18',5.1118,'5.nbt.b.7','5.55/5.55');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_18',5.1118,'5.nbt.b.7','5.55/0.55');
 */
 var i_5_nbt_b_7__18 = new Class(
 {
@@ -71,10 +77,10 @@ initialize: function(sheet)
         var compareB = 0;
 
         //might need be bigger compare
-        while(decimalC.mNumber.length >= compareC || compareB != 4 || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
+        while(decimalB.mNumber.length != compareB || parseFloat(decimalB.mDecimal) >= 1 || decimalC.mNumber.length != compareC || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
         {
-                var a = Math.floor(Math.random()*89+10);
-                a = parseFloat(a / 10);
+                var a = Math.floor(Math.random()*899+100);
+                a = parseFloat(a / 100);
                 var decimalA = new Decimal(a);
 
                 var b = Math.floor(Math.random()*89+10);
@@ -92,8 +98,16 @@ initialize: function(sheet)
                 {
                         compareC = 3;
                 }
-                var temp = decimalB.mDecimal.toString();
-                compareB = temp.length;
+
+                //lets update compare
+                if (decimalB.mDecimalPlace == -1)
+                {
+                        compareB = 2;
+                }
+                else
+                {
+                        compareB = 3;
+                }
 
                 this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
                 this.setAnswer('' + decimalA.getString(),0);
