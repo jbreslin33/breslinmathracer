@@ -199,11 +199,11 @@ initialize: function(sheet)
 		//lets update compare	
 		if (decimalC.mDecimalPlace == -1)
 		{
-			compare = 4;
+			compare = 3;
 		}
 		else
 		{
-			compare = 5;
+			compare = 4;
 		}
 
        	 	this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
