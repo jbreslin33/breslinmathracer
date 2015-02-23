@@ -68,7 +68,7 @@ initialize: function(sheet)
 	answer.reduce();
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getString() + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ate ' + fractionB.getString() + ' of the ' + this.ns.mVegetableOne + '. How much does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left?');
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractionA.getMixedNumber() + ' pounds of ' + this.ns.mVegetableOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ate ' + fractionB.getString() + ' pounds of ' + this.ns.mVegetableOne + '. How many pounds does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have left?');
 }
 });
 
