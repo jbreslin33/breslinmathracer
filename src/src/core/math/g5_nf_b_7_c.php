@@ -1,5 +1,40 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_5',5.2305,'5.nf.b.7.c','');
+*/
+var i_5_nf_b_7_c__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+this.parent(sheet,575,50,320,75,100,50,670,100);
+
+        this.mType = '5.nf.b.7.c_5';
+        this.ns = new NameSampler();
+
+	//fake info
+        var x = Math.floor(Math.random()*8+2);
+        var y = Math.floor(Math.random()*99+1);
+	
+	var m = '' + x + '.' + y; 
+	var money = new Decimal(m);
+
+        var fractionA = new Fraction(1,1,true);
+        fractionA.mNumerator = Math.floor(Math.random()*8+2);
+
+        var fractionB = new Fraction(1,1,true);
+        fractionB.mDenominator = Math.floor(Math.random()*8+2);
+
+        fractionC = fractionB.divide(fractionA);
+
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' had a party for themselves and their ' + fractionA.getString() + ' ' + this.this.ns.ns.mPlayedActivityOne + ' teammates. They spent ' + money.getMoney() + ' hours. This is ' + fractionA.getString() + ' times as long as they played ' + this.ns.mPlayedActivityTwo + '. How many hours did they play ' + this.ns.mPlayedActivityTwo + '?');
+
+        this.setAnswer('' + fractionC.getString(),0);
+        this.setAnswer('' + fractionC.getString() + ' hours',1);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_4',5.2304,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__4 = new Class(
