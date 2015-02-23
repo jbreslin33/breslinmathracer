@@ -27,7 +27,7 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 
 	fractionC = fractionB.divide(fractionA_bogus);
 
-        this.setQuestion('' + this.ns.mNameOne + ' is putting down stripes on an art project. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to draw ' + fractionA.getString() + ' equally spaced stripes. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants the first and last strip to be ' + fractionB.getString() + ' yards apart. How far apart will each stripe be?');
+        this.setQuestion('' + this.ns.mNameOne + ' is doing an art project. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants it to look boss so ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' plans to put ' + fractionA.getString() + ' equally spaced stripes on it. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants the first and last strip to be ' + fractionB.getString() + ' yards apart. How far apart will each stripe be?');
 
         this.setAnswer('' + fractionC.getString(),0);
         this.setAnswer('' + fractionC.getString() + ' yards',1);
