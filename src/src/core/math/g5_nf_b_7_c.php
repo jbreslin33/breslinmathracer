@@ -13,22 +13,15 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
         this.ns = new NameSampler();
 
 	//fake info
-        var x = Math.floor(Math.random()*8+2);
-        var y = Math.floor(Math.random()*99+1);
-        var z = Math.floor(Math.random()*9+1);
-	
-	var m = '' + x + '.' + y; 
-	var money = new Decimal(m);
 
-        var fractionA = new Fraction(1,1,true);
-        fractionA.mNumerator = Math.floor(Math.random()*8+2);
+        var fractionA = new Fraction(1,2,true);
+        
+	var x = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(x,1,true);
 
-        var fractionB = new Fraction(1,1,true);
-        fractionB.mDenominator = Math.floor(Math.random()*8+2);
+        fractionC = fractionA.divide(fractionB);
 
-        fractionC = fractionB.divide(fractionA);
-
-        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' had a party for themselves and their ' + z + ' ' + this.ns.mPlayedActivityOne + ' teammates. They spent $' + money.getMoney() + ' on the party. At the end of the party they have  ' + fractionB.getString() + ' gallon of ' + this.ns.mDrinkOne + ' left. They want to pour an equal amount of it into ' + fractionA.getString() + ' glasses. What fraction of a gallon should they pour into each glass?');
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' build a house together in a video game. They decide that each of them  will get half the house. ' + this.ns.mNameOne + ' then splits ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' half into ' + fractionB.getString() + ' equal sections. One of the sections will be a sweet room for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' pet parakeet ' + this.ns.mNameThree + '. What fraction of the whole house is the section for ' + this.ns.mNameThree + '?');   
 
         this.setAnswer('' + fractionC.getString(),0);
 }
