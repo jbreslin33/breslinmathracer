@@ -15,6 +15,7 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 	//fake info
         var x = Math.floor(Math.random()*8+2);
         var y = Math.floor(Math.random()*99+1);
+        var z = Math.floor(Math.random()*9+1);
 	
 	var m = '' + x + '.' + y; 
 	var money = new Decimal(m);
@@ -27,10 +28,9 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 
         fractionC = fractionB.divide(fractionA);
 
-        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' had a party for themselves and their ' + fractionA.getString() + ' ' + this.this.ns.ns.mPlayedActivityOne + ' teammates. They spent ' + money.getMoney() + ' hours. This is ' + fractionA.getString() + ' times as long as they played ' + this.ns.mPlayedActivityTwo + '. How many hours did they play ' + this.ns.mPlayedActivityTwo + '?');
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' had a party for themselves and their ' + z + ' ' + this.ns.mPlayedActivityOne + ' teammates. They spent $' + money.getMoney() + ' on the party. At the end of the party they have  ' + fractionB.getString() + ' gallon of ' + this.ns.mDrinkOne + ' left. They want to pour an equal amount of it into ' + fractionA.getString() + ' glasses. What fraction of a gallon should they pour into each glass?');
 
         this.setAnswer('' + fractionC.getString(),0);
-        this.setAnswer('' + fractionC.getString() + ' hours',1);
 }
 });
 
