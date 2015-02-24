@@ -517,57 +517,7 @@ hitZero: function()
         }
 }
 
-
 });
-/*
-
-	this.mColOneArray = new Array();
-	this.mColTwoArray = new Array();
-
-	this.mColOneArray.push('Question'); 		
-	this.mColOneArray.push('2x2'); 		
-	this.mColOneArray.push('2x3'); 		
-	this.mColOneArray.push('3x2'); 		
-	this.mColOneArray.push('2x4'); 		
-	this.mColOneArray.push('4x2'); 		
-	this.mColOneArray.push('2x5'); 		
-	this.mColOneArray.push('5x2'); 		
-	this.mColOneArray.push('2x6'); 		
-	this.mColOneArray.push('6x2'); 		
-	this.mColOneArray.push('2x7'); 		
-	this.mColOneArray.push('7x2'); 		
-	this.mColOneArray.push('2x8'); 		
-	this.mColOneArray.push('8x2'); 		
-	this.mColOneArray.push('2x9'); 		
-	this.mColOneArray.push('9x2'); 		
-	this.mColOneArray.push('2x10'); 		
-	this.mColOneArray.push('10x2'); 		
-	
-	this.mColTwoArray.push('Percent'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('80'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('70'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('80'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('30'); 		
-	this.mColTwoArray.push('10'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('20'); 		
-	this.mColTwoArray.push('90'); 		
-	this.mColTwoArray.push('90'); 		
-	
-	this.mSheet.mGame.mApplication.mData = new Array();
-	this.mSheet.mGame.mApplication.mData.push(this.mColOneArray);
-	this.mSheet.mGame.mApplication.mData.push(this.mColTwoArray);
-
-	this.mBreslinTable = new BreslinTable(this.mSheet.mGame.mApplication.mData);
-*/
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.c.7_1',3.0701,'3.oa.c.7','2x2');
