@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_7',5.2307,'5.nf.b.7.c','');
+*/
+var i_5_nf_b_7_c__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+this.parent(sheet,575,50,320,75,100,50,670,100);
+
+        this.mType = '5.nf.b.7.c_7';
+        this.ns = new NameSampler();
+
+        var fractionA = new Fraction(1,2,true);
+        
+	var x = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(x,1,true);
+
+        fractionC = fractionA.divide(fractionB);
+
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' build a house together in a video game. They decide that each of them  will get half the house. ' + this.ns.mNameOne + ' then splits ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' half into ' + fractionB.getString() + ' equal sections. One of the sections will be a sweet room for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' pet parakeet ' + this.ns.mNameThree + '. What fraction of the whole house is the section for ' + this.ns.mNameThree + '?');   
+
+        this.setAnswer('' + fractionC.getString(),0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_6',5.2306,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__6 = new Class(
@@ -11,8 +37,6 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 
         this.mType = '5.nf.b.7.c_6';
         this.ns = new NameSampler();
-
-	//fake info
 
         var fractionA = new Fraction(1,2,true);
         
