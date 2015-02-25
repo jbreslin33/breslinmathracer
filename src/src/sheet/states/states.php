@@ -126,6 +126,10 @@ exit: function(sheet)
 	{
 		APPLICATION.timestables('11');
 	}	
+	else if (APPLICATION.mRef_id == 'Add Subtract within 5')
+	{
+		APPLICATION.timestables('12');
+	}	
 }
 });
 

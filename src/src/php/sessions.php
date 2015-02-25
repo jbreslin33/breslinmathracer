@@ -87,6 +87,10 @@ public function process()
 		{
 			$timestables = new TimesTables(11,1,0);
 		}
+		if ($ref_id == 'Add Subtract within 5')
+		{
+			$timestables = new TimesTables(12,1,0);
+		}
 	}
 	else
 	{

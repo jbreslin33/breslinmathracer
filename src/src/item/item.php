@@ -218,6 +218,11 @@ var Item = new Class(
                 optionB.value = '11';
                 optionB.text = 'The Izzy';
                 this.mTimesTablesInfo.mMesh.appendChild(optionB);
+     
+		var optionC = document.createElement("option");
+                optionC.value = '12';
+                optionC.text = 'Add Subtract within 5';
+                this.mTimesTablesInfo.mMesh.appendChild(optionC);
 
   		var optionA = document.createElement("option");
                 optionA.value = '10';

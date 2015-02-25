@@ -567,6 +567,19 @@ Extends: Application,
                                 xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
                         }
                 }
+
+                if (this.mRef_id == 'Add Subtract within 5')
+                {
+                        if (tablenumber == '12')
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
+                        }
+                        else
+                        {
+                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
+                        }
+                }
+
                 if (this.mRef_id == 'normal')
                 {
                 	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);

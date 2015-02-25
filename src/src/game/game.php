@@ -404,7 +404,7 @@ var Game = new Class(
         setScore: function(score)
         {
                 this.mScore = score;
-		if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'timestables_2' || APPLICATION.mRef_id == 'timestables_3' || APPLICATION.mRef_id == 'timestables_4' || APPLICATION.mRef_id == 'timestables_5' || APPLICATION.mRef_id == 'timestables_6' || APPLICATION.mRef_id == 'timestables_7' || APPLICATION.mRef_id == 'timestables_8' || APPLICATION.mRef_id == 'timestables_9' || APPLICATION.mRef_id == 'timestables_10')
+		if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'Add Subtract within 5' || APPLICATION.mRef_id == 'timestables_2' || APPLICATION.mRef_id == 'timestables_3' || APPLICATION.mRef_id == 'timestables_4' || APPLICATION.mRef_id == 'timestables_5' || APPLICATION.mRef_id == 'timestables_6' || APPLICATION.mRef_id == 'timestables_7' || APPLICATION.mRef_id == 'timestables_8' || APPLICATION.mRef_id == 'timestables_9' || APPLICATION.mRef_id == 'timestables_10')
 		{
                 	APPLICATION.mHud.mScore.setText('<font size="1">Score: ' + this.mScore + '</font>');
 		} 

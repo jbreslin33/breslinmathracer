@@ -111,6 +111,38 @@ public function update()
                         $_SESSION["timestables_score_today_theizzy"] = $_SESSION["timestables_score_theizzy"];
                 }
         }
+       
+	//for koaa5
+        if ($_SESSION["ref_id"] == "Add Subtract within 5")
+        {
+                if (!isset($_SESSION["timestables_score_koaa5"]))
+                {
+                        $_SESSION["timestables_score_koaa5"] = 0;
+                }
+                if (!isset($_SESSION["timestables_score_today_koaa5"]))
+                {
+                        $_SESSION["timestables_score_today_koaa5"] = 0;
+                }
+
+                $score = intval($_SESSION["timestables_score_koaa5"]);
+                $today = intval($_SESSION["timestables_score_today_koaa5"]);
+
+                if (intval($_SESSION["item_transaction_code"]) == 1)
+                {
+                        $score++;
+                        $_SESSION["timestables_score_koaa5"] = $score;
+                }
+                else
+                {
+                        $_SESSION["timestables_score_koaa5"] = 0;
+                        $_SESSION["workit"] = $_SESSION["item_types_id"];
+                }
+
+                if ($score > $today)
+                {
+                        $_SESSION["timestables_score_today_koaa5"] = $_SESSION["timestables_score_koaa5"];
+                }
+        }
 
         //for two
         if ($_SESSION["ref_id"] == "timestables_2")

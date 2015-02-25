@@ -63,6 +63,10 @@ function __construct($tableNumber, $startNew, $leave)
 	{
                 $_SESSION["timestables_score_ten"] = 0;
 	}
+	if (!isset($_SESSION["timestables_score_k_oa_a_5"]))
+	{
+                $_SESSION["timestables_score_k_oa_a_5"] = 0;
+	}
 
 	//today
 	if (!isset($_SESSION["timestables_score_today"]))
@@ -109,6 +113,10 @@ function __construct($tableNumber, $startNew, $leave)
 	{
                 $_SESSION["timestables_score_today_ten"] = 0;
 	}
+	if (!isset($_SESSION["timestables_score_today_k_oa_a_5"]))
+	{
+                $_SESSION["timestables_score_today_k_oa_a_5"] = 0;
+	}
 
 	//alltime	
 	if (!isset($_SESSION["timestables_score_alltime"]))
@@ -154,6 +162,10 @@ function __construct($tableNumber, $startNew, $leave)
 	if (!isset($_SESSION["timestables_score_alltime_ten"]))
 	{	
 		$_SESSION["timestables_score_alltime_ten"] = $this->getAllTime('alltimeten');
+	}
+	if (!isset($_SESSION["timestables_score_alltime_k_oa_a_5"]))
+	{	
+		$_SESSION["timestables_score_alltime_k_oa_a_5"] = $this->getAllTime('alltimekoaa5');
 	}
 	
 	//get db id 1=normal,2=practice,timestable2s=3,3s=4 etc so just add 1 
@@ -257,6 +269,12 @@ public function updateAllTime($alltime)
         	$update .= "update users set alltimeten = ";
         	$update .= $_SESSION["timestables_score_alltime_ten"];
 	}
+	if ($alltime == 'k.oa.a.5')
+	{
+        	$update .= "update users set alltimekoaa5 = ";
+        	$update .= $_SESSION["timestables_score_alltime_koaa5"];
+	}
+	$update .= " where id = ";
 	$update .= " where id = ";
         $update .= $_SESSION["user_id"];
         $update .=  ";";
@@ -585,7 +603,7 @@ public function insertNewAttempt()
                 $_SESSION["ref_id"] = $refid;
         }
 
-	else
+        else if (intval($this->mTableNumber) == 10)
 	{
 		$refid = 'timestables_';	
 		$refid .= $this->mTableNumber;
@@ -594,6 +612,10 @@ public function insertNewAttempt()
 	if (intval($this->mTableNumber) == 11)
 	{
         	$_SESSION["ref_id"] = 'The Izzy';
+	}
+	if (intval($this->mTableNumber) == 12)
+	{
+        	$_SESSION["ref_id"] = 'Add Subtract within 5';
 	}
 
         $_SESSION["subject_id"] = 1;
@@ -606,6 +628,10 @@ public function insertNewAttempt()
 
 public function continueAttempt()
 {
+	if (intval($this->mTableNumber) == 12)
+	{
+        	$_SESSION["ref_id"] = 'Add Subtract within 5';
+	}
 	if (intval($this->mTableNumber) == 11)
 	{
         	$_SESSION["ref_id"] = 'The Izzy';
@@ -927,6 +953,28 @@ public function setRawData()
 			$this->mTypeID = $randid;
 		}	
 	}
+  
+	//addition  
+	if ($this->mTableNumber == 12)
+        {
+/*
+                $randomNumber = 0;
+                $randomChance = rand(0,100);
+                if ($randomChance < 80)  //ask random
+                {
+                        $randomNumber = rand(1,81);
+                        $randid = '3.oa.c.7';
+                        $randid .= "_";
+                        $randid .= $randomNumber;
+                        $this->mTypeID = $randid;
+                }      
+                else //ask workit
+                {
+                        $this->mTypeID = $_SESSION["workit"];
+                }
+*/
+		$this->mTypeID = 'k.oa.a.5_1';
+        }
    
 	//pink
         $itemString =  $this->mTypeID; //ask this one
@@ -945,6 +993,11 @@ public function setRawData()
 	{
         	$itemString .= $_SESSION["timestables_score_today_theizzy"];
 		$score = intval($_SESSION["timestables_score_theizzy"]);
+	}
+	if ($_SESSION["ref_id"] == 'Add Subtract within 5')
+	{
+        	$itemString .= $_SESSION["timestables_score_today_koaa5"];
+		$score = intval($_SESSION["timestables_score_koaa5"]);
 	}
 	if ($_SESSION["ref_id"] == 'timestables_2')
 	{
@@ -1013,6 +1066,16 @@ public function setRawData()
 			$this->updateAllTime('theizzy');
 		}
 	}
+        if ($_SESSION["ref_id"] == 'Add Subtract within 5')
+        {
+                $alltime = intval($_SESSION["timestables_score_alltime_koaa5"]);
+                if ($score > $alltime)
+                {
+                        $alltime = $score;
+                        $_SESSION["timestables_score_alltime_koaa5"] = $alltime;
+                        $this->updateAllTime('koaa5');
+                }
+        }
 	if ($_SESSION["ref_id"] == 'timestables_2')
 	{
 		$alltime = intval($_SESSION["timestables_score_alltime_two"]);
@@ -1126,6 +1189,13 @@ public function setRawData()
 		if (isset($_SESSION["timestables_score_theizzy"]))
 		{
         		$itemString .= $_SESSION["timestables_score_theizzy"];
+		}
+	}
+	else if ($_SESSION["ref_id"] == 'Add Subtract within 5')
+	{
+		if (isset($_SESSION["timestables_score_koaa5"]))
+		{
+        		$itemString .= $_SESSION["timestables_score_koaa5"];
 		}
 	}
 	else if ($_SESSION["ref_id"] == 'timestables_2')

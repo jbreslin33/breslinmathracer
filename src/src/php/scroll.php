@@ -67,6 +67,10 @@ function __construct()
 		{
 			$this->setScroll('alltimeizzy');
 		}
+		if ($_SESSION["ref_id"] == 'Add Subtract within 5')
+		{
+			$this->setScroll('alltimekoaa5');
+		}
 	}
 }
 
