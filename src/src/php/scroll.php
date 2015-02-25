@@ -74,51 +74,6 @@ function __construct()
 	}
 }
 
-// i think you should just send a string of 1s and 2s and 0s then you will get a feel for how they are doing..
-//just make sure its the right table....
-/*
-public function timesTablesTwo()
-{
-	$description_array = array();
-	$transaction_code_array = array();
-
-	$query = "select description, transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id WHERE progression > 3.07 AND progression < 3.0719 AND evaluations_attempts.user_id = ";
-	$query .= $_SESSION["user_id"]; 
-	$query .= " ORDER BY item_attempts.start_time desc";
-	$query .= " LIMIT 25";
-
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
-       	$numberOfResults = pg_num_rows($result);
-	
-	for($i=0; $i < $numberOfResults; $i++)
-	{
-		$description_array[] = pg_Result($result, $i, 'description');	
-		$transaction_code_array[] = pg_Result($result, $i, 'transaction_code');	
-	}
-	$itemString = ""; 
-	
-	for($i=0; $i < intval(count($description_array)); $i++)
-	{
-		if ($transaction_code_array[$i] == 0)
-		{
-			$itemString .= '<font color="white">';
-		}
-		if ($transaction_code_array[$i] == 1)
-		{
-			$itemString .= '<font color="green">';
-		}
-		if ($transaction_code_array[$i] == 2)
-		{
-			$itemString .= '<font color="red">';
-		}
-		$itemString .=  $description_array[$i];
-		$itemString .= '</font>';
-		$itemString .=  " ";
-	}
-
-        $_SESSION["scroll"] = $itemString;
-}
-*/
 public function setScroll($scoreField)
 {
 
