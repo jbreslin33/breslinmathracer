@@ -12,14 +12,19 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
         this.mType = '5.nf.b.7.c_7';
         this.ns = new NameSampler();
 
-        var fractionA = new Fraction(1,2,true);
+	var a = Math.floor(Math.random()*8+2);
+        var fractionA = new Fraction(a,1,true);
         
 	var x = Math.floor(Math.random()*8+2);
-        var fractionB = new Fraction(x,1,true);
+	var y = Math.floor(Math.random()*8+2);
+
+	var b = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(b,1,true);
 
         fractionC = fractionA.divide(fractionB);
 
-        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' build a house together in a video game. They decide that each of them  will get half the house. ' + this.ns.mNameOne + ' then splits ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' half into ' + fractionB.getString() + ' equal sections. One of the sections will be a sweet room for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' pet parakeet ' + this.ns.mNameThree + '. What fraction of the whole house is the section for ' + this.ns.mNameThree + '?');   
+        this.setQuestion('' + this.ns.mNameOne + ' is making a bottles for angry baby. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' uses ' + fractionA.getString() + ' centiliter formula for every bottle. Angry Baby screams at ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + x + ' times and punches ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + y + ' times. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' has ' + fractionB.getString() + ' centiliters of formula then how many bottles can ' + this.ns.mNameOne + ' make for Angry Baby?');   
+
 
         this.setAnswer('' + fractionC.getString(),0);
 }
