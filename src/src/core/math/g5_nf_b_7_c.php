@@ -13,7 +13,7 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
         this.ns = new NameSampler();
 
 	var a = Math.floor(Math.random()*8+2);
-        var fractionA = new Fraction(a,1,true);
+        var fractionA = new Fraction(1,a,true);
         
 	var x = Math.floor(Math.random()*8+2);
 	var y = Math.floor(Math.random()*8+2);
@@ -21,9 +21,9 @@ this.parent(sheet,575,50,320,75,100,50,670,100);
 	var b = Math.floor(Math.random()*8+2);
         var fractionB = new Fraction(b,1,true);
 
-        fractionC = fractionA.divide(fractionB);
+        fractionC = fractionB.divide(fractionA);
 
-        this.setQuestion('' + this.ns.mNameOne + ' is making a bottles for angry baby. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' centiliters formula for every bottle. Angry Baby screams at ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + x + ' times and punches ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + y + ' times. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' has ' + fractionB.getString() + ' centiliters of formula then how many bottles can ' + this.ns.mNameOne + ' make for Angry Baby?');   
+        this.setQuestion('' + this.ns.mNameOne + ' is making bottles for Angry Baby. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + fractionA.getString() + ' centiliters of formula for every bottle. Angry Baby screams at ' + this.ns.mNameOne + ' ' + x + ' times and punches ' + this.ns.mNameOne + ' ' +  y + ' times while ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes the bottles. If ' + this.ns.mNameOne + ' has ' + fractionB.getString() + ' centiliters of formula then how many bottles can ' + this.ns.mNameOne + ' make for Angry Baby?');   
 
 
         this.setAnswer('' + fractionC.getString(),0);
