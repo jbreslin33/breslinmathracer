@@ -1,5 +1,35 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_8',5.2308,'5.nf.b.7.c','');
+*/
+var i_5_nf_b_7_c__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+this.parent(sheet,575,50,320,75,100,50,670,100);
+
+        this.mType = '5.nf.b.7.c_8';
+        this.ns = new NameSampler();
+
+	var a = Math.floor(Math.random()*8+2);
+        var fractionA = new Fraction(1,a,true);
+        
+	var b = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(1,b,true);
+	
+	var c = Math.floor(Math.random()*8+2);
+        var fractionC = new Fraction(c,1,true);
+
+        fractionD = fractionC.divide(fractionA);
+
+        this.setQuestion('' + this.ns.mNameOne + ' uses ' + fractionA.getString() + ' of a pound of ' + this.ns.mFruitOne + ' and ' + fractionB.getString() + ' of a pound of ' + this.ns.mDrinkOne + ' to make one of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' smoothies. How many smoothies can ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make with ' + fractionC.getString() + ' pounds of ' + this.ns.mFruitOne + '?');   
+
+        this.setAnswer('' + fractionD.getString(),0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_7',5.2307,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__7 = new Class(
