@@ -53,8 +53,6 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_9',5.2309,'5.nf.b.7.c','');
-/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_10',5.2310,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__10 = new Class(
