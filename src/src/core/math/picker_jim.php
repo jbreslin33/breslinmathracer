@@ -2672,6 +2672,26 @@ getItem: function(id)
         {
                 return new i_5_nf_b_7_c__13(this.mSheet);
         }
+	if (id == '5.nf.b.7.c_14')
+        {
+                return new i_5_nf_b_7_c__14(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_15')
+        {
+                return new i_5_nf_b_7_c__15(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_16')
+        {
+                return new i_5_nf_b_7_c__16(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_17')
+        {
+                return new i_5_nf_b_7_c__17(this.mSheet);
+        }
+	if (id == '5.nf.b.7.c_18')
+        {
+                return new i_5_nf_b_7_c__18(this.mSheet);
+        }
 
 	
 	/*** GRADE 6 ***/
