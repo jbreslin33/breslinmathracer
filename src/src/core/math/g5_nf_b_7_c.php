@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_11',5.2311,'5.nf.b.7.c','');
+*/
+var i_5_nf_b_7_c__11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,575,50,320,75,100,50,670,100);
+
+        this.mType = '5.nf.b.7.c_11';
+        this.ns = new NameSampler();
+
+	var a = Math.floor(Math.random()*8+2);
+        var fractionA = new Fraction(1,a,true);
+        
+	var b = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(b,1,true);
+	
+        var fractionC = fractionB.divide(fractionA);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is making string people. ' + '' );   
+
+        this.setAnswer('' + fractionC.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_9',5.2309,'5.nf.b.7.c','');
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_10',5.2310,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__10 = new Class(
