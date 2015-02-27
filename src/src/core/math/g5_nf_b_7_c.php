@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_10',5.2310,'5.nf.b.7.c','');
+*/
+var i_5_nf_b_7_c__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,575,50,320,75,100,50,670,100);
+
+        this.mType = '5.nf.b.7.c_10';
+        this.ns = new NameSampler();
+
+	var a = Math.floor(Math.random()*8+2);
+        var fractionA = new Fraction(1,a,true);
+        
+	var b = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(b,1,true);
+	
+        var fractionC = fractionB.divide(fractionA);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is making snacks for the ' + this.ns.mPlayedActivityOne + ' club. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' is making ' + fractionA.getString() + ' pound bags of ' + this.ns.mFruitOne + ' for each snack. If ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' has ' + fractionB.getString() + ' pounds of ' + this.ns.mFruitOne + ' then how many ' + fractionA.getString() + ' pound bags of ' + this.ns.mFruitOne + ' can ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make?');   
+
+        this.setAnswer('' + fractionC.getString(),0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_9',5.2309,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__9 = new Class(
@@ -7,7 +34,6 @@ var i_5_nf_b_7_c__9 = new Class(
 Extends: TextItemFraction,
 initialize: function(sheet)
 {
-	//this.parent(sheet,575,50,320,75,100,50,670,100);
        	this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.b.7.c_9';
