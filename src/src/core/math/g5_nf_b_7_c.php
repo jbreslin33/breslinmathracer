@@ -4,26 +4,25 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_7_c__9 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 initialize: function(sheet)
 {
-this.parent(sheet,575,50,320,75,100,50,670,100);
+	//this.parent(sheet,575,50,320,75,100,50,670,100);
+       	this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.b.7.c_9';
         this.ns = new NameSampler();
 
 	var a = Math.floor(Math.random()*8+2);
-        var fractionA = new Fraction(1,a,true);
+        var fractionA = new Fraction(a,1,true);
         
 	var b = Math.floor(Math.random()*8+2);
-        var fractionB = new Fraction(1,b,true);
+        var fractionB = new Fraction(b,1,true);
 	
-	var c = Math.floor(Math.random()*8+2);
-        var fractionC = new Fraction(c,1,true);
+        var fractionC = fractionA.multiply(fractionB);
+        var fractionD = new Fraction(1,fractionC.mNumerator,true);
 
-        fractionD = fractionC.divide(fractionA);
-
-        this.setQuestion('' + this.ns.mNameOne + ' uses ' + fractionA.getString() + ' of a pound of ' + this.ns.mFruitOne + ' and ' + fractionB.getString() + ' of a pound of ' + this.ns.mDrinkOne + ' to make one of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' smoothies. How many smoothies can ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make with ' + fractionC.getString() + ' pounds of ' + this.ns.mFruitOne + '?');   
+        this.setQuestion('' + this.ns.mNameOne + ' belongs to a soccer club. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' soccer club has ' + fractionA.getString() + ' rows of equal sized fields with ' + fractionB.getString() + ' fields in each row. ' + this.ns.mNameOne + ' is practicing ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' righteous left footed benders on one of the fields. What fraction of all the fields is the field ' + this.ns.mNameOne + ' is on?');   
 
         this.setAnswer('' + fractionD.getString(),0);
 }
