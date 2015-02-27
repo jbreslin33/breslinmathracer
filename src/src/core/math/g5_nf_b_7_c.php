@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_12',5.2312,'5.nf.b.7.c','');
+*/
+var i_5_nf_b_7_c__12 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+
+        this.mType = '5.nf.b.7.c_12';
+        this.ns = new NameSampler();
+
+        var fractionA = new Fraction(1,10,true);
+
+        var b = Math.floor(Math.random()*8+2);
+        var fractionB = new Fraction(b,1,true);
+
+        var fractionC = fractionA.divide(fractionB);
+
+        this.setQuestion('' + 'A centiliter is equal to ' + fractionA.getString() + ' of a deciliter. How many centiliters are in ' + fractionB.getString() + ' deciliters?');
+
+        this.setAnswer('' + fractionC.getString(),0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.c_11',5.2311,'5.nf.b.7.c','');
 */
 var i_5_nf_b_7_c__11 = new Class(
