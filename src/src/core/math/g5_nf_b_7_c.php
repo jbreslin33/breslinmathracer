@@ -4,10 +4,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_7_c__11 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 initialize: function(sheet)
 {
-	this.parent(sheet,575,50,320,75,100,50,670,100);
+       	this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.b.7.c_11';
         this.ns = new NameSampler();
@@ -15,12 +15,11 @@ initialize: function(sheet)
 	var a = Math.floor(Math.random()*8+2);
         var fractionA = new Fraction(1,a,true);
         
-	var b = Math.floor(Math.random()*8+2);
-        var fractionB = new Fraction(b,1,true);
+        var fractionB = new Fraction(2,1,true);
 	
-        var fractionC = fractionB.divide(fractionA);
+        var fractionC = fractionA.divide(fractionB);
 
-        this.setQuestion('' + this.ns.mNameOne + ' is making string people. ' + '' );   
+        this.setQuestion('' + this.ns.mNameOne + ' is making a string person. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameTwo,1,0) + ' names it ' + ' ' + this.ns.mNameTwo + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' has ' + fractionA.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' of ' + this.ns.mRopeOne + ' to use for the legs of the string person. So ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' divides the ' + this.ns.mRopeOne + ' into 2 pieces and uses 1 piece for each leg. How long in ' + this.ns.mDistanceIncrementMedium + ' is one of the legs of the string person?');   
 
         this.setAnswer('' + fractionC.getString(),0);
 }
