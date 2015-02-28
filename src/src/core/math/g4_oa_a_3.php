@@ -12,8 +12,8 @@ initialize: function(sheet)
         this.mType = '4.oa.a.3_8';
         this.ns = new NameSampler();
 
-        var a = Math.floor(Math.random()*8+2);
-        var b = Math.floor(Math.random()*8+2);
+        var a = Math.floor(Math.random()*8+20);
+        var b = Math.floor(Math.random()*2+3);
         var c = Math.floor(Math.random()*8+2);
         var d = parseInt(a * b);
         var e = parseInt(d + c);
