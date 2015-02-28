@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_8',4.0308,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.a.3_8';
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 1;
+
+	while(f != 0)
+	{
+        	a = Math.floor(Math.random()*8+2);
+        	b = Math.floor(Math.random()*8+2);
+        	c = Math.floor(Math.random()*8+2);
+        	d = parseInt(a * b);
+        	e = parseInt(d / c);
+        	f = parseInt(d % c);
+	}
+
+        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' packs of doggie treats. Each pack comes with ' + b + ' treats. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to give an equal amount of treats to ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + c + ' dogs. How many treats should ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' give to each of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' dogs?');
+        this.setAnswer('' + e,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_7',4.0307,'4.oa.a.3','');
 */
 var i_4_oa_a_3__7 = new Class(
