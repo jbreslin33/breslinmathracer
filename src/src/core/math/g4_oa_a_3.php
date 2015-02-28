@@ -12,24 +12,14 @@ initialize: function(sheet)
         this.mType = '4.oa.a.3_8';
         this.ns = new NameSampler();
 
-	var a = 0;
-	var b = 0;
-	var c = 0;
-	var d = 0;
-	var e = 0;
-	var f = 1;
+        var a = Math.floor(Math.random()*8+2);
+        var b = Math.floor(Math.random()*8+2);
+        var c = Math.floor(Math.random()*8+2);
+        var d = parseInt(a * b);
+        var e = parseInt(d + c);
 
-	while(f != 0)
-	{
-        	a = Math.floor(Math.random()*8+2);
-        	b = Math.floor(Math.random()*8+2);
-        	c = Math.floor(Math.random()*8+2);
-        	d = parseInt(a * b);
-        	e = parseInt(d / c);
-        	f = parseInt(d % c);
-	}
+        this.setQuestion('' + this.ns.mNameOne + ' plays ' + this.ns.mPlayedActivityOne + ' for ' + a + ' minutes ' + b + ' nights a week. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' also plays ' + this.ns.mPlayedActivityOne + ' for ' + c + ' minutes on Sunday morning. How many minutes does ' + this.ns.mNameOne + ' play ' + this.ns.mPlayedActivityOne + ' a week?');
 
-        this.setQuestion('' + this.ns.mNameOne + ' bought ' + a + ' packs of doggie treats. Each pack comes with ' + b + ' treats. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to give an equal amount of treats to ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + c + ' dogs. How many treats should ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' give to each of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' dogs?');
         this.setAnswer('' + e,0);
 }
 });
