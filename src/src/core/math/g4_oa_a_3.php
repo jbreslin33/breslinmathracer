@@ -1,3 +1,26 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_11',4.0311,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.a.3_11';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*20+10);
+        var b = parseInt(a * 2);
+
+        var d = parseInt(a + b);
+
+        this.setQuestion('' + this.ns.mNameOne + ' plays ' + a + ' games of ' + this.mPlayedActivityOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wins half of them and loses the other half. ' + b + ' of the games ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wins are against ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + '. How many games did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' win that were not against ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + '?');
+
+        this.setAnswer('' + b,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_10',4.0310,'4.oa.a.3','');
