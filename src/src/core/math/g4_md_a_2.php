@@ -77,7 +77,8 @@ Extends: TextItem,
 
                 this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + parseInt(a - 1) + ' friends chip in equally for a video game. The game costs $' + d + '.' + g + ' but there is also an in game purchase they make that costs $' + f + '.' + h + '. How much will they each pay?');
 
-                this.setAnswer('$' + b,0);
+                this.setAnswer('' + b,0);
+                this.setAnswer('$' + b,1);
         }
 });
 
