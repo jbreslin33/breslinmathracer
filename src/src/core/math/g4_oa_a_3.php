@@ -1,3 +1,28 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_10',4.0310,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.a.3_10';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*20+10);
+	var b = parseInt(a * 2);
+	
+        var d = parseInt(a + b);
+
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' play ' + this.ns.mVideoGameOne + '. They score a combined total of ' + d + ' points. If ' + this.ns.mNameOne + ' scores twice as much as ' + this.ns.mNameTwo + ' then how many points did ' + this.ns.mNameOne + ' score?');
+
+        this.setAnswer('' + b,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_9',4.0309,'4.oa.a.3','');
 */
