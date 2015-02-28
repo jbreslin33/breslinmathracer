@@ -1,3 +1,35 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_9',4.0309,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.a.3_9';
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 13;
+	var d = 12;
+	var e = 0;
+	while (c % d !=0)
+	{
+        	a = Math.floor(Math.random()*12+8);
+        	b = Math.floor(Math.random()*8+2);
+        	c = parseInt(a * b);
+        	d = Math.floor(Math.random()*8+2);
+		e = parseInt(c / d);
+	}
+
+        this.setQuestion('' + this.ns.mNameOne + ' is getting ready for a party so ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + a + ' plates with ' + b + ' pieces of candy on each plate. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then finds out that there will only be ' + d + ' people at the party so ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' now only needs ' + d + ' plates. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' divides up the candy evenly to the new amount of plates then how many pieces of candy will be on each plate?'    );
+
+        this.setAnswer('' + e,0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_8',4.0308,'4.oa.a.3','');
