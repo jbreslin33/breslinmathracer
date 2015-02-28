@@ -841,12 +841,16 @@ initialize: function(sheet)
         this.mType = '5.nbt.a.3.a_4';
 
         var n =  Math.floor((Math.random()*90)+10);
+	var nA = '0.0' + '' + n; 
+	var nB = parseFloat(nA);
+	var nC = new Decimal(nB);
+
         var d = 1000;
 
         var fraction = new Fraction(n,d);
 
         this.setQuestion('Write in decimal form. Do not simplify: ' + fraction.getString());
-        this.setAnswer('0.0' + n,0);
+        this.setAnswer('' + nC.getString(),0);
 }
 });
 
