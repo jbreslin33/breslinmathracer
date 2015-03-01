@@ -28,7 +28,7 @@ initialize: function(sheet)
                 e = parseInt(a + b + c + d);
                 f = parseInt(e / 8);
         }
-        this.setQuestion('The class that ' + this.ns.mNameOne + ' is in is having a pizza party. The are ' + a + ' girls and ' + b + ' boys in the class. There will also be ' + c + ' parents and ' + d + ' teachers at the party. Each pizza has 8 slices. How many pizzas should they order so that everyone will have 1 slice.');
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to put them in rows. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants each row to have the same amount of ' + this.ns.mThingOne + '. How many different ways can ' + this.ns.mNameOne + ' arrange ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mThingOne + ' while still making sure that all the rows have an equal amount of ' + this.ns.mThingOne + '?');
         this.setAnswer('' + f,0);
 }
 });
