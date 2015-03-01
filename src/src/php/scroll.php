@@ -76,7 +76,6 @@ function __construct()
 
 public function setScroll($scoreField)
 {
-
 	$place_array = array();
 	$id_array = array();
 	$first_name_array = array();
@@ -84,35 +83,11 @@ public function setScroll($scoreField)
 	$score_array = array();
 
 	$query = "";
-	if (isset($_SESSION["core_standards_id"]))	
-	{
-/*
-		if ($_SESSION["core_standards_id"] == '3.oa.c.7')
-		{
-			$query .= "select id, first_name, last_name, ";
-			$query .= $scoreField;
-			$query .= " from users where core_standards_id = '3.oa.c.7' order by ";
-			$query .= $scoreField;
-			$query .= " desc;";
-		}
-		if ($_SESSION["core_standards_id"] == '5.oa.a.1')
-		{
-			$query .= "select id, first_name, last_name, ";
-			$query .= $scoreField;
-			$query .= " from users where core_standards_id = '5.oa.a.1' order by ";
-			$query .= $scoreField;
-			$query .= " desc;";
-		}
-*/
-//	}
-//	else
-//	{
-		$query .= "select id, first_name, last_name, ";
-		$query .= $scoreField;
-		$query .= " from users order by ";
-		$query .= $scoreField;
-		$query .= " desc;";
-	}
+	$query .= "select id, first_name, last_name, ";
+	$query .= $scoreField;
+	$query .= " from users order by ";
+	$query .= $scoreField;
+	$query .= " desc;";
 
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
        	$numberOfResults = pg_num_rows($result);
