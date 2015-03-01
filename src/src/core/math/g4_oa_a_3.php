@@ -34,7 +34,7 @@ initialize: function(sheet)
 		h = parseInt(f % e);
 	}
 
-        this.setQuestion('' + 'There are ' + a + ' girls and ' + b + ' boys from ' + this.ns.mSchoolOne + '. There are ' + c + ' girls and ' + d + ' boys from ' + this.ns.mSchoolTwo + '. ' + this.ns.mNameOne + ' has the job of making ' + e + ' ' + this.ns.mPlayesActivityOne + ' teams of equal size out of all the students. How many students will be on each team?');
+        this.setQuestion('' + 'There are ' + a + ' girls and ' + b + ' boys from ' + this.ns.mSchoolOne + '. There are ' + c + ' girls and ' + d + ' boys from ' + this.ns.mSchoolTwo + '. ' + this.ns.mNameOne + ' has the job of making ' + e + ' ' + this.ns.mPlayedActivityOne + ' teams of equal size out of all the students. How many students will be on each team?');
 
         this.setAnswer('' + g,0);
 }
