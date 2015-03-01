@@ -8,7 +8,7 @@ function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 
-	$this->setScroll('score');
+	//$this->setScroll('score');
 
 	if (!isset($_SESSION["ref_id"]))
 	{
