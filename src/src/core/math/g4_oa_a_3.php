@@ -1,5 +1,46 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_12',4.0312,'4.oa.a.3','');
+*/
+var i_4_oa_a_3__12 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.a.3_12';
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var g = 0;
+	var h = 1;
+
+	while (h != 0)
+	{
+        	a = Math.floor(Math.random()*20+10);
+        	b = Math.floor(Math.random()*20+10);
+        	c = Math.floor(Math.random()*20+10);
+        	d = Math.floor(Math.random()*20+10);
+
+        	e = Math.floor(Math.random()*8+2);
+        	f = parseInt(a + b + c + d);
+        	g = parseInt(f / e);
+		h = parseInt(f % e);
+	}
+
+        this.setQuestion('' + 'There are ' + a + ' girls and ' + b + ' boys from ' + this.ns.mSchoolOne + '. There are ' + c + ' girls and ' + d + ' boys from ' + this.ns.mSchoolTwo + '. ' + this.ns.mNameOne + ' has the job of making ' + e + ' ' + this.ns.mPlayesActivityOne + ' teams of equal size out of all the students. How many students will be on each team?');
+
+        this.setAnswer('' + g,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_11',4.0311,'4.oa.a.3','');
 */
 var i_4_oa_a_3__11 = new Class(
