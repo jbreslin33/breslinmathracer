@@ -11,26 +11,19 @@ initialize: function(sheet)
 
         this.mType = '4.oa.b.4_11';
         this.ns = new NameSampler();
+	this.mUtility = new Utility();
 
-        var a = Math.floor(Math.random()*8+3);
-        var b = Math.floor(Math.random()*8+3);
-        var multiples  = '';
+	var a = 0;
+	var b = 0;
+	while(a == b)
+	{
+        	a = Math.floor(Math.random()*8+3);
+        	b = Math.floor(Math.random()*8+3);
+	}
+	var c = this.mUtility.lcm(a,b); 
 
-        for (var i = 1; i < 7; i++)
-        {
-                if (multiples.length == 0)  //first one no comma
-                {
-                        multiples = multiples + '' + a;
-                }
-                else
-                {
-                        var nextMultiple = parseInt(a * i);
-                        multiples = multiples + ',' + nextMultiple;
-                }
-        }
-
-        this.setQuestion('' + this.ns.mNameOne + ' is watching some little kids. To keep their attention he starts a new game of ' + this.ns.mPlayedActivityOne + ' every ' + a + ' minutes and a new game of ' + this.ns.mPlayedActivityTwo + ' every ' + b + ' minutes.');
-        this.setAnswer('' + multiples,0);
+        this.setQuestion('' + this.ns.mNameOne + ' is watching some little kids. To keep their attention he starts a new game of ' + this.ns.mPlayedActivityOne + ' every ' + a + ' minutes and a new game of ' + this.ns.mPlayedActivityTwo + ' every ' + b + ' minutes. At exactly 2 P.M. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' started both games. How many minutes will go by till ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' starts both games at the same time again?');
+        this.setAnswer('' + c,0);
 }
 });
 
