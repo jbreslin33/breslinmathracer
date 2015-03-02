@@ -29,7 +29,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('At a vegetable stand ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag.');
+        this.setQuestion('At a vegetable stand ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the ');
         this.setAnswer('' + multiples,0);
 
 
