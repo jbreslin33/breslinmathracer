@@ -19,22 +19,11 @@ initialize: function(sheet)
         var multiples  = '';
 	
 	var c = this.mUtility.lcm(a,b); 
+	var d = parseInt(c / a);
+	var e = parseInt(c / b);
 
-        for (var i = 1; i < 5; i++)
-        {
-                if (multiples.length == 0)  //first one no comma
-                {
-                        multiples = multiples + '' + a;
-                }
-                else
-                {
-                        var nextMultiple = parseInt(a * i);
-                        multiples = multiples + ',' + nextMultiple;
-                }
-        }
-
-        this.setQuestion('' + this.ns.mNameOne + ' is at a vegetable stand. The ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and the ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the least amount of bags of ' + this.ns.mVegetableOne + ' ' + this.ns.mNameOne + ' can buy so that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will end up with the same amount of each vegetable.');
-        this.setAnswer('' + c,0);
+        this.setQuestion('' + this.ns.mNameOne + ' is at a vegetable stand. The ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and the ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the least amount of bags of ' + this.ns.mVegetableOne + ' and ' + this.ns.mVegetableTwo + ' ' +  this.ns.mNameOne + ' can buy so that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will end up with the same amount of each vegetable. Put your answer in to form: x,y where x is the bags of ' + this.ns.mVegetableOne + ' and y is the bags of ' + this.ns.mVegetableTwo + '.');
+        this.setAnswer('' + d + ',' + e,0);
 
 
 }
