@@ -1,4 +1,38 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_10',4.0410,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_10';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*8+3);
+        var multiples  = '';
+
+        for (var i = 1; i < 7; i++)
+        {
+                if (multiples.length == 0)  //first one no comma
+                {
+                        multiples = multiples + '' + a;
+                }
+                else
+                {
+                        var nextMultiple = parseInt(a * i);
+                        multiples = multiples + ',' + nextMultiple;
+                }
+        }
+
+        this.setQuestion('Write the first 6 multiples of ' + a + ' seperated by commas. For example the first 6 multiples of 2 would be written: 2,4,6,8,10,12');
+        this.setAnswer('' + multiples,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_9',4.0409,'4.oa.b.4','');
 */
 var i_4_oa_b_4__9 = new Class(
@@ -14,7 +48,6 @@ initialize: function(sheet)
         this.setAnswer('' + 'false',0);
 }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_8',4.0408,'4.oa.b.4','');
@@ -127,8 +160,6 @@ initialize: function(sheet)
 
         this.setQuestion('' + this.ns.mNameOne + ' made up a game. After each round ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' gets ' + a + ' points. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' keeps track of the score by writing the total score after each round seperated by a comma. What would that look like after 4 rounds? For example if each round was worth 2 points it would look like this: 2,4,6,8');
         this.setAnswer('' + multiples,0);
-
-
 }
 });
 
