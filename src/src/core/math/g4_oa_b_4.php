@@ -11,10 +11,14 @@ initialize: function(sheet)
 
         this.mType = '4.oa.b.4_5';
         this.ns = new NameSampler();
+	this.mUtility = new Utility();
+	
 
         var a = Math.floor(Math.random()*9+2);
         var b = Math.floor(Math.random()*9+2);
         var multiples  = '';
+	
+	var c = this.mUtility.lcm(a,b); 
 
         for (var i = 1; i < 5; i++)
         {
@@ -30,7 +34,7 @@ initialize: function(sheet)
         }
 
         this.setQuestion('' + this.ns.mNameOne + ' is at a vegetable stand. The ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and the ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the least amount of bags of ' + this.ns.mVegetableOne + ' ' + this.ns.mNameOne + ' can buy so that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will end up with the same amount of each vegetable.');
-        this.setAnswer('' + multiples,0);
+        this.setAnswer('' + c,0);
 
 
 }

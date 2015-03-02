@@ -6,6 +6,29 @@ initialize: function()
       
 },
 
+gcf: function(a, b)
+{ 
+	return ( b == 0 ) ? (a):( this.gcf(b, a % b) ); 
+},
+
+lcm: function(a, b)
+{ 
+	return ( a / this.gcf(a,b) ) * b; 
+},
+
+lcm_nums: function(ar)
+{
+	if (ar.length > 1)
+	{
+		ar.push( this.lcm( ar.shift() , ar.shift() ) );
+		return this.lcm_nums( ar );
+	}
+	else
+	{
+		return ar[0];
+	}
+},
+
 stripTrailingZeroes: function(s)
 {
 	if (parseInt(s) == 0)
