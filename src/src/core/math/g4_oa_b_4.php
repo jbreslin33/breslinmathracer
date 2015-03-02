@@ -1,5 +1,42 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_5',4.0405,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_5';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*9+2);
+        var b = Math.floor(Math.random()*9+2);
+        var multiples  = '';
+
+        for (var i = 1; i < 5; i++)
+        {
+                if (multiples.length == 0)  //first one no comma
+                {
+                        multiples = multiples + '' + a;
+                }
+                else
+                {
+                        var nextMultiple = parseInt(a * i);
+                        multiples = multiples + ',' + nextMultiple;
+                }
+        }
+
+        this.setQuestion('At a vegetable stand ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag.');
+        this.setAnswer('' + multiples,0);
+
+
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_4',4.0404,'4.oa.b.4','');
 */
 var i_4_oa_b_4__4 = new Class(
