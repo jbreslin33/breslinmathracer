@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_4',4.0404,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__4 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_4';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*8+3);
+        var multiples  = '';
+
+        for (var i = 1; i < 5; i++)
+        {
+		if (multiples.length == 0)  //first one no comma
+              	{
+                        multiples = multiples + '' + a;
+                }
+                else
+                {
+			var nextMultiple = parseInt(a * i);
+                	multiples = multiples + ',' + nextMultiple;
+                }
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' made up a game. After each round ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' gets ' + a + ' points. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' keeps track of the score by writing the total score after each round seperated by a comma. What would that look like after 4 rounds? For example if each round was worth 2 points it would look like this: 2,4,6,8');
+        this.setAnswer('' + multiples,0);
+
+
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_3',4.0403,'4.oa.b.4','');
 */
 var i_4_oa_b_4__3 = new Class(
