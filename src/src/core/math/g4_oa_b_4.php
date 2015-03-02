@@ -1,5 +1,59 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_13',4.0413,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__13 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_13';
+      	this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 0;
+        while(a <= b || a % b != 0)
+        {
+                a = Math.floor(Math.random()*91+10);
+                b = Math.floor(Math.random()*8+3);
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' uses ' + this.ns.mFruitOne + ' to make ' + a + ' milliliters of smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to put them in ' + b + ' milliliter cups so ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friends can sample them. Can ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' fill each cup to the top without having any smoothie left over? Answer yes or no.'   );
+
+        this.setAnswer('' + 'yes',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_12',4.0412,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__12 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_12';
+        this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 0;
+        while(a <= b || a % b == 0)
+        {
+                a = Math.floor(Math.random()*91+10);
+                b = Math.floor(Math.random()*8+3);
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' uses ' + this.ns.mFruitOne + ' to make ' + a + ' milliliters of smoothies. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to put them in ' + b + ' milliliter cups so ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friends can sample them. Can ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' fill each cup to the top without having any smoothie left over? Answer yes or no.'   );
+
+        this.setAnswer('' + 'no',0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_11',4.0411,'4.oa.b.4','');
 */
 var i_4_oa_b_4__11 = new Class(
