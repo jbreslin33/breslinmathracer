@@ -29,7 +29,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('At a vegetable stand ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the ');
+        this.setQuestion('' + this.ns.mNameOne + ' is at a vegetable stand. The ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and the ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the least amount of bags of ' + this.ns.mVegetableOne + ' ' + this.ns.mNameOne + ' can buy so that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will end up with the same amount of each vegetable.');
         this.setAnswer('' + multiples,0);
 
 
