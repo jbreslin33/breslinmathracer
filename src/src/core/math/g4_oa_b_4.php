@@ -1,3 +1,43 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_3',4.0403,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__3 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_3';
+        this.ns = new NameSampler();
+    
+	var a = Math.floor(Math.random()*100+1);
+        var count = 0;
+	var answer = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        count++;
+                }
+        }
+
+	if (count < 3)
+	{
+		answer = 'prime';
+	}
+	else
+	{
+		answer = 'composite';
+	}
+
+        this.setQuestion('' + 'Is the number ' + a + ' prime or composite?');
+        this.setAnswer('' + answer,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_2',4.0402,'4.oa.b.4','');
 */
@@ -9,7 +49,6 @@ initialize: function(sheet)
         this.parent(sheet,450,200,255,145,100,50,580,100);
 
         this.mType = '4.oa.b.4_2';
-        this.ns = new NameSampler();
 
         var a = Math.floor(Math.random()*100+1);
         var factors  = '';
