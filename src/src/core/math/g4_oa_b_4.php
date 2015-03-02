@@ -1,5 +1,40 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_7',4.0407,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_7';
+
+        this.setQuestion('' + 'Write true or false. All prime numbers are even.')
+        this.setAnswer('' + 'false',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_6',4.0406,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_6';
+
+	this.setQuestion('' + 'Write true or false. All prime numbers are odd.')
+        this.setAnswer('' + 'true',0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_5',4.0405,'4.oa.b.4','');
 */
 var i_4_oa_b_4__5 = new Class(
@@ -24,8 +59,6 @@ initialize: function(sheet)
 
         this.setQuestion('' + this.ns.mNameOne + ' is at a vegetable stand. The ' + this.ns.mVegetableOne + ' are sold ' + a + ' to a bag and the ' + this.ns.mVegetableTwo + ' are sold ' + b + ' to a bag. What is the least amount of bags of ' + this.ns.mVegetableOne + ' and ' + this.ns.mVegetableTwo + ' ' +  this.ns.mNameOne + ' can buy so that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will end up with the same amount of each vegetable. Put your answer in to form: x,y where x is the bags of ' + this.ns.mVegetableOne + ' and y is the bags of ' + this.ns.mVegetableTwo + '.');
         this.setAnswer('' + d + ',' + e,0);
-
-
 }
 });
 
