@@ -1,3 +1,37 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_9',4.0409,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_9';
+
+        this.setQuestion('' + 'Write true or false. All composite numbers are even.')
+        this.setAnswer('' + 'false',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_8',4.0408,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.b.4_8';
+
+        this.setQuestion('' + 'Write true or false. All composite numbers are odd.')
+        this.setAnswer('' + 'false',0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_7',4.0407,'4.oa.b.4','');
