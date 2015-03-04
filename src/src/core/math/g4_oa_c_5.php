@@ -22,7 +22,7 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	if (this.a == 1)
+	if (this.a == 1) //answer 4 
 	{
 		//1
 		var boxOneA      = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
@@ -57,7 +57,7 @@ createQuestionShapes: function()
 		this.addQuestionShape(boxThreeC);
 		this.addQuestionShape(boxThreeLabel);
 	}
-	if (this.a == 2)
+	if (this.a == 2) //answer 8
 	{
                //1
                 var boxOneA      = new Rectangle(25,25,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
@@ -67,16 +67,21 @@ createQuestionShapes: function()
                 boxOneLabel.setText('1st');
 
                 //2
-                var boxTwoA = new Rectangle(50,50,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-                var boxTwoB = new Rectangle(50,50,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxTwoA = new Rectangle(25,25,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxTwoB = new Rectangle(25,25,135,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxTwoC = new Rectangle(25,25,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxTwoD = new Rectangle(25,25,185,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
                 boxTwoLabel = new Shape(100,50,200,340,this.mSheet.mGame,"","","");
                 boxTwoLabel.setText('2nd');
 
                 //3
-                var boxThreeA = new Rectangle(50,50,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-                var boxThreeB = new Rectangle(50,50,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-                var boxThreeC = new Rectangle(50,50,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeA = new Rectangle(25,25,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeB = new Rectangle(25,25,285,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeC = new Rectangle(25,25,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeD = new Rectangle(25,25,335,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeE = new Rectangle(25,25,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeF = new Rectangle(25,25,385,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
                 boxThreeLabel = new Shape(100,50,380,340,this.mSheet.mGame,"","","");
                 boxThreeLabel.setText('3rd');
@@ -87,11 +92,16 @@ createQuestionShapes: function()
 
                 this.addQuestionShape(boxTwoA);
                 this.addQuestionShape(boxTwoB);
+                this.addQuestionShape(boxTwoC);
+                this.addQuestionShape(boxTwoD);
                 this.addQuestionShape(boxTwoLabel);
 
                 this.addQuestionShape(boxThreeA);
                 this.addQuestionShape(boxThreeB);
                 this.addQuestionShape(boxThreeC);
+                this.addQuestionShape(boxThreeD);
+                this.addQuestionShape(boxThreeE);
+                this.addQuestionShape(boxThreeF);
                 this.addQuestionShape(boxThreeLabel);
 	}
 	if (this.a == 3)
