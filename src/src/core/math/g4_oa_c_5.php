@@ -11,28 +11,22 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_2';
         this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,150,300,350);
 
         var a = Math.floor(Math.random()*8+3);
-        var b = Math.floor(Math.random()*8+3);
-        var answer  = '';
-        var total = a;
 
-        for (var i = 1; i < 7; i++)
-        {
-                if (answer.length == 0)  //first one no comma
-                {
-                        total = parseInt(b + total);
-                        answer = '' + total;
-                }
-                else
-                {
-                        total = parseInt(total + b);
-                        answer = '' + answer + ',' + total;
-                }
-        }
+        this.setQuestion('' + this.ns.mNameOne + ' makes. ');
+        this.setAnswer('' + 'g',0);
+},
 
-        this.setQuestion('' + this.ns.mNameOne + ' wants to save money for ' + this.ns.mPurchaseOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' already has $' + a + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' plans to add $' + b + ' per week to that total. Write ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' weekly totals for the first 6 weeks seperated by commas. For example: 2,4,6,8,10,12');
-        this.setAnswer('' + answer,0);
+createQuestionShapes: function()
+{
+	var boxOne = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxTwo = new Rectangle(50,50,60,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        //box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#444444", "stroke-width": 2});
+
+       	this.addQuestionShape(boxOne);
+       	this.addQuestionShape(boxTwo);
 }
 });
 
