@@ -11,7 +11,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_2';
         this.ns = new NameSampler();
-        this.mRaphael = Raphael(10,150,300,350);
+        this.mRaphael = Raphael(10,150,450,350);
 
         var a = Math.floor(Math.random()*8+3);
 
@@ -21,12 +21,25 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
+	//1
 	var boxOne = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-	var boxTwo = new Rectangle(50,50,60,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+	//2
+	var boxTwo = new Rectangle(50,50,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+	var boxThree = new Rectangle(50,50,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+	//3	
+	var boxFour = new Rectangle(50,50,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxFive = new Rectangle(50,50,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxSix = new Rectangle(50,50,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
         //box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#444444", "stroke-width": 2});
 
        	this.addQuestionShape(boxOne);
+
        	this.addQuestionShape(boxTwo);
+       	this.addQuestionShape(boxThree);
 }
 });
 
