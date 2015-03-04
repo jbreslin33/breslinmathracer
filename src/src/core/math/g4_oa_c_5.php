@@ -22,24 +22,29 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 	//1
-	var boxOne = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxOneA      = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+ 	boxOneLabel = new Shape(100,50,80,340,this.mSheet.mGame,"","","");
+	boxOneLabel.setText('1st');
 
 	//2
-	var boxTwo = new Rectangle(50,50,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-
-	var boxThree = new Rectangle(50,50,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxTwoA = new Rectangle(50,50,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxTwoB = new Rectangle(50,50,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
 	//3	
-	var boxFour = new Rectangle(50,50,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-	var boxFive = new Rectangle(50,50,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-	var boxSix = new Rectangle(50,50,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxThreeA = new Rectangle(50,50,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxThreeB = new Rectangle(50,50,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var boxThreeC = new Rectangle(50,50,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
-        //box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#444444", "stroke-width": 2});
+       	this.addQuestionShape(boxOneA);
+	this.addQuestionShape(boxOneLabel);
 
-       	this.addQuestionShape(boxOne);
-
-       	this.addQuestionShape(boxTwo);
-       	this.addQuestionShape(boxThree);
+       	this.addQuestionShape(boxTwoA);
+       	this.addQuestionShape(boxTwoB);
+       	
+	this.addQuestionShape(boxThreeA);
+	this.addQuestionShape(boxThreeB);
+	this.addQuestionShape(boxThreeC);
 }
 });
 
