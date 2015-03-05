@@ -14,9 +14,8 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,450,350);
 
         this.a = Math.floor(Math.random()*3+1);
-	this.a = 5;
 
-        this.setQuestion('' + this.ns.mNameOne + ' makes sets 3 sets of squares. According to to pattern if ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes a 4th set how many squares will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make?');
+        this.setQuestion('' + this.ns.mNameOne + ' makes 3 sets of squares. According to to pattern if ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes a 4th set how many squares will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make?');
         this.setAnswer('' + this.a,0);
 },
 
@@ -24,6 +23,7 @@ createQuestionShapes: function()
 {
 	if (this.a == 1) // start 1 add 1 answer 4 
 	{
+		this.setAnswer('' + '4',0);  
 		//1
 		var boxOneA      = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
@@ -59,6 +59,7 @@ createQuestionShapes: function()
 	}
 	if (this.a == 2) //start 1 add 2 answer 7 
 	{
+		this.setAnswer('' + '7',0);  
                //1
                 var boxOneA      = new Rectangle(25,25,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
@@ -100,6 +101,7 @@ createQuestionShapes: function()
 	}
 	if (this.a == 3) //start 1 add 3 answer 10
 	{
+		this.setAnswer('' + '10',0);  
                	//1
                 var boxOneA      = new Rectangle(25,25,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
@@ -148,6 +150,7 @@ createQuestionShapes: function()
        
 	if (this.a == 4) //start 1 add 4 answer 13 
         {
+		this.setAnswer('' + '13',0);  
                 //1
                 var boxOneA      = new Rectangle(25,25,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
@@ -201,6 +204,7 @@ createQuestionShapes: function()
         }
         if (this.a == 5) //start 1 add 5 answer 16
         {
+		this.setAnswer('' + '16',0);  
                 //1
                 var boxOneA      = new Rectangle(25,25,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 
