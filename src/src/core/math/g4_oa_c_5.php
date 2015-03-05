@@ -1,3 +1,41 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_3',4.0503,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__3 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_3';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*2+2);
+        var b = Math.floor(Math.random()*2+2);
+        
+	var answer  = '';
+	var last = a;
+
+        for (var i = 1; i < 5; i++)
+        {
+                if (answer.length == 0)  //first one no comma
+                {
+                        answer = '' + a;
+                }
+                else
+                {
+                        var next = parseInt(last * b);
+			answer = answer + ',' + next;   
+			last = next;
+                }
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' makes a pattern with numbers. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' begins at the number ' + a + '. The rule ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses is multiply by ' + b + '. Write the first 4 terms of the pattern seperated by commas.');
+        this.setAnswer('' + answer,0);
+}
+
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_2',4.0502,'4.oa.c.5','');
@@ -262,8 +300,6 @@ createQuestionShapes: function()
                 this.addQuestionShape(boxThreeK);
                 this.addQuestionShape(boxThreeLabel);
         }
-
-
 }
 });
 
