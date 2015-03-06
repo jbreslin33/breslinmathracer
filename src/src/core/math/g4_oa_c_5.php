@@ -62,14 +62,9 @@ initialize: function(sheet)
 			patternArray.push(x);
 		}
 	}
-
+	
 	//heading
-	this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
-	this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
-	this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
-	this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
-
-	this.mHeadingAnswerLabel.setPosition(440,100);
+	this.mHeadingAnswerLabel.setPosition(420,100);
 	this.mHeadingAnswerLabel2.setPosition(520,100);
 	this.mHeadingAnswerLabel3.setPosition(610,100);
 	this.mHeadingAnswerLabel4.setPosition(700,100);
@@ -78,7 +73,12 @@ initialize: function(sheet)
 	this.mHeadingAnswerLabel2.setSize(25,25);
 	this.mHeadingAnswerLabel3.setSize(25,25);
 	this.mHeadingAnswerLabel4.setSize(25,25);
-
+	
+	this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
+	this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
+	this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
+	this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
+	
 	//text box
 	this.mAnswerTextBox.setPosition(475,110);
 	this.mAnswerTextBox2.setPosition(568,110);
@@ -89,6 +89,8 @@ initialize: function(sheet)
 	this.mAnswerTextBox2.setSize(50,50);
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
+
+
 
 
         this.setQuestion('' + 'Use the rule add ' + b + ' to fill in the missing parts of the number pattern. Then write below whether pattern contains odd, even or mixed.');

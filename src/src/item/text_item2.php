@@ -16,15 +16,15 @@ initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
 createShapes: function()
 {
 	this.parent();
-              
-    	//answer Heading label
-        this.mHeadingAnswerLabel = new Shape(100,50,430,30,this.mSheet.mGame,"","","");
+        //answer Heading label
+        this.mHeadingAnswerLabel = new Shape(50,50,530,30,this.mSheet.mGame,"","","");
         this.addShape(this.mHeadingAnswerLabel);
         this.mHeadingAnswerLabel.mCollidable = false;
         this.mHeadingAnswerLabel.mCollisionOn = false;
         this.mHeadingAnswerLabel.setText(' ');
-	this.mHeadingAnswerLabel.setVisibility(false);
+        this.mHeadingAnswerLabel.setVisibility(false);
 
+              
       	//answer Heading2 label
         this.mHeadingAnswerLabel2 = new Shape(100,50,530,30,this.mSheet.mGame,"","","");
         this.addShape(this.mHeadingAnswerLabel2);
@@ -34,7 +34,7 @@ createShapes: function()
 	this.mHeadingAnswerLabel2.setVisibility(false);
 
       	//answer Input2
-        this.mAnswerTextBox2 = new Shape(100,50,525,100,this.mSheet.mGame,"INPUT","","");
+        this.mAnswerTextBox2 = new Shape(50,50,525,100,this.mSheet.mGame,"INPUT","","");
         this.mAnswerTextBox2.mMesh.value = '';
         if (navigator.appName == "Microsoft Internet Explorer")
         {
