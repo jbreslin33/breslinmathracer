@@ -56,6 +56,8 @@ this.mAnswerTextBox3.setSize(50,50);
 
         this.setQuestion('' + this.ns.mNameOne + ' makes a pattern with numbers. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' begins at the number ' + a + '. The rule ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses is multiply by ' + b + '. Write the first 4 terms of the pattern seperated by commas.');
         this.setAnswer('' + answer,0);
+        this.setAnswer('' + 'hello',1);
+        this.setAnswer('' + 'world',2);
 }
 
 });
