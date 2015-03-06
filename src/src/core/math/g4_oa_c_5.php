@@ -1,13 +1,14 @@
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_4',4.0504,'4.oa.c.5','add x rule and odd,even or mixed');
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_5',4.0505,'4.oa.c.5','subtract x rule and what multiple');
 */
-var i_4_oa_c_5__4 = new Class(
+var i_4_oa_c_5__5 = new Class(
 {
 Extends: TextItem4,
 initialize: function(sheet)
 {
 	this.parent(sheet,250,200,200,155,100, 50,425,100);
-        this.mType = '4.oa.c.5_4';
+        this.mType = '4.oa.c.5_5';
         
 	this.ns = new NameSampler();
 
@@ -90,15 +91,111 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
 
-
-
-
         this.setQuestion('' + 'Use the rule add ' + b + ' to fill in the missing parts of the number pattern. Then write below whether pattern contains odd, even or mixed.');
         this.setAnswer('' + patternArray[1],0);
         this.setAnswer('' + patternArray[3],1);
         this.setAnswer('' + patternArray[5],2);
 }
+});
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_4',4.0504,'4.oa.c.5','add x rule and odd,even or mixed');
+*/
+var i_4_oa_c_5__4 = new Class(
+{
+Extends: TextItem4,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,200,155,100, 50,425,100);
+        this.mType = '4.oa.c.5_4';
+        
+	this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*10+1);
+        var b = Math.floor(Math.random()*8+3);
+
+	//even odd answer
+	if (a == 1)
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'odd and even',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'odd',3);
+		} 
+	}
+	else if (a % 2 != 0)
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'odd and even',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'odd',3);
+		} 
+	}
+	else 
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'odd and even',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'even',3);
+		} 
+	}
+
+        var patternArray = new Array();
+	for (i=0; i < 7; i++)
+	{
+		if (i == 0)
+		{
+			patternArray.push(a);
+		}
+		else
+		{
+			var x = parseInt(patternArray[parseInt(i-1)] + b)
+			patternArray.push(x);
+		}
+	}
+	
+	//heading
+	this.mHeadingAnswerLabel.setPosition(420,100);
+	this.mHeadingAnswerLabel2.setPosition(520,100);
+	this.mHeadingAnswerLabel3.setPosition(610,100);
+	this.mHeadingAnswerLabel4.setPosition(700,100);
+
+	this.mHeadingAnswerLabel.setSize(25,25);
+	this.mHeadingAnswerLabel2.setSize(25,25);
+	this.mHeadingAnswerLabel3.setSize(25,25);
+	this.mHeadingAnswerLabel4.setSize(25,25);
+	
+	this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
+	this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
+	this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
+	this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
+	
+	//text box
+	this.mAnswerTextBox.setPosition(475,110);
+	this.mAnswerTextBox2.setPosition(568,110);
+	this.mAnswerTextBox3.setPosition(660,110);
+	this.mAnswerTextBox4.setPosition(122,210);
+
+	this.mAnswerTextBox.setSize(50,50);
+	this.mAnswerTextBox2.setSize(50,50);
+	this.mAnswerTextBox3.setSize(50,50);
+	this.mAnswerTextBox4.setSize(100,50);
+
+        this.setQuestion('' + 'Use the rule add ' + b + ' to fill in the missing parts of the number pattern. Then write below whether pattern contains ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'odd and even' + '</span>' + ' numbers.');
+
+        this.setAnswer('' + patternArray[1],0);
+        this.setAnswer('' + patternArray[3],1);
+        this.setAnswer('' + patternArray[5],2);
+}
 });
 
 /*
