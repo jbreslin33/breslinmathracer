@@ -106,7 +106,7 @@ var i_4_oa_c_5__4 = new Class(
 Extends: TextItem4,
 initialize: function(sheet)
 {
-	this.parent(sheet,250,200,200,155,100, 50,425,100);
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
         this.mType = '4.oa.c.5_4';
         
 	this.ns = new NameSampler();
@@ -183,14 +183,14 @@ initialize: function(sheet)
 	this.mAnswerTextBox.setPosition(475,110);
 	this.mAnswerTextBox2.setPosition(568,110);
 	this.mAnswerTextBox3.setPosition(660,110);
-	this.mAnswerTextBox4.setPosition(122,210);
+	this.mAnswerTextBox4.setPosition(122,310);
 
 	this.mAnswerTextBox.setSize(50,50);
 	this.mAnswerTextBox2.setSize(50,50);
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
 
-        this.setQuestion('' + 'Use the rule add ' + b + ' to fill in the missing parts of the number pattern. Then write below whether pattern contains ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'odd and even' + '</span>' + ' numbers.');
+        this.setQuestion('' + 'Use the rule add ' + b + ' to fill in the missing parts of the number pattern. Then write below either: ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even ' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'alternate' + '</span>' + '. With odd meaning they are all odd. Even meaning they are all even and alternate meaning they alternate between odd and even.');
 
         this.setAnswer('' + patternArray[1],0);
         this.setAnswer('' + patternArray[3],1);
