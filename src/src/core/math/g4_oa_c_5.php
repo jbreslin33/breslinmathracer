@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_4',4.0504,'4.oa.c.5','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_4',4.0504,'4.oa.c.5','add x rule and odd,even or mixed');
 */
 var i_4_oa_c_5__4 = new Class(
 {
@@ -8,12 +8,66 @@ initialize: function(sheet)
 {
 	this.parent(sheet,250,200,200,155,100, 50,425,100);
         this.mType = '4.oa.c.5_4';
+        
+	this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*10+1);
+        var b = Math.floor(Math.random()*8+3);
+
+	//even odd answer
+	if (a == 1)
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'mixed',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'odd',3);
+		} 
+	}
+	else if (a % 2 != 0)
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'mixed',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'odd',3);
+		} 
+	}
+	else 
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'mixed',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'even',3);
+		} 
+	}
+
+        var patternArray = new Array();
+	for (i=0; i < 7; i++)
+	{
+		if (i == 0)
+		{
+			patternArray.push(a);
+		}
+		else
+		{
+			var x = parseInt(patternArray[parseInt(i-1)] + b)
+			patternArray.push(x);
+		}
+	}
 
 	//heading
-	this.mHeadingAnswerLabel.setText('X');
-	this.mHeadingAnswerLabel2.setText('Y');
-	this.mHeadingAnswerLabel3.setText('Z');
-	this.mHeadingAnswerLabel4.setText('W');
+	this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
+	this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
+	this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
+	this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
 
 	this.mHeadingAnswerLabel.setPosition(580,55);
 	this.mHeadingAnswerLabel2.setPosition(640,55);
@@ -26,7 +80,7 @@ initialize: function(sheet)
 	this.mHeadingAnswerLabel4.setSize(25,25);
 
 	//text box
-	this.mAnswerTextBox.setPosition(575,110);
+	this.mAnswerTextBox.setPosition(475,110);
 	this.mAnswerTextBox2.setPosition(635,110);
 	this.mAnswerTextBox3.setPosition(695,110);
 	this.mAnswerTextBox4.setPosition(635,210);
@@ -36,32 +90,11 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
 
-        this.ns = new NameSampler();
 
-        var a = Math.floor(Math.random()*2+2);
-        var b = Math.floor(Math.random()*2+2);
-
-        var answer  = '';
-        var last = a;
-
-        for (var i = 1; i < 5; i++)
-        {
-                if (answer.length == 0)  //first one no comma
-                {
-                        answer = '' + a;
-                }
-                else
-                {
-                        var next = parseInt(last * b);
-                        answer = answer + ',' + next;
-                        last = next;
-                }
-        }
-
-        this.setQuestion('' + this.ns.mNameOne + ' makes a pattern with numbers. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' begins at the number ' + a + '. The rule ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses is multiply by ' + b + '. Write the first 4 terms of the pattern seperated by commas.');
-        this.setAnswer('' + answer,0);
-        this.setAnswer('' + 'hello',1);
-        this.setAnswer('' + 'world',2);
+        this.setQuestion('' + 'Use the rule add ' + b + ' to fill in the answer boxes.');
+        this.setAnswer('' + patternArray[1],0);
+        this.setAnswer('' + patternArray[3],1);
+        this.setAnswer('' + patternArray[5],2);
 }
 
 });
