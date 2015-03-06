@@ -1,4 +1,171 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.b.2_5',5.2505,'5.md.b.2','graphs');
+*/
+
+var i_5_md_b_2__5 = new Class(
+{
+Extends: TextItemMixedNumber,
+
+initialize: function(sheet)
+{
+    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
+
+
+        this.mType = '5.md.b.2_5';
+
+      this.ns = new NameSampler();
+
+// graph coords
+var startX = 10;
+var endX = 310;
+var startY = 10;
+var endY = 310;
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+
+var rX1 = 10;
+var rY1 = 50;
+var rX2 = 330;
+var rY2 = 350;
+
+this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+this.raphaelSizeX = rX2;
+this.raphaelSizeY = rY2;
+
+var pointsX = [];
+var pointsY = [];
+var r = 0;
+
+var a = Math.floor(Math.random()*5 + 1);
+
+  //keep track of how many dots at each x
+  var plotX = [0,0,0,0,0,0,0,0,0,0,0];
+
+  //pick random points to make plot
+  for (var i = 0; i < 12; i++) {
+
+    r = (Math.floor(Math.random()*6) + a);
+    if(r == 8)
+      r = 7;
+    pointsX[i] = r;
+    pointsY[i] = plotX[r] + 1;
+    plotX[r] = pointsY[i];
+  }
+  
+  var high = 0;
+
+  for (var j = 0; j < 12; j++) {
+    if (pointsX[j] > high)
+      high = pointsX[j];
+  }
+
+var fractionA = new Fraction(high,8);
+
+	var answer = fractionA;
+	answer.reduce();
+
+  this.setAnswer('' + answer.getMixedNumber(),0);
+
+ this.setQuestion('Twelve members of the track team ran the distances (in miles) shown in the line plot below. What is the longest distance that any one member ran?');
+
+//create line plot
+var chart = new LineChartThree (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+
+this.addQuestionShape(chart);
+
+this.mQuestionLabel.setSize(300,100);
+this.mQuestionLabel.setPosition(180,80);
+
+}
+
+});
+
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.b.2_4',5.2504,'5.md.b.2','graphs');
+*/
+
+var i_5_md_b_2__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
+
+
+        this.mType = '5.md.b.2_4';
+
+      this.ns = new NameSampler();
+
+// graph coords
+var startX = 10;
+var endX = 310;
+var startY = 10;
+var endY = 310;
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+
+var rX1 = 10;
+var rY1 = 50;
+var rX2 = 330;
+var rY2 = 350;
+
+this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+this.raphaelSizeX = rX2;
+this.raphaelSizeY = rY2;
+
+var pointsX = [];
+var pointsY = [];
+var r = 0;
+
+  //keep track of how many dots at each x
+  var plotX = [0,0,0,0,0,0,0,0,0,0,0];
+
+  //pick random points to make plot
+  for (var i = 0; i < 10; i++) {
+
+    r = (Math.floor(Math.random()*8) + 2);
+    pointsX[i] = r;
+    pointsY[i] = plotX[r] + 1;
+    plotX[r] = pointsY[i];
+  }
+  
+  var answer = 0;
+
+  for (var j = 0; j < 10; j++) {
+    if (pointsX[j] < 6)
+      answer = answer + 1;
+  }
+
+ this.setQuestion('The line plot below shows the weights (in pounds) of the bags of strawberries that ' + this.ns.mNameOne + ' sold to customers today. How many bags weighed 5/8 pounds or less?');
+
+  this.setAnswer('' + answer,0);
+
+//create line plot
+var chart = new LineChartThree (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+
+this.addQuestionShape(chart);
+
+this.mQuestionLabel.setSize(300,100);
+this.mQuestionLabel.setPosition(180,80);
+
+}
+
+});
+
+
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.b.2_3',5.2503,'5.md.b.2','graphs');
 */
 
@@ -38,9 +205,6 @@ var pointsX = [];
 var pointsY = [];
 var r = 0;
 
-//pick starting x for plot
-var a = Math.floor(Math.random()*3 + 1);
-
   //keep track of how many dots at each x
   var plotX = [0,0,0,0,0,0,0,0,0,0,0];
 
@@ -60,7 +224,7 @@ var a = Math.floor(Math.random()*3 + 1);
       answer = answer + 1;
   }
 
- this.setQuestion('The line plot below shows the weights (in pounds) of the bags of grapes that ' + this.ns.mNameOne + ' sold to customers today. How many bags weighed more than 1/2 pound?');
+ this.setQuestion('The line plot below shows the weights (in pounds) of the bags of grapes that ' + this.ns.mNameOne + ' sold to customers today. How many bags weighed more than 1/2 pounds?');
 
   this.setAnswer('' + answer,0);
 
