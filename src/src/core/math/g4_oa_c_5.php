@@ -9,19 +9,28 @@ initialize: function(sheet)
 	this.parent(sheet,450,200,125,195,100, 50,425,100);
         this.mType = '4.oa.c.5_4';
 
-/*
-this.mAnswerTextBox.setPosition(575,110);
-this.mAnswerTextBox2.setPosition(635,110);
-this.mAnswerTextBox.setSize(50,50);
-this.mAnswerTextBox2.setSize(50,50);
-
+//heading
 this.mHeadingAnswerLabel.setText('X');
 this.mHeadingAnswerLabel2.setText('Y');
+this.mHeadingAnswerLabel3.setText('Z');
+
 this.mHeadingAnswerLabel.setPosition(580,55);
 this.mHeadingAnswerLabel2.setPosition(640,55);
+this.mHeadingAnswerLabel3.setPosition(700,55);
+
 this.mHeadingAnswerLabel.setSize(25,25);
 this.mHeadingAnswerLabel2.setSize(25,25);
-*/
+this.mHeadingAnswerLabel3.setSize(25,25);
+
+//text box
+this.mAnswerTextBox.setPosition(575,110);
+this.mAnswerTextBox2.setPosition(635,110);
+this.mAnswerTextBox3.setPosition(695,110);
+
+this.mAnswerTextBox.setSize(50,50);
+this.mAnswerTextBox2.setSize(50,50);
+this.mAnswerTextBox3.setSize(50,50);
+
 
         this.ns = new NameSampler();
 
