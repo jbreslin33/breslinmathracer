@@ -4,13 +4,14 @@ TextItem: this class just is barebones question and answer box to hit enter in.
 var TextItem2 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
+        initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
         {
+        	this.parent(sheet,qw,qh,qx,qy,tw,th,tx,ty);
 
           //userAnswer2
 		this.mUserAnswer2 = '';
 
-		this.parent(sheet);
+	//	this.parent(sheet);
 	},	
  
 	createShapes: function()
