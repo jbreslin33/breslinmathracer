@@ -137,7 +137,7 @@ showCorrectAnswer: function()
 	if (this.mCorrectAnswerLabel)
 	{
         	this.mCorrectAnswerLabel.setSize(500, 100);
-	  	this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.mHeadingAnswerLabel.getText() + ' ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel3.getText() + ' ' +  this.getAnswerTwo()); 
+	  	this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.mHeadingAnswerLabel.getText() + ' ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel3.getText() + ' ' +  this.getAnswer(1) + ' ' + this.mHeadingAnswerLabel3.getText() + ' ' +  this.getAnswer(2)); 
 		this.mCorrectAnswerLabel.setVisibility(true);
 	 }
 }
