@@ -44,41 +44,8 @@ initialize: function(sheet)
 		}
 	}
 	
-	//even odd answer
-	if (a == 1)
-	{
-		if (b % 2 != 0)
-		{
-			this.setAnswer('' + 'alternate',3);
-		}
-		else
-		{
-			this.setAnswer('' + 'odd',3);
-		} 
-	}
-	else if (a % 2 != 0)
-	{
-		if (b % 2 != 0)
-		{
-			this.setAnswer('' + 'alternate',3);
-		}
-		else
-		{
-			this.setAnswer('' + 'odd',3);
-		} 
-	}
-	else 
-	{
-		if (b % 2 != 0)
-		{
-			this.setAnswer('' + 'alternate',3);
-		}
-		else
-		{
-			this.setAnswer('' + 'even',3);
-		} 
-	}
-
+	//multiple
+	this.setAnswer('' + a,3);
 	
 	//heading
 	this.mHeadingAnswerLabel.setPosition(420,100);
@@ -117,7 +84,7 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
 
-        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below either: ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even ' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'alternate' + '</span>' + '. With odd meaning they are all odd. Even meaning they are all even and alternate meaning they alternate between odd and even.');
+        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below what all the numbers in the pattern are a multiple of.');
 
 	if (this.mOperation == 'add')	
 	{
@@ -131,7 +98,17 @@ initialize: function(sheet)
         	this.setAnswer('' + patternArray[3],1);
         	this.setAnswer('' + patternArray[1],2);
 	}
+},
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setSize(500, 100);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.mHeadingAnswerLabel.getText() + ' ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' ' +  this.getAnswer(1) + ' ' + this.mHeadingAnswerLabel3.getText() + ' ' +  this.getAnswer(2) + ' ' + this.mHeadingAnswerLabel4.getText() + ' Multiple: ' +  this.getAnswer(3));
+                this.mCorrectAnswerLabel.setVisibility(true);
+         }
 }
+
 });
 
 
