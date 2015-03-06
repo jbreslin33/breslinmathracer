@@ -119,7 +119,7 @@ initialize: function(sheet)
 	{
 		if (b % 2 != 0)
 		{
-			this.setAnswer('' + 'odd and even',3);
+			this.setAnswer('' + 'alternate',3);
 		}
 		else
 		{
@@ -130,7 +130,7 @@ initialize: function(sheet)
 	{
 		if (b % 2 != 0)
 		{
-			this.setAnswer('' + 'odd and even',3);
+			this.setAnswer('' + 'alternate',3);
 		}
 		else
 		{
@@ -141,7 +141,7 @@ initialize: function(sheet)
 	{
 		if (b % 2 != 0)
 		{
-			this.setAnswer('' + 'odd and even',3);
+			this.setAnswer('' + 'alternate',3);
 		}
 		else
 		{
