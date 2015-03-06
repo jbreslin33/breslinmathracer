@@ -252,10 +252,7 @@ setVisibility: function(b)
 
 
 
-
-
-
-
+// used for 2-line chart
 var LineChartTwo = new Class(
 {
 Extends: RaphaelPolygon,
@@ -533,3 +530,56 @@ setVisibility: function(b)
                 this.mLastY = dy;
 	}
 });
+
+
+
+
+
+// used for line plot
+var LineChartThree = new Class(
+{
+Extends: RaphaelPolygon,
+        initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY1,s,d)
+        {
+	
+		this.parent(0,0,sX,sY,game,raphael,0,0,0,s,0,d);
+		
+		this.mPolygon = this.mRaphael.linechart(
+    x1, y1,      // top left anchor
+    x2, y2,    // bottom right anchor
+    [
+      pointsX,        // red line x-values
+      range    // blue line x-values - invisible, used to create x-range of graph
+    ],
+    [
+      pointsY, // red line y-values
+      range      // blue line y-values - invisible, used to create y-range of graph
+    ],
+    {
+       nostroke: true,   // lines between points are drawn
+       axis: "0 0 1 0",   // draw axes on the left and bottom
+       axisxstep: 10,
+       axisystep: 10,
+       symbol: 'circle',    // use a filled circle as the point symbol
+       smooth: true,      // curve the lines to smooth turns on the chart
+       dash: "-",          //draw the lines dashed
+       colors: [
+         "#555599",       // the first line is red       
+         "#FFFFFFFF"        // the second line is blue
+       ]
+     });
+
+     this.axisItems1 = this.mPolygon.axis[0].text.items;
+
+     var f = ['0', '1/8', '1/4', '3/8', '1/2', '5/8', '3/4', '7/8', '1', '1 1/8', '1 1/4'];
+
+     for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.axisItems1[i].attr("text", f[i]); 
+                        } 
+
+
+},
+
+});
+
+
