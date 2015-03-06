@@ -1,4 +1,86 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.b.2_3',5.2503,'5.md.b.2','graphs');
+*/
+
+var i_5_md_b_2__3 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
+
+
+        this.mType = '5.md.b.2_3';
+
+      this.ns = new NameSampler();
+
+// graph coords
+var startX = 10;
+var endX = 310;
+var startY = 10;
+var endY = 310;
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+
+var rX1 = 10;
+var rY1 = 50;
+var rX2 = 330;
+var rY2 = 350;
+
+this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+this.raphaelSizeX = rX2;
+this.raphaelSizeY = rY2;
+
+var pointsX = [];
+var pointsY = [];
+var r = 0;
+
+//pick starting x for plot
+var a = Math.floor(Math.random()*3 + 1);
+
+  //keep track of how many dots at each x
+  var plotX = [0,0,0,0,0,0,0,0,0,0,0];
+
+  //pick random points to make plot
+  for (var i = 0; i < 10; i++) {
+
+    r = (Math.floor(Math.random()*8) + 1);
+    pointsX[i] = r;
+    pointsY[i] = plotX[r] + 1;
+    plotX[r] = pointsY[i];
+  }
+  
+  var answer = 0;
+
+  for (var j = 0; j < 10; j++) {
+    if (pointsX[j] > 4)
+      answer = answer + 1;
+  }
+
+ this.setQuestion('The line plot below shows the weights (in pounds) of the bags of grapes that ' + this.ns.mNameOne + ' sold to customers today. How many bags weighed more than 1/2 pound?');
+
+  this.setAnswer('' + answer,0);
+
+//create line plot
+var chart = new LineChartThree (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+
+this.addQuestionShape(chart);
+
+this.mQuestionLabel.setSize(300,100);
+this.mQuestionLabel.setPosition(180,80);
+
+}
+
+});
+
+
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.b.2_2',5.2502,'5.md.b.2','graphs');
 */
 
@@ -8,7 +90,6 @@ Extends: TextItemMixedNumber,
 
 initialize: function(sheet)
 {
-      //this.parent(sheet,350, 50,200,95,100,50,425,100,100,50,425,175,true);
     this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
 
 
