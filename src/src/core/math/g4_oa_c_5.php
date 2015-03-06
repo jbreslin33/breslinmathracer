@@ -1,4 +1,57 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_4',4.0504,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__4 = new Class(
+{
+Extends: TextItem2,
+initialize: function(sheet)
+{
+	this.parent(sheet,450,200,125,195,100, 50,425,100);
+        this.mType = '4.oa.c.5_4';
+
+/*
+this.mAnswerTextBox.setPosition(575,110);
+this.mAnswerTextBox2.setPosition(635,110);
+this.mAnswerTextBox.setSize(50,50);
+this.mAnswerTextBox2.setSize(50,50);
+
+this.mHeadingAnswerLabel.setText('X');
+this.mHeadingAnswerLabel2.setText('Y');
+this.mHeadingAnswerLabel.setPosition(580,55);
+this.mHeadingAnswerLabel2.setPosition(640,55);
+this.mHeadingAnswerLabel.setSize(25,25);
+this.mHeadingAnswerLabel2.setSize(25,25);
+*/
+
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*2+2);
+        var b = Math.floor(Math.random()*2+2);
+
+        var answer  = '';
+        var last = a;
+
+        for (var i = 1; i < 5; i++)
+        {
+                if (answer.length == 0)  //first one no comma
+                {
+                        answer = '' + a;
+                }
+                else
+                {
+                        var next = parseInt(last * b);
+                        answer = answer + ',' + next;
+                        last = next;
+                }
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' makes a pattern with numbers. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' begins at the number ' + a + '. The rule ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses is multiply by ' + b + '. Write the first 4 terms of the pattern seperated by commas.');
+        this.setAnswer('' + answer,0);
+}
+
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_3',4.0503,'4.oa.c.5','');
 */
 var i_4_oa_c_5__3 = new Class(
