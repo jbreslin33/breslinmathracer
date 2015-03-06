@@ -10,6 +10,7 @@ Extends: Item,
 
 		if (qw == '')
 		{
+			APPLICATION.log('if');	
 			this.mQuestionLabel.setSize(100,50);
 			this.mQuestionLabel.setPosition(325,95);
 		
@@ -18,6 +19,7 @@ Extends: Item,
 		}
 		else
 		{
+			APPLICATION.log('else');	
 			this.mQuestionLabel.setSize(qw,qh);
 			this.mQuestionLabel.setPosition(qx,qy);
 		
