@@ -1,4 +1,139 @@
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_5',4.0505,'4.oa.c.5','rule and multiple');
+*/
+var i_4_oa_c_5__5 = new Class(
+{
+Extends: TextItem4,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+        this.mType = '4.oa.c.5_5';
+        
+	this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*10+1);
+        var b = 4;
+       
+	this.mOperation = '';  
+	var c = Math.floor(Math.random()*2);
+	c = parseInt(c);
+	if (c == 0)
+	{
+		this.mOperation = 'add';				
+	}
+	else
+	{
+		this.mOperation = 'subtract';				
+	}
+        
+	var patternArray = new Array();
+
+	for (i=0; i < 7; i++)
+	{
+		if (i == 0)
+		{
+			var x = parseInt(a * b); 
+			patternArray.push(x);
+		}
+		else
+		{
+			var y = parseInt(i + b);  
+			var x = parseInt(a * y);
+			patternArray.push(x);
+		}
+	}
+	
+	//even odd answer
+	if (a == 1)
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'alternate',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'odd',3);
+		} 
+	}
+	else if (a % 2 != 0)
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'alternate',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'odd',3);
+		} 
+	}
+	else 
+	{
+		if (b % 2 != 0)
+		{
+			this.setAnswer('' + 'alternate',3);
+		}
+		else
+		{
+			this.setAnswer('' + 'even',3);
+		} 
+	}
+
+	
+	//heading
+	this.mHeadingAnswerLabel.setPosition(420,100);
+	this.mHeadingAnswerLabel2.setPosition(520,100);
+	this.mHeadingAnswerLabel3.setPosition(610,100);
+	this.mHeadingAnswerLabel4.setPosition(700,100);
+
+	this.mHeadingAnswerLabel.setSize(25,25);
+	this.mHeadingAnswerLabel2.setSize(25,25);
+	this.mHeadingAnswerLabel3.setSize(25,25);
+	this.mHeadingAnswerLabel4.setSize(25,25);
+
+	if (this.mOperation == 'add')	
+	{
+		this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
+		this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
+		this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
+		this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
+	}
+	else
+	{
+		this.mHeadingAnswerLabel.setText('' + patternArray[6] + ',');
+		this.mHeadingAnswerLabel2.setText(',' + patternArray[4] + ',');
+		this.mHeadingAnswerLabel3.setText(',' + patternArray[2] + ',');
+		this.mHeadingAnswerLabel4.setText(',' + patternArray[0]);
+	}
+	
+	//text box
+	this.mAnswerTextBox.setPosition(475,110);
+	this.mAnswerTextBox2.setPosition(568,110);
+	this.mAnswerTextBox3.setPosition(660,110);
+	this.mAnswerTextBox4.setPosition(122,310);
+
+	this.mAnswerTextBox.setSize(50,50);
+	this.mAnswerTextBox2.setSize(50,50);
+	this.mAnswerTextBox3.setSize(50,50);
+	this.mAnswerTextBox4.setSize(100,50);
+
+        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below either: ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even ' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'alternate' + '</span>' + '. With odd meaning they are all odd. Even meaning they are all even and alternate meaning they alternate between odd and even.');
+
+	if (this.mOperation == 'add')	
+	{
+       		this.setAnswer('' + patternArray[1],0);
+        	this.setAnswer('' + patternArray[3],1);
+        	this.setAnswer('' + patternArray[5],2);
+	}
+	else
+	{
+       		this.setAnswer('' + patternArray[5],0);
+        	this.setAnswer('' + patternArray[3],1);
+        	this.setAnswer('' + patternArray[1],2);
+	}
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_4',4.0504,'4.oa.c.5','add x rule and odd,even or mixed');
@@ -22,12 +157,10 @@ initialize: function(sheet)
 	if (c == 0)
 	{
 		this.mOperation = 'add';				
-		APPLICATION.log('add 1');
 	}
 	else
 	{
 		this.mOperation = 'subtract';				
-		APPLICATION.log('sub 1');
 	}
         
 	var patternArray = new Array();
@@ -125,14 +258,12 @@ initialize: function(sheet)
        		this.setAnswer('' + patternArray[1],0);
         	this.setAnswer('' + patternArray[3],1);
         	this.setAnswer('' + patternArray[5],2);
-		APPLICATION.log('add 3');
 	}
 	else
 	{
        		this.setAnswer('' + patternArray[5],0);
         	this.setAnswer('' + patternArray[3],1);
         	this.setAnswer('' + patternArray[1],2);
-		APPLICATION.log('sub 3');
 	}
 }
 });
