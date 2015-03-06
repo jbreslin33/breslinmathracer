@@ -18,7 +18,7 @@ createShapes: function()
 	this.parent();
               
       	//answer Heading4 label
-        this.mHeadingAnswerLabel4 = new Shape(100,50,630,30,this.mSheet.mGame,"","","");
+        this.mHeadingAnswerLabel4 = new Shape(50,50,630,30,this.mSheet.mGame,"","","");
         this.addShape(this.mHeadingAnswerLabel4);
         this.mHeadingAnswerLabel4.mCollidable = false;
         this.mHeadingAnswerLabel4.mCollisionOn = false;

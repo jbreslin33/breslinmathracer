@@ -26,7 +26,7 @@ createShapes: function()
 	this.mHeadingAnswerLabel3.setVisibility(false);
 
       	//answer Input3
-        this.mAnswerTextBox3 = new Shape(100,50,625,100,this.mSheet.mGame,"INPUT","","");
+        this.mAnswerTextBox3 = new Shape(50,50,625,100,this.mSheet.mGame,"INPUT","","");
         this.mAnswerTextBox3.mMesh.value = '';
         if (navigator.appName == "Microsoft Internet Explorer")
         {
