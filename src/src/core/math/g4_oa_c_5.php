@@ -3,7 +3,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 */
 var i_4_oa_c_5__4 = new Class(
 {
-Extends: TextItem2,
+Extends: TextItem3,
 initialize: function(sheet)
 {
 	this.parent(sheet,450,200,125,195,100, 50,425,100);
