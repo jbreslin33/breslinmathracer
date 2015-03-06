@@ -377,7 +377,10 @@ if (id == '5.md.b.2_1')
         {
                 return new i_5_md_b_2__1(this.mSheet);
         }
-
+if (id == '5.md.b.2_2')
+        {
+                return new i_5_md_b_2__2(this.mSheet);
+        }
 
 
 	return 0;	
