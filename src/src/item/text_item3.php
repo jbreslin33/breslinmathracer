@@ -88,7 +88,7 @@ checkUserAnswer: function()
 {
 	correctAnswerFound = false;
 	
-	if (this.mUserAnswer == this.mAnswerArray[0] && this.mUserAnswer3 == this.mAnswerArray[1])
+	if (this.mUserAnswer == this.mAnswerArray[0] && this.mUserAnswer2 == this.mAnswerArray[1] && this.mUserAnswer3 == this.mAnswerArray[2])
 	{
 		correctAnswerFound = true;	
 	} 
