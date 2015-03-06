@@ -541,7 +541,11 @@ var LineChartThree = new Class(
 Extends: RaphaelPolygon,
         initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY1,s,d)
         {
-	
+
+    //find center for mPosition...
+		sX = x1 + x2 / 3;
+		sY = y1 + y2 / 3;	
+
 		this.parent(0,0,sX,sY,game,raphael,0,0,0,s,0,d);
 		
 		this.mPolygon = this.mRaphael.linechart(
