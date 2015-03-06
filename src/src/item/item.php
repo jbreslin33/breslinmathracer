@@ -422,6 +422,14 @@ var Item = new Class(
 	{
 		return this.mAnswerArray[1];
 	},
+	getAnswerThree: function()
+	{
+		return this.mAnswerArray[2];
+	},
+	getAnswerFour: function()
+	{
+		return this.mAnswerArray[3];
+	},
 	
 	getShowAnswer: function()
 	{
