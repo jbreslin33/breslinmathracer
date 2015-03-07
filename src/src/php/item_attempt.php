@@ -25,7 +25,7 @@ public function insert()
         //get item_attempt id
         $select = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
         $select .= $_SESSION["user_id"];
-        $select .= " ORDER BY item_attempts.start_time DESC;";
+        $select .= " ORDER BY item_attempts.start_time DESC LIMIT 1;";
  
         //get db result
         $selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
