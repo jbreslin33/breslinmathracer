@@ -503,6 +503,22 @@ execute: function(item)
         {
                	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
         }
+
+        var itemIDArray = APPLICATION.mRawData.split(":");
+        var itemAttemptsIDRaw = itemIDArray[4];
+        if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime && itemAttemptsIDRaw != APPLICATION.mItemAttemptsID )
+        {
+               	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
+        }
+
+        //resend every now and then
+        if (item.mSheet.mGame.mTimeSinceEpoch > item.mResendStartTime + item.mResendThresholdTime)
+        {
+                item.mResendStartTime = item.mSheet.mGame.mTimeSinceEpoch;
+                item.send();
+                APPLICATION.log('resending');
+        }
+
 },
 
 exit: function(item)
