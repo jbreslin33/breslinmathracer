@@ -1,3 +1,63 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_6',4.0506,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_6';
+        this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,150,450,350);
+
+        this.a = Math.floor(Math.random()*3+1);
+
+        this.setQuestion('' + this.ns.mNameOne + ' makes 3 sets of squares. According to to pattern if ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes a 4th set how many squares will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make?');
+        this.setAnswer('' + this.a,0);
+},
+
+createQuestionShapes: function()
+{
+        if (this.a == 1) // start 1 add 1 answer 4
+        {
+                this.setAnswer('' + '4',0);
+                //1
+                var boxOneA      = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+                boxOneLabel = new Shape(100,50,80,340,this.mSheet.mGame,"","","");
+                boxOneLabel.setText('1st');
+
+                //2
+                var boxTwoA = new Rectangle(50,50,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxTwoB = new Rectangle(50,50,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+                boxTwoLabel = new Shape(100,50,200,340,this.mSheet.mGame,"","","");
+                boxTwoLabel.setText('2nd');
+
+                //3
+                var boxThreeA = new Rectangle(50,50,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeB = new Rectangle(50,50,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+                var boxThreeC = new Rectangle(50,50,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+
+                boxThreeLabel = new Shape(100,50,380,340,this.mSheet.mGame,"","","");
+                boxThreeLabel.setText('3rd');
+
+                this.addQuestionShape(boxOneA);
+                this.addQuestionShape(boxOneLabel);
+
+                this.addQuestionShape(boxTwoA);
+                this.addQuestionShape(boxTwoB);
+                this.addQuestionShape(boxTwoLabel);
+
+                this.addQuestionShape(boxThreeA);
+                this.addQuestionShape(boxThreeB);
+                this.addQuestionShape(boxThreeC);
+                this.addQuestionShape(boxThreeLabel);
+        }
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_5',4.0505,'4.oa.c.5','rule and multiple');
