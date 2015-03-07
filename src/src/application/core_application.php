@@ -38,6 +38,7 @@ Extends: Application,
 		this.mStandard = '';
 		this.mRawData = 0;
 		this.mType = '';
+		this.mItemAttemptId = 0;
 
 		this.mData = 0;
 

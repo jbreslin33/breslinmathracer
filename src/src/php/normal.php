@@ -79,6 +79,12 @@ function __construct($startNew)
 		
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
+
+		//i would like to add item_attempt_id to rawdata before we send it out..
+		$raw = $_SESSION["raw_data"];
+		$raw .= ":";
+        	$raw .= $_SESSION["item_attempt_id"];
+		$_SESSION["raw_data"] = $raw;
 	}
 }
 
@@ -499,6 +505,8 @@ public function setRawData()
         $itemString .= " U=";
 	$itemString .= count($unmastered_array);
 
+	error_log($itemString); 
+
 	//yellow	
         $itemString .= ":";
         $itemString .= "$high_standard";
@@ -506,7 +514,7 @@ public function setRawData()
 	//green
         $itemString .= ":";
         $itemString .= intval(count($score_array)); 
-
+       
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;

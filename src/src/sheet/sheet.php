@@ -152,6 +152,7 @@ var Sheet = new Class(
 	createItems: function()
 	{
                 var itemIDArray = APPLICATION.mRawData.split(":");
+		APPLICATION.log('itemIDArray:' + itemIDArray);
 
                 for (var i = 0; i < itemIDArray.length; i++)              
                 {
@@ -196,6 +197,9 @@ var Sheet = new Class(
 					i++;
 					this.mGame.mScore = itemIDArray[i];
 					this.mGame.setScore(this.mGame.mScore);
+					i++;		
+					APPLICATION.mItemAttemptID = itemIDArray[i];	
+					APPLICATION.log('mItemAttemptID:' + APPLICATION.mItemAttemptID);
 				}
 			}
 			else
