@@ -428,7 +428,9 @@ public function update()
 
 	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
         $query .= $_SESSION["user_id"];
-        $query .= " order by item_attempts.start_time desc limit 1;";
+	$query .= " AND item_attempts.item_types_id = '"; //this should now skip over new one that is created....
+        $query .= $_SESSION["item_types_id"];
+        $query .= "' order by item_attempts.start_time desc limit 1;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
