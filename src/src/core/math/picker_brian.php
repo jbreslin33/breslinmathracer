@@ -393,6 +393,14 @@ if (id == '5.md.b.2_5')
         {
                 return new i_5_md_b_2__5(this.mSheet);
         }
+if (id == '5.md.b.2_6')
+        {
+                return new i_5_md_b_2__6(this.mSheet);
+        }
+if (id == '5.md.b.2_7')
+        {
+                return new i_5_md_b_2__7(this.mSheet);
+        }
 
 	return 0;	
 }
