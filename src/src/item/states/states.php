@@ -412,15 +412,18 @@ execute: function(item)
 {
         var itemIDArray = APPLICATION.mRawData.split(":");
 	var itemAttemptsIDRaw = itemIDArray[4];
-	if (itemAttemptsIDRaw == APPLICATION.mItemAttemptsID)
-	{
-		//send to server that we dont have new attempt   
-	} 
-
-        if (item.mSheet.mGame.mTimeSinceEpoch > item.mShowContinueCorrectStartTime + item.mShowContinueCorrectThresholdTime)
+        if (item.mSheet.mGame.mTimeSinceEpoch > item.mShowContinueCorrectStartTime + item.mShowContinueCorrectThresholdTime && itemAttemptsIDRaw != APPLICATION.mItemAttemptsID )
         {
                	item.mStateMachine.changeState(item.mCORRECT_ITEM);
         }
+
+       	//resend every now and then	 
+	if (item.mSheet.mGame.mTimeSinceEpoch > item.mResendStartTime + item.mResendThresholdTime)
+	{
+        	item.mResendStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
+		item.send();
+		APPLICATION.log('resending'); 
+	}
 },
 
 exit: function(item)
