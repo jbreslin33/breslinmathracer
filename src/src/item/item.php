@@ -131,6 +131,42 @@ var Item = new Class(
 	{
 
 	},
+	
+	send: function()
+	{
+	        // strip out problem chars from question
+        	var question = '' + this.mQuestion;
+        	question = question.replace(/&/g,"breslinampersand");
+        	question = question.replace(/\+/g,"breslinaddition");
+        	question = question.replace(/#/g,"breslinpound");
+
+        	//get real answers from array
+        	var answers = '';
+        	for (i=0; i < this.mAnswerArray.length; i++)
+        	{
+                	if (i == 0)
+                	{
+                        	answers = '' + answers + this.mAnswerArray[i];
+                	}
+                	else
+                	{
+                        	answers = '' + answers + ' OR ' + this.mAnswerArray[i];
+                	}
+        	}
+        	// strip out problem chars from answer
+        	answers = answers.replace(/&/g,"breslinampersand");
+        	answers = answers.replace(/\+/g,"breslinaddition");
+        	answers = answers.replace(/#/g,"breslinpound");
+
+        	// strip out problem chars from answer
+        	var answer = '' + this.mUserAnswer;
+        	answer = answer.replace(/&/g,"breslinampersand");
+        	answer = answer.replace(/\+/g,"breslinaddition");
+        	answer = answer.replace(/#/g,"breslinpound");
+
+        	//APPLICATION.mItemAttemptIDLast = APPLICATION.mItemAttemptID;
+        	APPLICATION.sendItemAttempt(this.mType,this.mStatus,question,answers,answer,APPLICATION.mItemAttemptID);
+	},	
 
 	addShape: function(shape)
 	{

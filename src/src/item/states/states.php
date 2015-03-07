@@ -164,37 +164,7 @@ execute: function(item)
 
 exit: function(item)
 {
-	// strip out problem chars from question
-	var question = '' + item.mQuestion;
-	question = question.replace(/&/g,"breslinampersand");
-	question = question.replace(/\+/g,"breslinaddition");
-	question = question.replace(/#/g,"breslinpound");
-	
-	//get real answers from array
-	var answers = '';
-	for (i=0; i < item.mAnswerArray.length; i++)
-	{	
-		if (i == 0)
-		{
-			answers = '' + answers + item.mAnswerArray[i];	
-		}
-		else
-		{
-			answers = '' + answers + ' OR ' + item.mAnswerArray[i];	
-		}
-	}
-	// strip out problem chars from answer 
-	answers = answers.replace(/&/g,"breslinampersand");
-	answers = answers.replace(/\+/g,"breslinaddition");
-	answers = answers.replace(/#/g,"breslinpound");
-	
-	// strip out problem chars from answer 
-	var answer = '' + item.mUserAnswer;
-	answer = answer.replace(/&/g,"breslinampersand");
-	answer = answer.replace(/\+/g,"breslinaddition");
-	answer = answer.replace(/#/g,"breslinpound");
-
-	APPLICATION.sendItemAttempt(item.mType,item.mStatus,question,answers,answer);
+	item.send();
 }
 });
 
@@ -413,6 +383,7 @@ exit: function(item)
 
 });
 
+//here is where you keep sending till you get a new item_attempt....
 var CONTINUE_CORRECT = new Class(
 {
 Extends: State,
@@ -439,6 +410,13 @@ enter: function(item)
 
 execute: function(item)
 {
+        var itemIDArray = APPLICATION.mRawData.split(":");
+	var itemAttemptsIDRaw = itemIDArray[4];
+	if (itemAttemptsIDRaw == APPLICATION.mItemAttemptsID)
+	{
+		//send to server that we dont have new attempt   
+	} 
+
         if (item.mSheet.mGame.mTimeSinceEpoch > item.mShowContinueCorrectStartTime + item.mShowContinueCorrectThresholdTime)
         {
                	item.mStateMachine.changeState(item.mCORRECT_ITEM);

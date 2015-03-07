@@ -423,8 +423,26 @@ public function update()
                         $_SESSION["timestables_score_today_ten"] = $_SESSION["timestables_score_ten"];
                 }
         }
+                
+	if (isset($_SESSION["item_attempt_last_id_updated"]))
+	{
+		if ($_SESSION["item_attempt_id"] == $_SESSION["item_attempt_last_id_updated"] )
+		{
+			//skip
+		}
+		else 
+		{
+			$this->actualUpdate();
+		}
+	}
+	else
+	{
+		$this->actualUpdate();
+	}
+}
 
-
+public function actualUpdate()
+{		
 
 	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
         $query .= $_SESSION["user_id"];
@@ -470,6 +488,8 @@ public function update()
 
         	//get db result
         	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+                
+		$_SESSION["item_attempt_last_id_updated"] = $_SESSION["item_attempt_id"];
 	}
 }
 
