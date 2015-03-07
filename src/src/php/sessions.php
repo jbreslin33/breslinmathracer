@@ -94,7 +94,7 @@ public function process()
 	}
 	else
 	{
-		$normal = new Normal(1);
+		$normal = new Normal(0);
 	}
 }
 //end class
