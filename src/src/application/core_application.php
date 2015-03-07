@@ -39,6 +39,7 @@ Extends: Application,
 		this.mRawData = 0;
 		this.mType = '';
 		this.mItemAttemptId = 0;
+		this.mItemAttemptIdLast = 0;
 
 		this.mData = 0;
 
@@ -311,7 +312,7 @@ Extends: Application,
         },
 
 
-	sendItemAttempt: function(itemtypesid,transactioncode,question,answers,answer)
+	sendItemAttempt: function(itemtypesid,transactioncode,question,answers,answer,itemattemptid)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -322,7 +323,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question + "&answers=" + answers + "&answer=" + answer,true);
+                xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question + "&answers=" + answers + "&answer=" + answer + "&itemattemptid=" + itemattemptid,true);
                 xmlhttp.send();
         },
 
@@ -790,6 +791,7 @@ Extends: Application,
 	// are we running the right game??
 	gameDecider: function()
 	{
+		APPLICATION.log('gameDecider');
 		//if already have a game destroy it.
 		if (this.mGame)
 		{

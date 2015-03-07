@@ -83,6 +83,7 @@ var Sheet = new Class(
 		
 		//reset marker
 		this.mMarker = 0;
+                
 
 		this.createItems();
 		this.createShapes();
@@ -151,6 +152,7 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
+		//you need to check to see if this is new data otherwhise request it.
                 var itemIDArray = APPLICATION.mRawData.split(":");
 		APPLICATION.log('itemIDArray:' + itemIDArray);
 
