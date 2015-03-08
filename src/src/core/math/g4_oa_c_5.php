@@ -1,3 +1,43 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_7',4.0507,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_7';
+        this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,150,500,350);
+
+        this.a = Math.floor(Math.random()*2+1);
+	this.a = 1;
+
+        this.setQuestion('' + 'Write whether this shape pattern is a ' + '<span style="color: #f00;">' + 'growing' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'repeating' + '</span>' + ' pattern.');
+        this.setAnswer('' + 'repeating',0);
+},
+
+createQuestionShapes: function()
+{
+        if (this.a == 1) 
+        {
+		var blocksArray = new Array();
+               
+		 //1
+                blocksArray.push(new Rectangle(25,25,10,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		//add shapes to game	
+		for (i = 0; i < blocksArray.length; i++)
+		{
+			this.addQuestionShape(blocksArray[i]);	
+		}
+        }
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_6',4.0506,'4.oa.c.5','');
 */
