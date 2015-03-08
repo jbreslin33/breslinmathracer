@@ -12,19 +12,16 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mRaphael = Raphael(10,150,500,350);
 
-        this.a = Math.floor(Math.random()*3+1);
-	this.a = 1;
+        this.a = Math.floor(Math.random()*2+1);
 
-        this.setQuestion('' + this.ns.mNameOne + ' makes 3 sets of squares. According to to pattern if ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes a 4th set how many squares will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make?');
-        this.setAnswer('' + this.a,0);
+        this.setQuestion('' + 'Write whether this shape pattern is a ' + '<span style="color: #f00;">' + 'growing' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'repeating' + '</span>' + ' pattern.');
+        this.setAnswer('' + 'growing',0);
 },
 
 createQuestionShapes: function()
 {
-        if (this.a == 1) // start 1 add 1 answer 4
+        if (this.a == 1) // growing
         {
-                this.setAnswer('' + '4',0);
-		
 		var blocksArray = new Array();
                
 		 //1
@@ -77,12 +74,81 @@ createQuestionShapes: function()
 		blocksArray.push(new Rectangle(25,25,410, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
                 blocksArray.push(new Rectangle(25,25,435, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-		//lables
-                labelFirst = new Shape(100,50,80,410,this.mSheet.mGame,"","","");
-                labelFirst.setText('1st');
-                this.addQuestionShape(labelFirst);
+		//add shapes to game	
+		for (i = 0; i < blocksArray.length; i++)
+		{
+			this.addQuestionShape(blocksArray[i]);	
+		}
+        }
+        if (this.a == 2) // growing
+        {
+		var blocksArray = new Array();
+               
+		 //1
+                blocksArray.push(new Rectangle(25,25,10,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,35,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,60,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
+		//2
+                blocksArray.push(new Rectangle(25,25,110,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,135,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,160,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,110,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,135,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,160,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		//3
+                blocksArray.push(new Rectangle(25,25,210,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,235,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,260,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,210,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,235,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,260,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		
+		blocksArray.push(new Rectangle(25,25,210,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,235,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,260,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		//4
+                blocksArray.push(new Rectangle(25,25,310,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,360,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,310,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,360,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 	
+		blocksArray.push(new Rectangle(25,25,310,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,360,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		
+		blocksArray.push(new Rectangle(25,25,310,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,360,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		//5
+                blocksArray.push(new Rectangle(25,25,410,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,460,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,410,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,460,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+	
+		blocksArray.push(new Rectangle(25,25,410,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,460,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		
+		blocksArray.push(new Rectangle(25,25,410,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,460,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		blocksArray.push(new Rectangle(25,25,410, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,460, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
 		//add shapes to game	
 		for (i = 0; i < blocksArray.length; i++)
 		{
