@@ -156,6 +156,15 @@ var Sheet = new Class(
                 var itemIDArray = APPLICATION.mRawData.split(":");
 		APPLICATION.log('itemIDArray:' + itemIDArray);
 
+		var itemAttemptsID  = itemIDArray[4];	
+		if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
+		{
+			//we gotta callnormal again...
+			APPLICATION.normal();
+		}
+		else
+		{
+		
                 for (var i = 0; i < itemIDArray.length; i++)              
                 {
 			var pick = 0;
@@ -200,8 +209,9 @@ var Sheet = new Class(
 					this.mGame.mScore = itemIDArray[i];
 					this.mGame.setScore(this.mGame.mScore);
 					i++;		
-					APPLICATION.mItemAttemptID = itemIDArray[i];	
-					APPLICATION.log('mItemAttemptID:' + APPLICATION.mItemAttemptID);
+					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
+					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
+					APPLICATION.log('mItemAttemptsID:' + APPLICATION.mItemAttemptsID);
 				}
 			}
 			else
@@ -209,6 +219,7 @@ var Sheet = new Class(
 				APPLICATION.log('no item picked by pickers!');
 			}
                 }
+		}
 	},
 
 	setTypeWrong: function(typeID)

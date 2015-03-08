@@ -168,8 +168,8 @@ var Item = new Class(
         	answer = answer.replace(/\+/g,"breslinaddition");
         	answer = answer.replace(/#/g,"breslinpound");
 
-        	//APPLICATION.mItemAttemptIDLast = APPLICATION.mItemAttemptID;
-        	APPLICATION.sendItemAttempt(this.mType,this.mStatus,question,answers,answer,APPLICATION.mItemAttemptID);
+        	//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
+        	APPLICATION.sendItemAttempt(this.mType,this.mStatus,question,answers,answer,APPLICATION.mItemAttemptsID);
 	},	
 
 	addShape: function(shape)
