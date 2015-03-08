@@ -28,7 +28,16 @@ createQuestionShapes: function()
                
 		 //1
                 blocksArray.push(new Rectangle(25,25,10,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-		blocksArray.push(new Circle   (12,35,175,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false));
+		blocksArray.push(new Circle   (12.5,50,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false));
+
+                blocksArray.push(new Rectangle(25,25,65,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		blocksArray.push(new Circle   (12.5,105,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false));
+                
+		blocksArray.push(new Rectangle(25,25,120,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		blocksArray.push(new Circle   (12.5,160,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false));
+		
+		blocksArray.push(new Rectangle(25,25,175,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		blocksArray.push(new Circle   (12.5,215,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false));
 
 		//add shapes to game	
 		for (i = 0; i < blocksArray.length; i++)
