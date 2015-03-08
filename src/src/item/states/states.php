@@ -410,20 +410,10 @@ enter: function(item)
 
 execute: function(item)
 {
-        var itemIDArray = APPLICATION.mRawData.split(":");
-	var itemAttemptsIDRaw = itemIDArray[4];
-        if (item.mSheet.mGame.mTimeSinceEpoch > item.mShowContinueCorrectStartTime + item.mShowContinueCorrectThresholdTime && itemAttemptsIDRaw != APPLICATION.mItemAttemptsID )
+     	if (item.mSheet.mGame.mTimeSinceEpoch > item.mShowContinueCorrectStartTime + item.mShowContinueCorrectThresholdTime)
         {
-               	item.mStateMachine.changeState(item.mCORRECT_ITEM);
+                item.mStateMachine.changeState(item.mCORRECT_ITEM);
         }
-
-       	//resend every now and then	 
-	if (item.mSheet.mGame.mTimeSinceEpoch > item.mResendStartTime + item.mResendThresholdTime)
-	{
-        	item.mResendStartTime = item.mSheet.mGame.mTimeSinceEpoch;  
-		item.send();
-		APPLICATION.log('resending'); 
-	}
 },
 
 exit: function(item)
@@ -501,24 +491,8 @@ execute: function(item)
 {
         if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime)
         {
-               	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
+                item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
         }
-
-        var itemIDArray = APPLICATION.mRawData.split(":");
-        var itemAttemptsIDRaw = itemIDArray[4];
-        if (item.mSheet.mGame.mTimeSinceEpoch > item.mCorrectAnswerStartTime + item.mCorrectAnswerThresholdTime && itemAttemptsIDRaw != APPLICATION.mItemAttemptsID )
-        {
-               	item.mStateMachine.changeState(item.mCONTINUE_INCORRECT);
-        }
-
-        //resend every now and then
-        if (item.mSheet.mGame.mTimeSinceEpoch > item.mResendStartTime + item.mResendThresholdTime)
-        {
-                item.mResendStartTime = item.mSheet.mGame.mTimeSinceEpoch;
-                item.send();
-                APPLICATION.log('resending');
-        }
-
 },
 
 exit: function(item)

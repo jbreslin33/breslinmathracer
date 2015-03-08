@@ -38,8 +38,8 @@ Extends: Application,
 		this.mStandard = '';
 		this.mRawData = 0;
 		this.mType = '';
-		this.mItemAttemptId = 0;
-		this.mItemAttemptIdLast = 0;
+		this.mItemAttemptsID = 0;
+		this.mItemAttemptsIDLast = 0;
 
 		this.mData = 0;
 
@@ -329,6 +329,7 @@ Extends: Application,
 
         normal: function()
         {
+		APPLICATION.log('normal');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
