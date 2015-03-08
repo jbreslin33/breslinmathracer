@@ -329,7 +329,6 @@ Extends: Application,
 
         normal: function()
         {
-		APPLICATION.log('normal');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -792,7 +791,6 @@ Extends: Application,
 	// are we running the right game??
 	gameDecider: function()
 	{
-		APPLICATION.log('gameDecider');
 		//if already have a game destroy it.
 		if (this.mGame)
 		{

@@ -152,73 +152,76 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
-		//you need to check to see if this is new data otherwhise request it.
                 var itemIDArray = APPLICATION.mRawData.split(":");
-		APPLICATION.log('itemIDArray:' + itemIDArray);
 
-		var itemAttemptsID  = itemIDArray[4];	
-		if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
+		var callNormal = false; 
+		if (APPLICATION.mRef_id == 'normal')
 		{
-			//we gotta callnormal again...
-			APPLICATION.normal();
+			//you need to check to see if this is new data otherwhise request it.
+			var itemAttemptsID  = itemIDArray[4];	
+			if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
+			{
+				//we gotta callnormal again...
+				APPLICATION.normal();
+				callNormal = true;
+			}
 		}
-		else
+	
+		if (callNormal == false)
 		{
-		
-                for (var i = 0; i < itemIDArray.length; i++)              
-                {
-			var pick = 0;
+               		for (var i = 0; i < itemIDArray.length; i++)              
+                	{
+				var pick = 0;
 
-			if (pick == 0)
-			{
-                        	pick = this.mPicker.getItem(itemIDArray[i]);
-			}
-			if (pick == 0)
-			{
-                        	pick = this.mPickerBrian.getItem(itemIDArray[i]);
-			}
-			if (pick == 0)
-			{
-                        	pick = this.mPickerJim.getItem(itemIDArray[i]);
-			}
-
-			//if you got an item then add it to sheet
-			if (pick != 0)
-			{
-				this.addItem(pick);
-			
-				if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'Add Subtract within 5')
+				if (pick == 0)
 				{
-					//add streak from raw_data andincrement as itemIDs are every other element in array. 
-					i++;	
-					pick.mStreak = itemIDArray[i];	
-					i++;
-					pick.mProgressedTypeID = itemIDArray[i];	
-					i++;
-					this.mGame.mScore = itemIDArray[i];
-					this.mGame.setScore(this.mGame.mScore);
+                        		pick = this.mPicker.getItem(itemIDArray[i]);
+				}
+				if (pick == 0)
+				{
+                        		pick = this.mPickerBrian.getItem(itemIDArray[i]);
+				}
+				if (pick == 0)
+				{
+                        		pick = this.mPickerJim.getItem(itemIDArray[i]);
+				}
+
+				//if you got an item then add it to sheet
+				if (pick != 0)
+				{
+					this.addItem(pick);
+			
+					if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'Add Subtract within 5')
+					{
+						//add streak from raw_data andincrement as itemIDs are every other element in array. 
+						i++;	
+						pick.mStreak = itemIDArray[i];	
+						i++;
+						pick.mProgressedTypeID = itemIDArray[i];	
+						i++;
+						this.mGame.mScore = itemIDArray[i];
+						this.mGame.setScore(this.mGame.mScore);
+					}
+					else
+					{
+						//add streak from raw_data andincrement as itemIDs are every other element in array. 
+						i++;	
+						pick.mStreak = itemIDArray[i];	
+						i++;
+						pick.mProgressedTypeID = itemIDArray[i];	
+						i++;
+						this.mGame.mScore = itemIDArray[i];
+						this.mGame.setScore(this.mGame.mScore);
+						i++;		
+						APPLICATION.mItemAttemptsID     = itemIDArray[i];	
+						APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
+					}
 				}
 				else
 				{
-					//add streak from raw_data andincrement as itemIDs are every other element in array. 
-					i++;	
-					pick.mStreak = itemIDArray[i];	
-					i++;
-					pick.mProgressedTypeID = itemIDArray[i];	
-					i++;
-					this.mGame.mScore = itemIDArray[i];
-					this.mGame.setScore(this.mGame.mScore);
-					i++;		
-					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
-					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
-					APPLICATION.log('mItemAttemptsID:' + APPLICATION.mItemAttemptsID);
+					APPLICATION.log('no item picked by pickers!');
 				}
-			}
-			else
-			{
-				APPLICATION.log('no item picked by pickers!');
-			}
-                }
+                	}
 		}
 	},
 
