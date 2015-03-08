@@ -10,9 +10,10 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_6';
         this.ns = new NameSampler();
-        this.mRaphael = Raphael(10,150,450,350);
+        this.mRaphael = Raphael(10,150,500,350);
 
         this.a = Math.floor(Math.random()*3+1);
+	this.a = 1;
 
         this.setQuestion('' + this.ns.mNameOne + ' makes 3 sets of squares. According to to pattern if ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes a 4th set how many squares will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make?');
         this.setAnswer('' + this.a,0);
@@ -23,38 +24,70 @@ createQuestionShapes: function()
         if (this.a == 1) // start 1 add 1 answer 4
         {
                 this.setAnswer('' + '4',0);
-                //1
-                var boxOneA      = new Rectangle(50,50,10,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+		
+		var blocksArray = new Array();
+               
+		 //1
+                blocksArray.push(new Rectangle(25,25,10,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,35,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-                boxOneLabel = new Shape(100,50,80,340,this.mSheet.mGame,"","","");
-                boxOneLabel.setText('1st');
+		//2
+                blocksArray.push(new Rectangle(25,25,110,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,135,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,110,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,135,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-                //2
-                var boxTwoA = new Rectangle(50,50,110,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-                var boxTwoB = new Rectangle(50,50,160,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+		//3
+                blocksArray.push(new Rectangle(25,25,210,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,235,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,210,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,235,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		
+		blocksArray.push(new Rectangle(25,25,210,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,235,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-                boxTwoLabel = new Shape(100,50,200,340,this.mSheet.mGame,"","","");
-                boxTwoLabel.setText('2nd');
+		//4
+                blocksArray.push(new Rectangle(25,25,310,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,310,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+	
+		blocksArray.push(new Rectangle(25,25,310,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		
+		blocksArray.push(new Rectangle(25,25,310,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,335,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-                //3
-                var boxThreeA = new Rectangle(50,50,260,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-                var boxThreeB = new Rectangle(50,50,310,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-                var boxThreeC = new Rectangle(50,50,360,130,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+		//5
+                blocksArray.push(new Rectangle(25,25,410,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		blocksArray.push(new Rectangle(25,25,410,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+	
+		blocksArray.push(new Rectangle(25,25,410,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		
+		blocksArray.push(new Rectangle(25,25,410,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-                boxThreeLabel = new Shape(100,50,380,340,this.mSheet.mGame,"","","");
-                boxThreeLabel.setText('3rd');
+		blocksArray.push(new Rectangle(25,25,410, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                blocksArray.push(new Rectangle(25,25,435, 75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-                this.addQuestionShape(boxOneA);
-                this.addQuestionShape(boxOneLabel);
+		//lables
+                labelFirst = new Shape(100,50,80,410,this.mSheet.mGame,"","","");
+                labelFirst.setText('1st');
+                this.addQuestionShape(labelFirst);
 
-                this.addQuestionShape(boxTwoA);
-                this.addQuestionShape(boxTwoB);
-                this.addQuestionShape(boxTwoLabel);
-
-                this.addQuestionShape(boxThreeA);
-                this.addQuestionShape(boxThreeB);
-                this.addQuestionShape(boxThreeC);
-                this.addQuestionShape(boxThreeLabel);
+	
+		//add shapes to game	
+		for (i = 0; i < blocksArray.length; i++)
+		{
+			this.addQuestionShape(blocksArray[i]);	
+		}
         }
 }
 });
