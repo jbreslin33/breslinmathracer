@@ -201,6 +201,8 @@ Extends: TextItem,
                 this.setQuestion('Write an equation to solve for the unknown number: ' + a + ' &times ' + b + ' = c');
                 this.setAnswer('' + a + 'x' + b + '=' + c,0);
                 this.setAnswer('' + a + '*' + b + '=' + c,1);
+                this.setAnswer('' + b + 'x' + a + '=' + c,2);
+                this.setAnswer('' + b + '*' + a + '=' + c,3);
         }
 });
 
