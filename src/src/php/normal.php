@@ -29,7 +29,6 @@ function __construct($startNew)
 
 	if ($startNew == 1)
 	{
-		error_log('startNew');
 		//close old evaluation_attempts.......
 		$evaluations_attempts = new EvaluationsAttempts();
 		$evaluations_attempts->update();
@@ -44,7 +43,6 @@ function __construct($startNew)
 	}
 	else
 	{
-		error_log('old');
 
 		//check for last evaluation that was a normal type
       		$query = "select id from evaluations_attempts where user_id = ";
@@ -559,8 +557,6 @@ public function setRawData()
         $itemString .= "$high_progression";
         $itemString .= " U=";
 	$itemString .= count($unmastered_array);
-
-	error_log($itemString); 
 
 	//yellow	
         $itemString .= ":";
