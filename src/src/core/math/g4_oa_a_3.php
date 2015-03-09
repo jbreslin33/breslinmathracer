@@ -106,7 +106,7 @@ initialize: function(sheet)
 	var c = 13;
 	var d = 12;
 	var e = 0;
-	while (c % d !=0)
+	while (c % d !=0 || a == d)
 	{
         	a = Math.floor(Math.random()*12+8);
         	b = Math.floor(Math.random()*8+2);
