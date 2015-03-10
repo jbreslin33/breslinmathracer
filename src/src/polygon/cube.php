@@ -1,65 +1,92 @@
 var Cube = new Class(
 {
-Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,r,g,b,s,op,d)
+        // x,y = position - w,h,d = dimensions(width,height,depth)
+        initialize: function (item,game,raphael,x,y,w,h,d,r,g,b,s,op,dd)
         {
-		//find center for mPosition...
-		sX = x1 + x2 + x3 + x4 + x5 + x6 / 3;
-		sY = y1 + y2 + y3 + y4 + y5 + y6 / 3;
 
-		this.parent(0,0,sX,sY,game,raphael,r,g,b,s,op,d);
+var xfactor = (d * 1.0) / (w * 1.0);
+var yfactor = (d * 1.0) / (h * 1.0);
 
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
-		this.x3 = x3;
-		this.y3 = y3;
-		this.x4 = x4;
-		this.y4 = y4;
-		this.x5 = x5;
-		this.y5 = y5;
-		this.x6 = x6;
-		this.y6 = y6;
-		
-		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " L" + this.x5 + "," + this.y5 + " L" + this.x6 + "," + this.y6 + " z";
-		
-		this.mPolygon = this.mRaphael.path("" + this.mPathString);
+var xOff = (w/2) * xfactor;
+var yOff = (h/2) * yfactor;
 
-		this.mPolygon.mPolygon = this;
+var boxTwoD = new Rectangle(w,h,x+xOff,y-yOff,game,raphael,.5,.5,.5,"#000",1,false);
+var boxTwoC = new Rectangle(w,h,x,y,game,raphael,.5,.5,.5,"#000",1,false);
 
-		if (this.mDrag)
-		{
- 			this.mPolygon.drag(this.move, this.start, this.up);
-		}
+var ax1 = x;
+var ay1 = y;
+
+var ax2 = x+w;
+var ay2 = y;
+
+var ax3 = x+w;
+var ay3 = y+h;
+
+var ax4 = x;
+var ay4 = y+h;
+
+var bx1 = ax1+xOff;
+var by1 = ay1-yOff;
+
+var bx2 = ax2+xOff;
+var by2 = ay2-yOff;
+
+var bx3 = ax3+xOff;
+var by3 = ay3-yOff;
+
+var bx4 = ax3+xOff;
+var by4 = ay3-yOff;
+
+var boxTwoB = new Parallelogram(game,raphael,ax1,ay1,ax2,ay2,bx2,by2,bx1,by1,.5,.5,.5,"#000",1,false);
+var boxTwoA = new Parallelogram(game,raphael,ax2,ay2,bx2,by2,bx3,by3,ax3,ay3,.5,.5,.5,"#000",1,false);
+
+item.addQuestionShape(boxTwoA);
+item.addQuestionShape(boxTwoB);
+item.addQuestionShape(boxTwoC);
+item.addQuestionShape(boxTwoD);
+
 	},
+
 
 	dragMove: function(dx,dy)
 	{
-   		var deltaX = dx - this.mLastX;
-                var deltaY = dy - this.mLastY;
 
-		//update mPosition
-		this.mPosition.mX += deltaX; 
-		this.mPosition.mY += deltaY; 
-
-                this.x1 += deltaX;
-                this.y1 += deltaY;
-                this.x2 += deltaX;
-                this.y2 += deltaY;
-                this.x3 += deltaX;
-                this.y3 += deltaY;
-                this.x4 += deltaX;
-                this.y4 += deltaY;
-                this.x5 += deltaX;
-                this.y5 += deltaY;
-                this.x6 += deltaX;
-                this.y6 += deltaY;
-
-                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " L" + this.x4 + "," + this.y4 + " L" + this.x5 + "," + this.y5 + " L" + this.x6 + "," + this.y6 + " z";
-                this.mPolygon.attr({path:"" + this.mPathString});
-
-                this.mLastX = dx;
-                this.mLastY = dy;
 	}
+
+
+});
+
+
+
+
+var RubixCube = new Class(
+{
+// x,y = position - w1,h1,d1 = dimensions of single cube - w2,h2,d2 = dimensions of rubix cube
+        initialize: function (item,game,raphael,x,y,w1,h1,d1,w2,h2,d2,r,g,b,s,op,z)
+        {
+
+var xx = 0;
+var i;
+var j;
+
+for(k=d2-1;k>=0;k--) {
+
+  for(i=0;i<w2;i++) {
+    xx = x+(i*w1)+(k*w1/2);
+
+    for(j=0;j<h2;j++) {
+      var cube = new Cube(item,game,raphael,xx,y-(j*h1)-(k*h1/2),w1,h1,d1,.5,.5,.5,"#000",1,false);
+    }
+  }
+}
+
+},
+
+
+	dragMove: function(dx,dy)
+	{
+
+	}
+
+
 });
