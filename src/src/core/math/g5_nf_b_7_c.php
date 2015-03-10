@@ -173,10 +173,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_nf_b_7_c__6 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 initialize: function(sheet)
 {
-this.parent(sheet,575,50,320,75,100,50,670,100);
+this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
 
         this.mType = '5.nf.b.7.c_6';
         this.ns = new NameSampler();
