@@ -14,24 +14,24 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*8+3);
         var b = Math.floor(Math.random()*8+3);
-        var answer  = '';
+        var pattern = '';
         var total = a;
 
         for (var i = 1; i < 7; i++)
         {
-                if (answer.length == 0)  //first one no comma
+                if (pattern.length == 0)  //first one no comma
                 {
                         total = parseInt(b + total);
-                        answer = '' + total;
+                        pattern = '' + total;
                 }
                 else
                 {
                         total = parseInt(total + b);
-                        answer = '' + answer + ',' + total;
+                        pattern = '' + pattern + ',' + total;
                 }
         }
 
-        this.setQuestion('What is the rule for the number pattern: ' + answer + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
+        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
         this.setAnswer('' + 'add ' + b,0);
 }
 });
