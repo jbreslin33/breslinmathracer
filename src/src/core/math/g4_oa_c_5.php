@@ -21,12 +21,12 @@ initialize: function(sheet)
         {
                 if (pattern.length == 0)  //first one no comma
                 {
-                        total = parseInt(b + total);
+                        total = parseInt(b);
                         pattern = '' + total;
                 }
                 else
                 {
-                        total = parseInt(total + b);
+                        total = parseInt(total * b);
                         pattern = '' + pattern + ',' + total;
                 }
         }
