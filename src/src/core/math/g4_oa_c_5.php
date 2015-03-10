@@ -31,8 +31,8 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('' + this.ns.mNameOne + ' wants to save money for ' + this.ns.mPurchaseOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' already has $' + a + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' plans to add $' + b + ' per week to that total. Write ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' weekly totals for the first 6 weeks seperated by commas. For example: 2,4,6,8,10,12');
-        this.setAnswer('' + answer,0);
+        this.setQuestion('What is the rule for the number pattern: ' + answer + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
+        this.setAnswer('' + 'add ' + b,0);
 }
 });
 
