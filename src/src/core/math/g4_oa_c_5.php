@@ -1,5 +1,42 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_10',4.0510,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_10';
+        this.ns = new NameSampler();
+
+        var a = Math.floor(Math.random()*8+3);
+        var b = Math.floor(Math.random()*8+3);
+        var pattern = '';
+        var total = a;
+
+        for (var i = 1; i < 7; i++)
+        {
+                if (pattern.length == 0)  //first one no comma
+                {
+                        total = parseInt(b + total);
+                        pattern = '' + total;
+                }
+                else
+                {
+                        total = parseInt(total + b);
+                        pattern = '' + pattern + ',' + total;
+                }
+        }
+
+        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
+        this.setAnswer('' + 'add ' + b,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_9',4.0509,'4.oa.c.5','');
 */
 var i_4_oa_c_5__9 = new Class(
