@@ -73,7 +73,7 @@ initialize: function(sheet)
 	this.mAnswerTextBox2.setSize(50,50);
 	this.mAnswerTextBox3.setSize(50,50);
 
-        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + b + ' to fill in the missing parts of the number pattern. Then write below either: ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even ' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'alternate' + '</span>' + '. With odd meaning they are all odd. Even meaning they are all even and alternate meaning they alternate between odd and even.');
+        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + b + ' to fill in the missing parts of the number pattern.');
 
 	if (this.mOperation == 'add')	
 	{
