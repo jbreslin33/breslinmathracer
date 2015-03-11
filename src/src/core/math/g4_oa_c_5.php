@@ -13,15 +13,15 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var a = Math.floor(Math.random()*8+3);
-        var b = Math.floor(Math.random()*8+3);
+        var b = Math.floor(Math.random()*3+2);
         var pattern = '';
         var total = a;
 
-        for (var i = 1; i < 7; i++)
+        for (var i = 1; i < 6; i++)
         {
                 if (pattern.length == 0)  //first one no comma
                 {
-                        total = parseInt(b);
+                        total = parseInt(a);
                         pattern = '' + total;
                 }
                 else
@@ -32,7 +32,7 @@ initialize: function(sheet)
         }
 
         this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
-        this.setAnswer('' + 'add ' + b,0);
+        this.setAnswer('' + 'Multiply by ' + b,0);
 }
 });
 
@@ -105,7 +105,7 @@ initialize: function(sheet)
         }
 
         this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
-        this.setAnswer('' + 'add ' + b,0);
+        this.setAnswer('' + 'Add ' + b,0);
 }
 });
 
