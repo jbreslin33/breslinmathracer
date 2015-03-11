@@ -4,7 +4,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 */
 var i_4_oa_c_5__11 = new Class(
 {
-Extends: TextItem4,
+Extends: TextItem3,
 initialize: function(sheet)
 {
 	this.parent(sheet,250,200,150,145,100, 50,425,100);
@@ -42,78 +42,36 @@ initialize: function(sheet)
 		}
 	}
 	
-	//even odd answer
-	if (a == 1)
-	{
-		if (b % 2 != 0)
-		{
-			this.setAnswer('' + 'alternate',3);
-		}
-		else
-		{
-			this.setAnswer('' + 'odd',3);
-		} 
-	}
-	else if (a % 2 != 0)
-	{
-		if (b % 2 != 0)
-		{
-			this.setAnswer('' + 'alternate',3);
-		}
-		else
-		{
-			this.setAnswer('' + 'odd',3);
-		} 
-	}
-	else 
-	{
-		if (b % 2 != 0)
-		{
-			this.setAnswer('' + 'alternate',3);
-		}
-		else
-		{
-			this.setAnswer('' + 'even',3);
-		} 
-	}
-
-	
 	//heading
 	this.mHeadingAnswerLabel.setPosition(420,100);
 	this.mHeadingAnswerLabel2.setPosition(520,100);
 	this.mHeadingAnswerLabel3.setPosition(610,100);
-	this.mHeadingAnswerLabel4.setPosition(700,100);
 
 	this.mHeadingAnswerLabel.setSize(25,25);
 	this.mHeadingAnswerLabel2.setSize(25,25);
 	this.mHeadingAnswerLabel3.setSize(25,25);
-	this.mHeadingAnswerLabel4.setSize(25,25);
 
 	if (this.mOperation == 'add')	
 	{
 		this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
 		this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
 		this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
-		this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
 	}
 	else
 	{
 		this.mHeadingAnswerLabel.setText('' + patternArray[6] + ',');
 		this.mHeadingAnswerLabel2.setText(',' + patternArray[4] + ',');
 		this.mHeadingAnswerLabel3.setText(',' + patternArray[2] + ',');
-		this.mHeadingAnswerLabel4.setText(',' + patternArray[0]);
 	}
 	
 	//text box
 	this.mAnswerTextBox.setPosition(475,110);
 	this.mAnswerTextBox2.setPosition(568,110);
 	this.mAnswerTextBox3.setPosition(660,110);
-	this.mAnswerTextBox4.setPosition(122,310);
 
 	this.mAnswerTextBox.setSize(50,50);
 	this.mAnswerTextBox2.setSize(50,50);
 	this.mAnswerTextBox3.setSize(50,50);
-	this.mAnswerTextBox4.setSize(100,50);
 
         this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + b + ' to fill in the missing parts of the number pattern. Then write below either: ' + '<span style="color: #f00;">' + 'odd' + '</span>' + ',' + '<span style="color: #f00;">' + ' even ' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'alternate' + '</span>' + '. With odd meaning they are all odd. Even meaning they are all even and alternate meaning they alternate between odd and even.');
 
