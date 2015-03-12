@@ -778,7 +778,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,375,50,220,75,150,50,525,100);
 
-        this.mType = '5.oa.a._0_13';
+        this.mType = '5.oa.a.2_0_13';
 
         this.setQuestion('What operation, addition, subtraction, multiplication or division uses the words the total of?');
         this.setAnswer('addition',0);
