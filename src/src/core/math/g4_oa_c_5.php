@@ -11,28 +11,43 @@ initialize: function(sheet)
         this.mType = '4.oa.c.5_12';
         this.ns = new NameSampler();
 
-        var a = Math.floor(Math.random()*2+2);
-        var b = Math.floor(Math.random()*2+2);
+//reg patter
+        var a = Math.floor(Math.random()*8+3);
+        var b = Math.floor(Math.random()*3+2);
+        var pattern = '';
+        var answerPattern = '';
+        var total = a;
 
-        var answer  = '';
-        var last = a;
-
-        for (var i = 1; i < 5; i++)
+        for (var i = 1; i < 6; i++)
         {
-                if (answer.length == 0)  //first one no comma
+                if (pattern.length == 0)  //first one no comma
                 {
-                        answer = '' + a;
+                        total = parseInt(a);
+                        pattern = '' + total;
+			answerPattern = '' + this.sumDigits(total);
                 }
                 else
                 {
-                        var next = parseInt(last * b);
-                        answer = answer + ',' + next;
-                        last = next;
+                        total = parseInt(total * b);
+                        pattern = '' + pattern + ',' + total;
+			answerPattern = '' + answerPattern + ',' + this.sumDigits(total);
                 }
         }
 
-        this.setQuestion('' + this.ns.mNameOne + ' makes a pattern with numbers. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' begins at the number ' + a + '. The rule ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses is multiply by ' + b + '. Write the first 4 terms of the pattern seperated by commas.');
-        this.setAnswer('' + answer,0);
+        this.setQuestion('' + this.ns.mNameOne + ' makes the following pattern with numbers: ' + pattern + '. Write a new pattern that is the sum of the digits in ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' pattern seperated by commas.');
+        this.setAnswer('' + answerPattern,0);
+},
+
+sumDigits: function(number)
+{
+	var str = number.toString();
+  	var sum = 0;
+
+  	for (var i = 0; i < str.length; i++)
+	{
+    		sum += parseInt(str.charAt(i), 10);
+  	}
+  	return sum;
 }
 
 });
