@@ -13,15 +13,30 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
 	//reg patter
-        var a = Math.floor(Math.random()*8+3);
-        var b = Math.floor(Math.random()*3+2);
+	var a = 0;
+	var b = 0;
+	var c = Math.floor(Math.random()*6+2);
+	while (a == b)
+	{
+        	a = Math.floor(Math.random()*2+2);
+        	b = Math.floor(Math.random()*2+2);
+	}
+		
         var pattern = '';
         var total = a;
 	var answer = '';
-        
-	var c = Math.floor(Math.random()*6+2);
+	var operation = '';
+	var op = Math.floor(Math.random()*2);
+	if (op == 0)
+	{
+		operation = 'add';
+	}
+	else
+	{
+		operation = 'subtract';
+	}
 
-        for (var i = 1; i < 9; i++)
+        for (var i = 1; i < 5; i++)
         {
                 if (pattern.length == 0)  //first one no comma
                 {
@@ -30,22 +45,21 @@ initialize: function(sheet)
                 }
                 else
                 {
-			if (c == i)
+			if (op == 0)
 			{
-                        	total = parseInt(total + b);
-				answer = parseInt(total + 1);
-                        	pattern = '' + pattern + ',' + answer;
+                        	total = parseInt(total * b + c);
+                        	pattern = '' + pattern + ',' + total;
 			}
-			else
+			else if (op == 1)
 			{
-                        	total = parseInt(total + b);
+                        	total = parseInt(total * b - c);
                         	pattern = '' + pattern + ',' + total;
 			}
                 }
         }
 
-        this.setQuestion('Using an add rule ' + this.ns.mNameOne + ' makes the following number pattern: ' + pattern + '. What number does not fit the pattern?');
-        this.setAnswer('' + answer,0);
+        this.setQuestion('Starting with the number ' + a + ' use the rule multiply by ' + b + ' ' + operation + ' ' + c + ' and write 4 terms of the pattern seperating the terms with commas.');
+        this.setAnswer('' + pattern,0);
 }
 
 });
