@@ -1,3 +1,43 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_13',4.0513,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__13 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_13';
+        this.ns = new NameSampler();
+
+	//reg patter
+        var a = Math.floor(Math.random()*8+3);
+        var b = Math.floor(Math.random()*3+2);
+        var pattern = '';
+        var total = a;
+
+        for (var i = 1; i < 6; i++)
+        {
+                if (pattern.length == 0)  //first one no comma
+                {
+                        total = parseInt(a);
+                        pattern = '' + total;
+                }
+                else
+                {
+                        total = parseInt(total * b);
+                        pattern = '' + pattern + ',' + total;
+                }
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' makes the following pattern with numbers: ' + pattern + '. What number does not fit the pattern?');
+        this.setAnswer('' + 'hellai',0);
+}
+
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_12',4.0512,'4.oa.c.5','');
 */
@@ -11,7 +51,7 @@ initialize: function(sheet)
         this.mType = '4.oa.c.5_12';
         this.ns = new NameSampler();
 
-//reg patter
+	//reg patter
         var a = Math.floor(Math.random()*8+3);
         var b = Math.floor(Math.random()*3+2);
         var pattern = '';
