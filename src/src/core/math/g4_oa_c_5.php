@@ -1,94 +1,42 @@
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_12',4.0512,'4.oa.c.5','');
 */
 var i_4_oa_c_5__12 = new Class(
 {
-Extends: TextItem3,
+Extends: TextItem,
 initialize: function(sheet)
 {
-	this.parent(sheet,250,200,150,145,100, 50,425,100);
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
         this.mType = '4.oa.c.5_12';
-        
-	this.ns = new NameSampler();
+        this.ns = new NameSampler();
 
-        var a = Math.floor(Math.random()*10+1);
-        var b = Math.floor(Math.random()*8+3);
-       
-	this.mOperation = '';  
-	var c = Math.floor(Math.random()*2);
-	c = parseInt(c);
-	if (c == 0)
-	{
-		this.mOperation = 'add';				
-	}
-	else
-	{
-		this.mOperation = 'subtract';				
-	}
-        
-	var patternArray = new Array();
+        var a = Math.floor(Math.random()*2+2);
+        var b = Math.floor(Math.random()*2+2);
 
-	for (i=0; i < 7; i++)
-	{
-		if (i == 0)
-		{
-			patternArray.push(a);
-		}
-		else
-		{
-			var x = parseInt(patternArray[parseInt(i-1)] + b)
-			patternArray.push(x);
-		}
-	}
-	
-	//heading
-	this.mHeadingAnswerLabel.setPosition(420,100);
-	this.mHeadingAnswerLabel2.setPosition(520,100);
-	this.mHeadingAnswerLabel3.setPosition(610,100);
+        var answer  = '';
+        var last = a;
 
-	this.mHeadingAnswerLabel.setSize(25,25);
-	this.mHeadingAnswerLabel2.setSize(25,25);
-	this.mHeadingAnswerLabel3.setSize(25,25);
+        for (var i = 1; i < 5; i++)
+        {
+                if (answer.length == 0)  //first one no comma
+                {
+                        answer = '' + a;
+                }
+                else
+                {
+                        var next = parseInt(last * b);
+                        answer = answer + ',' + next;
+                        last = next;
+                }
+        }
 
-	if (this.mOperation == 'add')	
-	{
-		this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
-		this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
-		this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
-	}
-	else
-	{
-		this.mHeadingAnswerLabel.setText('' + patternArray[6] + ',');
-		this.mHeadingAnswerLabel2.setText(',' + patternArray[4] + ',');
-		this.mHeadingAnswerLabel3.setText(',' + patternArray[2] + ',');
-	}
-	
-	//text box
-	this.mAnswerTextBox.setPosition(475,110);
-	this.mAnswerTextBox2.setPosition(568,110);
-	this.mAnswerTextBox3.setPosition(660,110);
-
-	this.mAnswerTextBox.setSize(50,50);
-	this.mAnswerTextBox2.setSize(50,50);
-	this.mAnswerTextBox3.setSize(50,50);
-
-        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + b + ' to fill in the missing parts of the number pattern.');
-
-	if (this.mOperation == 'add')	
-	{
-       		this.setAnswer('' + patternArray[1],0);
-        	this.setAnswer('' + patternArray[3],1);
-        	this.setAnswer('' + patternArray[5],2);
-	}
-	else
-	{
-       		this.setAnswer('' + patternArray[5],0);
-        	this.setAnswer('' + patternArray[3],1);
-        	this.setAnswer('' + patternArray[1],2);
-	}
+        this.setQuestion('' + this.ns.mNameOne + ' makes a pattern with numbers. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' begins at the number ' + a + '. The rule ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses is multiply by ' + b + '. Write the first 4 terms of the pattern seperated by commas.');
+        this.setAnswer('' + answer,0);
 }
+
 });
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_11',4.0511,'4.oa.c.5','');
