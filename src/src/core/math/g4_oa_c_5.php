@@ -17,8 +17,11 @@ initialize: function(sheet)
         var b = Math.floor(Math.random()*3+2);
         var pattern = '';
         var total = a;
+	var answer = '';
+        
+	var c = Math.floor(Math.random()*6+2);
 
-        for (var i = 1; i < 6; i++)
+        for (var i = 1; i < 9; i++)
         {
                 if (pattern.length == 0)  //first one no comma
                 {
@@ -27,13 +30,22 @@ initialize: function(sheet)
                 }
                 else
                 {
-                        total = parseInt(total * b);
-                        pattern = '' + pattern + ',' + total;
+			if (c == i)
+			{
+                        	total = parseInt(total + b);
+				answer = parseInt(total + 1);
+                        	pattern = '' + pattern + ',' + answer;
+			}
+			else
+			{
+                        	total = parseInt(total + b);
+                        	pattern = '' + pattern + ',' + total;
+			}
                 }
         }
 
-        this.setQuestion('' + this.ns.mNameOne + ' makes the following pattern with numbers: ' + pattern + '. What number does not fit the pattern?');
-        this.setAnswer('' + 'hellai',0);
+        this.setQuestion('Using an add rule ' + this.ns.mNameOne + ' makes the following number pattern: ' + pattern + '. What number does not fit the pattern?');
+        this.setAnswer('' + answer,0);
 }
 
 });
