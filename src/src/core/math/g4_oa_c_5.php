@@ -1,5 +1,70 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_15',4.0515,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__15 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_15';
+        this.ns = new NameSampler();
+
+	//reg patter
+	var a = 0;
+	var b = 0;
+	var c = Math.floor(Math.random()*2+1);
+	while (a == b)
+	{
+        	a = Math.floor(Math.random()*2+2);
+        	b = Math.floor(Math.random()*2+2);
+	}
+		
+        var pattern = '';
+        var total = a;
+	var answer = '';
+	var operation = '';
+	var op = Math.floor(Math.random()*2);
+	if (op == 0)
+	{
+		operation = 'add';
+	}
+	else
+	{
+		operation = 'subtract';
+	}
+
+        for (var i = 1; i < 5; i++)
+        {
+                if (pattern.length == 0)  //first one no comma
+                {
+                        total = parseInt(a);
+                        pattern = '' + total;
+                }
+                else
+                {
+			if (op == 0)
+			{
+                        	total = parseInt(total * b + c);
+                        	pattern = '' + pattern + ',' + total;
+			}
+			else if (op == 1)
+			{
+                        	total = parseInt(total * b - c);
+                        	pattern = '' + pattern + ',' + total;
+			}
+                }
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' had 2 offers of allowance for doing chores around the house during this week. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne + ' offered to pay ' + this.ns.mNameOne + ' $' + a + ' ' + ' a day for 5 days. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyTwo + ' offered to pay ' + this.ns.mNameOne + ' $' + b + ' the first day of the week and then ' + c + ' times the total of the previous day for the next 4 days. Whose offer should ' + this.ns.mNameOne + ' take.');
+        this.setAnswer('' + this.ns.mFamilyOne,0);
+}
+
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_14',4.0514,'4.oa.c.5','');
 */
 var i_4_oa_c_5__14 = new Class(
@@ -15,7 +80,7 @@ initialize: function(sheet)
 	//reg patter
 	var a = 0;
 	var b = 0;
-	var c = Math.floor(Math.random()*6+2);
+	var c = Math.floor(Math.random()*2+1);
 	while (a == b)
 	{
         	a = Math.floor(Math.random()*2+2);
