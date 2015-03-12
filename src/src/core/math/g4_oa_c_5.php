@@ -1,5 +1,56 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_14',4.0514,'4.oa.c.5','');
+*/
+var i_4_oa_c_5__14 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mType = '4.oa.c.5_14';
+        this.ns = new NameSampler();
+
+	//reg patter
+        var a = Math.floor(Math.random()*8+3);
+        var b = Math.floor(Math.random()*3+2);
+        var pattern = '';
+        var total = a;
+	var answer = '';
+        
+	var c = Math.floor(Math.random()*6+2);
+
+        for (var i = 1; i < 9; i++)
+        {
+                if (pattern.length == 0)  //first one no comma
+                {
+                        total = parseInt(a);
+                        pattern = '' + total;
+                }
+                else
+                {
+			if (c == i)
+			{
+                        	total = parseInt(total + b);
+				answer = parseInt(total + 1);
+                        	pattern = '' + pattern + ',' + answer;
+			}
+			else
+			{
+                        	total = parseInt(total + b);
+                        	pattern = '' + pattern + ',' + total;
+			}
+                }
+        }
+
+        this.setQuestion('Using an add rule ' + this.ns.mNameOne + ' makes the following number pattern: ' + pattern + '. What number does not fit the pattern?');
+        this.setAnswer('' + answer,0);
+}
+
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_13',4.0513,'4.oa.c.5','');
 */
 var i_4_oa_c_5__13 = new Class(
