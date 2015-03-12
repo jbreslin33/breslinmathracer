@@ -293,8 +293,11 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,450,200,255,145,100,50,580,100);
+   	
+	this.mStripCommas = false;
 
         this.mType = '4.oa.b.4_2';
+
 
         var a = Math.floor(Math.random()*100+1);
         var factors  = '';
