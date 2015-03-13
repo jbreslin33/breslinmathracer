@@ -1149,6 +1149,32 @@ getItem: function(id)
         {
                 return new i_4_md_a_2__25(this.mSheet);
         }
+       
+	//4.md.b.4 
+	if (id == '4.md.b.4_1')
+        {
+                return new i_4_md_b_4__1(this.mSheet);
+        }
+	if (id == '4.md.b.4_2')
+        {
+                return new i_4_md_b_4__2(this.mSheet);
+        }
+	if (id == '4.md.b.4_3')
+        {
+                return new i_4_md_b_4__3(this.mSheet);
+        }
+	if (id == '4.md.b.4_4')
+        {
+                return new i_4_md_b_4__4(this.mSheet);
+        }
+	if (id == '4.md.b.4_5')
+        {
+                return new i_4_md_b_4__5(this.mSheet);
+        }
+	if (id == '4.md.b.4_6')
+        {
+                return new i_4_md_b_4__6(this.mSheet);
+        }
 
 	/*** GRADE 5 ***/
 	//5.oa.a.1
