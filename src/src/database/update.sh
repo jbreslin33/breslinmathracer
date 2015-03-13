@@ -71,6 +71,7 @@ cat src/polygon/rectangle.php >> min.js
 cat src/polygon/parallelogram.php >> min.js
 cat src/polygon/rhombus.php >> min.js
 cat src/polygon/line_one.php >> min.js
+cat src/polygon/ray.php >> min.js
 cat src/polygon/line_chart.php >> min.js
 cat src/polygon/table.php >> min.js
 cat src/polygon/ruler_centimeter.php >> min.js

@@ -157,15 +157,25 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__1 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
 
-                this.mType = '4.md.b.4_1';
+initialize: function(sheet)
+{
+  	this.mRaphael = Raphael(350,137,150,5);
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+	
+        this.mType = '4.md.b.4_1';
+	
 
-                this.setQuestion('A line with a start point but no end point. It goes to infinity.');
-                this.setAnswer('' + 'ray',0);
-                this.setAnswer('' + 'a ray',1);
-        }
+        this.setQuestion('A line with a start point but no end point. It goes to infinity.');
+        this.setAnswer('' + 'ray',0);
+        this.setAnswer('' + 'a ray',1);
+
+},
+
+createShapes: function()
+{
+	this.parent();
+	this.mFractionBar = new Ray (this.mSheet.mGame,this.mRaphael,0,0,150,0,"#000000",false)
+}
 });
 
