@@ -1,3 +1,24 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.b.4_9',4.2709,'4.md.b.4','');
+*/
+var i_4_md_b_4__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '4.md.b.4_9';
+
+                var f = new Fraction(180,360,false);
+
+                this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle. It measures 180&deg.');
+                this.setAnswer('' + 'straigt angle',0);
+                this.setAnswer('' + 'a straight angle',1);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.b.4_8',4.2708,'4.md.b.4','');
 */
