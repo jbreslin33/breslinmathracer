@@ -30,15 +30,14 @@ Extends: RaphaelPolygon,
 		this.mItem.addQuestionShape(this.mEndPoint);
 
 		//triangle at end of ray
-		this.mTriangle = new Triangle (this.mItem.mSheet.mGame,this.mItem.mRaphael,parseInt(x2-10),y2, parseInt(x2-20),parseInt(y2+20), parseInt(x2-20),parseInt(y2-20)   ,0,1,1,"none",.5,false)
+		this.mTriangle = new Triangle (this.mItem.mSheet.mGame,this.mItem.mRaphael,parseInt(x2),y2, parseInt(x2-20),parseInt(y2+10), parseInt(x2-20),parseInt(y2-10)   ,0,1,1,"none",.5,false)
 		this.mItem.addQuestionShape(this.mTriangle);
-
 
 		//lets rotate according to passed in value
 		var rotateAmount = '' + 'r' + r + ',' + x1 + ',' + y1;   
 		this.mPolygon.transform(rotateAmount);
 	
-		//rotate triangle ??	
+		//rotate triangle 	
 		this.mTriangle.mPolygon.transform(rotateAmount);
 	}
 });
