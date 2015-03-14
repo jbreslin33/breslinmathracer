@@ -24,5 +24,11 @@ Extends: RaphaelPolygon,
 
 		this.mEndPoint = new Circle (12.5,x1,y1,game,this.mRaphael,0,1,1,"none",.5,false)
 
+		//lets rotate according to passed in value
+		var rotateAmount = '' + 'r45,' + x1 + ',' + y1;   
+		//this.mPolygon.transform("r45,x1,y1");
+		this.mPolygon.transform(rotateAmount);
+
+
 	}
 });
