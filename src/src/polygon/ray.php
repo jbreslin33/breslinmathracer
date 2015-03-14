@@ -1,7 +1,8 @@
-//you could put a circle at x1,y1 and then a triangle at x2,y2
+
 var Ray = new Class(
 {
 Extends: RaphaelPolygon,
+//x1=endpointx y2=endpointy x2=arrowx y2=arrowy r=rotation in degrees around x1,y1 							
         initialize: function (game,raphael,x1,y1,x2,y2,s,d,r)
         {
 		//find center for mPosition...
