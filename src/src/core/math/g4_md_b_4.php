@@ -175,7 +175,7 @@ initialize: function(sheet)
 createShapes: function()
 {
 	this.parent();
-	this.mRay = new Ray (this.mSheet.mGame,this.mRaphael,20,20,150,20,"#000000",false)
+	this.mRay = new Ray (this.mSheet.mGame,this.mRaphael,20,20,150,20,"#000000",false,145)
 }
 });
 
