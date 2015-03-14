@@ -122,16 +122,25 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__3 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.mRaphael = Raphael(0,0,380,380);
+	this.parent(sheet,300,50,575,95,100,50,625,200);
+        
+	this.mType = '4.md.b.4_3';
 
-                this.mType = '4.md.b.4_3';
+        this.setQuestion('A point or value that marks the end of a ray or one of the ends of a line segment. The red circle in the picture on left.');
+        this.setAnswer('' + 'endpoint',0);
+	this.setAnswer('' + 'an endpoint',1);
+},
 
-                this.setQuestion('A point or value that marks the end of a ray or one of the ends of a line segment.');
-                this.setAnswer('' + 'endpoint',0);
-                this.setAnswer('' + 'an endpoint',1);
-        }
+createShapes: function()
+{
+	this.parent();
+
+	this.mRay = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,334);
+ 	this.addQuestionShape(this.mRay);
+}
 });
 
 /*
