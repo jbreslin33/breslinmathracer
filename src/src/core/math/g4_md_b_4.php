@@ -1,4 +1,5 @@
 
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.b.4_9',4.2709,'4.md.b.4','');
 */
@@ -139,16 +140,24 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__2 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.mRaphael = Raphael(0,0,380,380);
+	this.parent(sheet,300,50,575,95,100,50,625,200);
 
-                this.mType = '4.md.b.4_2';
+        this.mType = '4.md.b.4_2';
 
-                this.setQuestion('A precise location or place on a plane. Usually represented by a dot.');
-                this.setAnswer('' + 'point',0);
-                this.setAnswer('' + 'a point',1);
-        }
+        this.setQuestion('A precise location or place on a plane. Usually represented by a dot.');
+        this.setAnswer('' + 'point',0);
+        this.setAnswer('' + 'a point',1);
+},
+
+createShapes: function()
+{
+	this.parent();
+	this.mEndpoint = new Circle(12.5,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+ 	this.addQuestionShape(this.mEndpoint);
+}
 });
 
 /*
