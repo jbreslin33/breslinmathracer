@@ -1,3 +1,4 @@
+//you could put a circle at x1,y1 and then a triangle at x2,y2
 var Ray = new Class(
 {
 Extends: RaphaelPolygon,
@@ -20,5 +21,8 @@ Extends: RaphaelPolygon,
 		this.mPolygon.attr ("stroke", this.mStroke);
 
 		this.mPolygon.mPolygon = this;
+
+		this.mEndPoint = new Circle (12.5,x1,y1,game,this.mRaphael,0,1,1,"none",.5,false)
+
 	}
 });

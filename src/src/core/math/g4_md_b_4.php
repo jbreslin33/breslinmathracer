@@ -160,7 +160,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-  	this.mRaphael = Raphael(350,137,150,5);
+  	this.mRaphael = Raphael(50,237,200,200);
 	this.parent(sheet,300,50,175,95,100,50,425,100);
 	
         this.mType = '4.md.b.4_1';
@@ -175,7 +175,7 @@ initialize: function(sheet)
 createShapes: function()
 {
 	this.parent();
-	this.mFractionBar = new Ray (this.mSheet.mGame,this.mRaphael,0,0,150,0,"#000000",false)
+	this.mRay = new Ray (this.mSheet.mGame,this.mRaphael,20,20,150,20,"#000000",false)
 }
 });
 
