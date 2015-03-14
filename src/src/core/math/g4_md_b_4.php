@@ -160,11 +160,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-	this.rx = 0;
-	this.ry = 0;
-	this.rw = 380; 
-	this.rh = 380; 
-  	this.mRaphael = Raphael(this.rx,this.ry,this.rw,this.rh);
+  	this.mRaphael = Raphael(0,0,380,380);
 	this.parent(sheet,300,50,175,95,100,50,425,100);
 	
         this.mType = '4.md.b.4_1';
@@ -178,7 +174,8 @@ initialize: function(sheet)
 createShapes: function()
 {
 	this.parent();
-	this.mRay = new Ray (this.mSheet.mGame,this.mRaphael,parseInt(this.rw/2),parseInt(this.rh/2),parseInt(this.rw-10),parseInt(this.rh/2),"#000000",false,145)
+
+	this.mRay = new Ray (this.mSheet.mGame,this.mRaphael,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,145)
  	this.addQuestionShape(this.mRay);
 }
 });
