@@ -175,7 +175,7 @@ createShapes: function()
 {
 	this.parent();
 
-	this.mRay = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,145);
+	this.mRay = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,334);
  	this.addQuestionShape(this.mRay);
 }
 });
