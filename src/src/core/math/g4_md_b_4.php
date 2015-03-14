@@ -161,7 +161,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
   	this.mRaphael = Raphael(0,0,380,380);
-	this.parent(sheet,300,50,175,95,100,50,425,100);
+	this.parent(sheet,300,50,575,95,100,50,625,200);
 	
         this.mType = '4.md.b.4_1';
 
