@@ -2,7 +2,7 @@
 var Ray = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,s,d)
+        initialize: function (game,raphael,x1,y1,x2,y2,s,d,r)
         {
 		//find center for mPosition...
 		sX = x1 + x2 / 3;
@@ -14,6 +14,7 @@ Extends: RaphaelPolygon,
 		this.y1 = y1;
 		this.x2 = x2;
 		this.y2 = y2;
+		this.r  = r;
 		
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 		
@@ -25,8 +26,7 @@ Extends: RaphaelPolygon,
 		this.mEndPoint = new Circle (12.5,x1,y1,game,this.mRaphael,0,1,1,"none",.5,false)
 
 		//lets rotate according to passed in value
-		var rotateAmount = '' + 'r45,' + x1 + ',' + y1;   
-		//this.mPolygon.transform("r45,x1,y1");
+		var rotateAmount = '' + 'r' + r + ',' + x1 + ',' + y1;   
 		this.mPolygon.transform(rotateAmount);
 
 
