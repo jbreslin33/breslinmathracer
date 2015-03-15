@@ -29,6 +29,11 @@ function __construct($startNew)
 	$this->mastered_array = array();
 	$this->unmastered_array = array();
 	$this->unasked_array = array();
+
+	//scores
+        $this->score_array = array();
+        $this->high_standard = '';
+        $this->high_progression = '';
 	
 	$this->item_types_id_to_ask = '';
 
@@ -298,6 +303,47 @@ public function masters()
 
 }
 
+public function scores()
+{
+        //score
+        $i = 0;
+        while ($i <= intval(count($this->id_array) - 1))
+        {
+                $c = 0;
+                $exists = false;
+                while ($c <= intval(count($this->item_array) - 1) && $exists == false)
+                {
+                        if ($this->id_array[$i] == $this->item_array[$c])
+                        {
+                                $this->high_standard = $this->id_array[$i];
+                                $this->high_progression = $this->progression_array[$i];
+                                $this->score_array[] = $this->id_array[$i];
+                                $exists = true;
+                        }
+                        $c++;
+                }
+                $i++;
+        }
+
+        //trim progression
+        $this->high_progression = substr($this->high_progression,2,2);
+
+}
+
+public function updateScores()
+{
+        /*********************  for teacher real time data  *************/
+        $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
+        $update .= intval(count($this->score_array));
+        $update .= ", unmastered = ";
+        $update .= count($this->unmastered_array);
+        $update .= " WHERE id = ";
+        $update .= $_SESSION["user_id"];
+        $update .= ";";
+
+        $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+}
+
 //i am going to remember the last thing i asked and only ask 1 question at a time.
 public function setRawData()
 {
@@ -306,10 +352,12 @@ public function setRawData()
 	$this->fillAttemptsArray();
 	
 	$this->item_types_id_to_ask = '';
-	
+        
+	$this->masters();
+	$this->scores();
+        $this->updateScores();
 
 	//ask 1st one that is not mastered
-
 	$i = 0;
 
 	//loop thru id array until you reach end or find a item to ask ..this is why you can grab all attempts regardless of progression as long as they where normal as they will never get checked in following code.
@@ -509,48 +557,7 @@ public function setRawData()
 		}
 	}
 	
-	//score
-        $score_array = array();
-        $i = 0;
-	$high_standard = '';
-	$high_progression = '';
-        while ($i <= intval(count($this->id_array) - 1))
-        {
-                $c = 0; 
-                $exists = false;
-                while ($c <= intval(count($this->item_array) - 1) && $exists == false)
-                {
-                	if ($this->id_array[$i] == $this->item_array[$c])
-                        {
-        			$high_standard = $this->id_array[$i];
-        			$high_progression = $this->progression_array[$i];
-                        	$score_array[] = $this->id_array[$i];
-                                $exists = true; 
-                        }
-                        $c++;   
-                }
-                $i++;   
-	}
-
-	//trim progression
-	$high_progression = substr($high_progression,2,2);
-
-	$this->masters();
-	
-	/*********************  for teacher real time data  *************/
-	
-	$update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
-	$update .= intval(count($score_array)); 
-	$update .= ", unmastered = "; 
-	$update .= count($this->unmastered_array);
-        $update .= " WHERE id = ";
-        $update .= $_SESSION["user_id"];
-        $update .= ";";
-
-	$updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
-	
 	/** anaylse **/
-
 	$_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
 	
 	//pink
@@ -559,17 +566,17 @@ public function setRawData()
 	//blue
         $itemString .= ":";
         $itemString .= "L=";
-        $itemString .= "$high_progression";
+        $itemString .= "$this->high_progression";
         $itemString .= " U=";
 	$itemString .= count($this->unmastered_array);
 
 	//yellow	
         $itemString .= ":";
-        $itemString .= "$high_standard";
+        $itemString .= "$this->high_standard";
 
 	//green
         $itemString .= ":";
-        $itemString .= intval(count($score_array)); 
+        $itemString .= intval(count($this->score_array)); 
        
         $_SESSION["before_item_type_id"] = $itemString;
         $_SESSION["raw_data"] = $itemString;
