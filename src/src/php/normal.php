@@ -24,6 +24,11 @@ function __construct($startNew)
 	$this->item_array             = array();
 	$this->transaction_code_array = array();
 	$this->core_standards_array   = array();
+
+	//masters
+	$this->mastered_array = array();
+	$this->unmastered_array = array();
+	$this->unasked_array = array();
 	
 	$this->item_types_id_to_ask = '';
 
@@ -246,6 +251,52 @@ public function fillAttemptsArray()
 		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
 }
+public function masters()
+{
+        //loop thru item array until you reach end
+        $i = 0;
+        while ($i <= intval(count($this->id_array) - 1))
+        {
+                $mini_transaction_code_array = array();
+
+                $c = 0;
+
+                //loop attempt array and dump into arrays then you can eval after
+                while ($c <= intval(count($this->item_array) - 1))
+                {
+                        //check for match of ids if so add to code array
+                        if ($this->id_array[$i] == $this->item_array[$c])
+                        {
+                                $mini_transaction_code_array[] = $this->transaction_code_array[$c];
+                        }
+                        $c++; //increment for typearrays
+                }
+
+                //analysis
+                if ( intval(count($mini_transaction_code_array)) == 0 )
+                {
+                        $this->unasked_array[] = $this->id_array[$i];
+                }
+                if ( intval(count($mini_transaction_code_array)) == 1 )
+                {
+                        $this->unmastered_array[] = $this->id_array[$i];
+                }
+                if ( intval(count($mini_transaction_code_array)) > 1 )
+                {
+                        //if either is not 1 then its not type mastered so make it ask type
+                        if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
+                        {
+                                $this->unmastered_array[] = $this->id_array[$i];
+                        }
+                        else //mastered
+                        {
+                                $this->mastered_array[] = $this->id_array[$i];
+                        }
+                }
+                $i++;
+        }
+
+}
 
 //i am going to remember the last thing i asked and only ask 1 question at a time.
 public function setRawData()
@@ -303,6 +354,7 @@ public function setRawData()
 
 	if ( !isset($_SESSION["item_type_last"]) ) {
 		//go with above from earliest unmastered
+		error_log("no item set");
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
@@ -331,6 +383,7 @@ public function setRawData()
 		//true bananas
 		if ($bananas > -1 && $bananas <= 25)
 		{ 
+			error_log("true bananas");
 			$r = rand( 0,intval(count($previous_id_array)-1) );
 			$this->item_types_id_to_ask = $previous_id_array[$r];
 		}
@@ -338,6 +391,7 @@ public function setRawData()
 		// this should be least asked
 		if ($bananas > 25 && $bananas <= 50)
 		{
+			error_log("least asked");
 			$least_id = '';
 			$leastCount = 9999;
 			$currentCount = 0;
@@ -368,6 +422,7 @@ public function setRawData()
 		// this should be least correct
 		if ($bananas > 50 && $bananas <= 75)
 		{
+			error_log("least correct");
 			$least_id = '';
                         $leastCount = 9999;
                         $currentCount = 0;
@@ -401,6 +456,7 @@ public function setRawData()
 		// this should be least percent correct
 		if ($bananas > 75 && $bananas <= 100)
 		{
+			error_log("least percent correct");
 			$least_id = '';
                         $leastPercent = 1000;
                         $currentPercent = 0;
@@ -479,61 +535,14 @@ public function setRawData()
 	//trim progression
 	$high_progression = substr($high_progression,2,2);
 
-	/*** cleanup ****/
-
-	$mastered_array = array();
-	$unmastered_array = array();
-	$unasked_array = array();
-
- 	//loop thru item array until you reach end
-	$i = 0;
-        while ($i <= intval(count($this->id_array) - 1))
-	{
-		$mini_transaction_code_array = array();
-
-                $c = 0;
-
-                //loop attempt array and dump into arrays then you can eval after
-                while ($c <= intval(count($this->item_array) - 1))
-                {
-                        //check for match of ids if so add to code array
-                        if ($this->id_array[$i] == $this->item_array[$c])
-                        {
-                                $mini_transaction_code_array[] = $this->transaction_code_array[$c];
-                        }
-                        $c++; //increment for typearrays
-                }
-		
-		//analysis
-                if ( intval(count($mini_transaction_code_array)) == 0 )
-		{
-			$unasked_array[] = $this->id_array[$i];	
-		}
-                if ( intval(count($mini_transaction_code_array)) == 1 )
-                {
-			$unmastered_array[] = $this->id_array[$i];	
-                }
-                if ( intval(count($mini_transaction_code_array)) > 1 )
-                {
-                        //if either is not 1 then its not type mastered so make it ask type
-                        if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
-                        {
-				$unmastered_array[] = $this->id_array[$i];	
-                        }
-			else //mastered
-			{
-				$mastered_array[] = $this->id_array[$i];	
-			}
-                }
-                $i++;
-	}
+	$this->masters();
 	
 	/*********************  for teacher real time data  *************/
 	
 	$update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
 	$update .= intval(count($score_array)); 
 	$update .= ", unmastered = "; 
-	$update .= count($unmastered_array);
+	$update .= count($this->unmastered_array);
         $update .= " WHERE id = ";
         $update .= $_SESSION["user_id"];
         $update .= ";";
@@ -552,7 +561,7 @@ public function setRawData()
         $itemString .= "L=";
         $itemString .= "$high_progression";
         $itemString .= " U=";
-	$itemString .= count($unmastered_array);
+	$itemString .= count($this->unmastered_array);
 
 	//yellow	
         $itemString .= ":";
