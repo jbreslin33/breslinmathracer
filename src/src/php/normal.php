@@ -358,7 +358,12 @@ public function setRawData()
 	$this->scores();
         $this->updateScores();
 	$this->setEarliestToAsk();	
-	$this->goBananas();
+	$unmasteredCount = intval(count($this->unmastered_array));
+
+	if ($unmasteredCount < 6)
+	{ 	
+		$this->goBananas();
+	}
 	$this->setItemString();
 }
 public function setEarliestToAsk()
@@ -533,7 +538,8 @@ public function goBananas()
 {
 	//check to see if it was asked last.....
 
-	if ( !isset($_SESSION["item_type_last"]) ) {
+	if ( !isset($_SESSION["item_type_last"]) )
+ 	{
 		//go with above from earliest unmastered
 		error_log("no item set");
 	}
