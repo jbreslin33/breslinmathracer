@@ -29,6 +29,7 @@ function __construct($startNew)
 	$this->mastered_array = array();
 	$this->unmastered_array = array();
 	$this->unasked_array = array();
+	$this->previous_id_array = array();
 
 	//scores
         $this->score_array = array();
@@ -404,6 +405,130 @@ public function setEarliestToAsk()
 	}
 }
 
+public function trueBananas()
+{
+	error_log("true bananas");
+	$r = rand( 0,intval(count($this->previous_id_array)-1) );
+	$this->item_types_id_to_ask = $this->previous_id_array[$r];
+}
+
+public function leastAsked()
+{
+	error_log("least asked");
+	$least_id = '';
+	$leastCount = 9999;
+	$currentCount = 0;
+
+	$p = 0;	
+	while ($p <= intval(count($this->previous_id_array) - 1))
+	{
+		$currentCount = 0;
+		$i = 0;
+		while ($i <= intval(count($this->item_array) - 1))
+		{
+			if ($this->previous_id_array[$p] == $this->item_array[$i])
+			{
+				$currentCount++;
+			}	 
+			$i++;
+		}
+		if ($currentCount < $leastCount) //we have a new chump
+		{
+			$leastCount = $currentCount;
+			$least_id = $this->previous_id_array[$p];				
+		} 
+		$p++;
+	}
+	$this->item_types_id_to_ask = $least_id;
+}
+
+public function leastCorrect()
+{
+	error_log("least correct");
+	$least_id = '';
+        $leastCount = 9999;
+        $currentCount = 0;
+
+        $p = 0;
+        while ($p <= intval(count($this->previous_id_array) - 1))
+        {
+        	$currentCount = 0;
+                $i = 0;
+                while ($i <= intval(count($this->item_array) - 1))
+               	{
+               		if ($this->previous_id_array[$p] == $this->item_array[$i])
+                        {
+				if ($this->transaction_code_array[$i] == 1)
+				{
+                                      	$currentCount++;
+				}
+                        }
+                        $i++;
+                }
+               	if ($currentCount < $leastCount) //we have a new chump
+               	{
+                	$leastCount = $currentCount;
+                       	$least_id = $this->previous_id_array[$p];
+       		}
+        	$p++;
+        }
+	$this->item_types_id_to_ask = $least_id;
+}
+
+public function leastPercent()
+{
+	error_log("least percent correct");
+	$least_id = '';
+        $leastPercent = 1000;
+        $currentPercent = 0;
+	$right = 0;
+	$wrong = 0;
+
+        $p = 0;
+        while ($p <= intval(count($this->previous_id_array) - 1))
+        {
+        	$currentPercent = 0;
+		$right = 0; 
+		$wrong = 0; 
+
+                $i = 0;
+                while ($i <= intval(count($this->item_array) - 1))
+                {
+                	if ($this->previous_id_array[$p] == $this->item_array[$i])
+                        {
+				if ($this->transaction_code_array[$i] == 1)
+				{
+                                   	$right++;
+				}
+				if ($this->transaction_code_array[$i] == 2)
+				{
+                                      	$wrong++;
+				}
+                         }
+                         $i++;
+                }
+
+		//calc
+		$total = intval($right + $wrong);
+		if ($wrong == 0)
+		{
+			$currentPercent = 100;	
+		}
+		else
+		{
+			$currentPercent = floatval($right / $wrong);  
+			$currentPercent = round( $currentPercent, 2);
+		}
+                if ($currentPercent < $leastPercent) //we have a new chump
+                {
+                	$leastPercent = $currentPercent;
+                        $least_id = $this->previous_id_array[$p];
+                }
+                $p++;
+	}
+        $this->item_types_id_to_ask = $least_id;
+}
+
 public function goBananas()
 {
 	//check to see if it was asked last.....
@@ -415,7 +540,6 @@ public function goBananas()
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
 		//go bananas lets get all previously asked questions....in normal
-		$previous_id_array = array();
  		$i = 0;
 		while ($i <= intval(count($this->id_array) - 1))
         	{
@@ -425,7 +549,7 @@ public function goBananas()
 			{
 				if ($this->id_array[$i] == $this->item_array[$c])
 				{
-					$previous_id_array[] = $this->id_array[$i];
+					$this->previous_id_array[] = $this->id_array[$i];
 					$exists = true;
 				}
 				$c++;
@@ -439,129 +563,25 @@ public function goBananas()
 		//true bananas
 		if ($bananas > -1 && $bananas <= 25)
 		{ 
-			error_log("true bananas");
-			$r = rand( 0,intval(count($previous_id_array)-1) );
-			$this->item_types_id_to_ask = $previous_id_array[$r];
+			$this->trueBananas();
 		}
 
 		// this should be least asked
 		if ($bananas > 25 && $bananas <= 50)
 		{
-			error_log("least asked");
-			$least_id = '';
-			$leastCount = 9999;
-			$currentCount = 0;
-
-			$p = 0;	
-			while ($p <= intval(count($previous_id_array) - 1))
-			{
-				$currentCount = 0;
-				$i = 0;
-				while ($i <= intval(count($this->item_array) - 1))
-				{
-					if ($previous_id_array[$p] == $this->item_array[$i])
-					{
-						$currentCount++;
-					}	 
-					$i++;
-				}
-				if ($currentCount < $leastCount) //we have a new chump
-				{
-					$leastCount = $currentCount;
-					$least_id = $previous_id_array[$p];				
-				} 
-				$p++;
-			}
-			$this->item_types_id_to_ask = $least_id;
+			$this->leastAsked();
 		}
 
 		// this should be least correct
 		if ($bananas > 50 && $bananas <= 75)
 		{
-			error_log("least correct");
-			$least_id = '';
-                        $leastCount = 9999;
-                        $currentCount = 0;
-
-                        $p = 0;
-                        while ($p <= intval(count($previous_id_array) - 1))
-                        {
-                                $currentCount = 0;
-                                $i = 0;
-                                while ($i <= intval(count($this->item_array) - 1))
-                                {
-                                        if ($previous_id_array[$p] == $this->item_array[$i])
-                                        {
-						if ($this->transaction_code_array[$i] == 1)
-						{
-                                                	$currentCount++;
-						}
-                                        }
-                                        $i++;
-                                }
-                                if ($currentCount < $leastCount) //we have a new chump
-                                {
-                                        $leastCount = $currentCount;
-                                        $least_id = $previous_id_array[$p];
-                                }
-                                $p++;
-                        }
-                        $this->item_types_id_to_ask = $least_id;
+			$this->leastCorrect();
 		}
 
 		// this should be least percent correct
 		if ($bananas > 75 && $bananas <= 100)
 		{
-			error_log("least percent correct");
-			$least_id = '';
-                        $leastPercent = 1000;
-                        $currentPercent = 0;
-			$right = 0;
-			$wrong = 0;
-
-                        $p = 0;
-                        while ($p <= intval(count($previous_id_array) - 1))
-                        {
-                                $currentPercent = 0;
-				$right = 0; 
-				$wrong = 0; 
-
-                                $i = 0;
-                                while ($i <= intval(count($this->item_array) - 1))
-                                {
-                                        if ($previous_id_array[$p] == $this->item_array[$i])
-                                        {
-						if ($this->transaction_code_array[$i] == 1)
-						{
-                                                	$right++;
-						}
-						if ($this->transaction_code_array[$i] == 2)
-						{
-                                                	$wrong++;
-						}
-                                        }
-                                        $i++;
-                                }
-
-				//calc
-				$total = intval($right + $wrong);
-				if ($wrong == 0)
-				{
-					$currentPercent = 100;	
-				}
-				else
-				{
-					$currentPercent = floatval($right / $wrong);  
-					$currentPercent = round( $currentPercent, 2);
-				}
-                                if ($currentPercent < $leastPercent) //we have a new chump
-                                {
-                                        $leastPercent = $currentPercent;
-                                        $least_id = $previous_id_array[$p];
-                                }
-                                $p++;
-                        }
-                        $this->item_types_id_to_ask = $least_id;
+			$this->leastPercent();
 		}
 	}
 }
