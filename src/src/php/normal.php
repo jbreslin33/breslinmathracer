@@ -356,7 +356,12 @@ public function setRawData()
 	$this->masters();
 	$this->scores();
         $this->updateScores();
-
+	$this->setEarliestToAsk();	
+	$this->goBananas();
+	$this->setItemString();
+}
+public function setEarliestToAsk()
+{
 	//ask 1st one that is not mastered
 	$i = 0;
 
@@ -397,8 +402,6 @@ public function setRawData()
 		} 
 		$i++;
 	}
-	$this->goBananas();
-	$this->setItemString();
 }
 
 public function goBananas()
