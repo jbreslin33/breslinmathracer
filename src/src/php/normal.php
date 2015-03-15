@@ -397,7 +397,12 @@ public function setRawData()
 		} 
 		$i++;
 	}
+	$this->goBananas();
+	$this->setItemString();
+}
 
+public function goBananas()
+{
 	//check to see if it was asked last.....
 
 	if ( !isset($_SESSION["item_type_last"]) ) {
@@ -409,10 +414,10 @@ public function setRawData()
 		//go bananas lets get all previously asked questions....in normal
 		$previous_id_array = array();
  		$i = 0;
+		$exists = false;
 		while ($i <= intval(count($this->id_array) - 1))
         	{
-			$c = 0;
-			$exists = false;
+ 			$c = 0;
 			while ($c <= intval(count($this->item_array) - 1) && $exists == false)
 			{
 				if ($this->id_array[$i] == $this->item_array[$c])
@@ -556,7 +561,6 @@ public function setRawData()
                         $this->item_types_id_to_ask = $least_id;
 		}
 	}
-	$this->setItemString();
 }
 
 public function setItemString()
