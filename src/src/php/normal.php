@@ -556,33 +556,37 @@ public function setRawData()
                         $this->item_types_id_to_ask = $least_id;
 		}
 	}
-	
-	/** anaylse **/
-	$_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
-	
-	//pink
+	$this->setItemString();
+}
+
+public function setItemString()
+{
+        $_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
+
+        //pink
         $itemString =  $this->item_types_id_to_ask; //ask this one
 
-	//blue
+        //blue
         $itemString .= ":";
         $itemString .= "L=";
         $itemString .= "$this->high_progression";
         $itemString .= " U=";
-	$itemString .= count($this->unmastered_array);
+        $itemString .= count($this->unmastered_array);
 
-	//yellow	
+        //yellow
         $itemString .= ":";
         $itemString .= "$this->high_standard";
 
-	//green
+        //green
         $itemString .= ":";
-        $itemString .= intval(count($this->score_array)); 
-       
+        $itemString .= intval(count($this->score_array));
+
         $_SESSION["before_item_type_id"] = $itemString;
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
 }
+
 //end of class
 }
 ?>
