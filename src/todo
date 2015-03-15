@@ -1,3 +1,5 @@
+normal should only ask remediate if there is a remediate...it should not ask any gradelevel questions.....until remediate is good. 
+-------------------------------------
 no buffer instead make use mastery to take out some questions. 
 ---
 5 item buffer in case kid is stuck. also show total above buffer..and total stuck in general...

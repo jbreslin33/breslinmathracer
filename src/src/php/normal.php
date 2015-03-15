@@ -306,9 +306,6 @@ public function setRawData()
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
-	//while should be here...
-	//while ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) 
-	//{
 		//go bananas lets get all previously asked questions....in normal
 		$previous_id_array = array();
  		$i = 0;
@@ -454,7 +451,6 @@ public function setRawData()
                         }
                         $this->item_types_id_to_ask = $least_id;
 		}
-	//}
 	}
 	
 	//score
