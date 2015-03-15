@@ -417,10 +417,10 @@ public function goBananas()
 		//go bananas lets get all previously asked questions....in normal
 		$previous_id_array = array();
  		$i = 0;
-		$exists = false;
 		while ($i <= intval(count($this->id_array) - 1))
         	{
  			$c = 0;
+			$exists = false;
 			while ($c <= intval(count($this->item_array) - 1) && $exists == false)
 			{
 				if ($this->id_array[$i] == $this->item_array[$c])
