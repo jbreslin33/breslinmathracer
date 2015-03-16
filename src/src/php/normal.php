@@ -412,14 +412,12 @@ public function setEarliestToAsk()
 
 public function trueBananas()
 {
-	error_log("true bananas");
 	$r = rand( 0,intval(count($this->previous_id_array)-1) );
 	$this->item_types_id_to_ask = $this->previous_id_array[$r];
 }
 
 public function leastAsked()
 {
-	error_log("least asked");
 	$least_id = '';
 	$leastCount = 9999;
 	$currentCount = 0;
@@ -449,7 +447,6 @@ public function leastAsked()
 
 public function leastCorrect()
 {
-	error_log("least correct");
 	$least_id = '';
         $leastCount = 9999;
         $currentCount = 0;
@@ -482,7 +479,6 @@ public function leastCorrect()
 
 public function leastPercent()
 {
-	error_log("least percent correct");
 	$least_id = '';
         $leastPercent = 1000;
         $currentPercent = 0;
@@ -541,7 +537,6 @@ public function goBananas()
 	if ( !isset($_SESSION["item_type_last"]) )
  	{
 		//go with above from earliest unmastered
-		error_log("no item set");
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
