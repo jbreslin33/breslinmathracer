@@ -1,9 +1,3 @@
-/*
-sector: function(cx, cy, r, startAngle, endAngle, params)
-{
-        return this.mRaphael.path(["M", cx, cy, "L", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, "z"]).attr(params);
-}
-*/
 var AngleArc = new Class(
 {
 Extends: RaphaelPolygon,
