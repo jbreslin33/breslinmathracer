@@ -123,6 +123,11 @@ createShapes: function()
 
 	this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,10);
  	this.addQuestionShape(this.mRayB);
+
+	//need an arc
+//game,raphael,x,y,radius,start,end,r,g,b,s,op,d
+	this.mArc = new Arc (this.mSheet.mGame,this.mRaphael,100,100,25,90,45,0,1,1,"none",.5,false);
+ 	this.addQuestionShape(this.mArc);
 }
 
 });
