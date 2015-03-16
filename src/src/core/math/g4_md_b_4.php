@@ -129,7 +129,9 @@ createShapes: function()
 	//this.mArc = new Arc (this.mSheet.mGame,this.mRaphael,100,100,25,90,45,0,1,1,"none",.5,false);
  	//this.addQuestionShape(this.mArc);
 
-	var fifty = this.sector(100,100,50,0,180,{"fill":"red"});
+	//var fifty = this.sector(100,100,50,0,180,{"fill":"red"});
+	this.mAngleArc = new AngleArc(this,100,100,50, 0, 180,0,1,1,"none",.5,false);;
+	this.addQuestionShape(this.mAngleArc);
 },
 sector: function(cx, cy, r, startAngle, endAngle, params)
 {
