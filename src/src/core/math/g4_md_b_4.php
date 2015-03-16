@@ -118,13 +118,16 @@ createShapes: function()
 {
 	this.parent();
 
-	//this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,334);
- 	//this.addQuestionShape(this.mRayA);
+	var angleA = 334;	
+	var angleB = 10;	
+
+	this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,334);
+ 	this.addQuestionShape(this.mRayA);
 
 	this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,10);
  	this.addQuestionShape(this.mRayB);
 
-	this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(10-360)), 90,0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
 	this.addQuestionShape(this.mAngleArc);
 }
 
