@@ -6,18 +6,36 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__9 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.mRaphael = Raphael(0,0,380,380);
+	this.parent(sheet,300,50,575,95,200,50,625,200);
+        this.mType = '4.md.b.4_9';
+	this.mChopWhiteSpace = false;
 
-                this.mType = '4.md.b.4_9';
+        var f = new Fraction(180,360,false);
 
-                var f = new Fraction(180,360,false);
+       	this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle. It measures 180&deg.');
+        this.setAnswer('' + 'straigt angle',0);
+        this.setAnswer('' + 'a straight angle',1);
+},
 
-                this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle. It measures 180&deg.');
-                this.setAnswer('' + 'straigt angle',0);
-                this.setAnswer('' + 'a straight angle',1);
-        }
+createShapes: function()
+{
+        this.parent();
+
+        var angleA = 180;
+        var angleB = 360;
+
+        this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
+        this.addQuestionShape(this.mRayA);
+
+        this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
+        this.addQuestionShape(this.mRayB);
+
+        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArc);
+}
 });
 
 /*
@@ -26,18 +44,36 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__8 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.mRaphael = Raphael(0,0,380,380);
+	this.parent(sheet,300,50,575,95,200,50,625,200);
+        this.mType = '4.md.b.4_8';
+	this.mChopWhiteSpace = false;
 
-                this.mType = '4.md.b.4_8';
+        var f = new Fraction(90,360,false);
 
-                var f = new Fraction(90,360,false);
+        this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle.');
+        this.setAnswer('' + 'right angle',0);
+        this.setAnswer('' + 'a right angle',1);
+},
 
-                this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle.');
-                this.setAnswer('' + 'right angle',0);
-                this.setAnswer('' + 'a right angle',1);
-        }
+createShapes: function()
+{
+        this.parent();
+
+        var angleA = 0;
+        var angleB = 90;
+
+        this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
+        this.addQuestionShape(this.mRayA);
+
+        this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
+        this.addQuestionShape(this.mRayB);
+
+        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArc);
+}
 });
 
 /*
@@ -49,7 +85,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
 	this.mRaphael = Raphael(0,0,380,380);
-	this.parent(sheet,300,50,575,95,100,50,625,200);
+	this.parent(sheet,300,50,575,95,200,50,625,200);
         this.mType = '4.md.b.4_7';
 	this.mChopWhiteSpace = false;
 
