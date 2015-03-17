@@ -235,7 +235,7 @@ Extends: TextItemMixedNumber,
 			answer.reduce();
                 }
                 
-		this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around her block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How many ' + this.ns.mDistanceIncrementLarge + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run per week?');
+		this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How many ' + this.ns.mDistanceIncrementLarge + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run per week?');
 
                 this.setAnswer('' + answer.getMixedNumber(),0);
                 this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementLarge,1);
