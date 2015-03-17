@@ -488,31 +488,29 @@ var i_5_md_a_1__12 = new Class(
 {
 
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+  	this.mChopWhiteSpace = false;
 
-                this.mType = '5.md.a.1_12';
+        this.mType = '5.md.a.1_12';
 
-    this.ns = new NameSampler();
+    	this.ns = new NameSampler();
 
-    var a = Math.floor(Math.random()*3)+1;
-    var b = Math.floor(Math.random()*9)+1;
-    var c = a + b/10;
-    var d = (Math.floor(Math.random()*9)+1)*100;
+    	var a = Math.floor(Math.random()*3)+1;
+    	var b = Math.floor(Math.random()*9)+1;
+    	var c = parseFloat(a + b/10);
+    	var d = (Math.floor(Math.random()*9)+1)*100;
    
-    var answer = d/1000 + c;
-    answer = answer.toFixed(1)
+    	var answer = parseFloat(d/1000 + c);
+	var decimal = new Decimal(answer);
 
- this.setQuestion('' + this.ns.mNameOne + ' is making a fruit shake. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + c + ' kilograms of pears and ' + d + ' grams of grapes. How many kilograms of fruit does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use in all?');
+	this.setQuestion('' + this.ns.mNameOne + ' is making a fruit shake. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + c + ' kilograms of pears and ' + d + ' grams of grapes. How many kilograms of fruit does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use in all?');
 
-                this.setAnswer('' + answer,0);
-           
-        }
-
+        this.setAnswer('' + decimal.getString(),0);
+        this.setAnswer('' + decimal.getString() + ' ' + 'kilograms',1);
+}
 });
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_13',5.2413,'5.md.a.1','');
