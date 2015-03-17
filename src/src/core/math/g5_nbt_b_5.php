@@ -1,6 +1,5 @@
 //2x1,2x2,3x1,3x2,3x3,
 
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.5_10',5.0910,'5.nbt.b.5','2 by 3');
 */
@@ -50,9 +49,7 @@ initialize: function(sheet)
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
-        this.setAnswer('' + this.answer + ' m',1);
-        this.setAnswer('' + this.answer + ' meter',2);
-        this.setAnswer('' + this.answer + ' meters',3);
+        this.setAnswer('' + this.answer + ' ' + this.ns.mDistanceIncrementMedium,1);
 }
 });
 
