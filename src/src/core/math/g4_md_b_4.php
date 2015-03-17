@@ -109,7 +109,7 @@ initialize: function(sheet)
 
         this.mType = '4.md.b.4_4';
 
-        this.setQuestion('The amount of turn between two straight lines that have a common end point.');
+        this.setQuestion('The amount of turn between two straight lines that have a common end point. Represented by the white arc.');
        	this.setAnswer('' + 'angle',0);
        	this.setAnswer('' + 'an angle',1);
 },
@@ -118,13 +118,20 @@ createShapes: function()
 {
 	this.parent();
 
-	var angleA = 334;	
-	var angleB = 10;	
+	var angleA = 0;	
+	var angleB = 0;	
+	while ( parseInt(Math.abs(angleA - angleB)) < 45)
+	{ 
+ 		angleA = Math.floor(Math.random()*360);
+ 		angleB = Math.floor(Math.random()*360);
+	}
+	APPLICATION.log('angleA:' + angleA);
+	APPLICATION.log('angleB:' + angleB);
 
-	this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,334);
+	this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
  	this.addQuestionShape(this.mRayA);
 
-	this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,10);
+	this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
  	this.addQuestionShape(this.mRayB);
 
 	this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
