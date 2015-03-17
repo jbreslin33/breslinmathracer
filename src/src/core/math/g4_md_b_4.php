@@ -46,18 +46,41 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__7 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
+initialize: function(sheet)
+{
+	this.mRaphael = Raphael(0,0,380,380);
+	this.parent(sheet,300,50,575,95,100,50,625,200);
+
+        this.mType = '4.md.b.4_7';
+
+	var f = new Fraction(1,360);
+
+        this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle.');
+        this.setAnswer('' + 'one degree angle',0);
+        this.setAnswer('' + '1 degree angle',1);
+},
+
+createShapes: function()
+{
+        this.parent();
+
+        var angleA = 0;
+        var angleB = 0;
+        while ( parseInt(Math.abs(angleA - angleB)) < 45)
         {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
-
-                this.mType = '4.md.b.4_7';
-
-		var f = new Fraction(1,360);
-
-                this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle.');
-                this.setAnswer('' + 'one degree angle',0);
-                this.setAnswer('' + '1 degree angle',1);
+                angleA = Math.floor(Math.random()*360);
+                angleB = Math.floor(Math.random()*360);
         }
+
+        this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
+        this.addQuestionShape(this.mRayA);
+
+        this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
+        this.addQuestionShape(this.mRayB);
+
+        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArc);
+}
 });
 
 /*
@@ -66,16 +89,16 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__6 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
 
-                this.mType = '4.md.b.4_6';
+        this.mType = '4.md.b.4_6';
 
-                this.setQuestion('The unit of measure for angles.');
-                this.setAnswer('' + 'degree',0);
-                this.setAnswer('' + 'a degree',1);
-        }
+        this.setQuestion('The unit of measure for angles.');
+        this.setAnswer('' + 'degree',0);
+       	this.setAnswer('' + 'a degree',1);
+}
 });
 
 /*
