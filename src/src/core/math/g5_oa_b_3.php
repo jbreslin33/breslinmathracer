@@ -914,14 +914,14 @@ this.addShape(this.mAnswerLabel);
 this.mAnswerLabel.mCollidable = false;
 this.mAnswerLabel.mCollisionOn = false;
 this.mAnswerLabel.setText('Blue Line');
-this.mAnswerLabel.setVisibility(false);
+this.mAnswerLabel.setVisibility(true);
 
 this.mAnswerLabel2 = new Shape(100,50,500,225,this.mSheet.mGame,"","","");
 this.addShape(this.mAnswerLabel2);
 this.mAnswerLabel2.mCollidable = false;
 this.mAnswerLabel2.mCollisionOn = false;
 this.mAnswerLabel2.setText('Red Line');
-this.mAnswerLabel2.setVisibility(false);
+this.mAnswerLabel2.setVisibility(true);
 
 
 // graph coords
