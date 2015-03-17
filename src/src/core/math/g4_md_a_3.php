@@ -598,81 +598,81 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_a_3__3 = new Class(
 {
 Extends: TextItem,
-
-        initialize: function(sheet)
-        {
-            this.parent(sheet);
+initialize: function(sheet)
+{
+	this.parent(sheet);
 				
-            this.mType = '4.md.a.3_3';   
+       	this.mType = '4.md.a.3_3';   
+			
+	this.units = '';       	
+	var varA = 0;
+	var varB = 0;
+	var varC = 0;
+	var length = 0;
+	var width = 0;
+
+	// pick length
+	varA = 2 + Math.floor(Math.random()*11);
+
+	do
+ 	{
+    		// pick width
+		varB = 2 + Math.floor(Math.random()*11);	
+	}
+	while (varA == varB);			
 				
-				this.units = '';       	
-				var varA = 0;
-				var varB = 0;
-				var varC = 0;
-				var length = 0;
-				var width = 0;
+	varC = parseInt(varA * varB);
 
-			// pick length
-			varA = 2 + Math.floor(Math.random()*11);
+	if (varA > varB)
+	{
+		length = varA;
+		width = varB;
+	}
+	else
+	{
+		width = varA;
+		length = varB;
+	}
 
-			do {
-    				// pick width
-					varB = 2 + Math.floor(Math.random()*11);	
-			}
-			while (varA == varB);			
-				
-			varC = parseInt(varA * varB);
+	rand = 1 + Math.floor(Math.random()*3);
 
-			if (varA > varB)
-			{
-				length = varA;
-				width = varB;
-			}
-			else
-			{
-				width = varA;
-				length = varB;
-			}
-
-			rand = 1 + Math.floor(Math.random()*3);
-
-			if(rand == 1)
-				this.units = 'feet';
-			if(rand == 2)
-				this.units = 'meters';
-			if(rand == 3)
-				this.units = 'inches';
+	if(rand == 1)
+		this.units = 'feet';
+	if(rand == 2)
+		this.units = 'meters';
+	if(rand == 3)
+		this.units = 'inches';
 								                       
-				this.setQuestion('What is the length of a rectangle that has a width of ' + width +  ' ' + this.units + ' and an area of ' + varC + ' square ' + this.units + '?');
-            this.setAnswer('' + varB,0);   
+	this.setQuestion('What is the length of a rectangle that has a width of ' + width +  ' ' + this.units + ' and an area of ' + varC + ' square ' + this.units + '?');
+        this.setAnswer('' + varB,0);   
         
         },
 
-			createShapes: function()
-         {
-				this.parent();
-										
-				//question Label
-                
-			},
+	createShapes: function()
+        {
+		this.parent();
 									
-			showQuestion: function()
-			{
+		//question Label
+              
+	},
+									
+	showQuestion: function()
+	{
 
-				   this.parent();
+		this.parent();
 
-					this.mQuestionLabel.setPosition(230, 100);
-					this.mQuestionLabel.setSize(200, 100);
+		this.mQuestionLabel.setPosition(230, 100);
+		this.mQuestionLabel.setSize(200, 100);
 					
 
-					this.mUnitsLabel = new Shape(-110,50,425,100,this.mSheet.mGame,"","","");
+		this.mUnitsLabel = new Shape(-110,50,425,100,this.mSheet.mGame,"","","");
                 this.addShape(this.mUnitsLabel);
                 this.mUnitsLabel.mCollidable = false;
                 this.mUnitsLabel.mCollisionOn = false;
-					 this.mUnitsLabel.setText(this.units);
-					this.mUnitsLabel.setVisibility(true);
-				
-			}
+	 	this.mUnitsLabel.setText(this.units);
+		this.mUnitsLabel.setVisibility(true);
+			
+	}
 });
 
 /*
