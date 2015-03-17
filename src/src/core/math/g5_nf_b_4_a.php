@@ -31,7 +31,7 @@ initialize: function(sheet)
 	
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractiona.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' ' + this.ns.mFamilyOne + ' drank ' + fractionb.getString() + ' of it. How many ' + this.ns.mLiquidVolumeOne + ' of '  + this.ns.mDrinkOne + ' does ' + this.ns.mNameOne + ' have left?'   );
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + fractiona.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne + ' drank ' + fractionb.getString() + ' of it. How many ' + this.ns.mLiquidVolumeOne + ' of '  + this.ns.mDrinkOne + ' does ' + this.ns.mNameOne + ' have left?'   );
 }
 });
 
