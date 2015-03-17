@@ -84,16 +84,38 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_b_4__5 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
+initialize: function(sheet)
+{
+	this.mRaphael = Raphael(0,0,380,380);
+	this.parent(sheet,300,50,575,95,100,50,625,200);
+
+        this.mType = '4.md.b.4_5';
+
+        this.setQuestion('A point where two or more straight lines meet. A corner.');
+        this.setAnswer('' + 'vertex',0);
+        this.setAnswer('' + 'a vertex',1);
+},
+createShapes: function()
+{
+        this.parent();
+
+        var angleA = 0;
+        var angleB = 0;
+        while ( parseInt(Math.abs(angleA - angleB)) < 45)
         {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
-
-                this.mType = '4.md.b.4_5';
-
-                this.setQuestion('A point where two or more straight lines meet. A corner.');
-                this.setAnswer('' + 'vertex',0);
-                this.setAnswer('' + 'a vertex',1);
+                angleA = Math.floor(Math.random()*360);
+                angleB = Math.floor(Math.random()*360);
         }
+
+        this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
+        this.addQuestionShape(this.mRayA);
+
+        this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
+        this.addQuestionShape(this.mRayB);
+
+        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArc);
+}
 });
 
 /*
@@ -125,8 +147,6 @@ createShapes: function()
  		angleA = Math.floor(Math.random()*360);
  		angleB = Math.floor(Math.random()*360);
 	}
-	APPLICATION.log('angleA:' + angleA);
-	APPLICATION.log('angleB:' + angleB);
 
 	this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
  	this.addQuestionShape(this.mRayA);
