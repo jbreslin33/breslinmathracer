@@ -50,8 +50,8 @@ initialize: function(sheet)
 {
 	this.mRaphael = Raphael(0,0,380,380);
 	this.parent(sheet,300,50,575,95,100,50,625,200);
-
         this.mType = '4.md.b.4_7';
+	this.mChopWhiteSpace = false;
 
 	var f = new Fraction(1,360);
 
@@ -64,13 +64,8 @@ createShapes: function()
 {
         this.parent();
 
-        var angleA = 0;
-        var angleB = 0;
-        while ( parseInt(Math.abs(angleA - angleB)) < 45)
-        {
-                angleA = Math.floor(Math.random()*360);
-                angleB = Math.floor(Math.random()*360);
-        }
+        var angleA = 45;
+        var angleB = 46;
 
         this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
         this.addQuestionShape(this.mRayA);
