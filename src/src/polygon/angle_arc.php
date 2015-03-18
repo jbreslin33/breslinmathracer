@@ -16,12 +16,12 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
 	//this.mText = this.mRaphael.text(x, parseFloat(y + radius), "ellipse").attr({fill: '#ff0000'});
 
 	var c     = Math.sin(start);  
-	var textX = parseFloat(c * radius); 
+	var tempX = parseFloat(c * radius); 
+	var textX = parseFloat(x + tempX); 
 	
 	var s     = Math.cos(end);  
-	var textY = parseFloat(s * radius); 
-	APPLICATION.log('textX:' + textX);
-	APPLICATION.log('textY:' + textY);
+	var tempY = parseFloat(s * radius); 
+	var textY = parseFloat(y + tempY); 
 	
 	this.mText = this.mRaphael.text(textX, textY, "ellipse").attr({fill: '#ff0000'});
 
