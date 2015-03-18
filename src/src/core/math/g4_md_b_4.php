@@ -34,6 +34,7 @@ createShapes: function()
         this.addQuestionShape(this.mRayB);
 
         this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
+
         this.addQuestionShape(this.mAngleArc);
 }
 });
