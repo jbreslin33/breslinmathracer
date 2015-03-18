@@ -25,7 +25,7 @@ Extends: TextItemMixedNumber,
                         answer.reduce();
                 }
 
-                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.mNumerator + ' dollars an hour. How many dolloars will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make in a week?');
+                this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.mNumerator + ' dollars an hour. How many dollars will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make in a week?');
                 this.setAnswer('' + answer.getMixedNumber(),0);
         }
 });
