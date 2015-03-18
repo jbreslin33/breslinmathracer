@@ -95,6 +95,8 @@ initialize: function(sheet)
 
         var a = Math.floor(Math.random()*8+3);
         var multiples  = '';
+        this.mStripCommas = false;
+
 
         for (var i = 1; i < 7; i++)
         {
@@ -223,6 +225,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.b.4_4';
         this.ns = new NameSampler();
+        this.mStripCommas = false;
 
         var a = Math.floor(Math.random()*8+3);
         var multiples  = '';
@@ -297,7 +300,6 @@ initialize: function(sheet)
 	this.mStripCommas = false;
 
         this.mType = '4.oa.b.4_2';
-
 
         var a = Math.floor(Math.random()*100+1);
         var factors  = '';
