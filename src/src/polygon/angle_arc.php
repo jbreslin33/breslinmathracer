@@ -20,23 +20,11 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
 	var s     = Math.cos(end);  
 	var tempY = parseFloat(s * radius); 
 	var textY = parseFloat(y + tempY); 
+
+	var degrees =  parseInt(end - start); 
 	
-	this.mText = this.mRaphael.text(textX, textY, "" + parseInt(end - start)).attr({fill: '#ff0000'});
+	this.mText = this.mRaphael.text(textX, textY,'' + degrees).attr({fill: '#ff0000'});
 
 	this.mPolygon.mPolygon = this;
 }
 });
-/*
-The simple equations you've linked to give the X and Y coordinates of the point on the circle relative to the center of the circle.
-
-X = r * cosine(angle)
-Y = r * sine(angle)
-
-This tells you how far the point is offset from the center of the circle. Since you have the coordinates of the center (xcircle, ycircle), simply add the calculated offset.
-
-The coordinates of the point on the circle are:
-
-X = xcircle + (r * sine(angle))
-Y = ycircle + (r * cosine(angle))
-
-*/

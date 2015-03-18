@@ -16,7 +16,7 @@ initialize: function(sheet)
         var f = new Fraction(180,360,false);
 
        	this.setQuestion('An angle that turns through ' + f.getString() + ' of a circle. It measures 180&deg.');
-        this.setAnswer('' + 'straigt angle',0);
+        this.setAnswer('' + 'straight angle',0);
         this.setAnswer('' + 'a straight angle',1);
 },
 
