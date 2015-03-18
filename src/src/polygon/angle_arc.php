@@ -15,11 +15,19 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
 
 	var c     = Math.sin(start);  
 	var tempX = parseFloat(c * radius); 
-	var textX = parseFloat(x + tempX); 
+	var textX = parseFloat(x + Math.abs(tempX)); 
 	
 	var s     = Math.cos(end);  
 	var tempY = parseFloat(s * radius); 
-	var textY = parseFloat(y + tempY); 
+	var textY = parseFloat(y + Math.abs(tempY)); 
+	
+	APPLICATION.log('x:' + x);
+	APPLICATION.log('tempX:' + tempX);
+	APPLICATION.log('textX:' + textX);
+
+	APPLICATION.log('y:' + y);
+	APPLICATION.log('tempY:' + tempY);
+	APPLICATION.log('textY:' + textY);
 
 	var degrees =  parseInt(end - start); 
 	
