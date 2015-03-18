@@ -12,8 +12,6 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
        	y2 = y + radius * Math.sin(-end * rad);
         
 	this.mPolygon = this.mRaphael.path(["M", x, y, "L", x1, y1, "A", radius, radius, 0, +(end - start > 180), 0, x2, y2, "z"]).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
-	//this.mText = this.mRaphael.text(190, 100, "ellipse").attr({fill: '#ff0000'});
-	//this.mText = this.mRaphael.text(x, parseFloat(y + radius), "ellipse").attr({fill: '#ff0000'});
 
 	var c     = Math.sin(start);  
 	var tempX = parseFloat(c * radius); 
@@ -23,7 +21,7 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
 	var tempY = parseFloat(s * radius); 
 	var textY = parseFloat(y + tempY); 
 	
-	this.mText = this.mRaphael.text(textX, textY, "ellipse").attr({fill: '#ff0000'});
+	this.mText = this.mRaphael.text(textX, textY, "" + parseInt(end - start)).attr({fill: '#ff0000'});
 
 	this.mPolygon.mPolygon = this;
 }
