@@ -220,6 +220,8 @@ for($i = 0; $i < $numrows; $i++)
 	$query .= $core_standard_id;
 	$query .= "' AND school_id = ";
 	$query .= $_SESSION["school_id"];
+	$query .= " AND room_id = ";
+	$query .= $room_id;
 	$query .= " order by last_name asc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
