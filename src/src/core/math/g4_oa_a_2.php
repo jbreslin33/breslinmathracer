@@ -461,7 +461,7 @@ createQuestionShapes: function()
 
 		this.addQuestionShape(box);
     	}
-},
+}
 });
 
 /*

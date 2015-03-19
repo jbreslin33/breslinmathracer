@@ -84,14 +84,8 @@ this.mQuestionLabel.setPosition(625,180);
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
-
-
+    }
 });
-
-
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_2',5.0302,'5.oa.b.3','graphs');

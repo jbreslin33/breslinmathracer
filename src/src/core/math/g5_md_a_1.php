@@ -432,12 +432,8 @@ this.mQuestionLabel.setPosition(225,180);
 
 //console.log(this.mUserAnswer2);
 		  }
-    },
-
-
+    }
 });
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_11',5.2411,'5.md.a.1','');
