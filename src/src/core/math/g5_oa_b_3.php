@@ -173,7 +173,7 @@ this.mQuestionLabel.setPosition(625,180);
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
+    }
 
 
 });
@@ -267,7 +267,7 @@ this.mQuestionLabel.setPosition(625,180);
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
+    }
 
 
 });
@@ -361,7 +361,7 @@ this.mQuestionLabel.setPosition(625,180);
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
+    }
 
 
 });
@@ -491,7 +491,7 @@ this.mHeadingAnswerLabel2.setSize(75,25);
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
+    }
 
 
 });
@@ -850,21 +850,8 @@ getSlope: function()
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> Blue ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo() + '</br> Red ' + this.mHeadingAnswerLabel3.getText() + ' = ' +  this.getAnswerThree()  + ' ' + this.mHeadingAnswerLabel4.getText() + ' = ' +  this.getAnswerFour()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
-
-
+    }
 });
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_7',5.0307,'5.oa.b.3','graphs');
@@ -1211,9 +1198,7 @@ getSlope: function()
 			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> Blue ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo() + '</br> Red ' + this.mHeadingAnswerLabel3.getText() + ' = ' +  this.getAnswerThree()  + ' ' + this.mHeadingAnswerLabel4.getText() + ' = ' +  this.getAnswerFour()); 
 			  this.mCorrectAnswerLabel.setVisibility(true);
 		  }
-    },
-
-
+    }
 });
 
 
