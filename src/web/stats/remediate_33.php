@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>REMEDIATE 33</title>
+        <title>REMEDIATE</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -71,13 +71,13 @@ if (isset($_POST["id"]))
 }
 
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
 ?>
 
         <p><b> Select Username: </p></b>
 
-        <form method="post" action="/web/stats/remediate_33.php">
+        <form method="post" action="/web/stats/remediate.php">
 
 <select id="core_standard_id" name="core_standard_id" onchange="loadAgain()">
 <?php
@@ -98,14 +98,13 @@ for($i = 0; $i < $numrows; $i++)
 	}
 }
 ?>
-
 </select>
 
 <script>
 function loadAgain()
 {
     	var x = document.getElementById("core_standard_id").value;
-	document.location.href = '/web/stats/remediate_33.php?core_standard_id=' + x; 
+	document.location.href = '/web/stats/remediate.php?core_standard_id=' + x; 
 }
 </script>
 
@@ -113,7 +112,9 @@ function loadAgain()
 <select name="id">
 
 <?php
-$query = "select last_name, first_name, username, id, score, unmastered from users where room_id = 33 order by last_name asc;";
+$query = "select last_name, first_name, username, id, score, unmastered from users where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -148,7 +149,7 @@ for($i = 0; $i < $numrows; $i++)
 
         </form>
 
-<p><b> REMEDIATE 33: </p></b>
+<p><b> REMEDIATE: </p></b>
 
 <?php
 	echo '<table border=\"1\">';
@@ -173,9 +174,11 @@ for($i = 0; $i < $numrows; $i++)
 	$score = '';
 	$unmastered = '';
 
-	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id where room_id = 33 AND remediate.core_standards_id = '";
+	$query = "select users.id, users.username, users.first_name, users.last_name, score, unmastered from remediate JOIN users ON users.id=remediate.user_id AND remediate.core_standards_id = '";
 	$query .= $core_standard_id;
-	$query .= "' order by last_name asc;";
+	$query .= "' AND school_id = ";
+	$query .= $_SESSION["school_id"];
+	$query .= " order by last_name asc;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
