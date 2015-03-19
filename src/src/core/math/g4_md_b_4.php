@@ -24,7 +24,7 @@ createShapes: function()
 {
         this.parent();
 
-        var angleA = 90;
+        var angleA = 0;
         var angleB = 180;
 
         this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
