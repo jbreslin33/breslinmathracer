@@ -16,6 +16,7 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
 $core_standard_id = 0;
+$room_id = 0;
 $id = 0;
 
 if (isset($_POST["core_standard_id"]))
@@ -26,6 +27,20 @@ if (isset($_POST["core_standard_id"]))
 else if (isset($_GET['core_standard_id']))
 {
 	$core_standard_id = $_GET['core_standard_id'];
+}
+else
+{
+
+}
+
+if (isset($_POST["room_id"]))
+{
+	$room_id = $_POST["room_id"];
+}
+
+else if (isset($_GET['room_id']))
+{
+	$room_id = $_GET['room_id'];
 }
 else
 {
@@ -100,11 +115,36 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
+<select id="room_id" name="room_id" onchange="loadAgain()">
+<?php
+$query = "select id, name from rooms where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $room_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+
+
 <script>
 function loadAgain()
 {
-    	var x = document.getElementById("core_standard_id").value;
-	document.location.href = '/web/stats/remediate.php?core_standard_id=' + x; 
+    	var c = document.getElementById("core_standard_id").value;
+    	var r = document.getElementById("room_id").value;
+	document.location.href = '/web/stats/remediate.php?core_standard_id=' + c + '&room_id=' + r; 
 }
 </script>
 
@@ -114,6 +154,8 @@ function loadAgain()
 <?php
 $query = "select last_name, first_name, username, id, score, unmastered from users where school_id = ";
 $query .= $_SESSION["school_id"];
+$query .= " and room_id = ";
+$query .= $room_id;
 $query .= " order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
