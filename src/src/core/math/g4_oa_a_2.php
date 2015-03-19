@@ -127,7 +127,7 @@ Extends: TextItem,
                 var b = Math.floor(Math.random()*8+2);
                 var c = parseInt(a * b);
 
-                this.setQuestion('' + this.ns.mNameOne + ' builds a rectangular room in a video game. The room is ' + a + ' ' + this.ns.mDistanceIncrementMedium + ' long. The length of the room is ' + b + ' times the size of the width. What is the length of the room?');
+                this.setQuestion('' + this.ns.mNameOne + ' builds a rectangular room in a video game. The room is ' + a + ' ' + this.ns.mDistanceIncrementMedium + ' wide. The length of the room is ' + b + ' times the size of the width. What is the length of the room?');
                 this.setAnswer('' + c,0);
         }
 });
