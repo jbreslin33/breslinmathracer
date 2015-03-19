@@ -582,7 +582,7 @@ Extends: RaphaelPolygon,
                         } 
 
 
-},
+}
 
 });
 
