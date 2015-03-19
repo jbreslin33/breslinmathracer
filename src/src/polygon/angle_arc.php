@@ -13,19 +13,23 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
         
 	this.mPolygon = this.mRaphael.path(["M", x, y, "L", x1, y1, "A", radius, radius, 0, +(end - start > 180), 0, x2, y2, "z"]).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-	var c     = Math.sin(start);  
-	var tempX = parseFloat(c * radius); 
-	var textX = parseFloat(x + Math.abs(tempX)); 
+	var sr = parseFloat(start * Math.PI / 180); 
+	var degX = parseFloat(sr * 180 / Math.PI);
+	var tempX = parseFloat(degX * radius); 
+	var textX = parseFloat(x + degX); 
 	
-	var s     = Math.cos(end);  
-	var tempY = parseFloat(s * radius); 
-	var textY = parseFloat(y + Math.abs(tempY)); 
+	var er = parseFloat(end * Math.PI / 180); 
+	var degY = parseFloat(er * 180 / Math.PI);
+	var tempY = parseFloat(degY * radius); 
+	var textY = parseFloat(y + degY); 
 	
-	APPLICATION.log('x:' + x);
+	APPLICATION.log('sr:' + sr);
+	APPLICATION.log('degX' + degX);
 	APPLICATION.log('tempX:' + tempX);
 	APPLICATION.log('textX:' + textX);
 
-	APPLICATION.log('y:' + y);
+	APPLICATION.log('er:' + er);
+	APPLICATION.log('degY:' + degY);
 	APPLICATION.log('tempY:' + tempY);
 	APPLICATION.log('textY:' + textY);
 

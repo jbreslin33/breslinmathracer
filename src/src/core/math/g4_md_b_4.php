@@ -25,16 +25,27 @@ createShapes: function()
         this.parent();
 
         var angleA = 0;
-        var angleB = 180;
+        var angleB = 270;
 
         this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
         this.addQuestionShape(this.mRayA);
-
-        this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
+        
+	this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
         this.addQuestionShape(this.mRayB);
 
-        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseInt(Math.abs(angleB-360)),parseInt(Math.abs(angleA-360)) ,0,0,1,"none",.5,false);;
-
+	//arc needs to be adjusted by 90deg
+	var arcAngleA = parseFloat(360 - angleA);
+	var arcAngleB = parseFloat(360 - angleB);
+	if (arcAngleA > 360)
+	{
+		arcAngleA = parseFloat(arcAngleA - 360);
+	}
+	if (arcAngleB > 360)
+	{
+		arcAngleB = parseFloat(arcAngleB - 360);
+	}
+        
+	this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(arcAngleB),parseFloat(arcAngleA),0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
