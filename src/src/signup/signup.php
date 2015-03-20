@@ -86,11 +86,24 @@ Extends: Game,
                 this.mStandardSelect = new Shape(200,40,400,300,this,"SELECT","","");
                 this.addShape(this.mStandardSelect);
                 
-		var option5_oa_a_1 = document.createElement("option");
-		var x = '5.oa.a.1';
-                option5_oa_a_1.value = x;  
-                option5_oa_a_1.text = '5.oa.a.1';   
-                this.mStandardSelect.mMesh.appendChild(option5_oa_a_1);
+             	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+			this.log('ie');	
+			var option5_oa_a_1 = document.createElement("option");
+			var x = '5.oa.a.1';
+                	option5_oa_a_1.value = x;  
+                	option5_oa_a_1.text = '5.oa.a.1';   
+                	this.mStandardSelect.mMesh.add(option5_oa_a_1);
+		}
+		else
+		{
+			this.log('ff');	
+			var option5_oa_a_1 = document.createElement("option");
+			var x = '5.oa.a.1';
+                	option5_oa_a_1.value = x;  
+                	option5_oa_a_1.text = '5.oa.a.1';   
+                	this.mStandardSelect.mMesh.appendChild(option5_oa_a_1);
+		}
 		
 		//SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
@@ -132,7 +145,16 @@ Extends: Game,
                 this.mShapeArray.push(this.mSchoolButton);
                 this.mSchoolButton.mMesh.innerHTML = 'School Page';
 
+		this.log('constructor');
 	},
+
+        log: function(msg)
+        {
+                setTimeout(function()
+                {
+                        throw new Error(msg);
+                }, 0);
+        },
 
 	//***tab to next
 	
