@@ -1230,6 +1230,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_1';
  	this.ns = new NameSampler();
+    	this.mStripCommas = false;
 
         var a = Math.floor(Math.random()*8+3);
         var b = Math.floor(Math.random()*8+3);
