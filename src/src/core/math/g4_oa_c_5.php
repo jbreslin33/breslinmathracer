@@ -192,6 +192,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_12';
         this.ns = new NameSampler();
+    	this.mStripCommas = false;
 
 	//reg patter
         var a = Math.floor(Math.random()*8+3);
@@ -925,6 +926,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_3';
         this.ns = new NameSampler();
+    	this.mStripCommas = false;
 
         var a = Math.floor(Math.random()*2+2);
         var b = Math.floor(Math.random()*2+2);
