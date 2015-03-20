@@ -30,8 +30,6 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
 	var rotateAmount = '' + 'r' + rotateTo + ',' + x + ',' + y;
         this.mText.transform(rotateAmount);
 
-	
-
 	this.mPolygon.mPolygon = this;
 }
 });
