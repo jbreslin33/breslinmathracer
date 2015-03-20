@@ -11,6 +11,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_15';
         this.ns = new NameSampler();
+	this.mChopWhiteSpace = false;
 
 	//reg patter
 	var a = 0;
