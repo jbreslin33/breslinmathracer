@@ -8,7 +8,7 @@ var i_4_md_b_4__10 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,200,50,625,200);
         this.mType = '4.md.b.4_10';
 	this.mChopWhiteSpace = false;
@@ -46,7 +46,7 @@ var i_4_md_b_4__9 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,200,50,625,200);
         this.mType = '4.md.b.4_9';
 	this.mChopWhiteSpace = false;
@@ -84,7 +84,7 @@ var i_4_md_b_4__8 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,200,50,625,200);
         this.mType = '4.md.b.4_8';
 	this.mChopWhiteSpace = false;
@@ -122,7 +122,7 @@ var i_4_md_b_4__7 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,200,50,625,200);
         this.mType = '4.md.b.4_7';
 	this.mChopWhiteSpace = false;
@@ -179,7 +179,7 @@ var i_4_md_b_4__5 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,100,50,625,200);
 	this.mChopWhiteSpace = false;
 
@@ -220,7 +220,7 @@ var i_4_md_b_4__4 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,100,50,625,200);
 	this.mChopWhiteSpace = false;
 
@@ -263,7 +263,7 @@ var i_4_md_b_4__3 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,100,50,625,200);
 	this.mChopWhiteSpace = false;
         
@@ -291,7 +291,7 @@ var i_4_md_b_4__2 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,100,50,625,200);
 	this.mChopWhiteSpace = false;
 
@@ -319,7 +319,7 @@ Extends: TextItem,
 
 initialize: function(sheet)
 {
-  	this.mRaphael = Raphael(0,0,380,380);
+	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,100,50,625,200);
 	this.mChopWhiteSpace = false;
 	
