@@ -19,22 +19,15 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
         
 	this.mPolygon = this.mRaphael.path(["M", x, y, "L", x1, y1, "A", radius, radius, 0, +(end - start > 180), 0, x2, y2, "z"]).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-
-                //triangle at end of ray
-                //this.mTriangle = new Triangle (this.mItem.mSheet.mGame,this.mItem.mRaphael,parseInt(x2),y2, parseInt(x2-20),parseInt(y2+10), parseInt(x2-20),parseInt(y2-10)   ,0,1,1,"none",.5,false)
-                //this.mItem.addQuestionShape(this.mTriangle);
-
-                //lets rotate according to passed in value
-               // var rotateAmount = '' + 'r' + r + ',' + x1 + ',' + y1;
-                //this.mPolygon.transform(rotateAmount);
-
-                //rotate triangle
-                //this.mTriangle.mPolygon.transform(rotateAmount);
-
+	//amount of angle
         var degrees =  parseInt(end - start); 
-        this.mText = this.mRaphael.text(x, y,'' + degrees).attr({fill: '#ff0000'});
+	var halfway = parseFloat(degrees / 2);
+	//because its backards going in
+	var rotateTo = parseFloat(originalEnd + halfway);
+
+        this.mText = this.mRaphael.text(parseFloat(x + 30), y,'' + degrees).attr({fill: '#ff0000'});
                
-	var rotateAmount = '' + 'r' + degrees + ',' + x1 + ',' + y1;
+	var rotateAmount = '' + 'r' + rotateTo + ',' + x + ',' + y;
         this.mText.transform(rotateAmount);
 
 	
