@@ -68,6 +68,7 @@ cat src/polygon/hexagon.php >> min.js
 cat src/polygon/cube.php >> min.js
 cat src/polygon/arc.php >> min.js
 cat src/polygon/angle_arc.php >> min.js
+cat src/polygon/angle_degree.php >> min.js
 cat src/polygon/rectangle.php >> min.js
 cat src/polygon/parallelogram.php >> min.js
 cat src/polygon/rhombus.php >> min.js

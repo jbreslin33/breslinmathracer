@@ -25,10 +25,12 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
 	//because its backards going in
 	var rotateTo = parseFloat(originalEnd + halfway);
 
-        this.mText = this.mRaphael.text(parseFloat(x + 30), y,'' + degrees).attr({fill: '#ff0000'});
+        //this.mText = this.mRaphael.text(parseFloat(x + 30), y,'' + degrees).attr({fill: '#ff0000'});
+        //this.mText = this.mRaphael.text(parseFloat(x + 30), y,'' + degrees).attr({fill: '#ff0000'});
+ 	this.mAngleDegree = new AngleDegree(item,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(end),parseFloat(start),0,0,1,"none",.5,false);;
                
 	var rotateAmount = '' + 'r' + rotateTo + ',' + x + ',' + y;
-        this.mText.transform(rotateAmount);
+        this.mAngleDegree.mPolygon.transform(rotateAmount);
 
 	this.mPolygon.mPolygon = this;
 }
