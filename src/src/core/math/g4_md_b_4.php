@@ -27,10 +27,8 @@ createShapes: function()
         var angleA = 30;
         var angleB = 290;
 
-	//var line = new LineOne (this.mGame,raphael,tableX, y, tableX+tableWidth, y,"#000000",false);
-	var line = new LineOne (this.mGame,this.mRaphael,50, 50, 100,100,"#000000",false);
+	var line = new LineOne (50,50,100,100,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
         this.addQuestionShape(line);
-
 
         this.mRayA = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleA);
         this.addQuestionShape(this.mRayA);

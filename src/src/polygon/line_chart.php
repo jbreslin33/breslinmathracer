@@ -137,7 +137,7 @@ item.addQuestionShape(box);
 for (var i = 0; i < rows; i++) {
 
     var y = tableY + (i+1)*tableHeight/rows;
-    var line = new LineOne (this.mGame,raphael,tableX, y, tableX+tableWidth, y,"#000000",false);
+    var line = new LineOne (tableX,y,tableX+tableWidth,y,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
 
     item.addQuestionShape(line);
 }
@@ -148,7 +148,7 @@ for (var i = 0; i < 3; i++) {
 
     var x = tableX + (i+1)*tableWidth/cols;
 
-    var line = new LineOne (this.mGame,raphael,x, tableY, x, tableY+tableHeight,"#000000",false);
+    var line = new LineOne (x,tableY,x,tableY+tableHeight,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
 
     item.addQuestionShape(line);
 }
@@ -419,7 +419,7 @@ item.addQuestionShape(box);
 for (var i = 0; i < rows; i++) {
 
     var y = tableY + (i+1)*tableHeight/rows;
-    var line = new LineOne (this.mGame,raphael,tableX, y, tableX+tableWidth, y,"#000000",false);
+    var line = new LineOne (tableX,y,tableX+tableWidth,y,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
 
     item.addQuestionShape(line);
 }
@@ -430,7 +430,7 @@ for (var i = 0; i < 3; i++) {
 
     var x = tableX + (i+1)*tableWidth/cols;
 
-    var line = new LineOne (this.mGame,raphael,x, tableY, x, tableY+tableHeight,"#000000",false);
+    var line = new LineOne (x,tableY,x,tableY+tableHeight,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
 
     item.addQuestionShape(line);
 }
