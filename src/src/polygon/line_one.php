@@ -1,9 +1,9 @@
 var LineOne = new Class(
 {
 Extends: RaphaelPolygon,
-initialize: function (x1,y1,x2,y2,game,raphael,r,g,b,s,op,d)
+initialize: function (x1,y1,x2,y2,game,raphael,s,op,d)
 {
-	this.parent(0,0,x1,y1,game,raphael,r,g,b,s,op,d);
+	this.parent(0,0,x1,y1,game,raphael,0,0,0,s,op,d);
 
 	this.x1 = x1;
 	this.y1 = y1;
