@@ -18,20 +18,19 @@ initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
        	y2 = y + radius * Math.sin(-end * rad);
         
 	this.mPolygon = this.mRaphael.path(["M", x, y, "L", x1, y1, "A", radius, radius, 0, +(end - start > 180), 0, x2, y2, "z"]).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+	this.mPolygon.mPolygon = this;
 
 	//amount of angle
         var degrees =  parseInt(end - start); 
+
+	//angleDegree text
+ 	this.mAngleDegree = new AngleDegree(item,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(end),parseFloat(start),0,0,1,"none",.5,false);;
+	item.addQuestionShape(this.mAngleDegree);
+	
 	var halfway = parseFloat(degrees / 2);
 	//because its backards going in
 	var rotateTo = parseFloat(originalEnd + halfway);
-
-        //this.mText = this.mRaphael.text(parseFloat(x + 30), y,'' + degrees).attr({fill: '#ff0000'});
-        //this.mText = this.mRaphael.text(parseFloat(x + 30), y,'' + degrees).attr({fill: '#ff0000'});
- 	this.mAngleDegree = new AngleDegree(item,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(end),parseFloat(start),0,0,1,"none",.5,false);;
-               
 	var rotateAmount = '' + 'r' + rotateTo + ',' + x + ',' + y;
         this.mAngleDegree.mPolygon.transform(rotateAmount);
-
-	this.mPolygon.mPolygon = this;
 }
 });
