@@ -1,6 +1,27 @@
 var LineOne = new Class(
 {
 Extends: RaphaelPolygon,
+       	initialize: function (x1,y1,x2,y2,game,raphael,r,g,b,s,op,d)
+        {
+                this.parent(0,0,x1,y1,game,raphael,r,g,b,s,op,d);
+
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+
+		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
+		this.mPolygon = this.mRaphael.path("" + this.mPathString);
+		this.mPolygon.attr ("stroke", this.mStroke);
+
+                this.mPolygon.mPolygon = this;
+
+                if (this.mDrag)
+                {
+                        this.mPolygon.drag(this.move, this.start, this.up);
+                }
+        },
+/*
         initialize: function (game,raphael,x1,y1,x2,y2,s,d)
         {
 		//find center for mPosition...
@@ -26,6 +47,7 @@ Extends: RaphaelPolygon,
  			this.mPolygon.drag(this.move, this.start, this.up);
 		}
 	},
+*/
 
 	dragMove: function(dx,dy)
 	{
