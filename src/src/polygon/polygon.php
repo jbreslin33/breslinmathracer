@@ -29,7 +29,6 @@ var Polygon = new Class(
                 this.mCollidable = false;
                 this.mCollisionOn = false;
 		this.mOutOfBoundsCheck = true;
-	
 
                 //collisionDistance
                 this.mCollisionDistance = this.mWidth * 6.5;
