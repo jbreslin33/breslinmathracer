@@ -64,7 +64,7 @@ for (var i = 0; i < rows; i++) {
     else
        y = tableY + (i+2)*rowHeight;
        
-    var line = new LineOne (tableX,y,tableX+tableWidth,y,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
+    var line = new LineOne (tableX,y,tableX+tableWidth,y,this.mGame,this.mRaphael,"#000000",.5,false);
 
     item.addQuestionShape(line);
 }
@@ -75,7 +75,7 @@ for (var i = 0; i < cols; i++) {
 
     var x = tableX + (i+1)*tableWidth/cols;
 
-    var line = new LineOne (x,tableY,x,tableY+tableHeight,this.mGame,this.mRaphael,1,1,1,"#000000",.5,false);
+    var line = new LineOne (x,tableY,x,tableY+tableHeight,this.mGame,this.mRaphael,"#000000",.5,false);
 
     item.addQuestionShape(line);
 }

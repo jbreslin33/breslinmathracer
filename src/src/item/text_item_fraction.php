@@ -93,7 +93,7 @@ Extends: Item,
                 this.mCorrectAnswerLabel.setText(this.mQuestion);
 		this.mCorrectAnswerLabel.setVisibility(false);
 		
-		this.mFractionBar = new LineOne (0,0,150,0,this.mSheet.mGame,this.mRaphael,0,0,0,"#000000",.5,false)
+		this.mFractionBar = new LineOne (0,0,150,0,this.mSheet.mGame,this.mRaphael,"#000000",.5,false)
                 this.addShape(this.mFractionBar);
 		this.mFractionBar.setVisibility(false);
         },
