@@ -27,7 +27,7 @@ initialize: function (x,y,length,angle,item,stroke,opacity,drag)
 	this.mItem.addQuestionShape(this.mEndPoint);
 
 	//triangle at end of ray
-	this.mTriangle = new Triangle (parseInt(this.x1 + this.mLength),this.y2, parseInt(this.x2-20),parseInt(this.y2+10), parseInt(this.x2-20),parseInt(this.y2-10),this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false)
+	this.mTriangle = new Triangle (parseInt(this.x2),this.y2, parseInt(this.x2-20),parseInt(this.y2+10), parseInt(this.x2-20),parseInt(this.y2-10),this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false)
 	this.mItem.addQuestionShape(this.mTriangle);
 
 	//lets rotate according to passed in value
