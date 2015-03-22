@@ -1,4 +1,11 @@
+/*
+       this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
+        this.addQuestionShape(this.mRayB);
 
+        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArc);
+
+*/
 var Angle = new Class(
 {
 Extends: RaphaelPolygon,

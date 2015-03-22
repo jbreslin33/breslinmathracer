@@ -1,7 +1,7 @@
 var AngleArc = new Class(
 {
 Extends: RaphaelPolygon,
-initialize: function (item,x,y,radius,start,end,r,g,b,s,op,d)
+initialize: function (x,y,radius,start,end,item,r,g,b,s,op,d)
 {
 	this.parent(0,0,x,y,item.mSheet.mGame,item.mRaphael,r,g,b,s,op,d);
 
