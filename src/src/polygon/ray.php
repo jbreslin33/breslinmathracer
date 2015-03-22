@@ -27,15 +27,15 @@ initialize: function (x,y,length,angle,item,stroke,opacity,drag)
 	this.mItem.addQuestionShape(this.mEndPoint);
 
 	//triangle at end of ray
-	//this.mTriangle = new Triangle (this.mGame,this.mRaphael,parseInt(this.x1),this.y2, parseInt(this.x2-20),parseInt(this.y2+10), parseInt(this.x2-20),parseInt(this.y2-10)   ,0,1,1,"none",.5,false)
-	//this.mGame.mSheet.mItem.addQuestionShape(this.mTriangle);
+	this.mTriangle = new Triangle (parseInt(this.x1 + this.mLength),this.y2, parseInt(this.x2-20),parseInt(this.y2+10), parseInt(this.x2-20),parseInt(this.y2-10),this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false)
+	this.mItem.addQuestionShape(this.mTriangle);
 
 	//lets rotate according to passed in value
 	var rotateAmount = '' + 'r' + this.mAngle + ',' + this.x1 + ',' + this.y1;   
 	this.mPolygon.transform(rotateAmount);
 	
 	//rotate triangle 	
-	//this.mTriangle.mPolygon.transform(rotateAmount);
+	this.mTriangle.mPolygon.transform(rotateAmount);
 },
 dragMove: function(dx,dy)
 {

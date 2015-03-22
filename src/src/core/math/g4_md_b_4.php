@@ -29,7 +29,7 @@ createShapes: function()
 	//var line_ab = new LineOne (50,50,100,100,this.mGame,this.mRaphael,"#0000FF",.5,false);
         //this.addQuestionShape(line_ab);
 
-        this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),30,angleA,this,"#000000",.5,false);
+        this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayA);
         
 	//this.mRayB = new Ray (this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),parseInt(this.mRaphael.width-10),parseInt(this.mRaphael.height/2),"#000000",false,angleB);
