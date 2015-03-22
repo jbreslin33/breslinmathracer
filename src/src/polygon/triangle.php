@@ -1,7 +1,7 @@
 var Triangle = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,r,g,b,s,op,d)
+        initialize: function (x1,y1,x2,y2,x3,y3,game,raphael,r,g,b,s,op,d)
         {
 		//find center for mPosition...
 		sX = x1 + x2 + x3 / 3;
