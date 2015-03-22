@@ -31,6 +31,7 @@ createShapes: function()
       
 	// rotatation 
 	var rotateAmountA = '' + 'r' + angleA + ',' + x + ',' + y;
+	var rotateAmountB = '' + 'r' + parseFloat( (angleA + angleC) / 2) + ',' + x + ',' + y;
 	var rotateAmountC = '' + 'r' + angleC + ',' + x + ',' + y;
 
 	//rays 
@@ -53,6 +54,10 @@ createShapes: function()
 	this.mTextA = new RaphaelText(parseInt(x + lengthA + 15),y,this,0,0,1,"#000000",.5,false,"A");
 	this.addQuestionShape(this.mTextA);
         this.mTextA.mPolygon.transform(rotateAmountA);
+	
+	this.mTextB = new RaphaelText(parseInt(x - 15),y,this,0,0,1,"#000000",.5,false,"B");
+	this.addQuestionShape(this.mTextB);
+        this.mTextB.mPolygon.transform(rotateAmountB);
 	
 	this.mTextC = new RaphaelText(parseInt(x + lengthC + 15),y,this,0,0,1,"#000000",.5,false,"C");
 	this.addQuestionShape(this.mTextC);
