@@ -247,6 +247,7 @@ initialize: function(sheet)
 {
 	this.parent(sheet,250,200,150,145,100, 50,425,100);
         this.mType = '4.oa.c.5_11';
+    	this.mStripCommas = false;
         
 	this.ns = new NameSampler();
 
@@ -339,6 +340,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_10';
         this.ns = new NameSampler();
+ 	this.mChopWhiteSpace = false;
 
         var a = Math.floor(Math.random()*8+3);
         var b = Math.floor(Math.random()*3+2);
@@ -376,6 +378,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_9';
         this.ns = new NameSampler();
+ 	this.mChopWhiteSpace = false;
 
         var a = Math.floor(Math.random()*8+3);
         var pattern = '';
@@ -412,6 +415,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.c.5_8';
         this.ns = new NameSampler();
+ 	this.mChopWhiteSpace = false;
 
         var a = Math.floor(Math.random()*8+3);
         var b = Math.floor(Math.random()*8+3);
