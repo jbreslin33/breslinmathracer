@@ -23,7 +23,7 @@ initialize: function (x,y,length,angle,item,stroke,opacity,drag)
 	this.mPolygon.mPolygon = this;
 
 	//endpoint
-	this.mEndPoint = new Circle (12.5,x,y,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
+	this.mEndPoint = new Circle (5,x,y,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
 	this.mItem.addQuestionShape(this.mEndPoint);
 
 	//triangle at end of ray
