@@ -23,7 +23,7 @@ createShapes: function()
         var angleA = 45;
         var angleB = 80;
 
-        this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
+        this.mRayA = new Angle (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayA);
 
         this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
