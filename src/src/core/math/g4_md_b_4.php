@@ -27,6 +27,9 @@ createShapes: function()
 	var y = parseInt(this.mRaphael.height/2); 
 	var lengthA = 100;
 	var lengthB = 100;
+      
+	// rotatation 
+	var rotateAmountA = '' + 'r' + angleA + ',' + x + ',' + y;
 
         this.mRayA = new Ray (x,y,lengthA,angleA,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayA);
@@ -37,10 +40,10 @@ createShapes: function()
 
 	this.mTextA = new RaphaelText(parseInt(x + 50),y,this,0,0,1,"#000000",.5,false,"A");
 	this.addQuestionShape(this.mTextA);
+        this.mTextA.mPolygon.transform(rotateAmountA);
 	
 	//lets rotate pointA according to angle 
-        var rotateAmount = '' + 'r' + angleA + ',' + x + ',' + y;
-        this.mPointA.mPolygon.transform(rotateAmount);
+        this.mPointA.mPolygon.transform(rotateAmountA);
 
         this.mRayB = new Ray (x,y,100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
