@@ -74,6 +74,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,450,200,255,145,100,50,580,100);
+    	this.mStripCommas = false;
 
         this.mType = '4.oa.c.5_14';
         this.ns = new NameSampler();
