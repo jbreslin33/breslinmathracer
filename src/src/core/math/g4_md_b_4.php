@@ -280,7 +280,7 @@ createShapes: function()
 
 	var angleA = 0;	
 	var angleB = 0;	
-	while ( parseInt(Math.abs(angleA - angleB)) < 45)
+	while ( parseInt(angleB - angleA) < 45)
 	{ 
  		angleA = Math.floor(Math.random()*360);
  		angleB = Math.floor(Math.random()*360);
@@ -292,7 +292,7 @@ createShapes: function()
 	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
         
-	this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 
