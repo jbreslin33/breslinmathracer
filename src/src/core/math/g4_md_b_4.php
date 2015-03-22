@@ -34,6 +34,9 @@ createShapes: function()
 	//add a circle and a letter....
         this.mPointA = new Circle (12.5,parseInt(x + lengthA),y,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.mPointA);
+
+	this.mTextA = new RaphaelText(parseInt(x + 50),y,this,0,0,1,"#000000",.5,false,"A");
+	this.addQuestionShape(this.mTextA);
 	
 	//lets rotate pointA according to angle 
         var rotateAmount = '' + 'r' + angleA + ',' + x + ',' + y;
