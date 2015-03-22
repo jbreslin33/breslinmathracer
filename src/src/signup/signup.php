@@ -88,7 +88,6 @@ Extends: Game,
                 
              	if (navigator.appName == "Microsoft Internet Explorer")
 		{
-			this.log('ie');	
 			var option5_oa_a_1 = document.createElement("option");
 			var x = '5.oa.a.1';
                 	option5_oa_a_1.value = x;  
@@ -97,7 +96,6 @@ Extends: Game,
 		}
 		else
 		{
-			this.log('ff');	
 			var option5_oa_a_1 = document.createElement("option");
 			var x = '5.oa.a.1';
                 	option5_oa_a_1.value = x;  
