@@ -21,34 +21,45 @@ createShapes: function()
         this.parent();
 
         var angleA = 45;
-        var angleB = 80;
+        var angleC = 80;
 
 	var x = parseInt(this.mRaphael.width/2); 
 	var y = parseInt(this.mRaphael.height/2); 
+
 	var lengthA = 100;
-	var lengthB = 100;
+	var lengthC = 100;
       
 	// rotatation 
 	var rotateAmountA = '' + 'r' + angleA + ',' + x + ',' + y;
+	var rotateAmountC = '' + 'r' + angleC + ',' + x + ',' + y;
 
+	//rays 
         this.mRayA = new Ray (x,y,lengthA,angleA,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayA);
         
-	//add a circle and a letter....
+	this.mRayC = new Ray (x,y,lengthC,angleC,this,"#000000",.5,false);
+        this.addQuestionShape(this.mRayC);
+        
+	//add a circle 
         this.mPointA = new Circle (5,parseInt(x + lengthA - 30),y,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.mPointA);
+        this.mPointA.mPolygon.transform(rotateAmountA);
+        
+	this.mPointC = new Circle (5,parseInt(x + lengthC - 30),y,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.mPointC);
+        this.mPointC.mPolygon.transform(rotateAmountC);
 
+	//add a letter 
 	this.mTextA = new RaphaelText(parseInt(x + lengthA + 15),y,this,0,0,1,"#000000",.5,false,"A");
 	this.addQuestionShape(this.mTextA);
         this.mTextA.mPolygon.transform(rotateAmountA);
 	
-	//lets rotate pointA according to angle 
-        this.mPointA.mPolygon.transform(rotateAmountA);
-
-        this.mRayB = new Ray (x,y,100,angleB,this,"#000000",.5,false);
-        this.addQuestionShape(this.mRayB);
-
-        this.mAngleArc = new AngleArc(x,y,50,parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
+	this.mTextC = new RaphaelText(parseInt(x + lengthC + 15),y,this,0,0,1,"#000000",.5,false,"C");
+	this.addQuestionShape(this.mTextC);
+        this.mTextC.mPolygon.transform(rotateAmountC);
+	
+	//angle arc
+        this.mAngleArc = new AngleArc(x,y,50,parseFloat(angleC),parseFloat(angleA),this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
