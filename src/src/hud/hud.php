@@ -106,13 +106,23 @@ var Hud = new Class(
 
                 for (var i = 0; i < homeSelectArray.length; i++)
                 {
-                        var option = document.createElement("option");
-                        option.value = homeSelectArray[i];
-                        option.text = homeSelectArray[i];
-                        this.mHome.mMesh.appendChild(option);
+                	if (navigator.appName == "Microsoft Internet Explorer")
+			{
+                        	var option = document.createElement("option");
+                        	option.value = homeSelectArray[i];
+                        	option.text = homeSelectArray[i];
+                        	this.mHome.mMesh.add(option);
+			}
+			else
+			{
+                        	var option = document.createElement("option");
+                        	option.value = homeSelectArray[i];
+                        	option.text = homeSelectArray[i];
+                        	this.mHome.mMesh.appendChild(option);
+			}
                 }
         },
-	
+                
 	setItemTypeStats: function(streak)
 	{
         	this.mItemTypeStats.setText('<font size="1">' + streak + '</font>');
