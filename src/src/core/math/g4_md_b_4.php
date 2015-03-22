@@ -59,15 +59,15 @@ createShapes: function()
         this.mPointThree.mPolygon.transform(rotateAmountThree);
 
 	//add a letter 
-	this.mTextOne = new RaphaelText(parseInt(x + lengthOne + 15),y,this,0,0,1,"#000000",.5,false,"" + textOne);
+	this.mTextOne = new RaphaelText(parseInt(x + lengthOne + 15),y,this,0,0,1,"#000000",.5,false,"" + textOne,16);
 	this.addQuestionShape(this.mTextOne);
         this.mTextOne.mPolygon.transform(rotateAmountOne);
 	
-	this.mTextTwo = new RaphaelText(parseInt(x - 15),y,this,0,0,1,"#000000",.5,false,"" + textTwo);
+	this.mTextTwo = new RaphaelText(parseInt(x - 15),y,this,0,0,1,"#000000",.5,false,"" + textTwo,16);
 	this.addQuestionShape(this.mTextTwo);
         this.mTextTwo.mPolygon.transform(rotateAmountTwo);
 	
-	this.mTextThree = new RaphaelText(parseInt(x + lengthThree + 15),y,this,0,0,1,"#000000",.5,false,"" + textThree);
+	this.mTextThree = new RaphaelText(parseInt(x + lengthThree + 15),y,this,0,0,1,"#000000",.5,false,"" + textThree,16);
 	this.addQuestionShape(this.mTextThree);
         this.mTextThree.mPolygon.transform(rotateAmountThree);
 	
