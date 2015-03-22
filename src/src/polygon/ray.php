@@ -3,9 +3,10 @@ var Ray = new Class(
 {
 Extends: RaphaelPolygon,
 //var line_ab = new LineOne (50,50,100,100,this.mGame,this.mRaphael,"#0000FF",.5,false);
-initialize: function (x,y,length,angle,game,raphael,stroke,opacity,drag)
+initialize: function (x,y,length,angle,item,stroke,opacity,drag)
 {
-        this.parent(0,0,x,y,game,raphael,0,0,0,stroke,opacity,drag);
+	this.mItem = item;
+        this.parent(0,0,x,y,item.mSheet.mGame,item.mRaphael,0,0,0,stroke,opacity,drag);
 	this.mLength = length;
 
 	this.x1 = x;
@@ -22,8 +23,8 @@ initialize: function (x,y,length,angle,game,raphael,stroke,opacity,drag)
 	this.mPolygon.mPolygon = this;
 
 	//endpoint
-	//this.mEndPoint = new Circle (12.5,x,y,this.mGame,this.mRaphael,0,1,1,"none",.5,false);
-	//this.mGame.mSheet.mItem.addQuestionShape(this.mEndPoint);
+	this.mEndPoint = new Circle (12.5,x,y,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
+	this.mItem.addQuestionShape(this.mEndPoint);
 
 	//triangle at end of ray
 	//this.mTriangle = new Triangle (this.mGame,this.mRaphael,parseInt(this.x1),this.y2, parseInt(this.x2-20),parseInt(this.y2+10), parseInt(this.x2-20),parseInt(this.y2-10)   ,0,1,1,"none",.5,false)
