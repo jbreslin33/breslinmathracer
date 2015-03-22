@@ -252,23 +252,51 @@ var Item = new Class(
   			var option = document.createElement("option");
                 	option.value = '' + i;
                 	option.text = 'Old School ' + i;
-                	this.mTimesTablesInfo.mMesh.appendChild(option);
+         		if (navigator.appName == "Microsoft Internet Explorer")
+			{
+                		this.mTimesTablesInfo.mMesh.add(option);
+			}
+			else
+			{
+                		this.mTimesTablesInfo.mMesh.appendChild(option);
+			}
 		}
 		var optionB = document.createElement("option");
                 optionB.value = '11';
                 optionB.text = 'The Izzy';
-                this.mTimesTablesInfo.mMesh.appendChild(optionB);
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionB);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
+		}
+	
      
 		var optionC = document.createElement("option");
                 optionC.value = '12';
                 optionC.text = 'Add Subtract within 5';
-                this.mTimesTablesInfo.mMesh.appendChild(optionC);
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionC);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionC);
+		}
 
   		var optionA = document.createElement("option");
                 optionA.value = '10';
                 optionA.text = 'Final Battle';
-                this.mTimesTablesInfo.mMesh.appendChild(optionA);
-  		
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionA);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionA);
+		}
                 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
@@ -664,7 +692,14 @@ var Item = new Class(
 			var option = document.createElement("option");
     			option.value = array[i];
     			option.text = array[i];
-    			this.mPracticeInfo.mMesh.appendChild(option);		
+         		if (navigator.appName == "Microsoft Internet Explorer")
+			{
+    				this.mPracticeInfo.mMesh.add(option);		
+			}
+			else
+			{
+    				this.mPracticeInfo.mMesh.appendChild(option);		
+			}
 		}
 	},
      
@@ -677,7 +712,14 @@ var Item = new Class(
                         var option = document.createElement("option");
                         option.value = array[i];
                         option.text = array[i];
-                        this.mCoreInfo.mMesh.appendChild(option);
+         		if (navigator.appName == "Microsoft Internet Explorer")
+			{
+                        	this.mCoreInfo.mMesh.add(option);
+			}
+			else
+			{
+                        	this.mCoreInfo.mMesh.appendChild(option);
+			}
                 }
         }
 
