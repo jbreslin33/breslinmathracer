@@ -39,6 +39,7 @@
 <script type="text/javascript" src="/src/polygon/rhombus.php"></script>
 <script type="text/javascript" src="/src/polygon/line_one.php"></script>
 <script type="text/javascript" src="/src/polygon/ray.php"></script>
+<script type="text/javascript" src="/src/polygon/angle.php"></script>
 <script type="text/javascript" src="/src/polygon/line_chart.php"></script>
 <script type="text/javascript" src="/src/polygon/table.php"></script>
 <script type="text/javascript" src="/src/polygon/ruler_centimeter.php"></script>
