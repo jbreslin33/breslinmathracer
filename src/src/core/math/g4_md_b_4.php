@@ -36,8 +36,9 @@ createShapes: function()
         this.addQuestionShape(this.mPointA);
 	
 	//lets rotate pointA according to angle 
-        var rotateAmount = '' + 'r' + angleA + ',' + this.x1 + ',' + this.y1;
+        var rotateAmount = '' + 'r' + angleA + ',' + x + ',' + y;
         this.mPointA.mPolygon.transform(rotateAmount);
+
         this.mRayB = new Ray (x,y,100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
 
