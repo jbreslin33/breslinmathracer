@@ -34,6 +34,7 @@
 <script type="text/javascript" src="/src/polygon/arc.php"></script>
 <script type="text/javascript" src="/src/polygon/angle_arc.php"></script>
 <script type="text/javascript" src="/src/polygon/angle_degree.php"></script>
+<script type="text/javascript" src="/src/polygon/raphael_text.php"></script>
 <script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 <script type="text/javascript" src="/src/polygon/parallelogram.php"></script>
 <script type="text/javascript" src="/src/polygon/rhombus.php"></script>
