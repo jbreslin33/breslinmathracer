@@ -23,13 +23,25 @@ createShapes: function()
         var angleA = 45;
         var angleB = 80;
 
-        this.mRayA = new Angle (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
-        this.addQuestionShape(this.mRayA);
+	var x = parseInt(this.mRaphael.width/2); 
+	var y = parseInt(this.mRaphael.height/2); 
+	var lengthA = 100;
+	var lengthB = 100;
 
-        this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
+        this.mRayA = new Ray (x,y,lengthA,angleA,this,"#000000",.5,false);
+        this.addQuestionShape(this.mRayA);
+        
+	//add a circle and a letter....
+        this.mPointA = new Circle (12.5,parseInt(x + lengthA),y,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.mPointA);
+	
+	//lets rotate pointA according to angle 
+        var rotateAmount = '' + 'r' + angleA + ',' + this.x1 + ',' + this.y1;
+        this.mPointA.mPolygon.transform(rotateAmount);
+        this.mRayB = new Ray (x,y,100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
 
-        this.mAngleArc = new AngleArc(this,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),0,0,1,"none",.5,false);;
+        this.mAngleArc = new AngleArc(x,y,50,parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
