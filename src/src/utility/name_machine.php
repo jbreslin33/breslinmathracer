@@ -77,6 +77,66 @@ var NameMachine = new Class(
 		this.mDayOfWeekArray.push("Friday");
 		this.mDayOfWeekArray.push("Saturday");
 
+      		//upper letters
+                this.mUpperLetterArray = new Array();
+                this.mUsedUpperLetterElementArray = new Array();
+                this.mUpperLetterArray.push("A");
+                this.mUpperLetterArray.push("B");
+                this.mUpperLetterArray.push("C");
+                this.mUpperLetterArray.push("D");
+                this.mUpperLetterArray.push("E");
+                this.mUpperLetterArray.push("F");
+                this.mUpperLetterArray.push("G");
+                this.mUpperLetterArray.push("H");
+                this.mUpperLetterArray.push("I");
+                this.mUpperLetterArray.push("J");
+                this.mUpperLetterArray.push("K");
+                this.mUpperLetterArray.push("L");
+                this.mUpperLetterArray.push("M");
+                this.mUpperLetterArray.push("N");
+                this.mUpperLetterArray.push("O");
+                this.mUpperLetterArray.push("P");
+                this.mUpperLetterArray.push("Q");
+                this.mUpperLetterArray.push("R");
+                this.mUpperLetterArray.push("S");
+                this.mUpperLetterArray.push("T");
+                this.mUpperLetterArray.push("U");
+                this.mUpperLetterArray.push("V");
+                this.mUpperLetterArray.push("W");
+                this.mUpperLetterArray.push("X");
+                this.mUpperLetterArray.push("Y");
+                this.mUpperLetterArray.push("Z");
+
+      		//lower letters
+                this.mLowerLetterArray = new Array();
+                this.mUsedLowerLetterElementArray = new Array();
+                this.mLowerLetterArray.push("a");
+                this.mLowerLetterArray.push("b");
+                this.mLowerLetterArray.push("c");
+                this.mLowerLetterArray.push("d");
+                this.mLowerLetterArray.push("e");
+                this.mLowerLetterArray.push("f");
+                this.mLowerLetterArray.push("g");
+                this.mLowerLetterArray.push("h");
+                this.mLowerLetterArray.push("i");
+                this.mLowerLetterArray.push("j");
+                this.mLowerLetterArray.push("k");
+                this.mLowerLetterArray.push("l");
+                this.mLowerLetterArray.push("m");
+                this.mLowerLetterArray.push("n");
+                this.mLowerLetterArray.push("o");
+                this.mLowerLetterArray.push("p");
+                this.mLowerLetterArray.push("q");
+                this.mLowerLetterArray.push("r");
+                this.mLowerLetterArray.push("s");
+                this.mLowerLetterArray.push("t");
+                this.mLowerLetterArray.push("u");
+                this.mLowerLetterArray.push("v");
+                this.mLowerLetterArray.push("w");
+                this.mLowerLetterArray.push("x");
+                this.mLowerLetterArray.push("y");
+                this.mLowerLetterArray.push("z");
+
 		//played activities
 		this.mPlayedActivityArray = new Array();
 		this.mUsedPlayedActivityElementArray = new Array();
@@ -1293,6 +1353,60 @@ var NameMachine = new Class(
                 return this.mDayOfWeekArray[randomElement];
         },
 
+        getUpperLetter: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mUpperLetterArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedUpperLetterElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedUpperLetterElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedUpperLetterElementArray.push(randomElement);
+                return this.mUpperLetterArray[randomElement];
+        },
+
+        getLowerLetter: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mLowerLetterArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedLowerLetterElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedLowerLetterElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedLowerLetterElementArray.push(randomElement);
+                return this.mLowerLetterArray[randomElement];
+        },
+
         getPictureLink: function()
         {
                 var keepGoing = true;
@@ -1866,6 +1980,7 @@ var NameSampler = new Class(
                 this.mDistanceIncrementMedium = this.mNameMachine.getDistanceIncrement('feet','yards');
                 this.mDistanceIncrementLarge = this.mNameMachine.getDistanceIncrement('kilometers','miles');
 
+		//dayofweek
                 this.mDayOfWeekOne = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekTwo = this.mNameMachine.getDayOfWeek();
                 this.mDayOfWeekThree = this.mNameMachine.getDayOfWeek();
@@ -1874,6 +1989,26 @@ var NameSampler = new Class(
 		this.mDayOfWeekArray.push(this.mDayOfWeekOne);
 		this.mDayOfWeekArray.push(this.mDayOfWeekTwo);
 		this.mDayOfWeekArray.push(this.mDayOfWeekThree);
+
+		//upper letter
+                this.mUpperLetterOne = this.mNameMachine.getUpperLetter();
+                this.mUpperLetterTwo = this.mNameMachine.getUpperLetter();
+                this.mUpperLetterThree = this.mNameMachine.getUpperLetter();
+
+                this.mUpperLetterArray = new Array();
+                this.mUpperLetterArray.push(this.mUpperLetterOne);
+                this.mUpperLetterArray.push(this.mUpperLetterTwo);
+                this.mUpperLetterArray.push(this.mUpperLetterThree);
+
+                //lower letter
+                this.mLowerLetterOne = this.mNameMachine.getLowerLetter();
+                this.mLowerLetterTwo = this.mNameMachine.getLowerLetter();
+                this.mLowerLetterThree = this.mNameMachine.getLowerLetter();
+
+                this.mLowerLetterArray = new Array();
+                this.mLowerLetterArray.push(this.mLowerLetterOne);
+                this.mLowerLetterArray.push(this.mLowerLetterTwo);
+                this.mLowerLetterArray.push(this.mLowerLetterThree);
 
 		this.mAnimalOne = this.mNameMachine.getAnimal();
 		this.mAnimalTwo = this.mNameMachine.getAnimal();
