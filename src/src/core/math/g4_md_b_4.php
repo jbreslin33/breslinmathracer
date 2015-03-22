@@ -19,7 +19,6 @@ initialize: function(sheet)
 createShapes: function()
 {
         this.parent();
-        //var angletTextA = Math.floor(Math.random()*360);
 	var textOne = this.ns.mUpperLetterOne;
 	var textTwo = this.ns.mUpperLetterTwo;
 	var textThree = this.ns.mUpperLetterThree;
@@ -28,8 +27,13 @@ createShapes: function()
 	this.setAnswer('' + textThree + '' + textTwo + '' + textOne,1);
 	this.setAnswer('' + textTwo,2);
 
-        var angleOne = 45;
-        var angleThree = 80;
+        var angleOne = 0;
+        var angleThree = 0;
+	while (parseInt(angleThree - angleOne) < 45)
+	{
+        	angleOne   = Math.floor(Math.random()*360);
+        	angleThree = Math.floor(Math.random()*360);
+	}
 
 	var x = parseInt(this.mRaphael.width/2); 
 	var y = parseInt(this.mRaphael.height/2); 
