@@ -16,10 +16,10 @@ initialize: function(sheet)
         this.mAnswerTextBox.setSize(50,25);
         this.mAnswerTextBox2.setSize(50,25);
 
-        this.mHeadingAnswerLabel.setText('Whole<br> Servings');
-        this.mHeadingAnswerLabel2.setText('Ounces<br> Leftover');
-        this.mHeadingAnswerLabel.setPosition(475,90);
-        this.mHeadingAnswerLabel2.setPosition(555,90);
+        this.mHeadingAnswerLabel.setText('Blue<br> Digit Value');
+        this.mHeadingAnswerLabel2.setText('Red<br> Digit Value');
+        this.mHeadingAnswerLabel.setPosition(475,70);
+        this.mHeadingAnswerLabel2.setPosition(555,70);
         this.mHeadingAnswerLabel.setSize(50,50);
         this.mHeadingAnswerLabel2.setSize(50,50);
 
@@ -34,7 +34,10 @@ initialize: function(sheet)
         var answer = (a*16) / b;
         var answer1 = Math.floor(answer);
         var answer2 = (a*16) % b;
-        this.setQuestion('A serving of cheese weighs ' + b + ' ounces. How many whole servings of cheese are there in a ' + a + '-pound wheel of cheese? How much is left over?');
+        //this.setQuestion('A serving of cheese weighs ' + b + ' ounces. How many whole servings of cheese are there in a ' + a + '-pound wheel of cheese? How much is left over?');
+	//this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+//	this.setQuestion('What is the value value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+
 
         this.setAnswer('' + answer1,0);
         this.setAnswer('' + answer2,1);
