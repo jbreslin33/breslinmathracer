@@ -1,3 +1,56 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_11',4.0611,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__11 = new Class(
+{
+
+Extends: TextItem2,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mType = '4.nbt.a.1_11';
+        this.ns = new NameSampler();
+
+        this.mAnswerTextBox.setPosition(475,140);
+        this.mAnswerTextBox2.setPosition(555,140);
+        this.mAnswerTextBox.setSize(50,25);
+        this.mAnswerTextBox2.setSize(50,25);
+
+        this.mHeadingAnswerLabel.setText('Whole<br> Servings');
+        this.mHeadingAnswerLabel2.setText('Ounces<br> Leftover');
+        this.mHeadingAnswerLabel.setPosition(475,90);
+        this.mHeadingAnswerLabel2.setPosition(555,90);
+        this.mHeadingAnswerLabel.setSize(50,50);
+        this.mHeadingAnswerLabel2.setSize(50,50);
+
+        this.mQuestionLabel.setSize(220,250);
+        this.mQuestionLabel.setPosition(225,180);
+
+        var a = Math.floor(Math.random()*21)+20;
+
+        var b = Math.floor(Math.random()*3);
+        b = b + 2.5;
+
+        var answer = (a*16) / b;
+        var answer1 = Math.floor(answer);
+        var answer2 = (a*16) % b;
+        this.setQuestion('A serving of cheese weighs ' + b + ' ounces. How many whole servings of cheese are there in a ' + a + '-pound wheel of cheese? How much is left over?');
+
+        this.setAnswer('' + answer1,0);
+        this.setAnswer('' + answer2,1);
+},
+
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setSize(200, 75);
+                this.mCorrectAnswerLabel.setPosition(330,200);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + '</br> ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo());
+                this.mCorrectAnswerLabel.setVisibility(true);
+        }
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_10',4.0610,'4.nbt.a.1','This type will give tens and ask for ones');
