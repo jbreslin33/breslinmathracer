@@ -81,10 +81,30 @@ inputKeyHitEnter: function(e)
 	}                
 },
 
-setUserAnswer4: function(userAnswer4)
+setUserAnswer4: function(userAnswer)
 {
-	this.mUserAnswer4 = userAnswer4;
+        //strip all whitespace
+        var answer = userAnswer;
+
+        if (this.mChopWhiteSpace == true)
+        {
+                answer = answer.replace(/ /g,'');
+        }
+
+        //to lowercase
+        if (this.mIgnoreCase == true)
+        {
+                answer = answer.toLowerCase();
+        }
+
+        //strip commas
+        if (this.mStripCommas == true)
+        {
+                answer = answer.replace(/,/g,'');
+        } 
+        this.mUserAnswer4 = answer;
 },
+
 
 checkUserAnswer: function()
 {

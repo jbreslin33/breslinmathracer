@@ -85,9 +85,28 @@ inputKeyHitEnter: function(e)
 	}                
 },
 
-setUserAnswer2: function(userAnswer2)
+setUserAnswer2: function(userAnswer)
 {
-	this.mUserAnswer2 = userAnswer2;
+	//strip all whitespace
+        var answer = userAnswer;
+
+        if (this.mChopWhiteSpace == true)
+        {
+                answer = answer.replace(/ /g,'');
+        }
+
+        //to lowercase
+        if (this.mIgnoreCase == true)
+        {
+                answer = answer.toLowerCase();
+        }
+
+        //strip commas
+        if (this.mStripCommas == true)
+        {
+                answer = answer.replace(/,/g,'');
+        }
+        this.mUserAnswer2 = answer;
 },
 
 checkUserAnswer: function()
