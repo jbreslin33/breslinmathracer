@@ -47,9 +47,9 @@ initialize: function(sheet)
 	{
 		if (i == toElement) 
 		{
-			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
+			numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>'; 				
 		}
-		else if (i == toElement) 
+		else if (i == fromElement) 
 		{
 			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
 		}
