@@ -31,7 +31,7 @@ initialize: function(sheet)
 	var placeArray = new Array();
 	for (var i = 0; i < totalDigits; i++)
 	{
-        	placeArray.push(Math.floor(Math.random()*8)+2);
+        	placeArray.unshift(Math.floor(Math.random()*8)+2);
 	}
 
 	var fromElement = 0;	 
@@ -45,7 +45,7 @@ initialize: function(sheet)
 	placeArray[toElement] = placeArray[fromElement];	
 
 	var numberString = '';
-	for (var i = 0; i < totalDigits; i++)
+	for (var i = 5; i > -1; i--)
 	{
 		if (i == toElement) 
 		{
@@ -62,9 +62,18 @@ initialize: function(sheet)
 	}
 
 	this.setQuestion('What is the value value of the red and blue digits in the number: ' + numberString);
-
-        this.setAnswer('' + placeArray[fromElement],0);
-        this.setAnswer('' + placeArray[toElement],1);
+	var blueMultiplier = parseInt(toElement + 1);
+	var redMultiplier  = parseInt(fromElement + 1);
+/*
+	APPLICATION.log('placeArray[fromElement]:' + placeArray[fromElement]); 
+	APPLICATION.log('placeArray[toElement]:' + placeArray[fromElement]); 
+	
+	APPLICATION.log('bluepMultiplier:' + blueMultiplier); 
+	APPLICATION.log('redMultiplier:' + redMultiplier); 
+*/
+		
+        this.setAnswer('' + parseInt( placeArray[fromElement] * blueMultiplier) ,0);
+        this.setAnswer('' + parseInt( placeArray[toElement]   * redMultiplier) ,1);
 },
 
 showCorrectAnswer: function()
