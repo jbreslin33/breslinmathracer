@@ -11,6 +11,8 @@ initialize: function(sheet)
         this.mType = '4.nbt.a.1_11';
         this.ns = new NameSampler();
 
+	var totalDigits = 6;
+
         this.mAnswerTextBox.setPosition(425,140);
         this.mAnswerTextBox2.setPosition(595,140);
         this.mAnswerTextBox.setSize(75,25);
@@ -27,7 +29,7 @@ initialize: function(sheet)
         this.mQuestionLabel.setPosition(225,180);
 	
 	var placeArray = new Array();
-	for (var i = 0; i < 6; i++)
+	for (var i = 0; i < totalDigits; i++)
 	{
         	placeArray.push(Math.floor(Math.random()*8)+2);
 	}
@@ -43,7 +45,7 @@ initialize: function(sheet)
 	placeArray[toElement] = placeArray[fromElement];	
 
 	var numberString = '';
-	for (var i = 0; i < 6; i++)
+	for (var i = 0; i < totalDigits; i++)
 	{
 		if (i == toElement) 
 		{
