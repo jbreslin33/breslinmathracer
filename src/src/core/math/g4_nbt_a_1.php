@@ -1,3 +1,92 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_12',4.0612,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__12 = new Class(
+{
+
+Extends: TextItem2,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mType = '4.nbt.a.1_12';
+        this.ns = new NameSampler();
+
+	var totalDigits = 6;
+
+        this.mAnswerTextBox.setPosition(425,140);
+        this.mAnswerTextBox2.setPosition(595,140);
+        this.mAnswerTextBox.setSize(75,25);
+        this.mAnswerTextBox2.setSize(75,25);
+
+        this.mHeadingAnswerLabel.setText('Blue<br> Digit<br> Value');
+        this.mHeadingAnswerLabel2.setText('Red<br> Digit<br> Value');
+        this.mHeadingAnswerLabel.setPosition(425,70);
+        this.mHeadingAnswerLabel2.setPosition(595,70);
+        this.mHeadingAnswerLabel.setSize(50,50);
+        this.mHeadingAnswerLabel2.setSize(50,50);
+
+        this.mQuestionLabel.setSize(220,250);
+        this.mQuestionLabel.setPosition(225,180);
+	
+	var placeArray = new Array();
+	for (var i = 0; i < totalDigits; i++)
+	{
+        	placeArray.unshift(Math.floor(Math.random()*8)+2);
+	}
+
+	var fromElement = 0;	 
+	var toElement = 0;	 
+	while (fromElement == toElement)
+	{
+		fromElement = Math.floor(Math.random()*6);	 
+		toElement = Math.floor(Math.random()*6);	 
+	}
+	
+	placeArray[toElement] = placeArray[fromElement];	
+
+	var numberString = '';
+	for (var i = 5; i > -1; i--)
+	{
+		if (i == toElement) 
+		{
+			numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>'; 				
+		}
+		else if (i == fromElement) 
+		{
+			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
+		}
+		else
+		{
+			numberString = numberString + '' + placeArray[i]; 				
+		}
+	}
+
+	this.setQuestion('What is the value of the red and blue digits in the number: ' + numberString);
+	//var blueMultiplier = parseInt(toElement + 1);
+	var blueMultiplier = parseInt(toElement);
+	bm = Math.pow(10,blueMultiplier);
+
+	//var redMultiplier  = parseInt(fromElement + 1);
+	var redMultiplier  = parseInt(fromElement);
+	rm = Math.pow(10,redMultiplier);
+		
+        this.setAnswer('' + parseInt( placeArray[fromElement] * bm) ,0);
+        this.setAnswer('' + parseInt( placeArray[toElement]   * rm) ,1);
+},
+
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setSize(200, 75);
+                this.mCorrectAnswerLabel.setPosition(330,200);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + '</br> ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo());
+                this.mCorrectAnswerLabel.setVisibility(true);
+        }
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_11',4.0611,'4.nbt.a.1','');
 */
