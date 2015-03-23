@@ -63,17 +63,13 @@ initialize: function(sheet)
 
 	this.setQuestion('What is the value value of the red and blue digits in the number: ' + numberString);
 	var blueMultiplier = parseInt(toElement + 1);
+	bm = Math.pow(10,blueMultiplier);
+
 	var redMultiplier  = parseInt(fromElement + 1);
-/*
-	APPLICATION.log('placeArray[fromElement]:' + placeArray[fromElement]); 
-	APPLICATION.log('placeArray[toElement]:' + placeArray[fromElement]); 
-	
-	APPLICATION.log('bluepMultiplier:' + blueMultiplier); 
-	APPLICATION.log('redMultiplier:' + redMultiplier); 
-*/
+	rm = Math.pow(10,redMultiplier);
 		
-        this.setAnswer('' + parseInt( placeArray[fromElement] * blueMultiplier) ,0);
-        this.setAnswer('' + parseInt( placeArray[toElement]   * redMultiplier) ,1);
+        this.setAnswer('' + parseInt( placeArray[fromElement] * bm) ,0);
+        this.setAnswer('' + parseInt( placeArray[toElement]   * rm) ,1);
 },
 
 showCorrectAnswer: function()
