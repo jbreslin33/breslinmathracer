@@ -18,10 +18,10 @@ initialize: function(sheet)
         this.mAnswerTextBox.setSize(75,25);
         this.mAnswerTextBox2.setSize(75,25);
 
-        this.mHeadingAnswerLabel.setText('Blue<br> Digit Value');
-        this.mHeadingAnswerLabel2.setText('Red<br> Digit Value');
-        this.mHeadingAnswerLabel.setPosition(475,70);
-        this.mHeadingAnswerLabel2.setPosition(555,70);
+        this.mHeadingAnswerLabel.setText('Blue<br> Digit<br> Value');
+        this.mHeadingAnswerLabel2.setText('Red<br> Digit<br> Value');
+        this.mHeadingAnswerLabel.setPosition(425,70);
+        this.mHeadingAnswerLabel2.setPosition(595,70);
         this.mHeadingAnswerLabel.setSize(50,50);
         this.mHeadingAnswerLabel2.setSize(50,50);
 
@@ -62,10 +62,12 @@ initialize: function(sheet)
 	}
 
 	this.setQuestion('What is the value value of the red and blue digits in the number: ' + numberString);
-	var blueMultiplier = parseInt(toElement + 1);
+	//var blueMultiplier = parseInt(toElement + 1);
+	var blueMultiplier = parseInt(toElement);
 	bm = Math.pow(10,blueMultiplier);
 
-	var redMultiplier  = parseInt(fromElement + 1);
+	//var redMultiplier  = parseInt(fromElement + 1);
+	var redMultiplier  = parseInt(fromElement);
 	rm = Math.pow(10,redMultiplier);
 		
         this.setAnswer('' + parseInt( placeArray[fromElement] * bm) ,0);
