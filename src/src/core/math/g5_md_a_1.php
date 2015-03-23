@@ -381,58 +381,51 @@ var i_5_md_a_1__10 = new Class(
 {
 
 Extends: TextItem2,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mType = '5.md.a.1_10';
+    	this.ns = new NameSampler();
 
-                this.mType = '5.md.a.1_10';
-
-this.mAnswerTextBox.setPosition(475,140);
-this.mAnswerTextBox2.setPosition(555,140);
-this.mAnswerTextBox.setSize(50,25);
-this.mAnswerTextBox2.setSize(50,25);
+	this.mAnswerTextBox.setPosition(475,140);
+	this.mAnswerTextBox2.setPosition(555,140);
+	this.mAnswerTextBox.setSize(50,25);
+	this.mAnswerTextBox2.setSize(50,25);
  
-this.mHeadingAnswerLabel.setText('Whole<br> Servings');
-this.mHeadingAnswerLabel2.setText('Ounces<br> Leftover'); 
-this.mHeadingAnswerLabel.setPosition(475,90);
-this.mHeadingAnswerLabel2.setPosition(555,90); 
-this.mHeadingAnswerLabel.setSize(50,50);
-this.mHeadingAnswerLabel2.setSize(50,50); 
+	this.mHeadingAnswerLabel.setText('Whole<br> Servings');
+	this.mHeadingAnswerLabel2.setText('Ounces<br> Leftover'); 
+	this.mHeadingAnswerLabel.setPosition(475,90);
+	this.mHeadingAnswerLabel2.setPosition(555,90); 
+	this.mHeadingAnswerLabel.setSize(50,50);
+	this.mHeadingAnswerLabel2.setSize(50,50); 
 
-this.mQuestionLabel.setSize(220,250);
-this.mQuestionLabel.setPosition(225,180);
+	this.mQuestionLabel.setSize(220,250);
+	this.mQuestionLabel.setPosition(225,180);
 
+	var a = Math.floor(Math.random()*21)+20;
 
-    this.ns = new NameSampler();
+    	var b = Math.floor(Math.random()*3);
+    	b = b + 2.5;
 
-		var a = Math.floor(Math.random()*21)+20;
+    	var answer = (a*16) / b;
+    	var answer1 = Math.floor(answer);
+    	var answer2 = (a*16) % b;
+        this.setQuestion('A serving of cheese weighs ' + b + ' ounces. How many whole servings of cheese are there in a ' + a + '-pound wheel of cheese? How much is left over?');
 
-    var b = Math.floor(Math.random()*3);
-    b = b + 2.5;
+        this.setAnswer('' + answer1,0);
+        this.setAnswer('' + answer2,1);
+},
 
-    var answer = (a*16) / b;
-    var answer1 = Math.floor(answer);
-    var answer2 = (a*16) % b;
-
-                this.setQuestion('A serving of cheese weighs ' + b + ' ounces. How many whole servings of cheese are there in a ' + a + '-pound wheel of cheese? How much is left over?');
-
-
-                this.setAnswer('' + answer1,0);
-                this.setAnswer('' + answer2,1);
-        },
-
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(330,200);
-			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + '</br> ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-//console.log(this.mUserAnswer2);
-		  }
-    }
+showCorrectAnswer: function()
+{
+	if (this.mCorrectAnswerLabel)
+	{
+        	this.mCorrectAnswerLabel.setSize(200, 75);
+        	this.mCorrectAnswerLabel.setPosition(330,200);
+	  	this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + '</br> ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
+	  	this.mCorrectAnswerLabel.setVisibility(true);
+	}
+}
 });
 
 /*
