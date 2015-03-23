@@ -1,5 +1,87 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.b.4_11',4.2711,'4.md.b.4','');
+*/
+var i_4_md_b_4__11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.mRaphael = Raphael(20,20,380,380);
+       	this.ns = new NameSampler();
+        
+	this.parent(sheet,300,50,575,95,200,50,625,200);
+        this.mType = '4.md.b.4_11';
+
+        this.setQuestion('What is the name of this angle?');
+},
+
+createShapes: function()
+{
+        this.parent();
+	var textOne = this.ns.mUpperLetterOne;
+	var textTwo = this.ns.mUpperLetterTwo;
+	var textThree = this.ns.mUpperLetterThree;
+        
+	this.setAnswer('' + textOne + '' + textTwo + '' + textThree,0);
+	this.setAnswer('' + textThree + '' + textTwo + '' + textOne,1);
+	this.setAnswer('' + textTwo,2);
+
+        var angleOne = 0;
+        var angleThree = 0;
+	while (parseInt(angleThree - angleOne) < 45)
+	{
+        	angleOne   = Math.floor(Math.random()*360);
+        	angleThree = Math.floor(Math.random()*360);
+	}
+
+	var x = parseInt(this.mRaphael.width/2); 
+	var y = parseInt(this.mRaphael.height/2); 
+
+	var lengthOne = 100;
+	var lengthThree = 100;
+      
+	// rotatation 
+	var rotateAmountOne = '' + 'r' + angleOne + ',' + x + ',' + y;
+	var rotateAmountTwo = '' + 'r' + parseFloat( (angleOne + angleThree) / 2) + ',' + x + ',' + y;
+	var rotateAmountThree = '' + 'r' + angleThree + ',' + x + ',' + y;
+
+	//rays 
+        this.mRayOne = new Ray (x,y,lengthOne,angleOne,this,"#000000",.5,false);
+        this.addQuestionShape(this.mRayOne);
+        
+	this.mRayThree = new Ray (x,y,lengthThree,angleThree,this,"#000000",.5,false);
+        this.addQuestionShape(this.mRayThree);
+        
+	//add a circle 
+        this.mPointOne = new Circle (5,parseInt(x + lengthOne - 30),y,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.mPointOne);
+        this.mPointOne.mPolygon.transform(rotateAmountOne);
+        
+	this.mPointThree = new Circle (5,parseInt(x + lengthThree - 30),y,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.mPointThree);
+        this.mPointThree.mPolygon.transform(rotateAmountThree);
+
+	//add a letter 
+	this.mTextOne = new RaphaelText(parseInt(x + lengthOne + 15),y,this,0,0,1,"#000000",.5,false,"" + textOne,16);
+	this.addQuestionShape(this.mTextOne);
+        this.mTextOne.mPolygon.transform(rotateAmountOne);
+	
+	this.mTextTwo = new RaphaelText(parseInt(x - 15),y,this,0,0,1,"#000000",.5,false,"" + textTwo,16);
+	this.addQuestionShape(this.mTextTwo);
+        this.mTextTwo.mPolygon.transform(rotateAmountTwo);
+	
+	this.mTextThree = new RaphaelText(parseInt(x + lengthThree + 15),y,this,0,0,1,"#000000",.5,false,"" + textThree,16);
+	this.addQuestionShape(this.mTextThree);
+        this.mTextThree.mPolygon.transform(rotateAmountThree);
+	
+	//angle arc
+        this.mAngleArc = new AngleArc(x,y,50,parseFloat(angleThree),parseFloat(angleOne),this,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArc);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.b.4_10',4.2710,'4.md.b.4','');
 */
 var i_4_md_b_4__10 = new Class(
