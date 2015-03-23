@@ -11,10 +11,10 @@ initialize: function(sheet)
         this.mType = '4.nbt.a.1_11';
         this.ns = new NameSampler();
 
-        this.mAnswerTextBox.setPosition(475,140);
-        this.mAnswerTextBox2.setPosition(555,140);
-        this.mAnswerTextBox.setSize(50,25);
-        this.mAnswerTextBox2.setSize(50,25);
+        this.mAnswerTextBox.setPosition(425,140);
+        this.mAnswerTextBox2.setPosition(595,140);
+        this.mAnswerTextBox.setSize(75,25);
+        this.mAnswerTextBox2.setSize(75,25);
 
         this.mHeadingAnswerLabel.setText('Blue<br> Digit Value');
         this.mHeadingAnswerLabel2.setText('Red<br> Digit Value');
@@ -25,22 +25,44 @@ initialize: function(sheet)
 
         this.mQuestionLabel.setSize(220,250);
         this.mQuestionLabel.setPosition(225,180);
+	
+	var placeArray = new Array();
+	for (var i = 0; i < 6; i++)
+	{
+        	placeArray.push(Math.floor(Math.random()*8)+2);
+	}
 
-        var a = Math.floor(Math.random()*21)+20;
+	var fromElement = 0;	 
+	var toElement = 0;	 
+	while (fromElement == toElement)
+	{
+		fromElement = Math.floor(Math.random()*6);	 
+		toElement = Math.floor(Math.random()*6);	 
+	}
+	
+	placeArray[toElement] = placeArray[fromElement];	
 
-        var b = Math.floor(Math.random()*3);
-        b = b + 2.5;
+	var numberString = '';
+	for (var i = 0; i < 6; i++)
+	{
+		if (i == toElement) 
+		{
+			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
+		}
+		else if (i == toElement) 
+		{
+			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
+		}
+		else
+		{
+			numberString = numberString + '' + placeArray[i]; 				
+		}
+	}
 
-        var answer = (a*16) / b;
-        var answer1 = Math.floor(answer);
-        var answer2 = (a*16) % b;
-        //this.setQuestion('A serving of cheese weighs ' + b + ' ounces. How many whole servings of cheese are there in a ' + a + '-pound wheel of cheese? How much is left over?');
-	//this.setQuestion('What is the place value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
-//	this.setQuestion('What is the value value of the red digit called in the number ' + this.hundredthousands + '<span style="color: #f00;">' + this.tenthousands + '</span>' + '' + '' + this.thousands + ',' + this.hundreds + '' + this.tens + '' + this.ones + '.' + this.tenths + this.hundredths + this.thousandths + this.tenthousandths + this.hundredthousandths);
+	this.setQuestion('What is the value value of the red and blue digits in the number: ' + numberString);
 
-
-        this.setAnswer('' + answer1,0);
-        this.setAnswer('' + answer2,1);
+        this.setAnswer('' + placeArray[fromElement],0);
+        this.setAnswer('' + placeArray[toElement],1);
 },
 
 showCorrectAnswer: function()
