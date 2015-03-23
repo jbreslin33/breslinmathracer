@@ -61,7 +61,7 @@ initialize: function(sheet)
 		}
 	}
 
-	this.setQuestion('What is the value value of the red and blue digits in the number: ' + numberString);
+	this.setQuestion('What is the value of the red and blue digits in the number: ' + numberString);
 	//var blueMultiplier = parseInt(toElement + 1);
 	var blueMultiplier = parseInt(toElement);
 	bm = Math.pow(10,blueMultiplier);
