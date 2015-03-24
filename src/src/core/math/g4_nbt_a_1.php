@@ -109,7 +109,7 @@ initialize: function(sheet)
         	placeArray.unshift(Math.floor(Math.random()*8)+2);
 	}
 
-	fromElement = Math.floor(Math.random()*6);	 
+	fromElement = Math.floor(Math.random()*5)+1;	 
 	var toElement = parseInt(fromElement - 1);	
 	
 	placeArray[toElement] = placeArray[fromElement];	
