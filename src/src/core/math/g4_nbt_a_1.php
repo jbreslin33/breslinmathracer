@@ -1,5 +1,74 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_13',4.0613,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__13 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+  	this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_13';
+        this.ns = new NameSampler();
+
+	var totalDigits = 6;
+
+	var placeArray = new Array();
+	for (var i = 0; i < totalDigits; i++)
+	{
+        	placeArray.unshift(Math.floor(Math.random()*8)+2);
+	}
+  
+	fromElement = Math.floor(Math.random()*5)+1;
+        var toElement = parseInt(fromElement - 1);
+
+        placeArray[toElement] = placeArray[fromElement];
+
+	var numberString = '';
+	for (var i = 5; i > -1; i--)
+	{
+		if (i == fromElement) 
+		{
+			numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>'; 				
+		}
+		else if (i == toElement) 
+		{
+			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
+		}
+		else
+		{
+			numberString = numberString + '' + placeArray[i]; 				
+		}
+	}
+
+	this.setQuestion('Write a division equation that shows the relationship between the red and blue digit values in the number: ' + numberString);
+	var blueMultiplier = parseInt(fromElement);
+	bm = Math.pow(10,blueMultiplier);
+
+	var redMultiplier  = parseInt(toElement);
+	rm = Math.pow(10,redMultiplier);
+
+	var blueValue = parseInt(placeArray[fromElement] * bm); 	
+	var redValue = parseInt(placeArray[toElement] * rm); 	
+
+	if (blueValue > redValue)
+	{
+		var answerOne = parseInt(blueValue / redValue);   
+		this.setAnswer('' + blueValue + '/' + redValue + '=' + answerOne,0);   
+		this.setAnswer('' + blueValue + '/' + answerOne + '=' + redValue,1);   
+	}
+	else
+	{
+		var answerOne = parseInt(redValue / blueValue);   
+		this.setAnswer('' + redValue + '/' + blueValue + '=' + answerOne,0);   
+		this.setAnswer('' + redValue + '/' + answerOne + '=' + blueValue,1);   
+	}
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_12',4.0612,'4.nbt.a.1','');
 */
 var i_4_nbt_a_1__12 = new Class(
