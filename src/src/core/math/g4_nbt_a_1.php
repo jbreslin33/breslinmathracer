@@ -109,24 +109,19 @@ initialize: function(sheet)
         	placeArray.unshift(Math.floor(Math.random()*8)+2);
 	}
 
-	var fromElement = 0;	 
-	var toElement = 0;	 
-	while (fromElement == toElement)
-	{
-		fromElement = Math.floor(Math.random()*6);	 
-		toElement = Math.floor(Math.random()*6);	 
-	}
+	fromElement = Math.floor(Math.random()*6);	 
+	var toElement = parseInt(fromElement - 1);	
 	
 	placeArray[toElement] = placeArray[fromElement];	
 
 	var numberString = '';
 	for (var i = 5; i > -1; i--)
 	{
-		if (i == toElement) 
+		if (i == fromElement) 
 		{
 			numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>'; 				
 		}
-		else if (i == fromElement) 
+		else if (i == toElement) 
 		{
 			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
 		}
@@ -137,14 +132,14 @@ initialize: function(sheet)
 	}
 
 	this.setQuestion('What is the value of the red and blue digits in the number: ' + numberString);
-	var blueMultiplier = parseInt(toElement);
+	var blueMultiplier = parseInt(fromElement);
 	bm = Math.pow(10,blueMultiplier);
 
-	var redMultiplier  = parseInt(fromElement);
+	var redMultiplier  = parseInt(toElement);
 	rm = Math.pow(10,redMultiplier);
 		
-        this.setAnswer('' + parseInt( placeArray[fromElement] * bm) ,0);
-        this.setAnswer('' + parseInt( placeArray[toElement]   * rm) ,1);
+        this.setAnswer('' + parseInt( placeArray[toElement] * bm) ,0);
+        this.setAnswer('' + parseInt( placeArray[fromElement]   * rm) ,1);
 },
 
 showCorrectAnswer: function()
