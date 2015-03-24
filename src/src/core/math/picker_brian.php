@@ -433,6 +433,18 @@ if (id == '5.md.c.3.a_8')
         {
                 return new i_5_md_c_3_a__8(this.mSheet);
         }
+if (id == '5.md.c.3.a_9')
+        {
+                return new i_5_md_c_3_a__9(this.mSheet);
+        }
+if (id == '5.md.c.3.a_10')
+        {
+                return new i_5_md_c_3_a__10(this.mSheet);
+        }
+if (id == '5.md.c.3.a_11')
+        {
+                return new i_5_md_c_3_a__11(this.mSheet);
+        }
 
 if (id == '5.md.c.4_1')
         {
@@ -442,7 +454,18 @@ if (id == '5.md.c.4_2')
         {
                 return new i_5_md_c_4__2(this.mSheet);
         }
-
+if (id == '5.md.c.5.a_1')
+        {
+                return new i_5_md_c_5_a__1(this.mSheet);
+        }
+if (id == '5.md.c.5.a_2')
+        {
+                return new i_5_md_c_5_a__2(this.mSheet);
+        }
+if (id == '5.md.c.5.a_3')
+        {
+                return new i_5_md_c_5_a__3(this.mSheet);
+        }
 
 	return 0;	
 }
