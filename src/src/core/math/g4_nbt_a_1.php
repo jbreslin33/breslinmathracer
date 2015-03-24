@@ -5,30 +5,16 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_nbt_a_1__12 = new Class(
 {
 
-Extends: TextItem2,
+Extends: TextItem,
 initialize: function(sheet)
 {
-        this.parent(sheet,300,50,175,95,100,50,425,100);
+  	this.parent(sheet,450,200,255,145,200,50,580,100);
+
         this.mType = '4.nbt.a.1_12';
         this.ns = new NameSampler();
 
 	var totalDigits = 6;
 
-        this.mAnswerTextBox.setPosition(425,140);
-        this.mAnswerTextBox2.setPosition(595,140);
-        this.mAnswerTextBox.setSize(75,25);
-        this.mAnswerTextBox2.setSize(75,25);
-
-        this.mHeadingAnswerLabel.setText('Blue<br> Digit<br> Value');
-        this.mHeadingAnswerLabel2.setText('Red<br> Digit<br> Value');
-        this.mHeadingAnswerLabel.setPosition(425,70);
-        this.mHeadingAnswerLabel2.setPosition(595,70);
-        this.mHeadingAnswerLabel.setSize(50,50);
-        this.mHeadingAnswerLabel2.setSize(50,50);
-
-        this.mQuestionLabel.setSize(220,250);
-        this.mQuestionLabel.setPosition(225,180);
-	
 	var placeArray = new Array();
 	for (var i = 0; i < totalDigits; i++)
 	{
@@ -62,28 +48,28 @@ initialize: function(sheet)
 		}
 	}
 
-	this.setQuestion('What is the value of the red and blue digits in the number: ' + numberString);
-	//var blueMultiplier = parseInt(toElement + 1);
+	this.setQuestion('Write a division equation that shows the relationship between the red and blue digit values in the number: ' + numberString);
 	var blueMultiplier = parseInt(toElement);
 	bm = Math.pow(10,blueMultiplier);
 
-	//var redMultiplier  = parseInt(fromElement + 1);
 	var redMultiplier  = parseInt(fromElement);
 	rm = Math.pow(10,redMultiplier);
-		
-        this.setAnswer('' + parseInt( placeArray[fromElement] * bm) ,0);
-        this.setAnswer('' + parseInt( placeArray[toElement]   * rm) ,1);
-},
 
-showCorrectAnswer: function()
-{
-        if (this.mCorrectAnswerLabel)
-        {
-                this.mCorrectAnswerLabel.setSize(200, 75);
-                this.mCorrectAnswerLabel.setPosition(330,200);
-                this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + '</br> ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo());
-                this.mCorrectAnswerLabel.setVisibility(true);
-        }
+	var blueValue = parseInt(placeArray[fromElement] * bm); 	
+	var redValue = parseInt(placeArray[fromElement] * rm); 	
+
+	if (blueValue > redValue)
+	{
+		var answerOne = parseInt(blueValue / redValue);   
+		this.setAnswer('' + blueValue + '/' + redValue + '=' + answerOne,0);   
+		this.setAnswer('' + blueValue + '/' + answerOne + '=' + redValue,1);   
+	}
+	else
+	{
+		var answerOne = parseInt(redValue / blueValue);   
+		this.setAnswer('' + redValue + '/' + blueValue + '=' + answerOne,0);   
+		this.setAnswer('' + redValue + '/' + answerOne + '=' + blueValue,1);   
+	}
 }
 });
 
@@ -151,11 +137,9 @@ initialize: function(sheet)
 	}
 
 	this.setQuestion('What is the value of the red and blue digits in the number: ' + numberString);
-	//var blueMultiplier = parseInt(toElement + 1);
 	var blueMultiplier = parseInt(toElement);
 	bm = Math.pow(10,blueMultiplier);
 
-	//var redMultiplier  = parseInt(fromElement + 1);
 	var redMultiplier  = parseInt(fromElement);
 	rm = Math.pow(10,redMultiplier);
 		
