@@ -180,7 +180,7 @@ initialize: function(sheet)
         this.mType = '4.oa.b.4_6';
 
 	this.setQuestion('' + 'Write true or false. All prime numbers are odd.')
-        this.setAnswer('' + 'true',0);
+        this.setAnswer('' + 'false',0);
 }
 });
 
