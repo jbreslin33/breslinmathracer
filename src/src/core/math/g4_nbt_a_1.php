@@ -13,58 +13,21 @@ initialize: function(sheet)
         this.mType = '4.nbt.a.1_13';
         this.ns = new NameSampler();
 
-	var totalDigits = 6;
-
-	var placeArray = new Array();
-	for (var i = 0; i < totalDigits; i++)
-	{
-        	placeArray.unshift(Math.floor(Math.random()*8)+2);
-	}
+	var bigDigits = Math.floor(Math.random()*5)+2;
+	var littleDigits = parseInt(bigDigits - 1);
   
-	fromElement = Math.floor(Math.random()*5)+1;
-        var toElement = parseInt(fromElement - 1);
+	var digitValue = Math.floor(Math.random()*9)+1;
 
-        placeArray[toElement] = placeArray[fromElement];
+	var bigMultiplier = parseInt(Math.pow(10,bigDigits));	
+	var littleMultiplier = parseInt(Math.pow(10,littleDigits));	
 
-	var numberString = '';
-	for (var i = 5; i > -1; i--)
-	{
-		if (i == fromElement) 
-		{
-			numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>'; 				
-		}
-		else if (i == toElement) 
-		{
-			numberString = numberString + '<span style="color: #f00;">' + placeArray[i] + '</span>'; 				
-		}
-		else
-		{
-			numberString = numberString + '' + placeArray[i]; 				
-		}
-	}
+	var bigNumber = parseInt(digitValue * bigMultiplier);
+	var littleNumber = parseInt(digitValue * littleMultiplier);
 
-	this.setQuestion('Write a division equation that shows the relationship between the red and blue digit values in the number: ' + numberString);
-	var blueMultiplier = parseInt(fromElement);
-	bm = Math.pow(10,blueMultiplier);
+	this.setQuestion('' + this.ns.mNameOne + ' was playing ' + this.ns.mVideoGameOne + ' and it glitched out. It showed ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' score incorrectly as ' + bigNumber + ' instead of ' + littleNumber + '. How many times greater did ' + this.ns.mVideoGameOne + ' show the score than it should have?');
 
-	var redMultiplier  = parseInt(toElement);
-	rm = Math.pow(10,redMultiplier);
-
-	var blueValue = parseInt(placeArray[fromElement] * bm); 	
-	var redValue = parseInt(placeArray[toElement] * rm); 	
-
-	if (blueValue > redValue)
-	{
-		var answerOne = parseInt(blueValue / redValue);   
-		this.setAnswer('' + blueValue + '/' + redValue + '=' + answerOne,0);   
-		this.setAnswer('' + blueValue + '/' + answerOne + '=' + redValue,1);   
-	}
-	else
-	{
-		var answerOne = parseInt(redValue / blueValue);   
-		this.setAnswer('' + redValue + '/' + blueValue + '=' + answerOne,0);   
-		this.setAnswer('' + redValue + '/' + answerOne + '=' + blueValue,1);   
-	}
+	this.setAnswer('' + '10',0);   
+	this.setAnswer('' + '10 times greater',1);   
 }
 });
 
