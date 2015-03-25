@@ -12,19 +12,31 @@ initialize: function(sheet)
 
         this.mType = '4.nbt.a.1_15';
         this.ns = new NameSampler();
+        
+	var totalDigits = 6;
 
-	var digitValue = Math.floor(Math.random()*9)+1;
-	var bigDigits = Math.floor(Math.random()*4)+2;
-	var number = '';
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
 
-	for (var i = 0; i < bigDigits; i++)
-	{
-		number = '' + number + '' + digitValue;	
-	} 
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == 0)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
 
-	this.setQuestion('' + 'If ' + this.ns.mNameOne + ' takes the value of any of the digits in the number ' + number + ' and divides by the value of the digit to the right what will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' quotient be?');
-
-	this.setAnswer('' + '10',0);   
+        this.setQuestion('In the number ' + numberString + ' the blue digit is in what place value?');
+        this.setAnswer('' + 'ones',0);
+        this.setAnswer('' + 'ones place',1);
 }
 });
 
