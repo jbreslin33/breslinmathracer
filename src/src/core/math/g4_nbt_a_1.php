@@ -1,5 +1,215 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_20',4.0620,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__20 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_20';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var totalDigits = 6;
+
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
+
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == 5)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
+
+        this.setQuestion('In the number ' + numberString + ' the blue digit is in what place value?');
+        this.setAnswer('' + 'hundred thousands',0);
+        this.setAnswer('' + 'hundred thousands place',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_19',4.0619,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__19 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_19';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var totalDigits = 6;
+
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
+
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == 4)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
+
+        this.setQuestion('In the number ' + numberString + ' the blue digit is in what place value?');
+        this.setAnswer('' + 'ten thousands',0);
+        this.setAnswer('' + 'ten thousands place',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_18',4.0618,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__18 = new Class(
+{
+
+Extends: TextItem, 
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_18';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var totalDigits = 6;
+
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
+
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == 3)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
+
+        this.setQuestion('In the number ' + numberString + ' the blue digit is in what place value?');
+        this.setAnswer('' + 'thousands',0);
+        this.setAnswer('' + 'thousands place',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_17',4.0617,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__17 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_17';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var totalDigits = 6;
+
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
+
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == 2)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
+
+        this.setQuestion('In the number ' + numberString + ' the blue digit is in what place value?');
+        this.setAnswer('' + 'hundreds',0);
+        this.setAnswer('' + 'hundreds place',1);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_16',4.0616,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__16 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_16';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var totalDigits = 6;
+
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
+
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == 1)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
+
+        this.setQuestion('In the number ' + numberString + ' the blue digit is in what place value?');
+        this.setAnswer('' + 'tens',0);
+        this.setAnswer('' + 'tens place',1);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_15',4.0615,'4.nbt.a.1','');
 */
 var i_4_nbt_a_1__15 = new Class(
@@ -11,6 +221,7 @@ initialize: function(sheet)
   	this.parent(sheet,450,200,255,145,200,50,580,100);
 
         this.mType = '4.nbt.a.1_15';
+	this.mChopWhiteSpace = false;
         this.ns = new NameSampler();
         
 	var totalDigits = 6;
