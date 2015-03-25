@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_14',4.0614,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__14 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+  	this.parent(sheet,450,200,255,145,200,50,580,100);
+
+        this.mType = '4.nbt.a.1_14';
+        this.ns = new NameSampler();
+
+	var digitValue = Math.floor(Math.random()*9)+1;
+	var bigDigits = Math.floor(Math.random()*4)+2;
+	var number = '';
+
+	for (var i = 0; i < bigDigits; i++)
+	{
+		number = '' + number + '' + digitValue;	
+	} 
+
+	this.setQuestion('' + 'If ' + this.ns.mNameOne + ' takes the value of any of the digits in the number ' + number + ' and divides by the value of the digit to the right what will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' quotient be?');
+
+	this.setAnswer('' + '10',0);   
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_13',4.0613,'4.nbt.a.1','');
 */
 var i_4_nbt_a_1__13 = new Class(
