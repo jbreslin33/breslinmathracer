@@ -13,7 +13,7 @@ initialize: function(sheet)
         this.mType = '4.nbt.a.1_13';
         this.ns = new NameSampler();
 
-	var bigDigits = Math.floor(Math.random()*5)+2;
+	var bigDigits = Math.floor(Math.random()*4)+2;
 	var littleDigits = parseInt(bigDigits - 1);
   
 	var digitValue = Math.floor(Math.random()*9)+1;
