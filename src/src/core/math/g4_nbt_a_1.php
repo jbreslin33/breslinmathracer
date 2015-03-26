@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_21',4.0621,'4.nbt.a.1','');
 */
@@ -14,7 +15,9 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var totalDigits = 6;
-        var place = Math.floor(Math.random()*8)+2;
+        var place = Math.floor(Math.random()*totalDigits);
+	var exponent = parseInt(place);	
+	var b = Math.pow(10,exponent);	
 
         var placeArray = new Array();
         for (var i = 0; i < totalDigits; i++)
@@ -26,7 +29,7 @@ initialize: function(sheet)
 	var coloredDigit = 0;
         for (var i = 5; i > -1; i--)
         {
-                if (i == 0)
+                if (i == place)
                 {
                         numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
 			coloredDigit = placeArray[i];
@@ -37,7 +40,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('In the number ' + numberString + ' the blue digit value is __ &times 1 = ' + coloredDigit + '.');
+        this.setQuestion('In the number ' + numberString + ' the blue digit value is __ &times ' + b + ' = ' + coloredDigit + '.');
         this.setAnswer('' + coloredDigit,0);
 }
 });
