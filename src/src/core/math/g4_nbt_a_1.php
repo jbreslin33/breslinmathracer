@@ -1,5 +1,52 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_23',4.0623,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__23 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,550,200,300,145,100,50,580,130);
+
+        this.mType = '4.nbt.a.1_23';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var totalDigits = 6;
+        var place = Math.floor(Math.random()*totalDigits);
+        var exponent = parseInt(place);
+        var a = 0;
+        var b = Math.pow(10,exponent);
+
+        var placeArray = new Array();
+        for (var i = 0; i < totalDigits; i++)
+        {
+                placeArray.unshift(Math.floor(Math.random()*8)+2);
+        }
+
+        var numberString = '';
+        for (var i = 5; i > -1; i--)
+        {
+                if (i == place)
+                {
+                        numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
+                        a = placeArray[i];
+                }
+                else
+                {
+                        numberString = numberString + '' + placeArray[i];
+                }
+        }
+        var c = parseInt(a * b);
+
+        this.setQuestion('In the number ' + numberString + ' the blue digit value is ' + a + ' &times __ = ' + c + '.');
+        this.setAnswer('' + b,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_22',4.0622,'4.nbt.a.1','');
 */
 var i_4_nbt_a_1__22 = new Class(
