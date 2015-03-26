@@ -17,6 +17,7 @@ initialize: function(sheet)
         var totalDigits = 6;
         var place = Math.floor(Math.random()*totalDigits);
 	var exponent = parseInt(place);	
+	var a = 0;
 	var b = Math.pow(10,exponent);	
 
         var placeArray = new Array();
@@ -26,22 +27,22 @@ initialize: function(sheet)
         }
 
         var numberString = '';
-	var coloredDigit = 0;
         for (var i = 5; i > -1; i--)
         {
                 if (i == place)
                 {
                         numberString = numberString + '<span style="color: #2E2EFE;">' + placeArray[i] + '</span>';
-			coloredDigit = placeArray[i];
+			a = placeArray[i];
                 }
                 else
                 {
                         numberString = numberString + '' + placeArray[i];
                 }
         }
+	var c = parseInt(a * b);
 
-        this.setQuestion('In the number ' + numberString + ' the blue digit value is __ &times ' + b + ' = ' + coloredDigit + '.');
-        this.setAnswer('' + coloredDigit,0);
+        this.setQuestion('In the number ' + numberString + ' the blue digit value is __ &times ' + b + ' = ' + c + '.');
+        this.setAnswer('' + a,0);
 }
 });
 
