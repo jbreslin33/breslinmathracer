@@ -42,8 +42,8 @@ initialize: function(sheet)
         var c = parseInt(a * b);
         c = parseInt(c / 10);
 
-        this.setQuestion('In the number ' + numberString + ' the blue digit value is __ times the value of = ' + c + '.');
-        this.setAnswer('' + '10',0);
+        this.setQuestion('In the number ' + numberString + ' the blue digit value is 10 times the value of __.');
+        this.setAnswer('' + c,0);
 }
 });
 
