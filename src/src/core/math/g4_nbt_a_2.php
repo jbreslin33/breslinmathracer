@@ -13,18 +13,17 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
+        this.hundreds = Math.floor((Math.random()*8)+2);
         this.tens = Math.floor((Math.random()*8)+2);
         this.ones = Math.floor((Math.random()*8)+2);
-        this.tenths = 0;
-        this.hundredths = Math.floor((Math.random()*8)+2);
-        this.thousandths = Math.floor((Math.random()*8)+2);
+	
+	this.tens_ones = parseInt(this.tens * 10 + this.ones);
 
-        this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.hundredths_thousandths = parseInt(this.hundredths * 10 + this.thousandths);
+        this.number = parseInt(this.hundreds * 100 + this.tens_ones);
 
-        this.setQuestion('Write the decimal as you would say it in words: ' + this.tens + this.ones + '.' + this.tenths + this.hundredths + this.thousandths,0);
+        this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
 
-        this.setAnswer('' + this.ns.getNumberName(this.tens_ones) + ' and ' + this.ns.getNumberName(this.hundredths_thousandths) + ' thousandths',0);
+        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
 }
 });
 
