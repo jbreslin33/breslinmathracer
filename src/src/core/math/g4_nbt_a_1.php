@@ -18,9 +18,9 @@ initialize: function(sheet)
         a = parseInt(a * powered);
 
         var b = 10
-        var c = parseInt(a * b);
+        var c = parseInt(a / b);
 
-        this.setQuestion('' + a + ' &times ' + b + ' = __');
+        this.setQuestion('' + a + ' &divide ' + b + ' = __');
         this.setAnswer('' + c,0);
 }
 });
