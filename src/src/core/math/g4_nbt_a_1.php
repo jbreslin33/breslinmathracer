@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_27',4.0627,'4.nbt.a.1','');
+*/
+var i_4_nbt_a_1__27 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,200,325,145,100,50,580,130);
+
+        this.mType = '4.nbt.a.1_27';
+
+        var a = Math.floor(Math.random()*9)+1;
+        var exponent = Math.floor(Math.random()*4)+1;
+        var powered = Math.pow(10,exponent);
+        a = parseInt(a * powered);
+
+        var b = 10
+        var c = parseInt(a * b);
+
+        this.setQuestion('' + a + ' &times ' + b + ' = __');
+        this.setAnswer('' + c,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.1_26',4.0626,'4.nbt.a.1','');
 */
 var i_4_nbt_a_1__26 = new Class(
