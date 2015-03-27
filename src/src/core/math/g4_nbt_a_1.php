@@ -15,7 +15,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var totalDigits = 6;
-        var place = Math.floor(Math.random()*totalDigits);
+        var place = Math.floor(Math.random()*parseInt(totalDigits-1))+1;
         var exponent = parseInt(place);
         var a = 0;
         var b = Math.pow(10,exponent);
@@ -63,7 +63,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var totalDigits = 6;
-        var place = Math.floor(Math.random()*totalDigits);
+        var place = Math.floor(Math.random()*parseInt(totalDigits-1))+1;
         var exponent = parseInt(place);
         var a = 0;
         var b = Math.pow(10,exponent);
