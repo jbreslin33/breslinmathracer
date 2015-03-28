@@ -31,6 +31,38 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_30',4.0730,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__30 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_30';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor((Math.random()*8)+1);
+        this.tenthousands     = 0;
+        this.thousands        = 0;
+        this.hundreds         = 0;
+        this.tens             = Math.floor((Math.random()*8)+1);
+        this.ones             = Math.floor((Math.random()*8)+1);
+
+        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + 'thousand ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setAnswer('' + this.number,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_29',4.0729,'4.nbt.a.2','');
 */
 var i_4_nbt_a_2__29 = new Class(
@@ -58,6 +90,37 @@ initialize: function(sheet)
 
         this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
         this.setAnswer('' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_28',4.0728,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__28 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_28';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor((Math.random()*8)+1);
+        this.tenthousands     = Math.floor((Math.random()*8)+1);
+        this.thousands        = Math.floor((Math.random()*8)+1);
+        this.hundreds         = Math.floor((Math.random()*8)+1);
+        this.tens             = 0;
+        this.ones             = Math.floor((Math.random()*8)+1);
+
+        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setAnswer('' + this.number,0);
 }
 });
 
@@ -93,6 +156,37 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_26',4.0726,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__26 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_26';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor((Math.random()*8)+1);
+        this.tenthousands     = 0;
+        this.thousands        = Math.floor((Math.random()*8)+1);
+        this.hundreds         = Math.floor((Math.random()*8)+1);
+        this.tens             = Math.floor((Math.random()*8)+1);
+        this.ones             = Math.floor((Math.random()*8)+1);
+
+        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setAnswer('' + this.number,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_25',4.0725,'4.nbt.a.2','');
 */
 var i_4_nbt_a_2__25 = new Class(
@@ -120,6 +214,37 @@ initialize: function(sheet)
 
         this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
         this.setAnswer('' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.tens_ones) + '',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_24',4.0724,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__24 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_24';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor((Math.random()*8)+1);
+        this.tenthousands     = Math.floor((Math.random()*8)+1);
+        this.thousands        = Math.floor((Math.random()*8)+1);
+        this.hundreds         = 0;
+        this.tens             = Math.floor((Math.random()*8)+1);
+        this.ones             = Math.floor((Math.random()*8)+1);
+
+        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setAnswer('' + this.number,0);
 }
 });
 
@@ -184,7 +309,6 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_21',4.0721,'4.nbt.a.2','');
