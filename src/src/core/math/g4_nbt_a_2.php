@@ -14,11 +14,11 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
-        this.tenthousands = Math.floor((Math.random()*8)+2);
-        this.thousands     = Math.floor((Math.random()*8)+2);
-        this.hundreds      = Math.floor((Math.random()*8)+2);
-        this.tens          = Math.floor((Math.random()*8)+2);
-        this.ones          = Math.floor((Math.random()*8)+2);
+        this.tenthousands = Math.floor((Math.random()*8)+1);
+        this.thousands     = Math.floor((Math.random()*8)+1);
+        this.hundreds      = Math.floor((Math.random()*8)+1);
+        this.tens          = Math.floor((Math.random()*8)+1);
+        this.ones          = Math.floor((Math.random()*8)+1);
 
         this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
@@ -44,10 +44,10 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
-        this.thousands = Math.floor((Math.random()*8)+2);
+        this.thousands = Math.floor((Math.random()*8)+1);
         this.hundreds  = 0;
-        this.tens      = Math.floor((Math.random()*8)+2);
-        this.ones      = Math.floor((Math.random()*8)+2);
+        this.tens      = Math.floor((Math.random()*8)+1);
+        this.ones      = Math.floor((Math.random()*8)+1);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
@@ -73,10 +73,10 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
-        this.thousands = Math.floor((Math.random()*8)+2);
-        this.hundreds  = Math.floor((Math.random()*8)+2);
+        this.thousands = Math.floor((Math.random()*8)+1);
+        this.hundreds  = Math.floor((Math.random()*8)+1);
         this.tens      = 0;
-        this.ones      = Math.floor((Math.random()*8)+2);
+        this.ones      = Math.floor((Math.random()*8)+1);
         
 	this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
@@ -101,9 +101,9 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
-        this.hundreds = Math.floor((Math.random()*8)+2);
+        this.hundreds = Math.floor((Math.random()*8)+1);
         this.tens = 0;
-        this.ones = Math.floor((Math.random()*8)+2);
+        this.ones = Math.floor((Math.random()*8)+1);
 
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
 
@@ -130,9 +130,9 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
-        this.hundreds = Math.floor((Math.random()*8)+2);
-        this.tens = Math.floor((Math.random()*8)+2);
-        this.ones = Math.floor((Math.random()*8)+2);
+        this.hundreds = Math.floor((Math.random()*8)+1);
+        this.tens = Math.floor((Math.random()*8)+1);
+        this.ones = Math.floor((Math.random()*8)+1);
 	
 	this.tens_ones = parseInt(this.tens * 10 + this.ones);
 
