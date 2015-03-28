@@ -1,3 +1,33 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_7',4.0707,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_7';
+        this.ns = new NameMachine();
+        this.mChopWhiteSpace = false;
+
+        this.hundreds = Math.floor((Math.random()*8)+2);
+        this.tens = 0;
+        this.ones = Math.floor((Math.random()*8)+2);
+
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+
+        this.number = parseInt(this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
+
+        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_6',4.0706,'4.nbt.a.2','');
 */
