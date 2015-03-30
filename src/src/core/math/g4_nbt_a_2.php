@@ -1,8 +1,8 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_31',4.0731,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_55',4.0755,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__31 = new Class(
+var i_4_nbt_a_2__55 = new Class(
 {
 Extends: TextItem,
 
@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_31';
+        this.mType = '4.nbt.a.2_55';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -31,9 +31,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_30',4.0730,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_54',4.0754,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__30 = new Class(
+var i_4_nbt_a_2__54 = new Class(
 {
 Extends: TextItem,
 
@@ -41,7 +41,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_30';
+        this.mType = '4.nbt.a.2_54';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -61,11 +61,12 @@ initialize: function(sheet)
 }
 });
 
+//52,53
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_29',4.0729,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_51',4.0751,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__29 = new Class(
+var i_4_nbt_a_2__51 = new Class(
 {
 Extends: TextItem,
 
@@ -73,7 +74,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_29';
+        this.mType = '4.nbt.a.2_51';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -94,9 +95,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_28',4.0728,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_50',4.0750,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__28 = new Class(
+var i_4_nbt_a_2__50 = new Class(
 {
 Extends: TextItem,
 
@@ -104,7 +105,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_28';
+        this.mType = '4.nbt.a.2_50';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -123,11 +124,12 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
+//48,49
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_27',4.0727,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_47',4.0747,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__27 = new Class(
+var i_4_nbt_a_2__47 = new Class(
 {
 Extends: TextItem,
 
@@ -135,7 +137,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_27';
+        this.mType = '4.nbt.a.2_47';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -156,9 +158,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_26',4.0726,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_46',4.0746,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__26 = new Class(
+var i_4_nbt_a_2__46 = new Class(
 {
 Extends: TextItem,
 
@@ -166,7 +168,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_26';
+        this.mType = '4.nbt.a.2_46';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -186,10 +188,12 @@ initialize: function(sheet)
 }
 });
 
+//44,45
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_25',4.0725,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_43',4.0743,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__25 = new Class(
+var i_4_nbt_a_2__43 = new Class(
 {
 Extends: TextItem,
 
@@ -197,7 +201,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_25';
+        this.mType = '4.nbt.a.2_43';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -218,9 +222,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_24',4.0724,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_42',4.0742,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__24 = new Class(
+var i_4_nbt_a_2__42 = new Class(
 {
 Extends: TextItem,
 
@@ -228,7 +232,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_24';
+        this.mType = '4.nbt.a.2_42';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -248,10 +252,12 @@ initialize: function(sheet)
 }
 });
 
+//40,41
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_23',4.0723,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_39',4.0739,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__23 = new Class(
+var i_4_nbt_a_2__39 = new Class(
 {
 Extends: TextItem,
 
@@ -259,7 +265,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_23';
+        this.mType = '4.nbt.a.2_39';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -280,9 +286,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_22',4.0722,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_38',4.0738,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__22 = new Class(
+var i_4_nbt_a_2__38 = new Class(
 {
 Extends: TextItem,
 
@@ -290,7 +296,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_22';
+        this.mType = '4.nbt.a.2_38';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -309,11 +315,12 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
+//36,37
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_21',4.0721,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_35',4.0735,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__21 = new Class(
+var i_4_nbt_a_2__35 = new Class(
 {
 Extends: TextItem,
 
@@ -321,7 +328,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_21';
+        this.mType = '4.nbt.a.2_35';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -340,9 +347,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_20',4.0720,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_34',4.0734,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__20 = new Class(
+var i_4_nbt_a_2__34 = new Class(
 {
 Extends: TextItem,
 
@@ -350,7 +357,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_20';
+        this.mType = '4.nbt.a.2_34';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -367,11 +374,12 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
+//32,33
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_19',4.0719,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_31',4.0731,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__19 = new Class(
+var i_4_nbt_a_2__31 = new Class(
 {
 Extends: TextItem,
 
@@ -379,7 +387,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_19';
+        this.mType = '4.nbt.a.2_31';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -398,9 +406,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_18',4.0718,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_30',4.0730,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__18 = new Class(
+var i_4_nbt_a_2__30 = new Class(
 {
 Extends: TextItem,
 
@@ -408,7 +416,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_18';
+        this.mType = '4.nbt.a.2_30';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -425,11 +433,11 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
-
+//28,29
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_17',4.0717,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_27',4.0727,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__17 = new Class(
+var i_4_nbt_a_2__27 = new Class(
 {
 Extends: TextItem,
 
@@ -437,7 +445,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_17';
+        this.mType = '4.nbt.a.2_27';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -456,9 +464,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_16',4.0716,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_26',4.0726,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__16 = new Class(
+var i_4_nbt_a_2__26 = new Class(
 {
 Extends: TextItem,
 
@@ -466,7 +474,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_16';
+        this.mType = '4.nbt.a.2_26';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -483,11 +491,12 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
+//24,25
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_15',4.0715,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_23',4.0723,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__15 = new Class(
+var i_4_nbt_a_2__23 = new Class(
 {
 Extends: TextItem,
 
@@ -495,7 +504,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_15';
+        this.mType = '4.nbt.a.2_23';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
@@ -514,9 +523,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_14',4.0714,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_22',4.0722,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__14 = new Class(
+var i_4_nbt_a_2__22 = new Class(
 {
 Extends: TextItem,
 
@@ -524,7 +533,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_14';
+        this.mType = '4.nbt.a.2_22';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -541,11 +550,12 @@ initialize: function(sheet)
         this.setAnswer('' + this.number,0);
 }
 });
+//20,21
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_13',4.0713,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_19',4.0719,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__13 = new Class(
+var i_4_nbt_a_2__19 = new Class(
 {
 Extends: TextItem,
 
@@ -570,9 +580,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_12',4.0712,'4.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_18',4.0718,'4.nbt.a.2','');
 */
-var i_4_nbt_a_2__12 = new Class(
+var i_4_nbt_a_2__18 = new Class(
 {
 Extends: TextItem,
 
@@ -580,7 +590,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_12';
+        this.mType = '4.nbt.a.2_18';
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
@@ -596,6 +606,62 @@ initialize: function(sheet)
 }
 });
 
+//16,17
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_15',4.0715,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__15 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_15';
+        this.ns = new NameMachine();
+        this.mChopWhiteSpace = false;
+
+        this.thousands = Math.floor((Math.random()*8)+1);
+        this.hundreds  = Math.floor((Math.random()*8)+1);
+        this.tens      = 0;
+        this.ones      = Math.floor((Math.random()*8)+1);
+	this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
+        this.setAnswer('' + this.ns.getNumberName(this.thousands) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_14',4.0714,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__14 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_14';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.thousands = Math.floor((Math.random()*8)+1);
+        this.hundreds  = Math.floor((Math.random()*8)+1);
+        this.tens      = 0;
+        this.ones      = Math.floor((Math.random()*8)+1);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.thousands) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setAnswer('' + this.number,0);
+}
+});
+//12,13
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_11',4.0711,'4.nbt.a.2','');
@@ -612,15 +678,14 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
-        this.thousands = Math.floor((Math.random()*8)+1);
-        this.hundreds  = Math.floor((Math.random()*8)+1);
-        this.tens      = 0;
-        this.ones      = Math.floor((Math.random()*8)+1);
-	this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
+        this.hundreds = Math.floor((Math.random()*8)+1);
+        this.tens = 0;
+        this.ones = Math.floor((Math.random()*8)+1);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number = parseInt(this.hundreds * 100 + this.tens_ones);
 
         this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
-        this.setAnswer('' + this.ns.getNumberName(this.thousands) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
 }
 });
 
@@ -639,60 +704,6 @@ initialize: function(sheet)
         this.ns = new NameMachine();
         this.mStripCommas = true;
 
-        this.thousands = Math.floor((Math.random()*8)+1);
-        this.hundreds  = Math.floor((Math.random()*8)+1);
-        this.tens      = 0;
-        this.ones      = Math.floor((Math.random()*8)+1);
-        this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
-
-        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.thousands) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
-        this.setAnswer('' + this.number,0);
-}
-});
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_9',4.0709,'4.nbt.a.2','');
-*/
-var i_4_nbt_a_2__9 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,575,50,320,75,720,50,380,150);
-
-        this.mType = '4.nbt.a.2_9';
-        this.ns = new NameMachine();
-        this.mChopWhiteSpace = false;
-
-        this.hundreds = Math.floor((Math.random()*8)+1);
-        this.tens = 0;
-        this.ones = Math.floor((Math.random()*8)+1);
-        this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.number = parseInt(this.hundreds * 100 + this.tens_ones);
-
-        this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
-        this.setAnswer('' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
-}
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_8',4.0708,'4.nbt.a.2','');
-*/
-var i_4_nbt_a_2__8 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,575,50,320,75,720,50,380,150);
-
-        this.mType = '4.nbt.a.2_9';
-        this.ns = new NameMachine();
-        this.mStripCommas = true;
-
         this.hundreds = Math.floor((Math.random()*8)+1);
         this.tens = 0;
         this.ones = Math.floor((Math.random()*8)+1);
@@ -703,7 +714,7 @@ initialize: function(sheet)
 	this.setAnswer('' + this.number,0);
 }
 });
-
+//8,9
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_7',4.0707,'4.nbt.a.2','');
