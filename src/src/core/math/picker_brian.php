@@ -467,6 +467,35 @@ if (id == '5.md.c.5.a_3')
                 return new i_5_md_c_5_a__3(this.mSheet);
         }
 
+if (id == '5.md.c.5.b_1')
+        {
+                return new i_5_md_c_5_b__1(this.mSheet);
+        }
+if (id == '5.md.c.5.b_2')
+        {
+                return new i_5_md_c_5_b__2(this.mSheet);
+        }
+if (id == '5.md.c.5.b_3')
+        {
+                return new i_5_md_c_5_b__3(this.mSheet);
+        }
+if (id == '5.md.c.5.b_4')
+        {
+                return new i_5_md_c_5_b__4(this.mSheet);
+        }
+if (id == '5.md.c.5.b_5')
+        {
+                return new i_5_md_c_5_b__5(this.mSheet);
+        }
+if (id == '5.md.c.5.b_6')
+        {
+                return new i_5_md_c_5_b__6(this.mSheet);
+        }
+if (id == '5.md.c.5.b_7')
+        {
+                return new i_5_md_c_5_b__7(this.mSheet);
+        }
+
 	return 0;	
 }
 		
