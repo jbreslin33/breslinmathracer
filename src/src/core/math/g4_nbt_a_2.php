@@ -89,7 +89,7 @@ initialize: function(sheet)
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
 
-        this.setQuestion('Write the number in standard form: ' + parseInt(this.hundredthousands * 100000) + '+' + parseInt(this.tenthousands * 10000) + '+' + parseInt(this.thousands * 1000) + '+' + parseInt(this.hundreds * 100) + '+' this.ones,0);
+        this.setQuestion('Write the number in standard form: ' + parseInt(this.hundredthousands * 100000) + '+' + parseInt(this.tenthousands * 10000) + '+' + parseInt(this.thousands * 1000) + '+' + parseInt(this.hundreds * 100) + '+' + this.ones,0);
         this.setAnswer('' + this.number,0);
 }
 });
