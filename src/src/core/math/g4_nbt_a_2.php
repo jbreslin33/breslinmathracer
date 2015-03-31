@@ -64,6 +64,37 @@ initialize: function(sheet)
 //52,53
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_52',4.0752,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__52 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_52';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor((Math.random()*8)+1);
+        this.tenthousands     = Math.floor((Math.random()*8)+1);
+        this.thousands        = Math.floor((Math.random()*8)+1);
+        this.hundreds         = Math.floor((Math.random()*8)+1);
+        this.tens             = 0;
+        this.ones             = Math.floor((Math.random()*8)+1);
+
+        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number in standard form: ' + parseInt(this.hundredthousands * 100000) + '+' + parseInt(this.tenthousands * 10000) + '+' + parseInt(this.thousands * 1000) + '+' + parseInt(this.hundreds * 100) + '+' this.ones,0);
+        this.setAnswer('' + this.number,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_51',4.0751,'4.nbt.a.2','');
 */
 var i_4_nbt_a_2__51 = new Class(
