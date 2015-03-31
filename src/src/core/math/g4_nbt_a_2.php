@@ -553,6 +553,34 @@ initialize: function(sheet)
 //20,21
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_20',4.0720,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__20 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_20';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.thousands = Math.floor((Math.random()*8)+1);
+        this.hundreds  = 0;
+        this.tens      = Math.floor((Math.random()*8)+1);
+        this.ones      = Math.floor((Math.random()*8)+1);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number in standard form: ' + parseInt(this.thousands * 1000) + '+' + parseInt(this.tens * 10) + '+' + this.ones,0);
+        this.setAnswer('' + this.number,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_19',4.0719,'4.nbt.a.2','');
 */
 var i_4_nbt_a_2__19 = new Class(
