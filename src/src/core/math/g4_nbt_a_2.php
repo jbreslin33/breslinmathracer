@@ -770,7 +770,6 @@ initialize: function(sheet)
 }
 });
 
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_7',4.0707,'4.nbt.a.2','');
 */
