@@ -608,6 +608,34 @@ initialize: function(sheet)
 
 //16,17
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_17',4.0717,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__17 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_17';
+        this.ns = new NameMachine();
+        this.mStripCommas = true;
+
+        this.thousands = Math.floor((Math.random()*8)+1);
+        this.hundreds  = Math.floor((Math.random()*8)+1);
+        this.tens      = 0;
+        this.ones      = Math.floor((Math.random()*8)+1);
+
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number    = parseInt(this.thousands * 1000 + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write in expanded form: ' + this.number,0);
+        this.setAnswer('' + parseInt(this.thousands * 1000) + '+' + parseInt(this.hundreds * 100) + '+' + this.ones,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_16',4.0716,'4.nbt.a.2','');
 */
 var i_4_nbt_a_2__16 = new Class(
