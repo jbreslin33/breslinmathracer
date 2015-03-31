@@ -717,6 +717,61 @@ initialize: function(sheet)
 //8,9
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_9',4.0709,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__9 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_9';
+        this.ns = new NameMachine();
+	this.mStripCommas = true;
+	
+        this.hundreds = Math.floor((Math.random()*8)+1);
+        this.tens = Math.floor((Math.random()*8)+1);
+        this.ones = Math.floor((Math.random()*8)+1);
+
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number = parseInt(this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the following number in expanded form: ' + this.number,0);
+        this.setAnswer('' + parseInt(this.hundreds * 100) + '+' + parseInt(this.tens * 10) + '+' + this.ones ,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_8',4.0708,'4.nbt.a.2','');
+*/
+var i_4_nbt_a_2__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.2_8';
+        this.ns = new NameMachine();
+	this.mStripCommas = true;
+
+        this.hundreds = Math.floor((Math.random()*8)+1);
+        this.tens = Math.floor((Math.random()*8)+1);
+        this.ones = Math.floor((Math.random()*8)+1);
+        
+	this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.number = parseInt(this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('Write the number represented by the following expanded form: ' + parseInt(this.hundreds * 100) + ' + ' + parseInt(this.tens * 10) + ' + ' + this.ones ,0);
+        this.setAnswer('' + this.number,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_7',4.0707,'4.nbt.a.2','');
 */
 var i_4_nbt_a_2__7 = new Class(
