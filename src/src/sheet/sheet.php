@@ -6,7 +6,6 @@ var Sheet = new Class(
 {
         initialize: function(game)
         {
-		APPLICATION.log('sheet');
 		//logs
 		this.mStateLogs = false; 
 
@@ -29,8 +28,6 @@ var Sheet = new Class(
                 /**************** TIME ************/
 	 	this.mStartTime = 0;
                 this.mThresholdTime = 2000;
-	 	this.mCallNormalStartTime = 0;
-                this.mCallNormalThresholdTime = 5000;
 
 		//question
 		this.mMarker = 0;
@@ -164,23 +161,14 @@ var Sheet = new Class(
 			var itemAttemptsID  = itemIDArray[4];	
 			if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
 			{
-				//we gotta callnormal again... if its been 5 seconds
-				if (this.mCallNormalStartTime == 0 || this.mTimeSinceEpoch > parseInt(this.mCallNormalStartTime + this.mCallNormalThresholdTime) ) 		
-				{
-					APPLICATION.normal();
-	i
-					//control vars
-					callNormal = true;
-	 				this.mCallNormalStartTime = APPLICATION.mGame.mTimeSinceEpoch;
-				}
+				//we gotta callnormal again...
+				APPLICATION.normal();
+				callNormal = true;
 			}
 		}
 	
 		if (callNormal == false)
 		{
-			//reset timer to 0
-			this.mCallNormalStartTime = 0;
-
                		for (var i = 0; i < itemIDArray.length; i++)              
                 	{
 				var pick = 0;
