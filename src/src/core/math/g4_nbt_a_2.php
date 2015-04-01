@@ -1555,6 +1555,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '4.nbt.a.2_5';
+		this.mChopWhiteSpace = false;
 
 		var number = [];
 
@@ -1628,6 +1629,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '4.nbt.a.2_4';
+		this.mStripCommas = false;
 
 		var number = [];
 
@@ -1706,6 +1708,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '4.nbt.a.2_3';
+		this.mStripCommas = false;
 
 		var number = '';
 
@@ -1814,6 +1817,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '4.nbt.a.2_2';
+		this.mChopWhiteSpace = false;
 
 		var thousands;
 		var hundreds;
@@ -1976,6 +1980,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '4.nbt.a.2_1';
+  		this.mStripCommas = false;
 
 		var thousands;
 		var hundreds;
