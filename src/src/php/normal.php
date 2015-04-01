@@ -54,7 +54,6 @@ function __construct($startNew)
 	}
 	else
 	{
-
 		//check for last evaluation that was a normal type
       		$query = "select id from evaluations_attempts where user_id = ";
         	$query .= $_SESSION["user_id"];
