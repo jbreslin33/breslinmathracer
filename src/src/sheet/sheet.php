@@ -28,6 +28,8 @@ var Sheet = new Class(
                 /**************** TIME ************/
 	 	this.mStartTime = 0;
                 this.mThresholdTime = 2000;
+		this.mRefreshStartTime = 0;
+		this.mRefreshThresholdTime = 5000;
 
 		//question
 		this.mMarker = 0;
@@ -83,9 +85,12 @@ var Sheet = new Class(
 		
 		//reset marker
 		this.mMarker = 0;
-                
+
+		//reset timers
+		this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
 
 		this.createItems();
+
 		this.createShapes();
 	},
 
@@ -152,6 +157,11 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
+		if (this.mRefreshStartTime == 0)
+		{
+			this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
+		}
+
                 var itemIDArray = APPLICATION.mRawData.split(":");
 
 		var callNormal = false; 
@@ -162,8 +172,11 @@ var Sheet = new Class(
 			if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
 			{
 				//we gotta callnormal again...
-				APPLICATION.normal();
-				callNormal = true;
+				if ( parseInt(APPLICATION.mGame.mTimeSinceEpoch) > parseInt(this.mRefreshStartTime + this.mRefreshThresholdTime) ) 
+				{
+					APPLICATION.normal();
+					callNormal = true;
+				}	
 			}
 		}
 	

@@ -9,6 +9,7 @@ Extends: Game,
 	
 		this.mSheet = new Sheet(this);	
 		this.mSheet.createItems();
+		APPLICATION.log('core game createItems');
 		this.mSheet.createShapes();
 	},
 
