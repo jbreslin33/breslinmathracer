@@ -65,10 +65,6 @@ var Item = new Class(
                 this.mShowContinueCorrectStartTime = 0;
                 this.mShowContinueCorrectThresholdTime = 250;
 
-		//times for resend
-		this.mResendStartTime = 0; 
-		this.mResendThresholdTime = 100; 
-
 		//continue button vars
 		this.mContinueCorrect = false;
 		this.mContinueIncorrect = false;
