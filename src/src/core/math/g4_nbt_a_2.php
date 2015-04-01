@@ -1,7 +1,4 @@
 //56,57
-
-
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_57',4.0757,'4.nbt.a.2','');
 */
@@ -32,6 +29,8 @@ initialize: function(sheet)
         this.setAnswer('' + parseInt(this.hundredthousands * 100000) + '+' + parseInt(this.tens * 10) + '+' + this.ones,0);
 }
 });
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_56',4.0756,'4.nbt.a.2','');

@@ -51,18 +51,9 @@ function __construct($startNew)
         
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
-		error_log('start new');
 	}
 	else
 	{
-		if (!isset($_SESSION["user_id"])) 
-		{
-			error_log('no user id');
-		}
-		else
-		{	
-			$userid = $_SESSION["user_id"];	
-			error_log("userid: $userid");
 
 		//check for last evaluation that was a normal type
       		$query = "select id from evaluations_attempts where user_id = ";
@@ -158,7 +149,6 @@ function __construct($startNew)
         		$raw .= $_SESSION["item_attempt_id"];
 			$_SESSION["raw_data"] = $raw;
         	}
-		}
 	}
 }
 
