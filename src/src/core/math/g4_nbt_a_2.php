@@ -1176,7 +1176,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.2_13';
+        this.mType = '4.nbt.a.2_19';
         this.ns = new NameMachine();
         this.mChopWhiteSpace = false;
 
