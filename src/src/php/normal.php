@@ -51,6 +51,7 @@ function __construct($startNew)
         
 		$item_attempt = new ItemAttempt();
         	$item_attempt->insert();
+		error_log('start new');
 	}
 	else
 	{
