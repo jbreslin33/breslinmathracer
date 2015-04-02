@@ -425,4 +425,3 @@ Extends: ThreeButtonItem,
                 this.addQuestionShape(shapeB);
         }
 });
-
