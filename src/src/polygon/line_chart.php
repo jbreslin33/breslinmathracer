@@ -575,13 +575,14 @@ Extends: RaphaelPolygon,
 
      this.axisItems1 = this.mPolygon.axis[0].text.items;
 
-     var f = ['0', '1/8', '1/4', '3/8', '1/2', '5/8', '3/4', '7/8', '1', '1 1/8', '1 1/4'];
+	var fractionA = new Fraction(1,8,false);	
 
-     for( var i = 0; i < this.axisItems1.length; i++ ) {
-                           this.axisItems1[i].attr("text", f[i]); 
-                        } 
+     	var f = ['0','1/8', '1/4', '3/8', '1/2', '5/8', '3/4', '7/8', '1', '9/8', '10/8'];
 
-
+     	for( var i = 0; i < this.axisItems1.length; i++ )
+	{
+        	this.axisItems1[i].attr("text", f[i]); 
+        } 
 }
 
 });

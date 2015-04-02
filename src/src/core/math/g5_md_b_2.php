@@ -60,7 +60,6 @@ while (sum > 30 || sum == 23 || sum == 15 || sum == 7) {
   for (var j = 0; j < 7; j++) {
     sum = sum + pointsX[j];
   }
-console.log('' + sum);
 }
 
 var fractionA = new Fraction(sum,8);
@@ -154,7 +153,6 @@ while (sum < 24 || sum == 31 || sum == 39 || sum == 47 || sum == 55 || sum == 63
   for (var j = 0; j < 7; j++) {
     sum = sum + pointsX[j];
   }
-console.log('' + sum);
 }
 
 var fractionA = new Fraction(sum,8);
@@ -494,7 +492,6 @@ while (sum == 72 || sum == 64 || sum == 32 || sum == 40 || sum == 48 || sum == 5
   for (var j = 0; j < 10; j++) {
     sum = sum + pointsX[j];
   }
-//console.log('' + sum);
 }
 
 // Joe has 10 square ceramic tiles. The line plot below shows the side length of each tile in feet. What is the sum of the lengths of the 10 tiles in feet?
@@ -585,7 +582,6 @@ while (sum != 72 && sum != 64 && sum != 32 && sum != 40 && sum != 48 && sum != 5
   for (var j = 0; j < 10; j++) {
     sum = sum + pointsX[j];
   }
-//console.log('' + sum);
 }
 
 // Joe has 10 bags of peanuts. The line plot below shows the weight of each bag in pounds. He wants to redistribute the almonds so that each bag weighs the same. What will be the weight of each bag?
