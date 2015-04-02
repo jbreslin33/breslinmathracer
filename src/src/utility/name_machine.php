@@ -76,6 +76,22 @@ var NameMachine = new Class(
 		this.mDayOfWeekArray.push("Thursday");
 		this.mDayOfWeekArray.push("Friday");
 		this.mDayOfWeekArray.push("Saturday");
+		
+		//months
+		this.mMonthArray = new Array();
+		this.mUsedMonthElementArray = new Array();
+		this.mMonthArray.push("January");
+		this.mMonthArray.push("February");
+		this.mMonthArray.push("March");
+		this.mMonthArray.push("April");
+		this.mMonthArray.push("May");
+		this.mMonthArray.push("June");
+		this.mMonthArray.push("July");
+		this.mMonthArray.push("August");
+		this.mMonthArray.push("September");
+		this.mMonthArray.push("October");
+		this.mMonthArray.push("November");
+		this.mMonthArray.push("December");
 
       		//upper letters
                 this.mUpperLetterArray = new Array();
@@ -1353,6 +1369,34 @@ var NameMachine = new Class(
                 return this.mDayOfWeekArray[randomElement];
         },
 
+        getMonth: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mMonthArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedMonthElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedMonthElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedMonthElementArray.push(randomElement);
+                return this.mMonthArray[randomElement];
+        },
+
+
         getUpperLetter: function()
         {
                 var keepGoing = true;
@@ -1989,6 +2033,17 @@ var NameSampler = new Class(
 		this.mDayOfWeekArray.push(this.mDayOfWeekOne);
 		this.mDayOfWeekArray.push(this.mDayOfWeekTwo);
 		this.mDayOfWeekArray.push(this.mDayOfWeekThree);
+
+                //month
+                this.mMonthOne = this.mNameMachine.getMonth();
+                this.mMonthTwo = this.mNameMachine.getMonth();
+                this.mMonthThree = this.mNameMachine.getMonth();
+
+                this.mMonthArray = new Array();
+                this.mMonthArray.push(this.mMonthOne);
+                this.mMonthArray.push(this.mMonthTwo);
+                this.mMonthArray.push(this.mMonthThree);
+
 
 		//upper letter
                 this.mUpperLetterOne = this.mNameMachine.getUpperLetter();

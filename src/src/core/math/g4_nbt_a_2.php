@@ -614,7 +614,7 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '4.nbt.a.2_48';
-        this.ns = new NameMachine();
+        this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
 
         this.hundredthousands = Math.floor((Math.random()*8)+1);
@@ -628,7 +628,7 @@ initialize: function(sheet)
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
    
-	this.setQuestion('Write the number in standard form: ' + parseInt(this.hundredthousands * 100000) + '+' + parseInt(this.thousands * 1000) + '+' + parseInt(this.hundreds * 100) + '+' + parseInt(this.tens * 10) + '+' + this.ones,0);
+	this.setQuestion('' + 'In ' + this.ns.mMonthOne + ' students at ' + this.ns.mSchoolOne + ' answered ' + parseInt(this.hundredthousands * 100000) + '+' + parseInt(this.thousands * 1000) + '+' + parseInt(this.hundreds * 100) + '+' + parseInt(this.tens * 10) + '+' + this.ones + ' questions on mathcore.org. Write that amount in standard form.',0);
         this.setAnswer('' + this.number,0);
 }
 });
