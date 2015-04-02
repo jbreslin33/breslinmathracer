@@ -564,7 +564,7 @@ initialize: function(sheet)
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
         this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
 
-        this.setQuestion('Write the number: ' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setQuestion('The announcer on the radio says the number: ' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + this.ns.getNumberName( parseInt(this.tenthousands * 10 + this.thousands)) + ' thousand ' + this.ns.getNumberName(this.hundreds) + ' hundred ' + this.ns.getNumberName(this.tens_ones) + '. Write that number in standard form.',0);
         this.setAnswer('' + this.number,0);
 }
 });
