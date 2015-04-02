@@ -10,22 +10,32 @@ initialize: function(sheet)
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '4.nbt.a.3_1';
-        this.ns = new NameMachine();
+        this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
 
-        this.hundredthousands = Math.floor((Math.random()*8)+1);
-        this.tenthousands     = 0;
-        this.thousands        = 0;
-        this.hundreds         = 0;
-        this.tens             = Math.floor((Math.random()*8)+1);
-        this.ones             = Math.floor((Math.random()*8)+1);
+        this.hundredthousandsA = Math.floor((Math.random()*9)+1);
+        this.hundredthousandsB = this.hundredthousandsA;
+        this.tenthousands      = Math.floor(Math.random()*10);
+        this.thousands         = Math.floor(Math.random()*10);
+        this.hundreds          = Math.floor(Math.random()*10);
+        this.tens              = Math.floor(Math.random()*10);
+        this.ones              = Math.floor(Math.random()*10);
 
+	if (this.tenthousands > 4)
+	{
+		this.hundredthousandsB = parseInt(this.hundredthousandsB + 1);	
+	}
+
+	//a
         this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
         this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.number    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+        this.numberA    = parseInt(this.hundredthousandsA * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+       
+	//b 
+        this.numberB    = parseInt(this.hundredthousandsB * 100000);
 
-        this.setQuestion('Write the number as you would say it in words: ' + this.number,0);
-        this.setAnswer('' + this.ns.getNumberName(this.hundredthousands) + ' hundred ' + 'thousand ' + this.ns.getNumberName(this.tens_ones) + '',0);
+        this.setQuestion('' + this.ns.mNameOne + ' made a youtube video with some ' + this.ns.mAnimalOne + ' in it that has ' + this.numberA + ' views. Estimate the views.',0);
+        this.setAnswer('' + this.numberB,0);
 }
 });
 
