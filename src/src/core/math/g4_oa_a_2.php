@@ -850,7 +850,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. Write an equation that can be used to solve how long ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played altogether.');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrementSmall + '. Write an equation that can be used to solve how long ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' played altogether.');  	
 		}
 	
 		if (random == 3)
@@ -902,13 +902,7 @@ showCorrectAnswer: function()
 		}
 		this.hideAnswerInputs();
 		this.showUserAnswer();
-
-   // this.mCorrectAnswerLabel.setPosition(650,230);
-   // this.mCorrectAnswerLabel.setSize(200,100);
 }
 
-
 });
-
-
 
