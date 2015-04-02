@@ -1,3 +1,45 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_2',4.0802,'4.nbt.a.3','');
+*/
+var i_4_nbt_a_3__2 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_2';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+
+        this.tenthousandsA     = Math.floor(Math.random()*10);
+        this.tenthousandsB     = this.tenthousandsA;
+        this.thousands         = Math.floor(Math.random()*10);
+        this.hundreds          = Math.floor(Math.random()*10);
+        this.tens              = Math.floor(Math.random()*10);
+        this.ones              = Math.floor(Math.random()*10);
+
+        if (this.thousands > 4)
+        {
+                this.tenthousandsB = parseInt(this.tenthousandsB + 1);
+        }
+
+        //a
+        this.tenthousands_thousands = parseInt(this.tenthousandsA * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.numberA    = parseInt(this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        //b
+        this.numberB    = parseInt(this.tenthousandsB * 10000);
+
+        this.setQuestion('' + this.ns.mNameOne + ' scored ' + this.numberA + ' points in ' + this.ns.mVideoGameOne + '. Estimate the score.',0);
+        this.setAnswer('' + this.numberB,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_1',4.0801,'4.nbt.a.3','');
 */
@@ -11,7 +53,7 @@ initialize: function(sheet)
 
         this.mType = '4.nbt.a.3_1';
         this.ns = new NameSampler();
-        this.mChopWhiteSpace = false;
+        this.mStripCommas = true;
 
         this.hundredthousandsA = Math.floor((Math.random()*9)+1);
         this.hundredthousandsB = this.hundredthousandsA;
@@ -38,4 +80,5 @@ initialize: function(sheet)
         this.setAnswer('' + this.numberB,0);
 }
 });
+
 
