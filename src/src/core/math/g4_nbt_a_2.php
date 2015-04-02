@@ -1,5 +1,87 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_61',4.0761,'4.nbt.a.2','compare hundreds');
+*/
+var i_4_nbt_a_2__61 = new Class(
+{
+Extends: ThreeButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+      	this.mType = '4.nbt.a.2_61';
+
+        this.hundredthousandsA = 0;
+        this.hundredthousandsB = 0;
+        this.tenthousandsA     = 0;
+        this.tenthousandsB     = 0;
+        this.thousandsA        = 0;
+        this.thousandsB        = 0;
+        this.hundredsA         = 0;
+        this.hundredsB         = 0;
+        this.tensA             = 0;
+        this.tensB             = 0;
+        this.onesA             = 0;
+        this.onesB             = 0;
+
+	while (this.hundredthousandsA == this.hundredthousandsB)
+	{
+        	this.hundredthousandsA = Math.floor((Math.random()*8)+1);
+        	this.hundredthousandsB = Math.floor((Math.random()*8)+1);
+        	this.tenthousandsA     = Math.floor((Math.random()*8)+1); 
+        	this.tenthousandsB     = Math.floor((Math.random()*8)+1); 
+        	this.thousandsA        = Math.floor((Math.random()*8)+1); 
+        	this.thousandsB        = Math.floor((Math.random()*8)+1); 
+        	this.hundredsA         = Math.floor((Math.random()*8)+1);
+        	this.hundredsB         = Math.floor((Math.random()*8)+1);
+        	this.tensA             = Math.floor((Math.random()*8)+1);
+        	this.tensB             = Math.floor((Math.random()*8)+1);
+        	this.onesA             = Math.floor((Math.random()*8)+1);
+        	this.onesB             = Math.floor((Math.random()*8)+1);
+	}
+
+	//A
+        this.tenthousands_thousands = parseInt(this.tenthousandsA * 10000 + this.thousandsA * 1000);
+        this.tens_ones              = parseInt(this.tensA * 10 + this.onesA);
+        this.numberA                = parseInt(this.hundredthousandsA * 100000 + this.tenthousands_thousands + this.hundredsA * 100 + this.tens_ones);
+
+	//B
+        this.tenthousands_thousands = parseInt(this.tenthousandsB * 10000 + this.thousandsB * 1000);
+        this.tens_ones              = parseInt(this.tensB * 10 + this.onesB);
+        this.numberB                = parseInt(this.hundredthousandsB * 100000 + this.tenthousands_thousands + this.hundredsB * 100 + this.tens_ones);
+
+        //BUTTON A
+        this.mButtonA.setPosition(380,100);
+        this.mButtonB.setPosition(380,200);
+        this.mButtonC.setPosition(380,300);
+
+        this.setQuestion('Compare.');
+	if (this.hundredthousandsA > this.hundredthousandsB)
+	{
+        	this.setAnswer('&gt;',0);
+	}
+	else
+	{
+        	this.setAnswer('&lt;',0);
+	}
+
+        this.mButtonA.setAnswer('&gt;');
+        this.mButtonB.setAnswer('=');
+        this.mButtonC.setAnswer('&lt;');
+},
+
+createQuestionShapes: function()
+{
+	var shapeA = new Shape(100,100,240,200,this.mSheet.mGame,"","","");
+        var shapeB = new Shape(100,100,530,200,this.mSheet.mGame,"","","");
+
+        shapeA.setText('' + this.numberA);
+        shapeB.setText('' + this.numberB);
+
+        this.addQuestionShape(shapeA);
+        this.addQuestionShape(shapeB);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.2_60',4.0760,'4.nbt.a.2','compare hundreds');
 */
 var i_4_nbt_a_2__60 = new Class(
