@@ -368,6 +368,7 @@ var Sheet = new Class(
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/valentines/cupid_arrow_west.png","",""));
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/valentines/cupid_arrow_west.png","",""));
 */
+/*
 		//patricks
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/stpatricks/3dhat.png","",""));
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/stpatricks/goldgrass.png","",""));
@@ -392,6 +393,41 @@ var Sheet = new Class(
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/stpatricks/rainbow.png","",""));
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/stpatricks/goldgrass.png","",""));
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/stpatricks/hatgold.png","",""));
+*/
+		//easter
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(150,150,300,100,this.mGame,"/images/easter/happy_easter.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_basket.gif","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_bunny.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_green.png","",""));
+		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
 
                 this.hideVictoryShapes();
         },
