@@ -1,5 +1,49 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_5',4.0805,'4.nbt.a.3','');
+*/
+var i_4_nbt_a_3__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_5';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor(Math.random()*8)+1;
+        this.tenthousandsA    = Math.floor(Math.random()*8)+1;
+        this.tenthousandsB    = parseInt(this.tenthousandsA + 1);
+        this.thousands        = 0;
+        this.thousandsC       = 5;
+        this.hundreds         = 0;
+        this.tens             = 0;
+        this.ones             = 0;
+
+        //a
+        this.tenthousands_thousands = parseInt(this.tenthousandsA * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.numberA    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+       
+	//b 
+	this.tenthousands_thousands = parseInt(this.tenthousandsB * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.numberB    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+	
+	//c 
+	this.tenthousands_thousands = parseInt(this.tenthousandsA * 10000 + this.thousandsC * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.numberC    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        this.setQuestion('' + 'What number is exactly between ' + this.numberA + ' and ' + this.numberB + '?',0);
+        this.setAnswer('' + this.numberC,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_4',4.0804,'4.nbt.a.3','');
 */
 var i_4_nbt_a_3__4 = new Class(
@@ -14,17 +58,12 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mStripCommas = true;
 
-        this.tenthousands = Math.floor(Math.random()*10);
-        this.thousandsA   = Math.floor(Math.random()*10);
+        this.tenthousands = Math.floor(Math.random()*8)+1;
+        this.thousandsA   = 9;
         this.thousandsB   = this.thousandsA;
-        this.hundreds     = Math.floor(Math.random()*10);
+        this.hundreds     = Math.floor(Math.random()*4)+5;
         this.tens         = Math.floor(Math.random()*10);
         this.ones         = Math.floor(Math.random()*10);
-
-        if (this.hundreds > 4)
-        {
-                this.thousandsB = parseInt(this.thousandsB + 1);
-        }
 
         //a
         this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousandsA * 1000);
@@ -32,7 +71,7 @@ initialize: function(sheet)
         this.numberA    = parseInt(this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
 
         //b
-        this.numberB = parseInt(this.tenthousands * 10000 + this.thousandsB * 1000);
+        this.numberB = parseInt(parseInt(this.tenthousands + 1) * 10000);
 
         this.setQuestion('' + 'Round ' + this.numberA + ' to the thousands place.',0);
         this.setAnswer('' + this.numberB,0);
