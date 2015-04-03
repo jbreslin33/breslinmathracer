@@ -1,5 +1,43 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_7',4.0807,'4.nbt.a.3','round to 10,000 place with 9');
+*/
+var i_4_nbt_a_3__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_7';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+        this.hundredthousands = Math.floor(Math.random()*9);
+        this.tenthousandsA   = 9;
+        this.tenthousandsB   = this.tenthousandsA;
+        this.thousands       = Math.floor(Math.random()*4)+5;
+        this.hundreds        = Math.floor(Math.random()*10);
+        this.tens            = Math.floor(Math.random()*10);
+        this.ones            = Math.floor(Math.random()*10);
+
+        //a
+        this.tenthousands_thousands = parseInt(this.tenthousandsA * 10000 + this.thousands * 1000);
+        this.tens_ones = parseInt(this.tens * 10 + this.ones);
+        this.numberA    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+
+        //b
+        this.numberB = parseInt( (this.hundredthousands + 1) * 100000);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is planning a trip across the country. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' totals up the miles ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will travel and it comes to ' + this.numberA + '. Round that number to the nearest ten thousands place.',0);
+        this.setAnswer('' + this.numberB,0);
+
+
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_6',4.0806,'4.nbt.a.3','round to 10,000 place');
 */
 var i_4_nbt_a_3__6 = new Class(
