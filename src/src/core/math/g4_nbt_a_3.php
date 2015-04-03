@@ -241,9 +241,9 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_3',4.0803,'4.nbt.a.3','round to 100,000 place. less than 100,000');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_43',4.0843,'4.nbt.a.3','round to 100,000 place. less than 100,000');
 */
-var i_4_nbt_a_3__3 = new Class(
+var i_4_nbt_a_3__43 = new Class(
 {
 Extends: TextItem,
 
@@ -251,7 +251,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
 
-        this.mType = '4.nbt.a.3_3';
+        this.mType = '4.nbt.a.3_43';
         this.ns = new NameSampler();
         this.mStripCommas = true;
 
@@ -296,18 +296,17 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mStripCommas = true;
 
-        this.tenthousands      = Math.floor(Math.random()*4)+1;
-        this.thousands         = Math.floor(Math.random()*10);
-        this.hundreds          = Math.floor(Math.random()*10);
-        this.tens              = Math.floor(Math.random()*10);
-        this.ones              = Math.floor(Math.random()*10);
+        var tenthousands = Math.floor(Math.random()*4)+1;
+        var thousands    = Math.floor(Math.random()*10);
+        var hundreds     = Math.floor(Math.random()*10);
+        var tens         = Math.floor(Math.random()*10);
+        var ones         = Math.floor(Math.random()*10);
 
-        //a
-        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
-        this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.numberA    = parseInt(this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+        var tenthousands_thousands = parseInt(tenthousands * 10000 + thousands * 1000);
+        var tens_ones              = parseInt(tens * 10 + ones);
+        var numberA                = parseInt(tenthousands_thousands + hundreds * 100 + tens_ones);
 
-        this.setQuestion('' + 'Round ' + this.numberA + ' to the nearest hundred thousands place.',0);
+        this.setQuestion('' + 'Round ' + numberA + ' to the nearest hundred thousands place.',0);
         this.setAnswer('' + '0',0);
 }
 });
@@ -327,29 +326,29 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mStripCommas = true;
 
-        this.hundredthousandsA = Math.floor((Math.random()*9)+1);
-        this.hundredthousandsB = this.hundredthousandsA;
-        this.tenthousands      = Math.floor(Math.random()*10);
-        this.thousands         = Math.floor(Math.random()*10);
-        this.hundreds          = Math.floor(Math.random()*10);
-        this.tens              = Math.floor(Math.random()*10);
-        this.ones              = Math.floor(Math.random()*10);
+        var hundredthousandsA = Math.floor((Math.random()*9)+1);
+        var hundredthousandsB = hundredthousandsA;
+        var tenthousands      = Math.floor(Math.random()*10);
+        var thousands         = Math.floor(Math.random()*10);
+        var hundreds          = Math.floor(Math.random()*10);
+        var tens              = Math.floor(Math.random()*10);
+        var ones              = Math.floor(Math.random()*10);
 
-	if (this.tenthousands > 4)
+	if (tenthousands > 4)
 	{
-		this.hundredthousandsB = parseInt(this.hundredthousandsB + 1);	
+		hundredthousandsB = parseInt(hundredthousandsB + 1);	
 	}
 
 	//a
-        this.tenthousands_thousands = parseInt(this.tenthousands * 10000 + this.thousands * 1000);
-        this.tens_ones = parseInt(this.tens * 10 + this.ones);
-        this.numberA    = parseInt(this.hundredthousandsA * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
+        var tenthousands_thousands = parseInt(tenthousands * 10000 + thousands * 1000);
+        var tens_ones              = parseInt(tens * 10 + ones);
+        var numberA                = parseInt(hundredthousandsA * 100000 + tenthousands_thousands + hundreds * 100 + tens_ones);
        
 	//b 
-        this.numberB    = parseInt(this.hundredthousandsB * 100000);
+        var numberB                = parseInt(hundredthousandsB * 100000);
 
-        this.setQuestion('' + this.ns.mNameOne + ' made a youtube video with some ' + this.ns.mAnimalOne + ' in it that has ' + this.numberA + ' views. Estimate the views.',0);
-        this.setAnswer('' + this.numberB,0);
+        this.setQuestion('' + this.ns.mNameOne + ' made a youtube video with some ' + this.ns.mAnimalOne + ' in it that has ' + numberA + ' views. Estimate the views.',0);
+        this.setAnswer('' + numberB,0);
 }
 });
 
