@@ -22,9 +22,9 @@ initialize: function(sheet)
         this.tens            = Math.floor(Math.random()*10);
         this.ones            = Math.floor(Math.random()*10);
 
-        if (this.hundreds > 4)
+        if (this.tenthousands > 4)
         {
-                this.thousandsB = parseInt(this.thousandsB + 1);
+                this.tenthousandsB = parseInt(this.tenthousandsB + 1);
         }
 
         //a
@@ -33,9 +33,9 @@ initialize: function(sheet)
         this.numberA    = parseInt(this.hundredthousands * 100000 + this.tenthousands_thousands + this.hundreds * 100 + this.tens_ones);
 
         //b
-        this.numberB = parseInt(this.hundredthousands * 100000 + this.tenthousandsB * 10000 + this.thousands * 1000);
+        this.numberB = parseInt(this.hundredthousands * 100000 + this.tenthousandsB * 10000);
 
-        this.setQuestion('' + this.ns.mNameOne + ' is planning a trip across the country. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' totals up the miles ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will travel and it comes to ' + this.numberA + '. Round that number to the nearest ten thousands place.',0);
+        this.setQuestion('' + this.ns.mNameOne + ' is planning a trip across the country. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' totals up the miles ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will travel and it comes to ' + this.numberA + '. Round that number to the nearest ten thousands place.',0);
         this.setAnswer('' + this.numberB,0);
 
 
