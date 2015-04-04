@@ -1,0 +1,47 @@
+normal should only ask remediate if there is a remediate...it should not ask any gradelevel questions.....until remediate is good. 
+-------------------------------------
+no buffer instead make use mastery to take out some questions. 
+---
+5 item buffer in case kid is stuck. also show total above buffer..and total stuck in general...
+-----------------
+Basically we work on a set a starting level concept.
+you set a starting level for the student then it will continue to ask the student mastered questions beginning at starting level
+we could also have seperate settings. A mastered setting which is 10. Then a move on to next standard setting which is 5. Then a moveontonexttypesetting setting which is 3.
+
+-----------------------------
+
+just make application_math and application_ela then you don't have to include every darn file. then you can set subject session and javascript var.
+-----------
+we have an evaluation game class which is a test of all non-mastered items.
+what if we have a remediate class that allows practice of 10 non-mastered items.....so you are never actually remediating thru the standards...  
+just make sure you always set the level of remediate and evaluation to 1.
+remediate will work similiar to evaluation but it will run thru 10 levels of things you got wrong.
+what if we give you 10 then you leave. well in theory you would go right back to remediate anyway... as you would not have completed it. it would then simply
+query the db again for 10 questions. which technically could change if you have mastered any in the earlier levels. 
+
+so remediate will always be the 10 questions that you have not mastered. when you finish remediatiation you would goto next evaluation.  
+if you fail evaluation you go to remediate
+
+
+standards
+if (advance)
+	evaluation
+
+
+evaluation
+if (advance)
+	standards
+if (fail)
+	remediate
+
+
+remediate 
+if (advance)
+	standards
+
+
+level_attempt
+	speed
+
+
+

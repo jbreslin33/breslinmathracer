@@ -1,0 +1,32 @@
+<DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<script>
+
+var fileFormat = "mp3";
+var mp3Test = new Audio();
+var canPlayMP3 = (typeof mp3Test.canPlayType === "function" && mp3Test.canPlayType("audio/mpeg") !== "");
+if (!canPlayMP3) {
+	fileFormat = "ogg";
+}
+var sound = new Audio('sound/test.' + fileFormat);
+sound.play();
+
+</script>
+</head>
+
+<body>
+<object height="50" width="100" data="sound.mp3"></object>
+<h1>My Web Page</h1>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html> 
+
+
