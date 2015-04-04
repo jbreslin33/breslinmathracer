@@ -161,6 +161,7 @@ Extends: Item,
 
         showCorrectAnswer: function()
         {
+		this.parent();
 		if (this.mCorrectAnswerLabel)
 		{
 			var answer = '';
@@ -184,6 +185,7 @@ Extends: Item,
 
         hideCorrectAnswer: function()
         {
+		this.parent();
 		if (this.mCorrectAnswerLabel)
 		{
 			this.mCorrectAnswerLabel.setVisibility(false);
