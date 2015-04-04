@@ -202,6 +202,11 @@ var Item = new Class(
 
 	createShapes: function()
         {
+		//youtube
+                this.mYoutubeShape = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
+                this.addShape(this.mYoutubeShape);
+		//this.mYoutubeShape.setText('<iframe width="560" height="315" src="https://www.youtube.com/embed/9mjZ4qU57Go" frameborder="0" allowfullscreen></iframe>'); 	
+	
                 //mContinueCorrectButton
                 this.mContinueCorrectButton = new ContinueCorrectButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
 		this.mContinueCorrectButton.mMesh.innerHTML = 'CONTINUE';
@@ -626,12 +631,18 @@ var Item = new Class(
 	
 	showCorrectAnswer: function()
 	{
-
+                if (this.mYoutubeShape)
+                {
+                        this.mYoutubeShape.setVisibility(true);
+                }
 	},
 
 	hideCorrectAnswer: function()
 	{
-
+                if (this.mYoutubeShape)
+                {
+                        this.mYoutubeShape.setVisibility(false);
+                }
 	},
 	
 	showContinueCorrect: function()
