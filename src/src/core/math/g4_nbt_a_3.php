@@ -1,4 +1,4 @@
-
+//next two shouldnot have ten thousand but just 1000 to trip them up and it goes either 0 or 10000 just like you did with 100000 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_12',4.0812,'4.nbt.a.3','10,000');
 */
