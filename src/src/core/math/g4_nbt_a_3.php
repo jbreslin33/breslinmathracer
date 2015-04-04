@@ -1,5 +1,40 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_10',4.0810,'4.nbt.a.3','10,000');
+*/
+var i_4_nbt_a_3__10 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_10';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+        var hundredthousands = Math.floor(Math.random()*8)+1;
+        var tenthousands     = 9;
+        var thousands        = Math.floor(Math.random()*4)+5;
+        var hundreds         = Math.floor(Math.random()*10);
+        var tens             = Math.floor(Math.random()*10);
+        var ones             = Math.floor(Math.random()*10);
+
+        //a
+        var tenthousands_thousands = parseInt(tenthousands * 10000 + thousands * 1000);
+        var tens_ones              = parseInt(tens * 10 + ones);
+        var numberA                = parseInt(hundredthousands * 100000 + tenthousands_thousands + hundreds * 100 + tens_ones);
+
+        //b
+        var numberB                = parseInt( (hundredthousands + 1) * 100000);
+
+        this.setQuestion('' + 'Round ' + numberA + ' to the nearest ten thousand.',0);
+        this.setAnswer('' + numberB,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_9',4.0809,'4.nbt.a.3','10,000');
 */
 var i_4_nbt_a_3__9 = new Class(
