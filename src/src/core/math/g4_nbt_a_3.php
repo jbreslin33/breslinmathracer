@@ -1,4 +1,35 @@
 //next two shouldnot have ten thousand but just 1000 to trip them up and it goes either 0 or 10000 just like you did with 100000 
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_13',4.0813,'4.nbt.a.3','10,000');
+*/
+var i_4_nbt_a_3__13 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_13';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+        var thousands    = Math.floor(Math.random()*4)+1;
+        var hundreds     = Math.floor(Math.random()*10);
+        var tens         = Math.floor(Math.random()*10);
+        var ones         = Math.floor(Math.random()*10);
+
+        //a
+        var tenthousands_thousands = parseInt(thousands * 1000);
+        var tens_ones              = parseInt(tens * 10 + ones);
+        var numberA                = parseInt(tenthousands_thousands + hundreds * 100 + tens_ones);
+
+        this.setQuestion('' + 'Round ' + numberA + ' to the nearest ten thousand.',0);
+        this.setAnswer('' + '0',0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_12',4.0812,'4.nbt.a.3','10,000');
 */
