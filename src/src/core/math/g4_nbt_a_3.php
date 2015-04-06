@@ -1,3 +1,60 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_20',4.0820,'4.nbt.a.3','1,000');
+*/
+var i_4_nbt_a_3__20 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_20';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+        var hundreds         = Math.floor(Math.random()*4)+1;
+        var tens             = Math.floor(Math.random()*10);
+        var ones             = Math.floor(Math.random()*10);
+
+        //a
+        var tens_ones              = parseInt(tens * 10 + ones);
+        var numberA                = parseInt(hundreds * 100 + tens_ones);
+
+        this.setQuestion('' + 'Round ' + numberA + ' to the nearest thousand.',0);
+        this.setAnswer('' + '0',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_19',4.0819,'4.nbt.a.3','1,000');
+*/
+var i_4_nbt_a_3__19 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.a.3_19';
+        this.ns = new NameSampler();
+        this.mStripCommas = true;
+
+        var hundreds         = Math.floor(Math.random()*4)+5;
+        var tens             = Math.floor(Math.random()*10);
+        var ones             = Math.floor(Math.random()*10);
+
+        //a
+        var tens_ones              = parseInt(tens * 10 + ones);
+        var numberA                = parseInt(hundreds * 100 + tens_ones);
+
+        this.setQuestion('' + 'Round ' + numberA + ' to the nearest thousand.',0);
+        this.setAnswer('' + '1000',0);
+}
+});
+
 //10
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.a.3_18',4.0818,'4.nbt.a.3','1,000');
