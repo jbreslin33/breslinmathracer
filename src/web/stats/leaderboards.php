@@ -52,7 +52,7 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 
-<p><b> Select Room: </p></b>
+<p><b> Select Room and Category: </p></b>
 
 <form method="post" action="/web/stats/leaderboards.php">
 
@@ -86,9 +86,17 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 $category_array = array();
 $category_array[] = "score"; 
+$category_array[] = "alltime"; 
 $category_array[] = "alltimeizzy"; 
 $category_array[] = "alltimetwo"; 
 $category_array[] = "alltimethree"; 
+$category_array[] = "alltimefour"; 
+$category_array[] = "alltimefive"; 
+$category_array[] = "alltimesix"; 
+$category_array[] = "alltimeseven"; 
+$category_array[] = "alltimeeight"; 
+$category_array[] = "alltimenine"; 
+$category_array[] = "alltimekoaa5"; 
 
 echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
 for($i = 0; $i < sizeof($category_array); $i++)
@@ -157,7 +165,9 @@ echo '<table border=\"1\">';
         $query .= $_SESSION["school_id"];
 	$query .= " AND room_id = ";
         $query .= $room_id;
-        $query .= " order by score desc;";
+        $query .= " order by ";
+	$query .= $category;
+        $query .= " desc;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
