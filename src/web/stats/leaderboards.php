@@ -47,6 +47,7 @@ else
 
 }
 
+error_log($room_id);
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
@@ -66,6 +67,7 @@ $numrows = pg_numrows($result);
 $id_array = array();
 
 echo "<option selected=\"selected\" value=\"0\"> \"Select Room\" </option>";
+
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
@@ -126,12 +128,7 @@ function loadAgain()
 
 <?php
 
-if ($room_id == 0)
-{
-	//$room_id = $id_array[0];
-}
-
-if ($room_id == 0)
+if ($room_id == 99999)
 {
 
 }
@@ -163,8 +160,11 @@ echo '<table border=\"1\">';
 	$query .= $category;
 	$query .= " ,unmastered from users where banned_id = 0 AND school_id = ";
         $query .= $_SESSION["school_id"];
-	$query .= " AND room_id = ";
-        $query .= $room_id;
+	if ($room_id != 0)
+	{
+		$query .= " AND room_id = ";
+        	$query .= $room_id;
+	}
         $query .= " order by ";
 	$query .= $category;
         $query .= " desc;";
