@@ -3,7 +3,7 @@
 <li><a href="/web/select/select.php">Selects</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 
-<li><a href="/web/stats/leaderboard.php">School Leader Board</a></li>
+<li><a href="/web/stats/leaderboards.php">School Leader Board</a></li>
 <li><a href="/web/stats/leaderboard_33.php">Room 33 Leader Board</a></li>
 <li><a href="/web/stats/unmastered_leaderboard_33.php">Room 33 mastered Leader Board</a></li>
 <li><a href="/web/stats/leaderboard_34.php">Room 34 Leader Board</a></li>
