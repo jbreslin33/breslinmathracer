@@ -16,6 +16,7 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
 $room_id = 0;
+$category = 0;
 $id = 0;
 
 if (isset($_POST["room_id"]))
@@ -31,6 +32,21 @@ else
 {
 
 }
+
+if (isset($_POST["category"]))
+{
+        $category = $_POST["category"];
+}
+
+else if (isset($_GET['category']))
+{
+        $category = $_GET['category'];
+}
+else
+{
+
+}
+
 
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
@@ -63,16 +79,39 @@ for($i = 0; $i < $numrows; $i++)
 	}
 	$id_array[] = $row[0];
 }
+?>
+</select>
+
+<select id="category" name="category" onchange="loadAgain()">
+<?php
+$category_array = array();
+$category_array[] = "score"; 
+$category_array[] = "alltimeizzy"; 
+$category_array[] = "alltimetwo"; 
+$category_array[] = "alltimethree"; 
+
+echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
+for($i = 0; $i < sizeof($category_array); $i++)
+{
+        if ($category_array[$i] == $category)
+        {
+                echo "<option selected=\"selected\" value=\"$category_array[$i]\"> $category_array[$i] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$category_array[$i]\"> $category_array[$i] </option>";
+        }
+}
 
 ?>
-
 </select>
 
 <script>
 function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
-	document.location.href = '/web/stats/leaderboards.php?room_id=' + x; 
+    	var y = document.getElementById("category").value;
+	document.location.href = '/web/stats/leaderboards.php?room_id=' + x + '&category=' + y; 
 }
 </script>
 
@@ -112,7 +151,9 @@ echo '<table border=\"1\">';
         $unmastered = '';
 
 
-        $query = "select last_activity, first_name, last_name, score, unmastered from users where banned_id = 0 AND school_id = ";
+        $query = "select last_activity, first_name, last_name, ";
+	$query .= $category;
+	$query .= " ,unmastered from users where banned_id = 0 AND school_id = ";
         $query .= $_SESSION["school_id"];
 	$query .= " AND room_id = ";
         $query .= $room_id;
