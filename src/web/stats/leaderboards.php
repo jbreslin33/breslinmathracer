@@ -66,7 +66,7 @@ $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 $id_array = array();
 
-echo "<option selected=\"selected\" value=\"0\"> \"Select Room\" </option>";
+echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
