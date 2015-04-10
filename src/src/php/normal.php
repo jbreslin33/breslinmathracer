@@ -176,7 +176,7 @@ public function initializeProgressionCounter()
 	}	
 	else
 	{
-		$this->progression_counter_limit = floatval($this->progression_counter + 1);
+		$this->progression_counter_limit = floatval($this->progression_counter + 2);
 	}
 }
 
