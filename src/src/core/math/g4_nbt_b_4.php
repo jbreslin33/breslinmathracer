@@ -1,5 +1,37 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_10',4.0910,'4.nbt.b.4','10000-1000');
+*/
+
+var i_4_nbt_b_4__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.b.4_10';
+
+        this.mStripCommas = true;
+
+        var a = 0;
+        var b = 1;
+
+        while (a < b)
+        {
+                a = Math.floor(Math.random()*89999)+10000;
+                b = Math.floor(Math.random()*8999)+1000;
+        }
+
+        var answer = parseInt(a - b);
+
+        this.setQuestion('' + a + ' - ' + b + ' = ',0);
+        this.setAnswer('' + answer,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_9',4.0909,'4.nbt.b.4','1000-1000');
 */
 
