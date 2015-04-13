@@ -1348,6 +1348,16 @@ getItem: function(id)
                 return new i_4_nbt_a_3__22(this.mSheet);
         }
 
+	//4.nbt.b.4	
+	if (id == '4.nbt.b.4_1')
+        {
+                return new i_4_nbt_b_4__1(this.mSheet);
+        }
+	if (id == '4.nbt.b.4_2')
+        {
+                return new i_4_nbt_b_4__2(this.mSheet);
+        }
+
 	//4.md.a.1
         if (id == '4.md.a.1_1')
         {

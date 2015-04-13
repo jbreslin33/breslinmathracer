@@ -1,108 +1,27 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_1',4.0901,'4.nbt.b.4','adding numbers up to 6 digits');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_1',4.0901,'4.nbt.b.4','1000+100');
 */
 
 var i_4_nbt_b_4__1 = new Class(
 {
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-            this.parent(sheet);
-            this.mType = '4.nbt.b.4_1';          	
-
-				var varA = 0;
-				var varB = 0;
-				var varC = 0;
-
-				var start = 0;
-				var end = 0;
-				var rand = 0;
-	
-				// pick number of digits (2 - 6)
-				rand = 3 + Math.floor((Math.random()*2));
-
-				// get end number based on digits
-				end = Math.pow(10, rand);
-				// get start number based on digits
-				start = Math.pow(10, rand-1);
-
-				// pick number from start to end range
-				varA = start + Math.floor(Math.random()*(end-start));
-
-				rand = 3 + Math.floor((Math.random()*2));
-
-				end = Math.pow(10, rand);
-				start = Math.pow(10, rand-1);
-		
-				varB = start + Math.floor(Math.random()*(end-start));
-		
-				varC = parseInt(varA + varB);
-			                       
-				this.setQuestion('' + varA + ' + ' +  varB + ' = ');
-            this.setAnswer('' + varC,0);
-
-				this.mQuestionLabel.setPosition(330, 120);
-				this.mQuestionLabel.setSize(200, 100);      
-        }
-});
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.4_2',4.0902,'4.nbt.b.4','subtracting numbers up to 6 digits');
-*/
-
-var i_4_nbt_b_4__2 = new Class(
+initialize: function(sheet)
 {
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-            this.parent(sheet);
-            this.mType = '4.nbt.b.4_2';          	
+        this.parent(sheet,575,50,320,75,720,50,380,150);
 
-				var varA = 0;
-				var varB = 0;
-				var varC = 0;
-				var big = 0;
-				var small = 0;
+        this.mType = '4.nbt.b.4_1';          	
 
-				var start = 0;
-				var end = 0;
-				var rand = 0;
+	this.mQuestionL
 	
-				
-				rand = 3 + Math.floor((Math.random()*2));
+	this.mStripCommas = true;
 
-				start = Math.pow(10, rand-1);
-
-				end = Math.pow(10, rand);
-				
-				varA = start + Math.floor(Math.random()*(end-start));	
-
-				rand = 3 + Math.floor((Math.random()*2));
-
-				start = Math.pow(10, rand-1);
-				end = Math.pow(10, rand);
+	var a = Math.floor(Math.random()*8999)+1000;
+	var b = Math.floor(Math.random()*899)+100;
 	
-				varB = start + Math.floor(Math.random()*(end-start));
+	var answer = parseInt(a + b);
 
-				if (varA > varB)
-				{
-					big = varA;
-					small = varB;
-				}
-				else
-				{
-					big = varB;
-					small = varA;
-				}
-
-				varC = parseInt(big - small);
-
-			                       
-				this.setQuestion('' + big + ' - ' +  small + ' = ');
-            this.setAnswer('' + varC,0);    
-
-				this.mQuestionLabel.setPosition(330, 120);
-				this.mQuestionLabel.setSize(200, 100);               
-        }
+	this.setQuestion('' + a + ' + ' + b + ' = ',0);
+	this.setAnswer('' + answer,0);  
+}
 });
