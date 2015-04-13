@@ -10,6 +10,7 @@ Extends: ThreeButtonItem,
    {
       this.parent(sheet);
       this.mType = '4.nf.a.2_1';
+	this.mChopWhiteSpace = false;
        	
 		var varA = 0;
 		var varB = 0;
