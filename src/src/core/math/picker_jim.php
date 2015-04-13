@@ -1410,6 +1410,49 @@ getItem: function(id)
                 return new i_4_nbt_b_4__15(this.mSheet);
         }
 
+	//4.nf.a.1
+	if (id == '4.nf.a.1_5')
+        {
+                return new i_4_nf_a_1__5(this.mSheet);
+        }
+	if (id == '4.nf.a.1_6')
+        {
+                return new i_4_nf_a_1__6(this.mSheet);
+        }
+	if (id == '4.nf.a.1_7')
+        {
+                return new i_4_nf_a_1__7(this.mSheet);
+        }
+	if (id == '4.nf.a.1_8')
+        {
+                return new i_4_nf_a_1__8(this.mSheet);
+        }
+	if (id == '4.nf.a.1_9')
+        {
+                return new i_4_nf_a_1__9(this.mSheet);
+        }
+	if (id == '4.nf.a.1_10')
+        {
+                return new i_4_nf_a_1__10(this.mSheet);
+        }
+	if (id == '4.nf.a.1_11')
+        {
+                return new i_4_nf_a_1__11(this.mSheet);
+        }
+	if (id == '4.nf.a.1_12')
+        {
+                return new i_4_nf_a_1__12(this.mSheet);
+        }
+	if (id == '4.nf.a.1_13')
+        {
+                return new i_4_nf_a_1__13(this.mSheet);
+        }
+	if (id == '4.nf.a.1_14')
+        {
+                return new i_4_nf_a_1__14(this.mSheet);
+        }
+
+
 	//4.md.a.1
         if (id == '4.md.a.1_1')
         {
