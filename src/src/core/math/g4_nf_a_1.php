@@ -1,3 +1,21 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_5',4.1205,'4.nf.a.1','');
+*/
+
+var i_4_nf_a_1__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet);
+      	this.mType = '4.nf.a.1_5';
+
+	this.setQuestion('hello',0);
+	this.setAnswer('gig',0);
+
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_4',4.1204,'4.nf.a.1','put fraction in lower form by finding missing numerator');
