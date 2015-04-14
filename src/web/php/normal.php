@@ -9,11 +9,11 @@ if (isset($_SESSION["user_id"]))
 {
 	$normal = new Normal(0);
 	$userid = $_SESSION["user_id"];	
-	error_log("calling normal with user id: $userid");
+	//error_log("calling normal with user id: $userid");
 }
 else
 {
-	error_log('no user id!!!!!! not calling normal');
+	//error_log('no user id!!!!!! not calling normal');
 }
 
 include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
