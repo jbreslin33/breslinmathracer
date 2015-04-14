@@ -192,3 +192,52 @@ Extends: TextItem,
       this.mQuestionLabel.setPosition(275,95);
    }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_0_50',4.120050,'4.nf.a.1','compare');
+*/
+
+var i_4_nf_a_1__0_50 = new Class(
+{
+Extends: ThreeButtonItem,
+initialize: function(sheet)
+{
+	this.parent(sheet);
+      	this.mType = '4.nf.a.1_0_50';
+
+        this.mButtonA.setPosition(380,100);
+        this.mButtonB.setPosition(380,200);
+        this.mButtonC.setPosition(380,300);
+
+	var a = Math.floor(Math.random()*9)+1;
+	var b = Math.floor(Math.random()*9)+1;
+
+	this.mFractionA = new Fraction(a,b,false);
+
+	var c = parseInt(a * 2);
+	var d = parseInt(b * 2);
+	
+	this.mFractionB = new Fraction(c,d,false);
+
+        this.setQuestion('Compare.');
+        this.setAnswer('=',0);
+
+        this.mButtonA.setAnswer('&gt;');
+        this.mButtonB.setAnswer('=');
+        this.mButtonC.setAnswer('&lt;');
+},
+
+createQuestionShapes: function()
+{
+	var shapeA = new Shape(100,100,240,200,this.mSheet.mGame,"","","");
+        var shapeB = new Shape(100,100,530,200,this.mSheet.mGame,"","","");
+
+        shapeA.setText('' + this.mFractionA.getString());
+        shapeB.setText('' + this.mFractionB.getString());
+
+        this.addQuestionShape(shapeA);
+        this.addQuestionShape(shapeB);
+}
+
+});
+
