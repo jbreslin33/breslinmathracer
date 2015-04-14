@@ -222,3 +222,33 @@ initialize: function(sheet)
         this.setAnswer('equal',0);
 }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_0_11',4.120011,'4.nf.a.1','compare');
+*/
+
+var i_4_nf_a_1__0_11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,200,325,145,100,50,580,130);
+
+        this.mType = '4.nf.a.1_0_11';
+        this.mChopWhiteSpace = false;
+
+        var a = Math.floor(Math.random()*9)+1;
+        var b = Math.floor(Math.random()*9)+1;
+
+        fractionA = new Fraction(a,b,false);
+
+        var c = parseInt(a * 2);
+        var d = parseInt(b * 1);
+
+        fractionB = new Fraction(c,d,false);
+
+        this.setQuestion('Compare ' + fractionB.getString() + ' and ' + fractionA.getString() + '. Write equal or not equal.');
+        this.setAnswer('not equal',0);
+}
+});
+
