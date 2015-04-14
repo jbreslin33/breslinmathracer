@@ -1411,6 +1411,11 @@ getItem: function(id)
         }
 
 	//4.nf.a.1
+	if (id == '4.nf.a.1_0_50')
+        {
+                return new i_4_nf_a_1__0_50(this.mSheet);
+        }
+
 	if (id == '4.nf.a.1_5')
         {
                 return new i_4_nf_a_1__5(this.mSheet);
