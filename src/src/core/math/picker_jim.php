@@ -1452,6 +1452,20 @@ getItem: function(id)
                 return new i_4_nf_a_1__14(this.mSheet);
         }
 
+	//4.nf
+  	if (id == '4.nf.b.3.a_4')
+        {
+                return new i_4_nf_b_3_a__4(this.mSheet);
+        }
+  	if (id == '4.nf.b.3.a_5')
+        {
+                return new i_4_nf_b_3_a__5(this.mSheet);
+        }
+  	if (id == '4.nf.b.3.a_6')
+        {
+                return new i_4_nf_b_3_a__6(this.mSheet);
+        }
+
 
 	//4.md.a.1
         if (id == '4.md.a.1_1')
