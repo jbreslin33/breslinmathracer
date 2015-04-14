@@ -1411,9 +1411,29 @@ getItem: function(id)
         }
 
 	//4.nf.a.1
-	if (id == '4.nf.a.1_0_50')
+	if (id == '4.nf.a.1_0_10')
         {
-                return new i_4_nf_a_1__0_50(this.mSheet);
+                return new i_4_nf_a_1__0_10(this.mSheet);
+        }
+	if (id == '4.nf.a.1_0_11')
+        {
+                return new i_4_nf_a_1__0_11(this.mSheet);
+        }
+	if (id == '4.nf.a.1_0_12')
+        {
+                return new i_4_nf_a_1__0_12(this.mSheet);
+        }
+	if (id == '4.nf.a.1_0_20')
+        {
+                return new i_4_nf_a_1__0_20(this.mSheet);
+        }
+	if (id == '4.nf.a.1_0_21')
+        {
+                return new i_4_nf_a_1__0_21(this.mSheet);
+        }
+	if (id == '4.nf.a.1_0_22')
+        {
+                return new i_4_nf_a_1__0_22(this.mSheet);
         }
 
 	if (id == '4.nf.a.1_5')

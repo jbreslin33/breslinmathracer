@@ -194,16 +194,16 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_0_50',4.120050,'4.nf.a.1','compare');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_0_10',4.120010,'4.nf.a.1','compare');
 */
 
-var i_4_nf_a_1__0_50 = new Class(
+var i_4_nf_a_1__0_10 = new Class(
 {
 Extends: ThreeButtonItem,
 initialize: function(sheet)
 {
 	this.parent(sheet);
-      	this.mType = '4.nf.a.1_0_50';
+      	this.mType = '4.nf.a.1_0_10';
 
         this.mButtonA.setPosition(380,100);
         this.mButtonB.setPosition(380,200);
