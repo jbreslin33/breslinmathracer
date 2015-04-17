@@ -273,9 +273,10 @@ Extends: TextItem,
     var answer = ((a*2) + (b*2))/3;
     answer = answer * c;
 
-                this.setQuestion('' + this.ns.mNameOne + ' is building a fence around the perimeter of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' yard, which is shaped like a rectangle. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' yard is ' + a + ' feet long and ' + b + ' feet wide. One yard of fencing costs ' + c + ' dollars. How much will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend on fencing?');
+                this.setQuestion('' + this.ns.mNameOne + ' is building a fence around the perimeter of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' yard, which is shaped like a rectangle. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' yard is ' + a + ' feet long and ' + b + ' feet wide. One yard of fencing costs ' + c + ' dollars. How many dollars will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend on fencing?');
 
                 this.setAnswer('' + answer,0);
+                this.setAnswer('' + '$' + answer,1);
         }
 
 
