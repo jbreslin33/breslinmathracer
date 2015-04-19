@@ -12,6 +12,7 @@ initialize: function(sheet)
 
         this.mType = '4.nf.a.1_6';
         this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
 
         var a = 0;
         var b = 0;
@@ -29,8 +30,8 @@ initialize: function(sheet)
 
         fractionB = new Fraction(c,d,false);
 
-        this.setQuestion('Compare ' + fractionA.getString() + ' and ' + fractionB.getString() + '. Write equal or not equal.');
-        this.setAnswer('equal',0);
+       	this.setQuestion('' + this.ns.mNameOne + ' ran '  + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' and ' + this.ns.mNameTwo + ' ran '  + fractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. Did they run the same distance? Answer Yes or No.');
+       	this.setAnswer('' + 'No',0);
 }
 });
 
@@ -47,6 +48,7 @@ initialize: function(sheet)
 
         this.mType = '4.nf.a.1_5';
         this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
 
         var a = 0;
         var b = 0;
@@ -63,9 +65,9 @@ initialize: function(sheet)
         var d = parseInt(b * 3);
 
         fractionB = new Fraction(c,d,false);
-
-        this.setQuestion('Compare ' + fractionA.getString() + ' and ' + fractionB.getString() + '. Write equal or not equal.');
-        this.setAnswer('equal',0);
+       	
+	this.setQuestion('' + this.ns.mNameOne + ' ran '  + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' and ' + this.ns.mNameTwo + ' ran '  + fractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. Did they run the same distance? Answer Yes or No.');
+       	this.setAnswer('' + 'Yes',0);
 }
 });
 
@@ -206,7 +208,7 @@ initialize: function(sheet)
 	
 	fractionB = new Fraction(c,d,false);
 
-        this.setQuestion('Compare ' + fractionA.getString() + ' and ' + fractionB.getString() + '. Write equal or not equal.');
+        this.setQuestion('' + fractionA.getString() + ' and ' + fractionB.getString() + '. Write equal or not equal.');
         this.setAnswer('equal',0);
 }
 });
