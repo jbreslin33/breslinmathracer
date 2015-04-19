@@ -1,6 +1,41 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_5',4.1205,'4.nf.a.1','1h');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_6',4.1206,'4.nf.a.1','');
+*/
+
+var i_4_nf_a_1__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,200,325,145,100,50,580,130);
+
+        this.mType = '4.nf.a.1_6';
+        this.mChopWhiteSpace = false;
+
+        var a = 0;
+        var b = 0;
+
+        while (a == b)
+        {
+                a = Math.floor(Math.random()*9)+1;
+                b = Math.floor(Math.random()*9)+1;
+        }
+
+        fractionA = new Fraction(a,b,false);
+
+        var c = parseInt(a * 4);
+        var d = parseInt(b * 3);
+
+        fractionB = new Fraction(c,d,false);
+
+        this.setQuestion('Compare ' + fractionA.getString() + ' and ' + fractionB.getString() + '. Write equal or not equal.');
+        this.setAnswer('equal',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_5',4.1205,'4.nf.a.1','');
 */
 
 var i_4_nf_a_1__5 = new Class(
