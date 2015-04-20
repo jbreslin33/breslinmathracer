@@ -1,3 +1,109 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_7',4.1207,'4.nf.a.1','');
+*/
+
+var i_4_nf_a_1__7 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+
+        this.mType = '4.nf.a.1_7';
+        this.ns = new NameSampler();
+
+        this.a = 0;
+        this.b = 0;
+
+        while (this.a == this.b)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+                this.b = Math.floor(Math.random()*9)+1;
+        }
+
+        fractionA = new Fraction(this.a,this.b,false);
+
+        this.setQuestion('' + ' What is an equivalent fraction of ' + fractionA.getString() + '?');
+        this.setAnswer('' + fractionA.getString(),0);
+},
+
+checkUserAnswer: function()
+{
+  	var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value
+        var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value
+
+	if (this.a == numerator && this.b == denominator)
+	{
+		return false;
+	}
+	
+	return this.parent();
+}
+	
+/*
+checkUserAnswer: function()
+{
+	correctAnswerFound = false;
+        for (i = 0; i <  this.mAnswerArray.length; i++)
+        {
+        	//ignorecase
+                if (this.mIgnoreCase == true)
+                {
+                	if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
+                        {
+                                correctAnswerFound = true;
+                 }
+                        }
+                        else
+                        {
+                                if (this.mUserAnswer == this.mAnswerArray[i])
+                                {
+                                        correctAnswerFound = true;
+                                }
+                        }
+                }
+                if (correctAnswerFound == false)
+                {
+                        this.mSheet.setTypeWrong(this.mType);
+                }
+                return correctAnswerFound;
+        },
+*/
+
+});
+
+/*
+        checkUserAnswer: function()
+        {
+                correctAnswerFound = false;
+                for (i = 0; i <  this.mAnswerArray.length; i++)
+                {
+                        //ignorecase
+                        if (this.mIgnoreCase == true)
+                        {
+                                if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
+                                {
+                                        correctAnswerFound = true;
+                                }
+                        }
+                        else
+                        {
+                                if (this.mUserAnswer == this.mAnswerArray[i])
+                                {
+                                        correctAnswerFound = true;
+                                }
+                        }
+                }
+                if (correctAnswerFound == false)
+                {
+                        this.mSheet.setTypeWrong(this.mType);
+                }
+                return correctAnswerFound;
+        },
+
+*/
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_6',4.1206,'4.nf.a.1','');
 */
