@@ -1,7 +1,62 @@
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_9',4.1209,'4.nf.a.1','write equivalent fraction word problem.');
+*/
+
+var i_4_nf_a_1__9 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+
+        this.mType = '4.nf.a.1_9';
+        this.ns = new NameSampler();
+
+        this.a = 0;
+        this.b = 0;
+
+        while (this.a == this.b)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+                this.b = Math.floor(Math.random()*9)+1;
+        }
+
+        fractionA = new Fraction(this.a,this.b,false);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is having a birthday and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wants to save ' + fractionA.getString() + ' of the cake for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' relatives who are coming later. What is another fraction that is equivalent?');
+        this.setAnswer('' + fractionA.getString(),0);
+},
+
+checkUserAnswer: function()
+{
+  	var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value
+        var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value
+
+	if (this.a == numerator && this.b == denominator)
+	{
+		return false;
+	}
+	
+	return this.parent();
+},
+
+showCorrectAnswer: function()
+{
+	var t = '';
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setText('' + ' Tip: 1/2 is equivalent to 2/4');
+               	this.mCorrectAnswerLabel.setVisibility(true);
+        }
+        this.hideAnswerInputs();
+        this.showUserAnswer();
+}
+	
+});
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_8',4.1208,'4.nf.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_8',4.1208,'4.nf.a.1','write equivalent fraction word problem.');
 */
 
 var i_4_nf_a_1__8 = new Class(
@@ -56,7 +111,7 @@ showCorrectAnswer: function()
 	
 });
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_7',4.1207,'4.nf.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_7',4.1207,'4.nf.a.1','write equivalent fraction');
 */
 
 var i_4_nf_a_1__7 = new Class(
