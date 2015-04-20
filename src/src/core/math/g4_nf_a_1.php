@@ -1,4 +1,60 @@
 
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_8',4.1208,'4.nf.a.1','');
+*/
+
+var i_4_nf_a_1__8 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+
+        this.mType = '4.nf.a.1_8';
+        this.ns = new NameSampler();
+
+        this.a = 0;
+        this.b = 0;
+
+        while (this.a == this.b)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+                this.b = Math.floor(Math.random()*9)+1;
+        }
+
+        fractionA = new Fraction(this.a,this.b,false);
+
+        this.setQuestion('' + this.ns.mNameOne + ' asked ' + this.ns.mNameTwo + ' for an equivalent fraction of ' + fractionA.getString() + '. What is a possible correct answer that ' + this.ns.mNameTwo + ' could have given?');
+        this.setAnswer('' + fractionA.getString(),0);
+},
+
+checkUserAnswer: function()
+{
+  	var numerator   = APPLICATION.mGame.mSheet.getItem().mNumeratorTextBox.mMesh.value
+        var denominator = APPLICATION.mGame.mSheet.getItem().mDenominatorTextBox.mMesh.value
+
+	if (this.a == numerator && this.b == denominator)
+	{
+		return false;
+	}
+	
+	return this.parent();
+},
+
+showCorrectAnswer: function()
+{
+	var t = '';
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setText('' + ' Tip: 1/2 is equivalent to 2/4');
+               	this.mCorrectAnswerLabel.setVisibility(true);
+        }
+        this.hideAnswerInputs();
+        this.showUserAnswer();
+}
+	
+});
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_7',4.1207,'4.nf.a.1','');
 */
