@@ -51,70 +51,9 @@ showCorrectAnswer: function()
         }
         this.hideAnswerInputs();
         this.showUserAnswer();
-},
+}
 	
-/*
-checkUserAnswer: function()
-{
-	correctAnswerFound = false;
-        for (i = 0; i <  this.mAnswerArray.length; i++)
-        {
-        	//ignorecase
-                if (this.mIgnoreCase == true)
-                {
-                	if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
-                        {
-                                correctAnswerFound = true;
-                 }
-                        }
-                        else
-                        {
-                                if (this.mUserAnswer == this.mAnswerArray[i])
-                                {
-                                        correctAnswerFound = true;
-                                }
-                        }
-                }
-                if (correctAnswerFound == false)
-                {
-                        this.mSheet.setTypeWrong(this.mType);
-                }
-                return correctAnswerFound;
-        },
-*/
-
 });
-
-/*
-        checkUserAnswer: function()
-        {
-                correctAnswerFound = false;
-                for (i = 0; i <  this.mAnswerArray.length; i++)
-                {
-                        //ignorecase
-                        if (this.mIgnoreCase == true)
-                        {
-                                if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
-                                {
-                                        correctAnswerFound = true;
-                                }
-                        }
-                        else
-                        {
-                                if (this.mUserAnswer == this.mAnswerArray[i])
-                                {
-                                        correctAnswerFound = true;
-                                }
-                        }
-                }
-                if (correctAnswerFound == false)
-                {
-                        this.mSheet.setTypeWrong(this.mType);
-                }
-                return correctAnswerFound;
-        },
-
-*/
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_6',4.1206,'4.nf.a.1','');
