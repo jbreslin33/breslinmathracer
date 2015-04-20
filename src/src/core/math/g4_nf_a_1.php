@@ -217,10 +217,10 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.ns = new NameSampler();
 
-        var a = 0;
-        var b = 0;
+        var a = 2;
+        var b = 1;
 
-        while (a == b)
+        while (a == b || a % b == 0)
         {
                 a = Math.floor(Math.random()*9)+1;
                 b = Math.floor(Math.random()*9)+1;
