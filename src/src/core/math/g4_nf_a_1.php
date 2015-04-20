@@ -91,8 +91,6 @@ checkUserAnswer: function()
 
 	if (this.a == numerator && this.b == denominator)
 	{
-		APPLICATION.log('n:' + numerator);
-		APPLICATION.log('d:' + denominator);
 		return false;
 	}
 	
@@ -135,7 +133,7 @@ initialize: function(sheet)
                 this.b = Math.floor(Math.random()*9)+1;
         }
 
-        fractionA = new Fraction(this.a,this.b,false);
+        fractionA = new Fraction(this.a,this.b,true);
 
         this.setQuestion('' + ' What is an equivalent fraction of ' + fractionA.getString() + '?');
         this.setAnswer('' + fractionA.getString(),0);
