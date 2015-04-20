@@ -1,3 +1,38 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_6',4.1206,'4.nf.a.1','');
+*/
+
+var i_4_nf_a_1__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,200,325,145,100,50,580,130);
+
+        this.mType = '4.nf.a.1_6';
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 0;
+
+        while (a == b)
+        {
+                a = Math.floor(Math.random()*9)+1;
+                b = Math.floor(Math.random()*9)+1;
+        }
+
+        fractionA = new Fraction(a,b,false);
+
+        var c = parseInt(a * 4);
+        var d = parseInt(b * 3);
+
+        fractionB = new Fraction(c,d,false);
+
+        this.setQuestion('' + this.ns.mNameOne + ' ran '  + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' and ' + this.ns.mNameTwo + ' ran '  + fractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. Did they run the same distance? Answer Yes or No.');
+        this.setAnswer('' + 'No',0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_6',4.1206,'4.nf.a.1','');
@@ -85,6 +120,7 @@ initialize: function(sheet)
 
         this.mType = '4.nf.a.1_4';
         this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
 
         var a = 0;
         var b = 0;
@@ -102,8 +138,8 @@ initialize: function(sheet)
 
         fractionB = new Fraction(c,d,false);
 
-        this.setQuestion('Compare ' + fractionB.getString() + ' and ' + fractionA.getString() + '. Write equal or not equal.');
-        this.setAnswer('not equal',0);
+	this.setQuestion('' + this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + fractionB.getString() + ' hours. ' + this.ns.mNameTwo + ' played '  + this.ns.mPlayedActivityOne + ' for ' + fractionA.getString() + ' hours. Did they play ' + this.ns.mPlayedActivityOne + ' for the same amount of time? Answer Yes or No.');
+       	this.setAnswer('' + 'No',0);
 }
 });
 
@@ -121,6 +157,7 @@ initialize: function(sheet)
 
         this.mType = '4.nf.a.1_3';
         this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
 
         var a = 0;
         var b = 0;
@@ -137,9 +174,9 @@ initialize: function(sheet)
         var d = parseInt(b * 2);
 
         fractionB = new Fraction(c,d,false);
-
-        this.setQuestion('Compare ' + fractionB.getString() + ' and ' + fractionA.getString() + '. Write equal or not equal.');
-        this.setAnswer('equal',0);
+	
+	this.setQuestion('' + this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + fractionB.getString() + ' hours. ' + this.ns.mNameTwo + ' played '  + this.ns.mPlayedActivityOne + ' for ' + fractionA.getString() + ' hours. Did they play ' + this.ns.mPlayedActivityOne + ' for the same amount of time? Answer Yes or No.');
+       	this.setAnswer('' + 'Yes',0);
 }
 });
 
