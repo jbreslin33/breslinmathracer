@@ -252,9 +252,18 @@ Extends: Item,
 
         showCorrectAnswer: function()
         {
+		var t = ''; 
 		if (this.mCorrectAnswerLabel)
 		{
-			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()); 
+			t = '' + 'CORRECT ANSWER: ' + this.getAnswer(); 
+
+			//tips
+			if (this.mTipArray.length > 0)
+			{
+				t = t + ' TIPS: ' + this.mTipArray[0]; 
+			}  
+			
+			this.mCorrectAnswerLabel.setText('' + t); 
 			this.mCorrectAnswerLabel.setVisibility(true);
 		}
 		this.hideAnswerInputs();

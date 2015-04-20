@@ -39,7 +39,19 @@ checkUserAnswer: function()
 	}
 	
 	return this.parent();
-}
+},
+
+showCorrectAnswer: function()
+{
+	var t = '';
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setText('' + ' Tip: 1/2 is equivalent to 2/4');
+               	this.mCorrectAnswerLabel.setVisibility(true);
+        }
+        this.hideAnswerInputs();
+        this.showUserAnswer();
+},
 	
 /*
 checkUserAnswer: function()
