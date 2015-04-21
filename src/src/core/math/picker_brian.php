@@ -524,6 +524,14 @@ if (id == '5.g.a.2_1')
         {
                 return new i_5_g_a_2__1(this.mSheet);
         }
+if (id == '5.g.a.2_2')
+        {
+                return new i_5_g_a_2__2(this.mSheet);
+        }
+if (id == '5.g.a.2_3')
+        {
+                return new i_5_g_a_2__3(this.mSheet);
+        }
 
 
 	return 0;	
