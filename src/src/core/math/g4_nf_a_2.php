@@ -1,5 +1,40 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.2_4',4.1304,'4.nf.a.2','');
+*/
+var i_4_nf_a_2__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+ 	this.parent(sheet,600,200,325,145,100,50,580,160);
+
+        this.mType = '4.nf.a.2_4';
+       	this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
+
+        while (b <= a || d <= c || parseFloat(a/b) <= parseFloat(c/d))
+        {
+                a = Math.floor(Math.random()*9+1);
+                b = Math.floor(Math.random()*8+2);
+                c = Math.floor(Math.random()*9+1);
+                d = Math.floor(Math.random()*8+2);
+        }
+
+        fractionA = new Fraction(a,b,false);
+        fractionB = new Fraction(c,d,false);
+
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are on the same ' + this.ns.mPlayedActivityOne + ' team. ' + this.ns.mNameOne + ' plays ' + fractionA.getString() + ' of the game and ' + this.ns.mNameTwo + ' plays ' + fractionB.getString() + ' of the game. Who plays the most?');
+        this.setAnswer('' + this.ns.mNameOne,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.2_3',4.1303,'4.nf.a.2','x2');
 */
 var i_4_nf_a_2__3 = new Class(

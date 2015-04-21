@@ -284,7 +284,7 @@ var i_4_nf_a_1__4 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-        this.parent(sheet,600,200,325,145,100,50,580,130);
+        this.parent(sheet,600,200,325,145,100,50,580,160);
 
         this.mType = '4.nf.a.1_4';
         this.mChopWhiteSpace = false;
