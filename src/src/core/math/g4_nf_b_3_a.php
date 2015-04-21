@@ -18,9 +18,9 @@ initialize: function(sheet)
 
         var n = parseInt(a + b - c);
 
-        var ad = new Fraction(a,d);
-        var bd = new Fraction(b,d);
-        var cd = new Fraction(c,d);
+        var ad = new Fraction(a,d,false);
+        var bd = new Fraction(b,d,false);
+        var cd = new Fraction(c,d,false);
         var answer = new Fraction(n,d);
 
         this.setAnswer('' + answer.getString(),0);
@@ -47,9 +47,9 @@ initialize: function(sheet)
 
         var n = parseInt(a - b + c);
 
-        var ad = new Fraction(a,d);
-        var bd = new Fraction(b,d);
-        var cd = new Fraction(c,d);
+        var ad = new Fraction(a,d,false);
+        var bd = new Fraction(b,d,false);
+        var cd = new Fraction(c,d,false);
         var answer = new Fraction(n,d);
 
         this.setAnswer('' + answer.getString(),0);
@@ -76,9 +76,9 @@ initialize: function(sheet)
 
         var n = parseInt(a + b + c);
 
-        var ad = new Fraction(a,d);
-        var bd = new Fraction(b,d);
-        var cd = new Fraction(c,d);
+        var ad = new Fraction(a,d,false);
+        var bd = new Fraction(b,d,false);
+        var cd = new Fraction(c,d,false);
         var answer = new Fraction(n,d);
 
         this.setAnswer('' + answer.getString(),0);
