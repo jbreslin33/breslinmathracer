@@ -23,8 +23,8 @@ initialize: function(sheet)
 
         var n = parseInt(a + b);
 
-        var ac = new Fraction(a,c);
-        var bc = new Fraction(b,c);
+        var ac = new Fraction(a,c,false);
+        var bc = new Fraction(b,c,false);
         var answer = new Fraction(n,c);
 
         this.setAnswer('' + answer.getString(),0);
@@ -50,8 +50,8 @@ initialize: function(sheet)
 
         var n = parseInt(a - b);
 
-        var ac = new Fraction(a,c);
-        var bc = new Fraction(b,c);
+        var ac = new Fraction(a,c,false);
+        var bc = new Fraction(b,c,false);
         var answer = new Fraction(n,c);
 
         this.setAnswer('' + answer.getString(),0);
