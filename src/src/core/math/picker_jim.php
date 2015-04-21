@@ -1477,6 +1477,32 @@ getItem: function(id)
                 return new i_4_nf_a_1__14(this.mSheet);
         }
 
+	//4.nf	
+	if (id == '4.nf.a.2_2')
+        {
+                return new i_4_nf_a_2__2(this.mSheet);
+        }
+	if (id == '4.nf.a.2_3')
+        {
+                return new i_4_nf_a_2__3(this.mSheet);
+        }
+	if (id == '4.nf.a.2_4')
+        {
+                return new i_4_nf_a_2__4(this.mSheet);
+        }
+	if (id == '4.nf.a.2_5')
+        {
+                return new i_4_nf_a_2__5(this.mSheet);
+        }
+	if (id == '4.nf.a.2_6')
+        {
+                return new i_4_nf_a_2__6(this.mSheet);
+       	} 
+	if (id == '4.nf.a.2_7')
+        {
+                return new i_4_nf_a_2__7(this.mSheet);
+        }
+
 	//4.nf
   	if (id == '4.nf.b.3.a_4')
         {
