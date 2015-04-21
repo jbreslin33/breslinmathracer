@@ -1205,7 +1205,7 @@ var NameMachine = new Class(
 		}
 		if (word == 'centuries')
 		{
-			return 'centurie';	
+			return 'century';	
 		}
 		return word;
 	}, 
