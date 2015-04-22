@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_1',4.1601,'4.nf.b.3.d','word problems - add 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_1',4.1701,'4.nf.b.3.d','word problems - add 2 fractions with like denominators');
 */
 
 var i_4_nf_b_3_d__1 = new Class(
@@ -181,7 +181,7 @@ Extends: TextItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_2',4.1602,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_2',4.1702,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators');
 */
 
 var i_4_nf_b_3_d__2 = new Class(
