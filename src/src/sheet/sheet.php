@@ -163,7 +163,7 @@ var Sheet = new Class(
 		}
 
                 var itemIDArray = APPLICATION.mRawData.split(":");
-		APPLICATION.log('id:' + itemIDArray[0]);
+		//APPLICATION.log('id:' + itemIDArray[0]);
 
 		var callNormal = false; 
 		if (APPLICATION.mRef_id == 'normal')
