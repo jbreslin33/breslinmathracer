@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
 
         this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
-        this.mType = '4.nf.b.3_b_3';
+        this.mType = '4.nf.b.3.b_3';
 
         var a = 0;
         var b = 0;
@@ -45,7 +45,7 @@ initialize: function(sheet)
 {
 
         this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
-        this.mType = '4.nf.b.3_b_2';
+        this.mType = '4.nf.b.3.b_2';
 
         var a = 0;
         var b = 0;
@@ -80,7 +80,7 @@ initialize: function(sheet)
 {
 
         this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
-	this.mType = '4.nf.b.3_b_1';
+	this.mType = '4.nf.b.3.b_1';
 
 	var a = 0;
 	var b = 0;
