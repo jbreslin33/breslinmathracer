@@ -11,7 +11,7 @@ initialize: function(sheet)
 {
         this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-        this.mType = '4.nf.b.3_c_6';
+        this.mType = '4.nf.b.3.c_6';
 
         var a = 0;
         var b = 0;
@@ -45,7 +45,7 @@ initialize: function(sheet)
 {
         this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-        this.mType = '4.nf.b.3_c_5';
+        this.mType = '4.nf.b.3.c_5';
       	this.ns = new NameSampler();
 
         var a = 0;
@@ -80,7 +80,7 @@ initialize: function(sheet)
 {
         this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-        this.mType = '4.nf.b.3_c_4';
+        this.mType = '4.nf.b.3.c_4';
         this.ns = new NameSampler();
 
         var a = 0;
@@ -115,7 +115,7 @@ initialize: function(sheet)
 {
         this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-        this.mType = '4.nf.b.3_c_3';
+        this.mType = '4.nf.b.3.c_3';
 
         var a = 0;
         var b = 0;
@@ -149,7 +149,7 @@ initialize: function(sheet)
 {
         this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-        this.mType = '4.nf.b.3_c_2';
+        this.mType = '4.nf.b.3.c_2';
 
         var a = 0;
         var b = 0;
@@ -183,7 +183,7 @@ initialize: function(sheet)
 {
   	this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
-        this.mType = '4.nf.b.3_c_1';
+        this.mType = '4.nf.b.3.c_1';
 
         var a = 0;
         var b = 0;
