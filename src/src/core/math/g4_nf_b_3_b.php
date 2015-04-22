@@ -64,7 +64,7 @@ initialize: function(sheet)
         var fractionC = new Fraction(c,e);
         var fractionD = new Fraction(d,e,false);
 
-        this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() + ' ? = ' + fractionD.getString());
+        this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() + ' + ? = ' + fractionD.getString());
         this.setAnswer('' + fractionC.getString(),0);
 }
 });
