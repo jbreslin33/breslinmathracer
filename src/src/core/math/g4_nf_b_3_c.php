@@ -4,31 +4,31 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_nf_b_3_c__1 = new Class(
 {
-Extends: TextItemFraction,
+Extends: TextItemMixedNumber,
+
 initialize: function(sheet)
 {
-        this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+  	this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
         this.mType = '4.nf.b.3_c_1';
 
         var a = 0;
         var b = 0;
-        var c = 0;
-        var d = 0;
-        var e = 0;
+        var d = 1;
 
-        a = Math.floor(Math.random()*4)+1;
-        b = Math.floor(Math.random()*4)+1;
-        c = Math.floor(Math.random()*4)+1;
-        d = parseInt(a + b + c);
-        e = Math.floor(Math.random()*10)+5;
+	while (b < d) 
+	{
+        	a = Math.floor(Math.random()*10)+10;
+        	b = Math.floor(Math.random()*10)+10;
+        	d = Math.floor(Math.random()*3)+2;
+	}
 
-        var fractionA = new Fraction(a,e,false);
-        var fractionB = new Fraction(c,e);
-        var fractionC = new Fraction(b,e,false);
-        var fractionD = new Fraction(d,e,false);
+        var fractionA = new Fraction(a,d,false);
+        var fractionB = new Fraction(b,d,false);
+        var fractionC = fractionA.add(fractionB);
 
-        this.setQuestion('' + fractionA.getString() + ' + ? ' + fractionC.getString() + ' = ' + fractionD.getString());
-        this.setAnswer('' + fractionB.getString(),0);
+        this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() + ' = ');
+        this.setAnswer('' + fractionC.getString(),0);
 }
 });
 
