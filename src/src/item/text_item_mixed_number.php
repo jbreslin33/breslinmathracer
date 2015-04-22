@@ -16,7 +16,7 @@ Extends: Item,
 		}
 		else
 		{
-			this.mAutoReduce = false;
+		//	this.mAutoReduce = false;
 		}
 
 		if (qw == '')
@@ -134,7 +134,7 @@ Extends: Item,
 							numerator = fraction.mNumerator;	
 							denominator = fraction.mDenominator;	
 						}
-						answer = fraction.getMixedNumber(); 
+						answer = fraction.getString(); 
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer); 
 					}
 				}
@@ -167,7 +167,7 @@ Extends: Item,
                                                         numerator = fraction.mNumerator;      
                                                         denominator = fraction.mDenominator;     
                                                 }
-                                                answer = fraction.getMixedNumber();                 
+                                                answer = fraction.getString();                 
                                                 APPLICATION.mGame.mSheet.getItem().setUserAnswer('' + answer);
 					}
 				}
