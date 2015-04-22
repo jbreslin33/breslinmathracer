@@ -410,7 +410,6 @@ var NameMachine = new Class(
 		this.mUsedLeftElementArray = new Array();
 		this.mLeftArray.push("left");	
 		this.mLeftArray.push("remaining");	
-		this.mLeftArray.push("still");	
 	
 		//drinks	
 		this.mDrinkArray = new Array();
