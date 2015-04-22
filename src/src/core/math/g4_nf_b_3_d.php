@@ -4,46 +4,53 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_nf_b_3_d__1 = new Class(
 {
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+      	this.mType = '4.nf.b.3.d_1';
+        this.ns = new NameSampler();
+
+ 	var a = Math.floor((Math.random()*5)+1);
+        var b = Math.floor((Math.random()*5)+1);
+        var c = Math.floor((Math.random()*10)+10);
+
+        var n = parseInt(a + b);
+
+        var ac = new Fraction(a,c,false);
+        var bc = new Fraction(b,c,false);
+        var answer = new Fraction(n,c);
+
+	this.setQuestion('' + this.ns.mNameOne + ' filled a bucket with ' + ac.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. Later ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' poured ' + bc.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkTwo + ' into the bucket. How many ' + this.ns.mLiquidVolumeOne + ' of liquid are in the bucket now?');
+	this.setAnswer('' + answer.getString(),0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_2',4.1702,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators');
+*/
+
+var i_4_nf_b_3_d__2 = new Class(
+{
 Extends: TextItem,
-   initialize: function(sheet)
-   {
-      this.parent(sheet);
-      this.mType = '4.nf.b.3.d_1';
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+	this.mType = '4.nf.b.3.d_2';
+        this.ns = new NameSampler();
 
 
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varN = 0;
+	this.setQuestion(question);
+      	this.setAnswer('' + answer,0);
 
+      	this.mQuestionLabel.setSize(220,50);
+      	this.mQuestionLabel.setPosition(255,145);
+}
+});
 
-		var start = 0;
-		var end = 0;
-		var rand = 0;
-
-		var question;
-		var answer;
-		var showAnswer;
-		
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			max = Math.floor(varB/2);
-			varA = 1 + Math.floor((Math.random()*(max-1)));
-
-			varC = 1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA + varC;
-			answer = '' + answer + '/' + varD;
-
-			showAnswer = varA + '/' +  varB + ' + ' + varC + '/' +  varD + ' = ' + answer;
-
-			rand = Math.floor(Math.random()*4);
-
+//addition
+/*
 			if(rand == 0)
 			{			
 			question = 'Tammy filled a bucket with ' + varA + '/' +  varB + ' of a gallon of water. Later, she poured ' + varC + '/' +  varD + ' of a gallon of water into the bucket. How many gallons of water are in the bucket?';
@@ -62,154 +69,10 @@ Extends: TextItem,
 			{			
 			question = 'Of the pies that Mom and Pops Pie Shop sold last month, ' + varA + '/' +  varB + ' were blueberry pies and ' + varC + '/' +  varD + ' were blackberry pies. What fraction of the pies sold were either blueberry or blackberry?';
 			}
-
-		
-
-			this.setQuestion(question);
-      this.setAnswer('' + answer,0);
-
-      this.mQuestionLabel.setSize(220,50);
-      this.mQuestionLabel.setPosition(255,145);
-   },
-
-
-
-/* overrode this function to allow user to enter fraction, improper fraction, decimal, mixed number, whole number - as long as it is correct */
-
-	checkUserAnswer: function()
-	{
-
-			var str = '';
-			var res = '';
-			var whole;
-			var frac;
-			var res2;
-			var decimal;
-      var correctAnswer;
-      var userAnswer;
-
-			//console.log('' + this.mUserAnswer);
-
-			str = '' + this.mUserAnswer;
-			res = str.split(" ");
-
-      // fraction or whole - no mixed number
-			if (res.length == 1)
-			{
-				str = res[0].split("/");
-
-        // fraction - else it's a whole and we just leave it as is
-				if(str.length == 2)
-				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
-
-        // either way set this to zero so we don't get error
-				res[1] = '0/1';
-
-				
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			userAnswer = (whole + decimal) * 1.0;
-			
-			//console.log(userAnswer);
-
-
-
-
-
-
-			//str = this.mQuiz.getQuestion().mAnswerArray[0];
-      str = this.mAnswerArray[0];
-      res = str.split(" ");
-
-      // fraction or whole - no mixed number
-			if (res.length == 1)
-			{
-				str = res[0].split("/");
-
-        // fraction - else it's a whole and we just leave it as is
-				if(str.length == 2)
-				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
-
-        // either way set this to zero so we don't get error
-				res[1] = '0/1';
-
-				
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			correctAnswer = (whole + decimal) * 1.0;
-
-
-    //console.log(correctAnswer);
-
-		correctAnswerFound = false;
-		
-		if (userAnswer == correctAnswer)
-		{
-			correctAnswerFound = true;	
-		} 
-	
-		if (correctAnswerFound == false)
-		{
-			this.mSheet.setTypeWrong(this.mType);
-		}
-		return correctAnswerFound;
-	}
-
-
-});
-
-
-
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_2',4.1702,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators');
 */
 
-var i_4_nf_b_3_d__2 = new Class(
-{
-Extends: TextItem,
-   initialize: function(sheet)
-   {
-      this.parent(sheet);
-      this.mType = '4.nf.b.3.d_2';
-
-
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
-
-			// get top number
-			varA = 2 + Math.floor(Math.random()*(varB-2));
-			
-			varC = 1 + Math.floor(Math.random()*(varA-1));
-			//1 + Math.floor((Math.random()*max));
-			varD = varB;
-
-			answer = varA - varC;
-			answer = '' + answer + '/' + varD;
-
-			showAnswer = varA + '/' +  varB + ' - ' + varC + '/' +  varD + ' = ' + answer;
-				
-			rand = Math.floor(Math.random()*4);
-
+//subtraction
+/*
 			if(rand == 0)
 			{			
 			question = 'Bobby filled a bucket with ' + varA + '/' +  varB + ' of a gallon of water. Later, he poured out ' + varC + '/' +  varD + ' of a gallon of the water. How much water is in the bucket?';
@@ -227,116 +90,7 @@ Extends: TextItem,
 			{			
 			question = 'Judy bought ' + varA + '/' +  varB + ' pounds of grapes. She gave ' + varC + '/' +  varD + ' of a pound to her sister. How many pounds of grapes did she have left?';
 			}
-
+*/
 
 		
-
-			this.setQuestion(question);
-      this.setAnswer('' + answer,0);
-
-      this.mQuestionLabel.setSize(220,50);
-      this.mQuestionLabel.setPosition(255,145);
-   },
-
-
-
-/* overrode this function to allow user to enter fraction, improper fraction, decimal, mixed number, whole number - as long as it is correct */
-
-	checkUserAnswer: function()
-	{
-
-			var str = '';
-			var res = '';
-			var whole;
-			var frac;
-			var res2;
-			var decimal;
-      var correctAnswer;
-      var userAnswer;
-
-			//console.log('' + this.mUserAnswer);
-
-			str = '' + this.mUserAnswer;
-			res = str.split(" ");
-
-      // fraction or whole - no mixed number
-			if (res.length == 1)
-			{
-				str = res[0].split("/");
-
-        // fraction - else it's a whole and we just leave it as is
-				if(str.length == 2)
-				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
-
-        // either way set this to zero so we don't get error
-				res[1] = '0/1';
-
-				
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			userAnswer = (whole + decimal) * 1.0;
-			
-			//console.log(userAnswer);
-
-
-
-			//str = this.mQuiz.getQuestion().mAnswerArray[0];
-      str = this.mAnswerArray[0];
-      res = str.split(" ");
-
-      // fraction or whole - no mixed number
-			if (res.length == 1)
-			{
-				str = res[0].split("/");
-
-        // fraction - else it's a whole and we just leave it as is
-				if(str.length == 2)
-				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
-
-        // either way set this to zero so we don't get error
-				res[1] = '0/1';
-
-				
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			correctAnswer = (whole + decimal) * 1.0;
-
-
-    //console.log(correctAnswer);
-
-		correctAnswerFound = false;
 		
-		if (userAnswer == correctAnswer)
-		{
-			correctAnswerFound = true;	
-		} 
-	
-		if (correctAnswerFound == false)
-		{
-			this.mSheet.setTypeWrong(this.mType);
-		}
-		return correctAnswerFound;
-	}
-
-
-});
-
-//add
