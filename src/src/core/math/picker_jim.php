@@ -1516,6 +1516,10 @@ getItem: function(id)
         {
                 return new i_4_nf_b_3_a__6(this.mSheet);
         }
+  	if (id == '4.nf.b.3.a_7')
+        {
+                return new i_4_nf_b_3_a__7(this.mSheet);
+        }
 
 
 	//4.md.a.1
