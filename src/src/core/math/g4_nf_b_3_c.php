@@ -16,7 +16,7 @@ initialize: function(sheet)
         var b = 0;
         var d = 1;
 
-	while (b < d) 
+	while (b < d || a % d == 0 || b % d == 0) 
 	{
         	a = Math.floor(Math.random()*10)+10;
         	b = Math.floor(Math.random()*10)+10;
@@ -27,7 +27,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(b,d,false);
         var fractionC = fractionA.add(fractionB);
 
-        this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() + ' = ');
+        this.setQuestion('' + fractionA.getMixedNumber() + ' + ' + fractionB.getMixedNumber() + ' = ');
         this.setAnswer('' + fractionC.getString(),0);
 }
 });
