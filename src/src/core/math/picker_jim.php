@@ -1538,6 +1538,16 @@ getItem: function(id)
         {
                 return new i_4_nf_b_3_b__5(this.mSheet);
         }
+	
+	//4.nf.b.3.c	
+	if (id == '4.nf.b.3.c_3')
+        {
+                return new i_4_nf_b_3_c__3(this.mSheet);
+        }
+	if (id == '4.nf.b.3.c_4')
+        {
+                return new i_4_nf_b_3_c__4(this.mSheet);
+        }
 
 
 	//4.md.a.1
