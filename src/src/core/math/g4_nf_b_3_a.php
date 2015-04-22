@@ -11,9 +11,16 @@ initialize: function(sheet)
         this.mType = '4.nf.b.3.a_7';
         this.ns = new NameSampler();
 
-        var a = Math.floor((Math.random()*15)+10);
-        var b = Math.floor((Math.random()*5)+5);
-        var c = Math.floor((Math.random()*10)+20);
+	var a = 2;
+	var b = 2;
+	var c = 1;
+
+	while (a % c == 0 || b % c == 0 || parseInt(a + b) > c)
+	{ 
+        	a = Math.floor((Math.random()*15)+10);
+        	b = Math.floor((Math.random()*5)+5);
+        	c = Math.floor((Math.random()*10)+20);
+	}
 
         var n = parseInt(a - b);
 
@@ -22,7 +29,7 @@ initialize: function(sheet)
         var answer = new Fraction(n,c);
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + 'When ' + this.ns.mNameOne + ' arrived at the party there was ' + ac.getString() + ' of the birthday cake ' + this.ns.mLeft + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then ate ' + bc.getString() + ' of the cake. How much of the cake is ' + this.ns.mLeft + ' now?');
+        this.setQuestion('' + 'It is the birthday of ' +  this.ns.mNameOne + '. ' + this.ns.mNameTwo + ' ate ' + ac.getString() + ' of the birthday cake and Angry Baby ate ' + bc.getString() + ' of the birthday cake. This makes Angry Baby so mad! How much more of the birthday cake did ' + this.ns.mNameTwo + ' eat than Angry Baby?');
 }
 });
 
