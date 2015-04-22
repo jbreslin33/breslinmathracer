@@ -4,50 +4,28 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_nf_b_3_b__1 = new Class(
 {
-Extends: TextItem,
-   initialize: function(sheet)
-   {
-      this.parent(sheet);
-      this.mType = '4.nf.b.3_b_1';
-       	
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varE = 0;
-		var varN = 0;
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
 
+        this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
+	this.mType = '4.nf.b.3_b_1';
 
-		var start = 0;
-		var end = 0;
-		var rand = 0;
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
 
-		var question;
-		var answer;
-		 	
+	a = Math.floor(Math.random()*4)+1;
+	b = Math.floor(Math.random()*4)+1;
+	c = parseInt(a + b);
+	d = Math.floor(Math.random()*10)+5;
 
-			// get bottom number
-			varB = 6 + Math.floor(Math.random()*22);
+	var fractionA = new Fraction(a,d,false);
+	var fractionB = new Fraction(b,d);
+	var fractionC = new Fraction(c,d,false);
 
-			// get top number
-			max = Math.floor(varB/3);
-			varA = 1 + Math.floor((Math.random()*max));
-
-			varC = 1 + Math.floor((Math.random()*max));
-
-			varE = 1 + Math.floor((Math.random()*max));
-
-			varD = varB;
-
-			answer = varA + varC + varE;
-				
-			question = '' + varA + '/' +  varB + ' + ' + '' + varC + '/' +  varD + ' + ' + '' + '?' + '/' +  varD + ' = ' + answer + '/' + varD;
-			
-
-			this.setQuestion(question);
-      this.setAnswer('' + varE,0);
-
-      this.mQuestionLabel.setSize(220,50);
-      this.mQuestionLabel.setPosition(255,145);
-   }
+	this.setQuestion('' + fractionA.getString() + ' + ? = ' + fractionC.getString()); 
+      	this.setAnswer('' + fractionB.getString(),0);
+}
 });
