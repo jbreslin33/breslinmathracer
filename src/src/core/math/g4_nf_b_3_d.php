@@ -33,19 +33,25 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_nf_b_3_d__2 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
 initialize: function(sheet)
 {
-	this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
-	this.mType = '4.nf.b.3.d_2';
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.3.d_2';
         this.ns = new NameSampler();
 
+        var a = Math.floor((Math.random()*5)+1);
+        var b = Math.floor((Math.random()*5)+1);
+        var c = Math.floor((Math.random()*10)+10);
 
-	this.setQuestion(question);
-      	this.setAnswer('' + answer,0);
+        var n = parseInt(a + b);
 
-      	this.mQuestionLabel.setSize(220,50);
-      	this.mQuestionLabel.setPosition(255,145);
+        var ac = new Fraction(a,c,false);
+        var bc = new Fraction(b,c,false);
+        var answer = new Fraction(n,c);
+
+        this.setQuestion('' + this.ns.mNameOne + ' filled a bucket with ' + ac.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. Later ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' poured ' + bc.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkTwo + ' into the bucket. How many ' + this.ns.mLiquidVolumeOne + ' of liquid are in the bucket now?');
+        this.setAnswer('' + answer.getString(),0);
 }
 });
 
