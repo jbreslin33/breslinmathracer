@@ -487,18 +487,23 @@ initialize: function(sheet)
 
     	this.ns = new NameSampler();
 
+	//kg
     	var a = Math.floor(Math.random()*3)+1;
     	var b = Math.floor(Math.random()*9)+1;
-    	var c = parseFloat(a + b/10);
-    	var d = (Math.floor(Math.random()*9)+1)*100;
-   
-    	var answer = parseFloat(d/1000 + c);
-	var decimal = new Decimal(answer);
+	var c = new Decimal(a + '.' + b);
 
-	this.setQuestion('' + this.ns.mNameOne + ' is making a fruit shake. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + c + ' kilograms of pears and ' + d + ' grams of grapes. How many kilograms of fruit does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use in all?');
+	//g
+    	var d = (Math.floor(Math.random()*9)+1);
+	var e = d * 100;
+	var f = new Decimal('0.' + d);
 
-        this.setAnswer('' + decimal.getString(),0);
-        this.setAnswer('' + decimal.getString() + ' ' + 'kilograms',1);
+	var g = c.add(f);
+
+	this.setQuestion('' + this.ns.mNameOne + ' is making a fruit shake. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + c.getString() + ' kilograms of pears and ' + e + ' grams of grapes. How many kilograms of fruit does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use in all?');
+
+        this.setAnswer('' + g.getString(),0);
+        this.setAnswer('' + g.getString() + ' ' + 'kilograms',1);
+        this.setAnswer('' + g.getString() + ' ' + 'kg',2);
 }
 });
 
