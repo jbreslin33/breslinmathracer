@@ -26,7 +26,7 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('' + this.ns.mNameOne + ' works ' + fractionA.getMixedNumber() + ' hours per week. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + fractionB.mNumerator + ' dollars an hour. How many dollars will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' make in a week?');
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
@@ -57,7 +57,7 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('' + this.ns.mNameOne + ' is making a dessert. The recipe calls for ' + fractionA.getMixedNumber() + ' tablespoons of sugar per serving. How many tablespoons would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' need for ' + fractionB.mNumerator + ' servings?');
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
@@ -93,7 +93,7 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('Find the Product: ' + fractionA.getMixedNumber() + '(' + fractionB.getString() + ' + ' + fractionC.getString() + ')');
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
@@ -128,7 +128,7 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('Find the Product: ' + fractionA.getString() + ' &times ' + fractionB.getString() + ' &times ' + fractionC.mNumerator);
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
@@ -165,7 +165,7 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('Find the Product: ' + fractionA.getString() + ' &times ' + fractionC.mNumerator + ' &times ' + fractionB.getMixedNumber());
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
@@ -198,7 +198,7 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('Find the Product: ' + fractionA.getMixedNumber() + ' &times ' + fractionB.getMixedNumber());
-                this.setAnswer('' + answer.getMixedNumber(),0);
+                this.setAnswer('' + answer.getString(),0);
         }
 });
 
@@ -237,9 +237,9 @@ Extends: TextItemMixedNumber,
                 
 		this.setQuestion('Every weekday ' + this.ns.mNameOne + ' runs ' + fractionA.getMixedNumber() + ' laps around ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' block which is ' + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' long. How many ' + this.ns.mDistanceIncrementLarge + ' does ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run per week?');
 
-                this.setAnswer('' + answer.getMixedNumber(),0);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementLarge,1);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementLarge),2);
+                this.setAnswer('' + answer.getString(),0);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mDistanceIncrementLarge,1);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementLarge),2);
         }
 });
 
@@ -324,9 +324,9 @@ Extends: TextItemMixedNumber,
 				
 		var answer = fractionA.multiply(fractionB);
 
-                this.setAnswer('' + answer.getMixedNumber(),0);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall,1);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementSmall),2);
+                this.setAnswer('' + answer.getString(),0);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mDistanceIncrementSmall,1);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementSmall),2);
         }
 });
 
@@ -362,9 +362,9 @@ Extends: TextItemMixedNumber,
 		var tempFraction = fractionA.multiply(fractionB);
 		var answer = tempFraction.multiply(fractionC);
 
-                this.setAnswer('' + answer.getMixedNumber(),0);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium,1);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
+                this.setAnswer('' + answer.getString(),0);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mDistanceIncrementMedium,1);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
         }
 });
 
@@ -396,13 +396,13 @@ Extends: TextItemMixedNumber,
                 }
 
                 this.setQuestion('' + this.ns.mNameOne + ' is playing in a rectangular sandbox that has a length of ' + fractionA.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' and a width of ' + fractionB.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + '. What is the area in ' + this.ns.mDistanceIncrementMedium + ' squared?');
-                this.setAnswer('' + answer.getMixedNumber(),0);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium,1);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' squared',3);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium) + ' squared',4);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mDistanceIncrementMedium + ' sq',5);
-                this.setAnswer('' + answer.getMixedNumber() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium) + ' sq',6);
+                this.setAnswer('' + answer.getString(),0);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mDistanceIncrementMedium,1);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium),2);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' squared',3);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium) + ' squared',4);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mDistanceIncrementMedium + ' sq',5);
+                this.setAnswer('' + answer.getString() + ' ' + this.ns.mNameMachine.getDistanceAbbreviation(this.ns.mDistanceIncrementMedium) + ' sq',6);
         }
 });
 
