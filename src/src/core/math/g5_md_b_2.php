@@ -69,7 +69,7 @@ var answer = fractionB.subtract(fractionA);
 	//var answer = fractionA;
 	answer.reduce();
 
-  this.setAnswer('' + answer.getMixedNumber(),0);
+  this.setAnswer('' + answer.getString(),0);
 
  this.setQuestion('' + this.ns.mNameOne + ' has 7 patches of fabric which are shown in the line plot below. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to make a patchwork sweater, which requires ' + fractionB.getMixedNumber() + ' yards of fabric. How much more fabric will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need?');
 
@@ -162,7 +162,7 @@ var answer = fractionA.subtract(fractionB);
 	//var answer = fractionA;
 	answer.reduce();
 
-  this.setAnswer('' + answer.getMixedNumber(),0);
+  this.setAnswer('' + answer.getString(),0);
 
  this.setQuestion('' + this.ns.mNameOne + ' has 7 patches of fabric which are shown in the line plot below. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to make a patchwork sweater, which requires ' + fractionB.getMixedNumber() + ' yards of fabric. How much fabric will be left over?');
 
@@ -252,7 +252,7 @@ var fractionA = new Fraction(high,8);
 	var answer = fractionA;
 	answer.reduce();
 
-  this.setAnswer('' + answer.getMixedNumber(),0);
+  this.setAnswer('' + answer.getString(),0);
 
  this.setQuestion('Twelve members of the track team ran the distances (in miles) shown in the line plot below. What is the longest distance that any one member ran?');
 
@@ -503,7 +503,7 @@ var fractionA = new Fraction(sum,8);
 	var answer = fractionA;
 	answer.reduce();
 
-  this.setAnswer('' + answer.getMixedNumber(),0);
+  this.setAnswer('' + answer.getString(),0);
 
 //create line plot
 var chart = new LineChartThree (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
