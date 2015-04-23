@@ -1,16 +1,16 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_9',4.1209,'4.nf.a.1','write equivalent fraction word problem.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_10',4.1210,'4.nf.a.1','write equivalent fraction word problem.');
 */
 
-var i_4_nf_a_1__9 = new Class(
+var i_4_nf_a_1__10 = new Class(
 {
 Extends: TextItemFraction,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
 
-        this.mType = '4.nf.a.1_9';
+        this.mType = '4.nf.a.1_10';
         this.ns = new NameSampler();
 
         this.a = 0;
@@ -56,17 +56,17 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_8',4.1208,'4.nf.a.1','write equivalent fraction word problem.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_9',4.1209,'4.nf.a.1','write equivalent fraction word problem.');
 */
 
-var i_4_nf_a_1__8 = new Class(
+var i_4_nf_a_1__9 = new Class(
 {
 Extends: TextItemFraction,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
 
-        this.mType = '4.nf.a.1_8';
+        this.mType = '4.nf.a.1_9';
         this.ns = new NameSampler();
 
         this.a = 0;
@@ -111,17 +111,17 @@ showCorrectAnswer: function()
 	
 });
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_7',4.1207,'4.nf.a.1','write equivalent fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_8',4.1208,'4.nf.a.1','write equivalent fraction');
 */
 
-var i_4_nf_a_1__7 = new Class(
+var i_4_nf_a_1__8 = new Class(
 {
 Extends: TextItemFraction,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
 
-        this.mType = '4.nf.a.1_7';
+        this.mType = '4.nf.a.1_8';
         this.ns = new NameSampler();
 
         this.a = 0;
@@ -167,17 +167,17 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_6',4.1206,'4.nf.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_7',4.1207,'4.nf.a.1','');
 */
 
-var i_4_nf_a_1__6 = new Class(
+var i_4_nf_a_1__7 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,600,200,325,145,100,50,580,130);
 
-        this.mType = '4.nf.a.1_6';
+        this.mType = '4.nf.a.1_7';
         this.mChopWhiteSpace = false;
         this.ns = new NameSampler();
 
@@ -192,13 +192,13 @@ initialize: function(sheet)
 
         fractionA = new Fraction(a,b,false);
 
-        var c = parseInt(a * 4);
+        var c = parseInt(a * 3);
         var d = parseInt(b * 3);
 
         fractionB = new Fraction(c,d,false);
 
         this.setQuestion('' + this.ns.mNameOne + ' ran '  + fractionB.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' and ' + this.ns.mNameTwo + ' ran '  + fractionA.getString() + ' ' + this.ns.mDistanceIncrementLarge + '. Did they run the same distance? Answer Yes or No.');
-        this.setAnswer('' + 'No',0);
+        this.setAnswer('' + 'Yes',0);
 }
 });
 
