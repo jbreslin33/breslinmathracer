@@ -584,7 +584,7 @@ while (sum != 72 && sum != 64 && sum != 32 && sum != 40 && sum != 48 && sum != 5
   }
 }
 
-// Joe has 10 bags of peanuts. The line plot below shows the weight of each bag in pounds. He wants to redistribute the almonds so that each bag weighs the same. What will be the weight of each bag?
+// Joe has 10 bags of peanuts. The line plot below shows the weight of each bag in pounds. He wants to redistribute the almonds so that each bag weighs the same. What will be the weight of each bag in pounds?
 
  this.setQuestion('' + this.ns.mNameOne + ' has 10 bags of peanuts. The line plot below shows the weight of each bag in pounds. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to redistribute the peanuts so that each bag weighs the same. What will be the weight of each bag?');
 
