@@ -144,6 +144,7 @@ Extends: ThreeButtonItem,
    {
       this.parent(sheet);
       this.mType = '4.nbt.b.6_3';
+	this.mChopWhiteSpace = false;
        	
 		  var varA = 0;
 		  var varB = 0;
