@@ -4,10 +4,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_nf_b_4_c__1 = new Class(
 {
-Extends: TextItem,
+Extends: TextItemFraction,
    initialize: function(sheet)
    {
-      this.parent(sheet);
+      this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
       this.mType = '4.nf.b.4.c_1';
 
 
@@ -119,6 +119,7 @@ Extends: TextItem,
 
 			// this is what we send in to question class as the anwer in raw form
 			answer = '' + top + '/' + varB;
+			var fractionAnswer = new Fraction(top,varB);
 
 			// show how we got to final answer
 			showAnswer = '' + equation + answer1 + answer2 + answer3;
@@ -173,139 +174,11 @@ Extends: TextItem,
 	//console.log(test.getString());
 
 			this.setQuestion(question);
-      this.setAnswer('' + answer,0);
+      this.setAnswer('' + fractionAnswer.getString(),0);
 
       this.mQuestionLabel.setSize(220,50);
       this.mQuestionLabel.setPosition(175,105);
 
       this.mShowAnswer = showAnswer;
-   },
-
-
-
-
-/* overrode this function to allow user to enter fraction, improper fraction, decimal, mixed number, whole number - as long as it is correct */
-
-	checkUserAnswer: function()
-	{
-
-			var str = '';
-			var res = '';
-			var whole;
-			var frac;
-			var res2;
-			var decimal;
-      var correctAnswer;
-      var userAnswer;
-
-			//console.log('' + this.mUserAnswer);
-
-			str = '' + this.mUserAnswer;
-			res = str.split(" ");
-
-      // fraction or whole - no mixed number
-			if (res.length == 1)
-			{
-				str = res[0].split("/");
-
-        // fraction - else it's a whole and we just leave it as is
-				if(str.length == 2)
-				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
-
-        // either way set this to zero so we don't get error
-				res[1] = '0/1';
-
-				
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			userAnswer = (whole + decimal) * 1.0;
-			
-			//console.log(userAnswer);
-
-			//str = this.mQuiz.getQuestion().mAnswerArray[0];
-      str = this.mAnswerArray[0];
-      res = str.split(" ");
-
-      // fraction or whole - no mixed number
-			if (res.length == 1)
-			{
-				str = res[0].split("/");
-
-        // fraction - else it's a whole and we just leave it as is
-				if(str.length == 2)
-				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
-
-        // either way set this to zero so we don't get error
-				res[1] = '0/1';
-
-				
-			}
-			whole = res[0] * 1.0;
-			frac = res[1];
-			res2 = frac.split("/");
-
-			if (res2.length == 1)
-			{
-				res2[1] = '1';
-			}
-
-			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
-			correctAnswer = (whole + decimal) * 1.0;
-
-		correctAnswerFound = false;
-		
-		if (userAnswer == correctAnswer)
-		{
-			correctAnswerFound = true;	
-		} 
-	
-		if (correctAnswerFound == false)
-		{
-			this.mSheet.setTypeWrong(this.mType);
-		}
-		return correctAnswerFound;
-	},
-
-
-
- showCorrectAnswer: function()
-        {
-		if (this.mCorrectAnswerLabel)
-		{
-			var answer = '';
-			for (i=0; i < this.mAnswerArray.length; i++)	
-			{
-				if (i == 0)
-				{
-					answer = answer + '' + this.getAnswer();		
-				}
-				else
-				{
-					answer = answer + ' OR ' + this.getAnswer(i);		
-				}
-			}
-			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' +  this.mShowAnswer); 
-			this.mCorrectAnswerLabel.setVisibility(true);
-
-      this.mCorrectAnswerLabel.setSize(350, 50);
-      this.mCorrectAnswerLabel.setPosition(525,200); //175, 105   100,50,425,200
-		}
-		this.hideAnswerInputs();
-		this.showUserAnswer();
-        }
-
-
+   }
 });
-
-
-
-//add
