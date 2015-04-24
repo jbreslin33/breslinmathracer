@@ -29,7 +29,7 @@ initialize: function(sheet)
         var answer = new Fraction(n,c);
 			//question = 'At the market, Vicky bought ' + varA + '/' +  varB + ' of a pound of red apples and ' + varC + '/' +  varD + ' of a pound of green apples. How many more pounds of red apples did Vicky purchase?';
 
-	this.setQuestion('' + this.ns.mNameOne + ' filled a bucket with ' + ac.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. Later ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' poured out ' + bc.getString() + ' ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + '. How many ' + this.ns.mLiquidVolumeOne + ' of ' + this.ns.mDrinkOne + ' are in the bucket now?');
+	this.setQuestion('' + 'At the market ' this.ns.mNameOne + ' bought ' + ac.getString() + ' pounds ' + ' of ' + this.ns.mFruitOne + ' and ' + bc.getString() + ' pounds of ' + this.ns.mFruitTwo + '. How many more pounds of ' + this.ns.mFruitOne + ' than ' + this.ns.mFruitTwo + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) ' purchase?');
         this.setAnswer('' + answer.getString(),0);
 }
 });
