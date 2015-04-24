@@ -133,7 +133,7 @@ initialize: function(sheet)
         var fractionB = new Fraction(b,d,false);
         var fractionC = fractionA.subtract(fractionB);
 
-        this.setQuestion('' + fractionB.getMixedNumber() + ' - ' + fractionA.getMixedNumber() + ' = ');
+        this.setQuestion('' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber() + ' = ');
         this.setAnswer('' + fractionC.getString(),0);
 }
 });
