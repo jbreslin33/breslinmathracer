@@ -6,13 +6,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_md_a_3__6 = new Class(
 {
 Extends: TextItem,
-
-        initialize: function(sheet)
-        {
-            this.parent(sheet);
-				
-            this.mType = '4.md.a.3_6';   
-				
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mType = '4.md.a.3_6';   
+			
 				this.units = '';       	
 				var varA = 0;
 				var varB = 0;
@@ -600,79 +598,23 @@ var i_4_md_a_3__3 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-	this.parent(sheet);
+     	this.parent(sheet,300,50,175,95,100,50,425,100);
 				
        	this.mType = '4.md.a.3_3';   
+	this.ns = new NameSampler();
 			
-	this.units = '';       	
-	var varA = 0;
-	var varB = 0;
-	var varC = 0;
-	var length = 0;
-	var width = 0;
+	var l = 0;
+	var w = 0;
+	var a = 0;
+		
+	var l = 2 + Math.floor(Math.random()*11);	
+	var w = 2 + Math.floor(Math.random()*11);	
+	var a = parseInt(l * w);
 
-	// pick length
-	varA = 2 + Math.floor(Math.random()*11);
-
-	do
- 	{
-    		// pick width
-		varB = 2 + Math.floor(Math.random()*11);	
-	}
-	while (varA == varB);			
-				
-	varC = parseInt(varA * varB);
-
-	if (varA > varB)
-	{
-		length = varA;
-		width = varB;
-	}
-	else
-	{
-		width = varA;
-		length = varB;
-	}
-
-	rand = 1 + Math.floor(Math.random()*3);
-
-	if(rand == 1)
-		this.units = 'feet';
-	if(rand == 2)
-		this.units = 'meters';
-	if(rand == 3)
-		this.units = 'inches';
-								                       
-	this.setQuestion('What is the length of a rectangle that has a width of ' + width +  ' ' + this.units + ' and an area of ' + varC + ' square ' + this.units + '?');
-        this.setAnswer('' + varB,0);   
+	this.setQuestion('What is the length in ' + this.ns.mDistanceIncrementSmall + ' of a rectangle that has a width of ' + w +  ' ' + this.ns.mDistanceIncrementSmall + ' and an area of ' + a + ' square ' + this.ns.mDistanceIncrementSmall + '?');
+        this.setAnswer('' + l,0);   
         
-        },
-
-	createShapes: function()
-        {
-		this.parent();
-									
-		//question Label
-              
-	},
-									
-	showQuestion: function()
-	{
-
-		this.parent();
-
-		this.mQuestionLabel.setPosition(230, 100);
-		this.mQuestionLabel.setSize(200, 100);
-					
-
-		this.mUnitsLabel = new Shape(-110,50,425,100,this.mSheet.mGame,"","","");
-                this.addShape(this.mUnitsLabel);
-                this.mUnitsLabel.mCollidable = false;
-                this.mUnitsLabel.mCollisionOn = false;
-	 	this.mUnitsLabel.setText(this.units);
-		this.mUnitsLabel.setVisibility(true);
-			
-	}
+        }
 });
 
 /*
