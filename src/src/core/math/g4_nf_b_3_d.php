@@ -1,3 +1,36 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_7',4.1707,'4.nf.b.3.d','');
+*/
+
+var i_4_nf_b_3_d__7 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.3.d_7';
+        this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 1;
+        var c = Math.floor((Math.random()*10)+10);
+
+        while (a <= b)
+        {
+                a = Math.floor((Math.random()*5)+1);
+                b = Math.floor((Math.random()*5)+1);
+        }
+
+        var n = parseInt(a - b);
+
+        var ac = new Fraction(a,c,false);
+        var bc = new Fraction(b,c,false);
+        var answer = new Fraction(n,c);
+
+        this.setQuestion('' + 'Planet X is ' + ac.getString() + ' of a light-year away from Earth. Planet Y is ' + bc.getString() + ' of a light-year away from Earth. How many light years farther away from Earth is Planet X than Planet Y?');
+        this.setAnswer('' + answer.getString(),0);
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_6',4.1706,'4.nf.b.3.d','');
@@ -207,7 +240,6 @@ initialize: function(sheet)
 			}
 			if(rand == 2)
 			{			
-			question = 'Planet X is ' + varA + '/' +  varB + ' of a light-year away from Earth. Planet Y is ' + varC + '/' +  varD + ' of a light-year away from Earth. How many light years farther away from earth is Planet X than Planet Y?';
 			}
 			if(rand == 3)
 			{			
