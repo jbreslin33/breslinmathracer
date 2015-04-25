@@ -1,3 +1,38 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_8',4.1708,'4.nf.b.3.d','');
+*/
+
+var i_4_nf_b_3_d__8 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.3.d_8';
+        this.ns = new NameSampler();
+
+        var a = 0;
+        var b = 1;
+        var c = Math.floor((Math.random()*10)+10);
+
+        while (a <= b)
+        {
+                a = Math.floor((Math.random()*5)+1);
+                b = Math.floor((Math.random()*5)+1);
+        }
+
+        var n = parseInt(a - b);
+
+        var ac = new Fraction(a,c,false);
+        var bc = new Fraction(b,c,false);
+        var answer = new Fraction(n,c);
+
+        this.setQuestion('' + this.ns.mNameOne + ' bought ' + ac.getString() + ' pounds of ' + this.ns.mFruitOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' gave ' + bc.getString() + ' pounds of ' + this.ns.mFruitOne + ' to ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + '. How many pounds of ' + this.ns.mFruitOne + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ' + this.ns.mLeft + '?');
+        this.setAnswer('' + answer.getString(),0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_7',4.1707,'4.nf.b.3.d','');
 */
@@ -243,7 +278,6 @@ initialize: function(sheet)
 			}
 			if(rand == 3)
 			{			
-			question = 'Judy bought ' + varA + '/' +  varB + ' pounds of grapes. She gave ' + varC + '/' +  varD + ' of a pound to her sister. How many pounds of grapes did she have left?';
 			}
 */
 
