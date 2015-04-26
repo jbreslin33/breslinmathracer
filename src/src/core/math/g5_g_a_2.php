@@ -1,4 +1,166 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.g.a.2_5',5.3205,'5.g.a.2','graphs');
+*/
+var i_5_g_a_2__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,200,50,225,95,100,50,425,100);
+        this.mType = '5.g.a.2_5';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+this.mAnswerTextBox.setPosition(675,110);
+this.mAnswerTextBox.setSize(30,30);
+
+var startX = 50;
+var endX = 270;
+var startY = 50;
+var endY = 270;
+
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+
+//var r = Raphael('graph');
+var rX1 = 10;
+var rY1 = 50;
+var rX2 = 390;
+var rY2 = 390;
+
+this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+this.raphaelSizeX = rX2;
+this.raphaelSizeY = rY2;
+
+var pointsX = [0,2,4,6,8];
+var pointsY = [8,7,6,5,4];
+
+var labels = [];
+
+var r = Math.floor(Math.random()*4);
+
+var xLabel = 'Minutes';
+var yLabel = 'Degrees';
+
+// x,y increment for x,y axis
+var xInc = 1;
+var yInc = 4;
+
+var time = Math.floor(Math.random()*8 + 1);
+
+this.setAnswer('' + (32 - (time * 2)),0);
+
+this.setQuestion('The graph shows the temperature of a liquid as it cools. What is the temperature of the liquid after ' + time + ' minutes?');
+
+var chart = new LineChartSeven (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,xLabel,yLabel,xInc,yInc,rX1,rY1,"#000000",false);
+
+this.addQuestionShape(chart);
+
+this.mQuestionLabel.setSize(220,100);
+this.mQuestionLabel.setPosition(525,130);
+
+this.mCorrectAnswerLabel.setPosition(430,260);
+this.mCorrectAnswerLabel.setSize(100, 25);
+
+this.mUserAnswerLabel.setPosition(430,210);
+this.mUserAnswerLabel.setSize(100, 25);
+},
+
+});
+
+
+
+
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.g.a.2_4',5.3204,'5.g.a.2','graphs');
+*/
+var i_5_g_a_2__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,200,50,225,95,100,50,425,100);
+        this.mType = '5.g.a.2_4';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+this.mAnswerTextBox.setPosition(675,110);
+this.mAnswerTextBox.setSize(30,30);
+
+var startX = 50;
+var endX = 270;
+var startY = 50;
+var endY = 270;
+
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+
+//var r = Raphael('graph');
+var rX1 = 10;
+var rY1 = 50;
+
+var rX2 = 390;
+var rY2 = 390;
+
+this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+this.raphaelSizeX = rX2;
+this.raphaelSizeY = rY2;
+
+var pointsX = [2,4,6,8];
+var pointsY = [2,4,6,8];
+
+var labels = [];
+
+var r = Math.floor(Math.random()*4);
+
+var xLabel = 'Hours';
+var yLabel = 'Dollars';
+
+// x,y increment for x,y axis
+var xInc = 1;
+var yInc = 10;
+
+var hrs = Math.floor(Math.random()*10 + 1);
+
+this.setAnswer('' + (hrs * 10),0);
+
+this.setQuestion('The graph shows the relationship between the number of hours ' + this.ns.mNameOne + ' works and the amount ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0) + ' earns. How much money does ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0) + ' make after working ' + hrs + ' hours ?');
+
+var chart = new LineChartSeven (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,xLabel,yLabel,xInc,yInc,rX1,rY1,"#000000",false);
+
+this.addQuestionShape(chart);
+
+this.mQuestionLabel.setSize(220,100);
+this.mQuestionLabel.setPosition(525,130);
+
+this.mCorrectAnswerLabel.setPosition(430,260);
+this.mCorrectAnswerLabel.setSize(100, 25);
+
+this.mUserAnswerLabel.setPosition(430,210);
+this.mUserAnswerLabel.setSize(100, 25);
+},
+
+});
+
+
+
+
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.g.a.2_3',5.3203,'5.g.a.2','graphs');
 */
 var i_5_g_a_2__3 = new Class(
