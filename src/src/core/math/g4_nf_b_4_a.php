@@ -16,12 +16,6 @@ initialize: function(sheet)
         var c = 0;
         var d = 1;
 
-        //while (a % b == 0)
-        //{
-                b = Math.floor((Math.random()*5)+5);
-                c = Math.floor((Math.random()*8)+2);
-        //}
-	
 	var ab = new Fraction(a,b,false);
 	var cd = new Fraction(c,d,false);
 
