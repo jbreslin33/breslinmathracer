@@ -1631,6 +1631,48 @@ getItem: function(id)
                 return new i_4_nf_b_3_d__16(this.mSheet);
         }
 
+	//4.nf.b.4.a	
+	if (id == '4.nf.b.4.a_2')
+        {
+                return new i_4_nf_b_4_a__2(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_3')
+        {
+                return new i_4_nf_b_4_a__3(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_4')
+        {
+                return new i_4_nf_b_4_a__4(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_5')
+        {
+                return new i_4_nf_b_4_a__5(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_6')
+        {
+                return new i_4_nf_b_4_a__6(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_7')
+        {
+                return new i_4_nf_b_4_a__7(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_8')
+        {
+                return new i_4_nf_b_4_a__8(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_9')
+        {
+                return new i_4_nf_b_4_a__9(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_10')
+        {
+                return new i_4_nf_b_4_a__10(this.mSheet);
+        }
+	if (id == '4.nf.b.4.a_11')
+        {
+                return new i_4_nf_b_4_a__11(this.mSheet);
+        }
+
 	//4.md.a.1
         if (id == '4.md.a.1_1')
         {
