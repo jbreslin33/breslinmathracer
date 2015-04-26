@@ -15,7 +15,7 @@ initialize: function(sheet)
 	var a = 1;
 	var b = 0;
 
-	while(a >=b)
+	while(a >= b)
 	{
 		a = Math.floor((Math.random()*8)+2);
 		b = Math.floor((Math.random()*8)+2);
