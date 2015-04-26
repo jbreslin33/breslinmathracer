@@ -12,40 +12,19 @@ initialize: function(sheet)
         
 	this.ns = new NameSampler();
 
-        var a = Math.floor(Math.random()*10+1);
-        var b = 4;
-       
-	this.mOperation = '';  
-	var c = Math.floor(Math.random()*2);
-	c = parseInt(c);
-	if (c == 0)
-	{
-		this.mOperation = 'add';				
-	}
-	else
-	{
-		this.mOperation = 'subtract';				
-	}
+        var d = Math.floor(Math.random()*8+2);
+	var denominatorName = this.ns.mNameMachine.getDenominatorName(d);
         
-	var patternArray = new Array();
-
-	for (i=0; i < 7; i++)
-	{
-		if (i == 0)
-		{
-			var x = parseInt(a * b); 
-			patternArray.push(x);
-		}
-		else
-		{
-			var y = parseInt(i + b);  
-			var x = parseInt(a * y);
-			patternArray.push(x);
-		}
-	}
-	
 	//multiple
-	this.setAnswer('' + a,3);
+	this.setAnswer('' + '2/' + d,0);
+	this.setAnswer('' + '4/' + d,1);
+	this.setAnswer('' + '6/' + d,2);
+	this.setAnswer('' + '8/' + d,3);
+
+	fractionA = new Fraction(1,d,false);
+	fractionB = new Fraction(3,d,false);
+	fractionC = new Fraction(5,d,false);
+	fractionD = new Fraction(7,d,false);
 	
 	//heading
 	this.mHeadingAnswerLabel.setPosition(320,100);
@@ -58,20 +37,10 @@ initialize: function(sheet)
 	this.mHeadingAnswerLabel3.setSize(25,25);
 	this.mHeadingAnswerLabel4.setSize(25,25);
 
-	if (this.mOperation == 'add')	
-	{
-		this.mHeadingAnswerLabel.setText('' + patternArray[0] + ',');
-		this.mHeadingAnswerLabel2.setText(',' + patternArray[2] + ',');
-		this.mHeadingAnswerLabel3.setText(',' + patternArray[4] + ',');
-		this.mHeadingAnswerLabel4.setText(',' + patternArray[6]);
-	}
-	else
-	{
-		this.mHeadingAnswerLabel.setText('' + patternArray[6] + ',');
-		this.mHeadingAnswerLabel2.setText(',' + patternArray[4] + ',');
-		this.mHeadingAnswerLabel3.setText(',' + patternArray[2] + ',');
-		this.mHeadingAnswerLabel4.setText(',' + patternArray[0]);
-	}
+	this.mHeadingAnswerLabel.setText('' + fractionA.getString() + ',');
+	this.mHeadingAnswerLabel2.setText('' + fractionB.getString() + ',');
+	this.mHeadingAnswerLabel3.setText('' + fractionC.getString() + ',');
+	this.mHeadingAnswerLabel4.setText('' + fractionD.getString() + ',');
 	
 	//text box
 	this.mAnswerTextBox.setPosition(375,110);
@@ -84,20 +53,7 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(50,50);
 
-        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below what all the numbers in the pattern are a multiple of.');
-
-	if (this.mOperation == 'add')	
-	{
-       		this.setAnswer('' + patternArray[1],0);
-        	this.setAnswer('' + patternArray[3],1);
-        	this.setAnswer('' + patternArray[5],2);
-	}
-	else
-	{
-       		this.setAnswer('' + patternArray[5],0);
-        	this.setAnswer('' + patternArray[3],1);
-        	this.setAnswer('' + patternArray[1],2);
-	}
+        this.setQuestion('' + 'Fill in the unknown fractions to count by ' + denominatorName + '. Write fractions in numerator/denominator form.' );
 },
 showCorrectAnswer: function()
 {
