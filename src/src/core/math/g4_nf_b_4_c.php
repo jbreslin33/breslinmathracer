@@ -67,9 +67,10 @@ initialize: function(sheet)
         var cd = new Fraction(c,d,false);
 
         var answer = ab.multiply(cd);
+			//question = 'Carey uses ' + varA + '/' +  varB + ' of a cup of vinegar in her salad dressing recipe. How many cups of vinegar would Carey use to make ' + varC + ' recipes?';
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + '' + ab.getString() + ' &times ' + c + ' = ');
+        this.setQuestion('' + this.ns.mNameOne + ' uses ' + ab.getString() + ' of a cup of vinegar in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' salad dressing recipe. How many cups of vinegar would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use to make ' + c + ' cups?');
 }
 
 });
@@ -144,6 +145,5 @@ initialize: function(sheet)
 			}
 			if(rand == 8)
 			{			
-			question = 'Carey uses ' + varA + '/' +  varB + ' of a cup of vinegar in her salad dressing recipe. How many cups of vinegar would Carey use to make ' + varC + ' recipes?';
 			}
 */
