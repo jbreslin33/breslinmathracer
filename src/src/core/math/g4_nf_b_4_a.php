@@ -14,6 +14,7 @@ initialize: function(sheet)
 
         var d = Math.floor(Math.random()*8+2);
 	var denominatorName = this.ns.mNameMachine.getDenominatorName(d);
+	var fraction = new Fraction(1,d,false);
         
 	//multiple
 	this.setAnswer('' + '2/' + d,0);
@@ -53,7 +54,7 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(50,50);
 
-        this.setQuestion('' + 'Fill in the unknown fractions to count by ' + denominatorName + '. Write fractions in numerator/denominator form.' );
+        this.setQuestion('' + 'Use the rule add ' + fraction.getString() + ' to fill in the missing terms.' );
 },
 showCorrectAnswer: function()
 {
