@@ -29,9 +29,10 @@ initialize: function(sheet)
         var cd = new Fraction(c,d,false);
 
         var answer = ab.multiply(cd);
+			//question = 'A factory makes sheets of metal that are ' + varA + '/' +  varB + ' of an inch thick. If a worker at the factory makes a stack of ' + varC + ' of the sheets, how many inches thick will the stack be?';
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + '' + ab.getMixedNumber() + ' &times ' + c + ' = ');
+        this.setQuestion('' + '' + this.ns.mNameOne + ' works in a factory where ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes sheets of metal that are ' + ab.getMixedNumber() + ' of an inch thick. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes ' + c + ' sheets than how many inches thick will the stack be?');
 }
 
 });
@@ -132,7 +133,6 @@ initialize: function(sheet)
 			}
 			if(rand == 5)
 			{			
-			question = 'A factory makes sheets of metal that are ' + varA + '/' +  varB + ' of an inch thick. If a worker at the factory makes a stack of ' + varC + ' of the sheets, how many inches thick will the stack be?';
 			}
 			if(rand == 6)
 			{			
