@@ -1,5 +1,39 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_7',4.1807,'4.nf.b.4.c','fraction');
+*/
+var i_4_nf_b_4_c__7 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.c_7';
+        this.ns = new NameSampler();
+
+        var a = 1;
+        var b = 0;
+        var c = 0;
+        var d = 1;
+
+        while (b == c || a >= b)
+        {
+                var a = Math.floor((Math.random()*8)+2);
+                var b = Math.floor((Math.random()*8)+2);
+                var c = Math.floor((Math.random()*8)+2);
+        }
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.multiply(cd);
+
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + c + ' pounds of ' + this.ns.mFruitOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' let ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' eat ' + ab.getString() + ' of the ' + this.ns.mFruitOne + '. How many pounds of ' + this.ns.mFruitOne + ' did ' + this.ns.mNameTwo + ' eat?');
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_6',4.1806,'4.nf.b.4.c','mixed number');
 */
 
@@ -183,7 +217,6 @@ initialize: function(sheet)
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_1',4.1801,'4.nf.b.4.c','fraction');
 */
-
 var i_4_nf_b_4_c__1 = new Class(
 {
 Extends: TextItemFraction,
@@ -205,7 +238,6 @@ initialize: function(sheet)
                 var c = Math.floor((Math.random()*8)+2);
         }
 
-
         var ab = new Fraction(a,b,false);
         var cd = new Fraction(c,d,false);
 
@@ -214,10 +246,9 @@ initialize: function(sheet)
         this.setAnswer('' + answer.getString(),0);
         this.setQuestion('' + '' + this.ns.mNameOne + ' owns ' + c + ' acres of farmland. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' grows '  + this.ns.mVegetableOne + ' on ' + ab.getString() + ' of the land. On how many acres of land does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' grow ' + this.ns.mVegetableOne + '?');
 }
-
 });
+
 /*
-			question = 'Jenny had ' + varC + ' pounds of strawberries. Jenny let her friend Doris eat ' + varA + '/' + varB + ' of the strawberries. How many pounds of strawberries did Doris eat?';
 	
 			
 			question = 'Yesterday, a doughnut shop sold ' + varC + ' times as many chocolate doughnuts as cinnamon doughnuts. If they sold ' + varA + '/' + varB + ' of a tray of cinnamon doughnuts, how many trays of chocolate doughnuts did they sell?';
