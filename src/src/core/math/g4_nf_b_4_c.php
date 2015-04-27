@@ -1,133 +1,115 @@
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_1',4.1801,'4.nf.b.4.c','Multiply fractions by whole numbers - word problems');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_3',4.1803,'4.nf.b.4.c','mixed number');
+*/
+
+var i_4_nf_b_4_c__3 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.c_3';
+        this.ns = new NameSampler();
+
+        var a = 1;
+        var b = 0;
+        var c = 0;
+        var d = 1;
+
+        while (b == c || a <= b)
+        {
+                var a = Math.floor((Math.random()*8)+2);
+                var b = Math.floor((Math.random()*8)+2);
+                var c = Math.floor((Math.random()*8)+2);
+        }
+
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.multiply(cd);
+
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('' + '' + ab.getMixedNumber() + ' &times ' + c + ' = ');
+}
+
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_2',4.1802,'4.nf.b.4.c','improper fraction');
+*/
+
+var i_4_nf_b_4_c__2 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.c_2';
+        this.ns = new NameSampler();
+
+        var a = 1;
+        var b = 0;
+        var c = 0;
+        var d = 1;
+
+        while (b == c || a <= b)
+        {
+                var a = Math.floor((Math.random()*8)+2);
+                var b = Math.floor((Math.random()*8)+2);
+                var c = Math.floor((Math.random()*8)+2);
+        }
+
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.multiply(cd);
+
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('' + '' + ab.getString() + ' &times ' + c + ' = ');
+}
+
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_1',4.1801,'4.nf.b.4.c','fraction');
 */
 
 var i_4_nf_b_4_c__1 = new Class(
 {
 Extends: TextItemFraction,
-   initialize: function(sheet)
-   {
-      this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
-      this.mType = '4.nf.b.4.c_1';
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.c_1';
+        this.ns = new NameSampler();
+
+        var a = 1;
+        var b = 0;
+        var c = 0;
+        var d = 1;
+
+        while (b == c || a >= b)
+        {
+                var a = Math.floor((Math.random()*8)+2);
+                var b = Math.floor((Math.random()*8)+2);
+                var c = Math.floor((Math.random()*8)+2);
+        }
 
 
-		var varA = 0;
-		var varB = 0;
-		var varC = 0;
-		var varD = 0;
-		var varN = 0;
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
 
+        var answer = ab.multiply(cd);
 
-		var max = 0;
-		var remainder = 0;
-		var rand = 0;
-		var top = 0;
-		var bottom = 0;
-		var whole = 0;
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('' + '' + ab.getString() + ' &times ' + c + ' = ');
+}
 
-		var question;
-		var answer;
-		var answer1;
-		var answer2;
-		var answer3;
-		var equation;
-		var showAnswer;
-
-			// get top number
-			varA = 1 + Math.floor(Math.random()*7);
-
-			// get bottom number
-			varB = varA + 1 + Math.floor(Math.random()*(9 - varA));
-
-			// get whole number
-			varC = 3 + Math.floor((Math.random()*7));
-
-			//varA = 1;
-			//varB = 4;
-			//varC = 2;
-
-			varD = varB;
-
-			// numerator of improper fraction
-			top = varA * varC;
-			//whole number part of mixed number
-			whole = Math.floor(top/varB);
-			// numerator of mixed number
-			remainder = top % varB;
-
-			//equation used to solve problem
-			equation = '' + varA + '/' + varB + ' * ' + varC;
-			// answer in improper fraction form
-			answer1 = ' = ' + top + '/' + varB;
-
-			// are we dealing with regular fraction or mixed number
-			// answer2 is answer in fraction or mixed # form - not improper
-			if (whole == 0)
-				answer2 = '';
-			else
-			{
-			   if (remainder == 0)
-				answer2 = ' = ' + whole;
-			   else
-				answer2 = ' = ' + whole + ' ' + remainder + '/' + varB;
-			}
-
-			// is this a whole # answer or a mixed #
-			if (remainder > 0)
-			{
-			   max = Math.floor(remainder/2);
-
-			   success = false;
-			   var n = remainder;
-			   var a = 0;
-			   top = remainder;
-			   bottom = varB;
-
-			   // try to reduce fraction part
-			   do {
-   			 	    a = remainder % n;
-
-				      if (a == 0)
-				      {
-    				     a = varB % n;
-
-				         if (a == 0)
-				         {
-					          top = remainder/n;
-					          bottom = varB/n;
-					          success = true;
-				         }
-				      }
-				    n = n - 1;
-			   }
-			   while (n > 1 && success == false);
-				
-			   // answer3 is final answer in simplest form				
-			   if (whole == 0)
-				answer3 = ' = ' + top + '/' +  bottom;
-			   else
-			        answer3 = ' = ' + whole + ' ' + top + '/' +  bottom;
-
-			}
-			else
-			   answer3 = ' = ' + whole;
-
-			if (answer3 == answer2 || answer3 == answer1)
-				answer3 = '';
-
-			top = varA * varC;
-
-			// this is what we send in to question class as the anwer in raw form
-			answer = '' + top + '/' + varB;
-			var fractionAnswer = new Fraction(top,varB);
-
-			// show how we got to final answer
-			showAnswer = '' + equation + answer1 + answer2 + answer3;
-
-			rand = Math.floor(Math.random()*9);
-
-
-
+});
+/*
 			if(rand == 0)
 			{			
 			question = 'Peter owns ' + varC + ' acres of farmland. He grows corn on ' + varA + '/' + varB + ' of the land. On how many acres of land does Peter grow corn?';
@@ -144,10 +126,6 @@ Extends: TextItemFraction,
 			{			
 			question = 'Pedro has a lemon cookie recipe that calls for ' + varA + '/' +  varB + ' of a cup of sugar. How much sugar would Pedro use to make ' + varC + ' batches of cookies?';
 			}
-
-
-
-
 			if(rand == 4)
 			{			
 			question = 'Tina is making calzones to sell at her restaurant. She starts with ' + varC + ' cans of tomato sauce and then uses ' + varA + '/' + varB + ' of the cans for the first batch of calzones. How many cans of tomato sauce does Tina use for the first batch of calzones?';
@@ -168,17 +146,4 @@ Extends: TextItemFraction,
 			{			
 			question = 'Carey uses ' + varA + '/' +  varB + ' of a cup of vinegar in her salad dressing recipe. How many cups of vinegar would Carey use to make ' + varC + ' recipes?';
 			}
-
-  var test = new Fraction(8,10,true);	
-		
-	//console.log(test.getString());
-
-			this.setQuestion(question);
-      this.setAnswer('' + fractionAnswer.getString(),0);
-
-      this.mQuestionLabel.setSize(220,50);
-      this.mQuestionLabel.setPosition(175,105);
-
-      this.mShowAnswer = showAnswer;
-   }
-});
+*/
