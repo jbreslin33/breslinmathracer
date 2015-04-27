@@ -105,14 +105,14 @@ initialize: function(sheet)
         var answer = ab.multiply(cd);
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + '' + ab.getString() + ' &times ' + c + ' = ');
+			//question = 'Peter owns ' + varC + ' acres of farmland. He grows corn on ' + varA + '/' + varB + ' of the land. On how many acres of land does Peter grow corn?';
+        this.setQuestion('' + '' + this.ns.mNameOne + ' owns ' + c + ' acres of farmland. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' grows '  + this.ns.mVegetableOne + ' on ' + ab.getString() + ' of the land. On how many acres of land does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' grow ' + this.ns.mVegetableOne + '?');
 }
 
 });
 /*
 			if(rand == 0)
 			{			
-			question = 'Peter owns ' + varC + ' acres of farmland. He grows corn on ' + varA + '/' + varB + ' of the land. On how many acres of land does Peter grow corn?';
 			}
 			if(rand == 1)
 			{			
