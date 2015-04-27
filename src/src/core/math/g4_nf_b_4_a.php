@@ -1,5 +1,47 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_7',4.1607,'4.nf.b.4.a','');
+*/
+
+var i_4_nf_b_4_a__7 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.a_7';
+        this.ns = new NameSampler();
+
+        var a = Math.floor((Math.random()*8)+2);
+        var b = 1;
+        var c = 1;
+        var d = Math.floor((Math.random()*8)+2);
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.multiply(cd);
+
+	var additionString = ''; 
+	for (i = 0; i < a; i++)
+	{
+		if (i == 0)
+		{
+			additionString = '' + additionString + cd.getString();  
+		}
+		else
+		{
+			additionString = '' + additionString + ' + ' + cd.getString();  
+		}
+	}
+
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('' + '' + a + ' &times ' + cd.getString() + ' = ' + additionString + ' = ?');
+}
+
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_6',4.1606,'4.nf.b.4.a','');
 */
 var i_4_nf_b_4_a__6 = new Class(
