@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.b.4_1',4.2701,'4.md.b.4','');
 */
@@ -38,7 +39,6 @@ initialize: function(sheet)
 	
 	while (sum > 30 || sum == 23 || sum == 15 || sum == 7)
 	{
-
   		//keep track of how many dots at each x
   		var plotX = [0,0,0,0,0,0,0,0,0,0,0];
 
@@ -59,12 +59,28 @@ initialize: function(sheet)
   		}
 	}
 
-	var fractionA = new Fraction(sum,8);
-	var fractionB = new Fraction(31,8);
+	var b = 99;
+  	for (var p = 0; p < 7; p++)
+ 	{
+		if (pointsX[p] < b)
+		{
+			b = pointsX[p];
+		}
+  	}
+
+        var t = 0;
+        for (var q = 0; q < 7; q++)
+        {
+                if (pointsX[q] > t)
+                {
+                        t = pointsX[q];
+                }
+        }
+
+	var fractionA = new Fraction(b,8);
+	var fractionB = new Fraction(t,8);
 	var answer = fractionB.subtract(fractionA);
 
-	//var answer = fractionA;
-	answer.reduce();
 
   	this.setAnswer('' + answer.getString(),0);
 
