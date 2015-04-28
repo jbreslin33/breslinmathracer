@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_8',4.1808,'4.nf.b.4.c','fraction');
+*/
+var i_4_nf_b_4_c__8 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.c_8';
+        this.ns = new NameSampler();
+
+        var a = 1;
+        var b = 0;
+        var c = 0;
+        var d = 1;
+
+        while (b == c || a >= b)
+        {
+                var a = Math.floor((Math.random()*8)+2);
+                var b = Math.floor((Math.random()*8)+2);
+                var c = Math.floor((Math.random()*8)+2);
+        }
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.multiply(cd);
+
+        this.setAnswer('' + answer.getString(),0);
+
+        this.setQuestion('' + this.ns.mNameOne + ' owns a doughnut shop. Yesterday ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sold ' + c + ' times as many chocolate doughnuts as cinnamon dougnuts. If ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sold ' + ab.getString() + ' of a tray of cinnamon doughnuts than how many trays of chocolate doughnuts did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' sell?');
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_7',4.1807,'4.nf.b.4.c','fraction');
 */
 var i_4_nf_b_4_c__7 = new Class(
@@ -251,7 +287,6 @@ initialize: function(sheet)
 /*
 	
 			
-			question = 'Yesterday, a doughnut shop sold ' + varC + ' times as many chocolate doughnuts as cinnamon doughnuts. If they sold ' + varA + '/' + varB + ' of a tray of cinnamon doughnuts, how many trays of chocolate doughnuts did they sell?';
 			
 			question = 'Tracy made strawberry jam and raspberry jam. She made enough strawberry jam to fill ' + varA + '/' +  varB + ' of a jar. If she made ' + varC + ' times as much raspberry jam as strawberry jam, how many jars will the raspberry jam fill?';
 */
