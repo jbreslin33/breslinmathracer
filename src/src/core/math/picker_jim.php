@@ -1724,6 +1724,10 @@ getItem: function(id)
         {
                 return new i_4_nf_b_4_c__8(this.mSheet);
         }
+	if (id == '4.nf.b.4.c_9')
+        {
+                return new i_4_nf_b_4_c__9(this.mSheet);
+        }
 
 	//4.md.a.1
         if (id == '4.md.a.1_1')
