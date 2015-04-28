@@ -48,27 +48,24 @@ initialize: function(sheet)
     		c = (Math.floor(Math.random()*7) + 1);
 	}
 
-	while (sum > 30 || sum == 23 || sum == 15 || sum == 7)
-	{
-  		//keep track of how many dots at each x
-  		var plotX = [0,0,0,0,0,0,0,0,0,0,0];
+  	//keep track of how many dots at each x
+  	var plotX = [0,0,0,0,0,0,0,0,0,0,0];
 
-  		//pick random points to make plot
-  		for (var i = 0; i < 7; i++)
- 		{
-    			r = (Math.floor(Math.random()*7) + 1);
-    			pointsX[i] = r;
-    			pointsY[i] = plotX[r] + 1;
-    			plotX[r] = pointsY[i];
-  		}
-  
-  		sum = 0;
+	//pick random points to make plot
+  	for (var i = 0; i < 7; i++)
+ 	{
+    		r = (Math.floor(Math.random()*7) + 1);
+    		pointsX[i] = r;
+    		pointsY[i] = plotX[r] + 1;
+    		plotX[r] = pointsY[i];
+  	}
+ 
+	sum = 0;
 
-  		for (var j = 0; j < 7; j++)
- 		{
-    			sum = sum + pointsX[j];
-  		}
-	}
+  	for (var j = 0; j < 7; j++)
+ 	{
+    		sum = sum + pointsX[j];
+  	}
 
 	var b = 99;
   	for (var p = 0; p < 7; p++)
