@@ -36,7 +36,18 @@ initialize: function(sheet)
 	var pointsY = [];
 	var r = 0;
 	var sum = 71;
-	
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+
+	while (a == b || a == c)
+	{
+    		a = (Math.floor(Math.random()*7) + 1);
+    		b = (Math.floor(Math.random()*7) + 1);
+    		c = (Math.floor(Math.random()*7) + 1);
+	}
+
 	while (sum > 30 || sum == 23 || sum == 15 || sum == 7)
 	{
   		//keep track of how many dots at each x
