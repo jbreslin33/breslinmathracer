@@ -81,10 +81,9 @@ initialize: function(sheet)
 	var fractionB = new Fraction(t,8);
 	var answer = fractionB.subtract(fractionA);
 
-
   	this.setAnswer('' + answer.getString(),0);
 
- 	this.setQuestion('' + this.ns.mNameOne + ' has 7 patches of fabric which are shown in the line plot below. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to make a patchwork sweater, which requires ' + fractionB.getMixedNumber() + ' yards of fabric. How much more fabric will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need?');
+ 	this.setQuestion('' + this.ns.mNameOne + ' measured the width of each of the books in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' room to see if they would all fit in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' new book case. The measurements were recorded below. What is the differenece between the width of the largest book and the width of the smallest book?');
 
 	//create line plot
 	var chart = new LineChartThree (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
