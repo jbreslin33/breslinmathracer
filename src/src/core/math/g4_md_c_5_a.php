@@ -76,7 +76,7 @@ createShapes: function()
         this.mTextThree.mPolygon.transform(rotateAmountThree);
 	
 	//angle arc
-        this.mAngleArc = new AngleArc(x,y,50,parseFloat(angleThree),parseFloat(angleOne),this,0,0,1,"none",.5,false);;
+        this.mAngleArc = new AngleArc(x,y,50,parseFloat(angleThree),parseFloat(angleOne),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
@@ -114,7 +114,7 @@ createShapes: function()
 	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
         
-	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
@@ -152,7 +152,7 @@ createShapes: function()
 	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
         
-	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
@@ -190,7 +190,7 @@ createShapes: function()
 	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
         
-	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
@@ -250,7 +250,7 @@ createShapes: function()
 	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
         
-	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 });
@@ -292,7 +292,7 @@ createShapes: function()
 	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
         
-	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),this,0,0,1,"none",.5,false);;
+	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
 }
 
