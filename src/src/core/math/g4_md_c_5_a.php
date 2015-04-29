@@ -226,7 +226,7 @@ initialize: function(sheet)
 	this.parent(sheet,300,50,575,95,100,50,625,200);
 	this.mChopWhiteSpace = false;
 
-        this.mType = '4.md.c.5_a_5';
+        this.mType = '4.md.c.5.a_5';
 
         this.setQuestion('A point where two or more straight lines meet. A corner.');
         this.setAnswer('' + 'vertex',0);
