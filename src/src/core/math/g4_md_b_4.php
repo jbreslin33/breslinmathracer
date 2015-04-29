@@ -77,8 +77,8 @@ initialize: function(sheet)
     	pointsX[6] = c;
     	pointsY[6] = 1;
 		
-	var fractionA = new Fraction(c,8);
-	var fractionC = new Fraction(a,8);
+	var fractionA = new Fraction(a,8,false);
+	var fractionC = new Fraction(c,8,false);
 	var answer = 0;
 	if (c > a)
 	{
