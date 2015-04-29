@@ -35,7 +35,6 @@ initialize: function(sheet)
 	var pointsX = [];
 	var pointsY = [];
 	var r = 0;
-	var sum = 71;
 
 	var a = 0;
 	var b = 0;
@@ -50,44 +49,45 @@ initialize: function(sheet)
 
   	//keep track of how many dots at each x
   	var plotX = [0,0,0,0,0,0,0,0,0,0,0];
+	plotX[a] = 4;
+	plotX[b] = 2;
+	plotX[c] = 1;
 
-	//pick random points to make plot
-  	for (var i = 0; i < 7; i++)
- 	{
-    		r = (Math.floor(Math.random()*7) + 1);
-    		pointsX[i] = r;
-    		pointsY[i] = plotX[r] + 1;
-    		plotX[r] = pointsY[i];
-  	}
- 
-	sum = 0;
+	//fill 4
+    	pointsX[0] = a;
+    	pointsY[0] = 1;
 
-  	for (var j = 0; j < 7; j++)
- 	{
-    		sum = sum + pointsX[j];
-  	}
+    	pointsX[1] = a;
+    	pointsY[1] = 2;
 
-	var b = 99;
-  	for (var p = 0; p < 7; p++)
- 	{
-		if (pointsX[p] < b)
-		{
-			b = pointsX[p];
-		}
-  	}
+    	pointsX[2] = a;
+    	pointsY[2] = 3;
 
-        var t = 0;
-        for (var q = 0; q < 7; q++)
-        {
-                if (pointsX[q] > t)
-                {
-                        t = pointsX[q];
-                }
-        }
+    	pointsX[3] = a;
+    	pointsY[3] = 4;
 
-	var fractionA = new Fraction(b,8);
-	var fractionB = new Fraction(t,8);
-	var answer = fractionB.subtract(fractionA);
+	//fill 2
+    	pointsX[4] = b;
+    	pointsY[4] = 1;
+
+    	pointsX[5] = b;
+    	pointsY[5] = 2;
+
+	//fill 1
+    	pointsX[6] = c;
+    	pointsY[6] = 1;
+		
+	var fractionA = new Fraction(c,8);
+	var fractionC = new Fraction(a,8);
+	var answer = 0;
+	if (c > a)
+	{
+		answer = fractionC.subtract(fractionA);
+	}
+	else
+	{
+		answer = fractionA.subtract(fractionC);
+	}
 
   	this.setAnswer('' + answer.getString(),0);
 
