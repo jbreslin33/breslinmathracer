@@ -2154,6 +2154,41 @@ getItem: function(id)
                 return new i_4_md_c_6__7(this.mSheet);
         }
 	
+
+	//4.md.c.7
+	if (id == '4.md.c.7_1')
+        {
+                return new i_4_md_c_7__1(this.mSheet);
+        }
+	if (id == '4.md.c.7_2')
+        {
+                return new i_4_md_c_7__2(this.mSheet);
+        }
+	if (id == '4.md.c.7_3')
+        {
+                return new i_4_md_c_7__3(this.mSheet);
+        }
+	if (id == '4.md.c.7_4')
+        {
+                return new i_4_md_c_7__4(this.mSheet);
+        }
+	if (id == '4.md.c.7_5')
+        {
+                return new i_4_md_c_7__5(this.mSheet);
+        }
+	if (id == '4.md.c.7_6')
+        {
+                return new i_4_md_c_7__6(this.mSheet);
+       	} 
+	if (id == '4.md.c.7_7')
+        {
+                return new i_4_md_c_7__7(this.mSheet);
+        }
+	if (id == '4.md.c.7_8')
+        {
+                return new i_4_md_c_7__8(this.mSheet);
+        }
+	
 	/*** GRADE 5 ***/
 	//5.oa.a.1
 	if (id == '5.oa.a.1_0_38')
