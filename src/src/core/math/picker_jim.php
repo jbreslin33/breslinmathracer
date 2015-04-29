@@ -1729,6 +1729,44 @@ getItem: function(id)
                 return new i_4_nf_b_4_c__9(this.mSheet);
         }
 
+	//4.nf.c.5	
+	if (id == '4.nf.c.5_1')
+        {
+                return new i_4_nf_c_5__1(this.mSheet);
+        }
+	if (id == '4.nf.c.5_2')
+        {
+                return new i_4_nf_c_5__2(this.mSheet);
+        }
+	if (id == '4.nf.c.5_3')
+        {
+                return new i_4_nf_c_5__3(this.mSheet);
+        }
+	if (id == '4.nf.c.5_4')
+        {
+                return new i_4_nf_c_5__4(this.mSheet);
+        }
+	if (id == '4.nf.c.5_5')
+        {
+                return new i_4_nf_c_5__5(this.mSheet);
+        }
+	if (id == '4.nf.c.5_6')
+        {
+                return new i_4_nf_c_5__6(this.mSheet);
+        }
+	if (id == '4.nf.c.5_7')
+        {
+                return new i_4_nf_c_5__7(this.mSheet);
+        }
+	if (id == '4.nf.c.5_8')
+        {
+                return new i_4_nf_c_5__8(this.mSheet);
+        }
+	if (id == '4.nf.c.5_9')
+        {
+                return new i_4_nf_c_5__9(this.mSheet);
+        }
+
 	//4.md.a.1
         if (id == '4.md.a.1_1')
         {
