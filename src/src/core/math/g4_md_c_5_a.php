@@ -129,7 +129,7 @@ initialize: function(sheet)
 {
 	this.mRaphael = Raphael(20,20,380,380);
 	this.parent(sheet,300,50,575,95,200,50,625,200);
-        this.mType = '4.md.c.5_8';
+        this.mType = '4.md.c.5.a_8';
 	this.mChopWhiteSpace = false;
 
         var f = new Fraction(90,360,false);
