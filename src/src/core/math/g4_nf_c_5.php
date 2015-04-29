@@ -1,5 +1,33 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_3',4.1903,'4.nf.c.5','fraction');
+*/
+var i_4_nf_c_5__3 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.c.5_3';
+        this.ns = new NameSampler();
+
+        var a = Math.floor((Math.random()*8)+2);
+        var b = 10;
+        var c = Math.floor((Math.random()*8)+2);
+        var d = 100;
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.add(cd);
+
+        this.setAnswer('' + answer.getString(),0);
+
+        this.setQuestion('' + ab.getString() + ' + ' + cd.getString());
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_2',4.1902,'4.nf.c.5','fraction');
 */
 var i_4_nf_c_5__2 = new Class(
