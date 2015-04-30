@@ -33,6 +33,7 @@ public function process()
 
         if ($num > 0)
         {
+		//error_log('if');
                 $evaluations_attempts_id = pg_Result($result, 0, 'id');
                 $ref_id                  = pg_Result($result, 0, 'description');
 
@@ -94,7 +95,8 @@ public function process()
 	}
 	else
 	{
-		$normal = new Normal(0);
+		//error_log('else new normal');
+		$normal = new Normal(1);
 	}
 }
 //end class
