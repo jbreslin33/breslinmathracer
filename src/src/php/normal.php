@@ -611,7 +611,7 @@ public function setItemString()
         $_SESSION["before_item_type_id"] = $itemString;
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
-	error_log($this->item_types_id_to_ask);
+	//error_log($this->item_types_id_to_ask);
         $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
 }
 
