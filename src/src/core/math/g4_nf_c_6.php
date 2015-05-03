@@ -11,19 +11,17 @@ initialize: function(sheet)
         this.mType = '4.nf.c.6_1';
         this.ns = new NameSampler();
 
-        var a = Math.floor((Math.random()*8)+2);
+        var d = Math.floor((Math.random()*8)+2);
+        var a = d;
         var b = 10;
-        var c = Math.floor((Math.random()*8)+2);
-        var d = 100;
 
-        var ab = new Fraction(a,b,false);
-        var cd = new Fraction(c,d,false);
+	var decimal = new Decimal('0.' + a);
 
-        var answer = ab.add(cd);
+        var ab = new Fraction(a,b);
 
-        this.setAnswer('' + answer.getString(),0);
+        this.setAnswer('' + ab.getString(),0);
 
-        this.setQuestion('' + ab.getString() + ' + ' + cd.getString());
+        this.setQuestion('' + 'Write ' + decimal.getString() + ' as a fraction.');
 }
 });
 
