@@ -2048,21 +2048,25 @@ var NameSampler = new Class(
                 this.mUpperLetterOne = this.mNameMachine.getUpperLetter();
                 this.mUpperLetterTwo = this.mNameMachine.getUpperLetter();
                 this.mUpperLetterThree = this.mNameMachine.getUpperLetter();
+                this.mUpperLetterFour = this.mNameMachine.getUpperLetter();
 
                 this.mUpperLetterArray = new Array();
                 this.mUpperLetterArray.push(this.mUpperLetterOne);
                 this.mUpperLetterArray.push(this.mUpperLetterTwo);
                 this.mUpperLetterArray.push(this.mUpperLetterThree);
+                this.mUpperLetterArray.push(this.mUpperLetterFour);
 
                 //lower letter
                 this.mLowerLetterOne = this.mNameMachine.getLowerLetter();
                 this.mLowerLetterTwo = this.mNameMachine.getLowerLetter();
                 this.mLowerLetterThree = this.mNameMachine.getLowerLetter();
+                this.mLowerLetterFour = this.mNameMachine.getLowerLetter();
 
                 this.mLowerLetterArray = new Array();
                 this.mLowerLetterArray.push(this.mLowerLetterOne);
                 this.mLowerLetterArray.push(this.mLowerLetterTwo);
                 this.mLowerLetterArray.push(this.mLowerLetterThree);
+                this.mLowerLetterArray.push(this.mLowerLetterFour);
 
 		this.mAnimalOne = this.mNameMachine.getAnimal();
 		this.mAnimalTwo = this.mNameMachine.getAnimal();
