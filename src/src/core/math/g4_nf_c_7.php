@@ -15,24 +15,32 @@ initialize: function(sheet)
         this.mButtonB.setPosition(380,200);
         this.mButtonC.setPosition(380,300);
 
-        var a = 0;
-        var b = 0;
-        var c = 0;
-        var d = 0;
+        var a = 20;
+        var b = 20;
 
-        while (b <= a)
-        {
-                a = Math.floor(Math.random()*9+1);
-                b = Math.floor(Math.random()*8+2);
-        }
-        c = parseInt(a * 2);
-        d = parseInt(b * 2);
+	while(a % 10 == 0 || b % 10 == 0)
+	{
+        	a = Math.floor(Math.random()*89+10);
+        	b = Math.floor(Math.random()*89+10);
+	}
 
-        this.mFractionA = new Fraction(a,b,false);
-        this.mFractionB = new Fraction(c,d,false);
+        this.mDecimalA = new Decimal('0.' + a);
+        this.mDecimalB = new Decimal('0.' + b);
 
         this.setQuestion('Compare.');
-        this.setAnswer('=',0);
+
+	if (a > b)
+	{
+        	this.setAnswer('&gt;',0);
+	}
+	else if (a == b)
+	{
+        	this.setAnswer('=',0);
+	}
+	else if (a < b)
+	{
+        	this.setAnswer('&lt;',0);
+	}
 
         this.mButtonA.setAnswer('&gt;');
         this.mButtonB.setAnswer('=');
@@ -43,8 +51,8 @@ createQuestionShapes: function()
         var shapeA = new Shape(100,100,240,200,this.mSheet.mGame,"","","");
         var shapeB = new Shape(100,100,530,200,this.mSheet.mGame,"","","");
 
-        shapeA.setText('' + this.mFractionA.getString());
-        shapeB.setText('' + this.mFractionB.getString());
+        shapeA.setText('' + this.mDecimalA.getString());
+        shapeB.setText('' + this.mDecimalB.getString());
 
         this.addQuestionShape(shapeA);
         this.addQuestionShape(shapeB);
