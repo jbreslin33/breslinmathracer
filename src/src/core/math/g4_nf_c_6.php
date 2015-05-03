@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_4',4.2004,'4.nf.c.6','');
+*/
+var i_4_nf_c_6__4 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+
+        this.mType = '4.nf.c.6_4';
+        this.ns = new NameSampler();
+
+        var d = Math.floor((Math.random()*89)+10);
+        var a = d;
+        var b = 100;
+
+        var decimal = new Decimal('0.' + a);
+
+        var ab = new Fraction(a,b,false);
+
+        this.setAnswer('' + decimal.getString(),0);
+
+        this.setQuestion('' + 'Write ' + ab.getString() + ' as a decimal.');
+}
+});
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_3',4.2003,'4.nf.c.6','');
 */
 var i_4_nf_c_6__3 = new Class(
@@ -49,7 +78,7 @@ initialize: function(sheet)
 
 	var decimal = new Decimal('0.' + a);
 
-        var ab = new Fraction(a,b);
+        var ab = new Fraction(a,b,false);
 
         this.setAnswer('' + decimal.getString(),0);
 
