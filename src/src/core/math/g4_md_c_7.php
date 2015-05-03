@@ -14,7 +14,7 @@ initialize: function(sheet)
 
         this.mRaphael = Raphael(20,20,380,380);
         this.ns = new NameSampler();
-        this.parent(sheet,450,200,275,350,100,50,625,300);
+        this.parent(sheet,500,200,325,350, 100,50,700,300);
         this.mType = '4.md.c.7_3';
         this.mChopWhiteSpace = false;
 
@@ -53,7 +53,7 @@ createShapes: function()
         var textC = this.ns.mUpperLetterThree;
         var textD = this.ns.mUpperLetterFour;
 
-        this.setQuestion('' + this.ns.mNameOne + ' and '+ this.ns.mNameTwo + ' are fighting aliens. ' + this.ns.mNameOne + ' shoots a ray gun blast ' + parseInt(angleB - angleA) + '&deg and it is represented by angle ' + textA + textB + textD + '. ' + this.ns.mNameTwo + ' shoots a ray gun blast ' + parseInt(angleC - angleB) + '&deg and it is represented by angle ' + textD + textB + textC + '. What is the total angle measurement of the two ray blasts represented by angle ' + textA + textB + textC + ' in degrees?');          
+        this.setQuestion('' + 'There are 2 slices of pie left. One slice is for ' + this.ns.mNameOne + ' and is ' + parseInt(angleB - angleA) + '&deg and it is represented by angle ' + textA + textB + textD + '.  The other slice is for ' + this.ns.mNameTwo + ' and is ' + parseInt(angleC - angleB) + '&deg and it is represented by angle ' + textD + textB + textC + '. What is the total angle measurement of the two slices represented by angle ' + textA + textB + textC + ' in degrees?');          
 
         var x = parseInt(this.mRaphael.width/2);
         var y = parseInt(this.mRaphael.height/2);
