@@ -14,13 +14,13 @@ initialize: function(sheet)
 
         this.mRaphael = Raphael(20,20,380,380);
         this.ns = new NameSampler();
-        this.parent(sheet,500,200,325,350, 100,50,700,300);
+        this.parent(sheet,500,200,325,400, 100,50,700,300);
         this.mType = '4.md.c.7_4';
         this.mChopWhiteSpace = false;
 
         var f = new Fraction(this.d,360,false);
 
-        this.setAnswer('' + parseInt(this.c - this.a),0);
+        this.setAnswer('' + parseInt(this.c - this.b),0);
 },
 
 createShapes: function()
