@@ -2,7 +2,6 @@
 var Ray = new Class(
 {
 Extends: RaphaelPolygon,
-//var line_ab = new LineOne (50,50,100,100,this.mGame,this.mRaphael,"#0000FF",.5,false);
 initialize: function (x,y,length,angle,item,stroke,opacity,drag)
 {
 	this.mItem = item;
