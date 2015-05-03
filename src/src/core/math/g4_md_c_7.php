@@ -52,6 +52,7 @@ createShapes: function()
         var textA = this.ns.mUpperLetterOne;
         var textB = this.ns.mUpperLetterTwo;
         var textC = this.ns.mUpperLetterThree;
+        var textD = this.ns.mUpperLetterFour;
 
         var x = parseInt(this.mRaphael.width/2);
         var y = parseInt(this.mRaphael.height/2);
@@ -59,11 +60,11 @@ createShapes: function()
 	var lengthA = 100;
 	var lengthB = 100;
         var lengthC = 100;
+        var lengthD = 100;
 
         // rotatation
         var rotateAmountA = '' + 'r' + angleA + ',' + x + ',' + y;
         var rotateAmountB = '' + 'r' + angleB + ',' + x + ',' + y;
-        //var rotateAmountB = '' + 'r' + parseFloat( (angleOne + angleThree) / 2) + ',' + x + ',' + y;
         var rotateAmountC = '' + 'r' + angleC + ',' + x + ',' + y;
 
         this.mTextA = new RaphaelText(parseInt(x + lengthA + 15),y,this,0,0,1,"#000000",.5,false,"" + textA,16);
@@ -77,6 +78,11 @@ createShapes: function()
         this.mTextC = new RaphaelText(parseInt(x + lengthC + 15),y,this,0,0,1,"#000000",.5,false,"" + textC,16);
         this.addQuestionShape(this.mTextC);
         this.mTextC.mPolygon.transform(rotateAmountC);
+	
+	this.mTextD = new RaphaelText(parseInt(x + lengthD + 15),y,this,0,0,1,"#000000",.5,false,"" + textD,16);
+        this.addQuestionShape(this.mTextD);
+        this.mTextD.mPolygon.transform(rotateAmountB);
+
 
 }
 });
