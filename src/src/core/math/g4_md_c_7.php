@@ -7,8 +7,8 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.a = Math.floor(Math.random()*45)+30;
-        this.b = parseInt(Math.floor(Math.random()*45) + this.a);
-        this.c = parseInt(Math.floor(Math.random()*45) + this.b);
+        this.b = parseInt(Math.floor(Math.random()*45) + this.a + 30);
+        this.c = parseInt(Math.floor(Math.random()*45) + this.b + 30);
 
         this.mRaphael = Raphael(20,20,380,380);
         this.parent(sheet,300,50,575,95,200,50,625,200);
@@ -40,6 +40,9 @@ createShapes: function()
 
         this.mAngleArcAB = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArcAB);
+        
+	this.mAngleArcBC = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleC),parseFloat(angleB),true,this,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArcBC);
 }
 });
 
