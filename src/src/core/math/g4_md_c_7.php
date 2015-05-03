@@ -7,8 +7,8 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.a = Math.floor(Math.random()*45)+30;
-        this.b = parseInt(this.d);
-        this.c = parseInt(this.d);
+        this.b = parseInt(Math.floor(Math.random()*45) + this.a);
+        this.c = parseInt(Math.floor(Math.random()*45) + this.b);
 
         this.mRaphael = Raphael(20,20,380,380);
         this.parent(sheet,300,50,575,95,200,50,625,200);
@@ -26,7 +26,7 @@ createShapes: function()
         this.parent();
 
         var angleA = this.a;
-        var angleB = 360;
+        var angleB = this.b;
         var angleC = this.c;
 
         this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
@@ -34,9 +34,12 @@ createShapes: function()
 
         this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayB);
+        
+	this.mRayC = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleC,this,"#000000",.5,false);
+        this.addQuestionShape(this.mRayC);
 
-        this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
-        this.addQuestionShape(this.mAngleArc);
+       // this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
+        //this.addQuestionShape(this.mAngleArc);
 }
 });
 
