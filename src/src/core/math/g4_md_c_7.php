@@ -61,21 +61,21 @@ createShapes: function()
 
         // rotatation
         var rotateAmountA = '' + 'r' + angleA + ',' + x + ',' + y;
+        var rotateAmountB = '' + 'r' + angleB + ',' + x + ',' + y;
         //var rotateAmountB = '' + 'r' + parseFloat( (angleOne + angleThree) / 2) + ',' + x + ',' + y;
         var rotateAmountC = '' + 'r' + angleC + ',' + x + ',' + y;
 
         this.mTextA = new RaphaelText(parseInt(x + lengthA + 15),y,this,0,0,1,"#000000",.5,false,"" + textA,16);
         this.addQuestionShape(this.mTextA);
         this.mTextA.mPolygon.transform(rotateAmountA);
-/*
-        this.mTextTwo = new RaphaelText(parseInt(x - 15),y,this,0,0,1,"#000000",.5,false,"" + textTwo,16);
-        this.addQuestionShape(this.mTextTwo);
-        this.mTextTwo.mPolygon.transform(rotateAmountTwo);
+        
+	this.mTextB = new RaphaelText(parseInt(x - 15),y,this,0,0,1,"#000000",.5,false,"" + textB,16);
+        this.addQuestionShape(this.mTextB);
+        this.mTextB.mPolygon.transform(rotateAmountB);
 
-        this.mTextThree = new RaphaelText(parseInt(x + lengthThree + 15),y,this,0,0,1,"#000000",.5,false,"" + textThree,16);
-        this.addQuestionShape(this.mTextThree);
-        this.mTextThree.mPolygon.transform(rotateAmountThree);
-*/
+        this.mTextC = new RaphaelText(parseInt(x + lengthC + 15),y,this,0,0,1,"#000000",.5,false,"" + textC,16);
+        this.addQuestionShape(this.mTextC);
+        this.mTextC.mPolygon.transform(rotateAmountC);
 
 }
 });
