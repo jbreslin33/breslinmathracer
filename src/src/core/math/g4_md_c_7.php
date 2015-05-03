@@ -20,7 +20,6 @@ initialize: function(sheet)
 
         var f = new Fraction(this.d,360,false);
 
-        this.setQuestion('What is the turn of this angle in degrees?');
         this.setAnswer('' + parseInt(this.c - this.a),0);
 },
 
@@ -53,6 +52,8 @@ createShapes: function()
         var textB = this.ns.mUpperLetterTwo;
         var textC = this.ns.mUpperLetterThree;
         var textD = this.ns.mUpperLetterFour;
+
+        this.setQuestion('The measure of angle ' + textA + textB + textD + ' is ' + parseInt(angleB - angleA) + '&deg and the measure of angle ' + textD + textB + textC + ' is ' + parseInt(angleC - angleB) + '&deg. What is the measure of angle ' + textA + textB + textC + ' in degrees?' );
 
         var x = parseInt(this.mRaphael.width/2);
         var y = parseInt(this.mRaphael.height/2);
