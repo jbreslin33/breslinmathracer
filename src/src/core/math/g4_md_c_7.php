@@ -7,7 +7,8 @@ var i_4_md_c_7__1 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-        this.a = Math.floor(Math.random()*45)+30;
+        //this.a = Math.floor(Math.random()*45)+270;
+        this.a = 270;
         this.b = parseInt(Math.floor(Math.random()*45) + this.a + 30);
         this.c = parseInt(Math.floor(Math.random()*45) + this.b + 30);
 
