@@ -18,7 +18,7 @@ initialize: function(sheet)
         var f = new Fraction(this.d,360,false);
 
         this.setQuestion('What is the turn of this angle in degrees?');
-        this.setAnswer('' + parseInt(this.a + this.c),0);
+        this.setAnswer('' + parseInt(this.c - this.a),0);
 },
 
 createShapes: function()
@@ -38,8 +38,8 @@ createShapes: function()
 	this.mRayC = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleC,this,"#000000",.5,false);
         this.addQuestionShape(this.mRayC);
 
-       // this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
-        //this.addQuestionShape(this.mAngleArc);
+        this.mAngleArcAB = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
+        this.addQuestionShape(this.mAngleArcAB);
 }
 });
 
