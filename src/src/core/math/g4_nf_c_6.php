@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_6',4.2006,'4.nf.c.6','');
+*/
+var i_4_nf_c_6__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+
+        this.mType = '4.nf.c.6_6';
+        this.ns = new NameSampler();
+
+        var d = Math.floor((Math.random()*9)+1);
+        var a = d;
+        var b = 100;
+
+        var decimal = new Decimal('0.0' + a);
+
+        var ab = new Fraction(a,b,false);
+
+        this.setAnswer('' + decimal.getString(),0);
+
+        this.setQuestion('' + 'Write ' + ab.getString() + ' as a decimal.');
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_5',4.2005,'4.nf.c.6','');
 */
 var i_4_nf_c_6__5 = new Class(
