@@ -44,7 +44,7 @@ createShapes: function()
         this.mAngleArcAB = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArcAB);
         
-	this.mAngleArcBC = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleC),parseFloat(angleB),true,this,0,0,1,"none",.5,false);;
+	this.mAngleArcBC = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleC),parseFloat(angleB),false,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArcBC);
        
 	//letters 
@@ -53,7 +53,7 @@ createShapes: function()
         var textC = this.ns.mUpperLetterThree;
         var textD = this.ns.mUpperLetterFour;
 
-        this.setQuestion('' + 'The measure of angle ' + textA + textB + textC + ' is ' + parseInt(this.c - this.a) + ' &deg. The measure of angle ' + textA + textB + textD + ' is ' + parseInt(angleB - angleA) + '&deg. What is the measure of angle ' + textD + textB + textC + ' in degrees?');          
+        this.setQuestion('' + 'The measure of angle ' + textA + textB + textC + ' is ' + parseInt(this.c - this.a) + '&deg. The measure of angle ' + textA + textB + textD + ' is ' + parseInt(angleB - angleA) + '&deg. What is the measure of angle ' + textD + textB + textC + ' in degrees?');          
 
         var x = parseInt(this.mRaphael.width/2);
         var y = parseInt(this.mRaphael.height/2);
