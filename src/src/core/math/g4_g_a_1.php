@@ -1,15 +1,15 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_2',4.3202,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_22',4.3222,'4.g.a.1','');
 */
-var i_4_g_a_1__2 = new Class(
+var i_4_g_a_1__22 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95,100,50,425,100);
         this.mRaphael = Raphael(10,150,500,350);
-        this.mType = '4.g.a.1_2';
+        this.mType = '4.g.a.1_22';
 
         this.setQuestion('How many obtuse angles appear to be inside the drawing below?');
         this.setAnswer('' + '18',0);
@@ -30,16 +30,16 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_1',4.3201,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_21',4.3221,'4.g.a.1','');
 */
-var i_4_g_a_1__1 = new Class(
+var i_4_g_a_1__21 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95,100,50,425,100);
         this.mRaphael = Raphael(10,150,500,350);
-        this.mType = '4.g.a.1_1';
+        this.mType = '4.g.a.1_21';
         
         this.setQuestion('How many angles are inside the drawing below?');
        	this.setAnswer('' + '7',0);
