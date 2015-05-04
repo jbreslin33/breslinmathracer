@@ -21,9 +21,9 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	var rectangle = new Rectangle(50,50,100,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var rectangle = new Rectangle(50,50,100,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(rectangle);
-	var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+	var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(triangle);
 }
 });
