@@ -17,7 +17,7 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	var rectangle = new Rectangle(50,50,100,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+	var rectangle = new Rectangle(200,150,200,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(rectangle);
 }
 });
