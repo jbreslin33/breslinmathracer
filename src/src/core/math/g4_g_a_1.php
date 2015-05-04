@@ -1,4 +1,4 @@
-//add
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_1',4.3201,'4.g.a.1','');
 */
@@ -21,10 +21,7 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	var rectangle = new Rectangle(25,25,10,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	var rectangle = new Rectangle(50,50,100,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
 	this.addQuestionShape(rectangle);
 }
-
 });
-
-
