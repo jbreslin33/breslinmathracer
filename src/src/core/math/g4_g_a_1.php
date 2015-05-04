@@ -19,6 +19,10 @@ createQuestionShapes: function()
 {
 	var rectangle = new Rectangle(200,150,200,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(rectangle);
+
+	var textB = new RaphaelText(190,40,this,0,0,1,"#000000",.5,false,"" + "A",16);
+	this.addQuestionShape(textB);
+	
 }
 });
 
