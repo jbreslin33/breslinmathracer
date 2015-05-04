@@ -1,5 +1,28 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_24',4.3224,'4.g.a.1','');
+*/
+var i_4_g_a_1__24 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mType = '4.g.a.1_24';
+
+        this.setQuestion('If you start at point A etccccc');
+        this.setAnswer('' + '2',0);
+},
+
+createQuestionShapes: function()
+{
+	var rectangle = new Rectangle(50,50,100,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+	this.addQuestionShape(rectangle);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_23',4.3223,'4.g.a.1','');
 */
 var i_4_g_a_1__23 = new Class(
@@ -11,8 +34,8 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,500,350);
         this.mType = '4.g.a.1_23';
 
-        this.setQuestion('How many obtuse angles appear to be inside the drawing below?');
-        this.setAnswer('' + '18',0);
+        this.setQuestion('How many acute angles appear to be inside the drawing below?');
+        this.setAnswer('' + '2',0);
 },
 
 createQuestionShapes: function()
@@ -37,7 +60,6 @@ createQuestionShapes: function()
 	
 	var lineG = new LineOne (450,200,450,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineG);
-
 	
 	var lineH = new LineOne (450,100,500,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineH);
