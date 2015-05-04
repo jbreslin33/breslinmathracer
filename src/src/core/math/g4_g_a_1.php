@@ -26,9 +26,8 @@ createQuestionShapes: function()
         var hexagonC = new Hexagon (this.mSheet.mGame,this.mRaphael,260, 90, 245,125, 260,160, 305,160, 320,125, 305,90,.5,.5,.5,"#000",.5,false);
         this.addQuestionShape(hexagonC);
 
-	var lineA = new LineOne (200,150,100,200,this.mGame,this.mRaphael,"#000000",.5,false);
+	var lineA = new LineOne (400,50,300,100,this.mGame,this.mRaphael,"#000000",.5,false);
         this.addQuestionShape(lineA);
-	
 }
 });
 
