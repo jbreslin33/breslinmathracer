@@ -17,17 +17,11 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-        var hexagonA = new Hexagon (this.mSheet.mGame,this.mRaphael,140, 90, 125,125, 140,160, 185,160, 200,125, 185,90,.5,.5,.5,"#000",.5,false);
-        this.addQuestionShape(hexagonA);
-
-        var hexagonB = new Hexagon (this.mSheet.mGame,this.mRaphael,200,125, 185,160, 200,195, 245,195, 260,160, 245,125,.5,.5,.5,"#000",.5,false);
-        this.addQuestionShape(hexagonB);
-
-        var hexagonC = new Hexagon (this.mSheet.mGame,this.mRaphael,260, 90, 245,125, 260,160, 305,160, 320,125, 305,90,.5,.5,.5,"#000",.5,false);
-        this.addQuestionShape(hexagonC);
-
-	var lineA = new LineOne (400,50,300,100,this.mGame,this.mRaphael,"#000000",.5,false);
+	var lineA = new LineOne (400,50,300,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineA);
+	
+	var lineI = new LineOne (500,100,400,50,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineI);
 }
 });
 
