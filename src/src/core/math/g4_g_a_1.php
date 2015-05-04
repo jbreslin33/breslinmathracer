@@ -21,8 +21,10 @@ createQuestionShapes: function()
         //this.addQuestionShape(rectangle);
         //var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
         //this.addQuestionShape(triangle);
-        var hexagonA = new Hexagon (this.mSheet.mGame,this.mRaphael,140,90, 125,125, 140,160, 185,160, 200,125, 185,90,.5,.5,.5,"#000",.5,false);
+        var hexagonA = new Hexagon (this.mSheet.mGame,this.mRaphael,140, 90, 125,125, 140,160, 185,160, 200,125, 185,90,.5,.5,.5,"#000",.5,false);
         this.addQuestionShape(hexagonA);
+        var hexagonB = new Hexagon (this.mSheet.mGame,this.mRaphael,200,125, 185,160, 200,195, 245,195, 260,160, 245,125,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(hexagonB);
 
 	 //initialize: function (game,raphael,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,r,g,b,s,op,d)
 
