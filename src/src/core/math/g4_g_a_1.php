@@ -20,6 +20,12 @@ createQuestionShapes: function()
 	var lineA = new LineOne (400,50,300,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineA);
 	
+	var lineB = new LineOne (300,100,350,100,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineB);
+	
+	var lineH = new LineOne (450,100,500,100,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineH);
+	
 	var lineI = new LineOne (500,100,400,50,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineI);
 }
