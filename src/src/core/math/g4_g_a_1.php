@@ -23,6 +23,22 @@ createQuestionShapes: function()
 	var lineB = new LineOne (300,100,350,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineB);
 	
+	var lineC = new LineOne (350,100,350,150,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineC);
+	
+	var lineD = new LineOne (350,150,150,150,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineD);
+	
+	var lineE = new LineOne (150,150,150,200,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineE);
+	
+	var lineF = new LineOne (150,200,450,200,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineF);
+	
+	var lineG = new LineOne (450,200,450,100,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineG);
+
+	
 	var lineH = new LineOne (450,100,500,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineH);
 	
