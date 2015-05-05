@@ -35,10 +35,6 @@ this.mUserAnswerLabel.setSize(100, 25);
 
 });
 
-
-
-
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.g.b.3_4',5.3304,'5.g.b.3','graphs');
 */
