@@ -11,8 +11,8 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,500,350);
         this.mType = '4.g.a.1_24';
 
-        this.setQuestion('If you start at point A etccccc');
         this.setAnswer('' + '2',0);
+        this.setQuestion('' + 'If you start at A and follow the rectangle perimeter and pass through B C and D then how many right angle turns will you make?');
 },
 
 createQuestionShapes: function()
@@ -20,8 +20,18 @@ createQuestionShapes: function()
 	var rectangle = new Rectangle(200,150,200,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(rectangle);
 
-	var textB = new RaphaelText(190,40,this,0,0,1,"#000000",.5,false,"" + "A",16);
+	var textA = new RaphaelText(380,50,this,0,0,1,"#000000",.5,false,"" + "A",16);
+	this.addQuestionShape(textA);
+
+	var textB = new RaphaelText(200,80,this,0,0,1,"#000000",.5,false,"" + "B",16);
 	this.addQuestionShape(textB);
+	
+	var textC = new RaphaelText(200,160,this,0,0,1,"#000000",.5,false,"" + "C",16);
+	this.addQuestionShape(textC);
+	
+	var textD = new RaphaelText(300,200,this,0,0,1,"#000000",.5,false,"" + "D",16);
+	this.addQuestionShape(textD);
+	
 	
 }
 });
