@@ -25,14 +25,23 @@ createQuestionShapes: function()
 	var parallelogram = new Parallelogram(this.mSheet.mGame,this.mRaphael, parseInt(x-175),parseInt(y-150), parseInt(x+125),parseInt(y-150), parseInt(x+100),parseInt(y+25), parseInt(x-200),parseInt(y+25),.5,.5,.5,"#000",1,false);
         this.addQuestionShape(parallelogram);
 
-	var lineA = new LineOne (parseInt(x-25),parseInt(y-160),parseInt(x-25),parseInt(y-140),this.mGame,this.mRaphael,"#000",.5,false);
+	var lineA = new LineOne (parseInt(x-20),parseInt(y-160),parseInt(x-20),parseInt(y-140),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineA);
-	
+
 	var lineB = new LineOne (parseInt(x+100),parseInt(y-75),parseInt(x+130),parseInt(y-75),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineB);
 	
 	var lineC = new LineOne (parseInt(x+100),parseInt(y-65),parseInt(x+130),parseInt(y-65),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineC);
+	
+	var lineD = new LineOne (parseInt(x-20),parseInt(y+15),parseInt(x-20),parseInt(y+35),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineD);
+
+        var lineE = new LineOne (parseInt(x-200),parseInt(y-75),parseInt(x-170),parseInt(y-75),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineE);
+
+        var lineF = new LineOne (parseInt(x-200),parseInt(y-65),parseInt(x-170),parseInt(y-65),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineF);
 }
 });
 
