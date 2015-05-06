@@ -139,6 +139,56 @@ createQuestionShapes: function()
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_9',4.3209,'4.g.a.1','');
+*/
+var i_4_g_a_1__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.1_9';
+
+        this.setQuestion('How many acute angles are inside the shape below?');
+        this.setAnswer('' + '2',0);
+},
+
+createQuestionShapes: function()
+{
+        var triangle = new Triangle (100,225, 200,200, 300,225,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(triangle);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_8',4.3208,'4.g.a.1','');
+*/
+var i_4_g_a_1__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.1_8';
+
+        this.setQuestion('How many obtuse angles are inside the shape below?');
+        this.setAnswer('' + '1',0);
+},
+
+createQuestionShapes: function()
+{
+        var triangle = new Triangle (100,225, 200,200, 300,225,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(triangle);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_7',4.3207,'4.g.a.1','');
 */
 var i_4_g_a_1__7 = new Class(
