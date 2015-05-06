@@ -139,6 +139,22 @@ createQuestionShapes: function()
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_11',4.3211,'4.g.a.1','');
+*/
+var i_4_g_a_1__11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mType = '4.g.a.1_11';
+
+        this.setQuestion('A point is placed at each vertex of a pentagon. How many points are needed?');
+        this.setAnswer('' + '5',0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_10',4.3210,'4.g.a.1','');
 */
 var i_4_g_a_1__10 = new Class(
