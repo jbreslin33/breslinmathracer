@@ -13,28 +13,17 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '4.g.a.2_21';
 
-        this.setQuestion('What kind of triangle is the shape below?');
-        this.setAnswer('' + 'Right',0);
-        this.setAnswer('' + 'Right triangle',1);
+        this.setQuestion('What kind of quadralateral is the shape below?');
+        this.setAnswer('' + 'Parallelogram',0);
 },
 
 createQuestionShapes: function()
 {
-        var angleA = 270;
-        var angleB = 360;
+	var x = parseInt(this.mRaphael.width/2);
+	var y = parseInt(this.mRaphael.height/2);
 
-        this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
-        this.addQuestionShape(this.mRayA);
-
-        this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
-        this.addQuestionShape(this.mRayB);
-
-        this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
-        this.addQuestionShape(this.mAngleArc);
-
-        //right square
-        var rectangle = new Rectangle(12,12,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2 - 12),this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-        this.addQuestionShape(rectangle);
+	var parallelogram = new Parallelogram(this.mSheet.mGame,this.mRaphael, parseInt(x-175),parseInt(y-150), parseInt(x+125),parseInt(y-150), parseInt(x+100),parseInt(y+25), parseInt(x-200),parseInt(y+25),.5,.5,.5,"#000",1,false);
+        this.addQuestionShape(parallelogram);
 }
 });
 
