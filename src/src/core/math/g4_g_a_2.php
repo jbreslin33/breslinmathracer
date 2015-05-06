@@ -29,6 +29,12 @@ createQuestionShapes: function()
 
         this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
         this.addQuestionShape(this.mAngleArc);
+
+	//right square
+	var rectangle = new Rectangle(12,12,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2 - 12),this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(rectangle);
+	
+	
 }
 });
 
