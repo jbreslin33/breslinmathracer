@@ -157,7 +157,7 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+	var triangle = new Triangle (100,225, 200,0, 300,225,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(triangle);
 }
 });
