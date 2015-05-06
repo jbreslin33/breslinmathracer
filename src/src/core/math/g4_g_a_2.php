@@ -24,6 +24,10 @@ createQuestionShapes: function()
 
 	var parallelogram = new Parallelogram(this.mSheet.mGame,this.mRaphael, parseInt(x-175),parseInt(y-150), parseInt(x+125),parseInt(y-150), parseInt(x+100),parseInt(y+25), parseInt(x-200),parseInt(y+25),.5,.5,.5,"#000",1,false);
         this.addQuestionShape(parallelogram);
+
+	var lineA = new LineOne (parseInt(x-25),parseInt(y-160),parseInt(x-25),parseInt(y-140),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineA);
+
 }
 });
 
