@@ -27,7 +27,12 @@ createQuestionShapes: function()
 
 	var lineA = new LineOne (parseInt(x-25),parseInt(y-160),parseInt(x-25),parseInt(y-140),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineA);
-
+	
+	var lineB = new LineOne (parseInt(x+100),parseInt(y-75),parseInt(x+130),parseInt(y-75),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineB);
+	
+	var lineC = new LineOne (parseInt(x+100),parseInt(y-65),parseInt(x+130),parseInt(y-65),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineC);
 }
 });
 
