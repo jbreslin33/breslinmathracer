@@ -147,16 +147,28 @@ initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95,100,50,425,100);
         this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+	this.ns = new NameSampler();
         this.mType = '4.g.a.1_12';
 
-        this.setQuestion('How many obtuse angles appear to be inside the drawing below?');
-        this.setAnswer('' + '18',0);
+        this.setQuestion('' + this.ns.mNameOne + ' drew the figure below. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to draw one point at each place where the endpoints of the segments meet. How many points will ' + this.ns.mNameOne + ' draw?');
+        this.setAnswer('' + '7',0);
+        this.setAnswer('' + '7 points',1);
 },
 
 createQuestionShapes: function()
 {
-        var hexagon = new Hexagon (this.mSheet.mGame,this.mRaphael,260, 90, 245,125, 260,160, 305,160, 320,125, 305,90,.5,.5,.5,"#000",.5,false);
+        var hexagon = new Hexagon (this.mSheet.mGame,this.mRaphael, 260,90, 245,125, 260,160, 305,160, 320,125, 305,90,.5,.5,.5,"#000",.5,false);
         this.addQuestionShape(hexagon);
+	
+	var lineA = new LineOne (260,90, 305,160,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineA);
+	
+	var lineB = new LineOne (245,125, 320,125,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineB);
+	
+	var lineC = new LineOne (260,160, 305,90,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineC);
 }
 });
 
