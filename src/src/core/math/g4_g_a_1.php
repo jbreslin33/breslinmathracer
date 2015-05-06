@@ -31,8 +31,6 @@ createQuestionShapes: function()
 	
 	var textD = new RaphaelText(300,200,this,0,0,1,"#000000",.5,false,"" + "D",16);
 	this.addQuestionShape(textD);
-	
-	
 }
 });
 
@@ -136,6 +134,37 @@ createQuestionShapes: function()
 	this.addQuestionShape(rectangle);
 	var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	this.addQuestionShape(triangle);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_6',4.3206,'4.g.a.1','');
+*/
+var i_4_g_a_1__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.1_6';
+
+        this.setQuestion('What is this?');
+        this.setAnswer('' + 'Line segment',0);
+},
+
+createQuestionShapes: function()
+{
+ 	var endPointA = new Circle(8,100,100,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(endPointA);
+ 	
+ 	var endPointB = new Circle(8,300,100,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(endPointB);
+        
+	var lineA = new LineOne (100,100,300,100,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineA);
+
 }
 });
 
