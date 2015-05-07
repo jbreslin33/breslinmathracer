@@ -1,4 +1,37 @@
-//new Parallelogram(game,raphael,ax1,ay1,ax2,ay2,bx2,by2,bx1,by1,.5,.5,.5,"#000",1,false);
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_23',4.3323,'4.g.a.2','');
+*/
+var i_4_g_a_2__23 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.2_23';
+
+        this.setQuestion('The shape below has only 1 pair of parallel sides. What is it called?');
+        this.setAnswer('' + 'Trapezoid',0);
+        this.setAnswer('' + 'A Trapezoid',1);
+},
+
+createQuestionShapes: function()
+{
+        var x = parseInt(this.mRaphael.width/2);
+        var y = parseInt(this.mRaphael.height/2);
+
+        var trapezoid = new Trapezoid(this.mSheet.mGame,this.mRaphael,
+		parseInt(x-175),parseInt(y-150),
+		parseInt(x+135),parseInt(y-150),
+ 		parseInt(x+250),parseInt(y+25),
+		parseInt(x-200),parseInt(y+25),
+		.5,.5,.5,"#000",1,false);
+        this.addQuestionShape(trapezoid);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_22',4.3322,'4.g.a.2','');
