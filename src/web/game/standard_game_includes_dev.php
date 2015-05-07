@@ -37,6 +37,7 @@
 <script type="text/javascript" src="/src/polygon/raphael_text.php"></script>
 <script type="text/javascript" src="/src/polygon/rectangle.php"></script>
 <script type="text/javascript" src="/src/polygon/parallelogram.php"></script>
+<script type="text/javascript" src="/src/polygon/trapezoid.php"></script>
 <script type="text/javascript" src="/src/polygon/rhombus.php"></script>
 <script type="text/javascript" src="/src/polygon/line_one.php"></script>
 <script type="text/javascript" src="/src/polygon/ray.php"></script>
