@@ -32,8 +32,11 @@ createQuestionShapes: function()
 		.5,.5,.5,"#000",1,false);
         this.addQuestionShape(rhombus);
 
-        //var lineA = new LineOne (parseInt(x-20),parseInt(y-160),parseInt(x-20),parseInt(y-140),this.mGame,this.mRaphael,"#000",.5,false);
-        //this.addQuestionShape(lineA);
+        var lineA = new LineOne (parseInt(x+67.5),parseInt(y-117.5),parseInt(x+57.5),parseInt(y-110.5),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineA);
+        
+	var lineB = new LineOne (parseInt(x+67.5),parseInt(y-32.5),parseInt(x+57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineB);
 
 }
 });
