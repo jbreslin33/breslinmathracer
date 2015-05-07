@@ -35,12 +35,13 @@ createQuestionShapes: function()
         var lineA = new LineOne (parseInt(x+67.5),parseInt(y-117.5),parseInt(x+57.5),parseInt(y-110.5),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineA);
         
-	var lineB = new LineOne (parseInt(x+67.5),parseInt(y-32.5),parseInt(x+57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
+	var lineB = new LineOne (parseInt(x+69.5),parseInt(y-32.5),parseInt(x+57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineB);
-
+	
+	var lineC = new LineOne (parseInt(x-67.5),parseInt(y-35.5),parseInt(x-57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineC);
 }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_21',4.3321,'4.g.a.2','');
