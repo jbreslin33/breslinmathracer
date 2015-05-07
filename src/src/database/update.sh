@@ -72,6 +72,7 @@ cat src/polygon/angle_degree.php >> min.js
 cat src/polygon/raphael_text.php >> min.js
 cat src/polygon/rectangle.php >> min.js
 cat src/polygon/parallelogram.php >> min.js
+cat src/polygon/trapezoid.php >> min.js
 cat src/polygon/rhombus.php >> min.js
 cat src/polygon/line_one.php >> min.js
 cat src/polygon/ray.php >> min.js
