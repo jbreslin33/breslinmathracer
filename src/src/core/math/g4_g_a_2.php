@@ -40,6 +40,9 @@ createQuestionShapes: function()
 	
 	var lineC = new LineOne (parseInt(x-67.5),parseInt(y-35.5),parseInt(x-57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineC);
+	
+	var lineD = new LineOne (parseInt(x-57.5),parseInt(y-110.5),parseInt(x-67.5),parseInt(y-117.5),this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineD);
 }
 });
 
