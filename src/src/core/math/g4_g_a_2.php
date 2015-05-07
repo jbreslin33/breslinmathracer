@@ -19,11 +19,17 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-        var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        var triangle = new Triangle (20,200, 100,100, 180,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
         this.addQuestionShape(triangle);
 
-	var textA = new RaphaelText(380,50,this,0,0,1,"#000000",.5,false,"" + "A",16);
+	var textA = new RaphaelText(40,190,this,0,0,1,"#000000",.5,false,"" + "60",16);
 	this.addQuestionShape(textA);
+	
+	var textB = new RaphaelText(100,120,this,0,0,1,"#000000",.5,false,"" + "60",16);
+	this.addQuestionShape(textB);
+	
+	var textC = new RaphaelText(160,190,this,0,0,1,"#000000",.5,false,"" + "60",16);
+	this.addQuestionShape(textC);
 }
 });
 
