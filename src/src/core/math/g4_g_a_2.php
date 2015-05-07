@@ -1,5 +1,33 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_24',4.3324,'4.g.a.2','');
+*/
+var i_4_g_a_2__24 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.2_24';
+
+        this.setQuestion('What kind of triangle is the shape below?');
+        this.setAnswer('' + 'equilateral',0);
+        this.setAnswer('' + 'equilateral triangle',1);
+},
+
+createQuestionShapes: function()
+{
+        var triangle = new Triangle (125,125,100,150,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(triangle);
+
+	var textA = new RaphaelText(380,50,this,0,0,1,"#000000",.5,false,"" + "A",16);
+	this.addQuestionShape(textA);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_23',4.3323,'4.g.a.2','');
 */
 var i_4_g_a_2__23 = new Class(
