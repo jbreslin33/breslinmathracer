@@ -1,3 +1,35 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.3_26',4.3426,'4.g.a.3','');
+*/
+var i_4_g_a_3__26 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.ns = new NameSampler();
+        this.mType = '4.g.a.3_26';
+
+        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the the shape below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Write symetrical or not symetrical.');
+        this.setAnswer('' + 'symetrical',0);
+},
+
+createQuestionShapes: function()
+{
+        var triangle = new Triangle (300,50, 400,100, 300,150, this.mSheet.mGame,this.mRaphael,.4,1,1,"#000",.5,false);
+        this.addQuestionShape(triangle);
+
+	var rectangle = new Rectangle(200,50,100,75,this,this.mRaphael,.4,1,1,"#000",.5,true);
+        this.addQuestionShape(rectangle);
+
+	var lineA = new LineOne (100,75, 100,225,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineA);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.3_25',4.3425,'4.g.a.3','');
 */
