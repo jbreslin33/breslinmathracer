@@ -16,7 +16,7 @@ initialize: function(sheet)
         this.a = 0;
         this.b = 0;
 
-        while (this.a == this.b)
+        while (this.a == this.b || this.a % this.b == 0)
         {
                 this.a = Math.floor(Math.random()*9)+1;
                 this.b = Math.floor(Math.random()*9)+1;
