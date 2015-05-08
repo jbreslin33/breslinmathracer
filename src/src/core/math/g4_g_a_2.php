@@ -14,8 +14,6 @@ initialize: function(sheet)
 	
 	this.mRandom = Math.floor(Math.random()*3)+1;
 
-	this.mRandom = 3;
-
 	if (this.mRandom == 1)
 	{
         	this.setQuestion('What kind of quadralateral is the shape below?');
