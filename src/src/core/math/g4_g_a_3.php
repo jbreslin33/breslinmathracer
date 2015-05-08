@@ -17,8 +17,12 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	var kid = new Shape(50,50,200,200,this.mSheet.mGame,"/images/bus/kid.png","","");
+	var kid = new Shape(50,50,200,300,this.mSheet.mGame,"/images/bus/kid.png","","");
       	this.addQuestionShape(kid);
+
+        var lineA = new LineOne (190,100,190,200,this.mGame,this.mRaphael,"#000",.5,false);
+        this.addQuestionShape(lineA);
+
 
 /*
         var angleA = 270;
