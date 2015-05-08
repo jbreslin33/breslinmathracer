@@ -1,5 +1,40 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_26',4.3326,'4.g.a.2','');
+*/
+var i_4_g_a_2__26 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.2_26';
+
+        this.setQuestion('What kind of triangle is the shape below?');
+        this.setAnswer('' + 'obtuse',0);
+        this.setAnswer('' + 'obtuse triangle',1);
+},
+
+createQuestionShapes: function()
+{
+        var triangle = new Triangle (20,200, 150,125, 280,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(triangle);
+
+        var textA = new RaphaelText(60,190,this,0,0,1,"#000000",.5,false,"" + "26",16);
+        this.addQuestionShape(textA);
+
+        var textB = new RaphaelText(150,140,this,0,0,1,"#000000",.5,false,"" + "128",16);
+        this.addQuestionShape(textB);
+
+        var textC = new RaphaelText(240,190,this,0,0,1,"#000000",.5,false,"" + "26",16);
+        this.addQuestionShape(textC);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_25',4.3325,'4.g.a.2','');
 */
 var i_4_g_a_2__25 = new Class(
