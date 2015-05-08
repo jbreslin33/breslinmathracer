@@ -25,7 +25,7 @@ createQuestionShapes: function()
 	var rectangle = new Rectangle(200,50,100,75,this,this.mRaphael,.4,1,1,"#000",.5,true);
         this.addQuestionShape(rectangle);
 
-	var lineA = new LineOne (100,75, 100,225,this.mGame,this.mRaphael,"#000",.5,false);
+	var lineA = new LineOne (50,100, 450,100,this.mGame,this.mRaphael,"#000",.5,false);
         this.addQuestionShape(lineA);
 }
 });
