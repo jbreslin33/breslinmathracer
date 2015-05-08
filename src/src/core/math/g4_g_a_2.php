@@ -1,5 +1,116 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_28',4.3328,'4.g.a.2','');
+*/
+var i_4_g_a_2__28 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.2_28';
+	
+	this.mRandom = Math.floor(Math.random()*3)+1;
+
+	this.mRandom = 3;
+
+	if (this.mRandom == 1)
+	{
+        	this.setQuestion('What kind of quadralateral is the shape below?');
+        	this.setAnswer('' + 'Parallelogram',0);
+	}
+	if (this.mRandom == 2)
+	{
+        	this.setQuestion('The shape below has only 1 pair of parallel sides. What is it called?');
+        	this.setAnswer('' + 'Trapezoid',0);
+        	this.setAnswer('' + 'A Trapezoid',1);
+	}
+	if (this.mRandom == 3)
+	{
+        	this.setQuestion('What is the name of the figure below?');
+        	this.setAnswer('' + 'Rhombus',0);
+        	this.setAnswer('' + 'A Rhombus',1);
+	}
+},
+
+createQuestionShapes: function()
+{
+	if (this.mRandom == 1)
+	{
+        	var x = parseInt(this.mRaphael.width/2);
+        	var y = parseInt(this.mRaphael.height/2);
+
+        	var parallelogram = new Parallelogram(this.mSheet.mGame,this.mRaphael, parseInt(x-175),parseInt(y-150), parseInt(x+125),parseInt(y-150), parseInt(x+100),parseInt(y+25), parseInt(x-200),parseInt(y+25),.5,.5,.5,"#000",1,false);
+        	this.addQuestionShape(parallelogram);
+
+        	var lineA = new LineOne (parseInt(x-20),parseInt(y-160),parseInt(x-20),parseInt(y-140),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineA);
+
+        	var lineB = new LineOne (parseInt(x+100),parseInt(y-75),parseInt(x+130),parseInt(y-75),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineB);
+
+        	var lineC = new LineOne (parseInt(x+100),parseInt(y-65),parseInt(x+130),parseInt(y-65),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineC);
+
+        	var lineD = new LineOne (parseInt(x-20),parseInt(y+15),parseInt(x-20),parseInt(y+35),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineD);
+
+        	var lineE = new LineOne (parseInt(x-200),parseInt(y-75),parseInt(x-170),parseInt(y-75),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineE);
+
+        	var lineF = new LineOne (parseInt(x-200),parseInt(y-65),parseInt(x-170),parseInt(y-65),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineF);
+	}
+	if (this.mRandom == 2)
+	{
+        	var x = parseInt(this.mRaphael.width/2);
+        	var y = parseInt(this.mRaphael.height/2);
+
+        	var trapezoid = new Trapezoid(this.mSheet.mGame,this.mRaphael,
+                	parseInt(x-175),parseInt(y-150),
+                	parseInt(x+135),parseInt(y-150),
+                	parseInt(x+250),parseInt(y+25),
+                	parseInt(x-200),parseInt(y+25),
+                	.5,.5,.5,"#000",1,false);
+        	this.addQuestionShape(trapezoid);
+	}
+	if (this.mRandom == 3)
+	{
+        	var x = parseInt(this.mRaphael.width/2);
+        	var y = parseInt(this.mRaphael.height/2);
+
+        	var rhombus = new Rhombus(this.mSheet.mGame,this.mRaphael,
+                	parseInt(x)    ,parseInt(y-150),
+                	parseInt(x+125),parseInt(y-75),
+                	parseInt(x)    ,parseInt(y),
+                	parseInt(x-125),parseInt(y-75),
+
+                	.5,.5,.5,"#000",1,false);
+        	this.addQuestionShape(rhombus);
+
+        	var lineA = new LineOne (parseInt(x+67.5),parseInt(y-117.5),parseInt(x+57.5),parseInt(y-110.5),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineA);
+
+        	var lineB = new LineOne (parseInt(x+69.5),parseInt(y-32.5),parseInt(x+57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineB);
+
+        	var lineC = new LineOne (parseInt(x-67.5),parseInt(y-35.5),parseInt(x-57.5),parseInt(y-42.5),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineC);
+
+        	var lineD = new LineOne (parseInt(x-57.5),parseInt(y-110.5),parseInt(x-67.5),parseInt(y-117.5),this.mGame,this.mRaphael,"#000",.5,false);
+        	this.addQuestionShape(lineD);
+	}
+	if (this.mRandom == 4)
+	{
+
+	}
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_27',4.3327,'4.g.a.2','');
 */
 var i_4_g_a_2__27 = new Class(
@@ -15,7 +126,6 @@ initialize: function(sheet)
         this.setQuestion('What kind of triangle is the shape below?');
 
 	this.mRandom = Math.floor(Math.random()*4)+1;
-	this.mRandom = 4;
 	
 	if (this.mRandom == 1)
 	{
@@ -261,6 +371,7 @@ initialize: function(sheet)
 
         this.setQuestion('What is the name of the figure below?');
         this.setAnswer('' + 'Rhombus',0);
+        this.setAnswer('' + 'A Rhombus',1);
 },
 
 createQuestionShapes: function()
