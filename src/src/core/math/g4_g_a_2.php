@@ -1,5 +1,114 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_27',4.3327,'4.g.a.2','');
+*/
+var i_4_g_a_2__27 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.2_27';
+
+        this.setQuestion('What kind of triangle is the shape below?');
+
+	this.mRandom = Math.floor(Math.random()*4)+1;
+	this.mRandom = 4;
+	
+	if (this.mRandom == 1)
+	{
+        	this.setAnswer('' + 'Right',0);
+        	this.setAnswer('' + 'Right triangle',1);
+	}
+	if (this.mRandom == 2)
+	{
+        	this.setQuestion('What kind of triangle is the shape below?');
+        	this.setAnswer('' + 'acute',0);
+        	this.setAnswer('' + 'acute triangle',1);
+	}
+	if (this.mRandom == 3)
+	{
+        	this.setQuestion('What kind of triangle is the shape below?');
+        	this.setAnswer('' + 'obtuse',0);
+        	this.setAnswer('' + 'obtuse triangle',1);
+	}
+	if (this.mRandom == 4)
+	{
+        	this.setQuestion('What kind of triangle is the shape below?');
+        	this.setAnswer('' + 'equilateral',0);
+        	this.setAnswer('' + 'equilateral triangle',1);
+	}
+},
+
+createQuestionShapes: function()
+{
+	if (this.mRandom == 1)
+	{
+        	var angleA = 270;
+        	var angleB = 360;
+
+        	this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayA);
+
+        	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayB);
+
+        	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
+        	this.addQuestionShape(this.mAngleArc);
+
+        	//right square
+        	var rectangle = new Rectangle(12,12,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2 - 12),this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(rectangle);
+	}
+	if (this.mRandom == 2)
+	{
+        	var triangle = new Triangle (20,200, 205,125, 280,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        	this.addQuestionShape(triangle);
+
+        	var textA = new RaphaelText(70,190,this,0,0,1,"#000000",.5,false,"" + "35",16);
+        	this.addQuestionShape(textA);
+
+        	var textB = new RaphaelText(200,140,this,0,0,1,"#000000",.5,false,"" + "65",16);
+        	this.addQuestionShape(textB);
+
+        	var textC = new RaphaelText(250,190,this,0,0,1,"#000000",.5,false,"" + "80",16);
+        	this.addQuestionShape(textC);
+	}
+	if (this.mRandom == 3)
+	{
+        	var triangle = new Triangle (20,200, 150,125, 280,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        	this.addQuestionShape(triangle);
+
+        	var textA = new RaphaelText(60,190,this,0,0,1,"#000000",.5,false,"" + "26",16);
+        	this.addQuestionShape(textA);
+
+        	var textB = new RaphaelText(150,140,this,0,0,1,"#000000",.5,false,"" + "128",16);
+        	this.addQuestionShape(textB);
+
+        	var textC = new RaphaelText(240,190,this,0,0,1,"#000000",.5,false,"" + "26",16);
+        	this.addQuestionShape(textC);
+	}
+	if (this.mRandom == 4)
+	{
+        	var triangle = new Triangle (20,200, 100,100, 180,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        	this.addQuestionShape(triangle);
+
+        	var textA = new RaphaelText(40,190,this,0,0,1,"#000000",.5,false,"" + "60",16);
+        	this.addQuestionShape(textA);
+
+        	var textB = new RaphaelText(100,120,this,0,0,1,"#000000",.5,false,"" + "60",16);
+        	this.addQuestionShape(textB);
+
+        	var textC = new RaphaelText(160,190,this,0,0,1,"#000000",.5,false,"" + "60",16);
+        	this.addQuestionShape(textC);
+	}
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_26',4.3326,'4.g.a.2','');
 */
 var i_4_g_a_2__26 = new Class(
@@ -13,8 +122,8 @@ initialize: function(sheet)
         this.mType = '4.g.a.2_26';
 
         this.setQuestion('What kind of triangle is the shape below?');
-        this.setAnswer('' + 'obtuse',0);
-        this.setAnswer('' + 'obtuse triangle',1);
+        this.setAnswer('' + 'acute',0);
+        this.setAnswer('' + 'acute triangle',1);
 },
 
 createQuestionShapes: function()
