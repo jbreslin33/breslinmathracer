@@ -11,13 +11,16 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '4.g.a.3_20';
 
-        this.setQuestion('What kind of triangle is the shape below?');
-        this.setAnswer('' + 'Right',0);
-        this.setAnswer('' + 'Right triangle',1);
+        this.setQuestion('Does the line show a line of symmetry? Answer yes or no.');
+        this.setAnswer('' + 'yes',0);
 },
 
 createQuestionShapes: function()
 {
+	var kid = new Shape(50,50,200,200,this.mSheet.mGame,"/images/bus/kid.png","","");
+      	this.addQuestionShape(kid);
+
+/*
         var angleA = 270;
         var angleB = 360;
 
@@ -33,6 +36,7 @@ createQuestionShapes: function()
         //right square
         var rectangle = new Rectangle(12,12,parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2 - 12),this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         this.addQuestionShape(rectangle);
+*/
 
 
 }
