@@ -1,3 +1,87 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_26',4.3226,'4.g.a.1','');
+*/
+var i_4_g_a_1__26 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mType = '4.g.a.1_26';
+
+        this.mRandom = Math.floor(Math.random()*2)+1;
+
+        if (this.mRandom == 1)
+        {
+        	this.setQuestion('What kind of angle is this? Acute or Obtuse or Right?');
+        	this.setAnswer('' + 'Obtuse',0);
+        	this.setAnswer('' + 'Obtuse angle',1);
+        }
+        if (this.mRandom == 2)
+        {
+        	this.setQuestion('What kind of angle is this? Acute or Obtuse or Right?');
+        	this.setAnswer('' + 'Acute',0);
+        	this.setAnswer('' + 'Acute angle',1);
+        }
+
+        if (this.mRandom == 3)
+        {
+        	this.setQuestion('What kind of angle is this? Acute or Obtuse or Right?');
+        	this.setAnswer('' + 'Right',0);
+        	this.setAnswer('' + 'Right angle',1);
+        }
+},
+
+createQuestionShapes: function()
+{
+        if (this.mRandom == 1)
+        {
+        	var angleA = Math.floor(Math.random()*30+200);
+        	var angleB = 360;
+
+        	this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayA);
+
+        	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayB);
+
+        	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
+        	this.addQuestionShape(this.mAngleArc);
+	}
+        if (this.mRandom == 2)
+        {
+        	var angleA = Math.floor(Math.random()*30+280);
+        	var angleB = 360;
+
+        	this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayA);
+
+        	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayB);
+
+        	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
+        	this.addQuestionShape(this.mAngleArc);
+        }
+        if (this.mRandom == 3)
+        {
+        	var angleA = 270;
+        	var angleB = 360;
+
+        	this.mRayA = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleA,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayA);
+
+        	this.mRayB = new Ray (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,angleB,this,"#000000",.5,false);
+        	this.addQuestionShape(this.mRayB);
+
+        	this.mAngleArc = new AngleArc(parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),50, parseFloat(angleB),parseFloat(angleA),true,this,0,0,1,"none",.5,false);;
+        	this.addQuestionShape(this.mAngleArc);
+        }
+}
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_25',4.3225,'4.g.a.1','');
 */
@@ -11,7 +95,6 @@ initialize: function(sheet)
         this.mType = '4.g.a.1_25';
 
         this.mRandom = Math.floor(Math.random()*2)+1;
-	this.mRandom = 1;
 
 	if (this.mRandom == 1)
 	{
