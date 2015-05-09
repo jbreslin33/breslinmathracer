@@ -1,5 +1,53 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.3_29',4.3429,'4.g.a.3','');
+*/
+var i_4_g_a_3__29 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.3_29';
+
+        this.setQuestion('Is this the picture below symmetrical or not symmetrical? Write symmetrical or not symmetrical.');
+        this.setAnswer('' + 'not symmetrical',0);
+},
+
+createQuestionShapes: function()
+{
+        var tree = new Shape(100,100,200,300,this.mSheet.mGame,"/images/christmas/christmas-tree.png","","");
+        this.addQuestionShape(tree);
+}
+});
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.3_28',4.3428,'4.g.a.3','');
+*/
+var i_4_g_a_3__28 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.g.a.3_28';
+
+        this.setQuestion('Is this the picture below symmetrical or not symmetrical? Write symmetrical or not symmetrical.');
+        this.setAnswer('' + 'symmetrical',0);
+},
+
+createQuestionShapes: function()
+{
+        var egg = new Shape(100,100,200,300,this.mSheet.mGame,"/images/easter/easter_egg_blue.png","","");
+        this.addQuestionShape(egg);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.3_27',4.3427,'4.g.a.3','');
 */
 var i_4_g_a_3__27 = new Class(
@@ -13,8 +61,8 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mType = '4.g.a.3_27';
 
-        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the the shape below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Write symetrical or not symetrical.');
-        this.setAnswer('' + 'not symetrical',0);
+        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symmetrical cut in the the shape below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Write symmetrical or not symmetrical.');
+        this.setAnswer('' + 'not symmetrical',0);
 },
 
 createQuestionShapes: function()
@@ -45,8 +93,8 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mType = '4.g.a.3_26';
 
-        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the the shape below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Write symetrical or not symetrical.');
-        this.setAnswer('' + 'symetrical',0);
+        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symmetrical cut in the the shape below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Write symmetrical or not symmetrical.');
+        this.setAnswer('' + 'symmetrical',0);
 },
 
 createQuestionShapes: function()
@@ -80,12 +128,12 @@ initialize: function(sheet)
         
 	if (this.mRandom == 1)
 	{
-        	this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
+        	this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symmetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
         	this.setAnswer('' + 'yes',0);
 	}
 	if (this.mRandom == 2)
 	{
-        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
+        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symmetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
         this.setAnswer('' + 'no',0);
 	
 	}
@@ -126,7 +174,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mType = '4.g.a.3_24';
 
-        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
+        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symmetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
         this.setAnswer('' + 'yes',0);
 },
 
@@ -154,7 +202,7 @@ initialize: function(sheet)
 	this.ns = new NameSampler();
         this.mType = '4.g.a.3_23';
 
-        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
+        this.setQuestion('' + this.ns.mNameOne + ' wanted to make a symmetrical cut in the triangle below with the grey line. Was ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' succesful? Answer yes or no.');
         this.setAnswer('' + 'no',0);
 },
 
