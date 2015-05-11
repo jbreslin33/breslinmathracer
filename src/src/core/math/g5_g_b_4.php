@@ -17,7 +17,7 @@ this.mAnswerTextBox.setSize(100,50);
 
 
 
-this.setAnswer('sometimes',0);
+this.setAnswer('never',0);
 
 this.setQuestion('Write sometimes, always, or never.<br><br>A trapezoid is a square.');
 
