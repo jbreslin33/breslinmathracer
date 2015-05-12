@@ -1411,8 +1411,8 @@ Extends: RaphaelPolygon,
 		this.x2 = x2;
 		this.y2 = y2;
 
-    this.vLines = new Array()
-    this.hLines = new Array()
+    this.vLines = new Array();
+    this.hLines = new Array();
 		
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 		
@@ -1511,7 +1511,20 @@ for (var i = 0; i < this.mPolygon.axis[0].text.items.length; i++) {
     }).toBack();
 }
 
+
+var iMax = this.mPolygon.axis[0].text.items.length;
+    var jMax = this.mPolygon.axis[1].text.items.length;
+    this.circles = new Array();
+
+    for (i=0;i<iMax;i++) {
+      this.circles[i]=new Array();
+      for (j=0;j<jMax;j++) {
+        this.circles[i][j]=0;
+      }
+    }
+
 var b;
+var current = '';
 
     // Draw invisible circles at each point
 for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
@@ -1521,18 +1534,30 @@ for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
     var x = this.mPolygon.axis[0].text.items[j].attrs.x;
     b = this.mRaphael.circle(x, y, 10).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0});
     b.data("click", 0);
+    b.data("x", j);
+    b.data("y", i);
+    this.circles[j][i] = b;
+    //item.addQuestionShape(b);
 
-    b.mouseup(function() {
+    b.mousedown(function() {
       if (this.data("click") == '1') {
-        this.attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0}).scale(2,2);
+        this.attr({fill: "white", stroke: "none", opacity: 0}).scale(2,2);
         this.data("click", 0);
+        item.setTempUserAnswer('');        
       }
       else {
-        this.attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+        if(current != '')  {
+          current.attr({fill: "white", stroke: "none", opacity: 0}).scale(2,2);
+          current.data("click", 0);
+        }
+        this.attr({fill: "white", stroke: "none", opacity: 1}).scale(.5,.5);
         this.data("click", 1);
+        item.setTempUserAnswer('' + this.data("x") + ' ' + this.data("y"));
+        current = this;
+//console.log(this.data("x"));
       }
     });
-   
+   //"hsb(0, 1, 1)"
   }
 }
 
@@ -1570,6 +1595,13 @@ setVisibility: function(b)
                         for( var i = 0; i < this.axisItems2.length; i++ ) {                         
                            this.hLines[i].show(); 
                         } 
+                        
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                          for( var j = 0; j < this.axisItems2.length; j++ ) {
+                            this.circles[i][j].show(); 
+                          }
+                        }
+                    
                 }
                 else
                 {
@@ -1590,6 +1622,12 @@ setVisibility: function(b)
                         for( var i = 0; i < this.axisItems2.length; i++ ) {                         
                            this.hLines[i].hide(); 
                         } 
+
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                          for( var j = 0; j < this.axisItems2.length; j++ ) {
+                            this.circles[i][j].hide(); 
+                          }
+                        }
                 }
 	},
 
