@@ -6,5 +6,3 @@ update item_types SET active_code = 0 where id = '4.md.b.4_9';
 update item_types SET active_code = 0 where id = '4.md.b.4_10';
 update item_types SET active_code = 0 where id = '4.md.b.4_11';
 update item_types SET active_code = 0 where id = '4.md.b.4_12';
-update item_types SET active_code = 0 where id = '5.md.b.2_1';
-

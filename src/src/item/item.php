@@ -437,9 +437,6 @@ var Item = new Class(
 		{
 			this.mSheet.setTypeWrong(this.mType);
 		}
-console.log(this.mUserAnswer);
-console.log(this.mAnswerArray[0]);
-
 		return correctAnswerFound;
 	},
 

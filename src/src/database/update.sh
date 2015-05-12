@@ -91,7 +91,6 @@ cat src/div/div.php >> min.js
 
 cat src/item/item.php >> min.js
 cat src/item/text_item.php >> min.js
-cat src/item/graph_item.php >> min.js
 cat src/item/numberpad_item.php >> min.js
 cat src/item/text_item_fraction.php >> min.js
 cat src/item/text_item_mixed_number.php >> min.js
