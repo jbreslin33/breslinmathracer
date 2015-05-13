@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_10',4.2810,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_10',4.2810,'4.md.c.5.a',''); update item_types SET progression = 4.0160 where id = '4.md.c.5.a_10';
 */
 var i_4_md_c_5_a__10 = new Class(
 {
@@ -82,7 +82,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_9',4.2810,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_9',4.2810,'4.md.c.5.a',''); update item_types SET progression = 4.0159 where id = '4.md.c.5.a_9';
 */
 var i_4_md_c_5_a__9 = new Class(
 {
@@ -120,7 +120,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_8',4.2808,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_8',4.2808,'4.md.c.5.a',''); update item_types SET progression = 4.0158 where id = '4.md.c.5.a_8';
 */
 var i_4_md_c_5_a__8 = new Class(
 {
@@ -158,7 +158,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_7',4.2807,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_7',4.2807,'4.md.c.5.a',''); update item_types SET progression = 4.0157 where id = '4.md.c.5.a_7';
 */
 var i_4_md_c_5_a__7 = new Class(
 {
@@ -196,7 +196,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_6',4.2806,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_6',4.2806,'4.md.c.5.a',''); update item_types SET progression = 4.0156 where id = '4.md.c.5.a_6';
 */
 var i_4_md_c_5_a__6 = new Class(
 {
@@ -215,7 +215,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_5',4.2805,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_5',4.2805,'4.md.c.5.a',''); update item_types SET progression = 4.0155 where id = '4.md.c.5.a_5';
 */
 var i_4_md_c_5_a__5 = new Class(
 {
@@ -256,7 +256,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_4',4.2804,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_4',4.2804,'4.md.c.5.a',''); update item_types SET progression = 4.0154 where id = '4.md.c.5.a_4';
 */
 var i_4_md_c_5_a__4 = new Class(
 {
@@ -299,7 +299,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_3',4.2803,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_3',4.2803,'4.md.c.5.a',''); update item_types SET progression = 4.0153 where id = '4.md.c.5.a_3';
 */
 var i_4_md_c_5_a__3 = new Class(
 {
@@ -327,7 +327,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_2',4.2802,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_2',4.2802,'4.md.c.5.a',''); update item_types SET progression = 4.0152 where id = '4.md.c.5.a_2';
 */
 var i_4_md_c_5_a__2 = new Class(
 {
@@ -354,7 +354,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_1',4.2801,'4.md.c.5.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.5.a_1',4.2801,'4.md.c.5.a',''); update item_types SET progression = 4.0151 where id = '4.md.c.5.a_1';
 */
 var i_4_md_c_5_a__1 = new Class(
 {
