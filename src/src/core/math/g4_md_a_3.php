@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_6',4.2606,'4.md.a.3','calculate perimeter of a rectangle (non-square)'); update item_types SET progression = 4.0156 where id = '4.md.a.3_6';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_6',4.2606,'4.md.a.3','calculate perimeter of a rectangle (non-square)'); update item_types SET progression = 4.0526 where id = '4.md.a.3_6';
 */
 
 var i_4_md_a_3__6 = new Class(
@@ -82,7 +82,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_7',4.2607,'4.md.a.3','calculate perimeter of a square'); update item_types SET progression = 4.0157 where id = '4.md.a.3_7';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_7',4.2607,'4.md.a.3','calculate perimeter of a square'); update item_types SET progression = 4.0527 where id = '4.md.a.3_7';
 */
 
 var i_4_md_a_3__7 = new Class(
@@ -146,7 +146,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_8',4.2608,'4.md.a.3','calculate side of a square given perimeter'); update item_types SET progression = 4.0158 where id = '4.md.a.3_8';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_8',4.2608,'4.md.a.3','calculate side of a square given perimeter'); update item_types SET progression = 4.0528 where id = '4.md.a.3_8';
 */
 
 var i_4_md_a_3__8 = new Class(
@@ -210,7 +210,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_9',4.2609,'4.md.a.3','calculate length of a rectangle (non-square) given width and perimeter'); update item_types SET progression = 4.0159 where id = '4.md.a.3_9';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_9',4.2609,'4.md.a.3','calculate length of a rectangle (non-square) given width and perimeter'); update item_types SET progression = 4.0529 where id = '4.md.a.3_9';
 */
 
 var i_4_md_a_3__9 = new Class(
@@ -294,7 +294,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_10',4.2610,'4.md.a.3','calculate width of a rectangle (non-square) given length and perimeter'); update item_types SET progression = 4.0160 where id = '4.md.a.3_10';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_10',4.2610,'4.md.a.3','calculate width of a rectangle (non-square) given length and perimeter'); update item_types SET progression = 4.0530 where id = '4.md.a.3_10';
 */
 
 var i_4_md_a_3__10 = new Class(
@@ -378,7 +378,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',4.2601,'4.md.a.3','calculate area of a rectangle (non-square)'); update item_types SET progression = 4.0151 where id = '4.md.a.3_1';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_1',4.2601,'4.md.a.3','calculate area of a rectangle (non-square)'); update item_types SET progression = 4.0521 where id = '4.md.a.3_1';
 */
 
 var i_4_md_a_3__1 = new Class(
@@ -462,7 +462,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',4.2602,'4.md.a.3','calculate area of a square'); update item_types SET progression = 4.0152 where id = '4.md.a.3_2';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_2',4.2602,'4.md.a.3','calculate area of a square'); update item_types SET progression = 4.0522 where id = '4.md.a.3_2';
 */
 
 var i_4_md_a_3__2 = new Class(
@@ -526,7 +526,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_5',4.2605,'4.md.a.3','calculate side of a square given area'); update item_types SET progression = 4.0155 where id = '4.md.a.3_5';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_5',4.2605,'4.md.a.3','calculate side of a square given area'); update item_types SET progression = 4.0525 where id = '4.md.a.3_5';
 */
 
 var i_4_md_a_3__5 = new Class(
@@ -590,7 +590,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_3',4.2603,'4.md.a.3','calculate length of a rectangle (non-square) given width and area'); update item_types SET progression = 4.0153 where id = '4.md.a.3_3';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_3',4.2603,'4.md.a.3','calculate length of a rectangle (non-square) given width and area'); update item_types SET progression = 4.0523 where id = '4.md.a.3_3';
 */
 
 var i_4_md_a_3__3 = new Class(
@@ -618,7 +618,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_4',4.2604,'4.md.a.3','calculate width of a rectangle (non-square) given length and area'); update item_types SET progression = 4.0154 where id = '4.md.a.3_4';
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.3_4',4.2604,'4.md.a.3','calculate width of a rectangle (non-square) given length and area'); update item_types SET progression = 4.0524 where id = '4.md.a.3_4';
 */
 
 var i_4_md_a_3__4 = new Class(
