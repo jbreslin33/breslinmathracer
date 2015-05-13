@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.6_2',4.3002,'4.md.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.6_2',4.3002,'4.md.c.6',''); update item_types SET progression = 4.0552 where id = '4.md.c.6_2';
 */
 var i_4_md_c_6__2 = new Class(
 {
@@ -50,7 +50,7 @@ createShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.6_1',4.3001,'4.md.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.c.6_1',4.3001,'4.md.c.6',''); update item_types SET progression = 4.0551 where id = '4.md.c.6_1';
 */
 var i_4_md_c_6__1 = new Class(
 {
