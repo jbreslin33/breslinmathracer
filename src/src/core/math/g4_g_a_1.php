@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_26',4.3226,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_26',4.3226,'4.g.a.1',''); update item_types SET progression = 4.0626 where id = '4.g.a.1_26';
 */
 var i_4_g_a_1__26 = new Class(
 {
@@ -83,7 +83,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_25',4.3225,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_25',4.3225,'4.g.a.1',''); update item_types SET progression = 4.0625 where id = '4.g.a.1_25';
 */
 var i_4_g_a_1__25 = new Class(
 {
@@ -131,7 +131,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_24',4.3224,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_24',4.3224,'4.g.a.1',''); update item_types SET progression = 4.0624 where id = '4.g.a.1_24';
 */
 var i_4_g_a_1__24 = new Class(
 {
@@ -166,7 +166,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_23',4.3223,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_23',4.3223,'4.g.a.1',''); update item_types SET progression = 4.0623 where id = '4.g.a.1_23';
 */
 var i_4_g_a_1__23 = new Class(
 {
@@ -214,7 +214,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_22',4.3222,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_22',4.3222,'4.g.a.1',''); update item_types SET progression = 4.0622 where id = '4.g.a.1_22';
 */
 var i_4_g_a_1__22 = new Class(
 {
@@ -243,7 +243,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_21',4.3221,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_21',4.3221,'4.g.a.1',''); update item_types SET progression = 4.0621 where id = '4.g.a.1_21';
 */
 var i_4_g_a_1__21 = new Class(
 {
@@ -269,7 +269,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_12',4.3212,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_12',4.3212,'4.g.a.1',''); update item_types SET progression = 4.0612 where id = '4.g.a.1_12';
 */
 var i_4_g_a_1__12 = new Class(
 {
@@ -305,7 +305,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_11',4.3211,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_11',4.3211,'4.g.a.1',''); update item_types SET progression = 4.0611 where id = '4.g.a.1_11';
 */
 var i_4_g_a_1__11 = new Class(
 {
@@ -321,7 +321,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_10',4.3210,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_10',4.3210,'4.g.a.1',''); update item_types SET progression = 4.0610 where id = '4.g.a.1_10';
 */
 var i_4_g_a_1__10 = new Class(
 {
@@ -348,7 +348,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_9',4.3209,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_9',4.3209,'4.g.a.1',''); update item_types SET progression = 4.0609 where id = '4.g.a.1_9';
 */
 var i_4_g_a_1__9 = new Class(
 {
@@ -373,7 +373,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_8',4.3208,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_8',4.3208,'4.g.a.1',''); update item_types SET progression = 4.0608 where id = '4.g.a.1_8';
 */
 var i_4_g_a_1__8 = new Class(
 {
@@ -398,7 +398,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_7',4.3207,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_7',4.3207,'4.g.a.1',''); update item_types SET progression = 4.0607 where id = '4.g.a.1_7';
 */
 var i_4_g_a_1__7 = new Class(
 {
@@ -423,7 +423,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_6',4.3206,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_6',4.3206,'4.g.a.1',''); update item_types SET progression = 4.0606 where id = '4.g.a.1_6';
 */
 var i_4_g_a_1__6 = new Class(
 {
@@ -454,7 +454,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_5',4.3205,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_5',4.3205,'4.g.a.1',''); update item_types SET progression = 4.0605 where id = '4.g.a.1_5';
 */
 var i_4_g_a_1__5 = new Class(
 {
@@ -489,7 +489,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_4',4.3204,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_4',4.3204,'4.g.a.1',''); update item_types SET progression = 4.0604 where id = '4.g.a.1_4';
 */
 var i_4_g_a_1__4 = new Class(
 {
@@ -523,7 +523,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_3',4.3203,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_3',4.3203,'4.g.a.1',''); update item_types SET progression = 4.0603 where id = '4.g.a.1_3';
 */
 var i_4_g_a_1__3 = new Class(
 {
@@ -558,7 +558,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_2',4.3202,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_2',4.3202,'4.g.a.1',''); update item_types SET progression = 4.0602 where id = '4.g.a.1_2';
 */
 var i_4_g_a_1__2 = new Class(
 {
@@ -585,7 +585,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_1',4.3201,'4.g.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.1_1',4.3201,'4.g.a.1',''); update item_types SET progression = 4.0601 where id = '4.g.a.1_1';
 */
 var i_4_g_a_1__1 = new Class(
 {
