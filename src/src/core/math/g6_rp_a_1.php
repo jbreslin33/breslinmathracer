@@ -16,8 +16,15 @@ Extends: TextItem,
 		var a = Math.floor((Math.random()*15)+2);
 		var b = Math.floor((Math.random()*15)+2);
 
-                this.setQuestion('' + 'Write the following ratio situation in three different ways: ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + '.');
+                this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a ratio 3 different ways. Seperate each way by a comma.');
                 this.setAnswer('' + a + 'to' + b + ',' + a + ':' + b + ',' + a + '/' + b,0);
+                this.setAnswer('' + a + 'to' + b + ',' + a + '/' + b + ',' + a + ':' + b,1);
+                
+		this.setAnswer('' + a + ':' + b + ',' + a + '/' + b + ',' + a + 'to' + b,2);
+		this.setAnswer('' + a + ':' + b + ',' + a + 'to' + b + ',' + a + '/' + b,3);
+		
+		this.setAnswer('' + a + '/' + b + ',' + a + 'to' + b + ',' + a + ':' + b,4);
+		this.setAnswer('' + a + '/' + b + ',' + a + ':' + b + ',' + a + 'to' + b,5);
         }
 });
 
