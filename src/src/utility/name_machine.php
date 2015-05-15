@@ -1170,43 +1170,16 @@ var NameMachine = new Class(
 
 	getSingular: function(word)
 	{
-		if (word == 'seconds')
-		{
-			return 'second';	
-		}
-		if (word == 'minutes')
-		{
-			return 'minute';	
-		}
-		if (word == 'hours')
-		{
-			return 'hour';	
-		}
-		if (word == 'days')
-		{
-			return 'day';	
-		}
-		if (word == 'weeks')
-		{
-			return 'week';	
-		}
-		if (word == 'months')
-		{
-			return 'month';	
-		}
-		if (word == 'years')
-		{
-			return 'year';	
-		}
-		if (word == 'decades')
-		{
-			return 'decade';	
-		}
 		if (word == 'centuries')
 		{
 			return 'century';	
 		}
-		return word;
+		else
+		{
+			var str = word;
+			str = str.substring(0, str.length - 1); 
+			return str; 
+		}
 	}, 
 
         getDistanceIncrement: function(from,till)
