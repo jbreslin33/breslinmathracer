@@ -331,16 +331,24 @@ enter: function(sheet)
         {
                 APPLICATION.log('SHEET::END_SHEET');
         }
-	sheet.mGame.mReadyForNormalApplication = true;
-        sheet.reset();
-	//sheet.mGame.setScore(0);
-        sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
 },
 
 execute: function(sheet)
 {
+	if (APPLICATION.mDups == true)
+	{
+        	sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
+	}
+	else
+	{
+		APPLICATION.log('dups');
+
+	}
 },
 exit: function(sheet)
 {
+	sheet.mGame.mReadyForNormalApplication = true;
+        sheet.reset();
+	APPLICATION.mDups = true;
 }
 });

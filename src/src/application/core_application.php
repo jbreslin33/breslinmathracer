@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//parse codes
 		this.FULL = 101;
@@ -51,6 +51,7 @@ Extends: Application,
 		this.mGotoTimesTables = false;
 		this.mLeavePractice = false;
 		this.mWaitForReturn = false;
+		this.mDups = false;
 
 		this.mWaitingOnLevelData = false;
 
@@ -96,13 +97,6 @@ Extends: Application,
 				var v = 'BAD USERNAME';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
-/*
-				APPLICATION.mGame.mLoginButton.setVisibility(true);
-				APPLICATION.mGame.mUsernameLabel.setVisibility(true);
-				APPLICATION.mGame.mUsernameTextBox.setVisibility(true);
-				APPLICATION.mGame.mPasswordLabel.setVisibility(true);
-				APPLICATION.mGame.mPasswordTextBox.setVisibility(true);
-*/
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
@@ -110,13 +104,6 @@ Extends: Application,
 				var v = 'BAD PASSWORD';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
-/*		
-				APPLICATION.mGame.mLoginButton.setVisibility(true);
-				APPLICATION.mGame.mUsernameLabel.setVisibility(true);
-				APPLICATION.mGame.mUsernameTextBox.setVisibility(true);
-				APPLICATION.mGame.mPasswordLabel.setVisibility(true);
-				APPLICATION.mGame.mPasswordTextBox.setVisibility(true);
-*/
 			}
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
