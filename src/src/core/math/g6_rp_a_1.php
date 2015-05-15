@@ -7,14 +7,17 @@ var i_6_rp_a_1__3 = new Class(
 Extends: TextItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
-
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
                 this.mType = '6.rp.a.1_3';
-                var a = Math.floor((Math.random()*8)+2);
-                var answer = parseInt(a * 1000);
+               	this.ns = new NameSampler(); 
+		this.mChopWhiteSphace = false;
+		this.mStripCommas = false;
 
-                this.setQuestion('How many grams in ' + a + ' kilograms?');
-                this.setAnswer('' + answer,0);
+		var a = Math.floor((Math.random()*15)+2);
+		var b = Math.floor((Math.random()*15)+2);
+
+                this.setQuestion('' + 'Write the following ratio situation in three different ways: ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + '.');
+                this.setAnswer('' + a + 'to' + b + ',' + a + ':' + b + ',' + a + '/' + b,0);
         }
 });
 
