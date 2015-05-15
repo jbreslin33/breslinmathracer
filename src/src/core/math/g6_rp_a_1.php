@@ -1,5 +1,35 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_4',6.0104,'6.rp.a.1','' );
+*/
+var i_6_rp_a_1__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+                this.mType = '6.rp.a.1_4';
+                this.ns = new NameSampler();
+                this.mChopWhiteSphace = false;
+                this.mStripCommas = false;
+
+                var a = 3;
+                var b = 2;
+		while (a % b != 0 && a == b) 
+		{
+                	a = Math.floor((Math.random()*98)+2);
+                	b = Math.floor((Math.random()*98)+2);
+		}
+
+                this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
+		
+		this.ns.mThingTwo = this.ns.mThingTwo.substring(0, this.ns.mThingTwo.length - 1);
+                this.setAnswer('' + a + ' ' + this.ns.mThingOne + ' per ' + this.ns.mThingTwo,0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_3',6.0103,'6.rp.a.1','' );
 */
 var i_6_rp_a_1__3 = new Class(
