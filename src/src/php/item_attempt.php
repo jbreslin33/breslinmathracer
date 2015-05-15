@@ -37,13 +37,15 @@ public function insert()
         {
                 //get the id from user table
                 $item_attempt_id = pg_Result($selectResult, 0, 'id');
+		error_log($item_attempt_id);
 
                 //set level_id
                 $_SESSION["item_attempt_id"] = $item_attempt_id;
         }
         else
         {
-                echo "error no attempt_id";
+		error_log('no attempt id');
+                //echo "error no attempt_id";
         }
 }
 

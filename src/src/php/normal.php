@@ -37,118 +37,132 @@ function __construct($startNew)
         $this->high_progression = '';
 	
 	$this->item_types_id_to_ask = '';
-
+	
 	if ($startNew == 1)
 	{
-		//close old evaluation_attempts.......
-		$evaluations_attempts = new EvaluationsAttempts();
-		$evaluations_attempts->update();
-
-		$_SESSION["evaluations_id"] = 1;
-		$evaluations_attempts->insert();
-	
-		$this->setRawData();
-        
-		$item_attempt = new ItemAttempt();
-        	$item_attempt->insert();
+		$this->newEvaluation();
 	}
 	else
 	{
-		//check for last evaluation that was a normal type
-      		$query = "select id from evaluations_attempts where user_id = ";
-        	$query .= $_SESSION["user_id"];
-        	$query .= " AND evaluations_id = 1 order by start_time desc limit 1;";
+		$this->continueEvaluation();
+	}
 
-       	 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+	$this->process();
+}
 
-        	$num = pg_num_rows($result);
+public function newEvaluation()
+{
+	//close old evaluation_attempts.......
+	$evaluations_attempts = new EvaluationsAttempts();
+	$evaluations_attempts->update();
 
-        	if ($num > 0)
-        	{
-                	//get the attempt_id
-                	$evaluations_attempts_id = pg_Result($result, 0, 'id');
-
-                	//set id
-                	$_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
-		}
-		else
-		{
-			//this is first visit or you closed the old one
-        		$insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
-        		$insert .= $_SESSION["user_id"];
-        		$insert .= ",";
-        		$insert .= $_SESSION["evaluations_id"];
-        		$insert .= ");";
-
-        		$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
-		}
-
-		// if there is a last unanswered normal then doont insert...just send them back info in full string 
-		//get item_attempt id
-        	$select = "select item_attempts.id, item_attempts.user_answer from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
-        	$select .= $_SESSION["user_id"];
-		$select .= " AND evaluations_attempts.evaluations_id = 1";	
-        	$select .= " ORDER BY item_attempts.start_time DESC LIMIT 1;";
-
-        	//get db result
-        	$selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
-
-        	//get numer of rows
-        	$num = pg_num_rows($selectResult);
-
-        	if ($num > 0 && isset($_SESSION["before_item_type_id"]))
-        	{
-                	//get the id from user table
-                	$item_attempt_id = pg_Result($selectResult, 0, 'id');
-                	$user_answer     = pg_Result($selectResult, 0, 'user_answer');
-
-
-                	//set level_id
-                	$_SESSION["item_attempt_id"] = $item_attempt_id;
-
-			//old one available as last unanswered lets grab it
-			if (is_null($user_answer))
-			{
-				//i would like to add item_attempt_id to rawdata before we send it out..
-				$raw = $_SESSION["before_item_type_id"];
-				$raw .= ":";
-        			$raw .= $_SESSION["item_attempt_id"];
-				$_SESSION["raw_data"] = $raw;
-			}
-			else
-			{
-				$this->setRawData();
-		
-				$item_attempt = new ItemAttempt();
-        			$item_attempt->insert();
-
-				//i would like to add item_attempt_id to rawdata before we send it out..
-				$raw = $_SESSION["raw_data"];
-				$raw .= ":";
-        			$raw .= $_SESSION["item_attempt_id"];
-				$_SESSION["raw_data"] = $raw;
-			}
+	$_SESSION["evaluations_id"] = 1;
+	$evaluations_attempts->insert();
 	
+	$this->setRawData();
+        
+	$item_attempt = new ItemAttempt();
+        $item_attempt->insert();
+}
+
+public function continueEvaluation()
+{
+	//check for last evaluation that was a normal type
+     	$query = "select id from evaluations_attempts where user_id = ";
+       	$query .= $_SESSION["user_id"];
+       	$query .= " AND evaluations_id = 1 order by start_time desc limit 1;";
+
+    	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+       	$num = pg_num_rows($result);
+
+       	if ($num > 0)
+       	{
+               	//get the attempt_id
+               	$evaluations_attempts_id = pg_Result($result, 0, 'id');
+
+               	//set id
+               	$_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
+	}
+	else
+	{
+		//this is first visit or you closed the old one
+       		$insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
+       		$insert .= $_SESSION["user_id"];
+       		$insert .= ",";
+       		$insert .= $_SESSION["evaluations_id"];
+       		$insert .= ");";
+
+       		$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+	}
+}
+
+public function process()
+{
+	// if there is a last unanswered normal then doont insert...just send them back info in full string 
+	//get item_attempt id
+       	$select = "select item_attempts.id, item_attempts.user_answer from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
+       	$select .= $_SESSION["user_id"];
+	$select .= " AND evaluations_attempts.evaluations_id = 1";	
+       	$select .= " ORDER BY item_attempts.start_time DESC LIMIT 1;";
+
+       	//get db result
+       	$selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
+
+       	//get numer of rows
+       	$num = pg_num_rows($selectResult);
+
+       	if ($num > 0 && isset($_SESSION["before_item_type_id"]))
+       	{
+               	//get the id from user table
+               	$item_attempt_id = pg_Result($selectResult, 0, 'id');
+               	$user_answer     = pg_Result($selectResult, 0, 'user_answer');
+
+               	//set level_id
+               	$_SESSION["item_attempt_id"] = $item_attempt_id;
+
+		//old one available as last unanswered lets grab it
+		if (is_null($user_answer))
+		{
 			//i would like to add item_attempt_id to rawdata before we send it out..
 			$raw = $_SESSION["before_item_type_id"];
 			$raw .= ":";
         		$raw .= $_SESSION["item_attempt_id"];
 			$_SESSION["raw_data"] = $raw;
-        	}
-        	else
-        	{
+		}
+		else
+		{
 			$this->setRawData();
-		
+	
 			$item_attempt = new ItemAttempt();
-        		$item_attempt->insert();
+       			$item_attempt->insert();
 
 			//i would like to add item_attempt_id to rawdata before we send it out..
 			$raw = $_SESSION["raw_data"];
 			$raw .= ":";
-        		$raw .= $_SESSION["item_attempt_id"];
+       			$raw .= $_SESSION["item_attempt_id"];
 			$_SESSION["raw_data"] = $raw;
-        	}
-	}
+		}
+	
+		//i would like to add item_attempt_id to rawdata before we send it out..
+		$raw = $_SESSION["before_item_type_id"];
+		$raw .= ":";
+       		$raw .= $_SESSION["item_attempt_id"];
+		$_SESSION["raw_data"] = $raw;
+       	}
+       	else
+       	{
+		$this->setRawData();
+	
+		$item_attempt = new ItemAttempt();
+       		$item_attempt->insert();
+
+		//i would like to add item_attempt_id to rawdata before we send it out..
+		$raw = $_SESSION["raw_data"];
+		$raw .= ":";
+       		$raw .= $_SESSION["item_attempt_id"];
+		$_SESSION["raw_data"] = $raw;
+       	}
 }
 
 //standard to start the base at we get the counter for base questions
