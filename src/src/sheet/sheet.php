@@ -45,9 +45,6 @@ var Sheet = new Class(
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
                 this.mNORMAL_DUP_PREVENTER_SHEET = new NORMAL_DUP_PREVENTER_SHEET      (this);
                 this.mFINISHED_SHEET     = new FINISHED_SHEET      (this);
-                this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
-                this.mLEVEL_FAILED_SHEET = new LEVEL_FAILED_SHEET(this);
-                this.mEVALUATION_FAILED_SHEET = new EVALUATION_FAILED_SHEET(this);
                 this.mPRACTICE_SHEET = new PRACTICE_SHEET(this);
                 this.mEND_SHEET          = new END_SHEET(this);
 
