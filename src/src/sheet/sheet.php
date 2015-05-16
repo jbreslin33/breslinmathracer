@@ -7,7 +7,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 
 		//GAME
 		this.mGame = game;
@@ -82,14 +82,14 @@ var Sheet = new Class(
 	reset: function()
 	{
 		this.destructor();
-
+		
 		//reset marker
 		this.mMarker = 0;
 
 		//reset timers
 		this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
 
-		//this.createItems();
+		this.createItems();
 
 		this.createShapes();
 	},
@@ -163,21 +163,18 @@ var Sheet = new Class(
 		}
 
                 var itemIDArray = APPLICATION.mRawData.split(":");
+		//APPLICATION.log('id:' + itemIDArray[0]);
 
 		var callNormal = false; 
 		if (APPLICATION.mRef_id == 'normal')
 		{
 			//you need to check to see if this is new data otherwhise request it.
-			APPLICATION.mItemAttemptsID  = itemIDArray[4];	
-			APPLICATION.log('APPLICATION.mItemAttemptsID = ' + APPLICATION.mItemAttemptsID);
-			APPLICATION.log('APPLICATION.mItemAttemptsIDLast = ' + APPLICATION.mItemAttemptsIDLast);
-			if (parseInt(APPLICATION.mItemAttemptsID) == parseInt(APPLICATION.mItemAttemptsIDLast))
+			var itemAttemptsID  = itemIDArray[4];	
+			if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
 			{
-				APPLICATION.log('call again dup APPLICATION.mItemAttemptsID = ' + APPLICATION.mItemAttemptsID);
 				//we gotta callnormal again...
 				if ( parseInt(APPLICATION.mGame.mTimeSinceEpoch) > parseInt(this.mRefreshStartTime + this.mRefreshThresholdTime) ) 
 				{
-					APPLICATION.log('call again itemAttemptsID = ' + APPLICATION.mItemAttemptsID);
 					APPLICATION.normal();
 					callNormal = true;
 				}	
@@ -230,6 +227,7 @@ var Sheet = new Class(
 						this.mGame.mScore = itemIDArray[i];
 						this.mGame.setScore(this.mGame.mScore);
 						i++;		
+						APPLICATION.mItemAttemptsID     = itemIDArray[i];	
 						APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
 					}
 				}
@@ -238,7 +236,6 @@ var Sheet = new Class(
 					APPLICATION.log('no item picked by pickers!');
 				}
                 	}
-			APPLICATION.mDups = false;
 		}
 	},
 
