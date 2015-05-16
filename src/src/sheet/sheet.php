@@ -89,7 +89,7 @@ var Sheet = new Class(
 		//reset timers
 		this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
 
-		this.createItems();
+		//this.createItems();
 
 		this.createShapes();
 	},
