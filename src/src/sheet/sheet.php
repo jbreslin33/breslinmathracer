@@ -43,6 +43,7 @@ var Sheet = new Class(
                 this.mGLOBAL_SHEET       = new GLOBAL_SHEET      (this);
                 this.mINIT_SHEET         = new INIT_SHEET        (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
+                this.mNORMAL_DUP_PREVENTER_SHEET = new NORMAL_DUP_PREVENTER_SHEET      (this);
                 this.mFINISHED_SHEET     = new FINISHED_SHEET      (this);
                 this.mLEVEL_PASSED_SHEET = new LEVEL_PASSED_SHEET(this);
                 this.mLEVEL_FAILED_SHEET = new LEVEL_FAILED_SHEET(this);
@@ -157,86 +158,60 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
-		if (this.mRefreshStartTime == 0)
-		{
-			this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
-		}
+ 		var itemIDArray = APPLICATION.mRawData.split(":");
+               	for (var i = 0; i < itemIDArray.length; i++)              
+                {
+			var pick = 0;
 
-                var itemIDArray = APPLICATION.mRawData.split(":");
-		//APPLICATION.log('id:' + itemIDArray[0]);
-
-		var callNormal = false; 
-		if (APPLICATION.mRef_id == 'normal')
-		{
-			//you need to check to see if this is new data otherwhise request it.
-			var itemAttemptsID  = itemIDArray[4];	
-			if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
+			if (pick == 0)
 			{
-				//we gotta callnormal again...
-				if ( parseInt(APPLICATION.mGame.mTimeSinceEpoch) > parseInt(this.mRefreshStartTime + this.mRefreshThresholdTime) ) 
-				{
-					APPLICATION.normal();
-					callNormal = true;
-				}	
+                       		pick = this.mPicker.getItem(itemIDArray[i]);
 			}
-		}
-	
-		if (callNormal == false)
-		{
-               		for (var i = 0; i < itemIDArray.length; i++)              
-                	{
-				var pick = 0;
+			if (pick == 0)
+			{
+                       		pick = this.mPickerBrian.getItem(itemIDArray[i]);
+			}
+			if (pick == 0)
+			{
+                       		pick = this.mPickerJim.getItem(itemIDArray[i]);
+			}
 
-				if (pick == 0)
+			//if you got an item then add it to sheet
+			if (pick != 0)
+			{
+				this.addItem(pick);
+		
+				if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'Add Subtract within 5')
 				{
-                        		pick = this.mPicker.getItem(itemIDArray[i]);
-				}
-				if (pick == 0)
-				{
-                        		pick = this.mPickerBrian.getItem(itemIDArray[i]);
-				}
-				if (pick == 0)
-				{
-                        		pick = this.mPickerJim.getItem(itemIDArray[i]);
-				}
-
-				//if you got an item then add it to sheet
-				if (pick != 0)
-				{
-					this.addItem(pick);
-			
-					if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'Add Subtract within 5')
-					{
-						//add streak from raw_data andincrement as itemIDs are every other element in array. 
-						i++;	
-						pick.mStreak = itemIDArray[i];	
-						i++;
-						pick.mProgressedTypeID = itemIDArray[i];	
-						i++;
-						this.mGame.mScore = itemIDArray[i];
-						this.mGame.setScore(this.mGame.mScore);
-					}
-					else
-					{
-						//add streak from raw_data andincrement as itemIDs are every other element in array. 
-						i++;	
-						pick.mStreak = itemIDArray[i];	
-						i++;
-						pick.mProgressedTypeID = itemIDArray[i];	
-						i++;
-						this.mGame.mScore = itemIDArray[i];
-						this.mGame.setScore(this.mGame.mScore);
-						i++;		
-						APPLICATION.mItemAttemptsID     = itemIDArray[i];	
-						APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
-					}
+					//add streak from raw_data andincrement as itemIDs are every other element in array. 
+					i++;	
+					pick.mStreak = itemIDArray[i];	
+					i++;
+					pick.mProgressedTypeID = itemIDArray[i];	
+					i++;
+					this.mGame.mScore = itemIDArray[i];
+					this.mGame.setScore(this.mGame.mScore);
 				}
 				else
 				{
-					APPLICATION.log('no item picked by pickers!');
+					//add streak from raw_data andincrement as itemIDs are every other element in array. 
+					i++;	
+					pick.mStreak = itemIDArray[i];	
+					i++;
+					pick.mProgressedTypeID = itemIDArray[i];	
+					i++;
+					this.mGame.mScore = itemIDArray[i];
+					this.mGame.setScore(this.mGame.mScore);
+					i++;		
+					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
+					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
 				}
-                	}
-		}
+			}
+			else
+			{
+				APPLICATION.log('no item picked by pickers!');
+			}
+               	}
 	},
 
 	setTypeWrong: function(typeID)
