@@ -148,6 +148,7 @@ enter: function(sheet)
 	{
 		APPLICATION.log('SHEET::NORMAL_DUP_PREVENTER_SHEET');
 	}
+        sheet.showVictoryShapes();
 },
 
 execute: function(sheet)
@@ -253,7 +254,6 @@ enter: function(sheet)
         sheet.mStartTime = sheet.mGame.mTimeSinceEpoch;
 
         //gui bar
-        sheet.showVictoryShapes();
 },
 
 execute: function(sheet)
