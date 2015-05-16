@@ -6,7 +6,6 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-		APPLICATION.log('core game createItems');
 	
 		this.mSheet = new Sheet(this);	
 		this.mSheet.createItems();
