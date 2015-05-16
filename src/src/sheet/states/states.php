@@ -335,6 +335,7 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
+	sheet.createItems();
 	if (APPLICATION.mDups == true)
 	{
         	sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
