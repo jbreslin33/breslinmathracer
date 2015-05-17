@@ -7,7 +7,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		//GAME
 		this.mGame = game;
@@ -188,6 +188,10 @@ var Sheet = new Class(
 					i++;
 					this.mGame.mScore = itemIDArray[i];
 					this.mGame.setScore(this.mGame.mScore);
+					
+					i++;		
+					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
+					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
 				}
 				else
 				{
@@ -199,6 +203,7 @@ var Sheet = new Class(
 					i++;
 					this.mGame.mScore = itemIDArray[i];
 					this.mGame.setScore(this.mGame.mScore);
+
 					i++;		
 					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
 					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
