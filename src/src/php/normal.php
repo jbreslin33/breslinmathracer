@@ -124,11 +124,7 @@ public function process()
 		//old one available as last unanswered lets grab it
 		if (is_null($user_answer))
 		{
-			//i would like to add item_attempt_id to rawdata before we send it out..
-			$raw = $_SESSION["before_item_type_id"];
-			$raw .= ":";
-        		$raw .= $_SESSION["item_attempt_id"];
-			$_SESSION["raw_data"] = $raw;
+		
 		}
 		else
 		{
@@ -136,12 +132,6 @@ public function process()
 	
 			$item_attempt = new ItemAttempt();
        			$item_attempt->insert();
-
-			//i would like to add item_attempt_id to rawdata before we send it out..
-			$raw = $_SESSION["raw_data"];
-			$raw .= ":";
-       			$raw .= $_SESSION["item_attempt_id"];
-			$_SESSION["raw_data"] = $raw;
 		}
 	
 		//i would like to add item_attempt_id to rawdata before we send it out..
@@ -625,7 +615,6 @@ public function setItemString()
         $_SESSION["before_item_type_id"] = $itemString;
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
-	//error_log($this->item_types_id_to_ask);
         $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
 }
 

@@ -161,13 +161,64 @@ execute: function(sheet)
         var itemIDArray = APPLICATION.mRawData.split(":");
 
         var itemAttemptsID = itemIDArray[4];
+	APPLICATION.log('id: ' + itemAttemptsID + ' last:' + APPLICATION.mItemAttemptsIDLast); 
         if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
         {
         	if ( parseInt(APPLICATION.mGame.mTimeSinceEpoch) > parseInt(this.mRefreshStartTime + this.mRefreshThresholdTime) )
                 {
-			APPLICATION.log('normal call from PREVENTER');
-                	APPLICATION.normal();
 			sheet.mRefreshStartTime = 0;
+			if (APPLICATION.mRef_id == 'normal')
+			{
+				APPLICATION.normal();
+			}
+			else if (APPLICATION.mRef_id == 'practice')
+			{
+				APPLICATION.practice(APPLICATION.mType);
+			}	
+			else if (APPLICATION.mRef_id == 'timestables_2')
+			{
+				APPLICATION.timestables('2');
+			}	
+			else if (APPLICATION.mRef_id == 'timestables_3')
+			{
+				APPLICATION.timestables('3');
+			}		
+			else if (APPLICATION.mRef_id == 'timestables_4')
+			{
+				APPLICATION.timestables('4');
+			}	
+			else if (APPLICATION.mRef_id == 'timestables_5')
+			{
+				APPLICATION.timestables('5');
+			}	
+			else if (APPLICATION.mRef_id == 'timestables_6')
+			{
+				APPLICATION.timestables('6');
+			}		
+			else if (APPLICATION.mRef_id == 'timestables_7')
+			{
+				APPLICATION.timestables('7');
+			}	
+			else if (APPLICATION.mRef_id == 'timestables_8')
+			{
+				APPLICATION.timestables('8');
+			}	
+			else if (APPLICATION.mRef_id == 'timestables_9')
+			{
+				APPLICATION.timestables('9');
+			}	
+			else if (APPLICATION.mRef_id == 'timestables')
+			{
+				APPLICATION.timestables('10');
+			}	
+			else if (APPLICATION.mRef_id == 'The Izzy')
+			{
+				APPLICATION.timestables('11');
+			}	
+			else if (APPLICATION.mRef_id == 'Add Subtract within 5')
+			{
+				APPLICATION.timestables('12');
+			}	
                 }
         }
 	else
