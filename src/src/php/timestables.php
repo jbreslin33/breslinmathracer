@@ -956,22 +956,6 @@ public function setRawData()
 	//addition  
 	if ($this->mTableNumber == 12)
         {
-/*
-                $randomNumber = 0;
-                $randomChance = rand(0,100);
-                if ($randomChance < 80)  //ask random
-                {
-                        $randomNumber = rand(1,81);
-                        $randid = '3.oa.c.7';
-                        $randid .= "_";
-                        $randid .= $randomNumber;
-                        $this->mTypeID = $randid;
-                }      
-                else //ask workit
-                {
-                        $this->mTypeID = $_SESSION["workit"];
-                }
-*/
 		$this->mTypeID = 'k.oa.a.5_1';
         }
    
@@ -1266,9 +1250,13 @@ public function setRawData()
 	}
 	
         $_SESSION["raw_data"] = $itemString;
-
 	$_SESSION["item_types_id"] = $this->mTypeID;
-       	$_SESSION["raw_data"] = $itemString; 
+
+        //i would like to add item_attempt_id to rawdata before we send it out..
+        $raw = $_SESSION["raw_data"];
+        $raw .= ":";
+        $raw .= $_SESSION["item_attempt_id"];
+        $_SESSION["raw_data"] = $raw;
 }
 
 public function setSessions()

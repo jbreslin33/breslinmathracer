@@ -161,7 +161,6 @@ execute: function(sheet)
         var itemIDArray = APPLICATION.mRawData.split(":");
 
         var itemAttemptsID = itemIDArray[4];
-	APPLICATION.log('id: ' + itemAttemptsID + ' last:' + APPLICATION.mItemAttemptsIDLast); 
         if (itemAttemptsID == APPLICATION.mItemAttemptsIDLast)
         {
         	if ( parseInt(APPLICATION.mGame.mTimeSinceEpoch) > parseInt(this.mRefreshStartTime + this.mRefreshThresholdTime) )
