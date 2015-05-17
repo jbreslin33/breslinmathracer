@@ -121,18 +121,9 @@ public function process()
                	//set level_id
                	$_SESSION["item_attempt_id"] = $item_attempt_id;
 
-		//old one available as last unanswered lets grab it
-		if (is_null($user_answer))
-		{
-		
-		}
-		else
-		{
-			$this->setRawData();
-	
-			$item_attempt = new ItemAttempt();
-       			$item_attempt->insert();
-		}
+		$this->setRawData();
+		$item_attempt = new ItemAttempt();
+       		$item_attempt->insert();
 	
 		//i would like to add item_attempt_id to rawdata before we send it out..
 		$raw = $_SESSION["before_item_type_id"];
