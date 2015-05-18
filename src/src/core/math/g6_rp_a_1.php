@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_6',6.0106,'6.rp.a.1','' );
+*/
+var i_6_rp_a_1__6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+                this.mType = '6.rp.a.1_6';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var a = 4;
+                var b = 2;
+                while (a % b == 0 || a == b || a > 20 || b > 20 || b < a)
+                {
+                        a = Math.floor((Math.random()*98)+2);
+                        b = Math.floor((Math.random()*98)+2);
+                }
+                c = parseInt( a / b );
+                this.setQuestion('' + 'In baseball ' + this.ns.mNameOne + ' gets a hit ' + a + ' times out of every ' + b + ' attempts. Write the ratio with a colon to represent ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' this.');
+                this.setAnswer('' + a + ':' + b,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_5',6.0105,'6.rp.a.1','' );
 */
 var i_6_rp_a_1__5 = new Class(
@@ -12,17 +38,17 @@ initialize: function(sheet)
 	this.ns = new NameSampler();
        	this.mChopWhiteSpace = false;
 
-        var a = 3;
+        var a = 4;
         var b = 2;
-        while (a % b == 0 || a == b)
+        while (a % b == 0 || a == b || a > 20 || b > 20)
         {
                a = Math.floor((Math.random()*98)+2);
                b = Math.floor((Math.random()*98)+2);
         }
-	var f = new fraction(a,b);	
+	var f = new Fraction(a,b);	
 	
         this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
-	this.setAnswer('' + f.getMixedNumber(),0);
+	this.setAnswer('' + f.getString(),0);
 },
 createQuestionShapes: function()
 {
@@ -47,7 +73,7 @@ Extends: TextItem,
 
                 var a = 3;
                 var b = 2;
-		while (a % b != 0 || a == b) 
+		while (a % b != 0 || a == b || a > 20 || b > 20) 
 		{
                 	a = Math.floor((Math.random()*98)+2);
                 	b = Math.floor((Math.random()*98)+2);
