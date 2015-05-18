@@ -9,19 +9,20 @@ initialize: function(sheet)
 {
 	this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
         this.mType = '6.rp.a.1_5';
-        this.ns = new NameSampler();
-        this.mChopWhiteSpace = false;
+	this.ns = new NameSampler();
+       	this.mChopWhiteSpace = false;
 
-         var a = 3;
-         var b = 2;
-         while (a % b != 0 || a == b)
-         {
-                a = Math.floor((Math.random()*98)+2);
-                b = Math.floor((Math.random()*98)+2);
-         }
-         c = parseInt( a / b );
-         this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
-	this.setAnswer('' + c + ' ' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo),0);
+        var a = 3;
+        var b = 2;
+        while (a % b == 0 || a == b)
+        {
+               a = Math.floor((Math.random()*98)+2);
+               b = Math.floor((Math.random()*98)+2);
+        }
+	var f = new fraction(a,b);	
+	
+        this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
+	this.setAnswer('' + f.getMixedNumber(),0);
 },
 createQuestionShapes: function()
 {
