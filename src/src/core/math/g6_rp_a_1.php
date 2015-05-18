@@ -14,16 +14,14 @@ Extends: TextItem,
 
                 var a = 3;
                 var b = 2;
-		while (a % b != 0 && a == b) 
+		while (a % b != 0 || a == b) 
 		{
                 	a = Math.floor((Math.random()*98)+2);
                 	b = Math.floor((Math.random()*98)+2);
 		}
-
+		c = parseInt( a / b ); 
                 this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
-		
-		//this.ns.mThingTwo = this.ns.mThingTwo.substring(0, this.ns.mThingTwo.length - 1);
-                this.setAnswer('' + a + ' ' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo),0);
+                this.setAnswer('' + c + ' ' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo),0);
         }
 });
 
