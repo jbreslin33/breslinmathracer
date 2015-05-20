@@ -73,7 +73,6 @@ public function process()
                 	$_SESSION["team_id"] = $team_id;
 
         		//SESSION
-			error_log('new Sessions');
         		$sessions = new Sessions();
 		}
 		else
