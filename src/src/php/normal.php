@@ -300,6 +300,7 @@ public function masters()
 		{
                 	$type_mastery = pg_Result($master_result,0,'type_mastery');
 		}
+		$type_mastery_and_one = intval($type_mastery + 1);  
 	
 		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         	$query .= $_SESSION["user_id"];
@@ -307,7 +308,7 @@ public function masters()
 		$query .= $item_type_last;
 		$query .= "' order by item_attempts.start_time desc";
 		$query .= " LIMIT ";
-		$query .= $type_mastery;
+		$query .= $type_mastery_and_one;
 		$query .= ";";
 		
 		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -320,14 +321,28 @@ public function masters()
         	{
                 	$trans_code_array[] = pg_Result($result, $i, 'transaction_code');
         	}
-		
-		for ($i = 0; $i < count($trans_code_array); $i++)
+	
+		//check before latest...	
+		$latest_mastered = true;
+		for ($i = 1; $i < count($trans_code_array); $i++)
 		{
 			if ($trans_code_array[$i] != 1)
 			{
-				$mastered = false;			
+				$latest_mastered = false;			
 			} 
 		}
+		if ($latest_mastered == false)
+		{
+			//actually check latest with mastery amount skipping back end cause its out of date 
+       			for ($i = 0; $i < intval(count($trans_code_array) - 1); $i++)
+                	{
+                        	if ($trans_code_array[$i] != 1)
+                        	{
+                                	$mastered = false;   
+                        	}
+			}
+                }
+
 		if ($mastered == true)
 		{
         		$unmastered_count = $_SESSION["unmastered_count"];
