@@ -42,7 +42,7 @@ public function process()
 
 		if ($ref_id == 'normal')
 		{
-			$normal = new Normal(0);
+			$normal = new Normal(1);
 		}
 		if ($ref_id == 'practice')
 		{
