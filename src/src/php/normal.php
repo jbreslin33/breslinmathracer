@@ -237,16 +237,6 @@ public function fillAttemptsArray()
 public function masters()
 {
 	error_log('masters');
-/*
-	$item_type_last = 'none';
-	if (isset($_SESSION["item_type_last"]))
-	{
-		$item_type_last = $_SESSION["item_type_last"];
-	}
-	
-	error_log('masters');
-	error_log($item_type_last);
-*/
 
 	//do we have an initial count...
 	if (!isset($_SESSION["unmastered_count"]))
@@ -289,8 +279,61 @@ public function masters()
 	}
 	else
 	{
-		//hack one together
+		$mastered = true;	
 
+		$item_type_last = 'none';
+		if (isset($_SESSION["item_type_last"]))
+		{
+			$item_type_last = $_SESSION["item_type_last"];
+		}
+
+		$master_query = "select type_mastery from item_types where id = '";
+		$master_query .= $item_type_last;  
+		$master_query .= "';";
+		
+		$master_result = pg_query($this->mDatabaseConnection->getConn(),$master_query) or die('no connection: ' . pg_last_error());
+        	
+		$master_num = pg_num_rows($master_result);
+
+		$type_mastery = 0;	
+		if ($master_num > 0)
+		{
+                	$type_mastery = pg_Result($master_result,0,'type_mastery');
+		}
+	
+		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+        	$query .= $_SESSION["user_id"];
+        	$query .= " AND item_attempts.item_types_id = '";
+		$query .= $item_type_last;
+		$query .= "' order by item_attempts.start_time desc";
+		$query .= " LIMIT ";
+		$query .= $type_mastery;
+		$query .= ";";
+		
+		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+
+        	$num = pg_num_rows($result);
+
+		$trans_code_array = array();
+        	
+		for ($i = 0; $i < $num; $i++)
+        	{
+                	$trans_code_array[] = pg_Result($result, $i, 'transaction_code');
+        	}
+		
+		for ($i = 0; $i < count($trans_code_array); $i++)
+		{
+			if ($trans_code_array[$i] != 1)
+			{
+				$mastered = false;			
+			} 
+		}
+		if ($mastered == true)
+		{
+        		$unmastered_count = $_SESSION["unmastered_count"];
+			$unmastered_count = intval($unmastered_count - 1);
+        		$_SESSION["unmastered_count"] = $unmastered_count;
+		}
 	}
 }
 
