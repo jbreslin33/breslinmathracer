@@ -62,13 +62,6 @@ public function newEvaluation()
 	$evaluations_attempts->insert();
 		
 	$this->continueEvaluation();
-	
-/*	
-	$this->setRawData();
-        
-	$item_attempt = new ItemAttempt();
-        $item_attempt->insert();
-*/
 }
 
 public function continueEvaluation()
