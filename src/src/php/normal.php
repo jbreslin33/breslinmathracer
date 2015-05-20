@@ -123,6 +123,10 @@ public function setRawData()
 	{ 	
 		$this->goBananas();
 	}
+	else
+	{
+		error_log('not going bananas');
+	}
 	$this->setItemString();
 }
 
@@ -579,6 +583,7 @@ public function goBananas()
 	if ( !isset($_SESSION["item_type_last"]) )
  	{
 		//go with above from earliest unmastered
+		error_log('go with last should not happen!!!!');
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
@@ -610,21 +615,25 @@ public function goBananas()
 		}
 
 		// this should be least asked
-		if ($bananas > 25 && $bananas <= 50)
+		else if ($bananas > 25 && $bananas <= 50)
 		{
 			$this->leastAsked();
 		}
 
 		// this should be least correct
-		if ($bananas > 50 && $bananas <= 75)
+		else if ($bananas > 50 && $bananas <= 75)
 		{
 			$this->leastCorrect();
 		}
 
 		// this should be least percent correct
-		if ($bananas > 75 && $bananas <= 100)
+		else if ($bananas > 75 && $bananas <= 100)
 		{
 			$this->leastPercent();
+		}
+		else
+		{
+			error_log('else fall thru on bananas should not happen!!!');
 		}
 	}
 }
