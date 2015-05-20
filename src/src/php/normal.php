@@ -27,7 +27,6 @@ function __construct($startNew)
 	$this->core_standards_array   = array();
 
 	//masters
-	$this->unmastered_array = array();
 	$this->previous_id_array = array();
 
 	//scores
@@ -118,9 +117,9 @@ public function setRawData()
 	$this->scores();
         $this->updateScores();
 	$this->setEarliestToAsk();	
-	$unmasteredCount = intval(count($this->unmastered_array));
+	$unmasteredCount = $_SESSION["unmastered_count"]; 
 
-	if ($unmasteredCount < 6)
+	if (intval($unmasteredCount) < 6)
 	{ 	
 		$this->goBananas();
 	}
@@ -238,41 +237,61 @@ public function fillAttemptsArray()
 public function masters()
 {
 	error_log('masters');
-        //loop thru item array until you reach end
-        $i = 0;
-        while ($i <= intval(count($this->id_array) - 1))
-        {
-                $mini_transaction_code_array = array();
+/*
+	$item_type_last = 'none';
+	if (isset($_SESSION["item_type_last"]))
+	{
+		$item_type_last = $_SESSION["item_type_last"];
+	}
+	
+	error_log('masters');
+	error_log($item_type_last);
+*/
 
-                $c = 0;
+	//do we have an initial count...
+	if (!isset($_SESSION["unmastered_count"]))
+	{
+		$unmastered_count = 0;
+        	//loop thru item array until you reach end
+        	$i = 0;
+        	while ($i <= intval(count($this->id_array) - 1))
+        	{
+                	$mini_transaction_code_array = array();
 
-                //loop attempt array and dump into arrays then you can eval after
-                while ($c <= intval(count($this->item_array) - 1))
-                {
-                        //check for match of ids if so add to code array
-                        if ($this->id_array[$i] == $this->item_array[$c])
-                        {
-                                $mini_transaction_code_array[] = $this->transaction_code_array[$c];
-                        }
-                        $c++; //increment for typearrays
-                }
+                	$c = 0;
 
-                //analysis
-                if ( intval(count($mini_transaction_code_array)) == 1 )
-                {
-                        $this->unmastered_array[] = $this->id_array[$i];
-                }
-                if ( intval(count($mini_transaction_code_array)) > 1 )
-                {
-                        //if either is not 1 then its not type mastered so make it ask type
-                        if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
-                        {
-				$this->unmastered_array[] = $this->id_array[$i];
-			}
-                }
-                $i++;
-        }
+                	while ($c <= intval(count($this->item_array) - 1))
+                	{
+                        	//check for match of ids if so add to code array
+                        	if ($this->id_array[$i] == $this->item_array[$c])
+                        	{
+                                	$mini_transaction_code_array[] = $this->transaction_code_array[$c];
+                        	}
+                        	$c++; //increment for typearrays
+                	}
 
+                	//analysis
+                	if ( intval(count($mini_transaction_code_array)) == 1 )
+               		{
+				$unmastered_count++;
+               		}
+                	if ( intval(count($mini_transaction_code_array)) > 1 )
+                	{
+                        	//if either is not 1 then its not type mastered so make it ask type
+                        	if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
+                        	{
+					$unmastered_count++;
+				}
+                	}
+                	$i++;
+        	}
+		$_SESSION["unmastered_count"] = $unmastered_count;
+	}
+	else
+	{
+		//hack one together
+
+	}
 }
 
 public function scores()
@@ -310,7 +329,7 @@ public function updateScores()
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
         $update .= intval(count($this->score_array));
         $update .= ", unmastered = ";
-        $update .= count($this->unmastered_array);
+        $update .= $_SESSION["unmastered_count"];
         $update .= " WHERE id = ";
         $update .= $_SESSION["user_id"];
         $update .= ";";
@@ -559,7 +578,7 @@ public function setItemString()
         $itemString .= "L=";
         $itemString .= "$this->high_progression";
         $itemString .= " U=";
-        $itemString .= count($this->unmastered_array);
+        $itemString .= $_SESSION["unmastered_count"];
 
         //yellow
         $itemString .= ":";
