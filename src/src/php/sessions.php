@@ -21,8 +21,7 @@ public function process()
 	{
 		$_SESSION["subject_id"] = 1;
 	}
-//wei is not getting a value here becuase he finished the latest evaluation attempts
-	//get the latest evaluations_attempts one that is not complete
+	//get the latest evaluations_attempts one that is not complete so that if you were doing a test or tables or normal you go back there...
 	$query = "select evaluations_attempts.id, evaluations.description from evaluations_attempts JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.end_time is null AND user_id = ";
 	$query .= $_SESSION["user_id"];
 	$query .= " order by start_time desc limit 1;";
