@@ -27,9 +27,7 @@ function __construct($startNew)
 	$this->core_standards_array   = array();
 
 	//masters
-	$this->mastered_array = array();
 	$this->unmastered_array = array();
-	$this->unasked_array = array();
 	$this->previous_id_array = array();
 
 	//scores
@@ -260,10 +258,6 @@ public function masters()
                 }
 
                 //analysis
-                if ( intval(count($mini_transaction_code_array)) == 0 )
-                {
-                        $this->unasked_array[] = $this->id_array[$i];
-                }
                 if ( intval(count($mini_transaction_code_array)) == 1 )
                 {
                         $this->unmastered_array[] = $this->id_array[$i];
@@ -273,12 +267,8 @@ public function masters()
                         //if either is not 1 then its not type mastered so make it ask type
                         if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
                         {
-                                $this->unmastered_array[] = $this->id_array[$i];
-                        }
-                        else //mastered
-                        {
-                                $this->mastered_array[] = $this->id_array[$i];
-                        }
+				$this->unmastered_array[] = $this->id_array[$i];
+			}
                 }
                 $i++;
         }
