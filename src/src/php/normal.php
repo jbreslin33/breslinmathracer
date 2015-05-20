@@ -8,7 +8,12 @@ class Normal
 
 function __construct($startNew)
 {
-	error_log('constructor');
+	$this->logs = false;
+	if ($this->logs)
+	{
+		error_log('constructor');
+	}
+
 	$this->mDatabaseConnection = new DatabaseConnection();
         
 	$this->progression_counter = 0;
@@ -50,7 +55,10 @@ function __construct($startNew)
 
 public function newEvaluation()
 {
-	error_log('newEvaluation');
+	if ($this->logs)
+	{
+		error_log('newEvaluation');
+	}
 	//close old evaluation_attempts.......
 	$evaluations_attempts = new EvaluationsAttempts();
 	$evaluations_attempts->update();
@@ -63,7 +71,10 @@ public function newEvaluation()
 
 public function continueEvaluation()
 {
-	error_log('continueEvaluation');
+	if ($this->logs)
+	{
+		error_log('continueEvaluation');
+	}
 	//check for last evaluation that was a normal type
      	$query = "select id from evaluations_attempts where user_id = ";
        	$query .= $_SESSION["user_id"];
@@ -89,7 +100,10 @@ public function continueEvaluation()
 
 public function process()
 {
-	error_log('process');
+	if ($this->logs)
+	{
+		error_log('process');
+	}
 
 	$this->setRawData();
 	
@@ -106,7 +120,11 @@ public function process()
 //i am going to remember the last thing i asked and only ask 1 question at a time.
 public function setRawData()
 {
-	error_log('setRawData');
+	if ($this->logs)
+	{
+		error_log('setRawData');
+	}
+	
 	$this->initializeProgressionCounter();
 	$this->fillTypesArray();
 	$this->fillAttemptsArray();
@@ -125,7 +143,10 @@ public function setRawData()
 	}
 	else
 	{
-		error_log('not going bananas');
+		if ($this->logs)
+		{
+			error_log('not going bananas');
+		}
 	}
 	$this->setItemString();
 }
@@ -133,7 +154,10 @@ public function setRawData()
 //standard to start the base at we get the counter for base questions
 public function initializeProgressionCounter()
 {
-	error_log('initializeProgressionCunter');
+	if ($this->logs)
+	{
+		error_log('initializeProgressionCunter');
+	}
 
 	$query = "select progression from item_types where core_standards_id = '";
 	$query .= $_SESSION["core_standards_id"];
@@ -162,7 +186,10 @@ public function initializeProgressionCounter()
 
 public function fillTypesArray()
 {
-	error_log('fillTypesArray');
+	if ($this->logs)
+	{
+		error_log('fillTypesArray');
+	}
 	//remediate types
 	$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
         $query .= $_SESSION["user_id"];
@@ -209,7 +236,10 @@ public function fillTypesArray()
 	
 public function fillAttemptsArray()
 {
-	error_log('fillAttemptsArray');
+	if ($this->logs)
+	{
+		error_log('fillAttemptsArray');
+	}
 	//fill remediate attempts
 
 	//fill normal attempts
@@ -240,7 +270,10 @@ public function fillAttemptsArray()
 }
 public function masters()
 {
-	error_log('masters');
+	if ($this->logs)
+	{
+		error_log('masters');
+	}
 
 	//do we have an initial count...
 	if (!isset($_SESSION["unmastered_count"]))
@@ -364,7 +397,10 @@ public function masters()
 
 public function scores()
 {
-	error_log('scores');
+	if ($this->logs)	
+	{
+		error_log('scores');
+	}
         //score
         $i = 0;
         while ($i <= intval(count($this->id_array) - 1))
@@ -392,7 +428,10 @@ public function scores()
 
 public function updateScores()
 {
-	error_log('updateScores');
+	if ($this->logs)	
+	{
+		error_log('updateScores');
+	}
         /*********************  for teacher real time data  *************/
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
         $update .= intval(count($this->score_array));
@@ -408,7 +447,11 @@ public function updateScores()
 
 public function setEarliestToAsk()
 {
-	error_log('setEarliestToAsk');
+	if ($this->logs)	
+	{
+		error_log('setEarliestToAsk');
+	}
+	
 	//ask 1st one that is not mastered
 	$i = 0;
 
@@ -453,14 +496,20 @@ public function setEarliestToAsk()
 
 public function trueBananas()
 {
-	error_log('trueBananas');
+	if ($this->logs)	
+	{
+		error_log('trueBananas');
+	}
 	$r = rand( 0,intval(count($this->previous_id_array)-1) );
 	$this->item_types_id_to_ask = $this->previous_id_array[$r];
 }
 
 public function leastAsked()
 {
-	error_log('leastAsked');
+	if ($this->logs)	
+	{
+		error_log('leastAsked');
+	}
 	$least_id = '';
 	$leastCount = 9999;
 	$currentCount = 0;
@@ -490,7 +539,11 @@ public function leastAsked()
 
 public function leastCorrect()
 {
-	error_log('leastCorrect');
+	if ($this->logs)	
+	{
+		error_log('leastCorrect');
+	}
+	
 	$least_id = '';
         $leastCount = 9999;
         $currentCount = 0;
@@ -523,7 +576,10 @@ public function leastCorrect()
 
 public function leastPercent()
 {
-	error_log('leastPercent');
+	if ($this->logs)	
+	{
+		error_log('leastPercent');
+	}
 	$least_id = '';
         $leastPercent = 1000;
         $currentPercent = 0;
@@ -577,13 +633,19 @@ public function leastPercent()
 
 public function goBananas()
 {
-	error_log('goBananas');
+	if ($this->logs)	
+	{
+		error_log('goBananas');
+	}
 	//check to see if it was asked last.....
 
 	if ( !isset($_SESSION["item_type_last"]) )
  	{
 		//go with above from earliest unmastered
-		error_log('go with last should not happen!!!!');
+		if ($this->logs)
+		{
+			error_log('go with last should not happen!!!!');
+		}
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
@@ -633,14 +695,20 @@ public function goBananas()
 		}
 		else
 		{
-			error_log('else fall thru on bananas should not happen!!!');
+			if ($this->logs)	
+			{
+				error_log('else fall thru on bananas should not happen!!!');
+			}
 		}
 	}
 }
 
 public function setItemString()
 {
-	error_log('setItemString');
+	if ($this->logs)	
+	{
+		error_log('setItemString');
+	}
         $_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
 
         //pink
