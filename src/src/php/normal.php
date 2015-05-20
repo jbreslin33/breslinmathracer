@@ -331,24 +331,30 @@ public function masters()
 				$latest_mastered = false;			
 			} 
 		}
-		if ($latest_mastered == false)
-		{
-			//actually check latest with mastery amount skipping back end cause its out of date 
-       			for ($i = 0; $i < intval(count($trans_code_array) - 1); $i++)
-                	{
-                        	if ($trans_code_array[$i] != 1)
-                        	{
-                                	$mastered = false;   
-                        	}
-			}
+
+		//actually check latest with mastery amount skipping back end cause its out of date 
+       		for ($i = 0; $i < intval(count($trans_code_array) - 1); $i++)
+                {
+                       	if ($trans_code_array[$i] != 1)
+                       	{
+                               	$mastered = false;   
+                       	}
                 }
 
-		if ($mastered == true)
+		if ($mastered == true && $latest_mastered == false)
 		{
         		$unmastered_count = $_SESSION["unmastered_count"];
 			$unmastered_count = intval($unmastered_count - 1);
         		$_SESSION["unmastered_count"] = $unmastered_count;
 		}
+
+                if ($mastered == false && $latest_mastered == true)
+                {
+                        $unmastered_count = $_SESSION["unmastered_count"];
+                        $unmastered_count = intval($unmastered_count + 1);
+                        $_SESSION["unmastered_count"] = $unmastered_count;
+                }
+
 	}
 }
 
