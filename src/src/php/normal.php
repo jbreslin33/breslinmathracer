@@ -93,51 +93,16 @@ public function continueEvaluation()
 public function process()
 {
 	error_log('process');
-	// if there is a last unanswered normal then doont insert...just send them back info in full string 
-	//get item_attempt id
-       	$select = "select item_attempts.id, item_attempts.user_answer from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
-       	$select .= $_SESSION["user_id"];
-	$select .= " AND evaluations_attempts.evaluations_id = 1";	
-       	$select .= " ORDER BY item_attempts.start_time DESC LIMIT 1;";
-
-       	//get db result
-       	$selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
-
-       	//get numer of rows
-       	$num = pg_num_rows($selectResult);
-
-       	if ($num > 0 && isset($_SESSION["before_item_type_id"]))
-       	{
-               	//get the id from user table
-               	$item_attempt_id = pg_Result($selectResult, 0, 'id');
-               	$user_answer     = pg_Result($selectResult, 0, 'user_answer');
-
-               	//set level_id
-               	$_SESSION["item_attempt_id"] = $item_attempt_id;
-
-		$this->setRawData();
-		$item_attempt = new ItemAttempt();
-       		$item_attempt->insert();
+	$this->setRawData();
 	
-		//i would like to add item_attempt_id to rawdata before we send it out..
-		$raw = $_SESSION["before_item_type_id"];
-		$raw .= ":";
-       		$raw .= $_SESSION["item_attempt_id"];
-		$_SESSION["raw_data"] = $raw;
-       	}
-       	else
-       	{
-		$this->setRawData();
-	
-		$item_attempt = new ItemAttempt();
-       		$item_attempt->insert();
+	$item_attempt = new ItemAttempt();
+       	$item_attempt->insert();
 
-		//i would like to add item_attempt_id to rawdata before we send it out..
-		$raw = $_SESSION["raw_data"];
-		$raw .= ":";
-       		$raw .= $_SESSION["item_attempt_id"];
-		$_SESSION["raw_data"] = $raw;
-       	}
+	//i would like to add item_attempt_id to rawdata before we send it out..
+	$raw = $_SESSION["raw_data"];
+	$raw .= ":";
+       	$raw .= $_SESSION["item_attempt_id"];
+	$_SESSION["raw_data"] = $raw;
 }
 
 //standard to start the base at we get the counter for base questions
