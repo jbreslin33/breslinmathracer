@@ -93,6 +93,7 @@ public function continueEvaluation()
 public function process()
 {
 	error_log('process');
+
 	$this->setRawData();
 	
 	$item_attempt = new ItemAttempt();
@@ -103,6 +104,29 @@ public function process()
 	$raw .= ":";
        	$raw .= $_SESSION["item_attempt_id"];
 	$_SESSION["raw_data"] = $raw;
+}
+
+//i am going to remember the last thing i asked and only ask 1 question at a time.
+public function setRawData()
+{
+	error_log('setRawData');
+	$this->initializeProgressionCounter();
+	$this->fillTypesArray();
+	$this->fillAttemptsArray();
+	
+	$this->item_types_id_to_ask = '';
+        
+	$this->masters();
+	$this->scores();
+        $this->updateScores();
+	$this->setEarliestToAsk();	
+	$unmasteredCount = intval(count($this->unmastered_array));
+
+	if ($unmasteredCount < 6)
+	{ 	
+		$this->goBananas();
+	}
+	$this->setItemString();
 }
 
 //standard to start the base at we get the counter for base questions
@@ -304,28 +328,7 @@ public function updateScores()
         $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 }
 
-//i am going to remember the last thing i asked and only ask 1 question at a time.
-public function setRawData()
-{
-	error_log('setRawData');
-	$this->initializeProgressionCounter();
-	$this->fillTypesArray();
-	$this->fillAttemptsArray();
-	
-	$this->item_types_id_to_ask = '';
-        
-	$this->masters();
-	$this->scores();
-        $this->updateScores();
-	$this->setEarliestToAsk();	
-	$unmasteredCount = intval(count($this->unmastered_array));
 
-	if ($unmasteredCount < 6)
-	{ 	
-		$this->goBananas();
-	}
-	$this->setItemString();
-}
 public function setEarliestToAsk()
 {
 	error_log('setEarliestToAsk');
