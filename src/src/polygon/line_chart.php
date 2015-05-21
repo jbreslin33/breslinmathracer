@@ -1392,7 +1392,7 @@ setVisibility: function(b)
 
 
 
-
+clickflag = true;
 
 // no lines, no tables
 var LineChartTest = new Class(
@@ -1411,8 +1411,8 @@ Extends: RaphaelPolygon,
 		this.x2 = x2;
 		this.y2 = y2;
 
-    this.vLines = new Array()
-    this.hLines = new Array()
+    this.vLines = new Array();
+    this.hLines = new Array();
 		
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 		
@@ -1457,28 +1457,7 @@ Extends: RaphaelPolygon,
 var width = x2 - x1;
 var height = y2 - y1;
 
-// draw letters at points
-for( var i = 0; i < pointsX.length; i++ ) {
-       var posX = x1+rX1 + (pointsX[i])*(width/range[1]);
-       var posY = y2+rY1 - (pointsY[i])*(height/range[1]);  
 
-       letter = new Shape(10,10,posX,posY,this.mGame,"","","");
-        
-       if(i == 0)
-          letter.setText('A');
-       if(i == 1)
-          letter.setText('B');
-       if(i == 2)
-          letter.setText('C');
-       if(i == 3)
-          letter.setText('D');
-       if(i == 4)
-          letter.setText('E');
-
-
-       item.addQuestionShape(letter);
-
-   } 
 
 // draw x label
 var Xaxis = new Shape(5,5,x2+20,y2+25,this.mGame,"","","");
@@ -1511,7 +1490,21 @@ for (var i = 0; i < this.mPolygon.axis[0].text.items.length; i++) {
     }).toBack();
 }
 
+
+var iMax = this.mPolygon.axis[0].text.items.length;
+    var jMax = this.mPolygon.axis[1].text.items.length;
+    this.circles = new Array();
+
+    for (i=0;i<iMax;i++) {
+      this.circles[i]=new Array();
+      for (j=0;j<jMax;j++) {
+        this.circles[i][j]=0;
+      }
+    }
+
 var b;
+var current = '';
+var flag = this.flag;
 
     // Draw invisible circles at each point
 for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
@@ -1521,18 +1514,33 @@ for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
     var x = this.mPolygon.axis[0].text.items[j].attrs.x;
     b = this.mRaphael.circle(x, y, 10).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0});
     b.data("click", 0);
+    b.data("x", j);
+    b.data("y", i);
+    this.circles[j][i] = b;
+    //item.addQuestionShape(b);
 
-    b.mouseup(function() {
-      if (this.data("click") == '1') {
-        this.attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0}).scale(2,2);
+    b.mousedown(function() {
+      if (this.data("click") == '1' && clickflag == true) {
+        this.attr({fill: "white", stroke: "none", opacity: 0}).scale(2,2);
         this.data("click", 0);
+        item.setTempUserAnswer(''); 
+        current = '';
+           
       }
-      else {
-        this.attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+      else if(clickflag == true){
+        if(current != '')  {
+          current.attr({fill: "white", stroke: "none", opacity: 0}).scale(2,2);
+          current.data("click", 0);
+          
+        }
+        this.attr({fill: "white", stroke: "none", opacity: 1}).scale(.5,.5);
         this.data("click", 1);
+        item.setTempUserAnswer('' + this.data("x") + ' ' + this.data("y"));
+        current = this;
+//console.log(this.data("x"));
       }
     });
-   
+   //"hsb(0, 1, 1)"
   }
 }
 
@@ -1570,6 +1578,13 @@ setVisibility: function(b)
                         for( var i = 0; i < this.axisItems2.length; i++ ) {                         
                            this.hLines[i].show(); 
                         } 
+                        
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                          for( var j = 0; j < this.axisItems2.length; j++ ) {
+                            this.circles[i][j].show(); 
+                          }
+                        }
+                    
                 }
                 else
                 {
@@ -1590,6 +1605,12 @@ setVisibility: function(b)
                         for( var i = 0; i < this.axisItems2.length; i++ ) {                         
                            this.hLines[i].hide(); 
                         } 
+
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                          for( var j = 0; j < this.axisItems2.length; j++ ) {
+                            this.circles[i][j].hide(); 
+                          }
+                        }
                 }
 	},
 
