@@ -1,5 +1,33 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_7',6.0107,'6.rp.a.1','' );
+*/
+var i_6_rp_a_1__7 = new Class(
+{
+Extends: TextItemFraction,
+        initialize: function(sheet)
+        {
+     	this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+
+                this.mType = '6.rp.a.1_6';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var a = 4;
+                var b = 2;
+                while (a % b == 0 || a == b || a > 20 || b > 20 || b < a)
+                {
+                        a = Math.floor((Math.random()*98)+2);
+                        b = Math.floor((Math.random()*98)+2);
+                }
+                c = parseInt( a / b );
+                this.setQuestion('' + this.ns.mNameOne + ' plans to bike a total of ' + a + ' miles every ' + b + ' days. Write this ratio as a fraction.');
+                this.setAnswer('' + a + '/' + b,0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_6',6.0106,'6.rp.a.1','' );
 */
 var i_6_rp_a_1__6 = new Class(
