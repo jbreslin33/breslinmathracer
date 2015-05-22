@@ -9,7 +9,7 @@ Extends: TextItemFraction,
         {
      	this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
 
-                this.mType = '6.rp.a.1_6';
+                this.mType = '6.rp.a.1_7';
                 this.ns = new NameSampler();
                 this.mChopWhiteSpace = false;
 
@@ -20,9 +20,9 @@ Extends: TextItemFraction,
                         a = Math.floor((Math.random()*98)+2);
                         b = Math.floor((Math.random()*98)+2);
                 }
-                c = parseInt( a / b );
+                var c = new Fraction(a,b);
                 this.setQuestion('' + this.ns.mNameOne + ' plans to bike a total of ' + a + ' miles every ' + b + ' days. Write this ratio as a fraction.');
-                this.setAnswer('' + a + '/' + b,0);
+                this.setAnswer('' + c.getString(),0);
         }
 });
 
