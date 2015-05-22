@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_8',6.0108,'6.rp.a.1','' );
+*/
+var i_6_rp_a_1__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+		this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_8';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var d = Math.floor((Math.random()*2)+3);
+                var c = Math.floor((Math.random()*89)+10);
+                var g = Math.floor((Math.random()*10)+20);
+
+                var dc = new Decimal('' + d + '.' + c);
+                var gd = new Decimal('' + g);
+		var answer = dc.multiply(gd);
+
+                this.setQuestion('' + 'Angry Baby bought gas for her car and it cost $' + answer.getMoney() + ' for ' + g + ' gallons of gas and it makes her so mad!. How much money did Angry Baby pay per gallon of gas?');
+                this.setAnswer('$' + dc.getString(),0);
+                this.setAnswer('' + dc.getString(),1);
+                this.setAnswer('$' + dc.getString() + ' per gallon',2);
+                this.setAnswer('$' + dc.getString() + ' per gallon of gas',3);
+                this.setAnswer('$' + dc.getString() + ' miles per gallon',4);
+                this.setAnswer('$' + dc.getString() + ' miles per gallon of gas',5);
+                this.setAnswer('' + dc.getString() + ' per gallon',6);
+                this.setAnswer('' + dc.getString() + ' per gallon of gas',7);
+                this.setAnswer('' + dc.getString() + ' miles per gallon',8);
+                this.setAnswer('' + dc.getString() + ' miles per gallon of gas',9);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_7',6.0107,'6.rp.a.1','' );
 */
 var i_6_rp_a_1__7 = new Class(
