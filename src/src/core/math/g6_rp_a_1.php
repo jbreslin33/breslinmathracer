@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_9',6.0109,'6.rp.a.1','' );
+*/
+var i_6_rp_a_1__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_9';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var d = Math.floor((Math.random()*2)+3);
+                var c = Math.floor((Math.random()*89)+10);
+                var g = Math.floor((Math.random()*10)+20);
+
+                var dc = new Decimal('' + d + '.' + c);
+                var gd = new Decimal('' + g);
+                var answer = dc.multiply(gd);
+
+                this.setQuestion('' + this.ns.mNameOne + ' drove '  + answer.getString() + ' miles on ' + g + ' gallons of gas. How many miles per gallon does ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' get?');
+                this.setAnswer('' + dc.getString(),0);
+                this.setAnswer('' + dc.getString() + ' mpg',1);
+                this.setAnswer('' + dc.getString() + ' miles per gallon',2);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_8',6.0108,'6.rp.a.1','' );
 */
 var i_6_rp_a_1__8 = new Class(
@@ -26,12 +55,6 @@ Extends: TextItem,
                 this.setAnswer('' + dc.getString(),1);
                 this.setAnswer('$' + dc.getString() + ' per gallon',2);
                 this.setAnswer('$' + dc.getString() + ' per gallon of gas',3);
-                this.setAnswer('$' + dc.getString() + ' miles per gallon',4);
-                this.setAnswer('$' + dc.getString() + ' miles per gallon of gas',5);
-                this.setAnswer('' + dc.getString() + ' per gallon',6);
-                this.setAnswer('' + dc.getString() + ' per gallon of gas',7);
-                this.setAnswer('' + dc.getString() + ' miles per gallon',8);
-                this.setAnswer('' + dc.getString() + ' miles per gallon of gas',9);
         }
 });
 
