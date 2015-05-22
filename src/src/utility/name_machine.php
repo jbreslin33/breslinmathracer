@@ -93,6 +93,12 @@ var NameMachine = new Class(
 		this.mMonthArray.push("November");
 		this.mMonthArray.push("December");
 
+ 		this.mGenderKidArray = new Array();
+                this.mUsedGenderKidElementArray = new Array();
+                this.mGenderKidArray.push("boys");
+                this.mGenderKidArray.push("girls");
+
+
       		//upper letters
                 this.mUpperLetterArray = new Array();
                 this.mUsedUpperLetterElementArray = new Array();
@@ -1368,6 +1374,35 @@ var NameMachine = new Class(
                 return this.mMonthArray[randomElement];
         },
 
+        getGenderKid: function()
+        {
+                var keepGoing = true;
+                var randomElement = 0;
+                while (keepGoing)
+                {
+                        var length = this.mGenderKidArray.length;
+                        randomElement = Math.floor(Math.random()*length);
+
+                        var noDup = false;
+                        for (i=0; i < this.mUsedGenderKidElementArray.length; i++)
+                        {
+                                if (randomElement == this.mUsedGenderKidElementArray[i])
+                                {
+                                        noDup = true;
+                                }
+                        }
+
+                        if (noDup == false)
+                        {
+                                keepGoing = false;
+                        }
+                }
+                this.mUsedGenderKidElementArray.push(randomElement);
+                return this.mGenderKidArray[randomElement];
+        },
+
+
+
 
         getUpperLetter: function()
         {
@@ -2016,6 +2051,13 @@ var NameSampler = new Class(
                 this.mMonthArray.push(this.mMonthTwo);
                 this.mMonthArray.push(this.mMonthThree);
 
+                //genderKid
+                this.mGenderKidOne = this.mNameMachine.getGenderKid();
+                this.mGenderKidTwo = this.mNameMachine.getGenderKid();
+
+                this.mGenderKidArray = new Array();
+                this.mGenderKidArray.push(this.mGenderKidOne);
+                this.mGenderKidArray.push(this.mGenderKidTwo);
 
 		//upper letter
                 this.mUpperLetterOne = this.mNameMachine.getUpperLetter();

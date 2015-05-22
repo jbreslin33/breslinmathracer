@@ -1,3 +1,28 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_11',6.0111,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__11 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_11';
+                this.ns = new NameSampler();
+
+                var a = Math.floor((Math.random()*5)+15);
+                var b = Math.floor((Math.random()*10)+30);
+		var c = parseInt(b - a);
+
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' ' + this.ns.mGenderKidOne + ' in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mSubjectOne + ' class. There are ' + b + ' students total in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' class. Use a colon to write the ratio of ' + this.ns.mGenderKidOne + ' to ' + this.ns.mGenderKidTwo + '.');
+
+                this.setAnswer('' + a + ':' + c ,0);        
+	}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_10',6.0110,'6.rp.a.1','' );
 */
