@@ -115,29 +115,34 @@ multiply: function(decimal)
 	}
 	else
 	{
+		var d = new Decimal('' + rawProduct);	
 		return rawProduct;
 	}
 },
 
 divide: function(decimal)
 {
-        var rawProduct   =  parseInt(this.mNumber / decimal.mNumber);
+        var rawQuotient   =  parseInt(this.mNumber / decimal.mNumber);
 	var rawRemainder =  parseInt(this.mNumber % decimal.mNumber); 	
+	APPLICATION.log('rawQuotient:' + rawQuotient);
+	APPLICATION.log('rawRemainder:' + rawRemainder);
 
         //now use powers of 10 to move decimal place
         var decimalPlaces = parseInt(this.mDecimalPlaces - decimal.mDecimalPlaces);
-	var fullAnswer = '' + rawProduct + '' + rawRemainder;
+	var fullAnswer = '' + rawQuotient + '' + rawRemainder;
 
         if (decimalPlaces > 0)
         {
                 var power = Math.pow(10,decimalPlaces);
                 var decimalProduct = parseFloat(fullAnswer / power);
                 var decimalAnswerProduct = new Decimal(decimalProduct);
+		APPLICATION.log('decimalAnswerProduct');	
                 return decimalAnswerProduct;
         }
         else
         {
-                return rawProduct;
+		APPLICATION.log('rawQuotient');	
+                return rawQuotient;
         }
 }
 });
