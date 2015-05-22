@@ -12,10 +12,10 @@ Extends: TextItem,
                 this.mType = '6.rp.a.1_10';
                 this.ns = new NameSampler();
                 
-		var a = Math.floor((Math.random()*2)+3);
-                var b = Math.floor((Math.random()*89)+10);
+		var a = Math.floor((Math.random()*20)+2);
+                var b = Math.floor((Math.random()*20)+1);
 
-                this.setQuestion('What is the ratio of ' + a + ' to ' + b + '?');
+                this.setQuestion('' + 'Write as a ratio ' + a + this.ns.mThingOne + ' to every ' + b + ' ' + this.ns.mThingTwo + '.'  );
 
                 this.setAnswer('' + a + ':' + b ,0);
                 this.setAnswer('' + a + 'to' + b ,1);
