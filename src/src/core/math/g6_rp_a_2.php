@@ -1,3 +1,63 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.2_6',6.0206,'6.rp.a.2','' );
+*/
+var i_6_rp_a_2__6 = new Class(
+{
+Extends: TextItemMixedNumber,
+initialize: function(sheet)
+{
+        this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+        this.mType = '6.rp.a.2_6';
+        this.ns = new NameSampler();
+        this.mChopWhiteSpace = false;
+
+        var a = 4;
+        var b = 2;
+        while (a % b == 0 || a == b || a > 20 || b > 20)
+        {
+               a = Math.floor((Math.random()*98)+2);
+               b = Math.floor((Math.random()*98)+2);
+        }
+        var f = new Fraction(a,b);
+
+        this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
+        this.setAnswer('' + f.getString(),0);
+},
+createQuestionShapes: function()
+{
+        var txt = new Shape(150,50,600,240,this.mSheet.mGame,"","","");
+        this.addQuestionShape(txt);
+        txt.setText('' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo));
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.2_4',6.0204,'6.rp.a.2','' );
+*/
+var i_6_rp_a_2__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+                this.mType = '6.rp.a.2_4';
+                this.ns = new NameSampler();
+                this.mChopWhiteSpace = false;
+
+                var a = 3;
+                var b = 2;
+                while (a % b != 0 || a == b || a > 20 || b > 20)
+                {
+                        a = Math.floor((Math.random()*98)+2);
+                        b = Math.floor((Math.random()*98)+2);
+                }
+                c = parseInt( a / b );
+                this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
+                this.setAnswer('' + c + ' ' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo),0);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.2_3',6.0203,'6.rp.a.2','Word Problem. Ratio. ' );
 */
