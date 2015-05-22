@@ -1,3 +1,27 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_10',6.0110,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__10 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_10';
+                this.ns = new NameSampler();
+                
+		var a = Math.floor((Math.random()*2)+3);
+                var b = Math.floor((Math.random()*89)+10);
+
+                this.setQuestion('What is the ratio of ' + a + ' to ' + b + '?');
+
+                this.setAnswer('' + a + ':' + b ,0);
+                this.setAnswer('' + a + 'to' + b ,1);
+                this.setAnswer('' + a + '/' + b,2);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_9',6.0109,'6.rp.a.1','' );
