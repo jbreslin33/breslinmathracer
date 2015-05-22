@@ -15,7 +15,7 @@ Extends: TextItem,
 		var a = Math.floor((Math.random()*20)+2);
                 var b = Math.floor((Math.random()*20)+1);
 
-                this.setQuestion('' + 'Write as a ratio ' + a + ' ' + this.ns.mThingOne + ' to every ' + b + ' ' + this.ns.mThingTwo + '.'  );
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' ' + this.ns.mThingOne + ' to every ' + b + ' ' + this.ns.mThingTwo + '. What is the ratio of ' + this.ns.mThingOne + ' to ' + this.ns.mThingTwo + ' ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' has?'  );
 
                 this.setAnswer('' + a + ':' + b ,0);
                 this.setAnswer('' + a + 'to' + b ,1);
