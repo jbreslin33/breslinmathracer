@@ -1,4 +1,30 @@
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_16',6.0116,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__16 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_14';
+                this.ns = new NameSampler();
+
+                var a = Math.floor((Math.random()*2)+2);
+                var b = Math.floor((Math.random()*10)+30);
+
+                this.setQuestion('' + this.ns.mSchoolOne + ' is going on a field trip. They have ' + a + ' buses for every ' + b + ' students. What is the ratio of buses to students.');
+
+                this.setAnswer('' + a + ':' + b ,0);
+                this.setAnswer('' + a + 'to' + b ,1);
+                this.setAnswer('' + a + '/' + b,2);
+        }
+});
+
+
 var i_6_rp_a_1__picture = new Class(
 {
 Extends: TextItem,
