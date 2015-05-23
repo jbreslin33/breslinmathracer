@@ -182,6 +182,37 @@ getItem: function(id)
                 return new i_2_g_a_1__7(this.mSheet);
         }
 
+        //2.g.a.2
+        if (id == '2.g.a.2_1')
+        {
+                return new i_2_g_a_2__1(this.mSheet);
+        }
+        if (id == '2.g.a.2_2')
+        {
+                return new i_2_g_a_2__2(this.mSheet);
+        }
+        if (id == '2.g.a.2_3')
+        {
+                return new i_2_g_a_2__3(this.mSheet);
+        }
+        if (id == '2.g.a.2_4')
+        {
+                return new i_2_g_a_2__4(this.mSheet);
+        }
+        if (id == '2.g.a.2_5')
+        {
+                return new i_2_g_a_2__5(this.mSheet);
+        }
+        if (id == '2.g.a.2_6')
+        {
+                return new i_2_g_a_2__6(this.mSheet);
+        }
+        if (id == '2.g.a.2_7')
+        {
+                return new i_2_g_a_2__7(this.mSheet);
+        }
+
+
 	
 	/*** GRADE 3 ***/
 	//3.oa.a.1
