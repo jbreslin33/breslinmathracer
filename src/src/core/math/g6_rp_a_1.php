@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_13',6.0113,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__13 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_13';
+                this.ns = new NameSampler();
+
+                var a = Math.floor((Math.random()*5)+15);
+                var b = Math.floor((Math.random()*10)+30);
+                var c = parseInt(b - a);
+
+                this.setQuestion('' + this.ns.mNameOne + ' is making bracelets. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' uses ' + a + ' ' + this.ns.mColorOne + ' and ' + b + ' ' + this.ns.mColorTwo + ' beads for each one ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' makes. What is the ratio of ' + this.ns.mColorOne + ' to ' + this.ns.mColorTwo + ' beads that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' uses.');
+
+                this.setAnswer('' + a + ':' + b ,0);
+                this.setAnswer('' + a + 'to' + b ,1);
+                this.setAnswer('' + a + '/' + b,2);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_12',6.0112,'6.rp.a.1','' );
 */
 
