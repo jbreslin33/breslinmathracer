@@ -1,4 +1,74 @@
 
+var i_6_rp_a_1__picture = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                //move gui
+                this.mUserAnswerLabel.setPosition(625,150);
+                this.mCorrectAnswerLabel.setPosition(625,250);
+
+                this.mNameMachine = new NameMachine();
+                this.mPictureLinkOne = this.mNameMachine.getPictureLink();
+                this.mPictureLinkTwo = this.mNameMachine.getPictureLink();
+
+                //variables
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
+
+                this.setQuestion('YOU NEED A QUESTION IN CHILD!');
+
+        },
+
+        createQuestionShapes: function()
+        {
+                var y = 135;
+
+                var a = parseInt(this.a);
+                var b = parseInt(this.b);
+
+                var x = 50;
+                for (var i = 0; i < a; i++)
+                {
+                        this.addQuestionShape(new Shape(25,25,x,135,this.mSheet.mGame,this.mPictureLinkOne,"",""));
+                        x = parseInt(x + 30);
+                }
+
+                var x = 400;
+                for (var i = 0; i < b; i++)
+                {
+                        this.addQuestionShape(new Shape(25,25,x,135,this.mSheet.mGame,this.mPictureLinkTwo,"",""));
+                        x = parseInt(x + 30);
+                }
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_15',6.0115,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__15 = new Class(
+{
+Extends: i_6_rp_a_1__picture,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '6.rp.a.1_15';
+
+                this.setQuestion('What is the ratio of ' + this.mNameMachine.getPictureName(this.mPictureLinkOne) + ' to total pictures?');
+		this.c = parseInt(this.a + this.b);
+		
+
+                this.setAnswer('' + this.a + ':' + this.c ,0);
+                this.setAnswer('' + this.a + 'to' + this.c ,1);
+                this.setAnswer('' + this.a + '/' + this.c,2);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_14',6.0114,'6.rp.a.1','' );
 */
@@ -265,54 +335,6 @@ Extends: TextItem,
 		
 		this.setAnswer('' + a + '/' + b + ',' + a + 'to' + b + ',' + a + ':' + b,4);
 		this.setAnswer('' + a + '/' + b + ',' + a + ':' + b + ',' + a + 'to' + b,5);
-        }
-});
-
-
-var i_6_rp_a_1__picture = new Class(
-{
-Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,600,50,330,75,100,50,685,80);
-
-                //move gui
-                this.mUserAnswerLabel.setPosition(625,150);
-                this.mCorrectAnswerLabel.setPosition(625,250);
-
-                this.mNameMachine = new NameMachine();
-                this.mPictureLinkOne = this.mNameMachine.getPictureLink();
-                this.mPictureLinkTwo = this.mNameMachine.getPictureLink();
-
-                //variables
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
-
-                this.setQuestion('YOU NEED A QUESTION IN CHILD!');
-
-        },
-
-        createQuestionShapes: function()
-        {
-                var y = 135;
-
-                var a = parseInt(this.a);
-                var b = parseInt(this.b);
-
-                var x = 50;
-                for (var i = 0; i < a; i++)
-		{
-                	this.addQuestionShape(new Shape(25,25,x,135,this.mSheet.mGame,this.mPictureLinkOne,"",""));
-                        x = parseInt(x + 30);
-		}
-
-                var x = 400;
-                for (var i = 0; i < b; i++)
-		{
-                	this.addQuestionShape(new Shape(25,25,x,135,this.mSheet.mGame,this.mPictureLinkTwo,"",""));
-                        x = parseInt(x + 30);
-		}
         }
 });
 
