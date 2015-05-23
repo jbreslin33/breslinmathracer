@@ -1,5 +1,28 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.4_5',3.0405,'3.oa.a.4','');
+*/
+var i_3_oa_a_4__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '3.oa.a.4_5';
+	this.ns = new NameSampler();
+
+        var a = Math.floor((Math.random()*8)+2);
+        var b = Math.floor((Math.random()*8)+2);
+        var c = parseInt(a*b);
+
+        this.setQuestion('' + this.ns.mNameOne + ' raked leaves into ' + c + ' piles. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' plans to use ' + b + ' bags to put the leaves in. Write a division equation that gives the amount of piles ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' should put in each bag.');
+        this.setAnswer('' + c + '/' + b + '=' + a,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.4_4',3.0404,'3.oa.a.4','');
 */
 var i_3_oa_a_4__4 = new Class(
