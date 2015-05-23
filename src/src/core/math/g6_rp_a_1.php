@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_14',6.0114,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__14 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_14';
+                this.ns = new NameSampler();
+
+                var a = Math.floor((Math.random()*5)+15);
+                var b = Math.floor((Math.random()*10)+30);
+                var c = parseInt(b - a);
+
+                this.setQuestion('' + this.ns.mNameOne + ' painted ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' rock collection ' + this.ns.mColorOne + ' and ' + ' ' + this.ns.mColorTwo + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' painted ' + a + ' rocks ' + this.ns.mColorOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' has a total of ' + b + ' rocks in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' collection. What is the ratio of ' + this.ns.mColorOne + ' rocks to ' + this.ns.mColorTwo + ' rocks in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' collection.');
+
+                this.setAnswer('' + a + ':' + c ,0);
+                this.setAnswer('' + a + 'to' + c ,1);
+                this.setAnswer('' + a + '/' + c,2);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_13',6.0113,'6.rp.a.1','' );
 */
 
