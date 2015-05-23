@@ -1,5 +1,31 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_12',6.0112,'6.rp.a.1','' );
+*/
+
+var i_6_rp_a_1__12 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95, 200,50,475,100);
+
+                this.mType = '6.rp.a.1_12';
+                this.ns = new NameSampler();
+
+                var a = Math.floor((Math.random()*5)+15);
+                var b = Math.floor((Math.random()*10)+30);
+                var c = parseInt(b - a);
+
+                this.setQuestion('' + 'The ' + this.ns.mNameMachine.getGrade(0,7) + ' grade of ' + this.ns.mSchoolOne + ' went on a field trip to the zoo. At the zoo there was ' + a + ' ' + this.ns.mAnimalOne + ' and ' + b + ' ' +  this.ns.mAnimalTwo + '. Write the ratio of ' + this.ns.mAnimalOne + ' to ' + this.ns.mAnimalTwo + '.');
+
+                this.setAnswer('' + a + ':' + b ,0);
+                this.setAnswer('' + a + 'to' + b ,1);
+                this.setAnswer('' + a + '/' + b,2);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_11',6.0111,'6.rp.a.1','' );
 */
 
