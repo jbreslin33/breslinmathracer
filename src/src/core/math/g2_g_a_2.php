@@ -13,22 +13,28 @@ initialize: function(sheet)
 
         this.setQuestion('What kind of triangle is the shape below?');
         this.setAnswer('' + 'equilateral',0);
-        this.setAnswer('' + 'equilateral triangle',1);
 },
 
 createQuestionShapes: function()
 {
-        var triangle = new Triangle (20,200, 100,100, 180,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
-        this.addQuestionShape(triangle);
-
-        var textA = new RaphaelText(40,190,this,0,0,1,"#000000",.5,false,"" + "60",16);
+	
+	var a1 = new Rectangle(50,25,100,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(a1);
+	var a2 = new Rectangle(50,25,100,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(a2);
+	var a3 = new Rectangle(50,25,100,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(a3);
+        var textA = new RaphaelText(80,30,this,0,0,1,"#000000",.5,false,"" + "A.",16);
         this.addQuestionShape(textA);
-
-        var textB = new RaphaelText(100,120,this,0,0,1,"#000000",.5,false,"" + "60",16);
+	
+	var b1 = new Rectangle(25,75,300,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(b1);
+	var b2 = new Rectangle(25,75,325,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(b2);
+	var textB = new RaphaelText(280,30,this,0,0,1,"#000000",.5,false,"" + "B.",16);
         this.addQuestionShape(textB);
 
-        var textC = new RaphaelText(160,190,this,0,0,1,"#000000",.5,false,"" + "60",16);
-        this.addQuestionShape(textC);
+        
 }
 });
 
