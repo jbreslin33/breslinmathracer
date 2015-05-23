@@ -1,5 +1,30 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_25',4.0225,'4.oa.a.2','');
+*/
+var i_4_oa_a_2__25 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,700,200,365,145,100,50,580,130);
+
+                this.mType = '4.oa.a.2_25';
+                this.ns = new NameSampler();
+
+                var a = Math.floor(Math.random()*8+4);
+                var b = '0.50';
+		var ad = new Decimal('' + a);
+		var bd = new Decimal('' + b);
+		var cd = ad.multiply(bd);
+
+                this.setQuestion('' + ' A pizza pie costs ' + a + ' times as much as 1 slice. If a slice costs $0.50 than how much does a pie cost?');
+                this.setAnswer('$' + cd.getMoney(),0);
+                this.setAnswer('' + cd.getMoney(),1);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.2_24',4.0224,'4.oa.a.2','');
 */
 var i_4_oa_a_2__24 = new Class(
