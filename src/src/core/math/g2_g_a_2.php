@@ -10,9 +10,15 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,500,350);
         this.mChopWhiteSpace = false;
         this.mType = '2.g.a.2_1';
+   
+	this.r = Math.floor(Math.random()*4);
 
-        this.setQuestion('What kind of triangle is the shape below?');
-        this.setAnswer('' + 'equilateral',0);
+
+        this.setQuestion('What rectangle has been divided into same-sized squares?');
+	if (this.r == 0)
+	{
+        	this.setAnswer('' + 'D',0);
+	}
 },
 
 createQuestionShapes: function()
@@ -33,6 +39,46 @@ createQuestionShapes: function()
         this.addQuestionShape(b2);
 	var textB = new RaphaelText(280,30,this,0,0,1,"#000000",.5,false,"" + "B.",16);
         this.addQuestionShape(textB);
+
+   	var c1 = new Rectangle(50,25,100,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c1);
+   	var c2 = new Rectangle(50,25,150,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c2);
+   	var c3 = new Rectangle(50,25,100,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c3);
+   	var c4 = new Rectangle(50,25,150,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c4);
+   	var c5 = new Rectangle(50,25,100,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c5);
+   	var c6 = new Rectangle(50,25,150,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c6);
+   	var c7 = new Rectangle(50,25,100,200,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c7);
+   	var c8 = new Rectangle(50,25,150,200,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(c8);
+	var textC = new RaphaelText(80,130,this,0,0,1,"#000000",.5,false,"" + "C.",16);
+        this.addQuestionShape(textC);
+
+        var d1 = new Rectangle(25,25,300,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d1);
+        var d2 = new Rectangle(25,25,325,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d2);
+        var d3 = new Rectangle(25,25,300,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d3);
+        var d4 = new Rectangle(25,25,325,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d4);
+        var d5 = new Rectangle(25,25,300,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d5);
+        var d6 = new Rectangle(25,25,325,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d6);
+        var d7 = new Rectangle(25,25,300,200,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d7);
+        var d8 = new Rectangle(25,25,325,200,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(d8);
+        var textD = new RaphaelText(280,130,this,0,0,1,"#000000",.5,false,"" + "D.",16);
+        this.addQuestionShape(textD);
+
+
 
         
 }
