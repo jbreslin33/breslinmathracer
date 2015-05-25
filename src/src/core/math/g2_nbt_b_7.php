@@ -17,13 +17,14 @@ initialize: function(sheet)
         var b = Math.floor( (Math.random()*39)+60);
 	
 	var c = parseInt(a + b);
-	this.setQuestion('' + this.ns.mNameOne + ' is adding ' + a + ' + ' + b + '. Use the number line below to find the sum by adding on from the larger number.'); 
+	this.setQuestion('' + this.ns.mNameOne + ' is adding ' + a + ' + ' + b + '. Use the empty number line below to find the sum by adding on from the larger number.'); 
 	this.setAnswer('' + c,0);  
 },
 createQuestionShapes: function()
 {
-	this.addQuestionShape(new LineOne (100,150, 500,150,this.mGame,this.mRaphael,"#000",.5,false));
-	this.addQuestionShape(new LineOne (100,150, 500,150,this.mGame,this.mRaphael,"#000",.5,false));
+	this.addQuestionShape(new LineOne (100,150, 475,150,this.mGame,this.mRaphael,"#000",.5,false));
+	this.addQuestionShape(new Triangle(75,150,100,125,100,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false));
+	this.addQuestionShape(new Triangle(500,150,475,125,475,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false));
 
 }	
 });
