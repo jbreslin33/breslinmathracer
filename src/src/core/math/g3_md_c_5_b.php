@@ -19,34 +19,32 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	this.r = 6;
+	this.r = 0;
+        this.addQuestionShape(new Rectangle(25,25,200,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,225,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,250,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,200,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,225,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,250,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,200,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,225,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+        this.addQuestionShape(new Rectangle(25,25,250,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+	this.setAnswer('9',0);
+	
 	if (this.r > 0)
-	{
-        	this.addQuestionShape(new Rectangle(25,25,200,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-        	this.addQuestionShape(new Rectangle(25,25,225,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-		this.setAnswer('2',0);
-	}
-	if (this.r > 1)
-	{
-        	this.addQuestionShape(new Rectangle(25,25,200,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-        	this.addQuestionShape(new Rectangle(25,25,225,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-        	this.addQuestionShape(new Rectangle(25,25,200,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-        	this.addQuestionShape(new Rectangle(25,25,225,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-		this.setAnswer('6',0);
-	}
-	if (this.r > 2)
 	{
         	this.addQuestionShape(new Rectangle(25,25,200,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,225,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 		this.setAnswer('8',0);
 	}
-	if (this.r > 3)
+	if (this.r > 1)
 	{
         	this.addQuestionShape(new Rectangle(25,25,200,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,225,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 		this.setAnswer('10',0);
-	}
-	if (this.r > 4)
+	}	
+	if (this.r > 2)
 	{
         	this.addQuestionShape(new Rectangle(25,25,250,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,250,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
@@ -55,7 +53,7 @@ createQuestionShapes: function()
         	this.addQuestionShape(new Rectangle(25,25,250,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 		this.setAnswer('15',0);
 	}
-	if (this.r > 5)
+	if (this.r > 3)
 	{
         	this.addQuestionShape(new Rectangle(25,25,275,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,275,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
