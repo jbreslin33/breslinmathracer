@@ -1,3 +1,26 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_3',4.0167,'3.md.c.5.b','' );
+*/
+var i_3_md_c_5_b__3 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,500,25,275,50,50,50,625,100);
+        this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '3.md.c.5.b_3';
+
+        var w = Math.floor( (Math.random()*8)+2);
+	var a = parseInt( w * 2);
+        this.setQuestion('' + this.ns.mNameOne + ' used graph paper ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' borrowed from ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyOne + ' to measure the area of a drawing. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' cut the paper into a number of unit squares and covered the picture with them. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' realized the area of the drawing is ' + a + ' square units. How many pieces of graph paper did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use to cover the drawing?' );
+	this.setAnswer('' + a,0);  
+	this.setAnswer('' + a + ' pieces',1);  
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_2',4.0166,'3.md.c.5.b','' );
 */
