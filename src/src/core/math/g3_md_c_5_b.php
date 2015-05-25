@@ -18,7 +18,6 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	this.r = 5;
         if (this.r == 5)
         {
                 //middle 9
