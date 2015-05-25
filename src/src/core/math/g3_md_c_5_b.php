@@ -26,9 +26,11 @@ createQuestionShapes: function()
         	this.addQuestionShape(new Rectangle(25,25,200,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,225,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,250,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
         	this.addQuestionShape(new Rectangle(25,25,200,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,225,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,250,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
         	this.addQuestionShape(new Rectangle(25,25,200,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,225,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
         	this.addQuestionShape(new Rectangle(25,25,250,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
@@ -85,7 +87,7 @@ createQuestionShapes: function()
                 this.addQuestionShape(new Rectangle(25,25,150,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
                 this.addQuestionShape(new Rectangle(25,25,175,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
 
-		this.setAnswer('18',0);
+		this.setAnswer('45',0);
 	}
 }
 });
