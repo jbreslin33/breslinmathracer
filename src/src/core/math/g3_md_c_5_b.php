@@ -1,3 +1,53 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_2',4.0166,'3.md.c.5.b','' );
+*/
+var i_3_md_c_5_b__2 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,500,25,275,50,50,50,625,100);
+        this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '3.md.c.5.b_2';
+
+        this.r = Math.floor( (Math.random()*5)+1);
+        this.setQuestion('' + 'The figure below is made using square units. What is the are of the figure in square in units?');
+},
+
+createQuestionShapes: function()
+{
+	this.r = 1;
+        if (this.r == 1)
+        {
+                //middle 9
+                this.addQuestionShape(new Rectangle(25,25,200,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                this.addQuestionShape(new Rectangle(25,25,225,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                //this.addQuestionShape(new Rectangle(25,25,250,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+                this.addQuestionShape(new Rectangle(25,25,200,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                this.addQuestionShape(new Rectangle(25,25,225,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                this.addQuestionShape(new Rectangle(25,25,250,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                
+		this.addQuestionShape(new Rectangle(25,25,200,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                this.addQuestionShape(new Rectangle(25,25,225,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                this.addQuestionShape(new Rectangle(25,25,250,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		//north
+                this.addQuestionShape(new Rectangle(25,25,200,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                this.addQuestionShape(new Rectangle(25,25,200,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+              
+		//west 
+		this.addQuestionShape(new Rectangle(25,25,150,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		this.addQuestionShape(new Rectangle(25,25,175,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+
+		//east	
+		this.addQuestionShape(new Rectangle(25,25,275,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		this.setAnswer('13',0)
+	}
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_1',4.0165,'3.md.c.5.b','' );
