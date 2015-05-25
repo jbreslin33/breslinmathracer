@@ -152,6 +152,56 @@ getItem: function(id)
                 return new i_2_oa_a_1__20(this.mSheet);
         }
 
+	//2.nbt.b.7	
+	if (id == '2.nbt.b.7_1')
+        {
+                return new i_2_nbt_b_7__1(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_2')
+        {
+                return new i_2_nbt_b_7__2(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_3')
+        {
+                return new i_2_nbt_b_7__3(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_4')
+        {
+                return new i_2_nbt_b_7__4(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_5')
+        {
+                return new i_2_nbt_b_7__5(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_6')
+        {
+                return new i_2_nbt_b_7__6(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_7')
+        {
+                return new i_2_nbt_b_7__7(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_8')
+        {
+                return new i_2_nbt_b_7__8(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_9')
+        {
+                return new i_2_nbt_b_7__9(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_10')
+        {
+                return new i_2_nbt_b_7__10(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_11')
+        {
+                return new i_2_nbt_b_7__11(this.mSheet);
+        }
+	if (id == '2.nbt.b.7_12')
+        {
+                return new i_2_nbt_b_7__12(this.mSheet);
+        }
+
         //2.g.a.1
         if (id == '2.g.a.1_1')
         {
