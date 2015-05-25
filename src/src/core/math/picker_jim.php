@@ -701,6 +701,39 @@ getItem: function(id)
                 return new i_3_md_b_3__4(this.mSheet);
         }
 
+        //3.md.c.5.b
+        if (id == '3.md.c.5.b_1')
+        {
+                return new i_3_md_c_5_b__1(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_2')
+        {
+                return new i_3_md_c_5_b__2(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_3')
+        {
+                return new i_3_md_c_5_b__3(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_4')
+        {
+                return new i_3_md_c_5_b__4(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_5')
+        {
+                return new i_3_md_c_5_b__5(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_6')
+        {
+                return new i_3_md_c_5_b__6(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_7')
+        {
+                return new i_3_md_c_5_b__7(this.mSheet);
+        }
+        if (id == '3.md.c.5.b_8')
+        {
+                return new i_3_md_c_5_b__8(this.mSheet);
+        }
 
 
 	//-----------4th GRADE---------
