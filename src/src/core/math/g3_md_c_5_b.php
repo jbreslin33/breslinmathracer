@@ -36,7 +36,7 @@ initialize: function(sheet)
         this.mType = '3.md.c.5.b_2';
 
         this.r = Math.floor( (Math.random()*5)+1);
-        this.setQuestion('' + 'The figure below is made using square units. What is the are of the figure in square in units?');
+        this.setQuestion('' + 'The figure below is made using square units. What is the area of the figure in square in units?');
 },
 
 createQuestionShapes: function()
@@ -208,7 +208,7 @@ initialize: function(sheet)
         this.mType = '3.md.c.5.b_1';
    
 	this.r = Math.floor( (Math.random()*5)+1);
-        this.setQuestion('' + 'The figure below is made using square units. What is the are of the figure in square in units?');
+        this.setQuestion('' + 'The figure below is made using square units. What is the area of the figure in square in units?');
 },
 
 createQuestionShapes: function()
