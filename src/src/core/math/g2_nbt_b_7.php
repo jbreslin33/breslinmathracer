@@ -1,4 +1,41 @@
 
+        //this.setQuestion('' + this.ns.mNameOne + ' is adding ' + atotal + ' + ' + btotal + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. ' + ah + ' + ' + dh + ' + ' + bt + ' + ' + et + ' + ' + c + ' + ' + f);
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_2',4.0169,'2.nbt.b.7','' );
+*/
+var i_2_nbt_b_7__2 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,500,25,275,50,50,50,625,100);
+        this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,150,500,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '2.nbt.b.7_2';
+
+        var a = Math.floor( (Math.random()*9)+1);
+        var b = Math.floor( (Math.random()*9)+1);
+        var c = Math.floor( (Math.random()*9)+1);
+	
+        var d = Math.floor( (Math.random()*9)+1);
+        var e = Math.floor( (Math.random()*9)+1);
+        var f = Math.floor( (Math.random()*9)+1);
+
+	var ah = parseInt(a * 100);	
+	var bt = parseInt(b * 10);	
+	
+	var dh = parseInt(d * 100);	
+	var et = parseInt(d * 10);	
+
+	var atotal = parseInt(ah + bt + c);
+	var btotal = parseInt(dh + et + f);
+        var t = parseInt(atotal + btotal);
+        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + atotal + ' + ' + btotal + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. __' + ' + ' + dh + ' + ' + bt + ' + ' + et + ' + ' + c + ' + ' + f);
+        this.setAnswer('' + ah, 0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_1',4.0168,'2.nbt.b.7','' );
 */
