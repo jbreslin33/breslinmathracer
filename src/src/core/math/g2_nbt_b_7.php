@@ -30,8 +30,9 @@ initialize: function(sheet)
         var t = parseInt(atotal + btotal);
 
        	tens_onesA = parseInt(bt + c);
+       	tens_onesB = parseInt(et + f);
 
-        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + this.ns.mNameMachine.getNumberName(a) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesA) + ' + ' + btotal + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. __' + ' + ' + dh + ' + ' + bt + ' + ' + et + ' + ' + c + ' + ' + f + '. Help ' + this.ns.mNameOne + ' by filling in the missing number.');
+        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + this.ns.mNameMachine.getNumberName(a) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesA) + ' and ' + this.ns.mNameMachine.getNumberName(d) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesB)  + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. __' + ' + ' + dh + ' + ' + bt + ' + ' + et + ' + ' + c + ' + ' + f + '. Help ' + this.ns.mNameOne + ' by filling in the missing number.');
         this.setAnswer('' + ah, 0);
 }
 });
