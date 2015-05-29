@@ -1,5 +1,119 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_11',4.0178,'2.nbt.b.7','' );
+*/
+var i_2_nbt_b_7__11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,500,25,275,50,50,50,625,100);
+        this.ns = new NameSampler();
+        this.mType = '2.nbt.b.7_11';
+
+        var a = Math.floor( (Math.random()*9)+1);
+        var b = Math.floor( (Math.random()*9)+1);
+        var c = Math.floor( (Math.random()*9)+1);
+
+        var d = Math.floor( (Math.random()*9)+1);
+        var e = Math.floor( (Math.random()*9)+1);
+        var f = Math.floor( (Math.random()*9)+1);
+
+        var ah = parseInt(a * 100);
+        var bt = parseInt(b * 10);
+
+        var dh = parseInt(d * 100);
+        var et = parseInt(d * 10);
+
+        var atotal = parseInt(ah + bt + c);
+        var btotal = parseInt(dh + et + f);
+        var t = parseInt(atotal + btotal);
+
+        tens_onesA = parseInt(bt + c);
+        tens_onesB = parseInt(et + f);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + this.ns.mNameMachine.getNumberName(a) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesA) + ' and ' + this.ns.mNameMachine.getNumberName(d) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesB)  + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. ' + ah + ' + ' + dh + ' + ' + bt + ' __ + ' + c + ' + ' + f + '. Help ' + this.ns.mNameOne + ' by filling in the missing number.');
+        this.setAnswer('' + et, 0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_10',4.0177,'2.nbt.b.7','' );
+*/
+var i_2_nbt_b_7__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,500,25,275,50,50,50,625,100);
+        this.ns = new NameSampler();
+        this.mType = '2.nbt.b.7_10';
+
+        var a = Math.floor( (Math.random()*9)+1);
+        var b = Math.floor( (Math.random()*9)+1);
+        var c = Math.floor( (Math.random()*9)+1);
+
+        var d = Math.floor( (Math.random()*9)+1);
+        var e = Math.floor( (Math.random()*9)+1);
+        var f = Math.floor( (Math.random()*9)+1);
+
+        var ah = parseInt(a * 100);
+        var bt = parseInt(b * 10);
+
+        var dh = parseInt(d * 100);
+        var et = parseInt(d * 10);
+
+        var atotal = parseInt(ah + bt + c);
+        var btotal = parseInt(dh + et + f);
+        var t = parseInt(atotal + btotal);
+
+        tens_onesA = parseInt(bt + c);
+        tens_onesB = parseInt(et + f);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + this.ns.mNameMachine.getNumberName(a) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesA) + ' and ' + this.ns.mNameMachine.getNumberName(d) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesB)  + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. ' + ah + ' + ' + dh + ' + __ + ' + et + ' + ' + c + ' + ' + f + '. Help ' + this.ns.mNameOne + ' by filling in the missing number.');
+        this.setAnswer('' + bt, 0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_9',4.0176,'2.nbt.b.7','' );
+*/
+var i_2_nbt_b_7__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,500,25,275,50,50,50,625,100);
+        this.ns = new NameSampler();
+        this.mType = '2.nbt.b.7_9';
+
+        var a = Math.floor( (Math.random()*9)+1);
+        var b = Math.floor( (Math.random()*9)+1);
+        var c = Math.floor( (Math.random()*9)+1);
+
+        var d = Math.floor( (Math.random()*9)+1);
+        var e = Math.floor( (Math.random()*9)+1);
+        var f = Math.floor( (Math.random()*9)+1);
+
+        var ah = parseInt(a * 100);
+        var bt = parseInt(b * 10);
+
+        var dh = parseInt(d * 100);
+        var et = parseInt(d * 10);
+
+        var atotal = parseInt(ah + bt + c);
+        var btotal = parseInt(dh + et + f);
+        var t = parseInt(atotal + btotal);
+
+        tens_onesA = parseInt(bt + c);
+        tens_onesB = parseInt(et + f);
+
+        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + this.ns.mNameMachine.getNumberName(a) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesA) + ' and ' + this.ns.mNameMachine.getNumberName(d) + ' hundred ' + this.ns.mNameMachine.getNumberName(tens_onesB)  + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' adds them by doing this. ' + ah + ' + __ ' + ' + ' + bt + ' + ' + et + ' + ' + c + ' + ' + f + '. Help ' + this.ns.mNameOne + ' by filling in the missing number.');
+        this.setAnswer('' + dh, 0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_8',4.0175,'2.nbt.b.7','' );
 */
 var i_2_nbt_b_7__8 = new Class(
