@@ -1,5 +1,102 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_15',4.0182,'2.nbt.b.7','' );
+*/
+var i_2_nbt_b_7__15 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,700,25,375,50, 50,50,625,200);
+        this.ns = new NameSampler();
+        this.mRaphael = Raphael(10,100,600,350);
+        this.mChopWhiteSpace = false;
+        this.mType = '2.nbt.b.7_15';
+
+	this.a = 0;
+	this.b = 0;
+	this.c = 0;
+	this.d = 0;
+	this.e = 0;
+	this.f = 0;
+	
+	this.x = 0;
+	this.y = 0;
+	this.z = -1;
+
+	while (this.z < 0)
+	{
+        	this.a = Math.floor( (Math.random()*3)+1);
+		this.b = Math.floor( (Math.random()*4)+1);
+		this.c = Math.floor( (Math.random()*5)+1);
+        
+		this.d = Math.floor( (Math.random()*3)+1);
+		this.e = Math.floor( (Math.random()*4)+1);
+		this.f = Math.floor( (Math.random()*5)+1);
+
+        	this.x = parseInt(parseInt(this.a * 100) + parseInt(this.b * 10) + this.c);
+       	 	this.y = parseInt(parseInt(this.d * 100) + parseInt(this.e * 10) + this.f);
+		this.z = parseInt( this.x - this.y);
+
+		this.tens_ones_x = parseInt(this.b * 10 + this.c);   
+		this.tens_ones_y = parseInt(this.e * 10 + this.f);   
+	}
+        this.setQuestion('' + this.ns.mNameOne + ' looked at the blocks and the problem. Solve this problem for ' + this.ns.mNameOne + '. ' + this.x + ' - ' + this.y + '.');
+        this.setAnswer('' + this.z,0);
+},
+createQuestionShapes: function()
+{
+	this.addQuestionShape(new RaphaelText(50,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16));
+	this.addQuestionShape(new RaphaelText(150,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16));
+	this.addQuestionShape(new RaphaelText(250,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16));
+	
+	this.addQuestionShape(new RaphaelText(250,280,this,0,0,1,"#000000",.5,false,"" + "What is " + this.ns.mNameMachine.getNumberName(this.a) + ' hundred ' + this.ns.mNameMachine.getNumberName(this.tens_ones_x) + ' minus ' + this.ns.mNameMachine.getNumberName(this.d) + ' hundred ' + this.ns.mNameMachine.getNumberName(this.tens_ones_y) + "?" ,16));
+
+	//hundreds x 
+	var x = 16;   
+	var y = 40;    
+	for (var k = 0; k < this.a; k++) 		
+	{
+		for (var j = 0; j < 10; j++) 		
+		{
+			for (var i = 0; i < 10; i++) 		
+			{
+				this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+				x = x + 7;
+			}
+			x = 16;   
+			y = y + 7;				
+		}
+		x = 16;   
+		y = y + 7;				
+	}
+
+        //tens x 
+        var x = 137;
+        var y = 40;
+        for (var k = 0; k < this.b; k++)
+        {
+        	for (var i = 0; i < 10; i++)
+                {
+               		this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                        y = y + 7;
+                }
+                x = x + 14;
+                y = 40;
+        }
+
+        //ones x
+        var x = 234;
+        var y = 40;
+        for (var k = 0; k < this.c; k++)
+        {
+                this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                x = x + 14;
+        }
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_14',4.0181,'2.nbt.b.7','' );
 */
 var i_2_nbt_b_7__14 = new Class(
