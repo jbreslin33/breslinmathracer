@@ -13,33 +13,33 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '2.nbt.b.7_14';
 
-	var a = 0;
-	var b = 0;
-	var c = 0;
-	var d = 0;
-	var e = 0;
-	var f = 0;
+	this.a = 0;
+	this.b = 0;
+	this.c = 0;
+	this.d = 0;
+	this.e = 0;
+	this.f = 0;
 	
-	var x = 0;
-	var y = 0;
-	var z = -1;
+	this.x = 0;
+	this.y = 0;
+	this.z = -1;
 
-	while (z < 0)
+	while (this.z < 0)
 	{
-        	a = Math.floor( (Math.random()*3)+1);
-		b = Math.floor( (Math.random()*4)+1);
-		c = Math.floor( (Math.random()*5)+1);
+        	this.a = Math.floor( (Math.random()*3)+1);
+		this.b = Math.floor( (Math.random()*4)+1);
+		this.c = Math.floor( (Math.random()*5)+1);
         
-		d = Math.floor( (Math.random()*3)+1);
-		e = Math.floor( (Math.random()*4)+1);
-		f = Math.floor( (Math.random()*5)+1);
+		this.d = Math.floor( (Math.random()*3)+1);
+		this.e = Math.floor( (Math.random()*4)+1);
+		this.f = Math.floor( (Math.random()*5)+1);
 
-        	x = parseInt(parseInt(a * 100) + parseInt(b * 10) + c);
-       	 	y = parseInt(parseInt(d * 100) + parseInt(e * 10) + f);
-		z = parseInt( x - y);
+        	this.x = parseInt(parseInt(this.a * 100) + parseInt(this.b * 10) + this.c);
+       	 	this.y = parseInt(parseInt(this.d * 100) + parseInt(this.e * 10) + this.f);
+		this.z = parseInt( this.x - this.y);
 	}
-        this.setQuestion('' + this.ns.mNameOne + ' looked at the blocks and the problem. Solve this problem for ' + this.ns.mNameOne + '. ' + x + ' - ' + y);
-        this.setAnswer('' + z,0);
+        this.setQuestion('' + this.ns.mNameOne + ' looked at the blocks and the problem. Solve this problem for ' + this.ns.mNameOne + '. ' + this.x + ' - ' + this.y);
+        this.setAnswer('' + this.z,0);
 },
 createQuestionShapes: function()
 {
@@ -54,47 +54,55 @@ createQuestionShapes: function()
 	var y = 40;    
 
 	//100
-	for (var j = 0; j < 10; j++) 		
+	if (this.a > 0)
 	{
-		for (var i = 0; i < 10; i++) 		
+		for (var j = 0; j < 10; j++) 		
 		{
-			this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-			x = x + 7;
+			for (var i = 0; i < 10; i++) 		
+			{
+				this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+				x = x + 7;
+			}
+			x = 16;   
+			y = y + 7;				
 		}
-		x = 16;   
-		y = y + 7;				
 	}
 
 	x = 16;   
 	y = y + 7;				
-
-        //200
-        for (var j = 0; j < 10; j++)
+    
+	//200
+        if (this.a > 1)
         {
-                for (var i = 0; i < 10; i++)
+                for (var j = 0; j < 10; j++)
                 {
-                        this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-                        x = x + 7;
+                        for (var i = 0; i < 10; i++)
+                        {
+                                this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                                x = x + 7;
+                        }
+                        x = 16;
+                        y = y + 7;
                 }
-                x = 16;
-                y = y + 7;
         }
 
         x = 16;
         y = y + 7;
-
-        //300
-        for (var j = 0; j < 10; j++)
+    
+	//300
+        if (this.a > 2)
         {
-                for (var i = 0; i < 10; i++)
+                for (var j = 0; j < 10; j++)
                 {
-                        this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-                        x = x + 7;
+                        for (var i = 0; i < 10; i++)
+                        {
+                                this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                                x = x + 7;
+                        }
+                        x = 16;
+                        y = y + 7;
                 }
-                x = 16;
-                y = y + 7;
         }
-
 }
 });
 
