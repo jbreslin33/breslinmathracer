@@ -92,6 +92,48 @@ createQuestionShapes: function()
                 x = x + 14;
         }
 
+        //hundreds y 
+        var x = 316;
+        var y = 40;
+        for (var k = 0; k < this.d; k++)
+        {
+                for (var j = 0; j < 10; j++)
+                {
+                        for (var i = 0; i < 10; i++)
+                        {
+                                this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                                x = x + 7;
+                        }
+                        x = 316;
+                        y = y + 7;
+                }
+                x = 16;
+                y = y + 7;
+        }
+
+        //tens y 
+        var x = 437;
+        var y = 40;
+        for (var k = 0; k < this.e; k++)
+        {
+                for (var i = 0; i < 10; i++)
+                {
+                        this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                        y = y + 7;
+                }
+                x = x + 14;
+                y = 40;
+        }
+
+        //onesy 
+        var x = 534;
+        var y = 40;
+        for (var k = 0; k < this.f; k++)
+        {
+                this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                x = x + 14;
+        }
+
 }
 });
 
