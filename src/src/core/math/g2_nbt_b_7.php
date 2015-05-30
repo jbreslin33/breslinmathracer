@@ -13,12 +13,33 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '2.nbt.b.7_14';
 
-        var a = Math.floor( (Math.random()*29)+30);
-        var b = Math.floor( (Math.random()*39)+60);
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	
+	var x = 0;
+	var y = 0;
+	var z = -1;
 
-        var c = parseInt(a + b);
-        this.setQuestion('' + this.ns.mNameOne + ' is adding ' + a + ' + ' + b + '. Use the empty number line below to find the sum by adding on from the larger number.');
-        this.setAnswer('' + c,0);
+	while (z < 0)
+	{
+        	a = Math.floor( (Math.random()*3)+1);
+		b = Math.floor( (Math.random()*4)+1);
+		c = Math.floor( (Math.random()*5)+1);
+        
+		d = Math.floor( (Math.random()*3)+1);
+		e = Math.floor( (Math.random()*4)+1);
+		f = Math.floor( (Math.random()*5)+1);
+
+        	x = parseInt(parseInt(a * 100) + parseInt(b* 10) + c);
+       	 	y = parseInt(parseInt(d * 100) + parseInt(e* 10) + f);
+		z = parseInt( x - y);
+	}
+        this.setQuestion('' + this.ns.mNameOne + ' looked at the blocks and the problem. Solve this problem for ' + this.ns.mNameOne + '. ' + x + ' - ' + y);
+        this.setAnswer('' + z,0);
 },
 createQuestionShapes: function()
 {
