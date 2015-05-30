@@ -50,7 +50,7 @@ createQuestionShapes: function()
 	this.addQuestionShape(new RaphaelText(450,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16));
 	this.addQuestionShape(new RaphaelText(550,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16));
 
-	//hundreds a
+	//hundreds x 
 	var x = 16;   
 	var y = 40;    
 	for (var k = 0; k < this.a; k++) 		
@@ -68,6 +68,20 @@ createQuestionShapes: function()
 		x = 16;   
 		y = y + 7;				
 	}
+
+        //tens x 
+        var x = 137;
+        var y = 40;
+        for (var k = 0; k < this.b; k++)
+        {
+        	for (var i = 0; i < 10; i++)
+                {
+               		this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                        y = y + 7;
+                }
+                x = x + 14;
+                y = 40;
+        }
 }
 });
 
