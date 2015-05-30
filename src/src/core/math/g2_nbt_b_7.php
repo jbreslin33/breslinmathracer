@@ -82,6 +82,16 @@ createQuestionShapes: function()
                 x = x + 14;
                 y = 40;
         }
+
+        //ones x
+        var x = 234;
+        var y = 40;
+        for (var k = 0; k < this.c; k++)
+        {
+                this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                x = x + 14;
+        }
+
 }
 });
 
