@@ -1,5 +1,36 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_4',4.0185,'3.nbt.a.2','');
+*/
+
+var i_3_nbt_a_2__4 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,400,50,280,75,100,50,500,180);
+
+        this.mType = '3.nbt.a.2_4';
+        this.ns = new NameSampler();
+
+        var x = 0;
+        var y = 0;
+        var z = parseInt(-1);
+
+        while (z < 1)
+        {
+                x = Math.floor(Math.random()*899)+100;
+                y = Math.floor(Math.random()*899)+100;
+                z = parseInt(x - y);
+        }
+
+        this.setQuestion('' + 'The math class that ' + this.ns.mNameOne + ' is in at ' + this.ns.mSchoolOne + ' began the school year with ' + x + ' pencils. At Christmas time they had ' + y + ' left. Use mental math to figure out how many pencils the class used?');
+
+        this.setAnswer('' + z,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_3',4.0184,'3.nbt.a.2','');
 */
 
