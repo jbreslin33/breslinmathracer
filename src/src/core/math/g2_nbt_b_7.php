@@ -64,6 +64,37 @@ createQuestionShapes: function()
 		x = 16;   
 		y = y + 7;				
 	}
+
+	x = 16;   
+	y = y + 7;				
+
+        //200
+        for (var j = 0; j < 10; j++)
+        {
+                for (var i = 0; i < 10; i++)
+                {
+                        this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                        x = x + 7;
+                }
+                x = 16;
+                y = y + 7;
+        }
+
+        x = 16;
+        y = y + 7;
+
+        //300
+        for (var j = 0; j < 10; j++)
+        {
+                for (var i = 0; i < 10; i++)
+                {
+                        this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+                        x = x + 7;
+                }
+                x = 16;
+                y = y + 7;
+        }
+
 }
 });
 
