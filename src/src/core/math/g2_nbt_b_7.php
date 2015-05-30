@@ -9,7 +9,7 @@ initialize: function(sheet)
 {
         this.parent(sheet,500,25,275,50,50,50,625,100);
         this.ns = new NameSampler();
-        this.mRaphael = Raphael(10,150,500,350);
+        this.mRaphael = Raphael(10,100,600,350);
         this.mChopWhiteSpace = false;
         this.mType = '2.nbt.b.7_14';
 
@@ -43,7 +43,14 @@ initialize: function(sheet)
 },
 createQuestionShapes: function()
 {
-        this.addQuestionShape(new LineOne (100,150, 475,150,this.mGame,this.mRaphael,"#000",.5,false));
+	new RaphaelText(50,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16);
+	new RaphaelText(150,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16);
+	new RaphaelText(250,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16);
+	new RaphaelText(350,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16);
+	new RaphaelText(450,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16);
+	new RaphaelText(550,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16);
+	
+	this.addQuestionShape(new LineOne (100,150, 475,150,this.mGame,this.mRaphael,"#000",.5,false));
         this.addQuestionShape(new Triangle(75,150,100,125,100,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false));
         this.addQuestionShape(new Triangle(500,150,475,125,475,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false));
 
