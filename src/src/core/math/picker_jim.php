@@ -760,6 +760,12 @@ getItem: function(id)
         {
                 return new i_3_oa_c_7__991(this.mSheet);
         }
+
+	//3.nbt.a.2
+        if (id == '3.nbt.a.2_1')
+        {
+                return new i_3_nbt_a_2__1(this.mSheet);
+	}
   	
 	//3.md.b.3
         if (id == '3.md.b.3_1')
