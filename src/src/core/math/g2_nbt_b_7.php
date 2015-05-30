@@ -34,8 +34,8 @@ initialize: function(sheet)
 		e = Math.floor( (Math.random()*4)+1);
 		f = Math.floor( (Math.random()*5)+1);
 
-        	x = parseInt(parseInt(a * 100) + parseInt(b* 10) + c);
-       	 	y = parseInt(parseInt(d * 100) + parseInt(e* 10) + f);
+        	x = parseInt(parseInt(a * 100) + parseInt(b * 10) + c);
+       	 	y = parseInt(parseInt(d * 100) + parseInt(e * 10) + f);
 		z = parseInt( x - y);
 	}
         this.setQuestion('' + this.ns.mNameOne + ' looked at the blocks and the problem. Solve this problem for ' + this.ns.mNameOne + '. ' + x + ' - ' + y);
@@ -43,17 +43,20 @@ initialize: function(sheet)
 },
 createQuestionShapes: function()
 {
-	new RaphaelText(50,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16);
-	new RaphaelText(150,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16);
-	new RaphaelText(250,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16);
-	new RaphaelText(350,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16);
-	new RaphaelText(450,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16);
-	new RaphaelText(550,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16);
-	
-	this.addQuestionShape(new LineOne (100,150, 475,150,this.mGame,this.mRaphael,"#000",.5,false));
-        this.addQuestionShape(new Triangle(75,150,100,125,100,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false));
-        this.addQuestionShape(new Triangle(500,150,475,125,475,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false));
+	this.addQuestionShape(new RaphaelText(50,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16));
+	this.addQuestionShape(new RaphaelText(150,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16));
+	this.addQuestionShape(new RaphaelText(250,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16));
+	this.addQuestionShape(new RaphaelText(350,20,this,0,0,1,"#000000",.5,false,"" + "Hundreds",16));
+	this.addQuestionShape(new RaphaelText(450,20,this,0,0,1,"#000000",.5,false,"" + "Tens",16));
+	this.addQuestionShape(new RaphaelText(550,20,this,0,0,1,"#000000",.5,false,"" + "Ones",16));
 
+	var x = 16;   
+	var y = 40;    
+	for (var i = 0; i < 10; i++) 		
+	{
+		this.addQuestionShape(new Rectangle(7,7,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
+		x = x + 7;
+	}
 }
 });
 
