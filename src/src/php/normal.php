@@ -615,6 +615,7 @@ public function goBananas()
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
+		error_log('dup');
 		//go bananas lets get all previously asked questions....in normal
  		$i = 0;
 		while ($i <= intval(count($this->id_array) - 1))
@@ -639,25 +640,51 @@ public function goBananas()
 		//true bananas
 		if ($bananas > -1 && $bananas <= 25)
 		{ 
-			$this->trueBananas();
+			if ( intval($unmasteredCount) < 7 )   
+			{
+				$this->trueBananas();
+				error_log('true bananas');
+			}
+			else
+			{
+				$r = rand( 0,100);
+				if ($r > -1 && $r <= 33)
+				{
+					$this->leastAsked();
+					error_log('r leastAsked');
+				}
+				else if ($r > 33 && $r <= 66)
+				{
+					$this->leastCorrect();
+					error_log('r leastCorrect');
+				}
+				else if ($r > 66 && $r <= 100)
+				{
+					$this->leastPercent();
+					error_log('r leastPercent');
+				}
+			}
 		}
 
 		// this should be least asked
 		else if ($bananas > 25 && $bananas <= 50)
 		{
 			$this->leastAsked();
+			error_log('b leastAsked');
 		}
 
 		// this should be least correct
 		else if ($bananas > 50 && $bananas <= 75)
 		{
 			$this->leastCorrect();
+			error_log('b leastCorrect');
 		}
 
 		// this should be least percent correct
 		else if ($bananas > 75 && $bananas <= 100)
 		{
 			$this->leastPercent();
+			error_log('b leastPercent');
 		}
 		else
 		{
@@ -666,6 +693,10 @@ public function goBananas()
 				error_log('else fall thru on bananas should not happen!!!');
 			}
 		}
+	}
+	else
+	{
+		error_log('no dup'); 
 	}
 }
 
