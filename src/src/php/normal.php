@@ -616,81 +616,85 @@ public function goBananas()
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
 		error_log('dup');
-		//go bananas lets get all previously asked questions....in normal
- 		$i = 0;
-		while ($i <= intval(count($this->id_array) - 1))
-        	{
- 			$c = 0;
-			$exists = false;
-			while ($c <= intval(count($this->item_array) - 1) && $exists == false)
-			{
-				if ($this->id_array[$i] == $this->item_array[$c])
+		
+		while ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if still dup then keep on keepin on
+		{
+			//lets get all previously asked questions....in normal
+ 			$i = 0;
+			while ($i <= intval(count($this->id_array) - 1))
+        		{
+ 				$c = 0;
+				$exists = false;
+				while ($c <= intval(count($this->item_array) - 1) && $exists == false)
 				{
-					$this->previous_id_array[] = $this->id_array[$i];
-					$exists = true;
+					if ($this->id_array[$i] == $this->item_array[$c])
+					{
+						$this->previous_id_array[] = $this->id_array[$i];
+						$exists = true;
+					}
+					$c++;
 				}
-				$c++;
+				$i++;
 			}
-			$i++;
-		}
 
-		$bananas = rand( 0,100);
-		$bananas = intval($bananas);
+			$bananas = rand( 0,100);
+			$bananas = intval($bananas);
 	
-		//true bananas
-		if ($bananas > -1 && $bananas <= 25)
-		{ 
-			if ( intval($unmasteredCount) < 7 )   
+			//true bananas
+			if ($bananas > -1 && $bananas <= 25)
+			{	 
+				if ( intval($unmasteredCount) < 7 )   
+				{
+					$this->trueBananas();
+					error_log('true bananas');
+				}
+				else
+				{
+					$r = rand( 0,100);
+					if ($r > -1 && $r <= 33)
+					{
+						$this->leastAsked();
+						error_log('r leastAsked');
+					}
+					else if ($r > 33 && $r <= 66)
+					{
+						$this->leastCorrect();
+						error_log('r leastCorrect');
+					}
+					else if ($r > 66 && $r <= 100)
+					{
+						$this->leastPercent();
+						error_log('r leastPercent');
+					}
+				}
+			}
+
+			// this should be least asked
+			else if ($bananas > 25 && $bananas <= 50)
 			{
-				$this->trueBananas();
-				error_log('true bananas');
+				$this->leastAsked();
+				error_log('b leastAsked');
+			}
+
+			// this should be least correct
+			else if ($bananas > 50 && $bananas <= 75)
+			{
+				$this->leastCorrect();
+				error_log('b leastCorrect');
+			}
+
+			// this should be least percent correct
+			else if ($bananas > 75 && $bananas <= 100)
+			{
+				$this->leastPercent();
+				error_log('b leastPercent');
 			}
 			else
 			{
-				$r = rand( 0,100);
-				if ($r > -1 && $r <= 33)
+				if ($this->logs)	
 				{
-					$this->leastAsked();
-					error_log('r leastAsked');
+					error_log('else fall thru on bananas should not happen!!!');
 				}
-				else if ($r > 33 && $r <= 66)
-				{
-					$this->leastCorrect();
-					error_log('r leastCorrect');
-				}
-				else if ($r > 66 && $r <= 100)
-				{
-					$this->leastPercent();
-					error_log('r leastPercent');
-				}
-			}
-		}
-
-		// this should be least asked
-		else if ($bananas > 25 && $bananas <= 50)
-		{
-			$this->leastAsked();
-			error_log('b leastAsked');
-		}
-
-		// this should be least correct
-		else if ($bananas > 50 && $bananas <= 75)
-		{
-			$this->leastCorrect();
-			error_log('b leastCorrect');
-		}
-
-		// this should be least percent correct
-		else if ($bananas > 75 && $bananas <= 100)
-		{
-			$this->leastPercent();
-			error_log('b leastPercent');
-		}
-		else
-		{
-			if ($this->logs)	
-			{
-				error_log('else fall thru on bananas should not happen!!!');
 			}
 		}
 	}
