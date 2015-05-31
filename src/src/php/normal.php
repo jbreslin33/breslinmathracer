@@ -132,10 +132,10 @@ public function setRawData()
 	$this->item_types_id_to_ask = '';
         
 	$this->masters();
+	$this->unmasteredCount = $_SESSION["unmastered_count"]; 
 	$this->scores();
         $this->updateScores();
-	$this->setEarliestToAsk();	
-	$unmasteredCount = $_SESSION["unmastered_count"]; 
+	$this->setEarliestToAsk("wha");	
 	$this->goBananas();
 	$this->setItemString();
 }
@@ -411,7 +411,7 @@ public function updateScores()
 }
 
 
-public function setEarliestToAsk()
+public function setEarliestToAsk($skip)
 {
 	if ($this->logs)	
 	{
@@ -423,39 +423,48 @@ public function setEarliestToAsk()
 
 	//loop thru id array until you reach end or find a item to ask ..this is why you can grab all attempts regardless of progression as long as they where normal as they will never get checked in following code.
 
-	while ($i <= intval(count($this->id_array) - 1) && $this->item_types_id_to_ask == '')
+	$found_one = false;
+	while ($i <= intval(count($this->id_array) - 1) && $found_one == false)
 	{ 
-		$mini_transaction_code_array = array(); 
-
-		$c = 0;
-
-		//loop attempt array and dump into arrays then you can eval after..need to use mastery 
-		while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
+		if ($skip == $this->id_array[$i])
 		{
-			//check for match of ids if so add to code array
-			if ($this->id_array[$i] == $this->item_array[$c])
-			{
-				$mini_transaction_code_array[] = $this->transaction_code_array[$c];
-			}
-			$c++; //increment for typearrays
 		}
+		else 
+		{
+			$mini_transaction_code_array = array(); 
 
-		//if less than mastery than type has not been asked enuf so make it ask type
-		if ( intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]) )
-		{
-			$this->item_types_id_to_ask = $this->id_array[$i];
-		} 
-		else  //we have over mastery to check
-		{
-			//if any is not 1 then its not type mastered so make it ask type
-			for ($t=0; $t < $this->type_mastery_array[$i]; $t++)
+			$c = 0;
+
+			//loop attempt array and dump into arrays then you can eval after..need to use mastery 
+			while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
 			{
-				if ($mini_transaction_code_array[$t] != 1)
+				//check for match of ids if so add to code array
+				if ($this->id_array[$i] == $this->item_array[$c])
 				{
-					$this->item_types_id_to_ask = $this->id_array[$i];
+					$mini_transaction_code_array[] = $this->transaction_code_array[$c];
 				}
+				$c++; //increment for typearrays
+			}
+
+			//if less than mastery than type has not been asked enuf so make it ask type
+			if ( intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]) )
+			{
+				$this->item_types_id_to_ask = $this->id_array[$i];
+				$found_one = true;
+			}	 
+			else  //we have over mastery to check
+			{
+				//if any is not 1 then its not type mastered so make it ask type
+				for ($t=0; $t < $this->type_mastery_array[$i]; $t++)
+				{
+					if ($mini_transaction_code_array[$t] != 1)
+					{
+						$this->item_types_id_to_ask = $this->id_array[$i];
+						$found_one = true;
+					}
+				} 
 			} 
-		} 
+		}
 		$i++;
 	}
 }
@@ -615,92 +624,88 @@ public function goBananas()
 	}
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
-		error_log('dup');
-		
-		while ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if still dup then keep on keepin on
-		{
-			//lets get all previously asked questions....in normal
- 			$i = 0;
-			while ($i <= intval(count($this->id_array) - 1))
-        		{
- 				$c = 0;
-				$exists = false;
-				while ($c <= intval(count($this->item_array) - 1) && $exists == false)
+		//lets get all previously asked questions....in normal
+ 		$i = 0;
+		while ($i <= intval(count($this->id_array) - 1))
+        	{
+ 			$c = 0;
+			$exists = false;
+			while ($c <= intval(count($this->item_array) - 1) && $exists == false)
+			{
+				if ($this->id_array[$i] == $this->item_array[$c])
 				{
-					if ($this->id_array[$i] == $this->item_array[$c])
-					{
-						$this->previous_id_array[] = $this->id_array[$i];
-						$exists = true;
-					}
-					$c++;
+					$this->previous_id_array[] = $this->id_array[$i];
+					$exists = true;
 				}
-				$i++;
+				$c++;
 			}
+			$i++;
+		}
 
-			$bananas = rand( 0,100);
-			$bananas = intval($bananas);
+		$bananas = rand( 0,100);
+		$bananas = intval($bananas);
 	
-			//true bananas
-			if ($bananas > -1 && $bananas <= 25)
-			{	 
-				if ( intval($unmasteredCount) < 7 )   
-				{
-					$this->trueBananas();
-					error_log('true bananas');
-				}
-				else
-				{
-					$r = rand( 0,100);
-					if ($r > -1 && $r <= 33)
-					{
-						$this->leastAsked();
-						error_log('r leastAsked');
-					}
-					else if ($r > 33 && $r <= 66)
-					{
-						$this->leastCorrect();
-						error_log('r leastCorrect');
-					}
-					else if ($r > 66 && $r <= 100)
-					{
-						$this->leastPercent();
-						error_log('r leastPercent');
-					}
-				}
-			}
-
-			// this should be least asked
-			else if ($bananas > 25 && $bananas <= 50)
+		//true bananas
+		if ($bananas > -1 && $bananas <= 25)
+		{	 
+			if ( intval($this->unmasteredCount) < 7 )   
 			{
-				$this->leastAsked();
-				error_log('b leastAsked');
-			}
-
-			// this should be least correct
-			else if ($bananas > 50 && $bananas <= 75)
-			{
-				$this->leastCorrect();
-				error_log('b leastCorrect');
-			}
-
-			// this should be least percent correct
-			else if ($bananas > 75 && $bananas <= 100)
-			{
-				$this->leastPercent();
-				error_log('b leastPercent');
+				$this->trueBananas();
 			}
 			else
 			{
-				if ($this->logs)	
+				$r = rand( 0,100);
+				if ($r > -1 && $r <= 33)
 				{
-					error_log('else fall thru on bananas should not happen!!!');
+					$this->leastAsked();
+				}
+				else if ($r > 33 && $r <= 66)
+				{
+					$this->leastCorrect();
+				}
+				else if ($r > 66 && $r <= 100)
+				{
+					$this->leastPercent();
 				}
 			}
+		}
+
+		// this should be least asked
+		else if ($bananas > 25 && $bananas <= 50)
+		{
+			$this->leastAsked();
+		}
+
+		// this should be least correct
+		else if ($bananas > 50 && $bananas <= 75)
+		{
+			$this->leastCorrect();
+		}
+
+		// this should be least percent correct
+		else if ($bananas > 75 && $bananas <= 100)
+		{
+			$this->leastPercent();
+		}
+		else
+		{
+			if ($this->logs)	
+			{
+				error_log('else fall thru on bananas should not happen!!!');
+			}
+		}
+		//after all that if you still have a dup fix it by going next
+		if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
+		{
+			$this->setEarliestToAsk($this->item_types_id_to_ask);
 		}
 	}
 	else
 	{
-		error_log('no dup'); 
+		if ($this->logs)	
+		{
+			error_log('no dup'); 
+		}
 	}
 }
 
