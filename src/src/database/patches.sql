@@ -1,10 +1,2 @@
-update item_types SET active_code = 1 where id = '4.nf.b.3.c_7';
-update item_types SET active_code = 1 where id = '4.md.a.3_3';
-update item_types SET active_code = 1 where id = '4.md.c.5.b_2';
-update item_types SET active_code = 1 where id = '4.md.c.5.a_10';
-update item_types SET active_code = 0 where id = '4.md.b.4_9';
-update item_types SET active_code = 0 where id = '4.md.b.4_10';
-update item_types SET active_code = 0 where id = '4.md.b.4_11';
-update item_types SET active_code = 0 where id = '4.md.b.4_12';
-update item_types SET active_code = 0 where id = '6.rp.a.1_4';
-update item_types SET active_code = 0 where id = '6.rp.a.1_5';
+update item_types set type_mastery = 2;
+update users set core_standards_id = 'k.cc.a.1';

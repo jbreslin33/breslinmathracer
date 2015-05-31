@@ -9,6 +9,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.a.2_1';
+		this.mStripCommas = false;
 
                 var x = Math.floor(Math.random()*98);
                 var a = parseInt(x+1);
@@ -48,6 +49,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.a.2_2';
+		this.mStripCommas = false;
 
                 var x = Math.floor(Math.random()*98);
 		var a = parseInt(x+1);

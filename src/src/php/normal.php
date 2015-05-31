@@ -136,18 +136,7 @@ public function setRawData()
         $this->updateScores();
 	$this->setEarliestToAsk();	
 	$unmasteredCount = $_SESSION["unmastered_count"]; 
-
-	if (intval($unmasteredCount) < 6)
-	{ 	
-		$this->goBananas();
-	}
-	else
-	{
-		if ($this->logs)
-		{
-			error_log('not going bananas');
-		}
-	}
+	$this->goBananas();
 	$this->setItemString();
 }
 
@@ -173,13 +162,6 @@ public function initializeProgressionCounter()
 
 		//temp hack
 		$this->progression_counter = floatval($this->progression_counter) - floatval(0.0001);
-	}
-	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
-	{
-		$this->progression_counter_limit = floatval($this->progression_counter + 0.01);
-	}	
-	else
-	{
 		$this->progression_counter_limit = floatval($this->progression_counter + 2);
 	}
 }
@@ -193,7 +175,7 @@ public function fillTypesArray()
 	//remediate types
 	$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
         $query .= $_SESSION["user_id"];
-	$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards
+	$query .= " AND active_code = 1"; //skip unactive  
 	$query .= " order by progression asc;";
 
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -210,16 +192,7 @@ public function fillTypesArray()
 	//normal base types..
 	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
 	$query .= $this->progression_counter; 
-	$query .= " AND progression < "; //stay in grade 
-	$query .= $this->progression_counter_limit; 
-	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
-	{
-		$query .= " AND active_code = 1 AND speed != 0"; //skip unactive and speed standards
-	}
-	else
-	{
-		$query .= " AND active_code = 1 AND speed = 0"; //skip unactive and speed standards
-	}
+	$query .= " AND active_code = 1"; //skip unactive
 	$query .= " order by progression asc;";
 
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -245,14 +218,7 @@ public function fillAttemptsArray()
 	//fill normal attempts
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $_SESSION["user_id"];
-	if ($_SESSION["core_standards_id"] == '3.oa.c.7')
-	{
-		$query .= " AND item_types.active_code = 1 AND item_types.speed != 0";  
-	}
-	else
-	{
-		$query .= " AND item_types.active_code = 1 AND item_types.speed = 0"; 
-	}
+	$query .= " AND item_types.active_code = 1"; 
         $query .= " order by item_attempts.start_time desc;";
 													
 	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -587,7 +553,7 @@ public function leastPercent()
 	$wrong = 0;
 
         $p = 0;
-        while ($p <= intval(count($this->previous_id_array) - 1))
+        while ($p <= intval(count($this->previous_id_array) - 1) && intval($right + $wrong) < 9)
         {
         	$currentPercent = 0;
 		$right = 0; 
