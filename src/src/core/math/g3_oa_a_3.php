@@ -1,8 +1,62 @@
 
 /*
-prerequisites:
-none finished
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_4',3.0304,'3.oa.a.3','Word problem. Division. Factors between 1-10.' );
 */
+
+var i_3_oa_a_3__4 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.3_4';
+
+                //move gui
+                this.mUserAnswerLabel.setPosition(125,200);
+                this.mCorrectAnswerLabel.setPosition(425,200);
+		
+		this.ns = new NameSampler();
+
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+                this.a = parseInt(this.b * this.c);
+
+		this.setQuestion(this.ns.mNameOne + ' had a garden. In the garden ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' had ' + this.a + ' '  + this.ns.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.ns.mVegetableTwo +  ' in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' garden. Write a number sentence that can be used to solve how many ' + this.ns.mVegetableTwo +  ' are in the garden. ' + this.ns.mNameMachine.getOperationInstructionEquation())     
+                this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
+                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,1);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_3',3.0303,'3.oa.a.3','Word problem. Division. Factors between 1-10.' );
+*/
+
+var i_3_oa_a_3__3 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.3_3';
+
+                //move gui
+                this.mUserAnswerLabel.setPosition(125,200);
+                this.mCorrectAnswerLabel.setPosition(425,200);
+		
+		this.ns = new NameSampler();
+
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+                this.a = parseInt(this.b * this.c);
+
+                this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' minutes a day. ' + this.ns.mNameTwo + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' times less minutes a day. Write a number sentence that can be used to solve how many minutes ' + this.ns.mNameTwo + ' played a day. ' + this.ns.mNameMachine.getOperationInstructionEquation());
+		
+                this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
+                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,1);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_2',3.0302,'3.oa.a.3','Word problem. Division. Factors between 1-10.' );
@@ -20,44 +74,22 @@ Extends: TextItem,
                 //move gui
                 this.mUserAnswerLabel.setPosition(125,200);
                 this.mCorrectAnswerLabel.setPosition(425,200);
-
-                this.mNameMachine = new NameMachine();
-                this.mNameOne     = this.mNameMachine.getName();
-                this.mNameTwo     = this.mNameMachine.getName();
-                this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
-                
-		this.mSchool     = this.mNameMachine.getSchool();
-		this.mVegetableOne     = this.mNameMachine.getVegetable();
-		this.mVegetableTwo     = this.mNameMachine.getVegetable();
-		this.mFruit     = this.mNameMachine.getFruit();
-
-		this.mRoomOne = Math.floor(Math.random()*10)+40; 
-		this.mRoomTwo = Math.floor(Math.random()*10)+20; 
-                
-		this.mAdult     = this.mNameMachine.getAdult();
+		
+		this.ns = new NameSampler();
 
                 this.b = Math.floor(Math.random()*8)+2;
                 this.c = Math.floor(Math.random()*8)+2;
                 this.a = parseInt(this.b * this.c);
+	
+		this.x = 0;		
+		this.y = 0;		
+		while(this.x == this.y)
+		{
+                	this.x = Math.floor(Math.random()*98)+2;
+                	this.y = Math.floor(Math.random()*98)+2;
+		}
 
-                this.random = Math.floor(Math.random()*2);
-		this.random = 2;
-		
-		if (this.random == 2) 
-		{
-			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' '  + this.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.mVegetableTwo +  ' in ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' garden. Write a number sentence that can be used to solve how many ' + this.mVegetableTwo +  ' are in the garden. ' + this.mNameMachine.getOperationInstructionEquation())     
-		}
-		
-		if (this.random == 1)
-		{
-                	this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write a number sentence that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. ' + this.mNameMachine.getOperationInstructionEquation());
-		}
-		
-		if (this.random == 0)
-		{
-                	this.setQuestion('At ' + this.mSchool + ' room ' + this.mRoomOne + ' ate ' + this.a + ' ' + this.mFruit + '. Room '  + this.mRoomOne + ' ate ' + this.b + ' times as many ' + this.mFruit + ' as room ' + this.mRoomTwo + '. How many ' + this.mFruit + ' did room ' + this.mRoomTwo + ' eat? Write a number sentence that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. ' + this.mNameMachine.getOperationInstructionEquation());
-
-		}
+                this.setQuestion('At ' + this.ns.mSchoolOne + ' room ' + this.x + ' ate ' + this.a + ' ' + this.ns.mFruitOne + '. Room '  + this.x + ' ate ' + this.b + ' times as many ' + this.ns.mFruitOne + ' as room ' + this.y + '. How many ' + this.ns.mFruitOne + ' did room ' + this.y + ' eat? Write a number sentence that can be used to solve how many minutes ' + this.ns.mNameTwo + ' played a day. ' + this.ns.mNameMachine.getOperationInstructionEquation());
 
                 this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
                 this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,1);
