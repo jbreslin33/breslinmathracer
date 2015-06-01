@@ -110,6 +110,7 @@ enter: function(item)
         }
 
 	item.showContinueSpeed();	
+	item.showSpeed();
 },
 
 execute: function(item)
@@ -122,7 +123,8 @@ execute: function(item)
 
 exit: function(item)
 {
-  item.hideContinueSpeed();
+  	item.hideContinueSpeed();
+	item.hideSpeed();
 
   if(item.raphael != 0)
      item.raphael.remove();

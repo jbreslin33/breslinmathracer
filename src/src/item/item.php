@@ -219,11 +219,16 @@ var Item = new Class(
                 this.mContinueIncorrectButton = new ContinueIncorrectButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
 		this.mContinueIncorrectButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueIncorrectButton);
-
+		
                 //mContinueSpeedButton
                 this.mContinueSpeedButton = new ContinueSpeedButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
                 this.mContinueSpeedButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueSpeedButton);
+		
+		//mSpeedInfo
+                this.mSpeedInfo = new Shape(200,20,200,30,this.mSheet.mGame,"","","");
+		this.mSpeedInfo.setText("Speed question ahead!");
+                this.addShape(this.mSpeedInfo);
 
 		//mStandardInfo
                 this.mStandardInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
@@ -548,6 +553,17 @@ var Item = new Class(
 	{	
 		this.mStandardInfo.setVisibility(false);
 	},
+
+	//speed
+        showSpeed: function()
+        {
+                this.mSpeedInfo.setVisibility(true);
+        },
+
+        hideSpeed: function()
+        {
+                this.mSpeedInfo.setVisibility(false);
+        },
 	
 	showItem: function()
 	{	
