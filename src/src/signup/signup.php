@@ -89,17 +89,17 @@ Extends: Game,
              	if (navigator.appName == "Microsoft Internet Explorer")
 		{
 			var option4_oa_a_1 = document.createElement("option");
-			var x = '4.oa.a.1';
+			var x = '3.oa.c.7';
                 	option4_oa_a_1.value = x;  
-                	option4_oa_a_1.text = '4.oa.a.1';   
+                	option4_oa_a_1.text = '3.oa.c.7';   
                 	this.mStandardSelect.mMesh.add(option4_oa_a_1);
 		}
 		else
 		{
 			var option4_oa_a_1 = document.createElement("option");
-			var x = '4.oa.a.1';
+			var x = '3.oa.c.7';
                 	option4_oa_a_1.value = x;  
-                	option4_oa_a_1.text = '4.oa.a.1';   
+                	option4_oa_a_1.text = '3.oa.c.7';   
                 	this.mStandardSelect.mMesh.appendChild(option4_oa_a_1);
 		}
 		
