@@ -45,22 +45,22 @@ Extends: TextItem,
 		
 		if (this.random == 2) 
 		{
-			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' '  + this.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.mVegetableTwo +  ' in ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' garden. Write a number sentence that can be used to solve how many ' + this.mVegetableTwo +  ' are in the garden. ' + this.mNameMachine.getOperationInstructionExpression())     
+			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' '  + this.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.mVegetableTwo +  ' in ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' garden. Write a number sentence that can be used to solve how many ' + this.mVegetableTwo +  ' are in the garden. ' + this.mNameMachine.getOperationInstructionEquation())     
 		}
 		
 		if (this.random == 1)
 		{
-                	this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write a number sentence that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. ' + this.mNameMachine.getOperationInstructionExpression());
+                	this.setQuestion(this.mNameOne + ' played ' + this.mPlayedActivity + ' for ' + this.a + ' minutes a day. ' + this.mNameTwo + ' played ' + this.mPlayedActivity + ' for ' + this.b + ' times less minutes a day. Write a number sentence that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. ' + this.mNameMachine.getOperationInstructionEquation());
 		}
 		
 		if (this.random == 0)
 		{
-                	this.setQuestion('At ' + this.mSchool + ' room ' + this.mRoomOne + ' ate ' + this.a + ' ' + this.mFruit + '. Room '  + this.mRoomOne + ' ate ' + this.b + ' times as many ' + this.mFruit + ' as room ' + this.mRoomTwo + '. How many ' + this.mFruit + ' did room ' + this.mRoomTwo + ' eat? Write a number sentence that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. ' + this.mNameMachine.getOperationInstructionExpression());
+                	this.setQuestion('At ' + this.mSchool + ' room ' + this.mRoomOne + ' ate ' + this.a + ' ' + this.mFruit + '. Room '  + this.mRoomOne + ' ate ' + this.b + ' times as many ' + this.mFruit + ' as room ' + this.mRoomTwo + '. How many ' + this.mFruit + ' did room ' + this.mRoomTwo + ' eat? Write a number sentence that can be used to solve how many minutes ' + this.mNameTwo + ' played a day. ' + this.mNameMachine.getOperationInstructionEquation());
 
 		}
 
                 this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
-                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,2);
+                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,1);
         }
 });
 
@@ -94,7 +94,7 @@ Extends: TextItem,
                 this.c = parseInt(this.a * this.b);
 
 	 	
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. ' + this.mNameMachine.getOperationInstructionExpression()); 
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has. ' + this.mNameMachine.getOperationInstructionEquation()); 
 
                 this.setAnswer('' + this.a + '*' + this.b + '=' + this.c ,0);
                 this.setAnswer('' + this.b + '*' + this.a + '=' + this.c ,1);

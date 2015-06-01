@@ -171,7 +171,7 @@ Extends: TextItem,
 		
 		if (random == 5)
 		{
-			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. After breakfast ' + this.ns.mAnimalTwo + ' gave ' + this.c + ' ' + this.ns.mFruitOne + ' to the ' + this.ns.mAnimalOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
+			this.setQuestion('For Breakfast the ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. After breakfast ' + this.ns.mAnimalTwo + ' gave ' + this.c + ' ' + this.ns.mFruitOne + ' to the ' + this.ns.mAnimalOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
 		}
 		if (random == 4)
 		{
@@ -216,7 +216,7 @@ Extends: TextItem,
 		
 		if (random == 5)
 		{
-			this.setQuestion('For Breakfast ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. For Lunch the ' + this.ns.mAnimalOne + ' ate ' + this.c + ' ' + this.ns.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
+			this.setQuestion('For Breakfast the ' + this.ns.mAnimalOne + ' ate '  + this.b + ' ' + this.ns.mFruitOne + '. For Lunch the ' + this.ns.mAnimalOne + ' ate ' + this.c + ' ' + this.ns.mFruitOne + '. If they started the day with ' + this.a + ' ' + this.ns.mFruitOne + ' then how many ' + this.ns.mFruitOne + ' do the ' + this.ns.mAnimalOne + ' have ' + this.ns.mLeft + ' for dinner?');        
 		}
 		if (random == 4)
 		{
