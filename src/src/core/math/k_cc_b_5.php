@@ -265,7 +265,7 @@ Extends: ThreeButtonItem,
 		}
 		if (a == 2)
 		{
-			a = 20;
+			a = 16;
 		}
 		var b = 0;
 		var c = 0; 
@@ -315,7 +315,7 @@ this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y+50),this.mSheet.
 this.addQuestionShape(new Shape(50,50,parseInt(x-50),y,this.mSheet.mGame,this.mPictureLink,"",""));
 this.addQuestionShape(new Shape(50,50,parseInt(x-50),parseInt(y-50),this.mSheet.mGame,this.mPictureLink,"",""));
 			}
-			if (answer == 20) 
+			if (answer == 16) 
 			{
 this.addQuestionShape(new Shape(50,50,x,parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));
 this.addQuestionShape(new Shape(50,50,parseInt(x+50),parseInt(y-100),this.mSheet.mGame,this.mPictureLink,"",""));

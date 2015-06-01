@@ -31,6 +31,11 @@ function __construct($startNew)
 	$this->transaction_code_array = array();
 	$this->core_standards_array   = array();
 
+	//tricks
+	$this->leastAsked = '';	
+	$this->leastPercent = '';	
+	$this->leastCorrect = '';	
+
 	//masters
 	$this->previous_id_array = array();
 
@@ -485,6 +490,13 @@ public function leastAsked()
 	{
 		error_log('leastAsked');
 	}
+	if ( isset($_SESSION["least_asked"]) )
+	{
+		$item_types_id_to_ask = $_SESSION["least_asked"];
+	}
+	else
+	{
+
 	$least_id = '';
 	$leastCount = 9999;
 	$currentCount = 0;
@@ -509,7 +521,11 @@ public function leastAsked()
 		} 
 		$p++;
 	}
+
+
 	$this->item_types_id_to_ask = $least_id;
+	$_SESSION["least_asked"] = $least_id;
+	}
 }
 
 public function leastCorrect()
@@ -518,6 +534,12 @@ public function leastCorrect()
 	{
 		error_log('leastCorrect');
 	}
+	if ( isset($_SESSION["least_correct"]) )
+	{
+		$item_types_id_to_ask = $_SESSION["least_correct"];
+	}
+	else
+	{
 	
 	$least_id = '';
         $leastCount = 9999;
@@ -547,6 +569,8 @@ public function leastCorrect()
         	$p++;
         }
 	$this->item_types_id_to_ask = $least_id;
+	$_SESSION["least_correct"] = $least_id;
+	}
 }
 
 public function leastPercent()
@@ -555,6 +579,12 @@ public function leastPercent()
 	{
 		error_log('leastPercent');
 	}
+	if ( isset($_SESSION["least_percent"]) )
+	{
+		$item_types_id_to_ask = $_SESSION["least_percent"];
+	}
+	else
+	{
 	$least_id = '';
         $leastPercent = 1000;
         $currentPercent = 0;
@@ -604,6 +634,8 @@ public function leastPercent()
                 $p++;
 	}
         $this->item_types_id_to_ask = $least_id;
+	$_SESSION["least_percent"] = $least_id;
+	}
 }
 
 public function goBananas()
