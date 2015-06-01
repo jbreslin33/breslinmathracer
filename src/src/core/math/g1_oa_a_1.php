@@ -34,7 +34,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' than how many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' than how many ' + this.ns.mTimeIncrementSmall + ' do they have ' + this.ns.mLeft + ' to play?');    	
 		}
 	
 		if (random == 3)
@@ -87,7 +87,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' than ' + this.ns.mPlayedActivityOne + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrementSmall + '. How many more ' + this.ns.mTimeIncrementSmall + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityTwo + ' than ' + this.ns.mPlayedActivityOne + '?');  	
 		}
 	
 		if (random == 3)
