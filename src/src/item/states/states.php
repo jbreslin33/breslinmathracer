@@ -77,15 +77,57 @@ enter: function(item)
 execute: function(item)
 {
 	//if your THE ITEM then go to wait state
-	if (item.mSheet.mItem == item && item.mSheet.mStateMachine.currentState() == item.mSheet.mNORMAL_SHEET)
+	if (item.mSheet.mItem == item && item.mSheet.mStateMachine.currentState() == item.mSheet.mNORMAL_SHEET && item.mSheet.mItem.mThresholdTime == 0)
 	{
 		item.mStateMachine.changeState(item.mWAITING_ON_ANSWER_ITEM);
+	}
+	else if (item.mSheet.mItem == item && item.mSheet.mStateMachine.currentState() == item.mSheet.mNORMAL_SHEET && item.mSheet.mItem.mThresholdTime > 0)
+	{
+		item.mStateMachine.changeState(item.mWAITING_ON_SPEED_ITEM);
 	}
 },
 
 exit: function(item)
 {
 	item.createQuestionShapes();
+}
+
+});
+
+var WAITING_ON_SPEED_ITEM = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                APPLICATION.log('ITEM::WAITING_ON_SPEED_ITEM');
+        }
+
+	item.showContinueSpeed();	
+},
+
+execute: function(item)
+{
+        if (item.mContinueSpeed == true)
+        {
+                item.mStateMachine.changeState(item.mWAITING_ON_ANSWER_ITEM);
+        }
+},
+
+exit: function(item)
+{
+  item.hideContinueSpeed();
+
+  if(item.raphael != 0)
+     item.raphael.remove();
+
+        item.mContinueSpeed = false;
 }
 
 });

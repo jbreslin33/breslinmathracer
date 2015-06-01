@@ -6,7 +6,7 @@ var Item = new Class(
 {
         initialize: function(sheet)
         {
-		this.mStateLogs = false;		
+		this.mStateLogs = true;		
 
 		this.mSheet = sheet;
 
@@ -72,8 +72,10 @@ var Item = new Class(
 		//continue button vars
 		this.mContinueCorrect = false;
 		this.mContinueIncorrect = false;
+		this.mContinueSpeed = false;
 		this.mContinueCorrectButton = 0; 
 		this.mContinueIncorrectButton = 0; 
+		this.mContinueSpeedButton = 0; 
 
 		//show standards 
 		this.mStandardInfo = 0;
@@ -107,6 +109,7 @@ var Item = new Class(
 
                 //wait state
                 this.mWAITING_ON_ANSWER_ITEM   = new WAITING_ON_ANSWER_ITEM(this);
+		this.mWAITING_ON_SPEED_ITEM   = new WAITING_ON_SPEED_ITEM(this);
 
 		//correct states
                 this.mCORRECT_ITEM = new CORRECT_ITEM(this);
@@ -216,7 +219,12 @@ var Item = new Class(
                 this.mContinueIncorrectButton = new ContinueIncorrectButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
 		this.mContinueIncorrectButton.mMesh.innerHTML = 'CONTINUE';
                 this.addShape(this.mContinueIncorrectButton);
-		
+
+                //mContinueSpeedButton
+                this.mContinueSpeedButton = new ContinueSpeedButton(150,50,650,400,this.mSheet.mGame,"BUTTON","","");
+                this.mContinueSpeedButton.mMesh.innerHTML = 'CONTINUE';
+                this.addShape(this.mContinueSpeedButton);
+
 		//mStandardInfo
                 this.mStandardInfo = new Shape(700,350,400,225,this.mSheet.mGame,"","","");
                 this.addShape(this.mStandardInfo);
@@ -663,6 +671,16 @@ var Item = new Class(
 	{
 		this.mContinueIncorrectButton.setVisibility(false);
 	},
+
+        showContinueSpeed: function()
+        {
+                this.mContinueSpeedButton.setVisibility(true);
+        },
+
+        hideContinueSpeed: function()
+        {
+                this.mContinueSpeedButton.setVisibility(false);
+        },
 
 	createQuestionShapes: function()
 	{
