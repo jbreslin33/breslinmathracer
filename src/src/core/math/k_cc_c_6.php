@@ -10,6 +10,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.c.6_1';
+		this.mChopWhiteSpace = false;
 
 	        this.mNameMachine = new NameMachine();
         	this.mPictureLinkLeft = this.mNameMachine.getPictureLink();
@@ -76,6 +77,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.c.6_1';
+		this.mChopWhiteSpace = false;
 
 	        this.mNameMachine = new NameMachine();
         	this.mPictureLinkLeft = this.mNameMachine.getPictureLink();
@@ -136,6 +138,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.c.6_3';
+		this.mChopWhiteSpace = false;
 
 	        this.mNameMachine = new NameMachine();
         	this.mPictureLinkLeft = this.mNameMachine.getPictureLink();
