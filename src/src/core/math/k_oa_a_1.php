@@ -125,7 +125,6 @@ Extends: ThreeButtonItem,
 		var space = 50;
 
 		var i = 0;
-		APPLICATION.log(this.x + ':' + this.y + '=' + this.c);
 		while (i < this.x)
                 {
                         x = parseInt(x + space);

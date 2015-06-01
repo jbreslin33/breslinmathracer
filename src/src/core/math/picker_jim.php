@@ -13,6 +13,18 @@ initialize: function(sheet)
 getItem: function(id)
 {
         id = id.replace(/^\s+|\s+$/g,'')
+        if (id == 'k.oa.a.1_1')
+        {
+                return new i_k_oa_a_1__1(this.mSheet);
+        }
+        if (id == 'k.oa.a.1_2')
+        {
+                return new i_k_oa_a_1__2(this.mSheet);
+        }
+        if (id == 'k.oa.a.1_3')
+        {
+                return new i_k_oa_a_1__3(this.mSheet);
+        }
 
         //k.oa.a.2
         if (id == 'k.oa.a.2_1')

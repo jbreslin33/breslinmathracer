@@ -76,7 +76,7 @@ Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 'k.cc.c.6_1';
+                this.mType = 'k.cc.c.6_2';
 		this.mChopWhiteSpace = false;
 
 	        this.mNameMachine = new NameMachine();
