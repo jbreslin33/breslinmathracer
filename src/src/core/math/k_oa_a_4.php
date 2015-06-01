@@ -31,13 +31,13 @@ Extends: ThreeButtonItem,
                 	this.b = Math.floor(Math.random()*11);
                 }
 
-                this.setAnswer(parseInt(this.y),0);
+                this.setAnswer('' + parseInt(this.y),0);
 
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.y);
+                this.mButtonA.setAnswer('' + this.a);
+                this.mButtonB.setAnswer('' + this.b);
+                this.mButtonC.setAnswer('' +this.y);
 
-		this.setQuestion(this.x + ' + _ = 10'); 
+		this.setQuestion('' + this.x + ' + _ = 10'); 
                 this.shuffle(10);
         }
 });
