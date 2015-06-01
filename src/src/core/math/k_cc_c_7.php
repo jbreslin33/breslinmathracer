@@ -10,6 +10,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.c.7_1';
+		this.mChopWhiteSpace = false;		
 
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
@@ -57,6 +58,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.c.7_2';
+		this.mChopWhiteSpace = false;		
 
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
@@ -98,6 +100,7 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = 'k.cc.c.7_3';
+		this.mChopWhiteSpace = false;		
 
 		//BUTTON A
                 this.mButtonA.setPosition(380,100);
