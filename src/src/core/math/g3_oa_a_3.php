@@ -13,9 +13,10 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '3.oa.a.3_5';
    
-	this.s = Math.floor( (Math.random()*4) +1);
+	this.s = Math.floor( (Math.random()*8) +2);
+	this.s = 8; 
 	this.r = Math.floor( (Math.random()*4) +1);
-        this.setQuestion('' + this.ns.mNameOne + ' has ' + r + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type d then enter in text box when finised.');
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + r + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -36,9 +37,9 @@ createQuestionShapes: function()
 	
 	this.r4 = new Rectangle(200,100,350,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         this.addQuestionShape(this.r4);
-	this.mSquareArray = new Array();
 
 	//squares	
+	this.mSquareArray = new Array();
 	var x = 300;	
 	var y = 25;	
 	for (var i = 0; i < this.s; i++)
@@ -54,22 +55,20 @@ createQuestionShapes: function()
 
 checkUserAnswer: function()
 {
-/*
-  	APPLICATION.log('x:' + this.a1.mPosition.mX);
-  	APPLICATION.log('y:' + this.a1.mPosition.mY);
-
-	if (this.a1.mPosition.mX > 50 && this.a1.mPosition.mX < 250 && this.a1.mPosition.mY > 50 && this.a1.mPosition.mY < 150 ) 
+	//rectangle 1
+	var rectangleOneTotal = 0;
+	for (var i = 0; i < this.mSquareArray.length; i++)
 	{
-                return true;
-	}
-	else
-	{
-*/
-        	this.mSheet.setTypeWrong(this.mType);
-                return false;
-//	}
+		//if (this.mSquareArray[i].mPosition.mX > 300 && this.mSquareArray[i].mPosition.mX < 500 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 ) 
+		if (this.mSquareArray[i].mPosition.mX > 350) 
+		{
+			rectangleOneTotal++;	
+		}
+	}	
+	APPLICATION.log('rectangleOneTotal:' + rectangleOneTotal);
+        this.mSheet.setTypeWrong(this.mType);
+        return false;
 }
-
 });
 
 /*
