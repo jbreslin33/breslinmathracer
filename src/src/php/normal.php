@@ -8,7 +8,7 @@ class Normal
 
 function __construct($startNew)
 {
-	$this->logs = false;
+	$this->logs = true;
 	if ($this->logs)
 	{
 		error_log('constructor');
@@ -31,6 +31,7 @@ function __construct($startNew)
 	$this->transaction_code_array = array();
 	$this->core_standards_array   = array();
 
+
 	//tricks
 	$this->leastAsked = '';	
 	$this->leastPercent = '';	
@@ -43,6 +44,9 @@ function __construct($startNew)
         $this->score_array = array();
         $this->high_standard = '';
         $this->high_progression = '';
+	$_SESSION["high_standard"] = '';
+	$_SESSION["high_progression"] = '';
+	$_SESSION["score_array"] = '';
 	
 	$this->item_types_id_to_ask = '';
 	
@@ -372,25 +376,38 @@ public function scores()
 	{
 		error_log('scores');
 	}
-        //score
-        $i = 0;
-        while ($i <= intval(count($this->id_array) - 1))
-        {
-                $c = 0;
-                $exists = false;
-                while ($c <= intval(count($this->item_array) - 1) && $exists == false)
-                {
-                        if ($this->id_array[$i] == $this->item_array[$c])
-                        {
-                                $this->high_standard = $this->id_array[$i];
-                                $this->high_progression = $this->progression_array[$i];
-                                $this->score_array[] = $this->id_array[$i];
-                                $exists = true;
-                        }
-                        $c++;
-                }
-                $i++;
+
+	if ( !isset($_SESSION["high_standard"]) )
+	{
+        	//score
+        	$i = 0;
+        	while ($i <= intval(count($this->id_array) - 1))
+        	{
+                	$c = 0;
+                	$exists = false;
+                	while ($c <= intval(count($this->item_array) - 1) && $exists == false)
+                	{
+                        	if ($this->id_array[$i] == $this->item_array[$c])
+                        	{
+                               		$this->high_standard = $this->id_array[$i];
+                                	$this->high_progression = $this->progression_array[$i];
+                                	$this->score_array[] = $this->id_array[$i];
+					$_SESSION["high_standard"] = $this->high_standard;	
+					$_SESSION["high_progression"] = $this->high_progression;	
+					$_SESSION["score_array"] = $this->score_array;	
+                                	$exists = true;
+                        	}
+                        	$c++;
+                	}
+                	$i++;
+		}
         }
+	else
+	{
+		//$_SESSION["high_standard"] = $this->high_standard;	
+		//$_SESSION["high_progression"] = $this->high_progression;	
+		//$_SESSION["score_array"] = $this->score_array;	
+	}
 
         //trim progression
         $this->high_progression = substr($this->high_progression,2,2);
