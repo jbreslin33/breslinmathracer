@@ -81,7 +81,7 @@ checkUserAnswer: function()
         var rectangleThreeTotal = 0;
         for (var i = 0; i < this.mSquareArray.length; i++)
         {
-                if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
+                if (this.mSquareArray[i].mPosition.mX > 25 && this.mSquareArray[i].mPosition.mX < 200 && this.mSquareArray[i].mPosition.mY > 150 && this.mSquareArray[i].mPosition.mY < 250 )
                 {
                         rectangleThreeTotal++;
                 }
@@ -92,7 +92,7 @@ checkUserAnswer: function()
         var rectangleFourTotal = 0;
         for (var i = 0; i < this.mSquareArray.length; i++)
         {
-                if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
+                if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 150 && this.mSquareArray[i].mPosition.mY < 250 )
                 {
                         rectangleFourTotal++;
                 }
