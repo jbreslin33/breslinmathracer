@@ -22,6 +22,7 @@ initialize: function(sheet)
 		this.s = Math.floor( (Math.random()*21)+4);
 		this.r = Math.floor( (Math.random()*3)+2);
 		this.a = parseInt(this.s / this.r);
+		
 	} 
 	
         this.setQuestion('' + this.ns.mNameOne + ' has ' + this.s + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
@@ -73,6 +74,7 @@ createQuestionShapes: function()
 
 checkUserAnswer: function()
 {
+	this.gotCount = 0;
 	//rectangle 1
 	var rectangleOneTotal = 0;
 	for (var i = 0; i < this.mSquareArray.length; i++)
@@ -82,6 +84,10 @@ checkUserAnswer: function()
 			rectangleOneTotal++;	
 		}
 	}	
+	if (rectangleOneTotal == this.a)
+	{
+		this.gotCount++;	
+	}
 	APPLICATION.log('rectangleOneTotal:' + rectangleOneTotal);
 
         //rectangle 2 
@@ -93,6 +99,10 @@ checkUserAnswer: function()
                         rectangleTwoTotal++;
                 }
         }
+	if (rectangleTwoTotal == this.a)
+	{
+		this.gotCount++;	
+	}
         APPLICATION.log('rectangleTwoTotal:' + rectangleTwoTotal);
 
         //rectangle 3 
@@ -104,6 +114,10 @@ checkUserAnswer: function()
                         rectangleThreeTotal++;
                 }
         }
+	if (rectangleThreeTotal == this.a)
+	{
+		this.gotCount++;	
+	}
         APPLICATION.log('rectangleThreeTotal:' + rectangleThreeTotal);
 
         //rectangle 4 
@@ -115,10 +129,21 @@ checkUserAnswer: function()
                         rectangleFourTotal++;
                 }
         }
+	if (rectangleFourTotal == this.a)
+	{
+		this.gotCount++;	
+	}
         APPLICATION.log('rectangleFourTotal:' + rectangleFourTotal);
 
-        this.mSheet.setTypeWrong(this.mType);
-        return false;
+	if (this.gotCount == this.r)
+	{
+        	return true;
+	}
+	else
+	{
+        	this.mSheet.setTypeWrong(this.mType);
+        	return false;
+	}
 }
 });
 
