@@ -59,8 +59,7 @@ checkUserAnswer: function()
 	var rectangleOneTotal = 0;
 	for (var i = 0; i < this.mSquareArray.length; i++)
 	{
-		//if (this.mSquareArray[i].mPosition.mX > 300 && this.mSquareArray[i].mPosition.mX < 500 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 ) 
-		if (this.mSquareArray[i].mPosition.mX > 350) 
+		if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 ) 
 		{
 			rectangleOneTotal++;	
 		}
