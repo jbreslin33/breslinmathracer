@@ -65,6 +65,40 @@ checkUserAnswer: function()
 		}
 	}	
 	APPLICATION.log('rectangleOneTotal:' + rectangleOneTotal);
+
+        //rectangle 2 
+        var rectangleTwoTotal = 0;
+        for (var i = 0; i < this.mSquareArray.length; i++)
+        {
+                if (this.mSquareArray[i].mPosition.mX > 25 && this.mSquareArray[i].mPosition.mX < 200 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
+                {
+                        rectangleTwoTotal++;
+                }
+        }
+        APPLICATION.log('rectangleTwoTotal:' + rectangleTwoTotal);
+
+        //rectangle 3 
+        var rectangleThreeTotal = 0;
+        for (var i = 0; i < this.mSquareArray.length; i++)
+        {
+                if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
+                {
+                        rectangleThreeTotal++;
+                }
+        }
+        APPLICATION.log('rectangleThreeTotal:' + rectangleThreeTotal);
+
+        //rectangle 4 
+        var rectangleFourTotal = 0;
+        for (var i = 0; i < this.mSquareArray.length; i++)
+        {
+                if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
+                {
+                        rectangleFourTotal++;
+                }
+        }
+        APPLICATION.log('rectangleFourTotal:' + rectangleFourTotal);
+
         this.mSheet.setTypeWrong(this.mType);
         return false;
 }
