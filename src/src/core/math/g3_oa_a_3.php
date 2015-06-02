@@ -12,10 +12,18 @@ initialize: function(sheet)
 	this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
         this.mType = '3.oa.a.3_5';
-   
-	this.s = Math.floor( (Math.random()*8)+2);
-	this.s = 24;
-	this.r = Math.floor( (Math.random()*2)+2);
+  	
+	this.s = 7; 
+	this.r = 3; 
+	this.a = 0;
+
+	while( this.s % this.r != 0)
+	{
+		this.s = Math.floor( (Math.random()*21)+4);
+		this.r = Math.floor( (Math.random()*3)+2);
+		this.a = parseInt(this.s / this.r);
+	} 
+	
         this.setQuestion('' + this.ns.mNameOne + ' has ' + this.s + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
 
 	//move buttons	
