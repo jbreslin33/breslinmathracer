@@ -7,13 +7,14 @@ var i_3_oa_a_3__5 = new Class(
 Extends: TextItem,
 initialize: function(sheet)
 {
-        this.parent(sheet,300,50,175,95,100,50,425,100);
+        this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mRaphael = Raphael(10,150,600,350);
 	this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
         this.mType = '3.oa.a.3_5';
    
 	this.s = Math.floor( (Math.random()*8)+2);
+	this.s = 24;
 	this.r = Math.floor( (Math.random()*2)+2);
         this.setQuestion('' + this.ns.mNameOne + ' has ' + this.s + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
 
@@ -39,10 +40,20 @@ createQuestionShapes: function()
 
 	//squares	
 	this.mSquareArray = new Array();
-	var x = 300;	
-	var y = 25;	
+	var x = 230;	
+	var y = 10;	
 	for (var i = 0; i < this.s; i++)
 	{
+		if (i == 8)
+		{
+			x = x + 30;	
+			y = 10;
+		}  
+		if (i == 16)
+		{
+			x = x + 30;	
+			y = 10;
+		}  
 		this.mSquareArray.push(new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
 		y = y + 30;
 	}
