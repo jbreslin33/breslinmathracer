@@ -82,10 +82,10 @@ initialize: function(sheet)
                 this.b = Math.floor(Math.random()*9)+1;
         }
 
-        fractionA = new Fraction(this.a,this.b,true);
+        this.fractionA = new Fraction(this.a,this.b,true);
 
-        this.setQuestion('' + this.ns.mNameOne + ' is having a birthday and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wants to save ' + fractionA.getString() + ' of the cake for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' relatives who are coming later. What is another fraction that is equivalent?');
-        this.setAnswer('' + fractionA.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne + ' is having a birthday and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wants to save ' + this.fractionA.getString() + ' of the cake for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' relatives who are coming later. What is another fraction that is equivalent?');
+        this.setAnswer('' + this.fractionA.getString(),0);
 },
 
 checkUserAnswer: function()
@@ -106,7 +106,8 @@ showCorrectAnswer: function()
 	var t = '';
         if (this.mCorrectAnswerLabel)
         {
-                this.mCorrectAnswerLabel.setText('' + ' Tip: 1/2 is equivalent to 2/4');
+		var fractionB = new Fraction( parseInt(this.fractionA.mNumerator * 2), parseInt(this.fractionA.mDenominator * 2),false);
+                this.mCorrectAnswerLabel.setText('' + 'Possible Answer: ' + fractionB.getString());
                	this.mCorrectAnswerLabel.setVisibility(true);
         }
         this.hideAnswerInputs();
@@ -138,10 +139,10 @@ initialize: function(sheet)
                 this.b = Math.floor(Math.random()*9)+1;
         }
 
-        fractionA = new Fraction(this.a,this.b,true);
+        this.fractionA = new Fraction(this.a,this.b,true);
 
-        this.setQuestion('' + this.ns.mNameOne + ' asked ' + this.ns.mNameTwo + ' for an equivalent fraction of ' + fractionA.getString() + '. What is a possible correct answer that ' + this.ns.mNameTwo + ' could have given?');
-        this.setAnswer('' + fractionA.getString(),0);
+        this.setQuestion('' + this.ns.mNameOne + ' asked ' + this.ns.mNameTwo + ' for an equivalent fraction of ' + this.fractionA.getString() + '. What is a possible correct answer that ' + this.ns.mNameTwo + ' could have given?');
+        this.setAnswer('' + this.fractionA.getString(),0);
 },
 
 checkUserAnswer: function()
@@ -162,7 +163,8 @@ showCorrectAnswer: function()
 	var t = '';
         if (this.mCorrectAnswerLabel)
         {
-                this.mCorrectAnswerLabel.setText('' + ' Tip: 1/2 is equivalent to 2/4');
+		var fractionB = new Fraction( parseInt(this.fractionA.mNumerator * 2), parseInt(this.fractionA.mDenominator * 2),false);
+                this.mCorrectAnswerLabel.setText('' + 'Possible Answer: ' + fractionB.getString());
                	this.mCorrectAnswerLabel.setVisibility(true);
         }
         this.hideAnswerInputs();
@@ -193,10 +195,10 @@ initialize: function(sheet)
                 this.b = Math.floor(Math.random()*9)+1;
         }
 
-        fractionA = new Fraction(this.a,this.b,true);
+        this.fractionA = new Fraction(this.a,this.b,true);
 
-        this.setQuestion('' + ' What is an equivalent fraction of ' + fractionA.getString() + '?');
-        this.setAnswer('' + fractionA.getString(),0);
+        this.setQuestion('' + ' What is an equivalent fraction of ' + this.fractionA.getString() + '?');
+        this.setAnswer('' + this.fractionA.getString(),0);
 },
 
 checkUserAnswer: function()
@@ -217,7 +219,8 @@ showCorrectAnswer: function()
 	var t = '';
         if (this.mCorrectAnswerLabel)
         {
-                this.mCorrectAnswerLabel.setText('' + ' Tip: 1/2 is equivalent to 2/4');
+		var fractionB = new Fraction( parseInt(this.fractionA.mNumerator * 2), parseInt(this.fractionA.mDenominator * 2),false);
+                this.mCorrectAnswerLabel.setText('' + 'Possible Answer: ' + fractionB.getString());
                	this.mCorrectAnswerLabel.setVisibility(true);
         }
         this.hideAnswerInputs();
