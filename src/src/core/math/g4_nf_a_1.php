@@ -36,9 +36,25 @@ initialize: function(sheet)
 	
 	//c add 1 to denominator
 	var fD = new Fraction(fA.mNumerator,parseInt(fA.mDenominator + 1),false); 
-	
 
-        this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + '' + answer.getString() + ' or ' + fB.getString() + ' or ' + fC.getString() + ' or ' + fD.getString() + '?');
+        var r = Math.floor(Math.random()*4);
+	r = 3;
+	if (r == 0)
+	{	
+        	this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + answer.getString() + ' or ' + fB.getString() + ' or ' + fC.getString() + ' or ' + fD.getString() + '?');
+	}
+	else if (r == 1)
+	{
+        	this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + fB.getString() + ' or ' + fC.getString() + ' or ' + fD.getString() + ' or ' + answer.getString() + '?');
+	}
+	else if (r == 2)
+	{
+        	this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + fC.getString() + ' or ' + fD.getString() + ' or ' + answer.getString() + ' or ' + fB.getString() + '?');
+	}
+	else if (r == 3)
+	{
+        	this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + fD.getString() + ' or ' + answer.getString() + ' or ' + fB.getString() + ' or ' + fC.getString() + '?');
+	}
         this.setAnswer('' + answer.getString(),0);
 }
 });
