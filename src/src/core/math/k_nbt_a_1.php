@@ -11,6 +11,7 @@ Extends: ThreeButtonItem,
                 this.parent(sheet);
 
                 this.mType = 'k.nbt.a.1_1';
+		this.mChopWhiteSpace = false;
              
 		this.a = 0;
 		this.b = 0;
