@@ -22,15 +22,23 @@ initialize: function(sheet)
                 d = Math.floor(Math.random()*9)+1;
         }
 
-	//right answer 	
         var answer = new Fraction(n,d,true);
-       
-	 
+	
+	//a right answer 
 	var t = Math.floor(Math.random()*3)+2;
 	var fA = new Fraction(parseInt(n*t),parseInt(d*t),false); 
+
+	//b flip it
+	var fB = new Fraction(parseInt(d*t),parseInt(n*t),false); 	
+
+	//c sub 1 for denominator
+	var fC = new Fraction(fA.mNumerator,parseInt(fA.mDenominator - 1),false); 
+	
+	//c add 1 to denominator
+	var fD = new Fraction(fA.mNumerator,parseInt(fA.mDenominator + 1),false); 
 	
 
-        this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + '' + answer.getString() + ' or ' + '');
+        this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + '' + answer.getString() + ' or ' + fB.getString() + ' or ' + fC.getString() + ' or ' + fD.getString() + '?');
         this.setAnswer('' + answer.getString(),0);
 }
 });
