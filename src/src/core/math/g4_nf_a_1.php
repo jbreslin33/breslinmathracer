@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_11',4.1211,'4.nf.a.1','');
+*/
+
+var i_4_nf_a_1__11 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95, 100,50,425,100,100,50,425,175);
+
+        this.mType = '4.nf.a.1_11';
+        this.ns = new NameSampler();
+
+        var n = 0;
+        var d = 0;
+
+        while (n == d || d < n)
+        {
+                n = Math.floor(Math.random()*9)+1;
+                d = Math.floor(Math.random()*9)+1;
+        }
+
+	//right answer 	
+        var answer = new Fraction(n,d,true);
+       
+	 
+	var t = Math.floor(Math.random()*3)+2;
+	var fA = new Fraction(parseInt(n*t),parseInt(d*t),false); 
+	
+
+        this.setQuestion('' + 'In the class that ' + this.ns.mNameOne + ' is in ' + fA.getString() + ' of the students are ' + this.ns.mGenderKidOne + '. What fraction is equivalent to that ' + '' + answer.getString() + ' or ' + '');
+        this.setAnswer('' + answer.getString(),0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_10',4.1210,'4.nf.a.1','write equivalent fraction word problem.');
 */
 
