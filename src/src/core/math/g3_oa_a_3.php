@@ -19,7 +19,12 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	this.a1 = new Rectangle(25,75,300,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+	//x 141
+	//y 83
+	this.r1 = new Rectangle(200,100,50,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(this.r1);
+
+	this.a1 = new Rectangle(25,25,300,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.a1);
 },
 
@@ -28,7 +33,7 @@ checkUserAnswer: function()
   	APPLICATION.log('x:' + this.a1.mPosition.mX);
   	APPLICATION.log('y:' + this.a1.mPosition.mY);
 
-	if (this.a1.mPosition.mX < 50 && this.a1.mPosition.mY > 100) 
+	if (this.a1.mPosition.mX > 50 && this.a1.mPosition.mX < 250 && this.a1.mPosition.mY > 50 && this.a1.mPosition.mY < 150 ) 
 	{
                 return true;
 	}
