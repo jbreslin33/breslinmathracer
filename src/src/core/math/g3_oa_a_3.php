@@ -8,28 +8,53 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,95,100,50,425,100);
-        this.mRaphael = Raphael(10,150,500,350);
+        this.mRaphael = Raphael(10,150,600,350);
 	this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
         this.mType = '3.oa.a.3_5';
    
+	this.s = Math.floor( (Math.random()*4) +1);
 	this.r = Math.floor( (Math.random()*4) +1);
-        this.setQuestion('' + this.ns.mNameOne + ' has ' + r + ' squares. Which picture represents 16 squares divided evenly among 4 rectangles?');
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + r + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type d then enter in text box when finised.');
+
+	//move buttons	
+	this.mContinueIncorrectButton.setPosition(690,400);
+	this.mContinueCorrectButton.setPosition(690,400);
 },
 
 createQuestionShapes: function()
 {
-	//x 141
-	//y 83
-	this.r1 = new Rectangle(200,100,50,50,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	//rectangles
+	this.r1 = new Rectangle(200,100,350,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         this.addQuestionShape(this.r1);
 
-	this.a1 = new Rectangle(25,25,300,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.a1);
+	this.r2 = new Rectangle(200,100,25,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(this.r2);
+
+	this.r3 = new Rectangle(200,100,25,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(this.r3);
+	
+	this.r4 = new Rectangle(200,100,350,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        this.addQuestionShape(this.r4);
+	this.mSquareArray = new Array();
+
+	//squares	
+	var x = 300;	
+	var y = 25;	
+	for (var i = 0; i < this.s; i++)
+	{
+		this.mSquareArray.push(new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+		y = y + 30;
+	}
+	for (var i = 0; i < this.mSquareArray.length; i++)
+	{
+        	this.addQuestionShape(this.mSquareArray[i]);
+	}
 },
 
 checkUserAnswer: function()
 {
+/*
   	APPLICATION.log('x:' + this.a1.mPosition.mX);
   	APPLICATION.log('y:' + this.a1.mPosition.mY);
 
@@ -39,9 +64,10 @@ checkUserAnswer: function()
 	}
 	else
 	{
+*/
         	this.mSheet.setTypeWrong(this.mType);
                 return false;
-	}
+//	}
 }
 
 });
