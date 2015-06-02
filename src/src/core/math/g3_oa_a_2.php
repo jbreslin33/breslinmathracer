@@ -72,9 +72,7 @@ Extends: TextItem,
 			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' ' + this.mVegetableOne + '. ' + this.mNameMachine.getPronoun(this.mAdult,1,0) + ' gave out '  + this.mVegetableOne + ' equally among ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' ' + this.b + ' friends. Write a number sentence that can be used to solve how many ' + this.mVegetableOne + ' each friend got.');   
 		}
                
-    this.setAnswer('' + this.a + '/' + this.b ,0);	
-		this.setAnswer('' + this.a + '/' + this.b + '=' + this.c,1);
-		this.setAnswer('' + this.a + '/' + this.b + '=',2);         
+    		this.setAnswer('' + this.a + '/' + this.b ,0);	
   }
 });
 
@@ -95,6 +93,7 @@ Extends: TextItem,
   
                 this.Xpad = 10;
                 this.Ypad = 35;
+		this.mChopWhiteSpace = false;
 
                 //if (raphael != 0)
                   //raphael.clear();
@@ -192,52 +191,5 @@ box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#0ff", "stroke-widt
 this.addQuestionShape(box);
    
     }
-  
-},
-
-
-checkUserAnswer: function()
-{
-   this.parent();
-},
-
-
-showCorrectAnswer: function()
-{
-		if (this.mCorrectAnswerLabel)
-		{
-			var answer = '';
-			for (i=0; i < this.mAnswerArray.length; i++)	
-			{
-				if (i == 0)
-				{
-					answer = answer + '' + this.getAnswer();		
-				}
-				else
-				{
-					answer = answer + ' OR ' + this.getAnswer(i);		
-				}
-			}
-			this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + answer); 
-			this.mCorrectAnswerLabel.setVisibility(true);
-		}
-		this.hideAnswerInputs();
-		this.showUserAnswer();
-
-    this.mCorrectAnswerLabel.setPosition(650,230);
-    this.mCorrectAnswerLabel.setSize(200,100);
-},
-
-showUserAnswer: function()
-{
-		if (this.mUserAnswerLabel)
-		{
-                	this.mUserAnswerLabel.setText('USER ANSWER:' + this.mUserAnswer);
-                	this.mUserAnswerLabel.setVisibility(true);
-		}
-
-    this.mUserAnswerLabel.setPosition(650,130);
-    //this.mCorrectAnswerLabel.setSize(200,100);
-} 
-
+}
 });
