@@ -31,7 +31,7 @@ DROP TABLE core_subjects_grades;
 DROP TABLE core_grades;
 DROP TABLE core_subjects;
 
-
+DROP table algorithms;
 
 --****************************************************************
 --***************************************************************
@@ -320,4 +320,10 @@ CREATE TABLE item_attempts (
         PRIMARY KEY (id),
 	FOREIGN KEY (evaluations_attempts_id) REFERENCES evaluations_attempts(id),
 	FOREIGN KEY (item_types_id) REFERENCES item_types(id)
+);
+
+CREATE TABLE algorithms (
+        id SERIAL,
+        description text,
+        PRIMARY KEY (id)
 );
