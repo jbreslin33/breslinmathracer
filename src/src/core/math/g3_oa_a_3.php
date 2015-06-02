@@ -13,10 +13,9 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '3.oa.a.3_5';
    
-	this.s = Math.floor( (Math.random()*8) +2);
-	this.s = 8; 
-	this.r = Math.floor( (Math.random()*4) +1);
-        this.setQuestion('' + this.ns.mNameOne + ' has ' + r + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
+	this.s = Math.floor( (Math.random()*8)+2);
+	this.r = Math.floor( (Math.random()*2)+2);
+        this.setQuestion('' + this.ns.mNameOne + ' has ' + this.s + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
