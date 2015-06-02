@@ -352,6 +352,34 @@ getItem: function(id)
         {
                 return new i_3_oa_a_3__4(this.mSheet);
         }
+	if (id == '3.oa.a.3_5')
+        {
+                return new i_3_oa_a_3__5(this.mSheet);
+        }
+	if (id == '3.oa.a.3_6')
+        {
+                return new i_3_oa_a_3__6(this.mSheet);
+        }
+	if (id == '3.oa.a.3_7')
+        {
+                return new i_3_oa_a_3__7(this.mSheet);
+        }
+	if (id == '3.oa.a.3_8')
+        {
+                return new i_3_oa_a_3__8(this.mSheet);
+        }
+	if (id == '3.oa.a.3_9')
+        {
+                return new i_3_oa_a_3__9(this.mSheet);
+        }
+	if (id == '3.oa.a.3_10')
+        {
+                return new i_3_oa_a_3__10(this.mSheet);
+        }
+	if (id == '3.oa.a.3_11')
+        {
+                return new i_3_oa_a_3__11(this.mSheet);
+        }
 
   	//3.oa.a.4
         if (id == '3.oa.a.4_1')

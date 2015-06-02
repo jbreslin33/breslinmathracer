@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_5',3.0305,'3.oa.a.3','' );
+*/
+
+var i_3_oa_a_3__5 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '3.oa.a.3_5';
+
+                //move gui
+                this.mUserAnswerLabel.setPosition(125,200);
+                this.mCorrectAnswerLabel.setPosition(425,200);
+
+                this.ns = new NameSampler();
+
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+                this.a = parseInt(this.b * this.c);
+
+                this.setQuestion(this.ns.mNameOne + ' had a garden. In the garden ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' had ' + this.a + ' '  + this.ns.mVegetableOne + ' which represents ' + this.b + ' times the amount of ' + this.ns.mVegetableTwo +  ' in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' garden. Write a number sentence that can be used to solve how many ' + this.ns.mVegetableTwo +  ' are in the garden. ' + this.ns.mNameMachine.getOperationInstructionEquation())
+                this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
+                this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,1);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_4',3.0304,'3.oa.a.3','Word problem. Division. Factors between 1-10.' );
 */
 
