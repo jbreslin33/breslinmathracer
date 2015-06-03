@@ -146,7 +146,7 @@ public function setRawData()
         
 	$this->masters();
 	$this->unmasteredCount = $_SESSION["unmastered_count"]; 
-	$this->scores();
+	$this->progressions();
         $this->updateScores();
 	$this->setEarliestToAsk("wha");	
 	$this->goBananas();
@@ -387,7 +387,9 @@ public function masters()
 			}
 	
 			//lets help out score function here 
+			$this->score_array = $_SESSION["score_array"];	
                         $this->score_array[] = $item_type_last;
+			$_SESSION["score_array"] = $this->score_array;	
 		}
 
                 if ($mastered == false && $latest_mastered == true)
@@ -400,11 +402,11 @@ public function masters()
 	}
 }
 
-public function scores()
+public function progressions()
 {
 	if ($this->logs)	
 	{
-		error_log('scores');
+		error_log('progressions');
 	}
 
 	if ( !isset($_SESSION["high_standard"]) )
@@ -420,11 +422,15 @@ public function scores()
                         	if ($this->id_array[$i] == $this->item_array[$c])
                         	{
                                		$this->high_standard = $this->id_array[$i];
-                                	$this->high_progression = $this->progression_array[$i];
-                                	$this->score_array[] = $this->id_array[$i];
 					$_SESSION["high_standard"] = $this->high_standard;	
+
+                                	$this->high_progression = $this->progression_array[$i];
 					$_SESSION["high_progression"] = $this->high_progression;	
+
+					//set first time in
+                                	$this->score_array[] = $this->id_array[$i];
 					$_SESSION["score_array"] = $this->score_array;	
+
                                 	$exists = true;
                         	}
                         	$c++;
@@ -436,7 +442,6 @@ public function scores()
 	{
 		$this->high_standard = $_SESSION["high_standard"] = $this->high_standard;	
 		$this->high_progression = $_SESSION["high_progression"] = $this->high_progression;	
-		$this->score_array = $_SESSION["score_array"];	
 	}
 
         //trim progression
