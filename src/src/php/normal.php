@@ -118,6 +118,11 @@ public function process()
 	$item_attempt = new ItemAttempt();
        	$item_attempt->insert();
 
+	if ($this->logs)
+	{
+		error_log('item_attempt done');
+	}
+
 	//i would like to add item_attempt_id to rawdata before we send it out..
 	$raw = $_SESSION["raw_data"];
 	$raw .= ":";
@@ -787,6 +792,7 @@ public function setItemString()
         $_SESSION["raw_data"] = $itemString;
         $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
+	error_log('setItemString end');
 }
 
 //end of class
