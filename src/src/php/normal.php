@@ -31,7 +31,6 @@ function __construct($startNew)
 	$this->transaction_code_array = array();
 	$this->core_standards_array   = array();
 
-
 	//tricks
 	$this->leastAsked = '';	
 	$this->leastPercent = '';	
@@ -44,9 +43,9 @@ function __construct($startNew)
         $this->score_array = array();
         $this->high_standard = '';
         $this->high_progression = '';
-	$_SESSION["high_standard"] = '';
-	$_SESSION["high_progression"] = '';
-	$_SESSION["score_array"] = '';
+	//$_SESSION["high_standard"] = '';
+	//$_SESSION["high_progression"] = '';
+	//$_SESSION["score_array"] = '';
 	
 	$this->item_types_id_to_ask = '';
 	
@@ -404,9 +403,9 @@ public function scores()
         }
 	else
 	{
-		//$_SESSION["high_standard"] = $this->high_standard;	
-		//$_SESSION["high_progression"] = $this->high_progression;	
-		//$_SESSION["score_array"] = $this->score_array;	
+		$this->high_standard = $_SESSION["high_standard"] = $this->high_standard;	
+		$this->high_progression = $_SESSION["high_progression"] = $this->high_progression;	
+		$this->score_array = $_SESSION["score_array"];	
 	}
 
         //trim progression
