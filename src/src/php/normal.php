@@ -385,6 +385,9 @@ public function masters()
 				$unmastered_count = intval($unmastered_count - 1);
         			$_SESSION["unmastered_count"] = $unmastered_count;
 			}
+	
+			//lets help out score function here 
+                        $this->score_array[] = $item_type_last;
 		}
 
                 if ($mastered == false && $latest_mastered == true)
