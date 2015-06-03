@@ -31,7 +31,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.c + ' ' + this.ns.mTimeIncrement + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.mSum + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.c + ' ' + this.ns.mTimeIncrementSmall + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.mSum + '?');  	
 		}
 	
 		if (random == 3)
@@ -79,7 +79,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrement + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.mSum + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.a + ' ' + this.ns.mTimeIncrementSmall + '. How long did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.mSum + '?');  	
 		}
 	
 		if (random == 3)
@@ -126,7 +126,7 @@ Extends: TextItem,
 		
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' than how many ' + this.ns.mTimeIncrement + ' do they have ' + this.mLeft + ' to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' of ' + this.ns.mPlayedActivityOne + '. If they already played for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' than how many ' + this.ns.mTimeIncrementSmall + ' do they have ' + this.mLeft + ' to play?');    	
 		}
 	
 		if (random == 3)
@@ -175,7 +175,7 @@ Extends: TextItem,
 		}
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' . Then on ' + this.ns.mDayOfWeekTwo + ' because they were good they gained an extra ' + this.c + ' ' + this.ns.mTimeIncrement + '. How many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' of ' + this.ns.mPlayedActivityOne + '. They played for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' on ' + this.ns.mDayOfWeekOne + ' . Then on ' + this.ns.mDayOfWeekTwo + ' because they were good they gained an extra ' + this.c + ' ' + this.ns.mTimeIncrementSmall + '. How many ' + this.ns.mTimeIncrementSmall + ' do they have ' + this.ns.mLeft + ' to play?');    	
 		}
 		if (random == 3)
 		{
@@ -220,7 +220,7 @@ Extends: TextItem,
 		}
 		if (random == 4)
 		{
-			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrement + ' of ' + this.ns.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekOne + ' and ' + this.c + ' ' + this.ns.mTimeIncrement + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mTimeIncrement + ' do they have ' + this.ns.mLeft + ' to play?');    	
+			this.setQuestion('The kids were allowed to play a total of ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' of ' + this.ns.mPlayedActivityOne + '. They already played for ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' on ' + this.ns.mDayOfWeekOne + ' and ' + this.c + ' ' + this.ns.mTimeIncrementSmall + ' on ' + this.ns.mDayOfWeekTwo + '. How many ' + this.ns.mTimeIncrementSmall + ' do they have ' + this.ns.mLeft + ' to play?');    	
 		}
 		if (random == 3)
 		{
@@ -293,7 +293,7 @@ Extends: TextItem,
 		}
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.c + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityArray[a] + ' and ' + this.ns.mPlayedActivityArray[b] + ' than ' + this.ns.mPlayedActivityArray[c] + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ', ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' and ' + this.ns.mPlayedActivityThree + ' for ' + this.c + ' ' + this.ns.mTimeIncrementSmall + '. How many more ' + this.ns.mTimeIncrementSmall + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityArray[a] + ' and ' + this.ns.mPlayedActivityArray[b] + ' than ' + this.ns.mPlayedActivityArray[c] + '?');  	
 		}
 		if (random == 3)
 		{
@@ -352,7 +352,7 @@ Extends: TextItem,
 		}
 		if (random == 4)
 		{
-			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' ' + this.ns.mTimeIncrement + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrement + '. How many more ' + this.ns.mTimeIncrement + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityArray[a] + ' than ' + this.ns.mPlayedActivityArray[b] + '?');  	
+			this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' for ' + this.a + ' ' + this.ns.mTimeIncrementSmall + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for ' + ' ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. How many more ' + this.ns.mTimeIncrementSmall + ' did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' play ' + this.ns.mPlayedActivityArray[a] + ' than ' + this.ns.mPlayedActivityArray[b] + '?');  	
 		}
 		if (random == 3)
 		{
@@ -407,7 +407,7 @@ Extends: TextItem,
 		}
 		if (random == 1)
 		{
-			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' more playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' more playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrementSmall + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
 		}
                 this.setAnswer('' + this.c,0);
         }
@@ -451,7 +451,7 @@ Extends: TextItem,
 		}
 		if (random == 1)
 		{
-			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrement + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrement + ' ' + this.mLess + ' playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrement + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
+			this.setQuestion(this.ns.mNameOne + ' spent ' + this.a + ' ' + this.ns.mTimeIncrementSmall + ' playing ' + this.ns.mPlayedActivityOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' spent ' + this.b + ' ' + this.ns.mTimeIncrementSmall + ' ' + this.mLess + ' playing ' + this.ns.mPlayedActivityTwo + '. How many ' + this.ns.mTimeIncrementSmall + ' did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend playing ' + this.mSum + '?'); 	
 		}
                 this.setAnswer('' + this.c,0);
         }
