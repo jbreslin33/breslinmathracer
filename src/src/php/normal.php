@@ -8,7 +8,7 @@ class Normal
 
 function __construct($startNew)
 {
-	$this->logs = false;
+	$this->logs = true; 
 	if ($this->logs)
 	{
 		error_log('constructor');
@@ -43,9 +43,6 @@ function __construct($startNew)
         $this->score_array = array();
         $this->high_standard = '';
         $this->high_progression = '';
-	//$_SESSION["high_standard"] = '';
-	//$_SESSION["high_progression"] = '';
-	//$_SESSION["score_array"] = '';
 	
 	$this->item_types_id_to_ask = '';
 	
@@ -141,12 +138,12 @@ public function setRawData()
 	$this->initializeProgressionCounter();
 	$this->fillTypesArray();
 	$this->fillAttemptsArray();
+	$this->progressions(); //scores standard number which is chapter basically high standards  do this once.. 
 	
 	$this->item_types_id_to_ask = '';
         
 	$this->masters();
 	$this->unmasteredCount = $_SESSION["unmastered_count"]; 
-	$this->progressions();
         $this->updateScores();
 	$this->setEarliestToAsk("wha");	
 	$this->goBananas();
@@ -426,9 +423,8 @@ public function progressions()
 
                                 	$this->high_progression = $this->progression_array[$i];
 					$_SESSION["high_progression"] = $this->high_progression;	
-
-					//set first time in
-                                	$this->score_array[] = $this->id_array[$i];
+        				
+					$this->score_array[] = $this->id_array[$i];
 					$_SESSION["score_array"] = $this->score_array;	
 
                                 	$exists = true;
@@ -438,12 +434,12 @@ public function progressions()
                 	$i++;
 		}
         }
-	else
+	else //we have session vars set so set temp class vars
 	{
-		$this->high_standard = $_SESSION["high_standard"] = $this->high_standard;	
-		$this->high_progression = $_SESSION["high_progression"] = $this->high_progression;	
+		$this->high_standard = $_SESSION["high_standard"];	
+		$this->high_progression = $_SESSION["high_progression"];	
+		$this->score_array = $_SESSION["score_array"];	
 	}
-
         //trim progression
         $this->high_progression = substr($this->high_progression,2,2);
 
@@ -454,6 +450,7 @@ public function updateScores()
 	if ($this->logs)	
 	{
 		error_log('updateScores');
+		error_log( (string) intval (count($this->score_array) ));	
 	}
         /*********************  for teacher real time data  *************/
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
