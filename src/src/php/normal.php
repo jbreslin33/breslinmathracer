@@ -295,8 +295,8 @@ public function masters()
 	}
 	else
 	{
-		$mastered = true;	
 
+		//get the last item_type
 		$item_type_last = 'none';
 		if (isset($_SESSION["item_type_last"]))
 		{
@@ -317,7 +317,8 @@ public function masters()
                 	$type_mastery = pg_Result($master_result,0,'type_mastery');
 		}
 		$type_mastery_and_one = intval($type_mastery + 1);  
-	
+
+		//get the last 3 attempts for last_item_type	
 		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         	$query .= $_SESSION["user_id"];
         	$query .= " AND item_attempts.item_types_id = '";
@@ -332,7 +333,7 @@ public function masters()
         	$num = pg_num_rows($result);
 
 		$trans_code_array = array();
-        	
+        
 		for ($i = 0; $i < $num; $i++)
         	{
                 	$trans_code_array[] = pg_Result($result, $i, 'transaction_code');
@@ -340,28 +341,50 @@ public function masters()
 	
 		//check before latest...	
 		$latest_mastered = true;
-		for ($i = 1; $i < count($trans_code_array); $i++)
+		$mastered = true;	
+
+		//if count less than 3 you could not have mastered from earlier
+		if ( count($trans_code_array) < $type_mastery_and_one)
 		{
-			if ($trans_code_array[$i] != 1)
+			$latest_mastered = false;
+		}
+		else //lets loop 
+		{
+			for ($i = 1; $i < count($trans_code_array); $i++) //skip top one as its new
 			{
-				$latest_mastered = false;			
-			} 
+				if ($trans_code_array[$i] != 1)
+				{
+					$latest_mastered = false;			
+				} 
+			}
 		}
 
-		//actually check latest with mastery amount skipping back end cause its out of date 
-       		for ($i = 0; $i < intval(count($trans_code_array) - 1); $i++)
-                {
-                       	if ($trans_code_array[$i] != 1)
-                       	{
-                               	$mastered = false;   
-                       	}
-                }
+
+		if ( count($trans_code_array) < intval($type_mastery_and_one - 1) )
+		{
+			$mastered = false;
+		}
+		else
+		{
+			//actually check for mastery amount up skipping back end cause its out of date 
+       			for ($i = 0; $i < intval(count($trans_code_array) - 1); $i++)
+                	{
+                       		if ($trans_code_array[$i] != 1)
+                       		{
+                               		$mastered = false;   
+                       		}
+                	}
+		}
 
 		if ($mastered == true && $latest_mastered == false)
 		{
         		$unmastered_count = $_SESSION["unmastered_count"];
-			$unmastered_count = intval($unmastered_count - 1);
-        		$_SESSION["unmastered_count"] = $unmastered_count;
+				
+			if ($unmastered_count > 0)  
+			{
+				$unmastered_count = intval($unmastered_count - 1);
+        			$_SESSION["unmastered_count"] = $unmastered_count;
+			}
 		}
 
                 if ($mastered == false && $latest_mastered == true)
