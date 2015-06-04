@@ -171,7 +171,7 @@ Extends: TextItem,
                 //variables
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
-                this.c = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
                 
 		var random = Math.floor(Math.random()*2);
 
