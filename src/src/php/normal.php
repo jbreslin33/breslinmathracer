@@ -8,7 +8,7 @@ class Normal
 
 function __construct($startNew)
 {
-	$this->logs = true; 
+	$this->logs = false; 
 	if ($this->logs)
 	{
 		error_log('constructor');
