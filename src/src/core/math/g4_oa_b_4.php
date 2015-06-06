@@ -1,5 +1,346 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_22',4.0422,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__22 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_22';
+
+        var a = Math.floor(Math.random()*10+91);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_21',4.0421,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__21 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_21';
+
+        var a = Math.floor(Math.random()*10+81);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_20',4.0420,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__20 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_20';
+
+        var a = Math.floor(Math.random()*10+71);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_19',4.0419,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__19 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_19';
+
+        var a = Math.floor(Math.random()*10+61);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_18',4.0418,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__18 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_18';
+
+        var a = Math.floor(Math.random()*10+51);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_17',4.0417,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__17 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_17';
+
+        var a = Math.floor(Math.random()*10+41);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_16',4.0416,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__16 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_16';
+
+        var a = Math.floor(Math.random()*10+31);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_15',4.0415,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__15 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_15';
+
+        var a = Math.floor(Math.random()*10+21);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_14',4.0414,'4.oa.b.4','');
+*/
+var i_4_oa_b_4__14 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+
+        this.mStripCommas = false;
+
+        this.mType = '4.oa.b.4_14';
+
+        var a = Math.floor(Math.random()*10+11);
+        var factors  = '';
+
+        for (var i = 0; i <= a; i++)
+        {
+                if (parseInt(a % i) == 0)
+                {
+                        if (factors.length == 0)  //first one no comma
+                        {
+                                factors = factors + '' + i;
+                        }
+                        else
+                        {
+                                factors = factors + ',' + i;
+                        }
+                }
+        }
+
+        this.setQuestion('' + 'Write the factors of ' + a + ' in increasing order seperated by commas.');
+        this.setAnswer('' + factors,0);
+}
+});
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_13',4.0413,'4.oa.b.4','');
 */
 var i_4_oa_b_4__13 = new Class(
@@ -302,7 +643,7 @@ initialize: function(sheet)
 
         this.mType = '4.oa.b.4_2';
 
-        var a = Math.floor(Math.random()*100+1);
+        var a = Math.floor(Math.random()*10+1);
         var factors  = '';
 
         for (var i = 0; i <= a; i++)
