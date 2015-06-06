@@ -25,6 +25,10 @@ getItem: function(id)
         {
                 return new i_k_oa_a_1__3(this.mSheet);
         }
+        if (id == 'k.oa.a.1_4')
+        {
+                return new i_k_oa_a_1__4(this.mSheet);
+        }
 
         //k.oa.a.2
         if (id == 'k.oa.a.2_1')
