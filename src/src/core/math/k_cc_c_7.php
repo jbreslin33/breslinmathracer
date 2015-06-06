@@ -1,15 +1,17 @@
 
+
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',0.1001,'k.cc.c.7','Compare 2 numbers with greater than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',0.1003,'k.cc.c.7','Compare 2 numbers with less than.');
 */
 
-var i_k_cc_c_7__1 = new Class(
+var i_k_cc_c_7__3 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 'k.cc.c.7_1';
+                this.mType = 'k.cc.c.7_3';
 		this.mChopWhiteSpace = false;		
 
 		//BUTTON A
@@ -20,14 +22,14 @@ Extends: ThreeButtonItem,
 		this.a = 0;		
 		this.b = 0;		
 
-		while (this.a <= this.b)
+		while (this.a >= this.b)
 		{	
 			this.a = Math.floor(Math.random()*10+1);
 			this.b = Math.floor(Math.random()*10+1);
 		}
 
 		this.setQuestion('Compare.');
-                this.setAnswer('Is greater than.',0);
+                this.setAnswer('Is less than.',0);
 
                 this.mButtonA.setAnswer('Is greater than.');
                 this.mButtonB.setAnswer('Is equal to.');
@@ -90,16 +92,16 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_3',0.1003,'k.cc.c.7','Compare 2 numbers with less than.');
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.c.7_1',0.1001,'k.cc.c.7','Compare 2 numbers with greater than.');
 */
 
-var i_k_cc_c_7__3 = new Class(
+var i_k_cc_c_7__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
-                this.mType = 'k.cc.c.7_3';
+                this.mType = 'k.cc.c.7_1';
 		this.mChopWhiteSpace = false;		
 
 		//BUTTON A
@@ -110,14 +112,14 @@ Extends: ThreeButtonItem,
 		this.a = 0;		
 		this.b = 0;		
 
-		while (this.a >= this.b)
+		while (this.a <= this.b)
 		{	
 			this.a = Math.floor(Math.random()*10+1);
 			this.b = Math.floor(Math.random()*10+1);
 		}
 
 		this.setQuestion('Compare.');
-                this.setAnswer('Is less than.',0);
+                this.setAnswer('Is greater than.',0);
 
                 this.mButtonA.setAnswer('Is greater than.');
                 this.mButtonB.setAnswer('Is equal to.');
