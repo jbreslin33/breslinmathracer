@@ -18,6 +18,14 @@ getItem: function(id)
 	{
 		return new i_k_cc_a_1__1(this.mSheet);
 	}
+	if (id == 'k.cc.a.1_2')
+	{
+		return new i_k_cc_a_1__2(this.mSheet);
+	}
+	if (id == 'k.cc.a.1_3')
+	{
+		return new i_k_cc_a_1__3(this.mSheet);
+	}
 
 	//k.cc.a.2
 	if (id == 'k.cc.a.2_1')
@@ -59,6 +67,10 @@ getItem: function(id)
 	if (id == 'k.cc.a.2_10')
 	{
 		return new i_k_cc_a_2__10(this.mSheet);
+	}	
+	if (id == 'k.cc.a.2_11')
+	{
+		return new i_k_cc_a_2__11(this.mSheet);
 	}	
 
 	//k.cc.a.3
