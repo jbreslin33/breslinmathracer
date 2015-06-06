@@ -160,7 +160,34 @@ getItem: function(id)
 	}
 
 	//k.cc.b.4.a 
-	//MISSING
+	if (id == 'k.cc.b.4.a_1')
+	{
+		return new i_k_cc_b_4_a__1(this.mSheet);
+	}
+	if (id == 'k.cc.b.4.a_2')
+	{
+		return new i_k_cc_b_4_a__2(this.mSheet);
+	}
+	if (id == 'k.cc.b.4.a_3')
+	{
+		return new i_k_cc_b_4_a__3(this.mSheet);
+	}
+	if (id == 'k.cc.b.4.a_4')
+	{
+		return new i_k_cc_b_4_a__4(this.mSheet);
+	}
+	if (id == 'k.cc.b.4.a_5')
+	{
+		return new i_k_cc_b_4_a__5(this.mSheet);
+	}
+	if (id == 'k.cc.b.4.a_6')
+	{
+		return new i_k_cc_b_4_a__6(this.mSheet);
+	}
+	if (id == 'k.cc.b.4.a_7')
+	{
+		return new i_k_cc_b_4_a__7(this.mSheet);
+	}
 
 	//k.cc.b.4.b 
 	//MISSING

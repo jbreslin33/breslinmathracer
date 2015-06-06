@@ -1,13 +1,16 @@
-/* TYPE_DESCRIPTION: Match counting sequence with number of objects. */
+
 /*
-var i_301 = new Class(
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.a_1',0.0401,'k.cc.b.4.a','');
+*/
+var i_k_cc_b_4_a__1 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
 
-                this.mType = 301;
+ 		this.mType = 'k.cc.b.4.a_1';
+		this.mStripCommas = false;
 
 		var a = Math.floor(Math.random()*5)+5;
 		var b = 0;
@@ -68,17 +71,18 @@ Extends: ThreeButtonItem,
 		}
 	}
 });
-*/
-/* TYPE_DESCRIPTION: When given counting words in order pick the group with that many items. */
+
 /*
-var i_302 = new Class(
+insert into item_types(id,progression,core_standards_id,description) values ('k.cc.b.4.a_2',0.0402,'k.cc.b.4.a','');
+*/
+var i_k_cc_b_4_a__2 = new Class(
 {
 Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);
                 
-		this.mType = 302;
+ 		this.mType = 'k.cc.b.4.a_2';
 		
 		//button positions
 
@@ -215,4 +219,3 @@ Extends: ThreeButtonItem,
                 }
         }
 });
-*/
