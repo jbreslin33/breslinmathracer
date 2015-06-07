@@ -50,6 +50,28 @@ getItem: function(id)
         {
                 return new i_k_oa_a_2__4(this.mSheet);
         }
+
+	//k.oa.a.3	
+	if (id == 'k.oa.a.3_1')
+        {
+                return new i_k_oa_a_3__1(this.mSheet);
+        }
+	if (id == 'k.oa.a.3_2')
+        {
+                return new i_k_oa_a_3__2(this.mSheet);
+        }
+	if (id == 'k.oa.a.3_3')
+        {
+                return new i_k_oa_a_3__3(this.mSheet);
+        }
+	if (id == 'k.oa.a.3_4')
+        {
+                return new i_k_oa_a_3__4(this.mSheet);
+        }
+	if (id == 'k.oa.a.3_5')
+        {
+                return new i_k_oa_a_3__5(this.mSheet);
+        }
         
 	//k.oa.a.4
         if (id == 'k.oa.a.4_1')
