@@ -37,7 +37,6 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setPosition(100,250);
 	this.mAnswerTextBox4.setPosition(200,250);
 
-
         this.setQuestion('Make 2 in different ways.');
         this.setAnswer('' + '1+1=2 , 2+0=2',0);
 },
@@ -50,14 +49,15 @@ checkUserAnswer: function()
 
 	if (a != 2 || b != 2)
 	{
-		APPLICATION.log('one');
-		APPLICATION.log('a:' + a);
-		APPLICATION.log('b:' + b);
 		correctAnswerFound = false;
 	}
+
 	if (this.mUserAnswer == this.mUserAnswer3 || this.mUserAnswer2 == this.mUserAnswer4)
 	{
-		APPLICATION.log('two');
+		correctAnswerFound = false;
+	}
+	if (this.mUserAnswer == this.mUserAnswer4 || this.mUserAnswer2 == this.mUserAnswer3)
+	{
 		correctAnswerFound = false;
 	}
 
@@ -73,7 +73,7 @@ showCorrectAnswer: function()
         if (this.mCorrectAnswerLabel)
         {
                 this.mCorrectAnswerLabel.setSize(500, 100);
-                this.mCorrectAnswerLabel.setText('POSSIBLE ANSWER: ' + this.mUserAnswer + ' + ' + this.mUserAnswer2 + ' = 2  AND ' + this.mUserAnswer3 + ' + ' + this.mUserAnswer4 + ' = 2');
+                this.mCorrectAnswerLabel.setText('POSSIBLE ANSWER: 1 + 1 = 2 AND 2 + 0 = 2');
                 this.mCorrectAnswerLabel.setVisibility(true);
          }
 }
