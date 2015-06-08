@@ -146,6 +146,42 @@ getItem: function(id)
         {
                 return new i_k_oa_a_4__12(this.mSheet);
         }
+        if (id == 'k.oa.a.4_13')
+        {
+                return new i_k_oa_a_4__13(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_14')
+        {
+                return new i_k_oa_a_4__14(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_15')
+        {
+                return new i_k_oa_a_4__15(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_16')
+        {
+                return new i_k_oa_a_4__16(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_17')
+        {
+                return new i_k_oa_a_4__17(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_18')
+        {
+                return new i_k_oa_a_4__18(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_19')
+        {
+                return new i_k_oa_a_4__19(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_20')
+        {
+                return new i_k_oa_a_4__20(this.mSheet);
+        }
+        if (id == 'k.oa.a.4_21')
+        {
+                return new i_k_oa_a_4__21(this.mSheet);
+        }
 	
 	//k.oa.a.5
         if (id == 'k.oa.a.5_1')

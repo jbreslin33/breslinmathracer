@@ -1,19 +1,147 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_9',0.1409,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_9';
+
+        this.setQuestion('Make ten. 1 + _ = 10');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_8',0.1408,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_8';
+
+        this.setQuestion('Make ten. 2 + _ = 10');
+        this.setAnswer('' + '8',0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_7',0.1407,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_7';
 
+        this.setQuestion('Make ten. 3 + _ = 10');
+        this.setAnswer('' + '7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_6',0.1406,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_6';
+
+        this.setQuestion('Make ten. 4 + _ = 10');
+        this.setAnswer('' + '6',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_5',0.1405,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_5';
+
+        this.setQuestion('Make ten. 5 + _ = 10');
+        this.setAnswer('' + '5',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_4',0.1404,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__4 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_4';
+
+        this.setQuestion('Make ten. 6 + _ = 10');
+        this.setAnswer('' + '4',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_3',0.1403,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__3 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_3';
+
+        this.setQuestion('Make ten. 7 + _ = 10');
+        this.setAnswer('' + '3',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_2',0.1402,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__2 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
+        this.mType = 'k.oa.a.4_2';
+
+        this.setQuestion('Make ten. 8 + _ = 10');
+        this.setAnswer('' + '2',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_1',0.1401,'k.oa.a.4','');
 */
 var i_k_oa_a_4__1 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
-        this.parent(sheet,600,50,375,95, 700,50,400,200);
-
+        this.parent(sheet,600,50,375,95, 100,50,350,100);
         this.mType = 'k.oa.a.4_1';
-        this.mStripCommas = false;
 
-        this.setQuestion('Count to 100 by tens starting at ten and seperating each number by a comma.');
-        this.setAnswer('' + '10,20,30,40,50,60,70,80,90,100',0);
+        this.setQuestion('Make ten. 9 + _ = 10');
+        this.setAnswer('' + '1',0);
 }
 });
 
