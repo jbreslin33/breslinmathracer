@@ -13,18 +13,12 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.nbt.a.1_12';
   	
-	this.s = 7; 
-	this.r = 3; 
-	this.a = 0;
-
-	while( this.s % this.r != 0)
-	{
-		this.s = Math.floor( (Math.random()*21)+4);
-		this.r = Math.floor( (Math.random()*3)+2);
-		this.a = parseInt(this.s / this.r);
-	} 
+	this.s = 19; 
+	this.r = 2; 
+	this.a = 1;
+	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' has ' + this.s + ' squares. Divide them evenly into ' + this.r + ' rectangles. You can drag squares with mouse. Type anything in textbox then enter when finised.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 11 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -39,12 +33,6 @@ createQuestionShapes: function()
 
 	this.r2 = new Rectangle(200,100,25,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         this.addQuestionShape(this.r2);
-
-	this.r3 = new Rectangle(200,100,25,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-        this.addQuestionShape(this.r3);
-	
-	this.r4 = new Rectangle(200,100,350,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-        this.addQuestionShape(this.r4);
 
 	//squares	
 	this.mSquareArray = new Array();
@@ -87,7 +75,6 @@ checkUserAnswer: function()
 	{
 		this.gotCount++;	
 	}
-	APPLICATION.log('rectangleOneTotal:' + rectangleOneTotal);
 
         //rectangle 2 
         var rectangleTwoTotal = 0;
@@ -98,41 +85,14 @@ checkUserAnswer: function()
                         rectangleTwoTotal++;
                 }
         }
-	if (rectangleTwoTotal == this.a)
+	if (rectangleTwoTotal == this.b)
 	{
 		this.gotCount++;	
 	}
-        APPLICATION.log('rectangleTwoTotal:' + rectangleTwoTotal);
 
-        //rectangle 3 
-        var rectangleThreeTotal = 0;
-        for (var i = 0; i < this.mSquareArray.length; i++)
-        {
-                if (this.mSquareArray[i].mPosition.mX > 25 && this.mSquareArray[i].mPosition.mX < 200 && this.mSquareArray[i].mPosition.mY > 150 && this.mSquareArray[i].mPosition.mY < 250 )
-                {
-                        rectangleThreeTotal++;
-                }
-        }
-	if (rectangleThreeTotal == this.a)
-	{
-		this.gotCount++;	
-	}
-        APPLICATION.log('rectangleThreeTotal:' + rectangleThreeTotal);
-
-        //rectangle 4 
-        var rectangleFourTotal = 0;
-        for (var i = 0; i < this.mSquareArray.length; i++)
-        {
-                if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 150 && this.mSquareArray[i].mPosition.mY < 250 )
-                {
-                        rectangleFourTotal++;
-                }
-        }
-	if (rectangleFourTotal == this.a)
-	{
-		this.gotCount++;	
-	}
-        APPLICATION.log('rectangleFourTotal:' + rectangleFourTotal);
+	APPLICATION.log('a:' + rectangleOneTotal);
+	APPLICATION.log('b:' + rectangleTwoTotal);
+        
 
 	if (this.gotCount == this.r)
 	{
