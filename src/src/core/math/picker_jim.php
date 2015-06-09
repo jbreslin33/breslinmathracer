@@ -522,6 +522,25 @@ getItem: function(id)
         {
                 return new i_k_md_a_1__13(this.mSheet);
         }
+
+	//k.md.a.2	
+	if (id == 'k.md.a.2_1')
+        {
+                return new i_k_md_a_2__1(this.mSheet);
+        }
+	if (id == 'k.md.a.2_2')
+        {
+                return new i_k_md_a_2__2(this.mSheet);
+        }
+	if (id == 'k.md.a.2_3')
+        {
+                return new i_k_md_a_2__3(this.mSheet);
+        }
+	if (id == 'k.md.a.2_4')
+        {
+                return new i_k_md_a_2__4(this.mSheet);
+        }
+
 	/*** GRADE 1 ***/
 	//1.oa.a.1
 	if (id == '1.oa.a.1_1')
