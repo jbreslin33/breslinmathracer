@@ -12,8 +12,8 @@ initialize: function(sheet)
         this.mType = 'k.md.a.1_1';
 	this.mChopWhiteSpace = false;
 
-        this.setQuestion('' + 'What best describes this shape? Short and wide, long and wide or tall and skinny?');
-	this.setAnswer('' + 'tall and skinny',0);
+        this.setQuestion('' + 'What best describes this shape? Short and wide, long and wide or tall and thin?');
+	this.setAnswer('' + 'tall and thin',0);
 },
 
 createQuestionShapes: function()
@@ -21,3 +21,4 @@ createQuestionShapes: function()
 	this.addQuestionShape(new Rectangle(10,240,360,10,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));	
 }
 });
+
