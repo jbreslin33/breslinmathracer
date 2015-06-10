@@ -35,7 +35,8 @@ createQuestionShapes: function()
         this.addQuestionShape(this.r2);
 
 	//squares	
-	this.mSquareArray = new Array();
+	this.mSquareArrayOne = new Array();
+	this.mSquareArrayTwo = new Array();
 	var x = 230;	
 	var y = 10;	
 	for (var i = 0; i < this.s; i++)
@@ -50,47 +51,100 @@ createQuestionShapes: function()
 			x = x + 30;	
 			y = 10;
 		}  
-		this.mSquareArray.push(new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+		var v = Math.floor(Math.random()*2);
+		if (v == 0)
+		{
+			this.mSquareArrayOne.push(new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.9,.9,.9,"#000",.3,true));
+		}
+		else
+		{
+			this.mSquareArrayTwo.push(new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.1,.1,.1,"#000",.3,true));
+		}
 		y = y + 30;
 	}
-	for (var i = 0; i < this.mSquareArray.length; i++)
+	for (var i = 0; i < this.mSquareArrayOne.length; i++)
 	{
-        	this.addQuestionShape(this.mSquareArray[i]);
+        	this.addQuestionShape(this.mSquareArrayOne[i]);
+	}
+	for (var i = 0; i < this.mSquareArrayTwo.length; i++)
+	{
+        	this.addQuestionShape(this.mSquareArrayTwo[i]);
 	}
 },
 
 checkUserAnswer: function()
 {
-	this.gotCount = 0;
+	this.rectangleOneSquare = '';
+	this.rectangleTwoSquare = '';
+	
 	//rectangle 1
-	var rectangleOneTotal = 0;
-	for (var i = 0; i < this.mSquareArray.length; i++)
+	var squareOneTotal = 0;
+	var squareTwoTotal = 0;
+	for (var i = 0; i < this.mSquareArrayOne.length; i++)
 	{
-		if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 ) 
+		if (this.mSquareArrayOne[i].mPosition.mX > 350 && this.mSquareArrayOne[i].mPosition.mX < 525 && this.mSquareArrayOne[i].mPosition.mY > 25 && this.mSquareArrayOne[i].mPosition.mY < 125 ) 
 		{
-			rectangleOneTotal++;	
+			squareOneTotal++;	
 		}
 	}	
-	if (rectangleOneTotal == this.a)
+	if (squareOneTotal == this.mSquareArrayOne.length)
 	{
-		this.gotCount++;	
+		this.rectangleOneSquare = 'one';	
 	}
+
+       	for (var i = 0; i < this.mSquareArrayTwo.length; i++)
+        {
+                if (this.mSquareArrayTwo[i].mPosition.mX > 350 && this.mSquareArrayTwo[i].mPosition.mX < 525 && this.mSquareArrayTwo[i].mPosition.mY > 25 && this.mSquareArrayTwo[i].mPosition.mY < 125 )
+                {
+                        squareTwoTotal++;     
+                }
+        }      
+
+        if (squareTwoTotal == this.mSquareArrayTwo.length)
+        {
+                this.rectangleOneSquare = 'two';           
+        }
 
         //rectangle 2 
-        var rectangleTwoTotal = 0;
-        for (var i = 0; i < this.mSquareArray.length; i++)
+	var squareOneTotal = 0;
+	var squareTwoTotal = 0;
+        for (var i = 0; i < this.mSquareArrayOne.length; i++)
         {
-                if (this.mSquareArray[i].mPosition.mX > 25 && this.mSquareArray[i].mPosition.mX < 200 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
+                if (this.mSquareArrayOne[i].mPosition.mX > 25 && this.mSquareArrayOne[i].mPosition.mX < 200 && this.mSquareArrayOne[i].mPosition.mY > 25 && this.mSquareArrayOne[i].mPosition.mY < 125 )
                 {
-                        rectangleTwoTotal++;
+                        squareOneTotal++;
                 }
         }
-	if (rectangleTwoTotal == this.b)
+	if (squareOneTotal == this.mSquareArrayOne.length)
 	{
-		this.gotCount++;	
+		this.rectangleTwoSquare = 'one';	
 	}
 
-	if (this.gotCount == this.r)
+        for (var i = 0; i < this.mSquareArrayTwo.length; i++)
+        {
+                if (this.mSquareArrayTwo[i].mPosition.mX > 25 && this.mSquareArrayTwo[i].mPosition.mX < 200 && this.mSquareArrayTwo[i].mPosition.mY > 25 && this.mSquareArrayTwo[i].mPosition.mY < 125 )
+                {
+                        squareTwoTotal++;
+                }
+        }
+	if (squareTwoTotal == this.mSquareArrayTwo.length)
+	{
+		this.rectangleTwoSquare = 'two';	
+	}
+
+	APPLICATION.log('rectangleOneSquare: ' + this.rectangleOneSquare);
+	APPLICATION.log('rectangleTwoSquare: ' + this.rectangleTwoSquare);
+
+        if (squareTwoTotal == this.mSquareArrayTwo.length)
+        {
+                this.rectangleTwoSquare = 'two';   
+        }
+
+	if (this.rectangleTwoSquare == 'two' && this.rectangleOneSquare == 'one')
+	{
+        	return true;
+	}
+	else if (this.rectangleTwoSquare == 'one' && this.rectangleOneSquare == 'two')
 	{
         	return true;
 	}
