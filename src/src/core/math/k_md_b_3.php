@@ -18,7 +18,7 @@ initialize: function(sheet)
 	this.a = 9;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 19 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to sort the squares with the same color into different rectangles. Please help ' + this.ns.mNameOne + '. Type anything in box and hit enter when finished.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -134,8 +134,8 @@ checkUserAnswer: function()
 
 	APPLICATION.log('rectangleOneSquare: ' + this.rectangleOneSquare);
 	APPLICATION.log('rectangleTwoSquare: ' + this.rectangleTwoSquare);
-
-        if (squareTwoTotal == this.mSquareArrayTwo.length)
+        
+	if (squareTwoTotal == this.mSquareArrayTwo.length)
         {
                 this.rectangleTwoSquare = 'two';   
         }
