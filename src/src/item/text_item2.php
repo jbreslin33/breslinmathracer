@@ -36,6 +36,9 @@ createShapes: function()
       	//answer Input2
         this.mAnswerTextBox2 = new Shape(50,50,525,100,this.mSheet.mGame,"INPUT","","");
         this.mAnswerTextBox2.mMesh.value = '';
+        this.mAnswerTextBox2.mCollidable = false;
+        this.mAnswerTextBox2.mCollisionOn = false;
+
         if (navigator.appName == "Microsoft Internet Explorer")
         {
                 this.mAnswerTextBox2.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);

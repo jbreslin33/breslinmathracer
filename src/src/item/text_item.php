@@ -45,6 +45,8 @@ Extends: Item,
  		//answer Input
                 this.mAnswerTextBox = new Shape(100,50,425,100,this.mSheet.mGame,"INPUT","","");
                 this.mAnswerTextBox.mMesh.value = '';
+                this.mAnswerTextBox.mCollidable = false;
+                this.mAnswerTextBox.mCollisionOn = false;
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mAnswerTextBox.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);

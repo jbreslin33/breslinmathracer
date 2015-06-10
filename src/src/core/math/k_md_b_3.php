@@ -4,10 +4,12 @@ insert into item_types(id,progression,core_standards_id,description) values ('k.
 */
 var i_k_md_b_3__2 = new Class(
 {
-Extends: TextItem,
+Extends: TextItem2,
 initialize: function(sheet)
 {
-        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.parent(sheet,700,50,375,75,100,50,425,100);
+        //this.parent(sheet,300,50,175,75,100,50,425,100);
+	//this.parent(sheet);
         this.mRaphael = Raphael(10,150,600,350);
 	this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
@@ -18,11 +20,16 @@ initialize: function(sheet)
 	this.a = 9;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to sort the squares with the same color into different rectangles. Please help ' + this.ns.mNameOne + '. Type anything in box and hit enter when finished.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to sort the squares with the same color into different rectangles and put totals for each color in text box on top. Please help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
 	this.mContinueCorrectButton.setPosition(690,400);
+
+	this.mAnswerTextBox.setSize(100,50);
+	this.mAnswerTextBox2.setSize(100,50);
+	this.mAnswerTextBox.setPosition (130,135);
+	this.mAnswerTextBox2.setPosition(450,135);
 },
 
 createQuestionShapes: function()
@@ -70,6 +77,8 @@ createQuestionShapes: function()
 	{
         	this.addQuestionShape(this.mSquareArrayTwo[i]);
 	}
+
+
 },
 
 checkUserAnswer: function()
@@ -134,18 +143,44 @@ checkUserAnswer: function()
 
 	APPLICATION.log('rectangleOneSquare: ' + this.rectangleOneSquare);
 	APPLICATION.log('rectangleTwoSquare: ' + this.rectangleTwoSquare);
+	
+	APPLICATION.log('this.mUserAnswer:' + this.mUserAnswer);
+	APPLICATION.log('this.mUserAnswer2:' + this.mUserAnswer2);
+	APPLICATION.log('this.mSquareArrayOne.length' + this.mSquareArrayOne.length);
+	APPLICATION.log('this.mSquareArrayTwo.length' + this.mSquareArrayTwo.length);
         
 	if (squareTwoTotal == this.mSquareArrayTwo.length)
         {
                 this.rectangleTwoSquare = 'two';   
         }
 
-	if (this.rectangleTwoSquare == 'two' && this.rectangleOneSquare == 'one')
+	if (this.rectangleOneSquare == 'one' && this.rectangleTwoSquare == 'two')
 	{
+		if (this.mUserAnswer != this.mSquareArrayOne.length)
+		{
+        		this.mSheet.setTypeWrong(this.mType);
+			return false;	
+		}
+		if (this.mUserAnswer2 != this.mSquareArrayTwo.length)
+		{
+        		this.mSheet.setTypeWrong(this.mType);
+			return false;	
+		}
         	return true;
 	}
-	else if (this.rectangleTwoSquare == 'one' && this.rectangleOneSquare == 'two')
+
+	if (this.rectangleOneSquare == 'two' && this.rectangleTwoSquare == 'one')
 	{
+		if (this.mUserAnswer != this.mSquareArrayOne.length)
+		{
+        		this.mSheet.setTypeWrong(this.mType);
+			return false;	
+		}
+		if (this.mUserAnswer2 != this.mSquareArrayTwo.length)
+		{
+        		this.mSheet.setTypeWrong(this.mType);
+			return false;	
+		}
         	return true;
 	}
 	else
