@@ -187,20 +187,17 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Score';
         echo '</td>';
-        echo '<td> Unmastered';
-        echo '</td>';
         echo '</tr>';
 
         $lastAnswerTime = '';
         $firstName = '';
         $lastName = '';
         $score = '';
-        $unmastered = '';
 
 
         $query = "select last_activity, first_name, last_name, ";
 	$query .= $category;
-	$query .= " ,unmastered from users where banned_id = 0 AND school_id = ";
+	$query .= " from users where banned_id = 0 AND school_id = ";
         $query .= $school_id;
 	if ($room_id != 0)
 	{
@@ -220,7 +217,6 @@ echo '<table border=\"1\">';
                 $firstName = $row[1];
                 $lastName = $row[2];
                 $score = $row[3];
-                $unmastered = $row[4];
 
                 echo '<tr>';
                 echo '<td>';
@@ -234,9 +230,6 @@ echo '<table border=\"1\">';
                 echo '</td>';
                 echo '<td>';
                 echo $score;
-                echo '</td>';
-                echo '<td>';
-                echo $unmastered;
                 echo '</td>';
                 echo '</tr>';
         }
