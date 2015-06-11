@@ -156,12 +156,12 @@ checkUserAnswer: function()
 
 	if (this.rectangleOneSquare == 'one' && this.rectangleTwoSquare == 'two')
 	{
-		if (this.mUserAnswer != this.mSquareArrayOne.length)
+		if (this.mUserAnswer != this.mSquareArrayTwo.length)
 		{
         		this.mSheet.setTypeWrong(this.mType);
 			return false;	
 		}
-		if (this.mUserAnswer2 != this.mSquareArrayTwo.length)
+		if (this.mUserAnswer2 != this.mSquareArrayOne.length)
 		{
         		this.mSheet.setTypeWrong(this.mType);
 			return false;	
