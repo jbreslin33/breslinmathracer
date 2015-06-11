@@ -201,7 +201,7 @@ echo '<table border=\"1\">';
         $query = "select last_activity, first_name, last_name, ";
 	$query .= $category;
 	$query .= " ,unmastered from users where banned_id = 0 AND school_id = ";
-        $query .= $_SESSION["school_id"];
+        $query .= $school_id;
 	if ($room_id != 0)
 	{
 		$query .= " AND room_id = ";
