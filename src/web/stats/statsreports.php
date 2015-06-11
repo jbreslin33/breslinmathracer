@@ -174,10 +174,16 @@ else if ($report_type == "small")
 
 	echo '<table border=\"1\">';
         echo '<tr>';
+
         echo '<td> Type';
         echo '</td>';
+        
+	echo '<td> Standard';
+        echo '</td>';
+
         echo '<td> Question';
         echo '</td>';
+
         echo '<td> Answers';
         echo '</td>';
         echo '<td> User Answer';
@@ -191,6 +197,7 @@ else if ($report_type == "small")
 		$question = '';
 		$answers = '';
 		$user_answer = '';
+		$core_standards_description = '';
 
 		$query = "select id, progression, description from item_types where progression > ";
 		$query .= $progression_counter;
@@ -210,7 +217,7 @@ else if ($report_type == "small")
 			$description = $row[2];
 		}
 	
-		$query = "select item_attempts.transaction_code, item_attempts.question, item_attempts.answers, item_attempts.user_answer from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
+		$query = "select item_attempts.transaction_code, item_attempts.question, item_attempts.answers, item_attempts.user_answer, core_standards.description from item_attempts JOIN item_types ON item_types.id=item_attempts.item_types_id JOIN core_standards ON core_standards.id=item_types.core_standards_id JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN users ON evaluations_attempts.user_id=users.id where users.id = ";
 		$query .= $user_id;
 		$query .= " AND item_attempts.item_types_id = '";
 		$query .= $currenttypeid;
@@ -242,6 +249,9 @@ else if ($report_type == "small")
 
 					$user_answer  = $row[3];
 					$user_answer = convertToWeb($user_answer);
+					
+					$core_standards_description  = $row[4];
+					$core_standards_description = convertToWeb($core_standards_description);
 				}
 			}
 		}
@@ -255,9 +265,15 @@ else if ($report_type == "small")
         		echo '<td>';
         		echo $paintMe;
         		echo '</td>';
+        		
+			echo '<td>';
+        		echo $core_standards_description;
+        		echo '</td>';
+
         		echo '<td>';
         		echo $question;
         		echo '</td>';
+
         		echo '<td>';
         		echo $answers;
         		echo '</td>';
