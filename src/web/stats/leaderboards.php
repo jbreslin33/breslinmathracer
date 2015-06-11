@@ -15,9 +15,24 @@ session_start();
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
+$school_id = 0;
 $room_id = 0;
 $category = 0;
 $id = 0;
+
+if (isset($_POST["school_id"]))
+{
+        $school_id = $_POST["school_id"];
+}
+
+else if (isset($_GET['school_id']))
+{
+        $school_id = $_GET['school_id'];
+}
+else
+{
+
+}
 
 if (isset($_POST["room_id"]))
 {
@@ -47,8 +62,6 @@ else
 
 }
 
-error_log($room_id);
-
 include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
 echo "<br>";
 ?>
@@ -57,14 +70,40 @@ echo "<br>";
 
 <form method="post" action="/web/stats/leaderboards.php">
 
-<select id="room_id" name="room_id" onchange="loadAgain()">
+<select id="school_id" name="school_id" onchange="loadAgain()">
 <?php
-$query = "select id, name from rooms where school_id = ";
-$query .= intval($_SESSION["school_id"]);
+$query = "select * from schools";
+//$query .= intval($_SESSION["school_id"]);
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
-$id_array = array();
+
+echo "<option selected=\"selected\" value=\"0\"> \"All Schools\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $school_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }      
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+
+
+<select id="room_id" name="room_id" onchange="loadAgain()">
+<?php
+$query = "select id, name from rooms where school_id = ";
+//$query .= intval($_SESSION["school_id"]);
+$query .= $school_id;
+$query .= " order by name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
 
 echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
 
@@ -79,10 +118,12 @@ for($i = 0; $i < $numrows; $i++)
 	{
         	echo "<option value=\"$row[0]\"> $row[1] </option>";
 	}
-	$id_array[] = $row[0];
 }
 ?>
 </select>
+
+
+
 
 <select id="category" name="category" onchange="loadAgain()">
 <?php
@@ -119,9 +160,10 @@ for($i = 0; $i < sizeof($category_array); $i++)
 <script>
 function loadAgain()
 {
-    	var x = document.getElementById("room_id").value;
-    	var y = document.getElementById("category").value;
-	document.location.href = '/web/stats/leaderboards.php?room_id=' + x + '&category=' + y; 
+    	var x = document.getElementById("school_id").value;
+    	var y = document.getElementById("room_id").value;
+    	var z = document.getElementById("category").value;
+	document.location.href = '/web/stats/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
 }
 </script>
 
