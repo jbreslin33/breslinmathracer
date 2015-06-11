@@ -17,7 +17,7 @@ include(getenv("DOCUMENT_ROOT") . "/src/php/utility.php");
 
 $conn = dbConnect();
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 $user_id = NULL;
 $report_type = "small";

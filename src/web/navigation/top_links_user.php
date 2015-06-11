@@ -3,5 +3,6 @@
 <li><a href="/web/php/logout.php">Logout</a></li>
 
 <li><a href="/web/stats/leaderboards.php">School Leader Board</a></li>
+<li><a href="/web/stats/statsreports.php">Unmastered Types</a></li>
 
 </ul>

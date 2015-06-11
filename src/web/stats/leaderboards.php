@@ -62,7 +62,7 @@ else
 
 }
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
+include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 
