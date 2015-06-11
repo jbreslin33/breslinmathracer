@@ -571,7 +571,6 @@ public function leastAsked()
 		$p++;
 	}
 
-
 	$this->item_types_id_to_ask = $least_id;
 	$_SESSION["least_asked"] = $least_id;
 	}
@@ -706,21 +705,31 @@ public function goBananas()
 	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
 	{
 		//lets get all previously asked questions....in normal
- 		$i = 0;
-		while ($i <= intval(count($this->id_array) - 1))
-        	{
- 			$c = 0;
-			$exists = false;
-			while ($c <= intval(count($this->item_array) - 1) && $exists == false)
-			{
-				if ($this->id_array[$i] == $this->item_array[$c])
+		if (!isset($_SESSION["previous_id_array"]))
+		{
+			error_log('running');
+ 			$i = 0;
+			while ($i <= intval(count($this->id_array) - 1))
+        		{
+ 				$c = 0;
+				$exists = false;
+				while ($c <= intval(count($this->item_array) - 1) && $exists == false)
 				{
-					$this->previous_id_array[] = $this->id_array[$i];
-					$exists = true;
+					if ($this->id_array[$i] == $this->item_array[$c])
+					{
+						$this->previous_id_array[] = $this->id_array[$i];
+						$exists = true;
+					}
+					$c++;
 				}
-				$c++;
+				$i++;
 			}
-			$i++;
+			$_SESSION["previous_id_array"] = $this->previous_id_array;
+		}
+		else
+		{
+			error_log('skipping');
+			$this->previous_id_array = $_SESSION["previous_id_array"];
 		}
 
 		$bananas = rand( 0,100);
