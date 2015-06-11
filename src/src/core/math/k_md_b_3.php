@@ -141,14 +141,6 @@ checkUserAnswer: function()
 		this.rectangleTwoSquare = 'two';	
 	}
 
-	APPLICATION.log('rectangleOneSquare: ' + this.rectangleOneSquare);
-	APPLICATION.log('rectangleTwoSquare: ' + this.rectangleTwoSquare);
-	
-	APPLICATION.log('this.mUserAnswer:' + this.mUserAnswer);
-	APPLICATION.log('this.mUserAnswer2:' + this.mUserAnswer2);
-	APPLICATION.log('this.mSquareArrayOne.length' + this.mSquareArrayOne.length);
-	APPLICATION.log('this.mSquareArrayTwo.length' + this.mSquareArrayTwo.length);
-        
 	if (squareTwoTotal == this.mSquareArrayTwo.length)
         {
                 this.rectangleTwoSquare = 'two';   
@@ -323,9 +315,6 @@ checkUserAnswer: function()
 		this.rectangleTwoSquare = 'two';	
 	}
 
-	APPLICATION.log('rectangleOneSquare: ' + this.rectangleOneSquare);
-	APPLICATION.log('rectangleTwoSquare: ' + this.rectangleTwoSquare);
-        
 	if (squareTwoTotal == this.mSquareArrayTwo.length)
         {
                 this.rectangleTwoSquare = 'two';   
