@@ -140,6 +140,7 @@ $category_array[] = "alltimeseven";
 $category_array[] = "alltimeeight"; 
 $category_array[] = "alltimenine"; 
 $category_array[] = "alltimekoaa5"; 
+$category_array[] = "unmastered"; 
 
 echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
 for($i = 0; $i < sizeof($category_array); $i++)
