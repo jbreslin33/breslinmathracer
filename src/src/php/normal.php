@@ -20,7 +20,7 @@ function __construct($startNew)
 	$this->progression_counter_limit = 0;
 
 	//types array	
-	$this->id_array                = array();
+	$this->item_types_array                = array();
 	$this->progression_array       = array();
 	$this->core_standards_id_array = array();
 	$this->type_mastery_array      = array();
@@ -193,7 +193,7 @@ public function fillTypesArray()
 
         for($i=0; $i < $numberOfResults; $i++)
         {
-                $this->id_array[]                = pg_Result($result, $i, 'id');
+                $this->item_types_array[]                = pg_Result($result, $i, 'id');
                 $this->progression_array[]       = pg_Result($result, $i, 'progression');
                 $this->core_standards_id_array[] = pg_Result($result, $i, 'core_standards_id');
                 $this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
@@ -210,7 +210,7 @@ public function fillTypesArray()
                 
 	for($i=0; $i < $numberOfResults; $i++)
         {
-		$this->id_array[]                = pg_Result($result, $i, 'id');	
+		$this->item_types_array[]                = pg_Result($result, $i, 'id');	
 		$this->progression_array[]       = pg_Result($result, $i, 'progression');	
 		$this->core_standards_id_array[] = pg_Result($result, $i, 'core_standards_id');
 		$this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
@@ -257,7 +257,7 @@ public function masters()
 		$unmastered_count = 0;
         	//loop thru item array until you reach end
         	$i = 0;
-        	while ($i <= intval(count($this->id_array) - 1))
+        	while ($i <= intval(count($this->item_types_array) - 1))
         	{
                 	$mini_transaction_code_array = array();
 
@@ -266,7 +266,7 @@ public function masters()
                 	while ($c <= intval(count($this->item_array) - 1))
                 	{
                         	//check for match of ids if so add to code array
-                        	if ($this->id_array[$i] == $this->item_array[$c])
+                        	if ($this->item_types_array[$i] == $this->item_array[$c])
                         	{
                                 	$mini_transaction_code_array[] = $this->transaction_code_array[$c];
                         	}
@@ -410,21 +410,21 @@ public function progressions()
 	{
         	//score
         	$i = 0;
-        	while ($i <= intval(count($this->id_array) - 1))
+        	while ($i <= intval(count($this->item_types_array) - 1))
         	{
                 	$c = 0;
                 	$exists = false;
                 	while ($c <= intval(count($this->item_array) - 1) && $exists == false)
                 	{
-                        	if ($this->id_array[$i] == $this->item_array[$c])
+                        	if ($this->item_types_array[$i] == $this->item_array[$c])
                         	{
-                               		$this->high_standard = $this->id_array[$i];
+                               		$this->high_standard = $this->item_types_array[$i];
 					$_SESSION["high_standard"] = $this->high_standard;	
 
                                 	$this->high_progression = $this->progression_array[$i];
 					$_SESSION["high_progression"] = $this->high_progression;	
         				
-					$this->score_array[] = $this->id_array[$i];
+					$this->score_array[] = $this->item_types_array[$i];
 					$_SESSION["score_array"] = $this->score_array;	
 
                                 	$exists = true;
@@ -478,9 +478,9 @@ public function setEarliestToAsk($skip)
 	//loop thru id array until you reach end or find a item to ask ..this is why you can grab all attempts regardless of progression as long as they where normal as they will never get checked in following code.
 
 	$found_one = false;
-	while ($i <= intval(count($this->id_array) - 1) && $found_one == false)
+	while ($i <= intval(count($this->item_types_array) - 1) && $found_one == false)
 	{ 
-		if ($skip == $this->id_array[$i])
+		if ($skip == $this->item_types_array[$i])
 		{
 		}
 		else 
@@ -493,7 +493,7 @@ public function setEarliestToAsk($skip)
 			while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
 			{
 				//check for match of ids if so add to code array
-				if ($this->id_array[$i] == $this->item_array[$c])
+				if ($this->item_types_array[$i] == $this->item_array[$c])
 				{
 					$mini_transaction_code_array[] = $this->transaction_code_array[$c];
 				}
@@ -503,7 +503,7 @@ public function setEarliestToAsk($skip)
 			//if less than mastery than type has not been asked enuf so make it ask type
 			if ( intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]) )
 			{
-				$this->item_types_id_to_ask = $this->id_array[$i];
+				$this->item_types_id_to_ask = $this->item_types_array[$i];
 				$found_one = true;
 			}	 
 			else  //we have over mastery to check
@@ -513,7 +513,7 @@ public function setEarliestToAsk($skip)
 				{
 					if ($mini_transaction_code_array[$t] != 1)
 					{
-						$this->item_types_id_to_ask = $this->id_array[$i];
+						$this->item_types_id_to_ask = $this->item_types_array[$i];
 						$found_one = true;
 					}
 				} 
@@ -709,15 +709,15 @@ public function goBananas()
 		{
 			error_log('running');
  			$i = 0;
-			while ($i <= intval(count($this->id_array) - 1))
+			while ($i <= intval(count($this->item_types_array) - 1))
         		{
  				$c = 0;
 				$exists = false;
 				while ($c <= intval(count($this->item_array) - 1) && $exists == false)
 				{
-					if ($this->id_array[$i] == $this->item_array[$c])
+					if ($this->item_types_array[$i] == $this->item_array[$c])
 					{
-						$this->previous_id_array[] = $this->id_array[$i];
+						$this->previous_id_array[] = $this->item_types_array[$i];
 						$exists = true;
 					}
 					$c++;
