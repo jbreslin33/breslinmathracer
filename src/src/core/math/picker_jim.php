@@ -468,6 +468,22 @@ getItem: function(id)
         {
                 return new i_k_nbt_a_1__15(this.mSheet);
         }
+        if (id == 'k.nbt.a.1_16')
+        {
+                return new i_k_nbt_a_1__16(this.mSheet);
+        }
+        if (id == 'k.nbt.a.1_17')
+        {
+                return new i_k_nbt_a_1__17(this.mSheet);
+        }
+        if (id == 'k.nbt.a.1_18')
+        {
+                return new i_k_nbt_a_1__18(this.mSheet);
+        }
+        if (id == 'k.nbt.a.1_19')
+        {
+                return new i_k_nbt_a_1__19(this.mSheet);
+        }
        
 	//k.md.a.1 
 	if (id == 'k.md.a.1_1')
