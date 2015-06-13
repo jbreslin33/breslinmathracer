@@ -27,7 +27,7 @@ function __construct($startNew)
 
 	//attempts array 	
 	$this->start_time_array       = array();
-	$this->item_array             = array();
+	$this->item_attempts_array             = array();
 	$this->transaction_code_array = array();
 	$this->core_standards_array   = array();
 
@@ -239,7 +239,7 @@ public function fillAttemptsArray()
   	for ($i = 0; $i < $num; $i++)
 	{
 		$this->start_time_array[]       = pg_Result($result, $i, 'start_time');
-		$this->item_array[]             = pg_Result($result, $i, 'item_types_id');
+		$this->item_attempts_array[]             = pg_Result($result, $i, 'item_types_id');
 		$this->transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
 		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
@@ -263,10 +263,10 @@ public function masters()
 
                 	$c = 0;
 
-                	while ($c <= intval(count($this->item_array) - 1))
+                	while ($c <= intval(count($this->item_attempts_array) - 1))
                 	{
                         	//check for match of ids if so add to code array
-                        	if ($this->item_types_array[$i] == $this->item_array[$c])
+                        	if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
                         	{
                                 	$mini_transaction_code_array[] = $this->transaction_code_array[$c];
                         	}
@@ -414,9 +414,9 @@ public function progressions()
         	{
                 	$c = 0;
                 	$exists = false;
-                	while ($c <= intval(count($this->item_array) - 1) && $exists == false)
+                	while ($c <= intval(count($this->item_attempts_array) - 1) && $exists == false)
                 	{
-                        	if ($this->item_types_array[$i] == $this->item_array[$c])
+                        	if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
                         	{
                                		$this->high_standard = $this->item_types_array[$i];
 					$_SESSION["high_standard"] = $this->high_standard;	
@@ -490,10 +490,10 @@ public function setEarliestToAsk($skip)
 			$c = 0;
 
 			//loop attempt array and dump into arrays then you can eval after..need to use mastery 
-			while ($c <= intval(count($this->item_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
+			while ($c <= intval(count($this->item_attempts_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
 			{
 				//check for match of ids if so add to code array
-				if ($this->item_types_array[$i] == $this->item_array[$c])
+				if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
 				{
 					$mini_transaction_code_array[] = $this->transaction_code_array[$c];
 				}
@@ -555,9 +555,9 @@ public function leastAsked()
 	{
 		$currentCount = 0;
 		$i = 0;
-		while ($i <= intval(count($this->item_array) - 1))
+		while ($i <= intval(count($this->item_attempts_array) - 1))
 		{
-			if ($this->previous_id_array[$p] == $this->item_array[$i])
+			if ($this->previous_id_array[$p] == $this->item_attempts_array[$i])
 			{
 				$currentCount++;
 			}	 
@@ -598,9 +598,9 @@ public function leastCorrect()
         {
         	$currentCount = 0;
                 $i = 0;
-                while ($i <= intval(count($this->item_array) - 1))
+                while ($i <= intval(count($this->item_attempts_array) - 1))
                	{
-               		if ($this->previous_id_array[$p] == $this->item_array[$i])
+               		if ($this->previous_id_array[$p] == $this->item_attempts_array[$i])
                         {
 				if ($this->transaction_code_array[$i] == 1)
 				{
@@ -647,9 +647,9 @@ public function leastPercent()
 		$wrong = 0; 
 
                 $i = 0;
-                while ($i <= intval(count($this->item_array) - 1))
+                while ($i <= intval(count($this->item_attempts_array) - 1))
                 {
-                	if ($this->previous_id_array[$p] == $this->item_array[$i])
+                	if ($this->previous_id_array[$p] == $this->item_attempts_array[$i])
                         {
 				if ($this->transaction_code_array[$i] == 1)
 				{
@@ -713,9 +713,9 @@ public function goBananas()
         		{
  				$c = 0;
 				$exists = false;
-				while ($c <= intval(count($this->item_array) - 1) && $exists == false)
+				while ($c <= intval(count($this->item_attempts_array) - 1) && $exists == false)
 				{
-					if ($this->item_types_array[$i] == $this->item_array[$c])
+					if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
 					{
 						$this->previous_id_array[] = $this->item_types_array[$i];
 						$exists = true;
