@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_4',4.0164,'2.g.a.2','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_4',2.2704,'2.g.a.2','' ); update item_types SET progression = 2.2704 where id = '2.g.a.2_4';
 */
 var i_2_g_a_2__4 = new Class(
 {
@@ -67,7 +67,7 @@ createQuestionShapes: function()
 }
 });
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_3',4.0163,'2.g.a.2','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_3',2.2703,'2.g.a.2','' ); update item_types SET progression = 2.2703 where id = '2.g.a.2_3';
 */
 var i_2_g_a_2__3 = new Class(
 {
@@ -169,7 +169,7 @@ createQuestionShapes: function()
 }
 });
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_2',4.0162,'2.g.a.2','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_2',2.2702,'2.g.a.2','' ); update item_types SET progression = 2.2702 where id = '2.g.a.2_2';
 */
 var i_2_g_a_2__2 = new Class(
 {
@@ -274,7 +274,7 @@ createQuestionShapes: function()
 }
 });
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_1',4.0161,'2.g.a.2','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.2_1',2.2701,'2.g.a.2','' ); update item_types SET progression = 2.2701 where id = '2.g.a.2_1';
 */
 var i_2_g_a_2__1 = new Class(
 {

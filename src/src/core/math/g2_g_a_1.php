@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_5',4.0155,'2.g.a.1','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_5',2.2605,'2.g.a.1','' ); update item_types SET progression = 2.2605 where id = '2.g.a.1_5';
 */
 var i_2_g_a_1__5 = new Class(
 {
@@ -16,7 +16,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_4',4.0154,'2.g.a.1','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_4',2.2604,'2.g.a.1','' ); update item_types SET progression = 2.2604 where id = '2.g.a.1_4';
 */
 var i_2_g_a_1__4 = new Class(
 {
@@ -32,7 +32,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_3',4.0153,'2.g.a.1','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_3',2.2603,'2.g.a.1','' ); update item_types SET progression = 2.2603 where id = '2.g.a.1_3';
 */
 var i_2_g_a_1__3 = new Class(
 {
@@ -48,7 +48,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_2',4.0152,'2.g.a.1','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_2',2.2602,'2.g.a.1','' ); update item_types SET progression = 2.2602 where id = '2.g.a.1_2';
 */
 var i_2_g_a_1__2 = new Class(
 {
@@ -64,7 +64,7 @@ Extends: TextItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_1',4.0151,'2.g.a.1','' );
+insert into item_types(id,progression,core_standards_id,description) values ('2.g.a.1_1',2.2601,'2.g.a.1','' ); update item_types SET progression = 2.2601 where id = '2.g.a.1_1';
 */
 var i_2_g_a_1__1 = new Class(
 {
