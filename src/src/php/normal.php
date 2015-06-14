@@ -809,6 +809,7 @@ public function setItemString()
 
         //pink
         $itemString =  $this->item_types_id_to_ask; //ask this one
+        error_log($this->item_types_id_to_ask);
 
         //blue
         $itemString .= ":";
@@ -820,10 +821,12 @@ public function setItemString()
         //yellow
         $itemString .= ":";
         $itemString .= "$this->high_standard";
+        error_log($this->high_standard);
 
         //green
         $itemString .= ":";
         $itemString .= intval(count($this->score_array));
+        error_log(intval(count($this->score_array)));
 
         $_SESSION["before_item_type_id"] = $itemString;
         $_SESSION["raw_data"] = $itemString;
