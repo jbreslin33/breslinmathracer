@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_6',4.2006,'4.nf.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_6',4.2206,'4.nf.c.6',''); update item_types SET progression = 4.2206 where id = '4.nf.c.6_6';
 */
 var i_4_nf_c_6__6 = new Class(
 {
@@ -27,7 +27,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_5',4.2005,'4.nf.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_5',4.2205,'4.nf.c.6',''); update item_types SET progression = 4.2205 where id = '4.nf.c.6_5';
 */
 var i_4_nf_c_6__5 = new Class(
 {
@@ -53,7 +53,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_4',4.2004,'4.nf.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_4',4.2204,'4.nf.c.6',''); update item_types SET progression = 4.2204 where id = '4.nf.c.6_4';
 */
 var i_4_nf_c_6__4 = new Class(
 {
@@ -82,7 +82,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_3',4.2003,'4.nf.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_3',4.2203,'4.nf.c.6',''); update item_types SET progression = 4.2203 where id = '4.nf.c.6_3';
 */
 var i_4_nf_c_6__3 = new Class(
 {
@@ -113,7 +113,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_2',4.2002,'4.nf.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_2',4.2202,'4.nf.c.6',''); update item_types SET progression = 4.2202 where id = '4.nf.c.6_2';
 */
 var i_4_nf_c_6__2 = new Class(
 {
@@ -140,7 +140,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_1',4.2001,'4.nf.c.6','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.6_1',4.2201,'4.nf.c.6',''); update item_types SET progression = 4.2201 where id = '4.nf.c.6_1';
 */
 var i_4_nf_c_6__1 = new Class(
 {

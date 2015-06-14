@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.7_1',4.2101,'4.nf.c.7','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.7_1',4.2301,'4.nf.c.7',''); update item_types SET progression = 4.2301 where id = '4.nf.c.7_1';
 */
 var i_4_nf_c_7__1 = new Class(
 {
