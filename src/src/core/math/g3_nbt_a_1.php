@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_1',3.1101,'3.nbt.a.1','');
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_1',3.1001,'3.nbt.a.1',''); update item_types SET progression = 3.1001 where id = '3.nbt.a.1_1';
 */
 
 var i_3_nbt_a_1__1 = new Class(

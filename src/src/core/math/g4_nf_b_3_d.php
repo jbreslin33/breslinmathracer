@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_8',4.1708,'4.nf.b.3.d','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_8',4.1708,'4.nf.b.3.d',''); update item_types SET progression = 4.1708 where id = '4.nf.b.3.d_8';
 */
 
 var i_4_nf_b_3_d__8 = new Class(
@@ -34,7 +34,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_7',4.1707,'4.nf.b.3.d','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_7',4.1707,'4.nf.b.3.d',''); update item_types SET progression = 4.1707 where id = '4.nf.b.3.d_7';
 */
 
 var i_4_nf_b_3_d__7 = new Class(
@@ -68,7 +68,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_6',4.1706,'4.nf.b.3.d','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_6',4.1706,'4.nf.b.3.d',''); update item_types SET progression = 4.1706 where id = '4.nf.b.3.d_6';
 */
 
 var i_4_nf_b_3_d__6 = new Class(
@@ -98,7 +98,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_5',4.1705,'4.nf.b.3.d','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_5',4.1705,'4.nf.b.3.d',''); update item_types SET progression = 4.1705 where id = '4.nf.b.3.d_5';
 */
 
 var i_4_nf_b_3_d__5 = new Class(
@@ -132,7 +132,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_4',4.1704,'4.nf.b.3.d','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_4',4.1704,'4.nf.b.3.d',''); update item_types SET progression = 4.1704 where id = '4.nf.b.3.d_4';
 */
 
 var i_4_nf_b_3_d__4 = new Class(
@@ -161,7 +161,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_3',4.1703,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_3',4.1703,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators'); update item_types SET progression = 4.1703 where id = '4.nf.b.3.d_3';
 */
 
 var i_4_nf_b_3_d__3 = new Class(
@@ -195,7 +195,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_2',4.1702,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_2',4.1702,'4.nf.b.3.d','word problems - subtract 2 fractions with like denominators'); update item_types SET progression = 4.1702 where id = '4.nf.b.3.d_2';
 */
 
 var i_4_nf_b_3_d__2 = new Class(
@@ -224,7 +224,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_1',4.1701,'4.nf.b.3.d','word problems - add 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.d_1',4.1701,'4.nf.b.3.d','word problems - add 2 fractions with like denominators'); update item_types SET progression = 4.1701 where id = '4.nf.b.3.d_1';
 */
 
 var i_4_nf_b_3_d__1 = new Class(

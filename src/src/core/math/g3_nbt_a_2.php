@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_4',4.0185,'3.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_4',3.1104,'3.nbt.a.2',''); update item_types SET progression = 3.1104 where id = '3.nbt.a.2_4';
 */
 
 var i_3_nbt_a_2__4 = new Class(
@@ -31,7 +31,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_3',4.0184,'3.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_3',3.1103,'3.nbt.a.2',''); update item_types SET progression = 3.1103 where id = '3.nbt.a.2_3';
 */
 
 var i_3_nbt_a_2__3 = new Class(
@@ -62,7 +62,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_2',4.0184,'3.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_2',3.1102,'3.nbt.a.2',''); update item_types SET progression = 3.1102 where id = '3.nbt.a.2_2';
 */
 
 var i_3_nbt_a_2__2 = new Class(
@@ -93,7 +93,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_1',4.0183,'3.nbt.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.2_1',3.1101,'3.nbt.a.2',''); update item_types SET progression = 3.1101 where id = '3.nbt.a.2_1';
 */
 
 var i_3_nbt_a_2__1 = new Class(

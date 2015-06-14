@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_15',2.1315,'2.nbt.b.7','' ); update item_types SET progression = 4.1315 where id = '2.nbt.b.7_15';
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_15',2.1315,'2.nbt.b.7','' ); update item_types SET progression = 2.1315 where id = '2.nbt.b.7_15';
 */
 var i_2_nbt_b_7__15 = new Class(
 {

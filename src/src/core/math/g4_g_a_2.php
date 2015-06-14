@@ -109,7 +109,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_27',4.3327,'4.g.a.2',''); update item_types SET progression = 4.3327 where id = '4.g.a.1_37'; update item_types SET progression = 4.0637 where id = '4.g.a.2_27';
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_27',4.3327,'4.g.a.2',''); update item_types SET progression = 4.3327 where id = '4.g.a.2_27';
 */
 var i_4_g_a_2__27 = new Class(
 {

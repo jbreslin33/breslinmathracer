@@ -22,7 +22,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_2',3.2502,'3.md.c.5.b','' ); update item_types SET progression = 3.2502 where id = '3.md.c.5.b_3';
+insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_2',3.2502,'3.md.c.5.b','' ); update item_types SET progression = 3.2502 where id = '3.md.c.5.b_2';
 */
 var i_3_md_c_5_b__2 = new Class(
 {
@@ -194,7 +194,7 @@ createQuestionShapes: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_1',3.2501,'3.md.c.5.b','' ); update item_types SET progression = 3.2501 where id = '3.md.c.5.b_3';
+insert into item_types(id,progression,core_standards_id,description) values ('3.md.c.5.b_1',3.2501,'3.md.c.5.b','' ); update item_types SET progression = 3.2501 where id = '3.md.c.5.b_1';
 */
 var i_3_md_c_5_b__1 = new Class(
 {

@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_3',4.1903,'4.nf.c.5','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_3',4.2103,'4.nf.c.5','fraction'); update item_types SET progression = 4.2103 where id = '4.nf.c.5_3'; 
 */
 var i_4_nf_c_5__3 = new Class(
 {
@@ -28,7 +28,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_2',4.1902,'4.nf.c.5','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_2',4.2102,'4.nf.c.5','fraction'); update item_types SET progression = 4.2103 where id = '4.nf.c.5_2';
 */
 var i_4_nf_c_5__2 = new Class(
 {
@@ -57,7 +57,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_1',4.1901,'4.nf.c.5','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.c.5_1',4.2101,'4.nf.c.5','fraction'); update item_types SET progression = 4.2101 where id = '4.nf.c.5_3';
 */
 var i_4_nf_c_5__1 = new Class(
 {

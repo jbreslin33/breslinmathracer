@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_7',4.1407,'4.nf.b.3.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_7',4.1407,'4.nf.b.3.a',''); update item_types SET progression = 4.1407 where id = '4.nf.b.3.a_7';
 */
 var i_4_nf_b_3_a__7 = new Class(
 {
@@ -35,7 +35,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_6',4.1406,'4.nf.b.3.a','Add 2 fractions with like denominators. answer is proper fraction.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_6',4.1406,'4.nf.b.3.a','Add 2 fractions with like denominators. answer is proper fraction.'); update item_types SET progression = 4.1406 where id = '4.nf.b.3.a_6';
 */
 var i_4_nf_b_3_a__6 = new Class(
 {
@@ -62,7 +62,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_5',4.1403,'4.nf.b.3.a','Add and subtract 3 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_5',4.1403,'4.nf.b.3.a','Add and subtract 3 fractions with like denominators'); update item_types SET progression = 4.1405 where id = '4.nf.b.3.a_5';
 */
 
 var i_4_nf_b_3_a__5 = new Class(
@@ -91,7 +91,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_4',4.1403,'4.nf.b.3.a','Add and subtract 3 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_4',4.1403,'4.nf.b.3.a','Add and subtract 3 fractions with like denominators'); update item_types SET progression = 4.1404 where id = '4.nf.b.3.a_4';
 */
 
 var i_4_nf_b_3_a__4 = new Class(
@@ -120,7 +120,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_3',4.1403,'4.nf.b.3.a','add 3 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_3',4.1403,'4.nf.b.3.a','add 3 fractions with like denominators'); update item_types SET progression = 4.1403 where id = '4.nf.b.3.a_3';
 */
 
 var i_4_nf_b_3_a__3 = new Class(
@@ -149,7 +149,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_2',4.1402,'4.nf.b.3.a','subtract 2 fractions with like denominators');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_2',4.1402,'4.nf.b.3.a','subtract 2 fractions with like denominators'); update item_types SET progression = 4.1402 where id = '4.nf.b.3.a_2';
 */
 
 var i_4_nf_b_3_a__2 = new Class(
@@ -176,7 +176,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_1',4.1401,'4.nf.b.3.a','Add 2 fractions with like denominators. answer is proper fraction.');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.a_1',4.1401,'4.nf.b.3.a','Add 2 fractions with like denominators. answer is proper fraction.'); update item_types SET progression = 4.1401 where id = '4.nf.b.3.a_1';
 */
 var i_4_nf_b_3_a__1 = new Class(
 {

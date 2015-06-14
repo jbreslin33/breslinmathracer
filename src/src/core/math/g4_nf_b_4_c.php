@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_9',4.1809,'4.nf.b.4.c','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_9',4.2009,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2009 where id = '4.nf.b.4.c_9'; 
 */
 var i_4_nf_b_4_c__9 = new Class(
 {
@@ -34,7 +34,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_8',4.1808,'4.nf.b.4.c','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_8',4.2008,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2008 where id = '4.nf.b.4.c_8';
 */
 var i_4_nf_b_4_c__8 = new Class(
 {
@@ -70,7 +70,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_7',4.1807,'4.nf.b.4.c','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_7',4.2007,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2007 where id = '4.nf.b.4.c_7';
 */
 var i_4_nf_b_4_c__7 = new Class(
 {
@@ -104,7 +104,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_6',4.1806,'4.nf.b.4.c','mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_6',4.2006,'4.nf.b.4.c','mixed number'); update item_types SET progression = 4.2006 where id = '4.nf.b.4.c_6';
 */
 
 var i_4_nf_b_4_c__6 = new Class(
@@ -139,7 +139,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_5',4.1805,'4.nf.b.4.c','improper fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_5',4.2005,'4.nf.b.4.c','improper fraction'); update item_types SET progression = 4.2005 where id = '4.nf.b.4.c_5';
 */
 
 var i_4_nf_b_4_c__5 = new Class(
@@ -176,7 +176,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_4',4.1804,'4.nf.b.4.c','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_4',4.2004,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2004 where id = '4.nf.b.4.c_4'; 
 */
 
 var i_4_nf_b_4_c__4 = new Class(
@@ -213,7 +213,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_3',4.1803,'4.nf.b.4.c','mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_3',4.2003,'4.nf.b.4.c','mixed number'); update item_types SET progression = 4.2003 where id = '4.nf.b.4.c_3';
 */
 
 var i_4_nf_b_4_c__3 = new Class(
@@ -248,7 +248,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_2',4.1802,'4.nf.b.4.c','improper fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_2',4.1802,'4.nf.b.4.c','improper fraction'); update item_types SET progression = 4.2002 where id = '4.nf.b.4.c_2';
 */
 
 var i_4_nf_b_4_c__2 = new Class(
@@ -285,7 +285,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_1',4.1801,'4.nf.b.4.c','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_1',4.2001,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2001 where id = '4.nf.b.4.c_1';
 */
 var i_4_nf_b_4_c__1 = new Class(
 {

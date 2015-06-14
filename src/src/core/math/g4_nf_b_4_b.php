@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.b_3',4.1703,'4.nf.b.4.b','mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.b_3',4.1903,'4.nf.b.4.b','mixed number'); update item_types SET progression = 4.1903 where id = '4.nf.b.4.b_3';  
 */
 
 var i_4_nf_b_4_b__3 = new Class(
@@ -38,7 +38,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.b_2',4.1702,'4.nf.b.4.b','improper fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.b_2',4.1902,'4.nf.b.4.b','improper fraction'); update item_types SET progression = 4.1902 where id = '4.nf.b.4.b_2';
 */
 
 var i_4_nf_b_4_b__2 = new Class(
@@ -75,7 +75,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.b_1',4.1701,'4.nf.b.4.b','fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.b_1',4.1901,'4.nf.b.4.b','fraction'); update item_types SET progression = 4.1901 where id = '4.nf.b.4.b_1';
 */
 
 var i_4_nf_b_4_b__1 = new Class(

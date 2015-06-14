@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_9',4.1609,'4.nf.b.4.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_9',4.1809,'4.nf.b.4.a',''); update item_types SET progression = 4.1809 where id = '4.nf.b.4.a_9';
 */
 
 var i_4_nf_b_4_a__9 = new Class(
@@ -34,7 +34,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_8',4.1608,'4.nf.b.4.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_8',4.1808,'4.nf.b.4.a',''); update item_types SET progression = 4.1808 where id = '4.nf.b.4.a_8';
 */
 
 var i_4_nf_b_4_a__8 = new Class(
@@ -68,7 +68,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_7',4.1607,'4.nf.b.4.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_7',4.1807,'4.nf.b.4.a',''); update item_types SET progression = 4.1807 where id = '4.nf.b.4.a_7';
 */
 
 var i_4_nf_b_4_a__7 = new Class(
@@ -110,7 +110,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_6',4.1606,'4.nf.b.4.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_6',4.1806,'4.nf.b.4.a',''); update item_types SET progression = 4.1806 where id = '4.nf.b.4.a_6';
 */
 var i_4_nf_b_4_a__6 = new Class(
 {
@@ -179,7 +179,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_5',4.1605,'4.nf.b.4.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_5',4.1805,'4.nf.b.4.a',''); update item_types SET progression = 4.1805 where id = '4.nf.b.4.a_5';
 */
 var i_4_nf_b_4_a__5 = new Class(
 {
@@ -248,7 +248,7 @@ showCorrectAnswer: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_4',4.1604,'4.nf.b.4.a','Multiply unit fractions by whole numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_4',4.1804,'4.nf.b.4.a','Multiply unit fractions by whole numbers'); update item_types SET progression = 4.1804 where id = '4.nf.b.4.a_4';
 */
 
 var i_4_nf_b_4_a__4 = new Class(
@@ -286,7 +286,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_3',4.1603,'4.nf.b.4.a','Multiply unit fractions by whole numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_3',4.1803,'4.nf.b.4.a','Multiply unit fractions by whole numbers'); update item_types SET progression = 4.1803 where id = '4.nf.b.4.a_3';
 */
 
 var i_4_nf_b_4_a__3 = new Class(
@@ -323,7 +323,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_2',4.1602,'4.nf.b.4.a','Multiply unit fractions by whole numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_2',4.1802,'4.nf.b.4.a','Multiply unit fractions by whole numbers'); update item_types SET progression = 4.1802 where id = '4.nf.b.4.a_2';
 */
 
 var i_4_nf_b_4_a__2 = new Class(
@@ -359,7 +359,7 @@ initialize: function(sheet)
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_1',4.1601,'4.nf.b.4.a','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.a_1',4.1801,'4.nf.b.4.a',''); update item_types SET progression = 4.1801 where id = '4.nf.b.4.a_1';
 */
 
 var i_4_nf_b_4_a__1 = new Class(
