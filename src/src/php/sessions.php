@@ -45,7 +45,8 @@ public function process()
 		}
 		if ($ref_id == 'practice')
 		{
-			$practice = new Practice('',0,0);
+			//$practice = new Practice('',0,0);
+			$normal = new Normal(1);
 		}
 		if ($ref_id == 'timestables_2')
 		{

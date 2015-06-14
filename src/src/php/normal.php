@@ -707,7 +707,6 @@ public function goBananas()
 		//lets get all previously asked questions....in normal
 		if (!isset($_SESSION["previous_id_array"]))
 		{
-			error_log('running');
  			$i = 0;
 			while ($i <= intval(count($this->item_types_array) - 1))
         		{
@@ -728,7 +727,6 @@ public function goBananas()
 		}
 		else
 		{
-			error_log('skipping');
 			$this->previous_id_array = $_SESSION["previous_id_array"];
 		}
 
@@ -809,7 +807,6 @@ public function setItemString()
 
         //pink
         $itemString =  $this->item_types_id_to_ask; //ask this one
-        error_log($this->item_types_id_to_ask);
 
         //blue
         $itemString .= ":";
@@ -821,12 +818,10 @@ public function setItemString()
         //yellow
         $itemString .= ":";
         $itemString .= "$this->high_standard";
-        error_log($this->high_standard);
 
         //green
         $itemString .= ":";
         $itemString .= intval(count($this->score_array));
-        error_log(intval(count($this->score_array)));
 
         $_SESSION["before_item_type_id"] = $itemString;
         $_SESSION["raw_data"] = $itemString;
