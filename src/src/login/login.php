@@ -63,33 +63,47 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mLoginButton);
                 this.mLoginButton.mMesh.innerHTML = 'SIGN IN';
-
-
-                //SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,650,360,this,"BUTTON","","");
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
-                }
-                else
-                {
-                        this.mSignupButton.mMesh.addEvent('click',this.hitSignupButton);
-                }
-                this.mShapeArray.push(this.mSignupButton);
-                this.mSignupButton.mMesh.innerHTML = 'Create an account';
-
-                //SCHOOL LOGIN BUTTON
-                this.mSchoolLoginButton = new Shape(200,50,650,300,this,"BUTTON","","");
+                
+		//SCHOOL LOGIN BUTTON
+                this.mSchoolLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSchoolLoginButton.mMesh.attachEvent("onclick",this.hitSchoolLoginButton);
                 }
                 else
                 {
-                        this.mSchoolLoginButton.mMesh.addEvent('click',this.hitSchoolButton);
+                        this.mSchoolLoginButton.mMesh.addEvent('click',this.hitSchoolLoginButton);
                 }
                 this.mShapeArray.push(this.mSchoolLoginButton);
                 this.mSchoolLoginButton.mMesh.innerHTML = 'School Login';
+
+
+                //SIGNUP STUDENT BUTTON
+                this.mStudentSignupButton = new Shape(200,50,650,300,this,"BUTTON","","");
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mStudentSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
+                }
+                else
+                {
+                        this.mStudentSignupButton.mMesh.addEvent('click',this.hitStudentSignupButton);
+                }
+                this.mShapeArray.push(this.mStudentSignupButton);
+                this.mStudentSignupButton.mMesh.innerHTML = 'Create Student';
+                
+		//SCHOOL SIGNUP BUTTON
+                this.mSchoolSignupButton = new Shape(200,50,650,360,this,"BUTTON","","");
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mSchoolSignupButton.mMesh.attachEvent("onclick",this.hitSchoolSignupButton);
+                }
+                else
+                {
+                        this.mSchoolSignupButton.mMesh.addEvent('click',this.hitSchoolSignupButton);
+                }
+                this.mShapeArray.push(this.mSchoolSignupButton);
+                this.mSchoolSignupButton.mMesh.innerHTML = 'Create School';
+
 	},
 
         //***tab to next
@@ -156,6 +170,6 @@ Extends: Game,
 
 	hitSchoolLoginButton: function()
         {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_SCHOOL_APPLICATION);
+		APPLICATION.mStateMachine.changeState(APPLICATION.mSCHOOL_LOGIN_APPLICATION);
         }
 });
