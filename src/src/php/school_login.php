@@ -19,7 +19,7 @@ public function process()
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
-        $query = "select name from schools where name = '";
+        $query = "select username from schools where username = '";
         $query .= $_SESSION["username"];
         $query .= "';";
         
@@ -31,7 +31,7 @@ public function process()
 
         if ($num > 0)
         {
-		$query2 = "select id from schools where name = '";
+		$query2 = "select id from schools where username = '";
         	$query2 .= $_SESSION["username"];
         	$query2 .= "' AND password = '";
         	$query2 .= $_SESSION["password"];
@@ -53,7 +53,7 @@ public function process()
                 	$school_id = pg_Result($result2, 0, 'id');
 
 			//set sessions
-                	$_SESSION["school_name"] = $_SESSION["username"];
+                	$_SESSION["school_name"] = $_SESSION["name"];
                 	$_SESSION["school_id"] = $school_id;
         		$_SESSION["LOGGED_IN"] = 1;
 		}
