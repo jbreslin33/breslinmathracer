@@ -16,8 +16,8 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_school_login_fo
 	
 	<form method="post" action="/web/php/school_login.php">
 
-	Username: <input type="text" name="username"> <br>
-	Password: <input type="text" name="password"> <br>
+	Username: <input type="text" name="username" required> <br>
+	Password: <input type="password" name="password" required> <br>
 
 	<input type="submit" value="login">
 
@@ -29,13 +29,13 @@ include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_for_school_login_fo
 <br>
         <form method="post" action="/web/php/school_create.php">
 
-	Username: <input type="text" name="username"> <br>
-        Password: <input type="text" name="password"> <br>
-        Enter Password again: <input type="text" name="password"> <br>
-	School: <input type="text" name="name"> <br>
-	City : <input type="text" name="city"> <br>
-	State : <input type="text" name="state"> <br>
-	Zip : <input type="text" name="zip"> <br>
+	Username: <input type="text" name="username" required> <br>
+        Password: <input type="password" name="password" required> <br>
+        Enter Password again: <input type="password" name="password" required> <br>
+	School: <input type="text" name="name" required> <br>
+	City : <input type="text" name="city" required> <br>
+	State : <input type="text" name="state" required> <br>
+	Zip : <input type="text" name="zip" required> <br>
 
         <input type="submit" value="create school account">
 
