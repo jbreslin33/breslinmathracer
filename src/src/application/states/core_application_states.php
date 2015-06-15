@@ -96,6 +96,52 @@ exit: function(application)
 
 });
 
+
+var SCHOOL_LOGIN_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	application.mLoggedIn = false;
+
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::SCHOOL_LOGIN_APPLICATION');
+	}
+	application.mRef_id = 'school_login';
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "school_login";
+        application.mGame = new SchoolLogin(APPLICATION);
+ 
+	//lets hide homeselect
+       	APPLICATION.mHud.mHome.setVisibility(false);
+},
+
+execute: function(application)
+{
+	if (application.mLoggedIn == true)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
+}
+
+});
+
 var SIGNUP_APPLICATION = new Class(
 {
 Extends: State,
