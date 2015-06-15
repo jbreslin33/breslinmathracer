@@ -137,6 +137,7 @@ CREATE TABLE error_log
 --SCHOOL
 CREATE TABLE schools (
         id SERIAL,
+        username text NOT NULL UNIQUE,
         name text NOT NULL,
         city text NOT NULL,
         state text NOT NULL,
