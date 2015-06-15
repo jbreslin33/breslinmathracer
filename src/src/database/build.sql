@@ -137,8 +137,12 @@ CREATE TABLE error_log
 --SCHOOL
 CREATE TABLE schools (
         id SERIAL,
-        name text UNIQUE,
+        name text NOT NULL,
+        city text NOT NULL,
+        state text NOT NULL,
+        zip text NOT NULL,
         password text,
+        UNIQUE (name,city,state,zip),
 	PRIMARY KEY (id)
 );
 

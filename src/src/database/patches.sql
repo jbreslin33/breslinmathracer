@@ -1,4 +1,10 @@
-update item_types set type_mastery = 2;
-update users set core_standards_id = 'k.cc.a.1';
-update item_types set active_code = 1 where id = 'k.cc.a.1_1';
-update item_types set active_code = 1 where id = 'k.cc.a.1_2';
+ALTER TABLE schools ADD city text;
+ALTER TABLE schools ADD state text;
+ALTER TABLE schools ADD zip text;
+delete from schools where id > 2;
+update schools set city = 'Philadelphia' where id = 2; 
+update schools set state = 'Pennsylvannia' where id = 2; 
+update schools set state = '19125' where id = 2; 
+update schools set city = 'Philadelphia' where id = 1; 
+update schools set state = 'Pennsylvannia' where id = 1; 
+update schools set state = '19125' where id = 1; 
