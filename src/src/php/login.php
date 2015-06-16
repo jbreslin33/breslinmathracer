@@ -25,24 +25,22 @@ public function process()
 	$query = "";
 	if ($_SESSION["role"] == 1)
 	{
-        	$query .= "select username from users where username = '";
+        	$query = "select username from users where username = '";
 	}
 	else if ($_SESSION["role"] == 2)
 	{
-        	$query .= "select username from teachers where username = '";
+        	$query = "select username from teachers where username = '";
 	}
 	else if ($_SESSION["role"] == 3)
 	{
-        	$query .= "select username from schools where username = '";
+        	$query = "select username from schools where username = '";
 	}
 	else if ($_SESSION["role"] == 4)
 	{
-        	$query .= "select username from admins where username = '";
+        	$query = "select username from admins where username = '";
 	}
         $query .= $_SESSION["username"];
         $query .= "';";
-	
-	error_log($query);
         
 	//get db result
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
