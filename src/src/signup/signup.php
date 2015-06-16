@@ -141,7 +141,7 @@ Extends: Game,
                         this.mSchoolButton.mMesh.addEvent('click',this.hitSchoolButton);
                 }
                 this.mShapeArray.push(this.mSchoolButton);
-                this.mSchoolButton.mMesh.innerHTML = 'School LOGPage';
+                this.mSchoolButton.mMesh.innerHTML = 'School Page';
 
 		this.log('constructor');
 	},
