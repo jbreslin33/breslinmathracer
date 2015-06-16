@@ -42,7 +42,7 @@ enter: function(application)
 
 execute: function(application)
 {
-	application.mCoreStateMachine.changeState(application.mSTUDENT_LOGIN_APPLICATION);
+	application.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
 },
 
 exit: function(application)
@@ -51,7 +51,7 @@ exit: function(application)
 
 });
 
-var STUDENT_LOGIN_APPLICATION = new Class(
+var LOGIN_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -65,7 +65,7 @@ enter: function(application)
 
 	if (application.mStateLogs)
 	{
-		application.log('APPLICATION::STUDENT_LOGIN_APPLICATION');
+		application.log('APPLICATION::LOGIN_APPLICATION');
 	}
 	application.mRef_id = 'login';
         if (application.mGame)
@@ -74,7 +74,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGameName = "login";
-        application.mGame = new StudentLogin(APPLICATION);
+        application.mGame = new login(APPLICATION);
  
 	//lets hide homeselect
        	APPLICATION.mHud.mHome.setVisibility(false);
@@ -95,52 +95,6 @@ exit: function(application)
 }
 
 });
-
-var TEACHER_LOGIN_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        application.mLoggedIn = false;
-
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::TEACHER_LOGIN_APPLICATION');
-        }
-        application.mRef_id = 'teacher_login';
-        if (application.mGame)
-        {
-                application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGameName = "teacher_login";
-        application.mGame = new TeacherLogin(APPLICATION);
-
-        //lets hide homeselect
-        APPLICATION.mHud.mHome.setVisibility(false);
-},
-
-execute: function(application)
-{
-        if (application.mLoggedIn == true)
-        {
-                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-        }
-},
-
-exit: function(application)
-{
-        //lets show homeselect
-        APPLICATION.mHud.mHome.setVisibility(true);
-}
-
-});
-
 
 
 var SCHOOL_LOGIN_APPLICATION = new Class(

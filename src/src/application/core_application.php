@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 
 		//parse codes
 		this.FULL = 101;
@@ -62,8 +62,7 @@ Extends: Application,
 
                 this.mGLOBAL_CORE_APPLICATION                = new GLOBAL_CORE_APPLICATION       (this);
                 this.mINIT_CORE_APPLICATION                  = new INIT_CORE_APPLICATION         (this);
-                this.mSTUDENT_LOGIN_APPLICATION                  = new STUDENT_LOGIN_APPLICATION         (this);
-                this.mTEACHER_LOGIN_APPLICATION                  = new TEACHER_LOGIN_APPLICATION         (this);
+                this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
                 this.mSCHOOL_LOGIN_APPLICATION                  = new SCHOOL_LOGIN_APPLICATION         (this);
                 this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);

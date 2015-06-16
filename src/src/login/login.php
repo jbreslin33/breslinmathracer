@@ -1,6 +1,6 @@
 /* GAME: */
 
-var Login = new Class(
+var login = new Class(
 {
 
 Extends: Game,
@@ -11,8 +11,8 @@ Extends: Game,
 		
 		this.mSent = false;
                 
-		this.mServerLabel = new Shape(200,50,440,50,this,"","","");
-                this.mServerLabel.setText('Login');
+		this.mServerLabel = new Shape(200,50,400,50,this,"","","");
+                this.mServerLabel.setText('');
                 this.mShapeArray.push(this.mServerLabel);
 
 		this.mUsernameLabel = new Shape(200,50,300,100,this,"","","");
@@ -63,36 +63,9 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mLoginButton);
                 this.mLoginButton.mMesh.innerHTML = 'SIGN IN';
-
-
-		//STUDENT LOGIN BUTTON
-                this.mStudentLoginButton = new Shape(200,50,650,70,this,"BUTTON","","");
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mStudentLoginButton.mMesh.attachEvent("onclick",this.hitStudentLoginButton);
-                }
-                else
-                {
-                        this.mStudentLoginButton.mMesh.addEvent('click',this.hitStudentLoginButton);
-                }
-                this.mShapeArray.push(this.mStudentLoginButton);
-                this.mStudentLoginButton.mMesh.innerHTML = 'Student Login';
-              	
-		//TEACHER LOGIN BUTTON
-                this.mTeacherLoginButton = new Shape(200,50,650,130,this,"BUTTON","","");
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTeacherLoginButton.mMesh.attachEvent("onclick",this.hitTeacherLoginButton);
-                }
-                else
-                {
-                        this.mTeacherLoginButton.mMesh.addEvent('click',this.hitTeacherLoginButton);
-                }
-                this.mShapeArray.push(this.mTeacherLoginButton);
-                this.mTeacherLoginButton.mMesh.innerHTML = 'Teacher Login';
                 
 		//SCHOOL LOGIN BUTTON
-                this.mSchoolLoginButton = new Shape(200,50,650,190,this,"BUTTON","","");
+                this.mSchoolLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSchoolLoginButton.mMesh.attachEvent("onclick",this.hitSchoolLoginButton);
@@ -105,8 +78,8 @@ Extends: Game,
                 this.mSchoolLoginButton.mMesh.innerHTML = 'School Login';
 
 
-                //STUDENT SIGNUP BUTTON
-                this.mStudentSignupButton = new Shape(200,50,650,250,this,"BUTTON","","");
+                //SIGNUP STUDENT BUTTON
+                this.mStudentSignupButton = new Shape(200,50,650,300,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mStudentSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
@@ -117,23 +90,9 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mStudentSignupButton);
                 this.mStudentSignupButton.mMesh.innerHTML = 'Create Student';
-
-                //TEACHER SIGNUP BUTTON
-                this.mTeacherSignupButton = new Shape(200,50,650,310,this,"BUTTON","","");
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTeacherSignupButton.mMesh.attachEvent("onclick",this.hitTeacherSignupButton);
-                }
-                else
-                {
-                        this.mTeacherSignupButton.mMesh.addEvent('click',this.hitTeacherSignupButton);
-                }
-                this.mShapeArray.push(this.mTeacherSignupButton);
-                this.mTeacherSignupButton.mMesh.innerHTML = 'Create Teacher';
-
                 
 		//SCHOOL SIGNUP BUTTON
-                this.mSchoolSignupButton = new Shape(200,50,650,370,this,"BUTTON","","");
+                this.mSchoolSignupButton = new Shape(200,50,650,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSchoolSignupButton.mMesh.attachEvent("onclick",this.hitSchoolSignupButton);
@@ -203,35 +162,14 @@ Extends: Game,
 
 		}
         },
-	
-	hitStudentLoginButton: function()
+
+	hitSignupButton: function()
         {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mSTUDENT_LOGIN_APPLICATION);
-        },
-	
-	hitTeacherLoginButton: function()
-        {
-		APPLICATION.log('hit t');
-		APPLICATION.mStateMachine.changeState(APPLICATION.mTEACHER_LOGIN_APPLICATION);
+		APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
         },
 
 	hitSchoolLoginButton: function()
         {
 		APPLICATION.mStateMachine.changeState(APPLICATION.mSCHOOL_LOGIN_APPLICATION);
-        },
-	
-	hitSchoolSignupButton: function()
-        {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mSCHOOL_SIGNUP_APPLICATION);
-        },
-	
-	hitTeacherSignupButton: function()
-        {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mTEACHER_SIGNUP_APPLICATION);
-        },
-
-	hitStudentSignupButton: function()
-        {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mSTUDENT_SIGNUP_APPLICATION);
         }
 });
