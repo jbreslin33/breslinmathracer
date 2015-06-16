@@ -1,4 +1,6 @@
-var SchoolLogin = new Class(
+/* GAME: */
+
+var StudentLogin = new Class(
 {
 
 Extends: Login,
@@ -7,7 +9,7 @@ Extends: Login,
 	{
        		this.parent(application);
 		
-                this.mServerLabel.setText('School Login');
+                this.mServerLabel.setText('Student Login');
 	},
 
         sendLogin: function()
