@@ -240,7 +240,7 @@ Extends: Application,
                 xmlhttp.send();
 	},
 
-        login: function(username,password)
+        login: function(username,password,role)
         {
 		//gets called right away
 		APPLICATION.mGame.mLoginButton.setVisibility(false);
@@ -277,7 +277,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password + "&role=" + role,true);
                 xmlhttp.send();
         },
 

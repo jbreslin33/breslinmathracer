@@ -20,7 +20,7 @@ Extends: Login,
                 	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
                 	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 
-                	APPLICATION.login(username,password);
+                	APPLICATION.login(username,password,1);
 		}
 		else
 		{

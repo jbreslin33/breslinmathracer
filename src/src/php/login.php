@@ -8,6 +8,7 @@ class Login
 
 function __construct()
 {
+	error_log('constructor');
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mBadUsername = 0;
 	$this->mBadPassword = 0;
@@ -17,10 +18,27 @@ function __construct()
 
 public function process()
 {
+	error_log('process');
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
-        $query = "select username from users where username = '";
+	$query = "";
+	if ($_SESSION["role"] == 1)
+	{
+        	$query = "select username from users where username = '";
+	}
+	else if ($_SESSION["role"] == 2)
+	{
+        	$query = "select username from teachers where username = '";
+	}
+	else if ($_SESSION["role"] == 3)
+	{
+        	$query = "select username from schools where username = '";
+	}
+	else if ($_SESSION["role"] == 4)
+	{
+        	$query = "select username from admins where username = '";
+	}
         $query .= $_SESSION["username"];
         $query .= "';";
         
@@ -30,8 +48,9 @@ public function process()
         //get numer of rows
         $num = pg_num_rows($result);
 
-        if ($num > 0)
+        if ($num > 0 && $_SESSION["role"] == 1)
         {
+		error_log('role 1');
 		$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id from users where username = '";
         	$query2 .= $_SESSION["username"];
         	$query2 .= "' AND password = '";
@@ -83,7 +102,19 @@ public function process()
         		$_SESSION["user_id"] = 0;
 		}
         }
-        else
+        else if ($num > 0 && $_SESSION["role"] == 2)
+	{
+
+	} 
+        else if ($num > 0 && $_SESSION["role"] == 3)
+	{
+
+	} 
+        else if ($num > 0 && $_SESSION["role"] == 4)
+	{
+
+	} 
+        else if ($num == 0)
         {
         	$_SESSION["LOGGED_IN"] = 0;
         	$this->mBadUsername = 1;
