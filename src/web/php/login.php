@@ -6,7 +6,6 @@ session_start();
 
 $_SESSION["username"]   = $_GET["username"];
 $_SESSION["password"]   = $_GET["password"];
-$_SESSION["role"]       = $_GET["role"]; //1 student, 2 teacher, 3 school, 4 admin 
 
 $login = new Login();
 

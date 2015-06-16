@@ -190,7 +190,18 @@ Extends: Game,
 
         sendLogin: function()
         {
-		//override
+		if (this.mSent == false)
+		{
+			this.mSent = true;
+                	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
+                	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
+
+                	APPLICATION.login(username,password);
+		}
+		else
+		{
+
+		}
         },
 	
 	hitStudentLoginButton: function()
