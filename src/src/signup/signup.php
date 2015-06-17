@@ -142,8 +142,6 @@ Extends: Game,
                 }
                 this.mShapeArray.push(this.mSchoolButton);
                 this.mSchoolButton.mMesh.innerHTML = 'School Page';
-
-		this.log('constructor');
 	},
 
         log: function(msg)
@@ -242,7 +240,7 @@ Extends: Game,
 	//goto login screen
         hitLoginButton: function()
         {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
         },
         hitSchoolButton: function()
         {

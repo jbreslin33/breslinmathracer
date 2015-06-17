@@ -151,7 +151,7 @@ Extends: Game,
 
 	hitSignupButton: function()
         {
-		APPLICATION.mStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
         },
 
 	hitSchoolButton: function()

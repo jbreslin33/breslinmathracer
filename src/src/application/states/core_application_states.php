@@ -42,6 +42,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::INIT_CORE_APPLICATION execute');
+	}
 	application.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
 },
 
@@ -82,14 +86,23 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LOGIN_APPLICATION execute');
+	}
 	if (application.mLoggedIn == true)
 	{
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 	}
+	
 },
 
 exit: function(application)
 {
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_APPLICATION exit');
+	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
 }
@@ -119,13 +132,14 @@ enter: function(application)
         }
         application.mGameName = "signup";
         application.mGame = new signup(APPLICATION);
-	
-	//lets hide homeselect
-       	APPLICATION.mHud.mHome.setVisibility(false);
 },
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::SIGNUP_APPLICATION execute');
+	}
         if (application.mLoggedIn == true)
         {
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
@@ -134,6 +148,10 @@ execute: function(application)
 
 exit: function(application)
 {
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::SIGNUP_APPLICATION exit');
+	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
 }
@@ -162,6 +180,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::NORMAL_CORE_APPLICATION execute');
+	}
 	//you might not have a game if this your first time or you just went to a level that requires new game
 	if (application.mLevelCompleted)
 	{
@@ -194,6 +216,10 @@ execute: function(application)
 },
 exit: function(application)
 {
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::NORMAL_CORE_APPLICATION exit');
+	}
 	application.mLevelCompleted = false;
 	application.mEvaluationFailed = false;
 	application.mGotoPractice = false;
@@ -224,6 +250,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::PRACTICE_APPLICATION execute');
+	}
 	if (application.mWaitForReturn == false)
 	{
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
@@ -257,6 +287,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::CORE_APPLICATION execute');
+	}
         if (application.mWaitForReturn == false)
         {
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
@@ -291,6 +325,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_APPLICATION execute');
+	}
         if (application.mWaitForReturn == false)
         {
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
@@ -328,6 +366,10 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LEAVE_PRACTICE_APPLICATION execute');
+	}
         if (application.mWaitForReturn == false)
         {
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);

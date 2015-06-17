@@ -7,6 +7,8 @@ Extends: Application,
 
 		//logging
 		this.mStateLogs = false; 
+		this.mStateLogsExecute = false; 
+		this.mStateLogsExit = false; 
 
 		//parse codes
 		this.FULL = 101;
@@ -92,34 +94,22 @@ Extends: Application,
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
- 				APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+ 				APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
 				var v = 'BAD USERNAME';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
-/*
-				APPLICATION.mGame.mLoginButton.setVisibility(true);
-				APPLICATION.mGame.mUsernameLabel.setVisibility(true);
-				APPLICATION.mGame.mUsernameTextBox.setVisibility(true);
-				APPLICATION.mGame.mPasswordLabel.setVisibility(true);
-				APPLICATION.mGame.mPasswordTextBox.setVisibility(true);
-*/
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
- 				APPLICATION.mStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+				APPLICATION.log('BAD_PASSWORD');		
+ 				APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
 				var v = 'BAD PASSWORD';
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
-/*		
-				APPLICATION.mGame.mLoginButton.setVisibility(true);
-				APPLICATION.mGame.mUsernameLabel.setVisibility(true);
-				APPLICATION.mGame.mUsernameTextBox.setVisibility(true);
-				APPLICATION.mGame.mPasswordLabel.setVisibility(true);
-				APPLICATION.mGame.mPasswordTextBox.setVisibility(true);
-*/
 			}
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
+				APPLICATION.log('TIMED_OUT');		
 				var v = 'TIMED OUT PLEASE LOGIN AGAIN';
  				APPLICATION.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
