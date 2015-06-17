@@ -14,9 +14,22 @@ function __construct()
 
 	$this->process();
 }
-
 public function process()
 {
+	$this->checkForStudent();
+}
+
+public function checkForStudent()
+{
+       	if (!isset($_SESSION["LOGGED_IN"]))
+	{
+        	$_SESSION["LOGGED_IN"] = 0;
+	}
+       	if ($_SESSION["LOGGED_IN"] == 1)
+	{
+		return;
+	}
+
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
