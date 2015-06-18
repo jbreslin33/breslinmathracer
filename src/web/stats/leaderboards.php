@@ -59,10 +59,20 @@ else if (isset($_GET['category']))
 }
 else
 {
-
+	$category = 'score';
 }
-
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+if ($_SESSION["role"] == 1)
+{
+	include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+}
+if ($_SESSION["role"] == 2)
+{
+	include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_teacher.php");
+}
+if ($_SESSION["role"] == 3)
+{
+	include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
+}
 echo "<br>";
 ?>
 

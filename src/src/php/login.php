@@ -78,7 +78,7 @@ public function checkForStudent()
                 	$_SESSION["last_name"] = $last_name;
                 	$_SESSION["user_id"] = $user_id;
         		$_SESSION["LOGGED_IN"] = 1;
-        		$_SESSION["ROLE"] = 1; //student
+        		$_SESSION["role"] = 1; //student
         		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["core_standards_id"] = $core_standards_id;
                 	$_SESSION["school_id"] = $school_id;
@@ -154,7 +154,7 @@ public function checkForSchool()
                 	$school_id = pg_Result($result2, 0, 'id');
 
 			//set sessions
-        		$_SESSION["ROLE"] = 3; //student
+        		$_SESSION["role"] = 3; //student
         		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["school_id"] = $school_id;
 

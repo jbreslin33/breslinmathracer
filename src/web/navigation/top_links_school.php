@@ -3,12 +3,8 @@
 <li><a href="/web/php/logout.php">Logout</a></li>
 
 <li><a href="/web/stats/leaderboards.php">School Leader Board</a></li>
-<li><a href="/web/insert/upload.php">Upload School From Linux</a></li>
 <li><a href="/web/stats/remediate.php">Remediate</a></li>
 <li><a href="/web/stats/statsreports.php">statsreports</a></li>
-<li><a href="/web/stats/leaderboards.php">School Leader Board</a></li>
-<li><a href="/web/stats/unmastered_leaderboard_33.php">Room 33 mastered Leader Board</a></li>
-<li><a href="/web/stats/unmastered_leaderboard_34.php">Room 34 mastered Leader Board</a></li>
 <li><a href="/web/stats/enter_homework_date.php">Homework Report</a></li>
 <li><a href="/web/stats/enter_statsreport_user.php">Stats Report</a></li>
 <li><a href="/web/stats/realtime.php">RealTimeHelp</a></li>

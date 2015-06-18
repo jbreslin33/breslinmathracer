@@ -145,7 +145,7 @@ Extends: Application,
 
 				if (APPLICATION.mLoggedIn == 1)
 				{
-					window.location.replace("/web/stats/item_attempts_realtime.php");
+					window.location.replace("/web/stats/leaderboards.php");
 				}
 				else
 				{
