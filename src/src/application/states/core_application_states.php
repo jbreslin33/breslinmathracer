@@ -92,7 +92,18 @@ execute: function(application)
 	}
 	if (application.mLoggedIn == true)
 	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+		if (application.mRole == 1)
+		{
+			application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+		}
+		else if (application.mRole == 2)
+		{
+			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+		}
+		else if (application.mRole == 3)
+		{
+			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+		}
 	}
 	
 },
@@ -157,8 +168,6 @@ exit: function(application)
 }
 
 });
-
-
 
 var NORMAL_CORE_APPLICATION = new Class(
 {
@@ -226,6 +235,39 @@ exit: function(application)
 	application.mGotoCore = false;
 	application.mGotoTimesTables = false;
 	application.mLeavePractice = false;
+}
+
+});
+
+var REPORT_CORE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::REPORT_CORE_APPLICATION');
+	}
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::REPORT_CORE_APPLICATION execute');
+	}
+},
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::REPORT_CORE_APPLICATION exit');
+	}
 }
 
 });

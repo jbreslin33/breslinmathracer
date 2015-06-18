@@ -12,5 +12,7 @@ $returnString .= ",";
 $returnString .= $_SESSION["last_name"];
 $returnString .= ",";
 $returnString .= $_SESSION["raw_data"];
+$returnString .= ",";
+$returnString .= $_SESSION["role"];
 echo $returnString;
 ?>

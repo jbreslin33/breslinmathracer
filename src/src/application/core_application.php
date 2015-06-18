@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -69,6 +69,7 @@ Extends: Application,
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
                 this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
+                this.mREPORT_CORE_APPLICATION                = new REPORT_CORE_APPLICATION       (this);
                 this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
                 this.mCORE_APPLICATION                 = new CORE_APPLICATION(this);
                 this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
@@ -126,6 +127,7 @@ Extends: Application,
                         	APPLICATION.mFirstName = responseArray[4];
                         	APPLICATION.mLastName = responseArray[5];
                         	APPLICATION.mRawData = responseArray[6];
+                        	APPLICATION.mRole = responseArray[7];
 		
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
@@ -135,20 +137,18 @@ Extends: Application,
                    
 			if (codeNumber == APPLICATION.FULL_SCHOOL)
                         {
-				APPLICATION.log('full school');	
                                 APPLICATION.mLoggedIn = responseArray[1];
                                 APPLICATION.mUsername = responseArray[2];
+                                APPLICATION.mRole = responseArray[3];
                                 APPLICATION.mWaitForReturn = false;
                                 this.mSent = false;
 
 				if (APPLICATION.mLoggedIn == 1)
 				{
-					APPLICATION.log('logged in 1');	
 					window.location.replace("/web/stats/item_attempts_realtime.php");
 				}
 				else
 				{
-					APPLICATION.log('logged in 2');	
 					window.location.replace("/web/login/school_login.php");
 				}
                         }
