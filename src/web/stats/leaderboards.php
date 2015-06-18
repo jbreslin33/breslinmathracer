@@ -61,20 +61,17 @@ else
 {
 	$category = 'score';
 }
-if ($_SESSION["role"] == 1)
-{
-	include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
-}
-if ($_SESSION["role"] == 2)
-{
-	include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_teacher.php");
-}
-if ($_SESSION["role"] == 3)
-{
-	include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_school.php");
-}
 echo "<br>";
 ?>
+
+<p><b> Normal Leader Boards </p></b>
+
+<ul>
+<li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
+<li><a href="/web/php/logout.php">Logout</a></li>
+<li><a href="/web/navigation/school_leaderboards.php">Leader Boards</a></li>
+</ul>
+
 
 <p><b> Select Room and Category: </p></b>
 

@@ -145,7 +145,7 @@ Extends: Application,
 
 				if (APPLICATION.mLoggedIn == 1)
 				{
-					window.location.replace("/web/stats/leaderboards.php");
+					window.location.replace("/web/navigation/main_menu_school.php");
 				}
 				else
 				{
