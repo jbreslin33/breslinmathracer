@@ -11,7 +11,21 @@ $login = new Login();
 
 if ($_SESSION["LOGGED_IN"] == 1)
 {
-	include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
+	if ($_SESSION["ROLE"] == 1)
+	{
+		error_log('role 1');
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string.php");
+	}
+	if ($_SESSION["ROLE"] == 2)
+	{
+		error_log('role 2');
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string_teacher.php");
+	}
+	if ($_SESSION["ROLE"] == 3)
+	{
+		error_log('role 3');
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string_school.php");
+	}
 }
 else
 {

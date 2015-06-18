@@ -23,6 +23,8 @@ Extends: Application,
 		this.STUDENT_ITEM_STATS = 109;
 		this.UPDATED_STANDARD_ID = 111;
 		this.SCROLL = 112;
+		this.FULL_TEACHER = 113;
+		this.FULL_SCHOOL = 114;
 
 		//personal info
 		this.mUsername = '';
@@ -130,6 +132,27 @@ Extends: Application,
 				APPLICATION.mWaitForReturn = false; 
 				this.mSent = false;		
                		}
+                   
+			if (codeNumber == APPLICATION.FULL_SCHOOL)
+                        {
+				APPLICATION.log('full school');	
+                                APPLICATION.mLoggedIn = responseArray[1];
+                                APPLICATION.mUsername = responseArray[2];
+                                APPLICATION.mWaitForReturn = false;
+                                this.mSent = false;
+
+				if (APPLICATION.mLoggedIn == 1)
+				{
+					APPLICATION.log('logged in 1');	
+					window.location.replace("/web/stats/item_attempts_realtime.php");
+				}
+				else
+				{
+					APPLICATION.log('logged in 2');	
+					window.location.replace("/web/login/school_login.php");
+				}
+                        }
+
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
                                 APPLICATION.mGame.mSheet.mItem.mStandardDescription = responseArray[1];
