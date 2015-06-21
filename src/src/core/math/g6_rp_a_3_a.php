@@ -24,7 +24,10 @@ var answer = 20;
 
 this.setAnswer('' + answer,0);
 
+this.setQuestion('Joan earns $7 for every 2 necklaces she sells. Billy earns $3 for every necklace he sells. Billy sold twice as many necklaces as Joan. How many necklaces must Billy sell so that he earns $20 more than Joan?');    
+
 this.setQuestion('Joan earns $8 for every 2 necklaces she sells. Billy earns $3 for every necklace he sells. Billy sold twice as many necklaces as Joan. How many necklaces must Billy sell so that he earns $20 more than Joan?');    
+
 
 this.mQuestionLabel.setSize(220,50);
 this.mQuestionLabel.setPosition(450,80);
