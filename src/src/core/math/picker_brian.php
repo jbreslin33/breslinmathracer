@@ -587,6 +587,19 @@ if (id == '5.g.b.4_5')
                 return new i_5_g_b_4__5(this.mSheet);
         }
 
+//6.rp.a.3.a
+	if (id == '6.rp.a.3.a_1')
+        {
+                return new i_6_rp_a_3_a__1(this.mSheet);
+        }
+  if (id == '6.rp.a.3.a_2')
+        {
+                return new i_6_rp_a_3_a__2(this.mSheet);
+        }
+if (id == '6.rp.a.3.a_3')
+        {
+                return new i_6_rp_a_3_a__3(this.mSheet);
+        }
 
 	return 0;	
 }

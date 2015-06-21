@@ -1,8 +1,9 @@
 var Table = new Class(
 {
 Extends: RaphaelPolygon,
-        initialize: function (game,item,raphael,x1,y1,x2,y2,table,rX1,rY1,cols,rows,s,d)
+        initialize: function (game,item,raphael,x1,y1,x2,y2,table,rX1,rY1,tableData,s,d)
         {
+
 		//find center for mPosition...
 		sX = x1 + x2 / 3;
 		sY = y1 + y2 / 3;
@@ -111,11 +112,16 @@ for (var i = 0; i < rows; i++) {
 
      if (i == 0 && j != 0)
      { 
-        sizeX = parseInt(colWidth);
-        sizeY = parseInt(rowHeight*2);
+        //sizeX = parseInt(colWidth);
+       // sizeY = parseInt(rowHeight*2);
+        //sizeY = parseInt(rowHeight);
+
+        sizeX = 50;
+        sizeY = 25;
 
         posX = x+(j*colWidth);
         posY = y+((i+1)*rowHeight) - 20;
+        
      }
      else
      { 
