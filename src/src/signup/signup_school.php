@@ -10,11 +10,11 @@ Extends: Game,
        		this.parent(application);
 
 		//username	
-		this.mUsernameLabel = new Shape(200,40,300,80,this,"","","");
+		this.mUsernameLabel = new Shape(200,40,120,80,this,"","","");
                 this.mUsernameLabel.setText('Username:');
                 this.mShapeArray.push(this.mUsernameLabel);
                 
-		this.mUsernameTextBox = new Shape(200,40,400,80,this,"INPUT","","");
+		this.mUsernameTextBox = new Shape(200,40,220,80,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
 		this.mUsernameTextBox.mMesh.focus();	
@@ -27,29 +27,46 @@ Extends: Game,
                         this.mUsernameTextBox.mMesh.addEvent('keypress',this.usernameTextBoxFirefoxHit);
                 }
 
-		//password	
-		this.mPasswordLabel = new Shape(200,40,300,135,this,"","","");
-                this.mPasswordLabel.setText('Password:');
-                this.mShapeArray.push(this.mPasswordLabel);
+		//password one	
+		this.mPasswordOneLabel = new Shape(200,40,120,135,this,"","","");
+                this.mPasswordOneLabel.setText('Password:');
+                this.mShapeArray.push(this.mPasswordOneLabel);
 
-                this.mPasswordTextBox = new Shape(200,40,400,135,this,"INPUT","","");
-                this.mPasswordTextBox.mMesh.value = '';
-                this.mShapeArray.push(this.mPasswordTextBox);
+                this.mPasswordOneTextBox = new Shape(200,40,220,135,this,"INPUT","","");
+                this.mPasswordOneTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mPasswordOneTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mPasswordTextBox.mMesh.attachEvent('onkeypress',this.passwordTextBoxMicrosoftHit);
+                        this.mPasswordOneTextBox.mMesh.attachEvent('onkeypress',this.passwordOneTextBoxMicrosoftHit);
                 }
                 else
                 {
-                        this.mPasswordTextBox.mMesh.addEvent('keypress',this.passwordTextBoxFirefoxHit);
+                        this.mPasswordOneTextBox.mMesh.addEvent('keypress',this.passwordOneTextBoxFirefoxHit);
+                }
+
+                //password two 
+                this.mPasswordTwoLabel = new Shape(200,40,120,190,this,"","","");
+                this.mPasswordTwoLabel.setText('Password:');
+                this.mShapeArray.push(this.mPasswordTwoLabel);
+
+                this.mPasswordTwoTextBox = new Shape(200,40,220,190,this,"INPUT","","");
+                this.mPasswordTwoTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mPasswordTwoTextBox);
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mPasswordTwoTextBox.mMesh.attachEvent('onkeypress',this.passwordTwoTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mPasswordTwoTextBox.mMesh.addEvent('keypress',this.passwordTwoTextBoxFirefoxHit);
                 }
 
 		//Name	
-		this.mNameLabel = new Shape(200,40,300,190,this,"","","");
-                this.mNameLabel.setText('School Name:');
+		this.mNameLabel = new Shape(200,40,120,245,this,"","","");
+                this.mNameLabel.setText('School:');
                 this.mShapeArray.push(this.mNameLabel);
 
-  		this.mNameTextBox = new Shape(200,40,400,190,this,"INPUT","","");
+  		this.mNameTextBox = new Shape(200,40,220,245,this,"INPUT","","");
                 this.mNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -62,11 +79,11 @@ Extends: Game,
                 }
 	
 		//city	
-		this.mCityLabel = new Shape(200,40,300,245,this,"","","");
+		this.mCityLabel = new Shape(200,40,120,300,this,"","","");
                 this.mCityLabel.setText('City:');
                 this.mShapeArray.push(this.mCityLabel);
   		
-		this.mCityTextBox = new Shape(200,40,400,245,this,"INPUT","","");
+		this.mCityTextBox = new Shape(200,40,220,300,this,"INPUT","","");
                 this.mCityTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mCityTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -79,11 +96,11 @@ Extends: Game,
                 }
 
                 //state         
-                this.mStateLabel = new Shape(200,40,300,300,this,"","","");
+                this.mStateLabel = new Shape(200,40,120,355,this,"","","");
                 this.mStateLabel.setText('State:');
                 this.mShapeArray.push(this.mStateLabel);
 
-                this.mStateTextBox = new Shape(200,40,400,300,this,"INPUT","","");
+                this.mStateTextBox = new Shape(200,40,220,355,this,"INPUT","","");
                 this.mStateTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mStateTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -96,11 +113,11 @@ Extends: Game,
                 }
 
                 //city         
-                this.mZipLabel = new Shape(200,40,300,355,this,"","","");
+                this.mZipLabel = new Shape(200,40,450,80,this,"","","");
                 this.mZipLabel.setText('Zip:');
                 this.mShapeArray.push(this.mZipLabel);
 
-                this.mZipTextBox = new Shape(200,40,400,355,this,"INPUT","","");
+                this.mZipTextBox = new Shape(200,40,550,80,this,"INPUT","","");
                 this.mZipTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mZipTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -113,7 +130,7 @@ Extends: Game,
                 }
 
 		//SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,400,415,this,"BUTTON","","");
+                this.mSignupButton = new Shape(200,50,450,135,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
@@ -155,7 +172,7 @@ Extends: Game,
         {
                 if (e.keyCode == 13)
                 {
-                        APPLICATION.mGame.mPasswordTextBox.mMesh.focus();
+                        APPLICATION.mGame.mPasswordOneTextBox.mMesh.focus();
                 }
         },
 
@@ -163,12 +180,29 @@ Extends: Game,
         {
                 if (e.key == 'enter')
                 {
-                        APPLICATION.mGame.mPasswordTextBox.mMesh.focus();
+                        APPLICATION.mGame.mPasswordOneTextBox.mMesh.focus();
                 }
         },
 
-	//password
- 	passwordTextBoxMicrosoftHit: function(e)
+	//passwordOne
+ 	passwordOneTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mPasswordTwoTextBox.mMesh.focus();
+                }
+        },
+
+        passwordOneTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mPasswordTwoTextBox.mMesh.focus();
+                }
+        },
+
+        //passwordTwo
+        passwordTwoTextBoxMicrosoftHit: function(e)
         {
                 if (e.keyCode == 13)
                 {
@@ -176,7 +210,7 @@ Extends: Game,
                 }
         },
 
-        passwordTextBoxFirefoxHit: function(e)
+        passwordTwoTextBoxFirefoxHit: function(e)
         {
                 if (e.key == 'enter')
                 {
@@ -262,7 +296,7 @@ Extends: Game,
 	sendSignup: function()
 	{
 		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
-		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
+		var password = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
 		var name = APPLICATION.mGame.mNameTextBox.mMesh.value;
 		var city = APPLICATION.mGame.mCityTextBox.mMesh.value;
 		var state = APPLICATION.mGame.mStateTextBox.mMesh.value;

@@ -39,15 +39,9 @@ public function process()
 	$er = pg_last_error();
 	if (strpos($er,'schools_username_key') !== false)
  	{
-    		error_log('UserName exists!');
 		$this->mUserNameExists = 1;
 	}
-	else
-	{
-    		error_log('false');
-	}
-	//error_log(pg_result_error_field($result, PGSQL_DIAG_SQLSTATE));
-
+	
 	//then check login
 
        	$query = "select username from schools where username = '";
