@@ -219,6 +219,39 @@ Extends: Application,
                 xmlhttp.open("POST","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name + "&core_standards_id=" + core_standards_id,true);
                 xmlhttp.send();
 	},
+        
+	signupSchool: function(username,password,name,city,state,zip)
+        {
+		APPLICATION.log('zip:' + zip);
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/school_create.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip,true);
+                xmlhttp.send();
+        },
 
 	checkLogin: function()
 	{

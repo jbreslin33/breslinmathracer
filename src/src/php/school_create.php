@@ -39,7 +39,7 @@ public function process()
 
 		//then check login
 
-       	$query = "select name from schools where name = '";
+       	$query = "select username from schools where username = '";
         $query .= $_SESSION["username"];
         $query .= "';";
 
@@ -51,6 +51,7 @@ public function process()
 
         if ($num > 0)
         {
+		error_log('insert SchoolCreate logged in');
                 $query2 = "select id from schools where username = '";
                 $query2 .= $_SESSION["username"];
                 $query2 .= "' AND password = '";
@@ -65,6 +66,7 @@ public function process()
 
                 if ($num2 > 0)
                 {
+			error_log('SchoolCreate logged in');
                         $_SESSION["LOGGED_IN"] = 1;
                         $this->mBadPassword = 0;
                         $this->mBadUsername = 0;
@@ -76,9 +78,11 @@ public function process()
                         $_SESSION["school_name"] = $_SESSION["name"];
                         $_SESSION["school_id"] = $school_id;
                         $_SESSION["LOGGED_IN"] = 1;
+                        $_SESSION["role"] = 3;
                 }
                 else
                 {
+			error_log('SchoolCreate logged out');
                         $_SESSION["LOGGED_IN"] = 0;
                         $this->mBadPassword = 1;
                         $this->mBadUsername = 0;
@@ -87,6 +91,7 @@ public function process()
         }
         else
         {
+		error_log('SchoolCreate logged out fall thru');
                 $_SESSION["LOGGED_IN"] = 0;
                 $this->mBadUsername = 1;
                 $this->mBadPassword = 0;

@@ -44,67 +44,76 @@ Extends: Game,
                         this.mPasswordTextBox.mMesh.addEvent('keypress',this.passwordTextBoxFirefoxHit);
                 }
 
-		//firstName	
-		this.mFirstNameLabel = new Shape(200,40,300,190,this,"","","");
-                this.mFirstNameLabel.setText('First Name:');
-                this.mShapeArray.push(this.mFirstNameLabel);
+		//Name	
+		this.mNameLabel = new Shape(200,40,300,190,this,"","","");
+                this.mNameLabel.setText('School Name:');
+                this.mShapeArray.push(this.mNameLabel);
 
-  		this.mFirstNameTextBox = new Shape(200,40,400,190,this,"INPUT","","");
-                this.mFirstNameTextBox.mMesh.value = '';
-                this.mShapeArray.push(this.mFirstNameTextBox);
+  		this.mNameTextBox = new Shape(200,40,400,190,this,"INPUT","","");
+                this.mNameTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mFirstNameTextBox.mMesh.attachEvent('onkeypress',this.firstNameTextBoxMicrosoftHit);
+                        this.mNameTextBox.mMesh.attachEvent('onkeypress',this.nameTextBoxMicrosoftHit);
                 }
                 else
                 {
-                        this.mFirstNameTextBox.mMesh.addEvent('keypress',this.firstNameTextBoxFirefoxHit);
+                        this.mNameTextBox.mMesh.addEvent('keypress',this.nameTextBoxFirefoxHit);
                 }
 	
-		//lastName	
-		this.mLastNameLabel = new Shape(200,40,300,245,this,"","","");
-                this.mLastNameLabel.setText('Last Name:');
-                this.mShapeArray.push(this.mLastNameLabel);
+		//city	
+		this.mCityLabel = new Shape(200,40,300,245,this,"","","");
+                this.mCityLabel.setText('City:');
+                this.mShapeArray.push(this.mCityLabel);
   		
-		this.mLastNameTextBox = new Shape(200,40,400,245,this,"INPUT","","");
-                this.mLastNameTextBox.mMesh.value = '';
-                this.mShapeArray.push(this.mLastNameTextBox);
+		this.mCityTextBox = new Shape(200,40,400,245,this,"INPUT","","");
+                this.mCityTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mCityTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mLastNameTextBox.mMesh.attachEvent('onkeypress',this.lastNameTextBoxMicrosoftHit);
+                        this.mCityTextBox.mMesh.attachEvent('onkeypress',this.cityTextBoxMicrosoftHit);
                 }
                 else
                 {
-                        this.mLastNameTextBox.mMesh.addEvent('keypress',this.lastNameTextBoxFirefoxHit);
+                        this.mCityTextBox.mMesh.addEvent('keypress',this.cityTextBoxFirefoxHit);
                 }
 
-		//grade
-		this.mGradeLabel = new Shape(200,40,300,300,this,"","","");
-                this.mGradeLabel.setText('Grade:');
-                this.mShapeArray.push(this.mGradeLabel);
-               
-                this.mStandardSelect = new Shape(200,40,400,300,this,"SELECT","","");
-                this.addShape(this.mStandardSelect);
-                
-             	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-			var option4_oa_a_1 = document.createElement("option");
-			var x = 'k.cc.a.1';
-                	option4_oa_a_1.value = x;  
-                	option4_oa_a_1.text = 'k.cc.a.1';   
-                	this.mStandardSelect.mMesh.add(option4_oa_a_1);
-		}
-		else
-		{
-			var option4_oa_a_1 = document.createElement("option");
-			var x = 'k.cc.a.1';
-                	option4_oa_a_1.value = x;  
-                	option4_oa_a_1.text = 'k.cc.a.1';   
-                	this.mStandardSelect.mMesh.appendChild(option4_oa_a_1);
-		}
-		
+                //state         
+                this.mStateLabel = new Shape(200,40,300,300,this,"","","");
+                this.mStateLabel.setText('State:');
+                this.mShapeArray.push(this.mStateLabel);
+
+                this.mStateTextBox = new Shape(200,40,400,300,this,"INPUT","","");
+                this.mStateTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mStateTextBox);
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mStateTextBox.mMesh.attachEvent('onkeypress',this.stateTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mStateTextBox.mMesh.addEvent('keypress',this.stateTextBoxFirefoxHit);
+                }
+
+                //city         
+                this.mZipLabel = new Shape(200,40,300,355,this,"","","");
+                this.mZipLabel.setText('Zip:');
+                this.mShapeArray.push(this.mZipLabel);
+
+                this.mZipTextBox = new Shape(200,40,400,355,this,"INPUT","","");
+                this.mZipTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mZipTextBox);
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mZipTextBox.mMesh.attachEvent('onkeypress',this.zipTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mZipTextBox.mMesh.addEvent('keypress',this.zipTextBoxFirefoxHit);
+                }
+
 		//SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,400,360,this,"BUTTON","","");
+                this.mSignupButton = new Shape(200,50,400,415,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
@@ -163,7 +172,7 @@ Extends: Game,
         {
                 if (e.keyCode == 13)
                 {
-                        APPLICATION.mGame.mFirstNameTextBox.mMesh.focus();
+                        APPLICATION.mGame.mNameTextBox.mMesh.focus();
                 }
         },
 
@@ -171,29 +180,65 @@ Extends: Game,
         {
                 if (e.key == 'enter')
                 {
-                        APPLICATION.mGame.mFirstNameTextBox.mMesh.focus();
+                        APPLICATION.mGame.mNameTextBox.mMesh.focus();
                 }
         },
 
-	//firstName
-        firstNameTextBoxMicrosoftHit: function(e)
+	//name
+        nameTextBoxMicrosoftHit: function(e)
         {
                 if (e.keyCode == 13)
                 {
-                        APPLICATION.mGame.mLastNameTextBox.mMesh.focus();
+                        APPLICATION.mGame.mCityTextBox.mMesh.focus();
                 }
         },
 
-        firstNameTextBoxFirefoxHit: function(e)
+        nameTextBoxFirefoxHit: function(e)
         {
                 if (e.key == 'enter')
                 {
-                        APPLICATION.mGame.mLastNameTextBox.mMesh.focus();
+                        APPLICATION.mGame.mCityTextBox.mMesh.focus();
                 }
         },
 
+        //city
+        cityTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mStateTextBox.mMesh.focus();
+                }
+        },
+
+        cityTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mStateTextBox.mMesh.focus();
+                }
+        },
+
+       	//state
+        stateTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mZipTextBox.mMesh.focus();
+                }
+        },
+
+        stateTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mZipTextBox.mMesh.focus();
+                }
+        },
+
+
+
 	//sendSignup 
-        lastNameTextBoxMicrosoftHit: function(e)
+        zipTextBoxMicrosoftHit: function(e)
         {
                 if (e.keyCode == 13)
                 {
@@ -201,7 +246,7 @@ Extends: Game,
                 }
         },
 
-        lastNameTextBoxFirefoxHit: function(e)
+        zipTextBoxFirefoxHit: function(e)
         {
                 if (e.key == 'enter')
                 {
@@ -218,10 +263,11 @@ Extends: Game,
 	{
 		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
 		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
-		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
-		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		var core_standards_id = APPLICATION.mGame.mStandardSelect.mMesh.options[APPLICATION.mGame.mStandardSelect.mMesh.selectedIndex].value;
-		APPLICATION.signup(username,password,first_name,last_name,core_standards_id);
+		var name = APPLICATION.mGame.mNameTextBox.mMesh.value;
+		var city = APPLICATION.mGame.mCityTextBox.mMesh.value;
+		var state = APPLICATION.mGame.mStateTextBox.mMesh.value;
+		var zip = APPLICATION.mGame.mZipTextBox.mMesh.value;
+		APPLICATION.signupSchool(username,password,name,city,state,zip);
 	},
 
 	//goto login screen
