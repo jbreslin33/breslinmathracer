@@ -120,7 +120,7 @@ exit: function(application)
 
 });
 
-var SIGNUP_APPLICATION = new Class(
+var SIGNUP_STUDENT_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -133,7 +133,7 @@ enter: function(application)
         application.mLoggedIn = false;
         if (application.mStateLogs)
         {
-                application.log('APPLICATION::SIGNUP_APPLICATION');
+                application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION');
         }
         application.mRef_id = 'signup';
         if (application.mGame)
@@ -149,7 +149,7 @@ execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::SIGNUP_APPLICATION execute');
+		application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION execute');
 	}
         if (application.mLoggedIn == true)
         {
@@ -161,12 +161,60 @@ exit: function(application)
 {
 	if (application.mStateLogsExit)
 	{
-		application.log('APPLICATION::SIGNUP_APPLICATION exit');
+		application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION exit');
 	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
 }
 
+});
+
+var SIGNUP_SCHOOL_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        application.mLoggedIn = false;
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION');
+        }
+        application.mRef_id = 'signup';
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "signup";
+        application.mGame = new SignupSchool(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION execute');
+        }
+        if (application.mLoggedIn == true)
+        {
+                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+        if (application.mStateLogsExit)
+        {
+                application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION exit');
+        }
+        //lets show homeselect
+        APPLICATION.mHud.mHome.setVisibility(true);
+}
 });
 
 var NORMAL_CORE_APPLICATION = new Class(

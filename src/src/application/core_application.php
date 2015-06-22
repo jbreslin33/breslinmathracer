@@ -67,7 +67,8 @@ Extends: Application,
                 this.mGLOBAL_CORE_APPLICATION                = new GLOBAL_CORE_APPLICATION       (this);
                 this.mINIT_CORE_APPLICATION                  = new INIT_CORE_APPLICATION         (this);
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
-                this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
+                this.mSIGNUP_STUDENT_APPLICATION                  = new SIGNUP_STUDENT_APPLICATION         (this);
+                this.mSIGNUP_SCHOOL_APPLICATION                  = new SIGNUP_SCHOOL_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
                 this.mREPORT_CORE_APPLICATION                = new REPORT_CORE_APPLICATION       (this);
                 this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);

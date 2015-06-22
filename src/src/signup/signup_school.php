@@ -1,6 +1,6 @@
 /* GAME: */
 
-var signup = new Class(
+var SignupSchool = new Class(
 {
 
 Extends: Game,
@@ -114,7 +114,7 @@ Extends: Game,
                         this.mSignupButton.mMesh.addEvent('click',this.hitSignupButton);
                 }
                 this.mShapeArray.push(this.mSignupButton);
-                this.mSignupButton.mMesh.innerHTML = 'Create Student';
+                this.mSignupButton.mMesh.innerHTML = 'Create School';
 
 
                 //LOGIN BUTTON

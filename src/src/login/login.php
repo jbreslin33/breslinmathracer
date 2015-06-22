@@ -76,7 +76,7 @@ Extends: Game,
                         this.mSignupButton.mMesh.addEvent('click',this.hitSignupButton);
                 }
                 this.mShapeArray.push(this.mSignupButton);
-                this.mSignupButton.mMesh.innerHTML = 'Create an account';
+                this.mSignupButton.mMesh.innerHTML = 'Create Student';
 
                 //SCHOOL BUTTON
                 this.mSchoolButton = new Shape(200,50,650,300,this,"BUTTON","","");
@@ -89,7 +89,7 @@ Extends: Game,
                         this.mSchoolButton.mMesh.addEvent('click',this.hitSchoolButton);
                 }
                 this.mShapeArray.push(this.mSchoolButton);
-                this.mSchoolButton.mMesh.innerHTML = 'School Page';
+                this.mSchoolButton.mMesh.innerHTML = 'Create School';
 	},
 
         //***tab to next
@@ -151,11 +151,11 @@ Extends: Game,
 
 	hitSignupButton: function()
         {
-		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_APPLICATION);
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_STUDENT_APPLICATION);
         },
 
 	hitSchoolButton: function()
         {
-		window.location.replace("/web/login/school_login.php");
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
         }
 });
