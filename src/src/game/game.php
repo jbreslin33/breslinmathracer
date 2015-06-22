@@ -43,6 +43,12 @@ var Game = new Class(
                
                 this.mStateMachine.setGlobalState(this.mGLOBALGAME);
                 this.mStateMachine.changeState(this.mINITGAME);
+
+		/*************** SERVER LABEL **********/
+                this.mServerLabel = new Shape(200,50,400,50,this,"","","");
+                this.mServerLabel.setText('');
+                this.mShapeArray.push(this.mServerLabel);
+
         },
 
 	/******************** ADMIN *************/	

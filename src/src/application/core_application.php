@@ -25,6 +25,7 @@ Extends: Application,
 		this.SCROLL = 112;
 		this.FULL_TEACHER = 113;
 		this.FULL_SCHOOL = 114;
+		this.SCHOOL_USERNAME_TAKEN = 115;
 
 		//personal info
 		this.mUsername = '';
@@ -111,6 +112,14 @@ Extends: Application,
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
 			}
+                    	if (codeNumber == APPLICATION.SCHOOL_USERNAME_TAKEN)
+                        {
+                                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
+                                var v = 'USERNAME TAKEN';
+                                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                                this.mSent = false;
+                        }
+
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
 				APPLICATION.log('TIMED_OUT');		

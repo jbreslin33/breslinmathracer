@@ -9,8 +9,8 @@ class SchoolCreate
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mBadUsername = 0;
-	$this->mBadPassword = 0;
+	$this->mUsernameExists = 0;
+	$this->mNamExists = 0;
 
 	$this->process();
 }
@@ -35,9 +35,20 @@ public function process()
         $query .= "');";
         
 	//get db result
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query); // or die('Could not connect: ' . pg_last_error());
+	$er = pg_last_error();
+	if (strpos($er,'schools_username_key') !== false)
+ 	{
+    		error_log('UserName exists!');
+		$this->mUserNameExists = 1;
+	}
+	else
+	{
+    		error_log('false');
+	}
+	//error_log(pg_result_error_field($result, PGSQL_DIAG_SQLSTATE));
 
-		//then check login
+	//then check login
 
        	$query = "select username from schools where username = '";
         $query .= $_SESSION["username"];
@@ -51,7 +62,6 @@ public function process()
 
         if ($num > 0)
         {
-		error_log('insert SchoolCreate logged in');
                 $query2 = "select id from schools where username = '";
                 $query2 .= $_SESSION["username"];
                 $query2 .= "' AND password = '";
@@ -66,7 +76,6 @@ public function process()
 
                 if ($num2 > 0)
                 {
-			error_log('SchoolCreate logged in');
                         $_SESSION["LOGGED_IN"] = 1;
                         $this->mBadPassword = 0;
                         $this->mBadUsername = 0;
@@ -82,7 +91,6 @@ public function process()
                 }
                 else
                 {
-			error_log('SchoolCreate logged out');
                         $_SESSION["LOGGED_IN"] = 0;
                         $this->mBadPassword = 1;
                         $this->mBadUsername = 0;
@@ -91,7 +99,6 @@ public function process()
         }
         else
         {
-		error_log('SchoolCreate logged out fall thru');
                 $_SESSION["LOGGED_IN"] = 0;
                 $this->mBadUsername = 1;
                 $this->mBadPassword = 0;
