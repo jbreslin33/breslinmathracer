@@ -200,10 +200,23 @@ execute: function(application)
         {
                 application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION execute');
         }
-        if (application.mLoggedIn == true)
+ 
+	if (application.mLoggedIn == true)
         {
-                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+                if (application.mRole == 1)
+                {
+                        application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+                }
+                else if (application.mRole == 2)
+                {
+                        application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+                }
+                else if (application.mRole == 3)
+                {
+                        application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+                }
         }
+
 },
 
 exit: function(application)

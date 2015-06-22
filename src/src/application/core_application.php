@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
