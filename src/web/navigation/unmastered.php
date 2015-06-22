@@ -8,15 +8,16 @@
 </head>
 
 <body>
-<p><b> School Main Menu </p></b>
+<p><b> Leader Boards </p></b>
 <?php
 
 session_start();
 ?>
 
 <ul>
+<li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/navigation/reports.php">Reports</a></li>
+<li><a href="/web/stats/statsreports.php">Unmastered Question Types</a></li>
 </ul>
 
 </body>
