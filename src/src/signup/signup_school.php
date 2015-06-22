@@ -112,7 +112,7 @@ Extends: Game,
                         this.mStateTextBox.mMesh.addEvent('keypress',this.stateTextBoxFirefoxHit);
                 }
 
-                //city         
+                //zip         
                 this.mZipLabel = new Shape(200,40,450,80,this,"","","");
                 this.mZipLabel.setText('Zip:');
                 this.mShapeArray.push(this.mZipLabel);
@@ -129,8 +129,60 @@ Extends: Game,
                         this.mZipTextBox.mMesh.addEvent('keypress',this.zipTextBoxFirefoxHit);
                 }
 
+                //email one 
+                this.mEmailOneLabel = new Shape(200,40,450,135,this,"","","");
+                this.mEmailOneLabel.setText('Email:');
+                this.mShapeArray.push(this.mEmailOneLabel);
+
+                this.mEmailOneTextBox = new Shape(200,40,550,135,this,"INPUT","","");
+                this.mEmailOneTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mEmailOneTextBox);
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mEmailOneTextBox.mMesh.attachEvent('onkeypress',this.emailOneTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mEmailOneTextBox.mMesh.addEvent('keypress',this.emailOneTextBoxFirefoxHit);
+                }
+
+                //email two
+                this.mEmailTwoLabel = new Shape(200,40,450,190,this,"","","");
+                this.mEmailTwoLabel.setText('Email:');
+                this.mShapeArray.push(this.mEmailTwoLabel);
+
+                this.mEmailTwoTextBox = new Shape(200,40,550,190,this,"INPUT","","");
+                this.mEmailTwoTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mEmailTwoTextBox);
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mEmailTwoTextBox.mMesh.attachEvent('onkeypress',this.emailTwoTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mEmailTwoTextBox.mMesh.addEvent('keypress',this.emailTwoTextBoxFirefoxHit);
+                }
+
+                //code
+                this.mCodeLabel = new Shape(300,40,500,245,this,"","","");
+                this.mCodeLabel.setText('School Signup Password:');
+                this.mShapeArray.push(this.mCodeLabel);
+
+                this.mCodeTextBox = new Shape(80,40,610,245,this,"INPUT","","");
+                this.mCodeTextBox.mMesh.value = '';
+                this.mShapeArray.push(this.mCodeTextBox);
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mCodeTextBox.mMesh.attachEvent('onkeypress',this.codeTextBoxMicrosoftHit);
+                }
+                else
+                {
+                        this.mCodeTextBox.mMesh.addEvent('keypress',this.codeTextBoxFirefoxHit);
+                }
+
+
 		//SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,450,135,this,"BUTTON","","");
+                this.mSignupButton = new Shape(200,50,450,300,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
@@ -144,7 +196,7 @@ Extends: Game,
 
 
                 //LOGIN BUTTON
-                this.mLoginButton = new Shape(200,50,650,360,this,"BUTTON","","");
+                this.mLoginButton = new Shape(100,50,700,360,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mLoginButton.mMesh.attachEvent("onclick",this.hitLoginButton);
@@ -269,10 +321,59 @@ Extends: Game,
                 }
         },
 
+        //zip
+        zipTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mEmailOneTextBox.mMesh.focus();
+                }
+        },
 
+        zipTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mEmailOneTextBox.mMesh.focus();
+                }
+        },
+
+        //emailOne
+        emailOneTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mEmailTwoTextBox.mMesh.focus();
+                }
+        },
+
+        emailOneTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mEmailTwoTextBox.mMesh.focus();
+                }
+        },
+
+        //emailTwo
+        emailTwoTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mCodeTextBox.mMesh.focus();
+                }
+        },
+
+        emailTwoTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mCodeTextBox.mMesh.focus();
+                }
+        },
 
 	//sendSignup 
-        zipTextBoxMicrosoftHit: function(e)
+        codTextBoxMicrosoftHit: function(e)
         {
                 if (e.keyCode == 13)
                 {
@@ -280,7 +381,7 @@ Extends: Game,
                 }
         },
 
-        zipTextBoxFirefoxHit: function(e)
+        codeTextBoxFirefoxHit: function(e)
         {
                 if (e.key == 'enter')
                 {
