@@ -68,6 +68,7 @@ Extends: Application,
                 this.mGLOBAL_CORE_APPLICATION                = new GLOBAL_CORE_APPLICATION       (this);
                 this.mINIT_CORE_APPLICATION                  = new INIT_CORE_APPLICATION         (this);
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
+                this.mSCHOOL_LOGIN_APPLICATION                  = new SCHOOL_LOGIN_APPLICATION         (this);
                 this.mSIGNUP_STUDENT_APPLICATION                  = new SIGNUP_STUDENT_APPLICATION         (this);
                 this.mSIGNUP_SCHOOL_APPLICATION                  = new SIGNUP_SCHOOL_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
@@ -333,6 +334,48 @@ Extends: Application,
                 xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
+
+        schoolLogin: function(username,password)
+        {
+                //gets called right away
+                APPLICATION.mGame.mLoginButton.setVisibility(false);
+                APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+                APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+                APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+                APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
+                var v = 'PLEASE WAIT LOGGING IN';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                                //takes a bit....
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/school_login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.send();
+        },
+
 
         getScroll: function()
         {

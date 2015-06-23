@@ -1,6 +1,6 @@
 /* GAME: */
 
-var login = new Class(
+var SchoolLogin = new Class(
 {
 
 Extends: Game,
@@ -65,18 +65,18 @@ Extends: Game,
                 this.mShapeArray.push(this.mLoginButton);
                 this.mLoginButton.mMesh.innerHTML = 'SIGN IN';
 
-                //SCHOOL LOGIN BUTTON
-                this.mSchoolLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
+                //STUDENT LOGIN BUTTON
+                this.mStudentLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mSchoolLoginButton.mMesh.attachEvent("onclick",this.hitSchoolLoginButton);
+                        this.mStudentLoginButton.mMesh.attachEvent("onclick",this.hitStudentLoginButton);
                 }
                 else
                 {
-                        this.mSchoolLoginButton.mMesh.addEvent('click',this.hitSchoolLoginButton);
+                        this.mStudentLoginButton.mMesh.addEvent('click',this.hitStudentLoginButton);
                 }
-                this.mShapeArray.push(this.mSchoolLoginButton);
-                this.mSchoolLoginButton.mMesh.innerHTML = 'School Login';
+                this.mShapeArray.push(this.mStudentLoginButton);
+                this.mStudentLoginButton.mMesh.innerHTML = 'Student Login';
 
                 //SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,650,360,this,"BUTTON","","");
@@ -154,7 +154,7 @@ Extends: Game,
                 	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
                 	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 
-                	APPLICATION.login(username,password);
+                	APPLICATION.schoolLogin(username,password);
 		}
 		else
 		{
@@ -171,9 +171,10 @@ Extends: Game,
         {
 		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
         },
-
-	hitSchoolLoginButton: function()
+       
+	hitStudentLoginButton: function()
         {
-		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSCHOOL_LOGIN_APPLICATION);
+                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
         }
+
 });

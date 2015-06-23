@@ -92,18 +92,60 @@ execute: function(application)
 	}
 	if (application.mLoggedIn == true)
 	{
-		if (application.mRole == 1)
-		{
-			application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-		}
-		else if (application.mRole == 2)
-		{
-			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
-		}
-		else if (application.mRole == 3)
-		{
-			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
-		}
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_APPLICATION exit');
+	}
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
+}
+
+});
+
+var SCHOOL_LOGIN_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	application.mLoggedIn = false;
+
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::SCHOOL_LOGIN_APPLICATION');
+	}
+	application.mRef_id = 'login';
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "login";
+        application.mGame = new SchoolLogin(APPLICATION);
+ 
+	//lets hide homeselect
+       	APPLICATION.mHud.mHome.setVisibility(false);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::SCHOOL_LOGIN_APPLICATION execute');
+	}
+	if (application.mLoggedIn == true)
+	{
+		application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
 	}
 	
 },
@@ -112,7 +154,7 @@ exit: function(application)
 {
 	if (application.mStateLogsExit)
 	{
-		application.log('APPLICATION::LOGIN_APPLICATION exit');
+		application.log('APPLICATION::SCHOOL_LOGIN_APPLICATION exit');
 	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
