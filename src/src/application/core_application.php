@@ -229,9 +229,8 @@ Extends: Application,
                 xmlhttp.send();
 	},
         
-	signupSchool: function(username,password,name,city,state,zip)
+	signupSchool: function(username,password,name,city,state,zip,email,student_code)
         {
-		APPLICATION.log('zip:' + zip);
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -258,7 +257,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/school_create.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip,true);
+                xmlhttp.open("POST","../../web/php/school_create.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },
 

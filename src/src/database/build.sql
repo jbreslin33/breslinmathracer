@@ -142,7 +142,9 @@ CREATE TABLE schools (
         city text NOT NULL,
         state text NOT NULL,
         zip text NOT NULL,
-        password text,
+        password text NOT NULL,
+        email text NOT NULL,
+        student_code text NOT NULL,
         UNIQUE (name,city,state,zip),
 	PRIMARY KEY (id)
 );

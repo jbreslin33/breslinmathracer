@@ -8,8 +8,8 @@ $_SESSION["name"] = $_GET["name"];
 $_SESSION["city"] = $_GET["city"];
 $_SESSION["state"] = $_GET["state"];
 $_SESSION["zip"] = $_GET["zip"];
-
-$zip = $_SESSION["zip"];
+$_SESSION["email"] = $_GET["email"];
+$_SESSION["student_code"] = $_GET["student_code"];
 
 $create = new SchoolCreate();
 

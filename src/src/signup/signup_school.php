@@ -402,7 +402,9 @@ Extends: Game,
 		var city = APPLICATION.mGame.mCityTextBox.mMesh.value;
 		var state = APPLICATION.mGame.mStateTextBox.mMesh.value;
 		var zip = APPLICATION.mGame.mZipTextBox.mMesh.value;
-		APPLICATION.signupSchool(username,password,name,city,state,zip);
+		var email = APPLICATION.mGame.mEmailOneTextBox.mMesh.value;
+		var student_code = APPLICATION.mGame.mCodeTextBox.mMesh.value;
+		APPLICATION.signupSchool(username,password,name,city,state,zip,email,student_code);
 	},
 
 	//goto login screen

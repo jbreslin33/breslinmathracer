@@ -20,7 +20,7 @@ public function process()
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
-        $query = "insert into schools (username,password,name,city,state,zip) values ('";
+        $query = "insert into schools (username,password,name,city,state,zip,email,student_code) values ('";
         $query .= $_SESSION["username"];
 	$query .= "','";
 	$query .= $_SESSION["password"];
@@ -32,6 +32,10 @@ public function process()
         $query .= $_SESSION["state"];
 	$query .= "','";
         $query .= $_SESSION["zip"];
+	$query .= "','";
+        $query .= $_SESSION["email"];
+	$query .= "','";
+        $query .= $_SESSION["student_code"];
         $query .= "');";
         
 	//get db result
