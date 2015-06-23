@@ -18,7 +18,7 @@ initialize: function(sheet)
 	this.a = 9;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 19 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 19 by putting 10 squares in the rectangle at left and 9 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -120,7 +120,7 @@ initialize: function(sheet)
 	this.a = 8;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 18 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 18 by putting 10 squares in the rectangle at left and 8 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -222,7 +222,7 @@ initialize: function(sheet)
 	this.a = 7;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 17 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 17 by putting 10 squares in the rectangle at left and 7 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -324,7 +324,7 @@ initialize: function(sheet)
 	this.a = 6;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 16 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 16 by putting 10 squares in the rectangle at left and 6 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -426,7 +426,7 @@ initialize: function(sheet)
 	this.a = 5;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 15 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 15 by putting 10 squares in the rectangle at left and 5 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -528,7 +528,7 @@ initialize: function(sheet)
 	this.a = 4;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 14 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 14 by putting 10 squares in the rectangle at left and 4 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -630,7 +630,7 @@ initialize: function(sheet)
 	this.a = 3;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 13 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 13 by putting 10 squares in the rectangle at left and 3 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -732,7 +732,7 @@ initialize: function(sheet)
 	this.a = 2;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 12 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 12 by putting 10 squares in the rectangle at left and 2 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
