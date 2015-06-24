@@ -44,11 +44,15 @@ var Game = new Class(
                 this.mStateMachine.setGlobalState(this.mGLOBALGAME);
                 this.mStateMachine.changeState(this.mINITGAME);
 
-		/*************** SERVER LABEL **********/
+                /*************** Title **********/
+                this.mTitleLabel = new Shape(200,50,125,50,this,"","","");
+                this.mTitleLabel.setText('');
+                this.mShapeArray.push(this.mTitleLabel);
+
+                /*************** Server **********/
                 this.mServerLabel = new Shape(200,50,400,50,this,"","","");
                 this.mServerLabel.setText('');
                 this.mShapeArray.push(this.mServerLabel);
-
         },
 
 	/******************** ADMIN *************/	
