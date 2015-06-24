@@ -79,6 +79,10 @@ enter: function(application)
         }
         application.mGameName = "login";
         application.mGame = new login(APPLICATION);
+	application.mLoggedIn = false;
+	application.mFullLogin = false;
+
+	application.mResponseArray = [];
  
 	//lets hide homeselect
        	APPLICATION.mHud.mHome.setVisibility(false);
@@ -122,6 +126,8 @@ enter: function(application)
 	{
 		application.log('APPLICATION::LOGIN_WAIT_APPLICATION');
 	}
+	application.mStateEnterTime = APPLICATION.mGame.mTimeSinceEpoch; 
+	application.mSent = false;
 
         //gets called right away
         APPLICATION.mGame.mLoginButton.setVisibility(false);
@@ -140,24 +146,52 @@ execute: function(application)
 		application.log('APPLICATION::LOGIN_WAIT_APPLICATION execute');
 	}
 
-	//3 things can happen when you have sent a login request
-	if (application.mLoggedIn == true)
+	//4 things can happen when you have sent a login request
+	
+	if (application.mFullLogin == true) //we have some data to read
 	{
+		APPLICATION.log('full in exe');
+		//lets sniff packet
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+		APPLICATION.mFullLogin = false;
+	}
+	
+	else if (application.mLoggedIn == true)
+	{
+        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+               	
+		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 	}
-	if (application.mBadUsername == true)
+
+	else if (application.mBadUsername == true)
 	{
 		application.mBadUsername = false;
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
                 var v = 'BAD USERNAME';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 	}
-	if (application.mBadPassword == true)
+	else if (application.mBadPassword == true)
 	{
 		application.mBadPassword = false;
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
                 var v = 'BAD PASSWORD';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+        
+	else if (APPLICATION.mGame.mTimeSinceEpoch > parseInt(application.mStateEnterTime + application.mStateThresholdTime))
+	{
+                var v = 'LOGIN TIMED OUT';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
 	}
 },
 
@@ -169,7 +203,8 @@ exit: function(application)
 	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
-	APPLICATION.mSent = false;
+	application.mBadPassword = false;
+	application.mBadUsername = false;
 }
 
 });

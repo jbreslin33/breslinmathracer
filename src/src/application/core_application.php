@@ -26,6 +26,8 @@ Extends: Application,
 		this.FULL_TEACHER = 113;
 		this.FULL_SCHOOL = 114;
 		this.SCHOOL_USERNAME_TAKEN = 115;
+		this.FULL_NORMAL = 116;
+		this.FULL_LOGIN = 117;
 
 		//personal info
 		this.mUsername = '';
@@ -33,16 +35,16 @@ Extends: Application,
 		this.mLastName = '';
 
 		/*********** LOGIN *******************
+		this.mFullLogin = false;
 		this.mLoggedIn = false;
 		this.mBadUsername = false;
 		this.mBadPassword = false;
 
 		/*********** LEVEL *******************
 		this.mRef_id = 'login';
-		this.mLevel = 0;
-		this.mLevels = 0;
 		this.mProgression = 0;
 		this.mStandard = '';
+		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';
 		this.mItemAttemptsID = 0;
@@ -58,8 +60,11 @@ Extends: Application,
 		this.mGotoTimesTables = false;
 		this.mLeavePractice = false;
 		this.mWaitForReturn = false;
+		
+		/*********** TIMERS *******************/
+		this.mStateThresholdTime = 30000; 
+		this.mStateEnterTime = 0; 
 
-		this.mWaitingOnLevelData = false;
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -92,8 +97,8 @@ Extends: Application,
 	
 	parseResponse: function(response)
 	{
-                var responseArray = response.split(",");
-                var code = responseArray[0];
+                this.mResponseArray = response.split(",");
+                var code = this.mResponseArray[0];
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
@@ -125,28 +130,54 @@ Extends: Application,
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
 			}
+
         		if (codeNumber == APPLICATION.FULL)
                 	{
-                		APPLICATION.mRef_id = responseArray[1];
+				APPLICATION.log('FULL');
+                		APPLICATION.mRef_id = this.mResponseArray[1];
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                        	APPLICATION.mLoggedIn = responseArray[2];
-                       		APPLICATION.mUsername = responseArray[3];
-                        	APPLICATION.mFirstName = responseArray[4];
-                        	APPLICATION.mLastName = responseArray[5];
-                        	APPLICATION.mRawData = responseArray[6];
-                        	APPLICATION.mRole = responseArray[7];
+                        	APPLICATION.mLoggedIn = this.mResponseArray[2];
+                       		APPLICATION.mUsername = this.mResponseArray[3];
+                        	APPLICATION.mFirstName = this.mResponseArray[4];
+                        	APPLICATION.mLastName = this.mResponseArray[5];
+                        	APPLICATION.mRawData = this.mResponseArray[6];
+                        	APPLICATION.mRole = this.mResponseArray[7];
 		
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
 				this.mSent = false;		
                		}
+
+                        if (codeNumber == APPLICATION.FULL_LOGIN)
+                        {
+				APPLICATION.log('FULL LOGIN CODE');
+				APPLICATION.mFullLogin = true;
+                        }
+
+                        if (codeNumber == APPLICATION.FULL_NORMAL)
+                        {
+				APPLICATION.log('FULL_NORMAL');
+                                APPLICATION.mRef_id = this.mResponseArray[1];
+                                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                                APPLICATION.mLoggedIn = this.mResponseArray[2];
+                                APPLICATION.mUsername = this.mResponseArray[3];
+                                APPLICATION.mFirstName = this.mResponseArray[4];
+                                APPLICATION.mLastName = this.mResponseArray[5];
+                                APPLICATION.mRawData = this.mResponseArray[6];
+                                APPLICATION.mRole = this.mResponseArray[7];
+
+                                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+                                APPLICATION.mWaitForReturn = false;
+                                this.mSent = false;
+                        }
                    
 			if (codeNumber == APPLICATION.FULL_SCHOOL)
                         {
-                                APPLICATION.mLoggedIn = responseArray[1];
-                                APPLICATION.mUsername = responseArray[2];
-                                APPLICATION.mRole = responseArray[3];
+                                APPLICATION.mLoggedIn = this.mResponseArray[1];
+                                APPLICATION.mUsername = this.mResponseArray[2];
+                                APPLICATION.mRole = this.mResponseArray[3];
                                 APPLICATION.mWaitForReturn = false;
                                 this.mSent = false;
 
@@ -162,22 +193,22 @@ Extends: Application,
 
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mStandardDescription = responseArray[1];
-                                APPLICATION.mGame.mSheet.mItem.mStandardInfo.setText(responseArray[1]);
+                                APPLICATION.mGame.mSheet.mItem.mStandardDescription = this.mResponseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mStandardInfo.setText(this.mResponseArray[1]);
                         }
 			if (codeNumber == APPLICATION.ITEM_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mItemDescription = responseArray[1];
-                                APPLICATION.mGame.mSheet.mItem.mItemInfo.setText(responseArray[1]);
+                                APPLICATION.mGame.mSheet.mItem.mItemDescription = this.mResponseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mItemInfo.setText(this.mResponseArray[1]);
                         }
 			if (codeNumber == APPLICATION.PRACTICE_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mPracticeDescription = this.mResponseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
 			if (codeNumber == APPLICATION.CORE_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mCoreDescription = responseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mCoreDescription = this.mResponseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
@@ -189,7 +220,7 @@ Extends: Application,
                         }
 			if (codeNumber == APPLICATION.SCROLL)
 			{
-				APPLICATION.mHud.setScroll(responseArray[1]); 
+				APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
 			}
 		}
 	},
