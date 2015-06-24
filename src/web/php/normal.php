@@ -15,5 +15,5 @@ else
 
 }
 
-include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string_normal.php");
+include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_string_normal.php");
 ?>
