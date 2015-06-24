@@ -90,9 +90,9 @@ execute: function(application)
 	{
 		application.log('APPLICATION::LOGIN_APPLICATION execute');
 	}
-	if (application.mLoggedIn == true)
+	if (application.mSent == true)
 	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mLOGIN_WAIT_APPLICATION);
 	}
 },
 
@@ -104,6 +104,72 @@ exit: function(application)
 	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
+}
+
+});
+
+var LOGIN_WAIT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::LOGIN_WAIT_APPLICATION');
+	}
+
+        //gets called right away
+        APPLICATION.mGame.mLoginButton.setVisibility(false);
+        APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+        APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+        APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+        APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
+        var v = 'PLEASE WAIT LOGGING IN';
+        APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LOGIN_WAIT_APPLICATION execute');
+	}
+
+	//3 things can happen when you have sent a login request
+	if (application.mLoggedIn == true)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mBadUsername == true)
+	{
+		application.mBadUsername = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+                var v = 'BAD USERNAME';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+	if (application.mBadPassword == true)
+	{
+		application.mBadPassword = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+                var v = 'BAD PASSWORD';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+},
+
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_WAIT_APPLICATION exit');
+	}
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
+	APPLICATION.mSent = false;
 }
 
 });
@@ -296,12 +362,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION execute');
 	}
-	//you might not have a game if this your first time or you just went to a level that requires new game
-	if (application.mLevelCompleted)
-	{
-		application.mCoreStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
-	}
-	
 	if (application.mEvaluationFailed)
 	{
 		application.mCoreStateMachine.changeState(application.mREMEDIATE_APPLICATION);

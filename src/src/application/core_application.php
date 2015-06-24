@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -34,6 +34,8 @@ Extends: Application,
 
 		/*********** LOGIN *******************
 		this.mLoggedIn = false;
+		this.mBadUsername = false;
+		this.mBadPassword = false;
 
 		/*********** LEVEL *******************
 		this.mRef_id = 'login';
@@ -68,6 +70,7 @@ Extends: Application,
                 this.mGLOBAL_CORE_APPLICATION                = new GLOBAL_CORE_APPLICATION       (this);
                 this.mINIT_CORE_APPLICATION                  = new INIT_CORE_APPLICATION         (this);
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
+                this.mLOGIN_WAIT_APPLICATION                  = new LOGIN_WAIT_APPLICATION         (this);
                 this.mSCHOOL_LOGIN_APPLICATION                  = new SCHOOL_LOGIN_APPLICATION         (this);
                 this.mSIGNUP_STUDENT_APPLICATION                  = new SIGNUP_STUDENT_APPLICATION         (this);
                 this.mSIGNUP_SCHOOL_APPLICATION                  = new SIGNUP_SCHOOL_APPLICATION         (this);
@@ -100,18 +103,11 @@ Extends: Application,
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
- 				APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
-				var v = 'BAD USERNAME';
-				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
-				this.mSent = false;		
+				this.mBadUsername = true;
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
-				APPLICATION.log('BAD_PASSWORD');		
- 				APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
-				var v = 'BAD PASSWORD';
-				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
-				this.mSent = false;		
+				this.mBadPassword = true;
 			}
                     	if (codeNumber == APPLICATION.SCHOOL_USERNAME_TAKEN)
                         {
@@ -296,14 +292,8 @@ Extends: Application,
 
         login: function(username,password)
         {
-		//gets called right away
-		APPLICATION.mGame.mLoginButton.setVisibility(false);
-		APPLICATION.mGame.mUsernameLabel.setVisibility(false);
-		APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
-		APPLICATION.mGame.mPasswordLabel.setVisibility(false);
-		APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
-		var v = 'PLEASE WAIT LOGGING IN';
-		APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		APPLICATION.mSent = true;
+
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
