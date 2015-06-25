@@ -9,6 +9,9 @@ Extends: Game,
 	{
        		this.parent(application);
 
+                /*************** Title **********/
+                this.mTitleLabel.setText('Create School');
+
 		//username	
 		this.mUsernameLabel = new Shape(200,40,120,80,this,"","","");
                 this.mUsernameLabel.setText('Username:');
