@@ -78,7 +78,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGameName = "login";
-        application.mGame = new login(APPLICATION);
+        application.mGame = new LoginStudent(APPLICATION);
 	application.mLoggedIn = false;
 	application.mFullLogin = false;
 
@@ -329,7 +329,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGameName = "login";
-        application.mGame = new SchoolLogin(APPLICATION);
+        application.mGame = new LoginSchool(APPLICATION);
 	
 	application.mLoggedIn = false;
 	application.mFullLogin = false;
@@ -391,7 +391,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGameName = "signup";
-        application.mGame = new signup(APPLICATION);
+        application.mGame = new SignupStudent(APPLICATION);
 },
 
 execute: function(application)

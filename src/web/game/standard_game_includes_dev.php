@@ -14,9 +14,9 @@
 <script type="text/javascript" src="/src/application/states/core_application_states.php"></script>
 
 <script type="text/javascript" src="/src/game/game.php"></script>
-<script type="text/javascript" src="/src/login/login.php"></script>
-<script type="text/javascript" src="/src/login/school_login.php"></script>
-<script type="text/javascript" src="/src/signup/signup.php"></script>
+<script type="text/javascript" src="/src/login/login_student.php"></script>
+<script type="text/javascript" src="/src/login/login_school.php"></script>
+<script type="text/javascript" src="/src/signup/signup_student.php"></script>
 <script type="text/javascript" src="/src/signup/signup_school.php"></script>
 <script type="text/javascript" src="/src/core/math/game_sheet.php"></script>
 <script type="text/javascript" src="/src/game/states/states.php"></script>

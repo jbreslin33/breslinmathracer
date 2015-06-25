@@ -1,6 +1,6 @@
 /* GAME: */
 
-var signup = new Class(
+var SignupStudent = new Class(
 {
 
 Extends: Game,
@@ -227,7 +227,7 @@ Extends: Game,
 	//goto login screen
         hitLoginButton: function()
         {
-		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
         },
         hitSchoolButton: function()
         {

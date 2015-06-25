@@ -1,6 +1,5 @@
-/* GAME: */
 
-var SchoolLogin = new Class(
+var LoginStudent = new Class(
 {
 
 Extends: Game,
@@ -8,11 +7,11 @@ Extends: Game,
 	initialize: function(application)
 	{
        		this.parent(application);
-
-                /*************** Title **********/
-                this.mTitleLabel.setText('School Login');
 		
 		this.mSent = false;
+
+                /*************** Title **********/
+                this.mTitleLabel.setText('Student Login');
 
 		this.mUsernameLabel = new Shape(200,50,300,100,this,"","","");
                 this.mUsernameLabel.setText('Username:');
@@ -63,18 +62,18 @@ Extends: Game,
                 this.mShapeArray.push(this.mLoginButton);
                 this.mLoginButton.mMesh.innerHTML = 'SIGN IN';
 
-                //STUDENT LOGIN BUTTON
-                this.mStudentLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
+                //SCHOOL LOGIN BUTTON
+                this.mSchoolLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mStudentLoginButton.mMesh.attachEvent("onclick",this.hitStudentLoginButton);
+                        this.mSchoolLoginButton.mMesh.attachEvent("onclick",this.hitSchoolLoginButton);
                 }
                 else
                 {
-                        this.mStudentLoginButton.mMesh.addEvent('click',this.hitStudentLoginButton);
+                        this.mSchoolLoginButton.mMesh.addEvent('click',this.hitSchoolLoginButton);
                 }
-                this.mShapeArray.push(this.mStudentLoginButton);
-                this.mStudentLoginButton.mMesh.innerHTML = 'Student Login';
+                this.mShapeArray.push(this.mSchoolLoginButton);
+                this.mSchoolLoginButton.mMesh.innerHTML = 'School Login';
 
                 //SIGNUP BUTTON
                 this.mSignupButton = new Shape(200,50,650,360,this,"BUTTON","","");
@@ -152,7 +151,7 @@ Extends: Game,
                 	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
                 	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 
-                	APPLICATION.schoolLogin(username,password);
+                	APPLICATION.login(username,password);
 		}
 		else
 		{
@@ -169,10 +168,9 @@ Extends: Game,
         {
 		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
         },
-       
-	hitStudentLoginButton: function()
-        {
-                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
-        }
 
+	hitSchoolLoginButton: function()
+        {
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_SCHOOL_APPLICATION);
+        }
 });
