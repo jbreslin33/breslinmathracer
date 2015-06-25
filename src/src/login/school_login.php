@@ -172,7 +172,7 @@ Extends: Game,
        
 	hitStudentLoginButton: function()
         {
-                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
         }
 
 });

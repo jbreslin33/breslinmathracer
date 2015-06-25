@@ -172,6 +172,6 @@ Extends: Game,
 
 	hitSchoolLoginButton: function()
         {
-		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSCHOOL_LOGIN_APPLICATION);
+		APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_SCHOOL_APPLICATION);
         }
 });

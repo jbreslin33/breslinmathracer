@@ -11,23 +11,36 @@ Extends: Application,
 		this.mStateLogsExit = false; 
 
 		//parse codes
-		this.FULL = 101;
+		//login
+		this.TIMED_OUT = 105;
 		this.NOT_LOGGED_IN = 102;
 		this.BAD_USERNAME = 103;
 		this.BAD_PASSWORD = 104;
-		this.TIMED_OUT = 105;
+		this.LOGIN_STUDENT = 117;
+		this.LOGIN_TEACHER = 113;
+		this.LOGIN_SCHOOL = 114;
+
+		//signup
+		this.SCHOOL_USERNAME_TAKEN = 115;
+
+		//descriptions
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
 		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
-		this.UPDATED_STANDARD_ID = 111;
+
+		//games
+
+
+		//scroll
 		this.SCROLL = 112;
-		this.FULL_TEACHER = 113;
-		this.FULL_SCHOOL = 114;
-		this.SCHOOL_USERNAME_TAKEN = 115;
+
+		//admin
+		this.UPDATED_STANDARD_ID = 111;
+
 		this.FULL_NORMAL = 116;
-		this.FULL_LOGIN = 117;
+		this.FULL = 101;
 
 		//personal info
 		this.mUsername = '';
@@ -69,23 +82,38 @@ Extends: Application,
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
 
-		//states
+		/********* STATES *******************/ 
 		this.mCoreStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_CORE_APPLICATION                = new GLOBAL_CORE_APPLICATION       (this);
-                this.mINIT_CORE_APPLICATION                  = new INIT_CORE_APPLICATION         (this);
-                this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
-                this.mLOGIN_WAIT_APPLICATION                  = new LOGIN_WAIT_APPLICATION         (this);
-                this.mSCHOOL_LOGIN_APPLICATION                  = new SCHOOL_LOGIN_APPLICATION         (this);
-                this.mSCHOOL_LOGIN_WAIT_APPLICATION                  = new SCHOOL_LOGIN_WAIT_APPLICATION         (this);
-                this.mSIGNUP_STUDENT_APPLICATION                  = new SIGNUP_STUDENT_APPLICATION         (this);
-                this.mSIGNUP_SCHOOL_APPLICATION                  = new SIGNUP_SCHOOL_APPLICATION         (this);
-                this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
-                this.mREPORT_CORE_APPLICATION                = new REPORT_CORE_APPLICATION       (this);
-                this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
-                this.mCORE_APPLICATION                 = new CORE_APPLICATION(this);
-                this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
-                this.mTIMES_TABLES_APPLICATION                 = new TIMES_TABLES_APPLICATION(this);
+		//admin
+                this.mGLOBAL_CORE_APPLICATION          = new GLOBAL_CORE_APPLICATION       (this);
+                this.mINIT_CORE_APPLICATION            = new INIT_CORE_APPLICATION         (this);
+
+		//login
+                this.mLOGIN_STUDENT_APPLICATION        = new LOGIN_STUDENT_APPLICATION     (this);
+                this.mLOGIN_STUDENT_WAIT_APPLICATION   = new LOGIN_STUDENT_WAIT_APPLICATION(this);
+                this.mLOGIN_SCHOOL_APPLICATION         = new LOGIN_SCHOOL_APPLICATION      (this);
+                this.mLOGIN_SCHOOL_WAIT_APPLICATION    = new LOGIN_SCHOOL_WAIT_APPLICATION (this);
+
+		//signup
+                this.mSIGNUP_STUDENT_APPLICATION       = new SIGNUP_STUDENT_APPLICATION    (this);
+                this.mSIGNUP_SCHOOL_APPLICATION        = new SIGNUP_SCHOOL_APPLICATION     (this);
+
+		//normal
+                this.mNORMAL_CORE_APPLICATION          = new NORMAL_CORE_APPLICATION       (this);
+
+		//reports
+                this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
+
+		//practice
+                this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
+                this.mLEAVE_PRACTICE_APPLICATION       = new LEAVE_PRACTICE_APPLICATION    (this);
+	
+		//core		
+                this.mCORE_APPLICATION                 = new CORE_APPLICATION              (this);
+
+		//tables
+                this.mTIMES_TABLES_APPLICATION         = new TIMES_TABLES_APPLICATION      (this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);
@@ -103,6 +131,17 @@ Extends: Application,
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
+                        if (codeNumber == APPLICATION.LOGIN_STUDENT)
+                        {
+				APPLICATION.log('FULL LOGIN CODE');
+				APPLICATION.mFullLogin = true;
+                        }
+			
+			if (codeNumber == APPLICATION.LOGIN_SCHOOL)
+                        {
+				APPLICATION.mFullLogin = true;
+                        }
+        		
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
 				this.mSent = false;		
@@ -132,7 +171,7 @@ Extends: Application,
 				this.mSent = false;		
 			}
 
-        		if (codeNumber == APPLICATION.FULL)
+			if (codeNumber == APPLICATION.FULL)
                 	{
 				APPLICATION.log('FULL');
                 		APPLICATION.mRef_id = this.mResponseArray[1];
@@ -149,12 +188,6 @@ Extends: Application,
 				APPLICATION.mWaitForReturn = false; 
 				this.mSent = false;		
                		}
-
-                        if (codeNumber == APPLICATION.FULL_LOGIN)
-                        {
-				APPLICATION.log('FULL LOGIN CODE');
-				APPLICATION.mFullLogin = true;
-                        }
 
                         if (codeNumber == APPLICATION.FULL_NORMAL)
                         {
@@ -174,27 +207,6 @@ Extends: Application,
                                 this.mSent = false;
                         }
                    
-			if (codeNumber == APPLICATION.FULL_SCHOOL)
-                        {
-				APPLICATION.log('FULL SCHOOL LOGIN CODE');
-				APPLICATION.mFullLogin = true;
-/*
-                                APPLICATION.mLoggedIn = this.mResponseArray[1];
-                                APPLICATION.mUsername = this.mResponseArray[2];
-                                APPLICATION.mRole = this.mResponseArray[3];
-                                APPLICATION.mWaitForReturn = false;
-                                this.mSent = false;
-
-				if (APPLICATION.mLoggedIn == 1)
-				{
-					window.location.replace("/web/navigation/main_menu_school.php");
-				}
-				else
-				{
-					window.location.replace("/web/login/school_login.php");
-				}
-*/
-                        }
 
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
