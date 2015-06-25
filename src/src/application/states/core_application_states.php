@@ -400,10 +400,30 @@ execute: function(application)
 	{
 		application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION execute');
 	}
-        if (application.mLoggedIn == true)
+        
+ if (application.mFullLogin == true) //we have some data to read
         {
+                //lets sniff packet
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mFullLogin = false;
+        }
+
+        else if (application.mLoggedIn == true)
+        {
+                APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+
+                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
         }
+
 },
 
 exit: function(application)

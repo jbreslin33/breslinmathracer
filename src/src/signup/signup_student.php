@@ -217,7 +217,7 @@ Extends: Game,
 		var password = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
 		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
 		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		APPLICATION.signup(username,password,first_name,last_name);
+		APPLICATION.signupStudent(username,password,first_name,last_name);
 	},
 
 	//goto login screen

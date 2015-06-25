@@ -242,7 +242,7 @@ Extends: Application,
 		}
 	},
 
-        signup: function(username,password,first_name,last_name)
+        signupStudent: function(username,password,first_name,last_name)
         {
 		APPLICATION.log('signup in application');
         	var xmlhttp;
@@ -271,7 +271,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
+                xmlhttp.open("POST","../../web/php/signup_student.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
                 xmlhttp.send();
 	},
         

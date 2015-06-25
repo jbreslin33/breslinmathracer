@@ -14,5 +14,6 @@ $returnString .= ",";
 $returnString .= $_SESSION["raw_data"];
 $returnString .= ",";
 $returnString .= $_SESSION["role"];
+error_log('return string iii');
 echo $returnString;
 ?>

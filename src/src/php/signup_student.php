@@ -3,7 +3,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 
 
-class Signup
+class SignupStudent
 {
     private $mDatabaseConnection;
 
