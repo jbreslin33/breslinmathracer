@@ -77,6 +77,7 @@ Extends: Application,
                 this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
                 this.mLOGIN_WAIT_APPLICATION                  = new LOGIN_WAIT_APPLICATION         (this);
                 this.mSCHOOL_LOGIN_APPLICATION                  = new SCHOOL_LOGIN_APPLICATION         (this);
+                this.mSCHOOL_LOGIN_WAIT_APPLICATION                  = new SCHOOL_LOGIN_WAIT_APPLICATION         (this);
                 this.mSIGNUP_STUDENT_APPLICATION                  = new SIGNUP_STUDENT_APPLICATION         (this);
                 this.mSIGNUP_SCHOOL_APPLICATION                  = new SIGNUP_SCHOOL_APPLICATION         (this);
                 this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
@@ -175,6 +176,9 @@ Extends: Application,
                    
 			if (codeNumber == APPLICATION.FULL_SCHOOL)
                         {
+				APPLICATION.log('FULL SCHOOL LOGIN CODE');
+				APPLICATION.mFullLogin = true;
+/*
                                 APPLICATION.mLoggedIn = this.mResponseArray[1];
                                 APPLICATION.mUsername = this.mResponseArray[2];
                                 APPLICATION.mRole = this.mResponseArray[3];
@@ -189,6 +193,7 @@ Extends: Application,
 				{
 					window.location.replace("/web/login/school_login.php");
 				}
+*/
                         }
 
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
@@ -358,7 +363,9 @@ Extends: Application,
 
         schoolLogin: function(username,password)
         {
+		APPLICATION.mSent = true;
                 //gets called right away
+/*
                 APPLICATION.mGame.mLoginButton.setVisibility(false);
                 APPLICATION.mGame.mUsernameLabel.setVisibility(false);
                 APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
@@ -366,6 +373,7 @@ Extends: Application,
                 APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
                 var v = 'PLEASE WAIT LOGGING IN';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+*/
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
