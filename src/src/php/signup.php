@@ -40,7 +40,7 @@ public function process()
         		$_SESSION["LOGGED_IN"] = 1;
 			$item_attempt = new ItemAttempt();
 			$item_attempt->insert();
-
+		        $_SESSION["role"] = 3;
 		}
 	}
 	else

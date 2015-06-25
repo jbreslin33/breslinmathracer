@@ -212,12 +212,12 @@ Extends: Game,
 	
 	sendSignup: function()
 	{
+		APPLICATION.log('sendSi');
 		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
-		var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
+		var password = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
 		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
 		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		var core_standards_id = APPLICATION.mGame.mStandardSelect.mMesh.options[APPLICATION.mGame.mStandardSelect.mMesh.selectedIndex].value;
-		APPLICATION.signup(username,password,first_name,last_name,core_standards_id);
+		APPLICATION.signup(username,password,first_name,last_name);
 	},
 
 	//goto login screen
