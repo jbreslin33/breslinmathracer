@@ -49,7 +49,7 @@ Extends: Application,
 		this.mLastName = '';
 
 		/*********** LOGIN *******************
-		this.mFullLogin = false;
+		this.mDataToRead = false;
 		this.mLoggedIn = false;
 		this.mBadUsername = false;
 		this.mBadPassword = false;
@@ -98,7 +98,9 @@ Extends: Application,
 
 		//signup
                 this.mSIGNUP_STUDENT_APPLICATION       = new SIGNUP_STUDENT_APPLICATION    (this);
+                this.mSIGNUP_STUDENT_WAIT_APPLICATION  = new SIGNUP_STUDENT_WAIT_APPLICATION    (this);
                 this.mSIGNUP_SCHOOL_APPLICATION        = new SIGNUP_SCHOOL_APPLICATION     (this);
+                //this.mSIGNUP_SCHOOL_WAIT_APPLICATION   = new SIGNUP_SCHOOL_WAIT_APPLICATION     (this);
 
 		//normal
                 this.mNORMAL_CORE_APPLICATION          = new NORMAL_CORE_APPLICATION       (this);
@@ -132,15 +134,29 @@ Extends: Application,
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
+			//LOGIN
                         if (codeNumber == APPLICATION.LOGIN_STUDENT)
                         {
-				APPLICATION.mFullLogin = true;
+				APPLICATION.mDataToRead = true;
                         }
 			
 			if (codeNumber == APPLICATION.LOGIN_SCHOOL)
                         {
-				APPLICATION.mFullLogin = true;
+				APPLICATION.mDataToRead = true;
                         }
+
+                      
+			//SIGNUP 
+			if (codeNumber == APPLICATION.SIGNUP_STUDENT)
+                        {
+                                APPLICATION.mDataToRead = true;
+                        }
+
+                        if (codeNumber == APPLICATION.SIGNUP_SCHOOL)
+                        {
+                                APPLICATION.mDataToRead = true;
+                        }
+
         		
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
@@ -157,7 +173,6 @@ Extends: Application,
                     	
 			if (codeNumber == APPLICATION.USERNAME_TAKEN_STUDENT)
                         {
-				APPLICATION.log('hllll');
                                 APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_STUDENT_APPLICATION);
                                 var v = 'USERNAME TAKEN';
                                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
@@ -173,7 +188,6 @@ Extends: Application,
 
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
-				APPLICATION.log('TIMED_OUT');		
 				var v = 'TIMED OUT PLEASE LOGIN AGAIN';
  				APPLICATION.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
@@ -182,7 +196,6 @@ Extends: Application,
 
 			if (codeNumber == APPLICATION.FULL)
                 	{
-				APPLICATION.log('FULL');
                 		APPLICATION.mRef_id = this.mResponseArray[1];
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                         	APPLICATION.mLoggedIn = this.mResponseArray[2];
@@ -200,7 +213,6 @@ Extends: Application,
 
                         if (codeNumber == APPLICATION.FULL_NORMAL)
                         {
-				APPLICATION.log('FULL_NORMAL');
                                 APPLICATION.mRef_id = this.mResponseArray[1];
                                 APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                                 APPLICATION.mLoggedIn = this.mResponseArray[2];
@@ -253,7 +265,8 @@ Extends: Application,
 
         signupStudent: function(username,password,first_name,last_name)
         {
-		APPLICATION.log('signup in application');
+		APPLICATION.mSent = true;
+
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -286,6 +299,8 @@ Extends: Application,
         
 	signupSchool: function(username,password,name,city,state,zip,email,student_code)
         {
+		APPLICATION.mSent = true;
+
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
