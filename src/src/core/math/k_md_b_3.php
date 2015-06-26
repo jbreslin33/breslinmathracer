@@ -17,8 +17,6 @@ initialize: function(sheet)
   	
 	this.s = 19; 
 	this.r = 2; 
-	this.a = 9;
-	this.b = 10;
 	
         this.setQuestion('' + this.ns.mNameOne + ' wants to sort the squares with the same color into different rectangles and put totals for each color in text box on top. Please help ' + this.ns.mNameOne + '.');
 
@@ -83,6 +81,8 @@ createQuestionShapes: function()
 
 checkUserAnswer: function()
 {
+	this.setAnswer(this.mSquareArrayOne.length,0);
+	this.setAnswer(this.mSquareArrayTwo.length,1);
 	this.rectangleOneSquare = '';
 	this.rectangleTwoSquare = '';
 	
@@ -180,8 +180,20 @@ checkUserAnswer: function()
         	this.mSheet.setTypeWrong(this.mType);
         	return false;
 	}
+},
+
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setSize(500, 100);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER: Drag ' + this.getAnswer() + ' squares of one color into one rectangle and ' +  this.getAnswerTwo() + ' squares of the other color into the other rectangle. Put the totals of each in text box on top.');
+                this.mCorrectAnswerLabel.setVisibility(true);
+         }
 }
+
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('k.md.b.3_1',0.1901,'k.md.b.3','');
 */
@@ -198,8 +210,6 @@ initialize: function(sheet)
   	
 	this.s = 19; 
 	this.r = 2; 
-	this.a = 9;
-	this.b = 10;
 	
         this.setQuestion('' + this.ns.mNameOne + ' wants to sort the squares with the same color into different rectangles. Please help ' + this.ns.mNameOne + '. Type anything in box and hit enter when finished.');
 

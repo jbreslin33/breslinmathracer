@@ -17,7 +17,7 @@ include(getenv("DOCUMENT_ROOT") . "/src/php/utility.php");
 
 $conn = dbConnect();
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
+//include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 $user_id = NULL;
 $report_type = "small";
@@ -62,6 +62,13 @@ if (isset($_GET["progression_end"]))
 }
 
 ?>
+
+<p><b> Unmastered Question Types </p></b>
+
+<ul>
+<li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
+<li><a href="/web/php/logout.php">Logout</a></li>
+</ul>
 
         <form method="post" action="/web/stats/statsreports.php">
 

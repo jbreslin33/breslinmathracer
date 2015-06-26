@@ -16,7 +16,7 @@ session_start();
 
 <ul>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/navigation/school_leaderboards.php">Leader Boards</a></li>
+<li><a href="/web/navigation/reports.php">Reports</a></li>
 </ul>
 
 </body>

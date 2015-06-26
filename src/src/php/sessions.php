@@ -45,8 +45,14 @@ public function process()
 		}
 		if ($ref_id == 'practice')
 		{
-			//$practice = new Practice('',0,0);
-			$normal = new Normal(1);
+			if ($_SESSION["first_name"] == 'dev' && $_SESSION["last_name"] == 'user')
+			{
+				$practice = new Practice('',0,0);
+			}
+			else
+			{
+				$normal = new Normal(1);
+			}
 		}
 		if ($ref_id == 'timestables_2')
 		{

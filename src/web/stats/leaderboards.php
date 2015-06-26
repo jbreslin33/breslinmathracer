@@ -69,7 +69,6 @@ echo "<br>";
 <ul>
 <li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/navigation/school_leaderboards.php">Leader Boards</a></li>
 </ul>
 
 

@@ -46,7 +46,7 @@ execute: function(application)
 	{
 		application.log('APPLICATION::INIT_CORE_APPLICATION execute');
 	}
-	application.mCoreStateMachine.changeState(application.mLOGIN_APPLICATION);
+	application.mCoreStateMachine.changeState(application.mLOGIN_STUDENT_APPLICATION);
 },
 
 exit: function(application)
@@ -55,7 +55,7 @@ exit: function(application)
 
 });
 
-var LOGIN_APPLICATION = new Class(
+var LOGIN_STUDENT_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -69,7 +69,7 @@ enter: function(application)
 
 	if (application.mStateLogs)
 	{
-		application.log('APPLICATION::LOGIN_APPLICATION');
+		application.log('APPLICATION::LOGIN_STUDENT_APPLICATION');
 	}
 	application.mRef_id = 'login';
         if (application.mGame)
@@ -78,7 +78,11 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGameName = "login";
-        application.mGame = new login(APPLICATION);
+        application.mGame = new LoginStudent(APPLICATION);
+	application.mLoggedIn = false;
+	application.mFullLogin = false;
+
+	application.mResponseArray = [];
  
 	//lets hide homeselect
        	APPLICATION.mHud.mHome.setVisibility(false);
@@ -88,31 +92,19 @@ execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::LOGIN_APPLICATION execute');
+		application.log('APPLICATION::LOGIN_STUDENT_APPLICATION execute');
 	}
-	if (application.mLoggedIn == true)
+	if (application.mSent == true)
 	{
-		if (application.mRole == 1)
-		{
-			application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-		}
-		else if (application.mRole == 2)
-		{
-			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
-		}
-		else if (application.mRole == 3)
-		{
-			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
-		}
+		application.mCoreStateMachine.changeState(application.mLOGIN_STUDENT_WAIT_APPLICATION);
 	}
-	
 },
 
 exit: function(application)
 {
 	if (application.mStateLogsExit)
 	{
-		application.log('APPLICATION::LOGIN_APPLICATION exit');
+		application.log('APPLICATION::LOGIN_STUDENT_APPLICATION exit');
 	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
@@ -120,7 +112,264 @@ exit: function(application)
 
 });
 
-var SIGNUP_APPLICATION = new Class(
+var LOGIN_STUDENT_WAIT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::LOGIN_STUDENT_WAIT_APPLICATION');
+	}
+	application.mStateEnterTime = APPLICATION.mGame.mTimeSinceEpoch; 
+	application.mSent = false;
+
+        //gets called right away
+        APPLICATION.mGame.mLoginButton.setVisibility(false);
+        APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+        APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+        APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+        APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
+        var v = 'PLEASE WAIT LOGGING IN';
+        APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LOGIN_STUDENT_WAIT_APPLICATION execute');
+	}
+
+	//4 things can happen when you have sent a login request
+	
+	if (application.mFullLogin == true) //we have some data to read
+	{
+		//lets sniff packet
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+		APPLICATION.mFullLogin = false;
+	}
+	
+	else if (application.mLoggedIn == true)
+	{
+        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+               	
+		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+
+	else if (application.mBadUsername == true)
+	{
+		application.mBadUsername = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
+                var v = 'BAD USERNAME';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+	else if (application.mBadPassword == true)
+	{
+		application.mBadPassword = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
+                var v = 'BAD PASSWORD';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+        
+	else if (APPLICATION.mGame.mTimeSinceEpoch > parseInt(application.mStateEnterTime + application.mStateThresholdTime))
+	{
+                var v = 'LOGIN TIMED OUT';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_WAIT_APPLICATION exit');
+	}
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
+	application.mBadPassword = false;
+	application.mBadUsername = false;
+}
+
+});
+
+var LOGIN_SCHOOL_WAIT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::LOGIN_SCHOOL_WAIT_APPLICATION');
+	}
+	application.mStateEnterTime = APPLICATION.mGame.mTimeSinceEpoch; 
+	application.mSent = false;
+
+        //gets called right away
+        APPLICATION.mGame.mLoginButton.setVisibility(false);
+        APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+        APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+        APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+        APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
+        var v = 'PLEASE WAIT LOGGING IN';
+        APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LOGIN_SCHOOL_WAIT_APPLICATION execute');
+	}
+
+	//4 things can happen when you have sent a login request
+	
+	if (application.mFullLogin == true) //we have some data to read
+	{
+		APPLICATION.log('full in exe');
+		//lets sniff packet
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[1]; //no refid so its element 1
+		APPLICATION.mFullLogin = false;
+	}
+	
+	else if (application.mLoggedIn == true)
+	{
+        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+               	
+		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+		//application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+	}
+
+	else if (application.mBadUsername == true)
+	{
+		application.mBadUsername = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_SCHOOL_APPLICATION);
+                var v = 'BAD USERNAME';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+	else if (application.mBadPassword == true)
+	{
+		application.mBadPassword = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_SCHOOL_APPLICATION);
+                var v = 'BAD PASSWORD';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+	}
+        
+	else if (APPLICATION.mGame.mTimeSinceEpoch > parseInt(application.mStateEnterTime + application.mStateThresholdTime))
+	{
+                var v = 'LOGIN TIMED OUT';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_SCHOOL_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_SCHOOL_WAIT_APPLICATION exit');
+	}
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
+	application.mBadPassword = false;
+	application.mBadUsername = false;
+}
+
+});
+
+var LOGIN_SCHOOL_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	application.mLoggedIn = false;
+
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::LOGIN_SCHOOL_APPLICATION');
+	}
+	application.mRef_id = 'login';
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "login";
+        application.mGame = new LoginSchool(APPLICATION);
+	
+	application.mLoggedIn = false;
+	application.mFullLogin = false;
+
+	application.mResponseArray = [];
+ 
+	//lets hide homeselect
+       	APPLICATION.mHud.mHome.setVisibility(false);
+	
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LOGIN_SCHOOL_APPLICATION execute');
+	}	
+       
+	if (application.mSent == true)
+        {
+		APPLICATION.log('sent');
+                application.mCoreStateMachine.changeState(application.mLOGIN_SCHOOL_WAIT_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_SCHOOL_APPLICATION exit');
+	}
+	//lets show homeselect
+        APPLICATION.mHud.mHome.setVisibility(true);
+        application.mBadPassword = false;
+        application.mBadUsername = false;
+}
+
+});
+
+var SIGNUP_STUDENT_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -133,7 +382,7 @@ enter: function(application)
         application.mLoggedIn = false;
         if (application.mStateLogs)
         {
-                application.log('APPLICATION::SIGNUP_APPLICATION');
+                application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION');
         }
         application.mRef_id = 'signup';
         if (application.mGame)
@@ -142,31 +391,112 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGameName = "signup";
-        application.mGame = new signup(APPLICATION);
+        application.mGame = new SignupStudent(APPLICATION);
 },
 
 execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::SIGNUP_APPLICATION execute');
+		application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION execute');
 	}
-        if (application.mLoggedIn == true)
+        
+ if (application.mFullLogin == true) //we have some data to read
         {
+                //lets sniff packet
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mFullLogin = false;
+        }
+
+        else if (application.mLoggedIn == true)
+        {
+                APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+
+                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
         }
+
 },
 
 exit: function(application)
 {
 	if (application.mStateLogsExit)
 	{
-		application.log('APPLICATION::SIGNUP_APPLICATION exit');
+		application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION exit');
 	}
 	//lets show homeselect
        	APPLICATION.mHud.mHome.setVisibility(true);
 }
 
+});
+
+var SIGNUP_SCHOOL_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        application.mLoggedIn = false;
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION');
+        }
+        application.mRef_id = 'signup';
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "signup";
+        application.mGame = new SignupSchool(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION execute');
+        }
+ 
+	if (application.mLoggedIn == true)
+        {
+                if (application.mRole == 1)
+                {
+                        application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+                }
+                else if (application.mRole == 2)
+                {
+                        application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+                }
+                else if (application.mRole == 3)
+                {
+                        application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+                }
+        }
+
+},
+
+exit: function(application)
+{
+        if (application.mStateLogsExit)
+        {
+                application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION exit');
+        }
+        //lets show homeselect
+        APPLICATION.mHud.mHome.setVisibility(true);
+}
 });
 
 var NORMAL_CORE_APPLICATION = new Class(
@@ -193,12 +523,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION execute');
 	}
-	//you might not have a game if this your first time or you just went to a level that requires new game
-	if (application.mLevelCompleted)
-	{
-		application.mCoreStateMachine.changeState(application.mADVANCE_TO_NEXT_LEVEL_APPLICATION);
-	}
-	
 	if (application.mEvaluationFailed)
 	{
 		application.mCoreStateMachine.changeState(application.mREMEDIATE_APPLICATION);
@@ -253,6 +577,7 @@ enter: function(application)
 	{
 		application.log('APPLICATION::REPORT_CORE_APPLICATION');
 	}
+      	window.location.replace("/web/navigation/main_menu_school.php");
 },
 
 execute: function(application)

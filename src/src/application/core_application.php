@@ -11,20 +11,36 @@ Extends: Application,
 		this.mStateLogsExit = false; 
 
 		//parse codes
-		this.FULL = 101;
+		//login
+		this.TIMED_OUT = 105;
 		this.NOT_LOGGED_IN = 102;
 		this.BAD_USERNAME = 103;
 		this.BAD_PASSWORD = 104;
-		this.TIMED_OUT = 105;
+		this.LOGIN_STUDENT = 117;
+		this.LOGIN_TEACHER = 113;
+		this.LOGIN_SCHOOL = 114;
+
+		//signup
+		this.SCHOOL_USERNAME_TAKEN = 115;
+
+		//descriptions
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
 		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
-		this.UPDATED_STANDARD_ID = 111;
+
+		//games
+
+
+		//scroll
 		this.SCROLL = 112;
-		this.FULL_TEACHER = 113;
-		this.FULL_SCHOOL = 114;
+
+		//admin
+		this.UPDATED_STANDARD_ID = 111;
+
+		this.FULL_NORMAL = 116;
+		this.FULL = 101;
 
 		//personal info
 		this.mUsername = '';
@@ -32,14 +48,16 @@ Extends: Application,
 		this.mLastName = '';
 
 		/*********** LOGIN *******************
+		this.mFullLogin = false;
 		this.mLoggedIn = false;
+		this.mBadUsername = false;
+		this.mBadPassword = false;
 
 		/*********** LEVEL *******************
 		this.mRef_id = 'login';
-		this.mLevel = 0;
-		this.mLevels = 0;
 		this.mProgression = 0;
 		this.mStandard = '';
+		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';
 		this.mItemAttemptsID = 0;
@@ -55,25 +73,47 @@ Extends: Application,
 		this.mGotoTimesTables = false;
 		this.mLeavePractice = false;
 		this.mWaitForReturn = false;
+		
+		/*********** TIMERS *******************/
+		this.mStateThresholdTime = 30000; 
+		this.mStateEnterTime = 0; 
 
-		this.mWaitingOnLevelData = false;
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
 
-		//states
+		/********* STATES *******************/ 
 		this.mCoreStateMachine = new StateMachine(this);
 
-                this.mGLOBAL_CORE_APPLICATION                = new GLOBAL_CORE_APPLICATION       (this);
-                this.mINIT_CORE_APPLICATION                  = new INIT_CORE_APPLICATION         (this);
-                this.mLOGIN_APPLICATION                  = new LOGIN_APPLICATION         (this);
-                this.mSIGNUP_APPLICATION                  = new SIGNUP_APPLICATION         (this);
-                this.mNORMAL_CORE_APPLICATION                = new NORMAL_CORE_APPLICATION       (this);
-                this.mREPORT_CORE_APPLICATION                = new REPORT_CORE_APPLICATION       (this);
-                this.mPRACTICE_APPLICATION                 = new PRACTICE_APPLICATION(this);
-                this.mCORE_APPLICATION                 = new CORE_APPLICATION(this);
-                this.mLEAVE_PRACTICE_APPLICATION                 = new LEAVE_PRACTICE_APPLICATION(this);
-                this.mTIMES_TABLES_APPLICATION                 = new TIMES_TABLES_APPLICATION(this);
+		//admin
+                this.mGLOBAL_CORE_APPLICATION          = new GLOBAL_CORE_APPLICATION       (this);
+                this.mINIT_CORE_APPLICATION            = new INIT_CORE_APPLICATION         (this);
+
+		//login
+                this.mLOGIN_STUDENT_APPLICATION        = new LOGIN_STUDENT_APPLICATION     (this);
+                this.mLOGIN_STUDENT_WAIT_APPLICATION   = new LOGIN_STUDENT_WAIT_APPLICATION(this);
+                this.mLOGIN_SCHOOL_APPLICATION         = new LOGIN_SCHOOL_APPLICATION      (this);
+                this.mLOGIN_SCHOOL_WAIT_APPLICATION    = new LOGIN_SCHOOL_WAIT_APPLICATION (this);
+
+		//signup
+                this.mSIGNUP_STUDENT_APPLICATION       = new SIGNUP_STUDENT_APPLICATION    (this);
+                this.mSIGNUP_SCHOOL_APPLICATION        = new SIGNUP_SCHOOL_APPLICATION     (this);
+
+		//normal
+                this.mNORMAL_CORE_APPLICATION          = new NORMAL_CORE_APPLICATION       (this);
+
+		//reports
+                this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
+
+		//practice
+                this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
+                this.mLEAVE_PRACTICE_APPLICATION       = new LEAVE_PRACTICE_APPLICATION    (this);
+	
+		//core		
+                this.mCORE_APPLICATION                 = new CORE_APPLICATION              (this);
+
+		//tables
+                this.mTIMES_TABLES_APPLICATION         = new TIMES_TABLES_APPLICATION      (this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);
@@ -86,30 +126,42 @@ Extends: Application,
 	
 	parseResponse: function(response)
 	{
-                var responseArray = response.split(",");
-                var code = responseArray[0];
+                this.mResponseArray = response.split(",");
+                var code = this.mResponseArray[0];
                 var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
+                        if (codeNumber == APPLICATION.LOGIN_STUDENT)
+                        {
+				APPLICATION.log('FULL LOGIN CODE');
+				APPLICATION.mFullLogin = true;
+                        }
+			
+			if (codeNumber == APPLICATION.LOGIN_SCHOOL)
+                        {
+				APPLICATION.mFullLogin = true;
+                        }
+        		
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
 				this.mSent = false;		
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
- 				APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
-				var v = 'BAD USERNAME';
-				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
-				this.mSent = false;		
+				this.mBadUsername = true;
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
                         {
-				APPLICATION.log('BAD_PASSWORD');		
- 				APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_APPLICATION);
-				var v = 'BAD PASSWORD';
-				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
-				this.mSent = false;		
+				this.mBadPassword = true;
 			}
+                    	if (codeNumber == APPLICATION.SCHOOL_USERNAME_TAKEN)
+                        {
+                                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
+                                var v = 'USERNAME TAKEN';
+                                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                                this.mSent = false;
+                        }
+
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
 				APPLICATION.log('TIMED_OUT');		
@@ -118,59 +170,62 @@ Extends: Application,
 				APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 				this.mSent = false;		
 			}
-        		if (codeNumber == APPLICATION.FULL)
+
+			if (codeNumber == APPLICATION.FULL)
                 	{
-                		APPLICATION.mRef_id = responseArray[1];
+				APPLICATION.log('FULL');
+                		APPLICATION.mRef_id = this.mResponseArray[1];
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                        	APPLICATION.mLoggedIn = responseArray[2];
-                       		APPLICATION.mUsername = responseArray[3];
-                        	APPLICATION.mFirstName = responseArray[4];
-                        	APPLICATION.mLastName = responseArray[5];
-                        	APPLICATION.mRawData = responseArray[6];
-                        	APPLICATION.mRole = responseArray[7];
+                        	APPLICATION.mLoggedIn = this.mResponseArray[2];
+                       		APPLICATION.mUsername = this.mResponseArray[3];
+                        	APPLICATION.mFirstName = this.mResponseArray[4];
+                        	APPLICATION.mLastName = this.mResponseArray[5];
+                        	APPLICATION.mRawData = this.mResponseArray[6];
+                        	APPLICATION.mRole = this.mResponseArray[7];
 		
                         	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 				APPLICATION.mWaitForReturn = false; 
 				this.mSent = false;		
                		}
-                   
-			if (codeNumber == APPLICATION.FULL_SCHOOL)
+
+                        if (codeNumber == APPLICATION.FULL_NORMAL)
                         {
-                                APPLICATION.mLoggedIn = responseArray[1];
-                                APPLICATION.mUsername = responseArray[2];
-                                APPLICATION.mRole = responseArray[3];
+				APPLICATION.log('FULL_NORMAL');
+                                APPLICATION.mRef_id = this.mResponseArray[1];
+                                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                                APPLICATION.mLoggedIn = this.mResponseArray[2];
+                                APPLICATION.mUsername = this.mResponseArray[3];
+                                APPLICATION.mFirstName = this.mResponseArray[4];
+                                APPLICATION.mLastName = this.mResponseArray[5];
+                                APPLICATION.mRawData = this.mResponseArray[6];
+                                APPLICATION.mRole = this.mResponseArray[7];
+
+                                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
                                 APPLICATION.mWaitForReturn = false;
                                 this.mSent = false;
-
-				if (APPLICATION.mLoggedIn == 1)
-				{
-					window.location.replace("/web/navigation/main_menu_school.php");
-				}
-				else
-				{
-					window.location.replace("/web/login/school_login.php");
-				}
                         }
+                   
 
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mStandardDescription = responseArray[1];
-                                APPLICATION.mGame.mSheet.mItem.mStandardInfo.setText(responseArray[1]);
+                                APPLICATION.mGame.mSheet.mItem.mStandardDescription = this.mResponseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mStandardInfo.setText(this.mResponseArray[1]);
                         }
 			if (codeNumber == APPLICATION.ITEM_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mItemDescription = responseArray[1];
-                                APPLICATION.mGame.mSheet.mItem.mItemInfo.setText(responseArray[1]);
+                                APPLICATION.mGame.mSheet.mItem.mItemDescription = this.mResponseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mItemInfo.setText(this.mResponseArray[1]);
                         }
 			if (codeNumber == APPLICATION.PRACTICE_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mPracticeDescription = responseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mPracticeDescription = this.mResponseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
                         }
 			if (codeNumber == APPLICATION.CORE_DESCRIPTION)
                         {
-                                APPLICATION.mGame.mSheet.mItem.mCoreDescription = responseArray[1];
+                                APPLICATION.mGame.mSheet.mItem.mCoreDescription = this.mResponseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
@@ -182,13 +237,14 @@ Extends: Application,
                         }
 			if (codeNumber == APPLICATION.SCROLL)
 			{
-				APPLICATION.mHud.setScroll(responseArray[1]); 
+				APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
 			}
 		}
 	},
 
-        signup: function(username,password,first_name,last_name,core_standards_id)
+        signupStudent: function(username,password,first_name,last_name)
         {
+		APPLICATION.log('signup in application');
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -215,9 +271,41 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/signup.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name + "&core_standards_id=" + core_standards_id,true);
+                xmlhttp.open("POST","../../web/php/signup_student.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
                 xmlhttp.send();
 	},
+        
+	signupSchool: function(username,password,name,city,state,zip,email,student_code)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/school_create.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
+                xmlhttp.send();
+        },
 
 	checkLogin: function()
 	{
@@ -253,14 +341,8 @@ Extends: Application,
 
         login: function(username,password)
         {
-		//gets called right away
-		APPLICATION.mGame.mLoginButton.setVisibility(false);
-		APPLICATION.mGame.mUsernameLabel.setVisibility(false);
-		APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
-		APPLICATION.mGame.mPasswordLabel.setVisibility(false);
-		APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
-		var v = 'PLEASE WAIT LOGGING IN';
-		APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		APPLICATION.mSent = true;
+
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -291,6 +373,51 @@ Extends: Application,
                 xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
+
+        schoolLogin: function(username,password)
+        {
+		APPLICATION.mSent = true;
+                //gets called right away
+/*
+                APPLICATION.mGame.mLoginButton.setVisibility(false);
+                APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+                APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+                APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+                APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
+                var v = 'PLEASE WAIT LOGGING IN';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+*/
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                                //takes a bit....
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../web/php/school_login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.send();
+        },
+
 
         getScroll: function()
         {

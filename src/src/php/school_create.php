@@ -9,8 +9,8 @@ class SchoolCreate
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mBadUsername = 0;
-	$this->mBadPassword = 0;
+	$this->mUsernameExists = 0;
+	$this->mNamExists = 0;
 
 	$this->process();
 }
@@ -20,7 +20,7 @@ public function process()
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
-        $query = "insert into schools (username,password,name,city,state,zip) values ('";
+        $query = "insert into schools (username,password,name,city,state,zip,email,student_code) values ('";
         $query .= $_SESSION["username"];
 	$query .= "','";
 	$query .= $_SESSION["password"];
@@ -32,14 +32,23 @@ public function process()
         $query .= $_SESSION["state"];
 	$query .= "','";
         $query .= $_SESSION["zip"];
+	$query .= "','";
+        $query .= $_SESSION["email"];
+	$query .= "','";
+        $query .= $_SESSION["student_code"];
         $query .= "');";
         
 	//get db result
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+        $result = pg_query($this->mDatabaseConnection->getConn(),$query); // or die('Could not connect: ' . pg_last_error());
+	$er = pg_last_error();
+	if (strpos($er,'schools_username_key') !== false)
+ 	{
+		$this->mUserNameExists = 1;
+	}
+	
+	//then check login
 
-		//then check login
-
-       	$query = "select name from schools where name = '";
+       	$query = "select username from schools where username = '";
         $query .= $_SESSION["username"];
         $query .= "';";
 
@@ -76,6 +85,7 @@ public function process()
                         $_SESSION["school_name"] = $_SESSION["name"];
                         $_SESSION["school_id"] = $school_id;
                         $_SESSION["LOGGED_IN"] = 1;
+                        $_SESSION["role"] = 3;
                 }
                 else
                 {

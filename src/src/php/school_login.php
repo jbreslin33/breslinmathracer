@@ -1,5 +1,6 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
 class SchoolLogin 
 {
@@ -10,12 +11,43 @@ function __construct()
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mBadUsername = 0;
 	$this->mBadPassword = 0;
+	
+	//login helpers
+	$this->mSchoolExists = false;
 
 	$this->process();
 }
-
 public function process()
 {
+	//school	
+	$this->checkForSchool();
+	
+	if ($_SESSION["LOGGED_IN"] == 1)
+	{
+		return;
+	}
+	
+	if ($this->mSchoolExists)
+	{
+		$this->mBadPassword = 1;
+		return;
+	}
+
+	//fall thru to bad username	
+	$this->mBadUsername = 1;
+}
+
+public function checkForSchool()
+{
+       	if (!isset($_SESSION["LOGGED_IN"]))
+	{
+        	$_SESSION["LOGGED_IN"] = 0;
+	}
+       	if ($_SESSION["LOGGED_IN"] == 1)
+	{
+		return;
+	}
+
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
@@ -31,6 +63,8 @@ public function process()
 
         if ($num > 0)
         {
+		$this->mStudentExists = true;
+
 		$query2 = "select id from schools where username = '";
         	$query2 .= $_SESSION["username"];
         	$query2 .= "' AND password = '";
@@ -46,33 +80,26 @@ public function process()
 		if ($num2 > 0)
 		{
         		$_SESSION["LOGGED_IN"] = 1;
-        		$this->mBadPassword = 0;
-        		$this->mBadUsername = 0;
 
 			//get the id from user table
                 	$school_id = pg_Result($result2, 0, 'id');
 
 			//set sessions
-                	$_SESSION["school_name"] = $_SESSION["name"];
+        		$_SESSION["role"] = 3; //student
+        		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["school_id"] = $school_id;
-        		$_SESSION["LOGGED_IN"] = 1;
 		}
 		else
 		{
         		$_SESSION["LOGGED_IN"] = 0;
-        		$this->mBadPassword = 1;
-        		$this->mBadUsername = 0;
         		$_SESSION["school_id"] = 0;
 		}
         }
         else
         {
         	$_SESSION["LOGGED_IN"] = 0;
-        	$this->mBadUsername = 1;
-        	$this->mBadPassword = 0;
         	$_SESSION["school_id"] = 0;
         }
 }
 }
-
 ?>

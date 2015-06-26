@@ -484,6 +484,10 @@ getItem: function(id)
         {
                 return new i_k_nbt_a_1__19(this.mSheet);
         }
+        if (id == 'k.nbt.a.1_21')
+        {
+                return new i_k_nbt_a_1__21(this.mSheet);
+        }
        
 	//k.md.a.1 
 	if (id == 'k.md.a.1_1')

@@ -1,5 +1,53 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_21',0.1621,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');
+*/
+
+var i_k_nbt_a_1__21 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+
+                this.mType = 'k.nbt.a.1_21';
+		this.mChopWhiteSpace = false;
+             
+		this.a = 0;
+		this.b = 0;
+		this.c = 1000;
+
+		this.x = 0;	 
+		this.y = 0;	 
+
+		this.xa = Math.floor((Math.random()*10)+1);
+		this.ya = Math.floor((Math.random()*10)+1);
+		this.xb = Math.floor((Math.random()*10)+1);
+		this.yb = Math.floor((Math.random()*10)+1);
+
+		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5 || this.x > 10 || this.a < 0 || this.b < 0 || parseInt(this.xa + this.ya) == parseInt(this.x + this.y) || parseInt(this.xb + this.yb) == parseInt(this.x + this.y))
+		{
+			//variables
+                	this.x = Math.floor((Math.random()*9)+1);
+                	this.y = 10; 
+			this.c = parseInt(this.x + this.y) + ' = ' + this.y + ' + ' + this.x;  
+	
+			//wrong answers 
+			this.a = parseInt(this.x + this.y) + ' = ' + this.xa + ' + ' + this.ya;  
+			this.b = parseInt(this.x + this.y) + ' = ' + this.xb + ' + ' + this.yb;  
+                }
+
+                this.setQuestion('What is ' + parseInt(this.x + this.y) + ' equal to?');
+                this.setAnswer(this.c,0);
+
+                this.mButtonA.setAnswer(this.a);
+                this.mButtonB.setAnswer(this.b);
+                this.mButtonC.setAnswer(this.c);
+                this.shuffle(10);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_19',0.1619,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');
 */
 var i_k_nbt_a_1__19 = new Class(
@@ -18,7 +66,7 @@ initialize: function(sheet)
 	this.a = 9;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 19 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 19 by putting 10 squares in the rectangle at left and 9 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -120,7 +168,7 @@ initialize: function(sheet)
 	this.a = 8;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 18 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 18 by putting 10 squares in the rectangle at left and 8 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -222,7 +270,7 @@ initialize: function(sheet)
 	this.a = 7;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 17 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 17 by putting 10 squares in the rectangle at left and 7 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -324,7 +372,7 @@ initialize: function(sheet)
 	this.a = 6;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 16 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 16 by putting 10 squares in the rectangle at left and 6 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -426,7 +474,7 @@ initialize: function(sheet)
 	this.a = 5;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 15 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 15 by putting 10 squares in the rectangle at left and 5 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -528,7 +576,7 @@ initialize: function(sheet)
 	this.a = 4;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 14 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 14 by putting 10 squares in the rectangle at left and 4 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -630,7 +678,7 @@ initialize: function(sheet)
 	this.a = 3;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 13 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 13 by putting 10 squares in the rectangle at left and 3 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -732,7 +780,7 @@ initialize: function(sheet)
 	this.a = 2;
 	this.b = 10;
 	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 12 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to make 12 by putting 10 squares in the rectangle at left and 2 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -920,53 +968,6 @@ checkUserAnswer: function()
 });
 
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_21',0.1621,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');
-*/
-
-var i_k_nbt_a_1__21 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-
-                this.mType = 'k.nbt.a.1_21';
-		this.mChopWhiteSpace = false;
-             
-		this.a = 0;
-		this.b = 0;
-		this.c = 1000;
-
-		this.x = 0;	 
-		this.y = 0;	 
-
-		this.xa = Math.floor((Math.random()*10)+1);
-		this.ya = Math.floor((Math.random()*10)+1);
-		this.xb = Math.floor((Math.random()*10)+1);
-		this.yb = Math.floor((Math.random()*10)+1);
-
-		while (this.a == this.b || this.a == this.c || this.b == this.c || this.c < 0 || this.c > 5 || this.x > 10 || this.a < 0 || this.b < 0 || parseInt(this.xa + this.ya) == parseInt(this.x + this.y) || parseInt(this.xb + this.yb) == parseInt(this.x + this.y))
-		{
-			//variables
-                	this.x = Math.floor((Math.random()*9)+1);
-                	this.y = 10; 
-			this.c = parseInt(this.x + this.y) + ' = ' + this.y + ' + ' + this.x;  
-	
-			//wrong answers 
-			this.a = parseInt(this.x + this.y) + ' = ' + this.xa + ' + ' + this.ya;  
-			this.b = parseInt(this.x + this.y) + ' = ' + this.xb + ' + ' + this.yb;  
-                }
-
-                this.setQuestion('What is ' + parseInt(this.x + this.y) + ' equal to?');
-                this.setAnswer(this.c,0);
-
-                this.mButtonA.setAnswer(this.a);
-                this.mButtonB.setAnswer(this.b);
-                this.mButtonC.setAnswer(this.c);
-                this.shuffle(10);
-        }
-});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('k.nbt.a.1_9',0.1609,'k.nbt.a.1','Pick out what equation containing 10 is equal to number.');

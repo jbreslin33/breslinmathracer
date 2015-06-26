@@ -173,7 +173,7 @@ insert into finer_types(description) values ('start at number ending in 9 that i
 insert into finer_types(description) values ('start at number ending in 0 that is greater than 10 but less than 100');
 
 --schools
-insert into schools (username,name,password,city,state,zip) values ('jbreslin','mathcore','Iggles_13','Philadelphia','PA','19125');
+insert into schools (username,name,password,city,state,zip,email,student_code) values ('jbreslin','mathcore','Iggles_13','Philadelphia','PA','19125','jbreslin33@gmail.com','mathcore');
 
 --teachers
 insert into teachers (name,password,school_id) values ('Professor Bob','drtu866',1);
