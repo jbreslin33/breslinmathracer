@@ -77,7 +77,7 @@ enter: function(application)
         	application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGameName = "login";
+        application.mGameName = "login_student";
         application.mGame = new LoginStudent(APPLICATION);
 	application.mLoggedIn = false;
 	application.mDataToRead = false;
@@ -230,7 +230,7 @@ enter: function(application)
         	application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGameName = "login";
+        application.mGameName = "login_school";
         application.mGame = new LoginSchool(APPLICATION);
 	
 	application.mLoggedIn = false;
@@ -384,9 +384,9 @@ enter: function(application)
         {
                 application.log('APPLICATION::SIGNUP_STUDENT_APPLICATION');
         }
-
-	if (application.mGame && application.mGameName == "signup_student")
+	if (APPLICATION.mCoreStateMachine.mPreviousState == APPLICATION.mSIGNUP_STUDENT_WAIT_APPLICATION)
 	{
+		APPLICATION.log('1');
 		//dont reinstantiate class... just set visible
         	APPLICATION.mGame.mLoginButton.setVisibility(true);
         	APPLICATION.mGame.mUsernameLabel.setVisibility(true);
@@ -396,8 +396,9 @@ enter: function(application)
         	APPLICATION.mGame.mPasswordTwoLabel.setVisibility(true);
         	APPLICATION.mGame.mPasswordTwoTextBox.setVisibility(true);
 	}
-	else
+	else 
 	{
+		APPLICATION.log('2');
         	if (application.mGame)
         	{
                 	application.mGame.destructor();
@@ -561,7 +562,7 @@ enter: function(application)
                 application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGameName = "signup";
+        application.mGameName = "signup_school";
         application.mGame = new SignupSchool(APPLICATION);
 },
 
