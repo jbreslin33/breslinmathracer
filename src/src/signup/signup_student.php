@@ -214,14 +214,35 @@ Extends: Game,
 	
 	sendSignup: function()
 	{
+		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
 		var passwordOne = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
 		var passwordTwo = APPLICATION.mGame.mPasswordTwoTextBox.mMesh.value;
-		if (passwordOne != passwordTwo)
+		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
+		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
+		if (username.length < 1)
 		{
-			this.mServerLabel.setText('Passwords must match!');		
+			var v = 'Missing Username';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (passwordOne.length < 1)
+		{
+			var v = 'Missing Password';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (passwordOne != passwordTwo)
+		{
 			var v = 'Passwords must match!';
-			this.mServerLabe.setText('<span style="color: #f00;">' + v + '</span>');
-//          APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (first_name.length < 1)
+		{
+			var v = 'Missing First Name!';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (last_name.length < 1)
+		{
+			var v = 'Missing Last Name!';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 		}
 		else
 		{
