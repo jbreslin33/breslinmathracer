@@ -37,6 +37,7 @@ Extends: Game,
 
                 this.mPasswordOneTextBox = new Shape(200,40,220,155,this,"INPUT","","");
                 this.mPasswordOneTextBox.mMesh.value = '';
+                this.mPasswordOneTextBox.mMesh.setAttribute("type", "password");
                 this.mShapeArray.push(this.mPasswordOneTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
@@ -54,6 +55,7 @@ Extends: Game,
 
                 this.mPasswordTwoTextBox = new Shape(200,40,220,210,this,"INPUT","","");
                 this.mPasswordTwoTextBox.mMesh.value = '';
+                this.mPasswordTwoTextBox.mMesh.setAttribute("type", "password");
                 this.mShapeArray.push(this.mPasswordTwoTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
@@ -212,12 +214,23 @@ Extends: Game,
 	
 	sendSignup: function()
 	{
-		APPLICATION.log('sendSi');
-		var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
-		var password = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
-		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
-		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		APPLICATION.signupStudent(username,password,first_name,last_name);
+		var passwordOne = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
+		var passwordTwo = APPLICATION.mGame.mPasswordTwoTextBox.mMesh.value;
+		if (passwordOne != passwordTwo)
+		{
+			this.mServerLabel.setText('Passwords must match!');		
+			var v = 'Passwords must match!';
+			this.mServerLabe.setText('<span style="color: #f00;">' + v + '</span>');
+//          APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else
+		{
+			var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
+			var password = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
+			var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
+			var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
+			APPLICATION.signupStudent(username,password,first_name,last_name);
+		}
 	},
 
 	//goto login screen
