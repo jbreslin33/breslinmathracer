@@ -2,7 +2,7 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 session_start();
 
-class SchoolCreate 
+class SignupSchool 
 {
     private $mDatabaseConnection;
 

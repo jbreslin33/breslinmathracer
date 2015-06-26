@@ -21,7 +21,8 @@ Extends: Application,
 		this.LOGIN_SCHOOL = 114;
 
 		//signup
-		this.SCHOOL_USERNAME_TAKEN = 115;
+		this.USERNAME_TAKEN_SCHOOL = 115;
+		this.USERNAME_TAKEN_STUDENT = 118;
 
 		//descriptions
 		this.STANDARD_DESCRIPTION = 106;
@@ -133,7 +134,7 @@ Extends: Application,
 		{
                         if (codeNumber == APPLICATION.LOGIN_STUDENT)
                         {
-				APPLICATION.log('FULL LOGIN CODE');
+				APPLICATION.log('FULL LOGIN CODEXXX');
 				APPLICATION.mFullLogin = true;
                         }
 			
@@ -154,7 +155,16 @@ Extends: Application,
                         {
 				this.mBadPassword = true;
 			}
-                    	if (codeNumber == APPLICATION.SCHOOL_USERNAME_TAKEN)
+                    	
+			if (codeNumber == APPLICATION.USERNAME_TAKEN_STUDENT)
+                        {
+				APPLICATION.log('hllll');
+                                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_STUDENT_APPLICATION);
+                                var v = 'USERNAME TAKEN';
+                                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                                this.mSent = false;
+                        }
+                    	if (codeNumber == APPLICATION.USERNAME_TAKEN_SCHOOL)
                         {
                                 APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
                                 var v = 'USERNAME TAKEN';
@@ -303,7 +313,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/school_create.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
+                xmlhttp.open("POST","../../web/php/signup_school.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },
 
@@ -339,7 +349,7 @@ Extends: Application,
                 xmlhttp.send();
 	},
 
-        login: function(username,password)
+        loginStudent: function(username,password)
         {
 		APPLICATION.mSent = true;
 
@@ -370,11 +380,11 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../web/php/login_student.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 
-        schoolLogin: function(username,password)
+        loginSchool: function(username,password)
         {
 		APPLICATION.mSent = true;
                 //gets called right away
@@ -414,7 +424,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/school_login.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../web/php/login_school.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 

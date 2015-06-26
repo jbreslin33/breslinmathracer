@@ -1,5 +1,5 @@
 <?php
-include_once(getenv("DOCUMENT_ROOT") . "/src/php/school_create.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_school.php");
 
 
 $_SESSION["username"] = $_GET["username"];
@@ -11,7 +11,7 @@ $_SESSION["zip"] = $_GET["zip"];
 $_SESSION["email"] = $_GET["email"];
 $_SESSION["student_code"] = $_GET["student_code"];
 
-$create = new SchoolCreate();
+$signupSchool = new SignupSchool();
 
 if ($_SESSION["LOGGED_IN"] == 1)
 {
