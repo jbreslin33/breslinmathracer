@@ -66,6 +66,7 @@ initialize: function()
 enter: function(application)
 {
 	application.mLoggedIn = false;
+	application.mSent = false;
 
 	if (application.mStateLogs)
 	{

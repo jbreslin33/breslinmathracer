@@ -63,7 +63,7 @@ public function checkForSchool()
 
         if ($num > 0)
         {
-		$this->mStudentExists = true;
+		$this->mSchoolExists = true;
 
 		$query2 = "select id from schools where username = '";
         	$query2 .= $_SESSION["username"];

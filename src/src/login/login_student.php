@@ -8,8 +8,6 @@ Extends: Game,
 	{
        		this.parent(application);
 		
-		this.mSent = false;
-
                 /*************** Title **********/
                 this.mTitleLabel.setText('Student Login');
 
@@ -145,9 +143,9 @@ Extends: Game,
 
         sendLogin: function()
         {
-		if (this.mSent == false)
+		if (APPLICATION.mSent == false)
 		{
-			this.mSent = true;
+			APPLICATION.mSent = true;
                 	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
                 	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 

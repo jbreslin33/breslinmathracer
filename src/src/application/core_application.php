@@ -265,8 +265,6 @@ Extends: Application,
 
         signupStudent: function(username,password,first_name,last_name)
         {
-		APPLICATION.mSent = true;
-
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -299,7 +297,6 @@ Extends: Application,
         
 	signupSchool: function(username,password,name,city,state,zip,email,student_code)
         {
-		APPLICATION.mSent = true;
 
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -365,8 +362,6 @@ Extends: Application,
 
         loginStudent: function(username,password)
         {
-		APPLICATION.mSent = true;
-
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -400,7 +395,6 @@ Extends: Application,
 
         loginSchool: function(username,password)
         {
-		APPLICATION.mSent = true;
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

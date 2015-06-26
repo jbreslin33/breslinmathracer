@@ -15,11 +15,11 @@ if ($_SESSION["LOGGED_IN"] == 1)
 }
 else
 {
-	if ($login->mBadUsername == 1)
+	if ($loginSchool->mBadUsername == 1)
 	{
 		include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_bad_username.php");
 	}	
-	if ($login->mBadPassword == 1)
+	if ($loginSchool->mBadPassword == 1)
 	{
 		include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_bad_password.php");
 	}	
