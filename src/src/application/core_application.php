@@ -134,7 +134,6 @@ Extends: Application,
 		{
                         if (codeNumber == APPLICATION.LOGIN_STUDENT)
                         {
-				APPLICATION.log('FULL LOGIN CODEXXX');
 				APPLICATION.mFullLogin = true;
                         }
 			
@@ -387,16 +386,6 @@ Extends: Application,
         loginSchool: function(username,password)
         {
 		APPLICATION.mSent = true;
-                //gets called right away
-/*
-                APPLICATION.mGame.mLoginButton.setVisibility(false);
-                APPLICATION.mGame.mUsernameLabel.setVisibility(false);
-                APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
-                APPLICATION.mGame.mPasswordLabel.setVisibility(false);
-                APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
-                var v = 'PLEASE WAIT LOGGING IN';
-                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
-*/
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
