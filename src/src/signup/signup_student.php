@@ -144,7 +144,7 @@ Extends: Game,
         {
                 if (e.keyCode == 13)
                 {
-                        APPLICATION.mGame.mPasswordTextBox.mMesh.focus();
+                        APPLICATION.mGame.mPasswordOneTextBox.mMesh.focus();
                 }
         },
 
@@ -152,28 +152,44 @@ Extends: Game,
         {
                 if (e.key == 'enter')
                 {
-                        APPLICATION.mGame.mPasswordTextBox.mMesh.focus();
+                        APPLICATION.mGame.mPasswordOneTextBox.mMesh.focus();
                 }
         },
 
-	//password
- 	passwordTextBoxMicrosoftHit: function(e)
+	//passwordOne
+ 	passwordOneTextBoxMicrosoftHit: function(e)
         {
                 if (e.keyCode == 13)
                 {
-                        APPLICATION.mGame.mFirstNameTextBox.mMesh.focus();
+                        APPLICATION.mGame.mPasswordTwoTextBox.mMesh.focus();
                 }
         },
 
-        passwordTextBoxFirefoxHit: function(e)
+        passwordOneTextBoxFirefoxHit: function(e)
         {
                 if (e.key == 'enter')
                 {
-                        APPLICATION.mGame.mFirstNameTextBox.mMesh.focus();
+                        APPLICATION.mGame.mPasswordTwoTextBox.mMesh.focus();
                 }
         },
 
-	//firstName
+	//passwordTwo
+ 	passwordTwoTextBoxMicrosoftHit: function(e)
+        {
+                if (e.keyCode == 13)
+                {
+                        APPLICATION.mGame.mLastNameTextBox.mMesh.focus();
+                }
+        },
+
+        passwordTwoTextBoxFirefoxHit: function(e)
+        {
+                if (e.key == 'enter')
+                {
+                        APPLICATION.mGame.mLastNameTextBox.mMesh.focus();
+                }
+        },
+
         firstNameTextBoxMicrosoftHit: function(e)
         {
                 if (e.keyCode == 13)
