@@ -601,6 +601,32 @@ if (id == '6.rp.a.3.a_3')
                 return new i_6_rp_a_3_a__3(this.mSheet);
         }
 
+//6.rp.a.3.b
+	if (id == '6.rp.a.3.b_1')
+        {
+                return new i_6_rp_a_3_b__1(this.mSheet);
+        }
+  if (id == '6.rp.a.3.b_2')
+        {
+                return new i_6_rp_a_3_b__2(this.mSheet);
+        }
+  if (id == '6.rp.a.3.b_3')
+        {
+                return new i_6_rp_a_3_b__3(this.mSheet);
+        }
+  if (id == '6.rp.a.3.b_4')
+        {
+                return new i_6_rp_a_3_b__4(this.mSheet);
+        }
+  if (id == '6.rp.a.3.b_5')
+        {
+                return new i_6_rp_a_3_b__5(this.mSheet);
+        }
+  if (id == '6.rp.a.3.b_6')
+        {
+                return new i_6_rp_a_3_b__6(this.mSheet);
+        }
+
 	return 0;	
 }
 		

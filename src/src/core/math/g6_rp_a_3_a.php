@@ -20,14 +20,24 @@ var a = Math.floor(Math.random()*2)+4;
 var b = Math.floor(Math.random()*2)+2;
 var c = a * (Math.floor(Math.random()*2)+3);
 
-var answer = 20;
+var answer;
+
+var r = Math.floor(Math.random()*2);
+
+if(r == 0)
+{
+  this.setQuestion('Joan earns $8 for every 2 necklaces she sells. Billy earns $3 for every necklace he sells. Billy sold twice as many necklaces as Joan. How many necklaces must Billy sell so that he earns $20 more than Joan?'); 
+
+  answer = 20;   
+}
+else
+{
+  this.setQuestion('Pete earns $10 for every 2 necklaces he sells. Sally earns $4 for every necklace she sells. Sally sold twice as many necklaces as Pete. How many necklaces must Sally sell so that she earns $15 more than Pete?');    
+
+  answer = 10;
+}
 
 this.setAnswer('' + answer,0);
-
-this.setQuestion('Joan earns $7 for every 2 necklaces she sells. Billy earns $3 for every necklace he sells. Billy sold twice as many necklaces as Joan. How many necklaces must Billy sell so that he earns $20 more than Joan?');    
-
-this.setQuestion('Joan earns $8 for every 2 necklaces she sells. Billy earns $3 for every necklace he sells. Billy sold twice as many necklaces as Joan. How many necklaces must Billy sell so that he earns $20 more than Joan?');    
-
 
 this.mQuestionLabel.setSize(220,50);
 this.mQuestionLabel.setPosition(450,80);
