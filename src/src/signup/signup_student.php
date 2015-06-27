@@ -235,14 +235,24 @@ Extends: Game,
 		var passwordTwo = APPLICATION.mGame.mPasswordTwoTextBox.mMesh.value;
 		var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
 		var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-		if (username.length < 1)
+		if (username.length < 1) 
 		{
 			var v = 'Missing Username';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (username.indexOf(" ") > -1)
+		{
+			var v = 'No spaces in username';
 			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 		}
 		else if (passwordOne.length < 1)
 		{
 			var v = 'Missing Password';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (passwordOne.indexOf(" ") > -1)
+		{
+			var v = 'No spaces in password';
 			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 		}
 		else if (passwordOne != passwordTwo)
@@ -255,9 +265,19 @@ Extends: Game,
 			var v = 'Missing First Name!';
 			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 		}
+		else if (first_name.indexOf(" ") > -1)
+		{
+			var v = 'No spaces in first name';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
 		else if (last_name.length < 1)
 		{
 			var v = 'Missing Last Name!';
+			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		}
+		else if (last_name.indexOf(" ") > -1)
+		{
+			var v = 'No spaces in last name';
 			this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 		}
 		else
