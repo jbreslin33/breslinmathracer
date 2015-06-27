@@ -463,7 +463,6 @@ enter: function(application)
 		application.log('APPLICATION::SIGNUP_STUDENT_WAIT_APPLICATION');
 	}
 	application.mStateEnterTime = APPLICATION.mGame.mTimeSinceEpoch; 
-	application.mSent = false;
 
         //gets called right away
         APPLICATION.mGame.mLoginButton.setVisibility(false);

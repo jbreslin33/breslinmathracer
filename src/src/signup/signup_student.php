@@ -262,11 +262,15 @@ Extends: Game,
 		}
 		else
 		{
-			var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
-			var password = APPLICATION.mGame.mPasswordOneTextBox.mMesh.value;
-			var first_name = APPLICATION.mGame.mFirstNameTextBox.mMesh.value;
-			var last_name = APPLICATION.mGame.mLastNameTextBox.mMesh.value;
-			APPLICATION.signupStudent(username,password,first_name,last_name);
+	                if (APPLICATION.mSent == false)
+                	{
+                        	APPLICATION.mSent = true;
+				APPLICATION.signupStudent(username,passwordOne,first_name,last_name);
+                	}
+                	else
+                	{
+
+                	}
 		}
 	},
 
