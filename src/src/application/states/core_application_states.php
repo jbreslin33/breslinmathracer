@@ -427,9 +427,13 @@ execute: function(application)
 	}
         if (application.mSent == true)
         {
-		APPLICATION.log('msent true');
+		APPLICATION.log('change state');
                 application.mCoreStateMachine.changeState(application.mSIGNUP_STUDENT_WAIT_APPLICATION);
         }
+	else
+	{
+		APPLICATION.log('no change state');
+	}
 },
 
 exit: function(application)

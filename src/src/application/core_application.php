@@ -265,6 +265,7 @@ Extends: Application,
 
         signupStudent: function(username,password,first_name,last_name)
         {
+		APPLICATION.mSent = true;
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
