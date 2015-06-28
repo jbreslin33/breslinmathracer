@@ -407,7 +407,31 @@ Extends: Game,
 		var zip = APPLICATION.mGame.mZipTextBox.mMesh.value;
 		var email = APPLICATION.mGame.mEmailOneTextBox.mMesh.value;
 		var student_code = APPLICATION.mGame.mCodeTextBox.mMesh.value;
-		APPLICATION.signupSchool(username,password,name,city,state,zip,email,student_code);
+
+                if (username.length < 1)
+                {
+                        var v = 'Missing Username';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (username.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in username';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+		else
+		{
+                        if (APPLICATION.mSent == false)
+                        {
+                                APPLICATION.mSent = true;
+                                //APPLICATION.signupStudent(username,passwordOne,first_name,last_name);
+				APPLICATION.signupSchool(username,password,name,city,state,zip,email,student_code);
+                        }
+                        else
+                        {
+
+                        }
+
+		}
 	},
 
 	//goto login screen

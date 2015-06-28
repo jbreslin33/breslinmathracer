@@ -25,7 +25,7 @@ if ($_SESSION["LOGGED_IN"] == 1)
         }
         if ($_SESSION["role"] == 3)
         {
-                include_once(getenv("DOCUMENT_ROOT") . "/web/php/full_return_string_school.php");
+                include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_login_school.php");
         }
 }
 else
