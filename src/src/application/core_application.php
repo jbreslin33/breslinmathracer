@@ -100,7 +100,7 @@ Extends: Application,
                 this.mSIGNUP_STUDENT_APPLICATION       = new SIGNUP_STUDENT_APPLICATION    (this);
                 this.mSIGNUP_STUDENT_WAIT_APPLICATION  = new SIGNUP_STUDENT_WAIT_APPLICATION    (this);
                 this.mSIGNUP_SCHOOL_APPLICATION        = new SIGNUP_SCHOOL_APPLICATION     (this);
-                //this.mSIGNUP_SCHOOL_WAIT_APPLICATION   = new SIGNUP_SCHOOL_WAIT_APPLICATION     (this);
+                this.mSIGNUP_SCHOOL_WAIT_APPLICATION   = new SIGNUP_SCHOOL_WAIT_APPLICATION     (this);
 
 		//normal
                 this.mNORMAL_CORE_APPLICATION          = new NORMAL_CORE_APPLICATION       (this);
@@ -145,7 +145,6 @@ Extends: Application,
 				APPLICATION.mDataToRead = true;
                         }
 
-                      
 			//SIGNUP 
 			if (codeNumber == APPLICATION.SIGNUP_STUDENT)
                         {
