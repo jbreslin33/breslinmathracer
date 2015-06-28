@@ -22,6 +22,7 @@ Extends: Application,
 
 		//signup
 		this.USERNAME_TAKEN_SCHOOL = 115;
+		this.NAME_TAKEN_SCHOOL = 120;
 		this.USERNAME_TAKEN_STUDENT = 118;
 
 		//descriptions
@@ -181,6 +182,14 @@ Extends: Application,
                         {
                                 APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
                                 var v = 'USERNAME TAKEN';
+                                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                                this.mSent = false;
+                        }
+
+                        if (codeNumber == APPLICATION.NAME_TAKEN_SCHOOL)
+                        {
+                                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mSIGNUP_SCHOOL_APPLICATION);
+                                var v = 'school name, city, state, zip combo taken';
                                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
                                 this.mSent = false;
                         }

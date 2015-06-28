@@ -34,6 +34,10 @@ else
         {
                 include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_school_username_taken.php");
         }
+        if ($signupSchool->mNameCityStateZipExists == 1)
+        {
+                include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_school_name_taken.php");
+        }
 /*
         if ($signupSchool->mBadPassword == 1)
         {

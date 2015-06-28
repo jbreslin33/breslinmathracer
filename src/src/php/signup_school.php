@@ -10,7 +10,7 @@ function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mUsernameExists = 0;
-	$this->mNameExists = 0;
+        $this->mNameCityStateZipExists = 0;
 
 	$this->process();
 }
@@ -45,6 +45,11 @@ public function process()
  	{
 		$this->mUsernameExists = 1;
 	}
+
+        if (strpos($er,'schools_name_city_state_zip_key') !== false)
+        {
+                $this->mNameCityStateZipExists = 1;
+        }
 	
 	//then check login
 
