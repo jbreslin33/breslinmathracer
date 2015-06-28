@@ -11,13 +11,14 @@ Extends: Game,
 
                 /*************** Title **********/
                 this.mTitleLabel.setText('Create School');
+                this.mTitleLabel.setPosition(125,40);
 
 		//username	
-		this.mUsernameLabel = new Shape(200,40,120,80,this,"","","");
+		this.mUsernameLabel = new Shape(200,40,120,100,this,"","","");
                 this.mUsernameLabel.setText('Username:');
                 this.mShapeArray.push(this.mUsernameLabel);
                 
-		this.mUsernameTextBox = new Shape(200,40,220,80,this,"INPUT","","");
+		this.mUsernameTextBox = new Shape(200,40,220,100,this,"INPUT","","");
                 this.mUsernameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mUsernameTextBox);
 		this.mUsernameTextBox.mMesh.focus();	
@@ -31,11 +32,11 @@ Extends: Game,
                 }
 
 		//password one	
-		this.mPasswordOneLabel = new Shape(200,40,120,135,this,"","","");
+		this.mPasswordOneLabel = new Shape(200,40,120,155,this,"","","");
                 this.mPasswordOneLabel.setText('Password:');
                 this.mShapeArray.push(this.mPasswordOneLabel);
 
-                this.mPasswordOneTextBox = new Shape(200,40,220,135,this,"INPUT","","");
+                this.mPasswordOneTextBox = new Shape(200,40,220,155,this,"INPUT","","");
                 this.mPasswordOneTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mPasswordOneTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -48,11 +49,11 @@ Extends: Game,
                 }
 
                 //password two 
-                this.mPasswordTwoLabel = new Shape(200,40,120,190,this,"","","");
+                this.mPasswordTwoLabel = new Shape(200,40,120,210,this,"","","");
                 this.mPasswordTwoLabel.setText('Password:');
                 this.mShapeArray.push(this.mPasswordTwoLabel);
 
-                this.mPasswordTwoTextBox = new Shape(200,40,220,190,this,"INPUT","","");
+                this.mPasswordTwoTextBox = new Shape(200,40,220,210,this,"INPUT","","");
                 this.mPasswordTwoTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mPasswordTwoTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -65,11 +66,11 @@ Extends: Game,
                 }
 
 		//Name	
-		this.mNameLabel = new Shape(200,40,120,245,this,"","","");
+		this.mNameLabel = new Shape(200,40,120,265,this,"","","");
                 this.mNameLabel.setText('School:');
                 this.mShapeArray.push(this.mNameLabel);
 
-  		this.mNameTextBox = new Shape(200,40,220,245,this,"INPUT","","");
+  		this.mNameTextBox = new Shape(200,40,220,265,this,"INPUT","","");
                 this.mNameTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mNameTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -82,11 +83,11 @@ Extends: Game,
                 }
 	
 		//city	
-		this.mCityLabel = new Shape(200,40,120,300,this,"","","");
+		this.mCityLabel = new Shape(200,40,120,320,this,"","","");
                 this.mCityLabel.setText('City:');
                 this.mShapeArray.push(this.mCityLabel);
   		
-		this.mCityTextBox = new Shape(200,40,220,300,this,"INPUT","","");
+		this.mCityTextBox = new Shape(200,40,220,320,this,"INPUT","","");
                 this.mCityTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mCityTextBox);
              	if (navigator.appName == "Microsoft Internet Explorer")
@@ -99,11 +100,11 @@ Extends: Game,
                 }
 
                 //state         
-                this.mStateLabel = new Shape(200,40,120,355,this,"","","");
+                this.mStateLabel = new Shape(200,40,120,375,this,"","","");
                 this.mStateLabel.setText('State:');
                 this.mShapeArray.push(this.mStateLabel);
 
-                this.mStateTextBox = new Shape(200,40,220,355,this,"INPUT","","");
+                this.mStateTextBox = new Shape(200,40,220,375,this,"INPUT","","");
                 this.mStateTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mStateTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -116,11 +117,11 @@ Extends: Game,
                 }
 
                 //zip         
-                this.mZipLabel = new Shape(200,40,450,80,this,"","","");
+                this.mZipLabel = new Shape(200,40,450,100,this,"","","");
                 this.mZipLabel.setText('Zip:');
                 this.mShapeArray.push(this.mZipLabel);
 
-                this.mZipTextBox = new Shape(200,40,550,80,this,"INPUT","","");
+                this.mZipTextBox = new Shape(200,40,550,100,this,"INPUT","","");
                 this.mZipTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mZipTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -133,11 +134,11 @@ Extends: Game,
                 }
 
                 //email one 
-                this.mEmailOneLabel = new Shape(200,40,450,135,this,"","","");
+                this.mEmailOneLabel = new Shape(200,40,450,155,this,"","","");
                 this.mEmailOneLabel.setText('Email:');
                 this.mShapeArray.push(this.mEmailOneLabel);
 
-                this.mEmailOneTextBox = new Shape(200,40,550,135,this,"INPUT","","");
+                this.mEmailOneTextBox = new Shape(200,40,550,155,this,"INPUT","","");
                 this.mEmailOneTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mEmailOneTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -150,11 +151,11 @@ Extends: Game,
                 }
 
                 //email two
-                this.mEmailTwoLabel = new Shape(200,40,450,190,this,"","","");
+                this.mEmailTwoLabel = new Shape(200,40,450,210,this,"","","");
                 this.mEmailTwoLabel.setText('Email:');
                 this.mShapeArray.push(this.mEmailTwoLabel);
 
-                this.mEmailTwoTextBox = new Shape(200,40,550,190,this,"INPUT","","");
+                this.mEmailTwoTextBox = new Shape(200,40,550,210,this,"INPUT","","");
                 this.mEmailTwoTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mEmailTwoTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -167,11 +168,11 @@ Extends: Game,
                 }
 
                 //code
-                this.mCodeLabel = new Shape(300,40,500,245,this,"","","");
+                this.mCodeLabel = new Shape(300,40,500,265,this,"","","");
                 this.mCodeLabel.setText('School Signup Password:');
                 this.mShapeArray.push(this.mCodeLabel);
 
-                this.mCodeTextBox = new Shape(80,40,610,245,this,"INPUT","","");
+                this.mCodeTextBox = new Shape(80,40,610,265,this,"INPUT","","");
                 this.mCodeTextBox.mMesh.value = '';
                 this.mShapeArray.push(this.mCodeTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -185,7 +186,7 @@ Extends: Game,
 
 
 		//SIGNUP BUTTON
-                this.mSignupButton = new Shape(200,50,450,300,this,"BUTTON","","");
+                this.mSignupButton = new Shape(200,50,450,320,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mSignupButton.mMesh.attachEvent("onclick",this.hitSignupButton);
