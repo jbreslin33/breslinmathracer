@@ -581,10 +581,23 @@ enter: function(application)
                 APPLICATION.mGame.mPasswordOneTextBox.setVisibility(true);
                 APPLICATION.mGame.mPasswordTwoLabel.setVisibility(true);
                 APPLICATION.mGame.mPasswordTwoTextBox.setVisibility(true);
-                APPLICATION.mGame.mFirstNameLabel.setVisibility(true);
-                APPLICATION.mGame.mFirstNameTextBox.setVisibility(true);
-                APPLICATION.mGame.mLastNameLabel.setVisibility(true);
-                APPLICATION.mGame.mLastNameTextBox.setVisibility(true);
+                APPLICATION.mGame.mNameLabel.setVisibility(true);
+                APPLICATION.mGame.mNameTextBox.setVisibility(true);
+                APPLICATION.mGame.mCityLabel.setVisibility(true);
+                APPLICATION.mGame.mCityTextBox.setVisibility(true);
+                APPLICATION.mGame.mStateLabel.setVisibility(true);
+                APPLICATION.mGame.mStateTextBox.setVisibility(true);
+                APPLICATION.mGame.mZipLabel.setVisibility(true);
+                APPLICATION.mGame.mZipTextBox.setVisibility(true);
+                
+		APPLICATION.mGame.mEmailOneLabel.setVisibility(true);
+                APPLICATION.mGame.mEmailOneTextBox.setVisibility(true);
+		
+		APPLICATION.mGame.mEmailTwoLabel.setVisibility(true);
+                APPLICATION.mGame.mEmailTwoTextBox.setVisibility(true);
+		
+		APPLICATION.mGame.mCodeLabel.setVisibility(true);
+                APPLICATION.mGame.mCodeTextBox.setVisibility(true);
         }
         else
         {
@@ -616,12 +629,10 @@ execute: function(application)
 
         if (application.mSent == true)
         {
-                APPLICATION.log('change state');
                 application.mCoreStateMachine.changeState(application.mSIGNUP_SCHOOL_WAIT_APPLICATION);
         }
         else
         {
-                APPLICATION.log('no change state');
         }
 },
 
