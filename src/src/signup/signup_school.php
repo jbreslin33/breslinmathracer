@@ -418,19 +418,93 @@ Extends: Game,
                         var v = 'No spaces in username';
                         this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
                 }
+                else if (password.length < 1)
+                {
+                        var v = 'Missing Password';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (password.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in password';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (name.length < 1)
+                {
+                        var v = 'Missing School Name';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+/*
+                else if (name.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in School Name';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+*/
+                else if (city.length < 1)
+                {
+                        var v = 'Missing City';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+/*
+                else if (city.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in City';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+*/
+                else if (state.length < 1)
+                {
+                        var v = 'Missing State';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+/*
+                else if (state.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in State';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+*/
+               	else if (zip.length < 1)
+                {
+                        var v = 'Missing Zip';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (city.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in Zip';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+               	else if (email.length < 1)
+                {
+                        var v = 'Missing Email';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (email.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in Email';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (student_code.length < 1)
+                {
+                        var v = 'Missing Student Code';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
+                else if (student_code.indexOf(" ") > -1)
+                {
+                        var v = 'No spaces in Student Code';
+                        this.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+                }
 		else
 		{
                         if (APPLICATION.mSent == false)
                         {
                                 APPLICATION.mSent = true;
-                                //APPLICATION.signupStudent(username,passwordOne,first_name,last_name);
 				APPLICATION.signupSchool(username,password,name,city,state,zip,email,student_code);
                         }
                         else
                         {
 
                         }
-
 		}
 	},
 
