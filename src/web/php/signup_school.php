@@ -30,12 +30,12 @@ if ($_SESSION["LOGGED_IN"] == 1)
 }
 else
 {
-        if ($create->mUserNameExists == 1)
+        if ($signupSchool->mUsernameExists == 1)
         {
                 include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_school_username_taken.php");
         }
 /*
-        if ($create->mBadPassword == 1)
+        if ($signupSchool->mBadPassword == 1)
         {
                 include_once(getenv("DOCUMENT_ROOT") . "/web/php/return_bad_password.php");
         }

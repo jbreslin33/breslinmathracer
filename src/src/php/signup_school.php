@@ -10,7 +10,7 @@ function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mUsernameExists = 0;
-	$this->mNamExists = 0;
+	$this->mNameExists = 0;
 
 	$this->process();
 }
@@ -43,7 +43,7 @@ public function process()
 	$er = pg_last_error();
 	if (strpos($er,'schools_username_key') !== false)
  	{
-		$this->mUserNameExists = 1;
+		$this->mUsernameExists = 1;
 	}
 	
 	//then check login
