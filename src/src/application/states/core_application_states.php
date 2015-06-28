@@ -396,6 +396,10 @@ enter: function(application)
         	APPLICATION.mGame.mPasswordOneTextBox.setVisibility(true);
         	APPLICATION.mGame.mPasswordTwoLabel.setVisibility(true);
         	APPLICATION.mGame.mPasswordTwoTextBox.setVisibility(true);
+        	APPLICATION.mGame.mFirstNameLabel.setVisibility(true);
+        	APPLICATION.mGame.mFirstNameTextBox.setVisibility(true);
+        	APPLICATION.mGame.mLastNameLabel.setVisibility(true);
+        	APPLICATION.mGame.mLastNameTextBox.setVisibility(true);
 	}
 	else 
 	{
@@ -472,6 +476,11 @@ enter: function(application)
         APPLICATION.mGame.mPasswordOneTextBox.setVisibility(false);
         APPLICATION.mGame.mPasswordTwoLabel.setVisibility(false);
         APPLICATION.mGame.mPasswordTwoTextBox.setVisibility(false);
+        APPLICATION.mGame.mFirstNameLabel.setVisibility(true);
+        APPLICATION.mGame.mFirstNameTextBox.setVisibility(true);
+        APPLICATION.mGame.mLastNameLabel.setVisibility(true);
+        APPLICATION.mGame.mLastNameTextBox.setVisibility(true);
+
         var v = 'PLEASE WAIT LOGGING IN';
         APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 },
@@ -560,6 +569,7 @@ enter: function(application)
         {
                 application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION');
         }
+
         application.mRef_id = 'signup';
         if (application.mGame)
         {
