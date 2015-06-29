@@ -45,14 +45,7 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer('' + this.b);
                 this.mButtonC.setAnswer('' + this.c);
 
-                var roll = Math.floor(Math.random()*11);
-		roll = 0;
-		if (roll == 0)
-		{
-                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mSubtracted + ' ' + this.y + ' ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
-		}
-
-
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mSubtracted + ' ' + this.y + ' ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
                 this.shuffle(10);
         }
 });
@@ -102,14 +95,7 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer('' + this.b);
                 this.mButtonC.setAnswer('' + this.c);
 
-                var roll = Math.floor(Math.random()*11);
-		roll = 0;
-		if (roll == 0)
-		{
-                	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mAdded + ' ' + this.y + ' more ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
-		}
-
-
+               	this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.x + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.mAdded + ' ' + this.y + ' more ' + this.mThing  + '. How many ' + this.mThing + ' does ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' have now?');
                 this.shuffle(10);
         }
 });
