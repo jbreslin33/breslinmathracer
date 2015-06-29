@@ -29,6 +29,18 @@ getItem: function(id)
         {
                 return new i_k_oa_a_1__4(this.mSheet);
         }
+        if (id == 'k.oa.a.1_5')
+        {
+                return new i_k_oa_a_1__5(this.mSheet);
+        }
+        if (id == 'k.oa.a.1_6')
+        {
+                return new i_k_oa_a_1__6(this.mSheet);
+        }
+        if (id == 'k.oa.a.1_7')
+        {
+                return new i_k_oa_a_1__7(this.mSheet);
+        }
 
         //k.oa.a.2
         if (id == 'k.oa.a.2_1')
