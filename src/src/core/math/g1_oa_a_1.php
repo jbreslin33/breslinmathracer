@@ -20,7 +20,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*5)+5;
                 this.c = parseInt(this.a - this.b);
 	
-		this.setQuestion(this.ns.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' had ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,1,0) + ' then sold ' + this.b + ' ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.ns.mLeft + '?');        
+		this.setQuestion(this.ns.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' had ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then sold ' + this.b + ' ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ' + this.ns.mLeft + '?');        
                 this.setAnswer('' + this.c,0);
         }
 });
@@ -125,7 +125,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*5)+5;
                 this.c = parseInt(this.a - this.b);
 	
-		this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' ate ' + this.b + '. How many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have ' + this.ns.mLeft + '?');  	
+		this.setQuestion(this.ns.mNameOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + '. If ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ate ' + this.b + '. How many ' + this.ns.mVegetableOne + ' will '  +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ' + this.ns.mLeft + '?');  	
                 this.setAnswer('' + this.c,0);
         }
 });
@@ -152,7 +152,7 @@ Extends: TextItem,
                 this.b = Math.floor(Math.random()*5)+5;
                 this.c = parseInt(this.a - this.b);
 	
-		this.setQuestion(this.ns.mAdultOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many more ' + this.ns.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mAdultOne,0,0) + ' have than ' + this.ns.mVegetableTwo + '?');  	
+		this.setQuestion(this.ns.mNameOne + ' has a garden with ' + this.a + ' ' + this.ns.mVegetableOne + ' and ' + this.b + ' ' + this.ns.mVegetableTwo + '. How many more ' + this.ns.mVegetableOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have than ' + this.ns.mVegetableTwo + '?');  	
                 this.setAnswer('' + this.c,0);
         }
 });
