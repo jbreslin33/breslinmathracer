@@ -27,7 +27,7 @@ initialize: function(sheet)
         	this.d = parseInt(this.a + this.b + this.c);
 	}
 
-        this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThingOne + ' and ' + this.mNameThree + ' has ' + this.c + ' ' + this.ns.mThingOne + '. How many ' + this.ns.mThingOne + ' do they have ?');
+        this.setQuestion(this.ns.mNameOne + ' has ' + this.a + ' ' + this.ns.mThingOne + ', ' + this.ns.mNameTwo + ' has ' + this.b + ' ' + this.ns.mThingOne + ' and ' + this.ns.mNameThree + ' has ' + this.c + ' ' + this.ns.mThingOne + '. How many ' + this.ns.mThingOne + ' do they have ' + this.ns.mSum + '?');
         this.setAnswer('' + this.d,0);
 }
 });
