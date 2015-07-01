@@ -115,7 +115,7 @@ public function insertIntoUsers()
         $query .= $_SESSION["last_name"];
         $query .= "','";
         $query .= $_SESSION["core_standards_id"];
-        $query .= "',2);"; //default to mathcore
+        $query .= "',1);"; //default to mathcore
 
   	//get db result
         $result = pg_query($this->mDatabaseConnection->getConn(),$query); // or die('Could not connect: ' . pg_last_error());
