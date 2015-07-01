@@ -1,5 +1,38 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.2_5',1.0205,'1.oa.a.2','How many more.' );
+*/
+
+var i_1_oa_a_2__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '1.oa.a.2_5';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        //variables
+        this.a = 0;
+        this.b = 0;
+        this.c = 0;
+        this.d = 99;
+        while(this.d > 20)
+        {
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+                this.d = parseInt(this.a + this.b + this.c);
+        }
+
+        this.setQuestion('' + 'At a party ' + this.ns.mNameOne + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friends drank ' + this.a + ' glasses of ' + this.ns.mDrinkOne + ', ' + this.b + ' glasses of ' + this.ns.mDrinkTwo + ' and ' + this.c + ' glasses of ' + this.ns.mDrinkThree + '. How many glasses did they drink ' + this.ns.mSum + '?');
+        this.setAnswer('' + this.d,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.2_4',1.0204,'1.oa.a.2','How many more.' );
 */
 
