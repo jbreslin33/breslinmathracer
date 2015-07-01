@@ -27,7 +27,6 @@ initialize: function(sheet)
                 this.d = parseInt(this.a + this.b + this.c);
         }
 	this.setQuestion('' + this.ns.mNameOne + ' was at a picnic with some family members. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne + ' ate ' + this.a + ' ' + this.ns.mFruitOne + ', ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyTwo + ' ate ' + this.b + ' ' + this.ns.mFruitTwo + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyThree + ' ate ' + this.c + ' ' + this.ns.mFruitThree + '. How many pieces of fruit did his family eat ' + this.ns.mSum + '?');
-        //this.setQuestion('' + 'This week ' + this.ns.mNameOne + ' ate ' + this.a + ' ' + this.ns.mFruitOne + ', ' + this.b + ' ' + this.ns.mFruitTwo + ' and ' + this.c + ' ' + this.ns.mFruitThree + '. How many pieces of fruit did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' eat ' + this.ns.mSum + '?');
         this.setAnswer('' + this.d,0);
 }
 });
