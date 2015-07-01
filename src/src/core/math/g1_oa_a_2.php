@@ -1,5 +1,38 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.2_8',1.0208,'1.oa.a.2','add 3 within 20' );
+*/
+
+var i_1_oa_a_2__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '1.oa.a.2_8';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        //variables
+        this.a = 0;
+        this.b = 0;
+        this.c = 0;
+        this.d = 99;
+        while(this.d > 20)
+        {
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = Math.floor(Math.random()*8)+2;
+                this.d = parseInt(this.a + this.b + this.c);
+        }
+	this.setQuestion('' + this.ns.mNameOne + ' was at a picnic with some family members. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' ' + this.ns.mFamilyOne + ' ate ' + this.a + ' ' + this.ns.mFruitOne + ', ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyTwo + ' ate ' + this.b + ' ' + this.ns.mFruitTwo + ' and ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.ns.mFamilyThree + ' ate ' + this.c + ' ' + this.ns.mFruitThree + '. How many pieces of fruit did his family eat ' + this.ns.mSum + '?');
+        //this.setQuestion('' + 'This week ' + this.ns.mNameOne + ' ate ' + this.a + ' ' + this.ns.mFruitOne + ', ' + this.b + ' ' + this.ns.mFruitTwo + ' and ' + this.c + ' ' + this.ns.mFruitThree + '. How many pieces of fruit did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' eat ' + this.ns.mSum + '?');
+        this.setAnswer('' + this.d,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.a.2_7',1.0207,'1.oa.a.2','add 3 within 20' );
 */
 
