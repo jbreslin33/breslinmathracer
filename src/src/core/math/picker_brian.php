@@ -628,6 +628,29 @@ if (id == '6.rp.a.3.a_3')
                 return new i_6_rp_a_3_b__6(this.mSheet);
         }
 
+//6.rp.a.3.c
+	if (id == '6.rp.a.3.c_1')
+        {
+                return new i_6_rp_a_3_c__1(this.mSheet);
+        }
+  if (id == '6.rp.a.3.c_2')
+        {
+                return new i_6_rp_a_3_c__2(this.mSheet);
+        }
+  if (id == '6.rp.a.3.c_3')
+        {
+                return new i_6_rp_a_3_c__3(this.mSheet);
+        }
+  if (id == '6.rp.a.3.c_4')
+        {
+                return new i_6_rp_a_3_c__4(this.mSheet);
+        }
+
+//6.rp.a.3.d
+  if (id == '6.rp.a.3.d_1')
+        {
+                return new i_6_rp_a_3_d__1(this.mSheet);
+        }
 	return 0;	
 }
 		

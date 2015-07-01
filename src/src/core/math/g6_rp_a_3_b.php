@@ -295,11 +295,25 @@ var r = Math.floor(Math.random()*2);
     this.d = Math.floor(Math.random()*3)+1;
     this.e = this.a * this.d;
 
+    answer = this.c; 
+    this.setAnswer('' + answer,0);
+
+var r = Math.floor(Math.random()*3);
+
+if (r == 0)
+{
   this.setQuestion('A ' + this.a + ' gallon bottle of bleach costs $' + this.b + '. What is the price per quart?'); 
+}
+if (r == 1)
+{
+this.setQuestion('A ' + this.a + ' quart carton of juice costs $' + this.b + '. What is the price per cup?'); 
+}
+if (r == 2)
+{
+this.b = this.b*4; 
 
-answer = this.c;  
-
-this.setAnswer('' + answer,0);
+this.setQuestion('A ' + this.a + ' pound bag of fruit costs $' + this.b + '. What is the price per ounce?'); 
+}
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);
@@ -427,28 +441,35 @@ initialize: function(sheet)
 	this.parent(sheet,600,50,330,75,100,50,685,80);
 
        	this.mType = '6.rp.a.3.b_6'; 
-              
-var a = Math.floor(Math.random()*2)+4;
-var b = Math.floor(Math.random()*2)+2;
-var c = a * (Math.floor(Math.random()*2)+3);
 
-var answer;
+    this.mNameMachine = new NameMachine();
+    this.ns = new NameSampler();
+    this.mNameOne     = this.mNameMachine.getName();
 
-    this.a = Math.floor(Math.random()*3)+2;
-    this.b = Math.floor(Math.random()*3)+2;
-    this.c = this.a * this.b;
+var m;              
+var a = Math.floor(Math.random()*2)+2;
+var m = Math.floor(Math.random()*2)+2;
+var b = a * m;
+var m = Math.floor(Math.random()*2)+2;
+var c = b * m;
 
-    var things = [['laps','days','day'],['seats','rows','row'],['deliveries','hours','hour']];
+var answer = c / (b/a);
 
-    var r = Math.floor(Math.random()*3);
+var r = Math.floor(Math.random()*3);
 
-    this.thing1 = things[r][0];
-    this.thing2 = things[r][1];
-    this.thing3 = things[r][2];
 
-  this.setQuestion('Find the unit rate. <br><br>' + this.c + ' ' + this.thing1 + ' in ' + this.b + ' ' + this.thing2 + ' = ? ' + this.thing1 + ' per ' + this.thing3); 
-
-answer = this.a;  
+if(r == 0)
+{
+this.setQuestion(this.ns.mNameOne + ' took a total of ' + b + ' quizzes over the course of ' + a + ' weeks. How many weeks of school will ' + this.ns.mNameOne + ' have to attend this quarter before ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will have taken a total of ' + c + ' quizzes? Solve using unit rates.');  
+}
+if(r == 1)
+{
+this.setQuestion(this.ns.mNameOne + ' earned a total of ' + b + ' dollars by selling ' + a + ' cups of lemonade. How many cups of lemonade does ' + this.ns.mNameOne + ' need to sell in all to earn ' + c + ' dollars? Solve using unit rates.');
+}
+if(r == 2)
+{
+this.setQuestion(this.ns.mNameOne + ' read a total of ' + b + ' books over ' + a + ' months. How many months will it take ' + this.ns.mNameOne + ' to read ' + c + ' books? Solve using unit rates.');  
+}
 
 this.setAnswer('' + answer,0);
 
@@ -484,5 +505,4 @@ showCorrectAnswer: function()
 
 
 });
-
 
