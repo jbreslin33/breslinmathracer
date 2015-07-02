@@ -13,7 +13,10 @@ initialize: function(sheet)
         this.mThresholdTime = 10000;
 
         this.mQuestionLabel.setPosition(150,75);
-        this.mQuestionLabel.setSize(200,50);
+        this.mQuestionLabel.setSize(250,50);
+        
+        this.mUserAnswerLabel.setPosition(150,100);
+	this.mUserAnswerLabel.setSize(250,50);
 
 	this.a = Math.floor(Math.random()*9)+1;
 	this.b = Math.floor(Math.random()*9)+1;
