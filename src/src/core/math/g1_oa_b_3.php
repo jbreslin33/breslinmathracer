@@ -1,5 +1,125 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_24',1.0324,'1.oa.b.3','communative' );
+*/
+var i_1_oa_b_3__24 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_24';
+        this.mThresholdTime = 10000;
+
+        this.mQuestionLabel.setPosition(150,75);
+        this.mQuestionLabel.setSize(250,50);
+        
+        this.mUserAnswerLabel.setPosition(150,100);
+	this.mUserAnswerLabel.setSize(250,50);
+
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = Math.floor(Math.random()*9)+1;
+        this.c = parseInt(this.a + this.b);
+
+        this.setQuestion('' + this.a +  ' + ' + this.b + ' = ' + this.c + ' AND ' + this.b + ' + ' + this.a + ' = _' );
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_23',1.0323,'1.oa.b.3','associative' );
+*/
+var i_1_oa_b_3__23 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_23';
+        this.mThresholdTime = 10000;
+ 
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(100,50);
+
+	this.a = 0;
+	this.b = 0;
+	while (this.a == 0 || this.a == 1 || this.a == 9) 
+	{
+		this.a = Math.floor(Math.random()*9)+1;
+	}
+	this.b = parseInt(10 + this.a);
+
+	this.r = Math.floor(Math.random()*3);
+
+	if (this.r == 0)
+	{
+        	this.setQuestion('' + this.a + ' + 1 + 9 =');
+	}
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_22',1.0322,'1.oa.b.3','associative' );
+*/
+var i_1_oa_b_3__22 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_22';
+        this.mThresholdTime = 10000;
+
+        this.mQuestionLabel.setPosition(220,75);
+        this.mQuestionLabel.setSize(100,50);
+
+        this.a = 0;
+        this.b = 0;
+        while (this.a == 0 || this.a == 1 || this.a == 9)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+        }
+        this.b = parseInt(10 + this.a);
+
+        this.setQuestion('' + '1 + ' + this.a + ' + 9 =');
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_21',1.0321,'1.oa.b.3','associative' );
+*/
+var i_1_oa_b_3__21 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_21';
+        this.mThresholdTime = 10000;
+
+        this.mQuestionLabel.setPosition(220,75);
+        this.mQuestionLabel.setSize(100,50);
+
+        this.a = 0;
+        this.b = 0;
+        while (this.a == 0 || this.a == 1 || this.a == 9)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+        }
+        this.b = parseInt(10 + this.a);
+
+        this.setQuestion('' + '1 + 9 + ' + this.a + ' =');
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_20',1.0320,'1.oa.b.3','communative' );
 */
 var i_1_oa_b_3__20 = new Class(
@@ -55,7 +175,7 @@ initialize: function(sheet)
 
 	if (this.r == 0)
 	{
-        	this.setQuestion('' + '5 + 5 + ' + this.a + ' =');
+        	this.setQuestion('' + this.a + ' + 5 + 5 =');
 	}
         this.setAnswer('' + this.b,0);
 }
@@ -175,7 +295,7 @@ initialize: function(sheet)
 
 	if (this.r == 0)
 	{
-        	this.setQuestion('' + '6 + 4 + ' + this.a + ' =');
+        	this.setQuestion('' + this.a + ' + 6 + 4 =');
 	}
         this.setAnswer('' + this.b,0);
 }
@@ -295,7 +415,7 @@ initialize: function(sheet)
 
 	if (this.r == 0)
 	{
-        	this.setQuestion('' + '7 + 3 + ' + this.a + ' =');
+        	this.setQuestion('' + this.a + ' + 7 + 3 =');
 	}
         this.setAnswer('' + this.b,0);
 }
@@ -415,7 +535,7 @@ initialize: function(sheet)
 
 	if (this.r == 0)
 	{
-        	this.setQuestion('' + '8 + 2 + ' + this.a + ' =');
+        	this.setQuestion('' + this.a + ' + 8 + 2 =');
 	}
         this.setAnswer('' + this.b,0);
 }
@@ -535,7 +655,7 @@ initialize: function(sheet)
 
 	if (this.r == 0)
 	{
-        	this.setQuestion('' + '9 + 1 + ' + this.a + ' =');
+        	this.setQuestion('' + this.a + ' + 9 + 1 =');
 	}
         this.setAnswer('' + this.b,0);
 }
