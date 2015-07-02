@@ -18,7 +18,7 @@ initialize: function(sheet)
 
         this.mUserAnswerLabel.setPosition(220,150);
 
-        this.mAnswerTextBox.setPosition(350,75);
+        this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
 
         this.a = 0;
@@ -52,7 +52,7 @@ initialize: function(sheet)
 
         this.mUserAnswerLabel.setPosition(220,150);
 
-        this.mAnswerTextBox.setPosition(350,75);
+        this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
 
         this.a = 0;
@@ -86,7 +86,7 @@ initialize: function(sheet)
 
         this.mUserAnswerLabel.setPosition(220,150);
 
-        this.mAnswerTextBox.setPosition(350,75);
+        this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
 
         this.a = 0;
@@ -120,7 +120,7 @@ initialize: function(sheet)
         
 	this.mUserAnswerLabel.setPosition(220,150);
 
-    	this.mAnswerTextBox.setPosition(350,75);
+    	this.mAnswerTextBox.setPosition(370,75);
     	this.mAnswerTextBox.setSize(100,50);
 
 
@@ -154,7 +154,7 @@ initialize: function(sheet)
 
         this.mUserAnswerLabel.setPosition(220,150);
 
-        this.mAnswerTextBox.setPosition(350,75);
+        this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
 
         this.a = 0;
@@ -188,7 +188,7 @@ initialize: function(sheet)
 
         this.mUserAnswerLabel.setPosition(220,150);
 
-        this.mAnswerTextBox.setPosition(350,75);
+        this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
 
         this.a = 0;
@@ -222,7 +222,7 @@ initialize: function(sheet)
 
         this.mUserAnswerLabel.setPosition(220,150);
 
-        this.mAnswerTextBox.setPosition(350,75);
+        this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
 
         this.a = 0;
@@ -256,7 +256,7 @@ initialize: function(sheet)
         
 	this.mUserAnswerLabel.setPosition(220,150);
 
-    	this.mAnswerTextBox.setPosition(350,75);
+    	this.mAnswerTextBox.setPosition(370,75);
     	this.mAnswerTextBox.setSize(100,50);
 
 
