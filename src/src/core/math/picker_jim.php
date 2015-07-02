@@ -868,6 +868,48 @@ getItem: function(id)
                 return new i_1_oa_b_3__40(this.mSheet);
 	}
 	
+	//1.oa.b.4
+	if (id == '1.oa.b.4_1')
+        {
+                return new i_1_oa_b_4__1(this.mSheet);
+	}
+	if (id == '1.oa.b.4_2')
+        {
+                return new i_1_oa_b_4__2(this.mSheet);
+	}
+	if (id == '1.oa.b.4_3')
+        {
+                return new i_1_oa_b_4__3(this.mSheet);
+	}
+	if (id == '1.oa.b.4_4')
+        {
+                return new i_1_oa_b_4__4(this.mSheet);
+	}
+	if (id == '1.oa.b.4_5')
+        {
+                return new i_1_oa_b_4__5(this.mSheet);
+	}
+	if (id == '1.oa.b.4_6')
+        {
+                return new i_1_oa_b_4__6(this.mSheet);
+	}
+	if (id == '1.oa.b.4_7')
+        {
+                return new i_1_oa_b_4__7(this.mSheet);
+	}
+	if (id == '1.oa.b.4_8')
+        {
+                return new i_1_oa_b_4__8(this.mSheet);
+	}
+	if (id == '1.oa.b.4_9')
+        {
+                return new i_1_oa_b_4__9(this.mSheet);
+	}
+	if (id == '1.oa.b.4_10')
+        {
+                return new i_1_oa_b_4__10(this.mSheet);
+	}
+	
 	/*** GRADE 2 ***/
 	//2.oa.a.1
 	if (id == '2.oa.a.1_1')
