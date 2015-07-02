@@ -1,5 +1,125 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_28',1.0328,'1.oa.b.3','communative' );
+*/
+var i_1_oa_b_3__28 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_28';
+        this.mThresholdTime = 10000;
+
+        this.mQuestionLabel.setPosition(150,75);
+        this.mQuestionLabel.setSize(250,50);
+        
+        this.mUserAnswerLabel.setPosition(150,100);
+	this.mUserAnswerLabel.setSize(250,50);
+
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = Math.floor(Math.random()*9)+1;
+        this.c = parseInt(this.a + this.b);
+
+        this.setQuestion('' + this.a +  ' + ' + this.b + ' = ' + this.c + ' AND ' + this.b + ' + ' + this.a + ' = _' );
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_27',1.0327,'1.oa.b.3','associative' );
+*/
+var i_1_oa_b_3__27 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_27';
+        this.mThresholdTime = 10000;
+ 
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(100,50);
+
+	this.a = 0;
+	this.b = 0;
+	while (this.a == 0 || this.a == 1 || this.a == 9) 
+	{
+		this.a = Math.floor(Math.random()*9)+1;
+	}
+	this.b = parseInt(10 + this.a);
+
+	this.r = Math.floor(Math.random()*3);
+
+	if (this.r == 0)
+	{
+        	this.setQuestion('' + this.a + ' + 2 + 8 =');
+	}
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_26',1.0326,'1.oa.b.3','associative' );
+*/
+var i_1_oa_b_3__26 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_26';
+        this.mThresholdTime = 10000;
+
+        this.mQuestionLabel.setPosition(220,75);
+        this.mQuestionLabel.setSize(100,50);
+
+        this.a = 0;
+        this.b = 0;
+        while (this.a == 0 || this.a == 1 || this.a == 9)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+        }
+        this.b = parseInt(10 + this.a);
+
+        this.setQuestion('' + '2 + ' + this.a + ' + 8 =');
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_25',1.0325,'1.oa.b.3','associative' );
+*/
+var i_1_oa_b_3__25 = new Class(
+{
+Extends: NumberPadItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.b.3_25';
+        this.mThresholdTime = 10000;
+
+        this.mQuestionLabel.setPosition(220,75);
+        this.mQuestionLabel.setSize(100,50);
+
+        this.a = 0;
+        this.b = 0;
+        while (this.a == 0 || this.a == 1 || this.a == 9)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+        }
+        this.b = parseInt(10 + this.a);
+
+        this.setQuestion('' + '2 + 8 + ' + this.a + ' =');
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.b.3_24',1.0324,'1.oa.b.3','communative' );
 */
 var i_1_oa_b_3__24 = new Class(
