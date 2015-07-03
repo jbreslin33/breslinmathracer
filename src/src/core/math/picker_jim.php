@@ -1073,6 +1073,190 @@ getItem: function(id)
         {
                 return new i_1_oa_c_6__30(this.mSheet);
 	}
+	if (id == '1.oa.c.6_31')
+        {
+                return new i_1_oa_c_6__31(this.mSheet);
+	}
+	if (id == '1.oa.c.6_32')
+        {
+                return new i_1_oa_c_6__32(this.mSheet);
+	}
+	if (id == '1.oa.c.6_33')
+        {
+                return new i_1_oa_c_6__33(this.mSheet);
+	}
+	if (id == '1.oa.c.6_34')
+        {
+                return new i_1_oa_c_6__34(this.mSheet);
+	}
+	if (id == '1.oa.c.6_35')
+        {
+                return new i_1_oa_c_6__35(this.mSheet);
+	}
+	if (id == '1.oa.c.6_36')
+        {
+                return new i_1_oa_c_6__36(this.mSheet);
+	}
+	if (id == '1.oa.c.6_37')
+        {
+                return new i_1_oa_c_6__37(this.mSheet);
+	}
+	if (id == '1.oa.c.6_38')
+        {
+                return new i_1_oa_c_6__38(this.mSheet);
+	}
+	if (id == '1.oa.c.6_39')
+        {
+                return new i_1_oa_c_6__39(this.mSheet);
+	}
+	if (id == '1.oa.c.6_40')
+        {
+                return new i_1_oa_c_6__40(this.mSheet);
+	}
+	if (id == '1.oa.c.6_41')
+        {
+                return new i_1_oa_c_6__41(this.mSheet);
+	}
+	if (id == '1.oa.c.6_42')
+        {
+                return new i_1_oa_c_6__42(this.mSheet);
+	}
+	if (id == '1.oa.c.6_43')
+        {
+                return new i_1_oa_c_6__43(this.mSheet);
+	}
+	if (id == '1.oa.c.6_44')
+        {
+                return new i_1_oa_c_6__44(this.mSheet);
+	}
+	if (id == '1.oa.c.6_45')
+        {
+                return new i_1_oa_c_6__45(this.mSheet);
+	}
+	if (id == '1.oa.c.6_46')
+        {
+                return new i_1_oa_c_6__46(this.mSheet);
+	}
+	if (id == '1.oa.c.6_47')
+        {
+                return new i_1_oa_c_6__47(this.mSheet);
+	}
+	if (id == '1.oa.c.6_48')
+        {
+                return new i_1_oa_c_6__48(this.mSheet);
+	}
+	if (id == '1.oa.c.6_49')
+        {
+                return new i_1_oa_c_6__49(this.mSheet);
+	}
+	if (id == '1.oa.c.6_50')
+        {
+                return new i_1_oa_c_6__50(this.mSheet);
+	}
+	if (id == '1.oa.c.6_51')
+        {
+                return new i_1_oa_c_6__51(this.mSheet);
+	}
+	if (id == '1.oa.c.6_52')
+        {
+                return new i_1_oa_c_6__52(this.mSheet);
+	}
+	if (id == '1.oa.c.6_53')
+        {
+                return new i_1_oa_c_6__53(this.mSheet);
+	}
+	if (id == '1.oa.c.6_54')
+        {
+                return new i_1_oa_c_6__54(this.mSheet);
+	}
+	if (id == '1.oa.c.6_55')
+        {
+                return new i_1_oa_c_6__55(this.mSheet);
+	}
+	if (id == '1.oa.c.6_56')
+        {
+                return new i_1_oa_c_6__56(this.mSheet);
+	}
+	if (id == '1.oa.c.6_57')
+        {
+                return new i_1_oa_c_6__57(this.mSheet);
+	}
+	if (id == '1.oa.c.6_58')
+      	{  
+                return new i_1_oa_c_6__58(this.mSheet);
+	}
+	if (id == '1.oa.c.6_59')
+        {
+                return new i_1_oa_c_6__59(this.mSheet);
+	}
+	if (id == '1.oa.c.6_60')
+        {
+                return new i_1_oa_c_6__60(this.mSheet);
+	}
+	if (id == '1.oa.c.6_61')
+        {
+                return new i_1_oa_c_6__61(this.mSheet);
+	}
+	if (id == '1.oa.c.6_62')
+        {
+                return new i_1_oa_c_6__62(this.mSheet);
+	}
+	if (id == '1.oa.c.6_63')
+        {
+                return new i_1_oa_c_6__63(this.mSheet);
+	}
+	if (id == '1.oa.c.6_64')
+        {
+                return new i_1_oa_c_6__64(this.mSheet);
+	}
+	if (id == '1.oa.c.6_65')
+        {
+                return new i_1_oa_c_6__65(this.mSheet);
+	}
+	if (id == '1.oa.c.6_66')
+        {
+                return new i_1_oa_c_6__66(this.mSheet);
+	}
+	if (id == '1.oa.c.6_67')
+        {
+                return new i_1_oa_c_6__67(this.mSheet);
+	}
+	if (id == '1.oa.c.6_68')
+        {
+                return new i_1_oa_c_6__68(this.mSheet);
+	}
+	if (id == '1.oa.c.6_69')
+        {
+                return new i_1_oa_c_6__69(this.mSheet);
+	}
+	if (id == '1.oa.c.6_70')
+        {
+                return new i_1_oa_c_6__70(this.mSheet);
+	}
+	if (id == '1.oa.c.6_71')
+        {
+                return new i_1_oa_c_6__71(this.mSheet);
+	}
+	if (id == '1.oa.c.6_72')
+        {
+                return new i_1_oa_c_6__72(this.mSheet);
+	}
+	if (id == '1.oa.c.6_73')
+        {
+                return new i_1_oa_c_6__73(this.mSheet);
+	}
+	if (id == '1.oa.c.6_74')
+        {
+                return new i_1_oa_c_6__74(this.mSheet);
+	}	
+	if (id == '1.oa.c.6_75')
+        {
+                return new i_1_oa_c_6__75(this.mSheet);
+	}
+	if (id == '1.oa.c.6_76')
+        {
+                return new i_1_oa_c_6__76(this.mSheet);
+	}
 	
 	/*** GRADE 2 ***/
 	//2.oa.a.1
