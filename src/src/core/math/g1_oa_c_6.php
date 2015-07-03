@@ -16,6 +16,332 @@ initialize: function(sheet)
 });
 
 //fluently add and subtract within 10
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_120',1.069920,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__120 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_120';
+        this.setQuestion('' + '10 - 10 =');
+        this.setAnswer('' + '0',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_119',1.069919,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__119 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_119';
+        this.setQuestion('' + '10 - 9 =');
+        this.setAnswer('' + '1',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_118',1.069918,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__118 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_118';
+        this.setQuestion('' + '9 - 9 =');
+        this.setAnswer('' + '0',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_117',1.069917,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__117 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_117';
+        this.setQuestion('' + '10 - 8 =');
+        this.setAnswer('' + '2',0);
+}
+});
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_116',1.069916,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__116 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_116';
+        this.setQuestion('' + '9 - 8 =');
+        this.setAnswer('' + '1',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_115',1.069915,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__115 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_115';
+        this.setQuestion('' + '8 - 8 =');
+        this.setAnswer('' + '0',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_114',1.069914,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__114 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_114';
+        this.setQuestion('' + '10 - 7 =');
+        this.setAnswer('' + '3',0);
+}
+});
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_113',1.069913,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__113 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_113';
+        this.setQuestion('' + '9 - 7 =');
+        this.setAnswer('' + '2',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_112',1.069912,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__112 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_112';
+        this.setQuestion('' + '8 - 7 =');
+        this.setAnswer('' + '1',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_111',1.069911,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__111 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_111';
+        this.setQuestion('' + '7 - 7 =');
+        this.setAnswer('' + '0',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_110',1.069910,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__110 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_110';
+        this.setQuestion('' + '10 - 6 =');
+        this.setAnswer('' + '4',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_109',1.069909,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__109 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_109';
+        this.setQuestion('' + '9 - 6 =');
+        this.setAnswer('' + '3',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_108',1.069908,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__108 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_108';
+        this.setQuestion('' + '8 - 6 =');
+        this.setAnswer('' + '2',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_107',1.069907,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__107 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_107';
+        this.setQuestion('' + '7 - 6 =');
+        this.setAnswer('' + '1',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_106',1.069906,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__106 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_106';
+        this.setQuestion('' + '6 - 6 =');
+        this.setAnswer('' + '0',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_105',1.069905,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__105 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_105';
+        this.setQuestion('' + '10 - 5 =');
+        this.setAnswer('' + '5',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_104',1.069904,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__104 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_104';
+        this.setQuestion('' + '9 - 5 =');
+        this.setAnswer('' + '4',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_103',1.069903,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__103 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_103';
+        this.setQuestion('' + '8 - 5 =');
+        this.setAnswer('' + '3',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_102',1.069902,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__102 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_102';
+        this.setQuestion('' + '7 - 5 =');
+        this.setAnswer('' + '2',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_101',1.069901,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__101 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_101';
+        this.setQuestion('' + '6 - 5 =');
+        this.setAnswer('' + '1',0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_99',1.0699,'1.oa.c.6','' );
