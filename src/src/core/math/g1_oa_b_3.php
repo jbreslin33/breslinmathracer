@@ -997,7 +997,7 @@ Extends: NumberPadItem,
 initialize: function(sheet)
 {
         this.parent(sheet);
-        this.mType = '1.oa.b.3_1';
+        this.mType = '1.oa.b.3_3';
         this.mThresholdTime = 10000;
  
 	this.mQuestionLabel.setPosition(220,75);
@@ -1010,13 +1010,7 @@ initialize: function(sheet)
 		this.a = Math.floor(Math.random()*9)+1;
 	}
 	this.b = parseInt(10 + this.a);
-
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 9 + 1 =');
-	}
+        this.setQuestion('' + this.a + ' + 9 + 1 =');
         this.setAnswer('' + this.b,0);
 }
 });
