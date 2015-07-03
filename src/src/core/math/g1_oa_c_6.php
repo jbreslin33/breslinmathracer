@@ -1,5 +1,4 @@
 
-//doubles + 1
 
 var NumberPadItemBigger = new Class(
 {
@@ -13,6 +12,104 @@ initialize: function(sheet)
         this.mUserAnswerLabel.setPosition(220,150);
         this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
+}
+});
+
+//doubles + 1
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_27',1.0627,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__27 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_27';
+        this.setQuestion('' + '9 + 9 + 1 =');
+        this.setAnswer('' + '19',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_26',1.0626,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__26 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_26';
+        this.setQuestion('' + '8 + 8 + 1 =');
+        this.setAnswer('' + '17',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_25',1.0625,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__25 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_25';
+        this.setQuestion('' + '7 + 7 + 1 =');
+        this.setAnswer('' + '15',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_24',1.0624,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__24 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_24';
+        this.setQuestion('' + '6 + 6 + 1 =');
+        this.setAnswer('' + '13',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_23',1.0623,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__23 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_23';
+        this.setQuestion('' + '4 + 4 + 1 =');
+        this.setAnswer('' + '8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_22',1.0622,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__22 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_22';
+        this.setQuestion('' + '3 + 3 + 1 =');
+        this.setAnswer('' + '7',0);
 }
 });
 
