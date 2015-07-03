@@ -1257,6 +1257,98 @@ getItem: function(id)
         {
                 return new i_1_oa_c_6__76(this.mSheet);
 	}
+	if (id == '1.oa.c.6_77')
+        {
+                return new i_1_oa_c_6__77(this.mSheet);
+	}
+	if (id == '1.oa.c.6_78')
+        {
+                return new i_1_oa_c_6__78(this.mSheet);
+	}
+	if (id == '1.oa.c.6_79')
+        {
+                return new i_1_oa_c_6__79(this.mSheet);
+	}
+	if (id == '1.oa.c.6_80')
+        {
+                return new i_1_oa_c_6__80(this.mSheet);
+	}
+	if (id == '1.oa.c.6_81')
+        {
+                return new i_1_oa_c_6__81(this.mSheet);
+	}
+	if (id == '1.oa.c.6_82')
+        {
+                return new i_1_oa_c_6__82(this.mSheet);
+	}
+	if (id == '1.oa.c.6_83')
+        {
+                return new i_1_oa_c_6__83(this.mSheet);
+	}
+	if (id == '1.oa.c.6_84')
+        {
+                return new i_1_oa_c_6__84(this.mSheet);
+	}
+	if (id == '1.oa.c.6_85')
+        {
+                return new i_1_oa_c_6__85(this.mSheet);
+	}
+	if (id == '1.oa.c.6_86')
+        {
+                return new i_1_oa_c_6__86(this.mSheet);
+	}
+	if (id == '1.oa.c.6_87')
+        {
+                return new i_1_oa_c_6__87(this.mSheet);
+	}
+	if (id == '1.oa.c.6_88')
+        {
+                return new i_1_oa_c_6__88(this.mSheet);
+	}
+	if (id == '1.oa.c.6_89')
+        {
+                return new i_1_oa_c_6__89(this.mSheet);
+	}
+	if (id == '1.oa.c.6_90')
+        {
+                return new i_1_oa_c_6__90(this.mSheet);
+	}
+	if (id == '1.oa.c.6_91')
+        {
+                return new i_1_oa_c_6__91(this.mSheet);
+	}
+	if (id == '1.oa.c.6_92')
+        {
+                return new i_1_oa_c_6__92(this.mSheet);
+	}	
+	if (id == '1.oa.c.6_93')
+        {
+                return new i_1_oa_c_6__93(this.mSheet);
+	}
+	if (id == '1.oa.c.6_94')
+        {
+                return new i_1_oa_c_6__94(this.mSheet);
+	}
+	if (id == '1.oa.c.6_95')
+        {
+                return new i_1_oa_c_6__95(this.mSheet);
+	}
+	if (id == '1.oa.c.6_96')
+        {
+                return new i_1_oa_c_6__96(this.mSheet);
+	}
+	if (id == '1.oa.c.6_97')
+        {
+                return new i_1_oa_c_6__97(this.mSheet);
+	}
+	if (id == '1.oa.c.6_98')
+        {
+                return new i_1_oa_c_6__98(this.mSheet);
+	}
+	if (id == '1.oa.c.6_99')
+        {
+                return new i_1_oa_c_6__99(this.mSheet);
+	}
 	
 	/*** GRADE 2 ***/
 	//2.oa.a.1
