@@ -1,5 +1,4 @@
 
-
 var NumberPadItemBigger = new Class(
 {
 Extends: NumberPadItem,
@@ -12,6 +11,23 @@ initialize: function(sheet)
         this.mUserAnswerLabel.setPosition(220,150);
         this.mAnswerTextBox.setPosition(370,75);
         this.mAnswerTextBox.setSize(100,50);
+}
+});
+//add and subtract within 20 do not use previous fluent equations 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_121',1.069921,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__121 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_121';
+        this.mThresholdTime = 0;
+        this.setQuestion('' + '10 - 10 =');
+        this.setAnswer('' + '0',0);
 }
 });
 
