@@ -15,6 +15,41 @@ initialize: function(sheet)
 }
 });
 
+//fluently add and subtract within 10
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_29',1.0629,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__29 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_29';
+        this.setQuestion('' + '0 + 7 =');
+        this.setAnswer('' + '7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_28',1.0628,'1.oa.c.6','' );
+*/
+var i_1_oa_c_6__28 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_28';
+        this.setQuestion('' + '0 + 6 =');
+        this.setAnswer('' + '6',0);
+}
+});
+
+
 //doubles + 1
 
 /*
