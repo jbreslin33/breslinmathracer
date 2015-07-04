@@ -13,9 +13,68 @@ initialize: function(sheet)
         this.mAnswerTextBox.setSize(100,50);
 }
 });
+
 //add and subtract within 20 do not use previous fluent equations 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_121',1.069921,'1.oa.c.6','' );
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_123',1.069923,'1.oa.c.6','add below 10 above 10 ' );
+*/
+var i_1_oa_c_6__123 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_123';
+        this.mThresholdTime = 0;
+
+        this.a = 0;
+        this.b = 0;
+        this.c = 99;
+        while (this.c > 20)
+        {
+                this.a = Math.floor(Math.random()*8)+2;   //below
+                this.b = Math.floor(Math.random()*10)+11; //above
+                this.c = parseInt(this.a + this.b);
+        }
+
+        this.setQuestion('' + this.a + ' + ' + this.b + ' = ');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_122',1.069922,'1.oa.c.6','add below 10 below 10 ' );
+*/
+var i_1_oa_c_6__122 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '1.oa.c.6_122';
+        this.mThresholdTime = 0;
+
+        this.a = 0;
+        this.b = 0;
+        this.c = -1;
+        while (this.c < 10 || this.a == this.b)
+        {
+                this.a = Math.floor(Math.random()*8)+2; //below
+                this.b = Math.floor(Math.random()*8)+2;   //below
+                this.c = parseInt(this.a + this.b);
+        }
+
+        this.setQuestion('' + this.a + ' + ' + this.b + ' = ');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.c.6_121',1.069921,'1.oa.c.6','add above 10 below 10 ' );
 */
 var i_1_oa_c_6__121 = new Class(
 {
@@ -26,8 +85,19 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = '1.oa.c.6_121';
         this.mThresholdTime = 0;
-        this.setQuestion('' + '10 - 10 =');
-        this.setAnswer('' + '0',0);
+
+	this.a = 0; 
+	this.b = 0; 
+	this.c = 99; 
+	while (this.c > 20) 
+	{
+		this.a = Math.floor(Math.random()*10)+11; //above
+		this.b = Math.floor(Math.random()*8)+2;   //below
+		this.c = parseInt(this.a + this.b); 
+	}
+
+        this.setQuestion('' + this.a + ' + ' + this.b + ' = ');
+        this.setAnswer('' + this.c,0);
 }
 });
 
