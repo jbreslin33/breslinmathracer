@@ -1469,6 +1469,48 @@ getItem: function(id)
         {
                 return new i_1_oa_c_6__130(this.mSheet);
 	}
+
+	//1.oa.d.7	
+	if (id == '1.oa.d.7_1')
+        {
+                return new i_1_oa_d_7__1(this.mSheet);
+	}
+	if (id == '1.oa.d.7_2')
+        {
+                return new i_1_oa_d_7__2(this.mSheet);
+	}
+	if (id == '1.oa.d.7_3')
+        {
+                return new i_1_oa_d_7__3(this.mSheet);
+	}
+	if (id == '1.oa.d.7_4')
+        {
+                return new i_1_oa_d_7__4(this.mSheet);
+	}
+	if (id == '1.oa.d.7_5')
+        {
+                return new i_1_oa_d_7__5(this.mSheet);
+	}
+	if (id == '1.oa.d.7_6')
+        {
+                return new i_1_oa_d_7__6(this.mSheet);
+	}
+	if (id == '1.oa.d.7_7')
+        {
+                return new i_1_oa_d_7__7(this.mSheet);
+	}
+	if (id == '1.oa.d.7_8')
+        {
+                return new i_1_oa_d_7__8(this.mSheet);
+	}
+	if (id == '1.oa.d.7_9')
+        {
+                return new i_1_oa_d_7__9(this.mSheet);
+	}
+	if (id == '1.oa.d.7_10')
+        {
+                return new i_1_oa_d_7__10(this.mSheet);
+	}
 	
 	/*** GRADE 2 ***/
 	//2.oa.a.1
