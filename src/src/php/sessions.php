@@ -15,6 +15,7 @@ function __construct()
   	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->process();
 }
+
 public function process()
 {
 	if (isset($_SESSION["subject_id"]) == false)
@@ -38,6 +39,30 @@ public function process()
 
 		$_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
                 $_SESSION["ref_id"]  = $ref_id;
+
+		//normalTime
+		date_default_timezone_set('UTC');
+		$timezone = new DateTimeZone('America/New_York');
+		$w = date( "w", time());
+
+		if ( $w == 0 || $w == 6)
+		{
+			//error_log('weekend');
+		}
+		else
+		{
+			//error_log('weekday');
+		}
+		$normalStartTime = "8:30:00";
+		$normalEndTime   = "14:50:00";
+		if (time() >= strtotime($normalStartTime) && time() <= strtotime($normalEndTime))
+ 		{
+  			//error_log('school time');
+		}
+		else
+		{
+  			//error_log('not school time');
+		}
 
 		if ($ref_id == 'normal')
 		{
