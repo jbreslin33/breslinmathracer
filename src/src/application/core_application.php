@@ -306,38 +306,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	checkLogin: function()
-	{
-               	var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-		}
-                xmlhttp.open("POST","../../web/php/check_login.php",true);
-                xmlhttp.send();
-	},
-
         loginStudent: function(username,password)
         {
         	var xmlhttp;
