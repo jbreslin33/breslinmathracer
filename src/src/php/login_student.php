@@ -1,21 +1,60 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
+
+//start new session
+session_start();
+
+$_SESSION["username"]   = $_GET["username"];
+$_SESSION["password"]   = $_GET["password"];
+
+$loginStudent = new LoginStudent();
+?>
+
+<?php
+
 class LoginStudent
 {
     private $mDatabaseConnection;
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mBadUsername = 0;
-	$this->mBadPassword = 0;
 	
 	//login helpers
 	$this->mStudentExists = false;
-	$this->mTeacherExists = false;
-	$this->mSchoolExists = false;
 	$this->process();
 }
+
+public function sendLoginStudent()
+{
+	//fill php vars
+	$returnString = "117,";
+	$returnString .= $_SESSION["ref_id"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["username"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["first_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["last_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["raw_data"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["role"];
+	echo $returnString;
+}
+public function sendBadUsername()
+{
+	$returnString = "103";
+	echo $returnString;
+}
+public function sendBadPassword()
+{
+	$returnString = "104";
+	echo $returnString;
+}
+
 public function process()
 {
 	//student
@@ -26,11 +65,11 @@ public function process()
 	}
 	if ($this->mStudentExists)
 	{
-		$this->mBadPassword = 1;
+		$this->sendBadPassword();
 		return;
 	}
 	//fall thru to bad username	
-	$this->mBadUsername = 1;
+	$this->sendBadUsername();
 }
 public function checkForStudent()
 {
@@ -90,8 +129,12 @@ public function checkForStudent()
                 	$_SESSION["teacher_id"] = $teacher_id;
                 	$_SESSION["room_id"] = $room_id;
                 	$_SESSION["team_id"] = $team_id;
+
         		//SESSION
         		$sessions = new Sessions();
+
+			//send to login data to client
+			$this->sendLoginStudent();
 		}
 		else
 		{

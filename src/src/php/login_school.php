@@ -2,6 +2,16 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
+//start new session
+session_start();
+
+$_SESSION["username"]   = $_GET["username"];
+$_SESSION["password"]   = $_GET["password"];
+
+$loginSchool = new LoginSchool();
+?>
+
+<?php
 class LoginSchool 
 {
     private $mDatabaseConnection;
@@ -9,14 +19,36 @@ class LoginSchool
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mBadUsername = 0;
-	$this->mBadPassword = 0;
 	
 	//login helpers
 	$this->mSchoolExists = false;
 
 	$this->process();
 }
+
+public function sendLoginSchool()
+{
+	$returnString = "114,";
+	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["username"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["role"];
+	echo $returnString;
+}
+
+public function sendBadUsername()
+{
+        $returnString = "103";
+        echo $returnString;
+}
+
+public function sendBadPassword()
+{
+        $returnString = "104";
+        echo $returnString;
+}
+
 public function process()
 {
 	//school	
@@ -29,12 +61,12 @@ public function process()
 	
 	if ($this->mSchoolExists)
 	{
-		$this->mBadPassword = 1;
+		$this->sendBadPassword();
 		return;
 	}
 
 	//fall thru to bad username	
-	$this->mBadUsername = 1;
+	$this->sendBadUsername();
 }
 
 public function checkForSchool()
@@ -88,6 +120,8 @@ public function checkForSchool()
         		$_SESSION["role"] = 3; //student
         		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["school_id"] = $school_id;
+
+			$this->sendLoginSchool();
 		}
 		else
 		{

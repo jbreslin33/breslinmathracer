@@ -367,7 +367,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/login_student.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../src/php/login_student.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 
@@ -400,7 +400,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/login_school.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../src/php/login_school.php?username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 
