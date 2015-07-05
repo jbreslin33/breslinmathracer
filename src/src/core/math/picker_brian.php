@@ -651,6 +651,17 @@ if (id == '6.rp.a.3.a_3')
         {
                 return new i_6_rp_a_3_d__1(this.mSheet);
         }
+  if (id == '6.rp.a.3.d_2')
+        {
+                return new i_6_rp_a_3_d__2(this.mSheet);
+        }
+
+//6.ns.a.1
+  if (id == '6.ns.a.1_1')
+        {
+                return new i_6_ns_a_1__1(this.mSheet);
+        }
+
 	return 0;	
 }
 		
