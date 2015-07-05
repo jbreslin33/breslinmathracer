@@ -1,5 +1,19 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
+
+$_SESSION["username"] = $_GET["username"];
+$_SESSION["password"] = $_GET["password"];
+$_SESSION["name"] = $_GET["name"];
+$_SESSION["city"] = $_GET["city"];
+$_SESSION["state"] = $_GET["state"];
+$_SESSION["zip"] = $_GET["zip"];
+$_SESSION["email"] = $_GET["email"];
+$_SESSION["student_code"] = $_GET["student_code"];
+
+$signupSchool = new SignupSchool();
+?>
+
+<?php
 session_start();
 
 class SignupSchool 
@@ -9,10 +23,34 @@ class SignupSchool
 function __construct()
 {
 	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->mUsernameExists = 0;
-        $this->mNameCityStateZipExists = 0;
 
 	$this->process();
+}
+public function sendUsernameTaken()
+{
+	$returnString = "115";
+	echo $returnString;
+}
+public function sendSchoolNameTaken()
+{
+        $returnString = "120";
+        echo $returnString;
+}
+
+public function sendLoginSchool()
+{
+	$returnString = "114,";
+	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["username"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["role"];
+	echo $returnString;
+}
+public function sendBadPassword()
+{
+        $returnString = "104";
+        echo $returnString;
 }
 
 public function process()
@@ -43,12 +81,12 @@ public function process()
 	$er = pg_last_error();
 	if (strpos($er,'schools_username_key') !== false)
  	{
-		$this->mUsernameExists = 1;
+		$this->sendUsernameTaken();
 	}
 
         if (strpos($er,'schools_name_city_state_zip_key') !== false)
         {
-                $this->mNameCityStateZipExists = 1;
+		$this->sendSchoolNameTaken();
         }
 	
 	//then check login
@@ -91,6 +129,8 @@ public function process()
                         $_SESSION["school_id"] = $school_id;
                         $_SESSION["LOGGED_IN"] = 1;
                         $_SESSION["role"] = 3;
+
+			$this->sendLoginSchool();
                 }
                 else
                 {
@@ -98,6 +138,8 @@ public function process()
                         $this->mBadPassword = 1;
                         $this->mBadUsername = 0;
                         $_SESSION["school_id"] = 0;
+
+			$this->sendBadPassword();
                 }
         }
         else
@@ -106,8 +148,10 @@ public function process()
                 $this->mBadUsername = 1;
                 $this->mBadPassword = 0;
                 $_SESSION["school_id"] = 0;
-        }
 
-}
-}
+		$this->sendUsernameTaken();
+        }
+}//end function
+}// end class
 ?>
+
