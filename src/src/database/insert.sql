@@ -127,6 +127,15 @@ insert into evaluations (description) values ('timestables_9');
 insert into evaluations (description) values ('timestables'); 
 insert into evaluations (description) values ('The Izzy'); 
 insert into evaluations (description) values ('Add Subtract within 5'); 
+insert into evaluations (description) values ('assessment'); --if you get sometihng wrong in assessment should it be asked next day????? 
+--insert into evaluations (description) values ('homework');  could be tables could be last 10 etc  30 probs 
+--insert into evaluations (description) values ('quiz'); -- 10 questions mtwr 40 mondays 
+--insert into evaluations (description) values ('test'); -- 30 questions friday weekend     
+--insert into evaluations (description) values ('exam'); -- 30 questions monthly on friday  
+--50 x 37
+
+--speed work ..in order item types with speed over 0 get 2 in a row for homework    
+--quiz daily 20 questions
 
 --     FINER TYPES 
 --borrow_types

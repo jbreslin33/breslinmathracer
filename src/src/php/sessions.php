@@ -4,6 +4,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/standard.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/normal.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/practice.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/timestables.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/assessment.php");
 
 //this class is for when you first login or signup it is not used other wise 
 class Sessions
@@ -33,7 +34,6 @@ public function process()
 
         if ($num > 0)
         {
-		//error_log('if');
                 $evaluations_attempts_id = pg_Result($result, 0, 'id');
                 $ref_id                  = pg_Result($result, 0, 'description');
 
@@ -58,75 +58,80 @@ public function process()
 		if (time() >= strtotime($normalStartTime) && time() <= strtotime($normalEndTime))
  		{
   			//error_log('school time');
-		}
-		else
-		{
-  			//error_log('not school time');
-		}
-
-		if ($ref_id == 'normal')
-		{
-			$normal = new Normal(1);
-		}
-		if ($ref_id == 'practice')
-		{
-			if ($_SESSION["first_name"] == 'dev' && $_SESSION["last_name"] == 'user')
-			{
-				$practice = new Practice('',0,0);
-			}
-			else
+		
+			if ($ref_id == 'normal')
 			{
 				$normal = new Normal(1);
+  				error_log('else new norml');
+			
+			}
+			if ($ref_id == 'practice')
+			{
+				if ($_SESSION["first_name"] == 'dev' && $_SESSION["last_name"] == 'user')
+				{
+					$practice = new Practice('',0,0);
+				}
+				else
+				{
+					$normal = new Normal(1);
+  					error_log('else new norml');
+				}
+			}
+			if ($ref_id == 'timestables_2')
+			{
+				$timestables = new TimesTables(2,1,0);
+			}
+			if ($ref_id == 'timestables_3')
+			{
+				$timestables = new TimesTables(3,1,0);
+			}
+			if ($ref_id == 'timestables_4')
+			{
+				$timestables = new TimesTables(4,1,0);
+			}
+			if ($ref_id == 'timestables_5')
+			{
+				$timestables = new TimesTables(5,1,0);
+			}
+			if ($ref_id == 'timestables_6')
+			{
+				$timestables = new TimesTables(6,1,0);
+			}
+			if ($ref_id == 'timestables_7')
+			{
+				$timestables = new TimesTables(7,1,0);
+			}
+			if ($ref_id == 'timestables_8')
+			{
+				$timestables = new TimesTables(8,1,0);
+			}
+			if ($ref_id == 'timestables_9')
+			{
+				$timestables = new TimesTables(9,1,0);
+			}
+			if ($ref_id == 'timestables')
+			{
+				$timestables = new TimesTables(2,1,0);
+			}
+			if ($ref_id == 'The Izzy')
+			{
+				$timestables = new TimesTables(11,1,0);
+			}
+			if ($ref_id == 'Add Subtract within 5')
+			{
+				$timestables = new TimesTables(12,1,0);
 			}
 		}
-		if ($ref_id == 'timestables_2')
+		else //after school
 		{
-			$timestables = new TimesTables(2,1,0);
-		}
-		if ($ref_id == 'timestables_3')
-		{
-			$timestables = new TimesTables(3,1,0);
-		}
-		if ($ref_id == 'timestables_4')
-		{
-			$timestables = new TimesTables(4,1,0);
-		}
-		if ($ref_id == 'timestables_5')
-		{
-			$timestables = new TimesTables(5,1,0);
-		}
-		if ($ref_id == 'timestables_6')
-		{
-			$timestables = new TimesTables(6,1,0);
-		}
-		if ($ref_id == 'timestables_7')
-		{
-			$timestables = new TimesTables(7,1,0);
-		}
-		if ($ref_id == 'timestables_8')
-		{
-			$timestables = new TimesTables(8,1,0);
-		}
-		if ($ref_id == 'timestables_9')
-		{
-			$timestables = new TimesTables(9,1,0);
-		}
-		if ($ref_id == 'timestables')
-		{
-			$timestables = new TimesTables(2,1,0);
-		}
-		if ($ref_id == 'The Izzy')
-		{
-			$timestables = new TimesTables(11,1,0);
-		}
-		if ($ref_id == 'Add Subtract within 5')
-		{
-			$timestables = new TimesTables(12,1,0);
+			error_log('new assessment but really normal after school');
+			$assessment = new Assessment();
+			$normal = new Normal(1);
 		}
 	}
 	else
 	{
-		//error_log('else new normal');
+		error_log('else new normal');
 		$normal = new Normal(1);
 	}
 }

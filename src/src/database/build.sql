@@ -237,7 +237,7 @@ CREATE TABLE finer_types (
 --normal,practice
 CREATE TABLE evaluations (
 	id SERIAL,
-	description text,	
+	description text NOT NULL UNIQUE,	
         PRIMARY KEY (id)
 );
 

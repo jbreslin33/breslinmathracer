@@ -133,6 +133,7 @@ Extends: Application,
                 this.mResponseArray = response.split(",");
                 var code = this.mResponseArray[0];
                 var codeNumber = parseInt(code);
+		APPLICATION.log('codeNumber:' + codeNumber);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
 			//LOGIN
@@ -204,6 +205,7 @@ Extends: Application,
 
 			if (codeNumber == APPLICATION.FULL)
                 	{
+				APPLICATION.log('FULL');
                 		APPLICATION.mRef_id = this.mResponseArray[1];
 				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                         	APPLICATION.mLoggedIn = this.mResponseArray[2];
@@ -221,6 +223,7 @@ Extends: Application,
 
                         if (codeNumber == APPLICATION.FULL_NORMAL)
                         {
+				APPLICATION.log('FULL_NORMAL');
                                 APPLICATION.mRef_id = this.mResponseArray[1];
                                 APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                                 APPLICATION.mLoggedIn = this.mResponseArray[2];

@@ -3,19 +3,19 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
 
-class Normal 
+class Assessment 
 {
 
-function __construct($startNew)
+function __construct()
 {
 	$this->logs = true; 
 	if ($this->logs)
 	{
-		error_log('normal constructor');
+		error_log('assessment constructor');
 	}
 
 	$this->mDatabaseConnection = new DatabaseConnection();
-        
+	
 	$this->progression_counter = 0;
 	$this->progression_counter_limit = 0;
 
@@ -45,7 +45,8 @@ function __construct($startNew)
         $this->high_progression = '';
 	
 	$this->item_types_id_to_ask = '';
-	
+
+/*
 	if ($startNew == 1)
 	{
 		$this->newEvaluation();
@@ -54,10 +55,9 @@ function __construct($startNew)
 	{
 		$this->continueEvaluation();
 	}
-
-	$this->process();
+*/
+	//$this->process();
 }
-
 public function newEvaluation()
 {
 	if ($this->logs)
@@ -81,7 +81,7 @@ public function continueEvaluation()
 		error_log('continueEvaluation');
 	}
 	//check for last evaluation that was a normal type
-     	$query = "select id from evaluations_attempts where user_id = ";
+	$query = "select id from evaluations_attempts where user_id = ";
        	$query .= $_SESSION["user_id"];
        	$query .= " AND evaluations_id = 1 order by start_time desc limit 1;";
 

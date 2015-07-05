@@ -7,6 +7,7 @@ session_start();
 //start new so pass 1 as first paremeter.
 if (isset($_SESSION["user_id"]))
 {
+	error_log('calling new norm with param 0');	
 	$normal = new Normal(0);
 	$userid = $_SESSION["user_id"];	
 }
