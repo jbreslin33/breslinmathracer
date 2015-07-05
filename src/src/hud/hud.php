@@ -62,10 +62,6 @@ var Hud = new Class(
 		{
 			APPLICATION.mGame.mSheet.mItem.mStateMachine.changeState(APPLICATION.mGame.mSheet.mItem.mWAITING_ON_ANSWER_ITEM);
 		}
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Core")
-		{
-                        APPLICATION.mGame.mSheet.getItem().mShowCore = true;
-		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "XTables")
 		{
                         APPLICATION.mGame.mSheet.getItem().mShowTimesTables = true;
@@ -96,7 +92,6 @@ var Hud = new Class(
         {
                 var homeSelectArray = new Array(); 
 		homeSelectArray.push('Play');
-		homeSelectArray.push('Core');
 		homeSelectArray.push('XTables');
 		homeSelectArray.push('Practice');
 		homeSelectArray.push('Item description');

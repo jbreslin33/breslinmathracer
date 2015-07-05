@@ -94,7 +94,6 @@ var Item = new Class(
 		//show coreStandard
 		this.mCoreInfo = 0;
 		this.mCoreInfoButton = 0;
-		this.mShowCore = false;
 
 		//show times tables
 		this.mTimesTablesInfo = 0;
@@ -598,16 +597,6 @@ var Item = new Class(
 		}
         },
 
-        showCore: function()
-        {
-                if (this.mCoreDescription == '')
-                {
-                        APPLICATION.getCoreDescription(this.mType);
-                }
-                this.mCoreInfo.setVisibility(true);
-                this.mCoreInfoButton.setVisibility(true);
-        },
-        
 	showTimesTables: function()
         {
                 this.mTimesTablesInfo.setVisibility(true);
@@ -619,12 +608,6 @@ var Item = new Class(
                 this.mPracticeInfo.setVisibility(false);
                 this.mPracticeInfoButton.setVisibility(false);
                 this.mLeavePracticeButton.setVisibility(false);
-        },
-
-        hideCore: function()
-        {
-                this.mCoreInfo.setVisibility(false);
-                this.mCoreInfoButton.setVisibility(false);
         },
 
         hideTimesTables: function()
@@ -746,26 +729,5 @@ var Item = new Class(
     				this.mPracticeInfo.mMesh.appendChild(option);		
 			}
 		}
-	},
-     
-	fillCoreSelect: function()
-        {
-                var array = this.mCoreDescription.split(":");
-
-                for (var i = 0; i < array.length; i++)
-                {
-                        var option = document.createElement("option");
-                        option.value = array[i];
-                        option.text = array[i];
-         		if (navigator.appName == "Microsoft Internet Explorer")
-			{
-                        	this.mCoreInfo.mMesh.add(option);
-			}
-			else
-			{
-                        	this.mCoreInfo.mMesh.appendChild(option);
-			}
-                }
-        }
-
+	}
 });

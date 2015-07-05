@@ -909,44 +909,6 @@ exit: function(application)
 
 });
 
-var CORE_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::CORE_APPLICATION');
-        }
-        application.mWaitForReturn = true;
-        application.core(application.mGame.mSheet.getItem().mCoreInfo.mMesh.options[application.mGame.mSheet.getItem().mCoreInfo.mMesh.selectedIndex].text);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::CORE_APPLICATION execute');
-	}
-        if (application.mWaitForReturn == false)
-        {
-                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-        }
-},
-
-exit: function(application)
-{
-        application.mGame.mReadyForNormalApplication = false;
-        //application.normal();
-}
-
-});
-
 var TIMES_TABLES_APPLICATION = new Class(
 {
 Extends: State,

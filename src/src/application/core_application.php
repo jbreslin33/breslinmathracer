@@ -29,11 +29,7 @@ Extends: Application,
 		this.STANDARD_DESCRIPTION = 106;
 		this.ITEM_DESCRIPTION = 107;
 		this.PRACTICE_DESCRIPTION = 108;
-		this.CORE_DESCRIPTION = 110;
 		this.STUDENT_ITEM_STATS = 109;
-
-		//games
-
 
 		//scroll
 		this.SCROLL = 112;
@@ -112,9 +108,6 @@ Extends: Application,
                 this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
                 this.mLEAVE_PRACTICE_APPLICATION       = new LEAVE_PRACTICE_APPLICATION    (this);
 	
-		//core		
-                this.mCORE_APPLICATION                 = new CORE_APPLICATION              (this);
-
 		//tables
                 this.mTIMES_TABLES_APPLICATION         = new TIMES_TABLES_APPLICATION      (this);
 
@@ -220,11 +213,6 @@ Extends: Application,
                         {
                                 APPLICATION.mGame.mSheet.mItem.mPracticeDescription = this.mResponseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
-                        }
-			if (codeNumber == APPLICATION.CORE_DESCRIPTION)
-                        {
-                                APPLICATION.mGame.mSheet.mItem.mCoreDescription = this.mResponseArray[1];
-                                APPLICATION.mGame.mSheet.mItem.fillCoreSelect();
                         }
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
                         {
@@ -492,38 +480,6 @@ Extends: Application,
                 xmlhttp.send();
         },
        
-	core: function(standardid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../web/update/updatestandardid.php?standardid=" + standardid,true);
-                xmlhttp.send();
-        },
-
 	timestables: function(tablenumber)
         {
                 var xmlhttp;
