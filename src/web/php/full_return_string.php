@@ -1,6 +1,6 @@
 <?php
 //fill php vars
-$returnString = "101,";
+$returnString = "116,";
 $returnString .= $_SESSION["ref_id"];
 $returnString .= ",";
 $returnString .= $_SESSION["LOGGED_IN"];

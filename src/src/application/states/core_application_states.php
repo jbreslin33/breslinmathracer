@@ -158,12 +158,14 @@ execute: function(application)
 	
 	else if (application.mLoggedIn == true)
 	{
-        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
+		APPLICATION.log('mRef_id in login:' + APPLICATION.mRef_id);
                 APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                 //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
                 APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+		//login contains raw data which is really job of normal but ...does ref id contain
                 APPLICATION.mRawData = APPLICATION.mResponseArray[6];
                 APPLICATION.mRole = APPLICATION.mResponseArray[7];
                	
@@ -969,6 +971,26 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TIMES_TABLES_APPLICATION execute');
 	}
+
+        if (application.mDataToRead == true) //we have some data to read
+        {
+                APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+
+                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+                APPLICATION.mWaitForReturn = false;
+                APPLICATION.mSent = false;
+
+                application.mDataToRead = false
+        }
+
         if (application.mWaitForReturn == false)
         {
                 application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);

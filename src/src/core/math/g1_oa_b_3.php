@@ -51,12 +51,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 4 + 6 =');
-	}
+        this.setQuestion('' + this.a + ' + 4 + 6 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -171,12 +166,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 3 + 7 =');
-	}
+        this.setQuestion('' + this.a + ' + 3 + 7 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -291,12 +281,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 2 + 8 =');
-	}
+        this.setQuestion('' + this.a + ' + 2 + 8 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -411,12 +396,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 1 + 9 =');
-	}
+        this.setQuestion('' + this.a + ' + 1 + 9 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -531,12 +511,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 5 + 5 =');
-	}
+        this.setQuestion('' + this.a + ' + 5 + 5 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -651,12 +626,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 6 + 4 =');
-	}
+        this.setQuestion('' + this.a + ' + 6 + 4 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -771,12 +741,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 7 + 3 =');
-	}
+        this.setQuestion('' + this.a + ' + 7 + 3 =');
         this.setAnswer('' + this.b,0);
 }
 });
@@ -891,12 +856,7 @@ initialize: function(sheet)
 	}
 	this.b = parseInt(10 + this.a);
 
-	this.r = Math.floor(Math.random()*3);
-
-	if (this.r == 0)
-	{
-        	this.setQuestion('' + this.a + ' + 8 + 2 =');
-	}
+        this.setQuestion('' + this.a + ' + 8 + 2 =');
         this.setAnswer('' + this.b,0);
 }
 });

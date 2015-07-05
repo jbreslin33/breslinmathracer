@@ -157,7 +157,6 @@ Extends: Application,
                                 APPLICATION.mDataToRead = true;
                         }
 
-        		
 			if (codeNumber == APPLICATION.NOT_LOGGED_IN)
                         {
 				this.mSent = false;		

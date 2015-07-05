@@ -16,6 +16,21 @@ function __construct()
   	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->process();
 }
+public function isWeekend()
+{
+	date_default_timezone_set('UTC');
+	$timezone = new DateTimeZone('America/New_York');
+	$w = date( "w", time());
+
+	if ( $w == 0 || $w == 6)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}	
+}
 
 public function process()
 {
@@ -41,30 +56,16 @@ public function process()
                 $_SESSION["ref_id"]  = $ref_id;
 
 		//normalTime
-		date_default_timezone_set('UTC');
-		$timezone = new DateTimeZone('America/New_York');
-		$w = date( "w", time());
-
-		if ( $w == 0 || $w == 6)
-		{
-			//error_log('weekend');
-		}
-		else
-		{
-			//error_log('weekday');
-		}
 		$normalStartTime = "8:30:00";
 		$normalEndTime   = "14:50:00";
 		if (time() >= strtotime($normalStartTime) && time() <= strtotime($normalEndTime))
  		{
-  			//error_log('school time');
-		
 			if ($ref_id == 'normal')
 			{
 				$normal = new Normal(1);
-  				error_log('else new norml');
-			
 			}
+
+			// this is just for dev user and has no effect on anyone else
 			if ($ref_id == 'practice')
 			{
 				if ($_SESSION["first_name"] == 'dev' && $_SESSION["last_name"] == 'user')
@@ -74,64 +75,18 @@ public function process()
 				else
 				{
 					$normal = new Normal(1);
-  					error_log('else new norml');
 				}
-			}
-			if ($ref_id == 'timestables_2')
-			{
-				$timestables = new TimesTables(2,1,0);
-			}
-			if ($ref_id == 'timestables_3')
-			{
-				$timestables = new TimesTables(3,1,0);
-			}
-			if ($ref_id == 'timestables_4')
-			{
-				$timestables = new TimesTables(4,1,0);
-			}
-			if ($ref_id == 'timestables_5')
-			{
-				$timestables = new TimesTables(5,1,0);
-			}
-			if ($ref_id == 'timestables_6')
-			{
-				$timestables = new TimesTables(6,1,0);
-			}
-			if ($ref_id == 'timestables_7')
-			{
-				$timestables = new TimesTables(7,1,0);
-			}
-			if ($ref_id == 'timestables_8')
-			{
-				$timestables = new TimesTables(8,1,0);
-			}
-			if ($ref_id == 'timestables_9')
-			{
-				$timestables = new TimesTables(9,1,0);
-			}
-			if ($ref_id == 'timestables')
-			{
-				$timestables = new TimesTables(2,1,0);
-			}
-			if ($ref_id == 'The Izzy')
-			{
-				$timestables = new TimesTables(11,1,0);
-			}
-			if ($ref_id == 'Add Subtract within 5')
-			{
-				$timestables = new TimesTables(12,1,0);
 			}
 		}
 		else //after school
 		{
-			error_log('new assessment but really normal after school');
-			$assessment = new Assessment();
+			//$assessment = new Assessment();
 			$normal = new Normal(1);
+                	//$_SESSION["ref_id"]  = 'assessment';
 		}
 	}
 	else
 	{
-		error_log('else new normal');
 		$normal = new Normal(1);
 	}
 }

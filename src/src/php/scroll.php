@@ -20,6 +20,11 @@ function __construct()
 		{
 			$this->setScroll('score');
 		}
+                if ($_SESSION["ref_id"] == 'assessment')
+                {
+                        $this->setScroll('score');
+                }
+
 
 		if ($_SESSION["ref_id"] == 'timestables_2')
 		{
