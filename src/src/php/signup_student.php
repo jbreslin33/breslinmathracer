@@ -2,6 +2,19 @@
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 
+//start new session
+session_start();
+
+$_SESSION["username"]   = $_GET["username"];
+$_SESSION["password"]   = $_GET["password"];
+$_SESSION["first_name"] = $_GET["first_name"];
+$_SESSION["last_name"]  = $_GET["last_name"];
+$_SESSION["core_standards_id"]  = 'k.cc.a.1';
+
+$signupStudent = new SignupStudent();
+?>
+
+<?php
 
 class SignupStudent
 {
@@ -17,6 +30,31 @@ function __construct()
 function __destruct()
 {
 
+}
+
+public function sendUsernameTaken()
+{
+	$returnString = "118";
+	echo $returnString;
+}
+
+public function sendSignupStudent()
+{
+	$returnString = "117,";
+	$returnString .= $_SESSION["ref_id"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["username"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["first_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["last_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["raw_data"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["role"];
+	echo $returnString;
 }
 
 public function process()
@@ -38,11 +76,13 @@ public function process()
 			$item_attempt = new ItemAttempt();
 			$item_attempt->insert();
 	        	$_SESSION["role"] = 3;
+
+			$this->sendSignupStudent();
 		}
 	}
 	else
 	{
-		//do nothing errors should take care of it.	
+		$this->sendUsernameTaken();
 	}
 }
 
@@ -122,17 +162,8 @@ public function insertIntoUsers()
         $er = pg_last_error();
         if (strpos($er,'username') !== false)
         {
-                $this->mUsernameTaken = 1;
-        }
-	else
-	{
-		error_log('not taken ....');
-	}
-
-	if ($this->mUsernameTaken == 1)
-	{
 		return false;
-	}
+        }
 	else
 	{
 		return true;
