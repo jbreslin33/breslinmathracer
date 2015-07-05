@@ -437,7 +437,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../web/php/normal.php",true);
+                xmlhttp.open("POST","../../src/php/normal.php",true);
                 xmlhttp.send();
         },
 

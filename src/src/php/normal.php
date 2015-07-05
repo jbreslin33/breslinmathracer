@@ -3,12 +3,25 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
 
+//start new session
+session_start();
+
+//start new so pass 1 as first paremeter.
+if (isset($_SESSION["user_id"]))
+{
+        $normal = new Normal(0);
+}
+
+?>
+
+<?php
+
 class Normal 
 {
 
 function __construct($startNew)
 {
-	$this->logs = true; 
+	$this->logs = false; 
 	if ($this->logs)
 	{
 		error_log('normal constructor');
@@ -56,6 +69,28 @@ function __construct($startNew)
 	}
 
 	$this->process();
+
+	$this->sendNormal();	
+}
+
+public function sendNormal()
+{
+	//fill php vars
+	$returnString = "116,";
+	$returnString .= $_SESSION["ref_id"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["username"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["first_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["last_name"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["raw_data"];
+	$returnString .= ",";
+	$returnString .= $_SESSION["role"];
+	echo $returnString;
 }
 
 public function newEvaluation()
