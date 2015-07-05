@@ -41,8 +41,7 @@ Extends: Application,
 		//admin
 		this.UPDATED_STANDARD_ID = 111;
 
-		this.FULL_NORMAL = 116;
-		this.FULL = 101;
+		this.NORMAL = 116;
 
 		//personal info
 		this.mUsername = '';
@@ -203,42 +202,10 @@ Extends: Application,
 				this.mSent = false;		
 			}
 
-			if (codeNumber == APPLICATION.FULL)
-                	{
-				APPLICATION.log('FULL');
-                		APPLICATION.mRef_id = this.mResponseArray[1];
-				APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                        	APPLICATION.mLoggedIn = this.mResponseArray[2];
-                       		APPLICATION.mUsername = this.mResponseArray[3];
-                        	APPLICATION.mFirstName = this.mResponseArray[4];
-                        	APPLICATION.mLastName = this.mResponseArray[5];
-                        	APPLICATION.mRawData = this.mResponseArray[6];
-                        	APPLICATION.mRole = this.mResponseArray[7];
-		
-                        	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
-				APPLICATION.mWaitForReturn = false; 
-				this.mSent = false;		
-               		}
-
-                        if (codeNumber == APPLICATION.FULL_NORMAL)
+                        if (codeNumber == APPLICATION.NORMAL)
                         {
-				APPLICATION.log('FULL_NORMAL');
-                                APPLICATION.mRef_id = this.mResponseArray[1];
-                                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                                APPLICATION.mLoggedIn = this.mResponseArray[2];
-                                APPLICATION.mUsername = this.mResponseArray[3];
-                                APPLICATION.mFirstName = this.mResponseArray[4];
-                                APPLICATION.mLastName = this.mResponseArray[5];
-                                APPLICATION.mRawData = this.mResponseArray[6];
-                                APPLICATION.mRole = this.mResponseArray[7];
-
-                                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
-                                APPLICATION.mWaitForReturn = false;
-                                this.mSent = false;
+                                APPLICATION.mDataToRead = true;
                         }
-                   
 
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {

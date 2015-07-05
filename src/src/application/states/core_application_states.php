@@ -773,6 +773,25 @@ enter: function(application)
 
 execute: function(application)
 {
+	if (application.mDataToRead == true) //we have some data to read
+	{
+        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+        	APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
+                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+
+               	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+               	APPLICATION.mWaitForReturn = false;
+                APPLICATION.mSent = false;
+
+		application.mDataToRead = false 
+	}
+
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION execute');
