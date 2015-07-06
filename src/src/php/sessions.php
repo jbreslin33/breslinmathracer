@@ -43,6 +43,8 @@ public function process()
 	$normalEndTime   = "14:50:00";
 	if (time() >= strtotime($normalStartTime) && time() <= strtotime($normalEndTime))
  	{
+		$normal = new Normal();
+/*
 		if ($ref_id == 'normal')
 		{
 			$normal = new Normal();
@@ -60,6 +62,7 @@ public function process()
 				$normal = new Normal();
 			}
 		}
+*/
 	}
 	else //after school
 	{
