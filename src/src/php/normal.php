@@ -59,17 +59,17 @@ function __construct($startNew)
 	
 	$this->item_types_id_to_ask = '';
 	
-	if ($startNew == 1)
-	{
-		$this->newEvaluation();
+	if ( isset($_SESSION["evaluations_attempts_id_normal"]) )
+	{	
+		$this->continueEvaluation();
 	}
 	else
 	{
+		$this->newEvaluation();
 		$this->continueEvaluation();
 	}
 
 	$this->process();
-
 	$this->sendNormal();	
 }
 
@@ -99,14 +99,16 @@ public function newEvaluation()
 	{
 		error_log('newEvaluation');
 	}
+
 	//close old evaluation_attempts.......
 	$evaluations_attempts = new EvaluationsAttempts();
 	$evaluations_attempts->update();
 
 	$_SESSION["evaluations_id"] = 1;
 	$evaluations_attempts->insert();
-		
-	$this->continueEvaluation();
+
+	//set generic id to normal
+	$_SESSION["evaluations_attempts_id_normal"] = $_SESSION["evaluations_attempts_id"];
 }
 
 public function continueEvaluation()
@@ -115,27 +117,9 @@ public function continueEvaluation()
 	{
 		error_log('continueEvaluation');
 	}
-	//check for last evaluation that was a normal type
-     	$query = "select id from evaluations_attempts where user_id = ";
-       	$query .= $_SESSION["user_id"];
-       	$query .= " AND evaluations_id = 1 order by start_time desc limit 1;";
 
-    	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
-
-       	$num = pg_num_rows($result);
-
-       	if ($num > 0)
-       	{
-               	//get the attempt_id
-               	$evaluations_attempts_id = pg_Result($result, 0, 'id');
-
-               	//set id
-               	$_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
-	}
-	else
-	{
-		$this->newEvaluation();	
-	}
+	//set normal to generic id
+      	$_SESSION["evaluations_attempts_id"] = $_SESSION["evaluations_attempts_id_normal"];
 }
 
 public function process()
@@ -149,11 +133,6 @@ public function process()
 	
 	$item_attempt = new ItemAttempt();
        	$item_attempt->insert();
-
-	if ($this->logs)
-	{
-		error_log('item_attempt done');
-	}
 
 	//i would like to add item_attempt_id to rawdata before we send it out..
 	$raw = $_SESSION["raw_data"];
