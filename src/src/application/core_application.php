@@ -332,6 +332,7 @@ Extends: Application,
 
         loginStudent: function(username,password)
         {
+		APPLICATION.log('loginStudent in app');	
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -359,7 +360,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/login_student.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=117&username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 

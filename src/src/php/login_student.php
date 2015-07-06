@@ -3,12 +3,16 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
 //start new session
-session_start();
+//session_start();
+/*
+$username = $_GET["username"];
+$password = $_GET["password"];
 
-$_SESSION["username"]   = $_GET["username"];
-$_SESSION["password"]   = $_GET["password"];
+$_SESSION["username"]   = $username;
+$_SESSION["password"]   = $password;
+*/
 
-$loginStudent = new LoginStudent();
+//$loginStudent = new LoginStudent($username,$password);
 ?>
 
 <?php
@@ -16,8 +20,10 @@ $loginStudent = new LoginStudent();
 class LoginStudent
 {
     private $mDatabaseConnection;
-function __construct()
+function __construct($username,$password)
 {
+	$this->mUsername = $username;
+	$this->mPassword = $password;
 	$this->mDatabaseConnection = new DatabaseConnection();
 	
 	//login helpers
@@ -33,7 +39,7 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $_SESSION["LOGGED_IN"];
 	$returnString .= ",";
-	$returnString .= $_SESSION["username"];
+	$returnString .= $this->mUsername;
 	$returnString .= ",";
 	$returnString .= $_SESSION["first_name"];
 	$returnString .= ",";
@@ -84,7 +90,7 @@ public function checkForStudent()
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
         $query = "select username from users where username = '";
-        $query .= $_SESSION["username"];
+        $query .= $this->mUsername;
         $query .= "';";
         
 	//get db result
@@ -95,9 +101,9 @@ public function checkForStudent()
         {
 		$this->mStudentExists = true;
 		$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id from users where username = '";
-        	$query2 .= $_SESSION["username"];
+        	$query2 .= $this->mUsername;
         	$query2 .= "' AND password = '";
-        	$query2 .= $_SESSION["password"];
+        	$query2 .= $this->mPassword;
         	$query2 .= "';";
 	
 		//get db result
@@ -124,6 +130,7 @@ public function checkForStudent()
         		$_SESSION["LOGGED_IN"] = 1;
         		$_SESSION["role"] = 1; //student
         		$_SESSION["raw_data"] = NULL; 
+        		$_SESSION["username"] = $this->mUsername; 
                 	$_SESSION["core_standards_id"] = $core_standards_id;
                 	$_SESSION["school_id"] = $school_id;
                 	$_SESSION["teacher_id"] = $teacher_id;
