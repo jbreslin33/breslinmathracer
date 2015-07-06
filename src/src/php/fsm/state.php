@@ -1,3 +1,28 @@
+<?php
+class State
+{
+
+function __construct()
+{
+
+}
+
+public function enter()
+{
+
+}
+public function execute()
+{
+
+}
+public function exit()
+{
+
+}
+?>
+
+}//end class
+/*
 var State = new Class(
 {
 
@@ -20,7 +45,6 @@ exit: function(entity_type)
 {
 
 }
-
-
 });
+*/
 
