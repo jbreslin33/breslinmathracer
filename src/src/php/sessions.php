@@ -45,7 +45,7 @@ public function process()
  	{
 		if ($ref_id == 'normal')
 		{
-			$normal = new Normal(1);
+			$normal = new Normal();
 		}
 
 		// this is just for dev user and has no effect on anyone else
@@ -57,14 +57,14 @@ public function process()
 			}
 			else
 			{
-				$normal = new Normal(1);
+				$normal = new Normal();
 			}
 		}
 	}
 	else //after school
 	{
 		//$assessment = new Assessment();
-		$normal = new Normal(1);
+		$normal = new Normal();
                	//$_SESSION["ref_id"]  = 'assessment';
 	}
 }

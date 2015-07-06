@@ -167,7 +167,7 @@ public function leavePractice()
 
                 if ($ref_id == 'normal')
                 {
-                        $normal = new Normal(0);
+                        $normal = new Normal();
                 }
         }
 }

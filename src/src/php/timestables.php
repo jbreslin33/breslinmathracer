@@ -1296,11 +1296,11 @@ public function leave()
 
                 if ($ref_id == 'normal')
                 {
-                        $normal = new Normal(0);
+                        $normal = new Normal();
                 }
                 if ($ref_id == 'practice')
                 {
-                        $normal = new Normal(0);
+                        $normal = new Normal();
                 }
         }
 }

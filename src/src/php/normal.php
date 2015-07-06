@@ -9,7 +9,7 @@ session_start();
 //start new so pass 1 as first paremeter.
 if (isset($_SESSION["user_id"]))
 {
-        $normal = new Normal(0);
+        $normal = new Normal();
 }
 
 ?>
@@ -19,7 +19,7 @@ if (isset($_SESSION["user_id"]))
 class Normal 
 {
 
-function __construct($startNew)
+function __construct()
 {
 	$this->logs = false; 
 	if ($this->logs)
