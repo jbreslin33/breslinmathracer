@@ -34,13 +34,14 @@ public function update()
 		$this->mCurrentState->execute($this->mOwner);
 	}
 }
+
 public function changeState($pNewState)
 {
 	$this->mPreviousState = $this->mCurrentState;
 
 	if ($this->mCurrentState)
 	{
-		$this->mCurrentState = $pNewState;
+		$this->mCurrentState->bexit($this->mOwner);
 	}
 
 	$this->mCurrentState = $pNewState;

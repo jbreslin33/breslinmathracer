@@ -7,44 +7,19 @@ function __construct()
 
 }
 
-public function enter()
+public function enter($entity_type)
 {
 
 }
-public function execute()
+public function execute($entity_type)
 {
 
 }
-public function exit()
+public function bexit($entity_type)
 {
 
 }
-?>
 
 }//end class
-/*
-var State = new Class(
-{
 
-initialize: function ()
-{
-
-},
-
-enter: function(entity_type)
-{
-
-},
-
-execute: function(entity_type)
-{
-
-},
-
-exit: function(entity_type)
-{
-
-}
-});
-*/
-
+?>
