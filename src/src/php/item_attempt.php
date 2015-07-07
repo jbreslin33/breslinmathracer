@@ -13,7 +13,7 @@ function __construct($application)
 	$this->mIDLast = 0;
 
         $this->mTransactionCode = 0;
-        $this->mQuestions = 0;
+        $this->mQuestion = 0;
         $this->mAnswers = 0;
         $this->mAnswer = 0;
 }
@@ -56,11 +56,11 @@ public function insert($item_type_id)
         }
 }
 
-public function update($itemtypesid,$transactioncode,$questions,$answers,$answer,$itemattemptid)
+public function update($itemtypesid,$transactioncode,$question,$answers,$answer,$itemattemptid)
 {
 	$this->mItemTypeID = $itemtypesid;
 	$this->mTransactionCode = $transactioncode;
-	$this->mQuestions = $questions;	
+	$this->mQuestion = $question;	
 	$this->mAnswers = $answers;
 	$this->mAnswer = $answer;
 	$this->mID = $itemattemptid;
@@ -447,13 +447,17 @@ public function update($itemtypesid,$transactioncode,$questions,$answers,$answer
                 }
         }
                 
+	error_log($this->mIDLast);	
+	error_log($this->mID);	
 	if ($this->mIDLast == $this->mID)
 	{
 		//skip
+		error_log('skip actual update');	
 	}
 	else 
 	{
 		$this->actualUpdate();
+		error_log('actual update');	
 	}
 }
 
@@ -472,6 +476,7 @@ public function actualUpdate()
 
         if ($num > 0)
         {
+		error_log('made it');	
                 //get the id from user table
                 $item_attempt_id = pg_Result($result, 0, 'id');
 

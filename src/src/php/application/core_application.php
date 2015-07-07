@@ -30,14 +30,22 @@ $APPLICATION->mCode = $code;
 //parseData
 if ($code == 117)
 {
+	unset($APPLICATION->mDataArray);
+	$APPLICATION->mDataArray = array();
+
 	error_log('code 117');
+
 	$APPLICATION->mDataArray[] = "117";
 	$APPLICATION->mDataArray[] = $_GET["username"];
 	$APPLICATION->mDataArray[] = $_GET["password"];
 }
 if ($code == 130)
 {
+	unset($APPLICATION->mDataArray);
+	$APPLICATION->mDataArray = array();
+
 	error_log('code 130');
+
 	$APPLICATION->mDataArray[] = "130";
 	$APPLICATION->mDataArray[] = $_GET["itemtypesid"];
 	$APPLICATION->mDataArray[] = $_GET["transactioncode"];
@@ -46,9 +54,6 @@ if ($code == 130)
 	$APPLICATION->mDataArray[] = $_GET["answer"];
 	$APPLICATION->mDataArray[] = $_GET["itemattemptid"];
 }
-/*
-        $item_attempt->update();
-*/
 
 //update
 $APPLICATION->update();	
