@@ -23,6 +23,19 @@ public function setPreviousState($s)
 {
 	$this->mPreviousState = $s;
 }
+/*
+update: function()
+{
+        if(this.mGlobalState)
+        {
+                this.mGlobalState.execute(this.mOwner);
+        }
+        if (this.mCurrentState)
+        {
+                this.mCurrentState.execute(this.mOwner);
+        }
+},
+*/
 public function update()
 {
 	if ($this->mGlobalState)

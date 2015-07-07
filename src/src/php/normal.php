@@ -1,17 +1,11 @@
 <?php
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/application/core_application.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
 
 //start new session
 session_start();
-
-//start new so pass 1 as first paremeter.
-if (isset($_SESSION["user_id"]))
-{
-        $normal = new Normal();
-}
-
 ?>
 
 <?php
@@ -19,8 +13,9 @@ if (isset($_SESSION["user_id"]))
 class Normal 
 {
 
-function __construct()
+function __construct($application)
 {
+	$this->mApplication = $application;
 	$this->logs = false; 
 	if ($this->logs)
 	{
@@ -28,6 +23,9 @@ function __construct()
 	}
 
 	$this->mDatabaseConnection = new DatabaseConnection();
+
+	//evaluationsAttempts	
+	$this->mEvaluationsAttemptsID = 0;
         
 	$this->progression_counter = 0;
 	$this->progression_counter_limit = 0;
@@ -59,15 +57,8 @@ function __construct()
 	
 	$this->item_types_id_to_ask = '';
 	
-	if ( isset($_SESSION["evaluations_attempts_id_normal"]) )
-	{	
-		$this->continueEvaluation();
-	}
-	else
-	{
-		$this->newEvaluation();
-		$this->continueEvaluation();
-	}
+	$this->newEvaluation();
+	$this->continueEvaluation();
 
 	$this->process();
 	$this->sendNormal();	
@@ -77,19 +68,19 @@ public function sendNormal()
 {
 	//fill php vars
 	$returnString = "116,";
-	$returnString .= $_SESSION["ref_id"];
+	$returnString .= $this->mApplication->mRef_id;
 	$returnString .= ",";
-	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= $this->mApplication->mLoginStudent->mLoggedIn;
 	$returnString .= ",";
-	$returnString .= $_SESSION["username"];
+	$returnString .= $this->mApplication->mLoginStudent->mUsername;
 	$returnString .= ",";
-	$returnString .= $_SESSION["first_name"];
+	$returnString .= $this->mApplication->mLoginStudent->mFirstName;
 	$returnString .= ",";
-	$returnString .= $_SESSION["last_name"];
+	$returnString .= $this->mApplication->mLoginStudent->mLastName;
 	$returnString .= ",";
-	$returnString .= $_SESSION["raw_data"];
+	$returnString .= $this->mApplication->mRawData;
 	$returnString .= ",";
-	$returnString .= $_SESSION["role"];
+	$returnString .= $this->mApplication->mLoginStudent->mRole;
 	echo $returnString;
 }
 
@@ -101,14 +92,13 @@ public function newEvaluation()
 	}
 
 	//close old evaluation_attempts.......
-	$evaluations_attempts = new EvaluationsAttempts();
-	$evaluations_attempts->update();
+// skip for now	$this->mApplication->mEvaluationsAttempts->update();
 
-	$_SESSION["evaluations_id"] = 1;
-	$evaluations_attempts->insert();
+	$this->mApplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
+	$this->mApplication->mEvaluationsAttempts->insert();
 
 	//set generic id to normal
-	$_SESSION["evaluations_attempts_id_normal"] = $_SESSION["evaluations_attempts_id"];
+	$this->mEvaluationsAttemptsID = $this->mApplication->mEvaluationsAttempts->mID;
 }
 
 public function continueEvaluation()
@@ -119,7 +109,7 @@ public function continueEvaluation()
 	}
 
 	//set normal to generic id
-      	$_SESSION["evaluations_attempts_id"] = $_SESSION["evaluations_attempts_id_normal"];
+      	//$_SESSION["evaluations_attempts_id"] = $_SESSION["evaluations_attempts_id_normal"];
 }
 
 public function process()
@@ -130,15 +120,14 @@ public function process()
 	}
 
 	$this->setRawData();
-	
-	$item_attempt = new ItemAttempt();
-       	$item_attempt->insert();
+       	
+	$this->mApplication->mItemAttempt->insert($this->item_types_id_to_ask);
 
 	//i would like to add item_attempt_id to rawdata before we send it out..
-	$raw = $_SESSION["raw_data"];
+	$raw = $this->mApplication->mRawData;
 	$raw .= ":";
-       	$raw .= $_SESSION["item_attempt_id"];
-	$_SESSION["raw_data"] = $raw;
+       	$raw .= $this->mApplication->mItemAttempt->mID;
+	$this->mApplication->mRawData = $raw;
 }
 
 //i am going to remember the last thing i asked and only ask 1 question at a time.
@@ -173,7 +162,7 @@ public function initializeProgressionCounter()
 	}
 
 	$query = "select progression from item_types where core_standards_id = '";
-	$query .= $_SESSION["core_standards_id"];
+	$query .= $this->mApplication->mLoginStudent->mCoreStandardsID;
 	$query .= "' ORDER BY item_types.progression";
         $query .= " LIMIT 1;";
 		
@@ -198,7 +187,7 @@ public function fillTypesArray()
 	}
 	//remediate types
 	$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
-        $query .= $_SESSION["user_id"];
+        $query .= $this->mApplication->mLoginStudent->mUserID;
 	$query .= " AND active_code = 1"; //skip unactive  
 	$query .= " order by progression asc;";
 
@@ -241,7 +230,7 @@ public function fillAttemptsArray()
 
 	//fill normal attempts
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
-        $query .= $_SESSION["user_id"];
+        $query .= $this->mApplication->mLoginStudent->mUserID;
 	$query .= " AND item_types.active_code = 1"; 
         $query .= " order by item_attempts.start_time desc;";
 													
@@ -331,7 +320,7 @@ public function masters()
 
 		//get the last 3 attempts for last_item_type	
 		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
-        	$query .= $_SESSION["user_id"];
+ 		$query .= $this->mApplication->mLoginStudent->mUserID;
         	$query .= " AND item_attempts.item_types_id = '";
 		$query .= $item_type_last;
 		$query .= "' order by item_attempts.start_time desc";
@@ -471,7 +460,7 @@ public function updateScores()
         $update .= ", unmastered = ";
         $update .= $_SESSION["unmastered_count"];
         $update .= " WHERE id = ";
-        $update .= $_SESSION["user_id"];
+ 	$update .= $this->mApplication->mLoginStudent->mUserID;
         $update .= ";";
 
         $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
@@ -837,7 +826,7 @@ public function setItemString()
         $itemString .= intval(count($this->score_array));
 
         $_SESSION["before_item_type_id"] = $itemString;
-        $_SESSION["raw_data"] = $itemString;
+        $this->mApplication->mRawData = $itemString;
         $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
         $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
 }

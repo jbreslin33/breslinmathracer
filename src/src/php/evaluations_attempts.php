@@ -3,27 +3,31 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 
 class EvaluationsAttempts
 {
-    private $mDatabaseConnection;
 
-function __construct()
+function __construct($application)
 {
-	$this->mDatabaseConnection = new DatabaseConnection();
+	$this->mApplication = $application;
+	$this->mEvaluationsID = 1;
+	$this->mID = 0;
 }
 public function insert()
 {
+	$db = new DatabaseConnection();
         $insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["user_id"];
+        $insert .= $this->mApplication->mLoginStudent->mUserID;
         $insert .= ",";
-        $insert .= $_SESSION["evaluations_id"];
+        $insert .= $this->mEvaluationsID;
         $insert .= ");";
+	
+	error_log($insert);
 
-        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+        $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
         $query = "select id from evaluations_attempts where user_id = ";
-        $query .= $_SESSION["user_id"];
+        $query .= $this->mApplication->mLoginStudent->mUserID;
         $query .= " order by start_time desc limit 1;";
 
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+        $result = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 	
         $num = pg_num_rows($result);
 
@@ -33,30 +37,25 @@ public function insert()
                 $evaluations_attempts_id = pg_Result($result, 0, 'id');
 
                 //set level_id
-                $_SESSION["evaluations_attempts_id"] = $evaluations_attempts_id;
+                $this->mID = $evaluations_attempts_id;
         }
 
         //set sessions for signup
-        $_SESSION["ref_id"] = 'normal';
-        $_SESSION["subject_id"] = 1;
 }
 
 public function update()
 {
 	$insert = '';
+	error_log('mID next:');
+	error_log($this->mID);
+        $insert .= "update evaluations_attempts SET end_time = CURRENT_TIMESTAMP";
+        $insert .= " WHERE id = ";
+        $insert .= $this->mID;
+        $insert .= ";";
 
-	if (isset($_SESSION["evaluations_attempts_id"]))
-	{
-        	$insert .= "update evaluations_attempts SET end_time = CURRENT_TIMESTAMP";
-        	$insert .= " WHERE id = ";
-        	$insert .= $_SESSION["evaluations_attempts_id"];
-        	$insert .= ";";
-
-        	//get db result
-        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
-		//$equery = "insert into error_log (error_time,error,username) values (CURRENT_TIMESTAMP,'eval_c','');";
-		//$eresult = pg_query($this->mDatabaseConnection->getConn(),$equery);
-	}
+       	//get db result
+	$db = new DatabaseConnection();
+       	$insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 }
-}
+}//end class
 ?>

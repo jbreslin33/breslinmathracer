@@ -5,30 +5,39 @@ class ItemAttempt
 {
     private $mDatabaseConnection;
 
-function __construct()
+function __construct($application)
 {
-	$this->mDatabaseConnection = new DatabaseConnection();
+	$this->mApplication = $application;
+	$this->mItemTypeID = 0;
+	$this->mID = 0;
+	$this->mIDLast = 0;
+
+        $this->mTransactionCode = 0;
+        $this->mQuestions = 0;
+        $this->mAnswers = 0;
+        $this->mAnswer = 0;
 }
 
-public function insert()
+public function insert($item_type_id)
 {
-        $it = $_SESSION["item_types_id"];
+	$this->mItemTypeID = $item_type_id;
+	$db = new DatabaseConnection();
  	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $_SESSION["evaluations_attempts_id"];
+        $insert .= $this->mApplication->mEvaluationsAttempts->mID;
         $insert .= ",0,'";
-        $insert .= $_SESSION["item_types_id"];
+        $insert .= $this->mItemTypeID;
         $insert .= "');";
 
         //get db result
-        $insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+        $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
         //get item_attempt id
         $select = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
-        $select .= $_SESSION["user_id"];
+        $select .= $this->mApplication->mLoginStudent->mUserID;
         $select .= " ORDER BY item_attempts.start_time DESC LIMIT 1;";
  
         //get db result
-        $selectResult = pg_query($this->mDatabaseConnection->getConn(),$select) or die('Could not connect: ' . pg_last_error());
+        $selectResult = pg_query($db->getConn(),$select) or die('Could not connect: ' . pg_last_error());
 
         //get numer of rows
         $num = pg_num_rows($selectResult);
@@ -39,7 +48,7 @@ public function insert()
                 $item_attempt_id = pg_Result($selectResult, 0, 'id');
 
                 //set level_id
-                $_SESSION["item_attempt_id"] = $item_attempt_id;
+                $this->mID = $item_attempt_id;
         }
         else
         {
@@ -47,10 +56,24 @@ public function insert()
         }
 }
 
-public function update()
+public function update($itemtypesid,$transactioncode,$questions,$answers,$answer,$itemattemptid)
 {
+	$this->mItemTypeID = $itemtypesid;
+	$this->mTransactionCode = $transactioncode;
+	$this->mQuestions = $questions;	
+	$this->mAnswers = $answers;
+	$this->mAnswer = $answer;
+	$this->mID = $itemattemptid;
+
+        $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
+        $APPLICATION->mDataArray[] = $_GET["transactioncode"];
+        $APPLICATION->mDataArray[] = $_GET["question"];
+        $APPLICATION->mDataArray[] = $_GET["answers"];
+        $APPLICATION->mDataArray[] = $_GET["answer"];
+        $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
+
 	//for timestables
-	if ($_SESSION["ref_id"] == "timestables")
+	if ($this->mApplication->mRef_id == "timestables")
 	{
 		if (!isset($_SESSION["timestables_score"]))
 		{
@@ -81,7 +104,7 @@ public function update()
 		}
 	}
        	//for theizzy
-        if ($_SESSION["ref_id"] == "The Izzy")
+        if ($this->mApplication->mRef_id == "The Izzy")
         {
                 if (!isset($_SESSION["timestables_score_theizzy"]))
                 {
@@ -113,7 +136,7 @@ public function update()
         }
        
 	//for koaa5
-        if ($_SESSION["ref_id"] == "Add Subtract within 5")
+        if ($this->mApplication->mRef_id == "Add Subtract within 5")
         {
                 if (!isset($_SESSION["timestables_score_koaa5"]))
                 {
@@ -145,7 +168,7 @@ public function update()
         }
 
         //for two
-        if ($_SESSION["ref_id"] == "timestables_2")
+        if ($this->mApplication->mRef_id == "timestables_2")
         {
                 if (!isset($_SESSION["timestables_score_two"]))
                 {
@@ -176,7 +199,7 @@ public function update()
                 }
         }
         //for three
-        if ($_SESSION["ref_id"] == "timestables_3")
+        if ($this->mApplication->mRef_id  == "timestables_3")
         {
                 if (!isset($_SESSION["timestables_score_three"]))
                 {
@@ -207,7 +230,7 @@ public function update()
                 }
         }
         //for four
-        if ($_SESSION["ref_id"] == "timestables_4")
+        if ($this->mApplication->mRef_id == "timestables_4")
         {
                 if (!isset($_SESSION["timestables_score_four"]))
                 {
@@ -238,7 +261,7 @@ public function update()
                 }
         }
         //for five
-        if ($_SESSION["ref_id"] == "timestables_5")
+        if ($this->mApplication->mRef_id == "timestables_5")
         {
                 if (!isset($_SESSION["timestables_score_five"]))
                 {
@@ -269,7 +292,7 @@ public function update()
                 }
         }
         //for six
-        if ($_SESSION["ref_id"] == "timestables_6")
+        if ($this->mApplication->mRef_id == "timestables_6")
         {
                 if (!isset($_SESSION["timestables_score_six"]))
                 {
@@ -300,7 +323,7 @@ public function update()
                 }
         }
         //for seven
-        if ($_SESSION["ref_id"] == "timestables_7")
+        if ($this->mApplication->mRef_id == "timestables_7")
         {
                 if (!isset($_SESSION["timestables_score_seven"]))
                 {
@@ -331,7 +354,7 @@ public function update()
                 }
         }
         //for eight
-        if ($_SESSION["ref_id"] == "timestables_8")
+        if ($this->mApplication->mRef_id == "timestables_8")
         {
                 if (!isset($_SESSION["timestables_score_eight"]))
                 {
@@ -362,7 +385,7 @@ public function update()
                 }
         }
         //for nine
-        if ($_SESSION["ref_id"] == "timestables_9")
+        if ($this->mApplication->mRef_id == "timestables_9")
         {
                 if (!isset($_SESSION["timestables_score_nine"]))
                 {
@@ -393,7 +416,7 @@ public function update()
                 }
         }
         //for ten
-        if ($_SESSION["ref_id"] == "timestables_10")
+        if ($this->mApplication->mRef_id == "timestables_10")
         {
                 if (!isset($_SESSION["timestables_score_ten"]))
                 {
@@ -424,18 +447,11 @@ public function update()
                 }
         }
                 
-	if (isset($_SESSION["item_attempt_last_id_updated"]))
+	if ($this->mIDLast == $this->mID)
 	{
-		if ($_SESSION["item_attempt_id"] == $_SESSION["item_attempt_last_id_updated"] )
-		{
-			//skip
-		}
-		else 
-		{
-			$this->actualUpdate();
-		}
+		//skip
 	}
-	else
+	else 
 	{
 		$this->actualUpdate();
 	}
@@ -443,14 +459,14 @@ public function update()
 
 public function actualUpdate()
 {		
-
+	$db = new DatabaseConnection();
 	$query = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.end_time is null AND user_id = ";
-        $query .= $_SESSION["user_id"];
+        $query .= $this->mApplication->mLoginStudent->mUserID;
 	$query .= " AND item_attempts.item_types_id = '"; //this should now skip over new one that is created....
-        $query .= $_SESSION["item_types_id"];
+        $query .= $this->mItemTypeID;
         $query .= "' order by item_attempts.start_time desc limit 1;";
 
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+        $result = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
         $num = pg_num_rows($result);
 
@@ -460,22 +476,19 @@ public function actualUpdate()
                 $item_attempt_id = pg_Result($result, 0, 'id');
 
                 //set level_id
-                $_SESSION["item_attempt_id"] = $item_attempt_id;
+                $this->mID = $item_attempt_id;
 
-		$questionTxt = $_SESSION["item_question"];
+		$questionTxt = $this->mQuestion;
 		$questionTxt = htmlentities($questionTxt, ENT_QUOTES);
 		
-		$answersTxt = $_SESSION["item_answers"];
+		$answersTxt = $this->mAnswers;
 		$answersTxt = htmlentities($answersTxt, ENT_QUOTES);
 		
-		$answerTxt = $_SESSION["item_answer"];
+		$answerTxt = $this->mAnswer;
 		$answerTxt = htmlentities($answerTxt, ENT_QUOTES);
 
-		
-
-
 		$insert = "update item_attempts SET end_time = CURRENT_TIMESTAMP, transaction_code = ";
-        	$insert .= $_SESSION["item_transaction_code"];
+        	$insert .= $this->mTransactionCode;
 		$insert .= ", question = '";
         	$insert .= $questionTxt;
 		$insert .= "', answers = '"; 
@@ -483,13 +496,13 @@ public function actualUpdate()
 		$insert .= "', user_answer = '"; 
         	$insert .= $answerTxt;
 		$insert .= "' WHERE id = ";		
-        	$insert .= $_SESSION["item_attempt_id"];
+        	$insert .= $this->mID;
         	$insert .= ";";
 
         	//get db result
-        	$insertResult = pg_query($this->mDatabaseConnection->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
+        	$insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
                 
-		$_SESSION["item_attempt_last_id_updated"] = $_SESSION["item_attempt_id"];
+		$this->mIDLast = $this->mID; 
 	}
 }
 

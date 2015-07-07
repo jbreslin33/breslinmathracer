@@ -442,7 +442,7 @@ Extends: Application,
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("POST","../../web/php/send_item_attempt.php?itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question + "&answers=" + answers + "&answer=" + answer + "&itemattemptid=" + itemattemptid,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=130&itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question + "&answers=" + answers + "&answer=" + answer + "&itemattemptid=" + itemattemptid,true);
                 xmlhttp.send();
         },
 
@@ -474,7 +474,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/normal.php",true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=116",true); 
                 xmlhttp.send();
         },
 

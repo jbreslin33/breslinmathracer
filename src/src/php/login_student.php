@@ -1,18 +1,6 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
-
-//start new session
-//session_start();
-/*
-$username = $_GET["username"];
-$password = $_GET["password"];
-
-$_SESSION["username"]   = $username;
-$_SESSION["password"]   = $password;
-*/
-
-//$loginStudent = new LoginStudent($username,$password);
 ?>
 
 <?php
@@ -20,34 +8,43 @@ $_SESSION["password"]   = $password;
 class LoginStudent
 {
     private $mDatabaseConnection;
-function __construct($username,$password)
+function __construct()
 {
+	$this->mUsername = 0; 
+        $this->mPassword = 0;
+        $this->mStudentExists = false;
+	$this->mLoggedIn = 0;
+	$this->mRole = 1;
+	$this->mFirstName = 0;
+	$this->mLastName = 0;
+	$this->mUserID = 0;
+	$this->mCoreStandardsID = 0;
+}
+public function enterLogin($username,$password)
+{
+        $this->mStudentExists = false;
 	$this->mUsername = $username;
-	$this->mPassword = $password;
-	$this->mDatabaseConnection = new DatabaseConnection();
-	
-	//login helpers
-	$this->mStudentExists = false;
-	$this->process();
+        $this->mPassword = $password;
+
+        $this->mDatabaseConnection = new DatabaseConnection();
+        $this->process();
 }
 
 public function sendLoginStudent()
 {
 	//fill php vars
 	$returnString = "117,";
-	$returnString .= $_SESSION["ref_id"];
+	$returnString .= "normal";
 	$returnString .= ",";
-	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= $this->mLoggedIn;
 	$returnString .= ",";
 	$returnString .= $this->mUsername;
 	$returnString .= ",";
-	$returnString .= $_SESSION["first_name"];
+	$returnString .= $this->mFirstName;
 	$returnString .= ",";
-	$returnString .= $_SESSION["last_name"];
+	$returnString .= $this->mLastName;
 	$returnString .= ",";
-	$returnString .= $_SESSION["raw_data"];
-	$returnString .= ",";
-	$returnString .= $_SESSION["role"];
+	$returnString .= $this->mRole;
 	echo $returnString;
 }
 public function sendBadUsername()
@@ -65,7 +62,7 @@ public function process()
 {
 	//student
 	$this->checkForStudent();
-	if ($_SESSION["LOGGED_IN"] == 1)
+	if ($this->mLoggedIn == 1)
 	{
 		return;
 	}
@@ -79,14 +76,11 @@ public function process()
 }
 public function checkForStudent()
 {
-       	if (!isset($_SESSION["LOGGED_IN"]))
-	{
-        	$_SESSION["LOGGED_IN"] = 0;
-	}
-       	if ($_SESSION["LOGGED_IN"] == 1)
+       	if ($this->mLoggedIn == 1)
 	{
 		return;
 	}
+
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
         $query = "select username from users where username = '";
@@ -99,6 +93,7 @@ public function checkForStudent()
         $num = pg_num_rows($result);
         if ($num > 0)
         {
+		error_log('jello');
 		$this->mStudentExists = true;
 		$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id from users where username = '";
         	$query2 .= $this->mUsername;
@@ -113,8 +108,7 @@ public function checkForStudent()
         
 		if ($num2 > 0)
 		{
-        		$_SESSION["LOGGED_IN"] = 1;
-			//get the id from user table
+			//grab db values
                 	$first_name = pg_Result($result2, 0, 'first_name');
                 	$last_name = pg_Result($result2, 0, 'last_name');
                 	$user_id = pg_Result($result2, 0, 'id');
@@ -123,36 +117,31 @@ public function checkForStudent()
                 	$teacher_id = pg_Result($result2, 0, 'teacher_id');
                 	$room_id = pg_Result($result2, 0, 'room_id');
                 	$team_id = pg_Result($result2, 0, 'team_id');
-			//set sessions
-                	$_SESSION["first_name"] = $first_name;
-                	$_SESSION["last_name"] = $last_name;
-                	$_SESSION["user_id"] = $user_id;
-        		$_SESSION["LOGGED_IN"] = 1;
-        		$_SESSION["role"] = 1; //student
-        		$_SESSION["raw_data"] = NULL; 
-        		$_SESSION["username"] = $this->mUsername; 
-                	$_SESSION["core_standards_id"] = $core_standards_id;
-                	$_SESSION["school_id"] = $school_id;
-                	$_SESSION["teacher_id"] = $teacher_id;
-                	$_SESSION["room_id"] = $room_id;
-                	$_SESSION["team_id"] = $team_id;
 
-        		//SESSION
-        		$sessions = new Sessions();
-
+			//set member variables
+                	$this->mFirstName = $first_name;
+                	$this->mLastName = $last_name;
+                	$this->mUserID = $user_id;
+        		$this->mLoggedIn = 1;
+			$this->mCoreStandardsID = $core_standards_id;
+			$this->mSchoolID = $school_id;
+			$this->mTeacherID = $teacher_id;
+			$this->mRoomID = $room_id;
+			$this->mTeamID = $team_id;
+		
 			//send to login data to client
 			$this->sendLoginStudent();
 		}
 		else
 		{
-        		$_SESSION["LOGGED_IN"] = 0;
-        		$_SESSION["user_id"] = 0;
+        		$this->mLoggedIn = 0;
+        		$this->mUserID = 0;
 		}
         }
         else
         {
-        	$_SESSION["LOGGED_IN"] = 0;
-        	$_SESSION["user_id"] = 0;
+        	$this->mLoggedIn = 0;
+        	$this->mUserID = 0;
         }
 }
 }
