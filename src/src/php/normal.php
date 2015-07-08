@@ -25,34 +25,38 @@ function __construct($application)
 	//evaluationsAttempts	
 	$this->mEvaluationsAttemptsID = 0;
         
-	$this->progression_counter = 0;
+	$this->mProgressionCounter = 0;
 
 	//types array	
-	$this->item_types_array                = array();
-	$this->progression_array       = array();
-	$this->core_standards_id_array = array();
-	$this->type_mastery_array      = array();
+	$this->mItemTypesArray  = array();
+	$this->mProgressionArray     = array();
+	$this->mCoreStandardsIDArray = array();
+	$this->mTypeMasterArray      = array();
 
 	//attempts array 	
-	$this->start_time_array       = array();
-	$this->item_attempts_array             = array();
-	$this->transaction_code_array = array();
-	$this->core_standards_array   = array();
+	$this->mStartTimeArray       = array();
+	$this->mItemAttemptsArray             = array();
+	$this->mTransactionCodeArray = array();
+	$this->mCoreStandardsArray   = array();
 
 	//tricks
-	$this->leastAsked = '';	
-	$this->leastPercent = '';	
-	$this->leastCorrect = '';	
+	$this->mLeastAsked = '';	
+	$this->mLeastPercent = '';	
+	$this->mLeastCorrect = '';	
 
 	//masters
-	$this->previous_id_array = array();
+	$this->mPreviousIDArray = array();
+	
+	$this->mUnmasteredCount = -99;
 
 	//scores
-        $this->score_array = array();
-        $this->high_standard = '';
-        $this->high_progression = '';
+        $this->mScoreArray = array();
+        $this->mHighStandard = '';
+        $this->mHighProgression = '';
 	
-	$this->item_types_id_to_ask = '';
+	$this->mItemTypesIDToAsk = '';
+
+	$this->mItemTypeLast = 0;
 }
 	
 
@@ -137,7 +141,6 @@ public function setRawData()
 	$this->item_types_id_to_ask = '';
         
 	$this->masters();
-	$this->unmasteredCount = $_SESSION["unmastered_count"]; 
         $this->updateScores();
 	$this->setEarliestToAsk("wha");	
 	$this->goBananas();
@@ -164,10 +167,10 @@ public function initializeProgressionCounter()
         if ($num > 0)
         {
         	//this id is either going in array or not
-                $this->progression_counter = pg_Result($result, 0, 'progression');
+                $this->mProgressionCounter = pg_Result($result, 0, 'progression');
 
 		//temp hack
-		$this->progression_counter = floatval($this->progression_counter) - floatval(0.0001);
+		$this->mProgressionCounter = floatval($this->mProgressionCounter) - floatval(0.0001);
 	}
 }
 
@@ -189,15 +192,15 @@ public function fillTypesArray()
 
         for($i=0; $i < $numberOfResults; $i++)
         {
-                $this->item_types_array[]                = pg_Result($result, $i, 'id');
-                $this->progression_array[]       = pg_Result($result, $i, 'progression');
-                $this->core_standards_id_array[] = pg_Result($result, $i, 'core_standards_id');
-                $this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
+                $this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
+                $this->mProgressionArray[]     = pg_Result($result, $i, 'progression');
+                $this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
+                $this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
         }
 
 	//normal base types..
 	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
-	$query .= $this->progression_counter; 
+	$query .= $this->mProgressionCounter; 
 	$query .= " AND active_code = 1"; //skip unactive
 	$query .= " order by progression asc;";
 
@@ -207,10 +210,10 @@ public function fillTypesArray()
                 
 	for($i=0; $i < $numberOfResults; $i++)
         {
-		$this->item_types_array[]                = pg_Result($result, $i, 'id');	
-		$this->progression_array[]       = pg_Result($result, $i, 'progression');	
-		$this->core_standards_id_array[] = pg_Result($result, $i, 'core_standards_id');
-		$this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
+		$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');	
+		$this->mProgressionArray[]     = pg_Result($result, $i, 'progression');	
+		$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
+		$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
 	}
 }
 
@@ -235,10 +238,10 @@ public function fillAttemptsArray()
 	//fill arrays
   	for ($i = 0; $i < $num; $i++)
 	{
-		$this->start_time_array[]       = pg_Result($result, $i, 'start_time');
-		$this->item_attempts_array[]             = pg_Result($result, $i, 'item_types_id');
-		$this->transaction_code_array[] = pg_Result($result, $i, 'transaction_code');
-		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
+		$this->mStartTimeArray[]       = pg_Result($result, $i, 'start_time');
+		$this->mItemAttemptsArray[]             = pg_Result($result, $i, 'item_types_id');
+		$this->mTransactionCodeArray[] = pg_Result($result, $i, 'transaction_code');
+		$this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
 	}
 }
 
@@ -250,23 +253,22 @@ public function masters()
 	}
 
 	//do we have an initial count...
-	if (!isset($_SESSION["unmastered_count"]))
+	if ($this->mUnmasteredCount == -99)
 	{
-		$unmastered_count = 0;
         	//loop thru item array until you reach end
         	$i = 0;
-        	while ($i <= intval(count($this->item_types_array) - 1))
+        	while ($i <= intval(count($this->mItemTypesArray) - 1))
         	{
                 	$mini_transaction_code_array = array();
 
                 	$c = 0;
 
-                	while ($c <= intval(count($this->item_attempts_array) - 1))
+                	while ($c <= intval(count($this->mItemAttemptsArray) - 1))
                 	{
                         	//check for match of ids if so add to code array
-                        	if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
+                        	if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
                         	{
-                                	$mini_transaction_code_array[] = $this->transaction_code_array[$c];
+                                	$mini_transaction_code_array[] = $this->mTransactionCodeArray[$c];
                         	}
                         	$c++; //increment for typearrays
                 	}
@@ -274,32 +276,23 @@ public function masters()
                 	//analysis
                 	if ( intval(count($mini_transaction_code_array)) == 1 )
                		{
-				$unmastered_count++;
+				$this->mUnmasteredCount++;
                		}
                 	if ( intval(count($mini_transaction_code_array)) > 1 )
                 	{
                         	//if either is not 1 then its not type mastered so make it ask type
                         	if ($mini_transaction_code_array[0] != 1 || $mini_transaction_code_array[1] != 1)
                         	{
-					$unmastered_count++;
+					$this->mUnmasteredCount++;
 				}
                 	}
                 	$i++;
         	}
-		$_SESSION["unmastered_count"] = $unmastered_count;
 	}
 	else
 	{
-
-		//get the last item_type
-		$item_type_last = 'none';
-		if (isset($_SESSION["item_type_last"]))
-		{
-			$item_type_last = $_SESSION["item_type_last"];
-		}
-
 		$master_query = "select type_mastery from item_types where id = '";
-		$master_query .= $item_type_last;  
+		$master_query .= $this->mItemTypeLast;  
 		$master_query .= "';";
 		
         	$db = new DatabaseConnection();
@@ -318,7 +311,7 @@ public function masters()
 		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
  		$query .= $this->mApplication->mLoginStudent->mUserID;
         	$query .= " AND item_attempts.item_types_id = '";
-		$query .= $item_type_last;
+		$query .= $this->mItemTypeLast;
 		$query .= "' order by item_attempts.start_time desc";
 		$query .= " LIMIT ";
 		$query .= $type_mastery_and_one;
@@ -379,21 +372,20 @@ public function masters()
 				
 			if ($unmastered_count > 0)  
 			{
-				$unmastered_count = intval($unmastered_count - 1);
-        			$_SESSION["unmastered_count"] = $unmastered_count;
+				$this->mUnmasteredCount = intval($this->mUnmasteredCount - 1);
 			}
 	
 			//lets help out score function here 
-			$this->score_array = $_SESSION["score_array"];	
+/*
+			$this->mScoreArray = $_SESSION["score_array"];	
                         $this->score_array[] = $item_type_last;
 			$_SESSION["score_array"] = $this->score_array;	
+*/
 		}
 
                 if ($mastered == false && $latest_mastered == true)
                 {
-                        $unmastered_count = $_SESSION["unmastered_count"];
-                        $unmastered_count = intval($unmastered_count + 1);
-                        $_SESSION["unmastered_count"] = $unmastered_count;
+                        $this->mUnmasteredCount = intval($unmastered_count + 1);
                 }
 
 	}
@@ -406,27 +398,23 @@ public function progressions()
 		error_log('progressions');
 	}
 
-	if ( !isset($_SESSION["high_standard"]) )
+	if ( $this->mHighStandard == 0)
 	{
         	//score
         	$i = 0;
-        	while ($i <= intval(count($this->item_types_array) - 1))
+        	while ($i <= intval(count($this->mItemTypesArray) - 1))
         	{
                 	$c = 0;
                 	$exists = false;
-                	while ($c <= intval(count($this->item_attempts_array) - 1) && $exists == false)
+                	while ($c <= intval(count($this->mItemTypesArray) - 1) && $exists == false)
                 	{
-                        	if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
+                        	if ($this->mItemTypesArray[$i] == $this->mItemTypesArray[$c])
                         	{
-                               		$this->high_standard = $this->item_types_array[$i];
-					$_SESSION["high_standard"] = $this->high_standard;	
+                               		$this->mHighStandard = $this->mItemTypesArray[$i];
 
-                                	$this->high_progression = $this->progression_array[$i];
-					$_SESSION["high_progression"] = $this->high_progression;	
+                                	$this->mHighProgression = $this->mProgressionArray[$i];
         				
-					$this->score_array[] = $this->item_types_array[$i];
-					$_SESSION["score_array"] = $this->score_array;	
-
+					$this->mScoreArray[] = $this->mItemTypesArray[$i];
                                 	$exists = true;
                         	}
                         	$c++;
@@ -434,14 +422,9 @@ public function progressions()
                 	$i++;
 		}
         }
-	else //we have session vars set so set temp class vars
-	{
-		$this->high_standard = $_SESSION["high_standard"];	
-		$this->high_progression = $_SESSION["high_progression"];	
-		$this->score_array = $_SESSION["score_array"];	
-	}
-        //trim progression
-        $this->high_progression = substr($this->high_progression,2,2);
+        
+	//trim progression
+        $this->mHighProgression = substr($this->mHighProgression,2,2);
 }
 
 public function updateScores()
@@ -453,9 +436,9 @@ public function updateScores()
 	}
         /*********************  for teacher real time data  *************/
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
-        $update .= intval(count($this->score_array));
+        $update .= intval(count($this->mScoreArray));
         $update .= ", unmastered = ";
-        $update .= $_SESSION["unmastered_count"];
+        $update .= $this->mUnmasteredCount;
         $update .= " WHERE id = ";
  	$update .= $this->mApplication->mLoginStudent->mUserID;
         $update .= ";";
@@ -478,9 +461,9 @@ public function setEarliestToAsk($skip)
 	//loop thru id array until you reach end or find a item to ask ..this is why you can grab all attempts regardless of progression as long as they where normal as they will never get checked in following code.
 
 	$found_one = false;
-	while ($i <= intval(count($this->item_types_array) - 1) && $found_one == false)
+	while ($i <= intval(count($this->mItemTypesArray) - 1) && $found_one == false)
 	{ 
-		if ($skip == $this->item_types_array[$i])
+		if ($skip == $this->mItemTypesArray[$i])
 		{
 		}
 		else 
@@ -490,30 +473,30 @@ public function setEarliestToAsk($skip)
 			$c = 0;
 
 			//loop attempt array and dump into arrays then you can eval after..need to use mastery 
-			while ($c <= intval(count($this->item_attempts_array) - 1) && intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]))
+			while ($c <= intval(count($this->mItemAttemptsArray) - 1) && intval(count($mini_transaction_code_array)) < intval($this->mTypeMasteryArray[$i]))
 			{
 				//check for match of ids if so add to code array
-				if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
+				if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
 				{
-					$mini_transaction_code_array[] = $this->transaction_code_array[$c];
+					$mini_transaction_code_array[] = $this->mTransactionCodeArray[$c];
 				}
 				$c++; //increment for typearrays
 			}
 
 			//if less than mastery than type has not been asked enuf so make it ask type
-			if ( intval(count($mini_transaction_code_array)) < intval($this->type_mastery_array[$i]) )
+			if ( intval(count($mini_transaction_code_array)) < intval($this->mTypeMasteryArray[$i]) )
 			{
-				$this->item_types_id_to_ask = $this->item_types_array[$i];
+				$this->mItemTypesIDToAsk = $this->mItemTypesArray[$i];
 				$found_one = true;
 			}	 
 			else  //we have over mastery to check
 			{
 				//if any is not 1 then its not type mastered so make it ask type
-				for ($t=0; $t < $this->type_mastery_array[$i]; $t++)
+				for ($t=0; $t < $this->mTypeMasteryArray[$i]; $t++)
 				{
 					if ($mini_transaction_code_array[$t] != 1)
 					{
-						$this->item_types_id_to_ask = $this->item_types_array[$i];
+						$this->mItemTypesIDToAsk = $this->mItemTypesArray[$i];
 						$found_one = true;
 					}
 				} 
@@ -529,8 +512,8 @@ public function trueBananas()
 	{
 		error_log('trueBananas');
 	}
-	$r = rand( 0,intval(count($this->previous_id_array)-1) );
-	$this->item_types_id_to_ask = $this->previous_id_array[$r];
+	$r = rand( 0,intval(count($this->mPreviousIDArray)-1) );
+	$this->mItemTypesIDToAsk = $this->mPreviousIDArray[$r];
 }
 
 public function leastAsked()
@@ -541,7 +524,7 @@ public function leastAsked()
 	}
 	if ( isset($_SESSION["least_asked"]) )
 	{
-		$item_types_id_to_ask = $_SESSION["least_asked"];
+		$this->mItemTypesIDToAsk = $this->mLeastAsked;
 	}
 	else
 	{
@@ -551,13 +534,13 @@ public function leastAsked()
 	$currentCount = 0;
 
 	$p = 0;	
-	while ($p <= intval(count($this->previous_id_array) - 1))
+	while ($p <= intval(count($this->mPreviousIDArray) - 1))
 	{
 		$currentCount = 0;
 		$i = 0;
-		while ($i <= intval(count($this->item_attempts_array) - 1))
+		while ($i <= intval(count($this->mItemAttemptsArray) - 1))
 		{
-			if ($this->previous_id_array[$p] == $this->item_attempts_array[$i])
+			if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
 			{
 				$currentCount++;
 			}	 
@@ -566,13 +549,13 @@ public function leastAsked()
 		if ($currentCount < $leastCount) //we have a new chump
 		{
 			$leastCount = $currentCount;
-			$least_id = $this->previous_id_array[$p];				
+			$least_id = $this->mPreviousIDArray[$p];				
 		} 
 		$p++;
 	}
 
-	$this->item_types_id_to_ask = $least_id;
-	$_SESSION["least_asked"] = $least_id;
+	$this->mItemTypesIDToAsk = $least_id;
+	$this->mLeastAsked = $least_id;
 	}
 }
 
@@ -582,9 +565,9 @@ public function leastCorrect()
 	{
 		error_log('leastCorrect');
 	}
-	if ( isset($_SESSION["least_correct"]) )
+	if ($this->mLeastCorrect != 0 )
 	{
-		$item_types_id_to_ask = $_SESSION["least_correct"];
+		$this->mItemTypesIDToAsk = $this->mLeastCorrect;
 	}
 	else
 	{
@@ -594,15 +577,15 @@ public function leastCorrect()
         $currentCount = 0;
 
         $p = 0;
-        while ($p <= intval(count($this->previous_id_array) - 1))
+        while ($p <= intval(count($this->mPreviousIDArray) - 1))
         {
         	$currentCount = 0;
                 $i = 0;
-                while ($i <= intval(count($this->item_attempts_array) - 1))
+                while ($i <= intval(count($this->mItemAttemptsArray) - 1))
                	{
-               		if ($this->previous_id_array[$p] == $this->item_attempts_array[$i])
+               		if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
                         {
-				if ($this->transaction_code_array[$i] == 1)
+				if ($this->mTransactionCodeArray[$i] == 1)
 				{
                                       	$currentCount++;
 				}
@@ -612,12 +595,12 @@ public function leastCorrect()
                	if ($currentCount < $leastCount) //we have a new chump
                	{
                 	$leastCount = $currentCount;
-                       	$least_id = $this->previous_id_array[$p];
+                       	$least_id = $this->mPreviousIDArray[$p];
        		}
         	$p++;
         }
-	$this->item_types_id_to_ask = $least_id;
-	$_SESSION["least_correct"] = $least_id;
+	$this->mItemTypesIDToAsk = $least_id;
+	$this->mLeastCorrect = $least_id;
 	}
 }
 
@@ -627,9 +610,9 @@ public function leastPercent()
 	{
 		error_log('leastPercent');
 	}
-	if ( isset($_SESSION["least_percent"]) )
+	if ( $this->mLeastPercent != 0 )
 	{
-		$item_types_id_to_ask = $_SESSION["least_percent"];
+		$this->mItemTypesIDToAsk = $this->mLeastPercent;
 	}
 	else
 	{
@@ -640,22 +623,22 @@ public function leastPercent()
 	$wrong = 0;
 
         $p = 0;
-        while ($p <= intval(count($this->previous_id_array) - 1) && intval($right + $wrong) < 9)
+        while ($p <= intval(count($this->mPreviousIDArray) - 1) && intval($right + $wrong) < 9)
         {
         	$currentPercent = 0;
 		$right = 0; 
 		$wrong = 0; 
 
                 $i = 0;
-                while ($i <= intval(count($this->item_attempts_array) - 1))
+                while ($i <= intval(count($this->mItemAttemptsArray) - 1))
                 {
-                	if ($this->previous_id_array[$p] == $this->item_attempts_array[$i])
+                	if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
                         {
-				if ($this->transaction_code_array[$i] == 1)
+				if ($this->mTransactionCodeArray[$i] == 1)
 				{
                                    	$right++;
 				}
-				if ($this->transaction_code_array[$i] == 2)
+				if ($this->mTransactionCodeArray[$i] == 2)
 				{
                                       	$wrong++;
 				}
@@ -677,12 +660,12 @@ public function leastPercent()
                 if ($currentPercent < $leastPercent) //we have a new chump
                 {
                 	$leastPercent = $currentPercent;
-                        $least_id = $this->previous_id_array[$p];
+                        $least_id = $this->mPreviousIDArray[$p];
                 }
                 $p++;
 	}
-        $this->item_types_id_to_ask = $least_id;
-	$_SESSION["least_percent"] = $least_id;
+        $this->mItemTypesIDToAsk = $least_id;
+	$this->mLeastPercent = $least_id;
 	}
 }
 
@@ -694,7 +677,7 @@ public function goBananas()
 	}
 	//check to see if it was asked last.....
 
-	if ( !isset($_SESSION["item_type_last"]) )
+	if ( $this->mItemTypeLast != 0 )
  	{
 		//go with above from earliest unmastered
 		if ($this->logs)
@@ -702,32 +685,27 @@ public function goBananas()
 			error_log('go with last should not happen!!!!');
 		}
 	}
-	else if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
+	else if ($this->mItemTypeLast == $this->mItemTypesIDToAsk) //if dup then go bananas
 	{
 		//lets get all previously asked questions....in normal
-		if (!isset($_SESSION["previous_id_array"]))
+		if ( intval( count($this->mPreviousIDArray) ) < 1)
 		{
  			$i = 0;
-			while ($i <= intval(count($this->item_types_array) - 1))
+			while ($i <= intval(count($this->mItemTypesArray) - 1))
         		{
  				$c = 0;
 				$exists = false;
-				while ($c <= intval(count($this->item_attempts_array) - 1) && $exists == false)
+				while ($c <= intval(count($this->mItemAttemptsArray) - 1) && $exists == false)
 				{
-					if ($this->item_types_array[$i] == $this->item_attempts_array[$c])
+					if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
 					{
-						$this->previous_id_array[] = $this->item_types_array[$i];
+						$this->mPreviousIDArray[] = $this->mItemTypesArray[$i];
 						$exists = true;
 					}
 					$c++;
 				}
 				$i++;
 			}
-			$_SESSION["previous_id_array"] = $this->previous_id_array;
-		}
-		else
-		{
-			$this->previous_id_array = $_SESSION["previous_id_array"];
 		}
 
 		$bananas = rand( 0,100);
@@ -736,7 +714,7 @@ public function goBananas()
 		//true bananas
 		if ($bananas > -1 && $bananas <= 25)
 		{	 
-			if ( intval($this->unmasteredCount) < 7 )   
+			if ( intval($this->mUnmasteredCount) < 7 )   
 			{
 				$this->trueBananas();
 			}
@@ -783,9 +761,9 @@ public function goBananas()
 			}
 		}
 		//after all that if you still have a dup fix it by going next
-		if ($_SESSION["item_type_last"] == $this->item_types_id_to_ask) //if dup then go bananas
+		if ($this->mItemTypeLast == $this->mItemTypesIDToAsk) //if dup then go bananas
 		{
-			$this->setEarliestToAsk($this->item_types_id_to_ask);
+			$this->setEarliestToAsk($this->mItemTypesIDToAsk);
 		}
 	}
 	else
@@ -803,30 +781,30 @@ public function setItemString()
 	{
 		error_log('setItemString');
 	}
-        $_SESSION["item_type_last"] = $this->item_types_id_to_ask; //set this new one to last in sessions
 
         //pink
-        $itemString =  $this->item_types_id_to_ask; //ask this one
+        $itemString =  $this->mItemTypesIDToAsk; //ask this one
 
         //blue
         $itemString .= ":";
         $itemString .= "L=";
-        $itemString .= "$this->high_progression";
+        $itemString .= "$this->mHighProgression";
         $itemString .= " U=";
-        $itemString .= $_SESSION["unmastered_count"];
+        $itemString .= $this->mUnmasteredCount;
 
         //yellow
         $itemString .= ":";
-        $itemString .= "$this->high_standard";
+        $itemString .= $this->mHighStandard;
 
         //green
         $itemString .= ":";
-        $itemString .= intval(count($this->score_array));
+        $itemString .= intval(count($this->mScoreArray));
 
-        $_SESSION["before_item_type_id"] = $itemString;
+        $this->mBeforeItemTypeID = $itemString;
         $this->mApplication->mRawData = $itemString;
-        $_SESSION["item_types_id"] = $this->item_types_id_to_ask;
-        $_SESSION["item_types_id_progressed"] = $this->item_types_id_to_ask;
+//needed anymore?
+        $this->mItemTypesID = $this->item_types_id_to_ask;
+        $this->mItemTypesIDProgressed = $this->mItemTypesIDToAsk;
 }
 
 //end of class
