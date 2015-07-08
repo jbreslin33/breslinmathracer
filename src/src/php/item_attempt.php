@@ -447,17 +447,13 @@ public function update($itemtypesid,$transactioncode,$question,$answers,$answer,
                 }
         }
                 
-	error_log($this->mIDLast);	
-	error_log($this->mID);	
 	if ($this->mIDLast == $this->mID)
 	{
 		//skip
-		error_log('skip actual update');	
 	}
 	else 
 	{
 		$this->actualUpdate();
-		error_log('actual update');	
 	}
 
 	//lets update state machine
@@ -479,7 +475,6 @@ public function actualUpdate()
 
         if ($num > 0)
         {
-		error_log('made it');	
                 //get the id from user table
                 $item_attempt_id = pg_Result($result, 0, 'id');
 

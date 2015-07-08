@@ -255,9 +255,6 @@ public function masters()
 	//do we have an initial count...
 	if (intval($this->mUnmasteredCount) == -99)
 	{
-		$cn = "mUnmasteredCount:";
-		$cn .= $this->mUnmasteredCount;
-		error_log($cn);
 		$this->mUnmasteredCount = 0;
 
         	//loop thru item array until you reach end
@@ -436,7 +433,6 @@ public function updateScores()
 	if ($this->logs)	
 	{
 		error_log('updateScores');
-		//error_log( (string) intval (count($this->score_array) ));	
 	}
         /*********************  for teacher real time data  *************/
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";

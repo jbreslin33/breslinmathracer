@@ -193,15 +193,6 @@ public function enter($bapplication)
         {
                 error_log('UPDATE_ITEM_ATTEMPT_APPLICATION Enter');
         }
-	error_log("begin array:");
-	error_log($bapplication->mDataArray[0]);
-	error_log($bapplication->mDataArray[1]);
-	error_log($bapplication->mDataArray[2]);
-	error_log($bapplication->mDataArray[3]);
-	error_log($bapplication->mDataArray[4]);
-	error_log($bapplication->mDataArray[5]);
-	error_log($bapplication->mDataArray[6]);
-	error_log("end array:");
 	$bapplication->mItemAttempt->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4],$bapplication->mDataArray[5],$bapplication->mDataArray[6]);
 }
 public function execute($bapplication)

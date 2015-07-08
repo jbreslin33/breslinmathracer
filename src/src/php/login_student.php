@@ -93,7 +93,6 @@ public function checkForStudent()
         $num = pg_num_rows($result);
         if ($num > 0)
         {
-		error_log('jello');
 		$this->mStudentExists = true;
 		$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id from users where username = '";
         	$query2 .= $this->mUsername;
