@@ -114,7 +114,6 @@ Extends: Application,
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);
 
-		this.log('send create app to server');
 		this.bapplication();	
         },
  	
@@ -128,7 +127,6 @@ Extends: Application,
                 this.mResponseArray = response.split(",");
                 var code = this.mResponseArray[0];
                 var codeNumber = parseInt(code);
-		APPLICATION.log('codeNumber:' + codeNumber);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
 			//LOGIN
@@ -332,7 +330,6 @@ Extends: Application,
 
         loginStudent: function(username,password)
         {
-		APPLICATION.log('loginStudent in app');	
         	var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -441,6 +438,23 @@ Extends: Application,
                 else
                 {
                         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
                 }
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=130&itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question + "&answers=" + answers + "&answer=" + answer + "&itemattemptid=" + itemattemptid,true);
                 xmlhttp.send();

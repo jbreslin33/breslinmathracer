@@ -16,7 +16,7 @@ class Normal
 function __construct($application)
 {
 	$this->mApplication = $application;
-	$this->logs = false; 
+	$this->logs = true; 
 	if ($this->logs)
 	{
 		error_log('normal constructor');
@@ -59,7 +59,6 @@ function __construct($application)
 
 public function sendNormal()
 {
-	error_log('sendNormal!!! from normal');
 	//fill php vars
 	$returnString = "116,";
 	$returnString .= $this->mApplication->mRef_id;
@@ -458,7 +457,7 @@ public function updateScores()
 	if ($this->logs)	
 	{
 		error_log('updateScores');
-		error_log( (string) intval (count($this->score_array) ));	
+		//error_log( (string) intval (count($this->score_array) ));	
 	}
         /*********************  for teacher real time data  *************/
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
