@@ -10,6 +10,7 @@ function __construct($application)
 	$this->mEvaluationsID = 1;
 	$this->mID = 0;
 }
+
 public function insert()
 {
 	$db = new DatabaseConnection();
@@ -19,10 +20,9 @@ public function insert()
         $insert .= $this->mEvaluationsID;
         $insert .= ");";
 	
-	error_log($insert);
-
         $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
+	//get the id of one u just put in
         $query = "select id from evaluations_attempts where user_id = ";
         $query .= $this->mApplication->mLoginStudent->mUserID;
         $query .= " order by start_time desc limit 1;";
@@ -39,15 +39,12 @@ public function insert()
                 //set level_id
                 $this->mID = $evaluations_attempts_id;
         }
-
-        //set sessions for signup
 }
 
+//might not even use this as it basically closes out the next day. maybe close it on session timeout
 public function update()
 {
 	$insert = '';
-	error_log('mID next:');
-	error_log($this->mID);
         $insert .= "update evaluations_attempts SET end_time = CURRENT_TIMESTAMP";
         $insert .= " WHERE id = ";
         $insert .= $this->mID;

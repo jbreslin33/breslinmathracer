@@ -26,7 +26,6 @@ function __construct($application)
 	$this->mEvaluationsAttemptsID = 0;
         
 	$this->progression_counter = 0;
-	$this->progression_counter_limit = 0;
 
 	//types array	
 	$this->item_types_array                = array();
@@ -77,32 +76,25 @@ public function sendNormal()
 	echo $returnString;
 }
 
-public function newEvaluation()
+public function handleEvaluation()
 {
 	if ($this->logs)
 	{
 		error_log('newEvaluation');
 	}
 
-	//close old evaluation_attempts.......
-// skip for now	$this->mApplication->mEvaluationsAttempts->update();
-
-	$this->mApplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
-	$this->mApplication->mEvaluationsAttempts->insert();
-
-	//set generic id to normal
-	$this->mEvaluationsAttemptsID = $this->mApplication->mEvaluationsAttempts->mID;
-}
-
-public function continueEvaluation()
-{
-	if ($this->logs)
+	if ($this->mEvaluationsAttemptsID == 0) //we need new one
 	{
-		error_log('continueEvaluation');
+		$this->mApplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
+		$this->mApplication->mEvaluationsAttempts->insert();
+		$this->mEvaluationsAttemptsID = $this->mApplication->mEvaluationsAttempts->mID;
 	}
+	else
+	{
 
-	//set normal to generic id
-      	//$_SESSION["evaluations_attempts_id"] = $_SESSION["evaluations_attempts_id_normal"];
+	}
+	
+	// skip for now	$this->mApplication->mEvaluationsAttempts->update();
 }
 
 public function process()
@@ -111,11 +103,15 @@ public function process()
 	{
 		error_log('process');
 	}
-	$this->newEvaluation();
-	$this->continueEvaluation();
+
+	$this->handleEvaluation();
+	$this->initializeProgressionCounter();
+	$this->fillTypesArray();
+	$this->fillAttemptsArray();
 
 	$this->setRawData();
-       	
+
+
 	$this->mApplication->mItemAttempt->insert($this->item_types_id_to_ask);
 
 	//i would like to add item_attempt_id to rawdata before we send it out..
@@ -136,9 +132,6 @@ public function setRawData()
 		error_log('setRawData');
 	}
 	
-	$this->initializeProgressionCounter();
-	$this->fillTypesArray();
-	$this->fillAttemptsArray();
 	$this->progressions(); //scores standard number which is chapter basically high standards  do this once.. 
 	
 	$this->item_types_id_to_ask = '';
@@ -156,7 +149,7 @@ public function initializeProgressionCounter()
 {
 	if ($this->logs)
 	{
-		error_log('initializeProgressionCunter');
+		error_log('initializeProgressionCounter');
 	}
 
 	$query = "select progression from item_types where core_standards_id = '";
@@ -175,7 +168,6 @@ public function initializeProgressionCounter()
 
 		//temp hack
 		$this->progression_counter = floatval($this->progression_counter) - floatval(0.0001);
-		$this->progression_counter_limit = floatval($this->progression_counter + 2);
 	}
 }
 
@@ -221,15 +213,14 @@ public function fillTypesArray()
 		$this->type_mastery_array[]      = pg_Result($result, $i, 'type_mastery');
 	}
 }
-	
+
+//can you continue to fill this array without db? or is that not neccesary	
 public function fillAttemptsArray()
 {
 	if ($this->logs)
 	{
 		error_log('fillAttemptsArray');
 	}
-	//fill remediate attempts
-
 	//fill normal attempts
 	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
         $query .= $this->mApplication->mLoginStudent->mUserID;
@@ -250,6 +241,7 @@ public function fillAttemptsArray()
 		$this->core_standards_array[]   = pg_Result($result, $i, 'core_standards_id');
 	}
 }
+
 public function masters()
 {
 	if ($this->logs)
