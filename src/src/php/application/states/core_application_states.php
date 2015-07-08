@@ -155,7 +155,7 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
-	$normal = new Normal($bapplication);		
+	$bapplication->mNormal->process();		
 }
 public function execute($bapplication)
 {

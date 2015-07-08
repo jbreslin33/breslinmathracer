@@ -459,6 +459,9 @@ public function update($itemtypesid,$transactioncode,$question,$answers,$answer,
 		$this->actualUpdate();
 		error_log('actual update');	
 	}
+
+	//lets update state machine
+	$this->mApplication->update();
 }
 
 public function actualUpdate()

@@ -87,6 +87,7 @@ function __construct()
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);
 	
+	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
 	$this->mEvaluationsAttempts = new EvaluationsAttempts($this);	
 	$this->mItemAttempt = new ItemAttempt($this);	

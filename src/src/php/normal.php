@@ -21,9 +21,7 @@ function __construct($application)
 	{
 		error_log('normal constructor');
 	}
-
-	$this->mDatabaseConnection = new DatabaseConnection();
-
+	
 	//evaluationsAttempts	
 	$this->mEvaluationsAttemptsID = 0;
         
@@ -56,16 +54,12 @@ function __construct($application)
         $this->high_progression = '';
 	
 	$this->item_types_id_to_ask = '';
-	
-	$this->newEvaluation();
-	$this->continueEvaluation();
-
-	$this->process();
-	$this->sendNormal();	
 }
+	
 
 public function sendNormal()
 {
+	error_log('sendNormal!!! from normal');
 	//fill php vars
 	$returnString = "116,";
 	$returnString .= $this->mApplication->mRef_id;
@@ -118,6 +112,8 @@ public function process()
 	{
 		error_log('process');
 	}
+	$this->newEvaluation();
+	$this->continueEvaluation();
 
 	$this->setRawData();
        	
@@ -128,6 +124,9 @@ public function process()
 	$raw .= ":";
        	$raw .= $this->mApplication->mItemAttempt->mID;
 	$this->mApplication->mRawData = $raw;
+
+	//finally send it	
+	$this->sendNormal();	
 }
 
 //i am going to remember the last thing i asked and only ask 1 question at a time.
@@ -166,7 +165,9 @@ public function initializeProgressionCounter()
 	$query .= "' ORDER BY item_types.progression";
         $query .= " LIMIT 1;";
 		
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $db = new DatabaseConnection();
+	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+
         $num = pg_num_rows($result);
         if ($num > 0)
         {
@@ -191,7 +192,8 @@ public function fillTypesArray()
 	$query .= " AND active_code = 1"; //skip unactive  
 	$query .= " order by progression asc;";
 
-        $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $db = new DatabaseConnection();
+        $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
         $numberOfResults = pg_num_rows($result);
 
         for($i=0; $i < $numberOfResults; $i++)
@@ -208,7 +210,8 @@ public function fillTypesArray()
 	$query .= " AND active_code = 1"; //skip unactive
 	$query .= " order by progression asc;";
 
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $db = new DatabaseConnection();
+	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
        	$numberOfResults = pg_num_rows($result);
                 
 	for($i=0; $i < $numberOfResults; $i++)
@@ -234,7 +237,8 @@ public function fillAttemptsArray()
 	$query .= " AND item_types.active_code = 1"; 
         $query .= " order by item_attempts.start_time desc;";
 													
-	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        $db = new DatabaseConnection();
+	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
 		
         $num = pg_num_rows($result);
 
@@ -307,7 +311,8 @@ public function masters()
 		$master_query .= $item_type_last;  
 		$master_query .= "';";
 		
-		$master_result = pg_query($this->mDatabaseConnection->getConn(),$master_query) or die('no connection: ' . pg_last_error());
+        	$db = new DatabaseConnection();
+		$master_result = pg_query($db->getConn(),$master_query) or die('no connection: ' . pg_last_error());
         	
 		$master_num = pg_num_rows($master_result);
 
@@ -328,7 +333,8 @@ public function masters()
 		$query .= $type_mastery_and_one;
 		$query .= ";";
 		
-		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+        	$db = new DatabaseConnection();
+		$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
 
         	$num = pg_num_rows($result);
 
@@ -463,7 +469,8 @@ public function updateScores()
  	$update .= $this->mApplication->mLoginStudent->mUserID;
         $update .= ";";
 
-        $updateResult = pg_query($this->mDatabaseConnection->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+        $db = new DatabaseConnection();
+        $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 }
 
 
