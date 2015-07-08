@@ -253,8 +253,13 @@ public function masters()
 	}
 
 	//do we have an initial count...
-	if ($this->mUnmasteredCount == -99)
+	if (intval($this->mUnmasteredCount) == -99)
 	{
+		$cn = "mUnmasteredCount:";
+		$cn .= $this->mUnmasteredCount;
+		error_log($cn);
+		$this->mUnmasteredCount = 0;
+
         	//loop thru item array until you reach end
         	$i = 0;
         	while ($i <= intval(count($this->mItemTypesArray) - 1))
