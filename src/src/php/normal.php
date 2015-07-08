@@ -116,7 +116,7 @@ public function process()
 	$this->setRawData();
 
 
-	$this->mApplication->mItemAttempt->insert($this->item_types_id_to_ask);
+	$this->mApplication->mItemAttempt->insert($this->mItemTypesIDToAsk);
 
 	//i would like to add item_attempt_id to rawdata before we send it out..
 	$raw = $this->mApplication->mRawData;
@@ -138,7 +138,7 @@ public function setRawData()
 	
 	$this->progressions(); //scores standard number which is chapter basically high standards  do this once.. 
 	
-	$this->item_types_id_to_ask = '';
+	$this->mItemTypesIDToAsk = 0;
         
 	$this->masters();
         $this->updateScores();
@@ -368,9 +368,8 @@ public function masters()
 
 		if ($mastered == true && $latest_mastered == false)
 		{
-        		$unmastered_count = $_SESSION["unmastered_count"];
 				
-			if ($unmastered_count > 0)  
+			if ($this->mUnmasteredCount > 0)  
 			{
 				$this->mUnmasteredCount = intval($this->mUnmasteredCount - 1);
 			}
@@ -385,7 +384,7 @@ public function masters()
 
                 if ($mastered == false && $latest_mastered == true)
                 {
-                        $this->mUnmasteredCount = intval($unmastered_count + 1);
+                        $this->mUnmasteredCount = intval($this->mUnmasteredCount + 1);
                 }
 
 	}
@@ -803,7 +802,7 @@ public function setItemString()
         $this->mBeforeItemTypeID = $itemString;
         $this->mApplication->mRawData = $itemString;
 //needed anymore?
-        $this->mItemTypesID = $this->item_types_id_to_ask;
+        $this->mItemTypesID = $this->mItemTypesIDToAsk;
         $this->mItemTypesIDProgressed = $this->mItemTypesIDToAsk;
 }
 
