@@ -25,7 +25,7 @@ function __construct($application)
 	//evaluationsAttempts	
 	$this->mEvaluationsAttemptsID = 0;
         
-	$this->mProgressionCounter = 0;
+	$this->mProgressionCounter = -99;
 
 	//types array	
 	$this->mItemTypesArray  = array();
@@ -46,58 +46,16 @@ function __construct($application)
 
 	//masters
 	$this->mPreviousIDArray = array();
-	
 	$this->mUnmasteredCount = -99;
 
 	//scores
         $this->mScoreArray = array();
         $this->mHighStandard = 0;
         $this->mHighProgression = 0;
-	
+
+	//current and last itemTypesIDs		
 	$this->mItemTypesID = 0;
 	$this->mItemTypesIDLast = 0;
-}
-	
-
-public function sendNormal()
-{
-	//fill php vars
-	$returnString = "116,";
-	$returnString .= $this->mApplication->mRef_id;
-	$returnString .= ",";
-	$returnString .= $this->mApplication->mLoginStudent->mLoggedIn;
-	$returnString .= ",";
-	$returnString .= $this->mApplication->mLoginStudent->mUsername;
-	$returnString .= ",";
-	$returnString .= $this->mApplication->mLoginStudent->mFirstName;
-	$returnString .= ",";
-	$returnString .= $this->mApplication->mLoginStudent->mLastName;
-	$returnString .= ",";
-	$returnString .= $this->mApplication->mRawData;
-	$returnString .= ",";
-	$returnString .= $this->mApplication->mLoginStudent->mRole;
-	echo $returnString;
-}
-
-public function handleEvaluation()
-{
-	if ($this->logs)
-	{
-		error_log('newEvaluation');
-	}
-
-	if ($this->mEvaluationsAttemptsID == 0) //we need new one
-	{
-		$this->mApplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
-		$this->mApplication->mEvaluationsAttempts->insert();
-		$this->mEvaluationsAttemptsID = $this->mApplication->mEvaluationsAttempts->mID;
-	}
-	else
-	{
-
-	}
-	
-	// skip for now	$this->mApplication->mEvaluationsAttempts->update();
 }
 
 public function process()
@@ -111,43 +69,39 @@ public function process()
 	$this->initializeProgressionCounter();
 	$this->fillTypesArray();
 	$this->fillAttemptsArray();
-
+	$this->progressions(); //scores standard number which is chapter basically high standards  do this once.. 
+	$this->masters();
+        $this->updateScores();
+	$this->setEarliestToAsk();	
+	$this->goBananas();
+	$this->setItemString();
+        $this->mApplication->mItemAttempt->insert($this->mItemTypesID);
 	$this->setRawData();
+        $this->sendNormal();
 }
-
-//i am going to remember the last thing i asked and only ask 1 question at a time.
-public function setRawData()
+	
+public function handleEvaluation()
 {
 	if ($this->logs)
 	{
-		error_log('setRawData');
+		error_log('handleEvaluation');
 	}
-	
-	$this->progressions(); //scores standard number which is chapter basically high standards  do this once.. 
-	
-	$this->masters();
-        $this->updateScores();
 
-	error_log($this->mItemTypesID);			
-	$this->setEarliestToAsk();	
-	error_log($this->mItemTypesID);			
-	$this->goBananas();
-	error_log($this->mItemTypesID);			
-	$this->setItemString();
-	error_log($this->mItemTypesID);			
-
-        $this->mApplication->mItemAttempt->insert($this->mItemTypesID);
-
-        //i would like to add item_attempt_id to rawdata before we send it out..
-        $raw = $this->mApplication->mRawData;
-        $raw .= ":";
-        $raw .= $this->mApplication->mItemAttempt->mID;
-        $this->mApplication->mRawData = $raw;
-
-        //finally send it
-        $this->sendNormal();
-
+	if ($this->mEvaluationsAttemptsID == 0) //we need new one
+	{
+		$this->mApplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
+		$this->mApplication->mEvaluationsAttempts->insert();
+		$this->mEvaluationsAttemptsID = $this->mApplication->mEvaluationsAttempts->mID;
+	}
+	else
+	{
+		if ($this->logs)
+		{
+			error_log('skipping handleEvaluation');
+		}
+	}	
 }
+
 
 //standard to start the base at we get the counter for base questions
 public function initializeProgressionCounter()
@@ -157,23 +111,34 @@ public function initializeProgressionCounter()
 		error_log('initializeProgressionCounter');
 	}
 
-	$query = "select progression from item_types where core_standards_id = '";
-	$query .= $this->mApplication->mLoginStudent->mCoreStandardsID;
-	$query .= "' ORDER BY item_types.progression";
-        $query .= " LIMIT 1;";
+	if ($this->mProgressionCounter == -99)
+	{
+		$query = "select progression from item_types where core_standards_id = '";
+		$query .= $this->mApplication->mLoginStudent->mCoreStandardsID;
+		$query .= "' ORDER BY item_types.progression";
+        	$query .= " LIMIT 1;";
 		
-        $db = new DatabaseConnection();
-	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+        	$db = new DatabaseConnection();
+		$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
 
-        $num = pg_num_rows($result);
-        if ($num > 0)
-        {
-        	//this id is either going in array or not
-                $this->mProgressionCounter = pg_Result($result, 0, 'progression');
+        	$num = pg_num_rows($result);
+        	if ($num > 0)
+        	{
+        		//this id is either going in array or not
+                	$this->mProgressionCounter = pg_Result($result, 0, 'progression');
 
-		//temp hack
-		$this->mProgressionCounter = floatval($this->mProgressionCounter) - floatval(0.0001);
+			//temp hack
+			$this->mProgressionCounter = floatval($this->mProgressionCounter) - floatval(0.0001);
+		}
 	}
+	else
+	{
+		if ($this->logs)
+		{
+			error_log('skipping initializeProgressionCounter');
+		}
+	}
+
 }
 
 public function fillTypesArray()
@@ -182,40 +147,51 @@ public function fillTypesArray()
 	{
 		error_log('fillTypesArray');
 	}
-	//remediate types
-	$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
-        $query .= $this->mApplication->mLoginStudent->mUserID;
-	$query .= " AND active_code = 1"; //skip unactive  
-	$query .= " order by progression asc;";
 
-        $db = new DatabaseConnection();
-        $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
-        $numberOfResults = pg_num_rows($result);
+	if (count($this->mItemTypesArray) < 1)
+	{
+		//remediate types
+		$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
+        	$query .= $this->mApplication->mLoginStudent->mUserID;
+		$query .= " AND active_code = 1"; //skip unactive  
+		$query .= " order by progression asc;";
 
-        for($i=0; $i < $numberOfResults; $i++)
-        {
-                $this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
-                $this->mProgressionArray[]     = pg_Result($result, $i, 'progression');
-                $this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
-                $this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
-        }
+        	$db = new DatabaseConnection();
+        	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+       	 	$numberOfResults = pg_num_rows($result);
 
-	//normal base types..
-	$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
-	$query .= $this->mProgressionCounter; 
-	$query .= " AND active_code = 1"; //skip unactive
-	$query .= " order by progression asc;";
+        	for($i=0; $i < $numberOfResults; $i++)
+        	{
+                	$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
+                	$this->mProgressionArray[]     = pg_Result($result, $i, 'progression');
+                	$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
+                	$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
+        	}
+	
+		//normal base types..
+		$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
+		$query .= $this->mProgressionCounter; 
+		$query .= " AND active_code = 1"; //skip unactive
+		$query .= " order by progression asc;";
 
-        $db = new DatabaseConnection();
-	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
-       	$numberOfResults = pg_num_rows($result);
+        	$db = new DatabaseConnection();
+		$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+       		$numberOfResults = pg_num_rows($result);
                 
-	for($i=0; $i < $numberOfResults; $i++)
-        {
-		$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');	
-		$this->mProgressionArray[]     = pg_Result($result, $i, 'progression');	
-		$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
-		$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
+		for($i=0; $i < $numberOfResults; $i++)
+        	{
+			$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');	
+			$this->mProgressionArray[]     = pg_Result($result, $i, 'progression');	
+			$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
+			$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
+		}
+	}
+	else
+	{
+		if ($this->logs)
+		{
+			error_log('skipping fillTypesArray');
+		}
 	}
 }
 
@@ -226,25 +202,28 @@ public function fillAttemptsArray()
 	{
 		error_log('fillAttemptsArray');
 	}
-	//fill normal attempts
-	$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
-        $query .= $this->mApplication->mLoginStudent->mUserID;
-	$query .= " AND item_types.active_code = 1"; 
-        $query .= " order by item_attempts.start_time desc;";
-													
-        $db = new DatabaseConnection();
-	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
-		
-        $num = pg_num_rows($result);
 
-	//fill arrays
-  	for ($i = 0; $i < $num; $i++)
+	if (count($this->mStartTimeArray) < 1)
 	{
-		$this->mStartTimeArray[]       = pg_Result($result, $i, 'start_time');
-		$this->mItemAttemptsArray[]             = pg_Result($result, $i, 'item_types_id');
-		$this->mTransactionCodeArray[] = pg_Result($result, $i, 'transaction_code');
-		$this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
-	}
+		//fill normal attempts
+		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+        	$query .= $this->mApplication->mLoginStudent->mUserID;
+		$query .= " AND item_types.active_code = 1"; 
+        	$query .= " order by item_attempts.start_time desc;";
+													
+        	$db = new DatabaseConnection();
+		$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+		
+        	$num = pg_num_rows($result);
+
+		//fill arrays
+  		for ($i = 0; $i < $num; $i++)
+		{
+			$this->mStartTimeArray[]       = pg_Result($result, $i, 'start_time');
+			$this->mItemAttemptsArray[]    = pg_Result($result, $i, 'item_types_id');
+			$this->mTransactionCodeArray[] = pg_Result($result, $i, 'transaction_code');
+			$this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
+		}
 }
 
 public function masters()
@@ -788,6 +767,42 @@ public function setItemString()
 
 	//set current to last
 	$this->mItemTypesIDLast = $this->mItemTypesID;
+}
+
+//i am going to remember the last thing i asked and only ask 1 question at a time.
+public function setRawData()
+{
+	if ($this->logs)
+	{
+		error_log('setRawData');
+	}
+        //i would like to add item_attempt_id to rawdata before we send it out..
+        $raw = $this->mApplication->mRawData;
+        $raw .= ":";
+        $raw .= $this->mApplication->mItemAttempt->mID;
+        $this->mApplication->mRawData = $raw;
+
+
+}
+
+public function sendNormal()
+{
+	//fill php vars
+	$returnString = "116,";
+	$returnString .= $this->mApplication->mRef_id;
+	$returnString .= ",";
+	$returnString .= $this->mApplication->mLoginStudent->mLoggedIn;
+	$returnString .= ",";
+	$returnString .= $this->mApplication->mLoginStudent->mUsername;
+	$returnString .= ",";
+	$returnString .= $this->mApplication->mLoginStudent->mFirstName;
+	$returnString .= ",";
+	$returnString .= $this->mApplication->mLoginStudent->mLastName;
+	$returnString .= ",";
+	$returnString .= $this->mApplication->mRawData;
+	$returnString .= ",";
+	$returnString .= $this->mApplication->mLoginStudent->mRole;
+	echo $returnString;
 }
 
 //end of class
