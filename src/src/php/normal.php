@@ -35,14 +35,14 @@ function __construct($application)
 
 	//attempts array 	
 	$this->mStartTimeArray       = array();
-	$this->mItemAttemptsArray             = array();
+	$this->mItemAttemptsArray    = array();
 	$this->mTransactionCodeArray = array();
 	$this->mCoreStandardsArray   = array();
 
 	//tricks
-	$this->mLeastAsked = '';	
-	$this->mLeastPercent = '';	
-	$this->mLeastCorrect = '';	
+	$this->mLeastAsked = 0;	
+	$this->mLeastPercent = 0;	
+	$this->mLeastCorrect = 0;	
 
 	//masters
 	$this->mPreviousIDArray = array();
@@ -51,12 +51,11 @@ function __construct($application)
 
 	//scores
         $this->mScoreArray = array();
-        $this->mHighStandard = '';
-        $this->mHighProgression = '';
+        $this->mHighStandard = 0;
+        $this->mHighProgression = 0;
 	
-	$this->mItemTypesIDToAsk = '';
-
-	$this->mItemTypeLast = 0;
+	$this->mItemTypesID = 0;
+	$this->mItemTypesIDLast = 0;
 }
 	
 
@@ -114,18 +113,6 @@ public function process()
 	$this->fillAttemptsArray();
 
 	$this->setRawData();
-
-
-	$this->mApplication->mItemAttempt->insert($this->mItemTypesIDToAsk);
-
-	//i would like to add item_attempt_id to rawdata before we send it out..
-	$raw = $this->mApplication->mRawData;
-	$raw .= ":";
-       	$raw .= $this->mApplication->mItemAttempt->mID;
-	$this->mApplication->mRawData = $raw;
-
-	//finally send it	
-	$this->sendNormal();	
 }
 
 //i am going to remember the last thing i asked and only ask 1 question at a time.
@@ -138,13 +125,28 @@ public function setRawData()
 	
 	$this->progressions(); //scores standard number which is chapter basically high standards  do this once.. 
 	
-	$this->mItemTypesIDToAsk = 0;
-        
 	$this->masters();
         $this->updateScores();
-	$this->setEarliestToAsk("wha");	
+
+	error_log($this->mItemTypesID);			
+	$this->setEarliestToAsk();	
+	error_log($this->mItemTypesID);			
 	$this->goBananas();
+	error_log($this->mItemTypesID);			
 	$this->setItemString();
+	error_log($this->mItemTypesID);			
+
+        $this->mApplication->mItemAttempt->insert($this->mItemTypesID);
+
+        //i would like to add item_attempt_id to rawdata before we send it out..
+        $raw = $this->mApplication->mRawData;
+        $raw .= ":";
+        $raw .= $this->mApplication->mItemAttempt->mID;
+        $this->mApplication->mRawData = $raw;
+
+        //finally send it
+        $this->sendNormal();
+
 }
 
 //standard to start the base at we get the counter for base questions
@@ -294,7 +296,7 @@ public function masters()
 	else
 	{
 		$master_query = "select type_mastery from item_types where id = '";
-		$master_query .= $this->mItemTypeLast;  
+		$master_query .= $this->mItemTypesIDLast;  
 		$master_query .= "';";
 		
         	$db = new DatabaseConnection();
@@ -313,7 +315,7 @@ public function masters()
 		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
  		$query .= $this->mApplication->mLoginStudent->mUserID;
         	$query .= " AND item_attempts.item_types_id = '";
-		$query .= $this->mItemTypeLast;
+		$query .= $this->mItemTypesIDLast;
 		$query .= "' order by item_attempts.start_time desc";
 		$query .= " LIMIT ";
 		$query .= $type_mastery_and_one;
@@ -375,13 +377,6 @@ public function masters()
 			{
 				$this->mUnmasteredCount = intval($this->mUnmasteredCount - 1);
 			}
-	
-			//lets help out score function here 
-/*
-			$this->mScoreArray = $_SESSION["score_array"];	
-                        $this->score_array[] = $item_type_last;
-			$_SESSION["score_array"] = $this->score_array;	
-*/
 		}
 
                 if ($mastered == false && $latest_mastered == true)
@@ -448,7 +443,7 @@ public function updateScores()
 }
 
 
-public function setEarliestToAsk($skip)
+public function setEarliestToAsk()
 {
 	if ($this->logs)	
 	{
@@ -463,46 +458,40 @@ public function setEarliestToAsk($skip)
 	$found_one = false;
 	while ($i <= intval(count($this->mItemTypesArray) - 1) && $found_one == false)
 	{ 
-		if ($skip == $this->mItemTypesArray[$i])
-		{
-		}
-		else 
-		{
-			$mini_transaction_code_array = array(); 
+		$mini_transaction_code_array = array(); 
 
-			$c = 0;
+		$c = 0;
 
-			//loop attempt array and dump into arrays then you can eval after..need to use mastery 
-			while ($c <= intval(count($this->mItemAttemptsArray) - 1) && intval(count($mini_transaction_code_array)) < intval($this->mTypeMasteryArray[$i]))
+		//loop attempt array and dump into arrays then you can eval after..need to use mastery 
+		while ($c <= intval(count($this->mItemAttemptsArray) - 1) && intval(count($mini_transaction_code_array)) < intval($this->mTypeMasteryArray[$i]))
+		{
+			//check for match of ids if so add to code array
+			if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
 			{
-				//check for match of ids if so add to code array
-				if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
-				{
-					$mini_transaction_code_array[] = $this->mTransactionCodeArray[$c];
-				}
-				$c++; //increment for typearrays
+				$mini_transaction_code_array[] = $this->mTransactionCodeArray[$c];
 			}
-
-			//if less than mastery than type has not been asked enuf so make it ask type
-			if ( intval(count($mini_transaction_code_array)) < intval($this->mTypeMasteryArray[$i]) )
-			{
-				$this->mItemTypesIDToAsk = $this->mItemTypesArray[$i];
-				$found_one = true;
-			}	 
-			else  //we have over mastery to check
-			{
-				//if any is not 1 then its not type mastered so make it ask type
-				for ($t=0; $t < $this->mTypeMasteryArray[$i]; $t++)
-				{
-					if ($mini_transaction_code_array[$t] != 1)
-					{
-						$this->mItemTypesIDToAsk = $this->mItemTypesArray[$i];
-						$found_one = true;
-					}
-				} 
-			} 
+			$c++; //increment for typearrays
 		}
-		$i++;
+
+		//if less than mastery than type has not been asked enuf so make it ask type
+		if ( intval(count($mini_transaction_code_array)) < intval($this->mTypeMasteryArray[$i]) )
+		{
+			$this->mItemTypesID = $this->mItemTypesArray[$i];
+			$found_one = true;
+		}	 
+		else  //we have over mastery to check
+		{
+			//if any is not 1 then its not type mastered so make it ask type
+			for ($t=0; $t < $this->mTypeMasteryArray[$i]; $t++)
+			{
+				if ($mini_transaction_code_array[$t] != 1)
+				{
+					$this->mItemTypesID = $this->mItemTypesArray[$i];
+					$found_one = true;
+				}
+			} 
+		} 
+	$i++;
 	}
 }
 
@@ -513,7 +502,7 @@ public function trueBananas()
 		error_log('trueBananas');
 	}
 	$r = rand( 0,intval(count($this->mPreviousIDArray)-1) );
-	$this->mItemTypesIDToAsk = $this->mPreviousIDArray[$r];
+	$this->mItemTypesID = $this->mPreviousIDArray[$r];
 }
 
 public function leastAsked()
@@ -522,9 +511,9 @@ public function leastAsked()
 	{
 		error_log('leastAsked');
 	}
-	if ( isset($_SESSION["least_asked"]) )
+	if ( $this->mLeastAsked != 0)
 	{
-		$this->mItemTypesIDToAsk = $this->mLeastAsked;
+		$this->mItemTypesID = $this->mLeastAsked;
 	}
 	else
 	{
@@ -554,7 +543,7 @@ public function leastAsked()
 		$p++;
 	}
 
-	$this->mItemTypesIDToAsk = $least_id;
+	$this->mItemTypesID = $least_id;
 	$this->mLeastAsked = $least_id;
 	}
 }
@@ -567,7 +556,7 @@ public function leastCorrect()
 	}
 	if ($this->mLeastCorrect != 0 )
 	{
-		$this->mItemTypesIDToAsk = $this->mLeastCorrect;
+		$this->mItemTypesID = $this->mLeastCorrect;
 	}
 	else
 	{
@@ -599,7 +588,7 @@ public function leastCorrect()
        		}
         	$p++;
         }
-	$this->mItemTypesIDToAsk = $least_id;
+	$this->mItemTypesID = $least_id;
 	$this->mLeastCorrect = $least_id;
 	}
 }
@@ -612,7 +601,7 @@ public function leastPercent()
 	}
 	if ( $this->mLeastPercent != 0 )
 	{
-		$this->mItemTypesIDToAsk = $this->mLeastPercent;
+		$this->mItemTypesID = $this->mLeastPercent;
 	}
 	else
 	{
@@ -664,7 +653,7 @@ public function leastPercent()
                 }
                 $p++;
 	}
-        $this->mItemTypesIDToAsk = $least_id;
+        $this->mItemTypesID = $least_id;
 	$this->mLeastPercent = $least_id;
 	}
 }
@@ -675,17 +664,11 @@ public function goBananas()
 	{
 		error_log('goBananas');
 	}
-	//check to see if it was asked last.....
+	error_log($this->mItemTypesIDLast);
+	error_log($this->mItemTypesID);
 
-	if ( $this->mItemTypeLast != 0 )
- 	{
-		//go with above from earliest unmastered
-		if ($this->logs)
-		{
-			error_log('go with last should not happen!!!!');
-		}
-	}
-	else if ($this->mItemTypeLast == $this->mItemTypesIDToAsk) //if dup then go bananas
+	//check to see if it was asked last.....
+	if ($this->mItemTypesIDLast == $this->mItemTypesID) //if dup then go bananas
 	{
 		//lets get all previously asked questions....in normal
 		if ( intval( count($this->mPreviousIDArray) ) < 1)
@@ -761,9 +744,9 @@ public function goBananas()
 			}
 		}
 		//after all that if you still have a dup fix it by going next
-		if ($this->mItemTypeLast == $this->mItemTypesIDToAsk) //if dup then go bananas
+		if ($this->mItemTypesIDLast == $this->mItemTypesID) //if dup then go bananas
 		{
-			$this->setEarliestToAsk($this->mItemTypesIDToAsk);
+			error_log("fall thru need more code to find a new question");	
 		}
 	}
 	else
@@ -783,7 +766,7 @@ public function setItemString()
 	}
 
         //pink
-        $itemString =  $this->mItemTypesIDToAsk; //ask this one
+        $itemString =  $this->mItemTypesID; //ask this one
 
         //blue
         $itemString .= ":";
@@ -802,9 +785,9 @@ public function setItemString()
 
         $this->mBeforeItemTypeID = $itemString;
         $this->mApplication->mRawData = $itemString;
-//needed anymore?
-        $this->mItemTypesID = $this->mItemTypesIDToAsk;
-        $this->mItemTypesIDProgressed = $this->mItemTypesIDToAsk;
+
+	//set current to last
+	$this->mItemTypesIDLast = $this->mItemTypesID;
 }
 
 //end of class
