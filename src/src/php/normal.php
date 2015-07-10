@@ -246,12 +246,17 @@ public function fillAttemptsArray()
                 //fill arrays
                 for ($i = 0; $i < $num; $i++)
                 {
-                        $this->mStartTimeArray[]       = pg_Result($result, $i, 'start_time');
-                        $this->mItemAttemptsArray[]    = pg_Result($result, $i, 'item_types_id');
-                        $this->mTransactionCodeArray[] = pg_Result($result, $i, 'transaction_code');
-                        $this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
+			$st = pg_Result($result, $i, 'start_time'); 	
+			$id = pg_Result($result, $i, 'item_types_id');
+			$tc = pg_Result($result, $i, 'transaction_code'); 
+			$cs = pg_Result($result, $i, 'core_standards_id'); 
+                        array_unshift($this->mStartTimeArray, $st);
+                        array_unshift($this->mItemAttemptsArray, $id);
+                        array_unshift($this->mTransactionCodeArray, $tc);
+                        array_unshift($this->mCoreStandardsArray, $cs);
+
 			$txt = "item_types_id from grab:"; 
-			$txt .= pg_Result($result, $i, 'item_types_id');
+			$txt .= $id;
 			error_log($txt);
                 }
 
