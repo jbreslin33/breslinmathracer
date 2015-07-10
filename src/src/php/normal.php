@@ -224,6 +224,7 @@ public function fillAttemptsArray()
 			$this->mTransactionCodeArray[] = pg_Result($result, $i, 'transaction_code');
 			$this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
 		}
+	}
 }
 
 public function masters()
