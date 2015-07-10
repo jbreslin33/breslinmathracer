@@ -474,6 +474,10 @@ public function setEarliestToAsk()
 		{
 			$this->mItemTypesID = $this->mItemTypesArray[$i];
 			$found_one = true;
+
+			$txt = "FOUND ONE IF:";
+			$txt .= $this->mItemTypesID;
+			error_log($txt); 
 		}	 
 		else  //we have over mastery to check
 		{
@@ -484,10 +488,14 @@ public function setEarliestToAsk()
 				{
 					$this->mItemTypesID = $this->mItemTypesArray[$i];
 					$found_one = true;
+
+					$txt = "FOUND ONE ELSE:";
+					$txt .= $this->mItemTypesID;
+					error_log($txt); 
 				}
 			} 
 		} 
-	$i++;
+		$i++;
 	}
 }
 
