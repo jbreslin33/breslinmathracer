@@ -203,7 +203,7 @@ public function fillAttemptsArray()
 		error_log('fillAttemptsArray');
 	}
 
-	if (count($this->mStartTimeArray) < 1)
+	if (count($this->mStartTimeArray) < 1) //not filled at all get em all....
 	{
 		//fill normal attempts
 		$query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
@@ -225,12 +225,36 @@ public function fillAttemptsArray()
 			$this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
 		}
 	}
-	else
+	else //just get the last one...
 	{
 		if ($this->logs)
 		{
-			error_log('skipping fillAttemptsArray');
+			error_log('grabbing 1 for fillAttemptsArray');
 		}
+
+                //fill normal attempts
+                $query = "select item_attempts.start_time, item_attempts.item_types_id, item_attempts.transaction_code, item_types.type_mastery, item_types.core_standards_id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+                $query .= $this->mApplication->mLoginStudent->mUserID;
+                $query .= " AND item_types.active_code = 1";
+                $query .= " order by item_attempts.start_time desc LIMIT 1;";
+
+                $db = new DatabaseConnection();
+                $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+
+                $num = pg_num_rows($result);
+
+                //fill arrays
+                for ($i = 0; $i < $num; $i++)
+                {
+                        $this->mStartTimeArray[]       = pg_Result($result, $i, 'start_time');
+                        $this->mItemAttemptsArray[]    = pg_Result($result, $i, 'item_types_id');
+                        $this->mTransactionCodeArray[] = pg_Result($result, $i, 'transaction_code');
+                        $this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
+			$txt = "item_types_id from grab:"; 
+			$txt .= pg_Result($result, $i, 'item_types_id');
+			error_log($txt);
+                }
+
 	}
 }
 
