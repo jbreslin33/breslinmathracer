@@ -225,6 +225,13 @@ public function fillAttemptsArray()
 			$this->mCoreStandardsArray[]   = pg_Result($result, $i, 'core_standards_id');
 		}
 	}
+	else
+	{
+		if ($this->logs)
+		{
+			error_log('skipping fillAttemptsArray');
+		}
+	}
 }
 
 public function masters()
@@ -275,6 +282,10 @@ public function masters()
 	}
 	else
 	{
+		if ($this->logs)
+		{
+			error_log('skipping masters sort of');
+		}
 		$master_query = "select type_mastery from item_types where id = '";
 		$master_query .= $this->mItemTypesIDLast;  
 		$master_query .= "';";
@@ -333,7 +344,6 @@ public function masters()
 			}
 		}
 
-
 		if ( count($trans_code_array) < intval($type_mastery_and_one - 1) )
 		{
 			$mastered = false;
@@ -352,7 +362,6 @@ public function masters()
 
 		if ($mastered == true && $latest_mastered == false)
 		{
-				
 			if ($this->mUnmasteredCount > 0)  
 			{
 				$this->mUnmasteredCount = intval($this->mUnmasteredCount - 1);
@@ -398,6 +407,13 @@ public function progressions()
                 	$i++;
 		}
         }
+	else
+	{
+		if ($this->logs)
+		{
+			error_log('skipping progressions');
+		}
+	}
         
 	//trim progression
         $this->mHighProgression = substr($this->mHighProgression,2,2);
@@ -491,40 +507,44 @@ public function leastAsked()
 	{
 		error_log('leastAsked');
 	}
-	if ( $this->mLeastAsked != 0)
+	
+	if ( $this->mLeastAsked == 0)
 	{
-		$this->mItemTypesID = $this->mLeastAsked;
+		$least_id = '';
+		$leastCount = 9999;
+		$currentCount = 0;
+
+		$p = 0;	
+		while ($p <= intval(count($this->mPreviousIDArray) - 1))
+		{
+			$currentCount = 0;
+			$i = 0;
+			while ($i <= intval(count($this->mItemAttemptsArray) - 1))
+			{
+				if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
+				{
+					$currentCount++;
+				}	 
+				$i++;
+			}
+			if ($currentCount < $leastCount) //we have a new chump
+			{
+				$leastCount = $currentCount;
+				$least_id = $this->mPreviousIDArray[$p];				
+			}	 
+			$p++;
+		}
+	
+		$this->mItemTypesID = $least_id;
+		$this->mLeastAsked = $least_id;
 	}
 	else
 	{
-
-	$least_id = '';
-	$leastCount = 9999;
-	$currentCount = 0;
-
-	$p = 0;	
-	while ($p <= intval(count($this->mPreviousIDArray) - 1))
-	{
-		$currentCount = 0;
-		$i = 0;
-		while ($i <= intval(count($this->mItemAttemptsArray) - 1))
+		if ($this->logs)	
 		{
-			if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
-			{
-				$currentCount++;
-			}	 
-			$i++;
+			error_log('skipping leastAsked');
 		}
-		if ($currentCount < $leastCount) //we have a new chump
-		{
-			$leastCount = $currentCount;
-			$least_id = $this->mPreviousIDArray[$p];				
-		} 
-		$p++;
-	}
-
-	$this->mItemTypesID = $least_id;
-	$this->mLeastAsked = $least_id;
+		$this->mItemTypesID = $this->mLeastAsked;
 	}
 }
 
@@ -534,42 +554,45 @@ public function leastCorrect()
 	{
 		error_log('leastCorrect');
 	}
-	if ($this->mLeastCorrect != 0 )
+	if ($this->mLeastCorrect == 0 )
 	{
-		$this->mItemTypesID = $this->mLeastCorrect;
+		$least_id = '';
+        	$leastCount = 9999;
+        	$currentCount = 0;
+
+        	$p = 0;
+        	while ($p <= intval(count($this->mPreviousIDArray) - 1))
+        	{
+        		$currentCount = 0;
+                	$i = 0;
+                	while ($i <= intval(count($this->mItemAttemptsArray) - 1))
+               		{
+               			if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
+                        	{
+					if ($this->mTransactionCodeArray[$i] == 1)
+					{
+                                      		$currentCount++;
+					}
+                        	}
+                        	$i++;
+                	}
+               		if ($currentCount < $leastCount) //we have a new chump
+               		{
+                		$leastCount = $currentCount;
+                       		$least_id = $this->mPreviousIDArray[$p];
+       			}
+        		$p++;
+        	}
+		$this->mItemTypesID = $least_id;
+		$this->mLeastCorrect = $least_id;
 	}
 	else
 	{
-	
-	$least_id = '';
-        $leastCount = 9999;
-        $currentCount = 0;
-
-        $p = 0;
-        while ($p <= intval(count($this->mPreviousIDArray) - 1))
-        {
-        	$currentCount = 0;
-                $i = 0;
-                while ($i <= intval(count($this->mItemAttemptsArray) - 1))
-               	{
-               		if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
-                        {
-				if ($this->mTransactionCodeArray[$i] == 1)
-				{
-                                      	$currentCount++;
-				}
-                        }
-                        $i++;
-                }
-               	if ($currentCount < $leastCount) //we have a new chump
-               	{
-                	$leastCount = $currentCount;
-                       	$least_id = $this->mPreviousIDArray[$p];
-       		}
-        	$p++;
-        }
-	$this->mItemTypesID = $least_id;
-	$this->mLeastCorrect = $least_id;
+		if ($this->logs)	
+		{
+			error_log('skipping leastCorrect');
+		}
+		$this->mItemTypesID = $this->mLeastCorrect;
 	}
 }
 
@@ -579,63 +602,69 @@ public function leastPercent()
 	{
 		error_log('leastPercent');
 	}
-	if ( $this->mLeastPercent != 0 )
-	{
-		$this->mItemTypesID = $this->mLeastPercent;
-	}
-	else
-	{
-	$least_id = '';
-        $leastPercent = 1000;
-        $currentPercent = 0;
-	$right = 0;
-	$wrong = 0;
 
-        $p = 0;
-        while ($p <= intval(count($this->mPreviousIDArray) - 1) && intval($right + $wrong) < 9)
-        {
+	if ( $this->mLeastPercent == 0 )
+	{
+		$least_id = '';
+        	$leastPercent = 1000;
         	$currentPercent = 0;
-		$right = 0; 
-		$wrong = 0; 
+		$right = 0;
+		$wrong = 0;
 
-                $i = 0;
-                while ($i <= intval(count($this->mItemAttemptsArray) - 1))
-                {
-                	if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
-                        {
-				if ($this->mTransactionCodeArray[$i] == 1)
-				{
-                                   	$right++;
-				}
-				if ($this->mTransactionCodeArray[$i] == 2)
-				{
-                                      	$wrong++;
-				}
-                         }
-                         $i++;
-                }
+        	$p = 0;
+        	while ($p <= intval(count($this->mPreviousIDArray) - 1) && intval($right + $wrong) < 9)
+        	{
+        		$currentPercent = 0;
+			$right = 0; 
+			$wrong = 0; 
 
-		//calc
-		$total = intval($right + $wrong);
-		if ($wrong == 0)
-		{
-			$currentPercent = 100;	
+               		$i = 0;
+                	while ($i <= intval(count($this->mItemAttemptsArray) - 1))
+                	{
+                		if ($this->mPreviousIDArray[$p] == $this->mItemAttemptsArray[$i])
+                        	{
+					if ($this->mTransactionCodeArray[$i] == 1)
+					{
+                                   		$right++;
+					}
+					if ($this->mTransactionCodeArray[$i] == 2)
+					{
+                                      		$wrong++;
+					}
+                         	}
+                        	$i++;
+                	}
+
+			//calc
+			$total = intval($right + $wrong);
+			if ($wrong == 0)
+			{
+				$currentPercent = 100;	
+			}
+			else
+			{
+				$currentPercent = floatval($right / $wrong);  
+				$currentPercent = round( $currentPercent, 2);
+			}
+                	if ($currentPercent < $leastPercent) //we have a new chump
+                	{
+                		$leastPercent = $currentPercent;
+                        	$least_id = $this->mPreviousIDArray[$p];
+                	}
+                	$p++;
 		}
-		else
-		{
-			$currentPercent = floatval($right / $wrong);  
-			$currentPercent = round( $currentPercent, 2);
-		}
-                if ($currentPercent < $leastPercent) //we have a new chump
+        	$this->mItemTypesID = $least_id;
+		$this->mLeastPercent = $least_id;
+	}
+        else
+        {
+                if ($this->logs)
                 {
-                	$leastPercent = $currentPercent;
-                        $least_id = $this->mPreviousIDArray[$p];
+                        error_log('skipping leastPercent');
                 }
-                $p++;
-	}
-        $this->mItemTypesID = $least_id;
-	$this->mLeastPercent = $least_id;
-	}
+                $this->mItemTypesID = $this->mLeastPercent;
+        }
+
 }
 
 public function goBananas()
@@ -644,8 +673,6 @@ public function goBananas()
 	{
 		error_log('goBananas');
 	}
-	error_log($this->mItemTypesIDLast);
-	error_log($this->mItemTypesID);
 
 	//check to see if it was asked last.....
 	if ($this->mItemTypesIDLast == $this->mItemTypesID) //if dup then go bananas
