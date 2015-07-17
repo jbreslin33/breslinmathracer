@@ -5,7 +5,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/evaluations_attempts.php");
 
 //start new session
-session_start();
+//session_start();
 ?>
 
 <?php
@@ -29,7 +29,6 @@ function __construct($application)
 
 	//types array	
 	$this->mItemTypesArray  = array();
-	$this->mProgressionArray     = array();
 	$this->mCoreStandardsIDArray = array();
 	$this->mTypeMasterArray      = array();
 
@@ -51,7 +50,6 @@ function __construct($application)
 	//scores
         $this->mScoreArray = array();
         $this->mHighStandard = 0;
-        $this->mHighProgression = 0;
 
 	//current and last itemTypesIDs		
 	$this->mItemTypesID = 0;
@@ -151,6 +149,7 @@ public function fillTypesArray()
 	if (count($this->mItemTypesArray) < 1)
 	{
 		//remediate types
+/*
 		$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
         	$query .= $this->mApplication->mLoginStudent->mUserID;
 		$query .= " AND active_code = 1"; //skip unactive  
@@ -163,14 +162,15 @@ public function fillTypesArray()
         	for($i=0; $i < $numberOfResults; $i++)
         	{
                 	$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
-                	$this->mProgressionArray[]     = pg_Result($result, $i, 'progression');
                 	$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
                 	$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
         	}
+*/
 	
 		//normal base types..
 		$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
-		$query .= $this->mProgressionCounter; 
+		//$query .= $this->mProgressionCounter; 
+		$query .= "-1"; 
 		$query .= " AND active_code = 1"; //skip unactive
 		$query .= " order by progression asc;";
 
@@ -181,7 +181,6 @@ public function fillTypesArray()
 		for($i=0; $i < $numberOfResults; $i++)
         	{
 			$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');	
-			$this->mProgressionArray[]     = pg_Result($result, $i, 'progression');	
 			$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
 			$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
 		}
@@ -425,9 +424,6 @@ public function progressions()
                         	if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
                         	{
                                		$this->mHighStandard = $this->mItemTypesArray[$i];
-
-                                	$this->mHighProgression = $this->mProgressionArray[$i];
-        				
 					$this->mScoreArray[] = $this->mItemTypesArray[$i];
                                 	$exists = true;
                         	}
@@ -443,9 +439,6 @@ public function progressions()
 			error_log('skipping progressions');
 		}
 	}
-        
-	//trim progression
-        $this->mHighProgression = substr($this->mHighProgression,2,2);
 }
 
 public function updateScores()
@@ -466,7 +459,6 @@ public function updateScores()
         $db = new DatabaseConnection();
         $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 }
-
 
 public function setEarliestToAsk()
 {
@@ -814,8 +806,6 @@ public function setItemString()
 
         //blue
         $itemString .= ":";
-        $itemString .= "L=";
-        $itemString .= "$this->mHighProgression";
         $itemString .= " U=";
         $itemString .= $this->mUnmasteredCount;
 

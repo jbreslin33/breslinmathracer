@@ -1,6 +1,5 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
-include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 ?>
 
 <?php
@@ -8,8 +7,9 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 class LoginStudent
 {
     private $mDatabaseConnection;
-function __construct()
+function __construct($application)
 {
+	$this->mApplication = $application;
 	$this->mUsername = 0; 
         $this->mPassword = 0;
         $this->mStudentExists = false;
@@ -32,6 +32,36 @@ public function enterLogin($username,$password)
 
 public function sendLoginStudent()
 {
+	$itemTypesRawData = ""; 
+	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
+	{
+		error_log($this->mApplication->mNormal->mItemTypesArray[$i]); 
+	}
+	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
+	{
+		if ($i == 0)
+		{
+			$itemTypesRawData .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
+		}		
+		else
+		{
+			$itemTypesRawData .= ":";
+			$itemTypesRawData .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
+		}
+	}
+
+/*
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
+	{
+		$itemTypesRawData .= ":";
+		$itemTypesRawData .= $i; 
+	}
+*/
+	error_log($itemTypesRawData);
+
+
 	//fill php vars
 	$returnString = "117,";
 	$returnString .= "normal";
@@ -45,8 +75,11 @@ public function sendLoginStudent()
 	$returnString .= $this->mLastName;
 	$returnString .= ",";
 	$returnString .= $this->mRole;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawData;
 	echo $returnString;
 }
+
 public function sendBadUsername()
 {
 	$returnString = "103";
@@ -64,14 +97,17 @@ public function process()
 	$this->checkForStudent();
 	if ($this->mLoggedIn == 1)
 	{
+		error_log('loggedin =1');
 		return;
 	}
 	if ($this->mStudentExists)
 	{
+		error_log('student exits =1');
 		$this->sendBadPassword();
 		return;
 	}
 	//fall thru to bad username	
+	error_log('bad username =1');
 	$this->sendBadUsername();
 }
 public function checkForStudent()
@@ -127,9 +163,10 @@ public function checkForStudent()
 			$this->mTeacherID = $teacher_id;
 			$this->mRoomID = $room_id;
 			$this->mTeamID = $team_id;
+
 		
 			//send to login data to client
-			$this->sendLoginStudent();
+			//$this->sendLoginStudent();
 		}
 		else
 		{

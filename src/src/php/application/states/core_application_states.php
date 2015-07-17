@@ -117,6 +117,7 @@ public function enter($bapplication)
                 error_log('LOGIN_STUDENT_APPLICATION Enter');
         }
 	$bapplication->mLoginStudent->enterLogin($bapplication->mDataArray[1],$bapplication->mDataArray[2]);	
+	$bapplication->update();
 }
 public function execute($bapplication)
 {
@@ -155,7 +156,11 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
-	$bapplication->mNormal->process();		
+	//$bapplication->mNormal->process();		
+
+	$bapplication->mNormal->fillTypesArray(); //fill types
+	$bapplication->mLoginStudent->sendLoginStudent();
+	$bapplication->update();		
 }
 public function execute($bapplication)
 {
@@ -163,10 +168,12 @@ public function execute($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
         }
+/*
 	if ($bapplication->mCode == 130)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mUPDATE_ITEM_ATTEMPT_APPLICATION);
 	}
+*/
 
 }
 public function bexit($bapplication)

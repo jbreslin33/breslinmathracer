@@ -156,18 +156,29 @@ execute: function(application)
 		APPLICATION.mDataToRead = false;
 	}
 	
-	else if (application.mLoggedIn == true)
+	else if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
 	{
         	APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
-		APPLICATION.log('mRef_id in login:' + APPLICATION.mRef_id);
+		APPLICATION.log('mRef_id:' + APPLICATION.mRef_id);
                 APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
                 APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+		APPLICATION.log('mUsername:' + APPLICATION.mUsername);
                 APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+		APPLICATION.log('mFirstName:' + APPLICATION.mFirstName);
                 APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+		APPLICATION.log('mLastName:' + APPLICATION.mLastName);
+                APPLICATION.mRole = APPLICATION.mResponseArray[6];
+		APPLICATION.log('mRole:' + APPLICATION.mRole);
+		
 		//login contains raw data which is really job of normal but ...does ref id contain
-                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
-                APPLICATION.mRole = APPLICATION.mResponseArray[7];
+                APPLICATION.mRawData = APPLICATION.mResponseArray[7];
+		//APPLICATION.log('mRawData:' + APPLICATION.mRawData);
+
+		var itemIDArray = APPLICATION.mRawData.split(":");
+		for (i=0; i < itemIDArray.length; i++)
+		{
+			APPLICATION.log(itemIDArray[i]);
+		}
                	
 		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
@@ -770,11 +781,12 @@ enter: function(application)
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION');
 	}
 	//get a new game if neccesary
-	application.gameDecider();
+	//application.gameDecider();
 },
 
 execute: function(application)
 {
+/*
 	if (application.mDataToRead == true) //we have some data to read
 	{
         	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
@@ -821,6 +833,7 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_APPLICATION);
 	}
+*/
 },
 exit: function(application)
 {
