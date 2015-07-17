@@ -39,6 +39,9 @@ Extends: Application,
 
 		this.NORMAL = 116;
 
+		//db arrays
+		this.mItemTypesArray = new Array();
+
 		//personal info
 		this.mUsername = '';
 		this.mFirstName = '';

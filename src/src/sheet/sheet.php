@@ -155,6 +155,38 @@ var Sheet = new Class(
 
 	createItems: function()
 	{
+		APPLICATION.log('createItems');
+ 
+		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[1];
+		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[0];
+		APPLICATION.log('id test:' + APPLICATION.mItemTypesArray[1000]);
+		var pick = 0;
+
+                if (pick == 0)
+                {
+                        pick = this.mPicker.getItem(APPLICATION.mItemAttemptsID);
+                }
+                if (pick == 0)
+                {
+                        pick = this.mPickerBrian.getItem(APPLICATION.mItemAttemptsID);
+                }
+                if (pick == 0)
+                {
+                        pick = this.mPickerJim.getItem(APPLICATION.mItemAttemptsID);
+                }
+
+                //if you got an item then add it to sheet
+                if (pick != 0)
+                {
+                	this.addItem(pick);
+		}
+		else
+		{
+			APPLICATION.log('no item picked by pickers!');
+		}
+
+
+/*
  		var itemIDArray = APPLICATION.mRawData.split(":");
                	for (var i = 0; i < itemIDArray.length; i++)              
                 {
@@ -214,6 +246,7 @@ var Sheet = new Class(
 				APPLICATION.log('no item picked by pickers!');
 			}
                	}
+*/
 	},
 
 	setTypeWrong: function(typeID)
