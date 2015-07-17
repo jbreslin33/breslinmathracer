@@ -420,9 +420,9 @@ public function progressions()
         	{
                 	$c = 0;
                 	$exists = false;
-                	while ($c <= intval(count($this->mItemTypesArray) - 1) && $exists == false)
+                	while ($c <= intval(count($this->mItemAttemptsArray) - 1) && $exists == false)
                 	{
-                        	if ($this->mItemTypesArray[$i] == $this->mItemTypesArray[$c])
+                        	if ($this->mItemTypesArray[$i] == $this->mItemAttemptsArray[$c])
                         	{
                                		$this->mHighStandard = $this->mItemTypesArray[$i];
 
