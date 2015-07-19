@@ -221,10 +221,6 @@ Extends: Application,
 			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
                         {
                         }
-			if (codeNumber == APPLICATION.UPDATED_STANDARD_ID)
-                        {
-				APPLICATION.mWaitForReturn = false; 
-                        }
 			if (codeNumber == APPLICATION.SCROLL)
 			{
 				APPLICATION.mHud.setScroll(this.mResponseArray[1]); 

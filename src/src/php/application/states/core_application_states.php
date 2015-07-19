@@ -77,6 +77,7 @@ public function enter($bapplication)
                 error_log('WAIT_CORE_APPLICATION Enter');
         }
 }
+
 public function execute($bapplication)
 {
         if ($bapplication->mLogs == true)
@@ -88,9 +89,8 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
 	}
-
-
 }
+
 public function bexit($bapplication)
 {
         if ($bapplication->mLogs == true)
@@ -138,6 +138,8 @@ public function bexit($bapplication)
         {
                 error_log('LOGIN_STUDENT_APPLICATION Exit');
         }
+	$bapplication->mNormal->fillTypesArray(); //fill types
+	$bapplication->mLoginStudent->sendLoginStudent();
 }
 
 }//end class
@@ -156,18 +158,16 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
-	//$bapplication->mNormal->process();		
-
-	$bapplication->mNormal->fillTypesArray(); //fill types
-	$bapplication->mLoginStudent->sendLoginStudent();
 	$bapplication->update();		
 }
+
 public function execute($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
         }
+//here i want to get various codes and then insert itemattempt, update item_attempt. which begs question should we have item attempt as a class and then put it into various states??? on server client or both maybe just client.
 /*
 	if ($bapplication->mCode == 130)
 	{

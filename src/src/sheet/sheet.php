@@ -14,7 +14,6 @@ var Sheet = new Class(
 
 		//Item and Answer Array
 		this.mItemArray = new Array();
-		this.mItemPoolArray = new Array();
 
 		this.mShapeArray = new Array();
 		this.mVictoryShapeArray = new Array();
@@ -79,6 +78,7 @@ var Sheet = new Class(
 
 	reset: function()
 	{
+		APPLICATION.log('reset');
 		this.destructor();
 		
 		//reset marker
@@ -143,23 +143,10 @@ var Sheet = new Class(
 		return this.mItemArray[i];
 	},
 	
-	addPoolItem: function(item)
-	{
-		this.mItemPoolArray.push(item);
-	}, 
-
-	getPoolItem: function(index)	
-	{
-		return this.mItemPoolArray[index];
-	},
-
 	createItems: function()
 	{
-		APPLICATION.log('createItems');
- 
 		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[1];
 		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[0];
-		APPLICATION.log('id test:' + APPLICATION.mItemTypesArray[1000]);
 		var pick = 0;
 
                 if (pick == 0)
@@ -184,69 +171,6 @@ var Sheet = new Class(
 		{
 			APPLICATION.log('no item picked by pickers!');
 		}
-
-
-/*
- 		var itemIDArray = APPLICATION.mRawData.split(":");
-               	for (var i = 0; i < itemIDArray.length; i++)              
-                {
-			var pick = 0;
-
-			if (pick == 0)
-			{
-                       		pick = this.mPicker.getItem(itemIDArray[i]);
-			}
-			if (pick == 0)
-			{
-                       		pick = this.mPickerBrian.getItem(itemIDArray[i]);
-			}
-			if (pick == 0)
-			{
-                       		pick = this.mPickerJim.getItem(itemIDArray[i]);
-			}
-
-			//if you got an item then add it to sheet
-			if (pick != 0)
-			{
-				this.addItem(pick);
-		
-				if (APPLICATION.mRef_id == 'timestables' || APPLICATION.mRef_id == 'The Izzy' || APPLICATION.mRef_id == 'Add Subtract within 5')
-				{
-					//add streak from raw_data andincrement as itemIDs are every other element in array. 
-					i++;	
-					pick.mStreak = itemIDArray[i];	
-					i++;
-					pick.mProgressedTypeID = itemIDArray[i];	
-					i++;
-					this.mGame.mScore = itemIDArray[i];
-					this.mGame.setScore(this.mGame.mScore);
-					
-					i++;		
-					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
-					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
-				}
-				else
-				{
-					//add streak from raw_data andincrement as itemIDs are every other element in array. 
-					i++;	
-					pick.mStreak = itemIDArray[i];	
-					i++;
-					pick.mProgressedTypeID = itemIDArray[i];	
-					i++;
-					this.mGame.mScore = itemIDArray[i];
-					this.mGame.setScore(this.mGame.mScore);
-
-					i++;		
-					APPLICATION.mItemAttemptsID     = itemIDArray[i];	
-					APPLICATION.mItemAttemptsIDLast = itemIDArray[i];	
-				}
-			}
-			else
-			{
-				APPLICATION.log('no item picked by pickers!');
-			}
-               	}
-*/
 	},
 
 	setTypeWrong: function(typeID)

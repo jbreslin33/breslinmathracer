@@ -52,7 +52,6 @@ cat src/login/login_student.php >> min.js
 cat src/login/login_school.php >> min.js
 cat src/signup/signup_student.php >> min.js
 cat src/signup/signup_school.php >> min.js
-cat src/core/math/game_sheet.php >> min.js
 cat src/game/states/states.php >> min.js
 
 cat src/animation/animation.php >> min.js

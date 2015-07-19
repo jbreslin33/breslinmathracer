@@ -36,11 +36,6 @@ public function sendLoginStudent()
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
 	{
-		error_log($this->mApplication->mNormal->mItemTypesArray[$i]); 
-	}
-	
-	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
-	{
 		if ($i == 0)
 		{
 			$itemTypesRawData .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
@@ -51,16 +46,6 @@ public function sendLoginStudent()
 			$itemTypesRawData .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
 		}
 	}
-
-/*
-	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
-	{
-		$itemTypesRawData .= ":";
-		$itemTypesRawData .= $i; 
-	}
-*/
-	error_log($itemTypesRawData);
-
 
 	//fill php vars
 	$returnString = "117,";
