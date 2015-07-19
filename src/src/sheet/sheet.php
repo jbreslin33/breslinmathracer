@@ -13,9 +13,6 @@ var Sheet = new Class(
 		//GAME
 		this.mGame = game;
 
-		//Item and Answer Array
-		this.mItemArray = new Array();
-
 		this.mShapeArray = new Array();
 		this.mVictoryShapeArray = new Array();
 		this.mBossShapeArray = new Array();
@@ -59,80 +56,49 @@ var Sheet = new Class(
  		//state machine
 		if (this.mGame)
 		{
-			APPLICATION.log('update');
                 	this.mStateMachine.update();
-
-			for (i = 0; i < this.mItemArray.length; i++)
+			if (this.mItem)
 			{
-				if (this.mItemArray[i])
-				{
-					if (this.mItemArray[i].mUpdate == 0)
-					{
-					}
-					else
-					{
-						this.mItemArray[i].update();
-					}
-				}
-				else
-				{
-					APPLICATION.log('does not exist:' + i);
-				}
+				this.mItem.update();
 			}
-		}
-		else
-		{
-			APPLICATION.log('no game update');
+			else
+			{
+				APPLICATION.log('does not exist:' + i);
+			}
 		}
 	},
 
 	destructor: function()
 	{
-		//this.destroyItems();
+		this.destroyItem();
 	},	
 
 	reset: function()
 	{
-		APPLICATION.log('reset');
-		//this.destructor();
+		this.destructor();
 		
-		//reset marker
-		//this.mMarker = 0;
-
 		//reset timers
 		this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
 
-		this.createItems();
-
+		this.createItem();
 		this.createShapes();
 	},
 
 	/************** ITEMS ******************/
-	destroyItems: function()
+	destroyItem: function()
 	{
 		//destroy items 
-		while(this.mItemArray.length > 0)
-                {
-			var item = this.mItemArray[0];
-			if (item)
-			{
-                        	item.destructor();
-			}
-			this.mItemArray.splice(0,1);
-                }
-
-                //destroy question array
-                this.mItemArray = 0;
-                this.mItemArray = new Array();
+		if (this.mItem)
+		{
+                       	this.mItem.destructor();
+		}
 
 		this.mItem = 0;
 	},
 
-
-	addItem: function(item)
+	setItem: function(item)
 	{
 		this.mItem = item;
-		this.mItemArray.push(item);
 	}, 
 	
 	//returns question object	
@@ -141,13 +107,7 @@ var Sheet = new Class(
 		return this.mItem;
 	},
 	
-	//returns question object	
-	getSpecificItem: function(i)
-	{
-		return this.mItemArray[i];
-	},
-	
-	createItems: function()
+	createItem: function()
 	{
 		var c = parseInt(APPLICATION.mItemTypesArray.length);	
 		var r = Math.floor(Math.random()*c);
@@ -155,8 +115,6 @@ var Sheet = new Class(
 		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[r];
 		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[0];
 
-		//APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[0];
-		//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[1];
 		var pick = 0;
 
                 if (pick == 0)
@@ -175,52 +133,17 @@ var Sheet = new Class(
                 //if you got an item then add it to sheet
                 if (pick != 0)
                 {
-                	this.addItem(pick);
+                	this.setItem(pick);
 		}
 		else
 		{
 			APPLICATION.log('no item picked by pickers!');
 		}
-		APPLICATION.log('size:' + this.mItemArray.length);
 	},
 
 	setTypeWrong: function(typeID)
 	{
 		this.mTypeWrong = typeID;
-	},
-
-	randomize: function(degree)
-	{
-		APPLICATION.log('randomnina');
-		var size = parseInt(this.mItemArray.length);	
-		for (var i = 0; i < degree; i++)
-		{
-			var swapElementNumberA = Math.floor((Math.random()*size));
-			var swapElementNumberB = Math.floor((Math.random()*size));
-
-			var tempItemA = this.mItemArray[swapElementNumberA];	
-			var tempItemB = this.mItemArray[swapElementNumberB];	
-			
-			this.mItemArray[swapElementNumberA] = tempItemB;
-			this.mItemArray[swapElementNumberB] = tempItemA;
-		}
-
-		if (this.mTypeWrong != '')
-		{
-			for (i = 0; i < size; i++)
-			{
-				if (this.mItemArray[i].getType() == this.mTypeWrong)
-				{
-					wrongItem = this.mItemArray[i]; 
-					questionInFirstSlot = this.mItemArray[0]; 
-					this.mItemArray[0] = wrongItem;
-					this.mItemArray[i] = questionInFirstSlot; 
-				}
-			}		
-		}
-		
-		//redo setting mItem since you shuffled
- 		this.mItem = this.mItemArray[0];
 	},
 
 	/********************** SHAPES ******************/

@@ -8,7 +8,7 @@ Extends: Game,
        		this.parent(application);
 	
 		this.mSheet = new Sheet(this);	
-		this.mSheet.createItems();
+		this.mSheet.createItem();
 		this.mSheet.createShapes();
 	},
 
