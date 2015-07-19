@@ -175,6 +175,93 @@ var Sheet = new Class(
                 }
         },
 	
+	addVictoryShape: function(shape)
+        {
+                this.mVictoryShapeArray.push(shape);
+                this.addShape(shape);
+        },
+
+        hideVictoryShapes: function()
+        {
+                for (var i = 0; i < this.mVictoryShapeArray.length; i++)
+                {
+                        this.mVictoryShapeArray[i].setVisibility(false);
+                }
+        },
+
+        showVictoryShapes: function()
+        {
+                for (var i = 0; i < this.mVictoryShapeArray.length; i++)
+                {
+                        this.mVictoryShapeArray[i].setVisibility(true);
+			if (i == 0)
+			{
+				this.mVictoryShapeArray[i].setPosition(100,500);	
+			}
+			if (i == 1)
+			{
+				this.mVictoryShapeArray[i].setPosition(300,500);	
+			}
+			if (i == 2)
+			{
+				this.mVictoryShapeArray[i].setPosition(500,500);	
+			}
+			if (i > 2)
+			{
+  				var x = Math.floor(Math.random()*600);
+  				var y = Math.floor(Math.random()*200);
+
+				this.mVictoryShapeArray[i].setPosition(x,y);	
+			}
+                }
+        },
+ 
+	//BOSS SHAPES --overide this for new boss screens
+        createBossShapes: function()
+        {
+                //boss shapes
+                this.addBossShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/monster/red_monster.png","",""));
+                var textShape = new ShapeVictory(250,10,400,0,this.mGame,"","","");
+		textShape.setText('You beat the BOSS level!');
+		this.addBossShape(textShape);
+                this.hideBossShapes();
+        },
+	
+	addBossShape: function(shape)
+        {
+                this.mBossShapeArray.push(shape);
+                this.addShape(shape);
+        },
+
+        hideBossShapes: function()
+        {
+                for (var i = 0; i < this.mBossShapeArray.length; i++)
+                {
+                        this.mBossShapeArray[i].setVisibility(false);
+                }
+        },
+
+        showBossShapes: function()
+        {
+                for (var i = 0; i < this.mBossShapeArray.length; i++)
+                {
+                        this.mBossShapeArray[i].setVisibility(true);
+                }
+        },
+
+	/******************* SHEET *********************/	
+	isSheetComplete: function()
+	{
+		if (this.mGame.getScore() >= this.getScoreNeeded())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	},
+
 	//VICTORY SHAPES --overide this for new victory screens
         createVictoryShapes: function()
         {
@@ -299,121 +386,5 @@ var Sheet = new Class(
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
 
                 this.hideVictoryShapes();
-        },
-        
-	addVictoryShape: function(shape)
-        {
-                this.mVictoryShapeArray.push(shape);
-                this.addShape(shape);
-        },
-
-        hideVictoryShapes: function()
-        {
-                for (var i = 0; i < this.mVictoryShapeArray.length; i++)
-                {
-                        this.mVictoryShapeArray[i].setVisibility(false);
-                }
-        },
-
-        showVictoryShapes: function()
-        {
-                for (var i = 0; i < this.mVictoryShapeArray.length; i++)
-                {
-                        this.mVictoryShapeArray[i].setVisibility(true);
-			if (i == 0)
-			{
-				this.mVictoryShapeArray[i].setPosition(100,500);	
-			}
-			if (i == 1)
-			{
-				this.mVictoryShapeArray[i].setPosition(300,500);	
-			}
-			if (i == 2)
-			{
-				this.mVictoryShapeArray[i].setPosition(500,500);	
-			}
-			if (i > 2)
-			{
-  				var x = Math.floor(Math.random()*600);
-  				var y = Math.floor(Math.random()*200);
-
-				this.mVictoryShapeArray[i].setPosition(x,y);	
-			}
-                }
-        },
- 
-	//BOSS SHAPES --overide this for new boss screens
-        createBossShapes: function()
-        {
-                //boss shapes
-                this.addBossShape(new ShapeVictory(50,50,100,300,this.mGame,"/images/monster/red_monster.png","",""));
-                var textShape = new ShapeVictory(250,10,400,0,this.mGame,"","","");
-		textShape.setText('You beat the BOSS level!');
-		this.addBossShape(textShape);
-                this.hideBossShapes();
-        },
-	
-	addBossShape: function(shape)
-        {
-                this.mBossShapeArray.push(shape);
-                this.addShape(shape);
-        },
-
-        hideBossShapes: function()
-        {
-                for (var i = 0; i < this.mBossShapeArray.length; i++)
-                {
-                        this.mBossShapeArray[i].setVisibility(false);
-                }
-        },
-
-        showBossShapes: function()
-        {
-                for (var i = 0; i < this.mBossShapeArray.length; i++)
-                {
-                        this.mBossShapeArray[i].setVisibility(true);
-                }
-        },
-
-
-	/******************** ANSWERS ********************/
-	
-	correctAnswer: function()
-	{
-/*
-		this.mMarker++;
-		this.mItem = this.getItem(); 
-*/
-	},
-	
-	incorrectAnswer: function()
-	{
-/*
-		this.mMarker++;
-		this.mItem = this.getItem(); 
-*/
-	},
-
-	/******************* SHEET *********************/	
-	isSheetComplete: function()
-	{
-		if (this.mGame.getScore() >= this.getScoreNeeded())
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	},
-
-	setScoreNeeded: function(scoreNeeded)
-        {
-                this.mScoreNeeded = scoreNeeded;
-        },
-	
-	getScoreNeeded: function()
-	{
-		return this.mScoreNeeded;
-	}
+        }
 });

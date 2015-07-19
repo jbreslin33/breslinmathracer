@@ -496,7 +496,6 @@ enter: function(item)
         item.mStatus = 1;
         item.hideShapes();
 	item.hideQuestionShapes();
-	item.mSheet.correctAnswer();
 	item.mUpdate = 0;
 },
 
@@ -627,8 +626,6 @@ enter: function(item)
                 APPLICATION.log('ITEM::INCORRECT_ITEM');
         }
 	item.hideShapes();
-	
-	item.mSheet.incorrectAnswer();
 },
 
 execute: function(item)
