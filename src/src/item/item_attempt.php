@@ -21,8 +21,38 @@ var ItemAttempt = new Class(
 		
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM_ATTEMPT);
                 this.mStateMachine.changeState(this.mINIT_ITEM_ATTEMPT);
+
 	},
 
+	sendInsert: function()
+	{
+	        // strip out problem chars from question
+        	var question = '' + APPLICATION.mGame.mSheet.mItem.mQuestion;
+        	question = question.replace(/&/g,"breslinampersand");
+        	question = question.replace(/\+/g,"breslinaddition");
+        	question = question.replace(/#/g,"breslinpound");
+
+        	//get real answers from array
+        	var answers = '';
+        	for (i=0; i < APPLICATION.mGame.mSheet.mItem.mAnswerArray.length; i++)
+        	{
+                	if (i == 0)
+                	{
+                        	answers = '' + answers + APPLICATION.mGame.mSheet.mItem.mAnswerArray[i];
+                	}
+                	else
+                	{
+                        	answers = '' + answers + ' OR ' + APPLICATION.mGame.mSheet.mItem.mAnswerArray[i];
+                	}
+        	}
+        	// strip out problem chars from answer
+        	answers = answers.replace(/&/g,"breslinampersand");
+        	answers = answers.replace(/\+/g,"breslinaddition");
+        	answers = answers.replace(/#/g,"breslinpound");
+
+        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,question,answers);
+	},	
+/*
 	sendInsert: function()
 	{
 	        // strip out problem chars from question
@@ -58,6 +88,7 @@ var ItemAttempt = new Class(
         	//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
         	APPLICATION.sendItemAttempt(this.mType,this.mStatus,question,answers,answer,APPLICATION.mItemAttemptsID);
 	},	
+*/
 
 	sendUpdate: function()
 	{

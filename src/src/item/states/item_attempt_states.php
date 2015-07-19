@@ -7,14 +7,14 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
 },
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 
@@ -28,21 +28,20 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-	if (item.mStateLogs)
+	if (itemAttempt.mStateLogs)
 	{
 		APPLICATION.log('ITEM_ATTEMPT::INIT_ITEM_ATTEMPT');
 	}
-        item.mStateMachine.changeState(item.mSEND_INSERT);
+        itemAttempt.mStateMachine.changeState(itemAttempt.mSEND_INSERT);
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
-		
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 
@@ -56,21 +55,25 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-        if (item.mStateLogs)
+        if (itemAttempt.mStateLogs)
         {
                 APPLICATION.log('ITEM_ATTEMPT::SEND_INSERT');
         }
+	if (APPLICATION.mGame)
+	{
+		itemAttempt.sendInsert();
+	}
 
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
-
+	itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_INSERT_CONFIRMATION);
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 
@@ -84,20 +87,20 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-	if (item.mStateLogs)
+	if (itemAttempt.mStateLogs)
 	{
 		APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_INSERT_CONFIRMATION');
 	}
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
 
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 });
@@ -110,20 +113,20 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-        if (item.mStateLogs)
+        if (itemAttempt.mStateLogs)
         {
                 APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_USER_ANSWER');
         }
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
 
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 });
@@ -136,20 +139,20 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-        if (item.mStateLogs)
+        if (itemAttempt.mStateLogs)
         {
                 APPLICATION.log('ITEM_ATTEMPT::UPDATE_ITEM_ATTEMPT');
         }
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
 
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 
@@ -163,20 +166,20 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-        if (item.mStateLogs)
+        if (itemAttempt.mStateLogs)
         {
                 APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_UPDATE_CONFIRMATION');
         }
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
 
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 
@@ -190,20 +193,20 @@ initialize: function()
 {
 },
 
-enter: function(item)
+enter: function(itemAttempt)
 {
-        if (item.mStateLogs)
+        if (itemAttempt.mStateLogs)
         {
                 APPLICATION.log('ITEM_ATTEMPT::ITEM_ATTEMPT_END');
         }
 },
 
-execute: function(item)
+execute: function(itemAttempt)
 {
 
 },
 
-exit: function(item)
+exit: function(itemAttempt)
 {
 }
 

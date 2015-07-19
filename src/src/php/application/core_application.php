@@ -50,6 +50,20 @@ if ($code == 130)
 	$APPLICATION->mDataArray[] = $_GET["answer"];
 	$APPLICATION->mDataArray[] = $_GET["itemattemptid"];
 }
+if ($code == 151)
+{
+        unset($APPLICATION->mDataArray);
+        $APPLICATION->mDataArray = array();
+
+        $APPLICATION->mDataArray[] = "151";
+        $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
+        $APPLICATION->mDataArray[] = $_GET["question"];
+	
+	error_log($APPLICATION->mDataArray[0]);
+	error_log($APPLICATION->mDataArray[1]);
+	error_log($APPLICATION->mDataArray[2]);
+}
+
 
 //update
 $APPLICATION->update();	
