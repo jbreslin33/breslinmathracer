@@ -159,6 +159,11 @@ public function enter($bapplication)
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
 	$bapplication->update();		
+	
+	//evaluations_attempts insert...
+ 	$bapplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
+        $bapplication->mEvaluationsAttempts->insert();
+
 }
 
 public function execute($bapplication)
@@ -167,6 +172,13 @@ public function execute($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
         }
+	
+	if ($bapplication->mCode == 151)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+		$bapplication->mItemAttemptsArray[] = $itemAttempt;
+			
+	}
 //here i want to get various codes and then insert itemattempt, update item_attempt. which begs question should we have item attempt as a class and then put it into various states??? on server client or both maybe just client.
 /*
 	if ($bapplication->mCode == 130)

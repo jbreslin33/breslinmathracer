@@ -58,10 +58,12 @@ if ($code == 151)
         $APPLICATION->mDataArray[] = "151";
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
+        $APPLICATION->mDataArray[] = $_GET["answers"];
 	
 	error_log($APPLICATION->mDataArray[0]);
 	error_log($APPLICATION->mDataArray[1]);
 	error_log($APPLICATION->mDataArray[2]);
+	error_log($APPLICATION->mDataArray[3]);
 }
 
 
@@ -100,7 +102,8 @@ function __construct()
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
 	$this->mEvaluationsAttempts = new EvaluationsAttempts($this);	
-	$this->mItemAttempt = new ItemAttempt($this);	
+	
+	$this->mItemAttemptsArray = array();
 
 	$this->update();
 }

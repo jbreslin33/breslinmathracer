@@ -5,27 +5,32 @@ class ItemAttempt
 {
     private $mDatabaseConnection;
 
-function __construct($application)
+function __construct($application,$itemtypeid,$question,$answers)
 {
 	$this->mApplication = $application;
-	$this->mItemTypeID = 0;
+	$this->mItemTypeID = $itemtypeid;
 	$this->mID = 0;
 	$this->mIDLast = 0;
 
         $this->mTransactionCode = 0;
-        $this->mQuestion = 0;
-        $this->mAnswers = 0;
+        $this->mQuestion = $question;
+        $this->mAnswers = $answers;
         $this->mAnswer = 0;
+
+	$this->insert();
 }
 
-public function insert($item_type_id)
+public function insert()
 {
-	$this->mItemTypeID = $item_type_id;
 	$db = new DatabaseConnection();
- 	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id) VALUES (CURRENT_TIMESTAMP,";
+ 	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id,question,answers) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $this->mApplication->mEvaluationsAttempts->mID;
         $insert .= ",0,'";
         $insert .= $this->mItemTypeID;
+	$insert .= "','";  
+	$insert .= $this->mQuestion;  
+	$insert .= "','";  
+	$insert .= $this->mAnswers;  
         $insert .= "');";
 
         //get db result
