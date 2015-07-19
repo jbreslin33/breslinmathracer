@@ -84,10 +84,17 @@ Extends: Item,
 			{
 				if (APPLICATION.mGame.mSheet)
 				{
+					APPLICATION.log('BEFORE');
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
+						APPLICATION.log('item yes');
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
 					}
+					else
+					{
+						APPLICATION.log('no item');
+					}
+					APPLICATION.log('AFTER');
 				}
 			}
                 }
@@ -101,10 +108,17 @@ Extends: Item,
 			{
 				if (APPLICATION.mGame.mSheet)
 				{
+					APPLICATION.log('BEFORE');
 					if (APPLICATION.mGame.mSheet.getItem())
 					{
+						APPLICATION.log('item yes');
 						APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mAnswerTextBox.mMesh.value); 
 					}
+					else
+					{
+						APPLICATION.log('no item');
+					}
+					APPLICATION.log('AFTER');
 				}
 			}
                 }

@@ -43,7 +43,6 @@ var Sheet = new Class(
                 this.mGLOBAL_SHEET       = new GLOBAL_SHEET      (this);
                 this.mINIT_SHEET         = new INIT_SHEET        (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
-                this.mNORMAL_DUP_PREVENTER_SHEET = new NORMAL_DUP_PREVENTER_SHEET      (this);
                 this.mFINISHED_SHEET     = new FINISHED_SHEET      (this);
                 this.mPRACTICE_SHEET = new PRACTICE_SHEET(this);
                 this.mEND_SHEET          = new END_SHEET(this);
@@ -60,15 +59,30 @@ var Sheet = new Class(
  		//state machine
 		if (this.mGame)
 		{
+			APPLICATION.log('update');
                 	this.mStateMachine.update();
 
 			for (i = 0; i < this.mItemArray.length; i++)
 			{
 				if (this.mItemArray[i])
 				{
-					this.mItemArray[i].update();
+					if (this.mItemArray[i].mUpdate == 0)
+					{
+					}
+					else
+					{
+						this.mItemArray[i].update();
+					}
+				}
+				else
+				{
+					APPLICATION.log('does not exist:' + i);
 				}
 			}
+		}
+		else
+		{
+			APPLICATION.log('no game update');
 		}
 	},
 
@@ -119,29 +133,12 @@ var Sheet = new Class(
 	{
 		this.mItem = item;
 		this.mItemArray.push(item);
-/*
-		if (this.mItemArray.length == 1)
-		{
-			this.mItem = this.mItemArray[0];
-		}		
-*/
 	}, 
 	
 	//returns question object	
 	getItem: function()
 	{
-		return mItem;
-		/*
-		var item = this.mItemArray[this.mMarker];
-		if (item)
-		{
-			return this.mItemArray[this.mMarker];
-		}
-		else
-		{
-			return 0;	
-		}
-		*/
+		return this.mItem;
 	},
 	
 	//returns question object	
@@ -152,8 +149,14 @@ var Sheet = new Class(
 	
 	createItems: function()
 	{
-		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[1];
+		var c = parseInt(APPLICATION.mItemTypesArray.length);	
+		var r = Math.floor(Math.random()*c);
+		
+		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[r];
 		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[0];
+
+		//APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[0];
+		//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[1];
 		var pick = 0;
 
                 if (pick == 0)
@@ -188,6 +191,7 @@ var Sheet = new Class(
 
 	randomize: function(degree)
 	{
+		APPLICATION.log('randomnina');
 		var size = parseInt(this.mItemArray.length);	
 		for (var i = 0; i < degree; i++)
 		{
@@ -453,14 +457,18 @@ var Sheet = new Class(
 	
 	correctAnswer: function()
 	{
+/*
 		this.mMarker++;
 		this.mItem = this.getItem(); 
+*/
 	},
 	
 	incorrectAnswer: function()
 	{
+/*
 		this.mMarker++;
 		this.mItem = this.getItem(); 
+*/
 	},
 
 	/******************* SHEET *********************/	
