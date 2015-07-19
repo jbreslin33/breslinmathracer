@@ -108,6 +108,7 @@ var Sheet = new Class(
 	
 	createItem: function()
 	{
+		APPLICATION.log('createItem');
 		var c = parseInt(APPLICATION.mItemTypesArray.length);	
 		var r = Math.floor(Math.random()*c);
 		

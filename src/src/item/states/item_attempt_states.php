@@ -61,16 +61,22 @@ enter: function(itemAttempt)
         {
                 APPLICATION.log('ITEM_ATTEMPT::SEND_INSERT');
         }
-	if (APPLICATION.mGame)
-	{
-		itemAttempt.sendInsert();
-	}
 
 },
 
 execute: function(itemAttempt)
 {
-	itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_INSERT_CONFIRMATION);
+	if (APPLICATION.mGame)
+	{
+		APPLICATION.log('if....');
+		//send insert to db and then wait
+		itemAttempt.sendInsert();
+		itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_INSERT_CONFIRMATION);
+	}
+	else	
+	{
+		APPLICATION.log('else....');
+	}	
 },
 
 exit: function(itemAttempt)

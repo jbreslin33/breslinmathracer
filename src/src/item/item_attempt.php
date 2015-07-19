@@ -98,10 +98,7 @@ var ItemAttempt = new Class(
 
 	update: function()
         {
-		if (this.mItem)
-		{
-                	//state machine
-                	this.mStateMachine.update();
-		}
+                //state machine
+                this.mStateMachine.update();
         }
 });
