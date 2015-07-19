@@ -54,6 +54,11 @@ public function insert()
 
                 //set level_id
                 $this->mID = $item_attempt_id;
+
+		//fill php vars
+        	$returnString = "161,";
+        	$returnString .= $this->mID;
+		echo $returnString;		
         }
         else
         {

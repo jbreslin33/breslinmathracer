@@ -34,6 +34,11 @@ Extends: Application,
 		//scroll
 		this.SCROLL = 112;
 
+
+		//ITEM_ATTEMPTS
+		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
+		
+
 		//admin
 		this.UPDATED_STANDARD_ID = 111;
 
@@ -194,6 +199,11 @@ Extends: Application,
                                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
                                 this.mSent = false;
                         }
+                        
+			if (codeNumber == APPLICATION.ITEM_ATTEMPT_INSERT_CONFIRMATION)
+			{
+				APPLICATION.log('recieved confirmation');
+			}
 
 			if (codeNumber == APPLICATION.TIMED_OUT)
                         {
