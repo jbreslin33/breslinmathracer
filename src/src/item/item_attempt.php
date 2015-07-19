@@ -4,10 +4,9 @@ barebones item class. Should this even have a gui????? I think it should be an a
 
 var ItemAttempt = new Class(
 {
-        initialize: function(item)
+        initialize: function()
         {
 		this.mStateLogs = true;		
-		this.mItem = item;
                 this.mStateMachine = new StateMachine(this);
 
                 this.mGLOBAL_ITEM_ATTEMPT   = new GLOBAL_ITEM_ATTEMPT  (this);

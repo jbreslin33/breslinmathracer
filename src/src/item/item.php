@@ -132,9 +132,6 @@ var Item = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
-
-		//item_attempt
-		this.mItemAttempt = new ItemAttempt(this);
 	},
 
 	setTheFocus: function()
@@ -362,8 +359,6 @@ var Item = new Class(
 			{
 				this.mClock.update();
 			}
-			//update itemAttempt
-			this.mItemAttempt.update();	
 		}
 
 		//lets make screen red if they are over a certain U score

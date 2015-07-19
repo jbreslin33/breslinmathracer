@@ -41,6 +41,7 @@ Extends: Application,
 
 		//db arrays
 		this.mItemTypesArray = new Array();
+		this.mItemAttemptsArray = new Array();
 
 		//personal info
 		this.mUsername = '';
@@ -123,6 +124,10 @@ Extends: Application,
         update: function()
         {
 		this.mCoreStateMachine.update();
+		for (i=0; i < this.mItemAttemptsArray.length; i++)
+		{
+			this.mItemAttemptsArray[i].update();
+		}
         },
 	
 	parseResponse: function(response)

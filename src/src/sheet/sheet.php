@@ -133,6 +133,8 @@ var Sheet = new Class(
                 if (pick != 0)
                 {
                 	this.setItem(pick);
+			var itemAttempt = new ItemAttempt();	
+			APPLICATION.mItemAttemptsArray.push(itemAttempt);
 		}
 		else
 		{
