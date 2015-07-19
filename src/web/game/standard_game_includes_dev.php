@@ -55,6 +55,8 @@
 <script type="text/javascript" src="/src/div/div.php"></script>
 
 <script type="text/javascript" src="/src/item/item.php"></script>
+<script type="text/javascript" src="/src/item/item_attempt.php"></script>
+<script type="text/javascript" src="/src/item/states/item_attempt_states.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
 <script type="text/javascript" src="/src/item/graph_item.php"></script>
 <script type="text/javascript" src="/src/item/numberpad_item.php"></script>

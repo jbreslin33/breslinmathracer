@@ -91,6 +91,8 @@ cat src/shape/shape_victory.php >> min.js
 cat src/div/div.php >> min.js
 
 cat src/item/item.php >> min.js
+cat src/item/states/item_attempt_states.php >> min.js
+cat src/item/item_attempt.php >> min.js
 cat src/item/text_item.php >> min.js
 cat src/item/graph_item.php >> min.js
 cat src/item/numberpad_item.php >> min.js
