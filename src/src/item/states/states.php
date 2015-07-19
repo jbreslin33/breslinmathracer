@@ -492,7 +492,7 @@ execute: function(item)
 {
 	if (item.mStatus == 0)
 	{
-		item.mStateMachine.changeState(item.mINIT_ITEM);
+		//item.mStateMachine.changeState(item.mINIT_ITEM);
 	}
 },
 

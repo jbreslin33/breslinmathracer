@@ -6,6 +6,7 @@ var Sheet = new Class(
 {
         initialize: function(game)
         {
+		APPLICATION.log('new sheet const');
 		//logs
 		this.mStateLogs = true; 
 
@@ -73,16 +74,16 @@ var Sheet = new Class(
 
 	destructor: function()
 	{
-		this.destroyItems();
+		//this.destroyItems();
 	},	
 
 	reset: function()
 	{
 		APPLICATION.log('reset');
-		this.destructor();
+		//this.destructor();
 		
 		//reset marker
-		this.mMarker = 0;
+		//this.mMarker = 0;
 
 		//reset timers
 		this.mRefreshStartTime = APPLICATION.mGame.mTimeSinceEpoch;
@@ -116,16 +117,21 @@ var Sheet = new Class(
 
 	addItem: function(item)
 	{
+		this.mItem = item;
 		this.mItemArray.push(item);
+/*
 		if (this.mItemArray.length == 1)
 		{
 			this.mItem = this.mItemArray[0];
 		}		
+*/
 	}, 
 	
 	//returns question object	
 	getItem: function()
 	{
+		return mItem;
+		/*
 		var item = this.mItemArray[this.mMarker];
 		if (item)
 		{
@@ -135,6 +141,7 @@ var Sheet = new Class(
 		{
 			return 0;	
 		}
+		*/
 	},
 	
 	//returns question object	
@@ -171,6 +178,7 @@ var Sheet = new Class(
 		{
 			APPLICATION.log('no item picked by pickers!');
 		}
+		APPLICATION.log('size:' + this.mItemArray.length);
 	},
 
 	setTypeWrong: function(typeID)

@@ -349,6 +349,7 @@ var Item = new Class(
 
 	update: function()
         {
+		APPLICATION.log('update q:' + this.mUserAnswer);
 		if (this.mSheet)
 		{
                 	//state machine

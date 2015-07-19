@@ -66,18 +66,19 @@ enter: function(sheet)
 
 execute: function(sheet)
 {
-	if (sheet.mItem)
+	if (sheet.mItem.mStateMachine.mCurrentState == sheet.mItem.mCORRECT_ITEM)
 	{
-	
+                sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);
 	}
 	else
 	{
-                sheet.mStateMachine.changeState(sheet.mNORMAL_DUP_PREVENTER_SHEET);
+                //sheet.mStateMachine.changeState(sheet.mNORMAL_DUP_PREVENTER_SHEET);
 	}
 },
 
 exit: function(sheet)
 {
+/*
 	if (APPLICATION.mRef_id == 'normal')
 	{
 		APPLICATION.normal();
@@ -130,6 +131,7 @@ exit: function(sheet)
 	{
 		APPLICATION.timestables('12');
 	}	
+*/
 }
 });
 
@@ -313,9 +315,7 @@ enter: function(sheet)
         {
                 APPLICATION.log('SHEET::END_SHEET');
         }
-	sheet.mGame.mReadyForNormalApplication = true;
         sheet.reset();
-	//sheet.mGame.setScore(0);
         sheet.mStateMachine.changeState(sheet.mINIT_SHEET);
 },
 
