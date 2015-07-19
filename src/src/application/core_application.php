@@ -429,7 +429,6 @@ Extends: Application,
 
 	sendItemAttempt: function(itemtypesid,transactioncode,question,answers,answer,itemattemptid)
         {
-		APPLICATION.log('sendItemAttempt');
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

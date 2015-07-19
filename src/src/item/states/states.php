@@ -174,31 +174,24 @@ enter: function(item)
 	//hud question number	
 	APPLICATION.mHud.setProgressedTypeID(item.mProgressedTypeID);	
 	APPLICATION.mHud.setItemTypeStats(item.mStreak);	
-	APPLICATION.log('ITEM::HERE 10');
 },
 
 execute: function(item)
 {
-	APPLICATION.log('ITEM::HERE 11');
 	if (item.mThresholdTime == 0)
         {
-		APPLICATION.log('ITEM::HERE 12');
                 //no possibility of OUT_OF_TIME
         }
         else if (APPLICATION.mGame.mTimeSinceEpoch > item.mQuestionStartTime + item.mThresholdTime)
         {
-		APPLICATION.log('ITEM::HERE 13');
         	item.mOutOfTime = true;
                 item.mStatus = 2;
                 item.mStateMachine.changeState(item.mOUT_OF_TIME_ITEM);
 	}
-	APPLICATION.log('ITEM::HERE 14');
 
 	//you should check mUserAnswer in item here....
-	APPLICATION.log('itemAnswer:' + item.mUserAnswer);
    	if (item.mUserAnswer != '')
         {
-		APPLICATION.log('ITEM::HERE 15');
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
@@ -213,7 +206,7 @@ execute: function(item)
 	}                   
 	else
 	{
-		APPLICATION.log('ITEM::HERE 16');
+	
 	}
 },
 
