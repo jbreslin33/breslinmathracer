@@ -5,10 +5,12 @@ class ItemAttempt
 {
     private $mDatabaseConnection;
 
-function __construct($application,$itemtypeid,$question,$answers)
+function __construct($application,$itemtypeid,$question,$answers,$datenow)
 {
+	$this->mDateNow = $datenow; //key for client and server to be on same page atleast initially until we get an real db id
 	$this->mApplication = $application;
 	$this->mItemTypeID = $itemtypeid;
+	$this->mDateNow = $datenow;
 	$this->mID = 0;
 	$this->mIDLast = 0;
 
@@ -57,6 +59,8 @@ public function insert()
 
 		//fill php vars
         	$returnString = "161,";
+        	$returnString .= $this->mDateNow;
+        	$returnString .= ",";
         	$returnString .= $this->mID;
 		echo $returnString;		
         }

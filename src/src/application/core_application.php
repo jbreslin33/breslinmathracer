@@ -203,6 +203,20 @@ Extends: Application,
 			if (codeNumber == APPLICATION.ITEM_ATTEMPT_INSERT_CONFIRMATION)
 			{
 				APPLICATION.log('recieved confirmation');
+				for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
+				{	
+                			var datenow = parseInt(this.mResponseArray[1]);
+					APPLICATION.log('dateNow back from server:' + datenow);
+					if (APPLICATION.mItemAttemptsArray[i].mDateNow == datenow)
+					{
+						APPLICATION.mItemAttemptsArray[i].mID = pareseInt(this.mResponseArray[1]); 
+						APPLICATION.log('recieved confirmation id: ' + APPLICATION.mItemAttemptsArray[i].mID);
+					}
+					else
+					{
+						APPLICATION.log('recieved confirmation id: ' + APPLICATION.mItemAttemptsArray[i].mID);
+					}
+				}
 			}
 
 			if (codeNumber == APPLICATION.TIMED_OUT)
@@ -441,7 +455,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-        sendItemAttemptInsert: function(itemtypesid,question,answers)
+        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -469,7 +483,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=151&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=151&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
                 xmlhttp.send();
         },
 

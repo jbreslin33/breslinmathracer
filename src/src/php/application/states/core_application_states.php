@@ -175,7 +175,7 @@ public function execute($bapplication)
 	
 	if ($bapplication->mCode == 151)
 	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 			
 	}

@@ -22,6 +22,8 @@ var ItemAttempt = new Class(
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM_ATTEMPT);
                 this.mStateMachine.changeState(this.mINIT_ITEM_ATTEMPT);
 
+		this.mDateNow = 0;
+		this.mID = 0;
 	},
 
 	sendInsert: function()
@@ -50,7 +52,17 @@ var ItemAttempt = new Class(
         	answers = answers.replace(/\+/g,"breslinaddition");
         	answers = answers.replace(/#/g,"breslinpound");
 
-        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,question,answers);
+		if (!Date.now)
+		{
+			this.mDateNow = new Date().getTime();
+		}
+		else
+		{
+			APPLICATION.log('datenow:' + Date.now());	
+			this.mDateNow = Date.now();
+		}
+
+        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,question,answers,this.mDateNow);
 	},	
 /*
 	sendInsert: function()

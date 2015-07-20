@@ -103,7 +103,10 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-
+	if (itemAttempt.mID != 0)
+	{
+		itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_USER_ANSWER);
+	}
 },
 
 exit: function(itemAttempt)

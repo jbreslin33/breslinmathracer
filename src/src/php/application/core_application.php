@@ -59,11 +59,7 @@ if ($code == 151)
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];
-	
-	error_log($APPLICATION->mDataArray[0]);
-	error_log($APPLICATION->mDataArray[1]);
-	error_log($APPLICATION->mDataArray[2]);
-	error_log($APPLICATION->mDataArray[3]);
+        $APPLICATION->mDataArray[] = $_GET["datenow"];
 }
 
 
