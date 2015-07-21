@@ -132,11 +132,18 @@ var Item = new Class(
 
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM);
                 this.mStateMachine.changeState(this.mINIT_ITEM);
+
+		this.mItemAttempt = 0;
 	},
 
 	setTheFocus: function()
 	{
 
+	},
+
+	setItemAttempt(itemAttempt)
+	{
+		this.mItemAttempt = itemAttempt;	
 	},
 	
 	send: function()
@@ -421,8 +428,8 @@ var Item = new Class(
 			answer = answer.replace(/,/g,'');	
 		}
 		
-
 		this.mUserAnswer = answer;
+		this.mItemAttempt.mUserAnswer = this.mUserAnswer;
 	},
 	
 	checkUserAnswer: function()

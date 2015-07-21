@@ -13,8 +13,7 @@ var ItemAttempt = new Class(
                 this.mINIT_ITEM_ATTEMPT     = new INIT_ITEM_ATTEMPT    (this);
 
 		this.mSEND_INSERT                  = new SEND_INSERT(this);
-                this.mWAIT_FOR_INSERT_CONFIRMATION = new WAIT_FOR_INSERT_CONFIRMATION(this);
-                this.mWAIT_FOR_USER_ANSWER         = new WAIT_FOR_USER_ANSWER(this);
+                this.mWAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION = new WAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION(this);
                 this.mUPDATE_ITEM_ATTEMPT          = new UPDATE_ITEM_ATTEMPT(this);
                 this.mWAIT_FOR_UPDATE_CONFIRMATION = new WAIT_FOR_UPDATE_CONFIRMATION(this);
 		this.ITEM_ATTEMPT_END              = new ITEM_ATTEMPT_END(this);
@@ -24,6 +23,7 @@ var ItemAttempt = new Class(
 
 		this.mDateNow = 0;
 		this.mID = 0;
+		this.mUserAnswer = '';
 	},
 
 	sendInsert: function()

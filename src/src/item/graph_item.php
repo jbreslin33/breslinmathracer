@@ -220,6 +220,7 @@ setTempUserAnswer: function(answer)
 setUserAnswer: function(answer)
 	{
 		this.mUserAnswer = answer;
+		this.mItemAttempt.mUserAnswer = this.mUserAnswer;
 	},
 
 });

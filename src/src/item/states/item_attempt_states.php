@@ -68,15 +68,10 @@ execute: function(itemAttempt)
 {
 	if (APPLICATION.mGame)
 	{
-		APPLICATION.log('if....');
-		//send insert to db and then wait
+		//send insert to db and then wait state
 		itemAttempt.sendInsert();
-		itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_INSERT_CONFIRMATION);
+		itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION);
 	}
-	else	
-	{
-		APPLICATION.log('else....');
-	}	
 },
 
 exit: function(itemAttempt)
@@ -85,7 +80,7 @@ exit: function(itemAttempt)
 
 });
 
-var WAIT_FOR_INSERT_CONFIRMATION = new Class(
+var WAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION = new Class(
 {
 Extends: State,
 
@@ -97,42 +92,16 @@ enter: function(itemAttempt)
 {
 	if (itemAttempt.mStateLogs)
 	{
-		APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_INSERT_CONFIRMATION');
+		APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION');
 	}
 },
 
 execute: function(itemAttempt)
 {
-	if (itemAttempt.mID != 0)
+	if (itemAttempt.mID != 0 && itemAttempt.mUserAnswer != '')
 	{
-		itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_USER_ANSWER);
+		itemAttempt.mStateMachine.changeState(itemAttempt.mUPDATE_ITEM_ATTEMPT);
 	}
-},
-
-exit: function(itemAttempt)
-{
-}
-});
-
-var WAIT_FOR_USER_ANSWER = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(itemAttempt)
-{
-        if (itemAttempt.mStateLogs)
-        {
-                APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_USER_ANSWER');
-        }
-},
-
-execute: function(itemAttempt)
-{
-
 },
 
 exit: function(itemAttempt)

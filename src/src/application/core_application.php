@@ -202,19 +202,15 @@ Extends: Application,
                         
 			if (codeNumber == APPLICATION.ITEM_ATTEMPT_INSERT_CONFIRMATION)
 			{
-				APPLICATION.log('recieved confirmation');
 				for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
 				{	
                 			var datenow = parseInt(this.mResponseArray[1]);
-					APPLICATION.log('dateNow back from server:' + datenow);
 					if (APPLICATION.mItemAttemptsArray[i].mDateNow == datenow)
 					{
-						APPLICATION.mItemAttemptsArray[i].mID = pareseInt(this.mResponseArray[1]); 
-						APPLICATION.log('recieved confirmation id: ' + APPLICATION.mItemAttemptsArray[i].mID);
+						APPLICATION.mItemAttemptsArray[i].mID = parseInt(this.mResponseArray[2]); 
 					}
 					else
 					{
-						APPLICATION.log('recieved confirmation id: ' + APPLICATION.mItemAttemptsArray[i].mID);
 					}
 				}
 			}
