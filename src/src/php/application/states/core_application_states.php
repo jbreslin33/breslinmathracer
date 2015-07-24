@@ -181,14 +181,11 @@ public function execute($bapplication)
 	}
 	if ($bapplication->mCode == 152)
 	{
-		error_log('BRESLIN A');
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 
-			error_log('BRESLIN B');
 			if ($bapplication->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
 				//update should check if updated already.....if so it should send confirmation again
-				error_log('BRESLIN C');
 				$bapplication->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}

@@ -79,7 +79,7 @@ var ItemAttempt = new Class(
 	},	
 	sendUpdate: function()
 	{
-        	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it
+        	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
 	},
 
 	update: function()

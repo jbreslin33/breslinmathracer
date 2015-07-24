@@ -69,11 +69,9 @@ public function insert()
 
 public function update($itemattemptid,$transactioncode,$answer)
 {
-	error_log('BRESLIN D');
 	if ($this->mAnswer == '')
 	{
 		$db = new DatabaseConnection();
-		error_log('BRESLIN E');
 		$this->mID = $itemattemptid;
 		$this->mTransactionCode = $transactioncode;
 		$this->mAnswer = $answer;
@@ -88,11 +86,8 @@ public function update($itemattemptid,$transactioncode,$answer)
         	$query .= $this->mID;
         	$query .= ";";
 		
-		error_log($query);
-
         	$updateResult = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 	}
-	error_log('BRESLIN F');
 
 	$returnString = "162,";
 	$returnString .= $this->mID;
