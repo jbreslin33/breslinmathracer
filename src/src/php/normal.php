@@ -34,7 +34,11 @@ function __construct($application)
 
 	//attempts array 	
 	$this->mStartTimeArray       = array();
+
 	$this->mItemAttemptsArray    = array();
+	$this->mItemAttemptsTypeArray    = array();
+	$this->mItemAttemptsTransactionCodeArray    = array();
+
 	$this->mTransactionCodeArray = array();
 	$this->mCoreStandardsArray   = array();
 
@@ -136,7 +140,6 @@ public function initializeProgressionCounter()
 			error_log('skipping initializeProgressionCounter');
 		}
 	}
-
 }
 
 public function fillTypesArray()
@@ -148,28 +151,8 @@ public function fillTypesArray()
 
 	if (count($this->mItemTypesArray) < 1)
 	{
-		//remediate types
-/*
-		$query = "select item_types.id, item_types.progression, item_types.core_standards_id, item_types.type_mastery from remediate JOIN core_standards ON core_standards.id=remediate.core_standards_id JOIN item_types ON item_types.core_standards_id=remediate.core_standards_id where remediate.user_id = ";
-        	$query .= $this->mApplication->mLoginStudent->mUserID;
-		$query .= " AND active_code = 1"; //skip unactive  
-		$query .= " order by progression asc;";
-
-        	$db = new DatabaseConnection();
-        	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
-       	 	$numberOfResults = pg_num_rows($result);
-
-        	for($i=0; $i < $numberOfResults; $i++)
-        	{
-                	$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
-                	$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
-                	$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
-        	}
-*/
-	
 		//normal base types..
 		$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
-		//$query .= $this->mProgressionCounter; 
 		$query .= "-1"; 
 		$query .= " AND active_code = 1"; //skip unactive
 		$query .= " order by progression asc;";
@@ -193,6 +176,42 @@ public function fillTypesArray()
 		}
 	}
 }
+
+public function fillItemAttemptsArray()
+{
+        if ($this->logs)
+        {
+                error_log('fillItemAttemptsArray');
+        }
+ 
+	if (count($this->mTransactionCodeArray) < 1) //not filled at all get em all....
+        {
+                $query = "select item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+                $query .= $this->mApplication->mLoginStudent->mUserID;
+                $query .= " AND item_types.active_code = 1";
+                $query .= " order by item_attempts.start_time desc;";
+
+                $db = new DatabaseConnection();
+                $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+
+                $num = pg_num_rows($result);
+
+                //fill arrays
+                for ($i = 0; $i < $num; $i++)
+                {
+                        $this->mItemAttemptsTypeArray[] = pg_Result($result, $i, 'item_types_id');
+                        $this->mTransactionCodeArray[]  = pg_Result($result, $i, 'transaction_code');
+                }
+        }
+	else
+	{
+		if ($this->logs)
+		{
+			error_log('skipping fillItemAttemptsArray');
+		}
+	}
+}
+
 
 //can you continue to fill this array without db? or is that not neccesary	
 public function fillAttemptsArray()

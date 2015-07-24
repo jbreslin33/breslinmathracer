@@ -158,30 +158,27 @@ execute: function(application)
 		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
 		{
         		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
-	//		APPLICATION.log('mRef_id:' + APPLICATION.mRef_id);
                 	APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
-		//	APPLICATION.log('mUsername:' + APPLICATION.mUsername);
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
-		//	APPLICATION.log('mFirstName:' + APPLICATION.mFirstName);
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-			APPLICATION.log('mLastName:' + APPLICATION.mLastName);
                 	APPLICATION.mRole = APPLICATION.mResponseArray[6];
-		//	APPLICATION.log('mRole:' + APPLICATION.mRole);
 		}
-                APPLICATION.mRawData = APPLICATION.mResponseArray[7];
-		APPLICATION.mItemTypesArray = APPLICATION.mRawData.split(":");
-/*
-		for (i=0; i < APPLICATION.mItemTypesArray.length; i++)
-		{
-			APPLICATION.log(APPLICATION.mItemTypesArray[i]);
-		}
-*/
-                //APPLICATION.mRawData = 'k.cc.a.1_1';
+                var itemTypes = APPLICATION.mResponseArray[7];
+		APPLICATION.mItemTypesArray = itemTypes.split(":");
+                
+		var itemAttemptsTypes = APPLICATION.mResponseArray[8];
+		APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
+		
+		var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[9];
+		APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
                	
 		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+
+		APPLICATION.log('itemTypesArray:' + APPLICATION.mItemTypesArray.length);
+		APPLICATION.log('itemAttemptsTypeArray:' + APPLICATION.mItemAttemptsTypeArray.length);
+		APPLICATION.log('itemAttemptsTransactionCodeArray:' + APPLICATION.mItemAttemptsTransactionCodeArray.length);
 	}
 
 	else if (application.mBadUsername == true)

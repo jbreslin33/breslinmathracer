@@ -139,6 +139,7 @@ public function bexit($bapplication)
                 error_log('LOGIN_STUDENT_APPLICATION Exit');
         }
 	$bapplication->mNormal->fillTypesArray(); //fill types
+	$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
 	$bapplication->mLoginStudent->sendLoginStudent();
 }
 

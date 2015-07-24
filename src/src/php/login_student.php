@@ -32,20 +32,49 @@ public function enterLogin($username,$password)
 
 public function sendLoginStudent()
 {
-	$itemTypesRawData = ""; 
+	$itemTypesRawDataA = ""; 
+	$itemTypesRawDataB = ""; 
+	$itemTypesRawDataC = ""; 
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
 	{
 		if ($i == 0)
 		{
-			$itemTypesRawData .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
+			$itemTypesRawDataA .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
 		}		
 		else
 		{
-			$itemTypesRawData .= ":";
-			$itemTypesRawData .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
+			$itemTypesRawDataA .= ":";
+			$itemTypesRawDataA .= $this->mApplication->mNormal->mItemTypesArray[$i]; 
 		}
 	}
+
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArray); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataB .= $this->mApplication->mNormal->mItemAttemptsTypeArray[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataB .= ":";
+                        $itemTypesRawDataB .= $this->mApplication->mNormal->mItemAttemptsTypeArray[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArray); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataC .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArray[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataC .= ":";
+                        $itemTypesRawDataC .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArray[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -61,7 +90,11 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $this->mRole;
 	$returnString .= ",";
-	$returnString .= $itemTypesRawData;
+	$returnString .= $itemTypesRawDataA;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataB;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataC;
 	echo $returnString;
 }
 
