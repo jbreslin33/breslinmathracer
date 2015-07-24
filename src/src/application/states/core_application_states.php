@@ -778,6 +778,7 @@ enter: function(application)
 	}
 	//get a new game if neccesary
 	application.gameDecider();
+	application.calcScore();
 },
 
 execute: function(application)

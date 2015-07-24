@@ -50,6 +50,9 @@ Extends: Application,
 		this.mItemTypesArray = new Array();
 		this.mItemAttemptsTypeArray = new Array();
 		this.mItemAttemptsTransactionCodeArray = new Array();
+
+		//score
+		this.mScore = 0;
  
 		//personal info
 		this.mUsername = '';
@@ -128,6 +131,44 @@ Extends: Application,
 
 		this.bapplication();	
         },
+
+	calcScore: function()
+	{
+		var score = 0;
+		for (var i = 0; i < this.mItemTypesArray.length; i++)
+		{
+			var foundOne = false;
+			var j = 0;
+			while (j < this.mItemAttemptsTypeArray.length && foundOne == false)
+			{
+				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+				{
+					score++;	
+					foundOne = true;
+				}					
+				j++;
+			}
+		}
+		this.mGame.setScore(score);
+	},
+/*
+	calcScore: function()
+	{
+		this.mScore = 0;
+		for (var i = 0; i < this.mItemTypesArray; i++)
+		{
+			var tempCodeArray = new Array(); 	
+			for (var j = 0; j < this.mItemAttemptsTypeArray; j++)
+			{
+				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+				{
+					tempCodeArray.push(this.mItemAttemptsTransactionCodeArray[j]);  	
+					
+				}					
+			}
+		}
+	},
+*/
  	
         update: function()
         {

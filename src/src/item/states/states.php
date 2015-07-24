@@ -454,6 +454,8 @@ enter: function(item)
 	item.mSheet.mGame.incrementScore();
 
         item.showContinueCorrect();
+
+	//lets calc score here
 },
 
 execute: function(item)
