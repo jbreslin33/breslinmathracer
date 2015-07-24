@@ -124,6 +124,7 @@ enter: function(itemAttempt)
                 APPLICATION.log('ITEM_ATTEMPT::UPDATE_ITEM_ATTEMPT');
         }
 	itemAttempt.sendUpdate();
+	itemAttempt.mStateMachine.changeState(itemAttempt.mWAIT_FOR_UPDATE_CONFIRMATION);
 },
 
 execute: function(itemAttempt)
@@ -155,9 +156,15 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-	if (itemAttempt.mUpdateConfirmation == 1)
+	APPLICATION.log('conf:' + itemAttempt.mUpdateConfirmation);
+	if (parseInt(itemAttempt.mUpdateConfirmation) == 1)
 	{
+		APPLICATION.log('if conf:' + itemAttempt.mUpdateConfirmation);
 		itemAttempt.mStateMachine.changeState(itemAttempt.mITEM_ATTEMPT_END);
+	}
+	else
+	{
+		APPLICATION.log('else conf:' + itemAttempt.mUpdateConfirmation);
 	}
 },
 

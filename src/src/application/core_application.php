@@ -214,12 +214,15 @@ Extends: Application,
 			
 			if (codeNumber == APPLICATION.ITEM_ATTEMPT_UPDATE_CONFIRMATION)
 			{
+				APPLICATION.log('BRESLIN A');
 				for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
 				{	
-                			var confirmation = parseInt(this.mResponseArray[1]);
-                			var id = parseInt(this.mResponseArray[2]);
+					APPLICATION.log('BRESLIN B');
+                			var id = parseInt(this.mResponseArray[1]);
+                			var confirmation = parseInt(this.mResponseArray[2]);
 					if (APPLICATION.mItemAttemptsArray[i].mID == id)
 					{
+						APPLICATION.log('BRESLIN C');
 						APPLICATION.mItemAttemptsArray[i].mUpdateConfirmation = confirmation; 
 					}
 				}

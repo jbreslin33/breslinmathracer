@@ -16,7 +16,7 @@ var ItemAttempt = new Class(
                 this.mWAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION = new WAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION(this);
                 this.mUPDATE_ITEM_ATTEMPT          = new UPDATE_ITEM_ATTEMPT(this);
                 this.mWAIT_FOR_UPDATE_CONFIRMATION = new WAIT_FOR_UPDATE_CONFIRMATION(this);
-		this.ITEM_ATTEMPT_END              = new ITEM_ATTEMPT_END(this);
+		this.mITEM_ATTEMPT_END              = new ITEM_ATTEMPT_END(this);
 		
                 this.mStateMachine.setGlobalState(this.mGLOBAL_ITEM_ATTEMPT);
                 this.mStateMachine.changeState(this.mINIT_ITEM_ATTEMPT);
