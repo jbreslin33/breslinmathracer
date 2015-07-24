@@ -131,7 +131,7 @@ Extends: Application,
 
 		this.bapplication();	
         },
-
+	
 	calcScore: function()
 	{
 		var score = 0;
@@ -151,6 +151,8 @@ Extends: Application,
 		}
 		this.mGame.setScore(score);
 	},
+
+
 /*
 	calcScore: function()
 	{
