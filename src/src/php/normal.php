@@ -184,7 +184,7 @@ public function fillItemAttemptsArray()
                 error_log('fillItemAttemptsArray');
         }
  
-	if (count($this->mTransactionCodeArray) < 1) //not filled at all get em all....
+	if (count($this->mItemAttemptsTransactionCodeArray) < 1) //not filled at all get em all....
         {
                 $query = "select item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
                 $query .= $this->mApplication->mLoginStudent->mUserID;
@@ -200,7 +200,7 @@ public function fillItemAttemptsArray()
                 for ($i = 0; $i < $num; $i++)
                 {
                         $this->mItemAttemptsTypeArray[] = pg_Result($result, $i, 'item_types_id');
-                        $this->mTransactionCodeArray[]  = pg_Result($result, $i, 'transaction_code');
+                        $this->mItemAttemptsTransactionCodeArray[]  = pg_Result($result, $i, 'transaction_code');
                 }
         }
 	else
