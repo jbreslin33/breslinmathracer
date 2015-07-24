@@ -99,13 +99,21 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-        if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime)
-        {
-		itemAttempt.mStateMachine.changeState(itemAttempt.mSEND_INSERT);
-	}
 	if (itemAttempt.mID != 0 && itemAttempt.mUserAnswer != '')
 	{
 		itemAttempt.mStateMachine.changeState(itemAttempt.mUPDATE_ITEM_ATTEMPT);
+	}
+
+	if (itemAttempt.mCounterStartTime == 0)
+	{
+		itemAttempt.mCounterStartTime = APPLICATION.mGame.mTimeSinceEpoch; 
+	}
+
+	APPLICATION.log('e:' + APPLICATION.mGame.mTimeSinceEpoch + ' c:' + itemAttempt.mCounterStartTime + ' m:' + itemAttempt.mID);
+	//if its been 5 seconds AND you dont have a confirmation by getting a mID from server then resend....
+        if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime && itemAttempt.mID == 0)
+        {
+		itemAttempt.mStateMachine.changeState(itemAttempt.mSEND_INSERT);
 	}
 },
 

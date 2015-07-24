@@ -34,7 +34,7 @@ var ItemAttempt = new Class(
 		this.mQuestionTxt = '';
 
 		//timers
-		this.mThresholdTime = 50000;
+		this.mThresholdTime = 5000;
 		this.mCounterStartTime = 0;
 	},
 
