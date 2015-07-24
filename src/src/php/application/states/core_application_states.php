@@ -179,13 +179,20 @@ public function execute($bapplication)
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 			
 	}
-//here i want to get various codes and then insert itemattempt, update item_attempt. which begs question should we have item attempt as a class and then put it into various states??? on server client or both maybe just client.
-/*
-	if ($bapplication->mCode == 130)
+	if ($bapplication->mCode == 152)
 	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mUPDATE_ITEM_ATTEMPT_APPLICATION);
+		error_log('BRESLIN A');
+		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
+		{ 
+			error_log('BRESLIN B');
+			if ($bapplication->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				//update should check if updated already.....if so it should send confirmation again
+				error_log('BRESLIN C');
+				$bapplication->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+			}
+		}
 	}
-*/
 
 }
 public function bexit($bapplication)
@@ -197,43 +204,6 @@ public function bexit($bapplication)
 }
 
 }//end class
-
-class UPDATE_ITEM_ATTEMPT_APPLICATION extends State
-{
-
-function __construct()
-{
-
-}
-
-public function enter($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('UPDATE_ITEM_ATTEMPT_APPLICATION Enter');
-        }
-	$bapplication->mItemAttempt->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4],$bapplication->mDataArray[5],$bapplication->mDataArray[6]);
-}
-public function execute($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('UPDATE_ITEM_ATTEMPT_APPLICATION Execute');
-        }
-        $bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-}
-public function bexit($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('UPDATE_ITEM_ATTEMPT_APPLICATION Exit');
-        }
-}
-
-}//end class
-
-
-
 
 
 ?>

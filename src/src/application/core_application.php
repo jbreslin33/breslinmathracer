@@ -37,7 +37,7 @@ Extends: Application,
 
 		//ITEM_ATTEMPTS
 		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
-		
+		this.ITEM_ATTEMPT_UPDATE_CONFIRMATION = 162;
 
 		//admin
 		this.UPDATED_STANDARD_ID = 111;
@@ -209,8 +209,18 @@ Extends: Application,
 					{
 						APPLICATION.mItemAttemptsArray[i].mID = parseInt(this.mResponseArray[2]); 
 					}
-					else
+				}
+			}
+			
+			if (codeNumber == APPLICATION.ITEM_ATTEMPT_UPDATE_CONFIRMATION)
+			{
+				for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
+				{	
+                			var confirmation = parseInt(this.mResponseArray[1]);
+                			var id = parseInt(this.mResponseArray[2]);
+					if (APPLICATION.mItemAttemptsArray[i].mID == id)
 					{
+						APPLICATION.mItemAttemptsArray[i].mUpdateConfirmation = confirmation; 
 					}
 				}
 			}
@@ -480,6 +490,38 @@ Extends: Application,
                         }
                 }
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=151&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
+                xmlhttp.send();
+        },
+
+       	sendItemAttemptUpdate: function(itemattemptid,transactioncode,answer)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=152&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
                 xmlhttp.send();
         },
 

@@ -61,7 +61,16 @@ if ($code == 151)
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
 }
+if ($code == 152)
+{
+        unset($APPLICATION->mDataArray);
+        $APPLICATION->mDataArray = array();
 
+        $APPLICATION->mDataArray[] = "152";
+        $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
+        $APPLICATION->mDataArray[] = $_GET["transactioncode"];
+        $APPLICATION->mDataArray[] = $_GET["answer"];
+}
 
 //update
 $APPLICATION->update();	
@@ -90,7 +99,6 @@ function __construct()
         $this->mWAIT_CORE_APPLICATION           = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION       = new LOGIN_STUDENT_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION         = new NORMAL_CORE_APPLICATION        ($this);
-        $this->mUPDATE_ITEM_ATTEMPT_APPLICATION = new UPDATE_ITEM_ATTEMPT_APPLICATION($this);
 
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);

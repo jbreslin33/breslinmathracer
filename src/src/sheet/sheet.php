@@ -137,6 +137,7 @@ var Sheet = new Class(
 			var itemAttempt = new ItemAttempt();	
 			APPLICATION.mItemAttemptsArray.push(itemAttempt);
 			pick.setItemAttempt(itemAttempt);
+			itemAttempt.mType = pick.mType;
 		}
 		else
 		{

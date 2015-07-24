@@ -24,6 +24,9 @@ var ItemAttempt = new Class(
 		this.mDateNow = 0;
 		this.mID = 0;
 		this.mUserAnswer = '';
+		this.mTransactionCode = 0;
+		this.mType = 0; 
+		this.mUpdateConfirmation = 0;
 	},
 
 	sendInsert: function()
@@ -64,48 +67,9 @@ var ItemAttempt = new Class(
 
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,question,answers,this.mDateNow);
 	},	
-/*
-	sendInsert: function()
-	{
-	        // strip out problem chars from question
-        	var question = '' + this.mQuestion;
-        	question = question.replace(/&/g,"breslinampersand");
-        	question = question.replace(/\+/g,"breslinaddition");
-        	question = question.replace(/#/g,"breslinpound");
-
-        	//get real answers from array
-        	var answers = '';
-        	for (i=0; i < this.mAnswerArray.length; i++)
-        	{
-                	if (i == 0)
-                	{
-                        	answers = '' + answers + this.mAnswerArray[i];
-                	}
-                	else
-                	{
-                        	answers = '' + answers + ' OR ' + this.mAnswerArray[i];
-                	}
-        	}
-        	// strip out problem chars from answer
-        	answers = answers.replace(/&/g,"breslinampersand");
-        	answers = answers.replace(/\+/g,"breslinaddition");
-        	answers = answers.replace(/#/g,"breslinpound");
-
-        	// strip out problem chars from answer
-        	var answer = '' + this.mUserAnswer;
-        	answer = answer.replace(/&/g,"breslinampersand");
-        	answer = answer.replace(/\+/g,"breslinaddition");
-        	answer = answer.replace(/#/g,"breslinpound");
-
-        	//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
-        	APPLICATION.sendItemAttempt(this.mType,this.mStatus,question,answers,answer,APPLICATION.mItemAttemptsID);
-	},	
-*/
-
 	sendUpdate: function()
 	{
-
-
+        	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it
 	},
 
 	update: function()

@@ -123,6 +123,7 @@ enter: function(itemAttempt)
         {
                 APPLICATION.log('ITEM_ATTEMPT::UPDATE_ITEM_ATTEMPT');
         }
+	itemAttempt.sendUpdate();
 },
 
 execute: function(itemAttempt)
@@ -154,7 +155,10 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-
+	if (itemAttempt.mUpdateConfirmation == 1)
+	{
+		itemAttempt.mStateMachine.changeState(itemAttempt.mITEM_ATTEMPT_END);
+	}
 },
 
 exit: function(itemAttempt)
@@ -181,7 +185,7 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-
+	//do nothing
 },
 
 exit: function(itemAttempt)
