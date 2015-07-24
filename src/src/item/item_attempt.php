@@ -27,45 +27,55 @@ var ItemAttempt = new Class(
 		this.mTransactionCode = 0;
 		this.mType = 0; 
 		this.mUpdateConfirmation = 0;
+
+		this.mAnswers = '';
+		this.mAnswersTxt = '';
+		this.mQuestion = '';
+		this.mQuestionTxt = '';
+
+		//timers
+		this.mThresholdTime = 50000;
+		this.mCounterStartTime = 0;
 	},
 
 	sendInsert: function()
 	{
-	        // strip out problem chars from question
-        	var question = '' + APPLICATION.mGame.mSheet.mItem.mQuestion;
-        	question = question.replace(/&/g,"breslinampersand");
-        	question = question.replace(/\+/g,"breslinaddition");
-        	question = question.replace(/#/g,"breslinpound");
-
-        	//get real answers from array
-        	var answers = '';
-        	for (i=0; i < APPLICATION.mGame.mSheet.mItem.mAnswerArray.length; i++)
-        	{
-                	if (i == 0)
-                	{
-                        	answers = '' + answers + APPLICATION.mGame.mSheet.mItem.mAnswerArray[i];
-                	}
-                	else
-                	{
-                        	answers = '' + answers + ' OR ' + APPLICATION.mGame.mSheet.mItem.mAnswerArray[i];
-                	}
-        	}
-        	// strip out problem chars from answer
-        	answers = answers.replace(/&/g,"breslinampersand");
-        	answers = answers.replace(/\+/g,"breslinaddition");
-        	answers = answers.replace(/#/g,"breslinpound");
-
-		if (!Date.now)
+		if (this.mDateNow == 0) //we have not sent it
 		{
-			this.mDateNow = new Date().getTime();
-		}
-		else
-		{
-			APPLICATION.log('datenow:' + Date.now());	
-			this.mDateNow = Date.now();
+	        	// strip out problem chars from question
+        		this.mQuestion = '' + APPLICATION.mGame.mSheet.mItem.mQuestion;
+        		this.mQuestionTxt = this.mQuestion.replace(/&/g,"breslinampersand");
+        		this.mQuestionTxt = this.mQuestionTxt.replace(/\+/g,"breslinaddition");
+        		this.mQuestionTxt = this.mQuestionTxt.replace(/#/g,"breslinpound");
+
+        		//get real answers from array
+        		for (i=0; i < APPLICATION.mGame.mSheet.mItem.mAnswerArray.length; i++)
+        		{
+                		if (i == 0)
+                		{
+                        		this.mAnswers = '' + this.mAnswers + APPLICATION.mGame.mSheet.mItem.mAnswerArray[i];
+                		}
+                		else
+                		{
+                        		this.mAnswers = '' + this.mAnswers + ' OR ' + APPLICATION.mGame.mSheet.mItem.mAnswerArray[i];
+                		}
+        		}
+        		// strip out problem chars from answer
+        		this.mAnswersTxt = this.mAnswers.replace(/&/g,"breslinampersand");
+        		this.mAnswersTxt = this.mAnswersTxt.replace(/\+/g,"breslinaddition");
+        		this.mAnswersTxt = this.mAnswersTxt.replace(/#/g,"breslinpound");
+
+			if (!Date.now)
+			{
+				this.mDateNow = new Date().getTime();
+			}
+			else
+			{
+				this.mDateNow = Date.now();
+			}
 		}
 
-        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,question,answers,this.mDateNow);
+        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
 	},	
 	sendUpdate: function()
 	{

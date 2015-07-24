@@ -94,10 +94,15 @@ enter: function(itemAttempt)
 	{
 		APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_INSERT_AND_USER_ANSWER_CONFIRMATION');
 	}
+	itemAttempt.mCounterStartTime = APPLICATION.mGame.mTimeSinceEpoch; 
 },
 
 execute: function(itemAttempt)
 {
+        if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime)
+        {
+		itemAttempt.mStateMachine.changeState(itemAttempt.mSEND_INSERT);
+	}
 	if (itemAttempt.mID != 0 && itemAttempt.mUserAnswer != '')
 	{
 		itemAttempt.mStateMachine.changeState(itemAttempt.mUPDATE_ITEM_ATTEMPT);
