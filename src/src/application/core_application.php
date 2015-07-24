@@ -53,6 +53,9 @@ Extends: Application,
 
 		//score
 		this.mScore = 0;
+
+		//algorithms
+		this.mFirst = '';
  
 		//personal info
 		this.mUsername = '';
@@ -152,6 +155,36 @@ Extends: Application,
 		this.mGame.setScore(score);
 	},
 
+	getFirst: function()
+	{
+		var first = '';
+		var i = 0;
+		while (i < this.mItemTypesArray.length && first == '')
+		{
+			var tempArray = new Array();
+			var j = 0;
+			while (j < this.mItemAttemptsTypeArray.length && tempArray.length < 2)
+			{
+				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+				{
+					tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);	
+				}					
+				j++;
+			}
+			if (tempArray.length < 2)
+			{
+				first = this.mItemTypesArray[i];  
+			}
+			else 
+			{
+				if (tempArray[0] != 2 && tempArray[1] != 2)
+				{
+					first = this.mItemTypesArray[i];  
+				}	
+			} 
+		}
+		this.mFirst = first;
+	},
 
 /*
 	calcScore: function()

@@ -108,12 +108,14 @@ var Sheet = new Class(
 	
 	createItem: function()
 	{
-		APPLICATION.log('createItem');
 		var c = parseInt(APPLICATION.mItemTypesArray.length);	
 		var r = Math.floor(Math.random()*c);
 		
 		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[r];
 		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[0];
+
+		APPLICATION.getFirst();
+		APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
 
 		var pick = 0;
 
