@@ -109,7 +109,6 @@ execute: function(itemAttempt)
 		itemAttempt.mCounterStartTime = APPLICATION.mGame.mTimeSinceEpoch; 
 	}
 
-	APPLICATION.log('e:' + APPLICATION.mGame.mTimeSinceEpoch + ' c:' + itemAttempt.mCounterStartTime + ' m:' + itemAttempt.mID);
 	//if its been 5 seconds AND you dont have a confirmation by getting a mID from server then resend....
         if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime && itemAttempt.mID == 0)
         {
@@ -161,6 +160,7 @@ initialize: function()
 
 enter: function(itemAttempt)
 {
+	itemAttempt.mCounterStartTime = APPLICATION.mGame.mTimeSinceEpoch; 
         if (itemAttempt.mStateLogs)
         {
                 APPLICATION.log('ITEM_ATTEMPT::WAIT_FOR_UPDATE_CONFIRMATION');
@@ -169,15 +169,18 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-	APPLICATION.log('conf:' + itemAttempt.mUpdateConfirmation);
+	if (itemAttempt.mCounterStartTime == 0)
+	{
+		itemAttempt.mCounterStartTime = APPLICATION.mGame.mTimeSinceEpoch; 
+	}
+
 	if (parseInt(itemAttempt.mUpdateConfirmation) == 1)
 	{
-		APPLICATION.log('if conf:' + itemAttempt.mUpdateConfirmation);
 		itemAttempt.mStateMachine.changeState(itemAttempt.mITEM_ATTEMPT_END);
 	}
-	else
+        if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime && parseInt(itemAttempt.mUpdateConfirmation) == 0)
 	{
-		APPLICATION.log('else conf:' + itemAttempt.mUpdateConfirmation);
+		itemAttempt.mStateMachine.changeState(itemAttempt.mUPDATE_ITEM_ATTEMPT);
 	}
 },
 
