@@ -45,9 +45,12 @@ Extends: Application,
 		this.NORMAL = 116;
 
 		//db arrays
-		this.mItemTypesArray = new Array();
 		this.mItemAttemptsArray = new Array();
 
+		this.mItemTypesArray = new Array();
+		this.mItemAttemptsTypeArray = new Array();
+		this.mItemAttemptsTransactionCodeArray = new Array();
+ 
 		//personal info
 		this.mUsername = '';
 		this.mFirstName = '';
