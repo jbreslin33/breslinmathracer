@@ -185,7 +185,7 @@ execute: function(item)
         else if (APPLICATION.mGame.mTimeSinceEpoch > item.mQuestionStartTime + item.mThresholdTime)
         {
         	item.mOutOfTime = true;
-                item.mStatus = 2;
+                item.mTransactionCode = 2;
                 item.mStateMachine.changeState(item.mOUT_OF_TIME_ITEM);
 	}
 
@@ -195,12 +195,12 @@ execute: function(item)
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
-                        item.mStatus = 1;
+                        item.mTransactionCode = 1;
                 	item.mStateMachine.changeState(item.mCONTINUE_CORRECT);
                 }
                 else
                 {
-                        item.mStatus = 2;
+                        item.mTransactionCode = 2;
                 	item.mStateMachine.changeState(item.mSHOW_CORRECT_ANSWER_ITEM);
                 }
 	}                   
@@ -488,7 +488,7 @@ enter: function(item)
         {
                 APPLICATION.log('ITEM::CORRECT_ITEM');
         }
-        item.mStatus = 1;
+        item.mTransactionCode = 1;
         item.hideShapes();
 	item.hideQuestionShapes();
 	item.mUpdate = 0;
@@ -496,7 +496,7 @@ enter: function(item)
 
 execute: function(item)
 {
-	if (item.mStatus == 0)
+	if (item.mTransactionCode == 0)
 	{
 		//item.mStateMachine.changeState(item.mINIT_ITEM);
 	}
@@ -625,7 +625,7 @@ enter: function(item)
 
 execute: function(item)
 {
-        if (item.mStatus == 0)
+        if (item.mTransactionCode == 0)
         {
                 item.mStateMachine.changeState(item.mINIT_ITEM);
         }
