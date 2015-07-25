@@ -185,7 +185,7 @@ execute: function(item)
         else if (APPLICATION.mGame.mTimeSinceEpoch > item.mQuestionStartTime + item.mThresholdTime)
         {
         	item.mOutOfTime = true;
-                item.mTransactionCode = 2;
+                item.setTransactionCode(2);
                 item.mStateMachine.changeState(item.mOUT_OF_TIME_ITEM);
 	}
 
@@ -195,12 +195,12 @@ execute: function(item)
         	pass = item.checkUserAnswer();
                 if (pass)
                 {
-                        item.mTransactionCode = 1;
+                        item.setTransactionCode(1);
                 	item.mStateMachine.changeState(item.mCONTINUE_CORRECT);
                 }
                 else
                 {
-                        item.mTransactionCode = 2;
+                        item.setTransactionCode(2);
                 	item.mStateMachine.changeState(item.mSHOW_CORRECT_ANSWER_ITEM);
                 }
 	}                   
@@ -488,7 +488,7 @@ enter: function(item)
         {
                 APPLICATION.log('ITEM::CORRECT_ITEM');
         }
-        item.mTransactionCode = 1;
+        item.setTransactionCode(1);
         item.hideShapes();
 	item.hideQuestionShapes();
 	item.mUpdate = 0;

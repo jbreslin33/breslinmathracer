@@ -38,6 +38,11 @@ var ItemAttempt = new Class(
 		this.mCounterStartTime = 0;
 	},
 
+	setTransactionCode: function(code)
+	{
+		this.mTransactionCode = code;
+	},
+
 	sendInsert: function()
 	{
 		if (this.mDateNow == 0) //we have not sent it

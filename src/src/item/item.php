@@ -30,7 +30,7 @@ var Item = new Class(
 		this.mTipArray = new Array();
 
 		//status	
-		this.mStatus = 0; //notAttempted=0,correct=1,incorrect=2
+		this.mTransactionCode = 0; //notAttempted=0,correct=1,incorrect=2
 		
 		//stats
 		this.mStreak = 0;
@@ -141,9 +141,15 @@ var Item = new Class(
 
 	},
 
-	setItemAttempt(itemAttempt)
+	setItemAttempt: function(itemAttempt)
 	{
 		this.mItemAttempt = itemAttempt;	
+	},
+
+	setTransactionCode: function(code)
+	{
+		this.mTransactionCode = code;
+		this.mItemAttempt.setTransactionCode = code;
 	},
 	
 	send: function()
@@ -179,7 +185,7 @@ var Item = new Class(
         	answer = answer.replace(/#/g,"breslinpound");
 
         	//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
-        	APPLICATION.sendItemAttempt(this.mType,this.mStatus,question,answers,answer,APPLICATION.mItemAttemptsID);
+        	APPLICATION.sendItemAttempt(this.mType,this.mTransactionCode,question,answers,answer,APPLICATION.mItemAttemptsID);
 	},	
 
 	addShape: function(shape)
