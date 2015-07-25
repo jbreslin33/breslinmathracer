@@ -157,6 +157,9 @@ Extends: Application,
 
 	getFirst: function()
 	{
+		APPLICATION.log('itemAttemptsTypeArray:' + this.mItemAttemptsTypeArray.length);
+		APPLICATION.log('itemAttemptsTransactionCodeArray:' + this.mItemAttemptsTransactionCodeArray.length);
+
 		var first = '';
 		var i = 0;
 
@@ -200,25 +203,6 @@ Extends: Application,
 		this.mFirst = first;
 	},
 
-/*
-	calcScore: function()
-	{
-		this.mScore = 0;
-		for (var i = 0; i < this.mItemTypesArray; i++)
-		{
-			var tempCodeArray = new Array(); 	
-			for (var j = 0; j < this.mItemAttemptsTypeArray; j++)
-			{
-				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
-				{
-					tempCodeArray.push(this.mItemAttemptsTransactionCodeArray[j]);  	
-					
-				}					
-			}
-		}
-	},
-*/
- 	
         update: function()
         {
 		this.mCoreStateMachine.update();

@@ -73,12 +73,20 @@ var ItemAttempt = new Class(
 			{
 				this.mDateNow = Date.now();
 			}
+
+			//update client
+			APPLICATION.mItemAttemptsTypeArray.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+			APPLICATION.mItemAttemptsTransactionCodeArray.unshift(0);
 		}
 
+		//update server
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
 	},	
 	sendUpdate: function()
 	{
+		//update client
+		APPLICATION.mItemAttemptsTransactionCodeArray[0] = this.mTransactionCode;
+
         	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
 	},
 
