@@ -116,6 +116,7 @@ var Sheet = new Class(
 
 		APPLICATION.getFirst();
 		APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
+		APPLICATION.log('first:' + APPLICATION.mFirst); 
 
 		var pick = 0;
 

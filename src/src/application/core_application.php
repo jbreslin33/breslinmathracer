@@ -159,6 +159,7 @@ Extends: Application,
 	{
 		var first = '';
 		var i = 0;
+
 		while (i < this.mItemTypesArray.length && first == '')
 		{
 			var tempArray = new Array();
@@ -168,20 +169,33 @@ Extends: Application,
 				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
 				{
 					tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);	
+					if (this.mItemTypesArray[i] == 'k.cc.a.1_1')
+					{
+						APPLICATION.log('tc:' + this.mItemAttemptsTransactionCodeArray[j]); 
+					}
 				}					
 				j++;
 			}
 			if (tempArray.length < 2)
 			{
 				first = this.mItemTypesArray[i];  
+				if (this.mItemTypesArray[i] == 'k.cc.a.1_1')
+				{
+					APPLICATION.log('in if first:' + this.mItemAttemptsTransactionCodeArray[j]); 
+				}
 			}
 			else 
 			{
-				if (tempArray[0] != 2 && tempArray[1] != 2)
+				if (tempArray[0] != 1 && tempArray[1] != 1)
 				{
+					if (this.mItemTypesArray[i] == 'k.cc.a.1_1')
+					{
+						APPLICATION.log('in else first:' + this.mItemAttemptsTransactionCodeArray[j]); 
+					}
 					first = this.mItemTypesArray[i];  
 				}	
 			} 
+			i++;
 		}
 		this.mFirst = first;
 	},
