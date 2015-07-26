@@ -90,6 +90,7 @@ var ItemAttempt = new Class(
 	sendUpdate: function()
 	{
 		//update client
+		APPLICATION.log('this.mTransactionCode sendUpdate:' + this.mTranasactionCode);
 		APPLICATION.mItemAttemptsTransactionCodeArray[0] = this.mTransactionCode;
 
         	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update

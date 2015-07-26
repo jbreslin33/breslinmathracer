@@ -488,7 +488,6 @@ enter: function(item)
         {
                 APPLICATION.log('ITEM::CORRECT_ITEM');
         }
-        item.setTransactionCode(1);
         item.hideShapes();
 	item.hideQuestionShapes();
 	item.mUpdate = 0;

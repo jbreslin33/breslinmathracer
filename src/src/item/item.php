@@ -148,8 +148,9 @@ var Item = new Class(
 
 	setTransactionCode: function(code)
 	{
+		APPLICATION.log('setTransactionCode inside:' + code);
 		this.mTransactionCode = code;
-		this.mItemAttempt.setTransactionCode = code;
+		this.mItemAttempt.mTransactionCode = code;
 	},
 	
 	send: function()
