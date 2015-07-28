@@ -108,15 +108,18 @@ var Sheet = new Class(
 	
 	createItem: function()
 	{
-		var c = parseInt(APPLICATION.mItemTypesArray.length);	
-		var r = Math.floor(Math.random()*c);
-		
-		APPLICATION.mItemAttemptsID     = APPLICATION.mItemTypesArray[r];
-		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemTypesArray[0];
-
-		APPLICATION.getFirst();
-		APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
-		APPLICATION.log('first:' + APPLICATION.mFirst); 
+		var r = Math.floor(Math.random()*2);
+		if (r == 0)
+		{
+			APPLICATION.getFirst();
+			APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
+		}
+		if (r == 1)
+		{
+			//fake first 
+			APPLICATION.getFirst();
+			APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
+		}
 
 		var pick = 0;
 
@@ -146,6 +149,9 @@ var Sheet = new Class(
 		{
 			APPLICATION.log('no item picked by pickers!');
 		}
+
+		//set this as last for next run 
+		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
 	},
 
 	setTypeWrong: function(typeID)
