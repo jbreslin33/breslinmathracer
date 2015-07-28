@@ -154,7 +154,7 @@ Extends: Application,
 		}
 		this.mGame.setScore(score);
 	},
-
+//is it coounting zero as good?	
 	getFirst: function()
 	{
 		var first = '';
@@ -163,8 +163,9 @@ Extends: Application,
 		while (i < this.mItemTypesArray.length && first == '')
 		{
 			var tempArray = new Array();
+			var tempArray = [];
 			var j = 0;
-			while (j < this.mItemAttemptsTypeArray.length && tempArray.length < 2)
+			while (j < this.mItemAttemptsTypeArray.length && tempArray.length < 3)
 			{
 				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
 				{
@@ -178,10 +179,14 @@ Extends: Application,
 			}
 			else 
 			{
-				if (tempArray[0] != 1 && tempArray[1] != 1)
+				if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
+				{
+					//do nothing
+				}	
+				else
 				{
 					first = this.mItemTypesArray[i];  
-				}	
+				}
 			} 
 			i++;
 		}
