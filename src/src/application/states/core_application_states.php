@@ -783,55 +783,7 @@ enter: function(application)
 
 execute: function(application)
 {
-                APPLICATION.mRawData = 'k.cc.a.1_1';
-/*
-	if (application.mDataToRead == true) //we have some data to read
-	{
-        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
-        	APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
-                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
-                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
-                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
-                APPLICATION.mRole = APPLICATION.mResponseArray[7];
 
-               	APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
-               	APPLICATION.mWaitForReturn = false;
-                APPLICATION.mSent = false;
-
-		application.mDataToRead = false 
-	}
-
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::NORMAL_CORE_APPLICATION execute');
-	}
-	if (application.mEvaluationFailed)
-	{
-		application.mCoreStateMachine.changeState(application.mREMEDIATE_APPLICATION);
-	}
-	
-	if (application.mGotoPractice)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mGotoCore)
-	{
-		application.mCoreStateMachine.changeState(application.mCORE_APPLICATION);
-	}
-	
-	if (application.mLeavePractice)
-	{
-		application.mCoreStateMachine.changeState(application.mLEAVE_PRACTICE_APPLICATION);
-	}
-	
-	if (application.mGotoTimesTables)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_APPLICATION);
-	}
-*/
 },
 exit: function(application)
 {
