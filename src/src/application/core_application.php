@@ -56,7 +56,8 @@ Extends: Application,
 
 		//algorithms
 		this.mFirst = '';
-		this.mLeast = '';
+		this.mLeastAsked = '';
+		this.mLeastCorrect = '';
  
 		//personal info
 		this.mUsername = '';
@@ -194,7 +195,7 @@ Extends: Application,
 		this.mFirst = first;
 	},
 	
-     	getLeast: function()
+     	getLeastAsked: function()
         {
                 var id = '';
 		var idCount = 1000;
@@ -220,7 +221,39 @@ Extends: Application,
                         }
                         i++;
                 }
-                this.mLeast = id;
+                this.mLeastAsked = id;
+        },
+
+       	getLeastCorrect: function()
+        {
+                var id = '';
+                var idCount = 1000;
+                var i = 0;
+
+                while (i < this.mItemTypesArray.length)
+                {
+                        var tempArray = new Array();
+                        var tempArray = [];
+                        var j = 0;
+                        while (j < this.mItemAttemptsTypeArray.length)
+                        {
+                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+                                {
+					if (parseInt(this.mItemAttemptsTransactionCodeArray[j]) == 1)
+					{
+                                        	tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);
+					}
+                                }
+                                j++;
+                        }
+                        if (tempArray.length > 2 && tempArray.length < idCount) //we have a new least Correct id
+                        {
+                                id = this.mItemTypesArray[i];
+                                idCount = tempArray.length;
+                        }
+                        i++;
+                }
+                this.mLeastCorrect = id;
         },
 
         update: function()

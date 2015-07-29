@@ -108,8 +108,8 @@ var Sheet = new Class(
 	
 	createItem: function()
 	{
-		var r = Math.floor(Math.random()*2);
-		r == 1;
+		var r = Math.floor(Math.random()*3);
+		r == 2;
 		if (r == 0)
 		{
 			APPLICATION.getFirst();
@@ -117,9 +117,13 @@ var Sheet = new Class(
 		}
 		if (r == 1)
 		{
-			//fake first 
-			APPLICATION.getLeast();
-			APPLICATION.mItemAttemptsID = APPLICATION.mLeast;
+			APPLICATION.getLeastAsked();
+			APPLICATION.mItemAttemptsID = APPLICATION.mLeastAsked;
+		}
+		if (r == 2)
+		{
+			APPLICATION.getLeastCorrect();
+			APPLICATION.mItemAttemptsID = APPLICATION.mLeastCorrect;
 		}
 
 		var pick = 0;
