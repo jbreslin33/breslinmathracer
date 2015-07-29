@@ -109,7 +109,7 @@ var Sheet = new Class(
 	createItem: function()
 	{
 		var r = Math.floor(Math.random()*3);
-		r == 2;
+		r = 2;
 		if (r == 0)
 		{
 			APPLICATION.getFirst();

@@ -246,7 +246,7 @@ Extends: Application,
                                 }
                                 j++;
                         }
-                        if (tempArray.length > 2 && tempArray.length < idCount) //we have a new least Correct id
+                        if (tempArray.length > 1 && tempArray.length < idCount) //we have a new least Correct id
                         {
                                 id = this.mItemTypesArray[i];
                                 idCount = tempArray.length;
