@@ -108,22 +108,32 @@ var Sheet = new Class(
 	
 	createItem: function()
 	{
-		var r = Math.floor(Math.random()*3);
-		r = 2;
-		if (r == 0)
+		//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
+		
+		//would love to loop till we got no dup
+		while (APPLICATION.mItemAttemptsIDLast == APPLICATION.mItemAttemptsID)
 		{
-			APPLICATION.getFirst();
-			APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
-		}
-		if (r == 1)
-		{
-			APPLICATION.getLeastAsked();
-			APPLICATION.mItemAttemptsID = APPLICATION.mLeastAsked;
-		}
-		if (r == 2)
-		{
-			APPLICATION.getLeastCorrect();
-			APPLICATION.mItemAttemptsID = APPLICATION.mLeastCorrect;
+			var r = Math.floor(Math.random()*3);
+			//r = 2;
+
+			if (r == 0)
+			{
+				APPLICATION.log('getFirst');
+				APPLICATION.getFirst();
+				APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
+			}
+			if (r == 1)
+			{
+				APPLICATION.log('getLeastAsked');
+				APPLICATION.getLeastAsked();
+				APPLICATION.mItemAttemptsID = APPLICATION.mLeastAsked;
+			}
+			if (r == 2)
+			{
+				APPLICATION.log('getLeastCorrect');
+				APPLICATION.getLeastCorrect();
+				APPLICATION.mItemAttemptsID = APPLICATION.mLeastCorrect;
+			}
 		}
 
 		var pick = 0;
