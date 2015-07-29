@@ -56,6 +56,7 @@ Extends: Application,
 
 		//algorithms
 		this.mFirst = '';
+		this.mLeast = '';
  
 		//personal info
 		this.mUsername = '';
@@ -192,6 +193,35 @@ Extends: Application,
 		}
 		this.mFirst = first;
 	},
+	
+     	getLeast: function()
+        {
+                var id = '';
+		var idCount = 1000;
+                var i = 0;
+
+                while (i < this.mItemTypesArray.length)
+                {
+                        var tempArray = new Array();
+                        var tempArray = [];
+                        var j = 0;
+                        while (j < this.mItemAttemptsTypeArray.length)
+                        {
+                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+                                {
+                                        tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);
+                                }
+                                j++;
+                        }
+                        if (tempArray.length > 0 && tempArray.length < idCount) //we have a new least id
+                        {
+                                id = this.mItemTypesArray[i];
+				idCount = tempArray.length;
+                        }
+                        i++;
+                }
+                this.mLeast = id;
+        },
 
         update: function()
         {
