@@ -114,10 +114,9 @@ public function fillItemAttemptsArray()
 	}
 }
 
-public function updateScores($score,$unmastered)
+public function updateScores($score)
 {
 	$this->mScore = $score;
-	$this->mUnmasteredCount = $unmastered;
 
 	if ($this->logs)	
 	{
@@ -126,8 +125,6 @@ public function updateScores($score,$unmastered)
         /*********************  for teacher real time data  *************/
         $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
         $update .= $this->mScore;
-        $update .= ", unmastered = ";
-        $update .= $this->mUnmasteredCount;
         $update .= " WHERE id = ";
  	$update .= $this->mApplication->mLoginStudent->mUserID;
         $update .= ";";

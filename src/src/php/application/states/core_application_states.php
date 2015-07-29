@@ -191,7 +191,12 @@ public function execute($bapplication)
 			}
 		}
 	}
-
+  	
+	if ($bapplication->mCode == 171)
+        {
+		error_log('171 called');
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[1]);
+        }
 }
 public function bexit($bapplication)
 {

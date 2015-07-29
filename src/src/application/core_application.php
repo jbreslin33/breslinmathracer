@@ -39,6 +39,9 @@ Extends: Application,
 		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
 		this.ITEM_ATTEMPT_UPDATE_CONFIRMATION = 162;
 
+		//score
+		this.UPDATE_SCORE = 171;	
+
 		//admin
 		this.UPDATED_STANDARD_ID = 111;
 
@@ -156,6 +159,7 @@ Extends: Application,
 		}
 		this.mGame.setScore(score);
 	},
+
 //is it coounting zero as good?	
 	getFirst: function()
 	{
@@ -425,7 +429,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-
         signupStudent: function(username,password,first_name,last_name)
         {
 		APPLICATION.mSent = true;
@@ -654,6 +657,40 @@ Extends: Application,
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=152&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
                 xmlhttp.send();
         },
+
+       	sendUpdateScore: function(score)
+        {
+		APPLICATION.log('sendUpdateScore:' + score);
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=171&score=" + score,true);
+                xmlhttp.send();
+        },
+
 
 	sendItemAttempt: function(itemtypesid,transactioncode,question,answers,answer,itemattemptid)
         {
