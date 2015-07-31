@@ -660,7 +660,6 @@ Extends: Application,
 
        	sendUpdateScore: function(score)
         {
-		APPLICATION.log('sendUpdateScore:' + score);
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {

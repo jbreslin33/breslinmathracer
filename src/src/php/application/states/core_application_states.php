@@ -129,6 +129,14 @@ public function execute($bapplication)
 	if ($bapplication->mLoginStudent->mLoggedIn == 1)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+
+		$bapplication->mNormal->fillTypesArray(); //fill types
+		$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
+		$bapplication->mLoginStudent->sendLoginStudent();
+	}
+	else
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
 	}
 
 }
@@ -138,9 +146,6 @@ public function bexit($bapplication)
         {
                 error_log('LOGIN_STUDENT_APPLICATION Exit');
         }
-	$bapplication->mNormal->fillTypesArray(); //fill types
-	$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
-	$bapplication->mLoginStudent->sendLoginStudent();
 }
 
 }//end class
@@ -159,6 +164,8 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
+
+
 	$bapplication->update();		
 	
 	//evaluations_attempts insert...

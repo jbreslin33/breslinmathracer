@@ -70,9 +70,9 @@ execute: function(sheet)
 	{
                 sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);
 	}
-	else
+	if (sheet.mItem.mStateMachine.mCurrentState == sheet.mItem.mINCORRECT_ITEM)
 	{
-                //sheet.mStateMachine.changeState(sheet.mNORMAL_DUP_PREVENTER_SHEET);
+                sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);
 	}
 },
 
