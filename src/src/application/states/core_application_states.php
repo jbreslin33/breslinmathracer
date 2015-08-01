@@ -163,22 +163,19 @@ execute: function(application)
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
                 	APPLICATION.mRole = APPLICATION.mResponseArray[6];
-		}
-                var itemTypes = APPLICATION.mResponseArray[7];
-		APPLICATION.mItemTypesArray = itemTypes.split(":");
                 
-		var itemAttemptsTypes = APPLICATION.mResponseArray[8];
-		APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
+			var itemTypes = APPLICATION.mResponseArray[7];
+			APPLICATION.mItemTypesArray = itemTypes.split(":");
+                
+			var itemAttemptsTypes = APPLICATION.mResponseArray[8];
+			APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
 		
-		var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[9];
-		APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
+			var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[9];
+			APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
                	
-		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-
-		APPLICATION.log('itemTypesArray:' + APPLICATION.mItemTypesArray.length);
-		APPLICATION.log('itemAttemptsTypeArray:' + APPLICATION.mItemAttemptsTypeArray.length);
-		APPLICATION.log('itemAttemptsTransactionCodeArray:' + APPLICATION.mItemAttemptsTransactionCodeArray.length);
+			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+			application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+		}
 	}
 
 	else if (application.mBadUsername == true)
