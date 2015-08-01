@@ -866,7 +866,15 @@ enter: function(application)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
-	//application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new PracticeGame(APPLICATION);
+
 	application.mPracticeItemID = application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text; 
 },
 
@@ -884,7 +892,6 @@ execute: function(application)
 
 exit: function(application)
 {
-       	application.mGame.mReadyForNormalApplication = false;
 }
 
 });

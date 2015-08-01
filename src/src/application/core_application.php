@@ -99,7 +99,7 @@ Extends: Application,
 		this.mStateEnterTime = 0; 
 
 		/********** STATE FLAGS ************/
-		this.mPracticeItemID = '';
+		this.mPracticeItemID = '3.oa.c.7_44';
 		this.mEvaluationsID = 0;
 
 		/********* HUD *******************/ 

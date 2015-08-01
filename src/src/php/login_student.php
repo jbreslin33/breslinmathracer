@@ -19,7 +19,7 @@ function __construct($application)
 	$this->mLastName = 0;
 	$this->mUserID = 0;
 	$this->mCoreStandardsID = 0;
-	$this->mEvaluationsID = 1; //for now but this will change for time or assignment etc
+	$this->mEvaluationsID = 2; //for now but this will change for time or assignment etc
 }
 public function enterLogin($username,$password)
 {
