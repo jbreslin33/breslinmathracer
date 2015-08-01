@@ -172,9 +172,18 @@ execute: function(application)
 		
 			var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[9];
 			APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[10];
                	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-			application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+			if (application.mEvaluationsID == 1)
+			{
+				application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+			}
+			if (application.mEvaluationsID == 2)
+			{
+				application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+			}
 		}
 	}
 
@@ -787,7 +796,7 @@ enter: function(application)
 
 execute: function(application)
 {
-	if (application.mPractice == 1)
+	if (application.mEvaluationsID == 2)
 	{
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);
 	}
@@ -867,7 +876,7 @@ execute: function(application)
 	{
 		application.log('APPLICATION::PRACTICE_APPLICATION execute');
 	}
-	if (application.mNormal == 1)
+	if (application.mEvaluationsID == 1)
 	{
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 	}

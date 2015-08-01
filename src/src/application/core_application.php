@@ -99,10 +99,8 @@ Extends: Application,
 		this.mStateEnterTime = 0; 
 
 		/********** STATE FLAGS ************/
-		this.mNormal = 0;
-		this.mPractice = 0;
 		this.mPracticeItemID = '';
-
+		this.mEvaluationsID = 0;
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
