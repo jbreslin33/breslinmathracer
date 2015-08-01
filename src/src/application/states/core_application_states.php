@@ -776,13 +776,24 @@ enter: function(application)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION');
 	}
-	//get a new game if neccesary
-	application.gameDecider();
+    
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new NormalGame(APPLICATION);
+
 	application.calcScore();
 },
 
 execute: function(application)
 {
+	if (application.mPractice == 1)
+	{
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);
+	}
 
 },
 exit: function(application)
@@ -849,8 +860,8 @@ enter: function(application)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
-	application.mWaitForReturn = true;
-	application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
+	//application.practice(application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text);
+	application.mPracticeItemID = application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text; 
 },
 
 execute: function(application)
@@ -859,7 +870,7 @@ execute: function(application)
 	{
 		application.log('APPLICATION::PRACTICE_APPLICATION execute');
 	}
-	if (application.mWaitForReturn == false)
+	if (application.mNormal == 1)
 	{
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 	}

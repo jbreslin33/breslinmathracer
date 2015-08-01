@@ -77,6 +77,8 @@
 <script type="text/javascript" src="/src/item/states/states.php"></script>
 
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/normal_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/practice_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
@@ -90,6 +92,8 @@
 <script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
 
 <script type="text/javascript" src="/src/core/math/core_game.php"></script>
+<script type="text/javascript" src="/src/core/math/normal_game.php"></script>
+<script type="text/javascript" src="/src/core/math/practice_game.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_jim.php"></script>

@@ -98,6 +98,11 @@ Extends: Application,
 		this.mStateThresholdTime = 30000; 
 		this.mStateEnterTime = 0; 
 
+		/********** STATE FLAGS ************/
+		this.mNormal = 0;
+		this.mPractice = 0;
+		this.mPracticeItemID = '';
+
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);

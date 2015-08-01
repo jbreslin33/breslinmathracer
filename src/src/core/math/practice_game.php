@@ -1,12 +1,13 @@
-var CoreGame = new Class(
+var PracticeGame = new Class(
 {
 
 Extends: Game,
 
-	initialize: function(application,sheet)
+	initialize: function(application)
 	{
        		this.parent(application);
-		this.mSheet = sheet;	
+	
+		this.mSheet = new Sheet(this);	
 		this.mSheet.createItem();
 		this.mSheet.createShapes();
 	},
