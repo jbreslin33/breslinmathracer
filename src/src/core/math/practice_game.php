@@ -1,30 +1,12 @@
 var PracticeGame = new Class(
 {
 
-Extends: Game,
+Extends: CoreGame,
 
-	initialize: function(application)
-	{
-       		this.parent(application);
-	
-		this.mSheet = new Sheet(this);	
-		this.mSheet.createItem();
-		this.mSheet.createShapes();
-	},
+initialize: function(application)
+{
+	this.mSheet = new PracticeSheet(this);	
+       	this.parent(application,this.mSheet);
+}
 
-	destructor: function()
-	{
-		this.parent();
-		this.mSheet.destructor();
-	},
-
-	update: function()
-	{
-		this.parent();
-	
-		if (this.mSheet)
-		{	
-			this.mSheet.update();
-		}
-	}
 });
