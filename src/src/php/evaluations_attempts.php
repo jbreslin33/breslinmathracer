@@ -4,10 +4,10 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 class EvaluationsAttempts
 {
 
-function __construct($application,$datenow)
+function __construct($application,$evaluationsID,$datenow)
 {
 	$this->mApplication = $application;
-	$this->mEvaluationsID = 1;
+	$this->mEvaluationsID = $evaluationsID;
 	$this->mID = 0;
 	$this->mDateNow = $datenow;
 

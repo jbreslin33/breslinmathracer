@@ -207,7 +207,7 @@ public function enter($bapplication)
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,$bapplication->mDataArray[4]);
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,1,$bapplication->mDataArray[4]);
 	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
 	//pointer to current evaluationsAttempt
@@ -221,7 +221,6 @@ public function execute($bapplication)
         if ($bapplication->mLogs == true)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
-		error_log($bapplication->mCode);
         }
 	if ($bapplication->mCode == 2)
 	{
@@ -232,7 +231,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 	}
-	if ($bapplication->mCode == 101)
+	if ($bapplication->mCode == 101 || $bapplication->mCode == 102)
 	{
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 
@@ -272,16 +271,12 @@ public function enter($bapplication)
         {
                 error_log('PRACTICE_APPLICATION Enter');
         }
-        if ($bapplication->mInitialized == 1)
-	{
-		//sendConfirmation
-	}
-	else
-	{
-        	$bapplication->mInitialized = 1;
-	}
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,2,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication);
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
 	$bapplication->update();		
 }
 
@@ -291,20 +286,16 @@ public function execute($bapplication)
         {
                 error_log('PRACTICE_APPLICATION Execute');
         }
-
 	if ($bapplication->mCode == 1)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
 	}	
-
-	//insert item	
 	if ($bapplication->mCode == 2)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 	}
-	//update item	
-	if ($bapplication->mCode == 102)
+	if ($bapplication->mCode == 101 || $bapplication->mCode == 102)
 	{
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 
