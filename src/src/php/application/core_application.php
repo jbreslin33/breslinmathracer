@@ -28,6 +28,18 @@ if (isset($_GET["code"]))
 $APPLICATION->mCode = $code;
 
 //parseData
+if ($code == 1)
+{
+	unset($APPLICATION->mDataArray);
+	$APPLICATION->mDataArray = array();
+	$APPLICATION->mDataArray[] = "1";
+}
+if ($code == 2)
+{
+	unset($APPLICATION->mDataArray);
+	$APPLICATION->mDataArray = array();
+	$APPLICATION->mDataArray[] = "2";
+}
 if ($code == 117)
 {
 	unset($APPLICATION->mDataArray);
@@ -104,11 +116,12 @@ function __construct()
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin
-       	$this->mGLOBAL_CORE_APPLICATION         = new GLOBAL_CORE_APPLICATION        ($this);
-        $this->mINIT_CORE_APPLICATION           = new INIT_CORE_APPLICATION          ($this);
-        $this->mWAIT_CORE_APPLICATION           = new WAIT_CORE_APPLICATION          ($this);
-        $this->mLOGIN_STUDENT_APPLICATION       = new LOGIN_STUDENT_APPLICATION      ($this);
-        $this->mNORMAL_CORE_APPLICATION         = new NORMAL_CORE_APPLICATION        ($this);
+       	$this->mGLOBAL_CORE_APPLICATION   = new GLOBAL_CORE_APPLICATION        ($this);
+        $this->mINIT_CORE_APPLICATION     = new INIT_CORE_APPLICATION          ($this);
+        $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
+        $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
+        $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
+        $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
 
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);

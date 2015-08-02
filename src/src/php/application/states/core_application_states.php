@@ -128,11 +128,18 @@ public function execute($bapplication)
 
 	if ($bapplication->mLoginStudent->mLoggedIn == 1)
 	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-
 		$bapplication->mNormal->fillTypesArray(); //fill types
 		$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
 		$bapplication->mLoginStudent->sendLoginStudent();
+
+		if ($bapplication->mEvaluationsAttempts->mEvaluationsID == 1)
+		{
+			$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+		}
+		if ($bapplication->mEvaluationsAttempts->mEvaluationsID == 2)
+		{
+			$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
+		}
 	}
 	else
 	{
@@ -164,14 +171,8 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
-
-
 	$bapplication->update();		
-	
-	//evaluations_attempts insert...
- 	$bapplication->mEvaluationsAttempts->mEvaluationsID = 1; //currently normal
         $bapplication->mEvaluationsAttempts->insert();
-
 }
 
 public function execute($bapplication)
@@ -180,7 +181,10 @@ public function execute($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
         }
-	
+	if ($bapplication->mCode == 2)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
+	}	
 	if ($bapplication->mCode == 151)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -193,7 +197,6 @@ public function execute($bapplication)
 		{ 
 			if ($bapplication->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
-				//update should check if updated already.....if so it should send confirmation again
 				$bapplication->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
@@ -201,7 +204,6 @@ public function execute($bapplication)
   	
 	if ($bapplication->mCode == 171)
         {
-		error_log('171 called');
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[1]);
         }
 }
@@ -214,6 +216,67 @@ public function bexit($bapplication)
 }
 
 }//end class
+
+class PRACTICE_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('PRACTICE_APPLICATION Enter');
+        }
+
+	$bapplication->update();		
+        $bapplication->mEvaluationsAttempts->insert();
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('PRACTICE_APPLICATION Execute');
+        }
+
+	if ($bapplication->mCode == 1)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+	}	
+
+	//insert item	
+	if ($bapplication->mCode == 151)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mItemAttemptsArray[] = $itemAttempt;
+	}
+	//update item	
+	if ($bapplication->mCode == 152)
+	{
+		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+			}
+		}
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('PRACTICE_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+
 
 
 ?>

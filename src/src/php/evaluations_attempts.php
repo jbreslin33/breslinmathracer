@@ -7,7 +7,7 @@ class EvaluationsAttempts
 function __construct($application)
 {
 	$this->mApplication = $application;
-	$this->mEvaluationsID = 1;
+	$this->mEvaluationsID = 2;
 	$this->mID = 0;
 }
 

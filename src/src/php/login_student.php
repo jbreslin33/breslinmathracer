@@ -19,7 +19,6 @@ function __construct($application)
 	$this->mLastName = 0;
 	$this->mUserID = 0;
 	$this->mCoreStandardsID = 0;
-	$this->mEvaluationsID = 2; //for now but this will change for time or assignment etc
 }
 public function enterLogin($username,$password)
 {
@@ -97,7 +96,7 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataC;
 	$returnString .= ",";
-	$returnString .= $this->mEvaluationsID;
+	$returnString .= $this->mApplication->mEvaluationsAttempts->mEvaluationsID;
 	echo $returnString;
 }
 
