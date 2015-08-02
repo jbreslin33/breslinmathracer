@@ -28,18 +28,6 @@ if (isset($_GET["code"]))
 $APPLICATION->mCode = $code;
 
 //parseData
-if ($code == 1)
-{
-	unset($APPLICATION->mDataArray);
-	$APPLICATION->mDataArray = array();
-	$APPLICATION->mDataArray[] = "1";
-}
-if ($code == 2)
-{
-	unset($APPLICATION->mDataArray);
-	$APPLICATION->mDataArray = array();
-	$APPLICATION->mDataArray[] = "2";
-}
 if ($code == 117)
 {
 	unset($APPLICATION->mDataArray);
@@ -62,23 +50,45 @@ if ($code == 130)
 	$APPLICATION->mDataArray[] = $_GET["answer"];
 	$APPLICATION->mDataArray[] = $_GET["itemattemptid"];
 }
-if ($code == 151)
+//u need a first of its kind flag and on client side store in different array? maybe a datenow_item and datenow_evaluation then u can do what u want on server
+if ($code == 1)
 {
         unset($APPLICATION->mDataArray);
         $APPLICATION->mDataArray = array();
 
-        $APPLICATION->mDataArray[] = "151";
+        $APPLICATION->mDataArray[] = "1";
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
 }
-if ($code == 152)
+if ($code == 101)
 {
         unset($APPLICATION->mDataArray);
         $APPLICATION->mDataArray = array();
 
-        $APPLICATION->mDataArray[] = "152";
+        $APPLICATION->mDataArray[] = "101";
+        $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
+        $APPLICATION->mDataArray[] = $_GET["transactioncode"];
+        $APPLICATION->mDataArray[] = $_GET["answer"];
+}
+if ($code == 2)
+{
+        unset($APPLICATION->mDataArray);
+        $APPLICATION->mDataArray = array();
+
+        $APPLICATION->mDataArray[] = "2";
+        $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
+        $APPLICATION->mDataArray[] = $_GET["question"];
+        $APPLICATION->mDataArray[] = $_GET["answers"];
+        $APPLICATION->mDataArray[] = $_GET["datenow"];
+}
+if ($code == 102)
+{
+        unset($APPLICATION->mDataArray);
+        $APPLICATION->mDataArray = array();
+
+        $APPLICATION->mDataArray[] = "102";
         $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
         $APPLICATION->mDataArray[] = $_GET["transactioncode"];
         $APPLICATION->mDataArray[] = $_GET["answer"];
@@ -110,6 +120,8 @@ function __construct()
 	$this->mRef_id = 'login';
 
 	$this->mInitialized = 0;
+	$this->mEvaluationsID = 1;
+	$this->mEvaluationsAttempt = 0;
 
 	$this->mDataArray = array();
 	$this->mCode = 0;
@@ -122,6 +134,7 @@ function __construct()
         $this->mINIT_CORE_APPLICATION     = new INIT_CORE_APPLICATION          ($this);
         $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
+        $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
 
@@ -130,9 +143,9 @@ function __construct()
 	
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
-	$this->mEvaluationsAttempts = new EvaluationsAttempts($this);	
 	
 	$this->mItemAttemptsArray = array();
+	$this->mEvaluationsAttemptsArray = array();
 
 	$this->update();
 }

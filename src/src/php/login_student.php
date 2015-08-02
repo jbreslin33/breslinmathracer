@@ -96,7 +96,8 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataC;
 	$returnString .= ",";
-	$returnString .= $this->mApplication->mEvaluationsAttempts->mEvaluationsID;
+	//$returnString .= $this->mApplication->mEvaluationsAttempts->mEvaluationsID;
+	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;
 }
 

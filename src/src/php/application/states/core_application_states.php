@@ -131,16 +131,9 @@ public function execute($bapplication)
 		$bapplication->mNormal->fillTypesArray(); //fill types
 		$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
 		$bapplication->mLoginStudent->sendLoginStudent();
-
-		if ($bapplication->mEvaluationsAttempts->mEvaluationsID == 1)
-		{
-			$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-		}
-		if ($bapplication->mEvaluationsAttempts->mEvaluationsID == 2)
-		{
-			$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-		}
-	}
+			
+		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_GAME_APPLICATION);
+	}	
 	else
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
@@ -157,6 +150,48 @@ public function bexit($bapplication)
 
 }//end class
 
+class WAIT_GAME_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('WAIT_GAME_APPLICATION Enter');
+        }
+	$bapplication->update();
+}
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('WAIT_GAME_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 1)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+	}
+	if ($bapplication->mCode == 2)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('WAIT_GAME_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+
 class NORMAL_CORE_APPLICATION extends State
 {
 
@@ -171,17 +206,14 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
-        if ($bapplication->mInitialized == 1)
-	{
-		//sendConfirmation
-	}
-	else
-	{
-        	$bapplication->mInitialized = 1;
-	}
-	
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
 	$bapplication->update();		
-        $bapplication->mEvaluationsAttempts->insert();
 }
 
 public function execute($bapplication)
@@ -189,18 +221,18 @@ public function execute($bapplication)
         if ($bapplication->mLogs == true)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
+		error_log($bapplication->mCode);
         }
 	if ($bapplication->mCode == 2)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
 	}	
-	if ($bapplication->mCode == 151)
+	if ($bapplication->mCode == 1)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
-			
 	}
-	if ($bapplication->mCode == 152)
+	if ($bapplication->mCode == 101)
 	{
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 
@@ -249,8 +281,8 @@ public function enter($bapplication)
         	$bapplication->mInitialized = 1;
 	}
 
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication);
 	$bapplication->update();		
-        $bapplication->mEvaluationsAttempts->insert();
 }
 
 public function execute($bapplication)
@@ -266,13 +298,13 @@ public function execute($bapplication)
 	}	
 
 	//insert item	
-	if ($bapplication->mCode == 151)
+	if ($bapplication->mCode == 2)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 	}
 	//update item	
-	if ($bapplication->mCode == 152)
+	if ($bapplication->mCode == 102)
 	{
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 

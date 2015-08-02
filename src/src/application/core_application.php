@@ -43,6 +43,9 @@ Extends: Application,
 		//ITEM_ATTEMPTS
 		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
 		this.ITEM_ATTEMPT_UPDATE_CONFIRMATION = 162;
+		
+		//EVALUATION_ATTEMPTS
+		this.EVALUATION_ATTEMPT_INSERT_CONFIRMATION = 141;
 
 		//score
 		this.UPDATE_SCORE = 171;	
@@ -53,10 +56,13 @@ Extends: Application,
 
 		//db arrays
 		this.mItemAttemptsArray = new Array();
+		this.mEvaluationAttemptsArray = new Array();
 
+		//item_attempts
 		this.mItemTypesArray = new Array();
 		this.mItemAttemptsTypeArray = new Array();
 		this.mItemAttemptsTransactionCodeArray = new Array();
+		
 
 		//score
 		this.mScore = 0;
@@ -104,7 +110,7 @@ Extends: Application,
 
 		/********** STATE FLAGS ************/
 		this.mPracticeItemID = '3.oa.c.7_44';
-		this.mEvaluationsID = 0;
+		this.mEvaluationsID = 1;
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -273,6 +279,10 @@ Extends: Application,
 		for (i=0; i < this.mItemAttemptsArray.length; i++)
 		{
 			this.mItemAttemptsArray[i].update();
+		}
+		for (i=0; i < this.mEvaluationAttemptsArray.length; i++)
+		{
+			this.mEvaluationAttemptsArray[i].update();
 		}
         },
 	
@@ -605,7 +615,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow)
+        sendItemAttemptInsertNormal: function(itemtypesid,question,answers,datenow)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -633,11 +643,44 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=151&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=1&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
+                xmlhttp.send();
+        },
+      
+	sendItemAttemptInsertPractice: function(itemtypesid,question,answers,datenow)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=2&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
                 xmlhttp.send();
         },
 
-       	sendItemAttemptUpdate: function(itemattemptid,transactioncode,answer)
+       
+	sendEvaluationAttemptInsert: function(datenow)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -665,9 +708,74 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=152&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=141&datenow=" + datenow,true);
                 xmlhttp.send();
         },
+
+       	sendItemAttemptUpdateNormal: function(itemattemptid,transactioncode,answer)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
+                xmlhttp.send();
+        },
+ 
+	sendItemAttemptUpdatePractice: function(itemattemptid,transactioncode,answer)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=102&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
+                xmlhttp.send();
+        },
+
 
        	sendUpdateScore: function(score)
         {

@@ -27,6 +27,7 @@ var ItemAttempt = new Class(
 		this.mTransactionCode = 0;
 		this.mType = 0; 
 		this.mUpdateConfirmation = 0;
+		this.mEvaluationsID = 0;
 
 		this.mAnswers = '';
 		this.mAnswersTxt = '';
@@ -41,6 +42,10 @@ var ItemAttempt = new Class(
 	setTransactionCode: function(code)
 	{
 		this.mTransactionCode = code;
+	},
+	setEvaluationsID: function(evaluationsID)
+	{
+		this.mEvaluationsID = evaluationsID;
 	},
 
 	sendInsert: function()
@@ -85,14 +90,29 @@ var ItemAttempt = new Class(
 		}
 
 		//update server
-        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
+		if (this.mEvaluationsID == 1)
+		{
+        		APPLICATION.sendItemAttemptInsertNormal(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
+		}
+		if (this.mEvaluationsID == 2)
+		{
+        		APPLICATION.sendItemAttemptInsertPractice(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
+		}
 	},	
 	sendUpdate: function()
 	{
 		//update client
 		//APPLICATION.mItemAttemptsTransactionCodeArray[0] = this.mTransactionCode;
 
-        	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
+		if (this.mEvaluationsID == 1)
+		{
+        		APPLICATION.sendItemAttemptUpdateNormal(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
+		}
+		if (this.mEvaluationsID == 2)
+		{
+        		APPLICATION.sendItemAttemptUpdatePractice(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
+		}
+		
 	},
 
 	update: function()

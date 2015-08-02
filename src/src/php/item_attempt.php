@@ -23,7 +23,7 @@ public function insert()
 {
 	$db = new DatabaseConnection();
  	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id,question,answers) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $this->mApplication->mEvaluationsAttempts->mID;
+        $insert .= $this->mApplication->mEvaluationsAttempt->mID;
         $insert .= ",0,'";
         $insert .= $this->mItemTypeID;
 	$insert .= "','";  

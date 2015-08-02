@@ -159,6 +159,7 @@ var Sheet = new Class(
 			APPLICATION.mItemAttemptsArray.push(itemAttempt);
 			pick.setItemAttempt(itemAttempt);
 			itemAttempt.mType = pick.mType;
+			itemAttempt.setEvaluationsID(1);
 		}
 		else
 		{

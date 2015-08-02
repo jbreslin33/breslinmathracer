@@ -33,6 +33,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
+		itemAttempt.setEvaluationsID(2);
         }
         else
         {

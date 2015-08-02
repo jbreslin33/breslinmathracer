@@ -4,11 +4,14 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 class EvaluationsAttempts
 {
 
-function __construct($application)
+function __construct($application,$datenow)
 {
 	$this->mApplication = $application;
 	$this->mEvaluationsID = 1;
 	$this->mID = 0;
+	$this->mDateNow = $datenow;
+
+	$this->insert();
 }
 
 public function insert()
@@ -39,6 +42,15 @@ public function insert()
                 //set level_id
                 $this->mID = $evaluations_attempts_id;
         }
+
+	//fill php vars
+/*
+        $returnString = "141,";
+        $returnString .= $this->mDateNow;
+        $returnString .= ",";
+        $returnString .= $this->mID;
+        echo $returnString;
+*/
 }
 
 //might not even use this as it basically closes out the next day. maybe close it on session timeout
