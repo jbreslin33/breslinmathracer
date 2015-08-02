@@ -23,6 +23,6 @@ Extends: Shape,
 	//-------- EVENT HANDLING 
         buttonHit: function()
         {
-		APPLICATION.mGotoPractice = true;
+		APPLICATION.mEvaluationsID = 2;
         }
 });

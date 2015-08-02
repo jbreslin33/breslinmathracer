@@ -324,7 +324,6 @@ execute: function(application)
 	
 	if (application.mDataToRead == true) //we have some data to read
 	{
-		APPLICATION.log('full in exe');
 		//lets sniff packet
                 APPLICATION.mLoggedIn = APPLICATION.mResponseArray[1]; //no refid so its element 1
 		APPLICATION.mDataToRead = false;

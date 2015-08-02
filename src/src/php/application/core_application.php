@@ -109,6 +109,8 @@ function __construct()
 	//big vars
 	$this->mRef_id = 'login';
 
+	$this->mInitialized = 0;
+
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;

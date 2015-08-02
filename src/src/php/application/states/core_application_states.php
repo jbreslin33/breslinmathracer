@@ -171,6 +171,15 @@ public function enter($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
+        if ($bapplication->mInitialized == 1)
+	{
+		//sendConfirmation
+	}
+	else
+	{
+        	$bapplication->mInitialized = 1;
+	}
+	
 	$bapplication->update();		
         $bapplication->mEvaluationsAttempts->insert();
 }
@@ -231,6 +240,14 @@ public function enter($bapplication)
         {
                 error_log('PRACTICE_APPLICATION Enter');
         }
+        if ($bapplication->mInitialized == 1)
+	{
+		//sendConfirmation
+	}
+	else
+	{
+        	$bapplication->mInitialized = 1;
+	}
 
 	$bapplication->update();		
         $bapplication->mEvaluationsAttempts->insert();

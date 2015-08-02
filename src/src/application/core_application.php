@@ -11,6 +11,11 @@ Extends: Application,
 		this.mStateLogsExit = false; 
 
 		//parse codes
+
+		//games
+		this.NORMAL = 1;
+		this.PRACTICE = 2;
+
 		//login
 		this.TIMED_OUT = 105;
 		this.NOT_LOGGED_IN = 102;
@@ -45,7 +50,6 @@ Extends: Application,
 		//admin
 		this.UPDATED_STANDARD_ID = 111;
 
-		this.NORMAL = 116;
 
 		//db arrays
 		this.mItemAttemptsArray = new Array();
@@ -336,6 +340,14 @@ Extends: Application,
                                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
                                 this.mSent = false;
                         }
+                        if (codeNumber == APPLICATION.NORMAL)
+                        {
+                                APPLICATION.mDataToRead = true;
+                        }
+                        if (codeNumber == APPLICATION.PRACTICE)
+                        {
+                                APPLICATION.mDataToRead = true;
+                        }
                         
 			if (codeNumber == APPLICATION.ITEM_ATTEMPT_INSERT_CONFIRMATION)
 			{
@@ -370,10 +382,6 @@ Extends: Application,
 				this.mSent = false;		
 			}
 
-                        if (codeNumber == APPLICATION.NORMAL)
-                        {
-                                APPLICATION.mDataToRead = true;
-                        }
 
 			if (codeNumber == APPLICATION.STANDARD_DESCRIPTION)
                         {
@@ -726,6 +734,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
+	//call this for switch not initial
         normal: function()
         {
 		APPLICATION.log('normal call');
@@ -755,10 +764,11 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=116",true); 
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=1",true); 
                 xmlhttp.send();
         },
 
+	//call this for switch not initial
 	practice: function(typeid)
         {
                 var xmlhttp;
@@ -787,14 +797,7 @@ Extends: Application,
                                 }
                         }
 		}
-		if (this.mRef_id == 'practice')
-		{
-                	xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid + "&start_new=0",true);
-		}
-		else
-		{
-                	xmlhttp.open("POST","../../web/php/practice.php?typeid=" + typeid + "&start_new=1",true);
-		}	
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=2",true); 
                 xmlhttp.send();
         },
        
