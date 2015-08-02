@@ -865,6 +865,7 @@ enter: function(application)
         {
                 application.log('APPLICATION::PRACTICE_APPLICATION');
         }
+	application.mPracticeItemID = application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text; 
 
 	//if already have a game destroy it.
         if (application.mGame)
@@ -874,7 +875,6 @@ enter: function(application)
         }
         application.mGame = new PracticeGame(APPLICATION);
 
-	application.mPracticeItemID = application.mGame.mSheet.getItem().mPracticeInfo.mMesh.options[application.mGame.mSheet.getItem().mPracticeInfo.mMesh.selectedIndex].text; 
 },
 
 execute: function(application)
