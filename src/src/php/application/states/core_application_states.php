@@ -231,7 +231,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 	}
-	if ($bapplication->mCode == 101 || $bapplication->mCode == 102)
+	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 
@@ -295,7 +295,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
 	}
-	if ($bapplication->mCode == 101 || $bapplication->mCode == 102)
+	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
 		{ 

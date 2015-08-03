@@ -212,7 +212,7 @@ execute: function(item)
 
 exit: function(item)
 {
-	item.send();
+	//item.send();
 	APPLICATION.calcScore();
 	APPLICATION.sendUpdateScore(APPLICATION.mGame.mScore);
 }

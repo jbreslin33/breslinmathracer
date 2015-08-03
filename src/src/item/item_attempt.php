@@ -89,30 +89,12 @@ var ItemAttempt = new Class(
 			APPLICATION.mItemAttemptsTransactionCodeArray.unshift(0);
 		}
 
-		//update server
-		if (this.mEvaluationsID == 1)
-		{
-        		APPLICATION.sendItemAttemptInsertNormal(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
-		}
-		if (this.mEvaluationsID == 2)
-		{
-        		APPLICATION.sendItemAttemptInsertPractice(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow);
-		}
+        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID);
 	},	
+
 	sendUpdate: function()
 	{
-		//update client
-		//APPLICATION.mItemAttemptsTransactionCodeArray[0] = this.mTransactionCode;
-
-		if (this.mEvaluationsID == 1)
-		{
-        		APPLICATION.sendItemAttemptUpdateNormal(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
-		}
-		if (this.mEvaluationsID == 2)
-		{
-        		APPLICATION.sendItemAttemptUpdatePractice(this.mID,this.mTransactionCode,this.mUserAnswer); //thats it cause none of this will change so no harm in updating again though server may not want to update
-		}
-		
+        	APPLICATION.sendItemAttemptUpdate(this.mID,this.mTransactionCode,this.mUserAnswer); 
 	},
 
 	update: function()

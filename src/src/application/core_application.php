@@ -615,7 +615,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-        sendItemAttemptInsertNormal: function(itemtypesid,question,answers,datenow)
+        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -643,43 +643,10 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=1&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
                 xmlhttp.send();
         },
       
-	sendItemAttemptInsertPractice: function(itemtypesid,question,answers,datenow)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=2&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
-                xmlhttp.send();
-        },
-
-       
 	sendEvaluationAttemptInsert: function(datenow)
         {
                 var xmlhttp;
@@ -712,7 +679,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-       	sendItemAttemptUpdateNormal: function(itemattemptid,transactioncode,answer)
+       	sendItemAttemptUpdate: function(itemattemptid,transactioncode,answer)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -744,39 +711,6 @@ Extends: Application,
                 xmlhttp.send();
         },
  
-	sendItemAttemptUpdatePractice: function(itemattemptid,transactioncode,answer)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=102&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
-                xmlhttp.send();
-        },
-
-
        	sendUpdateScore: function(score)
         {
                 var xmlhttp;
@@ -809,106 +743,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-
-	sendItemAttempt: function(itemtypesid,transactioncode,question,answers,answer,itemattemptid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=130&itemtypesid=" + itemtypesid + "&transactioncode=" + transactioncode + "&question=" + question + "&answers=" + answers + "&answer=" + answer + "&itemattemptid=" + itemattemptid,true);
-                xmlhttp.send();
-        },
-
-	//call this for switch not initial
-        normal: function()
-        {
-		APPLICATION.log('normal call');
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=1",true); 
-                xmlhttp.send();
-        },
-
-	//call this for switch not initial
-	practice: function(typeid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-		}
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=2",true); 
-                xmlhttp.send();
-        },
-       
 	timestables: function(tablenumber)
         {
                 var xmlhttp;
