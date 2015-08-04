@@ -229,16 +229,16 @@ public function execute($bapplication)
 	if ($bapplication->mCode == 1)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
-		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
 		{ 
-			if ($bapplication->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
-				$bapplication->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
 	}
@@ -289,15 +289,15 @@ public function execute($bapplication)
 	if ($bapplication->mCode == 2)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
-		for ($i=0; $i < count($bapplication->mItemAttemptsArray); $i++)
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
 		{ 
-			if ($bapplication->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
-				$bapplication->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
 	}

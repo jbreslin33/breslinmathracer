@@ -11,6 +11,8 @@ function __construct($application,$evaluationsID,$datenow)
 	$this->mID = 0;
 	$this->mDateNow = $datenow;
 
+	$this->mItemAttemptsArray = array();
+
 	$this->insert();
 }
 

@@ -135,7 +135,6 @@ function __construct()
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
 	
-	$this->mItemAttemptsArray = array();
 	$this->mEvaluationsAttemptsArray = array();
 
 	$this->update();
