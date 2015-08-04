@@ -61,6 +61,7 @@ if ($code == 1)
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
+        $APPLICATION->mDataArray[] = $_GET["score"];
 }
 if ($code == 101)
 {
@@ -93,16 +94,6 @@ if ($code == 102)
         $APPLICATION->mDataArray[] = $_GET["transactioncode"];
         $APPLICATION->mDataArray[] = $_GET["answer"];
 }
-
-if ($code == 171)
-{
-        unset($APPLICATION->mDataArray);
-        $APPLICATION->mDataArray = array();
-
-        $APPLICATION->mDataArray[] = "171";
-        $APPLICATION->mDataArray[] = $_GET["score"];
-}
-
 
 //update
 $APPLICATION->update();	

@@ -230,6 +230,7 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mItemAttemptsArray[] = $itemAttempt;
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -241,11 +242,12 @@ public function execute($bapplication)
 			}
 		}
 	}
-  	
+  /*	
 	if ($bapplication->mCode == 171)
         {
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[1]);
         }
+*/
 }
 public function bexit($bapplication)
 {

@@ -614,7 +614,7 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id)
+        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id,score)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -642,7 +642,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow + "&score=" + score,true);
                 xmlhttp.send();
         },
       
@@ -678,38 +678,6 @@ Extends: Application,
                 xmlhttp.send();
         },
  
-       	sendUpdateScore: function(score)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=171&score=" + score,true);
-                xmlhttp.send();
-        },
-
 	timestables: function(tablenumber)
         {
                 var xmlhttp;

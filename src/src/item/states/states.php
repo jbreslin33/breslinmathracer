@@ -214,7 +214,6 @@ exit: function(item)
 {
 	//item.send();
 	APPLICATION.calcScore();
-	APPLICATION.sendUpdateScore(APPLICATION.mGame.mScore);
 }
 });
 
