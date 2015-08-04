@@ -242,12 +242,6 @@ public function execute($bapplication)
 			}
 		}
 	}
-  /*	
-	if ($bapplication->mCode == 171)
-        {
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[1]);
-        }
-*/
 }
 public function bexit($bapplication)
 {

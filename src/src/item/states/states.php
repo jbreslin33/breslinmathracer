@@ -212,7 +212,6 @@ execute: function(item)
 
 exit: function(item)
 {
-	//item.send();
 	APPLICATION.calcScore();
 }
 });
