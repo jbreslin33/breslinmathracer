@@ -142,7 +142,6 @@ Extends: Application,
 
 		//practice
                 this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
-                this.mLEAVE_PRACTICE_APPLICATION       = new LEAVE_PRACTICE_APPLICATION    (this);
 	
 		//tables
                 this.mTIMES_TABLES_APPLICATION         = new TIMES_TABLES_APPLICATION      (this);
@@ -647,38 +646,6 @@ Extends: Application,
                 xmlhttp.send();
         },
       
-	sendEvaluationAttemptInsert: function(datenow)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=141&datenow=" + datenow,true);
-                xmlhttp.send();
-        },
-
        	sendItemAttemptUpdate: function(itemattemptid,transactioncode,answer)
         {
                 var xmlhttp;
@@ -905,38 +872,6 @@ Extends: Application,
                 }
 
 
-                xmlhttp.send();
-        },
-
-        leavePractice: function(typeid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../web/php/leave_practice.php",true);
                 xmlhttp.send();
         },
 
