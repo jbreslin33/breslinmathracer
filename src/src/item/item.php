@@ -560,10 +560,7 @@ var Item = new Class(
 	
        	showPractice: function()
         {      
-                if (this.mPracticeDescription == '')
-                {
-                        APPLICATION.getPracticeDescription(this.mType);
-                }
+                //APPLICATION.getPracticeDescription(this.mType);
 
 		if (APPLICATION.mRef_id == 'practice')
 		{
@@ -692,13 +689,11 @@ var Item = new Class(
 
 	fillPracticeSelect: function()
 	{
-		var array = this.mPracticeDescription.split(":");
-
-                for (var i = 0; i < array.length; i++)
+                for (var i = 0; i < APPLICATION.mItemTypesArray.length; i++)
                 {
 			var option = document.createElement("option");
-    			option.value = array[i];
-    			option.text = array[i];
+    			option.value = APPLICATION.mItemTypesArray[i];
+    			option.text = APPLICATION.mItemTypesArray[i];
          		if (navigator.appName == "Microsoft Internet Explorer")
 			{
     				this.mPracticeInfo.mMesh.add(option);		

@@ -402,14 +402,6 @@ Extends: Application,
                                 APPLICATION.mGame.mSheet.mItem.mItemDescription = this.mResponseArray[1];
                                 APPLICATION.mGame.mSheet.mItem.mItemInfo.setText(this.mResponseArray[1]);
                         }
-			if (codeNumber == APPLICATION.PRACTICE_DESCRIPTION)
-                        {
-                                APPLICATION.mGame.mSheet.mItem.mPracticeDescription = this.mResponseArray[1];
-                                APPLICATION.mGame.mSheet.mItem.fillPracticeSelect();
-                        }
-			if (codeNumber == APPLICATION.STUDENT_ITEM_STATS)
-                        {
-                        }
 			if (codeNumber == APPLICATION.SCROLL)
 			{
 				APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
@@ -907,38 +899,6 @@ Extends: Application,
                 xmlhttp.send();
         },
 
-	getPracticeDescription: function(typeid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../web/php/get_practice_description.php",true);
-                xmlhttp.send();
-        },
-        
 	getCoreDescription: function(typeid)
         {
                 var xmlhttp;

@@ -69,6 +69,7 @@ var Hud = new Class(
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Practice")
 		{
+			APPLICATION.mGame.mSheet.getItem().fillPracticeSelect();
                         APPLICATION.mGame.mSheet.getItem().mShowPractice = true;
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Item description")
