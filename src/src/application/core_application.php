@@ -120,7 +120,8 @@ Extends: Application,
                 this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
 	
 		//tables
-                this.mTIMES_TABLES_APPLICATION         = new TIMES_TABLES_APPLICATION      (this);
+                this.mTIMES_TABLES_WAIT_APPLICATION    = new TIMES_TABLES_WAIT_APPLICATION      (this);
+                this.mTIMES_TABLES_TWO_APPLICATION     = new TIMES_TABLES_TWO_APPLICATION      (this);
 	
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);

@@ -798,6 +798,10 @@ execute: function(application)
 	{
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);
 	}
+	if (application.mEvaluationsID == 3)
+	{
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mTIMES_TABLES_TWO_APPLICATION);
+	}
 
 },
 exit: function(application)
@@ -888,7 +892,7 @@ exit: function(application)
 
 });
 
-var TIMES_TABLES_APPLICATION = new Class(
+var TIMES_TABLES_WAIT_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -900,47 +904,82 @@ enter: function(application)
 {
         if (application.mStateLogs)
         {
-                application.log('APPLICATION::TIMES_TABLES_APPLICATION');
+                application.log('APPLICATION::TIMES_TABLES_WAIT_APPLICATION');
         }
-        application.mWaitForReturn = true;
-        application.timestables(application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].value);
+	application.mEvaluationsID = 0;
+},
+
+execute: function(application)
+{
+	//application.mTimesTablesID = application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].text; 
+
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_WAIT_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+var TIMES_TABLES_TWO_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_TWO_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesTwoGame(APPLICATION);
 },
 
 execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::TIMES_TABLES_APPLICATION execute');
+		application.log('APPLICATION::TIMES_TABLES_TWO_APPLICATION execute');
 	}
-
-        if (application.mDataToRead == true) //we have some data to read
-        {
-                APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
-                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
-                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
-                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
-                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
-                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
-                APPLICATION.mRole = APPLICATION.mResponseArray[7];
-
-                APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
-                APPLICATION.mWaitForReturn = false;
-                APPLICATION.mSent = false;
-
-                application.mDataToRead = false
-        }
-
-        if (application.mWaitForReturn == false)
-        {
-                application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-        }
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
 },
 
 exit: function(application)
 {
-        application.mGame.mReadyForNormalApplication = false;
 }
 
 });

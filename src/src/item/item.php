@@ -246,7 +246,7 @@ var Item = new Class(
 		for (i=2; i < 10; i++)
 		{
   			var option = document.createElement("option");
-                	option.value = '' + i;
+                	option.value = parseInt(i + 1);
                 	option.text = 'Old School ' + i;
          		if (navigator.appName == "Microsoft Internet Explorer")
 			{
@@ -259,6 +259,18 @@ var Item = new Class(
 		}
 		var optionB = document.createElement("option");
                 optionB.value = '11';
+                optionB.text = 'timestables';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionB);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
+		}
+
+		var optionB = document.createElement("option");
+                optionB.value = '12';
                 optionB.text = 'The Izzy';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
@@ -271,7 +283,7 @@ var Item = new Class(
 	
      
 		var optionC = document.createElement("option");
-                optionC.value = '12';
+                optionC.value = '13';
                 optionC.text = 'Add Subtract within 5';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
@@ -282,18 +294,6 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionC);
 		}
 
-  		var optionA = document.createElement("option");
-                optionA.value = '10';
-                optionA.text = 'Final Battle';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-                	this.mTimesTablesInfo.mMesh.add(optionA);
-		}
-		else
-		{
-                	this.mTimesTablesInfo.mMesh.appendChild(optionA);
-		}
-                
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
                 this.addShape(this.mTimesTablesInfoButton);
