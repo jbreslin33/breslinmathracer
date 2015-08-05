@@ -99,7 +99,7 @@ enter: function(itemAttempt)
 
 execute: function(itemAttempt)
 {
-	if (itemAttempt.mID != 0 && itemAttempt.mUserAnswer != '') // i want mID which is server confirm and I want a user answer then we will move on to update otherwise we will keep sending insert until it goes thru because it needs to go in first but item states should allow for saving of update data from item to item_attempt
+	if (itemAttempt.mID != 0 && itemAttempt.mUserAnswer != '') 
 	{
 		itemAttempt.mStateMachine.changeState(itemAttempt.mUPDATE_ITEM_ATTEMPT);
 	}

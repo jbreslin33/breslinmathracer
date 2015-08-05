@@ -328,14 +328,6 @@ Extends: Application,
                                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
                                 this.mSent = false;
                         }
-                        if (codeNumber == APPLICATION.NORMAL)
-                        {
-                                APPLICATION.mDataToRead = true;
-                        }
-                        if (codeNumber == APPLICATION.PRACTICE)
-                        {
-                                APPLICATION.mDataToRead = true;
-                        }
                         
 			if (codeNumber == APPLICATION.ITEM_ATTEMPT_INSERT_CONFIRMATION)
 			{
