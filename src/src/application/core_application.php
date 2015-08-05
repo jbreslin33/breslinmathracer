@@ -39,7 +39,6 @@ Extends: Application,
 		//scroll
 		this.SCROLL = 112;
 
-
 		//ITEM_ATTEMPTS
 		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
 		this.ITEM_ATTEMPT_UPDATE_CONFIRMATION = 162;
@@ -47,25 +46,14 @@ Extends: Application,
 		//EVALUATION_ATTEMPTS
 		this.EVALUATION_ATTEMPT_INSERT_CONFIRMATION = 141;
 
-		//score
-		this.UPDATE_SCORE = 171;	
-
-		//admin
-		this.UPDATED_STANDARD_ID = 111;
-
-
-		//db arrays
+		//going forward	
 		this.mItemAttemptsArray = new Array();
 		this.mEvaluationAttemptsArray = new Array();
 
 		//item_attempts
-		this.mItemTypesArray = new Array();
-		this.mItemAttemptsTypeArray = new Array();
-		this.mItemAttemptsTransactionCodeArray = new Array();
-		
-
-		//score
-		this.mScore = 0;
+		this.mItemTypesArray = new Array(); //from db
+		this.mItemAttemptsTypeArray = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArray = new Array(); //from db
 
 		//algorithms
 		this.mFirst = '';
@@ -90,20 +78,11 @@ Extends: Application,
 		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';
-		this.mItemAttemptsID = 0;
-		this.mItemAttemptsIDLast = 0;
+		this.mQuestionTypeCurrent = 0;
+		this.mQuestionTypeLast = 0;
 
 		this.mData = 0;
 
-		this.mLevelCompleted = false;
-		this.mLevelFailed = false;
-		this.mEvaluationFailed = false;
-		this.mGotoPractice = false;
-		this.mGotoCore = false;
-		this.mGotoTimesTables = false;
-		this.mLeavePractice = false;
-		this.mWaitForReturn = false;
-		
 		/*********** TIMERS *******************/
 		this.mStateThresholdTime = 30000; 
 		this.mStateEnterTime = 0; 
@@ -137,14 +116,14 @@ Extends: Application,
 		//normal
                 this.mNORMAL_CORE_APPLICATION          = new NORMAL_CORE_APPLICATION       (this);
 
-		//reports
-                this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
-
 		//practice
                 this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
 	
 		//tables
                 this.mTIMES_TABLES_APPLICATION         = new TIMES_TABLES_APPLICATION      (this);
+	
+		//reports
+                this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
 
                 this.mCoreStateMachine.setGlobalState(this.mGLOBAL_CORE_APPLICATION);
                 this.mCoreStateMachine.changeState(this.mINIT_CORE_APPLICATION);

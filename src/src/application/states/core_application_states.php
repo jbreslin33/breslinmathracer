@@ -342,7 +342,6 @@ execute: function(application)
                	
 		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
-		//application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 		application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
 	}
 
@@ -807,12 +806,6 @@ exit: function(application)
 	{
 		application.log('APPLICATION::NORMAL_CORE_APPLICATION exit');
 	}
-	application.mLevelCompleted = false;
-	application.mEvaluationFailed = false;
-	application.mGotoPractice = false;
-	application.mGotoCore = false;
-	application.mGotoTimesTables = false;
-	application.mLeavePractice = false;
 }
 
 });

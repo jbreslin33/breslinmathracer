@@ -108,31 +108,25 @@ var Sheet = new Class(
 	
 	createItem: function()
 	{
-		//APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
-		
 		//would love to loop till we got no dup
-		while (APPLICATION.mItemAttemptsIDLast == APPLICATION.mItemAttemptsID)
+		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
 		{
 			var r = Math.floor(Math.random()*3);
-			//r = 2;
 
 			if (r == 0)
 			{
-				APPLICATION.log('getFirst');
 				APPLICATION.getFirst();
-				APPLICATION.mItemAttemptsID = APPLICATION.mFirst;
+				APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 			}
 			if (r == 1)
 			{
-				APPLICATION.log('getLeastAsked');
 				APPLICATION.getLeastAsked();
-				APPLICATION.mItemAttemptsID = APPLICATION.mLeastAsked;
+				APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
 			}
 			if (r == 2)
 			{
-				APPLICATION.log('getLeastCorrect');
 				APPLICATION.getLeastCorrect();
-				APPLICATION.mItemAttemptsID = APPLICATION.mLeastCorrect;
+				APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
 			}
 		}
 
@@ -140,15 +134,15 @@ var Sheet = new Class(
 
                 if (pick == 0)
                 {
-                        pick = this.mPicker.getItem(APPLICATION.mItemAttemptsID);
+                        pick = this.mPicker.getItem(APPLICATION.mQuestionTypeCurrent);
                 }
                 if (pick == 0)
                 {
-                        pick = this.mPickerBrian.getItem(APPLICATION.mItemAttemptsID);
+                        pick = this.mPickerBrian.getItem(APPLICATION.mQuestionTypeCurrent);
                 }
                 if (pick == 0)
                 {
-                        pick = this.mPickerJim.getItem(APPLICATION.mItemAttemptsID);
+                        pick = this.mPickerJim.getItem(APPLICATION.mQuestionTypeCurrent);
                 }
 
                 //if you got an item then add it to sheet
@@ -167,7 +161,7 @@ var Sheet = new Class(
 		}
 
 		//set this as last for next run 
-		APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
+		APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;
 	},
 
 	setTypeWrong: function(typeID)
