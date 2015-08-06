@@ -1,4 +1,4 @@
-var TimesTablesTwoGame = new Class(
+var TimesTablesFourGame = new Class(
 {
 
 Extends: CoreGame,

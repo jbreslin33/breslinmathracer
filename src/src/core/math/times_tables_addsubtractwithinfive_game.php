@@ -1,4 +1,4 @@
-var TimesTablesTwoGame = new Class(
+var TimesTablesAddSubtractWithinFiveGame = new Class(
 {
 
 Extends: CoreGame,

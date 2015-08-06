@@ -1,4 +1,4 @@
-var TimesTablesTwoSheet = new Class(
+var TimesTablesNineSheet = new Class(
 {
 Extends: Sheet,
 
@@ -54,7 +54,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
               	itemAttempt.mType = pick.mType;
-               	itemAttempt.setEvaluationsID(3);
+               	itemAttempt.setEvaluationsID(10);
         }
         else
         {
