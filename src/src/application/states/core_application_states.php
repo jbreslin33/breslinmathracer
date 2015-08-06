@@ -930,6 +930,780 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
 	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_THREE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_THREE_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesThreeGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_THREE_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_FOUR_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_FOUR_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesFourGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_FOUR_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_FIVE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_FIVE_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesFiveGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_FIVE_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_SIX_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_SIX_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesSixGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_SIX_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_SEVEN_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_SEVEN_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesSevenGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_SEVEN_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_EIGHT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_EIGHT_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesEightGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_EIGHT_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_NINE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_NINE_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesNineGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_NINE_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_THE_IZZY_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_THE_IZZY_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesTheIzzyGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_THE_IZZY_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TIMES_TABLES_THE_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesAddSubtractWithinFiveGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION execute');
+	}
+	if (application.mEvaluationsID == 1)
+	{
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
 },
 
 exit: function(application)
