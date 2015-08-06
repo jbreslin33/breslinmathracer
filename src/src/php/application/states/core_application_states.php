@@ -180,6 +180,10 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
 	}
+	if ($bapplication->mCode == 3)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
+	}
 }
 public function bexit($bapplication)
 {
@@ -222,16 +226,20 @@ public function execute($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 1)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
 	}
+	if ($bapplication->mCode == 2)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
+	}	
+	if ($bapplication->mCode == 3)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
+	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -291,6 +299,10 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 	}
+	if ($bapplication->mCode == 3)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
+	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -307,6 +319,73 @@ public function bexit($bapplication)
         if ($bapplication->mLogs == true)
         {
                 error_log('PRACTICE_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+class TIMES_TABLES_TWO_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_TWO_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,3,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_TWO_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 1)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+	}	
+	if ($bapplication->mCode == 2)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
+	}	
+	if ($bapplication->mCode == 3)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+
+		//this needs to update 2x scores
+        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+			}
+		}
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_TWO_APPLICATION Exit');
         }
 }
 

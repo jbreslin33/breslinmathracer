@@ -88,7 +88,6 @@ var ItemAttempt = new Class(
 			APPLICATION.mItemAttemptsTypeArray.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 			APPLICATION.mItemAttemptsTransactionCodeArray.unshift(0);
 		}
-
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore());
 	},	
 

@@ -892,52 +892,6 @@ exit: function(application)
 
 });
 
-var TIMES_TABLES_WAIT_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::TIMES_TABLES_WAIT_APPLICATION');
-        }
-	application.mEvaluationsID = 0;
-},
-
-execute: function(application)
-{
-	//application.mTimesTablesID = application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[application.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].text; 
-
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::TIMES_TABLES_WAIT_APPLICATION execute');
-	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-
 var TIMES_TABLES_TWO_APPLICATION = new Class(
 {
 Extends: State,

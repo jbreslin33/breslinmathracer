@@ -37,20 +37,7 @@ if ($code == 117)
 	$APPLICATION->mDataArray[] = $_GET["username"];
 	$APPLICATION->mDataArray[] = $_GET["password"];
 }
-if ($code == 130)
-{
-	unset($APPLICATION->mDataArray);
-	$APPLICATION->mDataArray = array();
 
-	$APPLICATION->mDataArray[] = "130";
-	$APPLICATION->mDataArray[] = $_GET["itemtypesid"];
-	$APPLICATION->mDataArray[] = $_GET["transactioncode"];
-	$APPLICATION->mDataArray[] = $_GET["question"];
-	$APPLICATION->mDataArray[] = $_GET["answers"];
-	$APPLICATION->mDataArray[] = $_GET["answer"];
-	$APPLICATION->mDataArray[] = $_GET["itemattemptid"];
-}
-//u need a first of its kind flag and on client side store in different array? maybe a datenow_item and datenow_evaluation then u can do what u want on server
 if ($code == 1)
 {
         unset($APPLICATION->mDataArray);
@@ -63,16 +50,6 @@ if ($code == 1)
         $APPLICATION->mDataArray[] = $_GET["datenow"];
         $APPLICATION->mDataArray[] = $_GET["score"];
 }
-if ($code == 101)
-{
-        unset($APPLICATION->mDataArray);
-        $APPLICATION->mDataArray = array();
-
-        $APPLICATION->mDataArray[] = "101";
-        $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
-        $APPLICATION->mDataArray[] = $_GET["transactioncode"];
-        $APPLICATION->mDataArray[] = $_GET["answer"];
-}
 if ($code == 2)
 {
         unset($APPLICATION->mDataArray);
@@ -84,12 +61,24 @@ if ($code == 2)
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
 }
-if ($code == 102)
+if ($code == 3)
 {
         unset($APPLICATION->mDataArray);
         $APPLICATION->mDataArray = array();
 
-        $APPLICATION->mDataArray[] = "102";
+        $APPLICATION->mDataArray[] = "3";
+        $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
+        $APPLICATION->mDataArray[] = $_GET["question"];
+        $APPLICATION->mDataArray[] = $_GET["answers"];
+        $APPLICATION->mDataArray[] = $_GET["datenow"];
+        $APPLICATION->mDataArray[] = $_GET["score"]; //this should be most number in a row of an evaluation ie a timestables2 evaluation
+}
+if ($code == 101)
+{
+        unset($APPLICATION->mDataArray);
+        $APPLICATION->mDataArray = array();
+
+        $APPLICATION->mDataArray[] = "101";
         $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
         $APPLICATION->mDataArray[] = $_GET["transactioncode"];
         $APPLICATION->mDataArray[] = $_GET["answer"];
@@ -128,6 +117,7 @@ function __construct()
         $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
+        $this->mTIMES_TABLES_TWO_APPLICATION = new TIMES_TABLES_TWO_APPLICATION        ($this);
 
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);
