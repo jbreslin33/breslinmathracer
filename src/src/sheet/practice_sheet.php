@@ -9,20 +9,21 @@ initialize: function(game)
 
 createItem: function()
 {
-	APPLICATION.mItemAttemptsID = APPLICATION.mPracticeItemID;
+	//overide 
+	APPLICATION.mQuestionTypeCurrent = APPLICATION.mPracticeItemID;
 	var pick = 0;
 
         if (pick == 0)
         {
-        	pick = this.mPicker.getItem(APPLICATION.mItemAttemptsID);
+        	pick = this.mPicker.getItem(APPLICATION.mQuestionTypeCurrent);
         }
         if (pick == 0)
         {
-                pick = this.mPickerBrian.getItem(APPLICATION.mItemAttemptsID);
+                pick = this.mPickerBrian.getItem(APPLICATION.mQuestionTypeCurrent);
         }
         if (pick == 0)
         {
-                pick = this.mPickerJim.getItem(APPLICATION.mItemAttemptsID);
+                pick = this.mPickerJim.getItem(APPLICATION.mQuestionTypeCurrent);
         }
 
         //if you got an item then add it to sheet
@@ -41,7 +42,7 @@ createItem: function()
         }
 
         //set this as last for next run
-        APPLICATION.mItemAttemptsIDLast = APPLICATION.mItemAttemptsID;
+        APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;
 }
 
 });
