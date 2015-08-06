@@ -80,6 +80,15 @@
 <script type="text/javascript" src="/src/sheet/normal_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/practice_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_two_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_three_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_four_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_five_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_six_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_seven_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_eight_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_nine_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_theizzy_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_addsubtractwithinfive_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
