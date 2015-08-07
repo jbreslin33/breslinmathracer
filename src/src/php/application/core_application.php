@@ -38,12 +38,12 @@ if ($code == 117)
 	$APPLICATION->mDataArray[] = $_GET["password"];
 }
 
-if ($code == 1)
+if ($code == 1 || $code == 3 || $code == 4 || $code == 5 || $code == 6 || $code == 7 || $code == 8 || $code == 9 || $code == 10 || $code == 12 || $code == 13)
 {
         unset($APPLICATION->mDataArray);
         $APPLICATION->mDataArray = array();
 
-        $APPLICATION->mDataArray[] = "1";
+        $APPLICATION->mDataArray[] = $code;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];
@@ -118,6 +118,15 @@ function __construct()
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
         $this->mTIMES_TABLES_TWO_APPLICATION = new TIMES_TABLES_TWO_APPLICATION        ($this);
+        $this->mTIMES_TABLES_THREE_APPLICATION = new TIMES_TABLES_THREE_APPLICATION        ($this);
+        $this->mTIMES_TABLES_FOUR_APPLICATION = new TIMES_TABLES_FOUR_APPLICATION        ($this);
+        $this->mTIMES_TABLES_FIVE_APPLICATION = new TIMES_TABLES_FIVE_APPLICATION        ($this);
+        $this->mTIMES_TABLES_SIX_APPLICATION = new TIMES_TABLES_SIX_APPLICATION        ($this);
+        $this->mTIMES_TABLES_SEVEN_APPLICATION = new TIMES_TABLES_SEVEN_APPLICATION        ($this);
+        $this->mTIMES_TABLES_EIGHT_APPLICATION = new TIMES_TABLES_EIGHT_APPLICATION        ($this);
+        $this->mTIMES_TABLES_NINE_APPLICATION = new TIMES_TABLES_NINE_APPLICATION        ($this);
+        $this->mTIMES_TABLES_THE_IZZY_APPLICATION = new TIMES_TABLES_THE_IZZY_APPLICATION        ($this);
+        $this->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION        ($this);
 
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);
