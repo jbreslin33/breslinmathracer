@@ -4,7 +4,7 @@ var TimesTablesAddSubtractWithinFiveGame = new Class(
 Extends: CoreGame,
 initialize: function(application)
 {
-	this.mSheet = new TimesTablesTwoSheet(this);	
+	this.mSheet = new TimesTablesAddSubtractWithinFiveSheet(this);	
        	this.parent(application,this.mSheet);
 }
 

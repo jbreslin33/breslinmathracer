@@ -4,6 +4,7 @@ Extends: Sheet,
 
 initialize: function(game)
 {
+	APPLICATION.log('TimesTablesSix const');
 	this.parent(game);
 },
 
@@ -55,6 +56,7 @@ createItem: function()
                 pick.setItemAttempt(itemAttempt);
               	itemAttempt.mType = pick.mType;
                	itemAttempt.setEvaluationsID(7);
+		APPLICATION.log('pick:' + 7);
         }
         else
         {

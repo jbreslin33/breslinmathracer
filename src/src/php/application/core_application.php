@@ -40,6 +40,10 @@ if ($code == 117)
 
 if ($code == 1 || $code == 3 || $code == 4 || $code == 5 || $code == 6 || $code == 7 || $code == 8 || $code == 9 || $code == 10 || $code == 12 || $code == 13)
 {
+
+	$txt = "code:";
+	$txt .= $code;
+	error_log($txt);
         unset($APPLICATION->mDataArray);
         $APPLICATION->mDataArray = array();
 
