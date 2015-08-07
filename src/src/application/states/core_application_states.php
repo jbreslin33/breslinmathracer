@@ -800,8 +800,48 @@ execute: function(application)
 	}
 	if (application.mEvaluationsID == 3)
 	{
-        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mTIMES_TABLES_TWO_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
 	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+},
+
+exit: function(application)
+{
 
 },
 exit: function(application)
@@ -883,6 +923,50 @@ execute: function(application)
 	if (application.mEvaluationsID == 1)
 	{
 		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluatinsID == 2)
+	{
+		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
 },
 
@@ -1630,7 +1714,7 @@ exit: function(application)
 
 });
 
-var TIMES_TABLES_THE_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new Class(
+var TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new Class(
 {
 Extends: State,
 

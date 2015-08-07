@@ -105,6 +105,15 @@
 <script type="text/javascript" src="/src/core/math/normal_game.php"></script>
 <script type="text/javascript" src="/src/core/math/practice_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_two_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_three_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_four_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_five_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_six_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_seven_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_eight_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_nine_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_theizzy_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_addsubtractwithinfive_game.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_jim.php"></script>
