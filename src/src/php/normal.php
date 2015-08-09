@@ -114,7 +114,7 @@ public function fillItemAttemptsArray()
 	}
 }
 
-public function updateScores($score)
+public function updateScores($score,$field_name)
 {
 	$this->mScore = $score;
 
@@ -123,7 +123,9 @@ public function updateScores($score)
 		error_log('updateScores');
 	}
         /*********************  for teacher real time data  *************/
-        $update = "update users SET last_activity = CURRENT_TIMESTAMP, score = ";
+        $update = "update users SET last_activity = CURRENT_TIMESTAMP, ";
+	$update .= $field_name;
+	$update .= " = ";
         $update .= $this->mScore;
         $update .= " WHERE id = ";
  	$update .= $this->mApplication->mLoginStudent->mUserID;

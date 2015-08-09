@@ -230,7 +230,7 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
 	}
 	if ($bapplication->mCode == 2)
 	{
@@ -403,8 +403,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimetwo');
 	}
 	if ($bapplication->mCode == 4)
 	{
@@ -511,8 +510,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimethree');
 	}
 	if ($bapplication->mCode == 5)
 	{
@@ -619,8 +617,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefour');
 	}
 	if ($bapplication->mCode == 6)
 	{
@@ -726,8 +723,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefive');
 	}
 	if ($bapplication->mCode == 7)
 	{
@@ -833,8 +829,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimesix');
 	}
 	if ($bapplication->mCode == 8)
 	{
@@ -940,8 +935,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeseven');
 	}
 	if ($bapplication->mCode == 9)
 	{
@@ -1047,8 +1041,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeeight');
 	}
 	if ($bapplication->mCode == 10)
 	{
@@ -1154,8 +1147,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimenine');
 	}
 	if ($bapplication->mCode == 12)
 	{
@@ -1261,8 +1253,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeizzy');
 	}
 	if ($bapplication->mCode == 13)
 	{
@@ -1368,8 +1359,7 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-		//this needs to update 2x scores
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5]);
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimekoaa5');
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{

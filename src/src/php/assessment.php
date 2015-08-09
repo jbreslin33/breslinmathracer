@@ -144,7 +144,7 @@ public function setRawData()
         
 	$this->masters();
 	$this->unmasteredCount = $_SESSION["unmastered_count"]; 
-        $this->updateScores();
+        //$this->updateScores();
 	$this->setEarliestToAsk("wha");	
 	$this->goBananas();
 	$this->setItemString();
