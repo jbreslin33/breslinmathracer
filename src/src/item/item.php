@@ -148,7 +148,7 @@ var Item = new Class(
 
 	setTransactionCode: function(code)
 	{
-		APPLICATION.mItemAttemptsTransactionCodeArray[0] = code; //this must be changed to find right element
+		APPLICATION.mItemAttemptsTransactionCodeArrayOne[0] = code; //this must be changed to find right element
 		this.mTransactionCode = code;
 		this.mItemAttempt.mTransactionCode = code;
 	},

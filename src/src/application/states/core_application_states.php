@@ -167,11 +167,12 @@ execute: function(application)
 			var itemTypes = APPLICATION.mResponseArray[7];
 			APPLICATION.mItemTypesArray = itemTypes.split(":");
                 
-			var itemAttemptsTypes = APPLICATION.mResponseArray[8];
-			APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
-		
-			var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[9];
-			APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
+			//One	
+			var itemAttemptsTypesOne = APPLICATION.mResponseArray[8];
+			APPLICATION.mItemAttemptsTypeArrayOne = itemAttemptsTypesOne.split(":");
+	
+			var itemAttemptsTransactionCodesOne = APPLICATION.mResponseArray[9];
+			APPLICATION.mItemAttemptsTransactionCodeArrayOne = itemAttemptsTransactionCodesOne.split(":");
 			
 			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[10];
                	

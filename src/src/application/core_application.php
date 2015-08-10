@@ -48,12 +48,12 @@ Extends: Application,
 
 		//going forward	
 		this.mItemAttemptsArray = new Array();
-		this.mEvaluationAttemptsArray = new Array();
 
 		//item_attempts
 		this.mItemTypesArray = new Array(); //from db
-		this.mItemAttemptsTypeArray = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArray = new Array(); //from db
+		//One
+		this.mItemAttemptsTypeArrayOne = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayOne = new Array(); //from db
 
 		//algorithms
 		this.mFirst = '';
@@ -147,9 +147,9 @@ Extends: Application,
 		{
 			var foundOne = false;
 			var j = 0;
-			while (j < this.mItemAttemptsTypeArray.length && foundOne == false)
+			while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
 			{
-				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
 				{
 					score++;	
 					foundOne = true;
@@ -171,11 +171,11 @@ Extends: Application,
 			var tempArray = new Array();
 			var tempArray = [];
 			var j = 0;
-			while (j < this.mItemAttemptsTypeArray.length && tempArray.length < 3)
+			while (j < this.mItemAttemptsTypeArrayOne.length && tempArray.length < 3)
 			{
-				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
 				{
-					tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);	
+					tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
 				}					
 				j++;
 			}
@@ -210,11 +210,11 @@ Extends: Application,
                         var tempArray = new Array();
                         var tempArray = [];
                         var j = 0;
-                        while (j < this.mItemAttemptsTypeArray.length)
+                        while (j < this.mItemAttemptsTypeArrayOne.length)
                         {
-                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
                                 {
-                                        tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);
+                                        tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);
                                 }
                                 j++;
                         }
@@ -239,13 +239,13 @@ Extends: Application,
                         var tempArray = new Array();
                         var tempArray = [];
                         var j = 0;
-                        while (j < this.mItemAttemptsTypeArray.length)
+                        while (j < this.mItemAttemptsTypeArrayOne.length)
                         {
-                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArray[j])
+                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
                                 {
-					if (parseInt(this.mItemAttemptsTransactionCodeArray[j]) == 1)
+					if (parseInt(this.mItemAttemptsTransactionCodeArrayOne[j]) == 1)
 					{
-                                        	tempArray.push(this.mItemAttemptsTransactionCodeArray[j]);
+                                        	tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);
 					}
                                 }
                                 j++;
@@ -266,10 +266,6 @@ Extends: Application,
 		for (i=0; i < this.mItemAttemptsArray.length; i++)
 		{
 			this.mItemAttemptsArray[i].update();
-		}
-		for (i=0; i < this.mEvaluationAttemptsArray.length; i++)
-		{
-			this.mEvaluationAttemptsArray[i].update();
 		}
         },
 	

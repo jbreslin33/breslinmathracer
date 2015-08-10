@@ -85,10 +85,12 @@ var ItemAttempt = new Class(
 			}
 
 			//update client
-			APPLICATION.mItemAttemptsTypeArray.unshift(APPLICATION.mGame.mSheet.mItem.mType);
-			APPLICATION.mItemAttemptsTransactionCodeArray.unshift(0);
+			if (parseInt(this.mEvaluationsID) == 1)
+			{
+				APPLICATION.mItemAttemptsTypeArrayOne.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayOne.unshift(0);
+			}
 		}
-		APPLICATION.log('this.mEvaluationsID:' + this.mEvaluationsID);	
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore());
 	},	
 
