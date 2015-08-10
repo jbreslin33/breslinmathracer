@@ -1,3 +1,7 @@
+select evaluations_attempts.id, item_attempts.transaction_code from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.evaluations_id = 7 AND evaluations_attempts.user_id = 5 order by item_attempts.start_time;
+
+-------------------------------------------------
+
 this is how you handle differentation...
 
 quiz should ask last 10 standards
