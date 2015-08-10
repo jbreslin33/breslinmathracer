@@ -32,8 +32,8 @@ function __construct($application)
 	$this->mScore = 0;
 
 	$this->mItemAttemptsArray    = array();
-	$this->mItemAttemptsTypeArray    = array();
-	$this->mItemAttemptsTransactionCodeArray    = array();
+	$this->mItemAttemptsTypeArrayOne    = array();
+	$this->mItemAttemptsTransactionCodeArrayOne    = array();
 }
 
 public function process()
@@ -86,9 +86,9 @@ public function fillItemAttemptsArray()
                 error_log('fillItemAttemptsArray');
         }
  
-	if (count($this->mItemAttemptsTransactionCodeArray) < 1) //not filled at all get em all....
+	if (count($this->mItemAttemptsTransactionCodeArrayOne) < 1) //not filled at all get em all....
         {
-                $query = "select item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id = 1 AND evaluations_attempts.user_id = ";
+                $query = "select evaluations_attempts.evaluations_id, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id != 2 AND evaluations_attempts.user_id = ";
                 $query .= $this->mApplication->mLoginStudent->mUserID;
                 $query .= " AND item_types.active_code = 1";
                 $query .= " order by item_attempts.start_time desc;";
@@ -101,8 +101,12 @@ public function fillItemAttemptsArray()
                 //fill arrays
                 for ($i = 0; $i < $num; $i++)
                 {
-                        $this->mItemAttemptsTypeArray[] = pg_Result($result, $i, 'item_types_id');
-                        $this->mItemAttemptsTransactionCodeArray[]  = pg_Result($result, $i, 'transaction_code');
+                        $evalID = pg_Result($result,$i,'evaluations_id');
+			if ($evalID == 1)
+			{
+                        	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
+			}
                 }
         }
 	else

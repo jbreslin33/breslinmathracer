@@ -50,29 +50,29 @@ public function sendLoginStudent()
 	}
 
 
-	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArray); $i++)
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayOne); $i++)
         {
                 if ($i == 0)
                 {
-                        $itemTypesRawDataB .= $this->mApplication->mNormal->mItemAttemptsTypeArray[$i];
+                        $itemTypesRawDataB .= $this->mApplication->mNormal->mItemAttemptsTypeArrayOne[$i];
                 }
                 else
                 {
                         $itemTypesRawDataB .= ":";
-                        $itemTypesRawDataB .= $this->mApplication->mNormal->mItemAttemptsTypeArray[$i];
+                        $itemTypesRawDataB .= $this->mApplication->mNormal->mItemAttemptsTypeArrayOne[$i];
                 }
         }
 
-	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArray); $i++)
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayOne); $i++)
         {
                 if ($i == 0)
                 {
-                        $itemTypesRawDataC .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArray[$i];
+                        $itemTypesRawDataC .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayOne[$i];
                 }
                 else
                 {
                         $itemTypesRawDataC .= ":";
-                        $itemTypesRawDataC .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArray[$i];
+                        $itemTypesRawDataC .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayOne[$i];
                 }
         }
 
@@ -92,9 +92,9 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataA;
 	$returnString .= ",";
-	$returnString .= $itemTypesRawDataB;
+	$returnString .= $itemTypesRawDataB; //One
 	$returnString .= ",";
-	$returnString .= $itemTypesRawDataC;
+	$returnString .= $itemTypesRawDataC; //One
 	$returnString .= ",";
 	//$returnString .= $this->mApplication->mEvaluationsAttempts->mEvaluationsID;
 	$returnString .= $this->mApplication->mEvaluationsID;
