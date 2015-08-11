@@ -90,6 +90,56 @@ var ItemAttempt = new Class(
 				APPLICATION.mItemAttemptsTypeArrayOne.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayOne.unshift(0);
 			}
+			if (parseInt(this.mEvaluationsID) == 3)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThree.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThree.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 4)
+			{
+				APPLICATION.mItemAttemptsTypeArrayFour.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayFour.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 5)
+			{
+				APPLICATION.mItemAttemptsTypeArrayFive.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayFive.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 6)
+			{
+				APPLICATION.mItemAttemptsTypeArraySix.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArraySix.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 7)
+			{
+				APPLICATION.mItemAttemptsTypeArraySeven.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArraySeven.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 8)
+			{
+				APPLICATION.mItemAttemptsTypeArrayEight.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayEight.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 9)
+			{
+				APPLICATION.mItemAttemptsTypeArrayNine.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayNine.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 10)
+			{
+				APPLICATION.mItemAttemptsTypeArrayTen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayTen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 12)
+			{
+				APPLICATION.mItemAttemptsTypeArrayTwelve.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayTwelve.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 13)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirteen.unshift(0);
+			}
 		}
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore());
 	},	

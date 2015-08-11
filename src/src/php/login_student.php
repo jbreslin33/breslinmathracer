@@ -35,6 +35,26 @@ public function sendLoginStudent()
 	$itemTypesRawDataA = ""; 
 	$itemTypesRawDataB = ""; 
 	$itemTypesRawDataC = ""; 
+	$itemTypesRawDataD = ""; 
+	$itemTypesRawDataE = ""; 
+	$itemTypesRawDataF = ""; 
+	$itemTypesRawDataG = ""; 
+	$itemTypesRawDataH = ""; 
+	$itemTypesRawDataI = ""; 
+	$itemTypesRawDataJ = ""; 
+	$itemTypesRawDataK = ""; 
+	$itemTypesRawDataL = ""; 
+	$itemTypesRawDataM = ""; 
+	$itemTypesRawDataN = ""; 
+	$itemTypesRawDataO = ""; 
+	$itemTypesRawDataP = ""; 
+	$itemTypesRawDataQ = ""; 
+	$itemTypesRawDataR = ""; 
+	$itemTypesRawDataS = ""; 
+	$itemTypesRawDataT = ""; 
+	$itemTypesRawDataU = ""; 
+	$itemTypesRawDataV = ""; 
+	$itemTypesRawDataW = ""; 
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
 	{
@@ -49,7 +69,7 @@ public function sendLoginStudent()
 		}
 	}
 
-
+	//One
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayOne); $i++)
         {
                 if ($i == 0)
@@ -76,6 +96,276 @@ public function sendLoginStudent()
                 }
         }
 
+	//Three
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThree); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataD .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThree[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataD .= ":";
+                        $itemTypesRawDataD .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThree[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThree); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataE .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThree[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataE .= ":";
+                        $itemTypesRawDataE .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThree[$i];
+                }
+        }
+
+	//Four	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayFour); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataF .= $this->mApplication->mNormal->mItemAttemptsTypeArrayFour[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataF .= ":";
+                        $itemTypesRawDataF .= $this->mApplication->mNormal->mItemAttemptsTypeArrayFour[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFour); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataG .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFour[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataG .= ":";
+                        $itemTypesRawDataG .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFour[$i];
+                }
+        }
+	
+	//Five	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayFive); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataH .= $this->mApplication->mNormal->mItemAttemptsTypeArrayFive[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataH .= ":";
+                        $itemTypesRawDataH .= $this->mApplication->mNormal->mItemAttemptsTypeArrayFive[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFive); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataI .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFive[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataI .= ":";
+                        $itemTypesRawDataI .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFive[$i];
+                }
+        }
+	
+	//Six	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArraySix); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataJ .= $this->mApplication->mNormal->mItemAttemptsTypeArraySix[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataJ .= ":";
+                        $itemTypesRawDataJ .= $this->mApplication->mNormal->mItemAttemptsTypeArraySix[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySix); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataK .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySix[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataK .= ":";
+                        $itemTypesRawDataK .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySix[$i];
+                }
+        }
+
+	//Seven	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArraySeven); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataL .= $this->mApplication->mNormal->mItemAttemptsTypeArraySeven[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataL .= ":";
+                        $itemTypesRawDataL .= $this->mApplication->mNormal->mItemAttemptsTypeArraySeven[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySeven); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataM .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySeven[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataM .= ":";
+                        $itemTypesRawDataM .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySeven[$i];
+                }
+        }
+
+	//Eight	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayEight); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataN .= $this->mApplication->mNormal->mItemAttemptsTypeArrayEight[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataN .= ":";
+                        $itemTypesRawDataN .= $this->mApplication->mNormal->mItemAttemptsTypeArrayEight[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEight); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataO .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEight[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataO .= ":";
+                        $itemTypesRawDataO .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEight[$i];
+               	} 
+        }
+	
+	//Nine	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayNine); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataP .= $this->mApplication->mNormal->mItemAttemptsTypeArrayNine[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataP .= ":";
+                        $itemTypesRawDataP .= $this->mApplication->mNormal->mItemAttemptsTypeArrayNine[$i];
+               	} 
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayNine); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataQ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayNine[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataQ .= ":";
+                        $itemTypesRawDataQ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayNine[$i];
+                }
+        }
+	
+	//Ten	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataR .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataR .= ":";
+                        $itemTypesRawDataR .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTen[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataS .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataS .= ":";
+                        $itemTypesRawDataS .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTen[$i];
+                }
+        }
+	
+	//Twelve	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwelve); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataT .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwelve[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataT .= ":";
+                        $itemTypesRawDataT .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwelve[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwelve); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataU .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwelve[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataU .= ":";
+                        $itemTypesRawDataU .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwelve[$i];
+                }
+        }
+	
+	//Thirteen	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirteen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataV .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirteen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataV .= ":";
+                        $itemTypesRawDataV .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirteen[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirteen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataW .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirteen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataW .= ":";
+                        $itemTypesRawDataW .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirteen[$i];
+                }
+        }
+
 	//fill php vars
 	$returnString = "117,";
 	$returnString .= "normal";
@@ -92,11 +382,50 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataA;
 	$returnString .= ",";
-	$returnString .= $itemTypesRawDataB; //One
+	$returnString .= $itemTypesRawDataB; 
 	$returnString .= ",";
-	$returnString .= $itemTypesRawDataC; //One
+	$returnString .= $itemTypesRawDataC; 
 	$returnString .= ",";
-	//$returnString .= $this->mApplication->mEvaluationsAttempts->mEvaluationsID;
+	$returnString .= $itemTypesRawDataD;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataE;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataF;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataG;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataH;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataI;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataJ;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataK;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataL;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataM;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataN;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataO;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataP;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataQ;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataR;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataS;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataT;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataU;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataV;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataW;
+	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;
 }

@@ -173,9 +173,82 @@ execute: function(application)
 	
 			var itemAttemptsTransactionCodesOne = APPLICATION.mResponseArray[9];
 			APPLICATION.mItemAttemptsTransactionCodeArrayOne = itemAttemptsTransactionCodesOne.split(":");
+		
+			//Three	
+			var itemAttemptsTypesThree = APPLICATION.mResponseArray[10];
+			APPLICATION.mItemAttemptsTypeArrayThree = itemAttemptsTypesThree.split(":");
+	
+			var itemAttemptsTransactionCodesThree = APPLICATION.mResponseArray[11];
+			APPLICATION.mItemAttemptsTransactionCodeArrayThree = itemAttemptsTransactionCodesThree.split(":");
+
+			//Four	
+			var itemAttemptsTypesFour = APPLICATION.mResponseArray[12];
+			APPLICATION.mItemAttemptsTypeArrayFour = itemAttemptsTypesFour.split(":");
+	
+			var itemAttemptsTransactionCodesFour = APPLICATION.mResponseArray[13];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFour = itemAttemptsTransactionCodesFour.split(":");
+               
+			//Five	
+			var itemAttemptsTypesFive = APPLICATION.mResponseArray[14];
+			APPLICATION.mItemAttemptsTypeArrayFive = itemAttemptsTypesFive.split(":");
+	
+			var itemAttemptsTransactionCodesFive = APPLICATION.mResponseArray[15];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFive = itemAttemptsTransactionCodesFive.split(":");
+
+			//Six	
+			var itemAttemptsTypesSix = APPLICATION.mResponseArray[16];
+			APPLICATION.mItemAttemptsTypeArraySix = itemAttemptsTypesSix.split(":");
+	
+			var itemAttemptsTransactionCodesSix = APPLICATION.mResponseArray[17];
+			APPLICATION.mItemAttemptsTransactionCodeArraySix = itemAttemptsTransactionCodesSix.split(":");
+
+			//Seven	
+			var itemAttemptsTypesSeven = APPLICATION.mResponseArray[18];
+			APPLICATION.mItemAttemptsTypeArraySeven = itemAttemptsTypesSeven.split(":");
+	
+			var itemAttemptsTransactionCodesSeven = APPLICATION.mResponseArray[19];
+			APPLICATION.mItemAttemptsTransactionCodeArraySeven = itemAttemptsTransactionCodesSeven.split(":");
+
+
+			//Eight	
+			var itemAttemptsTypesEight = APPLICATION.mResponseArray[20];
+			APPLICATION.mItemAttemptsTypeArrayEight = itemAttemptsTypesEight.split(":");
+	
+			var itemAttemptsTransactionCodesEight = APPLICATION.mResponseArray[21];
+			APPLICATION.mItemAttemptsTransactionCodeArrayEight = itemAttemptsTransactionCodesEight.split(":");
+
+
+			//Nine	
+			var itemAttemptsTypesNine = APPLICATION.mResponseArray[22];
+			APPLICATION.mItemAttemptsTypeArrayNine = itemAttemptsTypesNine.split(":");
+	
+			var itemAttemptsTransactionCodesNine = APPLICATION.mResponseArray[23];
+			APPLICATION.mItemAttemptsTransactionCodeArrayNine = itemAttemptsTransactionCodesNine.split(":");
+
+			//Ten	
+			var itemAttemptsTypesTen = APPLICATION.mResponseArray[24];
+			APPLICATION.mItemAttemptsTypeArrayTen = itemAttemptsTypesTen.split(":");
+	
+			var itemAttemptsTransactionCodesTen = APPLICATION.mResponseArray[25];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTen = itemAttemptsTransactionCodesTen.split(":");
+
+			//Twelve	
+			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[26];
+			APPLICATION.mItemAttemptsTypeArrayTwelve = itemAttemptsTypesTwelve.split(":");
+	
+			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[27];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve = itemAttemptsTransactionCodesTwelve.split(":");
+
+			//Thirteen	
+			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[28];
+			APPLICATION.mItemAttemptsTypeArrayThirteen = itemAttemptsTypesThirteen.split(":");
+	
+			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[29];
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen = itemAttemptsTransactionCodesThirteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[10];
-               	
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[30];
+
+	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 			if (application.mEvaluationsID == 1)
 			{

@@ -51,9 +51,50 @@ Extends: Application,
 
 		//item_attempts
 		this.mItemTypesArray = new Array(); //from db
+
 		//One
 		this.mItemAttemptsTypeArrayOne = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayOne = new Array(); //from db
+		
+		//Three
+		this.mItemAttemptsTypeArrayThree = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayThree = new Array(); //from db
+		
+		//Four
+		this.mItemAttemptsTypeArrayFour = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayFour = new Array(); //from db
+		
+		//Five
+		this.mItemAttemptsTypeArrayFive = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayFive = new Array(); //from db
+
+		//Six
+		this.mItemAttemptsTypeArraySix = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArraySix = new Array(); //from db
+		
+		//Seven
+		this.mItemAttemptsTypeArraySeven = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArraySeven = new Array(); //from db
+
+		//Eight
+		this.mItemAttemptsTypeArrayEight = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayEight = new Array(); //from db
+
+		//Nine
+		this.mItemAttemptsTypeArrayNine = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayNine = new Array(); //from db
+
+		//Ten
+		this.mItemAttemptsTypeArrayTen = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayTen = new Array(); //from db
+
+		//Twelve
+		this.mItemAttemptsTypeArrayTwelve = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayTwelve = new Array(); //from db
+
+		//Thirteen
+		this.mItemAttemptsTypeArrayThirteen = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayThirteen = new Array(); //from db
 
 		//algorithms
 		this.mFirst = '';
@@ -143,19 +184,26 @@ Extends: Application,
 	calcScore: function()
 	{
 		var score = 0;
-		for (var i = 0; i < this.mItemTypesArray.length; i++)
+		if (this.mEvaluationsID == 1)
 		{
-			var foundOne = false;
-			var j = 0;
-			while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
+			for (var i = 0; i < this.mItemTypesArray.length; i++)
 			{
-				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+				var foundOne = false;
+				var j = 0;
+				while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
 				{
-					score++;	
-					foundOne = true;
-				}					
-				j++;
+					if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+					{
+						score++;	
+						foundOne = true;
+					}					
+					j++;
+				}
 			}
+		}
+		else
+		{
+			score = 99;
 		}
 		this.mGame.setScore(score);
 	},
