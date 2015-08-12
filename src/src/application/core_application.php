@@ -184,8 +184,11 @@ Extends: Application,
 	calcScore: function()
 	{
 		var score = 0;
-		if (this.mEvaluationsID == 1)
+		
+		APPLICATION.log('this.mEv:' + this.mEvaluationsID);
+		if (parseInt(this.mEvaluationsID) == 1)
 		{
+			APPLICATION.log('ONE');
 			for (var i = 0; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
@@ -201,9 +204,28 @@ Extends: Application,
 				}
 			}
 		}
-		else
+
+		if (parseInt(this.mEvaluationsID) == 3)
 		{
-			score = 99;
+			APPLICATION.log('THREE');
+			var currentStreak = 0;
+			
+			APPLICATION.log('count:' + this.mItemAttemptsTypeArrayThree.length)
+			for (var i = 0; i < this.mItemAttemptsTypeArrayThree.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
+				{
+					currentStreak++;	
+					if (parseInt(currentStreak) > parseInt(score))
+					{
+						score = currentStreak;
+					}
+				}
+				else
+				{
+					currentStreak = 0;
+				}
+			}
 		}
 		this.mGame.setScore(score);
 	},
