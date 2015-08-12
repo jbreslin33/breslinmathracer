@@ -213,16 +213,20 @@ Extends: Application,
 			APPLICATION.log('count:' + this.mItemAttemptsTypeArrayThree.length)
 			for (var i = 0; i < this.mItemAttemptsTypeArrayThree.length; i++)
 			{
+				APPLICATION.log('tc:' + this.mItemAttemptsTransactionCodeArrayThree[i]);
 				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
 				{
+					APPLICATION.log('cstre:' + currentStreak)
 					currentStreak++;	
-					if (parseInt(currentStreak) > parseInt(score))
+					if (parseInt(currentStreak) >= parseInt(score))
 					{
+						APPLICATION.log('score:' + score); 
 						score = currentStreak;
 					}
 				}
 				else
 				{
+					APPLICATION.log('make zero' + currentStreak); 
 					currentStreak = 0;
 				}
 			}
