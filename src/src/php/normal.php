@@ -138,91 +138,51 @@ public function fillItemAttemptsArray()
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 3)
 			{
                         	$this->mItemAttemptsTypeArrayThree[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayThree[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 4)
 			{
                         	$this->mItemAttemptsTypeArrayFour[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayFour[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 5)
 			{
                         	$this->mItemAttemptsTypeArrayFive[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayFive[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 6)
 			{
                         	$this->mItemAttemptsTypeArraySix[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArraySix[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 7)
 			{
                         	$this->mItemAttemptsTypeArraySeven[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArraySeven[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 8)
 			{
                         	$this->mItemAttemptsTypeArrayEight[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayEight[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 9)
 			{
                         	$this->mItemAttemptsTypeArrayNine[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayNine[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 10)
 			{
                         	$this->mItemAttemptsTypeArrayTen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayTen[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 12)
 			{
                         	$this->mItemAttemptsTypeArrayTwelve[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayTwelve[]  = pg_Result($result,$i,'transaction_code');
 			}
-                }
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $evalID = pg_Result($result,$i,'evaluations_id');
 			if ($evalID == 13)
 			{
                         	$this->mItemAttemptsTypeArrayThirteen[] = pg_Result($result,$i,'item_types_id');
