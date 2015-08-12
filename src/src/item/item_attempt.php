@@ -42,6 +42,51 @@ var ItemAttempt = new Class(
 	setTransactionCode: function(code)
 	{
 		this.mTransactionCode = code;
+		if (parseInt(this.mEvaluationsID) == 1)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayOne[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 3)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThree[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 4)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayFour[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 5)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayFive[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 6)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArraySix[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 7)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArraySeven[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 8)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayEight[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 9)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayNine[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 10)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayTen[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 12)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 13)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen[0] = code;
+		}
+
 	},
 	setEvaluationsID: function(evaluationsID)
 	{
