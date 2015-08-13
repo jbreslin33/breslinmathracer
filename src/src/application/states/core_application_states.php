@@ -158,7 +158,7 @@ execute: function(application)
 		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
 		{
         		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
-                	APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                	APPLICATION.mHud.setOrange('Game:' + APPLICATION.mRef_id);
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
@@ -406,7 +406,7 @@ execute: function(application)
 	else if (application.mLoggedIn == true)
 	{
         	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
-                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                APPLICATION.mHud.setOrange('Game: ' + APPLICATION.mRef_id);
                 //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
                 APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
@@ -591,7 +591,7 @@ execute: function(application)
 	else if (application.mLoggedIn == true)
 	{
         	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
-                APPLICATION.mHud.setStandard(APPLICATION.mRef_id);
+                APPLICATION.mHud.setOrange('Game: ' + APPLICATION.mRef_id);
                 //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
                 APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 APPLICATION.mFirstName = APPLICATION.mResponseArray[4];

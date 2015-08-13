@@ -14,20 +14,20 @@ var Hud = new Class(
         var ySize = 35;
         var yCoord = 0;
         
-	this.mHomeBaseColor = new Shape(90, ySize,  0,   yCoord,"","","#F8CDF8","boundary");
+	this.mWhite = new Shape(90, ySize,  0,   yCoord,"","","#F8CDF8","boundary");
 
         this.mHome = new Shape(90, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
 	this.mHome.mMesh.onchange = this.homeSelected;
 
-        this.mStandard    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
+        this.mOrange    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
        
-	this.mProgression = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
+	this.mPink = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
 	
-	this.mProgressedTypeID = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
+	this.mYellow = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
 
-        this.mScore = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
+        this.mGreen = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
 
-        this.mItemTypeStats = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
+        this.mCyan = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
 
 	this.mUsername = new Shape     (180, ySize,590,  yCoord,"","","#F8CDF8","boundary");
         
@@ -120,24 +120,24 @@ var Hud = new Class(
                 }
         },
                 
-	setItemTypeStats: function(streak)
+	setCyan: function(streak)
 	{
-        	this.mItemTypeStats.setText('<font size="1">' + streak + '</font>');
+        	this.mCyan.setText('<font size="1">' + streak + '</font>');
 	},
 	
-	setStandard: function(s)
+	setOrange: function(s)
 	{
-        	this.mStandard.setText('<font size="1"> Game:' + s +  '</font>');
+        	this.mOrange.setText('<font size="1"> ' + s +  '</font>');
 	},
 
-	setProgression: function(p)
+	setPink: function(p)
 	{
-        	this.mProgression.setText('<font size="1">' + p +  '</font>');
+        	this.mPink.setText('<font size="1">' + p +  '</font>');
 	},
 
-	setProgressedTypeID: function(type_id)
+	setYellow: function(type_id)
 	{
-        	this.mProgressedTypeID.setText('<font size="1">' + type_id + '</font>');
+        	this.mYellow.setText('<font size="1">' + type_id + '</font>');
 	},
 	
 	setUsername: function(firstname,lastname)

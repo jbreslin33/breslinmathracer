@@ -168,12 +168,12 @@ enter: function(item)
 	item.setTheFocus();
 
 	//show item type id in Game hud
-	APPLICATION.mHud.setProgression(item.mType);	
+	APPLICATION.mHud.setPink(item.mType);	
 	APPLICATION.mType = item.mType;	
 
 	//hud question number	
-	APPLICATION.mHud.setProgressedTypeID(item.mProgressedTypeID);	
-	APPLICATION.mHud.setItemTypeStats(item.mStreak);	
+	APPLICATION.mHud.setYellow(item.mProgressedTypeID);	
+	APPLICATION.mHud.setCyan(item.mStreak);	
 },
 
 execute: function(item)

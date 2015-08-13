@@ -339,7 +339,7 @@ var Item = new Class(
 		}
 
 		//lets make screen red if they are over a certain U score
-		var str = APPLICATION.mHud.mItemTypeStats.getText();	
+		var str = APPLICATION.mHud.mCyan.getText();	
 		if (str)
 		{
 			var strArray = str.split("U="); 
