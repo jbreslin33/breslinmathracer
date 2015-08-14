@@ -6,6 +6,7 @@ initialize: function(game)
 {
 	this.parent(game);
 	this.mIDArray = new Array();
+	
 },
 
 createItem: function()
@@ -48,7 +49,8 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
               	itemAttempt.mType = pick.mType;
-               	itemAttempt.setEvaluationsID(3);
+		APPLICATION.log('dido:' + APPLICATION.mEvaluationsID);
+               	itemAttempt.setEvaluationsID(APPLICATION.mEvaluationsID);
         }
         else
         {
