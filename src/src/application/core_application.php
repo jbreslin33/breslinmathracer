@@ -184,11 +184,10 @@ Extends: Application,
 	calcScore: function()
 	{
 		var score = 0;
+		var currentStreak = 0;
 		
-		APPLICATION.log('this.mEv:' + this.mEvaluationsID);
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
-			APPLICATION.log('ONE');
 			for (var i = 0; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
@@ -207,31 +206,49 @@ Extends: Application,
 
 		if (parseInt(this.mEvaluationsID) == 3)
 		{
-			APPLICATION.log('THREE');
-			var currentStreak = 0;
+			//all time
+			var hiStreak = 0;
 			
-			APPLICATION.log('count:' + this.mItemAttemptsTypeArrayThree.length)
 			for (var i = 0; i < this.mItemAttemptsTypeArrayThree.length; i++)
 			{
-				APPLICATION.log('tc:' + this.mItemAttemptsTransactionCodeArrayThree[i]);
 				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
 				{
-					APPLICATION.log('cstre:' + currentStreak)
-					currentStreak++;	
-					if (parseInt(currentStreak) >= parseInt(score))
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
 					{
-						APPLICATION.log('score:' + score); 
-						score = currentStreak;
+						score = hiStreak;
 					}
 				}
 				else
 				{
-					APPLICATION.log('make zero' + currentStreak); 
-					currentStreak = 0;
+					hiStreak = 0;
 				}
 			}
+			
+			//latest streak
+			var foundWrong = false;
+		
+			var i = 0;	
+			APPLICATION.log('three length:' + this.mItemAttemptsTypeArrayThree.length)
+			while (i < this.mItemAttemptsTypeArrayThree.length && foundWrong == false)
+			{
+				APPLICATION.log('tans:' + this.mItemAttemptsTransactionCodeArrayThree[i]); 
+							
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+
+			//alltime
+			this.mHud.setCyan(currentStreak);
 		}
-		this.mGame.setScore(score);
+		this.mGame.setScore(score); 
 	},
 
 //is it coounting zero as good?	

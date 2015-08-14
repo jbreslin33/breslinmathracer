@@ -172,8 +172,8 @@ enter: function(item)
 	APPLICATION.mType = item.mType;	
 
 	//hud question number	
-	APPLICATION.mHud.setYellow(item.mProgressedTypeID);	
-	APPLICATION.mHud.setCyan(item.mStreak);	
+	//APPLICATION.mHud.setYellow(item.mProgressedTypeID);	
+	//APPLICATION.mHud.setCyan(item.mStreak);	
 },
 
 execute: function(item)

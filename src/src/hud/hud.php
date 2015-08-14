@@ -120,24 +120,24 @@ var Hud = new Class(
                 }
         },
                 
-	setCyan: function(streak)
+	setCyan: function(t)
 	{
-        	this.mCyan.setText('<font size="1">' + streak + '</font>');
+        	this.mCyan.setText('<font size="1">' + t + '</font>');
 	},
 	
-	setOrange: function(s)
+	setOrange: function(t)
 	{
-        	this.mOrange.setText('<font size="1"> ' + s +  '</font>');
+        	this.mOrange.setText('<font size="1"> ' + t +  '</font>');
 	},
 
-	setPink: function(p)
+	setPink: function(t)
 	{
-        	this.mPink.setText('<font size="1">' + p +  '</font>');
+        	this.mPink.setText('<font size="1">' + t +  '</font>');
 	},
 
-	setYellow: function(type_id)
+	setYellow: function(t)
 	{
-        	this.mYellow.setText('<font size="1">' + type_id + '</font>');
+        	this.mYellow.setText('<font size="1">' + t + '</font>');
 	},
 	
 	setUsername: function(firstname,lastname)
