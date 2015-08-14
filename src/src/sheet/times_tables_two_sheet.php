@@ -29,10 +29,10 @@ initialize: function(game)
 
 createItem: function()
 {
-	var score = parseInt(this.mGame.getScore()); 
-	if (score < 19)
+	var streak = parseInt(this.mGame.getStreak()); 
+	if (streak < 19)
 	{
-        	APPLICATION.mQuestionTypeCurrent = this.mIDArray[score];
+        	APPLICATION.mQuestionTypeCurrent = this.mIDArray[streak];
 	}
 	else
 	{

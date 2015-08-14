@@ -246,7 +246,7 @@ Extends: Application,
 			}
 
 			//alltime
-			this.mHud.setCyan(currentStreak);
+			this.mGame.setStreak(currentStreak);
 		}
 		this.mGame.setScore(score); 
 	},

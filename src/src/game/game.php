@@ -19,6 +19,7 @@ var Game = new Class(
 
 		/************ SCORE *******/
 		this.mScore = 0;
+		this.mStreak = 0;
 		this.mKilled = false;
 
 		/**************** TIME ************/
@@ -415,6 +416,17 @@ var Game = new Class(
         {
                 this.mScore = score;
                 APPLICATION.mHud.mGreen.setText('<font size="1">Score: ' + this.mScore + '</font>');
+        },
+        
+	getStreak: function()
+        {
+                return this.mStreak;
+        },
+
+        setStreak: function(s)
+        {
+                this.mStreak = s;
+                APPLICATION.mHud.mCyan.setText('<font size="1">Streak: ' + this.mStreak + '</font>');
         },
 
         incrementScore: function()
