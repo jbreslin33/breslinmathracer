@@ -185,9 +185,12 @@ Extends: Application,
 	{
 		var score = 0;
 		var currentStreak = 0;
+		var hiStreak = 0;
+		var foundWrong = false;
 		
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
+			//alltime
 			for (var i = 0; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
@@ -202,13 +205,26 @@ Extends: Application,
 					j++;
 				}
 			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayOne.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayOne[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
 		}
 
 		if (parseInt(this.mEvaluationsID) == 3)
 		{
 			//all time
-			var hiStreak = 0;
-			
 			for (var i = 0; i < this.mItemAttemptsTypeArrayThree.length; i++)
 			{
 				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
@@ -226,8 +242,6 @@ Extends: Application,
 			}
 			
 			//latest streak
-			var foundWrong = false;
-		
 			var i = 0;	
 			APPLICATION.log('three length:' + this.mItemAttemptsTypeArrayThree.length)
 			while (i < this.mItemAttemptsTypeArrayThree.length && foundWrong == false)
@@ -244,10 +258,8 @@ Extends: Application,
 					foundWrong = true;
 				}
 			}
-
-			//alltime
-			this.mGame.setStreak(currentStreak);
 		}
+		this.mGame.setStreak(currentStreak);
 		this.mGame.setScore(score); 
 	},
 
