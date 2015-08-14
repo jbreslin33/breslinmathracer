@@ -6,6 +6,7 @@ initialize: function(game)
 {
 	this.parent(game);
 	this.mIDArray = new Array();
+	this.mIDArray.push('3.oa.c.7_82');
 	this.mIDArray.push('3.oa.c.7_1');
 	this.mIDArray.push('3.oa.c.7_2');
 	this.mIDArray.push('3.oa.c.7_4');
