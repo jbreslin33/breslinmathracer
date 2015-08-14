@@ -1,30 +1,30 @@
-var TimesTablesTwoSheet = new Class(
+var TimesTablesSixSheet = new Class(
 {
 Extends: TimesTablesSheet,
 
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray.push('3.oa.c.7_82');
-	this.mIDArray.push('3.oa.c.7_1');
-	this.mIDArray.push('3.oa.c.7_2');
-	this.mIDArray.push('3.oa.c.7_4');
-	this.mIDArray.push('3.oa.c.7_6');
-	this.mIDArray.push('3.oa.c.7_8');
-	this.mIDArray.push('3.oa.c.7_10');
-	this.mIDArray.push('3.oa.c.7_12');
-	this.mIDArray.push('3.oa.c.7_14');
-	this.mIDArray.push('3.oa.c.7_16');
-	this.mIDArray.push('3.oa.c.7_92');
-	this.mIDArray.push('3.oa.c.7_1');
-	this.mIDArray.push('3.oa.c.7_3');
-	this.mIDArray.push('3.oa.c.7_5');
-	this.mIDArray.push('3.oa.c.7_7');
+	this.mIDArray.push('3.oa.c.7_86');
 	this.mIDArray.push('3.oa.c.7_9');
-	this.mIDArray.push('3.oa.c.7_11');
-	this.mIDArray.push('3.oa.c.7_13');
-	this.mIDArray.push('3.oa.c.7_15');
-	this.mIDArray.push('3.oa.c.7_17');
+	this.mIDArray.push('3.oa.c.7_24');
+	this.mIDArray.push('3.oa.c.7_37');
+	this.mIDArray.push('3.oa.c.7_48');
+	this.mIDArray.push('3.oa.c.7_57');
+	this.mIDArray.push('3.oa.c.7_58');
+	this.mIDArray.push('3.oa.c.7_60');
+	this.mIDArray.push('3.oa.c.7_62');
+	this.mIDArray.push('3.oa.c.7_64');
+	this.mIDArray.push('3.oa.c.7_96');
+	this.mIDArray.push('3.oa.c.7_8');
+	this.mIDArray.push('3.oa.c.7_23');
+	this.mIDArray.push('3.oa.c.7_36');
+	this.mIDArray.push('3.oa.c.7_47');
+	this.mIDArray.push('3.oa.c.7_57');
+	this.mIDArray.push('3.oa.c.7_59');
+	this.mIDArray.push('3.oa.c.7_61');
+	this.mIDArray.push('3.oa.c.7_63');
+	this.mIDArray.push('3.oa.c.7_64');
 }
 
 });
