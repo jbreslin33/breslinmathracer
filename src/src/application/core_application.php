@@ -243,11 +243,8 @@ Extends: Application,
 			
 			//latest streak
 			var i = 0;	
-			APPLICATION.log('three length:' + this.mItemAttemptsTypeArrayThree.length)
 			while (i < this.mItemAttemptsTypeArrayThree.length && foundWrong == false)
 			{
-				APPLICATION.log('tans:' + this.mItemAttemptsTransactionCodeArrayThree[i]); 
-							
 				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
 				{
 					currentStreak++;	
@@ -259,6 +256,323 @@ Extends: Application,
 				}
 			}
 		}
+		
+		if (parseInt(this.mEvaluationsID) == 4)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayFour.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayFour.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 5)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayFive.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayFive.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 6)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArraySix.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArraySix.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 7)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArraySeven.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArraySeven.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 8)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayEight.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayEight.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 9)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayNine.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayNine.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 10)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayTen.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayTen.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 12)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayTwelve.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayTwelve.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+		
+		if (parseInt(this.mEvaluationsID) == 13)
+		{
+			//all time
+			for (var i = 0; i < this.mItemAttemptsTypeArrayThirteen.length; i++)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayThirteen[i]) == 1)
+				{
+					hiStreak++;	
+					if (parseInt(hiStreak) >= parseInt(score))
+					{
+						score = hiStreak;
+					}
+				}
+				else
+				{
+					hiStreak = 0;
+				}
+			}
+			
+			//latest streak
+			var i = 0;	
+			while (i < this.mItemAttemptsTypeArrayThirteen.length && foundWrong == false)
+			{
+				if (parseInt(this.mItemAttemptsTransactionCodeArrayThirteen[i]) == 1)
+				{
+					currentStreak++;	
+					i++;
+				}
+				else
+				{
+					foundWrong = true;
+				}
+			}
+		}
+
+
 		this.mGame.setStreak(currentStreak);
 		this.mGame.setScore(score); 
 	},

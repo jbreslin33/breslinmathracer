@@ -115,6 +115,7 @@ cat src/item/states/states.php >> min.js
 cat src/sheet/sheet.php >> min.js
 cat src/sheet/normal_sheet.php >> min.js
 cat src/sheet/practice_sheet.php >> min.js
+cat src/sheet/times_tables_sheet.php >> min.js
 cat src/sheet/times_tables_two_sheet.php >> min.js
 cat src/sheet/times_tables_three_sheet.php >> min.js
 cat src/sheet/times_tables_four_sheet.php >> min.js

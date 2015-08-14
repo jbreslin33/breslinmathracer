@@ -79,6 +79,7 @@
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/normal_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/practice_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_two_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_three_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_four_sheet.php"></script>
