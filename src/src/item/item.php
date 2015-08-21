@@ -257,19 +257,7 @@ var Item = new Class(
 			}
 		}
 		var optionB = document.createElement("option");
-                optionB.value = '11';
-                optionB.text = 'timestables';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionB);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
-		}
-
-		var optionB = document.createElement("option");
-                optionB.value = '12';
+                optionB.value = 12;
                 optionB.text = 'The Izzy';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
@@ -282,7 +270,7 @@ var Item = new Class(
 	
      
 		var optionC = document.createElement("option");
-                optionC.value = '13';
+                optionC.value = 13;
                 optionC.text = 'Add Subtract within 5';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{

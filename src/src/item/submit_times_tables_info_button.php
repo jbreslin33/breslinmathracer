@@ -25,7 +25,7 @@ initialize: function(width,height,spawnX,spawnY,game,src,backgroundColor,message
 buttonHit: function()
 {
         var v = APPLICATION.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[APPLICATION.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].value;
-	APPLICATION.log('mEvaluationsID:' + APPLICATION.mEvaluationsID);
+	APPLICATION.log('v:' + v);
         APPLICATION.mEvaluationsID = parseInt(v);
 }
 });
