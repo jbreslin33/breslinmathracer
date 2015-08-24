@@ -12,5 +12,15 @@ initialize: function(game)
                 var c = '' + a + b;
                 this.mIDArray.push('' + c);
         }
+},
+
+pickItem: function()
+{
+	var length = this.mIDArray.length;
+        while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+        {
+                var r = Math.floor(Math.random()*length);
+                APPLICATION.mQuestionTypeCurrent = this.mIDArray[r];
+        }
 }
 });

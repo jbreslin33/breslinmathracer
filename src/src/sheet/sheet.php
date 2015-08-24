@@ -105,6 +105,11 @@ var Sheet = new Class(
 	{
 		return this.mItem;
 	},
+	
+	//virtual	
+	pickItem: function()
+	{
+	},
 
 	//virtual	
 	createItem: function()

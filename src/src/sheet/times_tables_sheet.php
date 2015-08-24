@@ -9,7 +9,7 @@ initialize: function(game)
 	
 },
 
-createItem: function()
+pickItem: function()
 {
 	var streak = parseInt(this.mGame.getStreak()); 
 	if (streak < this.mIDArray.length)
@@ -25,6 +25,11 @@ createItem: function()
         		APPLICATION.mQuestionTypeCurrent = this.mIDArray[r];
 		}
 	}
+},
+
+createItem: function()
+{
+	this.pickItem();
 
         var pick = 0;
 
@@ -49,7 +54,6 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
               	itemAttempt.mType = pick.mType;
-		APPLICATION.log('dido:' + APPLICATION.mEvaluationsID);
                	itemAttempt.setEvaluationsID(APPLICATION.mEvaluationsID);
         }
         else
