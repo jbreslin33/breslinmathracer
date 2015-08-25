@@ -5,8 +5,6 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray = new Array();
-	
 },
 
 pickItem: function()

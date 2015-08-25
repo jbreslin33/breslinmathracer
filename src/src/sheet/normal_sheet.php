@@ -21,12 +21,12 @@ createItem: function()
                 }
                 if (r == 1)
                 {
-                        APPLICATION.getLeastAsked(APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
                 }
                 if (r == 2)
                 {
-                        APPLICATION.getLeastCorrect(APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 }
 	}

@@ -52,47 +52,47 @@ Extends: Application,
 		//item_attempts
 		this.mItemTypesArray = new Array(); //from db
 
-		//One
+		//One normal
 		this.mItemAttemptsTypeArrayOne = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayOne = new Array(); //from db
 		
-		//Three
+		//Three 2x
 		this.mItemAttemptsTypeArrayThree = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayThree = new Array(); //from db
 		
-		//Four
+		//Four 3x
 		this.mItemAttemptsTypeArrayFour = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayFour = new Array(); //from db
 		
-		//Five
+		//Five 4x
 		this.mItemAttemptsTypeArrayFive = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayFive = new Array(); //from db
 
-		//Six
+		//Six 5x
 		this.mItemAttemptsTypeArraySix = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArraySix = new Array(); //from db
 		
-		//Seven
+		//Seven 6x
 		this.mItemAttemptsTypeArraySeven = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArraySeven = new Array(); //from db
 
-		//Eight
+		//Eight 7x
 		this.mItemAttemptsTypeArrayEight = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayEight = new Array(); //from db
 
-		//Nine
+		//Nine 8x
 		this.mItemAttemptsTypeArrayNine = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayNine = new Array(); //from db
 
-		//Ten
+		//Ten 9x
 		this.mItemAttemptsTypeArrayTen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTen = new Array(); //from db
 
-		//Twelve
+		//Twelve theizzy
 		this.mItemAttemptsTypeArrayTwelve = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTwelve = new Array(); //from db
 
-		//Thirteen
+		//Thirteen addsub
 		this.mItemAttemptsTypeArrayThirteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayThirteen = new Array(); //from db
 
@@ -615,20 +615,20 @@ Extends: Application,
 		this.mFirst = first;
 	},
 	
-     	getLeastAsked: function(attemptArray,transactionCodeArray)
+     	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)
         {
                 var id = '';
 		var idCount = 1000;
                 var i = 0;
 
-                while (i < this.mItemTypesArray.length)
+                while (i < typesArray.length)
                 {
                         var tempArray = new Array();
                         var tempArray = [];
                         var j = 0;
                         while (j < attemptArray.length)
                         {
-                                if (this.mItemTypesArray[i] == attemptArray[j])
+                                if (typesArray[i] == attemptArray[j])
                                 {
                                         tempArray.push(transactionCodeArray[j]);
                                 }
@@ -636,7 +636,7 @@ Extends: Application,
                         }
                         if (tempArray.length > 0 && tempArray.length < idCount) //we have a new least id
                         {
-                                id = this.mItemTypesArray[i];
+                                id = typesArray[i];
 				idCount = tempArray.length;
                         }
                         i++;
@@ -644,20 +644,20 @@ Extends: Application,
                 this.mLeastAsked = id;
         },
 
-     	getLeastCorrect: function(attemptArray,transactionCodeArray)
+     	getLeastCorrect: function(typesArray,attemptArray,transactionCodeArray)
         {
                 var id = '';
                 var idCount = 1000;
                 var i = 0;
 
-                while (i < this.mItemTypesArray.length)
+                while (i < typesArray.length)
                 {
                         var tempArray = new Array();
                         var tempArray = [];
                         var j = 0;
                         while (j < attemptArray.length)
                         {
-                                if (this.mItemTypesArray[i] == attemptArray[j])
+                                if (typesArray[i] == attemptArray[j])
                                 {
 					if (parseInt(transactionCodeArray[j]) == 1)
 					{
@@ -668,7 +668,7 @@ Extends: Application,
                         }
                         if (tempArray.length > 1 && tempArray.length < idCount) //we have a new least Correct id
                         {
-                                id = this.mItemTypesArray[i];
+                                id = typesArray[i];
                                 idCount = tempArray.length;
                         }
                         i++;

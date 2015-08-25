@@ -9,6 +9,9 @@ var Sheet = new Class(
 		//logs
 		this.mStateLogs = true; 
 
+		// questions
+ 		this.mIDArray = new Array();
+
 		//GAME
 		this.mGame = game;
 
