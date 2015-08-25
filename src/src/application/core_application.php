@@ -644,7 +644,7 @@ Extends: Application,
                 this.mLeastAsked = id;
         },
 
-       	getLeastCorrect: function()
+     	getLeastCorrect: function(attemptArray,transactionCodeArray)
         {
                 var id = '';
                 var idCount = 1000;
@@ -655,13 +655,13 @@ Extends: Application,
                         var tempArray = new Array();
                         var tempArray = [];
                         var j = 0;
-                        while (j < this.mItemAttemptsTypeArrayOne.length)
+                        while (j < attemptArray.length)
                         {
-                                if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+                                if (this.mItemTypesArray[i] == attemptArray[j])
                                 {
-					if (parseInt(this.mItemAttemptsTransactionCodeArrayOne[j]) == 1)
+					if (parseInt(transactionCodeArray[j]) == 1)
 					{
-                                        	tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);
+                                        	tempArray.push(transactionCodeArray[j]);
 					}
                                 }
                                 j++;

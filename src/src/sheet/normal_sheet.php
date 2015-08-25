@@ -13,7 +13,6 @@ createItem: function()
         while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         {
         	var r = Math.floor(Math.random()*3);
-		r = 1;
 
                 if (r == 0)
                 {
@@ -27,7 +26,7 @@ createItem: function()
                 }
                 if (r == 2)
                 {
-                        APPLICATION.getLeastCorrect();
+                        APPLICATION.getLeastCorrect(APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 }
 	}
