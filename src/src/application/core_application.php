@@ -130,7 +130,7 @@ Extends: Application,
 
 		/********** STATE FLAGS ************/
 		this.mPracticeItemID = '3.oa.c.7_44';
-		this.mEvaluationsID = 1;
+		this.mEvaluationsID = 0;
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);

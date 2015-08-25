@@ -16,6 +16,55 @@ execute: function(application)
         {
                 application.mGame.update();
         }
+	if (application.mEvaluationsID == 1 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mNORMAL_CORE_APPLICATION)
+	{
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mNORMAL_CORE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 2 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mPRACTICE_APPLICATION)
+	{
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 3 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_TWO_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if (application.mEvaluationsID == 4 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THREE_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 5 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_FOUR_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if (application.mEvaluationsID == 6 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_FIVE_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 7 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_SIX_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if (application.mEvaluationsID == 8 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_SEVEN_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if (application.mEvaluationsID == 9 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_EIGHT_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if (application.mEvaluationsID == 10 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_NINE_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 12 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THE_IZZY_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if (application.mEvaluationsID == 13 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
+
 },
 
 exit: function(application)
@@ -868,50 +917,6 @@ enter: function(application)
 
 execute: function(application)
 {
-	if (application.mEvaluationsID == 2)
-	{
-        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -994,54 +999,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::PRACTICE_APPLICATION execute');
 	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluatinsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -1079,50 +1036,6 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TIMES_TABLES_TWO_APPLICATION execute');
-	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
 },
 
@@ -1162,50 +1075,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TIMES_TABLES_THREE_APPLICATION execute');
 	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -1243,50 +1112,6 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TIMES_TABLES_FOUR_APPLICATION execute');
-	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
 },
 
@@ -1326,50 +1151,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TIMES_TABLES_FIVE_APPLICATION execute');
 	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -1407,50 +1188,6 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TIMES_TABLES_SIX_APPLICATION execute');
-	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
 },
 
@@ -1490,50 +1227,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TIMES_TABLES_SEVEN_APPLICATION execute');
 	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -1571,50 +1264,6 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TIMES_TABLES_EIGHT_APPLICATION execute');
-	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
 },
 
@@ -1654,50 +1303,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TIMES_TABLES_NINE_APPLICATION execute');
 	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -1736,50 +1341,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TIMES_TABLES_THE_IZZY_APPLICATION execute');
 	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}
 },
 
 exit: function(application)
@@ -1817,50 +1378,6 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION execute');
-	}
-	if (application.mEvaluationsID == 1)
-	{
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 2)
-	{
-		application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 3)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
-	}
-	if (application.mEvaluationsID == 4)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THREE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 5)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FOUR_APPLICATION);
-	}
-	if (application.mEvaluationsID == 6)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_FIVE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 7)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SIX_APPLICATION);
-	}
-	if (application.mEvaluationsID == 8)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_SEVEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 9)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_EIGHT_APPLICATION);
-	}
-	if (application.mEvaluationsID == 10)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
-	}
-	if (application.mEvaluationsID == 12)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
 	}
 },
 
