@@ -7,7 +7,7 @@ initialize: function(game)
 	this.parent(game);
 },
 
-createItem: function()
+pickItem: function()
 {
 	//would love to loop till we got no dup
         while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
@@ -30,6 +30,11 @@ createItem: function()
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 }
 	}
+},
+
+createItem: function()
+{
+	this.pickItem();
 
         var pick = 0;
 
