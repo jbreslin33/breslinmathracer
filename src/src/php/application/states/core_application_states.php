@@ -19,6 +19,54 @@ public function enter($bapplication)
 }
 public function execute($bapplication)
 {
+	if ($bapplication->mCode == 1 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+	}
+	if ($bapplication->mCode == 2 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mPRACTICE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
+	}
+	if ($bapplication->mCode == 3 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_TWO_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
+	}
+	if ($bapplication->mCode == 4 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_THREE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
+	}
+	if ($bapplication->mCode == 5 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_FOUR_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
+	}
+	if ($bapplication->mCode == 6 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_FIVE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
+	}
+	if ($bapplication->mCode == 7 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_SIX_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
+	}
+	if ($bapplication->mCode == 8 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_SEVEN_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
+	}
+	if ($bapplication->mCode == 9 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_EIGHT_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
+	}
+	if ($bapplication->mCode == 10 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_NINE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
+	}
+	if ($bapplication->mCode == 12 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
+	}
+	if ($bapplication->mCode == 13 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
+	}
 
 }
 public function bexit($bapplication)
@@ -172,18 +220,6 @@ public function execute($bapplication)
         {
                 error_log('WAIT_GAME_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}
 }
 public function bexit($bapplication)
 {
@@ -232,50 +268,6 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
 	}
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -326,19 +318,11 @@ public function execute($bapplication)
         {
                 error_log('PRACTICE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 2)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 	}
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -390,14 +374,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_TWO_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 3)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -405,42 +381,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimetwo');
 	}
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -493,18 +433,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_THREE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
 	if ($bapplication->mCode == 4)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -512,38 +440,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimethree');
 	}
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -596,22 +492,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_FOUR_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 5)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -619,34 +499,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefour');
 	}
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -698,26 +550,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_FIVE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
 	if ($bapplication->mCode == 6)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -725,30 +557,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefive');
 	}
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -800,30 +608,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_SIX_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 7)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -831,26 +615,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimesix');
 	}
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -902,34 +666,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_SEVEN_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
 	if ($bapplication->mCode == 8)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -937,22 +673,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeseven');
 	}
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -1004,38 +724,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_EIGHT_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
 	if ($bapplication->mCode == 9)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -1043,18 +731,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeeight');
 	}
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -1106,42 +782,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_NINE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
 	if ($bapplication->mCode == 10)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -1149,14 +789,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimenine');
 	}
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -1208,46 +840,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_THE_IZZY_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 12)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
@@ -1255,10 +847,6 @@ public function execute($bapplication)
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeizzy');
 	}
-	if ($bapplication->mCode == 13)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
-	}	
 	if ($bapplication->mCode == 101) //universal update
 	{
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
@@ -1310,50 +898,6 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 1)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 2)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 3)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_TWO_APPLICATION);
-	}	
-	if ($bapplication->mCode == 4)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THREE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 5)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FOUR_APPLICATION);
-	}	
-	if ($bapplication->mCode == 6)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_FIVE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 7)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SIX_APPLICATION);
-	}	
-	if ($bapplication->mCode == 8)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_SEVEN_APPLICATION);
-	}	
-	if ($bapplication->mCode == 9)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_EIGHT_APPLICATION);
-	}	
-	if ($bapplication->mCode == 10)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_NINE_APPLICATION);
-	}	
-	if ($bapplication->mCode == 12)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}	
 	if ($bapplication->mCode == 13)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
