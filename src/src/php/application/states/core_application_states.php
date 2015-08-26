@@ -19,6 +19,11 @@ public function enter($bapplication)
 }
 public function execute($bapplication)
 {
+	if ($bapplication->mCode == 117 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mLOGIN_STUDENT_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
+	}
+
 	if ($bapplication->mCode == 1 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
@@ -133,10 +138,6 @@ public function execute($bapplication)
                 error_log('WAIT_CORE_APPLICATION Execute');
         }
         
-	if ($bapplication->mCode == 117)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
-	}
 }
 
 public function bexit($bapplication)
@@ -194,6 +195,7 @@ public function bexit($bapplication)
         {
                 error_log('LOGIN_STUDENT_APPLICATION Exit');
         }
+	$bapplication->mCode = 0;
 }
 
 }//end class
@@ -270,10 +272,17 @@ public function execute($bapplication)
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
+		error_log('universal update');
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
 		{ 
+			$a = $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID;
+			$a .= ':';
+			$a .= $bapplication->mDataArray[1];
+			error_log($a);
+			error_log($bapplication->mDataArray[1]);
 			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
+				error_log('update in if ');
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}

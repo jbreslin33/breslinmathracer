@@ -757,6 +757,7 @@ Extends: Application,
                 			var datenow = parseInt(this.mResponseArray[1]);
 					if (APPLICATION.mItemAttemptsArray[i].mDateNow == datenow)
 					{
+						APPLICATION.log('mID here:' +  parseInt(this.mResponseArray[2]));
 						APPLICATION.mItemAttemptsArray[i].mID = parseInt(this.mResponseArray[2]); 
 					}
 				}
@@ -1058,6 +1059,7 @@ Extends: Application,
                                 }
                         }
                 }
+		APPLICATION.log('whid:' + itemattemptid);
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
                 xmlhttp.send();
         },
