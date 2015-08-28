@@ -447,6 +447,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimethree');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -457,6 +458,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -506,6 +508,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefour');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -516,6 +519,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -564,6 +568,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefive');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -574,6 +579,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -622,6 +628,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimesix');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -632,6 +639,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -680,6 +688,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeseven');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -690,6 +699,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -738,6 +748,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeeight');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -748,6 +759,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -796,6 +808,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimenine');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -806,6 +819,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -854,6 +868,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeizzy');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -864,6 +879,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -912,6 +928,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimekoaa5');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -922,6 +939,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
