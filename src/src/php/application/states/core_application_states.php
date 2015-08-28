@@ -326,6 +326,7 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -336,6 +337,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
@@ -384,6 +386,7 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimetwo');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
@@ -394,6 +397,7 @@ public function execute($bapplication)
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
