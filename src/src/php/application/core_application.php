@@ -20,29 +20,24 @@ else
 	$APPLICATION = $_SESSION["APPLICATION"];
 }	
 
-$code = 0;
 if (isset($_GET["code"]))
 {
-	$code = $_GET["code"];
+	$APPLICATION->mCode = $_GET["code"];
 }
-$APPLICATION->mCode = $code;
+
+unset($APPLICATION->mDataArray);
+$APPLICATION->mDataArray = array();
 
 //parseData
-if ($code == 117)
+if ($APPLICATION->mCode == 117)
 {
-	unset($APPLICATION->mDataArray);
-	$APPLICATION->mDataArray = array();
-
 	$APPLICATION->mDataArray[] = "117";
 	$APPLICATION->mDataArray[] = $_GET["username"];
 	$APPLICATION->mDataArray[] = $_GET["password"];
 }
 
-if ($code == 1 || $code == 3 || $code == 4 || $code == 5 || $code == 6 || $code == 7 || $code == 8 || $code == 9 || $code == 10 || $code == 12 || $code == 13)
+if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13)
 {
-        unset($APPLICATION->mDataArray);
-        $APPLICATION->mDataArray = array();
-
         $APPLICATION->mDataArray[] = $code;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
@@ -50,22 +45,16 @@ if ($code == 1 || $code == 3 || $code == 4 || $code == 5 || $code == 6 || $code 
         $APPLICATION->mDataArray[] = $_GET["datenow"];
         $APPLICATION->mDataArray[] = $_GET["score"];
 }
-if ($code == 2)
+if ($APPLICATION->mCode == 2)
 {
-        unset($APPLICATION->mDataArray);
-        $APPLICATION->mDataArray = array();
-
         $APPLICATION->mDataArray[] = "2";
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
 }
-if ($code == 3)
+if ($APPLICATION->mCode == 3)
 {
-        unset($APPLICATION->mDataArray);
-        $APPLICATION->mDataArray = array();
-
         $APPLICATION->mDataArray[] = "3";
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
@@ -73,11 +62,8 @@ if ($code == 3)
         $APPLICATION->mDataArray[] = $_GET["datenow"];
         $APPLICATION->mDataArray[] = $_GET["score"]; //this should be most number in a row of an evaluation ie a timestables2 evaluation
 }
-if ($code == 101)
+if ($APPLICATION->mCode == 101)
 {
-        unset($APPLICATION->mDataArray);
-        $APPLICATION->mDataArray = array();
-
         $APPLICATION->mDataArray[] = "101";
         $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
         $APPLICATION->mDataArray[] = $_GET["transactioncode"];
@@ -86,6 +72,7 @@ if ($code == 101)
 
 //update
 $APPLICATION->update();	
+$APPLICATION->mCode = 0;
 
 ?>
 

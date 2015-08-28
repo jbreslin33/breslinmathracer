@@ -266,7 +266,6 @@ public function execute($bapplication)
         }
 	if ($bapplication->mCode == 1)
 	{
-		error_log('about to call ia');
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
@@ -274,20 +273,14 @@ public function execute($bapplication)
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
-		error_log('universal update');
 		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
 		{ 
-			$a = $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID;
-			$a .= ':';
-			$a .= $bapplication->mDataArray[1];
-			error_log($a);
-			error_log($bapplication->mDataArray[1]);
 			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
-				error_log('update in if ');
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 			}
 		}
+		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
