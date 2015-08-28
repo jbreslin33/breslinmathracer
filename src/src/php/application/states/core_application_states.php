@@ -266,9 +266,11 @@ public function execute($bapplication)
         }
 	if ($bapplication->mCode == 1)
 	{
+		error_log('about to call ia');
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
+		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
