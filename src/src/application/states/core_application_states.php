@@ -627,7 +627,6 @@ execute: function(application)
 	{
 		application.log('APPLICATION::SIGNUP_STUDENT_WAIT_APPLICATION execute');
 	}
-
 	//4 things can happen when you have sent a login request
 	
 	if (application.mDataToRead == true) //we have some data to read
@@ -635,22 +634,111 @@ execute: function(application)
 		//lets sniff packet
                 APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
 		APPLICATION.mDataToRead = false;
-	}
+		
+		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
+		{
+        		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
+                	APPLICATION.mHud.setOrange('Game:' + APPLICATION.mRef_id);
+               	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                	APPLICATION.mRole = APPLICATION.mResponseArray[6];
+                
+			var itemTypes = APPLICATION.mResponseArray[7];
+			APPLICATION.mItemTypesArray = itemTypes.split(":");
+                
+			//One	
+			var itemAttemptsTypesOne = APPLICATION.mResponseArray[8];
+			APPLICATION.mItemAttemptsTypeArrayOne = itemAttemptsTypesOne.split(":");
 	
-	else if (application.mLoggedIn == true)
-	{
-        	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
-                APPLICATION.mHud.setOrange('Game: ' + APPLICATION.mRef_id);
-                //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
-                APPLICATION.mUsername = APPLICATION.mResponseArray[3];
-                APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
-                APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                APPLICATION.mRawData = APPLICATION.mResponseArray[6];
-                APPLICATION.mRole = APPLICATION.mResponseArray[7];
-               	
-		APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+			var itemAttemptsTransactionCodesOne = APPLICATION.mResponseArray[9];
+			APPLICATION.mItemAttemptsTransactionCodeArrayOne = itemAttemptsTransactionCodesOne.split(":");
+		
+			//Three	
+			var itemAttemptsTypesThree = APPLICATION.mResponseArray[10];
+			APPLICATION.mItemAttemptsTypeArrayThree = itemAttemptsTypesThree.split(":");
+	
+			var itemAttemptsTransactionCodesThree = APPLICATION.mResponseArray[11];
+			APPLICATION.mItemAttemptsTransactionCodeArrayThree = itemAttemptsTransactionCodesThree.split(":");
 
-		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+			//Four	
+			var itemAttemptsTypesFour = APPLICATION.mResponseArray[12];
+			APPLICATION.mItemAttemptsTypeArrayFour = itemAttemptsTypesFour.split(":");
+	
+			var itemAttemptsTransactionCodesFour = APPLICATION.mResponseArray[13];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFour = itemAttemptsTransactionCodesFour.split(":");
+               
+			//Five	
+			var itemAttemptsTypesFive = APPLICATION.mResponseArray[14];
+			APPLICATION.mItemAttemptsTypeArrayFive = itemAttemptsTypesFive.split(":");
+	
+			var itemAttemptsTransactionCodesFive = APPLICATION.mResponseArray[15];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFive = itemAttemptsTransactionCodesFive.split(":");
+
+			//Six	
+			var itemAttemptsTypesSix = APPLICATION.mResponseArray[16];
+			APPLICATION.mItemAttemptsTypeArraySix = itemAttemptsTypesSix.split(":");
+	
+			var itemAttemptsTransactionCodesSix = APPLICATION.mResponseArray[17];
+			APPLICATION.mItemAttemptsTransactionCodeArraySix = itemAttemptsTransactionCodesSix.split(":");
+
+			//Seven	
+			var itemAttemptsTypesSeven = APPLICATION.mResponseArray[18];
+			APPLICATION.mItemAttemptsTypeArraySeven = itemAttemptsTypesSeven.split(":");
+	
+			var itemAttemptsTransactionCodesSeven = APPLICATION.mResponseArray[19];
+			APPLICATION.mItemAttemptsTransactionCodeArraySeven = itemAttemptsTransactionCodesSeven.split(":");
+
+
+			//Eight	
+			var itemAttemptsTypesEight = APPLICATION.mResponseArray[20];
+			APPLICATION.mItemAttemptsTypeArrayEight = itemAttemptsTypesEight.split(":");
+	
+			var itemAttemptsTransactionCodesEight = APPLICATION.mResponseArray[21];
+			APPLICATION.mItemAttemptsTransactionCodeArrayEight = itemAttemptsTransactionCodesEight.split(":");
+
+
+			//Nine	
+			var itemAttemptsTypesNine = APPLICATION.mResponseArray[22];
+			APPLICATION.mItemAttemptsTypeArrayNine = itemAttemptsTypesNine.split(":");
+	
+			var itemAttemptsTransactionCodesNine = APPLICATION.mResponseArray[23];
+			APPLICATION.mItemAttemptsTransactionCodeArrayNine = itemAttemptsTransactionCodesNine.split(":");
+
+			//Ten	
+			var itemAttemptsTypesTen = APPLICATION.mResponseArray[24];
+			APPLICATION.mItemAttemptsTypeArrayTen = itemAttemptsTypesTen.split(":");
+	
+			var itemAttemptsTransactionCodesTen = APPLICATION.mResponseArray[25];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTen = itemAttemptsTransactionCodesTen.split(":");
+
+			//Twelve	
+			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[26];
+			APPLICATION.mItemAttemptsTypeArrayTwelve = itemAttemptsTypesTwelve.split(":");
+	
+			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[27];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve = itemAttemptsTransactionCodesTwelve.split(":");
+
+			//Thirteen	
+			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[28];
+			APPLICATION.mItemAttemptsTypeArrayThirteen = itemAttemptsTypesThirteen.split(":");
+	
+			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[29];
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen = itemAttemptsTransactionCodesThirteen.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[30];
+
+	
+			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+			if (application.mEvaluationsID == 1)
+			{
+				application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
+			}
+			if (application.mEvaluationsID == 2)
+			{
+				application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
+			}
+		}
 	}
 
 	else if (application.mBadUsername == true)
@@ -911,8 +999,8 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new NormalGame(APPLICATION);
-
 	application.calcScore();
+
 },
 
 execute: function(application)

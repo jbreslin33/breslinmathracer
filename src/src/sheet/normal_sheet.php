@@ -10,25 +10,45 @@ initialize: function(game)
 pickItem: function()
 {
 	//would love to loop till we got no dup
-        while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
-        {
-        	var r = Math.floor(Math.random()*3);
 
-                if (r == 0)
-                {
-                        APPLICATION.getFirst();
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-                }
-                if (r == 1)
-                {
-                        APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                }
-                if (r == 2)
-                {
-                        APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-                }
+	if (parseInt(APPLICATION.mGame.mScore) == 0)
+	{
+                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
+	}
+	else if (parseInt(APPLICATION.mGame.mScore) == 1)
+	{
+                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
+	}
+	else if (parseInt(APPLICATION.mGame.mScore) == 2)
+	{
+                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_2';
+	}
+	else if (parseInt(APPLICATION.mGame.mScore) == 3)
+	{
+                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_3';
+	}
+	else
+	{
+		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+        	{
+        		var r = Math.floor(Math.random()*3);
+
+                	if (r == 0)
+                	{
+                        	APPLICATION.getFirst();
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
+                	}
+                	if (r == 1)
+                	{
+                        	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+                	}
+                	if (r == 2)
+                	{
+                        	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+                	}
+		}
 	}
 },
 

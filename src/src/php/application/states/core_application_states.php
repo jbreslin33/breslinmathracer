@@ -23,6 +23,10 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
 	}
+	if ($bapplication->mCode == 217 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mSIGNUP_STUDENT_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mSIGNUP_STUDENT_APPLICATION);
+	}
 
 	if ($bapplication->mCode == 1 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
 	{
@@ -165,7 +169,7 @@ public function enter($bapplication)
         {
                 error_log('LOGIN_STUDENT_APPLICATION Enter');
         }
-	$bapplication->mLoginStudent->enterLogin($bapplication->mDataArray[1],$bapplication->mDataArray[2]);	
+	$bapplication->mLoginStudent->process();	
 	$bapplication->update();
 }
 public function execute($bapplication)
@@ -194,6 +198,51 @@ public function bexit($bapplication)
         if ($bapplication->mLogs == true)
         {
                 error_log('LOGIN_STUDENT_APPLICATION Exit');
+        }
+	$bapplication->mCode = 0;
+}
+
+}//end class
+
+class SIGNUP_STUDENT_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('SIGNUP_STUDENT_APPLICATION Enter');
+        }
+	$bapplication->mSignupStudent->process();	
+	$bapplication->update();
+}
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('SIGNUP_STUDENT_APPLICATION Execute');
+        }
+
+	if ($bapplication->mSignupStudent->mSignedUp == 1)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
+	}	
+	else
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
+	}
+
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('SIGNUP_STUDENT_APPLICATION Exit');
         }
 	$bapplication->mCode = 0;
 }

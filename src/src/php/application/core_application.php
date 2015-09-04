@@ -5,6 +5,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/application/states/core_applica
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 //temp
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_student.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_student.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 
 //start new session
@@ -31,9 +32,15 @@ $APPLICATION->mDataArray = array();
 //parseData
 if ($APPLICATION->mCode == 117)
 {
-	$APPLICATION->mDataArray[] = "117";
-	$APPLICATION->mDataArray[] = $_GET["username"];
-	$APPLICATION->mDataArray[] = $_GET["password"];
+	$APPLICATION->mLoginStudent->mUsername = $_GET["username"]; 
+	$APPLICATION->mLoginStudent->mPassword = $_GET["password"]; 
+}
+if ($APPLICATION->mCode == 217)
+{
+	$APPLICATION->mLoginStudent->mUsername = $_GET["username"]; 
+	$APPLICATION->mLoginStudent->mPassword = $_GET["password"]; 
+	$APPLICATION->mLoginStudent->mFirstname = $_GET["first_name"]; 
+	$APPLICATION->mLoginStudent->mLastName = $_GET["last_name"]; 
 }
 
 if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13)
@@ -101,6 +108,7 @@ function __construct()
         $this->mINIT_CORE_APPLICATION     = new INIT_CORE_APPLICATION          ($this);
         $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
+        $this->mSIGNUP_STUDENT_APPLICATION = new SIGNUP_STUDENT_APPLICATION      ($this);
         $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
@@ -117,9 +125,12 @@ function __construct()
 
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);
+
+	error_log('new normal inst');
 	
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
+	$this->mSignupStudent = new SignupStudent($this);	
 	
 	$this->mEvaluationsAttemptsArray = array();
 

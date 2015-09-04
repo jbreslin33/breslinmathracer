@@ -22,6 +22,7 @@ Extends: Application,
 		this.BAD_USERNAME = 103;
 		this.BAD_PASSWORD = 104;
 		this.LOGIN_STUDENT = 117;
+		this.SIGNUP_STUDENT = 217;
 		this.LOGIN_TEACHER = 113;
 		this.LOGIN_SCHOOL = 114;
 
@@ -863,7 +864,7 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/signup_student.php?username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=217&username=" + username + "&password=" + password + "&first_name=" + first_name + "&last_name=" + last_name,true);
                 xmlhttp.send();
 	},
         
@@ -896,7 +897,8 @@ Extends: Application,
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/signup_school.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=&username=" + username + "&password=" + password,true);
+                //xmlhttp.open("POST","../../src/php/signup_school.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },
 
