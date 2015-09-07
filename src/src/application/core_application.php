@@ -181,6 +181,56 @@ Extends: Application,
 
 		this.bapplication();	
         },
+
+highestAchieved: function()
+{	
+	var highest = 0; 
+	var askedArray = new Array();
+	for (var a = 0; a < this.mItemTypesArray.length; a++)
+	{
+		askedArray.push(1);
+	}
+
+	var i = 0;
+	while (i < this.mItemTypesArray.length)
+	{
+		var foundOne = false;
+		var j = 0;
+		while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
+		{
+			if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+			{
+				foundOne = true;
+				askedArray[i] = 2;
+			}					
+			j++;
+		}
+		i++;
+	}
+
+	var streak = 0;
+	var b = 0;
+	while (b < askedArray.length && streak < 10)
+	{
+		if (askedArray[b] == 1)	
+		{
+			streak++
+		}
+		else
+		{
+			streak = 0;
+		}
+		if (b == parseInt(askedArray.length - 3))
+		{
+			streak = 20;
+		}
+		b++;
+	}
+
+	highest = this.mItemTypesArray[b];
+
+	APPLICATION.mHud.setYellow('' + highest);
+},
 	
 	calcScore: function()
 	{
