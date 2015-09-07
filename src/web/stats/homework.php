@@ -74,7 +74,7 @@ echo "<br>";
 
 <p><b> Select Room and Category: </p></b>
 
-<form method="post" action="/web/stats/leaderboards.php">
+<form method="post" action="/web/stats/homework.php">
 
 <select id="school_id" name="school_id" onchange="loadAgain()">
 <?php
@@ -169,7 +169,7 @@ function loadAgain()
     	var x = document.getElementById("school_id").value;
     	var y = document.getElementById("room_id").value;
     	var z = document.getElementById("category").value;
-	document.location.href = '/web/stats/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
+	document.location.href = '/web/stats/homework.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
 }
 </script>
 
@@ -203,41 +203,40 @@ echo '<table border=\"1\">';
 /*
 select users.username, evaluations_attempts.evaluations_id from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-04-02 8:30:00';
 */
-        $query = "select last_activity, first_name, last_name, ";
-	$query .= $category;
-	$query .= " from users where banned_id = 0 AND school_id = ";
+/*
+select users.username, item_attempts.start_time, evaluations_attempts.evaluations_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-05-02 8:30:00' order by item_attempts.start_time asc;
+*/
+	$query = "select users.username, item_attempts.start_time, evaluations_attempts.evaluations_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-05-02 8:30:00' AND school_id = ";
         $query .= $school_id;
 	if ($room_id != 0)
 	{
 		$query .= " AND room_id = ";
         	$query .= $room_id;
 	}
-        $query .= " order by ";
-	$query .= $category;
-        $query .= " desc;";
+ 	$query .= " order by item_attempts.start_time asc;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $lastAnswerTime = $row[0];
-                $firstName = $row[1];
-                $lastName = $row[2];
-                $score = $row[3];
+                $username = $row[0];
+                $start_time = $row[1];
+                $evaluations_id = $row[2];
+                $transaction_code = $row[3];
 
                 echo '<tr>';
                 echo '<td>';
-                echo $i + 1;
+                echo $username;
                 echo '</td>';
                 echo '<td>';
-                echo $firstName;
+                echo $start_time;
                 echo '</td>';
                 echo '<td>';
-                echo $lastName;
+                echo $evaluations_id;
                 echo '</td>';
                 echo '<td>';
-                echo $score;
+                echo $transaction_code;
                 echo '</td>';
                 echo '</tr>';
         }
