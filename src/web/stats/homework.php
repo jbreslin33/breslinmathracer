@@ -200,13 +200,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-/*
-select users.username, evaluations_attempts.evaluations_id from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-04-02 8:30:00';
-*/
-/*
-select users.username, item_attempts.start_time, evaluations_attempts.evaluations_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-05-02 8:30:00' order by item_attempts.start_time asc;
-*/
-	$query = "select users.username, item_attempts.start_time, evaluations_attempts.evaluations_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-05-02 8:30:00' AND school_id = ";
+	$query = "select users.username, item_attempts.start_time, evaluations_attempts.evaluations_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-04-02 8:30:00' AND school_id = ";
         $query .= $school_id;
 	if ($room_id != 0)
 	{
