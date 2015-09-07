@@ -18,6 +18,7 @@ session_start();
 <li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/stats/leaderboards.php">Normal Leader Boards</a></li>
+<li><a href="/web/stats/homework.php">Home Work</a></li>
 <li><a href="/web/stats/statsreports.php">Non Mastery Types</a></li>
 </ul>
 
