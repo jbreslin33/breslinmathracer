@@ -185,13 +185,13 @@ else
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Rank';
+        echo '<td> user_id';
         echo '</td>';
-        echo '<td> First Name';
+        echo '<td> start_time';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td> type';
         echo '</td>';
-        echo '<td> Score';
+        echo '<td> mark';
         echo '</td>';
         echo '</tr>';
 
