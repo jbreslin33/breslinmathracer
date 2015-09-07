@@ -79,7 +79,6 @@ echo "<br>";
 <select id="school_id" name="school_id" onchange="loadAgain()">
 <?php
 $query = "select * from schools";
-//$query .= intval($_SESSION["school_id"]);
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
@@ -201,7 +200,9 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-
+/*
+select users.username, evaluations_attempts.evaluations_id from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-04-02 8:30:00';
+*/
         $query = "select last_activity, first_name, last_name, ";
 	$query .= $category;
 	$query .= " from users where banned_id = 0 AND school_id = ";
