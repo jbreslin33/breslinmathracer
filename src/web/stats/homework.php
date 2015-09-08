@@ -210,9 +210,14 @@ echo '<table border=\"1\">';
  	$query .= " order by item_attempts.start_time asc;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
+        $fetchAll = pg_fetch_all($result);
 
+	error_log($fetchAll[0][username]);
 
-
+	$usernameArray = array();
+	$startTimeArray = array();
+	$evaluationsIDArray = array();
+	$transactionCodeArray = array();
 
         for($i = 0; $i < $numrows; $i++)
         {
@@ -242,7 +247,6 @@ echo '<table border=\"1\">';
         echo '</table>';
 }
 ?>
-
 
 </body>
 </html>
