@@ -104,7 +104,6 @@ for($i = 0; $i < $numrows; $i++)
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
 $query = "select id, name from rooms where school_id = ";
-//$query .= intval($_SESSION["school_id"]);
 $query .= $school_id;
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
@@ -195,50 +194,44 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-        $lastAnswerTime = '';
-        $firstName = '';
-        $lastName = '';
         $score = '';
 
-	$query = "select users.username, item_attempts.start_time, evaluations_attempts.evaluations_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users on users.id=evaluations_attempts.user_id where item_attempts.start_time > '2015-04-01 15:00:00' AND item_attempts.start_time < '2015-04-02 8:30:00' AND school_id = ";
-        $query .= $school_id;
+	$queryUsers = "select username, last_name, first_name from users where school_id = ";
+        $queryUsers .= $school_id;
 	if ($room_id != 0)
 	{
-		$query .= " AND room_id = ";
-        	$query .= $room_id;
+		$queryUsers .= " AND room_id = ";
+        	$queryUsers .= $room_id;
 	}
- 	$query .= " order by item_attempts.start_time asc;";
-        $result = pg_query($conn,$query);
-        $numrows = pg_numrows($result);
-        $fetchAll = pg_fetch_all($result);
+ 	$queryUsers .= " order by username asc;";
+        $resultUsers = pg_query($conn,$queryUsers);
+        $numrowsUsers = pg_numrows($resultUsers);
+        $fetchAllUsers = pg_fetch_all($resultUsers);
 
-	error_log($fetchAll[0][username]);
+	
+        for($i = 0; $i < $numrowsUsers; $i++)
+	{
+		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08 15:00:00' AND username = '";
+		$query .= $fetchAllUsers[$i]['username'];
+		$query .= "';";
 
-	$usernameArray = array();
-	$startTimeArray = array();
-	$evaluationsIDArray = array();
-	$transactionCodeArray = array();
+        	$result = pg_query($conn,$query);
+		$numrows = pg_numrows($result);
 
-        for($i = 0; $i < $numrows; $i++)
-        {
-                $row = pg_fetch_array($result, $i);
-                $username = $row[0];
-                $start_time = $row[1];
-                $evaluations_id = $row[2];
-                $transaction_code = $row[3];
+        	$row = pg_fetch_array($result, 0);
 
                 echo '<tr>';
                 echo '<td>';
-                echo $username;
+                echo $fetchAllUsers[$i]['username'];
                 echo '</td>';
                 echo '<td>';
-                echo $start_time;
+                echo $fetchAllUsers[$i]['last_name'];
                 echo '</td>';
                 echo '<td>';
-                echo $evaluations_id;
+                echo $fetchAllUsers[$i]['first_name'];
                 echo '</td>';
                 echo '<td>';
-                echo $transaction_code;
+                echo $row[0];
                 echo '</td>';
                 echo '</tr>';
         }
