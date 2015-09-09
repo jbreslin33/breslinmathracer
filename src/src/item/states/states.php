@@ -212,7 +212,7 @@ execute: function(item)
 
 exit: function(item)
 {
-	APPLICATION.calcScore();
+       	APPLICATION.calcScore();
 	APPLICATION.highestAchieved();
 }
 });

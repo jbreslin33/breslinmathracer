@@ -45,7 +45,7 @@ if ($APPLICATION->mCode == 217)
 
 if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13)
 {
-        $APPLICATION->mDataArray[] = $code;
+        $APPLICATION->mDataArray[] = $APPLICATION->mCode;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];

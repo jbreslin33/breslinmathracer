@@ -6,7 +6,7 @@ var ItemAttempt = new Class(
 {
         initialize: function()
         {
-		this.mStateLogs = true;		
+		this.mStateLogs = false;		
                 this.mStateMachine = new StateMachine(this);
 
                 this.mGLOBAL_ITEM_ATTEMPT   = new GLOBAL_ITEM_ATTEMPT  (this);

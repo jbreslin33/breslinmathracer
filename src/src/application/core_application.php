@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -242,10 +242,12 @@ highestAchieved: function()
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
 			//alltime
+			//APPLICATION.log('this.mItemTypesArray.length:' + this.mItemTypesArray.length);
 			for (var i = 0; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
 				var j = 0;
+				//APPLICATION.log('this.mItemAttemptsTypeArrayOne.length:' + this.mItemAttemptsTypeArrayOne.length);
 				while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
 				{
 					if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
@@ -256,6 +258,7 @@ highestAchieved: function()
 					j++;
 				}
 			}
+			//APPLICATION.log('FINESED 1');
 			
 			//latest streak
 			var i = 0;	
@@ -808,7 +811,6 @@ highestAchieved: function()
                 			var datenow = parseInt(this.mResponseArray[1]);
 					if (APPLICATION.mItemAttemptsArray[i].mDateNow == datenow)
 					{
-						APPLICATION.log('mID here:' +  parseInt(this.mResponseArray[2]));
 						APPLICATION.mItemAttemptsArray[i].mID = parseInt(this.mResponseArray[2]); 
 					}
 				}
@@ -1111,7 +1113,6 @@ highestAchieved: function()
                                 }
                         }
                 }
-		APPLICATION.log('whid:' + itemattemptid);
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
                 xmlhttp.send();
         },

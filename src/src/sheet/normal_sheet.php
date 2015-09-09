@@ -13,21 +13,21 @@ pickItem: function()
 
 	if (parseInt(APPLICATION.mGame.mScore) == 0)
 	{
-                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
+		APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) == 1)
+	if (parseInt(APPLICATION.mGame.mScore) == 1)
 	{
-                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
+                APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_2';
 	}
 	else if (parseInt(APPLICATION.mGame.mScore) == 2)
 	{
-                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_2';
+                APPLICATION.mQuestionTypeCurrent = 'k.cc.a.2_1';
 	}
 	else if (parseInt(APPLICATION.mGame.mScore) == 3)
 	{
-                        APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_3';
+                APPLICATION.mQuestionTypeCurrent = 'k.cc.a.2_2';
 	}
-	else
+	else if (parseInt(APPLICATION.mGame.mScore) > 3)
 	{
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         	{
@@ -49,6 +49,10 @@ pickItem: function()
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 	}
 		}
+	}
+	else
+	{
+                APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
 	}
 },
 

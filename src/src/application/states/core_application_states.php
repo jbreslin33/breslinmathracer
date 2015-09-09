@@ -1000,7 +1000,6 @@ enter: function(application)
         }
         application.mGame = new NormalGame(APPLICATION);
 	application.calcScore();
-
 },
 
 execute: function(application)
