@@ -1,5 +1,3 @@
 --assessments
-ALTER TABLE evaluations ALTER COLUMN description set NOT NULL;
---ALTER TABLE evaluations ALTER COLUMN description set UNIQUE;
-ALTER TABLE evaluations ADD CONSTRAINT unique_description UNIQUE (description);
-insert into evaluations (description) values ('assessment');
+insert into rooms (name,school_id) values ('28',2);
+update users set room_id = 18 where username like 'v19%';
