@@ -17,7 +17,6 @@ $conn = dbConnect();
 
 $school_id = 0;
 $room_id = 0;
-$category = 0;
 $id = 0;
 
 if (isset($_POST["school_id"]))
@@ -48,19 +47,6 @@ else
 
 }
 
-if (isset($_POST["category"]))
-{
-        $category = $_POST["category"];
-}
-
-else if (isset($_GET['category']))
-{
-        $category = $_GET['category'];
-}
-else
-{
-	$category = 'score';
-}
 echo "<br>";
 ?>
 
@@ -72,7 +58,7 @@ echo "<br>";
 </ul>
 
 
-<p><b> Select Room and Category: </p></b>
+<p><b> Select School and Room: </p></b>
 
 <form method="post" action="/web/stats/homework.php">
 
@@ -127,48 +113,12 @@ for($i = 0; $i < $numrows; $i++)
 </select>
 
 
-
-
-<select id="category" name="category" onchange="loadAgain()">
-<?php
-$category_array = array();
-$category_array[] = "score"; 
-$category_array[] = "alltime"; 
-$category_array[] = "alltimeizzy"; 
-$category_array[] = "alltimetwo"; 
-$category_array[] = "alltimethree"; 
-$category_array[] = "alltimefour"; 
-$category_array[] = "alltimefive"; 
-$category_array[] = "alltimesix"; 
-$category_array[] = "alltimeseven"; 
-$category_array[] = "alltimeeight"; 
-$category_array[] = "alltimenine"; 
-$category_array[] = "alltimekoaa5"; 
-$category_array[] = "unmastered"; 
-
-echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
-for($i = 0; $i < sizeof($category_array); $i++)
-{
-        if ($category_array[$i] == $category)
-        {
-                echo "<option selected=\"selected\" value=\"$category_array[$i]\"> $category_array[$i] </option>";
-        }
-        else
-        {
-                echo "<option value=\"$category_array[$i]\"> $category_array[$i] </option>";
-        }
-}
-
-?>
-</select>
-
 <script>
 function loadAgain()
 {
     	var x = document.getElementById("school_id").value;
     	var y = document.getElementById("room_id").value;
-    	var z = document.getElementById("category").value;
-	document.location.href = '/web/stats/homework.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
+	document.location.href = '/web/stats/homework.php?school_id=' + x + '&room_id=' + y; 
 }
 </script>
 
