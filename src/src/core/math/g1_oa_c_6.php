@@ -1759,7 +1759,7 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = '1.oa.c.6_23';
         this.setQuestion('' + '4 + 4 + 1 =');
-        this.setAnswer('' + '8',0);
+        this.setAnswer('' + '9',0);
 }
 });
 
@@ -1904,7 +1904,7 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = '1.oa.c.6_14';
         this.setQuestion('' + '5 + 5 =');
-        this.setAnswer('' + '6',0);
+        this.setAnswer('' + '10',0);
 }
 });
 
