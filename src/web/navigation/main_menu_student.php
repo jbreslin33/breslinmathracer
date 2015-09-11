@@ -3,12 +3,12 @@
 <html>
 
 <head>
-        <title>MAIN MENU</title>
+        <title>Main Menu</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
 <body>
-<p><b> School Main Menu </p></b>
+<p><b> Student Main Menu </p></b>
 <?php
 
 session_start();
@@ -16,7 +16,7 @@ session_start();
 
 <ul>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/navigation/reports.php">Reports</a></li>
+<li><a href="/web/navigation/edit.php">Edit</a></li>
 </ul>
 
 </body>
