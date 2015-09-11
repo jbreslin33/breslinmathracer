@@ -19,17 +19,20 @@ var Hud = new Class(
         this.mHome = new Shape(90, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
 	this.mHome.mMesh.onchange = this.homeSelected;
 
-        this.mOrange    = new Shape (100, ySize,90,  yCoord,"","","orange","boundary");
+        this.mOrange    = new Shape (75, ySize,90,  yCoord,"","","orange","boundary");
        
-	this.mPink = new Shape (100, ySize,190,  yCoord,"","","pink","boundary");
+	this.mPink = new Shape (75, ySize,165,  yCoord,"","","pink","boundary");
 	
-	this.mYellow = new Shape(100, ySize,290,  yCoord,"","","yellow","boundary");
+	this.mYellow = new Shape(75, ySize,240,  yCoord,"","","yellow","boundary");
 
-        this.mGreen = new Shape    (100, ySize,390,  yCoord,"","","LawnGreen","boundary");
+        this.mGreen = new Shape    (75, ySize,315,  yCoord,"","","LawnGreen","boundary");
 
-        this.mCyan = new Shape    (100, ySize, 490,  yCoord,"","","cyan","boundary");
+        this.mCyan = new Shape    (75, ySize, 390,  yCoord,"","","cyan","boundary");
+        
+	this.mViolet = new Shape    (75, ySize, 465,  yCoord,"","","violet","boundary");
+	this.mTan = new Shape    (75, ySize, 540,  yCoord,"","","tan","boundary");
 
-	this.mUsername = new Shape     (180, ySize,590,  yCoord,"","","#F8CDF8","boundary");
+	this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","#F8CDF8","boundary");
         
 	eastBounds  = new Shape         ( 10, 50,760, 35,"","","#F8CDF8","boundary");
         eastBounds  = new Shape         ( 10, 50,760, 85,"","","#F6C0F6","boundary");
