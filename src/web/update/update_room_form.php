@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>UPDATE STANDARD</title>
+	<title>UPDATE ROOM</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -14,7 +14,6 @@ session_start();
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-include(getenv("DOCUMENT_ROOT") . "/web/navigation/top_links_user.php");
 echo "<br>";
 ?>
 	<p><b> Select Username: </p></b>
@@ -24,7 +23,7 @@ echo "<br>";
 <select name="id">
 
 <?php
-$query = "select id, username, password from users where school_id = ";
+$query = "select id, name from rooms where school_id = ";
 $query .= $_SESSION["user_id"];
 $query .= " or id = ";
 $query .= $_SESSION["user_id"];

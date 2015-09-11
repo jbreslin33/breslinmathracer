@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<p><b> School Main Menu </p></b>
+<p><b> Main Menu </p></b>
 <?php
 
 session_start();
@@ -16,7 +16,7 @@ session_start();
 
 <ul>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/navigation/reports.php">Reports</a></li>
+<li><a href="/web/navigation/school/reports.php">Reports</a></li>
 </ul>
 
 </body>

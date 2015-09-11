@@ -85,7 +85,7 @@ var Hud = new Class(
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Reports")
 		{
-			window.open('/web/navigation/main_menu_student.php?type=individual','_blank');
+			window.open('/web/navigation/student/main_menu.php?type=individual','_blank');
 		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Sign out")
 		{
