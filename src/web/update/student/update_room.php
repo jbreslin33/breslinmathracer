@@ -16,7 +16,7 @@ $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> Select Username: </p></b>
+	<p><b> Select Room: </p></b>
 	
 	<form method="post" action="/web/update/student/updateroom.php">
 
