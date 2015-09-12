@@ -101,9 +101,11 @@ public function checkForStudent()
                 	$this->mFirstName = $first_name;
                 	$this->mLastName = $last_name;
                 	$this->mUserID = $user_id;
+			$_SESSION["user_id"] = $this->mUserID;
         		$this->mLoggedIn = 1;
 			$this->mCoreStandardsID = $core_standards_id;
 			$this->mSchoolID = $school_id;
+			$_SESSION["school_id"] = $this->mSchoolID;
 			$this->mTeacherID = $teacher_id;
 			$this->mRoomID = $room_id;
 			$this->mTeamID = $team_id;
