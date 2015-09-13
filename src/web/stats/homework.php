@@ -15,23 +15,8 @@ session_start();
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-$school_id = 0;
 $room_id = 0;
 $id = 0;
-
-if (isset($_POST["school_id"]))
-{
-        $school_id = $_POST["school_id"];
-}
-
-else if (isset($_GET['school_id']))
-{
-        $school_id = $_GET['school_id'];
-}
-else
-{
-
-}
 
 if (isset($_POST["room_id"]))
 {
@@ -62,35 +47,10 @@ echo "<br>";
 
 <form method="post" action="/web/stats/homework.php">
 
-<select id="school_id" name="school_id" onchange="loadAgain()">
-<?php
-$query = "select * from schools";
-$query .= " order by name asc;";
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-echo "<option selected=\"selected\" value=\"0\"> \"All Schools\" </option>";
-
-for($i = 0; $i < $numrows; $i++)
-{
-        $row = pg_fetch_array($result, $i);
-        if ($row[0] == $school_id)
-        {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
-        }      
-        else
-        {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
-        }
-}
-?>
-</select>
-
-
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
 $query = "select id, name from rooms where school_id = ";
-$query .= $school_id;
+$query .= $_SESSION["school_id"];
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
@@ -116,9 +76,8 @@ for($i = 0; $i < $numrows; $i++)
 <script>
 function loadAgain()
 {
-    	var x = document.getElementById("school_id").value;
     	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/stats/homework.php?school_id=' + x + '&room_id=' + y; 
+	document.location.href = '/web/stats/homework.php?room_id=' + y; 
 }
 </script>
 
@@ -147,7 +106,7 @@ echo '<table border=\"1\">';
         $score = '';
 
 	$queryUsers = "select username, last_name, first_name from users where school_id = ";
-        $queryUsers .= $school_id;
+        $queryUsers .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
 		$queryUsers .= " AND room_id = ";
