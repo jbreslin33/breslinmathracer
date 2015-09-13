@@ -1034,7 +1034,7 @@ enter: function(application)
 	{
 		application.log('APPLICATION::REPORT_CORE_APPLICATION');
 	}
-      	window.location.replace("/web/navigation/main_menu_school.php");
+      	window.location.replace("/web/navigation/school/main_menu.php");
 },
 
 execute: function(application)
