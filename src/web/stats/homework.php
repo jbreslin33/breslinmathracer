@@ -120,7 +120,7 @@ echo '<table border=\"1\">';
 	
         for($i = 0; $i < $numrowsUsers; $i++)
 	{
-		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08 15:00:00' AND username = '";
+		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND username = '";
 		$query .= $fetchAllUsers[$i]['username'];
 		$query .= "';";
 
