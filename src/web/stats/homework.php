@@ -113,7 +113,7 @@ if ($room_id != 0)
         $queryUsers .= $_SESSION["school_id"];
 	$queryUsers .= " AND room_id = ";
         $queryUsers .= $room_id;
- 	$queryUsers .= " order by username asc;";
+ 	$queryUsers .= " order by last_name asc;";
         $resultUsers = pg_query($conn,$queryUsers);
         $numrowsUsers = pg_numrows($resultUsers);
         $fetchAllUsers = pg_fetch_all($resultUsers);
