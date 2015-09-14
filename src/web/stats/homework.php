@@ -121,7 +121,7 @@ if ($room_id != 0)
 	
         for($i = 0; $i < $numrowsUsers; $i++)
 	{
-		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND (extract(hour from item_attempts.start_time) > 8 OR extract(hour from item_attempts.start_time) > 14) AND username = '";
+		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND ( extract(hour from item_attempts.start_time) > 8 OR extract(hour from item_attempts.start_time) > 14 OR extract(dow from item_attempts.start_time) = 0) AND username = '";
 		$query .= $fetchAllUsers[$i]['username'];
 		$query .= "';";
 
