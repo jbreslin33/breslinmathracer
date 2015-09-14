@@ -29,6 +29,8 @@ public function process()
 	$this->checkForStudent();
 	if ($this->mLoggedIn == 1)
 	{
+ 		$_SESSION["role"] = 1; //school
+
 		error_log('loggedin =1');
 		return;
 	}

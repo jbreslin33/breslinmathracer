@@ -117,7 +117,7 @@ public function checkForSchool()
                 	$school_id = pg_Result($result2, 0, 'id');
 
 			//set sessions
-        		$_SESSION["role"] = 3; //student
+        		$_SESSION["role"] = 3; //school
         		$_SESSION["raw_data"] = NULL; 
                 	$_SESSION["school_id"] = $school_id;
 

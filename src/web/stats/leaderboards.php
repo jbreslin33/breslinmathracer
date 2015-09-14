@@ -67,7 +67,16 @@ echo "<br>";
 <p><b> Normal Leader Boards </p></b>
 
 <ul>
-<li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
+<?php
+if ($_SESSION["role"] == 1)
+{ 
+	echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
+}
+else
+{
+	echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
+}
+?>
 <li><a href="/web/php/logout.php">Logout</a></li>
 </ul>
 
