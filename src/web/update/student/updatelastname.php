@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
-
 <?php
 session_start();
 
@@ -16,27 +13,20 @@ $conn = dbConnect();
 
 $response = "";
 
-$update = "update users SET room_id = ";
-$update .= $_POST["room_id"];
-$update .= " where id = '";
+$update = "update users SET last_name = '";
+$update .= $_POST["last_name"];
+$update .= "' where id = ";
 $update .= $_SESSION["user_id"];
-$update .= "';";
+$update .= ";";
 
 $updateResult = pg_query($conn,$update);
 	
 $response = "Success";
-
 ?>
-
 </head>
-
 <body>
-
 <?php
 echo $response;
 ?>
-
 </body>
-
 </html>
-
