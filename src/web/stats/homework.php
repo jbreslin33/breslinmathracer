@@ -55,7 +55,9 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
+//echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
+echo "<option selected=\"selected\" value=\"0\"> \"\" </option>";
+
 
 for($i = 0; $i < $numrows; $i++)
 {
@@ -105,13 +107,12 @@ echo '<table border=\"1\">';
 
         $score = '';
 
+if ($room_id != 0)
+{
 	$queryUsers = "select username, last_name, first_name from users where school_id = ";
         $queryUsers .= $_SESSION["school_id"];
-	if ($room_id != 0)
-	{
-		$queryUsers .= " AND room_id = ";
-        	$queryUsers .= $room_id;
-	}
+	$queryUsers .= " AND room_id = ";
+        $queryUsers .= $room_id;
  	$queryUsers .= " order by username asc;";
         $resultUsers = pg_query($conn,$queryUsers);
         $numrowsUsers = pg_numrows($resultUsers);
@@ -120,7 +121,7 @@ echo '<table border=\"1\">';
 	
         for($i = 0; $i < $numrowsUsers; $i++)
 	{
-		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND extract(hour from item_attempts.start_time) > 8 AND username = '";
+		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND (extract(hour from item_attempts.start_time) > 8 OR extract(hour from item_attempts.start_time) > 14) AND username = '";
 		$query .= $fetchAllUsers[$i]['username'];
 		$query .= "';";
 
@@ -147,6 +148,7 @@ echo '<table border=\"1\">';
 
         pg_free_result($result);
         echo '</table>';
+}
 }
 ?>
 
