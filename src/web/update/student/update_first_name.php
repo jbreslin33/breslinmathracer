@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>UPDATE ROOM</title>
+	<title>UPDATE FIRST NAME</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -16,32 +16,15 @@ $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> Select Room: </p></b>
+	<p><b> FIRST NAME: </p></b>
 	
-	<form method="post" action="/web/update/student/updateroom.php">
+	<form method="post" action="/web/update/student/updatefirstname.php">
 
-<select name="room_id">
-
-<?php
-$query = "select id, name from rooms where school_id = ";
-$query .= $_SESSION["school_id"];
-$query .= " order by name;";
-
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-for($i = 0; $i < $numrows; $i++) 
-{
-      	$row = pg_fetch_array($result, $i);
-      	echo "<option value=\"$row[0]\">$row[1]</option>";
-}
-?>
+<input type="text" name="first_name">
 
 </select>
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
-	
-
 </body>
 </html>
