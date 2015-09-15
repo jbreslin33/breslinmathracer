@@ -131,6 +131,15 @@ var Hud = new Class(
                 }
         },
 
+emptyTanSelect: function()
+{
+	var i;
+    	for(i=this.mTan.mMesh.options.length-1;i>=0;i--)
+    	{
+        	this.mTan.mMesh.remove(i);
+	}
+},
+
 fillTanSelect: function(filler)
 {
 	if (navigator.appName == "Microsoft Internet Explorer")

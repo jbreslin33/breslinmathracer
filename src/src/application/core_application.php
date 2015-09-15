@@ -261,6 +261,7 @@ highestAchieved: function()
 			//unmastered if blank break
 			var i = 0;
 			var breakOut = false;
+			APPLICATION.mHud.emptyTanSelect();
 			while (i < this.mItemTypesArray.length && breakOut == false)
 			{
 				var attemptArray = new Array();;
