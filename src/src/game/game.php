@@ -20,6 +20,7 @@ var Game = new Class(
 		/************ SCORE *******/
 		this.mScore = 0;
 		this.mStreak = 0;
+		this.mUnmastered = 0;
 		this.mKilled = false;
 
 		/**************** TIME ************/
@@ -427,6 +428,11 @@ var Game = new Class(
         {
                 this.mStreak = s;
                 APPLICATION.mHud.mCyan.setText('<font size="1">Streak: ' + this.mStreak + '</font>');
+        },
+        setUnmastered: function(s)
+        {
+                this.mUnmastered = s;
+                APPLICATION.mHud.mViolet.setText('<font size="1">U: ' + this.mUnmastered + '</font>');
         },
 
         incrementScore: function()

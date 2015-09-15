@@ -268,7 +268,10 @@ highestAchieved: function()
 				var j = 0;	
 				while (j < this.mItemAttemptsTypeArrayOne.length && attemptArray.length < 2)
 				{
-					attemptArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
+					if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+					{
+						attemptArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
+					}
 					j++;
 				}
 				//lets check array
@@ -663,6 +666,7 @@ highestAchieved: function()
 
 
 		this.mGame.setStreak(currentStreak);
+		this.mGame.setUnmastered(unmastered);
 		this.mGame.setScore(score); 
 	},
 
