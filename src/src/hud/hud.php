@@ -30,7 +30,10 @@ var Hud = new Class(
         this.mCyan = new Shape    (75, ySize, 390,  yCoord,"","","cyan","boundary");
         
 	this.mViolet = new Shape    (75, ySize, 465,  yCoord,"","","violet","boundary");
-	this.mTan = new Shape    (75, ySize, 540,  yCoord,"","","tan","boundary");
+	//this.mTan = new Shape    (75, ySize, 540,  yCoord,"","","tan","boundary");
+        
+	this.mTan = new Shape(75, ySize,  540,  yCoord,"","SELECT","tan","boundary");
+	this.mTan.mMesh.onchange = this.tanSelected;
 
 	this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","#F8CDF8","boundary");
         
@@ -92,6 +95,11 @@ var Hud = new Class(
 			window.location.href = "/web/php/logout.php";
 		}
 	},
+	
+	tanSelected: function()
+	{
+
+	},
  
 	fillHomeSelect: function()
         {
@@ -122,6 +130,24 @@ var Hud = new Class(
 			}
                 }
         },
+
+fillTanSelect: function(filler)
+{
+	if (navigator.appName == "Microsoft Internet Explorer")
+        {
+        	var option = document.createElement("option");
+                option.value = filler;
+                option.text = filler;
+                this.mTan.mMesh.add(option);
+        }
+        else
+        {
+        	var option = document.createElement("option");
+                option.value = filler;
+                option.text = filler;
+                this.mTan.mMesh.appendChild(option);
+        }
+},
                 
 	setCyan: function(t)
 	{

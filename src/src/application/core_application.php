@@ -277,26 +277,26 @@ highestAchieved: function()
 				//lets check array
 				if (attemptArray.length == 0) //never asked break out
 				{
-					APPLICATION.log('U:0');
 					unmastered++;
+					APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
 					breakOut = true;
 				}
 				else if (attemptArray.length == 1) //not enuf
 				{
-					APPLICATION.log('U:1');
+					APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
 					unmastered++;
 				}
 				else //you must have 2 
 				{
 					if (attemptArray[0] != 1 || attemptArray[1] != 1)
 					{
-						APPLICATION.log('U:2');
+						APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
 						unmastered++;
 					}
 				}	
+
 				i++;
 			}
-			APPLICATION.log('unmastered:' + unmastered);
 			
 			//latest streak
 			var i = 0;	
