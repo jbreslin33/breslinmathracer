@@ -238,16 +238,15 @@ highestAchieved: function()
 		var currentStreak = 0;
 		var hiStreak = 0;
 		var foundWrong = false;
+		var unmastered = 0;
 		
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
 			//alltime
-			//APPLICATION.log('this.mItemTypesArray.length:' + this.mItemTypesArray.length);
 			for (var i = 0; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
 				var j = 0;
-				//APPLICATION.log('this.mItemAttemptsTypeArrayOne.length:' + this.mItemAttemptsTypeArrayOne.length);
 				while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
 				{
 					if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
@@ -258,7 +257,43 @@ highestAchieved: function()
 					j++;
 				}
 			}
-			//APPLICATION.log('FINESED 1');
+
+			//unmastered if blank break
+			var i = 0;
+			var breakOut = false;
+			while (i < this.mItemTypesArray.length && breakOut == false)
+			{
+				var attemptArray = new Array();;
+				attemptArray.length = 0;
+				var j = 0;	
+				while (j < this.mItemAttemptsTypeArrayOne.length && attemptArray.length < 2)
+				{
+					attemptArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
+					j++;
+				}
+				//lets check array
+				if (attemptArray.length == 0) //never asked break out
+				{
+					APPLICATION.log('U:0');
+					unmastered++;
+					breakOut = true;
+				}
+				else if (attemptArray.length == 1) //not enuf
+				{
+					APPLICATION.log('U:1');
+					unmastered++;
+				}
+				else //you must have 2 
+				{
+					if (attemptArray[0] != 1 || attemptArray[1] != 1)
+					{
+						APPLICATION.log('U:2');
+						unmastered++;
+					}
+				}	
+				i++;
+			}
+			APPLICATION.log('unmastered:' + unmastered);
 			
 			//latest streak
 			var i = 0;	
