@@ -30,6 +30,7 @@ function __construct($application)
 
 	$this->mUnmasteredCount = 0;
 	$this->mScore = 0;
+	$this->mLastScore = 0;
 
 	$this->mItemAttemptsArray    = array();
 
@@ -218,6 +219,28 @@ public function updateScores($score,$field_name)
 
         $db = new DatabaseConnection();
         $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+
+	if ($field_name == 'score')
+	{
+		$this->updateMatch($db);
+	}
+
+}
+public function updateMatch($db)
+{
+	if ($this->mLastScore != $this->mScore)
+	{
+		$s = "select users.id from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id JOIN users ON teams.id=users.team_id where now() > matches.start_time AND now() < matches.end_time;";	
+		
+        	$r = pg_query($db->getConn(),$s) or die('Could not connect: ' . pg_last_error());
+                $n = pg_num_rows($r);
+                for($i = 0; $i < $n; $i++)
+                {
+                        $id = pg_Result($r, $i, 'id');
+			error_log($id);
+		}
+	}
+	$this->mApplication->mLastScore = $this->mScore;
 }
 
 //end of class
