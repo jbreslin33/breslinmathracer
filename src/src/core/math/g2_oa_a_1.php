@@ -12,13 +12,50 @@ Extends: TextItem,
                 this.mType = '2.oa.a.1_21';
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
+		this.mChopWhiteSpace = false;
 
                 this.a = Math.floor(Math.random()*8)+2;
                 this.b = Math.floor(Math.random()*8)+2;
-                this.c = parseInt(this.a * this.b);
+		this.a = 2;
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets.');
-                this.setAnswer('' + this.c,0);
+                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets. Each ticket cost $' + this.b + '.50 each. Write an expression using only addition to solve how much all ' + this.a + ' tickets cost.' );
+		if (this.a == 2)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+                	this.setAnswer('' + '' + this.b + '.50 + ' + '' + this.b + '.50',1);
+		}
+		if (this.a == 3)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 4)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 5)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 6)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 7)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 8)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 9)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
+		if (this.a == 10)
+		{
+                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
+		}
         }
 });
 
