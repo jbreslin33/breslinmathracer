@@ -1,8 +1,27 @@
-
 /*
-prerequisites:
-none finished
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_21',2.0121,'2.oa.a.1','TerraNova');
 */
+
+var i_2_oa_a_1__21 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,600,50,330,75,100,50,685,80);
+
+                this.mType = '2.oa.a.1_21';
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.a = Math.floor(Math.random()*8)+2;
+                this.b = Math.floor(Math.random()*8)+2;
+                this.c = parseInt(this.a * this.b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets.');
+                this.setAnswer('' + this.c,0);
+        }
+});
+
 
 var TwoStepPuttingTogether = new Class(
 {
