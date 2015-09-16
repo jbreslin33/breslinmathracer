@@ -4,61 +4,39 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 
 var i_2_oa_a_1__21 = new Class(
 {
-Extends: TextItem,
+Extends: ThreeButtonItem,
         initialize: function(sheet)
         {
-                this.parent(sheet,600,50,330,75,100,50,685,80);
-
+                this.parent(sheet);
                 this.mType = '2.oa.a.1_21';
-                this.mNameMachine = new NameMachine();
-                this.ns = new NameSampler();
-		this.mChopWhiteSpace = false;
+                this.mStripCommas = false;
 
-                this.a = Math.floor(Math.random()*8)+2;
-                this.b = Math.floor(Math.random()*8)+2;
-		this.a = 2;
+                var x = Math.floor(Math.random()*98);
+                var a = parseInt(x+1);
+                var b = 0;
+                var c = 0;
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets. Each ticket cost $' + this.b + '.50 each. Write an expression using only addition to solve how much all ' + this.a + ' tickets cost.' );
-		if (this.a == 2)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-                	this.setAnswer('' + '' + this.b + '.50 + ' + '' + this.b + '.50',1);
-		}
-		if (this.a == 3)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 4)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 5)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 6)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 7)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 8)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 9)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
-		if (this.a == 10)
-		{
-                	this.setAnswer('' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50 + ' + '$' + this.b + '.50',0);
-		}
+                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
+                {
+                        b = Math.floor(Math.random()*7)-3;
+                        b = parseInt(a+b);
+                        c = Math.floor(Math.random()*7)-3;
+                        c = parseInt(a+c);
+                }
+
+                a = a + ',' + parseInt(a+1);
+                b = b + ',' + parseInt(b+1);
+                c = c + ',' + parseInt(c+1);
+
+                this.setQuestion('What comes after ' + x + '?');
+                this.setAnswer('' + a,0);
+
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
+                this.shuffle(10);
         }
 });
-
 
 var TwoStepPuttingTogether = new Class(
 {
