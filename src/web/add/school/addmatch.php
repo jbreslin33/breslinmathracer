@@ -13,11 +13,13 @@ $conn = dbConnect();
 
 $response = "";
 
-$update = "insert into matches (start_time,end_time) values ('";
+$update = "insert into matches (start_time,end_time,school_id) values ('";
 $update .= $_POST["start_time"];
 $update .= "','";
 $update .= $_POST["end_time"];
-$update .= "');";
+$update .= "',";
+$update .= $_SESSION["school_id"];
+$update .= ");";
 
 $updateResult = pg_query($conn,$update);
 	

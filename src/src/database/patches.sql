@@ -20,4 +20,6 @@ CREATE TABLE teams_matches (
         FOREIGN KEY (matches_id) REFERENCES matches(id),
         FOREIGN KEY (team_id) REFERENCES teams(id)
 );
+alter table matches add school_id integer;
+alter table matches add FOREIGN KEY(school_id) references schools(id);
 

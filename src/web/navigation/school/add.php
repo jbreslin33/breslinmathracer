@@ -19,6 +19,7 @@ session_start();
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/add/school/add_team.php">Add Team</a></li>
 <li><a href="/web/add/school/add_match.php">Add Match</a></li>
+<li><a href="/web/add/school/add_team_match.php">Add Team To Match</a></li>
 </ul>
 
 </body>

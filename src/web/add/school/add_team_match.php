@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>ADD MATCH</title>
+	<title>ADD TEAM TO MATCH</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -16,18 +16,45 @@ $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> ADD MATCH: </p></b>
+	<p><b> ADD TEAM TO MATCH: </p></b>
 	
-	<form method="post" action="/web/add/school/addmatch.php">
+	<form method="post" action="/web/add/school/addteammatch.php">
+<select name="match_id">
 
-<p><b> Start time: </p></b>
-<input type="text" name="start_time">
-<p><b> End time: </p></b>
-<input type="text" name="end_time">
+<?php
+$query = "select id, start_time, end_time from matches where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by start_time desc;";
+
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        echo "<option value=\"$row[0]\">$row[0]</option>";
+}
+?>
 
 </select>
-	<p><input type="submit" value="UPDATE" /></p>
+<select name="team_id">
 
+<?php
+$query = "select id, name from teams where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by name asc;";
+
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result); 
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        echo "<option value=\"$row[0]\">$row[1]</option>";
+}
+?>
+</select>
+	<p><input type="submit" value="UPDATE" /></p>
 	</form>
 </body>
 </html>
