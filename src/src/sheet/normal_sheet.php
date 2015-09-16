@@ -58,9 +58,20 @@ pickItem: function()
 
 createItem: function()
 {
+if (APPLICATION.mUsername == 'b')
+{
+	APPLICATION.mQuestionTypeCurrent = this.mPickerBrian.getDev();
+}
+else if (APPLICATION.mUsername == 'j')
+{
+	APPLICATION.mQuestionTypeCurrent = this.mPickerJim.getDev();
+}
+else
+{
 	this.pickItem();
+}
 
-        var pick = 0;
+var pick = 0;
 
         if (pick == 0)
         {
@@ -118,7 +129,6 @@ createItem: function()
 	{
 		document.body.style.backgroundColor = "FF0000";
 	}
-
 
         //set this as last for next run
  	APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;

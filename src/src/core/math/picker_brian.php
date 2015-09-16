@@ -10,6 +10,11 @@ initialize: function(sheet)
 	this.mSheet = sheet;
 },
 
+getDev: function()
+{
+        return '2.oa.a.1_21';
+},
+
 getItem: function(id)
 {
         id = id.replace(/^\s+|\s+$/g,'')

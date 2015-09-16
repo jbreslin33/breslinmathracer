@@ -1,6 +1,8 @@
 ./src/database/drop_db.sh
-./src/database/rebuild.sh
-./src/database/update.sh
+./src/database/build.sh
+./src/database/insert.sh
+#./src/database/rebuild.sh
+#./src/database/update.sh
 
 if [ "$1" = "" ];
 then
