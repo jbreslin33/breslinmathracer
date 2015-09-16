@@ -228,19 +228,26 @@ public function updateScores($score,$field_name)
 }
 public function updateMatch($db)
 {
-	if ($this->mLastScore != $this->mScore)
+	if ($this->mLastScore != $this->mScore && $this->mLastScore != 0)
 	{
-		$s = "select users.id from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id JOIN users ON teams.id=users.team_id where now() > matches.start_time AND now() < matches.end_time;";	
+		$s = "select users.id, teams_matches.id from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id JOIN users ON teams.id=users.team_id where now() > matches.start_time AND now() < matches.end_time;";	
 		
         	$r = pg_query($db->getConn(),$s) or die('Could not connect: ' . pg_last_error());
                 $n = pg_num_rows($r);
                 for($i = 0; $i < $n; $i++)
                 {
-                        $id = pg_Result($r, $i, 'id');
-			error_log($id);
+                        $user_id = pg_Result($r, $i, 0);
+                        $teams_matches_id = pg_Result($r, $i, 1);
+			if ($user_id == $this->mApplication->mLoginStudent->mUserID)
+			{
+				$u = "update teams_matches set score = score + 1 where id = ";
+				$u .= $teams_matches_id;
+				$u .= ";";	
+        			$r = pg_query($db->getConn(),$u) or die('Could not connect: ' . pg_last_error());
+			} 
 		}
 	}
-	$this->mApplication->mLastScore = $this->mScore;
+	$this->mLastScore = $this->mScore;
 }
 
 //end of class
