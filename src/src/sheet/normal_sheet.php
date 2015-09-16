@@ -90,6 +90,36 @@ createItem: function()
                 APPLICATION.log('no item picked by pickers!');
         }
 
+	document.body.style.backgroundColor = "848484";
+	for (var i = 0; i < APPLICATION.mHud.mTan.mMesh.length; i++)
+	{
+		if (APPLICATION.mQuestionTypeCurrent == APPLICATION.mHud.mTan.mMesh.options.item(i).text)
+		{
+			var count = 0;
+			for (var j = 0; j < APPLICATION.mItemAttemptsTypeArrayOne.length; j++)
+			{
+				if (APPLICATION.mItemAttemptsTypeArrayOne[j] == APPLICATION.mQuestionTypeCurrent)
+				{
+					count++;	
+				}
+			}
+			if (count > 2) //green 
+			{
+				document.body.style.backgroundColor = "339966";
+			}
+			else //grey
+			{
+				document.body.style.backgroundColor = "848484";
+			}
+		}
+	}
+
+	if (APPLICATION.mGame.mUnmastered > 10)
+	{
+		document.body.style.backgroundColor = "FF0000";
+	}
+
+
         //set this as last for next run
  	APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;
 }
