@@ -1,4 +1,7 @@
 insert into teams(name) values ('Math Magicians');
+alter table teams add school_id integer;
+alter table teams add FOREIGN KEY(school_id) references schools(id);
+update teams set school_id = 2;
 --MATCHES
 CREATE TABLE matches (
         id SERIAL,
