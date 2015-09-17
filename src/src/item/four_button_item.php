@@ -20,19 +20,19 @@ Extends: Item,
 		this.mQuestionLabel.setText(this.mQuestion);
 
                 //BUTTON A
-                this.mButtonA = new ItemButton(125,50,50,250,this.mSheet.mGame,"BUTTON","","A");
+                this.mButtonA = new ItemButton(150,50,85,250,this.mSheet.mGame,"BUTTON","","A");
                 this.addButton(this.mButtonA);
 
                 //BUTTON B 
-                this.mButtonB = new ItemButton(125,50,250,250,this.mSheet.mGame,"BUTTON","","B");
+                this.mButtonB = new ItemButton(150,50,285,250,this.mSheet.mGame,"BUTTON","","B");
                 this.addButton(this.mButtonB);
 
                 //BUTTON C 
-                this.mButtonC = new ItemButton(125,50,450,250,this.mSheet.mGame,"BUTTON","","C");
+                this.mButtonC = new ItemButton(150,50,485,250,this.mSheet.mGame,"BUTTON","","C");
                 this.addButton(this.mButtonC);
                 
 		//BUTTON D 
-                this.mButtonD = new ItemButton(125,50,650,250,this.mSheet.mGame,"BUTTON","","D");
+                this.mButtonD = new ItemButton(150,50,685,250,this.mSheet.mGame,"BUTTON","","D");
                 this.addButton(this.mButtonD);
         },
 	
