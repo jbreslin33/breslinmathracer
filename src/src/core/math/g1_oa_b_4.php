@@ -24,7 +24,7 @@ initialize: function(sheet)
 	}
 	this.c = parseInt(this.a - this.b);        
 
-        this.setQuestion('' + 'Subtract' + this.a + ' - ' + this.b + ' by finding the number that makes ' + this.a + ' when added to ' + this.b + '.');
+        this.setQuestion('' + 'Subtract ' + this.a + ' - ' + this.b + ' by finding the number that makes ' + this.a + ' when added to ' + this.b + '.');
         this.setAnswer('' + this.c,0);
 }
 });
