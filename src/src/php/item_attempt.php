@@ -59,7 +59,6 @@ public function insert()
         	$returnString .= $this->mDateNow;
         	$returnString .= ",";
         	$returnString .= $this->mID; //this id is not right...
-		error_log($returnString);
 		echo $returnString;		
         }
         else
@@ -70,7 +69,6 @@ public function insert()
 
 public function update($itemattemptid,$transactioncode,$answer)
 {
-	error_log('update in itemattempt called');
 	if ($this->mAnswer == '')
 	{
 		$db = new DatabaseConnection();

@@ -4,7 +4,7 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 
 var i_2_oa_a_1__21 = new Class(
 {
-Extends: ThreeButtonItem,
+Extends: FourButtonItem,
         initialize: function(sheet)
         {
                 this.parent(sheet);

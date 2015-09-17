@@ -100,7 +100,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = true;
+	$this->mLogs = false;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin
@@ -126,8 +126,6 @@ function __construct()
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);
 
-	error_log('new normal inst');
-	
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
 	$this->mSignupStudent = new SignupStudent($this);	

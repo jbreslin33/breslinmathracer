@@ -16,7 +16,7 @@ class Normal
 function __construct($application)
 {
 	$this->mApplication = $application;
-	$this->logs = true; 
+	$this->logs = false; 
 	if ($this->logs)
 	{
 		error_log('normal constructor');
