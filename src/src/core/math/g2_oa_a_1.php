@@ -11,29 +11,13 @@ Extends: FourButtonItem,
                 this.mType = '2.oa.a.1_21';
                 this.mStripCommas = false;
 
-                var x = Math.floor(Math.random()*98);
-                var a = parseInt(x+1);
-                var b = 0;
-                var c = 0;
+                this.setQuestion('What is the meaning of life the universe and everything?');
+                this.setAnswer('' + '42',0);
 
-                while (a == b || a == c || b == c || a < 0 || b < 0 || c < 0)
-                {
-                        b = Math.floor(Math.random()*7)-3;
-                        b = parseInt(a+b);
-                        c = Math.floor(Math.random()*7)-3;
-                        c = parseInt(a+c);
-                }
-
-                a = a + ',' + parseInt(a+1);
-                b = b + ',' + parseInt(b+1);
-                c = c + ',' + parseInt(c+1);
-
-                this.setQuestion('What comes after ' + x + '?');
-                this.setAnswer('' + a,0);
-
-                this.mButtonA.setAnswer('' + a);
-                this.mButtonB.setAnswer('' + b);
-                this.mButtonC.setAnswer('' + c);
+                this.mButtonA.setAnswer('' + '40');
+                this.mButtonB.setAnswer('' + '41');
+                this.mButtonC.setAnswer('' + '42');
+                this.mButtonD.setAnswer('' + '43');
                 this.shuffle(10);
         }
 });
