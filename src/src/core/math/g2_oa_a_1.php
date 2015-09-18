@@ -9,9 +9,14 @@ Extends: FourButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '2.oa.a.1_21';
-                this.mStripCommas = false;
+		this.mNameMachine = new NameMachine();
+		this.ns = new NameSampler();
+                
+		this.a = Math.floor(Math.random()*2)+4;
+		this.a = 4;
+		var decimalA = new Decimal('' + this.a + '.50');
 
-                this.setQuestion('What is the meaning of life the universe and everything?');
+                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' movie tickets for ' + decimalA.getMoney() + ' each. Which of theses shows how to find the total cost of the ' + this.a + ' tickets?');
                 this.setAnswer('' + '42',0);
 
                 this.mButtonA.setAnswer('' + '40');
