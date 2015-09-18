@@ -66,8 +66,8 @@ Extends: Item,
 	{
 		for (i=0; i < degree; i++)
 		{
-        		indexFROM = Math.floor(Math.random()*3);
-        		indexTO = Math.floor(Math.random()*3);
+        		indexFROM = Math.floor(Math.random()*4);
+        		indexTO = Math.floor(Math.random()*4);
 
 			answerFROM = this.mButtonArray[indexFROM].getAnswer();	
 			answerTO = this.mButtonArray[indexTO].getAnswer();	
