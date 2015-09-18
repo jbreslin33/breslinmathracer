@@ -16,13 +16,13 @@ Extends: FourButtonItem,
 		this.a = 4;
 		var decimalA = new Decimal('' + this.a + '.50');
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' movie tickets for ' + decimalA.getMoney() + ' each. Which of theses shows how to find the total cost of the ' + this.a + ' tickets?');
+                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' movie tickets for $' + decimalA.getMoney() + ' each. Which of theses shows how to find the total cost of the ' + this.a + ' tickets?');
                 this.setAnswer('' + '42',0);
 
-                this.mButtonA.setAnswer('' + '40');
-                this.mButtonB.setAnswer('' + '41');
-                this.mButtonC.setAnswer('' + '42');
-                this.mButtonD.setAnswer('' + '43');
+                this.mButtonA.setAnswer('' + this.a + ' + $' + decimalA.getMoney());
+                this.mButtonB.setAnswer('' + '$' + decimalA.getMoney() + ' &divide ' + this.a);
+                this.mButtonC.setAnswer('' + '$' + decimalA.getMoney() + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a);
+                this.mButtonD.setAnswer('' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney());
                 this.shuffle(10);
         }
 });
