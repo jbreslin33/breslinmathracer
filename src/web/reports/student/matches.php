@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>ADD TEAM TO MATCH</title>
+	<title>MATCHES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
