@@ -3,12 +3,12 @@
 <html>
 
 <head>
-        <title>LEADER BOARDS</title>
+        <title>REPORTS</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
 <body>
-<p><b> Leader Boards </p></b>
+<p><b> Reports </p></b>
 <?php
 
 session_start();
@@ -18,6 +18,7 @@ session_start();
 <li><a href="/web/navigation/main_menu_student.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/stats/leaderboards.php">Normal Leader Boards</a></li>
+<li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/stats/student/homework.php">Home Work</a></li>
 </ul>
 
