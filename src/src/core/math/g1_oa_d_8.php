@@ -9,22 +9,13 @@ initialize: function(sheet)
 {
        	this.parent(sheet,600,50,330,75,100,50,685,80);
 
-        this.mNameMachine = new NameMachine();
-        this.ns = new NameSampler();
-
         this.mType = '1.oa.d.8_1';
 
-	this.a = 0;	
-	this.b = 0;	
-	while (this.a <= this.b)	
-	{
-      		this.a = Math.floor(Math.random()*9)+1;
-       		this.b = Math.floor(Math.random()*9)+1;
-	}
-	this.c = parseInt(this.a - this.b);        
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = Math.floor(Math.random()*9)+1;
+	this.c = parseInt(this.a + this.b);        
 
-        this.setQuestion('' + this.ns.mNameOne + ' is trying to solve ' + this.a + ' - ' + this.b + '. Write an addition expression that will help ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' solve it.');
-        this.setAnswer('' + this.b + '+' + this.c,0);
-        this.setAnswer('' + this.c + '+' + this.b,1);
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' + ? = ' + this.c);
+        this.setAnswer('' + this.b,0);
 }
 });
