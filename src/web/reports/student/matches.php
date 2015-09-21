@@ -10,7 +10,7 @@
 <body>
 <?php
 session_start();
-//db connection
+
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
