@@ -1,5 +1,4 @@
 /*
-item_description: This abstract class(atleast my javascript version of abstract) will give you 3 buttons straight across and room for a question at the top.
 */ 
 var FourButtonItem = new Class(
 {
@@ -114,6 +113,7 @@ Extends: Item,
 
         showContinueCorrect: function()
         {
+		APPLICATION.log('showContinueCorrect:' + this.mButtonArray.length);   
 		this.parent();
                 for (i=0; i < this.mButtonArray.length; i++)
                 {
@@ -130,6 +130,7 @@ Extends: Item,
 
         showCorrectAnswer: function()
         {
+		APPLICATION.log('showCorrectAnswer:' + this.mButtonArray.length);   
 		for (i=0; i < this.mButtonArray.length; i++)
                 {
  			if (this.mButtonArray[i].getAnswer() != this.mUserAnswer && this.mButtonArray[i].getAnswer() != this.getAnswer())

@@ -9,6 +9,7 @@ Extends: FourButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '2.oa.a.1_21';
+                this.mChopWhiteSpace = false;
 		this.mNameMachine = new NameMachine();
 		this.ns = new NameSampler();
                 
@@ -17,12 +18,13 @@ Extends: FourButtonItem,
 		var decimalA = new Decimal('' + this.a + '.50');
 
                 this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' movie tickets for $' + decimalA.getMoney() + ' each. Which of theses shows how to find the total cost of the ' + this.a + ' tickets?');
-                this.setAnswer('' + '42',0);
+                var answer = '' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney();
+                this.setAnswer('' + answer,0);
 
                 this.mButtonA.setAnswer('' + this.a + ' + $' + decimalA.getMoney());
                 this.mButtonB.setAnswer('' + '$' + decimalA.getMoney() + ' &divide ' + this.a);
                 this.mButtonC.setAnswer('' + '$' + decimalA.getMoney() + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a);
-                this.mButtonD.setAnswer('' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney());
+                this.mButtonD.setAnswer('' + answer);
                 this.shuffle(10);
         }
 });

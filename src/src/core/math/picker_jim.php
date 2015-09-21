@@ -13,6 +13,7 @@ initialize: function(sheet)
 getDev: function()
 {
 	return '2.oa.a.1_21';
+	//return 'k.nbt.a.1_21';
 },
 
 getItem: function(id)
