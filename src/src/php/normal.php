@@ -234,10 +234,11 @@ public function updateMatch($db)
 		
         	$r = pg_query($db->getConn(),$s) or die('Could not connect: ' . pg_last_error());
                 $n = pg_num_rows($r);
+		//$val = pg_fetch_result($res, 1, 0);
                 for($i = 0; $i < $n; $i++)
                 {
-                        $user_id = pg_Result($r, $i, 0);
-                        $teams_matches_id = pg_Result($r, $i, 1);
+			$user_id = pg_fetch_result($r, $i, 0);
+			$teams_matches_id = pg_fetch_result($r, $i, 1);
 			if ($user_id == $this->mApplication->mLoginStudent->mUserID)
 			{
 				$u = "update teams_matches set score = score + 1 where id = ";
