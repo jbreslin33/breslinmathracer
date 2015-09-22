@@ -1,5 +1,27 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_15',1.0815,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__15 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_15';
+
+        this.b = Math.floor(Math.random()*9)+1;
+        this.c = Math.floor(Math.random()*9)+1;
+        this.a = parseInt(this.b + this.c);
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' = ' + this.b + ' + ?');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_14',1.0814,'1.oa.d.8','' );
 */
 var i_1_oa_d_8__14 = new Class(
