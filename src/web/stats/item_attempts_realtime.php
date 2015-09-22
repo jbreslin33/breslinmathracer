@@ -46,7 +46,7 @@ echo '<table border=\"1\">';
 	$unmastered = '';
 
 	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id ";
-	$query .= " order by start_time desc LIMIT 20;";
+	$query .= " order by start_time desc LIMIT 100;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
