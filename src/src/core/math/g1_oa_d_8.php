@@ -21,7 +21,7 @@ initialize: function(sheet)
 	}
 
         this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' - ? = ' + this.c);
-        this.setAnswer('' + this.a,0);
+        this.setAnswer('' + this.b,0);
 }
 });
 
