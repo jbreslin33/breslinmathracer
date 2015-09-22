@@ -1584,6 +1584,22 @@ getItem: function(id)
         {
                 return new i_1_oa_d_8__10(this.mSheet);
 	}
+	if (id == '1.oa.d.8_11')
+        {
+                return new i_1_oa_d_8__11(this.mSheet);
+	}
+	if (id == '1.oa.d.8_12')
+        {
+                return new i_1_oa_d_8__12(this.mSheet);
+	}
+	if (id == '1.oa.d.8_13')
+        {
+                return new i_1_oa_d_8__13(this.mSheet);
+	}
+	if (id == '1.oa.d.8_14')
+        {
+                return new i_1_oa_d_8__14(this.mSheet);
+	}
 	
 	/*** GRADE 2 ***/
 	//2.oa.a.1
