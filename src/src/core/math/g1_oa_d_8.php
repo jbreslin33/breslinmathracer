@@ -12,9 +12,9 @@ initialize: function(sheet)
 
         this.mType = '1.oa.d.8_13';
 
-        this.a = Math.floor(Math.random()*9)+1;
         this.b = Math.floor(Math.random()*9)+1;
-        this.c = parseInt(this.a + this.b);
+        this.c = Math.floor(Math.random()*9)+1;
+        this.a = parseInt(this.b + this.c);
 
         this.setQuestion('' + 'Determine the unknown number that makes the equation true: ? = ' + this.b + ' + ' + this.c);
         this.setAnswer('' + this.a,0);
