@@ -1518,6 +1518,30 @@ getItem: function(id)
         {
                 return new i_1_oa_d_7__10(this.mSheet);
 	}
+	if (id == '1.oa.d.7_11')
+        {
+                return new i_1_oa_d_7__11(this.mSheet);
+	}
+	if (id == '1.oa.d.7_12')
+        {
+                return new i_1_oa_d_7__12(this.mSheet);
+	}
+	if (id == '1.oa.d.7_13')
+        {
+                return new i_1_oa_d_7__13(this.mSheet);
+	}
+	if (id == '1.oa.d.7_14')
+        {
+                return new i_1_oa_d_7__14(this.mSheet);
+	}
+	if (id == '1.oa.d.7_15')
+        {
+                return new i_1_oa_d_7__15(this.mSheet);
+	}
+	if (id == '1.oa.d.7_16')
+        {
+                return new i_1_oa_d_7__16(this.mSheet);
+	}
 
 	//1.oa.d.8	
 	if (id == '1.oa.d.8_1')
