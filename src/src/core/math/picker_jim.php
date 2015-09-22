@@ -14,7 +14,7 @@ getDev: function()
 {
 	//return '2.oa.a.1_21';
 	//return 'k.nbt.a.1_21';
-	return '1.oa.d.8_8';
+	return '1.oa.d.8_12';
 },
 
 getItem: function(id)
@@ -1599,6 +1599,46 @@ getItem: function(id)
 	if (id == '1.oa.d.8_14')
         {
                 return new i_1_oa_d_8__14(this.mSheet);
+	}
+	if (id == '1.oa.d.8_15')
+        {
+                return new i_1_oa_d_8__15(this.mSheet);
+	}
+	if (id == '1.oa.d.8_16')
+        {
+                return new i_1_oa_d_8__16(this.mSheet);
+	}
+	if (id == '1.oa.d.8_17')
+        {
+                return new i_1_oa_d_8__17(this.mSheet);
+	}
+	if (id == '1.oa.d.8_18')
+        {
+                return new i_1_oa_d_8__18(this.mSheet);
+	}
+	if (id == '1.oa.d.8_19')
+        {
+                return new i_1_oa_d_8__19(this.mSheet);
+	}
+	if (id == '1.oa.d.8_20')
+        {
+                return new i_1_oa_d_8__20(this.mSheet);
+	}
+	if (id == '1.oa.d.8_21')
+        {
+                return new i_1_oa_d_8__21(this.mSheet);
+	}
+	if (id == '1.oa.d.8_22')
+        {
+                return new i_1_oa_d_8__22(this.mSheet);
+	}
+	if (id == '1.oa.d.8_23')
+        {
+                return new i_1_oa_d_8__23(this.mSheet);
+	}
+	if (id == '1.oa.d.8_24')
+        {
+                return new i_1_oa_d_8__24(this.mSheet);
 	}
 	
 	/*** GRADE 2 ***/
