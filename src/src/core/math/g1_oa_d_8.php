@@ -1,5 +1,69 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_6',1.0806,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__6 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_6';
+
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = Math.floor(Math.random()*9)+1;
+	this.c = parseInt(this.a + this.b);        
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' + ' + this.b + ' = _');
+        this.setAnswer('' + this.c,0);
+}
+});
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_5',1.0805,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_5';
+
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = Math.floor(Math.random()*9)+1;
+	this.c = parseInt(this.a + this.b);        
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' + _ = ' + this.c);
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_4',1.0804,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_4';
+
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = Math.floor(Math.random()*9)+1;
+	this.c = parseInt(this.a + this.b);        
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: _ + ' + this.b + ' = ' + this.c);
+        this.setAnswer('' + this.a,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_3',1.0803,'1.oa.d.8','' );
 */
 var i_1_oa_d_8__3 = new Class(
