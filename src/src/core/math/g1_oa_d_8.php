@@ -1,5 +1,82 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_24',1.0824,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__24 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_24';
+
+        this.a = -1;
+        while (this.a < 0)
+        {
+                this.b = Math.floor(Math.random()*9)+1;
+                this.c = Math.floor(Math.random()*9)+1;
+                this.a = parseInt(this.b - this.c);
+        }
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' = ' + this.b + ' - _');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_23',1.0823,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__23 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_23';
+
+        this.a = -1;
+        while (this.a < 0)
+        {
+                this.b = Math.floor(Math.random()*9)+1;
+                this.c = Math.floor(Math.random()*9)+1;
+                this.a = parseInt(this.b - this.c);
+        }
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: ' + this.a + ' = _ ' + ' - ' + this.c);
+        this.setAnswer('' + this.b,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_22',1.0822,'1.oa.d.8','' );
+*/
+var i_1_oa_d_8__22 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mType = '1.oa.d.8_22';
+
+	this.a = -1;
+	while (this.a < 0)
+	{
+        	this.b = Math.floor(Math.random()*9)+1;
+        	this.c = Math.floor(Math.random()*9)+1;
+        	this.a = parseInt(this.b - this.c);
+	}
+
+        this.setQuestion('' + 'Determine the unknown number that makes the equation true: _ = ' + this.b + ' - ' + this.c);
+        this.setAnswer('' + this.a,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.oa.d.8_21',1.0821,'1.oa.d.8','' );
 */
 var i_1_oa_d_8__21 = new Class(
