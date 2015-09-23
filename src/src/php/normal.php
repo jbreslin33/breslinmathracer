@@ -237,8 +237,10 @@ public function updateMatch($db)
 		//$val = pg_fetch_result($res, 1, 0);
                 for($i = 0; $i < $n; $i++)
                 {
-			$user_id = pg_fetch_result($r, $i, 0);
-			$teams_matches_id = pg_fetch_result($r, $i, 1);
+			$arr = pg_fetch_array($r, NULL, PGSQL_NUM);
+			$user_id = $arr[0];		
+			$teams_matches_id = $arr[1];		
+			//$teams_matches_id = pg_fetch_result($r, $i, 1);
 			if ($user_id == $this->mApplication->mLoginStudent->mUserID)
 			{
 				$u = "update teams_matches set score = score + 1 where id = ";
