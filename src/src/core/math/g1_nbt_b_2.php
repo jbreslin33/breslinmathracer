@@ -15,7 +15,7 @@ initialize: function(sheet)
         this.ones = Math.floor(Math.random()*9)+1;
         this.a = parseInt(this.tens * 10 + this.ones);
 
-        this.setQuestion('' + 'How many tens are in ' + this.a + '?');
+        this.setQuestion('' + 'How many tens are in the tens place in ' + this.a + '?');
         this.setAnswer('' + this.tens,0);
 }
 });
@@ -37,7 +37,7 @@ initialize: function(sheet)
         this.ones = Math.floor(Math.random()*9)+1;
         this.a = parseInt(this.tens * 10 + this.ones);        
 
-        this.setQuestion('' + 'How many ones are in ' + this.a + '?');
+        this.setQuestion('' + 'How many ones are in the ones place in ' + this.a + '?');
         this.setAnswer('' + this.ones,0);
 }
 });
