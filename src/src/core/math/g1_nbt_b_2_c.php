@@ -48,12 +48,12 @@ initialize: function(sheet)
 
         this.mType = '1.nbt.b.2.c_2';
 
-        this.tens = 1;
-        this.ones = Math.floor(Math.random()*9)+1;
-        this.a = parseInt(10 + this.ones);
+        this.tens = Math.floor(Math.random()*9)+1;
+	this.ones = 0;
+        this.a = parseInt(this.tens * 10);
 
         this.setQuestion('' + 'How many tens are in the tens place in ' + this.a + '?');
-        this.setAnswer('' + '1',0);
+        this.setAnswer('' + this.tens,0);
 }
 });
 
@@ -70,9 +70,9 @@ initialize: function(sheet)
 
         this.mType = '1.nbt.b.2.c_1';
 
-        this.tens = 1;
-        this.ones = Math.floor(Math.random()*9)+1;
-        this.a = parseInt(10 + this.ones);
+        this.tens = Math.floor(Math.random()*9)+1;
+	this.ones = 0;
+        this.a = parseInt(this.tens * 10);
 
         this.setQuestion('' + 'How many ones are in the ones place in ' + this.a + '?');
         this.setAnswer('' + this.ones,0);
