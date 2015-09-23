@@ -9,6 +9,7 @@
 
 <body>
 <ul>
+
 <?php
 session_start();
 if ($_SESSION["role"] == 1)
@@ -23,7 +24,6 @@ else
 ?>
 <li><a href="/web/php/logout.php">Logout</a></li>
 </ul>
-
 
 
 <?php
