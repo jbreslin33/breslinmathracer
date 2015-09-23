@@ -17,7 +17,7 @@ session_start();
 <ul>
 <li><a href="/web/navigation/student/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/stats/leaderboards.php">Normal Leader Boards</a></li>
+<li><a href="/web/reports/student/leaderboards.php">Leader Boards</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
 <li><a href="/web/reports/student/homework.php">Home Work</a></li>

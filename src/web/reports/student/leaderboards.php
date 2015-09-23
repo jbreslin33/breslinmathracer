@@ -8,6 +8,23 @@
 </head>
 
 <body>
+<ul>
+
+<?php
+session_start();
+if ($_SESSION["role"] == 1)
+{
+        echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
+        echo "<li><a href=\"/web/navigation/student/reports.php\">Reports</a></li>";
+}
+else
+{
+        echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
+}
+?>
+<li><a href="/web/php/logout.php">Logout</a></li>
+</ul>
+
 <?php
 session_start();
 
@@ -64,26 +81,11 @@ else
 echo "<br>";
 ?>
 
-<p><b> Normal Leader Boards </p></b>
-
-<ul>
-<?php
-if ($_SESSION["role"] == 1)
-{ 
-	echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
-}
-else
-{
-	echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
-}
-?>
-<li><a href="/web/php/logout.php">Logout</a></li>
-</ul>
-
+<p><b> Leader Boards </p></b>
 
 <p><b> Select Room and Category: </p></b>
 
-<form method="post" action="/web/stats/leaderboards.php">
+<form method="post" action="/web/reports/students/leaderboards.php">
 
 <select id="school_id" name="school_id" onchange="loadAgain()">
 <?php
@@ -179,7 +181,7 @@ function loadAgain()
     	var x = document.getElementById("school_id").value;
     	var y = document.getElementById("room_id").value;
     	var z = document.getElementById("category").value;
-	document.location.href = '/web/stats/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
+	document.location.href = '/web/reports/student/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
 }
 </script>
 
