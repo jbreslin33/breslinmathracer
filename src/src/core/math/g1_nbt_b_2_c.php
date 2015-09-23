@@ -25,13 +25,13 @@ initialize: function(sheet)
         this.mQuestionLabel.setSize(220,250);
         this.mQuestionLabel.setPosition(225,180);
         
-	this.tens = 1;
-        this.ones = Math.floor(Math.random()*9)+1;
-        this.a = parseInt(10 + this.ones);
+        this.tens = Math.floor(Math.random()*9)+1;
+	this.ones = 0;
+        this.a = parseInt(this.tens * 10);
  
 	this.setQuestion('How many tens in the tens place and how many ones in the ones place in ' + this.a + '?');
-        this.setAnswer('' + '1',0);
-        this.setAnswer('' + this.ones,1);
+        this.setAnswer('' + this.tens,0);
+        this.setAnswer('' + '0',1);
 }
 });
 
