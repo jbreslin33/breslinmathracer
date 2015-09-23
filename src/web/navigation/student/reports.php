@@ -20,7 +20,7 @@ session_start();
 <li><a href="/web/stats/leaderboards.php">Normal Leader Boards</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
-<li><a href="/web/stats/student/homework.php">Home Work</a></li>
+<li><a href="/web/reports/student/homework.php">Home Work</a></li>
 </ul>
 
 </body>
