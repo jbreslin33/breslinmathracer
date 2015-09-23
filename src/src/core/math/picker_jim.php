@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '1.nbt.b.2.b_1';
+	return '1.nbt.b.2.b_3';
 },
 
 getItem: function(id)
@@ -1663,7 +1663,15 @@ getItem: function(id)
         {
                 return new i_1_nbt_b_2_b__1(this.mSheet);
 	}
-	
+	if (id == '1.nbt.b.2.b_2')
+        {
+                return new i_1_nbt_b_2_b__2(this.mSheet);
+	}
+	if (id == '1.nbt.b.2.b_3')
+        {
+                return new i_1_nbt_b_2_b__3(this.mSheet);
+	}
+
 	/*** GRADE 2 ***/
 	//2.oa.a.1
 	if (id == '2.oa.a.1_1')
