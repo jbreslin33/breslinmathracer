@@ -80,7 +80,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/stats/homework.php?room_id=' + y; 
+	document.location.href = '/web/reports/school/homework.php?room_id=' + y; 
 }
 </script>
 
