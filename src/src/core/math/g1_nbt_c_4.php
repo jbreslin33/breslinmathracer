@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_1',1.1501,'1.nbt.c.4','' );
+insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_1',1.1501,'1.nbt.c.4','no carry' );
 */
 var i_1_nbt_c_4__1 = new Class(
 {
@@ -15,18 +15,21 @@ initialize: function(sheet)
 
         this.mType = '1.nbt.c.4_1';
 
-	this.a = 0;	
-	this.b = 0;	
-	while (this.a <= this.b)	
-	{
-      		this.a = Math.floor(Math.random()*9)+1;
-       		this.b = Math.floor(Math.random()*9)+1;
+	this.onesA = 10;	
+	this.tensA = 0;	
+	this.onesB = 10;	
+	this.c = 0; 
+	
+	while (parseInt(this.onesA + this.onesB) > 10 || this.c > 99)	
+	{ 
+		this.onesA = Math.floor(Math.random()*9)+1;
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.onesB = Math.floor(Math.random()*9)+1;
+       		this.c = parseInt(this.tensA * 10 + this.onesA + this.onesB);
 	}
-	this.c = parseInt(this.a - this.b);        
 
-        this.setQuestion('' + this.ns.mNameOne + ' is trying to solve ' + this.a + ' - ' + this.b + '. Write an addition expression that will help ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' solve it.');
-        this.setAnswer('' + this.b + '+' + this.c,0);
-        this.setAnswer('' + this.c + '+' + this.b,1);
+        this.setQuestion('' + this.tensA + '' + this.onesA + ' + ' + this.onesB + ' = ');
+        this.setAnswer('' + this.c,0);
 }
 });
 
