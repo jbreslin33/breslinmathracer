@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '1.nbt.b.3_4';
+	return '1.nbt.c.4_1';
 },
 
 getItem: function(id)
@@ -1706,6 +1706,28 @@ getItem: function(id)
 	if (id == '1.nbt.b.3_5')
         {
                 return new i_1_nbt_b_3__5(this.mSheet);
+	}
+	
+	//1.nbt.c.4	
+	if (id == '1.nbt.c.4_1')
+        {
+                return new i_1_nbt_c_4__1(this.mSheet);
+	}
+	if (id == '1.nbt.c.4_2')
+        {
+                return new i_1_nbt_c_4__2(this.mSheet);
+	}
+	if (id == '1.nbt.c.4_3')
+        {
+                return new i_1_nbt_c_4__3(this.mSheet);
+	}
+	if (id == '1.nbt.c.4_4')
+        {
+                return new i_1_nbt_c_4__4(this.mSheet);
+	}
+	if (id == '1.nbt.c.4_5')
+        {
+                return new i_1_nbt_c_4__5(this.mSheet);
 	}
 
 	/*** GRADE 2 ***/
