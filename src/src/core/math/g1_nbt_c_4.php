@@ -1,5 +1,40 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_3',1.1503,'1.nbt.c.4','2x2 multiple of 10' );
+*/
+var i_1_nbt_c_4__3 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.mType = '1.nbt.c.4_3';
+
+	this.onesA = 0;	
+	this.tensA = 0;	
+	this.onesB = 0;	
+	this.onesB = 0;	
+	this.c = 100; 
+	
+	while (this.c > 99)	
+	{ 
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.onesA = Math.floor(Math.random()*9)+1;
+		this.tensB = Math.floor(Math.random()*9)+1;
+		this.onesB = 0;
+       		this.c = parseInt((this.tensA * 10 + this.onesA) + (this.tensB * 10));
+	}
+
+        this.setQuestion('' + this.tensA + '' + this.onesA + ' + ' + this.tensB + '0 =');
+        this.setAnswer('' + this.c,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_2',1.1502,'1.nbt.c.4','2x1 carry with ones' );
 */
 var i_1_nbt_c_4__2 = new Class(
@@ -32,6 +67,7 @@ initialize: function(sheet)
         this.setAnswer('' + this.c,0);
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_1',1.1501,'1.nbt.c.4','2x1 no carry' );
 */
