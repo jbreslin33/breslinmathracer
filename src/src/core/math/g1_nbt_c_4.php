@@ -72,6 +72,42 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_8',1.1508,'1.nbt.c.4','2x2 no carry' );
+*/
+var i_1_nbt_c_4__8 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.mType = '1.nbt.c.4_8';
+
+	this.onesA = 10;	
+	this.tensA = 0;	
+	this.onesB = 0;	
+	this.onesB = 10;	
+	this.c = 100; 
+	
+	while (parseInt(this.onesA + this.onesB) > 9 || this.c > 99)	
+	{ 
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.onesA = Math.floor(Math.random()*9)+1;
+		this.tensB = Math.floor(Math.random()*9)+1;
+		this.onesB = Math.floor(Math.random()*9)+1;
+       		this.c = parseInt( (this.tensA * 10 + this.onesA) + (this.tensB * 10 + this.onesB) );
+	}
+
+        this.setQuestion('' + this.tensB + '' + this.onesB + ' + ' + this.tensA + '' + this.onesA + ' =');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_7',1.1507,'1.nbt.c.4','2x2 no carry' );
 */
 var i_1_nbt_c_4__7 = new Class(
