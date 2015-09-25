@@ -1,5 +1,41 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_5',1.1505,'1.nbt.c.4','2x2 carry' );
+*/
+var i_1_nbt_c_4__5 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.mType = '1.nbt.c.4_5';
+
+	this.onesA = 0;	
+	this.tensA = 0;	
+	this.onesB = 0;	
+	this.onesB = 0;	
+	this.c = 100; 
+	
+	while (parseInt(this.onesA + this.onesB) < 10 || this.c > 99)	
+	{ 
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.onesA = Math.floor(Math.random()*9)+1;
+		this.tensB = Math.floor(Math.random()*9)+1;
+		this.onesB = Math.floor(Math.random()*9)+1;
+       		this.c = parseInt( (this.tensA * 10 + this.onesA) + (this.tensB * 10 + this.onesB) );
+	}
+
+        this.setQuestion('' + this.tensA + '' + this.onesA + ' + ' + this.tensB + '' + this.onesB + ' =');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_4',1.1504,'1.nbt.c.4','2x2 no carry' );
 */
 var i_1_nbt_c_4__4 = new Class(
@@ -21,7 +57,7 @@ initialize: function(sheet)
 	this.onesB = 10;	
 	this.c = 100; 
 	
-	while (parseInt(this.onesA + this.onesB > 10) || this.c > 99)	
+	while (parseInt(this.onesA + this.onesB) > 9 || this.c > 99)	
 	{ 
 		this.tensA = Math.floor(Math.random()*9)+1;
 		this.onesA = Math.floor(Math.random()*9)+1;
