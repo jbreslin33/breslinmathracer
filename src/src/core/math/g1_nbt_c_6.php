@@ -15,17 +15,18 @@ initialize: function(sheet)
  	this.mThresholdTime = 5000;
         this.mType = '1.nbt.c.6_1';
 
-	this.answer = 101;
-	this.a = 0;
-	this.b = 10;
+	this.answer = -1;
+	this.tensA = 0;
+	this.tensB = 0;
 
-	while (this.answer > 99)
+	while (this.answer < 1)
 	{
-		this.a = Math.floor(Math.random()*9)+1;
-        	this.answer = parseInt(this.a * 10 + 10);
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.tensB = Math.floor(Math.random()*9)+1;
+        	this.answer = parseInt( (this.tensA * 10) - (this.tensB * 10) );
 	}
 
-        this.setQuestion('' + this.a + '0' + ' + ' + this.b + ' =');
+        this.setQuestion('' + this.tensA + '0' + ' - ' + this.tensB + '0 =');
         this.setAnswer('' + this.answer,0);
 }
 });
