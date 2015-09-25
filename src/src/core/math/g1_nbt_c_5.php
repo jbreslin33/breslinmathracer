@@ -8,12 +8,21 @@ Extends: NumberPadItem,
 initialize: function(sheet)
 {
         this.parent(sheet);
+
+	this.mQuestionLabel.setSize(100,50);
+  	this.mQuestionLabel.setPosition(250,75);
+
+
         this.mType = '1.nbt.c.5_1';
 
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
-        this.setQuestion('0+0=');
-        this.setAnswer('' + '0',0);
+
+	this.a = Math.floor(Math.random()*9)+1;
+	this.b = 10;
+
+        this.setQuestion('' + this.a + '0' + ' + ' + this.b + ' =');
+        this.setAnswer('' + parseInt(this.a * 10 + 10),0);
 }
 });
 
