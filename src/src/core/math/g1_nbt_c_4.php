@@ -36,6 +36,42 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_10',1.1510,'1.nbt.c.4','add 10 in 2x2' );
+*/
+var i_1_nbt_c_4__10 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.mType = '1.nbt.c.4_10';
+
+	this.onesA = 0;	
+	this.tensA = 0;	
+	this.onesB = 0;	
+	this.onesB = 0;	
+	this.c = 100; 
+	
+	while (this.c > 99)	
+	{ 
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.onesA = Math.floor(Math.random()*9)+1;
+		this.tensB = Math.floor(Math.random()*9)+1;
+		this.onesB = 0;
+       		this.c = parseInt( (this.tensA * 10 + this.onesA) + (this.tensB * 10 + this.onesB) );
+	}
+
+        this.setQuestion('' + this.tensB + '' + this.onesB + ' + ' + this.tensA + '' + this.onesA + ' =');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_9',1.1509,'1.nbt.c.4','add 10 in 2x2' );
 */
 var i_1_nbt_c_4__9 = new Class(
