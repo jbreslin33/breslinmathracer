@@ -144,6 +144,40 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_4',1.1504,'1.nbt.c.4','2x1 carry with ones' );
+*/
+var i_1_nbt_c_4__4 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+       	this.parent(sheet,600,50,330,75,100,50,685,80);
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.mType = '1.nbt.c.4_4';
+
+	this.onesA = 0;	
+	this.tensA = 0;	
+	this.onesB = 0;	
+	this.c = 0; 
+	
+	while (parseInt(this.onesA + this.onesB) < 10 || this.c > 99)	
+	{ 
+		this.onesA = Math.floor(Math.random()*9)+1;
+		this.tensA = Math.floor(Math.random()*9)+1;
+		this.onesB = Math.floor(Math.random()*9)+1;
+       		this.c = parseInt(this.tensA * 10 + this.onesA + this.onesB);
+	}
+
+        this.setQuestion('' + this.onesB + ' + ' +  this.tensA + '' + this.onesA + ' = ');
+        this.setAnswer('' + this.c,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('1.nbt.c.4_3',1.1503,'1.nbt.c.4','2x1 carry with ones' );
 */
 var i_1_nbt_c_4__3 = new Class(
