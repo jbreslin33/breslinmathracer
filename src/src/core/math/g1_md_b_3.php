@@ -35,15 +35,5 @@ createQuestionShapes: function()
 {
 	this.mAnalogClock = new AnalogClock (this,100,20,20,APPLICATION.mGame,this.mRaphael,0,0,0,"#000000",.5,false);
         this.addQuestionShape(this.mAnalogClock);
-	
-
-/*
-	var shapeA = new Shape(50,50,240,200,this.mSheet.mGame,"","","");
-        var shapeB = new Shape(50,50,530,200,this.mSheet.mGame,"","","");
-        shapeA.setText(this.a);
-        shapeB.setText(this.b);
-        this.addQuestionShape(shapeA);
-        this.addQuestionShape(shapeB);
-*/
 }
 });
