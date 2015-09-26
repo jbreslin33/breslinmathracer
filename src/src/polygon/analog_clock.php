@@ -2,9 +2,6 @@
 var AnalogClock = new Class(
 {
 Extends: RaphaelPolygon,
-//initialize: function (x,y,length,angle,item,stroke,opacity,drag)
-//{
-
 initialize: function (item,radius,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
 {
 	this.parent(0,0,spawnX,spawnY,game,raphael,r,g,b,s,op,d);
@@ -44,58 +41,15 @@ initialize: function (item,radius,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
        	minute_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 4});
  	this.mItem.addQuestionShape(minute_hand);
  
-	//var pin = canvas.circle(100, 100, 5);
-         //pin.attr("fill", "#000000");
-  
 	var pin = new Circle (5,100,100,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
         pin.mPolygon.attr("fill", "#000000");
-       // pin.mPolygon.attr({"fill":"#f5f5f5","stroke":"#000000","stroke-width":"5"})
         this.mItem.addQuestionShape(pin);
 
-	
-	
-	
-	
+	//reset transforms
+        hour_hand.mPolygon.transform("");
+        minute_hand.mPolygon.transform("");
 
 
-        //this.mPolygon = this.mRaphael.circle(this.mPosition.mX, this.mPosition.mY, this.mRadius).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
-
-/*
-	this.x1 = x;
-	this.y1 = y;
-	this.x2 = parseInt(x + this.mLength);
-	this.y2 = y;
-	this.mAngle = angle; 
-		
-	this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
-		
-	this.mPolygon = this.mRaphael.path("" + this.mPathString);
-	this.mPolygon.attr ("stroke", this.mStroke);
-
-	this.mPolygon.mPolygon = this;
-*/
-	this.mPolygon.mPolygon = this;
-
-	//endpoint
- 	//clock = canvas.circle(100,100,95);
-        //clock.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
-
-	//this.mClock = new Circle (100,140,95,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
-        //this.mClock.mPolygon.attr({"fill":"#f5f5f5","stroke":"#444444","stroke-width":"5"})
-	//this.mItem.addQuestionShape(this.mClock);
-
-	//triangle at end of ray
-/*
-	this.mTriangle = new Triangle (parseInt(this.x2),this.y2, parseInt(this.x2-20),parseInt(this.y2+10), parseInt(this.x2-20),parseInt(this.y2-10),this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false)
-	this.mItem.addQuestionShape(this.mTriangle);
-
-	//lets rotate according to passed in value
-	var rotateAmount = '' + 'r' + this.mAngle + ',' + this.x1 + ',' + this.y1;   
-	this.mPolygon.transform(rotateAmount);
-	
-	//rotate triangle 	
-	this.mTriangle.mPolygon.transform(rotateAmount);
-*/
 },
 dragMove: function(dx,dy)
 {
