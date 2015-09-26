@@ -36,11 +36,13 @@ initialize: function (item,radius,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
  		this.mItem.addQuestionShape(minute_sign);
         }
 
- 	//this.hour_hand = canvas.path("M100 100L100 50");
-       	//this.hour_hand.attr({stroke: "#444444", "stroke-width": 6});
 	var hour_hand = new LineOne(100,100,100,50,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
        	hour_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 6});
  	this.mItem.addQuestionShape(hour_hand);
+	
+	var minute_hand = new LineOne(100,100,100,40,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
+       	minute_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 4});
+ 	this.mItem.addQuestionShape(minute_hand);
 	
 	
 
