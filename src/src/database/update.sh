@@ -150,7 +150,6 @@ cat src/core/math/items_brian.php >> min.js
 cat src/core/math/items_jim.php >> min.js
 
 cat src/utility/name_machine.php >> min.js
-cat src/utility/analog_clock.php >> min.js
 cat src/utility/time.php >> min.js
 
 cat src/core/math/*.php >> min.js

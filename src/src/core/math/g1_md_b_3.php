@@ -13,7 +13,6 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mType = '1.md.b.3_1';
 
-	this.mClock = new AnalogClock(APPLICATION);
 
         this.onesA = 10;
         this.tensA = 0;
@@ -30,6 +29,17 @@ initialize: function(sheet)
 
         this.setQuestion('' + this.tensA + '' + this.onesA + ' + ' + this.onesB + ' = ');
         this.setAnswer('' + this.c,0);
+},
+createQuestionShapes: function()
+{
+	this.mAnalogClock = new AnalogClock(APPLICATION);
+/*
+	var shapeA = new Shape(50,50,240,200,this.mSheet.mGame,"","","");
+        var shapeB = new Shape(50,50,530,200,this.mSheet.mGame,"","","");
+        shapeA.setText(this.a);
+        shapeB.setText(this.b);
+        this.addQuestionShape(shapeA);
+        this.addQuestionShape(shapeB);
+*/
 }
 });
-
