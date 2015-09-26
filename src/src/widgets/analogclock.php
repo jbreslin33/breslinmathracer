@@ -1,4 +1,4 @@
-var ClockTimer  = new Class(
+var AnalogClock  = new Class(
 {
 
 Extends: Timer,

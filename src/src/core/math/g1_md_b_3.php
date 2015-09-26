@@ -11,8 +11,9 @@ initialize: function(sheet)
 
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
-
         this.mType = '1.md.b.3_1';
+
+	this.mClock = new AnalogClock(APPLICATION);
 
         this.onesA = 10;
         this.tensA = 0;
