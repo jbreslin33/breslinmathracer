@@ -42,6 +42,7 @@
 <script type="text/javascript" src="/src/polygon/rhombus.php"></script>
 <script type="text/javascript" src="/src/polygon/line_one.php"></script>
 <script type="text/javascript" src="/src/polygon/ray.php"></script>
+<script type="text/javascript" src="/src/polygon/analog_clock.php"></script>
 <script type="text/javascript" src="/src/polygon/angle.php"></script>
 <script type="text/javascript" src="/src/polygon/line_chart.php"></script>
 <script type="text/javascript" src="/src/polygon/table.php"></script>
@@ -97,7 +98,6 @@
 
 <script type="text/javascript" src="/src/widgets/timer.php"></script>
 <script type="text/javascript" src="/src/widgets/clocktimer.php"></script>
-<script type="text/javascript" src="/src/widgets/analogclock.php"></script>
 <script type="text/javascript" src="/src/widgets/clock.php"></script>
 <script type="text/javascript" src="/src/item/clock_item.php"></script>
 <script type="text/javascript" src="/src/widgets/circles.php"></script>

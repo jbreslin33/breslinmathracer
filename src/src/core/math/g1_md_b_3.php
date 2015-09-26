@@ -10,6 +10,7 @@ initialize: function(sheet)
         this.parent(sheet,600,50,330,75,100,50,685,80);
 
         this.mNameMachine = new NameMachine();
+ 	this.mRaphael = Raphael(20,20,380,380);
         this.ns = new NameSampler();
         this.mType = '1.md.b.3_1';
 
@@ -32,7 +33,9 @@ initialize: function(sheet)
 },
 createQuestionShapes: function()
 {
-	this.mAnalogClock = new AnalogClock(APPLICATION);
+	//this.mAnalogClock = new AnalogClock(APPLICATION);
+	this.mAnalogClock = new AnalogClock (parseInt(this.mRaphael.width/2),parseInt(this.mRaphael.height/2),100,50,this,"#000000",.5,false);
+
 /*
 	var shapeA = new Shape(50,50,240,200,this.mSheet.mGame,"","","");
         var shapeB = new Shape(50,50,530,200,this.mSheet.mGame,"","","");

@@ -77,6 +77,7 @@ cat src/polygon/trapezoid.php >> min.js
 cat src/polygon/rhombus.php >> min.js
 cat src/polygon/line_one.php >> min.js
 cat src/polygon/ray.php >> min.js
+cat src/polygon/analog_clock.php >> min.js
 cat src/polygon/angle.php >> min.js
 cat src/polygon/line_chart.php >> min.js
 cat src/polygon/table.php >> min.js
@@ -133,7 +134,6 @@ cat src/hud/hud.php >> min.js
 
 cat src/widgets/timer.php >> min.js
 cat src/widgets/clocktimer.php >> min.js
-cat src/widgets/analogclock.php >> min.js
 cat src/widgets/clock.php >> min.js
 cat src/item/clock_item.php >> min.js
 cat src/widgets/circles.php >> min.js
