@@ -43,6 +43,17 @@ initialize: function (item,radius,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
 	var minute_hand = new LineOne(100,100,100,40,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
        	minute_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 4});
  	this.mItem.addQuestionShape(minute_hand);
+ 
+	//var pin = canvas.circle(100, 100, 5);
+         //pin.attr("fill", "#000000");
+  
+	var pin = new Circle (5,100,100,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
+        pin.mPolygon.attr("fill", "#000000");
+       // pin.mPolygon.attr({"fill":"#f5f5f5","stroke":"#000000","stroke-width":"5"})
+        this.mItem.addQuestionShape(pin);
+
+	
+	
 	
 	
 
