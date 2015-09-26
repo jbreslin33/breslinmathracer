@@ -133,6 +133,7 @@ cat src/hud/hud.php >> min.js
 
 cat src/widgets/timer.php >> min.js
 cat src/widgets/clocktimer.php >> min.js
+cat src/widgets/analogclock.php >> min.js
 cat src/widgets/clock.php >> min.js
 cat src/item/clock_item.php >> min.js
 cat src/widgets/circles.php >> min.js

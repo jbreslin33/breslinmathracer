@@ -97,6 +97,7 @@
 
 <script type="text/javascript" src="/src/widgets/timer.php"></script>
 <script type="text/javascript" src="/src/widgets/clocktimer.php"></script>
+<script type="text/javascript" src="/src/widgets/analogclock.php"></script>
 <script type="text/javascript" src="/src/widgets/clock.php"></script>
 <script type="text/javascript" src="/src/item/clock_item.php"></script>
 <script type="text/javascript" src="/src/widgets/circles.php"></script>
@@ -188,6 +189,15 @@
 <script type="text/javascript" src="/src/core/math/g1_nbt_c_4.php"></script>
 <script type="text/javascript" src="/src/core/math/g1_nbt_c_5.php"></script>
 <script type="text/javascript" src="/src/core/math/g1_nbt_c_6.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_md_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_md_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_md_b_3.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_md_c_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g1_g_a_1.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_g_a_2.php"></script>
+<script type="text/javascript" src="/src/core/math/g1_g_a_3.php"></script>
 
 
 
