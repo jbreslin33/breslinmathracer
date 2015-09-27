@@ -33,24 +33,43 @@ initialize: function (item,radius,spawnX,spawnY,game,raphael,r,g,b,s,op,d)
  		this.mItem.addQuestionShape(minute_sign);
         }
 
-	var hour_hand = new LineOne(100,100,100,50,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
-       	hour_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 6});
- 	this.mItem.addQuestionShape(hour_hand);
+	this.hour_hand = new LineOne(100,100,100,50,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
+       	this.hour_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 6});
+ 	this.mItem.addQuestionShape(this.hour_hand);
 	
-	var minute_hand = new LineOne(100,100,100,40,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
-       	minute_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 4});
- 	this.mItem.addQuestionShape(minute_hand);
+	this.minute_hand = new LineOne(100,100,100,40,APPLICATION.mGame,this.mRaphael,"#444444",.5,false);
+       	this.minute_hand.mPolygon.attr({stroke: "#444444", "stroke-width": 4});
+ 	this.mItem.addQuestionShape(this.minute_hand);
  
 	var pin = new Circle (5,100,100,this.mItem.mSheet.mGame,this.mItem.mRaphael,0,1,1,"none",.5,false);
         pin.mPolygon.attr("fill", "#000000");
         this.mItem.addQuestionShape(pin);
 
 	//reset transforms
-        hour_hand.mPolygon.transform("");
-        minute_hand.mPolygon.transform("");
-
-
+        this.hour_hand.mPolygon.transform("");
+        this.minute_hand.mPolygon.transform("");
 },
+
+set: function(hours,minutes)
+{
+	//reset transforms
+        this.hour_hand.mPolygon.transform("");
+        this.minute_hand.mPolygon.transform("");
+
+        //rotate to spot
+        if (hours == 12)
+        {
+                this.mPolygon.hour_hand.transform("r" + parseInt(minutes/2) + ",100,100");
+                this.mPolygon.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100");
+        }
+        else
+        {
+                this.hour_hand.mPolygon.transform("r" + parseInt(30*hours + (minutes/2)) + ",100,100");
+                this.minute_hand.mPolygon.transform("r" + parseInt(6*minutes) + ",100,100");
+        }
+},
+
+
 dragMove: function(dx,dy)
 {
         var deltaX = dx - this.mLastX;
