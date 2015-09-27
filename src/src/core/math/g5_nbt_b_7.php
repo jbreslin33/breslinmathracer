@@ -1,3 +1,68 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_20',5.1120,'5.nbt.b.7','TerraNova');
+*/
+var i_5_nbt_b_7__20 = new Class(
+{
+Extends: FourButtonItem, 
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '5.nbt.b.7_20';
+
+        var decimalC = new Decimal('123456');
+        var decimalB = new Decimal('123456');
+
+        var compareC = 0;
+        var compareB = 0;
+
+        //might need be bigger compare
+        while(decimalB.mNumber.length != compareB || parseFloat(decimalB.mDecimal) >= 1 || decimalC.mNumber.length != compareC || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
+        {
+                var a = Math.floor(Math.random()*899+100);
+                a = parseFloat(a / 100);
+                var decimalA = new Decimal(a);
+
+                var b = Math.floor(Math.random()*89+10);
+                b = parseFloat(b / 100);
+                decimalB = new Decimal(b);
+
+                decimalC = decimalA.multiply(decimalB);
+
+                //lets update compare
+                if (decimalC.mDecimalPlace == -1)
+                {
+                        compareC = 3;
+                }
+                else
+                {
+                        compareC = 4;
+                }
+
+                //lets update compare
+                if (decimalB.mDecimalPlace == -1)
+                {
+                        compareB = 2;
+                }
+                else
+                {
+                        compareB = 3;
+                }
+
+                this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
+                this.setAnswer('' + decimalA.getString(),0);
+        }
+ 
+	this.mButtonA.setAnswer('' + decimalA.getString());
+	this.mButtonB.setAnswer('' + 'B');
+	this.mButtonC.setAnswer('' + 'C');
+	this.mButtonD.setAnswer('' + 'D');
+        this.shuffle(10);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_19',5.1119,'5.nbt.b.7','5.55/0.55');
 */
