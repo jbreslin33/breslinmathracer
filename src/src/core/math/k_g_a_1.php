@@ -132,9 +132,6 @@ checkUserAnswer: function()
 		this.rectangleTwoSquare = 'two';	
 	}
 
-	APPLICATION.log('rectangleOneSquare: ' + this.rectangleOneSquare);
-	APPLICATION.log('rectangleTwoSquare: ' + this.rectangleTwoSquare);
-        
 	if (squareTwoTotal == this.mSquareArrayTwo.length)
         {
                 this.rectangleTwoSquare = 'two';   

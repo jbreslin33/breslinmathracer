@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '1.md.b.3_26';
+	return '1.md.a.1_1';
 },
 
 getItem: function(id)
@@ -1800,6 +1800,12 @@ getItem: function(id)
 	if (id == '1.nbt.c.6_4')
         {
                 return new i_1_nbt_c_6__4(this.mSheet);
+	}
+
+	//1.md.a.1
+	if (id == '1.md.a.1_1')
+        {
+                return new i_1_md_a_1__1(this.mSheet);
 	}
 	
 	//1.md.b.3
