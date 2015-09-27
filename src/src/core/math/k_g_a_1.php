@@ -35,10 +35,13 @@ createQuestionShapes: function()
 
 checkUserAnswer: function()
 {
+	var xDiff = parseInt(this.r1.mPosition.mX - this.r2.mPosition.mX);
+	var xAbs = Math.abs(xDiff);
+
 	var yDiff = parseInt(this.r1.mPosition.mY - this.r2.mPosition.mY);
 	var yAbs = Math.abs(yDiff);
 
-	if (yAbs < 25)
+	if (yAbs < 25 && xAbs > 50)
 	{
         	return true;
 	}
