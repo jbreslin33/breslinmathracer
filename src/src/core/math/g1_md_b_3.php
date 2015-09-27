@@ -14,27 +14,17 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
         this.mType = '1.md.b.3_1';
+                
+	this.hour = Math.floor(Math.random()*12)+1;
+	this.minute = "00";
 
-        this.onesA = 10;
-        this.tensA = 0;
-        this.onesB = 10;
-        this.c = 0;
-
-        while (parseInt(this.onesA + this.onesB) > 10 || this.c > 99)
-        {
-                this.onesA = Math.floor(Math.random()*9)+1;
-                this.tensA = Math.floor(Math.random()*9)+1;
-                this.onesB = Math.floor(Math.random()*9)+1;
-                this.c = parseInt(this.tensA * 10 + this.onesA + this.onesB);
-        }
-
-        this.setQuestion('' + this.tensA + '' + this.onesA + ' + ' + this.onesB + ' = ');
-        this.setAnswer('' + this.c,0);
+        this.setQuestion('' + 'What time is it?');
+        this.setAnswer('' + this.hour + ':00',0);
 },
 createQuestionShapes: function()
 {
 	this.mAnalogClock = new AnalogClock (this,100,20,20,APPLICATION.mGame,this.mRaphael,0,0,0,"#000000",.5,false);
         this.addQuestionShape(this.mAnalogClock);
-	this.mAnalogClock.set(3,15);
+	this.mAnalogClock.set(this.hour,this.minute);
 }
 });
