@@ -52,10 +52,23 @@ initialize: function(sheet)
                 }
 
                 this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
-                this.setAnswer('' + decimalA.getString(),0);
         }
- 
-	this.mButtonA.setAnswer('' + decimalA.getString());
+	
+        var r = Math.floor(Math.random()*4);
+	this.answer = '';
+	r = 0;
+	if (r == 0)
+	{
+		this.answer = '' + 'None of these';
+	}
+	else
+	{
+		this.answer = '' + decimalA.getString();
+	}
+
+        this.setAnswer('' + this.answer,0);
+		 
+	this.mButtonA.setAnswer('' + this.answer);
 	this.mButtonB.setAnswer('' + 'B');
 	this.mButtonC.setAnswer('' + 'C');
 	this.mButtonD.setAnswer('' + 'D');
