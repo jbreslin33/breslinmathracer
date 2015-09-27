@@ -15,9 +15,10 @@ Extends: FourButtonItem,
                 
 		this.a = Math.floor(Math.random()*2)+4;
 		this.a = 4;
-		var decimalA = new Decimal('' + this.a + '.50');
+		this.d = Math.floor(Math.random()*99)+1;
+		var decimalA = new Decimal('' + this.a + '.' + this.d);
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' movie tickets for $' + decimalA.getMoney() + ' each. Which of theses shows how to find the total cost of the ' + this.a + ' tickets?');
+                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets for $' + decimalA.getMoney() + ' each. Which of these shows how to find the total cost of the ' + this.a + ' tickets?');
                 var answer = '' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney();
                 this.setAnswer('' + answer,0);
 
