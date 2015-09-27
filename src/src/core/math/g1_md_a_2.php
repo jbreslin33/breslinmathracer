@@ -12,7 +12,7 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '1.md.a.2_1';
   	
-     	this.x = Math.floor(Math.random()*5)+3;
+     	this.x = Math.floor(Math.random()*9)+3;
 	this.x1 = parseInt(this.x * 50);
 
         this.setQuestion('' + this.ns.mNameOne + ' wants to find out how many squares long the rectangle is. Help ' + this.ns.mNameOne + ' do this.');
@@ -26,7 +26,7 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 	//rectangles
-	this.r1 = new Rectangle(this.x1,50,100,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	this.r1 = new Rectangle(this.x1,50,25,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         this.addQuestionShape(this.r1);
 
 	this.r2 = new Rectangle(50,50,50,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
@@ -40,5 +40,29 @@ createQuestionShapes: function()
 	
 	this.r5 = new Rectangle(50,50,125,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r5);
+	
+	this.r6 = new Rectangle(50,50,200,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r6);
+	
+	this.r7 = new Rectangle(50,50,200,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r7);
+	
+	this.r8 = new Rectangle(50,50,275,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r8);
+	
+	this.r9 = new Rectangle(50,50,275,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r9);
+	
+	this.r10 = new Rectangle(50,50,350,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r10);
+	
+	this.r11 = new Rectangle(50,50,350,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r11);
+	
+	this.r12 = new Rectangle(50,50,425,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r12);
+	
+	this.r13 = new Rectangle(50,50,425,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r13);
 }
 });
