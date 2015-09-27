@@ -13,8 +13,8 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.a = Math.floor(Math.random()*2)+3;
-                this.b = Math.floor(Math.random()*4)+16;
+                this.a = Math.floor(Math.random()*3)+3;
+                this.b = Math.floor(Math.random()*4)+14;
 		this.c = parseInt(this.a + this.b);
 
                 this.setQuestion('' + this.ns.mNameOne + ' is buying ' + this.a + ' cases of ' + this.ns.mDrinkOne + '. Each case contains ' + this.b +  ' ' + this.ns.mDrinkOne + ' boxes. How many boxes of ' + this.ns.mDrinkOne + ' is ' + this.ns.mNameOne + ' buying in all?');
@@ -33,7 +33,14 @@ Extends: FourButtonItem,
 		this.setAnswer('' + this.answer,0);
 
                 this.mButtonA.setAnswer('' + this.answer);
-                this.mButtonB.setAnswer('' + parseInt(this.a + this.b));
+		if (this.r == 0)
+		{
+                	this.mButtonB.setAnswer('' + parseInt(this.a + this.b));
+		}
+		else
+		{
+                	this.mButtonB.setAnswer('' + 'None of these');
+		}
                 this.mButtonC.setAnswer('' + parseInt(this.c / this.b) );
                 this.mButtonD.setAnswer('' + parseInt( (this.a - 1)  * this.b) );
                 this.shuffle(10);
