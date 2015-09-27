@@ -740,7 +740,7 @@ initialize: function(sheet)
   	this.mRaphael = Raphael(25,200,200, 200);
 
         this.ns = new NameSampler();
-        this.mType = '1.md.b.3_1';
+        this.mType = '1.md.b.3_2';
                 
 	this.hour = "3";
 	this.minute = "30";
