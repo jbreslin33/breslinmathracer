@@ -8,7 +8,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mRaphael = Raphael(10,150,750,350);
+        this.mRaphael = Raphael(10,150,550,350);
 	this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
         this.mType = '1.md.a.2_2';
