@@ -9,50 +9,17 @@ Extends: FourButtonItem,
 initialize: function(sheet)
 {
         this.parent(sheet);
+ 	this.mChopWhiteSpace = false;
 
         this.mType = '5.nbt.b.7_20';
 
-        var decimalC = new Decimal('123456');
-        var decimalB = new Decimal('123456');
+        var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+        var decimalA = new Decimal(a);
 
-        var compareC = 0;
-        var compareB = 0;
-
-        //might need be bigger compare
-        while(decimalB.mNumber.length != compareB || parseFloat(decimalB.mDecimal) >= 1 || decimalC.mNumber.length != compareC || parseFloat(decimalC.mDecimal) <= 1 || parseFloat(decimalC.mDecimal >= 10) )
-        {
-                var a = Math.floor(Math.random()*899+100);
-                a = parseFloat(a / 100);
-                var decimalA = new Decimal(a);
-
-                var b = Math.floor(Math.random()*89+10);
-                b = parseFloat(b / 100);
-                decimalB = new Decimal(b);
-
-                decimalC = decimalA.multiply(decimalB);
-
-                //lets update compare
-                if (decimalC.mDecimalPlace == -1)
-                {
-                        compareC = 3;
-                }
-                else
-                {
-                        compareC = 4;
-                }
-
-                //lets update compare
-                if (decimalB.mDecimalPlace == -1)
-                {
-                        compareB = 2;
-                }
-                else
-                {
-                        compareB = 3;
-                }
-
-                this.setQuestion('Find the quotient: ' + decimalC.getString() + ' &divide ' + decimalB.getString());
-        }
+        var b = Math.floor(Math.random()*89+10);
+        b = parseFloat(b / 10);
+        var decimalB = new Decimal(b);
 	
         var r = Math.floor(Math.random()*4);
 	this.answer = '';
@@ -63,10 +30,12 @@ initialize: function(sheet)
 	}
 	else
 	{
-		this.answer = '' + decimalA.getString();
+        	this.answer = decimalA.multiply(decimalB);
 	}
 
+  	this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
         this.setAnswer('' + this.answer,0);
+
 		 
 	this.mButtonA.setAnswer('' + this.answer);
 	this.mButtonB.setAnswer('' + 'B');
