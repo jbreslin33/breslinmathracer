@@ -1811,7 +1811,7 @@ getItem: function(id)
 	//1.md.a.2
 	if (id == '1.md.a.2_1')
         {
-                return new i_1_md_a_ 2__1(this.mSheet);
+                return new i_1_md_a_2__1(this.mSheet);
 	}
 	
 	//1.md.b.3
