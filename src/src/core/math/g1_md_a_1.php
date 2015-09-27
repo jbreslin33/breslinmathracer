@@ -12,12 +12,7 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '1.md.a.1_1';
   	
-	this.s = 19; 
-	this.r = 2; 
-	this.a = 1;
-	this.b = 10;
-	
-        this.setQuestion('' + this.ns.mNameOne + ' wants to make 11 by putting 10 squares in the rectangle at left and 1 inside the rectangle on the right. Help ' + this.ns.mNameOne + '.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to arrange the rectangles from shortest to longest left to right. Help ' + this.ns.mNameOne + ' do this.');
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -27,69 +22,23 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 	//rectangles
-	this.r1 = new Rectangle(200,100,350,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	this.r1 = new Rectangle(50,50,100,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
 
-	this.r2 = new Rectangle(200,100,25,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+	this.r2 = new Rectangle(100,50,200,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r2);
-
-	//squares	
-	this.mSquareArray = new Array();
-	var x = 230;	
-	var y = 10;	
-	for (var i = 0; i < this.s; i++)
-	{
-		if (i == 8)
-		{
-			x = x + 30;	
-			y = 10;
-		}  
-		if (i == 16)
-		{
-			x = x + 30;	
-			y = 10;
-		}  
-		this.mSquareArray.push(new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
-		y = y + 30;
-	}
-	for (var i = 0; i < this.mSquareArray.length; i++)
-	{
-        	this.addQuestionShape(this.mSquareArray[i]);
-	}
+	
+	this.r3 = new Rectangle(150,50,300,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r3);
 },
 
 checkUserAnswer: function()
 {
-	this.gotCount = 0;
-	//rectangle 1
-	var rectangleOneTotal = 0;
-	for (var i = 0; i < this.mSquareArray.length; i++)
-	{
-		if (this.mSquareArray[i].mPosition.mX > 350 && this.mSquareArray[i].mPosition.mX < 525 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 ) 
-		{
-			rectangleOneTotal++;	
-		}
-	}	
-	if (rectangleOneTotal == this.a)
-	{
-		this.gotCount++;	
-	}
-
-        //rectangle 2 
-        var rectangleTwoTotal = 0;
-        for (var i = 0; i < this.mSquareArray.length; i++)
-        {
-                if (this.mSquareArray[i].mPosition.mX > 25 && this.mSquareArray[i].mPosition.mX < 200 && this.mSquareArray[i].mPosition.mY > 25 && this.mSquareArray[i].mPosition.mY < 125 )
-                {
-                        rectangleTwoTotal++;
-                }
-        }
-	if (rectangleTwoTotal == this.b)
-	{
-		this.gotCount++;	
-	}
-
-	if (this.gotCount == this.r)
+	APPLICATION.log(this.r1.mPosition.mX);
+	APPLICATION.log(this.r2.mPosition.mX);
+	APPLICATION.log(this.r3.mPosition.mX);
+	
+	if (this.r1.mPosition.mX < this.r2.mPosition.mX && this.r2.mPosition.mX < this.r3.mPosition.mX)
 	{
         	return true;
 	}
