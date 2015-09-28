@@ -113,7 +113,6 @@ Extends: Item,
 
         showContinueCorrect: function()
         {
-		APPLICATION.log('showContinueCorrect:' + this.mButtonArray.length);   
 		this.parent();
                 for (i=0; i < this.mButtonArray.length; i++)
                 {
@@ -130,7 +129,6 @@ Extends: Item,
 
         showCorrectAnswer: function()
         {
-		APPLICATION.log('showCorrectAnswer:' + this.mButtonArray.length);   
 		for (i=0; i < this.mButtonArray.length; i++)
                 {
  			if (this.mButtonArray[i].getAnswer() != this.mUserAnswer && this.mButtonArray[i].getAnswer() != this.getAnswer())
