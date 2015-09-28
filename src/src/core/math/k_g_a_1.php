@@ -289,10 +289,10 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 	//rectangles
-	this.r1 = new Rectangle(100,50,this.x1,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+	this.r1 = new Rectangle(100,50,this.x1,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
 
-	this.r2 = new Rectangle(50,50,this.x2,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+	this.r2 = new Rectangle(50,50,this.x2,150,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r2);
 },
 
