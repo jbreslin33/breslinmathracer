@@ -1,5 +1,30 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_8',0.2108,'k.g.a.2','');
+*/
+var i_k_g_a_2__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mChopWhiteSpace = false;
+        this.mType = 'k.g.a.2_8';
+  	
+        this.setQuestion('' + 'What kind of shape is this?');
+	this.setAnswer('' + 'cylinder',0);
+
+	//move buttons	
+	this.mContinueIncorrectButton.setPosition(690,400);
+	this.mContinueCorrectButton.setPosition(690,400);
+},
+
+createQuestionShapes: function()
+{
+	this.addQuestionShape(new Shape    (50,50,100,250,this.mSheet.mGame,"/images/shapes/cylinder.png","",""));
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_7',0.2107,'k.g.a.2','');
 */
 var i_k_g_a_2__7 = new Class(
