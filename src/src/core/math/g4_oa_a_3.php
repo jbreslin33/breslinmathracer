@@ -13,8 +13,8 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.a = Math.floor(Math.random()*3)+3;
-                this.b = Math.floor(Math.random()*4)+14;
+                this.a = Math.floor(Math.random()*9)+31;
+                this.b = Math.floor(Math.random()*9)+21;
                 this.c = parseInt(this.a + this.b);
 
                 this.setQuestion('' + this.ns.mSchoolOne + ' auditorium has ' + this.a + ' rows of seats. There are ' +  this.b + ' seats in each row. How many seats are in the auditorium?');
