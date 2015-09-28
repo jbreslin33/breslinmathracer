@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '1.oa.a.1_11';
+	return 'k.g.a.3_1';
 },
 
 getItem: function(id)
@@ -662,6 +662,44 @@ getItem: function(id)
 	if (id == 'k.g.a.2_9')
         {
                 return new i_k_g_a_2__9(this.mSheet);
+        }
+	
+	//k.g.a.3
+	if (id == 'k.g.a.3_1')
+        {
+                return new i_k_g_a_3__1(this.mSheet);
+        }
+	if (id == 'k.g.a.3_2')
+        {
+                return new i_k_g_a_3__2(this.mSheet);
+        }
+	if (id == 'k.g.a.3_3')
+        {
+                return new i_k_g_a_3__3(this.mSheet);
+        }
+	if (id == 'k.g.a.3_4')
+        {
+                return new i_k_g_a_3__4(this.mSheet);
+        }
+	if (id == 'k.g.a.3_5')
+        {
+                return new i_k_g_a_3__5(this.mSheet);
+        }
+	if (id == 'k.g.a.3_6')
+        {
+                return new i_k_g_a_3__6(this.mSheet);
+        }
+	if (id == 'k.g.a.3_7')
+        {
+                return new i_k_g_a_3__7(this.mSheet);
+        }
+	if (id == 'k.g.a.3_8')
+        {
+                return new i_k_g_a_3__8(this.mSheet);
+        }
+	if (id == 'k.g.a.3_9')
+        {
+                return new i_k_g_a_3__9(this.mSheet);
         }
 
 	/*** GRADE 1 ***/
