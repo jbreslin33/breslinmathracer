@@ -1,17 +1,29 @@
 var Cube = new Class(
 {
+Extends: RaphaelPolygon,
         // x,y = position - w,h,d = dimensions(width,height,depth)
         initialize: function (item,game,raphael,rx,ry,x,y,w,h,d,r,g,b,s,op,dd,label)
         {
-
+this.parent(w,h,x,y,game,raphael,r,g,b,s,op,d);
+this.mItem = item;
 var xfactor = (d * 1.0) / (w * 1.0);
 var yfactor = (d * 1.0) / (h * 1.0);
 
 var xOff = (w/2) * xfactor;
 var yOff = (h/2) * yfactor;
 
-var boxTwoD = new Rectangle(w,h,x+xOff,y-yOff,game,raphael,.5,.5,.5,"#000",1,false);
+this.mPolygon = this.mRaphael.rect(x+xOff,y-yOff,w,h).attr({fill: "hsb(" + r + "," + g + "," + b + ")", stroke: s, opacity: op});
+
+                this.mPolygon.mPolygon = this;
+
+
+//var boxTwoD = new Rectangle(w,h,x+xOff,y-yOff,game,raphael,.5,.5,.5,"#000",1,false);
+//this.mItem.addQuestionShape(boxTwoD);
 var boxTwoC = new Rectangle(w,h,x,y,game,raphael,.5,.5,.5,"#000",1,false);
+this.mItem.addQuestionShape(boxTwoC);
+
+ //this.mPolygon.mPolygon = boxTwoD.mPolygon;
+
 
 var ax1 = x;
 var ay1 = y;
@@ -38,7 +50,9 @@ var bx4 = ax3+xOff;
 var by4 = ay3-yOff;
 
 var boxTwoB = new Parallelogram(game,raphael,ax1,ay1,ax2,ay2,bx2,by2,bx1,by1,.5,.5,.5,"#000",1,false);
+this.mItem.addQuestionShape(boxTwoB);
 var boxTwoA = new Parallelogram(game,raphael,ax2,ay2,bx2,by2,bx3,by3,ax3,ay3,.5,.5,.5,"#000",1,false);
+this.mItem.addQuestionShape(boxTwoA);
 
 if(label)
 {
@@ -48,9 +62,8 @@ var dLabelPosY = (ay3+ry+by3+ry)/2;
 var dLabelUnits = '' + d/40 + ' ' + label;
 
 var dLabel = new Shape(50,25,dLabelPosX,dLabelPosY,game,"","","");
+this.mItem.addQuestionShape(dLabel);
 dLabel.setText(dLabelUnits);
-
-item.addQuestionShape(dLabel);
 
 var wLabelPosX = x+rx+(.5*w);
 var wLabelPosY = y+ry+h;
@@ -58,9 +71,8 @@ var wLabelPosY = y+ry+h;
 var wLabelUnits = '' + w/40 + ' ' + label;
 
 var wLabel = new Shape(50,25,wLabelPosX,wLabelPosY,game,"","","");
+this.mItem.addQuestionShape(wLabel);
 wLabel.setText(wLabelUnits);
-
-item.addQuestionShape(wLabel);
 
 
 var hLabelPosX = bx3+rx+30;
@@ -70,15 +82,8 @@ var hLabelUnits = '' + h/40 + ' ' + label;
 
 var hLabel = new Shape(50,25,hLabelPosX,hLabelPosY,game,"","","");
 hLabel.setText(hLabelUnits);
-
-item.addQuestionShape(hLabel);
+this.mItem.addQuestionShape(hLabel);
 }
-
-
-item.addQuestionShape(boxTwoA);
-item.addQuestionShape(boxTwoB);
-item.addQuestionShape(boxTwoC);
-item.addQuestionShape(boxTwoD);
 
 	},
 
@@ -111,6 +116,7 @@ for(k=d2-1;k>=0;k--) {
 
     for(j=0;j<h2;j++) {
       var cube = new Cube(item,game,raphael,rx,ry,xx,y-(j*h1)-(k*h1/2),w1,h1,d1,.5,.5,.5,"#000",1,false,'');
+	item.addQuestionShape(cube);
     }
   }
 }
@@ -145,6 +151,7 @@ for(k=d2-1;k>=0;k--) {
 
     for(j=0;j<h2-i;j++) {
       var cube = new Cube(item,game,raphael,rx,ry,xx,y-(j*h1)-(k*h1/2),w1,h1,d1,.5,.5,.5,"#000",1,false,'');
+	item.addQuestionShape(cube);
     }
   }
 }
