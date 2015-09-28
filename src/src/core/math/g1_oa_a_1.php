@@ -20,7 +20,7 @@ Extends: FourButtonItem,
 		this.e = this.d.subtract(this.c);
                 this.f = Math.floor(Math.random()*3)+2;
 
-                this.setQuestion('' + this.ns.mNameOne + ' spent ' + this.c.getMoney() + ' on ' + this.ns.mFruitOne + ' for ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' and ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.f + ' friends. Which of these shows how to find the change ' + this.ns.mNameOne + ' received if ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' paid with a ' + this.d.getMoney() + ' bill?');
+                this.setQuestion('' + this.ns.mNameOne + ' spent ' + this.c.getMoney() + ' on ' + this.ns.mFruitOne + ' for ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,2) + ' and ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' ' + this.f + ' friends. Which of these shows how to find the change ' + this.ns.mNameOne + ' received if ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' paid with a ' + this.d.getMoney() + ' bill?');
 
                 this.r = Math.floor(Math.random()*4);
 
