@@ -17,7 +17,7 @@ Extends: FourButtonItem,
                 this.b = Math.floor(Math.random()*4)+14;
                 this.c = parseInt(this.a + this.b);
 
-                this.setQuestion('' + this.ns.mNameOne + ' is buying ' + this.a + ' cases of ' + this.ns.mDrinkOne + '. Each case contains ' + this.b +  ' ' + this.ns.mDrinkOne + ' boxes. How many boxes of ' + this.ns.mDrinkOne + ' is ' + this.ns.mNameOne + ' buying in all?');
+                this.setQuestion('' + this.ns.mSchoolOne + ' auditorium has ' + this.a + ' rows of seats. There are ' +  this.b + ' seats in each row. How many seats are in the auditorium?');
 
                 this.r = Math.floor(Math.random()*4);
 
