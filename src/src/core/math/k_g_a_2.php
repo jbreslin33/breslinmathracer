@@ -1,4 +1,33 @@
 
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_5',0.2105,'k.g.a.2','');
+*/
+var i_k_g_a_2__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mRaphael = Raphael(10,150,550,350);
+        this.mChopWhiteSpace = false;
+        this.mType = 'k.g.a.2_5';
+  	
+        this.setQuestion('' + 'What kind of shape is this?');
+	this.setAnswer('' + 'hexagon',0);
+
+	//move buttons	
+	this.mContinueIncorrectButton.setPosition(690,400);
+	this.mContinueCorrectButton.setPosition(690,400);
+},
+
+createQuestionShapes: function()
+{
+	this.mHexagon = new Hexagon (this.mSheet.mGame,this.mRaphael,140, 90, 125,125, 140,160, 185,160, 200,125, 185,90,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(this.mHexagon);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_4',0.2104,'k.g.a.2','');
 */
