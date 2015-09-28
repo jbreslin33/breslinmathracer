@@ -11,8 +11,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_9';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'sphere',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'three-dimensional',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -36,8 +36,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_8';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'cylinder',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'three-dimensional',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -61,8 +61,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_7';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'cone',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'three-dimensional',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -90,8 +90,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_6';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'cube',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'three-dimensional',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -133,8 +133,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_5';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'hexagon',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'lying in a plane',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -161,8 +161,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_4';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'rectangle',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'lying in a plane',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -189,8 +189,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_3';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'triangle',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'lying in a plane',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -217,8 +217,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_2';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'circle',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'lying in a plane',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
@@ -245,8 +245,8 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_1';
   	
-        this.setQuestion('' + 'What kind of shape is this?');
-	this.setAnswer('' + 'square',0);
+        this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
+	this.setAnswer('' + 'lying in a plane',0);
 
 	//move buttons	
 	this.mContinueIncorrectButton.setPosition(690,400);
