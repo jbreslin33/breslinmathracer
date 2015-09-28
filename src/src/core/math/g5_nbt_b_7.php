@@ -13,17 +13,19 @@ initialize: function(sheet)
 
         this.mType = '5.nbt.b.7_20';
 
-        var a = Math.floor(Math.random()*899+100);
-        a = parseFloat(a / 100);
+        var aOnes = Math.floor(Math.random()*9+1);
+        var aHundredths = Math.floor(Math.random()*9+1);
+	var a = '' + aOnes + '.' + aHundredths; 			 
         var decimalA = new Decimal(a);
 
         var b = Math.floor(Math.random()*89+10);
-        b = parseFloat(b / 10);
-        var decimalB = new Decimal(b);
+        //b = parseFloat(b / 10);
+        //var decimalB = new Decimal(b);
+	var decimalB = new Decimal(b);
 	
         var r = Math.floor(Math.random()*4);
 	this.answer = '';
-	r = 0;
+	r = 1;
 	if (r == 0)
 	{
 		this.answer = '' + 'None of these';
@@ -32,13 +34,15 @@ initialize: function(sheet)
 	{
         	this.answer = decimalA.multiply(decimalB);
 	}
+       	decimalAnswer = decimalA.multiply(decimalB);
 
   	this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
-        this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.answer.getString(),0);
 
-		 
-	this.mButtonA.setAnswer('' + this.answer);
-	this.mButtonB.setAnswer('' + 'B');
+	var decimalOne = new Decimal(1);
+	var answerB = decimalAnswer.subtract(decimalOne);  
+	this.mButtonA.setAnswer('' + this.answer.getString());
+	this.mButtonB.setAnswer('' + answerB.getString());
 	this.mButtonC.setAnswer('' + 'C');
 	this.mButtonD.setAnswer('' + 'D');
         this.shuffle(10);
