@@ -13,11 +13,14 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.a = Math.floor(Math.random()*3)+3;
-                this.b = Math.floor(Math.random()*4)+14;
-                this.c = parseInt(this.a + this.b);
+                this.a = Math.floor(Math.random()*9)+11;
+                this.b = Math.floor(Math.random()*89)+10;
+		this.c = new Decimal(this.a + '.' + this.b);
+		this.d = new Decimal(20);
+		this.e = this.d.subtract(this.c);
+                this.f = Math.floor(Math.random()*3)+2;
 
-                this.setQuestion('' + this.ns.mNameOne + ' is buying ' + this.a + ' cases of ' + this.ns.mDrinkOne + '. Each case contains ' + this.b +  ' ' + this.ns.mDrinkOne + ' boxes. How many boxes of ' + this.ns.mDrinkOne + ' is ' + this.ns.mNameOne + ' buying in all?');
+                this.setQuestion('' + this.ns.mNameOne + ' spent ' + this.c.getMoney() + ' on ' + this.ns.mFruitOne + ' for ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' and ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' ' + this.f + ' friends. Which of these shows how to find the change ' + this.ns.mNameOne + ' received if ' + this.mNameMachine.getPronoun(this.mNameOne,1) + ' paid with a ' + this.d.getMoney() + ' bill?');
 
                 this.r = Math.floor(Math.random()*4);
 
@@ -28,21 +31,21 @@ Extends: FourButtonItem,
                 }
                 else
                 {
-                        this.answer = parseInt(this.a * this.b);
+                        this.answer = this.d.getMoney() + ' - ' + this.c.getMoney() ;
                 }
                 this.setAnswer('' + this.answer,0);
 
                 this.mButtonA.setAnswer('' + this.answer);
                 if (this.r == 0)
                 {
-                        this.mButtonB.setAnswer('' + parseInt(this.a + this.b));
+                        this.mButtonB.setAnswer('' + this.c.getMoney() + ' + ' + this.d.getMoney());
                 }
                 else
                 {
                         this.mButtonB.setAnswer('' + 'None of these');
                 }
-                this.mButtonC.setAnswer('' + parseInt(this.c / this.b) );
-                this.mButtonD.setAnswer('' + parseInt( (this.a - 1)  * this.b) );
+                this.mButtonC.setAnswer('' +  this.c.getMoney() + ' x ' + this.f);
+                this.mButtonD.setAnswer('' +  this.c.getMoney() + ' x ' + this.f);
                 this.shuffle(10);
         }
 });
