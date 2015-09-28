@@ -31,21 +31,21 @@ Extends: FourButtonItem,
                 }
                 else
                 {
-                        this.answer = this.d.getMoney() + ' - ' + this.c.getMoney() ;
+                        this.answer = '$' + this.d.getMoney() + ' - ' + this.c.getMoney() ;
                 }
                 this.setAnswer('' + this.answer,0);
 
                 this.mButtonA.setAnswer('' + this.answer);
                 if (this.r == 0)
                 {
-                        this.mButtonB.setAnswer('' + this.c.getMoney() + ' + ' + this.d.getMoney());
+                        this.mButtonB.setAnswer('' + '$' + this.c.getMoney() + ' + $' + this.d.getMoney());
                 }
                 else
                 {
                         this.mButtonB.setAnswer('' + 'None of these');
                 }
-                this.mButtonC.setAnswer('' +  this.c.getMoney() + ' x ' + this.f);
-                this.mButtonD.setAnswer('' +  this.c.getMoney() + ' x ' + this.f);
+                this.mButtonC.setAnswer('' + '$' + this.c.getMoney() + ' &times ' + this.f);
+                this.mButtonD.setAnswer('' + '$' + this.c.getMoney() + ' &divide ' + this.f);
                 this.shuffle(10);
         }
 });
