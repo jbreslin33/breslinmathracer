@@ -1,5 +1,49 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_7',0.2107,'k.g.a.2','');
+*/
+var i_k_g_a_2__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.rx = 10;
+        this.ry = 120;
+        this.mRaphael = Raphael(this.rx,this.ry,400,600);
+        this.mChopWhiteSpace = false;
+        this.mType = 'k.g.a.2_7';
+  	
+        this.setQuestion('' + 'What kind of shape is this?');
+	this.setAnswer('' + 'cube',0);
+
+	//move buttons	
+	this.mContinueIncorrectButton.setPosition(690,400);
+	this.mContinueCorrectButton.setPosition(690,400);
+},
+
+createQuestionShapes: function()
+{
+	// position of rubix cube
+	var x = 35;
+	var y = 90;
+
+	// dimensions of a single cube
+	var w1 = Math.floor(Math.random()*4)+1;
+	var h1 = Math.floor(Math.random()*4)+1;
+	var d1 = Math.floor(Math.random()*4)+1;
+
+	var volume = w1*h1*d1; //Math.floor(Math.random()*3+1);
+
+	w1 = w1*40;
+	h1 = h1*40;
+	d1 = d1*40;
+
+	this.mCube = new Cube(this,this.mSheet.mGame,this.mRaphael,this.rx,this.ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,'feet');
+        this.addQuestionShape(this.mCube);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_6',0.2106,'k.g.a.2','');
 */
 var i_k_g_a_2__6 = new Class(
