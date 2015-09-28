@@ -10,7 +10,8 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_9';
-  	
+ 	this.mAnswerTextBox.setSize(200,50);
+
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'three-dimensional',0);
 
@@ -35,6 +36,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_8';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'three-dimensional',0);
@@ -60,6 +62,7 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_7';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'three-dimensional',0);
@@ -89,6 +92,7 @@ initialize: function(sheet)
         this.mRaphael = Raphael(this.rx,this.ry,400,600);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_6';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'three-dimensional',0);
@@ -132,6 +136,7 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,550,350);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_5';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'lying in a plane',0);
@@ -160,6 +165,7 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,550,350);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_4';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'lying in a plane',0);
@@ -188,6 +194,7 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,550,350);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_3';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'lying in a plane',0);
@@ -216,6 +223,7 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,550,350);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_2';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'lying in a plane',0);
@@ -244,6 +252,7 @@ initialize: function(sheet)
         this.mRaphael = Raphael(10,150,550,350);
         this.mChopWhiteSpace = false;
         this.mType = 'k.g.a.3_1';
+ 	this.mAnswerTextBox.setSize(200,50);
   	
         this.setQuestion('' + 'Is this lying in a plane or three-dimensional?');
 	this.setAnswer('' + 'lying in a plane',0);
