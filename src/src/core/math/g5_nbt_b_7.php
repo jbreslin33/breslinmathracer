@@ -25,26 +25,33 @@ initialize: function(sheet)
 	
         var r = Math.floor(Math.random()*4);
 	this.answer = '';
-	r = 1;
 	if (r == 0)
 	{
 		this.answer = '' + 'None of these';
 	}
 	else
 	{
-        	this.answer = decimalA.multiply(decimalB);
+        	this.answerDecimal = decimalA.multiply(decimalB);
+        	this.answer = this.answerDecimal.getString();
 	}
        	decimalAnswer = decimalA.multiply(decimalB);
 
   	this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
-        this.setAnswer('' + this.answer.getString(),0);
+        this.setAnswer('' + this.answer,0);
 
 	var decimalOne = new Decimal(1);
 	var answerB = decimalAnswer.subtract(decimalOne);  
-	this.mButtonA.setAnswer('' + this.answer.getString());
+	
+	var decimalTen = new Decimal(10);
+	var answerC = decimalAnswer.subtract(decimalTen);  
+	
+	var decimalFive = new Decimal(5);
+	var answerD = decimalAnswer.subtract(decimalFive);  
+
+	this.mButtonA.setAnswer('' + this.answer);
 	this.mButtonB.setAnswer('' + answerB.getString());
-	this.mButtonC.setAnswer('' + 'C');
-	this.mButtonD.setAnswer('' + 'D');
+	this.mButtonC.setAnswer('' + answerC.getString());
+	this.mButtonD.setAnswer('' + answerD.getString());
         this.shuffle(10);
 }
 });
