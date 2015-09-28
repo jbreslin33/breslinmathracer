@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_3',0.2103,'k.g.a.2','');
+*/
+var i_k_g_a_2__3 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mRaphael = Raphael(10,150,550,350);
+        this.mChopWhiteSpace = false;
+        this.mType = 'k.g.a.2_3';
+  	
+        this.setQuestion('' + 'What kind of shape is this?');
+	this.setAnswer('' + 'triangle',0);
+
+	//move buttons	
+	this.mContinueIncorrectButton.setPosition(690,400);
+	this.mContinueCorrectButton.setPosition(690,400);
+},
+
+createQuestionShapes: function()
+{
+	this.mTriangle = new Triangle(20,200,100,100,180,200,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        this.addQuestionShape(this.mTriangle);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('k.g.a.2_2',0.2102,'k.g.a.2','');
 */
 var i_k_g_a_2__2 = new Class(
