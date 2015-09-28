@@ -38,6 +38,7 @@ h1 = h1*40;
 d1 = d1*40;
 
 var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,this.mDist2);
+this.addQuestionShape(cube);
 
         this.setQuestion('What is the volume of the right rectangular prism in cubic ' + this.mDist2 + '?');
         this.setAnswer('' + answer,0);
@@ -88,6 +89,8 @@ h1 = h1*40;
 d1 = d1*40;
 
 var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,'feet');
+this.addQuestionShape(cube);
+
      
 var a = Math.floor(Math.random()*11+120);
 var b = Math.floor(Math.random()*5+8);
