@@ -43,7 +43,7 @@ if ($APPLICATION->mCode == 217)
 	$APPLICATION->mLoginStudent->mLastName = $_GET["last_name"]; 
 }
 
-if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13)
+if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14)
 {
         $APPLICATION->mDataArray[] = $APPLICATION->mCode;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
@@ -59,15 +59,6 @@ if ($APPLICATION->mCode == 2)
         $APPLICATION->mDataArray[] = $_GET["question"];
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
-}
-if ($APPLICATION->mCode == 3)
-{
-        $APPLICATION->mDataArray[] = "3";
-        $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
-        $APPLICATION->mDataArray[] = $_GET["question"];
-        $APPLICATION->mDataArray[] = $_GET["answers"];
-        $APPLICATION->mDataArray[] = $_GET["datenow"];
-        $APPLICATION->mDataArray[] = $_GET["score"]; //this should be most number in a row of an evaluation ie a timestables2 evaluation
 }
 if ($APPLICATION->mCode == 101)
 {
@@ -122,6 +113,7 @@ function __construct()
         $this->mTIMES_TABLES_NINE_APPLICATION = new TIMES_TABLES_NINE_APPLICATION        ($this);
         $this->mTIMES_TABLES_THE_IZZY_APPLICATION = new TIMES_TABLES_THE_IZZY_APPLICATION        ($this);
         $this->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION        ($this);
+        $this->mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION        ($this);
 
         $this->mCoreStateMachine->setGlobalState($this->mGLOBAL_CORE_APPLICATION);
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);

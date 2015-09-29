@@ -127,6 +127,7 @@ cat src/sheet/times_tables_seven_sheet.php >> min.js
 cat src/sheet/times_tables_eight_sheet.php >> min.js
 cat src/sheet/times_tables_nine_sheet.php >> min.js
 cat src/sheet/times_tables_theizzy_sheet.php >> min.js
+cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/times_tables_addsubtractwithinfive_sheet.php >> min.js
 cat src/sheet/states/states.php >> min.js
 
@@ -138,16 +139,6 @@ cat src/widgets/clock.php >> min.js
 cat src/item/clock_item.php >> min.js
 cat src/widgets/circles.php >> min.js
 cat src/wordproblems/wordproblems.php >> min.js
-cat src/core/math/core_game.php >> min.js
-cat src/core/math/normal_game.php >> min.js
-cat src/core/math/practice_game.php >> min.js
-cat src/core/math/times_tables_two_game.php >> min.js
-cat src/core/math/picker.php >> min.js
-cat src/core/math/picker_brian.php >> min.js
-cat src/core/math/picker_jim.php >> min.js
-cat src/core/math/items.php >> min.js
-cat src/core/math/items_brian.php >> min.js
-cat src/core/math/items_jim.php >> min.js
 
 cat src/utility/name_machine.php >> min.js
 cat src/utility/time.php >> min.js

@@ -64,6 +64,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
+	if (application.mEvaluationsID == 14 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_APPLICATION);
+	}
 
 },
 
@@ -295,7 +299,14 @@ execute: function(application)
 			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[29];
 			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen = itemAttemptsTransactionCodesThirteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[30];
+			//Fourteen	
+			var itemAttemptsTypesFourteen = APPLICATION.mResponseArray[30];
+			APPLICATION.mItemAttemptsTypeArrayFourteen = itemAttemptsTypesFourteen.split(":");
+	
+			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[32];
 
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -726,7 +737,14 @@ execute: function(application)
 			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[29];
 			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen = itemAttemptsTransactionCodesThirteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[30];
+			//Fourteen	
+			var itemAttemptsTypesFourteen = APPLICATION.mResponseArray[30];
+			APPLICATION.mItemAttemptsTypeArrayFourteen = itemAttemptsTypesFourteen.split(":");
+	
+			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[32];
 
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -1465,6 +1483,44 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TERRA_NOVA_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TERRA_NOVA_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TerraNovaGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TERRA_NOVA_APPLICATION execute');
 	}
 },
 

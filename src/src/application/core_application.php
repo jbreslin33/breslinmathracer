@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -96,6 +96,10 @@ Extends: Application,
 		//Thirteen addsub
 		this.mItemAttemptsTypeArrayThirteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayThirteen = new Array(); //from db
+		
+		//Fourteen addsub
+		this.mItemAttemptsTypeArrayFourteen = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayFourteen = new Array(); //from db
 
 		//algorithms
 		this.mFirst = '';
@@ -172,6 +176,7 @@ Extends: Application,
                 this.mTIMES_TABLES_NINE_APPLICATION     = new TIMES_TABLES_NINE_APPLICATION      (this);
                 this.mTIMES_TABLES_THE_IZZY_APPLICATION = new TIMES_TABLES_THE_IZZY_APPLICATION      (this);
                 this.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION      (this);
+                this.mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION      (this);
 	
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
@@ -665,6 +670,42 @@ highestAchieved: function()
 			}
 		}
 
+               	if (parseInt(this.mEvaluationsID) == 14)
+                {
+                        //all time
+                        for (var i = 0; i < this.mItemAttemptsTypeArrayFourteen.length; i++)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 1)
+                                {
+                                        hiStreak++;
+                                        if (parseInt(hiStreak) >= parseInt(score))
+                                        {
+                                                score = hiStreak;
+                                        }
+                                }
+                                else
+                                {
+                                        hiStreak = 0;
+                                }
+                        }
+
+                        //latest streak
+                        var i = 0;
+                        while (i < this.mItemAttemptsTypeArrayFourteen.length && foundWrong == false)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 1)
+                                {
+                                        currentStreak++;
+                                        i++;
+                                }
+                                else
+                                {
+                                        foundWrong = true;
+                                }
+                        }
+                }
+
+
 
 		this.mGame.setStreak(currentStreak);
 		this.mGame.setUnmastered(unmastered);
@@ -1157,171 +1198,6 @@ highestAchieved: function()
                 xmlhttp.send();
         },
  
-	timestables: function(tablenumber)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-
-                if (this.mRef_id == 'timestables_2')
-                {
-			if (tablenumber == '2')
-			{
-                        	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-			}
-                	else
-                	{
-                        	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                	}
-		}
-                if (this.mRef_id == 'timestables_3') 
-                {
-                        if (tablenumber == '3')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-                if (this.mRef_id == 'timestables_4')
-                {
-                        if (tablenumber == '4')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-                if (this.mRef_id == 'timestables_5')
-                {
-                        if (tablenumber == '5')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-                if (this.mRef_id == 'timestables_6')
-                {
-                        if (tablenumber == '6')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-                if (this.mRef_id == 'timestables_7')
-                {
-                        if (tablenumber == '7')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-                if (this.mRef_id == 'timestables_8')
-                {
-                        if (tablenumber == '8')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-                if (this.mRef_id == 'timestables_9')
-                {
-                        if (tablenumber == '9')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
- 		if (this.mRef_id == 'timestables')
-                {
-                        if (tablenumber == '10')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-               	if (this.mRef_id == 'The Izzy')
-                {
-                        if (tablenumber == '11')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-
-                if (this.mRef_id == 'Add Subtract within 5')
-                {
-                        if (tablenumber == '12')
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=0",true);
-                        }
-                        else
-                        {
-                                xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                        }
-                }
-
-                if (this.mRef_id == 'normal')
-                {
-                	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                }
-                if (this.mRef_id == 'practice')
-                {
-                	xmlhttp.open("POST","../../web/php/timestables.php?tablenumber=" + tablenumber + "&start_new=1",true);
-                }
-
-
-                xmlhttp.send();
-        },
-
        	getStandardDescription: function(typeid)
         {
                 var xmlhttp;

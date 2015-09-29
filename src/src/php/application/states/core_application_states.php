@@ -76,6 +76,10 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
+	if ($bapplication->mCode == 14 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTERRA_NOVA_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mTERRA_NOVA_APPLICATION);
+	}
 
 }
 public function bexit($bapplication)
@@ -984,6 +988,66 @@ public function execute($bapplication)
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
         	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimekoaa5');
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_TWO_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+class TERRA_NOVA_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TERRA_NOVA_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,14,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TERRA_NOVA_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 14)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeterranova');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
