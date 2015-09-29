@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-        return '2.oa.a.1_21';
+        return '6.ns.c.6.a_1';
 },
 
 getItem: function(id)
@@ -666,6 +666,83 @@ if (id == '6.rp.a.3.a_3')
         {
                 return new i_6_ns_a_1__1(this.mSheet);
         }
+  if (id == '6.ns.a.1_2')
+        {
+                return new i_6_ns_a_1__2(this.mSheet);
+        }
+
+  if (id == '6.ns.a.1_3')
+        {
+                return new i_6_ns_a_1__3(this.mSheet);
+        }
+
+  if (id == '6.ns.a.1_4')
+        {
+                return new i_6_ns_a_1__4(this.mSheet);
+        }
+
+  if (id == '6.ns.a.1_5')
+        {
+                return new i_6_ns_a_1__5(this.mSheet);
+        }
+
+  if (id == '6.ns.a.1_6')
+        {
+                return new i_6_ns_a_1__6(this.mSheet);
+        }
+
+//6.ns.b.2
+  if (id == '6.ns.b.2_1')
+        {
+                return new i_6_ns_b_2__1(this.mSheet);
+        }
+  if (id == '6.ns.b.2_2')
+        {
+                return new i_6_ns_b_2__2(this.mSheet);
+        }
+//6.ns.b.3
+  if (id == '6.ns.b.3_1')
+        {
+                return new i_6_ns_b_3__1(this.mSheet);
+        }
+
+
+//6.ns.b.4
+  if (id == '6.ns.b.4_1')
+        {
+                return new i_6_ns_b_4__1(this.mSheet);
+        }
+
+//6.ns.c.5
+  if (id == '6.ns.c.5_1')
+        {
+                return new i_6_ns_c_5__1(this.mSheet);
+        }
+
+//6.ns.c.6.a
+  if (id == '6.ns.c.6.a_1')
+        {
+                return new i_6_ns_c_6_a__1(this.mSheet);
+        }
+  if (id == '6.ns.c.6.a_2')
+        {
+                return new i_6_ns_c_6_a__2(this.mSheet);
+        }
+  if (id == '6.ns.c.6.a_3')
+        {
+                return new i_6_ns_c_6_a__3(this.mSheet);
+        } 
+  if (id == '6.ns.c.6.a_4')
+        {
+                return new i_6_ns_c_6_a__4(this.mSheet);
+        } 
+
+//6.ns.c.6.b
+  if (id == '6.ns.c.6.b_1')
+        {
+                return new i_6_ns_c_6_b__1(this.mSheet);
+        }
+
 
 	return 0;	
 }

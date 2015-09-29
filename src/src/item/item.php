@@ -442,7 +442,7 @@ var Item = new Class(
 	
 	setShowAnswer: function(showAnswer)
 	{
-		this.mShowAnswer = answer;
+		this.mShowAnswer = showAnswer;
 	},
 
 	setSolved: function(b)
