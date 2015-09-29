@@ -59,8 +59,8 @@ set: function(hours,minutes)
         //rotate to spot
         if (hours == 12)
         {
-                this.mPolygon.hour_hand.transform("r" + parseInt(minutes/2) + ",100,100");
-                this.mPolygon.minute_hand.transform("r" + parseInt(6*minutes) + ",100,100");
+                this.hour_hand.mPolygon.transform("r" + parseInt(minutes/2) + ",100,100");
+                this.minute_hand.mPolygon.transform("r" + parseInt(6*minutes) + ",100,100");
         }
         else
         {
