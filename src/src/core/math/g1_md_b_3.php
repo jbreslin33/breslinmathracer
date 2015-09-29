@@ -46,11 +46,11 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mType = '1.md.b.3_25';
 
-        this.hour = Math.floor(Math.random()*12)+1;
-        this.minute = "00";
+        this.hour = "9";
+        this.minute = "30";
 
         this.setQuestion('' + 'What time is it?');
-        this.setAnswer('' + this.hour + ':00',0);
+        this.setAnswer('' + this.hour + ':' + this.minute,0);
 },
 createQuestionShapes: function()
 {
@@ -90,6 +90,7 @@ createQuestionShapes: function()
         this.mAnalogClock.set(this.hour,this.minute);
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('1.md.b.3_23',1.2023,'1.md.b.3','' );
 */
