@@ -315,9 +315,12 @@ public function execute($bapplication)
         }
 	if ($bapplication->mCode == 1)
 	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
+		if ( $bapplication->mEvaluationsAttempt)
+		{	
+			$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+			$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+        		$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
+		}
 
 		//so we could insert a match and have players associated etc but..
 		//to get score without too much trouble we could handle here.

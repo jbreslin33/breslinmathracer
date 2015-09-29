@@ -21,6 +21,15 @@ function __construct($application,$itemtypeid,$question,$answers,$datenow)
 
 public function insert()
 {
+	if (!$this->mApplication->mEvaluationsAttempt)
+	{
+		return;	
+	}
+	if (!$this->mApplication->mEvaluationsAttempt->mID)
+	{
+		return;	
+	}
+
 	$db = new DatabaseConnection();
  	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id,question,answers) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $this->mApplication->mEvaluationsAttempt->mID;
