@@ -87,6 +87,23 @@ function loadAgain()
 
 <?php
 
+$start = new DateTime('2015-09-08');
+$end = new DateTime('2015-09-29');
+$days = $start->diff($end, true)->days;
+
+//sundays
+$sundays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$mondays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$tuesdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$wednesdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$thursdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$total = intval($sundays + $mondays + $tuesdays + $wednesdays + $thursdays);
+error_log($total);
+
+
+
+//error_log($sundays);
+
 if ($room_id == 99999)
 {
 
