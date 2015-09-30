@@ -161,7 +161,17 @@ if ($room_id != 0)
                 echo '<td>';
                 echo $fetchAllUsers[$i]['first_name'];
                 echo '</td>';
-                echo '<td>';
+
+		$c = 'Green';
+		if ($row[0] < $questions_needed)
+		{
+			$c = 'Red';
+		}
+                echo '<td bgcolor="';
+                echo $c;
+                echo '">';
+
+
                 echo $row[0];
                 echo '</td>';
                 echo '</tr>';

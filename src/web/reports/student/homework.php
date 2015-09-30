@@ -8,24 +8,8 @@
 </head>
 
 <body>
-<ul>
-
 <?php
 session_start();
-if ($_SESSION["role"] == 1)
-{
-        echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
-        echo "<li><a href=\"/web/navigation/student/reports.php\">Reports</a></li>";
-}
-else
-{
-        echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
-}
-?>
-<li><a href="/web/php/logout.php">Logout</a></li>
-</ul>
-
-<?php
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
@@ -52,6 +36,12 @@ echo "<br>";
 ?>
 
 <p><b> HOME WORK </p></b>
+
+<ul>
+<li><a href="/web/navigation/student/main_menu.php">Main Menu</a></li>
+<li><a href="/web/navigation/student/reports.php">Reports</a></li>
+<li><a href="/web/php/logout.php">Logout</a></li>
+</ul>
 
 
 <p><b> Select School and Room: </p></b>
@@ -96,6 +86,26 @@ function loadAgain()
 
 
 <?php
+
+$start = new DateTime('2015-09-08');
+$end = new DateTime('2015-09-29');
+$days = $start->diff($end, true)->days;
+
+//sundays
+$sundays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$mondays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$tuesdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$wednesdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$thursdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
+$total = intval($sundays + $mondays + $tuesdays + $wednesdays + $thursdays);
+$questions_needed = $total * 100;
+$text = "Current Homework total needed: ";
+$text .= $questions_needed;
+//error_log($total);
+echo $text;
+
+
+//error_log($sundays);
 
 if ($room_id == 99999)
 {
@@ -151,7 +161,17 @@ if ($room_id != 0)
                 echo '<td>';
                 echo $fetchAllUsers[$i]['first_name'];
                 echo '</td>';
-                echo '<td>';
+
+		$c = 'Green';
+		if ($row[0] < $questions_needed)
+		{
+			$c = 'Red';
+		}
+                echo '<td bgcolor="';
+                echo $c;
+                echo '">';
+
+
                 echo $row[0];
                 echo '</td>';
                 echo '</tr>';
