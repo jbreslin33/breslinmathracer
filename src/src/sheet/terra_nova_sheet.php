@@ -5,40 +5,40 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
- 	for (i = 1; i < 100; i++)
-        {
-                var a = '3.oa.c.7_';
-                var b = '' + i;
-                var c = '' + a + b;
-                this.mIDArray.push('' + c);
-        }
+	this.mIDArray.push('' + '1.oa.a.1_11');
+	this.mIDArray.push('' + '2.oa.a.1_21');
+	this.mIDArray.push('' + '3.oa.a.3_6');
+	this.mIDArray.push('' + '4.oa.a.3_13');
+	this.mIDArray.push('' + '5.nbt.b.7_20');
 },
 
 pickItem: function()
 {
 	//would love to loop till we got no dup
-        while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+        while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent || APPLICATION.mQuestionTypeCurrent == '')
         {
         	var r = Math.floor(Math.random()*3);
+		APPLICATION.log('r:' + r);
 
+                if (r == 0)
+                {
+                        APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFourteen,APPLICATION.mItemAttemptsTransactionCodeArrayFourteen);
+                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+			APPLICATION.log('c:' + APPLICATION.mQuestionTypeCurrent);
+                }
                 if (r == 1)
                 {
-                        APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayTwelve,APPLICATION.mItemAttemptsTransactionCodeArrayTwelve);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                }
-                if (r == 2)
-                {
-                        APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayTwelve,APPLICATION.mItemAttemptsTransactionCodeArrayTwelve);
+                        APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFourteen,APPLICATION.mItemAttemptsTransactionCodeArrayFourteen);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+			APPLICATION.log('c:' + APPLICATION.mQuestionTypeCurrent);
                 }
-                if (r == 3) // random
+                if (r == 2) // random
 		{
-        		var t = Math.floor(Math.random()*99)+1;
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                	var a = '3.oa.c.7_';
-                	var b = '' + t;
-                	APPLICATION.mQuestionTypeCurrent = '' + a + b;
+        		var e = Math.floor(Math.random()*this.mIDArray.length);
+                	APPLICATION.mQuestionTypeCurrent = '' +this.mIDArray[e];
+			APPLICATION.log('c:' + APPLICATION.mQuestionTypeCurrent);
 		}
+		APPLICATION.log('f:' + APPLICATION.mQuestionTypeCurrent);
 	}
 
 },

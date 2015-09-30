@@ -21,17 +21,17 @@ pickItem: function()
         {
         	var r = Math.floor(Math.random()*3);
 
-                if (r == 1)
+                if (r == 0)
                 {
                         APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayTwelve,APPLICATION.mItemAttemptsTransactionCodeArrayTwelve);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
                 }
-                if (r == 2)
+                if (r == 1)
                 {
                         APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayTwelve,APPLICATION.mItemAttemptsTransactionCodeArrayTwelve);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 }
-                if (r == 3) // random
+                if (r == 2) // random
 		{
         		var t = Math.floor(Math.random()*99)+1;
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
