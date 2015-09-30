@@ -86,6 +86,10 @@ var ItemAttempt = new Class(
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen[0] = code;
 		}
+		if (parseInt(this.mEvaluationsID) == 14)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen[0] = code;
+		}
 
 	},
 	setEvaluationsID: function(evaluationsID)
@@ -184,6 +188,11 @@ var ItemAttempt = new Class(
 			{
 				APPLICATION.mItemAttemptsTypeArrayThirteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayThirteen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 14)
+			{
+				APPLICATION.mItemAttemptsTypeArrayFourteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayFourteen.unshift(0);
 			}
 		}
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore());
