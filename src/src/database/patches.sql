@@ -1,2 +1,14 @@
-insert into evaluations (id,description) values (14,'Terra_Nova');
-ALTER TABLE users ADD COLUMN alltimeterranova integer;
+update users set school_id = 1 where username = 'v1939';
+update users set room_id = 3 where username = 'v1939';
+update users set school_id = 1 where username = 'v1912';
+update users set room_id = 3 where username = 'v1912';
+update users set school_id = 1 where username = 'v1950';
+update users set room_id = 3 where username = 'v1950';
+update users set school_id = 1 where username = 'v1915';
+update users set room_id = 3 where username = 'v1915';
+update users set school_id = 1 where username = 'v1955';
+update users set room_id = 3 where username = 'v1955';
+update users set school_id = 1 where username = 'v1954';
+update users set room_id = 3 where username = 'v1954';
+update users set school_id = 1 where username = 'v1961';
+update users set room_id = 3 where username = 'v1961';
