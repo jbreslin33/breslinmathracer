@@ -98,8 +98,11 @@ $tuesdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
 $wednesdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
 $thursdays = intval($days / 7) + ($start->format('N') + $days % 7 >= 7);
 $total = intval($sundays + $mondays + $tuesdays + $wednesdays + $thursdays);
-error_log($total);
-
+$questions_needed = $total * 100;
+$text = "Current Homework total needed: ";
+$text .= $questions_needed;
+//error_log($total);
+echo $text;
 
 
 //error_log($sundays);
