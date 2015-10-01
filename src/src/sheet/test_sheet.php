@@ -1,4 +1,4 @@
-var TerraNovaSheet = new Class(
+var TestSheet = new Class(
 {
 Extends: Sheet,
 
@@ -21,12 +21,12 @@ pickItem: function()
 
                 if (r == 0)
                 {
-                        APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFourteen,APPLICATION.mItemAttemptsTransactionCodeArrayFourteen);
+                        APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFifteen,APPLICATION.mItemAttemptsTransactionCodeArrayFifteen);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
                 }
                 if (r == 1)
                 {
-                        APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFourteen,APPLICATION.mItemAttemptsTransactionCodeArrayFourteen);
+                        APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFifteen,APPLICATION.mItemAttemptsTransactionCodeArrayFifteen);
                         APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 }
                 if (r == 2) // random
@@ -65,7 +65,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
               	itemAttempt.mType = pick.mType;
-               	itemAttempt.setEvaluationsID(14);
+               	itemAttempt.setEvaluationsID(15);
         }
         else
         {

@@ -97,9 +97,13 @@ Extends: Application,
 		this.mItemAttemptsTypeArrayThirteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayThirteen = new Array(); //from db
 		
-		//Fourteen addsub
+		//Fourteen terra nova 
 		this.mItemAttemptsTypeArrayFourteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayFourteen = new Array(); //from db
+		
+		//Fifteen test 
+		this.mItemAttemptsTypeArrayFifteen = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayFifteen = new Array(); //from db
 
 		//algorithms
 		this.mFirst = '';
@@ -177,6 +181,7 @@ Extends: Application,
                 this.mTIMES_TABLES_THE_IZZY_APPLICATION = new TIMES_TABLES_THE_IZZY_APPLICATION      (this);
                 this.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION      (this);
                 this.mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION      (this);
+                this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
 	
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
@@ -694,6 +699,41 @@ highestAchieved: function()
                         while (i < this.mItemAttemptsTypeArrayFourteen.length && foundWrong == false)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 1)
+                                {
+                                        currentStreak++;
+                                        i++;
+                                }
+                                else
+                                {
+                                        foundWrong = true;
+                                }
+                        }
+                }
+               	
+		if (parseInt(this.mEvaluationsID) == 15)
+                {
+                        //all time
+                        for (var i = 0; i < this.mItemAttemptsTypeArrayFifteen.length; i++)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
+                                {
+                                        hiStreak++;
+                                        if (parseInt(hiStreak) >= parseInt(score))
+                                        {
+                                                score = hiStreak;
+                                        }
+                                }
+                                else
+                                {
+                                        hiStreak = 0;
+                                }
+                        }
+
+                        //latest streak
+                        var i = 0;
+                        while (i < this.mItemAttemptsTypeArrayFifteen.length && foundWrong == false)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
                                 {
                                         currentStreak++;
                                         i++;

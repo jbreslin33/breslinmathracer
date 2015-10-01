@@ -293,6 +293,19 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionD);
 		}
 
+               	var optionE = document.createElement("option");
+                optionE.value = 15;
+                optionE.text = 'Test';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionE);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionE);
+                }
+
+
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
                 this.addShape(this.mTimesTablesInfoButton);

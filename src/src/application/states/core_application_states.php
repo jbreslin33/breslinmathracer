@@ -68,6 +68,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_APPLICATION);
 	}
+	if (application.mEvaluationsID == 15 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTEST_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTEST_APPLICATION);
+	}
 
 },
 
@@ -306,8 +310,14 @@ execute: function(application)
 			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[32];
-
+			//Firteen	
+			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[32];
+			APPLICATION.mItemAttemptsTypeArrayFifteen = itemAttemptsTypesFifteen.split(":");
+	
+			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[33];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen = itemAttemptsTransactionCodesFifteen.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[34];
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 			if (application.mEvaluationsID == 1)
@@ -744,7 +754,14 @@ execute: function(application)
 			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[32];
+			//Fifteen	
+			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[32];
+			APPLICATION.mItemAttemptsTypeArrayFifteen = itemAttemptsTypesFifteen.split(":");
+	
+			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[33];
+			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen = itemAttemptsTransactionCodesFifteen.split(":");
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[34];
 
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -1521,6 +1538,44 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TERRA_NOVA_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TEST_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TEST_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TestGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TEST_APPLICATION execute');
 	}
 },
 
