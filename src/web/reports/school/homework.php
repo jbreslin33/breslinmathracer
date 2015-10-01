@@ -89,7 +89,8 @@ function loadAgain()
 
 date_default_timezone_set('America/New_York');
 $start = new DateTime('2015-09-08');
-$end = new DateTime('2015-09-29');
+$end = new DateTime(date("Y-m-d h:i:sa"));
+//$end = getdate();
 $days = $start->diff($end, true)->days;
 
 //sundays
