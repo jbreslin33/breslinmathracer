@@ -87,6 +87,7 @@ function loadAgain()
 
 <?php
 
+date_default_timezone_set('America/New_York');
 $start = new DateTime('2015-09-08');
 $end = new DateTime('2015-09-29');
 $days = $start->diff($end, true)->days;
