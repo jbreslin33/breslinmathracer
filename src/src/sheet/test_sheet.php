@@ -14,6 +14,7 @@ initialize: function(game)
 	{
 		var type = '';
         	var p = Math.floor(Math.random()*t);
+		var i = 0;
 		while (i < APPLICATION.mItemAttemptsTypeArrayOne.length && type == '') //this should break out
 		{
 			if (APPLICATION.mItemAttemptsTypeArrayOne[i] == APPLICATION.mItemTypesArray[p])
