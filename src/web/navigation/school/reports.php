@@ -21,6 +21,7 @@ session_start();
 <li><a href="/web/reports/school/homework.php">Home Work</a></li>
 <li><a href="/web/stats/statsreports.php">Non Mastery Types</a></li>
 <li><a href="/web/reports/school/item_attempts_realtime.php">Playing</a></li>
+<li><a href="/web/reports/school/tests.php">Tests</a></li>
 </ul>
 
 </body>
