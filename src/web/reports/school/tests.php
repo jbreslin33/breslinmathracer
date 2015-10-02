@@ -176,7 +176,28 @@ if ($room_id == 99999)
 }
 else
 {
+        $lastAnswerTime = '';
+        $firstName = '';
+        $lastName = '';
+        $score = '';
 
+
+        $query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
+	$query .= $test_id;
+	$query .= " order by start_time desc;";
+        $result = pg_query($conn,$query);
+        $numrows = pg_numrows($result);
+
+	$progressionTotal = 0;
+        for($i = 0; $i < $numrows; $i++)
+        {
+                $row = pg_fetch_array($result, $i);
+                $progression = $row[7];
+		$progressionTotal = floatVal($progressionTotal + $progression);
+	}
+        echo '<br>';
+	echo $progressionTotal; 
+        echo '<br>';
 echo '<table border=\"1\">';
         echo '<tr>';
         echo '<td> Start Time';
@@ -194,21 +215,8 @@ echo '<table border=\"1\">';
         echo '<td> User Answer';
         echo '</td>';
         echo '</tr>';
-
-        $lastAnswerTime = '';
-        $firstName = '';
-        $lastName = '';
-        $score = '';
-
-
-        $query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
-	$query .= $test_id;
-	$query .= " order by start_time desc;";
-        $result = pg_query($conn,$query);
-        $numrows = pg_numrows($result);
-
         for($i = 0; $i < $numrows; $i++)
-        {
+	{
                 $row = pg_fetch_array($result, $i);
                 $startTime = $row[0];
                 $endTime = $row[1];
@@ -217,7 +225,6 @@ echo '<table border=\"1\">';
                 $question = $row[4];
                 $answers = $row[5];
                 $user_answer = $row[6];
-                $progression = $row[7];
 
                 echo '<tr>';
                 echo '<td>';
