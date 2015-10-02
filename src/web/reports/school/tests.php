@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>LEADER BOARDS</title>
+        <title>TESTS</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -27,103 +27,61 @@ else
 </ul>
 
 <?php
-session_start();
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-$school_id = 0;
 $room_id = 0;
-$category = 0;
+$user_id = 0;
+$test_id = 0;
 $id = 0;
-
-if (isset($_POST["school_id"]))
-{
-        $school_id = $_POST["school_id"];
-}
-
-else if (isset($_GET['school_id']))
-{
-        $school_id = $_GET['school_id'];
-}
-else
-{
-
-}
 
 if (isset($_POST["room_id"]))
 {
 	$room_id = $_POST["room_id"];
 }
-
 else if (isset($_GET['room_id']))
 {
 	$room_id = $_GET['room_id'];
 }
-else
-{
 
+if (isset($_POST["user_id"]))
+{
+        $user_id = $_POST["user_id"];
+}
+else if (isset($_GET['user_id']))
+{
+        $user_id = $_GET['user_id'];
 }
 
-if (isset($_POST["category"]))
+if (isset($_POST["test_id"]))
 {
-        $category = $_POST["category"];
+        $test_id = $_POST["test_id"];
+}
+else if (isset($_GET['test_id']))
+{
+        $test_id = $_GET['test_id'];
 }
 
-else if (isset($_GET['category']))
-{
-        $category = $_GET['category'];
-}
-else
-{
-	$category = 'score';
-}
 echo "<br>";
 ?>
 
-<p><b> Leader Boards </p></b>
+<p><b> Tests </p></b>
 
-<p><b> Select Room and Category: </p></b>
+<p><b> Select Room, Student and Test: </p></b>
 
-<form method="post" action="/web/reports/school/leaderboards.php">
-
-<select id="school_id" name="school_id" onchange="loadAgain()">
-<?php
-$query = "select * from schools";
-//$query .= intval($_SESSION["school_id"]);
-$query .= " order by name asc;";
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-echo "<option selected=\"selected\" value=\"0\"> \"All Schools\" </option>";
-
-for($i = 0; $i < $numrows; $i++)
-{
-        $row = pg_fetch_array($result, $i);
-        if ($row[0] == $school_id)
-        {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
-        }      
-        else
-        {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
-        }
-}
-?>
-</select>
-
+<form method="post" action="/web/reports/school/tests.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
 $query = "select id, name from rooms where school_id = ";
-//$query .= intval($_SESSION["school_id"]);
-$query .= $school_id;
+$query .= $_SESSION["school_id"];
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
+echo "<option selected=\"selected\" value=\"0\"> \"All Rooms\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
@@ -140,49 +98,65 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-
-
-
-<select id="category" name="category" onchange="loadAgain()">
+<select id="user_id" name="user_id" onchange="loadAgain()">
 <?php
-$category_array = array();
-$category_array[] = "score"; 
-$category_array[] = "alltime"; 
-$category_array[] = "alltimeizzy"; 
-$category_array[] = "alltimetwo"; 
-$category_array[] = "alltimethree"; 
-$category_array[] = "alltimefour"; 
-$category_array[] = "alltimefive"; 
-$category_array[] = "alltimesix"; 
-$category_array[] = "alltimeseven"; 
-$category_array[] = "alltimeeight"; 
-$category_array[] = "alltimenine"; 
-$category_array[] = "alltimekoaa5"; 
-$category_array[] = "unmastered"; 
+$query = "select * from users where room_id = ";
+$query .= $room_id;
+$query .= " order by last_name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
-for($i = 0; $i < sizeof($category_array); $i++)
+echo "<option selected=\"selected\" value=\"0\"> \"All Users\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
 {
-        if ($category_array[$i] == $category)
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $user_id)
         {
-                echo "<option selected=\"selected\" value=\"$category_array[$i]\"> $category_array[$i] </option>";
-        }
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }      
         else
         {
-                echo "<option value=\"$category_array[$i]\"> $category_array[$i] </option>";
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
         }
 }
-
 ?>
 </select>
+
+<select id="test_id" name="test_id" onchange="loadAgain()">
+<?php
+$query = "select * from evaluations_attempts where user_id = ";
+$query .= $user_id;
+$query .= " order by start_time desc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"All Tests\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $test_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }      
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+</form>
+
 
 <script>
 function loadAgain()
 {
-    	var x = document.getElementById("school_id").value;
-    	var y = document.getElementById("room_id").value;
-    	var z = document.getElementById("category").value;
-	document.location.href = '/web/reports/school/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
+    	var x = document.getElementById("room_id").value;
+    	var y = document.getElementById("user_id").value;
+    	var z = document.getElementById("test_id").value;
+	document.location.href = '/web/reports/school/tests.php?room_id=' + x + '&user_id=' + y + '&test_id=' + z; 
 }
 </script>
 
@@ -214,18 +188,9 @@ echo '<table border=\"1\">';
         $score = '';
 
 
-        $query = "select last_activity, first_name, last_name, ";
-	$query .= $category;
-	$query .= " from users where banned_id = 0 AND school_id = ";
-        $query .= $school_id;
-	if ($room_id != 0)
-	{
-		$query .= " AND room_id = ";
-        	$query .= $room_id;
-	}
-        $query .= " order by ";
-	$query .= $category;
-        $query .= " desc;";
+        $query = "select * from item_attempts where evaluations_attempts_id = ";
+	$query .= $test_id;
+	$query .= " order by start_time desc;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
