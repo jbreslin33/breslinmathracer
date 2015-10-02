@@ -130,7 +130,7 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 $query = "select * from evaluations_attempts where user_id = ";
 $query .= $user_id;
-$query .= " order by start_time desc;";
+$query .= " AND evaluations_id = 15 order by start_time desc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 

@@ -3,7 +3,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
 
 //start new session
-session_start();
+//session_start();
 
 $_SESSION["username"]   = $_GET["username"];
 $_SESSION["password"]   = $_GET["password"];
