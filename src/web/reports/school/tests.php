@@ -201,7 +201,7 @@ echo '<table border=\"1\">';
         $score = '';
 
 
-        $query = "select * from item_attempts where evaluations_attempts_id = ";
+        $query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
 	$query .= $test_id;
 	$query .= " order by start_time desc;";
         $result = pg_query($conn,$query);
@@ -210,13 +210,14 @@ echo '<table border=\"1\">';
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $startTime = $row[1];
-                $endTime = $row[2];
-                $itemTypesID = $row[4];
-                $transactionCode = $row[5];
-                $question = $row[6];
-                $answers = $row[7];
-                $user_answer = $row[8];
+                $startTime = $row[0];
+                $endTime = $row[1];
+                $itemTypesID = $row[2];
+                $transactionCode = $row[3];
+                $question = $row[4];
+                $answers = $row[5];
+                $user_answer = $row[6];
+                $progression = $row[7];
 
                 echo '<tr>';
                 echo '<td>';
