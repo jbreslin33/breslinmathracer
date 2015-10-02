@@ -139,13 +139,17 @@ echo "<option selected=\"selected\" value=\"0\"> \"All Tests\" </option>";
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
+	$full = "TestID:"; 
+	$full .= $row[0];	
+	$full .= " Date:"; 
+	$full .= $row[1];
         if ($row[0] == $test_id)
         {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
         }      
         else
         {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
+                echo "<option value=\"$row[0]\"> $full </option>";
         }
 }
 ?>
