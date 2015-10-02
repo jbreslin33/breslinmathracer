@@ -5,37 +5,39 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray.push('' + '1.oa.a.1_11');
-	this.mIDArray.push('' + '2.oa.a.1_21');
-	this.mIDArray.push('' + '3.oa.a.3_6');
-	this.mIDArray.push('' + '4.oa.a.3_13');
-	this.mIDArray.push('' + '5.nbt.b.7_20');
+         
+	var t = APPLICATION.mItemTypesArray.length; 
+	var potentialPoints = 0;
+	this.mCurrentElement = 0;
+	
+	while (potentialPoints < 2000)
+	{
+		var type = '';
+        	var p = Math.floor(Math.random()*t);
+		while (i < APPLICATION.mItemAttemptsTypeArrayOne.length && type == '') //this should break out
+		{
+			if (APPLICATION.mItemAttemptsTypeArrayOne[i] == APPLICATION.mItemTypesArray[p])
+			{
+				type = APPLICATION.mItemTypesArray[p]; 
+				this.mIDArray.push('' + type);
+				potentialPoints = parseInt(p + potentialPoints);	
+			} 		
+			i++;
+		} 
+	}
 },
 
 pickItem: function()
 {
-	//would love to loop till we got no dup
-        while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent || APPLICATION.mQuestionTypeCurrent == '')
-        {
-        	var r = Math.floor(Math.random()*3);
-
-                if (r == 0)
-                {
-                        APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFifteen,APPLICATION.mItemAttemptsTransactionCodeArrayFifteen);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                }
-                if (r == 1)
-                {
-                        APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayFifteen,APPLICATION.mItemAttemptsTransactionCodeArrayFifteen);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-                }
-                if (r == 2) // random
-		{
-        		var e = Math.floor(Math.random()*this.mIDArray.length);
-                	APPLICATION.mQuestionTypeCurrent = '' +this.mIDArray[e];
-		}
+	if (this.mCurrentElement < this.mIDArray.length)
+	{
+		APPLICATION.mQuestionTypeCurrent = this.mIDArray[this.mCurrentElement];
+		this.mCurrentElement++;	
 	}
-
+	else
+	{
+		APPLICATION.mEvaluationsID = 1;	
+	}
 },
 
 createItem: function()
