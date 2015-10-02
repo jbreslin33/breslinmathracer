@@ -30,7 +30,6 @@ var Hud = new Class(
         this.mCyan = new Shape    (75, ySize, 390,  yCoord,"","","cyan","boundary");
         
 	this.mViolet = new Shape    (75, ySize, 465,  yCoord,"","","violet","boundary");
-	//this.mTan = new Shape    (75, ySize, 540,  yCoord,"","","tan","boundary");
         
 	this.mTan = new Shape(75, ySize,  540,  yCoord,"","SELECT","tan","boundary");
 	this.mTan.mMesh.onchange = this.tanSelected;

@@ -10,7 +10,7 @@ initialize: function(game)
 	var potentialPoints = 0;
 	this.mCurrentElement = 0;
 	
-	while (potentialPoints < 2000)
+	while (potentialPoints < 10000)
 	{
 		var type = '';
         	var p = Math.floor(Math.random()*t);

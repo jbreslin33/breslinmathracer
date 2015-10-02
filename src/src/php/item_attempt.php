@@ -68,6 +68,8 @@ public function insert()
         	$returnString .= $this->mDateNow;
         	$returnString .= ",";
         	$returnString .= $this->mID; //this id is not right...
+        	$returnString .= ",";
+		$returnString .= $this->mApplication->mEvaluationsAttempt->mID;
 		echo $returnString;		
         }
         else

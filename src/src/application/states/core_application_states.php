@@ -1577,6 +1577,7 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TEST_APPLICATION execute');
 	}
+	application.mHud.setOrange('TestID:' + APPLICATION.mEvaluationsAttemptsID);
 },
 
 exit: function(application)

@@ -140,6 +140,7 @@ Extends: Application,
 		/********** STATE FLAGS ************/
 		this.mPracticeItemID = '3.oa.c.7_44';
 		this.mEvaluationsID = 0;
+		this.mEvaluationsAttemptsID = 0;
 
 		/********* HUD *******************/ 
         	this.mHud = new Hud(this);
@@ -748,7 +749,7 @@ highestAchieved: function()
 
 
 		this.mGame.setStreak(currentStreak);
-		this.mGame.setUnmastered(unmastered);
+		//this.mGame.setUnmastered(unmastered);
 		this.mGame.setScore(score); 
 	},
 
@@ -933,6 +934,7 @@ highestAchieved: function()
 					if (APPLICATION.mItemAttemptsArray[i].mDateNow == datenow)
 					{
 						APPLICATION.mItemAttemptsArray[i].mID = parseInt(this.mResponseArray[2]); 
+						APPLICATION.mEvaluationsAttemptsID = parseInt(this.mResponseArray[3]); 
 					}
 				}
 			}
