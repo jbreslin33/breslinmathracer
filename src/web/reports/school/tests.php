@@ -181,7 +181,6 @@ else
         $lastName = '';
         $score = '';
 
-
         $query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
 	$query .= $test_id;
 	$query .= " order by start_time desc;";
@@ -189,15 +188,39 @@ else
         $numrows = pg_numrows($result);
 
 	$progressionTotal = 0;
+	$correctTotal = 0;
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $progression = $row[7];
+                
+		$progression = $row[7];
 		$progressionTotal = floatVal($progressionTotal + $progression);
+		
+		$transactionCode = $row[3];
+		if ($transactionCode == 1)
+		{
+			$correctTotal = floatVal($correctTotal + $progression);
+		}
 	}
+
+	$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+	$gradePercent = (int)($gradeDecimal * 100);
+/*
+        echo '<br>';
+	echo $correctTotal; 
+        echo '<br>';
+        echo '------';
         echo '<br>';
 	echo $progressionTotal; 
         echo '<br>';
+        echo '=';
+        echo '<br>';
+*/
+	$gradeText = "Grade: ";
+	$gradeText .= $gradePercent;
+	$gradeText .= "%";
+	echo $gradeText; 
+
 echo '<table border=\"1\">';
         echo '<tr>';
         echo '<td> Start Time';
