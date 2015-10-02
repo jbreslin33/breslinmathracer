@@ -87,8 +87,10 @@ function loadAgain()
 
 <?php
 
+date_default_timezone_set('America/New_York');
 $start = new DateTime('2015-09-08');
-$end = new DateTime('2015-09-29');
+$end = new DateTime(date("Y-m-d h:i:sa"));
+//$end = getdate();
 $days = $start->diff($end, true)->days;
 
 //sundays
@@ -142,7 +144,7 @@ if ($room_id != 0)
 	
         for($i = 0; $i < $numrowsUsers; $i++)
 	{
-		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND ( extract(hour from item_attempts.start_time) > 8 OR extract(hour from item_attempts.start_time) > 14 OR extract(dow from item_attempts.start_time) = 0 OR extract(dow from item_attempts.start_time) = 6) AND username = '";
+		$query = "select count(item_attempts.transaction_code) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON evaluations_attempts.user_id=users.id where item_attempts.start_time > '2015-09-08' AND ( extract(hour from item_attempts.start_time) < 9 OR extract(hour from item_attempts.start_time) > 14 OR extract(dow from item_attempts.start_time) = 0 OR extract(dow from item_attempts.start_time) = 6) AND username = '";
 		$query .= $fetchAllUsers[$i]['username'];
 		$query .= "';";
 
