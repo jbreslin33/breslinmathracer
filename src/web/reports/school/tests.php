@@ -172,13 +172,19 @@ else
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Rank';
+        echo '<td> Start Time';
         echo '</td>';
-        echo '<td> First Name';
+        echo '<td> End Time';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td> TypeID';
         echo '</td>';
         echo '<td> Score';
+        echo '</td>';
+        echo '<td> Question';
+        echo '</td>';
+        echo '<td> Answers';
+        echo '</td>';
+        echo '<td> User Answer';
         echo '</td>';
         echo '</tr>';
 
@@ -197,23 +203,35 @@ echo '<table border=\"1\">';
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $lastAnswerTime = $row[0];
-                $firstName = $row[1];
-                $lastName = $row[2];
-                $score = $row[3];
+                $startTime = $row[1];
+                $endTime = $row[2];
+                $itemTypesID = $row[4];
+                $transactionCode = $row[5];
+                $question = $row[6];
+                $answers = $row[7];
+                $user_answer = $row[8];
 
                 echo '<tr>';
                 echo '<td>';
-                echo $i + 1;
+                echo $startTime;
                 echo '</td>';
                 echo '<td>';
-                echo $firstName;
+                echo $endTime;
                 echo '</td>';
                 echo '<td>';
-                echo $lastName;
+                echo $itemTypesID;
                 echo '</td>';
                 echo '<td>';
-                echo $score;
+                echo $transactionCode;
+                echo '</td>';
+                echo '<td>';
+                echo $question;
+                echo '</td>';
+                echo '<td>';
+                echo $answers;
+                echo '</td>';
+                echo '<td>';
+                echo $user_answer;
                 echo '</td>';
                 echo '</tr>';
         }
