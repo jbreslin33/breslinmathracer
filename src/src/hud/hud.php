@@ -177,6 +177,11 @@ fillTanSelect: function(filler)
         	this.mYellow.setText('<font size="1">' + t + '</font>');
 	},
 	
+	setViolet: function(t)
+	{
+        	this.mViolet.setText('<font size="1">' + t + '</font>');
+	},
+	
 	setUsername: function(firstname,lastname)
 	{
   		this.mUsername.setText('<font size="1">User:' + firstname + ' ' + lastname + '</font>');

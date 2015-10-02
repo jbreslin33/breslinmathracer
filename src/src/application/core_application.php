@@ -324,6 +324,7 @@ highestAchieved: function()
 					foundWrong = true;
 				}
 			}
+			this.mGame.setUnmastered(unmastered);
 		}
 
 		if (parseInt(this.mEvaluationsID) == 3)
@@ -744,12 +745,12 @@ highestAchieved: function()
                                         foundWrong = true;
                                 }
                         }
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 
 
 
 		this.mGame.setStreak(currentStreak);
-		//this.mGame.setUnmastered(unmastered);
 		this.mGame.setScore(score); 
 	},
 
