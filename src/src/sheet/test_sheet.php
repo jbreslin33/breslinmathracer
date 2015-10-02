@@ -10,29 +10,24 @@ initialize: function(game)
 	var potentialPoints = 0;
 	this.mCurrentElement = 0;
 
-/*
-use this for total instead of 10000 score by 1000
-//alltime
-                        for (var i = 0; i < this.mItemTypesArray.length; i++)
+	var score = 0;
+        for (var i = 0; i < APPLICATION.mItemTypesArray.length; i++)
+        {
+        	var foundOne = false;
+                var j = 0;
+                while (j < APPLICATION.mItemAttemptsTypeArrayOne.length && foundOne == false)
+                {
+                	if (APPLICATION.mItemTypesArray[i] == APPLICATION.mItemAttemptsTypeArrayOne[j])
                         {
-                                var foundOne = false;
-                                var j = 0;
-                                while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
-                                {
-                                        if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-                                        {
-                                                score++;
-                                                foundOne = true;
-                                        }
-                                        j++;
-                                }
+                        	score++;
+                                foundOne = true;
                         }
-
-
-*/
-
+                   	j++;
+                }
+	}
+	var needed = parseInt(score * 10);	
 	
-	while (potentialPoints < 10000)
+	while (potentialPoints < needed)
 	{
 		var type = '';
         	var p = Math.floor(Math.random()*t);
