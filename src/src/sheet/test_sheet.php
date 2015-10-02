@@ -9,6 +9,28 @@ initialize: function(game)
 	var t = APPLICATION.mItemTypesArray.length; 
 	var potentialPoints = 0;
 	this.mCurrentElement = 0;
+
+/*
+use this for total instead of 10000 score by 1000
+//alltime
+                        for (var i = 0; i < this.mItemTypesArray.length; i++)
+                        {
+                                var foundOne = false;
+                                var j = 0;
+                                while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
+                                {
+                                        if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+                                        {
+                                                score++;
+                                                foundOne = true;
+                                        }
+                                        j++;
+                                }
+                        }
+
+
+*/
+
 	
 	while (potentialPoints < 10000)
 	{
