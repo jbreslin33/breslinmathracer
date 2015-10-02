@@ -111,13 +111,16 @@ echo "<option selected=\"selected\" value=\"0\"> \"All Users\" </option>";
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
+	$fullname = $row[3];
+	$fullname .= " ";
+	$fullname .= $row[7];
         if ($row[0] == $user_id)
         {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $fullname </option>";
         }      
         else
         {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
+                echo "<option value=\"$row[0]\"> $fullname </option>";
         }
 }
 ?>
