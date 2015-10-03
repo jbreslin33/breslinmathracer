@@ -33,7 +33,6 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
 $room_id = 0;
-$user_id = 0;
 $id = 0;
 
 if (isset($_POST["room_id"]))
@@ -43,15 +42,6 @@ if (isset($_POST["room_id"]))
 else if (isset($_GET['room_id']))
 {
 	$room_id = $_GET['room_id'];
-}
-
-if (isset($_POST["user_id"]))
-{
-        $user_id = $_POST["user_id"];
-}
-else if (isset($_GET['user_id']))
-{
-        $user_id = $_GET['user_id'];
 }
 
 echo "<br>";
@@ -86,44 +76,13 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
-
-<select id="user_id" name="user_id" onchange="loadAgain()">
-<?php
-$query = "select * from users where room_id = ";
-$query .= $room_id;
-$query .= " order by last_name asc;";
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-echo "<option selected=\"selected\" value=\"0\"> \"Select Student\" </option>";
-
-for($i = 0; $i < $numrows; $i++)
-{
-        $row = pg_fetch_array($result, $i);
-	$fullname = $row[3];
-	$fullname .= " ";
-	$fullname .= $row[7];
-        if ($row[0] == $user_id)
-        {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $fullname </option>";
-        }      
-        else
-        {
-                echo "<option value=\"$row[0]\"> $fullname </option>";
-        }
-}
-?>
-</select>
-
 </form>
-
 
 <script>
 function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
-    	var y = document.getElementById("user_id").value;
-	document.location.href = '/web/reports/generic/class_grades.php?room_id=' + x + '&user_id=' + y; 
+	document.location.href = '/web/reports/generic/class_grades.php?room_id=' + x; 
 }
 </script>
 
@@ -136,10 +95,24 @@ if ($room_id == 99999)
 }
 else
 {
+
+//number of students...
+$queryStudents = "select * from users where room_id = ";
+$queryStudents .= $room_id;
+$queryStudents .= " order by last_name asc;";
+$resultStudents = pg_query($conn,$queryStudents);
+$numrowsStudents = pg_numrows($resultStudents);
+
+$userArray = array();
+$gradesArray = array();
+
+for($s = 0; $s < $numrowsStudents; $s++)
+{
 	$gradeArray = array();
+	$rowStudents = pg_fetch_array($resultStudents, $s);
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
-	$queryOne .= $user_id;
+	$queryOne .= $rowStudents[0];
 	$queryOne .= " AND evaluations_id = 15 order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
@@ -191,42 +164,37 @@ else
 	{
 		$averageGrade = 0;
 	}
-	$gradeTxt = "Average Grade: ";
-	$gradeTxt .= $averageGrade;
-	
-	echo $gradeTxt;
+	$gradesArray[] = $averageGrade;	
+}
 
-	echo '<table border=\"1\">';
+echo '<table border=\"1\">';
+echo '<tr>';
+echo '<td> Student';
+echo '</td>';
+echo '<td> Grades';
+echo '</td>';
+echo '</tr>';
+
+for($y = 0; $y < $numrowsStudents; $y++)
+{
+	$rowStudents = pg_fetch_array($resultStudents, $y);
+
+        $fullname = $rowStudents[3];
+	$fullname .= " ";
+        $fullname .= $rowStudents[7];
+
         echo '<tr>';
-        echo '<td> Start Time';
-        echo '</td>';
-        echo '<td> Test ID';
-        echo '</td>';
-        echo '<td> Grade';
+        echo '<td>';
+        echo $fullname;
+       	echo '</td>';
+        echo '<td>';
+        echo $gradesArray[$y];
         echo '</td>';
         echo '</tr>';
-	for($z = 0; $z < $numrowsOne; $z++)
-	{
-		$rowOne = pg_fetch_array($resultOne, $z);
+}
 
-                $startTime = $rowOne[1];
-                $testID = $rowOne[0];
-
-                echo '<tr>';
-                echo '<td>';
-                echo $startTime;
-                echo '</td>';
-                echo '<td>';
-                echo $testID;
-                echo '</td>';
-                echo '<td>';
-                echo $gradeArray[$z];
-                echo '</td>';
-                echo '</tr>';
-	}
-
-        pg_free_result($result);
-        echo '</table>';
+pg_free_result($result);
+echo '</table>';
 }
 ?>
 
