@@ -144,9 +144,6 @@ else
 	$queryOne .= " AND evaluations_id = 15 order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
-	$txt = "numrows:";
-	$txt = $numrowsOne;
-	echo $txt;
 
 	//this loop is to calc a test for a grade that is all
 	for($i = 0; $i < $numrowsOne; $i++)
@@ -179,6 +176,19 @@ else
 		$gradePercent = (int)($gradeDecimal * 100);
 		$gradeArray[] = $gradePercent;
         }
+	
+	$totalTests = intval(count($gradeArray));
+	$totalOfTests = 0;
+	for($t = 0; $t < $totalTests; $t++)
+	{
+		$totalOfTests += $gradeArray[$t];
+	}
+
+	$averageGrade = floatVal($totalOfTests / $totalTests);
+	$gradeTxt = "Average Grade: ";
+	$gradeTxt .= $averageGrade;
+	
+	echo $gradeTxt;
 
 	echo '<table border=\"1\">';
         echo '<tr>';
