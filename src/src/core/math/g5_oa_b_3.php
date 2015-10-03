@@ -367,9 +367,6 @@ this.mQuestionLabel.setPosition(625,180);
 });
 
 
-
-
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_5',5.0305,'5.oa.b.3','graphs');
 */
@@ -379,106 +376,104 @@ Extends: TextItem2,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,200,50,225,95,100,50,425,100);
 
+	this.parent(sheet,200,50,225,95,100,50,425,100);
         this.mType = '5.oa.b.3_5';
 
-// graph coords
-var startX = 10;
-var endX = 300;
-var startY = 10;
-var endY = 280;
-var width = endX - startX;
-var height = endY - startY;
-var range = [0,10];
+	// graph coords
+	var startX = 10;
+	var endX = 300;
+	var startY = 10;
+	var endY = 280;
+	var width = endX - startX;
+	var height = endY - startY;
+	var range = [0,10];
 
-//var r = Raphael('graph');
-var rX1 = 10;
-var rY1 = 50;
-var rX2 = 420;
-var rY2 = 350;
+	//var r = Raphael('graph');
+	var rX1 = 10;
+	var rY1 = 50;
+	var rX2 = 420;
+	var rY2 = 350;
 
-this.raphael = Raphael(rX1, rY1, rX2, rY2);
+	this.raphael = Raphael(rX1, rY1, rX2, rY2);
 
-this.raphaelSizeX = rX2;
-this.raphaelSizeY = rY2;
+	this.raphaelSizeX = rX2;
+	this.raphaelSizeY = rY2;
 
-var pointsX = [];
-var pointsY = [];
+	var pointsX = [];
+	var pointsY = [];
 
-var slopeX = (Math.floor(Math.random()*10)+1);
-var slopeY = (Math.floor(Math.random()*10)+1);
+	var slopeX = (Math.floor(Math.random()*10)+1);
+	var slopeY = (Math.floor(Math.random()*10)+1);
 
-pointsX[0] = slopeX;
-pointsY[0] = slopeY;
+	pointsX[0] = slopeX;
+	pointsY[0] = slopeY;
 
-pointsX[1] = pointsX[0] + slopeX;
-pointsY[1] = pointsY[0] + slopeY;
+	pointsX[1] = pointsX[0] + slopeX;
+	pointsY[1] = pointsY[0] + slopeY;
 
-pointsX[2] = pointsX[1] + slopeX;
-pointsY[2] = pointsY[1] + slopeY;
+	pointsX[2] = pointsX[1] + slopeX;
+	pointsY[2] = pointsY[1] + slopeY;
 
-pointsX[3] = pointsX[2] + slopeX;
-pointsY[3] = pointsY[2] + slopeY;
+	pointsX[3] = pointsX[2] + slopeX;
+	pointsY[3] = pointsY[2] + slopeY;
 
-pointsX[4] = pointsX[3] + slopeX;
-pointsY[4] = pointsY[3] + slopeY;
+	pointsX[4] = pointsX[3] + slopeX;
+	pointsY[4] = pointsY[3] + slopeY;
 
-var answerX = pointsX[4] + slopeX;
-var answerY = pointsY[4] + slopeY;
+	var answerX = pointsX[4] + slopeX;
+	var answerY = pointsY[4] + slopeY;
 
-
-    this.mNameMachine = new NameMachine();
-    this.mNameOne     = this.mNameMachine.getName();
-    this.mNameTwo     = this.mNameMachine.getName();
-    this.mTeacherName     = this.mNameMachine.getAdult();
-    this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+    	this.mNameMachine = new NameMachine();
+    	this.mNameOne     = this.mNameMachine.getName();
+    	this.mNameTwo     = this.mNameMachine.getName();
+    	this.mTeacherName     = this.mNameMachine.getAdult();
+    	this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
                 
-		this.mSchool     = this.mNameMachine.getSchool();
-		this.mVegetableOne     = this.mNameMachine.getVegetable();
-		this.mVegetableTwo     = this.mNameMachine.getVegetable();
-		this.mFruit     = this.mNameMachine.getFruit();
-		this.mThings     = this.mNameMachine.getThing();
-    this.mSupply     = this.mNameMachine.getSupply();
+	this.mSchool     = this.mNameMachine.getSchool();
+	this.mVegetableOne     = this.mNameMachine.getVegetable();
+	this.mVegetableTwo     = this.mNameMachine.getVegetable();
+	this.mFruit     = this.mNameMachine.getFruit();
+	this.mThings     = this.mNameMachine.getThing();
+    	this.mSupply     = this.mNameMachine.getSupply();
 
-		this.mRoomOne = Math.floor(Math.random()*10)+40; 
-		this.mRoomTwo = Math.floor(Math.random()*10)+20; 
-                
-		this.mAdult     = this.mNameMachine.getAdult();
+	this.mRoomOne = Math.floor(Math.random()*10)+40; 
+	this.mRoomTwo = Math.floor(Math.random()*10)+20; 
+               
+	this.mAdult     = this.mNameMachine.getAdult();
 
-this.setQuestion(this.mNameOne + ' and ' + this.mNameTwo + ' are each selling ' + this.mFruit + '. The table below shows how many ' + this.mFruit + ' each person sold each day. Based on the pattern in the table, how many ' + this.mFruit + ' will ' + this.mNameOne + ' and ' + this.mNameTwo + ' sell on Day 6?'
+	this.setQuestion(this.mNameOne + ' and ' + this.mNameTwo + ' are each selling ' + this.mFruit + '. The table below shows how many ' + this.mFruit + ' each person sold each day. Based on the pattern in the table, how many ' + this.mFruit + ' will ' + this.mNameOne + ' and ' + this.mNameTwo + ' sell on Day 6?'
 );    
 
-this.setAnswer('' + answerX,0);
-this.setAnswer('' + answerY,1);  
+	this.setAnswer('' + answerX,0);
+	this.setAnswer('' + answerY,1);  
 
-var head1 = 'Day';
-var head2 = 'Number of ' + this.mFruit + ' sold by ' + this.mNameOne;
-var head3 = 'Number of ' + this.mFruit + ' sold by ' + this.mNameTwo;
+	var head1 = 'Day';
+	var head2 = 'Number of ' + this.mFruit + ' sold by ' + this.mNameOne;
+	var head3 = 'Number of ' + this.mFruit + ' sold by ' + this.mNameTwo;
 
-// create tableData[rows][cols] to pass in to Table
-var tableData = [[head1,head2,head3],["1", ''+pointsX[0], ''+pointsY[0]],["2",pointsX[1], pointsY[1]],["3",pointsX[2], pointsY[2]],["4",pointsX[3], pointsY[3]],["5",pointsX[4], pointsY[4]]];
+	// create tableData[rows][cols] to pass in to Table
+	var tableData = [[head1,head2,head3],["1", ''+pointsX[0], ''+pointsY[0]],["2",pointsX[1], pointsY[1]],["3",pointsX[2], pointsY[2]],["4",pointsX[3], pointsY[3]],["5",pointsX[4], pointsY[4]]];
 
-// create Table object
-var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
+	// create Table object
+	var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
 
-this.addQuestionShape(table);
+	this.addQuestionShape(table);
 
-this.mQuestionLabel.setSize(220,50);
-this.mQuestionLabel.setPosition(450,80);
+	this.mQuestionLabel.setSize(220,50);
+	this.mQuestionLabel.setPosition(450,80);
 
-this.mAnswerTextBox.setPosition(600,110);
-this.mAnswerTextBox2.setPosition(675,110);
-this.mAnswerTextBox.setSize(50,50);
-this.mAnswerTextBox2.setSize(50,50);
+	this.mAnswerTextBox.setPosition(600,110);
+	this.mAnswerTextBox2.setPosition(675,110);
+	this.mAnswerTextBox.setSize(50,50);
+	this.mAnswerTextBox2.setSize(50,50);
  
-this.mHeadingAnswerLabel.setText(this.mNameOne);
-this.mHeadingAnswerLabel2.setText(this.mNameTwo); 
-this.mHeadingAnswerLabel.setPosition(615,55);
-this.mHeadingAnswerLabel2.setPosition(690,55); 
-this.mHeadingAnswerLabel.setSize(75,25);
-this.mHeadingAnswerLabel2.setSize(75,25); 
-
+	this.mHeadingAnswerLabel.setText(this.mNameOne);
+	this.mHeadingAnswerLabel2.setText(this.mNameTwo); 
+	this.mHeadingAnswerLabel.setPosition(615,55);
+	this.mHeadingAnswerLabel2.setPosition(690,55); 
+	this.mHeadingAnswerLabel.setSize(75,25);
+	this.mHeadingAnswerLabel2.setSize(75,25); 
 },
 
 
@@ -495,16 +490,6 @@ this.mHeadingAnswerLabel2.setSize(75,25);
 
 
 });
-
-
-
-
-
-
-
-
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_6',5.0306,'5.oa.b.3','graphs');
