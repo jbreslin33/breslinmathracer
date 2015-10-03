@@ -17,9 +17,11 @@ session_start();
 <ul>
 <li><a href="/web/navigation/student/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
-<li><a href="/web/reports/student/leaderboards.php">Leader Boards</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
+
+<li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
+<li><a href="/web/reports/generic/item_attempts_realtime.php">Item Attempts Real Time</a></li>
 <li><a href="/web/reports/generic/homework.php">Home Work</a></li>
 <li><a href="/web/reports/generic/tests.php">Tests</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
