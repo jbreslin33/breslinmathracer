@@ -128,13 +128,13 @@ else
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> user_id';
+        echo '<td> Username';
         echo '</td>';
-        echo '<td> start_time';
+        echo '<td> Last Name';
         echo '</td>';
-        echo '<td> type';
+        echo '<td> First Name';
         echo '</td>';
-        echo '<td> mark';
+        echo '<td> Homework Questions';
         echo '</td>';
         echo '</tr>';
 
