@@ -19,8 +19,8 @@ if ($_SESSION["role"] == 1)
 }
 else
 {
-        echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
-        echo "<li><a href=\"/web/navigation/student/reports.php\">Reports</a></li>";
+        echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
+        echo "<li><a href=\"/web/navigation/school/reports.php\">Reports</a></li>";
 }
 ?>
 <li><a href="/web/php/logout.php">Logout</a></li>
@@ -71,7 +71,7 @@ echo "<br>";
 
 <p><b> Select Room, Student and Test: </p></b>
 
-<form method="post" action="/web/reports/student/tests.php">
+<form method="post" action="/web/reports/school/tests.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -163,7 +163,7 @@ function loadAgain()
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
     	var z = document.getElementById("test_id").value;
-	document.location.href = '/web/reports/student/tests.php?room_id=' + x + '&user_id=' + y + '&test_id=' + z; 
+	document.location.href = '/web/reports/school/tests.php?room_id=' + x + '&user_id=' + y + '&test_id=' + z; 
 }
 </script>
 

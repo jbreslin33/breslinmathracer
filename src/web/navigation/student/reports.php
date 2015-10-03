@@ -21,6 +21,7 @@ session_start();
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
 <li><a href="/web/reports/student/homework.php">Home Work</a></li>
+<li><a href="/web/reports/student/tests.php">Tests</a></li>
 </ul>
 
 </body>
