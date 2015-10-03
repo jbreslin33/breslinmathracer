@@ -27,7 +27,6 @@ else
 </ul>
 
 <?php
-session_start();
 
 //db connection
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
@@ -86,7 +85,7 @@ echo "<br>";
 
 <p><b> Select Room and Category: </p></b>
 
-<form method="post" action="/web/reports/school/leaderboards.php">
+<form method="post" action="/web/reports/generic/leaderboards.php">
 
 <select id="school_id" name="school_id" onchange="loadAgain()">
 <?php
@@ -182,7 +181,7 @@ function loadAgain()
     	var x = document.getElementById("school_id").value;
     	var y = document.getElementById("room_id").value;
     	var z = document.getElementById("category").value;
-	document.location.href = '/web/reports/school/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
+	document.location.href = '/web/reports/generic/leaderboards.php?school_id=' + x + '&room_id=' + y + '&category=' + z; 
 }
 </script>
 
