@@ -60,8 +60,16 @@ echo "<br>";
 <p><b> Grades </p></b>
 
 <p><b> Select Room and Student: </p></b>
-
-<form method="post" action="/web/reports/student/grades.php">
+<?php
+if ($_SESSION["role"] == 1)
+{
+	echo	"<form method=\"post\" action=\"/web/reports/student/grades.php\">";
+}
+else
+{
+	echo	"<form method=\"post\" action=\"/web/reports/school/grades.php\">";
+}
+?>
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -124,7 +132,17 @@ function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
-	document.location.href = '/web/reports/school/grades.php?room_id=' + x + '&user_id=' + y; 
+	<?php
+	if ($_SESSION["role"] == 1)
+	{
+		echo "document.location.href = '/web/reports/school/grades.php?room_id=' + x + '&user_id=' + y;"; 
+	}
+	else
+	{
+		echo "document.location.href = '/web/reports/school/grades.php?room_id=' + x + '&user_id=' + y;";
+
+	}	
+	?>
 }
 </script>
 
@@ -183,8 +201,15 @@ else
 	{
 		$totalOfTests += $gradeArray[$t];
 	}
-
-	$averageGrade = floatVal($totalOfTests / $totalTests);
+	$averageGrade = 0;
+	if ($totalTests != 0)
+	{
+		$averageGrade = floatVal($totalOfTests / $totalTests);
+	}
+	else
+	{
+		$averageGrade = 0;
+	}
 	$gradeTxt = "Average Grade: ";
 	$gradeTxt .= $averageGrade;
 	
