@@ -59,7 +59,7 @@ echo "<br>";
 
 <p><b> Grades </p></b>
 
-<p><b> Select Room, Student and Test: </p></b>
+<p><b> Select Room and Student: </p></b>
 
 <form method="post" action="/web/reports/student/grades.php">
 
