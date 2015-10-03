@@ -18,9 +18,9 @@ session_start();
 <li><a href="/web/navigation/school/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/reports/school/leaderboards.php">Leader Boards</a></li>
-<li><a href="/web/reports/school/homework.php">Home Work</a></li>
 <li><a href="/web/stats/statsreports.php">Non Mastery Types</a></li>
 <li><a href="/web/reports/school/item_attempts_realtime.php">Playing</a></li>
+<li><a href="/web/reports/generic/homework.php">Home Work</a></li>
 <li><a href="/web/reports/generic/tests.php">Tests</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
 <li><a href="/web/reports/generic/class_grades.php">Class Grades</a></li>
