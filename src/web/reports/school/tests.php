@@ -81,7 +81,7 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"All Rooms\" </option>";
+echo "<option selected=\"selected\" value=\"0\"> \"Select Room\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
@@ -106,7 +106,7 @@ $query .= " order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"All Users\" </option>";
+echo "<option selected=\"selected\" value=\"0\"> \"Select Student\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
@@ -134,7 +134,7 @@ $query .= " AND evaluations_id = 15 order by start_time desc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"All Tests\" </option>";
+echo "<option selected=\"selected\" value=\"0\"> \"Select Test\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
