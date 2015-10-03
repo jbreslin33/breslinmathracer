@@ -36,12 +36,22 @@ echo "<br>";
 ?>
 
 <p><b> HOME WORK </p></b>
-
 <ul>
-<li><a href="/web/navigation/school/main_menu.php">Main Menu</a></li>
-<li><a href="/web/navigation/school/reports.php">Reports</a></li>
+<?php
+if ($_SESSION["role"] == 1)
+{
+        echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
+        echo "<li><a href=\"/web/navigation/student/reports.php\">Reports</a></li>";
+}
+else
+{
+        echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
+        echo "<li><a href=\"/web/navigation/school/reports.php\">Reports</a></li>";
+}
+?>
 <li><a href="/web/php/logout.php">Logout</a></li>
 </ul>
+<br>
 
 
 <p><b> Select School and Room: </p></b>
@@ -80,7 +90,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/school/homework.php?room_id=' + y; 
+	document.location.href = '/web/reports/generic/homework.php?room_id=' + y; 
 }
 </script>
 
