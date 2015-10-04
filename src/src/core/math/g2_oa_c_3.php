@@ -15,13 +15,20 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         //variables
-        this.a = Math.floor(Math.random()*8)+13;
-        this.b = Math.floor(Math.random()*5)+5;
         this.s = Math.floor(Math.random()*16)+5;
-        this.c = parseInt(this.a - this.b);
+       	this.mod = this.s % 2; 
+	this.answer = '';
+	if (this.mod == 0)
+	{
+		this.answer = 'even';
+	}
+	else
+	{
+		this.answer = 'odd';
+	}
 
-       	this.setQuestion(this.ns.mNameOne + ' has a fruit stand. At the beginning of the day ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' had ' + this.a + ' ' + this.ns.mFruitOne + '. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' then sold ' + this.b + ' ' + this.ns.mFruitOne + '. How many ' + this.ns.mFruitOne + ' does ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ' + this.ns.mLeft + '?');
-        this.setAnswer('' + this.c,0);
+       	this.setQuestion(this.ns.mNameOne + ' wants to know if there is an odd or even amount of squares?');
+        this.setAnswer('' + this.answer,0);
 },
 
 createQuestionShapes: function()
