@@ -1,3 +1,53 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_14',4.0314,'4.oa.a.3','TerraNova');
+*/
+
+var i_4_oa_a_3__14 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.oa.a.3_14';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.a = Math.floor(Math.random()*9)+31;
+                this.b = Math.floor(Math.random()*9)+21;
+                this.c = parseInt(this.a + this.b);
+
+                this.setQuestion('' + this.ns.mNameOne + ' had ' + this.a + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' divided them equally among ' + this.b + ' friends. How many ' + this.ns.mThingOne + ' did ' + this.ns.mNameOne + ' have left?');
+
+                this.r = Math.floor(Math.random()*4);
+
+                this.answer = '';
+                if (this.r == 0)
+                {
+                        this.answer = '' + 'None of these';
+                }
+                else
+                {
+                        this.answer = parseInt(this.a * this.b);
+                }
+                this.setAnswer('' + this.answer,0);
+
+                this.mButtonA.setAnswer('' + this.answer);
+                if (this.r == 0)
+                {
+                        this.mButtonB.setAnswer('' + parseInt(this.a + this.b));
+                }
+                else
+                {
+                        this.mButtonB.setAnswer('' + 'None of these');
+                }
+                this.mButtonC.setAnswer('' + parseInt(this.c / this.b) );
+                this.mButtonD.setAnswer('' + parseInt( (this.a - 1)  * this.b) );
+                this.shuffle(10);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.a.3_13',4.0313,'4.oa.a.3','TerraNova');
 */
