@@ -10,8 +10,7 @@ Extends: FourButtonItem,
 initialize: function(sheet)
 {
 	this.parent(sheet);
- this.mChopWhiteSpace = false;
-
+ 	this.mChopWhiteSpace = false;
 
         this.mType = '5.oa.a.1_23';
 
