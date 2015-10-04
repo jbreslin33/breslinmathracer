@@ -35,7 +35,7 @@ Extends: FourButtonItem,
 			this.m = this.z % this.x;
 		}
 
-                this.setQuestion('' + this.ns.mNameOne + ' had ' + this.z + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' divided them equally among ' + this.x + ' friends. How many ' + this.ns.mThingOne + ' did ' + this.ns.mNameOne + ' have left?');
+                this.setQuestion('' + this.ns.mNameOne + ' had ' + this.z + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' divided them equally among ' + this.x + ' friends. How many ' + this.ns.mThingOne + ' did ' + this.ns.mNameOne + ' have left?');
 
                 this.answer = '' + this.m;
 		this.setAnswer('' + this.answer,0);
