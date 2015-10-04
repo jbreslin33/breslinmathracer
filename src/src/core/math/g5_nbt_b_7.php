@@ -1,3 +1,50 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_21',5.1121,'5.nbt.b.7','TerraNova');
+*/
+
+var i_5_nbt_b_7__21 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '5.nbt.b.7_21';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.x = 4;
+                this.y = 2;
+                this.z = 2;
+                this.r = 0;
+                this.a = 0;
+                this.b = 0;
+                this.c = 0;
+                this.m = 0;
+                while (this.m == 0 || this.a == this.b || this.a == this.c || this.a == this.m || this.b == this.c || this.b == this.m || this.c == this.m)
+                {
+                        this.x = Math.floor(Math.random()*8)+2;
+                        this.y = Math.floor(Math.random()*5)+5;
+                        this.r = Math.floor(Math.random()*this.x)+1;
+                        this.z = parseInt(this.x * this.y) + this.r ;
+
+                        this.a = Math.floor(Math.random()*9)+1;
+                        this.b = Math.floor(Math.random()*9)+1;
+                        this.c = Math.floor(Math.random()*9)+1;
+                        this.m = this.z % this.x;
+                }
+
+                this.setQuestion('' + this.ns.mNameOne + ' had ' + this.z + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' divided them equally among ' + this.x + ' friends. How many ' + this.ns.mThingOne + ' did ' + this.ns.mNameOne + ' have left?');
+
+                this.answer = '' + this.m;
+                this.setAnswer('' + this.answer,0);
+                this.mButtonA.setAnswer('' + this.answer);
+                this.mButtonB.setAnswer('' + this.a);
+                this.mButtonC.setAnswer('' + this.b);
+                this.mButtonD.setAnswer('' + this.c);
+                this.shuffle(10);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_20',5.1120,'5.nbt.b.7','TerraNova');
