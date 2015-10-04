@@ -1,3 +1,37 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.c.3_2',2.0302,'2.oa.c.3','' );
+*/
+
+var i_2_oa_c_3__2 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.oa.c.3_2';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        //variables
+        this.s = Math.floor(Math.random()*16)+5;
+       	this.mod = this.s % 2; 
+	this.answer = '';
+	if (this.mod == 0)
+	{
+		this.answer = 'even';
+	}
+	else
+	{
+		this.answer = 'odd';
+	}
+
+       	this.setQuestion(this.ns.mNameOne + ' wants to know if ' + this.s + ' is an odd or even number.');
+        this.setAnswer('' + this.answer,0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.c.3_1',2.0301,'2.oa.c.3','' );
 */
@@ -27,7 +61,7 @@ initialize: function(sheet)
 		this.answer = 'odd';
 	}
 
-       	this.setQuestion(this.ns.mNameOne + ' wants to know if there is an odd or even amount of squares?');
+       	this.setQuestion(this.ns.mNameOne + ' wants to know if there is an odd or even amount of squares.');
         this.setAnswer('' + this.answer,0);
 },
 
