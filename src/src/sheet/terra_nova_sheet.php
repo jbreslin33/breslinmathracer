@@ -11,6 +11,7 @@ initialize: function(game)
 	this.mIDArray.push('' + '4.oa.a.3_13');
 	this.mIDArray.push('' + '5.nbt.b.7_20');
 	this.mIDArray.push('' + '5.oa.a.1_23');
+	this.mIDArray.push('' + '4.oa.a.3_14');
 },
 
 pickItem: function()
