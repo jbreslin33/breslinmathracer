@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '2.oa.b.2_22';
+	return '2.oa.c.3_1';
 },
 
 getItem: function(id)
@@ -2281,6 +2281,16 @@ getItem: function(id)
 	if (id == '2.oa.b.2_36')
         {
                 return new i_2_oa_b_2__36(this.mSheet);
+        }
+
+	//2.oa.c.3	
+	if (id == '2.oa.c.3_1')
+        {
+                return new i_2_oa_c_3__1(this.mSheet);
+        }
+	if (id == '2.oa.c.3_2')
+        {
+                return new i_2_oa_c_3__2(this.mSheet);
         }
 
 	//2.nbt.b.7	
