@@ -1,5 +1,36 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.c.3_3',2.0303,'2.oa.c.3','' );
+*/
+
+var i_2_oa_c_3__3 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.oa.c.3_3';
+
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        //variables
+        this.s = 0;
+	this.mod = 1; 
+	while (this.mod != 0)
+	{
+        	this.s = Math.floor(Math.random()*16)+5;
+		this.a = this.s / 2;
+		this.mod = this.s % 2; 
+	}
+
+       	this.setQuestion(this.ns.mNameOne + ' wants you to write an equation with 2 equal addends that equals ' + this.s + '.');
+        this.setAnswer('' + this.a + ' + ' + this.a + ' = ' + this.s,0);
+        this.setAnswer('' + this.s + ' = ' + this.a + ' + ' + this.a,1);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.c.3_2',2.0302,'2.oa.c.3','' );
 */
 
