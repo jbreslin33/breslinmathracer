@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '5.nbt.b.7_16';
+	return '2.oa.b.2_1';
 },
 
 getItem: function(id)
@@ -2135,6 +2135,44 @@ getItem: function(id)
 	if (id == '2.oa.a.1_21')
         {
                 return new i_2_oa_a_1__21(this.mSheet);
+        }
+
+	//2.oa.b.2
+	if (id == '2.oa.b.2_1')
+        {
+                return new i_2_oa_b_2__1(this.mSheet);
+        }
+	if (id == '2.oa.b.2_2')
+        {
+                return new i_2_oa_b_2__2(this.mSheet);
+        }
+	if (id == '2.oa.b.2_3')
+        {
+                return new i_2_oa_b_2__3(this.mSheet);
+        }
+	if (id == '2.oa.b.2_4')
+        {
+                return new i_2_oa_b_2__4(this.mSheet);
+        }
+	if (id == '2.oa.b.2_5')
+        {
+                return new i_2_oa_b_2__5(this.mSheet);
+        }
+	if (id == '2.oa.b.2_6')
+        {
+                return new i_2_oa_b_2__6(this.mSheet);
+        }
+	if (id == '2.oa.b.2_7')
+        {
+                return new i_2_oa_b_2__7(this.mSheet);
+        }
+	if (id == '2.oa.b.2_8')
+        {
+                return new i_2_oa_b_2__8(this.mSheet);
+        }
+	if (id == '2.oa.b.2_9')
+        {
+                return new i_2_oa_b_2__9(this.mSheet);
         }
 
 	//2.nbt.b.7	
