@@ -1,100 +1,37 @@
-/*********
-prerequisites from 4th grade:
 
-OA:
-------
+/*
+insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_23',5.0123,'5.oa.a.1','Terra Nova',2);
+*/
 
-4.oa.a.2 : Multiply or divide to solve word problems involving multiplicative comparison, e.g., by using drawings and equations with a symbol for the unknown number to represent the problem, distinguishing multiplicative comparison from additive comparison. 
+var i_5_oa_a_1__23 = new Class(
+{
+Extends: FourButtonItem,
 
-4.oa.a.3 : Solve multistep word problems posed with whole numbers and having whole-number answers using the four operations, including problems in which remainders must be interpreted. Represent these problems using equations with a letter standing for the unknown quantity. Assess the reasonableness of answers using mental computation and estimation strategies including rounding.
-
-
-NBT:
--------
-
-4.nbt.a.3 : Use place value understanding to round multi-digit whole numbers to any place.
-
-4.nbt.b.4 :
-Fluently add and subtract multi-digit whole numbers using the standard algorithm.
-
-4.nbt.b.5 :
-Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.
-
-4.nbt.b.6 :
-Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models.
+initialize: function(sheet)
+{
+	this.parent(sheet);
+ this.mChopWhiteSpace = false;
 
 
-NF:
------
-4.nf.b.3.a : Understand addition and subtraction of fractions as joining and separating parts referring to the same whole. 
+        this.mType = '5.oa.a.1_23';
 
-4.nf.b.3.c : Add and subtract mixed numbers with like denominators, e.g., by replacing each mixed number with an equivalent fraction, and/or by using properties of operations and the relationship between addition and subtraction.  
-
-4.nf.b.3.d : Solve word problems involving addition and subtraction of fractions referring to the same whole and having like denominators, e.g., by using visual fraction models and equations to represent the problem.
-
-4.nf.b.4.b : Understand a multiple of a/b as a multiple of 1/b, and use this understanding to multiply a fraction by a whole number. For example, use a visual fraction model to express 3 × (2/5) as 6 × (1/5), recognizing this product as 6/5. (In general, n × (a/b) = (n × a)/b.)
-
-4.nf.b.4.b : Solve word problems involving multiplication of a fraction by a whole number, e.g., by using visual fraction models and equations to represent the problem. For example, if each person at a party will eat 3/8 of a pound of roast beef, and there will be 5 people at the party, how many pounds of roast beef will be needed? Between what two whole numbers does your answer lie? 
-
-
-
-
-NOTES: if i where to add something it would be braces and brackets, the question is do i add them to existing items or create some new ones?
-ok took care of that....
-but what about fractions???
-the workbook has fractions the standard states:
-Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols.
-so would that include fractions???
-I think using fractions could be a check on whether or not fractions are known. so i think they are fair game.
-//maybe make every 3rd type have fractions. Or maybe even types???? or how bout divisible by 3?? maybe 4 as that  would preclude braces...
-//use only 4th grade fractions....
-1 p
-	1: b(a)   
-	2: (a)b  
-	3: b(a)c  
-2 p
-	4: (a)(b)  
-	5: c(a)(b) 
-	6: (a)c(b)   
-	7: (a)(b)c  
+        this.a = Math.floor(Math.random()*8)+2;
+        this.b = Math.floor(Math.random()*8)+2;
+        this.c = Math.floor(Math.random()*8)+2;
+        this.d = parseInt(this.a * this.b);
 	
-	8: c(a)d(b) 
-	9: (a)c(b)d   
-	10: c(a)(b)d   
+        this.answer = '' + parseInt(this.a * this.b) + ' x ' + this.c;
+	this.setAnswer('' + this.answer,0);
+        this.mButtonA.setAnswer('' + this.answer);
 
-	11: c(a)d(b)e 
-2p INNERS
-	12: [(a)b]c   
-	13: (c(a)b)d  
-	14: c[(a)b]d
-	15: c[b(a)]   
-	16: d[b(a)c]  
-	17: d(b(a)c)e  
-3 inners
-   	18:  e{d[b(a)c]} 
-   	19:  (d(b(a)c))e  
-   	20:  e{[(b(a)c]d}  
-   	21:  ((b(a)c)d)e   
-	22:  f{d[b(a)c]e}g   
+        this.mButtonB.setAnswer('' + parseInt(this.a + this.b) + ' x ' + this.c);
+        this.mButtonC.setAnswer('' + parseInt(this.a + this.b) + ' x ' + parseInt(this.a + this.c));
+        this.mButtonD.setAnswer('' + parseInt(this.a * this.b) + ' x ' + parseInt(this.a * this.c));
+        this.shuffle(10);
 
-   	//with braces and brackets	
-   	
-
-inner needs to be done.. i dont think i need so many of the 2p type.... or it might not do any harm to have them...
-
-3 p 1 inner
-: ((a)) 
-	: (b(a))
-	: (b(a)c)
-	: d(b(a)c)
-
-2p should be overlayed with another parens or bracket etc and that would give us 3 p.
-
-this might be toughest i need to give maybe through in one with braces and brackets.... make a couple with inner 3 deep inner parens...
-: e((b(a)c)d)
-
-
-********/
+        this.setQuestion('Which of these is the same as: ' + this.a + ' &times (' + this.b + ' &times ' + this.c + ')');
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_22',5.0122,'5.oa.a.1','f(d(b(a)c)e)g',2);
