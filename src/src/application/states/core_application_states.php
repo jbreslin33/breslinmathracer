@@ -72,6 +72,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTEST_APPLICATION);
 	}
+	if (application.mEvaluationsID == 16 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_TEST_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_TEST_APPLICATION);
+	}
 
 },
 
@@ -310,14 +314,21 @@ execute: function(application)
 			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
 			
-			//Firteen	
+			//Fifteen	
 			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[32];
 			APPLICATION.mItemAttemptsTypeArrayFifteen = itemAttemptsTypesFifteen.split(":");
 	
 			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[33];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen = itemAttemptsTransactionCodesFifteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[34];
+			//Sixteen	
+			var itemAttemptsTypesSixteen = APPLICATION.mResponseArray[34];
+			APPLICATION.mItemAttemptsTypeArraySixteen = itemAttemptsTypesSixteen.split(":");
+	
+			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[35];
+			APPLICATION.mItemAttemptsTransactionCodeArraySixteen = itemAttemptsTransactionCodesSixteen.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[36];
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 			if (application.mEvaluationsID == 1)
@@ -1578,6 +1589,44 @@ execute: function(application)
 		application.log('APPLICATION::TEST_APPLICATION execute');
 	}
 	application.mHud.setOrange('TestID:' + APPLICATION.mEvaluationsAttemptsID);
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TERRA_NOVA_TEST_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TERRA_NOVA_TEST_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TerraNovaTestGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TERRA_NOVA_TEST_APPLICATION execute');
+	}
 },
 
 exit: function(application)

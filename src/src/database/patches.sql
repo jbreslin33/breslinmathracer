@@ -1,2 +1,3 @@
-insert into evaluations (id,description) values (15,'Test');
-ALTER TABLE users ADD COLUMN alltimetest integer;
+insert into evaluations (id,description) values (16,'TerraNovaTest');
+ALTER TABLE users ADD COLUMN alltimeterranovatest integer;
+

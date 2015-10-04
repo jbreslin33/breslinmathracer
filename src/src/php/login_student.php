@@ -155,6 +155,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataY = ""; 
 	$itemTypesRawDataZ = ""; 
 	$itemTypesRawDataAZ = ""; 
+	$itemTypesRawDataAA = ""; 
+	$itemTypesRawDataAB = ""; 
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
 	{
@@ -519,6 +521,33 @@ public function sendLoginStudent()
                         $itemTypesRawDataAZ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayFifteen[$i];
                 }
         }
+	
+	//Sixteen	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArraySixteen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAA .= $this->mApplication->mNormal->mItemAttemptsTypeArraySixteen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAA .= ":";
+                        $itemTypesRawDataAA .= $this->mApplication->mNormal->mItemAttemptsTypeArraySixteen[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySixteen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAB .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySixteen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAB .= ":";
+                        $itemTypesRawDataAB .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySixteen[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -587,6 +616,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataZ;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAZ;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAA;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAB;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;

@@ -304,7 +304,18 @@ var Item = new Class(
                 {
                         this.mTimesTablesInfo.mMesh.appendChild(optionE);
                 }
-
+		
+		var optionF = document.createElement("option");
+                optionF.value = 16;
+                optionF.text = 'Terra Nova Test';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionF);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionF);
+		}
 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
