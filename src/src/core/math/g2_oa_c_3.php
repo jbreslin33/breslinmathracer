@@ -13,6 +13,8 @@ initialize: function(sheet)
 
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
+ 	
+	this.mChopWhiteSpace = true;
 
         //variables
         this.s = 0;
@@ -25,8 +27,8 @@ initialize: function(sheet)
 	}
 
        	this.setQuestion(this.ns.mNameOne + ' wants you to write an equation with 2 equal addends that equals ' + this.s + '.');
-        this.setAnswer('' + this.a + ' + ' + this.a + ' = ' + this.s,0);
-        this.setAnswer('' + this.s + ' = ' + this.a + ' + ' + this.a,1);
+        this.setAnswer('' + this.a + '+' + this.a + '=' + this.s,0);
+        this.setAnswer('' + this.s + '=' + this.a + '+' + this.a,1);
 }
 });
 
