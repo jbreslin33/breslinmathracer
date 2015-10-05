@@ -285,7 +285,7 @@ Extends: TextItem,
                 	this.y = Math.floor(Math.random()*98)+2;
 		}
 
-                this.setQuestion('At ' + this.ns.mSchoolOne + ' room ' + this.x + ' ate ' + this.a + ' ' + this.ns.mFruitOne + '. Room '  + this.x + ' ate ' + this.b + ' times as many ' + this.ns.mFruitOne + ' as room ' + this.y + '. How many ' + this.ns.mFruitOne + ' did room ' + this.y + ' eat? Write a number sentence that can be used to solve how many minutes ' + this.ns.mNameTwo + ' played a day. ' + this.ns.mNameMachine.getOperationInstructionEquation());
+                this.setQuestion('At ' + this.ns.mSchoolOne + ' room ' + this.x + ' ate ' + this.a + ' ' + this.ns.mFruitOne + '. Room '  + this.x + ' ate ' + this.b + ' times as many ' + this.ns.mFruitOne + ' as room ' + this.y + '. Write a number sentence that can be used to solve how many ' + this.ns.mFruitOne + ' room ' + this.y + ' ate. ' + this.ns.mNameMachine.getOperationInstructionEquation());
 
                 this.setAnswer('' + this.a + '/' + this.b + '=' + this.c ,0);
                 this.setAnswer('' + this.c + '=' + this.a + '/' + this.b ,1);
