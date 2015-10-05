@@ -18,8 +18,9 @@ Extends: FourButtonItem,
                 this.b = 2;
                 this.aa = 2;
                 this.bb = 1;
+		this.answer = '';
 
-                while (this.a < this.b || this.aa > this.bb)
+                while (this.a <= this.b || this.aa >= this.bb)
                 {
                 	this.a = Math.floor(Math.random()*8)+2;
                 	this.b = Math.floor(Math.random()*8)+2;
@@ -31,13 +32,29 @@ Extends: FourButtonItem,
 
                 this.setQuestion('' + '$' + this.x.getMoney() + ' - ' + this.y.getMoney() );
 		this.z = this.x.subtract(this.y);
+		this.one = new Decimal(1);
+		this.answerB = this.z.subtract(this.one);
+		this.answerC = this.z.add(this.one);
+                	
+		this.r = Math.floor(Math.random()*4);
 
-                this.answer = '' + '$' + this.z.getMoney();
-                this.setAnswer('' + this.answer,0);
-                this.mButtonA.setAnswer('' + this.answer);
-                this.mButtonB.setAnswer('' + this.a);
-                this.mButtonC.setAnswer('' + this.b);
-                this.mButtonD.setAnswer('' + this.aa);
+		if (parseInt(this.r) == 0)
+		{
+                	this.answer = '' + 'None of these';
+                	this.setAnswer('' + this.answer,0);
+                	this.mButtonA.setAnswer('' + this.answer);
+			this.mButtonD.setAnswer('' + parseInt(this.a - this.b) + '.' + parseInt(this.bb - this.aa));  
+		}
+		else
+		{	
+                	this.answer = '' + '$' + this.z.getMoney();
+                	this.setAnswer('' + this.answer,0);
+                	this.mButtonA.setAnswer('' + this.answer);
+                	this.mButtonD.setAnswer('' + 'None of these');
+		}
+
+                this.mButtonB.setAnswer('' + '$' + this.answerB.getMoney());
+                this.mButtonC.setAnswer('' + '$' + this.answerC.getMoney());
                 this.shuffle(10);
         }
 });
