@@ -13,35 +13,31 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.x = 4;
-                this.y = 2;
-                this.z = 2;
-                this.r = 0;
-                this.a = 0;
-                this.b = 0;
-                this.c = 0;
-                this.m = 0;
-                while (this.m == 0 || this.a == this.b || this.a == this.c || this.a == this.m || this.b == this.c || this.b == this.m || this.c == this.m)
+
+                this.a = 1;
+                this.b = 2;
+                this.aa = 2;
+                this.bb = 1;
+
+                while (this.a < this.b || this.aa > this.bb)
                 {
-                        this.x = Math.floor(Math.random()*8)+2;
-                        this.y = Math.floor(Math.random()*5)+5;
-                        this.r = Math.floor(Math.random()*this.x)+1;
-                        this.z = parseInt(this.x * this.y) + this.r ;
+                	this.a = Math.floor(Math.random()*8)+2;
+                	this.b = Math.floor(Math.random()*8)+2;
+                	this.aa = Math.floor(Math.random()*89)+10;
+                	this.bb = Math.floor(Math.random()*89)+10;
+		}
+		this.x = new Decimal(this.a + '.' + this.aa); 
+		this.y = new Decimal(this.b + '.' + this.bb); 
 
-                        this.a = Math.floor(Math.random()*9)+1;
-                        this.b = Math.floor(Math.random()*9)+1;
-                        this.c = Math.floor(Math.random()*9)+1;
-                        this.m = this.z % this.x;
-                }
+                this.setQuestion('' + '$' + this.x.getMoney() + ' - ' + this.y.getMoney() );
+		this.z = this.x.subtract(this.y);
 
-                this.setQuestion('' + this.ns.mNameOne + ' had ' + this.z + ' ' + this.ns.mThingOne + '. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,1) + ' divided them equally among ' + this.x + ' friends. How many ' + this.ns.mThingOne + ' did ' + this.ns.mNameOne + ' have left?');
-
-                this.answer = '' + this.m;
+                this.answer = '' + '$' + this.z.getMoney();
                 this.setAnswer('' + this.answer,0);
                 this.mButtonA.setAnswer('' + this.answer);
                 this.mButtonB.setAnswer('' + this.a);
                 this.mButtonC.setAnswer('' + this.b);
-                this.mButtonD.setAnswer('' + this.c);
+                this.mButtonD.setAnswer('' + this.aa);
                 this.shuffle(10);
         }
 });
