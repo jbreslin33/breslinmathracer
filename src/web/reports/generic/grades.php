@@ -140,7 +140,7 @@ else
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $user_id;
-	$queryOne .= " AND evaluations_id = 15 OR evaluations_id = 16 order by start_time desc;";
+	$queryOne .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
