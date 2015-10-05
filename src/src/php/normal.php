@@ -75,6 +75,12 @@ function __construct($application)
 	
 	$this->mItemAttemptsTypeArraySixteen    = array();
 	$this->mItemAttemptsTransactionCodeArraySixteen    = array();
+	
+	$this->mItemAttemptsTypeArraySeventeen    = array();
+	$this->mItemAttemptsTransactionCodeArraySeventeen    = array();
+	
+	$this->mItemAttemptsTypeArrayEighteen    = array();
+	$this->mItemAttemptsTransactionCodeArrayEighteen    = array();
 }
 
 public function process()
@@ -212,6 +218,16 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArraySixteen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArraySixteen[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 17)
+			{
+                        	$this->mItemAttemptsTypeArraySeventeen[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArraySeventeen[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 18)
+			{
+                        	$this->mItemAttemptsTypeArrayEighteen[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayEighteen[]  = pg_Result($result,$i,'transaction_code');
 			}
                 }
         }

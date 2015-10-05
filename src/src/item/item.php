@@ -316,6 +316,30 @@ var Item = new Class(
 		{
                 	this.mTimesTablesInfo.mMesh.appendChild(optionF);
 		}
+		
+		var optionG = document.createElement("option");
+                optionG.value = 17;
+                optionG.text = 'Homework';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionG);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionG);
+		}
+		
+		var optionH = document.createElement("option");
+                optionH.value = 18;
+                optionH.text = 'Terra Nova Homework';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionH);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionH);
+		}
 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';

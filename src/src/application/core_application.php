@@ -108,6 +108,14 @@ Extends: Application,
 		//Sixteen TerraNovaTest 
 		this.mItemAttemptsTypeArraySixteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArraySixteen = new Array(); //from db
+		
+		//Seventeen Homework
+		this.mItemAttemptsTypeArraySeventeen = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArraySeventeen = new Array(); //from db
+		
+		//Eighteen TerraNovaHomework
+		this.mItemAttemptsTypeArrayEighteen = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayEighteen = new Array(); //from db
 
 		//algorithms
 		this.mFirst = '';
@@ -188,6 +196,8 @@ Extends: Application,
                 this.mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION      (this);
                 this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
                 this.mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION      (this);
+                this.mHOMEWORK_APPLICATION = new HOMEWORK_APPLICATION      (this);
+                this.mTERRA_NOVA_HOMEWORK_APPLICATION = new TERRA_NOVA_HOMEWORK_APPLICATION      (this);
 	
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
@@ -777,6 +787,78 @@ highestAchieved: function()
                         while (i < this.mItemAttemptsTypeArraySixteen.length && foundWrong == false)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 1)
+                                {
+                                        currentStreak++;
+                                        i++;
+                                }
+                                else
+                                {
+                                        foundWrong = true;
+                                }
+                        }
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+		
+		if (parseInt(this.mEvaluationsID) == 17)
+                {
+                        //all time
+                        for (var i = 0; i < this.mItemAttemptsTypeArraySeventeen.length; i++)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
+                                {
+                                        hiStreak++;
+                                        if (parseInt(hiStreak) >= parseInt(score))
+                                        {
+                                                score = hiStreak;
+                                        }
+                                }
+                                else
+                                {
+                                        hiStreak = 0;
+                                }
+                        }
+
+                        //latest streak
+                        var i = 0;
+                        while (i < this.mItemAttemptsTypeArraySeventeen.length && foundWrong == false)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
+                                {
+                                        currentStreak++;
+                                        i++;
+                                }
+                                else
+                                {
+                                        foundWrong = true;
+                                }
+                        }
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+		
+		if (parseInt(this.mEvaluationsID) == 18)
+                {
+                        //all time
+                        for (var i = 0; i < this.mItemAttemptsTypeArrayEighteen.length; i++)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
+                                {
+                                        hiStreak++;
+                                        if (parseInt(hiStreak) >= parseInt(score))
+                                        {
+                                                score = hiStreak;
+                                        }
+                                }
+                                else
+                                {
+                                        hiStreak = 0;
+                                }
+                        }
+
+                        //latest streak
+                        var i = 0;
+                        while (i < this.mItemAttemptsTypeArrayEighteen.length && foundWrong == false)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
                                 {
                                         currentStreak++;
                                         i++;

@@ -76,7 +76,14 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_TEST_APPLICATION);
 	}
-
+	if (application.mEvaluationsID == 17 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mHOMEWORK_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mHOMEWORK_APPLICATION);
+	}
+	if (application.mEvaluationsID == 18 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_HOMEWORK_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_HOMEWORK_APPLICATION);
+	}
 },
 
 exit: function(application)
@@ -328,7 +335,21 @@ execute: function(application)
 			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[35];
 			APPLICATION.mItemAttemptsTransactionCodeArraySixteen = itemAttemptsTransactionCodesSixteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[36];
+			//Seventeen	
+			var itemAttemptsTypesSeventeen = APPLICATION.mResponseArray[36];
+			APPLICATION.mItemAttemptsTypeArraySeventeen = itemAttemptsTypesSeventeen.split(":");
+	
+			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[37];
+			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen = itemAttemptsTransactionCodesSeventeen.split(":");
+			
+			//Eighteen	
+			var itemAttemptsTypesEighteen = APPLICATION.mResponseArray[38];
+			APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
+	
+			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
+			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[40];
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 			if (application.mEvaluationsID == 1)
@@ -771,8 +792,29 @@ execute: function(application)
 	
 			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[33];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen = itemAttemptsTransactionCodesFifteen.split(":");
+			
+			//Sixteen	
+			var itemAttemptsTypesSixteen = APPLICATION.mResponseArray[34];
+			APPLICATION.mItemAttemptsTypeArraySixteen = itemAttemptsTypesSixteen.split(":");
+	
+			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[35];
+			APPLICATION.mItemAttemptsTransactionCodeArraySixteen = itemAttemptsTransactionCodesSixteen.split(":");
+			
+			//Seventeen	
+			var itemAttemptsTypesSeventeen = APPLICATION.mResponseArray[36];
+			APPLICATION.mItemAttemptsTypeArraySeventeen = itemAttemptsTypesSeventeen.split(":");
+	
+			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[37];
+			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen = itemAttemptsTransactionCodesSeventeen.split(":");
+			
+			//Eightteen	
+			var itemAttemptsTypeEighteen = APPLICATION.mResponseArray[38];
+			APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
+	
+			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
+			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[34];
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[40];
 
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -1626,6 +1668,82 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::TERRA_NOVA_TEST_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var HOMEWORK_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::HOMEWORK_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new HomeworkGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::HOMEWORK_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var TERRA_NOVA_HOMEWORK_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TERRA_NOVA_HOMEWORK_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TerraNovaHomeworkGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TERRA_NOVA_HOMEWORK_APPLICATION execute');
 	}
 },
 

@@ -157,6 +157,10 @@ public function sendLoginStudent()
 	$itemTypesRawDataAZ = ""; 
 	$itemTypesRawDataAA = ""; 
 	$itemTypesRawDataAB = ""; 
+	$itemTypesRawDataAC = ""; 
+	$itemTypesRawDataAD = ""; 
+	$itemTypesRawDataAE = ""; 
+	$itemTypesRawDataAF = ""; 
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
 	{
@@ -548,6 +552,60 @@ public function sendLoginStudent()
                         $itemTypesRawDataAB .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySixteen[$i];
                 }
         }
+	
+	//Seventeen	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArraySeventeen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAC .= $this->mApplication->mNormal->mItemAttemptsTypeArraySeventeen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAC .= ":";
+                        $itemTypesRawDataAC .= $this->mApplication->mNormal->mItemAttemptsTypeArraySeventeen[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySeventeen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAD .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySeventeen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAD .= ":";
+                        $itemTypesRawDataAD .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArraySeventeen[$i];
+                }
+        }
+	
+	//Eighteen	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayEighteen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAE .= $this->mApplication->mNormal->mItemAttemptsTypeArrayEighteen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAE .= ":";
+                        $itemTypesRawDataAE .= $this->mApplication->mNormal->mItemAttemptsTypeArrayEighteen[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEighteen); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAF .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEighteen[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAF .= ":";
+                        $itemTypesRawDataAF .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEighteen[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -620,6 +678,14 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAA;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAB;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAC;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAD;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAE;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAF;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;
