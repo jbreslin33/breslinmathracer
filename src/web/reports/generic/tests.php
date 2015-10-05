@@ -129,7 +129,7 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 $query = "select * from evaluations_attempts where user_id = ";
 $query .= $user_id;
-$query .= " AND evaluations_id = 15 order by start_time desc;";
+$query .= " AND evaluations_id = 15 OR evaluations_id = 16  order by start_time desc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -202,19 +202,16 @@ else
 		}
 	}
 
-	$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+	$gradeDecimal = 0; 	
+	if ($progressionTotal == 0)
+	{
+		$gradeDecimal = 0;
+	}
+	else
+	{
+		$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+	}
 	$gradePercent = (int)($gradeDecimal * 100);
-/*
-        echo '<br>';
-	echo $correctTotal; 
-        echo '<br>';
-        echo '------';
-        echo '<br>';
-	echo $progressionTotal; 
-        echo '<br>';
-        echo '=';
-        echo '<br>';
-*/
 	$gradeText = "Grade: ";
 	$gradeText .= $gradePercent;
 	$gradeText .= "%";
