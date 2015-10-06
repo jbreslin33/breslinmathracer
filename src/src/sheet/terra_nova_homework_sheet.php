@@ -5,44 +5,17 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-         
-	var t = APPLICATION.mItemTypesArray.length; 
-	var potentialPoints = 0;
-	this.mCurrentElement = 0;
 
-	var score = 0;
-        for (var i = 0; i < APPLICATION.mItemTypesArray.length; i++)
-        {
-        	var foundOne = false;
-                var j = 0;
-                while (j < APPLICATION.mItemAttemptsTypeArrayOne.length && foundOne == false)
-                {
-                	if (APPLICATION.mItemTypesArray[i] == APPLICATION.mItemAttemptsTypeArrayOne[j])
-                        {
-                        	score++;
-                                foundOne = true;
-                        }
-                   	j++;
-                }
-	}
-	var needed = parseInt(score * 10);	
-	
-	while (potentialPoints < needed)
-	{
-		var type = '';
-        	var p = Math.floor(Math.random()*t);
-		var i = 0;
-		while (i < APPLICATION.mItemAttemptsTypeArrayOne.length && type == '') //this should break out
-		{
-			if (APPLICATION.mItemAttemptsTypeArrayOne[i] == APPLICATION.mItemTypesArray[p])
-			{
-				type = APPLICATION.mItemTypesArray[p]; 
-				this.mIDArray.push('' + type);
-				potentialPoints = parseInt(p + potentialPoints);	
-			} 		
-			i++;
-		} 
-	}
+	this.mIDArray.push('' + '1.oa.a.1_11');
+        this.mIDArray.push('' + '2.oa.a.1_21');
+        this.mIDArray.push('' + '3.oa.a.3_6');
+        this.mIDArray.push('' + '4.oa.a.3_13');
+        this.mIDArray.push('' + '5.nbt.b.7_20');
+        this.mIDArray.push('' + '5.oa.a.1_23');
+ 	this.mIDArray.push('' + '4.oa.a.3_14');
+ 	this.mIDArray.push('' + '5.nbt.b.7_21');
+         
+	this.mCurrentElement = 0;
 },
 
 pickItem: function()
