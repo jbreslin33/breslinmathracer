@@ -238,7 +238,7 @@ var Item = new Class(
                 
 		//TIMES TABLES
 		//mTimesInfo
-                this.mTimesTablesInfo = new Shape(200,50,125,225,this.mSheet.mGame,"SELECT","","");
+                this.mTimesTablesInfo = new Shape(200,50,125,100,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mTimesTablesInfo);
 
 		//just fill it here...
@@ -341,7 +341,7 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionH);
 		}
 
-		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,225,this.mSheet.mGame,"BUTTON","","");
+		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
                 this.addShape(this.mTimesTablesInfoButton);
 	},
