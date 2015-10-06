@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-        return '6.ns.c.6.a_1';
+        return '6.ns.c.6.a_5';
 },
 
 getItem: function(id)
@@ -735,6 +735,10 @@ if (id == '6.rp.a.3.a_3')
   if (id == '6.ns.c.6.a_4')
         {
                 return new i_6_ns_c_6_a__4(this.mSheet);
+        } 
+  if (id == '6.ns.c.6.a_5')
+        {
+                return new i_6_ns_c_6_a__5(this.mSheet);
         } 
 
 //6.ns.c.6.b
