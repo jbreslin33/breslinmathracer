@@ -25,6 +25,8 @@ session_start();
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
 <li><a href="/web/reports/generic/class_grades.php">Class Grades</a></li>
 <li><a href="/web/reports/generic/homeworks.php">Daily Homework</a></li>
+<li><a href="/web/reports/generic/homework_grades.php">Homework Grades</a></li>
+<li><a href="/web/reports/generic/homework_class_grades.php">Class Homework Grades</a></li>
 </ul>
 
 </body>
