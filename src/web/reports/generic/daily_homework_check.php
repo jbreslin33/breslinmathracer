@@ -50,7 +50,7 @@ echo "<br>";
 <p><b> Class Grades </p></b>
 
 <p><b> Select Room: </p></b>
-<form method="post" action="/web/reports/generic/homework_class_grades.php">
+<form method="post" action="/web/reports/generic/daily_homework_check.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -82,7 +82,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/generic/homework_class_grades.php?room_id=' + x; 
+	document.location.href = '/web/reports/generic/daily_homework_check.php?room_id=' + x; 
 }
 </script>
 
@@ -104,11 +104,18 @@ $resultStudents = pg_query($conn,$queryStudents);
 $numrowsStudents = pg_numrows($resultStudents);
 
 $userArray = array();
-$gradesArray = array();
+
+$homeworkGradesArray = array();
+$terraNovaGradesArray = array();
+
+$homeworkQuestionsArray = array(); //0,1,2
+$terraNovaQuestionsArray = array(); //0,1,2
 
 for($s = 0; $s < $numrowsStudents; $s++)
 {
-	$gradeArray = array();
+	$homeworkGradeArray = array();
+	$terraNovaGradeArray = array();
+
 	$rowStudents = pg_fetch_array($resultStudents, $s);
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
@@ -122,9 +129,9 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	{
 		$rowOne = pg_fetch_array($resultOne, $i);
 
-       	 	$query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
+       	 	$query = "select progression, transaction_code, evaluations_attempts.evaluations_id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
 		$query .= $rowOne[0];
-		$query .= " order by start_time desc;";
+		$query .= " order by item_attempts.start_time desc;";
         	$result = pg_query($conn,$query);
         	$numrows = pg_numrows($result);
 
@@ -134,26 +141,54 @@ for($s = 0; $s < $numrowsStudents; $s++)
         	{
                 	$row = pg_fetch_array($result, $x);
                 
-			$progression = $row[7];
+			$progression = $row[0];
 			$progressionTotal = floatVal($progressionTotal + $progression);
 		
-			$transactionCode = $row[3];
+			$transactionCode = $row[1];
+		
+			$evaluations_id = $row[2]; 
+			if ($evaluations_id == 17)
+			{
+				$homeworkQuestionsArray[] = $transactionCode;
+			}
+			if ($evaluations_id == 18)
+			{
+				$terraNovaQuestionsArray[] = $transactionCode;
+			}
 			if ($transactionCode == 1)
 			{
 				$correctTotal = floatVal($correctTotal + $progression);
 			}
 		}
 
-		$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+		$gradeDecimal = 0;
+		if ($progressionTotal ==  0)	
+		{
+			$gradeDecimal = 0;
+		}
+		else
+		{
+			$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+		}
+		
 		$gradePercent = (int)($gradeDecimal * 100);
-		$gradeArray[] = $gradePercent;
+
+		$evaluation_id = $row[2]; 
+		if ($evaluation_id == 17)
+		{
+			$homeworkGradeArray[] = $gradePercent;
+		}
+		if ($evaluation_id == 18)
+		{
+			$terraNovaGradeArray[] = $gradePercent;
+		}
         }
-	
-	$totalTests = intval(count($gradeArray));
+
+	$totalTests = intval(count($homeworkGradeArray));
 	$totalOfTests = 0;
 	for($t = 0; $t < $totalTests; $t++)
 	{
-		$totalOfTests += $gradeArray[$t];
+		$totalOfTests += $homeworkGradeArray[$t];
 	}
 	$averageGrade = 0;
 	if ($totalTests != 0)
@@ -164,14 +199,37 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	{
 		$averageGrade = 0;
 	}
-	$gradesArray[] = $averageGrade;	
+	$homeworkGradesArray[] = $averageGrade;	
+
+	$totalTests = intval(count($terraNovaGradeArray));
+	$totalOfTests = 0;
+	for($t = 0; $t < $totalTests; $t++)
+	{
+		$totalOfTests += $terraNovaGradeArray[$t];
+	}
+	$averageGrade = 0;
+	if ($totalTests != 0)
+	{
+		$averageGrade = floatVal($totalOfTests / $totalTests);
+	}
+	else
+	{
+		$averageGrade = 0;
+	}
+	$terraNovaGradesArray[] = $averageGrade;	
 }
 
 echo '<table border=\"1\">';
 echo '<tr>';
 echo '<td> Student';
 echo '</td>';
-echo '<td> Grades';
+echo '<td> Homework Grade';
+echo '</td>';
+echo '<td> Total Homework Questions';
+echo '</td>';
+echo '<td> TerrNova Homework Grade';
+echo '</td>';
+echo '<td> Total TerraNova Homework Questions';
 echo '</td>';
 echo '</tr>';
 
@@ -188,7 +246,16 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo $fullname;
        	echo '</td>';
         echo '<td>';
-        echo $gradesArray[$y];
+        echo $homeworkGradesArray[$y];
+        echo '</td>';
+        echo '<td>';
+        echo count($homeworkQuestionsArray[$y]);
+        echo '</td>';
+        echo '<td>';
+        echo $terraNovaGradesArray[$y];
+        echo '</td>';
+        echo '<td>';
+        echo count($terraNovaQuestionsArray[$y]);
         echo '</td>';
         echo '</tr>';
 }
