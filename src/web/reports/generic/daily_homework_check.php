@@ -123,7 +123,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
-	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) order by start_time desc;";
+	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) AND ( extract(hour from evaluations_attempts.start_time) < 9 OR extract(hour from evaluations_attempts.start_time) > 14) order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
