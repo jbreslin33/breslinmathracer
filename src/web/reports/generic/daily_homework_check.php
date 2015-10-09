@@ -127,7 +127,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 
  	//$queryOne .= "AND ( extract(hour from evaluations_attempts.start_time) < 9 OR extract(hour from evaluations_attempts.start_time) > 14)";
 	$queryOne .= "AND evaluations_attempts.start_time > '";
-	$queryOne .= "2015-10-08 14:55:00";
+	$queryOne .= "2015-10-09 14:55:00";
 	$queryOne .= "'"; 
 
  	$queryOne .= " order by start_time desc;";
