@@ -116,6 +116,9 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$homeworkGradeArray = array();
 	$terraNovaGradeArray = array();
 
+	$homeworkQuestionArray = array(); //0,1,2
+	$terraNovaQuestionArray = array(); //0,1,2
+
 	$rowStudents = pg_fetch_array($resultStudents, $s);
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
@@ -149,11 +152,11 @@ for($s = 0; $s < $numrowsStudents; $s++)
 			$evaluations_id = $row[2]; 
 			if ($evaluations_id == 17)
 			{
-				$homeworkQuestionsArray[] = $transactionCode;
+				$homeworkQuestionArray[] = $transactionCode;
 			}
 			if ($evaluations_id == 18)
 			{
-				$terraNovaQuestionsArray[] = $transactionCode;
+				$terraNovaQuestionArray[] = $transactionCode;
 			}
 			if ($transactionCode == 1)
 			{
@@ -217,6 +220,11 @@ for($s = 0; $s < $numrowsStudents; $s++)
 		$averageGrade = 0;
 	}
 	$terraNovaGradesArray[] = $averageGrade;	
+
+	//questions total
+	$homeworkQuestionsArray[] = count($homeworkQuestionArray);
+	$terraNovaQuestionsArray[] = count($terraNovaQuestionArray);
+	
 }
 
 echo '<table border=\"1\">';
@@ -249,13 +257,13 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo $homeworkGradesArray[$y];
         echo '</td>';
         echo '<td>';
-        echo count($homeworkQuestionsArray[$y]);
+        echo $homeworkQuestionsArray[$y];
         echo '</td>';
         echo '<td>';
         echo $terraNovaGradesArray[$y];
         echo '</td>';
         echo '<td>';
-        echo count($terraNovaQuestionsArray[$y]);
+        echo $terraNovaQuestionsArray[$y];
         echo '</td>';
         echo '</tr>';
 }
