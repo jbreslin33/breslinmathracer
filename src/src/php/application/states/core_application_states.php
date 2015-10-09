@@ -349,14 +349,23 @@ public function execute($bapplication)
 	}
 	if ($bapplication->mCode == 101) //universal update
 	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+		if ($bapplication)
+		{
+			if ($bapplication->mEvaluationsAttempt)
+			{
+				if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray)
+				{
+					for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+					{	 
+						if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+						{  
+							$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+						}
+					}
+				}
 			}
+			$bapplication->mCode = 0;
 		}
-		$bapplication->mCode = 0;
 	}
 }
 public function bexit($bapplication)
