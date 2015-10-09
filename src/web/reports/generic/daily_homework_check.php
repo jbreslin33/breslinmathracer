@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>HOMEWORK CLASS GRADES</title>
+        <title>DAILY HOMEWORK CHECK</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -49,7 +49,7 @@ echo "<br>";
 
 <p><b> Class Grades </p></b>
 
-<p><b> Select Room and Student: </p></b>
+<p><b> Select Room: </p></b>
 <form method="post" action="/web/reports/generic/homework_class_grades.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
