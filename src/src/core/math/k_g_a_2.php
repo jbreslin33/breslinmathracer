@@ -105,9 +105,9 @@ createQuestionShapes: function()
 	var y = 90;
 
 	// dimensions of a single cube
-	var w1 = Math.floor(Math.random()*4)+1;
-	var h1 = Math.floor(Math.random()*4)+1;
-	var d1 = Math.floor(Math.random()*4)+1;
+	var w1 = 3;
+	var h1 = 3;
+	var d1 = 3;
 
 	var volume = w1*h1*d1; //Math.floor(Math.random()*3+1);
 
