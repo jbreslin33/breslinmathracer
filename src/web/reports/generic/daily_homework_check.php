@@ -129,34 +129,19 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	
 	$currentTime = time() + 3600;
 	//after school till midnight
-	if (((int) date('H', $currentTime)) >= 15)
+	if (((int) date('H', $currentTime)) > 15)
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		echo " after ";
 	}
-	//early morning
-	if (((int) date('H', $currentTime)) < 9)
+	//early morning and school
+	else	
 	{
-		$queryOne .= "AND (evaluations_attempts.start_time >= 'today' OR (evaluations_attempts.start_time >= 'yesterday' AND extract(hour from evaluations_attempts.start_time) >= 15)) ";
+		$queryOne .= "AND evaluations_attempts.start_time >= 'yesterday'";
+ 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		echo " other ";
 	}
-	//school hours
-	if (((int) date('H', $currentTime)) > 9 && ((int) date('H', $currentTime)) < 15)
-	{
-		$queryOne .= "AND ( (evaluations_attempts.start_time >= 'today' AND extract(hour from evaluations_attempts.start_time) < 9)  ) OR (evaluations_attempts.start_time >= 'yesterday' AND extract(hour from evaluations_attempts.start_time) >= 15)) ";
-	}
-
-
-	//date
-/*
-	if (((int) date('H', $currentTime)) > 15)
- 	{	
-		$queryOne .= "AND evaluations_attempts.start_time > '";
-		$queryOne .= "2015-10-09 14:55:00";
-		$queryOne .= "'"; 
-	}
-*/
-
-
 
  	$queryOne .= " order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
