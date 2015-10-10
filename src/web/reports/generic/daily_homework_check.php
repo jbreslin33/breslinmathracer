@@ -128,11 +128,20 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) ";
 	
 	$currentTime = time() + 3600;
-	if (((int) date('H', $currentTime)) > 15)
+	if (((int) date('H', $currentTime)) >= 15)
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		echo $currentTime; 
+		echo "greater than 15";
 	}
+	if (((int) date('H', $currentTime)) < 9)
+	{
+		$queryOne .= "AND (evaluations_attempts.start_time >= 'today' OR (evaluations_attempts.start_time >= 'yesterday' AND extract(hour from evaluations_attempts.start_time) >= 15)) ";
+		echo $currentTime; 
+		echo "less than 9";
+	}
+
 
 	//date
 /*
