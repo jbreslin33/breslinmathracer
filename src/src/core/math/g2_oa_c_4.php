@@ -11,6 +11,11 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '2.oa.c.4_1';
 
+        this.x = Math.floor(Math.random()*4)+2;
+        this.y = Math.floor(Math.random()*4)+2;
+	APPLICATION.log('x:' + this.x);
+	APPLICATION.log('y:' + this.y);
+
         this.setQuestion('' + 'what is this?');
         this.setAnswer('' + 'rectangle',0);
 
@@ -21,8 +26,19 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-        this.mRectangle = new Rectangle(200,100,100,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.mRectangle);
+	var x = 50;
+	var y = 50;
+	for (i = 0; i < this.y; i++)
+	{ 
+		x = 50;
+		for (j = 0; j < this.x; j++)
+		{
+			x = x + 25;
+        		var r = new Rectangle(25,25,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        		this.addQuestionShape(r);
+		}
+		y = y + 25;
+	}
 }
 });
 
