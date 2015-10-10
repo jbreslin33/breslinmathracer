@@ -126,7 +126,13 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
 	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) ";
-	$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
+	
+	$currentTime = time() + 3600;
+	if (((int) date('H', $currentTime)) > 15)
+	{
+		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
+ 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+	}
 
 	//date
 /*
