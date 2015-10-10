@@ -133,22 +133,16 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo $currentTime; 
-		echo "greater than 15";
 	}
 	//early morning
 	if (((int) date('H', $currentTime)) < 9)
 	{
 		$queryOne .= "AND (evaluations_attempts.start_time >= 'today' OR (evaluations_attempts.start_time >= 'yesterday' AND extract(hour from evaluations_attempts.start_time) >= 15)) ";
-		echo $currentTime; 
-		echo "less than 9";
 	}
 	//school hours
 	if (((int) date('H', $currentTime)) > 9 && ((int) date('H', $currentTime)) < 15)
 	{
 		$queryOne .= "AND ( (evaluations_attempts.start_time >= 'today' AND extract(hour from evaluations_attempts.start_time) < 9)  ) OR (evaluations_attempts.start_time >= 'yesterday' AND extract(hour from evaluations_attempts.start_time) >= 15)) ";
-		echo $currentTime; 
-		echo "school time";
 	}
 
 
