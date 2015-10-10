@@ -111,6 +111,8 @@ $terraNovaGradesArray = array();
 $homeworkQuestionsArray = array(); //0,1,2
 $terraNovaQuestionsArray = array(); //0,1,2
 
+ 	//$queryOne .= "AND ( extract(hour from evaluations_attempts.start_time) < 9 OR extract(hour from evaluations_attempts.start_time) > 14)";
+
 for($s = 0; $s < $numrowsStudents; $s++)
 {
 	$homeworkGradeArray = array();
@@ -124,11 +126,19 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
 	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) ";
+	$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
 
- 	//$queryOne .= "AND ( extract(hour from evaluations_attempts.start_time) < 9 OR extract(hour from evaluations_attempts.start_time) > 14)";
-	$queryOne .= "AND evaluations_attempts.start_time > '";
-	$queryOne .= "2015-10-09 14:55:00";
-	$queryOne .= "'"; 
+	//date
+/*
+	if (((int) date('H', $currentTime)) > 15)
+ 	{	
+		$queryOne .= "AND evaluations_attempts.start_time > '";
+		$queryOne .= "2015-10-09 14:55:00";
+		$queryOne .= "'"; 
+	}
+*/
+
+
 
  	$queryOne .= " order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
