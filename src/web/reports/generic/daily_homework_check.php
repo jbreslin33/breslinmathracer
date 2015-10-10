@@ -129,18 +129,25 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	
 	$currentTime = time() + 3600;
 	//after school till midnight
-	if (((int) date('H', $currentTime)) > 15)
+	$d = date("w");
+	if ($d == 6)
+	{
+		$queryOne .= "AND evaluations_attempts.start_time >= 'yesterday'";
+ 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		echo " sat ";
+	}
+	else if (((int) date('H', $currentTime)) > 15)
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " after ";
+		echo " bafter ";
 	}
 	//early morning and school
 	else	
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'yesterday'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " other ";
+		echo " bother ";
 	}
 
  	$queryOne .= " order by start_time desc;";
