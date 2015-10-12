@@ -130,24 +130,37 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$currentTime = time() + 3600;
 	//after school till midnight
 	$d = date("w");
-	if ($d == 6)
+	$h = date("G");
+	if ($d == 1 && $h < 15)
 	{
-		$queryOne .= "AND evaluations_attempts.start_time >= 'yesterday'";
+		$queryOne .= "AND evaluations_attempts.start_time >= CURRENT_DATE - 3 ";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " sat ";
+		echo " | monday before school out";
+	}
+	else if ($d == 0)
+	{
+		$queryOne .= "AND evaluations_attempts.start_time >= CURRENT_DATE - 2 ";
+ 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		echo " | sunday";
+	}
+	else if ($d == 6)
+	{
+		$queryOne .= "AND evaluations_attempts.start_time >= CURRENT_DATE - 1 ";
+ 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		echo " | saturday";
 	}
 	else if (((int) date('H', $currentTime)) > 15)
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " bafter ";
+		echo " | after school";
 	}
 	//early morning and school
 	else	
 	{
 		$queryOne .= "AND evaluations_attempts.start_time >= 'yesterday'";
  		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " bother ";
+		echo " | early morning and school time";
 	}
 
  	$queryOne .= " order by start_time desc;";
