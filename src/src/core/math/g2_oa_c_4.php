@@ -20,6 +20,7 @@ initialize: function(sheet)
 	var answerOneB = '';
 	var answerTwoA = '';
 	var answerTwoB = '';
+
         for (i = 0; i < this.y; i++)
 	{
 		if (i == 0)
@@ -32,8 +33,10 @@ initialize: function(sheet)
 		}
 	}
 	answerOneA = answerOneA + ' = ' + parseInt(this.x * this.y);
-
+	answerOneB = '' + parseInt(this.x * this.y) + ' = ' + answerOneA;
+        
         this.setAnswer('' + answerOneA,0);
+        this.setAnswer('' + answerOneB,1);
 
         //move buttons
         this.mContinueIncorrectButton.setPosition(690,400);
