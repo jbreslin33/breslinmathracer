@@ -128,7 +128,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) ";
 	
 	$currentTime = time() + 3600;
-	//after school till midnight
+	date_default_timezone_set('America/New_York');
 	$d = date("w");
 	$h = date("G");
 	if ($d == 1 && $h < 15)
@@ -158,8 +158,8 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	//early morning and school
 	else	
 	{
-		$queryOne .= "AND evaluations_attempts.start_time >= 'yesterday'";
- 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
+		$queryOne .= "AND (evaluations_attempts.start_time >= 'yesterday'";
+ 		$queryOne .= " OR ( evaluations_attempts.start_time >= 'today' AND  extract(hour from evaluations_attempts.start_time) < 9))";
 		echo " | early morning and school time";
 	}
 
