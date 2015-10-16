@@ -59,13 +59,13 @@
 <script type="text/javascript" src="/src/item/item_attempt.php"></script>
 <script type="text/javascript" src="/src/item/states/item_attempt_states.php"></script>
 <script type="text/javascript" src="/src/item/text_item.php"></script>
-<script type="text/javascript" src="/src/item/graph_item.php"></script>
 <script type="text/javascript" src="/src/item/numberpad_item.php"></script>
 <script type="text/javascript" src="/src/item/text_item_fraction.php"></script>
 <script type="text/javascript" src="/src/item/text_item_mixed_number.php"></script>
 <script type="text/javascript" src="/src/item/text_item2.php"></script>
 <script type="text/javascript" src="/src/item/text_item3.php"></script>
 <script type="text/javascript" src="/src/item/text_item4.php"></script>
+<script type="text/javascript" src="/src/item/graph_item.php"></script>
 <script type="text/javascript" src="/src/item/three_button_item.php"></script>
 <script type="text/javascript" src="/src/item/four_button_item.php"></script>
 <script type="text/javascript" src="/src/item/item_button.php"></script>
