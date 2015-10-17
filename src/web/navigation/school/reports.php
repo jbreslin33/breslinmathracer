@@ -28,6 +28,7 @@ session_start();
 <li><a href="/web/reports/generic/homework_grades.php">Homework Grades</a></li>
 <li><a href="/web/reports/generic/homework_class_grades.php">Class Homework Grades</a></li>
 <li><a href="/web/reports/generic/daily_homework_check.php">Daily Homework Check</a></li>
+<li><a href="/web/reports/generic/any_homework_check.php">Any Homework Check</a></li>
 </ul>
 
 </body>
