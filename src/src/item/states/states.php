@@ -470,6 +470,9 @@ execute: function(item)
 exit: function(item)
 {
         item.hideContinueCorrect();
+
+		if(item.raphael != 0)
+     		item.raphael.remove();
 }
 
 });

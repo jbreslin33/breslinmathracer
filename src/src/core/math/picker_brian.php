@@ -743,6 +743,14 @@ if (id == '6.rp.a.3.a_3')
         } 
 
 //6.ns.c.6.c
+  if (id == '6.ns.c.6.c_1')
+        {
+                return new i_6_ns_c_6_c__1(this.mSheet);
+        }
+  if (id == '6.ns.c.6.c_2')
+        {
+                return new i_6_ns_c_6_c__2(this.mSheet);
+        }
   if (id == '6.ns.c.6.c_3')
         {
                 return new i_6_ns_c_6_c__3(this.mSheet);
