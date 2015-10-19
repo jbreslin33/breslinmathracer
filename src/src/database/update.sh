@@ -95,13 +95,13 @@ cat src/item/item.php >> min.js
 cat src/item/states/item_attempt_states.php >> min.js
 cat src/item/item_attempt.php >> min.js
 cat src/item/text_item.php >> min.js
-cat src/item/graph_item.php >> min.js
 cat src/item/numberpad_item.php >> min.js
 cat src/item/text_item_fraction.php >> min.js
 cat src/item/text_item_mixed_number.php >> min.js
 cat src/item/text_item2.php >> min.js
 cat src/item/text_item3.php >> min.js
 cat src/item/text_item4.php >> min.js
+cat src/item/graph_item.php >> min.js
 cat src/item/three_button_item.php >> min.js
 cat src/item/four_button_item.php >> min.js
 cat src/item/item_button.php >> min.js
