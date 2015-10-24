@@ -98,9 +98,9 @@ for($i = 0; $i < $numrows; $i++)
 </select>
 
 <p><b> Start time: </p></b>
-<input type="text" name="start_time">
+<input id="start_time" type="text" name="start_time">
 <p><b> End time: </p></b>
-<input type="text" name="end_time">
+<input id="end_time" type="text" name="end_time">
 
 </form>
 
@@ -108,7 +108,20 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x; 
+    	var y = '2015-10-01 08:30:00';
+    	var z = '2015-10-19 08:30:00';
+    	if (document.getElementById("start_time").value)
+	{
+		var y = document.getElementById("start_time").value; 	
+	}
+    	if (document.getElementById("end_time").value)
+	{
+		var y = document.getElementById("end_time").value; 	
+	}
+	//APPLICATION.log('y:' + y);
+	//APPLICATION.log('z:' + z);
+
+	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x + '&start_time=' + y + '&end_time=' + z; 
 }
 </script>
 
@@ -148,50 +161,19 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$terraNovaQuestionArray = array(); //0,1,2
 
 	$rowStudents = pg_fetch_array($resultStudents, $s);
+	$start_time = '2014-09-01 09:28:27';
+	$end_time = '2014-10-02 09:28:27';
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
-	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) ";
-	
-	$currentTime = time() + 3600;
-	date_default_timezone_set('America/New_York');
-	$d = date("w");
-	$h = date("G");
-	if ($d == 1 && $h < 15)
-	{
-		$queryOne .= "AND evaluations_attempts.start_time >= CURRENT_DATE - 3 ";
- 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " | monday before school out";
-	}
-	else if ($d == 0)
-	{
-		$queryOne .= "AND evaluations_attempts.start_time >= CURRENT_DATE - 2 ";
- 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " | sunday";
-	}
-	else if ($d == 6)
-	{
-		$queryOne .= "AND evaluations_attempts.start_time >= CURRENT_DATE - 1 ";
- 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " | saturday";
-	}
-	else if (((int) date('H', $currentTime)) > 15)
-	{
-		$queryOne .= "AND evaluations_attempts.start_time >= 'today'";
- 		$queryOne .= " AND ( extract(hour from evaluations_attempts.start_time) >= 15)";
-		echo " | after school";
-	}
-	//early morning and school
-	else	
-	{
-		$queryOne .= "AND (evaluations_attempts.start_time >= 'yesterday'";
- 		$queryOne .= " OR ( evaluations_attempts.start_time >= 'today' AND  extract(hour from evaluations_attempts.start_time) < 9))";
-		echo " | early morning and school time";
-	}
-
- 	$queryOne .= " order by start_time desc;";
+	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) AND evaluations_attempts.start_time > '";
+	$queryOne .= $start_time;
+	$queryOne .= "' AND evaluations_attempts.start_time < '";
+	$queryOne .= $end_time;
+	$queryOne .= "' order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
+	error_log($queryOne);
 
 	//this loop is to calc a test for a grade that is all
 	for($i = 0; $i < $numrowsOne; $i++)
