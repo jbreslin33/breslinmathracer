@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_1',6.1201,'6.ns.c.6.a','positive and negative numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_1',6.1201,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
 */
 var i_6_ns_c_6_a__1 = new Class(
 {
@@ -118,7 +118,7 @@ this.mQuestionLabel.setPosition(125,80);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_3',6.1203,'6.ns.c.6.a','positive and negative numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_3',6.1203,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
 */
 var i_6_ns_c_6_a__3 = new Class(
 {
@@ -155,7 +155,7 @@ this.mQuestionLabel.setPosition(180,150);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_2',6.1202,'6.ns.c.6.a','positive and negative numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_2',6.1202,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
 */
 var i_6_ns_c_6_a__2 = new Class(
 {

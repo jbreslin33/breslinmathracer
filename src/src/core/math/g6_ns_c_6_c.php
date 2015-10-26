@@ -1,5 +1,161 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_3',6.1403,'6.ns.c.6.c','positive and negative numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_2',6.1402,'6.ns.c.6.c','Locate points with rational coordinates');
+*/
+var i_6_ns_c_6_c__2 = new Class(
+{
+Extends: GraphItemQuad2,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,200,50,225,95,100,50,425,100);
+
+        this.mType = '6.ns.c.6.c_2';
+
+
+this.mAnswerTextBox.setPosition(575,110);
+this.mAnswerTextBox2.setPosition(635,110);
+this.mAnswerTextBox.setSize(50,50);
+this.mAnswerTextBox2.setSize(50,50);
+ 
+this.mHeadingAnswerLabel.setText('X');
+this.mHeadingAnswerLabel2.setText('Y'); 
+this.mHeadingAnswerLabel.setPosition(580,55);
+this.mHeadingAnswerLabel2.setPosition(640,55); 
+this.mHeadingAnswerLabel.setSize(25,25);
+this.mHeadingAnswerLabel2.setSize(25,25); 
+
+clickflag = true;
+
+var x = Math.floor(Math.random()*20);
+var y = Math.floor(Math.random()*20);
+
+var x1 = x-10;
+var y1 = y-10;
+
+var answer = '' + x1 + ' ' + y1;
+ 
+this.setAnswer(x1,0);
+this.setAnswer(y1,1);
+
+var answer2 = '('+x1+','+y1+')';
+
+this.pointsX = [2,3,5,7,8];
+this.pointsY = [8,3,6,3,8];
+  // this.setAnswer('W',0);
+  // this.setAnswer('w',1);
+   
+this.setQuestion('What point is represented by the white dot?');
+
+this.mQuestionLabel.setSize(220,50);
+this.mQuestionLabel.setPosition(625,280);
+
+ this.circles[x][y].attr({fill: "white", stroke: "none", opacity: 1}).scale(.5,.5);
+          this.circles[x][y].data("click", 1);
+
+},
+
+/*
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+
+			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+
+        var res = this.getAnswer().split(" ");
+        var x = res[0];
+        var y = res[1];
+
+        if (this.circles[x][y].data("click") == '0')
+        {
+          this.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+          this.circles[x][y].data("click", 1);
+        }
+        clickflag = false;
+        this.mButton.setVisibility(false);
+		  }
+    }
+*/
+
+});
+
+
+
+
+
+
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_1',6.1401,'6.ns.c.6.c','Locate points with rational coordinates');
+*/
+var i_6_ns_c_6_c__1 = new Class(
+{
+Extends: GraphItemQuad,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,200,50,225,95,100,50,425,100);
+
+        this.mType = '6.ns.c.6.c_1';
+
+clickflag = true;
+
+var x = Math.floor(Math.random()*20);
+var y = Math.floor(Math.random()*20);
+
+var x1 = x-10;
+var y1 = y-10;
+
+var answer = '' + x + ' ' + y;
+ 
+this.setAnswer(answer,0);
+
+var answer2 = '('+x1+','+y1+')';
+   
+this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
+
+this.mQuestionLabel.setSize(220,50);
+this.mQuestionLabel.setPosition(625,80);
+
+},
+
+
+ showCorrectAnswer: function()
+    {
+		  if (this.mCorrectAnswerLabel)
+		  {
+         this.mCorrectAnswerLabel.setSize(200, 75);
+        this.mCorrectAnswerLabel.setPosition(630,300);
+
+			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
+			  this.mCorrectAnswerLabel.setVisibility(true);
+
+        var res = this.getAnswer().split(" ");
+        var x = res[0];
+        var y = res[1];
+
+        if (this.circles[x][y].data("click") == '0')
+        {
+          this.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+          this.circles[x][y].data("click", 1);
+        }
+        clickflag = false;
+        this.mButton.setVisibility(false);
+		  }
+    }
+
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_3',6.1403,'6.ns.c.6.c','Locate points with rational coordinates');
 */
 var i_6_ns_c_6_c__3 = new Class(
 {
@@ -156,7 +312,7 @@ this.mQuestionLabel.setPosition(125,80);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_4',6.1404,'6.ns.c.6.c','positive and negative numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_4',6.1404,'6.ns.c.6.c','Locate points with rational coordinates');
 */
 var i_6_ns_c_6_c__4 = new Class(
 {
