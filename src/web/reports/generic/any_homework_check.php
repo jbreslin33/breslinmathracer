@@ -97,12 +97,18 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-<p><b> Start time: </p></b>
-<input id="start_time" type="text" name="start_time">
-<p><b> End time: </p></b>
-<input id="end_time" type="text" name="end_time">
+<?php
+
+echo "<p><b> Start time: </p></b>";
+echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$start_time\">";
+echo "<p><b> End time: </p></b>";
+echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$end_time\">";
+
+?>
 
 </form>
+
+
 
 <script>
 function loadAgain()
