@@ -116,16 +116,6 @@ function loadAgain()
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("start_time").value;
     	var z = document.getElementById("end_time").value;
-/*
-    	if (document.getElementById("start_time").value)
-	{
-		y = document.getElementById("start_time").value; 	
-	}
-    	if (document.getElementById("end_time").value)
-	{
-		z = document.getElementById("end_time").value; 	
-	}
-*/
 	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x + '&start_time=' + y + '&end_time=' + z; 
 }
 </script>
@@ -301,12 +291,50 @@ for($y = 0; $y < $numrowsStudents; $y++)
         $fullname = $rowStudents[3];
 	$fullname .= " ";
         $fullname .= $rowStudents[7];
+/*
+ 		$bcolor = 'Green';
+                if ($transaction_code == "0")
+                {
+                        $bcolor = 'White';
+                }
+                if ($transaction_code == "1")
+                {
+                        $bcolor = 'Green';
+                }
+                if ($transaction_code == "2")
+                {
+                        $bcolor = 'Red';
+                }
+
+                echo '<td bgcolor="';
+                echo $bcolor;
+                echo '">';
+                echo $start_time;
+                echo '</td>';
+*/
 
         echo '<tr>';
         echo '<td>';
         echo $fullname;
        	echo '</td>';
-        echo '<td>';
+
+ 	$bcolor = 'Green';
+        if ($homeworkGradesArray[$y] == 0)
+        {
+                $bcolor = 'White';
+        }
+        if ($homeworkGradesArray[$y] > 69)
+        {
+                $bcolor = 'Green';
+        }
+        if ($homeworkGradesArray[$y] < 70)
+        {
+                $bcolor = 'Red';
+        }
+
+        echo '<td bgcolor="';
+        echo $bcolor;
+        echo '">';
         echo $homeworkGradesArray[$y];
         echo '</td>';
         echo '<td>';
