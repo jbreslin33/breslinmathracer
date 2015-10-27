@@ -61,7 +61,7 @@ if (isset($_POST["end_time"]))
 }
 else if (isset($_GET['end_time']))
 {
-	$endtime = $_GET['end_time'];
+	$end_time = $_GET['end_time'];
 }
 
 echo "<br>";
@@ -108,19 +108,18 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
-    	var y = '2015-10-23 14:50:00';
-    	var z = '2015-10-26 08:40:00';
+    	var y = document.getElementById("start_time").value;
+    	var z = document.getElementById("end_time").value;
+/*
     	if (document.getElementById("start_time").value)
 	{
-		var y = document.getElementById("start_time").value; 	
+		y = document.getElementById("start_time").value; 	
 	}
     	if (document.getElementById("end_time").value)
 	{
-		var y = document.getElementById("end_time").value; 	
+		z = document.getElementById("end_time").value; 	
 	}
-	//APPLICATION.log('y:' + y);
-	//APPLICATION.log('z:' + z);
-
+*/
 	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x + '&start_time=' + y + '&end_time=' + z; 
 }
 </script>
@@ -161,8 +160,8 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$terraNovaQuestionArray = array(); //0,1,2
 
 	$rowStudents = pg_fetch_array($resultStudents, $s);
-  	$start_time = '2015-10-23 14:50:00';
-        $end_time = '2015-10-26 08:40:00';
+  	//$start_time = '2015-10-23 14:50:00';
+        //$end_time = '2015-10-26 08:40:00';
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
@@ -171,9 +170,9 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$queryOne .= "' AND evaluations_attempts.start_time < '";
 	$queryOne .= $end_time;
 	$queryOne .= "' order by start_time desc;";
+	error_log($queryOne);
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
-	error_log($queryOne);
 
 	//this loop is to calc a test for a grade that is all
 	for($i = 0; $i < $numrowsOne; $i++)
