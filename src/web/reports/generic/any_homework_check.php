@@ -325,27 +325,6 @@ for($y = 0; $y < $numrowsStudents; $y++)
         $fullname = $rowStudents[3];
 	$fullname .= " ";
         $fullname .= $rowStudents[7];
-/*
- 		$bcolor = 'Green';
-                if ($transaction_code == "0")
-                {
-                        $bcolor = 'White';
-                }
-                if ($transaction_code == "1")
-                {
-                        $bcolor = 'Green';
-                }
-                if ($transaction_code == "2")
-                {
-                        $bcolor = 'Red';
-                }
-
-                echo '<td bgcolor="';
-                echo $bcolor;
-                echo '">';
-                echo $start_time;
-                echo '</td>';
-*/
 
         echo '<tr>';
         echo '<td>';
@@ -371,9 +350,27 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo '">';
         echo $homeworkGradesArray[$y];
         echo '</td>';
-        echo '<td>';
+
+        if ($homeworkQuestionsArray[$y] == 0)
+        {
+                $bcolor = 'White';
+        }
+        if ($homeworkQuestionsArray[$y] > 10)
+        {
+                $bcolor = 'Green';
+        }
+        if ($homeworkQuestionsArray[$y] < 10)
+        {
+                $bcolor = 'Red';
+        }
+
+        echo '<td bgcolor="';
+        echo $bcolor;
+        echo '">';
         echo $homeworkQuestionsArray[$y];
         echo '</td>';
+
+
         echo '<td>';
         echo $terraNovaGradesArray[$y];
         echo '</td>';
