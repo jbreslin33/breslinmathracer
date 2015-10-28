@@ -200,7 +200,6 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$queryOne .= "' AND evaluations_attempts.start_time < '";
 	$queryOne .= $end_time;
 	$queryOne .= "' order by start_time desc;";
-	error_log($queryOne);
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
