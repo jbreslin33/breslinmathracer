@@ -20,6 +20,7 @@ session_start();
 <li><a href="/web/stats/statsreports.php">Non Mastery Types</a></li>
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
 <li><a href="/web/reports/generic/item_attempts_realtime.php">Playing</a></li>
+<li><a href="/web/reports/generic/incorrect_attempts_realtime.php">Live Incorrect</a></li>
 <li><a href="/web/reports/generic/homework.php">Home Work</a></li>
 <li><a href="/web/reports/generic/tests.php">Tests</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
