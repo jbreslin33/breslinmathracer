@@ -12,15 +12,14 @@ initialize: function(sheet)
         this.mType = '4.oa.a.2_26';
 
 	// graph coords
-	var startX = 10;
-	var endX = 300;
-	var startY = 10;
-	var endY = 280;
-	var width = endX - startX;
-	var height = endY - startY;
-	var range = [0,10];
+       	var startX = 10;
+       	var endX = 300;
+       	var startY = 10;
+       	var endY = 280;
+       	var width = endX - startX;
+       	var height = endY - startY;
+       	var range = [0,10];
 
-	//var r = Raphael('graph');
 	var rX1 = 10;
 	var rY1 = 50;
 	var rX2 = 420;
@@ -31,30 +30,17 @@ initialize: function(sheet)
 	this.raphaelSizeX = rX2;
 	this.raphaelSizeY = rY2;
 
-    	this.mNameMachine = new NameMachine();
-    	this.mNameOne     = this.mNameMachine.getName();
-    	this.mNameTwo     = this.mNameMachine.getName();
-    	this.mTeacherName     = this.mNameMachine.getAdult();
-    	this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+    	this.ns = new NameSampler();
 
-        this.mSchool     = this.mNameMachine.getSchool();
-        this.mVegetableOne     = this.mNameMachine.getVegetable();
-        this.mVegetableTwo     = this.mNameMachine.getVegetable();
-        this.mFruit     = this.mNameMachine.getFruit();
-        this.mThings     = this.mNameMachine.getThing();
-    	this.mSupply     = this.mNameMachine.getSupply();
-
-        this.mRoomOne = Math.floor(Math.random()*10)+40;
-        this.mRoomTwo = Math.floor(Math.random()*10)+20;
-
-        this.mAdult     = this.mNameMachine.getAdult();
-
-	this.setQuestion('What number completes the ratio table?');
+	var r = Math.floor(Math.random()*3);
+	r = 0;
+	if (r == 0)
+	{
+		this.setQuestion('' + this.ns.mNameOne + '?');
+	}
 
 	// create ratioTable[rows][cols] to pass in to Table
 	var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
-
-	var r = Math.floor(Math.random()*3);
 
 	var head1 = ratioTable[r][0];
 	var head2 = ratioTable[r][1];
@@ -68,7 +54,6 @@ initialize: function(sheet)
 
 	this.setAnswer('' + answer,0);
 
-	//var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
 	var tableData   = [[head1,head2],[1,''+2],[3,''+4],[5,''+6]];
 
 	// create Table object
