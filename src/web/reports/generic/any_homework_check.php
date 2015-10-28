@@ -324,11 +324,18 @@ for($y = 0; $y < $numrowsStudents; $y++)
         $fullname = $rowStudents[3];
 	$fullname .= " ";
         $fullname .= $rowStudents[7];
-
-        echo '<tr>';
-        echo '<td>';
+        
+        $bcolor = 'Green';
+	if ($homeworkQuestionsArray[$y] < 10 || $terraNovaQuestionsArray[$y] < 9)
+        {
+                $bcolor = 'Red';
+        }
+        
+	echo '<td bgcolor="';
+        echo $bcolor;
+        echo '">';
         echo $fullname;
-       	echo '</td>';
+        echo '</td>';
 
  	$bcolor = 'Green';
         if ($homeworkGradesArray[$y] == 0)
