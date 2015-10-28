@@ -33,11 +33,11 @@ initialize: function(sheet)
     	this.ns = new NameSampler();
 
 	var r = Math.floor(Math.random()*3);
-	r = 0;
-	if (r == 0)
-	{
-		this.setQuestion('' + this.ns.mNameOne + '?');
-	}
+	var r2 = Math.floor(Math.random()*3)+1;
+	var a = Math.floor(Math.random()*30)+11;
+	var b = Math.floor(Math.random()*30)+11;
+	var c = parseInt(100 - (a+b));
+	var answer = '';
 
 	// create ratioTable[rows][cols] to pass in to Table
 	var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
@@ -46,18 +46,19 @@ initialize: function(sheet)
 	var head2 = ratioTable[r][1];
 	var ratio = ratioTable[r][2] + Math.floor(Math.random()*3);
 
-	var start = Math.floor(Math.random()*3) + 1;
-
-	var step = Math.floor(Math.random()*2) + 1;
-
-	var answer = (start+(step*2))*ratio;
-
-	this.setAnswer('' + answer,0);
-
-	var tableData   = [[head1,head2],[1,''+2],[3,''+4],[5,''+6]];
+	var tableData   = [[head1,head2],[1,''+a],[2,''+b],[3,''+c]];
 
 	// create Table object
 	var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
+	
+	r = 0;
+	if (r == 0)
+	{
+		this.setQuestion('' + 'There are 3 teams in the ' + this.ns.mPlayedActivityOne + ' league. What percent of the total number of players are on team ' + r2 + '?');
+		answer = tableData[r2][1]; 
+	}
+	
+	this.setAnswer('' + answer,0);
 
 	this.addQuestionShape(table);
 
