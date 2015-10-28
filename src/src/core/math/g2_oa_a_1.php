@@ -14,19 +14,33 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.a = Math.floor(Math.random()*2)+4;
-                this.a = 4;
-                this.d = Math.floor(Math.random()*99)+1;
-                var decimalA = new Decimal('' + this.a + '.' + this.d);
+                this.m = 0; 
+		this.d = 0;
+		this.a = 0;
+		this.r = 10;
+		this.a = 0;
+		
+		this.daysOne = 0;
+		this.daysTwo = 0;
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets for $' + decimalA.getMoney() + ' each. Which of these shows how to find the total cost of the ' + this.a + ' tickets?');
-                var answer = '' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney();
-                this.setAnswer('' + answer,0);
+		while (this.r > 3)
+		{
+                	this.m = Math.floor(Math.random()*11)+2; //month from 2 to 12
+			this.d = parseInt(this.m * 30); //days total 
+			this.daysOne = Math.floor(Math.random()*11)+2; 
+			this.daysTwo = parseInt(this.daysOne + 1);
+			this.r = this.d % this.daysOne;
+			this.a = parseInt(this.d / this.daysOne);
+		}
 
-                this.mButtonA.setAnswer('' + this.a + ' + $' + decimalA.getMoney());
-                this.mButtonB.setAnswer('' + '$' + decimalA.getMoney() + ' &divide ' + this.a);
-                this.mButtonC.setAnswer('' + '$' + decimalA.getMoney() + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a);
-                this.mButtonD.setAnswer('' + answer);
+                this.setQuestion('' + 'One pound of ' + this.ns.mFruitOne + ' will last ' + this.ns.mNameOne + ' ' + this.daysOne + ' to ' + this.daysTwo + ' days. How many pounds of ' + this.ns.mFruitOne + ' will ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' need to last ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.m + ' months?');
+                this.setAnswer('' + this.a,0);
+		this.offset = parseInt(this.a / 2);
+
+                this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
+                this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
+		this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
+                this.mButtonD.setAnswer('' + this.a);
                 this.shuffle(10);
         }
 });
