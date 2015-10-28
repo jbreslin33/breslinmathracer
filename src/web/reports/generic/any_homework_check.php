@@ -102,9 +102,23 @@ for($i = 0; $i < $numrows; $i++)
 echo "<p><b> Start time: </p></b>";
 if ($start_time == 0 || $start_time == NULL)
 { 
-	$rightnow = date('Y-m-d',strtotime("-1 days"));
-	$rightnow .= " 14:55:00";
-	echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$rightnow\">";
+ 	$currentTime = time() + 3600;
+        date_default_timezone_set('America/New_York');
+        $d = date("w");
+        $h = date("G");
+	//monday check
+        if ($d == 1)
+	{
+		$rightnow = date('Y-m-d',strtotime("-3 days"));
+		$rightnow .= " 14:55:00";
+		echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$rightnow\">";
+	}
+	else
+	{
+		$rightnow = date('Y-m-d',strtotime("-1 days"));
+		$rightnow .= " 14:55:00";
+		echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$rightnow\">";
+	}
 }
 else
 {
