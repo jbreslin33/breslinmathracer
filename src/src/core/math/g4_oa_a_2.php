@@ -68,7 +68,8 @@ initialize: function(sheet)
 
 	this.setAnswer('' + answer,0);
 
-	var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
+	//var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
+	var tableData   = [[head1,head2],[1,''+2],[3,''+4],[5,''+6]];
 
 	// create Table object
 	var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
