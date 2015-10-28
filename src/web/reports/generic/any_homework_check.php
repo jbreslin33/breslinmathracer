@@ -116,8 +116,10 @@ echo "<p><b> End time: </p></b>";
 if ($end_time == 0 || $end_time == NULL)
 { 
 	//$rightnow = date('Y-m-d');
-	$rightnow = strtotime("+1 day");
-	$rightnow .= " 08:35:00";
+	//$rightnow = strtotime("+1 day");
+	//$tomorrow = date('m-d-Y',strtotime($date1 . "+1 days"));
+	$rightnow = date('Y-m-d',strtotime("+1 days"));
+	$rightnow .= " 14:55:00";
 	echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$rightnow\">";
 }
 else
