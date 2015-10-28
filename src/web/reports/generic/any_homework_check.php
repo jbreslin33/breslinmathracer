@@ -390,8 +390,22 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo '</td>';
 
 
-
-        echo '<td>';
+        if ($terraNovaQuestionsArray[$y] == 0)
+        {
+                $bcolor = 'White';
+        }
+        if ($terraNovaQuestionsArray[$y] > 8)
+        {
+                $bcolor = 'Green';
+        }
+        if ($terraNovaQuestionsArray[$y] < 9)
+        {
+                $bcolor = 'Red';
+        }
+        
+	echo '<td bgcolor="';
+        echo $bcolor;
+        echo '">';
         echo $terraNovaQuestionsArray[$y];
         echo '</td>';
         echo '</tr>';
