@@ -110,8 +110,19 @@ else
 {
 	echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$start_time\">";
 }
+
+
 echo "<p><b> End time: </p></b>";
-echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$end_time\">";
+if ($end_time == 0 || $end_time == NULL)
+{ 
+	$rightnow = date('Y-m-d');
+	$rightnow .= " 08:35:00";
+	echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$rightnow\">";
+}
+else
+{
+	echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$end_time\">";
+}
 
 ?>
 
