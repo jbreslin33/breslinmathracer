@@ -370,10 +370,27 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo $homeworkQuestionsArray[$y];
         echo '</td>';
 
+        if ($terraNovaGradesArray[$y] == 0)
+        {
+                $bcolor = 'White';
+        }
+        if ($terraNovaGradesArray[$y] > 69)
+        {
+                $bcolor = 'Green';
+        }
+        if ($terraNovaGradesArray[$y] < 70)
+        {
+                $bcolor = 'Red';
+        }
 
-        echo '<td>';
+        echo '<td bgcolor="';
+        echo $bcolor;
+        echo '">';
         echo $terraNovaGradesArray[$y];
         echo '</td>';
+
+
+
         echo '<td>';
         echo $terraNovaQuestionsArray[$y];
         echo '</td>';
