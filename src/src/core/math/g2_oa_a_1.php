@@ -35,12 +35,21 @@ Extends: FourButtonItem,
 
                 this.setQuestion('' + 'One pound of ' + this.ns.mFruitOne + ' will last ' + this.ns.mNameOne + ' ' + this.daysOne + ' to ' + this.daysTwo + ' days. How many pounds of ' + this.ns.mFruitOne + ' will ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' need to last ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' ' + this.m + ' months?');
                 this.setAnswer('' + this.a,0);
+	
 		this.offset = parseInt(this.a / 2);
-
-                this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
-                this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
-		this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
                 this.mButtonD.setAnswer('' + this.a);
+
+		
+		this.ran = Math.floor(Math.random()*4); 
+		this.ran = 0;
+		if (this.ran == 0)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
+                	this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
+			this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
+		}
+
+
                 this.shuffle(10);
         }
 });
