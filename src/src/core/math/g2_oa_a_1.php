@@ -36,11 +36,11 @@ Extends: FourButtonItem,
 		this.ranOne = Math.floor(Math.random()*2); 
 		if (this.ranOne == 0)
 		{
-                	this.setQuestion('' + 'One pound of ' + this.ns.mFruitOne + ' will last ' + this.ns.mNameOne + ' ' + this.daysOne + ' to ' + this.daysTwo + ' days. How many pounds of ' + this.ns.mFruitOne + ' will ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need so they last ' + this.m + ' months?');
+                	this.setQuestion('' + 'One pound of ' + this.ns.mFruitOne + ' will last ' + this.ns.mNameOne + ' ' + this.daysOne + ' to ' + this.daysTwo + ' days. About how many pounds of ' + this.ns.mFruitOne + ' will ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need so they last ' + this.m + ' months?');
 		}
 		if (this.ranOne = 1)
 		{
-                	this.setQuestion('' + 'One pound of ' + this.ns.mVegetableOne + ' will last ' + this.ns.mNameOne + ' ' + this.daysOne + ' to ' + this.daysTwo + ' days. How many pounds of ' + this.ns.mVegetableOne + ' will ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need so they last ' + this.m + ' months?');
+                	this.setQuestion('' + 'One pound of ' + this.ns.mVegetableOne + ' will last ' + this.ns.mNameOne + ' ' + this.daysOne + ' to ' + this.daysTwo + ' days. About how many pounds of ' + this.ns.mVegetableOne + ' will ' +  this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' need so they last ' + this.m + ' months?');
 
 		}
                 this.setAnswer('' + this.a,0);
