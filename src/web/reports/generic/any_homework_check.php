@@ -100,7 +100,16 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 
 echo "<p><b> Start time: </p></b>";
-echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$start_time\">";
+if ($start_time == 0 || $start_time == NULL)
+{ 
+	$rightnow = date('Y-m-d');
+	$rightnow .= " 08:35:00";
+	echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$rightnow\">";
+}
+else
+{
+	echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$start_time\">";
+}
 echo "<p><b> End time: </p></b>";
 echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$end_time\">";
 
