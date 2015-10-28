@@ -102,8 +102,8 @@ for($i = 0; $i < $numrows; $i++)
 echo "<p><b> Start time: </p></b>";
 if ($start_time == 0 || $start_time == NULL)
 { 
-	$rightnow = date('Y-m-d');
-	$rightnow .= " 08:35:00";
+	$rightnow = date('Y-m-d',strtotime("-1 days"));
+	$rightnow .= " 14:55:00";
 	echo "<input id=\"start_time\" type=\"text\" name=\"start_time\" value=\"$rightnow\">";
 }
 else
@@ -115,8 +115,8 @@ else
 echo "<p><b> End time: </p></b>";
 if ($end_time == 0 || $end_time == NULL)
 { 
-	$rightnow = date('Y-m-d',strtotime("+1 days"));
-	$rightnow .= " 14:55:00";
+	$rightnow = date('Y-m-d');
+	$rightnow .= " 08:40:00";
 	echo "<input id=\"end_time\" type=\"text\" name=\"end_time\" value=\"$rightnow\">";
 }
 else
