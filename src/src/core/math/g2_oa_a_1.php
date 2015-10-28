@@ -1,3 +1,36 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_22',2.0122,'2.oa.a.1','TerraNova');
+*/
+
+var i_2_oa_a_1__22 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '2.oa.a.1_22';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.a = Math.floor(Math.random()*2)+4;
+                this.a = 4;
+                this.d = Math.floor(Math.random()*99)+1;
+                var decimalA = new Decimal('' + this.a + '.' + this.d);
+
+                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets for $' + decimalA.getMoney() + ' each. Which of these shows how to find the total cost of the ' + this.a + ' tickets?');
+                var answer = '' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney();
+                this.setAnswer('' + answer,0);
+
+                this.mButtonA.setAnswer('' + this.a + ' + $' + decimalA.getMoney());
+                this.mButtonB.setAnswer('' + '$' + decimalA.getMoney() + ' &divide ' + this.a);
+                this.mButtonC.setAnswer('' + '$' + decimalA.getMoney() + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a);
+                this.mButtonD.setAnswer('' + answer);
+                this.shuffle(10);
+        }
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_21',2.0121,'2.oa.a.1','TerraNova');
 */

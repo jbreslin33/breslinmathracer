@@ -5,7 +5,6 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	APPLICATION.log('norm called');
 },
 
 pickItem: function()
