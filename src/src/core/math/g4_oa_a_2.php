@@ -34,7 +34,6 @@ initialize: function(sheet)
     	this.ns = new NameSampler();
 
 	var r = Math.floor(Math.random()*3);
-	r = 2;
 	var r2 = Math.floor(Math.random()*3)+1;
 	var a = Math.floor(Math.random()*30)+11;
 	var b = Math.floor(Math.random()*30)+11;
