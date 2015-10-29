@@ -34,7 +34,7 @@ initialize: function(sheet)
     	this.ns = new NameSampler();
 
 	var r = Math.floor(Math.random()*3);
-	r = 1;
+	r = 2;
 	var r2 = Math.floor(Math.random()*3)+1;
 	var a = Math.floor(Math.random()*30)+11;
 	var b = Math.floor(Math.random()*30)+11;
@@ -42,11 +42,10 @@ initialize: function(sheet)
 	var answer = '';
 
 	// create ratioTable[rows][cols] to pass in to Table
-	var ratioTable = [['teams','players', 6],['rooms','students', 20],['cupcakes','trays', 12]];
+	var ratioTable = [['teams','players'],['rooms','students'],['trays','cupcakes']];
 
 	var head1 = ratioTable[r][0];
 	var head2 = ratioTable[r][1];
-	var ratio = ratioTable[r][2] + Math.floor(Math.random()*3);
 
 	var tableData   = [[head1,head2],[1,''+a],[2,''+b],[3,''+c]];
 
@@ -62,6 +61,11 @@ initialize: function(sheet)
 	{
 		var grade = this.nm.getGrade();	
 		this.setQuestion('' + 'There are 3 Classrooms in the ' + grade + ' grade at ' + this.ns.mSchoolOne + '. What percent of the total number of students in the ' + grade + ' grade are in room ' + r2 + '?');
+		answer = tableData[r2][1]; 
+	}
+	if (r == 2)
+	{
+		this.setQuestion('' + this.ns.mNameOne + ' is having a birthday. There are 3 trays with cupcakes for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. What percent of the total number of cupcakes are on tray ' + r2 + '?');
 		answer = tableData[r2][1]; 
 	}
 	
