@@ -30,9 +30,11 @@ initialize: function(sheet)
 	this.raphaelSizeX = rX2;
 	this.raphaelSizeY = rY2;
 
+    	this.nm = new NameMachine();
     	this.ns = new NameSampler();
 
 	var r = Math.floor(Math.random()*3);
+	r = 1;
 	var r2 = Math.floor(Math.random()*3)+1;
 	var a = Math.floor(Math.random()*30)+11;
 	var b = Math.floor(Math.random()*30)+11;
@@ -40,7 +42,7 @@ initialize: function(sheet)
 	var answer = '';
 
 	// create ratioTable[rows][cols] to pass in to Table
-	var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
+	var ratioTable = [['teams','players', 6],['rooms','students', 20],['cupcakes','trays', 12]];
 
 	var head1 = ratioTable[r][0];
 	var head2 = ratioTable[r][1];
@@ -51,10 +53,15 @@ initialize: function(sheet)
 	// create Table object
 	var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
 	
-	r = 0;
 	if (r == 0)
 	{
 		this.setQuestion('' + 'There are 3 teams in the ' + this.ns.mPlayedActivityOne + ' league. What percent of the total number of players are on team ' + r2 + '?');
+		answer = tableData[r2][1]; 
+	}
+	if (r == 1)
+	{
+		var grade = this.nm.getGrade();	
+		this.setQuestion('' + 'There are 3 Classrooms in the ' + grade + ' grade at ' + this.ns.mSchoolOne + '. What percent of the total number of students in the ' + grade + ' grade are in room ' + r2 + '?');
 		answer = tableData[r2][1]; 
 	}
 	
