@@ -4,10 +4,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 
 var i_4_oa_a_2__26 = new Class(
 {
-Extends: TextItem,
+Extends: FourButtonItem,
 initialize: function(sheet)
 {
-        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.parent(sheet);
 
         this.mType = '4.oa.a.2_26';
 
@@ -69,20 +69,25 @@ initialize: function(sheet)
 	}
 	
 	this.setAnswer('' + answer,0);
+	this.mButtonA.setAnswer('' + answer);
+	this.mButtonB.setAnswer('' + 'B');
+	this.mButtonC.setAnswer('' + 'C');
+	this.mButtonD.setAnswer('' + 'D');
+        this.shuffle(10);
 
 	this.addQuestionShape(table);
 
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(450,80);
 
-	this.mCorrectAnswerLabel.setSize(200, 75);
-	this.mCorrectAnswerLabel.setPosition(500,300);
+	//this.mCorrectAnswerLabel.setSize(200, 75);
+	//this.mCorrectAnswerLabel.setPosition(500,300);
 
-	this.mUserAnswerLabel.setSize(200, 75);
-	this.mUserAnswerLabel.setPosition(500,200);
+	//this.mUserAnswerLabel.setSize(200, 75);
+	//this.mUserAnswerLabel.setPosition(500,200);
 
-	this.mAnswerTextBox.setPosition(600,110);
-	this.mAnswerTextBox.setSize(50,50);
+	//this.mAnswerTextBox.setPosition(600,110);
+	//this.mAnswerTextBox.setSize(50,50);
 }
 });
 
