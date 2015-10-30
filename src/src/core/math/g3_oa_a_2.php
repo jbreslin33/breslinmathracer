@@ -47,29 +47,29 @@ Extends: TextItem,
 
     if (this.random == 2)
 		{
-			this.setQuestion(this.mNameOne + '  has fabric that is ' + this.a + ' inches long. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' wants to cut the fabric into strips that are ' + this.b + ' inches wide. Write a number sentence that can be used to show how many strips ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' can make.');    
+			this.setQuestion(this.mNameOne + '  has fabric that is ' + this.a + ' inches long. ' + this.mNameMachine.getPronoun(this.mNameOne,1,0) + ' wants to cut the fabric into strips that are ' + this.b + ' inches wide. Write an expression that can be used to show how many strips ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' can make.');    
 		}
 
 
     if (this.random == 4)
 		{
-			this.setQuestion(this.mAdult + ' has ' + this.a + ' ' + this.mSupply + ' ' + this.mNameMachine.getPronoun(this.mAdult,0,0) + ' wants to store over summer break. He can put ' + this.b + ' ' + this.mSupply + ' into each storage box. Write a number sentence that can be used to solve how many boxes ' + this.mAdult + ' needs to store all of his ' + this.mSupply + '.');    
+			this.setQuestion(this.mAdult + ' has ' + this.a + ' ' + this.mSupply + ' ' + this.mNameMachine.getPronoun(this.mAdult,0,0) + ' wants to store over summer break. He can put ' + this.b + ' ' + this.mSupply + ' into each storage box. Write an expression that can be used to solve how many boxes ' + this.mAdult + ' needs to store all of his ' + this.mSupply + '.');    
 		}
 
 		if (this.random == 3)
 		{
-			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ' and ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' wants to divide them up equally into ' + this.b + ' boxes. Write a number sentence that can be used to solve how many ' + this.mThings + ' were put in each box.');    
+			this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ' and ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' wants to divide them up equally into ' + this.b + ' boxes. Write an expression that can be used to solve how many ' + this.mThings + ' were put in each box.');    
 		}
 
 		if (this.random == 1)
 		{
-                	this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ' and ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' wants to share them equally with ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' ' + this.b + ' brothers. Write a number sentence that can be used to solve how many ' + this.mThings + ' each brother will get.');
+                	this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThings + ' and ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' wants to share them equally with ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' ' + this.b + ' brothers. Write an expression that can be used to solve how many ' + this.mThings + ' each brother will get.');
      	
 		}
 		
 		if (this.random == 0) 
 		{
-			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' ' + this.mVegetableOne + '. ' + this.mNameMachine.getPronoun(this.mAdult,1,0) + ' gave out '  + this.mVegetableOne + ' equally among ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' ' + this.b + ' friends. Write a number sentence that can be used to solve how many ' + this.mVegetableOne + ' each friend got.');   
+			this.setQuestion(this.mAdult + ' had a garden. In the garden ' + this.mNameMachine.getPronoun(this.mAdult,0) + ' had ' + this.a + ' ' + this.mVegetableOne + '. ' + this.mNameMachine.getPronoun(this.mAdult,1,0) + ' gave out '  + this.mVegetableOne + ' equally among ' + this.mNameMachine.getPronoun(this.mAdult,0,1) + ' ' + this.b + ' friends. Write an expression that can be used to solve how many ' + this.mVegetableOne + ' each friend got.');   
 		}
                
     		this.setAnswer('' + this.a + '/' + this.b ,0);	
@@ -126,10 +126,7 @@ Extends: TextItem,
                 	this.setQuestion('Write a division expression that represents the picture.');
 		}
 
-    this.setAnswer('' + this.c + '/' + this.a ,0);
-		this.setAnswer('' + this.c + '/' + this.a + '=',1);
-    this.setAnswer('' + this.c + '/' + this.a + '=' + this.b,2);
-
+    		this.setAnswer('' + this.c + '/' + this.a ,0);
 	},
 
 createQuestionShapes: function()

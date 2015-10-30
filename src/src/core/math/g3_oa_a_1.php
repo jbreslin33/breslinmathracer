@@ -73,17 +73,8 @@ Extends: TextItem,
 	
                 this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
-		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-		this.setAnswer('' + this.b + '*' + this.a + '=',4);
-		this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+                this.setAnswer('' + this.a + 'x' + this.b ,2);
+                this.setAnswer('' + this.b + 'x' + this.a ,3);
         }
 });
 
@@ -116,7 +107,7 @@ Extends: i_3_oa_a_1__word,
         	this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '3.oa.a.1_7';
-                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a multiplication number sentence that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has.'); 
+                this.setQuestion(this.mNameOne + ' ' + this.mOwned + ' ' + this.a + ' ' + this.mThing + '. ' + this.mNameTwo + ' had ' + this.b + ' times as many ' + this.mThing + ' as ' + this.mNameOne + '. Write a multiplication expression that can be used to solve how many ' + this.mThing + ' ' + this.mNameTwo + ' has.'); 
         }
 });
 
@@ -134,7 +125,7 @@ Extends: i_3_oa_a_1__word,
 
                 this.mType = '3.oa.a.1_6';
 			
-		this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a multiplication number sentence that can be used to solve how many students are in room ' + this.mRoomOne + '.');   
+		this.setQuestion('At ' + this.mSchool + ' in the ' + this.mGrade + ' grade, room ' + this.mRoomOne + ' had ' + this.a + ' rows with ' + this.b + ' students in each row. Write a multiplication expression that can be used to solve how many students are in room ' + this.mRoomOne + '.');   
 
         }
 });
@@ -191,17 +182,8 @@ Extends: TextItem,
 
                 this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
-                this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-                this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-                this.setAnswer('' + this.b + '*' + this.a + '=',4);
-                this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-                this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-                this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-                this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-                this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+                this.setAnswer('' + this.a + 'x' + this.b ,2);
+                this.setAnswer('' + this.b + 'x' + this.a ,3);
 
 		this.setQuestion('' + this.expression); //this is incomplete
         }
@@ -236,7 +218,7 @@ Extends: i_3_oa_a_1__repeated,
                 this.parent(sheet,600,50,330,75,100,50,685,80);
 
                 this.mType = '3.oa.a.1_3';
-                this.question = 'Write a multiplication number sentence that represents';
+                this.question = 'Write a multiplication expression that represents';
 		this.setQuestion('' + this.question + this.expression );
         }
 });
@@ -265,17 +247,8 @@ Extends: TextItem,
 
 		this.setAnswer('' + this.a + '*' + this.b ,0);
                 this.setAnswer('' + this.b + '*' + this.a ,1);
-		this.setAnswer('' + this.b + '*' + this.a + '=' + this.c,2);
-		this.setAnswer('' + this.a + '*' + this.b + '=' + this.c,3);
-		this.setAnswer('' + this.b + '*' + this.a + '=',4);
-		this.setAnswer('' + this.a + '*' + this.b + '=',5);
-
-                this.setAnswer('' + this.a + 'x' + this.b ,6);
-                this.setAnswer('' + this.b + 'x' + this.a ,7);
-		this.setAnswer('' + this.b + 'x' + this.a + '=' + this.c,8);
-		this.setAnswer('' + this.a + 'x' + this.b + '=' + this.c,9);
-		this.setAnswer('' + this.b + 'x' + this.a + '=',10);
-		this.setAnswer('' + this.a + 'x' + this.b + '=',11);
+                this.setAnswer('' + this.a + 'x' + this.b ,2);
+                this.setAnswer('' + this.b + 'x' + this.a ,3);
 	},
 
         createQuestionShapes: function()
@@ -311,7 +284,7 @@ Extends: i_3_oa_a_1__picture,
 
                 this.mType = '3.oa.a.1_2';
 		
-                this.setQuestion('Write a number sentence that represents the picture.');
+                this.setQuestion('Write a expression that represents the picture.');
 	}
 });
 
