@@ -22,8 +22,8 @@ initialize: function(sheet)
 
 	var rX1 = 10;
 	var rY1 = 50;
-	var rX2 = 420;
-	var rY2 = 350;
+	var rX2 = 350;
+	var rY2 = 300;
 
 	this.raphael = Raphael(rX1, rY1, rX2, rY2);
 
@@ -80,14 +80,11 @@ initialize: function(sheet)
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(450,80);
 
-	//this.mCorrectAnswerLabel.setSize(200, 75);
-	//this.mCorrectAnswerLabel.setPosition(500,300);
+	this.mButtonA.setPosition(450,225);
+	this.mButtonB.setPosition(650,225);
+	this.mButtonC.setPosition(450,300);
+	this.mButtonD.setPosition(650,300);
 
-	//this.mUserAnswerLabel.setSize(200, 75);
-	//this.mUserAnswerLabel.setPosition(500,200);
-
-	//this.mAnswerTextBox.setPosition(600,110);
-	//this.mAnswerTextBox.setSize(50,50);
 }
 });
 
