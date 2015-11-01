@@ -34,10 +34,11 @@ initialize: function(sheet)
     	this.ns = new NameSampler();
 
 	var r = Math.floor(Math.random()*3);
-	var r2 = Math.floor(Math.random()*3)+1;
+	var l = Math.floor(Math.random()*3)+1;
 	var a = Math.floor(Math.random()*30)+11;
 	var b = Math.floor(Math.random()*30)+11;
 	var c = parseInt(100 - (a+b));
+	var d = Math.floor(Math.random()*10)+1;
 	var answer = '';
 
 	// create ratioTable[rows][cols] to pass in to Table
@@ -53,26 +54,40 @@ initialize: function(sheet)
 	
 	if (r == 0)
 	{
-		this.setQuestion('' + 'There are 3 teams in the ' + this.ns.mPlayedActivityOne + ' league. What percent of the total number of players are on team ' + r2 + '?');
-		answer = tableData[r2][1]; 
+		this.setQuestion('' + 'There are 3 teams in the ' + this.ns.mPlayedActivityOne + ' league. What percent of the total number of players are on team ' + l + '?');
 	}
 	if (r == 1)
 	{
 		var grade = this.nm.getGrade();	
-		this.setQuestion('' + 'There are 3 Classrooms in the ' + grade + ' grade at ' + this.ns.mSchoolOne + '. What percent of the total number of students in the ' + grade + ' grade are in room ' + r2 + '?');
-		answer = tableData[r2][1]; 
+		this.setQuestion('' + 'There are 3 Classrooms in the ' + grade + ' grade at ' + this.ns.mSchoolOne + '. What percent of the total number of students in the ' + grade + ' grade are in room ' + l + '?');
 	}
 	if (r == 2)
 	{
-		this.setQuestion('' + this.ns.mNameOne + ' is having a birthday. There are 3 trays with cupcakes for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. What percent of the total number of cupcakes are on tray ' + r2 + '?');
-		answer = tableData[r2][1]; 
+		this.setQuestion('' + this.ns.mNameOne + ' is having a birthday. There are 3 trays with cupcakes for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. What percent of the total number of cupcakes are on tray ' + l + '?');
 	}
 	
+	answer = tableData[l][1]; 
 	this.setAnswer('' + answer,0);
 	this.mButtonA.setAnswer('' + answer);
-	this.mButtonB.setAnswer('' + 'B');
-	this.mButtonC.setAnswer('' + 'C');
-	this.mButtonD.setAnswer('' + 'D');
+
+	if (l == 1)
+	{
+		this.mButtonB.setAnswer('' + tableData[2][1]); 
+		this.mButtonC.setAnswer('' + tableData[3][1]); 
+		this.mButtonD.setAnswer('' + d); 
+	}
+	if (l == 2)
+	{
+		this.mButtonB.setAnswer('' + tableData[1][1]); 
+		this.mButtonC.setAnswer('' + tableData[3][1]); 
+		this.mButtonD.setAnswer('' + d); 
+	}
+	if (l == 3)
+	{
+		this.mButtonB.setAnswer('' + tableData[1][1]); 
+		this.mButtonC.setAnswer('' + tableData[2][1]); 
+		this.mButtonD.setAnswer('' + d); 
+	}
         this.shuffle(10);
 
 	this.addQuestionShape(table);
@@ -80,10 +95,10 @@ initialize: function(sheet)
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(450,80);
 
-	this.mButtonA.setPosition(450,225);
-	this.mButtonB.setPosition(650,225);
-	this.mButtonC.setPosition(450,300);
-	this.mButtonD.setPosition(650,300);
+	this.mButtonA.setPosition(450,250);
+	this.mButtonB.setPosition(650,250);
+	this.mButtonC.setPosition(450,325);
+	this.mButtonD.setPosition(650,325);
 
 }
 });
