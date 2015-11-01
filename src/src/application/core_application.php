@@ -136,6 +136,7 @@ Extends: Application,
 		/*********** LEVEL *******************
 		this.mRef_id = 'login';
 		this.mProgression = 0;
+		this.mHighest = 0;
 		this.mStandard = '';
 		this.mResponseArray = 0;
 		this.mRawData = 0;
@@ -256,6 +257,8 @@ highestAchieved: function()
 	highest = this.mItemTypesArray[b];
 
 	APPLICATION.mHud.setYellow('' + highest);
+	this.mHighest = highest;
+	//APPLICATION.log('' + APPLICATION.mHud.getYellow());
 },
 	
 	calcScore: function()
@@ -1358,7 +1361,8 @@ highestAchieved: function()
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
+                //xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mHighest,true);
                 xmlhttp.send();
         },
  

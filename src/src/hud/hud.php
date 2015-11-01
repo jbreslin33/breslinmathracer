@@ -176,6 +176,11 @@ fillTanSelect: function(filler)
 	{
         	this.mYellow.setText('<font size="1">' + t + '</font>');
 	},
+
+        getYellow: function()
+        {
+		//return "hell";
+        },
 	
 	setViolet: function(t)
 	{
