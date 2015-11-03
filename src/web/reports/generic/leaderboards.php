@@ -158,6 +158,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Score';
         echo '</td>';
+        echo '<td> Standard';
+        echo '</td>';
         echo '</tr>';
 
         $lastAnswerTime = '';
@@ -165,7 +167,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select last_activity, first_name, last_name, ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, ";
 	$query .= $category;
 	$query .= " from users where banned_id = 0 AND school_id = ";
         $query .= $_SESSION["school_id"];
@@ -186,7 +188,8 @@ echo '<table border=\"1\">';
                 $lastAnswerTime = $row[0];
                 $firstName = $row[1];
                 $lastName = $row[2];
-                $score = $row[3];
+                $core_standards_id = $row[3];
+                $score = $row[4];
 
                 echo '<tr>';
                 echo '<td>';
@@ -200,6 +203,9 @@ echo '<table border=\"1\">';
                 echo '</td>';
                 echo '<td>';
                 echo $score;
+                echo '</td>';
+                echo '<td>';
+                echo $core_standards_id;
                 echo '</td>';
                 echo '</tr>';
         }
