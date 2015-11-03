@@ -360,6 +360,7 @@ public function execute($bapplication)
 						if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 						{  
 							$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+        						$bapplication->mNormal->updateStandard($bapplication->mDataArray[4],'core_standards_id');
 						}
 					}
 				}

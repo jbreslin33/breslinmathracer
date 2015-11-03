@@ -67,7 +67,7 @@ if ($APPLICATION->mCode == 101)
         $APPLICATION->mDataArray[] = $_GET["transactioncode"];
         $APPLICATION->mDataArray[] = $_GET["answer"];
         $APPLICATION->mDataArray[] = $_GET["highest"];
-	error_log($APPLICATION->mDataArray[4]);
+	//error_log($APPLICATION->mDataArray[4]);
 	
 }
 

@@ -266,6 +266,35 @@ public function updateScores($score,$field_name)
 	}
 
 }
+
+public function updateStandard($score,$field_name)
+{
+        $this->mScore = $score;
+
+        if ($this->logs)
+        {
+                error_log('updateScores');
+        }
+        /*********************  for teacher real time data  *************/
+        $update = "update users SET last_activity = CURRENT_TIMESTAMP, ";
+        $update .= $field_name;
+        $update .= " = '";
+        $update .= $this->mScore;
+        $update .= "' WHERE id = ";
+        $update .= $this->mApplication->mLoginStudent->mUserID;
+        $update .= ";";
+
+        $db = new DatabaseConnection();
+        $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+
+        if ($field_name == 'score')
+        {
+                $this->updateMatch($db);
+        }
+
+}
+
+
 public function updateMatch($db)
 {
 	if ($this->mLastScore != $this->mScore && $this->mLastScore != 0)
