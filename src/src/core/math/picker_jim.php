@@ -14,7 +14,7 @@ getDev: function()
 {
 	//return '4.oa.a.2_26';
 	//return '2.oa.a.1_22';
-	return '2.nbt.a.1_1';
+	return '2.nbt.a.1_3';
 },
 
 getItem: function(id)
