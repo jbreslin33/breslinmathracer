@@ -12,8 +12,9 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '4.oa.a.2_26';
+	//return '4.oa.a.2_26';
 	//return '2.oa.a.1_22';
+	return '2.nbt.a.1_1';
 },
 
 getItem: function(id)
@@ -2327,6 +2328,32 @@ getItem: function(id)
         {
                 return new i_2_oa_c_4__3(this.mSheet);
         }
+	
+	//2.nbt.a.1	
+	if (id == '2.nbt.a.1_1')
+        {
+                return new i_2_nbt_a_1__1(this.mSheet);
+        }
+	if (id == '2.nbt.a.1_2')
+        {
+                return new i_2_nbt_a_1__2(this.mSheet);
+        }
+	if (id == '2.nbt.a.1_3')
+        {
+                return new i_2_nbt_a_1__3(this.mSheet);
+        }
+	if (id == '2.nbt.a.1_4')
+        {
+                return new i_2_nbt_a_1__4(this.mSheet);
+        }
+	if (id == '2.nbt.a.1_5')
+        {
+                return new i_2_nbt_a_1__5(this.mSheet);
+        }
+
+
+
+
 
 	//2.nbt.b.7	
 	if (id == '2.nbt.b.7_1')
