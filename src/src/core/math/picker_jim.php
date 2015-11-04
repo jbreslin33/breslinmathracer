@@ -14,7 +14,7 @@ getDev: function()
 {
 	//return '4.oa.a.2_26';
 	//return '2.oa.a.1_22';
-	return '2.nbt.a.1_3';
+	return '2.nbt.a.2_1';
 },
 
 getItem: function(id)
@@ -2349,6 +2349,28 @@ getItem: function(id)
 	if (id == '2.nbt.a.1_5')
         {
                 return new i_2_nbt_a_1__5(this.mSheet);
+        }
+	
+	//2.nbt.a.2	
+	if (id == '2.nbt.a.2_1')
+        {
+                return new i_2_nbt_a_2__1(this.mSheet);
+        }
+	if (id == '2.nbt.a.2_2')
+        {
+                return new i_2_nbt_a_2__2(this.mSheet);
+        }
+	if (id == '2.nbt.a.2_3')
+        {
+                return new i_2_nbt_a_2__3(this.mSheet);
+        }
+	if (id == '2.nbt.a.2_4')
+        {
+                return new i_2_nbt_a_2__4(this.mSheet);
+        }
+	if (id == '2.nbt.a.2_5')
+        {
+                return new i_2_nbt_a_2__5(this.mSheet);
         }
 
 
