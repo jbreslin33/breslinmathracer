@@ -3,17 +3,32 @@ insert into item_types(id,progression,core_standards_id,description) values ('2.
 */
 var i_2_nbt_a_2__1 = new Class(
 {
-Extends: TextItem,
+Extends: NumberPadItem,
+
 initialize: function(sheet)
 {
-        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.parent(sheet);
         this.mType = '2.nbt.a.2_1';
+        this.mThresholdTime = 30000;
 
-        this.ones = Math.floor(Math.random()*10);
-        this.tens = Math.floor(Math.random()*10);
-        this.hundreds = Math.floor(Math.random()*9)+1;
+        this.mQuestionLabel.setPosition(170,75);
+        this.mQuestionLabel.setSize(300,50);
 
-        this.setQuestion('' + 'In the number ' + this.hundreds + '' + this.tens + '' + this.ones + ' how many ones are in the ones place?');
-        this.setAnswer('' + this.ones,0);
+        this.mUserAnswerLabel.setPosition(220,150);
+
+        this.mAnswerTextBox.setPosition(410,75);
+        this.mAnswerTextBox.setSize(180,50);
+
+        this.a = 0;
+        this.b = 0;
+        while (this.a == 0 || this.a == 1 || this.a == 9)
+        {
+                this.a = Math.floor(Math.random()*9)+1;
+        }
+        this.b = parseInt(10 + this.a);
+
+        this.setQuestion('' + 'Count by 5 from 0 to 50');
+        this.setAnswer('' + '05101520253035404550',0);
 }
 });
+
