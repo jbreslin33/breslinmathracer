@@ -9,12 +9,11 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.1_1';
 
-        this.ones = Math.floor(Math.random()*10);
-        this.tens = Math.floor(Math.random()*10);
-        this.hundreds = Math.floor(Math.random()*9)+1;
+        var x = Math.floor(Math.random()*9)+1;
+        var y = Math.floor(Math.random()*8)+2;
 
-        this.setQuestion('' + 'In the number ' + this.hundreds + '' + this.tens + '' + this.ones + ' how many ones are in the ones place?');
-        this.setAnswer('' + this.ones,0);
+        this.setQuestion('' + 'In the expression ' + x + '<sup>' + y + '</sup>' + ' what is the base?');
+        this.setAnswer('' + x,0);
 }
 });
 
