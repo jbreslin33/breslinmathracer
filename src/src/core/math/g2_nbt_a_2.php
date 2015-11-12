@@ -129,7 +129,7 @@ initialize: function(sheet)
         }
         this.b = parseInt(10 + this.a);
 
-        this.setQuestion('' + 'Count by 100 from 500 to 100');
+        this.setQuestion('' + 'Count by 100 from 500 to 1000');
         this.setAnswer('' + '5006007008009001000',0);
 }
 });

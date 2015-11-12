@@ -523,7 +523,7 @@ Extends: TextItem,
                 this.mType = '4.md.a.1_6';
 
                 this.setQuestion('How many cups in a pint?');
-                this.setAnswer('' + 8,0);
+                this.setAnswer('' + 2,0);
         }
 });
 
