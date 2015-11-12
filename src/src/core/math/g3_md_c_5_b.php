@@ -187,7 +187,7 @@ createQuestionShapes: function()
 
                 //east
                 this.addQuestionShape(new Rectangle(25,25,275,125,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false));
-                this.setAnswer('14',0)
+                this.setAnswer('13',0)
         }
 
 }
