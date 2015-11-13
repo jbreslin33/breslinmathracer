@@ -1,3 +1,61 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_29',4.3329,'4.g.a.2','TerraNova 14');
+*/
+
+var i_4_g_a_2__29 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.g.a.2_29';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.mOne = Math.floor(Math.random()*7)+4;
+                this.mTwo = parseInt(this.mOne + 3);
+                this.mDays = Math.floor(Math.random()*11)+15;
+                this.a = parseInt(this.mOne + 1) * this.mDays;
+
+                this.ranOne = Math.floor(Math.random()*2);
+                this.ranOne = 0;
+                if (this.ranOne == 0)
+                {
+                        this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.mOne + ' to ' + this.mTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning in ' + this.mDays + ' school days?');
+                }
+                this.setAnswer('' + this.a,0);
+                this.mButtonD.setAnswer('' + this.a);
+
+                this.ran = Math.floor(Math.random()*4);
+                if (this.ran == 0) //make answer lowest
+                {
+                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
+                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mOne - 3)));
+                }
+                else if (this.ran == 1)
+                {
+                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
+                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                }
+                else if (this.ran == 2)
+                {
+                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
+                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                }
+                else if (this.ran == 3)
+                {
+                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
+                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 3)));
+                }
+
+                this.shuffle(10);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_28',4.3328,'4.g.a.2',''); update item_types SET progression = 4.3328 where id = '4.g.a.2_28';
