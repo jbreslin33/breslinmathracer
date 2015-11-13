@@ -14,60 +14,44 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.m = 0; 
-		this.d = 0;
-		this.a = 0;
-		this.r = 10;
-		this.a = 0;
-		
-		this.daysOne = 0;
-		this.daysTwo = 0;
-
-		while (this.r > 3)
-		{
-                	this.m = Math.floor(Math.random()*11)+2; //month from 2 to 12
-			this.d = parseInt(this.m * 30); //days total 
-			this.daysOne = Math.floor(Math.random()*11)+2; 
-			this.daysTwo = parseInt(this.daysOne + 1);
-			this.r = this.d % this.daysOne;
-			this.a = parseInt(this.d / this.daysOne);
-		}
+		this.mOne = Math.floor(Math.random()*7)+4; 
+		this.mTwo = parseInt(this.mOne + 3);
+		this.mDays = Math.floor(Math.random()*11)+15; 
+		this.a = parseInt(this.mOne + 1) * this.mDays;
 
 		this.ranOne = Math.floor(Math.random()*2); 
 		this.ranOne = 0;
 		if (this.ranOne == 0)
 		{
-                	this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.daysOne + ' to ' + this.daysTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning in ' + this.m + ' school days?');
+                	this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.mOne + ' to ' + this.mTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning in ' + this.mDays + ' school days?');
 		}
                 this.setAnswer('' + this.a,0);
-	
-		this.offset = parseInt(this.a / 2);
                 this.mButtonD.setAnswer('' + this.a);
 
 		this.ran = Math.floor(Math.random()*4); 
 		if (this.ran == 0) //make answer lowest
 		{
-                	this.mButtonA.setAnswer('' + parseInt(this.a + this.offset));
-			this.mButtonB.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
-                	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + this.offset));
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mOne - 3)));
 		}
-		if (this.ran == 1)
+		else if (this.ran == 1)
 		{
-                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
-                	this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
-			this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
 		}
-		if (this.ran == 2)
+		else if (this.ran == 2)
 		{
-                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)));
-                	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset));
-                	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset));
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
 		}
-		if (this.ran == 3)
+		else if (this.ran == 3)
 		{
-                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)) );
-                	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 3)) );
-                	this.mButtonC.setAnswer('' + parseInt(this.a - this.offset) );
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 3)));
 		}
 
                 this.shuffle(10);
@@ -129,19 +113,19 @@ Extends: FourButtonItem,
 			this.mButtonB.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
                 	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + this.offset));
 		}
-		if (this.ran == 1)
+		else if (this.ran == 1)
 		{
                 	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
                 	this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
 			this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
 		}
-		if (this.ran == 2)
+		else if (this.ran == 2)
 		{
                 	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)));
                 	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset));
                 	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset));
 		}
-		if (this.ran == 3)
+		else if (this.ran == 3)
 		{
                 	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)) );
                 	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 3)) );
