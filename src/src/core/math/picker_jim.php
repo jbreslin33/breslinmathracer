@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '4.oa.a.1_6';
+	return '2.oa.a.1_23';
 },
 
 getItem: function(id)
@@ -2139,6 +2139,10 @@ getItem: function(id)
 	if (id == '2.oa.a.1_22')
         {
                 return new i_2_oa_a_1__22(this.mSheet);
+        }
+	if (id == '2.oa.a.1_23')
+        {
+                return new i_2_oa_a_1__23(this.mSheet);
         }
 
 	//2.oa.b.2

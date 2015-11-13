@@ -1,5 +1,79 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_23',2.0123,'2.oa.a.1','TerraNova 11');
+*/
+
+var i_2_oa_a_1__23 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '2.oa.a.1_23';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.m = 0; 
+		this.d = 0;
+		this.a = 0;
+		this.r = 10;
+		this.a = 0;
+		
+		this.daysOne = 0;
+		this.daysTwo = 0;
+
+		while (this.r > 3)
+		{
+                	this.m = Math.floor(Math.random()*11)+2; //month from 2 to 12
+			this.d = parseInt(this.m * 30); //days total 
+			this.daysOne = Math.floor(Math.random()*11)+2; 
+			this.daysTwo = parseInt(this.daysOne + 1);
+			this.r = this.d % this.daysOne;
+			this.a = parseInt(this.d / this.daysOne);
+		}
+
+		this.ranOne = Math.floor(Math.random()*2); 
+		this.ranOne = 0;
+		if (this.ranOne == 0)
+		{
+                	this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.daysOne + ' to ' + this.daysTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning.');
+		}
+                this.setAnswer('' + this.a,0);
+	
+		this.offset = parseInt(this.a / 2);
+                this.mButtonD.setAnswer('' + this.a);
+
+		this.ran = Math.floor(Math.random()*4); 
+		if (this.ran == 0) //make answer lowest
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.a + this.offset));
+			this.mButtonB.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + this.offset));
+		}
+		if (this.ran == 1)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
+                	this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
+			this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
+		}
+		if (this.ran == 2)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)));
+                	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset));
+                	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset));
+		}
+		if (this.ran == 3)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)) );
+                	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 3)) );
+                	this.mButtonC.setAnswer('' + parseInt(this.a - this.offset) );
+		}
+
+                this.shuffle(10);
+        }
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_22',2.0122,'2.oa.a.1','TerraNova');
 */
 
