@@ -37,7 +37,7 @@ Extends: FourButtonItem,
 		this.ranOne = 0;
 		if (this.ranOne == 0)
 		{
-                	this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.daysOne + ' to ' + this.daysTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning.');
+                	this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.daysOne + ' to ' + this.daysTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning in ' + this.m + ' school days?');
 		}
                 this.setAnswer('' + this.a,0);
 	
