@@ -20,12 +20,6 @@ session_start();
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
-<li><a href="/web/reports/generic/grades.php">Grades</a></li>
-<li><a href="/web/reports/generic/class_grades.php">Class Grades</a></li>
-<li><a href="/web/reports/generic/homeworks.php">Daily Homework</a></li>
-<li><a href="/web/reports/generic/homework_grades.php">Homework Grades</a></li>
-<li><a href="/web/reports/generic/homework_class_grades.php">Class Homework Grades</a></li>
-<li><a href="/web/reports/generic/daily_homework_check.php">Daily Homework Check</a></li>
 
 </ul>
 
