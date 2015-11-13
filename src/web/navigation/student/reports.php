@@ -19,10 +19,7 @@ session_start();
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
-
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
-<li><a href="/web/reports/generic/homework.php">Home Work</a></li>
-<li><a href="/web/reports/generic/tests.php">Tests</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
 <li><a href="/web/reports/generic/class_grades.php">Class Grades</a></li>
 <li><a href="/web/reports/generic/homeworks.php">Daily Homework</a></li>
