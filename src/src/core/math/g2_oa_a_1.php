@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_23',2.0123,'2.oa.a.1','TerraNova 11');
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_23',2.0123,'2.oa.a.1','Terra Nova 11');
 */
 
 var i_2_oa_a_1__23 = new Class(
@@ -138,7 +138,7 @@ Extends: FourButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_21',2.0121,'2.oa.a.1','TerraNova');
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_21',2.0121,'2.oa.a.1','Terra Nova 1');
 */
 
 var i_2_oa_a_1__21 = new Class(

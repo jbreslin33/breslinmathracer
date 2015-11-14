@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_21',5.1121,'5.nbt.b.7','TerraNova');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_21',5.1121,'5.nbt.b.7','Terra Nova 8');
 */
 
 var i_5_nbt_b_7__21 = new Class(
@@ -60,7 +60,7 @@ Extends: FourButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_20',5.1120,'5.nbt.b.7','TerraNova');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_20',5.1120,'5.nbt.b.7','Terra Nova 3');
 */
 var i_5_nbt_b_7__20 = new Class(
 {
