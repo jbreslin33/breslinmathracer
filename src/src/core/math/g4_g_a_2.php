@@ -13,45 +13,43 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.mOne = Math.floor(Math.random()*7)+4;
-                this.mTwo = parseInt(this.mOne + 3);
-                this.mDays = Math.floor(Math.random()*11)+15;
-                this.a = parseInt(this.mOne + 1) * this.mDays;
-
-                this.ranOne = Math.floor(Math.random()*2);
-                this.ranOne = 0;
+                this.ranOne = Math.floor(Math.random()*4);
+		this.ranOne = 0;
                 if (this.ranOne == 0)
                 {
-                        this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.mOne + ' to ' + this.mTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning in ' + this.mDays + ' school days?');
+                        this.setQuestion('' + this.ns.mNameOne + ' draws an equilateral triangle while Angry Baby watches. Which statement is true about ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' drawing?');
                 }
-                this.setAnswer('' + this.a,0);
-                this.mButtonD.setAnswer('' + this.a);
 
                 this.ran = Math.floor(Math.random()*4);
                 if (this.ran == 0) //make answer lowest
                 {
-                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
-                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
-                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mOne - 3)));
+                        this.mButtonA.setAnswer('' + 'No angles have same measure');
+                        this.mButtonB.setAnswer('' + 'One or more angles are right angles');
+                        this.mButtonC.setAnswer('' + '2 angles are obtuse and one is right angle');
+			this.setAnswer('' + 'All 3 angles are the same measure',0);
                 }
                 else if (this.ran == 1)
                 {
-                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
-                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
-                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                        this.mButtonA.setAnswer('' + '2 angles have equal measure one does not');
+                        this.mButtonB.setAnswer('' + 'Angry baby get so mad at triangle for having not same angles');
+                        this.mButtonC.setAnswer('' + '2 angles are acute and 1 is right angle');
+			this.setAnswer('' + '3 angles have the same exact measurement',0);
                 }
                 else if (this.ran == 2)
                 {
-                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
-                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
-                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                        this.mButtonA.setAnswer('' + '2 angles have equal measure');
+                        this.mButtonB.setAnswer('' + 'Angry baby get so mad at triangle for having right angle');
+                        this.mButtonC.setAnswer('' + '2 angles are right angles');
+			this.setAnswer('' + 'If Angry Baby measures all 3 angles they will be the same measurement',0);
                 }
                 else if (this.ran == 3)
                 {
-                        this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
-                        this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
-                        this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 3)));
+                        this.mButtonA.setAnswer('' + '2 angles have equal measure and one angle is obtuse');
+                        this.mButtonB.setAnswer('' + 'Angry baby get so mad at triangle for having obtuse angle');
+                        this.mButtonC.setAnswer('' + '2 angles are obtuse angles');
+			this.setAnswer('' + 'Angles will all have same measurement',0);
                 }
+                this.mButtonD.setAnswer('' + this.getAnswer());
 
                 this.shuffle(10);
         }
