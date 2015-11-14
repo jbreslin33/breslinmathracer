@@ -59,7 +59,7 @@ Extends: FourButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_22',2.0122,'2.oa.a.1','TerraNova');
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_22',2.0122,'2.oa.a.1','Terra Nova 9');
 */
 
 var i_2_oa_a_1__22 = new Class(

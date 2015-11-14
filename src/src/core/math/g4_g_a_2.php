@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_29',4.3329,'4.g.a.2','TerraNova 14');
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_29',4.3329,'4.g.a.2','Terra Nova 14');
 */
 
 var i_4_g_a_2__29 = new Class(

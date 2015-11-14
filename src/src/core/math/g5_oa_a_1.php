@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_23',5.0123,'5.oa.a.1','Terra Nova',2);
+insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_23',5.0123,'5.oa.a.1','Terra Nova 6',2);
 */
 
 var i_5_oa_a_1__23 = new Class(
