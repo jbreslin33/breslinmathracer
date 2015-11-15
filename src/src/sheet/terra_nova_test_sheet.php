@@ -17,7 +17,7 @@ initialize: function(game)
         this.mIDArray.push('' + '2.oa.a.1_22'); //9
         this.mIDArray.push('' + '4.oa.a.2_26'); //10
         this.mIDArray.push('' + '2.oa.a.1_22'); //11
-        //12
+        this.mIDArray.push('' + '5.oa.a.1_24'); //12
         //13
         this.mIDArray.push('' + '4.g.a.2_29'); //14
 
