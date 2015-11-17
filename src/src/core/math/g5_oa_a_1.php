@@ -32,6 +32,8 @@ initialize: function(sheet)
 	this.mNotReasonableArray.push('Counting number diapers to put on Angry Baby');
 	this.mNotReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' for a pie recipe');
 	this.mNotReasonableArray.push('Counting number of spoonfuls of medicine to take');
+	this.mNotReasonableArray.push('Counting number of ties ' + this.mNameMachine.getName('boy') + ' should wear today');
+	APPLICATION.log('' + 'name:' + this.mNameMachine.getName('boy'));	
         
 	this.n = Math.floor(Math.random()*this.mNotReasonableArray.length);
 
@@ -55,7 +57,7 @@ initialize: function(sheet)
 	this.mButtonD.setAnswer('' + this.d);
         this.shuffle(10);
 
-        this.setQuestion('Which of these would estimatating be problematic?');
+        this.setQuestion('Which of these would estimatating be problematic or not make much sense?');
 }
 });
 
