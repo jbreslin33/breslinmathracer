@@ -33,7 +33,6 @@ initialize: function(sheet)
 	this.mNotReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' for a pie recipe');
 	this.mNotReasonableArray.push('Counting number of spoonfuls of medicine to take');
 	this.mNotReasonableArray.push('Counting number of ties ' + this.mNameMachine.getName('boy') + ' should wear today');
-	APPLICATION.log('' + 'name:' + this.mNameMachine.getName('boy'));	
         
 	this.n = Math.floor(Math.random()*this.mNotReasonableArray.length);
 
