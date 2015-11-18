@@ -362,7 +362,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
+        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subtract c' + '</span>' + '. Instead of the letter c you should put a number.');
         this.setAnswer('' + 'Multiply by ' + b,0);
 }
 });
@@ -399,7 +399,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
+        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subtract c' + '</span>' + '. Instead of the letter c you should put a number.');
         this.setAnswer('' + 'subtract ' + a,0);
 }
 });
@@ -437,7 +437,7 @@ initialize: function(sheet)
                 }
         }
 
-        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subract c' + '</span>' + '. Instead of the letter c you should put a number.');
+        this.setQuestion('What is the rule for the number pattern: ' + pattern + '. Examples of what to write:' + '<span style="color: #f00;">' + ' Add c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Multiply by c' + '</span>' + ' or ' + '<span style="color: #f00;">' + 'Subtract c' + '</span>' + '. Instead of the letter c you should put a number.');
         this.setAnswer('' + 'Add ' + b,0);
 }
 });
