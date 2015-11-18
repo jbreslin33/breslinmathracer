@@ -921,7 +921,7 @@ initialize: function(sheet)
 	var answer = new Fraction(n,ad);	
 	
 	this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate. Do not Simplify.');
+        this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate.');
 }
 });
 
