@@ -15,8 +15,16 @@ initialize: function(sheet)
         this.x1 = Math.floor(Math.random()*200)+100;
         this.x2 = Math.floor(Math.random()*200)+100;
         this.x3 = Math.floor(Math.random()*200)+100;
+	this.mXArray = new Array();
+	this.mXArray.push(50);
+	this.mXArray.push(100);
+	this.mXArray.push(150);
+	this.mXArray.push(200);
+	this.mXArray.push(250);
+	this.mXArray.push(300);
+	this.mXArray.push(350);
 
-        this.setQuestion('' + this.ns.mNameOne + ' wants to arrange the rectangles from shortest to longest left to right. Help ' + this.ns.mNameOne + ' do this.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to find the distance from the first circle on from the left to the second circle from the left? The rectangle is movable and can be used to measure. The length of the rectangle represents 1 inch and the scale of the map is 1/4 inch = 1 mile. Help ' + this.ns.mNameOne + ' measure the distance.');
 
         //move buttons
         this.mContinueIncorrectButton.setPosition(690,400);
@@ -26,27 +34,23 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
         //rectangles
-        this.r1 = new Rectangle(100,50,this.x1,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.r1 = new Rectangle(150,25,this.x1,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
 
-        this.r2 = new Rectangle(150,50,this.x2,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.r2);
-
-        this.r3 = new Rectangle(200,50,this.x3,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.r3);
-},
-
-checkUserAnswer: function()
-{
-        if (this.r1.mPosition.mX < this.r2.mPosition.mX && this.r2.mPosition.mX < this.r3.mPosition.mX)
-        {
-                return true;
-        }
-        else
-        {
-                this.mSheet.setTypeWrong(this.mType);
-                return false;
-        }
+	this.circleA = new Circle(6,50,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleA);
+	this.textA = new Shape(25,25,187,400,this.mSheet.mGame,"","","");
+	this.textA.setText('A');
+        this.addQuestionShape(this.textA);
+	
+	this.circleB = new Circle(6,100,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleB);
+	
+	this.circleC = new Circle(6,150,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleC);
+	
+	this.circleD = new Circle(6,200,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleD);
+	
 }
 });
-
