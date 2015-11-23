@@ -23,8 +23,8 @@ initialize: function(sheet)
 	this.mReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' in a crate');
 	this.mReasonableArray.push('Counting number of ' + this.ns.mVegetableOne + ' in a garden');
 	this.mReasonableArray.push('Counting number of pennies in a jar');
-	this.mNotReasonableArray.push('Counting number of diapers in a box at Angry Baby house');
-	this.mNotReasonableArray.push('Counting number of onesies in a drawer at Angry Baby house');
+	this.mReasonableArray.push('Counting number of diapers in a box at Angry Baby house');
+	this.mReasonableArray.push('Counting number of onesies in a drawer at Angry Baby house');
 	
 	this.mNotReasonableArray.push('Counting number of binkies to put in Angry Babys mouth');
 	this.mNotReasonableArray.push('Counting number of shoes to put on Angry Babys feet');
