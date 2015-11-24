@@ -30,6 +30,7 @@ initialize: function(sheet)
 	this.mTextArray.push(' the first circle from the left to the seventh circle from the left.'); 
 	this.mTextArray.push(' the first circle from the left to the eighth circle from the left.'); 
 	this.mTextArray.push(' the first circle from the left to the ninth circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the tenth circle from the left.'); 
 
 	this.r = Math.floor(Math.random()*this.mTextArray.length);
 
@@ -43,29 +44,44 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
         //rectangles
-        this.r1 = new Rectangle(150,25,10,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.r1 = new Rectangle(160,25,10,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
         
-	this.r2 = new Rectangle(150,25,170,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+	this.r2 = new Rectangle(160,25,170,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
 	
-	this.r3 = new Rectangle(150,25,330,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+	this.r3 = new Rectangle(160,25,330,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
 
 	this.circleA = new Circle(6,50,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.circleA);
-	this.textA = new Shape(25,25,187,400,this.mSheet.mGame,"","","");
-	this.textA.setText('A');
-        this.addQuestionShape(this.textA);
 	
-	this.circleB = new Circle(6,100,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+	this.circleB = new Circle(6,90,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.circleB);
 	
-	this.circleC = new Circle(6,150,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+	this.circleC = new Circle(6,130,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.circleC);
 	
-	this.circleD = new Circle(6,200,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+	this.circleD = new Circle(6,170,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.circleD);
+	
+	this.circleE = new Circle(6,210,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleE);
+	
+	this.circleF = new Circle(6,250,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleF);
+	
+	this.circleG = new Circle(6,290,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleG);
+	
+	this.circleH = new Circle(6,330,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleH);
+	
+	this.circleI = new Circle(6,370,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleI);
+		
+	this.circleJ = new Circle(6,410,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        this.addQuestionShape(this.circleJ);
 	
 }
 });
